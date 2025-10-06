@@ -8,9 +8,9 @@ Buggy unfinished interpreter.
 * License:    MIT
 * Standard:   no (can't run ES1)
 * Years:      2020-2022
+* Parser:     YACC
 * Runtime:    stack-based VM
 * Regex:      POSIX
-* Parser:     YACC
 
 ## Bugs
 
