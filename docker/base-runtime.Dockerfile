@@ -14,6 +14,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         libedit-dev \
         libgc1 \
         libicu-dev \
+        libjson-c5 \
         libpcre2-dev \
         libreadline-dev \
         locales \
