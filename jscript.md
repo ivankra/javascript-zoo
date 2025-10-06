@@ -1,6 +1,6 @@
 # JScript
 
-JavaScript engine of IE 3.0 – 8.0 (jscript.dll).
+JavaScript engine of Internet Explorer 3.0 – 8.0.
 
 * URL:        https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29
 * Language:   C++
@@ -9,14 +9,15 @@ JavaScript engine of IE 3.0 – 8.0 (jscript.dll).
 * Standard:   ES3
 * Years:      1996-2011
 * Runtime:    stack-based VM
+* DLL:        jscript.dll
 
 ## History
 
 * 1996: Released with Internet Explorer 3.0 in May 1996.
 * 2009: Succeeded by [Chakra](chakra.md) (JScript9) engine in IE9-11.
-* 2025: Retired from Windows 11 24H2, replaced with JScript9Legacy (Chakra).
+* 2025: Windows 11 24H2 shipped a drop-in Chakra-based replacement: `JScript9Legacy.dll`.
 
-## References
+## Links
 
 * https://www.usenix.org/legacy/event/webapps10/tech/full_papers/Ratanaworabhan.pdf
 * https://labs.withsecure.com/publications/internet-exploiter-understanding-vulnerabilities-in-internet-explorer
