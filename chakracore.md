@@ -12,16 +12,26 @@ JavaScript engine of Microsoft Edge Legacy.
 * Years:      2015-2021
 * Runtime:    register-based VM, deferred compilation
 * JIT:        2-tier JIT
+* DLL:        chakra.dll
 
 ## History
 
 Originally kept the same name as the predecessor - IE9-11's [Chakra](chakra.md) engine (jscript9.dll).
-Sometimes referred to as the new Chakra engine, Chakra Edge or chakra.dll.
+Sometimes called new Chakra engine, Chakra Edge or chakra.dll to distinguish from it.
 
-Open-sourced in 2016 under the name ChakraCore.
+Open-sourced in 2016 under the name ChakraCore (except for some parts like
+COM/browser bindings that stay in the closed-source chakra.dll).
 
-Abandoned by Microsoft in 2021.
+Microsoft discontinued maintenance and stopped providing security patches
+in March 2021 ([ref](https://github.com/chakra-core/ChakraCore/issues/6384)).
 
-## Standard
+## Features
 
-* ES2020: BigInt implemented but disabled by default. No optional chaining.
+* ES2020
+  * BigInt: implemented, but disabled by default
+  * Optional chaining: not implemented
+
+## Links
+
+* https://www.microsoft.com/en-us/research/wp-content/uploads/2018/04/41159.compressed.pdf
+* https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/hosting/chakra-hosting/targeting-edge-vs-legacy-engines-in-jsrt-apis

@@ -135,6 +135,7 @@ def process_markdown(row, filename, args):
         'GC': 'gc',
         'JIT': 'jit',
         'Regex': 'regex',
+        'DLL': 'dll',
     }
     metadata_order = list(metadata_map.values())
 
