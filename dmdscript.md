@@ -8,6 +8,8 @@ ECMAScript implementation by Digital Mars written in D.
 * Language:   D
 * License:    BSL-1.0 (Boost Software License 1.0)
 * Org:        Digital Mars
-* Standard:   ES3
+* Standard:   ES3 (partial)
 * Years:      2002-
 * Runtime:    register-based VM
+
+An ancient x86-only C++ port also exists: https://digitalmars.com/dscript/cppscript.html

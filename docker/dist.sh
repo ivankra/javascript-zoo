@@ -57,7 +57,7 @@ if [[ -d .git ]]; then
   git remote get-url origin >/dist/jsz_repository
 
   if ! [[ -f /dist/jsz_version ]] && git describe --tags HEAD >/dev/null 2>/dev/null; then
-    git describe --tags HEAD >/dist/jsz_version 2>/dev/null
+    git describe --tags HEAD | sed -Ee 's/^v([0-9])/\\1/' >/dist/jsz_version 2>/dev/null
   fi
 fi
 
