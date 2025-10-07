@@ -28,4 +28,5 @@ RUN cmake -B build -G Ninja \
 RUN ninja -C build qmljs
 
 ENV JS_BINARY=/src/build/qtbase/bin/qmljs
+ENV LICENSES="LICENSES/LicenseRef-Qt-Commercial.txt LICENSES/LGPL-3.0-only.txt LICENSES/GPL-2.0-only.txt LICENSES/GPL-3.0-only.txt"
 CMD ${JS_BINARY}

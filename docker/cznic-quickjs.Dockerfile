@@ -70,5 +70,5 @@ EOF
 
 RUN go build main.go
 
-ENV JS_BINARY=/src/main
+ENV JS_BINARY=/src/main LICENSES="LICENSE LICENSE-LIBQUICKJS"
 CMD ${JS_BINARY}

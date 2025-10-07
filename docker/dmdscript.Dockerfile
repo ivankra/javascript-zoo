@@ -11,5 +11,5 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends ldc dub
 
 RUN bash ./build.sh
 
-ENV JS_BINARY=/src/dmdscript LICENSE=/src/LICENSE_1_0.txt
+ENV JS_BINARY=/src/dmdscript
 CMD ${JS_BINARY}

@@ -12,6 +12,6 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN apt-get update -y && apt-get install -y --no-install-recommends libncurses-dev
 RUN cd xs/makefiles/lin && MODDABLE=/src make -j release  # -O3
 
-ENV JS_BINARY=/src/build/bin/lin/release/xst
+ENV JS_BINARY=/src/build/bin/lin/release/xst LICENSES="licenses/NOTICE licenses/lgpl-3.0.txt licenses/readme.md"
 RUN ${JS_BINARY} -v | sed -e 's/^XS \([^, ]*\).*/\1/' >jsz_version
 # No REPL
