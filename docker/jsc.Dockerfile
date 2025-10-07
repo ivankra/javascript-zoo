@@ -24,7 +24,7 @@ RUN export CXXFLAGS="-Wno-error" && \
       --release \
       --cmakeargs="-DENABLE_STATIC_JSC=ON -DUSE_THIN_ARCHIVES=OFF -DDEVELOPER_MODE_FATAL_WARNINGS=OFF"
 
-ENV JS_BINARY=/src/WebKitBuild/JSCOnly/Release/bin/jsc
+ENV JS_BINARY=/src/WebKitBuild/JSCOnly/Release/bin/jsc LICENSE=Source/JavaScriptCore/COPYING.LIB
 RUN curl "https://commits.webkit.org/$(git rev-parse HEAD)/json" 2>&1 \
       | sed -Ene 's/.*"identifier": "([^"]+)".*/\1/p' >jsz_version
 CMD ${JS_BINARY}

@@ -43,6 +43,27 @@ if [[ \$(file -b --mime-type "\$JS_BINARY" 2>/dev/null) == */*-executable ]]; th
   ls -l "/dist/$ID" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
 fi
 
+if ! [[ -f "/dist/$ID.LICENSE" ]]; then
+  if [[ -f "\$LICENSE" ]]; then
+    cp -f "\$LICENSE" "/dist/$ID.LICENSE"
+  elif [[ -n "\$LICENSES" ]]; then
+    head -n -0 \$LICENSES >"/dist/$ID.LICENSE"
+  else
+    rm -f "/dist/$ID.LICENSE"
+    license_files=()
+    found=0
+    for f in LICENSE* COPYING* COPYRIGHT* *[Ll]icense*.txt *[Ll]icenses *[Ll]icense *_LICENSE* NOTICE* *NOTICE*.txt *[Nn]otice*.txt; do
+      if [[ -f "\$f" ]]; then
+        license_files+=("\$f")
+        found=1
+      fi
+    done
+    if [[ \$found == 1 ]]; then
+      head -n -0 "\${license_files[@]}" >>"/dist/$ID.LICENSE"
+    fi
+  fi
+fi
+
 SRC="\$(pwd)"
 
 for f in jsz_*; do

@@ -49,7 +49,8 @@ RUN if [ -d src ]; then ln -s . js; fi && \
     make -f Makefile.ref BUILD_OPT=1
 
 ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
-RUN ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
+RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/js.c >LICENSE) && \
+    ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
     ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p' >jsz_revision_date && \
     cloc js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|/(t|v8|octane|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm)/)" \
       | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
