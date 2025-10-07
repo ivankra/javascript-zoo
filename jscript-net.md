@@ -8,26 +8,29 @@ Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / 
 * Org:        Microsoft
 * Standard:   ES3, ES4 (draft)
 * Years:      2000-2010
+* JIT:        via CLR
 * DLL:        Microsoft.JScript.dll
 
 ## Versions
 
-Completely different product from [JScript](jscript.md) and JScript9/[Chakra](chakra.md),
+Completely different product from [JScript](jscript.md) and [JScript9](jscript9.md)/Chakra,
 but using the same name. .NET suffix was dropped at some point.
 
 Version numbers follow Microsoft's finest traditions:
 
-  * JScript 5.x -> [JScript](jscript.md) engine (IE3-8)
+  * JScript 5.x -> IE3-8's [JScript](jscript.md) engine
   * JScript 7.0 – JScript .NET 2002 – .NET Framework 1.0
   * JScript 7.0 – JScript .NET 2003 – .NET Framework 1.1
   * JScript 8.0 – Visual Studio 2005 – .NET Framework 2.0
   * JScript 8.0 – Visual Studio 2008 – .NET Framework 3.5
-  * JScript 9 -> [Chakra](chakra.md) engine (IE9-11)
+  * JScript 9 -> IE9-11's [JScript9](jscript9.md)/Chakra engine
   * JScript 10.0 – Visual Studio 2010/2012 – .NET Framework 4.0 (2010)
 
 Dropped from .NET Core / .NET 5+.
 
 ## Features
+
+Compiles JavaScript to CIL bytecode.
 
 Implements a very distinct JavaScript dialect for .NET platform, featuring types
 and various non-standard features from .NET and Microsoft's shot at ES4.
@@ -52,8 +55,6 @@ class CCustomer extends CPerson{
 
   * [Introducing JScript .NET (2000)](http://msdn.microsoft.com/ms974588.aspx)
   * [JScript Reference](http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx)
-
-Related projects:
-
-  * https://www.mono-project.com/archived/jscript/
-  * https://cgit.git.savannah.gnu.org/cgit/dotgnu-pnet/pnetlib.git/tree/JScript
+  * Related old projects:
+    * https://www.mono-project.com/archived/jscript/
+    * https://cgit.git.savannah.gnu.org/cgit/dotgnu-pnet/pnetlib.git/tree/JScript

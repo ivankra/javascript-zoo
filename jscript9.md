@@ -1,4 +1,4 @@
-# Chakra
+# JScript9 / Chakra
 
 JavaScript engine of Internet Explorer 9.0 – 11.0.
 
