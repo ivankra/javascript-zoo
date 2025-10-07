@@ -14,8 +14,8 @@ JavaScript engine of Internet Explorer 3.0 – 8.0.
 ## History
 
 * 1996: Released with Internet Explorer 3.0 in May 1996.
-* 2009: Succeeded by [Chakra](chakra.md) (JScript9) engine in IE9-11.
-* 2025: Windows 11 24H2 shipped a drop-in Chakra-based replacement: `JScript9Legacy.dll`.
+* 2009: Succeeded by [JScript9](jscript9.md) "Chakra" engine in IE9-11, but lingers in Windows for compatibility reasons till today.
+* 2025: Windows 11 24H2 shipped a mostly compatible drop-in Chakra-based replacement (`JScript9Legacy.dll`).
 
 ## Links
 

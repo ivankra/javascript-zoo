@@ -57,12 +57,12 @@ Docker image for playing around with pre-built binaries:
 | [QSA](qsa.md)<br>[<img src="https://img.shields.io/github/stars/aschet/qsaqt5?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/aschet/qsaqt5?label=&style=flat-square" alt="Last commit" title="Last commit">](https://github.com/aschet/qsaqt5) | C++ | Qt 3's JavaScript engine: Qt Script for Applications. | 2002-2007 | GPL-2.0 |
 | [Ejscript](ejscript.md)<br>[<img src="https://img.shields.io/github/stars/embedthis/ejscript?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/embedthis/ejscript?label=&style=flat-square" alt="Last commit" title="Last commit">](https://github.com/embedthis/ejscript) | C | Embeddable JavaScript engine. | 2003-2014 | GPL-2.0 |
 | [Carakan](carakan.md)<br>([archive.org](https://web.archive.org/web/20170113134110/https://github.com/prestocore/browser)) | C++ | JavaScript engine of Opera 10.50 – 12.18. | 2010-2013 | Proprietary |
-| [Chakra](chakra.md) | C++ | JavaScript engine of Internet Explorer 9.0 – 11.0. | 2009-2013 | Proprietary |
 | [ChowJS](chowjs.md)<br>([mp2.dk](https://mp2.dk/techblog/chowjs/)) | C | QuickJS-based optimizing AOT compiler to native code for game developers. | 2021 | Proprietary |
 | [Edbrowse](edbrowse.md)<br>([edbrowse.org](https://edbrowse.org/)) | C | Edbrowse CLI browser had own small JavaScript engine until v2.2.10 (2006). | 2004-2006 | GPL |
 | [Epimetheus](epimetheus.md)<br>([mozilla.org](http://www.mozilla.org/js/language/Epimetheus.html)) | C++ | Netscape's experimental "JavaScript 2.0" implementation towards ES4 proposal. | 2000-2006 | MPL/GPL/LGPL |
 | [Guile](guile.md)<br>([gnu.org](https://git.savannah.gnu.org/git/guile.git)) | C | Features an unfinished ECMAScript interpreter as of version 1.9. | 2009 | LGPL-3.0+ |
 | [JScript](jscript.md)<br>([microsoft.com](https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29)) | C++ | JavaScript engine of Internet Explorer 3.0 – 8.0. | 1996-2011 | Proprietary |
+| [JScript9 / Chakra](jscript9.md) | C++ | JavaScript engine of Internet Explorer 9.0 – 11.0. | 2009-2013 | Proprietary |
 | [JUCE](juce.md) | C++ | JUCE music apps framework used to have own rudimentary interpreter for a JavaScript subset. | 2013-2023 | ISC |
 | [Links](links.md)<br>([twibright.com](http://links.twibright.com/)) | C | Links browser had a basic JavaScript engine until version 2.1pre28. | 2002-2007 | GPL-2.0+ |
 | [Opera](opera.md)<br>([opera.com](https://help.opera.com/en/operas-archived-history/)) | C++ | Early JavaScript engines of Opera browser: Linear A, Linear B, Futhark. | 1997-2009 | Proprietary |

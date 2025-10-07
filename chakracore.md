@@ -16,14 +16,17 @@ JavaScript engine of Microsoft Edge Legacy.
 
 ## History
 
-Originally kept the same name as the predecessor - IE9-11's [Chakra](chakra.md) engine (jscript9.dll).
+Originally kept the same name as the predecessor - IE9-11's [Jscript9](jscript9.md)/Chakra engine (jscript9.dll).
 Sometimes called new Chakra engine, Chakra Edge or chakra.dll to distinguish from it.
 
 Open-sourced in 2016 under the name ChakraCore (except for some parts like
 COM/browser bindings that stay in the closed-source chakra.dll).
 
-Microsoft discontinued maintenance and stopped providing security patches
-in March 2021 ([ref](https://github.com/chakra-core/ChakraCore/issues/6384)).
+Microsoft discontinued maintenance of ChakraCore and stopped providing security patches
+in March 2021 ([ref](https://github.com/chakra-core/ChakraCore/issues/6384)),
+passed it to a rather inactive community of external maintainers.
+Continued production use (esp. with JIT) is thus risky from security perspective.
+Closed-source chakra.dll in Windows, presumably, is still maintained.
 
 ## Features
 
