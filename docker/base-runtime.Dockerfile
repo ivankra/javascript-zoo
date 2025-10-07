@@ -19,6 +19,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         libreadline-dev \
         locales \
         lsb-release \
+        # for castl \
+        luajit \
         make \
         openjdk-25-jdk-headless \
         python3 \
