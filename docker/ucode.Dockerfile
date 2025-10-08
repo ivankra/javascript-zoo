@@ -13,13 +13,13 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends libjson-c-de
 RUN cmake -B build && cmake --build build -j
 
 RUN mkdir -p /dist && \
-    cp -a build /dist/ucode-lib && \
-    cd /dist/ucode-lib && \
+    cp -a build /dist/ucode-dist && \
+    cd /dist/ucode-dist && \
     rm -rf examples/ CMake* cmake* Makefile && \
     (strip * || true) && \
     echo >/dist/ucode \
 '#!/bin/bash'"\n"\
-'LIB=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/ucode-lib'"\n"\
+'LIB=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/ucode-dist'"\n"\
 '"$LIB/ucode" "-L$LIB" "$@"' && \
     chmod a+rx /dist/ucode && \
     # Only the core interpreter, without optional modules \

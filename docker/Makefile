@@ -21,7 +21,7 @@ endif
 
 all: base $(TARGETS)
 
-dist: $(patsubst %,%-dist,$(TARGETS))
+dist: $(patsubst %,$(DIST_DIR)/%.json,$(TARGETS))
 	@true
 
 sh: $(IID_DIR)/runtime
@@ -40,6 +40,7 @@ base: $(IID_DIR)/base
 $(IID_DIR)/base: base*.Dockerfile $(IID_DIR)/runtime
 	@mkdir -p $(IID_DIR)
 	$(DOCKER_BUILD) -t jsz-debian -t jsz-debian13 -f base-debian.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-debian11 -f base-debian.Dockerfile --build-arg BASE=debian:bullseye .
 	if [[ `uname -m` == x86_64 ]]; then \
 	  $(DOCKER_BUILD) -t jsz-ubuntu22 -f base-debian.Dockerfile --build-arg BASE=ubuntu:22.04 .; \
 	fi
