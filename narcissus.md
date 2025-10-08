@@ -10,6 +10,8 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 * Standard:   ES5
 * Years:      2007-2012
 
+## Description
+
 > Narcissus is a meta-circular JavaScript interpreter with a very
 > direct representation of values: primitives are self-representing,
 > objects are represented as objects (with their properties accessible via
@@ -18,3 +20,5 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 > and objects (such as the standard libraries) to interface directly
 > with Narcissus code without following any special protocol or requiring
 > wrapping and unwrapping.
+
+Relies on Proxy object (JavaScript 1.8.5 / ES6)
