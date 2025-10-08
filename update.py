@@ -391,7 +391,7 @@ def print_markdown_table(rows, fp):
             row['sort_key'] = 'A%02d' % pinned.index(row['engine'])
         else:
             row['sort_key'] = ' '.join([
-                s.replace('TypeScript', 'JavaScriptT').replace('C++', 'C'),
+                s.replace('TypeScript', 'JavaScript').replace('C++', 'C'),
                 '%06d' % (999998 - row.get('github_stars', -1)),
                 row['engine'].lower()
             ])
