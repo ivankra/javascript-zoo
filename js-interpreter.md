@@ -1,11 +1,24 @@
 # JS-Interpreter
 
-Sandboxed JavaScript interpreter in JavaScript.
+Sandboxed ES5 interpreter in JavaScript.
 
+* URL:        https://neil.fraser.name/software/JS-Interpreter/docs.html
 * Repository: https://github.com/NeilFraser/JS-Interpreter.git <img src="https://img.shields.io/github/stars/NeilFraser/JS-Interpreter?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/NeilFraser/JS-Interpreter?label=&style=flat-square" alt="Last commit" title="Last commit">
 * LOC:        4995 (`cloc interpreter.js acorn.js`)
 * Language:   JavaScript (ES5)
 * License:    Apache-2.0
 * Standard:   ES5
 * Years:      2013-
-* Parser:     Acorn (vendored and modified, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365)
+* Parser:     Acorn (vendored and stripped-down to ES5, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365)
+* Runtime:    tree walker ([interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689)
+
+## Features
+
+* Feature-complete ES5 implementation along with standard library.
+* Iteratively implemented AST tree walker with an explicit stack,
+  enabling step-by-step execution, state serialization,
+  resuming from saved state.
+* Sandboxing features to prevent infinite loops, memory blowouts,
+  pathological regular expressions in the interpreted code.
+  Doesn't expose browser's DOM.
+* Requires ES5 support in the host engine - depends on `Object.create(null)`.
