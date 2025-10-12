@@ -22,10 +22,14 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         # for castl \
         luajit \
         make \
+        # /usr/bin/ts for benchmarking \
+        moreutils \
         openjdk-25-jdk-headless \
         python3 \
         sudo \
         tar \
+        # /usr/bin/time for benchmarking \
+        time \
         unzip \
         vim \
         wget \
@@ -74,6 +78,7 @@ FROM jsz-runtime AS jsz-hub
 
 ARG TARGETARCH
 
+# TODO copy tarball and unpack it in order to preserve symlinks
 COPY dist/$TARGETARCH /dist
 COPY bench /bench
 RUN rm -rf /bench/octane /bench/__pycache__ /bench/data.py
