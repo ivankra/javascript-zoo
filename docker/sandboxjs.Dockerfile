@@ -12,7 +12,8 @@ RUN npm install && npm install esbuild && npm run build
 COPY sandboxjs.js ./
 
 RUN npx esbuild sandboxjs.js --outfile=/dist/sandboxjs --bundle --platform=node && \
-    npx esbuild sandboxjs.js --outfile=/dist/sandboxjs.min.js --bundle --platform=node --minify
+    npx esbuild sandboxjs.js --outfile=/dist/sandboxjs.min.js --bundle --platform=node --minify && \
+    du -bc /dist/sandboxjs.min.js | tail -1 | cut -f 1 >/dist/jsz_dist_size
 
 ENV JS_BINARY=/dist/sandboxjs
 # No REPL

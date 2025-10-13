@@ -36,11 +36,13 @@ if [[ "\$JS_BINARY" != "" && ! -f "\$JS_BINARY" ]]; then
   exit 1
 fi
 
-if [[ \$(file -b --mime-type "\$JS_BINARY" 2>/dev/null) == */*-executable ]]; then
+if [[ \$(file -b --mime-type "\$JS_BINARY" 2>/dev/null) == */*-executable && "\$JS_BINARY" != /dist/* ]]; then
   rm -f "/dist/$ID" || true
   strip -o "/dist/$ID" "\$JS_BINARY"
   sha256sum "/dist/$ID" | cut -f 1 -d ' ' >/dist/jsz_binary_sha256
-  ls -l "/dist/$ID" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
+  if ! [[ -f /dist/jsz_dist_size ]]; then
+    ls -l "/dist/$ID" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
+  fi
 fi
 
 if ! [[ -f "/dist/$ID.LICENSE" ]]; then
@@ -101,7 +103,7 @@ echo "$ARCH" >jsz_arch
   echo "{"
   for f in jsz_*; do
     key=\${f#jsz_}
-    if [[ \$key == binary_size || \$key == loc ]]; then
+    if [[ \$key == binary_size || \$key == dist_size || \$key == loc ]]; then
       val=\$(cat "\$f")
     else
       val=\$(cat "\$f" | python -c 'import sys, json; print(json.dumps(sys.stdin.read().strip()));')

@@ -17,7 +17,7 @@ RUN mkdir -p /dist/sablejs-dist && \
     cp runtime.js /dist/sablejs-dist/runtime.js && \
     cp sablejs.js /dist/sablejs && \
     chmod a+rx /dist/sablejs && \
-    du -bc /dist/sablejs-dist | tail -1 | cut -f 1 >jsz_binary_size
+    du -bc /dist/sablejs-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
 
 ENV JS_BINARY=/dist/sablejs
 # No REPL

@@ -39,7 +39,7 @@ RUN mkdir -p /dist && \
 'if ! [[ -f "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi'"\n"\
 'node "$SCRIPT_DIR/castl-dist/castl.js" --jit "$@"' && \
     chmod a+rx /dist/castl && \
-    du -bc /dist/castl-dist/castl.min.js /dist/castl-dist/castl | tail -1 | cut -f 1 >jsz_binary_size
+    du -bc /dist/castl-dist/castl.min.js /dist/castl-dist/castl | tail -1 | cut -f 1 >/dist/jsz_dist_size
 
 # TODO: pure-lua shell using lua/castl/jscompile/castl_jit.lua
 
