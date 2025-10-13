@@ -1,34 +1,55 @@
 # First ES5-compliant SpiderMonkey version, shipped in Firefox 4.0 (2011).
 # Features TraceMonkey tracing JIT, JägerMonkey method JIT, PIC, YARR.
 #
-# Doesn't work on arm64, JIT doesn't support this target.
+# Doesn't work on arm64: JIT doesn't support this target.
 
 ARG BASE=jsz-gcc
 FROM $BASE
 
+# Python 2 required for build
+# Alternatively, for 1.8.5 only minimal fixes are needed:
+#    sed -i -e 's/"import sys; sys.exit.*"/""/' configure
+#    sed -i -E -e 's/print "(.*)"/print("\1")/' imacro_asm.py
+RUN sed -i 's/ stable-updates$/ stable-updates bullseye/' /etc/apt/sources.list.d/debian.sources && \
+    apt-get update -y && apt-get install -y --no-install-recommends python2 python2-dev
+
 # JavaScript-C 1.8.5 2011-03-31
 ARG TARBALL=https://archive.mozilla.org/pub/js/js185-1.0.0.tar.gz
+# SpiderMonkey 17 and 24 can also be built with this script
+#ARG TARBALL=https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz
+#ARG TARBALL=https://archive.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
 
 WORKDIR /src
 RUN wget "$TARBALL" && tar xf "$(basename "$TARBALL")"
 
-RUN mv js-1.8.5/js ./ && cd js/src && \
+RUN cloc */js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|UnicodeData.txt$|/(t|v8|octane|parjs-benchmarks|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm|devtools|python)/)" \ 
+      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
+
+RUN cd */js/src && \
     export CXXFLAGS="--std=gnu++03" && \
     export CFLAGS="--std=gnu99 -Wno-implicit-int -Wno-implicit-function-declaration" && \
-    # bad script permissions \
-    chmod a+rx build/* && \
-    # python 2 fixups \
-    sed -i -e 's/"import sys; sys.exit.*"/""/' configure && \
-    sed -i -E -e 's/print "(.*)"/print("\1")/' imacro_asm.py && \
-    ./configure --host="$(uname -m)-unknown-linux" --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
-    # buggy script \
-    sed -i -e 's/CXX=.*/$*; exit $?/' build/hcpp && \
-    make
+    export SHELL=/bin/bash && \
+    # fix buggy gcc wrapper in 1.8.5 \
+    if [ -f build/hcpp ]; then \
+      chmod a+rx build/hcc build/hcpp && \
+      sed -i "s|CXX=.*|shift; $CXX \"\$@\"; exit \$?|" build/hcpp; \
+    fi && \
+    sed -i 's/\(QuoteString(&sprinter, s, quote)\) >= 0/\1 >= (char*)NULL/' jsopcode.cpp && \
+    ./configure --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
+    make -j
+
+# Metadata
+RUN ln -s */js js && \
+    (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
+    echo "$TARBALL" >jsz_sources && \
+    echo "$TARBALL" | sed -E 's/.*js185.*/1.8.5/; s/.*mozjs-?([0-9.]*)\.tar.*/\1/' >jsz_version && \
+    stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]' >jsz_revision_date && \
+    echo YARR >jsz_regex && \
+    echo ES5 >jsz_standard
 
 ENV JS_BINARY=/src/js/src/shell/js
-RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
-    ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
-    ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p' >jsz_revision_date && \
-    cloc js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|/(t|v8|octane|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm)/)" \
-      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
 CMD ${JS_BINARY}
+
+# JIT-less 1.8.5 crashes on arm64:
+# sed -i 's/ -DENABLE_ASSEMBLER=.*//' Makefile.in
+# ./configure --host="$(uname -m)-unknown-linux" ...

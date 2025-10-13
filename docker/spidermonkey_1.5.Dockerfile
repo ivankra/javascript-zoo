@@ -36,10 +36,13 @@ FROM $BASE
 ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
 
 WORKDIR /src
-RUN wget "$TARBALL" && tar xf "$(basename "$TARBALL")"
+RUN wget "$TARBALL" && tar xf "$(basename "$TARBALL")" && \
+    if [ -d src ]; then ln -s . js; fi
 
-RUN if [ -d src ]; then ln -s . js; fi && \
-    cd js/src && \
+RUN cloc js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|/(t|v8|octane|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm)/)" \
+      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
+
+RUN cd js/src && \
     # -fPIC: workaround for some linker errors \
     export CFLAGS="--std=c99 -Wno-implicit-function-declaration -Wno-incompatible-pointer-types -fPIC -O3" && \
     # Make sure to use -O3 for BUILD_OPT=1 \
@@ -48,10 +51,13 @@ RUN if [ -d src ]; then ln -s . js; fi && \
     sed -i -e 's/^static int StackGrowthDirection/static int __attribute__((noinline)) StackGrowthDirection/' jscpucfg.c && \
     make -f Makefile.ref BUILD_OPT=1
 
-ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
+# Metadata
 RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
+    echo "$TARBALL" >jsz_sources && \
     ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
     ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p' >jsz_revision_date && \
-    cloc js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|/(t|v8|octane|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm)/)" \
-      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
+    echo ES3 >jsz_standard && \
+    echo "" >jsz_jit
+
+ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
 CMD ${JS_BINARY}

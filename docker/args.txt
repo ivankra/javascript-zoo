@@ -41,6 +41,10 @@ v8_pgo:               --build-arg REV=141.0.7390.54
 #v8_gcc:               --build-arg REV=14.1.146.11 --build-arg BASE=jsz-gcc -f v8.Dockerfile
 
 #spidermonkey_1.4:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.4-2.tar.gz
+#spidermonkey_1.5:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
 spidermonkey_1.6:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js-1.60.tar.gz
 spidermonkey_1.7:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js-1.7.0.tar.gz
 spidermonkey_1.8.0:   -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js-1.8.0-rc1.tar.gz
+#spidermonkey_1.8.5   -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js185-1.0.0.tar.gz
+spidermonkey_17:      -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz
+spidermonkey_24:      -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2

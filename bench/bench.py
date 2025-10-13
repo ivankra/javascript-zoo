@@ -493,6 +493,8 @@ RUNNERS = {
   'spidermonkey_1.6': Runner(polyfills=[ES5_FOR_ES3_PF]),
   'spidermonkey_1.7': Runner(polyfills=[ES5_FOR_ES3_PF]),
   'spidermonkey_1.8.0': Runner(polyfills=[ES5_FOR_ES3_PF]),
+  'spidermonkey_1.8.5': Runner(flags=['-jm']),  # enable TraceMonkey + method JIT
+  'spidermonkey_17': Runner(flags=['-m']),      # enable JIT. Enabled by default in 24+.
   # not capable of ES1
   'starlight': Runner(benchmark_suite=['richards.js1.js']),
   # not capable of ES1, no Date()
