@@ -27,6 +27,7 @@ for tag in $(date +%Y%m%d) latest; do
   for arch in $ARCHS; do
     $DOCKER push "localhost/jsz-hub:$arch" "$PUSHDEST:$tag-$arch"
   done
+  $DOCKER image rm -f "$PUSHDEST:$tag" || true
   $DOCKER manifest rm "$PUSHDEST:$tag" || true
   $DOCKER manifest create "$PUSHDEST:$tag" $(for arch in $ARCHS; do echo "$PUSHDEST:$tag-$arch"; done)
   $DOCKER manifest push "$PUSHDEST:$tag" "$PUSHDEST:$tag"
