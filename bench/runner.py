@@ -81,7 +81,7 @@ def main():
         wall_times = []
 
         cmd = args + [test_file]
-        print(f'Running: {' '.join(cmd)}')
+        print(f"Running: {' '.join(cmd)}")
 
         cmd_str = ' '.join([f"'{s}'" for s in cmd])
         tee_cmd = f'{cmd_str} 2>&1 | tee /dev/stderr'

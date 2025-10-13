@@ -30,12 +30,17 @@ if [[ "$DEP" == 1 ]]; then
   if [[ "$ARGS" != "" ]]; then
     echo args.txt
   fi
+  df=()
   if [[ $ARGS =~ -f[[:space:]]([-a-z0-9_.]+.Dockerfile) ]]; then
-    echo ${BASH_REMATCH[1]}
+    df=( "${BASH_REMATCH[1]}" )
   fi
   if [[ -f $ID.Dockerfile ]]; then
-    echo $ID.Dockerfile
+    df+=( "$ID.Dockerfile" )
   fi
+  for f in "${df[@]}"; do
+    echo "$f"
+    egrep -o '^COPY ([-a-z0-9.]+)' "$f" 2>/dev/null
+  done
   exit 0
 fi
 
