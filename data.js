@@ -54,7 +54,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "ec295ecb6e7546f462eb422db06c9a26ae23a7f1885b1583ca6c786382f5af6c",
-        "binary_size": "ec295ecb6e7546f462eb422db06c9a26ae23a7f1885b1583ca6c786382f5af6c",
+        "binary_size": 3111168,
         "repository": "https://github.com/ferus-web/bali.git",
         "revision": "8cb0b593839a9fe2fa6ec3c2a88b2efd02d2cc7c",
         "revision_date": "2025-09-25",
@@ -83,7 +83,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "c2dfc723261f0959f59fc62154244dedf23bf19ecf997e1c568cf42fcf1a3188",
-        "binary_size": "c2dfc723261f0959f59fc62154244dedf23bf19ecf997e1c568cf42fcf1a3188",
+        "binary_size": 2040192,
         "repository": "https://github.com/BeRo1985/besen.git",
         "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b",
         "revision_date": "2020-10-21"
@@ -153,7 +153,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "86d063cd854e2d4dead863684843584565cddecb3c8f8119196b8666d3aa4104",
-        "binary_size": "86d063cd854e2d4dead863684843584565cddecb3c8f8119196b8666d3aa4104",
+        "binary_size": 27028272,
         "repository": "https://github.com/boa-dev/boa.git",
         "revision": "9d0de12228d938b4f835f2cdca22c9dc7dc4e995",
         "revision_date": "2025-09-29",
@@ -277,13 +277,31 @@ kJavascriptZoo = [
     "loc": 6366,
     "loc_command": "cloc --not_match_d=\"(test|jscompile)\" lua *.js",
     "parser": "Esprima / Acorn",
-    "regex": "PCRE2",
+    "regex": "PCRE",
     "repository": "https://github.com/PaulBernier/castl.git",
-    "standard": "ES5 (partial, some ES6 through babel)",
-    "summary": "JavaScript to Lua compiler with runtime library.",
+    "standard": "ES5",
+    "summary": "Self-hosting JavaScript to Lua compiler with a runtime library and eval().",
     "title": "castl",
-    "type": "compiler to Lua (targets unmodified Lua 5.2 / LuaJIT)",
-    "years": "2014-2017"
+    "type": "compiler to Lua",
+    "years": "2014-2017",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 1101175,
+        "repository": "https://github.com/PaulBernier/castl.git",
+        "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c",
+        "revision_date": "2017-03-22",
+        "version": "1.2.4"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 1101175,
+        "repository": "https://github.com/PaulBernier/castl.git",
+        "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c",
+        "revision_date": "2017-03-22",
+        "version": "1.2.4"
+      }
+    ]
   },
   {
     "engine": "cesanta-elk",
@@ -304,7 +322,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "a2b552803cd42697bca6e8db87fa0156d10f832383b2b8d4fddaa05716a4835f",
-        "binary_size": "a2b552803cd42697bca6e8db87fa0156d10f832383b2b8d4fddaa05716a4835f",
+        "binary_size": 47424,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/elk.git",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
@@ -341,8 +359,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "5b177d8114b7d0408e78d177e00c0d9fb6c79817209f9504011dc9fec5928cc7",
-        "binary_size": "5b177d8114b7d0408e78d177e00c0d9fb6c79817209f9504011dc9fec5928cc7",
+        "binary_sha256": "268620fdad5f550416a0bf3055d6d9e63f84fdf6e292f0ec6732cf91a69c7598",
+        "binary_size": 195328,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/mjs.git",
         "revision": "ed70eac9e8b334b1bfc251fc860511b2cb4aa418",
@@ -379,8 +397,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "246ae753cf7c8e93f9942b167accde515666cbfb16c981ea203bfca7f87fb325",
-        "binary_size": "246ae753cf7c8e93f9942b167accde515666cbfb16c981ea203bfca7f87fb325",
+        "binary_sha256": "030ad2cee6f52813c084de225a3b22cbf8f5c521bc948f806e3f02cf8439f27e",
+        "binary_size": 420568,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/v7.git",
         "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27",
@@ -405,18 +423,7 @@ kJavascriptZoo = [
     ]
   },
   {
-    "engine": "chakra",
-    "jit": "yes",
-    "language": "C++",
-    "license": "Proprietary",
-    "license_abbr": "Proprietary",
-    "org": "Microsoft",
-    "standard": "ES6 (partial)",
-    "summary": "JavaScript engine of IE 9.0 – 11.0 (jscript9.dll).",
-    "title": "Chakra",
-    "years": "2009-2013"
-  },
-  {
+    "dll": "chakra.dll",
     "engine": "chakracore",
     "github_forks": 1207,
     "github_stars": 9215,
@@ -437,16 +444,16 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "89d178840b564c7ec4ce678d1ed12bd04a95aa0566c566e8c0cbd87f70c7df0f",
-        "binary_size": "89d178840b564c7ec4ce678d1ed12bd04a95aa0566c566e8c0cbd87f70c7df0f",
+        "binary_sha256": "7214a102534610f98d6972cbc91fcf954ee02b895f5c67a598df87e409249883",
+        "binary_size": 12707112,
         "repository": "https://github.com/chakra-core/ChakraCore.git",
         "revision": "36becec43348f259e8bee08cf2fcd171bfe56f42",
         "revision_date": "2025-02-22"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "d8c056e928f8f8476a15336459edb4a72c37f5540860e42799c852cdbfe33ab9",
-        "binary_size": "d8c056e928f8f8476a15336459edb4a72c37f5540860e42799c852cdbfe33ab9",
+        "binary_sha256": "ceaf8bed41c6bef9b410ac9fc52d01a19ee09861a74a4a3c0a074ab84ef03381",
+        "binary_size": 9233312,
         "repository": "https://github.com/chakra-core/ChakraCore.git",
         "revision": "36becec43348f259e8bee08cf2fcd171bfe56f42",
         "revision_date": "2025-02-22",
@@ -640,7 +647,27 @@ kJavascriptZoo = [
     "standard": "ES2023",
     "summary": "QuickJS transpiled to pure Go.",
     "title": "cznic/quickjs",
-    "years": "2024-"
+    "years": "2024-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "642f1c8c3d30558c0f50c2248e93c17444d059a606be6c04a830e1a243beadb6",
+        "binary_size": 4855328,
+        "repository": "https://gitlab.com/cznic/quickjs.git",
+        "revision": "f48cdfb4e90d8c373eb6ae84bb6829d11beff2e9",
+        "revision_date": "2025-10-11",
+        "version": "0.16.1"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "2f2bce64686b91de377e4a1e66f96c6bf9050f9e71e8b1b2f75662c63451cc59",
+        "binary_size": 4684928,
+        "repository": "https://gitlab.com/cznic/quickjs.git",
+        "revision": "dbf970daceb8081737fe80c825d7b0929680fa10",
+        "revision_date": "2025-09-25",
+        "version": "0.15.8-13-gdbf970d"
+      }
+    ]
   },
   {
     "engine": "dmdscript",
@@ -655,11 +682,31 @@ kJavascriptZoo = [
     "org": "Digital Mars",
     "repository": "https://github.com/DigitalMars/DMDScript.git",
     "runtime": "register-based VM",
-    "standard": "ES3",
+    "standard": "ES3 (partial)",
     "summary": "ECMAScript implementation by Digital Mars written in D.",
     "title": "DMDScript",
     "url": "https://www.digitalmars.com/dscript/",
-    "years": "2002-"
+    "years": "2002-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "4e33a30deb71e7dbf602cfb5644db986253fd33a3c46f999e876697a975297cf",
+        "binary_size": 1880496,
+        "repository": "https://github.com/DigitalMars/DMDScript.git",
+        "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
+        "revision_date": "2024-06-18",
+        "version": "2.1.2"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "5e350e6a1b6edda7e421747dcce5a46c701c9732cf8d3578824355df123ca804",
+        "binary_size": 1806448,
+        "repository": "https://github.com/DigitalMars/DMDScript.git",
+        "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
+        "revision_date": "2024-06-18",
+        "version": "2.1.2"
+      }
+    ]
   },
   {
     "engine": "dmonkey",
@@ -693,7 +740,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "dfbd4437481e435fc61b025b5d7d417ebf0d8e06dbafdcfc3ee7f3afc37a3a84",
-        "binary_size": "dfbd4437481e435fc61b025b5d7d417ebf0d8e06dbafdcfc3ee7f3afc37a3a84",
+        "binary_size": 678952,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/svaarala/duktape.git",
         "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
@@ -803,7 +850,27 @@ kJavascriptZoo = [
     "standard": "no (can't handle ES1)",
     "summary": "JavaScript interpreter written in Rust with QuickJS-inspired bytecode.",
     "title": "echosoar/jsi",
-    "years": "2022-"
+    "years": "2022-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "ca9ac67dfd93bb5bb8cae66c3e88be0ab5eb14e319478bbfa5ca65a76d433297",
+        "binary_size": 1113640,
+        "repository": "https://github.com/echosoar/jsi.git",
+        "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
+        "revision_date": "2025-08-24",
+        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "5a23fe1b9394147bb218981564e678249cece77197b6bd39fd1c42f6f510492d",
+        "binary_size": 1053392,
+        "repository": "https://github.com/echosoar/jsi.git",
+        "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
+        "revision_date": "2025-08-24",
+        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+      }
+    ]
   },
   {
     "engine": "edbrowse",
@@ -867,7 +934,23 @@ kJavascriptZoo = [
     "summary": "An implementation of ECMA-262 in JavaScript aiming for 100% spec compliance, fast prototyping, validating new spec versions and test262.",
     "title": "engine262",
     "url": "https://engine262.js.org/",
-    "years": "2018-"
+    "years": "2018-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 1593028,
+        "repository": "https://github.com/engine262/engine262.git",
+        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
+        "revision_date": "2025-10-06"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 1593028,
+        "repository": "https://github.com/engine262/engine262.git",
+        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
+        "revision_date": "2025-10-06"
+      }
+    ]
   },
   {
     "engine": "epimetheus",
@@ -904,13 +987,13 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "9a940d21d282693fbd3276b4c69f4e7f8a63bda5a50af446e0ab78c56d195e08",
-        "binary_size": "9a940d21d282693fbd3276b4c69f4e7f8a63bda5a50af446e0ab78c56d195e08",
+        "binary_sha256": "15e46af62c3fc0708e7b1fb823a374798fd3f9deec15ff5e16baab63cd8476f8",
+        "binary_size": 5202576,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Samsung/escargot.git",
         "revision": "1577634b8f3e54f2934ae1739c77f812d2908f8e",
         "revision_date": "2025-08-21",
-        "version": "v4.3.0"
+        "version": "4.3.0"
       },
       {
         "arch": "arm64",
@@ -1014,7 +1097,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "da4f958830f44637fddefd20d9933abd606dd00bd7c90c06de2fe755a89cbae2",
-        "binary_size": "da4f958830f44637fddefd20d9933abd606dd00bd7c90c06de2fe755a89cbae2",
+        "binary_size": 1105208,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/espruino/Espruino.git",
         "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565",
@@ -1084,11 +1167,33 @@ kJavascriptZoo = [
     "loc": 7075,
     "loc_command": "cloc src",
     "parser": "YACC",
+    "regex": "PCRE",
     "repository": "https://github.com/ndreynolds/flathead.git",
     "runtime": "tree walker",
-    "summary": "Toy JavaScript interpreter written in C.",
+    "standard": "no (can't run ES1)",
+    "summary": "Buggy unfinished interpreter.",
     "title": "Flathead",
-    "years": "2012-2017"
+    "years": "2012-2017",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "30ec382c70e24ae3e00701f2ffd8634a33563530f06f35595bfc4132350a31e7",
+        "binary_size": 207872,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/ndreynolds/flathead.git",
+        "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
+        "revision_date": "2017-04-21"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "f586e0417da840113fca7383e8213544f480b8c8e6f5cea47197b7cbe22c67aa",
+        "binary_size": 199544,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/ndreynolds/flathead.git",
+        "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
+        "revision_date": "2017-04-21"
+      }
+    ]
   },
   {
     "engine": "goja",
@@ -1110,11 +1215,11 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "019d673458b211b2b2e56866ddf9b6256c80e94ed81a959ffdd3a05314d3908c",
-        "binary_size": "019d673458b211b2b2e56866ddf9b6256c80e94ed81a959ffdd3a05314d3908c",
+        "binary_sha256": "ba844e331bd027fbfbb00a08c4b6f1dd0e6897158099053c0bfb96060aef63a6",
+        "binary_size": 9779512,
         "repository": "https://github.com/dop251/goja.git",
-        "revision": "58d95d85e9949a7bad069058977368acf30c72dd",
-        "revision_date": "2025-06-30"
+        "revision": "cf18d89f3cf612fca36ebf06c10cc70ad66c1ac8",
+        "revision_date": "2025-10-08"
       },
       {
         "arch": "arm64",
@@ -1216,7 +1321,7 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": "amd64",
+        "binary_size": 195827758,
         "version": "25.0.0"
       },
       {
@@ -1350,7 +1455,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "8e045a18b5c63c2266b171fff14faa538782004fcf3a6565dda8b04b7a919e78",
-        "binary_size": "8e045a18b5c63c2266b171fff14faa538782004fcf3a6565dda8b04b7a919e78",
+        "binary_size": 4524032,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/facebook/hermes.git",
         "revision": "100fe4068fcefcacb0f192bd3202d29dec70ab46",
@@ -1509,8 +1614,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "74d85a11aff7b5bf79f0f0e700bd875938161a2dd2436cfde122a37b5cdec89f",
-        "binary_size": "74d85a11aff7b5bf79f0f0e700bd875938161a2dd2436cfde122a37b5cdec89f",
+        "binary_sha256": "caab701238b6cf078adbf06e6fa4f3e2bf6729779d52b393d06df70dea977f23",
+        "binary_size": 6418096,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Constellation/iv.git",
         "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
@@ -1519,8 +1624,8 @@ kJavascriptZoo = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "8861bbed4303ffee880c74d37d45f3166d0920d7a6eaf993790c677470f653c7",
-        "binary_size": "8861bbed4303ffee880c74d37d45f3166d0920d7a6eaf993790c677470f653c7",
+        "binary_sha256": "0ed2097f87f07ef72d22d526ccf80a2577e320a52074c532bfd2ce3365f9e705",
+        "binary_size": 4997488,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
         "repository": "https://github.com/Constellation/iv.git",
@@ -1714,12 +1819,12 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "18ee407b043c754c7cd738fdf16268325ff25a3f6ee7a7d1c76aee0ee1c0f351",
-        "binary_size": "18ee407b043c754c7cd738fdf16268325ff25a3f6ee7a7d1c76aee0ee1c0f351",
+        "binary_size": 445088,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/jerryscript-project/jerryscript.git",
         "revision": "50200152feb724a74a5f64e44d7885151537cfad",
         "revision_date": "2024-12-18",
-        "version": "v3.0.0"
+        "version": "3.0.0"
       },
       {
         "arch": "arm64",
@@ -1830,12 +1935,31 @@ kJavascriptZoo = [
     "loc": 4995,
     "loc_command": "cloc interpreter.js acorn.js",
     "parser": "Acorn",
-    "parser_note": "vendored and modified, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365",
+    "parser_note": "vendored and stripped-down to ES5, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365",
     "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
+    "runtime": "tree walker",
+    "runtime_note": "[interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689",
     "standard": "ES5",
-    "summary": "Sandboxed JavaScript interpreter in JavaScript.",
+    "summary": "Sandboxed ES5 interpreter in JavaScript.",
     "title": "JS-Interpreter",
-    "years": "2013-"
+    "url": "https://neil.fraser.name/software/JS-Interpreter/docs.html",
+    "years": "2013-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 97870,
+        "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
+        "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
+        "revision_date": "2025-02-27"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 97870,
+        "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
+        "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
+        "revision_date": "2025-02-27"
+      }
+    ]
   },
   {
     "engine": "js2py",
@@ -1876,7 +2000,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "52bb9f40fae13488b4c5929f1d17da2e0afef4abd1f819f1616d1a3a6e02e2ec",
-        "binary_size": "52bb9f40fae13488b4c5929f1d17da2e0afef4abd1f819f1616d1a3a6e02e2ec",
+        "binary_size": 28575160,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/WebKit/WebKit.git",
         "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
@@ -1886,7 +2010,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "4d98d5d57967db3410ca4eeeb3f6b9070a746bd1a17f7f05be92841060bc908d",
-        "binary_size": "4d98d5d57967db3410ca4eeeb3f6b9070a746bd1a17f7f05be92841060bc908d",
+        "binary_size": 32671712,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/WebKit/WebKit.git",
         "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
@@ -1897,7 +2021,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "db8f53364656fe7964645452b69c1e907c8b50ea56dc8d48ed4c26e49ebe3a0f",
-        "binary_size": "db8f53364656fe7964645452b69c1e907c8b50ea56dc8d48ed4c26e49ebe3a0f",
+        "binary_size": 13780328,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/WebKit/WebKit.git",
         "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
@@ -2101,18 +2225,21 @@ kJavascriptZoo = [
     "years": "2015-2016"
   },
   {
+    "dll": "Microsoft.JScript.dll",
     "engine": "jscript-net",
+    "jit": "via CLR",
     "language": "C#",
     "license": "Proprietary",
     "license_abbr": "Proprietary",
     "org": "Microsoft",
     "standard": "ES3, ES4 (draft)",
-    "summary": "Old Microsoft's JavaScript engine for .NET from early 2000s / ES4 era.",
+    "summary": "Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.",
     "title": "JScript .NET",
-    "url": "http://msdn.microsoft.com/ms974588.aspx",
-    "years": "2000-2005"
+    "url": "http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx",
+    "years": "2000-2010"
   },
   {
+    "dll": "jscript.dll",
     "engine": "jscript",
     "language": "C++",
     "license": "Proprietary",
@@ -2120,10 +2247,23 @@ kJavascriptZoo = [
     "org": "Microsoft",
     "runtime": "stack-based VM",
     "standard": "ES3",
-    "summary": "JavaScript engine of IE 3.0 – 8.0 (jscript.dll).",
+    "summary": "JavaScript engine of Internet Explorer 3.0 – 8.0.",
     "title": "JScript",
     "url": "https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29",
     "years": "1996-2011"
+  },
+  {
+    "dll": "jscript9.dll, jscript9Legacy.dll",
+    "engine": "jscript9",
+    "jit": "yes",
+    "language": "C++",
+    "license": "Proprietary",
+    "license_abbr": "Proprietary",
+    "org": "Microsoft",
+    "standard": "ES6 (partial)",
+    "summary": "JavaScript engine of Internet Explorer 9.0 – 11.0.",
+    "title": "JScript9 / Chakra",
+    "years": "2009-2013"
   },
   {
     "engine": "jsish",
@@ -2134,17 +2274,19 @@ kJavascriptZoo = [
     "license_abbr": "MIT",
     "loc": 50896,
     "loc_command": "cloc src",
+    "parser": "YACC",
+    "regex": "POSIX",
     "repository": "https://github.com/pcmacdon/jsish.git",
     "runtime": "stack-based VM",
-    "standard": "❌ (unfinished and buggy)",
-    "summary": "Unfinished embeddable JavaScript interpreter.",
+    "standard": "no (can't run ES1)",
+    "summary": "Buggy unfinished interpreter.",
     "title": "jsish",
     "years": "2020-2022",
     "bench": [
       {
         "arch": "amd64",
         "binary_sha256": "a7e316f9e0e71048bb02ad6bc27bf7c05a24d437956290966c5ee0a0388799f0",
-        "binary_size": "a7e316f9e0e71048bb02ad6bc27bf7c05a24d437956290966c5ee0a0388799f0",
+        "binary_size": 2370216,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/pcmacdon/jsish.git",
         "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f",
@@ -2211,8 +2353,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "27d776a195a9de6b67c7b999b726dfeb14bff05259c8305b6d9d689dd7bcbfd0",
-        "binary_size": "27d776a195a9de6b67c7b999b726dfeb14bff05259c8305b6d9d689dd7bcbfd0",
+        "binary_sha256": "38039e88c083b0385e94fe722a0b149b6921b4f249c5b7d909df9a1a41b4677f",
+        "binary_size": 13683160,
         "repository": "https://codeberg.org/kiesel-js/kiesel.git",
         "revision": "fc80d0e6f43c5ff303516cfe02dfb16f6f907d8e",
         "revision_date": "2025-09-25",
@@ -2313,7 +2455,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "81ca661efec688e8911b200857903c5b5d88975601d6bf220c2207bd151f91f5",
-        "binary_size": "81ca661efec688e8911b200857903c5b5d88975601d6bf220c2207bd151f91f5",
+        "binary_size": 1042448,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/KDE/kjs.git",
         "revision": "5824588da24f797b4255929918efbc8b484baa09",
@@ -2403,7 +2545,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "09c89afa248f6feb4a158062a9c1e03419213ec8c7be112e882234d9fe3ae84e",
-        "binary_size": "09c89afa248f6feb4a158062a9c1e03419213ec8c7be112e882234d9fe3ae84e",
+        "binary_size": 48097224,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/LadybirdBrowser/ladybird.git",
         "revision": "cb6ca85564abb57517b82754b4ac1ba78785707a",
@@ -2575,8 +2717,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "6a9e8ad91b80a653f9a601dfed186b2fc831511ec86080de3ddd2fa3e73e6793",
-        "binary_size": "6a9e8ad91b80a653f9a601dfed186b2fc831511ec86080de3ddd2fa3e73e6793",
+        "binary_sha256": "926f9c38e4c1e79d9392baf74fa8251ca85f54eb51a448857f5f76a78d74d44c",
+        "binary_size": 186768,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/doodlewind/mocha1995",
         "revision": "3d109cbf6d185c3665da2982e92ce198406cca01",
@@ -2629,7 +2771,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "df36cae2856ec8558febed4f3a4c4b954adbc9abbfe31177bc1cd6f531afbbbc",
-        "binary_size": "df36cae2856ec8558febed4f3a4c4b954adbc9abbfe31177bc1cd6f531afbbbc",
+        "binary_size": 384304,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://codeberg.org/ccxvii/mujs.git",
         "revision": "05cd646bad083ed45e9e1c9846ea671d461ced30",
@@ -2731,7 +2873,23 @@ kJavascriptZoo = [
     "standard": "ES5",
     "summary": "Metacircular JavaScript interpreter, was used for prototyping new language features in ES6.",
     "title": "Narcissus",
-    "years": "2007-2012"
+    "years": "2007-2012",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 208294,
+        "repository": "https://github.com/ivankra/narcissus.git",
+        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
+        "revision_date": "2025-10-08"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 208294,
+        "repository": "https://github.com/ivankra/narcissus.git",
+        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
+        "revision_date": "2025-10-08"
+      }
+    ]
   },
   {
     "engine": "nashorn",
@@ -2754,7 +2912,7 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": "amd64",
+        "binary_size": 2565636,
         "repository": "https://github.com/openjdk/nashorn.git",
         "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d",
         "revision_date": "2025-08-21",
@@ -2915,7 +3073,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "4b84c42e3b37d715cc290db610c0569b0a100a6e8626e1f707fd07529d46f545",
-        "binary_size": "4b84c42e3b37d715cc290db610c0569b0a100a6e8626e1f707fd07529d46f545",
+        "binary_size": 932448,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/nginx/njs.git",
         "revision": "b31f7333c772ba837977363536297b2608f64047",
@@ -3008,8 +3166,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "28498c0ed27bceb28f80e675c3cc53f772c2a07a9e303954bdae87b7cd5b7ba7",
-        "binary_size": "28498c0ed27bceb28f80e675c3cc53f772c2a07a9e303954bdae87b7cd5b7ba7",
+        "binary_sha256": "7af1a124025ec768f25c2c85b0852ab6f84392d6e8de4cccd90f4e141a6e7618",
+        "binary_size": 8850536,
         "repository": "https://github.com/trynova/nova.git",
         "revision": "81774d30bd814d8b7ea050e252557890f76c9b69",
         "revision_date": "2025-09-30",
@@ -3111,11 +3269,11 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "3e3685b24580208379638defd9700336841a2f7b2ee694981c96019c2b56b014",
-        "binary_size": "3e3685b24580208379638defd9700336841a2f7b2ee694981c96019c2b56b014",
+        "binary_size": 4890648,
         "repository": "https://github.com/robertkrimen/otto.git",
         "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a",
         "revision_date": "2025-06-13",
-        "version": "v0.5.1-2-g3ca7298"
+        "version": "0.5.1-2-g3ca7298"
       },
       {
         "arch": "arm64",
@@ -3199,7 +3357,21 @@ kJavascriptZoo = [
     "title": "Porffor",
     "type": "compiler to WASM",
     "url": "https://porffor.dev/",
-    "years": "2023-"
+    "years": "2023-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "repository": "https://github.com/CanadaHonk/porffor",
+        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
+        "revision_date": "2025-09-23"
+      },
+      {
+        "arch": "arm64",
+        "repository": "https://github.com/CanadaHonk/porffor",
+        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
+        "revision_date": "2025-09-23"
+      }
+    ]
   },
   {
     "engine": "primjs",
@@ -3244,13 +3416,34 @@ kJavascriptZoo = [
     "loc": 7917,
     "loc_command": "cloc *.{c,h}",
     "parser": "YACC",
+    "regex": "POSIX",
     "repository": "https://github.com/radare/quad-wheel.git",
     "runtime": "stack-based VM",
-    "standard": "ES3",
-    "summary": "ES3 engine written in ANSI C.",
+    "standard": "no (can't run ES1)",
+    "summary": "Buggy unfinished interpreter.",
     "title": "quad-wheel",
     "url": "https://code.google.com/archive/p/quad-wheel/",
-    "years": "2010"
+    "years": "2010",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "2d0cebfbe00caa2ec6ab5fa1a5b4729f74ddc6fc87f642555873d5b9223357e1",
+        "binary_size": 155064,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/radare/quad-wheel.git",
+        "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
+        "revision_date": "2012-03-26"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "115289879c9adf2bf68c0a5590fc3da003323b4762f944a1f24cbd2c41d6ed20",
+        "binary_size": 199888,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/radare/quad-wheel.git",
+        "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
+        "revision_date": "2012-03-26"
+      }
+    ]
   },
   {
     "engine": "quickjs-ng",
@@ -3273,12 +3466,12 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "04866f71bfe0e6dd72e90cd18d789947d3dd5fef16159e0fefa4453fb0a986a1",
-        "binary_size": "04866f71bfe0e6dd72e90cd18d789947d3dd5fef16159e0fefa4453fb0a986a1",
+        "binary_size": 1236536,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/quickjs-ng/quickjs.git",
         "revision": "07214197c24bb60066a0378ebd7690041f86e361",
         "revision_date": "2025-09-26",
-        "version": "v0.10.1-62-g0721419"
+        "version": "0.10.1-62-g0721419"
       },
       {
         "arch": "arm64",
@@ -3389,7 +3582,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "d7f6c6e0649295e30ea30c0306d6425e20dccf6fd8658230dcce5a2195a96b38",
-        "binary_size": "d7f6c6e0649295e30ea30c0306d6425e20dccf6fd8658230dcce5a2195a96b38",
+        "binary_size": 990496,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/bellard/quickjs.git",
         "revision": "fa628f8c523ecac8ce560c081411e91fcaba2d20",
@@ -3398,7 +3591,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "84ef71dd3b5cacd9584c55340b3bff061d351d0a94657c92502b3d5f67afcbff",
-        "binary_size": "84ef71dd3b5cacd9584c55340b3bff061d351d0a94657c92502b3d5f67afcbff",
+        "binary_size": 998728,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/bellard/quickjs.git",
         "revision": "fa628f8c523ecac8ce560c081411e91fcaba2d20",
@@ -3521,24 +3714,24 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "a66eac384db91fb51811b116112a163cd748ced6be6563fc4500f225d6f6a1a8",
-        "binary_size": "a66eac384db91fb51811b116112a163cd748ced6be6563fc4500f225d6f6a1a8",
+        "binary_sha256": "99dd9cbbc7abc4baa26ddc2b0ac04110e8d2f2b32d4cb14f448a1b5db9a4a1bd",
+        "binary_size": 13173928,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://code.qt.io/qt/qt5.git",
         "revision": "28229ddfafcc0ea39526536b1998f3ef02459436",
         "revision_date": "2025-09-26",
-        "version": "v6.9.3"
+        "version": "6.9.3"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "e8234a791e92de762a48fae84395fc080173595222530f6eba866cf6e7752094",
-        "binary_size": "e8234a791e92de762a48fae84395fc080173595222530f6eba866cf6e7752094",
+        "binary_sha256": "ceb9d825d8b59742c1533ff1b3bc4d28bf5d4b39530bfc8bfdaa8ea987293664",
+        "binary_size": 12887208,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://code.qt.io/qt/qt5.git",
         "revision": "28229ddfafcc0ea39526536b1998f3ef02459436",
         "revision_date": "2025-09-26",
         "variant": "jitless",
-        "version": "v6.9.3"
+        "version": "6.9.3"
       },
       {
         "arch": "arm64",
@@ -3733,7 +3926,7 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": "amd64",
+        "binary_size": 1526757,
         "repository": "https://github.com/mozilla/rhino",
         "revision": "0dcc00f6b3e2623f732828186ef8464d69ba51d1",
         "revision_date": "2025-01-02",
@@ -3833,12 +4026,65 @@ kJavascriptZoo = [
     "language": "JavaScript",
     "license": "Custom",
     "license_abbr": "Custom",
-    "note": "No original source available - only minified blob.",
+    "parser": "Acorn",
     "repository": "https://github.com/sablejs/sablejs.git",
+    "runtime": "stack-based VM",
     "standard": "ES5",
-    "summary": "Sandboxed ES5 interpreter written in JavaScript.",
+    "summary": "Closed-source bytecode-based sandboxed ES5 interpreter in JavaScript.",
     "title": "sablejs",
-    "years": "2020-2022"
+    "years": "2020-2022",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 39036209,
+        "repository": "https://github.com/sablejs/sablejs.git",
+        "revision": "f8236ffaeb8437230db1c3518971750586f6b842",
+        "revision_date": "2022-09-12",
+        "version": "1.1.0"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 37707457,
+        "repository": "https://github.com/sablejs/sablejs.git",
+        "revision": "f8236ffaeb8437230db1c3518971750586f6b842",
+        "revision_date": "2022-09-12",
+        "version": "1.1.0"
+      }
+    ]
+  },
+  {
+    "engine": "sandboxjs",
+    "github_forks": 10,
+    "github_stars": 168,
+    "language": "TypeScript",
+    "license": "MIT",
+    "license_abbr": "MIT",
+    "loc": 4212,
+    "loc_command": "cloc src",
+    "repository": "https://github.com/nyariv/SandboxJS.git",
+    "runtime": "tree walker",
+    "standard": "ES6 (subset)",
+    "summary": "Interpreter for a limited subset of ES6 for sandboxing untrusted code, preventing access to non-whitelisted functions/prototypes.",
+    "title": "SandboxJS",
+    "years": "2019-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 50848,
+        "repository": "https://github.com/nyariv/SandboxJS.git",
+        "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
+        "revision_date": "2025-05-10",
+        "version": "0.8.24-1-13-gcd391a8"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 50848,
+        "repository": "https://github.com/nyariv/SandboxJS.git",
+        "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
+        "revision_date": "2025-05-10",
+        "version": "0.8.24-1-13-gcd391a8"
+      }
+    ]
   },
   {
     "engine": "scriptease",
@@ -3890,7 +4136,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "90e5c40eb85505f65f4c6ff58526a161880805b7be919ca2b7ba0a6c131e0495",
-        "binary_size": "90e5c40eb85505f65f4c6ff58526a161880805b7be919ca2b7ba0a6c131e0495",
+        "binary_size": 17121424,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/mozilla-firefox/firefox",
         "revision": "5024f35d27488a1482b792f727cf880926575a71",
@@ -3903,7 +4149,7 @@ kJavascriptZoo = [
         "summary": "First ES3-compliant version. Shipped in Netscape Navigator 6.0 (2000) and Firefox 1.0 (2004).",
         "url": "https://web.archive.org/web/20210420113930/https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/New_in_JavaScript/1.5",
         "sources": "https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz",
-        "loc": "spidermonkey",
+        "loc": 58853,
         "language": "C",
         "license": "MPL-2.0",
         "org": "Mozilla",
@@ -3913,38 +4159,38 @@ kJavascriptZoo = [
         "loc_command": "cloc js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "8d0cc0d0d9e389fb23f706629623e79f727cc687aaa9ded2785ea44c89b4e319",
-        "binary_size": "8d0cc0d0d9e389fb23f706629623e79f727cc687aaa9ded2785ea44c89b4e319",
+        "binary_sha256": "eafdb063a760b10af2ee9bcea836e1bf9f78415c9faf7ea9e97330e6275c2c4d",
+        "binary_size": 673536,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "revision_date": "2004-09-24",
         "version": "1.5"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "3cf232ea6f0cef700c8c67ca80839479b366fbf67a337c23348110f90cf8f656",
-        "binary_size": "3cf232ea6f0cef700c8c67ca80839479b366fbf67a337c23348110f90cf8f656",
+        "binary_sha256": "fb446a8e05fa397d91378a49979c8cebc8c114fc1a38ff7661ee36cfd9110cad",
+        "binary_size": 862720,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "loc": "spidermonkey",
+        "loc": 71823,
         "revision_date": "2006-11-19",
         "variant": "1.6",
         "version": "1.6"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "16a974bf7338a9210626d0cd9e24c319aa614588f73519736370c94e6f20442a",
-        "binary_size": "16a974bf7338a9210626d0cd9e24c319aa614588f73519736370c94e6f20442a",
+        "binary_sha256": "df0fad581677ee93f8b9132ea3b12cf7f4200aed75e37fe1ac7efd01c5229c97",
+        "binary_size": 945248,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "loc": "spidermonkey",
+        "loc": 79328,
         "revision_date": "2007-10-03",
         "variant": "1.7",
         "version": "1.7.0"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "655af3c656ad11c02517f05a5e4e302a1bfdfc456e80c7c8c83b3bf78a45d571",
-        "binary_size": "655af3c656ad11c02517f05a5e4e302a1bfdfc456e80c7c8c83b3bf78a45d571",
+        "binary_sha256": "40b003d2406cc7325c9b37ffd888c2a438803a2863d67c244c9f64167b6a7d9d",
+        "binary_size": 990784,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "loc": "spidermonkey",
+        "loc": 85195,
         "revision_date": "2009-02-16",
         "variant": "1.8.0",
         "version": "1.8.0"
@@ -3955,7 +4201,7 @@ kJavascriptZoo = [
         "summary": "First ES5-compliant version. Shipped in Firefox 4.0 (2011).",
         "url": "https://web.archive.org/web/20210420113930/https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/New_in_JavaScript/1.8.5",
         "sources": "https://archive.mozilla.org/pub/js/js185-1.0.0.tar.gz",
-        "loc": "spidermonkey",
+        "loc": 220586,
         "language": "C++",
         "license": "MPL-2.0",
         "org": "Mozilla",
@@ -3967,8 +4213,8 @@ kJavascriptZoo = [
         "loc_command": "cloc --fullpath --not_match_f='(test|/(v8|t|ctypes|metrics)/|configure)' js-1.8.5/js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "a6a844121e83fdd48a5276371d0372bd2f4db0e7335a8a93433c4eeaa054e4c8",
-        "binary_size": "a6a844121e83fdd48a5276371d0372bd2f4db0e7335a8a93433c4eeaa054e4c8",
+        "binary_sha256": "0e2dcfd9623e747a9f37d6c16feb2835460f4266dfd4e5edb6a50b0b2d0e73d0",
+        "binary_size": 3682736,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "revision_date": "2011-03-31",
         "version": "1.8.5"
@@ -3976,7 +4222,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "8eb218f9cfef80abbcbae5ef69cf5614fe139ce248f563ef1d1eebcacbbb0d03",
-        "binary_size": "8eb218f9cfef80abbcbae5ef69cf5614fe139ce248f563ef1d1eebcacbbb0d03",
+        "binary_size": 14451600,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/mozilla-firefox/firefox",
         "revision": "5024f35d27488a1482b792f727cf880926575a71",
@@ -4236,7 +4482,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "a01629ea336d2327c9a5b58787539b32e6108060d4f3003c9b7ff681b77afc68",
-        "binary_size": "a01629ea336d2327c9a5b58787539b32e6108060d4f3003c9b7ff681b77afc68",
+        "binary_size": 3096168,
         "repository": "https://github.com/Starlight-JS/starlight.git",
         "revision": "503e789b9ef53594aee30c45a621018e855dcc17",
         "revision_date": "2021-10-31",
@@ -4331,7 +4577,7 @@ kJavascriptZoo = [
     "standard": "ES5 (partial)",
     "summary": "JavaScript to Lua compiler.",
     "title": "Tessel Colony",
-    "type": "compiler to Lua (targets its fork of Lua 5.1)",
+    "type": "compiler to Lua (targets its own modified fork of Lua 5.1)",
     "years": "2013-2015"
   },
   {
@@ -4341,13 +4587,34 @@ kJavascriptZoo = [
     "language": "C++",
     "license": "MIT",
     "license_abbr": "MIT",
-    "loc": 2656,
-    "loc_command": "cloc *.cpp *.h",
+    "loc": 2423,
+    "loc_command": "cloc TinyJS*.{cpp,h}",
     "repository": "https://github.com/gfwilliams/tiny-js.git",
     "runtime": "interprets from source",
-    "summary": "Primitive JavaScript interpreter.",
+    "standard": "no (can't run ES1)",
+    "summary": "Primitive interpreter for a limited subset of JavaScript.",
     "title": "tiny-js",
-    "years": "2009-2012"
+    "years": "2009-2012",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "adbd8ad2ad3fdb28ad444ed06e063410262cdb0eb03f00165b9faf9f75b16af7",
+        "binary_size": 154504,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gfwilliams/tiny-js.git",
+        "revision": "30842c88a459059f54a9fcc5e428b7da784f49ab",
+        "revision_date": "2025-10-10"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "f981839911474ecfa2128ed5557601974e4019a29e35cc9fbab285a86668c7fa",
+        "binary_size": 133936,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gfwilliams/tiny-js.git",
+        "revision": "905fa74287e1da5b3222074831fb124c7941b806",
+        "revision_date": "2025-09-29"
+      }
+    ]
   },
   {
     "engine": "tjs2",
@@ -4446,18 +4713,43 @@ kJavascriptZoo = [
   },
   {
     "engine": "ucode",
+    "gc": "reference counting + mark-and-sweep GC",
     "github_forks": 39,
     "github_stars": 117,
     "language": "C",
     "license": "ISC",
     "license_abbr": "ISC",
-    "loc": 39664,
+    "loc": 39692,
     "loc_command": "cloc *.c include lib",
+    "org": "OpenWrt",
+    "regex": "POSIX",
     "repository": "https://github.com/jow-/ucode.git",
-    "summary": "Interpreter for a JavaScript-like language.",
+    "runtime": "stack-based VM",
+    "standard": "no (distinct ES6-inspired language, different non-object-oriented standard library)",
+    "summary": "Interpreter for a small ES6-like language for microcontrollers.",
     "title": "ucode",
     "url": "https://ucode.mein.io/",
-    "years": "2020-"
+    "years": "2020-",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_size": 195712,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/jow-/ucode.git",
+        "revision": "5416dcfec9ea6326ee79a82da3e103a39ecf59aa",
+        "revision_date": "2025-09-29",
+        "version": "0.0.20250529-54-g5416dcf"
+      },
+      {
+        "arch": "arm64",
+        "binary_size": 269216,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/jow-/ucode.git",
+        "revision": "5416dcfec9ea6326ee79a82da3e103a39ecf59aa",
+        "revision_date": "2025-09-29",
+        "version": "0.0.20250529-54-g5416dcf"
+      }
+    ]
   },
   {
     "engine": "v8",
@@ -4484,7 +4776,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "186280ae44d166ed457c35c51e5309e69e794374ae900c3c06cd10191810d0ab",
-        "binary_size": "186280ae44d166ed457c35c51e5309e69e794374ae900c3c06cd10191810d0ab",
+        "binary_size": 20394632,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/v8/v8.git",
         "revision": "ad8af0fc661d278e87627fcaa3a7cf795ee80dd8",
@@ -4494,7 +4786,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "0601441438dd5361829f7229a02de6f71fdacc675c3436f739e6f7c4e4dde619",
-        "binary_size": "0601441438dd5361829f7229a02de6f71fdacc675c3436f739e6f7c4e4dde619",
+        "binary_size": 12370568,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/v8/v8.git",
         "revision": "ad8af0fc661d278e87627fcaa3a7cf795ee80dd8",
@@ -4505,7 +4797,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "829c485d11d187eed80df429121ea532148085c130ad42b227a3da2d5175845f",
-        "binary_size": "829c485d11d187eed80df429121ea532148085c130ad42b227a3da2d5175845f",
+        "binary_size": 24192664,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/chromium/src.git",
         "revision": "b95610d5c4a562d9cd834bc0a098d3316e2f533f",
@@ -4596,6 +4888,17 @@ kJavascriptZoo = [
         "Typescript_note": "N=100 median=40121 mean=37005.38±553.00 max=41970",
         "zlib_note": "N=100 median=4249 mean=4297.81±8.96 max=4457",
         "jit": ""
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "720f213419e0a8c8322b110884b2cc5c757c1467df261e2522a76cabce959158",
+        "binary_size": 23148184,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://chromium.googlesource.com/chromium/src.git",
+        "revision": "b95610d5c4a562d9cd834bc0a098d3316e2f533f",
+        "revision_date": "2025-09-29",
+        "variant": "pgo",
+        "version": "14.1.146.11"
       },
       {
         "arch": "x64",
@@ -4735,7 +5038,7 @@ kJavascriptZoo = [
       {
         "arch": "amd64",
         "binary_sha256": "de5cf5d657ba92aea11d4df17403fc051614e33a8ed0b9bed06c234cd39f009c",
-        "binary_size": "de5cf5d657ba92aea11d4df17403fc051614e33a8ed0b9bed06c234cd39f009c",
+        "binary_size": 2083920,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Moddable-OpenSource/moddable.git",
         "revision": "6ff5fb489fd5fe2557989265ae0ea10847e191ca",
