@@ -20,10 +20,10 @@ RUN mkdir -p /dist && \
     echo >/dist/ucode \
 '#!/bin/bash'"\n"\
 'LIB=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/ucode-dist'"\n"\
-'"$LIB/ucode" "-L$LIB" "$@"' && \
+'LD_LIBRARY_PATH="$LIB" "$LIB/ucode" "-L$LIB" "$@"' && \
     chmod a+rx /dist/ucode && \
     # Only the core interpreter, without optional modules \
-    du -bc ucode libucode.so.0 | tail -1 | cut -f 1 >/dist/jsz_binary_size
+    du -bc /dist/ucode-dist/ucode /dist/ucode-dist/libucode.so.0 | tail -1 | cut -f 1 >/dist/jsz_binary_size
 
 ENV JS_BINARY=/dist/ucode
-CMD ${JS_BINARY}
+# No REPL

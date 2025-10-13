@@ -16,4 +16,4 @@ RUN cargo build --release
 
 ENV JS_BINARY=/src/target/release/sl
 RUN mkdir -p /dist && rustc --version >/dist/jsz_rustc && git tag -d nightly
-CMD ${JS_BINARY}
+# No REPL

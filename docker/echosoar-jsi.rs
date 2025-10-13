@@ -1,14 +1,4 @@
-ARG BASE=jsz-rust
-FROM $BASE
-
-ARG REPO=https://github.com/echosoar/jsi.git
-ARG REV=master
-
-WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
-
-# No main() in the project - library only.
-RUN cat >src/main.rs <<EOF
+// Basic main() for the project to run test scripts.
 use jsi::JSI;
 use std::env;
 use std::fs;
@@ -18,7 +8,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() != 2 {
-        eprintln!("Usage: {} <script_path>", args[0]);
+        eprintln!("Usage: {} <script>", args[0]);
         process::exit(1);
     }
 
@@ -41,8 +31,3 @@ fn main() {
         }
     }
 }
-EOF
-
-RUN cargo build --release
-
-ENV JS_BINARY=/src/target/release/jsi

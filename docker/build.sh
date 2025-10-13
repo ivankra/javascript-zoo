@@ -39,7 +39,7 @@ if [[ "$DEP" == 1 ]]; then
   fi
   for f in "${df[@]}"; do
     echo "$f"
-    egrep -o '^COPY ([-a-z0-9.]+)' "$f" 2>/dev/null
+    egrep -o '^COPY ([-a-z0-9.]+)' "$f" | sed -e 's/COPY //' 2>/dev/null
   done
   exit 0
 fi

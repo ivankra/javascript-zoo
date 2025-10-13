@@ -126,6 +126,12 @@ rm -rf "$TMPCP"
 mkdir -p "$TMPCP"
 $DOCKER cp "$CID":/dist "$TMPCP"
 
+rm -rf \
+  "../dist/$ARCH/$ID" \
+  "../dist/$ARCH/$ID."* \
+  "../dist/$ARCH/$ID-dist" \
+  "../dist/$ARCH/$ID-lib"
+
 for src in "$TMPCP/dist/$ID"*; do
   if [[ -e "$src" ]]; then
     mkdir -p "../dist/$ARCH"
