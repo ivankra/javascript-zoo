@@ -9,3 +9,6 @@ QuickJS-based engine from ByteDance for their cross-platform mobile apps framewo
 * Standard:   ES2019
 * Years:      2024-
 * Runtime:    stack-based VM
+* GC:         mark-and-sweep / reference counting ([doc](https://github.com/lynx-family/primjs/blob/develop/docs/gc.md))
+
+Replaces QuickJS's reference counting with a faster mark-and-sweep GC (compile-time option).

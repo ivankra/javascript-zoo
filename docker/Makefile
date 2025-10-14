@@ -16,7 +16,7 @@ TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 # iv-lv5: no JIT on arm64 - main build is JIT-less
 # spidermonkey_1.8.5/17/24: doesn't support arm64 due to JIT that can't be compiled out
 ifeq ($(DOCKER_ARCH),arm64)
-  TARGETS := $(filter-out chakracore% iv-lv5_jitless spidermonkey_1.8.5 spidermonkey_17 spidermonkey_24 bali hako starlight,$(TARGETS))
+  TARGETS := $(filter-out chakracore% iv-lv5_jitless spidermonkey_1.8.5 spidermonkey_17 spidermonkey_24 bali starlight,$(TARGETS))
 endif
 
 all: base $(TARGETS)
