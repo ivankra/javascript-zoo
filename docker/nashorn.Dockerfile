@@ -11,17 +11,16 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN apt-get install -y --no-install-recommends openjdk-25-jdk-headless ant
 RUN cd make/nashorn && ant jar
 
-RUN VERSION=$(git describe --tags | sed -e 's/^release-//') && \
-    mkdir -p /dist/nashorn-$VERSION && \
-    cp /src/build/nashorn/dist/*.jar /dist/nashorn-$VERSION && \
-    cp /src/build/nashorn/dependencies/*.jar /dist/nashorn-$VERSION && \
+RUN mkdir -p /dist/nashorn-dist && \
+    cp /src/build/nashorn/dist/*.jar /dist/nashorn-dist && \
+    cp /src/build/nashorn/dependencies/*.jar /dist/nashorn-dist && \
     echo >/dist/nashorn \
 '#!/bin/bash'"\n"\
 'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'java --add-exports=jdk.internal.le/jdk.internal.org.jline.{reader,reader.impl,reader.impl.completer,terminal,keymap}=ALL-UNNAMED -cp "$SCRIPT_DIR/nashorn-'$VERSION'/*" org.openjdk.nashorn.tools.jjs.Main --language=es6 "$@"' && \
+'java -cp "$SCRIPT_DIR/nashorn-dist/*" --add-exports=jdk.internal.le/jdk.internal.org.jline.{reader,reader.impl,reader.impl.completer,terminal,keymap}=ALL-UNNAMED org.openjdk.nashorn.tools.jjs.Main --language=es6 "$@"' && \
     chmod a+rx /dist/nashorn && \
-    echo "$VERSION" >jsz_version && \
-    du -bc /dist/nashorn-$VERSION | tail -1 | cut -f 1 >jsz_binary_size
+    git describe --tags | sed -e 's/^release-//' >jsz_version && \
+    du -bc /dist/nashorn-dist | tail -1 | cut -f 1 >jsz_dist_size
 
 ENV JS_BINARY=/dist/nashorn
 CMD ${JS_BINARY}
