@@ -9,4 +9,4 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 * License:    MIT
 * Type:       compiler to WASM
 * Years:      2023-
-* Parser:     Acorn
+* Parser:     [Acorn](acorn.md)

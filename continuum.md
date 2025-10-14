@@ -9,5 +9,5 @@ ES6 interpreter written in ES3.
 * License:    MIT
 * Standard:   ES6 (partial)
 * Years:      2012-2014
-* Parser:     Esprima
+* Parser:     [Esprima](esprima.md)
 * Runtime:    stack-based VM

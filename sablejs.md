@@ -7,7 +7,7 @@ Closed-source bytecode-based sandboxed ES5 interpreter in JavaScript.
 * License:    Custom
 * Standard:   ES5
 * Years:      2020-2022
-* Parser:     Acorn
+* Parser:     [Acorn](acorn.md)
 * Runtime:    stack-based VM
 
 ## Features

@@ -8,4 +8,4 @@ Metacircular JavaScript interpreter.
 * License:    MIT
 * Standard:   ES2017 (partial, no standard library)
 * Years:      2018-
-* Parser:     Acorn
+* Parser:     [Acorn](acorn.md)

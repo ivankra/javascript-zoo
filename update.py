@@ -24,14 +24,20 @@ def main():
         help=('Fetch GitHub metadata. Optionally, provide API token from '
               'GitHub Settings > Developer settings > Personal access tokens'),
     )
-    parser.add_argument('-f', '--format', action='store_true', help="Reformat metadata in markdown files.")
+    parser.add_argument('-m', '--format-markdown', action='store_true', help="Reformat metadata in markdown files.")
 
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
-    update_data(args)
+    # Parse markdown, metadata, benchmark files, update data.json
+    data = update_data(args)
+
+    # Update files with dynamically-generated index tables
+    data = format_table_columns(data)
+    for filename in ['README.md', 'acorn.md']:
+        update_tables(filename, data)
 
 def update_data(args):
     rows = []
@@ -96,14 +102,7 @@ def update_data(args):
         fp.write('kJavascriptZoo = ')
         json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
-    lines = open('README.md').readlines()
-    idx = lines.index('## List of JavaScript engines\n')
-    end_idx = lines.index('<!-- End of table -->\n')
-
-    with open('README.md', 'w') as fp:
-        fp.write(''.join(lines[:(idx + 1)]) + '\n')
-        print_markdown_table(rows, fp=fp)
-        fp.write(''.join(lines[end_idx:]))
+    return rows
 
 # Parse markdown file and populate/update fields in row dict for that engine
 def process_markdown(row, filename, args):
@@ -113,12 +112,17 @@ def process_markdown(row, filename, args):
     if 'title' not in row:
         row['title'] = lines[0][1:].strip()
 
+    # Title in markdown file => column name in json
+    # Order of keys here is used to --format-markdown
     metadata_map = {
+        # Links to project/sources
         'URL': 'url',
+        'NPM': 'npm',
         'Repository': 'repository',
         'GitHub': 'github',    # if github not the main repo
         'Sources': 'sources',  # if no official repository
 
+        # General properties
         'LOC': 'loc',
         'Language': 'language',
         'License': 'license',
@@ -128,6 +132,8 @@ def process_markdown(row, filename, args):
         'Type': 'type',
         'Years': 'years',
 
+        # Technical properties
+        'Features': 'features',
         'Tech': 'tech',
         'Parser': 'parser',
         'Runtime': 'runtime',
@@ -152,7 +158,7 @@ def process_markdown(row, filename, args):
 
     line_no = 2
 
-    if re.match('^[A-Z]', lines[2]):
+    if not lines[2].strip().startswith('*'):
         while line_no < len(lines):
             assert not re.match(r'^\*', lines[line_no])
             if lines[line_no] == '':
@@ -160,7 +166,7 @@ def process_markdown(row, filename, args):
                 break
             line_no += 1
 
-        row['summary'] = ' '.join(lines[2:line_no]).strip()
+        row['summary'] = strip_markdown_links(' '.join(lines[2:line_no]).strip())
 
     metadata_start = line_no
     metadata_lines = []
@@ -171,21 +177,18 @@ def process_markdown(row, filename, args):
         line_no += 1
 
         m = re.match(r'^\* ([-A-Za-z ]+): +(.*)$', line)
-        assert m, line
+        assert m, '%s:%d: %s' % (filename, line_no, line)
         assert m[1].strip() in metadata_map, line
 
         key = metadata_map[m[1].strip()]
-        val = m[2].strip()
-
-        if key in ['repository', 'github'] and '<img' in val:
-            val = re.sub(' *<img .*', '', val).rstrip()
-
-        row[key] = val
-
         metadata_lines.append((key, line))
 
+        val = m[2].strip()
+        val = strip_html_tags(val)
+        row[key] = val
+
     metadata_end = line_no
-    if args.format:
+    if args.format_markdown:
         # Sort metadata in metadata_map's order
         metadata_lines = [(metadata_order.index(k), v) for (k, v) in metadata_lines]
         metadata_lines = [v for (k, v) in sorted(metadata_lines)]
@@ -208,14 +211,15 @@ def process_markdown(row, filename, args):
     # Split up some "text (note)" keys
     for key in list(row.keys()):
         val = row[key]
-        if key in ['summary', 'sources', 'tech'] or type(val) != str or '(' not in val:
+        if key in ['summary', 'sources', 'tech'] or type(val) != str or ' (' not in val:
             continue
 
         if key in ['loc', 'license', 'language', 'repository', 'github', 'parser', 'runtime']:
-            m = re.match(r'([^(]+) \(((?:)([^(]|`[^`]+`|\(http[^)]+\))+)\)$', val)
+            m = re.match(r'((?:[^ ][(]|[^(])+) \((.*)\)$', val)
+
             assert m, (key, val)
+            row[key] = strip_markdown_links(m[1])
             row[key + '_note'] = m[2]
-            row[key] = m[1].strip()
 
             if key == 'loc':
                 mm = re.match(r'^`(cloc [^`]+)`(.*)$', m[2])
@@ -225,6 +229,9 @@ def process_markdown(row, filename, args):
                         del row['loc_note']
         elif key not in ['standard', 'type', 'jit', 'vm']:
             print(f'Unprocessed note in {key}: {val}')
+
+    if row.get('parser') and '[' in row['parser']:
+        row['parser'] = strip_markdown_links(row['parser']).lower()
 
     # license_abbr
     if row.get('license'):
@@ -355,6 +362,105 @@ def summarize_scores(scores):
     sem = sd / (n ** 0.5)
     return f'N={n} median={median} mean={mean:.2f}±{sem:.2f} max={max(scores)}'
 
+def update_tables(filename, data):
+    original_lines = []
+    transformed_lines = []
+
+    with open(filename) as fp:
+        skip_till_end = False
+        for line in fp:
+            original_lines.append(line)
+
+            if skip_till_end:
+                m = re.match('^<!-- end of generated table .*-->$', line.strip())
+                if m:
+                    skip_till_end = False
+                continue
+
+            transformed_lines.append(line)
+
+            # Evaluate snippet of python code in .md to get a list of generated lines.
+            # Snippet should filter 'data' and call format_table().
+
+            m = re.match(r'^<!-- update.py: (format_table\(.*\)) -->$', line.strip())
+            if m:
+                for line in eval(m[1]):
+                    assert type(line) is str and line.endswith('\n'), line
+                    transformed_lines.append(line)
+                skip_till_end = True
+
+    assert not skip_till_end, '%s: missing "<!-- end of generated table -->" marker' % filename
+
+    if original_lines != transformed_lines:
+        with open(filename, 'w') as fp:
+            fp.write(''.join(transformed_lines))
+
+# Add extra columns for displaying the data in .md files
+def format_table_columns(data):
+    pinned = 'v8 spidermonkey jsc'.split()
+    res = []
+
+    for row in data:
+        row = dict(row)
+        res.append(row)
+
+        lang = row.get('language', '')
+        lang = re.sub(', .*', '', lang)
+        row['language_abbr'] = lang
+
+        if row['engine'] in pinned:
+            row['sort_key'] = 'A%02d' % pinned.index(row['engine'])
+        else:
+            row['sort_key'] = ' '.join([
+                lang.replace('TypeScript', 'JavaScript').replace('C++', 'C'),
+                '%06d' % (999998 - row.get('github_stars', -1)),
+                row['engine'].lower()
+            ])
+
+        repo_link = row.get('github', row.get('repository', ''))
+        repo_text = ''
+        if not repo_link and row.get('url', '').startswith('http'):
+            repo_link = row['url']
+        if repo_link:
+            repo_text = get_domain(repo_link) or 'link'
+        m = re.match('https?://github.com/([^/]+)/([^/]+?)(.git)?$', repo_link)
+        if m:
+            repo_text = f'{m[1]}/{m[2]}'
+        if re.match(r'https?://github.com/.*\.git$', repo_link):
+            repo_link = repo_link[:-4]
+        shields = None
+        if repo_link:
+            # Non-breaking hyphen (<nobr> stripped by github).
+            # Force the column to be wide enough to not wrap images.
+            shields = get_shields_for_repo(repo_link, 'README.md').strip()
+            if shields:
+                row['repository_shield'] = f'[{shields}]({repo_link})'
+            else:
+                row['repository_shield'] = f'[{repo_text}]({repo_link})'.replace('[brent-', '[brent‑')
+
+        row['engine_link'] = f'[{row["title"]}]({row["engine"]}.md)'
+        if shields:
+            row['engine_link'] += '<br>' + row['repository_shield']
+        elif repo_link:
+            row['engine_link'] += '<br>(%s)' % row['repository_shield']
+
+    res.sort(key=lambda row: row['sort_key'])
+    return res
+
+# columns = {title: column id}
+def format_table(data, columns):
+    lines = [
+        '| %s |\n' % (' | '.join(columns.keys())),
+        '|---' * len(columns) + '|\n',
+    ]
+
+    for row in data:
+        values = [str(row.get(c, '')) for c in columns.values()]
+        lines.append('| %s |\n' % (' | '.join(values)))
+
+    lines.append('<!-- end of generated table (%d rows) -->\n' % len(data))
+    return lines
+
 def get_shields_for_repo(repo_link, filename):
     m = re.match('https?://github.com/([^/]+)/([^/]+?)(.git)?$', repo_link)
     if not m:
@@ -378,66 +484,11 @@ def get_domain(url):
             return '.'.join(host.split('.')[-2:])
         return host
 
-def print_markdown_table(rows, fp):
-    pinned = 'v8 spidermonkey jsc'.split()
+def strip_markdown_links(text):
+    return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()
 
-    for row in rows:
-        s = row.get('language', '')
-        s = re.sub(', .*', '', s)
-        row['language_'] = s
-        row['title_'] = '%-32s' % f'[{row["title"]}]({row["engine"]}.md)'
-
-        if row['engine'] in pinned:
-            row['sort_key'] = 'A%02d' % pinned.index(row['engine'])
-        else:
-            row['sort_key'] = ' '.join([
-                s.replace('TypeScript', 'JavaScript').replace('C++', 'C'),
-                '%06d' % (999998 - row.get('github_stars', -1)),
-                row['engine'].lower()
-            ])
-
-        repo_link = row.get('github', row.get('repository', ''))
-        repo_text = ''
-        if not repo_link and row.get('url', '').startswith('http'):
-            repo_link = row['url']
-        if repo_link:
-            repo_text = get_domain(repo_link) or 'link'
-        m = re.match('https?://github.com/([^/]+)/([^/]+?)(.git)?$', repo_link)
-        if m:
-            repo_text = f'{m[1]}/{m[2]}'
-        if re.match(r'https?://github.com/.*\.git$', repo_link):
-            repo_link = repo_link[:-4]
-        shields = None
-        if repo_link:
-            # Non-breaking hyphen (<nobr> stripped by github).
-            # Force the column to be wide enough to not wrap images.
-            row['repository_'] = f'[{repo_text}]({repo_link})'.replace('[brent-', '[brent‑')
-            shields = get_shields_for_repo(repo_link, 'README.md').strip()
-            if shields:
-                row['repository_'] = f'[{shields}]({repo_link})'
-
-        row['title_'] = f'[{row["title"]}]({row["engine"]}.md)'
-        if shields:
-            row['title_'] += '<br>' + row['repository_']
-        elif repo_link:
-            row['title_'] += '<br>(%s)' % row['repository_']
-
-    rows.sort(key=lambda row: row['sort_key'])
-
-    cols = {
-        'title_': 'Engine',
-        'language_': 'Language',
-        'summary': 'Description',
-        'years': 'Years',
-        'license_abbr': 'License',
-        #'repository_': 'GitHub/URL',
-    }
-    print('<!-- Do not edit: autogenerated by data-gen.py -->', file=fp)
-    print('| %s |' % (' | '.join(cols.values())), file=fp)
-    print('|---' * len(cols) + '|', file=fp)
-    for row in rows:
-        values = [str(row.get(c, '')) for c in cols.keys()]
-        print('| %s |' % (' | '.join(values)), file=fp)
+def strip_html_tags(text):
+    return re.sub('<[^<]+?>', '', text).strip()
 
 if __name__ == '__main__':
     main()

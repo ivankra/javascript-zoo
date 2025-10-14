@@ -6,4 +6,4 @@ Toy metacircular JavaScript interpreter.
 * LOC:        662 (`cloc src`)
 * Language:   TypeScript
 * Years:      2018
-* Parser:     Acorn
+* Parser:     [Acorn](acorn.md)

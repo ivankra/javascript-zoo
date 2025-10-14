@@ -9,7 +9,7 @@ Sandboxed ES5 interpreter in JavaScript.
 * License:    Apache-2.0
 * Standard:   ES5
 * Years:      2013-
-* Parser:     Acorn (vendored and stripped-down to ES5, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365)
+* Parser:     [Acorn](acorn.md) (vendored and stripped-down to ES5, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365)
 * Runtime:    tree walker ([interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689)
 
 ## Features

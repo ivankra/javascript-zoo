@@ -9,6 +9,6 @@ JavaScript to Lua compiler.
 * Standard:   ES5 (partial)
 * Type:       compiler to Lua (targets its own modified fork of Lua 5.1)
 * Years:      2013-2015
-* Parser:     Acorn (vendored and modified)
+* Parser:     [Acorn](acorn.md) (vendored and modified)
 
 See also [Castl](castl.md).

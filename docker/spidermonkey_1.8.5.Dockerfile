@@ -39,6 +39,7 @@ RUN cd */js/src && \
     make -j
 
 # Metadata
+ENV JS_BINARY=/src/js/src/shell/js
 RUN ln -s */js js && \
     (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
     echo "$TARBALL" >jsz_sources && \
@@ -46,8 +47,6 @@ RUN ln -s */js js && \
     stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]' >jsz_revision_date && \
     echo YARR >jsz_regex && \
     echo ES5 >jsz_standard
-
-ENV JS_BINARY=/src/js/src/shell/js
 CMD ${JS_BINARY}
 
 # JIT-less 1.8.5 crashes on arm64:

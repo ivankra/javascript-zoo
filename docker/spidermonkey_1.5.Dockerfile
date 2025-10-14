@@ -52,12 +52,11 @@ RUN cd js/src && \
     make -f Makefile.ref BUILD_OPT=1
 
 # Metadata
+ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
 RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
     echo "$TARBALL" >jsz_sources && \
     ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
     ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p' >jsz_revision_date && \
     echo ES3 >jsz_standard && \
     echo "" >jsz_jit
-
-ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
 CMD ${JS_BINARY}
