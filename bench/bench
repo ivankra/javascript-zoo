@@ -10,6 +10,7 @@ import argparse
 import glob
 import json
 import os
+import platform
 import re
 import shlex
 import shutil
@@ -18,6 +19,7 @@ import subprocess
 import sys
 import tempfile
 import time
+
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Union
@@ -80,14 +82,14 @@ ES5_FOR_ES3_PF = '''
 class MemTest:
     """In-memory test case, a single self-contained script."""
 
-    filename: str  # basename
+    basename: str
     script: str
 
 def load_test(path: Union[str, Path], drop_loads=False) -> MemTest:
     """Read test case into memory, recursively resolving load() calls."""
 
     path = Path(path)
-    filename = path.name
+    basename = path.name
     lines = []
 
     for line in open(path):
@@ -105,7 +107,7 @@ def load_test(path: Union[str, Path], drop_loads=False) -> MemTest:
         lines.append('// END ' + line.strip() + '\n\n')
 
     script = ''.join(lines).strip() + '\n'
-    return MemTest(filename=filename, script=script)
+    return MemTest(basename=basename, script=script)
 
 TestTransform = Callable[[MemTest], Union[str, MemTest]]
 
@@ -115,7 +117,7 @@ class OctaneHarness:
         self._tail = None
 
     def __call__(self, test: MemTest) -> MemTest:
-        if test.filename not in OCTANE_TESTS:
+        if test.basename not in OCTANE_TESTS:
             return test
 
         if 'function Benchmark(' in test.script:
@@ -129,14 +131,13 @@ class OctaneHarness:
             self._tail = re.sub(r'load\([^)]+\);', '', self._tail)
 
         script = self._base + test.script + self._tail
-        return MemTest(filename=test.filename, script=script)
+        return MemTest(basename=test.basename, script=script)
 
 class OctalTransform:
     """Fix octal char sequences in earley-boyer.js, "\000" -> "\x00" etc."""
 
-    def __call__(self, test: MemTest) -> MemTest:
-        script = re.sub(r'"\\[01]([0-9][0-9])"', self._replace, test.script)
-        return MemTest(filename=test.filename, script=script)
+    def __call__(self, test: MemTest) -> str:
+        return re.sub(r'"\\[01]([0-9][0-9])"', self._replace, test.script)
 
     def _replace(self, match: re.Match) -> str:
         return '"\\x%.2X"' % ord(eval(match[0])[0])
@@ -144,9 +145,8 @@ class OctalTransform:
 class HexTransform:
     """Replace hex literals by decimal."""
 
-    def __call__(self, test: MemTest) -> MemTest:
-        script = re.sub(r'''(0x[0-9a-fA-F]+|"(?:[^"\n]|\")+"|'(?:'[^'\n]|\')+')''', self._replace, test.script)
-        return MemTest(filename=test.filename, script=script)
+    def __call__(self, test: MemTest) -> str:
+        return re.sub(r'''(0x[0-9a-fA-F]+|"(?:[^"\n]|\")+"|'(?:'[^'\n]|\')+')''', self._replace, test.script)
 
     def _replace(self, match: re.Match) -> str:
         if match[0].startswith('0x'):
@@ -161,8 +161,8 @@ class PolyfillTransform:
                 lines.append(line.strip())
         self.code = '\n'.join(lines) + '\n'
 
-    def __call__(self, test: MemTest) -> MemTest:
-        return MemTest(filename=test.filename, script=self.code + test.script)
+    def __call__(self, test: MemTest) -> str:
+        return self.code + test.script
 
 class Binary:
     path: Path
@@ -180,6 +180,12 @@ class Binary:
             self.path = Path(args[0])
             self.flags = args[1:]
 
+        # allow benchmarking binaries in PATH, e.g. node
+        if not os.path.exists(self.path) and '/' not in self.path:
+            which_path = shutil.which(self.path)
+            if which_path:
+                self.path = Path(which_path)
+
         if not os.path.exists(self.path):
             raise FileNotFoundError(self.path)
 
@@ -194,16 +200,17 @@ class Binary:
 
 @dataclass
 class Run:
-    temp_dir: Path
-    binary: Binary
+    temp: Dict[str, Path]  # Temp paths
+    binary_path: Path
+    flags: List[str]
+    metadata: Dict[str, Any]
     test: MemTest
+    test_basename: str
     args: argparse.Namespace
+    timeout: Optional[float] = None
     command: str = ''  # bash command
     output: str = ''   # stdout+stderr combined
     errors: List[str] = field(default_factory=list)
-    script_path: Optional[Path] = None
-    output_path: Optional[Path] = None
-    time_path: Optional[Path] = None
     # Result of subprocess.run() with self.command
     proc: Optional[subprocess.CompletedProcess] = None
     # exit_code..max_rss_kb: as measured by /usr/bin/time
@@ -216,6 +223,17 @@ class Run:
     sys_time: Optional[float] = None
     max_rss_kb: Optional[int] = None
     scores: Dict[str, Union[int, float]] = field(default_factory=dict)
+
+    def to_dict(self):
+        res = {}
+        for k, v in self.__dict__.items():
+            if k in ['proc', 'args', 'temp']:
+                continue
+            elif hasattr(v, 'to_dict'):
+                res[k] = v.to_dict()
+            else:
+                res[k] = v
+        return res
 
 class Runner:
     # Flags to pass to binary (before script path). binary.flags takes precedence.
@@ -263,36 +281,46 @@ class Runner:
         self.benchmark_suite = benchmark_suite
 
     def __call__(self, binary: Binary, test: MemTest, args: argparse.Namespace) -> Run:
-        test_pref = test.filename.replace('.js', '')
-        temp_dir = Path(tempfile.mkdtemp(prefix=f'{binary.path.name}-{test_pref}-'))
-        run = Run(temp_dir=temp_dir, binary=binary, test=test, args=args)
+        temp_dir=Path(tempfile.mkdtemp(prefix=f'{binary.path.name}-{test.basename.removesuffix(".js")}-'))
+
+        run = Run(
+            temp = {
+                'dir': temp_dir,
+                'output': temp_dir / 'output',
+                'time': temp_dir / 'time',
+                'script': temp_dir / test.basename,
+            },
+            binary_path=binary.path,
+            flags=(self.flags if binary.flags is None else binary.flags),
+            metadata=binary.metadata,
+            test=test,
+            test_basename=test.basename,
+            args=args,
+        )
 
         if run.args.timeout:
             run.timeout = run.args.timeout
         else:
             run.timeout = self.timeout_for_test.get(
-                os.path.basename(run.test.filename), self.timeout)
-
-        run.output_path = run.temp_dir / 'output'
-        run.time_path = run.temp_dir / 'time'
+                os.path.basename(run.test_basename), self.timeout)
 
         self.transform_test(run)
         self.save_script(run)
         self.build_command(run)
         self.run_command(run)
 
-        if run.output_path.exists():
-            run.output = run.output_path.open().read()
+        if run.temp['output'].exists():
+            run.output = run.temp['output'].open().read()
 
         self.parse_time_output(run)
-        self.extract_scores(run)
+        self.extract_benchmark_scores(run)
         self.check_errors(run)
 
         if run.errors or run.args.keep:
-            with open(run.temp_dir / 'run.json', 'w') as fp:
+            with open(temp_dir / 'run.json', 'w') as fp:
                 json.dump(run.__dict__, indent=2, fp=fp, default=repr)
         else:
-            shutil.rmtree(run.temp_dir)
+            shutil.rmtree(temp_dir)
 
         return run
 
@@ -304,23 +332,21 @@ class Runner:
                 test = res
             else:
                 assert type(res) is str
-                test = MemTest(filename=test.filename, script=res)
+                test = MemTest(basename=test.basename, script=res)
         run.test = test
 
     def save_script(self, run: Run):
-        run.script_path = run.temp_dir / run.test.filename
-        with open(run.script_path, 'w') as f:
-            f.write(run.test.script)
-        run.test.script = None
+        with open(run.temp['script'], 'w') as fp:
+            fp.write(run.test.script)
 
     def build_command(self, run: Run):
-        run.command = shlex.join(['cd', run.temp_dir.as_posix()])
+        run.command = shlex.join(['cd', run.temp['dir'].as_posix()])
         run.command += '; ' + shlex.join(
             ['stdbuf', '-oL', '-eL'] +
             ['/usr/bin/time', '-v', '-o', 'time'] +
-            [run.binary.path.as_posix()] +
-            (run.binary.flags if run.binary.flags else self.flags) +
-            [run.script_path.name]
+            [run.binary_path.as_posix()] +
+            run.flags +
+            [run.temp['script'].name]
         ) + ' 2>&1'
         if self.timestamp_output:
             # Prefix output lines with time relative to start, n.nnnnnn
@@ -330,19 +356,25 @@ class Runner:
         run.command += ' | tee output'
 
     def run_command(self, run: Run):
-        print(f'Running: {run.command}', flush=True)
+        print(f'> {run.command}', flush=True)
         try:
-            run.proc = subprocess.run(
+            run.proc = subprocess.Popen(
                 ['/bin/bash', '-e', '-o', 'pipefail', '-c', run.command],
-                timeout=run.timeout
+                start_new_session=True,
             )
+            run.proc.wait(timeout=run.timeout)
         except subprocess.TimeoutExpired:
-            run.errors.append('Timeout (%0.fs)' % run.timeout)
+            run.errors.append('Timeout')
+        finally:
+            # Kill whole process group, not just directly launched process
+            if run.proc.poll() is None:
+                os.killpg(os.getpgid(run.proc.pid), signal.SIGKILL)
+                run.proc.wait()
 
     def parse_time_output(self, run: Run):
         """Parse the output of /usr/bin/time -v"""
 
-        assert run.time_path.exists()
+        assert run.temp['time'].exists()
 
         keymap = {
             'User time (seconds)': 'user_time',
@@ -352,7 +384,7 @@ class Runner:
             'Exit status': 'exit_code',
         }
 
-        for line in run.time_path.open():
+        for line in run.temp['time'].open():
             m = re.match('^Command terminated by signal ([0-9]+)$', line)
             if m:
                 run.exit_signal = int(m[1])
@@ -379,12 +411,17 @@ class Runner:
 
             setattr(run, keymap[key], val)
 
-    def extract_scores(self, run):
-        matches = re.findall(r'([A-Zz][a-zA-Z0-9]+|Score [(]version .[)]): ([-+.e0-9]+)', run.output)
-        run.scores = {}
-        for name, score in matches:
-            if name == 'LEAK': continue  # KJS
-            name = name.replace(' (version ', 'V').replace(')', '')
+    def extract_benchmark_scores(self, run):
+        expected = re.findall(r'''new BenchmarkSuite\(['"]([A-Za-z0-9]+)['"]''', run.test.script)
+        if 'BenchmarkSuite.GeometricMeanLatency' in run.test.script:
+            expected += [s + 'Latency' for s in expected if s in ['Splay', 'Mandreel']]
+        if run.test_basename.startswith('richards.'):
+            expected += ['Richards']
+        run.scores = {s: None for s in expected}
+
+        pattern = r'(%s|Score \(version [0-9]\)): ([0-9.]+(?:e[+-][0-9]+)?)' % ('|'.join(expected))
+        for name, score in re.findall(pattern, run.output):
+            name = re.sub(r' \(version ([0-9])\)', r'V\1', name)
             try:
                 score = int(score)
             except:
@@ -392,7 +429,10 @@ class Runner:
                     score = float(score)
                 except:
                     continue
-                score = round(score, 3)
+                if score == int(score):
+                    score = int(score)
+                else:
+                    score = round(score, 3)
             run.scores[name] = score
 
     def check_errors(self, run: Run):
@@ -423,6 +463,49 @@ class Runner:
                 run.errors.append(f'Exit code: {run.exit_code}')
             elif run.proc.returncode != 0:  # of bash command
                 run.errors.append(f'Command "{run.command}" exited with {run.proc.returncode}')
+
+def coalesce_runs_to_json(runs: List[Run]) -> str:
+    res = {
+        'binary': runs[-1].binary_path.name,
+        'flags': runs[-1].flags,
+        'metadata': runs[-1].metadata,
+        'benchmarks': {},
+    }
+
+    if not res['flags']:
+        res.pop('flags')
+
+    for run in runs:
+        for key in run.scores.keys():
+            res['benchmarks'][key] = {'score': [], 'error': '', 'user': [], 'sys': [], 'real': [], 'rss_mb': []}
+
+    for run in runs:
+        for key in run.scores.keys():
+            d = res['benchmarks'][key]
+            if run.errors:
+                d['error'] = run.errors[0]
+            if run.scores[key] is not None:
+                d['score'].append(run.scores[key])
+            if run.user_time is not None:
+                d['user'].append(run.user_time)
+            if run.sys_time is not None:
+                d['sys'].append(run.sys_time)
+            if run.real_time is not None:
+                d['real'].append(run.real_time)
+            if run.max_rss_kb is not None:
+                d['rss_mb'].append(round(run.max_rss_kb / 1024.0, 2))
+
+    for d in res['benchmarks'].values():
+        if d['error']:
+            del d['score']
+        else:
+            del d['error']
+
+
+    # indent except arrays
+    s = json.dumps(res, indent=2)
+    s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m[1])), s)
+    return s
 
 RUNNERS = {
   'boa': Runner(timeout_for_test={'zlib.js': 900}),
@@ -504,7 +587,7 @@ RUNNERS = {
 }
 
 def pick_runner(args, binary):
-    for name in [args.variant, binary.path.name, binary.metadata.get('engine')]:
+    for name in [args.config, binary.path.name, binary.metadata.get('engine')]:
         if name:
             if name in RUNNERS:
                 return RUNNERS[name]
@@ -515,18 +598,29 @@ def pick_runner(args, binary):
 
     return Runner()
 
+def dynamic_rep_limit(run: Run) -> int:
+    if run.real_time > 300:
+        rep_limit = 1
+    elif run.real_time > 120:
+        return 3
+    elif run.real_time > 10:
+        return 20
+    else:
+        return 100
+
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--config', help='Runner variant to use, "engine[_variant]"')
     parser.add_argument('-k', '--keep', action='store_true', help='Keep temp dir')
     parser.add_argument('-o', '--output', help='Write benchmark results here as json')
     parser.add_argument('-r', '--reps', type=int, metavar='repetitions')
-    parser.add_argument('-t', '--timeout', type=int, metavar='seconds')
-    parser.add_argument('-v', '--variant', help='Runner variant to use, "engine[_variant]"')
+    parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
     parser.add_argument('binary', help='Binary to execute, optionally with flags')
     parser.add_argument('tests', nargs='*', help='Test files to run')
     args = parser.parse_args()
 
     binary = Binary(args.binary)
+
     runner = pick_runner(args, binary)
     if args.tests:
         test_files = args.tests
@@ -534,19 +628,45 @@ def main():
         test_files = runner.benchmark_suite
     else:
         test_files = OCTANE_TESTS
+    assert test_files
+
+    bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
+
+    output_path = args.output
+    if not (output_path or args.tests or args.config or binary.flags):
+        arch = {'aarch64': 'arm64', 'x86_64': 'amd64'}[platform.machine()]
+        output_path = bench_dir / arch / (binary.path.name + '.json')
+        output_path.parent.mkdir(exist_ok=True)
+        print('Saving results to: %s' % str(output_path))
+
+    all_runs = []
 
     for filename in test_files:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), filename)
+        path = bench_dir / filename
         test = load_test(path)
-        run = runner(binary, test, args)
-        if run.errors:
-            print('Errors: ' + str(run.errors))
-        if run.scores:
-            print('Scores: ' + str(run.scores))
-        if run.max_rss_kb:
-            print('real/user/sys/rss: %.2f %.2f %.2f %.0fM' % (run.real_time, run.user_time, run.sys_time, run.max_rss_kb/1024.0))
-        print()
-        sys.stdout.flush()
+        test_runs = []
+        limit = args.reps
+
+        while limit is None or len(test_runs) < limit:
+            run = runner(binary, test, args)
+
+            test_runs.append(run)
+            all_runs.append(run)
+
+            if run.errors:
+                break
+
+            if limit is None:
+                limit = dynamic_rep_limit(run)
+                print('real %.2fs => %d reps' % (run.real_time, limit), flush=True)
+
+        json_str = coalesce_runs_to_json(all_runs)
+
+        if output_path is not None:
+            with open(output_path, 'w') as fp:
+                fp.write(json_str)
+
+    print(json_str)
 
 if __name__ == '__main__':
     main()

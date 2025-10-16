@@ -47,7 +47,7 @@ RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
     bash -c 'source /opt/nvm/nvm.sh && nvm install node' && \
     ln -s /opt/nvm/versions/node/*/ /opt/node
 
-ENV PATH=/opt/node/bin:$PATH
+ENV PATH=/bench:/opt/node/bin:$PATH
 
 # Install other popular runtimes from npm:
 #   * bun: JavaScriptCore-based JS/TS runtime written in Zig (https://github.com/oven-sh/bun)
@@ -58,17 +58,17 @@ RUN npm install -g bun deno bare && \
 
 # LLRT: lightweight QuickJS/tokio-based runtime.
 # https://github.com/awslabs/llrt
-RUN cd /opt && wget "https://github.com/awslabs/llrt/releases/download/v0.7.0-beta/llrt-linux-$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/').zip" && \
-    unzip llrt*.zip && rm -f llrt*.zip && mv llrt /usr/local/bin
-
+#RUN cd /opt && wget "https://github.com/awslabs/llrt/releases/download/v0.7.0-beta/llrt-linux-$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/').zip" && \
+#    unzip llrt*.zip && rm -f llrt*.zip && mv llrt /usr/local/bin
+#
 # RingoJS: Rhino-based runtime for JVM.
 # https://github.com/ringo/ringojs
-RUN cd /opt && wget "https://github.com/ringo/ringojs/releases/download/v4.0.0/ringojs-4.0.0.tar.gz" && \
-    tar xf ringojs*.tar.gz && rm -f ringojs*.tar.gz \
-    echo >/usr/local/bin/ringojs \
-      '#!/bin/sh'"\n" \
-      'java -jar /opt/ringo*/run.jar "$@"' && \
-    chmod a+rx /usr/local/bin/ringojs
+#RUN cd /opt && wget "https://github.com/ringo/ringojs/releases/download/v4.0.0/ringojs-4.0.0.tar.gz" && \
+#    tar xf ringojs*.tar.gz && rm -f ringojs*.tar.gz \
+#    echo >/usr/local/bin/ringojs \
+#      '#!/bin/sh'"\n" \
+#      'java -jar /opt/ringo*/run.jar "$@"' && \
+#    chmod a+rx /usr/local/bin/ringojs
 
 
 # -----------------------------------------------------------------------------
