@@ -6,6 +6,7 @@ Interpreter for a subset of JavaScript for microcontrollers.
 * LOC:        10449 (`cloc --not_match_d="platforms" src`)
 * Language:   C
 * License:    GPL-2.0-only
-* Standard:   ❌ (ES1 compliance issues)
+* Standard:   no (can't run ES1)
+* Type:       JavaScript-like language
 * Years:      2016-
 * Runtime:    stack-based VM

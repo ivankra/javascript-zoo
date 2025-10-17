@@ -7,6 +7,7 @@ Buggy unfinished interpreter.
 * Language:   C
 * License:    MIT
 * Standard:   no (can't run ES1)
+* Type:       JavaScript-like language
 * Years:      2012-2017
 * Parser:     YACC
 * Runtime:    tree walker

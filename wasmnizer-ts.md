@@ -7,5 +7,5 @@ Compiler for a TypeScript subset targetting WebAssembly.
 * Language:   TypeScript
 * License:    Apache-2.0 WITH LLVM-exception
 * Org:        Intel
-* Type:       compiler to WASM
+* Type:       JavaScript-like language, compiler to WASM
 * Years:      2023-2024

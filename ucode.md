@@ -9,6 +9,7 @@ Interpreter for a small ES6-like language for microcontrollers.
 * License:    ISC
 * Org:        OpenWrt
 * Standard:   no (distinct ES6-inspired language, different non-object-oriented standard library)
+* Type:       JavaScript-like language
 * Years:      2020-
 * Runtime:    stack-based VM
 * GC:         reference counting + mark-and-sweep GC

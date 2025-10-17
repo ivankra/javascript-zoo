@@ -7,5 +7,6 @@ JUCE music apps framework used to have own rudimentary interpreter for a JavaScr
 * Language:   C++
 * License:    ISC
 * Note:       Dropped in favor of QuickJS in v8.0.
+* Type:       JavaScript-like language
 * Years:      2013-2023
 * Runtime:    tree walker

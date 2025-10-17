@@ -7,6 +7,7 @@ Buggy unfinished interpreter.
 * Language:   C
 * License:    MIT
 * Standard:   no (can't run ES1)
+* Type:       JavaScript-like language
 * Years:      2020-2022
 * Parser:     YACC
 * Runtime:    stack-based VM

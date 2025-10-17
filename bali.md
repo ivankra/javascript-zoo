@@ -7,7 +7,7 @@ JavaScript engine written in Nim.
 * LOC:        12642 (`cloc src`)
 * Language:   Nim
 * License:    BSD-3-Clause
-* Standard:   ❌ (struggles to parse basic JS1.0/ES1 code)
+* Standard:   no (can't run basic JS1.0/ES1 code yet)
 * Years:      2024-
 * Runtime:    register-based VM
 * JIT:        x64

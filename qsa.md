@@ -7,7 +7,7 @@ Qt 3's JavaScript engine: Qt Script for Applications.
 * Language:   C++
 * License:    GPL-2.0-only
 * Org:        Qt
-* Standard:   ES3, ES4 (draft)
+* Standard:   ES4 (ES3 + some ES4 draft features)
 * Years:      2002-2007
 * Tech:       tree walker
 * Parser:     YACC

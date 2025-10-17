@@ -6,5 +6,5 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 * LOC:        5945 (`cloc src`)
 * Language:   Rust
 * License:    MIT
-* Standard:   no (can't handle ES1)
+* Standard:   no (can't run ES1)
 * Years:      2022-

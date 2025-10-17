@@ -7,6 +7,6 @@ JavaScript engine of Adobe Flash Player 9+.
 * Language:   C++
 * License:    MPL-2.0
 * Org:        Adobe
-* Standard:   ES3, ES4 (draft)
+* Standard:   ES4 (ES3 + some ES4 draft features)
 * Years:      2006-2013
 * JIT:        yes

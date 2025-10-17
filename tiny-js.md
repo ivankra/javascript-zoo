@@ -7,6 +7,7 @@ Primitive interpreter for a limited subset of JavaScript.
 * Language:   C++
 * License:    MIT
 * Standard:   no (can't run ES1)
+* Type:       JavaScript-like language
 * Years:      2009-2012
 * Runtime:    interprets from source
 

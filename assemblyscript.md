@@ -7,7 +7,7 @@ Compiler for a restricted TypeScript dialect to WebAssembly.
 * LOC:        72325 (`cloc src std cli lib util`)
 * Language:   TypeScript
 * License:    Apache-2.0
-* Type:       compiler to WASM (via Binaryen)
+* Type:       JavaScript-like language, compiler to WASM (via Binaryen)
 * Years:      2017-
 
 No function closures, iterators or exceptions.

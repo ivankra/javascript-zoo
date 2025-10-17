@@ -7,7 +7,7 @@ Embeddable JavaScript engine.
 * LOC:        106690 (`cloc --not_match_d="(?i)(test|pcre|zlib|ejs.web)" src`)
 * Language:   C
 * License:    GPL-2.0-only
-* Standard:   ES3, ES4 (draft)
+* Standard:   ES4 (ES3 + some ES4 draft features)
 * Years:      2003-2014
 * Regex:      PCRE2
 

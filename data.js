@@ -18,6 +18,14 @@ kJavascriptZoo = [
     "years": "2012-",
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 122586,
+        "repository": "https://github.com/acornjs/acorn.git",
+        "revision": "ca53db28c88ce5a8ee8c7db7027be71ed29b6aaf",
+        "revision_date": "2025-09-01",
+        "version": "8.15.0-13-gca53db2"
+      },
+      {
         "arch": "arm64",
         "dist_size": 122586,
         "repository": "https://github.com/acornjs/acorn.git",
@@ -39,7 +47,7 @@ kJavascriptZoo = [
     "repository": "https://github.com/AssemblyScript/assemblyscript.git",
     "summary": "Compiler for a restricted TypeScript dialect to WebAssembly.",
     "title": "AssemblyScript",
-    "type": "compiler to WASM (via Binaryen)",
+    "type": "JavaScript-like language, compiler to WASM (via Binaryen)",
     "url": "https://www.assemblyscript.org/",
     "years": "2017-"
   },
@@ -92,7 +100,7 @@ kJavascriptZoo = [
     "loc_command": "cloc src",
     "repository": "https://github.com/ferus-web/bali.git",
     "runtime": "register-based VM",
-    "standard": "❌ (struggles to parse basic JS1.0/ES1 code)",
+    "standard": "no (can't run basic JS1.0/ES1 code yet)",
     "summary": "JavaScript engine written in Nim.",
     "title": "Bali",
     "url": "https://bali.xtrayambak.xyz/",
@@ -361,9 +369,10 @@ kJavascriptZoo = [
     "loc_command": "cloc elk.c elk.h",
     "repository": "https://github.com/cesanta/elk.git",
     "runtime": "interprets from source",
-    "standard": "❌ (ES1 compliance issues)",
-    "summary": "Toy interpreter for microcontrollers that can hardly run any JavaScript.",
+    "standard": "no (can't run ES1)",
+    "summary": "Toy interpreter for microcontrollers for a small JavaScript subset.",
     "title": "cesanta/elk",
+    "type": "JavaScript-like language",
     "years": "2019-",
     "bench": [
       {
@@ -399,9 +408,10 @@ kJavascriptZoo = [
     "loc_command": "cloc --not_match_d=\"platforms\" src",
     "repository": "https://github.com/cesanta/mjs.git",
     "runtime": "stack-based VM",
-    "standard": "❌ (ES1 compliance issues)",
+    "standard": "no (can't run ES1)",
     "summary": "Interpreter for a subset of JavaScript for microcontrollers.",
     "title": "cesanta/mjs",
+    "type": "JavaScript-like language",
     "years": "2016-",
     "bench": [
       {
@@ -894,7 +904,7 @@ kJavascriptZoo = [
     "loc": 5945,
     "loc_command": "cloc src",
     "repository": "https://github.com/echosoar/jsi.git",
-    "standard": "no (can't handle ES1)",
+    "standard": "no (can't run ES1)",
     "summary": "JavaScript interpreter written in Rust with QuickJS-inspired bytecode.",
     "title": "echosoar/jsi",
     "years": "2022-",
@@ -959,7 +969,7 @@ kJavascriptZoo = [
     "loc_command": "cloc --not_match_d=\"(?i)(test|pcre|zlib|ejs.web)\" src",
     "regex": "PCRE2",
     "repository": "https://github.com/embedthis/ejscript.git",
-    "standard": "ES3, ES4 (draft)",
+    "standard": "ES4 (ES3 + some ES4 draft features)",
     "summary": "Embeddable JavaScript engine.",
     "title": "Ejscript",
     "url": "https://www.embedthis.com/ejscript/doc/",
@@ -1172,9 +1182,10 @@ kJavascriptZoo = [
     "loc_command": "cloc src",
     "repository": "https://github.com/espruino/Espruino.git",
     "runtime": "interprets from source",
-    "standard": "❌ (ES1 compliance issues)",
+    "standard": "no (can't run ES1)",
     "summary": "Interpreter for a subset of JavaScript for Espruino microcontrollers.",
     "title": "Espruino",
+    "type": "JavaScript-like language",
     "url": "https://www.espruino.com/",
     "years": "2013-",
     "bench": [
@@ -1257,6 +1268,7 @@ kJavascriptZoo = [
     "standard": "no (can't run ES1)",
     "summary": "Buggy unfinished interpreter.",
     "title": "Flathead",
+    "type": "JavaScript-like language",
     "years": "2012-2017",
     "bench": [
       {
@@ -1405,7 +1417,8 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": 195827758,
+        "dist_size": 195827758,
+        "revision": "930257e6db1e6e7ee36ef462db67ba01a28d469c",
         "version": "25.0.0"
       },
       {
@@ -1494,9 +1507,10 @@ kJavascriptZoo = [
     "loc": 1713,
     "loc_command": "cloc module/language/ecmascript",
     "repository": "https://git.savannah.gnu.org/git/guile.git",
-    "standard": "❌ (struggles with basic JS1.0/ES1 code)",
-    "summary": "Features an unfinished ECMAScript interpreter as of version 1.9.",
+    "standard": "no (can't run ES1)",
+    "summary": "Features a toy unfinished ECMAScript interpreter as of version 1.9.",
     "title": "Guile",
+    "type": "JavaScript-like language",
     "url": "https://wingolog.org/archives/2009/02/22/ecmascript-for-guile",
     "years": "2009"
   },
@@ -1516,6 +1530,15 @@ kJavascriptZoo = [
     "title": "Hako",
     "years": "2025-",
     "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "fb7fc3bcfbc0fa36fbddd035e9299f450a1f2019b7cd7bf0443f8503449e8088",
+        "binary_size": 22507376,
+        "repository": "https://github.com/andrewmd5/hako",
+        "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
+        "revision_date": "2025-08-14",
+        "version": "1.0.2-2-g99c76af"
+      },
       {
         "arch": "arm64",
         "binary_sha256": "b8bbf86dd5626d1fda63b9be0597d243046c7fa3313229d3dac205b727c517b8",
@@ -2327,7 +2350,7 @@ kJavascriptZoo = [
     "license": "Proprietary",
     "license_abbr": "Proprietary",
     "org": "Microsoft",
-    "standard": "ES3, ES4 (draft)",
+    "standard": "ES4 (ES3 + some ES4 draft features)",
     "summary": "Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.",
     "title": "JScript .NET",
     "url": "http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx",
@@ -2376,6 +2399,7 @@ kJavascriptZoo = [
     "standard": "no (can't run ES1)",
     "summary": "Buggy unfinished interpreter.",
     "title": "jsish",
+    "type": "JavaScript-like language",
     "years": "2020-2022",
     "bench": [
       {
@@ -2412,6 +2436,7 @@ kJavascriptZoo = [
     "sources": "https://github.com/juce-framework/JUCE/tree/224c4f706ba0988441e7269c3e7f2b9d5d242cbb/modules/juce_core/javascript",
     "summary": "JUCE music apps framework used to have own rudimentary interpreter for a JavaScript subset.",
     "title": "JUCE",
+    "type": "JavaScript-like language",
     "years": "2013-2023"
   },
   {
@@ -2784,9 +2809,10 @@ kJavascriptZoo = [
     "loc_command": "cloc *.ts lib native-vm",
     "repository": "https://github.com/coder-mike/microvium.git",
     "runtime": "stack-based VM",
-    "summary": "Tiny JavaScript engine for microcontrollers.",
+    "summary": "Tiny interpreter for microcontrollers for a small JavaScript subset.",
     "tech": "separate runtime in C and AOT compiler in TypeScript",
     "title": "Microvium",
+    "type": "JavaScript-like language",
     "years": "2020-2023"
   },
   {
@@ -2841,8 +2867,10 @@ kJavascriptZoo = [
     "loc_command": "cloc *.c *.h *.js opcode.def",
     "repository": "https://github.com/motet-a/toy.git",
     "runtime": "stack-based VM",
+    "standard": "no (can't run ES1)",
     "summary": "Tiny self-compiling interpreter for a subset of JavaScript.",
     "title": "motet-a/toy",
+    "type": "JavaScript-like language",
     "years": "2017"
   },
   {
@@ -3007,7 +3035,7 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": 2565636,
+        "dist_size": 2565636,
         "repository": "https://github.com/openjdk/nashorn.git",
         "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d",
         "revision_date": "2025-08-21",
@@ -3109,7 +3137,7 @@ kJavascriptZoo = [
     "standard": "no",
     "summary": "Compiler for a subset of JavaScript targetting native binaries.",
     "title": "Nerd / NectarJS",
-    "type": "compiler to native code",
+    "type": "JavaScript-like language, compiler to native code",
     "years": "2017-2022"
   },
   {
@@ -3504,6 +3532,16 @@ kJavascriptZoo = [
     "years": "2024-",
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "609001448b4d29e81a8b5d4b7a62e2683b9f10b31c3207090ce3c965d4e4bc04",
+        "binary_size": 1040504,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/lynx-family/primjs.git",
+        "revision": "3f38620eb5a0485890e4e5c2779bb31f79012890",
+        "revision_date": "2025-10-14",
+        "version": "2.15.0-rc.2-6-g3f38620"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "9f75bafcfe5ee9179d64a00b2c51ba5de9dd8fc03e57c7d50e300f8131143592",
         "binary_size": 986408,
@@ -3525,7 +3563,7 @@ kJavascriptZoo = [
     "org": "Qt",
     "parser": "YACC",
     "repository": "https://github.com/aschet/qsaqt5",
-    "standard": "ES3, ES4 (draft)",
+    "standard": "ES4 (ES3 + some ES4 draft features)",
     "summary": "Qt 3's JavaScript engine: Qt Script for Applications.",
     "tech": "tree walker",
     "title": "QSA",
@@ -3548,6 +3586,7 @@ kJavascriptZoo = [
     "standard": "no (can't run ES1)",
     "summary": "Buggy unfinished interpreter.",
     "title": "quad-wheel",
+    "type": "JavaScript-like language",
     "url": "https://code.google.com/archive/p/quad-wheel/",
     "years": "2010",
     "bench": [
@@ -4052,7 +4091,7 @@ kJavascriptZoo = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_size": 1526757,
+        "dist_size": 1526757,
         "repository": "https://github.com/mozilla/rhino",
         "revision": "0dcc00f6b3e2623f732828186ef8464d69ba51d1",
         "revision_date": "2025-01-02",
@@ -4279,45 +4318,55 @@ kJavascriptZoo = [
         "language": "C",
         "license": "MPL-2.0",
         "org": "Mozilla",
-        "standard": "ES3, JS1.5",
+        "standard": "ES3",
         "years": "2000",
         "runtime": "stack-based VM",
         "loc_command": "cloc js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "eafdb063a760b10af2ee9bcea836e1bf9f78415c9faf7ea9e97330e6275c2c4d",
+        "binary_sha256": "0eeedb331cb44eeb1cac7af0a7dfad8fe034f881067bd76f16ecd444300975c8",
         "binary_size": 673536,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "jit": "",
         "revision_date": "2004-09-24",
         "version": "1.5"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "fb446a8e05fa397d91378a49979c8cebc8c114fc1a38ff7661ee36cfd9110cad",
+        "binary_sha256": "034ab215a3bcdad6617a4265177260f44ff41bcd7a8818406d75410c6663e95d",
         "binary_size": 862720,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "jit": "",
         "loc": 71823,
         "revision_date": "2006-11-19",
+        "sources": "https://archive.mozilla.org/pub/js/js-1.60.tar.gz",
+        "standard": "ES3",
         "variant": "1.6",
         "version": "1.6"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "df0fad581677ee93f8b9132ea3b12cf7f4200aed75e37fe1ac7efd01c5229c97",
+        "binary_sha256": "1b747d462ae889025b4849b2467f36cb00b840d5b600f616606d094d471f311b",
         "binary_size": 945248,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "jit": "",
         "loc": 79328,
         "revision_date": "2007-10-03",
+        "sources": "https://archive.mozilla.org/pub/js/js-1.7.0.tar.gz",
+        "standard": "ES3",
         "variant": "1.7",
         "version": "1.7.0"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "40b003d2406cc7325c9b37ffd888c2a438803a2863d67c244c9f64167b6a7d9d",
+        "binary_sha256": "32ba2649a96e78de98fa7db1af4fb60202f63e7bfa27cfa5c479a3dfec804458",
         "binary_size": 990784,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "jit": "",
         "loc": 85195,
         "revision_date": "2009-02-16",
+        "sources": "https://archive.mozilla.org/pub/js/js-1.8.0-rc1.tar.gz",
+        "standard": "ES3",
         "variant": "1.8.0",
         "version": "1.8.0"
       },
@@ -4327,7 +4376,7 @@ kJavascriptZoo = [
         "summary": "First ES5-compliant version. Shipped in Firefox 4.0 (2011).",
         "url": "https://web.archive.org/web/20210420113930/https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/New_in_JavaScript/1.8.5",
         "sources": "https://archive.mozilla.org/pub/js/js185-1.0.0.tar.gz",
-        "loc": 220586,
+        "loc": 206521,
         "language": "C++",
         "license": "MPL-2.0",
         "org": "Mozilla",
@@ -4339,11 +4388,37 @@ kJavascriptZoo = [
         "loc_command": "cloc --fullpath --not_match_f='(test|/(v8|t|ctypes|metrics)/|configure)' js-1.8.5/js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "0e2dcfd9623e747a9f37d6c16feb2835460f4266dfd4e5edb6a50b0b2d0e73d0",
+        "binary_sha256": "c7b7fb273256bad8d03106f14a12f0da83962b92fdbad49ed5994e434c6dd895",
         "binary_size": 3682736,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "revision_date": "2011-03-31",
         "version": "1.8.5"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "377cb3d47d73cd131e748c1546cf6f6110fd5e636b569ac77483875ec409e08a",
+        "binary_size": 4217504,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "loc": 203542,
+        "regex": "YARR",
+        "revision_date": "2013-03-25",
+        "sources": "https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz",
+        "standard": "ES5",
+        "variant": "17",
+        "version": "17.0.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "4ff2938ffbc9372d8eeb7d9ce2bcb70dbf5657634c397a2da65dffaad39cb141",
+        "binary_size": 6066320,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "loc": 286123,
+        "regex": "YARR",
+        "revision_date": "2013-12-11",
+        "sources": "https://archive.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2",
+        "standard": "ES5",
+        "variant": "24",
+        "version": "24.2.0"
       },
       {
         "arch": "amd64",
@@ -4611,6 +4686,7 @@ kJavascriptZoo = [
     "note": "Unmaintained old Rust codebase, only builds on x64.",
     "repository": "https://github.com/Starlight-JS/starlight.git",
     "runtime": "stack-based VM, PIC",
+    "standard": "no (can't run ES1)",
     "summary": "JavaScript engine written in Rust.",
     "title": "Starlight",
     "years": "2021",
@@ -4672,15 +4748,15 @@ kJavascriptZoo = [
     "language": "Rust",
     "license": "Apache-2.0",
     "license_abbr": "Apache-2.0",
-    "loc": 52692,
-    "loc_command": "cloc crates/{oxc_ast,oxc_parser}/src",
+    "loc": 13798,
+    "loc_command": "cloc crates/{swc_ecma_ast,swc_ecma_parser}/src",
     "repository": "https://github.com/swc-project/swc",
     "standard": "ESnext",
     "summary": "Rust-based JavaScript/TypeScript parser, transpiler, bundler.",
     "title": "swc",
     "type": "parser, transpiler",
     "url": "https://swc.rs/",
-    "years": "2023-"
+    "years": "2017-"
   },
   {
     "engine": "tachyon",
@@ -4710,7 +4786,7 @@ kJavascriptZoo = [
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" core aot* esc eval nanojit shell util",
     "org": "Adobe",
     "repository": "https://github.com/adobe/avmplus.git",
-    "standard": "ES3, ES4 (draft)",
+    "standard": "ES4 (ES3 + some ES4 draft features)",
     "summary": "JavaScript engine of Adobe Flash Player 9+.",
     "title": "Tamarin",
     "years": "2006-2013"
@@ -4747,6 +4823,7 @@ kJavascriptZoo = [
     "standard": "no (can't run ES1)",
     "summary": "Primitive interpreter for a limited subset of JavaScript.",
     "title": "tiny-js",
+    "type": "JavaScript-like language",
     "years": "2009-2012",
     "bench": [
       {
@@ -4784,6 +4861,7 @@ kJavascriptZoo = [
     "runtime_note": "tTJSInterCodeContext::ExecuteCode",
     "summary": "JavaScript-like scripting engine of KRKR2/KRKRZ game engines.",
     "title": "tjs2",
+    "type": "JavaScript-like language",
     "url": "http://krkrz.github.io/",
     "years": "2000-2017"
   },
@@ -4881,6 +4959,7 @@ kJavascriptZoo = [
     "standard": "no (distinct ES6-inspired language, different non-object-oriented standard library)",
     "summary": "Interpreter for a small ES6-like language for microcontrollers.",
     "title": "ucode",
+    "type": "JavaScript-like language",
     "url": "https://ucode.mein.io/",
     "years": "2020-",
     "bench": [
@@ -5166,7 +5245,7 @@ kJavascriptZoo = [
     "repository": "https://github.com/web-devkits/Wasmnizer-ts.git",
     "summary": "Compiler for a TypeScript subset targetting WebAssembly.",
     "title": "wasmnizer-ts",
-    "type": "compiler to WASM",
+    "type": "JavaScript-like language, compiler to WASM",
     "years": "2023-2024"
   },
   {

@@ -404,6 +404,22 @@ def format_table_columns(data):
         row = dict(row)
         res.append(row)
 
+        std = row.get('standard') or ''
+        std = re.sub(r' *\(≈ *ES.\)', '', std)
+        std = re.sub(r'^(ES[^( ]*) *\(.*\)', r'\1*', std)
+        std = re.sub(r' *\(.*\)', r'', std).strip()
+        std = std.replace('+*', '*')
+        std = std.replace('*', '<sup>*</sup>')
+        if std:
+            row['standard_abbr'] = std
+
+        loc = row.get('loc')
+        if loc:
+            if loc >= 1000000: loc = '%.1fM' % (loc / 1000000.0)
+            elif loc >= 10000: loc = '%.0fK' % (loc / 1000.0)
+            elif loc >= 1000: loc = '%.1fK' % (loc / 1000.0)
+            row['loc_abbr'] = str(loc)
+
         lang = row.get('language', '')
         lang = re.sub(', .*', '', lang)
         row['language_abbr'] = lang

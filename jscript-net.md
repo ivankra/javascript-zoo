@@ -6,7 +6,7 @@ Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / 
 * Language:   C#
 * License:    Proprietary
 * Org:        Microsoft
-* Standard:   ES3, ES4 (draft)
+* Standard:   ES4 (ES3 + some ES4 draft features)
 * Years:      2000-2010
 * JIT:        via CLR
 * DLL:        Microsoft.JScript.dll

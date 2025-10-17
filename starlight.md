@@ -7,5 +7,6 @@ JavaScript engine written in Rust.
 * Language:   Rust
 * License:    MPL-2.0
 * Note:       Unmaintained old Rust codebase, only builds on x64.
+* Standard:   no (can't run ES1)
 * Years:      2021
 * Runtime:    stack-based VM, PIC

@@ -7,6 +7,7 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 * LOC:        28365 (`cloc src`)
 * Language:   C
 * License:    MPL-2.0
-* Standard:   ❌ (ES1 compliance issues)
+* Standard:   no (can't run ES1)
+* Type:       JavaScript-like language
 * Years:      2013-
 * Runtime:    interprets from source

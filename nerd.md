@@ -7,5 +7,5 @@ Compiler for a subset of JavaScript targetting native binaries.
 * Language:   C++
 * License:    MIT
 * Standard:   no
-* Type:       compiler to native code
+* Type:       JavaScript-like language, compiler to native code
 * Years:      2017-2022
