@@ -1,4 +1,5 @@
 *.tmp
+*.part*
 box2d.js
 code-load.js
 crypto.js
@@ -9,7 +10,6 @@ mandreel-gbemu-codeload.js
 mandreel.js
 navier-stokes.js
 octane-git/
-out*
 pdfjs.js
 raytrace.js
 regexp.js
@@ -18,5 +18,3 @@ splay.js
 typescript.js
 v9.js
 zlib.js
-metadata-*.json
-runs-*.js
