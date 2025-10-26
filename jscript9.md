@@ -7,7 +7,9 @@ JavaScript engine of Internet Explorer 9.0 – 11.0.
 * Org:        Microsoft
 * Standard:   ES6 (partial)
 * Years:      2009-2013
-* JIT:        yes
+* Features:   deferred parsing
+* JIT:        arm, x86/x64
+* GC:         concurrent GC
 * DLL:        jscript9.dll, jscript9Legacy.dll
 
 ## History
@@ -24,3 +26,4 @@ classic [JScript](jscript.md) with a Chakra-based engine.
 * https://www.microsoft.com/en-us/research/wp-content/uploads/2018/04/41159.compressed.pdf
 * https://www.usenix.org/legacy/event/webapps10/tech/full_papers/Ratanaworabhan.pdf
 * https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/hosting/chakra-hosting/targeting-edge-vs-legacy-engines-in-jsrt-apis
+* https://web.archive.org/web/20150219063105/http://blogs.msdn.com/b/ie/archive/2012/06/13/advances-in-javascript-performance-in-ie10-and-windows-8.aspx

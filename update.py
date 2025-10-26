@@ -11,6 +11,8 @@ import sys
 import time
 
 from bench.data import kBenchData
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Tuple, Optional, Union
 
 ARCH_LIST = ['arm64', 'amd64']
 
@@ -104,109 +106,179 @@ def update_data(args):
 
     return rows
 
+@dataclass
+class MDParse:
+    title: str = ''    # page title
+    summary: str = ''  # first paragraph
+    metadata: List['MDMeta'] = field(default_factory=list)  # flattened
+    tree: List['MDMeta'] = field(default_factory=list)     # tree
+
+@dataclass
+class MDMeta:
+    line_no: int
+    text: str     # full line without indent and leading *
+    indent: int   # spaces count
+    tree: List['MDMeta'] = field(default_factory=list)    # subitems tree
+    map_key: str = ''             # key into METADATA_MAP, /-separated titles
+    key: Union[str, None] = None    # JSON key
+    value: Union[str, None] = None  # JSON value
+
+# Map from metadata field names in Markdown files to metadata JSON keys
+# For nested fields, names are concatenated with slash.
+# Order of entries here us used to sort the list during reformatting.
+METADATA_MAP = {
+    'Homepage': 'homepage',
+    'NPM': 'npm',
+
+    # Source code
+    'Repository': 'repository',
+    'GitHub': 'github',    # if github not the main repo
+    'Sources': 'sources',  # if no official repository
+    'LOC': 'loc',
+    'Language': 'language',
+    'License': 'license',
+
+    'Org': 'org',
+    'Standard': 'standard',  # TODO eval(), proper tail calls, etc; ES5, ES6 etc exceptions/notes
+    'Years': 'years',
+
+    # Technical properties
+    'Type': 'type',
+    'Features': 'features',
+    'Parser': 'parser',
+    'Runtime platform': 'platform',
+    'Interpreter': 'interpreter',
+    'JIT': 'jit',
+    'GC': 'gc',
+    'Regex engine': 'regex',
+    'DLL': 'dll',
+}
+
+def parse_markdown_metadata(filename) -> MDParse:
+    lines = [s.rstrip() for s in open(filename).readlines()] + ['']
+    no = 0
+
+    # First line must have page title: '# Title'
+    assert len(lines) >= 3 and lines[0].startswith('# ') and lines[1] == '', f'{filename}: missing title'
+    parsed = MDParse(title=lines[0][1:].strip())
+    no += 2
+
+    # First paragraph must be a short description.
+    assert no < len(lines) and len(lines[no].strip()) > 0 and not lines[no].strip().startswith('*'), f'{filename}: missing summary paragraph'
+    parsed.summary = ''
+    while no < len(lines) and lines[no] and not lines[no].strip().startswith('*'):
+        parsed.summary += ' ' + lines[no].strip()
+        no += 1
+    parsed.summary = parsed.summary.strip()
+
+    assert lines[no].strip() == '', f'{filename}:{no}: {lines[no]} - expected blank line'
+    no += 1
+
+    assert lines[no].startswith('* '), f'{filename}:{no}: {lines[no]} - expected metadata list'
+    parsed.metadata = []
+
+    # Parse metadata list
+    while no < len(lines) and lines[no]:
+        assert lines[no].strip().startswith('* '), f'{filename}:{no}: {lines[no]} - expected metadata list line'
+
+        indent = lines[no].index('*')
+        assert indent % 2 == 0, f'{filename}:{no}: {lines[no]} - bad indent'
+
+        text = lines[no][indent+1:].strip()
+        no += 1
+
+        item = MDMeta(
+            line_no=no,
+            text=text,
+            indent=indent,
+            map_key=re.sub(':.*', '', text).strip(),
+        )
+
+        parent = parsed
+        while indent > 0:
+            assert len(parsed.tree) > 0, str(parsed)
+            parent = parsed.tree[-1]
+            indent -= 2
+
+        if parent is not parsed:
+            item.map_key = parent.map_key + '/' + item.map_key
+
+        parent.tree.append(item)
+        parsed.metadata.append(item)
+
+        item.key = METADATA_MAP.get(item.map_key)
+        if item.key is not None and ':' in text:
+            item.value = text[text.index(':')+1:].strip()
+
+    return parsed
+
+def sort_markdown_metadata(parsed, filename):
+    metadata_order = {k: i for (i, k) in enumerate(METADATA_MAP.keys())}
+
+    lhs_width = max(4 + node.indent + node.text.index(':') for node in parsed.metadata if ':' in node.text)
+    lhs_width = max(lhs_width, 14)
+    lhs_width = min(lhs_width, 32)
+
+    def rec(node, indent=''):
+        if node is not parsed:
+            if ':' in node.text:
+                title = node.text[:node.text.index(':')]
+                lhs = indent + '* ' + title + ': '
+                if len(lhs) < lhs_width:
+                    lhs += ' ' * (lhs_width - len(lhs))
+                yield lhs + node.text[node.text.index(':')+1:].lstrip() + '\n'
+            else:
+                yield f'{indent}* {node.text}\n'
+            indent += '  '
+
+        node.tree.sort(key=lambda item: metadata_order.get(item.map_key, 9999))
+
+        for ch in node.tree:
+            yield from rec(ch, indent)
+
+    lines = open(filename).readlines()
+
+    start = min(item.line_no-1 for item in parsed.metadata)
+    end = max(item.line_no for item in parsed.metadata)
+
+    lines2 = lines[:start] + list(rec(parsed)) + lines[end:]
+    if lines == lines2:
+        return
+
+    with open(filename, 'w') as fp:
+        fp.writelines(lines2)
+
 # Parse markdown file and populate/update fields in row dict for that engine
 def process_markdown(row, filename, args):
-    lines = [s.rstrip() for s in open(filename).readlines()]
+    parsed = parse_markdown_metadata(filename)
 
-    assert lines[0].startswith('# ') and lines[1] == ''
-    if 'title' not in row:
-        row['title'] = lines[0][1:].strip()
-
-    # Title in markdown file => column name in json
-    # Order of keys here is used to --format-markdown
-    metadata_map = {
-        # Links to project/sources
-        'URL': 'url',
-        'NPM': 'npm',
-        'Repository': 'repository',
-        'GitHub': 'github',    # if github not the main repo
-        'Sources': 'sources',  # if no official repository
-
-        # General properties
-        'LOC': 'loc',
-        'Language': 'language',
-        'License': 'license',
-        'Note': 'note',
-        'Org': 'org',
-        'Standard': 'standard',
-        'Type': 'type',
-        'Years': 'years',
-
-        # Technical properties
-        'Features': 'features',
-        'Tech': 'tech',
-        'Parser': 'parser',
-        'Runtime': 'runtime',
-        'VM': 'vm',
-        'GC': 'gc',
-        'JIT': 'jit',
-        'Regex': 'regex',
-        'DLL': 'dll',
-    }
-    metadata_order = list(metadata_map.values())
+    if args.format_markdown:
+        sort_markdown_metadata(parsed, filename)
 
     # Drop existing keys that are recomputed from .md
-    for k in metadata_map.values():
-        if k in row:
-            del row[k]
-        if k + '_note' in row:
-            del row[k + '_note']
-
-    for k in ['loc_command']:
+    drop_keys = sum([[k, k + '_note', k + '_short'] for k in METADATA_MAP.values()], [])
+    drop_keys += ['loc_command', 'summary']
+    for k in drop_keys:
         if k in row:
             del row[k]
 
-    line_no = 2
+    row['title'] = row.get('title', parsed.title)
+    row['summary'] = strip_markdown_links(parsed.summary)
 
-    if not lines[2].strip().startswith('*'):
-        while line_no < len(lines):
-            assert not re.match(r'^\*', lines[line_no])
-            if lines[line_no] == '':
-                line_no += 1
-                break
-            line_no += 1
+    for item in parsed.metadata:
+        if item.key is None or item.value is None: continue
+        row[item.key] = strip_html_tags(item.value)
 
-        row['summary'] = strip_markdown_links(' '.join(lines[2:line_no]).strip())
-
-    metadata_start = line_no
-    metadata_lines = []
-
-    # Parse metadata items from .md
-    while line_no < len(lines) and lines[line_no]:
-        line = lines[line_no]
-        line_no += 1
-
-        m = re.match(r'^\* ([-A-Za-z ]+): +(.*)$', line)
-        assert m, '%s:%d: %s' % (filename, line_no, line)
-        assert m[1].strip() in metadata_map, line
-
-        key = metadata_map[m[1].strip()]
-        metadata_lines.append((key, line))
-
-        val = m[2].strip()
-        val = strip_html_tags(val)
-        row[key] = val
-
-    metadata_end = line_no
-    if args.format_markdown:
-        # Sort metadata in metadata_map's order
-        metadata_lines = [(metadata_order.index(k), v) for (k, v) in metadata_lines]
-        metadata_lines = [v for (k, v) in sorted(metadata_lines)]
-
-        # Also update shields
-        for i in range(len(metadata_lines)):
-            line = metadata_lines[i]
-            shields = ''
-            m = re.match(r'^\* (GitHub|Repository): *(https://github.com/[^/]+/[^/ ]+?(.git))', line)
-            if m:
-                shields = get_shields_for_repo(m[2], filename)
-            if shields:
-                line = re.sub(' *<img .*', '', line) + ' ' + shields
-                metadata_lines[i] = line
-
-        reordered = lines[:metadata_start] + metadata_lines + lines[metadata_end:]
-        with open(filename, 'w') as fp:
-            fp.write('\n'.join(reordered).rstrip() + '\n')
+    # Also update shields
+    #for i in range(len(metadata_lines)):
+    #    line = metadata_lines[i]
+    #    shields = ''
+    #    m = re.match(r'^\* (GitHub|Repository): *(https://github.com/[^/]+/[^/ ]+?(.git))', line)
+    #    if m:
+    #        shields = get_shields_for_repo(m[2], filename)
+    #    if shields:
+    #        line = re.sub(' *<img .*', '', line) + ' ' + shields
+    #        metadata_lines[i] = line
 
     # Split up some "text (note)" keys
     for key in list(row.keys()):
@@ -435,8 +507,8 @@ def format_table_columns(data):
 
         repo_link = row.get('github', row.get('repository', ''))
         repo_text = ''
-        if not repo_link and row.get('url', '').startswith('http'):
-            repo_link = row['url']
+        if not repo_link and row.get('homepage', '').startswith('http'):
+            repo_link = row['homepage']
         if repo_link:
             repo_text = get_domain(repo_link) or 'link'
         m = re.match('https?://github.com/([^/]+)/([^/]+?)(.git)?$', repo_link)

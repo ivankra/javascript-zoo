@@ -2,17 +2,18 @@
 
 JavaScript engine of Safari/WebKit.
 
-* URL:        https://trac.webkit.org/wiki/JavaScriptCore
-* Repository: https://github.com/WebKit/WebKit.git <img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        770374 (`cloc --not_match_d="(?i)(test)" Source/JavaScriptCore`)
-* Language:   C++
-* License:    LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
-* Org:        Apple
-* Standard:   ESnext
-* Years:      2001-
-* Runtime:    register-based VM
-* JIT:        3-tier JIT
-* Regex:      YARR
+* Homepage:     https://trac.webkit.org/wiki/JavaScriptCore
+* Repository:   https://github.com/WebKit/WebKit.git <img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:          770374 (`cloc --not_match_d="(?i)(test)" Source/JavaScriptCore`)
+* Language:     C++
+* License:      LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
+* Org:          Apple
+* Standard:     ESnext
+* Years:        2001-
+* Features:     WebAssembly engine
+* Interpreter:  register-based VM
+* JIT:          3-tier JIT, x86/x64, arm/arm64, mips64, riscv64
+* Regex engine: YARR, JIT-enabled
 
 ## History
 
@@ -57,8 +58,13 @@ JavaScript engine of Safari/WebKit.
 
 ## Users
 
-* Safari and WebKit-based browsers (GNOME Web etc)
-* The only JIT-enabled engine allowed by Apple on iOS
-* [bun](https://github.com/oven-sh/bun): JavaScript/TypeScript runtime written in Zig.
+* Safari and WebKit-based browsers
+  * [GNOME Web](https://en.wikipedia.org/wiki/GNOME_Web) (Epiphany)
+  * [Konqueror](https://en.wikipedia.org/wiki/Konqueror) - normally Blink/V8, but can be configured to use QtWebKit/JSC
+* Most iOS browsers - due to JSC being the only JIT-enabled engine allowed by Apple on iOS
+
+## Runtimes
+
+* [bun](https://github.com/oven-sh/bun): JavaScript/TypeScript runtime written in Zig
 
 <!-- baseline: ./jsc-dfg --useDFGJIT=false --useFTLJIT=false -->

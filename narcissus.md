@@ -2,13 +2,15 @@
 
 Metacircular JavaScript interpreter, was used for prototyping new language features in ES6.
 
-* Repository: https://github.com/mozilla/narcissus.git <img src="https://img.shields.io/github/stars/mozilla/narcissus?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/mozilla/narcissus?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        6308 (`cloc lib`)
-* Language:   JavaScript
-* License:    MPL-1.1-or-later OR GPL-2.0-or-later OR LGPL-2.1-or-later
-* Org:        Mozilla
-* Standard:   ES5
-* Years:      2007-2012
+* Repository:       https://github.com/mozilla/narcissus.git <img src="https://img.shields.io/github/stars/mozilla/narcissus?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/mozilla/narcissus?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:              6308 (`cloc lib`)
+* Language:         JavaScript
+* License:          MPL-1.1-or-later OR GPL-2.0-or-later OR LGPL-2.1-or-later
+* Org:              Mozilla
+* Standard:         ES5
+* Years:            2007-2012
+* Runtime platform: JavaScript (SpiderMonkey)
+  * Parser is portable, but interpreter relies on SpiderMonkey's old non-standard extensions (pre-ES6 Proxy, `catch (e if ...)`).
 
 ## Description
 
@@ -20,5 +22,3 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 > and objects (such as the standard libraries) to interface directly
 > with Narcissus code without following any special protocol or requiring
 > wrapping and unwrapping.
-
-Relies on Proxy object (JavaScript 1.8.5 / ES6)

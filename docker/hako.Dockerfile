@@ -22,5 +22,7 @@ RUN go mod init hako && go get github.com/bytecodealliance/wasmtime-go/v31 && go
 
 RUN mkdir -p /dist && cp bridge/build/hako.wasm ./ && cp hako.wasm /dist/
 
+RUN du -bc /dist/hako.wasm | tail -1 | cut -f 1 >/dist/jsz_dist_size
+
 ENV JS_BINARY=/src/hako
 CMD ${JS_BINARY}

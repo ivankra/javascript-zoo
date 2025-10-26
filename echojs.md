@@ -8,4 +8,4 @@ AOT compiler and runtime for ES6.
 * License:    MIT
 * Standard:   ES6
 * Years:      2012-2023
-* Tech:       LLVM
+* Features:   LLVM-based compiler

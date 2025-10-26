@@ -3,15 +3,15 @@
 [Esprima](esprima.md)-compatible parser from ESLint.
 Currently just a thin layer on top of [Acorn](acorn.md) parser.
 
-* URL:        https://github.com/eslint/js/blob/main/packages/espree/README.md
+* Homepage:   https://github.com/eslint/js/blob/main/packages/espree/README.md
 * NPM:        https://www.npmjs.com/package/espree
 * Repository: https://github.com/eslint/js.git <img src="https://img.shields.io/github/stars/eslint/js?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/eslint/js?label=&style=flat-square" alt="Last commit" title="Last commit">
 * LOC:        436 (`cloc packages/espree/lib`)
 * Language:   JavaScript
 * License:    BSD-2-Clause
 * Standard:   ESnext
-* Type:       parser
 * Years:      2014-
+* Type:       parser
 * Features:   ESTree, JSX
 
 ## History

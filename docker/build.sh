@@ -30,16 +30,24 @@ if [[ "$DEP" == 1 ]]; then
   if [[ "$ARGS" != "" ]]; then
     echo args.txt
   fi
-  df=()
+  dfs=()
   if [[ $ARGS =~ -f[[:space:]]([-a-z0-9_.]+.Dockerfile) ]]; then
-    df=( "${BASH_REMATCH[1]}" )
+    dfs=( "${BASH_REMATCH[1]}" )
   fi
   if [[ -f $ID.Dockerfile ]]; then
-    df+=( "$ID.Dockerfile" )
+    dfs+=( "$ID.Dockerfile" )
   fi
-  for f in "${df[@]}"; do
-    echo "$f"
-    egrep -o '^COPY ([-a-z0-9.]+)' "$f" | sed -e 's/COPY //' 2>/dev/null
+  for df in "${dfs[@]}"; do
+    echo "$df"
+    egrep -o '^COPY ([a-z][-a-z0-9.]+)' "$df" | sed -e 's/COPY //' 2>/dev/null
+
+    refs=$(egrep -o '^(ARG BASE|COPY --from)=jsz-([-a-z0-9]+)' "$df" | sed -e 's/.*=jsz-//' 2>/dev/null)
+    for f in $refs; do
+      if [[ -f "$f.Dockerfile" ]]; then
+        echo "$f.Dockerfile"
+        echo "$IID_DIR/$f"
+      fi
+    done
   done
   exit 0
 fi

@@ -2,17 +2,19 @@
 
 JavaScript engine of Firefox.
 
-* URL:        https://spidermonkey.dev/
-* Repository: https://github.com/mozilla-firefox/firefox.git <img src="https://img.shields.io/github/stars/mozilla-firefox/firefox?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/mozilla-firefox/firefox?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
-* Language:   C++
-* License:    MPL-2.0
-* Org:        Mozilla
-* Standard:   ESnext
-* Years:      1996-
-* Runtime:    stack-based VM
-* JIT:        2-tier JIT
-* Regex:      Irregexp
+* Homepage:     https://spidermonkey.dev/
+* Repository:   https://github.com/mozilla-firefox/firefox.git <img src="https://img.shields.io/github/stars/mozilla-firefox/firefox?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/mozilla-firefox/firefox?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:          1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
+* Language:     C++
+* License:      MPL-2.0
+* Org:          Mozilla
+* Standard:     ESnext
+* Years:        1996-
+* Interpreter:  stack-based VM
+* JIT:          2-tier JIT
+* Regex engine: Irregexp, JIT-enabled
+  * Previously used YARR from 1.8.1 / Firefox 3.5.
+  * Switched to Irregexp from Firefox 78.
 
 ## History
 
@@ -36,9 +38,15 @@ JavaScript engine of Firefox.
 ## Users
 
 * Firefox, Thunderbird and other Mozilla apps
-* GNOME 3+, Cinnamon desktop environments
+* [Elinks](https://github.com/rkd77/elinks) browser: can be configured to use SpiderMonkey, QuickJS or MuJS
+* GNOME 3 and Cinnamon desktop environments
 * [MongoDB](https://github.com/mongodb/mongo/tree/master/src/mongo/scripting), CouchDB, Riak
 * [Acrobat Reader](https://opensource.adobe.com/dc-acrobat-sdk-docs/library/jsapiref/index.html) and other Adobe products: stuck on SpiderMonkey 1.8.5 fork ("AcroJS")
-* Runtimes:
-  * [WinterJS](https://github.com/wasmerio/winterjs): SpiderMonkey/hyper.rs-based runtime
-  * [spiderfire](https://github.com/Redfire75369/spiderfire) runtime
+* [Mozilla's list of FOSS users](https://web.archive.org/web/20210506104010/https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/FOSS)
+
+## Runtimes
+
+* [WinterJS](https://github.com/wasmerio/winterjs): SpiderMonkey/hyper.rs-based runtime
+* [spiderfire](https://github.com/Redfire75369/spiderfire) runtime
+* [gjs](https://gitlab.gnome.org/GNOME/gjs)/[cjs](https://github.com/linuxmint/cjs) in GNOME 3 / Cinnamon
+* [Fastly Compute](https://github.com/fastly/js-compute-runtime)

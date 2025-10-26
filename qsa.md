@@ -2,15 +2,15 @@
 
 Qt 3's JavaScript engine: Qt Script for Applications.
 
-* URL:        https://web.archive.org/web/20060212090118/http://www.trolltech.com/products/qsa/
-* Repository: https://github.com/aschet/qsaqt5
-* Language:   C++
-* License:    GPL-2.0-only
-* Org:        Qt
-* Standard:   ES4 (ES3 + some ES4 draft features)
-* Years:      2002-2007
-* Tech:       tree walker
-* Parser:     YACC
+* Homepage:    https://web.archive.org/web/20060212090118/http://www.trolltech.com/products/qsa/
+* Repository:  https://github.com/aschet/qsaqt5
+* Language:    C++
+* License:     GPL-2.0-only
+* Org:         Qt
+* Standard:    ES4 (ES3 + some ES4 draft features)
+* Years:       2002-2007
+* Parser:      YACC
+* Interpreter: tree walker
 
 Replaced by a different QtScript engine in Qt 4.3.
 

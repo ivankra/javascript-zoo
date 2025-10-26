@@ -2,14 +2,14 @@
 
 Dominant parser in JavaScript tooling ecosystem.
 
-* URL:        https://www.npmjs.com/package/acorn
+* Homepage:   https://www.npmjs.com/package/acorn
 * Repository: https://github.com/acornjs/acorn.git <img src="https://img.shields.io/github/stars/acornjs/acorn?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/acornjs/acorn?label=&style=flat-square" alt="Last commit" title="Last commit">
 * LOC:        5548 (`cloc acorn/src`)
 * Language:   JavaScript
 * License:    MIT
 * Standard:   ESnext
-* Type:       parser
 * Years:      2012-
+* Type:       parser
 * Features:   ESTree, JSX, plugins
 
 ## Features

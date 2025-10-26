@@ -2,14 +2,14 @@
 
 JavaScript engine of Internet Explorer 3.0 – 8.0.
 
-* URL:        https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29
-* Language:   C++
-* License:    Proprietary
-* Org:        Microsoft
-* Standard:   ES3
-* Years:      1996-2011
-* Runtime:    stack-based VM
-* DLL:        jscript.dll
+* Homepage:    https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29
+* Language:    C++
+* License:     Proprietary
+* Org:         Microsoft
+* Standard:    ES3
+* Years:       1996-2011
+* Interpreter: stack-based VM
+* DLL:         jscript.dll
 
 ## History
 

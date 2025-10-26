@@ -2,10 +2,12 @@
 
 Compiler for a TypeScript subset targetting WebAssembly.
 
-* Repository: https://github.com/web-devkits/Wasmnizer-ts.git <img src="https://img.shields.io/github/stars/web-devkits/Wasmnizer-ts?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/web-devkits/Wasmnizer-ts?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        54506 (`cloc --not_match_d=test src runtime-library`)
-* Language:   TypeScript
-* License:    Apache-2.0 WITH LLVM-exception
-* Org:        Intel
-* Type:       JavaScript-like language, compiler to WASM
-* Years:      2023-2024
+* Repository:       https://github.com/web-devkits/Wasmnizer-ts.git <img src="https://img.shields.io/github/stars/web-devkits/Wasmnizer-ts?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/web-devkits/Wasmnizer-ts?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:              54506 (`cloc --not_match_d=test src runtime-library`)
+* Language:         TypeScript
+* License:          Apache-2.0 WITH LLVM-exception
+* Org:              Intel
+* Years:            2023-2024
+* Type:             JavaScript-like language
+* Runtime platform: WebAssembly
+* JIT:              via WebAssembly engine

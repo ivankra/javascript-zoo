@@ -1,19 +1,19 @@
 # ucode
 
-Interpreter for a small ES6-like language for microcontrollers.
+Interpreter for a small ES6-like language for microcontrollers from OpenWrt project.
 
-* URL:        https://ucode.mein.io/
-* Repository: https://github.com/jow-/ucode.git <img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        39692 (`cloc *.c include lib`)
-* Language:   C
-* License:    ISC
-* Org:        OpenWrt
-* Standard:   no (distinct ES6-inspired language, different non-object-oriented standard library)
-* Type:       JavaScript-like language
-* Years:      2020-
-* Runtime:    stack-based VM
-* GC:         reference counting + mark-and-sweep GC
-* Regex:      POSIX
+* Homepage:     https://ucode.mein.io/
+* Repository:   https://github.com/jow-/ucode.git <img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:          39692 (`cloc *.c include lib`)
+* Language:     C
+* License:      ISC
+* Org:          OpenWrt
+* Standard:     no (distinct ES6-inspired language, different non-object-oriented standard library)
+* Years:        2020-
+* Type:         JavaScript-like language
+* Interpreter:  stack-based VM
+* GC:           reference counting + mark-and-sweep GC
+* Regex engine: POSIX (regex.h)
 
 ## Users
 
@@ -21,7 +21,7 @@ Interpreter for a small ES6-like language for microcontrollers.
 
 ## Features
 
-* Borrows much of ECMAScript 6 syntax but is a different, leaner language,
+* Borrows much of ECMAScript 6 syntax but is a rather different, leaner language,
   not designed for full JavaScript compatibility.
 * Completely different non-object-oriented standard library, mimicking Perl 5 built-ins.
   E.g. `arr.length` -> `length(arr)`, `Object.keys(obj)` -> `keys(obj)`.
@@ -32,7 +32,7 @@ Interpreter for a small ES6-like language for microcontrollers.
 * JSON, rest/spread operators, regex
 * `undefined` is an alias for `null`
 * No `new`, but first-class functions, `this` somewhat supported and prototype-based
-  inheritance via `proto()` build-in, so JavaScript-like object model can be emulated
+  inheritance via `proto()` built-in, so JavaScript-like object model can be emulated
   like shown below.
 
 ```javascript

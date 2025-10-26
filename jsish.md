@@ -2,16 +2,16 @@
 
 Buggy unfinished interpreter.
 
-* Repository: https://github.com/pcmacdon/jsish.git <img src="https://img.shields.io/github/stars/pcmacdon/jsish?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/pcmacdon/jsish?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        50896 (`cloc src`)
-* Language:   C
-* License:    MIT
-* Standard:   no (can't run ES1)
-* Type:       JavaScript-like language
-* Years:      2020-2022
-* Parser:     YACC
-* Runtime:    stack-based VM
-* Regex:      POSIX
+* Repository:   https://github.com/pcmacdon/jsish.git <img src="https://img.shields.io/github/stars/pcmacdon/jsish?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/pcmacdon/jsish?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:          50896 (`cloc src`)
+* Language:     C
+* License:      MIT
+* Standard:     no (can't run ES1)
+* Years:        2020-2022
+* Type:         JavaScript-like language
+* Parser:       YACC
+* Interpreter:  stack-based VM
+* Regex engine: POSIX (vendored from musl)
 
 ## Bugs
 

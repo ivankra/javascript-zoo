@@ -2,8 +2,12 @@
 
 Dockerfiles for building open-source JavaScript engines.
 
-Prerequisites: Linux with podman (preferably) or docker.
-Tested on x86-64 and arm64.
+Currently we only target x86-64 and arm64 Linux binaries here.
+Rationale: Linux is the common denominator today, you can get them to
+run on any modern system through virtualization/containerization solutions,
+and that should be enough for benchmarking and testing.
+
+Build prerequisites: Linux with podman (preferably) or docker.
 
 Make targets:
   * `make all`: build every Dockerfile
@@ -16,8 +20,8 @@ Make targets:
   * `make <engine>[-repl/-sh]`: build and drop into REPL/bash in build container
   * `make sh`: drop into bash in a throwaway test container with pre-installed
     libraries/runtimes and dist directory with all engines built so far.
-  * `make hub`: create a multiarch version of `sh` container for publishing.
-    Prerequisite: `sudo apt install qemu-user-static`.
+  * `make hub`: create a multiarch version of `sh` container for publishing
+    on Dockerhub. Prerequisite: `sudo apt install qemu-user-static`.
 
 Some targets have several build variants, e.g. `*_jitless` variants with
 JIT compiled out. Naming convention: `engine_variant`. Variant-specific
@@ -31,11 +35,13 @@ as well when possible to save space.
 
 ## Docker Hub
 
-Container with pre-built binaries on
+Container with pre-built binaries (amd64/arm64) on
 [Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo):
 
   * `docker run -it ivankra/javascript-zoo`
   * `podman run -it docker.io/ivankra/javascript-zoo`
+  * `container run -it docker.io/ivankra/javascript-zoo`
+    (macOS [Containerization](https://github.com/apple/containerization))
 
 ## Template
 
@@ -45,7 +51,7 @@ Template for adding a new engine:
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=
+ARG REPO=<repository to check out>
 ARG REV=master
 
 WORKDIR /src

@@ -2,14 +2,15 @@
 
 Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.
 
-* URL:        http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx
-* Language:   C#
-* License:    Proprietary
-* Org:        Microsoft
-* Standard:   ES4 (ES3 + some ES4 draft features)
-* Years:      2000-2010
-* JIT:        via CLR
-* DLL:        Microsoft.JScript.dll
+* Homepage:         http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx
+* Language:         C#
+* License:          Proprietary
+* Org:              Microsoft
+* Standard:         ES4 (ES3 + some ES4 draft features)
+* Years:            2000-2010
+* Runtime platform: .NET
+* JIT:              via CLR
+* DLL:              Microsoft.JScript.dll
 
 ## Versions
 

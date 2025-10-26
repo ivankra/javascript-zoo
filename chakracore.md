@@ -2,17 +2,18 @@
 
 JavaScript engine of Microsoft Edge Legacy.
 
-* Repository: https://github.com/chakra-core/ChakraCore.git <img src="https://img.shields.io/github/stars/chakra-core/ChakraCore?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/chakra-core/ChakraCore?label=&style=flat-square" alt="Last commit" title="Last commit">
-* LOC:        779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
-* Language:   C++
-* License:    MIT
-* Note:       Doesn't support Linux arm64.
-* Org:        Microsoft
-* Standard:   ES2019
-* Years:      2015-2021
-* Runtime:    register-based VM, deferred compilation
-* JIT:        2-tier JIT
-* DLL:        chakra.dll
+* Repository:       https://github.com/chakra-core/ChakraCore.git <img src="https://img.shields.io/github/stars/chakra-core/ChakraCore?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/chakra-core/ChakraCore?label=&style=flat-square" alt="Last commit" title="Last commit">
+* LOC:              779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
+* Language:         C++
+* License:          MIT
+* Org:              Microsoft
+* Standard:         ES2019
+* Years:            2015-2021
+* Features:         WebAssembly engine, deferred parsing
+* Runtime platform: native (Windows x86/x64/arm64, Linux x64, macOS x64/arm64)
+* Interpreter:      register-based VM
+* JIT:              2-tier JIT, arm/arm64, x86/x64
+* DLL:              chakra.dll
 
 ## History
 
@@ -33,6 +34,10 @@ Closed-source chakra.dll in Windows, presumably, is still maintained.
 * ES2020
   * BigInt: implemented, but disabled by default
   * Optional chaining: not implemented
+
+## Runtimes
+
+* [Node-Chakracore](https://github.com/nodejs/node-chakracore): Node.js on ChakraCore (obsolete)
 
 ## Links
 
