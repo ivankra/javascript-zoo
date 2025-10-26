@@ -16,7 +16,7 @@ RUN npm install && npm install esbuild
 
 RUN mkdir -p /dist && \
     # Fix race condition (.script.lua deleted before luajit reads it) \
-    sed -i 's|^\(fs.unlinkSync.*\);|//\1|' bin/castl.js && \
+    sed -i 's|\(fs.unlinkSync.*\);|//\1|' bin/castl.js && \
     sed -i '/function execCallback.*/a\ if (fs.existsSync(tmpFilename)) fs.unlinkSync(tmpFilename);' bin/castl.js && \
     # Use newer libpcre2 instead of obsolete libpcre3 \
     sed -i 's/"rex_pcre"/"rex_pcre2"/' lua/castl/modules/regexphelper.lua && \
@@ -36,7 +36,7 @@ RUN mkdir -p /dist && \
 'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
 'export LUA_PATH="$SCRIPT_DIR/castl-dist/?.lua;;"'"\n"\
 'export LUA_CPATH="$SCRIPT_DIR/castl-dist/?.so;;"'"\n"\
-'if ! [[ -f "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi'"\n"\
+'if [[ -z "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi'"\n"\
 'node "$SCRIPT_DIR/castl-dist/castl.js" --jit "$@"' && \
     chmod a+rx /dist/castl && \
     du -bc /dist/castl-dist/castl.min.js /dist/castl-dist/castl | tail -1 | cut -f 1 >/dist/jsz_dist_size
