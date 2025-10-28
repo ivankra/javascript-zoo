@@ -3,7 +3,7 @@
 Buggy unfinished interpreter.
 
 * Homepage:     https://code.google.com/archive/p/quad-wheel/
-* Repository:   https://github.com/radare/quad-wheel.git <img src="https://img.shields.io/github/stars/radare/quad-wheel?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/radare/quad-wheel?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:   https://github.com/radare/quad-wheel.git <span class="shields"><img src="https://img.shields.io/github/stars/radare/quad-wheel?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/radare/quad-wheel?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          7917 (`cloc *.{c,h}`)
 * Language:     C
 * License:      MIT

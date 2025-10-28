@@ -10,4 +10,4 @@ Edbrowse CLI browser had own small JavaScript engine until v2.2.10 (2006).
 * Years:       2004-2006
 * Interpreter: stack-based VM
 
-Switched to SpiderMonkey and later to QuickJS.
+Switched to [SpiderMonkey](spidermonkey.md) and later to [QuickJS](quickjs.md).

@@ -3,14 +3,14 @@
 Interpreter for a small ES6-like language for microcontrollers from OpenWrt project.
 
 * Homepage:     https://ucode.mein.io/
-* Repository:   https://github.com/jow-/ucode.git <img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:   https://github.com/jow-/ucode.git <span class="shields"><img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          39692 (`cloc *.c include lib`)
 * Language:     C
 * License:      ISC
 * Org:          OpenWrt
 * Standard:     no (distinct ES6-inspired language, different non-object-oriented standard library)
 * Years:        2020-
-* Type:         JavaScript-like language
+* Type:         JavaScript-like language ([syntax](https://ucode.mein.io/tutorial-02-syntax.html))
 * Interpreter:  stack-based VM
 * GC:           reference counting + mark-and-sweep GC
 * Regex engine: POSIX (regex.h)

@@ -5,7 +5,7 @@ Currently just a thin layer on top of [Acorn](acorn.md) parser.
 
 * Homepage:   https://github.com/eslint/js/blob/main/packages/espree/README.md
 * NPM:        https://www.npmjs.com/package/espree
-* Repository: https://github.com/eslint/js.git <img src="https://img.shields.io/github/stars/eslint/js?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/eslint/js?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository: https://github.com/eslint/js.git <span class="shields"><img src="https://img.shields.io/github/stars/eslint/js?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/eslint/js?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        436 (`cloc packages/espree/lib`)
 * Language:   JavaScript
 * License:    BSD-2-Clause

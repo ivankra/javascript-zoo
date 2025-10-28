@@ -3,7 +3,7 @@
 JavaScript engine written in Nim.
 
 * Homepage:    https://bali.xtrayambak.xyz/
-* Repository:  https://github.com/ferus-web/bali.git <img src="https://img.shields.io/github/stars/ferus-web/bali?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/ferus-web/bali?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:  https://github.com/ferus-web/bali.git <span class="shields"><img src="https://img.shields.io/github/stars/ferus-web/bali?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/ferus-web/bali?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         12642 (`cloc src`)
 * Language:    Nim
 * License:     BSD-3-Clause

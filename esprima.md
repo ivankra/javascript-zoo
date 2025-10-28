@@ -4,7 +4,7 @@ First widely-used JavaScript parser written in JavaScript.
 Not actively developed since ~2018.
 
 * Homepage:   https://esprima.org/
-* Repository: https://github.com/jquery/esprima.git <img src="https://img.shields.io/github/stars/jquery/esprima?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/jquery/esprima?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository: https://github.com/jquery/esprima.git <span class="shields"><img src="https://img.shields.io/github/stars/jquery/esprima?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jquery/esprima?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        6705 (`cloc src`)
 * Language:   TypeScript
 * License:    BSD-2-Clause

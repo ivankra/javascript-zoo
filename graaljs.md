@@ -3,7 +3,7 @@
 High-performance JavaScript engine for JVM/GraalVM.
 
 * Homepage:         https://www.graalvm.org/javascript/
-* Repository:       https://github.com/oracle/graaljs.git <img src="https://img.shields.io/github/stars/oracle/graaljs?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/oracle/graaljs?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:       https://github.com/oracle/graaljs.git <span class="shields"><img src="https://img.shields.io/github/stars/oracle/graaljs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oracle/graaljs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              191606 (`cloc --not_match_d="(?i)(test)" graal-js/src`)
 * Language:         Java
 * License:          GFTC, UPL-1.0
@@ -26,4 +26,4 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 ## Runtimes
 
 * Ships with its own port of Node.js
-* [Elide](https://github.com/elide-dev/elide): multi-language runtime on top of GraalVM
+* [Elide](https://github.com/elide-dev/elide) <span class="shields"><img src="https://img.shields.io/github/stars/elide-dev/elide?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/elide-dev/elide?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - multi-language runtime on top of GraalVM

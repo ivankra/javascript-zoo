@@ -3,7 +3,7 @@
 JavaScript engine of Firefox.
 
 * Homepage:     https://spidermonkey.dev/
-* Repository:   https://github.com/mozilla-firefox/firefox.git <img src="https://img.shields.io/github/stars/mozilla-firefox/firefox?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/mozilla-firefox/firefox?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:   https://github.com/mozilla-firefox/firefox.git <span class="shields"><img src="https://img.shields.io/github/stars/mozilla-firefox/firefox?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/mozilla-firefox/firefox?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
 * Language:     C++
 * License:      MPL-2.0
@@ -13,8 +13,7 @@ JavaScript engine of Firefox.
 * Interpreter:  stack-based VM
 * JIT:          2-tier JIT
 * Regex engine: Irregexp, JIT-enabled
-  * Previously used YARR from 1.8.1 / Firefox 3.5.
-  * Switched to Irregexp from Firefox 78.
+  * Used YARR from 1.8.1 / Firefox 3.5, Irregexp from Firefox 78.
 
 ## History
 
@@ -41,12 +40,12 @@ JavaScript engine of Firefox.
 * [Elinks](https://github.com/rkd77/elinks) browser: can be configured to use SpiderMonkey, QuickJS or MuJS
 * GNOME 3 and Cinnamon desktop environments
 * [MongoDB](https://github.com/mongodb/mongo/tree/master/src/mongo/scripting), CouchDB, Riak
-* [Acrobat Reader](https://opensource.adobe.com/dc-acrobat-sdk-docs/library/jsapiref/index.html) and other Adobe products: stuck on SpiderMonkey 1.8.5 fork ("AcroJS")
+* [Acrobat Reader](https://opensource.adobe.com/dc-acrobat-sdk-docs/library/jsapiref/index.html) and other Adobe products ("AcroJS") - for evaluation of JavaScript code in .pdf. Stuck on old SpiderMonkey versions due to E4X.
 * [Mozilla's list of FOSS users](https://web.archive.org/web/20210506104010/https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/FOSS)
 
 ## Runtimes
 
-* [WinterJS](https://github.com/wasmerio/winterjs): SpiderMonkey/hyper.rs-based runtime
-* [spiderfire](https://github.com/Redfire75369/spiderfire) runtime
-* [gjs](https://gitlab.gnome.org/GNOME/gjs)/[cjs](https://github.com/linuxmint/cjs) in GNOME 3 / Cinnamon
-* [Fastly Compute](https://github.com/fastly/js-compute-runtime)
+* [WinterJS](https://github.com/wasmerio/winterjs) <span class="shields"><img src="https://img.shields.io/github/stars/wasmerio/winterjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/wasmerio/winterjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - SpiderMonkey/hyper.rs-based runtime
+* [spiderfire](https://github.com/Redfire75369/spiderfire) <span class="shields"><img src="https://img.shields.io/github/stars/Redfire75369/spiderfire?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/Redfire75369/spiderfire?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* [Fastly Compute](https://github.com/fastly/js-compute-runtime) <span class="shields"><img src="https://img.shields.io/github/stars/fastly/js-compute-runtime?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/fastly/js-compute-runtime?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* [gjs](https://gitlab.gnome.org/GNOME/gjs) / [cjs](https://github.com/linuxmint/cjs) <span class="shields"><img src="https://img.shields.io/github/stars/linuxmint/cjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/linuxmint/cjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - GNOME 3 / Cinnamon's runtime

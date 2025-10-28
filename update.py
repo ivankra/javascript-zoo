@@ -65,7 +65,7 @@ def update_data(args):
         row = orig_row_by_engine.get(engine, {})
         row['engine'] = engine
 
-        process_markdown(row, filename=filename, args=args)
+        process_md(row, filename=filename, args=args)
         process_github(row, args=args)
 
         # Variants metadata are only used as base template in process_dist/process_bench()
@@ -79,7 +79,7 @@ def update_data(args):
             }
             if os.isatty(1):
                 print(f'\033[1K\r{variant_filename} ', end='', flush=True)
-            process_markdown(variants_metadata[variant], filename=variant_filename, args=args)
+            process_md(variants_metadata[variant], filename=variant_filename, args=args)
             del variants_metadata[variant]['title']
 
         row['bench'] = {}
@@ -90,6 +90,9 @@ def update_data(args):
         row = {k: row[k] for k in sorted(row.keys())}
         if bench:
             row['bench'] = [bench[k] for k in sorted(bench.keys())]
+
+        if args.format_markdown:
+            update_md(filename, row)
 
         rows.append(row)
 
@@ -110,15 +113,15 @@ def update_data(args):
 class MDParse:
     title: str = ''    # page title
     summary: str = ''  # first paragraph
-    metadata: List['MDMeta'] = field(default_factory=list)  # flattened
-    tree: List['MDMeta'] = field(default_factory=list)     # tree
+    metadata: List['MDItem'] = field(default_factory=list)  # flattened
+    tree: List['MDItem'] = field(default_factory=list)     # tree
 
 @dataclass
-class MDMeta:
+class MDItem:
     line_no: int
     text: str     # full line without indent and leading *
     indent: int   # spaces count
-    tree: List['MDMeta'] = field(default_factory=list)    # subitems tree
+    tree: List['MDItem'] = field(default_factory=list)    # subitems tree
     map_key: str = ''             # key into METADATA_MAP, /-separated titles
     key: Union[str, None] = None    # JSON key
     value: Union[str, None] = None  # JSON value
@@ -154,7 +157,7 @@ METADATA_MAP = {
     'DLL': 'dll',
 }
 
-def parse_markdown_metadata(filename) -> MDParse:
+def parse_md_metadata(filename) -> MDParse:
     lines = [s.rstrip() for s in open(filename).readlines()] + ['']
     no = 0
 
@@ -187,11 +190,11 @@ def parse_markdown_metadata(filename) -> MDParse:
         text = lines[no][indent+1:].strip()
         no += 1
 
-        item = MDMeta(
+        item = MDItem(
             line_no=no,
             text=text,
             indent=indent,
-            map_key=re.sub(':.*', '', text).strip(),
+            map_key=re.sub(': .*', '', text).strip(),
         )
 
         parent = parsed
@@ -207,53 +210,58 @@ def parse_markdown_metadata(filename) -> MDParse:
         parsed.metadata.append(item)
 
         item.key = METADATA_MAP.get(item.map_key)
-        if item.key is not None and ':' in text:
-            item.value = text[text.index(':')+1:].strip()
+        if item.key is not None and ': ' in text:
+            item.value = text[text.index(': ')+1:].strip()
 
     return parsed
 
-def sort_markdown_metadata(parsed, filename):
+def write_md_metadata(filename, parsed=None):
+    """Sort metadata list in markdown file."""
+
+    if parsed is None:
+        parsed = parse_md_metadata(filename)
+
     metadata_order = {k: i for (i, k) in enumerate(METADATA_MAP.keys())}
 
-    lhs_width = max(4 + node.indent + node.text.index(':') for node in parsed.metadata if ':' in node.text)
+    lhs_width = max(4 + node.indent + node.text.index(': ') for node in parsed.metadata if ': ' in node.text)
     lhs_width = max(lhs_width, 14)
     lhs_width = min(lhs_width, 32)
 
     def rec(node, indent=''):
         if node is not parsed:
-            if ':' in node.text:
-                title = node.text[:node.text.index(':')]
-                lhs = indent + '* ' + title + ': '
+            if ': ' in node.text:
+                title = node.text[:node.text.index(': ')]
+                lhs = f'{indent}* {title}: '
                 if len(lhs) < lhs_width:
                     lhs += ' ' * (lhs_width - len(lhs))
-                yield lhs + node.text[node.text.index(':')+1:].lstrip() + '\n'
+                yield lhs + node.text[node.text.index(': ')+1:].lstrip() + '\n'
             else:
                 yield f'{indent}* {node.text}\n'
             indent += '  '
 
-        node.tree.sort(key=lambda item: metadata_order.get(item.map_key, 9999))
+        node.tree.sort(key=lambda item: metadata_order.get(item.map_key, 1000 + item.line_no))
 
         for ch in node.tree:
             yield from rec(ch, indent)
 
+    reformatted = list(rec(parsed))
+
     lines = open(filename).readlines()
+    orig_lines = list(lines)
 
     start = min(item.line_no-1 for item in parsed.metadata)
     end = max(item.line_no for item in parsed.metadata)
+    lines = lines[:start] + reformatted + lines[end:]
 
-    lines2 = lines[:start] + list(rec(parsed)) + lines[end:]
-    if lines == lines2:
+    if lines == orig_lines:
         return
 
     with open(filename, 'w') as fp:
-        fp.writelines(lines2)
+        fp.writelines(lines)
 
 # Parse markdown file and populate/update fields in row dict for that engine
-def process_markdown(row, filename, args):
-    parsed = parse_markdown_metadata(filename)
-
-    if args.format_markdown:
-        sort_markdown_metadata(parsed, filename)
+def process_md(row, filename, args):
+    parsed = parse_md_metadata(filename)
 
     # Drop existing keys that are recomputed from .md
     drop_keys = sum([[k, k + '_note', k + '_short'] for k in METADATA_MAP.values()], [])
@@ -268,17 +276,6 @@ def process_markdown(row, filename, args):
     for item in parsed.metadata:
         if item.key is None or item.value is None: continue
         row[item.key] = strip_html_tags(item.value)
-
-    # Also update shields
-    #for i in range(len(metadata_lines)):
-    #    line = metadata_lines[i]
-    #    shields = ''
-    #    m = re.match(r'^\* (GitHub|Repository): *(https://github.com/[^/]+/[^/ ]+?(.git))', line)
-    #    if m:
-    #        shields = get_shields_for_repo(m[2], filename)
-    #    if shields:
-    #        line = re.sub(' *<img .*', '', line) + ' ' + shields
-    #        metadata_lines[i] = line
 
     # Split up some "text (note)" keys
     for key in list(row.keys()):
@@ -549,20 +546,56 @@ def format_table(data, columns):
     lines.append('<!-- end of generated table (%d rows) -->\n' % len(data))
     return lines
 
+def update_md(filename, data):
+    parsed = parse_md_metadata(filename)
+    write_md_metadata(filename, parsed)
+    update_md_shields(filename)
+
+def update_md_shields(filename):
+    """Updates <span class="shields">...</span> tags in .md file."""
+
+    lines = open(filename).readlines()
+    orig_lines = list(lines)
+
+    for i, line in enumerate(lines):
+        matches = re.findall(r'''(https?://[^()>"' ]+)([()>"' ]*)(<(?:div|span) class="shields">.*?</(?:div|span)>)''', line)
+        for url, sep, old in matches:
+            shields = get_shields_for_repo(url, filename)
+            if shields:
+                print(url + sep + old)
+                print(url + sep + shields)
+                lines[i] = lines[i].replace(url + sep + old, url + sep + shields)
+
+    if lines == orig_lines:
+        return
+
+    with open(filename, 'w') as fp:
+        fp.writelines(lines)
+
 def get_shields_for_repo(repo_link, filename):
-    m = re.match('https?://github.com/([^/]+)/([^/]+?)(.git)?$', repo_link)
+    m = re.match(r'https?://(github\.com|gitlab\.com|codeberg.org)/([^/]+)/([^/]+?)(.git)?/?$', repo_link)
     if not m:
         return ''
-    if filename == 'README.md':
-        return (
-            f'<img src="https://img.shields.io/github/stars/{m[1]}/{m[2]}?label=&style=flat-square" alt="GitHub stars" title="GitHub stars">' +
-            f'<img src="https://img.shields.io/github/last-commit/{m[1]}/{m[2]}?label=&style=flat-square" alt="Last commit" title="Last commit">'
-        )
+
+    extra = ''
+    if m[1] == 'github.com':
+        svc = 'github'
+    elif m[1] == 'gitlab.com':
+        svc = 'gitlab'
     else:
-        return (
-            f'<img src="https://img.shields.io/github/stars/{m[1]}/{m[2]}?label=&style=flat-square" alt="GitHub stars" title="GitHub stars">' +
-            f'<img src="https://img.shields.io/github/last-commit/{m[1]}/{m[2]}?label=&style=flat-square" alt="Last commit" title="Last commit">'
-        )
+        svc = 'gitea'
+        extra = '&gitea_url=https://' + m[1]
+
+    user = m[2]
+    repo = m[3]
+
+    html = f'<img src="https://img.shields.io/{svc}/stars/{user}/{repo}?label=&style=flat-square{extra}" alt="Stars" title="Stars">'
+    html += f'<img src="https://img.shields.io/{svc}/last-commit/{user}/{repo}?label=&style=flat-square{extra}" alt="Last commit" title="Last commit">'
+
+    if filename == 'README.md':
+        return '<div class="shields">' + html + '</div>'
+    else:
+        return '<span class="shields">' + html + '</span>'
 
 def get_domain(url):
     m = re.match('^https?://?([^/]+).*', url)

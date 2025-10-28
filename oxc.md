@@ -4,13 +4,14 @@ Collection of high-performance tools for JavaScript and TypeScript
 written in Rust: parser, linter, formatter, minifier and others.
 
 * Homepage:   https://oxc.rs/
-* Repository: https://github.com/oxc-project/oxc
+* Repository: https://github.com/oxc-project/oxc.git <span class="shields"><img src="https://img.shields.io/github/stars/oxc-project/oxc?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oxc-project/oxc?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        52692 (`cloc crates/{oxc_ast,oxc_parser}/src`)
 * Language:   Rust
 * License:    MIT
 * Standard:   ESnext
 * Years:      2023-
 * Type:       parser
+* Features:   ESTree-like AST, TypeScript, JSX
 
 ## Features
 

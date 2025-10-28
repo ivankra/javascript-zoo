@@ -3,7 +3,7 @@
 Lightweight JavaScript engine for microcontrollers.
 
 * Homepage:    https://jerryscript.net/
-* Repository:  https://github.com/jerryscript-project/jerryscript.git <img src="https://img.shields.io/github/stars/jerryscript-project/jerryscript?label=&style=flat-square" alt="GitHub stars" title="GitHub stars"><img src="https://img.shields.io/github/last-commit/jerryscript-project/jerryscript?label=&style=flat-square" alt="Last commit" title="Last commit">
+* Repository:  https://github.com/jerryscript-project/jerryscript.git <span class="shields"><img src="https://img.shields.io/github/stars/jerryscript-project/jerryscript?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jerryscript-project/jerryscript?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         108762 (`cloc jerry-*`)
 * Language:    C
 * License:     Apache-2.0
@@ -18,6 +18,6 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 
 ## Runtimes
 
-* [IoT.js](https://github.com/jerryscript-project/iotjs)
-* [Microlattice.js](https://github.com/iamblue/microlattice)
-* [Kaluma](https://github.com/kaluma-project/kaluma)
+* [IoT.js](https://github.com/jerryscript-project/iotjs) <span class="shields"><img src="https://img.shields.io/github/stars/jerryscript-project/iotjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jerryscript-project/iotjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* [Microlattice.js](https://github.com/iamblue/microlattice) <span class="shields"><img src="https://img.shields.io/github/stars/iamblue/microlattice?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/iamblue/microlattice?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* [Kaluma](https://github.com/kaluma-project/kaluma) <span class="shields"><img src="https://img.shields.io/github/stars/kaluma-project/kaluma?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/kaluma-project/kaluma?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
