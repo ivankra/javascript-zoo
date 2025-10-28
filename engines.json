@@ -264,6 +264,33 @@
     "loc_command": "cloc src"
   },
   {
+    "id": "brimstone",
+    "title": "Brimstone",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/brimstone.md",
+    "github_stars": 13,
+    "github_forks": 5,
+    "summary": "Javascript engine written in Rust, supporting most of ES2024.",
+    "repository": "https://github.com/Hans-Halverson/brimstone.git",
+    "loc": 74381,
+    "language": "Rust",
+    "standard": "ESnext",
+    "years": "2022-",
+    "interpreter": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
+    "regex": "own ([regexp/](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
+    "loc_command": "cloc src",
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "d22001b28bde215939bfd4aefc1cb0f77563d27056082bf0cbd1f437d09c0098",
+        "binary_size": 5910576,
+        "repository": "https://github.com/Hans-Halverson/brimstone",
+        "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e",
+        "revision_date": "2025-09-04",
+        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+      }
+    ]
+  },
+  {
     "id": "carakan",
     "title": "Carakan",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/carakan.md",
