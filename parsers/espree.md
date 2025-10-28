@@ -11,7 +11,6 @@ Currently just a thin layer on top of [Acorn](acorn.md) parser.
 * License:    BSD-2-Clause
 * Standard:   ESnext
 * Years:      2014-
-* Type:       parser
 * Features:   ESTree, JSX
 
 ## History

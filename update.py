@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+#
+# - Parses engines/*.md, parsers/*.md files, extracting structured metadata.
+# - Reformats them: sorts/aligns metadata, updates <span class="shields">...</span> blocks.
+# - Merges with build/benchmarking/github data
+# - Updates engines.json, engines.js (JSONP)
+# - Regenerates tables in .md files indicated by <!-- update.py: ... --> markup
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 import argparse
 import glob
@@ -33,63 +42,61 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
-    # Parse markdown, metadata, benchmark files, update data.json
-    data = update_data(args)
+    engines_data = update_data('engine', 'engines/*.md', 'engines.json', args)
+    parsers_data = update_data('parser', 'parsers/*.md', None, args)
 
     # Update files with dynamically-generated index tables
-    data = format_table_columns(data)
-    for filename in ['README.md', 'acorn.md']:
-        update_tables(filename, data)
+    update_tables('README.md', engines_data)
+    update_tables('parsers/README.md', parsers_data)
+    update_tables('parsers/acorn.md', engines_data)
 
-def update_data(args):
-    rows = []
-    if os.path.exists('data.json'):
-        with open('data.json', 'r') as fp:
-            rows = json.load(fp)
-
-    orig_row_by_engine = {}
-    for row in rows:
-        orig_row_by_engine[row['engine']] = row
+def update_data(kind, md_glob, json_file, args):
+    orig_row_by_id = {}
+    if json_file and os.path.exists(json_file):
+        with open(json_file, 'r') as fp:
+            for row in json.load(fp):
+                orig_row_by_id[row['id']] = row
 
     rows = []
 
-    for filename in sorted(glob.glob('*.md')):
-        if filename == 'README.md' or '_' in filename:
+    for filename in sorted(glob.glob(md_glob)):
+        if re.search('(_|README.md)', filename):
             continue
 
         if os.isatty(1):
             print(f'\033[1K\r{filename} ', end='', flush=True)
 
-        engine = filename.replace('.md', '')
+        name = os.path.basename(filename).removesuffix('.md')
 
-        row = orig_row_by_engine.get(engine, {})
-        row['engine'] = engine
+        row = orig_row_by_id.get(name, {})
+        row['id'] = name
 
-        process_md(row, filename=filename, args=args)
-        process_github(row, args=args)
+        process_md(row, kind, filename=filename, args=args)
+        process_github(row, kind, args=args)
 
         # Variants metadata are only used as base template in process_dist/process_bench()
         # If there's no built binary / benchmark data for a variant, it will be ignored.
-        variants_metadata = {}
-        for variant_filename in sorted(glob.glob(f'{engine}_*.md')):
-            variant = variant_filename[len(engine)+1:-3]
-            variants_metadata[variant] = {
-                'engine': engine,
-                'variant': variant,
-            }
-            if os.isatty(1):
-                print(f'\033[1K\r{variant_filename} ', end='', flush=True)
-            process_md(variants_metadata[variant], filename=variant_filename, args=args)
-            del variants_metadata[variant]['title']
+        if kind == 'engine':
+            variants_metadata = {}
+            for variant_filename in sorted(glob.glob(f'engines/{name}_*.md')):
+                variant = os.path.basename(variant_filename)[len(name)+1:-3]
+                variants_metadata[variant] = {
+                    'engine': name,
+                    'variant': variant,
+                }
+                if os.isatty(1):
+                    print(f'\033[1K\r{variant_filename} ', end='', flush=True)
+                process_md(variants_metadata[variant], kind, filename=variant_filename, args=args)
+                del variants_metadata[variant]['title']
 
-        row['bench'] = {}
-        process_dist(row, variants_metadata=variants_metadata)
-        process_bench(row, variants_metadata=variants_metadata)
+            row['bench'] = {}
+            process_dist(row, variants_metadata=variants_metadata)
+            process_bench(row, variants_metadata=variants_metadata)
 
-        bench = row.pop('bench')
-        row = {k: row[k] for k in sorted(row.keys())}
-        if bench:
-            row['bench'] = [bench[k] for k in sorted(bench.keys())]
+            bench = row.pop('bench')
+            #row = {k: row[k] for k in sorted(row.keys())}
+            if bench:
+                row['bench'] = [bench[k] for k in sorted(bench.keys())]
 
         if args.format_markdown:
             update_md(filename, row)
@@ -99,13 +106,16 @@ def update_data(args):
     if os.isatty(1):
         print('\033[1K\rOK', flush=True)
 
-    with open('data.json', 'w') as fp:
-        json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
+    if json_file:
+        with open(json_file, 'w') as fp:
+            json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
-    # JSONP for ease of importing in .html
-    with open('data.js', 'w') as fp:
-        fp.write('kJavascriptZoo = ')
-        json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
+        # JSONP for ease of importing in .html
+        with open(json_file.replace('.json', '.js'), 'w') as fp:
+            fp.write('// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov\n')
+            fp.write('// SPDX-License-Identifier: MIT\n')
+            fp.write(f'const jsz_{kind}s = ')
+            json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
     return rows
 
@@ -156,6 +166,8 @@ METADATA_MAP = {
     'Regex engine': 'regex',
     'DLL': 'dll',
 }
+
+MARKDOWN_LINKS_BASE = 'https://github.com/ivankra/javascript-zoo/blob/main/'
 
 def parse_md_metadata(filename) -> MDParse:
     lines = [s.rstrip() for s in open(filename).readlines()] + ['']
@@ -260,7 +272,7 @@ def write_md_metadata(filename, parsed=None):
         fp.writelines(lines)
 
 # Parse markdown file and populate/update fields in row dict for that engine
-def process_md(row, filename, args):
+def process_md(row, kind, filename, args):
     parsed = parse_md_metadata(filename)
 
     # Drop existing keys that are recomputed from .md
@@ -272,6 +284,7 @@ def process_md(row, filename, args):
 
     row['title'] = row.get('title', parsed.title)
     row['summary'] = strip_markdown_links(parsed.summary)
+    row['markdown_page'] = f'{MARKDOWN_LINKS_BASE}{kind}s/{os.path.basename(filename)}'
 
     for item in parsed.metadata:
         if item.key is None or item.value is None: continue
@@ -323,7 +336,7 @@ def process_md(row, filename, args):
             row[key] = int(row[key])
 
 # Populate fields with github data
-def process_github(row, args):
+def process_github(row, kind, args):
     gh_repo_url = row.get('github', row.get('repository', row.get('sources')))
     if not gh_repo_url:
         return
@@ -336,7 +349,8 @@ def process_github(row, args):
     repo = m[2]
 
     api_url = f"https://api.github.com/repos/{owner}/{repo}"
-    cache_filename = f'.cache/github/{row["engine"]}.json'
+    cache_filename = f'.cache/github/{row["id"]}.json'
+    os.makedirs(f'.cache/github', exist_ok=True)
 
     if os.path.exists(cache_filename):
         with open(cache_filename) as fp:
@@ -355,8 +369,7 @@ def process_github(row, args):
 
         github_data = response.json()
 
-        os.makedirs(f'.cache/github', exist_ok=True)
-        with open(f'.cache/github/{row["engine"]}.json', 'w') as fp:
+        with open(cache_filename, 'w') as fp:
             json.dump(github_data, fp, ensure_ascii=False, indent=2, sort_keys=True)
     else:
         return
@@ -366,7 +379,7 @@ def process_github(row, args):
 
 # Populate row.bench from dist/arch/engine-variant.json
 def process_dist(row, variants_metadata):
-    engine = row['engine']
+    engine = row['id']
 
     for arch in ARCH_LIST:
         for filename in glob.glob(f'dist/{arch}/{engine}.json') + \
@@ -387,7 +400,7 @@ def process_dist(row, variants_metadata):
 
 # Populate row.bench from benchmarking data in bench/data.py
 def process_bench(row, variants_metadata):
-    engine = row['engine']
+    engine = row['id']
 
     for bench_json in kBenchData:
         if bench_json['engine'] != engine: continue
@@ -432,6 +445,10 @@ def summarize_scores(scores):
     return f'N={n} median={median} mean={mean:.2f}±{sem:.2f} max={max(scores)}'
 
 def update_tables(filename, data):
+    update_md_shields(filename)
+
+    data = format_table_columns(filename, data)
+
     original_lines = []
     transformed_lines = []
 
@@ -464,8 +481,8 @@ def update_tables(filename, data):
         with open(filename, 'w') as fp:
             fp.write(''.join(transformed_lines))
 
-# Add extra columns for displaying the data in .md files
-def format_table_columns(data):
+# Add extra columns for displaying the data in .md file
+def format_table_columns(filename, data):
     pinned = 'v8 spidermonkey jsc'.split()
     res = []
 
@@ -493,13 +510,13 @@ def format_table_columns(data):
         lang = re.sub(', .*', '', lang)
         row['language_abbr'] = lang
 
-        if row['engine'] in pinned:
-            row['sort_key'] = 'A%02d' % pinned.index(row['engine'])
+        if row.get('id') in pinned:
+            row['sort_key'] = 'A%02d' % pinned.index(row['id'])
         else:
             row['sort_key'] = ' '.join([
                 lang.replace('TypeScript', 'JavaScript').replace('C++', 'C'),
                 '%06d' % (999998 - row.get('github_stars', -1)),
-                row['engine'].lower()
+                row.get('id', '').lower(),
             ])
 
         repo_link = row.get('github', row.get('repository', ''))
@@ -513,21 +530,22 @@ def format_table_columns(data):
             repo_text = f'{m[1]}/{m[2]}'
         if re.match(r'https?://github.com/.*\.git$', repo_link):
             repo_link = repo_link[:-4]
+
         shields = None
         if repo_link:
+            shields = get_shields_for_repo(repo_link, 'README.md').strip()
+
+        markdown_page_rel = os.path.relpath(
+            row['markdown_page'].removeprefix(MARKDOWN_LINKS_BASE),
+            os.path.dirname(filename))
+
+        row['engine_link'] = f'[{row["title"]}]({markdown_page_rel})'
+        if shields:
+            row['engine_link'] += f'<br>[{shields}]({repo_link})'
+        elif repo_link:
             # Non-breaking hyphen (<nobr> stripped by github).
             # Force the column to be wide enough to not wrap images.
-            shields = get_shields_for_repo(repo_link, 'README.md').strip()
-            if shields:
-                row['repository_shield'] = f'[{shields}]({repo_link})'
-            else:
-                row['repository_shield'] = f'[{repo_text}]({repo_link})'.replace('[brent-', '[brent‑')
-
-        row['engine_link'] = f'[{row["title"]}]({row["engine"]}.md)'
-        if shields:
-            row['engine_link'] += '<br>' + row['repository_shield']
-        elif repo_link:
-            row['engine_link'] += '<br>(%s)' % row['repository_shield']
+            row['engine_link'] += f'<br>([{repo_text}]({repo_link}))'.replace('[brent-', '[brent‑')
 
     res.sort(key=lambda row: row['sort_key'])
     return res
@@ -562,8 +580,6 @@ def update_md_shields(filename):
         for url, sep, old in matches:
             shields = get_shields_for_repo(url, filename)
             if shields:
-                print(url + sep + old)
-                print(url + sep + shields)
                 lines[i] = lines[i].replace(url + sep + old, url + sep + shields)
 
     if lines == orig_lines:

@@ -10,7 +10,6 @@ Not actively developed since ~2018.
 * License:    BSD-2-Clause
 * Standard:   ES2019
 * Years:      2011-2021
-* Type:       parser
 * Features:   ESTree, JSX
 
 ## History
@@ -37,7 +36,7 @@ with a similar API.
 
 * [ESLint](https://eslint.org/): static code analysis tool.
   Originally used Esprima, later switched to its own [Espree](espree.md) parser.
-* [Continuum](continuum.md) engine (2012-2014)
+* [Continuum](../engines/continuum.md) engine (2012-2014)
 
 ## Links
 

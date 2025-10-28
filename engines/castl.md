@@ -9,7 +9,7 @@ Self-hosting JavaScript to Lua compiler with a runtime library and eval().
 * Standard:         ES5
 * Years:            2014-2017
 * Type:             compiler to Lua
-* Parser:           [Esprima](esprima.md) / [Acorn](acorn.md)
+* Parser:           [Esprima](../parsers/esprima.md) / [Acorn](../parsers/acorn.md)
 * Runtime platform: Lua (Lua 5.2 / LuaJIT)
 * JIT:              via LuaJIT
 * Regex engine:     PCRE

@@ -10,12 +10,11 @@ JavaScript/TypeScript parser used in Babel. Originally based on [Acorn](acord.md
 * License:    MIT
 * Standard:   ESnext
 * Years:      2012-
-* Type:       parser
 * Features:   ESTree, TypeScript, JSX, Flow, plugins
 
 ## History
 
-Originally called [`babylon`](https://www.npmjs.com/package/babylon).
-Renamed to `@babel/parser` in 2018.
+Originally called [babylon](https://www.npmjs.com/package/babylon),
+renamed to `@babel/parser` in 2018.
 
-Heavily based on [acorn](acorn.md) and acorn-jsx.
+Heavily based on [acorn](acorn.md) and acorn-jsx plugin.

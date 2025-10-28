@@ -10,7 +10,6 @@ written in Rust: parser, linter, formatter, minifier and others.
 * License:    MIT
 * Standard:   ESnext
 * Years:      2023-
-* Type:       parser
 * Features:   ESTree-like AST, TypeScript, JSX
 
 ## Features
@@ -24,5 +23,5 @@ written in Rust: parser, linter, formatter, minifier and others.
 
 ## Users
 
-* [Nova](nova.md) engine
+* [Nova](../engines/nova.md) engine
 * [Rolldown](https://rolldown.rs/): Rust-based bundler

@@ -1,4 +1,4 @@
 .cache/
 dist/
-src/
+code/
 __pycache__

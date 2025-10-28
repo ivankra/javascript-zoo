@@ -8,5 +8,5 @@ ES5 interpreter written in TypeScript.
 * License:          MIT
 * Standard:         ES5
 * Years:            2019-
-* Parser:           [Acorn](acorn.md)
+* Parser:           [Acorn](../parsers/acorn.md)
 * Runtime platform: JavaScript

@@ -9,5 +9,5 @@ AOT compiler targetting native code via C++.
 * Standard:     ES5 (partial)
 * Years:        2015-2016
 * Type:         compiler to native code (via C++)
-* Parser:       [Acorn](acorn.md)
+* Parser:       [Acorn](../parsers/acorn.md)
 * Regex engine: PCRE

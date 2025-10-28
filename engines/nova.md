@@ -9,7 +9,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 * License:     MPL-2.0
 * Standard:    ES6+ (partial)
 * Years:       2022-
-* Parser:      [oxc](oxc.md)
+* Parser:      [oxc](../parsers/oxc.md)
 * Interpreter: stack-based VM
 
 ## Runtimes

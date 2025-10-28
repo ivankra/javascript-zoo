@@ -8,6 +8,6 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 * Language:         JavaScript, TypeScript
 * License:          MIT
 * Years:            2023-
-* Parser:           [Acorn](acorn.md)
+* Parser:           [Acorn](../parsers/acorn.md)
 * Runtime platform: WebAssembly, native
 * JIT:              via WebAssembly engine

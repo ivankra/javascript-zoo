@@ -9,5 +9,4 @@ Rust-based JavaScript/TypeScript parser, transpiler, bundler.
 * License:    Apache-2.0
 * Standard:   ESnext
 * Years:      2017-
-* Type:       parser, transpiler
 * Features:   ESTree-like AST, TypeScript, JSX
