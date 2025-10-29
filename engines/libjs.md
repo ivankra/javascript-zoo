@@ -11,3 +11,7 @@ JavaScript engine of Ladybird browser and SerenityOS.
 * Years:       2020-
 * Features:    WebAssembly engine (LibWasm)
 * Interpreter: register-based VM
+
+## Links
+
+* [An introduction to the LibJS JavaScript engine - Linux Groh - November 2022 TC39 Meeting](https://docs.google.com/presentation/d/1-chE3GTNFnNRwZqk4Bf3GCPV_nINfKG-NUTM4IeEnVc/view)

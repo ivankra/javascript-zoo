@@ -7,13 +7,14 @@ JavaScript engine of Firefox.
 * LOC:          1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
 * Language:     C++
 * License:      MPL-2.0
+* Ancestor:     [Mocha](mocha.md)
 * Org:          Mozilla
 * Standard:     ESnext
 * Years:        1996-
 * Interpreter:  stack-based VM
-* JIT:          2-tier JIT
-* Regex engine: Irregexp, JIT-enabled
-  * Used YARR from 1.8.1 / Firefox 3.5, Irregexp from Firefox 78.
+* JIT:          2-tier JIT ([doc](https://firefox-source-docs.mozilla.org/js/index.html))
+* GC:           generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))
+* Regex engine: Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)
 
 ## History
 

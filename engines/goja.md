@@ -6,10 +6,10 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 * LOC:         46141 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
 * Language:    Go
 * License:     MIT
-* Ancestor:    [otto](otto.md)
+* Ancestor:    [otto](otto.md) (borrowed otto's parser)
 * Standard:    ES6 (partial)
 * Years:       2016-
-* Parser:      recursive descent (fork of [otto](otto.md)'s parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285)
+* Parser:      recursive descent ([parser/](https://github.com/dop251/goja/tree/master/parser/), LOC: 4.3k)
 * Interpreter: stack-based VM
 * Platform:    Go (cgo-free)
 

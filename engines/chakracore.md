@@ -6,6 +6,7 @@ JavaScript engine of Microsoft Edge Legacy.
 * LOC:              779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
 * Language:         C++
 * License:          MIT
+* Ancestor:         [JScript9 / Chakra](jscript9.md)
 * Org:              Microsoft
 * Standard:         ES2019
 * Years:            2015-2021

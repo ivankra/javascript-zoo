@@ -10,3 +10,7 @@ Tiny interpreter for microcontrollers for a small JavaScript subset.
 * Type:             JavaScript-like language ([supported features](https://github.com/coder-mike/microvium/blob/main/doc/supported-language.md))
 * Runtime platform: native (C-based runtime)
 * Interpreter:      stack-based VM
+
+## Links
+
+* https://news.ycombinator.com/item?id=31819728

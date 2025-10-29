@@ -6,9 +6,13 @@
 * LOC:         292098 (`cloc src`)
 * Language:    C++
 * License:     Apache-2.0
+* Ancestor:    [QuickJS](quickjs.md)
 * Standard:    ES2019
 * Years:       2024-
 * Interpreter: stack-based VM
-* GC:          mark-and-sweep / reference counting ([doc](https://github.com/lynx-family/primjs/blob/develop/docs/gc.md))
+* GC:          mark-and-sweep / reference counting
+  * One of key features - compile-time option to replace QuickJS's reference counting with a mark-and-sweep GC, touting +10-20% performance ([doc](https://github.com/lynx-family/primjs/blob/develop/docs/gc.md)).
 
-Replaces QuickJS's reference counting with a faster mark-and-sweep GC (compile-time option).
+## Forks
+
+* [Hako](hako.md): PrimJS ported to WASM

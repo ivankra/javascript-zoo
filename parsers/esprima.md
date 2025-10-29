@@ -17,20 +17,20 @@ Not actively developed since ~2018.
 Created by Ariya Hidayat, released in December 2011.
 
 Based its original AST format on SpiderMonkey AST, a JSON-based format
-from Mozilla's experimental `Reflect.parse()`
-([Parser API](https://web.archive.org/web/20201029234034/https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API).
-Became de facto AST standard at the time, widely adopted in tooling.
+from Mozilla's earlier experimental `Reflect.parse()`
+([Parser API](https://web.archive.org/web/20201029234034/https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API)).
+Esprima/SpiderMonkey AST became de facto AST standard at the time,
+widely adopted in tooling.
 
 AST format was later formalized and expanded as [ESTree](https://github.com/estree/estree)
 specification (~2015), with participation of Mozilla, Esprima, Acorn, Babel,
-ESLint and others, enabling parser interoperability across the ecosystem.
+ESLint and others, enabling parser interoperability across JavaScript ecosystem.
 
 Development stagnated after 2017, with the final official release 4.0.1 in 2018.
-Mostly only used in legacy tools now, while JavaScript ecosystem has largely
-moved on to [Acorn](acorn.md) and its derivatives. [Espree](espree.md) is
-a modern drop-in alternative to Esprima, now built as a transition layer
-on top of Acorn with the goal of producing output that is similar to Esprima
-with a similar API.
+Mostly only used in legacy tools now, while the ecosystem has largely moved on
+to [Acorn](acorn.md) and its derivatives. [Espree](espree.md) is a modern
+drop-in alternative to Esprima, now built as a transition layer on top of Acorn
+with the goal of producing output that is similar to Esprima with a similar API.
 
 ## Users
 

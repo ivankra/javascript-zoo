@@ -4,6 +4,7 @@ JavaScript engine of Internet Explorer 9.0 – 11.0.
 
 * Language:   C++
 * License:    Proprietary
+* Ancestor:   [JScript](jscript.md)
 * Org:        Microsoft
 * Standard:   ES6 (partial)
 * Years:      2009-2013

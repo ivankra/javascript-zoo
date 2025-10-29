@@ -9,6 +9,7 @@ Currently just a thin layer on top of [Acorn](acorn.md) parser.
 * LOC:        436 (`cloc packages/espree/lib`)
 * Language:   JavaScript
 * License:    BSD-2-Clause
+* Ancestor:   [Esprima](esprima.md), [Acorn](acorn.md)
 * Standard:   ESnext
 * Years:      2014-
 * Features:   ESTree, JSX

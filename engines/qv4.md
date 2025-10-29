@@ -1,4 +1,4 @@
-# QV4
+# QV4 / QJSEngine
 
 JavaScript engine of Qt's QML framework (QJSEngine).
 
