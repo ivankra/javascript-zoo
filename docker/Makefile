@@ -13,10 +13,11 @@ ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 
 # chakracode: doesn't support arm64 on Linux
+# dscriptcpp: 32-bit x86 build only
 # iv-lv5: no JIT on arm64 - main build is JIT-less
 # spidermonkey_1.8.5/17/24: doesn't support arm64 due to JIT that can't be compiled out
 ifeq ($(DOCKER_ARCH),arm64)
-  TARGETS := $(filter-out chakracore% iv-lv5_jitless spidermonkey_1.8.5 spidermonkey_17 spidermonkey_24 bali starlight,$(TARGETS))
+  TARGETS := $(filter-out chakracore% dscriptcpp iv-lv5_jitless spidermonkey_1.8.5 spidermonkey_17 spidermonkey_24 bali starlight,$(TARGETS))
 endif
 
 all: base $(TARGETS)

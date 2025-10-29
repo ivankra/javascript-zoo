@@ -709,6 +709,7 @@
     "loc": 18013,
     "language": "D",
     "license": "BSL-1.0",
+    "ancestor": "[DscriptCPP](dscriptcpp.md) (original C++ version)",
     "org": "Digital Mars",
     "standard": "ES3 (partial)",
     "years": "2002-",
@@ -749,6 +750,37 @@
     "license": "BSD-3-Clause",
     "years": "2005",
     "loc_command": "cloc --not_match_d=test dmonkey/dmonkey"
+  },
+  {
+    "id": "dscriptcpp",
+    "title": "DscriptCPP",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dscriptcpp.md",
+    "license_abbr": "BSL-1.0",
+    "github_stars": 2,
+    "github_forks": 0,
+    "summary": "DMDScript version implemented in C++.",
+    "homepage": "https://www.digitalmars.com/dscript/cppscript.html",
+    "repository": "https://github.com/DigitalMars/DscriptCPP.git",
+    "loc": 43988,
+    "language": "C++",
+    "license": "BSL-1.0",
+    "org": "Digital Mars",
+    "standard": "ES3 (partial)",
+    "years": "2000",
+    "platform": "native (Win32/Linux i386)",
+    "interpreter": "register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))",
+    "loc_command": "cloc src",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "c97c3ba167ea00fa57eef2aa93c579b3f12b50835f029fc9e3cc14525d928501",
+        "binary_size": 1398540,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/DigitalMars/DscriptCPP.git",
+        "revision": "bfa84682939d591c1357da90e4dec109809f49ad",
+        "revision_date": "2025-10-11"
+      }
+    ]
   },
   {
     "id": "duktape",

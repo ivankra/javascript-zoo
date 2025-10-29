@@ -7,9 +7,8 @@ ECMAScript implementation by Digital Mars written in D.
 * LOC:         18013 (`cloc engine`)
 * Language:    D
 * License:     BSL-1.0 (Boost Software License 1.0)
+* Ancestor:    [DscriptCPP](dscriptcpp.md) (original C++ version)
 * Org:         Digital Mars
 * Standard:    ES3 (partial)
 * Years:       2002-
 * Interpreter: register-based VM
-
-An ancient x86-only C++ port also exists: https://digitalmars.com/dscript/cppscript.html

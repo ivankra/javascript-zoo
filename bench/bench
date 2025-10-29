@@ -530,6 +530,7 @@ CONFIGS = {
   # too slow on other tests
   'cesanta-v7': Config(benchmark_suite=['richards.js']),
   'dmdscript': Config(polyfills=[ES5_FOR_ES3_PF]),
+  'dscriptcpp': Config(benchmark_suite=['richards.es1.js']),
   'echosoar-jsi': Config(transforms=[HexTransform()]),
   'hermes': Config(flags=['-O'], warn_lines_re=r"(warning:|error\('Incorrect|throw 'Unsupported)"),
   'jerryscript': Config(
@@ -553,7 +554,7 @@ CONFIGS = {
   'nashorn': Config(flags=['--language=es6']),
   'njs': Config(
       polyfills=[
-          'var alert;'  # complains about 'alert = function(s) {...}' assignment in the test harness
+          'var alert;',  # complains about 'alert = function(s) {...}' assignment in the test harness
           'var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;',  # crypto.js
           'var result;',  # earley-boyer.js
           'var Mandreel_timeouts, Mandreel_XMLHttpRequest, Mandreel_document, Mandreel_window;',  # mandreel.js
@@ -563,7 +564,7 @@ CONFIGS = {
   'nova': Config(
       flags=['eval'],
       polyfills=[
-          'var alert;'  # complains about 'alert = function(s) {...}' assignment in the test harness
+          'var alert;',  # complains about 'alert = function(s) {...}' assignment in the test harness
           'var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;',  # crypto.js
           'var result;',  # earley-boyer.js
       ],

@@ -1,0 +1,174 @@
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000..00b75bd
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,29 @@
++CC = g++ --std=gnu++98 -fpermissive -w -m32 -static -Isrc/dmgc -Isrc/root -DUNICODE -Dlinux -O
++
++SRCS = src/dscript/dscript.c src/dscript/identifier.c src/dscript/lexer.c \
++	src/dscript/program.c src/dscript/response.c src/dscript/parse.c \
++	src/dscript/expression.c src/dscript/statement.c src/dscript/symbol.c \
++	src/dscript/scope.c src/dscript/value.c src/dscript/ir.c \
++	src/dscript/toir.c src/dscript/opcodes.c src/dscript/dobject.c \
++	src/dscript/dfunction.c src/dscript/darray.c src/dscript/dboolean.c \
++	src/dscript/dglobal.c src/dscript/dstring2.c src/dscript/dnumber.c \
++	src/dscript/dmath.c src/dscript/dstring.c src/dscript/ddate.c \
++	src/dscript/property.c src/dscript/dregexp.c src/dscript/function.c \
++	src/dscript/iterator.c src/dscript/darguments.c src/dscript/derror.c \
++	src/dscript/syntaxerror.c src/dscript/rangeerror.c \
++	src/dscript/urierror.c src/dscript/referenceerror.c \
++	src/dscript/typeerror.c src/dscript/evalerror.c src/dscript/text.c \
++	src/dscript/optimize.c src/dscript/threadcontext.c \
++	src/dscript/dnative.c src/dscript/id.c \
++	src/root/date.c src/root/dateparse.c src/root/dchar.c \
++	src/root/dmgcmem.c src/root/lstring.c src/root/mutex.c \
++	src/root/port.c src/root/printf.c src/root/random.c \
++	src/root/regexp.c src/root/root.c src/root/stringcommon.c \
++	src/root/stringtable.c src/root/thread.c \
++	src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c
++
++dscript: $(SRCS) Makefile
++	$(CC) -o dscript $(SRCS)
++
++testgc: src/dmgc/testgc.c src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c src/root/printf.c
++	$(CC) -o src/dmgc/testgc src/dmgc/testgc.c src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c src/root/printf.c
+diff --git a/src/dmgc/gc.c b/src/dmgc/gc.c
+index c3cb13e..fd14c50 100644
+--- a/src/dmgc/gc.c
++++ b/src/dmgc/gc.c
+@@ -1877,9 +1877,9 @@ Pool::Pool(unsigned npages)
+ #endif
+ 	WPRINTF(L"GC fail: poolsize = x%x, errno = %d\n", poolsize, errno);
+ #if USEROOT
+-	PRINTF("message = '%s'\n", sys_errlist[errno]);
++	PRINTF("message = '%s'\n", strerror(errno));
+ #else
+-	printf("message = '%s'\n", sys_errlist[errno]);
++	printf("message = '%s'\n", strerror(errno));
+ #endif
+ 	npages = 0;
+ 	poolsize = 0;
+diff --git a/src/dscript/dglobal.c b/src/dscript/dglobal.c
+index f0975aa..3d322bf 100644
+--- a/src/dscript/dglobal.c
++++ b/src/dscript/dglobal.c
+@@ -1042,7 +1042,7 @@ BUILTIN_FUNCTION2(Dglobal_, readln, 0)
+ 
+ BUILTIN_FUNCTION2(Dglobal_, getenv, 1)
+ {
+-    // Our own extension
++/*    // Our own extension
+     Value::copy(ret, &vundefined);
+     if (argc)
+     {
+@@ -1055,7 +1055,7 @@ BUILTIN_FUNCTION2(Dglobal_, getenv, 1)
+ 	}
+ 	else
+ 	    Value::copy(ret, &vnull);
+-    }
++    }*/
+     return NULL;
+ }
+ 
+diff --git a/src/dscript/dobject.c b/src/dscript/dobject.c
+index a0be186..b586bcd 100644
+--- a/src/dscript/dobject.c
++++ b/src/dscript/dobject.c
+@@ -15,7 +15,9 @@
+  * Use at your own risk. There is no warranty, express or implied.
+  */
+ 
++#if !defined(linux)
+ #include <windows.h>
++#endif
+ 
+ #include <stdio.h>
+ #include <string.h>
+diff --git a/src/dscript/lexer.h b/src/dscript/lexer.h
+index 0385a13..ab0eff5 100644
+--- a/src/dscript/lexer.h
++++ b/src/dscript/lexer.h
+@@ -165,7 +165,7 @@ struct Lexer : Mem
+     ~Lexer();
+ 
+     static TOK isKeyword(dchar *s, unsigned len);
+-    void initKeywords();
++    static void initKeywords();
+     TOK nextToken();
+     void insertSemicolon(dchar *loc);
+     void rescan();
+diff --git a/src/dscript/value.h b/src/dscript/value.h
+index 26e5fb2..51fe800 100644
+--- a/src/dscript/value.h
++++ b/src/dscript/value.h
+@@ -55,10 +55,13 @@ struct CallContext;
+ #define VPTR_HACK	0	// don't use vptr hack
+ #endif
+ 
++#undef VPTR_HACK
++#define VPTR_HACK 0
++
+ // VPTR_INDEX is the ith pointer where the vptr is stored in the Value object
+ 
+ #ifdef __GNUC__
+-#define VPTR_INDEX	3
++#define VPTR_INDEX	0
+ #endif
+ 
+ #ifdef _MSC_VER
+@@ -87,10 +90,11 @@ struct Value
+ 	void *safearray;	// used by Vvbarray
+ 
+ 	void *ptrvalue;		// used by lexer and by symbol table management
++
++	// Padding to ensure sizeof(union) == 12 bytes on 32-bit
++	// This makes sizeof(Value) == 16 bytes (4 byte vptr + 12 byte union)
++	unsigned char padding[12];
+     };
+-#if defined __GNUC__
+-    int padforgcc;		// make sizeof(Value) come out to 16 bytes
+-#endif
+ 
+     static void init();
+ 
+@@ -109,26 +113,7 @@ struct Value
+ 
+     static void copy(Value *to, Value *from)
+     {
+-#if defined __DMC__
+-	(sizeof(Value) == 16) ?
+-	(
+-	    (((long long *)to)[0] = ((long long *)from)[0]),
+-	    (((long *)to)[2] = ((long *)from)[2])
+-	    // The last word is just padding, so we skip it
+-	)
+-	:
+-	    (void)memcpy(to, from, sizeof(Value));
+-#elif defined _MSC_VER
+-	((long *)to)[0] = ((long *)from)[0];
+-	((long *)to)[2] = ((long *)from)[2];
+-	((long *)to)[3] = ((long *)from)[3];
+-#elif defined __GNUC__
+-	((long long *)to)[0] = ((long long *)from)[0];
+-	((long *)to)[3] = ((long *)from)[3];
+-	// Don't copy padforgcc
+-#else
+ 	memcpy(to, from, sizeof(Value));
+-#endif
+     }
+ 
+     virtual void *toPrimitive(Value *ret, dchar *PreferredType);
+diff --git a/src/root/lstring.h b/src/root/lstring.h
+index 0492228..1693849 100644
+--- a/src/root/lstring.h
++++ b/src/root/lstring.h
+@@ -31,7 +31,7 @@ struct Lstring
+     unsigned length;
+ 
+ #if defined __GNUC__
+-    dchar string[1];
++    dchar string[];
+ #else
+     // Disable warning about nonstandard extension
+     #pragma warning (disable : 4200)
