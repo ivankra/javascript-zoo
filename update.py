@@ -151,6 +151,7 @@ METADATA_MAP = {
     'Language': 'language',
     'License': 'license',
 
+    'Ancestor': 'ancestor',
     'Org': 'org',
     'Standard': 'standard',  # TODO eval(), proper tail calls, etc; ES5, ES6 etc exceptions/notes
     'Years': 'years',

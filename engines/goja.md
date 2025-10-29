@@ -6,13 +6,17 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 * LOC:         46141 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
 * Language:    Go
 * License:     MIT
+* Ancestor:    [otto](otto.md)
 * Standard:    ES6 (partial)
 * Years:       2016-
 * Parser:      recursive descent (fork of [otto](otto.md)'s parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285)
 * Interpreter: stack-based VM
 * Platform:    Go (cgo-free)
 
+## Forks
+
+* [Sobek](sobek.md) - Grafana's fork
+
 ## Users
 
 * [Geth](https://github.com/ethereum/go-ethereum) - Ethereum's Go implementation
-* [Grafana](https://github.com/grafana/sobek/) - maintains own fork "Sobek"
