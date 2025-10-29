@@ -3656,6 +3656,35 @@ const jsz_engines = [
     ]
   },
   {
+    "id": "quanta",
+    "title": "Quanta",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quanta.md",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 5,
+    "github_forks": 2,
+    "summary": "Buggy unfinished engine, unusable on non-toy code.",
+    "repository": "https://github.com/solarbrowser/quanta.git",
+    "loc": 42129,
+    "language": "C++",
+    "license": "MPL-2.0",
+    "standard": "no (can't run ES1)",
+    "years": "2025-",
+    "interpreter": "tree walker",
+    "regex": "std::regex",
+    "loc_command": "cloc .",
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "db0ada150457fa0e225320db1a870a84609fa67bacbe0eba3eb08a660b0c5a00",
+        "binary_size": 1774528,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/solarbrowser/quanta",
+        "revision": "10962761c7646b67ba31488b18ccf7af3cf59a86",
+        "revision_date": "2025-10-23"
+      }
+    ]
+  },
+  {
     "id": "quickjs-ng",
     "title": "QuickJS-NG",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quickjs-ng.md",
