@@ -1262,7 +1262,7 @@ const jsz_engines = [
     "parser": "recursive descent",
     "interpreter": "stack-based VM",
     "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-lang=Markdown,YAML .",
-    "parser_note": "fork of otto's parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285",
+    "parser_note": "fork of [otto](otto.md)'s parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285",
     "bench": [
       {
         "arch": "amd64",
@@ -3437,7 +3437,7 @@ const jsz_engines = [
     "standard": "ES5 (partial)",
     "years": "2012-",
     "interpreter": "tree walker",
-    "regex": "RE2",
+    "regex": "RE2 (not ECMAScript-compliant)",
     "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" .",
     "bench": [
       {
@@ -4122,6 +4122,34 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=13687 mean=13687.90±16.49 max=13846",
         "zlib_note": "N=20 median=2442 mean=2423.70±32.32 max=2612",
         "jit": ""
+      }
+    ]
+  },
+  {
+    "id": "rapidus",
+    "title": "Rapidus",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rapidus.md",
+    "license_abbr": "MIT",
+    "github_stars": 562,
+    "github_forks": 21,
+    "summary": "JavaScript engine written in Rust, aiming at ES5.",
+    "repository": "https://github.com/maekawatoshiki/rapidus.git",
+    "loc": 10810,
+    "language": "Rust",
+    "license": "MIT",
+    "standard": "ES5 (partial)",
+    "years": "2018-2021",
+    "interpreter": "stack-based VM ([vm.rs](https://github.com/maekawatoshiki/rapidus/blob/main/core/src/vm/vm.rs))",
+    "loc_command": "cloc */src",
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
+        "binary_size": 1509656,
+        "repository": "https://github.com/maekawatoshiki/rapidus",
+        "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
+        "revision_date": "2023-02-25",
+        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
       }
     ]
   },

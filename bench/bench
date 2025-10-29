@@ -597,6 +597,11 @@ CONFIGS = {
       # TODO Gameboy, Mandreel, CodeLoad fail when run separately
   ),
   'qv4': Config(transforms=[OctalTransform()], filter_lines_re=r'qt\.qml\.usedbeforedeclared:'),
+  'rapidus': Config(
+      benchmark_suite=['richards.rapidus.js'],  # can't deal with standard test harness, various bugs/limitations
+      polyfills=['var print=console.log;'],     # unusable typeof with undefined var 
+      timestamp_output=True                     # unusable Date
+  ),
   'sablejs': Config(warn_lines_re=r'\[WARN\]'),
   'spidermonkey_1.5': Config(polyfills=[ES5_FOR_ES3_PF]),
   'spidermonkey_1.6': Config(polyfills=[ES5_FOR_ES3_PF]),
