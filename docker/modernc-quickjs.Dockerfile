@@ -7,7 +7,7 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-COPY cznic-quickjs.go main.go
+COPY modernc-quickjs.go main.go
 
 RUN go build main.go
 

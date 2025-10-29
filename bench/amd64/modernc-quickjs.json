@@ -1,10 +1,10 @@
 {
-  "binary": "cznic-quickjs",
+  "binary": "modernc-quickjs",
   "metadata": {
     "arch": "amd64",
     "binary_sha256": "642f1c8c3d30558c0f50c2248e93c17444d059a606be6c04a830e1a243beadb6",
     "binary_size": 4855328,
-    "engine": "cznic-quickjs",
+    "engine": "modernc-quickjs",
     "repository": "https://gitlab.com/cznic/quickjs.git",
     "revision": "f48cdfb4e90d8c373eb6ae84bb6829d11beff2e9",
     "revision_date": "2025-10-11",

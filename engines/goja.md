@@ -8,8 +8,9 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 * License:     MIT
 * Standard:    ES6 (partial)
 * Years:       2016-
-* Parser:      recursive descent (fork of otto's parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285)
+* Parser:      recursive descent (fork of [otto](otto.md)'s parser, [code](https://github.com/dop251/goja/tree/master/parser/), LOC: 4285)
 * Interpreter: stack-based VM
+* Platform:    Go (cgo-free)
 
 ## Users
 

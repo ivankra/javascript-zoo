@@ -2,18 +2,18 @@
 
 Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 
-* Homepage:                     https://bellard.org/quickjs/
-* Repository:                   https://github.com/bellard/quickjs.git <span class="shields"><img src="https://img.shields.io/github/stars/bellard/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bellard/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:                          73590 (`cloc *.c *.h`)
-* Language:                     C
-* License:                      MIT
-* Standard:                     ES2023
-* Years:                        2019-
-* Features:                     hidden classes
-* Parser:                       recursive descent, directly emits bytecode
-* Interpreter:                  stack-based VM
-  * `JS_CallInternal()` at [quickjs.c: 16850](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16850)
-* GC:                           reference counting
+* Homepage:    https://bellard.org/quickjs/
+* Repository:  https://github.com/bellard/quickjs.git <span class="shields"><img src="https://img.shields.io/github/stars/bellard/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bellard/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* LOC:         73590 (`cloc *.c *.h`)
+* Language:    C
+* License:     MIT
+* Standard:    ES2023
+* Years:       2019-
+* Features:    hidden classes
+* Parser:      recursive descent, directly emits bytecode
+* Interpreter: stack-based VM
+  * `JS_CallInternal()` at [quickjs.c:16850](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16850)
+* GC:          reference counting
 
 ## Users
 
@@ -33,7 +33,7 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 * [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [PrimJS](primjs.md): ByteDance's fork with a mark-and-sweep GC
 * [Hako](hako.md): PrimJS ported to WASM
-* [cznic/quickjs](cznic-quickjs.md): QuickJS transpiled to pure Go
+* [modernc.org/quickjs](modernc-quickjs.md): QuickJS transpiled to pure Go
 * [fastschema/qjs](https://github.com/fastschema/qjs): QuickJS ported to Go via WASM
 
 ## Runtimes

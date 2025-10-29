@@ -9,8 +9,10 @@ JavaScript engine in pure Go.
 * Standard:     ES5 (partial)
 * Years:        2012-
 * Interpreter:  tree walker
-* Regex engine: RE2
+* Regex engine: RE2 (not ECMAScript-compliant)
+* Platform:     Go (cgo-free)
 
-Non-compliant regex engine from Go.
+## Forks
 
-Mostly obsoleted by newer, faster and full-featured [goja](goja.md) engine.
+Mostly obsoleted by newer, faster and full-featured [goja](goja.md) engine,
+which started out by forking otto's parser.

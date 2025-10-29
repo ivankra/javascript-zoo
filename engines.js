@@ -697,40 +697,6 @@ const jsz_engines = [
     "license_note": "MIT-like + non-endorsement"
   },
   {
-    "id": "cznic-quickjs",
-    "title": "cznic/quickjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cznic-quickjs.md",
-    "license_abbr": "BSD-3/MIT",
-    "summary": "QuickJS transpiled to pure Go.",
-    "repository": "https://gitlab.com/cznic/quickjs.git",
-    "loc": 167235,
-    "language": "Go",
-    "license": "BSD-3-Clause, MIT",
-    "standard": "ES2023",
-    "years": "2024-",
-    "loc_command": "cloc lib*.go ccgo_linux_amd64.go",
-    "bench": [
-      {
-        "arch": "amd64",
-        "binary_sha256": "642f1c8c3d30558c0f50c2248e93c17444d059a606be6c04a830e1a243beadb6",
-        "binary_size": 4855328,
-        "repository": "https://gitlab.com/cznic/quickjs.git",
-        "revision": "f48cdfb4e90d8c373eb6ae84bb6829d11beff2e9",
-        "revision_date": "2025-10-11",
-        "version": "0.16.1"
-      },
-      {
-        "arch": "arm64",
-        "binary_sha256": "2f2bce64686b91de377e4a1e66f96c6bf9050f9e71e8b1b2f75662c63451cc59",
-        "binary_size": 4684928,
-        "repository": "https://gitlab.com/cznic/quickjs.git",
-        "revision": "dbf970daceb8081737fe80c825d7b0929680fa10",
-        "revision_date": "2025-09-25",
-        "version": "0.15.8-13-gdbf970d"
-      }
-    ]
-  },
-  {
     "id": "dmdscript",
     "title": "DMDScript",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dmdscript.md",
@@ -2898,6 +2864,33 @@ const jsz_engines = [
     ]
   },
   {
+    "id": "modernc-quickjs",
+    "title": "modernc.org/quickjs",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/modernc-quickjs.md",
+    "license_abbr": "BSD-3/MIT",
+    "summary": "QuickJS transpiled to pure Go.",
+    "homepage": "https://modernc.org/quickjs",
+    "repository": "https://gitlab.com/cznic/quickjs.git",
+    "loc": 167235,
+    "language": "Go",
+    "license": "BSD-3-Clause, MIT",
+    "standard": "ES2023",
+    "years": "2024-",
+    "interpreter": "stack-based VM",
+    "loc_command": "cloc lib*.go ccgo_linux_amd64.go",
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "2f2bce64686b91de377e4a1e66f96c6bf9050f9e71e8b1b2f75662c63451cc59",
+        "binary_size": 4684928,
+        "repository": "https://gitlab.com/cznic/quickjs.git",
+        "revision": "dbf970daceb8081737fe80c825d7b0929680fa10",
+        "revision_date": "2025-09-25",
+        "version": "0.15.8-13-gdbf970d"
+      }
+    ]
+  },
+  {
     "id": "motet-a-toy",
     "title": "motet-a/toy",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/motet-a-toy.md",
@@ -4370,8 +4363,11 @@ const jsz_engines = [
   {
     "id": "sophonjs",
     "title": "SophonJS",
-    "summary": "Small footprint embedded ES5 engine.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sophonjs.md",
+    "license_abbr": "BSD-3",
+    "github_stars": 37,
+    "github_forks": 6,
+    "summary": "Small footprint embedded ES5 engine.",
     "repository": "https://github.com/gkmail/SophonJS.git",
     "loc": 22531,
     "language": "C",
@@ -4380,9 +4376,6 @@ const jsz_engines = [
     "years": "2015",
     "interpreter": "stack-based VM ([sophon_ins.c](https://github.com/gkmail/SophonJS/blob/master/src/sophon_ins.c))",
     "loc_command": "cloc src include",
-    "license_abbr": "BSD-3",
-    "github_stars": 37,
-    "github_forks": 6,
     "bench": [
       {
         "arch": "arm64",
@@ -4412,8 +4405,9 @@ const jsz_engines = [
     "standard": "ESnext",
     "years": "1996-",
     "interpreter": "stack-based VM",
-    "jit": "2-tier JIT",
-    "regex": "Irregexp, JIT-enabled",
+    "jit": "2-tier JIT ([doc](https://firefox-source-docs.mozilla.org/js/index.html))",
+    "gc": "generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))",
+    "regex": "Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)",
     "loc_command": "cloc --not_match_d=\"(?i)(test|octane)\" js/src",
     "bench": [
       {
