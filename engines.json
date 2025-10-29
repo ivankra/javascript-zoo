@@ -3660,7 +3660,7 @@
     "license_abbr": "MPL-2.0",
     "github_stars": 5,
     "github_forks": 2,
-    "summary": "Buggy unfinished engine, unusable on non-toy code.",
+    "summary": "Buggy unfinished engine.",
     "repository": "https://github.com/solarbrowser/quanta.git",
     "loc": 42129,
     "language": "C++",
@@ -4364,6 +4364,34 @@
     "interpreter": "stack-based VM",
     "gc": "Boehm GC",
     "loc_command": "cloc libsee include/see"
+  },
+  {
+    "id": "sophonjs",
+    "title": "SophonJS",
+    "summary": "Small footprint embedded ES5 engine.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sophonjs.md",
+    "repository": "https://github.com/gkmail/SophonJS.git",
+    "loc": 22531,
+    "language": "C",
+    "license": "BSD-3-Clause",
+    "standard": "ES5",
+    "years": "2015",
+    "interpreter": "stack-based VM ([sophon_ins.c](https://github.com/gkmail/SophonJS/blob/master/src/sophon_ins.c))",
+    "loc_command": "cloc src include",
+    "license_abbr": "BSD-3",
+    "github_stars": 37,
+    "github_forks": 6,
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "377bfffd9c58dcef5e5ab0df9e7bebfb69d6a2f68ef0b2e8beb1ec50becd7cbd",
+        "binary_size": 330096,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gkmail/SophonJS",
+        "revision": "5012412ed66f76968cd6be87793b25337bda7630",
+        "revision_date": "2015-11-10"
+      }
+    ]
   },
   {
     "id": "spidermonkey",
