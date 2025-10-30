@@ -12,7 +12,9 @@ Qt 3's JavaScript engine: Qt Script for Applications.
 * Parser:      YACC
 * Interpreter: tree walker
 
-Replaced by a different QtScript engine in Qt 4.3.
+## History
+
+Replaced by [QtScript](qtscript.md) engine in Qt 4.3.
 
 ## Links
 
