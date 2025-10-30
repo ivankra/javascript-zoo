@@ -7,9 +7,9 @@ Community-oriented fork of [QuickJS](quickjs.md).
 * LOC:         74458 (`cloc *.c *.h`)
 * Language:    C
 * License:     MIT
-* Ancestor:    [QuickJS](quickjs.md)
 * Standard:    ES2023
 * Years:       2023-
+* Ancestor:    [QuickJS](quickjs.md)
 * Features:    PIC
 * Interpreter: stack-based VM
 * GC:          reference counting

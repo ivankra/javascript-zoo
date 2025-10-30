@@ -7,10 +7,10 @@ JavaScript engine of Safari/WebKit.
 * LOC:          770374 (`cloc --not_match_d="(?i)(test)" Source/JavaScriptCore`)
 * Language:     C++
 * License:      LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
-* Ancestor:     [KJS](kjs.md)
 * Org:          Apple
 * Standard:     ESnext
 * Years:        2001-
+* Ancestor:     [KJS](kjs.md)
 * Features:     WebAssembly engine
 * Interpreter:  register-based VM
 * JIT:          3-tier JIT, x86/x64, arm/arm64, mips64, riscv64

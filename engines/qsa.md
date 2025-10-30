@@ -9,12 +9,9 @@ Qt 3's JavaScript engine: Qt Script for Applications.
 * Org:         Qt
 * Standard:    ES4 (ES3 + some ES4 draft features)
 * Years:       2002-2007
+* Successor:   [QtScript](qtscript.md) (Qt 4.3, 2007)
 * Parser:      YACC
 * Interpreter: tree walker
-
-## History
-
-Replaced by [QtScript](qtscript.md) engine in Qt 4.3.
 
 ## Links
 

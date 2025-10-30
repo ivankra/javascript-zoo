@@ -48,9 +48,11 @@ Container with pre-built binaries (amd64/arm64) on
 Template for adding a new engine:
 
 ```Dockerfile
+# Make BASE an option so that we could easily swap compilers via args.txt
 ARG BASE=jsz-gcc
 FROM $BASE
 
+# Point to master/lkgr-like branch so it could be usable for daily builds later
 ARG REPO=<repository to check out>
 ARG REV=master
 
@@ -65,10 +67,13 @@ RUN make -j
 
 ENV JS_BINARY=<path to javascript shell binary>
 
-# Point WORKDIR to source directory for dist.sh to get metadata from git.
+# Point WORKDIR to project's main source code directory for dist.sh -
+# it will get git metadata from current directory's repository.
 # Tweak metadata if needed: drop jsz_<key> files in source or /dist dir.
 #RUN ${JS_BINARY} --version >jsz_version
 
-# REPL command:
+# REPL command if engine supports it
 CMD ${JS_BINARY}
+
+# TODO: COPY dist.sh ./; RUN ./dist.sh ${JS_BINARY} -o /dist/engine --key=value ...
 ```

@@ -6,8 +6,8 @@ Grafana's fork of [goja](goja.md) engine.
 * LOC:         46789 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
 * Language:    Go
 * License:     MIT
-* Ancestor:    [goja](goja.md)
 * Standard:    ES6 (partial)
 * Years:       2024-
+* Ancestor:    [goja](goja.md)
 * Interpreter: stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))
 * Platform:    Go (cgo-free)

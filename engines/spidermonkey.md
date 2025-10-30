@@ -7,10 +7,10 @@ JavaScript engine of Firefox.
 * LOC:          1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
 * Language:     C++
 * License:      MPL-2.0
-* Ancestor:     [Mocha](mocha.md)
 * Org:          Mozilla
 * Standard:     ESnext
 * Years:        1996-
+* Ancestor:     [Mocha](mocha.md)
 * Interpreter:  stack-based VM
 * JIT:          2-tier JIT ([doc](https://firefox-source-docs.mozilla.org/js/index.html))
 * GC:           generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))

@@ -6,9 +6,9 @@ Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
 * LOC:              18306 (`cloc --not_match_d="(?i)(examples)" .`)
 * Language:         Go, C++, TypeScript
 * License:          Apache-2.0
-* Ancestor:         [PrimJS](primjs.md)
 * Standard:         ES2019
 * Years:            2025-
+* Ancestor:         [PrimJS](primjs.md)
 * Runtime platform: WebAssembly
 * Interpreter:      stack-based VM
 * JIT:              via WebAssembly engine

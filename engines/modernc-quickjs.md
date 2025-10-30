@@ -7,9 +7,9 @@
 * LOC:         167235 (`cloc lib*.go ccgo_linux_amd64.go`)
 * Language:    Go
 * License:     BSD-3-Clause, MIT
-* Ancestor:    [QuickJS](quickjs.md)
 * Standard:    ES2023
 * Years:       2024-
+* Ancestor:    [QuickJS](quickjs.md)
 * Interpreter: stack-based VM
 * Platform:    Go (cgo-free)
 
