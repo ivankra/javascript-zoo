@@ -47,6 +47,13 @@ PRINT_PF = '''
     if (typeof globalThis != "undefined") globalThis.print = console.log;
     else print = console.log;
   }
+  if (typeof console == "undefined") {
+    if (typeof globalThis != "undefined") globalThis.console = new Object();
+    else console = new Object();
+  }
+  if (typeof console.log == "undefined" && typeof print != "undefined") {
+    console.log = print;
+  }
 '''
 
 ES5_FOR_ES3_PF = '''
@@ -361,7 +368,8 @@ class Config:
         run.command += ' | tee output'
 
     def run_command(self, run: Run):
-        print(f'> {run.command}', flush=True)
+        if not run.args.quiet:
+            print(f'> {run.command}', flush=True)
         try:
             run.proc = subprocess.Popen(
                 ['/bin/bash', '-e', '-o', 'pipefail', '-c', run.command],
@@ -529,7 +537,12 @@ CONFIGS = {
   'castl': Config(error_lines_re='(?i)(error|unsupported|200 local variables)'),
   # too slow on other tests
   'cesanta-v7': Config(benchmark_suite=['richards.js']),
-  'dmdscript': Config(polyfills=[ES5_FOR_ES3_PF]),
+  'dmdscript': Config(
+      polyfills=[
+          'var console = new Object(); console.log=println; print=println;',
+          ES5_FOR_ES3_PF,
+      ],
+  ),
   'dscriptcpp': Config(benchmark_suite=['richards.es1.js']),
   'echosoar-jsi': Config(transforms=[HexTransform()]),
   'hermes': Config(flags=['-O'], warn_lines_re=r"(warning:|error\('Incorrect|throw 'Unsupported)"),
@@ -548,7 +561,10 @@ CONFIGS = {
       transforms=[lambda test: test.script.replace('this.RTCHours -= 24\n', 'this.RTCHours -= 24;\n')],
   ),
   # JS1.1≈ES1 engine
-  'mocha': Config(benchmark_suite=['richards.es1.js']),
+  'mocha': Config(
+      benchmark_suite=['richards.es1.js'],
+      polyfills=["var console = new Object(); console.log = print;"],
+  ),
   # prototype-based inheritance not working, need to be fixed
   'narcissus': Config(benchmark_suite=['richards.js1.js']),
   'nashorn': Config(flags=['--language=es6']),
@@ -604,10 +620,10 @@ CONFIGS = {
       timestamp_output=True                     # unusable Date
   ),
   'sablejs': Config(warn_lines_re=r'\[WARN\]'),
-  'spidermonkey_1.5': Config(polyfills=[ES5_FOR_ES3_PF]),
-  'spidermonkey_1.6': Config(polyfills=[ES5_FOR_ES3_PF]),
-  'spidermonkey_1.7': Config(polyfills=[ES5_FOR_ES3_PF]),
-  'spidermonkey_1.8.0': Config(polyfills=[ES5_FOR_ES3_PF]),
+  'spidermonkey_1.5': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
+  'spidermonkey_1.6': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
+  'spidermonkey_1.7': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
+  'spidermonkey_1.8.0': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.8.5': Config(flags=['-jm']),  # enable TraceMonkey + method JIT
   'spidermonkey_17': Config(flags=['-m']),      # enable JIT. Enabled by default in 24+.
   # not capable of ES1
@@ -633,22 +649,12 @@ def pick_config(args, binary):
 
     return Config()
 
-def dynamic_rep_limit(run: Run) -> int:
-    # TODO ceil(300/real), round to 10 above 10-20
-    if run.real_time is None or run.real_time > 300:
-        return 1
-    elif run.real_time > 120:
-        return 3
-    elif run.real_time > 10:
-        return 20
-    else:
-        return 100
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', help='Config to use, "engine[_variant]"')
     parser.add_argument('-k', '--keep', action='store_true', help='Keep temp dir')
     parser.add_argument('-o', '--output', help='Write benchmark results here as json')
+    parser.add_argument('-q', '--quiet', action='store_true')
     parser.add_argument('-r', '--reps', type=int, metavar='repetitions')
     parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
     parser.add_argument('binary', help='Binary to execute, optionally with flags')
@@ -678,11 +684,16 @@ def main():
 
     all_runs = []
 
+    # TODO: run reps in zigzag order
+
     for filename in test_files:
         path = bench_dir / filename
         test = load_test(path)
         test_runs = []
         limit = args.reps
+
+        if limit is None and 'features/' in path.as_posix():
+            limit = 1
 
         while limit is None or len(test_runs) < limit:
             run = config.benchmark_run(binary, test, args)
@@ -694,8 +705,12 @@ def main():
                 break
 
             if limit is None:
-                limit = dynamic_rep_limit(run)
-                print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
+                if run.real_time is None or run.real_time > 300:
+                    limit = 1
+                else:
+                    limit = math.ceil(300 / run.real_time)
+                if not args.quiet:
+                    print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
 
         json_str = coalesce_runs_to_json(all_runs)
         if output_path:
@@ -703,7 +718,8 @@ def main():
                 fp.write(json_str)
 
     json_str = coalesce_runs_to_json(all_runs)
-    print(json_str)
+    if not args.quiet:
+        print(json_str)
 
     if output_path:
         with open(output_path, 'w') as fp:
