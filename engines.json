@@ -1221,6 +1221,35 @@
     "loc_command": "cloc src"
   },
   {
+    "id": "fastschema-qjs",
+    "title": "fastschema/qjs",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/fastschema-qjs.md",
+    "license_abbr": "MIT",
+    "github_stars": 420,
+    "github_forks": 13,
+    "summary": "JavaScript in Go with QuickJS and Wazero.",
+    "repository": "https://github.com/fastschema/qjs.git",
+    "loc": 14447,
+    "language": "Go",
+    "license": "MIT",
+    "standard": "ES2023",
+    "years": "2025-",
+    "ancestors": "[QuickJS](quickjs.md)",
+    "interpreter": "stack-based VM",
+    "loc_command": "cloc *.go",
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "6269281be1b5523c0364912501812b7ec71b5997a74a1dc2ace6c6207aaaa49f",
+        "binary_size": 5930112,
+        "repository": "https://github.com/fastschema/qjs",
+        "revision": "461716f4f380f81ffd09378751f1812919cddbca",
+        "revision_date": "2025-10-28",
+        "version": "0.0.6"
+      }
+    ]
+  },
+  {
     "id": "fesi",
     "title": "FESI",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/fesi.md",

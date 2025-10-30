@@ -9,6 +9,7 @@
 import argparse
 import glob
 import json
+import math
 import os
 import platform
 import re
@@ -159,6 +160,9 @@ class HexTransform:
         if match[0].startswith('0x'):
             return str(eval(match[0]))
         return match[0]
+
+#lambda test: re.sub(r'performance.now = \(function\(\) {[^}]+}\)\(\);',
+#                    '', test.script, re.MULTILINE),
 
 class PolyfillTransform:
     def __init__(self, snippets: List[str]):
@@ -596,7 +600,7 @@ CONFIGS = {
   'quad-wheel': Config(benchmark_suite=['richards.quad-wheel.js'], polyfills=[], timestamp_output=True),
   'quanta': Config(
       benchmark_suite=['richards.quanta.js'],  # can't deal with standard test harness, various bugs/limitations
-      polyfills=['var print=console.log;'],    # unusable typeof with undefined var 
+      polyfills=['var print=console.log;'],    # unusable typeof with undefined var
   ),
   'quickjs-ng': Config(
       # Buggy, many bugs exposed when run on individual tests vs combined
@@ -616,7 +620,7 @@ CONFIGS = {
   'qv4': Config(transforms=[OctalTransform()], filter_lines_re=r'qt\.qml\.usedbeforedeclared:'),
   'rapidus': Config(
       benchmark_suite=['richards.rapidus.js'],  # can't deal with standard test harness, various bugs/limitations
-      polyfills=['var print=console.log;'],     # unusable typeof with undefined var 
+      polyfills=['var print=console.log;'],     # unusable typeof with undefined var
       timestamp_output=True                     # unusable Date
   ),
   'sablejs': Config(warn_lines_re=r'\[WARN\]'),
