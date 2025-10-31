@@ -727,6 +727,15 @@ const jsz_engines = [
         "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
         "revision_date": "2024-06-18",
         "version": "2.1.2"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "5e350e6a1b6edda7e421747dcce5a46c701c9732cf8d3578824355df123ca804",
+        "binary_size": 1806448,
+        "repository": "https://github.com/DigitalMars/DMDScript.git",
+        "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
+        "revision_date": "2024-06-18",
+        "version": "2.1.2"
       }
     ]
   },
@@ -1561,7 +1570,6 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "b8bbf86dd5626d1fda63b9be0597d243046c7fa3313229d3dac205b727c517b8",
         "dist_size": 1006163,
         "repository": "https://github.com/andrewmd5/hako",
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",

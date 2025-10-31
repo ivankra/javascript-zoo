@@ -39,9 +39,9 @@ if [[ "$DEP" == 1 ]]; then
   fi
   for df in "${dfs[@]}"; do
     echo "$df"
-    egrep -o '^COPY ([a-z][-a-z0-9.]+)' "$df" | sed -e 's/COPY //' 2>/dev/null
+    egrep -o '^COPY ([a-z][-a-z0-9._]+)' "$df" | sed -e 's/COPY //' 2>/dev/null
 
-    refs=$(egrep -o '^(ARG BASE|COPY --from)=jsz-([-a-z0-9]+)' "$df" | sed -e 's/.*=jsz-//' 2>/dev/null)
+    refs=$(egrep -o '^(ARG BASE|COPY --from)=jsz-([-a-z0-9._]+)' "$df" | sed -e 's/.*=jsz-//' 2>/dev/null)
     for f in $refs; do
       if [[ -f "$f.Dockerfile" ]]; then
         echo "$f.Dockerfile"

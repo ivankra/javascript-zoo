@@ -1,5 +1,7 @@
-// Based on https://gist.github.com/andrewmd5/197efb527ef40131c34ca12fd6d0a61e
-// And further expanded into REPL/script runner by LLM
+// Basic REPL/script runner for hako using wasmtime runtime.
+// Tweaked LLM slop based on https://gist.github.com/andrewmd5/197efb527ef40131c34ca12fd6d0a61e
+
+//go:build ignore
 package main
 
 import (
