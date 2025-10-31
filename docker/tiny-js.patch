@@ -1,0 +1,36 @@
+diff --git a/Script.cpp b/Script.cpp
+index 5145c12..2bb554d 100755
+--- a/Script.cpp
++++ b/Script.cpp
+@@ -62,6 +62,22 @@ int main(int argc, char **argv)
+   /* Execute out bit of code - we could call 'evaluate' here if
+      we wanted something returned */
+   try {
++// Script.cpp only implements a line-by-line REPL with 2k buffer.
++// This snippet adds a proper file script runner with unlimited buffer.
++if (argc >= 2) {
++  FILE *fp = fopen(argv[1], "rb");
++  size_t size = 0, cap = 4096, num;
++  char *buf = (char *)malloc(cap);
++  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
++    if ((size += num) >= cap - 1) {
++      buf = (char *)realloc(buf, cap *= 2);
++    }
++  }
++  fclose(fp);
++  buf[size] = 0;
++  js->execute(buf);
++  exit(0);
++}
+     js->execute("var lets_quit = 0; function quit() { lets_quit = 1; }");
+     js->execute("print(\"Interactive mode... Type quit(); to exit, or print(...); to print something, or dump() to dump the symbol table!\");");
+   } catch (CScriptException *e) {
+@@ -70,7 +86,7 @@ int main(int argc, char **argv)
+ 
+   while (js->evaluate("lets_quit") == "0") {
+     char buffer[2048];
+-    fgets ( buffer, sizeof(buffer), stdin );
++    if (!fgets( buffer, sizeof(buffer), stdin )) break;
+     try {
+       js->execute(buffer);
+     } catch (CScriptException *e) {

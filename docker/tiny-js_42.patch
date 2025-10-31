@@ -1,0 +1,85 @@
+diff --git a/Makefile b/Makefile
+index d48f859..f6edfd2 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,5 @@
+ CC=g++
+-CFLAGS=-c -g -Wall -rdynamic
++CFLAGS=-c -O -fpermissive --std=gnu++11
+ LDFLAGS=-g -rdynamic
+ 
+ SOURCES=  \
+diff --git a/Script.cpp b/Script.cpp
+index a9d06d9..d86a62e 100755
+--- a/Script.cpp
++++ b/Script.cpp
+@@ -73,7 +73,7 @@ char *topOfStack;
+ #define sizeOfStack 1*1024*1024 /* for example 1 MB depend of Compiler-Options */
+ #define sizeOfSafeStack 50*1024 /* safety area */
+ 
+-int main(int , char **)
++int main(int argc, char **argv)
+ {
+ 	char dummy;
+ 	topOfStack = &dummy;
+@@ -94,6 +94,20 @@ int main(int , char **)
+ 		we wanted something returned */
+ 	js->setStackBase(topOfStack-(sizeOfStack-sizeOfSafeStack));
+ 	try {
++if (argc >= 2) {
++  FILE *fp = fopen(argv[1], "rb");
++  size_t size = 0, cap = 4096, num;
++  char *buf = (char *)malloc(cap);
++  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
++    if ((size += num) >= cap - 1) {
++      buf = (char *)realloc(buf, cap *= 2);
++    }
++  }
++  fclose(fp);
++  buf[size] = 0;
++  js->execute(buf);
++  exit(0);
++}
+ 		js->execute("var lets_quit = 0; function quit() { lets_quit = 1; }");
+ 		js->execute("print(\"Interactive mode... Type quit(); to exit, or print(...); to print something, or dump() to dump the symbol table!\");");
+ 		js->execute("print(function () {print(\"gen\");yield 5;yield 6;}().next());", "yield-test.js");
+@@ -112,6 +126,7 @@ int main(int , char **)
+ 	} catch (CScriptException *e) {
+ 		printf("%s\n", e->toString().c_str());
+ 		delete e;
++exit(1);
+ 	}
+ 	int lineNumber = 0;
+ 	while (js->evaluate("lets_quit") == "0") {
+diff --git a/TinyJS.cpp b/TinyJS.cpp
+index 9cabbef..111898b 100755
+--- a/TinyJS.cpp
++++ b/TinyJS.cpp
+@@ -44,6 +44,8 @@
+ #include <errno.h>
+ #include <sstream>
+ #include <fstream>
++#include <cmath>
++#include <memory>
+ 
+ #include "TinyJS.h"
+ 
+@@ -3785,7 +3787,7 @@ CScriptVarPtr CScriptVarRegExp::exec( const string &Input, bool Test /*= false*/
+ 			retVar->addChild("input", newScriptVar(Input));
+ 			retVar->addChild("index", newScriptVar(match.position()));
+ 			for(smatch::size_type idx=0; idx<match.size(); idx++)
+-				retVar->addChild(int2string(idx), newScriptVar(match[idx].str()));
++				retVar->addChild(int2string(int32_t(idx)), newScriptVar(match[idx].str()));
+ 			return retVar;
+ 		}
+ 	}
+diff --git a/TinyJS_Threading.cpp b/TinyJS_Threading.cpp
+index a802991..a3de1ae 100644
+--- a/TinyJS_Threading.cpp
++++ b/TinyJS_Threading.cpp
+@@ -1,3 +1,5 @@
++#include <cstdio>
++
+ #include "TinyJS_Threading.h"
+ 
+ #undef HAVE_THREADING

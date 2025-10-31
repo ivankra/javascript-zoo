@@ -5103,6 +5103,16 @@ const jsz_engines = [
         "repository": "https://github.com/gfwilliams/tiny-js.git",
         "revision": "905fa74287e1da5b3222074831fb124c7941b806",
         "revision_date": "2025-09-29"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "4717715ecd70dab765d9f62155ac9c901b1c71df8b56f40b526e1e2d1e2b03ab",
+        "binary_size": 727304,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gfwilliams/tiny-js.git",
+        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
+        "revision_date": "2014-10-19",
+        "variant": "42"
       }
     ]
   },
