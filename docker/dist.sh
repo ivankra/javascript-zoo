@@ -31,27 +31,31 @@ fi
 $DOCKER run --cidfile="$CIDFILE" "jsz-$ID" /bin/bash -e -c "$(cat <<EOF
 mkdir -p /dist
 
+if [[ "\$DIST_BIN" == "" ]]; then
+  export DIST_BIN="/dist/$ID"
+fi
+
 if [[ "\$JS_BINARY" != "" && ! -f "\$JS_BINARY" ]]; then
   echo "Error: JS_BINARY=\$JS_BINARY doesn't exist"
   exit 1
 fi
 
 if [[ \$(file -b --mime-type "\$JS_BINARY" 2>/dev/null) == */*-executable && "\$JS_BINARY" != /dist/* ]]; then
-  rm -f "/dist/$ID" || true
-  strip -o "/dist/$ID" "\$JS_BINARY"
-  sha256sum "/dist/$ID" | cut -f 1 -d ' ' >/dist/jsz_binary_sha256
+  rm -f "\$DIST_BIN" || true
+  strip -o "\$DIST_BIN" "\$JS_BINARY"
+  sha256sum "\$DIST_BIN" | cut -f 1 -d ' ' >/dist/jsz_binary_sha256
   if ! [[ -f /dist/jsz_dist_size ]]; then
-    ls -l "/dist/$ID" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
+    ls -l "\$DIST_BIN" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
   fi
 fi
 
-if ! [[ -f "/dist/$ID.LICENSE" ]]; then
+if ! [[ -f "\$DIST_BIN.LICENSE" ]]; then
   if [[ -f "\$LICENSE" ]]; then
-    cp -f "\$LICENSE" "/dist/$ID.LICENSE"
+    cp -f "\$LICENSE" "\$DIST_BIN.LICENSE"
   elif [[ -n "\$LICENSES" ]]; then
-    head -n -0 \$LICENSES >"/dist/$ID.LICENSE"
+    head -n -0 \$LICENSES >"\$DIST_BIN.LICENSE"
   else
-    rm -f "/dist/$ID.LICENSE"
+    rm -f "\$DIST_BIN.LICENSE"
     license_files=()
     found=0
     for f in LICENSE* COPYING* COPYRIGHT* *[Ll]icense*.txt *[Ll]icenses *[Ll]icense *_LICENSE* NOTICE* *NOTICE*.txt *[Nn]otice*.txt; do
@@ -61,7 +65,7 @@ if ! [[ -f "/dist/$ID.LICENSE" ]]; then
       fi
     done
     if [[ \$found == 1 ]]; then
-      head -n -0 "\${license_files[@]}" >>"/dist/$ID.LICENSE"
+      head -n -0 "\${license_files[@]}" >>"\$DIST_BIN.LICENSE"
     fi
   fi
 fi
@@ -98,7 +102,7 @@ fi
 
 echo "$ARCH" >jsz_arch
 
-# Assemble /dist/$ID.json from value fragments in /dist/jsz_*
+# Assemble $DIST_BIN.json from value fragments in /dist/jsz_*
 {
   echo "{"
   for f in jsz_*; do
@@ -111,8 +115,8 @@ echo "$ARCH" >jsz_arch
     echo "  \"\$key\": \$val,"
     rm -f "\$f"
   done
-} | sed '$ s/,$//' >$ID.json
-echo "}" >>$ID.json
+} | sed '$ s/,$//' >\$DIST_BIN.json
+echo "}" >>\$DIST_BIN.json
 
 ls -l /dist | grep -v ^total
 
@@ -134,19 +138,21 @@ rm -rf \
   "../dist/$ARCH/$ID-dist" \
   "../dist/$ARCH/$ID-lib"
 
-for src in "$TMPCP/dist/$ID"*; do
-  if [[ -e "$src" ]]; then
-    mkdir -p "../dist/$ARCH"
-    dst="../dist/$ARCH/$(basename "$src")"
-    if [[ -e "$dst" ]]; then
-      chmod a+w "$dst"
-      rm -rf "$dst"
+for subdir in "" "parsers/"; do
+  for src in "$TMPCP/dist/$subdir$ID"*; do
+    if [[ -e "$src" ]]; then
+      mkdir -p "../dist/$ARCH/$subdir"
+      dst="../dist/$ARCH/$subdir$(basename "$src")"
+      if [[ -e "$dst" ]]; then
+        chmod a+w "$dst"
+        rm -rf "$dst"
+      fi
+      mv -f "$src" "$dst"
+      if [[ -f "$dst" ]]; then
+        chmod a-w "$dst"
+      fi
     fi
-    mv -f "$src" "$dst"
-    if [[ -f "$dst" ]]; then
-      chmod a-w "$dst"
-    fi
-  fi
+  done
 done
 
 $DOCKER rm "$CID" >/dev/null
