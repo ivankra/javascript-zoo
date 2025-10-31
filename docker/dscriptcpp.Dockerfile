@@ -15,6 +15,7 @@ COPY dscriptcpp.patch ./
 RUN git apply dscriptcpp.patch && make
 
 ENV JS_BINARY=/src/dscript
-# No REPL
+CMD ${JS_BINARY} /bench/repl.js
 
 # TODO: wrapper with 'qemu-i386-static ./dscript' for macOS containerization or check different kernels
+# TODO: errno=75 fstat error -> 64-bit inode

@@ -36,6 +36,18 @@ Closed-source chakra.dll in Windows, presumably, is still maintained.
   * BigInt: implemented, but disabled by default
   * Optional chaining: not implemented
 
+## Shell
+
+Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1088)):
+  * `console.log(s)` / `print(s)`: print with newline
+  * `readline()`: undefined on EOF
+  * `readbuffer(filename)`
+  * `WScript`
+    * `WScript.Platform = {ARCH: "x86_64", ...}`
+    * `WScript.Arguments = [...]`
+    * `WScript.LoadTextFile(path)`
+    * ...
+
 ## Runtimes
 
 * [Node-Chakracore](https://github.com/nodejs/node-chakracore) <span class="shields"><img src="https://img.shields.io/github/stars/nodejs/node-chakracore?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/nodejs/node-chakracore?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - Node.js on ChakraCore (obsolete)

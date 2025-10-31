@@ -12,3 +12,7 @@ Lightweight embeddable JavaScript engine for use in nginx.
 * Years:        2015-
 * Interpreter:  register-based VM
 * Regex engine: PCRE2
+
+## Limitations
+
+Always runs in strict mode, seemingly no option to disable.

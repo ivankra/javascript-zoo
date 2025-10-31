@@ -11,8 +11,7 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 * Years:       2019-
 * Features:    hidden classes
 * Parser:      recursive descent, directly emits bytecode
-* Interpreter: stack-based VM
-  * `JS_CallInternal()` at [quickjs.c:16850](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16850)
+* Interpreter: stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))
 * GC:          reference counting
 
 ## Users
@@ -30,11 +29,11 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 ## Forks
 
 * [QuickJS-NG](quickjs-ng.md)
-* [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+  * [fastschema/qjs](fastschema-qjs.md): QuickJS-NG ported to Go via WASM
 * [PrimJS](primjs.md): ByteDance's fork with a mark-and-sweep GC
-* [Hako](hako.md): PrimJS ported to WASM
+  * [Hako](hako.md): PrimJS ported to WASM
+* [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [modernc.org/quickjs](modernc-quickjs.md): QuickJS transpiled to pure Go
-* [fastschema/qjs](https://github.com/fastschema/qjs): QuickJS ported to Go via WASM
 
 ## Runtimes
 

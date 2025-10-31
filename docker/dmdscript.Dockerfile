@@ -12,4 +12,4 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends ldc dub
 RUN bash ./build.sh
 
 ENV JS_BINARY=/src/dmdscript
-CMD ${JS_BINARY}
+CMD ${JS_BINARY} /bench/repl.js

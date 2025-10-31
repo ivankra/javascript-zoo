@@ -13,8 +13,10 @@
 * Runtime platform: native (Win32/Linux i386)
 * Interpreter:      register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))
 
-Many ugly non-portable x86-specific bits: gccbitops.h, Gcx::fullcollectshell(),
-GC wanting to scan stack, vtable hack.
+## Bugs
+
+* Hacky non-portable x86-only C++ implementation: gccbitops.h, Gcx::fullcollectshell(), GC wants to scan stack, vtable hack.
+* Can't parse object literals with quoted keys: `{"a": ...}`.
 
 ## Links
 

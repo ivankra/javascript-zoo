@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Aggregate and compare benchmark results from JSON files."""
+# Aggregate and compare benchmark results from JSON files.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 import argparse
 import json

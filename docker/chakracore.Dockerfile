@@ -14,4 +14,4 @@ RUN apt-get update -y && apt-get install -y clang
 RUN ./build.sh --ninja --static --no-icu --without-intl $([ "$VARIANT" = jitless ] && echo --no-jit)
 
 ENV JS_BINARY=/src/out/Release/ch
-# No REPL
+CMD ${JS_BINARY} /bench/repl.js

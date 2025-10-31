@@ -1,6 +1,6 @@
 # Quanta
 
-Buggy unfinished engine.
+Buggy unfinished interpreter.
 
 * Repository:   https://github.com/solarbrowser/quanta.git <span class="shields"><img src="https://img.shields.io/github/stars/solarbrowser/quanta?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/solarbrowser/quanta?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          42129 (`cloc .`)

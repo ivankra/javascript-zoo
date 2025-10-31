@@ -5,6 +5,9 @@
 # Conceptually, runs './binary test.js' on each test multiple times,
 # manages quirks of different engines, default set of benchmarks,
 # parses errors and test results.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 import argparse
 import glob
@@ -84,6 +87,14 @@ ES5_FOR_ES3_PF = '''
       return obj;
     };
   }
+'''
+
+# For engines that run in strict mode by default
+STRICT_PF = '''
+  var alert = print;
+  var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;  // crypto.js
+  var result;  // earley-boyer.js
+  var Mandreel_timeouts, Mandreel_XMLHttpRequest, Mandreel_document, Mandreel_window;  // mandreel.js
 '''
 
 @dataclass
@@ -532,63 +543,69 @@ def coalesce_runs_to_json(runs: List[Run]) -> str:
     s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m[1])), s)
     return s
 
+# TODO json/jsonnet config
 CONFIGS = {
   'besen': Config(
       # too slow on other tests or crashes
       benchmark_suite=['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js'],
       ignore_errors=True,
   ),
-  'castl': Config(error_lines_re='(?i)(error|unsupported|200 local variables)'),
-  # too slow on other tests
-  'cesanta-v7': Config(benchmark_suite=['richards.js']),
+  'castl': Config(
+      error_lines_re='(?i)(error|unsupported|200 local variables)'
+  ),
+  'cesanta-v7': Config(
+      benchmark_suite=['richards.js'],  # too slow on other tests
+  ),
   'dmdscript': Config(
       polyfills=[
-          'var console = new Object(); console.log=println; print=println;',
+          'var console = {log: println}, print = println;',
           ES5_FOR_ES3_PF,
       ],
   ),
-  'dscriptcpp': Config(benchmark_suite=['richards.es1.js']),
-  'echosoar-jsi': Config(transforms=[HexTransform()]),
-  'hermes': Config(flags=['-O'], warn_lines_re=r"(warning:|error\('Incorrect|throw 'Unsupported)"),
+  'dscriptcpp': Config(
+      benchmark_suite=['richards.es1.js'],
+      polyfills=[
+          'var console = {log: println}, print = println;',
+          ES5_FOR_ES3_PF,
+      ],
+  ),
+  'echosoar-jsi': Config(
+      transforms=[HexTransform()],
+  ),
+  'hermes': Config(
+      flags=['-O'],
+      warn_lines_re=r"(warning:|error\('Incorrect|throw 'Unsupported)",
+  ),
   'jerryscript': Config(
       timeout_for_test={
-          # Can pass splay.js with --mem-heap=65536, but awfully slow: Splay 0.279, SplayLatency 1.50
+          # Passes splay.js with --mem-heap=65536, but awfully slow: Splay 0.279, SplayLatency 1.50
           # Just time out and don't embrass itself
           'splay.js': 300,
-          # Can be pass but very slow
-          'typescript.js': 3600,
-      }
+          'typescript.js': 3600,  # passes but very slow
+      },
   ),
-  # TODO 'js-interpreter_jsc': Config(host_engine='jsc'),
-  'kiesel': Config(
-      # ASI bug triggered in gbemu-part2.js
-      transforms=[lambda test: test.script.replace('this.RTCHours -= 24\n', 'this.RTCHours -= 24;\n')],
-  ),
-  # JS1.1≈ES1 engine
+  # TODO 'js-interpreter_jsc': Config(host_engine='jsc'),  --want to configure to run it with custom shell
   'mocha': Config(
-      benchmark_suite=['richards.es1.js'],
-      polyfills=["var console = new Object(); console.log = print;"],
+      benchmark_suite=['richards.es1.js'],  # JS1.1≈ES1 engine
+      polyfills=["var console = new Object(); console.log = print;"],  # no object literals
   ),
-  # prototype-based inheritance not working, need to be fixed
-  'narcissus': Config(benchmark_suite=['richards.js1.js']),
-  'nashorn': Config(flags=['--language=es6']),
+  'narcissus': Config(
+      # prototype-based inheritance not working, need to be fixed
+      benchmark_suite=['richards.js1.js'],
+  ),
+  'nashorn': Config(
+      flags=['--language=es6'],
+  ),
+  'nashorn_ot': Config(
+      flags=['--language=es6', '-ot'],
+  ),
   'njs': Config(
-      polyfills=[
-          'var alert;',  # complains about 'alert = function(s) {...}' assignment in the test harness
-          'var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;',  # crypto.js
-          'var result;',  # earley-boyer.js
-          'var Mandreel_timeouts, Mandreel_XMLHttpRequest, Mandreel_document, Mandreel_window;',  # mandreel.js
-      ],
+      # Always runs in strict mode, seemingly no option to disable.
+      polyfills=[STRICT_PF],
       transforms=[OctalTransform()],
   ),
   'nova': Config(
-      flags=['eval'],
-      polyfills=[
-          'var alert;',  # complains about 'alert = function(s) {...}' assignment in the test harness
-          'var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;',  # crypto.js
-          'var result;',  # earley-boyer.js
-      ],
-      transforms=[OctalTransform()],
+      flags=['eval', '--no-strict'],
       warn_lines_re='^Parse errors:$',
       error_lines_re='(^  x |^error:|Error:|TypeError|%s)' % ERROR_LINE_REGEX,
   ),
@@ -596,46 +613,50 @@ CONFIGS = {
       benchmark_suite=['richards.porffor.js'],  # can't deal with standard test harness, various bugs/limitations
       polyfills=['var print=console.log;'],     # print() defined but unusable
   ),
-  # not capable of ES1, no Date()
-  'quad-wheel': Config(benchmark_suite=['richards.quad-wheel.js'], polyfills=[], timestamp_output=True),
+  'quad-wheel': Config(
+      benchmark_suite=['richards.quad-wheel.js'],  # not capable of ES1, no Date()
+      polyfills=[],
+      timestamp_output=True,
+  ),
   'quanta': Config(
-      benchmark_suite=['richards.quanta.js'],  # can't deal with standard test harness, various bugs/limitations
-      polyfills=['var print=console.log;'],    # unusable typeof with undefined var
+      benchmark_suite=['richards.quanta.js'],   # can't deal with standard test harness, various bugs/limitations
+      polyfills=['var print=console.log;'],     # typeof with undeclared reference throws
   ),
   'quickjs-ng': Config(
-      # Buggy, many bugs exposed when run on individual tests vs combined
-      polyfills=[
-          'var alert=print;',
-          'var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;',  # crypto.js
-      ],
-      transforms=[
-          # Loses 'this' in checkResult() in navier-stokes.js
-          lambda test: test.script.replace(
-              '\nfunction checkResult(dens) {\n',
-              '\nfunction checkResult(dens) { if (typeof this === "undefined") return new checkResult(dens);\n'
-          ),
-      ],
-      # TODO Gameboy, Mandreel, CodeLoad fail when run separately
+      flags=['--script'],  # flaky/buggy autodetect mode
+      #TODO retest flags=['--module'], polyfills=[STRICT_PF],
   ),
-  'qv4': Config(transforms=[OctalTransform()], filter_lines_re=r'qt\.qml\.usedbeforedeclared:'),
+  'qv4': Config(
+      transforms=[OctalTransform()],
+      filter_lines_re=r'qt\.qml\.usedbeforedeclared:',
+  ),
   'rapidus': Config(
       benchmark_suite=['richards.rapidus.js'],  # can't deal with standard test harness, various bugs/limitations
-      polyfills=['var print=console.log;'],     # unusable typeof with undefined var
+      polyfills=['var print=console.log;'],     # typeof with undeclared reference throws
       timestamp_output=True                     # unusable Date
   ),
-  'sablejs': Config(warn_lines_re=r'\[WARN\]'),
+  'sablejs': Config(
+      warn_lines_re=r'\[WARN\]',
+  ),
+  # TODO benchmark_polyfills=[]
   'spidermonkey_1.5': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.6': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.7': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.8.0': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.8.5': Config(flags=['-jm']),  # enable TraceMonkey + method JIT
   'spidermonkey_17': Config(flags=['-m']),      # enable JIT. Enabled by default in 24+.
-  # not capable of ES1
-  'starlight': Config(benchmark_suite=['richards.js1.js']),
-  # not capable of ES1, no Date()
-  'tiny-js': Config(benchmark_suite=['richards.tiny-js.js'], polyfills=[], timestamp_output=True),
-  # own javascript dialect
-  'ucode': Config(benchmark_suite=['richards.ucode.js'], polyfills=[]),
+  'starlight': Config(
+      benchmark_suite=['richards.js1.js'],      # not capable of ES1
+  ),
+  'tiny-js': Config(
+      benchmark_suite=['richards.tiny-js.js'],  # not capable of ES1, no Date()
+      polyfills=[],
+      timestamp_output=True,
+  ),
+  'ucode': Config(
+      benchmark_suite=['richards.ucode.js'],    # own javascript dialect
+      polyfills=[],
+  ),
 }
 
 def pick_config(args, binary):

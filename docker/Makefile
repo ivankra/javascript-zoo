@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 SHELL    := /bin/bash
 
 DOCKER       := $(shell command -v podman 2>/dev/null || echo docker)

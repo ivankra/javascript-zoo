@@ -9,12 +9,14 @@ Community-oriented fork of [QuickJS](quickjs.md).
 * License:     MIT
 * Standard:    ES2023
 * Years:       2023-
-* Ancestor:    [QuickJS](quickjs.md)
+* Ancestor:    [QuickJS](quickjs.md) (forked in 2023 due to QuickJS being unmaintained at that time)
 * Features:    PIC
 * Interpreter: stack-based VM
 * GC:          reference counting
 
-Forked [QuickJS](quickjs.md) in 2023 as it wasn't being maintained at that time. Code base diverged since then.
+## Users
+
+* [fastschema/qjs](fastschema-qjs.md)
 
 ## Runtimes
 

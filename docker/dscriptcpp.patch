@@ -1,12 +1,12 @@
 diff --git a/Makefile b/Makefile
 new file mode 100644
-index 0000000..00b75bd
+index 0000000..504bbe6
 --- /dev/null
 +++ b/Makefile
 @@ -0,0 +1,29 @@
 +CC = g++ --std=gnu++98 -fpermissive -w -m32 -static -Isrc/dmgc -Isrc/root -DUNICODE -Dlinux -O
 +
-+SRCS = src/dscript/dscript.c src/dscript/identifier.c src/dscript/lexer.c \
++SRCS =	src/dscript/dscript.c src/dscript/identifier.c src/dscript/lexer.c \
 +	src/dscript/program.c src/dscript/response.c src/dscript/parse.c \
 +	src/dscript/expression.c src/dscript/statement.c src/dscript/symbol.c \
 +	src/dscript/scope.c src/dscript/value.c src/dscript/ir.c \
@@ -28,10 +28,10 @@ index 0000000..00b75bd
 +	src/root/stringtable.c src/root/thread.c \
 +	src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c
 +
-+dscript: $(SRCS) Makefile
++dscript:
 +	$(CC) -o dscript $(SRCS)
 +
-+testgc: src/dmgc/testgc.c src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c src/root/printf.c
++testgc:
 +	$(CC) -o src/dmgc/testgc src/dmgc/testgc.c src/dmgc/gc.c src/dmgc/bits.c src/dmgc/linux.c src/root/printf.c
 diff --git a/src/dmgc/gc.c b/src/dmgc/gc.c
 index c3cb13e..fd14c50 100644
@@ -99,7 +99,7 @@ index 0385a13..ab0eff5 100644
      void insertSemicolon(dchar *loc);
      void rescan();
 diff --git a/src/dscript/value.h b/src/dscript/value.h
-index 26e5fb2..51fe800 100644
+index 26e5fb2..26cb1ba 100644
 --- a/src/dscript/value.h
 +++ b/src/dscript/value.h
 @@ -55,10 +55,13 @@ struct CallContext;
@@ -107,7 +107,7 @@ index 26e5fb2..51fe800 100644
  #endif
  
 +#undef VPTR_HACK
-+#define VPTR_HACK 0
++#define VPTR_HACK 1   // verify VPTR_INDEX or set to 0
 +
  // VPTR_INDEX is the ith pointer where the vptr is stored in the Value object
  
@@ -172,3 +172,25 @@ index 0492228..1693849 100644
  #else
      // Disable warning about nonstandard extension
      #pragma warning (disable : 4200)
+diff --git a/src/root/root.c b/src/root/root.c
+index d7d44e7..2737b2f 100644
+--- a/src/root/root.c
++++ b/src/root/root.c
+@@ -942,7 +942,7 @@ int File::read()
+ #if defined(linux)
+     ssize_t numread; // must be initialized before any "goto"
+     off_t size;
+-    struct stat buf;
++    struct stat64 buf;
+ 
+     int result = 0;
+     char *name = this->name->toChars();
+@@ -961,7 +961,7 @@ int File::read()
+     ref = 0;       // we own the buffer now
+ 
+     //PRINTF("\tfile opened\n");
+-    if (fstat(fd, &buf))
++    if (fstat64(fd, &buf))
+     {
+ 	error(DTEXT("\tfstat error, errno = %d\n"),errno);
+         goto err2;

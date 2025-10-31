@@ -158,8 +158,8 @@ METADATA_MAP = {
     # Related engines
     'Ancestor': 'ancestors',
     'Ancestors': 'ancestors',
-    #'Fork': 'forks',
-    #'Forks': 'forks',
+    'Fork': 'forks',
+    'Forks': 'forks',
     'Predecessor': 'predecessors',
     'Predecessors': 'predecessors',
     'Successor': 'successors',
