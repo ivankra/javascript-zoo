@@ -26,6 +26,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         moreutils \
         openjdk-25-jdk-headless \
         python3 \
+        strace \
         sudo \
         tar \
         # /usr/bin/time for benchmarking \
@@ -52,23 +53,8 @@ ENV PATH=/bench:/opt/node/bin:$PATH
 # Install other popular runtimes from npm:
 #   * bun: JavaScriptCore-based JS/TS runtime written in Zig (https://github.com/oven-sh/bun)
 #   * deno: V8/tokio-based JS/TS runtime written in Rust (https://github.com/denoland/deno)
-#   * bare: V8/libuv-based runtime (https://github.com/holepunchto/bare)
-RUN npm install -g bun deno bare && \
+RUN npm install -g bun deno && \
     (echo '' | bun repl >/dev/null 2>&1 || true)
-
-# LLRT: lightweight QuickJS/tokio-based runtime.
-# https://github.com/awslabs/llrt
-#RUN cd /opt && wget "https://github.com/awslabs/llrt/releases/download/v0.7.0-beta/llrt-linux-$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/').zip" && \
-#    unzip llrt*.zip && rm -f llrt*.zip && mv llrt /usr/local/bin
-#
-# RingoJS: Rhino-based runtime for JVM.
-# https://github.com/ringo/ringojs
-#RUN cd /opt && wget "https://github.com/ringo/ringojs/releases/download/v4.0.0/ringojs-4.0.0.tar.gz" && \
-#    tar xf ringojs*.tar.gz && rm -f ringojs*.tar.gz \
-#    echo >/usr/local/bin/ringojs \
-#      '#!/bin/sh'"\n" \
-#      'java -jar /opt/ringo*/run.jar "$@"' && \
-#    chmod a+rx /usr/local/bin/ringojs
 
 
 # -----------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://github.com/solarbrowser/quanta
+ARG REPO=https://github.com/solarbrowser/quanta.git
 ARG REV=main
 
 WORKDIR /src

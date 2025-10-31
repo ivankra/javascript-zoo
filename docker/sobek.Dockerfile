@@ -1,7 +1,7 @@
 ARG BASE=jsz-golang
 FROM $BASE
 
-ARG REPO=https://github.com/grafana/sobek
+ARG REPO=https://github.com/grafana/sobek.git
 ARG REV=main
 
 WORKDIR /src

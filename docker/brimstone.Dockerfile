@@ -1,7 +1,7 @@
 ARG BASE=jsz-rust
 FROM $BASE
 
-ARG REPO=https://github.com/Hans-Halverson/brimstone
+ARG REPO=https://github.com/Hans-Halverson/brimstone.git
 ARG REV=master
 
 WORKDIR /src

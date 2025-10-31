@@ -1,7 +1,7 @@
 ARG BASE=jsz-clang
 FROM $BASE
 
-ARG REPO=https://github.com/doodlewind/mocha1995
+ARG REPO=https://github.com/doodlewind/mocha1995.git
 ARG REV=main
 
 WORKDIR /src

@@ -1,7 +1,7 @@
 ARG BASE=jsz-golang
 FROM $BASE
 
-ARG REPO=https://github.com/fastschema/qjs
+ARG REPO=https://github.com/fastschema/qjs.git
 ARG REV=master
 
 WORKDIR /src

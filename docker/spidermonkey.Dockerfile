@@ -1,7 +1,7 @@
 ARG BASE=jsz-clang
 FROM $BASE
 
-ARG REPO=https://github.com/mozilla-firefox/firefox
+ARG REPO=https://github.com/mozilla-firefox/firefox.git
 ARG REV=release
 
 WORKDIR /src

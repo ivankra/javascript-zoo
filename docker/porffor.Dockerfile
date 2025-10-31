@@ -1,7 +1,7 @@
 ARG BASE=jsz-node
 FROM $BASE
 
-ARG REPO=https://github.com/CanadaHonk/porffor
+ARG REPO=https://github.com/CanadaHonk/porffor.git
 ARG REV=main
 
 WORKDIR /src

@@ -1,7 +1,7 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://github.com/gkmail/SophonJS
+ARG REPO=https://github.com/gkmail/SophonJS.git
 ARG REV=master
 
 WORKDIR /src

@@ -1,7 +1,7 @@
 ARG BASE=jsz-golang
 FROM $BASE
 
-ARG REPO=https://github.com/andrewmd5/hako
+ARG REPO=https://github.com/andrewmd5/hako.git
 ARG REV=main
 
 WORKDIR /src

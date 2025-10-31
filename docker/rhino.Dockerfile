@@ -1,7 +1,7 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-ARG REPO=https://github.com/mozilla/rhino
+ARG REPO=https://github.com/mozilla/rhino.git
 ARG REV=master
 
 WORKDIR /src

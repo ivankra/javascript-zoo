@@ -1,7 +1,7 @@
 ARG BASE=jsz-rust
 FROM $BASE
 
-ARG REPO=https://github.com/maekawatoshiki/rapidus
+ARG REPO=https://github.com/maekawatoshiki/rapidus.git
 ARG REV=main
 
 WORKDIR /src
