@@ -1,4 +1,6 @@
 # Clang-based build environment.
+#
+# LTO is broken (LLVMgold.so errors): https://github.com/llvm/llvm-project/issues/139602
 
 ARG BASE=jsz-debian
 FROM $BASE

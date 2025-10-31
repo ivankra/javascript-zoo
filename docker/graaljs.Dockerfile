@@ -1,8 +1,8 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-ARG REPO=https://github.com/oracle/graaljs
-ARG REV=graal-25.0.0
+ARG REPO=https://github.com/oracle/graaljs.git
+ARG REV=graal-25.0.1
 
 # Download pre-built release
 

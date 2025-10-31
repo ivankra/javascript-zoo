@@ -22,11 +22,11 @@ DOCKER_ARCH="$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')"
 IID_DIR="../.cache/iid"
 DIST_DIR="../dist/$DOCKER_ARCH"
 
-ARGS=$(sed -ne "s/^$ID: *//p" args.txt 2>/dev/null)
+ARGS=$(sed -ne "s/#.*//; s/^$ID: *//p" args.txt 2>/dev/null)
 
 # Print dependencies for Makefile
 if [[ "$DEP" == 1 ]]; then
-  echo "$IID_DIR/build"
+  echo "$IID_DIR/base"
   if [[ "$ARGS" != "" ]]; then
     echo args.txt
   fi

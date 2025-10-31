@@ -650,7 +650,7 @@ CONFIGS = {
   ),
   'tiny-js': Config(
       benchmark_suite=['richards.tiny-js.js'],  # not capable of ES1, no Date()
-      polyfills=[],
+      polyfills=['var console={log: print};'],
       timestamp_output=True,
   ),
   'ucode': Config(
@@ -743,7 +743,7 @@ def main():
                 fp.write(json_str)
 
     json_str = coalesce_runs_to_json(all_runs)
-    if not args.quiet:
+    if not args.quiet and not '"benchmarks": {}' in json_str:
         print(json_str)
 
     if output_path:

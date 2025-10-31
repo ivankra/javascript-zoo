@@ -58,6 +58,7 @@ $(IID_DIR)/base: base*.Dockerfile $(IID_DIR)/runtime
 	$(DOCKER) image ls --format={{.Id}} jsz-debian >$(IID_DIR)/base
 
 $(IID_DIR)/runtime: base-runtime.Dockerfile
+	mkdir -p $(IID_DIR)
 	$(DOCKER_BUILD) --iidfile=$(IID_DIR)/runtime -t jsz-runtime --target=jsz-runtime -f base-runtime.Dockerfile .
 
 define rules

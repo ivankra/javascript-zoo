@@ -9,7 +9,7 @@ Lightweight JavaScript engine for microcontrollers.
 * License:     Apache-2.0
 * Org:         Samsung
 * Standard:    ES2022 (partial, missing ES2018 regex and a few other features)
-* Years:       2014-
+* Years:       2014-2024
 * Interpreter: stack-based VM
 
 ## Bugs

@@ -1,44 +1,76 @@
-# Extra flags for docker build.
-# Format: "<engine>[_<variant>]: <flags>", one per line.
+# Extra flags for docker build: "<engine>[_<variant>]: <flags>", one per line.
+# This file is used by Makefile and build.sh.
 
-# Pinned revisions per end of Sep 2025
+# Actively developed engines: pinned revisions per end of Oct 2025.
+# Preferentially recent stable releases.
 
-bali:                 --build-arg REV=8cb0b593839a9fe2fa6ec3c2a88b2efd02d2cc7c
-boa:                  --build-arg REV=9d0de12228d938b4f835f2cdca22c9dc7dc4e995
-chakracore_jitless:   --build-arg VARIANT=jitless -f chakracore.Dockerfile
+bali:                 --build-arg REV=99f0aa14155d0b0c9e39f6273a51c35b497207de
+boa:                  --build-arg REV=868d13ff23ce5436363c8f71cffc829206be6783
+brimstone:            --build-arg REV=8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e
+chakracore:           --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510
+chakracore_jitless:   --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 --build-arg VARIANT=jitless -f chakracore.Dockerfile
 escargot:             --build-arg REV=v4.3.0
+escargot_clang:       --build-arg REV=v4.3.0 --build-arg BASE=jsz-clang -f escargot.Dockerfile
 espruino:             --build-arg REV=RELEASE_2V27
-hermes:               --build-arg REV=100fe4068fcefcacb0f192bd3202d29dec70ab46
-iv-lv5_jitless:       --build-arg VARIANT=jitless -f iv-lv5.Dockerfile
+fastschema-qjs:       --build-arg REV=461716f4f380f81ffd09378751f1812919cddbca
+graaljs:              --build-arg REV=graal-25.0.1
+hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
+hermes:               --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193
+hermes_clang:         --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193 --build-arg BASE=jsz-clang -f hermes.Dockerfile
 jerryscript:          --build-arg REV=v3.0.0
-kiesel:               --build-arg REV=fc80d0e6f43c5ff303516cfe02dfb16f6f907d8e --build-arg ZIG_VER=0.15.1
-libjs:                --build-arg REV=cb6ca85564abb57517b82754b4ac1ba78785707a
+kiesel:               --build-arg REV=42272ad1b0e8e4f56df9ae987ebbee4c23ae33b1 --build-arg ZIG_VER=0.15.2
+libjs:                --build-arg REV=62781f4818f87d4512b3ab133732ebb8ef9d0c94
+libjs_gcc:            --build-arg REV=62781f4818f87d4512b3ab133732ebb8ef9d0c94 --build-arg BASE=jsz-gcc -f libjs.Dockerfile
+modernc-quickjs:      --build-arg REV=v0.16.5
 mujs:                 --build-arg REV=1.3.7
+mujs_clang:           --build-arg REV=1.3.7 --build-arg BASE=jsz-clang -f mujs.Dockerfile
 nashorn:              --build-arg REV=release-15.7
-njs:                  --build-arg REV=0.9.2
-nova:                 --build-arg REV=81774d30bd814d8b7ea050e252557890f76c9b69
+njs:                  --build-arg REV=0.9.4
+nova:                 --build-arg REV=66832e5987057409815eaf46dfbf25b1b985ff68
+porffor:              --build-arg REV=769956b6c9e94dffde332650dc2d89b82a4c8df9
+primjs:               --build-arg REV=2.15.0-rc.3
 quickjs-ng:           --build-arg REV=07214197c24bb60066a0378ebd7690041f86e361
-quickjs:              --build-arg REV=fa628f8c523ecac8ce560c081411e91fcaba2d20
+quickjs-ng_clang:     --build-arg REV=07214197c24bb60066a0378ebd7690041f86e361 --build-arg BASE=jsz-clang -f quickjs-ng.Dockerfile
+quickjs:              --build-arg REV=fa628f8c523ecac8ce560c081411e91fcaba2d20  # 2025-09-13 release
 quickjs_clang:        --build-arg REV=fa628f8c523ecac8ce560c081411e91fcaba2d20 --build-arg BASE=jsz-clang -f quickjs.Dockerfile
-qv4:                  --build-arg REV=v6.9.3
-qv4_jitless:          --build-arg REV=v6.9.3 --build-arg VARIANT=jitless -f qv4.Dockerfile
+qv4:                  --build-arg REV=v6.10.0
+qv4_clang:            --build-arg REV=v6.10.0 --build-arg BASE=jsz-clang -f qv4.Dockerfile
+qv4_jitless:          --build-arg REV=v6.10.0 --build-arg VARIANT=jitless -f qv4.Dockerfile
 rhino:                --build-arg REV=Rhino1_8_0_Release
-spidermonkey:         --build-arg REV=FIREFOX_143_0_3_RELEASE
-spidermonkey_jitless: --build-arg REV=FIREFOX_143_0_3_RELEASE --build-arg VARIANT=jitless -f spidermonkey.Dockerfile
-xs:                   --build-arg REV=5.11.0
+sobek:                --build-arg REV=d05c9166857d16f22e11d50f60bb63fff688f101
+spidermonkey:         --build-arg REV=FIREFOX_144_0_RELEASE
+spidermonkey_jitless: --build-arg REV=FIREFOX_144_0_RELEASE --build-arg VARIANT=jitless -f spidermonkey.Dockerfile
+xs:                   --build-arg REV=5.12.0
+xs_clang:             --build-arg REV=5.12.0 --build-arg BASE=jsz-clang -f xs.Dockerfile
 
-# https://developer.apple.com/documentation/safari-technology-preview-release-notes/stp-release-228
-# 8d2ed2e4 299754@main 2025-09-10
-jsc:                  --build-arg REV=8d2ed2e447fadb4bce5db43cbc54af8f37c00042
-jsc_jitless:          --build-arg REV=8d2ed2e447fadb4bce5db43cbc54af8f37c00042 --build-arg VARIANT=jitless -f jsc.Dockerfile
-jsc_gcc:              --build-arg REV=8d2ed2e447fadb4bce5db43cbc54af8f37c00042 --build-arg BASE=jsz-gcc -f jsc.Dockerfile
+# https://developer.apple.com/documentation/safari-technology-preview-release-notes/stp-release-231
+# 9018757c https://commits.webkit.org/301765@main 2025-10-18
+jsc:                  --build-arg REV=9018757c64f271d2e19408850182e6b841159b53
+jsc_jitless:          --build-arg REV=9018757c64f271d2e19408850182e6b841159b53 --build-arg VARIANT=jitless -f jsc.Dockerfile
+jsc_gcc:              --build-arg REV=9018757c64f271d2e19408850182e6b841159b53 --build-arg BASE=jsz-gcc -f jsc.Dockerfile
 
-# Pick from latest Chrome's stable release:
-# https://chromiumdash.appspot.com/releases?platform=Linux
-v8:                   --build-arg REV=14.1.146.11
-v8_jitless:           --build-arg REV=14.1.146.11 --build-arg VARIANT=jitless -f v8.Dockerfile
-v8_pgo:               --build-arg REV=141.0.7390.54
-#v8_gcc:               --build-arg REV=14.1.146.11 --build-arg BASE=jsz-gcc -f v8.Dockerfile
+# Latest Chrome's stable: https://chromiumdash.appspot.com/releases?platform=Linux
+v8:                   --build-arg REV=14.2.231.14
+v8_jitless:           --build-arg REV=14.2.231.14 --build-arg VARIANT=jitless -f v8.Dockerfile
+#v8_gcc:               --build-arg REV=14.2.231.14 --build-arg BASE=jsz-gcc -f v8.Dockerfile
+v8_pgo:               --build-arg REV=142.0.7444.59
+
+# Old stable engines, ~years since update
+
+besen:                --build-arg REV=1c271815cf13291d3e4b636999ff7ecd7aa0993b
+castl:                --build-arg REV=7d6f6c5713493e9fe737fb1435c11f690497fe4c
+dmdscript:            --build-arg REV=f93cb97b5ec1c665648f369b0fb96ff82155cdfb
+dscriptcpp:           --build-arg REV=bfa84682939d591c1357da90e4dec109809f49ad
+duktape:              --build-arg REV=50af773b1b32067170786c2b7c661705ec7425d4
+duktape_clang:        --build-arg REV=50af773b1b32067170786c2b7c661705ec7425d4 --build-arg BASE=jsz-clang -f duktape.Dockerfile
+iv-lv5:               --build-arg REV=64c3a9c7c517063f29d90d449180ea8f6f4d946f
+iv-lv5_clang:         --build-arg REV=64c3a9c7c517063f29d90d449180ea8f6f4d946f --build-arg BASE=jsz-clang -f iv-lv5.Dockerfile
+iv-lv5_jitless:       --build-arg REV=64c3a9c7c517063f29d90d449180ea8f6f4d946f --build-arg VARIANT=jitless -f iv-lv5.Dockerfile
+kjs:                  --build-arg REV=5824588da24f797b4255929918efbc8b484baa09  # kf5 branch
+kjs_clang:            --build-arg REV=5824588da24f797b4255929918efbc8b484baa09  --build-arg BASE=jsz-clang -f kjs.Dockerfile
+mocha:                --build-arg REV=3d109cbf6d185c3665da2982e92ce198406cca01
+rapidus:              --build-arg REV=e2cbce0e2ee7bb640df056d790e7d5e61fde94e0
+starlight:            --build-arg REV=503e789b9ef53594aee30c45a621018e855dcc17
 
 #spidermonkey_1.4:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.4-2.tar.gz
 #spidermonkey_1.5:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz

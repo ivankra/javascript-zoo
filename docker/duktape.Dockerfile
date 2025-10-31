@@ -10,7 +10,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends nodejs npm bc
 
-RUN sed -i -e 's/ -Os / -O3 /' Makefile  # -Os by default
+RUN sed -i "s/ -Os / -O3 /; s|^CC := .*|CC := $CC|" Makefile  # build with gcc -Os by default
 RUN make -j all
 
 ENV JS_BINARY=/src/build/duk

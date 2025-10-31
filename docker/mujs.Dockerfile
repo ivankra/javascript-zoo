@@ -8,7 +8,9 @@ WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libreadline-dev
-RUN make -j release  # by default builds with -O3
+
+# by default builds with -O3
+RUN make -j release || make -j release || make -j release  # flaky
 
 ENV JS_BINARY=/src/build/release/mujs
 CMD ${JS_BINARY}

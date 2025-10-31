@@ -29,6 +29,7 @@ RUN apt-get update -y && \
         locales \
         lsb-release \
         make \
+        moreutils \
         ninja-build \
         perl \
         pkg-config \
@@ -41,6 +42,7 @@ RUN apt-get update -y && \
         ruby \
         sudo \
         tar \
+        time \
         unzip \
         vim \
         wget \

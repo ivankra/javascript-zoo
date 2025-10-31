@@ -3,11 +3,10 @@ FROM $BASE
 
 ARG REPO=https://codeberg.org/kiesel-js/kiesel.git
 ARG REV=main
+ARG ZIG_VER=0.15.2
 
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
-
-ARG ZIG_VER=0.15.1
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends cargo
 RUN cd /opt && wget -O zig.tar.xz "https://ziglang.org/download/${ZIG_VER}/zig-$(uname -m)-linux-${ZIG_VER}.tar.xz" && \
