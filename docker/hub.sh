@@ -11,7 +11,11 @@ ARCHS=$(echo "$ARCHS" | sed -e "s/\b$DOCKER_ARCH\b//"; echo $DOCKER_ARCH)
 
 set -x
 
+(cd ../bench; make clean && make)
+
 for arch in $ARCHS; do
+  (cd ../dist/$arch; tar -c *) >../dist/$arch.tar
+
   $DOCKER build \
       -f base-runtime.Dockerfile \
       -t "jsz-hub:$arch" \

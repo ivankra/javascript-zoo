@@ -1,0 +1,10 @@
+JavaScript engines zoo - build 20251101
+GitHub: https://github.com/ivankra/javascript-zoo
+
+  * /dist: pre-built JavaScript shell binaries
+    Most can be run directly as REPL or passed a script to run
+    as a command-line argument.
+
+  * /bench: benchmark runner and test suites (in $PATH)
+    Try 'bench ./v8' or 'bench ./v8 /bench/features/es1.*.js'
+

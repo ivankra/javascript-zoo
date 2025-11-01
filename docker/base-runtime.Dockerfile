@@ -25,6 +25,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         # /usr/bin/ts for benchmarking \
         moreutils \
         openjdk-25-jdk-headless \
+        procps \
         python3 \
         strace \
         sudo \
@@ -38,7 +39,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
     locale-gen
 
-ENV LC_ALL=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8 SHELL=/bin/bash
 
 # Install latest node and npm (https://nodejs.org/en/download)
 RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
@@ -56,7 +57,6 @@ ENV PATH=/bench:/opt/node/bin:$PATH
 RUN npm install -g bun deno && \
     (echo '' | bun repl >/dev/null 2>&1 || true)
 
-
 # -----------------------------------------------------------------------------
 # Dockerhub version
 
@@ -64,9 +64,13 @@ FROM jsz-runtime AS jsz-hub
 
 ARG TARGETARCH
 
-# TODO copy tarball and unpack it in order to preserve symlinks
-COPY dist/$TARGETARCH /dist
+ADD dist/$TARGETARCH.tar /dist
 COPY bench /bench
-RUN rm -rf /bench/octane /bench/__pycache__ /bench/data.py
+COPY docker/hub.motd /etc/motd
+
+RUN rm -rf /bench/octane /bench/__pycache__ /bench/data.py && \
+    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:$PATH; cat /etc/motd' >>/etc/profile && \
+    sed -Ei "s/(build .*)/\\1 - $TARGETARCH/" /etc/motd
 
 WORKDIR /dist
+CMD /bin/bash --login -i
