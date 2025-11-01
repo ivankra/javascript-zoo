@@ -13,9 +13,7 @@ RUN apt-get update -y && \
 
 RUN git clone https://github.com/simdutf/simdutf && cd simdutf && cmake . && sudo make install . -j
 
-RUN nimble refresh && \
-    nimble install && \
-    make NIMFLAGS="--define:release --define:baliTest262FyiDisableICULinkingCode --define:speed"
+RUN nimble build balde
 
 ENV JS_BINARY=/src/bin/balde
 CMD ${JS_BINARY}
