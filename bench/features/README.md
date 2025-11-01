@@ -20,6 +20,21 @@ Pass tests directly to your engine shell or use [bench](../bench) wrapper:
 ## Specs
 
 * [ES1 (1997)](https://ecma-international.org/wp-content/uploads/ECMA-262_1st_edition_june_1997.pdf)
+* [ES3 (1999)](https://www.ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf)
+* [ES5 (2009)](https://ecma-international.org/wp-content/uploads/ECMA-262_5th_edition_december_2009.pdf)
+* [ES5.1 (2011)](https://262.ecma-international.org/5.1/)
+* [ES6 / ES2015](https://262.ecma-international.org/6.0/)
+* [ES2016](https://tc39.es/ecma262/2016/)
+* [ES2017](https://tc39.es/ecma262/2017/)
+* [ES2018](https://tc39.es/ecma262/2018/)
+* [ES2019](https://tc39.es/ecma262/2019/)
+* [ES2020](https://tc39.es/ecma262/2020/)
+* [ES2021](https://tc39.es/ecma262/2021/)
+* [ES2022](https://tc39.es/ecma262/2022/)
+* [ES2023](https://tc39.es/ecma262/2023/)
+* [ES2024](https://tc39.es/ecma262/2024/)
+* [ES2025](https://tc39.es/ecma262/2025/)
+* [ESnext](https://tc39.es/ecma262/)
 
 ## Related projects
 

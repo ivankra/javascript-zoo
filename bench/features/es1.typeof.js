@@ -1,4 +1,4 @@
-// Standard: ES1 11.4.3 The typeof operator
+// ES1: 11.4.3 The typeof operator
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
