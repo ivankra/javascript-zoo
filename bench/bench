@@ -561,6 +561,7 @@ CONFIGS = {
           'var console = {log: println}, print = println;',
           ES5_FOR_ES3_PF,
       ],
+      filter_lines_re=r'^1 source files$',
   ),
   'dscriptcpp': Config(
       benchmark_suite=['richards.es1.js'],
@@ -571,6 +572,9 @@ CONFIGS = {
   ),
   'echosoar-jsi': Config(
       transforms=[HexTransform()],
+  ),
+  'espruino': Config(
+      filter_lines_re=r'^(%s)$' % '|'.join([r' ____                 _ ', r'\|  __\|___ ___ ___ _ _\|_\|___ ___ ', r'\|  __\|_ -\| . \|  _\| \| \| \|   \| . \|', r'\|____\|___\|  _\|_\| |___\|_\|_\|_\|___\|', r' *\|_\| espruino.com', r'.* (c) 20.. G.Williams', r'Espruino is Open Source. Our work is supported', r'only by sales of official boards and donations:', r'http://espruino.com/Donate']),
   ),
   'hermes': Config(
       flags=['-O'],
@@ -585,6 +589,9 @@ CONFIGS = {
       },
   ),
   # TODO 'js-interpreter_jsc': Config(host_engine='jsc'),  --want to configure to run it with custom shell
+  'kjs': Config(
+      filter_lines_re=r'^LEAK: [0-9]+ KJS::Node$',
+  ),
   'mocha': Config(
       benchmark_suite=['richards.es1.js'],  # JS1.1≈ES1 engine
       polyfills=["var console = new Object(); console.log = print;"],  # no object literals

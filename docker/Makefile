@@ -32,6 +32,7 @@ sh: $(IID_DIR)/runtime
 	$(DOCKER_RUN) --rm -it \
 	  -v $(PWD)/../bench:/bench \
 	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist \
+	  -v $(PWD)/../features:/features \
 	  -w /dist \
 	  jsz-runtime
 
