@@ -1,6 +1,7 @@
 // ES1: 15.9.5.41 Date.prototype.toGMTString()
 // ES3: B.2.6 Date.prototype.toGMTString ( )
-// ES6: B.2.4.3 Date.prototype.toGMTString ( )
+// ESnext: B.2.3.3 Date.prototype.toGMTString ( )
+// https://262.ecma-international.org/#sec-date.prototype.togmtstring
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT

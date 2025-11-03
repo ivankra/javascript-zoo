@@ -1,6 +1,11 @@
 // ES1: 7.7.3 Numeric Literals
 // ES3: B.1.1 Numeric Literals
-// ES6: B.1.1 Numeric Literals
+// ES2022: 12.9.3 Numeric Literals
+// ESnext: 12.9.3 Numeric Literals
+// https://262.ecma-international.org/#sec-literals-numeric-literals
+//
+// Part of ES1, moved to Annex B in ES3, moved back to
+// core language in ES2022 as LegacyOctalIntegerLiteral.
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT

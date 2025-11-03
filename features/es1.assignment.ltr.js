@@ -19,7 +19,7 @@ x += f() + y;
 if (x == 7 && y == 2) {
   console.log("es1.assignment.ltr.js: OK");
 } else if (x == 666) {
-  console.log("es1.assignment.ltr.js: FAIL: C++ like evaluation order in 'x += y'");
+  console.log("es1.assignment.ltr.js: FAIL: C++ like evaluation order in 'x += f()'");
 } else {
   console.log("es1.assignment.ltr.js: FAIL x=" + x);
 }

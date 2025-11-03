@@ -1,6 +1,7 @@
 // ES1: 15.9.5.5 Date.prototype.getYear()
 // ES3: B.2.4 Date.prototype.getYear ( )
-// ES6: B.2.4.1 Date.prototype.getYear ( )
+// ESnext: B.2.3.1 Date.prototype.getYear ( )
+// https://262.ecma-international.org/#sec-date.prototype.getyear
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT

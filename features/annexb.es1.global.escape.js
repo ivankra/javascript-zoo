@@ -1,6 +1,7 @@
 // ES1: 15.1.2.4 escape(string)
 // ES3: B.2.1 escape (string)
-// ES6: B.2.1.1 escape (string)
+// ESnext: B.2.1.1 escape ( string )
+// https://262.ecma-international.org/#sec-escape-string
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT

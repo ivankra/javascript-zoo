@@ -3,47 +3,101 @@
 
 var ok = 0;
 
-var inf = 1 / 0;
-var ninf = -1 / 0;
+// The MV (mathematical value) of nfinity is 10^10000 (a value so large that it will round to +∞).
+var inf = 1e10000;
+var inf2 = 1 / 0;
+var ninf = -inf;
+var ninf2 = -1 / 0;
 
-// Infinity is not NaN (Infinity == Infinity)
 if (inf != inf) {
-  console.log("es1.numbers.inf.js: FAIL: Infinity is NaN");
+  console.log("es1.numbers.inf.js: 1e10000 is NaN");
 } else {
   ok++;
+}
 
-  // +Infinity is greater than any number
-  if (inf > 1e308) {
-    ok++;
-  } else {
-    console.log("es1.numbers.inf.js: +Infinity magnitude failed");
-  }
+if (ninf != ninf) {
+  console.log("es1.numbers.inf.js: -1e10000 is NaN");
+} else {
+  ok++;
+}
 
-  // -Infinity is less than any number
-  if (ninf < -1e308) {
-    ok++;
-  } else {
-    console.log("es1.numbers.inf.js: -Infinity magnitude failed");
-  }
+if (inf2 == inf2) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: 1/0 is NaN");
+}
 
-  // Infinity + Infinity = Infinity
-  if (inf + inf == inf) {
-    ok++;
-  } else {
-    console.log("es1.numbers.inf.js: Inf + Inf failed");
-  }
+if (ninf2 == ninf2) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: -1/0 is NaN");
+}
 
-  // Infinity - Infinity = NaN
-  var r = inf - inf;
-  if (r != r) {
-    ok++;
-  } else {
-    console.log("es1.numbers.inf.js: Inf - Inf => NaN failed");
-  }
+if (inf == inf2) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: 1/0 != 1e10000");
+}
 
-  if (ok == 5) {
-    console.log("es1.numbers.inf.js: OK");
-  } else {
-    console.log("es1.numbers.inf.js: FAIL");
-  }
+if (ninf == ninf2) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: -1/0 != -1e10000");
+}
+
+if (ninf == inf) {
+  console.log("es1.numbers.inf.js: Infinity == -Infinity");
+} else {
+  ok++;
+}
+
+if (inf > 1e308) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: +Infinity magnitude failed");
+}
+
+if (ninf < -1e308) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: -Infinity magnitude failed");
+}
+
+if (inf + inf == inf) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: Infinity + Infinity != Infinity");
+}
+
+if (inf * inf == inf) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: Infinity * Infinity != Infinity");
+}
+
+var res = inf - inf;
+if (res != res) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: Infinity - Infinity is not NaN");
+}
+
+res = inf / inf;
+if (res != res) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: Infinity / Infinity is not NaN");
+}
+
+res = inf + ninf;
+if (res != res) {
+  ok++;
+} else {
+  console.log("es1.numbers.inf.js: Infinity + -Infinity is not NaN");
+}
+
+if (ok == 14) {
+  console.log("es1.numbers.inf.js: OK");
+} else {
+  console.log("es1.numbers.inf.js: FAIL");
 }

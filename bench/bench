@@ -184,6 +184,8 @@ class PolyfillTransform:
         self.code = '\n'.join(lines) + '\n'
 
     def __call__(self, test: MemTest) -> str:
+        #if 'es5.strict' in test.basename and "'use strict'" in test.script:
+        #    return "'use strict';\n" + self.code + test.script
         return self.code + test.script
 
 class Binary:

@@ -5,7 +5,7 @@
 console.log("es1.comments.js: FAIL");
 */
 ///*
-console
+console.log
 /*//
 fail
 *///
@@ -13,10 +13,10 @@ fail
 /*/*/
 /*//
 /
-//*/.
-log//(*/
-/**/(/**/
-/*//*/"es1.comments.js: OK"
+//*/(
+"es1.comments.js: "//(*/
+/**/+/**/
+/*//*/"OK"
 /**
 fail
 */

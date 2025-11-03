@@ -7,28 +7,28 @@ var a = new String('x');
 if (typeof a == 'object') {
   ok++;
 } else {
-  console.log("typeof new String('x') != 'object'");
+  console.log("es1.new.typeof.js: typeof new String('x') != 'object'");
 }
 
 var b = String('x');
 if (typeof b == 'string') {
   ok++;
 } else {
-  console.log("typeof String('x') != 'strin'");
+  console.log("es1.new.typeof.js: typeof String('x') != 'string'");
 }
 
 function f() {};
 if (typeof f == 'function') {
   ok++;
 } else {
-  console.log("typeof f != 'function'");
+  console.log("es1.new.typeof.js: typeof f != 'function'");
 }
 
 a = new f();
 if (typeof a == 'object') {
   ok++;
 } else {
-  console.log("typeof new f() != 'object'");
+  console.log("es1.new.typeof.js: typeof new f() != 'object'");
 }
 
 if (ok == 4) {

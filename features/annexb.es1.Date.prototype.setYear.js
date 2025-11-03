@@ -1,6 +1,7 @@
 // ES1: 15.9.5.38 Date.prototype.setYear(year)
 // ES3: B.2.5 Date.prototype.setYear (year)
-// ES6: B.2.4.2 Date.prototype.setYear (year)
+// ESnext: B.2.3.2 Date.prototype.setYear ( year )
+// https://262.ecma-international.org/#sec-date.prototype.setyear
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
