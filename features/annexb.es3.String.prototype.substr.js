@@ -1,7 +1,7 @@
 // ES3: B.2.3 String.prototype.substr (start, length)
 // ES5: B.2.3 String.prototype.substr (start, length)
-// compat-table: ES5 > String properties and methods (small) > String.prototype.substr
 // MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+// compat-table: ES5 > String properties and methods (small) > String.prototype.substr
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT

@@ -1,6 +1,4 @@
 // ES6: B.2.2.1 Object.prototype.__proto__
-// ES6: B.2.2.1.1 get Object.prototype.__proto__
-// ES6: B.2.2.1.2 set Object.prototype.__proto__
 // ES6: B.3.1 __proto__ Property Names in Object Initializers
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov

@@ -3,17 +3,23 @@
 
 all: sed node
 
-node:
-	for f in *.js; do node $$f; done
-
 # Fix filenames in console.log(...) messages
 sed:
-	@for f in es*.js; do \
-	  if [ "$$(egrep -o 'es[-._a-zA-Z0-9]*\.js' $$f | uniq)" != "$$f" ]; then \
+	@for f in es*.js annex*.js; do \
+	  if [ "$$(egrep -o '(es|annex)[-._a-zA-Z0-9]*\.js' $$f | uniq)" != "$$f" ]; then \
 	    echo "$$f: $$(egrep -o 'es[-._a-zA-Z0-9]*\.js' $$f | uniq | tr '\n' ' ')"; \
-	    sed -E -i -e "s/es[-._a-zA-Z0-9]*\.js/$$f/" $$f; \
+	    sed -E -i -e "s/(es|annex)[-._a-zA-Z0-9]*\.js/$$f/" $$f; \
 	  fi; \
 	done
+
+node: sed
+	./run.sh node
+
+jsc: sed
+	./run.sh jsc .var-console.js
+
+quickjs: sed
+	./run.sh quickjs
 
 spec: spec-rm spec1.txt spec3.txt spec5.txt spec51.txt spec6.txt
 

@@ -53,30 +53,6 @@ if (typeof JSON.parse !== 'function') {
     console.log("es5.JSON.parse.js: parse string failed");
   }
 
-  var parsed = JSON.parse('{"a":10}', function(key, value) {
-    if (typeof value === 'number') {
-      return value * 2;
-    }
-    return value;
-  });
-  if (parsed.a === 20) {
-    ok++;
-  } else {
-    console.log("es5.JSON.parse.js: failed to apply reviver function");
-  }
-
-  var parsed2 = JSON.parse('{"a":1,"b":2}', function(key, value) {
-    if (key === 'b') {
-      return undefined;
-    }
-    return value;
-  });
-  if (parsed2.a === 1 && !('b' in parsed2)) {
-    ok++;
-  } else {
-    console.log("es5.JSON.parse.js: failed to delete property for which reviver returned undefined");
-  }
-
   // "In the case where there are duplicate name Strings within an object,
   // lexically preceding values for the same key shall be overwritten."
   try {
@@ -162,7 +138,7 @@ if (typeof JSON.parse !== 'function') {
     console.log("es5.JSON.parse.js: exponent failed");
   }
 
-  if (ok === 19) {
+  if (ok === 17) {
     console.log("es5.JSON.parse.js: OK");
   } else {
     console.log("es5.JSON.parse.js: FAIL");

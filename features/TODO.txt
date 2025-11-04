@@ -1,20 +1,3 @@
-ES1
-More this/inheritance tests
-
-ES3
-15.2.4.3 Object.prototype.toLocaleString ( )
-15.2.4.3 Object.prototype.toLocaleString ( )
-15.2.4.5 Object.prototype.hasOwnProperty (V)
-15.2.4.6 Object.prototype.isPrototypeOf (V)
-15.2.4.7 Object.prototype.propertyIsEnumerable (V)
-15.5.4.11 String.prototype.replace (searchValue, replaceValue)
-  $^ $' $` $n $nn
-
-ES5
-es5.JSON.parse.reviver.js
-es5.JSON.stringify.replacer.js
-es5.JSON.stringify.space.js
-
-ESnext permalinks
-
-default strict mode fixes for bun/deno
+* ES1: More this/inheritance tests
+* ESnext permalinks
+* default strict mode fixes for bun/deno

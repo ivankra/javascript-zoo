@@ -5,47 +5,63 @@
 
 var ok = 0;
 
-var s1 = "John Doe";
-var result1 = s1.replace(/(\w+) (\w+)/, "$2, $1");
-if (result1 == "Doe, John") {
+var s1 = "abc";
+var r1 = s1.replace(/(b)/, "[$1]");
+if (r1 == "a[b]c") {
   ok++;
 } else {
-  console.log("es3.String.prototype.replace.capture.js: swap with $1 $2 failed");
+  console.log("es3.String.prototype.replace.capture.js: $1 failed");
 }
 
-var s2 = "hello";
-var result2 = s2.replace(/(l+)/, "[$1]");
-if (result2 == "he[ll]o") {
+var s2 = "abc";
+var r2 = s2.replace(/(a)(b)(c)/, "$3$2$1");
+if (r2 == "cba") {
   ok++;
 } else {
-  console.log("es3.String.prototype.replace.capture.js: bracket capture $1 failed");
+  console.log("es3.String.prototype.replace.capture.js: $1 $2 $3 failed");
 }
 
-var s3 = "abc123def";
-var result3 = s3.replace(/([a-z]+)(\d+)([a-z]+)/, "$3-$2-$1");
-if (result3 == "def-123-abc") {
+var s3 = "abc";
+var r3 = s3.replace(/(a)(b)?/, "$1-$2");
+if (r3 == "a-bc") {
   ok++;
 } else {
-  console.log("es3.String.prototype.replace.capture.js: reorder with $1 $2 $3 failed");
+  console.log("es3.String.prototype.replace.capture.js: undefined capture failed");
 }
 
-var s4 = "test";
-var result4 = s4.replace(/(t)/, "$1$1");
-if (result4 == "ttest") {
+var s4 = "$1,$2";
+var r4 = s4.replace(/(\$(\d))/g, "$$1-$1$2");
+if (r4 == "$1-$11,$1-$22") {
   ok++;
 } else {
-  console.log("es3.String.prototype.replace.capture.js: duplicate $1 failed");
+  console.log("es3.String.prototype.replace.capture.js: spec example failed");
 }
 
-var s5 = "foo";
-var result5 = s5.replace(/(o)/g, "[$1]");
-if (result5 == "f[o][o]") {
+var s5 = "abcdefghij";
+var r5 = s5.replace(/(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)/, "$01$02$03$04$05$06$07$08$09$10");
+if (r5 == "abcdefghij") {
   ok++;
 } else {
-  console.log("es3.String.prototype.replace.capture.js: global replace with capture failed");
+  console.log("es3.String.prototype.replace.capture.js: $nn 10 captures failed");
 }
 
-if (ok == 5) {
+var s6 = "abcdefghij";
+var r6 = s6.replace(/(a)(b)(c)(d)(e)(f)(g)(h)(i)(j)/, "$10-$09-$08-$07-$06-$05-$04-$03-$02-$01");
+if (r6 == "j-i-h-g-f-e-d-c-b-a") {
+  ok++;
+} else {
+  console.log("es3.String.prototype.replace.capture.js: $nn reverse order failed");
+}
+
+var s7 = "test";
+var r7 = s7.replace(/(t)(e)(s)(t)/, "$4$3$2$1");
+if (r7 == "tset") {
+  ok++;
+} else {
+  console.log("es3.String.prototype.replace.capture.js: 4 captures reverse failed");
+}
+
+if (ok == 7) {
   console.log("es3.String.prototype.replace.capture.js: OK");
 } else {
   console.log("es3.String.prototype.replace.capture.js: FAIL");
