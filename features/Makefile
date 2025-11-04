@@ -1,6 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
+SHELL := /bin/bash
+
 all: sed node
 
 # Fix filenames in console.log(...) messages
@@ -21,7 +23,7 @@ jsc: sed
 quickjs: sed
 	./run.sh quickjs
 
-spec: spec-rm spec1.txt spec3.txt spec5.txt spec51.txt spec6.txt
+spec: spec-rm spec1.txt spec3.txt spec5.txt spec51.txt spec6.txt spec6.html
 
 spec-rm:
 	rm -f spec*.txt
@@ -41,6 +43,9 @@ spec51.pdf:
 spec6.pdf:
 	wget -O spec6.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_6th_edition_june_2015.pdf
 
+spec6.html:
+	curl -o spec6.html https://262.ecma-international.org/6.0/
+
 # Normalize somewhat for diffing and grep.
 # 'dwdiff -ic spec1.txt spec3.txt | less' or meld works well diffing.
 %.txt: %.pdf
@@ -53,8 +58,8 @@ spec6.pdf:
 	  | sed -E 's/ *$$//' \
 	  | uniq >$@
 
-kangax:
-	for f in es5 es6 es2016plus esintl esnext non-standard; do \
-	  curl https://raw.githubusercontent.com/compat-table/compat-table/refs/heads/gh-pages/data-$$f.js \
-	    >kangax-$$f.txt; \
-	done
+# Download compat-table data files
+#compat-table:
+#	for f in data-common.json data-{es5,es6,es2016plus,esintl,esnext,non-standard}.js; do \
+#	  curl -o "compat-table.tmp/$$f" "https://raw.githubusercontent.com/compat-table/compat-table/refs/heads/gh-pages/$$f"; \
+#	done

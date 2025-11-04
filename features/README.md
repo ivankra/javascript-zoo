@@ -2,27 +2,23 @@
 
 Test suite to check for major ECMAScript features in JavaScript engines.
 
-The scope is somewhat between [compat-table](https://compat-table.github.io/compat-table/es6/)
-and [test262](https://github.com/tc39/test262) -
-to test which features are present and reasonably usable, highlight
-missing functionality, but not to be an exhaustive conformance test suite
-or collection of odd test cases.  Additionally, the very basic tests are
-written starting from ES1/ES3 and assume incomplete implementation.
-
-Each test is a single self-contained JavaScript snippet, mostly relying on
-very basic language syntax and `console.log()` for printing, thus expected
-to work in a wide variety of environments: browsers, Node.js and basic
-engine shells (perhaps with a crude `s/console.log/print/`).  There is no
-need for a specialized test runner binary with custom built-ins as with
-test262, a basic print function is the only requirement from runtime
-environment.  On success, each test prints its own `<filename>: OK`.
+Each test is a single self-contained JavaScript snippet, mostly relying
+on basic language syntax (ES1 for ES1/ES3 tests, ES3 for ES5+) and
+`console.log()` for printing, thus expected to work in a wide variety of
+environments: browsers, Node.js and basic engine shells (perhaps with
+a crude `s/console.log/print/`).  On success, each test prints its own
+`<filename>: OK`.
 
 Tests are prefixed with ECMAScript spec which introduced the feature.
-Except for features that are/were in Annex B (optional for non-browsers)
-for some specification version, these are in `annexb.<spec>.<feature>.js`.
+Except for features that are in Annex B (optional for non-browsers),
+these are in `annexb.<spec>.<feature>.js`.  Tests directly borrowed
+from kangax/compat-table are marked with `kangax` infix and should be
+regenerable with `kangax-gen.js`.
 
-Much of the raw test code is generated with LLM assistance, using
-specification text as the main reference.
+Most test cases are generated with LLM assistance from specification
+texts as reference and reviewed/refined.
+ES6+ test cases in `kangax/` are directly ported over from
+[kangax/compat-table](https://compat-table.github.io/compat-table/es6/).
 
 ## Specifications
 
@@ -48,5 +44,5 @@ specification text as the main reference.
 ## Related projects
 
 * [compat-table](https://compat-table.github.io/compat-table/es6/) ([github](https://github.com/compat-table/compat-table)):
-  test suite focused on basic detection of ES5/ES6+/ESnext features
+  ES5/ES6+/ESnext test suite
 * [test262](https://github.com/tc39/test262): official ECMAScript conformance test suite
