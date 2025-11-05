@@ -7,10 +7,10 @@ all: sed node
 
 # Fix filenames in console.log(...) messages
 sed:
-	@for f in es*.js annex*.js; do \
-	  if [ "$$(egrep -o '(es|annex)[-._a-zA-Z0-9]*\.js' $$f | uniq)" != "$$f" ]; then \
-	    echo "$$f: $$(egrep -o 'es[-._a-zA-Z0-9]*\.js' $$f | uniq | tr '\n' ' ')"; \
-	    sed -E -i -e "s/(es|annex)[-._a-zA-Z0-9]*\.js/$$f/" $$f; \
+	@for f in es[1-5]/*.js kangax-es*/*.js; do \
+	  if [[ "$$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq)" != "$$f:" ]]; then \
+	    echo "$$f: $$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq | tr '\n' ' ' | tr -d :)"; \
+	    sed -E -i -e "s|[-._/a-zA-Z0-9]+\.js:|$$f:|" $$f; \
 	  fi; \
 	done
 
@@ -18,10 +18,13 @@ node: sed
 	./run.sh node
 
 jsc: sed
-	./run.sh jsc .var-console.js
+	./run.sh jsc
 
 quickjs: sed
 	./run.sh quickjs
+
+quickjs5: sed
+	./run.sh quickjs es[1-5]
 
 spec: spec-rm spec1.txt spec3.txt spec5.txt spec51.txt spec6.txt spec6.html
 
@@ -59,7 +62,10 @@ spec6.html:
 	  | uniq >$@
 
 # Download compat-table data files
-#compat-table:
-#	for f in data-common.json data-{es5,es6,es2016plus,esintl,esnext,non-standard}.js; do \
-#	  curl -o "compat-table.tmp/$$f" "https://raw.githubusercontent.com/compat-table/compat-table/refs/heads/gh-pages/$$f"; \
-#	done
+kangax-data:
+	for f in data-common.json data-{es5,es6,es2016plus,esintl,esnext,non-standard}.js; do \
+	  curl -o $$f "https://raw.githubusercontent.com/compat-table/compat-table/refs/heads/gh-pages/$$f"; \
+	done
+
+kangax-gen: kangax-data kangax-map.json
+	./kangax.js gen

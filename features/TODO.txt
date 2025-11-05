@@ -1,3 +1,9 @@
-* ES1: More this/inheritance tests
+* ES1: More this/inheritance tests, hoisting
 * ESnext permalinks
 * default strict mode fixes for bun/deno
+* intl docker builds
+* eliminate redundant prefixes
+  * esN/esN.x.js > esN/x.js
+  * kangax-es2016plus/es20XX.x.js -> kangax-es20XX/x.js
+  * kangax-map.json with dir name
+* js-interpreter sablejs sobek: console.log, multiple script args

@@ -29,5 +29,5 @@ if (s3.toLowerCase() == "äöü") {
 if (ok == 3) {
   console.log("unicode.toLowerCase.js: OK");
 } else {
-  console.log("unicode.toLowerCase.js: FAIL");
+  console.log("unicode.toLowerCase.js: failed");
 }

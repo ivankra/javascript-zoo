@@ -6,19 +6,47 @@ Each test is a single self-contained JavaScript snippet, mostly relying
 on basic language syntax (ES1 for ES1/ES3 tests, ES3 for ES5+) and
 `console.log()` for printing, thus expected to work in a wide variety of
 environments: browsers, Node.js and basic engine shells (perhaps with
-a crude `s/console.log/print/`).  On success, each test prints its own
-`<filename>: OK`.
+a crude `s/console.log/print/`).  On success, each test is expected
+to print its own `<filename>: OK`.
 
-Tests are prefixed with ECMAScript spec which introduced the feature.
-Except for features that are in Annex B (optional for non-browsers),
-these are in `annexb.<spec>.<feature>.js`.  Tests directly borrowed
-from kangax/compat-table are marked with `kangax` infix and should be
-regenerable with `kangax-gen.js`.
+Test directories are named after ECMAScript spec which introduced
+the feature.  Annex B features (optional for non-browsers), including
+features that were only later moved there, are in
+`annex-b.<spec>.<feature>.js`.
 
-Most test cases are generated with LLM assistance from specification
-texts as reference and reviewed/refined.
-ES6+ test cases in `kangax/` are directly ported over from
-[kangax/compat-table](https://compat-table.github.io/compat-table/es6/).
+Most ES1-ES5 test cases are generated with LLM assistance from
+specification texts as reference and reviewed/refined.
+Test cases in `kangax-*/` are directly ported over from
+[kangax/compat-table](https://compat-table.github.io/compat-table/es6/),
+they can be regenerated with `kangax.js`.
+
+## Running
+
+`run.sh` wrapper should be able to handle most engine shells and run them
+through the whole test suite.  By default, uses `node` and excludes the
+usually failing ESnext.
+
+```
+Usage: run.sh [-o report.txt] engine [args] [test files/dirs]
+
+$ ./run.sh | less -R            # run node on all tests and paginate
+$ ./run.sh /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js
+$ ./run.sh /dist/jsc */*regex*  # run on all regex tests
+$ ./run.sh gjs kangax-*/        # run GNOME's JS runtime on kangax tests
+```
+
+How to run a single test file directly with different engines:
+
+```
+$ node es5/es5.JSON.js
+
+# Maybe pass a polyfill for console.log() if engine shell accepts multiple files
+$ /dist/jsc var-console-log.js es5/es5.JSON.js
+
+# Or use sed to edit test on the fly
+$ /dist/hermes <(sed s/console.log/print/ es5/es5.JSON.js)
+$ ./sed-console-log.sh /dist/hermes es5/es5.JSON.js
+```
 
 ## Specifications
 
