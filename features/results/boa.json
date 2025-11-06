@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "144cc3be3405e3d3d6bf7708f8fb466ba5723e3bfe36cfb636e502eca49d1573",
+  "binary_size": 24519088,
+  "engine": "boa",
+  "repository": "https://github.com/boa-dev/boa.git",
+  "revision": "868d13ff23ce5436363c8f71cffc829206be6783",
+  "revision_date": "2025-10-30",
+  "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+}

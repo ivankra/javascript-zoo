@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_size": 269216,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "ucode",
+  "repository": "https://github.com/jow-/ucode.git",
+  "revision": "924ccc95be32a99e2c0e7590d755635c2a6bf9f2",
+  "revision_date": "2025-10-16",
+  "version": "0.0.20250529-55-g924ccc9"
+}

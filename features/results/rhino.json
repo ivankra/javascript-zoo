@@ -1,0 +1,9 @@
+{
+  "arch": "arm64",
+  "dist_size": 1526757,
+  "engine": "rhino",
+  "repository": "https://github.com/mozilla/rhino.git",
+  "revision": "0dcc00f6b3e2623f732828186ef8464d69ba51d1",
+  "revision_date": "2025-01-02",
+  "version": "1.8.0"
+}

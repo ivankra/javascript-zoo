@@ -1,0 +1,1469 @@
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')
+es3/Number.prototype.toExponential.throws-infinity.js: OK
+es3/Number.prototype.toFixed.js: large number precision failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: non-global match failed; global match failed
+es3/String.prototype.replace.capture.js: spec example failed; $nn 10 captures failed; $nn reverse order failed
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: regex with capture failed
+es3/String.prototype.replace.regex.js: non-global regex replace failed; global regex replace failed
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: search for digits failed
+es3/String.prototype.search.str.js: string with \d+ pattern failed
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: KJS: regcomp failed with 'Invalid preceding regular expression' String.prototype.split.bugs.js (line 1): SyntaxError: Invalid regular expression
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; KJS: regcomp failed with 'Invalid preceding regular expression' String.prototype.split.regex.js (line 1): SyntaxError: Invalid regular expression
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: no exception for instanceof non-callable
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: identifiers.unicode.js (line 7): SyntaxError: Parse error
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: literals.object.unicode.js (line 8): SyntaxError: Parse error
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: KJS: regcomp failed with 'Invalid preceding regular expression' literals.regex.empty.js (line 1): SyntaxError: Invalid regular expression
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: backref for a group that hasn't captured failed
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: failed
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: KJS: regcomp failed with 'Invalid range end' regex.bracket.ranges.js (line 1): SyntaxError: Invalid regular expression
+es3/regex.class.esc-d.js: \d failed; \d+ failed; \D failed; \d in bracket failed; range with \d failed; \D in bracket failed
+es3/regex.class.esc-s.js: \s in bracket failed; range with \s failed; \S in bracket failed
+es3/regex.class.esc-w.js: \w in bracket failed; range with \w failed; \W in bracket failed
+es3/regex.disjunction.js: a|ab failed; complex disjunction failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: \t failed; \n failed; \v failed; \f failed; \r failed
+es3/regex.escape.hex.js: regex.escape.hex.js (line 0): TypeError: Null value
+es3/regex.escape.js: regex.escape.js (line 0): TypeError: Null value
+es3/regex.escape.nul.js: failed
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
+es3/regex.group.js: OK
+es3/regex.lookahead.js: KJS: regcomp failed with 'Invalid preceding regular expression' regex.lookahead.js (line 1): SyntaxError: Invalid regular expression
+es3/regex.negative-lookahead.js: KJS: regcomp failed with 'Invalid preceding regular expression' regex.negative-lookahead.js (line 1): SyntaxError: Invalid regular expression
+es3/regex.non-capturing-group.js: KJS: regcomp failed with 'Invalid preceding regular expression' regex.non-capturing-group.js (line 1): SyntaxError: Invalid regular expression
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: source.line-terminators.js (line 12): SyntaxError: Parse error
+es3/source.whitespace.js: source.whitespace.js (line 11): SyntaxError: Parse error
+es3/source.whitespace.unicode.js: source.whitespace.unicode.js (line 7): SyntaxError: Parse error
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: OK
+es5/Date.prototype.toJSON.js: OK
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: OK
+es5/JSON.js: OK
+es5/JSON.parse.js: trailing comma does not throw SyntaxError
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: failed to drop undefined/function values; undefined/function values in array not converted to null
+es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: OK
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: OK
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: OK
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: source.whitespace.bom.js (line 0): SyntaxError: Parse error
+es5/source.zero-width-chars.js: source.zero-width-chars.js (line 10): SyntaxError: Parse error
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: OK
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: OK
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: failed
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: failed
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: failed
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: misc.zero-width-identifiers.js (line 7): SyntaxError: Parse error
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: failed
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: failed
+kangax-es5/strict.this-not-coerced-methods.js: failed
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Array.from.array-like.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.from.generator.js: Array.from.generator.js (line 8): SyntaxError: Parse error
+kangax-es6/Array.from.iterable-instance.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.from.iterable.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.from.map.generator.js: Array.from.map.generator.js (line 8): SyntaxError: Parse error
+kangax-es6/Array.from.map.iterable-instance.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.from.map.iterable.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: Function.name.class-expression.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.class-object-method.js: Function.name.class-object-method.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.class-prototype.js: Function.name.class-prototype.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.class-statement.js: Function.name.class-statement.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.class-static.js: Function.name.class-static.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.class-variable.js: Function.name.class-variable.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.configurable.js: failed
+kangax-es6/Function.name.expression.js: OK
+kangax-es6/Function.name.new-Function.js: OK
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: Function.name.shorthand.js (line 9): SyntaxError: Parse error
+kangax-es6/Function.name.shorthand.no-lexical.js: Function.name.shorthand.no-lexical.js (line 10): SyntaxError: Parse error
+kangax-es6/Function.name.statement.js: OK
+kangax-es6/Function.name.symbol-keyed.js: Function.name.symbol-keyed.js (line 12): SyntaxError: Parse error
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.Symbol.iterator.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.clear.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.delete.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.entries.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.forEach.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.keys.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.size.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.prototype.values.js: ReferenceError: Can't find variable: Map
+kangax-es6/Map.zero-key.js: ReferenceError: Can't find variable: Map
+kangax-es6/Math.acosh.js: OK
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: OK
+kangax-es6/Math.cbrt.js: OK
+kangax-es6/Math.clz32.js: OK
+kangax-es6/Math.cosh.js: OK
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: OK
+kangax-es6/Math.hypot.js: OK
+kangax-es6/Math.imul.js: OK
+kangax-es6/Math.log1p.js: OK
+kangax-es6/Math.log2.js: OK
+kangax-es6/Math.log10.js: OK
+kangax-es6/Math.sign.js: OK
+kangax-es6/Math.sinh.js: OK
+kangax-es6/Math.tanh.js: OK
+kangax-es6/Math.trunc.js: OK
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: OK
+kangax-es6/Number.isInteger.js: OK
+kangax-es6/Number.isNaN.js: OK
+kangax-es6/Number.isSafeInteger.js: OK
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Object.is.js: OK
+kangax-es6/Object.setPrototypeOf.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/Promise.Symbol.species.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.all.iterable.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.all.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.constructor-requires-new.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.prototype-not-instance.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.race.iterable.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Promise.race.js: ReferenceError: Can't find variable: Promise
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.get.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.has.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.handler.set.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Proxy.revocable.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/Reflect.apply.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.construct.new-target.js: Reflect.construct.new-target.js (line 10): SyntaxError: Parse error
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.get.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.has.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.ownKeys.string.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/Reflect.set.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/RegExp.prototype.Symbol.match.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/RegExp.prototype.Symbol.replace.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/RegExp.prototype.Symbol.search.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/RegExp.prototype.Symbol.split.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.iterator-closing.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.Symbol.iterator.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.clear.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.delete.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.entries.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.forEach.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.keys.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.size.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.prototype.values.js: ReferenceError: Can't find variable: Set
+kangax-es6/Set.zero-key.js: ReferenceError: Can't find variable: Set
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/String.prototype.Symbol.iterator.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: OK
+kangax-es6/String.prototype.endsWith.throws-regex.js: OK
+kangax-es6/String.prototype.includes.js: OK
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: OK
+kangax-es6/String.prototype.startsWith.js: OK
+kangax-es6/String.prototype.startsWith.throws-regex.js: OK
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.Object.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.String.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.defineProperty.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.global-registry.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.no-coerce.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.no-new.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.prototype.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/Symbol.typeof.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/WeakMap.accept-primitives.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.frozen-keys.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.no-clear.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.prototype.delete.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: Can't find variable: WeakMap
+kangax-es6/WeakSet.accept-primitives.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.no-clear.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/WeakSet.prototype.delete.js: ReferenceError: Can't find variable: WeakSet
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: annex-b.function.if-statement.js (line 11): SyntaxError: Parse error
+kangax-es6/annex-b.function.labeled.js: annex-b.function.labeled.js (line 11): SyntaxError: Parse error
+kangax-es6/annex-b.html-comments.js: OK
+kangax-es6/annex-b.regex.backreferences-octal.js: KJS: regcomp failed with 'Invalid back reference' SyntaxError: Invalid regular expression
+kangax-es6/annex-b.regex.hyphens.js: KJS: regcomp failed with 'Invalid range end' SyntaxError: Invalid regular expression
+kangax-es6/annex-b.regex.incomplete-patterns.js: KJS: regcomp failed with 'Unmatched \{' SyntaxError: Invalid regular expression
+kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-control-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
+kangax-es6/annex-b.regex.octal-escapes.js: TypeError: Null value
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
+kangax-es6/annex-b.__proto__.literals.js: OK
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: annex-b.__proto__.literals.not-computed.js (line 13): SyntaxError: Parse error
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: annex-b.__proto__.literals.not-shorthand-method.js (line 12): SyntaxError: Parse error
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: annex-b.__proto__.literals.not-shorthand-property.js (line 13): SyntaxError: Parse error
+kangax-es6/arrow.0-params.js: arrow.0-params.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.1-param.js: arrow.1-param.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.5-param.js: arrow.5-param.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.bind.js: arrow.bind.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.lexical-arguments.js: arrow.lexical-arguments.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.lexical-super.constructor.js: arrow.lexical-super.constructor.js (line 11): SyntaxError: Parse error
+kangax-es6/arrow.lexical-super.methods.js: arrow.lexical-super.methods.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.lexical-this.js: arrow.lexical-this.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.new-target.js: arrow.new-target.js (line 10): SyntaxError: Parse error
+kangax-es6/arrow.no-line-break.js: arrow.no-line-break.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.no-prototype.js: arrow.no-prototype.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.precedence.js: arrow.precedence.js (line 9): SyntaxError: Parse error
+kangax-es6/arrow.this-call-apply.js: arrow.this-call-apply.js (line 9): SyntaxError: Parse error
+kangax-es6/class.accessor-properties.js: class.accessor-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/class.anonymous.js: class.anonymous.js (line 9): SyntaxError: Parse error
+kangax-es6/class.block-scoped.js: class.block-scoped.js (line 9): SyntaxError: Parse error
+kangax-es6/class.computed-accessor-properties.js: class.computed-accessor-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/class.computed-names-tdz.js: class.computed-names-tdz.js (line 10): SyntaxError: Parse error
+kangax-es6/class.computed-prototype-methods.js: class.computed-prototype-methods.js (line 10): SyntaxError: Parse error
+kangax-es6/class.computed-static-accessor-properties.js: class.computed-static-accessor-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/class.computed-static-methods.js: class.computed-static-methods.js (line 10): SyntaxError: Parse error
+kangax-es6/class.constructor-requires-new.js: class.constructor-requires-new.js (line 9): SyntaxError: Parse error
+kangax-es6/class.constructor.js: class.constructor.js (line 9): SyntaxError: Parse error
+kangax-es6/class.expression.js: class.expression.js (line 9): SyntaxError: Parse error
+kangax-es6/class.extends-expressions.js: class.extends-expressions.js (line 10): SyntaxError: Parse error
+kangax-es6/class.extends-null.js: class.extends-null.js (line 9): SyntaxError: Parse error
+kangax-es6/class.extends.js: class.extends.js (line 9): SyntaxError: Parse error
+kangax-es6/class.implicit-strict.js: class.implicit-strict.js (line 9): SyntaxError: Parse error
+kangax-es6/class.lexical-name.js: class.lexical-name.js (line 9): SyntaxError: Parse error
+kangax-es6/class.methods-not-enumerable.js: class.methods-not-enumerable.js (line 9): SyntaxError: Parse error
+kangax-es6/class.new-target.js: class.new-target.js (line 11): SyntaxError: Parse error
+kangax-es6/class.optional-semicolons.js: class.optional-semicolons.js (line 9): SyntaxError: Parse error
+kangax-es6/class.prototype-methods.js: class.prototype-methods.js (line 9): SyntaxError: Parse error
+kangax-es6/class.statement.js: class.statement.js (line 9): SyntaxError: Parse error
+kangax-es6/class.static-accessor-properties.js: class.static-accessor-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/class.static-methods.js: class.static-methods.js (line 9): SyntaxError: Parse error
+kangax-es6/class.string-keyed-methods.js: class.string-keyed-methods.js (line 9): SyntaxError: Parse error
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: failed
+kangax-es6/const.for-in.js: const.for-in.js (line 10): SyntaxError: Parse error
+kangax-es6/const.for-loop.js: const.for-loop.js (line 10): SyntaxError: Parse error
+kangax-es6/const.for-of.js: const.for-of.js (line 10): SyntaxError: Parse error
+kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-statement.js: failed
+kangax-es6/const.shadow.js: OK
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: failed
+kangax-es6/const.strict.for-in.js: const.strict.for-in.js (line 11): SyntaxError: Parse error
+kangax-es6/const.strict.for-loop.js: const.strict.for-loop.js (line 11): SyntaxError: Parse error
+kangax-es6/const.strict.for-of.js: const.strict.for-of.js (line 11): SyntaxError: Parse error
+kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-statement.js: failed
+kangax-es6/const.strict.shadow.js: OK
+kangax-es6/const.strict.tdz.js: failed
+kangax-es6/const.tdz.js: failed
+kangax-es6/default-params.arguments.js: default-params.arguments.js (line 9): SyntaxError: Parse error
+kangax-es6/default-params.basic.js: default-params.basic.js (line 9): SyntaxError: Parse error
+kangax-es6/default-params.explicit-undefined.js: default-params.explicit-undefined.js (line 9): SyntaxError: Parse error
+kangax-es6/default-params.new-function.js: SyntaxError: Syntax error in parameter list
+kangax-es6/default-params.refer-previous.js: default-params.refer-previous.js (line 9): SyntaxError: Parse error
+kangax-es6/default-params.separate-scope.js: default-params.separate-scope.js (line 9): SyntaxError: Parse error
+kangax-es6/default-params.tdz.js: default-params.tdz.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-assign.array.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.astral-string.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.chained-object.js: destructuring-assign.chained-object.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.computed-properties.js: destructuring-assign.computed-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.defaults.js: destructuring-assign.defaults.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.generator.js: destructuring-assign.generator.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.iterable-instance.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.iterable.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.nested-rest.js: destructuring-assign.nested-rest.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.nested.js: destructuring-assign.nested.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.object-expression.js: destructuring-assign.object-expression.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.object-primitives.js: destructuring-assign.object-primitives.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.object.js: destructuring-assign.object.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.parenthesised-error.js: destructuring-assign.parenthesised-error.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.rest.js: destructuring-assign.rest.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.string.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.throws-null-undefined.js: destructuring-assign.throws-null-undefined.js (line 11): SyntaxError: Parse error
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: Left side of assignment is not a reference.
+kangax-es6/destructuring-assign.trailing-comma-object.js: destructuring-assign.trailing-comma-object.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-decl.array.js: destructuring-decl.array.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.astral-string.js: destructuring-decl.astral-string.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.catch.js: destructuring-decl.catch.js (line 11): SyntaxError: Parse error
+kangax-es6/destructuring-decl.computed-properties.js: destructuring-decl.computed-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-decl.defaults-tdz.js: destructuring-decl.defaults-tdz.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.defaults.js: destructuring-decl.defaults.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.for-in.js: destructuring-decl.for-in.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.for-of.js: destructuring-decl.for-of.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.generator.js: destructuring-decl.generator.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.iterable-instance.js: destructuring-decl.iterable-instance.js (line 33): SyntaxError: Parse error
+kangax-es6/destructuring-decl.iterable.js: destructuring-decl.iterable.js (line 33): SyntaxError: Parse error
+kangax-es6/destructuring-decl.iterator-closing.js: destructuring-decl.iterator-closing.js (line 37): SyntaxError: Parse error
+kangax-es6/destructuring-decl.multiple-var.js: destructuring-decl.multiple-var.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.nested.js: destructuring-decl.nested.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.object-primitives.js: destructuring-decl.object-primitives.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.object.js: destructuring-decl.object.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.rest.js: destructuring-decl.rest.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.sparse-array.js: destructuring-decl.sparse-array.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.string.js: destructuring-decl.string.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.throws-null-undefined.js: destructuring-decl.throws-null-undefined.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: destructuring-decl.trailing-comma-iterable.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-decl.trailing-comma-object.js: destructuring-decl.trailing-comma-object.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: destructuring-params.aliased-defaults-arrow.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.arguments.js: destructuring-params.arguments.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.array.js: destructuring-params.array.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.astral-string.js: destructuring-params.astral-string.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.computed-properties.js: destructuring-params.computed-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: Syntax error in parameter list
+kangax-es6/destructuring-params.defaults-separate-scope.js: destructuring-params.defaults-separate-scope.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.defaults.js: destructuring-params.defaults.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: destructuring-params.empty-patterns.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.generator.js: destructuring-params.generator.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.iterable-instance.js: destructuring-params.iterable-instance.js (line 33): SyntaxError: Parse error
+kangax-es6/destructuring-params.iterable.js: destructuring-params.iterable.js (line 33): SyntaxError: Parse error
+kangax-es6/destructuring-params.iterator-closing.js: destructuring-params.iterator-closing.js (line 37): SyntaxError: Parse error
+kangax-es6/destructuring-params.length.js: destructuring-params.length.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.nested.js: destructuring-params.nested.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.new-function.js: SyntaxError: Syntax error in parameter list
+kangax-es6/destructuring-params.object-primitives.js: destructuring-params.object-primitives.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.object.js: destructuring-params.object.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.rest.js: destructuring-params.rest.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: destructuring-params.shorthand-defaults-arrow.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.sparse-array.js: destructuring-params.sparse-array.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.string.js: destructuring-params.string.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.throws-null-undefined.js: destructuring-params.throws-null-undefined.js (line 10): SyntaxError: Parse error
+kangax-es6/destructuring-params.trailing-comma-iterable.js: destructuring-params.trailing-comma-iterable.js (line 9): SyntaxError: Parse error
+kangax-es6/destructuring-params.trailing-comma-object.js: destructuring-params.trailing-comma-object.js (line 9): SyntaxError: Parse error
+kangax-es6/for-of.array.js: for-of.array.js (line 10): SyntaxError: Parse error
+kangax-es6/for-of.astral-string.js: for-of.astral-string.js (line 10): SyntaxError: Parse error
+kangax-es6/for-of.generator.js: for-of.generator.js (line 10): SyntaxError: Parse error
+kangax-es6/for-of.iterable-instance.js: for-of.iterable-instance.js (line 35): SyntaxError: Parse error
+kangax-es6/for-of.iterable.js: for-of.iterable.js (line 35): SyntaxError: Parse error
+kangax-es6/for-of.iterator-closing-break.js: for-of.iterator-closing-break.js (line 36): SyntaxError: Parse error
+kangax-es6/for-of.iterator-closing-throw.js: for-of.iterator-closing-throw.js (line 37): SyntaxError: Parse error
+kangax-es6/for-of.sparse-array.js: for-of.sparse-array.js (line 11): SyntaxError: Parse error
+kangax-es6/for-of.string.js: for-of.string.js (line 10): SyntaxError: Parse error
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: generators.basic.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.constructor.js: generators.constructor.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.expression.js: generators.expression.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.no-new-this.js: generators.no-new-this.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.prototype-chain.js: generators.prototype-chain.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.prototype.js: generators.prototype.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.return.js: generators.return.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.sending.js: generators.sending.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.shorthand.class.js: generators.shorthand.class.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.shorthand.computed.class.js: generators.shorthand.computed.class.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.shorthand.computed.js: generators.shorthand.computed.js (line 11): SyntaxError: Parse error
+kangax-es6/generators.shorthand.js: generators.shorthand.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.shorthand.no-constructor.js: generators.shorthand.no-constructor.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.shorthand.string-keyed.js: generators.shorthand.string-keyed.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.this.js: generators.this.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.throw.js: generators.throw.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.yield-precedence.js: generators.yield-precedence.js (line 10): SyntaxError: Parse error
+kangax-es6/generators.yield-star.array.js: generators.yield-star.array.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.yield-star.astral-string.js: generators.yield-star.astral-string.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.yield-star.generator.js: generators.yield-star.generator.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.yield-star.iterable-instance.js: generators.yield-star.iterable-instance.js (line 32): SyntaxError: Parse error
+kangax-es6/generators.yield-star.iterable.js: generators.yield-star.iterable.js (line 33): SyntaxError: Parse error
+kangax-es6/generators.yield-star.iterator-closing-throw.js: generators.yield-star.iterator-closing-throw.js (line 41): SyntaxError: Parse error
+kangax-es6/generators.yield-star.iterator-closing.js: generators.yield-star.iterator-closing.js (line 39): SyntaxError: Parse error
+kangax-es6/generators.yield-star.non-iterable-error.js: generators.yield-star.non-iterable-error.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.yield-star.sparse-array.js: generators.yield-star.sparse-array.js (line 9): SyntaxError: Parse error
+kangax-es6/generators.yield-star.string.js: generators.yield-star.string.js (line 9): SyntaxError: Parse error
+kangax-es6/let.basic.js: let.basic.js (line 9): SyntaxError: Parse error
+kangax-es6/let.block-scoped.js: let.block-scoped.js (line 9): SyntaxError: Parse error
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: let.for-iteration.js (line 9): SyntaxError: Parse error
+kangax-es6/let.for-loop.js: let.for-loop.js (line 9): SyntaxError: Parse error
+kangax-es6/let.no-statement.js: let.no-statement.js (line 9): SyntaxError: Parse error
+kangax-es6/let.shadow.js: let.shadow.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.basic.js: let.strict.basic.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.block-scoped.js: let.strict.block-scoped.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: let.strict.for-iteration.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.for-loop.js: let.strict.for-loop.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.no-statement.js: let.strict.no-statement.js (line 10): SyntaxError: Parse error
+kangax-es6/let.strict.shadow.js: let.strict.shadow.js (line 11): SyntaxError: Parse error
+kangax-es6/let.strict.tdz.js: let.strict.tdz.js (line 12): SyntaxError: Parse error
+kangax-es6/let.tdz.js: let.tdz.js (line 11): SyntaxError: Parse error
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: literals.object.computed-accessors.js (line 12): SyntaxError: Parse error
+kangax-es6/literals.object.computed-properties.js: literals.object.computed-properties.js (line 10): SyntaxError: Parse error
+kangax-es6/literals.object.computed-shorthand-methods.js: literals.object.computed-shorthand-methods.js (line 10): SyntaxError: Parse error
+kangax-es6/literals.object.shorthand-methods.js: literals.object.shorthand-methods.js (line 9): SyntaxError: Parse error
+kangax-es6/literals.object.shorthand-properties.js: literals.object.shorthand-properties.js (line 9): SyntaxError: Parse error
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: literals.object.string-keyed-shorthand-methods.js (line 9): SyntaxError: Parse error
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: OK
+kangax-es6/misc.Invalid-Date.js: OK
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.keys.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Object.seal.primitives.js: TypeError: Not an Object
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: misc.Proxy.get.ClassDefinitionEvaluation.js (line 12): SyntaxError: Parse error
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.IteratorComplete.js: misc.Proxy.get.IteratorComplete.js (line 21): SyntaxError: Parse error
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Can't find variable: Proxy
+kangax-es6/misc.RegExp-alter-flags.js: TypeError: Type error
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: Type error
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: misc.bound-function-prototype.arrow.js (line 9): SyntaxError: Parse error
+kangax-es6/misc.bound-function-prototype.class.js: misc.bound-function-prototype.class.js (line 9): SyntaxError: Parse error
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: misc.bound-function-prototype.generator.js (line 9): SyntaxError: Parse error
+kangax-es6/misc.bound-function-prototype.subclass.js: misc.bound-function-prototype.subclass.js (line 9): SyntaxError: Parse error
+kangax-es6/misc.do-while-no-semicolon.js: misc.do-while-no-semicolon.js (line 8): SyntaxError: Parse error
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: failed
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: failed
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: misc.identifier-syntax.var-2.js (line 8): SyntaxError: Parse error
+kangax-es6/misc.property-order.JSON.parse.js: OK
+kangax-es6/misc.property-order.JSON.stringify.js: failed
+kangax-es6/misc.property-order.Object.assign.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
+kangax-es6/misc.property-order.Object.keys.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: Can't find variable: Reflect
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: new-target.assignment-error.js (line 11): SyntaxError: Parse error
+kangax-es6/new-target.constructor.js: new-target.constructor.js (line 11): SyntaxError: Parse error
+kangax-es6/regex.flags.u.case-folding.js: SyntaxError: Invalid regular expression flags
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: Invalid regular expression flags
+kangax-es6/regex.flags.u.js: SyntaxError: Invalid regular expression flags
+kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: Invalid regular expression flags
+kangax-es6/regex.flags.y.js: SyntaxError: Invalid regular expression flags
+kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: Invalid regular expression flags
+kangax-es6/rest-params.arguments.js: rest-params.arguments.js (line 9): SyntaxError: Parse error
+kangax-es6/rest-params.basic.js: rest-params.basic.js (line 9): SyntaxError: Parse error
+kangax-es6/rest-params.length.js: rest-params.length.js (line 9): SyntaxError: Parse error
+kangax-es6/rest-params.new-function.js: SyntaxError: Syntax error in parameter list
+kangax-es6/rest-params.no-setter.js: rest-params.no-setter.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.array-call.js: spread.array-call.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.array-literal.js: spread.array-literal.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.astral-call.js: spread.astral-call.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.astral-literal.js: spread.astral-literal.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.generator-call.js: spread.generator-call.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.generator-literal.js: spread.generator-literal.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.iterable-call.js: spread.iterable-call.js (line 34): SyntaxError: Parse error
+kangax-es6/spread.iterable-instance-call.js: spread.iterable-instance-call.js (line 34): SyntaxError: Parse error
+kangax-es6/spread.iterable-instance-literal.js: spread.iterable-instance-literal.js (line 34): SyntaxError: Parse error
+kangax-es6/spread.iterable-literal.js: spread.iterable-literal.js (line 34): SyntaxError: Parse error
+kangax-es6/spread.non-iterable-error.js: spread.non-iterable-error.js (line 10): SyntaxError: Parse error
+kangax-es6/spread.sparse-call.js: spread.sparse-call.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.sparse-literal.js: spread.sparse-literal.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.string-call.js: spread.string-call.js (line 9): SyntaxError: Parse error
+kangax-es6/spread.string-literal.js: spread.string-literal.js (line 9): SyntaxError: Parse error
+kangax-es6/subclassing.Array.concat.js: subclassing.Array.concat.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.filter.js: subclassing.Array.filter.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.from.js: subclassing.Array.from.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.isArray.js: subclassing.Array.isArray.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.length-access.js: subclassing.Array.length-access.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.length-set.js: subclassing.Array.length-set.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.map.js: subclassing.Array.map.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.of.js: subclassing.Array.of.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.prototype-chain.js: subclassing.Array.prototype-chain.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.slice.js: subclassing.Array.slice.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Array.splice.js: subclassing.Array.splice.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.call.js: subclassing.Function.call.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.new.js: subclassing.Function.new.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.prototype-chain.js: subclassing.Function.prototype-chain.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.prototype.apply.js: subclassing.Function.prototype.apply.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.prototype.bind.js: subclassing.Function.prototype.bind.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Function.prototype.call.js: subclassing.Function.prototype.call.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Promise.all.js: subclassing.Promise.all.js (line 43): SyntaxError: Parse error
+kangax-es6/subclassing.Promise.js: subclassing.Promise.js (line 43): SyntaxError: Parse error
+kangax-es6/subclassing.Promise.prototype-chain.js: subclassing.Promise.prototype-chain.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.Promise.race.js: subclassing.Promise.race.js (line 43): SyntaxError: Parse error
+kangax-es6/subclassing.RegExp.exec.js: subclassing.RegExp.exec.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.RegExp.js: subclassing.RegExp.js (line 10): SyntaxError: Parse error
+kangax-es6/subclassing.RegExp.prototype-chain.js: subclassing.RegExp.prototype-chain.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.RegExp.test.js: subclassing.RegExp.test.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.misc.Boolean.js: subclassing.misc.Boolean.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.misc.Error.js: subclassing.misc.Error.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.misc.Map.js: subclassing.misc.Map.js (line 9): SyntaxError: Parse error
+kangax-es6/subclassing.misc.Number.js: subclassing.misc.Number.js (line 8): SyntaxError: Parse error
+kangax-es6/subclassing.misc.Set.js: subclassing.misc.Set.js (line 9): SyntaxError: Parse error
+kangax-es6/subclassing.misc.String.js: subclassing.misc.String.js (line 8): SyntaxError: Parse error
+kangax-es6/super.correct-constructor.js: super.correct-constructor.js (line 11): SyntaxError: Parse error
+kangax-es6/super.expression.js: super.expression.js (line 9): SyntaxError: Parse error
+kangax-es6/super.method-calls.js: super.method-calls.js (line 9): SyntaxError: Parse error
+kangax-es6/super.new-target-binding.js: super.new-target-binding.js (line 10): SyntaxError: Parse error
+kangax-es6/super.property-access.js: super.property-access.js (line 9): SyntaxError: Parse error
+kangax-es6/super.statement.js: super.statement.js (line 10): SyntaxError: Parse error
+kangax-es6/super.static-binding.js: super.static-binding.js (line 9): SyntaxError: Parse error
+kangax-es6/super.this-binding.js: super.this-binding.js (line 9): SyntaxError: Parse error
+kangax-es6/tail-calls.direct.js: failed
+kangax-es6/tail-calls.mutual.js: failed
+kangax-es6/template.basic.js: template.basic.js (line 10): SyntaxError: Parse error
+kangax-es6/template.caching.js: template.caching.js (line 16): SyntaxError: Parse error
+kangax-es6/template.escape-sequences.js: template.escape-sequences.js (line 12): SyntaxError: Parse error
+kangax-es6/template.frozen-array.js: template.frozen-array.js (line 11): SyntaxError: Parse error
+kangax-es6/template.line-break.js: SyntaxError: Parse error
+kangax-es6/template.permanent-caching.js: template.permanent-caching.js (line 13): SyntaxError: Parse error
+kangax-es6/template.tagged.js: template.tagged.js (line 20): SyntaxError: Parse error
+kangax-es6/template.toString.js: template.toString.js (line 13): SyntaxError: Parse error
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.constructor-iterables.js: TypeError: Value is not an object. Cannot be used with new.
+kangax-es6/typed-arrays.constructor-requires-new.js: ReferenceError: Can't find variable: ArrayBuffer
+kangax-es6/typed-arrays.correct-prototype-chains.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.from.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.of.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.copyWithin.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.entries.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.every.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.fill.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.filter.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.findIndex.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.find.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.forEach.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.indexOf.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.join.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.keys.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.map.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.reduceRight.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.reduce.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.reverse.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.slice.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.some.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.sort.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.subarray.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/typed-arrays.prototype.values.js: ReferenceError: Can't find variable: Int8Array
+kangax-es6/unicode-escapes.identifier.js: unicode-escapes.identifier.js (line 8): SyntaxError: Parse error
+kangax-es6/unicode-escapes.property-access.js: unicode-escapes.property-access.js (line 9): SyntaxError: Parse error
+kangax-es6/unicode-escapes.property-key.js: unicode-escapes.property-key.js (line 8): SyntaxError: Parse error
+kangax-es6/unicode-escapes.string.js: unicode-escapes.string.js (line 8): SyntaxError: Parse error
+kangax-es6/well-known.hasInstance.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.iterator.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.match.String.includes.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.match.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.replace.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.search.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Array.map.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: Can't find variable: Promise
+kangax-es6/well-known.species.RegExp.split.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.species.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.split.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.toPrimitive.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.toStringTag.existing-builtins.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.toStringTag.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.toStringTag.misc-builtins.js: ReferenceError: Can't find variable: Symbol
+kangax-es6/well-known.toStringTag.new-builtins.js: well-known.toStringTag.new-builtins.js (line 22): SyntaxError: Parse error
+kangax-es6/well-known.unscopables.js: ReferenceError: Can't find variable: Symbol
+kangax-es2016/Array.prototype.includes.generic.js: Array.prototype.includes.generic.js (line 12): SyntaxError: Parse error
+kangax-es2016/Array.prototype.includes.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Can't find variable: Int8Array
+kangax-es2016/exponentiation.assignment.js: OK
+kangax-es2016/exponentiation.basic.js: OK
+kangax-es2016/exponentiation.unary-negation-error.js: OK
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Can't find variable: Proxy
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Can't find variable: Proxy
+kangax-es2016/misc.generator-no-new.js: misc.generator-no-new.js (line 9): SyntaxError: Parse error
+kangax-es2016/misc.generator-throw-inner.js: misc.generator-throw-inner.js (line 9): SyntaxError: Parse error
+kangax-es2016/misc.nested-rest-destructuring-decl.js: misc.nested-rest-destructuring-decl.js (line 9): SyntaxError: Parse error
+kangax-es2016/misc.nested-rest-destructuring-params.js: misc.nested-rest-destructuring-params.js (line 8): SyntaxError: Parse error
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: misc.strict-fn-non-simple-params-error.js (line 8): SyntaxError: Parse error
+kangax-es2017/Atomics.add.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.and.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.exchange.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.load.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.notify.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.or.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.store.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.sub.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.wait.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Atomics.xor.js: ReferenceError: Can't find variable: Atomics
+kangax-es2017/Object.entries.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Can't find variable: Proxy
+kangax-es2017/Object.values.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: Can't find variable: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: Can't find variable: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: Can't find variable: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: Can't find variable: SharedArrayBuffer
+kangax-es2017/String.prototype.padEnd.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2017/String.prototype.padStart.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: failed
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ReferenceError: Can't find variable: Symbol
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: failed
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: ReferenceError: Can't find variable: Symbol
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: failed
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: Can't find variable: Symbol
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: failed
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: Can't find variable: Symbol
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Can't find variable: Proxy
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Can't find variable: Proxy
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Can't find variable: Proxy
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Can't find variable: Proxy
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: async.Symbol.toStringTag.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.arrow-in-class.js: async.arrow-in-class.js (line 47): SyntaxError: Parse error
+kangax-es2017/async.arrow.js: async.arrow.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.await-non-promise.js: async.await-non-promise.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.await-rejection.js: async.await-rejection.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.await.js: async.await.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.constructor.js: async.constructor.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.methods-class.js: async.methods-class.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.methods-object.js: async.methods-object.js (line 45): SyntaxError: Parse error
+kangax-es2017/async.must-await-value.js: async.must-await-value.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.no-await-in-params.js: async.no-await-in-params.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.no-line-break.js: async.no-line-break.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.no-prototype.js: async.no-prototype.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.prototype-chain.js: async.prototype-chain.js (line 9): SyntaxError: Parse error
+kangax-es2017/async.return.js: async.return.js (line 44): SyntaxError: Parse error
+kangax-es2017/async.throw.js: async.throw.js (line 44): SyntaxError: Parse error
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: Invalid regular expression flags
+kangax-es2017/trailing-comma.arguments.js: trailing-comma.arguments.js (line 9): SyntaxError: Parse error
+kangax-es2017/trailing-comma.params.js: trailing-comma.params.js (line 9): SyntaxError: Parse error
+kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: Can't find variable: Promise
+kangax-es2018/Promise.prototype.finally.js: ReferenceError: Can't find variable: Promise
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: Can't find variable: Promise
+kangax-es2018/async-iterators.for-await-of.js: async-iterators.for-await-of.js (line 57): SyntaxError: Parse error
+kangax-es2018/async-iterators.generators.js: async-iterators.generators.js (line 43): SyntaxError: Parse error
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: misc.Proxy-ownKeys-duplicate-keys.js (line 10): SyntaxError: Parse error
+kangax-es2018/misc.template-literal-revision.js: misc.template-literal-revision.js (line 15): SyntaxError: Parse error
+kangax-es2018/object-rest.js: object-rest.js (line 8): SyntaxError: Parse error
+kangax-es2018/object-spread.js: object-spread.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.flags.s.js: SyntaxError: Invalid regular expression flags
+kangax-es2018/regex.lookbehind.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es2018/regex.named-capture-groups.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: Invalid regular expression flags
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Invalid regular expression flags
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: Invalid regular expression flags
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: regex.unicode-property-escapes.unicode-12.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: regex.unicode-property-escapes.unicode-13.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: regex.unicode-property-escapes.unicode-14.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: regex.unicode-property-escapes.unicode-15.1.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: regex.unicode-property-escapes.unicode-15.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: regex.unicode-property-escapes.unicode-16.0.js (line 9): SyntaxError: Parse error
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js (line 9): SyntaxError: Parse error
+kangax-es2019/Array.prototype.flatMap.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: Can't find variable: Symbol
+kangax-es2019/Array.prototype.flat.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2019/Object.fromEntries.js: ReferenceError: Can't find variable: Map
+kangax-es2019/String.prototype.trimEnd.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2019/String.prototype.trimStart.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2019/Symbol.prototype.description.empty.js: ReferenceError: Can't find variable: Symbol
+kangax-es2019/Symbol.prototype.description.js: ReferenceError: Can't find variable: Symbol
+kangax-es2019/Symbol.prototype.description.undefined.js: ReferenceError: Can't find variable: Symbol
+kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
+kangax-es2019/annex-b.String.prototype.trimRight.js: OK
+kangax-es2019/misc.Function-toString.Function-constructor.js: SyntaxError: Syntax error in parameter list
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: Parse error
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Parse error
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Parse error
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: Parse error
+kangax-es2019/misc.Function-toString.native-code.js: failed
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Parse error
+kangax-es2019/misc.JSON-stringify-well-formed.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: Parse error
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Parse error
+kangax-es2019/misc.optional-catch-binding.await.js: misc.optional-catch-binding.await.js (line 43): SyntaxError: Parse error
+kangax-es2019/misc.optional-catch-binding.js: misc.optional-catch-binding.js (line 11): SyntaxError: Parse error
+kangax-es2019/misc.optional-catch-binding.yield.js: misc.optional-catch-binding.yield.js (line 8): SyntaxError: Parse error
+kangax-es2020/BigInt64Array.js: BigInt64Array.js (line 11): SyntaxError: Parse error
+kangax-es2020/BigInt.asIntN.js: ReferenceError: Can't find variable: BigInt
+kangax-es2020/BigInt.asUintN.js: ReferenceError: Can't find variable: BigInt
+kangax-es2020/BigInt.constructor.js: BigInt.constructor.js (line 9): SyntaxError: Parse error
+kangax-es2020/BigInt.js: BigInt.js (line 9): SyntaxError: Parse error
+kangax-es2020/BigUint64Array.js: BigUint64Array.js (line 11): SyntaxError: Parse error
+kangax-es2020/DataView.prototype.getBigInt64.js: DataView.prototype.getBigInt64.js (line 11): SyntaxError: Parse error
+kangax-es2020/DataView.prototype.getBigUint64.js: DataView.prototype.getBigUint64.js (line 11): SyntaxError: Parse error
+kangax-es2020/Promise.allSettled.js: Promise.allSettled.js (line 48): SyntaxError: Parse error
+kangax-es2020/String.prototype.matchAll.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: nullish-coalescing.js (line 9): SyntaxError: Parse error
+kangax-es2020/optional-chaining.bracket.js: optional-chaining.bracket.js (line 11): SyntaxError: Parse error
+kangax-es2020/optional-chaining.function-call.js: optional-chaining.function-call.js (line 13): SyntaxError: Parse error
+kangax-es2020/optional-chaining.method-call.js: optional-chaining.method-call.js (line 11): SyntaxError: Parse error
+kangax-es2020/optional-chaining.property.js: optional-chaining.property.js (line 11): SyntaxError: Parse error
+kangax-es2020/optional-chaining.spread-params.js: optional-chaining.spread-params.js (line 13): SyntaxError: Parse error
+kangax-es2021/FinalizationRegistry.js: ReferenceError: Can't find variable: FinalizationRegistry
+kangax-es2021/Promise.any.AggregateError.js: Promise.any.AggregateError.js (line 48): SyntaxError: Parse error
+kangax-es2021/Promise.any.fulfillment.js: Promise.any.fulfillment.js (line 48): SyntaxError: Parse error
+kangax-es2021/String.prototype.replaceAll.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2021/WeakRef.js: ReferenceError: Can't find variable: WeakRef
+kangax-es2021/logical-assignment.and.js: logical-assignment.and.js (line 9): SyntaxError: Parse error
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: logical-assignment.and.setter-not-invoked.js (line 8): SyntaxError: Parse error
+kangax-es2021/logical-assignment.and.short-circuit.js: logical-assignment.and.short-circuit.js (line 8): SyntaxError: Parse error
+kangax-es2021/logical-assignment.nullish.js: logical-assignment.nullish.js (line 9): SyntaxError: Parse error
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: logical-assignment.nullish.setter-not-invoked.js (line 8): SyntaxError: Parse error
+kangax-es2021/logical-assignment.nullish.short-circuit.js: logical-assignment.nullish.short-circuit.js (line 8): SyntaxError: Parse error
+kangax-es2021/logical-assignment.or.js: logical-assignment.or.js (line 9): SyntaxError: Parse error
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: logical-assignment.or.setter-not-invoked.js (line 8): SyntaxError: Parse error
+kangax-es2021/logical-assignment.or.short-circuit.js: logical-assignment.or.short-circuit.js (line 8): SyntaxError: Parse error
+kangax-es2021/numeric-separators.js: numeric-separators.js (line 8): SyntaxError: Parse error
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: Can't find variable: AggregateError
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: Can't find variable: AggregateError
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2022/at-method.Array.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2022/at-method.String.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2022/at-method.TypedArray.js: failed
+kangax-es2022/class-fields.computed-instance.js: class-fields.computed-instance.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-fields.computed-static.js: class-fields.computed-static.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-fields.instance.parent-scope.js: class-fields.instance.parent-scope.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-fields.private-instance.initializers.js: class-fields.private-instance.initializers.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-fields.private-instance.js: class-fields.private-instance.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-fields.private-instance.optional-access.js: class-fields.private-instance.optional-access.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: class-fields.private-instance.optional-deep-access.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-fields.private-static.js: class-fields.private-static.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-fields.public-instance.js: class-fields.public-instance.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-fields.public-static.js: class-fields.public-static.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-fields.static.define.js: class-fields.static.define.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-methods.private-accessor.js: class-methods.private-accessor.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-methods.private-instance.js: class-methods.private-instance.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-methods.private-static-accessor.js: class-methods.private-static-accessor.js (line 9): SyntaxError: Parse error
+kangax-es2022/class-methods.private-static.js: class-methods.private-static.js (line 8): SyntaxError: Parse error
+kangax-es2022/class-static-init-blocks.js: class-static-init-blocks.js (line 9): SyntaxError: Parse error
+kangax-es2022/ergonomic-brand-checks.js: ergonomic-brand-checks.js (line 8): SyntaxError: Parse error
+kangax-es2022/regex.flags.d.constructor.js: SyntaxError: Invalid regular expression flags
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Can't find variable: Proxy
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/Array.prototype.findLast.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/Array.prototype.toReversed.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/Array.prototype.toSorted.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/Array.prototype.with.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2023/TypedArray.prototype.with.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2023/hashbang.js: hashbang.js (line 0): SyntaxError: Parse error
+kangax-es2024/ArrayBuffer.prototype.detached.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2024/ArrayBuffer.prototype.transfer.js: ReferenceError: Can't find variable: Uint8Array
+kangax-es2024/Map.groupBy.js: Map.groupBy.js (line 12): SyntaxError: Parse error
+kangax-es2024/Object.groupBy.js: Object.groupBy.js (line 10): SyntaxError: Parse error
+kangax-es2024/Promise.withResolvers.js: ReferenceError: Can't find variable: Promise
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid regular expression flags
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression flags
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression flags
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Can't find variable: Proxy
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression flags
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression flags
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression flags
+kangax-es2025/Iterator.extends.js: Iterator.extends.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: Can't find variable: Iterator
+kangax-es2025/Iterator.from.iterator.js: Iterator.from.iterator.js (line 11): SyntaxError: Parse error
+kangax-es2025/Iterator.instanceof.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Can't find variable: Iterator
+kangax-es2025/Iterator.prototype.drop.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2025/Iterator.prototype.every.js: Iterator.prototype.every.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.filter.js: Iterator.prototype.filter.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.find.js: Iterator.prototype.find.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.flatMap.js: Iterator.prototype.flatMap.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.forEach.js: Iterator.prototype.forEach.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.map.js: Iterator.prototype.map.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.reduce.js: Iterator.prototype.reduce.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.some.js: Iterator.prototype.some.js (line 9): SyntaxError: Parse error
+kangax-es2025/Iterator.prototype.take.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2025/Promise.try.js: ReferenceError: Can't find variable: Promise
+kangax-es2025/RegExp.escape.js: TypeError: Attempt to use a non-function object or a value as a function.
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Can't find variable: Set
+kangax-es2025/Set.prototype.union.js: ReferenceError: Can't find variable: Set
+kangax-es2025/regex.duplicate-named-groups.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es2025/regex.pattern-modifiers.i.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es2025/regex.pattern-modifiers.m.js: KJS: regcomp failed with 'Invalid preceding regular expression' SyntaxError: Invalid regular expression
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid regular expression flags
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.NumberFormat.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Can't find variable: Intl
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK

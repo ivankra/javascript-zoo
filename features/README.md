@@ -17,7 +17,7 @@ features that were only later moved there, are in
 Most ES1-ES5 test cases are generated with LLM assistance from
 specification texts as reference and reviewed/refined.
 Test cases in `kangax-*/` are directly ported over from
-[kangax/compat-table](https://compat-table.github.io/compat-table/es6/),
+[kangax / compat-table](https://compat-table.github.io/compat-table/es6/),
 they can be regenerated with `kangax.js`.
 
 ## Running
@@ -41,11 +41,11 @@ How to run a single test file directly with different engines:
 $ node es5/es5.JSON.js
 
 # Maybe pass a polyfill for console.log() if engine shell accepts multiple files
-$ /dist/jsc var-console-log.js es5/es5.JSON.js
+$ /dist/jsc var-console-log.js es5/JSON.js
 
 # Or use sed to edit test on the fly
-$ /dist/hermes <(sed s/console.log/print/ es5/es5.JSON.js)
-$ ./sed-console-log.sh /dist/hermes es5/es5.JSON.js
+$ /dist/hermes <(sed s/console.log/print/ es5/JSON.js)
+$ ./sed-console-log.sh /dist/hermes es5/JSON.js
 ```
 
 ## Specifications

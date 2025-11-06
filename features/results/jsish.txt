@@ -1,0 +1,420 @@
+es1/Array.js: Array.js:12: "es1/Array.js: Array.length failed", Array.js:83:  "es1/Array.js: failed",
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: Array.prototype.constructor.js:11: "es1/Array.prototype.constructor.js: Array.prototype.constructor failed", Array.prototype.constructor.js:18:  "es1/Array.prototype.constructor.js: array instance constructor failed", Array.prototype.constructor.js:24:  "es1/Array.prototype.constructor.js: failed",
+es1/Array.prototype.join.generic.js: /zoo/features/es1/Array.prototype.join.generic.js:13: error: expected array object ERROR:
+es1/Array.prototype.join.js: Array.prototype.join.js:13: "es1/Array.prototype.join.js: join() without separator failed", Array.prototype.join.js:51:  "es1/Array.prototype.join.js: failed",
+es1/Array.prototype.reverse.generic.js: /zoo/features/es1/Array.prototype.reverse.generic.js:13: error: expected array ERROR:
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: /zoo/features/es1/Array.prototype.sort.generic.js:14: error: expected array object ERROR:
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: Array.prototype.toString.js:13: "es1/Array.prototype.toString.js: numeric array toString failed", Array.prototype.toString.js:21:  "es1/Array.prototype.toString.js: string array toString failed", Array.prototype.toString.js:29:  "es1/Array.prototype.toString.js: empty array toString failed", Array.p
+es1/Boolean.js: Boolean.js:39: "es1/Boolean.js: new Boolean(true) failed", Boolean.js:47:  "es1/Boolean.js: new Boolean() failed", Boolean.js:60:  "es1/Boolean.js: failed",
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor.js:11: "es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed", Boolean.prototype.constructor.js:18:  "es1/Boolean.prototype.constructor.js: boolean instance constructor failed", Boolean.prototype.constructor.js:24:  "es1/Boolean.prototype.construct
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: /zoo/features/es1/Date.diff.js:13: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.js: /zoo/features/es1/Date.js:9: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.constructor.js: /zoo/features/es1/Date.prototype.constructor.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getDate.js: /zoo/features/es1/Date.prototype.getDate.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getDay.js: /zoo/features/es1/Date.prototype.getDay.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getFullYear.js: /zoo/features/es1/Date.prototype.getFullYear.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getHours.js: /zoo/features/es1/Date.prototype.getHours.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getMilliseconds.js: /zoo/features/es1/Date.prototype.getMilliseconds.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getMinutes.js: /zoo/features/es1/Date.prototype.getMinutes.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getMonth.js: /zoo/features/es1/Date.prototype.getMonth.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getSeconds.js: /zoo/features/es1/Date.prototype.getSeconds.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getTimezoneOffset.js: /zoo/features/es1/Date.prototype.getTimezoneOffset.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getTime.js: /zoo/features/es1/Date.prototype.getTime.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.getUTCDate.js: /zoo/features/es1/Date.prototype.getUTCDate.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCDay.js: /zoo/features/es1/Date.prototype.getUTCDay.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCFullYear.js: /zoo/features/es1/Date.prototype.getUTCFullYear.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCHours.js: /zoo/features/es1/Date.prototype.getUTCHours.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCMilliseconds.js: /zoo/features/es1/Date.prototype.getUTCMilliseconds.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCMinutes.js: /zoo/features/es1/Date.prototype.getUTCMinutes.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCMonth.js: /zoo/features/es1/Date.prototype.getUTCMonth.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.getUTCSeconds.js: /zoo/features/es1/Date.prototype.getUTCSeconds.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setDate.js: /zoo/features/es1/Date.prototype.setDate.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setFullYear.js: /zoo/features/es1/Date.prototype.setFullYear.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setHours.js: /zoo/features/es1/Date.prototype.setHours.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setMilliseconds.js: /zoo/features/es1/Date.prototype.setMilliseconds.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setMinutes.js: /zoo/features/es1/Date.prototype.setMinutes.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setMonth.js: /zoo/features/es1/Date.prototype.setMonth.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setSeconds.js: /zoo/features/es1/Date.prototype.setSeconds.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setTime.js: /zoo/features/es1/Date.prototype.setTime.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.setUTCDate.js: /zoo/features/es1/Date.prototype.setUTCDate.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCFullYear.js: /zoo/features/es1/Date.prototype.setUTCFullYear.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCHours.js: /zoo/features/es1/Date.prototype.setUTCHours.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCMilliseconds.js: /zoo/features/es1/Date.prototype.setUTCMilliseconds.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCMinutes.js: /zoo/features/es1/Date.prototype.setUTCMinutes.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCMonth.js: /zoo/features/es1/Date.prototype.setUTCMonth.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.setUTCSeconds.js: /zoo/features/es1/Date.prototype.setUTCSeconds.js:6: error: converting a undefined/null value to object ERROR:
+es1/Date.prototype.toLocaleString.js: /zoo/features/es1/Date.prototype.toLocaleString.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.toString.js: /zoo/features/es1/Date.prototype.toString.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.toUTCString.js: /zoo/features/es1/Date.prototype.toUTCString.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Date.prototype.valueOf.js: /zoo/features/es1/Date.prototype.valueOf.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es1/Function.js: /zoo/features/es1/Function.js:8: error: Calling Function is unsupported ERROR:
+es1/Function.length.js: Function.length.js:12: "es1/Function.length.js: Function.length failed", Function.length.js:45:  "es1/Function.length.js: failed",
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: /zoo/features/es1/Function.prototype.toString.js:18: error: Calling Function is unsupported ERROR:
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: Number.js:32: "es1/Number.js: new Number(value) failed", Number.js:40:  "es1/Number.js: new Number() failed", Number.js:53:  "es1/Number.js: failed",
+es1/Number.prototype.constructor.js: Number.prototype.constructor.js:11: "es1/Number.prototype.constructor.js: Number.prototype.constructor failed", Number.prototype.constructor.js:18:  "es1/Number.prototype.constructor.js: number instance constructor failed", Number.prototype.constructor.js:24:  "es1/Number.prototype.constructor.js: f
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: Object.js:21: "es1/Object.js: Object(number) failed", Object.js:36:  "es1/Object.js: new Object(string) failed", Object.js:42:  "es1/Object.js: failed",
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: Object.prototype.toString.js:11: "es1/Object.prototype.toString.js: failed",
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: /zoo/features/es1/String.fromCharCode.js:8: error: got 0 args, expected 1 or more, calling function fromCharCode(...) ERROR:
+es1/String.generics.js: /zoo/features/es1/String.generics.js:30: error: apply String.charAt to a non-string object ERROR:
+es1/String.js: String.js:31: "es1/String.js: 15.5.2.1 new String(value) failed", String.js:39:  "es1/String.js: 15.5.2.2 new String() failed", String.js:53:  "es1/String.js: failed",
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: String.prototype.constructor.js:11: "es1/String.prototype.constructor.js: String.prototype.constructor failed", String.prototype.constructor.js:18:  "es1/String.prototype.constructor.js: string instance constructor failed", String.prototype.constructor.js:24:  "es1/String.prototype.constructor.js: f
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: String.prototype.lastIndexOf.js:24: "es1/String.prototype.lastIndexOf.js: lastIndexOf with position failed", String.prototype.lastIndexOf.js:42:  "es1/String.prototype.lastIndexOf.js: failed",
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: String.prototype.substring.js:25: "es1/String.prototype.substring.js: substring(1, 4) failed", String.prototype.substring.js:31:  "es1/String.prototype.substring.js: substring(2, 2) failed", String.prototype.substring.js:37:  "es1/String.prototype.substring.js: substring swap failed", String.prototy
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: /zoo/features/es1/annex-b.Date.prototype.getYear.js:8: error: can not execute expression: 'Date' not a function ERROR:
+es1/annex-b.Date.prototype.setYear.js: /zoo/features/es1/annex-b.Date.prototype.setYear.js:8: error: can not execute expression: 'Date' not a function ERROR:
+es1/annex-b.Date.prototype.toGMTString.js: /zoo/features/es1/annex-b.Date.prototype.toGMTString.js:8: error: can not execute expression: 'Date' not a function ERROR:
+es1/annex-b.global.escape.js: /zoo/features/es1/annex-b.global.escape.js:9: error: can not execute expression: 'escape' not a function ERROR:
+es1/annex-b.global.unescape.js: /zoo/features/es1/annex-b.global.unescape.js:9: error: can not execute expression: 'unescape' not a function ERROR:
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: /zoo/features/es1/annex-b.literals.string.octal.js:12: parse: Unsupported string escape: \1 annex-b.literals.string.octal.js:15:  "es1/annex-b.literals.string.octal.js: failed",
+es1/arguments.callee.js: OK
+es1/arguments.js: /zoo/features/es1/arguments.js:12: error: got 2 args, expected 0, calling function f() ERROR:
+es1/asi.eval.js: /zoo/features/es1/asi.eval.js:2: parse: /zoo/features/es1/asi.eval.js:2.7: error: syntax error, unexpected '}' ERROR:
+es1/asi.js: /zoo/features/es1/asi.js:14: parse: :13.6: error: syntax error, unexpected '}' ERROR:
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: assignment.ltr.js:22: "es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'",
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: conversions.ToBoolean.js:58: "es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy", conversions.ToBoolean.js:106:  "es1/conversions.ToBoolean.js: failed",
+es1/conversions.ToInt32.js: /zoo/features/es1/conversions.ToInt32.js:25: error: Eval error: value is NaN ERROR:
+es1/conversions.ToInteger.js: /zoo/features/es1/conversions.ToInteger.js:27: error: invalid number ERROR:
+es1/conversions.ToNumber.js: /zoo/features/es1/conversions.ToNumber.js:21: error: type mismatch for argument arg 1 'num': expected "number|string" but got "boolean", in call to 'Number' declared at conversions.ToNumber.js:0.0 <false>. ERROR:
+es1/conversions.ToObject.js: conversions.ToObject.js:15: "es1/conversions.ToObject.js: true failed", conversions.ToObject.js:22:  "es1/conversions.ToObject.js: false failed", conversions.ToObject.js:29:  "es1/conversions.ToObject.js: 123 failed", conversions.ToObject.js:36:  "es1/conversions.ToObject.js: 'hello' failed", conver
+es1/conversions.ToString.js: conversions.ToString.js:106: "es1/conversions.ToString.js: 1e-7 failed", conversions.ToString.js:112:  "es1/conversions.ToString.js: failed",
+es1/conversions.ToUint32.js: conversions.ToUint32.js:36: "es1/conversions.ToUint32.js: +Infinity failed", conversions.ToUint32.js:43:  "es1/conversions.ToUint32.js: -Infinity failed", conversions.ToUint32.js:50:  "es1/conversions.ToUint32.js: 2^32-1 failed", conversions.ToUint32.js:57:  "es1/conversions.ToUint32.js: 2^32 failed
+es1/conversions.js: conversions.js:35: "es1/conversions.js: 0 == null", conversions.js:36:  "es1/conversions.js: 0 == undefined", conversions.js:82:  "es1/conversions.js: failed",
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: /zoo/features/es1/literals.string.hex.js:6: parse: Unsupported string escape: \x literals.string.hex.js:9:   "es1/literals.string.hex.js: failed",
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: new.typeof.js:10: "es1/new.typeof.js: typeof new String('x') != 'object'", new.typeof.js:37:  "es1/new.typeof.js: failed",
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: /zoo/features/es1/numbers.nan.js:16: error: Eval error: value is NaN ERROR:
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: typeof.null.js:11: "es1/typeof.null.js: typeof null != 'object'",
+es1/typeof.undeclared.js: OK
+es1/types.js: types.js:13: "es1/types.js: typeof null != 'object'", types.js:83:  "es1/types.js: failed",
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: /zoo/features/es1/unary.delete.var.js:4: error: function created global: "a" ERROR:
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: /zoo/features/es1/void.js:18: error: call with undefined var for argument arg 2 'y', in call to 'f' declared at void.js:6.2 <undefined>. ERROR:
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: Array.prototype.pop.generic.js:17: "es3/Array.prototype.pop.generic.js: pop from object failed", Array.prototype.pop.generic.js:27:  "es3/Array.prototype.pop.generic.js: pop single element from object failed", Array.prototype.pop.generic.js:42:  "es3/Array.prototype.pop.generic.js: failed",
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: Array.prototype.push.generic.js:16: "es3/Array.prototype.push.generic.js: push to object failed", Array.prototype.push.generic.js:25:  "es3/Array.prototype.push.generic.js: push multiple to empty object failed", /zoo/features/es3/Array.prototype.push.generic.js:31: error: got 0 args, expected 1 or m
+es3/Array.prototype.push.js: /zoo/features/es3/Array.prototype.push.js:28: error: got 0 args, expected 1 or more, calling function push(val:any, ...) ERROR:
+es3/Array.prototype.shift.generic.js: /zoo/features/es3/Array.prototype.shift.generic.js:13: error: expected array object ERROR:
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: /zoo/features/es3/Array.prototype.slice.generic.js:14: error: expected array object ERROR:
+es3/Array.prototype.slice.js: Array.prototype.slice.js:17: "es3/Array.prototype.slice.js: slice with start and end failed", Array.prototype.slice.js:51:  "es3/Array.prototype.slice.js: slice with negative end failed", Array.prototype.slice.js:68:  "es3/Array.prototype.slice.js: failed",
+es3/Array.prototype.splice.generic.js: /zoo/features/es3/Array.prototype.splice.generic.js:14: error: expected array object ERROR:
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: Array.prototype.toLocaleString.js:24: "es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed", Array.prototype.toLocaleString.js:33:  "es3/Array.prototype.toLocaleString.js: single element toLocaleString failed", Array.prototype.toLocaleString.js:60:  "es3/Array.prototype.toLocale
+es3/Array.prototype.unshift.generic.js: /zoo/features/es3/Array.prototype.unshift.generic.js:12: error: expected array object ERROR:
+es3/Array.prototype.unshift.js: Array.prototype.unshift.js:41: "es3/Array.prototype.unshift.js: unshift with no arguments failed", Array.prototype.unshift.js:57:  "es3/Array.prototype.unshift.js: failed",
+es3/Array.prototype.unshift.returns-new-length.js: Array.prototype.unshift.returns-new-length.js:29: "es3/Array.prototype.unshift.returns-new-length.js: no arguments unshift failed", Array.prototype.unshift.returns-new-length.js:35:  "es3/Array.prototype.unshift.returns-new-length.js: failed",
+es3/Date.prototype.toDateString.js: /zoo/features/es3/Date.prototype.toDateString.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es3/Date.prototype.toLocaleDateString.js: /zoo/features/es3/Date.prototype.toLocaleDateString.js:10: error: can not execute expression: 'Date' not a function ERROR:
+es3/Date.prototype.toLocaleString.js: /zoo/features/es3/Date.prototype.toLocaleString.js:10: error: can not execute expression: 'Date' not a function ERROR:
+es3/Date.prototype.toLocaleTimeString.js: /zoo/features/es3/Date.prototype.toLocaleTimeString.js:10: error: can not execute expression: 'Date' not a function ERROR:
+es3/Date.prototype.toTimeString.js: /zoo/features/es3/Date.prototype.toTimeString.js:6: error: can not execute expression: 'Date' not a function ERROR:
+es3/Error.js: /zoo/features/es3/Error.js:10: error: can not execute expression: 'Error' not a function ERROR:
+es3/Error.prototype.constructor.js: /zoo/features/es3/Error.prototype.constructor.js:6: error: converting a undefined/null value to object ERROR:
+es3/Error.prototype.message.js: /zoo/features/es3/Error.prototype.message.js:6: error: converting a undefined/null value to object ERROR:
+es3/Error.prototype.name.js: /zoo/features/es3/Error.prototype.name.js:6: error: converting a undefined/null value to object ERROR:
+es3/Error.prototype.toString.js: /zoo/features/es3/Error.prototype.toString.js:6: error: can not execute expression: 'Error' not a function ERROR:
+es3/Function.prototype.apply.js: /zoo/features/es3/Function.prototype.apply.js:60: error: got 2 args, expected 0, calling function useArguments() ERROR:
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: /zoo/features/es3/Math.max.variadic.js:8: error: got 0 args, expected 2 or more, calling function max(x:number, y:number, ...) ERROR:
+es3/Math.min.variadic.js: /zoo/features/es3/Math.min.variadic.js:8: error: got 0 args, expected 2 or more, calling function min(x:number, y:number, ...) ERROR:
+es3/Number.prototype.toExponential.edge-cases.js: Number.prototype.toExponential.edge-cases.js:18: "es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws", Number.prototype.toExponential.edge-cases.js:30:  "es3/Number.prototype.toExponential.edge-cases.js: Infinity.toExponential(Infinity) throws", Number.prototype.toE
+es3/Number.prototype.toExponential.js: Number.prototype.toExponential.js:13: "es3/Number.prototype.toExponential.js: toExponential(2) failed", /zoo/features/es3/Number.prototype.toExponential.js:17: error: got 0 args, expected 1, calling function toExponential(num:number) ERROR:
+es3/Number.prototype.toExponential.rounding.js: Number.prototype.toExponential.rounding.js:24: "es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01')", Number.prototype.toExponential.rounding.js:31:  "es3/Number.prototype.toExponential.rounding.js: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04')"
+es3/Number.prototype.toExponential.throws-infinity.js: Number.prototype.toExponential.throws-infinity.js:20: "es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError", Number.prototype.toExponential.throws-infinity.js:34:  "es3/Number.prototype.toExponential.throws-infinity.js: toExponential(-Infinity) do
+es3/Number.prototype.toFixed.js: Number.prototype.toFixed.js:45: "es3/Number.prototype.toFixed.js: NaN failed", Number.prototype.toFixed.js:61:  "es3/Number.prototype.toFixed.js: rounding failed", Number.prototype.toFixed.js:67:  "es3/Number.prototype.toFixed.js: failed",
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: Number.prototype.toPrecision.js:13: "es3/Number.prototype.toPrecision.js: toPrecision(5) fixed notation failed", /zoo/features/es3/Number.prototype.toPrecision.js:17: error: got 0 args, expected 1, calling function toPrecision(num:number) ERROR:
+es3/Object.prototype.hasOwnProperty.js: /zoo/features/es3/Object.prototype.hasOwnProperty.js:14: error: set prototype unsupported ERROR:
+es3/Object.prototype.isPrototypeOf.js: /zoo/features/es3/Object.prototype.isPrototypeOf.js:10: error: set prototype unsupported ERROR:
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: Object.prototype.toLocaleString.js:13: "es3/Object.prototype.toLocaleString.js: basic toLocaleString failed", Object.prototype.toLocaleString.js:32:  "es3/Object.prototype.toLocaleString.js: custom toString failed", Object.prototype.toLocaleString.js:38:  "es3/Object.prototype.toLocaleString.js: fai
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: RegExp.js:13: "es3/RegExp.js: new RegExp failed", RegExp.js:44:  "es3/RegExp.js: RegExp as function failed", RegExp.js:57:  "es3/RegExp.js: failed",
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: RegExp.prototype.constructor.js:9: "es3/RegExp.prototype.constructor.js: failed",
+es3/RegExp.prototype.exec.js: RegExp.prototype.exec.js:14: "es3/RegExp.prototype.exec.js: match failed", RegExp.prototype.exec.js:51:  "es3/RegExp.prototype.exec.js: failed",
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: RegExp.prototype.toString.js:20: "es3/RegExp.prototype.toString.js: format failed", RegExp.prototype.toString.js:26:  "es3/RegExp.prototype.toString.js: failed",
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: /zoo/features/es3/String.prototype.concat.generic.js:7: error: apply String.concat to a non-string object ERROR:
+es3/String.prototype.concat.js: /zoo/features/es3/String.prototype.concat.js:41: error: String get failure ERROR:
+es3/String.prototype.localeCompare.js: /zoo/features/es3/String.prototype.localeCompare.js:9: error: 'localeCompare' sub-commands are: charAt charCodeAt concat fromCharCode indexOf lastIndexOf map match repeat replace search slice split substr substring toLocaleLowerCase toLocaleUpperCase toLowerCase toTitle toUpperCase trim trimLeft tri
+es3/String.prototype.match.generic.js: /zoo/features/es3/String.prototype.match.generic.js:7: error: apply String.match to a non-string object ERROR:
+es3/String.prototype.match.js: String.prototype.match.js:13: "es3/String.prototype.match.js: non-global match failed", String.prototype.match.js:21:  "es3/String.prototype.match.js: global match failed", String.prototype.match.js:51:  "es3/String.prototype.match.js: failed",
+es3/String.prototype.replace.capture.js: String.prototype.replace.capture.js:37: "es3/String.prototype.replace.capture.js: spec example failed", String.prototype.replace.capture.js:45:  "es3/String.prototype.replace.capture.js: $nn 10 captures failed", String.prototype.replace.capture.js:53:  "es3/String.prototype.replace.capture.js: $nn r
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: /zoo/features/es3/String.prototype.replace.generic.js:10: error: apply String.replace to a non-string object ERROR:
+es3/String.prototype.replace.regex.js: String.prototype.replace.regex.js:13: "es3/String.prototype.replace.regex.js: non-global regex replace failed", String.prototype.replace.regex.js:21:  "es3/String.prototype.replace.regex.js: global regex replace failed", String.prototype.replace.regex.js:51:  "es3/String.prototype.replace.regex.js: 
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: /zoo/features/es3/String.prototype.search.generic.js:7: error: apply String.search to a non-string object ERROR:
+es3/String.prototype.search.js: String.prototype.search.js:21: "es3/String.prototype.search.js: search for digits failed", String.prototype.search.js:53:  "es3/String.prototype.search.js: failed",
+es3/String.prototype.search.str.js: String.prototype.search.str.js:13: "es3/String.prototype.search.str.js: string with \d+ pattern failed", String.prototype.search.str.js:21:  "es3/String.prototype.search.str.js: string with \w+ pattern failed", String.prototype.search.str.js:29:  "es3/String.prototype.search.str.js: string with [0-9
+es3/String.prototype.slice.generic.js: /zoo/features/es3/String.prototype.slice.generic.js:7: error: apply String.slice to a non-string object ERROR:
+es3/String.prototype.slice.js: String.prototype.slice.js:45: "es3/String.prototype.slice.js: slice middle characters failed", String.prototype.slice.js:51:  "es3/String.prototype.slice.js: failed",
+es3/String.prototype.split.bugs.js: /zoo/features/es3/String.prototype.split.bugs.js:68: error: Invalid regex string '(?:ab)*/' : Invalid preceding regular expression eg. (?: /zoo/features/es3/String.prototype.split.bugs.js:68: parse: :68.35: error: syntax error, unexpected end of file, expecting ')' ERROR:
+es3/String.prototype.split.limit.js: /zoo/features/es3/String.prototype.split.limit.js:9: error: got 2 args, expected 0-1, calling function split(char:string|null=void) ERROR:
+es3/String.prototype.split.regex.js: /zoo/features/es3/String.prototype.split.regex.js:49: error: Invalid regex string '(?:)/' : Invalid preceding regular expression eg. (?: /zoo/features/es3/String.prototype.split.regex.js:49: parse: :49.46: error: syntax error, unexpected end of file, expecting ')' ERROR:
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: global.EvalError.js:11: "es3/global.EvalError.js: constructor failed", /zoo/features/es3/global.EvalError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.RangeError.js: global.RangeError.js:11: "es3/global.RangeError.js: constructor failed", /zoo/features/es3/global.RangeError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.RangeError.thrown.js: global.RangeError.thrown.js:72: "es3/global.RangeError.thrown.js: no exception for negative array length", global.RangeError.thrown.js:89:  "es3/global.RangeError.thrown.js: no exception for array length exceeding 2^32-1", global.RangeError.thrown.js:95:  "es3/global.RangeError.thrown.js: failed",
+es3/global.ReferenceError.js: global.ReferenceError.js:11: "es3/global.ReferenceError.js: constructor failed", /zoo/features/es3/global.ReferenceError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: global.SyntaxError.js:11: "es3/global.SyntaxError.js: constructor failed", /zoo/features/es3/global.SyntaxError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: global.TypeError.js:11: "es3/global.TypeError.js: constructor failed", /zoo/features/es3/global.TypeError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.TypeError.thrown.js: /zoo/features/es3/global.TypeError.thrown.js:11: parse: :11.31: error: syntax error, unexpected INSTANCEOF, expecting ',' or ';' ERROR:
+es3/global.URIError.js: global.URIError.js:11: "es3/global.URIError.js: constructor failed", /zoo/features/es3/global.URIError.js:14: error: converting a undefined/null value to object ERROR:
+es3/global.URIError.thrown.js: global.URIError.thrown.js:24: "es3/global.URIError.thrown.js: no exception for decodeURI incomplete escape", global.URIError.thrown.js:39:  "es3/global.URIError.thrown.js: no exception for decodeURI invalid hex", global.URIError.thrown.js:54:  "es3/global.URIError.thrown.js: no exception for decodeU
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: global.encodeURIComponent.js:12: "es3/global.encodeURIComponent.js: encode space failed", global.encodeURIComponent.js:19:  "es3/global.encodeURIComponent.js: encode UTF-8 failed", global.encodeURIComponent.js:33:  "es3/global.encodeURIComponent.js: encode reserved chars failed", global.encodeURICom
+es3/global.encodeURI.js: global.encodeURI.js:12: "es3/global.encodeURI.js: encode plain URI failed", global.encodeURI.js:19:  "es3/global.encodeURI.js: encode space failed", global.encodeURI.js:26:  "es3/global.encodeURI.js: encode UTF-8 failed", global.encodeURI.js:33:  "es3/global.encodeURI.js: # not encoded failed", glob
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: /zoo/features/es3/identifiers.unicode.js:8: parse: :8.8: error: syntax error, unexpected invalid token, expecting IDENTIFIER ERROR:
+es3/instanceof.js: /zoo/features/es3/instanceof.js:29: parse: :29.25: error: syntax error, unexpected INSTANCEOF ERROR:
+es3/in.js: in.js:46: "es3/in.js: length in array failed", in.js:52:  "es3/in.js: failed",
+es3/labelled.break.js: /zoo/features/es3/labelled.break.js:41: error: break: label(block) not found ERROR:
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: /zoo/features/es3/literals.array.elisions.js:8: parse: :8.38: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: /zoo/features/es3/literals.object.unicode.js:9: parse: :9.24: error: syntax error, unexpected invalid token, expecting ',' or '}' ERROR:
+es3/literals.regex.ambiguous.js: /zoo/features/es3/literals.regex.ambiguous.js:39: parse: :39.19: error: syntax error, unexpected '/' ERROR:
+es3/literals.regex.empty.js: /zoo/features/es3/literals.regex.empty.js:8: error: Invalid regex string '(?:)/' : Invalid preceding regular expression eg. (?: /zoo/features/es3/literals.regex.empty.js:8: parse: :8.19: error: syntax error, unexpected end of file ERROR:
+es3/literals.regex.js: literals.regex.js:11: "es3/literals.regex.js: failed",
+es3/literals.string.esc-v.js: /zoo/features/es3/literals.string.esc-v.js:8: parse: Unsupported string escape: \v /zoo/features/es3/literals.string.esc-v.js:8: parse: Unsupported string escape: \x literals.string.esc-v.js:11:  "es3/literals.string.esc-v.js: failed",
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: regex.backref.js:13: "es3/regex.backref.js: backref failed", regex.backref.js:20:  "es3/regex.backref.js: multiple backrefs failed", regex.backref.js:30:  "es3/regex.backref.js: backref for a group that hasn't captured failed", regex.backref.js:36:  "es3/regex.backref.js: failed",
+es3/regex.begin.js: /zoo/features/es3/regex.begin.js:15: parse: :15.17: error: syntax error, unexpected '/' ERROR:
+es3/regex.bracket.esc-b.js: regex.bracket.esc-b.js:10: "es3/regex.bracket.esc-b.js: failed",
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: /zoo/features/es3/regex.bracket.ranges.js:46: error: Invalid regex string '[a-c-x]/' : Invalid range end /zoo/features/es3/regex.bracket.ranges.js:46: parse: :46.12: error: syntax error, unexpected end of file ERROR:
+es3/regex.class.esc-d.js: regex.class.esc-d.js:14: "es3/regex.class.esc-d.js: \d failed", regex.class.esc-d.js:20:  "es3/regex.class.esc-d.js: \d+ failed", regex.class.esc-d.js:26:  "es3/regex.class.esc-d.js: \D failed", regex.class.esc-d.js:32:  "es3/regex.class.esc-d.js: \d in bracket failed", regex.class.esc-d.js:38:  "es
+es3/regex.class.esc-s.js: regex.class.esc-s.js:32: "es3/regex.class.esc-s.js: \s in bracket failed", regex.class.esc-s.js:38:  "es3/regex.class.esc-s.js: range with \s failed", regex.class.esc-s.js:44:  "es3/regex.class.esc-s.js: \S in bracket failed", regex.class.esc-s.js:50:  "es3/regex.class.esc-s.js: failed",
+es3/regex.class.esc-w.js: regex.class.esc-w.js:32: "es3/regex.class.esc-w.js: \w in bracket failed", regex.class.esc-w.js:38:  "es3/regex.class.esc-w.js: range with \w failed", regex.class.esc-w.js:44:  "es3/regex.class.esc-w.js: \W in bracket failed", regex.class.esc-w.js:50:  "es3/regex.class.esc-w.js: failed",
+es3/regex.disjunction.js: regex.disjunction.js:12: "es3/regex.disjunction.js: a|ab failed", regex.disjunction.js:25:  "es3/regex.disjunction.js: failed",
+es3/regex.dot.js: OK
+es3/regex.end.js: /zoo/features/es3/regex.end.js:15: parse: :15.17: error: syntax error, unexpected '/' ERROR:
+es3/regex.escape.control.js: /zoo/features/es3/regex.escape.control.js:21: parse: Unsupported string escape: \v regex.escape.control.js:12:  "es3/regex.escape.control.js: \t failed", regex.escape.control.js:18:  "es3/regex.escape.control.js: \n failed", regex.escape.control.js:30:  "es3/regex.escape.control.js: \f failed", rege
+es3/regex.escape.hex.js: /zoo/features/es3/regex.escape.hex.js:10: error: converting a undefined/null value to object ERROR:
+es3/regex.escape.js: /zoo/features/es3/regex.escape.js:11: error: converting a undefined/null value to object ERROR:
+es3/regex.escape.nul.js: /zoo/features/es3/regex.escape.nul.js:7: parse: Unsupported string escape: \x /zoo/features/es3/regex.escape.nul.js:9: parse: Unsupported string escape: \x regex.escape.nul.js:12:  "es3/regex.escape.nul.js: failed",
+es3/regex.escape.unicode.js: /zoo/features/es3/regex.escape.unicode.js:10: error: converting a undefined/null value to object ERROR:
+es3/regex.flag.global.js: regex.flag.global.js:13: "es3/regex.flag.global.js: non-global match failed", regex.flag.global.js:20:  "es3/regex.flag.global.js: global match failed", regex.flag.global.js:27:  "es3/regex.flag.global.js: multiple matches failed", regex.flag.global.js:33:  "es3/regex.flag.global.js: failed",
+es3/regex.flag.ignorecase.js: regex.flag.ignorecase.js:13: "es3/regex.flag.ignorecase.js: case insensitive failed", regex.flag.ignorecase.js:27:  "es3/regex.flag.ignorecase.js: charclass failed", regex.flag.ignorecase.js:34:  "es3/regex.flag.ignorecase.js: single char failed", regex.flag.ignorecase.js:40:  "es3/regex.flag.ignore
+es3/regex.flag.multiline.js: regex.flag.multiline.js:14: "es3/regex.flag.multiline.js: ^ after LF failed", regex.flag.multiline.js:28:  "es3/regex.flag.multiline.js: $ before LF failed", regex.flag.multiline.js:41:  "es3/regex.flag.multiline.js: failed",
+es3/regex.group.js: OK
+es3/regex.lookahead.js: /zoo/features/es3/regex.lookahead.js:9: error: Invalid regex string '(?=(a+))/' : Invalid preceding regular expression /zoo/features/es3/regex.lookahead.js:9: parse: :9.19: error: syntax error, unexpected end of file ERROR:
+es3/regex.negative-lookahead.js: /zoo/features/es3/regex.negative-lookahead.js:9: error: Invalid regex string '(.*?)a(?!(a+)b\2c)\2(.*)/' : Invalid preceding regular expression /zoo/features/es3/regex.negative-lookahead.js:9: parse: :9.19: error: syntax error, unexpected end of file ERROR:
+es3/regex.non-capturing-group.js: /zoo/features/es3/regex.non-capturing-group.js:9: error: Invalid regex string '(?:abc)/' : Invalid preceding regular expression eg. (?: /zoo/features/es3/regex.non-capturing-group.js:9: parse: :9.19: error: syntax error, unexpected end of file ERROR:
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: /zoo/features/es3/regex.word-boundary.js:16: parse: :16.17: error: syntax error, unexpected '/' ERROR:
+es3/source.line-terminators.js: /zoo/features/es3/source.line-terminators.js:13: parse: :13.18: error: syntax error, unexpected invalid token ERROR:
+es3/source.whitespace.js: /zoo/features/es3/source.whitespace.js:10: parse: :10.7: error: syntax error, unexpected invalid token, expecting IDENTIFIER ERROR:
+es3/source.whitespace.unicode.js: /zoo/features/es3/source.whitespace.unicode.js:8: parse: :8.7: error: syntax error, unexpected invalid token, expecting IDENTIFIER ERROR:
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: /zoo/features/es5/Array.prototype.every.js:37: parse: :37.40: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es5/Array.prototype.filter.js: /zoo/features/es5/Array.prototype.filter.js:32: parse: :32.40: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es5/Array.prototype.forEach.js: /zoo/features/es5/Array.prototype.forEach.js:35: parse: :35.40: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf.js:32: "es5/Array.prototype.lastIndexOf.js: fromIndex failed", Array.prototype.lastIndexOf.js:52:  "es5/Array.prototype.lastIndexOf.js: failed",
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: /zoo/features/es5/Array.prototype.reduce.js:40: parse: :40.40: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es5/Array.prototype.some.js: /zoo/features/es5/Array.prototype.some.js:37: parse: :37.40: error: syntax error, unexpected FNUMBER, expecting ',' or ']' ERROR:
+es5/Array.prototype.sort.TypeError.js: Array.prototype.sort.TypeError.js:43: "es5/Array.prototype.sort.TypeError.js: failed",
+es5/Array.prototype.sort.undefined-comparefn.js: /zoo/features/es5/Array.prototype.sort.undefined-comparefn.js:10: error: call with undefined var for argument arg 1 'options', in call to 'sort' declared at Array.prototype.sort.undefined-comparefn.js:0.0 <undefined>. ERROR:
+es5/Date.now.js: /zoo/features/es5/Date.now.js:10: error: converting a undefined/null value to object ERROR:
+es5/Date.prototype.toISOString.js: /zoo/features/es5/Date.prototype.toISOString.js:10: error: converting a undefined/null value to object ERROR:
+es5/Date.prototype.toJSON.js: /zoo/features/es5/Date.prototype.toJSON.js:10: error: converting a undefined/null value to object ERROR:
+es5/Function.prototype-not-enumerable.js: /zoo/features/es5/Function.prototype-not-enumerable.js:11: error: Calling Function is unsupported ERROR:
+es5/Function.prototype.apply.array-like.js: Function.prototype.apply.array-like.js:23: "es5/Function.prototype.apply.array-like.js: array-like object not accepted", Function.prototype.apply.array-like.js:29:  "es5/Function.prototype.apply.array-like.js: failed",
+es5/Function.prototype.bind.js: Function.prototype.bind.js:38: "es5/Function.prototype.bind.js: length property incorrect", Function.prototype.bind.js:47:  "es5/Function.prototype.bind.js: bound constructor failed", Function.prototype.bind.js:61:  "es5/Function.prototype.bind.js: non-callable does not throw TypeError", Function.pr
+es5/JSON.js: JSON.js:11: "es5/JSON.js: failed: typeof JSON !== 'object'",
+es5/JSON.parse.js: /zoo/features/es5/JSON.parse.js:106: parse: Unsupported string escape: \/ JSON.parse.js:80:  "es5/JSON.parse.js: invalid JSON does not throw SyntaxError", JSON.parse.js:96:  "es5/JSON.parse.js: trailing comma does not throw SyntaxError", JSON.parse.js:144:  "es5/JSON.parse.js: failed",
+es5/JSON.parse.reviver.js: /zoo/features/es5/JSON.parse.reviver.js:12: error: type mismatch for argument arg 2 'strict': expected "boolean" but got "function", in call to 'parse' declared at JSON.parse.reviver.js:0.0 <function (key, value) {...}>. ERROR:
+es5/JSON.stringify.js: /zoo/features/es5/JSON.stringify.js:103: parse: Unsupported string escape: \/ /zoo/features/es5/JSON.stringify.js:109: parse: Unsupported string escape: \x JSON.stringify.js:16:  "es5/JSON.stringify.js: stringify object failed", JSON.stringify.js:23:  "es5/JSON.stringify.js: stringify array failed",
+es5/JSON.stringify.replacer.js: /zoo/features/es5/JSON.stringify.replacer.js:12: error: type mismatch for argument arg 2 'strict': expected "boolean|null" but got "function", in call to 'stringify' declared at JSON.stringify.replacer.js:0.0 <function (key, value) {...}>. ERROR:
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: Object.create.js:28: "es5/Object.create.js: null prototype failed", Object.create.js:42:  "es5/Object.create.js: Properties argument failed", Object.create.js:48:  "es5/Object.create.js: failed",
+es5/Object.defineProperties.js: Object.defineProperties.js:13: "es5/Object.defineProperties.js: Object.defineProperties not a function", /zoo/features/es5/Object.defineProperties.js:17: error: 'defineProperties' sub-commands are: prototype. ERROR:
+es5/Object.defineProperty.js: Object.defineProperty.js:13: "es5/Object.defineProperty.js: Object.defineProperty not a function", /zoo/features/es5/Object.defineProperty.js:17: error: 'defineProperty' sub-commands are: prototype. ERROR:
+es5/Object.freeze.js: Object.freeze.js:22: "es5/Object.freeze.js: prevented modification failed", /zoo/features/es5/Object.freeze.js:27: error: object freeze: attempted assign "b" ERROR:
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor.js:13: "es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function", /zoo/features/es5/Object.getOwnPropertyDescriptor.js:17: error: 'getOwnPropertyDescriptor' sub-commands are: prototype. ERROR:
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames.js:13: "es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function", /zoo/features/es5/Object.getOwnPropertyNames.js:17: error: 'getOwnPropertyNames' sub-commands are: prototype. ERROR:
+es5/Object.getPrototypeOf.js: /zoo/features/es5/Object.getPrototypeOf.js:25: error: type mismatch for argument arg 1 'name': expected "function|object" but got "array", in call to 'getPrototypeOf' declared at Object.getPrototypeOf.js:0.0 <[]>. ERROR:
+es5/Object.isExtensible.js: Object.isExtensible.js:13: "es5/Object.isExtensible.js: Object.isExtensible not a function", /zoo/features/es5/Object.isExtensible.js:17: error: 'isExtensible' sub-commands are: prototype. ERROR:
+es5/Object.isFrozen.js: Object.isFrozen.js:13: "es5/Object.isFrozen.js: Object.isFrozen not a function", /zoo/features/es5/Object.isFrozen.js:17: error: 'isFrozen' sub-commands are: prototype. ERROR:
+es5/Object.isSealed.js: Object.isSealed.js:13: "es5/Object.isSealed.js: Object.isSealed not a function", /zoo/features/es5/Object.isSealed.js:17: error: 'isSealed' sub-commands are: prototype. ERROR:
+es5/Object.keys.js: Object.keys.js:37: "es5/Object.keys.js: only own properties failed", /zoo/features/es5/Object.keys.js:41: error: 'defineProperty' sub-commands are: prototype. ERROR:
+es5/Object.preventExtensions.js: Object.preventExtensions.js:13: "es5/Object.preventExtensions.js: Object.preventExtensions not a function", /zoo/features/es5/Object.preventExtensions.js:17: error: 'preventExtensions' sub-commands are: prototype. ERROR:
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal.js:13: "es5/Object.seal.js: Object.seal not a function", /zoo/features/es5/Object.seal.js:17: error: 'seal' sub-commands are: prototype. ERROR:
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: arguments.toStringTag.js:17: "es5/arguments.toStringTag.js: failed",
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: /zoo/features/es5/global.Infinity.immutable.js:12: error: assign to readonly variable ERROR:
+es5/global.NaN.immutable.js: /zoo/features/es5/global.NaN.immutable.js:12: error: assign to readonly variable ERROR:
+es5/global.parseInt.no-octal.js: global.parseInt.no-octal.js:16: "es5/global.parseInt.no-octal.js: parseInt('010') !== 10", global.parseInt.no-octal.js:22:  "es5/global.parseInt.no-octal.js: parseInt('0100') !== 100", global.parseInt.no-octal.js:28:  "es5/global.parseInt.no-octal.js: parseInt('077') !== 77", global.parseInt.no-octa
+es5/global.undefined.immutable.js: /zoo/features/es5/global.undefined.immutable.js:13: parse: :13.14: error: syntax error, unexpected '=', expecting end of file ERROR:
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: literals.object.setters.js:15: "es5/literals.object.setters.js: { set x(v){ value = v; } }.x failed", literals.object.setters.js:24:  "es5/literals.object.setters.js: setter with computation failed", literals.object.setters.js:41:  "es5/literals.object.setters.js: failed",
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: /zoo/features/es5/source.keyword-properties.js:15: parse: :15.25: error: syntax error, unexpected IF, expecting ',' or '}' ERROR:
+es5/source.unreserved-words.js: /zoo/features/es5/source.unreserved-words.js:13: parse: :13.24: error: syntax error, unexpected TYPEBOOLEAN, expecting IDENTIFIER ERROR:
+es5/source.whitespace.bom.js: /zoo/features/es5/source.whitespace.bom.js:1: parse: :1.1: error: syntax error, unexpected invalid token, expecting FOR or WHILE or DO or SWITCH ERROR:
+es5/source.zero-width-chars.js: /zoo/features/es5/source.zero-width-chars.js:11: parse: :11.11: error: syntax error, unexpected invalid token, expecting ',' or ';' ERROR:
+es5/strict.eval-cannot-create-bindings.js: strict.eval-cannot-create-bindings.js:29: "es5/strict.eval-cannot-create-bindings.js: failed",
+es5/strict.function-expr-with-matching-name.js: /zoo/features/es5/strict.function-expr-with-matching-name.js:9: parse: :8.70: error: syntax error, unexpected '}' ERROR:
+es5/strict.js: strict.js:32: "es5/strict.js: failed",
+es5/strict.no-arguments-callee.js: strict.no-arguments-callee.js:28: "es5/strict.no-arguments-callee.js: failed",
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: /zoo/features/es5/strict.no-assignment-to-non-writable.js:17: parse: :17.115: error: syntax error, unexpected '=' ERROR:
+es5/strict.no-assignment-to-unresolvable.js: strict.no-assignment-to-unresolvable.js:26: "es5/strict.no-assignment-to-unresolvable.js: failed",
+es5/strict.no-delete-bindings.js: strict.no-delete-bindings.js:41: "es5/strict.no-delete-bindings.js: failed",
+es5/strict.no-delete-non-configurable.js: strict.no-delete-non-configurable.js:26: "es5/strict.no-delete-non-configurable.js: failed",
+es5/strict.no-duplicate-parameters.js: /zoo/features/es5/strict.no-duplicate-parameters.js:1: error: function f():  duplicate parameter name 'x' /zoo/features/es5/strict.no-duplicate-parameters.js:1: error: function ():  duplicate parameter name 'x' strict.no-duplicate-parameters.js:42:  "es5/strict.no-duplicate-parameters.js: failed",
+es5/strict.no-eval-or-arguments-assignment.js: strict.no-eval-or-arguments-assignment.js:59: "es5/strict.no-eval-or-arguments-assignment.js: failed",
+es5/strict.no-eval-or-arguments-bindings.js: /zoo/features/es5/strict.no-eval-or-arguments-bindings.js:1: parse: /zoo/features/es5/strict.no-eval-or-arguments-bindings.js:1.7: error: syntax error, unexpected ARGUMENTS, expecting IDENTIFIER /zoo/features/es5/strict.no-eval-or-arguments-bindings.js:1: parse: /zoo/features/es5/strict.no-eval-or-a
+es5/strict.no-function-caller-or-arguments.js: /zoo/features/es5/strict.no-function-caller-or-arguments.js:24: parse: :24.52: error: syntax error, unexpected ARGUMENTS, expecting IDENTIFIER ERROR:
+es5/strict.no-octal-literals.js: strict.no-octal-literals.js:39: "es5/strict.no-octal-literals.js: failed",
+es5/strict.no-with.js: strict.no-with.js:25: "es5/strict.no-with.js: failed",
+es5/strict.reserved-words.js: /zoo/features/es5/strict.reserved-words.js:1: parse: /zoo/features/es5/strict.reserved-words.js:1.19: error: syntax error, unexpected end of file, expecting ',' or ';' strict.reserved-words.js:23:  "es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError", result() strict.reserved-
+es5/strict.this-primitive-not-coerced-in-accessors.js: /zoo/features/es5/strict.this-primitive-not-coerced-in-accessors.js:11: error: '' sub-commands are: Array Boolean Channel Event File Function Info Interp JSON LogDebug LogError LogInfo LogTest LogTrace LogWarn Math Number Object RegExp Signal Socket Sqlite String System Util Vfs WebSocket Zvfs asser
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: strict.this-undefined-in-function.js:14: "es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined", result()
+es5/strict.unmapped-arguments.js: strict.unmapped-arguments.js:31: "es5/strict.unmapped-arguments.js: failed",
+es5/this.thrown-function.js: OK

@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "a0bd524627cee03b2b7f8695ca48a32888ba4afba57a5c6628412bee65a227a3",
+  "binary_size": 207032,
+  "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+  "engine": "mocha",
+  "repository": "https://github.com/doodlewind/mocha1995.git",
+  "revision": "3d109cbf6d185c3665da2982e92ce198406cca01",
+  "revision_date": "2024-10-12"
+}

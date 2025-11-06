@@ -1,0 +1,7 @@
+{
+  "arch": "arm64",
+  "dist_size": 197335260,
+  "engine": "graaljs",
+  "revision": "629f33fe3b0a744890a01962ff3beeab50b638df",
+  "version": "25.0.1"
+}

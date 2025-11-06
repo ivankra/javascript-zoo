@@ -1,0 +1,420 @@
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: 15.9.2 Date() not a string
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: failed
+es1/Date.prototype.toString.js: failed
+es1/Date.prototype.toUTCString.js: failed
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: toString type failed; Function toString failed
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: non-compliant, expected to return 100 instead of 2000
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: failed
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): can't Put(0, 10) to a primitive Number
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: typeof String('x') != 'string'
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: return string failed
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: typeof '' != 'string'
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: string var typeof failed
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: basic toLocaleString failed; null/missing elements failed
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: failed
+es3/Date.prototype.toLocaleDateString.js: failed
+es3/Date.prototype.toLocaleString.js: failed
+es3/Date.prototype.toLocaleTimeString.js: failed
+es3/Date.prototype.toTimeString.js: failed
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: failed
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: failed
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: small number failed
+es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.throws-infinity.js: OK
+es3/Number.prototype.toFixed.js: OK
+es3/Number.prototype.toLocaleString.js: failed
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: type failed
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: spec example failed
+es3/String.prototype.replace.extra.js: $$ failed; combined replacements failed
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: global regex replace failed; replace all occurrences failed
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: no exception for in number
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 56320)
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: length in array failed
+es3/labelled.break.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): anonymous(41) : Error: can only break from within loop or switch
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: dash after range failed
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: $ before LF failed
+es3/regex.group.js: OK
+es3/regex.lookahead.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/regex.negative-lookahead.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/regex.non-capturing-group.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: failed
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): source.whitespace.unicode.js(9) : Error: unsupported char 0x2003
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Array() { [native code] }.isArray is undefined and has no Call method
+es5/Array.prototype.every.js: Array.prototype.every not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 2,4,6,8.every is undefined and has no Call method
+es5/Array.prototype.filter.js: Array.prototype.filter not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,4,5,6.filter is undefined and has no Call method
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,4.forEach is undefined and has no Call method
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,2,1.indexOf is undefined and has no Call method
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,2,1.lastIndexOf is undefined and has no Call method
+es5/Array.prototype.map.js: Array.prototype.map not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3.map is undefined and has no Call method
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,4.reduceRight is undefined and has no Call method
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,4.reduce is undefined and has no Call method
+es5/Array.prototype.some.js: Array.prototype.some not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object 1,2,3,4.some is undefined and has no Call method
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: Date.now not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Date() { [native code] }.now is undefined and has no Call method
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object Wed Jan 01 00:00:00 GMT+0000 2025.toISOString is undefined and has no Call method
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Undefined undefined.call is undefined and has no Call method
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: Function.prototype.bind not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function getX()
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Variable 'JSON' is not defined
+es5/JSON.parse.reviver.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Variable 'JSON' is not defined
+es5/JSON.stringify.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Variable 'JSON' is not defined
+es5/JSON.stringify.replacer.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Variable 'JSON' is not defined
+es5/JSON.stringify.space.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Variable 'JSON' is not defined
+es5/Object.create.js: Object.create not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.create is undefined and has no Call method
+es5/Object.defineProperties.js: Object.defineProperties not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.defineProperties is undefined and has no Call method
+es5/Object.defineProperty.js: Object.defineProperty not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.defineProperty is undefined and has no Call method
+es5/Object.freeze.js: Object.freeze not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.freeze is undefined and has no Call method
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.getOwnPropertyNames is undefined and has no Call method
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.create is undefined and has no Call method
+es5/Object.isExtensible.js: Object.isExtensible not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.isExtensible is undefined and has no Call method
+es5/Object.isFrozen.js: Object.isFrozen not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.isFrozen is undefined and has no Call method
+es5/Object.isSealed.js: Object.isSealed not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.isSealed is undefined and has no Call method
+es5/Object.keys.js: Object.keys not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.keys is undefined and has no Call method
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.preventExtensions is undefined and has no Call method
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.seal is undefined and has no Call method
+es5/String.indexing.js: 'foobar'[3] !== 'b'; test with variable failed
+es5/String.prototype.trim.js: String.prototype.trim not a function; dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): String   hello  .trim is undefined and has no Call method
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): debugger.js(7) : Error: found 'debugger' instead of statement
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
+es5/literals.object.getters.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.getters.js(9) : Error: found 'x' when expecting ':'
+es5/literals.object.setters.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.setters.js(10) : Error: found 'x' when expecting ':'
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): source.keyword-properties.js(15) : Error: identifier expected
+es5/source.unreserved-words.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): source.unreserved-words.js(13) : Error: identifier expected instead of 'abstract'
+es5/source.whitespace.bom.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): source.whitespace.bom.js(1) : Error: unsupported char 0xfeff
+es5/source.zero-width-chars.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): source.zero-width-chars.js(11) : Error: found '' when expecting ';'
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: failed
+es5/strict.no-assignment-to-non-writable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): strict.no-assignment-to-non-writable.js(29) : Error: found 'x' when expecting ':'
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var let' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object function Function() { [native code] }.defineProperty is undefined and has no Call method
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: OK

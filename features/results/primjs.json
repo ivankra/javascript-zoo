@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "153bc8e7869b87d77e9157fbcab0b5fe68434a3cf7b1035547dd445f2bf5f925",
+  "binary_size": 986432,
+  "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+  "engine": "primjs",
+  "repository": "https://github.com/lynx-family/primjs.git",
+  "revision": "89333c6f8215b6e2d8ba4c576aa60eb7f4e679f3",
+  "revision_date": "2025-10-20",
+  "version": "2.15.0-rc.3"
+}

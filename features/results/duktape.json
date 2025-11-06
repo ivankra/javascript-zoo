@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "fdf9b9e8da3c10b847ca5356565e4b306aa0d87327ba2a79f1fa4fb2c9d6c1a1",
+  "binary_size": 658296,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "duktape",
+  "repository": "https://github.com/svaarala/duktape.git",
+  "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
+  "revision_date": "2024-01-29"
+}

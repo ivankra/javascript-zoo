@@ -1,0 +1,8 @@
+{
+  "arch": "arm64",
+  "dist_size": 410699,
+  "engine": "lebjs",
+  "repository": "https://github.com/LebsterFace/LebJS.git",
+  "revision": "7b5db4a32e9d97b6881452da59f363f514e61b76",
+  "revision_date": "2025-08-14"
+}

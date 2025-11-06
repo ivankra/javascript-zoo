@@ -1,0 +1,1469 @@
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: SandboxError: Object construction not allowed: Function
+es1/Function.length.js: Function.length failed; function with 1 param length failed; function with 3 params length failed
+es1/Function.prototype.constructor.js: SandboxError: Static method or property access not permitted: SandboxFunction.prototype
+es1/Function.prototype.js: SandboxError: Static method or property access not permitted: sandboxedObject.prototype
+es1/Function.prototype.toString.js: SandboxError: Object construction not allowed: Function
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: SandboxError: Static method or property access not permitted: Object.prototype
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: SandboxError: Override prototype property 'toString' not allowed
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 101
+es1/arguments.callee.js: ReferenceError: arguments is not defined
+es1/arguments.js: ReferenceError: arguments is not defined
+es1/asi.eval.js: ReferenceError: eval is not defined
+es1/asi.js: ParseError: Unexpected end of expression: ++
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: >>>= failed
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: SandboxError: Illegal break statement
+es1/comma.js: OK
+es1/comments.js: throw new ParseError(e.message, str); ParseError: Unexpected end of expression: console.log fail code: 'console.log\n/\nfail\n**/\n/\n/\n"0"+\n"1"\n\n\n)'
+es1/conditional.js: OK
+es1/continue.js: SandboxError: Illegal continue statement
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: null != undefined; 0 == undefined
+es1/equals.js: OK
+es1/eval.js: ReferenceError: eval is not defined
+es1/for-in.js: OK
+es1/for.js: SandboxError: Illegal break statement
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: && short-circuit failed, i=1; || short-circuit failed, j=1
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: typeof <undefined> != 'undefined'
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: ReferenceError: a is not defined
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: uninitialized var not undefined; multiple uninitialized vars failed; mixed initialized/uninitialized vars failed
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: SandboxError: Illegal break statement
+es1/with.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: {: with (obj) {
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: ReferenceError: arguments is not defined
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: OK
+es3/Number.prototype.toExponential.throws-infinity.js: ReferenceError: e is not defined
+es3/Number.prototype.toFixed.js: OK
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: SandboxError: Static method or property access not permitted: sandboxedObject.prototype
+es3/Object.prototype.isPrototypeOf.js: SandboxError: Static method or property access not permitted: sandboxedObject.prototype
+es3/Object.prototype.propertyIsEnumerable.js: SandboxError: Static method or property access not permitted: sandboxedObject.prototype
+es3/Object.prototype.toLocaleString.js: SandboxError: Static method or property access not permitted: sandboxedObject.prototype
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: SandboxError: Override prototype property 'toString' not allowed
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: OK
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: SandboxError: Static method or property access not permitted: EvalError.prototype
+es3/global.RangeError.js: SandboxError: Static method or property access not permitted: RangeError.prototype
+es3/global.RangeError.thrown.js: ReferenceError: e is not defined
+es3/global.ReferenceError.js: SandboxError: Static method or property access not permitted: ReferenceError.prototype
+es3/global.ReferenceError.thrown.js: ReferenceError: e is not defined
+es3/global.SyntaxError.js: SandboxError: Static method or property access not permitted: SyntaxError.prototype
+es3/global.SyntaxError.thrown.js: ReferenceError: e is not defined
+es3/global.TypeError.js: SandboxError: Static method or property access not permitted: TypeError.prototype
+es3/global.TypeError.thrown.js: ReferenceError: e is not defined
+es3/global.URIError.js: SandboxError: Static method or property access not permitted: URIError.prototype
+es3/global.URIError.thrown.js: ReferenceError: e is not defined
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: ж: var ж = 1
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: :: block: {
+es3/labelled.continue.js: SandboxError: Illegal continue statement
+es3/labelled.statements.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: :: label1: x = 5
+es3/literals.array.elisions.js: array with single elision failed; array with leading elisions failed; array with multiple elisions failed; array with only elision failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: throw new ParseError(e.message, str); ParseError: Unexpected token after createObject: ж: var o1 = {ж: 42}
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: ReferenceError: eval is not defined
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: ParseError: Unexpected end of expression: !/1/r.test("2")
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: ParseError: Unexpected end of expression: !/1/r.test("2")
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: ParseError: Unexpected end of expression: !/1/r.test("2")
+es3/source.line-terminators.js: failed
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: failed
+es3/try-catch-throw.js: ReferenceError: e is not defined
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: ReferenceError: e is not defined
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: ReferenceError: e is not defined
+es5/Date.prototype.toJSON.js: OK
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype.bind.js: Function.prototype.bind not a function; length property incorrect; SandboxError: Object construction not allowed: Function
+es5/JSON.js: OK
+es5/JSON.parse.js: ReferenceError: e is not defined
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: ReferenceError: e is not defined
+es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: Object.create not a function; SandboxError: Static method or property access not permitted: Object.create
+es5/Object.defineProperties.js: Object.defineProperties not a function; SandboxError: Static method or property access not permitted: Object.defineProperties
+es5/Object.defineProperty.js: Object.defineProperty not a function; SandboxError: Static method or property access not permitted: Object.defineProperty
+es5/Object.freeze.js: Object.freeze not a function; SandboxError: Static method or property access not permitted: Object.freeze
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; SandboxError: Static method or property access not permitted: Object.getOwnPropertyDescriptor
+es5/Object.getOwnPropertyNames.js: SandboxError: Static method or property access not permitted: Object.defineProperty
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function; SandboxError: Static method or property access not permitted: Object.create
+es5/Object.isExtensible.js: Object.isExtensible not a function; SandboxError: Static method or property access not permitted: Object.isExtensible
+es5/Object.isFrozen.js: Object.isFrozen not a function; SandboxError: Static method or property access not permitted: Object.isFrozen
+es5/Object.isSealed.js: Object.isSealed not a function; SandboxError: Static method or property access not permitted: Object.isSealed
+es5/Object.keys.js: SandboxError: Static method or property access not permitted: Object.create
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; SandboxError: Static method or property access not permitted: Object.preventExtensions
+es5/Object.property-shadowing.js: SandboxError: Static method or property access not permitted: Object.prototype
+es5/Object.seal.js: Object.seal not a function; SandboxError: Static method or property access not permitted: Object.seal
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: SandboxError: Static method or property access not permitted: Object.prototype
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: throw new ParseError(e.message, str); ParseError: Unexpected token after Infinity: =: Infinity = false
+es5/global.NaN.immutable.js: throw new ParseError(e.message, str); ParseError: Unexpected token after NaN: =: NaN = false
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: throw new ParseError(e.message, str); ParseError: Unexpected token after und: =: undefined = 12345
+es5/literals.object.getters.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: x: var o1 = { get x(){ return 1; } }
+es5/literals.object.setters.js: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: x: var o1 = { set x(v){ value = v; } }
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: throw new ParseError(e.message, str); ParseError: Unexpected end of expression: var o8 = { typeof: 22, instanceof: 23, i
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: throw new ParseError(e.message, str); ParseError: Unexpected token after initialize: \: var _\u200c\u200d = true
+es5/strict.eval-cannot-create-bindings.js: ReferenceError: e is not defined
+es5/strict.function-expr-with-matching-name.js: failed
+es5/strict.js: ReferenceError: e is not defined
+es5/strict.no-arguments-callee.js: ReferenceError: e is not defined
+es5/strict.no-arguments-caller.js: ReferenceError: arguments is not defined
+es5/strict.no-assignment-to-non-writable.js: ParseError: Unexpected token after prop: x: { get x(){ } }
+es5/strict.no-assignment-to-unresolvable.js: ReferenceError: e is not defined
+es5/strict.no-delete-bindings.js: ReferenceError: e is not defined
+es5/strict.no-delete-non-configurable.js: ReferenceError: e is not defined
+es5/strict.no-duplicate-parameters.js: ReferenceError: e is not defined
+es5/strict.no-eval-or-arguments-assignment.js: ReferenceError: e is not defined
+es5/strict.no-eval-or-arguments-bindings.js: ReferenceError: e is not defined
+es5/strict.no-function-caller-or-arguments.js: ReferenceError: e is not defined
+es5/strict.no-octal-literals.js: ReferenceError: e is not defined
+es5/strict.no-with.js: ReferenceError: e is not defined
+es5/strict.reserved-words.js: ReferenceError: err is not defined
+es5/strict.this-primitive-not-coerced-in-accessors.js: SandboxError: Static method or property access not permitted: Object.defineProperty
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: ReferenceError: arguments is not defined
+es5/this.thrown-function.js: ReferenceError: e is not defined
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: OK
+kangax-es5/Function.prototype.bind.js: failed
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: failed
+kangax-es5/Object.defineProperties.js: failed
+kangax-es5/Object.defineProperty.js: failed
+kangax-es5/Object.freeze.js: failed
+kangax-es5/Object.getOwnPropertyDescriptor.js: failed
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: failed
+kangax-es5/Object.isExtensible.js: failed
+kangax-es5/Object.isFrozen.js: failed
+kangax-es5/Object.isSealed.js: failed
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: failed
+kangax-es5/Object.seal.js: failed
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: OK
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: ParseError: Unexpected token after Infinity: =: Infinity = false
+kangax-es5/immutable-globals.NaN.js: ParseError: Unexpected token after NaN: =: NaN = false
+kangax-es5/immutable-globals.undefined.js: ParseError: Unexpected token after und: =: undefined = 12345
+kangax-es5/literals.getter-accessors.js: ParseError: Unexpected token after prop: x: { get x(){ return 1 } }
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: ParseError: Unexpected token after prop: x: { set x(v){ value = v; } }
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: ReferenceError: e is not defined
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: ReferenceError: e is not defined
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: ReferenceError: e is not defined
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: ParseError: Unexpected token after initialize: \: var _\u200c\u200d = true
+kangax-es5/strict.arguments-callee-error.js: ReferenceError: e is not defined
+kangax-es5/strict.arguments-caller-error.js: ReferenceError: e is not defined
+kangax-es5/strict.arguments-unmapped.js: ReferenceError: e is not defined
+kangax-es5/strict.assignment-eval-arguments-error.js: ReferenceError: e is not defined
+kangax-es5/strict.assignment-non-writable-error.js: ParseError: Unexpected token after prop: x: { get x(){ } }
+kangax-es5/strict.assignment-unresolvable-error.js: ReferenceError: e is not defined
+kangax-es5/strict.delete-bindings-error.js: ReferenceError: e is not defined
+kangax-es5/strict.delete-non-configurable-error.js: ReferenceError: e is not defined
+kangax-es5/strict.eval-arguments-bindings-error.js: ReferenceError: e is not defined
+kangax-es5/strict.eval-no-bindings.js: ReferenceError: e is not defined
+kangax-es5/strict.function-caller-arguments-error.js: ReferenceError: e is not defined
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: ReferenceError: e is not defined
+kangax-es5/strict.repeated-params-error.js: ReferenceError: e is not defined
+kangax-es5/strict.reserved-words.js: ReferenceError: e is not defined
+kangax-es5/strict.this-not-coerced-accessors.js: ReferenceError: e is not defined
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: ReferenceError: e is not defined
+kangax-es6/Array.Symbol.species.js: ReferenceError: e is not defined
+kangax-es6/Array.from.array-like.js: OK
+kangax-es6/Array.from.generator.js: ParseError: Unexpected token after group: {: function*(){ yield 1; yield 2; yield 3
+kangax-es6/Array.from.iterable-instance.js: ReferenceError: global is not defined
+kangax-es6/Array.from.iterable.js: ReferenceError: global is not defined
+kangax-es6/Array.from.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/Array.from.map.array-like.js: OK
+kangax-es6/Array.from.map.generator.js: ParseError: Unexpected token after group: {: function*(){ yield "0"; yield "1"; yield
+kangax-es6/Array.from.map.iterable-instance.js: ReferenceError: global is not defined
+kangax-es6/Array.from.map.iterable.js: ReferenceError: global is not defined
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: e is not defined
+kangax-es6/Array.of.js: OK
+kangax-es6/Array.prototype.Symbol.iterator.js: OK
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: e is not defined
+kangax-es6/Array.prototype.copyWithin.js: OK
+kangax-es6/Array.prototype.entries.js: OK
+kangax-es6/Array.prototype.fill.js: OK
+kangax-es6/Array.prototype.findIndex.js: OK
+kangax-es6/Array.prototype.find.js: OK
+kangax-es6/Array.prototype.keys.js: OK
+kangax-es6/Array.prototype.splice.js: OK
+kangax-es6/Array.prototype.values.js: OK
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
+kangax-es6/Function.name.accessor.js: ParseError: Unexpected token after prop: f: var o = { get foo(){}, set foo(x){} }
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: ParseError: Unexpected token after prop: f: class foo {}.name === "0" &&
+kangax-es6/Function.name.class-object-method.js: ParseError: Unexpected token after prop: {: var o = { foo: class {}, bar: class baz
+kangax-es6/Function.name.class-prototype.js: ParseError: Unexpected token after prop: C: class C { foo(){} }
+kangax-es6/Function.name.class-statement.js: ParseError: Unexpected token after prop: f: class foo {}
+kangax-es6/Function.name.class-static.js: ParseError: Unexpected token after prop: C: class C { static foo(){} }
+kangax-es6/Function.name.class-variable.js: ParseError: Unexpected token after prop: {: var foo = class {}
+kangax-es6/Function.name.configurable.js: ReferenceError: e is not defined
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: ReferenceError: e is not defined
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: failed
+kangax-es6/Function.name.shorthand.no-lexical.js: OK
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: ReferenceError: e is not defined
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: e is not defined
+kangax-es6/Map.constructor-accepts-null.js: OK
+kangax-es6/Map.constructor-arguments.js: OK
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: e is not defined
+kangax-es6/Map.constructor-requires-new.js: OK
+kangax-es6/Map.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: e is not defined
+kangax-es6/Map.js: OK
+kangax-es6/Map.prototype-not-instance.js: OK
+kangax-es6/Map.prototype.Symbol.iterator.js: OK
+kangax-es6/Map.prototype.clear.js: OK
+kangax-es6/Map.prototype.delete.js: OK
+kangax-es6/Map.prototype.entries.js: OK
+kangax-es6/Map.prototype.forEach.js: OK
+kangax-es6/Map.prototype.keys.js: OK
+kangax-es6/Map.prototype.set-returns-this.js: OK
+kangax-es6/Map.prototype.size.js: OK
+kangax-es6/Map.prototype.values.js: OK
+kangax-es6/Map.zero-key.js: OK
+kangax-es6/Math.acosh.js: OK
+kangax-es6/Math.asinh.js: OK
+kangax-es6/Math.atanh.js: OK
+kangax-es6/Math.cbrt.js: OK
+kangax-es6/Math.clz32.js: OK
+kangax-es6/Math.cosh.js: OK
+kangax-es6/Math.expm1.js: OK
+kangax-es6/Math.fround.js: OK
+kangax-es6/Math.hypot.js: OK
+kangax-es6/Math.imul.js: OK
+kangax-es6/Math.log1p.js: OK
+kangax-es6/Math.log2.js: OK
+kangax-es6/Math.log10.js: OK
+kangax-es6/Math.sign.js: OK
+kangax-es6/Math.sinh.js: OK
+kangax-es6/Math.tanh.js: OK
+kangax-es6/Math.trunc.js: OK
+kangax-es6/Number.EPSILON.js: OK
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: OK
+kangax-es6/Number.isInteger.js: OK
+kangax-es6/Number.isNaN.js: OK
+kangax-es6/Number.isSafeInteger.js: OK
+kangax-es6/Number.parseFloat.js: OK
+kangax-es6/Number.parseInt.js: OK
+kangax-es6/Object.assign.js: ReferenceError: e is not defined
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: e is not defined
+kangax-es6/Object.is.js: OK
+kangax-es6/Object.setPrototypeOf.js: ReferenceError: e is not defined
+kangax-es6/Promise.Symbol.species.js: ReferenceError: e is not defined
+kangax-es6/Promise.all.iterable.js: ReferenceError: global is not defined
+kangax-es6/Promise.all.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: job is not defined
+kangax-es6/Promise.constructor-requires-new.js: OK
+kangax-es6/Promise.js: OK
+kangax-es6/Promise.prototype-not-instance.js: OK
+kangax-es6/Promise.race.iterable.js: ReferenceError: global is not defined
+kangax-es6/Promise.race.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: job is not defined
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: e is not defined
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: e is not defined
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.apply.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.construct.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.get.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.has.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: e is not defined
+kangax-es6/Proxy.handler.set.js: ReferenceError: e is not defined
+kangax-es6/Proxy.no-prototype.js: ReferenceError: e is not defined
+kangax-es6/Proxy.revocable.js: ReferenceError: e is not defined
+kangax-es6/Reflect.apply.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.new-target.js: ReferenceError: e is not defined
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: e is not defined
+kangax-es6/Reflect.defineProperty.js: ReferenceError: e is not defined
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: e is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: e is not defined
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: e is not defined
+kangax-es6/Reflect.get.js: ReferenceError: e is not defined
+kangax-es6/Reflect.has.js: ReferenceError: e is not defined
+kangax-es6/Reflect.isExtensible.js: ReferenceError: e is not defined
+kangax-es6/Reflect.ownKeys.string.js: ReferenceError: e is not defined
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: e is not defined
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: e is not defined
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: e is not defined
+kangax-es6/Reflect.set.js: ReferenceError: e is not defined
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: e is not defined
+kangax-es6/RegExp.prototype.Symbol.match.js: OK
+kangax-es6/RegExp.prototype.Symbol.replace.js: OK
+kangax-es6/RegExp.prototype.Symbol.search.js: OK
+kangax-es6/RegExp.prototype.Symbol.split.js: OK
+kangax-es6/RegExp.prototype.flags.js: OK
+kangax-es6/Set.Symbol.species.js: ReferenceError: e is not defined
+kangax-es6/Set.constructor-accepts-null.js: OK
+kangax-es6/Set.constructor-arguments.js: OK
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: e is not defined
+kangax-es6/Set.constructor-requires-new.js: OK
+kangax-es6/Set.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: e is not defined
+kangax-es6/Set.js: OK
+kangax-es6/Set.prototype-not-instance.js: OK
+kangax-es6/Set.prototype.Symbol.iterator.js: OK
+kangax-es6/Set.prototype.add-returns-this.js: OK
+kangax-es6/Set.prototype.clear.js: OK
+kangax-es6/Set.prototype.delete.js: OK
+kangax-es6/Set.prototype.entries.js: OK
+kangax-es6/Set.prototype.forEach.js: OK
+kangax-es6/Set.prototype.keys.js: OK
+kangax-es6/Set.prototype.size.js: OK
+kangax-es6/Set.prototype.values.js: OK
+kangax-es6/Set.zero-key.js: OK
+kangax-es6/String.fromCodePoint.js: OK
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: e is not defined
+kangax-es6/String.prototype.Symbol.iterator.js: OK
+kangax-es6/String.prototype.codePointAt.js: OK
+kangax-es6/String.prototype.endsWith.js: OK
+kangax-es6/String.prototype.endsWith.throws-regex.js: OK
+kangax-es6/String.prototype.includes.js: OK
+kangax-es6/String.prototype.normalize.js: OK
+kangax-es6/String.prototype.repeat.js: OK
+kangax-es6/String.prototype.startsWith.js: OK
+kangax-es6/String.prototype.startsWith.throws-regex.js: OK
+kangax-es6/String.raw.js: OK
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: e is not defined
+kangax-es6/Symbol.JSON.stringify.primitive.js: OK
+kangax-es6/Symbol.Object.js: ReferenceError: e is not defined
+kangax-es6/Symbol.String.js: OK
+kangax-es6/Symbol.defineProperty.js: ReferenceError: e is not defined
+kangax-es6/Symbol.global-registry.js: OK
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: e is not defined
+kangax-es6/Symbol.js: OK
+kangax-es6/Symbol.no-coerce.js: failed
+kangax-es6/Symbol.no-new.js: OK
+kangax-es6/Symbol.prototype.js: ReferenceError: e is not defined
+kangax-es6/Symbol.typeof.js: OK
+kangax-es6/WeakMap.accept-primitives.js: OK
+kangax-es6/WeakMap.constructor-accepts-null.js: OK
+kangax-es6/WeakMap.constructor-arguments.js: OK
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: e is not defined
+kangax-es6/WeakMap.constructor-requires-new.js: OK
+kangax-es6/WeakMap.frozen-keys.js: ReferenceError: e is not defined
+kangax-es6/WeakMap.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/WeakMap.js: OK
+kangax-es6/WeakMap.no-clear.js: OK
+kangax-es6/WeakMap.prototype-not-instance.js: OK
+kangax-es6/WeakMap.prototype.delete.js: OK
+kangax-es6/WeakMap.prototype.set-returns-this.js: OK
+kangax-es6/WeakSet.accept-primitives.js: OK
+kangax-es6/WeakSet.constructor-accepts-null.js: OK
+kangax-es6/WeakSet.constructor-arguments.js: OK
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: e is not defined
+kangax-es6/WeakSet.constructor-requires-new.js: OK
+kangax-es6/WeakSet.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/WeakSet.js: OK
+kangax-es6/WeakSet.no-clear.js: OK
+kangax-es6/WeakSet.prototype-not-instance.js: OK
+kangax-es6/WeakSet.prototype.add-returns-this.js: OK
+kangax-es6/WeakSet.prototype.delete.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
+kangax-es6/annex-b.function.hoisted-block-level.js: OK
+kangax-es6/annex-b.function.if-statement.js: OK
+kangax-es6/annex-b.function.labeled.js: ParseError: Unexpected token after prop: :: label: function foo() { return 2; }
+kangax-es6/annex-b.html-comments.js: ParseError: Unexpected end of expression: --> A comment
+kangax-es6/annex-b.regex.backreferences-octal.js: OK
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.literals.js: ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: OK
+kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: OK
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: ReferenceError: e is not defined
+kangax-es6/arrow.0-params.js: OK
+kangax-es6/arrow.1-param.js: OK
+kangax-es6/arrow.5-param.js: OK
+kangax-es6/arrow.bind.js: OK
+kangax-es6/arrow.lexical-arguments.js: ReferenceError: e is not defined
+kangax-es6/arrow.lexical-super.constructor.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/arrow.lexical-super.methods.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/arrow.lexical-this.js: OK
+kangax-es6/arrow.new-target.js: ReferenceError: e is not defined
+kangax-es6/arrow.no-line-break.js: failed
+kangax-es6/arrow.no-prototype.js: OK
+kangax-es6/arrow.precedence.js: failed
+kangax-es6/arrow.this-call-apply.js: OK
+kangax-es6/class.accessor-properties.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.anonymous.js: ParseError: Unexpected token after prop: {: typeof class {} === "0"
+kangax-es6/class.block-scoped.js: ParseError: Unexpected token after prop: C: class C {}
+kangax-es6/class.computed-accessor-properties.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.computed-names-tdz.js: ParseError: Unexpected token after prop: C: var B = class C {
+kangax-es6/class.computed-prototype-methods.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.computed-static-accessor-properties.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.computed-static-methods.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.constructor-requires-new.js: ParseError: Unexpected token after prop: C: class C {}
+kangax-es6/class.constructor.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.expression.js: ParseError: Unexpected token after prop: C: typeof class C {} === "0"
+kangax-es6/class.extends-expressions.js: ParseError: Unexpected token after prop: C: class C extends (B = class {}) {}
+kangax-es6/class.extends-null.js: ParseError: Unexpected token after prop: C: class C extends null {
+kangax-es6/class.extends.js: ParseError: Unexpected token after prop: B: class B {}
+kangax-es6/class.implicit-strict.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.lexical-name.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.methods-not-enumerable.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.new-target.js: ParseError: Unexpected token after prop: f: new function f() {
+kangax-es6/class.optional-semicolons.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.prototype-methods.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.statement.js: ParseError: Unexpected token after prop: C: class C {}
+kangax-es6/class.static-accessor-properties.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.static-methods.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/class.string-keyed-methods.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: ReferenceError: e is not defined
+kangax-es6/const.for-in.js: OK
+kangax-es6/const.for-loop.js: OK
+kangax-es6/const.for-of.js: OK
+kangax-es6/const.no-redefine.js: OK
+kangax-es6/const.no-statement.js: failed
+kangax-es6/const.shadow.js: failed
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: ReferenceError: e is not defined
+kangax-es6/const.strict.for-in.js: OK
+kangax-es6/const.strict.for-loop.js: OK
+kangax-es6/const.strict.for-of.js: OK
+kangax-es6/const.strict.no-redefine.js: OK
+kangax-es6/const.strict.no-statement.js: failed
+kangax-es6/const.strict.shadow.js: failed
+kangax-es6/const.strict.tdz.js: failed
+kangax-es6/const.tdz.js: failed
+kangax-es6/default-params.arguments.js: ParseError: Unexpected token after string: {: function (a = "0", b = "1", c = "2") {
+kangax-es6/default-params.basic.js: ParseError: Unexpected token after number: {: function (a = 1, b = 2) { return a === 3
+kangax-es6/default-params.explicit-undefined.js: ParseError: Unexpected token after number: {: function (a = 1, b = 2) { return a === 1
+kangax-es6/default-params.new-function.js: ReferenceError: e is not defined
+kangax-es6/default-params.refer-previous.js: ParseError: Unexpected token after prop: {: function (a, b = a) { return b === 5; }(
+kangax-es6/default-params.separate-scope.js: ParseError: Unexpected token after inlineFunction: {: function(a=function(){
+kangax-es6/default-params.tdz.js: ParseError: Unexpected token after number: {: function(x = 1) {
+kangax-es6/destructuring-assign.array.js: ParseError: Unexpected token after prop: =: [a, , [b], c] = [5, null, [6]]
+kangax-es6/destructuring-assign.astral-string.js: ParseError: Unexpected token after prop: =: [c] = "0"
+kangax-es6/destructuring-assign.chained-iterable.js: ParseError: Unexpected token after prop: =: [a,b] = [c,d] = [1,2]
+kangax-es6/destructuring-assign.chained-object.js: ParseError: Unexpected token after prop: =: {a,b} = {c,d} = {a:1,b:2,c:3,d:4}
+kangax-es6/destructuring-assign.computed-properties.js: ParseError: Unexpected token after prop: =: { [qux]: grault } = { corge: "1" }
+kangax-es6/destructuring-assign.defaults.js: ParseError: Unexpected token after number: =: {a = 1, b = 0, z:c = 3} = {b:2, z:undefi
+kangax-es6/destructuring-assign.empty-patterns.js: ParseError: Unexpected token after createArray: =: [] = [1,2]
+kangax-es6/destructuring-assign.generator.js: ParseError: Unexpected token after prop: =: [a, b, c] = (function*(){ yield 1; yield
+kangax-es6/destructuring-assign.iterable-expression.js: ParseError: Unexpected token after prop: =: [a, b] = iterable
+kangax-es6/destructuring-assign.iterable-instance.js: ParseError: Unexpected token after prop: =: [a, b, c] = Object.create(global.__creat
+kangax-es6/destructuring-assign.iterable.js: ParseError: Unexpected token after prop: =: [a, b, c] = global.__createIterableObjec
+kangax-es6/destructuring-assign.iterator-closing.js: ParseError: Unexpected token after prop: =: [a, b] = iter
+kangax-es6/destructuring-assign.nested-rest.js: ParseError: Unexpected token after prop: =: [first, ...[a[2], last]] = a
+kangax-es6/destructuring-assign.nested.js: ParseError: Unexpected token after prop: =: [e, {x:f, g}] = [9, {x:10}]
+kangax-es6/destructuring-assign.object-expression.js: ParseError: Unexpected token after prop: =: {a,b} = obj
+kangax-es6/destructuring-assign.object-primitives.js: ParseError: Unexpected token after prop: =: {toFixed} = 2
+kangax-es6/destructuring-assign.object.js: ParseError: Unexpected token after prop: =: {c, x:d, e} = {c:7, x:8}
+kangax-es6/destructuring-assign.parenthesised-error.js: ParseError: Unexpected token after prop: =: {a,b} = {a:1,b:2}
+kangax-es6/destructuring-assign.rest.js: ParseError: Unexpected token after prop: =: [a, ...b] = [3, 4, 5]
+kangax-es6/destructuring-assign.sparse-array.js: ParseError: Unexpected token after prop: =: [a, , b] = [,,,]
+kangax-es6/destructuring-assign.string.js: ParseError: Unexpected token after prop: =: [a, b, c] = "0"
+kangax-es6/destructuring-assign.throws-null-undefined.js: ParseError: Unexpected token after prop: =: {a} = null
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: ParseError: Unexpected token after prop: =: [a,] = [1]
+kangax-es6/destructuring-assign.trailing-comma-object.js: ParseError: Unexpected token after prop: =: {a,} = {a:1}
+kangax-es6/destructuring-decl.array.js: ReferenceError: e is not defined
+kangax-es6/destructuring-decl.astral-string.js: ReferenceError: e is not defined
+kangax-es6/destructuring-decl.catch.js: TypeError: Cannot read properties of null (reading '1')
+kangax-es6/destructuring-decl.computed-properties.js: ParseError: Unexpected token after prop: {: var { [qux]: grault } = { corge: "1" }
+kangax-es6/destructuring-decl.defaults-tdz.js: ParseError: Unexpected token after prop: {: var {a, b = 2} = {a:1}
+kangax-es6/destructuring-decl.defaults.js: ParseError: Unexpected token after prop: {: var {a = 1, b = 0, z:c = 3} = {b:2, z:un
+kangax-es6/destructuring-decl.for-in.js: ParseError: Invalid for loop definition: for(var [i, j, k] in { qux: 1 }) {
+kangax-es6/destructuring-decl.for-of.js: ParseError: Invalid for loop definition: for(var [i, j, k] of [[1,2,3]]) {
+kangax-es6/destructuring-decl.generator.js: ParseError: Unexpected token after group: {: function*(){ yield 1; yield 2; }()
+kangax-es6/destructuring-decl.iterable-instance.js: ReferenceError: global is not defined
+kangax-es6/destructuring-decl.iterable.js: ReferenceError: global is not defined
+kangax-es6/destructuring-decl.iterator-closing.js: ReferenceError: global is not defined
+kangax-es6/destructuring-decl.multiple-var.js: ParseError: Unexpected token after prop: =: {c,d} = {c:7,d:8}
+kangax-es6/destructuring-decl.nested.js: ParseError: Unexpected token after prop: {: var {h, x:[i]} = {h:11, x:[12]}
+kangax-es6/destructuring-decl.object-primitives.js: ParseError: Unexpected token after prop: {: var {toFixed} = 2
+kangax-es6/destructuring-decl.object.js: ParseError: Unexpected token after prop: {: var {c, x:d, e} = {c:7, x:8}
+kangax-es6/destructuring-decl.rest.js: ParseError: Unexpected token after prop: .: ...b
+kangax-es6/destructuring-decl.sparse-array.js: ReferenceError: e is not defined
+kangax-es6/destructuring-decl.string.js: ReferenceError: e is not defined
+kangax-es6/destructuring-decl.throws-null-undefined.js: ParseError: Unexpected token after prop: {: var {a} = null
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: ParseError: Unexpected token after prop: ,: a,
+kangax-es6/destructuring-decl.trailing-comma-object.js: ParseError: Unexpected token after prop: {: var {a,} = {a:1}
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: ParseError: Unexpected token after number: =: (a, {b: x = 0, c: y = 3}) => {
+kangax-es6/destructuring-params.arguments.js: ParseError: Unexpected token after prop: {: function({a, x:b, y:e}, [c, d]) {
+kangax-es6/destructuring-params.array.js: ParseError: Unexpected token after prop: {: function([a, , [b], c]) {
+kangax-es6/destructuring-params.astral-string.js: ParseError: Unexpected token after prop: {: function([c]) {
+kangax-es6/destructuring-params.computed-properties.js: ParseError: Unexpected token after prop: {: function({ [qux]: grault }) {
+kangax-es6/destructuring-params.defaults-new-function.js: ReferenceError: e is not defined
+kangax-es6/destructuring-params.defaults-separate-scope.js: ParseError: Unexpected token after inlineFunction: {: function({a=function(){
+kangax-es6/destructuring-params.defaults.js: ParseError: Unexpected token after number: {: function({a = 1, b = 0, c = 3, x:d = 0,
+kangax-es6/destructuring-params.duplicate-identifier.js: ReferenceError: e is not defined
+kangax-es6/destructuring-params.empty-patterns.js: ParseError: Unexpected token after createObject: {: function ([],{}){
+kangax-es6/destructuring-params.generator.js: ParseError: Unexpected token after prop: {: function([a, b, c]) {
+kangax-es6/destructuring-params.iterable-instance.js: ParseError: Unexpected token after prop: {: function([a, b, c]) {
+kangax-es6/destructuring-params.iterable.js: ParseError: Unexpected token after prop: {: function([a, b, c]) {
+kangax-es6/destructuring-params.iterator-closing.js: ParseError: Unexpected token after prop: {: function([a,b]) {}(iter)
+kangax-es6/destructuring-params.length.js: ParseError: Unexpected token after prop: {: function({a, b}, [c, d]){}.length === 2
+kangax-es6/destructuring-params.nested.js: ParseError: Unexpected token after prop: {: function([e, {x:f, g}], {h, x:[i]}) {
+kangax-es6/destructuring-params.new-function.js: ReferenceError: e is not defined
+kangax-es6/destructuring-params.object-primitives.js: ParseError: Unexpected token after prop: {: function({toFixed}, {slice}) {
+kangax-es6/destructuring-params.object.js: ParseError: Unexpected token after prop: {: function({c, x:d, e}) {
+kangax-es6/destructuring-params.rest.js: ParseError: Unexpected token after prop: {: function([a, ...b], [c, ...d]) {
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: ParseError: Unexpected token after number: =: (a, {b = 0, c = 3}) => {
+kangax-es6/destructuring-params.sparse-array.js: ParseError: Unexpected token after prop: {: function([a, , b]) {
+kangax-es6/destructuring-params.string.js: ParseError: Unexpected token after prop: {: function([a, b, c]) {
+kangax-es6/destructuring-params.throws-null-undefined.js: ParseError: Unexpected token after prop: {: function({a}){}(null)
+kangax-es6/destructuring-params.trailing-comma-iterable.js: ParseError: Unexpected token after prop: {: function([a,]) {
+kangax-es6/destructuring-params.trailing-comma-object.js: ParseError: Unexpected token after prop: {: function({a,}) {
+kangax-es6/for-of.array.js: OK
+kangax-es6/for-of.astral-string.js: ReferenceError: e is not defined
+kangax-es6/for-of.generator.js: ParseError: Unexpected token after group: {: function*(){ yield 1; yield 2; yield 3
+kangax-es6/for-of.iterable-instance.js: ReferenceError: global is not defined
+kangax-es6/for-of.iterable.js: ReferenceError: global is not defined
+kangax-es6/for-of.iterator-closing-break.js: failed
+kangax-es6/for-of.iterator-closing-throw.js: failed
+kangax-es6/for-of.sparse-array.js: failed
+kangax-es6/for-of.string.js: ReferenceError: e is not defined
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.constructor.js: ParseError: Unexpected token after call: {: function * g (){}
+kangax-es6/generators.expression.js: ParseError: Unexpected token after group: {: var generator = function * (){
+kangax-es6/generators.no-new-this.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.prototype-chain.js: ParseError: Unexpected token after call: {: function * generatorFn(){}
+kangax-es6/generators.prototype.js: ParseError: Unexpected token after call: {: function * generatorFn(){}
+kangax-es6/generators.return.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.sending.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.shorthand.class.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/generators.shorthand.computed.class.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/generators.shorthand.computed.js: ParseError: Unexpected token after createObject: *: var o = {
+kangax-es6/generators.shorthand.js: ParseError: Unexpected token after createObject: *: var o = {
+kangax-es6/generators.shorthand.no-constructor.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es6/generators.shorthand.string-keyed.js: ParseError: Unexpected token after createObject: *: var o = {
+kangax-es6/generators.this.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.throw.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.yield-precedence.js: ParseError: Unexpected token after call: {: function * generator(){
+kangax-es6/generators.yield-star.array.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.astral-string.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.generator.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.iterable-instance.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.iterable.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.iterator-closing-throw.js: ParseError: Unexpected token after group: {: function*(){
+kangax-es6/generators.yield-star.iterator-closing.js: ParseError: Unexpected token after call: {: function* generator(){
+kangax-es6/generators.yield-star.non-iterable-error.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.sparse-array.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/generators.yield-star.string.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es6/let.basic.js: OK
+kangax-es6/let.block-scoped.js: failed
+kangax-es6/let.for-in-shadow.js: OK
+kangax-es6/let.for-iteration.js: failed
+kangax-es6/let.for-loop.js: OK
+kangax-es6/let.no-statement.js: failed
+kangax-es6/let.shadow.js: OK
+kangax-es6/let.strict.basic.js: OK
+kangax-es6/let.strict.block-scoped.js: failed
+kangax-es6/let.strict.for-in-shadow.js: OK
+kangax-es6/let.strict.for-iteration.js: failed
+kangax-es6/let.strict.for-loop.js: OK
+kangax-es6/let.strict.no-statement.js: failed
+kangax-es6/let.strict.shadow.js: OK
+kangax-es6/let.strict.tdz.js: failed
+kangax-es6/let.tdz.js: failed
+kangax-es6/literals.binary.Number.js: OK
+kangax-es6/literals.binary.js: ParseError: Unexpected token after number: b: 0b10 === 2 && 0B10 === 2
+kangax-es6/literals.object.computed-accessors.js: ParseError: Unexpected token after call: {: var obj = {
+kangax-es6/literals.object.computed-properties.js: OK
+kangax-es6/literals.object.computed-shorthand-methods.js: ParseError: Unexpected token after call: {: { [x](){ return 1 } }
+kangax-es6/literals.object.shorthand-methods.js: OK
+kangax-es6/literals.object.shorthand-properties.js: failed
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: ParseError: Unexpected token after call: {: { "0"() { return 4; } }
+kangax-es6/literals.octal.Number.js: OK
+kangax-es6/literals.octal.js: ParseError: Unexpected token after number: o: 0o10 === 8 && 0O10 === 8
+kangax-es6/misc.Invalid-Date.js: OK
+kangax-es6/misc.Object.freeze.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: OK
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.isExtensible.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.isFrozen.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.isSealed.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.keys.primitives.js: OK
+kangax-es6/misc.Object.preventExtensions.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Object.seal.primitives.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: ParseError: Unexpected token after prop: C: class C extends p {}
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.HasBinding.js: ParseError: Unexpected token after prop: {: with(p) {
+kangax-es6/misc.Proxy.get.IteratorComplete.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: global is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: global is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: global is not defined
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: e is not defined
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: e is not defined
+kangax-es6/misc.RegExp-alter-flags.js: ReferenceError: global is not defined
+kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
+kangax-es6/misc.accessors-no-constructor.js: ParseError: Unexpected token after prop: a: Object.getOwnPropertyDescriptor({get a()
+kangax-es6/misc.bound-function-prototype.arrow.js: ReferenceError: e is not defined
+kangax-es6/misc.bound-function-prototype.class.js: ReferenceError: e is not defined
+kangax-es6/misc.bound-function-prototype.function.js: ReferenceError: e is not defined
+kangax-es6/misc.bound-function-prototype.generator.js: ReferenceError: e is not defined
+kangax-es6/misc.bound-function-prototype.subclass.js: ReferenceError: e is not defined
+kangax-es6/misc.do-while-no-semicolon.js: failed
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: ReferenceError: e is not defined
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: ParseError: Unexpected token after prop: \: var \u0061
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: ParseError: Unexpected token after prop: �: var 𐋀
+kangax-es6/misc.property-order.JSON.parse.js: OK
+kangax-es6/misc.property-order.JSON.stringify.js: ReferenceError: e is not defined
+kangax-es6/misc.property-order.Object.assign.js: ReferenceError: e is not defined
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: ReferenceError: e is not defined
+kangax-es6/misc.property-order.Object.keys.js: ReferenceError: e is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: e is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: e is not defined
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: ParseError: Unexpected token after prop: f: new function f() {
+kangax-es6/new-target.constructor.js: ParseError: Unexpected token after prop: f: new function f() {
+kangax-es6/regex.flags.u.case-folding.js: OK
+kangax-es6/regex.flags.u.codepoint.js: OK
+kangax-es6/regex.flags.u.js: OK
+kangax-es6/regex.flags.u.non-bmp.js: OK
+kangax-es6/regex.flags.y.js: OK
+kangax-es6/regex.flags.y.lastIndex.js: OK
+kangax-es6/rest-params.arguments.js: ReferenceError: e is not defined
+kangax-es6/rest-params.basic.js: ReferenceError: e is not defined
+kangax-es6/rest-params.length.js: failed
+kangax-es6/rest-params.new-function.js: ReferenceError: e is not defined
+kangax-es6/rest-params.no-setter.js: OK
+kangax-es6/spread.array-call.js: OK
+kangax-es6/spread.array-literal.js: OK
+kangax-es6/spread.astral-call.js: OK
+kangax-es6/spread.astral-literal.js: OK
+kangax-es6/spread.generator-call.js: ParseError: Unexpected token after group: {: function*(){ yield 1; yield 2; yield 3
+kangax-es6/spread.generator-literal.js: ParseError: Unexpected token after group: {: function*(){ yield "0"; yield "1"; yield
+kangax-es6/spread.iterable-call.js: ReferenceError: global is not defined
+kangax-es6/spread.iterable-instance-call.js: ReferenceError: global is not defined
+kangax-es6/spread.iterable-instance-literal.js: ReferenceError: global is not defined
+kangax-es6/spread.iterable-literal.js: ReferenceError: global is not defined
+kangax-es6/spread.non-iterable-error.js: OK
+kangax-es6/spread.sparse-call.js: ReferenceError: e is not defined
+kangax-es6/spread.sparse-literal.js: ReferenceError: e is not defined
+kangax-es6/spread.string-call.js: OK
+kangax-es6/spread.string-literal.js: OK
+kangax-es6/subclassing.Array.concat.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.filter.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.from.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.isArray.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.length-access.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.length-set.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.map.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.of.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.prototype-chain.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.slice.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Array.splice.js: ParseError: Unexpected token after prop: C: class C extends Array {}
+kangax-es6/subclassing.Function.call.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Function.new.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Function.prototype-chain.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Function.prototype.apply.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Function.prototype.bind.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Function.prototype.call.js: ParseError: Unexpected token after prop: C: class C extends Function {}
+kangax-es6/subclassing.Promise.all.js: ParseError: Unexpected token after prop: P: class P extends Promise {}
+kangax-es6/subclassing.Promise.js: ParseError: Unexpected token after prop: P: class P extends Promise {}
+kangax-es6/subclassing.Promise.prototype-chain.js: ParseError: Unexpected token after prop: C: class C extends Promise {}
+kangax-es6/subclassing.Promise.race.js: ParseError: Unexpected token after prop: P: class P extends Promise {}
+kangax-es6/subclassing.RegExp.exec.js: ParseError: Unexpected token after prop: R: class R extends RegExp {}
+kangax-es6/subclassing.RegExp.js: ParseError: Unexpected token after prop: R: class R extends RegExp {}
+kangax-es6/subclassing.RegExp.prototype-chain.js: ParseError: Unexpected token after prop: R: class R extends RegExp {}
+kangax-es6/subclassing.RegExp.test.js: ParseError: Unexpected token after prop: R: class R extends RegExp {}
+kangax-es6/subclassing.misc.Boolean.js: ParseError: Unexpected token after prop: C: class C extends Boolean {}
+kangax-es6/subclassing.misc.Error.js: ParseError: Unexpected token after prop: C: class C extends Error {} code: 'class C extends Error {}'
+kangax-es6/subclassing.misc.Map.js: ParseError: Unexpected token after prop: M: class M extends Map {}
+kangax-es6/subclassing.misc.Number.js: ParseError: Unexpected token after prop: C: class C extends Number {}
+kangax-es6/subclassing.misc.Set.js: ParseError: Unexpected token after prop: S: class S extends Set {}
+kangax-es6/subclassing.misc.String.js: ParseError: Unexpected token after prop: C: class C extends String {}
+kangax-es6/super.correct-constructor.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.expression.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.method-calls.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.new-target-binding.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.property-access.js: ParseError: Unexpected token after prop: B: class B {}
+kangax-es6/super.statement.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.static-binding.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/super.this-binding.js: ParseError: Unexpected token after prop: B: class B {
+kangax-es6/tail-calls.direct.js: ReferenceError: e is not defined
+kangax-es6/tail-calls.mutual.js: ReferenceError: e is not defined
+kangax-es6/template.basic.js: OK
+kangax-es6/template.caching.js: ParseError: Unexpected token after prop: `: var other = strings`1`
+kangax-es6/template.escape-sequences.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 1
+kangax-es6/template.frozen-array.js: ParseError: Unexpected token after inlineFunction: `: (function(parts) {
+kangax-es6/template.line-break.js: ReferenceError: e is not defined
+kangax-es6/template.permanent-caching.js: ReferenceError: e is not defined
+kangax-es6/template.tagged.js: ParseError: Unexpected token after prop: `: fn `0` && called
+kangax-es6/template.toString.js: OK
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Symbol.species.js: OK
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: e is not defined
+kangax-es6/typed-arrays.constructor-iterables.js: ReferenceError: global is not defined
+kangax-es6/typed-arrays.constructor-requires-new.js: ReferenceError: global is not defined
+kangax-es6/typed-arrays.correct-prototype-chains.js: ReferenceError: global is not defined
+kangax-es6/typed-arrays.from.js: OK
+kangax-es6/typed-arrays.of.js: OK
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: failed
+kangax-es6/typed-arrays.prototype.copyWithin.js: failed
+kangax-es6/typed-arrays.prototype.entries.js: failed
+kangax-es6/typed-arrays.prototype.every.js: failed
+kangax-es6/typed-arrays.prototype.fill.js: failed
+kangax-es6/typed-arrays.prototype.filter.js: failed
+kangax-es6/typed-arrays.prototype.findIndex.js: failed
+kangax-es6/typed-arrays.prototype.find.js: failed
+kangax-es6/typed-arrays.prototype.forEach.js: failed
+kangax-es6/typed-arrays.prototype.indexOf.js: failed
+kangax-es6/typed-arrays.prototype.join.js: failed
+kangax-es6/typed-arrays.prototype.keys.js: failed
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: failed
+kangax-es6/typed-arrays.prototype.map.js: failed
+kangax-es6/typed-arrays.prototype.reduceRight.js: failed
+kangax-es6/typed-arrays.prototype.reduce.js: failed
+kangax-es6/typed-arrays.prototype.reverse.js: failed
+kangax-es6/typed-arrays.prototype.slice.js: failed
+kangax-es6/typed-arrays.prototype.some.js: failed
+kangax-es6/typed-arrays.prototype.sort.js: failed
+kangax-es6/typed-arrays.prototype.subarray.js: failed
+kangax-es6/typed-arrays.prototype.values.js: failed
+kangax-es6/unicode-escapes.identifier.js: ParseError: Unexpected token after prop: \: var \u{102C0} = 2
+kangax-es6/unicode-escapes.property-access.js: ParseError: Unexpected token after prop: .: o.\u{102C0} === 2
+kangax-es6/unicode-escapes.property-key.js: ParseError: Unexpected token after createObject: \: var o = { \u{102C0} : 2 }
+kangax-es6/unicode-escapes.string.js: OK
+kangax-es6/well-known.hasInstance.js: ReferenceError: e is not defined
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: ReferenceError: e is not defined
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: e is not defined
+kangax-es6/well-known.iterator.js: OK
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: e is not defined
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: e is not defined
+kangax-es6/well-known.match.String.includes.js: ReferenceError: e is not defined
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: e is not defined
+kangax-es6/well-known.match.js: OK
+kangax-es6/well-known.replace.js: OK
+kangax-es6/well-known.search.js: OK
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.Array.map.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: e is not defined
+kangax-es6/well-known.species.RegExp.split.js: OK
+kangax-es6/well-known.species.js: OK
+kangax-es6/well-known.split.js: OK
+kangax-es6/well-known.toPrimitive.js: OK
+kangax-es6/well-known.toStringTag.existing-builtins.js: ReferenceError: e is not defined
+kangax-es6/well-known.toStringTag.js: OK
+kangax-es6/well-known.toStringTag.misc-builtins.js: OK
+kangax-es6/well-known.toStringTag.new-builtins.js: ParseError: Unexpected token after group: {: passed = passed
+kangax-es6/well-known.unscopables.js: ParseError: Unexpected token after prop: {: with (a) {
+kangax-es2016/Array.prototype.includes.generic.js: ParseError: Unexpected token after prop: ": [].includes.call(
+kangax-es2016/Array.prototype.includes.js: OK
+kangax-es2016/Array.prototype.includes.sparse.js: failed
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: e is not defined
+kangax-es2016/exponentiation.assignment.js: OK
+kangax-es2016/exponentiation.basic.js: ReferenceError: e is not defined
+kangax-es2016/exponentiation.unary-negation-error.js: ReferenceError: e is not defined
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: e is not defined
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: e is not defined
+kangax-es2016/misc.generator-no-new.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es2016/misc.generator-throw-inner.js: ParseError: Unexpected token after call: {: function * generator() {
+kangax-es2016/misc.nested-rest-destructuring-decl.js: ParseError: Unexpected token after prop: .: ...[y, ...z]
+kangax-es2016/misc.nested-rest-destructuring-params.js: ParseError: Unexpected token after prop: {: function ([x, ...[y, ...z]]) {
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
+kangax-es2017/Atomics.add.js: failed
+kangax-es2017/Atomics.and.js: failed
+kangax-es2017/Atomics.compareExchange.js: failed
+kangax-es2017/Atomics.exchange.js: failed
+kangax-es2017/Atomics.isLockFree.js: failed
+kangax-es2017/Atomics.load.js: failed
+kangax-es2017/Atomics.notify.js: failed
+kangax-es2017/Atomics.or.js: failed
+kangax-es2017/Atomics.store.js: failed
+kangax-es2017/Atomics.sub.js: failed
+kangax-es2017/Atomics.wait.js: failed
+kangax-es2017/Atomics.xor.js: failed
+kangax-es2017/Object.entries.js: ReferenceError: e is not defined
+kangax-es2017/Object.getOwnPropertyDescriptors.js: ReferenceError: e is not defined
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: e is not defined
+kangax-es2017/Object.values.js: ReferenceError: e is not defined
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: e is not defined
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: e is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: e is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: failed
+kangax-es2017/String.prototype.padEnd.js: OK
+kangax-es2017/String.prototype.padStart.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: ParseError: Unexpected token after prop: f: var obj = {
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: ParseError: Unexpected token after prop: f: var obj = {
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: ParseError: Unexpected token after prop: f: var obj = {
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: ParseError: Unexpected token after prop: f: var obj = {
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: e is not defined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: ParseError: Invalid for loop definition: for (var i = 0 in {}) {}
+kangax-es2017/async.Symbol.toStringTag.js: ReferenceError: e is not defined
+kangax-es2017/async.arrow-in-class.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2017/async.arrow.js: OK
+kangax-es2017/async.await-non-promise.js: OK
+kangax-es2017/async.await-rejection.js: failed
+kangax-es2017/async.await.js: failed
+kangax-es2017/async.constructor.js: OK
+kangax-es2017/async.methods-class.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2017/async.methods-object.js: ParseError: Unexpected token after prop: a: var o = {
+kangax-es2017/async.must-await-value.js: failed
+kangax-es2017/async.no-await-in-params.js: OK
+kangax-es2017/async.no-line-break.js: OK
+kangax-es2017/async.no-prototype.js: OK
+kangax-es2017/async.prototype-chain.js: ReferenceError: e is not defined
+kangax-es2017/async.return.js: OK
+kangax-es2017/async.throw.js: OK
+kangax-es2017/misc.arguments-caller-removed.js: ReferenceError: e is not defined
+kangax-es2017/regex.flags.u.case-folding.js: OK
+kangax-es2017/trailing-comma.arguments.js: OK
+kangax-es2017/trailing-comma.params.js: ParseError: Unexpected token after prop: f: typeof function f( a, b, ) {} === "0"
+kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
+kangax-es2018/Promise.prototype.finally.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: arguments is not defined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
+kangax-es2018/async-iterators.for-await-of.js: ReferenceError: e is not defined
+kangax-es2018/async-iterators.generators.js: ParseError: Unexpected token after prop: f: async function*generator() {
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: e is not defined
+kangax-es2018/misc.template-literal-revision.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 01
+kangax-es2018/object-rest.js: ParseError: Unexpected token after prop: {: var { a, ...rest } = { a: 1, b: 2, c: 3
+kangax-es2018/object-spread.js: OK
+kangax-es2018/regex.flags.s.js: OK
+kangax-es2018/regex.lookbehind.js: ParseError: Unexpected end of expression: /0/r.test("0") && /1/r.test("1") &&
+kangax-es2018/regex.named-capture-groups.js: ReferenceError: e is not defined
+kangax-es2018/regex.unicode-property-escapes.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: ReferenceError: e is not defined
+kangax-es2019/Array.prototype.flatMap.js: OK
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: e is not defined
+kangax-es2019/Array.prototype.flat.js: OK
+kangax-es2019/Object.fromEntries.js: OK
+kangax-es2019/String.prototype.trimEnd.js: OK
+kangax-es2019/String.prototype.trimStart.js: OK
+kangax-es2019/Symbol.prototype.description.empty.js: OK
+kangax-es2019/Symbol.prototype.description.js: OK
+kangax-es2019/Symbol.prototype.description.undefined.js: OK
+kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
+kangax-es2019/annex-b.String.prototype.trimRight.js: OK
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.computed-names.js: ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.native-code.js: ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.unicode-escapes.js: ReferenceError: e is not defined
+kangax-es2019/misc.JSON-stringify-well-formed.js: OK
+kangax-es2019/misc.JSON-superset.line-separator.js: ReferenceError: e is not defined
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: ReferenceError: e is not defined
+kangax-es2019/misc.optional-catch-binding.await.js: failed
+kangax-es2019/misc.optional-catch-binding.js: OK
+kangax-es2019/misc.optional-catch-binding.yield.js: ParseError: Unexpected token after call: {: function *foo() {
+kangax-es2020/BigInt64Array.js: ReferenceError: e is not defined
+kangax-es2020/BigInt.asIntN.js: OK
+kangax-es2020/BigInt.asUintN.js: OK
+kangax-es2020/BigInt.constructor.js: OK
+kangax-es2020/BigInt.js: OK
+kangax-es2020/BigUint64Array.js: ReferenceError: e is not defined
+kangax-es2020/DataView.prototype.getBigInt64.js: ReferenceError: e is not defined
+kangax-es2020/DataView.prototype.getBigUint64.js: ReferenceError: e is not defined
+kangax-es2020/Promise.allSettled.js: OK
+kangax-es2020/String.prototype.matchAll.js: ReferenceError: e is not defined
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
+kangax-es2020/globalThis.descriptor.js: ReferenceError: globalThis is not defined
+kangax-es2020/globalThis.js: TypeError: Cannot get property lacksGlobalThis of null
+kangax-es2020/nullish-coalescing.js: ParseError: Unexpected token after inlineIf: ?: ? 42
+kangax-es2020/optional-chaining.bracket.js: OK
+kangax-es2020/optional-chaining.function-call.js: ReferenceError: e is not defined
+kangax-es2020/optional-chaining.method-call.js: OK
+kangax-es2020/optional-chaining.property.js: OK
+kangax-es2020/optional-chaining.spread-params.js: OK
+kangax-es2021/FinalizationRegistry.js: ReferenceError: e is not defined
+kangax-es2021/Promise.any.AggregateError.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: AggregateError is not defined
+kangax-es2021/Promise.any.fulfillment.js: OK
+kangax-es2021/String.prototype.replaceAll.js: OK
+kangax-es2021/WeakRef.js: ReferenceError: e is not defined
+kangax-es2021/logical-assignment.and.js: ParseError: Unexpected token after boolOp: =: a &&= 2
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: ParseError: Unexpected token after prop: x: var obj = { get x() { return }, set x(n)
+kangax-es2021/logical-assignment.and.short-circuit.js: ParseError: Unexpected token after boolOp: =: a &&= ++i
+kangax-es2021/logical-assignment.nullish.js: ParseError: Unexpected token after inlineIf: ?: ?= 2
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: ParseError: Unexpected token after prop: x: var obj = { get x() { return 1 }, set x(
+kangax-es2021/logical-assignment.nullish.short-circuit.js: ParseError: Unexpected token after inlineIf: ?: ?= ++i
+kangax-es2021/logical-assignment.or.js: ParseError: Unexpected token after boolOp: =: a ||= 2
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: ParseError: Unexpected token after prop: x: var obj = { get x() { return 1 }, set x(
+kangax-es2021/logical-assignment.or.short-circuit.js: ParseError: Unexpected token after boolOp: =: a ||= ++i
+kangax-es2021/numeric-separators.js: ParseError: Unexpected token after number: b: 1_000_000.000_001 === 1000000.000001 &&
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: OK
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.EvalError.js: OK
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.RangeError.js: OK
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.ReferenceError.js: OK
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.SyntaxError.js: OK
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.TypeError.js: OK
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: ReferenceError: e is not defined
+kangax-es2022/Error.cause.URIError.js: OK
+kangax-es2022/Object.hasOwn.ToObject-first.js: ReferenceError: e is not defined
+kangax-es2022/Object.hasOwn.js: ReferenceError: e is not defined
+kangax-es2022/at-method.Array.js: OK
+kangax-es2022/at-method.String.js: OK
+kangax-es2022/at-method.TypedArray.js: ReferenceError: globalThis is not defined
+kangax-es2022/class-fields.computed-instance.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.computed-static.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.instance.parent-scope.js: ParseError: Unexpected token after prop: M: class MyClass {
+kangax-es2022/class-fields.private-instance.initializers.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.private-instance.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.private-instance.optional-access.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.private-static.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.public-instance.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.public-static.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-fields.static.define.js: ParseError: Unexpected token after prop: X: class X { static name = "0"; }
+kangax-es2022/class-methods.private-accessor.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-methods.private-instance.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-methods.private-static-accessor.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-methods.private-static.js: ParseError: Unexpected token after prop: C: class C {
+kangax-es2022/class-static-init-blocks.js: ParseError: Unexpected token after prop: A: class A {
+kangax-es2022/ergonomic-brand-checks.js: ParseError: Unexpected token after prop: A: class A {
+kangax-es2022/regex.flags.d.constructor.js: OK
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: global is not defined
+kangax-es2023/Array.prototype.findLastIndex.js: OK
+kangax-es2023/Array.prototype.findLast.js: OK
+kangax-es2023/Array.prototype.toReversed.js: OK
+kangax-es2023/Array.prototype.toSorted.js: OK
+kangax-es2023/Array.prototype.toSpliced.js: OK
+kangax-es2023/Array.prototype.with.js: OK
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: e is not defined
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: e is not defined
+kangax-es2023/TypedArray.prototype.with.js: ReferenceError: e is not defined
+kangax-es2023/hashbang.js: throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str); ParseError: Unexpected token after dot: #: #!/0/r/env node
+kangax-es2024/ArrayBuffer.prototype.detached.js: ReferenceError: e is not defined
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: ReferenceError: e is not defined
+kangax-es2024/ArrayBuffer.prototype.transfer.js: ReferenceError: e is not defined
+kangax-es2024/Map.groupBy.js: ReferenceError: e is not defined
+kangax-es2024/Object.groupBy.js: ReferenceError: e is not defined
+kangax-es2024/Promise.withResolvers.js: ReferenceError: e is not defined
+kangax-es2024/regex.flags.v.constructor.js: OK
+kangax-es2024/regex.flags.v.properties-of-strings.js: ParseError: Unexpected end of expression: /0/r.test("0")
+kangax-es2024/regex.flags.v.set-notations.js: OK
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: e is not defined
+kangax-es2024/regex.flags.v.unicode-15.1.js: OK
+kangax-es2024/regex.flags.v.unicode-16.0.js: OK
+kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2025/Iterator.extends.js: ParseError: Unexpected token after prop: C: class Class extends Iterator { }
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.from.iterator.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.instanceof.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.drop.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.every.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.filter.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.find.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.flatMap.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.forEach.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.map.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.reduce.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.some.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.take.js: ReferenceError: e is not defined
+kangax-es2025/Iterator.prototype.toArray.js: ReferenceError: e is not defined
+kangax-es2025/Promise.try.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: arguments is not defined
+kangax-es2025/RegExp.escape.js: OK
+kangax-es2025/Set.prototype.difference.js: OK
+kangax-es2025/Set.prototype.intersection.js: OK
+kangax-es2025/Set.prototype.isDisjointFrom.js: OK
+kangax-es2025/Set.prototype.isSubsetOf.js: OK
+kangax-es2025/Set.prototype.isSupersetOf.js: OK
+kangax-es2025/Set.prototype.symmetricDifference.js: OK
+kangax-es2025/Set.prototype.union.js: OK
+kangax-es2025/regex.duplicate-named-groups.js: OK
+kangax-es2025/regex.pattern-modifiers.i.js: OK
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: OK
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: OK
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: e is not defined
+kangax-intl/Intl.Collator.prototype.compare.js: failed
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: failed
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
+kangax-intl/Intl.Collator.valid-tags.js: OK
+kangax-intl/Intl.Collator.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: e is not defined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: e is not defined
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: e is not defined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
+kangax-intl/Intl.js: OK
+kangax-intl/Intl.prototype.js: OK
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: failed
+kangax-intl/String.prototype.localeCompare.js: OK

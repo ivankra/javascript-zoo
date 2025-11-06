@@ -1,0 +1,11 @@
+{
+  "arch": "amd64",
+  "binary_sha256": "a01629ea336d2327c9a5b58787539b32e6108060d4f3003c9b7ff681b77afc68",
+  "binary_size": 3096168,
+  "engine": "starlight",
+  "repository": "https://github.com/Starlight-JS/starlight.git",
+  "revision": "503e789b9ef53594aee30c45a621018e855dcc17",
+  "revision_date": "2021-10-31",
+  "rustc": "rustc 1.56.0-nightly (4e282795d 2021-07-31)",
+  "version": "0.0.1-55-g503e789"
+}

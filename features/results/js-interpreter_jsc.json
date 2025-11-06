@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "dist_size": 97870,
+  "engine": "js-interpreter",
+  "host_engine": "jsc 301765@main",
+  "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
+  "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
+  "revision_date": "2025-02-27",
+  "variant": "jsc"
+}

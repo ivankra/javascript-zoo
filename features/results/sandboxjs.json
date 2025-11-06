@@ -1,0 +1,9 @@
+{
+  "arch": "arm64",
+  "dist_size": 50848,
+  "engine": "sandboxjs",
+  "repository": "https://github.com/nyariv/SandboxJS.git",
+  "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
+  "revision_date": "2025-05-10",
+  "version": "0.8.24-1-13-gcd391a8"
+}

@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "90f60b55982dd829428beee9242b24fdf73922f7ec434a4cbee5fa4e730b3c41",
+  "binary_size": 15887192,
+  "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+  "engine": "spidermonkey",
+  "repository": "https://github.com/mozilla-firefox/firefox.git",
+  "revision": "5ce8ed1e2fceea5c633c63dae85538d3241a733f",
+  "revision_date": "2025-10-09",
+  "version": "144.0"
+}

@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "ad234192d4f3d24df1d8d5a3db447cb4b59a1c92a4ef7cebf88de38d4bff4740",
+  "binary_size": 997080,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "kjs",
+  "repository": "https://github.com/KDE/kjs.git",
+  "revision": "5824588da24f797b4255929918efbc8b484baa09",
+  "revision_date": "2025-07-28",
+  "version": "5.117.0"
+}

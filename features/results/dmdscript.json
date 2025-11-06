@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "5e350e6a1b6edda7e421747dcce5a46c701c9732cf8d3578824355df123ca804",
+  "binary_size": 1806448,
+  "engine": "dmdscript",
+  "repository": "https://github.com/DigitalMars/DMDScript.git",
+  "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
+  "revision_date": "2024-06-18",
+  "version": "2.1.2"
+}

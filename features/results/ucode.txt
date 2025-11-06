@@ -1,0 +1,420 @@
+es1/Array.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Array.js: Array.prototype failed");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unex
+es1/Array.length.assignment.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.length.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.prototype.constructor.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.prototype.join.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.prototype.join.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/Array.prototype.reverse.generic.js: Syntax error: Unexpected token
+es1/Array.prototype.reverse.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.prototype.sort.generic.js: Syntax error: Unexpected token
+es1/Array.prototype.sort.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Array.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Boolean.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Boolean.js: Boolean(true) failed");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: 
+es1/Boolean.prototype.constructor.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Boolean.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Boolean.prototype.valueOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Date.diff.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Date.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Date.js: 15.9.2 Date() not a string");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax erro
+es1/Date.prototype.constructor.js: Reference error: left-hand side expression is null
+es1/Date.prototype.getDate.js: Syntax error: Unexpected token
+es1/Date.prototype.getDay.js: Syntax error: Unexpected token
+es1/Date.prototype.getFullYear.js: Syntax error: Unexpected token
+es1/Date.prototype.getHours.js: Syntax error: Unexpected token
+es1/Date.prototype.getMilliseconds.js: Syntax error: Unexpected token
+es1/Date.prototype.getMinutes.js: Syntax error: Unexpected token
+es1/Date.prototype.getMonth.js: Syntax error: Unexpected token
+es1/Date.prototype.getSeconds.js: Syntax error: Unexpected token
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCDate.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCDay.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCFullYear.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCHours.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCMilliseconds.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCMinutes.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCMonth.js: Syntax error: Unexpected token
+es1/Date.prototype.getUTCSeconds.js: Syntax error: Unexpected token
+es1/Date.prototype.setDate.js: Syntax error: Unexpected token
+es1/Date.prototype.setFullYear.js: Syntax error: Unexpected token
+es1/Date.prototype.setHours.js: Syntax error: Unexpected token
+es1/Date.prototype.setMilliseconds.js: Syntax error: Unexpected token
+es1/Date.prototype.setMinutes.js: Syntax error: Unexpected token
+es1/Date.prototype.setMonth.js: Syntax error: Unexpected token
+es1/Date.prototype.setSeconds.js: Syntax error: Unexpected token
+es1/Date.prototype.setTime.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCDate.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCFullYear.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCHours.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCMilliseconds.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCMinutes.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCMonth.js: Syntax error: Unexpected token
+es1/Date.prototype.setUTCSeconds.js: Syntax error: Unexpected token
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: Syntax error: Unexpected token
+es1/Function.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Function.length.js: Syntax error: Unexpected token
+es1/Function.prototype.constructor.js: Syntax error: Unexpected token
+es1/Function.prototype.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Function.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Function.prototype.toString.js: toString type failed");` Syntax error: Unexpected token Syntax error: Unexpected toke
+es1/Math.E.js: Reference error: left-hand side expression is null
+es1/Math.LN2.js: Reference error: left-hand side expression is null
+es1/Math.LN10.js: Reference error: left-hand side expression is null
+es1/Math.LOG2E.js: Reference error: left-hand side expression is null
+es1/Math.LOG10E.js: Reference error: left-hand side expression is null
+es1/Math.PI.js: Reference error: left-hand side expression is null
+es1/Math.SQRT1_2.js: Reference error: left-hand side expression is null
+es1/Math.SQRT2.js: Reference error: left-hand side expression is null
+es1/Math.abs.js: Reference error: left-hand side expression is null
+es1/Math.acos.js: Reference error: left-hand side expression is null
+es1/Math.asin.js: Reference error: left-hand side expression is null
+es1/Math.atan2.js: Reference error: left-hand side expression is null
+es1/Math.atan.js: Reference error: left-hand side expression is null
+es1/Math.ceil.js: Reference error: left-hand side expression is null
+es1/Math.cos.js: Reference error: left-hand side expression is null
+es1/Math.exp.js: Reference error: left-hand side expression is null
+es1/Math.floor.js: Reference error: left-hand side expression is null
+es1/Math.log.js: Reference error: left-hand side expression is null
+es1/Math.max.js: Reference error: left-hand side expression is null
+es1/Math.min.js: Reference error: left-hand side expression is null
+es1/Math.pow.js: Reference error: left-hand side expression is null
+es1/Math.random.js: Syntax error: Unexpected token
+es1/Math.round.js: Reference error: left-hand side expression is null
+es1/Math.sin.js: Reference error: left-hand side expression is null
+es1/Math.sqrt.js: Reference error: left-hand side expression is null
+es1/Math.tan.js: Reference error: left-hand side expression is null
+es1/Number.MAX_VALUE.js: Reference error: left-hand side expression is null
+es1/Number.MIN_VALUE.js: Reference error: left-hand side expression is null
+es1/Number.NEGATIVE_INFINITY.js: Reference error: left-hand side expression is null
+es1/Number.NaN.js: Syntax error: Unexpected token
+es1/Number.POSITIVE_INFINITY.js: Syntax error: Unexpected token
+es1/Number.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Number.js: Number(value) failed");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expec
+es1/Number.prototype.constructor.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Number.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Number.prototype.valueOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Object.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/Object.js: Object(number) failed");` Syntax error: Unexpected token Syntax error: Unex
+es1/Object.prototype.constructor.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Object.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/Object.prototype.valueOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.fromCharCode.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.generics.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/String.js: 15.5.1.1 String(value) failed");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax
+es1/String.length.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.charAt.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.charCodeAt.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.constructor.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.indexOf.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.lastIndexOf.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.split.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.substring.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.toLowerCase.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.toUpperCase.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/String.prototype.valueOf.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/annex-b.Date.prototype.getYear.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/annex-b.Date.prototype.setYear.js: Syntax error: Unexpected token
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/annex-b.global.unescape.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/annex-b.literals.octal.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/arguments.js: Syntax error: Unexpected token
+es1/asi.eval.js: Syntax error: Unexpected token
+es1/asi.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Invalid increment/decrement operand Syntax error: Unexpected token
+es1/assignment.bitwise.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/assignment.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/assignment.ltr.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/assignment.unsigned-shift.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression
+es1/bitwise.binary.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/bitwise.shifts.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/bitwise.tilde.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/bitwise.unsigned-shift.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/break.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: break must be inside loop or switch Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected toke
+es1/comma.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/comments.js: Syntax error: Expecting expression
+es1/conditional.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/continue.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: continue must be inside loop Syntax error: Expecting expression Syntax error: Unexpected token Synta
+es1/conversions.ToBoolean.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unterminated string `  console.log("es1/conversions.ToBoolean.js: fai
+es1/conversions.ToInt32.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/conversions.ToInteger.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/conversions.ToNumber.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/conversions.ToObject.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/conversions.ToObject.js: true failed");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax err
+es1/conversions.ToString.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/conversions.ToUint32.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expr
+es1/conversions.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/equals.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/eval.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/for-in.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/for.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Une
+es1/function.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/global.Infinity.js: Syntax error: Unexpected token
+es1/global.NaN.js: Syntax error: Unexpected token
+es1/global.isFinite.js: Syntax error: Unexpected token
+es1/global.isNaN.js: Syntax error: Unexpected token
+es1/global.parseFloat.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/global.parseInt.hex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/global.parseInt.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/global.parseInt.radix.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/literals.decimal.js: Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/literals.decimal.js: .5 failed");`
+es1/literals.hex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/literals.string.escapes.js: Syntax error: Unexpected token
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/new.typeof.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/new.typeof.js: typeof new String('x') != 'object'");` Syntax error: Unexpected token Syntax error: Expecting expressi
+es1/numbers.double.js: Syntax error: Unexpected token
+es1/numbers.fmod.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/numbers.inf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/numbers.int.js: Syntax error: Unexpected token
+es1/numbers.nan.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unterminated string `  console.log("es1/numbers.nan.js: failed");`
+es1/postfix.decrement.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/postfix.increment.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/prefix.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/relational.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/return.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/return.typeof.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/return.typeof.js: return number failed");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error
+es1/this.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/typeof.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/typeof.null.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/typeof.undeclared.js: Syntax error: Unexpected token
+es1/types.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/unary.decrement.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/unary.delete.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/unary.minus.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/unary.not.js: Syntax error: Unexpected token
+es1/unary.plus.js: Syntax error: Unexpected token
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/var.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es1/var.typeof.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es1/var.typeof.js: uninitialized var not undefined");` Syntax error: Unexpected token Syntax error: Expecting expression 
+es1/void.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/void.typeof.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es1/while.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es1/with.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression
+es3/Array.prototype.concat.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Array.prototype.pop.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.pop.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.push.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.push.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Array.prototype.shift.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Exp
+es3/Array.prototype.shift.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Exp
+es3/Array.prototype.slice.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.slice.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Array.prototype.splice.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.splice.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Array.prototype.toLocaleString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/Array.prototype.toLocaleString.js: basic toLocaleString failed");` Syntax error: Unexp
+es3/Array.prototype.unshift.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Array.prototype.unshift.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Array.prototype.unshift.returns-new-length.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: Syntax error: Unexpected token Syntax error: Unexpected token `var e1 = new Error("test message");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/Error.js: new Error failed");` Syntax error: Unexpected token `var e2 = Error("
+es3/Error.prototype.constructor.js: Reference error: left-hand side expression is null In es3/Error.prototype.constructor.js, line 6, byte 11: `if (Error.prototype.constructor == Error) {`
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: Reference error: left-hand side expression is null In es3/Error.prototype.name.js, line 6, byte 11: `if (Error.prototype.name == "Error") {`
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Function.prototype.call.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Math.max.variadic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Math.min.variadic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Number.prototype.toExponential.edge-cases.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Number.prototype.toExponential.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Number.prototype.toExponential.rounding.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Number.prototype.toExponential.throws-infinity.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token `  if (e instanceof RangeError) {` Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token `  if (e instanceof RangeError) {` Syntax error: Expecting expression
+es3/Number.prototype.toFixed.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/Object.prototype.hasOwnProperty.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Object.prototype.isPrototypeOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Object.prototype.propertyIsEnumerable.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/Object.prototype.toLocaleString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.global.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.ignoreCase.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/RegExp.js: new RegExp failed");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expectin
+es3/RegExp.lastIndex.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.multiline.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.prototype.constructor.js: Reference error: left-hand side expression is null
+es3/RegExp.prototype.exec.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.prototype.test.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/RegExp.prototype.toString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/RegExp.prototype.toString.js: type failed");`
+es3/RegExp.source.js: Syntax error: Unexpected token
+es3/String.prototype.concat.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.concat.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.localeCompare.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.match.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.match.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.replace.capture.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.replace.extra.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.replace.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.replace.regex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.replace.str.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.search.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.search.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.search.str.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.slice.generic.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.slice.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.split.bugs.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.split.limit.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.split.regex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/String.prototype.toLocaleLowerCase.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/String.prototype.toLocaleUpperCase.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/annex-b.String.prototype.substr.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/do-while.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error:
+es3/function-expressions.IIFE.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting functi
+es3/function-expressions.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.EvalError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof EvalError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.EvalError.js: constructor failed");`
+es3/global.RangeError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof RangeError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.RangeError.js: constructor failed");`
+es3/global.RangeError.thrown.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.ReferenceError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof ReferenceError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.ReferenceError.js: constructor failed");`
+es3/global.ReferenceError.thrown.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.SyntaxError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof SyntaxError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.SyntaxError.js: constructor failed");`
+es3/global.SyntaxError.thrown.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.TypeError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof TypeError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.TypeError.js: constructor failed");`
+es3/global.TypeError.thrown.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.URIError.js: Syntax error: Unexpected token Syntax error: Unexpected token `if (typeof URIError == "function") {` Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/global.URIError.js: constructor failed");`
+es3/global.URIError.thrown.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.decodeURIComponent.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.decodeURI.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.encodeURIComponent.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.encodeURI.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Syntax error: Unexpected token Syntax error: Unexpected character Syntax error: Unexpected character Syntax error: Unexpected character Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/identifiers.unicode.js: cyrillic vars ж/ш failed");` Syntax error: Unexp
+es3/instanceof.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/instanceof.js: array instanceof Array failed");` Syntax error: Unexpected token Syntax error: Expecting expression Sy
+es3/in.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/labelled.break.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/labelled.continue.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es3/labelled.statements.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Exp
+es3/literals.array.elisions.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.array.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.array.trailing-comma.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.object.decimal.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.object.hex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.object.int.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.object.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/literals.object.js: empty object literal failed");` Syntax error: Unexpected token Syntax error: Unexpected token Syn
+es3/literals.object.str.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/literals.object.unicode.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected character Syntax error: Unexpected token Syntax error: Unexpected character Syntax error: Unexpected token Syntax error: Unexpected character Syntax error: Unexpected token Syntax error: Unexpected character
+es3/literals.regex.ambiguous.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name Syntax 
+es3/literals.regex.empty.js: Syntax error: Unexpected token
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/nested-functions.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.backref.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.begin.js: Syntax error: Unexpected token
+es3/regex.bracket.esc-b.js: Reference error: left-hand side expression is not an array or object
+es3/regex.bracket.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.bracket.ranges.js: Syntax error: Unexpected token
+es3/regex.class.esc-d.js: Syntax error: Unexpected token
+es3/regex.class.esc-s.js: Syntax error: Unexpected token
+es3/regex.class.esc-w.js: Syntax error: Unexpected token
+es3/regex.disjunction.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/regex.disjunction.js: complex disjunction failed");`
+es3/regex.dot.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.end.js: Syntax error: Unexpected token
+es3/regex.escape.control.js: Syntax error: Unexpected token
+es3/regex.escape.hex.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.escape.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.escape.nul.js: Syntax error: Unexpected token
+es3/regex.escape.unicode.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.flag.global.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.flag.ignorecase.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.flag.multiline.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.group.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.lookahead.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.negative-lookahead.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es3/regex.negative-lookahead.js: spec example failed");` Syntax error: Unexpected token
+es3/regex.non-capturing-group.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.exact.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.maybe.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.min.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.plus.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.range.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.quantifier.star.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/regex.word-boundary.js: Syntax error: Unexpected token
+es3/source.line-terminators.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name
+es3/source.whitespace.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected character
+es3/source.whitespace.unicode.js: Syntax error: Unexpected character Syntax error: Unexpected character Syntax error: Unexpected character
+es3/strict-equals.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/switch.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es3/try-catch-finally.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Une
+es3/try-catch-throw.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token `  throw "error";` Syntax error: Unexpected token `var noException = 0;` Syntax error: Unexpected token Syntax error: Unexpected token Syntax err
+es5/Array.isArray.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.isArray.js: Array.isArray not a function");`
+es5/Array.prototype.every.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.every.js: Array.prototype.every not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexp
+es5/Array.prototype.filter.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.filter.js: Array.prototype.filter not a function");` Syntax error: Unexpected token Syntax error: Expecting function name Syntax err
+es5/Array.prototype.forEach.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.forEach.js: Array.prototype.forEach not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: U
+es5/Array.prototype.indexOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Array.prototype.lastIndexOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Array.prototype.map.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.map.js: Array.prototype.map not a function");` Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Ex
+es5/Array.prototype.reduceRight.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function");` Syntax error: Unexpected token Syntax error: Expecting function name 
+es5/Array.prototype.reduce.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.reduce.js: Array.prototype.reduce not a function");` Syntax error: Unexpected token Syntax error: Expecting function name Syntax err
+es5/Array.prototype.some.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Array.prototype.some.js: Array.prototype.some not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpec
+es5/Array.prototype.sort.TypeError.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Array.prototype.sort.undefined-comparefn.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Date.now.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Date.now.js: Date.now not a function");` Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  con
+es5/Date.prototype.toISOString.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax er
+es5/Date.prototype.toJSON.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexp
+es5/Function.prototype-not-enumerable.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Function.prototype.apply.array-like.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting label
+es5/Function.prototype.bind.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Function.prototype.bind.js: Function.prototype.bind not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: U
+es5/JSON.js: OK
+es5/JSON.parse.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es5/JSON.parse.js: failed: typeof JSON.parse !== 'function'");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es5/JSON.parse.reviver.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es5/JSON.parse.reviver.js: failed: typeof JSON.parse !== 'function'");` Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Syntax erro
+es5/JSON.stringify.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es5/JSON.stringify.js: failed: typeof JSON.stringify !== 'function'");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpect
+es5/JSON.stringify.replacer.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es5/JSON.stringify.replacer.js: failed: typeof JSON.stringify !== 'function'");` Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Sy
+es5/JSON.stringify.space.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es5/JSON.stringify.space.js: failed: typeof JSON.stringify !== 'function'");` Syntax error: Unexpected token Syntax error: Expecting expression
+es5/Object.create.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.create.js: Object.create not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.defineProperties.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.defineProperties.js: Object.defineProperties not a function");` Syntax error: Unexpected token
+es5/Object.defineProperty.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.defineProperty.js: Object.defineProperty not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.freeze.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.freeze.js: Object.freeze not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.getOwnPropertyDescriptor.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.getOwnPropertyNames.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax er
+es5/Object.getPrototypeOf.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexp
+es5/Object.isExtensible.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.isExtensible.js: Object.isExtensible not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.isFrozen.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.isFrozen.js: Object.isFrozen not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.isSealed.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.isSealed.js: Object.isSealed not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.keys.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.keys.js: Object.keys not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax e
+es5/Object.preventExtensions.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.preventExtensions.js: Object.preventExtensions not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.property-shadowing.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es5/Object.seal.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/Object.seal.js: Object.seal not a function");` Syntax error: Unexpected token Syntax error: Unexpected token
+es5/String.indexing.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es5/String.prototype.trim.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/String.prototype.trim.js: String.prototype.trim not a function");` Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexp
+es5/arguments.toStringTag.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting '=>' after parameter list
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/global.Infinity.immutable.js: Infinity is not a number after assignment");`
+es5/global.NaN.immutable.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/global.NaN.immutable.js: NaN is not a number after assignment");`
+es5/global.parseInt.no-octal.js: Syntax error: Unexpected token
+es5/global.undefined.immutable.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/global.undefined.immutable.js: undefined is not undefined after assignment");`
+es5/literals.object.getters.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax er
+es5/literals.object.setters.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting expression
+es5/literals.object.trailing-comma.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token
+es5/source.keyword-properties.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: break must be inside loop or switch Syntax error: continue must b
+es5/source.unreserved-words.js: Syntax error: Unexpected token Syntax error: Unexpected token
+es5/source.whitespace.bom.js: Syntax error: Unexpected character
+es5/source.zero-width-chars.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected character Syntax error: Expecting expression Syntax error: Expecting expression `  console.log("es5/source.zero-width-chars.js: zero-width chars in identifier failed");`
+es5/strict.eval-cannot-create-bindings.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token `    return e instanceof ReferenceError;` Syntax error: Expecting expression
+es5/strict.function-expr-with-matching-name.js: Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Expecting expression
+es5/strict.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token `    return e instanceof ReferenceError;` Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression
+es5/strict.no-arguments-callee.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression
+es5/strict.no-arguments-caller.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression
+es5/strict.no-assignment-to-non-writable.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof TypeError) ok++;` Syntax error: Unexpected token `    if (e instanceof TypeError) ok++;` Syntax error: Unexpected token Syntax error: Unexpected to
+es5/strict.no-assignment-to-unresolvable.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token `    return e instanceof ReferenceError;` Syntax error: Expecting expression
+es5/strict.no-delete-bindings.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof S
+es5/strict.no-delete-non-configurable.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token `    return e instanceof TypeError;` Syntax error: Expecting expression
+es5/strict.no-duplicate-parameters.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof S
+es5/strict.no-eval-or-arguments-assignment.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof S
+es5/strict.no-eval-or-arguments-bindings.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof S
+es5/strict.no-function-caller-or-arguments.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof TypeError) ok++;` Syntax error: Unexpected token `    if (e instanceof TypeError) ok++;` Syntax error: Expecting expression
+es5/strict.no-octal-literals.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Unexpected token `    if (e instanceof SyntaxError) ok++;` Syntax error: Expecting expression
+es5/strict.no-with.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token `    return e instanceof SyntaxError;` Syntax error: Expecting expression
+es5/strict.reserved-words.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: Unexpected token Syntax error: break must be inside loop or switch Syntax error: break must be inside loop or switch Syntax 
+es5/strict.this-primitive-not-coerced-in-accessors.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting expression
+es5/strict.this-primitive-not-coerced.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpecte
+es5/strict.this-undefined-in-function.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Expecting expression
+es5/strict.unmapped-arguments.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting expression Syntax error: Expecting
+es5/this.thrown-function.js: Syntax error: Unexpected token Syntax error: Expecting function name Syntax error: Expecting function name Syntax error: Unexpected token Syntax error: Expecting expression

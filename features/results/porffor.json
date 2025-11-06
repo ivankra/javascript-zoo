@@ -1,0 +1,7 @@
+{
+  "arch": "arm64",
+  "engine": "porffor",
+  "repository": "https://github.com/CanadaHonk/porffor.git",
+  "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9",
+  "revision_date": "2025-10-28"
+}

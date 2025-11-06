@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6",
+  "binary_size": 4619264,
+  "engine": "modernc-quickjs",
+  "repository": "https://gitlab.com/cznic/quickjs.git",
+  "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78",
+  "revision_date": "2025-10-24",
+  "version": "0.16.5"
+}

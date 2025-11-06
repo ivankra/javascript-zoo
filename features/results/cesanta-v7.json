@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "cb0006b365cfeef9126b0f874d14593baeaf0af9fb9fd3543ce7bd724907dc5e",
+  "binary_size": 399904,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "cesanta-v7",
+  "repository": "https://github.com/cesanta/v7.git",
+  "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27",
+  "revision_date": "2017-08-26"
+}

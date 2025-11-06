@@ -1,0 +1,1469 @@
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: TypeError: not a callable object
+es1/Array.prototype.reverse.js: TypeError: not a callable object
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: TypeError: not a callable object
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: failed
+es1/Date.prototype.getUTCDay.js: failed
+es1/Date.prototype.getUTCFullYear.js: failed
+es1/Date.prototype.getUTCHours.js: failed
+es1/Date.prototype.getUTCMilliseconds.js: failed
+es1/Date.prototype.getUTCMinutes.js: failed
+es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCSeconds.js: failed
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: TypeError: not a callable object
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: TypeError: not a callable object
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: function with 0 params length failed; function with 3 params length failed
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: failed
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: failed
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: TypeError: not a callable object
+es1/String.fromCharCode.js: TypeError: not a callable object
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: String object length failed
+es1/String.prototype.charAt.js: charAt out of bounds failed; charAt negative failed
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: string instance constructor failed
+es1/String.prototype.indexOf.js: indexOf with position failed
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: failed
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: TypeError: not a callable object
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: ReferenceError: Property 'escape' not found
+es1/annex-b.global.unescape.js: ReferenceError: Property 'unescape' not found
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: TypeError: not a callable object
+es1/arguments.js: OK
+es1/asi.eval.js: ReferenceError: Property 'eval' not found
+es1/asi.js: TypeError: ToObject to null or undefined
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: x=884
+es1/assignment.unsigned-shift.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \">>>=\"")
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: 3086); -12345 >>> 0 != 4294954951 (got: 12345)
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: -1.9 failed
+es1/conversions.ToNumber.js: '' failed; ' 456 ' failed; '0xff' failed
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: -0 failed; Infinity failed; -Infinity failed; 1e21 failed; 1e-7 failed
+es1/conversions.ToUint32.js: 2^32-1 failed; 2^32 failed; 2^31 failed; -1 failed; -2^31 failed
+es1/conversions.js: 0 != ''; false != ''; 123 - '' != 123; 123 * '' != 0
+es1/equals.js: OK
+es1/eval.js: ReferenceError: Property 'eval' not found
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: With(WithStmt { span: Span { lo: BytePos(203), hi: BytePos(409), ctxt: #0 }, obj: Ident(Ident { span: Span { lo: BytePos(209), hi: BytePos(212), ctxt: #0 }, sym: Atom('obj' type=inline), optional: false }), body: Block(BlockStmt { span:
+es3/Array.prototype.concat.js: TypeError: Array.prototype.concat requires array-like arguments
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: RangeError: Out of memory for array values
+es3/Array.prototype.splice.generic.js: TypeError: undefined does not have properties ('call')
+es3/Array.prototype.splice.js: TypeError: not a callable object
+es3/Array.prototype.toLocaleString.js: TypeError: not a callable object
+es3/Array.prototype.unshift.generic.js: TypeError: undefined does not have properties ('call')
+es3/Array.prototype.unshift.js: TypeError: not a callable object
+es3/Array.prototype.unshift.returns-new-length.js: TypeError: not a callable object
+es3/Date.prototype.toDateString.js: TypeError: not a callable object
+es3/Date.prototype.toLocaleDateString.js: TypeError: not a callable object
+es3/Date.prototype.toLocaleString.js: TypeError: not a callable object
+es3/Date.prototype.toLocaleTimeString.js: TypeError: not a callable object
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: TypeError: not a callable object at 'Error.prototype.toString.js':'<script>'
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: TypeError: not a callable object
+es3/Number.prototype.toExponential.rounding.js: TypeError: not a callable object
+es3/Number.prototype.toExponential.throws-infinity.js: TypeError: 'instanceof' requires constructor
+es3/Number.prototype.toFixed.js: toFixed(0) failed; toFixed() undefined arg failed; NaN failed; large number precision failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: Infinity failed; small number exponential notation failed; large number exponential notation failed
+es3/Object.prototype.hasOwnProperty.js: ToString conversion failed
+es3/Object.prototype.isPrototypeOf.js: TypeError: not a callable object
+es3/Object.prototype.propertyIsEnumerable.js: ToString conversion failed
+es3/Object.prototype.toLocaleString.js: TypeError: not a callable object
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: constructor with i failed; constructor without i failed; literal with i failed; literal without i failed
+es3/RegExp.js: ignoreCase flag failed; multiline flag failed; RegExp passthrough failed
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: constructor with m failed; constructor without m failed; literal with m failed; literal without m failed
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: failed
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: TypeError: not a callable object
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: non-global match failed; no match should return null
+es3/String.prototype.replace.capture.js: failed
+es3/String.prototype.replace.extra.js: failed
+es3/String.prototype.replace.generic.js: Array failed; TODO
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: replace only first occurrence failed; replace first l failed
+es3/String.prototype.search.generic.js: TypeError: undefined does not have properties ('call')
+es3/String.prototype.search.js: TypeError: not a callable object
+es3/String.prototype.search.str.js: TypeError: not a callable object
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; 'tesst'.split(/(s)*/)[1] === 't'; 'test'.split(/(?:)/, -1).length !== 4; '.'.split(/()()/).length !== 1
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: split with capturing group failed; split by empty regex failed
+es3/String.prototype.toLocaleLowerCase.js: TypeError: not a callable object
+es3/String.prototype.toLocaleUpperCase.js: TypeError: not a callable object
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: constructor failed; TypeError: undefined does not have properties ('name') at 'global.RangeError.js':'<script>'
+es3/global.RangeError.thrown.js: wrong exception for negative array length; wrong exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: OK
+es3/global.URIError.js: constructor failed; TypeError: undefined does not have properties ('name') at 'global.URIError.js':'<script>'
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: ReferenceError: Property 'decodeURIComponent' not found
+es3/global.decodeURI.js: ReferenceError: Property 'decodeURI' not found
+es3/global.encodeURIComponent.js: ReferenceError: Property 'encodeURIComponent' not found
+es3/global.encodeURI.js: ReferenceError: Property 'encodeURI' not found
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Labeled(LabeledStmt { span: Span { lo: BytePos(176), hi: BytePos(245), ctxt: #0 }, label: Ident { span: Span { lo: BytePos(176), hi: BytePos(181), ctxt: #0 }, sym: Atom('loop1' type=inline), optional: false }, body: While(WhileStmt { sp
+es3/labelled.continue.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Labeled(LabeledStmt { span: Span { lo: BytePos(193), hi: BytePos(283), ctxt: #0 }, label: Ident { span: Span { lo: BytePos(193), hi: BytePos(198), ctxt: #0 }, sym: Atom('loop1' type=inline), optional: false }, body: While(WhileStmt { sp
+es3/labelled.statements.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Labeled(LabeledStmt { span: Span { lo: BytePos(143), hi: BytePos(157), ctxt: #0 }, label: Ident { span: Span { lo: BytePos(143), hi: BytePos(149), ctxt: #0 }, sym: Atom('label1' type=inline), optional: false }, body: Expr(ExprStmt { spa
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: ReferenceError: Property 'eval' not found
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: Array.prototype.every not a function; TypeError: not a callable object
+es5/Array.prototype.filter.js: sparse array skips missing elements failed
+es5/Array.prototype.forEach.js: sparse array skips missing elements failed
+es5/Array.prototype.indexOf.js: negative fromIndex failed
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function; TypeError: not a callable object
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; TypeError: not a callable object
+es5/Array.prototype.reduce.js: sparse array skips missing elements failed
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: OK
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: date with milliseconds format incorrect; invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: argument binding failed; TypeError: null does not have properties
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: TypeError: undefined does not have properties ('parse')
+es5/JSON.parse.reviver.js: TypeError: undefined does not have properties ('parse')
+es5/JSON.stringify.js: TypeError: undefined does not have properties ('stringify')
+es5/JSON.stringify.replacer.js: TypeError: undefined does not have properties ('stringify')
+es5/JSON.stringify.space.js: TypeError: undefined does not have properties ('stringify')
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: OK
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; TypeError: not a callable object
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: OK
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: OK
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Debugger(DebuggerStmt { span: Span { lo: BytePos(216), hi: BytePos(225), ctxt: #0 } })")
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(225), hi: BytePos(245), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(229), hi: BytePos(230), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+es5/literals.object.setters.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Setter(SetterProp { span: Span { lo: BytePos(240), hi: BytePos(262), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(244), hi: BytePos(245), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), param: Ident(BindingIdent {
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: OK
+es5/strict.function-expr-with-matching-name.js: failed
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(715), hi: BytePos(725), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(719), hi: BytePos(720), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+es5/strict.no-assignment-to-unresolvable.js: OK
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: inner 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: failed
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: failed
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: TypeError: not a callable object
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: TypeError: not a callable object
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: failed
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: failed
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: failed
+kangax-es5/immutable-globals.NaN.js: failed
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(252), hi: BytePos(271), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(256), hi: BytePos(257), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Setter(SetterProp { span: Span { lo: BytePos(262), hi: BytePos(284), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(266), hi: BytePos(267), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), param: Ident(BindingIdent {
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: failed
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: failed
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(657), hi: BytePos(667), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(661), hi: BytePos(662), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es5/strict.assignment-unresolvable-error.js: OK
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: OK
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: OK
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: TypeError: 'in' requires object
+kangax-es6/Array.from.array-like.js: OK
+kangax-es6/Array.from.generator.js: OK
+kangax-es6/Array.from.iterable-instance.js: OK
+kangax-es6/Array.from.iterable.js: OK
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: OK
+kangax-es6/Array.from.map.generator.js: OK
+kangax-es6/Array.from.map.iterable-instance.js: OK
+kangax-es6/Array.from.map.iterable.js: OK
+kangax-es6/Array.iterator-prototype-chain.js: failed
+kangax-es6/Array.of.js: OK
+kangax-es6/Array.prototype.Symbol.iterator.js: OK
+kangax-es6/Array.prototype.Symbol.unscopables.js: failed
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: OK
+kangax-es6/Array.prototype.fill.js: OK
+kangax-es6/Array.prototype.findIndex.js: OK
+kangax-es6/Array.prototype.find.js: OK
+kangax-es6/Array.prototype.keys.js: OK
+kangax-es6/Array.prototype.splice.js: TypeError: not a callable object
+kangax-es6/Array.prototype.values.js: OK
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: undefined does not have properties ('call')
+kangax-es6/Function.name.accessor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(450), hi: BytePos(461), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(454), hi: BytePos(457), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), type_ann: None, body: Som
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: Some(Ident { span: Span { lo: BytePos(451), hi: BytePos(454), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), class: Class { span: Span { lo: BytePos(445), hi: BytePos(457), ctxt: #0 }, decorators:
+kangax-es6/Function.name.class-object-method.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: None, class: Class { span: Span { lo: BytePos(458), hi: BytePos(466), ctxt: #0 }, decorators: [], body: [], super_class: None, is_abstract: false, type_params: None, super_type_params: None, implements: [] } })"
+kangax-es6/Function.name.class-prototype.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(450), hi: BytePos(451), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(444), hi: BytePos(463), ctxt: #0 }
+kangax-es6/Function.name.class-statement.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(443), hi: BytePos(446), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(437), hi: BytePos(449), ctxt: #0
+kangax-es6/Function.name.class-static.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(447), hi: BytePos(448), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(441), hi: BytePos(467), ctxt: #0 }
+kangax-es6/Function.name.class-variable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: None, class: Class { span: Span { lo: BytePos(448), hi: BytePos(456), ctxt: #0 }, decorators: [], body: [], super_class: None, is_abstract: false, type_params: None, super_type_params: None, implements: [] } })"
+kangax-es6/Function.name.configurable.js: failed
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(448), hi: BytePos(451), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(448), hi: By
+kangax-es6/Function.name.shorthand.no-lexical.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(485), hi: BytePos(486), ctxt: #0 }, sym: Atom('f' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(485), hi: Byte
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Computed(ComputedPropName { span: Span { lo: BytePos(506), hi: BytePos(512), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(507), hi: BytePos(511), ctxt: #0 }, sym: Atom('sym1' type=inline), optional: false }) })")
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.prototype.Symbol.iterator.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.clear.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.delete.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.entries.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.forEach.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.keys.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.prototype.size.js: ReferenceError: Property 'Map' not found
+kangax-es6/Map.prototype.values.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Map.zero-key.js: ReferenceError: Property 'Map' not found
+kangax-es6/Math.acosh.js: OK
+kangax-es6/Math.asinh.js: OK
+kangax-es6/Math.atanh.js: OK
+kangax-es6/Math.cbrt.js: OK
+kangax-es6/Math.clz32.js: OK
+kangax-es6/Math.cosh.js: OK
+kangax-es6/Math.expm1.js: OK
+kangax-es6/Math.fround.js: OK
+kangax-es6/Math.hypot.js: OK
+kangax-es6/Math.imul.js: OK
+kangax-es6/Math.log1p.js: OK
+kangax-es6/Math.log2.js: OK
+kangax-es6/Math.log10.js: OK
+kangax-es6/Math.sign.js: OK
+kangax-es6/Math.sinh.js: OK
+kangax-es6/Math.tanh.js: OK
+kangax-es6/Math.trunc.js: OK
+kangax-es6/Number.EPSILON.js: OK
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: OK
+kangax-es6/Number.isInteger.js: OK
+kangax-es6/Number.isNaN.js: OK
+kangax-es6/Number.isSafeInteger.js: OK
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: not a callable object
+kangax-es6/Object.getOwnPropertySymbols.js: TypeError: not a callable object
+kangax-es6/Object.is.js: OK
+kangax-es6/Object.setPrototypeOf.js: TypeError: not a callable object
+kangax-es6/Promise.Symbol.species.js: TypeError: 'in' requires object
+kangax-es6/Promise.all.iterable.js: all needs exactly one Array argument
+kangax-es6/Promise.all.js: resolve needs exactly one argument
+kangax-es6/Promise.constructor-requires-new.js: failed
+kangax-es6/Promise.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es6/Promise.prototype-not-instance.js: OK
+kangax-es6/Promise.race.iterable.js: race needs exactly one Array argument
+kangax-es6/Promise.race.js: resolve needs exactly one argument
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Property 'JSON' not found
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.get.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.has.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.handler.set.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Proxy.revocable.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/Reflect.apply.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.construct.new-target.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: MetaProp(MetaPropExpr { meta: Ident { span: Span { lo: BytePos(483), hi: BytePos(486), ctxt: #0 }, sym: Atom('new' type=static), optional: false }, prop: Ident { span: Span { lo: BytePos(487), hi: BytePos(493), ctxt: #0 }, sym: Atom('ta
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.get.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.has.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.ownKeys.string.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/Reflect.set.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/RegExp.Symbol.species.js: TypeError: 'in' requires object
+kangax-es6/RegExp.prototype.Symbol.match.js: OK
+kangax-es6/RegExp.prototype.Symbol.replace.js: OK
+kangax-es6/RegExp.prototype.Symbol.search.js: failed
+kangax-es6/RegExp.prototype.Symbol.split.js: OK
+kangax-es6/RegExp.prototype.flags.js: OK
+kangax-es6/Set.Symbol.species.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.iterator-closing.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.prototype.Symbol.iterator.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.prototype.clear.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.delete.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.entries.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.forEach.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.keys.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.prototype.size.js: ReferenceError: Property 'Set' not found
+kangax-es6/Set.prototype.values.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/Set.zero-key.js: ReferenceError: Property 'Set' not found
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: failed
+kangax-es6/String.prototype.Symbol.iterator.js: OK
+kangax-es6/String.prototype.codePointAt.js: OK
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: OK
+kangax-es6/String.prototype.includes.js: OK
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: OK
+kangax-es6/String.prototype.startsWith.js: OK
+kangax-es6/String.prototype.startsWith.throws-regex.js: OK
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: Property 'JSON' not found
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: Property 'JSON' not found
+kangax-es6/Symbol.Object.js: failed
+kangax-es6/Symbol.String.js: TypeError: Cannot perform ToString on Symbol
+kangax-es6/Symbol.defineProperty.js: OK
+kangax-es6/Symbol.global-registry.js: TypeError: Expected object
+kangax-es6/Symbol.hidden-keys.js: OK
+kangax-es6/Symbol.js: OK
+kangax-es6/Symbol.no-coerce.js: OK
+kangax-es6/Symbol.no-new.js: OK
+kangax-es6/Symbol.prototype.js: OK
+kangax-es6/Symbol.typeof.js: OK
+kangax-es6/WeakMap.accept-primitives.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.frozen-keys.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.no-clear.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakMap.prototype.delete.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: Property 'WeakMap' not found
+kangax-es6/WeakSet.accept-primitives.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.no-clear.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: Property 'WeakSet' not found
+kangax-es6/WeakSet.prototype.delete.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: not a callable object
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: not a callable object
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: not a callable object
+kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: Property 'g' not found
+kangax-es6/annex-b.function.if-statement.js: OK
+kangax-es6/annex-b.function.labeled.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Labeled(LabeledStmt { span: Span { lo: BytePos(430), hi: BytePos(465), ctxt: #0 }, label: Ident { span: Span { lo: BytePos(430), hi: BytePos(435), ctxt: #0 }, sym: Atom('label' type=inline), optional: false }, body: Decl(Fn(FnDecl { ide
+kangax-es6/annex-b.html-comments.js: OK
+kangax-es6/annex-b.regex.backreferences-octal.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character escape in \\41")
+kangax-es6/annex-b.regex.hyphens.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character range in [\\w-_]")
+kangax-es6/annex-b.regex.incomplete-patterns.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in x{1")
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character escape in \\c2")
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character escape in \\x1")
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid unicode escape in \\u1")
+kangax-es6/annex-b.regex.octal-escapes.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character escape in \\041")
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: TypeError: not a callable object
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: OK
+kangax-es6/annex-b.__proto__.literals.not-computed.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Computed(ComputedPropName { span: Span { lo: BytePos(585), hi: BytePos(588), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(586), hi: BytePos(587), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }) })")
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(561), hi: BytePos(570), ctxt: #0 }, sym: Atom('__proto__' type=dynamic), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(561),
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: failed
+kangax-es6/arrow.0-params.js: OK
+kangax-es6/arrow.1-param.js: OK
+kangax-es6/arrow.5-param.js: OK
+kangax-es6/arrow.bind.js: failed
+kangax-es6/arrow.lexical-arguments.js: OK
+kangax-es6/arrow.lexical-super.constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(472), hi: BytePos(473), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(466), hi: BytePos(531), ctxt: #0 }
+kangax-es6/arrow.lexical-super.methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(450), hi: BytePos(451), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(444), hi: BytePos(496), ctxt: #0 }
+kangax-es6/arrow.lexical-this.js: failed
+kangax-es6/arrow.new-target.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: MetaProp(MetaPropExpr { meta: Ident { span: Span { lo: BytePos(469), hi: BytePos(472), ctxt: #0 }, sym: Atom('new' type=static), optional: false }, prop: Ident { span: Span { lo: BytePos(473), hi: BytePos(479), ctxt: #0 }, sym: Atom('ta
+kangax-es6/arrow.no-line-break.js: OK
+kangax-es6/arrow.no-prototype.js: failed
+kangax-es6/arrow.precedence.js: OK
+kangax-es6/arrow.this-call-apply.js: failed
+kangax-es6/class.accessor-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(417), hi: BytePos(418), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(411), hi: BytePos(484), ctxt: #0 }
+kangax-es6/class.anonymous.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: None, class: Class { span: Span { lo: BytePos(402), hi: BytePos(410), ctxt: #0 }, decorators: [], body: [], super_class: None, is_abstract: false, type_params: None, super_type_params: None, implements: [] } })"
+kangax-es6/class.block-scoped.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(394), hi: BytePos(395), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(388), hi: BytePos(398), ctxt: #0 }
+kangax-es6/class.computed-accessor-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(458), hi: BytePos(459), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(452), hi: BytePos(535), ctxt: #0 }
+kangax-es6/class.computed-names-tdz.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: Some(Ident { span: Span { lo: BytePos(431), hi: BytePos(432), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }), class: Class { span: Span { lo: BytePos(425), hi: BytePos(454), ctxt: #0 }, decorators: [
+kangax-es6/class.computed-prototype-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(427), hi: BytePos(428), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(421), hi: BytePos(460), ctxt: #0 }
+kangax-es6/class.computed-static-accessor-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(465), hi: BytePos(466), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(459), hi: BytePos(556), ctxt: #0 }
+kangax-es6/class.computed-static-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(424), hi: BytePos(425), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(418), hi: BytePos(464), ctxt: #0 }
+kangax-es6/class.constructor-requires-new.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(403), hi: BytePos(404), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(397), hi: BytePos(407), ctxt: #0 }
+kangax-es6/class.constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(390), hi: BytePos(391), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(384), hi: BytePos(431), ctxt: #0 }
+kangax-es6/class.expression.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: Some(Ident { span: Span { lo: BytePos(409), hi: BytePos(410), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }), class: Class { span: Span { lo: BytePos(403), hi: BytePos(413), ctxt: #0 }, decorators: [
+kangax-es6/class.extends-expressions.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(407), hi: BytePos(408), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(401), hi: BytePos(434), ctxt: #0 }
+kangax-es6/class.extends-null.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(391), hi: BytePos(392), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(385), hi: BytePos(461), ctxt: #0 }
+kangax-es6/class.extends.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(386), hi: BytePos(387), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(380), hi: BytePos(390), ctxt: #0 }
+kangax-es6/class.implicit-strict.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(399), hi: BytePos(400), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(393), hi: BytePos(462), ctxt: #0 }
+kangax-es6/class.lexical-name.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(409), hi: BytePos(410), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(403), hi: BytePos(465), ctxt: #0 }
+kangax-es6/class.methods-not-enumerable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(404), hi: BytePos(405), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(398), hi: BytePos(444), ctxt: #0 }
+kangax-es6/class.new-target.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: MetaProp(MetaPropExpr { meta: Ident { span: Span { lo: BytePos(437), hi: BytePos(440), ctxt: #0 }, sym: Atom('new' type=static), optional: false }, prop: Ident { span: Span { lo: BytePos(441), hi: BytePos(447), ctxt: #0 }, sym: Atom('ta
+kangax-es6/class.optional-semicolons.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(398), hi: BytePos(399), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(392), hi: BytePos(496), ctxt: #0 }
+kangax-es6/class.prototype-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(396), hi: BytePos(397), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(390), hi: BytePos(430), ctxt: #0 }
+kangax-es6/class.statement.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(394), hi: BytePos(395), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(388), hi: BytePos(398), ctxt: #0 }
+kangax-es6/class.static-accessor-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(424), hi: BytePos(425), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(418), hi: BytePos(505), ctxt: #0 }
+kangax-es6/class.static-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(393), hi: BytePos(394), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(387), hi: BytePos(434), ctxt: #0 }
+kangax-es6/class.string-keyed-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(399), hi: BytePos(400), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(393), hi: BytePos(436), ctxt: #0 }
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: OK
+kangax-es6/const.for-in.js: TypeError: Cannot assign to immutable variable
+kangax-es6/const.for-loop.js: failed
+kangax-es6/const.for-of.js: TypeError: Cannot assign to immutable variable
+kangax-es6/const.no-redefine.js: OK
+kangax-es6/const.no-statement.js: OK
+kangax-es6/const.shadow.js: thread 'main' panicked at 'internal error: entered unreachable code: const 'bar' not found', crates/starlight/src/bytecompiler.rs:218:13
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: OK
+kangax-es6/const.strict.for-in.js: TypeError: Cannot assign to immutable variable
+kangax-es6/const.strict.for-loop.js: failed
+kangax-es6/const.strict.for-of.js: TypeError: Cannot assign to immutable variable
+kangax-es6/const.strict.no-redefine.js: OK
+kangax-es6/const.strict.no-statement.js: OK
+kangax-es6/const.strict.shadow.js: thread 'main' panicked at 'internal error: entered unreachable code: const 'bar' not found', crates/starlight/src/bytecompiler.rs:218:13
+kangax-es6/const.strict.tdz.js: failed
+kangax-es6/const.tdz.js: failed
+kangax-es6/default-params.arguments.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(475), hi: BytePos(484), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(475), hi: BytePos(476), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type_ann:
+kangax-es6/default-params.basic.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(466), hi: BytePos(471), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(466), hi: BytePos(467), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type_ann:
+kangax-es6/default-params.explicit-undefined.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(487), hi: BytePos(492), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(487), hi: BytePos(488), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type_ann:
+kangax-es6/default-params.new-function.js: ReferenceError: Property 'a' not found
+kangax-es6/default-params.refer-previous.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(487), hi: BytePos(492), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(487), hi: BytePos(488), ctxt: #0 }, sym: Atom('b' type=inline), optional: false }, type_ann:
+kangax-es6/default-params.separate-scope.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(460), hi: BytePos(514), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(460), hi: BytePos(461), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type_ann:
+kangax-es6/default-params.tdz.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Assign(AssignPat { span: Span { lo: BytePos(464), hi: BytePos(469), ctxt: #0 }, left: Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(464), hi: BytePos(465), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }, type_ann:
+kangax-es6/destructuring-assign.array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(449), hi: BytePos(462), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(450), hi: BytePos(451), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.astral-string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(459), hi: BytePos(462), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(460), hi: BytePos(461), ctxt: #0 }, sym: Atom('c' type=inline), optional: false
+kangax-es6/destructuring-assign.chained-iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(478), hi: BytePos(483), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(479), hi: BytePos(480), ctxt: #0 }, sym: Atom('c' type=inline), optional: false
+kangax-es6/destructuring-assign.chained-object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(477), hi: BytePos(482), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(478), hi: BytePos(479), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(478), hi: BytePos(479), c
+kangax-es6/destructuring-assign.computed-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(474), hi: BytePos(491), ctxt: #0 }, props: [KeyValue(KeyValuePatProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(476), hi: BytePos(481), ctxt: #0 }, expr: Ident(Ident { span: 
+kangax-es6/destructuring-assign.defaults.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(453), hi: BytePos(476), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(454), hi: BytePos(459), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(454), hi: BytePos(455), c
+kangax-es6/destructuring-assign.empty-patterns.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(439), hi: BytePos(441), ctxt: #0 }, elems: [], optional: false, type_ann: None }")
+kangax-es6/destructuring-assign.generator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(462), hi: BytePos(471), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(463), hi: BytePos(464), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.iterable-expression.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(496), hi: BytePos(502), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(497), hi: BytePos(498), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.iterable-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(1072), hi: BytePos(1081), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1073), hi: BytePos(1074), ctxt: #0 }, sym: Atom('a' type=inline), optional: f
+kangax-es6/destructuring-assign.iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(1059), hi: BytePos(1068), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1060), hi: BytePos(1061), ctxt: #0 }, sym: Atom('a' type=inline), optional: f
+kangax-es6/destructuring-assign.iterator-closing.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(1189), hi: BytePos(1195), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1190), hi: BytePos(1191), ctxt: #0 }, sym: Atom('a' type=inline), optional: f
+kangax-es6/destructuring-assign.nested-rest.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(470), hi: BytePos(494), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(471), hi: BytePos(476), ctxt: #0 }, sym: Atom('first' type=inline), optional: f
+kangax-es6/destructuring-assign.nested.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(448), hi: BytePos(461), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(449), hi: BytePos(450), ctxt: #0 }, sym: Atom('e' type=inline), optional: false
+kangax-es6/destructuring-assign.object-expression.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(496), hi: BytePos(501), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(497), hi: BytePos(498), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(497), hi: BytePos(498), c
+kangax-es6/destructuring-assign.object-primitives.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(484), hi: BytePos(493), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(485), hi: BytePos(492), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(485), hi: BytePos(492), c
+kangax-es6/destructuring-assign.object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(451), hi: BytePos(462), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(452), hi: BytePos(453), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(452), hi: BytePos(453), c
+kangax-es6/destructuring-assign.parenthesised-error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(484), hi: BytePos(489), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(485), hi: BytePos(486), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(485), hi: BytePos(486), c
+kangax-es6/destructuring-assign.rest.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(444), hi: BytePos(453), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(445), hi: BytePos(446), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.sparse-array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(455), hi: BytePos(463), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(456), hi: BytePos(457), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(450), hi: BytePos(459), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(451), hi: BytePos(452), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.throws-null-undefined.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(475), hi: BytePos(478), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(476), hi: BytePos(477), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(476), hi: BytePos(477), c
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(470), hi: BytePos(474), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(471), hi: BytePos(472), ctxt: #0 }, sym: Atom('a' type=inline), optional: false
+kangax-es6/destructuring-assign.trailing-comma-object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI:  Object(ObjectPat { span: Span { lo: BytePos(469), hi: BytePos(473), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(470), hi: BytePos(471), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(470), hi: BytePos(471), c
+kangax-es6/destructuring-decl.array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(442), hi: BytePos(455), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(443), hi: BytePos(444), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.astral-string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(456), hi: BytePos(459), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(457), hi: BytePos(458), ctxt: #0 }, sym: Atom('c' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.catch.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array access: ArrayPat { span: Span { lo: BytePos(474), hi: BytePos(479), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(475), hi: BytePos(476), ctxt: #0 }, sym: Atom('i' type=inline), optional: false
+kangax-es6/destructuring-decl.computed-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(471), hi: BytePos(488), ctxt: #0 }, props: [KeyValue(KeyValuePatProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(473), hi: BytePos(478), ctxt: #0 }, expr: Ident(Ident { span: S
+kangax-es6/destructuring-decl.defaults-tdz.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(463), hi: BytePos(473), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(464), hi: BytePos(465), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(464), hi: BytePos(465), ct
+kangax-es6/destructuring-decl.defaults.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(439), hi: BytePos(462), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(440), hi: BytePos(445), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(440), hi: BytePos(441), ct
+kangax-es6/destructuring-decl.for-in.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(455), hi: BytePos(464), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(456), hi: BytePos(457), ctxt: #0 }, sym: Atom('i' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.for-of.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(455), hi: BytePos(464), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(456), hi: BytePos(457), ctxt: #0 }, sym: Atom('i' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.generator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(455), hi: BytePos(464), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(456), hi: BytePos(457), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.iterable-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1065), hi: BytePos(1074), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1066), hi: BytePos(1067), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-decl.iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1052), hi: BytePos(1061), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1053), hi: BytePos(1054), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-decl.iterator-closing.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1184), hi: BytePos(1190), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1185), hi: BytePos(1186), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-decl.multiple-var.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(466), hi: BytePos(471), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(467), hi: BytePos(468), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.nested.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(437), hi: BytePos(450), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(438), hi: BytePos(439), ctxt: #0 }, sym: Atom('e' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.object-primitives.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(467), hi: BytePos(476), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(468), hi: BytePos(475), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(468), hi: BytePos(475), ct
+kangax-es6/destructuring-decl.object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(443), hi: BytePos(454), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(444), hi: BytePos(445), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(444), hi: BytePos(445), ct
+kangax-es6/destructuring-decl.rest.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(435), hi: BytePos(444), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(436), hi: BytePos(437), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.sparse-array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(449), hi: BytePos(457), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(450), hi: BytePos(451), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(443), hi: BytePos(452), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(444), hi: BytePos(445), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.throws-null-undefined.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(469), hi: BytePos(472), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(470), hi: BytePos(471), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(470), hi: BytePos(471), ct
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(467), hi: BytePos(471), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(468), hi: BytePos(469), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-decl.trailing-comma-object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(465), hi: BytePos(469), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(466), hi: BytePos(467), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(466), hi: BytePos(467), ct
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(469), hi: BytePos(489), ctxt: #0 }, props: [KeyValue(KeyValuePatProp { key: Ident(Ident { span: Span { lo: BytePos(470), hi: BytePos(471), ctxt: #0 }, sym: Atom('b' type=inline), optional: fal
+kangax-es6/destructuring-params.arguments.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(465), hi: BytePos(478), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(466), hi: BytePos(467), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(466), hi: BytePos(467), ct
+kangax-es6/destructuring-params.array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(452), hi: BytePos(465), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(453), hi: BytePos(454), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.astral-string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(466), hi: BytePos(469), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(467), hi: BytePos(468), ctxt: #0 }, sym: Atom('c' type=inline), optional: false }, type
+kangax-es6/destructuring-params.computed-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(481), hi: BytePos(498), ctxt: #0 }, props: [KeyValue(KeyValuePatProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(483), hi: BytePos(488), ctxt: #0 }, expr: Ident(Ident { span: S
+kangax-es6/destructuring-params.defaults-new-function.js: ReferenceError: Property 'a' not found
+kangax-es6/destructuring-params.defaults-separate-scope.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(466), hi: BytePos(522), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(467), hi: BytePos(521), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(467), hi: BytePos(468), ct
+kangax-es6/destructuring-params.defaults.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(450), hi: BytePos(489), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(451), hi: BytePos(456), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(451), hi: BytePos(452), ct
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
+kangax-es6/destructuring-params.empty-patterns.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(456), hi: BytePos(458), ctxt: #0 }, elems: [], optional: false, type_ann: None })")
+kangax-es6/destructuring-params.generator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(465), hi: BytePos(474), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(466), hi: BytePos(467), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.iterable-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1075), hi: BytePos(1084), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1076), hi: BytePos(1077), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-params.iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1062), hi: BytePos(1071), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1063), hi: BytePos(1064), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-params.iterator-closing.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(1188), hi: BytePos(1193), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(1189), hi: BytePos(1190), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, 
+kangax-es6/destructuring-params.length.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(482), hi: BytePos(488), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(483), hi: BytePos(484), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(483), hi: BytePos(484), ct
+kangax-es6/destructuring-params.nested.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(447), hi: BytePos(460), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(448), hi: BytePos(449), ctxt: #0 }, sym: Atom('e' type=inline), optional: false }, type
+kangax-es6/destructuring-params.new-function.js: ReferenceError: Property 'a' not found
+kangax-es6/destructuring-params.object-primitives.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(477), hi: BytePos(486), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(478), hi: BytePos(485), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(478), hi: BytePos(485), ct
+kangax-es6/destructuring-params.object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(453), hi: BytePos(464), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(454), hi: BytePos(455), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(454), hi: BytePos(455), ct
+kangax-es6/destructuring-params.rest.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(445), hi: BytePos(454), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(446), hi: BytePos(447), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(471), hi: BytePos(485), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(472), hi: BytePos(477), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(472), hi: BytePos(473), ct
+kangax-es6/destructuring-params.sparse-array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(459), hi: BytePos(467), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(460), hi: BytePos(461), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(453), hi: BytePos(462), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(454), hi: BytePos(455), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.throws-null-undefined.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(473), hi: BytePos(476), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(474), hi: BytePos(475), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(474), hi: BytePos(475), ct
+kangax-es6/destructuring-params.trailing-comma-iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(477), hi: BytePos(481), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(478), hi: BytePos(479), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }, type
+kangax-es6/destructuring-params.trailing-comma-object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(475), hi: BytePos(479), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(476), hi: BytePos(477), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(476), hi: BytePos(477), ct
+kangax-es6/for-of.array.js: OK
+kangax-es6/for-of.astral-string.js: failed
+kangax-es6/for-of.generator.js: OK
+kangax-es6/for-of.iterable-instance.js: OK
+kangax-es6/for-of.iterable.js: OK
+kangax-es6/for-of.iterator-closing-break.js: failed
+kangax-es6/for-of.iterator-closing-throw.js: failed
+kangax-es6/for-of.sparse-array.js: OK
+kangax-es6/for-of.string.js: OK
+kangax-es6/function.block-level-decl.js: OK
+kangax-es6/generators.basic.js: OK
+kangax-es6/generators.constructor.js: SyntaxError: Compile Error NotYetImpl("Expected ';', '}' or <eof>")
+kangax-es6/generators.expression.js: OK
+kangax-es6/generators.no-new-this.js: failed
+kangax-es6/generators.prototype-chain.js: failed
+kangax-es6/generators.prototype.js: failed
+kangax-es6/generators.return.js: TypeError: not a callable object
+kangax-es6/generators.sending.js: failed
+kangax-es6/generators.shorthand.class.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(446), hi: BytePos(447), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(440), hi: BytePos(503), ctxt: #0 }
+kangax-es6/generators.shorthand.computed.class.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(476), hi: BytePos(477), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(470), hi: BytePos(533), ctxt: #0 }
+kangax-es6/generators.shorthand.computed.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(477), hi: BytePos(485), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(478), hi: BytePos(484), ctxt: #0 }, sym: Atom('garply' type=inline), optional
+kangax-es6/generators.shorthand.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(447), hi: BytePos(456), ctxt: #0 }, sym: Atom('generator' type=dynamic), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(445),
+kangax-es6/generators.shorthand.no-constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(452), hi: BytePos(453), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(446), hi: BytePos(509), ctxt: #0 }
+kangax-es6/generators.shorthand.string-keyed.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Str(Str { span: Span { lo: BytePos(460), hi: BytePos(469), ctxt: #0 }, value: Atom('foo bar' type=inline), has_escape: false, kind: Normal { contains_quote: true } }), function: Function { params: [], decorators
+kangax-es6/generators.this.js: OK
+kangax-es6/generators.throw.js: failed
+kangax-es6/generators.yield-precedence.js: OK
+kangax-es6/generators.yield-star.array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.astral-string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.generator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.iterable-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.iterator-closing-throw.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.iterator-closing.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.non-iterable-error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.sparse-array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/generators.yield-star.string.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es6/let.basic.js: OK
+kangax-es6/let.block-scoped.js: OK
+kangax-es6/let.for-in-shadow.js: OK
+kangax-es6/let.for-iteration.js: failed
+kangax-es6/let.for-loop.js: OK
+kangax-es6/let.no-statement.js: OK
+kangax-es6/let.shadow.js: OK
+kangax-es6/let.strict.basic.js: OK
+kangax-es6/let.strict.block-scoped.js: OK
+kangax-es6/let.strict.for-in-shadow.js: OK
+kangax-es6/let.strict.for-iteration.js: failed
+kangax-es6/let.strict.for-loop.js: OK
+kangax-es6/let.strict.no-statement.js: OK
+kangax-es6/let.strict.shadow.js: OK
+kangax-es6/let.strict.tdz.js: ReferenceError: Property 'qux' not found
+kangax-es6/let.tdz.js: ReferenceError: Property 'qux' not found
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(514), hi: BytePos(537), ctxt: #0 }, key: Computed(ComputedPropName { span: Span { lo: BytePos(518), hi: BytePos(521), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(519), hi: BytePo
+kangax-es6/literals.object.computed-properties.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Computed(ComputedPropName { span: Span { lo: BytePos(489), hi: BytePos(492), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(490), hi: BytePos(491), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }) })")
+kangax-es6/literals.object.computed-shorthand-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(496), hi: BytePos(499), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(497), hi: BytePos(498), ctxt: #0 }, sym: Atom('x' type=inline), optional: fal
+kangax-es6/literals.object.shorthand-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(472), hi: BytePos(473), ctxt: #0 }, sym: Atom('y' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(472), hi: Byte
+kangax-es6/literals.object.shorthand-properties.js: OK
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Str(Str { span: Span { lo: BytePos(485), hi: BytePos(494), ctxt: #0 }, value: Atom('foo bar' type=inline), has_escape: false, kind: Normal { contains_quote: true } }), function: Function { params: [], decorators
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: OK
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: Object.freeze requires object argument
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: Object.getOwnPropertyDescriptor requires object argument
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: not a callable object
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: OK
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: Object.isExtensible requires object argument
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: Object.isFrozen requires object argument
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: Object.isSealed requires object argument
+kangax-es6/misc.Object.keys.primitives.js: TypeError: Object.keys requires object argument
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: Object.preventExtensions requires object argument
+kangax-es6/misc.Object.seal.primitives.js: TypeError: Object.seal requires object argument
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(628), hi: BytePos(629), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(622), hi: BytePos(642), ctxt: #0 }
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.HasBinding.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: With(WithStmt { span: Span { lo: BytePos(618), hi: BytePos(647), ctxt: #0 }, obj: Ident(Ident { span: Span { lo: BytePos(623), hi: BytePos(624), ctxt: #0 }, sym: Atom('p' type=inline), optional: false }), body: Block(BlockStmt { span: S
+kangax-es6/misc.Proxy.get.IteratorComplete.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Property 'Proxy' not found
+kangax-es6/misc.RegExp-alter-flags.js: OK
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: RegExp.prototype.toString is not generic
+kangax-es6/misc.accessors-no-constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(422), hi: BytePos(431), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(426), hi: BytePos(427), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es6/misc.bound-function-prototype.arrow.js: failed
+kangax-es6/misc.bound-function-prototype.class.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(363), hi: BytePos(364), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(357), hi: BytePos(367), ctxt: #0 }
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: failed
+kangax-es6/misc.bound-function-prototype.subclass.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(371), hi: BytePos(372), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(365), hi: BytePos(465), ctxt: #0 }
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: OK
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: TypeError: undefined does not have properties ('configurable')
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: OK
+kangax-es6/misc.property-order.JSON.parse.js: ReferenceError: Property 'JSON' not found
+kangax-es6/misc.property-order.JSON.stringify.js: ReferenceError: Property 'JSON' not found
+kangax-es6/misc.property-order.Object.assign.js: TypeError: Array.prototype.concat requires array-like arguments
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: TypeError: not a callable object
+kangax-es6/misc.property-order.Object.keys.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Property 'Reflect' not found
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: MetaProp(MetaPropExpr { meta: Ident { span: Span { lo: BytePos(479), hi: BytePos(482), ctxt: #0 }, sym: Atom('new' type=static), optional: false }, prop: Ident { span: Span { lo: BytePos(483), hi: BytePos(489), ctxt: #0 }, sym: Atom('ta
+kangax-es6/new-target.constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: MetaProp(MetaPropExpr { meta: Ident { span: Span { lo: BytePos(466), hi: BytePos(469), ctxt: #0 }, sym: Atom('new' type=static), optional: false }, prop: Ident { span: Span { lo: BytePos(470), hi: BytePos(476), ctxt: #0 }, sym: Atom('ta
+kangax-es6/regex.flags.u.case-folding.js: OK
+kangax-es6/regex.flags.u.codepoint.js: failed
+kangax-es6/regex.flags.u.js: failed
+kangax-es6/regex.flags.u.non-bmp.js: failed
+kangax-es6/regex.flags.y.js: OK
+kangax-es6/regex.flags.y.lastIndex.js: OK
+kangax-es6/rest-params.arguments.js: OK
+kangax-es6/rest-params.basic.js: OK
+kangax-es6/rest-params.length.js: failed
+kangax-es6/rest-params.new-function.js: ReferenceError: Property 'b' not found
+kangax-es6/rest-params.no-setter.js: OK
+kangax-es6/spread.array-call.js: OK
+kangax-es6/spread.array-literal.js: OK
+kangax-es6/spread.astral-call.js: failed
+kangax-es6/spread.astral-literal.js: failed
+kangax-es6/spread.generator-call.js: OK
+kangax-es6/spread.generator-literal.js: OK
+kangax-es6/spread.iterable-call.js: OK
+kangax-es6/spread.iterable-instance-call.js: OK
+kangax-es6/spread.iterable-instance-literal.js: OK
+kangax-es6/spread.iterable-literal.js: OK
+kangax-es6/spread.non-iterable-error.js: OK
+kangax-es6/spread.sparse-call.js: failed
+kangax-es6/spread.sparse-literal.js: failed
+kangax-es6/spread.string-call.js: failed
+kangax-es6/spread.string-literal.js: OK
+kangax-es6/subclassing.Array.concat.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(337), hi: BytePos(338), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(331), hi: BytePos(355), ctxt: #0 }
+kangax-es6/subclassing.Array.filter.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(337), hi: BytePos(338), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(331), hi: BytePos(355), ctxt: #0 }
+kangax-es6/subclassing.Array.from.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(325), hi: BytePos(326), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(319), hi: BytePos(343), ctxt: #0 }
+kangax-es6/subclassing.Array.isArray.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(336), hi: BytePos(337), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(330), hi: BytePos(354), ctxt: #0 }
+kangax-es6/subclassing.Array.length-access.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(342), hi: BytePos(343), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(336), hi: BytePos(360), ctxt: #0 }
+kangax-es6/subclassing.Array.length-set.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(340), hi: BytePos(341), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(334), hi: BytePos(358), ctxt: #0 }
+kangax-es6/subclassing.Array.map.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(334), hi: BytePos(335), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(328), hi: BytePos(352), ctxt: #0 }
+kangax-es6/subclassing.Array.of.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(323), hi: BytePos(324), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(317), hi: BytePos(341), ctxt: #0 }
+kangax-es6/subclassing.Array.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(338), hi: BytePos(339), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(332), hi: BytePos(356), ctxt: #0 }
+kangax-es6/subclassing.Array.slice.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(336), hi: BytePos(337), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(330), hi: BytePos(354), ctxt: #0 }
+kangax-es6/subclassing.Array.splice.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(337), hi: BytePos(338), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(331), hi: BytePos(355), ctxt: #0 }
+kangax-es6/subclassing.Function.call.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(333), hi: BytePos(334), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(327), hi: BytePos(354), ctxt: #0 }
+kangax-es6/subclassing.Function.new.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(342), hi: BytePos(343), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(336), hi: BytePos(363), ctxt: #0 }
+kangax-es6/subclassing.Function.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(364), ctxt: #0 }
+kangax-es6/subclassing.Function.prototype.apply.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(344), hi: BytePos(345), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(338), hi: BytePos(365), ctxt: #0 }
+kangax-es6/subclassing.Function.prototype.bind.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(364), ctxt: #0 }
+kangax-es6/subclassing.Function.prototype.call.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(364), ctxt: #0 }
+kangax-es6/subclassing.Promise.all.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(1018), hi: BytePos(1019), ctxt: #0 }, sym: Atom('P' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(1012), hi: BytePos(1038), ctxt: 
+kangax-es6/subclassing.Promise.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(1022), hi: BytePos(1023), ctxt: #0 }, sym: Atom('P' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(1016), hi: BytePos(1042), ctxt: 
+kangax-es6/subclassing.Promise.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(363), ctxt: #0 }
+kangax-es6/subclassing.Promise.race.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(1020), hi: BytePos(1021), ctxt: #0 }, sym: Atom('P' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(1014), hi: BytePos(1040), ctxt: 
+kangax-es6/subclassing.RegExp.exec.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(337), hi: BytePos(338), ctxt: #0 }, sym: Atom('R' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(331), hi: BytePos(356), ctxt: #0 }
+kangax-es6/subclassing.RegExp.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(386), hi: BytePos(387), ctxt: #0 }, sym: Atom('R' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(380), hi: BytePos(405), ctxt: #0 }
+kangax-es6/subclassing.RegExp.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(339), hi: BytePos(340), ctxt: #0 }, sym: Atom('R' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(333), hi: BytePos(358), ctxt: #0 }
+kangax-es6/subclassing.RegExp.test.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(337), hi: BytePos(338), ctxt: #0 }, sym: Atom('R' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(331), hi: BytePos(356), ctxt: #0 }
+kangax-es6/subclassing.misc.Boolean.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(345), hi: BytePos(346), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(339), hi: BytePos(365), ctxt: #0 }
+kangax-es6/subclassing.misc.Error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(361), ctxt: #0 }
+kangax-es6/subclassing.misc.Map.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(357), hi: BytePos(358), ctxt: #0 }, sym: Atom('M' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(351), hi: BytePos(373), ctxt: #0 }
+kangax-es6/subclassing.misc.Number.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(344), hi: BytePos(345), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(338), hi: BytePos(363), ctxt: #0 }
+kangax-es6/subclassing.misc.Set.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(357), hi: BytePos(358), ctxt: #0 }, sym: Atom('S' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(351), hi: BytePos(373), ctxt: #0 }
+kangax-es6/subclassing.misc.String.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(344), hi: BytePos(345), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(338), hi: BytePos(363), ctxt: #0 }
+kangax-es6/super.correct-constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(504), hi: BytePos(505), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(498), hi: BytePos(566), ctxt: #0 }
+kangax-es6/super.expression.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(410), hi: BytePos(411), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(404), hi: BytePos(460), ctxt: #0 }
+kangax-es6/super.method-calls.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(408), hi: BytePos(409), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(402), hi: BytePos(448), ctxt: #0 }
+kangax-es6/super.new-target-binding.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(448), hi: BytePos(449), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(442), hi: BytePos(506), ctxt: #0 }
+kangax-es6/super.property-access.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(411), hi: BytePos(412), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(405), hi: BytePos(415), ctxt: #0 }
+kangax-es6/super.statement.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(431), hi: BytePos(432), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(425), hi: BytePos(488), ctxt: #0 }
+kangax-es6/super.static-binding.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(403), hi: BytePos(404), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(397), hi: BytePos(438), ctxt: #0 }
+kangax-es6/super.this-binding.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(423), hi: BytePos(424), ctxt: #0 }, sym: Atom('B' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(417), hi: BytePos(466), ctxt: #0 }
+kangax-es6/tail-calls.direct.js: OK
+kangax-es6/tail-calls.mutual.js: OK
+kangax-es6/template.basic.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Tpl(Tpl { span: Span { lo: BytePos(441), hi: BytePos(480), ctxt: #0 }, exprs: [Bin(BinExpr { span: Span { lo: BytePos(452), hi: BytePos(459), ctxt: #0 }, op: \"+\", left: Ident(Ident { span: Span { lo: BytePos(452), hi: BytePos(453), ct
+kangax-es6/template.caching.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: TaggedTpl(TaggedTpl { span: Span { lo: BytePos(638), hi: BytePos(650), ctxt: #0 }, tag: Ident(Ident { span: Span { lo: BytePos(638), hi: BytePos(645), ctxt: #0 }, sym: Atom('strings' type=inline), optional: false }), type_params: None, 
+kangax-es6/template.escape-sequences.js: Compilation failed: SyntaxError: Expected 2 hex characters
+kangax-es6/template.frozen-array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: TaggedTpl(TaggedTpl { span: Span { lo: BytePos(421), hi: BytePos(529), ctxt: #0 }, tag: Paren(ParenExpr { span: Span { lo: BytePos(421), hi: BytePos(509), ctxt: #0 }, expr: Fn(FnExpr { ident: None, function: Function { params: [Param { 
+kangax-es6/template.line-break.js: ReferenceError: Property 'eval' not found
+kangax-es6/template.permanent-caching.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: TaggedTpl(TaggedTpl { span: Span { lo: BytePos(510), hi: BytePos(522), ctxt: #0 }, tag: Ident(Ident { span: Span { lo: BytePos(510), hi: BytePos(517), ctxt: #0 }, sym: Atom('strings' type=inline), optional: false }), type_params: None, 
+kangax-es6/template.tagged.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: TaggedTpl(TaggedTpl { span: Span { lo: BytePos(736), hi: BytePos(761), ctxt: #0 }, tag: Ident(Ident { span: Span { lo: BytePos(736), hi: BytePos(738), ctxt: #0 }, sym: Atom('fn' type=inline), optional: false }), type_params: None, tpl: 
+kangax-es6/template.toString.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Tpl(Tpl { span: Span { lo: BytePos(521), hi: BytePos(527), ctxt: #0 }, exprs: [Ident(Ident { span: Span { lo: BytePos(524), hi: BytePos(525), ctxt: #0 }, sym: Atom('a' type=inline), optional: false })], quasis: [TplElement { span: Span 
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
+kangax-es6/typed-arrays.DataView.Float32.js: OK
+kangax-es6/typed-arrays.DataView.Float64.js: OK
+kangax-es6/typed-arrays.DataView.Int8.js: failed
+kangax-es6/typed-arrays.DataView.Int16.js: failed
+kangax-es6/typed-arrays.DataView.Int32.js: failed
+kangax-es6/typed-arrays.DataView.Uint8.js: failed
+kangax-es6/typed-arrays.DataView.Uint16.js: failed
+kangax-es6/typed-arrays.DataView.Uint32.js: failed
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: Property 'Float32Array' not found
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: Property 'Float64Array' not found
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: Property 'Int8Array' not found
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: Property 'Int16Array' not found
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: Property 'Int32Array' not found
+kangax-es6/typed-arrays.Symbol.species.js: TypeError: undefined does not have properties ('Symbol.species')
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: Property 'Uint8ClampedArray' not found
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: Property 'Uint16Array' not found
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: Property 'Uint32Array' not found
+kangax-es6/typed-arrays.constructor-iterables.js: TypeError: not a callable constructor object
+kangax-es6/typed-arrays.constructor-requires-new.js: TypeError: not a callable object
+kangax-es6/typed-arrays.correct-prototype-chains.js: ReferenceError: Property 'Int8Array' not found
+kangax-es6/typed-arrays.from.js: TypeError: undefined does not have properties ('from')
+kangax-es6/typed-arrays.of.js: TypeError: undefined does not have properties ('of')
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.copyWithin.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.entries.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.every.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.fill.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.filter.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.findIndex.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.find.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.forEach.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.indexOf.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.join.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.keys.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.map.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.reduceRight.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.reduce.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.reverse.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.slice.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.some.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.sort.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.subarray.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/typed-arrays.prototype.values.js: TypeError: undefined does not have properties ('prototype')
+kangax-es6/unicode-escapes.identifier.js: OK
+kangax-es6/unicode-escapes.property-access.js: failed
+kangax-es6/unicode-escapes.property-key.js: failed
+kangax-es6/unicode-escapes.string.js: failed
+kangax-es6/well-known.hasInstance.js: failed
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: failed
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: failed
+kangax-es6/well-known.iterator.js: OK
+kangax-es6/well-known.match.RegExp-constructor.js: failed
+kangax-es6/well-known.match.String.endsWith.js: TypeError: First argument to String.prototype.startsWith must not be a regular expression
+kangax-es6/well-known.match.String.includes.js: TypeError: First argument to String.prototype.startsWith must not be a regular expression
+kangax-es6/well-known.match.String.startsWith.js: TypeError: First argument to String.prototype.endsWith must not be a regular expression
+kangax-es6/well-known.match.js: OK
+kangax-es6/well-known.replace.js: OK
+kangax-es6/well-known.search.js: TypeError: not a callable object
+kangax-es6/well-known.species.Array.concat.js: failed
+kangax-es6/well-known.species.Array.filter.js: failed
+kangax-es6/well-known.species.Array.map.js: failed
+kangax-es6/well-known.species.Array.slice.js: failed
+kangax-es6/well-known.species.Array.splice.js: TypeError: undefined does not have properties ('call')
+kangax-es6/well-known.species.Promise.then.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es6/well-known.species.RegExp.split.js: TypeError: not a callable constructor object
+kangax-es6/well-known.species.js: OK
+kangax-es6/well-known.split.js: OK
+kangax-es6/well-known.toPrimitive.js: failed
+kangax-es6/well-known.toStringTag.existing-builtins.js: failed
+kangax-es6/well-known.toStringTag.js: failed
+kangax-es6/well-known.toStringTag.misc-builtins.js: failed
+kangax-es6/well-known.toStringTag.new-builtins.js: ReferenceError: Property 'Set' not found
+kangax-es6/well-known.unscopables.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: With(WithStmt { span: Span { lo: BytePos(503), hi: BytePos(569), ctxt: #0 }, obj: Ident(Ident { span: Span { lo: BytePos(509), hi: BytePos(510), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }), body: Block(BlockStmt { span: S
+kangax-es2016/Array.prototype.includes.generic.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(529), hi: BytePos(592), ctxt: #0 }, key: Str(Str { span: Span { lo: BytePos(533), hi: BytePos(536), ctxt: #0 }, value: Atom('0' type=inline), has_escape: false, kind: Normal { contains_quote:
+kangax-es2016/Array.prototype.includes.js: OK
+kangax-es2016/Array.prototype.includes.sparse.js: OK
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Property 'Float64Array' not found
+kangax-es2016/exponentiation.assignment.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"**=\"")
+kangax-es2016/exponentiation.basic.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"**\"")
+kangax-es2016/exponentiation.unary-negation-error.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"**\"")
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Property 'Proxy' not found
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Property 'Proxy' not found
+kangax-es2016/misc.generator-no-new.js: failed
+kangax-es2016/misc.generator-throw-inner.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: yield*")
+kangax-es2016/misc.nested-rest-destructuring-decl.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(493), hi: BytePos(510), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(494), hi: BytePos(495), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }, type
+kangax-es2016/misc.nested-rest-destructuring-params.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Array(ArrayPat { span: Span { lo: BytePos(357), hi: BytePos(374), ctxt: #0 }, elems: [Some(Ident(BindingIdent { id: Ident { span: Span { lo: BytePos(358), hi: BytePos(359), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }, type
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
+kangax-es2017/Atomics.add.js: TypeError: undefined does not have properties ('add')
+kangax-es2017/Atomics.and.js: TypeError: undefined does not have properties ('and')
+kangax-es2017/Atomics.compareExchange.js: TypeError: undefined does not have properties ('compareExchange')
+kangax-es2017/Atomics.exchange.js: TypeError: undefined does not have properties ('exchange')
+kangax-es2017/Atomics.isLockFree.js: TypeError: undefined does not have properties ('isLockFree')
+kangax-es2017/Atomics.load.js: TypeError: undefined does not have properties ('load')
+kangax-es2017/Atomics.notify.js: TypeError: undefined does not have properties ('notify')
+kangax-es2017/Atomics.or.js: TypeError: undefined does not have properties ('or')
+kangax-es2017/Atomics.store.js: TypeError: undefined does not have properties ('store')
+kangax-es2017/Atomics.sub.js: TypeError: undefined does not have properties ('sub')
+kangax-es2017/Atomics.wait.js: TypeError: undefined does not have properties ('wait')
+kangax-es2017/Atomics.xor.js: TypeError: undefined does not have properties ('xor')
+kangax-es2017/Object.entries.js: TypeError: not a callable object
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: not a callable object
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Property 'Proxy' not found
+kangax-es2017/Object.values.js: TypeError: not a callable object
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: Property 'SharedArrayBuffer' not found
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: Property 'SharedArrayBuffer' not found
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: Property 'SharedArrayBuffer' not found
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: TypeError: undefined does not have properties ('prototype')
+kangax-es2017/String.prototype.padEnd.js: OK
+kangax-es2017/String.prototype.padStart.js: TypeError: not a callable object
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: Property '__defineGetter__' not found
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: undefined does not have properties ('call')
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: undefined does not have properties ('call')
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: Property '__defineSetter__' not found
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: undefined does not have properties ('call')
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: undefined does not have properties ('call')
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: Property '__lookupGetter__' not found
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(473), hi: BytePos(498), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(477), hi: BytePos(480), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), type_ann: None, body: Som
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(377), hi: BytePos(402), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(381), hi: BytePos(384), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), type_ann: None, body: Som
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: not a callable object
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: changing descriptor type of unconfigurable property not allowed
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: Property '__lookupSetter__' not found
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Setter(SetterProp { span: Span { lo: BytePos(475), hi: BytePos(505), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(479), hi: BytePos(482), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), param: Ident(BindingIdent
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Setter(SetterProp { span: Span { lo: BytePos(379), hi: BytePos(409), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(383), hi: BytePos(386), ctxt: #0 }, sym: Atom('foo' type=inline), optional: false }), param: Ident(BindingIdent
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: not a callable object
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: changing descriptor type of unconfigurable property not allowed
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Property 'Proxy' not found
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Property 'Proxy' not found
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Property 'Proxy' not found
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Property 'Proxy' not found
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: Compilation failed: SyntaxError: Expected ;, got )
+kangax-es2017/async.Symbol.toStringTag.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.arrow-in-class.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(1191), hi: BytePos(1192), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(1185), hi: BytePos(1300), ctxt: 
+kangax-es2017/async.arrow.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Await(AwaitExpr { span: Span { lo: BytePos(1121), hi: BytePos(1149), ctxt: #0 }, arg: Call(CallExpr { span: Span { lo: BytePos(1127), hi: BytePos(1149), ctxt: #0 }, callee: Expr(Member(MemberExpr { span: Span { lo: BytePos(1127), hi: By
+kangax-es2017/async.await-non-promise.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.await-rejection.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.await.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.methods-class.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(1116), hi: BytePos(1117), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(1110), hi: BytePos(1178), ctxt: 
+kangax-es2017/async.methods-object.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(1139), hi: BytePos(1140), ctxt: #0 }, sym: Atom('a' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(1133), hi: B
+kangax-es2017/async.must-await-value.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.no-await-in-params.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.no-line-break.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.no-prototype.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.prototype-chain.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.return.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/async.throw.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/trailing-comma.arguments.js: OK
+kangax-es2017/trailing-comma.params.js: OK
+kangax-es2018/Promise.prototype.finally.change-rejection.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2018/Promise.prototype.finally.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2018/async-iterators.for-await-of.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2018/async-iterators.generators.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(515), hi: BytePos(522), ctxt: #0 }, sym: Atom('ownKeys' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(515), hi
+kangax-es2018/misc.template-literal-revision.js: Compilation failed: SyntaxError: Legacy octal escape is not permitted in strict mode
+kangax-es2018/object-rest.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(332), hi: BytePos(346), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(334), hi: BytePos(335), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(334), hi: BytePos(335), ct
+kangax-es2018/object-spread.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Spread(SpreadElement { dot3_token: Span { lo: BytePos(377), hi: BytePos(380), ctxt: #0 }, expr: Ident(Ident { span: Span { lo: BytePos(380), hi: BytePos(386), ctxt: #0 }, sym: Atom('spread' type=inline), optional: false }) })")
+kangax-es2018/regex.flags.s.js: OK
+kangax-es2018/regex.lookbehind.js: OK
+kangax-es2018/regex.named-capture-groups.js: TypeError: undefined does not have properties ('year')
+kangax-es2018/regex.unicode-property-escapes.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Greek}")
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Extended_Pictographic}")
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Other_Symbol}")
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Elymaic}")
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Chorasmian}")
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Vithkuqi}")
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Unified_Ideograph}")
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Kawi}")
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Todhri}")
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in \\p{Script=Sidetic}")
+kangax-es2019/Array.prototype.flatMap.js: OK
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: undefined does not have properties ('flat')
+kangax-es2019/Array.prototype.flat.js: OK
+kangax-es2019/Object.fromEntries.js: ReferenceError: Property 'Map' not found
+kangax-es2019/String.prototype.trimEnd.js: OK
+kangax-es2019/String.prototype.trimStart.js: TypeError: not a callable object
+kangax-es2019/Symbol.prototype.description.empty.js: failed
+kangax-es2019/Symbol.prototype.description.js: failed
+kangax-es2019/Symbol.prototype.description.undefined.js: failed
+kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
+kangax-es2019/annex-b.String.prototype.trimRight.js: OK
+kangax-es2019/misc.Function-toString.Function-constructor.js: SyntaxError: Compile Error NotYetImpl("Unexpected eof")
+kangax-es2019/misc.Function-toString.arrows.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.Function-toString.computed-names.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.Function-toString.native-code.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.Function-toString.unicode-escapes.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.JSON-stringify-well-formed.js: ReferenceError: Property 'JSON' not found
+kangax-es2019/misc.JSON-superset.line-separator.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: ReferenceError: Property 'eval' not found
+kangax-es2019/misc.optional-catch-binding.await.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-es2019/misc.optional-catch-binding.js: OK
+kangax-es2019/misc.optional-catch-binding.yield.js: undefined
+kangax-es2020/BigInt64Array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/BigInt.asIntN.js: TypeError: undefined does not have properties ('asIntN')
+kangax-es2020/BigInt.asUintN.js: TypeError: undefined does not have properties ('asUintN')
+kangax-es2020/BigInt.constructor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/BigInt.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/BigUint64Array.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/DataView.prototype.getBigInt64.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/DataView.prototype.getBigUint64.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Unimplemented JS literal: BigInt")
+kangax-es2020/Promise.allSettled.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2020/String.prototype.matchAll.js: TypeError: String.prototype.matchAll argument must not be a non-global regular expression
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: OK
+kangax-es2020/nullish-coalescing.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"??\"")
+kangax-es2020/optional-chaining.bracket.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: OptChain(OptChainExpr { span: Span { lo: BytePos(482), hi: BytePos(494), ctxt: #0 }, question_dot_token: Span { lo: BytePos(485), hi: BytePos(486), ctxt: #0 }, expr: Member(MemberExpr { span: Span { lo: BytePos(482), hi: BytePos(494), c
+kangax-es2020/optional-chaining.function-call.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: OptChain(OptChainExpr { span: Span { lo: BytePos(545), hi: BytePos(556), ctxt: #0 }, question_dot_token: Span { lo: BytePos(552), hi: BytePos(553), ctxt: #0 }, expr: Call(CallExpr { span: Span { lo: BytePos(545), hi: BytePos(556), ctxt:
+kangax-es2020/optional-chaining.method-call.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: OptChain(OptChainExpr { span: Span { lo: BytePos(522), hi: BytePos(530), ctxt: #0 }, question_dot_token: Span { lo: BytePos(525), hi: BytePos(526), ctxt: #0 }, expr: Member(MemberExpr { span: Span { lo: BytePos(522), hi: BytePos(530), c
+kangax-es2020/optional-chaining.property.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: OptChain(OptChainExpr { span: Span { lo: BytePos(483), hi: BytePos(491), ctxt: #0 }, question_dot_token: Span { lo: BytePos(486), hi: BytePos(487), ctxt: #0 }, expr: Member(MemberExpr { span: Span { lo: BytePos(483), hi: BytePos(491), c
+kangax-es2020/optional-chaining.spread-params.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: OptChain(OptChainExpr { span: Span { lo: BytePos(505), hi: BytePos(519), ctxt: #0 }, question_dot_token: Span { lo: BytePos(507), hi: BytePos(508), ctxt: #0 }, expr: Call(CallExpr { span: Span { lo: BytePos(505), hi: BytePos(519), ctxt:
+kangax-es2021/FinalizationRegistry.js: ReferenceError: Property 'FinalizationRegistry' not found
+kangax-es2021/Promise.any.AggregateError.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2021/Promise.any.fulfillment.js: In order to use async you have to init the VirtualMachineOptions with with_async_scheduler()
+kangax-es2021/String.prototype.replaceAll.js: TypeError: not a callable object
+kangax-es2021/WeakRef.js: OK
+kangax-es2021/logical-assignment.and.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"&&=\"")
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(355), hi: BytePos(373), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(359), hi: BytePos(360), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es2021/logical-assignment.and.short-circuit.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"&&=\"")
+kangax-es2021/logical-assignment.nullish.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"??=\"")
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(355), hi: BytePos(375), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(359), hi: BytePos(360), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es2021/logical-assignment.nullish.short-circuit.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"??=\"")
+kangax-es2021/logical-assignment.or.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"||=\"")
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Getter(GetterProp { span: Span { lo: BytePos(355), hi: BytePos(375), ctxt: #0 }, key: Ident(Ident { span: Span { lo: BytePos(359), hi: BytePos(360), ctxt: #0 }, sym: Atom('x' type=inline), optional: false }), type_ann: None, body: Some(
+kangax-es2021/logical-assignment.or.short-circuit.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: \"||=\"")
+kangax-es2021/numeric-separators.js: OK
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: Property 'AggregateError' not found
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: Property 'AggregateError' not found
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: TypeError: not a callable object
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: TypeError: 'in' requires object
+kangax-es2022/Error.cause.RangeError.js: TypeError: not a callable constructor object
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: TypeError: 'in' requires object
+kangax-es2022/Error.cause.URIError.js: TypeError: not a callable constructor object
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: not a callable object
+kangax-es2022/at-method.Array.js: OK
+kangax-es2022/at-method.String.js: TypeError: not a callable object
+kangax-es2022/at-method.TypedArray.js: TypeError: not a callable object
+kangax-es2022/class-fields.computed-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(328), hi: BytePos(329), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(322), hi: BytePos(351), ctxt: #0 }
+kangax-es2022/class-fields.computed-static.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(334), hi: BytePos(335), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(328), hi: BytePos(364), ctxt: #0 }
+kangax-es2022/class-fields.instance.parent-scope.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(369), hi: BytePos(376), ctxt: #0 }, sym: Atom('MyClass' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(363), hi: BytePos(504), ctxt
+kangax-es2022/class-fields.private-instance.initializers.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(340), hi: BytePos(341), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(334), hi: BytePos(398), ctxt: #0 }
+kangax-es2022/class-fields.private-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(462), hi: BytePos(463), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(456), hi: BytePos(561), ctxt: #0 }
+kangax-es2022/class-fields.private-instance.optional-access.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(343), hi: BytePos(344), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(337), hi: BytePos(407), ctxt: #0 }
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(348), hi: BytePos(349), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(342), hi: BytePos(421), ctxt: #0 }
+kangax-es2022/class-fields.private-static.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(452), hi: BytePos(453), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(446), hi: BytePos(514), ctxt: #0 }
+kangax-es2022/class-fields.public-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(446), hi: BytePos(447), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(440), hi: BytePos(466), ctxt: #0 }
+kangax-es2022/class-fields.public-static.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(450), hi: BytePos(451), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(444), hi: BytePos(477), ctxt: #0 }
+kangax-es2022/class-fields.static.define.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Class(ClassExpr { ident: Some(Ident { span: Span { lo: BytePos(348), hi: BytePos(349), ctxt: #0 }, sym: Atom('X' type=inline), optional: false }), class: Class { span: Span { lo: BytePos(342), hi: BytePos(375), ctxt: #0 }, decorators: [
+kangax-es2022/class-methods.private-accessor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(345), hi: BytePos(346), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(339), hi: BytePos(465), ctxt: #0 }
+kangax-es2022/class-methods.private-instance.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(325), hi: BytePos(326), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(319), hi: BytePos(396), ctxt: #0 }
+kangax-es2022/class-methods.private-static-accessor.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(352), hi: BytePos(353), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(346), hi: BytePos(480), ctxt: #0 }
+kangax-es2022/class-methods.private-static.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(323), hi: BytePos(324), ctxt: #0 }, sym: Atom('C' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(317), hi: BytePos(398), ctxt: #0 }
+kangax-es2022/class-static-init-blocks.js: Compilation failed: SyntaxError: Unexpected token `{`. Expected identifier, string literal, numeric literal or [ for the computed key
+kangax-es2022/ergonomic-brand-checks.js: Compilation failed: SyntaxError: Unexpected token `#`. Expected this, import, async, function, [ for array literal, { for object literal, @ for decorator, function, class, null, true, false, number, bigint, string, regexp, ` for template literal, (, or an identifier
+kangax-es2022/regex.flags.d.constructor.js: OK
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Property 'Proxy' not found
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: not a callable object
+kangax-es2023/Array.prototype.findLast.js: TypeError: not a callable object
+kangax-es2023/Array.prototype.toReversed.js: TypeError: not a callable object
+kangax-es2023/Array.prototype.toSorted.js: TypeError: not a callable object
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: not a callable object
+kangax-es2023/Array.prototype.with.js: TypeError: not a callable object
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2023/TypedArray.prototype.with.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2023/hashbang.js: ReferenceError: Property 'eval' not found
+kangax-es2024/ArrayBuffer.prototype.detached.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2024/ArrayBuffer.prototype.transfer.js: ReferenceError: Property 'Uint8Array' not found
+kangax-es2024/Map.groupBy.js: ReferenceError: Property 'Map' not found
+kangax-es2024/Object.groupBy.js: TypeError: not a callable object
+kangax-es2024/Promise.withResolvers.js: TypeError: not a callable object
+kangax-es2024/regex.flags.v.constructor.js: OK
+kangax-es2024/regex.flags.v.properties-of-strings.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in ^\\p{Emoji_Keycap_Sequence}$")
+kangax-es2024/regex.flags.v.set-notations.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid character range in [\\p{Any}--[\\x01-\\u{10ffff}]]")
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Property 'Proxy' not found
+kangax-es2024/regex.flags.v.unicode-15.1.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in ^\\p{RGI_Emoji}$")
+kangax-es2024/regex.flags.v.unicode-16.0.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in ^\\p{RGI_Emoji}$")
+kangax-es2024/regex.flags.v.unicode-17.0.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid quantifier in ^\\p{RGI_Emoji}$")
+kangax-es2025/Iterator.extends.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(427), hi: BytePos(432), ctxt: #0 }, sym: Atom('Class' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(421), hi: BytePos(453), ctxt: 
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: Property 'Iterator' not found
+kangax-es2025/Iterator.from.iterator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Ident(Ident { span: Span { lo: BytePos(463), hi: BytePos(467), ctxt: #0 }, sym: Atom('next' type=inline), optional: false }), function: Function { params: [], decorators: [], span: Span { lo: BytePos(463), hi: B
+kangax-es2025/Iterator.instanceof.js: ReferenceError: Property 'Iterator' not found
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'Iterator' not found
+kangax-es2025/Iterator.prototype.drop.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.every.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.filter.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.find.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.flatMap.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.forEach.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.map.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.reduce.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.some.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.take.js: TypeError: not a callable object
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: not a callable object
+kangax-es2025/Promise.try.js: resolve needs exactly one argument
+kangax-es2025/RegExp.escape.js: TypeError: not a callable object
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Property 'Set' not found
+kangax-es2025/Set.prototype.union.js: ReferenceError: Property 'Set' not found
+kangax-es2025/regex.duplicate-named-groups.js: OK
+kangax-es2025/regex.pattern-modifiers.i.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid token at named capture group identifier in ^[a-z](?-i:[a-z])$")
+kangax-es2025/regex.pattern-modifiers.m.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid token at named capture group identifier in ^a|(?m:^b)")
+kangax-es2025/regex.pattern-modifiers.s.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("Regexp constructor error SyntaxError: failed to create matcher: Invalid token at named capture group identifier in .(?-s:.)")
+kangax-intl/Array.prototype.toLocaleString.js: failed
+kangax-intl/Date.prototype.toLocaleDateString.js: failed
+kangax-intl/Date.prototype.toLocaleString.js: failed
+kangax-intl/Date.prototype.toLocaleTimeString.js: failed
+kangax-intl/Intl.Collator.js: TypeError: undefined does not have properties ('Collator')
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.Collator.prototype.compare.js: TypeError: undefined does not have properties ('Collator')
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: undefined does not have properties ('Collator')
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: TypeError: undefined does not have properties ('Collator')
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: TypeError: undefined does not have properties ('DateTimeFormat')
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: TypeError: undefined does not have properties ('DateTimeFormat')
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.NumberFormat.js: TypeError: undefined does not have properties ('NumberFormat')
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: TypeError: undefined does not have properties ('NumberFormat')
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Property 'Intl' not found
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: failed
+kangax-intl/String.prototype.localeCompare.js: failed

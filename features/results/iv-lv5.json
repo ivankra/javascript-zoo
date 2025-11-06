@@ -1,0 +1,12 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "17d9065439fc5b5b24b13af83c9375f5842b1f7d6199221c8a88949ac377ec3a",
+  "binary_size": 5108520,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "iv-lv5",
+  "jit": "",
+  "repository": "https://github.com/Constellation/iv.git",
+  "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
+  "revision_date": "2015-03-24",
+  "version": "1.0.1-270-g64c3a9c7"
+}

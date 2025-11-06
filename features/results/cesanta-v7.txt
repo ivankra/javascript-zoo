@@ -1,0 +1,420 @@
+es1/Array.js: new Array(len) failed; Array(len) failed
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: new Array(len) length failed
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: failed
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: Exec error [es1/Date.prototype.getUTCDate.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCDay.js: Exec error [es1/Date.prototype.getUTCDay.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCFullYear.js: Exec error [es1/Date.prototype.getUTCFullYear.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCHours.js: Exec error [es1/Date.prototype.getUTCHours.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCMilliseconds.js: Exec error [es1/Date.prototype.getUTCMilliseconds.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCMinutes.js: Exec error [es1/Date.prototype.getUTCMinutes.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCMonth.js: Exec error [es1/Date.prototype.getUTCMonth.js]: "Date.now() called on object"
+es1/Date.prototype.getUTCSeconds.js: Exec error [es1/Date.prototype.getUTCSeconds.js]: "Date.now() called on object"
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: Exec error [es1/Date.prototype.setUTCDate.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCFullYear.js: Exec error [es1/Date.prototype.setUTCFullYear.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCHours.js: Exec error [es1/Date.prototype.setUTCHours.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCMilliseconds.js: Exec error [es1/Date.prototype.setUTCMilliseconds.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCMinutes.js: Exec error [es1/Date.prototype.setUTCMinutes.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCMonth.js: Exec error [es1/Date.prototype.setUTCMonth.js]: "Date.now() called on object"
+es1/Date.prototype.setUTCSeconds.js: Exec error [es1/Date.prototype.setUTCSeconds.js]: "Date.now() called on object"
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed; function instance constructor failed
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: Exec error [es1/Object.js]: "cannot read property 'a' of undefined"
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: Exec error [es1/annex-b.Date.prototype.getYear.js]: "d.getYear is not a function"
+es1/annex-b.Date.prototype.setYear.js: Exec error [es1/annex-b.Date.prototype.setYear.js]: "d.setYear is not a function"
+es1/annex-b.Date.prototype.toGMTString.js: Exec error [es1/annex-b.Date.prototype.toGMTString.js]: "d.toGMTString is not a function"
+es1/annex-b.global.escape.js: Exec error [es1/annex-b.global.escape.js]: "[escape] is not defined"
+es1/annex-b.global.unescape.js: Exec error [es1/annex-b.global.unescape.js]: "[unescape] is not defined"
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: Exec error [es1/arguments.callee.js]: "arguments.callee is not a function"
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: Exec error [es1/asi.js]: "cannot read property '2' of undefined"
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: Exec error [es1/comments.js]: "Syntax error at line 13 col 3:\n/*/*/\n  ^"
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: NaN failed
+es1/conversions.ToNumber.js: ' 456 ' failed
+es1/conversions.ToObject.js: Object passthrough failed; null failed
+es1/conversions.ToString.js: -0 failed; 1e-7 failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: 123 != '0123'; 123.0 != '0123'
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: 5.5 % 2.5 failed; 7.2 % 3.0 failed; -5.5 % 2.5 sign failed
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: Exec error [es1/with.js]: "not implemented"
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: Exec error [es3/Array.prototype.pop.generic.js]: "splice is not a function"
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: push to object failed; push multiple to empty object failed; push no args to object failed
+es3/Array.prototype.push.js: push with no arguments failed; push to non-empty array failed
+es3/Array.prototype.shift.generic.js: Exec error [es3/Array.prototype.shift.generic.js]: "splice is not a function"
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: delete on object failed; insert on object failed; negative start on object failed
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: Exec error [es3/Array.prototype.toLocaleString.js]: "a1.toLocaleString is not a function"
+es3/Array.prototype.unshift.generic.js: Exec error [es3/Array.prototype.unshift.generic.js]: "cannot read property 'call' of undefined"
+es3/Array.prototype.unshift.js: Exec error [es3/Array.prototype.unshift.js]: "a1.unshift is not a function"
+es3/Array.prototype.unshift.returns-new-length.js: Exec error [es3/Array.prototype.unshift.returns-new-length.js]: "unshift is not a function"
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: failed
+es3/Error.prototype.name.js: failed
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: max() with 0 args failed; max() with NaN failed
+es3/Math.min.variadic.js: min() with 0 args failed; min() with NaN failed
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; NaN failed; zero failed; Infinity failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.26e+00'
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: NaN failed; large number precision failed; rounding failed
+es3/Number.prototype.toLocaleString.js: Exec error [es3/Number.prototype.toLocaleString.js]: "n1.toLocaleString is not a function"
+es3/Number.prototype.toPrecision.js: toPrecision(5) fixed notation failed; toPrecision() undefined arg failed; NaN failed; Infinity failed; small number exponential notation failed; zero failed; large number exponential notation failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: Exec error [es3/Object.prototype.toLocaleString.js]: "o1.toLocaleString is not a function"
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: input failed
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: $nn 10 captures failed; $nn reverse order failed
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: 'test'.split(/(?:)/, -1).length !== 4
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; no exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: crashed (signal 6); wrong exception for instanceof number; wrong exception for instanceof non-callable; no exception for in number; no exception for in null; wrong exception for new number; wrong exception for calling number; cesanta-v7: v7.c:18365: get_js_function_struct: Assertion `is_js_function(v)' failed.
+es3/global.URIError.js: constructor failed; Exec error [es3/global.URIError.js]: "[URIError] is not defined" at es3/global.URIError.js:14
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: Exec error [es3/global.decodeURIComponent.js]: "[decodeURIComponent] is not defined"
+es3/global.decodeURI.js: Exec error [es3/global.decodeURI.js]: "[decodeURI] is not defined"
+es3/global.encodeURIComponent.js: Exec error [es3/global.encodeURIComponent.js]: "[encodeURIComponent] is not defined"
+es3/global.encodeURI.js: Exec error [es3/global.encodeURI.js]: "[encodeURI] is not defined"
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: Exec error [es3/labelled.break.js]: "Syntax error at line 41 col 4:\n    break block;\n   ^"
+es3/labelled.continue.js: Exec error [es3/labelled.continue.js]: "not implemented"
+es3/labelled.statements.js: Exec error [es3/labelled.statements.js]: "not implemented"
+es3/literals.array.elisions.js: array with only elision failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: property name 1e2 failed; property name 2.5e1 failed
+es3/literals.object.hex.js: property name 0xff failed; property name 0x10 failed; property name 0xABC failed
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: complex disjunction failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: failed
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: spec example failed
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: \b word boundary failed
+es3/source.line-terminators.js: Exec error [es3/source.line-terminators.js]: "Syntax error at line 13 col 8:\n  return 1;  // return<U+2028>1;\n       ^"
+es3/source.whitespace.js: Exec error [es3/source.whitespace.js]: "Syntax error at line 12 col 3:\nvar w = 4;      // var<NBSP>x: \\y00A0 No-break "
+es3/source.whitespace.unicode.js: Exec error [es3/source.whitespace.unicode.js]: "Syntax error at line 8 col 3:\nvar x = 1;  // var<U+2000>x: \\u2000 EN QUAD\n  ^"
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: negative fromIndex failed
+es5/Array.prototype.lastIndexOf.js: negative fromIndex below zero failed
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; Exec error [es5/Array.prototype.reduceRight.js]: "arr.reduceRight is not a function"
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: Exec error [es5/Date.prototype.toISOString.js]: "Date.now() called on object"
+es5/Date.prototype.toJSON.js: invalid date does not return null; Exec error [es5/Date.prototype.toJSON.js]: "Date.now() called on object"
+es5/Function.prototype-not-enumerable.js: Exec error [es5/Function.prototype-not-enumerable.js]: "cannot read property 'propertyIsEnumerable' of undefined"
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: argument binding failed; length property incorrect; bound constructor failed; non-callable does not throw TypeError
+es5/JSON.js: OK
+es5/JSON.parse.js: invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError; escape sequences failed; Exec error [es5/JSON.parse.js]: "Syntax error at line 1 col 0:\n-123\n^"
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: stringify object failed; cyclic structure does not throw TypeError; NaN and Infinity not converted null; didn't call user-provided toJSON() method; escape sequences failed; undefined should return undefined
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: getter definition failed
+es5/Object.freeze.js: Object.freeze not a function; Exec error [es5/Object.freeze.js]: "Object.freeze is not a function"
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: basic property names failed
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: Exec error [es5/Object.isExtensible.js]: "Object.freeze is not a function"
+es5/Object.isFrozen.js: Exec error [es5/Object.isFrozen.js]: "Object.freeze is not a function"
+es5/Object.isSealed.js: Exec error [es5/Object.isSealed.js]: "Object.seal is not a function"
+es5/Object.keys.js: basic keys failed
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: Object.seal not a function; Exec error [es5/Object.seal.js]: "Object.seal is not a function"
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: ' '.trim() failed
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: Exec error [es5/debugger.js]: "unknown ast node 30"
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: Exec error [es5/global.undefined.immutable.js]: "unexpected ast node"
+es5/literals.object.getters.js: Exec error [es5/literals.object.getters.js]: "Syntax error at line 9 col 15:\nvar o1 = { get x(){ return 1; } };\n             "
+es5/literals.object.setters.js: Exec error [es5/literals.object.setters.js]: "Syntax error at line 10 col 15:\nvar o1 = { set x(v){ value = v; } };\n          "
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: failed
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: OK
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: Exec error [es5/strict.no-assignment-to-non-writable.js]: "Syntax error at line 29 col 11:\n    ({ get x(){ } }).x = 1;\n          ^"
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: OK

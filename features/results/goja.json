@@ -1,0 +1,9 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "bebf27c8b193c7d6e01a7551d85504d6503f4658bd3d7dbc07806e8479d38ce3",
+  "binary_size": 9439960,
+  "engine": "goja",
+  "repository": "https://github.com/dop251/goja.git",
+  "revision": "cf18d89f3cf612fca36ebf06c10cc70ad66c1ac8",
+  "revision_date": "2025-10-08"
+}

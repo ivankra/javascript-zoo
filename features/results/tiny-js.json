@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "d557c29d309d73087f452c1ea3ac7a0f211f14adc5c0259dc33884b426f1ea93",
+  "binary_size": 133936,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "tiny-js",
+  "repository": "https://github.com/gfwilliams/tiny-js.git",
+  "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
+  "revision_date": "2025-10-21"
+}

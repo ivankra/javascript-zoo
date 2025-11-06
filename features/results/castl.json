@@ -1,0 +1,9 @@
+{
+  "arch": "arm64",
+  "dist_size": 1101141,
+  "engine": "castl",
+  "repository": "https://github.com/PaulBernier/castl.git",
+  "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c",
+  "revision_date": "2017-03-22",
+  "version": "1.2.4"
+}

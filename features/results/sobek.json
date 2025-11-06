@@ -1,0 +1,9 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4",
+  "binary_size": 9437432,
+  "engine": "sobek",
+  "repository": "https://github.com/grafana/sobek.git",
+  "revision": "d05c9166857d16f22e11d50f60bb63fff688f101",
+  "revision_date": "2025-10-08"
+}

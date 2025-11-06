@@ -70,7 +70,7 @@ case "$engine_name" in
     engine_cmd+=(--script);;
   escargot|jerryscript|jsc|nashorn|xs|cesanta-v7)
     engine_cmd+=("$script_dir/var-console-log.js");;
-  hermes|mocha|spidermonkey_1*|kjs|js-interpreter|sablejs|sobek|tiny-js)
+  hermes|mocha|spidermonkey_1*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js)
     engine_cmd=("$script_dir/sed-helper.sh" "$sedfile" print "${engine_cmd[@]}");;
   nova)
     engine_cmd=("$script_dir/sed-helper.sh" "$sedfile" print "${engine_cmd[@]}" eval);;

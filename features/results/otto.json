@@ -1,0 +1,10 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "80bb9e30b1499bbaf346792782197b1356f4fac00c381d16f45e93fcb1d379fd",
+  "binary_size": 4751352,
+  "engine": "otto",
+  "repository": "https://github.com/robertkrimen/otto.git",
+  "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a",
+  "revision_date": "2025-06-13",
+  "version": "0.5.1-2-g3ca7298"
+}

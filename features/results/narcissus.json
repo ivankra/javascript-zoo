@@ -1,0 +1,8 @@
+{
+  "arch": "arm64",
+  "dist_size": 208294,
+  "engine": "narcissus",
+  "repository": "https://github.com/ivankra/narcissus.git",
+  "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
+  "revision_date": "2025-10-08"
+}

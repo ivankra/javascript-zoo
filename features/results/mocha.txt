@@ -1,0 +1,420 @@
+es1/Array.js: failed
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: failed
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: failed
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: failed
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: failed
+es1/Date.prototype.getUTCDay.js: failed
+es1/Date.prototype.getUTCFullYear.js: failed
+es1/Date.prototype.getUTCHours.js: failed
+es1/Date.prototype.getUTCMilliseconds.js: failed
+es1/Date.prototype.getUTCMinutes.js: failed
+es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCSeconds.js: failed
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: failed
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: failed
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: failed
+es1/Date.prototype.setUTCFullYear.js: failed
+es1/Date.prototype.setUTCHours.js: failed
+es1/Date.prototype.setUTCMilliseconds.js: failed
+es1/Date.prototype.setUTCMinutes.js: failed
+es1/Date.prototype.setUTCMonth.js: failed
+es1/Date.prototype.setUTCSeconds.js: failed
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: failed
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: failed
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: failed
+es1/String.generics.js: failed
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: failed
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: non-compliant, expected to return 100 instead of 2000
+es1/annex-b.Date.prototype.setYear.js: failed
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: failed
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: failed
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: failed
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: 123.456 | 0 != 123
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed
+es1/conversions.ToInt32.js: 2.9 failed; NaN failed; +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: failed
+es1/conversions.ToObject.js: null failed
+es1/conversions.ToString.js: NaN failed; Infinity failed; -Infinity failed; 1e-7 failed
+es1/conversions.ToUint32.js: 2.9 failed; NaN failed; +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed
+es1/conversions.js: failed
+es1/equals.js: failed
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: failed
+es1/global.NaN.js: failed
+es1/global.isFinite.js: failed
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: failed
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: 1/0 is NaN; -1/0 is NaN; 1/0 != 1e10000; -1/0 != -1e10000
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: Mocha: this.js, line 11: syntax error: Mocha: this.js, line 11: syntax error: Mocha: this.js, line 13: syntax error:
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: failed
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: Mocha: unary.plus.js, line 6: syntax error:
+es1/unary.plus.str.js: Mocha: unary.plus.str.js, line 6: syntax error:
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: failed
+es3/Array.prototype.pop.generic.js: failed
+es3/Array.prototype.pop.js: failed
+es3/Array.prototype.push.generic.js: failed
+es3/Array.prototype.push.js: failed
+es3/Array.prototype.shift.generic.js: failed
+es3/Array.prototype.shift.js: failed
+es3/Array.prototype.slice.generic.js: failed
+es3/Array.prototype.slice.js: failed
+es3/Array.prototype.splice.generic.js: failed
+es3/Array.prototype.splice.js: failed
+es3/Array.prototype.toLocaleString.js: failed
+es3/Array.prototype.unshift.generic.js: failed
+es3/Array.prototype.unshift.js: failed
+es3/Array.prototype.unshift.returns-new-length.js: Mocha: Array.prototype.unshift.returns-new-length.js, line 9: syntax error: Mocha: Array.prototype.unshift.returns-new-length.js, line 9: syntax error: Mocha: Array.prototype.unshift.returns-new-length.js, line 9: syntax error: Mocha: Array.prototype.unshift.returns-new-length.js, line 10: syntax er
+es3/Date.prototype.toDateString.js: failed
+es3/Date.prototype.toLocaleDateString.js: failed
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: failed
+es3/Date.prototype.toTimeString.js: failed
+es3/Error.js: Mocha: Error.js, line 10: Error is not defined
+es3/Error.prototype.constructor.js: Mocha: Error.prototype.constructor.js, line 6: Error is not defined
+es3/Error.prototype.message.js: Mocha: Error.prototype.message.js, line 6: Error is not defined
+es3/Error.prototype.name.js: Mocha: Error.prototype.name.js, line 6: Error is not defined
+es3/Error.prototype.toString.js: Mocha: Error.prototype.toString.js, line 6: Error is not defined
+es3/Function.prototype.apply.js: Mocha: Function.prototype.apply.js, line 12: syntax error: Mocha: Function.prototype.apply.js, line 12: syntax error: Mocha: Function.prototype.apply.js, line 23: syntax error: Mocha: Function.prototype.apply.js, line 23: syntax error: Mocha: Function.prototype.apply.js, line 35: syntax error: Mocha
+es3/Function.prototype.call.js: Mocha: Function.prototype.call.js, line 23: syntax error: Mocha: Function.prototype.call.js, line 23: syntax error: Mocha: Function.prototype.call.js, line 57: syntax error: Mocha: Function.prototype.call.js, line 57: syntax error:
+es3/Math.max.variadic.js: failed
+es3/Math.min.variadic.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: Mocha: Number.prototype.toExponential.edge-cases.js, line 14: syntax error: Mocha: Number.prototype.toExponential.edge-cases.js, line 26: syntax error: Mocha: Number.prototype.toExponential.edge-cases.js, line 33: syntax error: Mocha: Number.prototype.toExponential.edge-cases.js, line 35: syntax err
+es3/Number.prototype.toExponential.js: failed
+es3/Number.prototype.toExponential.rounding.js: Mocha: Number.prototype.toExponential.rounding.js, line 14: syntax error: Mocha: Number.prototype.toExponential.rounding.js, line 16: syntax error: Mocha: Number.prototype.toExponential.rounding.js, line 21: syntax error: Mocha: Number.prototype.toExponential.rounding.js, line 23: syntax error: Moch
+es3/Number.prototype.toExponential.throws-infinity.js: if (e instanceof RangeError) { if (e instanceof RangeError) { Mocha: Number.prototype.toExponential.throws-infinity.js, line 16: syntax error: if (e instanceof RangeError) { if (e instanceof RangeError) { Mocha: Number.prototype.toExponential.throws-infinity.js, line 30: syntax error: Mocha: Number.
+es3/Number.prototype.toFixed.js: failed
+es3/Number.prototype.toLocaleString.js: failed
+es3/Number.prototype.toPrecision.js: failed
+es3/Object.prototype.hasOwnProperty.js: failed
+es3/Object.prototype.isPrototypeOf.js: failed
+es3/Object.prototype.propertyIsEnumerable.js: failed
+es3/Object.prototype.toLocaleString.js: Mocha: Object.prototype.toLocaleString.js, line 26: syntax error: Mocha: Object.prototype.toLocaleString.js, line 26: syntax error: Mocha: Object.prototype.toLocaleString.js, line 26: syntax error:
+es3/RegExp.global.js: Mocha: RegExp.global.js, line 22: syntax error: Mocha: RegExp.global.js, line 29: syntax error: Mocha: RegExp.global.js, line 29: syntax error:
+es3/RegExp.ignoreCase.js: Mocha: RegExp.ignoreCase.js, line 22: syntax error: Mocha: RegExp.ignoreCase.js, line 29: syntax error: Mocha: RegExp.ignoreCase.js, line 29: syntax error:
+es3/RegExp.js: failed
+es3/RegExp.lastIndex.js: failed
+es3/RegExp.multiline.js: Mocha: RegExp.multiline.js, line 22: syntax error: Mocha: RegExp.multiline.js, line 29: syntax error: Mocha: RegExp.multiline.js, line 29: syntax error:
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: failed
+es3/RegExp.prototype.test.js: failed
+es3/RegExp.prototype.toString.js: failed
+es3/RegExp.source.js: failed
+es3/String.prototype.concat.generic.js: failed
+es3/String.prototype.concat.js: failed
+es3/String.prototype.localeCompare.js: failed
+es3/String.prototype.match.generic.js: Mocha: String.prototype.match.generic.js, line 7: syntax error: Mocha: String.prototype.match.generic.js, line 7: syntax error:
+es3/String.prototype.match.js: Mocha: String.prototype.match.js, line 9: syntax error: Mocha: String.prototype.match.js, line 9: syntax error: Mocha: String.prototype.match.js, line 9: syntax error: Mocha: String.prototype.match.js, line 17: syntax error: Mocha: String.prototype.match.js, line 25: syntax error: Mocha: String.prot
+es3/String.prototype.replace.capture.js: Mocha: String.prototype.replace.capture.js, line 9: syntax error: Mocha: String.prototype.replace.capture.js, line 9: syntax error: Mocha: String.prototype.replace.capture.js, line 17: syntax error: Mocha: String.prototype.replace.capture.js, line 17: syntax error: Mocha: String.prototype.replace.ca
+es3/String.prototype.replace.extra.js: Mocha: String.prototype.replace.extra.js, line 9: syntax error: Mocha: String.prototype.replace.extra.js, line 9: syntax error: Mocha: String.prototype.replace.extra.js, line 17: syntax error: Mocha: String.prototype.replace.extra.js, line 17: syntax error: Mocha: String.prototype.replace.extra.js, 
+es3/String.prototype.replace.generic.js: Mocha: String.prototype.replace.generic.js, line 9: syntax error: Mocha: String.prototype.replace.generic.js, line 9: syntax error: Mocha: String.prototype.replace.generic.js, line 9: syntax error: Mocha: String.prototype.replace.generic.js, line 45: syntax error: Mocha: String.prototype.replace.gen
+es3/String.prototype.replace.regex.js: Mocha: String.prototype.replace.regex.js, line 9: syntax error: Mocha: String.prototype.replace.regex.js, line 9: syntax error: Mocha: String.prototype.replace.regex.js, line 9: syntax error: Mocha: String.prototype.replace.regex.js, line 17: syntax error: Mocha: String.prototype.replace.regex.js, l
+es3/String.prototype.replace.str.js: failed
+es3/String.prototype.search.generic.js: Mocha: String.prototype.search.generic.js, line 7: syntax error: Mocha: String.prototype.search.generic.js, line 7: syntax error:
+es3/String.prototype.search.js: Mocha: String.prototype.search.js, line 9: syntax error: Mocha: String.prototype.search.js, line 9: syntax error: Mocha: String.prototype.search.js, line 17: syntax error: Mocha: String.prototype.search.js, line 17: syntax error: Mocha: String.prototype.search.js, line 17: syntax error: Mocha: Strin
+es3/String.prototype.search.str.js: failed
+es3/String.prototype.slice.generic.js: failed
+es3/String.prototype.slice.js: failed
+es3/String.prototype.split.bugs.js: Mocha: String.prototype.split.bugs.js, line 15: syntax error: Mocha: String.prototype.split.bugs.js, line 17: syntax error: Mocha: String.prototype.split.bugs.js, line 20: syntax error: Mocha: String.prototype.split.bugs.js, line 22: syntax error: Mocha: String.prototype.split.bugs.js, line 27: synt
+es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
+es3/String.prototype.split.regex.js: Mocha: String.prototype.split.regex.js, line 9: syntax error: Mocha: String.prototype.split.regex.js, line 9: syntax error: Mocha: String.prototype.split.regex.js, line 17: syntax error: Mocha: String.prototype.split.regex.js, line 17: syntax error: Mocha: String.prototype.split.regex.js, line 17: s
+es3/String.prototype.toLocaleLowerCase.js: failed
+es3/String.prototype.toLocaleUpperCase.js: failed
+es3/annex-b.String.prototype.substr.js: Mocha: annex-b.String.prototype.substr.js, line 20: syntax error: Mocha: annex-b.String.prototype.substr.js, line 22: syntax error: Mocha: annex-b.String.prototype.substr.js, line 27: syntax error: Mocha: annex-b.String.prototype.substr.js, line 29: syntax error: Mocha: annex-b.String.prototype.subs
+es3/do-while.js: Mocha: do-while.js, line 9: syntax error: Mocha: do-while.js, line 19: syntax error: Mocha: do-while.js, line 30: syntax error:
+es3/function-expressions.IIFE.js: Mocha: function-expressions.IIFE.js, line 8: syntax error: Mocha: function-expressions.IIFE.js, line 8: syntax error: Mocha: function-expressions.IIFE.js, line 8: syntax error: Mocha: function-expressions.IIFE.js, line 8: syntax error: Mocha: function-expressions.IIFE.js, line 8: syntax error: Mocha
+es3/function-expressions.js: Mocha: function-expressions.js, line 8: syntax error: Mocha: function-expressions.js, line 8: syntax error: Mocha: function-expressions.js, line 8: syntax error: Mocha: function-expressions.js, line 15: syntax error: Mocha: function-expressions.js, line 15: syntax error: Mocha: function-expressions.
+es3/global.EvalError.js: constructor failed; Mocha: global.EvalError.js, line 14: EvalError is not defined
+es3/global.RangeError.js: constructor failed; Mocha: global.RangeError.js, line 14: RangeError is not defined
+es3/global.RangeError.thrown.js: Mocha: global.RangeError.thrown.js, line 12: identifier is a reserved word: Mocha: global.RangeError.thrown.js, line 14: identifier is a reserved word: Mocha: global.RangeError.thrown.js, line 14: missing semicolon before statement: Mocha: global.RangeError.thrown.js, line 21: syntax error: Mocha: g
+es3/global.ReferenceError.js: constructor failed; Mocha: global.ReferenceError.js, line 14: ReferenceError is not defined
+es3/global.ReferenceError.thrown.js: Mocha: global.ReferenceError.thrown.js, line 10: identifier is a reserved word: Mocha: global.ReferenceError.thrown.js, line 12: identifier is a reserved word: Mocha: global.ReferenceError.thrown.js, line 12: missing semicolon before statement: Mocha: global.ReferenceError.thrown.js, line 19: syntax
+es3/global.SyntaxError.js: constructor failed; Mocha: global.SyntaxError.js, line 14: SyntaxError is not defined
+es3/global.SyntaxError.thrown.js: Mocha: global.SyntaxError.thrown.js, line 10: identifier is a reserved word: Mocha: global.SyntaxError.thrown.js, line 12: identifier is a reserved word: Mocha: global.SyntaxError.thrown.js, line 12: missing semicolon before statement: Mocha: global.SyntaxError.thrown.js, line 19: syntax error: Moch
+es3/global.TypeError.js: constructor failed; Mocha: global.TypeError.js, line 14: TypeError is not defined
+es3/global.TypeError.thrown.js: Mocha: global.TypeError.thrown.js, line 10: identifier is a reserved word: Mocha: global.TypeError.thrown.js, line 11: syntax error: Mocha: global.TypeError.thrown.js, line 11: syntax error: Mocha: global.TypeError.thrown.js, line 11: identifier is a reserved word: Mocha: global.TypeError.thrown.js,
+es3/global.URIError.js: constructor failed; Mocha: global.URIError.js, line 14: URIError is not defined
+es3/global.URIError.thrown.js: Mocha: global.URIError.thrown.js, line 13: identifier is a reserved word: Mocha: global.URIError.thrown.js, line 15: identifier is a reserved word: Mocha: global.URIError.thrown.js, line 15: missing semicolon before statement: Mocha: global.URIError.thrown.js, line 22: syntax error: Mocha: global.UR
+es3/global.decodeURIComponent.js: failed
+es3/global.decodeURI.js: failed
+es3/global.encodeURIComponent.js: failed
+es3/global.encodeURI.js: failed
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Mocha: identifiers.unicode.js, line 9: syntax error: Mocha: identifiers.unicode.js, line 10: syntax error: Mocha: identifiers.unicode.js, line 12: syntax error: Mocha: identifiers.unicode.js, line 34: syntax error: Mocha: identifiers.unicode.js, line 36: syntax error: $υ\u00E4r vs υär failed
+es3/instanceof.js: Mocha: instanceof.js, line 11: syntax error: Mocha: instanceof.js, line 18: syntax error: Mocha: instanceof.js, line 25: syntax error: Mocha: instanceof.js, line 29: syntax error: Mocha: instanceof.js, line 31: syntax error: Mocha: instanceof.js, line 35: syntax error: Mocha: instanceof.js, line 37:
+es3/in.js: Mocha: in.js, line 12: syntax error: Mocha: in.js, line 16: syntax error: Mocha: in.js, line 18: syntax error: Mocha: in.js, line 27: syntax error: Mocha: in.js, line 33: syntax error: Mocha: in.js, line 37: syntax error: Mocha: in.js, line 39: syntax error: Mocha: in.js, line 45: syntax error: leng
+es3/labelled.break.js: Mocha: labelled.break.js, line 42: syntax error: Mocha: labelled.break.js, line 44: syntax error:
+es3/labelled.continue.js: failed
+es3/labelled.statements.js: Mocha: labelled.statements.js, line 33: syntax error:
+es3/literals.array.elisions.js: Mocha: literals.array.elisions.js, line 8: syntax error: Mocha: literals.array.elisions.js, line 8: syntax error: Mocha: literals.array.elisions.js, line 15: syntax error: Mocha: literals.array.elisions.js, line 15: syntax error: Mocha: literals.array.elisions.js, line 15: syntax error: Mocha: liter
+es3/literals.array.js: Mocha: literals.array.js, line 8: syntax error: Mocha: literals.array.js, line 8: syntax error: Mocha: literals.array.js, line 15: syntax error: Mocha: literals.array.js, line 23: syntax error:
+es3/literals.array.trailing-comma.js: Mocha: literals.array.trailing-comma.js, line 9: syntax error: Mocha: literals.array.trailing-comma.js, line 9: syntax error: Mocha: literals.array.trailing-comma.js, line 16: syntax error: Mocha: literals.array.trailing-comma.js, line 16: syntax error: Mocha: literals.array.trailing-comma.js, line 
+es3/literals.object.decimal.js: Mocha: literals.object.decimal.js, line 9: syntax error: Mocha: literals.object.decimal.js, line 9: syntax error: Mocha: literals.object.decimal.js, line 16: syntax error: Mocha: literals.object.decimal.js, line 16: syntax error: Mocha: literals.object.decimal.js, line 23: syntax error: Mocha: liter
+es3/literals.object.hex.js: Mocha: literals.object.hex.js, line 9: syntax error: Mocha: literals.object.hex.js, line 9: syntax error: Mocha: literals.object.hex.js, line 16: syntax error: Mocha: literals.object.hex.js, line 16: syntax error: Mocha: literals.object.hex.js, line 23: syntax error: Mocha: literals.object.hex.js, l
+es3/literals.object.int.js: Mocha: literals.object.int.js, line 9: syntax error: Mocha: literals.object.int.js, line 9: syntax error: Mocha: literals.object.int.js, line 16: syntax error: Mocha: literals.object.int.js, line 16: syntax error: Mocha: literals.object.int.js, line 23: syntax error: Mocha: literals.object.int.js, l
+es3/literals.object.js: Mocha: literals.object.js, line 8: syntax error: Mocha: literals.object.js, line 8: syntax error: Mocha: literals.object.js, line 15: syntax error: Mocha: literals.object.js, line 15: syntax error: Mocha: literals.object.js, line 23: syntax error: Mocha: literals.object.js, line 23: syntax error: Mo
+es3/literals.object.str.js: Mocha: literals.object.str.js, line 8: syntax error: Mocha: literals.object.str.js, line 8: syntax error: Mocha: literals.object.str.js, line 15: syntax error: Mocha: literals.object.str.js, line 15: syntax error: Mocha: literals.object.str.js, line 22: syntax error: Mocha: literals.object.str.js, l
+es3/literals.object.unicode.js: Mocha: literals.object.unicode.js, line 9: syntax error: Mocha: literals.object.unicode.js, line 9: syntax error: Mocha: literals.object.unicode.js, line 9: syntax error: Mocha: literals.object.unicode.js, line 12: syntax error: Mocha: literals.object.unicode.js, line 16: syntax error: Mocha: litera
+es3/literals.regex.ambiguous.js: Mocha: literals.regex.ambiguous.js, line 18: syntax error: Mocha: literals.regex.ambiguous.js, line 18: syntax error: Mocha: literals.regex.ambiguous.js, line 19: syntax error: Mocha: literals.regex.ambiguous.js, line 20: syntax error: Mocha: literals.regex.ambiguous.js, line 27: syntax error: Mocha
+es3/literals.regex.empty.js: Mocha: literals.regex.empty.js, line 8: syntax error: Mocha: literals.regex.empty.js, line 8: syntax error: Mocha: literals.regex.empty.js, line 8: syntax error: Mocha: literals.regex.empty.js, line 8: syntax error: Mocha: literals.regex.empty.js, line 8: syntax error:
+es3/literals.regex.js: Mocha: literals.regex.js, line 6: syntax error: Mocha: literals.regex.js, line 6: syntax error: Mocha: literals.regex.js, line 8: syntax error: Mocha: literals.regex.js, line 10: syntax error:
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: Mocha: nested-functions.eval.js, line 10: syntax error: Mocha: nested-functions.eval.js, line 12: syntax error: Mocha: nested-functions.eval.js, line 14: syntax error:
+es3/nested-functions.js: Mocha: nested-functions.js, line 10: syntax error: Mocha: nested-functions.js, line 12: syntax error: Mocha: nested-functions.js, line 14: syntax error: Mocha: nested-functions.js, line 22: syntax error: Mocha: nested-functions.js, line 24: syntax error: Mocha: nested-functions.js, line 26: syntax e
+es3/regex.backref.js: Mocha: regex.backref.js, line 9: syntax error: Mocha: regex.backref.js, line 9: syntax error: Mocha: regex.backref.js, line 9: syntax error: Mocha: regex.backref.js, line 16: syntax error: Mocha: regex.backref.js, line 16: syntax error: Mocha: regex.backref.js, line 26: syntax error: Mocha: regex.ba
+es3/regex.begin.js: Mocha: regex.begin.js, line 9: syntax error: Mocha: regex.begin.js, line 9: syntax error: Mocha: regex.begin.js, line 9: syntax error: Mocha: regex.begin.js, line 11: syntax error: Mocha: regex.begin.js, line 15: syntax error: Mocha: regex.begin.js, line 15: syntax error: Mocha: regex.begin.js, line
+es3/regex.bracket.esc-b.js: Mocha: regex.bracket.esc-b.js, line 7: syntax error: Mocha: regex.bracket.esc-b.js, line 7: syntax error: Mocha: regex.bracket.esc-b.js, line 7: syntax error: Mocha: regex.bracket.esc-b.js, line 7: syntax error: Mocha: regex.bracket.esc-b.js, line 9: syntax error:
+es3/regex.bracket.js: Mocha: regex.bracket.js, line 10: syntax error: Mocha: regex.bracket.js, line 10: syntax error: Mocha: regex.bracket.js, line 10: syntax error: Mocha: regex.bracket.js, line 10: syntax error: Mocha: regex.bracket.js, line 17: syntax error: Mocha: regex.bracket.js, line 17: syntax error: Mocha: regex
+es3/regex.bracket.ranges.js: Mocha: regex.bracket.ranges.js, line 10: syntax error: Mocha: regex.bracket.ranges.js, line 10: syntax error: Mocha: regex.bracket.ranges.js, line 10: syntax error: Mocha: regex.bracket.ranges.js, line 10: syntax error: Mocha: regex.bracket.ranges.js, line 12: syntax error: Mocha: regex.bracket.rang
+es3/regex.class.esc-d.js: Mocha: regex.class.esc-d.js, line 11: syntax error: Mocha: regex.class.esc-d.js, line 11: syntax error: Mocha: regex.class.esc-d.js, line 13: syntax error: Mocha: regex.class.esc-d.js, line 17: syntax error: Mocha: regex.class.esc-d.js, line 17: syntax error: Mocha: regex.class.esc-d.js, line 17: sy
+es3/regex.class.esc-s.js: Mocha: regex.class.esc-s.js, line 11: syntax error: Mocha: regex.class.esc-s.js, line 11: syntax error: Mocha: regex.class.esc-s.js, line 13: syntax error: Mocha: regex.class.esc-s.js, line 17: syntax error: Mocha: regex.class.esc-s.js, line 17: syntax error: Mocha: regex.class.esc-s.js, line 17: sy
+es3/regex.class.esc-w.js: Mocha: regex.class.esc-w.js, line 11: syntax error: Mocha: regex.class.esc-w.js, line 11: syntax error: Mocha: regex.class.esc-w.js, line 13: syntax error: Mocha: regex.class.esc-w.js, line 17: syntax error: Mocha: regex.class.esc-w.js, line 17: syntax error: Mocha: regex.class.esc-w.js, line 17: sy
+es3/regex.disjunction.js: Mocha: regex.disjunction.js, line 8: syntax error: Mocha: regex.disjunction.js, line 8: syntax error: Mocha: regex.disjunction.js, line 15: syntax error: Mocha: regex.disjunction.js, line 15: syntax error:
+es3/regex.dot.js: Mocha: regex.dot.js, line 9: syntax error: Mocha: regex.dot.js, line 9: syntax error: Mocha: regex.dot.js, line 16: syntax error: Mocha: regex.dot.js, line 16: syntax error: Mocha: regex.dot.js, line 23: syntax error: Mocha: regex.dot.js, line 23: syntax error: Mocha: regex.dot.js, line 23: syntax e
+es3/regex.end.js: Mocha: regex.end.js, line 9: syntax error: Mocha: regex.end.js, line 9: syntax error: Mocha: regex.end.js, line 11: syntax error: Mocha: regex.end.js, line 15: syntax error: Mocha: regex.end.js, line 15: syntax error: Mocha: regex.end.js, line 17: syntax error: $ not at end failed
+es3/regex.escape.control.js: Mocha: regex.escape.control.js, line 9: syntax error: Mocha: regex.escape.control.js, line 9: syntax error: Mocha: regex.escape.control.js, line 11: syntax error: Mocha: regex.escape.control.js, line 15: syntax error: Mocha: regex.escape.control.js, line 15: syntax error: Mocha: regex.escape.control
+es3/regex.escape.hex.js: Mocha: regex.escape.hex.js, line 9: syntax error: Mocha: regex.escape.hex.js, line 9: syntax error: Mocha: regex.escape.hex.js, line 16: syntax error: Mocha: regex.escape.hex.js, line 16: syntax error:
+es3/regex.escape.js: Mocha: regex.escape.js, line 10: syntax error: Mocha: regex.escape.js, line 10: syntax error: Mocha: regex.escape.js, line 17: syntax error: Mocha: regex.escape.js, line 17: syntax error: Mocha: regex.escape.js, line 24: syntax error: Mocha: regex.escape.js, line 24: syntax error: Mocha: regex.escap
+es3/regex.escape.nul.js: Mocha: regex.escape.nul.js, line 7: syntax error: Mocha: regex.escape.nul.js, line 7: syntax error:
+es3/regex.escape.unicode.js: Mocha: regex.escape.unicode.js, line 9: syntax error: Mocha: regex.escape.unicode.js, line 9: syntax error: Mocha: regex.escape.unicode.js, line 16: syntax error: Mocha: regex.escape.unicode.js, line 16: syntax error:
+es3/regex.flag.global.js: Mocha: regex.flag.global.js, line 9: syntax error: Mocha: regex.flag.global.js, line 9: syntax error: Mocha: regex.flag.global.js, line 16: syntax error: Mocha: regex.flag.global.js, line 23: syntax error: multiple matches failed
+es3/regex.flag.ignorecase.js: Mocha: regex.flag.ignorecase.js, line 9: syntax error: Mocha: regex.flag.ignorecase.js, line 16: syntax error: Mocha: regex.flag.ignorecase.js, line 16: syntax error: Mocha: regex.flag.ignorecase.js, line 23: syntax error: Mocha: regex.flag.ignorecase.js, line 23: syntax error: Mocha: regex.flag.ign
+es3/regex.flag.multiline.js: Mocha: regex.flag.multiline.js, line 10: syntax error: Mocha: regex.flag.multiline.js, line 10: syntax error: Mocha: regex.flag.multiline.js, line 17: syntax error: Mocha: regex.flag.multiline.js, line 17: syntax error: Mocha: regex.flag.multiline.js, line 17: syntax error: Mocha: regex.flag.multili
+es3/regex.group.js: Mocha: regex.group.js, line 9: syntax error: Mocha: regex.group.js, line 9: syntax error: Mocha: regex.group.js, line 16: syntax error: Mocha: regex.group.js, line 16: syntax error: Mocha: regex.group.js, line 16: syntax error: Mocha: regex.group.js, line 23: syntax error: Mocha: regex.group.js, lin
+es3/regex.lookahead.js: Mocha: regex.lookahead.js, line 9: syntax error: Mocha: regex.lookahead.js, line 9: syntax error: Mocha: regex.lookahead.js, line 9: syntax error: Mocha: regex.lookahead.js, line 9: syntax error: Mocha: regex.lookahead.js, line 9: syntax error: Mocha: regex.lookahead.js, line 9: syntax error: Mocha:
+es3/regex.negative-lookahead.js: Mocha: regex.negative-lookahead.js, line 9: syntax error: Mocha: regex.negative-lookahead.js, line 9: syntax error: Mocha: regex.negative-lookahead.js, line 9: syntax error: Mocha: regex.negative-lookahead.js, line 9: syntax error: Mocha: regex.negative-lookahead.js, line 9: syntax error: Mocha: reg
+es3/regex.non-capturing-group.js: Mocha: regex.non-capturing-group.js, line 9: syntax error: Mocha: regex.non-capturing-group.js, line 9: syntax error: Mocha: regex.non-capturing-group.js, line 9: syntax error: Mocha: regex.non-capturing-group.js, line 9: syntax error: Mocha: regex.non-capturing-group.js, line 9: syntax error: Mocha
+es3/regex.quantifier.exact.js: Mocha: regex.quantifier.exact.js, line 9: syntax error: Mocha: regex.quantifier.exact.js, line 9: syntax error: Mocha: regex.quantifier.exact.js, line 9: syntax error: Mocha: regex.quantifier.exact.js, line 9: syntax error: Mocha: regex.quantifier.exact.js, line 16: syntax error: Mocha: regex.quanti
+es3/regex.quantifier.maybe.js: Mocha: regex.quantifier.maybe.js, line 9: syntax error: Mocha: regex.quantifier.maybe.js, line 9: syntax error: Mocha: regex.quantifier.maybe.js, line 9: syntax error: Mocha: regex.quantifier.maybe.js, line 16: syntax error: Mocha: regex.quantifier.maybe.js, line 16: syntax error: Mocha: regex.quant
+es3/regex.quantifier.min.js: Mocha: regex.quantifier.min.js, line 9: syntax error: Mocha: regex.quantifier.min.js, line 9: syntax error: Mocha: regex.quantifier.min.js, line 9: syntax error: Mocha: regex.quantifier.min.js, line 9: syntax error: Mocha: regex.quantifier.min.js, line 16: syntax error: Mocha: regex.quantifier.min.j
+es3/regex.quantifier.plus.js: Mocha: regex.quantifier.plus.js, line 9: syntax error: Mocha: regex.quantifier.plus.js, line 9: syntax error: Mocha: regex.quantifier.plus.js, line 9: syntax error: Mocha: regex.quantifier.plus.js, line 16: syntax error: Mocha: regex.quantifier.plus.js, line 16: syntax error: Mocha: regex.quantifier
+es3/regex.quantifier.range.js: Mocha: regex.quantifier.range.js, line 9: syntax error: Mocha: regex.quantifier.range.js, line 9: syntax error: Mocha: regex.quantifier.range.js, line 9: syntax error: Mocha: regex.quantifier.range.js, line 9: syntax error: Mocha: regex.quantifier.range.js, line 16: syntax error: Mocha: regex.quanti
+es3/regex.quantifier.star.js: Mocha: regex.quantifier.star.js, line 9: syntax error: Mocha: regex.quantifier.star.js, line 9: syntax error: Mocha: regex.quantifier.star.js, line 9: syntax error: Mocha: regex.quantifier.star.js, line 16: syntax error: Mocha: regex.quantifier.star.js, line 16: syntax error: Mocha: regex.quantifier
+es3/regex.word-boundary.js: Mocha: regex.word-boundary.js, line 10: syntax error: Mocha: regex.word-boundary.js, line 10: syntax error: Mocha: regex.word-boundary.js, line 10: syntax error: Mocha: regex.word-boundary.js, line 12: syntax error: Mocha: regex.word-boundary.js, line 16: syntax error: Mocha: regex.word-boundary.js,
+es3/source.line-terminators.js: Mocha: source.line-terminators.js, line 12: syntax error: Mocha: source.line-terminators.js, line 12: syntax error: Mocha: source.line-terminators.js, line 15: syntax error: Mocha: source.line-terminators.js, line 16: syntax error: Mocha: source.line-terminators.js, line 18: syntax error: Mocha: sou
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: Mocha: strict-equals.js, line 9: syntax error: Mocha: strict-equals.js, line 11: syntax error: Mocha: strict-equals.js, line 15: syntax error: Mocha: strict-equals.js, line 17: syntax error: Mocha: strict-equals.js, line 21: syntax error: Mocha: strict-equals.js, line 23: syntax error: Mocha: strict
+es3/switch.js: Mocha: switch.js, line 10: syntax error: Mocha: switch.js, line 11: syntax error: Mocha: switch.js, line 14: syntax error: Mocha: switch.js, line 17: syntax error: Mocha: switch.js, line 20: syntax error: Mocha: switch.js, line 29: syntax error: Mocha: switch.js, line 30: syntax error: Mocha: switch
+es3/try-catch-finally.js: Mocha: try-catch-finally.js, line 23: syntax error: Mocha: try-catch-finally.js, line 25: syntax error: Mocha: try-catch-finally.js, line 39: syntax error: Mocha: try-catch-finally.js, line 42: syntax error: Mocha: try-catch-finally.js, line 44: syntax error: Mocha: try-catch-finally.js, line 58: sy
+es3/try-catch-throw.js: Mocha: try-catch-throw.js, line 12: syntax error: Mocha: try-catch-throw.js, line 14: syntax error: throw "error"; Mocha: try-catch-throw.js, line 24: syntax error: Mocha: try-catch-throw.js, line 26: syntax error: Mocha: try-catch-throw.js, line 38: syntax error: Mocha: try-catch-throw.js, line 51:
+es5/Array.isArray.js: Mocha: Array.isArray.js, line 10: syntax error: Mocha: Array.isArray.js, line 12: syntax error: Mocha: Array.isArray.js, line 16: syntax error: Mocha: Array.isArray.js, line 16: syntax error: Mocha: Array.isArray.js, line 16: syntax error: Mocha: Array.isArray.js, line 16: syntax error: Mocha: Array
+es5/Array.prototype.every.js: Mocha: Array.prototype.every.js, line 10: syntax error: Mocha: Array.prototype.every.js, line 12: syntax error: Mocha: Array.prototype.every.js, line 16: syntax error: Mocha: Array.prototype.every.js, line 17: syntax error: Mocha: Array.prototype.every.js, line 17: syntax error: Mocha: Array.prototy
+es5/Array.prototype.filter.js: Mocha: Array.prototype.filter.js, line 10: syntax error: Mocha: Array.prototype.filter.js, line 12: syntax error: Mocha: Array.prototype.filter.js, line 16: syntax error: Mocha: Array.prototype.filter.js, line 17: syntax error: Mocha: Array.prototype.filter.js, line 17: syntax error: Mocha: Array.pr
+es5/Array.prototype.forEach.js: Mocha: Array.prototype.forEach.js, line 10: syntax error: Mocha: Array.prototype.forEach.js, line 12: syntax error: Mocha: Array.prototype.forEach.js, line 17: syntax error: Mocha: Array.prototype.forEach.js, line 18: syntax error: Mocha: Array.prototype.forEach.js, line 18: syntax error: Mocha: Arr
+es5/Array.prototype.indexOf.js: Mocha: Array.prototype.indexOf.js, line 10: syntax error: Mocha: Array.prototype.indexOf.js, line 12: syntax error: Mocha: Array.prototype.indexOf.js, line 16: syntax error: Mocha: Array.prototype.indexOf.js, line 17: syntax error: Mocha: Array.prototype.indexOf.js, line 19: syntax error: Mocha: Arr
+es5/Array.prototype.lastIndexOf.js: Mocha: Array.prototype.lastIndexOf.js, line 10: syntax error: Mocha: Array.prototype.lastIndexOf.js, line 12: syntax error: Mocha: Array.prototype.lastIndexOf.js, line 16: syntax error: Mocha: Array.prototype.lastIndexOf.js, line 17: syntax error: Mocha: Array.prototype.lastIndexOf.js, line 19: synt
+es5/Array.prototype.map.js: Mocha: Array.prototype.map.js, line 10: syntax error: Mocha: Array.prototype.map.js, line 12: syntax error: Mocha: Array.prototype.map.js, line 16: syntax error: Mocha: Array.prototype.map.js, line 17: syntax error: Mocha: Array.prototype.map.js, line 17: syntax error: Mocha: Array.prototype.map.js,
+es5/Array.prototype.reduceRight.js: Mocha: Array.prototype.reduceRight.js, line 10: syntax error: Mocha: Array.prototype.reduceRight.js, line 12: syntax error: Mocha: Array.prototype.reduceRight.js, line 16: syntax error: Mocha: Array.prototype.reduceRight.js, line 17: syntax error: Mocha: Array.prototype.reduceRight.js, line 17: synt
+es5/Array.prototype.reduce.js: Mocha: Array.prototype.reduce.js, line 10: syntax error: Mocha: Array.prototype.reduce.js, line 12: syntax error: Mocha: Array.prototype.reduce.js, line 16: syntax error: Mocha: Array.prototype.reduce.js, line 17: syntax error: Mocha: Array.prototype.reduce.js, line 17: syntax error: Mocha: Array.pr
+es5/Array.prototype.some.js: Mocha: Array.prototype.some.js, line 10: syntax error: Mocha: Array.prototype.some.js, line 12: syntax error: Mocha: Array.prototype.some.js, line 16: syntax error: Mocha: Array.prototype.some.js, line 17: syntax error: Mocha: Array.prototype.some.js, line 17: syntax error: Mocha: Array.prototype.so
+es5/Array.prototype.sort.TypeError.js: Mocha: Array.prototype.sort.TypeError.js, line 8: syntax error: Mocha: Array.prototype.sort.TypeError.js, line 8: missing semicolon before statement: Mocha: Array.prototype.sort.TypeError.js, line 10: identifier is a reserved word: Mocha: Array.prototype.sort.TypeError.js, line 12: identifier is a r
+es5/Array.prototype.sort.undefined-comparefn.js: Mocha: Array.prototype.sort.undefined-comparefn.js, line 9: syntax error: Mocha: Array.prototype.sort.undefined-comparefn.js, line 11: syntax error: Mocha: Array.prototype.sort.undefined-comparefn.js, line 11: syntax error: Mocha: Array.prototype.sort.undefined-comparefn.js, line 11: syntax error: M
+es5/Date.now.js: Mocha: Date.now.js, line 10: syntax error: Mocha: Date.now.js, line 12: syntax error: Mocha: Date.now.js, line 17: syntax error: Mocha: Date.now.js, line 19: syntax error: Mocha: Date.now.js, line 38: syntax error: Mocha: Date.now.js, line 40: syntax error:
+es5/Date.prototype.toISOString.js: Mocha: Date.prototype.toISOString.js, line 10: syntax error: Mocha: Date.prototype.toISOString.js, line 12: syntax error: Mocha: Date.prototype.toISOString.js, line 18: syntax error: Mocha: Date.prototype.toISOString.js, line 18: syntax error: Mocha: Date.prototype.toISOString.js, line 18: syntax er
+es5/Date.prototype.toJSON.js: Mocha: Date.prototype.toJSON.js, line 10: syntax error: Mocha: Date.prototype.toJSON.js, line 12: syntax error: Mocha: Date.prototype.toJSON.js, line 17: syntax error: Mocha: Date.prototype.toJSON.js, line 19: syntax error: Mocha: Date.prototype.toJSON.js, line 25: syntax error: Mocha: Date.prototyp
+es5/Function.prototype-not-enumerable.js: Mocha: Function.prototype-not-enumerable.js, line 17: syntax error: Mocha: Function.prototype-not-enumerable.js, line 17: syntax error: Mocha: Function.prototype-not-enumerable.js, line 25: syntax error: Mocha: Function.prototype-not-enumerable.js, line 25: syntax error: Mocha: Function.prototype-no
+es5/Function.prototype.apply.array-like.js: Mocha: Function.prototype.apply.array-like.js, line 15: syntax error: Mocha: Function.prototype.apply.array-like.js, line 15: syntax error: Mocha: Function.prototype.apply.array-like.js, line 15: syntax error: Mocha: Function.prototype.apply.array-like.js, line 15: syntax error: Mocha: Function.prot
+es5/Function.prototype.bind.js: Mocha: Function.prototype.bind.js, line 10: syntax error: Mocha: Function.prototype.bind.js, line 12: syntax error: Mocha: Function.prototype.bind.js, line 16: syntax error: Mocha: Function.prototype.bind.js, line 16: syntax error: Mocha: Function.prototype.bind.js, line 19: syntax error: Mocha: Fun
+es5/JSON.js: Mocha: JSON.js, line 8: syntax error: Mocha: JSON.js, line 10: syntax error: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: Mocha: JSON.parse.js, line 7: syntax error: Mocha: JSON.parse.js, line 9: syntax error: Mocha: JSON.parse.js, line 13: syntax error: Mocha: JSON.parse.js, line 13: syntax error: Mocha: JSON.parse.js, line 13: syntax error: Mocha: JSON.parse.js, line 15: syntax error: Mocha: JSON.parse.js, line 20: s
+es5/JSON.parse.reviver.js: Mocha: JSON.parse.reviver.js, line 7: syntax error: Mocha: JSON.parse.reviver.js, line 9: syntax error: Mocha: JSON.parse.reviver.js, line 12: syntax error: Mocha: JSON.parse.reviver.js, line 13: syntax error: Mocha: JSON.parse.reviver.js, line 15: syntax error: Mocha: JSON.parse.reviver.js, line 17
+es5/JSON.stringify.js: Mocha: JSON.stringify.js, line 7: syntax error: Mocha: JSON.stringify.js, line 9: syntax error: Mocha: JSON.stringify.js, line 12: syntax error: Mocha: JSON.stringify.js, line 12: syntax error: Mocha: JSON.stringify.js, line 12: syntax error: Mocha: JSON.stringify.js, line 13: syntax error: Mocha: J
+es5/JSON.stringify.replacer.js: Mocha: JSON.stringify.replacer.js, line 7: syntax error: Mocha: JSON.stringify.replacer.js, line 9: syntax error: Mocha: JSON.stringify.replacer.js, line 12: syntax error: Mocha: JSON.stringify.replacer.js, line 12: syntax error: Mocha: JSON.stringify.replacer.js, line 12: syntax error: Mocha: JSON.
+es5/JSON.stringify.space.js: Mocha: JSON.stringify.space.js, line 7: syntax error: Mocha: JSON.stringify.space.js, line 9: syntax error: Mocha: JSON.stringify.space.js, line 12: syntax error: Mocha: JSON.stringify.space.js, line 12: syntax error: Mocha: JSON.stringify.space.js, line 12: syntax error: Mocha: JSON.stringify.space
+es5/Object.create.js: Mocha: Object.create.js, line 10: syntax error: Mocha: Object.create.js, line 12: syntax error: Mocha: Object.create.js, line 16: syntax error: Mocha: Object.create.js, line 16: syntax error: Mocha: Object.create.js, line 18: syntax error: Mocha: Object.create.js, line 20: syntax error: Mocha: Objec
+es5/Object.defineProperties.js: Mocha: Object.defineProperties.js, line 10: syntax error: Mocha: Object.defineProperties.js, line 12: syntax error: Mocha: Object.defineProperties.js, line 16: syntax error: Mocha: Object.defineProperties.js, line 16: syntax error: Mocha: Object.defineProperties.js, line 17: syntax error: Mocha: Obj
+es5/Object.defineProperty.js: Mocha: Object.defineProperty.js, line 10: syntax error: Mocha: Object.defineProperty.js, line 12: syntax error: Mocha: Object.defineProperty.js, line 16: syntax error: Mocha: Object.defineProperty.js, line 16: syntax error: Mocha: Object.defineProperty.js, line 17: syntax error: Mocha: Object.define
+es5/Object.freeze.js: Mocha: Object.freeze.js, line 10: syntax error: Mocha: Object.freeze.js, line 12: syntax error: Mocha: Object.freeze.js, line 16: syntax error: Mocha: Object.freeze.js, line 16: syntax error: Mocha: Object.freeze.js, line 19: syntax error: Mocha: Object.freeze.js, line 21: syntax error: Mocha: Objec
+es5/Object.getOwnPropertyDescriptor.js: Mocha: Object.getOwnPropertyDescriptor.js, line 10: syntax error: Mocha: Object.getOwnPropertyDescriptor.js, line 12: syntax error: Mocha: Object.getOwnPropertyDescriptor.js, line 16: syntax error: Mocha: Object.getOwnPropertyDescriptor.js, line 16: syntax error: Mocha: Object.getOwnPropertyDescript
+es5/Object.getOwnPropertyNames.js: Mocha: Object.getOwnPropertyNames.js, line 10: syntax error: Mocha: Object.getOwnPropertyNames.js, line 12: syntax error: Mocha: Object.getOwnPropertyNames.js, line 16: syntax error: Mocha: Object.getOwnPropertyNames.js, line 16: syntax error: Mocha: Object.getOwnPropertyNames.js, line 18: syntax er
+es5/Object.getPrototypeOf.js: Mocha: Object.getPrototypeOf.js, line 10: syntax error: Mocha: Object.getPrototypeOf.js, line 12: syntax error: Mocha: Object.getPrototypeOf.js, line 16: syntax error: Mocha: Object.getPrototypeOf.js, line 16: syntax error: Mocha: Object.getPrototypeOf.js, line 18: syntax error: Mocha: Object.getPro
+es5/Object.isExtensible.js: Mocha: Object.isExtensible.js, line 10: syntax error: Mocha: Object.isExtensible.js, line 12: syntax error: Mocha: Object.isExtensible.js, line 16: syntax error: Mocha: Object.isExtensible.js, line 16: syntax error: Mocha: Object.isExtensible.js, line 17: syntax error: Mocha: Object.isExtensible.js,
+es5/Object.isFrozen.js: Mocha: Object.isFrozen.js, line 10: syntax error: Mocha: Object.isFrozen.js, line 12: syntax error: Mocha: Object.isFrozen.js, line 16: syntax error: Mocha: Object.isFrozen.js, line 16: syntax error: Mocha: Object.isFrozen.js, line 17: syntax error: Mocha: Object.isFrozen.js, line 19: syntax error: 
+es5/Object.isSealed.js: Mocha: Object.isSealed.js, line 10: syntax error: Mocha: Object.isSealed.js, line 12: syntax error: Mocha: Object.isSealed.js, line 16: syntax error: Mocha: Object.isSealed.js, line 16: syntax error: Mocha: Object.isSealed.js, line 17: syntax error: Mocha: Object.isSealed.js, line 19: syntax error: 
+es5/Object.keys.js: Mocha: Object.keys.js, line 10: syntax error: Mocha: Object.keys.js, line 12: syntax error: Mocha: Object.keys.js, line 16: syntax error: Mocha: Object.keys.js, line 16: syntax error: Mocha: Object.keys.js, line 18: syntax error: Mocha: Object.keys.js, line 18: syntax error: Mocha: Object.keys.js, l
+es5/Object.preventExtensions.js: Mocha: Object.preventExtensions.js, line 10: syntax error: Mocha: Object.preventExtensions.js, line 12: syntax error: Mocha: Object.preventExtensions.js, line 16: syntax error: Mocha: Object.preventExtensions.js, line 16: syntax error: Mocha: Object.preventExtensions.js, line 19: syntax error: Mocha
+es5/Object.property-shadowing.js: Mocha: Object.property-shadowing.js, line 13: syntax error: Mocha: Object.property-shadowing.js, line 16: syntax error: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: Mocha: Object.seal.js, line 10: syntax error: Mocha: Object.seal.js, line 12: syntax error: Mocha: Object.seal.js, line 16: syntax error: Mocha: Object.seal.js, line 16: syntax error: Mocha: Object.seal.js, line 19: syntax error: Mocha: Object.seal.js, line 21: syntax error: Mocha: Object.seal.js, l
+es5/String.indexing.js: Mocha: String.indexing.js, line 10: syntax error: Mocha: String.indexing.js, line 12: syntax error: Mocha: String.indexing.js, line 17: syntax error: Mocha: String.indexing.js, line 17: syntax error: Mocha: String.indexing.js, line 19: syntax error: Mocha: String.indexing.js, line 23: syntax error: 
+es5/String.prototype.trim.js: Mocha: String.prototype.trim.js, line 10: syntax error: Mocha: String.prototype.trim.js, line 12: syntax error: Mocha: String.prototype.trim.js, line 17: syntax error: Mocha: String.prototype.trim.js, line 19: syntax error: Mocha: String.prototype.trim.js, line 24: syntax error: Mocha: String.protot
+es5/arguments.toStringTag.js: Mocha: arguments.toStringTag.js, line 10: syntax error: Mocha: arguments.toStringTag.js, line 10: syntax error: Mocha: arguments.toStringTag.js, line 11: syntax error: Mocha: arguments.toStringTag.js, line 12: syntax error: Mocha: arguments.toStringTag.js, line 12: syntax error: Mocha: arguments.toS
+es5/debugger.js: failed
+es5/global.Infinity.immutable.js: Mocha: global.Infinity.immutable.js, line 13: syntax error: Mocha: global.Infinity.immutable.js, line 15: syntax error: Mocha: global.Infinity.immutable.js, line 27: syntax error: Mocha: global.Infinity.immutable.js, line 29: syntax error:
+es5/global.NaN.immutable.js: Mocha: global.NaN.immutable.js, line 13: syntax error: Mocha: global.NaN.immutable.js, line 15: syntax error: Mocha: global.NaN.immutable.js, line 19: syntax error: Mocha: global.NaN.immutable.js, line 21: syntax error: Mocha: global.NaN.immutable.js, line 27: syntax error: Mocha: global.NaN.immutab
+es5/global.parseInt.no-octal.js: Mocha: global.parseInt.no-octal.js, line 13: syntax error: Mocha: global.parseInt.no-octal.js, line 15: syntax error: Mocha: global.parseInt.no-octal.js, line 19: syntax error: Mocha: global.parseInt.no-octal.js, line 21: syntax error: Mocha: global.parseInt.no-octal.js, line 25: syntax error: Mocha
+es5/global.undefined.immutable.js: Mocha: global.undefined.immutable.js, line 14: syntax error: Mocha: global.undefined.immutable.js, line 16: syntax error: Mocha: global.undefined.immutable.js, line 22: syntax error: Mocha: global.undefined.immutable.js, line 24: syntax error:
+es5/literals.object.getters.js: Mocha: literals.object.getters.js, line 9: syntax error: Mocha: literals.object.getters.js, line 9: syntax error: Mocha: literals.object.getters.js, line 9: syntax error: Mocha: literals.object.getters.js, line 9: syntax error: Mocha: literals.object.getters.js, line 10: syntax error: Mocha: literal
+es5/literals.object.setters.js: Mocha: literals.object.setters.js, line 10: syntax error: Mocha: literals.object.setters.js, line 10: syntax error: Mocha: literals.object.setters.js, line 10: syntax error: Mocha: literals.object.setters.js, line 12: syntax error: Mocha: literals.object.setters.js, line 14: syntax error: Mocha: lit
+es5/literals.object.trailing-comma.js: Mocha: literals.object.trailing-comma.js, line 9: syntax error: Mocha: literals.object.trailing-comma.js, line 9: syntax error: Mocha: literals.object.trailing-comma.js, line 10: syntax error: Mocha: literals.object.trailing-comma.js, line 12: syntax error: Mocha: literals.object.trailing-comma.js, 
+es5/source.keyword-properties.js: Mocha: source.keyword-properties.js, line 15: syntax error: Mocha: source.keyword-properties.js, line 15: syntax error: Mocha: source.keyword-properties.js, line 16: syntax error: Mocha: source.keyword-properties.js, line 16: syntax error: Mocha: source.keyword-properties.js, line 18: syntax error: 
+es5/source.unreserved-words.js: Mocha: source.unreserved-words.js, line 13: syntax error: Mocha: source.unreserved-words.js, line 13: syntax error: Mocha: source.unreserved-words.js, line 13: syntax error: Mocha: source.unreserved-words.js, line 13: syntax error: Mocha: source.unreserved-words.js, line 13: syntax error: Mocha: sou
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: Mocha: source.zero-width-chars.js, line 11: syntax error: Mocha: source.zero-width-chars.js, line 12: syntax error: Mocha: source.zero-width-chars.js, line 14: syntax error: Mocha: source.zero-width-chars.js, line 18: syntax error: Mocha: source.zero-width-chars.js, line 20: syntax error:
+es5/strict.eval-cannot-create-bindings.js: Mocha: strict.eval-cannot-create-bindings.js, line 14: syntax error: Mocha: strict.eval-cannot-create-bindings.js, line 14: syntax error: Mocha: strict.eval-cannot-create-bindings.js, line 17: identifier is a reserved word: Mocha: strict.eval-cannot-create-bindings.js, line 20: return used outside a
+es5/strict.function-expr-with-matching-name.js: Mocha: strict.function-expr-with-matching-name.js, line 8: syntax error: Mocha: strict.function-expr-with-matching-name.js, line 8: syntax error: Mocha: strict.function-expr-with-matching-name.js, line 9: syntax error: Mocha: strict.function-expr-with-matching-name.js, line 17: syntax error: Mocha: 
+es5/strict.js: Mocha: strict.js, line 10: syntax error: Mocha: strict.js, line 10: syntax error: Mocha: strict.js, line 15: syntax error: return e instanceof ReferenceError; return e instanceof ReferenceError; Mocha: strict.js, line 17: syntax error: Mocha: strict.js, line 18: syntax error: Mocha: strict.js, line 
+es5/strict.no-arguments-callee.js: Mocha: strict.no-arguments-callee.js, line 12: syntax error: Mocha: strict.no-arguments-callee.js, line 12: syntax error: Mocha: strict.no-arguments-callee.js, line 18: syntax error: if (!(e instanceof TypeError)) return false; if (!(e instanceof TypeError)) return false; Mocha: strict.no-arguments-
+es5/strict.no-arguments-caller.js: Mocha: strict.no-arguments-caller.js, line 12: syntax error: Mocha: strict.no-arguments-caller.js, line 12: syntax error: Mocha: strict.no-arguments-caller.js, line 19: syntax error: if (!(e instanceof TypeError)) return false; if (!(e instanceof TypeError)) return false; Mocha: strict.no-arguments-
+es5/strict.no-assignment-to-non-writable.js: Mocha: strict.no-assignment-to-non-writable.js, line 11: syntax error: Mocha: strict.no-assignment-to-non-writable.js, line 11: syntax error: Mocha: strict.no-assignment-to-non-writable.js, line 17: syntax error: Mocha: strict.no-assignment-to-non-writable.js, line 17: syntax error: Mocha: strict.no
+es5/strict.no-assignment-to-unresolvable.js: Mocha: strict.no-assignment-to-unresolvable.js, line 12: syntax error: Mocha: strict.no-assignment-to-unresolvable.js, line 12: syntax error: Mocha: strict.no-assignment-to-unresolvable.js, line 18: syntax error: return e instanceof ReferenceError; return e instanceof ReferenceError; Mocha: strict.n
+es5/strict.no-delete-bindings.js: Mocha: strict.no-delete-bindings.js, line 12: syntax error: Mocha: strict.no-delete-bindings.js, line 12: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceof SyntaxError) ok++; Mocha: strict.no-delete-bindings.js, line 21: syntax error: if (e instanceof SyntaxError) ok++; if (e instan
+es5/strict.no-delete-non-configurable.js: Mocha: strict.no-delete-non-configurable.js, line 12: syntax error: Mocha: strict.no-delete-non-configurable.js, line 12: syntax error: Mocha: strict.no-delete-non-configurable.js, line 18: syntax error: return e instanceof TypeError; return e instanceof TypeError; Mocha: strict.no-delete-non-config
+es5/strict.no-duplicate-parameters.js: Mocha: strict.no-duplicate-parameters.js, line 13: syntax error: Mocha: strict.no-duplicate-parameters.js, line 13: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceof SyntaxError) ok++; Mocha: strict.no-duplicate-parameters.js, line 22: syntax error: if (e instanceof SyntaxError) ok+
+es5/strict.no-eval-or-arguments-assignment.js: Mocha: strict.no-eval-or-arguments-assignment.js, line 12: syntax error: Mocha: strict.no-eval-or-arguments-assignment.js, line 12: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceof SyntaxError) ok++; Mocha: strict.no-eval-or-arguments-assignment.js, line 21: syntax error: if (e ins
+es5/strict.no-eval-or-arguments-bindings.js: Mocha: strict.no-eval-or-arguments-bindings.js, line 21: syntax error: Mocha: strict.no-eval-or-arguments-bindings.js, line 21: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceof SyntaxError) ok++; Mocha: strict.no-eval-or-arguments-bindings.js, line 30: syntax error: if (e instanceo
+es5/strict.no-function-caller-or-arguments.js: Mocha: strict.no-function-caller-or-arguments.js, line 12: syntax error: Mocha: strict.no-function-caller-or-arguments.js, line 12: syntax error: Mocha: strict.no-function-caller-or-arguments.js, line 18: syntax error: Mocha: strict.no-function-caller-or-arguments.js, line 18: syntax error: Mocha: s
+es5/strict.no-octal-literals.js: Mocha: strict.no-octal-literals.js, line 16: syntax error: Mocha: strict.no-octal-literals.js, line 16: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceof SyntaxError) ok++; Mocha: strict.no-octal-literals.js, line 25: syntax error: if (e instanceof SyntaxError) ok++; if (e instanceo
+es5/strict.no-with.js: Mocha: strict.no-with.js, line 11: syntax error: Mocha: strict.no-with.js, line 11: syntax error: Mocha: strict.no-with.js, line 17: syntax error: return e instanceof SyntaxError; return e instanceof SyntaxError; Mocha: strict.no-with.js, line 19: syntax error: Mocha: strict.no-with.js, line 20: syn
+es5/strict.reserved-words.js: Mocha: strict.reserved-words.js, line 11: syntax error: Mocha: strict.reserved-words.js, line 11: syntax error: Mocha: strict.reserved-words.js, line 21: syntax error: if (!(err instanceof SyntaxError)) { if (!(err instanceof SyntaxError)) { Mocha: strict.reserved-words.js, line 22: syntax error: if
+es5/strict.this-primitive-not-coerced-in-accessors.js: Mocha: strict.this-primitive-not-coerced-in-accessors.js, line 7: syntax error: Mocha: strict.this-primitive-not-coerced-in-accessors.js, line 7: syntax error: Mocha: strict.this-primitive-not-coerced-in-accessors.js, line 10: syntax error: Mocha: strict.this-primitive-not-coerced-in-accessors.js, l
+es5/strict.this-primitive-not-coerced.js: Mocha: strict.this-primitive-not-coerced.js, line 10: syntax error: Mocha: strict.this-primitive-not-coerced.js, line 10: syntax error: Mocha: strict.this-primitive-not-coerced.js, line 13: syntax error: Mocha: strict.this-primitive-not-coerced.js, line 13: syntax error: Mocha: strict.this-primitive
+es5/strict.this-undefined-in-function.js: Mocha: strict.this-undefined-in-function.js, line 10: syntax error: Mocha: strict.this-undefined-in-function.js, line 10: syntax error: Mocha: strict.this-undefined-in-function.js, line 13: syntax error: Mocha: strict.this-undefined-in-function.js, line 16: syntax error: Mocha: strict.this-undefined
+es5/strict.unmapped-arguments.js: Mocha: strict.unmapped-arguments.js, line 12: syntax error: Mocha: strict.unmapped-arguments.js, line 12: syntax error: Mocha: strict.unmapped-arguments.js, line 15: syntax error: Mocha: strict.unmapped-arguments.js, line 17: syntax error: Mocha: strict.unmapped-arguments.js, line 18: syntax error: 
+es5/this.thrown-function.js: Mocha: this.thrown-function.js, line 10: syntax error: Mocha: this.thrown-function.js, line 10: syntax error: Mocha: this.thrown-function.js, line 12: syntax error: Mocha: this.thrown-function.js, line 12: syntax error: Mocha: this.thrown-function.js, line 13: syntax error: Mocha: this.thrown-functi

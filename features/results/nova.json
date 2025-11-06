@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "9ed7f4e2c6a15f8fbcb0c5c1e004bdbf894b05229818b488bd274af95fa9f833",
+  "binary_size": 8723592,
+  "engine": "nova",
+  "repository": "https://github.com/trynova/nova.git",
+  "revision": "66832e5987057409815eaf46dfbf25b1b985ff68",
+  "revision_date": "2025-10-27",
+  "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)",
+  "version": "latest-33-g66832e59"
+}

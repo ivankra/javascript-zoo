@@ -1,0 +1,420 @@
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
+es1/Array.prototype.join.generic.js: failed
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: timeout
+es1/Array.prototype.reverse.js: timeout
+es1/Array.prototype.sort.generic.js: failed
+es1/Array.prototype.sort.js: sort with comparefn failed
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; boolean instance constructor failed
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed; function instance constructor failed
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: Number() failed
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: Error: Unicode is not supported
+es1/String.generics.js: charAt failed; Error: Unicode is not supported
+es1/String.js: OK
+es1/String.length.js: String object length failed
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: Error: Unicode is not supported
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: ReferenceError: escape is not defined
+es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: OK
+es1/arguments.js: failed
+es1/asi.eval.js: ParseError: unexpected '\'
+es1/asi.js: SyntaxError: unexpected '}', expecting ';' or ','
+es1/assignment.bitwise.js: <<= failed; >>= failed; &= failed; ^= failed; |= failed
+es1/assignment.js: %= failed
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: >>>= failed
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: 0); -12345 >>> 0 != 4294954951 (got: 0)
+es1/break.js: OK
+es1/comma.js: crashed (signal 11)
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: while with continue failed; for with continue failed; while with conditional continue failed
+es1/conversions.ToBoolean.js: NaN failed
+es1/conversions.ToInt32.js: -2^31-1 failed
+es1/conversions.ToInteger.js: NaN failed
+es1/conversions.ToNumber.js: ' 456 ' failed
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: NaN failed; -0 failed; -Infinity failed; 3.14 failed; 0.0001 failed; 1e21 failed; 1e-7 failed
+es1/conversions.ToUint32.js: -1 failed; -2^31 failed
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: SyntaxError: unexpected end of file, expecting ';' or ','
+es1/for-in.js: OK
+es1/for.js: for with continue failed
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: !isNaN(0 / 0)
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: failed
+es1/literals.string.hex.js: failed
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: failed
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: -1/0 != -1e10000
+es1/numbers.int.js: OK
+es1/numbers.nan.js: NaN != NaN failed; NaN + 5 failed; 10 * NaN failed
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: method call failed
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: while with continue failed
+es1/with.js: SyntaxError: Unsupported syntax type (50)
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: pop from object failed; pop single element from object failed
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: push to object failed; push multiple to empty object failed; push no args to object failed
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: shift from object failed; shift single element from object failed
+es3/Array.prototype.shift.js: crashed (signal 11)
+es3/Array.prototype.slice.generic.js: slice object with start and end failed; slice object with start only failed; slice object with negative start failed
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: delete on object failed; TypeError: undefined is not a function
+es3/Array.prototype.splice.js: negative start failed; splice on empty array failed
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; single element toLocaleString failed; multiple elements content failed
+es3/Array.prototype.unshift.generic.js: unshift on object failed; TypeError: undefined is not a function
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: failed
+es3/Date.prototype.toLocaleDateString.js: failed
+es3/Date.prototype.toLocaleString.js: failed
+es3/Date.prototype.toLocaleTimeString.js: failed
+es3/Date.prototype.toTimeString.js: failed
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: failed
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: apply with arguments object failed
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: TypeError: undefined is not a function
+es3/Number.prototype.toExponential.js: negative number failed; TypeError: undefined is not a function
+es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-0.0000e-1'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e0'); (1.255).toExponential(2) != '1.25e+0', got '1.25e0'
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: TypeError: undefined is not a function
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: toPrecision() undefined arg failed; TypeError: undefined is not a function
+es3/Object.prototype.hasOwnProperty.js: crashed (signal 11)
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: crashed (signal 11)
+es3/Object.prototype.toLocaleString.js: custom toString failed
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: RegExp passthrough failed
+es3/RegExp.lastIndex.js: Error: Regular expressions are not available
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: Error: Regular expressions are not available
+es3/RegExp.prototype.test.js: Error: Regular expressions are not available
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: crashed (signal 11)
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: TypeError: cannot convert object to primitive
+es3/String.prototype.match.js: Error: Regular expressions are not available
+es3/String.prototype.replace.capture.js: Error: Regular expressions are not available
+es3/String.prototype.replace.extra.js: Error: Regular expressions are not available
+es3/String.prototype.replace.generic.js: TypeError: cannot convert object to primitive
+es3/String.prototype.replace.regex.js: Error: Regular expressions are not available
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: TypeError: cannot convert object to primitive
+es3/String.prototype.search.js: Error: Regular expressions are not available
+es3/String.prototype.search.str.js: Error: Regular expressions are not available
+es3/String.prototype.slice.generic.js: crashed (signal 11)
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: Error: Regular expressions are not available
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: Error: Regular expressions are not available
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: SyntaxError: Unsupported syntax type (13)
+es3/function-expressions.IIFE.js: IIFE closure failed
+es3/function-expressions.js: OK
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: no exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: TypeError: Expecting a function in 'instanceof' check, got number
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
+es3/global.decodeURI.js: ReferenceError: decodeURI is not defined
+es3/global.encodeURIComponent.js: ReferenceError: encodeURIComponent is not defined
+es3/global.encodeURI.js: ReferenceError: encodeURI is not defined
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: failed
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: SyntaxError: unexpected ':', expecting ';' or ','
+es3/labelled.continue.js: SyntaxError: unexpected ':', expecting ';' or ','
+es3/labelled.statements.js: SyntaxError: unexpected ':', expecting ';' or ','
+es3/literals.array.elisions.js: array with single elision failed; array with leading elisions failed; array with multiple elisions failed; array with only elision failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: crashed (signal 11)
+es3/literals.object.hex.js: crashed (signal 11)
+es3/literals.object.int.js: crashed (signal 11)
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: failed
+es3/literals.regex.ambiguous.js: SyntaxError: unexpected REGEXP, expecting ';' or ','
+es3/literals.regex.empty.js: Error: Regular expressions are not available
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: SyntaxError: unexpected end of file, expecting ';' or ','
+es3/nested-functions.js: closure with nested function failed
+es3/regex.backref.js: Error: Regular expressions are not available
+es3/regex.begin.js: Error: Regular expressions are not available
+es3/regex.bracket.esc-b.js: Error: Regular expressions are not available
+es3/regex.bracket.js: Error: Regular expressions are not available
+es3/regex.bracket.ranges.js: Error: Regular expressions are not available
+es3/regex.class.esc-d.js: Error: Regular expressions are not available
+es3/regex.class.esc-s.js: Error: Regular expressions are not available
+es3/regex.class.esc-w.js: Error: Regular expressions are not available
+es3/regex.disjunction.js: Error: Regular expressions are not available
+es3/regex.dot.js: Error: Regular expressions are not available
+es3/regex.end.js: Error: Regular expressions are not available
+es3/regex.escape.control.js: Error: Regular expressions are not available
+es3/regex.escape.hex.js: Error: Regular expressions are not available
+es3/regex.escape.js: Error: Regular expressions are not available
+es3/regex.escape.nul.js: Error: Regular expressions are not available
+es3/regex.escape.unicode.js: Error: Regular expressions are not available
+es3/regex.flag.global.js: Error: Regular expressions are not available
+es3/regex.flag.ignorecase.js: Error: Regular expressions are not available
+es3/regex.flag.multiline.js: Error: Regular expressions are not available
+es3/regex.group.js: Error: Regular expressions are not available
+es3/regex.lookahead.js: Error: Regular expressions are not available
+es3/regex.negative-lookahead.js: Error: Regular expressions are not available
+es3/regex.non-capturing-group.js: Error: Regular expressions are not available
+es3/regex.quantifier.exact.js: Error: Regular expressions are not available
+es3/regex.quantifier.maybe.js: Error: Regular expressions are not available
+es3/regex.quantifier.min.js: Error: Regular expressions are not available
+es3/regex.quantifier.plus.js: Error: Regular expressions are not available
+es3/regex.quantifier.range.js: Error: Regular expressions are not available
+es3/regex.quantifier.star.js: Error: Regular expressions are not available
+es3/regex.word-boundary.js: Error: Regular expressions are not available
+es3/source.line-terminators.js: failed
+es3/source.whitespace.js: failed
+es3/source.whitespace.unicode.js: failed
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: crashed (signal 11)
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: crashed (signal 11)
+es5/Function.prototype.bind.js: argument binding failed; length property incorrect; bound constructor failed; non-callable does not throw TypeError
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: ReferenceError: JSON is not defined
+es5/JSON.parse.reviver.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.replacer.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.space.js: ReferenceError: JSON is not defined
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: writable attributes failed
+es5/Object.defineProperty.js: non-writable property failed; getter definition failed
+es5/Object.freeze.js: prevented modification failed; prevented addition failed
+es5/Object.getOwnPropertyDescriptor.js: crashed (signal 11)
+es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: extensible object failed; non-extensible object failed
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: prevented addition failed
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: prevented property addition failed
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: failed to trim other whitespace characters
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: SyntaxError: Unsupported syntax type (12)
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
+es5/literals.object.getters.js: SyntaxError: unexpected IDENT, expecting ':'
+es5/literals.object.setters.js: SyntaxError: unexpected IDENT, expecting ':'
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: SyntaxError: unexpected IF, expecting NUMBER or IDENT or STRING or '}'
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: failed
+es5/source.zero-width-chars.js: ParseError: unexpected '\'
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: SyntaxError: unexpected '}', expecting ';' or ','
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: unexpected IDENT, expecting ':'
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: TypeError: undefined is not a function
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError; 'var interface' throws but not-SyntaxError; 'var let' throws but not-SyntaxError; 'var package' throws but not-SyntaxError; 'var private' throws but not-SyntaxError; 'var protected' throws but not-SyntaxError; 'var public' throws but not-SyntaxError; 'var
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: failed

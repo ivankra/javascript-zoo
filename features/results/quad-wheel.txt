@@ -1,0 +1,420 @@
+es1/Array.js: 16[19-27]:syntax error, unexpected IDENTIFIER
+es1/Array.length.assignment.js: length truncation failed
+es1/Array.length.js: length assignment failed
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
+es1/Array.prototype.join.generic.js: failed
+es1/Array.prototype.join.js: failed
+es1/Array.prototype.reverse.generic.js: failed
+es1/Array.prototype.reverse.js: failed
+es1/Array.prototype.sort.generic.js: failed
+es1/Array.prototype.sort.js: failed
+es1/Array.prototype.toString.js: failed
+es1/Boolean.js: 13[48-53]:syntax error, unexpected IDENTIFIER
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; boolean instance constructor failed
+es1/Boolean.prototype.toString.js: failed
+es1/Boolean.prototype.valueOf.js: failed
+es1/Date.diff.js: failed
+es1/Date.js: 10[29-33]:syntax error, unexpected IDENTIFIER
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: failed
+es1/Date.prototype.getDay.js: failed
+es1/Date.prototype.getFullYear.js: failed
+es1/Date.prototype.getHours.js: failed
+es1/Date.prototype.getMilliseconds.js: failed
+es1/Date.prototype.getMinutes.js: failed
+es1/Date.prototype.getMonth.js: failed
+es1/Date.prototype.getSeconds.js: failed
+es1/Date.prototype.getTimezoneOffset.js: 7[29-33]:syntax error, unexpected IDENTIFIER
+es1/Date.prototype.getTime.js: failed
+es1/Date.prototype.getUTCDate.js: failed
+es1/Date.prototype.getUTCDay.js: failed
+es1/Date.prototype.getUTCFullYear.js: failed
+es1/Date.prototype.getUTCHours.js: failed
+es1/Date.prototype.getUTCMilliseconds.js: failed
+es1/Date.prototype.getUTCMinutes.js: failed
+es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCSeconds.js: failed
+es1/Date.prototype.setDate.js: failed
+es1/Date.prototype.setFullYear.js: failed
+es1/Date.prototype.setHours.js: failed
+es1/Date.prototype.setMilliseconds.js: failed
+es1/Date.prototype.setMinutes.js: failed
+es1/Date.prototype.setMonth.js: failed
+es1/Date.prototype.setSeconds.js: failed
+es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setUTCDate.js: failed
+es1/Date.prototype.setUTCFullYear.js: failed
+es1/Date.prototype.setUTCHours.js: failed
+es1/Date.prototype.setUTCMilliseconds.js: failed
+es1/Date.prototype.setUTCMinutes.js: failed
+es1/Date.prototype.setUTCMonth.js: failed
+es1/Date.prototype.setUTCSeconds.js: failed
+es1/Date.prototype.toLocaleString.js: 7[29-33]:syntax error, unexpected IDENTIFIER
+es1/Date.prototype.toString.js: 7[29-33]:syntax error, unexpected IDENTIFIER
+es1/Date.prototype.toUTCString.js: 7[29-33]:syntax error, unexpected IDENTIFIER
+es1/Date.prototype.valueOf.js: failed
+es1/Function.js: crashed (signal 11); new Function with body failed; new Function with parameter failed; new Function with two parameters failed; Function as function failed
+es1/Function.length.js: Function.length failed; function with 0 params length failed; function with 1 param length failed; function with 3 params length failed
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed; function instance constructor failed
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: 12[29-34]:syntax error, unexpected IDENTIFIER
+es1/Math.E.js: failed
+es1/Math.LN2.js: failed
+es1/Math.LN10.js: failed
+es1/Math.LOG2E.js: failed
+es1/Math.LOG10E.js: failed
+es1/Math.PI.js: failed
+es1/Math.SQRT1_2.js: failed
+es1/Math.SQRT2.js: failed
+es1/Math.abs.js: failed
+es1/Math.acos.js: failed
+es1/Math.asin.js: failed
+es1/Math.atan2.js: failed
+es1/Math.atan.js: failed
+es1/Math.ceil.js: failed
+es1/Math.cos.js: failed
+es1/Math.exp.js: failed
+es1/Math.floor.js: failed
+es1/Math.log.js: failed
+es1/Math.max.js: failed
+es1/Math.min.js: failed
+es1/Math.pow.js: failed
+es1/Math.random.js: failed
+es1/Math.round.js: failed
+es1/Math.sin.js: failed
+es1/Math.sqrt.js: failed
+es1/Math.tan.js: failed
+es1/Number.MAX_VALUE.js: 6[44-50]:syntax error, unexpected IDENTIFIER
+es1/Number.MIN_VALUE.js: 6[84-87]:syntax error, unexpected IDENTIFIER
+es1/Number.NEGATIVE_INFINITY.js: 6[105-111]:syntax error, unexpected IDENTIFIER
+es1/Number.NaN.js: failed
+es1/Number.POSITIVE_INFINITY.js: 7[25-31]:syntax error, unexpected IDENTIFIER
+es1/Number.js: 13[46-51]:syntax error, unexpected IDENTIFIER
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
+es1/Number.prototype.toString.js: failed
+es1/Number.prototype.valueOf.js: failed
+es1/Object.js: 18[24-29]:syntax error, unexpected IDENTIFIER
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
+es1/Object.prototype.toString.js: failed
+es1/Object.prototype.valueOf.js: failed
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: failed
+es1/String.js: 11[48-53]:syntax error, unexpected IDENTIFIER
+es1/String.length.js: string length failed; empty string length failed; single char length failed
+es1/String.prototype.charAt.js: failed
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: failed
+es1/String.prototype.split.js: failed
+es1/String.prototype.substring.js: failed
+es1/String.prototype.toLowerCase.js: failed
+es1/String.prototype.toString.js: failed
+es1/String.prototype.toUpperCase.js: failed
+es1/String.prototype.valueOf.js: failed
+es1/annex-b.Date.prototype.getYear.js: failed
+es1/annex-b.Date.prototype.setYear.js: failed
+es1/annex-b.Date.prototype.toGMTString.js: 9[29-33]:syntax error, unexpected IDENTIFIER
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: failed
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: 3[1-3]:syntax error, unexpected FNUMBER [Fatal] Uncatched error
+es1/asi.js: 14[5-1]:syntax error, unexpected '}'
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
+es1/conversions.ToInteger.js: failed
+es1/conversions.ToNumber.js: null failed; 'abc' failed
+es1/conversions.ToObject.js: 12[24-28]:syntax error, unexpected IDENTIFIER
+es1/conversions.ToString.js: 95[26-31]:syntax error, unexpected IDENTIFIER, expecting ')'
+es1/conversions.ToUint32.js: 2^32-1 failed; 2^32 failed; 2^31 failed
+es1/conversions.js: null + '' != 'null'
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: failed
+es1/global.isNaN.js: failed
+es1/global.parseFloat.js: failed
+es1/global.parseInt.hex.js: failed
+es1/global.parseInt.js: failed
+es1/global.parseInt.radix.js: failed
+es1/literals.decimal.js: 16[11-16]:syntax error, unexpected '.'
+es1/literals.hex.js: 8[19-24]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/literals.string.escapes.js: failed
+es1/literals.string.hex.js: failed
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: failed
+es1/logical.js: OK
+es1/new.typeof.js: 7[24-28]:syntax error, unexpected IDENTIFIER
+es1/numbers.double.js: 26[13-17]:syntax error, unexpected IDENTIFIER, expecting $end
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: 7[21-29]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: return without value failed
+es1/return.typeof.js: 13[29-34]:syntax error, unexpected IDENTIFIER
+es1/this.js: OK
+es1/typeof.js: 7[25-29]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/typeof.null.js: 7[25-29]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/typeof.undeclared.js: 6[25-29]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/types.js: 9[25-29]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: 9[19-23]:syntax error, unexpected IDENTIFIER
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: 7[38-42]:syntax error, unexpected IDENTIFIER
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: 10[19-23]:syntax error, unexpected IDENTIFIER
+es1/void.js: OK
+es1/void.typeof.js: 9[30-34]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: failed
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: 33[59-70]:syntax error, unexpected IDENTIFIER
+es3/Array.prototype.shift.js: 30[62-73]:syntax error, unexpected IDENTIFIER
+es3/Array.prototype.slice.generic.js: failed
+es3/Array.prototype.slice.js: failed
+es3/Array.prototype.splice.generic.js: failed
+es3/Array.prototype.splice.js: failed
+es3/Array.prototype.toLocaleString.js: 13[29-34]:syntax error, unexpected IDENTIFIER
+es3/Array.prototype.unshift.generic.js: failed
+es3/Array.prototype.unshift.js: failed
+es3/Array.prototype.unshift.returns-new-length.js: failed
+es3/Date.prototype.toDateString.js: 8[29-39]:syntax error, unexpected IDENTIFIER
+es3/Date.prototype.toLocaleDateString.js: 12[29-35]:syntax error, unexpected IDENTIFIER
+es3/Date.prototype.toLocaleString.js: 12[29-35]:syntax error, unexpected IDENTIFIER
+es3/Date.prototype.toLocaleTimeString.js: 12[29-35]:syntax error, unexpected IDENTIFIER
+es3/Date.prototype.toTimeString.js: 8[29-39]:syntax error, unexpected IDENTIFIER
+es3/Error.js: 11[24-29]:syntax error, unexpected IDENTIFIER
+es3/Error.prototype.constructor.js: failed
+es3/Error.prototype.message.js: 6[19-27]:syntax error, unexpected IDENTIFIER
+es3/Error.prototype.name.js: failed
+es3/Error.prototype.toString.js: 7[24-28]:syntax error, unexpected IDENTIFIER
+es3/Function.prototype.apply.js: failed
+es3/Function.prototype.call.js: failed
+es3/Math.max.variadic.js: failed
+es3/Math.min.variadic.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.js: failed
+es3/Number.prototype.toExponential.rounding.js: 13[33-36]:syntax error, unexpected IDENTIFIER
+es3/Number.prototype.toExponential.throws-infinity.js: 13[22-35]:syntax error, unexpected IDENTIFIER
+es3/Number.prototype.toFixed.js: failed
+es3/Number.prototype.toLocaleString.js: 8[29-39]:syntax error, unexpected IDENTIFIER
+es3/Number.prototype.toPrecision.js: failed
+es3/Object.prototype.hasOwnProperty.js: failed
+es3/Object.prototype.isPrototypeOf.js: failed
+es3/Object.prototype.propertyIsEnumerable.js: failed
+es3/Object.prototype.toLocaleString.js: failed
+es3/RegExp.global.js: constructor with g failed; constructor without g failed; literal with g failed; literal without g failed
+es3/RegExp.ignoreCase.js: constructor with i failed; constructor without i failed; literal with i failed; literal without i failed
+es3/RegExp.js: 10[24-29]:syntax error, unexpected IDENTIFIER
+es3/RegExp.lastIndex.js: initial value failed
+es3/RegExp.multiline.js: constructor with m failed; constructor without m failed; literal with m failed; literal without m failed
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: failed
+es3/RegExp.prototype.test.js: failed
+es3/RegExp.prototype.toString.js: 11[24-28]:syntax error, unexpected IDENTIFIER
+es3/RegExp.source.js: failed
+es3/String.prototype.concat.generic.js: failed
+es3/String.prototype.concat.js: failed
+es3/String.prototype.localeCompare.js: failed
+es3/String.prototype.match.generic.js: failed
+es3/String.prototype.match.js: non-global match failed; global match failed; match with string failed; multiple global matches failed
+es3/String.prototype.replace.capture.js: failed
+es3/String.prototype.replace.extra.js: failed
+es3/String.prototype.replace.generic.js: failed
+es3/String.prototype.replace.regex.js: failed
+es3/String.prototype.replace.str.js: failed
+es3/String.prototype.search.generic.js: failed
+es3/String.prototype.search.js: failed
+es3/String.prototype.search.str.js: failed
+es3/String.prototype.slice.generic.js: failed
+es3/String.prototype.slice.js: failed
+es3/String.prototype.split.bugs.js: [Fatal] Invalid regex string '(?:ab)*'
+es3/String.prototype.split.limit.js: failed
+es3/String.prototype.split.regex.js: [Fatal] Invalid regex string '(?:)'
+es3/String.prototype.toLocaleLowerCase.js: failed
+es3/String.prototype.toLocaleUpperCase.js: failed
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: 8[19-31]:syntax error, unexpected IDENTIFIER
+es3/global.RangeError.js: 8[19-32]:syntax error, unexpected IDENTIFIER
+es3/global.RangeError.thrown.js: [Fatal] Invalid array length
+es3/global.ReferenceError.js: 8[19-36]:syntax error, unexpected IDENTIFIER
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable
+es3/global.SyntaxError.js: 8[19-33]:syntax error, unexpected IDENTIFIER
+es3/global.SyntaxError.thrown.js: 1[15-19]:syntax error, unexpected ';' wrong exception type
+es3/global.TypeError.js: 8[19-31]:syntax error, unexpected IDENTIFIER
+es3/global.TypeError.thrown.js: 11[29-42]:syntax error, unexpected IDENTIFIER, expecting ',' or ';'
+es3/global.URIError.js: 8[19-30]:syntax error, unexpected IDENTIFIER
+es3/global.URIError.thrown.js: failed
+es3/global.decodeURIComponent.js: failed
+es3/global.decodeURI.js: failed
+es3/global.encodeURIComponent.js: failed
+es3/global.encodeURI.js: failed
+es3/global.undefined.js: 9[19-19]:syntax error, unexpected UNDEF
+es3/identifiers.unicode.js: 8[6-12]:syntax error, unexpected $undefined, expecting IDENTIFIER
+es3/instanceof.js: 9[26-39]:syntax error, unexpected IDENTIFIER
+es3/in.js: 10[17-17]:syntax error, unexpected IN
+es3/labelled.break.js: failed
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: 8[30-36]:syntax error, unexpected ','
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: 9[30-1]:syntax error, unexpected ']'
+es3/literals.object.decimal.js: 9[23-27]:syntax error, unexpected FNUMBER, expecting ',' or '}'
+es3/literals.object.hex.js: 9[23-25]:syntax error, unexpected FNUMBER, expecting ',' or '}'
+es3/literals.object.int.js: 9[23-25]:syntax error, unexpected FNUMBER, expecting ',' or '}'
+es3/literals.object.js: 9[29-34]:syntax error, unexpected IDENTIFIER
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: 9[23-28]:syntax error, unexpected $undefined, expecting ',' or '}'
+es3/literals.regex.ambiguous.js: failed
+es3/literals.regex.empty.js: [Fatal] Invalid regex string '(?:)'
+es3/literals.regex.js: 8[19-24]:syntax error, unexpected IDENTIFIER
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: failed
+es3/regex.begin.js: failed
+es3/regex.bracket.esc-b.js: failed
+es3/regex.bracket.js: failed
+es3/regex.bracket.ranges.js: [Fatal] Invalid regex string '[a-c-x]'
+es3/regex.class.esc-d.js: failed
+es3/regex.class.esc-s.js: failed
+es3/regex.class.esc-w.js: failed
+es3/regex.disjunction.js: 16[128-133]:syntax error, unexpected IDENTIFIER
+es3/regex.dot.js: failed
+es3/regex.end.js: failed
+es3/regex.escape.control.js: failed
+es3/regex.escape.hex.js: failed
+es3/regex.escape.js: failed
+es3/regex.escape.nul.js: failed
+es3/regex.escape.unicode.js: failed
+es3/regex.flag.global.js: global match failed; multiple matches failed
+es3/regex.flag.ignorecase.js: failed
+es3/regex.flag.multiline.js: failed
+es3/regex.group.js: failed
+es3/regex.lookahead.js: [Fatal] Invalid regex string '(?=(a+))'
+es3/regex.negative-lookahead.js: [Fatal] Invalid regex string '(.*?)a(?!(a+)b\2c)\2(.*)'
+es3/regex.non-capturing-group.js: [Fatal] Invalid regex string '(?:abc)'
+es3/regex.quantifier.exact.js: failed
+es3/regex.quantifier.maybe.js: failed
+es3/regex.quantifier.min.js: failed
+es3/regex.quantifier.plus.js: failed
+es3/regex.quantifier.range.js: failed
+es3/regex.quantifier.star.js: failed
+es3/regex.word-boundary.js: failed
+es3/source.line-terminators.js: 13[17-22]:syntax error, unexpected $undefined
+es3/source.whitespace.js: 10[6-11]:syntax error, unexpected $undefined, expecting IDENTIFIER
+es3/source.whitespace.unicode.js: 8[6-11]:syntax error, unexpected $undefined, expecting IDENTIFIER
+es3/strict-equals.js: null === undefined failed; null !== undefined failed
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.every.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.filter.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.forEach.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.indexOf.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.lastIndexOf.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.map.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.reduceRight.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.reduce.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.some.js: 10[19-27]:syntax error, unexpected IDENTIFIER
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: failed
+es5/Date.now.js: 10[19-26]:syntax error, unexpected IDENTIFIER
+es5/Date.prototype.toISOString.js: 10[19-26]:syntax error, unexpected IDENTIFIER
+es5/Date.prototype.toJSON.js: 10[19-26]:syntax error, unexpected IDENTIFIER
+es5/Function.prototype-not-enumerable.js: failed
+es5/Function.prototype.apply.array-like.js: 15[156-158]:syntax error, unexpected FNUMBER, expecting ',' or '}'
+es5/Function.prototype.bind.js: 10[19-30]:syntax error, unexpected IDENTIFIER
+es5/JSON.js: 8[19-26]:syntax error, unexpected IDENTIFIER
+es5/JSON.parse.js: 7[19-26]:syntax error, unexpected IDENTIFIER
+es5/JSON.parse.reviver.js: 7[19-26]:syntax error, unexpected IDENTIFIER
+es5/JSON.stringify.js: 7[19-26]:syntax error, unexpected IDENTIFIER
+es5/JSON.stringify.replacer.js: 7[19-26]:syntax error, unexpected IDENTIFIER
+es5/JSON.stringify.space.js: 7[19-26]:syntax error, unexpected IDENTIFIER
+es5/Object.create.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.defineProperties.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.defineProperty.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.freeze.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.getOwnPropertyDescriptor.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.getOwnPropertyNames.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.getPrototypeOf.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.isExtensible.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.isFrozen.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.isSealed.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.keys.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.preventExtensions.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: 10[19-28]:syntax error, unexpected IDENTIFIER
+es5/arguments.toStringTag.js: 12[6-11]:syntax error, unexpected '('
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: 13[19-30]:syntax error, unexpected IDENTIFIER
+es5/global.NaN.immutable.js: 13[19-25]:syntax error, unexpected IDENTIFIER
+es5/global.parseInt.no-octal.js: failed
+es5/global.undefined.immutable.js: 13[12-18]:syntax error, unexpected '=', expecting $end
+es5/literals.object.getters.js: 9[29-33]:syntax error, unexpected IDENTIFIER, expecting ':'
+es5/literals.object.setters.js: 10[29-33]:syntax error, unexpected IDENTIFIER, expecting ':'
+es5/literals.object.trailing-comma.js: 9[44-1]:syntax error, unexpected '}', expecting STRING or IDENTIFIER
+es5/source.keyword-properties.js: 15[23-23]:syntax error, unexpected IF, expecting ',' or '}'
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: 1[0-5]:syntax error, unexpected $undefined, expecting FOR or WHILE or DO or SWITCH
+es5/source.zero-width-chars.js: 11[10-15]:syntax error, unexpected $undefined, expecting ',' or ';'
+es5/strict.eval-cannot-create-bindings.js: 22[23-36]:syntax error, unexpected IDENTIFIER
+es5/strict.function-expr-with-matching-name.js: 8[69-1]:syntax error, unexpected '}'
+es5/strict.js: 16[23-36]:syntax error, unexpected IDENTIFIER
+es5/strict.no-arguments-callee.js: 19[34-47]:syntax error, unexpected IDENTIFIER
+es5/strict.no-arguments-caller.js: 15[22-22]:syntax error, unexpected IN
+es5/strict.no-assignment-to-non-writable.js: 17[111-117]:syntax error, unexpected '='
+es5/strict.no-assignment-to-unresolvable.js: 19[23-36]:syntax error, unexpected IDENTIFIER
+es5/strict.no-delete-bindings.js: 20[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-delete-non-configurable.js: 19[23-36]:syntax error, unexpected IDENTIFIER
+es5/strict.no-duplicate-parameters.js: 21[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-eval-or-arguments-assignment.js: 20[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-eval-or-arguments-bindings.js: 29[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-function-caller-or-arguments.js: 20[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-octal-literals.js: 24[24-37]:syntax error, unexpected IDENTIFIER
+es5/strict.no-with.js: 18[23-36]:syntax error, unexpected IDENTIFIER
+es5/strict.reserved-words.js: 22[38-51]:syntax error, unexpected IDENTIFIER
+es5/strict.this-primitive-not-coerced-in-accessors.js: failed
+es5/strict.this-primitive-not-coerced.js: 13[77-77]:syntax error, unexpected _THIS
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: 12[63-63]:syntax error, unexpected IN

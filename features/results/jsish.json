@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "bb475f0c8087d6697777d3cf66f55b2c21848236767e311a604d61d860d9f523",
+  "binary_size": 2422304,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "jsish",
+  "repository": "https://github.com/pcmacdon/jsish.git",
+  "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f",
+  "revision_date": "2022-08-23",
+  "version": "3.0-252-g42c694c"
+}

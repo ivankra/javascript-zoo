@@ -1,0 +1,9 @@
+{
+  "arch": "amd64",
+  "binary_sha256": "c959b32ae8c8db742444ef90000ee19c020ae9d09056460acef6d61d1e20eb0f",
+  "binary_size": 12707112,
+  "engine": "chakracore",
+  "repository": "https://github.com/chakra-core/ChakraCore.git",
+  "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
+  "revision_date": "2025-10-11"
+}

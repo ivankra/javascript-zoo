@@ -1,0 +1,11 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "03d7b21107abfcb9a5c1368ad24be63777496ce6c298ca9e4fdd94b1d6dd1b09",
+  "binary_size": 908232,
+  "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+  "engine": "njs",
+  "repository": "https://github.com/nginx/njs.git",
+  "revision": "927d38d8438e8b3b3db63af4d9f6324210fd5dab",
+  "revision_date": "2025-10-27",
+  "version": "0.9.4"
+}
