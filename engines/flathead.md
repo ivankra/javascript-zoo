@@ -13,7 +13,7 @@ Buggy unfinished interpreter.
 * Interpreter:  tree walker
 * Regex engine: PCRE
 
-## Bugs
+## Quirks
 
 Can't run ES1 code - incorrectly implements basic JavaScript object model:
 

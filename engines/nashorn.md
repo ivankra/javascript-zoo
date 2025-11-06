@@ -8,7 +8,7 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 * Language:         Java
 * License:          GPL-2.0-only WITH Classpath-exception-2.0
 * Org:              Oracle
-* Standard:         ES6+ (partial)
+* Standard:         ES6 (partial)
 * Years:            2011-
 * Runtime platform: Java
 * JIT:              via JVM

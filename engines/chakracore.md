@@ -7,7 +7,7 @@ JavaScript engine of Microsoft Edge Legacy.
 * Language:         C++
 * License:          MIT
 * Org:              Microsoft
-* Standard:         ES2019
+* Standard:         ES2019 (partial)
 * Years:            2015-2021
 * Ancestor:         [JScript9 / Chakra](jscript9.md)
 * Features:         WebAssembly engine, deferred parsing

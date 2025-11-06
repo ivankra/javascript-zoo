@@ -11,7 +11,7 @@ Primitive interpreter for a limited subset of JavaScript.
 * Type:        JavaScript-like language
 * Interpreter: interprets from source
 
-## Bugs
+## Quirks
 
 No ASI, no typeof, no Date, `WHILE Loop exceeded 8192 iterations`.
 

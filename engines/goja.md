@@ -6,7 +6,7 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 * LOC:              46141 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
 * Language:         Go
 * License:          MIT
-* Standard:         ES6 (partial)
+* Standard:         ES2023 (partial)
 * Years:            2016-
 * Ancestor:         [otto](otto.md) (borrowed otto's parser)
 * Forks:            [Sobek](sobek.md)

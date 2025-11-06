@@ -271,7 +271,7 @@ const jsz_engines = [
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/brimstone.md",
     "github_stars": 13,
     "github_forks": 5,
-    "summary": "Javascript engine written in Rust, supporting most of ES2024.",
+    "summary": "Javascript engine written in Rust, supporting most of ES2025.",
     "repository": "https://github.com/Hans-Halverson/brimstone.git",
     "loc": 74381,
     "language": "Rust",
@@ -283,12 +283,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "d22001b28bde215939bfd4aefc1cb0f77563d27056082bf0cbd1f437d09c0098",
+        "binary_sha256": "eac4afc4e5f8be6027c10d7ca3998e732416c9f6ee30accfbedf1f654fa2780d",
         "binary_size": 5910576,
-        "repository": "https://github.com/Hans-Halverson/brimstone",
+        "repository": "https://github.com/Hans-Halverson/brimstone.git",
         "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e",
         "revision_date": "2025-09-04",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       }
     ]
   },
@@ -419,13 +419,13 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "f297a3fb51f1a38210c97cd0dfa1ec611c7d1d8d6fef98abdbacf1b3895b294c",
+        "binary_sha256": "bc7eae9cab6a1eb40bdc0b9c2b5b4fad9e0a7d99af1eaec79c11855b182c2468",
         "binary_size": 199512,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/mjs.git",
-        "revision": "ed70eac9e8b334b1bfc251fc860511b2cb4aa418",
-        "revision_date": "2025-08-06",
-        "version": "2.20.0-15-ged70eac"
+        "revision": "f4e6dfeda0158df2f73c4926de6c64420b416387",
+        "revision_date": "2025-10-27",
+        "version": "2.20.0-17-gf4e6dfe"
       }
     ]
   },
@@ -486,7 +486,7 @@ const jsz_engines = [
     "language": "C++",
     "license": "MIT",
     "org": "Microsoft",
-    "standard": "ES2019",
+    "standard": "ES2019 (partial)",
     "years": "2015-2021",
     "ancestors": "[JScript9 / Chakra](jscript9.md)",
     "features": "WebAssembly engine, deferred parsing",
@@ -850,6 +850,16 @@ const jsz_engines = [
         "zlib_note": "N=1 median=1591 mean=1591 max=1591"
       },
       {
+        "arch": "arm64",
+        "binary_sha256": "1e1954b64812e1f3b41162c54b03382bb9e09b743c618dbf42f2fd54088def63",
+        "binary_size": 723816,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/svaarala/duktape.git",
+        "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
+        "revision_date": "2024-01-29",
+        "variant": "clang"
+      },
+      {
         "arch": "x64",
         "binary_size": 580648,
         "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
@@ -929,12 +939,12 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "5a23fe1b9394147bb218981564e678249cece77197b6bd39fd1c42f6f510492d",
-        "binary_size": 1053392,
+        "binary_sha256": "8693223a301e017486b768aec70a842074ec13ca7d49127bbb67750b9e59e741",
+        "binary_size": 1053384,
         "repository": "https://github.com/echosoar/jsi.git",
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       }
     ]
   },
@@ -1016,10 +1026,10 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "dist_size": 1593028,
+        "dist_size": 1594781,
         "repository": "https://github.com/engine262/engine262.git",
-        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
-        "revision_date": "2025-10-06"
+        "revision": "6f74d02b34bd37de56b2b3ad6991da14322155de",
+        "revision_date": "2025-10-25"
       }
     ]
   },
@@ -1111,6 +1121,17 @@ const jsz_engines = [
         "SplayLatency_note": "N=100 median=3848 mean=3297.85±125.91 max=4216",
         "Typescript_note": "N=100 median=24918 mean=23726.44±285.58 max=27368",
         "zlib_note": "N=100 median=5304 mean=5266.48±11.32 max=5651"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "8a3bfe587f31017668ae212c7a4c994c94a28f4694da3d123307fe931c03ceeb",
+        "binary_size": 4264344,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/Samsung/escargot.git",
+        "revision": "1577634b8f3e54f2934ae1739c77f812d2908f8e",
+        "revision_date": "2025-08-21",
+        "variant": "clang",
+        "version": "4.3.0"
       },
       {
         "arch": "x64",
@@ -1245,7 +1266,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "2404e0326fa48b7d03fa3ca670d8b29c2cf5d61660ea7135a2532139b1f2429f",
         "binary_size": 6061344,
-        "repository": "https://github.com/fastschema/qjs",
+        "repository": "https://github.com/fastschema/qjs.git",
         "revision": "461716f4f380f81ffd09378751f1812919cddbca",
         "revision_date": "2025-10-28",
         "version": "0.0.6"
@@ -1321,7 +1342,7 @@ const jsz_engines = [
     "loc": 46141,
     "language": "Go",
     "license": "MIT",
-    "standard": "ES6 (partial)",
+    "standard": "ES2023 (partial)",
     "years": "2016-",
     "ancestors": "[otto](otto.md) (borrowed otto's parser)",
     "forks": "[Sobek](sobek.md)",
@@ -1571,7 +1592,7 @@ const jsz_engines = [
       {
         "arch": "arm64",
         "dist_size": 1006163,
-        "repository": "https://github.com/andrewmd5/hako",
+        "repository": "https://github.com/andrewmd5/hako.git",
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af"
@@ -1592,7 +1613,7 @@ const jsz_engines = [
     "language": "C++",
     "license": "MIT",
     "org": "Facebook",
-    "standard": "ES6 (partial)",
+    "standard": "ES2023 (partial)",
     "years": "2019-",
     "features": "optimizing AOT compiler to bytecode with SSA IR",
     "interpreter": "register-based VM",
@@ -1650,6 +1671,17 @@ const jsz_engines = [
         "SplayLatency_note": "N=100 median=22289 mean=18677.30±812.64 max=23183",
         "Typescript_note": "N=100 median=31996 mean=29683.65±380.30 max=33153",
         "zlib_note": "N=100 median=2473 mean=2476.81±3.75 max=2542"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "b362d771123460ac6879034bcef7cc77fe00b7af36a5f73b26a82ea302ece02b",
+        "binary_size": 3612544,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/facebook/hermes.git",
+        "revision": "ef620c2c09eb037559da0928dc0125f033dc5193",
+        "revision_date": "2025-10-30",
+        "variant": "clang",
+        "version": "0.12.0"
       },
       {
         "arch": "x64",
@@ -1829,6 +1861,18 @@ const jsz_engines = [
         "zlib_note": "N=100 median=2729 mean=2715.87±4.05 max=2764"
       },
       {
+        "arch": "arm64",
+        "binary_sha256": "1a99f59eeadefe158ebc4ea05217ec2fc47c432de95c6e9b34edea8ecb853580",
+        "binary_size": 4265064,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "jit": "",
+        "repository": "https://github.com/Constellation/iv.git",
+        "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
+        "revision_date": "2015-03-24",
+        "variant": "clang",
+        "version": "1.0.1-270-g64c3a9c7"
+      },
+      {
         "arch": "x64",
         "binary_size": 6418096,
         "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
@@ -1971,7 +2015,7 @@ const jsz_engines = [
     "license": "Apache-2.0",
     "org": "Samsung",
     "standard": "ES2022 (partial, missing ES2018 regex and a few other features)",
-    "years": "2014-",
+    "years": "2014-2024",
     "interpreter": "stack-based VM",
     "loc_command": "cloc jerry-*",
     "bench": [
@@ -2125,11 +2169,11 @@ const jsz_engines = [
       {
         "arch": "arm64",
         "dist_size": 97870,
-        "host_engine": "jsc 299754@main",
+        "host_engine": "jsc 301765@main",
         "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
         "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
         "revision_date": "2025-02-27",
-        "variant": "jsz"
+        "variant": "jsc"
       }
     ]
   },
@@ -2249,14 +2293,14 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "d3ca42f57dc904b57621b1705de401194b2573481e9562b67607037244e50503",
-        "binary_size": 29860392,
+        "binary_sha256": "ec7d3d8710adb9c6b81138c826c27af75101b53ff45755337d9bc0e8a4a0a27c",
+        "binary_size": 30384264,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/WebKit/WebKit.git",
-        "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
-        "revision_date": "2025-09-09",
+        "revision": "9018757c64f271d2e19408850182e6b841159b53",
+        "revision_date": "2025-10-18",
         "variant": "gcc",
-        "version": "299754@main"
+        "version": "301765@main"
       },
       {
         "arch": "arm64",
@@ -2536,7 +2580,7 @@ const jsz_engines = [
     "loc": 59328,
     "language": "Zig",
     "license": "MIT",
-    "standard": "ES6+ (partial)",
+    "standard": "ESnext (partial)",
     "years": "2023-",
     "interpreter": "stack-based VM",
     "loc_command": "cloc src",
@@ -2684,6 +2728,17 @@ const jsz_engines = [
         "SplayLatency_note": "N=100 median=2270 mean=1962.33±70.58 max=2493"
       },
       {
+        "arch": "arm64",
+        "binary_sha256": "45f2879f20ca3e65ad05eca770c447d2d93b6f8af567f93ffa6f8f4411156edb",
+        "binary_size": 924824,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/KDE/kjs.git",
+        "revision": "5824588da24f797b4255929918efbc8b484baa09",
+        "revision_date": "2025-07-28",
+        "variant": "clang",
+        "version": "5.117.0"
+      },
+      {
         "arch": "x64",
         "binary_size": 1209752,
         "revision": "5824588da24f797b4255929918efbc8b484baa09",
@@ -2783,6 +2838,16 @@ const jsz_engines = [
         "SplayLatency_note": "N=20 median=3182 mean=2662.20±237.51 max=3247",
         "Typescript_note": "N=20 median=10242 mean=10304.00±70.28 max=11568",
         "zlib_note": "N=1 median=3889 mean=3889 max=3889"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "2eeb9e0d06bbb8d9a607f68c27971a5484db433c77ac73615a2231ed7aee1252",
+        "binary_size": 49762536,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/LadybirdBrowser/ladybird.git",
+        "revision": "62781f4818f87d4512b3ab133732ebb8ef9d0c94",
+        "revision_date": "2025-10-30",
+        "variant": "gcc"
       },
       {
         "arch": "x64",
@@ -2952,12 +3017,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "2f2bce64686b91de377e4a1e66f96c6bf9050f9e71e8b1b2f75662c63451cc59",
-        "binary_size": 4684928,
+        "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6",
+        "binary_size": 4619264,
         "repository": "https://gitlab.com/cznic/quickjs.git",
-        "revision": "dbf970daceb8081737fe80c825d7b0929680fa10",
-        "revision_date": "2025-09-25",
-        "version": "0.15.8-13-gdbf970d"
+        "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78",
+        "revision_date": "2025-10-24",
+        "version": "0.16.5"
       }
     ]
   },
@@ -3040,6 +3105,17 @@ const jsz_engines = [
         "Richards_note": "N=20 median=665 mean=665.60±0.80 max=671",
         "Splay_note": "N=20 median=2267 mean=2122.55±86.38 max=2307",
         "SplayLatency_note": "N=20 median=2051 mean=1679.95±146.59 max=2088"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "a1085e4aa9f96b6a668f27f48997b51ced8a98c1ef08164dcbf467d44af45e1e",
+        "binary_size": 461616,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://codeberg.org/ccxvii/mujs.git",
+        "revision": "05cd646bad083ed45e9e1c9846ea671d461ced30",
+        "revision_date": "2025-06-23",
+        "variant": "clang",
+        "version": "1.3.7"
       },
       {
         "arch": "x64",
@@ -3139,7 +3215,7 @@ const jsz_engines = [
     "language": "Java",
     "license": "GPL-2.0-only WITH Classpath-exception-2.0",
     "org": "Oracle",
-    "standard": "ES6+ (partial)",
+    "standard": "ES6 (partial)",
     "years": "2011-",
     "platform": "Java",
     "jit": "via JVM",
@@ -3305,7 +3381,7 @@ const jsz_engines = [
     "language": "C",
     "license": "BSD-2-Clause",
     "org": "Nginx",
-    "standard": "ES6+ (partial)",
+    "standard": "ES6 (partial)",
     "years": "2015-",
     "interpreter": "register-based VM",
     "regex": "PCRE2",
@@ -3615,9 +3691,9 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "repository": "https://github.com/CanadaHonk/porffor",
-        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
-        "revision_date": "2025-09-23"
+        "repository": "https://github.com/CanadaHonk/porffor.git",
+        "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9",
+        "revision_date": "2025-10-28"
       }
     ]
   },
@@ -3652,13 +3728,13 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "9f75bafcfe5ee9179d64a00b2c51ba5de9dd8fc03e57c7d50e300f8131143592",
-        "binary_size": 986408,
+        "binary_sha256": "153bc8e7869b87d77e9157fbcab0b5fe68434a3cf7b1035547dd445f2bf5f925",
+        "binary_size": 986432,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/lynx-family/primjs.git",
-        "revision": "1b80815ad2bd755224544e9ba4a7dc219dc7d503",
-        "revision_date": "2025-10-10",
-        "version": "2.15.0-rc.2-5-g1b80815"
+        "revision": "89333c6f8215b6e2d8ba4c576aa60eb7f4e679f3",
+        "revision_date": "2025-10-20",
+        "version": "2.15.0-rc.3"
       }
     ]
   },
@@ -3762,7 +3838,7 @@ const jsz_engines = [
         "binary_sha256": "db0ada150457fa0e225320db1a870a84609fa67bacbe0eba3eb08a660b0c5a00",
         "binary_size": 1774528,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/solarbrowser/quanta",
+        "repository": "https://github.com/solarbrowser/quanta.git",
         "revision": "10962761c7646b67ba31488b18ccf7af3cf59a86",
         "revision_date": "2025-10-23"
       }
@@ -3840,6 +3916,17 @@ const jsz_engines = [
         "SplayLatency_note": "N=100 median=17388 mean=14431.03±645.42 max=18110",
         "Typescript_note": "N=100 median=22315 mean=20859.96±234.07 max=23564",
         "zlib_note": "N=100 median=3202 mean=3185.83±11.29 max=3339"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "b484ee70b5875deb6e342ded20a1137a6cf54a97e07adc43e0114f6585f821d7",
+        "binary_size": 1052088,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/quickjs-ng/quickjs.git",
+        "revision": "07214197c24bb60066a0378ebd7690041f86e361",
+        "revision_date": "2025-09-26",
+        "variant": "clang",
+        "version": "0.10.1-62-g0721419"
       },
       {
         "arch": "x64",
@@ -4101,6 +4188,17 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
+        "binary_sha256": "fbd1e9559c396a608884ebcf603e8a48e01465eb04939c9c07b12734ae12f849",
+        "binary_size": 12029784,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://code.qt.io/qt/qt5.git",
+        "revision": "077347cc6d198053fb61cc0841c5c0c60a7deeb1",
+        "revision_date": "2025-10-02",
+        "variant": "clang",
+        "version": "6.10.0"
+      },
+      {
+        "arch": "arm64",
         "variant": "jitless",
         "binary_size": 12423640,
         "revision": "a99aafab4cfbbf650493c9a4feb5a1bb4a09d1d2",
@@ -4239,10 +4337,10 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
         "binary_size": 1509656,
-        "repository": "https://github.com/maekawatoshiki/rapidus",
+        "repository": "https://github.com/maekawatoshiki/rapidus.git",
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       }
     ]
   },
@@ -4493,7 +4591,7 @@ const jsz_engines = [
     "loc": 46789,
     "language": "Go",
     "license": "MIT",
-    "standard": "ES6 (partial)",
+    "standard": "ES2023 (partial)",
     "years": "2024-",
     "ancestors": "[goja](goja.md)",
     "platform": "Go (cgo-free)",
@@ -4502,11 +4600,11 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "95650158dc4fcc0bda5200d75911ada7023bbdde25434edd2853eecfa50fcd9d",
+        "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4",
         "binary_size": 9437432,
-        "repository": "https://github.com/grafana/sobek",
-        "revision": "10d992055e226fa1824cb7557882bdb419b3d657",
-        "revision_date": "2025-10-24"
+        "repository": "https://github.com/grafana/sobek.git",
+        "revision": "d05c9166857d16f22e11d50f60bb63fff688f101",
+        "revision_date": "2025-10-08"
       }
     ]
   },
@@ -4532,7 +4630,7 @@ const jsz_engines = [
         "binary_sha256": "377bfffd9c58dcef5e5ab0df9e7bebfb69d6a2f68ef0b2e8beb1ec50becd7cbd",
         "binary_size": 330096,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/gkmail/SophonJS",
+        "repository": "https://github.com/gkmail/SophonJS.git",
         "revision": "5012412ed66f76968cd6be87793b25337bda7630",
         "revision_date": "2015-11-10"
       }
@@ -4755,7 +4853,7 @@ const jsz_engines = [
         "loc_command": "cloc js/src",
         "license_abbr": "MPL-2.0",
         "arch": "arm64",
-        "binary_sha256": "df05ba4b1b5d30dca304f9286600333e0be3f73f506ce597ef4cd0bf10c76c9f",
+        "binary_sha256": "17aa69ca1b99c94a17969b1fc3c83201ea64687b12ff4060babcfa9d81718995",
         "binary_size": 676912,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -4764,7 +4862,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "555ac25715cdcddc10b59cd29a870410873ab080699f872f7b80ba7f29585fd1",
+        "binary_sha256": "92fa6f4f53521e18f59190dc9580ab24e8819876e7a5d6b39778901935cecb35",
         "binary_size": 812688,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -4777,7 +4875,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "063c4d23a5a3e262cd78cb428c09ac05c9d56c67a4ca689c8b0138495e235c0a",
+        "binary_sha256": "18e0326de2dee6c8427bf6796908b06dad86304f9dbc8ed87b5aeedbe6243851",
         "binary_size": 948328,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -4790,7 +4888,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "2c43e53cd8965bc29ceab088045ded23e4f895801153e33e821be0b1cb4422cd",
+        "binary_sha256": "85861aeba27c5a085fd48cbbd49255eac8307f5984aadb4f9bd23d775d8eb33f",
         "binary_size": 948752,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -5097,12 +5195,12 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "f981839911474ecfa2128ed5557601974e4019a29e35cc9fbab285a86668c7fa",
+        "binary_sha256": "d557c29d309d73087f452c1ea3ac7a0f211f14adc5c0259dc33884b426f1ea93",
         "binary_size": 133936,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/gfwilliams/tiny-js.git",
-        "revision": "905fa74287e1da5b3222074831fb124c7941b806",
-        "revision_date": "2025-09-29"
+        "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
+        "revision_date": "2025-10-21"
       },
       {
         "arch": "arm64",
@@ -5255,9 +5353,9 @@ const jsz_engines = [
         "binary_size": 269216,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/jow-/ucode.git",
-        "revision": "5416dcfec9ea6326ee79a82da3e103a39ecf59aa",
-        "revision_date": "2025-09-29",
-        "version": "0.0.20250529-54-g5416dcf"
+        "revision": "924ccc95be32a99e2c0e7590d755635c2a6bf9f2",
+        "revision_date": "2025-10-16",
+        "version": "0.0.20250529-55-g924ccc9"
       }
     ]
   },
@@ -5402,14 +5500,14 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "720f213419e0a8c8322b110884b2cc5c757c1467df261e2522a76cabce959158",
-        "binary_size": 23148184,
+        "binary_sha256": "8ff73839cbbc426af388cfa0c4b9fa2fd69d55cf58ec5e6cca4f5e87a1431b07",
+        "binary_size": 23410328,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/chromium/src.git",
-        "revision": "b95610d5c4a562d9cd834bc0a098d3316e2f533f",
-        "revision_date": "2025-09-29",
+        "revision": "4b8153ab58d3c3f4c9f7e4baad9616ecf80db5fa",
+        "revision_date": "2025-10-24",
         "variant": "pgo",
-        "version": "14.1.146.11"
+        "version": "14.2.231.14"
       },
       {
         "arch": "x64",
@@ -5595,6 +5693,17 @@ const jsz_engines = [
         "Richards_note": "N=20 median=462 mean=449.60±12.36 max=468",
         "Splay_note": "N=20 median=896 mean=870.35±25.82 max=927",
         "SplayLatency_note": "N=20 median=2526 mean=2021.85±203.00 max=2562"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "f09b87156f9a93dc8d3a43c3940c2192613563b17655b5679f17c977328c0a9e",
+        "binary_size": 2034680,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/Moddable-OpenSource/moddable.git",
+        "revision": "ec3d8103a891127fa0448ddd6dd83c6bdacd57bc",
+        "revision_date": "2025-09-24",
+        "variant": "clang",
+        "version": "16.9.1"
       },
       {
         "arch": "x64",

@@ -13,6 +13,6 @@ Buggy unfinished interpreter.
 * Interpreter:  stack-based VM
 * Regex engine: POSIX (vendored from musl)
 
-## Bugs
+## Quirks
 
 Bugs in == (anything equals null/undefined), new (returns null sometimes), no ASI, no Date class.

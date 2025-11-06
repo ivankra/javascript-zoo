@@ -8,7 +8,7 @@ Lightweight embeddable JavaScript engine for use in nginx.
 * Language:     C
 * License:      BSD-2-Clause
 * Org:          Nginx
-* Standard:     ES6+ (partial)
+* Standard:     ES6 (partial)
 * Years:        2015-
 * Interpreter:  register-based VM
 * Regex engine: PCRE2

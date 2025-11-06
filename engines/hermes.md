@@ -8,7 +8,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 * Language:    C++
 * License:     MIT
 * Org:         Facebook
-* Standard:    ES6 (partial)
+* Standard:    ES2023 (partial)
 * Years:       2019-
 * Features:    optimizing AOT compiler to bytecode with SSA IR
 * Interpreter: register-based VM

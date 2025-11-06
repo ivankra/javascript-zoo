@@ -20,6 +20,6 @@ Self-hosting JavaScript to Lua compiler with a runtime library and eval().
 * Supports eval() through Lua-transpiled own code + Esprima parser.
 * Some ES6 by optionally invoking babel during compilation.
 
-## Bugs
+## Quirks
 
 Problems with large functions/modules due to 200 local variables limit on Lua's end.

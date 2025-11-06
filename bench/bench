@@ -259,8 +259,8 @@ class Run:
                 res[k] = v
         return res
 
-ERROR_LINE_REGEX_I = "(?i)(?:error|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't)"
-ERROR_LINE_REGEX = "(?:error|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't)"
+ERROR_LINE_REGEX_I = "(?i)(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't)"
+ERROR_LINE_REGEX = "(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't)"
 
 DEFAULT_TIMEOUT = 1800
 

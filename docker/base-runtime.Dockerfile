@@ -9,6 +9,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         ca-certificates \
         curl \
         findutils \
+        gdb \
+        git \
         less \
         libatomic1 \
         libedit-dev \
@@ -27,6 +29,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         openjdk-25-jdk-headless \
         procps \
         python3 \
+        ripgrep \
         strace \
         sudo \
         tar \

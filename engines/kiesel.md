@@ -7,6 +7,6 @@ JavaScript engine written in Zig.
 * LOC:         59328 (`cloc src`)
 * Language:    Zig
 * License:     MIT
-* Standard:    ES6+ (partial)
+* Standard:    ESnext (partial)
 * Years:       2023-
 * Interpreter: stack-based VM

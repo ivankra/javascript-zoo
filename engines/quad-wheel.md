@@ -14,7 +14,7 @@ Buggy unfinished interpreter.
 * Interpreter:  stack-based VM
 * Regex engine: POSIX (regex.h)
 
-## Bugs
+## Quirks
 
 Claims to target ES3, but poorly tested, basic ES1 features are buggy or missing:
   * no typeof, hex literals, Date, Math.\*, function hoisting, ASI

@@ -14,6 +14,11 @@ Community-oriented fork of [QuickJS](quickjs.md).
 * Interpreter: stack-based VM
 * GC:          reference counting
 
+## Quirks
+
+Engine shell frequently misdetects script / ES module mode, causing various errors.
+Pass `--script` argument to force classic sloppy script mode.
+
 ## Users
 
 * [fastschema/qjs](fastschema-qjs.md)
