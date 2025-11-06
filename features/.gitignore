@@ -1,4 +1,4 @@
-spec*
+spec/
 data-common.json
 data-es2016plus.js
 data-es5.js

@@ -9,6 +9,7 @@ boa:                  --build-arg REV=868d13ff23ce5436363c8f71cffc829206be6783
 brimstone:            --build-arg REV=8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e
 chakracore:           --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510
 chakracore_jitless:   --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 --build-arg VARIANT=jitless -f chakracore.Dockerfile
+chakracore_full:      --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 --build-arg VARIANT=full -f chakracore.Dockerfile
 escargot:             --build-arg REV=v4.3.0
 escargot_clang:       --build-arg REV=v4.3.0 --build-arg BASE=jsz-clang -f escargot.Dockerfile
 espruino:             --build-arg REV=RELEASE_2V27
@@ -17,6 +18,8 @@ graaljs:              --build-arg REV=graal-25.0.1
 hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
 hermes:               --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193
 hermes_clang:         --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193 --build-arg BASE=jsz-clang -f hermes.Dockerfile
+# hermes_full gcc14
+hermes_full:          --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193 --build-arg VARIANT=full -f hermes.Dockerfile
 jerryscript:          --build-arg REV=v3.0.0
 kiesel:               --build-arg REV=42272ad1b0e8e4f56df9ae987ebbee4c23ae33b1 --build-arg ZIG_VER=0.15.2
 libjs:                --build-arg REV=62781f4818f87d4512b3ab133732ebb8ef9d0c94
@@ -40,6 +43,7 @@ rhino:                --build-arg REV=Rhino1_8_0_Release
 sobek:                --build-arg REV=d05c9166857d16f22e11d50f60bb63fff688f101
 spidermonkey:         --build-arg REV=FIREFOX_144_0_RELEASE
 spidermonkey_jitless: --build-arg REV=FIREFOX_144_0_RELEASE --build-arg VARIANT=jitless -f spidermonkey.Dockerfile
+spidermonkey_full:    --build-arg REV=FIREFOX_144_0_RELEASE --build-arg VARIANT=full -f spidermonkey.Dockerfile
 xs:                   --build-arg REV=5.12.0
 xs_clang:             --build-arg REV=5.12.0 --build-arg BASE=jsz-clang -f xs.Dockerfile
 
@@ -50,8 +54,10 @@ jsc_jitless:          --build-arg REV=9018757c64f271d2e19408850182e6b841159b53 -
 jsc_gcc:              --build-arg REV=9018757c64f271d2e19408850182e6b841159b53 --build-arg BASE=jsz-gcc -f jsc.Dockerfile
 
 # Latest Chrome's stable: https://chromiumdash.appspot.com/releases?platform=Linux
+# lkgr for full build to get latest ICU
 v8:                   --build-arg REV=14.2.231.14
 v8_jitless:           --build-arg REV=14.2.231.14 --build-arg VARIANT=jitless -f v8.Dockerfile
+v8_full:              --build-arg REV=lkgr --build-arg VARIANT=full -f v8.Dockerfile
 #v8_gcc:               --build-arg REV=14.2.231.14 --build-arg BASE=jsz-gcc -f v8.Dockerfile
 v8_pgo:               --build-arg REV=142.0.7444.59
 

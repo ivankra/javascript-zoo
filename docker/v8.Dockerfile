@@ -39,7 +39,12 @@ RUN build/install-build-deps.sh --no-prompt
 #      python build/linux/sysroot_scripts/install-sysroot.py --arch="$ARCH" && \
 #      tools/clang/scripts/build.py --without-android --without-fuchsia --host-cc=gcc --host-cxx=g++ --use-system-cmake --disable-asserts --with-ml-inliner-model=""; \
 #    fi
-#RUN tools/rust/build_rust.py  # fails on linux arm64 => enable_rust=false
+
+# Required for Temporal. Disable with enable_rust=false
+# x86_64-binfmt-P: Could not open '/lib64/ld-linux-x86-64.so.2': No such file or directory
+#RUN git config --global user.email "build@" && \
+#    git config --global user.name "build" && \
+#    tools/rust/build_rust.py
 
 ARG VARIANT=
 
@@ -58,8 +63,9 @@ RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
         host_toolchain=\"//build/toolchain/linux/unbundle:default\" \
         is_clang=${IS_CLANG} \
         use_sysroot=false; \
-      # Full release build, trim some fat. \
-      # PGO profiles not available => chrome_pgo_phase=0 \
+      # Full release build \
+      # * chrome_pgo_phase=0 - due to unavailable PGO profiles \
+      # * v8_use_external_startup_data=false - embed snapshot into binary \
       echo \
         chrome_pgo_phase=0 \
         dcheck_always_on=false \
@@ -68,15 +74,25 @@ RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
         is_official_build=true \
         target_cpu='"'$ARCH'"' \
         treat_warnings_as_errors=false \
+        v8_target_cpu='"'$ARCH'"' \
+        v8_use_external_startup_data=false; \
+      # Trim fat \
+      [ "$VARIANT" != full ] && echo \
         v8_enable_disassembler=false \
         v8_enable_gdbjit=false \
         v8_enable_i18n_support=false \
-        v8_enable_sandbox=false \
         v8_enable_temporal_support=false \
         v8_enable_test_features=false \
-        v8_enable_webassembly=false \
-        v8_target_cpu='"'$ARCH'"' \
-        v8_use_external_startup_data=false; \
+        v8_enable_sandbox=false \
+        v8_enable_webassembly=false; \
+      # Full-featured build \
+      # * icu_use_data_file=false - embed ICU data \
+      # * v8_enable_temporal_support=false -> needs Rust \
+      [ "$VARIANT" = full ] && echo \
+        icu_use_data_file=false \
+        v8_enable_i18n_support=true \
+        v8_enable_temporal_support=false \
+        v8_enable_webassembly=true; \
       # Disable JIT compilers \
       [ "$VARIANT" = jitless ] && echo \
         v8_jitless=true \

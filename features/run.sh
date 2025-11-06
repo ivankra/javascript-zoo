@@ -59,7 +59,7 @@ fi
 # - use sed-helper.sh/sed-console.log.sh to edit script on the fly if not
 
 engine_name="${engine_cmd[0]##*/}"   # basename
-if [[ "$engine_name" != spidermonkey_1* ]];then
+if [[ "$engine_name" != spidermonkey_[12]* ]];then
   engine_name="${engine_name%_*}"    # strip _variant, jsc_gcc -> jsc
 fi
 
@@ -70,7 +70,7 @@ case "$engine_name" in
     engine_cmd+=(--script);;
   escargot|jerryscript|jsc|nashorn|xs|cesanta-v7)
     engine_cmd+=("$script_dir/var-console-log.js");;
-  hermes|mocha|spidermonkey_1*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js)
+  hermes|mocha|spidermonkey_[12]*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js)
     engine_cmd=("$script_dir/sed-helper.sh" "$sedfile" print "${engine_cmd[@]}");;
   nova)
     engine_cmd=("$script_dir/sed-helper.sh" "$sedfile" print "${engine_cmd[@]}" eval);;

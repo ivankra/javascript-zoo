@@ -674,7 +674,7 @@ kangax-es6/String.prototype.codePointAt.js: OK
 kangax-es6/String.prototype.endsWith.js: OK
 kangax-es6/String.prototype.endsWith.throws-regex.js: OK
 kangax-es6/String.prototype.includes.js: OK
-kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.normalize.js: OK
 kangax-es6/String.prototype.repeat.js: OK
 kangax-es6/String.prototype.startsWith.js: OK
 kangax-es6/String.prototype.startsWith.throws-regex.js: OK
@@ -987,7 +987,7 @@ kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
-kangax-es6/misc.Proxy.get.RegExp.flags.js: OK
+kangax-es6/misc.Proxy.get.RegExp.flags.js: failed
 kangax-es6/misc.Proxy.get.RegExp.test.js: OK
 kangax-es6/misc.Proxy.get.RegExp.toString.js: OK
 kangax-es6/misc.Proxy.get.String.match.js: OK
@@ -1037,7 +1037,7 @@ kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 kangax-es6/misc.prototypes-not-instances.js: OK
 kangax-es6/new-target.assignment-error.js: OK
 kangax-es6/new-target.constructor.js: OK
-kangax-es6/regex.flags.u.case-folding.js: failed
+kangax-es6/regex.flags.u.case-folding.js: OK
 kangax-es6/regex.flags.u.codepoint.js: OK
 kangax-es6/regex.flags.u.js: OK
 kangax-es6/regex.flags.u.non-bmp.js: OK
@@ -1102,8 +1102,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: InternalError: too much recursion
-kangax-es6/tail-calls.mutual.js: InternalError: too much recursion
+kangax-es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
+kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1164,7 +1164,7 @@ kangax-es6/unicode-escapes.property-key.js: OK
 kangax-es6/unicode-escapes.string.js: OK
 kangax-es6/well-known.hasInstance.js: OK
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
-kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: OK
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
 kangax-es6/well-known.iterator.arguments.js: OK
 kangax-es6/well-known.iterator.js: OK
 kangax-es6/well-known.match.RegExp-constructor.js: OK
@@ -1264,7 +1264,7 @@ kangax-es2017/async.prototype-chain.js: OK
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/regex.flags.u.case-folding.js: OK
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
@@ -1279,16 +1279,16 @@ kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: OK
 kangax-es2018/regex.named-capture-groups.js: OK
-kangax-es2018/regex.unicode-property-escapes.js: kangax-es2018/regex.unicode-property-escapes.js:10:30 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: kangax-es2018/regex.unicode-property-escapes.unicode-11.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: kangax-es2018/regex.unicode-property-escapes.unicode-12.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: kangax-es2018/regex.unicode-property-escapes.unicode-13.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: kangax-es2018/regex.unicode-property-escapes.unicode-14.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: kangax-es2018/regex.unicode-property-escapes.unicode-15.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js:10:12 SyntaxError: invalid property name in regular expression:
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:12 SyntaxError: invalid property name in regular expression:
+kangax-es2018/regex.unicode-property-escapes.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1404,12 +1404,12 @@ kangax-es2024/Map.groupBy.js: OK
 kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: OK
 kangax-es2024/regex.flags.v.constructor.js: OK
-kangax-es2024/regex.flags.v.properties-of-strings.js: kangax-es2024/regex.flags.v.properties-of-strings.js:9:13 SyntaxError: invalid property name in regular expression:
-kangax-es2024/regex.flags.v.set-notations.js: kangax-es2024/regex.flags.v.set-notations.js:9:13 SyntaxError: invalid class property name in regular expression:
+kangax-es2024/regex.flags.v.properties-of-strings.js: OK
+kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
-kangax-es2024/regex.flags.v.unicode-15.1.js: kangax-es2024/regex.flags.v.unicode-15.1.js:9:13 SyntaxError: invalid property name in regular expression:
-kangax-es2024/regex.flags.v.unicode-16.0.js: kangax-es2024/regex.flags.v.unicode-16.0.js:9:13 SyntaxError: invalid property name in regular expression:
-kangax-es2024/regex.flags.v.unicode-17.0.js: kangax-es2024/regex.flags.v.unicode-17.0.js:9:13 SyntaxError: invalid property name in regular expression:
+kangax-es2024/regex.flags.v.unicode-15.1.js: OK
+kangax-es2024/regex.flags.v.unicode-16.0.js: OK
+kangax-es2024/regex.flags.v.unicode-17.0.js: failed
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK
@@ -1443,27 +1443,27 @@ kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: OK
-kangax-intl/Intl.Collator.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.Collator.valid-tags.js: failed
-kangax-intl/Intl.Collator.without-new.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
-kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.NumberFormat.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Intl is not defined
-kangax-intl/Intl.js: failed
-kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.js: OK
+kangax-intl/Intl.Collator.new-instances.js: OK
+kangax-intl/Intl.Collator.prototype.compare.js: OK
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: OK
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
+kangax-intl/Intl.Collator.valid-tags.js: OK
+kangax-intl/Intl.Collator.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: OK
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
+kangax-intl/Intl.js: OK
+kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK

@@ -28,20 +28,19 @@ JIT compiled out. Naming convention: `engine_variant`. Variant-specific
 build arguments are defined in `args.txt`. It is also used to pin
 specific revisions.
 
-Most engines are built statically from the original source code, without
-libicu and Intl (ECMA-402) as that adds a huge data dependency of ~10-20MB,
-that often gets embedded in the binary. Temporal and WASM are disabled
-as well when possible to save space.
+Most engines are built statically from the original source code.
+Some (esp. V8) are built without libicu/Intl (ECMA-402), Temporal and
+Wasm to trim excessive binary bloat. `*_full` variants are built with
+all features.
 
 ## Docker Hub
 
-Container with pre-built binaries (amd64/arm64) on
-[Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo):
+Docker image with pre-built binaries (amd64/arm64):
 
   * `docker run -it ivankra/javascript-zoo`
   * `podman run -it docker.io/ivankra/javascript-zoo`
-  * `container run -it docker.io/ivankra/javascript-zoo`
-    (macOS [Containerization](https://github.com/apple/containerization))
+  * <code>[container](https://github.com/apple/containerization) run -it docker.io/ivankra/javascript-zoo</code>
+  * [Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo):
 
 ## Template
 

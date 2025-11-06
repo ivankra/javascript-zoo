@@ -20,6 +20,7 @@ RUN apt-get update -y && \
         rustc
 
 # jitless: like --no-jit-backend cli flag, NOT same as: --no-ion --no-baseline --no-asmjs --no-native-regexp !
+# full: full-featured build
 ARG VARIANT=
 
 # Build instructions: https://firefox-source-docs.mozilla.org/js/build.html
@@ -37,8 +38,10 @@ RUN { \
       echo "ac_add_options --disable-debug"; \
       echo "ac_add_options --disable-debug-symbols"; \
       echo "ac_add_options --disable-tests"; \
-      echo "ac_add_options --without-intl-api"; \
-      echo "ac_add_options --disable-icu4x"; \
+      if [ "$VARIANT" != full ]; then \
+        echo "ac_add_options --without-intl-api"; \
+        echo "ac_add_options --disable-icu4x"; \
+      fi; \
     } >MOZCONFIG
 RUN MOZCONFIG=/src/MOZCONFIG ./mach build
 RUN ln -s obj-*/ obj

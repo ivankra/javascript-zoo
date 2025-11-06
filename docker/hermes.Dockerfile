@@ -10,7 +10,25 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 # https://github.com/facebook/hermes/blob/main/doc/BuildingAndRunning.md
 RUN apt-get update -y && apt-get install -y libicu-dev libreadline-dev
-RUN cmake -S . -B build_release -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+ARG VARIANT=
+
+RUN sed -i 's/std::uint8_t/unsigned char/g' /src/lib/Platform/Intl/impl_icu/IntlUtils.cpp
+
+RUN cmake \
+      -S . \
+      -B build_release \
+      -G Ninja \
+      -DCMAKE_BUILD_TYPE=Release \
+      $([ "$VARIANT" = full ] && echo \
+        -DHERMES_ENABLE_INTL=ON \
+        -DHERMES_USE_STATIC_ICU=ON \
+        -DHERMES_STATIC_LINK=ON \
+      ) \
+      $([ "$VARIANT" != full ] && echo \
+        -DHERMES_ENABLE_INTL=OFF \
+      )
+
 RUN cmake --build build_release
 
 ENV JS_BINARY=/src/build_release/bin/hermes

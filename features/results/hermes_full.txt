@@ -264,8 +264,8 @@ es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: OK
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
-es3/String.prototype.toLocaleLowerCase.js: OK
-es3/String.prototype.toLocaleUpperCase.js: OK
+es3/String.prototype.toLocaleLowerCase.js: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
+es3/String.prototype.toLocaleUpperCase.js: failed
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -1443,27 +1443,27 @@ kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: OK
-kangax-intl/Intl.Collator.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.valid-tags.js: failed
-kangax-intl/Intl.Collator.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
-kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.js: failed
-kangax-intl/Intl.prototype.js: ReferenceError: Property 'Intl' doesn't exist
+kangax-intl/Intl.Collator.js: OK
+kangax-intl/Intl.Collator.new-instances.js: OK
+kangax-intl/Intl.Collator.prototype.compare.js: OK
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: OK
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
+kangax-intl/Intl.Collator.valid-tags.js: OK
+kangax-intl/Intl.Collator.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: OK
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: failed
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
+kangax-intl/Intl.js: OK
+kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK

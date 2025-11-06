@@ -1,11 +1,12 @@
 {
   "arch": "arm64",
-  "binary_sha256": "4e1fe84daa53e5235f72f5757b6b1389e1548001e75a3d9d8d374ba9f2c70db7",
-  "binary_size": 4073424,
+  "binary_sha256": "c775a41b4b4ef37042184a036fba88c260c8d089d2669bcd64b1ce3cac478051",
+  "binary_size": 41128880,
   "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
   "engine": "hermes",
   "repository": "https://github.com/facebook/hermes.git",
   "revision": "ef620c2c09eb037559da0928dc0125f033dc5193",
   "revision_date": "2025-10-30",
+  "variant": "full",
   "version": "0.12.0"
 }

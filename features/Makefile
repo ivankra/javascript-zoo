@@ -26,32 +26,32 @@ quickjs: sed
 quickjs5: sed
 	./run.sh quickjs es[1-5]
 
-spec: spec-rm spec1.txt spec3.txt spec5.txt spec51.txt spec6.txt spec6.html
+spec: .PHONY spec-prep spec/es1.txt spec/es3.txt spec/es5.txt spec/es51.txt spec/es6.txt spec/es6.html
 
-spec-rm:
-	rm -f spec*.txt
+spec-prep:
+	mkdir -p spec
 
-spec1.pdf:
-	wget -O spec1.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_1st_edition_june_1997.pdf
+spec/es1.pdf:
+	wget -O spec/es1.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_1st_edition_june_1997.pdf
 
-spec3.pdf:
-	wget -O spec3.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
+spec/es3.pdf:
+	wget -O spec/es3.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
 
-spec5.pdf:
-	wget -O spec5.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5th_edition_december_2009.pdf
+spec/es5.pdf:
+	wget -O spec/es5.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5th_edition_december_2009.pdf
 
-spec51.pdf:
-	wget -O spec51.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5.1_edition_june_2011.pdf
+spec/es51.pdf:
+	wget -O spec/es51.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5.1_edition_june_2011.pdf
 
-spec6.pdf:
-	wget -O spec6.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_6th_edition_june_2015.pdf
+spec/es6.pdf:
+	wget -O spec/es6.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_6th_edition_june_2015.pdf
 
-spec6.html:
-	curl -o spec6.html https://262.ecma-international.org/6.0/
+spec/es6.html:
+	curl -o spec/es6.html https://262.ecma-international.org/6.0/
 
 # Normalize somewhat for diffing and grep.
 # 'dwdiff -ic spec1.txt spec3.txt | less' or meld works well diffing.
-%.txt: %.pdf
+spec/%.txt: spec/%.pdf Makefile
 	pdftotext -nopgbrk -layout $< /dev/stdout \
 	  | egrep -v '^..     *- [ivx0-9]+ -$$' \
 	  | egrep -v '^ *[0-9ivx]* *© Ecma International [0-9]* *[0-9ivx]*$$' \
@@ -69,3 +69,5 @@ kangax-data:
 
 kangax-gen: kangax-data kangax-map.json
 	./kangax.js gen
+
+.PHONY:

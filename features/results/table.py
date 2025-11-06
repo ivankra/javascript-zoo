@@ -19,7 +19,7 @@ def make_column(data, total_re, pass_re=': OK$'):
         res.append({
             'passed': passed,
             'total': total,
-            'pct': (passed * 100.0 / total) if total > 0 else 0,
+            'pct': (passed * 100 / total) if total > 0 else 0,
             'engine': engine,
         })
 
@@ -32,22 +32,28 @@ def gen_table(column_data):
     table = [['<td>'] * (len(column_data)) for _ in range(height)]
 
     for c, (ctitle, cdata) in enumerate(column_data.items()):
-        for i in range(len(cdata)):
-            if cdata[i]['passed'] == 0 and ctitle == 'Crashes':
+        for i, item in enumerate(cdata):
+            if item['passed'] == 0 and ctitle == 'Crashes':
                 break
 
-            if cdata[i]['passed'] == 0:
-                fmt = '<s>', '</s>'
-            elif cdata[i]['passed'] == cdata[i]['total']:
+            fmt = '', ''
+            if item['passed'] == item['total'] and item['passed'] > 0:
                 fmt = '<b>', '</b>'
-            else:
-                fmt = '', ''
 
-            table[i][c] = '<td title="%d/%d"><nobr>%s%.1f%%&nbsp;%s%s</nobr>' % (
-                cdata[i]['passed'], cdata[i]['total'],
-                fmt[0], cdata[i]['pct'], cdata[i]['engine'], fmt[1])
+            pct = item['pct']
+            if pct < 100 and pct > 99.9:
+                pct = 99.9
+            pct = ('%.1f' % pct).replace('100.0', '100')
 
-    html = ['<table>\n<tr>' + ''.join(['<th>%s</th>' % name for name in column_data.keys()]) + '</tr>\n']
+            table[i][c] = (
+                f'<td title="{item["passed"]}/{item["total"]}">'
+                f'<nobr>{fmt[0]}{pct}%&nbsp;{item["engine"]}{fmt[1]}</nobr>'
+            )
+
+    html = [
+        '<table>\n<tr>' +
+        ''.join(['<th>%s</th>' % name for name in column_data.keys()]) + '</tr>\n'
+    ]
     for row in table:
         if all(cell == '<td>' for cell in row): break
         html += ['<tr>' + ''.join(cell for cell in row if cell) + '</tr>\n']
@@ -102,12 +108,12 @@ def gen_table2(column_data):
     html += ['</table>\n']
     return ''.join(html)
 
-
 def main():
     data = {}  # engine => lines
 
     for filename in glob.glob("*.txt"):
         engine = filename.removesuffix('.txt')
+        engine = engine.removesuffix('_full')
         data[engine] = [l.rstrip() for l in open(filename)]
 
     with open('README.md', 'w', encoding='utf-8') as f:

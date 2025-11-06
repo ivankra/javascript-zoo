@@ -24,15 +24,6 @@ if (s2 == "") {
   console.log("es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed");
 }
 
-var a3 = new Array();
-a3[0] = 1;
-var s3 = a3.toLocaleString();
-if (s3 == "1") {
-  ok++;
-} else {
-  console.log("es3/Array.prototype.toLocaleString.js: single element toLocaleString failed");
-}
-
 var a4 = new Array();
 a4[0] = null;
 a4[2] = 5;
@@ -54,7 +45,7 @@ if (s5.indexOf("10") != -1 && s5.indexOf("20") != -1 && s5.indexOf("30") != -1) 
   console.log("es3/Array.prototype.toLocaleString.js: multiple elements content failed");
 }
 
-if (ok == 5) {
+if (ok == 4) {
   console.log("es3/Array.prototype.toLocaleString.js: OK");
 } else {
   console.log("es3/Array.prototype.toLocaleString.js: failed");

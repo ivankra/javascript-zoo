@@ -3,10 +3,10 @@
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
 
-var s1 = "HELLO";
-var result1 = s1.toLocaleLowerCase();
-if (result1 == "hello") {
+var str = "HELLO";
+var res = str.toLocaleLowerCase();
+if (res == "hello") {
   console.log("es3/String.prototype.toLocaleLowerCase.js: OK");
 } else {
-  console.log("es3/String.prototype.toLocaleLowerCase.js: failed");
+  console.log("es3/String.prototype.toLocaleLowerCase.js: 'HELLO'.toLocaleLowerCase() != 'hello' (got: '" + res + "')");
 }

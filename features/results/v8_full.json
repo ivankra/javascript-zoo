@@ -1,0 +1,12 @@
+{
+  "arch": "arm64",
+  "binary_sha256": "ba53133b7457e4d73784205d534f7b4553012846c7885ce66c1de8bc0a67cdd2",
+  "binary_size": 39254424,
+  "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+  "engine": "v8",
+  "repository": "https://chromium.googlesource.com/v8/v8.git",
+  "revision": "f1ce8f44fb72804415e6085948c6979554be4663",
+  "revision_date": "2025-11-03",
+  "variant": "full",
+  "version": "14.4.0 (candidate)"
+}

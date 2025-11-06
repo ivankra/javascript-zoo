@@ -1,7 +1,5 @@
 * ES1: More this/inheritance tests, hoisting
 * ESnext permalinks
 * default strict mode fixes for bun/deno
-* intl docker builds
-* run-all.sh -> Makefile to parallelize
 * js-interpreter sablejs sobek narcissus:
   fix custom shells to add console.log() and handle multiple scripts
