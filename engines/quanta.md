@@ -10,3 +10,28 @@ Buggy unfinished interpreter.
 * Years:        2025-
 * Interpreter:  tree walker
 * Regex engine: std::regex
+
+## Conformance
+
+<details><summary>ES1-ES5: 43%</summary><ul>
+<li>ES1: 48%<br>
+<li>ES3: 47%<br>
+<li>ES5: 22%, <b>1 crash</b><br>
+</ul></details>
+
+<details><summary>compat-table: ES6 23%, ES2016+ 14%, Intl 0%</summary><ul>
+<li>ES6: 23%, <b>4 crashes</b><br>
+<li>ES2016: 21%<br>
+<li>ES2017: 22%<br>
+<li>ES2018: 21%<br>
+<li>ES2019: 0%<br>
+<li>ES2020: 26%<br>
+<li>ES2021: 14%<br>
+<li>ES2022: 3%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 18%<br>
+<li>Intl: 0%<br>
+</ul></details>
+
+💥 **5 crashes during testing**

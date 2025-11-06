@@ -8,7 +8,6 @@ Primitive interpreter for a limited subset of JavaScript.
 * License:     MIT
 * Standard:    no (can't run ES1)
 * Years:       2009-2012
-* Type:        JavaScript-like language
 * Interpreter: interprets from source
 
 ## Quirks
@@ -16,3 +15,11 @@ Primitive interpreter for a limited subset of JavaScript.
 No ASI, no typeof, no Date, `WHILE Loop exceeded 8192 iterations`.
 
 Richards score ~45 on M4 (78000us/iter).
+
+## Conformance
+
+<details><summary>ES1-ES5: 8%</summary><ul>
+<li>ES1: 12%<br>
+<li>ES3: 5%<br>
+<li>ES5: 4%<br>
+</ul></details>

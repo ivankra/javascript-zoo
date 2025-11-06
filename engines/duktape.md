@@ -6,7 +6,7 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 * LOC:         72815 (`cloc --exclude-ext=txt src-input`)
 * Language:    C
 * License:     MIT
-* Standard:    ES2016 (partial)
+* Standard:    ES5
 * Years:       2013-
 * Interpreter: register-based VM
 
@@ -20,3 +20,28 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 
 * [dukluv](https://github.com/creationix/dukluv) <span class="shields"><img src="https://img.shields.io/github/stars/creationix/dukluv?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/creationix/dukluv?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - libuv bindings for duktape
 * [lowjs](https://github.com/neonious/lowjs) <span class="shields"><img src="https://img.shields.io/github/stars/neonious/lowjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/neonious/lowjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - low-footprint Node.js port for duktape
+
+## Conformance
+
+<details><summary>ES1-ES5: 99%</summary><ul>
+<li>ES1: 100%</li>
+<li>ES3: 100%</li>
+<li>ES5: 99%<pre>
+<a href="../features/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
+</pre></li>
+</ul></details>
+
+<details><summary>compat-table: ES6 29%, ES2016+ 8%, Intl 25%</summary><ul>
+<li>ES6: 29%<br>
+<li>ES2016: 21%<br>
+<li>ES2017: 13%<br>
+<li>ES2018: 0%<br>
+<li>ES2019: 14%<br>
+<li>ES2020: 14%<br>
+<li>ES2021: 7%<br>
+<li>ES2022: 4%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Intl: 25%<br>
+</ul></details>

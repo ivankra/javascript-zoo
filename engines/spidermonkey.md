@@ -50,3 +50,33 @@ JavaScript engine of Firefox.
 * [spiderfire](https://github.com/Redfire75369/spiderfire) <span class="shields"><img src="https://img.shields.io/github/stars/Redfire75369/spiderfire?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/Redfire75369/spiderfire?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [Fastly Compute](https://github.com/fastly/js-compute-runtime) <span class="shields"><img src="https://img.shields.io/github/stars/fastly/js-compute-runtime?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/fastly/js-compute-runtime?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [gjs](https://gitlab.gnome.org/GNOME/gjs) / [cjs](https://github.com/linuxmint/cjs) <span class="shields"><img src="https://img.shields.io/github/stars/linuxmint/cjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/linuxmint/cjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - GNOME 3 / Cinnamon's runtime
+
+## Conformance
+
+<details><summary>ES1-ES5: 100%</summary><ul>
+<li>ES1: 100%</li>
+<li>ES3: 100%</li>
+<li>ES5: 100%</li>
+</ul></details>
+
+<details><summary>compat-table: ES6 98%, ES2016+ 99%, Intl 100%</summary><ul>
+<li>ES6: 98%<pre>
+<a href="../features/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: too much recursion
+<a href="../features/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: too much recursion
+</pre></li>
+<li>ES2016: 100%</li>
+<li>ES2017: 100%</li>
+<li>ES2018: 99%<pre>
+<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
+</pre></li>
+<li>ES2019: 100%</li>
+<li>ES2020: 100%</li>
+<li>ES2021: 100%</li>
+<li>ES2022: 100%</li>
+<li>ES2023: 100%</li>
+<li>ES2024: 96%<pre>
+<a href="../features/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
+</pre></li>
+<li>ES2025: 100%</li>
+<li>Intl: 100%</li>
+</ul></details>

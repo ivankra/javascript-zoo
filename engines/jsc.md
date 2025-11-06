@@ -69,3 +69,28 @@ JavaScript engine of Safari/WebKit.
 * [bun](https://github.com/oven-sh/bun) <span class="shields"><img src="https://img.shields.io/github/stars/oven-sh/bun?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oven-sh/bun?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JavaScript/TypeScript runtime written in Zig
 
 <!-- baseline: ./jsc-dfg --useDFGJIT=false --useFTLJIT=false -->
+
+## Conformance
+
+<details><summary>ES1-ES5: 100%</summary><ul>
+<li>ES1: 100%</li>
+<li>ES3: 100%</li>
+<li>ES5: 100%</li>
+</ul></details>
+
+<details><summary>compat-table: ES6 100%, ES2016+ 99%, Intl 100%</summary><ul>
+<li>ES6: 100%</li>
+<li>ES2016: 100%</li>
+<li>ES2017: 100%</li>
+<li>ES2018: 100%</li>
+<li>ES2019: 100%</li>
+<li>ES2020: 100%</li>
+<li>ES2021: 100%</li>
+<li>ES2022: 100%</li>
+<li>ES2023: 100%</li>
+<li>ES2024: 96%<pre>
+<a href="../features/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
+</pre></li>
+<li>ES2025: 100%</li>
+<li>Intl: 100%</li>
+</ul></details>

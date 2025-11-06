@@ -13,3 +13,28 @@ JavaScript engine written in Rust, aiming at ES5.
 ## Links
 
 * [Live demo (WASM)](https://maekawatoshiki.github.io/rapidus)
+
+## Conformance
+
+<details><summary>ES1-ES5: 21%</summary><ul>
+<li>ES1: 31%<br>
+<li>ES3: 14%, <b>1 crash</b><br>
+<li>ES5: 12%<br>
+</ul></details>
+
+<details><summary>compat-table: ES6 8%, ES2016+ 2%, Intl 0%</summary><ul>
+<li>ES6: 8%<br>
+<li>ES2016: 6%<br>
+<li>ES2017: 0%<br>
+<li>ES2018: 11%<br>
+<li>ES2019: 0%<br>
+<li>ES2020: 0%<br>
+<li>ES2021: 0%<br>
+<li>ES2022: 0%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Intl: 0%<br>
+</ul></details>
+
+💥 **1 crash during testing**

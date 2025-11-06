@@ -11,6 +11,7 @@
 
 import argparse
 import glob
+import html
 import json
 import os
 import os.path
@@ -42,15 +43,98 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
-    engines_data = update_data('engine', 'engines/*.md', 'engines.json', args)
-    parsers_data = update_data('parser', 'parsers/*.md', None, args)
+    conformance_data = do_conformance_data()
+    engines_data = do_engine_data(args, 'engine', 'engines/*.md', 'engines.json', conformance_data)
+    parsers_data = do_engine_data(args, 'parser', 'parsers/*.md', None, conformance_data)
 
     # Update files with dynamically-generated index tables
     update_tables('README.md', engines_data)
     update_tables('parsers/README.md', parsers_data)
     update_tables('parsers/acorn.md', engines_data)
 
-def update_data(kind, md_glob, json_file, args):
+def do_conformance_data():
+    kangax_map = json.loads(open('features/kangax-map.json').read())
+    kangax_groups = {}
+    kangax_weights = {}
+
+    for i in range(2):
+        for key, filename in kangax_map.items():
+            m = re.match(r'^(.*) \((tiny|small|medium|large)\) > .*', key)
+            if not m:
+                kangax_weights[filename] = 1
+            else:
+                group = m[1]
+                if i == 0:
+                    kangax_groups.setdefault(group, []).append(filename)
+                else:
+                    group_weight = {'tiny': 1, 'small': 2, 'medium': 4, 'large': 8}[m[2]]
+                    kangax_weights[filename] = group_weight / len(kangax_groups[group])
+
+    conformance_data = {}  # engine => lines
+    line_re = re.compile('^(([^:/]+)/([^:]+)): (.+)$')
+
+    for filename in glob.glob("features/results/*.txt"):
+        engine = os.path.basename(filename).removesuffix('.txt')
+        engine = engine.removesuffix('_full')
+        assert engine not in conformance_data
+
+        tests = []
+        dir_pass = {}
+        dir_total = {}
+        failing_by_dir = {}
+        crashes = 0
+        crashes_by_dir = {}
+
+        for line in open(filename):
+            m = line_re.match(line.rstrip())
+            assert m, (filename, line)
+
+            test = {
+                'test': m[1],
+                'dir': m[2],
+                'weight': kangax_weights.get(m[1], 1),
+                'result': m[4],
+            }
+            tests.append(test)
+
+            dir_total[test['dir']] = dir_total.get(test['dir'], 0) + test['weight']
+            if test['result'] == 'OK':
+                dir_pass[test['dir']] = dir_pass.get(test['dir'], 0) + test['weight']
+            else:
+                failing_by_dir.setdefault(test['dir'], []).append(test)
+
+            if test['result'].startswith('crashed'):
+                crashes += 1
+                crashes_by_dir[test['dir']] = crashes_by_dir.get(test['dir'], 0) + 1
+
+        conformance_scores = {}
+        for dir_name, dir_weight in dir_total.items():
+            conformance_scores[dir_name] = round(dir_pass.get(dir_name, 0) / dir_total[dir_name], 4)
+
+        def agg_score(name, dir_regex):
+            p, q = 0, 0
+            for dir_name, dir_weight in dir_total.items():
+                if re.match(dir_regex, dir_name):
+                    p += dir_pass.get(dir_name, 0)
+                    q += dir_total.get(dir_name, 0)
+            if q > 0:
+                conformance_scores[name] = round(p / q, 4)
+
+        agg_score('es1_5', '^es[1-5]$')
+        agg_score('kangax-es2016plus', '^kangax-es20..$')
+
+        conformance_data[engine] = {
+            'tests': tests,
+            'failing_by_dir': failing_by_dir,
+            'crashes': crashes,
+            'crashes_by_dir': crashes_by_dir,
+            'conformance_results_path': filename,
+            'conformance_scores': conformance_scores,  # kangax weighted
+        }
+
+    return conformance_data
+
+def do_engine_data(args, kind, md_glob, json_file, conformance_data):
     orig_row_by_id = {}
     if json_file and os.path.exists(json_file):
         with open(json_file, 'r') as fp:
@@ -98,8 +182,17 @@ def update_data(kind, md_glob, json_file, args):
             if bench:
                 row['bench'] = [bench[k] for k in sorted(bench.keys())]
 
+        base_name = name.split('_')[0]
+        conf = None
+        if name in conformance_data:
+            conf = conformance_data[name]
+            row['spec_conformance'] = conf['conformance_scores']
+        elif base_name in conformance_data:
+            conf = conformance_data[base_name]
+            row['spec_conformance'] = conf['conformance_scores']
+
         if args.format_markdown:
-            update_md(filename, row)
+            update_md(filename, row, conf)
 
         rows.append(row)
 
@@ -574,10 +667,12 @@ def format_table(data, columns):
     lines.append('<!-- end of generated table (%d rows) -->\n' % len(data))
     return lines
 
-def update_md(filename, data):
+def update_md(filename, data, conformance):
     parsed = parse_md_metadata(filename)
     write_md_metadata(filename, parsed)
     update_md_shields(filename)
+    if conformance:
+        update_conformance(filename, conformance)
 
 def update_md_shields(filename):
     """Updates <span class="shields">...</span> tags in .md file."""
@@ -623,6 +718,132 @@ def get_shields_for_repo(repo_link, filename):
     else:
         return '<span class="shields">' + html + '</span>'
 
+def update_conformance(filename, conformance):
+    assert conformance is not None
+
+    orig_lines = open(filename).readlines()
+    lines = []
+    skip = False
+
+    features_lines = [
+        '## Conformance\n',
+        '\n',
+    ]
+
+    def format_score(score):
+        return '100%' if score == 1 else '%.0f%%' % (min(score, 0.99) * 100)
+
+    conformance_scores = conformance['conformance_scores']
+    sections = {}
+
+    if 'es1_5' in conformance_scores:
+        headline = 'ES1-ES5: ' + format_score(conformance_scores['es1_5'])
+        sections[headline] = ['es1', 'es3', 'es5']
+
+    if 'kangax-es6' in conformance_scores:
+        headline = 'compat-table: ES6 ' + format_score(conformance_scores['kangax-es6'])
+        if 'kangax-es2016plus' in conformance_scores:
+            headline += ', ES2016+ ' + format_score(conformance_scores['kangax-es2016plus'])
+        if 'kangax-next' in conformance_scores:
+            headline += ', Next ' + format_score(conformance_scores['kangax-next'])
+        if 'kangax-intl' in conformance_scores:
+            headline += ', Intl ' + format_score(conformance_scores['kangax-intl'])
+        sections[headline] = (
+            ['kangax-es6'] +
+            [s for s in conformance_scores if re.match('^kangax-es20..$', s)] +
+            ['kangax-next', 'kangax-intl']
+        )
+
+    for section_headline, section_dirs in sections.items():
+        section_dirs = [s for s in section_dirs if s in conformance_scores]
+        if len(section_dirs) == 0:
+            continue
+
+        if features_lines[-1] != '\n':
+            features_lines += ['\n']
+        features_lines += [
+            f'<details><summary>{section_headline}</summary><ul>\n'
+        ]
+
+        show_full_link = None
+
+        for dir_name in section_dirs:
+            name = dir_name.replace('kangax-', '')
+            name = name.replace('es', 'ES')
+            name = name.replace('intl', 'Intl')
+            name = name.replace('next', 'Next')
+
+            failing_tests = conformance['failing_by_dir'].get(dir_name, [])
+            score = conformance_scores[dir_name]
+            score_str = format_score(score)
+
+            crashes = str(conformance['crashes_by_dir'].get(dir_name, ''))
+            if crashes and crashes != '0':
+                if crashes == '1':
+                    crashes = f', <b>{crashes} crash</b>'
+                elif crashes >= '2':
+                    crashes = f', <b>{crashes} crashes</b>'
+
+            if score == 1:
+                assert len(failing_tests) == 0
+                features_lines += [f'<li>{name}: {score_str}</li>\n']
+            elif score < 0.5:
+                features_lines += [f'<li>{name}: {score_str}{crashes}<br>\n']
+            else:
+                features_lines += [
+                    f'<li>{name}: {score_str}{crashes}<pre>\n'
+                ]
+
+                for i, test in enumerate(failing_tests):
+                    if i > 20:
+                        show_full_link = True
+                        features_lines += ['...\n']
+                        break
+                    else:
+                        basename = os.path.basename(test['test'])
+                        link = '../features/' + test['test']
+                        result = html.escape(test['result'], quote=False)
+                        features_lines += [f'<a href="{link}">{basename}</a>: {result}\n']
+
+                features_lines += ['</pre></li>\n']
+
+        if show_full_link:
+            link = '../' + conformance['conformance_results_path']
+            features_lines += [f'<li><a href="{link}">Full results</a></li>\n']
+
+        features_lines += ['</ul></details>\n']
+
+    if conformance['crashes'] > 0:
+        crashes = str(conformance['crashes'])
+        if crashes == '1':
+            crashes += ' crash'
+        else:
+            crashes += ' crashes'
+        features_lines += ['\n', '💥' + f' **{crashes} during testing**\n']
+
+    for i, line in enumerate(orig_lines):
+        if skip:
+            if line.startswith('#'):
+                lines.append(line)
+                skip = False
+        elif line == features_lines[0] or line == '## ECMAScript features\n':
+            lines.extend(features_lines)
+            skip = True
+            features_lines = None
+        else:
+            lines.append(line)
+
+    if features_lines is not None:
+        if lines[-1] != '\n':
+            lines.append('\n')
+        lines.extend(features_lines)
+
+    if lines == orig_lines:
+        return
+
+    with open(filename, 'w') as fp:
+        fp.writelines(lines)
+
 def get_domain(url):
     m = re.match('^https?://?([^/]+).*', url)
     if m:
@@ -636,6 +857,14 @@ def strip_markdown_links(text):
 
 def strip_html_tags(text):
     return re.sub('<[^<]+?>', '', text).strip()
+
+def escape_markdown(text: str, extra: str = "") -> str:
+    chars = r'\\`*_{}\[\]()#+\-\.\!|<>~'
+    if extra:
+        extra_esc = re.escape(extra)
+        chars = chars + extra_esc
+
+    return re.sub(r"([" + chars + r"])", r"\\\1", text)
 
 if __name__ == '__main__':
     main()

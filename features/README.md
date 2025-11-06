@@ -9,16 +9,15 @@ environments: browsers, Node.js and basic engine shells (perhaps with
 a crude `s/console.log/print/`).  On success, each test is expected
 to print its own `<filename>: OK`.
 
-Test directories are named after ECMAScript spec which introduced
-the feature.  Annex B features (optional for non-browsers), including
-features that were only later moved there, are in
-`annex-b.<spec>.<feature>.js`.
-
 Most ES1-ES5 test cases are generated with LLM assistance from
 specification texts as reference and reviewed/refined.
 Test cases in `kangax-*/` are directly ported over from
 [kangax / compat-table](https://compat-table.github.io/compat-table/es6/),
 they can be regenerated with `kangax.js`.
+
+Test directories are named after ECMAScript spec which introduced
+the feature.  All annex B features (optional for non-browsers), including
+features that were only later moved there, are in `annex-b.<feature>.js`.
 
 ## Running
 

@@ -45,3 +45,11 @@ function Counter(start) {
   return proto({n: start}, CounterPrototype);
 };
 ```
+
+## Conformance
+
+<details><summary>ES1-ES5: 6%</summary><ul>
+<li>ES1: 6%<br>
+<li>ES3: 7%<br>
+<li>ES5: 3%<br>
+</ul></details>

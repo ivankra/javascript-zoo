@@ -35,12 +35,12 @@ all features.
 
 ## Docker Hub
 
-Docker image with pre-built binaries (amd64/arm64):
+[Docker image](https://hub.docker.com/r/ivankra/javascript-zoo)
+with pre-built binaries (amd64/arm64):
 
   * `docker run -it ivankra/javascript-zoo`
   * `podman run -it docker.io/ivankra/javascript-zoo`
   * <code>[container](https://github.com/apple/containerization) run -it docker.io/ivankra/javascript-zoo</code>
-  * [Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo):
 
 ## Template
 

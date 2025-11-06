@@ -19,3 +19,36 @@ JIT-enabled ES5 engine in C++.
   * iv/lv5/railgun/vm.h: direct-threaded register-based VM, 3-args binary ops
   * iv/lv5/breaker: JIT compiler
   * iv/aero: regex engine with x64 JIT
+
+## Conformance
+
+<details><summary>ES1-ES5: 98%</summary><ul>
+<li>ES1: 100%</li>
+<li>ES3: 99%<pre>
+<a href="../features/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')
+<a href="../features/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed; large number exponential notation failed
+</pre></li>
+<li>ES5: 92%<pre>
+<a href="../features/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: failed
+<a href="../features/es5/JSON.parse.js">JSON.parse.js</a>: negative number failed
+<a href="../features/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer array failed
+<a href="../features/es5/Object.defineProperty.js">Object.defineProperty.js</a>: getter definition failed
+<a href="../features/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
+<a href="../features/es5/literals.object.getters.js">literals.object.getters.js</a>: { get x(){ return 1 } }.x failed; getter returning value failed; getter with side effects failed; getter accessing this failed
+</pre></li>
+</ul></details>
+
+<details><summary>compat-table: ES6 16%, ES2016+ 1%, Intl 46%</summary><ul>
+<li>ES6: 16%<br>
+<li>ES2016: 0%<br>
+<li>ES2017: 4%<br>
+<li>ES2018: 0%<br>
+<li>ES2019: 2%<br>
+<li>ES2020: 0%<br>
+<li>ES2021: 0%<br>
+<li>ES2022: 4%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Intl: 46%<br>
+</ul></details>

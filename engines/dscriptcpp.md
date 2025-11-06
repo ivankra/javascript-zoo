@@ -8,7 +8,7 @@
 * Language:         C++
 * License:          BSL-1.0
 * Org:              Digital Mars
-* Standard:         ES3 (partial)
+* Standard:         ES3
 * Years:            2000
 * Runtime platform: native (Win32/Linux i386)
 * Interpreter:      register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))

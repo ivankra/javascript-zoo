@@ -26,3 +26,87 @@ First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown e
 * Qt applications
 * [KDE Plasma](https://develop.kde.org/docs/plasma/scripting/)
 * [Okular](https://github.com/KDE/okular) - for evaluation of JavaScript code in .pdf
+
+## Conformance
+
+<details><summary>ES1-ES5: 98%</summary><ul>
+<li>ES1: 99%<pre>
+<a href="../features/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token `'
+<a href="../features/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Unexpected token `'
+</pre></li>
+<li>ES3: 99%<pre>
+<a href="../features/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0; '.'.split(/()()/).length !== 1
+<a href="../features/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: split by empty regex failed
+</pre></li>
+<li>ES5: 95%<pre>
+<a href="../features/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: failed to apply reviver function; failed to delete property for which reviver returned undefined
+<a href="../features/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer array failed
+<a href="../features/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
+<a href="../features/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: TypeError: Type error
+</pre></li>
+</ul></details>
+
+<details><summary>compat-table: ES6 87%, ES2016+ 21%, Intl 25%</summary><ul>
+<li>ES6: 87%<pre>
+<a href="../features/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
+<a href="../features/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
+<a href="../features/kangax-es6/Promise.all.js">Promise.all.js</a>: failed
+<a href="../features/kangax-es6/Promise.js">Promise.js</a>: failed
+<a href="../features/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: failed
+<a href="../features/kangax-es6/Promise.race.js">Promise.race.js</a>: failed
+<a href="../features/kangax-es6/Proxy.JSON.stringify.js">Proxy.JSON.stringify.js</a>: failed
+<a href="../features/kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: TypeError: Type error
+<a href="../features/kangax-es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: failed
+<a href="../features/kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: failed
+<a href="../features/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
+<a href="../features/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: undefined is not a function
+<a href="../features/kangax-es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: undefined is not a function
+<a href="../features/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: g is not defined
+<a href="../features/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: SyntaxError: Syntax error
+<a href="../features/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: FunctionDeclarations are not allowed after a label.
+<a href="../features/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token `&gt;'
+<a href="../features/kangax-es6/annex-b.__proto__.literals.js">annex-b.__proto__.literals.js</a>: failed
+<a href="../features/kangax-es6/annex-b.__proto__.literals.multiple-error.js">annex-b.__proto__.literals.multiple-error.js</a>: failed
+<a href="../features/kangax-es6/annex-b.__proto__.literals.not-computed.js">annex-b.__proto__.literals.not-computed.js</a>: failed
+<a href="../features/kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js">annex-b.__proto__.literals.not-shorthand-method.js</a>: failed
+...
+</pre></li>
+<li>ES2016: 86%<pre>
+<a href="../features/kangax-es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: failed
+<a href="../features/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
+</pre></li>
+<li>ES2017: 54%<pre>
+<a href="../features/kangax-es2017/Atomics.notify.js">Atomics.notify.js</a>: failed
+<a href="../features/kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js">Object.getOwnPropertyDescriptors.no-undefined.js</a>: failed
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js">annex-b.Object.prototype.__defineGetter__.ToObject.js</a>: failed
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: Cannot convert a symbol to a string.
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js">annex-b.Object.prototype.__defineSetter__.ToObject.js</a>: failed
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js">annex-b.Object.prototype.__defineSetter__.symbols.js</a>: TypeError: Cannot convert a symbol to a string.
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js">annex-b.Object.prototype.__lookupGetter__.ToObject.js</a>: ReferenceError: __lookupGetter__ is not defined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js">annex-b.Object.prototype.__lookupGetter__.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js">annex-b.Object.prototype.__lookupGetter__.prototype-chain.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js">annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js</a>: TypeError: Property '__lookupGetter__' of object [object Object] is not a function
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js">annex-b.Object.prototype.__lookupGetter__.symbols.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js">annex-b.Object.prototype.__lookupSetter__.ToObject.js</a>: ReferenceError: __lookupSetter__ is not defined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js">annex-b.Object.prototype.__lookupSetter__.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js">annex-b.Object.prototype.__lookupSetter__.prototype-chain.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js">annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js</a>: TypeError: Property '__lookupSetter__' of object [object Object] is not a function
+<a href="../features/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js">annex-b.Object.prototype.__lookupSetter__.symbols.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Proxy.__lookupGetter__.js">annex-b.Proxy.__lookupGetter__.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.Proxy.__lookupSetter__.js">annex-b.Proxy.__lookupSetter__.js</a>: TypeError: Cannot call method 'call' of undefined
+<a href="../features/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Expected token `;'
+<a href="../features/kangax-es2017/async.Symbol.toStringTag.js">async.Symbol.toStringTag.js</a>: SyntaxError: Expected token `)'
+<a href="../features/kangax-es2017/async.arrow-in-class.js">async.arrow-in-class.js</a>: SyntaxError: Expected token `)'
+...
+</pre></li>
+<li>ES2018: 0%<br>
+<li>ES2019: 2%<br>
+<li>ES2020: 36%<br>
+<li>ES2021: 7%<br>
+<li>ES2022: 4%<br>
+<li>ES2023: 20%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Intl: 25%<br>
+<li><a href="../features/results/qv4.txt">Full results</a></li>
+</ul></details>

@@ -9,7 +9,6 @@ Buggy unfinished interpreter.
 * License:      MIT
 * Standard:     no (can't run ES1)
 * Years:        2010
-* Type:         JavaScript-like language
 * Parser:       YACC
 * Interpreter:  stack-based VM
 * Regex engine: POSIX (regex.h)
@@ -23,3 +22,13 @@ Claims to target ES3, but poorly tested, basic ES1 features are buggy or missing
 Part of code assume 32-bit CPU, need to be patched for 64-bit builds.
 
 Richards score ~100 on M4 (34800us/iter).
+
+## Conformance
+
+<details><summary>ES1-ES5: 16%</summary><ul>
+<li>ES1: 24%, <b>1 crash</b><br>
+<li>ES3: 11%<br>
+<li>ES5: 4%<br>
+</ul></details>
+
+💥 **1 crash during testing**
