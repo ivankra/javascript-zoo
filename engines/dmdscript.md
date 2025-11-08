@@ -27,46 +27,46 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 ## Conformance
 
 <details><summary>ES1-ES5: 74%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/dmdscript.txt">Full log</a>.</li>
 <li>ES1: 93%<pre>
-<a href="../features/es1/Date.js">Date.js</a>: 15.9.2 Date() not a string
-<a href="../features/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
-<a href="../features/es1/Date.prototype.toString.js">Date.prototype.toString.js</a>: failed
-<a href="../features/es1/Date.prototype.toUTCString.js">Date.prototype.toUTCString.js</a>: failed
-<a href="../features/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: toString type failed; Function toString failed
-<a href="../features/es1/String.js">String.js</a>: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
-<a href="../features/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: non-compliant, expected to return 100 instead of 2000
-<a href="../features/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: failed
-<a href="../features/es1/asi.js">asi.js</a>: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): can't Put(0, 10) to a primitive Number
-<a href="../features/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
-<a href="../features/es1/new.typeof.js">new.typeof.js</a>: typeof String('x') != 'string'
-<a href="../features/es1/return.typeof.js">return.typeof.js</a>: return string failed
-<a href="../features/es1/types.js">types.js</a>: typeof '' != 'string'
-<a href="../features/es1/var.typeof.js">var.typeof.js</a>: string var typeof failed
+<a href="../conformance/es1/Date.js">Date.js</a>: 15.9.2 Date() not a string
+<a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
+<a href="../conformance/es1/Date.prototype.toString.js">Date.prototype.toString.js</a>: failed
+<a href="../conformance/es1/Date.prototype.toUTCString.js">Date.prototype.toUTCString.js</a>: failed
+<a href="../conformance/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: toString type failed; Function toString failed
+<a href="../conformance/es1/String.js">String.js</a>: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
+<a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: non-compliant, expected to return 100 instead of 2000
+<a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: failed
+<a href="../conformance/es1/asi.js">asi.js</a>: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): can't Put(0, 10) to a primitive Number
+<a href="../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
+<a href="../conformance/es1/new.typeof.js">new.typeof.js</a>: typeof String('x') != 'string'
+<a href="../conformance/es1/return.typeof.js">return.typeof.js</a>: return string failed
+<a href="../conformance/es1/types.js">types.js</a>: typeof '' != 'string'
+<a href="../conformance/es1/var.typeof.js">var.typeof.js</a>: string var typeof failed
 </pre></li>
 <li>ES3: 80%<pre>
-<a href="../features/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; null/missing elements failed
-<a href="../features/es3/Date.prototype.toDateString.js">Date.prototype.toDateString.js</a>: failed
-<a href="../features/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
-<a href="../features/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
-<a href="../features/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: failed
-<a href="../features/es3/Date.prototype.toTimeString.js">Date.prototype.toTimeString.js</a>: failed
-<a href="../features/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
-<a href="../features/es3/Error.prototype.toString.js">Error.prototype.toString.js</a>: failed
-<a href="../features/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
-<a href="../features/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: failed
-<a href="../features/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: failed
-<a href="../features/es3/RegExp.prototype.toString.js">RegExp.prototype.toString.js</a>: type failed
-<a href="../features/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: spec example failed
-<a href="../features/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; combined replacements failed
-<a href="../features/es3/String.prototype.replace.regex.js">String.prototype.replace.regex.js</a>: global regex replace failed; replace all occurrences failed
-<a href="../features/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
-<a href="../features/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
-<a href="../features/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: no exception for undeclared variable
-<a href="../features/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for in number
-<a href="../features/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 56320)
-<a href="../features/es3/in.js">in.js</a>: length in array failed
+<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; null/missing elements failed
+<a href="../conformance/es3/Date.prototype.toDateString.js">Date.prototype.toDateString.js</a>: failed
+<a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
+<a href="../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
+<a href="../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: failed
+<a href="../conformance/es3/Date.prototype.toTimeString.js">Date.prototype.toTimeString.js</a>: failed
+<a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
+<a href="../conformance/es3/Error.prototype.toString.js">Error.prototype.toString.js</a>: failed
+<a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
+<a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: failed
+<a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: failed
+<a href="../conformance/es3/RegExp.prototype.toString.js">RegExp.prototype.toString.js</a>: type failed
+<a href="../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: spec example failed
+<a href="../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; combined replacements failed
+<a href="../conformance/es3/String.prototype.replace.regex.js">String.prototype.replace.regex.js</a>: global regex replace failed; replace all occurrences failed
+<a href="../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+<a href="../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+<a href="../conformance/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: no exception for undeclared variable
+<a href="../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for in number
+<a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 56320)
+<a href="../conformance/es3/in.js">in.js</a>: length in array failed
 ...
 </pre></li>
 <li>ES5: 9%<br>
-<li><a href="../features/results/dmdscript.txt">Full results</a></li>
 </ul></details>

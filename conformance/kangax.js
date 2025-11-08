@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+// Generates kangax-*/*.js tests from compat-table's data-*.js files.
+//
+// ./kangax.js map: creates/updates kangax.map.json with title => filename mapping.
+// ./kangax.js gen: generates test files
+// ./kangax.js gen --clean: removes generated files (for rename prep, etc)
+//
 const fs = require('fs');
 const path = require('path');
 
@@ -112,8 +118,8 @@ function buildMap(name, tests) {
 }
 
 function mapOp() {
-  let mapFile = 'kangax-map.json';
-  let dataFile = 'kangax-data.json';
+  let mapFile = 'kangax.map.json';
+  let dataFile = 'kangax.data.json';
   let inputFiles = [];
 
   for (let i = 1; i < args.length; i++) {
@@ -372,7 +378,7 @@ try {
 }
 
 function genOp() {
-  let mapFile = 'kangax-map.json';
+  let mapFile = 'kangax.map.json';
   let prefix = '';
   let cleanMode = false;
   let inputFiles = [];
@@ -504,7 +510,7 @@ if (operation === 'map') {
   genOp();
 } else {
   console.log('Usage:');
-  console.log(`  node ${process.argv[1]} map [data-es6.js ...]                       - generate kangax-map.json`);
+  console.log(`  node ${process.argv[1]} map [data-es6.js ...]                       - generate kangax.map.json`);
   console.log(`  node ${process.argv[1]} gen [--clean] [-x prefix] [data-es6.js ...] - generate tests`);
   console.log(`\n'gen --clean' removes auto-generated tests (useful when changing map to prepare for renaming).`);
   console.log(`\nDefault data files: ${DEFAULT_DATA_FILES.join(', ')}`);

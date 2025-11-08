@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 #
-# - Parses engines/*.md, parsers/*.md files, extracting structured metadata.
-# - Reformats them: sorts/aligns metadata, updates <span class="shields">...</span> blocks.
-# - Merges with build/benchmarking/github data
+# - Parses engines/*.md, parsers/*.md files, extracting structured metadata
+# - Merges with other data sources: build, benchmarking, conformance, github data
 # - Updates engines.json, engines.js (JSONP)
-# - Regenerates tables in .md files indicated by <!-- update.py: ... --> markup
+# - Updates *.md files:
+#   - Sorts/aligns metadata list
+#   - Updates <span class="shields">...</span> blocks
+#   - Generates tables indicated by <!-- update.py: ... --> markup
+#   - Generates conformance section
 #
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
@@ -43,7 +46,7 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
 
-    conformance_data = do_conformance_data()
+    conformance_data = parse_conformance_data()
     engines_data = do_engine_data(args, 'engine', 'engines/*.md', 'engines.json', conformance_data)
     parsers_data = do_engine_data(args, 'parser', 'parsers/*.md', None, conformance_data)
 
@@ -52,8 +55,8 @@ def main():
     update_tables('parsers/README.md', parsers_data)
     update_tables('parsers/acorn.md', engines_data)
 
-def do_conformance_data():
-    kangax_map = json.loads(open('features/kangax-map.json').read())
+def parse_conformance_data():
+    kangax_map = json.loads(open('conformance/kangax.map.json').read())
     kangax_groups = {}
     kangax_weights = {}
 
@@ -70,10 +73,9 @@ def do_conformance_data():
                     group_weight = {'tiny': 1, 'small': 2, 'medium': 4, 'large': 8}[m[2]]
                     kangax_weights[filename] = group_weight / len(kangax_groups[group])
 
-    conformance_data = {}  # engine => lines
-    line_re = re.compile('^(([^:/]+)/([^:]+)): (.+)$')
+    conformance_data = {}
 
-    for filename in glob.glob("features/results/*.txt"):
+    for filename in glob.glob("conformance/results/*.txt"):
         engine = os.path.basename(filename).removesuffix('.txt')
         engine = engine.removesuffix('_full')
         assert engine not in conformance_data
@@ -81,9 +83,11 @@ def do_conformance_data():
         tests = []
         dir_pass = {}
         dir_total = {}
+        tests_by_dir = {}
         failing_by_dir = {}
         crashes = 0
         crashes_by_dir = {}
+        line_re = re.compile('^(([^:/]+)/([^:]+)): (.+)$')
 
         for line in open(filename):
             m = line_re.match(line.rstrip())
@@ -102,8 +106,9 @@ def do_conformance_data():
                 dir_pass[test['dir']] = dir_pass.get(test['dir'], 0) + test['weight']
             else:
                 failing_by_dir.setdefault(test['dir'], []).append(test)
+            tests_by_dir.setdefault(test['dir'], []).append(test)
 
-            if test['result'].startswith('crashed'):
+            if re.match('^(crashed|panic:.*)', test['result']):
                 crashes += 1
                 crashes_by_dir[test['dir']] = crashes_by_dir.get(test['dir'], 0) + 1
 
@@ -120,11 +125,12 @@ def do_conformance_data():
             if q > 0:
                 conformance_scores[name] = round(p / q, 4)
 
-        agg_score('es1_5', '^es[1-5]$')
+        agg_score('es1-es5', '^es[1-5]$')
         agg_score('kangax-es2016plus', '^kangax-es20..$')
 
         conformance_data[engine] = {
             'tests': tests,
+            'tests_by_dir': tests_by_dir,
             'failing_by_dir': failing_by_dir,
             'crashes': crashes,
             'crashes_by_dir': crashes_by_dir,
@@ -135,11 +141,11 @@ def do_conformance_data():
     return conformance_data
 
 def do_engine_data(args, kind, md_glob, json_file, conformance_data):
-    orig_row_by_id = {}
-    if json_file and os.path.exists(json_file):
-        with open(json_file, 'r') as fp:
-            for row in json.load(fp):
-                orig_row_by_id[row['id']] = row
+    #orig_row_by_id = {}
+    #if json_file and os.path.exists(json_file):
+    #    with open(json_file, 'r') as fp:
+    #        for row in json.load(fp):
+    #            orig_row_by_id[row['id']] = row
 
     rows = []
 
@@ -152,15 +158,18 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
 
         name = os.path.basename(filename).removesuffix('.md')
 
-        row = orig_row_by_id.get(name, {})
+        #row = orig_row_by_id.get(name, {})
+        row = {}
         row['id'] = name
 
         process_md(row, kind, filename=filename, args=args)
         process_github(row, kind, args=args)
 
-        # Variants metadata are only used as base template in process_dist/process_bench()
-        # If there's no built binary / benchmark data for a variant, it will be ignored.
         if kind == 'engine':
+            # Metadata from <engine>_<variant>.md files is only used as
+            # base template for process_dist/process_bench(). If there's
+            # no built binary / benchmark data for a variant, it will
+            # be ignored.
             variants_metadata = {}
             for variant_filename in sorted(glob.glob(f'engines/{name}_*.md')):
                 variant = os.path.basename(variant_filename)[len(name)+1:-3]
@@ -186,10 +195,10 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
         conf = None
         if name in conformance_data:
             conf = conformance_data[name]
-            row['spec_conformance'] = conf['conformance_scores']
+            row['conformance'] = conf['conformance_scores']
         elif base_name in conformance_data:
             conf = conformance_data[base_name]
-            row['spec_conformance'] = conf['conformance_scores']
+            row['conformance'] = conf['conformance_scores']
 
         if args.format_markdown:
             update_md(filename, row, conf)
@@ -245,7 +254,7 @@ METADATA_MAP = {
     'License': 'license',
 
     'Org': 'org',
-    'Standard': 'standard',  # TODO eval(), proper tail calls, etc; ES5, ES6 etc exceptions/notes
+    'Standard': 'standard',
     'Years': 'years',
 
     # Related engines
@@ -725,7 +734,7 @@ def update_conformance(filename, conformance):
     lines = []
     skip = False
 
-    features_lines = [
+    conformance_lines = [
         '## Conformance\n',
         '\n',
     ]
@@ -736,8 +745,8 @@ def update_conformance(filename, conformance):
     conformance_scores = conformance['conformance_scores']
     sections = {}
 
-    if 'es1_5' in conformance_scores:
-        headline = 'ES1-ES5: ' + format_score(conformance_scores['es1_5'])
+    if 'es1-es5' in conformance_scores:
+        headline = 'ES1-ES5: ' + format_score(conformance_scores['es1-es5'])
         sections[headline] = ['es1', 'es3', 'es5']
 
     if 'kangax-es6' in conformance_scores:
@@ -754,18 +763,22 @@ def update_conformance(filename, conformance):
             ['kangax-next', 'kangax-intl']
         )
 
-    for section_headline, section_dirs in sections.items():
+    for headline, section_dirs in sections.items():
         section_dirs = [s for s in section_dirs if s in conformance_scores]
         if len(section_dirs) == 0:
             continue
 
-        if features_lines[-1] != '\n':
-            features_lines += ['\n']
-        features_lines += [
-            f'<details><summary>{section_headline}</summary><ul>\n'
-        ]
+        if conformance_lines[-1] != '\n':
+            conformance_lines += ['\n']
 
-        show_full_link = None
+        conformance_lines += [f'<details><summary>{headline}</summary><ul>\n']
+
+        if headline.startswith('ES1-ES5'):
+            link = '../' + conformance['conformance_results_path']
+            conformance_lines += [
+                "<li>Based on this repository's basic test suite. "
+                f'<a href="{link}">Full log</a>.</li>\n'
+            ]
 
         for dir_name in section_dirs:
             name = dir_name.replace('kangax-', '')
@@ -786,32 +799,25 @@ def update_conformance(filename, conformance):
 
             if score == 1:
                 assert len(failing_tests) == 0
-                features_lines += [f'<li>{name}: {score_str}</li>\n']
+                conformance_lines += [f'<li>{name}: {score_str}</li>\n']
             elif score < 0.5:
-                features_lines += [f'<li>{name}: {score_str}{crashes}<br>\n']
+                conformance_lines += [f'<li>{name}: {score_str}{crashes}<br>\n']
             else:
-                features_lines += [
-                    f'<li>{name}: {score_str}{crashes}<pre>\n'
-                ]
+                conformance_lines += [f'<li>{name}: {score_str}{crashes}<pre>\n']
 
                 for i, test in enumerate(failing_tests):
                     if i > 20:
-                        show_full_link = True
-                        features_lines += ['...\n']
+                        conformance_lines += ['...\n']
                         break
                     else:
                         basename = os.path.basename(test['test'])
-                        link = '../features/' + test['test']
+                        link = '../conformance/' + test['test']
                         result = html.escape(test['result'], quote=False)
-                        features_lines += [f'<a href="{link}">{basename}</a>: {result}\n']
+                        conformance_lines += [f'<a href="{link}">{basename}</a>: {result}\n']
 
-                features_lines += ['</pre></li>\n']
+                conformance_lines += ['</pre></li>\n']
 
-        if show_full_link:
-            link = '../' + conformance['conformance_results_path']
-            features_lines += [f'<li><a href="{link}">Full results</a></li>\n']
-
-        features_lines += ['</ul></details>\n']
+        conformance_lines += ['</ul></details>\n']
 
     if conformance['crashes'] > 0:
         crashes = str(conformance['crashes'])
@@ -819,24 +825,24 @@ def update_conformance(filename, conformance):
             crashes += ' crash'
         else:
             crashes += ' crashes'
-        features_lines += ['\n', '💥' + f' **{crashes} during testing**\n']
+        conformance_lines += ['\n', '💥' + f' **{crashes} during testing**\n']
 
     for i, line in enumerate(orig_lines):
         if skip:
             if line.startswith('#'):
                 lines.append(line)
                 skip = False
-        elif line == features_lines[0] or line == '## ECMAScript features\n':
-            lines.extend(features_lines)
+        elif line == conformance_lines[0]:
+            lines.extend(conformance_lines)
             skip = True
-            features_lines = None
+            conformance_lines = None
         else:
             lines.append(line)
 
-    if features_lines is not None:
+    if conformance_lines is not None:
         if lines[-1] != '\n':
             lines.append('\n')
-        lines.extend(features_lines)
+        lines.extend(conformance_lines)
 
     if lines == orig_lines:
         return

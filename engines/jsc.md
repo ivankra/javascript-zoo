@@ -73,6 +73,7 @@ JavaScript engine of Safari/WebKit.
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/jsc.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 100%</li>
@@ -89,7 +90,7 @@ JavaScript engine of Safari/WebKit.
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 96%<pre>
-<a href="../features/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
+<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
 <li>Intl: 100%</li>

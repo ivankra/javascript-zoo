@@ -4,11 +4,8 @@ const jsz_engines = [
   {
     "id": "assemblyscript",
     "title": "AssemblyScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/assemblyscript.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 17657,
-    "github_forks": 678,
     "summary": "Compiler for a restricted TypeScript dialect to WebAssembly.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/assemblyscript.md",
     "homepage": "https://www.assemblyscript.org/",
     "repository": "https://github.com/AssemblyScript/assemblyscript.git",
     "loc": 72325,
@@ -18,16 +15,16 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "loc_command": "cloc src std cli lib util"
+    "loc_command": "cloc src std cli lib util",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 17657,
+    "github_forks": 678
   },
   {
     "id": "aweb",
     "title": "AWeb",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/aweb.md",
-    "license_abbr": "Custom",
-    "github_stars": 11,
-    "github_forks": 2,
     "summary": "JavaScript engine of AWeb, a web browser for Amiga.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/aweb.md",
     "homepage": "https://web.archive.org/web/20090225194604/http://aweb.sunsite.dk/",
     "repository": "https://github.com/mirq/aweb.git",
     "loc": 22912,
@@ -37,16 +34,16 @@ const jsz_engines = [
     "years": "2002-2007",
     "interpreter": "tree walker",
     "loc_command": "cloc awebjs aweblibs/awebjs aweblibs/include/*/awebjs*.h",
-    "license_note": "AWeb Public License"
+    "license_note": "AWeb Public License",
+    "license_abbr": "Custom",
+    "github_stars": 11,
+    "github_forks": 2
   },
   {
     "id": "bali",
     "title": "Bali",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/bali.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 104,
-    "github_forks": 1,
     "summary": "JavaScript engine written in Nim.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/bali.md",
     "homepage": "https://bali.xtrayambak.xyz/",
     "repository": "https://github.com/ferus-web/bali.git",
     "loc": 12642,
@@ -57,6 +54,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "jit": "x64",
     "loc_command": "cloc src",
+    "license_abbr": "BSD-3",
+    "github_stars": 104,
+    "github_forks": 1,
     "bench": [
       {
         "arch": "amd64",
@@ -72,17 +72,8 @@ const jsz_engines = [
   {
     "id": "besen",
     "title": "BESEN",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/besen.md",
-    "license_abbr": "LGPL-2.1",
-    "github_stars": 226,
-    "github_forks": 48,
-    "spec_conformance": {
-      "es1": 0.9444,
-      "es3": 0.8784,
-      "es5": 0.8784,
-      "es1_5": 0.9095
-    },
     "summary": "JIT-enabled ES5 engine written in Object Pascal.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/besen.md",
     "repository": "https://github.com/BeRo1985/besen.git",
     "loc": 57192,
     "language": "Pascal",
@@ -94,6 +85,9 @@ const jsz_engines = [
     "jit": "context-threaded JIT, x86/x64",
     "loc_command": "cloc src",
     "license_note": "with static linking exception",
+    "license_abbr": "LGPL-2.1",
+    "github_stars": 226,
+    "github_forks": 48,
     "bench": [
       {
         "arch": "amd64",
@@ -146,36 +140,19 @@ const jsz_engines = [
         "NavierStokes_note": "N=1 median=583 mean=583 max=583",
         "Richards_note": "N=3 median=86 mean=85.67±0.33 max=86"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9444,
+      "es3": 0.8784,
+      "es5": 0.8784,
+      "es1-es5": 0.9095
+    }
   },
   {
     "id": "boa",
     "title": "Boa",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/boa.md",
-    "license_abbr": "MIT/Unlicense",
-    "github_stars": 6143,
-    "github_forks": 470,
-    "spec_conformance": {
-      "es1": 0.9949,
-      "es3": 0.973,
-      "es5": 0.9865,
-      "kangax-es5": 0.9764,
-      "kangax-es6": 0.9767,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.94,
-      "kangax-es2018": 0.9789,
-      "kangax-es2019": 0.9464,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 0.7143,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9184,
-      "kangax-es2025": 0.3158,
-      "kangax-intl": 0.8929,
-      "es1_5": 0.9857,
-      "kangax-es2016plus": 0.8654
-    },
     "summary": "Embeddable Javascript engine written in Rust.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/boa.md",
     "homepage": "https://boajs.dev/",
     "repository": "https://github.com/boa-dev/boa.git",
     "loc": 141335,
@@ -187,6 +164,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "regex": "[regress](https://github.com/ridiculousfish/regress)",
     "loc_command": "cloc --not_match_d=\"(?i)(tests|docs|examples|github)\" --exclude-lang=Markdown .",
+    "license_abbr": "MIT/Unlicense",
+    "github_stars": 6143,
+    "github_forks": 470,
     "bench": [
       {
         "arch": "amd64",
@@ -273,15 +253,33 @@ const jsz_engines = [
         "Splay_note": "N=20 median=673 mean=672.40±0.64 max=679",
         "SplayLatency_note": "N=20 median=2454 mean=2450.65±5.13 max=2486"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9949,
+      "es3": 0.973,
+      "es5": 0.9865,
+      "kangax-es5": 0.9764,
+      "kangax-es6": 0.9767,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.94,
+      "kangax-es2018": 0.9789,
+      "kangax-es2019": 0.9464,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 0.7143,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9184,
+      "kangax-es2025": 0.3158,
+      "kangax-intl": 0.8929,
+      "es1-es5": 0.9857,
+      "kangax-es2016plus": 0.8654
+    }
   },
   {
     "id": "bramblex-jsjs",
     "title": "bramblex/jsjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/bramblex-jsjs.md",
-    "github_stars": 1356,
-    "github_forks": 154,
     "summary": "Toy metacircular JavaScript interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/bramblex-jsjs.md",
     "repository": "https://github.com/bramblex/jsjs.git",
     "loc": 662,
     "language": "TypeScript",
@@ -289,15 +287,37 @@ const jsz_engines = [
     "parser": "acorn",
     "platform": "JavaScript",
     "interpreter": "tree walker",
-    "loc_command": "cloc src"
+    "loc_command": "cloc src",
+    "github_stars": 1356,
+    "github_forks": 154
   },
   {
     "id": "brimstone",
     "title": "Brimstone",
+    "summary": "Javascript engine written in Rust, with nearly complete ES2025 support.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/brimstone.md",
+    "repository": "https://github.com/Hans-Halverson/brimstone.git",
+    "loc": 74381,
+    "language": "Rust",
+    "standard": "ESnext",
+    "years": "2022-",
+    "interpreter": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
+    "regex": "own ([regexp/](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
+    "loc_command": "cloc src",
     "github_stars": 13,
     "github_forks": 5,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "eac4afc4e5f8be6027c10d7ca3998e732416c9f6ee30accfbedf1f654fa2780d",
+        "binary_size": 5910576,
+        "repository": "https://github.com/Hans-Halverson/brimstone.git",
+        "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e",
+        "revision_date": "2025-09-04",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+      }
+    ],
+    "conformance": {
       "es1": 0.9747,
       "es3": 0.9865,
       "es5": 0.9865,
@@ -314,36 +334,15 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
-      "es1_5": 0.981,
+      "es1-es5": 0.981,
       "kangax-es2016plus": 0.957
-    },
-    "summary": "Javascript engine written in Rust, with nearly complete ES2025 support.",
-    "repository": "https://github.com/Hans-Halverson/brimstone.git",
-    "loc": 74381,
-    "language": "Rust",
-    "standard": "ESnext",
-    "years": "2022-",
-    "interpreter": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
-    "regex": "own ([regexp/](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
-    "loc_command": "cloc src",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "eac4afc4e5f8be6027c10d7ca3998e732416c9f6ee30accfbedf1f654fa2780d",
-        "binary_size": 5910576,
-        "repository": "https://github.com/Hans-Halverson/brimstone.git",
-        "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e",
-        "revision_date": "2025-09-04",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
-      }
-    ]
+    }
   },
   {
     "id": "carakan",
     "title": "Carakan",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/carakan.md",
-    "license_abbr": "Proprietary",
     "summary": "JavaScript engine of Opera 10.50 – 12.18.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/carakan.md",
     "homepage": "https://web.archive.org/web/20170113134110/https://github.com/prestocore/browser",
     "loc": 124811,
     "language": "C++",
@@ -353,36 +352,14 @@ const jsz_engines = [
     "years": "2010-2013",
     "interpreter": "register-based VM",
     "jit": "arm, x86/x64, mips",
-    "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-ext=txt modules/ecmascript/carakan"
+    "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-ext=txt modules/ecmascript/carakan",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "castl",
     "title": "castl",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/castl.md",
-    "license_abbr": "LGPL-3.0+",
-    "github_stars": 379,
-    "github_forks": 29,
-    "spec_conformance": {
-      "es1": 0.8636,
-      "es3": 0.8378,
-      "es5": 0.4459,
-      "kangax-es5": 0.754,
-      "kangax-es6": 0.086,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.04,
-      "kangax-es2018": 0.0526,
-      "kangax-es2019": 0.0,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0893,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0408,
-      "kangax-es2025": 0.1404,
-      "kangax-intl": 0.2143,
-      "es1_5": 0.781,
-      "kangax-es2016plus": 0.0452
-    },
     "summary": "Self-hosting JavaScript to Lua compiler with a runtime library and eval().",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/castl.md",
     "repository": "https://github.com/PaulBernier/castl.git",
     "loc": 6366,
     "language": "Lua, JavaScript",
@@ -395,6 +372,9 @@ const jsz_engines = [
     "jit": "via LuaJIT",
     "regex": "PCRE",
     "loc_command": "cloc --not_match_d=\"(test|jscompile)\" lua *.js",
+    "license_abbr": "LGPL-3.0+",
+    "github_stars": 379,
+    "github_forks": 29,
     "bench": [
       {
         "arch": "amd64",
@@ -412,16 +392,33 @@ const jsz_engines = [
         "revision_date": "2017-03-22",
         "version": "1.2.4"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.8636,
+      "es3": 0.8378,
+      "es5": 0.4459,
+      "kangax-es5": 0.754,
+      "kangax-es6": 0.086,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0526,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0893,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.1404,
+      "kangax-intl": 0.2143,
+      "es1-es5": 0.781,
+      "kangax-es2016plus": 0.0452
+    }
   },
   {
     "id": "cesanta-elk",
     "title": "cesanta/elk",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-elk.md",
-    "license_abbr": "AGPL",
-    "github_stars": 1812,
-    "github_forks": 94,
     "summary": "Toy interpreter for microcontrollers for a small JavaScript subset.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-elk.md",
     "repository": "https://github.com/cesanta/elk.git",
     "loc": 1247,
     "language": "C",
@@ -431,6 +428,9 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
     "loc_command": "cloc elk.c elk.h",
+    "license_abbr": "AGPL",
+    "github_stars": 1812,
+    "github_forks": 94,
     "bench": [
       {
         "arch": "amd64",
@@ -457,11 +457,8 @@ const jsz_engines = [
   {
     "id": "cesanta-mjs",
     "title": "cesanta/mjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-mjs.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 2000,
-    "github_forks": 183,
     "summary": "Interpreter for a subset of JavaScript for microcontrollers.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-mjs.md",
     "repository": "https://github.com/cesanta/mjs.git",
     "loc": 10449,
     "language": "C",
@@ -472,6 +469,9 @@ const jsz_engines = [
     "features": "C/C++ FFI",
     "interpreter": "stack-based VM",
     "loc_command": "cloc --not_match_d=\"platforms\" src",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 2000,
+    "github_forks": 183,
     "bench": [
       {
         "arch": "amd64",
@@ -498,17 +498,8 @@ const jsz_engines = [
   {
     "id": "cesanta-v7",
     "title": "cesanta/v7",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-v7.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 1446,
-    "github_forks": 180,
-    "spec_conformance": {
-      "es1": 0.8182,
-      "es3": 0.6554,
-      "es5": 0.4595,
-      "es1_5": 0.6976
-    },
     "summary": "JavaScript engine for microcontrollers.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cesanta-v7.md",
     "repository": "https://github.com/cesanta/v7.git",
     "loc": 24811,
     "language": "C",
@@ -517,6 +508,9 @@ const jsz_engines = [
     "years": "2013-2017",
     "interpreter": "stack-based VM",
     "loc_command": "cloc v7.c v7.h",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 1446,
+    "github_forks": 180,
     "bench": [
       {
         "arch": "amd64",
@@ -543,36 +537,19 @@ const jsz_engines = [
         "DeltaBlue_note": "N=1 median=0.5713 mean=1 max=0.5713",
         "Richards_note": "N=20 median=4.183 mean=4.18±0.02 max=4.314"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.8182,
+      "es3": 0.6554,
+      "es5": 0.4595,
+      "es1-es5": 0.6976
+    }
   },
   {
     "id": "chakracore",
     "title": "ChakraCore",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/chakracore.md",
-    "license_abbr": "MIT",
-    "github_stars": 9221,
-    "github_forks": 1211,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9662,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9472,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.795,
-      "kangax-es2018": 0.7368,
-      "kangax-es2019": 0.9405,
-      "kangax-es2020": 0.2857,
-      "kangax-es2021": 0.2143,
-      "kangax-es2022": 0.2381,
-      "kangax-es2023": 0.6,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9881,
-      "kangax-es2016plus": 0.4962
-    },
     "summary": "JavaScript engine of Microsoft Edge Legacy.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/chakracore.md",
     "repository": "https://github.com/chakra-core/ChakraCore.git",
     "loc": 779986,
     "language": "C++",
@@ -587,6 +564,9 @@ const jsz_engines = [
     "jit": "2-tier JIT, arm/arm64, x86/x64",
     "dll": "chakra.dll",
     "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" lib pal",
+    "license_abbr": "MIT",
+    "github_stars": 9221,
+    "github_forks": 1211,
     "bench": [
       {
         "arch": "amd64",
@@ -685,44 +665,61 @@ const jsz_engines = [
         "zlib_note": "N=3 median=1031 mean=1025.33±8.84 max=1037",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9662,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9472,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.795,
+      "kangax-es2018": 0.7368,
+      "kangax-es2019": 0.9405,
+      "kangax-es2020": 0.2857,
+      "kangax-es2021": 0.2143,
+      "kangax-es2022": 0.2381,
+      "kangax-es2023": 0.6,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9881,
+      "kangax-es2016plus": 0.4962
+    }
   },
   {
     "id": "charon",
     "title": "Charon",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/charon.md",
-    "license_abbr": "MIT",
     "summary": "JavaScript engine of Inferno OS (Plan 9's successor)'s Charon browser.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/charon.md",
     "repository": "https://bitbucket.org/inferno-os/inferno-os.git",
     "sources": "https://bitbucket.org/inferno-os/inferno-os/src/master/appl/lib/ecmascript/",
     "loc": 7337,
     "language": "Limbo",
     "license": "MIT",
     "years": "2006",
-    "loc_note": "`cat appl/lib/ecmascript/*.b | sed -e 's/ *#.*//; /^$/d' | wc -l`"
+    "loc_note": "`cat appl/lib/ecmascript/*.b | sed -e 's/ *#.*//; /^$/d' | wc -l`",
+    "license_abbr": "MIT"
   },
   {
     "id": "chowjs",
     "title": "ChowJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/chowjs.md",
-    "license_abbr": "Proprietary",
     "summary": "QuickJS-based optimizing AOT compiler to native code for game developers.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/chowjs.md",
     "homepage": "https://mp2.dk/techblog/chowjs/",
     "language": "C",
     "license": "Proprietary",
     "standard": "ES2020",
     "years": "2021",
     "ancestors": "[QuickJS](quickjs.md)",
-    "type": "compiler to native code"
+    "type": "compiler to native code",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "cl-javascript",
     "title": "CL-JavaScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cl-javascript.md",
-    "license_abbr": "MIT",
-    "github_stars": 196,
-    "github_forks": 35,
     "summary": "JavaScript to Common Lisp compiler.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cl-javascript.md",
     "homepage": "https://marijnhaverbeke.nl/cl-javascript/",
     "repository": "https://github.com/akapav/js.git",
     "loc": 3390,
@@ -730,16 +727,16 @@ const jsz_engines = [
     "license": "MIT",
     "standard": "ES3",
     "years": "2009-2012",
-    "loc_command": "cloc *.lisp"
+    "loc_command": "cloc *.lisp",
+    "license_abbr": "MIT",
+    "github_stars": 196,
+    "github_forks": 35
   },
   {
     "id": "continuum",
     "title": "Continuum",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/continuum.md",
-    "license_abbr": "MIT",
-    "github_stars": 0,
-    "github_forks": 0,
     "summary": "ES6 interpreter written in ES3.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/continuum.md",
     "homepage": "https://www.npmjs.com/package/continuum",
     "repository": "https://github.com/ivankra/continuum.git",
     "loc": 21741,
@@ -751,14 +748,16 @@ const jsz_engines = [
     "platform": "JavaScript",
     "interpreter": "stack-based VM",
     "loc_note": "npm version, `cloc engine`",
-    "language_note": "ES3"
+    "language_note": "ES3",
+    "license_abbr": "MIT",
+    "github_stars": 0,
+    "github_forks": 0
   },
   {
     "id": "cpan-je",
     "title": "CPAN/JE",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cpan-je.md",
-    "license_abbr": "Artistic/GPL",
     "summary": "JavaScript engine in pure Perl.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cpan-je.md",
     "homepage": "https://metacpan.org/dist/JE",
     "sources": "https://cpan.metacpan.org/authors/id/S/SP/SPROUT/JE-0.066.tar.gz",
     "loc": 11007,
@@ -768,16 +767,14 @@ const jsz_engines = [
     "years": "2007-2014",
     "platform": "Perl",
     "interpreter": "tree walker",
-    "loc_command": "cloc lib"
+    "loc_command": "cloc lib",
+    "license_abbr": "Artistic/GPL"
   },
   {
     "id": "criscript",
     "title": "CRIScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/criscript.md",
-    "license_abbr": "Custom",
-    "github_stars": 2,
-    "github_forks": 4,
     "summary": "Lightweight ES3 interpreter for game engines.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/criscript.md",
     "homepage": "https://web.archive.org/web/20100302002237/http://criscript.com/trac",
     "repository": "https://github.com/hak/criscript.git",
     "loc": 36897,
@@ -788,22 +785,16 @@ const jsz_engines = [
     "parser": "YACC",
     "interpreter": "stack-based VM",
     "loc_command": "cloc --not_match_d=\"(?i)(boost)\" src inc",
-    "license_note": "MIT-like + non-endorsement"
+    "license_note": "MIT-like + non-endorsement",
+    "license_abbr": "Custom",
+    "github_stars": 2,
+    "github_forks": 4
   },
   {
     "id": "dmdscript",
     "title": "DMDScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dmdscript.md",
-    "license_abbr": "BSL-1.0",
-    "github_stars": 100,
-    "github_forks": 17,
-    "spec_conformance": {
-      "es1": 0.9293,
-      "es3": 0.7973,
-      "es5": 0.0946,
-      "es1_5": 0.7357
-    },
     "summary": "ECMAScript implementation by Digital Mars written in D.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dmdscript.md",
     "homepage": "https://www.digitalmars.com/dscript/",
     "repository": "https://github.com/DigitalMars/DMDScript.git",
     "loc": 18013,
@@ -816,6 +807,9 @@ const jsz_engines = [
     "interpreter": "register-based VM ([opcodes.d](https://github.com/DigitalMars/DMDScript/blob/master/engine/source/dmdscript/opcodes.d))",
     "loc_command": "cloc engine",
     "license_note": "Boost Software License 1.0",
+    "license_abbr": "BSL-1.0",
+    "github_stars": 100,
+    "github_forks": 17,
     "bench": [
       {
         "arch": "amd64",
@@ -835,30 +829,33 @@ const jsz_engines = [
         "revision_date": "2024-06-18",
         "version": "2.1.2"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9293,
+      "es3": 0.7973,
+      "es5": 0.0946,
+      "es1-es5": 0.7357
+    }
   },
   {
     "id": "dmonkey",
     "title": "DMonkey",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dmonkey.md",
-    "license_abbr": "BSD-3",
     "summary": "ECMAScript engine written in Delphi.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dmonkey.md",
     "homepage": "https://web.archive.org/web/20250331235827/https://osdn.net/projects/dmonkey/",
     "sources": "https://web.archive.org/web/20240202004621/http://cvs.osdn.net/cvs/view/dmonkey/?view=tar",
     "loc": 55465,
     "language": "Pascal",
     "license": "BSD-3-Clause",
     "years": "2005",
-    "loc_command": "cloc --not_match_d=test dmonkey/dmonkey"
+    "loc_command": "cloc --not_match_d=test dmonkey/dmonkey",
+    "license_abbr": "BSD-3"
   },
   {
     "id": "dscriptcpp",
     "title": "DscriptCPP",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dscriptcpp.md",
-    "license_abbr": "BSL-1.0",
-    "github_stars": 3,
-    "github_forks": 1,
     "summary": "DMDScript version implemented in C++.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/dscriptcpp.md",
     "homepage": "https://www.digitalmars.com/dscript/cppscript.html",
     "repository": "https://github.com/DigitalMars/DscriptCPP.git",
     "loc": 43988,
@@ -870,6 +867,9 @@ const jsz_engines = [
     "platform": "native (Win32/Linux i386)",
     "interpreter": "register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))",
     "loc_command": "cloc src",
+    "license_abbr": "BSL-1.0",
+    "github_stars": 3,
+    "github_forks": 1,
     "bench": [
       {
         "arch": "amd64",
@@ -885,31 +885,8 @@ const jsz_engines = [
   {
     "id": "duktape",
     "title": "Duktape",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/duktape.md",
-    "license_abbr": "MIT",
-    "github_stars": 6123,
-    "github_forks": 534,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 0.9865,
-      "kangax-es5": 0.9891,
-      "kangax-es6": 0.2906,
-      "kangax-es2016": 0.2121,
-      "kangax-es2017": 0.13,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.1429,
-      "kangax-es2020": 0.1429,
-      "kangax-es2021": 0.0714,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9976,
-      "kangax-es2016plus": 0.0778
-    },
     "summary": "Embeddable Javascript engine with a focus on portability and compact footprint.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/duktape.md",
     "repository": "https://github.com/svaarala/duktape.git",
     "loc": 72815,
     "language": "C",
@@ -918,6 +895,9 @@ const jsz_engines = [
     "years": "2013-",
     "interpreter": "register-based VM",
     "loc_command": "cloc --exclude-ext=txt src-input",
+    "license_abbr": "MIT",
+    "github_stars": 6123,
+    "github_forks": 534,
     "bench": [
       {
         "arch": "amd64",
@@ -1011,16 +991,33 @@ const jsz_engines = [
         "SplayLatency_note": "N=20 median=5195 mean=5186.50±31.90 max=5355",
         "zlib_note": "N=3 median=897 mean=890.67±6.84 max=898"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 0.9865,
+      "kangax-es5": 0.9891,
+      "kangax-es6": 0.2906,
+      "kangax-es2016": 0.2121,
+      "kangax-es2017": 0.13,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.1429,
+      "kangax-es2020": 0.1429,
+      "kangax-es2021": 0.0714,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9976,
+      "kangax-es2016plus": 0.0778
+    }
   },
   {
     "id": "echojs",
     "title": "EchoJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/echojs.md",
-    "license_abbr": "MIT",
-    "github_stars": 430,
-    "github_forks": 20,
     "summary": "AOT compiler and runtime for ES6.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/echojs.md",
     "repository": "https://github.com/toshok/echojs.git",
     "loc": 38883,
     "language": "JavaScript, C++",
@@ -1028,16 +1025,16 @@ const jsz_engines = [
     "standard": "ES6",
     "years": "2012-2023",
     "features": "LLVM-based compiler",
-    "loc_command": "cloc lib runtime ejs-llvm node-llvm"
+    "loc_command": "cloc lib runtime ejs-llvm node-llvm",
+    "license_abbr": "MIT",
+    "github_stars": 430,
+    "github_forks": 20
   },
   {
     "id": "echosoar-jsi",
     "title": "echosoar/jsi",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/echosoar-jsi.md",
-    "license_abbr": "MIT",
-    "github_stars": 92,
-    "github_forks": 7,
     "summary": "JavaScript interpreter written in Rust with QuickJS-inspired bytecode.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/echosoar-jsi.md",
     "repository": "https://github.com/echosoar/jsi.git",
     "loc": 5945,
     "language": "Rust",
@@ -1045,6 +1042,9 @@ const jsz_engines = [
     "standard": "no (can't run ES1)",
     "years": "2022-",
     "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 92,
+    "github_forks": 7,
     "bench": [
       {
         "arch": "amd64",
@@ -1069,9 +1069,8 @@ const jsz_engines = [
   {
     "id": "edbrowse",
     "title": "Edbrowse",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/edbrowse.md",
-    "license_abbr": "GPL",
     "summary": "Edbrowse CLI browser had own small JavaScript engine until v2.2.10 (2006).",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/edbrowse.md",
     "homepage": "https://edbrowse.org/",
     "sources": "https://web.archive.org/web/20101027132444/http://eklhad.net/edbrowse/edbrowse-2.2.10.zip",
     "loc": 2329,
@@ -1079,32 +1078,30 @@ const jsz_engines = [
     "license": "GPL",
     "years": "2004-2006",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc jsgram.ec jshelper.c machine.c opcodes.h"
+    "loc_command": "cloc jsgram.ec jshelper.c machine.c opcodes.h",
+    "license_abbr": "GPL"
   },
   {
     "id": "ejacs",
     "title": "Ejacs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ejacs.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 9,
-    "github_forks": 3,
     "summary": "Toy JavaScript interpreter for Emacs, inspired by Narcissus.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ejacs.md",
     "repository": "https://github.com/emacsattic/ejacs.git",
     "loc": 9895,
     "language": "Lisp",
     "license": "GPL-2.0-only",
     "standard": "ES1",
     "years": "2008",
-    "loc_command": "cloc ."
+    "loc_command": "cloc .",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 9,
+    "github_forks": 3
   },
   {
     "id": "ejscript",
     "title": "Ejscript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ejscript.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 0,
-    "github_forks": 0,
     "summary": "Embeddable JavaScript engine.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ejscript.md",
     "homepage": "https://www.embedthis.com/ejscript/doc/",
     "repository": "https://github.com/embedthis/ejscript.git",
     "loc": 106690,
@@ -1113,16 +1110,47 @@ const jsz_engines = [
     "standard": "ES4 (ES3 + some ES4 draft features)",
     "years": "2003-2014",
     "regex": "PCRE2",
-    "loc_command": "cloc --not_match_d=\"(?i)(test|pcre|zlib|ejs.web)\" src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test|pcre|zlib|ejs.web)\" src",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 0,
+    "github_forks": 0
   },
   {
     "id": "engine262",
     "title": "engine262",
+    "summary": "An implementation of ECMA-262 in JavaScript aiming for 100% spec compliance, fast prototyping, validating new spec versions and test262.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/engine262.md",
+    "homepage": "https://engine262.js.org/",
+    "repository": "https://github.com/engine262/engine262.git",
+    "loc": 39329,
+    "language": "TypeScript",
+    "license": "MIT",
+    "standard": "ESnext",
+    "years": "2018-",
+    "parser": "recursive descent",
+    "platform": "JavaScript (Node)",
+    "interpreter": "tree walker",
+    "loc_command": "cloc src",
     "license_abbr": "MIT",
     "github_stars": 905,
     "github_forks": 70,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 1593028,
+        "repository": "https://github.com/engine262/engine262.git",
+        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
+        "revision_date": "2025-10-06"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 1594781,
+        "repository": "https://github.com/engine262/engine262.git",
+        "revision": "6f74d02b34bd37de56b2b3ad6991da14322155de",
+        "revision_date": "2025-10-25"
+      }
+    ],
+    "conformance": {
       "es1": 0.9596,
       "es3": 0.9595,
       "es5": 1.0,
@@ -1139,46 +1167,15 @@ const jsz_engines = [
       "kangax-es2024": 0.6735,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
-      "es1_5": 0.9667,
+      "es1-es5": 0.9667,
       "kangax-es2016plus": 0.9438
-    },
-    "summary": "An implementation of ECMA-262 in JavaScript aiming for 100% spec compliance, fast prototyping, validating new spec versions and test262.",
-    "homepage": "https://engine262.js.org/",
-    "repository": "https://github.com/engine262/engine262.git",
-    "loc": 39329,
-    "language": "TypeScript",
-    "license": "MIT",
-    "standard": "ESnext",
-    "years": "2018-",
-    "parser": "recursive descent",
-    "platform": "JavaScript (Node)",
-    "interpreter": "tree walker",
-    "loc_command": "cloc src",
-    "bench": [
-      {
-        "arch": "amd64",
-        "dist_size": 1593028,
-        "repository": "https://github.com/engine262/engine262.git",
-        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
-        "revision_date": "2025-10-06"
-      },
-      {
-        "arch": "arm64",
-        "dist_size": 1594781,
-        "repository": "https://github.com/engine262/engine262.git",
-        "revision": "6f74d02b34bd37de56b2b3ad6991da14322155de",
-        "revision_date": "2025-10-25"
-      }
-    ]
+    }
   },
   {
     "id": "epimetheus",
     "title": "Epimetheus",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/epimetheus.md",
-    "license_abbr": "MPL/GPL/LGPL",
-    "github_stars": 41,
-    "github_forks": 13,
     "summary": "Netscape's experimental \"JavaScript 2.0\" implementation towards ES4 proposal.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/epimetheus.md",
     "homepage": "http://www.mozilla.org/js/language/Epimetheus.html",
     "repository": "https://github.com/jrmuizel/mozilla-cvs-history.git",
     "loc": 41895,
@@ -1187,36 +1184,16 @@ const jsz_engines = [
     "org": "Mozilla",
     "standard": "ES4 (draft)",
     "years": "2000-2006",
-    "loc_command": "cloc js2/src"
+    "loc_command": "cloc js2/src",
+    "license_abbr": "MPL/GPL/LGPL",
+    "github_stars": 41,
+    "github_forks": 13
   },
   {
     "id": "escargot",
     "title": "Escargot",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/escargot.md",
-    "license_abbr": "LGPL-2.1",
-    "github_stars": 319,
-    "github_forks": 51,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9766,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 1.0,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9968
-    },
     "summary": "Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/escargot.md",
     "repository": "https://github.com/Samsung/escargot.git",
     "loc": 116291,
     "language": "C++",
@@ -1228,6 +1205,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "regex": "YARR",
     "loc_command": "cloc src",
+    "license_abbr": "LGPL-2.1",
+    "github_stars": 319,
+    "github_forks": 51,
     "bench": [
       {
         "arch": "amd64",
@@ -1330,16 +1310,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=13011 mean=12801.95±176.93 max=13540",
         "zlib_note": "N=20 median=2633 mean=2623.25±8.59 max=2678"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9766,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9968
+    }
   },
   {
     "id": "espruino",
     "title": "Espruino",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/espruino.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 2910,
-    "github_forks": 760,
     "summary": "Interpreter for a subset of JavaScript for Espruino microcontrollers.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/espruino.md",
     "homepage": "https://www.espruino.com/",
     "repository": "https://github.com/espruino/Espruino.git",
     "loc": 28365,
@@ -1350,6 +1347,9 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
     "loc_command": "cloc src",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 2910,
+    "github_forks": 760,
     "bench": [
       {
         "arch": "amd64",
@@ -1386,11 +1386,8 @@ const jsz_engines = [
   {
     "id": "eval5",
     "title": "eval5",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/eval5.md",
-    "license_abbr": "MIT",
-    "github_stars": 728,
-    "github_forks": 103,
     "summary": "ES5 interpreter written in TypeScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/eval5.md",
     "repository": "https://github.com/bplok20010/eval5.git",
     "loc": 1745,
     "language": "TypeScript",
@@ -1399,16 +1396,41 @@ const jsz_engines = [
     "years": "2019-",
     "parser": "acorn",
     "platform": "JavaScript",
-    "loc_command": "cloc src"
+    "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 728,
+    "github_forks": 103
   },
   {
     "id": "fastschema-qjs",
     "title": "fastschema/qjs",
+    "summary": "JavaScript in Go with QuickJS and Wazero.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/fastschema-qjs.md",
+    "repository": "https://github.com/fastschema/qjs.git",
+    "loc": 14447,
+    "language": "Go",
+    "license": "MIT",
+    "standard": "ES2023",
+    "years": "2025-",
+    "ancestors": "[QuickJS](quickjs.md)",
+    "platform": "WebAssembly (Wazero), Go (cgo-free)",
+    "interpreter": "stack-based VM",
+    "loc_command": "cloc *.go",
     "license_abbr": "MIT",
     "github_stars": 425,
     "github_forks": 13,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "2404e0326fa48b7d03fa3ca670d8b29c2cf5d61660ea7135a2532139b1f2429f",
+        "binary_size": 6061344,
+        "repository": "https://github.com/fastschema/qjs.git",
+        "revision": "461716f4f380f81ffd09378751f1812919cddbca",
+        "revision_date": "2025-10-28",
+        "version": "0.0.6"
+      }
+    ],
+    "conformance": {
       "es1": 1.0,
       "es3": 1.0,
       "es5": 1.0,
@@ -1425,38 +1447,15 @@ const jsz_engines = [
       "kangax-es2024": 0.7959,
       "kangax-es2025": 0.7368,
       "kangax-intl": 0.25,
-      "es1_5": 1.0,
+      "es1-es5": 1.0,
       "kangax-es2016plus": 0.9308
-    },
-    "summary": "JavaScript in Go with QuickJS and Wazero.",
-    "repository": "https://github.com/fastschema/qjs.git",
-    "loc": 14447,
-    "language": "Go",
-    "license": "MIT",
-    "standard": "ES2023",
-    "years": "2025-",
-    "ancestors": "[QuickJS](quickjs.md)",
-    "platform": "WebAssembly (Wazero), Go (cgo-free)",
-    "interpreter": "stack-based VM",
-    "loc_command": "cloc *.go",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "2404e0326fa48b7d03fa3ca670d8b29c2cf5d61660ea7135a2532139b1f2429f",
-        "binary_size": 6061344,
-        "repository": "https://github.com/fastschema/qjs.git",
-        "revision": "461716f4f380f81ffd09378751f1812919cddbca",
-        "revision_date": "2025-10-28",
-        "version": "0.0.6"
-      }
-    ]
+    }
   },
   {
     "id": "fesi",
     "title": "FESI",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/fesi.md",
-    "license_abbr": "LGPL-2.0+",
     "summary": "JavaScript interpreter written in Java.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/fesi.md",
     "homepage": "https://web.archive.org/web/20120523224913/http://www.lugrin.ch/fesi/",
     "sources": "[fesisrc-1.1.5.zip](https://web.archive.org/web/20130219063729/http://www.lugrin.ch/fesi/fesisrc-1.1.5.zip), [install-fesi-1.1.8.jar](https://web.archive.org/web/20130220100323/http://www.lugrin.ch/fesi/install-fesi-1.1.8.jar)",
     "loc": 23687,
@@ -1466,22 +1465,14 @@ const jsz_engines = [
     "years": "1998-2003",
     "platform": "Java",
     "interpreter": "tree walker",
-    "loc_command": "cloc --not_match_d=\"(?i)(test|gui)\" --exclude-ext=html src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test|gui)\" --exclude-ext=html src",
+    "license_abbr": "LGPL-2.0+"
   },
   {
     "id": "flathead",
     "title": "Flathead",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/flathead.md",
-    "license_abbr": "MIT",
-    "github_stars": 94,
-    "github_forks": 18,
-    "spec_conformance": {
-      "es1": 0.7626,
-      "es3": 0.277,
-      "es5": 0.3919,
-      "es1_5": 0.5262
-    },
     "summary": "Buggy unfinished interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/flathead.md",
     "repository": "https://github.com/ndreynolds/flathead.git",
     "loc": 7075,
     "language": "C",
@@ -1492,6 +1483,9 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "regex": "PCRE",
     "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 94,
+    "github_forks": 18,
     "bench": [
       {
         "arch": "amd64",
@@ -1511,36 +1505,19 @@ const jsz_engines = [
         "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
         "revision_date": "2017-04-21"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.7626,
+      "es3": 0.277,
+      "es5": 0.3919,
+      "es1-es5": 0.5262
+    }
   },
   {
     "id": "goja",
     "title": "goja",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/goja.md",
-    "license_abbr": "MIT",
-    "github_stars": 6545,
-    "github_forks": 420,
-    "spec_conformance": {
-      "es1": 0.9848,
-      "es3": 1.0,
-      "es5": 0.9865,
-      "kangax-es5": 0.9908,
-      "kangax-es6": 0.9599,
-      "kangax-es2016": 0.9091,
-      "kangax-es2017": 0.68,
-      "kangax-es2018": 0.6316,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 0.4286,
-      "kangax-es2022": 0.9048,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0526,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9905,
-      "kangax-es2016plus": 0.6623
-    },
     "summary": "JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/goja.md",
     "repository": "https://github.com/dop251/goja.git",
     "loc": 46141,
     "language": "Go",
@@ -1554,6 +1531,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-lang=Markdown,YAML .",
     "parser_note": "[parser/](https://github.com/dop251/goja/tree/master/parser/), LOC: 4.3k",
+    "license_abbr": "MIT",
+    "github_stars": 6545,
+    "github_forks": 420,
     "bench": [
       {
         "arch": "amd64",
@@ -1639,36 +1619,33 @@ const jsz_engines = [
         "Splay_note": "N=20 median=1380 mean=1357.40±10.69 max=1392",
         "SplayLatency_note": "N=20 median=6156 mean=6093.95±35.09 max=6208"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9848,
+      "es3": 1.0,
+      "es5": 0.9865,
+      "kangax-es5": 0.9908,
+      "kangax-es6": 0.9599,
+      "kangax-es2016": 0.9091,
+      "kangax-es2017": 0.68,
+      "kangax-es2018": 0.6316,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 0.4286,
+      "kangax-es2022": 0.9048,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0526,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9905,
+      "kangax-es2016plus": 0.6623
+    }
   },
   {
     "id": "graaljs",
     "title": "GraalJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/graaljs.md",
-    "license_abbr": "GFTC/UPL-1.0",
-    "github_stars": 1951,
-    "github_forks": 202,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.981,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 1.0,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9968
-    },
     "summary": "High-performance JavaScript engine for JVM/GraalVM.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/graaljs.md",
     "homepage": "https://www.graalvm.org/javascript/",
     "repository": "https://github.com/oracle/graaljs.git",
     "loc": 191606,
@@ -1682,6 +1659,9 @@ const jsz_engines = [
     "jit": "2-tier JIT (HotSpot/Graal), arm64, x64",
     "regex": "[TRegex](https://github.com/oracle/graal/tree/master/regex) (NFA-based)",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" graal-js/src",
+    "license_abbr": "GFTC/UPL-1.0",
+    "github_stars": 1951,
+    "github_forks": 202,
     "bench": [
       {
         "arch": "amd64",
@@ -1765,14 +1745,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=12528 mean=12446.35±63.10 max=12891",
         "zlib_note": "N=20 median=7098 mean=7322.10±200.67 max=11044"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.981,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9968
+    }
   },
   {
     "id": "guile",
     "title": "Guile",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/guile.md",
-    "license_abbr": "LGPL-3.0+",
     "summary": "Features a toy unfinished ECMAScript interpreter as of version 1.9.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/guile.md",
     "homepage": "https://wingolog.org/archives/2009/02/22/ecmascript-for-guile",
     "repository": "https://git.savannah.gnu.org/git/guile.git",
     "loc": 1713,
@@ -1781,36 +1780,14 @@ const jsz_engines = [
     "standard": "no (can't run ES1)",
     "years": "2009",
     "type": "JavaScript-like language",
-    "loc_command": "cloc module/language/ecmascript"
+    "loc_command": "cloc module/language/ecmascript",
+    "license_abbr": "LGPL-3.0+"
   },
   {
     "id": "hako",
     "title": "Hako",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hako.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 402,
-    "github_forks": 6,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9865,
-      "es5": 0.9865,
-      "kangax-es5": 0.9855,
-      "kangax-es6": 0.9473,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.8471,
-      "kangax-es2018": 0.9368,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 0.4571,
-      "kangax-es2021": 0.7857,
-      "kangax-es2022": 0.619,
-      "kangax-es2023": 0.6,
-      "kangax-es2024": 0.4286,
-      "kangax-es2025": 0.1053,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9929,
-      "kangax-es2016plus": 0.6912
-    },
     "summary": "Embeddable WebAssembly-sandboxed PrimJS fork.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hako.md",
     "repository": "https://github.com/andrewmd5/hako.git",
     "loc": 18306,
     "language": "Go, C++, TypeScript",
@@ -1822,6 +1799,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "jit": "via WebAssembly engine",
     "loc_command": "cloc --not_match_d=\"(?i)(examples)\" .",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 402,
+    "github_forks": 6,
     "bench": [
       {
         "arch": "amd64",
@@ -1840,36 +1820,33 @@ const jsz_engines = [
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9865,
+      "es5": 0.9865,
+      "kangax-es5": 0.9855,
+      "kangax-es6": 0.9473,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.8471,
+      "kangax-es2018": 0.9368,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 0.4571,
+      "kangax-es2021": 0.7857,
+      "kangax-es2022": 0.619,
+      "kangax-es2023": 0.6,
+      "kangax-es2024": 0.4286,
+      "kangax-es2025": 0.1053,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9929,
+      "kangax-es2016plus": 0.6912
+    }
   },
   {
     "id": "hermes",
     "title": "Hermes",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hermes.md",
-    "license_abbr": "MIT",
-    "github_stars": 10576,
-    "github_forks": 718,
-    "spec_conformance": {
-      "es1": 0.9949,
-      "es3": 0.9865,
-      "es5": 0.973,
-      "kangax-es5": 0.98,
-      "kangax-es6": 0.7769,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.68,
-      "kangax-es2018": 0.7684,
-      "kangax-es2019": 0.7679,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 0.4286,
-      "kangax-es2022": 0.3333,
-      "kangax-es2023": 0.7714,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.9643,
-      "es1_5": 0.9881,
-      "kangax-es2016plus": 0.5678
-    },
     "summary": "JavaScript engine from Facebook optimized for running React Native mobile apps.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hermes.md",
     "homepage": "https://hermesengine.dev/",
     "repository": "https://github.com/facebook/hermes.git",
     "loc": 169845,
@@ -1882,6 +1859,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "gc": "generational GC",
     "loc_command": "cloc include lib tools/hermes",
+    "license_abbr": "MIT",
+    "github_stars": 10576,
+    "github_forks": 718,
     "bench": [
       {
         "arch": "amd64",
@@ -1986,16 +1966,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=17702 mean=17601.80±42.81 max=17875",
         "zlib_note": "N=20 median=1786 mean=1785.60±5.71 max=1839"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9949,
+      "es3": 0.9865,
+      "es5": 0.973,
+      "kangax-es5": 0.98,
+      "kangax-es6": 0.7769,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.68,
+      "kangax-es2018": 0.7684,
+      "kangax-es2019": 0.7679,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 0.4286,
+      "kangax-es2022": 0.3333,
+      "kangax-es2023": 0.7714,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.9643,
+      "es1-es5": 0.9881,
+      "kangax-es2016plus": 0.5678
+    }
   },
   {
     "id": "higgs",
     "title": "Higgs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/higgs.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 881,
-    "github_forks": 64,
     "summary": "JIT compiler for JavaScript targetting x86-64 platforms.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/higgs.md",
     "repository": "https://github.com/higgsjs/Higgs.git",
     "loc": 40353,
     "language": "D",
@@ -2003,14 +2000,16 @@ const jsz_engines = [
     "standard": "ES5",
     "years": "2012-2015",
     "jit": "x64",
-    "loc_command": "cloc --not_match_d=\"(?i)(test|benchmark)\" source"
+    "loc_command": "cloc --not_match_d=\"(?i)(test|benchmark)\" source",
+    "license_abbr": "BSD-3",
+    "github_stars": 881,
+    "github_forks": 64
   },
   {
     "id": "hjs",
     "title": "hjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hjs.md",
-    "license_abbr": "BSD-3",
     "summary": "Haskell JavaScript parser and interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/hjs.md",
     "homepage": "https://hackage.haskell.org/package/hjs-0.2.1",
     "sources": "https://hackage.haskell.org/package/hjs-0.2.1/hjs-0.2.1.tar.gz",
     "loc": 2171,
@@ -2019,16 +2018,14 @@ const jsz_engines = [
     "standard": "ES3, JS1.5",
     "years": "2007",
     "interpreter": "tree walker",
-    "loc_command": "cloc hjs-0.2.1/src"
+    "loc_command": "cloc hjs-0.2.1/src",
+    "license_abbr": "BSD-3"
   },
   {
     "id": "ironjs",
     "title": "IronJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ironjs.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 686,
-    "github_forks": 82,
     "summary": "ES3 implementation for .NET, built on top of .NET DLR (Dynamic Language Runtime).",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ironjs.md",
     "homepage": "https://ironjs.wordpress.com/",
     "repository": "https://github.com/fholm/IronJS.git",
     "loc": 12608,
@@ -2038,36 +2035,16 @@ const jsz_engines = [
     "years": "2010-2013",
     "platform": ".NET",
     "jit": "via CLR",
-    "loc_command": "cloc Src/IronJS*"
+    "loc_command": "cloc Src/IronJS*",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 686,
+    "github_forks": 82
   },
   {
     "id": "iv-lv5",
     "title": "iv / lv5",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/iv-lv5.md",
-    "license_abbr": "BSD-2",
-    "github_stars": 422,
-    "github_forks": 34,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9865,
-      "es5": 0.9189,
-      "kangax-es5": 0.9265,
-      "kangax-es6": 0.1613,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.04,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0179,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.4643,
-      "es1_5": 0.981,
-      "kangax-es2016plus": 0.0143
-    },
     "summary": "JIT-enabled ES5 engine in C++.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/iv-lv5.md",
     "repository": "https://github.com/Constellation/iv.git",
     "loc": 69771,
     "language": "C++",
@@ -2079,6 +2056,9 @@ const jsz_engines = [
     "jit": "context-threaded/method JIT, x64",
     "regex": "own engine, JIT-enabled (x64)",
     "loc_command": "cloc --not_match_d=\"(?i)(test|third_party)\" iv",
+    "license_abbr": "BSD-2",
+    "github_stars": 422,
+    "github_forks": 34,
     "bench": [
       {
         "arch": "amd64",
@@ -2234,16 +2214,33 @@ const jsz_engines = [
         "zlib_note": "N=20 median=1350 mean=1350.35±3.98 max=1386",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9865,
+      "es5": 0.9189,
+      "kangax-es5": 0.9265,
+      "kangax-es6": 0.1613,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0179,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.4643,
+      "es1-es5": 0.981,
+      "kangax-es2016plus": 0.0143
+    }
   },
   {
     "id": "ixlib",
     "title": "ixlib",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ixlib.md",
-    "license_abbr": "LGPL-2.0",
-    "github_stars": 3,
-    "github_forks": 1,
     "summary": "C++ utility library with a rudimentary JavaScript interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ixlib.md",
     "homepage": "https://ixlib.sourceforge.net/",
     "repository": "https://github.com/inducer/ixlib.git",
     "loc": 3841,
@@ -2251,29 +2248,29 @@ const jsz_engines = [
     "license": "LGPL-2.0-only",
     "years": "2005",
     "interpreter": "tree walker",
-    "loc_command": "cloc src/*js* src/*javascript*"
+    "loc_command": "cloc src/*js* src/*javascript*",
+    "license_abbr": "LGPL-2.0",
+    "github_stars": 3,
+    "github_forks": 1
   },
   {
     "id": "janet",
     "title": "JANET",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/janet.md",
-    "license_abbr": "GPL",
     "summary": "JavaScript implementation for .NET by Steve Newman (of Writely).",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/janet.md",
     "homepage": "https://web.archive.org/web/20050404081554/http://janet-js.sourceforge.net/",
     "language": "C#",
     "license": "GPL",
     "standard": "JS1.4 (≈ES3)",
     "years": "2001",
-    "platform": ".NET"
+    "platform": ".NET",
+    "license_abbr": "GPL"
   },
   {
     "id": "jawsm",
     "title": "Jawsm",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jawsm.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 1037,
-    "github_forks": 21,
     "summary": "JavaScript to WebAssembly compiler.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jawsm.md",
     "repository": "https://github.com/drogus/jawsm.git",
     "loc": 11971,
     "language": "Rust",
@@ -2281,36 +2278,16 @@ const jsz_engines = [
     "years": "2024-",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "loc_command": "cloc src"
+    "loc_command": "cloc src",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 1037,
+    "github_forks": 21
   },
   {
     "id": "jerryscript",
     "title": "JerryScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jerryscript.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 7317,
-    "github_forks": 686,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9797,
-      "es5": 1.0,
-      "kangax-es5": 0.9855,
-      "kangax-es6": 0.9649,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.96,
-      "kangax-es2018": 0.7368,
-      "kangax-es2019": 0.875,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 0.7143,
-      "kangax-es2022": 0.8571,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9929,
-      "kangax-es2016plus": 0.6954
-    },
     "summary": "Lightweight JavaScript engine for microcontrollers.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jerryscript.md",
     "homepage": "https://jerryscript.net/",
     "repository": "https://github.com/jerryscript-project/jerryscript.git",
     "loc": 108762,
@@ -2321,6 +2298,9 @@ const jsz_engines = [
     "years": "2014-2024",
     "interpreter": "stack-based VM",
     "loc_command": "cloc jerry-*",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 7317,
+    "github_forks": 686,
     "bench": [
       {
         "arch": "amd64",
@@ -2397,16 +2377,33 @@ const jsz_engines = [
         "RegExp_note": "N=20 median=97 mean=95.55±2.41 max=112",
         "Richards_note": "N=20 median=322 mean=323.20±1.29 max=332"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9797,
+      "es5": 1.0,
+      "kangax-es5": 0.9855,
+      "kangax-es6": 0.9649,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.96,
+      "kangax-es2018": 0.7368,
+      "kangax-es2019": 0.875,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 0.7143,
+      "kangax-es2022": 0.8571,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9929,
+      "kangax-es2016plus": 0.6954
+    }
   },
   {
     "id": "jint",
     "title": "Jint",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jint.md",
-    "license_abbr": "BSD-2",
-    "github_stars": 4449,
-    "github_forks": 583,
     "summary": "JavaScript interpreter for .NET.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jint.md",
     "repository": "https://github.com/sebastienros/jint.git",
     "loc": 53487,
     "language": "C#",
@@ -2414,16 +2411,16 @@ const jsz_engines = [
     "standard": "ESnext (partial)",
     "years": "2013-",
     "platform": ".NET",
-    "loc_command": "cloc Jint"
+    "loc_command": "cloc Jint",
+    "license_abbr": "BSD-2",
+    "github_stars": 4449,
+    "github_forks": 583
   },
   {
     "id": "jispy",
     "title": "Jispy",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jispy.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 59,
-    "github_forks": 18,
     "summary": "Interpreter for a JavaScript subset written in Python.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jispy.md",
     "repository": "https://github.com/polydojo/jispy.git",
     "loc": 1182,
     "language": "Python",
@@ -2431,36 +2428,16 @@ const jsz_engines = [
     "years": "2014-2017",
     "platform": "Python",
     "interpreter": "tree walker",
-    "loc_command": "cloc jispy.py"
+    "loc_command": "cloc jispy.py",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 59,
+    "github_forks": 18
   },
   {
     "id": "js-interpreter",
     "title": "JS-Interpreter",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/js-interpreter.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 2126,
-    "github_forks": 363,
-    "spec_conformance": {
-      "es1": 0.9848,
-      "es3": 0.9595,
-      "es5": 0.6892,
-      "kangax-es5": 0.8107,
-      "kangax-es6": 0.0286,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.08,
-      "kangax-es2018": 0.0526,
-      "kangax-es2019": 0.0625,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0526,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9238,
-      "kangax-es2016plus": 0.0389
-    },
     "summary": "Sandboxed ES5 interpreter in JavaScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/js-interpreter.md",
     "homepage": "https://neil.fraser.name/software/JS-Interpreter/docs.html",
     "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
     "loc": 4995,
@@ -2474,6 +2451,9 @@ const jsz_engines = [
     "loc_command": "cloc interpreter.js acorn.js",
     "language_note": "ES5",
     "parser_note": "vendored and stripped-down to ES5, [acorn.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/acorn.js), LOC: 1365",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 2126,
+    "github_forks": 363,
     "bench": [
       {
         "arch": "amd64",
@@ -2498,16 +2478,33 @@ const jsz_engines = [
         "revision_date": "2025-02-27",
         "variant": "jsc"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9848,
+      "es3": 0.9595,
+      "es5": 0.6892,
+      "kangax-es5": 0.8107,
+      "kangax-es6": 0.0286,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.08,
+      "kangax-es2018": 0.0526,
+      "kangax-es2019": 0.0625,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0526,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9238,
+      "kangax-es2016plus": 0.0389
+    }
   },
   {
     "id": "js2py",
     "title": "Js2Py",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/js2py.md",
-    "license_abbr": "MIT",
-    "github_stars": 2560,
-    "github_forks": 275,
     "summary": "JavaScript interpreter written in Python.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/js2py.md",
     "repository": "https://github.com/PiotrDabkowski/Js2Py.git",
     "loc": 69402,
     "language": "Python",
@@ -2515,36 +2512,16 @@ const jsz_engines = [
     "years": "2014-2022",
     "platform": "Python",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc js2py"
+    "loc_command": "cloc js2py",
+    "license_abbr": "MIT",
+    "github_stars": 2560,
+    "github_forks": 275
   },
   {
     "id": "jsc",
     "title": "JavaScriptCore",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jsc.md",
-    "license_abbr": "LGPL-2.0",
-    "github_stars": 9291,
-    "github_forks": 1729,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 1.0,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
-      "kangax-es2018": 1.0,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 1.0,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9981
-    },
     "summary": "JavaScript engine of Safari/WebKit.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jsc.md",
     "homepage": "https://trac.webkit.org/wiki/JavaScriptCore",
     "repository": "https://github.com/WebKit/WebKit.git",
     "loc": 770374,
@@ -2560,6 +2537,9 @@ const jsz_engines = [
     "regex": "YARR, JIT-enabled",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" Source/JavaScriptCore",
     "license_note": "LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions",
+    "license_abbr": "LGPL-2.0",
+    "github_stars": 9291,
+    "github_forks": 1729,
     "bench": [
       {
         "arch": "amd64",
@@ -2768,16 +2748,33 @@ const jsz_engines = [
         "zlib_note": "N=20 median=2051 mean=2048.15±5.97 max=2099",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 1.0,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 1.0,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9981
+    }
   },
   {
     "id": "jscomp",
     "title": "jscomp",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscomp.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 261,
-    "github_forks": 10,
     "summary": "AOT compiler targetting native code via C++.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscomp.md",
     "repository": "https://github.com/tmikov/jscomp.git",
     "loc": 19850,
     "language": "TypeScript",
@@ -2787,14 +2784,16 @@ const jsz_engines = [
     "type": "compiler to native code (via C++)",
     "parser": "acorn",
     "regex": "PCRE",
-    "loc_command": "cloc --not_match_d=\"(?i)(examples|deps|test)\" --exclude-ext=md src runtime"
+    "loc_command": "cloc --not_match_d=\"(?i)(examples|deps|test)\" --exclude-ext=md src runtime",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 261,
+    "github_forks": 10
   },
   {
     "id": "jscript-net",
     "title": "JScript .NET",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript-net.md",
-    "license_abbr": "Proprietary",
     "summary": "Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript-net.md",
     "homepage": "http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx",
     "language": "C#",
     "license": "Proprietary",
@@ -2803,14 +2802,14 @@ const jsz_engines = [
     "years": "2000-2010",
     "platform": ".NET",
     "jit": "via CLR",
-    "dll": "Microsoft.JScript.dll"
+    "dll": "Microsoft.JScript.dll",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "jscript",
     "title": "JScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript.md",
-    "license_abbr": "Proprietary",
     "summary": "JavaScript engine of Internet Explorer 3.0 – 8.0.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript.md",
     "homepage": "https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29",
     "language": "C++",
     "license": "Proprietary",
@@ -2818,14 +2817,14 @@ const jsz_engines = [
     "standard": "ES3",
     "years": "1996-2011",
     "interpreter": "stack-based VM",
-    "dll": "jscript.dll"
+    "dll": "jscript.dll",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "jscript9",
     "title": "JScript9 / Chakra",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript9.md",
-    "license_abbr": "Proprietary",
     "summary": "JavaScript engine of Internet Explorer 9.0 – 11.0.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jscript9.md",
     "language": "C++",
     "license": "Proprietary",
     "org": "Microsoft",
@@ -2835,22 +2834,14 @@ const jsz_engines = [
     "features": "deferred parsing",
     "jit": "arm, x86/x64",
     "gc": "concurrent GC",
-    "dll": "jscript9.dll, jscript9Legacy.dll"
+    "dll": "jscript9.dll, jscript9Legacy.dll",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "jsish",
     "title": "jsish",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jsish.md",
-    "license_abbr": "MIT",
-    "github_stars": 47,
-    "github_forks": 8,
-    "spec_conformance": {
-      "es1": 0.5606,
-      "es3": 0.3378,
-      "es5": 0.1892,
-      "es1_5": 0.4167
-    },
     "summary": "Buggy unfinished interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jsish.md",
     "repository": "https://github.com/pcmacdon/jsish.git",
     "loc": 50896,
     "language": "C",
@@ -2861,6 +2852,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "regex": "POSIX (vendored from musl)",
     "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 47,
+    "github_forks": 8,
     "bench": [
       {
         "arch": "amd64",
@@ -2882,14 +2876,19 @@ const jsz_engines = [
         "revision_date": "2022-08-23",
         "version": "3.0-252-g42c694c"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.5606,
+      "es3": 0.3378,
+      "es5": 0.1892,
+      "es1-es5": 0.4167
+    }
   },
   {
     "id": "juce",
     "title": "JUCE",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/juce.md",
-    "license_abbr": "ISC",
     "summary": "JUCE music apps framework used to have own rudimentary interpreter for a JavaScript subset.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/juce.md",
     "sources": "https://github.com/juce-framework/JUCE/tree/224c4f706ba0988441e7269c3e7f2b9d5d242cbb/modules/juce_core/javascript",
     "loc": 3109,
     "language": "C++",
@@ -2897,16 +2896,14 @@ const jsz_engines = [
     "years": "2013-2023",
     "type": "JavaScript-like language",
     "interpreter": "tree walker",
-    "loc_command": "cloc modules/juce_core/javascript/"
+    "loc_command": "cloc modules/juce_core/javascript/",
+    "license_abbr": "ISC"
   },
   {
     "id": "jurassic",
     "title": "Jurassic",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jurassic.md",
-    "license_abbr": "MIT",
-    "github_stars": 927,
-    "github_forks": 126,
     "summary": "JavaScript engine for .NET, a compiler to .NET IL.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jurassic.md",
     "repository": "https://github.com/paulbartrum/jurassic.git",
     "loc": 34639,
     "language": "C#",
@@ -2915,34 +2912,16 @@ const jsz_engines = [
     "years": "2010-",
     "platform": ".NET",
     "jit": "via CLR",
-    "loc_command": "cloc Jurassic"
+    "loc_command": "cloc Jurassic",
+    "license_abbr": "MIT",
+    "github_stars": 927,
+    "github_forks": 126
   },
   {
     "id": "kiesel",
     "title": "Kiesel",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/kiesel.md",
-    "license_abbr": "MIT",
-    "spec_conformance": {
-      "es1": 0.9899,
-      "es3": 0.973,
-      "es5": 0.8919,
-      "kangax-es5": 0.9214,
-      "kangax-es6": 0.9169,
-      "kangax-es2016": 0.8485,
-      "kangax-es2017": 0.86,
-      "kangax-es2018": 0.8316,
-      "kangax-es2019": 0.8333,
-      "kangax-es2020": 0.8857,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 0.9728,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7959,
-      "kangax-es2025": 0.7368,
-      "kangax-intl": 0.8214,
-      "es1_5": 0.9667,
-      "kangax-es2016plus": 0.87
-    },
     "summary": "JavaScript engine written in Zig.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/kiesel.md",
     "homepage": "https://kiesel.dev/",
     "repository": "https://codeberg.org/kiesel-js/kiesel.git",
     "loc": 59328,
@@ -2952,6 +2931,7 @@ const jsz_engines = [
     "years": "2023-",
     "interpreter": "stack-based VM",
     "loc_command": "cloc src",
+    "license_abbr": "MIT",
     "bench": [
       {
         "arch": "amd64",
@@ -3031,36 +3011,33 @@ const jsz_engines = [
         "Splay_note": "N=20 median=654 mean=654.25±1.46 max=666",
         "SplayLatency_note": "N=20 median=3187 mean=3181.45±5.09 max=3210"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9899,
+      "es3": 0.973,
+      "es5": 0.8919,
+      "kangax-es5": 0.9214,
+      "kangax-es6": 0.9169,
+      "kangax-es2016": 0.8485,
+      "kangax-es2017": 0.86,
+      "kangax-es2018": 0.8316,
+      "kangax-es2019": 0.8333,
+      "kangax-es2020": 0.8857,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 0.9728,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.7959,
+      "kangax-es2025": 0.7368,
+      "kangax-intl": 0.8214,
+      "es1-es5": 0.9667,
+      "kangax-es2016plus": 0.87
+    }
   },
   {
     "id": "kjs",
     "title": "KJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/kjs.md",
-    "license_abbr": "LGPL-2.1",
-    "github_stars": 44,
-    "github_forks": 7,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.777,
-      "es5": 0.6486,
-      "kangax-es5": 0.7767,
-      "kangax-es6": 0.0641,
-      "kangax-es2016": 0.1818,
-      "kangax-es2017": 0.1,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0625,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.8595,
-      "kangax-es2016plus": 0.0422
-    },
     "summary": "Original JavaScript engine of KDE's Konqueror browser.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/kjs.md",
     "homepage": "https://invent.kde.org/frameworks/kjs",
     "repository": "https://github.com/KDE/kjs.git",
     "loc": 42352,
@@ -3073,6 +3050,9 @@ const jsz_engines = [
     "regex": "PCRE2",
     "loc_command": "cloc src",
     "license_note": "most source files are LGPL 2.0+",
+    "license_abbr": "LGPL-2.1",
+    "github_stars": 44,
+    "github_forks": 7,
     "bench": [
       {
         "arch": "amd64",
@@ -3156,36 +3136,33 @@ const jsz_engines = [
         "RayTrace_note": "N=20 median=134 mean=134.30±0.36 max=137",
         "Richards_note": "N=20 median=74 mean=73.25±0.22 max=74"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.777,
+      "es5": 0.6486,
+      "kangax-es5": 0.7767,
+      "kangax-es6": 0.0641,
+      "kangax-es2016": 0.1818,
+      "kangax-es2017": 0.1,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0625,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.8595,
+      "kangax-es2016plus": 0.0422
+    }
   },
   {
     "id": "libjs",
     "title": "LibJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/libjs.md",
-    "license_abbr": "BSD-2",
-    "github_stars": 55252,
-    "github_forks": 2451,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9932,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9228,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.92,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7959,
-      "kangax-es2025": 0.7895,
-      "kangax-intl": 1.0,
-      "es1_5": 0.9976,
-      "kangax-es2016plus": 0.9495
-    },
     "summary": "JavaScript engine of Ladybird browser and SerenityOS.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/libjs.md",
     "homepage": "https://ladybirdbrowser.github.io/libjs-website/",
     "repository": "https://github.com/LadybirdBrowser/ladybird.git",
     "loc": 72562,
@@ -3196,6 +3173,9 @@ const jsz_engines = [
     "features": "WebAssembly engine (LibWasm)",
     "interpreter": "register-based VM",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" Libraries/LibJS",
+    "license_abbr": "BSD-2",
+    "github_stars": 55252,
+    "github_forks": 2451,
     "bench": [
       {
         "arch": "amd64",
@@ -3296,14 +3276,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=5810 mean=5806.75±6.69 max=5848",
         "zlib_note": "N=20 median=2042 mean=2047.30±5.90 max=2106"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9932,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9228,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.92,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.7959,
+      "kangax-es2025": 0.7895,
+      "kangax-intl": 1.0,
+      "es1-es5": 0.9976,
+      "kangax-es2016plus": 0.9495
+    }
   },
   {
     "id": "links",
     "title": "Links",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/links.md",
-    "license_abbr": "GPL-2.0+",
     "summary": "Links browser had a basic JavaScript engine until version 2.1pre28.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/links.md",
     "homepage": "http://links.twibright.com/",
     "sources": "http://links.twibright.com/download/links-2.1pre28.tar.bz2",
     "loc": 13780,
@@ -3313,31 +3312,29 @@ const jsz_engines = [
     "years": "2002-2007",
     "parser": "YACC",
     "interpreter": "tree walker",
-    "loc_command": "cloc jsint.c ipret.c builtin.c parser/javascr.l parser/javascript.y"
+    "loc_command": "cloc jsint.c ipret.c builtin.c parser/javascr.l parser/javascript.y",
+    "license_abbr": "GPL-2.0+"
   },
   {
     "id": "malbrain",
     "title": "malbrain",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/malbrain.md",
-    "github_stars": 13,
-    "github_forks": 0,
     "summary": "JavaScript interpreter with a built-in NO-SQL database.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/malbrain.md",
     "repository": "https://github.com/malbrain/javascript-database.git",
     "loc": 12293,
     "language": "C",
     "years": "2016-2020",
     "parser": "YACC",
     "interpreter": "tree walker",
-    "loc_command": "cloc *.[chly] system*.js"
+    "loc_command": "cloc *.[chly] system*.js",
+    "github_stars": 13,
+    "github_forks": 0
   },
   {
     "id": "metaes",
     "title": "metaes",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/metaes.md",
-    "license_abbr": "MIT",
-    "github_stars": 139,
-    "github_forks": 8,
     "summary": "Metacircular JavaScript interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/metaes.md",
     "repository": "https://github.com/metaes/metaes.git",
     "loc": 2833,
     "language": "TypeScript",
@@ -3345,16 +3342,16 @@ const jsz_engines = [
     "standard": "ES2017 (partial, no standard library)",
     "years": "2015-2022",
     "platform": "JavaScript",
-    "loc_command": "cloc lib"
+    "loc_command": "cloc lib",
+    "license_abbr": "MIT",
+    "github_stars": 139,
+    "github_forks": 8
   },
   {
     "id": "microvium",
     "title": "Microvium",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/microvium.md",
-    "license_abbr": "MIT",
-    "github_stars": 616,
-    "github_forks": 27,
     "summary": "Tiny interpreter for microcontrollers for a small JavaScript subset.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/microvium.md",
     "repository": "https://github.com/coder-mike/microvium.git",
     "loc": 20608,
     "language": "C, TypeScript",
@@ -3363,22 +3360,16 @@ const jsz_engines = [
     "type": "JavaScript-like language ([supported features](https://github.com/coder-mike/microvium/blob/main/doc/supported-language.md))",
     "platform": "native (C-based runtime)",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc *.ts lib native-vm"
+    "loc_command": "cloc *.ts lib native-vm",
+    "license_abbr": "MIT",
+    "github_stars": 616,
+    "github_forks": 27
   },
   {
     "id": "mocha",
     "title": "Mocha",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/mocha.md",
-    "license_abbr": "Proprietary",
-    "github_stars": 346,
-    "github_forks": 30,
-    "spec_conformance": {
-      "es1": 0.7424,
-      "es3": 0.0338,
-      "es5": 0.0135,
-      "es1_5": 0.3643
-    },
     "summary": "The very first JavaScript engine that defined early JavaScript language (JS1.0/1.1), shipped in Netscape Navigator 2.0-3.0.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/mocha.md",
     "repository": "https://github.com/doodlewind/mocha1995.git",
     "loc": 13728,
     "language": "C++",
@@ -3390,6 +3381,9 @@ const jsz_engines = [
     "gc": "reference counting",
     "loc_note": "ns302",
     "parser_note": "[mo_parse.c](https://github.com/doodlewind/mocha1995/blob/main/src/mo_parse.c), 953 LOC",
+    "license_abbr": "Proprietary",
+    "github_stars": 346,
+    "github_forks": 30,
     "bench": [
       {
         "arch": "amd64",
@@ -3409,14 +3403,43 @@ const jsz_engines = [
         "Richards": 265,
         "Richards_note": "N=100 median=265 mean=262.12±0.83 max=272"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.7424,
+      "es3": 0.0338,
+      "es5": 0.0135,
+      "es1-es5": 0.3643
+    }
   },
   {
     "id": "modernc-quickjs",
     "title": "ModerncQuickJS",
+    "summary": "QuickJS transpiled to pure Go.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/modernc-quickjs.md",
+    "homepage": "https://modernc.org/quickjs",
+    "repository": "https://gitlab.com/cznic/quickjs.git",
+    "loc": 167235,
+    "language": "Go",
+    "license": "BSD-3-Clause, MIT",
+    "standard": "ES2023",
+    "years": "2024-",
+    "ancestors": "[QuickJS](quickjs.md)",
+    "platform": "Go (cgo-free)",
+    "interpreter": "stack-based VM",
+    "loc_command": "cloc lib*.go ccgo_linux_amd64.go",
     "license_abbr": "BSD-3/MIT",
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6",
+        "binary_size": 4619264,
+        "repository": "https://gitlab.com/cznic/quickjs.git",
+        "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78",
+        "revision_date": "2025-10-24",
+        "version": "0.16.5"
+      }
+    ],
+    "conformance": {
       "es1": 1.0,
       "es3": 1.0,
       "es5": 1.0,
@@ -3433,41 +3456,15 @@ const jsz_engines = [
       "kangax-es2024": 0.6735,
       "kangax-es2025": 0.2632,
       "kangax-intl": 0.25,
-      "es1_5": 1.0,
+      "es1-es5": 1.0,
       "kangax-es2016plus": 0.7804
-    },
-    "summary": "QuickJS transpiled to pure Go.",
-    "homepage": "https://modernc.org/quickjs",
-    "repository": "https://gitlab.com/cznic/quickjs.git",
-    "loc": 167235,
-    "language": "Go",
-    "license": "BSD-3-Clause, MIT",
-    "standard": "ES2023",
-    "years": "2024-",
-    "ancestors": "[QuickJS](quickjs.md)",
-    "platform": "Go (cgo-free)",
-    "interpreter": "stack-based VM",
-    "loc_command": "cloc lib*.go ccgo_linux_amd64.go",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6",
-        "binary_size": 4619264,
-        "repository": "https://gitlab.com/cznic/quickjs.git",
-        "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78",
-        "revision_date": "2025-10-24",
-        "version": "0.16.5"
-      }
-    ]
+    }
   },
   {
     "id": "motet-a-toy",
     "title": "motet-a/toy",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/motet-a-toy.md",
-    "license_abbr": "MIT",
-    "github_stars": 15,
-    "github_forks": 6,
     "summary": "Tiny self-compiling interpreter for a subset of JavaScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/motet-a-toy.md",
     "repository": "https://github.com/motet-a/toy.git",
     "loc": 1961,
     "language": "C, JavaScript",
@@ -3476,36 +3473,16 @@ const jsz_engines = [
     "years": "2017",
     "type": "JavaScript-like language",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc *.c *.h *.js opcode.def"
+    "loc_command": "cloc *.c *.h *.js opcode.def",
+    "license_abbr": "MIT",
+    "github_stars": 15,
+    "github_forks": 6
   },
   {
     "id": "mujs",
     "title": "MuJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/mujs.md",
-    "license_abbr": "ISC",
-    "github_stars": 863,
-    "github_forks": 105,
-    "spec_conformance": {
-      "es1": 0.9596,
-      "es3": 0.8919,
-      "es5": 0.8649,
-      "kangax-es5": 0.8635,
-      "kangax-es6": 0.0142,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.04,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0625,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.919,
-      "kangax-es2016plus": 0.019
-    },
     "summary": "Embeddable JavaScript engine from MuPDF.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/mujs.md",
     "homepage": "https://mujs.com/",
     "repository": "https://codeberg.org/ccxvii/mujs.git",
     "github": "https://github.com/ccxvii/mujs.git",
@@ -3516,6 +3493,9 @@ const jsz_engines = [
     "years": "2013-",
     "interpreter": "stack-based VM",
     "loc_command": "cloc *.c *.h",
+    "license_abbr": "ISC",
+    "github_stars": 863,
+    "github_forks": 105,
     "bench": [
       {
         "arch": "amd64",
@@ -3603,32 +3583,78 @@ const jsz_engines = [
         "Splay_note": "N=20 median=1186 mean=1183.85±3.55 max=1205",
         "SplayLatency_note": "N=20 median=1960 mean=1931.10±9.52 max=1977"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9596,
+      "es3": 0.8919,
+      "es5": 0.8649,
+      "kangax-es5": 0.8635,
+      "kangax-es6": 0.0142,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0625,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.919,
+      "kangax-es2016plus": 0.019
+    }
   },
   {
     "id": "muscalietjs",
     "title": "MuscalietJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/muscalietjs.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 21,
-    "github_forks": 8,
     "summary": "JavaScript interpreter / compiler to CIL. Abandoned prototype for a paper.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/muscalietjs.md",
     "repository": "https://github.com/mcjs/mcjs.git",
     "loc": 49527,
     "language": "C#",
     "license": "BSD-3-Clause-Clear",
     "years": "2014",
     "platform": ".NET",
-    "loc_command": "cloc ."
+    "loc_command": "cloc .",
+    "license_abbr": "BSD-3",
+    "github_stars": 21,
+    "github_forks": 8
   },
   {
     "id": "narcissus",
     "title": "Narcissus",
+    "summary": "Metacircular JavaScript interpreter, was used for prototyping new language features in ES6.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/narcissus.md",
+    "repository": "https://github.com/mozilla/narcissus.git",
+    "loc": 6308,
+    "language": "JavaScript",
+    "license": "MPL-1.1-or-later OR GPL-2.0-or-later OR LGPL-2.1-or-later",
+    "org": "Mozilla",
+    "standard": "ES5",
+    "years": "2007-2012",
+    "platform": "JavaScript (SpiderMonkey)",
+    "loc_command": "cloc lib",
     "license_abbr": "MPL/GPL/LGPL",
     "github_stars": 917,
     "github_forks": 119,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 208294,
+        "repository": "https://github.com/ivankra/narcissus.git",
+        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
+        "revision_date": "2025-10-08"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 208294,
+        "repository": "https://github.com/ivankra/narcissus.git",
+        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
+        "revision_date": "2025-10-08"
+      }
+    ],
+    "conformance": {
       "es1": 0.9697,
       "es3": 0.9189,
       "es5": 0.7027,
@@ -3645,64 +3671,15 @@ const jsz_engines = [
       "kangax-es2024": 0.5102,
       "kangax-es2025": 0.5526,
       "kangax-intl": 0.25,
-      "es1_5": 0.9048,
+      "es1-es5": 0.9048,
       "kangax-es2016plus": 0.4355
-    },
-    "summary": "Metacircular JavaScript interpreter, was used for prototyping new language features in ES6.",
-    "repository": "https://github.com/mozilla/narcissus.git",
-    "loc": 6308,
-    "language": "JavaScript",
-    "license": "MPL-1.1-or-later OR GPL-2.0-or-later OR LGPL-2.1-or-later",
-    "org": "Mozilla",
-    "standard": "ES5",
-    "years": "2007-2012",
-    "platform": "JavaScript (SpiderMonkey)",
-    "loc_command": "cloc lib",
-    "bench": [
-      {
-        "arch": "amd64",
-        "dist_size": 208294,
-        "repository": "https://github.com/ivankra/narcissus.git",
-        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
-        "revision_date": "2025-10-08"
-      },
-      {
-        "arch": "arm64",
-        "dist_size": 208294,
-        "repository": "https://github.com/ivankra/narcissus.git",
-        "revision": "a1eae5c735c3932cc435d869e68933d469d419f6",
-        "revision_date": "2025-10-08"
-      }
-    ]
+    }
   },
   {
     "id": "nashorn",
     "title": "Nashorn",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nashorn.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 476,
-    "github_forks": 48,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9797,
-      "es5": 0.9595,
-      "kangax-es5": 0.9672,
-      "kangax-es6": 0.2953,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.04,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.1161,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.2,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9857,
-      "kangax-es2016plus": 0.0313
-    },
     "summary": "JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nashorn.md",
     "homepage": "https://openjdk.org/projects/nashorn/",
     "repository": "https://github.com/openjdk/nashorn.git",
     "loc": 89134,
@@ -3715,6 +3692,9 @@ const jsz_engines = [
     "jit": "via JVM",
     "regex": "[joni](https://github.com/jruby/joni) (JRuby's Java port of Oniguruma)",
     "loc_command": "cloc src/org.openjdk.nashorn",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 476,
+    "github_forks": 48,
     "bench": [
       {
         "arch": "amd64",
@@ -3805,16 +3785,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=3185 mean=3199.60±16.52 max=3386",
         "zlib_note": "N=3 median=613 mean=614.00±2.65 max=619"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9797,
+      "es5": 0.9595,
+      "kangax-es5": 0.9672,
+      "kangax-es6": 0.2953,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.1161,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.2,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9857,
+      "kangax-es2016plus": 0.0313
+    }
   },
   {
     "id": "nerd",
     "title": "Nerd / NectarJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nerd.md",
-    "license_abbr": "MIT",
-    "github_stars": 3605,
-    "github_forks": 129,
     "summary": "Compiler for a subset of JavaScript targetting native binaries.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nerd.md",
     "repository": "https://github.com/NerdLang/nerd.git",
     "loc": 12245,
     "language": "C++",
@@ -3822,16 +3819,16 @@ const jsz_engines = [
     "standard": "no",
     "years": "2017-2022",
     "type": "JavaScript-like language, compiler to native code",
-    "loc_command": "cloc base compiler lib"
+    "loc_command": "cloc base compiler lib",
+    "license_abbr": "MIT",
+    "github_stars": 3605,
+    "github_forks": 129
   },
   {
     "id": "ngs",
     "title": "NGS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ngs.md",
-    "license_abbr": "LGPL-2.0",
-    "github_stars": 2,
-    "github_forks": 1,
     "summary": "An independent implementation of JavaScript from late 1990s.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ngs.md",
     "homepage": "https://web.archive.org/web/20000817004334/http://www.ngs.fi/js/",
     "repository": "https://github.com/markkurossi/js.git",
     "sources": "https://web.archive.org/web/20070705224001/http://www.njs-javascript.org/js-0.2.5.tar.gz",
@@ -3841,16 +3838,16 @@ const jsz_engines = [
     "standard": "JS1.4 (≈ES3)",
     "years": "1998-1999",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src",
+    "license_abbr": "LGPL-2.0",
+    "github_stars": 2,
+    "github_forks": 1
   },
   {
     "id": "niljs",
     "title": "NiL.JS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/niljs.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 343,
-    "github_forks": 48,
     "summary": "JavaScript interpreter for .NET.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/niljs.md",
     "repository": "https://github.com/nilproject/NiL.JS.git",
     "loc": 42214,
     "language": "C#",
@@ -3859,36 +3856,16 @@ const jsz_engines = [
     "years": "2013-",
     "platform": ".NET",
     "interpreter": "tree walker",
-    "loc_command": "cloc NiL.JS"
+    "loc_command": "cloc NiL.JS",
+    "license_abbr": "BSD-3",
+    "github_stars": 343,
+    "github_forks": 48
   },
   {
     "id": "njs",
     "title": "njs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/njs.md",
-    "license_abbr": "BSD-2",
-    "github_stars": 1494,
-    "github_forks": 198,
-    "spec_conformance": {
-      "es1": 0.9343,
-      "es3": 0.8986,
-      "es5": 0.6892,
-      "kangax-es5": 0.8143,
-      "kangax-es6": 0.3886,
-      "kangax-es2016": 0.3636,
-      "kangax-es2017": 0.6,
-      "kangax-es2018": 0.3158,
-      "kangax-es2019": 0.1875,
-      "kangax-es2020": 0.2857,
-      "kangax-es2021": 0.2857,
-      "kangax-es2022": 0.0476,
-      "kangax-es2023": 0.2857,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.1404,
-      "kangax-intl": 0.1071,
-      "es1_5": 0.8786,
-      "kangax-es2016plus": 0.2722
-    },
     "summary": "Lightweight embeddable JavaScript engine for use in nginx.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/njs.md",
     "homepage": "https://nginx.org/en/docs/njs/index.html",
     "repository": "https://github.com/nginx/njs.git",
     "loc": 58962,
@@ -3900,6 +3877,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "regex": "PCRE2",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" src",
+    "license_abbr": "BSD-2",
+    "github_stars": 1494,
+    "github_forks": 198,
     "bench": [
       {
         "arch": "amd64",
@@ -3976,36 +3956,33 @@ const jsz_engines = [
         "Splay_note": "N=20 median=3203 mean=3203.15±5.04 max=3251",
         "SplayLatency_note": "N=20 median=12839 mean=12833.30±14.54 max=12998"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9343,
+      "es3": 0.8986,
+      "es5": 0.6892,
+      "kangax-es5": 0.8143,
+      "kangax-es6": 0.3886,
+      "kangax-es2016": 0.3636,
+      "kangax-es2017": 0.6,
+      "kangax-es2018": 0.3158,
+      "kangax-es2019": 0.1875,
+      "kangax-es2020": 0.2857,
+      "kangax-es2021": 0.2857,
+      "kangax-es2022": 0.0476,
+      "kangax-es2023": 0.2857,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.1404,
+      "kangax-intl": 0.1071,
+      "es1-es5": 0.8786,
+      "kangax-es2016plus": 0.2722
+    }
   },
   {
     "id": "nova",
     "title": "Nova",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nova.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 1764,
-    "github_forks": 66,
-    "spec_conformance": {
-      "es1": 0.9495,
-      "es3": 0.9054,
-      "es5": 0.8514,
-      "kangax-es5": 0.9312,
-      "kangax-es6": 0.8573,
-      "kangax-es2016": 0.9394,
-      "kangax-es2017": 0.88,
-      "kangax-es2018": 0.6737,
-      "kangax-es2019": 0.9464,
-      "kangax-es2020": 0.8571,
-      "kangax-es2021": 0.5714,
-      "kangax-es2022": 0.9524,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.551,
-      "kangax-es2025": 0.5526,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9167,
-      "kangax-es2016plus": 0.7923
-    },
     "summary": "Experimental JavaScript engine written in Rust with a cache-friendly data-oriented design.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/nova.md",
     "homepage": "https://trynova.dev/",
     "repository": "https://github.com/trynova/nova.git",
     "loc": 102297,
@@ -4016,6 +3993,9 @@ const jsz_engines = [
     "parser": "oxc",
     "interpreter": "stack-based VM",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" nova_vm",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 1764,
+    "github_forks": 66,
     "bench": [
       {
         "arch": "amd64",
@@ -4088,49 +4068,46 @@ const jsz_engines = [
         "RayTrace_note": "N=20 median=140 mean=140.25±0.23 max=142",
         "Richards_note": "N=20 median=44 mean=43.60±0.11 max=44"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9495,
+      "es3": 0.9054,
+      "es5": 0.8514,
+      "kangax-es5": 0.9312,
+      "kangax-es6": 0.8573,
+      "kangax-es2016": 0.9394,
+      "kangax-es2017": 0.88,
+      "kangax-es2018": 0.6737,
+      "kangax-es2019": 0.9464,
+      "kangax-es2020": 0.8571,
+      "kangax-es2021": 0.5714,
+      "kangax-es2022": 0.9524,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.551,
+      "kangax-es2025": 0.5526,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9167,
+      "kangax-es2016plus": 0.7923
+    }
   },
   {
     "id": "opera",
     "title": "Opera",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/opera.md",
-    "license_abbr": "Proprietary",
     "summary": "Early JavaScript engines of Opera browser: Linear A, Linear B, Futhark.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/opera.md",
     "homepage": "https://help.opera.com/en/operas-archived-history/",
     "language": "C++",
     "license": "Proprietary",
     "org": "Opera",
     "standard": "ES3",
-    "years": "1997-2009"
+    "years": "1997-2009",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "otto",
     "title": "otto",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/otto.md",
-    "license_abbr": "MIT",
-    "github_stars": 8399,
-    "github_forks": 598,
-    "spec_conformance": {
-      "es1": 0.9899,
-      "es3": 0.9122,
-      "es5": 0.7162,
-      "kangax-es5": 0.7973,
-      "kangax-es6": 0.0459,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.16,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.125,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0893,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0408,
-      "kangax-es2025": 0.0526,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9143,
-      "kangax-es2016plus": 0.0607
-    },
     "summary": "JavaScript engine in pure Go.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/otto.md",
     "repository": "https://github.com/robertkrimen/otto.git",
     "loc": 26462,
     "language": "Go",
@@ -4141,6 +4118,9 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "regex": "RE2 (not ECMAScript-compliant)",
     "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" .",
+    "license_abbr": "MIT",
+    "github_stars": 8399,
+    "github_forks": 598,
     "bench": [
       {
         "arch": "amd64",
@@ -4216,16 +4196,61 @@ const jsz_engines = [
         "Splay_note": "N=20 median=272 mean=272.95±0.98 max=284",
         "SplayLatency_note": "N=20 median=2055 mean=2054.00±2.54 max=2075"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9899,
+      "es3": 0.9122,
+      "es5": 0.7162,
+      "kangax-es5": 0.7973,
+      "kangax-es6": 0.0459,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.16,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.125,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0893,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0526,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9143,
+      "kangax-es2016plus": 0.0607
+    }
   },
   {
     "id": "porffor",
     "title": "Porffor",
+    "summary": "Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and native binaries.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/porffor.md",
+    "homepage": "https://porffor.dev/",
+    "repository": "https://github.com/CanadaHonk/porffor.git",
+    "loc": 27848,
+    "language": "JavaScript, TypeScript",
+    "license": "MIT",
+    "years": "2023-",
+    "parser": "acorn",
+    "platform": "WebAssembly, native",
+    "jit": "via WebAssembly engine",
+    "loc_command": "cloc compiler",
     "license_abbr": "MIT",
     "github_stars": 4284,
     "github_forks": 92,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "amd64",
+        "repository": "https://github.com/CanadaHonk/porffor",
+        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
+        "revision_date": "2025-09-23"
+      },
+      {
+        "arch": "arm64",
+        "repository": "https://github.com/CanadaHonk/porffor.git",
+        "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9",
+        "revision_date": "2025-10-28"
+      }
+    ],
+    "conformance": {
       "es1": 0.8788,
       "es3": 0.6149,
       "es5": 0.6351,
@@ -4242,63 +4267,15 @@ const jsz_engines = [
       "kangax-es2024": 0.4694,
       "kangax-es2025": 0.2105,
       "kangax-intl": 0.25,
-      "es1_5": 0.7429,
+      "es1-es5": 0.7429,
       "kangax-es2016plus": 0.5593
-    },
-    "summary": "Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and native binaries.",
-    "homepage": "https://porffor.dev/",
-    "repository": "https://github.com/CanadaHonk/porffor.git",
-    "loc": 27848,
-    "language": "JavaScript, TypeScript",
-    "license": "MIT",
-    "years": "2023-",
-    "parser": "acorn",
-    "platform": "WebAssembly, native",
-    "jit": "via WebAssembly engine",
-    "loc_command": "cloc compiler",
-    "bench": [
-      {
-        "arch": "amd64",
-        "repository": "https://github.com/CanadaHonk/porffor",
-        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
-        "revision_date": "2025-09-23"
-      },
-      {
-        "arch": "arm64",
-        "repository": "https://github.com/CanadaHonk/porffor.git",
-        "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9",
-        "revision_date": "2025-10-28"
-      }
-    ]
+    }
   },
   {
     "id": "primjs",
     "title": "PrimJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/primjs.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 1030,
-    "github_forks": 45,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 0.9865,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9538,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.8071,
-      "kangax-es2018": 0.9368,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 0.8571,
-      "kangax-es2021": 0.7857,
-      "kangax-es2022": 0.619,
-      "kangax-es2023": 0.2,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9976,
-      "kangax-es2016plus": 0.6753
-    },
     "summary": "QuickJS-based engine from ByteDance for their cross-platform mobile apps framework Lynx.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/primjs.md",
     "repository": "https://github.com/lynx-family/primjs.git",
     "loc": 292098,
     "language": "C++",
@@ -4309,6 +4286,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "gc": "mark-and-sweep / reference counting",
     "loc_command": "cloc src",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 1030,
+    "github_forks": 45,
     "bench": [
       {
         "arch": "amd64",
@@ -4330,16 +4310,33 @@ const jsz_engines = [
         "revision_date": "2025-10-20",
         "version": "2.15.0-rc.3"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 0.9865,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9538,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.8071,
+      "kangax-es2018": 0.9368,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 0.8571,
+      "kangax-es2021": 0.7857,
+      "kangax-es2022": 0.619,
+      "kangax-es2023": 0.2,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9976,
+      "kangax-es2016plus": 0.6753
+    }
   },
   {
     "id": "qsa",
     "title": "QSA",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qsa.md",
-    "license_abbr": "GPL-2.0",
-    "github_stars": 2,
-    "github_forks": 0,
     "summary": "Qt 3's JavaScript engine: Qt Script for Applications.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qsa.md",
     "homepage": "https://web.archive.org/web/20060212090118/http://www.trolltech.com/products/qsa/",
     "repository": "https://github.com/aschet/qsaqt5.git",
     "language": "C++",
@@ -4349,14 +4346,16 @@ const jsz_engines = [
     "years": "2002-2007",
     "successors": "[QtScript](qtscript.md) (Qt 4.3, 2007)",
     "parser": "YACC",
-    "interpreter": "tree walker"
+    "interpreter": "tree walker",
+    "license_abbr": "GPL-2.0",
+    "github_stars": 2,
+    "github_forks": 0
   },
   {
     "id": "qtscript",
     "title": "QtScript",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qtscript.md",
-    "license_abbr": "GPL/LGPL",
     "summary": "Qt 4.3-5.x's JavaScript engine based on JavaScriptCore.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qtscript.md",
     "homepage": "https://en.wikipedia.org/wiki/QtScript",
     "repository": "https://code.qt.io/qt/qtscript.git",
     "language": "C++",
@@ -4366,22 +4365,14 @@ const jsz_engines = [
     "ancestors": "[JavaScriptCore](jsc.md)",
     "predecessors": "[QSA](qsa.md) (Qt 3, 2002-2007)",
     "successors": "[QV4](qv4.md) (Qt 5.0+, 2012-)",
-    "repository_note": "[web view](https://code.qt.io/cgit/qt/qtscript.git)"
+    "repository_note": "[web view](https://code.qt.io/cgit/qt/qtscript.git)",
+    "license_abbr": "GPL/LGPL"
   },
   {
     "id": "quad-wheel",
     "title": "quad-wheel",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quad-wheel.md",
-    "license_abbr": "MIT",
-    "github_stars": 12,
-    "github_forks": 6,
-    "spec_conformance": {
-      "es1": 0.2374,
-      "es3": 0.1149,
-      "es5": 0.0405,
-      "es1_5": 0.1595
-    },
     "summary": "Buggy unfinished interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quad-wheel.md",
     "homepage": "https://code.google.com/archive/p/quad-wheel/",
     "repository": "https://github.com/radare/quad-wheel.git",
     "loc": 7917,
@@ -4393,6 +4384,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "regex": "POSIX (regex.h)",
     "loc_command": "cloc *.{c,h}",
+    "license_abbr": "MIT",
+    "github_stars": 12,
+    "github_forks": 6,
     "bench": [
       {
         "arch": "amd64",
@@ -4412,16 +4406,43 @@ const jsz_engines = [
         "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
         "revision_date": "2012-03-26"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.2374,
+      "es3": 0.1149,
+      "es5": 0.0405,
+      "es1-es5": 0.1595
+    }
   },
   {
     "id": "quanta",
     "title": "Quanta",
+    "summary": "Buggy unfinished interpreter.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quanta.md",
+    "repository": "https://github.com/solarbrowser/quanta.git",
+    "loc": 42129,
+    "language": "C++",
+    "license": "MPL-2.0",
+    "standard": "no (can't run ES1)",
+    "years": "2025-",
+    "interpreter": "tree walker",
+    "regex": "std::regex",
+    "loc_command": "cloc .",
     "license_abbr": "MPL-2.0",
     "github_stars": 5,
     "github_forks": 2,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "db0ada150457fa0e225320db1a870a84609fa67bacbe0eba3eb08a660b0c5a00",
+        "binary_size": 1774528,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/solarbrowser/quanta.git",
+        "revision": "10962761c7646b67ba31488b18ccf7af3cf59a86",
+        "revision_date": "2025-10-23"
+      }
+    ],
+    "conformance": {
       "es1": 0.4798,
       "es3": 0.473,
       "es5": 0.2162,
@@ -4438,59 +4459,15 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.1842,
       "kangax-intl": 0.0,
-      "es1_5": 0.431,
+      "es1-es5": 0.431,
       "kangax-es2016plus": 0.1428
-    },
-    "summary": "Buggy unfinished interpreter.",
-    "repository": "https://github.com/solarbrowser/quanta.git",
-    "loc": 42129,
-    "language": "C++",
-    "license": "MPL-2.0",
-    "standard": "no (can't run ES1)",
-    "years": "2025-",
-    "interpreter": "tree walker",
-    "regex": "std::regex",
-    "loc_command": "cloc .",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "db0ada150457fa0e225320db1a870a84609fa67bacbe0eba3eb08a660b0c5a00",
-        "binary_size": 1774528,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/solarbrowser/quanta.git",
-        "revision": "10962761c7646b67ba31488b18ccf7af3cf59a86",
-        "revision_date": "2025-10-23"
-      }
-    ]
+    }
   },
   {
     "id": "quickjs-ng",
     "title": "QuickJS-NG",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quickjs-ng.md",
-    "license_abbr": "MIT",
-    "github_stars": 2230,
-    "github_forks": 216,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9661,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.96,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7959,
-      "kangax-es2025": 0.7368,
-      "kangax-intl": 0.25,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9495
-    },
     "summary": "Community-oriented fork of QuickJS.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quickjs-ng.md",
     "homepage": "https://quickjs-ng.github.io/quickjs/",
     "repository": "https://github.com/quickjs-ng/quickjs.git",
     "loc": 74458,
@@ -4503,6 +4480,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "gc": "reference counting",
     "loc_command": "cloc *.c *.h",
+    "license_abbr": "MIT",
+    "github_stars": 2230,
+    "github_forks": 216,
     "bench": [
       {
         "arch": "amd64",
@@ -4609,36 +4589,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=11782 mean=11705.15±33.83 max=11905",
         "zlib_note": "N=10 median=911 mean=920.70±7.39 max=955"
       }
-    ]
-  },
-  {
-    "id": "quickjs",
-    "title": "QuickJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quickjs.md",
-    "license_abbr": "MIT",
-    "github_stars": 9719,
-    "github_forks": 1034,
-    "spec_conformance": {
+    ],
+    "conformance": {
       "es1": 1.0,
       "es3": 1.0,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9699,
+      "kangax-es6": 0.9661,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
+      "kangax-es2017": 0.96,
       "kangax-es2018": 0.9895,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.6735,
-      "kangax-es2025": 0.3158,
+      "kangax-es2024": 0.7959,
+      "kangax-es2025": 0.7368,
       "kangax-intl": 0.25,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.8974
-    },
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9495
+    }
+  },
+  {
+    "id": "quickjs",
+    "title": "QuickJS",
     "summary": "Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/quickjs.md",
     "homepage": "https://bellard.org/quickjs/",
     "repository": "https://github.com/bellard/quickjs.git",
     "loc": 73590,
@@ -4651,6 +4628,9 @@ const jsz_engines = [
     "interpreter": "stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))",
     "gc": "reference counting",
     "loc_command": "cloc *.c *.h",
+    "license_abbr": "MIT",
+    "github_stars": 9719,
+    "github_forks": 1034,
     "bench": [
       {
         "arch": "amd64",
@@ -4761,36 +4741,33 @@ const jsz_engines = [
         "Typescript_note": "N=20 median=12154 mean=12154.05±16.80 max=12382",
         "zlib_note": "N=3 median=981 mean=980.67±0.88 max=982"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9699,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.6735,
+      "kangax-es2025": 0.3158,
+      "kangax-intl": 0.25,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.8974
+    }
   },
   {
     "id": "qv4",
     "title": "QV4 / QJSEngine",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qv4.md",
-    "license_abbr": "Qt/GPL/LGPL",
-    "github_stars": 270,
-    "github_forks": 194,
-    "spec_conformance": {
-      "es1": 0.9899,
-      "es3": 0.9865,
-      "es5": 0.9459,
-      "kangax-es5": 0.9708,
-      "kangax-es6": 0.8716,
-      "kangax-es2016": 0.8636,
-      "kangax-es2017": 0.5356,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0179,
-      "kangax-es2020": 0.3571,
-      "kangax-es2021": 0.0714,
-      "kangax-es2022": 0.0417,
-      "kangax-es2023": 0.2,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.981,
-      "kangax-es2016plus": 0.2056
-    },
     "summary": "JavaScript engine of Qt's QML framework (QJSEngine).",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/qv4.md",
     "homepage": "https://wiki.qt.io/V4",
     "repository": "https://github.com/qt/qtdeclarative.git",
     "loc": 50221,
@@ -4804,6 +4781,9 @@ const jsz_engines = [
     "jit": "x86/x64, arm/arm64",
     "regex": "YARR, JIT-enabled",
     "loc_command": "cloc qtdeclarative/src/{qml/{jsruntime,jsapi,jit}",
+    "license_abbr": "Qt/GPL/LGPL",
+    "github_stars": 270,
+    "github_forks": 194,
     "bench": [
       {
         "arch": "amd64",
@@ -4993,16 +4973,56 @@ const jsz_engines = [
         "zlib_note": "N=20 median=2442 mean=2423.70±32.32 max=2612",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9899,
+      "es3": 0.9865,
+      "es5": 0.9459,
+      "kangax-es5": 0.9708,
+      "kangax-es6": 0.8716,
+      "kangax-es2016": 0.8636,
+      "kangax-es2017": 0.5356,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0179,
+      "kangax-es2020": 0.3571,
+      "kangax-es2021": 0.0714,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.2,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.981,
+      "kangax-es2016plus": 0.2056
+    }
   },
   {
     "id": "rapidus",
     "title": "Rapidus",
+    "summary": "JavaScript engine written in Rust, aiming at ES5.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rapidus.md",
+    "repository": "https://github.com/maekawatoshiki/rapidus.git",
+    "loc": 10810,
+    "language": "Rust",
+    "license": "MIT",
+    "standard": "ES5 (partial)",
+    "years": "2018-2021",
+    "interpreter": "stack-based VM ([vm.rs](https://github.com/maekawatoshiki/rapidus/blob/main/core/src/vm/vm.rs))",
+    "loc_command": "cloc */src",
     "license_abbr": "MIT",
     "github_stars": 562,
     "github_forks": 21,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
+        "binary_size": 1509656,
+        "repository": "https://github.com/maekawatoshiki/rapidus.git",
+        "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
+        "revision_date": "2023-02-25",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+      }
+    ],
+    "conformance": {
       "es1": 0.3081,
       "es3": 0.1351,
       "es5": 0.1216,
@@ -5019,38 +5039,15 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.0,
-      "es1_5": 0.2143,
+      "es1-es5": 0.2143,
       "kangax-es2016plus": 0.0177
-    },
-    "summary": "JavaScript engine written in Rust, aiming at ES5.",
-    "repository": "https://github.com/maekawatoshiki/rapidus.git",
-    "loc": 10810,
-    "language": "Rust",
-    "license": "MIT",
-    "standard": "ES5 (partial)",
-    "years": "2018-2021",
-    "interpreter": "stack-based VM ([vm.rs](https://github.com/maekawatoshiki/rapidus/blob/main/core/src/vm/vm.rs))",
-    "loc_command": "cloc */src",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
-        "binary_size": 1509656,
-        "repository": "https://github.com/maekawatoshiki/rapidus.git",
-        "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
-        "revision_date": "2023-02-25",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
-      }
-    ]
+    }
   },
   {
     "id": "reeva",
     "title": "Reeva",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/reeva.md",
-    "license_abbr": "BSD-2",
-    "github_stars": 90,
-    "github_forks": 7,
     "summary": "JavaScript interpreter for JVM written in Kotlin.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/reeva.md",
     "repository": "https://github.com/ReevaJS/reeva.git",
     "loc": 25566,
     "language": "Kotlin",
@@ -5058,36 +5055,16 @@ const jsz_engines = [
     "years": "2020-",
     "platform": "Java",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src",
+    "license_abbr": "BSD-2",
+    "github_stars": 90,
+    "github_forks": 7
   },
   {
     "id": "rhino",
     "title": "Rhino",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rhino.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 4478,
-    "github_forks": 903,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9865,
-      "es5": 0.8514,
-      "kangax-es5": 0.8867,
-      "kangax-es6": 0.6539,
-      "kangax-es2016": 0.6364,
-      "kangax-es2017": 0.385,
-      "kangax-es2018": 0.3684,
-      "kangax-es2019": 0.8869,
-      "kangax-es2020": 0.7286,
-      "kangax-es2021": 0.381,
-      "kangax-es2022": 0.2381,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.2857,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.969,
-      "kangax-es2016plus": 0.4328
-    },
     "summary": "JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rhino.md",
     "homepage": "https://rhino.github.io/",
     "repository": "https://github.com/mozilla/rhino.git",
     "loc": 83848,
@@ -5100,6 +5077,9 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "jit": "via JVM (can compile to JVM bytecode)",
     "loc_command": "cloc --not_match_d=\"(?i)(test)\" rhino",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 4478,
+    "github_forks": 903,
     "bench": [
       {
         "arch": "amd64",
@@ -5181,51 +5161,48 @@ const jsz_engines = [
         "SplayLatency_note": "N=20 median=7755 mean=7788.05±84.84 max=8497",
         "Typescript_note": "N=20 median=3332 mean=3328.25±8.42 max=3384"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9865,
+      "es5": 0.8514,
+      "kangax-es5": 0.8867,
+      "kangax-es6": 0.6539,
+      "kangax-es2016": 0.6364,
+      "kangax-es2017": 0.385,
+      "kangax-es2018": 0.3684,
+      "kangax-es2019": 0.8869,
+      "kangax-es2020": 0.7286,
+      "kangax-es2021": 0.381,
+      "kangax-es2022": 0.2381,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.2857,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.969,
+      "kangax-es2016plus": 0.4328
+    }
   },
   {
     "id": "rpython-langjs",
     "title": "rpython-langjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rpython-langjs.md",
-    "github_stars": 6,
-    "github_forks": 0,
     "summary": "JavaScript interpreter for PyPy.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/rpython-langjs.md",
     "repository": "https://github.com/progval/rpython-langjs.git",
     "loc": 7189,
     "language": "Python",
     "years": "2009-2013",
     "platform": "Python (RPython/PyPy)",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc py-js.py js"
+    "loc_command": "cloc py-js.py js",
+    "github_stars": 6,
+    "github_forks": 0
   },
   {
     "id": "sablejs",
     "title": "sablejs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sablejs.md",
-    "license_abbr": "Custom",
-    "github_stars": 1113,
-    "github_forks": 53,
-    "spec_conformance": {
-      "es1": 0.9192,
-      "es3": 0.9459,
-      "es5": 0.7838,
-      "kangax-es5": 0.8644,
-      "kangax-es6": 0.0297,
-      "kangax-es2016": 0.0,
-      "kangax-es2017": 0.04,
-      "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0625,
-      "kangax-es2020": 0.0,
-      "kangax-es2021": 0.0,
-      "kangax-es2022": 0.0893,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0408,
-      "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9048,
-      "kangax-es2016plus": 0.0276
-    },
     "summary": "Closed-source bytecode-based sandboxed ES5 interpreter in JavaScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sablejs.md",
     "repository": "https://github.com/sablejs/sablejs.git",
     "language": "JavaScript",
     "license": "Custom",
@@ -5234,6 +5211,9 @@ const jsz_engines = [
     "parser": "acorn",
     "platform": "JavaScript",
     "interpreter": "stack-based VM",
+    "license_abbr": "Custom",
+    "github_stars": 1113,
+    "github_forks": 53,
     "bench": [
       {
         "arch": "amd64",
@@ -5251,36 +5231,33 @@ const jsz_engines = [
         "revision_date": "2022-09-12",
         "version": "1.1.0"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.9192,
+      "es3": 0.9459,
+      "es5": 0.7838,
+      "kangax-es5": 0.8644,
+      "kangax-es6": 0.0297,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0625,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0893,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9048,
+      "kangax-es2016plus": 0.0276
+    }
   },
   {
     "id": "sandboxjs",
     "title": "SandboxJS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sandboxjs.md",
-    "license_abbr": "MIT",
-    "github_stars": 172,
-    "github_forks": 11,
-    "spec_conformance": {
-      "es1": 0.8636,
-      "es3": 0.7838,
-      "es5": 0.3514,
-      "kangax-es5": 0.5056,
-      "kangax-es6": 0.3304,
-      "kangax-es2016": 0.1061,
-      "kangax-es2017": 0.32,
-      "kangax-es2018": 0.393,
-      "kangax-es2019": 0.5833,
-      "kangax-es2020": 0.5143,
-      "kangax-es2021": 0.1429,
-      "kangax-es2022": 0.127,
-      "kangax-es2023": 0.6286,
-      "kangax-es2024": 0.1633,
-      "kangax-es2025": 0.5263,
-      "kangax-intl": 0.7143,
-      "es1_5": 0.7452,
-      "kangax-es2016plus": 0.3452
-    },
     "summary": "Interpreter for a limited subset of ES6 for sandboxing untrusted code, preventing access to non-whitelisted functions/prototypes.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sandboxjs.md",
     "repository": "https://github.com/nyariv/SandboxJS.git",
     "loc": 4212,
     "language": "TypeScript",
@@ -5290,6 +5267,9 @@ const jsz_engines = [
     "platform": "JavaScript",
     "interpreter": "tree walker",
     "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 172,
+    "github_forks": 11,
     "bench": [
       {
         "arch": "amd64",
@@ -5307,26 +5287,45 @@ const jsz_engines = [
         "revision_date": "2025-05-10",
         "version": "0.8.24-1-13-gcd391a8"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.8636,
+      "es3": 0.7838,
+      "es5": 0.3514,
+      "kangax-es5": 0.5056,
+      "kangax-es6": 0.3304,
+      "kangax-es2016": 0.1061,
+      "kangax-es2017": 0.32,
+      "kangax-es2018": 0.393,
+      "kangax-es2019": 0.5833,
+      "kangax-es2020": 0.5143,
+      "kangax-es2021": 0.1429,
+      "kangax-es2022": 0.127,
+      "kangax-es2023": 0.6286,
+      "kangax-es2024": 0.1633,
+      "kangax-es2025": 0.5263,
+      "kangax-intl": 0.7143,
+      "es1-es5": 0.7452,
+      "kangax-es2016plus": 0.3452
+    }
   },
   {
     "id": "scriptease",
     "title": "ScriptEase",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/scriptease.md",
-    "license_abbr": "Proprietary",
     "summary": "Scripting engine of Nombas ScriptEase, most famous for being used by James Webb Space Telescope.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/scriptease.md",
     "homepage": "https://brent-noorda.com/nombas/history/HistoryOfNombas.html",
     "language": "C",
     "license": "Proprietary",
     "standard": "ES3",
-    "years": "199x-2004"
+    "years": "199x-2004",
+    "license_abbr": "Proprietary"
   },
   {
     "id": "see",
     "title": "SEE",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/see.md",
-    "license_abbr": "BSD-3",
     "summary": "Simple ECMAScript Engine.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/see.md",
     "homepage": "https://web.archive.org/web/20100328145240/http://www.adaptive-enterprises.com.au/~d/software/see/",
     "sources": "https://web.archive.org/web/20090922234137/http://www.adaptive-enterprises.com.au/~d/software/see/see-3.1.1424.tar.gz",
     "loc": 34022,
@@ -5336,16 +5335,38 @@ const jsz_engines = [
     "years": "2003-2009",
     "interpreter": "stack-based VM",
     "gc": "Boehm GC",
-    "loc_command": "cloc libsee include/see"
+    "loc_command": "cloc libsee include/see",
+    "license_abbr": "BSD-3"
   },
   {
     "id": "sobek",
     "title": "Sobek",
+    "summary": "Grafana's fork of goja engine.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sobek.md",
+    "repository": "https://github.com/grafana/sobek.git",
+    "loc": 46789,
+    "language": "Go",
+    "license": "MIT",
+    "standard": "ES2023 (partial)",
+    "years": "2024-",
+    "ancestors": "[goja](goja.md)",
+    "platform": "Go (cgo-free)",
+    "interpreter": "stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))",
+    "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-lang=Markdown,YAML .",
     "license_abbr": "MIT",
     "github_stars": 276,
     "github_forks": 8,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4",
+        "binary_size": 9437432,
+        "repository": "https://github.com/grafana/sobek.git",
+        "revision": "d05c9166857d16f22e11d50f60bb63fff688f101",
+        "revision_date": "2025-10-08"
+      }
+    ],
+    "conformance": {
       "es1": 0.9848,
       "es3": 1.0,
       "es5": 0.9865,
@@ -5362,39 +5383,38 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.25,
-      "es1_5": 0.9905,
+      "es1-es5": 0.9905,
       "kangax-es2016plus": 0.6623
-    },
-    "summary": "Grafana's fork of goja engine.",
-    "repository": "https://github.com/grafana/sobek.git",
-    "loc": 46789,
-    "language": "Go",
-    "license": "MIT",
-    "standard": "ES2023 (partial)",
-    "years": "2024-",
-    "ancestors": "[goja](goja.md)",
-    "platform": "Go (cgo-free)",
-    "interpreter": "stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))",
-    "loc_command": "cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-lang=Markdown,YAML .",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4",
-        "binary_size": 9437432,
-        "repository": "https://github.com/grafana/sobek.git",
-        "revision": "d05c9166857d16f22e11d50f60bb63fff688f101",
-        "revision_date": "2025-10-08"
-      }
-    ]
+    }
   },
   {
     "id": "sophonjs",
     "title": "SophonJS",
+    "summary": "Small footprint embedded ES5 engine.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sophonjs.md",
+    "repository": "https://github.com/gkmail/SophonJS.git",
+    "loc": 22531,
+    "language": "C",
+    "license": "BSD-3-Clause",
+    "standard": "ES5",
+    "years": "2015",
+    "interpreter": "stack-based VM ([sophon_ins.c](https://github.com/gkmail/SophonJS/blob/master/src/sophon_ins.c))",
+    "loc_command": "cloc src include",
     "license_abbr": "BSD-3",
     "github_stars": 37,
     "github_forks": 6,
-    "spec_conformance": {
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "377bfffd9c58dcef5e5ab0df9e7bebfb69d6a2f68ef0b2e8beb1ec50becd7cbd",
+        "binary_size": 330096,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gkmail/SophonJS.git",
+        "revision": "5012412ed66f76968cd6be87793b25337bda7630",
+        "revision_date": "2015-11-10"
+      }
+    ],
+    "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
       "es5": 0.7432,
@@ -5411,58 +5431,15 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
-      "es1_5": 0.8405,
+      "es1-es5": 0.8405,
       "kangax-es2016plus": 0.0257
-    },
-    "summary": "Small footprint embedded ES5 engine.",
-    "repository": "https://github.com/gkmail/SophonJS.git",
-    "loc": 22531,
-    "language": "C",
-    "license": "BSD-3-Clause",
-    "standard": "ES5",
-    "years": "2015",
-    "interpreter": "stack-based VM ([sophon_ins.c](https://github.com/gkmail/SophonJS/blob/master/src/sophon_ins.c))",
-    "loc_command": "cloc src include",
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "377bfffd9c58dcef5e5ab0df9e7bebfb69d6a2f68ef0b2e8beb1ec50becd7cbd",
-        "binary_size": 330096,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/gkmail/SophonJS.git",
-        "revision": "5012412ed66f76968cd6be87793b25337bda7630",
-        "revision_date": "2015-11-10"
-      }
-    ]
+    }
   },
   {
     "id": "spidermonkey",
     "title": "SpiderMonkey",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/spidermonkey.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 10401,
-    "github_forks": 645,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.981,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 1.0,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9968
-    },
     "summary": "JavaScript engine of Firefox.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/spidermonkey.md",
     "homepage": "https://spidermonkey.dev/",
     "repository": "https://github.com/mozilla-firefox/firefox.git",
     "loc": 1028123,
@@ -5477,6 +5454,9 @@ const jsz_engines = [
     "gc": "generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))",
     "regex": "Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)",
     "loc_command": "cloc --not_match_d=\"(?i)(test|octane)\" js/src",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 10401,
+    "github_forks": 645,
     "bench": [
       {
         "arch": "amd64",
@@ -5841,52 +5821,49 @@ const jsz_engines = [
         "zlib_note": "N=3 median=1033 mean=1034.00±1.53 max=1037",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.981,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9968
+    }
   },
   {
     "id": "stackluca-v3",
     "title": "stackluca/v3",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/stackluca-v3.md",
-    "license_abbr": "MIT",
-    "github_stars": 8,
-    "github_forks": 1,
     "summary": "Toy JavaScript interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/stackluca-v3.md",
     "repository": "https://github.com/stackluca/v3.git",
     "loc": 4299,
     "language": "C",
     "license": "MIT",
     "years": "2016",
     "interpreter": "tree walker",
-    "loc_command": "cloc src"
+    "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 8,
+    "github_forks": 1
   },
   {
     "id": "starlight",
     "title": "Starlight",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/starlight.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 530,
-    "github_forks": 9,
-    "spec_conformance": {
-      "es1": 0.803,
-      "es3": 0.6419,
-      "es5": 0.5,
-      "kangax-es5": 0.636,
-      "kangax-es6": 0.2793,
-      "kangax-es2016": 0.0909,
-      "kangax-es2017": 0.16,
-      "kangax-es2018": 0.1053,
-      "kangax-es2019": 0.3021,
-      "kangax-es2020": 0.1429,
-      "kangax-es2021": 0.3571,
-      "kangax-es2022": 0.0933,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0408,
-      "kangax-es2025": 0.0526,
-      "kangax-intl": 0.0357,
-      "es1_5": 0.6929,
-      "kangax-es2016plus": 0.1462
-    },
     "summary": "JavaScript engine written in Rust.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/starlight.md",
     "repository": "https://github.com/Starlight-JS/starlight.git",
     "loc": 27826,
     "language": "Rust",
@@ -5896,6 +5873,9 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "stack-based VM",
     "loc_command": "cloc crates/starlight*",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 530,
+    "github_forks": 9,
     "bench": [
       {
         "arch": "amd64",
@@ -5929,16 +5909,33 @@ const jsz_engines = [
         "Splay_note": "N=10 median=591 mean=587.00±10.28 max=641",
         "SplayLatency_note": "N=10 median=1749 mean=1739.90±14.47 max=1824"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.803,
+      "es3": 0.6419,
+      "es5": 0.5,
+      "kangax-es5": 0.636,
+      "kangax-es6": 0.2793,
+      "kangax-es2016": 0.0909,
+      "kangax-es2017": 0.16,
+      "kangax-es2018": 0.1053,
+      "kangax-es2019": 0.3021,
+      "kangax-es2020": 0.1429,
+      "kangax-es2021": 0.3571,
+      "kangax-es2022": 0.0933,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0526,
+      "kangax-intl": 0.0357,
+      "es1-es5": 0.6929,
+      "kangax-es2016plus": 0.1462
+    }
   },
   {
     "id": "sval",
     "title": "sval",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sval.md",
-    "license_abbr": "MIT",
-    "github_stars": 419,
-    "github_forks": 58,
     "summary": "Metacircular JavaScript interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/sval.md",
     "repository": "https://github.com/Siubaak/sval.git",
     "loc": 2124,
     "language": "TypeScript",
@@ -5947,16 +5944,16 @@ const jsz_engines = [
     "years": "2018-",
     "parser": "acorn",
     "platform": "JavaScript",
-    "loc_command": "cloc src"
+    "loc_command": "cloc src",
+    "license_abbr": "MIT",
+    "github_stars": 419,
+    "github_forks": 58
   },
   {
     "id": "tachyon",
     "title": "Tachyon",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tachyon.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 280,
-    "github_forks": 38,
     "summary": "Metacircular VM for JavaScript (ES5) written in JavaScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tachyon.md",
     "repository": "https://github.com/Tachyon-Team/Tachyon.git",
     "loc": 58103,
     "language": "JavaScript",
@@ -5965,16 +5962,16 @@ const jsz_engines = [
     "years": "2010-2012",
     "parser": "YACC",
     "platform": "JavaScript",
-    "loc_command": "cloc --not_match_d=\"(test|programs)\" source"
+    "loc_command": "cloc --not_match_d=\"(test|programs)\" source",
+    "license_abbr": "BSD-3",
+    "github_stars": 280,
+    "github_forks": 38
   },
   {
     "id": "tamarin",
     "title": "Tamarin",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tamarin.md",
-    "license_abbr": "MPL-2.0",
-    "github_stars": 216,
-    "github_forks": 72,
     "summary": "JavaScript engine of Adobe Flash Player 9+.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tamarin.md",
     "repository": "https://github.com/adobe/avmplus.git",
     "loc": 192611,
     "language": "C++",
@@ -5983,16 +5980,16 @@ const jsz_engines = [
     "standard": "ES4 (ES3 + some ES4 draft features)",
     "years": "2006-2013",
     "jit": "yes",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" core aot* esc eval nanojit shell util"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" core aot* esc eval nanojit shell util",
+    "license_abbr": "MPL-2.0",
+    "github_stars": 216,
+    "github_forks": 72
   },
   {
     "id": "tessel-colony",
     "title": "Tessel Colony",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tessel-colony.md",
-    "license_abbr": "Apache/MIT",
-    "github_stars": 81,
-    "github_forks": 16,
     "summary": "JavaScript to Lua compiler.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tessel-colony.md",
     "repository": "https://github.com/tessel/colony-compiler.git",
     "loc": 1763,
     "language": "JavaScript",
@@ -6003,22 +6000,16 @@ const jsz_engines = [
     "parser": "Acorn",
     "platform": "Lua (modified Lua 5.1)",
     "loc_command": "cloc src",
-    "parser_note": "vendored and modified"
+    "parser_note": "vendored and modified",
+    "license_abbr": "Apache/MIT",
+    "github_stars": 81,
+    "github_forks": 16
   },
   {
     "id": "tiny-js",
     "title": "tiny-js",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tiny-js.md",
-    "license_abbr": "MIT",
-    "github_stars": 567,
-    "github_forks": 90,
-    "spec_conformance": {
-      "es1": 0.1162,
-      "es3": 0.0473,
-      "es5": 0.0405,
-      "es1_5": 0.0786
-    },
     "summary": "Primitive interpreter for a limited subset of JavaScript.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tiny-js.md",
     "repository": "https://github.com/gfwilliams/tiny-js.git",
     "loc": 2423,
     "language": "C++",
@@ -6027,6 +6018,9 @@ const jsz_engines = [
     "years": "2009-2012",
     "interpreter": "interprets from source",
     "loc_command": "cloc TinyJS*.{cpp,h}",
+    "license_abbr": "MIT",
+    "github_stars": 567,
+    "github_forks": 90,
     "bench": [
       {
         "arch": "amd64",
@@ -6056,16 +6050,19 @@ const jsz_engines = [
         "revision_date": "2014-10-19",
         "variant": "42"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.1162,
+      "es3": 0.0473,
+      "es5": 0.0405,
+      "es1-es5": 0.0786
+    }
   },
   {
     "id": "tjs2",
     "title": "tjs2",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tjs2.md",
-    "license_abbr": "Custom",
-    "github_stars": 855,
-    "github_forks": 124,
     "summary": "JavaScript-like scripting engine of KRKR2/KRKRZ game engines.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/tjs2.md",
     "homepage": "http://krkrz.github.io/",
     "repository": "https://github.com/krkrz/krkrz.git",
     "loc": 36451,
@@ -6075,16 +6072,16 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "interpreter": "register-based VM ([tTJSInterCodeContext::ExecuteCode](https://github.com/krkrz/krkrz/tree/master/tjs2/tjsInterCodeExec.cpp#L1019))",
     "loc_command": "cloc tjs2",
-    "license_note": "BSD-like"
+    "license_note": "BSD-like",
+    "license_abbr": "Custom",
+    "github_stars": 855,
+    "github_forks": 124
   },
   {
     "id": "topaz",
     "title": "Topaz",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topaz.md",
-    "license_abbr": "MIT",
-    "github_stars": 267,
-    "github_forks": 16,
     "summary": "Multithreaded JavaScript engine for .NET.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topaz.md",
     "repository": "https://github.com/koculu/Topaz.git",
     "loc": 21794,
     "language": "C#",
@@ -6093,16 +6090,16 @@ const jsz_engines = [
     "years": "2021-",
     "platform": ".NET",
     "interpreter": "tree walker",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" src",
+    "license_abbr": "MIT",
+    "github_stars": 267,
+    "github_forks": 16
   },
   {
     "id": "topchetoeu-j2s",
     "title": "topchetoeu/j2s",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topchetoeu-j2s.md",
-    "license_abbr": "MIT",
-    "github_stars": 37,
-    "github_forks": 0,
     "summary": "ES5 interpreter written in Java.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topchetoeu-j2s.md",
     "repository": "https://git.topcheto.eu/topchetoeu/j2s",
     "github": "https://github.com/TopchetoEU/jscript.git",
     "loc": 15692,
@@ -6111,30 +6108,30 @@ const jsz_engines = [
     "standard": "ES5",
     "years": "2023-",
     "platform": "Java",
-    "loc_command": "cloc --not_match_d=\"(test)\" */src"
+    "loc_command": "cloc --not_match_d=\"(test)\" */src",
+    "license_abbr": "MIT",
+    "github_stars": 37,
+    "github_forks": 0
   },
   {
     "id": "toyjs",
     "title": "DelSkayn/toyjs",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/toyjs.md",
-    "github_stars": 38,
-    "github_forks": 2,
     "summary": "Toy JavaScript interpreter written in Rust.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/toyjs.md",
     "repository": "https://github.com/DelSkayn/toyjs.git",
     "loc": 18576,
     "language": "Rust",
     "years": "2020-2024",
     "interpreter": "register-based VM",
-    "loc_command": "cloc crates"
+    "loc_command": "cloc crates",
+    "github_stars": 38,
+    "github_forks": 2
   },
   {
     "id": "ts2c",
     "title": "ts2c",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ts2c.md",
-    "license_abbr": "ISC",
-    "github_stars": 1334,
-    "github_forks": 96,
     "summary": "JavaScript/TypeScript to C transpiler.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ts2c.md",
     "repository": "https://github.com/andrei-markeev/ts2c.git",
     "loc": 9535,
     "language": "TypeScript",
@@ -6142,16 +6139,16 @@ const jsz_engines = [
     "standard": "ES3 (partial)",
     "years": "2016-",
     "platform": "native (compiles to C)",
-    "loc_command": "cloc --exclude-ext=md src"
+    "loc_command": "cloc --exclude-ext=md src",
+    "license_abbr": "ISC",
+    "github_stars": 1334,
+    "github_forks": 96
   },
   {
     "id": "twostroke",
     "title": "twostroke",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/twostroke.md",
-    "license_abbr": "MIT",
-    "github_stars": 302,
-    "github_forks": 19,
     "summary": "JavaScript interpreter written in Ruby.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/twostroke.md",
     "homepage": "https://news.ycombinator.com/item?id=3460224",
     "repository": "https://github.com/haileys/twostroke.git",
     "loc": 4723,
@@ -6159,22 +6156,16 @@ const jsz_engines = [
     "license": "MIT",
     "years": "2011-2012",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc *.rb lib"
+    "loc_command": "cloc *.rb lib",
+    "license_abbr": "MIT",
+    "github_stars": 302,
+    "github_forks": 19
   },
   {
     "id": "ucode",
     "title": "ucode",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ucode.md",
-    "license_abbr": "ISC",
-    "github_stars": 122,
-    "github_forks": 38,
-    "spec_conformance": {
-      "es1": 0.0556,
-      "es3": 0.0743,
-      "es5": 0.027,
-      "es1_5": 0.0571
-    },
     "summary": "Interpreter for a small ES6-like language for microcontrollers from OpenWrt project.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/ucode.md",
     "homepage": "https://ucode.mein.io/",
     "repository": "https://github.com/jow-/ucode.git",
     "loc": 39692,
@@ -6188,6 +6179,9 @@ const jsz_engines = [
     "gc": "reference counting + mark-and-sweep GC",
     "regex": "POSIX (regex.h)",
     "loc_command": "cloc *.c include lib",
+    "license_abbr": "ISC",
+    "github_stars": 122,
+    "github_forks": 38,
     "bench": [
       {
         "arch": "amd64",
@@ -6207,36 +6201,19 @@ const jsz_engines = [
         "revision_date": "2025-10-16",
         "version": "0.0.20250529-55-g924ccc9"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.0556,
+      "es3": 0.0743,
+      "es5": 0.027,
+      "es1-es5": 0.0571
+    }
   },
   {
     "id": "v8",
     "title": "V8",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/v8.md",
-    "license_abbr": "BSD-3",
-    "github_stars": 24572,
-    "github_forks": 4183,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 1.0,
-      "es5": 1.0,
-      "kangax-es5": 1.0,
-      "kangax-es6": 0.9802,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 1.0,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 1.0,
-      "es1_5": 1.0,
-      "kangax-es2016plus": 0.9968
-    },
     "summary": "JavaScript engine of Chrome, Node.js etc.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/v8.md",
     "homepage": "https://v8.dev/",
     "repository": "https://chromium.googlesource.com/v8/v8.git",
     "github": "https://github.com/v8/v8.git",
@@ -6251,6 +6228,9 @@ const jsz_engines = [
     "jit": "3-tier JIT, arm/arm64, x86/x64, mips64/mips64el, riscv32/riscv64, ppc64, s390x, loong64",
     "regex": "Irregexp (backtracking, JIT-enabled), [Experimental](https://v8.dev/blog/non-backtracking-regexp)/Linear (non-backtracking)",
     "loc_command": "cloc include src",
+    "license_abbr": "BSD-3",
+    "github_stars": 24572,
+    "github_forks": 4183,
     "bench": [
       {
         "arch": "amd64",
@@ -6459,16 +6439,33 @@ const jsz_engines = [
         "zlib_note": "N=20 median=2654 mean=2651.40±12.62 max=2787",
         "jit": ""
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9802,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 1.0,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.9968
+    }
   },
   {
     "id": "voyager",
     "title": "Voyager",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/voyager.md",
-    "license_abbr": "GPL-3.0",
-    "github_stars": 5,
-    "github_forks": 0,
     "summary": "Web browser for Amiga with own JavaScript implementation.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/voyager.md",
     "homepage": "https://zapek.com/software/voyager/",
     "repository": "https://github.com/zapek/Voyager.git",
     "loc": 11922,
@@ -6478,16 +6475,16 @@ const jsz_engines = [
     "years": "199x-2002",
     "parser": "YACC",
     "interpreter": "stack-based VM",
-    "loc_command": "cloc js*"
+    "loc_command": "cloc js*",
+    "license_abbr": "GPL-3.0",
+    "github_stars": 5,
+    "github_forks": 0
   },
   {
     "id": "wasmnizer-ts",
     "title": "wasmnizer-ts",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/wasmnizer-ts.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 369,
-    "github_forks": 26,
     "summary": "Compiler for a TypeScript subset targetting WebAssembly.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/wasmnizer-ts.md",
     "repository": "https://github.com/web-devkits/Wasmnizer-ts.git",
     "loc": 54506,
     "language": "TypeScript",
@@ -6497,36 +6494,16 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "loc_command": "cloc --not_match_d=test src runtime-library"
+    "loc_command": "cloc --not_match_d=test src runtime-library",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 369,
+    "github_forks": 26
   },
   {
     "id": "xs",
     "title": "XS",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/xs.md",
-    "license_abbr": "Apache/LGPL",
-    "github_stars": 1441,
-    "github_forks": 247,
-    "spec_conformance": {
-      "es1": 1.0,
-      "es3": 0.9932,
-      "es5": 0.9865,
-      "kangax-es5": 0.9908,
-      "kangax-es6": 0.9779,
-      "kangax-es2016": 1.0,
-      "kangax-es2017": 0.94,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 0.8929,
-      "kangax-es2020": 1.0,
-      "kangax-es2021": 1.0,
-      "kangax-es2022": 1.0,
-      "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
-      "kangax-es2025": 1.0,
-      "kangax-intl": 0.25,
-      "es1_5": 0.9952,
-      "kangax-es2016plus": 0.9755
-    },
     "summary": "Lightweight engine for microcontrollers/IoT by Kinoma/Marvell.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/xs.md",
     "homepage": "https://www.moddable.com/faq#what-is-xs",
     "repository": "https://github.com/Moddable-OpenSource/moddable.git",
     "loc": 88837,
@@ -6537,6 +6514,9 @@ const jsz_engines = [
     "years": "2002-",
     "interpreter": "stack-based VM",
     "loc_command": "cloc xs/sources xs/includes",
+    "license_abbr": "Apache/LGPL",
+    "github_stars": 1441,
+    "github_forks": 247,
     "bench": [
       {
         "arch": "amd64",
@@ -6625,16 +6605,33 @@ const jsz_engines = [
         "Splay_note": "N=20 median=468 mean=467.25±0.35 max=469",
         "SplayLatency_note": "N=20 median=1417 mean=1410.85±4.00 max=1426"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 0.9932,
+      "es5": 0.9865,
+      "kangax-es5": 0.9908,
+      "kangax-es6": 0.9779,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.94,
+      "kangax-es2018": 0.9895,
+      "kangax-es2019": 0.8929,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 0.25,
+      "es1-es5": 0.9952,
+      "kangax-es2016plus": 0.9755
+    }
   },
   {
     "id": "yaji",
     "title": "YAJI",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yaji.md",
-    "license_abbr": "LGPL-3.0",
-    "github_stars": 3,
-    "github_forks": 5,
     "summary": "Fork of FESI interpreter with ES5 support.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yaji.md",
     "repository": "https://github.com/neades/yaji-ecmascript-interpreter.git",
     "loc": 41114,
     "language": "Java",
@@ -6643,16 +6640,16 @@ const jsz_engines = [
     "years": "2011-2012",
     "platform": "Java",
     "interpreter": "tree walker",
-    "loc_command": "cloc --not_match_d=\"(?i)(test|gui)\" yaji-ecmascript-interpreter/src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test|gui)\" yaji-ecmascript-interpreter/src",
+    "license_abbr": "LGPL-3.0",
+    "github_stars": 3,
+    "github_forks": 5
   },
   {
     "id": "yantra",
     "title": "Yantra",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yantra.md",
-    "license_abbr": "Apache-2.0",
-    "github_stars": 252,
-    "github_forks": 8,
     "summary": "JavaScript engine for .NET. Tree walking interpreter + expression compiler to .NET IL.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yantra.md",
     "repository": "https://github.com/yantrajs/yantra.git",
     "loc": 54959,
     "language": "C#",
@@ -6662,22 +6659,25 @@ const jsz_engines = [
     "platform": ".NET",
     "interpreter": "tree walker",
     "jit": "via CLR",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" YantraJS*"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" YantraJS*",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 252,
+    "github_forks": 8
   },
   {
     "id": "yavashark",
     "title": "Yavashark",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yavashark.md",
-    "license_abbr": "MIT",
-    "github_stars": 31,
-    "github_forks": 2,
     "summary": "JavaScript/TypeScript engine written in Rust.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yavashark.md",
     "repository": "https://github.com/Sharktheone/yavashark.git",
     "loc": 177309,
     "language": "Rust",
     "license": "MIT",
     "years": "2024-",
     "interpreter": "tree walker",
-    "loc_command": "cloc --not_match_d=\"(?i)(test)\" crates src"
+    "loc_command": "cloc --not_match_d=\"(?i)(test)\" crates src",
+    "license_abbr": "MIT",
+    "github_stars": 31,
+    "github_forks": 2
   }
 ]

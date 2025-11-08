@@ -726,7 +726,7 @@ def main():
         test_runs = []
         limit = args.reps
 
-        if limit is None and 'features/' in path.as_posix():
+        if limit is None and 'conformance/' in path.as_posix():
             limit = 1
 
         while limit is None or len(test_runs) < limit:

@@ -24,90 +24,91 @@
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/primjs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 99%<pre>
-<a href="../features/es5/debugger.js">debugger.js</a>: SyntaxError: unsupported keyword: debugger
+<a href="../conformance/es5/debugger.js">debugger.js</a>: SyntaxError: unsupported keyword: debugger
 </pre></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 95%, ES2016+ 68%, Intl 25%</summary><ul>
 <li>ES6: 95%<pre>
-<a href="../features/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/Promise.race.js">Promise.race.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
-<a href="../features/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: qux is not a function
-<a href="../features/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
-<a href="../features/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
-<a href="../features/kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
-<a href="../features/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
+<a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: qux is not a function
+<a href="../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
+<a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
+<a href="../conformance/kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
+<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: stack overflow
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 81%<pre>
-<a href="../features/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.exchange.js">Atomics.exchange.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.isLockFree.js">Atomics.isLockFree.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.load.js">Atomics.load.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.notify.js">Atomics.notify.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.or.js">Atomics.or.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.store.js">Atomics.store.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: Atomics is not defined
-<a href="../features/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es2017/async.await.js">async.await.js</a>: InternalError: stack overflow
-<a href="../features/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
+<a href="../conformance/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.exchange.js">Atomics.exchange.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.isLockFree.js">Atomics.isLockFree.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.load.js">Atomics.load.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.notify.js">Atomics.notify.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.or.js">Atomics.or.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.store.js">Atomics.store.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: Atomics is not defined
+<a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: InternalError: stack overflow
+<a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 94%<pre>
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-13.js">regex.unicode-property-escapes.unicode-13.js</a>: SyntaxError: unknown unicode script
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-14.js">regex.unicode-property-escapes.unicode-14.js</a>: SyntaxError: unknown unicode script
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js">regex.unicode-property-escapes.unicode-15.1.js</a>: failed
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-15.js">regex.unicode-property-escapes.unicode-15.js</a>: SyntaxError: unknown unicode script
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: SyntaxError: unknown unicode script
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-13.js">regex.unicode-property-escapes.unicode-13.js</a>: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-14.js">regex.unicode-property-escapes.unicode-14.js</a>: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js">regex.unicode-property-escapes.unicode-15.1.js</a>: failed
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-15.js">regex.unicode-property-escapes.unicode-15.js</a>: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 86%<pre>
-<a href="../features/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
-<a href="../features/kangax-es2020/nullish-coalescing.js">nullish-coalescing.js</a>: failed
+<a href="../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
+<a href="../conformance/kangax-es2020/nullish-coalescing.js">nullish-coalescing.js</a>: failed
 </pre></li>
 <li>ES2021: 79%<pre>
-<a href="../features/kangax-es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: TypeError: 'q=query+string+parameters'.replaceAll is not a function
-<a href="../features/kangax-es2021/logical-assignment.and.js">logical-assignment.and.js</a>: SyntaxError: unexpected token in expression: '='
-<a href="../features/kangax-es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: unexpected token in expression: '='
-<a href="../features/kangax-es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: SyntaxError: unexpected token in expression: '='
-<a href="../features/kangax-es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: SyntaxError: expecting ';'
-<a href="../features/kangax-es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: SyntaxError: expecting ';'
-<a href="../features/kangax-es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: SyntaxError: expecting ';'
-<a href="../features/kangax-es2021/logical-assignment.or.js">logical-assignment.or.js</a>: SyntaxError: unexpected token in expression: '='
-<a href="../features/kangax-es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: SyntaxError: unexpected token in expression: '='
-<a href="../features/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: TypeError: 'q=query+string+parameters'.replaceAll is not a function
+<a href="../conformance/kangax-es2021/logical-assignment.and.js">logical-assignment.and.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: SyntaxError: expecting ';'
+<a href="../conformance/kangax-es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: SyntaxError: expecting ';'
+<a href="../conformance/kangax-es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: SyntaxError: expecting ';'
+<a href="../conformance/kangax-es2021/logical-assignment.or.js">logical-assignment.or.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: SyntaxError: unexpected token in expression: '='
+<a href="../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: SyntaxError: unexpected token in expression: '='
 </pre></li>
 <li>ES2022: 62%<pre>
-<a href="../features/kangax-es2022/Error.cause.AggregateError.js">Error.cause.AggregateError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.Error.js">Error.cause.Error.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.EvalError.js">Error.cause.EvalError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.RangeError.js">Error.cause.RangeError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.ReferenceError.js">Error.cause.ReferenceError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.SyntaxError.js">Error.cause.SyntaxError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.TypeError.js">Error.cause.TypeError.js</a>: failed
-<a href="../features/kangax-es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: failed
-<a href="../features/kangax-es2022/Object.hasOwn.ToObject-first.js">Object.hasOwn.ToObject-first.js</a>: failed
-<a href="../features/kangax-es2022/Object.hasOwn.js">Object.hasOwn.js</a>: TypeError: Object.hasOwn is not a function
-<a href="../features/kangax-es2022/at-method.Array.js">at-method.Array.js</a>: TypeError: arr.at is not a function
-<a href="../features/kangax-es2022/at-method.String.js">at-method.String.js</a>: TypeError: str.at is not a function
-<a href="../features/kangax-es2022/at-method.TypedArray.js">at-method.TypedArray.js</a>: TypeError: arr.at is not a function
-<a href="../features/kangax-es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: SyntaxError: invalid property name
-<a href="../features/kangax-es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: SyntaxError: unexpected token in expression: '#x'
-<a href="../features/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError: invalid regular expression flags
-<a href="../features/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.AggregateError.js">Error.cause.AggregateError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.Error.js">Error.cause.Error.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.EvalError.js">Error.cause.EvalError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.RangeError.js">Error.cause.RangeError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.ReferenceError.js">Error.cause.ReferenceError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.SyntaxError.js">Error.cause.SyntaxError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.TypeError.js">Error.cause.TypeError.js</a>: failed
+<a href="../conformance/kangax-es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: failed
+<a href="../conformance/kangax-es2022/Object.hasOwn.ToObject-first.js">Object.hasOwn.ToObject-first.js</a>: failed
+<a href="../conformance/kangax-es2022/Object.hasOwn.js">Object.hasOwn.js</a>: TypeError: Object.hasOwn is not a function
+<a href="../conformance/kangax-es2022/at-method.Array.js">at-method.Array.js</a>: TypeError: arr.at is not a function
+<a href="../conformance/kangax-es2022/at-method.String.js">at-method.String.js</a>: TypeError: str.at is not a function
+<a href="../conformance/kangax-es2022/at-method.TypedArray.js">at-method.TypedArray.js</a>: TypeError: arr.at is not a function
+<a href="../conformance/kangax-es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: SyntaxError: invalid property name
+<a href="../conformance/kangax-es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: SyntaxError: unexpected token in expression: '#x'
+<a href="../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError: invalid regular expression flags
+<a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
 </pre></li>
 <li>ES2023: 20%<br>
 <li>ES2024: 0%<br>

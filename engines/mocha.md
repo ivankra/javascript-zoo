@@ -31,31 +31,31 @@ The very first JavaScript engine that defined early JavaScript language (JS1.0/1
 ## Conformance
 
 <details><summary>ES1-ES5: 36%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/mocha.txt">Full log</a>.</li>
 <li>ES1: 74%<pre>
-<a href="../features/es1/Array.js">Array.js</a>: failed
-<a href="../features/es1/Date.js">Date.js</a>: failed
-<a href="../features/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: failed
-<a href="../features/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCHours.js">Date.prototype.getUTCHours.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCMilliseconds.js">Date.prototype.getUTCMilliseconds.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: failed
-<a href="../features/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: failed
-<a href="../features/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: failed
-<a href="../features/es1/Date.prototype.setMilliseconds.js">Date.prototype.setMilliseconds.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCDate.js">Date.prototype.setUTCDate.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCFullYear.js">Date.prototype.setUTCFullYear.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCHours.js">Date.prototype.setUTCHours.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCMilliseconds.js">Date.prototype.setUTCMilliseconds.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCMinutes.js">Date.prototype.setUTCMinutes.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCMonth.js">Date.prototype.setUTCMonth.js</a>: failed
-<a href="../features/es1/Date.prototype.setUTCSeconds.js">Date.prototype.setUTCSeconds.js</a>: failed
+<a href="../conformance/es1/Array.js">Array.js</a>: failed
+<a href="../conformance/es1/Date.js">Date.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCHours.js">Date.prototype.getUTCHours.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMilliseconds.js">Date.prototype.getUTCMilliseconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setMilliseconds.js">Date.prototype.setMilliseconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCDate.js">Date.prototype.setUTCDate.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCFullYear.js">Date.prototype.setUTCFullYear.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCHours.js">Date.prototype.setUTCHours.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCMilliseconds.js">Date.prototype.setUTCMilliseconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCMinutes.js">Date.prototype.setUTCMinutes.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCMonth.js">Date.prototype.setUTCMonth.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setUTCSeconds.js">Date.prototype.setUTCSeconds.js</a>: failed
 ...
 </pre></li>
 <li>ES3: 3%<br>
 <li>ES5: 1%<br>
-<li><a href="../features/results/mocha.txt">Full results</a></li>
 </ul></details>

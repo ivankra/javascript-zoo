@@ -31,6 +31,7 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/graaljs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 100%</li>
@@ -38,13 +39,13 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 
 <details><summary>compat-table: ES6 98%, ES2016+ 99%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../features/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
-<a href="../features/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
 <li>ES2018: 99%<pre>
-<a href="../features/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: regex.unicode-property-escapes.unicode-17.0.js:10:30 Unsupported Unicode script name 'Sidetic'
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: regex.unicode-property-escapes.unicode-17.0.js:10:30 Unsupported Unicode script name 'Sidetic'
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
@@ -52,7 +53,7 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 96%<pre>
-<a href="../features/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
+<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
 <li>Intl: 100%</li>

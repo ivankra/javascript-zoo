@@ -26,6 +26,7 @@ Richards score ~100 on M4 (34800us/iter).
 ## Conformance
 
 <details><summary>ES1-ES5: 16%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/quad-wheel.txt">Full log</a>.</li>
 <li>ES1: 24%, <b>1 crash</b><br>
 <li>ES3: 11%<br>
 <li>ES5: 4%<br>

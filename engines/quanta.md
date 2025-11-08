@@ -14,6 +14,7 @@ Buggy unfinished interpreter.
 ## Conformance
 
 <details><summary>ES1-ES5: 43%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/quanta.txt">Full log</a>.</li>
 <li>ES1: 48%<br>
 <li>ES3: 47%<br>
 <li>ES5: 22%, <b>1 crash</b><br>

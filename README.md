@@ -9,9 +9,7 @@
 * [parsers](parsers/): notes on JavaScript parsers.
 * [bench](bench/): benchmarking on V8's old test suite.
   [Results](https://ivankra.github.io/javascript-zoo/).
-* [features](features/): test suite for ECMAScript features, including
-  [compat-table](https://compat-table.github.io/compat-table/es6/)
-  tests. [Results](features/results/).
+* [conformance](conformance/): conformance testing. [Results](conformance/results/).
 
 ## List of JavaScript engines
 

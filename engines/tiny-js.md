@@ -19,6 +19,7 @@ Richards score ~45 on M4 (78000us/iter).
 ## Conformance
 
 <details><summary>ES1-ES5: 8%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/tiny-js.txt">Full log</a>.</li>
 <li>ES1: 12%<br>
 <li>ES3: 5%<br>
 <li>ES5: 4%<br>

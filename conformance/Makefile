@@ -3,16 +3,7 @@
 
 SHELL := /bin/bash
 
-all: sed node
-
-# Fix filenames in console.log(...) messages
-sed:
-	@for f in es[1-5]/*.js kangax-es*/*.js; do \
-	  if [[ "$$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq)" != "$$f:" ]]; then \
-	    echo "$$f: $$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq | tr '\n' ' ' | tr -d :)"; \
-	    sed -E -i -e "s|[-._/a-zA-Z0-9]+\.js:|$$f:|" $$f; \
-	  fi; \
-	done
+all: node
 
 node: sed
 	./run.sh node
@@ -25,6 +16,15 @@ quickjs: sed
 
 quickjs5: sed
 	./run.sh quickjs es[1-5]
+
+# Fix filenames in console.log(...) messages
+sed:
+	@for f in es[1-5]/*.js kangax-es*/*.js; do \
+	  if [[ "$$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq)" != "$$f:" ]]; then \
+	    echo "$$f: $$(egrep -o '[-._/a-zA-Z0-9]+\.js:' $$f | uniq | tr '\n' ' ' | tr -d :)"; \
+	    sed -E -i -e "s|[-._/a-zA-Z0-9]+\.js:|$$f:|" $$f; \
+	  fi; \
+	done
 
 spec: .PHONY spec-prep spec/es1.txt spec/es3.txt spec/es5.txt spec/es51.txt spec/es6.txt spec/es6.html
 
@@ -69,5 +69,13 @@ kangax-data:
 
 kangax-gen: kangax-data kangax-map.json
 	./kangax.js gen
+
+sh:
+	podman run --rm -it \
+	  -v $(PWD)/..:/zoo:ro \
+	  -v $(PWD):/zoo/conformance:rw \
+	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
+	  -w /zoo/conformance \
+	  jsz-runtime
 
 .PHONY:
