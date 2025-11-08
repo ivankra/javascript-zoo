@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 // Generates kangax-*/*.js tests from compat-table's data-*.js files.
 //
-// ./kangax.js map: creates/updates kangax.map.json with title => filename mapping.
-// ./kangax.js gen: generates test files
-// ./kangax.js gen --clean: removes generated files (for rename prep, etc)
-//
+// ./gen-kangax.js parse: creates/updates gen-kangax.json with
+// title => filename mapping and parsed compat-table tests.
+// ./gen-kangax.js gen: generates test files
+// ./gen-kangax.js gen --clean: removes generated files (for rename prep, etc)
 const fs = require('fs');
 const path = require('path');
 
-const args = process.argv.slice(2);
-const operation = args[0];
+const PROCESSED_FILE = 'gen-kangax.json'
 
-const DEFAULT_DATA_FILES = [
+const COMPAT_TABLE_ROOT = '../third_party/compat-table'
+
+const DATA_FILES = [
   'data-es5.js',
   'data-es6.js',
   'data-es2016plus.js',
@@ -96,68 +97,36 @@ function processTests(tests) {
   });
 }
 
-function buildMap(name, tests) {
+function doParse() {
   const map = {};
+  const processedData = {};
 
-  tests.forEach(test => {
-    const category = test.category ? `${test.category} > ` : '';
-    const significance = test.significance ? ` (${test.significance})` : '';
+  for (const dataFilename of DATA_FILES) {
+    const dataPath = COMPAT_TABLE_ROOT + '/' + dataFilename;
 
-    if (test.subtests) {
-      test.subtests.forEach(subtest => {
-        const key = `${name} > ${category}${test.name}${significance} > ${subtest.name}`;
-        map[key] = "";
-      });
-    } else {
-      const key = `${name} > ${category}${test.name}${significance}`;
-      map[key] = "";
-    }
-  });
-
-  return map;
-}
-
-function mapOp() {
-  let mapFile = 'kangax.map.json';
-  let dataFile = 'kangax.data.json';
-  let inputFiles = [];
-
-  for (let i = 1; i < args.length; i++) {
-    if (args[i] === '-m') {
-      mapFile = args[++i];
-    } else if (args[i] === '-p') {
-      dataFile = args[++i];
-    } else {
-      inputFiles.push(args[i]);
-    }
-  }
-
-  if (inputFiles.length === 0) {
-    inputFiles = DEFAULT_DATA_FILES;
-  }
-
-  for (const inputFile of inputFiles) {
-    if (!fs.existsSync(inputFile)) {
-      console.error(`Error: Input file not found: ${inputFile}`);
+    if (!fs.existsSync(dataPath)) {
+      console.error(`Error: Input file not found: ${dataPath}`);
       process.exit(1);
     }
-  }
 
-  const map = {};
-  const processedData = [];
+    const data = require(path.resolve(dataPath));
 
-  for (const inputFile of inputFiles) {
-    const data = require(path.resolve(inputFile));
+    processedData[data.name] = processTests(data.tests);
 
-    const output = {
-      name: data.name,
-      tests: processTests(data.tests)
-    };
+    data.tests.forEach(test => {
+      const category = test.category ? `${test.category} > ` : '';
+      const significance = test.significance ? ` (${test.significance})` : '';
 
-    processedData.push(output);
-
-    const fileMap = buildMap(data.name, data.tests);
-    Object.assign(map, fileMap);
+      if (test.subtests) {
+        test.subtests.forEach(subtest => {
+          const key = `${data.name} > ${category}${test.name}${significance} > ${subtest.name}`;
+          map[key] = "";
+        });
+      } else {
+        const key = `${data.name} > ${category}${test.name}${significance}`;
+        map[key] = "";
+      }
+    });
   }
 
   // Scan all kangax-* directories
@@ -193,18 +162,99 @@ function mapOp() {
     }
   }
 
-  fs.writeFileSync(mapFile, JSON.stringify(map, null, 2));
-  console.log(`Generated ${mapFile}`);
+  const processedJson = {
+    'map': map,
+    'tests': processedData,
+  };
 
-  if (dataFile) {
-    fs.writeFileSync(dataFile, JSON.stringify(processedData, null, 2));
-    console.log(`Generated ${dataFile}`);
+  fs.writeFileSync(PROCESSED_FILE, JSON.stringify(processedJson, null, 2));
+  console.log(`Generated ${PROCESSED_FILE}`);
+}
+
+function doGen(cleanMode) {
+  const processedJson = require(path.resolve(PROCESSED_FILE));
+  const allTests = [];
+
+  for (const suite in processedJson.tests) {
+    processedJson.tests[suite].forEach(test => {
+      const category = test.category ? `${test.category} > ` : '';
+      const significance = test.significance ? ` (${test.significance})` : '';
+
+      if (test.subtests) {
+        test.subtests.forEach(subtest => {
+          allTests.push({
+            key: `${suite} > ${category}${test.name}${significance} > ${subtest.name}`,
+            spec: subtest.spec || test.spec,
+            mdn: subtest.mdn || test.mdn,
+            exec: subtest.exec,
+            note_html: subtest.note_html
+          });
+        });
+      } else {
+        allTests.push({
+          key: `${suite} > ${category}${test.name}${significance}`,
+          spec: test.spec,
+          mdn: test.mdn,
+          exec: test.exec,
+          note_html: test.note_html
+        });
+      }
+    });
+  }
+
+  let generated = 0;
+  let skipped = 0;
+
+  for (const item of allTests) {
+    const filename = processedJson.map[item.key];
+
+    if (!filename) {
+      console.error(`No filename mapping for key: ${item.key}`);
+      skipped++;
+      continue;
+    }
+
+    if (!item.exec) {
+      console.error(`No exec code for: ${item.key}`);
+      skipped++;
+      continue;
+    }
+
+    if (Array.isArray(item.exec)) {
+      console.warn(`Warning: Skipping array exec for: ${item.key}`);
+      skipped++;
+      continue;
+    }
+
+    const notes = [];
+    if (item.note_html) {
+      notes.push(item.note_html.replace(/<[^>]+>/g, ''));
+    }
+
+    if (EDITED_TESTS.indexOf(filename) !== -1 && fs.existsSync(filename)) {
+      console.log(`Skipping edited file: ${filename}`);
+      skipped++;
+    } else if (cleanMode) {
+      if (fs.existsSync(filename)) {
+        fs.unlinkSync(filename);
+        console.log(`Deleted ${filename}`);
+        generated++;
+      }
+    } else {
+      genTest(
+        item.key,
+        filename,
+        item.spec,
+        item.mdn,
+        item.exec,
+        notes
+      );
+      generated++;
+    }
   }
 }
 
-function genTest(compatKey, filename, spec, mdn, evalcode, notes, prefix) {
-  const outputPath = prefix ? path.join(prefix, filename) : filename;
-
+function genTest(compatKey, filename, spec, mdn, evalcode, notes) {
   let header = `// compat-table: ${compatKey}\n`;
   if (mdn) {
     header += `// mdn: ${mdn}\n`;
@@ -368,154 +418,32 @@ try {
 `;
   }
 
-  const dir = path.dirname(outputPath);
+  const dir = path.dirname(filename);
   if (dir !== '.' && !fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
   }
 
-  fs.writeFileSync(outputPath, script);
-  console.log(`Generated ${outputPath}`);
+  fs.writeFileSync(filename, script);
+  console.log(`Generated ${filename}`);
 }
 
-function genOp() {
-  let mapFile = 'kangax.map.json';
-  let prefix = '';
-  let cleanMode = false;
-  let inputFiles = [];
-
-  for (let i = 1; i < args.length; i++) {
-    if (args[i] === '-m') {
-      mapFile = args[++i];
-    } else if (args[i] === '-x') {
-      prefix = args[++i];
-    } else if (args[i] === '--clean') {
-      cleanMode = true;
-    } else {
-      inputFiles.push(args[i]);
-    }
-  }
-
-  if (inputFiles.length === 0) {
-    inputFiles = DEFAULT_DATA_FILES;
-  }
-
-  if (!fs.existsSync(mapFile)) {
-    console.error(`Error: Map file not found: ${mapFile}`);
-    console.error(`Run "node ${process.argv[1]} map data-es6.js [...]" first and edit it.`);
-    process.exit(1);
-  }
-
-  for (const inputFile of inputFiles) {
-    if (!fs.existsSync(inputFile)) {
-      console.error(`Error: Input file not found: ${inputFile}`);
-      process.exit(1);
-    }
-  }
-
-  const map = require(path.resolve(mapFile));
-
-  let generated = 0;
-  let skipped = 0;
-
-  const allTests = [];
-
-  for (const inputFile of inputFiles) {
-    const rawData = require(path.resolve(inputFile));
-    const data = {
-      name: rawData.name,
-      tests: processTests(rawData.tests)
-    };
-
-    data.tests.forEach(test => {
-      const category = test.category ? `${test.category} > ` : '';
-      const significance = test.significance ? ` (${test.significance})` : '';
-
-      if (test.subtests) {
-        test.subtests.forEach(subtest => {
-          allTests.push({
-            key: `${data.name} > ${category}${test.name}${significance} > ${subtest.name}`,
-            spec: subtest.spec || test.spec,
-            mdn: subtest.mdn || test.mdn,
-            exec: subtest.exec,
-            note_html: subtest.note_html
-          });
-        });
-      } else {
-        allTests.push({
-          key: `${data.name} > ${category}${test.name}${significance}`,
-          spec: test.spec,
-          mdn: test.mdn,
-          exec: test.exec,
-          note_html: test.note_html
-        });
-      }
-    });
-  }
-
-  for (const item of allTests) {
-    const filename = map[item.key];
-
-    if (!filename) {
-      console.error(`No filename mapping for key: ${item.key}`);
-      skipped++;
-      continue;
-    }
-
-    if (!item.exec) {
-      console.error(`No exec code for: ${item.key}`);
-      skipped++;
-      continue;
-    }
-
-    if (Array.isArray(item.exec)) {
-      console.warn(`Warning: Skipping array exec for: ${item.key}`);
-      skipped++;
-      continue;
-    }
-
-    const outputPath = prefix ? path.join(prefix, filename) : filename;
-
-    const notes = [];
-    if (item.note_html) {
-      notes.push(item.note_html.replace(/<[^>]+>/g, ''));
-    }
-
-    if (EDITED_TESTS.indexOf(filename) !== -1 && fs.existsSync(outputPath)) {
-      console.log(`Skipping edited file: ${outputPath}`);
-      skipped++;
-    } else if (cleanMode) {
-      if (fs.existsSync(outputPath)) {
-        fs.unlinkSync(outputPath);
-        console.log(`Deleted ${outputPath}`);
-        generated++;
-      }
-    } else {
-      genTest(
-        item.key,
-        filename,
-        item.spec,
-        item.mdn,
-        item.exec,
-        notes,
-        prefix
-      );
-      generated++;
-    }
+function main() {
+  const args = process.argv.slice(2);
+  const operation = args[0] ?? '';
+  if (operation === 'parse') {
+    doParse();
+  } else if (operation === 'gen') {
+    let cleanMode = args[1] === "--clean";
+    doGen(cleanMode);
+  } else if (operation === '') {
+    doParse();
+    doGen(false);
+  } else {
+    console.log(`Unknown operation ${operation}`);
   }
 }
 
-if (operation === 'map') {
-  mapOp();
-} else if (operation === 'gen') {
-  genOp();
-} else {
-  console.log('Usage:');
-  console.log(`  node ${process.argv[1]} map [data-es6.js ...]                       - generate kangax.map.json`);
-  console.log(`  node ${process.argv[1]} gen [--clean] [-x prefix] [data-es6.js ...] - generate tests`);
-  console.log(`\n'gen --clean' removes auto-generated tests (useful when changing map to prepare for renaming).`);
-  console.log(`\nDefault data files: ${DEFAULT_DATA_FILES.join(', ')}`);
-  process.exit(1);
-}
+main()
 
 /*
   "Non-standard > SIMD (Single Instruction, Multiple Data) > basic support": "kangax-non-standard/simd.basic.js",

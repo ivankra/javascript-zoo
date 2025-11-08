@@ -30,9 +30,9 @@ dist: $(patsubst %,$(DIST_DIR)/%.json,$(TARGETS))
 
 sh: $(IID_DIR)/runtime
 	$(DOCKER_RUN) --rm -it \
-	  -v $(PWD)/../bench:/bench \
-	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist \
-	  -v $(PWD)/../features:/features \
+	  -v $(PWD)/..:/zoo:ro \
+	  -v $(PWD)/../bench:/bench:rw \
+	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
 	  -w /dist \
 	  jsz-runtime
 

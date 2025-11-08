@@ -56,7 +56,7 @@ def main():
     update_tables('parsers/acorn.md', engines_data)
 
 def parse_conformance_data():
-    kangax_map = json.loads(open('conformance/kangax.map.json').read())
+    kangax_map = json.loads(open('conformance/gen-kangax.json').read())['map']
     kangax_groups = {}
     kangax_weights = {}
 

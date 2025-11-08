@@ -1,3 +1,9 @@
 [submodule "bench/octane"]
-	path = bench/octane
+	path = third_party/octane
 	url = https://github.com/chromium/octane.git
+[submodule "third_party/compat-table"]
+	path = third_party/compat-table
+	url = https://github.com/compat-table/compat-table.git
+[submodule "third_party/test262"]
+	path = third_party/test262
+	url = https://github.com/tc39/test262.git

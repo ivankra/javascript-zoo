@@ -48,11 +48,13 @@ OCTANE_TESTS = [
 
 PRINT_PF = '''
   if (typeof print == "undefined" && typeof "console" != "undefined") {
-    if (typeof globalThis != "undefined") globalThis.print = console.log;
+    if (typeof globalThis == "object") globalThis.print = console.log;
+    else if (typeof this == "object") this.print = console.log;
     else print = console.log;
   }
   if (typeof console == "undefined") {
-    if (typeof globalThis != "undefined") globalThis.console = new Object();
+    if (typeof globalThis == "object") globalThis.console = new Object();
+    else if (typeof this == "object") this.console = new Object();
     else console = new Object();
   }
   if (typeof console.log == "undefined" && typeof print != "undefined") {

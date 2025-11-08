@@ -1,8 +1,1 @@
 spec/
-data-common.json
-data-es2016plus.js
-data-es5.js
-data-es6.js
-data-esintl.js
-data-esnext.js
-data-non-standard.js

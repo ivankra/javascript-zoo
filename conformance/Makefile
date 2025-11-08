@@ -61,14 +61,9 @@ spec/%.txt: spec/%.pdf Makefile
 	  | sed -E 's/ *$$//' \
 	  | uniq >$@
 
-# Download compat-table data files
-kangax-data:
-	for f in data-common.json data-{es5,es6,es2016plus,esintl,esnext,non-standard}.js; do \
-	  curl -o $$f "https://raw.githubusercontent.com/compat-table/compat-table/refs/heads/gh-pages/$$f"; \
-	done
-
-kangax-gen: kangax-data kangax-map.json
-	./kangax.js gen
+kangax:
+	git submodule update --init
+	./kangax.js
 
 sh:
 	podman run --rm -it \
