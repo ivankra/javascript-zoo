@@ -1,15 +1,13 @@
 *.tmp
-*.part*
+output/
 box2d.js
 code-load.js
 crypto.js
 deltablue.js
 earley-boyer.js
 gbemu.js
-mandreel-gbemu-codeload.js
 mandreel.js
 navier-stokes.js
-octane-git/
 pdfjs.js
 raytrace.js
 regexp.js

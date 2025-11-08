@@ -1,0 +1,41 @@
+#!/bin/bash
+# Benchmarks all engines in /dist, saving results to bench/<arch>/<engine>.json
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
+DOCKER_ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
+
+if [[ -d /dist ]]; then
+  DIST_DIR="/dist"
+else
+  DIST_DIR="$SCRIPT_DIR/../dist/$DOCKER_ARCH"
+fi
+
+if ! [[ -d "$DIST_DIR" ]]; then
+  echo "DIST_DIR=$DIST_DIR doesn't exist" >&2
+  exit 1
+fi
+
+cd "$SCRIPT_DIR"
+
+for binary in "$DIST_DIR"/*; do
+  skip=0
+  case "$(basename "$binary")" in
+    bali|cesanta-elk|cesanta-mjs|tiny-js|rapidus|quad-wheel|echosoar-jsi|yrm006-miniscript)
+      skip=1;;
+  esac
+
+  if ((skip)); then
+    continue
+  fi
+
+  if [[ -x "$binary" && -f "$binary.json" ]]; then
+    (set -x; ./bench -o "$DOCKER_ARCH/$(basename "$binary").json" -r 300s -v --skip-unchanged "$binary")
+  fi
+done
+
+if [[ -x "$DIST_DIR/nashorn" && -f "$DIST_DIR/nashorn.json" ]]; then
+  (set -x; ./bench -o "$DOCKER_ARCH/nashorn_ot.json" -r 300s -v --skip-unchanged "$DIST_DIR/nashorn -ot")
+fi

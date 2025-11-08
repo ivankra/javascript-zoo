@@ -507,6 +507,7 @@ def coalesce_runs_to_json(runs: List[Run]) -> str:
         'binary': runs[-1].binary_path.name,
         'flags': runs[-1].flags,
         'metadata': runs[-1].metadata,
+        'time': time.ctime(),
         'benchmarks': {},
     }
 
@@ -689,15 +690,36 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config', help='Config to use, "engine[_variant]"')
     parser.add_argument('-k', '--keep', action='store_true', help='Keep temp dir')
-    parser.add_argument('-o', '--output', help='Write benchmark results here as json')
+    parser.add_argument('-o', '--output', help='Write benchmark result to this file in JSON format')
     parser.add_argument('-v', '--verbose', action='store_true')
-    parser.add_argument('-r', '--reps', type=int, default=1, metavar='repetitions')
+    parser.add_argument('-r', '--reps', default='1', type=str, metavar='repetitions (count or <seconds>s)')
     parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
+    parser.add_argument('--skip-unchanged', action='store_true',
+                        help="Skip run if output file exists and has same binary's revision")
     parser.add_argument('binary', help='Binary to execute, optionally with flags')
     parser.add_argument('tests', nargs='*', help='Test files to run')
     args = parser.parse_args()
 
     binary = Binary(args.binary)
+
+    bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
+
+    output_path = args.output
+    if not (output_path or args.tests or args.config or binary.flags):
+        output_path = bench_dir / 'output' / (binary.path.name + '.json')
+        output_path.parent.mkdir(exist_ok=True)
+        print('Saving results to: %s' % str(output_path))
+    if output_path:
+        output_path = Path(output_path)
+
+    if args.skip_unchanged and output_path.exists() and \
+            'revision' in binary.metadata:
+        prev_bench = json.loads(output_path.open().read())
+        if 'metadata' in prev_bench \
+                and 'revision' in prev_bench['metadata'] and \
+                prev_bench['metadata']['revision'] == binary.metadata['revision']:
+            print(f'Skipping {args.binary}: same revision as previous benchmark run')
+            return
 
     config = pick_config(args, binary)
     if args.tests:
@@ -708,16 +730,6 @@ def main():
         test_files = OCTANE_TESTS
     assert test_files
 
-    bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
-
-    output_path = args.output
-    if not (output_path or args.tests or args.config or binary.flags):
-        output_path = bench_dir / (binary.path.name + '.json')
-        output_path.parent.mkdir(exist_ok=True)
-        print('Saving results to: %s' % str(output_path))
-    if output_path:
-        output_path = Path(output_path)
-
     all_runs = []
 
     # TODO: run reps in zigzag order
@@ -726,10 +738,13 @@ def main():
         path = bench_dir / filename
         test = load_test(path)
         test_runs = []
-        limit = args.reps
 
-        if limit is None and 'conformance/' in path.as_posix():
-            limit = 1
+        if args.reps.endswith('s'):
+            limit = None
+            limit_sec = int(args.reps[:-1])
+        else:
+            limit = int(args.reps)
+            limit_sec = None
 
         while limit is None or len(test_runs) < limit:
             run = config.benchmark_run(binary, test, args)
@@ -741,12 +756,20 @@ def main():
                 break
 
             if limit is None:
-                if run.real_time is None or run.real_time > 300:
+                if run.real_time is None or run.real_time > limit_sec:
                     limit = 1
                 else:
-                    limit = math.ceil(300 / run.real_time)
+                    limit = math.floor(limit_sec / run.real_time)
+                    limit = max(limit, 1)
+                    limit = min(limit, 100)
                 if args.verbose:
                     print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
+
+            pause_file = bench_dir / 'pause';
+            if pause_file.exists():
+                print(f'Pausing while {pause_file.as_posix()} exists')
+                while pause_file.exists():
+                    time.sleep(1)
 
         json_str = coalesce_runs_to_json(all_runs)
         if output_path:

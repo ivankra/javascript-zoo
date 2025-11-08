@@ -1,7 +1,17 @@
 // Chrome/v8 benchmark - version 7 - single self-contained merged file (ES3)
 // https://github.com/mozilla/arewefastyet/tree/master/benchmarks/v8-v7
 // https://github.com/chromium/octane
-if (typeof print === "undefined" && typeof "console" !== "undefined") print = console.log;
+
+// Define print() that should work across variety of shells.
+if (typeof print == "undefined" && typeof "console" != "undefined") {
+  if (typeof globalThis == "object") globalThis.print = console.log;
+  else if (typeof this == "object") this.print = console.log;
+  else print = console.log;
+}
+
+// Undefine read/require for zlib and typescript tests that probe them
+// and might go off track depending on how these two are defined.
+var read, require;
 
 // Copyright 2008 the V8 project authors. All rights reserved.
 // Redistribution and use in source and binary forms, with or without
