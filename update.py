@@ -55,7 +55,7 @@ def main():
     update_tables('parsers/README.md', parsers_data)
     update_tables('parsers/acorn.md', engines_data)
 
-def parse_conformance_data():
+def get_kangax_weights():
     kangax_map = json.loads(open('conformance/gen-kangax.json').read())['map']
     kangax_groups = {}
     kangax_weights = {}
@@ -72,6 +72,11 @@ def parse_conformance_data():
                 else:
                     group_weight = {'tiny': 1, 'small': 2, 'medium': 4, 'large': 8}[m[2]]
                     kangax_weights[filename] = group_weight / len(kangax_groups[group])
+
+    return kangax_weights
+
+def parse_conformance_data():
+    kangax_weights = get_kangax_weights()
 
     conformance_data = {}
 
@@ -90,6 +95,9 @@ def parse_conformance_data():
         line_re = re.compile('^(([^:/]+)/([^:]+)): (.+)$')
 
         for line in open(filename):
+            if line.startswith('Metadata:'):
+                continue
+
             m = line_re.match(line.rstrip())
             assert m, (filename, line)
 

@@ -1,5 +1,0 @@
-* ES1: More this/inheritance tests, hoisting
-* ESnext permalinks
-* default strict mode fixes for bun/deno
-* js-interpreter sablejs sobek narcissus:
-  fix custom shells to add console.log() and handle multiple scripts

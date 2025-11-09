@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: MIT
 
 SHELL := /bin/bash
+DOCKER_ARCH = $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
 
 all: node
 

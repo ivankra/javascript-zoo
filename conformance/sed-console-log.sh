@@ -9,14 +9,24 @@ if [[ $# -lt 2 ]]; then
   exit 1
 fi
 
-sed_script='s/\bconsole.log\b/print/g'
+if [[ "$SED_PRINT" == "" ]]; then
+  SED_PRINT='print'
+fi
+
+if [[ -z "$SED_SCRIPT" ]]; then
+  SED_SCRIPT="s/\\bconsole.log\\b/$SED_PRINT/g"
+fi
+
+if [[ -z "$SED_FILE" ]]; then
+  SED_FILE=$(mktemp --suffix=.js)
+fi
+
+trap "rm -f '$SED_FILE'" EXIT INT TERM
+
 test_file="${@: -1}"
 engine_args=("${@:1:$#-1}")
 
-tmpfile=$(mktemp --suffix=.js)
-trap "rm -f '$tmpfile'" EXIT INT TERM
+sed "$SED_SCRIPT" "$test_file" > "$SED_FILE"
 
-sed "$sed_script" "$test_file" > "$tmpfile"
-
-"${engine_args[@]}" "$tmpfile"
+"${engine_args[@]}" "$SED_FILE"
 exit $?
