@@ -73,7 +73,17 @@ def gen_table(column_data):
 
     total_pct = None
     if 'Total' in column_data:
-        total_pct = {x['engine']: x['pct_u'] for x in column_data['Total']}
+        # Correct totals for engines that didn't run through the whole test-suites
+        total_u_max = max(item['total_u'] for item in column_data['Total'])
+        total_w_max = max(item['total_w'] for item in column_data['Total'])
+        for item in column_data['Total']:
+            item['total_u'] = total_u_max
+            item['total_w'] = total_w_max
+            item['pct_u'] = (item['passed_u'] * 100 / item['total_u']) if item['total_u'] > 0 else 0
+            item['pct_w'] = (item['passed_w'] * 100 / item['total_w']) if item['total_w'] > 0 else 0
+
+        # Use total% as a tie-breaker for sorting engines
+        total_pct = {item['engine']: item['pct_u'] for item in column_data['Total']}
 
     for c, (ctitle, cdata) in enumerate(column_data.items()):
         weighted = ctitle in ['ES6', 'ES2016+', 'Next']

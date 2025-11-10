@@ -1121,14 +1121,20 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "8693223a301e017486b768aec70a842074ec13ca7d49127bbb67750b9e59e741",
+        "binary_sha256": "a639ee61c500aecbb87795ff34687b827bb82b0adbfa77c2f3bc4899c6979590",
         "binary_size": 1053384,
         "repository": "https://github.com/echosoar/jsi.git",
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
         "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.2525,
+      "es3": 0.1486,
+      "es5": 0.0946,
+      "es1-es5": 0.1881
+    }
   },
   {
     "id": "edbrowse",

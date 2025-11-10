@@ -1,5 +1,10 @@
 // Basic main() for the project to run test scripts.
+//
+// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+// SPDX-License-Identifier: MIT
+
 use jsi::JSI;
+use jsi::value::Value;
 use std::env;
 use std::fs;
 use std::process;
@@ -21,9 +26,11 @@ fn main() {
 
     let mut jsi = JSI::new();
 
-    match jsi.run_with_bytecode(code) {
+    match jsi.run(code) {
         Ok(result) => {
-            println!("{:?}", result);
+            if !matches!(result, Value::Undefined) {
+                println!("{:?}", result);
+            }
         }
         Err(err) => {
             eprintln!("Runtime error: {:?}", err);

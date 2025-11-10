@@ -8,3 +8,12 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 * License:    MIT
 * Standard:   no (can't run ES1)
 * Years:      2022-
+
+## Conformance
+
+<details><summary>ES1-ES5: 19%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/echosoar-jsi.txt">Full log</a>.</li>
+<li>ES1: 25%<br>
+<li>ES3: 15%<br>
+<li>ES5: 9%<br>
+</ul></details>
