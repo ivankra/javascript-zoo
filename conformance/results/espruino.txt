@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "binary_sha256": "fbbf669b27fed1934ad38f698bb4f9ff665399611e76bddb8d20b3f548888b11", "binary_size": 1183488, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "espruino", "repository": "https://github.com/espruino/Espruino.git", "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565", "revision_date": "2025-06-06", "version": "2v27"}
+es1/Array.js: Array.length failed ; failed
+es1/Array.length.assignment.js: Uncaught TypeError: Assignment to a constant  Uncaught undefined
+es1/Array.length.js: Uncaught TypeError: Assignment to a constant  Uncaught undefined
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed ; failed
+es1/Array.prototype.join.generic.js: Uncaught Error: Function "join" not found!  Uncaught undefined
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: Uncaught Error: Function "reverse" not found!  Uncaught undefined
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: Uncaught Error: Function "sort" not found!  Uncaught undefined
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: new Boolean(true) failed ; new Boolean() failed ; failed
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed ; boolean instance constructor failed ; failed
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: failed
+es1/Date.js: 15.9.2 Date() not a string ; 15.9.3.2 new Date(0) failed ; failed
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: failed
+es1/Date.prototype.getUTCDate.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCDay.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCFullYear.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCHours.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCMilliseconds.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCMinutes.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCMonth.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.getUTCSeconds.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setUTCDate.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCFullYear.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCHours.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCMilliseconds.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCMinutes.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCMonth.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.setUTCSeconds.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es1/Date.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: failed
+es1/Function.js: OK
+es1/Function.length.js: Function.length failed ; failed
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed ; function instance constructor failed ; failed
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: failed
+es1/Math.LN2.js: failed
+es1/Math.LN10.js: failed
+es1/Math.LOG2E.js: failed
+es1/Math.LOG10E.js: failed
+es1/Math.PI.js: failed
+es1/Math.SQRT1_2.js: failed
+es1/Math.SQRT2.js: failed
+es1/Math.abs.js: failed
+es1/Math.acos.js: failed
+es1/Math.asin.js: OK
+es1/Math.atan2.js: failed
+es1/Math.atan.js: OK
+es1/Math.ceil.js: failed
+es1/Math.cos.js: failed
+es1/Math.exp.js: failed
+es1/Math.floor.js: failed
+es1/Math.log.js: failed
+es1/Math.max.js: failed
+es1/Math.min.js: failed
+es1/Math.pow.js: failed
+es1/Math.random.js: failed
+es1/Math.round.js: OK
+es1/Math.sin.js: failed
+es1/Math.sqrt.js: failed
+es1/Math.tan.js: failed
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: new Number(value) failed ; new Number() failed ; failed
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed ; failed
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: Object(number) failed ; new Object(string) failed ; failed
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed ; failed
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: Uncaught Error: Function "charAt" not found!  Uncaught undefined
+es1/String.js: 15.5.2.1 new String(value) failed ; 15.5.2.2 new String() failed ; failed
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: String.prototype.constructor failed ; failed
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: Uncaught Error: Function "getYear" not found!  Uncaught undefined
+es1/annex-b.Date.prototype.setYear.js: Uncaught Error: Function "setYear" not found!  Uncaught undefined
+es1/annex-b.Date.prototype.toGMTString.js: Uncaught Error: Function "toGMTString" not found!  Uncaught undefined
+es1/annex-b.global.escape.js: Uncaught ReferenceError: "escape" is not defined  Uncaught undefined
+es1/annex-b.global.unescape.js: Uncaught ReferenceError: "unescape" is not defined  Uncaught undefined
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: Uncaught Error: Function "callee" not found!  Uncaught undefined
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: failed: return<LF> ; failed: a<LF> ++<LF> b ; Uncaught Error: Field or method "0" does not already exist, and can't create it on Number  Uncaught undefined
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy ; failed
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: ' 456 ' failed ; failed
+es1/conversions.ToObject.js: true failed ; false failed ; 123 failed ; 'hello' failed ; failed
+es1/conversions.ToString.js: 1e21 failed ; failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: 123 != '0123' ; 123.0 != '0123' ; failed
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: failed
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: typeof new String('x') != 'object' ; failed
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: Uncaught ReferenceError: "with" is not defined  Uncaught undefined
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
+es3/Array.prototype.unshift.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: Uncaught Error: Function "toDateString" not found!  Uncaught undefined
+es3/Date.prototype.toLocaleDateString.js: Uncaught Error: Function "toLocaleDateString" not found!  Uncaught undefined
+es3/Date.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
+es3/Date.prototype.toLocaleTimeString.js: Uncaught Error: Function "toLocaleTimeString" not found!  Uncaught undefined
+es3/Date.prototype.toTimeString.js: Uncaught Error: Function "toTimeString" not found!  Uncaught undefined
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: failed
+es3/Error.prototype.message.js: failed
+es3/Error.prototype.name.js: failed
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: max() with 0 args failed ; max() with 1 arg failed ; max() with 2 args failed ; max() with 3 args failed ; max() with NaN failed ; failed
+es3/Math.min.variadic.js: min() with 0 args failed ; min() with 1 arg failed ; min() with 2 args failed ; min() with 3 args failed ; min() with NaN failed ; failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws ; Infinity.toExponential(Infinity) throws ; failed
+es3/Number.prototype.toExponential.js: Uncaught Error: Function "toExponential" not found!  Uncaught undefined
+es3/Number.prototype.toExponential.rounding.js: Uncaught Error: Function "toExponential" not found!  Uncaught undefined
+es3/Number.prototype.toExponential.throws-infinity.js: Uncaught ReferenceError: "RangeError" is not defined  Uncaught undefined
+es3/Number.prototype.toFixed.js: rounding failed ; failed
+es3/Number.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
+es3/Number.prototype.toPrecision.js: Uncaught Error: Function "toPrecision" not found!  Uncaught undefined
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: Uncaught Error: Function "isPrototypeOf" not found!  Uncaught undefined
+es3/Object.prototype.propertyIsEnumerable.js: Uncaught Error: Function "propertyIsEnumerable" not found!  Uncaught undefined
+es3/Object.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
+es3/RegExp.global.js: constructor with g failed ; constructor without g failed ; literal with g failed ; literal without g failed ; failed
+es3/RegExp.ignoreCase.js: constructor with i failed ; constructor without i failed ; literal with i failed ; literal without i failed ; failed
+es3/RegExp.js: global flag failed ; ignoreCase flag failed ; multiline flag failed ; Uncaught TypeError: Expecting String as first argument, got Object  Uncaught undefined
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: constructor with m failed ; constructor without m failed ; literal with m failed ; literal without m failed ; failed
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: format failed ; failed
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: Uncaught Error: Function "localeCompare" not found!  Uncaught undefined
+es3/String.prototype.match.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: undefined capture failed ; spec example failed ; $nn 10 captures failed ; $nn reverse order failed ; failed
+es3/String.prototype.replace.extra.js: $$ failed ; $& failed ; $` failed ; $' failed ; combined replacements failed ; failed
+es3/String.prototype.replace.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/String.prototype.search.js: Uncaught Error: Function "search" not found!  Uncaught undefined
+es3/String.prototype.search.str.js: Uncaught Error: Function "search" not found!  Uncaught undefined
+es3/String.prototype.slice.generic.js: Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: '0'.split(undefined, 0).length !== 0 ; 'ab'.split(/(?:ab)*/).length !== 2 ; '.'.split(/(.?)(.?)/).length !== 4 ; 'test'.split(/(?:)/, -1).length !== 4 ; ''.split(/.?/).length !== 0
+es3/String.prototype.split.limit.js: split with limit 2 failed ; split with limit 0 failed ; split with limit 3 failed ; split with limit 1 failed ; failed
+es3/String.prototype.split.regex.js: split with capturing group failed ; split by empty regex failed ; failed
+es3/String.prototype.toLocaleLowerCase.js: Uncaught Error: Function "toLocaleLowerCase" not found!  Uncaught undefined
+es3/String.prototype.toLocaleUpperCase.js: Uncaught Error: Function "toLocaleUpperCase" not found!  Uncaught undefined
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: constructor failed ; Uncaught ReferenceError: "EvalError" is not defined  Uncaught undefined
+es3/global.RangeError.js: constructor failed ; Uncaught ReferenceError: "RangeError" is not defined  Uncaught undefined
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length ; wrong exception for new Array with non-integer length ; wrong exception for new Array with length >= 2^32 ; wrong exception for negative array length ; wrong exception for array length exceeding 2^32-1 ; failed
+es3/global.ReferenceError.js: name failed ; failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; wrong exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
+es3/global.SyntaxError.js: name failed ; failed
+es3/global.SyntaxError.thrown.js: wrong exception type ; wrong exception for unclosed string ; wrong exception for invalid token ; failed
+es3/global.TypeError.js: name failed ; failed
+es3/global.TypeError.thrown.js: wrong exception for instanceof number ; wrong exception for instanceof non-callable ; no exception for in number ; no exception for in null ; wrong exception for new number ; wrong exception for calling number ; no exception for Function.prototype.toString on non-function ; wrong exception for Funct
+es3/global.URIError.js: constructor failed ; Uncaught ReferenceError: "URIError" is not defined  Uncaught undefined
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape ; wrong exception for decodeURI invalid hex ; wrong exception for decodeURI invalid UTF-8 ; no exception for decodeURIComponent incomplete escape ; no exception for decodeURIComponent invalid hex ; wrong exception for encodeURI lone low surrogate ; wro
+es3/global.decodeURIComponent.js: decode UTF-8 failed ; failed
+es3/global.decodeURI.js: Uncaught ReferenceError: "decodeURI" is not defined  Uncaught undefined
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: Uncaught ReferenceError: "encodeURI" is not defined  Uncaught undefined
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Uncaught SyntaxError: Got ?? expected EOF  Uncaught undefined
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: Uncaught ReferenceError: "loop1" is not defined  Uncaught undefined
+es3/labelled.continue.js: Uncaught ReferenceError: "loop1" is not defined  Uncaught undefined
+es3/labelled.statements.js: Uncaught ReferenceError: "label1" is not defined  Uncaught undefined
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: Uncaught SyntaxError: Got ?? expected ID  Uncaught undefined
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: failed
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: Uncaught Error: Backreferences not supported  Uncaught undefined
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: dash after range failed ; failed
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: complex disjunction failed ; failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: ^ after LF failed ; $ before LF failed ; failed
+es3/regex.group.js: OK
+es3/regex.lookahead.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.negative-lookahead.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.non-capturing-group.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.quantifier.exact.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.quantifier.maybe.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.quantifier.min.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: Uncaught Error: Field or method "0" does not already exist, and can't create it on null  Uncaught undefined
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: \b word boundary failed ; \B non-boundary failed ; failed
+es3/source.line-terminators.js: Uncaught SyntaxError: Got ?[226] expected EOF  Uncaught undefined
+es3/source.whitespace.js: Uncaught SyntaxError: Got || expected ID  Uncaught undefined
+es3/source.whitespace.unicode.js: Uncaught SyntaxError: Got ?[226] expected EOF  Uncaught undefined
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: Array.prototype.every not a function ; failed
+es5/Array.prototype.filter.js: Array.prototype.filter not a function ; failed
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function ; failed
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function ; negative fromIndex failed ; failed
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function ; Uncaught Error: Function "lastIndexOf" not found!  Uncaught undefined
+es5/Array.prototype.map.js: Array.prototype.map not a function ; failed
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function ; Uncaught Error: Function "reduceRight" not found!  Uncaught undefined
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function ; failed
+es5/Array.prototype.some.js: Array.prototype.some not a function ; failed
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: Date.now() does not match new Date().getTime() ; failed
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function ; Uncaught Error: Function "UTC" not found!  Uncaught undefined
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
+es5/Function.prototype-not-enumerable.js: Uncaught TypeError: Function code must be a String, got 'undefined'  Uncaught undefined
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: Function.prototype.bind not a function ; length property incorrect ; Uncaught Error: Can't read property 'value' of null  Uncaught undefined
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: duplicate keys does not use last value ; trailing comma does not throw SyntaxError ; failed
+es5/JSON.parse.reviver.js: failed to apply reviver function ; failed to delete property for which reviver returned undefined ; failed
+es5/JSON.stringify.js: cyclic structure does not throw TypeError ; undefined/function values in array not converted to null ; undefined should return undefined ; failed
+es5/JSON.stringify.replacer.js: replacer function failed ; replacer array failed ; failed
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: null prototype failed ; Uncaught Error: propertiesObject is not supported yet  Uncaught undefined
+es5/Object.defineProperties.js: writable attributes failed ; failed
+es5/Object.defineProperty.js: Uncaught TypeError: Assignment to a constant  Uncaught undefined
+es5/Object.freeze.js: Object.freeze not a function ; Uncaught Error: Function "freeze" not found!  Uncaught undefined
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: Object.isExtensible not a function ; Uncaught Error: Function "isExtensible" not found!  Uncaught undefined
+es5/Object.isFrozen.js: Object.isFrozen not a function ; Uncaught Error: Function "isFrozen" not found!  Uncaught undefined
+es5/Object.isSealed.js: Object.isSealed not a function ; Uncaught Error: Function "isSealed" not found!  Uncaught undefined
+es5/Object.keys.js: only enumerable properties failed ; failed
+es5/Object.preventExtensions.js: Object.preventExtensions not a function ; Uncaught Error: Function "preventExtensions" not found!  Uncaught undefined
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal not a function ; Uncaught Error: Function "seal" not found!  Uncaught undefined
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: String.prototype.trim not a function ; failed
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: timeout
+es5/global.Infinity.immutable.js: Uncaught Error: Unable to assign value to non-reference Number  Uncaught undefined
+es5/global.NaN.immutable.js: Uncaught Error: Unable to assign value to non-reference Number  Uncaught undefined
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: Uncaught SyntaxError: Got ?[239] expected EOF  Uncaught undefined
+es5/source.zero-width-chars.js: Uncaught SyntaxError: Got '\' expected EOF  Uncaught undefined
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode ; failed
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK

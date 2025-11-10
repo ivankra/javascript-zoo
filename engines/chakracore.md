@@ -72,7 +72,7 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 95%, ES2016+ 50%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 95%, ES2016+ 50%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 95%<pre>
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.match.js">RegExp.prototype.Symbol.match.js</a>: failed
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.replace.js">RegExp.prototype.Symbol.replace.js</a>: failed
@@ -153,5 +153,6 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 </pre></li>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>

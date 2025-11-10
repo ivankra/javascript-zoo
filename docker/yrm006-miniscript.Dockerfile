@@ -7,7 +7,7 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-RUN gcc -O3 -o miniscript miniscript.c mslib.c readme.c
+COPY yrm006-miniscript.c ./
+RUN gcc -O3 -o miniscript miniscript.c mslib.c yrm006-miniscript.c #readme.c
 
 ENV JS_BINARY=/src/miniscript
-# No REPL

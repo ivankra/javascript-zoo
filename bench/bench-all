@@ -21,15 +21,10 @@ fi
 cd "$SCRIPT_DIR"
 
 for binary in "$DIST_DIR"/*; do
-  skip=0
   case "$(basename "$binary")" in
-    bali|cesanta-elk|cesanta-mjs|tiny-js|rapidus|quad-wheel|echosoar-jsi|yrm006-miniscript)
-      skip=1;;
+    bali|cesanta-elk|cesanta-mjs|tiny-js|lebjs|rapidus|quad-wheel|echosoar-jsi|yrm006-miniscript)
+      continue;;
   esac
-
-  if ((skip)); then
-    continue
-  fi
 
   if [[ -x "$binary" && -f "$binary.json" ]]; then
     (set -x; ./bench -o "$DOCKER_ARCH/$(basename "$binary").json" -r 300s -v --skip-unchanged "$binary")

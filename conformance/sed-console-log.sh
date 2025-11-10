@@ -17,16 +17,17 @@ if [[ -z "$SED_SCRIPT" ]]; then
   SED_SCRIPT="s/\\bconsole.log\\b/$SED_PRINT/g"
 fi
 
-if [[ -z "$SED_FILE" ]]; then
-  SED_FILE=$(mktemp --suffix=.js)
-fi
-
-trap "rm -f '$SED_FILE'" EXIT INT TERM
-
 test_file="${@: -1}"
 engine_args=("${@:1:$#-1}")
 
-sed "$SED_SCRIPT" "$test_file" > "$SED_FILE"
-
-"${engine_args[@]}" "$SED_FILE"
-exit $?
+if [[ -z "$SED_FILE" ]]; then
+  SED_FILE=$(mktemp --suffix=.js)
+  trap "rm -f '$SED_FILE'" EXIT INT TERM
+  sed "$SED_SCRIPT" "$test_file" > "$SED_FILE"
+  "${engine_args[@]}" "$SED_FILE"
+  exit $?
+else
+  # clean-up up to caller
+  sed "$SED_SCRIPT" "$test_file" > "$SED_FILE"
+  exec "${engine_args[@]}" "$SED_FILE"
+fi

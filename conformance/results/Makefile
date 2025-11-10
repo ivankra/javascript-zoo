@@ -4,6 +4,6 @@ run: .PHONY
 	./run-all.sh
 
 table: .PHONY
-	./table.py
+	./README-gen.py
 
 .PHONY:

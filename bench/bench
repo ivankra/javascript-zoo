@@ -597,6 +597,11 @@ CONFIGS = {
   'kjs': Config(
       filter_lines_re=r'^LEAK: [0-9]+ KJS::Node$',
   ),
+  'lebjs': Config(
+      benchmark_suite=['richards.quad-wheel.js'],  # not capable of ES1, no Date()
+      polyfills=[],
+      timestamp_output=True,
+  ),
   'mocha': Config(
       benchmark_suite=['richards.es1.js'],  # JS1.1≈ES1 engine
       polyfills=["var console = new Object(); console.log = print;"],  # no object literals

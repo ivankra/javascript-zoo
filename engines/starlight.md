@@ -91,7 +91,7 @@ Unmaintained old Rust codebase, only builds on x64.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 28%, ES2016+ 15%, Intl 4%</summary><ul>
+<details><summary>compat-table: ES6 28%, ES2016+ 15%, Next 0%, Intl 4%</summary><ul>
 <li>ES6: 28%<br>
 <li>ES2016: 9%<br>
 <li>ES2017: 16%<br>
@@ -103,5 +103,6 @@ Unmaintained old Rust codebase, only builds on x64.
 <li>ES2023: 0%<br>
 <li>ES2024: 4%<br>
 <li>ES2025: 5%<br>
+<li>Next: 0%<br>
 <li>Intl: 4%<br>
 </ul></details>

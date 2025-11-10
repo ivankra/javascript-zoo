@@ -722,6 +722,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
       "es1-es5": 0.9881,
       "kangax-es2016plus": 0.4962
     }
@@ -1438,7 +1439,13 @@ const jsz_engines = [
         "Richards_note": "N=3 median=13.18468720821 mean=13.20±0.05 max=13.29642184557",
         "Splay_note": "N=3 median=13.67298657718 mean=13.70±0.09 max=13.87080851063"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.601,
+      "es3": 0.4324,
+      "es5": 0.2838,
+      "es1-es5": 0.4857
+    }
   },
   {
     "id": "eval5",
@@ -3254,6 +3261,54 @@ const jsz_engines = [
       "kangax-next": 0.0606,
       "es1-es5": 0.8595,
       "kangax-es2016plus": 0.0422
+    }
+  },
+  {
+    "id": "lebjs",
+    "title": "LebJS",
+    "summary": "Unfinished JavaScript engine written in Java.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/lebjs.md",
+    "repository": "https://github.com/LebsterFace/LebJS",
+    "loc": 13761,
+    "language": "Java",
+    "license": "Apache-2.0",
+    "standard": "no (can't run ES1)",
+    "years": "2021-",
+    "platform": "Java",
+    "interpreter": "tree walker",
+    "loc_command": "cloc src",
+    "license_abbr": "Apache-2.0",
+    "github_stars": 33,
+    "github_forks": 2,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 410699,
+        "repository": "https://github.com/LebsterFace/LebJS.git",
+        "revision": "7b5db4a32e9d97b6881452da59f363f514e61b76",
+        "revision_date": "2025-08-14"
+      }
+    ],
+    "conformance": {
+      "es1": 0.601,
+      "es3": 0.3986,
+      "es5": 0.473,
+      "kangax-es5": 0.6871,
+      "kangax-es6": 0.3744,
+      "kangax-es2016": 0.4394,
+      "kangax-es2017": 0.24,
+      "kangax-es2018": 0.2105,
+      "kangax-es2019": 0.5595,
+      "kangax-es2020": 0.0714,
+      "kangax-es2021": 0.254,
+      "kangax-es2022": 0.2044,
+      "kangax-es2023": 0.8286,
+      "kangax-es2024": 0.3265,
+      "kangax-es2025": 0.5,
+      "kangax-intl": 0.1429,
+      "kangax-next": 0.0,
+      "es1-es5": 0.5071,
+      "kangax-es2016plus": 0.3216
     }
   },
   {
@@ -6087,6 +6142,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0408,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.0357,
+      "kangax-next": 0.0,
       "es1-es5": 0.6929,
       "kangax-es2016plus": 0.1462
     }
@@ -6882,5 +6938,39 @@ const jsz_engines = [
     "license_abbr": "MIT",
     "github_stars": 31,
     "github_forks": 2
+  },
+  {
+    "id": "yrm006-miniscript",
+    "title": "yrm006/miniscript",
+    "summary": "Primitive unfinished interpreter.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/yrm006-miniscript.md",
+    "repository": "https://github.com/yrm006/miniscript.git",
+    "loc": 2006,
+    "language": "C",
+    "license": "unspecified",
+    "standard": "no (can't run ES1)",
+    "years": "2018",
+    "interpreter": "interprets from source",
+    "loc_command": "cloc *.c *.h",
+    "license_abbr": "unspecified",
+    "github_stars": 143,
+    "github_forks": 6,
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "359c8665a81e19a169f4421c97a97390cb9cf197a2f8394ecabf1005eded82d1",
+        "binary_size": 67808,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/yrm006/miniscript.git",
+        "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
+        "revision_date": "2018-08-29"
+      }
+    ],
+    "conformance": {
+      "es1": 0.0101,
+      "es3": 0.0,
+      "es5": 0.0,
+      "es1-es5": 0.0048
+    }
   }
 ]

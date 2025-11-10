@@ -22,11 +22,11 @@ for binary in /dist/*; do
 
   suite=
   case "$engine" in
-    bali|cesanta-elk|echosoar-jsi|espruino|yrm006-miniscript)
+    bali|cesanta-elk|echosoar-jsi)
       continue;;
     #besen|cesanta-v7|dmdscript|flathead|jsish|mocha|quad-wheel|tiny-js|ucode)
-    besen)
-      suite=es[1-5]/;;
+    besen|espruino|yrm006-miniscript)
+      suite=es[1-5];;
   esac
 
   (set -x; ./run.sh -o "$SCRIPT_DIR/$engine.txt" -j 8 --next "$binary" $suite)

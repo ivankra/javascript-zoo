@@ -92,7 +92,7 @@ case "$ENGINE_NAME" in
     ENGINE_CMD+=(--script);;
   escargot|jerryscript|jsc|nashorn|xs|cesanta-v7)
     ENGINE_CMD+=("$SCRIPT_DIR/var-console-log.js");;
-  hermes|mocha|spidermonkey_[12]*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js)
+  hermes|mocha|spidermonkey_[12]*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js|yrm006-miniscript)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
   nova)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}" eval);;
@@ -131,7 +131,7 @@ do_part() {
     rm -f "$tmpfile" "$tmpfile.time"
 
     timeout 3s stdbuf -oL -eL /usr/bin/time -v -o "$tmpfile.time" \
-      "${ENGINE_CMD[@]}" "$filename" 2>&1 \
+      "${ENGINE_CMD[@]}" "$filename" </dev/null 2>&1 \
       | tee "$tmpfile"
 
     if ! fgrep -q -i "$basename: fail" "$tmpfile" && \
@@ -147,19 +147,19 @@ do_part() {
 
       # Normalize output and transform into a one-liner summary
       cat "$tmpfile" 2>/dev/null \
-        | sed -e 's/\s/ /; s/^ *//; s/ *$//' \
-        | sed -Ee 's/^(js: |INFO |WARN )//' \
-        | sed -Ee "s/^[\"'](.*)['\"]$/\\1/;" \
-        | sed -Ee 's|20[0-9]{2}/[0-9]{2}/[0-9]{2} [0-9:]{8} ||' \
+        | sed 's/\s/ /; s/^ *//; s/ *$//' \
+        | sed -E 's/^(js: |INFO |WARN )//' \
+        | sed -E "s/^[\"'](.*)['\"]$/\\1/;" \
+        | sed -E 's|20[0-9]{2}/[0-9]{2}/[0-9]{2} [0-9:]{8} ||' \
         | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' \
-        | sed -e "s|$SED_FILE|$basename|g" \
+        | sed "s|$SED_FILE|$basename|g" \
         | fgrep -v -x "$filename: failed" \
         | egrep -i "(/$basename: |error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't|fail)" \
-        | sed -e "s|^[a-z0-9/'\" -]*/$basename: \(exception: \|failed: \)\(.\+\)|\2;|" \
-        | sed -Ee 's/(Uncaught |)exception: //' \
-        | sed -e "s|^[a-z0-9/'\" -]*/$basename: \(.\+\)|\1;|" \
+        | sed "s|^[a-z0-9/'\" -]*/$basename: \(exception: \|failed: \)\(.\+\)|\2;|" \
+        | sed -E 's/(Uncaught |)exception: //' \
+        | sed "s|^[a-z0-9/'\" -]*/$basename: \(.\+\)|\1;|" \
         | uniq \
-        | tr '\n' ' ' \
+        | tr '\r\n' ' ' \
         | sed -e 's/\s\+/ /; s/^[ ;]*//; s/[ ;]*$//' \
         > "$tmpfile.filtered"
 
@@ -177,7 +177,7 @@ do_part() {
       echo "$filename: $error" >>"$part_output_file"
     fi
 
-    rm -f "$tmpfile" "$tmpfile.time"
+    rm -f "$tmpfile" "$tmpfile.time" "$SED_FILE"
   done
 }
 
