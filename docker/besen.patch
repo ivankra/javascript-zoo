@@ -1,0 +1,67 @@
+diff --git a/src/BESENShell.lpr b/src/BESENShell.lpr
+index 4d1f7bf..e9b8570 100644
+--- a/src/BESENShell.lpr
++++ b/src/BESENShell.lpr
+@@ -793,7 +793,7 @@ begin
+    s:={$ifndef BESENSingleStringType}AnsiString({$endif}paramstr(i){$ifndef BESENSingleStringType}){$endif};
+    if length(s)>0 then begin
+     case s[1] of
+-     '-','+','/':begin
++     '-','+':begin
+       c:=s[1];
+       if c='-' then begin
+       end;
+@@ -896,14 +896,18 @@ begin
+    try
+     if not DoExit then begin
+      v:=TBESEN(Instance).Execute({$ifndef BESENSingleStringType}BESENConvertToUTF8({$endif}BESENGetFileContent(FileName){$ifndef BESENSingleStringType}){$endif});
+-     Print(v);
++     if v.ValueType<>bvtUNDEFINED then begin
++      Print(v);
++     end;
+     end;
+    except
+     on e:EBESENError do begin
+      writeln(e.Name,': ',e.Message);
++     halt(1);
+     end;
+     on e:exception do begin
+      writeln('Exception: ',e.Message);
++     halt(1);
+     end;
+    end;
+   end else begin
+@@ -912,10 +916,15 @@ begin
+    while not DoExit do begin
+     write('>');
+     readln(ss);
++    if eof then begin
++     break;
++    end;
+     try
+      v:=TBESEN(Instance).Execute({$ifndef BESENSingleStringType}BESENUTF16ToUTF8({$endif}ss{$ifndef BESENSingleStringType}){$endif});
+      if not DoExit then begin
+-      Print(v);
++      if v.ValueType<>bvtUNDEFINED then begin
++       Print(v);
++      end;
+       v.ValueType:=bvtUNDEFINED;
+       v.Obj:=nil;
+       TBESEN(Instance).GarbageCollector.CollectAll;
+@@ -933,10 +942,16 @@ begin
+  except
+   on e:exception do begin
+    writeln(e.Message);
++   halt(1);
++  end
++  else begin
++   writeln('Unknown exception');
++   halt(1);
+   end;
+  end;
+  FileName:='';
+  s:='';
+  ShellFunctions.Destroy;
+  TBESEN(Instance).Destroy;
++ halt(0);
+ end.
