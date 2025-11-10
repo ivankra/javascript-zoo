@@ -799,10 +799,10 @@ def update_conformance(filename, conformance):
             score_str = format_score(score)
 
             crashes = str(conformance['crashes_by_dir'].get(dir_name, ''))
-            if crashes and crashes != '0':
+            if crashes:
                 if crashes == '1':
                     crashes = f', <b>{crashes} crash</b>'
-                elif crashes >= '2':
+                else:
                     crashes = f', <b>{crashes} crashes</b>'
 
             if score == 1:

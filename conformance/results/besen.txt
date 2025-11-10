@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "dc48628929e2d26f2211dd5523ef2ebd03840063b4622d4fdc81cb8d892bcff2", "binary_size": 2261264, "engine": "besen", "repository": "https://github.com/BeRo1985/besen.git", "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b", "revision_date": "2020-10-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "7d31a144584607a38a79e7d51f49d748ef53ba4b0294948b98bd60894cbd92af", "binary_size": 2261264, "engine": "besen", "repository": "https://github.com/BeRo1985/besen.git", "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b", "revision_date": "2020-10-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -118,12 +118,12 @@ es1/annex-b.Date.prototype.setYear.js: OK
 es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: failed
 es1/annex-b.global.unescape.js: OK
-es1/annex-b.literals.octal.js: timeout
+es1/annex-b.literals.octal.js: SyntaxError: Bad number literal
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: timeout
+es1/asi.js: SyntaxError: Illegal line terminator before postfix increment
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK

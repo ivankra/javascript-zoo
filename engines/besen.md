@@ -25,8 +25,8 @@ JIT-enabled ES5 engine written in Object Pascal.
 <a href="../conformance/es1/Date.prototype.setMilliseconds.js">Date.prototype.setMilliseconds.js</a>: failed
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: failed
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: failed
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: timeout
-<a href="../conformance/es1/asi.js">asi.js</a>: timeout
+<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Bad number literal
+<a href="../conformance/es1/asi.js">asi.js</a>: SyntaxError: Illegal line terminator before postfix increment
 <a href="../conformance/es1/numbers.fmod.js">numbers.fmod.js</a>: -5.5 % 2.5 sign failed
 </pre></li>
 <li>ES3: 88%<pre>

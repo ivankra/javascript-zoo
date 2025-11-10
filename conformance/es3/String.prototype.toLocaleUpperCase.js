@@ -8,5 +8,5 @@ var res = str.toLocaleUpperCase();
 if (res == "HELLO") {
   console.log("es3/String.prototype.toLocaleUpperCase.js: OK");
 } else {
-  console.log("es3/String.prototype.toLocaleLowerCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: '" + res + "')");
+  console.log("es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: '" + res + "')");
 }

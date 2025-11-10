@@ -133,7 +133,7 @@ es1/bitwise.shifts.js: failed
 es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: failed
 es1/break.js: timeout
-es1/comma.js: crashed (signal 11); (1, 2, 3) failed; (5 + 5, 10 + 10) failed
+es1/comma.js: crashed (signal 11); (1, 2, 3) failed
 es1/comments.js: crashed (signal 11); Error: not found.('fail')
 es1/conditional.js: Error: not found.('true')
 es1/continue.js: timeout
@@ -261,7 +261,7 @@ es3/String.prototype.search.generic.js: Error: not found.('Number')
 es3/String.prototype.search.js: Error: not found.('world')
 es3/String.prototype.search.str.js: string with \\d+ pattern failed; string with \\w+ pattern failed; string with [0-9]+ pattern failed; string with \\s pattern failed; string with \\. pattern failed; Error: not found.('abc123def')
 es3/String.prototype.slice.generic.js: Error: not found.('Number')
-es3/String.prototype.slice.js: failed
+es3/String.prototype.slice.js: crashed (signal 11); slice with start and end failed; slice with start only failed; slice with negative start failed
 es3/String.prototype.split.bugs.js: Error: not found.(''')
 es3/String.prototype.split.limit.js: crashed (signal 11)
 es3/String.prototype.split.regex.js: Error: not found.('\d')

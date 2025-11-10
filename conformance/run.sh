@@ -40,9 +40,10 @@ while [[ ${#ENGINE_CMD[@]} > 0 ]]; do
     break
   fi
 
+  arg="$(realpath -- "$arg")"
+
   # Expand directories to dir/*.js, sort -V order
   if [[ -d "$arg" ]]; then
-    arg="${arg%/}"
     mapfile -t dir_files < <(ls "$arg"/*.js 2>/dev/null | sort -V)
     if [[ ${#dir_files[@]} -eq 0 ]]; then
       break
@@ -104,41 +105,46 @@ esac
 if [[ ${#JS_FILES[@]} == 0 ]]; then
   echo "Engine: $ENGINE_NAME, command: ${ENGINE_CMD[@]} <test.js>, running on whole test suite"
   mapfile -t JS_FILES < <(ls \
-    es1/*.js \
-    es3/*.js \
-    es5/*.js \
-    kangax-es5/*.js \
-    kangax-es6/*.js \
-    kangax-es20??/*.js \
-    kangax-intl/*.js \
-    $( ((INCLUDE_NEXT)) && echo kangax-next/*.js) \
+    $SCRIPT_DIR/es1/*.js \
+    $SCRIPT_DIR/es3/*.js \
+    $SCRIPT_DIR/es5/*.js \
+    $SCRIPT_DIR/kangax-es5/*.js \
+    $SCRIPT_DIR/kangax-es6/*.js \
+    $SCRIPT_DIR/kangax-es20??/*.js \
+    $SCRIPT_DIR/kangax-intl/*.js \
+    $( ((INCLUDE_NEXT)) && echo $SCRIPT_DIR/kangax-next/*.js) \
     | sort -V)
 else
-  echo "Engine: $ENGINE_NAME, command: ${ENGINE_CMD[@]} <test.js>, running on selected tests"
+  echo "Engine: $ENGINE_NAME, command: ${ENGINE_CMD[@]} <test.js>"
 fi
 
 export -a ENGINE_CMD  # bash 5.2+
 
 do_part() {
   local part_output_file="$1"; shift
-  local filename
+  local abspath
 
   export SED_FILE=$(mktemp --suffix=.js)
 
-  for filename in "$@"; do
-    local basename="$(basename -- "$filename")"
+  for abspath in "$@"; do
+    local basename="$(basename -- "$abspath")"
     local tmpfile=$(mktemp)
     rm -f "$tmpfile" "$tmpfile.time"
 
     timeout 3s stdbuf -oL -eL /usr/bin/time -v -o "$tmpfile.time" \
-      "${ENGINE_CMD[@]}" "$filename" </dev/null 2>&1 \
+      "${ENGINE_CMD[@]}" "$abspath" </dev/null 2>&1 \
       | tee "$tmpfile"
+
+    local relpath="$abspath"
+    if [[ "$relpath" == "$SCRIPT_DIR/"* ]]; then
+      relpath="$(realpath --relative-to="$SCRIPT_DIR" -- "$abspath")"
+    fi
 
     if ! fgrep -q -i "$basename: fail" "$tmpfile" && \
        ! fgrep -q -i "$basename: exception" "$tmpfile" && \
        ! fgrep -q "Command terminated by signal" "$tmpfile.time" && \
        fgrep -q "$basename: OK" "$tmpfile"; then
-      echo "$filename: OK" >>"$part_output_file"
+      echo "$relpath: OK" >>"$part_output_file"
     else
       local crashed=""
       if grep -q "Command terminated by signal [0-9]" "$tmpfile.time"; then
@@ -152,8 +158,8 @@ do_part() {
         | sed -E "s/^[\"'](.*)['\"]$/\\1/;" \
         | sed -E 's|20[0-9]{2}/[0-9]{2}/[0-9]{2} [0-9:]{8} ||' \
         | sed -E 's/\x1B\[[0-9;]*[A-Za-z]//g' \
-        | sed "s|$SED_FILE|$basename|g" \
-        | fgrep -v -x "$filename: failed" \
+        | sed "s|$SED_FILE|$basename|g; s|$abspath|$basename|g" \
+        | fgrep -v -x "$relpath: failed" \
         | egrep -i "(/$basename: |error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't|fail)" \
         | sed "s|^[a-z0-9/'\" -]*/$basename: \(exception: \|failed: \)\(.\+\)|\2;|" \
         | sed -E 's/(Uncaught |)exception: //' \
@@ -173,8 +179,8 @@ do_part() {
         error="timeout"
       fi
 
-      printf "\033[1;31m%s: %s\033[0m\n" "$filename" "$error"
-      echo "$filename: $error" >>"$part_output_file"
+      printf "\033[1;31m%s: %s\033[0m\n" "$relpath" "$error"
+      echo "$relpath: $error" >>"$part_output_file"
     fi
 
     rm -f "$tmpfile" "$tmpfile.time" "$SED_FILE"

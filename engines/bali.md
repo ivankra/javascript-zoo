@@ -11,3 +11,12 @@ JavaScript engine written in Nim.
 * Years:       2024-
 * Interpreter: register-based VM
 * JIT:         x64
+
+## Conformance
+
+<details><summary>ES1-ES5: 3%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/bali.txt">Full log</a>.</li>
+<li>ES1: 4%<br>
+<li>ES3: 1%<br>
+<li>ES5: 7%<br>
+</ul></details>

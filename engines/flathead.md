@@ -59,7 +59,7 @@ No ASI.
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 1%, Next 3%, Intl 25%</summary><ul>
-<li>ES6: 0%16<br>
+<li>ES6: 0%, <b>16 crashes</b><br>
 <li>ES2016: 0%<br>
 <li>ES2017: 0%, <b>1 crash</b><br>
 <li>ES2018: 0%<br>
