@@ -1,4 +1,4 @@
-# topchetoeu/j2s
+# topchetoeu
 
 ES5 interpreter written in Java.
 
@@ -8,5 +8,5 @@ ES5 interpreter written in Java.
 * Language:         Java
 * License:          MIT
 * Standard:         ES5
-* Years:            2023-
+* Years:            2023-2025
 * Runtime platform: Java

@@ -6341,16 +6341,6 @@ const jsz_engines = [
         "repository": "https://github.com/gfwilliams/tiny-js.git",
         "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
         "revision_date": "2025-10-21"
-      },
-      {
-        "arch": "arm64",
-        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
-        "binary_size": 727304,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/gfwilliams/tiny-js.git",
-        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
-        "revision_date": "2014-10-19",
-        "variant": "42"
       }
     ],
     "conformance": {
@@ -6413,22 +6403,31 @@ const jsz_engines = [
     "github_forks": 16
   },
   {
-    "id": "topchetoeu-j2s",
-    "title": "topchetoeu/j2s",
+    "id": "topchetoeu",
+    "title": "topchetoeu",
     "summary": "ES5 interpreter written in Java.",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topchetoeu-j2s.md",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/topchetoeu.md",
     "repository": "https://git.topcheto.eu/topchetoeu/j2s",
     "github": "https://github.com/TopchetoEU/jscript.git",
     "loc": 15692,
     "language": "Java",
     "license": "MIT",
     "standard": "ES5",
-    "years": "2023-",
+    "years": "2023-2025",
     "platform": "Java",
     "loc_command": "cloc --not_match_d=\"(test)\" */src",
     "license_abbr": "MIT",
     "github_stars": 37,
-    "github_forks": 0
+    "github_forks": 0,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 6185283,
+        "repository": "https://github.com/TopchetoEU/jscript.git",
+        "revision": "262e2679c3175689cc6587c14da1ff1bccd133a2",
+        "revision_date": "2024-12-31"
+      }
+    ]
   },
   {
     "id": "toyjs",
