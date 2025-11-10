@@ -19,15 +19,9 @@ RUN cmake \
       -S . \
       -B build_release \
       -G Ninja \
-      -DCMAKE_BUILD_TYPE=Release \
-      $([ "$VARIANT" = full ] && echo \
-        -DHERMES_ENABLE_INTL=ON \
-        -DHERMES_USE_STATIC_ICU=ON \
-        -DHERMES_STATIC_LINK=ON \
-      ) \
-      $([ "$VARIANT" != full ] && echo \
-        -DHERMES_ENABLE_INTL=OFF \
-      )
+      -DCMAKE_BUILD_TYPE=Release
+
+# TODO -DHERMES_STATIC_LINK=ON
 
 RUN cmake --build build_release
 

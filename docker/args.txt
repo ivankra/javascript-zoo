@@ -18,8 +18,6 @@ graaljs:              --build-arg REV=graal-25.0.1
 hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
 hermes:               --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193
 hermes_clang:         --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193 --build-arg BASE=jsz-clang -f hermes.Dockerfile
-# hermes_full gcc14
-hermes_full:          --build-arg REV=ef620c2c09eb037559da0928dc0125f033dc5193 --build-arg VARIANT=full -f hermes.Dockerfile
 jerryscript:          --build-arg REV=v3.0.0
 kiesel:               --build-arg REV=42272ad1b0e8e4f56df9ae987ebbee4c23ae33b1 --build-arg ZIG_VER=0.15.2
 libjs:                --build-arg REV=62781f4818f87d4512b3ab133732ebb8ef9d0c94
