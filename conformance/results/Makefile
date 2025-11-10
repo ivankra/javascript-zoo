@@ -11,7 +11,7 @@ ENGINES := $(shell \
 	  echo "$$name"; \
 	done)
 
-ES5 := bali besen cesanta-elk echosoar-jsi espruino yrm006-miniscript
+ES5 := bali besen cesanta-elk echosoar-jsi espruino ngs yrm006-miniscript
 
 all: $(addsuffix .txt, $(ENGINES)) table
 

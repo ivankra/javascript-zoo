@@ -616,6 +616,11 @@ CONFIGS = {
   'nashorn_ot': Config(
       flags=['--language=es6', '-ot'],
   ),
+  'ngs': Config(
+      benchmark_suite=['richards.tiny-js.js'],
+      polyfills=["var console = {log: print};"],
+      timestamp_output=True,
+  ),
   'njs': Config(
       # Always runs in strict mode, seemingly no option to disable.
       polyfills=[STRICT_PF],

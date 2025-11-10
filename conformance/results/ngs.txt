@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "binary_sha256": "bb7718db7ac2dde574960431e33ee6140d7095752e9fe9aaaeb895deea4d118d", "binary_size": 489656, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "ngs", "repository": "https://github.com/markkurossi/js.git", "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713", "revision_date": "2023-12-05", "version": "0.2.5"}
+es1/Array.js: crashed (signal 11)
+es1/Array.length.assignment.js: ngs: evaluation of file `Array.length.assignment.js' failed:
+es1/Array.length.js: ngs: evaluation of file `Array.length.js' failed:
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
+es1/Array.prototype.join.generic.js: ngs: evaluation of file `Array.prototype.join.generic.js' failed:
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: ngs: evaluation of file `Array.prototype.reverse.generic.js' failed:
+es1/Array.prototype.reverse.js: reverse returns this failed
+es1/Array.prototype.sort.generic.js: ngs: evaluation of file `Array.prototype.sort.generic.js' failed:
+es1/Array.prototype.sort.js: sort returns this failed
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: new Boolean(true) failed; new Boolean() failed
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; boolean instance constructor failed
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: failed
+es1/Date.js: typeof new Date() != 'object'; ngs: evaluation of file `Date.js' failed:
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: ngs: evaluation of file `Date.prototype.getFullYear.js' failed:
+es1/Date.prototype.getHours.js: ngs: evaluation of file `Date.prototype.getHours.js' failed:
+es1/Date.prototype.getMilliseconds.js: ngs: evaluation of file `Date.prototype.getMilliseconds.js' failed:
+es1/Date.prototype.getMinutes.js: ngs: evaluation of file `Date.prototype.getMinutes.js' failed:
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: ngs: evaluation of file `Date.prototype.getSeconds.js' failed:
+es1/Date.prototype.getTimezoneOffset.js: ngs: evaluation of file `Date.prototype.getTimezoneOffset.js' failed:
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: ngs: evaluation of file `Date.prototype.getUTCDate.js' failed:
+es1/Date.prototype.getUTCDay.js: ngs: evaluation of file `Date.prototype.getUTCDay.js' failed:
+es1/Date.prototype.getUTCFullYear.js: ngs: evaluation of file `Date.prototype.getUTCFullYear.js' failed:
+es1/Date.prototype.getUTCHours.js: ngs: evaluation of file `Date.prototype.getUTCHours.js' failed:
+es1/Date.prototype.getUTCMilliseconds.js: ngs: evaluation of file `Date.prototype.getUTCMilliseconds.js' failed:
+es1/Date.prototype.getUTCMinutes.js: ngs: evaluation of file `Date.prototype.getUTCMinutes.js' failed:
+es1/Date.prototype.getUTCMonth.js: ngs: evaluation of file `Date.prototype.getUTCMonth.js' failed:
+es1/Date.prototype.getUTCSeconds.js: ngs: evaluation of file `Date.prototype.getUTCSeconds.js' failed:
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: ngs: evaluation of file `Date.prototype.setFullYear.js' failed:
+es1/Date.prototype.setHours.js: ngs: evaluation of file `Date.prototype.setHours.js' failed:
+es1/Date.prototype.setMilliseconds.js: ngs: evaluation of file `Date.prototype.setMilliseconds.js' failed:
+es1/Date.prototype.setMinutes.js: ngs: evaluation of file `Date.prototype.setMinutes.js' failed:
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: ngs: evaluation of file `Date.prototype.setSeconds.js' failed:
+es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setUTCDate.js: ngs: evaluation of file `Date.prototype.setUTCDate.js' failed:
+es1/Date.prototype.setUTCFullYear.js: ngs: evaluation of file `Date.prototype.setUTCFullYear.js' failed:
+es1/Date.prototype.setUTCHours.js: ngs: evaluation of file `Date.prototype.setUTCHours.js' failed:
+es1/Date.prototype.setUTCMilliseconds.js: ngs: evaluation of file `Date.prototype.setUTCMilliseconds.js' failed:
+es1/Date.prototype.setUTCMinutes.js: ngs: evaluation of file `Date.prototype.setUTCMinutes.js' failed:
+es1/Date.prototype.setUTCMonth.js: ngs: evaluation of file `Date.prototype.setUTCMonth.js' failed:
+es1/Date.prototype.setUTCSeconds.js: ngs: evaluation of file `Date.prototype.setUTCSeconds.js' failed:
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: ngs: evaluation of file `Date.prototype.toUTCString.js' failed:
+es1/Date.prototype.valueOf.js: ngs: evaluation of file `Date.prototype.valueOf.js' failed:
+es1/Function.js: ngs: evaluation of file `Function.js' failed:
+es1/Function.length.js: Function.length failed; function with 0 params length failed; function with 1 param length failed; function with 3 params length failed
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed; function instance constructor failed
+es1/Function.prototype.js: ngs: evaluation of file `Function.prototype.js' failed:
+es1/Function.prototype.toString.js: ngs: evaluation of file `Function.prototype.toString.js' failed:
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: failed
+es1/Math.min.js: failed
+es1/Math.pow.js: failed
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: new Number(value) failed; new Number() failed
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: Object(number) failed; new Object(string) failed
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: ngs: evaluation of file `String.generics.js' failed:
+es1/String.js: 15.5.2.1 new String(value) failed; 15.5.2.2 new String() failed
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: ngs: evaluation of file `String.prototype.charCodeAt.js' failed:
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: split('') failed
+es1/String.prototype.substring.js: ngs: evaluation of file `String.prototype.substring.js' failed:
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: non-compliant, expected to return 100 instead of 2000
+es1/annex-b.Date.prototype.setYear.js: ngs: evaluation of file `annex-b.Date.prototype.setYear.js' failed:
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: ngs: evaluation of file `arguments.callee.js' failed:
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: ngs: evaluation of file `asi.js' failed:
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: >>>= failed
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: 536867825)
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed; '' failed
+es1/conversions.ToInt32.js: 2^31 failed; -2^31 failed
+es1/conversions.ToInteger.js: ngs: evaluation of file `conversions.ToInteger.js' failed:
+es1/conversions.ToNumber.js: '' failed; '0xff' failed
+es1/conversions.ToObject.js: true failed; false failed; 123 failed; 'hello' failed
+es1/conversions.ToString.js: Infinity failed; -Infinity failed; 1e-7 failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: 0 != ''; false != ''; 123 - '' != 123; 123 * '' != 0; '6' / '5' != 1.2
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: for loop counter failed
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: typeof new String('x') != 'object'
+es1/numbers.double.js: failed: converting max safe integer + 1 to string
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: ngs: evaluation of file `this.js' failed: this.js:11: syntax error
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: typeof parseInt != 'function'
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: ngs: evaluation of file `unary.delete.var.js' failed:
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: failed
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: assignment failed
+es3/Array.prototype.concat.js: ngs: evaluation of file `Array.prototype.concat.js' failed:
+es3/Array.prototype.pop.generic.js: ngs: evaluation of file `Array.prototype.pop.generic.js' failed:
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: ngs: evaluation of file `Array.prototype.push.generic.js' failed:
+es3/Array.prototype.push.js: ngs: evaluation of file `Array.prototype.push.js' failed:
+es3/Array.prototype.shift.generic.js: ngs: evaluation of file `Array.prototype.shift.generic.js' failed:
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: ngs: evaluation of file `Array.prototype.slice.generic.js' failed:
+es3/Array.prototype.slice.js: slice with negative start failed
+es3/Array.prototype.splice.generic.js: ngs: evaluation of file `Array.prototype.splice.generic.js' failed:
+es3/Array.prototype.splice.js: ngs: evaluation of file `Array.prototype.splice.js' failed:
+es3/Array.prototype.toLocaleString.js: ngs: evaluation of file `Array.prototype.toLocaleString.js' failed:
+es3/Array.prototype.unshift.generic.js: ngs: evaluation of file `Array.prototype.unshift.generic.js' failed:
+es3/Array.prototype.unshift.js: unshift multiple elements failed; unshift on empty array failed; ngs: evaluation of file `Array.prototype.unshift.js' failed:
+es3/Array.prototype.unshift.returns-new-length.js: timeout
+es3/Date.prototype.toDateString.js: ngs: evaluation of file `Date.prototype.toDateString.js' failed:
+es3/Date.prototype.toLocaleDateString.js: ngs: evaluation of file `Date.prototype.toLocaleDateString.js' failed:
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: ngs: evaluation of file `Date.prototype.toLocaleTimeString.js' failed:
+es3/Date.prototype.toTimeString.js: ngs: evaluation of file `Date.prototype.toTimeString.js' failed:
+es3/Error.js: VM: warning: using undefined global `Error' ngs: evaluation of file `Error.js' failed: Error.js:10: illegal object for new
+es3/Error.prototype.constructor.js: VM: warning: using undefined global `Error' ngs: evaluation of file `Error.prototype.constructor.js' failed: Error.prototype.constructor.js:6: illegal object for load_property
+es3/Error.prototype.message.js: VM: warning: using undefined global `Error' ngs: evaluation of file `Error.prototype.message.js' failed: Error.prototype.message.js:6: illegal object for load_property
+es3/Error.prototype.name.js: VM: warning: using undefined global `Error' ngs: evaluation of file `Error.prototype.name.js' failed: Error.prototype.name.js:6: illegal object for load_property
+es3/Error.prototype.toString.js: VM: warning: using undefined global `Error' ngs: evaluation of file `Error.prototype.toString.js' failed: Error.prototype.toString.js:6: illegal object for new
+es3/Function.prototype.apply.js: timeout
+es3/Function.prototype.call.js: ngs: evaluation of file `Function.prototype.call.js' failed:
+es3/Math.max.variadic.js: ngs: evaluation of file `Math.max.variadic.js' failed:
+es3/Math.min.variadic.js: ngs: evaluation of file `Math.min.variadic.js' failed:
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: ngs: evaluation of file `Number.prototype.toExponential.js' failed:
+es3/Number.prototype.toExponential.rounding.js: ngs: evaluation of file `Number.prototype.toExponential.rounding.js' failed:
+es3/Number.prototype.toExponential.throws-infinity.js: ngs: evaluation of file `Number.prototype.toExponential.throws-infinity.js' failed: Number.prototype.toExponential.throws-infinity.js:13: syntax error
+es3/Number.prototype.toFixed.js: ngs: evaluation of file `Number.prototype.toFixed.js' failed:
+es3/Number.prototype.toLocaleString.js: ngs: evaluation of file `Number.prototype.toLocaleString.js' failed:
+es3/Number.prototype.toPrecision.js: ngs: evaluation of file `Number.prototype.toPrecision.js' failed:
+es3/Object.prototype.hasOwnProperty.js: ngs: evaluation of file `Object.prototype.hasOwnProperty.js' failed:
+es3/Object.prototype.isPrototypeOf.js: ngs: evaluation of file `Object.prototype.isPrototypeOf.js' failed:
+es3/Object.prototype.propertyIsEnumerable.js: ngs: evaluation of file `Object.prototype.propertyIsEnumerable.js' failed:
+es3/Object.prototype.toLocaleString.js: ngs: evaluation of file `Object.prototype.toLocaleString.js' failed: Object.prototype.toLocaleString.js:26: syntax error
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: new RegExp failed; ngs: evaluation of file `RegExp.js' failed:
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: ngs: evaluation of file `RegExp.multiline.js' failed: RegExp.multiline.js:22: syntax error
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: index failed; input failed
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: format failed
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: ngs: evaluation of file `String.prototype.concat.generic.js' failed:
+es3/String.prototype.concat.js: ngs: evaluation of file `String.prototype.concat.js' failed:
+es3/String.prototype.localeCompare.js: ngs: evaluation of file `String.prototype.localeCompare.js' failed:
+es3/String.prototype.match.generic.js: ngs: evaluation of file `String.prototype.match.generic.js' failed:
+es3/String.prototype.match.js: non-global match failed; global match failed; ngs: evaluation of file `String.prototype.match.js' failed:
+es3/String.prototype.replace.capture.js: spec example failed; $nn 10 captures failed; $nn reverse order failed
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: ngs: evaluation of file `String.prototype.replace.generic.js' failed: String.prototype.replace.generic.js:9: syntax error
+es3/String.prototype.replace.regex.js: non-global regex replace failed; global regex replace failed
+es3/String.prototype.replace.str.js: ngs: evaluation of file `String.prototype.replace.str.js' failed:
+es3/String.prototype.search.generic.js: ngs: evaluation of file `String.prototype.search.generic.js' failed:
+es3/String.prototype.search.js: search for digits failed; ngs: evaluation of file `String.prototype.search.js' failed:
+es3/String.prototype.search.str.js: ngs: evaluation of file `String.prototype.search.str.js' failed:
+es3/String.prototype.slice.generic.js: ngs: evaluation of file `String.prototype.slice.generic.js' failed:
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: ngs: evaluation of file `String.prototype.split.bugs.js' failed:
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on whitespace failed; split by empty regex failed
+es3/String.prototype.toLocaleLowerCase.js: ngs: evaluation of file `String.prototype.toLocaleLowerCase.js' failed:
+es3/String.prototype.toLocaleUpperCase.js: ngs: evaluation of file `String.prototype.toLocaleUpperCase.js' failed:
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: ngs: evaluation of file `function-expressions.IIFE.js' failed: function-expressions.IIFE.js:8: syntax error
+es3/function-expressions.js: ngs: evaluation of file `function-expressions.js' failed: function-expressions.js:8: syntax error
+es3/global.EvalError.js: VM: warning: using undefined global `EvalError' constructor failed; VM: warning: using undefined global `EvalError' ngs: evaluation of file `global.EvalError.js' failed: global.EvalError.js:14: illegal object for load_property
+es3/global.RangeError.js: VM: warning: using undefined global `RangeError' constructor failed; VM: warning: using undefined global `RangeError' ngs: evaluation of file `global.RangeError.js' failed: global.RangeError.js:14: illegal object for load_property
+es3/global.RangeError.thrown.js: timeout
+es3/global.ReferenceError.js: VM: warning: using undefined global `ReferenceError' constructor failed; VM: warning: using undefined global `ReferenceError' ngs: evaluation of file `global.ReferenceError.js' failed: global.ReferenceError.js:14: illegal object for load_property
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: VM: warning: using undefined global `SyntaxError' constructor failed; VM: warning: using undefined global `SyntaxError' ngs: evaluation of file `global.SyntaxError.js' failed: global.SyntaxError.js:14: illegal object for load_property
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: VM: warning: using undefined global `TypeError' constructor failed; VM: warning: using undefined global `TypeError' ngs: evaluation of file `global.TypeError.js' failed: global.TypeError.js:14: illegal object for load_property
+es3/global.TypeError.thrown.js: ngs: evaluation of file `global.TypeError.thrown.js' failed: global.TypeError.thrown.js:11: syntax error
+es3/global.URIError.js: VM: warning: using undefined global `URIError' constructor failed; VM: warning: using undefined global `URIError' ngs: evaluation of file `global.URIError.js' failed: global.URIError.js:14: illegal object for load_property
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: ngs: evaluation of file `global.decodeURIComponent.js' failed:
+es3/global.decodeURI.js: ngs: evaluation of file `global.decodeURI.js' failed:
+es3/global.encodeURIComponent.js: ngs: evaluation of file `global.encodeURIComponent.js' failed:
+es3/global.encodeURI.js: ngs: evaluation of file `global.encodeURI.js' failed:
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: ngs: evaluation of file `identifiers.unicode.js' failed: identifiers.unicode.js:8: syntax error
+es3/instanceof.js: ngs: evaluation of file `instanceof.js' failed: instanceof.js:9: syntax error
+es3/in.js: ngs: evaluation of file `in.js' failed: in.js:10: syntax error
+es3/labelled.break.js: OK
+es3/labelled.continue.js: timeout
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: timeout
+es3/literals.array.js: timeout
+es3/literals.array.trailing-comma.js: timeout
+es3/literals.object.decimal.js: ngs: evaluation of file `literals.object.decimal.js' failed: literals.object.decimal.js:9: syntax error
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: double quoted property name failed; single quoted property name failed; mixed quoted property names failed
+es3/literals.object.unicode.js: ngs: evaluation of file `literals.object.unicode.js' failed: literals.object.unicode.js:9: syntax error
+es3/literals.regex.ambiguous.js: ngs: evaluation of file `literals.regex.ambiguous.js' failed: literals.regex.ambiguous.js:18: syntax error
+es3/literals.regex.empty.js: failed
+es3/literals.regex.js: failed
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: ngs: evaluation of file `nested-functions.eval.js' failed:
+es3/nested-functions.js: ngs: evaluation of file `nested-functions.js' failed:
+es3/regex.backref.js: backref for a group that hasn't captured failed
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: failed
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: dash after range failed
+es3/regex.class.esc-d.js: \d failed; \d+ failed; \D failed; \d in bracket failed; range with \d failed; \D in bracket failed
+es3/regex.class.esc-s.js: \s failed; \s+ failed; \S failed; \s in bracket failed; range with \s failed; \S in bracket failed
+es3/regex.class.esc-w.js: \w in bracket failed; range with \w failed; \W in bracket failed
+es3/regex.disjunction.js: a|ab failed; complex disjunction failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: \v failed
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: ngs: evaluation of file `regex.escape.js' failed:
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: global match failed; multiple matches failed
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: ngs: evaluation of file `regex.flag.multiline.js' failed: regex.flag.multiline.js:10: syntax error
+es3/regex.group.js: OK
+es3/regex.lookahead.js: ngs: evaluation of file `regex.lookahead.js' failed:
+es3/regex.negative-lookahead.js: ngs: evaluation of file `regex.negative-lookahead.js' failed:
+es3/regex.non-capturing-group.js: ngs: evaluation of file `regex.non-capturing-group.js' failed:
+es3/regex.quantifier.exact.js: ngs: evaluation of file `regex.quantifier.exact.js' failed:
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: ngs: evaluation of file `regex.quantifier.min.js' failed:
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: ngs: evaluation of file `regex.quantifier.range.js' failed:
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: ngs: evaluation of file `source.line-terminators.js' failed: source.line-terminators.js:12: syntax error
+es3/source.whitespace.js: ngs: evaluation of file `source.whitespace.js' failed: source.whitespace.js:12: syntax error
+es3/source.whitespace.unicode.js: ngs: evaluation of file `source.whitespace.unicode.js' failed: source.whitespace.unicode.js:8: syntax error
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function; ngs: evaluation of file `Array.isArray.js' failed:
+es5/Array.prototype.every.js: ngs: evaluation of file `Array.prototype.every.js' failed: Array.prototype.every.js:17: syntax error
+es5/Array.prototype.filter.js: ngs: evaluation of file `Array.prototype.filter.js' failed: Array.prototype.filter.js:17: syntax error
+es5/Array.prototype.forEach.js: ngs: evaluation of file `Array.prototype.forEach.js' failed: Array.prototype.forEach.js:18: syntax error
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function
+es5/Array.prototype.map.js: ngs: evaluation of file `Array.prototype.map.js' failed: Array.prototype.map.js:17: syntax error
+es5/Array.prototype.reduceRight.js: ngs: evaluation of file `Array.prototype.reduceRight.js' failed: Array.prototype.reduceRight.js:17: syntax error
+es5/Array.prototype.reduce.js: ngs: evaluation of file `Array.prototype.reduce.js' failed: Array.prototype.reduce.js:17: syntax error
+es5/Array.prototype.some.js: ngs: evaluation of file `Array.prototype.some.js' failed: Array.prototype.some.js:17: syntax error
+es5/Array.prototype.sort.TypeError.js: timeout
+es5/Array.prototype.sort.undefined-comparefn.js: timeout
+es5/Date.now.js: Date.now not a function; ngs: evaluation of file `Date.now.js' failed:
+es5/Date.prototype.toISOString.js: ngs: evaluation of file `Date.prototype.toISOString.js' failed: Date.prototype.toISOString.js:45: syntax error
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; ngs: evaluation of file `Date.prototype.toJSON.js' failed:
+es5/Function.prototype-not-enumerable.js: ngs: evaluation of file `Function.prototype-not-enumerable.js' failed: Function.prototype-not-enumerable.js:17: syntax error
+es5/Function.prototype.apply.array-like.js: ngs: evaluation of file `Function.prototype.apply.array-like.js' failed: Function.prototype.apply.array-like.js:15: syntax error
+es5/Function.prototype.bind.js: ngs: evaluation of file `Function.prototype.bind.js' failed: Function.prototype.bind.js:44: syntax error
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: ngs: evaluation of file `JSON.parse.js' failed: JSON.parse.js:73: syntax error
+es5/JSON.parse.reviver.js: ngs: evaluation of file `JSON.parse.reviver.js' failed: JSON.parse.reviver.js:12: syntax error
+es5/JSON.stringify.js: ngs: evaluation of file `JSON.stringify.js' failed: JSON.stringify.js:62: syntax error
+es5/JSON.stringify.replacer.js: ngs: evaluation of file `JSON.stringify.replacer.js' failed: JSON.stringify.replacer.js:12: syntax error
+es5/JSON.stringify.space.js: ngs: evaluation of file `JSON.stringify.space.js' failed:
+es5/Object.create.js: Object.create not a function; ngs: evaluation of file `Object.create.js' failed:
+es5/Object.defineProperties.js: Object.defineProperties not a function; ngs: evaluation of file `Object.defineProperties.js' failed:
+es5/Object.defineProperty.js: ngs: evaluation of file `Object.defineProperty.js' failed: Object.defineProperty.js:35: syntax error
+es5/Object.freeze.js: Object.freeze not a function; ngs: evaluation of file `Object.freeze.js' failed:
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; ngs: evaluation of file `Object.getOwnPropertyDescriptor.js' failed:
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; ngs: evaluation of file `Object.getOwnPropertyNames.js' failed:
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function; ngs: evaluation of file `Object.getPrototypeOf.js' failed:
+es5/Object.isExtensible.js: Object.isExtensible not a function; ngs: evaluation of file `Object.isExtensible.js' failed:
+es5/Object.isFrozen.js: Object.isFrozen not a function; ngs: evaluation of file `Object.isFrozen.js' failed:
+es5/Object.isSealed.js: Object.isSealed not a function; ngs: evaluation of file `Object.isSealed.js' failed:
+es5/Object.keys.js: Object.keys not a function; ngs: evaluation of file `Object.keys.js' failed:
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; ngs: evaluation of file `Object.preventExtensions.js' failed:
+es5/Object.property-shadowing.js: ngs: evaluation of file `Object.property-shadowing.js' failed:
+es5/Object.seal.js: Object.seal not a function; ngs: evaluation of file `Object.seal.js' failed:
+es5/String.indexing.js: 'foobar'[3] !== 'b'; test with variable failed; ngs: evaluation of file `String.indexing.js' failed:
+es5/String.prototype.trim.js: String.prototype.trim not a function; ngs: evaluation of file `String.prototype.trim.js' failed:
+es5/arguments.toStringTag.js: ngs: evaluation of file `arguments.toStringTag.js' failed: arguments.toStringTag.js:10: syntax error
+es5/debugger.js: ngs: evaluation of file `debugger.js' failed: debugger.js:7: syntax error
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
+es5/literals.object.getters.js: ngs: evaluation of file `literals.object.getters.js' failed: literals.object.getters.js:9: syntax error
+es5/literals.object.setters.js: ngs: evaluation of file `literals.object.setters.js' failed: literals.object.setters.js:10: syntax error
+es5/literals.object.trailing-comma.js: ngs: evaluation of file `literals.object.trailing-comma.js' failed: literals.object.trailing-comma.js:9: syntax error
+es5/source.keyword-properties.js: ngs: evaluation of file `source.keyword-properties.js' failed: source.keyword-properties.js:15: syntax error
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: ngs: evaluation of file `source.whitespace.bom.js' failed: source.whitespace.bom.js:1: syntax error
+es5/source.zero-width-chars.js: ngs: evaluation of file `source.zero-width-chars.js' failed: source.zero-width-chars.js:11: syntax error
+es5/strict.eval-cannot-create-bindings.js: ngs: evaluation of file `strict.eval-cannot-create-bindings.js' failed: strict.eval-cannot-create-bindings.js:14: syntax error
+es5/strict.function-expr-with-matching-name.js: ngs: evaluation of file `strict.function-expr-with-matching-name.js' failed: strict.function-expr-with-matching-name.js:8: syntax error
+es5/strict.js: ngs: evaluation of file `strict.js' failed: strict.js:10: syntax error
+es5/strict.no-arguments-callee.js: ngs: evaluation of file `strict.no-arguments-callee.js' failed: strict.no-arguments-callee.js:12: syntax error
+es5/strict.no-arguments-caller.js: ngs: evaluation of file `strict.no-arguments-caller.js' failed: strict.no-arguments-caller.js:12: syntax error
+es5/strict.no-assignment-to-non-writable.js: ngs: evaluation of file `strict.no-assignment-to-non-writable.js' failed: strict.no-assignment-to-non-writable.js:11: syntax error
+es5/strict.no-assignment-to-unresolvable.js: ngs: evaluation of file `strict.no-assignment-to-unresolvable.js' failed: strict.no-assignment-to-unresolvable.js:12: syntax error
+es5/strict.no-delete-bindings.js: ngs: evaluation of file `strict.no-delete-bindings.js' failed: strict.no-delete-bindings.js:12: syntax error
+es5/strict.no-delete-non-configurable.js: ngs: evaluation of file `strict.no-delete-non-configurable.js' failed: strict.no-delete-non-configurable.js:12: syntax error
+es5/strict.no-duplicate-parameters.js: ngs: evaluation of file `strict.no-duplicate-parameters.js' failed: strict.no-duplicate-parameters.js:13: syntax error
+es5/strict.no-eval-or-arguments-assignment.js: ngs: evaluation of file `strict.no-eval-or-arguments-assignment.js' failed: strict.no-eval-or-arguments-assignment.js:12: syntax error
+es5/strict.no-eval-or-arguments-bindings.js: ngs: evaluation of file `strict.no-eval-or-arguments-bindings.js' failed: strict.no-eval-or-arguments-bindings.js:21: syntax error
+es5/strict.no-function-caller-or-arguments.js: ngs: evaluation of file `strict.no-function-caller-or-arguments.js' failed: strict.no-function-caller-or-arguments.js:12: syntax error
+es5/strict.no-octal-literals.js: ngs: evaluation of file `strict.no-octal-literals.js' failed: strict.no-octal-literals.js:16: syntax error
+es5/strict.no-with.js: ngs: evaluation of file `strict.no-with.js' failed: strict.no-with.js:11: syntax error
+es5/strict.reserved-words.js: ngs: evaluation of file `strict.reserved-words.js' failed: strict.reserved-words.js:11: syntax error
+es5/strict.this-primitive-not-coerced-in-accessors.js: ngs: evaluation of file `strict.this-primitive-not-coerced-in-accessors.js' failed: strict.this-primitive-not-coerced-in-accessors.js:7: syntax error
+es5/strict.this-primitive-not-coerced.js: ngs: evaluation of file `strict.this-primitive-not-coerced.js' failed: strict.this-primitive-not-coerced.js:10: syntax error
+es5/strict.this-undefined-in-function.js: ngs: evaluation of file `strict.this-undefined-in-function.js' failed: strict.this-undefined-in-function.js:10: syntax error
+es5/strict.unmapped-arguments.js: ngs: evaluation of file `strict.unmapped-arguments.js' failed: strict.unmapped-arguments.js:12: syntax error
+es5/this.thrown-function.js: ngs: evaluation of file `this.thrown-function.js' failed: this.thrown-function.js:10: syntax error
