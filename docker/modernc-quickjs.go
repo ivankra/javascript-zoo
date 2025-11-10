@@ -1,4 +1,7 @@
-// Basic REPL shell / script runner, as there's no main() in the project.
+// Basic REPL and script runner for modernc.org/quickjs.
+//
+// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+// SPDX-License-Identifier: MIT
 
 //go:build ignore
 package main
@@ -22,17 +25,18 @@ func main() {
 	vm.StdAddHelpers()  // print, console.log bindings
 
 	if len(os.Args) > 1 {
-		filename := os.Args[1]
-		data, err := os.ReadFile(filename)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to read file %s: %v\n", filename, err)
-			os.Exit(1)
-		}
+		for _, filename := range os.Args[1:] {
+			data, err := os.ReadFile(filename)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Failed to read file %s: %v\n", filename, err)
+				os.Exit(1)
+			}
 
-		_, err = vm.Eval(string(data), quickjs.EvalGlobal)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-			os.Exit(1)
+			_, err = vm.Eval(string(data), quickjs.EvalGlobal)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				os.Exit(1)
+			}
 		}
 	} else {
 		scanner := bufio.NewScanner(os.Stdin)

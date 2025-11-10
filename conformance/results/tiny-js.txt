@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "d557c29d309d73087f452c1ea3ac7a0f211f14adc5c0259dc33884b426f1ea93", "binary_size": 133936, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123", "revision_date": "2025-10-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "a80cfbf558c57866e8b95e585dafba46e74b69e42d5b3508910d79a30bb73227", "binary_size": 133936, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123", "revision_date": "2025-10-21"}
 es1/Array.js: > es1/Array.js: Array.length failed ERROR: Error Got ID expected ')' at (line: 16, col: 11) at (line: 16, col: 9)
 es1/Array.length.assignment.js: > es1/Array.length.assignment.js: array index length update failed ERROR: Error Got INT expected ')' at (line: 20, col: 19) at (line: 20, col: 18)
 es1/Array.length.js: ERROR: Error Got INT expected ')' at (line: 15, col: 19) at (line: 15, col: 18)
@@ -107,7 +107,7 @@ es1/String.prototype.charCodeAt.js: > es1/String.prototype.charCodeAt.js: charCo
 es1/String.prototype.constructor.js: > es1/String.prototype.constructor.js: String.prototype.constructor failed ERROR: Error Got STRING expected ')' at (line: 14, col: 19) at (line: 14, col: 18)
 es1/String.prototype.indexOf.js: ERROR: Error Got INT expected ')' at (line: 27, col: 19) at (line: 27, col: 17)
 es1/String.prototype.lastIndexOf.js: ERROR: Error Expecting 'lastIndexOf' to be a function at (line: 9, col: 16)
-es1/String.prototype.split.js: failed
+es1/String.prototype.split.js: crashed (signal 6)
 es1/String.prototype.substring.js: ERROR: Error Got ')' expected EOF at (line: 10, col: 17) at (line: 10, col: 16)
 es1/String.prototype.toLowerCase.js: ERROR: Error Expecting 'toLowerCase' to be a function at (line: 9, col: 17)
 es1/String.prototype.toString.js: ERROR: Error Got STRING expected ')' at (line: 6, col: 19) at (line: 6, col: 18)

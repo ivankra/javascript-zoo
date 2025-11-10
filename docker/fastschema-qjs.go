@@ -1,5 +1,9 @@
-//go:build ignore
+// Basic REPL and script runner for fastschema/qjs.
+//
+// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+// SPDX-License-Identifier: MIT
 
+//go:build ignore
 package main
 
 import (
@@ -14,103 +18,72 @@ import (
 
 var strictMode bool
 
-func main() {
-	flag.BoolVar(&strictMode, "strict", false, "enable strict mode execution")
-	flag.Parse()
-
-	args := flag.Args()
-	if len(args) > 0 {
-		scriptFile := args[0]
-		if err := executeScript(scriptFile); err != nil {
-			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-			os.Exit(1)
-		}
-	} else {
-		if err := runREPL(); err != nil {
-			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-			os.Exit(1)
-		}
-	}
-}
-
-func executeScript(filename string) error {
-	content, err := os.ReadFile(filename)
-	if err != nil {
-		return fmt.Errorf("failed to read file %s: %w", filename, err)
-	}
-
-	rt, err := qjs.New()
-	if err != nil {
-		return fmt.Errorf("failed to create runtime: %w", err)
-	}
-	defer rt.Close()
-
-	ctx := rt.Context()
-
+func evalAndPrint(ctx *qjs.Context, name, code string) error {
 	var result *qjs.Value
+	var err error
 	if strictMode {
-		result, err = ctx.Eval(filename, qjs.Code(string(content)), qjs.FlagStrict())
+		result, err = ctx.Eval(name, qjs.Code(code), qjs.FlagStrict())
 	} else {
-		result, err = ctx.Eval(filename, qjs.Code(string(content)))
+		result, err = ctx.Eval(name, qjs.Code(code))
 	}
 	if err != nil {
-		return fmt.Errorf("execution error: %w", err)
+		return err
 	}
 	defer result.Free()
 
 	if !result.IsUndefined() {
 		fmt.Println(result.String())
 	}
-
 	return nil
 }
 
-func runREPL() error {
+func main() {
+	flag.BoolVar(&strictMode, "strict", false, "enable strict mode execution")
+	flag.Parse()
+
 	rt, err := qjs.New()
 	if err != nil {
-		return fmt.Errorf("failed to create runtime: %w", err)
+		fmt.Fprintf(os.Stderr, "Failed to create runtime: %v\n", err)
+		os.Exit(1)
 	}
 	defer rt.Close()
 
 	ctx := rt.Context()
-	scanner := bufio.NewScanner(os.Stdin)
-	lineNum := 0
 
-	for {
-		fmt.Print("qjs> ")
-		if !scanner.Scan() {
-			break
+	if len(flag.Args()) > 0 {
+		for _, filename := range flag.Args() {
+			data, err := os.ReadFile(filename)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Failed to read file %s: %v\n", filename, err)
+				os.Exit(1)
+			}
+
+			if err := evalAndPrint(ctx, filename, string(data)); err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				os.Exit(1)
+			}
+		}
+	} else {
+		scanner := bufio.NewScanner(os.Stdin)
+		for {
+			fmt.Print("> ")
+			if !scanner.Scan() {
+				break
+			}
+
+			line := strings.TrimSpace(scanner.Text())
+			if line == "" {
+				continue
+			}
+
+			if err := evalAndPrint(ctx, "<stdin>", line); err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+			}
 		}
 
-		line := scanner.Text()
-		line = strings.TrimSpace(line)
-
-		if line == "" {
-			continue
+		if err := scanner.Err(); err != nil {
+			fmt.Fprintf(os.Stderr, "Error reading input: %v\n", err)
+			os.Exit(1)
 		}
-
-		lineNum++
-		filename := fmt.Sprintf("<stdin:%d>", lineNum)
-
-		result, err := ctx.Eval(filename, qjs.Code(line))
-		if strictMode {
-			result, err = ctx.Eval(filename, qjs.Code(line), qjs.FlagStrict())
-		}
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-			continue
-		}
-
-		if !result.IsUndefined() {
-			fmt.Println(result.String())
-		}
-
-		result.Free()
 	}
-
-	if err := scanner.Err(); err != nil {
-		return fmt.Errorf("scanner error: %w", err)
-	}
-
-	return nil
 }

@@ -1508,7 +1508,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "2404e0326fa48b7d03fa3ca670d8b29c2cf5d61660ea7135a2532139b1f2429f",
+        "binary_sha256": "911b0bd16f0a73fd11757de2717b4d641782313716dc973dd227618c63730ca2",
         "binary_size": 6061344,
         "repository": "https://github.com/fastschema/qjs.git",
         "revision": "461716f4f380f81ffd09378751f1812919cddbca",
@@ -2572,7 +2572,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "dist_size": 97870,
+        "dist_size": 98013,
         "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
         "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
         "revision_date": "2025-02-27"
@@ -2592,7 +2592,7 @@ const jsz_engines = [
       "es3": 0.9595,
       "es5": 0.6892,
       "kangax-es5": 0.8107,
-      "kangax-es6": 0.0381,
+      "kangax-es6": 0.0286,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.08,
       "kangax-es2018": 0.0526,
@@ -3624,7 +3624,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6",
+        "binary_sha256": "41a2fd67b077256e8c5078e0827b102e211cf9c19bf2ec475cf6e43656664b26",
         "binary_size": 4619264,
         "repository": "https://gitlab.com/cznic/quickjs.git",
         "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78",
@@ -5507,7 +5507,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "dist_size": 50848,
+        "dist_size": 50882,
         "repository": "https://github.com/nyariv/SandboxJS.git",
         "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
         "revision_date": "2025-05-10",
@@ -5519,7 +5519,7 @@ const jsz_engines = [
       "es3": 0.7838,
       "es5": 0.3514,
       "kangax-es5": 0.5056,
-      "kangax-es6": 0.3351,
+      "kangax-es6": 0.3304,
       "kangax-es2016": 0.1061,
       "kangax-es2017": 0.32,
       "kangax-es2018": 0.393,
@@ -5586,8 +5586,8 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4",
-        "binary_size": 9437432,
+        "binary_sha256": "f1a29b60b91bcf36f3819b2e922522dd9767718ddcbeff53bc026d2de2f17ed1",
+        "binary_size": 9437752,
         "repository": "https://github.com/grafana/sobek.git",
         "revision": "d05c9166857d16f22e11d50f60bb63fff688f101",
         "revision_date": "2025-10-08"
@@ -6275,7 +6275,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "d557c29d309d73087f452c1ea3ac7a0f211f14adc5c0259dc33884b426f1ea93",
+        "binary_sha256": "a80cfbf558c57866e8b95e585dafba46e74b69e42d5b3508910d79a30bb73227",
         "binary_size": 133936,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/gfwilliams/tiny-js.git",
@@ -6284,7 +6284,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "4717715ecd70dab765d9f62155ac9c901b1c71df8b56f40b526e1e2d1e2b03ab",
+        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
         "binary_size": 727304,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/gfwilliams/tiny-js.git",
@@ -6986,8 +6986,8 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "arm64",
-        "binary_sha256": "359c8665a81e19a169f4421c97a97390cb9cf197a2f8394ecabf1005eded82d1",
-        "binary_size": 67808,
+        "binary_sha256": "eab0b08db7c7762f446690b622e659f06b99f67c736ffad63344b579513a3cfa",
+        "binary_size": 67784,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/yrm006/miniscript.git",
         "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",

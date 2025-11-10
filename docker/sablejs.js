@@ -24,15 +24,33 @@ function compileFile(scriptPath) {
 }
 
 if (process.argv.length < 3) {
-  console.error(`Usage: ${process.argv[1]} <script path>`);
+  console.error(`Usage: ${process.argv[1]} test.js ...`);
   process.exit(1);
 }
 
 const VM = require('./sablejs-dist/runtime')();
 const vm = new VM();
-const compiled = compileFile(process.argv[2]);
+
+const vGlobal = vm.getGlobal();
+const vConsole = vm.createObject();
+const vLog = vm.createFunction("log", function () {
+  var temp = [];
+  for (let i = 0; i < arguments.length; i++) {
+    temp.push(vm.asString(arguments[i]));
+  }
+
+  console.log(...temp);
+  return vm.createUndefined();
+});
+
+vm.setProperty(vConsole, "log", vLog);
+vm.setProperty(vGlobal, "console", vConsole);
+
 try {
-  vm.run(compiled, true);
+  for (let i = 2; i < process.argv.length; i++) {
+    const compiled = compileFile(process.argv[i]);
+    vm.run(compiled, true);
+  }
   vm.destroy();
 } catch (e) {
   console.log("" + e);

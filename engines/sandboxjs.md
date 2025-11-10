@@ -74,8 +74,8 @@ those will just trip against the whitelist.
 <li>ES5: 35%<br>
 </ul></details>
 
-<details><summary>compat-table: ES6 34%, ES2016+ 35%, Next 8%, Intl 71%</summary><ul>
-<li>ES6: 34%<br>
+<details><summary>compat-table: ES6 33%, ES2016+ 35%, Next 8%, Intl 71%</summary><ul>
+<li>ES6: 33%<br>
 <li>ES2016: 11%<br>
 <li>ES2017: 32%<br>
 <li>ES2018: 39%<br>

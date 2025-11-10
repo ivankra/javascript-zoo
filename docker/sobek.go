@@ -62,23 +62,13 @@ func newRandSource() sobek.RandSource {
 }
 
 func run() error {
-	filename := flag.Arg(0)
-	src, err := readSource(filename)
-	if err != nil {
-		return err
-	}
-
-	if filename == "" || filename == "-" {
-		filename = "<stdin>"
-	}
-
 	vm := sobek.New()
 	vm.SetRandSource(newRandSource())
 
 	//new(require.Registry).Enable(vm)
 	//console.Enable(vm)
 
-	vm.Set("print", func(call sobek.FunctionCall) sobek.Value {
+	printFunc := func(call sobek.FunctionCall) sobek.Value {
 		for i, arg := range call.Arguments {
 			if i > 0 {
 				fmt.Print(" ")
@@ -87,7 +77,13 @@ func run() error {
 		}
 		fmt.Println()
 		return sobek.Undefined()
-	})
+	}
+
+	vm.Set("print", printFunc)
+
+	console := vm.NewObject()
+	console.Set("log", printFunc)
+	vm.Set("console", console)
 
 	vm.Set("load", func(call sobek.FunctionCall) sobek.Value {
 		return load(vm, call)
@@ -101,12 +97,52 @@ func run() error {
 		return string(b), nil
 	})
 
-	prg, err := sobek.Compile(filename, string(src), false)
-	if err != nil {
-		return err
+	if flag.NArg() > 0 {
+		for i := 0; i < flag.NArg(); i++ {
+			filename := flag.Arg(i)
+			src, err := readSource(filename)
+			if err != nil {
+				return err
+			}
+
+			if filename == "" || filename == "-" {
+				filename = "<stdin>"
+			}
+
+			prg, err := sobek.Compile(filename, string(src), false)
+			if err != nil {
+				return err
+			}
+			_, err = vm.RunProgram(prg)
+			if err != nil {
+				return err
+			}
+		}
+	} else {
+		return runREPL(vm)
 	}
-	_, err = vm.RunProgram(prg)
-	return err
+	return nil
+}
+
+func runREPL(vm *sobek.Runtime) error {
+	var line string
+	for {
+		fmt.Print("> ")
+		if _, err := fmt.Scanln(&line); err != nil {
+			if err == io.EOF {
+				break
+			}
+			return err
+		}
+
+		val, err := vm.RunString(line)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		} else if val != nil && !sobek.IsUndefined(val) {
+			fmt.Println(val.String())
+		}
+	}
+	return nil
 }
 
 func main() {

@@ -33,7 +33,7 @@ JS_FILES=()
 ENGINE_CMD=("$@")
 
 # Collect *.js filenames from the end of arguments list
-while [[ ${#ENGINE_CMD[@]} > 0 ]]; do
+while [[ ${#ENGINE_CMD[@]} > 1 ]]; do
   arg="${ENGINE_CMD[-1]}"
 
   if [[ "$arg" == var-console-log.js ]]; then
@@ -76,7 +76,6 @@ if ! [[ -f "$ENGINE_BINARY" ]]; then
 fi
 
 ENGINE_JSON="${ENGINE_BINARY}.json"
-ls -l $ENGINE_JSON
 
 # Handle quirks of some engines:
 # - default flags for some
@@ -93,7 +92,7 @@ case "$ENGINE_NAME" in
     ENGINE_CMD+=(--script);;
   escargot|jerryscript|jsc|nashorn|xs|cesanta-v7)
     ENGINE_CMD+=("$SCRIPT_DIR/var-console-log.js");;
-  hermes|mocha|spidermonkey_[12]*|kjs|js-interpreter|sablejs|sobek|starlight|tiny-js|yrm006-miniscript)
+  hermes|mocha|spidermonkey_[12]*|kjs|starlight|yrm006-miniscript)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
   nova)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}" eval);;

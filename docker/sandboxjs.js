@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Basic shell for SandboxJS that can run a file script and do REPL.
+// Basic REPL and script runner for SandboxJS.
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
@@ -57,7 +57,7 @@ if (typeof scriptArgs === 'undefined') {
     scriptArgs.shift();
   }
   if (Array.isArray(scriptArgs) && scriptArgs.length > 0) {
-    const code = read(scriptArgs[0]);
+    const code = scriptArgs.map(function(arg) { return read(arg); }).join('\n');
     sandbox.compile(code)(scope).run();
     return;
   }

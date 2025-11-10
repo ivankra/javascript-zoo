@@ -20,7 +20,7 @@ Richards score ~45 on M4 (78000us/iter).
 
 <details><summary>ES1-ES5: 8%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/tiny-js.txt">Full log</a>.</li>
-<li>ES1: 12%<br>
+<li>ES1: 12%, <b>1 crash</b><br>
 <li>ES3: 5%<br>
 <li>ES5: 4%<br>
 </ul></details>
@@ -40,3 +40,5 @@ Richards score ~45 on M4 (78000us/iter).
 <li>Next: 0%<br>
 <li>Intl: 0%<br>
 </ul></details>
+
+💥 **1 crash during testing**

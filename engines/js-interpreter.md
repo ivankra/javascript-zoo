@@ -67,8 +67,8 @@ Sandboxed ES5 interpreter in JavaScript.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 4%, ES2016+ 4%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 4%<br>
+<details><summary>compat-table: ES6 3%, ES2016+ 4%, Next 0%, Intl 25%</summary><ul>
+<li>ES6: 3%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 8%<br>
 <li>ES2018: 5%<br>

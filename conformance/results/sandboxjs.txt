@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 50848, "engine": "sandboxjs", "repository": "https://github.com/nyariv/SandboxJS.git", "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e", "revision_date": "2025-05-10", "version": "0.8.24-1-13-gcd391a8"}
+Metadata: {"arch": "arm64", "dist_size": 50882, "engine": "sandboxjs", "repository": "https://github.com/nyariv/SandboxJS.git", "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e", "revision_date": "2025-05-10", "version": "0.8.24-1-13-gcd391a8"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -588,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: ReferenceError: global is not defined
-kangax-es6/Promise.race.js: OK
+kangax-es6/Promise.race.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: job is not defined
 kangax-es6/Proxy.Array.isArray.js: ReferenceError: e is not defined
 kangax-es6/Proxy.JSON.stringify.js: ReferenceError: e is not defined
 kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: e is not defined

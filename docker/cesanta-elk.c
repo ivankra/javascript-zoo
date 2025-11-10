@@ -105,5 +105,5 @@ int main(int argc, char *argv[]) {
     repl(js);
   }
 
-  return EXIT_SUCCESS;
+  return 0;
 }

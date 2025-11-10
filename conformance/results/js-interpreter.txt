@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 97870, "engine": "js-interpreter", "repository": "https://github.com/NeilFraser/JS-Interpreter.git", "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709", "revision_date": "2025-02-27"}
+Metadata: {"arch": "arm64", "dist_size": 98013, "engine": "js-interpreter", "repository": "https://github.com/NeilFraser/JS-Interpreter.git", "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709", "revision_date": "2025-02-27"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,7 +1103,7 @@ kangax-es6/super.property-access.js: SyntaxError: Unexpected token (10:8)
 kangax-es6/super.statement.js: SyntaxError: Unexpected token (11:8)
 kangax-es6/super.static-binding.js: SyntaxError: Unexpected token (10:8)
 kangax-es6/super.this-binding.js: SyntaxError: Unexpected token (10:8)
-kangax-es6/tail-calls.direct.js: OK
+kangax-es6/tail-calls.direct.js: timeout
 kangax-es6/tail-calls.mutual.js: timeout
 kangax-es6/template.basic.js: SyntaxError: Unexpected character '`' (11:7)
 kangax-es6/template.caching.js: SyntaxError: Unexpected character '`' (17:18)

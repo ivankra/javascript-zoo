@@ -10,7 +10,7 @@ index d48f859..f6edfd2 100644
  
  SOURCES=  \
 diff --git a/Script.cpp b/Script.cpp
-index a9d06d9..d86a62e 100755
+index a9d06d9..66feaed 100755
 --- a/Script.cpp
 +++ b/Script.cpp
 @@ -73,7 +73,7 @@ char *topOfStack;
@@ -22,28 +22,37 @@ index a9d06d9..d86a62e 100755
  {
  	char dummy;
  	topOfStack = &dummy;
-@@ -94,6 +94,20 @@ int main(int , char **)
+@@ -89,11 +89,29 @@ int main(int , char **)
+ //	registerMathFunctions(js);
+ 	/* Add a native function */
+ 	js->addNative("function print(text)", &js_print, 0);
++	js->addNative("function console.log(text)", &js_print, 0);
+ //  js->addNative("function dump()", &js_dump, js);
+ 	/* Execute out bit of code - we could call 'evaluate' here if
  		we wanted something returned */
  	js->setStackBase(topOfStack-(sizeOfStack-sizeOfSafeStack));
  	try {
 +if (argc >= 2) {
-+  FILE *fp = fopen(argv[1], "rb");
-+  size_t size = 0, cap = 4096, num;
-+  char *buf = (char *)malloc(cap);
-+  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
-+    if ((size += num) >= cap - 1) {
-+      buf = (char *)realloc(buf, cap *= 2);
++  for (int i = 1; i < argc; i++) {
++    FILE *fp = fopen(argv[i], "rb");
++    size_t size = 0, cap = 4096, num;
++    char *buf = (char *)malloc(cap);
++    while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
++      if ((size += num) >= cap - 1) {
++        buf = (char *)realloc(buf, cap *= 2);
++      }
 +    }
++    fclose(fp);
++    buf[size] = 0;
++    js->execute(buf);
++    free(buf);
 +  }
-+  fclose(fp);
-+  buf[size] = 0;
-+  js->execute(buf);
 +  exit(0);
 +}
  		js->execute("var lets_quit = 0; function quit() { lets_quit = 1; }");
  		js->execute("print(\"Interactive mode... Type quit(); to exit, or print(...); to print something, or dump() to dump the symbol table!\");");
  		js->execute("print(function () {print(\"gen\");yield 5;yield 6;}().next());", "yield-test.js");
-@@ -112,6 +126,7 @@ int main(int , char **)
+@@ -112,6 +130,7 @@ int main(int , char **)
  	} catch (CScriptException *e) {
  		printf("%s\n", e->toString().c_str());
  		delete e;
@@ -52,7 +61,7 @@ index a9d06d9..d86a62e 100755
  	int lineNumber = 0;
  	while (js->evaluate("lets_quit") == "0") {
 diff --git a/TinyJS.cpp b/TinyJS.cpp
-index 9cabbef..111898b 100755
+index 9cabbef..5be6a5c 100755
 --- a/TinyJS.cpp
 +++ b/TinyJS.cpp
 @@ -44,6 +44,8 @@

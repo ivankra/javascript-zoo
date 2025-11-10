@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Basic shell for JS-Interpreter that can run a file script and do REPL.
-// Tested with Node, JSC/V8/SpiderMonkey/GraalJS shells.
+// Basic REPL and script runner for js-interpreter.
+// Tested with Node and JSC/V8/SpiderMonkey/GraalJS shells.
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
@@ -64,13 +64,16 @@ if (typeof scriptArgs !== 'undefined') {
     scriptArgs.shift();
   }
   if (scriptArgs.length > 0) {
-    code = read(scriptArgs[0]);
+    code = scriptArgs.map(function(arg) { return read(arg); }).join('\n');
   }
 }
 
 var interpreter = new Interpreter(code, function(i, g) {
   var lastLine = null;
   i.setProperty(g, 'print', i.createNativeFunction(print));
+  var consoleObj = i.nativeToPseudo({});
+  i.setProperty(consoleObj, 'log', i.createNativeFunction(print));
+  i.setProperty(g, 'console', consoleObj);
   i.setProperty(g, '__prompt', i.createNativeFunction(function() {
     putstr('JS-Interpreter> ');
     var line = readline();

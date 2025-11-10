@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "359c8665a81e19a169f4421c97a97390cb9cf197a2f8394ecabf1005eded82d1", "binary_size": 67808, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "yrm006-miniscript", "repository": "https://github.com/yrm006/miniscript.git", "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d", "revision_date": "2018-08-29"}
+Metadata: {"arch": "arm64", "binary_sha256": "eab0b08db7c7762f446690b622e659f06b99f67c736ffad63344b579513a3cfa", "binary_size": 67784, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "yrm006-miniscript", "repository": "https://github.com/yrm006/miniscript.git", "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d", "revision_date": "2018-08-29"}
 es1/Array.js: crashed (signal 11)
 es1/Array.length.assignment.js: crashed (signal 11); array index length update failed; Error: not found.('else')
 es1/Array.length.js: empty array length failed; new Array(items) length failed; length auto-update failed; length > max index failed
@@ -107,7 +107,7 @@ es1/String.prototype.charCodeAt.js: Error: couldn't create.('charCodeAt')
 es1/String.prototype.constructor.js: Error: not found.('String')
 es1/String.prototype.indexOf.js: crashed (signal 11); Error: not found.('else')
 es1/String.prototype.lastIndexOf.js: Error: couldn't create.('lastIndexOf')
-es1/String.prototype.split.js: crashed (signal 11)
+es1/String.prototype.split.js: crashed (signal 11); Error: not found.('else')
 es1/String.prototype.substring.js: Error: couldn't create.('substring')
 es1/String.prototype.toLowerCase.js: Error: couldn't create.('toLowerCase')
 es1/String.prototype.toString.js: Error: not found.('String')
@@ -256,12 +256,12 @@ es3/String.prototype.replace.capture.js: Error: not found.('b')
 es3/String.prototype.replace.extra.js: Error: not found.('b')
 es3/String.prototype.replace.generic.js: Error: not found.('Object')
 es3/String.prototype.replace.regex.js: Error: not found.('\d')
-es3/String.prototype.replace.str.js: crashed (signal 11); basic string replace failed
+es3/String.prototype.replace.str.js: crashed (signal 11); basic string replace failed; Error: not found.('result2')
 es3/String.prototype.search.generic.js: Error: not found.('Number')
 es3/String.prototype.search.js: Error: not found.('world')
 es3/String.prototype.search.str.js: string with \\d+ pattern failed; string with \\w+ pattern failed; string with [0-9]+ pattern failed; string with \\s pattern failed; string with \\. pattern failed; Error: not found.('abc123def')
 es3/String.prototype.slice.generic.js: Error: not found.('Number')
-es3/String.prototype.slice.js: crashed (signal 11); slice with start and end failed; slice with start only failed; slice with negative start failed
+es3/String.prototype.slice.js: crashed (signal 11); slice with start and end failed; slice with start only failed; slice with negative start failed; slice with negative end failed
 es3/String.prototype.split.bugs.js: Error: not found.(''')
 es3/String.prototype.split.limit.js: crashed (signal 11)
 es3/String.prototype.split.regex.js: Error: not found.('\d')

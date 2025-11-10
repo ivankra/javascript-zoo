@@ -8,7 +8,7 @@
     * --wrapper="$SCRIPT_DIR/..."
     * --summary=
   * hub.Dockerfile; git clone ... /zoo; /dist -> zoo/dist/...
-  * js-interpreter sablejs sobek narcissus: add console.log() and multiple scripts command-line args
+  * narcissus: vendor-in, add console.log() and multiple scripts command-line args
   * hako: go embed wasm module, update to new repo
   * wasm builds + try different wasm runtime wazero wasmtime etc
   * static hermes
@@ -17,7 +17,6 @@
   * CI
     * rebuild nightly and/or tag push
     * make sure all dockerfiles point to master/lkgr-like
-    * don't rebuild if rev didn't change
     * update.py to gen github workflows
     * lightweight bench
     * profile builds - time/space, optimize

@@ -1,4 +1,7 @@
-// Small REPL shell based on code in readme.c
+// Basic REPL and script runner for yrm006/miniscript.
+//
+// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+// SPDX-License-Identifier: MIT
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,6 +61,34 @@ static void gf_print(Thread* p) {
     Stack_push(p->s);
 }
 
+static char *read_file(const char *path) {
+  FILE *fp = fopen(path, "rb");
+  if (!fp) return NULL;
+
+  size_t size = 0, cap = 4096, num;
+  char *buf = (char *)malloc(cap);
+  if (!buf) {
+    fclose(fp);
+    return NULL;
+  }
+
+  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
+    if ((size += num) >= cap - 1) {
+      char *newbuf = (char *)realloc(buf, cap *= 2);
+      if (!newbuf) {
+        free(buf);
+        fclose(fp);
+        return NULL;
+      }
+      buf = newbuf;
+    }
+  }
+  fclose(fp);
+  buf[size] = 0;
+
+  return buf;
+}
+
 int main(int argc, char** argv) {
     MyPool pool;
     Pool_global(Pool_(&pool.base, SIZE_POOL));
@@ -88,67 +119,29 @@ int main(int argc, char** argv) {
     int ret = 0;
 
     if (argc > 1) {
-        size_t total_size = 0;
-        size_t capacity = 4096;
-        char* buffer = malloc(capacity);
-
-        if (!buffer) {
-            fprintf(stderr, "Memory allocation failed\n");
-            ret = 1;
-            goto cleanup;
-        }
-
-        buffer[0] = '\0';
-
         for (int i = 1; i < argc; i++) {
-            FILE* f = fopen(argv[i], "rb");
-            if (!f) {
-                fprintf(stderr, "Failed to read file: %s\n", argv[i]);
-                free(buffer);
+            char* code = read_file(argv[i]);
+
+            if (!code) {
+                fprintf(stderr, "Error: Cannot read file '%s'\n", argv[i]);
                 ret = 1;
                 goto cleanup;
             }
 
-            fseek(f, 0, SEEK_END);
-            long fsize = ftell(f);
-            fseek(f, 0, SEEK_SET);
+            thread.c = code;
+            Error* e = Thread_run(&thread);
+            free(code);
 
-            while (total_size + fsize + 2 > capacity) {
-                capacity *= 2;
-                char* new_buffer = realloc(buffer, capacity);
-                if (!new_buffer) {
-                    fprintf(stderr, "Memory allocation failed\n");
-                    fclose(f);
-                    free(buffer);
-                    ret = 1;
-                    goto cleanup;
-                }
-                buffer = new_buffer;
+            if (e) {
+                char a[0x100];
+                size_t len = e->len < sizeof(a) - 1 ? e->len : sizeof(a) - 1;
+                strncpy(a, e->code, len);
+                a[len] = '\0';
+                fprintf(stderr, "Error: %s('%s')\n", e->reason, a);
+                ret = 1;
+                goto cleanup;
             }
-
-            if (total_size > 0) {
-                buffer[total_size++] = '\n';
-            }
-
-            fread(buffer + total_size, 1, fsize, f);
-            total_size += fsize;
-            buffer[total_size] = '\0';
-            fclose(f);
         }
-
-        thread.c = buffer;
-        Error* e = Thread_run(&thread);
-
-        if (e) {
-            char a[0x100];
-            size_t len = e->len < sizeof(a) - 1 ? e->len : sizeof(a) - 1;
-            strncpy(a, e->code, len);
-            a[len] = '\0';
-            printf("Error: %s('%s')\n", e->reason, a);
-            ret = 1;
-        }
-
-        free(buffer);
     } else {
         static char line[4096];
 

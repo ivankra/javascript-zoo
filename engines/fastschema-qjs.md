@@ -36,8 +36,8 @@ JavaScript in Go with QuickJS and Wazero.
 <a href="../conformance/kangax-es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../conformance/kangax-es6/rest-params.no-setter.js">rest-params.no-setter.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x40008e9660?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4000012960?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error:
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x40008e9840?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4000013c60?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error:
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 85%<pre>
@@ -56,7 +56,7 @@ JavaScript in Go with QuickJS and Wazero.
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: execution error: SyntaxError: unknown unicode script
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: SyntaxError: unknown unicode script
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
@@ -65,16 +65,16 @@ JavaScript in Go with QuickJS and Wazero.
 <li>ES2023: 100%</li>
 <li>ES2024: 80%<pre>
 <a href="../conformance/kangax-es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: failed
-<a href="../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: Error: execution error: SyntaxError: invalid class range
+<a href="../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: Error: SyntaxError: invalid class range
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 74%<pre>
-<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Error: execution error: SyntaxError: duplicate group name
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: Error: execution error: SyntaxError: invalid group
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: Error: execution error: SyntaxError: invalid group
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: Error: execution error: SyntaxError: invalid group
+<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Error: SyntaxError: duplicate group name
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: Error: SyntaxError: invalid group
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: Error: SyntaxError: invalid group
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: Error: SyntaxError: invalid group
 </pre></li>
 <li>Next: 0%<br>
 <li>Intl: 25%<br>

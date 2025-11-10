@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "9688460476c6396e63fd3baa0a3cfd32822533ab20a96f4fc567edcc946f60c4", "binary_size": 9437432, "engine": "sobek", "repository": "https://github.com/grafana/sobek.git", "revision": "d05c9166857d16f22e11d50f60bb63fff688f101", "revision_date": "2025-10-08"}
+Metadata: {"arch": "arm64", "binary_sha256": "f1a29b60b91bcf36f3819b2e922522dd9767718ddcbeff53bc026d2de2f17ed1", "binary_size": 9437752, "engine": "sobek", "repository": "https://github.com/grafana/sobek.git", "revision": "d05c9166857d16f22e11d50f60bb63fff688f101", "revision_date": "2025-10-08"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1507,6 +1507,6 @@ kangax-next/function.sent.js: SyntaxError: function.sent.js: Line 11:22 Unexpect
 kangax-next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js: Line 9:18 Unexpected token throw (and 1 more errors)
 kangax-next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js: Line 9:15 Unexpected token throw (and 3 more errors)
 kangax-next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js: Line 11:15 Unexpected token throw (and 3 more errors)
-kangax-next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js: Line 9:22 Unexpected token throw (and 42 more errors)
+kangax-next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js: Line 9:22 Unexpected token throw (and 41 more errors)
 kangax-next/using.for-of.js: SyntaxError: using.for-of.js: Line 22:16 Unexpected identifier (and 4 more errors)
 kangax-next/using.js: SyntaxError: using.js: Line 16:11 Unexpected identifier (and 2 more errors)

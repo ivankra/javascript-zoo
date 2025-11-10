@@ -1,31 +1,38 @@
 diff --git a/Script.cpp b/Script.cpp
-index 5145c12..2bb554d 100755
+index 5145c12..71a020e 100755
 --- a/Script.cpp
 +++ b/Script.cpp
-@@ -62,6 +62,22 @@ int main(int argc, char **argv)
+@@ -59,9 +59,29 @@ int main(int argc, char **argv)
+   /* Add a native function */
+   js->addNative("function print(text)", &js_print, 0);
+   js->addNative("function dump()", &js_dump, js);
++  js->addNative("function console.log(text)", &js_print, 0);
    /* Execute out bit of code - we could call 'evaluate' here if
       we wanted something returned */
    try {
 +// Script.cpp only implements a line-by-line REPL with 2k buffer.
 +// This snippet adds a proper file script runner with unlimited buffer.
 +if (argc >= 2) {
-+  FILE *fp = fopen(argv[1], "rb");
-+  size_t size = 0, cap = 4096, num;
-+  char *buf = (char *)malloc(cap);
-+  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
-+    if ((size += num) >= cap - 1) {
-+      buf = (char *)realloc(buf, cap *= 2);
++  for (int i = 1; i < argc; i++) {
++    FILE *fp = fopen(argv[i], "rb");
++    size_t size = 0, cap = 4096, num;
++    char *buf = (char *)malloc(cap);
++    while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
++      if ((size += num) >= cap - 1) {
++        buf = (char *)realloc(buf, cap *= 2);
++      }
 +    }
++    fclose(fp);
++    buf[size] = 0;
++    js->execute(buf);
++    free(buf);
 +  }
-+  fclose(fp);
-+  buf[size] = 0;
-+  js->execute(buf);
 +  exit(0);
 +}
      js->execute("var lets_quit = 0; function quit() { lets_quit = 1; }");
      js->execute("print(\"Interactive mode... Type quit(); to exit, or print(...); to print something, or dump() to dump the symbol table!\");");
    } catch (CScriptException *e) {
-@@ -70,7 +86,7 @@ int main(int argc, char **argv)
+@@ -70,7 +90,7 @@ int main(int argc, char **argv)
  
    while (js->evaluate("lets_quit") == "0") {
      char buffer[2048];
