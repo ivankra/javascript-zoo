@@ -32,12 +32,11 @@
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 95%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
-<li>ES6: 95%<pre>
+<details><summary>compat-table: ES6 96%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
+<li>ES6: 96%<pre>
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: InternalError: stack overflow
-<a href="../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: qux is not a function
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
@@ -49,7 +48,7 @@
 <a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: stack overflow
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 81%<pre>
+<li>ES2017: 83%<pre>
 <a href="../conformance/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: Atomics is not defined
@@ -62,7 +61,6 @@
 <a href="../conformance/kangax-es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: Atomics is not defined
-<a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>

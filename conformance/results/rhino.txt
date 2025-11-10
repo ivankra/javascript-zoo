@@ -517,12 +517,12 @@ kangax-es6/Array.prototype.values.js: OK
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
 kangax-es6/Function.name.accessor.js: failed
 kangax-es6/Function.name.bound.js: OK
-kangax-es6/Function.name.class-expression.js: "kangax-es6/Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/Function.name.class-object-method.js: "kangax-es6/Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/Function.name.class-prototype.js: "kangax-es6/Function.name.class-prototype.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/Function.name.class-statement.js: "kangax-es6/Function.name.class-statement.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/Function.name.class-static.js: "kangax-es6/Function.name.class-static.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/Function.name.class-variable.js: "kangax-es6/Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
+kangax-es6/Function.name.class-expression.js: "Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/Function.name.class-object-method.js: "Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/Function.name.class-prototype.js: "Function.name.class-prototype.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/Function.name.class-statement.js: "Function.name.class-statement.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/Function.name.class-static.js: "Function.name.class-static.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/Function.name.class-variable.js: "Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
 kangax-es6/Function.name.configurable.js: OK
 kangax-es6/Function.name.expression.js: OK
 kangax-es6/Function.name.new-Function.js: OK
@@ -629,7 +629,7 @@ kangax-es6/Reflect.construct.Function-subclassing.js: OK
 kangax-es6/Reflect.construct.Promise-subclassing.js: TypeError: The constructor for Promise may not be invoked as a function
 kangax-es6/Reflect.construct.RegExp-subclassing.js: failed
 kangax-es6/Reflect.construct.js: OK
-kangax-es6/Reflect.construct.new-target.js: "kangax-es6/Reflect.construct.new-target.js", line 11: syntax error "kangax-es6/Reflect.construct.new-target.js", line 12: syntax error "kangax-es6/Reflect.construct.new-target.js", line 14: syntax error "kangax-es6/Reflect.construct.new-target.js", line 1: Compilation produced 4 syntax errors.
+kangax-es6/Reflect.construct.new-target.js: "Reflect.construct.new-target.js", line 11: syntax error "Reflect.construct.new-target.js", line 12: syntax error "Reflect.construct.new-target.js", line 14: syntax error "Reflect.construct.new-target.js", line 1: Compilation produced 4 syntax errors.
 kangax-es6/Reflect.construct.third-argument.js: OK
 kangax-es6/Reflect.defineProperty.js: OK
 kangax-es6/Reflect.deleteProperty.js: OK
@@ -748,54 +748,54 @@ kangax-es6/arrow.1-param.js: OK
 kangax-es6/arrow.5-param.js: OK
 kangax-es6/arrow.bind.js: OK
 kangax-es6/arrow.lexical-arguments.js: OK
-kangax-es6/arrow.lexical-super.constructor.js: "kangax-es6/arrow.lexical-super.constructor.js", line 14: syntax error "kangax-es6/arrow.lexical-super.constructor.js", line 16: syntax error "kangax-es6/arrow.lexical-super.constructor.js", line 18: syntax error "kangax-es6/arrow.lexical-super.constructor.js", line 21: syntax error "kangax-es6/arro
-kangax-es6/arrow.lexical-super.methods.js: "kangax-es6/arrow.lexical-super.methods.js", line 11: syntax error "kangax-es6/arrow.lexical-super.methods.js", line 14: syntax error "kangax-es6/arrow.lexical-super.methods.js", line 16: syntax error "kangax-es6/arrow.lexical-super.methods.js", line 18: syntax error "kangax-es6/arrow.lexical-super.
+kangax-es6/arrow.lexical-super.constructor.js: "arrow.lexical-super.constructor.js", line 14: syntax error "arrow.lexical-super.constructor.js", line 16: syntax error "arrow.lexical-super.constructor.js", line 18: syntax error "arrow.lexical-super.constructor.js", line 21: syntax error "arrow.lexical-super.constructor.js", line 23: invalid retur
+kangax-es6/arrow.lexical-super.methods.js: "arrow.lexical-super.methods.js", line 11: syntax error "arrow.lexical-super.methods.js", line 14: syntax error "arrow.lexical-super.methods.js", line 16: syntax error "arrow.lexical-super.methods.js", line 18: syntax error "arrow.lexical-super.methods.js", line 21: invalid return "arrow.lexical-sup
 kangax-es6/arrow.lexical-this.js: OK
-kangax-es6/arrow.new-target.js: "kangax-es6/arrow.new-target.js", line 11: syntax error "kangax-es6/arrow.new-target.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/arrow.new-target.js: "arrow.new-target.js", line 11: syntax error "arrow.new-target.js", line 1: Compilation produced 2 syntax errors.
 kangax-es6/arrow.no-line-break.js: OK
 kangax-es6/arrow.no-prototype.js: OK
 kangax-es6/arrow.precedence.js: OK
 kangax-es6/arrow.this-call-apply.js: OK
-kangax-es6/class.accessor-properties.js: "kangax-es6/class.accessor-properties.js", line 13: syntax error "kangax-es6/class.accessor-properties.js", line 16: invalid return "kangax-es6/class.accessor-properties.js", line 17: syntax error "kangax-es6/class.accessor-properties.js", line 25: syntax error "kangax-es6/class.accessor-properties.
-kangax-es6/class.anonymous.js: "kangax-es6/class.anonymous.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/class.block-scoped.js: "kangax-es6/class.block-scoped.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/class.computed-accessor-properties.js: "kangax-es6/class.computed-accessor-properties.js", line 13: syntax error "kangax-es6/class.computed-accessor-properties.js", line 16: invalid return "kangax-es6/class.computed-accessor-properties.js", line 17: syntax error "kangax-es6/class.computed-accessor-properties.js", line 25: syntax error "k
-kangax-es6/class.computed-names-tdz.js: "kangax-es6/class.computed-names-tdz.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/class.computed-prototype-methods.js: "kangax-es6/class.computed-prototype-methods.js", line 13: syntax error "kangax-es6/class.computed-prototype-methods.js", line 16: syntax error "kangax-es6/class.computed-prototype-methods.js", line 24: syntax error "kangax-es6/class.computed-prototype-methods.js", line 25: syntax error   console.lo
-kangax-es6/class.computed-static-accessor-properties.js: "kangax-es6/class.computed-static-accessor-properties.js", line 13: syntax error "kangax-es6/class.computed-static-accessor-properties.js", line 16: invalid return "kangax-es6/class.computed-static-accessor-properties.js", line 17: syntax error "kangax-es6/class.computed-static-accessor-properties.j
-kangax-es6/class.computed-static-methods.js: "kangax-es6/class.computed-static-methods.js", line 13: syntax error "kangax-es6/class.computed-static-methods.js", line 16: syntax error "kangax-es6/class.computed-static-methods.js", line 24: syntax error "kangax-es6/class.computed-static-methods.js", line 25: syntax error   console.log("kangax-es
-kangax-es6/class.constructor-requires-new.js: "kangax-es6/class.constructor-requires-new.js", line 14: syntax error "kangax-es6/class.constructor-requires-new.js", line 17: syntax error "kangax-es6/class.constructor-requires-new.js", line 25: syntax error "kangax-es6/class.constructor-requires-new.js", line 26: syntax error   console.log("kanga
-kangax-es6/class.constructor.js: "kangax-es6/class.constructor.js", line 11: syntax error "kangax-es6/class.constructor.js", line 12: syntax error "kangax-es6/class.constructor.js", line 15: syntax error "kangax-es6/class.constructor.js", line 23: syntax error "kangax-es6/class.constructor.js", line 24: syntax error   console.log("
-kangax-es6/class.expression.js: "kangax-es6/class.expression.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/class.extends-expressions.js: "kangax-es6/class.extends-expressions.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/class.extends-null.js: "kangax-es6/class.extends-null.js", line 11: syntax error "kangax-es6/class.extends-null.js", line 12: syntax error "kangax-es6/class.extends-null.js", line 15: syntax error "kangax-es6/class.extends-null.js", line 23: syntax error "kangax-es6/class.extends-null.js", line 24: syntax error   console.
-kangax-es6/class.extends.js: "kangax-es6/class.extends.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/class.implicit-strict.js: "kangax-es6/class.implicit-strict.js", line 12: syntax error "kangax-es6/class.implicit-strict.js", line 14: syntax error "kangax-es6/class.implicit-strict.js", line 22: syntax error "kangax-es6/class.implicit-strict.js", line 23: syntax error   console.log("kangax-es6/class.implicit-strict.js: " + 
-kangax-es6/class.lexical-name.js: "kangax-es6/class.lexical-name.js", line 11: syntax error "kangax-es6/class.lexical-name.js", line 12: syntax error "kangax-es6/class.lexical-name.js", line 15: invalid return "kangax-es6/class.lexical-name.js", line 16: syntax error "kangax-es6/class.lexical-name.js", line 24: syntax error "kangax-
-kangax-es6/class.methods-not-enumerable.js: "kangax-es6/class.methods-not-enumerable.js", line 11: syntax error "kangax-es6/class.methods-not-enumerable.js", line 1: Compilation produced 3 syntax errors.
-kangax-es6/class.new-target.js: "kangax-es6/class.new-target.js", line 12: syntax error "kangax-es6/class.new-target.js", line 16: syntax error "kangax-es6/class.new-target.js", line 17: syntax error "kangax-es6/class.new-target.js", line 19: syntax error "kangax-es6/class.new-target.js", line 22: invalid return "kangax-es6/class.
-kangax-es6/class.optional-semicolons.js: "kangax-es6/class.optional-semicolons.js", line 13: syntax error "kangax-es6/class.optional-semicolons.js", line 14: syntax error "kangax-es6/class.optional-semicolons.js", line 15: syntax error "kangax-es6/class.optional-semicolons.js", line 19: syntax error "kangax-es6/class.optional-semicolons.js
-kangax-es6/class.prototype-methods.js: "kangax-es6/class.prototype-methods.js", line 11: syntax error "kangax-es6/class.prototype-methods.js", line 12: syntax error "kangax-es6/class.prototype-methods.js", line 15: syntax error "kangax-es6/class.prototype-methods.js", line 23: syntax error "kangax-es6/class.prototype-methods.js", line 24
-kangax-es6/class.statement.js: "kangax-es6/class.statement.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/class.static-accessor-properties.js: "kangax-es6/class.static-accessor-properties.js", line 13: syntax error "kangax-es6/class.static-accessor-properties.js", line 16: invalid return "kangax-es6/class.static-accessor-properties.js", line 17: syntax error "kangax-es6/class.static-accessor-properties.js", line 25: syntax error "kangax-es
-kangax-es6/class.static-methods.js: "kangax-es6/class.static-methods.js", line 12: syntax error "kangax-es6/class.static-methods.js", line 15: syntax error "kangax-es6/class.static-methods.js", line 23: syntax error "kangax-es6/class.static-methods.js", line 24: syntax error   console.log("kangax-es6/class.static-methods.js: " + e); "
-kangax-es6/class.string-keyed-methods.js: "kangax-es6/class.string-keyed-methods.js", line 11: syntax error "kangax-es6/class.string-keyed-methods.js", line 12: syntax error "kangax-es6/class.string-keyed-methods.js", line 15: syntax error "kangax-es6/class.string-keyed-methods.js", line 23: syntax error "kangax-es6/class.string-keyed-metho
+kangax-es6/class.accessor-properties.js: "class.accessor-properties.js", line 13: syntax error "class.accessor-properties.js", line 16: invalid return "class.accessor-properties.js", line 17: syntax error "class.accessor-properties.js", line 25: syntax error "class.accessor-properties.js", line 26: syntax error   console.log("kangax-es6/cl
+kangax-es6/class.anonymous.js: "class.anonymous.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/class.block-scoped.js: "class.block-scoped.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/class.computed-accessor-properties.js: "class.computed-accessor-properties.js", line 13: syntax error "class.computed-accessor-properties.js", line 16: invalid return "class.computed-accessor-properties.js", line 17: syntax error "class.computed-accessor-properties.js", line 25: syntax error "class.computed-accessor-properties.js", line 
+kangax-es6/class.computed-names-tdz.js: "class.computed-names-tdz.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/class.computed-prototype-methods.js: "class.computed-prototype-methods.js", line 13: syntax error "class.computed-prototype-methods.js", line 16: syntax error "class.computed-prototype-methods.js", line 24: syntax error "class.computed-prototype-methods.js", line 25: syntax error   console.log("kangax-es6/class.computed-prototype-metho
+kangax-es6/class.computed-static-accessor-properties.js: "class.computed-static-accessor-properties.js", line 13: syntax error "class.computed-static-accessor-properties.js", line 16: invalid return "class.computed-static-accessor-properties.js", line 17: syntax error "class.computed-static-accessor-properties.js", line 25: syntax error "class.computed-st
+kangax-es6/class.computed-static-methods.js: "class.computed-static-methods.js", line 13: syntax error "class.computed-static-methods.js", line 16: syntax error "class.computed-static-methods.js", line 24: syntax error "class.computed-static-methods.js", line 25: syntax error   console.log("kangax-es6/class.computed-static-methods.js: " + e); 
+kangax-es6/class.constructor-requires-new.js: "class.constructor-requires-new.js", line 14: syntax error "class.constructor-requires-new.js", line 17: syntax error "class.constructor-requires-new.js", line 25: syntax error "class.constructor-requires-new.js", line 26: syntax error   console.log("kangax-es6/class.constructor-requires-new.js: " +
+kangax-es6/class.constructor.js: "class.constructor.js", line 11: syntax error "class.constructor.js", line 12: syntax error "class.constructor.js", line 15: syntax error "class.constructor.js", line 23: syntax error "class.constructor.js", line 24: syntax error   console.log("kangax-es6/class.constructor.js: " + e); "class.constru
+kangax-es6/class.expression.js: "class.expression.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/class.extends-expressions.js: "class.extends-expressions.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/class.extends-null.js: "class.extends-null.js", line 11: syntax error "class.extends-null.js", line 12: syntax error "class.extends-null.js", line 15: syntax error "class.extends-null.js", line 23: syntax error "class.extends-null.js", line 24: syntax error   console.log("kangax-es6/class.extends-null.js: " + e); "class.e
+kangax-es6/class.extends.js: "class.extends.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/class.implicit-strict.js: "class.implicit-strict.js", line 12: syntax error "class.implicit-strict.js", line 14: syntax error "class.implicit-strict.js", line 22: syntax error "class.implicit-strict.js", line 23: syntax error   console.log("kangax-es6/class.implicit-strict.js: " + e); "class.implicit-strict.js", line 24: syn
+kangax-es6/class.lexical-name.js: "class.lexical-name.js", line 11: syntax error "class.lexical-name.js", line 12: syntax error "class.lexical-name.js", line 15: invalid return "class.lexical-name.js", line 16: syntax error "class.lexical-name.js", line 24: syntax error "class.lexical-name.js", line 25: syntax error   console.log("k
+kangax-es6/class.methods-not-enumerable.js: "class.methods-not-enumerable.js", line 11: syntax error "class.methods-not-enumerable.js", line 1: Compilation produced 3 syntax errors.
+kangax-es6/class.new-target.js: "class.new-target.js", line 12: syntax error "class.new-target.js", line 16: syntax error "class.new-target.js", line 17: syntax error "class.new-target.js", line 19: syntax error "class.new-target.js", line 22: invalid return "class.new-target.js", line 23: syntax error "class.new-target.js", line 
+kangax-es6/class.optional-semicolons.js: "class.optional-semicolons.js", line 13: syntax error "class.optional-semicolons.js", line 14: syntax error "class.optional-semicolons.js", line 15: syntax error "class.optional-semicolons.js", line 19: syntax error "class.optional-semicolons.js", line 27: syntax error "class.optional-semicolons.js"
+kangax-es6/class.prototype-methods.js: "class.prototype-methods.js", line 11: syntax error "class.prototype-methods.js", line 12: syntax error "class.prototype-methods.js", line 15: syntax error "class.prototype-methods.js", line 23: syntax error "class.prototype-methods.js", line 24: syntax error   console.log("kangax-es6/class.prototyp
+kangax-es6/class.statement.js: "class.statement.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/class.static-accessor-properties.js: "class.static-accessor-properties.js", line 13: syntax error "class.static-accessor-properties.js", line 16: invalid return "class.static-accessor-properties.js", line 17: syntax error "class.static-accessor-properties.js", line 25: syntax error "class.static-accessor-properties.js", line 26: syntax
+kangax-es6/class.static-methods.js: "class.static-methods.js", line 12: syntax error "class.static-methods.js", line 15: syntax error "class.static-methods.js", line 23: syntax error "class.static-methods.js", line 24: syntax error   console.log("kangax-es6/class.static-methods.js: " + e); "class.static-methods.js", line 25: syntax er
+kangax-es6/class.string-keyed-methods.js: "class.string-keyed-methods.js", line 11: syntax error "class.string-keyed-methods.js", line 12: syntax error "class.string-keyed-methods.js", line 15: syntax error "class.string-keyed-methods.js", line 23: syntax error "class.string-keyed-methods.js", line 24: syntax error   console.log("kangax-es6
 kangax-es6/const.basic.js: OK
-kangax-es6/const.block-scoped.js: "kangax-es6/const.block-scoped.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/const.for-in.js: "kangax-es6/const.for-in.js", line 11: syntax error "kangax-es6/const.for-in.js", line 12: syntax error "kangax-es6/const.for-in.js", line 13: syntax error "kangax-es6/const.for-in.js", line 15: syntax error "kangax-es6/const.for-in.js", line 23: syntax error "kangax-es6/const.for-in.js", line 24: s
-kangax-es6/const.for-loop.js: "kangax-es6/const.for-loop.js", line 11: syntax error "kangax-es6/const.for-loop.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/const.for-of.js: "kangax-es6/const.for-of.js", line 11: syntax error "kangax-es6/const.for-of.js", line 12: syntax error "kangax-es6/const.for-of.js", line 13: syntax error "kangax-es6/const.for-of.js", line 15: syntax error "kangax-es6/const.for-of.js", line 23: syntax error "kangax-es6/const.for-of.js", line 24: s
+kangax-es6/const.block-scoped.js: "const.block-scoped.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/const.for-in.js: "const.for-in.js", line 11: syntax error "const.for-in.js", line 12: syntax error "const.for-in.js", line 13: syntax error "const.for-in.js", line 15: syntax error "const.for-in.js", line 23: syntax error "const.for-in.js", line 24: syntax error   console.log("kangax-es6/const.for-in.js: " + e); "co
+kangax-es6/const.for-loop.js: "const.for-loop.js", line 11: syntax error "const.for-loop.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/const.for-of.js: "const.for-of.js", line 11: syntax error "const.for-of.js", line 12: syntax error "const.for-of.js", line 13: syntax error "const.for-of.js", line 15: syntax error "const.for-of.js", line 23: syntax error "const.for-of.js", line 24: syntax error   console.log("kangax-es6/const.for-of.js: " + e); "co
 kangax-es6/const.no-redefine.js: failed
 kangax-es6/const.no-statement.js: failed
-kangax-es6/const.shadow.js: "kangax-es6/const.shadow.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/const.shadow.js: "const.shadow.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/const.strict.basic.js: OK
-kangax-es6/const.strict.block-scoped.js: "kangax-es6/const.strict.block-scoped.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/const.strict.for-in.js: "kangax-es6/const.strict.for-in.js", line 12: syntax error "kangax-es6/const.strict.for-in.js", line 13: syntax error "kangax-es6/const.strict.for-in.js", line 14: syntax error "kangax-es6/const.strict.for-in.js", line 16: syntax error "kangax-es6/const.strict.for-in.js", line 24: syntax error "kang
-kangax-es6/const.strict.for-loop.js: "kangax-es6/const.strict.for-loop.js", line 12: syntax error "kangax-es6/const.strict.for-loop.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/const.strict.for-of.js: "kangax-es6/const.strict.for-of.js", line 12: syntax error "kangax-es6/const.strict.for-of.js", line 13: syntax error "kangax-es6/const.strict.for-of.js", line 14: syntax error "kangax-es6/const.strict.for-of.js", line 16: syntax error "kangax-es6/const.strict.for-of.js", line 24: syntax error "kang
+kangax-es6/const.strict.block-scoped.js: "const.strict.block-scoped.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/const.strict.for-in.js: "const.strict.for-in.js", line 12: syntax error "const.strict.for-in.js", line 13: syntax error "const.strict.for-in.js", line 14: syntax error "const.strict.for-in.js", line 16: syntax error "const.strict.for-in.js", line 24: syntax error "const.strict.for-in.js", line 25: syntax error   console.lo
+kangax-es6/const.strict.for-loop.js: "const.strict.for-loop.js", line 12: syntax error "const.strict.for-loop.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/const.strict.for-of.js: "const.strict.for-of.js", line 12: syntax error "const.strict.for-of.js", line 13: syntax error "const.strict.for-of.js", line 14: syntax error "const.strict.for-of.js", line 16: syntax error "const.strict.for-of.js", line 24: syntax error "const.strict.for-of.js", line 25: syntax error   console.lo
 kangax-es6/const.strict.no-redefine.js: failed
 kangax-es6/const.strict.no-statement.js: failed
-kangax-es6/const.strict.shadow.js: "kangax-es6/const.strict.shadow.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/const.strict.shadow.js: "const.strict.shadow.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/const.strict.tdz.js: failed
 kangax-es6/const.tdz.js: failed
 kangax-es6/default-params.arguments.js: OK
@@ -809,7 +809,7 @@ kangax-es6/destructuring-assign.array.js: OK
 kangax-es6/destructuring-assign.astral-string.js: failed
 kangax-es6/destructuring-assign.chained-iterable.js: OK
 kangax-es6/destructuring-assign.chained-object.js: OK
-kangax-es6/destructuring-assign.computed-properties.js: "kangax-es6/destructuring-assign.computed-properties.js", line 11: Unsupported computed property in destructuring. "kangax-es6/destructuring-assign.computed-properties.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-assign.computed-properties.js: "destructuring-assign.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-assign.computed-properties.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/destructuring-assign.defaults.js: OK
 kangax-es6/destructuring-assign.empty-patterns.js: OK
 kangax-es6/destructuring-assign.generator.js: failed
@@ -817,13 +817,13 @@ kangax-es6/destructuring-assign.iterable-expression.js: OK
 kangax-es6/destructuring-assign.iterable-instance.js: failed
 kangax-es6/destructuring-assign.iterable.js: failed
 kangax-es6/destructuring-assign.iterator-closing.js: failed
-kangax-es6/destructuring-assign.nested-rest.js: "kangax-es6/destructuring-assign.nested-rest.js", line 11: syntax error "kangax-es6/destructuring-assign.nested-rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-assign.nested-rest.js: "destructuring-assign.nested-rest.js", line 11: syntax error "destructuring-assign.nested-rest.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/destructuring-assign.nested.js: OK
 kangax-es6/destructuring-assign.object-expression.js: OK
 kangax-es6/destructuring-assign.object-primitives.js: OK
 kangax-es6/destructuring-assign.object.js: OK
 kangax-es6/destructuring-assign.parenthesised-error.js: failed
-kangax-es6/destructuring-assign.rest.js: "kangax-es6/destructuring-assign.rest.js", line 11: syntax error "kangax-es6/destructuring-assign.rest.js", line 12: syntax error "kangax-es6/destructuring-assign.rest.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/destructuring-assign.rest.js: "destructuring-assign.rest.js", line 11: syntax error "destructuring-assign.rest.js", line 12: syntax error "destructuring-assign.rest.js", line 1: Compilation produced 2 syntax errors.
 kangax-es6/destructuring-assign.sparse-array.js: OK
 kangax-es6/destructuring-assign.string.js: OK
 kangax-es6/destructuring-assign.throws-null-undefined.js: OK
@@ -831,11 +831,11 @@ kangax-es6/destructuring-assign.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-assign.trailing-comma-object.js: OK
 kangax-es6/destructuring-decl.array.js: OK
 kangax-es6/destructuring-decl.astral-string.js: failed
-kangax-es6/destructuring-decl.catch.js: "kangax-es6/destructuring-decl.catch.js", line 12: invalid catch block condition "kangax-es6/destructuring-decl.catch.js", line 15: syntax error "kangax-es6/destructuring-decl.catch.js", line 18: syntax error "kangax-es6/destructuring-decl.catch.js", line 1: Compilation produced 3 syntax errors.
-kangax-es6/destructuring-decl.computed-properties.js: "kangax-es6/destructuring-decl.computed-properties.js", line 11: Unsupported computed property in destructuring. "kangax-es6/destructuring-decl.computed-properties.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-decl.catch.js: "destructuring-decl.catch.js", line 12: invalid catch block condition "destructuring-decl.catch.js", line 15: syntax error "destructuring-decl.catch.js", line 18: syntax error "destructuring-decl.catch.js", line 1: Compilation produced 3 syntax errors.
+kangax-es6/destructuring-decl.computed-properties.js: "destructuring-decl.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-decl.computed-properties.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/destructuring-decl.defaults-tdz.js: failed
 kangax-es6/destructuring-decl.defaults.js: OK
-kangax-es6/destructuring-decl.for-in.js: "kangax-es6/destructuring-decl.for-in.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-decl.for-in.js: "destructuring-decl.for-in.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/destructuring-decl.for-of.js: OK
 kangax-es6/destructuring-decl.generator.js: failed
 kangax-es6/destructuring-decl.iterable-instance.js: failed
@@ -845,7 +845,7 @@ kangax-es6/destructuring-decl.multiple-var.js: OK
 kangax-es6/destructuring-decl.nested.js: OK
 kangax-es6/destructuring-decl.object-primitives.js: OK
 kangax-es6/destructuring-decl.object.js: OK
-kangax-es6/destructuring-decl.rest.js: "kangax-es6/destructuring-decl.rest.js", line 10: syntax error "kangax-es6/destructuring-decl.rest.js", line 11: syntax error "kangax-es6/destructuring-decl.rest.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/destructuring-decl.rest.js: "destructuring-decl.rest.js", line 10: syntax error "destructuring-decl.rest.js", line 11: syntax error "destructuring-decl.rest.js", line 1: Compilation produced 2 syntax errors.
 kangax-es6/destructuring-decl.sparse-array.js: OK
 kangax-es6/destructuring-decl.string.js: OK
 kangax-es6/destructuring-decl.throws-null-undefined.js: OK
@@ -855,7 +855,7 @@ kangax-es6/destructuring-params.aliased-defaults-arrow.js: OK
 kangax-es6/destructuring-params.arguments.js: OK
 kangax-es6/destructuring-params.array.js: OK
 kangax-es6/destructuring-params.astral-string.js: failed
-kangax-es6/destructuring-params.computed-properties.js: "kangax-es6/destructuring-params.computed-properties.js", line 11: Unsupported computed property in destructuring. "kangax-es6/destructuring-params.computed-properties.js", line 14: syntax error "kangax-es6/destructuring-params.computed-properties.js", line 22: syntax error "kangax-es6/destructuring
+kangax-es6/destructuring-params.computed-properties.js: "destructuring-params.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-params.computed-properties.js", line 14: syntax error "destructuring-params.computed-properties.js", line 22: syntax error "destructuring-params.computed-properties.js", line 23: sy
 kangax-es6/destructuring-params.defaults-new-function.js: OK
 kangax-es6/destructuring-params.defaults-separate-scope.js: failed
 kangax-es6/destructuring-params.defaults.js: OK
@@ -870,8 +870,8 @@ kangax-es6/destructuring-params.nested.js: OK
 kangax-es6/destructuring-params.new-function.js: OK
 kangax-es6/destructuring-params.object-primitives.js: OK
 kangax-es6/destructuring-params.object.js: OK
-kangax-es6/destructuring-params.rest.js: "kangax-es6/destructuring-params.rest.js", line 10: syntax error "kangax-es6/destructuring-params.rest.js", line 14: syntax error "kangax-es6/destructuring-params.rest.js", line 22: syntax error "kangax-es6/destructuring-params.rest.js", line 23: syntax error   console.log("kangax-es6/destructuring-
-kangax-es6/destructuring-params.shorthand-defaults-arrow.js: "kangax-es6/destructuring-params.shorthand-defaults-arrow.js", line 10: syntax error "kangax-es6/destructuring-params.shorthand-defaults-arrow.js", line 12: syntax error "kangax-es6/destructuring-params.shorthand-defaults-arrow.js", line 13: syntax error "kangax-es6/destructuring-params.shorthand-de
+kangax-es6/destructuring-params.rest.js: "destructuring-params.rest.js", line 10: syntax error "destructuring-params.rest.js", line 14: syntax error "destructuring-params.rest.js", line 22: syntax error "destructuring-params.rest.js", line 23: syntax error   console.log("kangax-es6/destructuring-params.rest.js: " + e); "destructuring-param
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: "destructuring-params.shorthand-defaults-arrow.js", line 10: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 12: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 13: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 21: syntax error "des
 kangax-es6/destructuring-params.sparse-array.js: OK
 kangax-es6/destructuring-params.string.js: OK
 kangax-es6/destructuring-params.throws-null-undefined.js: OK
@@ -894,12 +894,12 @@ kangax-es6/generators.no-new-this.js: failed
 kangax-es6/generators.prototype-chain.js: TypeError: Cannot call method "hasOwnProperty" of null
 kangax-es6/generators.prototype.js: failed
 kangax-es6/generators.return.js: failed
-kangax-es6/generators.sending.js: "kangax-es6/generators.sending.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/generators.shorthand.class.js: "kangax-es6/generators.shorthand.class.js", line 14: syntax error "kangax-es6/generators.shorthand.class.js", line 22: invalid return "kangax-es6/generators.shorthand.class.js", line 23: syntax error "kangax-es6/generators.shorthand.class.js", line 31: syntax error "kangax-es6/generators.shorthand.c
-kangax-es6/generators.shorthand.computed.class.js: "kangax-es6/generators.shorthand.computed.class.js", line 15: syntax error "kangax-es6/generators.shorthand.computed.class.js", line 23: invalid return "kangax-es6/generators.shorthand.computed.class.js", line 24: syntax error "kangax-es6/generators.shorthand.computed.class.js", line 32: syntax erro
+kangax-es6/generators.sending.js: "generators.sending.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/generators.shorthand.class.js: "generators.shorthand.class.js", line 14: syntax error "generators.shorthand.class.js", line 22: invalid return "generators.shorthand.class.js", line 23: syntax error "generators.shorthand.class.js", line 31: syntax error "generators.shorthand.class.js", line 32: syntax error   console.log("kangax-e
+kangax-es6/generators.shorthand.computed.class.js: "generators.shorthand.computed.class.js", line 15: syntax error "generators.shorthand.computed.class.js", line 23: invalid return "generators.shorthand.computed.class.js", line 24: syntax error "generators.shorthand.computed.class.js", line 32: syntax error "generators.shorthand.computed.class.js", 
 kangax-es6/generators.shorthand.computed.js: OK
 kangax-es6/generators.shorthand.js: OK
-kangax-es6/generators.shorthand.no-constructor.js: "kangax-es6/generators.shorthand.no-constructor.js", line 14: syntax error "kangax-es6/generators.shorthand.no-constructor.js", line 18: invalid return "kangax-es6/generators.shorthand.no-constructor.js", line 20: syntax error "kangax-es6/generators.shorthand.no-constructor.js", line 28: syntax erro
+kangax-es6/generators.shorthand.no-constructor.js: "generators.shorthand.no-constructor.js", line 14: syntax error "generators.shorthand.no-constructor.js", line 18: invalid return "generators.shorthand.no-constructor.js", line 20: syntax error "generators.shorthand.no-constructor.js", line 28: syntax error "generators.shorthand.no-constructor.js", 
 kangax-es6/generators.shorthand.string-keyed.js: OK
 kangax-es6/generators.this.js: OK
 kangax-es6/generators.throw.js: OK
@@ -971,7 +971,7 @@ kangax-es6/misc.Proxy.get.Array.reverse.js: failed
 kangax-es6/misc.Proxy.get.Array.shift.js: OK
 kangax-es6/misc.Proxy.get.Array.splice.js: failed
 kangax-es6/misc.Proxy.get.Array.toString.js: failed
-kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: "kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: "misc.Proxy.get.ClassDefinitionEvaluation.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: failed
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 kangax-es6/misc.Proxy.get.Date.toJSON.js: failed
@@ -1017,12 +1017,12 @@ kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
 kangax-es6/misc.accessors-no-constructor.js: failed
 kangax-es6/misc.bound-function-prototype.arrow.js: failed
-kangax-es6/misc.bound-function-prototype.class.js: "kangax-es6/misc.bound-function-prototype.class.js", line 12: syntax error "kangax-es6/misc.bound-function-prototype.class.js", line 13: syntax error "kangax-es6/misc.bound-function-prototype.class.js", line 14: syntax error "kangax-es6/misc.bound-function-prototype.class.js", line 17: invalid retur
+kangax-es6/misc.bound-function-prototype.class.js: "misc.bound-function-prototype.class.js", line 12: syntax error "misc.bound-function-prototype.class.js", line 13: syntax error "misc.bound-function-prototype.class.js", line 14: syntax error "misc.bound-function-prototype.class.js", line 17: invalid return "misc.bound-function-prototype.class.js", 
 kangax-es6/misc.bound-function-prototype.function.js: failed
 kangax-es6/misc.bound-function-prototype.generator.js: failed
-kangax-es6/misc.bound-function-prototype.subclass.js: "kangax-es6/misc.bound-function-prototype.subclass.js", line 11: syntax error "kangax-es6/misc.bound-function-prototype.subclass.js", line 16: invalid return "kangax-es6/misc.bound-function-prototype.subclass.js", line 17: syntax error "kangax-es6/misc.bound-function-prototype.subclass.js", line 21:
+kangax-es6/misc.bound-function-prototype.subclass.js: "misc.bound-function-prototype.subclass.js", line 11: syntax error "misc.bound-function-prototype.subclass.js", line 16: invalid return "misc.bound-function-prototype.subclass.js", line 17: syntax error "misc.bound-function-prototype.subclass.js", line 21: syntax error "misc.bound-function-prototype
 kangax-es6/misc.do-while-no-semicolon.js: OK
-kangax-es6/misc.duplicate-properties-strict.js: "kangax-es6/misc.duplicate-properties-strict.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/misc.duplicate-properties-strict.js: "misc.duplicate-properties-strict.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/misc.for-in-no-assignment-strict.js: failed
 kangax-es6/misc.function-length-configurable.js: failed
 kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
@@ -1036,12 +1036,12 @@ kangax-es6/misc.property-order.Object.keys.js: OK
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: OK
 kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 kangax-es6/misc.prototypes-not-instances.js: failed
-kangax-es6/new-target.assignment-error.js: "kangax-es6/new-target.assignment-error.js", line 12: syntax error "kangax-es6/new-target.assignment-error.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/new-target.constructor.js: "kangax-es6/new-target.constructor.js", line 12: syntax error "kangax-es6/new-target.constructor.js", line 15: syntax error "kangax-es6/new-target.constructor.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/regex.flags.u.case-folding.js: "kangax-es6/regex.flags.u.case-folding.js", line 10: invalid flag 'u' after regular expression "kangax-es6/regex.flags.u.case-folding.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/regex.flags.u.codepoint.js: "kangax-es6/regex.flags.u.codepoint.js", line 10: invalid flag 'u' after regular expression "kangax-es6/regex.flags.u.codepoint.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/regex.flags.u.js: "kangax-es6/regex.flags.u.js", line 10: invalid flag 'u' after regular expression "kangax-es6/regex.flags.u.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/regex.flags.u.non-bmp.js: "kangax-es6/regex.flags.u.non-bmp.js", line 10: invalid flag 'u' after regular expression "kangax-es6/regex.flags.u.non-bmp.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/new-target.assignment-error.js: "new-target.assignment-error.js", line 12: syntax error "new-target.assignment-error.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/new-target.constructor.js: "new-target.constructor.js", line 12: syntax error "new-target.constructor.js", line 15: syntax error "new-target.constructor.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/regex.flags.u.case-folding.js: "regex.flags.u.case-folding.js", line 10: invalid flag 'u' after regular expression "regex.flags.u.case-folding.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/regex.flags.u.codepoint.js: "regex.flags.u.codepoint.js", line 10: invalid flag 'u' after regular expression "regex.flags.u.codepoint.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/regex.flags.u.js: "regex.flags.u.js", line 10: invalid flag 'u' after regular expression "regex.flags.u.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/regex.flags.u.non-bmp.js: "regex.flags.u.non-bmp.js", line 10: invalid flag 'u' after regular expression "regex.flags.u.non-bmp.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/regex.flags.y.js: OK
 kangax-es6/regex.flags.y.lastIndex.js: OK
 kangax-es6/rest-params.arguments.js: failed
@@ -1049,60 +1049,60 @@ kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: OK
 kangax-es6/rest-params.new-function.js: OK
 kangax-es6/rest-params.no-setter.js: failed
-kangax-es6/spread.array-call.js: "kangax-es6/spread.array-call.js", line 10: syntax error "kangax-es6/spread.array-call.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/spread.array-literal.js: "kangax-es6/spread.array-literal.js", line 10: syntax error "kangax-es6/spread.array-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.astral-call.js: "kangax-es6/spread.astral-call.js", line 10: syntax error "kangax-es6/spread.astral-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.astral-literal.js: "kangax-es6/spread.astral-literal.js", line 10: syntax error "kangax-es6/spread.astral-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.generator-call.js: "kangax-es6/spread.generator-call.js", line 11: syntax error "kangax-es6/spread.generator-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.generator-literal.js: "kangax-es6/spread.generator-literal.js", line 11: syntax error "kangax-es6/spread.generator-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.iterable-call.js: "kangax-es6/spread.iterable-call.js", line 35: syntax error "kangax-es6/spread.iterable-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.iterable-instance-call.js: "kangax-es6/spread.iterable-instance-call.js", line 35: syntax error "kangax-es6/spread.iterable-instance-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.iterable-instance-literal.js: "kangax-es6/spread.iterable-instance-literal.js", line 35: syntax error "kangax-es6/spread.iterable-instance-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.iterable-literal.js: "kangax-es6/spread.iterable-literal.js", line 35: syntax error "kangax-es6/spread.iterable-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.non-iterable-error.js: "kangax-es6/spread.non-iterable-error.js", line 11: syntax error "kangax-es6/spread.non-iterable-error.js", line 13: syntax error "kangax-es6/spread.non-iterable-error.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/spread.sparse-call.js: "kangax-es6/spread.sparse-call.js", line 10: syntax error "kangax-es6/spread.sparse-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.sparse-literal.js: "kangax-es6/spread.sparse-literal.js", line 10: syntax error "kangax-es6/spread.sparse-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.string-call.js: "kangax-es6/spread.string-call.js", line 10: syntax error "kangax-es6/spread.string-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.string-literal.js: "kangax-es6/spread.string-literal.js", line 10: syntax error "kangax-es6/spread.string-literal.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.concat.js: "kangax-es6/subclassing.Array.concat.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.filter.js: "kangax-es6/subclassing.Array.filter.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.from.js: "kangax-es6/subclassing.Array.from.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.isArray.js: "kangax-es6/subclassing.Array.isArray.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.length-access.js: "kangax-es6/subclassing.Array.length-access.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.length-set.js: "kangax-es6/subclassing.Array.length-set.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.map.js: "kangax-es6/subclassing.Array.map.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.of.js: "kangax-es6/subclassing.Array.of.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.prototype-chain.js: "kangax-es6/subclassing.Array.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.slice.js: "kangax-es6/subclassing.Array.slice.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Array.splice.js: "kangax-es6/subclassing.Array.splice.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.call.js: "kangax-es6/subclassing.Function.call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.new.js: "kangax-es6/subclassing.Function.new.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.prototype-chain.js: "kangax-es6/subclassing.Function.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.prototype.apply.js: "kangax-es6/subclassing.Function.prototype.apply.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.prototype.bind.js: "kangax-es6/subclassing.Function.prototype.bind.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Function.prototype.call.js: "kangax-es6/subclassing.Function.prototype.call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Promise.all.js: "kangax-es6/subclassing.Promise.all.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Promise.js: "kangax-es6/subclassing.Promise.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Promise.prototype-chain.js: "kangax-es6/subclassing.Promise.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.Promise.race.js: "kangax-es6/subclassing.Promise.race.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.RegExp.exec.js: "kangax-es6/subclassing.RegExp.exec.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.RegExp.js: "kangax-es6/subclassing.RegExp.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.RegExp.prototype-chain.js: "kangax-es6/subclassing.RegExp.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.RegExp.test.js: "kangax-es6/subclassing.RegExp.test.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.Boolean.js: "kangax-es6/subclassing.misc.Boolean.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.Error.js: "kangax-es6/subclassing.misc.Error.js", line 9: identifier is a reserved word: class   class C extends Error {} "kangax-es6/subclassing.misc.Error.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.Map.js: "kangax-es6/subclassing.misc.Map.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.Number.js: "kangax-es6/subclassing.misc.Number.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.Set.js: "kangax-es6/subclassing.misc.Set.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/subclassing.misc.String.js: "kangax-es6/subclassing.misc.String.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/super.correct-constructor.js: "kangax-es6/super.correct-constructor.js", line 13: syntax error "kangax-es6/super.correct-constructor.js", line 14: syntax error "kangax-es6/super.correct-constructor.js", line 16: syntax error "kangax-es6/super.correct-constructor.js", line 22: invalid return "kangax-es6/super.correct-constructor.
-kangax-es6/super.expression.js: "kangax-es6/super.expression.js", line 12: syntax error "kangax-es6/super.expression.js", line 14: syntax error "kangax-es6/super.expression.js", line 16: invalid return "kangax-es6/super.expression.js", line 17: syntax error "kangax-es6/super.expression.js", line 25: syntax error "kangax-es6/super.
-kangax-es6/super.method-calls.js: "kangax-es6/super.method-calls.js", line 12: syntax error "kangax-es6/super.method-calls.js", line 14: syntax error "kangax-es6/super.method-calls.js", line 16: invalid return "kangax-es6/super.method-calls.js", line 17: syntax error "kangax-es6/super.method-calls.js", line 25: syntax error "kangax-
-kangax-es6/super.new-target-binding.js: "kangax-es6/super.new-target-binding.js", line 12: syntax error "kangax-es6/super.new-target-binding.js", line 13: syntax error "kangax-es6/super.new-target-binding.js", line 15: syntax error "kangax-es6/super.new-target-binding.js", line 18: invalid return "kangax-es6/super.new-target-binding.js", 
-kangax-es6/super.property-access.js: "kangax-es6/super.property-access.js", line 11: syntax error "kangax-es6/super.property-access.js", line 15: syntax error "kangax-es6/super.property-access.js", line 16: syntax error "kangax-es6/super.property-access.js", line 17: invalid return "kangax-es6/super.property-access.js", line 18: syntax
-kangax-es6/super.statement.js: "kangax-es6/super.statement.js", line 13: syntax error "kangax-es6/super.statement.js", line 15: syntax error "kangax-es6/super.statement.js", line 18: invalid return "kangax-es6/super.statement.js", line 19: syntax error "kangax-es6/super.statement.js", line 27: syntax error "kangax-es6/super.state
-kangax-es6/super.static-binding.js: "kangax-es6/super.static-binding.js", line 11: syntax error "kangax-es6/super.static-binding.js", line 12: syntax error "kangax-es6/super.static-binding.js", line 14: syntax error "kangax-es6/super.static-binding.js", line 20: invalid return "kangax-es6/super.static-binding.js", line 21: syntax erro
-kangax-es6/super.this-binding.js: "kangax-es6/super.this-binding.js", line 12: syntax error "kangax-es6/super.this-binding.js", line 14: syntax error "kangax-es6/super.this-binding.js", line 18: invalid return "kangax-es6/super.this-binding.js", line 19: syntax error "kangax-es6/super.this-binding.js", line 27: syntax error "kangax-
+kangax-es6/spread.array-call.js: "spread.array-call.js", line 10: syntax error "spread.array-call.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/spread.array-literal.js: "spread.array-literal.js", line 10: syntax error "spread.array-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.astral-call.js: "spread.astral-call.js", line 10: syntax error "spread.astral-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.astral-literal.js: "spread.astral-literal.js", line 10: syntax error "spread.astral-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.generator-call.js: "spread.generator-call.js", line 11: syntax error "spread.generator-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.generator-literal.js: "spread.generator-literal.js", line 11: syntax error "spread.generator-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.iterable-call.js: "spread.iterable-call.js", line 35: syntax error "spread.iterable-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.iterable-instance-call.js: "spread.iterable-instance-call.js", line 35: syntax error "spread.iterable-instance-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.iterable-instance-literal.js: "spread.iterable-instance-literal.js", line 35: syntax error "spread.iterable-instance-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.iterable-literal.js: "spread.iterable-literal.js", line 35: syntax error "spread.iterable-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.non-iterable-error.js: "spread.non-iterable-error.js", line 11: syntax error "spread.non-iterable-error.js", line 13: syntax error "spread.non-iterable-error.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/spread.sparse-call.js: "spread.sparse-call.js", line 10: syntax error "spread.sparse-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.sparse-literal.js: "spread.sparse-literal.js", line 10: syntax error "spread.sparse-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.string-call.js: "spread.string-call.js", line 10: syntax error "spread.string-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.string-literal.js: "spread.string-literal.js", line 10: syntax error "spread.string-literal.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.concat.js: "subclassing.Array.concat.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.filter.js: "subclassing.Array.filter.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.from.js: "subclassing.Array.from.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.isArray.js: "subclassing.Array.isArray.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.length-access.js: "subclassing.Array.length-access.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.length-set.js: "subclassing.Array.length-set.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.map.js: "subclassing.Array.map.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.of.js: "subclassing.Array.of.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.prototype-chain.js: "subclassing.Array.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.slice.js: "subclassing.Array.slice.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Array.splice.js: "subclassing.Array.splice.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.call.js: "subclassing.Function.call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.new.js: "subclassing.Function.new.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.prototype-chain.js: "subclassing.Function.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.prototype.apply.js: "subclassing.Function.prototype.apply.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.prototype.bind.js: "subclassing.Function.prototype.bind.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Function.prototype.call.js: "subclassing.Function.prototype.call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Promise.all.js: "subclassing.Promise.all.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Promise.js: "subclassing.Promise.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Promise.prototype-chain.js: "subclassing.Promise.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.Promise.race.js: "subclassing.Promise.race.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.RegExp.exec.js: "subclassing.RegExp.exec.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.RegExp.js: "subclassing.RegExp.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.RegExp.prototype-chain.js: "subclassing.RegExp.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.RegExp.test.js: "subclassing.RegExp.test.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.Boolean.js: "subclassing.misc.Boolean.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.Error.js: "subclassing.misc.Error.js", line 9: identifier is a reserved word: class   class C extends Error {} "subclassing.misc.Error.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.Map.js: "subclassing.misc.Map.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.Number.js: "subclassing.misc.Number.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.Set.js: "subclassing.misc.Set.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/subclassing.misc.String.js: "subclassing.misc.String.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/super.correct-constructor.js: "super.correct-constructor.js", line 13: syntax error "super.correct-constructor.js", line 14: syntax error "super.correct-constructor.js", line 16: syntax error "super.correct-constructor.js", line 22: invalid return "super.correct-constructor.js", line 23: syntax error "super.correct-constructor.j
+kangax-es6/super.expression.js: "super.expression.js", line 12: syntax error "super.expression.js", line 14: syntax error "super.expression.js", line 16: invalid return "super.expression.js", line 17: syntax error "super.expression.js", line 25: syntax error "super.expression.js", line 26: syntax error   console.log("kangax-es6/su
+kangax-es6/super.method-calls.js: "super.method-calls.js", line 12: syntax error "super.method-calls.js", line 14: syntax error "super.method-calls.js", line 16: invalid return "super.method-calls.js", line 17: syntax error "super.method-calls.js", line 25: syntax error "super.method-calls.js", line 26: syntax error   console.log("k
+kangax-es6/super.new-target-binding.js: "super.new-target-binding.js", line 12: syntax error "super.new-target-binding.js", line 13: syntax error "super.new-target-binding.js", line 15: syntax error "super.new-target-binding.js", line 18: invalid return "super.new-target-binding.js", line 19: syntax error "super.new-target-binding.js", li
+kangax-es6/super.property-access.js: "super.property-access.js", line 11: syntax error "super.property-access.js", line 15: syntax error "super.property-access.js", line 16: syntax error "super.property-access.js", line 17: invalid return "super.property-access.js", line 18: syntax error "super.property-access.js", line 26: syntax erro
+kangax-es6/super.statement.js: "super.statement.js", line 13: syntax error "super.statement.js", line 15: syntax error "super.statement.js", line 18: invalid return "super.statement.js", line 19: syntax error "super.statement.js", line 27: syntax error "super.statement.js", line 28: syntax error   console.log("kangax-es6/super.st
+kangax-es6/super.static-binding.js: "super.static-binding.js", line 11: syntax error "super.static-binding.js", line 12: syntax error "super.static-binding.js", line 14: syntax error "super.static-binding.js", line 20: invalid return "super.static-binding.js", line 21: syntax error "super.static-binding.js", line 29: syntax error "sup
+kangax-es6/super.this-binding.js: "super.this-binding.js", line 12: syntax error "super.this-binding.js", line 14: syntax error "super.this-binding.js", line 18: invalid return "super.this-binding.js", line 19: syntax error "super.this-binding.js", line 27: syntax error "super.this-binding.js", line 28: syntax error   console.log("k
 kangax-es6/tail-calls.direct.js: java.lang.StackOverflowError exception from uncaught JavaScript throw: java.lang.StackOverflowError
 kangax-es6/tail-calls.mutual.js: java.lang.StackOverflowError exception from uncaught JavaScript throw: java.lang.StackOverflowError
 kangax-es6/template.basic.js: OK
@@ -1201,8 +1201,8 @@ kangax-es2016/misc.Proxy-Array-includes.js: OK
 kangax-es2016/misc.Proxy-enumerate-removed.js: OK
 kangax-es2016/misc.generator-no-new.js: failed
 kangax-es2016/misc.generator-throw-inner.js: OK
-kangax-es2016/misc.nested-rest-destructuring-decl.js: "kangax-es2016/misc.nested-rest-destructuring-decl.js", line 10: syntax error "kangax-es2016/misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2016/misc.nested-rest-destructuring-params.js: "kangax-es2016/misc.nested-rest-destructuring-params.js", line 9: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", line 12: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", line 20: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", lin
+kangax-es2016/misc.nested-rest-destructuring-decl.js: "misc.nested-rest-destructuring-decl.js", line 10: syntax error "misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2016/misc.nested-rest-destructuring-params.js: "misc.nested-rest-destructuring-params.js", line 9: syntax error "misc.nested-rest-destructuring-params.js", line 12: syntax error "misc.nested-rest-destructuring-params.js", line 20: syntax error "misc.nested-rest-destructuring-params.js", line 21: syntax error   console.log("kangax-es2016/misc.nes
 kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
 kangax-es2017/Atomics.add.js: ReferenceError: "Atomics" is not defined.
 kangax-es2017/Atomics.and.js: ReferenceError: "Atomics" is not defined.
@@ -1248,48 +1248,48 @@ kangax-es2017/annex-b.Proxy.__defineSetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
-kangax-es2017/async.Symbol.toStringTag.js: "kangax-es2017/async.Symbol.toStringTag.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2017/async.arrow-in-class.js: "kangax-es2017/async.arrow-in-class.js", line 49: syntax error "kangax-es2017/async.arrow-in-class.js", line 53: syntax error "kangax-es2017/async.arrow-in-class.js", line 54: syntax error "kangax-es2017/async.arrow-in-class.js", line 57: syntax error "kangax-es2017/async.arrow-in-class.js", line 62
-kangax-es2017/async.arrow.js: "kangax-es2017/async.arrow.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2017/async.await-non-promise.js: "kangax-es2017/async.await-non-promise.js", line 51: syntax error "kangax-es2017/async.await-non-promise.js", line 52: syntax error "kangax-es2017/async.await-non-promise.js", line 57: syntax error "kangax-es2017/async.await-non-promise.js", line 58: syntax error   console.log("kangax-es2017/async.a
-kangax-es2017/async.await-rejection.js: "kangax-es2017/async.await-rejection.js", line 49: syntax error "kangax-es2017/async.await-rejection.js", line 51: syntax error "kangax-es2017/async.await-rejection.js", line 52: syntax error "kangax-es2017/async.await-rejection.js", line 54: syntax error "kangax-es2017/async.await-rejection.js", li
-kangax-es2017/async.await.js: "kangax-es2017/async.await.js", line 47: syntax error "kangax-es2017/async.await.js", line 48: syntax error "kangax-es2017/async.await.js", line 52: syntax error "kangax-es2017/async.await.js", line 53: syntax error "kangax-es2017/async.await.js", line 58: syntax error "kangax-es2017/async.await.js"
-kangax-es2017/async.constructor.js: "kangax-es2017/async.constructor.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2017/async.methods-class.js: "kangax-es2017/async.methods-class.js", line 47: syntax error "kangax-es2017/async.methods-class.js", line 50: invalid return "kangax-es2017/async.methods-class.js", line 57: syntax error "kangax-es2017/async.methods-class.js", line 62: syntax error "kangax-es2017/async.methods-class.js", line 63: s
-kangax-es2017/async.methods-object.js: "kangax-es2017/async.methods-object.js", line 46: invalid property id "kangax-es2017/async.methods-object.js", line 1: Compilation produced 2 syntax errors.
-kangax-es2017/async.must-await-value.js: "kangax-es2017/async.must-await-value.js", line 16: invalid return "kangax-es2017/async.must-await-value.js", line 18: syntax error "kangax-es2017/async.must-await-value.js", line 26: syntax error "kangax-es2017/async.must-await-value.js", line 27: syntax error   console.log("kangax-es2017/async.mus
-kangax-es2017/async.no-await-in-params.js: "kangax-es2017/async.no-await-in-params.js", line 16: invalid return "kangax-es2017/async.no-await-in-params.js", line 18: syntax error "kangax-es2017/async.no-await-in-params.js", line 26: syntax error "kangax-es2017/async.no-await-in-params.js", line 27: syntax error   console.log("kangax-es2017/a
-kangax-es2017/async.no-line-break.js: "kangax-es2017/async.no-line-break.js", line 13: syntax error "kangax-es2017/async.no-line-break.js", line 16: syntax error "kangax-es2017/async.no-line-break.js", line 24: syntax error "kangax-es2017/async.no-line-break.js", line 25: syntax error   console.log("kangax-es2017/async.no-line-break.js:
-kangax-es2017/async.no-prototype.js: "kangax-es2017/async.no-prototype.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2017/async.prototype-chain.js: "kangax-es2017/async.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2017/async.return.js: "kangax-es2017/async.return.js", line 50: invalid return "kangax-es2017/async.return.js", line 57: syntax error "kangax-es2017/async.return.js", line 62: syntax error "kangax-es2017/async.return.js", line 63: syntax error   console.log("kangax-es2017/async.return.js: " + e); "kangax-es2017/async.ret
-kangax-es2017/async.throw.js: "kangax-es2017/async.throw.js", line 50: invalid return "kangax-es2017/async.throw.js", line 57: syntax error "kangax-es2017/async.throw.js", line 62: syntax error "kangax-es2017/async.throw.js", line 63: syntax error   console.log("kangax-es2017/async.throw.js: " + e); "kangax-es2017/async.throw.js
+kangax-es2017/async.Symbol.toStringTag.js: "async.Symbol.toStringTag.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2017/async.arrow-in-class.js: "async.arrow-in-class.js", line 49: syntax error "async.arrow-in-class.js", line 53: syntax error "async.arrow-in-class.js", line 54: syntax error "async.arrow-in-class.js", line 57: syntax error "async.arrow-in-class.js", line 62: syntax error "async.arrow-in-class.js", line 63: syntax error   cons
+kangax-es2017/async.arrow.js: "async.arrow.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2017/async.await-non-promise.js: "async.await-non-promise.js", line 51: syntax error "async.await-non-promise.js", line 52: syntax error "async.await-non-promise.js", line 57: syntax error "async.await-non-promise.js", line 58: syntax error   console.log("kangax-es2017/async.await-non-promise.js: " + e); "async.await-non-promise.js
+kangax-es2017/async.await-rejection.js: "async.await-rejection.js", line 49: syntax error "async.await-rejection.js", line 51: syntax error "async.await-rejection.js", line 52: syntax error "async.await-rejection.js", line 54: syntax error "async.await-rejection.js", line 55: syntax error "async.await-rejection.js", line 60: syntax error 
+kangax-es2017/async.await.js: "async.await.js", line 47: syntax error "async.await.js", line 48: syntax error "async.await.js", line 52: syntax error "async.await.js", line 53: syntax error "async.await.js", line 58: syntax error "async.await.js", line 59: syntax error   console.log("kangax-es2017/async.await.js: " + e); "async.
+kangax-es2017/async.constructor.js: "async.constructor.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2017/async.methods-class.js: "async.methods-class.js", line 47: syntax error "async.methods-class.js", line 50: invalid return "async.methods-class.js", line 57: syntax error "async.methods-class.js", line 62: syntax error "async.methods-class.js", line 63: syntax error   console.log("kangax-es2017/async.methods-class.js: " + e
+kangax-es2017/async.methods-object.js: "async.methods-object.js", line 46: invalid property id "async.methods-object.js", line 1: Compilation produced 2 syntax errors.
+kangax-es2017/async.must-await-value.js: "async.must-await-value.js", line 16: invalid return "async.must-await-value.js", line 18: syntax error "async.must-await-value.js", line 26: syntax error "async.must-await-value.js", line 27: syntax error   console.log("kangax-es2017/async.must-await-value.js: " + e); "async.must-await-value.js", l
+kangax-es2017/async.no-await-in-params.js: "async.no-await-in-params.js", line 16: invalid return "async.no-await-in-params.js", line 18: syntax error "async.no-await-in-params.js", line 26: syntax error "async.no-await-in-params.js", line 27: syntax error   console.log("kangax-es2017/async.no-await-in-params.js: " + e); "async.no-await-in-p
+kangax-es2017/async.no-line-break.js: "async.no-line-break.js", line 13: syntax error "async.no-line-break.js", line 16: syntax error "async.no-line-break.js", line 24: syntax error "async.no-line-break.js", line 25: syntax error   console.log("kangax-es2017/async.no-line-break.js: " + e); "async.no-line-break.js", line 26: syntax error
+kangax-es2017/async.no-prototype.js: "async.no-prototype.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2017/async.prototype-chain.js: "async.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2017/async.return.js: "async.return.js", line 50: invalid return "async.return.js", line 57: syntax error "async.return.js", line 62: syntax error "async.return.js", line 63: syntax error   console.log("kangax-es2017/async.return.js: " + e); "async.return.js", line 64: syntax error "async.return.js", line 1: Compilation 
+kangax-es2017/async.throw.js: "async.throw.js", line 50: invalid return "async.throw.js", line 57: syntax error "async.throw.js", line 62: syntax error "async.throw.js", line 63: syntax error   console.log("kangax-es2017/async.throw.js: " + e); "async.throw.js", line 64: syntax error "async.throw.js", line 1: Compilation produce
 kangax-es2017/misc.arguments-caller-removed.js: failed
-kangax-es2017/regex.flags.u.case-folding.js: "kangax-es2017/regex.flags.u.case-folding.js", line 9: invalid flag 'u' after regular expression "kangax-es2017/regex.flags.u.case-folding.js", line 10: invalid flag 'u' after regular expression "kangax-es2017/regex.flags.u.case-folding.js", line 11: invalid flag 'u' after regular expression "kangax
+kangax-es2017/regex.flags.u.case-folding.js: "regex.flags.u.case-folding.js", line 9: invalid flag 'u' after regular expression "regex.flags.u.case-folding.js", line 10: invalid flag 'u' after regular expression "regex.flags.u.case-folding.js", line 11: invalid flag 'u' after regular expression "regex.flags.u.case-folding.js", line 12: invalid
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
 kangax-es2018/Promise.prototype.finally.js: OK
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
-kangax-es2018/async-iterators.for-await-of.js: "kangax-es2018/async-iterators.for-await-of.js", line 62: syntax error "kangax-es2018/async-iterators.for-await-of.js", line 63: syntax error "kangax-es2018/async-iterators.for-await-of.js", line 68: syntax error "kangax-es2018/async-iterators.for-await-of.js", line 69: syntax error   console.log("k
-kangax-es2018/async-iterators.generators.js: "kangax-es2018/async-iterators.generators.js", line 52: syntax error "kangax-es2018/async-iterators.generators.js", line 57: syntax error "kangax-es2018/async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "kangax-es2018/async-iter
+kangax-es2018/async-iterators.for-await-of.js: "async-iterators.for-await-of.js", line 62: syntax error "async-iterators.for-await-of.js", line 63: syntax error "async-iterators.for-await-of.js", line 68: syntax error "async-iterators.for-await-of.js", line 69: syntax error   console.log("kangax-es2018/async-iterators.for-await-of.js: " + e); "a
+kangax-es2018/async-iterators.generators.js: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: OK
-kangax-es2018/object-rest.js: "kangax-es2018/object-rest.js", line 9: invalid property id "kangax-es2018/object-rest.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2018/object-spread.js: "kangax-es2018/object-spread.js", line 10: invalid property id "kangax-es2018/object-spread.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/object-rest.js: "object-rest.js", line 9: invalid property id "object-rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/object-spread.js: "object-spread.js", line 10: invalid property id "object-spread.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: uncaught JavaScript runtime SyntaxError: Invalid quantifier ?
 kangax-es2018/regex.named-capture-groups.js: uncaught JavaScript runtime SyntaxError: Invalid quantifier ?
-kangax-es2018/regex.unicode-property-escapes.js: "kangax-es2018/regex.unicode-property-escapes.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: "kangax-es2018/regex.unicode-property-escapes.unicode-11.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-11.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: "kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: "kangax-es2018/regex.unicode-property-escapes.unicode-12.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-12.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: "kangax-es2018/regex.unicode-property-escapes.unicode-13.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-13.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: "kangax-es2018/regex.unicode-property-escapes.unicode-14.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-14.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: "kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: "kangax-es2018/regex.unicode-property-escapes.unicode-15.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-15.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: "kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: "kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js", line 10: invalid flag 'u' after regular expression "kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.js: "regex.unicode-property-escapes.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: "regex.unicode-property-escapes.unicode-11.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-11.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: "regex.unicode-property-escapes.unicode-12.1.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-12.1.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: "regex.unicode-property-escapes.unicode-12.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-12.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: "regex.unicode-property-escapes.unicode-13.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-13.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: "regex.unicode-property-escapes.unicode-14.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-14.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: "regex.unicode-property-escapes.unicode-15.1.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: "regex.unicode-property-escapes.unicode-15.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-15.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: "regex.unicode-property-escapes.unicode-16.0.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-16.0.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: "regex.unicode-property-escapes.unicode-17.0.js", line 10: invalid flag 'u' after regular expression "regex.unicode-property-escapes.unicode-17.0.js", line 1: Compilation produced 3 syntax errors.
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1311,7 +1311,7 @@ kangax-es2019/misc.Function-toString.unicode-escapes.js: OK
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
 kangax-es2019/misc.JSON-superset.line-separator.js: OK
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
-kangax-es2019/misc.optional-catch-binding.await.js: "kangax-es2019/misc.optional-catch-binding.await.js", line 48: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 49: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 51: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 52: syntax er
+kangax-es2019/misc.optional-catch-binding.await.js: "misc.optional-catch-binding.await.js", line 48: syntax error "misc.optional-catch-binding.await.js", line 49: syntax error "misc.optional-catch-binding.await.js", line 51: syntax error "misc.optional-catch-binding.await.js", line 52: syntax error "misc.optional-catch-binding.await.js", line 57: syn
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
 kangax-es2020/BigInt64Array.js: ReferenceError: "BigInt64Array" is not defined.
@@ -1332,7 +1332,7 @@ kangax-es2020/optional-chaining.bracket.js: OK
 kangax-es2020/optional-chaining.function-call.js: OK
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
-kangax-es2020/optional-chaining.spread-params.js: "kangax-es2020/optional-chaining.spread-params.js", line 14: syntax error "kangax-es2020/optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2020/optional-chaining.spread-params.js: "optional-chaining.spread-params.js", line 14: syntax error "optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined.
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
@@ -1369,23 +1369,23 @@ kangax-es2022/Object.hasOwn.js: OK
 kangax-es2022/at-method.Array.js: OK
 kangax-es2022/at-method.String.js: OK
 kangax-es2022/at-method.TypedArray.js: OK
-kangax-es2022/class-fields.computed-instance.js: "kangax-es2022/class-fields.computed-instance.js", line 12: invalid return "kangax-es2022/class-fields.computed-instance.js", line 13: syntax error "kangax-es2022/class-fields.computed-instance.js", line 21: syntax error "kangax-es2022/class-fields.computed-instance.js", line 22: syntax error   cons
-kangax-es2022/class-fields.computed-static.js: "kangax-es2022/class-fields.computed-static.js", line 12: invalid return "kangax-es2022/class-fields.computed-static.js", line 13: syntax error "kangax-es2022/class-fields.computed-static.js", line 21: syntax error "kangax-es2022/class-fields.computed-static.js", line 22: syntax error   console.log(
-kangax-es2022/class-fields.instance.parent-scope.js: "kangax-es2022/class-fields.instance.parent-scope.js", line 13: syntax error "kangax-es2022/class-fields.instance.parent-scope.js", line 17: syntax error "kangax-es2022/class-fields.instance.parent-scope.js", line 25: syntax error "kangax-es2022/class-fields.instance.parent-scope.js", line 26: synta
-kangax-es2022/class-fields.private-instance.initializers.js: "kangax-es2022/class-fields.private-instance.initializers.js", line 14: syntax error "kangax-es2022/class-fields.private-instance.initializers.js", line 16: syntax error "kangax-es2022/class-fields.private-instance.initializers.js", line 24: syntax error "kangax-es2022/class-fields.private-instance.
-kangax-es2022/class-fields.private-instance.js: "kangax-es2022/class-fields.private-instance.js", line 13: syntax error "kangax-es2022/class-fields.private-instance.js", line 17: syntax error "kangax-es2022/class-fields.private-instance.js", line 19: invalid return "kangax-es2022/class-fields.private-instance.js", line 20: syntax error "kangax-es
-kangax-es2022/class-fields.private-instance.optional-access.js: "kangax-es2022/class-fields.private-instance.optional-access.js", line 14: syntax error "kangax-es2022/class-fields.private-instance.optional-access.js", line 16: syntax error "kangax-es2022/class-fields.private-instance.optional-access.js", line 24: syntax error "kangax-es2022/class-fields.private-
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: "kangax-es2022/class-fields.private-instance.optional-deep-access.js", line 14: syntax error "kangax-es2022/class-fields.private-instance.optional-deep-access.js", line 16: syntax error "kangax-es2022/class-fields.private-instance.optional-deep-access.js", line 24: syntax error "kangax-es2022/class-
-kangax-es2022/class-fields.private-static.js: "kangax-es2022/class-fields.private-static.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2022/class-fields.public-instance.js: "kangax-es2022/class-fields.public-instance.js", line 11: syntax error "kangax-es2022/class-fields.public-instance.js", line 13: invalid return "kangax-es2022/class-fields.public-instance.js", line 14: syntax error "kangax-es2022/class-fields.public-instance.js", line 22: syntax error "kangax-es2022
-kangax-es2022/class-fields.public-static.js: "kangax-es2022/class-fields.public-static.js", line 13: invalid return "kangax-es2022/class-fields.public-static.js", line 14: syntax error "kangax-es2022/class-fields.public-static.js", line 22: syntax error "kangax-es2022/class-fields.public-static.js", line 23: syntax error   console.log("kangax-
-kangax-es2022/class-fields.static.define.js: "kangax-es2022/class-fields.static.define.js", line 9: syntax error "kangax-es2022/class-fields.static.define.js", line 10: syntax error "kangax-es2022/class-fields.static.define.js", line 18: syntax error "kangax-es2022/class-fields.static.define.js", line 19: syntax error   console.log("kangax-es2
-kangax-es2022/class-methods.private-accessor.js: "kangax-es2022/class-methods.private-accessor.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2022/class-methods.private-instance.js: "kangax-es2022/class-methods.private-instance.js", line 13: syntax error "kangax-es2022/class-methods.private-instance.js", line 15: invalid return "kangax-es2022/class-methods.private-instance.js", line 16: syntax error "kangax-es2022/class-methods.private-instance.js", line 24: syntax error "kanga
-kangax-es2022/class-methods.private-static-accessor.js: "kangax-es2022/class-methods.private-static-accessor.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2022/class-methods.private-static.js: "kangax-es2022/class-methods.private-static.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2022/class-static-init-blocks.js: "kangax-es2022/class-static-init-blocks.js", line 14: invalid return "kangax-es2022/class-static-init-blocks.js", line 15: syntax error "kangax-es2022/class-static-init-blocks.js", line 23: syntax error "kangax-es2022/class-static-init-blocks.js", line 24: syntax error   console.log("kangax-es2022/c
-kangax-es2022/ergonomic-brand-checks.js: "kangax-es2022/ergonomic-brand-checks.js", line 1: Compilation produced 5 syntax errors.
+kangax-es2022/class-fields.computed-instance.js: "class-fields.computed-instance.js", line 12: invalid return "class-fields.computed-instance.js", line 13: syntax error "class-fields.computed-instance.js", line 21: syntax error "class-fields.computed-instance.js", line 22: syntax error   console.log("kangax-es2022/class-fields.computed-instance.js
+kangax-es2022/class-fields.computed-static.js: "class-fields.computed-static.js", line 12: invalid return "class-fields.computed-static.js", line 13: syntax error "class-fields.computed-static.js", line 21: syntax error "class-fields.computed-static.js", line 22: syntax error   console.log("kangax-es2022/class-fields.computed-static.js: " + e); 
+kangax-es2022/class-fields.instance.parent-scope.js: "class-fields.instance.parent-scope.js", line 13: syntax error "class-fields.instance.parent-scope.js", line 17: syntax error "class-fields.instance.parent-scope.js", line 25: syntax error "class-fields.instance.parent-scope.js", line 26: syntax error   console.log("kangax-es2022/class-fields.instan
+kangax-es2022/class-fields.private-instance.initializers.js: "class-fields.private-instance.initializers.js", line 14: syntax error "class-fields.private-instance.initializers.js", line 16: syntax error "class-fields.private-instance.initializers.js", line 24: syntax error "class-fields.private-instance.initializers.js", line 25: syntax error   console.log("k
+kangax-es2022/class-fields.private-instance.js: "class-fields.private-instance.js", line 13: syntax error "class-fields.private-instance.js", line 17: syntax error "class-fields.private-instance.js", line 19: invalid return "class-fields.private-instance.js", line 20: syntax error "class-fields.private-instance.js", line 28: syntax error "class-f
+kangax-es2022/class-fields.private-instance.optional-access.js: "class-fields.private-instance.optional-access.js", line 14: syntax error "class-fields.private-instance.optional-access.js", line 16: syntax error "class-fields.private-instance.optional-access.js", line 24: syntax error "class-fields.private-instance.optional-access.js", line 25: syntax error   co
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: "class-fields.private-instance.optional-deep-access.js", line 14: syntax error "class-fields.private-instance.optional-deep-access.js", line 16: syntax error "class-fields.private-instance.optional-deep-access.js", line 24: syntax error "class-fields.private-instance.optional-deep-access.js", line 2
+kangax-es2022/class-fields.private-static.js: "class-fields.private-static.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2022/class-fields.public-instance.js: "class-fields.public-instance.js", line 11: syntax error "class-fields.public-instance.js", line 13: invalid return "class-fields.public-instance.js", line 14: syntax error "class-fields.public-instance.js", line 22: syntax error "class-fields.public-instance.js", line 23: syntax error   console.log
+kangax-es2022/class-fields.public-static.js: "class-fields.public-static.js", line 13: invalid return "class-fields.public-static.js", line 14: syntax error "class-fields.public-static.js", line 22: syntax error "class-fields.public-static.js", line 23: syntax error   console.log("kangax-es2022/class-fields.public-static.js: " + e); "class-fie
+kangax-es2022/class-fields.static.define.js: "class-fields.static.define.js", line 9: syntax error "class-fields.static.define.js", line 10: syntax error "class-fields.static.define.js", line 18: syntax error "class-fields.static.define.js", line 19: syntax error   console.log("kangax-es2022/class-fields.static.define.js: " + e); "class-fields
+kangax-es2022/class-methods.private-accessor.js: "class-methods.private-accessor.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2022/class-methods.private-instance.js: "class-methods.private-instance.js", line 13: syntax error "class-methods.private-instance.js", line 15: invalid return "class-methods.private-instance.js", line 16: syntax error "class-methods.private-instance.js", line 24: syntax error "class-methods.private-instance.js", line 25: syntax error   c
+kangax-es2022/class-methods.private-static-accessor.js: "class-methods.private-static-accessor.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2022/class-methods.private-static.js: "class-methods.private-static.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2022/class-static-init-blocks.js: "class-static-init-blocks.js", line 14: invalid return "class-static-init-blocks.js", line 15: syntax error "class-static-init-blocks.js", line 23: syntax error "class-static-init-blocks.js", line 24: syntax error   console.log("kangax-es2022/class-static-init-blocks.js: " + e); "class-static-init-b
+kangax-es2022/ergonomic-brand-checks.js: "ergonomic-brand-checks.js", line 1: Compilation produced 5 syntax errors.
 kangax-es2022/regex.flags.d.constructor.js: SyntaxError: invalid flag 'd' after regular expression
 kangax-es2022/regex.flags.d.shows-in-flags.js: TypeError: Cannot call method "call" of undefined
 kangax-es2023/Array.prototype.findLastIndex.js: OK
@@ -1405,13 +1405,13 @@ kangax-es2024/Map.groupBy.js: OK
 kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: TypeError: Cannot find function withResolvers in object function Promise() {
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: invalid flag 'v' after regular expression
-kangax-es2024/regex.flags.v.properties-of-strings.js: "kangax-es2024/regex.flags.v.properties-of-strings.js", line 9: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.properties-of-strings.js", line 10: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.properties-of-strings.js", line 1: Compilation produced 2 
-kangax-es2024/regex.flags.v.set-notations.js: "kangax-es2024/regex.flags.v.set-notations.js", line 9: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.set-notations.js", line 10: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.set-notations.js", line 1: Compilation produced 3 syntax errors.
+kangax-es2024/regex.flags.v.properties-of-strings.js: "regex.flags.v.properties-of-strings.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 1: Compilation produced 2 syntax errors.
+kangax-es2024/regex.flags.v.set-notations.js: "regex.flags.v.set-notations.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 1: Compilation produced 3 syntax errors.
 kangax-es2024/regex.flags.v.shows-in-flags.js: TypeError: Cannot call method "call" of undefined
-kangax-es2024/regex.flags.v.unicode-15.1.js: "kangax-es2024/regex.flags.v.unicode-15.1.js", line 9: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2024/regex.flags.v.unicode-16.0.js: "kangax-es2024/regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.unicode-16.0.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2024/regex.flags.v.unicode-17.0.js: "kangax-es2024/regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression "kangax-es2024/regex.flags.v.unicode-17.0.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2025/Iterator.extends.js: "kangax-es2025/Iterator.extends.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2024/regex.flags.v.unicode-15.1.js: "regex.flags.v.unicode-15.1.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2024/regex.flags.v.unicode-16.0.js: "regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-16.0.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2024/regex.flags.v.unicode-17.0.js: "regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-17.0.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2025/Iterator.extends.js: "Iterator.extends.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2025/Iterator.from.iterable.js: TypeError: Cannot find function from in object function Iterator() { [native code for Iterator.Iterator, arity=2] }
 kangax-es2025/Iterator.from.iterator.js: TypeError: Cannot find function from in object function Iterator() { [native code for Iterator.Iterator, arity=2] }
 kangax-es2025/Iterator.instanceof.js: failed
@@ -1469,30 +1469,30 @@ kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
 kangax-next/Array.isTemplateObject.js: TypeError: Cannot find function isTemplateObject in object function Array() { [native code for Array.Array, arity=1] }
-kangax-next/AsyncDisposableStack.js: "kangax-next/AsyncDisposableStack.js", line 1: Compilation produced 3 syntax errors.
-kangax-next/AsyncIterator.extends.js: "kangax-next/AsyncIterator.extends.js", line 1: Compilation produced 1 syntax errors.
-kangax-next/AsyncIterator.from.async-iterable.js: "kangax-next/AsyncIterator.from.async-iterable.js", line 52: invalid return "kangax-next/AsyncIterator.from.async-iterable.js", line 57: syntax error "kangax-next/AsyncIterator.from.async-iterable.js", line 62: syntax error "kangax-next/AsyncIterator.from.async-iterable.js", line 63: syntax error   
-kangax-next/AsyncIterator.from.iterable.js: "kangax-next/AsyncIterator.from.iterable.js", line 52: invalid return "kangax-next/AsyncIterator.from.iterable.js", line 57: syntax error "kangax-next/AsyncIterator.from.iterable.js", line 62: syntax error "kangax-next/AsyncIterator.from.iterable.js", line 63: syntax error   console.log("kangax-next
-kangax-next/AsyncIterator.from.iterator.js: "kangax-next/AsyncIterator.from.iterator.js", line 52: invalid return "kangax-next/AsyncIterator.from.iterator.js", line 57: syntax error "kangax-next/AsyncIterator.from.iterator.js", line 62: syntax error "kangax-next/AsyncIterator.from.iterator.js", line 63: syntax error   console.log("kangax-next
-kangax-next/AsyncIterator.instanceof.js: "kangax-next/AsyncIterator.instanceof.js", line 1: Compilation produced 1 syntax errors.
+kangax-next/AsyncDisposableStack.js: "AsyncDisposableStack.js", line 1: Compilation produced 3 syntax errors.
+kangax-next/AsyncIterator.extends.js: "AsyncIterator.extends.js", line 1: Compilation produced 1 syntax errors.
+kangax-next/AsyncIterator.from.async-iterable.js: "AsyncIterator.from.async-iterable.js", line 52: invalid return "AsyncIterator.from.async-iterable.js", line 57: syntax error "AsyncIterator.from.async-iterable.js", line 62: syntax error "AsyncIterator.from.async-iterable.js", line 63: syntax error   console.log("kangax-next/AsyncIterator.from.asyn
+kangax-next/AsyncIterator.from.iterable.js: "AsyncIterator.from.iterable.js", line 52: invalid return "AsyncIterator.from.iterable.js", line 57: syntax error "AsyncIterator.from.iterable.js", line 62: syntax error "AsyncIterator.from.iterable.js", line 63: syntax error   console.log("kangax-next/AsyncIterator.from.iterable.js: " + e); "AsyncI
+kangax-next/AsyncIterator.from.iterator.js: "AsyncIterator.from.iterator.js", line 52: invalid return "AsyncIterator.from.iterator.js", line 57: syntax error "AsyncIterator.from.iterator.js", line 62: syntax error "AsyncIterator.from.iterator.js", line 63: syntax error   console.log("kangax-next/AsyncIterator.from.iterator.js: " + e); "AsyncI
+kangax-next/AsyncIterator.instanceof.js: "AsyncIterator.instanceof.js", line 1: Compilation produced 1 syntax errors.
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined.
-kangax-next/AsyncIterator.prototype.drop.js: "kangax-next/AsyncIterator.prototype.drop.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.drop.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.drop.js", line 58: syntax error "kangax-next/AsyncIterator.prototype.drop.js", line 59: syntax error   console.log("kangax-ne
-kangax-next/AsyncIterator.prototype.every.js: "kangax-next/AsyncIterator.prototype.every.js", line 46: syntax error "kangax-next/AsyncIterator.prototype.every.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.every.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.every.js", line 53: syntax error   console.log("kanga
-kangax-next/AsyncIterator.prototype.filter.js: "kangax-next/AsyncIterator.prototype.filter.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.filter.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.filter.js", line 58: syntax error "kangax-next/AsyncIterator.prototype.filter.js", line 59: syntax error   console.log("k
-kangax-next/AsyncIterator.prototype.find.js: "kangax-next/AsyncIterator.prototype.find.js", line 46: syntax error "kangax-next/AsyncIterator.prototype.find.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.find.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.find.js", line 53: syntax error   console.log("kangax-ne
-kangax-next/AsyncIterator.prototype.flatMap.js: "kangax-next/AsyncIterator.prototype.flatMap.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.flatMap.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.flatMap.js", line 58: syntax error "kangax-next/AsyncIterator.prototype.flatMap.js", line 59: syntax error   console.lo
-kangax-next/AsyncIterator.prototype.forEach.js: "kangax-next/AsyncIterator.prototype.forEach.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.forEach.js", line 48: syntax error "kangax-next/AsyncIterator.prototype.forEach.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.forEach.js", line 54: syntax error   console.lo
-kangax-next/AsyncIterator.prototype.map.js: "kangax-next/AsyncIterator.prototype.map.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.map.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.map.js", line 58: syntax error "kangax-next/AsyncIterator.prototype.map.js", line 59: syntax error   console.log("kangax-next/A
-kangax-next/AsyncIterator.prototype.reduce.js: "kangax-next/AsyncIterator.prototype.reduce.js", line 46: syntax error "kangax-next/AsyncIterator.prototype.reduce.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.reduce.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.reduce.js", line 53: syntax error   console.log("k
-kangax-next/AsyncIterator.prototype.some.js: "kangax-next/AsyncIterator.prototype.some.js", line 46: syntax error "kangax-next/AsyncIterator.prototype.some.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.some.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.some.js", line 53: syntax error   console.log("kangax-ne
-kangax-next/AsyncIterator.prototype.take.js: "kangax-next/AsyncIterator.prototype.take.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.take.js", line 53: syntax error "kangax-next/AsyncIterator.prototype.take.js", line 58: syntax error "kangax-next/AsyncIterator.prototype.take.js", line 59: syntax error   console.log("kangax-ne
-kangax-next/AsyncIterator.prototype.toArray.js: "kangax-next/AsyncIterator.prototype.toArray.js", line 46: syntax error "kangax-next/AsyncIterator.prototype.toArray.js", line 47: syntax error "kangax-next/AsyncIterator.prototype.toArray.js", line 52: syntax error "kangax-next/AsyncIterator.prototype.toArray.js", line 53: syntax error   console.lo
+kangax-next/AsyncIterator.prototype.drop.js: "AsyncIterator.prototype.drop.js", line 52: syntax error "AsyncIterator.prototype.drop.js", line 53: syntax error "AsyncIterator.prototype.drop.js", line 58: syntax error "AsyncIterator.prototype.drop.js", line 59: syntax error   console.log("kangax-next/AsyncIterator.prototype.drop.js: " + e); "Asy
+kangax-next/AsyncIterator.prototype.every.js: "AsyncIterator.prototype.every.js", line 46: syntax error "AsyncIterator.prototype.every.js", line 47: syntax error "AsyncIterator.prototype.every.js", line 52: syntax error "AsyncIterator.prototype.every.js", line 53: syntax error   console.log("kangax-next/AsyncIterator.prototype.every.js: " + e);
+kangax-next/AsyncIterator.prototype.filter.js: "AsyncIterator.prototype.filter.js", line 52: syntax error "AsyncIterator.prototype.filter.js", line 53: syntax error "AsyncIterator.prototype.filter.js", line 58: syntax error "AsyncIterator.prototype.filter.js", line 59: syntax error   console.log("kangax-next/AsyncIterator.prototype.filter.js: " 
+kangax-next/AsyncIterator.prototype.find.js: "AsyncIterator.prototype.find.js", line 46: syntax error "AsyncIterator.prototype.find.js", line 47: syntax error "AsyncIterator.prototype.find.js", line 52: syntax error "AsyncIterator.prototype.find.js", line 53: syntax error   console.log("kangax-next/AsyncIterator.prototype.find.js: " + e); "Asy
+kangax-next/AsyncIterator.prototype.flatMap.js: "AsyncIterator.prototype.flatMap.js", line 52: syntax error "AsyncIterator.prototype.flatMap.js", line 53: syntax error "AsyncIterator.prototype.flatMap.js", line 58: syntax error "AsyncIterator.prototype.flatMap.js", line 59: syntax error   console.log("kangax-next/AsyncIterator.prototype.flatMap.j
+kangax-next/AsyncIterator.prototype.forEach.js: "AsyncIterator.prototype.forEach.js", line 47: syntax error "AsyncIterator.prototype.forEach.js", line 48: syntax error "AsyncIterator.prototype.forEach.js", line 53: syntax error "AsyncIterator.prototype.forEach.js", line 54: syntax error   console.log("kangax-next/AsyncIterator.prototype.forEach.j
+kangax-next/AsyncIterator.prototype.map.js: "AsyncIterator.prototype.map.js", line 52: syntax error "AsyncIterator.prototype.map.js", line 53: syntax error "AsyncIterator.prototype.map.js", line 58: syntax error "AsyncIterator.prototype.map.js", line 59: syntax error   console.log("kangax-next/AsyncIterator.prototype.map.js: " + e); "AsyncIte
+kangax-next/AsyncIterator.prototype.reduce.js: "AsyncIterator.prototype.reduce.js", line 46: syntax error "AsyncIterator.prototype.reduce.js", line 47: syntax error "AsyncIterator.prototype.reduce.js", line 52: syntax error "AsyncIterator.prototype.reduce.js", line 53: syntax error   console.log("kangax-next/AsyncIterator.prototype.reduce.js: " 
+kangax-next/AsyncIterator.prototype.some.js: "AsyncIterator.prototype.some.js", line 46: syntax error "AsyncIterator.prototype.some.js", line 47: syntax error "AsyncIterator.prototype.some.js", line 52: syntax error "AsyncIterator.prototype.some.js", line 53: syntax error   console.log("kangax-next/AsyncIterator.prototype.some.js: " + e); "Asy
+kangax-next/AsyncIterator.prototype.take.js: "AsyncIterator.prototype.take.js", line 52: syntax error "AsyncIterator.prototype.take.js", line 53: syntax error "AsyncIterator.prototype.take.js", line 58: syntax error "AsyncIterator.prototype.take.js", line 59: syntax error   console.log("kangax-next/AsyncIterator.prototype.take.js: " + e); "Asy
+kangax-next/AsyncIterator.prototype.toArray.js: "AsyncIterator.prototype.toArray.js", line 46: syntax error "AsyncIterator.prototype.toArray.js", line 47: syntax error "AsyncIterator.prototype.toArray.js", line 52: syntax error "AsyncIterator.prototype.toArray.js", line 53: syntax error   console.log("kangax-next/AsyncIterator.prototype.toArray.j
 kangax-next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined.
 kangax-next/Map.prototype.upsert.js: TypeError: Cannot find function upsert in object [object Map].
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: "kangax-next/SuppressedError.js", line 13: missing ; before statement "kangax-next/SuppressedError.js", line 14: syntax error "kangax-next/SuppressedError.js", line 1: Compilation produced 2 syntax errors.
+kangax-next/SuppressedError.js: "SuppressedError.js", line 13: missing ; before statement "SuppressedError.js", line 14: syntax error "SuppressedError.js", line 1: Compilation produced 2 syntax errors.
 kangax-next/Uint8Array.fromBase64.js: TypeError: Cannot find function fromBase64 in object function Uint8Array() {
 kangax-next/Uint8Array.fromHex.js: TypeError: Cannot find function fromHex in object function Uint8Array() {
 kangax-next/Uint8Array.setFromBase64.js: TypeError: Cannot find function setFromBase64 in object 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: TypeError: Cannot find function setFromHex
 kangax-next/Uint8Array.toBase64.js: TypeError: Cannot find function toBase64 in object 72,101,108,108,111,32,87,111,114,108,100.
 kangax-next/Uint8Array.toHex.js: TypeError: Cannot find function toHex in object 72,101,108,108,111,32,87,111,114,108,100.
 kangax-next/WeakMap.prototype.upsert.js: TypeError: Cannot find function upsert in object [object WeakMap].
-kangax-next/await-using.for-of.js: "kangax-next/await-using.for-of.js", line 47: syntax error "kangax-next/await-using.for-of.js", line 49: syntax error "kangax-next/await-using.for-of.js", line 53: syntax error "kangax-next/await-using.for-of.js", line 54: syntax error "kangax-next/await-using.for-of.js", line 58: invalid return "ka
-kangax-next/await-using.js: "kangax-next/await-using.js", line 48: syntax error "kangax-next/await-using.js", line 50: syntax error "kangax-next/await-using.js", line 54: invalid return "kangax-next/await-using.js", line 55: syntax error "kangax-next/await-using.js", line 56: syntax error "kangax-next/await-using.js", line 61:
-kangax-next/class-decorators.js: "kangax-next/class-decorators.js", line 1: Compilation produced 2 syntax errors.
-kangax-next/function.sent.js: "kangax-next/function.sent.js", line 1: Compilation produced 1 syntax errors.
-kangax-next/throw-expr.arrow.js: "kangax-next/throw-expr.arrow.js", line 9: syntax error "kangax-next/throw-expr.arrow.js", line 1: Compilation produced 2 syntax errors.
-kangax-next/throw-expr.conditional.js: "kangax-next/throw-expr.conditional.js", line 9: syntax error "kangax-next/throw-expr.conditional.js", line 11: syntax error "kangax-next/throw-expr.conditional.js", line 1: Compilation produced 2 syntax errors.
-kangax-next/throw-expr.logical.js: "kangax-next/throw-expr.logical.js", line 11: syntax error "kangax-next/throw-expr.logical.js", line 12: syntax error "kangax-next/throw-expr.logical.js", line 1: Compilation produced 2 syntax errors.
-kangax-next/throw-expr.param-init.js: "kangax-next/throw-expr.param-init.js", line 9: syntax error "kangax-next/throw-expr.param-init.js", line 11: syntax error "kangax-next/throw-expr.param-init.js", line 18: invalid return "kangax-next/throw-expr.param-init.js", line 20: syntax error "kangax-next/throw-expr.param-init.js", line 28: sy
-kangax-next/using.for-of.js: "kangax-next/using.for-of.js", line 1: Compilation produced 1 syntax errors.
-kangax-next/using.js: "kangax-next/using.js", line 1: Compilation produced 1 syntax errors.
+kangax-next/await-using.for-of.js: "await-using.for-of.js", line 47: syntax error "await-using.for-of.js", line 49: syntax error "await-using.for-of.js", line 53: syntax error "await-using.for-of.js", line 54: syntax error "await-using.for-of.js", line 58: invalid return "await-using.for-of.js", line 59: syntax error "await-using.for
+kangax-next/await-using.js: "await-using.js", line 48: syntax error "await-using.js", line 50: syntax error "await-using.js", line 54: invalid return "await-using.js", line 55: syntax error "await-using.js", line 56: syntax error "await-using.js", line 61: syntax error "await-using.js", line 62: syntax error   console.log("kan
+kangax-next/class-decorators.js: "class-decorators.js", line 1: Compilation produced 2 syntax errors.
+kangax-next/function.sent.js: "function.sent.js", line 1: Compilation produced 1 syntax errors.
+kangax-next/throw-expr.arrow.js: "throw-expr.arrow.js", line 9: syntax error "throw-expr.arrow.js", line 1: Compilation produced 2 syntax errors.
+kangax-next/throw-expr.conditional.js: "throw-expr.conditional.js", line 9: syntax error "throw-expr.conditional.js", line 11: syntax error "throw-expr.conditional.js", line 1: Compilation produced 2 syntax errors.
+kangax-next/throw-expr.logical.js: "throw-expr.logical.js", line 11: syntax error "throw-expr.logical.js", line 12: syntax error "throw-expr.logical.js", line 1: Compilation produced 2 syntax errors.
+kangax-next/throw-expr.param-init.js: "throw-expr.param-init.js", line 9: syntax error "throw-expr.param-init.js", line 11: syntax error "throw-expr.param-init.js", line 18: invalid return "throw-expr.param-init.js", line 20: syntax error "throw-expr.param-init.js", line 28: syntax error "throw-expr.param-init.js", line 29: syntax error
+kangax-next/using.for-of.js: "using.for-of.js", line 1: Compilation produced 1 syntax errors.
+kangax-next/using.js: "using.js", line 1: Compilation produced 1 syntax errors.

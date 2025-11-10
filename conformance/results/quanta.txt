@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "db0ada150457fa0e225320db1a870a84609fa67bacbe0eba3eb08a660b0c5a00", "binary_size": 1774528, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quanta", "repository": "https://github.com/solarbrowser/quanta.git", "revision": "10962761c7646b67ba31488b18ccf7af3cf59a86", "revision_date": "2025-10-23"}
+Metadata: {"arch": "arm64", "binary_sha256": "be5d1662ec72428acaf5611ab17144c2ba6b8f60cb4941f9807b75080e4266e7", "binary_size": 1774528, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quanta", "repository": "https://github.com/solarbrowser/quanta.git", "revision": "67a79b1cbdfcfe338ba971b9c3cbe8deb1b992f9", "revision_date": "2025-11-09"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; bool
 es1/Boolean.prototype.toString.js: failed
 es1/Boolean.prototype.valueOf.js: failed
 es1/Date.diff.js: failed
-es1/Date.js: 15.9.2 Date() not a string; 15.9.3.1 new Date(year, month, date) failed; 15.9.3.2 new Date(0) failed
+es1/Date.js: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
 es1/Date.prototype.constructor.js: failed
 es1/Date.prototype.getDate.js: failed
 es1/Date.prototype.getDay.js: failed
@@ -87,9 +87,9 @@ es1/Math.sqrt.js: OK
 es1/Math.tan.js: OK
 es1/Number.MAX_VALUE.js: OK
 es1/Number.MIN_VALUE.js: OK
-es1/Number.NEGATIVE_INFINITY.js: failed
-es1/Number.NaN.js: failed
-es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
 es1/Number.js: OK
 es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
 es1/Number.prototype.toString.js: failed
@@ -103,7 +103,7 @@ es1/String.generics.js: failed
 es1/String.js: OK
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: charAt out of bounds failed; charAt negative failed
-es1/String.prototype.charCodeAt.js: charCodeAt out of bounds NaN failed
+es1/String.prototype.charCodeAt.js: OK
 es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
 es1/String.prototype.indexOf.js: indexOf with position failed
 es1/String.prototype.lastIndexOf.js: OK
@@ -117,12 +117,12 @@ es1/annex-b.Date.prototype.getYear.js: failed
 es1/annex-b.Date.prototype.setYear.js: failed
 es1/annex-b.Date.prototype.toGMTString.js: failed
 es1/annex-b.global.escape.js: OK
-es1/annex-b.global.unescape.js: Error: 'unescape' is not a function ReferenceError: 'unescape' is not defined
+es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: SyntaxError: Unexpected token:
 es1/arguments.js: OK
-es1/asi.eval.js: failed
+es1/asi.eval.js: SyntaxError: Parse error: Failed to parse expression
 es1/asi.js: SyntaxError: Unexpected token:
 es1/assignment.bitwise.js: SyntaxError: Unexpected token:
 es1/assignment.js: OK
@@ -146,7 +146,7 @@ es1/conversions.ToString.js: -0 failed; 1e-7 failed
 es1/conversions.ToUint32.js: +Infinity failed; 2^32 failed; -1 failed; -2^31 failed
 es1/conversions.js: false > 0
 es1/equals.js: OK
-es1/eval.js: failed
+es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: failed
 es1/function.js: OK
@@ -168,7 +168,7 @@ es1/logical.js: OK
 es1/new.typeof.js: SyntaxError: Unexpected token:
 es1/numbers.double.js: failed: converting max safe integer + 1 to string
 es1/numbers.fmod.js: OK
-es1/numbers.inf.js: -1e10000 is NaN; 1/0 != 1e10000; -1/0 != -1e10000; -Infinity magnitude failed; Infinity + Infinity != Infinity; Infinity * Infinity != Infinity; Infinity - Infinity is not NaN; Infinity + -Infinity is not NaN
+es1/numbers.inf.js: OK
 es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
 es1/postfix.decrement.js: OK
@@ -224,8 +224,8 @@ es3/Error.prototype.name.js: failed
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: max() with 0 args failed
-es3/Math.min.variadic.js: min() with 0 args failed
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; NaN failed; zero failed; Infinity failed; small number failed
 es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
@@ -266,14 +266,14 @@ es3/String.prototype.split.bugs.js: ''.split().length !== 1; ''.split()[0] !== '
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
 es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on single match failed; split on whitespace failed; split by empty regex failed
 es3/String.prototype.toLocaleLowerCase.js: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'undefined')
-es3/String.prototype.toLocaleUpperCase.js: failed
+es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'undefined')
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: ReferenceError: 'EvalError' is not defined
 es3/global.RangeError.js: name failed
-es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length
 es3/global.ReferenceError.js: name failed
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: name failed
@@ -288,7 +288,7 @@ es3/global.encodeURIComponent.js: encode space failed; encode UTF-8 failed; enco
 es3/global.encodeURI.js: encode space failed; encode UTF-8 failed
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: failed
-es3/instanceof.js: custom constructor instanceof failed
+es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: SyntaxError: Unexpected token:
 es3/labelled.continue.js: SyntaxError: Unexpected token:
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: SyntaxError: Unexpected token:
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: Error: 'c1' is not a function function C() returning eval'd function failed; Error: 'c2' is not a function second call to C() failed
+es3/nested-functions.eval.js: OK
 es3/nested-functions.js: ReferenceError: 'count' is not defined
 es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
@@ -371,15 +371,15 @@ es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
 es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: failed
 es5/Object.defineProperties.js: Object.defineProperties not a function
-es5/Object.defineProperty.js: non-writable property failed; getter definition failed
+es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: Object.freeze not a function
-es5/Object.getOwnPropertyDescriptor.js: non-writable descriptor failed
-es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: only own properties failed
 es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function
 es5/Object.isExtensible.js: Object.isExtensible not a function
 es5/Object.isFrozen.js: Object.isFrozen not a function
 es5/Object.isSealed.js: Object.isSealed not a function
-es5/Object.keys.js: only enumerable properties failed
+es5/Object.keys.js: only own properties failed; only enumerable properties failed
 es5/Object.preventExtensions.js: Object.preventExtensions not a function
 es5/Object.property-shadowing.js: failed
 es5/Object.seal.js: Object.seal not a function
@@ -413,7 +413,7 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError
 es5/strict.this-primitive-not-coerced-in-accessors.js: failed
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
@@ -534,7 +534,7 @@ kangax-es6/Function.name.symbol-keyed.js: failed
 kangax-es6/Function.name.variable.js: failed
 kangax-es6/Map.Symbol.species.js: Error: TypeError: Cannot use 'in' operator on non-object
 kangax-es6/Map.constructor-accepts-null.js: OK
-kangax-es6/Map.constructor-arguments.js: failed
+kangax-es6/Map.constructor-arguments.js: OK
 kangax-es6/Map.constructor-invokes-set.js: failed
 kangax-es6/Map.constructor-requires-new.js: failed
 kangax-es6/Map.iterator-closing.js: failed
@@ -639,9 +639,9 @@ kangax-es6/Reflect.get.js: OK
 kangax-es6/Reflect.has.js: OK
 kangax-es6/Reflect.isExtensible.js: failed
 kangax-es6/Reflect.ownKeys.string.js: failed
-kangax-es6/Reflect.ownKeys.symbol.js: failed
+kangax-es6/Reflect.ownKeys.symbol.js: OK
 kangax-es6/Reflect.preventExtensions.js: failed
-kangax-es6/Reflect.setPrototypeOf.js: failed
+kangax-es6/Reflect.setPrototypeOf.js: OK
 kangax-es6/Reflect.set.js: OK
 kangax-es6/RegExp.Symbol.species.js: Error: TypeError: Cannot use 'in' operator on non-object
 kangax-es6/RegExp.prototype.Symbol.match.js: failed
@@ -735,9 +735,9 @@ kangax-es6/annex-b.regex.octal-escapes.js: Lexer error at 9:12: Unexpected chara
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: failed
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
 kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
 kangax-es6/annex-b.__proto__.literals.js: failed
 kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
 kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
@@ -859,7 +859,7 @@ kangax-es6/destructuring-params.computed-properties.js: SyntaxError: Expected pa
 kangax-es6/destructuring-params.defaults-new-function.js: OK
 kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Expected parameter name or destructuring pattern
 kangax-es6/destructuring-params.defaults.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
 kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: Expected identifier in destructuring pattern
 kangax-es6/destructuring-params.generator.js: SyntaxError: Expected ']' to close destructuring pattern
 kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: Expected ']' to close destructuring pattern
@@ -1069,7 +1069,7 @@ kangax-es6/subclassing.Array.filter.js: failed
 kangax-es6/subclassing.Array.from.js: failed
 kangax-es6/subclassing.Array.isArray.js: OK
 kangax-es6/subclassing.Array.length-access.js: OK
-kangax-es6/subclassing.Array.length-set.js: failed
+kangax-es6/subclassing.Array.length-set.js: OK
 kangax-es6/subclassing.Array.map.js: failed
 kangax-es6/subclassing.Array.of.js: failed
 kangax-es6/subclassing.Array.prototype-chain.js: failed
@@ -1303,14 +1303,14 @@ kangax-es2019/annex-b.String.prototype.trimLeft.js: failed
 kangax-es2019/annex-b.String.prototype.trimRight.js: failed
 kangax-es2019/misc.Function-toString.Function-constructor.js: failed
 kangax-es2019/misc.Function-toString.arrows.js: failed
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: Error: SyntaxError: SyntaxError: Unexpected token: class
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: Error: SyntaxError: SyntaxError: Unexpected token: class
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Parse error: Failed to parse expression
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Parse error: Failed to parse expression
 kangax-es2019/misc.Function-toString.computed-names.js: failed
 kangax-es2019/misc.Function-toString.native-code.js: failed
-kangax-es2019/misc.Function-toString.unicode-escapes.js: Error: SyntaxError: Lexer error at 1:24: Unexpected character: \
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Parse error: Failed to parse expression
 kangax-es2019/misc.JSON-stringify-well-formed.js: failed
-kangax-es2019/misc.JSON-superset.line-separator.js: failed
-kangax-es2019/misc.JSON-superset.paragraph-separator.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
 kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: Expected '(' after 'catch'
 kangax-es2019/misc.optional-catch-binding.js: SyntaxError: Expected '(' after 'catch'
 kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: Expected '(' after 'catch'

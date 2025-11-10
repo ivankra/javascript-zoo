@@ -32,9 +32,9 @@ The very first JavaScript engine that defined early JavaScript language (JS1.0/1
 
 <details><summary>ES1-ES5: 36%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/mocha.txt">Full log</a>.</li>
-<li>ES1: 74%<pre>
+<li>ES1: 74%, <b>1 crash</b><pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: failed
-<a href="../conformance/es1/Date.js">Date.js</a>: failed
+<a href="../conformance/es1/Date.js">Date.js</a>: crashed (signal 11)
 <a href="../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: failed
@@ -75,3 +75,5 @@ The very first JavaScript engine that defined early JavaScript language (JS1.0/1
 <li>Next: 0%<br>
 <li>Intl: 0%<br>
 </ul></details>
+
+💥 **1 crash during testing**

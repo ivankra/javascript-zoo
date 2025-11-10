@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "9ed7f4e2c6a15f8fbcb0c5c1e004bdbf894b05229818b488bd274af95fa9f833", "binary_size": 8723592, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "66832e5987057409815eaf46dfbf25b1b985ff68", "revision_date": "2025-10-27", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-33-g66832e59"}
+Metadata: {"arch": "arm64", "binary_sha256": "686b979e08969f93bf6d184294dd68f5e6a54ba80b7c27c343c73fddd9ee9ed9", "binary_size": 8658056, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "4f898062298f73bb2aa7fbabfd0b8fea6ccc6cee", "revision_date": "2025-11-08", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-39-g4f898062"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: fatal runtime error: stack overflow, aborting
-kangax-es6/tail-calls.mutual.js: fatal runtime error: stack overflow, aborting
+kangax-es6/tail-calls.direct.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
+kangax-es6/tail-calls.mutual.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1322,7 +1322,7 @@ kangax-es2020/BigInt.js: OK
 kangax-es2020/BigUint64Array.js: OK
 kangax-es2020/DataView.prototype.getBigInt64.js: OK
 kangax-es2020/DataView.prototype.getBigUint64.js: OK
-kangax-es2020/Promise.allSettled.js: Error: Promise.allSettled not implemented
+kangax-es2020/Promise.allSettled.js: OK
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
 kangax-es2020/globalThis.descriptor.js: failed

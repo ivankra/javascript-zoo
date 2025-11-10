@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: not a function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: expecting ';' at kangax-next/SuppressedError.js:13:11
+kangax-next/SuppressedError.js: SyntaxError: expecting ';' at SuppressedError.js:13:11
 kangax-next/Uint8Array.fromBase64.js: TypeError: not a function
 kangax-next/Uint8Array.fromHex.js: TypeError: not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: not a function

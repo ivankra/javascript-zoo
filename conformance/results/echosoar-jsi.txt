@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "a639ee61c500aecbb87795ff34687b827bb82b0adbfa77c2f3bc4899c6979590", "binary_size": 1053384, "engine": "echosoar-jsi", "repository": "https://github.com/echosoar/jsi.git", "revision": "fe199b5c182341a94c9b340486c25acebe163f02", "revision_date": "2025-08-24", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "845ab06d73147f8db5680222aea186c88bd8b0081c9e585644c0aec79ecde5d5", "binary_size": 1053384, "engine": "echosoar-jsi", "repository": "https://github.com/echosoar/jsi.git", "revision": "fe199b5c182341a94c9b340486c25acebe163f02", "revision_date": "2025-08-24", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
 es1/Array.js: Array.length failed; Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.assignment.js: Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.js: Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
@@ -90,7 +90,7 @@ es1/Number.MIN_VALUE.js: Runtime error: JSIError { error_type: SyntaxError, mess
 es1/Number.NEGATIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
 es1/Number.NaN.js: failed
 es1/Number.POSITIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
-es1/Number.js: Number(value) failed; thread 'main' (786) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/Number.js: Number(value) failed; thread 'main' (351481) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
@@ -140,7 +140,7 @@ es1/continue.js: OK
 es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed
 es1/conversions.ToInt32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: Or, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
 es1/conversions.ToInteger.js: 2.9 failed; -0 failed; NaN failed; 1.1 failed; -1.9 failed; 5.7 failed
-es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (474) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (351252) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e21'", line: 0, column: 0, value: None }
 es1/conversions.ToUint32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: UnsignedShiftRight, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }

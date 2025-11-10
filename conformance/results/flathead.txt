@@ -477,7 +477,7 @@ kangax-es5/strict.arguments-callee-error.js: OK
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
 kangax-es5/strict.assignment-eval-arguments-error.js: OK
-kangax-es5/strict.assignment-non-writable-error.js: try { ({ get x(){ } }).x = 1;                                  return false; } catch (err) { if (!(err instanceof TypeError)) return false; } SyntaxError: unexpected IDENT, expecting ':' at kangax-es5/strict.assignment-non-writable-error.js:12:15
+kangax-es5/strict.assignment-non-writable-error.js: try { ({ get x(){ } }).x = 1;                                  return false; } catch (err) { if (!(err instanceof TypeError)) return false; } SyntaxError: unexpected IDENT, expecting ':' at strict.assignment-non-writable-error.js:12:15
 kangax-es5/strict.assignment-unresolvable-error.js: failed
 kangax-es5/strict.delete-bindings-error.js: failed
 kangax-es5/strict.delete-non-configurable-error.js: failed
@@ -822,7 +822,7 @@ kangax-es6/destructuring-assign.nested.js: SyntaxError: unexpected '}', expectin
 kangax-es6/destructuring-assign.object-expression.js: SyntaxError: unexpected ',', expecting ':'
 kangax-es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected '}', expecting ':'
 kangax-es6/destructuring-assign.object.js: SyntaxError: unexpected ',', expecting ':'
-kangax-es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':' at kangax-es6/destructuring-assign.parenthesised-error.js:11:5
+kangax-es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':' at destructuring-assign.parenthesised-error.js:11:5
 kangax-es6/destructuring-assign.rest.js: SyntaxError: unexpected '.'
 kangax-es6/destructuring-assign.sparse-array.js: crashed (signal 11)
 kangax-es6/destructuring-assign.string.js: crashed (signal 11)
@@ -911,7 +911,7 @@ kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: unexpected '
 kangax-es6/generators.yield-star.iterable.js: SyntaxError: unexpected '*', expecting IDENT or '('
 kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: unexpected '*', expecting IDENT or '('
 kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: unexpected '*', expecting IDENT or '('
-kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: unexpected '*', expecting IDENT or '(' at kangax-es6/generators.yield-star.non-iterable-error.js:10:27
+kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: unexpected '*', expecting IDENT or '(' at generators.yield-star.non-iterable-error.js:10:27
 kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: unexpected '*', expecting IDENT or '('
 kangax-es6/generators.yield-star.string.js: SyntaxError: unexpected '*', expecting IDENT or '('
 kangax-es6/let.basic.js: SyntaxError: unexpected IDENT, expecting ';' or ','
@@ -1036,7 +1036,7 @@ kangax-es6/misc.property-order.Object.keys.js: crashed (signal 11)
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: crashed (signal 11)
 kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Symbol is not defined
 kangax-es6/misc.prototypes-not-instances.js: Error: Regular expressions are not available
-kangax-es6/new-target.assignment-error.js: SyntaxError: unexpected '.' at kangax-es6/new-target.assignment-error.js:12:17
+kangax-es6/new-target.assignment-error.js: SyntaxError: unexpected '.' at new-target.assignment-error.js:12:17
 kangax-es6/new-target.constructor.js: SyntaxError: unexpected '.'
 kangax-es6/regex.flags.u.case-folding.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
 kangax-es6/regex.flags.u.codepoint.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
@@ -1059,7 +1059,7 @@ kangax-es6/spread.iterable-call.js: SyntaxError: unexpected '.'
 kangax-es6/spread.iterable-instance-call.js: SyntaxError: unexpected '.'
 kangax-es6/spread.iterable-instance-literal.js: SyntaxError: unexpected '.'
 kangax-es6/spread.iterable-literal.js: SyntaxError: unexpected '.'
-kangax-es6/spread.non-iterable-error.js: SyntaxError: unexpected '.' at kangax-es6/spread.non-iterable-error.js:11:13
+kangax-es6/spread.non-iterable-error.js: SyntaxError: unexpected '.' at spread.non-iterable-error.js:11:13
 kangax-es6/spread.sparse-call.js: SyntaxError: unexpected '.'
 kangax-es6/spread.sparse-literal.js: SyntaxError: unexpected '.'
 kangax-es6/spread.string-call.js: SyntaxError: unexpected '.'
@@ -1090,7 +1090,7 @@ kangax-es6/subclassing.RegExp.js: SyntaxError: unexpected IDENT, expecting ';' o
 kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es6/subclassing.RegExp.test.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es6/subclassing.misc.Boolean.js: SyntaxError: unexpected IDENT, expecting ';' or ','
-kangax-es6/subclassing.misc.Error.js: class C extends Error {} SyntaxError: unexpected IDENT, expecting ';' or ',' at kangax-es6/subclassing.misc.Error.js:9:8
+kangax-es6/subclassing.misc.Error.js: class C extends Error {} SyntaxError: unexpected IDENT, expecting ';' or ',' at subclassing.misc.Error.js:9:8
 kangax-es6/subclassing.misc.Map.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es6/subclassing.misc.Number.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es6/subclassing.misc.Set.js: SyntaxError: unexpected IDENT, expecting ';' or ','
@@ -1196,14 +1196,14 @@ kangax-es2016/Array.prototype.includes.sparse.js: TypeError: undefined is not a 
 kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Uint8ClampedArray is not defined
 kangax-es2016/exponentiation.assignment.js: SyntaxError: unexpected MULTEQ
 kangax-es2016/exponentiation.basic.js: SyntaxError: unexpected '*'
-kangax-es2016/exponentiation.unary-negation-error.js: SyntaxError: unexpected '*' at kangax-es2016/exponentiation.unary-negation-error.js:10:9
+kangax-es2016/exponentiation.unary-negation-error.js: SyntaxError: unexpected '*' at exponentiation.unary-negation-error.js:10:9
 kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Proxy is not defined
 kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Proxy is not defined
 kangax-es2016/misc.generator-no-new.js: SyntaxError: unexpected '*', expecting IDENT
 kangax-es2016/misc.generator-throw-inner.js: SyntaxError: unexpected '*', expecting IDENT
 kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: unexpected '[', expecting IDENT
 kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: unexpected '[', expecting IDENT or ')'
-kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: unexpected '.', expecting IDENT or ')' at kangax-es2016/misc.strict-fn-non-simple-params-error.js:9:15
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: unexpected '.', expecting IDENT or ')' at misc.strict-fn-non-simple-params-error.js:9:15
 kangax-es2017/Atomics.add.js: ReferenceError: Atomics is not defined
 kangax-es2017/Atomics.and.js: ReferenceError: Atomics is not defined
 kangax-es2017/Atomics.compareExchange.js: ReferenceError: Atomics is not defined
@@ -1334,7 +1334,7 @@ kangax-es2020/optional-chaining.method-call.js: SyntaxError: unexpected '.'
 kangax-es2020/optional-chaining.property.js: SyntaxError: unexpected '.'
 kangax-es2020/optional-chaining.spread-params.js: SyntaxError: unexpected '.'
 kangax-es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry is not defined
-kangax-es2021/Promise.any.AggregateError.js: ]).catch (error => { SyntaxError: unexpected CATCH, expecting IDENT at kangax-es2021/Promise.any.AggregateError.js:49:5
+kangax-es2021/Promise.any.AggregateError.js: ]).catch (error => { SyntaxError: unexpected CATCH, expecting IDENT at Promise.any.AggregateError.js:49:5
 kangax-es2021/Promise.any.fulfillment.js: SyntaxError: unexpected '>'
 kangax-es2021/String.prototype.replaceAll.js: TypeError: undefined is not a function
 kangax-es2021/WeakRef.js: ReferenceError: WeakRef is not defined
@@ -1349,21 +1349,21 @@ kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: unexpect
 kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es2021/numeric-separators.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: AggregateError is not defined
-kangax-es2022/Error.cause.AggregateError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.AggregateError.js:10:2
+kangax-es2022/Error.cause.AggregateError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.AggregateError.js:10:2
 kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
-kangax-es2022/Error.cause.Error.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.Error.js:10:2
+kangax-es2022/Error.cause.Error.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.Error.js:10:2
 kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.EvalError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.EvalError.js:10:2
+kangax-es2022/Error.cause.EvalError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.EvalError.js:10:2
 kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.RangeError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.RangeError.js:10:2
+kangax-es2022/Error.cause.RangeError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.RangeError.js:10:2
 kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.ReferenceError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.ReferenceError.js:10:2
+kangax-es2022/Error.cause.ReferenceError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.ReferenceError.js:10:2
 kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.SyntaxError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.SyntaxError.js:10:2
+kangax-es2022/Error.cause.SyntaxError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.SyntaxError.js:10:2
 kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.TypeError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.TypeError.js:10:2
+kangax-es2022/Error.cause.TypeError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.TypeError.js:10:2
 kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
-kangax-es2022/Error.cause.URIError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at kangax-es2022/Error.cause.URIError.js:10:2
+kangax-es2022/Error.cause.URIError.js: return error.hasOwnProperty('cause') && error.cause === 'cause'; SyntaxError: unexpected RETURNT, expecting ';' or ',' at Error.cause.URIError.js:10:2
 kangax-es2022/Object.hasOwn.ToObject-first.js: SyntaxError: unexpected '}', expecting ';' or ','
 kangax-es2022/Object.hasOwn.js: TypeError: undefined is not a function
 kangax-es2022/at-method.Array.js: TypeError: undefined is not a function
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: SyntaxError: unexpected IDENT, expecting ';
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: Error: Regular expressions are not available
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: unexpected IDENT, expecting ';' or ',' at kangax-next/SuppressedError.js:13:10
+kangax-next/SuppressedError.js: SyntaxError: unexpected IDENT, expecting ';' or ',' at SuppressedError.js:13:10
 kangax-next/Uint8Array.fromBase64.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-next/Uint8Array.fromHex.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 kangax-next/Uint8Array.setFromBase64.js: SyntaxError: unexpected IDENT, expecting ';' or ','

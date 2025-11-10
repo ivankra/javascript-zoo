@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "bebf27c8b193c7d6e01a7551d85504d6503f4658bd3d7dbc07806e8479d38ce3", "binary_size": 9439960, "engine": "goja", "repository": "https://github.com/dop251/goja.git", "revision": "cf18d89f3cf612fca36ebf06c10cc70ad66c1ac8", "revision_date": "2025-10-08"}
+Metadata: {"arch": "arm64", "binary_sha256": "2fce2b244072dadab857412218e9456e1823e9a59b7ebed694fe8ea8959df830", "binary_size": 9440024, "engine": "goja", "repository": "https://github.com/dop251/goja.git", "revision": "af2ceb9156d7feaff65273b8bfde778077fb4b7e", "revision_date": "2025-11-03"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -722,8 +722,8 @@ kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: Object has no 
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Object has no member 'anchor'
 kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not defined
 kangax-es6/annex-b.function.if-statement.js: OK
-kangax-es6/annex-b.function.labeled.js: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement. at kangax-es6/annex-b.function.labeled.js:12:10
-kangax-es6/annex-b.html-comments.js: SyntaxError: kangax-es6/annex-b.html-comments.js: Line 9:5 Unexpected token > (and 2 more errors)
+kangax-es6/annex-b.function.labeled.js: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement. at annex-b.function.labeled.js:12:10
+kangax-es6/annex-b.html-comments.js: SyntaxError: annex-b.html-comments.js: Line 9:5 Unexpected token > (and 2 more errors)
 kangax-es6/annex-b.regex.backreferences-octal.js: OK
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read property
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read property 'call' of undefined or null
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read property 'call' of undefined or null
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read property 'call' of undefined or null
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: kangax-es2017/annex-b.for-in-assignment-non-strict.js: Line 10:16 for-in loop variable declaration may not have an initializer
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: annex-b.for-in-assignment-non-strict.js: Line 10:16 for-in loop variable declaration may not have an initializer
 kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1271,8 +1271,8 @@ kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
 kangax-es2018/Promise.prototype.finally.js: OK
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
-kangax-es2018/async-iterators.for-await-of.js: SyntaxError: kangax-es2018/async-iterators.for-await-of.js: Line 60:9 Unexpected token await (and 4 more errors)
-kangax-es2018/async-iterators.generators.js: SyntaxError: Async generators are not supported yet at kangax-es2018/async-iterators.generators.js:44:3
+kangax-es2018/async-iterators.for-await-of.js: SyntaxError: async-iterators.for-await-of.js: Line 60:9 Unexpected token await (and 4 more errors)
+kangax-es2018/async-iterators.generators.js: SyntaxError: Async generators are not supported yet at async-iterators.generators.js:44:3
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: OK
 kangax-es2018/object-rest.js: OK
@@ -1405,12 +1405,12 @@ kangax-es2024/Map.groupBy.js: TypeError: Object has no member 'groupBy'
 kangax-es2024/Object.groupBy.js: TypeError: Object has no member 'groupBy'
 kangax-es2024/Promise.withResolvers.js: TypeError: Object has no member 'withResolvers'
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v'
-kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at kangax-es2024/regex.flags.v.properties-of-strings.js:9:10
-kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at kangax-es2024/regex.flags.v.set-notations.js:9:10
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at regex.flags.v.properties-of-strings.js:9:10
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at regex.flags.v.set-notations.js:9:10
 kangax-es2024/regex.flags.v.shows-in-flags.js: failed
-kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at kangax-es2024/regex.flags.v.unicode-15.1.js:9:10
-kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at kangax-es2024/regex.flags.v.unicode-16.0.js:9:10
-kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at kangax-es2024/regex.flags.v.unicode-17.0.js:9:10
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at regex.flags.v.unicode-15.1.js:9:10
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at regex.flags.v.unicode-16.0.js:9:10
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid flags supplied to RegExp constructor 'v' at regex.flags.v.unicode-17.0.js:9:10
 kangax-es2025/Iterator.extends.js: ReferenceError: Iterator is not defined
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
 kangax-es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
@@ -1437,9 +1437,9 @@ kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: Object has no member 'is
 kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: Object has no member 'symmetricDifference'
 kangax-es2025/Set.prototype.union.js: TypeError: Object has no member 'union'
 kangax-es2025/regex.duplicate-named-groups.js: OK
-kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid group at kangax-es2025/regex.pattern-modifiers.i.js:9:17
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid group at kangax-es2025/regex.pattern-modifiers.m.js:9:17
-kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid group at kangax-es2025/regex.pattern-modifiers.s.js:9:17
+kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid group at regex.pattern-modifiers.i.js:9:17
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid group at regex.pattern-modifiers.m.js:9:17
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid group at regex.pattern-modifiers.s.js:9:17
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
@@ -1471,28 +1471,28 @@ kangax-intl/String.prototype.localeCompare.js: OK
 kangax-next/Array.isTemplateObject.js: TypeError: Object has no member 'isTemplateObject'
 kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
 kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
-kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: kangax-next/AsyncIterator.from.async-iterable.js: Line 46:9 Unexpected token await (and 7 more errors)
-kangax-next/AsyncIterator.from.iterable.js: SyntaxError: kangax-next/AsyncIterator.from.iterable.js: Line 46:9 Unexpected token await (and 7 more errors)
-kangax-next/AsyncIterator.from.iterator.js: SyntaxError: kangax-next/AsyncIterator.from.iterator.js: Line 46:9 Unexpected token await (and 7 more errors)
-kangax-next/AsyncIterator.instanceof.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.instanceof.js:9:11
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: AsyncIterator.from.async-iterable.js: Line 46:9 Unexpected token await (and 7 more errors)
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: AsyncIterator.from.iterable.js: Line 46:9 Unexpected token await (and 7 more errors)
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: AsyncIterator.from.iterator.js: Line 46:9 Unexpected token await (and 7 more errors)
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: Async generators are not supported yet at AsyncIterator.instanceof.js:9:11
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
-kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: kangax-next/AsyncIterator.prototype.drop.js: Line 46:9 Unexpected token await (and 9 more errors)
-kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.every.js:44:4
-kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: kangax-next/AsyncIterator.prototype.filter.js: Line 46:9 Unexpected token await (and 9 more errors)
-kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.find.js:44:4
-kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: kangax-next/AsyncIterator.prototype.flatMap.js: Line 46:9 Unexpected token await (and 9 more errors)
-kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.forEach.js:45:4
-kangax-next/AsyncIterator.prototype.map.js: SyntaxError: kangax-next/AsyncIterator.prototype.map.js: Line 46:9 Unexpected token await (and 9 more errors)
-kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.reduce.js:44:4
-kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.some.js:44:4
-kangax-next/AsyncIterator.prototype.take.js: SyntaxError: kangax-next/AsyncIterator.prototype.take.js: Line 46:9 Unexpected token await (and 9 more errors)
-kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Async generators are not supported yet at kangax-next/AsyncIterator.prototype.toArray.js:44:4
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: AsyncIterator.prototype.drop.js: Line 46:9 Unexpected token await (and 9 more errors)
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.every.js:44:4
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: AsyncIterator.prototype.filter.js: Line 46:9 Unexpected token await (and 9 more errors)
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.find.js:44:4
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: AsyncIterator.prototype.flatMap.js: Line 46:9 Unexpected token await (and 9 more errors)
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.forEach.js:45:4
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: AsyncIterator.prototype.map.js: Line 46:9 Unexpected token await (and 9 more errors)
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.reduce.js:44:4
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.some.js:44:4
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: AsyncIterator.prototype.take.js: Line 46:9 Unexpected token await (and 9 more errors)
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Async generators are not supported yet at AsyncIterator.prototype.toArray.js:44:4
 kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
 kangax-next/Map.prototype.upsert.js: TypeError: Object has no member 'upsert'
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: kangax-next/SuppressedError.js: Line 13:11 Unexpected identifier (and 11 more errors)
+kangax-next/SuppressedError.js: SyntaxError: SuppressedError.js: Line 13:11 Unexpected identifier (and 11 more errors)
 kangax-next/Uint8Array.fromBase64.js: TypeError: Object has no member 'fromBase64'
 kangax-next/Uint8Array.fromHex.js: TypeError: Object has no member 'fromHex'
 kangax-next/Uint8Array.setFromBase64.js: TypeError: Object has no member 'setFromBase64'
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: TypeError: Object has no member 'setFromHe
 kangax-next/Uint8Array.toBase64.js: TypeError: Object has no member 'toBase64'
 kangax-next/Uint8Array.toHex.js: TypeError: Object has no member 'toHex'
 kangax-next/WeakMap.prototype.upsert.js: TypeError: Object has no member 'upsert'
-kangax-next/await-using.for-of.js: SyntaxError: kangax-next/await-using.for-of.js: Line 57:22 Unexpected identifier (and 3 more errors)
-kangax-next/await-using.js: SyntaxError: kangax-next/await-using.js: Line 52:19 Unexpected identifier (and 9 more errors)
-kangax-next/class-decorators.js: SyntaxError: kangax-next/class-decorators.js: Line 10:5 Unexpected token ILLEGAL (and 1 more errors)
-kangax-next/function.sent.js: SyntaxError: kangax-next/function.sent.js: Line 11:22 Unexpected token . (and 25 more errors)
-kangax-next/throw-expr.arrow.js: SyntaxError: kangax-next/throw-expr.arrow.js: Line 9:18 Unexpected token throw (and 1 more errors)
-kangax-next/throw-expr.conditional.js: SyntaxError: kangax-next/throw-expr.conditional.js: Line 9:15 Unexpected token throw (and 3 more errors)
-kangax-next/throw-expr.logical.js: SyntaxError: kangax-next/throw-expr.logical.js: Line 11:15 Unexpected token throw (and 3 more errors)
-kangax-next/throw-expr.param-init.js: SyntaxError: kangax-next/throw-expr.param-init.js: Line 9:22 Unexpected token throw (and 41 more errors)
-kangax-next/using.for-of.js: SyntaxError: kangax-next/using.for-of.js: Line 22:16 Unexpected identifier (and 4 more errors)
-kangax-next/using.js: SyntaxError: kangax-next/using.js: Line 16:11 Unexpected identifier (and 2 more errors)
+kangax-next/await-using.for-of.js: SyntaxError: await-using.for-of.js: Line 57:22 Unexpected identifier (and 3 more errors)
+kangax-next/await-using.js: SyntaxError: await-using.js: Line 52:19 Unexpected identifier (and 9 more errors)
+kangax-next/class-decorators.js: SyntaxError: class-decorators.js: Line 10:5 Unexpected token ILLEGAL (and 1 more errors)
+kangax-next/function.sent.js: SyntaxError: function.sent.js: Line 11:22 Unexpected token . (and 25 more errors)
+kangax-next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js: Line 9:18 Unexpected token throw (and 1 more errors)
+kangax-next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js: Line 9:15 Unexpected token throw (and 3 more errors)
+kangax-next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js: Line 11:15 Unexpected token throw (and 3 more errors)
+kangax-next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js: Line 9:22 Unexpected token throw (and 41 more errors)
+kangax-next/using.for-of.js: SyntaxError: using.for-of.js: Line 22:16 Unexpected identifier (and 4 more errors)
+kangax-next/using.js: SyntaxError: using.js: Line 16:11 Unexpected identifier (and 2 more errors)

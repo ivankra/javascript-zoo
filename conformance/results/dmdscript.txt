@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: 15.9.2 Date() not a string
+es1/Date.js: typeof Date() != 'string'
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK
@@ -252,7 +252,7 @@ es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
-es3/String.prototype.replace.capture.js: spec example failed
+es3/String.prototype.replace.capture.js: crashed (signal 11); spec example failed
 es3/String.prototype.replace.extra.js: $$ failed; combined replacements failed
 es3/String.prototype.replace.generic.js: OK
 es3/String.prototype.replace.regex.js: global regex replace failed; replace all occurrences failed
@@ -723,7 +723,7 @@ kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
 kangax-es6/annex-b.function.hoisted-block-level.js: failed
 kangax-es6/annex-b.function.if-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.function.if-statement.js(12) : Error: found 'function' instead of statement
 kangax-es6/annex-b.function.labeled.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.function.labeled.js(12) : Error: found 'function' instead of statement
-kangax-es6/annex-b.html-comments.js: failed
+kangax-es6/annex-b.html-comments.js: crashed (signal 5)
 kangax-es6/annex-b.regex.backreferences-octal.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): no matching back reference
 kangax-es6/annex-b.regex.hyphens.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): inverted range in character class
 kangax-es6/annex-b.regex.incomplete-patterns.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): badly formed {n,m}
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: dmdscript.script.ScriptException@engine/sou
 kangax-es6/super.statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.statement.js(11) : Error: found 'class' instead of statement
 kangax-es6/super.static-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.static-binding.js(10) : Error: found 'class' instead of statement
 kangax-es6/super.this-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.this-binding.js(10) : Error: found 'class' instead of statement
-kangax-es6/tail-calls.direct.js: failed
-kangax-es6/tail-calls.mutual.js: failed
+kangax-es6/tail-calls.direct.js: crashed (signal 11)
+kangax-es6/tail-calls.mutual.js: crashed (signal 11)
 kangax-es6/template.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.basic.js(11) : Error: unsupported char '`'
 kangax-es6/template.caching.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.caching.js(17) : Error: unsupported char '`'
 kangax-es6/template.escape-sequences.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.escape-sequences.js(13) : Error: unsupported char '`'

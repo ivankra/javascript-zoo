@@ -1,13 +1,13 @@
-Metadata: {"arch": "arm64", "engine": "porffor", "repository": "https://github.com/CanadaHonk/porffor.git", "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9", "revision_date": "2025-10-28"}
+Metadata: {"arch": "arm64", "engine": "porffor", "repository": "https://github.com/CanadaHonk/porffor.git", "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0", "revision_date": "2025-11-09"}
 es1/Array.js: Array() + array index length update failed; sparse array length failed
 es1/Array.length.assignment.js: array index length update failed
 es1/Array.length.js: length auto-update failed; length > max index failed
 es1/Array.prototype.constructor.js: OK
-es1/Array.prototype.join.generic.js: TypeError: 'join' proto func tried to be called on a type without an impl
+es1/Array.prototype.join.generic.js: OK
 es1/Array.prototype.join.js: OK
-es1/Array.prototype.reverse.generic.js: TypeError: 'reverse' proto func tried to be called on a type without an impl
+es1/Array.prototype.reverse.generic.js: failed
 es1/Array.prototype.reverse.js: reverse even length failed; reverse single element failed
-es1/Array.prototype.sort.generic.js: TypeError: 'sort' proto func tried to be called on a type without an impl
+es1/Array.prototype.sort.generic.js: failed
 es1/Array.prototype.sort.js: OK
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: OK
@@ -99,7 +99,7 @@ es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: TypeError: 'charAt' proto func tried to be called on a type without an impl
+es1/String.generics.js: indexOf failed
 es1/String.js: OK
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
@@ -181,7 +181,7 @@ es1/this.js: OK
 es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: OK
-es1/types.js: OK
+es1/types.js: CompileError: WebAssembly.Module(): Compiling function #2 failed: expected 0 elements on the stack for fallthru, found 1 @+2239
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
 es1/unary.delete.var.js: failed
@@ -266,7 +266,7 @@ es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.spli
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on single match failed; split on whitespace failed; split by empty regex failed
 es3/String.prototype.toLocaleLowerCase.js: OK
-es3/String.prototype.toLocaleUpperCase.js: failed
+es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'hello')
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: IIFE closure failed
@@ -503,7 +503,7 @@ kangax-es6/Array.from.map.generator.js: failed
 kangax-es6/Array.from.map.iterable-instance.js: RuntimeError: memory access out of bounds
 kangax-es6/Array.from.map.iterable.js: RuntimeError: memory access out of bounds
 kangax-es6/Array.iterator-prototype-chain.js: TypeError: undefined is not a function
-kangax-es6/Array.of.js: OK
+kangax-es6/Array.of.js: failed
 kangax-es6/Array.prototype.Symbol.iterator.js: failed
 kangax-es6/Array.prototype.Symbol.unscopables.js: failed
 kangax-es6/Array.prototype.copyWithin.js: OK
@@ -692,14 +692,14 @@ kangax-es6/Symbol.no-coerce.js: failed
 kangax-es6/Symbol.no-new.js: OK
 kangax-es6/Symbol.prototype.js: OK
 kangax-es6/Symbol.typeof.js: OK
-kangax-es6/WeakMap.accept-primitives.js: TypeError: 'get' proto func tried to be called on a type without an impl
+kangax-es6/WeakMap.accept-primitives.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.constructor-accepts-null.js: OK
-kangax-es6/WeakMap.constructor-arguments.js: TypeError: 'get' proto func tried to be called on a type without an impl
+kangax-es6/WeakMap.constructor-arguments.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.constructor-invokes-set.js: failed
 kangax-es6/WeakMap.constructor-requires-new.js: OK
-kangax-es6/WeakMap.frozen-keys.js: TypeError: 'get' proto func tried to be called on a type without an impl
+kangax-es6/WeakMap.frozen-keys.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.iterator-closing.js: RuntimeError: memory access out of bounds
-kangax-es6/WeakMap.js: TypeError: 'get' proto func tried to be called on a type without an impl
+kangax-es6/WeakMap.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.no-clear.js: OK
 kangax-es6/WeakMap.prototype-not-instance.js: OK
 kangax-es6/WeakMap.prototype.delete.js: OK
@@ -917,14 +917,14 @@ kangax-es6/generators.yield-star.string.js: failed
 kangax-es6/let.basic.js: OK
 kangax-es6/let.block-scoped.js: OK
 kangax-es6/let.for-in-shadow.js: OK
-kangax-es6/let.for-iteration.js: [object Object]
+kangax-es6/let.for-iteration.js: ReferenceError: i is not defined
 kangax-es6/let.for-loop.js: OK
 kangax-es6/let.no-statement.js: OK
 kangax-es6/let.shadow.js: OK
 kangax-es6/let.strict.basic.js: OK
 kangax-es6/let.strict.block-scoped.js: OK
 kangax-es6/let.strict.for-in-shadow.js: OK
-kangax-es6/let.strict.for-iteration.js: [object Object]
+kangax-es6/let.strict.for-iteration.js: ReferenceError: i is not defined
 kangax-es6/let.strict.for-loop.js: OK
 kangax-es6/let.strict.no-statement.js: OK
 kangax-es6/let.strict.shadow.js: OK
@@ -1064,17 +1064,17 @@ kangax-es6/spread.sparse-call.js: OK
 kangax-es6/spread.sparse-literal.js: OK
 kangax-es6/spread.string-call.js: Error: porffor: no generation for SpreadElement
 kangax-es6/spread.string-literal.js: failed
-kangax-es6/subclassing.Array.concat.js: TypeError: 'concat' proto func tried to be called on a type without an impl
-kangax-es6/subclassing.Array.filter.js: TypeError: 'filter' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.Array.concat.js: failed
+kangax-es6/subclassing.Array.filter.js: failed
 kangax-es6/subclassing.Array.from.js: TypeError: undefined is not a function
 kangax-es6/subclassing.Array.isArray.js: failed
 kangax-es6/subclassing.Array.length-access.js: failed
 kangax-es6/subclassing.Array.length-set.js: failed
-kangax-es6/subclassing.Array.map.js: TypeError: 'map' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.Array.map.js: failed
 kangax-es6/subclassing.Array.of.js: TypeError: undefined is not a function
 kangax-es6/subclassing.Array.prototype-chain.js: failed
-kangax-es6/subclassing.Array.slice.js: TypeError: 'push' proto func tried to be called on a type without an impl
-kangax-es6/subclassing.Array.splice.js: TypeError: 'push' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.Array.slice.js: failed
+kangax-es6/subclassing.Array.splice.js: failed
 kangax-es6/subclassing.Function.call.js: SyntaxError: Dynamic code evaluation is not supported
 kangax-es6/subclassing.Function.new.js: SyntaxError: Dynamic code evaluation is not supported
 kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: Dynamic code evaluation is not supported
@@ -1082,18 +1082,18 @@ kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: Dynamic code ev
 kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: Dynamic code evaluation is not supported
 kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: Dynamic code evaluation is not supported
 kangax-es6/subclassing.Promise.all.js: TypeError: undefined is not a function
-kangax-es6/subclassing.Promise.js: TypeError: 'then' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.Promise.js: TypeError: Promise.prototype.then called on non-Promise
 kangax-es6/subclassing.Promise.prototype-chain.js: failed
 kangax-es6/subclassing.Promise.race.js: TypeError: undefined is not a function
-kangax-es6/subclassing.RegExp.exec.js: TypeError: 'exec' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.RegExp.exec.js: TypeError: Cannot get property of null
 kangax-es6/subclassing.RegExp.js: RuntimeError: memory access out of bounds
 kangax-es6/subclassing.RegExp.prototype-chain.js: failed
-kangax-es6/subclassing.RegExp.test.js: TypeError: 'test' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.RegExp.test.js: failed
 kangax-es6/subclassing.misc.Boolean.js: failed
 kangax-es6/subclassing.misc.Error.js: RuntimeError: memory access out of bounds
-kangax-es6/subclassing.misc.Map.js: TypeError: 'set' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.misc.Map.js: TypeError: Map.prototype.set expects 'this' to be a Map
 kangax-es6/subclassing.misc.Number.js: failed
-kangax-es6/subclassing.misc.Set.js: TypeError: 'add' proto func tried to be called on a type without an impl
+kangax-es6/subclassing.misc.Set.js: TypeError: Set.prototype.add expects 'this' to be a Set
 kangax-es6/subclassing.misc.String.js: failed
 kangax-es6/super.correct-constructor.js: failed
 kangax-es6/super.expression.js: OK
@@ -1414,19 +1414,19 @@ kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Regex parse: invalid {
 kangax-es2025/Iterator.extends.js: ReferenceError: Iterator is not defined
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
 kangax-es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
-kangax-es2025/Iterator.instanceof.js: TypeError: 'values' proto func tried to be called on a type without an impl
+kangax-es2025/Iterator.instanceof.js: TypeError: undefined is not a function
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator is not defined
-kangax-es2025/Iterator.prototype.drop.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.every.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.filter.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.find.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.flatMap.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.forEach.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.map.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.reduce.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.some.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.take.js: TypeError: 'values' proto func tried to be called on a type without an impl
-kangax-es2025/Iterator.prototype.toArray.js: TypeError: 'values' proto func tried to be called on a type without an impl
+kangax-es2025/Iterator.prototype.drop.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.every.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.filter.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.find.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.flatMap.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.forEach.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.map.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
 kangax-es2025/Promise.try.js: failed
 kangax-es2025/RegExp.escape.js: failed
 kangax-es2025/Set.prototype.difference.js: OK
@@ -1477,14 +1477,14 @@ kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not
 kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
 kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined is not a function
-kangax-next/AsyncIterator.prototype.every.js: TypeError: 'every' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.filter.js: TypeError: 'filter' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.find.js: TypeError: 'find' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: 'flatMap' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.forEach.js: TypeError: 'forEach' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.map.js: TypeError: 'map' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.reduce.js: TypeError: 'reduce' proto func tried to be called on a type without an impl
-kangax-next/AsyncIterator.prototype.some.js: TypeError: 'some' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.every.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: undefined is not a function
 kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined is not a function
 kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not a function
 kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined

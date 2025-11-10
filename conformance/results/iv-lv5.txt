@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "17d9065439fc5b5b24b13af83c9375f5842b1f7d6199221c8a88949ac377ec3a", "binary_size": 5108520, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "iv-lv5", "jit": "", "repository": "https://github.com/Constellation/iv.git", "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f", "revision_date": "2015-03-24", "version": "1.0.1-270-g64c3a9c7"}
+Metadata: {"arch": "arm64", "binary_sha256": "67d2b8f32cc143ee962ce13c00119c35a0d7fd8196123c24503b17311b27ab7a", "binary_size": 5108520, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "iv-lv5", "jit": "", "repository": "https://github.com/Constellation/iv.git", "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f", "revision_date": "2015-03-24", "version": "1.0.1-270-g64c3a9c7"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -494,12 +494,12 @@ kangax-es5/strict.this-undefined.js: OK
 kangax-es5/strict.with-error.js: OK
 kangax-es6/Array.Symbol.species.js: TypeError: in requires object
 kangax-es6/Array.from.array-like.js: OK
-kangax-es6/Array.from.generator.js: SyntaxError: kangax-es6/Array.from.generator.js:9: SyntaxError: unexpected token *
+kangax-es6/Array.from.generator.js: SyntaxError: Array.from.generator.js:9: SyntaxError: unexpected token *
 kangax-es6/Array.from.iterable-instance.js: failed
 kangax-es6/Array.from.iterable.js: failed
 kangax-es6/Array.from.iterator-closing.js: failed
 kangax-es6/Array.from.map.array-like.js: failed
-kangax-es6/Array.from.map.generator.js: SyntaxError: kangax-es6/Array.from.map.generator.js:9: SyntaxError: unexpected token *
+kangax-es6/Array.from.map.generator.js: SyntaxError: Array.from.map.generator.js:9: SyntaxError: unexpected token *
 kangax-es6/Array.from.map.iterable-instance.js: failed
 kangax-es6/Array.from.map.iterable.js: failed
 kangax-es6/Array.iterator-prototype-chain.js: failed
@@ -517,20 +517,20 @@ kangax-es6/Array.prototype.values.js: OK
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: null or undefined has no properties
 kangax-es6/Function.name.accessor.js: failed
 kangax-es6/Function.name.bound.js: failed
-kangax-es6/Function.name.class-expression.js: SyntaxError: kangax-es6/Function.name.class-expression.js:10: SyntaxError: unexpected token class
-kangax-es6/Function.name.class-object-method.js: SyntaxError: kangax-es6/Function.name.class-object-method.js:10: SyntaxError: unexpected token class
-kangax-es6/Function.name.class-prototype.js: SyntaxError: kangax-es6/Function.name.class-prototype.js:10: SyntaxError: unexpected token class
-kangax-es6/Function.name.class-statement.js: SyntaxError: kangax-es6/Function.name.class-statement.js:10: SyntaxError: unexpected token class
-kangax-es6/Function.name.class-static.js: SyntaxError: kangax-es6/Function.name.class-static.js:10: SyntaxError: unexpected token class
-kangax-es6/Function.name.class-variable.js: SyntaxError: kangax-es6/Function.name.class-variable.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-expression.js: SyntaxError: Function.name.class-expression.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-object-method.js: SyntaxError: Function.name.class-object-method.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-prototype.js: SyntaxError: Function.name.class-prototype.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-statement.js: SyntaxError: Function.name.class-statement.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-static.js: SyntaxError: Function.name.class-static.js:10: SyntaxError: unexpected token class
+kangax-es6/Function.name.class-variable.js: SyntaxError: Function.name.class-variable.js:10: SyntaxError: unexpected token class
 kangax-es6/Function.name.configurable.js: failed
 kangax-es6/Function.name.expression.js: failed
 kangax-es6/Function.name.new-Function.js: failed
 kangax-es6/Function.name.object-method.js: failed
-kangax-es6/Function.name.shorthand.js: SyntaxError: kangax-es6/Function.name.shorthand.js:10: SyntaxError: unexpected token (
-kangax-es6/Function.name.shorthand.no-lexical.js: SyntaxError: kangax-es6/Function.name.shorthand.no-lexical.js:11: SyntaxError: unexpected token (
+kangax-es6/Function.name.shorthand.js: SyntaxError: Function.name.shorthand.js:10: SyntaxError: unexpected token (
+kangax-es6/Function.name.shorthand.no-lexical.js: SyntaxError: Function.name.shorthand.no-lexical.js:11: SyntaxError: unexpected token (
 kangax-es6/Function.name.statement.js: failed
-kangax-es6/Function.name.symbol-keyed.js: SyntaxError: kangax-es6/Function.name.symbol-keyed.js:13: SyntaxError: invalid property name
+kangax-es6/Function.name.symbol-keyed.js: SyntaxError: Function.name.symbol-keyed.js:13: SyntaxError: invalid property name
 kangax-es6/Function.name.variable.js: failed
 kangax-es6/Map.Symbol.species.js: TypeError: in requires object
 kangax-es6/Map.constructor-accepts-null.js: TypeError: ToObject to null or undefined
@@ -629,7 +629,7 @@ kangax-es6/Reflect.construct.Function-subclassing.js: TypeError: not callable ob
 kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: "Promise" not defined
 kangax-es6/Reflect.construct.RegExp-subclassing.js: TypeError: not callable object
 kangax-es6/Reflect.construct.js: TypeError: not callable object
-kangax-es6/Reflect.construct.new-target.js: SyntaxError: kangax-es6/Reflect.construct.new-target.js:11: SyntaxError: unexpected token .
+kangax-es6/Reflect.construct.new-target.js: SyntaxError: Reflect.construct.new-target.js:11: SyntaxError: unexpected token .
 kangax-es6/Reflect.construct.third-argument.js: TypeError: not callable object
 kangax-es6/Reflect.defineProperty.js: TypeError: object not extensible
 kangax-es6/Reflect.deleteProperty.js: OK
@@ -740,206 +740,206 @@ kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
 kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
 kangax-es6/annex-b.__proto__.literals.js: failed
 kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
-kangax-es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: kangax-es6/annex-b.__proto__.literals.not-computed.js:14: SyntaxError: invalid property name
-kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js:13: SyntaxError: unexpected token (
-kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js:14: SyntaxError: unexpected token }
-kangax-es6/arrow.0-params.js: SyntaxError: kangax-es6/arrow.0-params.js:10: SyntaxError: unexpected token )
-kangax-es6/arrow.1-param.js: SyntaxError: kangax-es6/arrow.1-param.js:10: SyntaxError: unexpected token >
-kangax-es6/arrow.5-param.js: ReferenceError: kangax-es6/arrow.5-param.js:10: ReferenceError: assign to invalid left-hand-side
-kangax-es6/arrow.bind.js: SyntaxError: kangax-es6/arrow.bind.js:10: SyntaxError: unexpected token >
-kangax-es6/arrow.lexical-arguments.js: SyntaxError: kangax-es6/arrow.lexical-arguments.js:10: SyntaxError: unexpected token >
-kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: kangax-es6/arrow.lexical-super.constructor.js:12: SyntaxError: unexpected token class
-kangax-es6/arrow.lexical-super.methods.js: SyntaxError: kangax-es6/arrow.lexical-super.methods.js:10: SyntaxError: unexpected token class
-kangax-es6/arrow.lexical-this.js: SyntaxError: kangax-es6/arrow.lexical-this.js:10: SyntaxError: unexpected token >
-kangax-es6/arrow.new-target.js: SyntaxError: kangax-es6/arrow.new-target.js:11: SyntaxError: unexpected token >
-kangax-es6/arrow.no-line-break.js: SyntaxError: kangax-es6/arrow.no-line-break.js:10: SyntaxError: unexpected token )
-kangax-es6/arrow.no-prototype.js: SyntaxError: kangax-es6/arrow.no-prototype.js:10: SyntaxError: unexpected token )
-kangax-es6/arrow.precedence.js: SyntaxError: kangax-es6/arrow.precedence.js:10: SyntaxError: unexpected token )
-kangax-es6/arrow.this-call-apply.js: SyntaxError: kangax-es6/arrow.this-call-apply.js:10: SyntaxError: unexpected token )
-kangax-es6/class.accessor-properties.js: SyntaxError: kangax-es6/class.accessor-properties.js:11: SyntaxError: unexpected token class
-kangax-es6/class.anonymous.js: SyntaxError: kangax-es6/class.anonymous.js:10: SyntaxError: unexpected token class
-kangax-es6/class.block-scoped.js: SyntaxError: kangax-es6/class.block-scoped.js:10: SyntaxError: unexpected token class
-kangax-es6/class.computed-accessor-properties.js: SyntaxError: kangax-es6/class.computed-accessor-properties.js:11: SyntaxError: unexpected token class
-kangax-es6/class.computed-names-tdz.js: SyntaxError: kangax-es6/class.computed-names-tdz.js:11: SyntaxError: unexpected token class
-kangax-es6/class.computed-prototype-methods.js: SyntaxError: kangax-es6/class.computed-prototype-methods.js:11: SyntaxError: unexpected token class
-kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: kangax-es6/class.computed-static-accessor-properties.js:11: SyntaxError: unexpected token class
-kangax-es6/class.computed-static-methods.js: SyntaxError: kangax-es6/class.computed-static-methods.js:11: SyntaxError: unexpected token class
-kangax-es6/class.constructor-requires-new.js: SyntaxError: kangax-es6/class.constructor-requires-new.js:10: SyntaxError: unexpected token class
-kangax-es6/class.constructor.js: SyntaxError: kangax-es6/class.constructor.js:10: SyntaxError: unexpected token class
-kangax-es6/class.expression.js: SyntaxError: kangax-es6/class.expression.js:10: SyntaxError: unexpected token class
-kangax-es6/class.extends-expressions.js: SyntaxError: kangax-es6/class.extends-expressions.js:11: SyntaxError: unexpected token class
-kangax-es6/class.extends-null.js: SyntaxError: kangax-es6/class.extends-null.js:10: SyntaxError: unexpected token class
-kangax-es6/class.extends.js: SyntaxError: kangax-es6/class.extends.js:10: SyntaxError: unexpected token class
-kangax-es6/class.implicit-strict.js: SyntaxError: kangax-es6/class.implicit-strict.js:10: SyntaxError: unexpected token class
-kangax-es6/class.lexical-name.js: SyntaxError: kangax-es6/class.lexical-name.js:10: SyntaxError: unexpected token class
-kangax-es6/class.methods-not-enumerable.js: SyntaxError: kangax-es6/class.methods-not-enumerable.js:10: SyntaxError: unexpected token class
-kangax-es6/class.new-target.js: SyntaxError: kangax-es6/class.new-target.js:12: SyntaxError: unexpected token .
-kangax-es6/class.optional-semicolons.js: SyntaxError: kangax-es6/class.optional-semicolons.js:10: SyntaxError: unexpected token class
-kangax-es6/class.prototype-methods.js: SyntaxError: kangax-es6/class.prototype-methods.js:10: SyntaxError: unexpected token class
-kangax-es6/class.statement.js: SyntaxError: kangax-es6/class.statement.js:10: SyntaxError: unexpected token class
-kangax-es6/class.static-accessor-properties.js: SyntaxError: kangax-es6/class.static-accessor-properties.js:11: SyntaxError: unexpected token class
-kangax-es6/class.static-methods.js: SyntaxError: kangax-es6/class.static-methods.js:10: SyntaxError: unexpected token class
-kangax-es6/class.string-keyed-methods.js: SyntaxError: kangax-es6/class.string-keyed-methods.js:10: SyntaxError: unexpected token class
+kangax-es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: annex-b.__proto__.literals.not-computed.js:14: SyntaxError: invalid property name
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: annex-b.__proto__.literals.not-shorthand-method.js:13: SyntaxError: unexpected token (
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: annex-b.__proto__.literals.not-shorthand-property.js:14: SyntaxError: unexpected token }
+kangax-es6/arrow.0-params.js: SyntaxError: arrow.0-params.js:10: SyntaxError: unexpected token )
+kangax-es6/arrow.1-param.js: SyntaxError: arrow.1-param.js:10: SyntaxError: unexpected token >
+kangax-es6/arrow.5-param.js: ReferenceError: arrow.5-param.js:10: ReferenceError: assign to invalid left-hand-side
+kangax-es6/arrow.bind.js: SyntaxError: arrow.bind.js:10: SyntaxError: unexpected token >
+kangax-es6/arrow.lexical-arguments.js: SyntaxError: arrow.lexical-arguments.js:10: SyntaxError: unexpected token >
+kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: arrow.lexical-super.constructor.js:12: SyntaxError: unexpected token class
+kangax-es6/arrow.lexical-super.methods.js: SyntaxError: arrow.lexical-super.methods.js:10: SyntaxError: unexpected token class
+kangax-es6/arrow.lexical-this.js: SyntaxError: arrow.lexical-this.js:10: SyntaxError: unexpected token >
+kangax-es6/arrow.new-target.js: SyntaxError: arrow.new-target.js:11: SyntaxError: unexpected token >
+kangax-es6/arrow.no-line-break.js: SyntaxError: arrow.no-line-break.js:10: SyntaxError: unexpected token )
+kangax-es6/arrow.no-prototype.js: SyntaxError: arrow.no-prototype.js:10: SyntaxError: unexpected token )
+kangax-es6/arrow.precedence.js: SyntaxError: arrow.precedence.js:10: SyntaxError: unexpected token )
+kangax-es6/arrow.this-call-apply.js: SyntaxError: arrow.this-call-apply.js:10: SyntaxError: unexpected token )
+kangax-es6/class.accessor-properties.js: SyntaxError: class.accessor-properties.js:11: SyntaxError: unexpected token class
+kangax-es6/class.anonymous.js: SyntaxError: class.anonymous.js:10: SyntaxError: unexpected token class
+kangax-es6/class.block-scoped.js: SyntaxError: class.block-scoped.js:10: SyntaxError: unexpected token class
+kangax-es6/class.computed-accessor-properties.js: SyntaxError: class.computed-accessor-properties.js:11: SyntaxError: unexpected token class
+kangax-es6/class.computed-names-tdz.js: SyntaxError: class.computed-names-tdz.js:11: SyntaxError: unexpected token class
+kangax-es6/class.computed-prototype-methods.js: SyntaxError: class.computed-prototype-methods.js:11: SyntaxError: unexpected token class
+kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: class.computed-static-accessor-properties.js:11: SyntaxError: unexpected token class
+kangax-es6/class.computed-static-methods.js: SyntaxError: class.computed-static-methods.js:11: SyntaxError: unexpected token class
+kangax-es6/class.constructor-requires-new.js: SyntaxError: class.constructor-requires-new.js:10: SyntaxError: unexpected token class
+kangax-es6/class.constructor.js: SyntaxError: class.constructor.js:10: SyntaxError: unexpected token class
+kangax-es6/class.expression.js: SyntaxError: class.expression.js:10: SyntaxError: unexpected token class
+kangax-es6/class.extends-expressions.js: SyntaxError: class.extends-expressions.js:11: SyntaxError: unexpected token class
+kangax-es6/class.extends-null.js: SyntaxError: class.extends-null.js:10: SyntaxError: unexpected token class
+kangax-es6/class.extends.js: SyntaxError: class.extends.js:10: SyntaxError: unexpected token class
+kangax-es6/class.implicit-strict.js: SyntaxError: class.implicit-strict.js:10: SyntaxError: unexpected token class
+kangax-es6/class.lexical-name.js: SyntaxError: class.lexical-name.js:10: SyntaxError: unexpected token class
+kangax-es6/class.methods-not-enumerable.js: SyntaxError: class.methods-not-enumerable.js:10: SyntaxError: unexpected token class
+kangax-es6/class.new-target.js: SyntaxError: class.new-target.js:12: SyntaxError: unexpected token .
+kangax-es6/class.optional-semicolons.js: SyntaxError: class.optional-semicolons.js:10: SyntaxError: unexpected token class
+kangax-es6/class.prototype-methods.js: SyntaxError: class.prototype-methods.js:10: SyntaxError: unexpected token class
+kangax-es6/class.statement.js: SyntaxError: class.statement.js:10: SyntaxError: unexpected token class
+kangax-es6/class.static-accessor-properties.js: SyntaxError: class.static-accessor-properties.js:11: SyntaxError: unexpected token class
+kangax-es6/class.static-methods.js: SyntaxError: class.static-methods.js:10: SyntaxError: unexpected token class
+kangax-es6/class.string-keyed-methods.js: SyntaxError: class.string-keyed-methods.js:10: SyntaxError: unexpected token class
 kangax-es6/const.basic.js: OK
 kangax-es6/const.block-scoped.js: failed
 kangax-es6/const.for-in.js: failed
 kangax-es6/const.for-loop.js: failed
-kangax-es6/const.for-of.js: SyntaxError: kangax-es6/const.for-of.js:11: SyntaxError: unexpected identifier
+kangax-es6/const.for-of.js: SyntaxError: const.for-of.js:11: SyntaxError: unexpected identifier
 kangax-es6/const.no-redefine.js: failed
 kangax-es6/const.no-statement.js: failed
 kangax-es6/const.shadow.js: OK
-kangax-es6/const.strict.basic.js: SyntaxError: kangax-es6/const.strict.basic.js:11: SyntaxError: "const" not allowed in strict code
-kangax-es6/const.strict.block-scoped.js: SyntaxError: kangax-es6/const.strict.block-scoped.js:11: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.basic.js: SyntaxError: const.strict.basic.js:11: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.block-scoped.js: SyntaxError: const.strict.block-scoped.js:11: SyntaxError: "const" not allowed in strict code
 kangax-es6/const.strict.for-in.js: failed
-kangax-es6/const.strict.for-loop.js: SyntaxError: kangax-es6/const.strict.for-loop.js:11: SyntaxError: "const" not allowed in strict code
-kangax-es6/const.strict.for-of.js: SyntaxError: kangax-es6/const.strict.for-of.js:12: SyntaxError: unexpected identifier
-kangax-es6/const.strict.no-redefine.js: SyntaxError: kangax-es6/const.strict.no-redefine.js:11: SyntaxError: "const" not allowed in strict code
-kangax-es6/const.strict.no-statement.js: SyntaxError: kangax-es6/const.strict.no-statement.js:11: SyntaxError: "const" not allowed in strict code
-kangax-es6/const.strict.shadow.js: SyntaxError: kangax-es6/const.strict.shadow.js:12: SyntaxError: "const" not allowed in strict code
-kangax-es6/const.strict.tdz.js: SyntaxError: kangax-es6/const.strict.tdz.js:13: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.for-loop.js: SyntaxError: const.strict.for-loop.js:11: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.for-of.js: SyntaxError: const.strict.for-of.js:12: SyntaxError: unexpected identifier
+kangax-es6/const.strict.no-redefine.js: SyntaxError: const.strict.no-redefine.js:11: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.no-statement.js: SyntaxError: const.strict.no-statement.js:11: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.shadow.js: SyntaxError: const.strict.shadow.js:12: SyntaxError: "const" not allowed in strict code
+kangax-es6/const.strict.tdz.js: SyntaxError: const.strict.tdz.js:13: SyntaxError: "const" not allowed in strict code
 kangax-es6/const.tdz.js: failed
-kangax-es6/default-params.arguments.js: SyntaxError: kangax-es6/default-params.arguments.js:10: SyntaxError: unexpected token =
-kangax-es6/default-params.basic.js: SyntaxError: kangax-es6/default-params.basic.js:10: SyntaxError: unexpected token =
-kangax-es6/default-params.explicit-undefined.js: SyntaxError: kangax-es6/default-params.explicit-undefined.js:10: SyntaxError: unexpected token =
+kangax-es6/default-params.arguments.js: SyntaxError: default-params.arguments.js:10: SyntaxError: unexpected token =
+kangax-es6/default-params.basic.js: SyntaxError: default-params.basic.js:10: SyntaxError: unexpected token =
+kangax-es6/default-params.explicit-undefined.js: SyntaxError: default-params.explicit-undefined.js:10: SyntaxError: unexpected token =
 kangax-es6/default-params.new-function.js: SyntaxError: (eval):1: SyntaxError: unexpected token =
-kangax-es6/default-params.refer-previous.js: SyntaxError: kangax-es6/default-params.refer-previous.js:10: SyntaxError: unexpected token =
-kangax-es6/default-params.separate-scope.js: SyntaxError: kangax-es6/default-params.separate-scope.js:10: SyntaxError: unexpected token =
-kangax-es6/default-params.tdz.js: SyntaxError: kangax-es6/default-params.tdz.js:10: SyntaxError: unexpected token =
-kangax-es6/destructuring-assign.array.js: ReferenceError: kangax-es6/destructuring-assign.array.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.astral-string.js: ReferenceError: kangax-es6/destructuring-assign.astral-string.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: kangax-es6/destructuring-assign.chained-iterable.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.chained-object.js: SyntaxError: kangax-es6/destructuring-assign.chained-object.js:11: SyntaxError: unexpected token ,
-kangax-es6/destructuring-assign.computed-properties.js: SyntaxError: kangax-es6/destructuring-assign.computed-properties.js:11: SyntaxError: invalid property name
-kangax-es6/destructuring-assign.defaults.js: SyntaxError: kangax-es6/destructuring-assign.defaults.js:11: SyntaxError: unexpected token =
-kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: kangax-es6/destructuring-assign.empty-patterns.js:10: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.generator.js: ReferenceError: kangax-es6/destructuring-assign.generator.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: kangax-es6/destructuring-assign.iterable-expression.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.iterable-instance.js: ReferenceError: kangax-es6/destructuring-assign.iterable-instance.js:35: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.iterable.js: ReferenceError: kangax-es6/destructuring-assign.iterable.js:35: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: kangax-es6/destructuring-assign.iterator-closing.js:39: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: kangax-es6/destructuring-assign.nested-rest.js:11: SyntaxError: unexpected token .
-kangax-es6/destructuring-assign.nested.js: SyntaxError: kangax-es6/destructuring-assign.nested.js:11: SyntaxError: unexpected token }
-kangax-es6/destructuring-assign.object-expression.js: SyntaxError: kangax-es6/destructuring-assign.object-expression.js:11: SyntaxError: unexpected token ,
-kangax-es6/destructuring-assign.object-primitives.js: SyntaxError: kangax-es6/destructuring-assign.object-primitives.js:11: SyntaxError: unexpected token }
-kangax-es6/destructuring-assign.object.js: SyntaxError: kangax-es6/destructuring-assign.object.js:11: SyntaxError: unexpected token ,
-kangax-es6/destructuring-assign.parenthesised-error.js: SyntaxError: kangax-es6/destructuring-assign.parenthesised-error.js:11: SyntaxError: unexpected token ,
-kangax-es6/destructuring-assign.rest.js: SyntaxError: kangax-es6/destructuring-assign.rest.js:11: SyntaxError: unexpected token .
-kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: kangax-es6/destructuring-assign.sparse-array.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.string.js: ReferenceError: kangax-es6/destructuring-assign.string.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.throws-null-undefined.js: SyntaxError: kangax-es6/destructuring-assign.throws-null-undefined.js:12: SyntaxError: unexpected token }
-kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: kangax-es6/destructuring-assign.trailing-comma-iterable.js:11: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-assign.trailing-comma-object.js: SyntaxError: kangax-es6/destructuring-assign.trailing-comma-object.js:11: SyntaxError: unexpected token ,
-kangax-es6/destructuring-decl.array.js: SyntaxError: kangax-es6/destructuring-decl.array.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.astral-string.js: SyntaxError: kangax-es6/destructuring-decl.astral-string.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.catch.js: SyntaxError: kangax-es6/destructuring-decl.catch.js:12: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: kangax-es6/destructuring-decl.computed-properties.js:11: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: kangax-es6/destructuring-decl.defaults-tdz.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.defaults.js: SyntaxError: kangax-es6/destructuring-decl.defaults.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.for-in.js: SyntaxError: kangax-es6/destructuring-decl.for-in.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.for-of.js: SyntaxError: kangax-es6/destructuring-decl.for-of.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.generator.js: SyntaxError: kangax-es6/destructuring-decl.generator.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.iterable-instance.js: SyntaxError: kangax-es6/destructuring-decl.iterable-instance.js:34: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.iterable.js: SyntaxError: kangax-es6/destructuring-decl.iterable.js:34: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.iterator-closing.js: SyntaxError: kangax-es6/destructuring-decl.iterator-closing.js:38: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: kangax-es6/destructuring-decl.multiple-var.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.nested.js: SyntaxError: kangax-es6/destructuring-decl.nested.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.object-primitives.js: SyntaxError: kangax-es6/destructuring-decl.object-primitives.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.object.js: SyntaxError: kangax-es6/destructuring-decl.object.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.rest.js: SyntaxError: kangax-es6/destructuring-decl.rest.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.sparse-array.js: SyntaxError: kangax-es6/destructuring-decl.sparse-array.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.string.js: SyntaxError: kangax-es6/destructuring-decl.string.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: kangax-es6/destructuring-decl.throws-null-undefined.js:11: SyntaxError: unexpected token {
-kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: kangax-es6/destructuring-decl.trailing-comma-iterable.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: kangax-es6/destructuring-decl.trailing-comma-object.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.aliased-defaults-arrow.js: ReferenceError: kangax-es6/destructuring-params.aliased-defaults-arrow.js:10: ReferenceError: assign to invalid left-hand-side
-kangax-es6/destructuring-params.arguments.js: SyntaxError: kangax-es6/destructuring-params.arguments.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.array.js: SyntaxError: kangax-es6/destructuring-params.array.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.astral-string.js: SyntaxError: kangax-es6/destructuring-params.astral-string.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.computed-properties.js: SyntaxError: kangax-es6/destructuring-params.computed-properties.js:11: SyntaxError: unexpected token {
+kangax-es6/default-params.refer-previous.js: SyntaxError: default-params.refer-previous.js:10: SyntaxError: unexpected token =
+kangax-es6/default-params.separate-scope.js: SyntaxError: default-params.separate-scope.js:10: SyntaxError: unexpected token =
+kangax-es6/default-params.tdz.js: SyntaxError: default-params.tdz.js:10: SyntaxError: unexpected token =
+kangax-es6/destructuring-assign.array.js: ReferenceError: destructuring-assign.array.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.astral-string.js: ReferenceError: destructuring-assign.astral-string.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: destructuring-assign.chained-iterable.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.chained-object.js: SyntaxError: destructuring-assign.chained-object.js:11: SyntaxError: unexpected token ,
+kangax-es6/destructuring-assign.computed-properties.js: SyntaxError: destructuring-assign.computed-properties.js:11: SyntaxError: invalid property name
+kangax-es6/destructuring-assign.defaults.js: SyntaxError: destructuring-assign.defaults.js:11: SyntaxError: unexpected token =
+kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: destructuring-assign.empty-patterns.js:10: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.generator.js: ReferenceError: destructuring-assign.generator.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: destructuring-assign.iterable-expression.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.iterable-instance.js: ReferenceError: destructuring-assign.iterable-instance.js:35: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.iterable.js: ReferenceError: destructuring-assign.iterable.js:35: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: destructuring-assign.iterator-closing.js:39: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: destructuring-assign.nested-rest.js:11: SyntaxError: unexpected token .
+kangax-es6/destructuring-assign.nested.js: SyntaxError: destructuring-assign.nested.js:11: SyntaxError: unexpected token }
+kangax-es6/destructuring-assign.object-expression.js: SyntaxError: destructuring-assign.object-expression.js:11: SyntaxError: unexpected token ,
+kangax-es6/destructuring-assign.object-primitives.js: SyntaxError: destructuring-assign.object-primitives.js:11: SyntaxError: unexpected token }
+kangax-es6/destructuring-assign.object.js: SyntaxError: destructuring-assign.object.js:11: SyntaxError: unexpected token ,
+kangax-es6/destructuring-assign.parenthesised-error.js: SyntaxError: destructuring-assign.parenthesised-error.js:11: SyntaxError: unexpected token ,
+kangax-es6/destructuring-assign.rest.js: SyntaxError: destructuring-assign.rest.js:11: SyntaxError: unexpected token .
+kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: destructuring-assign.sparse-array.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.string.js: ReferenceError: destructuring-assign.string.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.throws-null-undefined.js: SyntaxError: destructuring-assign.throws-null-undefined.js:12: SyntaxError: unexpected token }
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: destructuring-assign.trailing-comma-iterable.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-assign.trailing-comma-object.js: SyntaxError: destructuring-assign.trailing-comma-object.js:11: SyntaxError: unexpected token ,
+kangax-es6/destructuring-decl.array.js: SyntaxError: destructuring-decl.array.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.astral-string.js: SyntaxError: destructuring-decl.astral-string.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.catch.js: SyntaxError: destructuring-decl.catch.js:12: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: destructuring-decl.computed-properties.js:11: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: destructuring-decl.defaults-tdz.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.defaults.js: SyntaxError: destructuring-decl.defaults.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.for-in.js: SyntaxError: destructuring-decl.for-in.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.for-of.js: SyntaxError: destructuring-decl.for-of.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.generator.js: SyntaxError: destructuring-decl.generator.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.iterable-instance.js: SyntaxError: destructuring-decl.iterable-instance.js:34: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.iterable.js: SyntaxError: destructuring-decl.iterable.js:34: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.iterator-closing.js: SyntaxError: destructuring-decl.iterator-closing.js:38: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: destructuring-decl.multiple-var.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.nested.js: SyntaxError: destructuring-decl.nested.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.object-primitives.js: SyntaxError: destructuring-decl.object-primitives.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.object.js: SyntaxError: destructuring-decl.object.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.rest.js: SyntaxError: destructuring-decl.rest.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.sparse-array.js: SyntaxError: destructuring-decl.sparse-array.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.string.js: SyntaxError: destructuring-decl.string.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: destructuring-decl.throws-null-undefined.js:11: SyntaxError: unexpected token {
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: destructuring-decl.trailing-comma-iterable.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: destructuring-decl.trailing-comma-object.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: ReferenceError: destructuring-params.aliased-defaults-arrow.js:10: ReferenceError: assign to invalid left-hand-side
+kangax-es6/destructuring-params.arguments.js: SyntaxError: destructuring-params.arguments.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.array.js: SyntaxError: destructuring-params.array.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.astral-string.js: SyntaxError: destructuring-params.astral-string.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.computed-properties.js: SyntaxError: destructuring-params.computed-properties.js:11: SyntaxError: unexpected token {
 kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: (eval):1: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: kangax-es6/destructuring-params.defaults-separate-scope.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.defaults.js: SyntaxError: kangax-es6/destructuring-params.defaults.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: destructuring-params.defaults-separate-scope.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.defaults.js: SyntaxError: destructuring-params.defaults.js:10: SyntaxError: unexpected token {
 kangax-es6/destructuring-params.duplicate-identifier.js: failed
-kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: kangax-es6/destructuring-params.empty-patterns.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.generator.js: SyntaxError: kangax-es6/destructuring-params.generator.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: kangax-es6/destructuring-params.iterable-instance.js:34: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.iterable.js: SyntaxError: kangax-es6/destructuring-params.iterable.js:34: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: kangax-es6/destructuring-params.iterator-closing.js:38: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.length.js: SyntaxError: kangax-es6/destructuring-params.length.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.nested.js: SyntaxError: kangax-es6/destructuring-params.nested.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: destructuring-params.empty-patterns.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.generator.js: SyntaxError: destructuring-params.generator.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: destructuring-params.iterable-instance.js:34: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.iterable.js: SyntaxError: destructuring-params.iterable.js:34: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: destructuring-params.iterator-closing.js:38: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.length.js: SyntaxError: destructuring-params.length.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.nested.js: SyntaxError: destructuring-params.nested.js:10: SyntaxError: unexpected token [
 kangax-es6/destructuring-params.new-function.js: SyntaxError: (eval):1: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.object-primitives.js: SyntaxError: kangax-es6/destructuring-params.object-primitives.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.object.js: SyntaxError: kangax-es6/destructuring-params.object.js:10: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.rest.js: SyntaxError: kangax-es6/destructuring-params.rest.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: kangax-es6/destructuring-params.shorthand-defaults-arrow.js:10: SyntaxError: unexpected token =
-kangax-es6/destructuring-params.sparse-array.js: SyntaxError: kangax-es6/destructuring-params.sparse-array.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.string.js: SyntaxError: kangax-es6/destructuring-params.string.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: kangax-es6/destructuring-params.throws-null-undefined.js:11: SyntaxError: unexpected token {
-kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: kangax-es6/destructuring-params.trailing-comma-iterable.js:10: SyntaxError: unexpected token [
-kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: kangax-es6/destructuring-params.trailing-comma-object.js:10: SyntaxError: unexpected token {
-kangax-es6/for-of.array.js: SyntaxError: kangax-es6/for-of.array.js:11: SyntaxError: unexpected identifier
-kangax-es6/for-of.astral-string.js: SyntaxError: kangax-es6/for-of.astral-string.js:11: SyntaxError: unexpected identifier
-kangax-es6/for-of.generator.js: SyntaxError: kangax-es6/for-of.generator.js:11: SyntaxError: unexpected token *
-kangax-es6/for-of.iterable-instance.js: SyntaxError: kangax-es6/for-of.iterable-instance.js:36: SyntaxError: unexpected identifier
-kangax-es6/for-of.iterable.js: SyntaxError: kangax-es6/for-of.iterable.js:36: SyntaxError: unexpected identifier
-kangax-es6/for-of.iterator-closing-break.js: SyntaxError: kangax-es6/for-of.iterator-closing-break.js:37: SyntaxError: unexpected identifier
-kangax-es6/for-of.iterator-closing-throw.js: SyntaxError: kangax-es6/for-of.iterator-closing-throw.js:38: SyntaxError: unexpected identifier
-kangax-es6/for-of.sparse-array.js: SyntaxError: kangax-es6/for-of.sparse-array.js:12: SyntaxError: unexpected identifier
-kangax-es6/for-of.string.js: SyntaxError: kangax-es6/for-of.string.js:11: SyntaxError: unexpected identifier
-kangax-es6/function.block-level-decl.js: SyntaxError: kangax-es6/function.block-level-decl.js:16: SyntaxError: function statement not allowed in strict code
-kangax-es6/generators.basic.js: SyntaxError: kangax-es6/generators.basic.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.constructor.js: SyntaxError: kangax-es6/generators.constructor.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.expression.js: SyntaxError: kangax-es6/generators.expression.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.no-new-this.js: SyntaxError: kangax-es6/generators.no-new-this.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.prototype-chain.js: SyntaxError: kangax-es6/generators.prototype-chain.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.prototype.js: SyntaxError: kangax-es6/generators.prototype.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.return.js: SyntaxError: kangax-es6/generators.return.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.sending.js: SyntaxError: kangax-es6/generators.sending.js:11: SyntaxError: unexpected token *
-kangax-es6/generators.shorthand.class.js: SyntaxError: kangax-es6/generators.shorthand.class.js:10: SyntaxError: unexpected token class
-kangax-es6/generators.shorthand.computed.class.js: SyntaxError: kangax-es6/generators.shorthand.computed.class.js:11: SyntaxError: unexpected token class
-kangax-es6/generators.shorthand.computed.js: SyntaxError: kangax-es6/generators.shorthand.computed.js:12: SyntaxError: invalid property name
-kangax-es6/generators.shorthand.js: SyntaxError: kangax-es6/generators.shorthand.js:11: SyntaxError: invalid property name
-kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: kangax-es6/generators.shorthand.no-constructor.js:10: SyntaxError: unexpected token class
-kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: kangax-es6/generators.shorthand.string-keyed.js:11: SyntaxError: invalid property name
-kangax-es6/generators.this.js: SyntaxError: kangax-es6/generators.this.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.throw.js: SyntaxError: kangax-es6/generators.throw.js:11: SyntaxError: unexpected token *
-kangax-es6/generators.yield-precedence.js: SyntaxError: kangax-es6/generators.yield-precedence.js:11: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.array.js: SyntaxError: kangax-es6/generators.yield-star.array.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.astral-string.js: SyntaxError: kangax-es6/generators.yield-star.astral-string.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.generator.js: SyntaxError: kangax-es6/generators.yield-star.generator.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: kangax-es6/generators.yield-star.iterable-instance.js:33: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.iterable.js: SyntaxError: kangax-es6/generators.yield-star.iterable.js:34: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: kangax-es6/generators.yield-star.iterator-closing-throw.js:42: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: kangax-es6/generators.yield-star.iterator-closing.js:40: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: kangax-es6/generators.yield-star.non-iterable-error.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: kangax-es6/generators.yield-star.sparse-array.js:10: SyntaxError: unexpected token *
-kangax-es6/generators.yield-star.string.js: SyntaxError: kangax-es6/generators.yield-star.string.js:10: SyntaxError: unexpected token *
-kangax-es6/let.basic.js: SyntaxError: kangax-es6/let.basic.js:10: SyntaxError: unexpected identifier
-kangax-es6/let.block-scoped.js: SyntaxError: kangax-es6/let.block-scoped.js:10: SyntaxError: unexpected identifier
+kangax-es6/destructuring-params.object-primitives.js: SyntaxError: destructuring-params.object-primitives.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.object.js: SyntaxError: destructuring-params.object.js:10: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.rest.js: SyntaxError: destructuring-params.rest.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: destructuring-params.shorthand-defaults-arrow.js:10: SyntaxError: unexpected token =
+kangax-es6/destructuring-params.sparse-array.js: SyntaxError: destructuring-params.sparse-array.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.string.js: SyntaxError: destructuring-params.string.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: destructuring-params.throws-null-undefined.js:11: SyntaxError: unexpected token {
+kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: destructuring-params.trailing-comma-iterable.js:10: SyntaxError: unexpected token [
+kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: destructuring-params.trailing-comma-object.js:10: SyntaxError: unexpected token {
+kangax-es6/for-of.array.js: SyntaxError: for-of.array.js:11: SyntaxError: unexpected identifier
+kangax-es6/for-of.astral-string.js: SyntaxError: for-of.astral-string.js:11: SyntaxError: unexpected identifier
+kangax-es6/for-of.generator.js: SyntaxError: for-of.generator.js:11: SyntaxError: unexpected token *
+kangax-es6/for-of.iterable-instance.js: SyntaxError: for-of.iterable-instance.js:36: SyntaxError: unexpected identifier
+kangax-es6/for-of.iterable.js: SyntaxError: for-of.iterable.js:36: SyntaxError: unexpected identifier
+kangax-es6/for-of.iterator-closing-break.js: SyntaxError: for-of.iterator-closing-break.js:37: SyntaxError: unexpected identifier
+kangax-es6/for-of.iterator-closing-throw.js: SyntaxError: for-of.iterator-closing-throw.js:38: SyntaxError: unexpected identifier
+kangax-es6/for-of.sparse-array.js: SyntaxError: for-of.sparse-array.js:12: SyntaxError: unexpected identifier
+kangax-es6/for-of.string.js: SyntaxError: for-of.string.js:11: SyntaxError: unexpected identifier
+kangax-es6/function.block-level-decl.js: SyntaxError: function.block-level-decl.js:16: SyntaxError: function statement not allowed in strict code
+kangax-es6/generators.basic.js: SyntaxError: generators.basic.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.constructor.js: SyntaxError: generators.constructor.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.expression.js: SyntaxError: generators.expression.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.no-new-this.js: SyntaxError: generators.no-new-this.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.prototype-chain.js: SyntaxError: generators.prototype-chain.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.prototype.js: SyntaxError: generators.prototype.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.return.js: SyntaxError: generators.return.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.sending.js: SyntaxError: generators.sending.js:11: SyntaxError: unexpected token *
+kangax-es6/generators.shorthand.class.js: SyntaxError: generators.shorthand.class.js:10: SyntaxError: unexpected token class
+kangax-es6/generators.shorthand.computed.class.js: SyntaxError: generators.shorthand.computed.class.js:11: SyntaxError: unexpected token class
+kangax-es6/generators.shorthand.computed.js: SyntaxError: generators.shorthand.computed.js:12: SyntaxError: invalid property name
+kangax-es6/generators.shorthand.js: SyntaxError: generators.shorthand.js:11: SyntaxError: invalid property name
+kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: generators.shorthand.no-constructor.js:10: SyntaxError: unexpected token class
+kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: generators.shorthand.string-keyed.js:11: SyntaxError: invalid property name
+kangax-es6/generators.this.js: SyntaxError: generators.this.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.throw.js: SyntaxError: generators.throw.js:11: SyntaxError: unexpected token *
+kangax-es6/generators.yield-precedence.js: SyntaxError: generators.yield-precedence.js:11: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.array.js: SyntaxError: generators.yield-star.array.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.astral-string.js: SyntaxError: generators.yield-star.astral-string.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.generator.js: SyntaxError: generators.yield-star.generator.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: generators.yield-star.iterable-instance.js:33: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.iterable.js: SyntaxError: generators.yield-star.iterable.js:34: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: generators.yield-star.iterator-closing-throw.js:42: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: generators.yield-star.iterator-closing.js:40: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: generators.yield-star.non-iterable-error.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: generators.yield-star.sparse-array.js:10: SyntaxError: unexpected token *
+kangax-es6/generators.yield-star.string.js: SyntaxError: generators.yield-star.string.js:10: SyntaxError: unexpected token *
+kangax-es6/let.basic.js: SyntaxError: let.basic.js:10: SyntaxError: unexpected identifier
+kangax-es6/let.block-scoped.js: SyntaxError: let.block-scoped.js:10: SyntaxError: unexpected identifier
 kangax-es6/let.for-in-shadow.js: failed
-kangax-es6/let.for-iteration.js: SyntaxError: kangax-es6/let.for-iteration.js:10: SyntaxError: unexpected identifier
-kangax-es6/let.for-loop.js: SyntaxError: kangax-es6/let.for-loop.js:10: SyntaxError: unexpected identifier
-kangax-es6/let.no-statement.js: SyntaxError: kangax-es6/let.no-statement.js:10: SyntaxError: unexpected identifier
-kangax-es6/let.shadow.js: SyntaxError: kangax-es6/let.shadow.js:11: SyntaxError: unexpected identifier
-kangax-es6/let.strict.basic.js: SyntaxError: kangax-es6/let.strict.basic.js:11: SyntaxError: unexpected token let
-kangax-es6/let.strict.block-scoped.js: SyntaxError: kangax-es6/let.strict.block-scoped.js:11: SyntaxError: unexpected token let
+kangax-es6/let.for-iteration.js: SyntaxError: let.for-iteration.js:10: SyntaxError: unexpected identifier
+kangax-es6/let.for-loop.js: SyntaxError: let.for-loop.js:10: SyntaxError: unexpected identifier
+kangax-es6/let.no-statement.js: SyntaxError: let.no-statement.js:10: SyntaxError: unexpected identifier
+kangax-es6/let.shadow.js: SyntaxError: let.shadow.js:11: SyntaxError: unexpected identifier
+kangax-es6/let.strict.basic.js: SyntaxError: let.strict.basic.js:11: SyntaxError: unexpected token let
+kangax-es6/let.strict.block-scoped.js: SyntaxError: let.strict.block-scoped.js:11: SyntaxError: unexpected token let
 kangax-es6/let.strict.for-in-shadow.js: failed
-kangax-es6/let.strict.for-iteration.js: SyntaxError: kangax-es6/let.strict.for-iteration.js:11: SyntaxError: unexpected token let
-kangax-es6/let.strict.for-loop.js: SyntaxError: kangax-es6/let.strict.for-loop.js:11: SyntaxError: unexpected token let
-kangax-es6/let.strict.no-statement.js: SyntaxError: kangax-es6/let.strict.no-statement.js:11: SyntaxError: unexpected token let
-kangax-es6/let.strict.shadow.js: SyntaxError: kangax-es6/let.strict.shadow.js:12: SyntaxError: unexpected token let
-kangax-es6/let.strict.tdz.js: SyntaxError: kangax-es6/let.strict.tdz.js:13: SyntaxError: unexpected token let
-kangax-es6/let.tdz.js: SyntaxError: kangax-es6/let.tdz.js:12: SyntaxError: unexpected identifier
+kangax-es6/let.strict.for-iteration.js: SyntaxError: let.strict.for-iteration.js:11: SyntaxError: unexpected token let
+kangax-es6/let.strict.for-loop.js: SyntaxError: let.strict.for-loop.js:11: SyntaxError: unexpected token let
+kangax-es6/let.strict.no-statement.js: SyntaxError: let.strict.no-statement.js:11: SyntaxError: unexpected token let
+kangax-es6/let.strict.shadow.js: SyntaxError: let.strict.shadow.js:12: SyntaxError: unexpected token let
+kangax-es6/let.strict.tdz.js: SyntaxError: let.strict.tdz.js:13: SyntaxError: unexpected token let
+kangax-es6/let.tdz.js: SyntaxError: let.tdz.js:12: SyntaxError: unexpected identifier
 kangax-es6/literals.binary.Number.js: failed
-kangax-es6/literals.binary.js: SyntaxError: kangax-es6/literals.binary.js:9: SyntaxError: illegal character
-kangax-es6/literals.object.computed-accessors.js: SyntaxError: kangax-es6/literals.object.computed-accessors.js:13: SyntaxError: invalid property name
-kangax-es6/literals.object.computed-properties.js: SyntaxError: kangax-es6/literals.object.computed-properties.js:11: SyntaxError: invalid property name
-kangax-es6/literals.object.computed-shorthand-methods.js: SyntaxError: kangax-es6/literals.object.computed-shorthand-methods.js:11: SyntaxError: invalid property name
-kangax-es6/literals.object.shorthand-methods.js: SyntaxError: kangax-es6/literals.object.shorthand-methods.js:10: SyntaxError: unexpected token (
-kangax-es6/literals.object.shorthand-properties.js: SyntaxError: kangax-es6/literals.object.shorthand-properties.js:10: SyntaxError: unexpected token ,
-kangax-es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: kangax-es6/literals.object.string-keyed-shorthand-methods.js:10: SyntaxError: unexpected token (
+kangax-es6/literals.binary.js: SyntaxError: literals.binary.js:9: SyntaxError: illegal character
+kangax-es6/literals.object.computed-accessors.js: SyntaxError: literals.object.computed-accessors.js:13: SyntaxError: invalid property name
+kangax-es6/literals.object.computed-properties.js: SyntaxError: literals.object.computed-properties.js:11: SyntaxError: invalid property name
+kangax-es6/literals.object.computed-shorthand-methods.js: SyntaxError: literals.object.computed-shorthand-methods.js:11: SyntaxError: invalid property name
+kangax-es6/literals.object.shorthand-methods.js: SyntaxError: literals.object.shorthand-methods.js:10: SyntaxError: unexpected token (
+kangax-es6/literals.object.shorthand-properties.js: SyntaxError: literals.object.shorthand-properties.js:10: SyntaxError: unexpected token ,
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: literals.object.string-keyed-shorthand-methods.js:10: SyntaxError: unexpected token (
 kangax-es6/literals.octal.Number.js: failed
-kangax-es6/literals.octal.js: SyntaxError: kangax-es6/literals.octal.js:9: SyntaxError: illegal character
+kangax-es6/literals.octal.js: SyntaxError: literals.octal.js:9: SyntaxError: illegal character
 kangax-es6/misc.Invalid-Date.js: OK
 kangax-es6/misc.Object.freeze.primitives.js: TypeError: Object.freeze requires Object argument
 kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: Object.getOwnPropertyDescriptor requires Object argument
@@ -971,14 +971,14 @@ kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: "Proxy" not defined
-kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js:13: SyntaxError: unexpected token class
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: misc.Proxy.get.ClassDefinitionEvaluation.js:13: SyntaxError: unexpected token class
 kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError: "Proxy" not defined
-kangax-es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: kangax-es6/misc.Proxy.get.IteratorComplete.js:22: SyntaxError: unexpected identifier
+kangax-es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: misc.Proxy.get.IteratorComplete.js:22: SyntaxError: unexpected identifier
 kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: "Proxy" not defined
@@ -1016,18 +1016,18 @@ kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: "Proxy" not defined
 kangax-es6/misc.RegExp-alter-flags.js: TypeError: RegExp Constructor with RegExp object and unknown flags
 kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: RegExp.prototype.toString is not generic function
 kangax-es6/misc.accessors-no-constructor.js: failed
-kangax-es6/misc.bound-function-prototype.arrow.js: SyntaxError: kangax-es6/misc.bound-function-prototype.arrow.js:10: SyntaxError: unexpected token )
-kangax-es6/misc.bound-function-prototype.class.js: SyntaxError: kangax-es6/misc.bound-function-prototype.class.js:10: SyntaxError: unexpected token class
+kangax-es6/misc.bound-function-prototype.arrow.js: SyntaxError: misc.bound-function-prototype.arrow.js:10: SyntaxError: unexpected token )
+kangax-es6/misc.bound-function-prototype.class.js: SyntaxError: misc.bound-function-prototype.class.js:10: SyntaxError: unexpected token class
 kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: kangax-es6/misc.bound-function-prototype.generator.js:10: SyntaxError: unexpected token *
-kangax-es6/misc.bound-function-prototype.subclass.js: SyntaxError: kangax-es6/misc.bound-function-prototype.subclass.js:10: SyntaxError: unexpected token class
+kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: misc.bound-function-prototype.generator.js:10: SyntaxError: unexpected token *
+kangax-es6/misc.bound-function-prototype.subclass.js: SyntaxError: misc.bound-function-prototype.subclass.js:10: SyntaxError: unexpected token class
 kangax-es6/misc.do-while-no-semicolon.js: OK
-kangax-es6/misc.duplicate-properties-strict.js: SyntaxError: kangax-es6/misc.duplicate-properties-strict.js:10: SyntaxError: multiple data property assignments with the same name not allowed in strict code
+kangax-es6/misc.duplicate-properties-strict.js: SyntaxError: misc.duplicate-properties-strict.js:10: SyntaxError: multiple data property assignments with the same name not allowed in strict code
 kangax-es6/misc.for-in-no-assignment-strict.js: failed
 kangax-es6/misc.function-length-configurable.js: failed
 kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 kangax-es6/misc.identifier-syntax.var-1.js: failed
-kangax-es6/misc.identifier-syntax.var-2.js: SyntaxError: kangax-es6/misc.identifier-syntax.var-2.js:9: SyntaxError: illegal character
+kangax-es6/misc.identifier-syntax.var-2.js: SyntaxError: misc.identifier-syntax.var-2.js:9: SyntaxError: illegal character
 kangax-es6/misc.property-order.JSON.parse.js: OK
 kangax-es6/misc.property-order.JSON.stringify.js: OK
 kangax-es6/misc.property-order.Object.assign.js: TypeError: not callable object
@@ -1036,83 +1036,83 @@ kangax-es6/misc.property-order.Object.keys.js: OK
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: TypeError: not callable object
 kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: TypeError: not callable object
 kangax-es6/misc.prototypes-not-instances.js: failed
-kangax-es6/new-target.assignment-error.js: SyntaxError: kangax-es6/new-target.assignment-error.js:12: SyntaxError: unexpected token .
-kangax-es6/new-target.constructor.js: SyntaxError: kangax-es6/new-target.constructor.js:12: SyntaxError: unexpected token .
-kangax-es6/regex.flags.u.case-folding.js: SyntaxError: kangax-es6/regex.flags.u.case-folding.js:10: SyntaxError: invalid regular expression
-kangax-es6/regex.flags.u.codepoint.js: SyntaxError: kangax-es6/regex.flags.u.codepoint.js:10: SyntaxError: invalid regular expression
-kangax-es6/regex.flags.u.js: SyntaxError: kangax-es6/regex.flags.u.js:10: SyntaxError: invalid regular expression
-kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: kangax-es6/regex.flags.u.non-bmp.js:10: SyntaxError: invalid regular expression
+kangax-es6/new-target.assignment-error.js: SyntaxError: new-target.assignment-error.js:12: SyntaxError: unexpected token .
+kangax-es6/new-target.constructor.js: SyntaxError: new-target.constructor.js:12: SyntaxError: unexpected token .
+kangax-es6/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:10: SyntaxError: invalid regular expression
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: regex.flags.u.codepoint.js:10: SyntaxError: invalid regular expression
+kangax-es6/regex.flags.u.js: SyntaxError: regex.flags.u.js:10: SyntaxError: invalid regular expression
+kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: regex.flags.u.non-bmp.js:10: SyntaxError: invalid regular expression
 kangax-es6/regex.flags.y.js: SyntaxError: RegExp Constructor with invalid pattern
 kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: RegExp Constructor with invalid pattern
-kangax-es6/rest-params.arguments.js: SyntaxError: kangax-es6/rest-params.arguments.js:10: SyntaxError: unexpected token .
-kangax-es6/rest-params.basic.js: SyntaxError: kangax-es6/rest-params.basic.js:10: SyntaxError: unexpected token .
-kangax-es6/rest-params.length.js: SyntaxError: kangax-es6/rest-params.length.js:10: SyntaxError: unexpected token .
+kangax-es6/rest-params.arguments.js: SyntaxError: rest-params.arguments.js:10: SyntaxError: unexpected token .
+kangax-es6/rest-params.basic.js: SyntaxError: rest-params.basic.js:10: SyntaxError: unexpected token .
+kangax-es6/rest-params.length.js: SyntaxError: rest-params.length.js:10: SyntaxError: unexpected token .
 kangax-es6/rest-params.new-function.js: SyntaxError: (eval):1: SyntaxError: unexpected token .
-kangax-es6/rest-params.no-setter.js: SyntaxError: kangax-es6/rest-params.no-setter.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.array-call.js: SyntaxError: kangax-es6/spread.array-call.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.array-literal.js: SyntaxError: kangax-es6/spread.array-literal.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.astral-call.js: SyntaxError: kangax-es6/spread.astral-call.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.astral-literal.js: SyntaxError: kangax-es6/spread.astral-literal.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.generator-call.js: SyntaxError: kangax-es6/spread.generator-call.js:10: SyntaxError: unexpected token *
-kangax-es6/spread.generator-literal.js: SyntaxError: kangax-es6/spread.generator-literal.js:10: SyntaxError: unexpected token *
-kangax-es6/spread.iterable-call.js: SyntaxError: kangax-es6/spread.iterable-call.js:35: SyntaxError: unexpected token .
-kangax-es6/spread.iterable-instance-call.js: SyntaxError: kangax-es6/spread.iterable-instance-call.js:35: SyntaxError: unexpected token .
-kangax-es6/spread.iterable-instance-literal.js: SyntaxError: kangax-es6/spread.iterable-instance-literal.js:35: SyntaxError: unexpected token .
-kangax-es6/spread.iterable-literal.js: SyntaxError: kangax-es6/spread.iterable-literal.js:35: SyntaxError: unexpected token .
-kangax-es6/spread.non-iterable-error.js: SyntaxError: kangax-es6/spread.non-iterable-error.js:11: SyntaxError: unexpected token .
-kangax-es6/spread.sparse-call.js: SyntaxError: kangax-es6/spread.sparse-call.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.sparse-literal.js: SyntaxError: kangax-es6/spread.sparse-literal.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.string-call.js: SyntaxError: kangax-es6/spread.string-call.js:10: SyntaxError: unexpected token .
-kangax-es6/spread.string-literal.js: SyntaxError: kangax-es6/spread.string-literal.js:10: SyntaxError: unexpected token .
-kangax-es6/subclassing.Array.concat.js: SyntaxError: kangax-es6/subclassing.Array.concat.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.filter.js: SyntaxError: kangax-es6/subclassing.Array.filter.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.from.js: SyntaxError: kangax-es6/subclassing.Array.from.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.isArray.js: SyntaxError: kangax-es6/subclassing.Array.isArray.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.length-access.js: SyntaxError: kangax-es6/subclassing.Array.length-access.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.length-set.js: SyntaxError: kangax-es6/subclassing.Array.length-set.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.map.js: SyntaxError: kangax-es6/subclassing.Array.map.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.of.js: SyntaxError: kangax-es6/subclassing.Array.of.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.prototype-chain.js: SyntaxError: kangax-es6/subclassing.Array.prototype-chain.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.slice.js: SyntaxError: kangax-es6/subclassing.Array.slice.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Array.splice.js: SyntaxError: kangax-es6/subclassing.Array.splice.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.call.js: SyntaxError: kangax-es6/subclassing.Function.call.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.new.js: SyntaxError: kangax-es6/subclassing.Function.new.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: kangax-es6/subclassing.Function.prototype-chain.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: kangax-es6/subclassing.Function.prototype.apply.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: kangax-es6/subclassing.Function.prototype.bind.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: kangax-es6/subclassing.Function.prototype.call.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Promise.all.js: SyntaxError: kangax-es6/subclassing.Promise.all.js:44: SyntaxError: unexpected token class
-kangax-es6/subclassing.Promise.js: SyntaxError: kangax-es6/subclassing.Promise.js:44: SyntaxError: unexpected token class
-kangax-es6/subclassing.Promise.prototype-chain.js: SyntaxError: kangax-es6/subclassing.Promise.prototype-chain.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.Promise.race.js: SyntaxError: kangax-es6/subclassing.Promise.race.js:44: SyntaxError: unexpected token class
-kangax-es6/subclassing.RegExp.exec.js: SyntaxError: kangax-es6/subclassing.RegExp.exec.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.RegExp.js: SyntaxError: kangax-es6/subclassing.RegExp.js:11: SyntaxError: unexpected token class
-kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: kangax-es6/subclassing.RegExp.prototype-chain.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.RegExp.test.js: SyntaxError: kangax-es6/subclassing.RegExp.test.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.Boolean.js: SyntaxError: kangax-es6/subclassing.misc.Boolean.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.Error.js: SyntaxError: kangax-es6/subclassing.misc.Error.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.Map.js: SyntaxError: kangax-es6/subclassing.misc.Map.js:10: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.Number.js: SyntaxError: kangax-es6/subclassing.misc.Number.js:9: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.Set.js: SyntaxError: kangax-es6/subclassing.misc.Set.js:10: SyntaxError: unexpected token class
-kangax-es6/subclassing.misc.String.js: SyntaxError: kangax-es6/subclassing.misc.String.js:9: SyntaxError: unexpected token class
-kangax-es6/super.correct-constructor.js: SyntaxError: kangax-es6/super.correct-constructor.js:12: SyntaxError: unexpected token class
-kangax-es6/super.expression.js: SyntaxError: kangax-es6/super.expression.js:10: SyntaxError: unexpected token class
-kangax-es6/super.method-calls.js: SyntaxError: kangax-es6/super.method-calls.js:10: SyntaxError: unexpected token class
-kangax-es6/super.new-target-binding.js: SyntaxError: kangax-es6/super.new-target-binding.js:11: SyntaxError: unexpected token class
-kangax-es6/super.property-access.js: SyntaxError: kangax-es6/super.property-access.js:10: SyntaxError: unexpected token class
-kangax-es6/super.statement.js: SyntaxError: kangax-es6/super.statement.js:11: SyntaxError: unexpected token class
-kangax-es6/super.static-binding.js: SyntaxError: kangax-es6/super.static-binding.js:10: SyntaxError: unexpected token class
-kangax-es6/super.this-binding.js: SyntaxError: kangax-es6/super.this-binding.js:10: SyntaxError: unexpected token class
+kangax-es6/rest-params.no-setter.js: SyntaxError: rest-params.no-setter.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.array-call.js: SyntaxError: spread.array-call.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.array-literal.js: SyntaxError: spread.array-literal.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.astral-call.js: SyntaxError: spread.astral-call.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.astral-literal.js: SyntaxError: spread.astral-literal.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.generator-call.js: SyntaxError: spread.generator-call.js:10: SyntaxError: unexpected token *
+kangax-es6/spread.generator-literal.js: SyntaxError: spread.generator-literal.js:10: SyntaxError: unexpected token *
+kangax-es6/spread.iterable-call.js: SyntaxError: spread.iterable-call.js:35: SyntaxError: unexpected token .
+kangax-es6/spread.iterable-instance-call.js: SyntaxError: spread.iterable-instance-call.js:35: SyntaxError: unexpected token .
+kangax-es6/spread.iterable-instance-literal.js: SyntaxError: spread.iterable-instance-literal.js:35: SyntaxError: unexpected token .
+kangax-es6/spread.iterable-literal.js: SyntaxError: spread.iterable-literal.js:35: SyntaxError: unexpected token .
+kangax-es6/spread.non-iterable-error.js: SyntaxError: spread.non-iterable-error.js:11: SyntaxError: unexpected token .
+kangax-es6/spread.sparse-call.js: SyntaxError: spread.sparse-call.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.sparse-literal.js: SyntaxError: spread.sparse-literal.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.string-call.js: SyntaxError: spread.string-call.js:10: SyntaxError: unexpected token .
+kangax-es6/spread.string-literal.js: SyntaxError: spread.string-literal.js:10: SyntaxError: unexpected token .
+kangax-es6/subclassing.Array.concat.js: SyntaxError: subclassing.Array.concat.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.filter.js: SyntaxError: subclassing.Array.filter.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.from.js: SyntaxError: subclassing.Array.from.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.isArray.js: SyntaxError: subclassing.Array.isArray.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.length-access.js: SyntaxError: subclassing.Array.length-access.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.length-set.js: SyntaxError: subclassing.Array.length-set.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.map.js: SyntaxError: subclassing.Array.map.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.of.js: SyntaxError: subclassing.Array.of.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.prototype-chain.js: SyntaxError: subclassing.Array.prototype-chain.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.slice.js: SyntaxError: subclassing.Array.slice.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Array.splice.js: SyntaxError: subclassing.Array.splice.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.call.js: SyntaxError: subclassing.Function.call.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.new.js: SyntaxError: subclassing.Function.new.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: subclassing.Function.prototype-chain.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: subclassing.Function.prototype.apply.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: subclassing.Function.prototype.bind.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: subclassing.Function.prototype.call.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Promise.all.js: SyntaxError: subclassing.Promise.all.js:44: SyntaxError: unexpected token class
+kangax-es6/subclassing.Promise.js: SyntaxError: subclassing.Promise.js:44: SyntaxError: unexpected token class
+kangax-es6/subclassing.Promise.prototype-chain.js: SyntaxError: subclassing.Promise.prototype-chain.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.Promise.race.js: SyntaxError: subclassing.Promise.race.js:44: SyntaxError: unexpected token class
+kangax-es6/subclassing.RegExp.exec.js: SyntaxError: subclassing.RegExp.exec.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.RegExp.js: SyntaxError: subclassing.RegExp.js:11: SyntaxError: unexpected token class
+kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: subclassing.RegExp.prototype-chain.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.RegExp.test.js: SyntaxError: subclassing.RegExp.test.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.Boolean.js: SyntaxError: subclassing.misc.Boolean.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.Error.js: SyntaxError: subclassing.misc.Error.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.Map.js: SyntaxError: subclassing.misc.Map.js:10: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.Number.js: SyntaxError: subclassing.misc.Number.js:9: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.Set.js: SyntaxError: subclassing.misc.Set.js:10: SyntaxError: unexpected token class
+kangax-es6/subclassing.misc.String.js: SyntaxError: subclassing.misc.String.js:9: SyntaxError: unexpected token class
+kangax-es6/super.correct-constructor.js: SyntaxError: super.correct-constructor.js:12: SyntaxError: unexpected token class
+kangax-es6/super.expression.js: SyntaxError: super.expression.js:10: SyntaxError: unexpected token class
+kangax-es6/super.method-calls.js: SyntaxError: super.method-calls.js:10: SyntaxError: unexpected token class
+kangax-es6/super.new-target-binding.js: SyntaxError: super.new-target-binding.js:11: SyntaxError: unexpected token class
+kangax-es6/super.property-access.js: SyntaxError: super.property-access.js:10: SyntaxError: unexpected token class
+kangax-es6/super.statement.js: SyntaxError: super.statement.js:11: SyntaxError: unexpected token class
+kangax-es6/super.static-binding.js: SyntaxError: super.static-binding.js:10: SyntaxError: unexpected token class
+kangax-es6/super.this-binding.js: SyntaxError: super.this-binding.js:10: SyntaxError: unexpected token class
 kangax-es6/tail-calls.direct.js: RangeError: maximum call stack size exceeded
 kangax-es6/tail-calls.mutual.js: RangeError: maximum call stack size exceeded
-kangax-es6/template.basic.js: SyntaxError: kangax-es6/template.basic.js:11: SyntaxError: illegal character
-kangax-es6/template.caching.js: SyntaxError: kangax-es6/template.caching.js:17: SyntaxError: illegal character
-kangax-es6/template.escape-sequences.js: SyntaxError: kangax-es6/template.escape-sequences.js:13: SyntaxError: illegal character
-kangax-es6/template.frozen-array.js: SyntaxError: kangax-es6/template.frozen-array.js:12: SyntaxError: illegal character
+kangax-es6/template.basic.js: SyntaxError: template.basic.js:11: SyntaxError: illegal character
+kangax-es6/template.caching.js: SyntaxError: template.caching.js:17: SyntaxError: illegal character
+kangax-es6/template.escape-sequences.js: SyntaxError: template.escape-sequences.js:13: SyntaxError: illegal character
+kangax-es6/template.frozen-array.js: SyntaxError: template.frozen-array.js:12: SyntaxError: illegal character
 kangax-es6/template.line-break.js: SyntaxError: (eval):1: SyntaxError: illegal character
-kangax-es6/template.permanent-caching.js: SyntaxError: kangax-es6/template.permanent-caching.js:14: SyntaxError: illegal character
-kangax-es6/template.tagged.js: SyntaxError: kangax-es6/template.tagged.js:21: SyntaxError: illegal character
-kangax-es6/template.toString.js: SyntaxError: kangax-es6/template.toString.js:14: SyntaxError: illegal character
+kangax-es6/template.permanent-caching.js: SyntaxError: template.permanent-caching.js:14: SyntaxError: illegal character
+kangax-es6/template.tagged.js: SyntaxError: template.tagged.js:21: SyntaxError: illegal character
+kangax-es6/template.toString.js: SyntaxError: template.toString.js:14: SyntaxError: illegal character
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
 kangax-es6/typed-arrays.DataView.Float32.js: OK
 kangax-es6/typed-arrays.DataView.Float64.js: OK
@@ -1159,10 +1159,10 @@ kangax-es6/typed-arrays.prototype.some.js: failed
 kangax-es6/typed-arrays.prototype.sort.js: failed
 kangax-es6/typed-arrays.prototype.subarray.js: OK
 kangax-es6/typed-arrays.prototype.values.js: failed
-kangax-es6/unicode-escapes.identifier.js: SyntaxError: kangax-es6/unicode-escapes.identifier.js:9: SyntaxError: illegal character
-kangax-es6/unicode-escapes.property-access.js: SyntaxError: kangax-es6/unicode-escapes.property-access.js:10: SyntaxError: illegal character
-kangax-es6/unicode-escapes.property-key.js: SyntaxError: kangax-es6/unicode-escapes.property-key.js:9: SyntaxError: invalid property name
-kangax-es6/unicode-escapes.string.js: SyntaxError: kangax-es6/unicode-escapes.string.js:9: SyntaxError: illegal character
+kangax-es6/unicode-escapes.identifier.js: SyntaxError: unicode-escapes.identifier.js:9: SyntaxError: illegal character
+kangax-es6/unicode-escapes.property-access.js: SyntaxError: unicode-escapes.property-access.js:10: SyntaxError: illegal character
+kangax-es6/unicode-escapes.property-key.js: SyntaxError: unicode-escapes.property-key.js:9: SyntaxError: invalid property name
+kangax-es6/unicode-escapes.string.js: SyntaxError: unicode-escapes.string.js:9: SyntaxError: illegal character
 kangax-es6/well-known.hasInstance.js: failed
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: failed
 kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
@@ -1188,22 +1188,22 @@ kangax-es6/well-known.toPrimitive.js: failed
 kangax-es6/well-known.toStringTag.existing-builtins.js: failed
 kangax-es6/well-known.toStringTag.js: failed
 kangax-es6/well-known.toStringTag.misc-builtins.js: failed
-kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: kangax-es6/well-known.toStringTag.new-builtins.js:23: SyntaxError: unexpected token *
+kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: well-known.toStringTag.new-builtins.js:23: SyntaxError: unexpected token *
 kangax-es6/well-known.unscopables.js: failed
 kangax-es2016/Array.prototype.includes.generic.js: TypeError: null or undefined has no properties
 kangax-es2016/Array.prototype.includes.js: TypeError: not callable object
 kangax-es2016/Array.prototype.includes.sparse.js: TypeError: not callable object
 kangax-es2016/Array.prototype.includes.typed-array.js: TypeError: not callable object
-kangax-es2016/exponentiation.assignment.js: SyntaxError: kangax-es2016/exponentiation.assignment.js:10: SyntaxError: unexpected token *=
-kangax-es2016/exponentiation.basic.js: SyntaxError: kangax-es2016/exponentiation.basic.js:10: SyntaxError: unexpected token *
-kangax-es2016/exponentiation.unary-negation-error.js: SyntaxError: kangax-es2016/exponentiation.unary-negation-error.js:10: SyntaxError: unexpected token *
+kangax-es2016/exponentiation.assignment.js: SyntaxError: exponentiation.assignment.js:10: SyntaxError: unexpected token *=
+kangax-es2016/exponentiation.basic.js: SyntaxError: exponentiation.basic.js:10: SyntaxError: unexpected token *
+kangax-es2016/exponentiation.unary-negation-error.js: SyntaxError: exponentiation.unary-negation-error.js:10: SyntaxError: unexpected token *
 kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: "Proxy" not defined
 kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: "Proxy" not defined
-kangax-es2016/misc.generator-no-new.js: SyntaxError: kangax-es2016/misc.generator-no-new.js:10: SyntaxError: unexpected token *
-kangax-es2016/misc.generator-throw-inner.js: SyntaxError: kangax-es2016/misc.generator-throw-inner.js:10: SyntaxError: unexpected token *
-kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: kangax-es2016/misc.nested-rest-destructuring-decl.js:10: SyntaxError: unexpected token [
-kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: kangax-es2016/misc.nested-rest-destructuring-params.js:9: SyntaxError: unexpected token [
-kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: kangax-es2016/misc.strict-fn-non-simple-params-error.js:9: SyntaxError: unexpected token .
+kangax-es2016/misc.generator-no-new.js: SyntaxError: misc.generator-no-new.js:10: SyntaxError: unexpected token *
+kangax-es2016/misc.generator-throw-inner.js: SyntaxError: misc.generator-throw-inner.js:10: SyntaxError: unexpected token *
+kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: misc.nested-rest-destructuring-decl.js:10: SyntaxError: unexpected token [
+kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: misc.nested-rest-destructuring-params.js:9: SyntaxError: unexpected token [
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: misc.strict-fn-non-simple-params-error.js:9: SyntaxError: unexpected token .
 kangax-es2017/Atomics.add.js: ReferenceError: "Atomics" not defined
 kangax-es2017/Atomics.and.js: ReferenceError: "Atomics" not defined
 kangax-es2017/Atomics.compareExchange.js: ReferenceError: "Atomics" not defined
@@ -1248,48 +1248,48 @@ kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: "Proxy" not def
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: "Proxy" not defined
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: "Proxy" not defined
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
-kangax-es2017/async.Symbol.toStringTag.js: SyntaxError: kangax-es2017/async.Symbol.toStringTag.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.arrow-in-class.js: SyntaxError: kangax-es2017/async.arrow-in-class.js:48: SyntaxError: unexpected token class
-kangax-es2017/async.arrow.js: SyntaxError: kangax-es2017/async.arrow.js:45: SyntaxError: unexpected token >
-kangax-es2017/async.await-non-promise.js: SyntaxError: kangax-es2017/async.await-non-promise.js:45: SyntaxError: unexpected token function
-kangax-es2017/async.await-rejection.js: SyntaxError: kangax-es2017/async.await-rejection.js:45: SyntaxError: unexpected token function
-kangax-es2017/async.await.js: SyntaxError: kangax-es2017/async.await.js:45: SyntaxError: unexpected token function
-kangax-es2017/async.constructor.js: SyntaxError: kangax-es2017/async.constructor.js:45: SyntaxError: unexpected token function
-kangax-es2017/async.methods-class.js: SyntaxError: kangax-es2017/async.methods-class.js:45: SyntaxError: unexpected token class
-kangax-es2017/async.methods-object.js: SyntaxError: kangax-es2017/async.methods-object.js:46: SyntaxError: unexpected identifier
-kangax-es2017/async.must-await-value.js: SyntaxError: kangax-es2017/async.must-await-value.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.no-await-in-params.js: SyntaxError: kangax-es2017/async.no-await-in-params.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.no-line-break.js: SyntaxError: kangax-es2017/async.no-line-break.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.no-prototype.js: SyntaxError: kangax-es2017/async.no-prototype.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.prototype-chain.js: SyntaxError: kangax-es2017/async.prototype-chain.js:10: SyntaxError: unexpected token function
-kangax-es2017/async.return.js: SyntaxError: kangax-es2017/async.return.js:45: SyntaxError: unexpected token function
-kangax-es2017/async.throw.js: SyntaxError: kangax-es2017/async.throw.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.Symbol.toStringTag.js: SyntaxError: async.Symbol.toStringTag.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.arrow-in-class.js: SyntaxError: async.arrow-in-class.js:48: SyntaxError: unexpected token class
+kangax-es2017/async.arrow.js: SyntaxError: async.arrow.js:45: SyntaxError: unexpected token >
+kangax-es2017/async.await-non-promise.js: SyntaxError: async.await-non-promise.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.await-rejection.js: SyntaxError: async.await-rejection.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.await.js: SyntaxError: async.await.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.constructor.js: SyntaxError: async.constructor.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.methods-class.js: SyntaxError: async.methods-class.js:45: SyntaxError: unexpected token class
+kangax-es2017/async.methods-object.js: SyntaxError: async.methods-object.js:46: SyntaxError: unexpected identifier
+kangax-es2017/async.must-await-value.js: SyntaxError: async.must-await-value.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.no-await-in-params.js: SyntaxError: async.no-await-in-params.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.no-line-break.js: SyntaxError: async.no-line-break.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.no-prototype.js: SyntaxError: async.no-prototype.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.prototype-chain.js: SyntaxError: async.prototype-chain.js:10: SyntaxError: unexpected token function
+kangax-es2017/async.return.js: SyntaxError: async.return.js:45: SyntaxError: unexpected token function
+kangax-es2017/async.throw.js: SyntaxError: async.throw.js:45: SyntaxError: unexpected token function
 kangax-es2017/misc.arguments-caller-removed.js: failed
-kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: kangax-es2017/regex.flags.u.case-folding.js:9: SyntaxError: invalid regular expression
-kangax-es2017/trailing-comma.arguments.js: SyntaxError: kangax-es2017/trailing-comma.arguments.js:10: SyntaxError: unexpected token )
-kangax-es2017/trailing-comma.params.js: SyntaxError: kangax-es2017/trailing-comma.params.js:10: SyntaxError: unexpected token )
+kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:9: SyntaxError: invalid regular expression
+kangax-es2017/trailing-comma.arguments.js: SyntaxError: trailing-comma.arguments.js:10: SyntaxError: unexpected token )
+kangax-es2017/trailing-comma.params.js: SyntaxError: trailing-comma.params.js:10: SyntaxError: unexpected token )
 kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: "Promise" not defined
 kangax-es2018/Promise.prototype.finally.js: ReferenceError: "Promise" not defined
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: "Promise" not defined
-kangax-es2018/async-iterators.for-await-of.js: SyntaxError: kangax-es2018/async-iterators.for-await-of.js:58: SyntaxError: unexpected token function
-kangax-es2018/async-iterators.generators.js: SyntaxError: kangax-es2018/async-iterators.generators.js:44: SyntaxError: unexpected token function
-kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js:11: SyntaxError: unexpected token (
-kangax-es2018/misc.template-literal-revision.js: SyntaxError: kangax-es2018/misc.template-literal-revision.js:16: SyntaxError: illegal character
-kangax-es2018/object-rest.js: SyntaxError: kangax-es2018/object-rest.js:9: SyntaxError: unexpected token {
-kangax-es2018/object-spread.js: SyntaxError: kangax-es2018/object-spread.js:10: SyntaxError: invalid property name
-kangax-es2018/regex.flags.s.js: SyntaxError: kangax-es2018/regex.flags.s.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.lookbehind.js: SyntaxError: kangax-es2018/regex.lookbehind.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.named-capture-groups.js: SyntaxError: kangax-es2018/regex.named-capture-groups.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-11.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-12.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-13.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-14.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-15.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js:10: SyntaxError: invalid regular expression
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: invalid regular expression
+kangax-es2018/async-iterators.for-await-of.js: SyntaxError: async-iterators.for-await-of.js:58: SyntaxError: unexpected token function
+kangax-es2018/async-iterators.generators.js: SyntaxError: async-iterators.generators.js:44: SyntaxError: unexpected token function
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: misc.Proxy-ownKeys-duplicate-keys.js:11: SyntaxError: unexpected token (
+kangax-es2018/misc.template-literal-revision.js: SyntaxError: misc.template-literal-revision.js:16: SyntaxError: illegal character
+kangax-es2018/object-rest.js: SyntaxError: object-rest.js:9: SyntaxError: unexpected token {
+kangax-es2018/object-spread.js: SyntaxError: object-spread.js:10: SyntaxError: invalid property name
+kangax-es2018/regex.flags.s.js: SyntaxError: regex.flags.s.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.lookbehind.js: SyntaxError: regex.lookbehind.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.named-capture-groups.js: SyntaxError: regex.named-capture-groups.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: regex.unicode-property-escapes.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: regex.unicode-property-escapes.unicode-11.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: regex.unicode-property-escapes.unicode-12.1.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: regex.unicode-property-escapes.unicode-12.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: regex.unicode-property-escapes.unicode-13.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: regex.unicode-property-escapes.unicode-14.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: regex.unicode-property-escapes.unicode-15.1.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: regex.unicode-property-escapes.unicode-15.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: regex.unicode-property-escapes.unicode-16.0.js:10: SyntaxError: invalid regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: invalid regular expression
 kangax-es2019/Array.prototype.flatMap.js: TypeError: not callable object
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: failed
 kangax-es2019/Array.prototype.flat.js: TypeError: not callable object
@@ -1311,43 +1311,43 @@ kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: (eval):1: 
 kangax-es2019/misc.JSON-stringify-well-formed.js: failed
 kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: (eval):1: SyntaxError: illegal character
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: SyntaxError: illegal character
-kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: kangax-es2019/misc.optional-catch-binding.await.js:44: SyntaxError: unexpected token function
-kangax-es2019/misc.optional-catch-binding.js: SyntaxError: kangax-es2019/misc.optional-catch-binding.js:12: SyntaxError: unexpected token {
-kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: kangax-es2019/misc.optional-catch-binding.yield.js:9: SyntaxError: unexpected token *
-kangax-es2020/BigInt64Array.js: SyntaxError: kangax-es2020/BigInt64Array.js:12: SyntaxError: illegal character
+kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: misc.optional-catch-binding.await.js:44: SyntaxError: unexpected token function
+kangax-es2019/misc.optional-catch-binding.js: SyntaxError: misc.optional-catch-binding.js:12: SyntaxError: unexpected token {
+kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: misc.optional-catch-binding.yield.js:9: SyntaxError: unexpected token *
+kangax-es2020/BigInt64Array.js: SyntaxError: BigInt64Array.js:12: SyntaxError: illegal character
 kangax-es2020/BigInt.asIntN.js: ReferenceError: "BigInt" not defined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: "BigInt" not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: kangax-es2020/BigInt.constructor.js:10: SyntaxError: illegal character
-kangax-es2020/BigInt.js: SyntaxError: kangax-es2020/BigInt.js:10: SyntaxError: illegal character
-kangax-es2020/BigUint64Array.js: SyntaxError: kangax-es2020/BigUint64Array.js:12: SyntaxError: illegal character
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: kangax-es2020/DataView.prototype.getBigInt64.js:12: SyntaxError: illegal character
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: kangax-es2020/DataView.prototype.getBigUint64.js:12: SyntaxError: illegal character
-kangax-es2020/Promise.allSettled.js: SyntaxError: kangax-es2020/Promise.allSettled.js:49: SyntaxError: unexpected token >
+kangax-es2020/BigInt.constructor.js: SyntaxError: BigInt.constructor.js:10: SyntaxError: illegal character
+kangax-es2020/BigInt.js: SyntaxError: BigInt.js:10: SyntaxError: illegal character
+kangax-es2020/BigUint64Array.js: SyntaxError: BigUint64Array.js:12: SyntaxError: illegal character
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: DataView.prototype.getBigInt64.js:12: SyntaxError: illegal character
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: DataView.prototype.getBigUint64.js:12: SyntaxError: illegal character
+kangax-es2020/Promise.allSettled.js: SyntaxError: Promise.allSettled.js:49: SyntaxError: unexpected token >
 kangax-es2020/String.prototype.matchAll.js: TypeError: not callable object
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
 kangax-es2020/globalThis.descriptor.js: failed
 kangax-es2020/globalThis.js: failed
-kangax-es2020/nullish-coalescing.js: SyntaxError: kangax-es2020/nullish-coalescing.js:10: SyntaxError: unexpected token ?
-kangax-es2020/optional-chaining.bracket.js: SyntaxError: kangax-es2020/optional-chaining.bracket.js:12: SyntaxError: unexpected token .
-kangax-es2020/optional-chaining.function-call.js: SyntaxError: kangax-es2020/optional-chaining.function-call.js:14: SyntaxError: unexpected token .
-kangax-es2020/optional-chaining.method-call.js: SyntaxError: kangax-es2020/optional-chaining.method-call.js:12: SyntaxError: unexpected token .
-kangax-es2020/optional-chaining.property.js: SyntaxError: kangax-es2020/optional-chaining.property.js:12: SyntaxError: unexpected token .
-kangax-es2020/optional-chaining.spread-params.js: SyntaxError: kangax-es2020/optional-chaining.spread-params.js:14: SyntaxError: unexpected token .
+kangax-es2020/nullish-coalescing.js: SyntaxError: nullish-coalescing.js:10: SyntaxError: unexpected token ?
+kangax-es2020/optional-chaining.bracket.js: SyntaxError: optional-chaining.bracket.js:12: SyntaxError: unexpected token .
+kangax-es2020/optional-chaining.function-call.js: SyntaxError: optional-chaining.function-call.js:14: SyntaxError: unexpected token .
+kangax-es2020/optional-chaining.method-call.js: SyntaxError: optional-chaining.method-call.js:12: SyntaxError: unexpected token .
+kangax-es2020/optional-chaining.property.js: SyntaxError: optional-chaining.property.js:12: SyntaxError: unexpected token .
+kangax-es2020/optional-chaining.spread-params.js: SyntaxError: optional-chaining.spread-params.js:14: SyntaxError: unexpected token .
 kangax-es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" not defined
-kangax-es2021/Promise.any.AggregateError.js: SyntaxError: kangax-es2021/Promise.any.AggregateError.js:49: SyntaxError: unexpected token >
-kangax-es2021/Promise.any.fulfillment.js: SyntaxError: kangax-es2021/Promise.any.fulfillment.js:49: SyntaxError: unexpected token >
+kangax-es2021/Promise.any.AggregateError.js: SyntaxError: Promise.any.AggregateError.js:49: SyntaxError: unexpected token >
+kangax-es2021/Promise.any.fulfillment.js: SyntaxError: Promise.any.fulfillment.js:49: SyntaxError: unexpected token >
 kangax-es2021/String.prototype.replaceAll.js: TypeError: not callable object
 kangax-es2021/WeakRef.js: ReferenceError: "WeakRef" not defined
-kangax-es2021/logical-assignment.and.js: SyntaxError: kangax-es2021/logical-assignment.and.js:10: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: kangax-es2021/logical-assignment.and.setter-not-invoked.js:9: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: kangax-es2021/logical-assignment.and.short-circuit.js:9: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.nullish.js: SyntaxError: kangax-es2021/logical-assignment.nullish.js:10: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: kangax-es2021/logical-assignment.nullish.setter-not-invoked.js:9: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: kangax-es2021/logical-assignment.nullish.short-circuit.js:9: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.or.js: SyntaxError: kangax-es2021/logical-assignment.or.js:10: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: kangax-es2021/logical-assignment.or.setter-not-invoked.js:9: SyntaxError: unexpected identifier
-kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: kangax-es2021/logical-assignment.or.short-circuit.js:9: SyntaxError: unexpected identifier
-kangax-es2021/numeric-separators.js: SyntaxError: kangax-es2021/numeric-separators.js:9: SyntaxError: illegal character
+kangax-es2021/logical-assignment.and.js: SyntaxError: logical-assignment.and.js:10: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: logical-assignment.and.setter-not-invoked.js:9: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: logical-assignment.and.short-circuit.js:9: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.nullish.js: SyntaxError: logical-assignment.nullish.js:10: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: logical-assignment.nullish.setter-not-invoked.js:9: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: logical-assignment.nullish.short-circuit.js:9: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.or.js: SyntaxError: logical-assignment.or.js:10: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: logical-assignment.or.setter-not-invoked.js:9: SyntaxError: unexpected identifier
+kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: logical-assignment.or.short-circuit.js:9: SyntaxError: unexpected identifier
+kangax-es2021/numeric-separators.js: SyntaxError: numeric-separators.js:9: SyntaxError: illegal character
 kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: "AggregateError" not defined
 kangax-es2022/Error.cause.AggregateError.js: ReferenceError: "AggregateError" not defined
 kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1369,23 +1369,23 @@ kangax-es2022/Object.hasOwn.js: TypeError: not callable object
 kangax-es2022/at-method.Array.js: TypeError: not callable object
 kangax-es2022/at-method.String.js: TypeError: not callable object
 kangax-es2022/at-method.TypedArray.js: TypeError: not callable object
-kangax-es2022/class-fields.computed-instance.js: SyntaxError: kangax-es2022/class-fields.computed-instance.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-fields.computed-static.js: SyntaxError: kangax-es2022/class-fields.computed-static.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: kangax-es2022/class-fields.instance.parent-scope.js:10: SyntaxError: unexpected identifier
-kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: kangax-es2022/class-fields.private-instance.initializers.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-fields.private-instance.js: SyntaxError: kangax-es2022/class-fields.private-instance.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: kangax-es2022/class-fields.private-instance.optional-access.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: kangax-es2022/class-fields.private-instance.optional-deep-access.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-fields.private-static.js: SyntaxError: kangax-es2022/class-fields.private-static.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-fields.public-instance.js: SyntaxError: kangax-es2022/class-fields.public-instance.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-fields.public-static.js: SyntaxError: kangax-es2022/class-fields.public-static.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-fields.static.define.js: SyntaxError: kangax-es2022/class-fields.static.define.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-methods.private-accessor.js: SyntaxError: kangax-es2022/class-methods.private-accessor.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-methods.private-instance.js: SyntaxError: kangax-es2022/class-methods.private-instance.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: kangax-es2022/class-methods.private-static-accessor.js:10: SyntaxError: unexpected token class
-kangax-es2022/class-methods.private-static.js: SyntaxError: kangax-es2022/class-methods.private-static.js:9: SyntaxError: unexpected token class
-kangax-es2022/class-static-init-blocks.js: SyntaxError: kangax-es2022/class-static-init-blocks.js:10: SyntaxError: unexpected identifier
-kangax-es2022/ergonomic-brand-checks.js: SyntaxError: kangax-es2022/ergonomic-brand-checks.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.computed-instance.js: SyntaxError: class-fields.computed-instance.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.computed-static.js: SyntaxError: class-fields.computed-static.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: class-fields.instance.parent-scope.js:10: SyntaxError: unexpected identifier
+kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: class-fields.private-instance.initializers.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.private-instance.js: SyntaxError: class-fields.private-instance.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: class-fields.private-instance.optional-access.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: class-fields.private-instance.optional-deep-access.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-fields.private-static.js: SyntaxError: class-fields.private-static.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-fields.public-instance.js: SyntaxError: class-fields.public-instance.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-fields.public-static.js: SyntaxError: class-fields.public-static.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-fields.static.define.js: SyntaxError: class-fields.static.define.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-methods.private-accessor.js: SyntaxError: class-methods.private-accessor.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-methods.private-instance.js: SyntaxError: class-methods.private-instance.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: class-methods.private-static-accessor.js:10: SyntaxError: unexpected token class
+kangax-es2022/class-methods.private-static.js: SyntaxError: class-methods.private-static.js:9: SyntaxError: unexpected token class
+kangax-es2022/class-static-init-blocks.js: SyntaxError: class-static-init-blocks.js:10: SyntaxError: unexpected identifier
+kangax-es2022/ergonomic-brand-checks.js: SyntaxError: ergonomic-brand-checks.js:9: SyntaxError: unexpected token class
 kangax-es2022/regex.flags.d.constructor.js: SyntaxError: RegExp Constructor with invalid pattern
 kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: "Proxy" not defined
 kangax-es2023/Array.prototype.findLastIndex.js: TypeError: not callable object
@@ -1397,34 +1397,34 @@ kangax-es2023/Array.prototype.with.js: TypeError: not callable object
 kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: not callable object
 kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: not callable object
 kangax-es2023/TypedArray.prototype.with.js: TypeError: not callable object
-kangax-es2023/hashbang.js: SyntaxError: kangax-es2023/hashbang.js:1: SyntaxError: illegal character
+kangax-es2023/hashbang.js: SyntaxError: hashbang.js:1: SyntaxError: illegal character
 kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: not callable object
 kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: not callable object
 kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: not callable object
-kangax-es2024/Map.groupBy.js: ReferenceError: kangax-es2024/Map.groupBy.js:13: ReferenceError: assign to invalid left-hand-side
-kangax-es2024/Object.groupBy.js: ReferenceError: kangax-es2024/Object.groupBy.js:11: ReferenceError: assign to invalid left-hand-side
+kangax-es2024/Map.groupBy.js: ReferenceError: Map.groupBy.js:13: ReferenceError: assign to invalid left-hand-side
+kangax-es2024/Object.groupBy.js: ReferenceError: Object.groupBy.js:11: ReferenceError: assign to invalid left-hand-side
 kangax-es2024/Promise.withResolvers.js: ReferenceError: "Promise" not defined
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: RegExp Constructor with invalid pattern
-kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: kangax-es2024/regex.flags.v.properties-of-strings.js:9: SyntaxError: invalid regular expression
-kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: kangax-es2024/regex.flags.v.set-notations.js:9: SyntaxError: invalid regular expression
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: regex.flags.v.properties-of-strings.js:9: SyntaxError: invalid regular expression
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: regex.flags.v.set-notations.js:9: SyntaxError: invalid regular expression
 kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: "Proxy" not defined
-kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: kangax-es2024/regex.flags.v.unicode-15.1.js:9: SyntaxError: invalid regular expression
-kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: kangax-es2024/regex.flags.v.unicode-16.0.js:9: SyntaxError: invalid regular expression
-kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: kangax-es2024/regex.flags.v.unicode-17.0.js:9: SyntaxError: invalid regular expression
-kangax-es2025/Iterator.extends.js: SyntaxError: kangax-es2025/Iterator.extends.js:10: SyntaxError: unexpected token class
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: regex.flags.v.unicode-15.1.js:9: SyntaxError: invalid regular expression
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: regex.flags.v.unicode-16.0.js:9: SyntaxError: invalid regular expression
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: regex.flags.v.unicode-17.0.js:9: SyntaxError: invalid regular expression
+kangax-es2025/Iterator.extends.js: SyntaxError: Iterator.extends.js:10: SyntaxError: unexpected token class
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: "Iterator" not defined
-kangax-es2025/Iterator.from.iterator.js: SyntaxError: kangax-es2025/Iterator.from.iterator.js:12: SyntaxError: unexpected token (
+kangax-es2025/Iterator.from.iterator.js: SyntaxError: Iterator.from.iterator.js:12: SyntaxError: unexpected token (
 kangax-es2025/Iterator.instanceof.js: ReferenceError: "Iterator" not defined
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: "Iterator" not defined
 kangax-es2025/Iterator.prototype.drop.js: TypeError: not callable object
-kangax-es2025/Iterator.prototype.every.js: SyntaxError: kangax-es2025/Iterator.prototype.every.js:10: SyntaxError: unexpected token >
-kangax-es2025/Iterator.prototype.filter.js: SyntaxError: kangax-es2025/Iterator.prototype.filter.js:10: SyntaxError: unexpected token >
-kangax-es2025/Iterator.prototype.find.js: SyntaxError: kangax-es2025/Iterator.prototype.find.js:10: SyntaxError: unexpected token >
-kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: kangax-es2025/Iterator.prototype.flatMap.js:10: SyntaxError: unexpected token >
-kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: kangax-es2025/Iterator.prototype.forEach.js:10: SyntaxError: unexpected identifier
-kangax-es2025/Iterator.prototype.map.js: SyntaxError: kangax-es2025/Iterator.prototype.map.js:10: SyntaxError: unexpected token >
-kangax-es2025/Iterator.prototype.reduce.js: ReferenceError: kangax-es2025/Iterator.prototype.reduce.js:10: ReferenceError: assign to invalid left-hand-side
-kangax-es2025/Iterator.prototype.some.js: SyntaxError: kangax-es2025/Iterator.prototype.some.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.every.js: SyntaxError: Iterator.prototype.every.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.filter.js: SyntaxError: Iterator.prototype.filter.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.find.js: SyntaxError: Iterator.prototype.find.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: Iterator.prototype.flatMap.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: Iterator.prototype.forEach.js:10: SyntaxError: unexpected identifier
+kangax-es2025/Iterator.prototype.map.js: SyntaxError: Iterator.prototype.map.js:10: SyntaxError: unexpected token >
+kangax-es2025/Iterator.prototype.reduce.js: ReferenceError: Iterator.prototype.reduce.js:10: ReferenceError: assign to invalid left-hand-side
+kangax-es2025/Iterator.prototype.some.js: SyntaxError: Iterator.prototype.some.js:10: SyntaxError: unexpected token >
 kangax-es2025/Iterator.prototype.take.js: TypeError: not callable object
 kangax-es2025/Iterator.prototype.toArray.js: TypeError: not callable object
 kangax-es2025/Promise.try.js: ReferenceError: "Promise" not defined
@@ -1436,10 +1436,10 @@ kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: not callable object
 kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: not callable object
 kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: not callable object
 kangax-es2025/Set.prototype.union.js: TypeError: not callable object
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: kangax-es2025/regex.duplicate-named-groups.js:9: SyntaxError: invalid regular expression
-kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: kangax-es2025/regex.pattern-modifiers.i.js:9: SyntaxError: invalid regular expression
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: kangax-es2025/regex.pattern-modifiers.m.js:9: SyntaxError: invalid regular expression
-kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: kangax-es2025/regex.pattern-modifiers.s.js:9: SyntaxError: invalid regular expression
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: regex.duplicate-named-groups.js:9: SyntaxError: invalid regular expression
+kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: regex.pattern-modifiers.i.js:9: SyntaxError: invalid regular expression
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: regex.pattern-modifiers.m.js:9: SyntaxError: invalid regular expression
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: regex.pattern-modifiers.s.js:9: SyntaxError: invalid regular expression
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
@@ -1468,45 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
-kangax-next/Array.isTemplateObject.js: SyntaxError: kangax-next/Array.isTemplateObject.js:10: SyntaxError: unexpected token >
-kangax-next/AsyncDisposableStack.js: SyntaxError: kangax-next/AsyncDisposableStack.js:47: SyntaxError: unexpected token [
-kangax-next/AsyncIterator.extends.js: SyntaxError: kangax-next/AsyncIterator.extends.js:9: SyntaxError: unexpected token class
-kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: kangax-next/AsyncIterator.from.async-iterable.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.from.iterable.js: SyntaxError: kangax-next/AsyncIterator.from.iterable.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.from.iterator.js: SyntaxError: kangax-next/AsyncIterator.from.iterator.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.instanceof.js: SyntaxError: kangax-next/AsyncIterator.instanceof.js:9: SyntaxError: unexpected token function
+kangax-next/Array.isTemplateObject.js: SyntaxError: Array.isTemplateObject.js:10: SyntaxError: unexpected token >
+kangax-next/AsyncDisposableStack.js: SyntaxError: AsyncDisposableStack.js:47: SyntaxError: unexpected token [
+kangax-next/AsyncIterator.extends.js: SyntaxError: AsyncIterator.extends.js:9: SyntaxError: unexpected token class
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: AsyncIterator.from.async-iterable.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: AsyncIterator.from.iterable.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: AsyncIterator.from.iterator.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: AsyncIterator.instanceof.js:9: SyntaxError: unexpected token function
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" not defined
-kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: kangax-next/AsyncIterator.prototype.drop.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.every.js: SyntaxError: kangax-next/AsyncIterator.prototype.every.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: kangax-next/AsyncIterator.prototype.filter.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.find.js: SyntaxError: kangax-next/AsyncIterator.prototype.find.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: kangax-next/AsyncIterator.prototype.flatMap.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: kangax-next/AsyncIterator.prototype.forEach.js:44: SyntaxError: unexpected identifier
-kangax-next/AsyncIterator.prototype.map.js: SyntaxError: kangax-next/AsyncIterator.prototype.map.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: kangax-next/AsyncIterator.prototype.reduce.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.some.js: SyntaxError: kangax-next/AsyncIterator.prototype.some.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.take.js: SyntaxError: kangax-next/AsyncIterator.prototype.take.js:44: SyntaxError: unexpected token function
-kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: kangax-next/AsyncIterator.prototype.toArray.js:44: SyntaxError: unexpected token function
-kangax-next/DisposableStack.js: SyntaxError: kangax-next/DisposableStack.js:12: SyntaxError: invalid property name
-kangax-next/Map.prototype.upsert.js: SyntaxError: kangax-next/Map.prototype.upsert.js:10: SyntaxError: unexpected token >
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: AsyncIterator.prototype.drop.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: AsyncIterator.prototype.every.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: AsyncIterator.prototype.filter.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: AsyncIterator.prototype.find.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: AsyncIterator.prototype.flatMap.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: AsyncIterator.prototype.forEach.js:44: SyntaxError: unexpected identifier
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: AsyncIterator.prototype.map.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: AsyncIterator.prototype.reduce.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: AsyncIterator.prototype.some.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: AsyncIterator.prototype.take.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: AsyncIterator.prototype.toArray.js:44: SyntaxError: unexpected token function
+kangax-next/DisposableStack.js: SyntaxError: DisposableStack.js:12: SyntaxError: invalid property name
+kangax-next/Map.prototype.upsert.js: SyntaxError: Map.prototype.upsert.js:10: SyntaxError: unexpected token >
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: kangax-next/SuppressedError.js:13: SyntaxError: unexpected identifier
-kangax-next/Uint8Array.fromBase64.js: ReferenceError: kangax-next/Uint8Array.fromBase64.js:13: ReferenceError: assign to invalid left-hand-side
-kangax-next/Uint8Array.fromHex.js: ReferenceError: kangax-next/Uint8Array.fromHex.js:13: ReferenceError: assign to invalid left-hand-side
-kangax-next/Uint8Array.setFromBase64.js: SyntaxError: kangax-next/Uint8Array.setFromBase64.js:11: SyntaxError: unexpected identifier
-kangax-next/Uint8Array.setFromHex.js: SyntaxError: kangax-next/Uint8Array.setFromHex.js:11: SyntaxError: unexpected identifier
+kangax-next/SuppressedError.js: SyntaxError: SuppressedError.js:13: SyntaxError: unexpected identifier
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: Uint8Array.fromBase64.js:13: ReferenceError: assign to invalid left-hand-side
+kangax-next/Uint8Array.fromHex.js: ReferenceError: Uint8Array.fromHex.js:13: ReferenceError: assign to invalid left-hand-side
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: Uint8Array.setFromBase64.js:11: SyntaxError: unexpected identifier
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: Uint8Array.setFromHex.js:11: SyntaxError: unexpected identifier
 kangax-next/Uint8Array.toBase64.js: TypeError: not callable object
 kangax-next/Uint8Array.toHex.js: TypeError: not callable object
-kangax-next/WeakMap.prototype.upsert.js: SyntaxError: kangax-next/WeakMap.prototype.upsert.js:11: SyntaxError: unexpected token >
-kangax-next/await-using.for-of.js: SyntaxError: kangax-next/await-using.for-of.js:46: SyntaxError: unexpected token [
-kangax-next/await-using.js: SyntaxError: kangax-next/await-using.js:44: SyntaxError: unexpected token function
-kangax-next/class-decorators.js: SyntaxError: kangax-next/class-decorators.js:9: SyntaxError: unexpected token class
-kangax-next/function.sent.js: SyntaxError: kangax-next/function.sent.js:10: SyntaxError: unexpected token *
-kangax-next/throw-expr.arrow.js: SyntaxError: kangax-next/throw-expr.arrow.js:9: SyntaxError: unexpected token )
-kangax-next/throw-expr.conditional.js: SyntaxError: kangax-next/throw-expr.conditional.js:9: SyntaxError: unexpected token throw
-kangax-next/throw-expr.logical.js: SyntaxError: kangax-next/throw-expr.logical.js:11: SyntaxError: unexpected token throw
-kangax-next/throw-expr.param-init.js: SyntaxError: kangax-next/throw-expr.param-init.js:9: SyntaxError: unexpected token =
-kangax-next/using.for-of.js: SyntaxError: kangax-next/using.for-of.js:11: SyntaxError: invalid property name
-kangax-next/using.js: SyntaxError: kangax-next/using.js:11: SyntaxError: invalid property name
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: WeakMap.prototype.upsert.js:11: SyntaxError: unexpected token >
+kangax-next/await-using.for-of.js: SyntaxError: await-using.for-of.js:46: SyntaxError: unexpected token [
+kangax-next/await-using.js: SyntaxError: await-using.js:44: SyntaxError: unexpected token function
+kangax-next/class-decorators.js: SyntaxError: class-decorators.js:9: SyntaxError: unexpected token class
+kangax-next/function.sent.js: SyntaxError: function.sent.js:10: SyntaxError: unexpected token *
+kangax-next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js:9: SyntaxError: unexpected token )
+kangax-next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js:9: SyntaxError: unexpected token throw
+kangax-next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js:11: SyntaxError: unexpected token throw
+kangax-next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js:9: SyntaxError: unexpected token =
+kangax-next/using.for-of.js: SyntaxError: using.for-of.js:11: SyntaxError: invalid property name
+kangax-next/using.js: SyntaxError: using.js:11: SyntaxError: invalid property name

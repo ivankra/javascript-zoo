@@ -50,12 +50,12 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <li>ES6: 65%<pre>
 <a href="../conformance/kangax-es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
-<a href="../conformance/kangax-es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: "kangax-es6/Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
-<a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: "kangax-es6/Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
-<a href="../conformance/kangax-es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: "kangax-es6/Function.name.class-prototype.js", line 1: Compilation produced 1 syntax errors.
-<a href="../conformance/kangax-es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: "kangax-es6/Function.name.class-statement.js", line 1: Compilation produced 2 syntax errors.
-<a href="../conformance/kangax-es6/Function.name.class-static.js">Function.name.class-static.js</a>: "kangax-es6/Function.name.class-static.js", line 1: Compilation produced 1 syntax errors.
-<a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: "kangax-es6/Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: "Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: "Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: "Function.name.class-prototype.js", line 1: Compilation produced 1 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: "Function.name.class-statement.js", line 1: Compilation produced 2 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-static.js">Function.name.class-static.js</a>: "Function.name.class-static.js", line 1: Compilation produced 1 syntax errors.
+<a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: "Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
 <a href="../conformance/kangax-es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.shorthand.js">Function.name.shorthand.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
@@ -73,8 +73,8 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 </pre></li>
 <li>ES2016: 64%<pre>
 <a href="../conformance/kangax-es2016/misc.generator-no-new.js">misc.generator-no-new.js</a>: failed
-<a href="../conformance/kangax-es2016/misc.nested-rest-destructuring-decl.js">misc.nested-rest-destructuring-decl.js</a>: "kangax-es2016/misc.nested-rest-destructuring-decl.js", line 10: syntax error "kangax-es2016/misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
-<a href="../conformance/kangax-es2016/misc.nested-rest-destructuring-params.js">misc.nested-rest-destructuring-params.js</a>: "kangax-es2016/misc.nested-rest-destructuring-params.js", line 9: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", line 12: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", line 20: syntax error "kangax-es2016/misc.nested-rest-destructuring-params.js", lin
+<a href="../conformance/kangax-es2016/misc.nested-rest-destructuring-decl.js">misc.nested-rest-destructuring-decl.js</a>: "misc.nested-rest-destructuring-decl.js", line 10: syntax error "misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
+<a href="../conformance/kangax-es2016/misc.nested-rest-destructuring-params.js">misc.nested-rest-destructuring-params.js</a>: "misc.nested-rest-destructuring-params.js", line 9: syntax error "misc.nested-rest-destructuring-params.js", line 12: syntax error "misc.nested-rest-destructuring-params.js", line 20: syntax error "misc.nested-rest-destructuring-params.js", line 21: syntax error   console.log("kangax-es2016/misc.nes
 <a href="../conformance/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
 </pre></li>
 <li>ES2017: 38%<br>
@@ -84,7 +84,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: identifier is a reserved word: class
 <a href="../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: identifier is a reserved word: class
 <a href="../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
-<a href="../conformance/kangax-es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: "kangax-es2019/misc.optional-catch-binding.await.js", line 48: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 49: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 51: syntax error "kangax-es2019/misc.optional-catch-binding.await.js", line 52: syntax er
+<a href="../conformance/kangax-es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: "misc.optional-catch-binding.await.js", line 48: syntax error "misc.optional-catch-binding.await.js", line 49: syntax error "misc.optional-catch-binding.await.js", line 51: syntax error "misc.optional-catch-binding.await.js", line 52: syntax error "misc.optional-catch-binding.await.js", line 57: syn
 </pre></li>
 <li>ES2020: 73%<pre>
 <a href="../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: ReferenceError: "BigInt64Array" is not defined.
@@ -92,7 +92,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: TypeError: Cannot find function setBigInt64 in object [object DataView].
 <a href="../conformance/kangax-es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: TypeError: Cannot find function setBigUint64 in object [object DataView].
 <a href="../conformance/kangax-es2020/Promise.allSettled.js">Promise.allSettled.js</a>: failed
-<a href="../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: "kangax-es2020/optional-chaining.spread-params.js", line 14: syntax error "kangax-es2020/optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
+<a href="../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: "optional-chaining.spread-params.js", line 14: syntax error "optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
 </pre></li>
 <li>ES2021: 38%<br>
 <li>ES2022: 24%<br>

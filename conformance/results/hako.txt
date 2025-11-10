@@ -822,7 +822,7 @@ kangax-es6/destructuring-assign.nested.js: "message": "invalid assignment left-h
 kangax-es6/destructuring-assign.object-expression.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
 kangax-es6/destructuring-assign.object-primitives.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
 kangax-es6/destructuring-assign.object.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
-kangax-es6/destructuring-assign.parenthesised-error.js: "message": "invalid assignment left-hand side", "name": "SyntaxError", stack": "    at kangax-es6/destructuring-assign.parenthesised-error.js:11:12\n
+kangax-es6/destructuring-assign.parenthesised-error.js: "message": "invalid assignment left-hand side", "name": "SyntaxError", stack": "    at destructuring-assign.parenthesised-error.js:11:12\n
 kangax-es6/destructuring-assign.rest.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
 kangax-es6/destructuring-assign.sparse-array.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
 kangax-es6/destructuring-assign.string.js: "message": "invalid assignment left-hand side", "name": "SyntaxError",
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: not a function
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: "name": "SyntaxError", stack": "    at kangax-next/SuppressedError.js:13:11\n
+kangax-next/SuppressedError.js: "name": "SyntaxError", stack": "    at SuppressedError.js:13:11\n
 kangax-next/Uint8Array.fromBase64.js: OK
 kangax-next/Uint8Array.fromHex.js: TypeError: not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: not a function

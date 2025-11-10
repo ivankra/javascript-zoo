@@ -63,8 +63,8 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 86%, ES2016+ 79%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 86%<pre>
+<details><summary>compat-table: ES6 86%, ES2016+ 80%, Next 0%, Intl 25%</summary><ul>
+<li>ES6: 86%, <b>2 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
 <a href="../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
 <a href="../conformance/kangax-es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
@@ -127,8 +127,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
 </pre></li>
-<li>ES2020: 86%<pre>
-<a href="../conformance/kangax-es2020/Promise.allSettled.js">Promise.allSettled.js</a>: Error: Promise.allSettled not implemented
+<li>ES2020: 93%<pre>
 <a href="../conformance/kangax-es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: failed
 </pre></li>
 <li>ES2021: 57%<pre>
@@ -169,3 +168,5 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
+
+💥 **2 crashes during testing**

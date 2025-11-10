@@ -279,7 +279,7 @@ es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: luajit: es3/.global.TypeError.thrown.js.lua:123: syntax error near ';'
+es3/global.TypeError.thrown.js: luajit: /zoo/conformance/es3/.global.TypeError.thrown.js.lua:123: syntax error near ';'
 es3/global.URIError.js: OK
 es3/global.URIError.thrown.js: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; no exception for encodeURI lone low surrogate; no exception for enco
 es3/global.decodeURIComponent.js: OK
@@ -366,7 +366,7 @@ es5/Function.prototype.bind.js: length property incorrect; luajit: TypeError: Ca
 es5/JSON.js: OK
 es5/JSON.parse.js: trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
-es5/JSON.stringify.js: cyclic structure does not throw TypeError; [C]: in function 'error'
+es5/JSON.stringify.js: stringify object failed; cyclic structure does not throw TypeError; [C]: in function 'error'
 es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
 es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: null prototype failed
@@ -493,15 +493,15 @@ kangax-es5/strict.this-not-coerced-methods.js: OK
 kangax-es5/strict.this-undefined.js: failed
 kangax-es5/strict.with-error.js: failed
 kangax-es6/Array.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
-kangax-es6/Array.from.array-like.js: kangax-es6/.Array.from.array-like.js.lua:6: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.array-like.js: /zoo/conformance/kangax-es6/.Array.from.array-like.js.lua:6: attempt to call method 'from' (a nil value)
 kangax-es6/Array.from.generator.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Yield expression not supported yet.
-kangax-es6/Array.from.iterable-instance.js: kangax-es6/.Array.from.iterable-instance.js.lua:32: attempt to call method 'from' (a nil value)
-kangax-es6/Array.from.iterable.js: kangax-es6/.Array.from.iterable.js.lua:32: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.iterable-instance.js: ...formance/kangax-es6/.Array.from.iterable-instance.js.lua:32: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.iterable.js: /zoo/conformance/kangax-es6/.Array.from.iterable.js.lua:32: attempt to call method 'from' (a nil value)
 kangax-es6/Array.from.iterator-closing.js: failed
-kangax-es6/Array.from.map.array-like.js: kangax-es6/.Array.from.map.array-like.js.lua:6: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.map.array-like.js: ...conformance/kangax-es6/.Array.from.map.array-like.js.lua:6: attempt to call method 'from' (a nil value)
 kangax-es6/Array.from.map.generator.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Yield expression not supported yet.
-kangax-es6/Array.from.map.iterable-instance.js: kangax-es6/.Array.from.map.iterable-instance.js.lua:32: attempt to call method 'from' (a nil value)
-kangax-es6/Array.from.map.iterable.js: kangax-es6/.Array.from.map.iterable.js.lua:32: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.map.iterable-instance.js: ...ance/kangax-es6/.Array.from.map.iterable-instance.js.lua:32: attempt to call method 'from' (a nil value)
+kangax-es6/Array.from.map.iterable.js: /zoo/conformance/kangax-es6/.Array.from.map.iterable.js.lua:32: attempt to call method 'from' (a nil value)
 kangax-es6/Array.iterator-prototype-chain.js: TypeError: Cannot read property 'iterator' of undefined
 kangax-es6/Array.of.js: failed
 kangax-es6/Array.prototype.Symbol.iterator.js: TypeError: Cannot read property 'iterator' of undefined
@@ -530,7 +530,7 @@ kangax-es6/Function.name.object-method.js: failed
 kangax-es6/Function.name.shorthand.js: failed
 kangax-es6/Function.name.shorthand.no-lexical.js: OK
 kangax-es6/Function.name.statement.js: failed
-kangax-es6/Function.name.symbol-keyed.js: kangax-es6/.Function.name.symbol-keyed.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Function.name.symbol-keyed.js: ...onformance/kangax-es6/.Function.name.symbol-keyed.js.lua:7: attempt to call global 'Symbol' (a nil value)
 kangax-es6/Function.name.variable.js: failed
 kangax-es6/Map.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
 kangax-es6/Map.constructor-accepts-null.js: TypeError: undefined is not a function
@@ -559,7 +559,7 @@ kangax-es6/Math.clz32.js: failed
 kangax-es6/Math.cosh.js: failed
 kangax-es6/Math.expm1.js: failed
 kangax-es6/Math.fround.js: failed
-kangax-es6/Math.hypot.js: kangax-es6/.Math.hypot.js.lua:6: attempt to call method 'hypot' (a nil value)
+kangax-es6/Math.hypot.js: /zoo/conformance/kangax-es6/.Math.hypot.js.lua:6: attempt to call method 'hypot' (a nil value)
 kangax-es6/Math.imul.js: failed
 kangax-es6/Math.log1p.js: failed
 kangax-es6/Math.log2.js: failed
@@ -577,10 +577,10 @@ kangax-es6/Number.isNaN.js: OK
 kangax-es6/Number.isSafeInteger.js: failed
 kangax-es6/Number.parseFloat.js: failed
 kangax-es6/Number.parseInt.js: failed
-kangax-es6/Object.assign.js: kangax-es6/.Object.assign.js.lua:7: attempt to call method 'assign' (a nil value)
-kangax-es6/Object.getOwnPropertySymbols.js: kangax-es6/.Object.getOwnPropertySymbols.js.lua:8: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Object.assign.js: /zoo/conformance/kangax-es6/.Object.assign.js.lua:7: attempt to call method 'assign' (a nil value)
+kangax-es6/Object.getOwnPropertySymbols.js: ...formance/kangax-es6/.Object.getOwnPropertySymbols.js.lua:8: attempt to call global 'Symbol' (a nil value)
 kangax-es6/Object.is.js: failed
-kangax-es6/Object.setPrototypeOf.js: kangax-es6/.Object.setPrototypeOf.js.lua:6: attempt to call method 'setPrototypeOf' (a nil value)
+kangax-es6/Object.setPrototypeOf.js: /zoo/conformance/kangax-es6/.Object.setPrototypeOf.js.lua:6: attempt to call method 'setPrototypeOf' (a nil value)
 kangax-es6/Promise.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
 kangax-es6/Promise.all.iterable.js: TypeError: Cannot read property 'all' of undefined
 kangax-es6/Promise.all.js: TypeError: Cannot read property 'all' of undefined
@@ -639,7 +639,7 @@ kangax-es6/Reflect.get.js: TypeError: Cannot read property 'get' of undefined
 kangax-es6/Reflect.has.js: TypeError: Cannot read property 'has' of undefined
 kangax-es6/Reflect.isExtensible.js: TypeError: Cannot read property 'isExtensible' of undefined
 kangax-es6/Reflect.ownKeys.string.js: TypeError: Cannot read property 'ownKeys' of undefined
-kangax-es6/Reflect.ownKeys.symbol.js: kangax-es6/.Reflect.ownKeys.symbol.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Reflect.ownKeys.symbol.js: /zoo/conformance/kangax-es6/.Reflect.ownKeys.symbol.js.lua:7: attempt to call global 'Symbol' (a nil value)
 kangax-es6/Reflect.preventExtensions.js: TypeError: Cannot read property 'preventExtensions' of undefined
 kangax-es6/Reflect.setPrototypeOf.js: TypeError: Cannot read property 'setPrototypeOf' of undefined
 kangax-es6/Reflect.set.js: TypeError: Cannot read property 'set' of undefined
@@ -680,18 +680,18 @@ kangax-es6/String.prototype.repeat.js: failed
 kangax-es6/String.prototype.startsWith.js: failed
 kangax-es6/String.prototype.startsWith.throws-regex.js: failed
 kangax-es6/String.raw.js: failed
-kangax-es6/Symbol.JSON.stringify.object.js: kangax-es6/.Symbol.JSON.stringify.object.js.lua:27: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.JSON.stringify.primitive.js: kangax-es6/.Symbol.JSON.stringify.primitive.js.lua:8: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.Object.js: kangax-es6/.Symbol.Object.js.lua:7: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.String.js: kangax-es6/.Symbol.String.js.lua:6: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.defineProperty.js: kangax-es6/.Symbol.defineProperty.js.lua:8: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.JSON.stringify.object.js: ...formance/kangax-es6/.Symbol.JSON.stringify.object.js.lua:27: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.JSON.stringify.primitive.js: ...mance/kangax-es6/.Symbol.JSON.stringify.primitive.js.lua:8: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.Object.js: /zoo/conformance/kangax-es6/.Symbol.Object.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.String.js: /zoo/conformance/kangax-es6/.Symbol.String.js.lua:6: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.defineProperty.js: /zoo/conformance/kangax-es6/.Symbol.defineProperty.js.lua:8: attempt to call global 'Symbol' (a nil value)
 kangax-es6/Symbol.global-registry.js: TypeError: Cannot read property 'for' of undefined
-kangax-es6/Symbol.hidden-keys.js: kangax-es6/.Symbol.hidden-keys.js.lua:8: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.js: kangax-es6/.Symbol.js.lua:8: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.no-coerce.js: kangax-es6/.Symbol.no-coerce.js.lua:7: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.no-new.js: kangax-es6/.Symbol.no-new.js.lua:7: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.prototype.js: kangax-es6/.Symbol.prototype.js.lua:7: attempt to call global 'Symbol' (a nil value)
-kangax-es6/Symbol.typeof.js: kangax-es6/.Symbol.typeof.js.lua:6: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.hidden-keys.js: /zoo/conformance/kangax-es6/.Symbol.hidden-keys.js.lua:8: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.js: /zoo/conformance/kangax-es6/.Symbol.js.lua:8: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.no-coerce.js: /zoo/conformance/kangax-es6/.Symbol.no-coerce.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.no-new.js: /zoo/conformance/kangax-es6/.Symbol.no-new.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.prototype.js: /zoo/conformance/kangax-es6/.Symbol.prototype.js.lua:7: attempt to call global 'Symbol' (a nil value)
+kangax-es6/Symbol.typeof.js: /zoo/conformance/kangax-es6/.Symbol.typeof.js.lua:6: attempt to call global 'Symbol' (a nil value)
 kangax-es6/WeakMap.accept-primitives.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.constructor-accepts-null.js: TypeError: undefined is not a function
 kangax-es6/WeakMap.constructor-arguments.js: TypeError: undefined is not a function
@@ -718,7 +718,7 @@ kangax-es6/WeakSet.prototype.delete.js: TypeError: Cannot read property 'prototy
 kangax-es6/annex-b.RegExp.prototype.compile.js: failed
 kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: ...s6/.annex-b.RegExp.prototype.compile.returns-this.js.lua:8: attempt to call method 'compile' (a nil value)
 kangax-es6/annex-b.String.prototype.html.existence.js: failed
-kangax-es6/annex-b.String.prototype.html.lowercase.js: kangax-es6/.annex-b.String.prototype.html.lowercase.js.lua:10: attempt to call local '_f' (a nil value)
+kangax-es6/annex-b.String.prototype.html.lowercase.js: ...ngax-es6/.annex-b.String.prototype.html.lowercase.js.lua:10: attempt to call local '_f' (a nil value)
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
 kangax-es6/annex-b.function.hoisted-block-level.js: failed
 kangax-es6/annex-b.function.if-statement.js: OK
@@ -803,7 +803,7 @@ kangax-es6/default-params.basic.js: failed
 kangax-es6/default-params.explicit-undefined.js: failed
 kangax-es6/default-params.new-function.js: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,a = 1,b = 2 = ...;..."]:1: unexpected symbol near '='
 kangax-es6/default-params.refer-previous.js: failed
-kangax-es6/default-params.separate-scope.js: kangax-es6/.default-params.separate-scope.js.lua:9: attempt to call local 'a' (a nil value)
+kangax-es6/default-params.separate-scope.js: ...ormance/kangax-es6/.default-params.separate-scope.js.lua:9: attempt to call local 'a' (a nil value)
 kangax-es6/default-params.tdz.js: failed
 kangax-es6/destructuring-assign.array.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unknown Expression type: ArrayPattern
 kangax-es6/destructuring-assign.astral-string.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unknown Expression type: ArrayPattern
@@ -1030,7 +1030,7 @@ kangax-es6/misc.identifier-syntax.var-1.js: OK
 kangax-es6/misc.identifier-syntax.var-2.js: OK
 kangax-es6/misc.property-order.JSON.parse.js: failed
 kangax-es6/misc.property-order.JSON.stringify.js: failed
-kangax-es6/misc.property-order.Object.assign.js: kangax-es6/.misc.property-order.Object.assign.js.lua:48: attempt to call method 'assign' (a nil value)
+kangax-es6/misc.property-order.Object.assign.js: ...nce/kangax-es6/.misc.property-order.Object.assign.js.lua:48: attempt to call method 'assign' (a nil value)
 kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
 kangax-es6/misc.property-order.Object.keys.js: OK
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: TypeError: Cannot read property 'ownKeys' of undefined
@@ -1103,7 +1103,7 @@ kangax-es6/super.property-access.js: throw new SyntaxError("Couldn't transpile J
 kangax-es6/super.statement.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Class declaration (ES6) not supported yet.
 kangax-es6/super.static-binding.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Class declaration (ES6) not supported yet.
 kangax-es6/super.this-binding.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Class declaration (ES6) not supported yet.
-kangax-es6/tail-calls.direct.js: kangax-es6/.tail-calls.direct.js.lua:11: attempt to call global 'f' (a nil value)
+kangax-es6/tail-calls.direct.js: /zoo/conformance/kangax-es6/.tail-calls.direct.js.lua:11: attempt to call global 'f' (a nil value)
 kangax-es6/tail-calls.mutual.js: OK
 kangax-es6/template.basic.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: String templating (ES6) not supported yet.
 kangax-es6/template.caching.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unknown Expression type: TaggedTemplateExpression
@@ -1191,8 +1191,8 @@ kangax-es6/well-known.toStringTag.misc-builtins.js: TypeError: Cannot read prope
 kangax-es6/well-known.toStringTag.new-builtins.js: TypeError: Cannot read property 'toStringTag' of undefined
 kangax-es6/well-known.unscopables.js: TypeError: Cannot read property 'unscopables' of undefined
 kangax-es2016/Array.prototype.includes.generic.js: TypeError: Cannot read property 'call' of undefined
-kangax-es2016/Array.prototype.includes.js: kangax-es2016/.Array.prototype.includes.js.lua:6: attempt to call method 'includes' (a nil value)
-kangax-es2016/Array.prototype.includes.sparse.js: kangax-es2016/.Array.prototype.includes.sparse.js.lua:6: attempt to call method 'includes' (a nil value)
+kangax-es2016/Array.prototype.includes.js: ...nformance/kangax-es2016/.Array.prototype.includes.js.lua:6: attempt to call method 'includes' (a nil value)
+kangax-es2016/Array.prototype.includes.sparse.js: ...ce/kangax-es2016/.Array.prototype.includes.sparse.js.lua:6: attempt to call method 'includes' (a nil value)
 kangax-es2016/Array.prototype.includes.typed-array.js: TypeError: undefined is not a function
 kangax-es2016/exponentiation.assignment.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token *=
 kangax-es2016/exponentiation.basic.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token *
@@ -1216,17 +1216,17 @@ kangax-es2017/Atomics.store.js: TypeError: Cannot read property 'store' of undef
 kangax-es2017/Atomics.sub.js: TypeError: Cannot read property 'sub' of undefined
 kangax-es2017/Atomics.wait.js: TypeError: Cannot read property 'wait' of undefined
 kangax-es2017/Atomics.xor.js: TypeError: Cannot read property 'xor' of undefined
-kangax-es2017/Object.entries.js: kangax-es2017/.Object.entries.js.lua:14: attempt to call method 'entries' (a nil value)
-kangax-es2017/Object.getOwnPropertyDescriptors.js: kangax-es2017/.Object.getOwnPropertyDescriptors.js.lua:15: attempt to call method 'getOwnPropertyDescriptors' (a nil value)
+kangax-es2017/Object.entries.js: /zoo/conformance/kangax-es2017/.Object.entries.js.lua:14: attempt to call method 'entries' (a nil value)
+kangax-es2017/Object.getOwnPropertyDescriptors.js: ...e/kangax-es2017/.Object.getOwnPropertyDescriptors.js.lua:15: attempt to call method 'getOwnPropertyDescriptors' (a nil value)
 kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: TypeError: undefined is not a function
-kangax-es2017/Object.values.js: kangax-es2017/.Object.values.js.lua:14: attempt to call method 'values' (a nil value)
+kangax-es2017/Object.values.js: /zoo/conformance/kangax-es2017/.Object.values.js.lua:14: attempt to call method 'values' (a nil value)
 kangax-es2017/SharedArrayBuffer.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
 kangax-es2017/SharedArrayBuffer.js: failed
 kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: TypeError: Cannot read property 'prototype' of undefined
 kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: TypeError: Cannot read property 'prototype' of undefined
 kangax-es2017/SharedArrayBuffer.prototype.slice.js: TypeError: Cannot read property 'prototype' of undefined
-kangax-es2017/String.prototype.padEnd.js: kangax-es2017/.String.prototype.padEnd.js.lua:6: attempt to call method 'padEnd' (a nil value)
-kangax-es2017/String.prototype.padStart.js: kangax-es2017/.String.prototype.padStart.js.lua:6: attempt to call method 'padStart' (a nil value)
+kangax-es2017/String.prototype.padEnd.js: ...onformance/kangax-es2017/.String.prototype.padEnd.js.lua:6: attempt to call method 'padEnd' (a nil value)
+kangax-es2017/String.prototype.padStart.js: ...formance/kangax-es2017/.String.prototype.padStart.js.lua:6: attempt to call method 'padStart' (a nil value)
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: TypeError: Cannot read property 'call' of undefined
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Cannot read property 'call' of undefined
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ...annex-b.Object.prototype.__defineGetter__.symbols.js.lua:10: attempt to call global 'Symbol' (a nil value)
@@ -1290,17 +1290,17 @@ kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: failed
-kangax-es2019/Array.prototype.flatMap.js: kangax-es2019/.Array.prototype.flatMap.js.lua:12: attempt to call method 'flatMap' (a nil value)
+kangax-es2019/Array.prototype.flatMap.js: ...onformance/kangax-es2019/.Array.prototype.flatMap.js.lua:12: attempt to call method 'flatMap' (a nil value)
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'unscopables' of undefined
-kangax-es2019/Array.prototype.flat.js: kangax-es2019/.Array.prototype.flat.js.lua:6: attempt to call method 'flat' (a nil value)
+kangax-es2019/Array.prototype.flat.js: /zoo/conformance/kangax-es2019/.Array.prototype.flat.js.lua:6: attempt to call method 'flat' (a nil value)
 kangax-es2019/Object.fromEntries.js: TypeError: undefined is not a function
-kangax-es2019/String.prototype.trimEnd.js: kangax-es2019/.String.prototype.trimEnd.js.lua:6: attempt to call method 'trimEnd' (a nil value)
-kangax-es2019/String.prototype.trimStart.js: kangax-es2019/.String.prototype.trimStart.js.lua:6: attempt to call method 'trimStart' (a nil value)
-kangax-es2019/Symbol.prototype.description.empty.js: kangax-es2019/.Symbol.prototype.description.empty.js.lua:6: attempt to call global 'Symbol' (a nil value)
-kangax-es2019/Symbol.prototype.description.js: kangax-es2019/.Symbol.prototype.description.js.lua:6: attempt to call global 'Symbol' (a nil value)
+kangax-es2019/String.prototype.trimEnd.js: ...nformance/kangax-es2019/.String.prototype.trimEnd.js.lua:6: attempt to call method 'trimEnd' (a nil value)
+kangax-es2019/String.prototype.trimStart.js: ...ormance/kangax-es2019/.String.prototype.trimStart.js.lua:6: attempt to call method 'trimStart' (a nil value)
+kangax-es2019/Symbol.prototype.description.empty.js: ...kangax-es2019/.Symbol.prototype.description.empty.js.lua:6: attempt to call global 'Symbol' (a nil value)
+kangax-es2019/Symbol.prototype.description.js: ...mance/kangax-es2019/.Symbol.prototype.description.js.lua:6: attempt to call global 'Symbol' (a nil value)
 kangax-es2019/Symbol.prototype.description.undefined.js: TypeError: Cannot read property 'prototype' of undefined
-kangax-es2019/annex-b.String.prototype.trimLeft.js: kangax-es2019/.annex-b.String.prototype.trimLeft.js.lua:6: attempt to call method 'trimLeft' (a nil value)
-kangax-es2019/annex-b.String.prototype.trimRight.js: kangax-es2019/.annex-b.String.prototype.trimRight.js.lua:6: attempt to call method 'trimRight' (a nil value)
+kangax-es2019/annex-b.String.prototype.trimLeft.js: .../kangax-es2019/.annex-b.String.prototype.trimLeft.js.lua:6: attempt to call method 'trimLeft' (a nil value)
+kangax-es2019/annex-b.String.prototype.trimRight.js: ...kangax-es2019/.annex-b.String.prototype.trimRight.js.lua:6: attempt to call method 'trimRight' (a nil value)
 kangax-es2019/misc.Function-toString.Function-constructor.js: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,a, /* a */ b, c /* b */ // = ...;..."]:1: '<name>' expected near '/'
 kangax-es2019/misc.Function-toString.arrows.js: Error: Arrow functions (ES6) not supported yet.
 kangax-es2019/misc.Function-toString.class-explicit-constructor.js: Error: Unknown Expression type: ClassExpression
@@ -1323,7 +1323,7 @@ kangax-es2020/BigUint64Array.js: throw new SyntaxError("Couldn't transpile JS co
 kangax-es2020/DataView.prototype.getBigInt64.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 12: Unexpected token ILLEGAL
 kangax-es2020/DataView.prototype.getBigUint64.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 12: Unexpected token ILLEGAL
 kangax-es2020/Promise.allSettled.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
-kangax-es2020/String.prototype.matchAll.js: kangax-es2020/.String.prototype.matchAll.js.lua:7: attempt to call method 'matchAll' (a nil value)
+kangax-es2020/String.prototype.matchAll.js: ...formance/kangax-es2020/.String.prototype.matchAll.js.lua:7: attempt to call method 'matchAll' (a nil value)
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
 kangax-es2020/globalThis.descriptor.js: failed
 kangax-es2020/globalThis.js: failed
@@ -1336,7 +1336,7 @@ kangax-es2020/optional-chaining.spread-params.js: throw new SyntaxError("Couldn'
 kangax-es2021/FinalizationRegistry.js: TypeError: undefined is not a function
 kangax-es2021/Promise.any.AggregateError.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
 kangax-es2021/Promise.any.fulfillment.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
-kangax-es2021/String.prototype.replaceAll.js: kangax-es2021/.String.prototype.replaceAll.js.lua:6: attempt to call method 'replaceAll' (a nil value)
+kangax-es2021/String.prototype.replaceAll.js: ...rmance/kangax-es2021/.String.prototype.replaceAll.js.lua:6: attempt to call method 'replaceAll' (a nil value)
 kangax-es2021/WeakRef.js: TypeError: undefined is not a function
 kangax-es2021/logical-assignment.and.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 13: Unexpected token =
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 11: Unexpected token =
@@ -1365,9 +1365,9 @@ kangax-es2022/Error.cause.TypeError.js: failed
 kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.URIError.js: failed
 kangax-es2022/Object.hasOwn.ToObject-first.js: failed
-kangax-es2022/Object.hasOwn.js: kangax-es2022/.Object.hasOwn.js.lua:6: attempt to call method 'hasOwn' (a nil value)
-kangax-es2022/at-method.Array.js: kangax-es2022/.at-method.Array.js.lua:8: attempt to call method 'at' (a nil value)
-kangax-es2022/at-method.String.js: kangax-es2022/.at-method.String.js.lua:8: attempt to call method 'at' (a nil value)
+kangax-es2022/Object.hasOwn.js: /zoo/conformance/kangax-es2022/.Object.hasOwn.js.lua:6: attempt to call method 'hasOwn' (a nil value)
+kangax-es2022/at-method.Array.js: /zoo/conformance/kangax-es2022/.at-method.Array.js.lua:8: attempt to call method 'at' (a nil value)
+kangax-es2022/at-method.String.js: /zoo/conformance/kangax-es2022/.at-method.String.js.lua:8: attempt to call method 'at' (a nil value)
 kangax-es2022/at-method.TypedArray.js: failed
 kangax-es2022/class-fields.computed-instance.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token =
 kangax-es2022/class-fields.computed-static.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token =
@@ -1388,12 +1388,12 @@ kangax-es2022/class-static-init-blocks.js: throw new SyntaxError("Couldn't trans
 kangax-es2022/ergonomic-brand-checks.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token ILLEGAL
 kangax-es2022/regex.flags.d.constructor.js: OK
 kangax-es2022/regex.flags.d.shows-in-flags.js: TypeError: undefined is not a function
-kangax-es2023/Array.prototype.findLastIndex.js: kangax-es2023/.Array.prototype.findLastIndex.js.lua:16: attempt to call method 'findLastIndex' (a nil value)
-kangax-es2023/Array.prototype.findLast.js: kangax-es2023/.Array.prototype.findLast.js.lua:16: attempt to call method 'findLast' (a nil value)
-kangax-es2023/Array.prototype.toReversed.js: kangax-es2023/.Array.prototype.toReversed.js.lua:8: attempt to call method 'toReversed' (a nil value)
-kangax-es2023/Array.prototype.toSorted.js: kangax-es2023/.Array.prototype.toSorted.js.lua:8: attempt to call method 'toSorted' (a nil value)
-kangax-es2023/Array.prototype.toSpliced.js: kangax-es2023/.Array.prototype.toSpliced.js.lua:8: attempt to call method 'toSpliced' (a nil value)
-kangax-es2023/Array.prototype.with.js: kangax-es2023/.Array.prototype.with.js.lua:8: attempt to call method 'with' (a nil value)
+kangax-es2023/Array.prototype.findLastIndex.js: ...ance/kangax-es2023/.Array.prototype.findLastIndex.js.lua:16: attempt to call method 'findLastIndex' (a nil value)
+kangax-es2023/Array.prototype.findLast.js: ...nformance/kangax-es2023/.Array.prototype.findLast.js.lua:16: attempt to call method 'findLast' (a nil value)
+kangax-es2023/Array.prototype.toReversed.js: ...ormance/kangax-es2023/.Array.prototype.toReversed.js.lua:8: attempt to call method 'toReversed' (a nil value)
+kangax-es2023/Array.prototype.toSorted.js: ...nformance/kangax-es2023/.Array.prototype.toSorted.js.lua:8: attempt to call method 'toSorted' (a nil value)
+kangax-es2023/Array.prototype.toSpliced.js: ...formance/kangax-es2023/.Array.prototype.toSpliced.js.lua:8: attempt to call method 'toSpliced' (a nil value)
+kangax-es2023/Array.prototype.with.js: /zoo/conformance/kangax-es2023/.Array.prototype.with.js.lua:8: attempt to call method 'with' (a nil value)
 kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: undefined is not a function
 kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: undefined is not a function
 kangax-es2023/TypedArray.prototype.with.js: TypeError: undefined is not a function
@@ -1414,9 +1414,9 @@ kangax-es2024/regex.flags.v.unicode-17.0.js: /dist/castl-dist/castl/prototype/re
 kangax-es2025/Iterator.extends.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Class declaration (ES6) not supported yet.
 kangax-es2025/Iterator.from.iterable.js: TypeError: Cannot read property 'from' of undefined
 kangax-es2025/Iterator.from.iterator.js: TypeError: Cannot read property 'from' of undefined
-kangax-es2025/Iterator.instanceof.js: kangax-es2025/.Iterator.instanceof.js.lua:6: attempt to call method 'values' (a nil value)
+kangax-es2025/Iterator.instanceof.js: /zoo/conformance/kangax-es2025/.Iterator.instanceof.js.lua:6: attempt to call method 'values' (a nil value)
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read property 'prototype' of undefined
-kangax-es2025/Iterator.prototype.drop.js: kangax-es2025/.Iterator.prototype.drop.js.lua:6: attempt to call method 'values' (a nil value)
+kangax-es2025/Iterator.prototype.drop.js: ...onformance/kangax-es2025/.Iterator.prototype.drop.js.lua:6: attempt to call method 'values' (a nil value)
 kangax-es2025/Iterator.prototype.every.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
 kangax-es2025/Iterator.prototype.filter.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
 kangax-es2025/Iterator.prototype.find.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
@@ -1425,10 +1425,10 @@ kangax-es2025/Iterator.prototype.forEach.js: throw new SyntaxError("Couldn't tra
 kangax-es2025/Iterator.prototype.map.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
 kangax-es2025/Iterator.prototype.reduce.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
 kangax-es2025/Iterator.prototype.some.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
-kangax-es2025/Iterator.prototype.take.js: kangax-es2025/.Iterator.prototype.take.js.lua:6: attempt to call method 'values' (a nil value)
-kangax-es2025/Iterator.prototype.toArray.js: kangax-es2025/.Iterator.prototype.toArray.js.lua:7: attempt to call method 'values' (a nil value)
+kangax-es2025/Iterator.prototype.take.js: ...onformance/kangax-es2025/.Iterator.prototype.take.js.lua:6: attempt to call method 'values' (a nil value)
+kangax-es2025/Iterator.prototype.toArray.js: ...ormance/kangax-es2025/.Iterator.prototype.toArray.js.lua:7: attempt to call method 'values' (a nil value)
 kangax-es2025/Promise.try.js: TypeError: Cannot read property 'try' of undefined
-kangax-es2025/RegExp.escape.js: kangax-es2025/.RegExp.escape.js.lua:6: attempt to call method 'escape' (a nil value)
+kangax-es2025/RegExp.escape.js: /zoo/conformance/kangax-es2025/.RegExp.escape.js.lua:6: attempt to call method 'escape' (a nil value)
 kangax-es2025/Set.prototype.difference.js: TypeError: undefined is not a function
 kangax-es2025/Set.prototype.intersection.js: TypeError: undefined is not a function
 kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined is not a function

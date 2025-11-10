@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "eac4afc4e5f8be6027c10d7ca3998e732416c9f6ee30accfbedf1f654fa2780d", "binary_size": 5910576, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e", "revision_date": "2025-09-04", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "440893b871c9ca0091ab238907a991ffe1dca3018e9539b10b5310317794bd3d", "binary_size": 5910576, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e", "revision_date": "2025-09-04", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -729,8 +729,8 @@ kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Character class cannot be a bo
 kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: Unexpected token
 kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
 kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: Malformed escape sequence ┌ kangax-es6/annex-b.regex.invalid-hex-escapes.js:9:11
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: Malformed escape sequence ┌ kangax-es6/annex-b.regex.invalid-unicode-escapes.js:9:11
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-hex-escapes.js:9:11
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-unicode-escapes.js:9:11
 kangax-es6/annex-b.regex.octal-escapes.js: TypeError: null has no properties
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: value is not a function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: Unexpected token _1, expected ; ┌ kangax-next/SuppressedError.js:13:11
+kangax-next/SuppressedError.js: SyntaxError: Unexpected token _1, expected ; ┌ SuppressedError.js:13:11
 kangax-next/Uint8Array.fromBase64.js: TypeError: value is not a function
 kangax-next/Uint8Array.fromHex.js: TypeError: value is not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: value is not a function

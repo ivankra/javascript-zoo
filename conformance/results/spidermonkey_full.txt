@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1502,11 +1502,11 @@ kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
 kangax-next/await-using.for-of.js: OK
 kangax-next/await-using.js: OK
-kangax-next/class-decorators.js: kangax-next/class-decorators.js:10:5 SyntaxError: illegal character U+0040:
-kangax-next/function.sent.js: kangax-next/function.sent.js:11:22 SyntaxError: missing ( before formal parameters:
-kangax-next/throw-expr.arrow.js: kangax-next/throw-expr.arrow.js:9:18 SyntaxError: expected expression, got keyword 'throw':
-kangax-next/throw-expr.conditional.js: kangax-next/throw-expr.conditional.js:9:15 SyntaxError: expected expression, got keyword 'throw':
-kangax-next/throw-expr.logical.js: kangax-next/throw-expr.logical.js:11:15 SyntaxError: expected expression, got keyword 'throw':
-kangax-next/throw-expr.param-init.js: kangax-next/throw-expr.param-init.js:9:22 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/class-decorators.js: class-decorators.js:10:5 SyntaxError: illegal character U+0040:
+kangax-next/function.sent.js: function.sent.js:11:22 SyntaxError: missing ( before formal parameters:
+kangax-next/throw-expr.arrow.js: throw-expr.arrow.js:9:18 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.conditional.js: throw-expr.conditional.js:9:15 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.logical.js: throw-expr.logical.js:11:15 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.param-init.js: throw-expr.param-init.js:9:22 SyntaxError: expected expression, got keyword 'throw':
 kangax-next/using.for-of.js: OK
 kangax-next/using.js: OK

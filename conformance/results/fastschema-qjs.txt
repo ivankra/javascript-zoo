@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "2cebe2c3a327f8d151645cb54583a46a1ca411569e839b47551f00bcdc08c27c", "binary_size": 6061344, "engine": "fastschema-qjs", "repository": "https://github.com/fastschema/qjs.git", "revision": "461716f4f380f81ffd09378751f1812919cddbca", "revision_date": "2025-10-28", "version": "0.0.6"}
+Metadata: {"arch": "arm64", "binary_sha256": "911b0bd16f0a73fd11757de2717b4d641782313716dc973dd227618c63730ca2", "binary_size": 6061344, "engine": "fastschema-qjs", "repository": "https://github.com/fastschema/qjs.git", "revision": "461716f4f380f81ffd09378751f1812919cddbca", "revision_date": "2025-10-28", "version": "0.0.6"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x40008e9840?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of 
-kangax-es6/tail-calls.mutual.js: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4000013c60?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: 
+kangax-es6/tail-calls.direct.js: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4001e7daa0?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of 
+kangax-es6/tail-calls.mutual.js: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4000b1fa20?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: 
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK

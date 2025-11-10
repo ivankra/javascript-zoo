@@ -20,13 +20,12 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es1/Array.js">Array.js</a>: Array() + array index length update failed; sparse array length failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: array index length update failed
 <a href="../conformance/es1/Array.length.js">Array.length.js</a>: length auto-update failed; length &gt; max index failed
-<a href="../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: TypeError: 'join' proto func tried to be called on a type without an impl
-<a href="../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: TypeError: 'reverse' proto func tried to be called on a type without an impl
+<a href="../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: failed
 <a href="../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse even length failed; reverse single element failed
-<a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: TypeError: 'sort' proto func tried to be called on a type without an impl
+<a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
 <a href="../conformance/es1/Math.cos.js">Math.cos.js</a>: failed
-<a href="../conformance/es1/String.generics.js">String.generics.js</a>: TypeError: 'charAt' proto func tried to be called on a type without an impl
+<a href="../conformance/es1/String.generics.js">String.generics.js</a>: indexOf failed
 <a href="../conformance/es1/String.prototype.split.js">String.prototype.split.js</a>: split('') failed
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
@@ -38,6 +37,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: '' failed; '0xff' failed; '-10' failed
 <a href="../conformance/es1/conversions.ToUint32.js">conversions.ToUint32.js</a>: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^31 failed; -1 failed; -2^31 failed
 <a href="../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 0 != ''; 123.0 != '0123'; 0 == null; 0 == undefined; false != ''; 123 &gt; '123'; 123 - '123' != 0; '5' - 1 != 4; 123 - '' != 123; '5' - true != 4; '5' * '6' != 30; 123 * '' != 0; true * '5' != 5; '6' / '5' != 1.2; '5' % '6' != 5
+<a href="../conformance/es1/eval.js">eval.js</a>: SyntaxError: Dynamic code evaluation is not supported
 ...
 </pre></li>
 <li>ES3: 61%<pre>

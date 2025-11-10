@@ -279,7 +279,7 @@ es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: LOG: es3/global.SyntaxError.js: name failed LOG: es3/global.SyntaxError.js: failed
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: LOG: es3/global.TypeError.js: name failed LOG: es3/global.TypeError.js: failed
-es3/global.TypeError.thrown.js: exception TypeError:Value is not an object 0: "es3/global.TypeError.thrown.js" line: 11 exception TypeError:Value is not an object 0: "es3/global.TypeError.thrown.js" line: 27 LOG: es3/global.TypeError.thrown.js: no exception for in number LOG: es3/global.TypeError.thrown.js: no exception for in nul
+es3/global.TypeError.thrown.js: exception TypeError:Value is not an object 0: "global.TypeError.thrown.js" line: 11 exception TypeError:Value is not an object 0: "global.TypeError.thrown.js" line: 27 LOG: es3/global.TypeError.thrown.js: no exception for in number LOG: es3/global.TypeError.thrown.js: no exception for in null except
 es3/global.URIError.js: LOG: es3/global.URIError.js: name failed LOG: es3/global.URIError.js: failed
 es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
@@ -374,7 +374,7 @@ es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
-es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getOwnPropertyNames.js: LOG: es5/Object.getOwnPropertyNames.js: basic property names failed LOG: es5/Object.getOwnPropertyNames.js: failed
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
@@ -480,8 +480,8 @@ kangax-es5/strict.assignment-eval-arguments-error.js: OK
 kangax-es5/strict.assignment-non-writable-error.js: OK
 kangax-es5/strict.assignment-unresolvable-error.js: OK
 kangax-es5/strict.delete-bindings-error.js: OK
-kangax-es5/strict.delete-non-configurable-error.js: exception TypeError:Property is not configurable 0: "kangax-es5/strict.delete-non-configurable-error.js" testCode line: 10 1: "kangax-es5/strict.delete-non-configurable-error.js" line: 14 LOG: kangax-es5/strict.delete-non-configurable-error.js: failed
-kangax-es5/strict.eval-arguments-bindings-error.js: Error: 1.5-8: "eval" cannot be a variant name Error: 1.8: parse error, unexpected token, expect '=' exception SyntaxError:Syntax error 0: "kangax-es5/strict.eval-arguments-bindings-error.js" testCode line: 10 1: "kangax-es5/strict.eval-arguments-bindings-error.js" line: 20 Error: 1.5-13: "arguments"
+kangax-es5/strict.delete-non-configurable-error.js: exception TypeError:Property is not configurable 0: "strict.delete-non-configurable-error.js" testCode line: 10 1: "strict.delete-non-configurable-error.js" line: 14 LOG: kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: Error: 1.5-8: "eval" cannot be a variant name Error: 1.8: parse error, unexpected token, expect '=' exception SyntaxError:Syntax error 0: "strict.eval-arguments-bindings-error.js" testCode line: 10 1: "strict.eval-arguments-bindings-error.js" line: 20 Error: 1.5-13: "arguments" cannot be a variant n
 kangax-es5/strict.eval-no-bindings.js: OK
 kangax-es5/strict.function-caller-arguments-error.js: OK
 kangax-es5/strict.function-expr-matching-name-arg.js: OK
@@ -975,7 +975,7 @@ kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Error: 13.3-7: parse err
 kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: exception ReferenceError:Binding has not been defined LOG: kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError:Binding has not been defined
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: exception ReferenceError:Binding has not been defined LOG: kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError:Binding has not been defined
 kangax-es6/misc.Proxy.get.Date.toJSON.js: exception ReferenceError:Binding has not been defined LOG: kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError:Binding has not been defined
-kangax-es6/misc.Proxy.get.Error.toString.js: exception ReferenceError:Binding has not been defined 0: "kangax-es6/misc.Proxy.get.Error.toString.js" testCode line: 11 1: "kangax-es6/misc.Proxy.get.Error.toString.js" line: 18 LOG: kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError:Binding has not been defined
+kangax-es6/misc.Proxy.get.Error.toString.js: exception ReferenceError:Binding has not been defined 0: "misc.Proxy.get.Error.toString.js" testCode line: 11 1: "misc.Proxy.get.Error.toString.js" line: 18 LOG: kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError:Binding has not been defined
 kangax-es6/misc.Proxy.get.Function.bind.js: exception ReferenceError:Binding has not been defined LOG: kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError:Binding has not been defined
 kangax-es6/misc.Proxy.get.HasBinding.js: exception ReferenceError:Binding has not been defined LOG: kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError:Binding has not been defined
 kangax-es6/misc.Proxy.get.IteratorComplete.js: Error: 22.13-14: parse error, unexpected "IDENTIFIER", expect ',' Error: 22.24: parse error, unexpected ')', expect ',' exception SyntaxError:Syntax error
@@ -1348,8 +1348,8 @@ kangax-es2021/logical-assignment.or.js: Error: 10.7: parse error, unexpected "ID
 kangax-es2021/logical-assignment.or.setter-not-invoked.js: Error: 9.7: parse error, unexpected "IDENTIFIER", expect ',' Error: 9.9: parse error, unexpected '=', expect "if" Error: 11.11: parse error, unexpected '=', expect "void" exception SyntaxError:Syntax error
 kangax-es2021/logical-assignment.or.short-circuit.js: Error: 9.7: parse error, unexpected "IDENTIFIER", expect ',' Error: 9.9: parse error, unexpected '=', expect "if" Error: 10.7: parse error, unexpected "IDENTIFIER", expect ',' Error: 10.9: parse error, unexpected '=', expect "if" Error: 11.7: parse error, unexpected '=', expect "void" exception Synt
 kangax-es2021/numeric-separators.js: Error: 9.11-18: parse error, unexpected "IDENTIFIER", expect ',' Error: 9.23-26: parse error, unexpected "IDENTIFIER", expect ',' Error: 9.28-30: parse error, unexpected "===", expect "if" Error: 10.6-25: parse error, unexpected "IDENTIFIER", expect ',' Error: 10.27-29: parse error, unexpected "==="
-kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: exception ReferenceError:Binding has not been defined 0: "kangax-es2022/Error.cause.AggregateError-prototype-lacks.js" testCode line: 9 1: "kangax-es2022/Error.cause.AggregateError-prototype-lacks.js" line: 13 LOG: kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError:Binding h
-kangax-es2022/Error.cause.AggregateError.js: exception ReferenceError:Binding has not been defined 0: "kangax-es2022/Error.cause.AggregateError.js" testCode line: 9 1: "kangax-es2022/Error.cause.AggregateError.js" line: 14 LOG: kangax-es2022/Error.cause.AggregateError.js: ReferenceError:Binding has not been defined
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: exception ReferenceError:Binding has not been defined 0: "Error.cause.AggregateError-prototype-lacks.js" testCode line: 9 1: "Error.cause.AggregateError-prototype-lacks.js" line: 13 LOG: kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError:Binding has not been defined
+kangax-es2022/Error.cause.AggregateError.js: exception ReferenceError:Binding has not been defined 0: "Error.cause.AggregateError.js" testCode line: 9 1: "Error.cause.AggregateError.js" line: 14 LOG: kangax-es2022/Error.cause.AggregateError.js: ReferenceError:Binding has not been defined
 kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
 kangax-es2022/Error.cause.Error.js: LOG: kangax-es2022/Error.cause.Error.js: failed
 kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
@@ -1448,19 +1448,19 @@ kangax-intl/Intl.Collator.js: exception ReferenceError:Binding has not been defi
 kangax-intl/Intl.Collator.new-instances.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.Collator.new-instances.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.Collator.prototype.compare.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.Collator.prototype.resolvedOptions.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError:Binding has not been defined
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "kangax-intl/Intl.Collator.rejects-invalid-tags.js" testCode line: 10 1: "kangax-intl/Intl.Collator.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError:Binding has not been defined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "Intl.Collator.rejects-invalid-tags.js" testCode line: 10 1: "Intl.Collator.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.Collator.valid-tags.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.Collator.valid-tags.js: failed
 kangax-intl/Intl.Collator.without-new.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.Collator.without-new.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.DateTimeFormat.iana-timezones.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
 kangax-intl/Intl.DateTimeFormat.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.DateTimeFormat.new-instances.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError:Binding has not been defined
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js" testCode line: 10 1: "kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError:Binding has not been
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "Intl.DateTimeFormat.rejects-invalid-tags.js" testCode line: 10 1: "Intl.DateTimeFormat.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
 kangax-intl/Intl.DateTimeFormat.without-new.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.NumberFormat.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.NumberFormat.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.NumberFormat.new-instances.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError:Binding has not been defined
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js" testCode line: 10 1: "kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError:Binding has not been defin
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: exception ReferenceError:Binding has not been defined 0: "Intl.NumberFormat.rejects-invalid-tags.js" testCode line: 10 1: "Intl.NumberFormat.rejects-invalid-tags.js" line: 31 LOG: kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.NumberFormat.valid-tags.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.NumberFormat.valid-tags.js: failed
 kangax-intl/Intl.NumberFormat.without-new.js: exception ReferenceError:Binding has not been defined LOG: kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError:Binding has not been defined
 kangax-intl/Intl.js: LOG: kangax-intl/Intl.js: failed

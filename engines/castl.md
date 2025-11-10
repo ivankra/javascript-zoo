@@ -72,7 +72,7 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <a href="../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length &gt;= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
 <a href="../conformance/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
 <a href="../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
-<a href="../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: luajit: es3/.global.TypeError.thrown.js.lua:123: syntax error near ';'
+<a href="../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: luajit: /zoo/conformance/es3/.global.TypeError.thrown.js.lua:123: syntax error near ';'
 <a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; no exception for encodeURI lone low surrogate; no exception for enco
 ...
 </pre></li>

@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: failed
+es1/Date.js: crashed (signal 11)
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK

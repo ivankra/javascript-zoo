@@ -588,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: InternalError: stack overflow
-kangax-es6/Promise.race.js: InternalError: stack overflow
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: OK
 kangax-es6/Proxy.constructor-requires-new.js: OK
@@ -1252,7 +1252,7 @@ kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: InternalError: stack overflow
+kangax-es2017/async.await-rejection.js: OK
 kangax-es2017/async.await.js: InternalError: stack overflow
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK

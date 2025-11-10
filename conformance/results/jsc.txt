@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function. (I
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: Exception: SyntaxError: Unexpected identifier '_1' at kangax-next/SuppressedError.js:13
+kangax-next/SuppressedError.js: Exception: SyntaxError: Unexpected identifier '_1' at SuppressedError.js:13
 kangax-next/Uint8Array.fromBase64.js: OK
 kangax-next/Uint8Array.fromHex.js: OK
 kangax-next/Uint8Array.setFromBase64.js: OK

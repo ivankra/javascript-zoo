@@ -17,7 +17,7 @@ JavaScript engine written in Zig.
 <li>Based on this repository's basic test suite. <a href="../conformance/results/kiesel.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
-<a href="../conformance/es1/comments.js">comments.js</a>: fail SyntaxError: Unexpected token '*' (es1/comments.js:10:5)
+<a href="../conformance/es1/comments.js">comments.js</a>: fail SyntaxError: Unexpected token '*' (comments.js:10:5)
 </pre></li>
 <li>ES3: 97%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
@@ -25,8 +25,7 @@ JavaScript engine written in Zig.
 <a href="../conformance/es3/labelled.break.js">labelled.break.js</a>: labelled break to outer loop failed
 <a href="../conformance/es3/labelled.continue.js">labelled.continue.js</a>: labelled continue to outer loop failed
 </pre></li>
-<li>ES5: 89%<pre>
-<a href="../conformance/es5/JSON.parse.js">JSON.parse.js</a>: threw exception on '{"a":1,"a":2}'
+<li>ES5: 91%<pre>
 <a href="../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
 <a href="../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
 <a href="../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: failed
@@ -46,14 +45,14 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es6/Function.name.variable.js">Function.name.variable.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: 'g' is not defined
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: ReferenceError: 'foo' is not defined
-<a href="../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token 'function' (kangax-es6/annex-b.html-comments.js:1:1)
+<a href="../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token 'function' (annex-b.html-comments.js:1:1)
 <a href="../conformance/kangax-es6/arrow.precedence.js">arrow.precedence.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-assign.astral-string.js">destructuring-assign.astral-string.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-assign.generator.js">destructuring-assign.generator.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-assign.iterable-instance.js">destructuring-assign.iterable-instance.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-assign.iterable.js">destructuring-assign.iterable.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-assign.iterator-closing.js">destructuring-assign.iterator-closing.js</a>: failed
-<a href="../conformance/kangax-es6/destructuring-assign.nested-rest.js">destructuring-assign.nested-rest.js</a>: SyntaxError: Invalid left-hand side in assignment expression (kangax-es6/destructuring-assign.nested-rest.js:11:27)
+<a href="../conformance/kangax-es6/destructuring-assign.nested-rest.js">destructuring-assign.nested-rest.js</a>: SyntaxError: Invalid left-hand side in assignment expression (destructuring-assign.nested-rest.js:11:27)
 <a href="../conformance/kangax-es6/destructuring-decl.astral-string.js">destructuring-decl.astral-string.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-decl.generator.js">destructuring-decl.generator.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-decl.iterable-instance.js">destructuring-decl.iterable-instance.js</a>: failed
@@ -67,16 +66,16 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: undefined
 </pre></li>
 <li>ES2017: 86%<pre>
-<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token 'function' (kangax-es2017/annex-b.for-in-assignment-non-strict.js:1:1)
+<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token 'function' (annex-b.for-in-assignment-non-strict.js:1:1)
 <a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: failed
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: failed
 <a href="../conformance/kangax-es2017/async.must-await-value.js">async.must-await-value.js</a>: A promise was rejected without any handlers: Promise(state: &lt;rejected&gt;, result: ReferenceError: 'await' is not defined)
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 83%<pre>
-<a href="../conformance/kangax-es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Unexpected token 'function' (kangax-es2018/misc.template-literal-revision.js:1:1)
+<a href="../conformance/kangax-es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
 <a href="../conformance/kangax-es2018/object-rest.js">object-rest.js</a>: failed
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp pattern: unknown unicode script (kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:10)
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp pattern: unknown unicode script (regex.unicode-property-escapes.unicode-17.0.js:10:10)
 </pre></li>
 <li>ES2019: 83%<pre>
 <a href="../conformance/kangax-es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Invalid character ''' (eval:1:1)
@@ -94,16 +93,16 @@ JavaScript engine written in Zig.
 <li>ES2023: 100%</li>
 <li>ES2024: 80%<pre>
 <a href="../conformance/kangax-es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: failed
-<a href="../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: SyntaxError: Invalid RegExp pattern: invalid class range (kangax-es2024/regex.flags.v.set-notations.js:10:6)
+<a href="../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: SyntaxError: Invalid RegExp pattern: invalid class range (regex.flags.v.set-notations.js:10:6)
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 74%<pre>
-<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid RegExp pattern: duplicate group name (kangax-es2025/regex.duplicate-named-groups.js:9:10)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.i.js:9:17)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.m.js:9:17)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.s.js:9:17)
+<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.i.js:9:17)
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.m.js:9:17)
+<a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.s.js:9:17)
 </pre></li>
 <li>Next: 5%<br>
 <li>Intl: 82%<pre>

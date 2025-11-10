@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: 15.9.3.1 new Date(year, month, date) failed
+es1/Date.js: new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: failed
 es1/Date.prototype.getDay.js: failed

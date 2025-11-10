@@ -14,9 +14,9 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 49%</summary><ul>
+<details><summary>ES1-ES5: 56%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/espruino.txt">Full log</a>.</li>
-<li>ES1: 60%<pre>
+<li>ES1: 74%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed ; failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: Uncaught TypeError: Assignment to a constant  Uncaught undefined
 <a href="../conformance/es1/Array.length.js">Array.length.js</a>: Uncaught TypeError: Assignment to a constant  Uncaught undefined
@@ -26,10 +26,8 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 <a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: Uncaught Error: Function "sort" not found!  Uncaught undefined
 <a href="../conformance/es1/Boolean.js">Boolean.js</a>: new Boolean(true) failed ; new Boolean() failed ; failed
 <a href="../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: Boolean.prototype.constructor failed ; boolean instance constructor failed ; failed
-<a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
-<a href="../conformance/es1/Date.js">Date.js</a>: 15.9.2 Date() not a string ; 15.9.3.2 new Date(0) failed ; failed
+<a href="../conformance/es1/Date.js">Date.js</a>: typeof Date() != 'string' ; failed
 <a href="../conformance/es1/Date.prototype.constructor.js">Date.prototype.constructor.js</a>: failed
-<a href="../conformance/es1/Date.prototype.getTime.js">Date.prototype.getTime.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 <a href="../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 <a href="../conformance/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
@@ -38,8 +36,10 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 <a href="../conformance/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 <a href="../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 <a href="../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+<a href="../conformance/es1/Date.prototype.setUTCDate.js">Date.prototype.setUTCDate.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
+<a href="../conformance/es1/Date.prototype.setUTCFullYear.js">Date.prototype.setUTCFullYear.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 ...
 </pre></li>
-<li>ES3: 43%<br>
-<li>ES5: 28%<br>
+<li>ES3: 45%<br>
+<li>ES5: 30%<br>
 </ul></details>

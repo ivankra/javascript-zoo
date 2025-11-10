@@ -29,7 +29,7 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <details><summary>ES1-ES5: 74%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/dmdscript.txt">Full log</a>.</li>
 <li>ES1: 93%<pre>
-<a href="../conformance/es1/Date.js">Date.js</a>: 15.9.2 Date() not a string
+<a href="../conformance/es1/Date.js">Date.js</a>: typeof Date() != 'string'
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
 <a href="../conformance/es1/Date.prototype.toString.js">Date.prototype.toString.js</a>: failed
 <a href="../conformance/es1/Date.prototype.toUTCString.js">Date.prototype.toUTCString.js</a>: failed
@@ -44,7 +44,7 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <a href="../conformance/es1/types.js">types.js</a>: typeof '' != 'string'
 <a href="../conformance/es1/var.typeof.js">var.typeof.js</a>: string var typeof failed
 </pre></li>
-<li>ES3: 80%<pre>
+<li>ES3: 80%, <b>1 crash</b><pre>
 <a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; null/missing elements failed
 <a href="../conformance/es3/Date.prototype.toDateString.js">Date.prototype.toDateString.js</a>: failed
 <a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
@@ -57,7 +57,7 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: failed
 <a href="../conformance/es3/RegExp.prototype.toString.js">RegExp.prototype.toString.js</a>: type failed
-<a href="../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: spec example failed
+<a href="../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: crashed (signal 11); spec example failed
 <a href="../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; combined replacements failed
 <a href="../conformance/es3/String.prototype.replace.regex.js">String.prototype.replace.regex.js</a>: global regex replace failed; replace all occurrences failed
 <a href="../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
@@ -72,7 +72,7 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 </ul></details>
 
 <details><summary>compat-table: ES6 1%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 1%<br>
+<li>ES6: 1%, <b>3 crashes</b><br>
 <li>ES2016: 0%<br>
 <li>ES2017: 0%<br>
 <li>ES2018: 0%<br>
@@ -86,3 +86,5 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>
+
+💥 **4 crashes during testing**

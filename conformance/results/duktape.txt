@@ -494,12 +494,12 @@ kangax-es5/strict.this-undefined.js: OK
 kangax-es5/strict.with-error.js: OK
 kangax-es6/Array.Symbol.species.js: TypeError: invalid rvalue
 kangax-es6/Array.from.array-like.js: TypeError: undefined not callable (property 'from' of [object Function])
-kangax-es6/Array.from.generator.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/Array.from.generator.js
+kangax-es6/Array.from.generator.js: SyntaxError: parse error (line 9) error in executing file Array.from.generator.js
 kangax-es6/Array.from.iterable-instance.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/Array.from.iterable.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/Array.from.iterator-closing.js: failed
 kangax-es6/Array.from.map.array-like.js: TypeError: undefined not callable (property 'from' of [object Function])
-kangax-es6/Array.from.map.generator.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/Array.from.map.generator.js
+kangax-es6/Array.from.map.generator.js: SyntaxError: parse error (line 9) error in executing file Array.from.map.generator.js
 kangax-es6/Array.from.map.iterable-instance.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/Array.from.map.iterable.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/Array.iterator-prototype-chain.js: TypeError: undefined not callable (property [Symbol wellknown '?Symbol.iterator?'] of [object Array])
@@ -517,12 +517,12 @@ kangax-es6/Array.prototype.values.js: failed
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
 kangax-es6/Function.name.accessor.js: failed
 kangax-es6/Function.name.bound.js: OK
-kangax-es6/Function.name.class-expression.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-expression.js
-kangax-es6/Function.name.class-object-method.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-object-method.js
-kangax-es6/Function.name.class-prototype.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-prototype.js
-kangax-es6/Function.name.class-statement.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-statement.js
-kangax-es6/Function.name.class-static.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-static.js
-kangax-es6/Function.name.class-variable.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/Function.name.class-variable.js
+kangax-es6/Function.name.class-expression.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-expression.js
+kangax-es6/Function.name.class-object-method.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-object-method.js
+kangax-es6/Function.name.class-prototype.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-prototype.js
+kangax-es6/Function.name.class-statement.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-statement.js
+kangax-es6/Function.name.class-static.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-static.js
+kangax-es6/Function.name.class-variable.js: SyntaxError: parse error (line 10) error in executing file Function.name.class-variable.js
 kangax-es6/Function.name.configurable.js: OK
 kangax-es6/Function.name.expression.js: OK
 kangax-es6/Function.name.new-Function.js: OK
@@ -724,14 +724,14 @@ kangax-es6/annex-b.function.hoisted-block-level.js: failed
 kangax-es6/annex-b.function.if-statement.js: OK
 kangax-es6/annex-b.function.labeled.js: OK
 kangax-es6/annex-b.html-comments.js: OK
-kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: invalid backreference(s) (line 9) error in executing file kangax-es6/annex-b.regex.backreferences-octal.js
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: invalid backreference(s) (line 9) error in executing file annex-b.regex.backreferences-octal.js
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: invalid regexp escape (line 9) at [anon] (kangax-es6/annex-b.regex.invalid-control-escapes.js:9) internal error in executing file kangax-es6/annex-b.regex.invalid-control-escapes.js
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: invalid escape (line 9) at [anon] (kangax-es6/annex-b.regex.invalid-hex-escapes.js:9) internal error in executing file kangax-es6/annex-b.regex.invalid-hex-escapes.js
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: invalid escape (line 9) at [anon] (kangax-es6/annex-b.regex.invalid-unicode-escapes.js:9) internal error in executing file kangax-es6/annex-b.regex.invalid-unicode-escapes.js
-kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: invalid regexp escape (line 9) error in executing file kangax-es6/annex-b.regex.octal-escapes.js
+kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: invalid regexp escape (line 9) at [anon] (annex-b.regex.invalid-control-escapes.js:9) internal error in executing file annex-b.regex.invalid-control-escapes.js
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: invalid escape (line 9) at [anon] (annex-b.regex.invalid-hex-escapes.js:9) internal error in executing file annex-b.regex.invalid-hex-escapes.js
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: invalid escape (line 9) at [anon] (annex-b.regex.invalid-unicode-escapes.js:9) internal error in executing file annex-b.regex.invalid-unicode-escapes.js
+kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: invalid regexp escape (line 9) error in executing file annex-b.regex.octal-escapes.js
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
@@ -743,198 +743,198 @@ kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
 kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
 kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
 kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: failed
-kangax-es6/arrow.0-params.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/arrow.0-params.js
-kangax-es6/arrow.1-param.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.1-param.js
-kangax-es6/arrow.5-param.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.5-param.js
-kangax-es6/arrow.bind.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.bind.js
-kangax-es6/arrow.lexical-arguments.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.lexical-arguments.js
-kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/arrow.lexical-super.constructor.js
-kangax-es6/arrow.lexical-super.methods.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.lexical-super.methods.js
-kangax-es6/arrow.lexical-this.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/arrow.lexical-this.js
-kangax-es6/arrow.new-target.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/arrow.new-target.js
-kangax-es6/arrow.no-line-break.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/arrow.no-line-break.js
-kangax-es6/arrow.no-prototype.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/arrow.no-prototype.js
-kangax-es6/arrow.precedence.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/arrow.precedence.js
-kangax-es6/arrow.this-call-apply.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/arrow.this-call-apply.js
-kangax-es6/class.accessor-properties.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.accessor-properties.js
-kangax-es6/class.anonymous.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.anonymous.js
-kangax-es6/class.block-scoped.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.block-scoped.js
-kangax-es6/class.computed-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.computed-accessor-properties.js
-kangax-es6/class.computed-names-tdz.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.computed-names-tdz.js
-kangax-es6/class.computed-prototype-methods.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.computed-prototype-methods.js
-kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.computed-static-accessor-properties.js
-kangax-es6/class.computed-static-methods.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.computed-static-methods.js
-kangax-es6/class.constructor-requires-new.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.constructor-requires-new.js
-kangax-es6/class.constructor.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.constructor.js
-kangax-es6/class.expression.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.expression.js
-kangax-es6/class.extends-expressions.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.extends-expressions.js
-kangax-es6/class.extends-null.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.extends-null.js
-kangax-es6/class.extends.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.extends.js
-kangax-es6/class.implicit-strict.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.implicit-strict.js
-kangax-es6/class.lexical-name.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.lexical-name.js
-kangax-es6/class.methods-not-enumerable.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.methods-not-enumerable.js
-kangax-es6/class.new-target.js: SyntaxError: parse error (line 15) error in executing file kangax-es6/class.new-target.js
-kangax-es6/class.optional-semicolons.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.optional-semicolons.js
-kangax-es6/class.prototype-methods.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.prototype-methods.js
-kangax-es6/class.statement.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.statement.js
-kangax-es6/class.static-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/class.static-accessor-properties.js
-kangax-es6/class.static-methods.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.static-methods.js
-kangax-es6/class.string-keyed-methods.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/class.string-keyed-methods.js
+kangax-es6/arrow.0-params.js: SyntaxError: empty expression not allowed (line 10) error in executing file arrow.0-params.js
+kangax-es6/arrow.1-param.js: SyntaxError: parse error (line 10) error in executing file arrow.1-param.js
+kangax-es6/arrow.5-param.js: SyntaxError: parse error (line 10) error in executing file arrow.5-param.js
+kangax-es6/arrow.bind.js: SyntaxError: parse error (line 10) error in executing file arrow.bind.js
+kangax-es6/arrow.lexical-arguments.js: SyntaxError: parse error (line 10) error in executing file arrow.lexical-arguments.js
+kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: parse error (line 12) error in executing file arrow.lexical-super.constructor.js
+kangax-es6/arrow.lexical-super.methods.js: SyntaxError: parse error (line 10) error in executing file arrow.lexical-super.methods.js
+kangax-es6/arrow.lexical-this.js: SyntaxError: parse error (line 10) error in executing file arrow.lexical-this.js
+kangax-es6/arrow.new-target.js: SyntaxError: parse error (line 11) error in executing file arrow.new-target.js
+kangax-es6/arrow.no-line-break.js: SyntaxError: empty expression not allowed (line 10) error in executing file arrow.no-line-break.js
+kangax-es6/arrow.no-prototype.js: SyntaxError: empty expression not allowed (line 10) error in executing file arrow.no-prototype.js
+kangax-es6/arrow.precedence.js: SyntaxError: empty expression not allowed (line 10) error in executing file arrow.precedence.js
+kangax-es6/arrow.this-call-apply.js: SyntaxError: empty expression not allowed (line 10) error in executing file arrow.this-call-apply.js
+kangax-es6/class.accessor-properties.js: SyntaxError: parse error (line 11) error in executing file class.accessor-properties.js
+kangax-es6/class.anonymous.js: SyntaxError: parse error (line 10) error in executing file class.anonymous.js
+kangax-es6/class.block-scoped.js: SyntaxError: parse error (line 10) error in executing file class.block-scoped.js
+kangax-es6/class.computed-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file class.computed-accessor-properties.js
+kangax-es6/class.computed-names-tdz.js: SyntaxError: parse error (line 11) error in executing file class.computed-names-tdz.js
+kangax-es6/class.computed-prototype-methods.js: SyntaxError: parse error (line 11) error in executing file class.computed-prototype-methods.js
+kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file class.computed-static-accessor-properties.js
+kangax-es6/class.computed-static-methods.js: SyntaxError: parse error (line 11) error in executing file class.computed-static-methods.js
+kangax-es6/class.constructor-requires-new.js: SyntaxError: parse error (line 10) error in executing file class.constructor-requires-new.js
+kangax-es6/class.constructor.js: SyntaxError: parse error (line 10) error in executing file class.constructor.js
+kangax-es6/class.expression.js: SyntaxError: parse error (line 10) error in executing file class.expression.js
+kangax-es6/class.extends-expressions.js: SyntaxError: parse error (line 11) error in executing file class.extends-expressions.js
+kangax-es6/class.extends-null.js: SyntaxError: parse error (line 10) error in executing file class.extends-null.js
+kangax-es6/class.extends.js: SyntaxError: parse error (line 10) error in executing file class.extends.js
+kangax-es6/class.implicit-strict.js: SyntaxError: parse error (line 10) error in executing file class.implicit-strict.js
+kangax-es6/class.lexical-name.js: SyntaxError: parse error (line 10) error in executing file class.lexical-name.js
+kangax-es6/class.methods-not-enumerable.js: SyntaxError: parse error (line 10) error in executing file class.methods-not-enumerable.js
+kangax-es6/class.new-target.js: SyntaxError: parse error (line 15) error in executing file class.new-target.js
+kangax-es6/class.optional-semicolons.js: SyntaxError: parse error (line 10) error in executing file class.optional-semicolons.js
+kangax-es6/class.prototype-methods.js: SyntaxError: parse error (line 10) error in executing file class.prototype-methods.js
+kangax-es6/class.statement.js: SyntaxError: parse error (line 10) error in executing file class.statement.js
+kangax-es6/class.static-accessor-properties.js: SyntaxError: parse error (line 11) error in executing file class.static-accessor-properties.js
+kangax-es6/class.static-methods.js: SyntaxError: parse error (line 10) error in executing file class.static-methods.js
+kangax-es6/class.string-keyed-methods.js: SyntaxError: parse error (line 10) error in executing file class.string-keyed-methods.js
 kangax-es6/const.basic.js: OK
 kangax-es6/const.block-scoped.js: failed
-kangax-es6/const.for-in.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/const.for-in.js
-kangax-es6/const.for-loop.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/const.for-loop.js
-kangax-es6/const.for-of.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/const.for-of.js
+kangax-es6/const.for-in.js: SyntaxError: parse error (line 11) error in executing file const.for-in.js
+kangax-es6/const.for-loop.js: SyntaxError: parse error (line 11) error in executing file const.for-loop.js
+kangax-es6/const.for-of.js: SyntaxError: parse error (line 11) error in executing file const.for-of.js
 kangax-es6/const.no-redefine.js: failed
 kangax-es6/const.no-statement.js: failed
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
 kangax-es6/const.strict.block-scoped.js: failed
-kangax-es6/const.strict.for-in.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/const.strict.for-in.js
-kangax-es6/const.strict.for-loop.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/const.strict.for-loop.js
-kangax-es6/const.strict.for-of.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/const.strict.for-of.js
+kangax-es6/const.strict.for-in.js: SyntaxError: parse error (line 12) error in executing file const.strict.for-in.js
+kangax-es6/const.strict.for-loop.js: SyntaxError: parse error (line 12) error in executing file const.strict.for-loop.js
+kangax-es6/const.strict.for-of.js: SyntaxError: parse error (line 12) error in executing file const.strict.for-of.js
 kangax-es6/const.strict.no-redefine.js: failed
 kangax-es6/const.strict.no-statement.js: failed
 kangax-es6/const.strict.shadow.js: OK
 kangax-es6/const.strict.tdz.js: failed
 kangax-es6/const.tdz.js: failed
-kangax-es6/default-params.arguments.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.arguments.js
-kangax-es6/default-params.basic.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.basic.js
-kangax-es6/default-params.explicit-undefined.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.explicit-undefined.js
+kangax-es6/default-params.arguments.js: SyntaxError: parse error (line 10) error in executing file default-params.arguments.js
+kangax-es6/default-params.basic.js: SyntaxError: parse error (line 10) error in executing file default-params.basic.js
+kangax-es6/default-params.explicit-undefined.js: SyntaxError: parse error (line 10) error in executing file default-params.explicit-undefined.js
 kangax-es6/default-params.new-function.js: SyntaxError: parse error (line 1)
-kangax-es6/default-params.refer-previous.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.refer-previous.js
-kangax-es6/default-params.separate-scope.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.separate-scope.js
-kangax-es6/default-params.tdz.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/default-params.tdz.js
+kangax-es6/default-params.refer-previous.js: SyntaxError: parse error (line 10) error in executing file default-params.refer-previous.js
+kangax-es6/default-params.separate-scope.js: SyntaxError: parse error (line 10) error in executing file default-params.separate-scope.js
+kangax-es6/default-params.tdz.js: SyntaxError: parse error (line 10) error in executing file default-params.tdz.js
 kangax-es6/destructuring-assign.array.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.astral-string.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.chained-object.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.computed-properties.js: ReferenceError: invalid lvalue
-kangax-es6/destructuring-assign.defaults.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/destructuring-assign.defaults.js
+kangax-es6/destructuring-assign.defaults.js: SyntaxError: parse error (line 11) error in executing file destructuring-assign.defaults.js
 kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: invalid lvalue
-kangax-es6/destructuring-assign.generator.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/destructuring-assign.generator.js
+kangax-es6/destructuring-assign.generator.js: SyntaxError: parse error (line 11) error in executing file destructuring-assign.generator.js
 kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.iterable-instance.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.iterable.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: invalid lvalue
-kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/destructuring-assign.nested-rest.js
+kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: parse error (line 11) error in executing file destructuring-assign.nested-rest.js
 kangax-es6/destructuring-assign.nested.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.object-expression.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.object-primitives.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.object.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.parenthesised-error.js: ReferenceError: invalid lvalue
-kangax-es6/destructuring-assign.rest.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/destructuring-assign.rest.js
+kangax-es6/destructuring-assign.rest.js: SyntaxError: parse error (line 11) error in executing file destructuring-assign.rest.js
 kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.string.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.throws-null-undefined.js: failed
 kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: invalid lvalue
 kangax-es6/destructuring-assign.trailing-comma-object.js: ReferenceError: invalid lvalue
-kangax-es6/destructuring-decl.array.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.array.js
-kangax-es6/destructuring-decl.astral-string.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.astral-string.js
-kangax-es6/destructuring-decl.catch.js: SyntaxError: invalid try (line 12) error in executing file kangax-es6/destructuring-decl.catch.js
-kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: invalid variable declaration (line 11) error in executing file kangax-es6/destructuring-decl.computed-properties.js
-kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.defaults-tdz.js
-kangax-es6/destructuring-decl.defaults.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.defaults.js
-kangax-es6/destructuring-decl.for-in.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.for-in.js
-kangax-es6/destructuring-decl.for-of.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.for-of.js
-kangax-es6/destructuring-decl.generator.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.generator.js
-kangax-es6/destructuring-decl.iterable-instance.js: SyntaxError: invalid variable declaration (line 34) error in executing file kangax-es6/destructuring-decl.iterable-instance.js
-kangax-es6/destructuring-decl.iterable.js: SyntaxError: invalid variable declaration (line 34) error in executing file kangax-es6/destructuring-decl.iterable.js
-kangax-es6/destructuring-decl.iterator-closing.js: SyntaxError: invalid variable declaration (line 38) error in executing file kangax-es6/destructuring-decl.iterator-closing.js
-kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.multiple-var.js
-kangax-es6/destructuring-decl.nested.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.nested.js
-kangax-es6/destructuring-decl.object-primitives.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.object-primitives.js
-kangax-es6/destructuring-decl.object.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.object.js
-kangax-es6/destructuring-decl.rest.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.rest.js
-kangax-es6/destructuring-decl.sparse-array.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.sparse-array.js
-kangax-es6/destructuring-decl.string.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.string.js
-kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: invalid variable declaration (line 11) error in executing file kangax-es6/destructuring-decl.throws-null-undefined.js
-kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.trailing-comma-iterable.js
-kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es6/destructuring-decl.trailing-comma-object.js
-kangax-es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/destructuring-params.aliased-defaults-arrow.js
-kangax-es6/destructuring-params.arguments.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.arguments.js
-kangax-es6/destructuring-params.array.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.array.js
-kangax-es6/destructuring-params.astral-string.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.astral-string.js
-kangax-es6/destructuring-params.computed-properties.js: SyntaxError: expected identifier (line 11) error in executing file kangax-es6/destructuring-params.computed-properties.js
+kangax-es6/destructuring-decl.array.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.array.js
+kangax-es6/destructuring-decl.astral-string.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.astral-string.js
+kangax-es6/destructuring-decl.catch.js: SyntaxError: invalid try (line 12) error in executing file destructuring-decl.catch.js
+kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: invalid variable declaration (line 11) error in executing file destructuring-decl.computed-properties.js
+kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.defaults-tdz.js
+kangax-es6/destructuring-decl.defaults.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.defaults.js
+kangax-es6/destructuring-decl.for-in.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.for-in.js
+kangax-es6/destructuring-decl.for-of.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.for-of.js
+kangax-es6/destructuring-decl.generator.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.generator.js
+kangax-es6/destructuring-decl.iterable-instance.js: SyntaxError: invalid variable declaration (line 34) error in executing file destructuring-decl.iterable-instance.js
+kangax-es6/destructuring-decl.iterable.js: SyntaxError: invalid variable declaration (line 34) error in executing file destructuring-decl.iterable.js
+kangax-es6/destructuring-decl.iterator-closing.js: SyntaxError: invalid variable declaration (line 38) error in executing file destructuring-decl.iterator-closing.js
+kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.multiple-var.js
+kangax-es6/destructuring-decl.nested.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.nested.js
+kangax-es6/destructuring-decl.object-primitives.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.object-primitives.js
+kangax-es6/destructuring-decl.object.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.object.js
+kangax-es6/destructuring-decl.rest.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.rest.js
+kangax-es6/destructuring-decl.sparse-array.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.sparse-array.js
+kangax-es6/destructuring-decl.string.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.string.js
+kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: invalid variable declaration (line 11) error in executing file destructuring-decl.throws-null-undefined.js
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.trailing-comma-iterable.js
+kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: invalid variable declaration (line 10) error in executing file destructuring-decl.trailing-comma-object.js
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: parse error (line 10) error in executing file destructuring-params.aliased-defaults-arrow.js
+kangax-es6/destructuring-params.arguments.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.arguments.js
+kangax-es6/destructuring-params.array.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.array.js
+kangax-es6/destructuring-params.astral-string.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.astral-string.js
+kangax-es6/destructuring-params.computed-properties.js: SyntaxError: expected identifier (line 11) error in executing file destructuring-params.computed-properties.js
 kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: expected identifier (line 1)
-kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.defaults-separate-scope.js
-kangax-es6/destructuring-params.defaults.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.defaults.js
+kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.defaults-separate-scope.js
+kangax-es6/destructuring-params.defaults.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.defaults.js
 kangax-es6/destructuring-params.duplicate-identifier.js: failed
-kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.empty-patterns.js
-kangax-es6/destructuring-params.generator.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.generator.js
-kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: expected identifier (line 34) error in executing file kangax-es6/destructuring-params.iterable-instance.js
-kangax-es6/destructuring-params.iterable.js: SyntaxError: expected identifier (line 34) error in executing file kangax-es6/destructuring-params.iterable.js
-kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: expected identifier (line 38) error in executing file kangax-es6/destructuring-params.iterator-closing.js
-kangax-es6/destructuring-params.length.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.length.js
-kangax-es6/destructuring-params.nested.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.nested.js
+kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.empty-patterns.js
+kangax-es6/destructuring-params.generator.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.generator.js
+kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: expected identifier (line 34) error in executing file destructuring-params.iterable-instance.js
+kangax-es6/destructuring-params.iterable.js: SyntaxError: expected identifier (line 34) error in executing file destructuring-params.iterable.js
+kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: expected identifier (line 38) error in executing file destructuring-params.iterator-closing.js
+kangax-es6/destructuring-params.length.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.length.js
+kangax-es6/destructuring-params.nested.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.nested.js
 kangax-es6/destructuring-params.new-function.js: SyntaxError: expected identifier (line 1)
-kangax-es6/destructuring-params.object-primitives.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.object-primitives.js
-kangax-es6/destructuring-params.object.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.object.js
-kangax-es6/destructuring-params.rest.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.rest.js
-kangax-es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/destructuring-params.shorthand-defaults-arrow.js
-kangax-es6/destructuring-params.sparse-array.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.sparse-array.js
-kangax-es6/destructuring-params.string.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.string.js
-kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: expected identifier (line 11) error in executing file kangax-es6/destructuring-params.throws-null-undefined.js
-kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.trailing-comma-iterable.js
-kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/destructuring-params.trailing-comma-object.js
-kangax-es6/for-of.array.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/for-of.array.js
-kangax-es6/for-of.astral-string.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/for-of.astral-string.js
-kangax-es6/for-of.generator.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/for-of.generator.js
-kangax-es6/for-of.iterable-instance.js: SyntaxError: parse error (line 36) error in executing file kangax-es6/for-of.iterable-instance.js
-kangax-es6/for-of.iterable.js: SyntaxError: parse error (line 36) error in executing file kangax-es6/for-of.iterable.js
-kangax-es6/for-of.iterator-closing-break.js: SyntaxError: parse error (line 37) error in executing file kangax-es6/for-of.iterator-closing-break.js
-kangax-es6/for-of.iterator-closing-throw.js: SyntaxError: parse error (line 38) error in executing file kangax-es6/for-of.iterator-closing-throw.js
-kangax-es6/for-of.sparse-array.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/for-of.sparse-array.js
-kangax-es6/for-of.string.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/for-of.string.js
+kangax-es6/destructuring-params.object-primitives.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.object-primitives.js
+kangax-es6/destructuring-params.object.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.object.js
+kangax-es6/destructuring-params.rest.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.rest.js
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: parse error (line 10) error in executing file destructuring-params.shorthand-defaults-arrow.js
+kangax-es6/destructuring-params.sparse-array.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.sparse-array.js
+kangax-es6/destructuring-params.string.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.string.js
+kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: expected identifier (line 11) error in executing file destructuring-params.throws-null-undefined.js
+kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.trailing-comma-iterable.js
+kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: expected identifier (line 10) error in executing file destructuring-params.trailing-comma-object.js
+kangax-es6/for-of.array.js: SyntaxError: parse error (line 11) error in executing file for-of.array.js
+kangax-es6/for-of.astral-string.js: SyntaxError: parse error (line 11) error in executing file for-of.astral-string.js
+kangax-es6/for-of.generator.js: SyntaxError: parse error (line 11) error in executing file for-of.generator.js
+kangax-es6/for-of.iterable-instance.js: SyntaxError: parse error (line 36) error in executing file for-of.iterable-instance.js
+kangax-es6/for-of.iterable.js: SyntaxError: parse error (line 36) error in executing file for-of.iterable.js
+kangax-es6/for-of.iterator-closing-break.js: SyntaxError: parse error (line 37) error in executing file for-of.iterator-closing-break.js
+kangax-es6/for-of.iterator-closing-throw.js: SyntaxError: parse error (line 38) error in executing file for-of.iterator-closing-throw.js
+kangax-es6/for-of.sparse-array.js: SyntaxError: parse error (line 12) error in executing file for-of.sparse-array.js
+kangax-es6/for-of.string.js: SyntaxError: parse error (line 11) error in executing file for-of.string.js
 kangax-es6/function.block-level-decl.js: failed
-kangax-es6/generators.basic.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.basic.js
-kangax-es6/generators.constructor.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.constructor.js
-kangax-es6/generators.expression.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.expression.js
-kangax-es6/generators.no-new-this.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.no-new-this.js
-kangax-es6/generators.prototype-chain.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.prototype-chain.js
-kangax-es6/generators.prototype.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.prototype.js
-kangax-es6/generators.return.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.return.js
-kangax-es6/generators.sending.js: SyntaxError: function name required (line 11) error in executing file kangax-es6/generators.sending.js
-kangax-es6/generators.shorthand.class.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.shorthand.class.js
-kangax-es6/generators.shorthand.computed.class.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/generators.shorthand.computed.class.js
-kangax-es6/generators.shorthand.computed.js: SyntaxError: invalid object literal (line 12) error in executing file kangax-es6/generators.shorthand.computed.js
-kangax-es6/generators.shorthand.js: SyntaxError: invalid object literal (line 11) error in executing file kangax-es6/generators.shorthand.js
-kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.shorthand.no-constructor.js
-kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: invalid object literal (line 11) error in executing file kangax-es6/generators.shorthand.string-keyed.js
-kangax-es6/generators.this.js: SyntaxError: function name required (line 10) error in executing file kangax-es6/generators.this.js
-kangax-es6/generators.throw.js: SyntaxError: function name required (line 11) error in executing file kangax-es6/generators.throw.js
-kangax-es6/generators.yield-precedence.js: SyntaxError: function name required (line 11) error in executing file kangax-es6/generators.yield-precedence.js
-kangax-es6/generators.yield-star.array.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.yield-star.array.js
-kangax-es6/generators.yield-star.astral-string.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.yield-star.astral-string.js
-kangax-es6/generators.yield-star.generator.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.yield-star.generator.js
-kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: parse error (line 33) error in executing file kangax-es6/generators.yield-star.iterable-instance.js
-kangax-es6/generators.yield-star.iterable.js: SyntaxError: parse error (line 34) error in executing file kangax-es6/generators.yield-star.iterable.js
-kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: parse error (line 42) error in executing file kangax-es6/generators.yield-star.iterator-closing-throw.js
-kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: parse error (line 40) error in executing file kangax-es6/generators.yield-star.iterator-closing.js
-kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: parse error (line 10) at [anon] (kangax-es6/generators.yield-star.non-iterable-error.js:10) internal error in executing file kangax-es6/generators.yield-star.non-iterable-error.js
-kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.yield-star.sparse-array.js
-kangax-es6/generators.yield-star.string.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/generators.yield-star.string.js
-kangax-es6/let.basic.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es6/let.basic.js
-kangax-es6/let.block-scoped.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es6/let.block-scoped.js
+kangax-es6/generators.basic.js: SyntaxError: function name required (line 10) error in executing file generators.basic.js
+kangax-es6/generators.constructor.js: SyntaxError: function name required (line 10) error in executing file generators.constructor.js
+kangax-es6/generators.expression.js: SyntaxError: parse error (line 10) error in executing file generators.expression.js
+kangax-es6/generators.no-new-this.js: SyntaxError: function name required (line 10) error in executing file generators.no-new-this.js
+kangax-es6/generators.prototype-chain.js: SyntaxError: function name required (line 10) error in executing file generators.prototype-chain.js
+kangax-es6/generators.prototype.js: SyntaxError: function name required (line 10) error in executing file generators.prototype.js
+kangax-es6/generators.return.js: SyntaxError: function name required (line 10) error in executing file generators.return.js
+kangax-es6/generators.sending.js: SyntaxError: function name required (line 11) error in executing file generators.sending.js
+kangax-es6/generators.shorthand.class.js: SyntaxError: parse error (line 10) error in executing file generators.shorthand.class.js
+kangax-es6/generators.shorthand.computed.class.js: SyntaxError: parse error (line 11) error in executing file generators.shorthand.computed.class.js
+kangax-es6/generators.shorthand.computed.js: SyntaxError: invalid object literal (line 12) error in executing file generators.shorthand.computed.js
+kangax-es6/generators.shorthand.js: SyntaxError: invalid object literal (line 11) error in executing file generators.shorthand.js
+kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: parse error (line 10) error in executing file generators.shorthand.no-constructor.js
+kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: invalid object literal (line 11) error in executing file generators.shorthand.string-keyed.js
+kangax-es6/generators.this.js: SyntaxError: function name required (line 10) error in executing file generators.this.js
+kangax-es6/generators.throw.js: SyntaxError: function name required (line 11) error in executing file generators.throw.js
+kangax-es6/generators.yield-precedence.js: SyntaxError: function name required (line 11) error in executing file generators.yield-precedence.js
+kangax-es6/generators.yield-star.array.js: SyntaxError: parse error (line 10) error in executing file generators.yield-star.array.js
+kangax-es6/generators.yield-star.astral-string.js: SyntaxError: parse error (line 10) error in executing file generators.yield-star.astral-string.js
+kangax-es6/generators.yield-star.generator.js: SyntaxError: parse error (line 10) error in executing file generators.yield-star.generator.js
+kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: parse error (line 33) error in executing file generators.yield-star.iterable-instance.js
+kangax-es6/generators.yield-star.iterable.js: SyntaxError: parse error (line 34) error in executing file generators.yield-star.iterable.js
+kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: parse error (line 42) error in executing file generators.yield-star.iterator-closing-throw.js
+kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: parse error (line 40) error in executing file generators.yield-star.iterator-closing.js
+kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: parse error (line 10) at [anon] (generators.yield-star.non-iterable-error.js:10) internal error in executing file generators.yield-star.non-iterable-error.js
+kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: parse error (line 10) error in executing file generators.yield-star.sparse-array.js
+kangax-es6/generators.yield-star.string.js: SyntaxError: parse error (line 10) error in executing file generators.yield-star.string.js
+kangax-es6/let.basic.js: SyntaxError: unterminated statement (line 10) error in executing file let.basic.js
+kangax-es6/let.block-scoped.js: SyntaxError: unterminated statement (line 10) error in executing file let.block-scoped.js
 kangax-es6/let.for-in-shadow.js: failed
-kangax-es6/let.for-iteration.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es6/let.for-iteration.js
-kangax-es6/let.for-loop.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es6/let.for-loop.js
-kangax-es6/let.no-statement.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es6/let.no-statement.js
-kangax-es6/let.shadow.js: SyntaxError: unterminated statement (line 11) error in executing file kangax-es6/let.shadow.js
-kangax-es6/let.strict.basic.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/let.strict.basic.js
-kangax-es6/let.strict.block-scoped.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/let.strict.block-scoped.js
+kangax-es6/let.for-iteration.js: SyntaxError: unterminated statement (line 10) error in executing file let.for-iteration.js
+kangax-es6/let.for-loop.js: SyntaxError: unterminated statement (line 10) error in executing file let.for-loop.js
+kangax-es6/let.no-statement.js: SyntaxError: unterminated statement (line 10) error in executing file let.no-statement.js
+kangax-es6/let.shadow.js: SyntaxError: unterminated statement (line 11) error in executing file let.shadow.js
+kangax-es6/let.strict.basic.js: SyntaxError: parse error (line 11) error in executing file let.strict.basic.js
+kangax-es6/let.strict.block-scoped.js: SyntaxError: parse error (line 11) error in executing file let.strict.block-scoped.js
 kangax-es6/let.strict.for-in-shadow.js: failed
-kangax-es6/let.strict.for-iteration.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/let.strict.for-iteration.js
-kangax-es6/let.strict.for-loop.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/let.strict.for-loop.js
-kangax-es6/let.strict.no-statement.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/let.strict.no-statement.js
-kangax-es6/let.strict.shadow.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/let.strict.shadow.js
-kangax-es6/let.strict.tdz.js: SyntaxError: parse error (line 13) error in executing file kangax-es6/let.strict.tdz.js
-kangax-es6/let.tdz.js: SyntaxError: unterminated statement (line 12) error in executing file kangax-es6/let.tdz.js
+kangax-es6/let.strict.for-iteration.js: SyntaxError: parse error (line 11) error in executing file let.strict.for-iteration.js
+kangax-es6/let.strict.for-loop.js: SyntaxError: parse error (line 11) error in executing file let.strict.for-loop.js
+kangax-es6/let.strict.no-statement.js: SyntaxError: parse error (line 11) error in executing file let.strict.no-statement.js
+kangax-es6/let.strict.shadow.js: SyntaxError: parse error (line 12) error in executing file let.strict.shadow.js
+kangax-es6/let.strict.tdz.js: SyntaxError: parse error (line 13) error in executing file let.strict.tdz.js
+kangax-es6/let.tdz.js: SyntaxError: unterminated statement (line 12) error in executing file let.tdz.js
 kangax-es6/literals.binary.Number.js: OK
 kangax-es6/literals.binary.js: OK
-kangax-es6/literals.object.computed-accessors.js: SyntaxError: invalid object literal (line 13) error in executing file kangax-es6/literals.object.computed-accessors.js
+kangax-es6/literals.object.computed-accessors.js: SyntaxError: invalid object literal (line 13) error in executing file literals.object.computed-accessors.js
 kangax-es6/literals.object.computed-properties.js: OK
-kangax-es6/literals.object.computed-shorthand-methods.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/literals.object.computed-shorthand-methods.js
+kangax-es6/literals.object.computed-shorthand-methods.js: SyntaxError: parse error (line 11) error in executing file literals.object.computed-shorthand-methods.js
 kangax-es6/literals.object.shorthand-methods.js: OK
 kangax-es6/literals.object.shorthand-properties.js: OK
 kangax-es6/literals.object.string-keyed-shorthand-methods.js: OK
@@ -971,14 +971,14 @@ kangax-es6/misc.Proxy.get.Array.reverse.js: failed
 kangax-es6/misc.Proxy.get.Array.shift.js: OK
 kangax-es6/misc.Proxy.get.Array.splice.js: failed
 kangax-es6/misc.Proxy.get.Array.toString.js: OK
-kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: parse error (line 13) error in executing file kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: parse error (line 13) error in executing file misc.Proxy.get.ClassDefinitionEvaluation.js
 kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: OK
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 kangax-es6/misc.Proxy.get.Date.toJSON.js: OK
 kangax-es6/misc.Proxy.get.Error.toString.js: OK
 kangax-es6/misc.Proxy.get.Function.bind.js: failed
 kangax-es6/misc.Proxy.get.HasBinding.js: failed
-kangax-es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: parse error (line 22) error in executing file kangax-es6/misc.Proxy.get.IteratorComplete.js
+kangax-es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: parse error (line 22) error in executing file misc.Proxy.get.IteratorComplete.js
 kangax-es6/misc.Proxy.get.JSON.stringify.js: OK
 kangax-es6/misc.Proxy.get.Object.assign.js: OK
 kangax-es6/misc.Proxy.get.Object.defineProperties.js: failed
@@ -1016,11 +1016,11 @@ kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
 kangax-es6/misc.accessors-no-constructor.js: OK
-kangax-es6/misc.bound-function-prototype.arrow.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es6/misc.bound-function-prototype.arrow.js
-kangax-es6/misc.bound-function-prototype.class.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/misc.bound-function-prototype.class.js
+kangax-es6/misc.bound-function-prototype.arrow.js: SyntaxError: empty expression not allowed (line 10) error in executing file misc.bound-function-prototype.arrow.js
+kangax-es6/misc.bound-function-prototype.class.js: SyntaxError: parse error (line 10) error in executing file misc.bound-function-prototype.class.js
 kangax-es6/misc.bound-function-prototype.function.js: OK
-kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/misc.bound-function-prototype.generator.js
-kangax-es6/misc.bound-function-prototype.subclass.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/misc.bound-function-prototype.subclass.js
+kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: parse error (line 10) error in executing file misc.bound-function-prototype.generator.js
+kangax-es6/misc.bound-function-prototype.subclass.js: SyntaxError: parse error (line 10) error in executing file misc.bound-function-prototype.subclass.js
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: OK
 kangax-es6/misc.for-in-no-assignment-strict.js: failed
@@ -1038,81 +1038,81 @@ kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 kangax-es6/misc.prototypes-not-instances.js: failed
 kangax-es6/new-target.assignment-error.js: failed
 kangax-es6/new-target.constructor.js: OK
-kangax-es6/regex.flags.u.case-folding.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es6/regex.flags.u.case-folding.js
-kangax-es6/regex.flags.u.codepoint.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es6/regex.flags.u.codepoint.js
-kangax-es6/regex.flags.u.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es6/regex.flags.u.js
-kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es6/regex.flags.u.non-bmp.js
+kangax-es6/regex.flags.u.case-folding.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.flags.u.case-folding.js
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.flags.u.codepoint.js
+kangax-es6/regex.flags.u.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.flags.u.js
+kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.flags.u.non-bmp.js
 kangax-es6/regex.flags.y.js: SyntaxError: invalid regexp flags
 kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: invalid regexp flags
-kangax-es6/rest-params.arguments.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/rest-params.arguments.js
-kangax-es6/rest-params.basic.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/rest-params.basic.js
-kangax-es6/rest-params.length.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/rest-params.length.js
+kangax-es6/rest-params.arguments.js: SyntaxError: expected identifier (line 10) error in executing file rest-params.arguments.js
+kangax-es6/rest-params.basic.js: SyntaxError: expected identifier (line 10) error in executing file rest-params.basic.js
+kangax-es6/rest-params.length.js: SyntaxError: expected identifier (line 10) error in executing file rest-params.length.js
 kangax-es6/rest-params.new-function.js: SyntaxError: expected identifier (line 1)
-kangax-es6/rest-params.no-setter.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es6/rest-params.no-setter.js
-kangax-es6/spread.array-call.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.array-call.js
-kangax-es6/spread.array-literal.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.array-literal.js
-kangax-es6/spread.astral-call.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.astral-call.js
-kangax-es6/spread.astral-literal.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.astral-literal.js
-kangax-es6/spread.generator-call.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.generator-call.js
-kangax-es6/spread.generator-literal.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.generator-literal.js
-kangax-es6/spread.iterable-call.js: SyntaxError: parse error (line 35) error in executing file kangax-es6/spread.iterable-call.js
-kangax-es6/spread.iterable-instance-call.js: SyntaxError: parse error (line 35) error in executing file kangax-es6/spread.iterable-instance-call.js
-kangax-es6/spread.iterable-instance-literal.js: SyntaxError: parse error (line 35) error in executing file kangax-es6/spread.iterable-instance-literal.js
-kangax-es6/spread.iterable-literal.js: SyntaxError: parse error (line 35) error in executing file kangax-es6/spread.iterable-literal.js
-kangax-es6/spread.non-iterable-error.js: SyntaxError: parse error (line 11) at [anon] (kangax-es6/spread.non-iterable-error.js:11) internal error in executing file kangax-es6/spread.non-iterable-error.js
-kangax-es6/spread.sparse-call.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.sparse-call.js
-kangax-es6/spread.sparse-literal.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.sparse-literal.js
-kangax-es6/spread.string-call.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.string-call.js
-kangax-es6/spread.string-literal.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/spread.string-literal.js
-kangax-es6/subclassing.Array.concat.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.concat.js
-kangax-es6/subclassing.Array.filter.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.filter.js
-kangax-es6/subclassing.Array.from.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.from.js
-kangax-es6/subclassing.Array.isArray.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.isArray.js
-kangax-es6/subclassing.Array.length-access.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.length-access.js
-kangax-es6/subclassing.Array.length-set.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.length-set.js
-kangax-es6/subclassing.Array.map.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.map.js
-kangax-es6/subclassing.Array.of.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.of.js
-kangax-es6/subclassing.Array.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.prototype-chain.js
-kangax-es6/subclassing.Array.slice.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.slice.js
-kangax-es6/subclassing.Array.splice.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Array.splice.js
-kangax-es6/subclassing.Function.call.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.call.js
-kangax-es6/subclassing.Function.new.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.new.js
-kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.prototype-chain.js
-kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.prototype.apply.js
-kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.prototype.bind.js
-kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Function.prototype.call.js
-kangax-es6/subclassing.Promise.all.js: SyntaxError: parse error (line 44) error in executing file kangax-es6/subclassing.Promise.all.js
-kangax-es6/subclassing.Promise.js: SyntaxError: parse error (line 44) error in executing file kangax-es6/subclassing.Promise.js
-kangax-es6/subclassing.Promise.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.Promise.prototype-chain.js
-kangax-es6/subclassing.Promise.race.js: SyntaxError: parse error (line 44) error in executing file kangax-es6/subclassing.Promise.race.js
-kangax-es6/subclassing.RegExp.exec.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.RegExp.exec.js
-kangax-es6/subclassing.RegExp.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/subclassing.RegExp.js
-kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.RegExp.prototype-chain.js
-kangax-es6/subclassing.RegExp.test.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.RegExp.test.js
-kangax-es6/subclassing.misc.Boolean.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.misc.Boolean.js
-kangax-es6/subclassing.misc.Error.js: SyntaxError: parse error (line 9) at [anon] (kangax-es6/subclassing.misc.Error.js:9) internal error in executing file kangax-es6/subclassing.misc.Error.js
-kangax-es6/subclassing.misc.Map.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/subclassing.misc.Map.js
-kangax-es6/subclassing.misc.Number.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.misc.Number.js
-kangax-es6/subclassing.misc.Set.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/subclassing.misc.Set.js
-kangax-es6/subclassing.misc.String.js: SyntaxError: parse error (line 9) error in executing file kangax-es6/subclassing.misc.String.js
-kangax-es6/super.correct-constructor.js: SyntaxError: parse error (line 12) error in executing file kangax-es6/super.correct-constructor.js
-kangax-es6/super.expression.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/super.expression.js
-kangax-es6/super.method-calls.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/super.method-calls.js
-kangax-es6/super.new-target-binding.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/super.new-target-binding.js
-kangax-es6/super.property-access.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/super.property-access.js
-kangax-es6/super.statement.js: SyntaxError: parse error (line 11) error in executing file kangax-es6/super.statement.js
-kangax-es6/super.static-binding.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/super.static-binding.js
-kangax-es6/super.this-binding.js: SyntaxError: parse error (line 10) error in executing file kangax-es6/super.this-binding.js
+kangax-es6/rest-params.no-setter.js: SyntaxError: expected identifier (line 10) error in executing file rest-params.no-setter.js
+kangax-es6/spread.array-call.js: SyntaxError: parse error (line 10) error in executing file spread.array-call.js
+kangax-es6/spread.array-literal.js: SyntaxError: parse error (line 10) error in executing file spread.array-literal.js
+kangax-es6/spread.astral-call.js: SyntaxError: parse error (line 10) error in executing file spread.astral-call.js
+kangax-es6/spread.astral-literal.js: SyntaxError: parse error (line 10) error in executing file spread.astral-literal.js
+kangax-es6/spread.generator-call.js: SyntaxError: parse error (line 10) error in executing file spread.generator-call.js
+kangax-es6/spread.generator-literal.js: SyntaxError: parse error (line 10) error in executing file spread.generator-literal.js
+kangax-es6/spread.iterable-call.js: SyntaxError: parse error (line 35) error in executing file spread.iterable-call.js
+kangax-es6/spread.iterable-instance-call.js: SyntaxError: parse error (line 35) error in executing file spread.iterable-instance-call.js
+kangax-es6/spread.iterable-instance-literal.js: SyntaxError: parse error (line 35) error in executing file spread.iterable-instance-literal.js
+kangax-es6/spread.iterable-literal.js: SyntaxError: parse error (line 35) error in executing file spread.iterable-literal.js
+kangax-es6/spread.non-iterable-error.js: SyntaxError: parse error (line 11) at [anon] (spread.non-iterable-error.js:11) internal error in executing file spread.non-iterable-error.js
+kangax-es6/spread.sparse-call.js: SyntaxError: parse error (line 10) error in executing file spread.sparse-call.js
+kangax-es6/spread.sparse-literal.js: SyntaxError: parse error (line 10) error in executing file spread.sparse-literal.js
+kangax-es6/spread.string-call.js: SyntaxError: parse error (line 10) error in executing file spread.string-call.js
+kangax-es6/spread.string-literal.js: SyntaxError: parse error (line 10) error in executing file spread.string-literal.js
+kangax-es6/subclassing.Array.concat.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.concat.js
+kangax-es6/subclassing.Array.filter.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.filter.js
+kangax-es6/subclassing.Array.from.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.from.js
+kangax-es6/subclassing.Array.isArray.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.isArray.js
+kangax-es6/subclassing.Array.length-access.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.length-access.js
+kangax-es6/subclassing.Array.length-set.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.length-set.js
+kangax-es6/subclassing.Array.map.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.map.js
+kangax-es6/subclassing.Array.of.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.of.js
+kangax-es6/subclassing.Array.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.prototype-chain.js
+kangax-es6/subclassing.Array.slice.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.slice.js
+kangax-es6/subclassing.Array.splice.js: SyntaxError: parse error (line 9) error in executing file subclassing.Array.splice.js
+kangax-es6/subclassing.Function.call.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.call.js
+kangax-es6/subclassing.Function.new.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.new.js
+kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.prototype-chain.js
+kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.prototype.apply.js
+kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.prototype.bind.js
+kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: parse error (line 9) error in executing file subclassing.Function.prototype.call.js
+kangax-es6/subclassing.Promise.all.js: SyntaxError: parse error (line 44) error in executing file subclassing.Promise.all.js
+kangax-es6/subclassing.Promise.js: SyntaxError: parse error (line 44) error in executing file subclassing.Promise.js
+kangax-es6/subclassing.Promise.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file subclassing.Promise.prototype-chain.js
+kangax-es6/subclassing.Promise.race.js: SyntaxError: parse error (line 44) error in executing file subclassing.Promise.race.js
+kangax-es6/subclassing.RegExp.exec.js: SyntaxError: parse error (line 9) error in executing file subclassing.RegExp.exec.js
+kangax-es6/subclassing.RegExp.js: SyntaxError: parse error (line 11) error in executing file subclassing.RegExp.js
+kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: parse error (line 9) error in executing file subclassing.RegExp.prototype-chain.js
+kangax-es6/subclassing.RegExp.test.js: SyntaxError: parse error (line 9) error in executing file subclassing.RegExp.test.js
+kangax-es6/subclassing.misc.Boolean.js: SyntaxError: parse error (line 9) error in executing file subclassing.misc.Boolean.js
+kangax-es6/subclassing.misc.Error.js: SyntaxError: parse error (line 9) at [anon] (subclassing.misc.Error.js:9) internal error in executing file subclassing.misc.Error.js
+kangax-es6/subclassing.misc.Map.js: SyntaxError: parse error (line 10) error in executing file subclassing.misc.Map.js
+kangax-es6/subclassing.misc.Number.js: SyntaxError: parse error (line 9) error in executing file subclassing.misc.Number.js
+kangax-es6/subclassing.misc.Set.js: SyntaxError: parse error (line 10) error in executing file subclassing.misc.Set.js
+kangax-es6/subclassing.misc.String.js: SyntaxError: parse error (line 9) error in executing file subclassing.misc.String.js
+kangax-es6/super.correct-constructor.js: SyntaxError: parse error (line 12) error in executing file super.correct-constructor.js
+kangax-es6/super.expression.js: SyntaxError: parse error (line 10) error in executing file super.expression.js
+kangax-es6/super.method-calls.js: SyntaxError: parse error (line 10) error in executing file super.method-calls.js
+kangax-es6/super.new-target-binding.js: SyntaxError: parse error (line 11) error in executing file super.new-target-binding.js
+kangax-es6/super.property-access.js: SyntaxError: parse error (line 10) error in executing file super.property-access.js
+kangax-es6/super.statement.js: SyntaxError: parse error (line 11) error in executing file super.statement.js
+kangax-es6/super.static-binding.js: SyntaxError: parse error (line 10) error in executing file super.static-binding.js
+kangax-es6/super.this-binding.js: SyntaxError: parse error (line 10) error in executing file super.this-binding.js
 kangax-es6/tail-calls.direct.js: OK
 kangax-es6/tail-calls.mutual.js: OK
-kangax-es6/template.basic.js: SyntaxError: invalid token (line 11) error in executing file kangax-es6/template.basic.js
-kangax-es6/template.caching.js: SyntaxError: invalid token (line 17) error in executing file kangax-es6/template.caching.js
-kangax-es6/template.escape-sequences.js: SyntaxError: invalid token (line 13) error in executing file kangax-es6/template.escape-sequences.js
-kangax-es6/template.frozen-array.js: SyntaxError: invalid token (line 12) error in executing file kangax-es6/template.frozen-array.js
+kangax-es6/template.basic.js: SyntaxError: invalid token (line 11) error in executing file template.basic.js
+kangax-es6/template.caching.js: SyntaxError: invalid token (line 17) error in executing file template.caching.js
+kangax-es6/template.escape-sequences.js: SyntaxError: invalid token (line 13) error in executing file template.escape-sequences.js
+kangax-es6/template.frozen-array.js: SyntaxError: invalid token (line 12) error in executing file template.frozen-array.js
 kangax-es6/template.line-break.js: SyntaxError: invalid token (line 1)
-kangax-es6/template.permanent-caching.js: SyntaxError: invalid token (line 14) error in executing file kangax-es6/template.permanent-caching.js
-kangax-es6/template.tagged.js: SyntaxError: invalid token (line 21) error in executing file kangax-es6/template.tagged.js
-kangax-es6/template.toString.js: SyntaxError: invalid token (line 14) error in executing file kangax-es6/template.toString.js
+kangax-es6/template.permanent-caching.js: SyntaxError: invalid token (line 14) error in executing file template.permanent-caching.js
+kangax-es6/template.tagged.js: SyntaxError: invalid token (line 21) error in executing file template.tagged.js
+kangax-es6/template.toString.js: SyntaxError: invalid token (line 14) error in executing file template.toString.js
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
 kangax-es6/typed-arrays.DataView.Float32.js: OK
 kangax-es6/typed-arrays.DataView.Float64.js: OK
@@ -1188,7 +1188,7 @@ kangax-es6/well-known.toPrimitive.js: OK
 kangax-es6/well-known.toStringTag.existing-builtins.js: failed
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
-kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: parse error (line 23) error in executing file kangax-es6/well-known.toStringTag.new-builtins.js
+kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: parse error (line 23) error in executing file well-known.toStringTag.new-builtins.js
 kangax-es6/well-known.unscopables.js: failed
 kangax-es2016/Array.prototype.includes.generic.js: TypeError: cannot read property 'call' of undefined
 kangax-es2016/Array.prototype.includes.js: TypeError: undefined not callable (property 'includes' of [object Array])
@@ -1199,11 +1199,11 @@ kangax-es2016/exponentiation.basic.js: OK
 kangax-es2016/exponentiation.unary-negation-error.js: failed
 kangax-es2016/misc.Proxy-Array-includes.js: TypeError: cannot read property 'call' of undefined
 kangax-es2016/misc.Proxy-enumerate-removed.js: OK
-kangax-es2016/misc.generator-no-new.js: SyntaxError: function name required (line 10) error in executing file kangax-es2016/misc.generator-no-new.js
-kangax-es2016/misc.generator-throw-inner.js: SyntaxError: function name required (line 10) error in executing file kangax-es2016/misc.generator-throw-inner.js
-kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: invalid variable declaration (line 10) error in executing file kangax-es2016/misc.nested-rest-destructuring-decl.js
-kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: expected identifier (line 9) error in executing file kangax-es2016/misc.nested-rest-destructuring-params.js
-kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: expected identifier (line 9) at [anon] (kangax-es2016/misc.strict-fn-non-simple-params-error.js:9) internal error in executing file kangax-es2016/misc.strict-fn-non-simple-params-error.js
+kangax-es2016/misc.generator-no-new.js: SyntaxError: function name required (line 10) error in executing file misc.generator-no-new.js
+kangax-es2016/misc.generator-throw-inner.js: SyntaxError: function name required (line 10) error in executing file misc.generator-throw-inner.js
+kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: invalid variable declaration (line 10) error in executing file misc.nested-rest-destructuring-decl.js
+kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: expected identifier (line 9) error in executing file misc.nested-rest-destructuring-params.js
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: expected identifier (line 9) at [anon] (misc.strict-fn-non-simple-params-error.js:9) internal error in executing file misc.strict-fn-non-simple-params-error.js
 kangax-es2017/Atomics.add.js: ReferenceError: identifier 'Atomics' undefined
 kangax-es2017/Atomics.and.js: ReferenceError: identifier 'Atomics' undefined
 kangax-es2017/Atomics.compareExchange.js: ReferenceError: identifier 'Atomics' undefined
@@ -1248,48 +1248,48 @@ kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: invalid descriptor
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
-kangax-es2017/async.Symbol.toStringTag.js: SyntaxError: parse error (line 10) error in executing file kangax-es2017/async.Symbol.toStringTag.js
-kangax-es2017/async.arrow-in-class.js: SyntaxError: parse error (line 48) error in executing file kangax-es2017/async.arrow-in-class.js
-kangax-es2017/async.arrow.js: SyntaxError: parse error (line 45) error in executing file kangax-es2017/async.arrow.js
-kangax-es2017/async.await-non-promise.js: SyntaxError: parse error (line 45) error in executing file kangax-es2017/async.await-non-promise.js
-kangax-es2017/async.await-rejection.js: SyntaxError: parse error (line 45) error in executing file kangax-es2017/async.await-rejection.js
-kangax-es2017/async.await.js: SyntaxError: parse error (line 45) error in executing file kangax-es2017/async.await.js
-kangax-es2017/async.constructor.js: SyntaxError: unterminated statement (line 45) error in executing file kangax-es2017/async.constructor.js
-kangax-es2017/async.methods-class.js: SyntaxError: parse error (line 45) error in executing file kangax-es2017/async.methods-class.js
-kangax-es2017/async.methods-object.js: SyntaxError: parse error (line 46) error in executing file kangax-es2017/async.methods-object.js
-kangax-es2017/async.must-await-value.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2017/async.must-await-value.js
-kangax-es2017/async.no-await-in-params.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2017/async.no-await-in-params.js
-kangax-es2017/async.no-line-break.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2017/async.no-line-break.js
-kangax-es2017/async.no-prototype.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2017/async.no-prototype.js
-kangax-es2017/async.prototype-chain.js: SyntaxError: parse error (line 10) error in executing file kangax-es2017/async.prototype-chain.js
-kangax-es2017/async.return.js: SyntaxError: unterminated statement (line 45) error in executing file kangax-es2017/async.return.js
-kangax-es2017/async.throw.js: SyntaxError: unterminated statement (line 45) error in executing file kangax-es2017/async.throw.js
+kangax-es2017/async.Symbol.toStringTag.js: SyntaxError: parse error (line 10) error in executing file async.Symbol.toStringTag.js
+kangax-es2017/async.arrow-in-class.js: SyntaxError: parse error (line 48) error in executing file async.arrow-in-class.js
+kangax-es2017/async.arrow.js: SyntaxError: parse error (line 45) error in executing file async.arrow.js
+kangax-es2017/async.await-non-promise.js: SyntaxError: parse error (line 45) error in executing file async.await-non-promise.js
+kangax-es2017/async.await-rejection.js: SyntaxError: parse error (line 45) error in executing file async.await-rejection.js
+kangax-es2017/async.await.js: SyntaxError: parse error (line 45) error in executing file async.await.js
+kangax-es2017/async.constructor.js: SyntaxError: unterminated statement (line 45) error in executing file async.constructor.js
+kangax-es2017/async.methods-class.js: SyntaxError: parse error (line 45) error in executing file async.methods-class.js
+kangax-es2017/async.methods-object.js: SyntaxError: parse error (line 46) error in executing file async.methods-object.js
+kangax-es2017/async.must-await-value.js: SyntaxError: unterminated statement (line 10) error in executing file async.must-await-value.js
+kangax-es2017/async.no-await-in-params.js: SyntaxError: unterminated statement (line 10) error in executing file async.no-await-in-params.js
+kangax-es2017/async.no-line-break.js: SyntaxError: unterminated statement (line 10) error in executing file async.no-line-break.js
+kangax-es2017/async.no-prototype.js: SyntaxError: unterminated statement (line 10) error in executing file async.no-prototype.js
+kangax-es2017/async.prototype-chain.js: SyntaxError: parse error (line 10) error in executing file async.prototype-chain.js
+kangax-es2017/async.return.js: SyntaxError: unterminated statement (line 45) error in executing file async.return.js
+kangax-es2017/async.throw.js: SyntaxError: unterminated statement (line 45) error in executing file async.throw.js
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2017/regex.flags.u.case-folding.js
-kangax-es2017/trailing-comma.arguments.js: SyntaxError: empty expression not allowed (line 10) error in executing file kangax-es2017/trailing-comma.arguments.js
-kangax-es2017/trailing-comma.params.js: SyntaxError: expected identifier (line 10) error in executing file kangax-es2017/trailing-comma.params.js
+kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.u.case-folding.js
+kangax-es2017/trailing-comma.arguments.js: SyntaxError: empty expression not allowed (line 10) error in executing file trailing-comma.arguments.js
+kangax-es2017/trailing-comma.params.js: SyntaxError: expected identifier (line 10) error in executing file trailing-comma.params.js
 kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: identifier 'Promise' undefined
 kangax-es2018/Promise.prototype.finally.js: ReferenceError: identifier 'Promise' undefined
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: identifier 'Promise' undefined
-kangax-es2018/async-iterators.for-await-of.js: SyntaxError: parse error (line 58) error in executing file kangax-es2018/async-iterators.for-await-of.js
-kangax-es2018/async-iterators.generators.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-es2018/async-iterators.generators.js
+kangax-es2018/async-iterators.for-await-of.js: SyntaxError: parse error (line 58) error in executing file async-iterators.for-await-of.js
+kangax-es2018/async-iterators.generators.js: SyntaxError: unterminated statement (line 44) error in executing file async-iterators.generators.js
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
-kangax-es2018/misc.template-literal-revision.js: SyntaxError: invalid token (line 16) error in executing file kangax-es2018/misc.template-literal-revision.js
-kangax-es2018/object-rest.js: SyntaxError: invalid variable declaration (line 9) error in executing file kangax-es2018/object-rest.js
-kangax-es2018/object-spread.js: SyntaxError: invalid object literal (line 10) error in executing file kangax-es2018/object-spread.js
-kangax-es2018/regex.flags.s.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.flags.s.js
-kangax-es2018/regex.lookbehind.js: SyntaxError: invalid regexp group (line 10) error in executing file kangax-es2018/regex.lookbehind.js
-kangax-es2018/regex.named-capture-groups.js: SyntaxError: invalid regexp group (line 10) error in executing file kangax-es2018/regex.named-capture-groups.js
-kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.js
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-11.js
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-12.js
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-13.js
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-14.js
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-15.js
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: invalid regexp flags (line 10) error in executing file kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js
+kangax-es2018/misc.template-literal-revision.js: SyntaxError: invalid token (line 16) error in executing file misc.template-literal-revision.js
+kangax-es2018/object-rest.js: SyntaxError: invalid variable declaration (line 9) error in executing file object-rest.js
+kangax-es2018/object-spread.js: SyntaxError: invalid object literal (line 10) error in executing file object-spread.js
+kangax-es2018/regex.flags.s.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.flags.s.js
+kangax-es2018/regex.lookbehind.js: SyntaxError: invalid regexp group (line 10) error in executing file regex.lookbehind.js
+kangax-es2018/regex.named-capture-groups.js: SyntaxError: invalid regexp group (line 10) error in executing file regex.named-capture-groups.js
+kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.js
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-11.js
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-12.1.js
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-12.js
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-13.js
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-14.js
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-15.1.js
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-15.js
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-16.0.js
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: invalid regexp flags (line 10) error in executing file regex.unicode-property-escapes.unicode-17.0.js
 kangax-es2019/Array.prototype.flatMap.js: TypeError: undefined not callable (property 'flatMap' of [object Array])
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: cannot read property 'flat' of undefined
 kangax-es2019/Array.prototype.flat.js: TypeError: undefined not callable (property 'flat' of [object Array])
@@ -1311,42 +1311,42 @@ kangax-es2019/misc.Function-toString.unicode-escapes.js: failed
 kangax-es2019/misc.JSON-stringify-well-formed.js: failed
 kangax-es2019/misc.JSON-superset.line-separator.js: OK
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
-kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: parse error (line 44) error in executing file kangax-es2019/misc.optional-catch-binding.await.js
-kangax-es2019/misc.optional-catch-binding.js: SyntaxError: parse error (line 12) error in executing file kangax-es2019/misc.optional-catch-binding.js
-kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: function name required (line 9) error in executing file kangax-es2019/misc.optional-catch-binding.yield.js
-kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal (line 12) error in executing file kangax-es2020/BigInt64Array.js
+kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: parse error (line 44) error in executing file misc.optional-catch-binding.await.js
+kangax-es2019/misc.optional-catch-binding.js: SyntaxError: parse error (line 12) error in executing file misc.optional-catch-binding.js
+kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: function name required (line 9) error in executing file misc.optional-catch-binding.yield.js
+kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal (line 12) error in executing file BigInt64Array.js
 kangax-es2020/BigInt.asIntN.js: ReferenceError: identifier 'BigInt' undefined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: identifier 'BigInt' undefined
-kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal (line 10) error in executing file kangax-es2020/BigInt.constructor.js
-kangax-es2020/BigInt.js: SyntaxError: invalid number literal (line 10) error in executing file kangax-es2020/BigInt.js
-kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal (line 12) error in executing file kangax-es2020/BigUint64Array.js
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal (line 12) error in executing file kangax-es2020/DataView.prototype.getBigInt64.js
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal (line 12) error in executing file kangax-es2020/DataView.prototype.getBigUint64.js
-kangax-es2020/Promise.allSettled.js: SyntaxError: parse error (line 49) error in executing file kangax-es2020/Promise.allSettled.js
+kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal (line 10) error in executing file BigInt.constructor.js
+kangax-es2020/BigInt.js: SyntaxError: invalid number literal (line 10) error in executing file BigInt.js
+kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal (line 12) error in executing file BigUint64Array.js
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal (line 12) error in executing file DataView.prototype.getBigInt64.js
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal (line 12) error in executing file DataView.prototype.getBigUint64.js
+kangax-es2020/Promise.allSettled.js: SyntaxError: parse error (line 49) error in executing file Promise.allSettled.js
 kangax-es2020/String.prototype.matchAll.js: TypeError: undefined not callable (property 'matchAll' of '11a2bb')
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
 kangax-es2020/globalThis.descriptor.js: OK
 kangax-es2020/globalThis.js: OK
-kangax-es2020/nullish-coalescing.js: SyntaxError: parse error (line 10) error in executing file kangax-es2020/nullish-coalescing.js
-kangax-es2020/optional-chaining.bracket.js: SyntaxError: parse error (line 12) error in executing file kangax-es2020/optional-chaining.bracket.js
-kangax-es2020/optional-chaining.function-call.js: SyntaxError: parse error (line 14) error in executing file kangax-es2020/optional-chaining.function-call.js
-kangax-es2020/optional-chaining.method-call.js: SyntaxError: parse error (line 12) error in executing file kangax-es2020/optional-chaining.method-call.js
-kangax-es2020/optional-chaining.property.js: SyntaxError: parse error (line 12) error in executing file kangax-es2020/optional-chaining.property.js
-kangax-es2020/optional-chaining.spread-params.js: SyntaxError: parse error (line 14) error in executing file kangax-es2020/optional-chaining.spread-params.js
+kangax-es2020/nullish-coalescing.js: SyntaxError: parse error (line 10) error in executing file nullish-coalescing.js
+kangax-es2020/optional-chaining.bracket.js: SyntaxError: parse error (line 12) error in executing file optional-chaining.bracket.js
+kangax-es2020/optional-chaining.function-call.js: SyntaxError: parse error (line 14) error in executing file optional-chaining.function-call.js
+kangax-es2020/optional-chaining.method-call.js: SyntaxError: parse error (line 12) error in executing file optional-chaining.method-call.js
+kangax-es2020/optional-chaining.property.js: SyntaxError: parse error (line 12) error in executing file optional-chaining.property.js
+kangax-es2020/optional-chaining.spread-params.js: SyntaxError: parse error (line 14) error in executing file optional-chaining.spread-params.js
 kangax-es2021/FinalizationRegistry.js: ReferenceError: identifier 'FinalizationRegistry' undefined
-kangax-es2021/Promise.any.AggregateError.js: SyntaxError: parse error (line 49) at [anon] (kangax-es2021/Promise.any.AggregateError.js:49) internal error in executing file kangax-es2021/Promise.any.AggregateError.js
-kangax-es2021/Promise.any.fulfillment.js: SyntaxError: parse error (line 49) error in executing file kangax-es2021/Promise.any.fulfillment.js
+kangax-es2021/Promise.any.AggregateError.js: SyntaxError: parse error (line 49) at [anon] (Promise.any.AggregateError.js:49) internal error in executing file Promise.any.AggregateError.js
+kangax-es2021/Promise.any.fulfillment.js: SyntaxError: parse error (line 49) error in executing file Promise.any.fulfillment.js
 kangax-es2021/String.prototype.replaceAll.js: TypeError: undefined not callable (property 'replaceAll' of 'q=query+string+parameters')
 kangax-es2021/WeakRef.js: ReferenceError: identifier 'WeakRef' undefined
-kangax-es2021/logical-assignment.and.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2021/logical-assignment.and.js
-kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.and.setter-not-invoked.js
-kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.and.short-circuit.js
-kangax-es2021/logical-assignment.nullish.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2021/logical-assignment.nullish.js
-kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.nullish.setter-not-invoked.js
-kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.nullish.short-circuit.js
-kangax-es2021/logical-assignment.or.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2021/logical-assignment.or.js
-kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.or.setter-not-invoked.js
-kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file kangax-es2021/logical-assignment.or.short-circuit.js
+kangax-es2021/logical-assignment.and.js: SyntaxError: unterminated statement (line 10) error in executing file logical-assignment.and.js
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.and.setter-not-invoked.js
+kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.and.short-circuit.js
+kangax-es2021/logical-assignment.nullish.js: SyntaxError: unterminated statement (line 10) error in executing file logical-assignment.nullish.js
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.nullish.setter-not-invoked.js
+kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.nullish.short-circuit.js
+kangax-es2021/logical-assignment.or.js: SyntaxError: unterminated statement (line 10) error in executing file logical-assignment.or.js
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.or.setter-not-invoked.js
+kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: unterminated statement (line 9) error in executing file logical-assignment.or.short-circuit.js
 kangax-es2021/numeric-separators.js: OK
 kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: identifier 'AggregateError' undefined
 kangax-es2022/Error.cause.AggregateError.js: ReferenceError: identifier 'AggregateError' undefined
@@ -1369,23 +1369,23 @@ kangax-es2022/Object.hasOwn.js: TypeError: undefined not callable (property 'has
 kangax-es2022/at-method.Array.js: TypeError: undefined not callable (property 'at' of [object Array])
 kangax-es2022/at-method.String.js: TypeError: undefined not callable (property 'at' of 'abc')
 kangax-es2022/at-method.TypedArray.js: TypeError: undefined not callable (property 'at' of [object Int8Array])
-kangax-es2022/class-fields.computed-instance.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.computed-instance.js
-kangax-es2022/class-fields.computed-static.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.computed-static.js
-kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2022/class-fields.instance.parent-scope.js
-kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.private-instance.initializers.js
-kangax-es2022/class-fields.private-instance.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-fields.private-instance.js
-kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.private-instance.optional-access.js
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.private-instance.optional-deep-access.js
-kangax-es2022/class-fields.private-static.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-fields.private-static.js
-kangax-es2022/class-fields.public-instance.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-fields.public-instance.js
-kangax-es2022/class-fields.public-static.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-fields.public-static.js
-kangax-es2022/class-fields.static.define.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-fields.static.define.js
-kangax-es2022/class-methods.private-accessor.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-methods.private-accessor.js
-kangax-es2022/class-methods.private-instance.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-methods.private-instance.js
-kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: parse error (line 10) error in executing file kangax-es2022/class-methods.private-static-accessor.js
-kangax-es2022/class-methods.private-static.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/class-methods.private-static.js
-kangax-es2022/class-static-init-blocks.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2022/class-static-init-blocks.js
-kangax-es2022/ergonomic-brand-checks.js: SyntaxError: parse error (line 9) error in executing file kangax-es2022/ergonomic-brand-checks.js
+kangax-es2022/class-fields.computed-instance.js: SyntaxError: parse error (line 9) error in executing file class-fields.computed-instance.js
+kangax-es2022/class-fields.computed-static.js: SyntaxError: parse error (line 9) error in executing file class-fields.computed-static.js
+kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: unterminated statement (line 10) error in executing file class-fields.instance.parent-scope.js
+kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: parse error (line 9) error in executing file class-fields.private-instance.initializers.js
+kangax-es2022/class-fields.private-instance.js: SyntaxError: parse error (line 10) error in executing file class-fields.private-instance.js
+kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: parse error (line 9) error in executing file class-fields.private-instance.optional-access.js
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: parse error (line 9) error in executing file class-fields.private-instance.optional-deep-access.js
+kangax-es2022/class-fields.private-static.js: SyntaxError: parse error (line 10) error in executing file class-fields.private-static.js
+kangax-es2022/class-fields.public-instance.js: SyntaxError: parse error (line 10) error in executing file class-fields.public-instance.js
+kangax-es2022/class-fields.public-static.js: SyntaxError: parse error (line 10) error in executing file class-fields.public-static.js
+kangax-es2022/class-fields.static.define.js: SyntaxError: parse error (line 9) error in executing file class-fields.static.define.js
+kangax-es2022/class-methods.private-accessor.js: SyntaxError: parse error (line 10) error in executing file class-methods.private-accessor.js
+kangax-es2022/class-methods.private-instance.js: SyntaxError: parse error (line 9) error in executing file class-methods.private-instance.js
+kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: parse error (line 10) error in executing file class-methods.private-static-accessor.js
+kangax-es2022/class-methods.private-static.js: SyntaxError: parse error (line 9) error in executing file class-methods.private-static.js
+kangax-es2022/class-static-init-blocks.js: SyntaxError: unterminated statement (line 10) error in executing file class-static-init-blocks.js
+kangax-es2022/ergonomic-brand-checks.js: SyntaxError: parse error (line 9) error in executing file ergonomic-brand-checks.js
 kangax-es2022/regex.flags.d.constructor.js: SyntaxError: invalid regexp flags
 kangax-es2022/regex.flags.d.shows-in-flags.js: failed
 kangax-es2023/Array.prototype.findLastIndex.js: TypeError: undefined not callable (property 'findLastIndex' of [object Array])
@@ -1401,30 +1401,30 @@ kangax-es2023/hashbang.js: SyntaxError: invalid token (line 1)
 kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
 kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined not callable (property 'transferToFixedLength' of [object ArrayBuffer])
 kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
-kangax-es2024/Map.groupBy.js: SyntaxError: parse error (line 13) error in executing file kangax-es2024/Map.groupBy.js
-kangax-es2024/Object.groupBy.js: SyntaxError: parse error (line 11) error in executing file kangax-es2024/Object.groupBy.js
+kangax-es2024/Map.groupBy.js: SyntaxError: parse error (line 13) error in executing file Map.groupBy.js
+kangax-es2024/Object.groupBy.js: SyntaxError: parse error (line 11) error in executing file Object.groupBy.js
 kangax-es2024/Promise.withResolvers.js: ReferenceError: identifier 'Promise' undefined
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: invalid regexp flags
-kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2024/regex.flags.v.properties-of-strings.js
-kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2024/regex.flags.v.set-notations.js
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.v.properties-of-strings.js
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.v.set-notations.js
 kangax-es2024/regex.flags.v.shows-in-flags.js: failed
-kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2024/regex.flags.v.unicode-15.1.js
-kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2024/regex.flags.v.unicode-16.0.js
-kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2024/regex.flags.v.unicode-17.0.js
-kangax-es2025/Iterator.extends.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.extends.js
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.v.unicode-15.1.js
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.v.unicode-16.0.js
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.flags.v.unicode-17.0.js
+kangax-es2025/Iterator.extends.js: SyntaxError: parse error (line 10) error in executing file Iterator.extends.js
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: identifier 'Iterator' undefined
 kangax-es2025/Iterator.from.iterator.js: ReferenceError: identifier 'Iterator' undefined
 kangax-es2025/Iterator.instanceof.js: TypeError: undefined not callable (property 'values' of [object Array])
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: identifier 'Iterator' undefined
 kangax-es2025/Iterator.prototype.drop.js: TypeError: undefined not callable (property 'values' of [object Array])
-kangax-es2025/Iterator.prototype.every.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.every.js
-kangax-es2025/Iterator.prototype.filter.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.filter.js
-kangax-es2025/Iterator.prototype.find.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.find.js
-kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.flatMap.js
-kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: unterminated statement (line 10) error in executing file kangax-es2025/Iterator.prototype.forEach.js
-kangax-es2025/Iterator.prototype.map.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.map.js
-kangax-es2025/Iterator.prototype.reduce.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.reduce.js
-kangax-es2025/Iterator.prototype.some.js: SyntaxError: parse error (line 10) error in executing file kangax-es2025/Iterator.prototype.some.js
+kangax-es2025/Iterator.prototype.every.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.every.js
+kangax-es2025/Iterator.prototype.filter.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.filter.js
+kangax-es2025/Iterator.prototype.find.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.find.js
+kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.flatMap.js
+kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: unterminated statement (line 10) error in executing file Iterator.prototype.forEach.js
+kangax-es2025/Iterator.prototype.map.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.map.js
+kangax-es2025/Iterator.prototype.reduce.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.reduce.js
+kangax-es2025/Iterator.prototype.some.js: SyntaxError: parse error (line 10) error in executing file Iterator.prototype.some.js
 kangax-es2025/Iterator.prototype.take.js: TypeError: undefined not callable (property 'values' of [object Array])
 kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined not callable (property 'values' of [object Array])
 kangax-es2025/Promise.try.js: ReferenceError: identifier 'Promise' undefined
@@ -1436,10 +1436,10 @@ kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: identifier 'Set' unde
 kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: identifier 'Set' undefined
 kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: identifier 'Set' undefined
 kangax-es2025/Set.prototype.union.js: ReferenceError: identifier 'Set' undefined
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: invalid regexp group (line 9) error in executing file kangax-es2025/regex.duplicate-named-groups.js
-kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: invalid regexp group (line 9) error in executing file kangax-es2025/regex.pattern-modifiers.i.js
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regexp group (line 9) error in executing file kangax-es2025/regex.pattern-modifiers.m.js
-kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: invalid regexp flags (line 9) error in executing file kangax-es2025/regex.pattern-modifiers.s.js
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: invalid regexp group (line 9) error in executing file regex.duplicate-named-groups.js
+kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: invalid regexp group (line 9) error in executing file regex.pattern-modifiers.i.js
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regexp group (line 9) error in executing file regex.pattern-modifiers.m.js
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: invalid regexp flags (line 9) error in executing file regex.pattern-modifiers.s.js
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
@@ -1468,45 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
-kangax-next/Array.isTemplateObject.js: SyntaxError: parse error (line 10) error in executing file kangax-next/Array.isTemplateObject.js
-kangax-next/AsyncDisposableStack.js: SyntaxError: parse error (line 47) error in executing file kangax-next/AsyncDisposableStack.js
-kangax-next/AsyncIterator.extends.js: SyntaxError: parse error (line 9) error in executing file kangax-next/AsyncIterator.extends.js
-kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.from.async-iterable.js
-kangax-next/AsyncIterator.from.iterable.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.from.iterable.js
-kangax-next/AsyncIterator.from.iterator.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.from.iterator.js
-kangax-next/AsyncIterator.instanceof.js: SyntaxError: parse error (line 9) error in executing file kangax-next/AsyncIterator.instanceof.js
+kangax-next/Array.isTemplateObject.js: SyntaxError: parse error (line 10) error in executing file Array.isTemplateObject.js
+kangax-next/AsyncDisposableStack.js: SyntaxError: parse error (line 47) error in executing file AsyncDisposableStack.js
+kangax-next/AsyncIterator.extends.js: SyntaxError: parse error (line 9) error in executing file AsyncIterator.extends.js
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.from.async-iterable.js
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.from.iterable.js
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.from.iterator.js
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: parse error (line 9) error in executing file AsyncIterator.instanceof.js
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: identifier 'AsyncIterator' undefined
-kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.drop.js
-kangax-next/AsyncIterator.prototype.every.js: SyntaxError: parse error (line 44) error in executing file kangax-next/AsyncIterator.prototype.every.js
-kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.filter.js
-kangax-next/AsyncIterator.prototype.find.js: SyntaxError: parse error (line 44) error in executing file kangax-next/AsyncIterator.prototype.find.js
-kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.flatMap.js
-kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.forEach.js
-kangax-next/AsyncIterator.prototype.map.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.map.js
-kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: parse error (line 44) error in executing file kangax-next/AsyncIterator.prototype.reduce.js
-kangax-next/AsyncIterator.prototype.some.js: SyntaxError: parse error (line 44) error in executing file kangax-next/AsyncIterator.prototype.some.js
-kangax-next/AsyncIterator.prototype.take.js: SyntaxError: unterminated statement (line 44) error in executing file kangax-next/AsyncIterator.prototype.take.js
-kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: parse error (line 44) error in executing file kangax-next/AsyncIterator.prototype.toArray.js
-kangax-next/DisposableStack.js: SyntaxError: parse error (line 12) error in executing file kangax-next/DisposableStack.js
-kangax-next/Map.prototype.upsert.js: SyntaxError: parse error (line 10) error in executing file kangax-next/Map.prototype.upsert.js
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.drop.js
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: parse error (line 44) error in executing file AsyncIterator.prototype.every.js
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.filter.js
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: parse error (line 44) error in executing file AsyncIterator.prototype.find.js
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.flatMap.js
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.forEach.js
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.map.js
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: parse error (line 44) error in executing file AsyncIterator.prototype.reduce.js
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: parse error (line 44) error in executing file AsyncIterator.prototype.some.js
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: unterminated statement (line 44) error in executing file AsyncIterator.prototype.take.js
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: parse error (line 44) error in executing file AsyncIterator.prototype.toArray.js
+kangax-next/DisposableStack.js: SyntaxError: parse error (line 12) error in executing file DisposableStack.js
+kangax-next/Map.prototype.upsert.js: SyntaxError: parse error (line 10) error in executing file Map.prototype.upsert.js
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: unterminated statement (line 13) at [anon] (kangax-next/SuppressedError.js:13) internal error in executing file kangax-next/SuppressedError.js
-kangax-next/Uint8Array.fromBase64.js: SyntaxError: parse error (line 13) error in executing file kangax-next/Uint8Array.fromBase64.js
-kangax-next/Uint8Array.fromHex.js: SyntaxError: parse error (line 13) error in executing file kangax-next/Uint8Array.fromHex.js
-kangax-next/Uint8Array.setFromBase64.js: SyntaxError: unterminated statement (line 11) error in executing file kangax-next/Uint8Array.setFromBase64.js
-kangax-next/Uint8Array.setFromHex.js: SyntaxError: unterminated statement (line 11) error in executing file kangax-next/Uint8Array.setFromHex.js
+kangax-next/SuppressedError.js: SyntaxError: unterminated statement (line 13) at [anon] (SuppressedError.js:13) internal error in executing file SuppressedError.js
+kangax-next/Uint8Array.fromBase64.js: SyntaxError: parse error (line 13) error in executing file Uint8Array.fromBase64.js
+kangax-next/Uint8Array.fromHex.js: SyntaxError: parse error (line 13) error in executing file Uint8Array.fromHex.js
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: unterminated statement (line 11) error in executing file Uint8Array.setFromBase64.js
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: unterminated statement (line 11) error in executing file Uint8Array.setFromHex.js
 kangax-next/Uint8Array.toBase64.js: TypeError: undefined not callable (property 'toBase64' of [object Uint8Array])
 kangax-next/Uint8Array.toHex.js: TypeError: undefined not callable (property 'toHex' of [object Uint8Array])
-kangax-next/WeakMap.prototype.upsert.js: SyntaxError: parse error (line 11) error in executing file kangax-next/WeakMap.prototype.upsert.js
-kangax-next/await-using.for-of.js: SyntaxError: parse error (line 46) error in executing file kangax-next/await-using.for-of.js
-kangax-next/await-using.js: SyntaxError: parse error (line 44) error in executing file kangax-next/await-using.js
-kangax-next/class-decorators.js: SyntaxError: parse error (line 9) error in executing file kangax-next/class-decorators.js
-kangax-next/function.sent.js: SyntaxError: function name required (line 10) error in executing file kangax-next/function.sent.js
-kangax-next/throw-expr.arrow.js: SyntaxError: empty expression not allowed (line 9) error in executing file kangax-next/throw-expr.arrow.js
-kangax-next/throw-expr.conditional.js: SyntaxError: parse error (line 9) error in executing file kangax-next/throw-expr.conditional.js
-kangax-next/throw-expr.logical.js: SyntaxError: parse error (line 11) error in executing file kangax-next/throw-expr.logical.js
-kangax-next/throw-expr.param-init.js: SyntaxError: parse error (line 9) error in executing file kangax-next/throw-expr.param-init.js
-kangax-next/using.for-of.js: SyntaxError: parse error (line 11) error in executing file kangax-next/using.for-of.js
-kangax-next/using.js: SyntaxError: parse error (line 11) error in executing file kangax-next/using.js
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: parse error (line 11) error in executing file WeakMap.prototype.upsert.js
+kangax-next/await-using.for-of.js: SyntaxError: parse error (line 46) error in executing file await-using.for-of.js
+kangax-next/await-using.js: SyntaxError: parse error (line 44) error in executing file await-using.js
+kangax-next/class-decorators.js: SyntaxError: parse error (line 9) error in executing file class-decorators.js
+kangax-next/function.sent.js: SyntaxError: function name required (line 10) error in executing file function.sent.js
+kangax-next/throw-expr.arrow.js: SyntaxError: empty expression not allowed (line 9) error in executing file throw-expr.arrow.js
+kangax-next/throw-expr.conditional.js: SyntaxError: parse error (line 9) error in executing file throw-expr.conditional.js
+kangax-next/throw-expr.logical.js: SyntaxError: parse error (line 11) error in executing file throw-expr.logical.js
+kangax-next/throw-expr.param-init.js: SyntaxError: parse error (line 9) error in executing file throw-expr.param-init.js
+kangax-next/using.for-of.js: SyntaxError: parse error (line 11) error in executing file using.for-of.js
+kangax-next/using.js: SyntaxError: parse error (line 11) error in executing file using.js

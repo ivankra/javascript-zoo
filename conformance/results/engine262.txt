@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1594781, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "6f74d02b34bd37de56b2b3ad6991da14322155de", "revision_date": "2025-10-25"}
+Metadata: {"arch": "arm64", "dist_size": 1594451, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "850461e0e7c55bb30571344f12eaa5b432b8a7b5", "revision_date": "2025-11-09"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -118,8 +118,8 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not a function
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not a function
 es1/annex-b.global.escape.js: ReferenceError: 'escape' is not defined
 es1/annex-b.global.unescape.js: ReferenceError: 'unescape' is not defined
-es1/annex-b.literals.octal.js: SyntaxError: Unexpected token
-es1/annex-b.literals.string.octal.js: failed
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
@@ -727,7 +727,7 @@ kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token
 kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: There is no 41 capture groups
 kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Invalid class range
 kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: Expected } but got
-kangax-es6/annex-b.regex.invalid-char-escapes.js: /zoo/conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
+kangax-es6/annex-b.regex.invalid-char-escapes.js: annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
 kangax-es6/annex-b.regex.invalid-control-escapes.js: failed
 kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: /zoo/conformance/kangax-next/SuppressedError.js:13:11 SyntaxError: Unexpected token
+kangax-next/SuppressedError.js: SuppressedError.js:13:11 SyntaxError: Unexpected token
 kangax-next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function

@@ -26,15 +26,13 @@ But, very slow.
 
 <details><summary>ES1-ES5: 97%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/engine262.txt">Full log</a>.</li>
-<li>ES1: 96%<pre>
+<li>ES1: 97%<pre>
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString is not implemented
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: 'escape' is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: 'unescape' is not defined
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token
-<a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
 </pre></li>
 <li>ES3: 96%<pre>
 <a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Date.prototype.toLocaleDateString is not implemented
@@ -62,7 +60,7 @@ But, very slow.
 <a href="../conformance/kangax-es6/annex-b.regex.backreferences-octal.js">annex-b.regex.backreferences-octal.js</a>: SyntaxError: There is no 41 capture groups
 <a href="../conformance/kangax-es6/annex-b.regex.hyphens.js">annex-b.regex.hyphens.js</a>: SyntaxError: Invalid class range
 <a href="../conformance/kangax-es6/annex-b.regex.incomplete-patterns.js">annex-b.regex.incomplete-patterns.js</a>: SyntaxError: Expected } but got
-<a href="../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: /zoo/conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
+<a href="../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.regex.octal-escapes.js">annex-b.regex.octal-escapes.js</a>: SyntaxError: Invalid identity escape
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded

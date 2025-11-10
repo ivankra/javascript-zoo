@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "ac5651d11004e1e3f5320b2a385a35f53e828f1b0b72abbda28cfef9c83e26e6", "binary_size": 13248272, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "42272ad1b0e8e4f56df9ae987ebbee4c23ae33b1", "revision_date": "2025-10-31", "version": "0.1.0-dev+42272ad1b"}
+Metadata: {"arch": "arm64", "binary_sha256": "d424954bdce2303080955bca4e93431c0cefcc42f677e4ca913e95f7817c65a6", "binary_size": 13248272, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "cb5efca30764f4e10bd3abbc53a5e202763dd5de", "revision_date": "2025-11-03", "version": "0.1.0-dev+cb5efca30"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -134,7 +134,7 @@ es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: OK
 es1/break.js: OK
 es1/comma.js: OK
-es1/comments.js: fail SyntaxError: Unexpected token '*' (es1/comments.js:10:5)
+es1/comments.js: fail SyntaxError: Unexpected token '*' (comments.js:10:5)
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
@@ -364,7 +364,7 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: threw exception on '{"a":1,"a":2}'
+es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
@@ -723,7 +723,7 @@ kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined
 kangax-es6/annex-b.function.if-statement.js: ReferenceError: 'foo' is not defined
 kangax-es6/annex-b.function.labeled.js: OK
-kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token 'function' (kangax-es6/annex-b.html-comments.js:1:1)
+kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token 'function' (annex-b.html-comments.js:1:1)
 kangax-es6/annex-b.regex.backreferences-octal.js: OK
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
@@ -817,7 +817,7 @@ kangax-es6/destructuring-assign.iterable-expression.js: OK
 kangax-es6/destructuring-assign.iterable-instance.js: failed
 kangax-es6/destructuring-assign.iterable.js: failed
 kangax-es6/destructuring-assign.iterator-closing.js: failed
-kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: Invalid left-hand side in assignment expression (kangax-es6/destructuring-assign.nested-rest.js:11:27)
+kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: Invalid left-hand side in assignment expression (destructuring-assign.nested-rest.js:11:27)
 kangax-es6/destructuring-assign.nested.js: OK
 kangax-es6/destructuring-assign.object-expression.js: OK
 kangax-es6/destructuring-assign.object-primitives.js: OK
@@ -1107,7 +1107,7 @@ kangax-es6/tail-calls.direct.js: Error: Stack overflow
 kangax-es6/tail-calls.mutual.js: Error: Stack overflow
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
-kangax-es6/template.escape-sequences.js: SyntaxError: Unexpected token 'function' (kangax-es6/template.escape-sequences.js:1:1)
+kangax-es6/template.escape-sequences.js: SyntaxError: Unexpected token 'function' (template.escape-sequences.js:1:1)
 kangax-es6/template.frozen-array.js: OK
 kangax-es6/template.line-break.js: OK
 kangax-es6/template.permanent-caching.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: OK
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Unexpected token 'function' (kangax-es2017/annex-b.for-in-assignment-non-strict.js:1:1)
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Unexpected token 'function' (annex-b.for-in-assignment-non-strict.js:1:1)
 kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1274,7 +1274,7 @@ kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
 kangax-es2018/async-iterators.for-await-of.js: OK
 kangax-es2018/async-iterators.generators.js: OK
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
-kangax-es2018/misc.template-literal-revision.js: SyntaxError: Unexpected token 'function' (kangax-es2018/misc.template-literal-revision.js:1:1)
+kangax-es2018/misc.template-literal-revision.js: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
 kangax-es2018/object-rest.js: failed
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid RegExp pattern: unknown unicode script (kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid RegExp pattern: unknown unicode script (regex.unicode-property-escapes.unicode-17.0.js:10:10)
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1406,7 +1406,7 @@ kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: OK
 kangax-es2024/regex.flags.v.constructor.js: OK
 kangax-es2024/regex.flags.v.properties-of-strings.js: failed
-kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid RegExp pattern: invalid class range (kangax-es2024/regex.flags.v.set-notations.js:10:6)
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid RegExp pattern: invalid class range (regex.flags.v.set-notations.js:10:6)
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
 kangax-es2024/regex.flags.v.unicode-15.1.js: failed
 kangax-es2024/regex.flags.v.unicode-16.0.js: failed
@@ -1436,10 +1436,10 @@ kangax-es2025/Set.prototype.isSubsetOf.js: OK
 kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid RegExp pattern: duplicate group name (kangax-es2025/regex.duplicate-named-groups.js:9:10)
-kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.i.js:9:17)
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.m.js:9:17)
-kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.s.js:9:17)
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
+kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.i.js:9:17)
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.m.js:9:17)
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.s.js:9:17)
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: undefined is not an Object
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: // compat-table: ES Next > Stage 3 > Explicit Resource Management (large) > SuppressedError SyntaxError: Unexpected token 'function' (kangax-next/SuppressedError.js:1:1)
+kangax-next/SuppressedError.js: // compat-table: ES Next > Stage 3 > Explicit Resource Management (large) > SuppressedError SyntaxError: Unexpected token 'function' (SuppressedError.js:1:1)
 kangax-next/Uint8Array.fromBase64.js: OK
 kangax-next/Uint8Array.fromHex.js: OK
 kangax-next/Uint8Array.setFromBase64.js: failed
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: OK
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not an Object
-kangax-next/await-using.for-of.js: SyntaxError: Invalid 'for in'/'for of' loop initializer expression (kangax-next/await-using.for-of.js:57:10)
-kangax-next/await-using.js: SyntaxError: Unexpected token 'function' (kangax-next/await-using.js:41:2)
-kangax-next/class-decorators.js: SyntaxError: Unexpected token 'function' (kangax-next/class-decorators.js:1:1)
-kangax-next/function.sent.js: SyntaxError: Unexpected token 'function' (kangax-next/function.sent.js:1:1)
-kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.arrow.js:1:1)
-kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.conditional.js:1:1)
-kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.logical.js:1:1)
-kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.param-init.js:1:1)
-kangax-next/using.for-of.js: SyntaxError: Unexpected token 'function' (kangax-next/using.for-of.js:1:1)
-kangax-next/using.js: SyntaxError: Unexpected token 'function' (kangax-next/using.js:1:1)
+kangax-next/await-using.for-of.js: SyntaxError: Invalid 'for in'/'for of' loop initializer expression (await-using.for-of.js:57:10)
+kangax-next/await-using.js: SyntaxError: Unexpected token 'function' (await-using.js:41:2)
+kangax-next/class-decorators.js: SyntaxError: Unexpected token 'function' (class-decorators.js:1:1)
+kangax-next/function.sent.js: SyntaxError: Unexpected token 'function' (function.sent.js:1:1)
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token 'function' (throw-expr.arrow.js:1:1)
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token 'function' (throw-expr.conditional.js:1:1)
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token 'function' (throw-expr.logical.js:1:1)
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token 'function' (throw-expr.param-init.js:1:1)
+kangax-next/using.for-of.js: SyntaxError: Unexpected token 'function' (using.for-of.js:1:1)
+kangax-next/using.js: SyntaxError: Unexpected token 'function' (using.js:1:1)

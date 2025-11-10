@@ -27,14 +27,14 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: (intermediate value)["toGMTString"] is not a function
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: "escape" is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: "unescape" is not defined
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token "07" in es1/annex-b.literals.octal.js:14
-<a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code in es1/annex-b.literals.string.octal.js:12
+<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token "07" in annex-b.literals.octal.js:14
+<a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code in annex-b.literals.string.octal.js:12
 <a href="../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: "caller", "callee", "arguments" properties may not be accessed
 <a href="../conformance/es1/asi.eval.js">asi.eval.js</a>: InternalError: Not implemented
 <a href="../conformance/es1/asi.js">asi.js</a>: TypeError: property set on primitive number type
 <a href="../conformance/es1/eval.js">eval.js</a>: InternalError: Not implemented
-<a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError: Delete of an unqualified identifier in es1/unary.delete.var.js:7
-<a href="../conformance/es1/with.js">with.js</a>: SyntaxError: Token "(" not supported in this version in es1/with.js:15
+<a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError: Delete of an unqualified identifier in unary.delete.var.js:7
+<a href="../conformance/es1/with.js">with.js</a>: SyntaxError: Token "(" not supported in this version in with.js:15
 </pre></li>
 <li>ES3: 90%<pre>
 <a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
@@ -48,8 +48,8 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 <a href="../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for Function.prototype.toString on non-function
 <a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
-<a href="../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Unexpected token "�" in es3/identifiers.unicode.js:8
-<a href="../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Unexpected token "�" in es3/literals.object.unicode.js:9
+<a href="../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Unexpected token "�" in identifiers.unicode.js:8
+<a href="../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Unexpected token "�" in literals.object.unicode.js:9
 <a href="../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: InternalError: Not implemented
 <a href="../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: failed
 </pre></li>
@@ -63,7 +63,7 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: TypeError: Cannot assign to read-only property "Infinity" of object
 <a href="../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: TypeError: Cannot assign to read-only property "NaN" of object
 <a href="../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: TypeError: Cannot assign to read-only property "undefined" of object
-<a href="../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Unexpected token "\" in es5/source.zero-width-chars.js:11
+<a href="../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Unexpected token "\" in source.zero-width-chars.js:11
 <a href="../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../conformance/es5/strict.function-expr-with-matching-name.js">strict.function-expr-with-matching-name.js</a>: failed
 <a href="../conformance/es5/strict.js">strict.js</a>: failed

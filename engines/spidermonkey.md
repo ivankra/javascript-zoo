@@ -68,7 +68,7 @@ JavaScript engine of Firefox.
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
 <li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>

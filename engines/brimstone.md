@@ -46,8 +46,8 @@ Javascript engine written in Rust, with nearly complete ES2025 support.
 <a href="../conformance/kangax-es6/annex-b.regex.hyphens.js">annex-b.regex.hyphens.js</a>: SyntaxError: Character class cannot be a bound in a character range
 <a href="../conformance/kangax-es6/annex-b.regex.incomplete-patterns.js">annex-b.regex.incomplete-patterns.js</a>: SyntaxError: Unexpected token
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: failed
-<a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: SyntaxError: Malformed escape sequence ┌ kangax-es6/annex-b.regex.invalid-hex-escapes.js:9:11
-<a href="../conformance/kangax-es6/annex-b.regex.invalid-unicode-escapes.js">annex-b.regex.invalid-unicode-escapes.js</a>: SyntaxError: Malformed escape sequence ┌ kangax-es6/annex-b.regex.invalid-unicode-escapes.js:9:11
+<a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-hex-escapes.js:9:11
+<a href="../conformance/kangax-es6/annex-b.regex.invalid-unicode-escapes.js">annex-b.regex.invalid-unicode-escapes.js</a>: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-unicode-escapes.js:9:11
 <a href="../conformance/kangax-es6/annex-b.regex.octal-escapes.js">annex-b.regex.octal-escapes.js</a>: TypeError: null has no properties
 <a href="../conformance/kangax-es6/class.computed-accessor-properties.js">class.computed-accessor-properties.js</a>: crashed (signal 11)
 <a href="../conformance/kangax-es6/class.computed-prototype-methods.js">class.computed-prototype-methods.js</a>: crashed (signal 11)

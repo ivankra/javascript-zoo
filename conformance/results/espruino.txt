@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "fbbf669b27fed1934ad38f698bb4f9ff665399611e76bddb8d20b3f548888b11", "binary_size": 1183488, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "espruino", "repository": "https://github.com/espruino/Espruino.git", "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565", "revision_date": "2025-06-06", "version": "2v27"}
+Metadata: {"arch": "arm64", "binary_sha256": "cd6b629f4bcdea1dcc30d3755702adfed202306dcf29afa46045b5d148fe3f56", "binary_size": 1183488, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "espruino", "repository": "https://github.com/espruino/Espruino.git", "revision": "37bd2082786535c052928e5e7728115950ac8096", "revision_date": "2025-11-05", "version": "2v28"}
 es1/Array.js: Array.length failed ; failed
 es1/Array.length.assignment.js: Uncaught TypeError: Assignment to a constant  Uncaught undefined
 es1/Array.length.js: Uncaught TypeError: Assignment to a constant  Uncaught undefined
@@ -14,8 +14,8 @@ es1/Boolean.js: new Boolean(true) failed ; new Boolean() failed ; failed
 es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed ; boolean instance constructor failed ; failed
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
-es1/Date.diff.js: failed
-es1/Date.js: 15.9.2 Date() not a string ; 15.9.3.2 new Date(0) failed ; failed
+es1/Date.diff.js: OK
+es1/Date.js: typeof Date() != 'string' ; failed
 es1/Date.prototype.constructor.js: failed
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK
@@ -26,7 +26,7 @@ es1/Date.prototype.getMinutes.js: OK
 es1/Date.prototype.getMonth.js: OK
 es1/Date.prototype.getSeconds.js: OK
 es1/Date.prototype.getTimezoneOffset.js: OK
-es1/Date.prototype.getTime.js: failed
+es1/Date.prototype.getTime.js: OK
 es1/Date.prototype.getUTCDate.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 es1/Date.prototype.getUTCDay.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 es1/Date.prototype.getUTCFullYear.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
@@ -42,7 +42,7 @@ es1/Date.prototype.setMilliseconds.js: OK
 es1/Date.prototype.setMinutes.js: OK
 es1/Date.prototype.setMonth.js: OK
 es1/Date.prototype.setSeconds.js: OK
-es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setTime.js: OK
 es1/Date.prototype.setUTCDate.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 es1/Date.prototype.setUTCFullYear.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 es1/Date.prototype.setUTCHours.js: Uncaught Error: Function "UTC" not found!  Uncaught undefined
@@ -53,38 +53,38 @@ es1/Date.prototype.setUTCSeconds.js: Uncaught Error: Function "UTC" not found!  
 es1/Date.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
-es1/Date.prototype.valueOf.js: failed
+es1/Date.prototype.valueOf.js: OK
 es1/Function.js: OK
 es1/Function.length.js: Function.length failed ; failed
 es1/Function.prototype.constructor.js: Function.prototype.constructor failed ; function instance constructor failed ; failed
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
-es1/Math.E.js: failed
-es1/Math.LN2.js: failed
-es1/Math.LN10.js: failed
-es1/Math.LOG2E.js: failed
-es1/Math.LOG10E.js: failed
-es1/Math.PI.js: failed
-es1/Math.SQRT1_2.js: failed
-es1/Math.SQRT2.js: failed
-es1/Math.abs.js: failed
-es1/Math.acos.js: failed
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
 es1/Math.asin.js: OK
-es1/Math.atan2.js: failed
+es1/Math.atan2.js: OK
 es1/Math.atan.js: OK
-es1/Math.ceil.js: failed
-es1/Math.cos.js: failed
-es1/Math.exp.js: failed
-es1/Math.floor.js: failed
-es1/Math.log.js: failed
-es1/Math.max.js: failed
-es1/Math.min.js: failed
-es1/Math.pow.js: failed
-es1/Math.random.js: failed
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
 es1/Math.round.js: OK
-es1/Math.sin.js: failed
+es1/Math.sin.js: OK
 es1/Math.sqrt.js: failed
-es1/Math.tan.js: failed
+es1/Math.tan.js: OK
 es1/Number.MAX_VALUE.js: OK
 es1/Number.MIN_VALUE.js: OK
 es1/Number.NEGATIVE_INFINITY.js: OK
@@ -154,7 +154,7 @@ es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
 es1/global.isNaN.js: OK
-es1/global.parseFloat.js: failed
+es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
 es1/global.parseInt.radix.js: OK
@@ -224,12 +224,12 @@ es3/Error.prototype.name.js: failed
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: max() with 0 args failed ; max() with 1 arg failed ; max() with 2 args failed ; max() with 3 args failed ; max() with NaN failed ; failed
-es3/Math.min.variadic.js: min() with 0 args failed ; min() with 1 arg failed ; min() with 2 args failed ; min() with 3 args failed ; min() with NaN failed ; failed
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws ; Infinity.toExponential(Infinity) throws ; failed
 es3/Number.prototype.toExponential.js: Uncaught Error: Function "toExponential" not found!  Uncaught undefined
 es3/Number.prototype.toExponential.rounding.js: Uncaught Error: Function "toExponential" not found!  Uncaught undefined
-es3/Number.prototype.toExponential.throws-infinity.js: Uncaught ReferenceError: "RangeError" is not defined  Uncaught undefined
+es3/Number.prototype.toExponential.throws-infinity.js: Uncaught ReferenceError: "RangeError" is not defined  if (e instanceof RangeError) {  Uncaught undefined
 es3/Number.prototype.toFixed.js: rounding failed ; failed
 es3/Number.prototype.toLocaleString.js: Uncaught Error: Function "toLocaleString" not found!  Uncaught undefined
 es3/Number.prototype.toPrecision.js: Uncaught Error: Function "toPrecision" not found!  Uncaught undefined
@@ -271,8 +271,8 @@ es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: constructor failed ; Uncaught ReferenceError: "EvalError" is not defined  Uncaught undefined
-es3/global.RangeError.js: constructor failed ; Uncaught ReferenceError: "RangeError" is not defined  Uncaught undefined
+es3/global.EvalError.js: constructor failed ; Uncaught ReferenceError: "EvalError" is not defined  if (EvalError.prototype.name == "EvalError") {  Uncaught undefined
+es3/global.RangeError.js: constructor failed ; Uncaught ReferenceError: "RangeError" is not defined  if (RangeError.prototype.name == "RangeError") {  Uncaught undefined
 es3/global.RangeError.thrown.js: wrong exception for new Array with negative length ; wrong exception for new Array with non-integer length ; wrong exception for new Array with length >= 2^32 ; wrong exception for negative array length ; wrong exception for array length exceeding 2^32-1 ; failed
 es3/global.ReferenceError.js: name failed ; failed
 es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; wrong exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
@@ -280,7 +280,7 @@ es3/global.SyntaxError.js: name failed ; failed
 es3/global.SyntaxError.thrown.js: wrong exception type ; wrong exception for unclosed string ; wrong exception for invalid token ; failed
 es3/global.TypeError.js: name failed ; failed
 es3/global.TypeError.thrown.js: wrong exception for instanceof number ; wrong exception for instanceof non-callable ; no exception for in number ; no exception for in null ; wrong exception for new number ; wrong exception for calling number ; no exception for Function.prototype.toString on non-function ; wrong exception for Funct
-es3/global.URIError.js: constructor failed ; Uncaught ReferenceError: "URIError" is not defined  Uncaught undefined
+es3/global.URIError.js: constructor failed ; Uncaught ReferenceError: "URIError" is not defined  if (URIError.prototype.name == "URIError") {  Uncaught undefined
 es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape ; wrong exception for decodeURI invalid hex ; wrong exception for decodeURI invalid UTF-8 ; no exception for decodeURIComponent incomplete escape ; no exception for decodeURIComponent invalid hex ; wrong exception for encodeURI lone low surrogate ; wro
 es3/global.decodeURIComponent.js: decode UTF-8 failed ; failed
 es3/global.decodeURI.js: Uncaught ReferenceError: "decodeURI" is not defined  Uncaught undefined
@@ -357,7 +357,7 @@ es5/Array.prototype.reduce.js: Array.prototype.reduce not a function ; failed
 es5/Array.prototype.some.js: Array.prototype.some not a function ; failed
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
-es5/Date.now.js: Date.now() does not match new Date().getTime() ; failed
+es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function ; Uncaught Error: Function "UTC" not found!  Uncaught undefined
 es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; Uncaught Error: Can't read property 'call' of undefined  Uncaught undefined
 es5/Function.prototype-not-enumerable.js: Uncaught TypeError: Function code must be a String, got 'undefined'  Uncaught undefined

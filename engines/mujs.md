@@ -31,7 +31,7 @@ Embeddable JavaScript engine from MuPDF.
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: undefined is not callable
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: 'escape' is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: 'unescape' is not defined
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: es1/annex-b.literals.octal.js:14: number with leading zero
+<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: annex-b.literals.octal.js:14: number with leading zeroundefined
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
 </pre></li>
 <li>ES3: 89%<pre>
@@ -50,12 +50,12 @@ Embeddable JavaScript engine from MuPDF.
 <a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI invalid UTF-8; no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
 <a href="../conformance/es3/regex.disjunction.js">regex.disjunction.js</a>: complex disjunction failed
 <a href="../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: spec example failed
-<a href="../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: es3/source.whitespace.unicode.js:8: unexpected character: \u2000
+<a href="../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: source.whitespace.unicode.js:8: unexpected character: \u2000undefined
 </pre></li>
 <li>ES5: 86%<pre>
 <a href="../conformance/es5/Object.getOwnPropertyDescriptor.js">Object.getOwnPropertyDescriptor.js</a>: inherited property failed
 <a href="../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
-<a href="../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: es5/source.zero-width-chars.js:11: unexpected character: \u200C
+<a href="../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: source.zero-width-chars.js:11: unexpected character: \u200Cundefined
 <a href="../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: failed
 <a href="../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed

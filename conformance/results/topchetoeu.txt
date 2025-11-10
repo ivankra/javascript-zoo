@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "dist_size": 6185283, "engine": "topchetoeu", "repository": "https://github.com/TopchetoEU/jscript.git", "revision": "262e2679c3175689cc6587c14da1ff1bccd133a2", "revision_date": "2024-12-31"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: Uncaught Error: Value is not a function
+es1/Array.prototype.reverse.js: Uncaught Error: Value is not a function
+es1/Array.prototype.sort.generic.js: Uncaught Error: Value is not a function Internal error ocurred: java.lang.ClassCastException: class me.topchetoeu.jscript.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.jscript.runtime.values.objects.ArrayValue (me.topchetoeu.jscript.runtime.values.objects.ObjectValue and m
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: Uncaught Error: Value is not a function numeric array toString failed 	; string array toString failed 	; empty array toString failed 	; failed 	
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: Uncaught Error: Value is not a function failed 	
+es1/Date.js: Uncaught Error: Value is not a function typeof Date() != 'string' 	; Uncaught Error: Value is not a function
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getDay.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getFullYear.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getHours.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getMilliseconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getMinutes.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getMonth.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getSeconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getTimezoneOffset.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getTime.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCDate.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCDay.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCFullYear.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCHours.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCMilliseconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCMinutes.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCMonth.js: Uncaught Error: Value is not a function
+es1/Date.prototype.getUTCSeconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setDate.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setFullYear.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setHours.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setMilliseconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setMinutes.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setMonth.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setSeconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setTime.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCDate.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCFullYear.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCHours.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCMilliseconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCMinutes.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCMonth.js: Uncaught Error: Value is not a function
+es1/Date.prototype.setUTCSeconds.js: Uncaught Error: Value is not a function
+es1/Date.prototype.toLocaleString.js: Uncaught Error: Value is not a function
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: Uncaught Error: Value is not a function
+es1/Date.prototype.valueOf.js: Uncaught Error: Value is not a function failed 	
+es1/Function.js: OK
+es1/Function.length.js: Uncaught Error: Value is not a function Function.length failed 	; failed 	
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: Uncaught Error: Value is not a function failed 	
+es1/Math.LN2.js: Uncaught Error: Value is not a function failed 	
+es1/Math.LN10.js: Uncaught Error: Value is not a function failed 	
+es1/Math.LOG2E.js: Uncaught Error: Value is not a function failed 	
+es1/Math.LOG10E.js: Uncaught Error: Value is not a function failed 	
+es1/Math.PI.js: Uncaught Error: Value is not a function failed 	
+es1/Math.SQRT1_2.js: Uncaught Error: Value is not a function failed 	
+es1/Math.SQRT2.js: Uncaught Error: Value is not a function failed 	
+es1/Math.abs.js: OK
+es1/Math.acos.js: Uncaught Error: Value is not a function
+es1/Math.asin.js: Uncaught Error: Value is not a function
+es1/Math.atan2.js: Uncaught Error: Value is not a function
+es1/Math.atan.js: Uncaught Error: Value is not a function
+es1/Math.ceil.js: OK
+es1/Math.cos.js: Uncaught Error: Value is not a function
+es1/Math.exp.js: Uncaught Error: Value is not a function
+es1/Math.floor.js: OK
+es1/Math.log.js: Uncaught Error: Value is not a function
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: Uncaught Error: Value is not a function
+es1/Math.round.js: Uncaught Error: Value is not a function
+es1/Math.sin.js: Uncaught Error: Value is not a function
+es1/Math.sqrt.js: Uncaught Error: Value is not a function
+es1/Math.tan.js: Uncaught Error: Value is not a function
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: Uncaught Error: Value is not a function failed 	
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: Uncaught Error: Value is not a function failed 	
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: Uncaught Error: Value is not a function Uncaught Error: TypeError is not defined
+es1/String.js: OK
+es1/String.length.js: Uncaught Error: Value is not a function String object length failed 	; failed 	
+es1/String.prototype.charAt.js: Uncaught Error: Value is not a function charAt out of bounds failed 	; charAt negative failed 	; failed 	
+es1/String.prototype.charCodeAt.js: Uncaught Error: Value is not a function charCodeAt out of bounds NaN failed 	; failed 	
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: Uncaught Error: Value is not a function lastIndexOf('o') failed 	; lastIndexOf('l') failed 	; failed 	
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: Uncaught Error: Value is not a function substring swap failed 	; failed 	
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: Uncaught Error: Value is not a function
+es1/annex-b.Date.prototype.setYear.js: Uncaught Error: Value is not a function
+es1/annex-b.Date.prototype.toGMTString.js: Uncaught Error: Value is not a function
+es1/annex-b.global.escape.js: Uncaught Error: Value is not a function Uncaught Error: escape is not defined
+es1/annex-b.global.unescape.js: Uncaught Error: Value is not a function Uncaught Error: unescape is not defined
+es1/annex-b.literals.octal.js: Uncaught Error: Value is not a function Uncaught Error: Decimals with leading zeroes are not allowed
+es1/annex-b.literals.string.octal.js: Uncaught Error: Value is not a function Uncaught Error: Octal escape sequences are not allowed
+es1/arguments.callee.js: Uncaught Error: Value is not a function
+es1/arguments.js: Uncaught Error: Value is not a function Uncaught Error: Couldn't set variable ok
+es1/asi.eval.js: Uncaught Error: Value is not a function Uncaught Error: eval is not defined
+es1/asi.js: Uncaught Error: Value is not a function failed: a<LF> ++<LF> b 	; Uncaught Error: Can't set member '0'
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: Uncaught Error: Value is not a function Uncaught Error: Couldn't set variable p
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: timeout
+es1/conversions.ToInt32.js: timeout
+es1/conversions.ToInteger.js: timeout
+es1/conversions.ToNumber.js: Uncaught Error: Value is not a function null failed 	; '+789' failed 	; 'abc' failed 	; failed 	
+es1/conversions.ToObject.js: timeout
+es1/conversions.ToString.js: timeout
+es1/conversions.ToUint32.js: timeout
+es1/conversions.js: timeout
+es1/equals.js: timeout
+es1/eval.js: timeout
+es1/for-in.js: timeout
+es1/for.js: timeout
+es1/function.js: timeout
+es1/global.Infinity.js: timeout
+es1/global.NaN.js: timeout
+es1/global.isFinite.js: timeout
+es1/global.isNaN.js: Uncaught Error: Value is not a function Uncaught Error: isNaN is not defined
+es1/global.parseFloat.js: timeout
+es1/global.parseInt.hex.js: Uncaught Error: Value is not a function failed 	
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: timeout
+es1/literals.hex.js: timeout
+es1/literals.string.escapes.js: timeout
+es1/literals.string.hex.js: timeout
+es1/literals.string.js: timeout
+es1/literals.string.unicode.js: timeout
+es1/logical.js: timeout
+es1/new.typeof.js: timeout
+es1/numbers.double.js: timeout
+es1/numbers.fmod.js: timeout
+es1/numbers.inf.js: timeout
+es1/numbers.int.js: timeout
+es1/numbers.nan.js: timeout
+es1/postfix.decrement.js: timeout
+es1/postfix.increment.js: timeout
+es1/prefix.js: timeout
+es1/relational.js: timeout
+es1/return.js: timeout
+es1/return.typeof.js: timeout
+es1/this.js: timeout
+es1/typeof.js: timeout
+es1/typeof.null.js: timeout
+es1/typeof.undeclared.js: timeout
+es1/types.js: timeout
+es1/unary.decrement.js: timeout
+es1/unary.delete.js: timeout
+es1/unary.delete.var.js: Uncaught Error: Value is not a function Uncaught Error: A variable may not be deleted
+es1/unary.increment.js: timeout
+es1/unary.minus.js: timeout
+es1/unary.not.js: timeout
+es1/unary.plus.js: timeout
+es1/unary.plus.str.js: timeout
+es1/unary.tilde.js: timeout
+es1/var.js: timeout
+es1/var.typeof.js: timeout
+es1/void.js: OK
+es1/void.typeof.js: timeout
+es1/while.js: timeout
+es1/with.js: timeout
+es3/Array.prototype.concat.js: timeout
+es3/Array.prototype.pop.generic.js: timeout
+es3/Array.prototype.pop.js: timeout
+es3/Array.prototype.push.generic.js: timeout
+es3/Array.prototype.push.js: timeout
+es3/Array.prototype.shift.generic.js: timeout
+es3/Array.prototype.shift.js: timeout
+es3/Array.prototype.slice.generic.js: timeout
+es3/Array.prototype.slice.js: timeout
+es3/Array.prototype.splice.generic.js: Uncaught Error: Value is not a function insert on object failed 	; failed 	
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: timeout
+es3/Array.prototype.unshift.generic.js: Uncaught Error: Value is not a function unshift on object failed 	; unshift multiple on object failed 	; unshift on empty object failed 	; failed 	
+es3/Array.prototype.unshift.js: Uncaught Error: Value is not a function unshift single element failed 	; unshift multiple elements failed 	; unshift with no arguments failed 	; failed 	
+es3/Array.prototype.unshift.returns-new-length.js: Uncaught Error: Value is not a function multiple elements unshift failed 	; no arguments unshift failed 	; failed 	
+es3/Date.prototype.toDateString.js: Uncaught Error: Value is not a function
+es3/Date.prototype.toLocaleDateString.js: Uncaught Error: Value is not a function
+es3/Date.prototype.toLocaleString.js: Uncaught Error: Value is not a function
+es3/Date.prototype.toLocaleTimeString.js: Uncaught Error: Value is not a function
+es3/Date.prototype.toTimeString.js: Uncaught Error: Value is not a function
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: Uncaught Error: Value is not a function Internal error ocurred: java.lang.ClassCastException: class me.topchetoeu.jscript.runtime.values.primitives.VoidValue cannot be cast to class me.topchetoeu.jscript.runtime.values.objects.ArrayValue (me.topchetoeu.jscript.runtime.values.primitives.VoidValue and
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: Uncaught Error: Value is not a function Uncaught Error: isNaN is not defined
+es3/Math.min.variadic.js: Uncaught Error: Value is not a function Uncaught Error: isNaN is not defined
+es3/Number.prototype.toExponential.edge-cases.js: timeout
+es3/Number.prototype.toExponential.js: Uncaught Error: Value is not a function
+es3/Number.prototype.toExponential.rounding.js: Uncaught Error: Value is not a function
+es3/Number.prototype.toExponential.throws-infinity.js: timeout
+es3/Number.prototype.toFixed.js: Uncaught Error: Value is not a function
+es3/Number.prototype.toLocaleString.js: timeout
+es3/Number.prototype.toPrecision.js: timeout
+es3/Object.prototype.hasOwnProperty.js: timeout
+es3/Object.prototype.isPrototypeOf.js: Uncaught Error: Value is not a function
+es3/Object.prototype.propertyIsEnumerable.js: Uncaught Error: Value is not a function
+es3/Object.prototype.toLocaleString.js: Uncaught Error: Value is not a function
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: Uncaught Error: Value is not a function RegExp passthrough failed 	; failed 	
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: Uncaught Error: Value is not a function format failed 	; failed 	
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: Uncaught Error: Value is not a function Uncaught Error: Cannot read properties of undefined (reading 'call')
+es3/String.prototype.concat.js: Uncaught Error: Value is not a function
+es3/String.prototype.localeCompare.js: Uncaught Error: Value is not a function
+es3/String.prototype.match.generic.js: Uncaught Error: Value is not a function Uncaught Error: Cannot read properties of undefined (reading 'call')
+es3/String.prototype.match.js: Uncaught Error: Value is not a function
+es3/String.prototype.replace.capture.js: Uncaught Error: Value is not a function $1 failed 	; undefined capture failed 	; spec example failed 	; $nn 10 captures failed 	; $nn reverse order failed 	; failed 	
+es3/String.prototype.replace.extra.js: Uncaught Error: Value is not a function $` failed 	; $' failed 	; combined replacements failed 	; failed 	
+es3/String.prototype.replace.generic.js: Uncaught Error: Value is not a function Uncaught Error: TypeError is not defined
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: Uncaught Error: Value is not a function no match should return original failed 	; failed 	
+es3/String.prototype.search.generic.js: Uncaught Error: Value is not a function Uncaught Error: Cannot read properties of undefined (reading 'call')
+es3/String.prototype.search.js: Uncaught Error: Value is not a function
+es3/String.prototype.search.str.js: Uncaught Error: Value is not a function
+es3/String.prototype.slice.generic.js: Uncaught Error: Value is not a function Uncaught Error: TypeError is not defined
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: Uncaught Error: Value is not a function '0'.split(undefined, 0).length !== 0 	; '.'.split(/(.?)(.?)/).length !== 4 	; ''.split(/.?/).length !== 0 	; failed 	
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: Uncaught Error: Value is not a function split with capturing group failed 	; failed 	
+es3/String.prototype.toLocaleLowerCase.js: Uncaught Error: Value is not a function
+es3/String.prototype.toLocaleUpperCase.js: Uncaught Error: Value is not a function
+es3/annex-b.String.prototype.substr.js: Uncaught Error: Value is not a function negative start failed 	; negative start with length failed 	; failed 	
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: Uncaught Error: Value is not a function constructor failed 	; Uncaught Error: EvalError is not defined at file://global.EvalError.js:14:33 in file://global.EvalError.js
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: Uncaught Error: Value is not a function constructor failed 	; Uncaught Error: ReferenceError is not defined at file://global.ReferenceError.js:14:38 in file://global.ReferenceError.js
+es3/global.ReferenceError.thrown.js: Uncaught Error: Value is not a function wrong exception for undeclared variable 	; wrong exception for undeclared function 	; wrong exception for undeclared in expression 	; wrong exception for property access on undeclared 	; failed 	
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: Uncaught Error: Value is not a function no exception for instanceof number 	; no exception for instanceof non-callable 	; no exception for in number 	; wrong exception for in null 	; no exception for Function.prototype.toString on non-function 	; file://global.TypeError.thrown.js:123:32 Internal err
+es3/global.URIError.js: Uncaught Error: Value is not a function constructor failed 	; Uncaught Error: URIError is not defined at file://global.URIError.js:14:32 in file://global.URIError.js
+es3/global.URIError.thrown.js: Uncaught Error: Value is not a function wrong exception for decodeURI incomplete escape 	; wrong exception for decodeURI invalid hex 	; wrong exception for decodeURI invalid UTF-8 	; wrong exception for decodeURIComponent incomplete escape 	; wrong exception for decodeURIComponent invalid hex 	; no 
+es3/global.decodeURIComponent.js: Uncaught Error: Value is not a function Uncaught Error: decodeURIComponent is not defined
+es3/global.decodeURI.js: Uncaught Error: Value is not a function Uncaught Error: decodeURI is not defined
+es3/global.encodeURIComponent.js: Uncaught Error: Value is not a function encode space failed 	; encode UTF-8 failed 	; encode # failed 	; encode reserved chars failed 	; failed 	
+es3/global.encodeURI.js: Uncaught Error: Value is not a function encode plain URI failed 	; encode space failed 	; encode UTF-8 failed 	; # not encoded failed 	; reserved URI characters preserved failed 	; failed 	
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Uncaught Error: Value is not a function Uncaught Error: Expected a variable name
+es3/instanceof.js: Uncaught Error: Value is not a function number instanceof Object failed 	; string instanceof Object failed 	; custom object instanceof Object failed 	; failed 	
+es3/in.js: OK
+es3/labelled.break.js: Uncaught Error: Value is not a function Uncaught Error: Expected an end of statement
+es3/labelled.continue.js: Uncaught Error: Value is not a function labelled continue to outer loop failed 	; failed 	
+es3/labelled.statements.js: Uncaught Error: Value is not a function Uncaught Error: Expected an end of statement
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: Uncaught Error: Value is not a function Uncaught Error: Expected a member in object literal
+es3/literals.regex.ambiguous.js: Uncaught Error: Value is not a function Uncaught Error: Couldn't set variable re2
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: Uncaught Error: Value is not a function failed 	
+es3/nested-functions.eval.js: Uncaught Error: Value is not a function Uncaught Error: eval is not defined
+es3/nested-functions.js: OK
+es3/regex.backref.js: Uncaught Error: Value is not a function backref for a group that hasn't captured failed 	; failed 	
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: Uncaught Error: Value is not a function Uncaught Error: (regex):2: Illegal/unsupported escape sequence
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: Uncaught Error: Value is not a function \v failed 	; failed 	
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: Uncaught Error: Value is not a function Uncaught Error: (regex):2: Illegal octal escape sequence
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: Uncaught Error: Value is not a function
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: Uncaught Error: Value is not a function Uncaught Error: Cannot read properties of null (reading '0')
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: Uncaught Error: Value is not a function failed 	
+es3/source.whitespace.js: Uncaught Error: Value is not a function Uncaught Error: Expected a variable name
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: Uncaught Error: Value is not a function negative fromIndex failed 	; failed 	
+es5/Array.prototype.lastIndexOf.js: Uncaught Error: Value is not a function fromIndex failed 	; negative fromIndex below zero failed 	; failed 	
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: Uncaught Error: Value is not a function Array.prototype.reduceRight not a function 	; Uncaught Error: Value is not a function
+es5/Array.prototype.reduce.js: Uncaught Error: Value is not a function Array.prototype.reduce not a function 	; Uncaught Error: Value is not a function
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: Uncaught Error: Value is not a function file://Array.prototype.sort.TypeError.js:17:11 Internal error ocurred: java.lang.ClassCastException: class me.topchetoeu.jscript.runtime.values.primitives.BoolValue cannot be cast to class me.topchetoeu.jscript.runtime.values.functions.FunctionValue (me.topche
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: Uncaught Error: Value is not a function
+es5/Date.prototype.toISOString.js: Uncaught Error: Value is not a function Date.prototype.toISOString not a function 	; Uncaught Error: Value is not a function
+es5/Date.prototype.toJSON.js: Uncaught Error: Value is not a function Date.prototype.toJSON not a function 	; Uncaught Error: Cannot read properties of undefined (reading 'call')
+es5/Function.prototype-not-enumerable.js: Uncaught Error: Value is not a function
+es5/Function.prototype.apply.array-like.js: Uncaught Error: Value is not a function Internal error ocurred: java.lang.ClassCastException: class me.topchetoeu.jscript.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.jscript.runtime.values.objects.ArrayValue (me.topchetoeu.jscript.runtime.values.objects.ObjectValue and m
+es5/Function.prototype.bind.js: Uncaught Error: Value is not a function length property incorrect 	; Uncaught Error: Cannot read properties of null (reading 'value')
+es5/JSON.js: OK
+es5/JSON.parse.js: OK
+es5/JSON.parse.reviver.js: Uncaught Error: Value is not a function failed to apply reviver function 	; failed to delete property for which reviver returned undefined 	; failed 	
+es5/JSON.stringify.js: Uncaught Error: Value is not a function cyclic structure does not throw TypeError 	; failed to drop undefined/function values 	; undefined/function values in array not converted to null 	; NaN and Infinity not converted null 	; didn't call user-provided toJSON() method 	; escape sequences failed 	; 
+es5/JSON.stringify.replacer.js: Uncaught Error: Value is not a function replacer function failed 	; replacer array failed 	; failed 	
+es5/JSON.stringify.space.js: Uncaught Error: Value is not a function space parameter failed 	; failed 	
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: Uncaught Error: Value is not a function Uncaught Error: Can't set member 'a'
+es5/Object.defineProperty.js: Uncaught Error: Value is not a function Uncaught Error: Can't set member 'y'
+es5/Object.freeze.js: Uncaught Error: Value is not a function prevented modification failed 	; prevented addition failed 	; Uncaught Error: Can't delete member '"c"'
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: Uncaught Error: Value is not a function Object.getOwnPropertyNames not a function 	; Uncaught Error: Value is not a function
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: Uncaught Error: Value is not a function Object.isExtensible not a function 	; Uncaught Error: Value is not a function
+es5/Object.isFrozen.js: Uncaught Error: Value is not a function Object.isFrozen not a function 	; Uncaught Error: Value is not a function
+es5/Object.isSealed.js: Uncaught Error: Value is not a function Object.isSealed not a function 	; Uncaught Error: Value is not a function
+es5/Object.keys.js: Uncaught Error: Value is not a function only enumerable properties failed 	; failed 	
+es5/Object.preventExtensions.js: Uncaught Error: Value is not a function prevented addition failed 	; Uncaught Error: Can't delete member '"b"'
+es5/Object.property-shadowing.js: Uncaught Error: Value is not a function failed: non-enumerable did not shadow enumerable 	
+es5/Object.seal.js: Uncaught Error: Value is not a function prevented property addition failed 	; Uncaught Error: Can't delete member '"b"'
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: Uncaught Error: Value is not a function failed 	
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: Uncaught Error: Value is not a function Infinity is not a number after assignment 	; Infinity not positive infinity after assignment 	; failed 	
+es5/global.NaN.immutable.js: Uncaught Error: Value is not a function NaN is not a number after assignment 	; NaN === NaN after assignment 	; Uncaught Error: Value is not a function
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: Uncaught Error: Value is not a function Uncaught Error: Couldn't set variable undefined
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: Uncaught Error: Value is not a function Uncaught Error: Couldn't set variable abstract
+es5/source.whitespace.bom.js: Uncaught Error: Value is not a function Uncaught Error: Unexpected syntax
+es5/source.zero-width-chars.js: Uncaught Error: Value is not a function Uncaught Error: Expected a comma or end of statement
+es5/strict.eval-cannot-create-bindings.js: Uncaught Error: Value is not a function Uncaught Error: ReferenceError is not defined at file://strict.eval-cannot-create-bindings.js:22:25 at file://strict.eval-cannot-create-bindings.js:24:3 in file://strict.eval-cannot-create-bindings.js Caused by Error: eval is not defined at file://strict.eval-
+es5/strict.function-expr-with-matching-name.js: Uncaught Error: Value is not a function failed 	
+es5/strict.js: Uncaught Error: Value is not a function Uncaught Error: ReferenceError is not defined Caused by Error: Couldn't set variable testVariable
+es5/strict.no-arguments-callee.js: Uncaught Error: Value is not a function failed 	
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: Uncaught Error: Value is not a function failed 	
+es5/strict.no-assignment-to-unresolvable.js: Uncaught Error: Value is not a function Uncaught Error: ReferenceError is not defined Caused by Error: eval is not defined
+es5/strict.no-delete-bindings.js: OK
+es5/strict.no-delete-non-configurable.js: Uncaught Error: Value is not a function failed 	
+es5/strict.no-duplicate-parameters.js: Uncaught Error: Value is not a function failed 	
+es5/strict.no-eval-or-arguments-assignment.js: OK
+es5/strict.no-eval-or-arguments-bindings.js: OK
+es5/strict.no-function-caller-or-arguments.js: Uncaught Error: Value is not a function failed 	
+es5/strict.no-octal-literals.js: OK
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: OK
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: Uncaught Error: Value is not a function Uncaught Error: Cannot read properties of undefined (reading 'a')

@@ -40,8 +40,8 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Object has no member 'anchor'
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: Object has no member 'anchor'
 <a href="../conformance/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: g is not defined
-<a href="../conformance/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement. at kangax-es6/annex-b.function.labeled.js:12:10
-<a href="../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: kangax-es6/annex-b.html-comments.js: Line 9:5 Unexpected token &gt; (and 2 more errors)
+<a href="../conformance/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: In non-strict mode code, functions can only be declared at top level, inside a block, or as the body of an if statement. at annex-b.function.labeled.js:12:10
+<a href="../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: annex-b.html-comments.js: Line 9:5 Unexpected token &gt; (and 2 more errors)
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.__proto__.literals.not-computed.js">annex-b.__proto__.literals.not-computed.js</a>: failed
 <a href="../conformance/kangax-es6/arrow.lexical-arguments.js">arrow.lexical-arguments.js</a>: failed
@@ -83,8 +83,8 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: SyntaxError: kangax-es2018/async-iterators.for-await-of.js: Line 60:9 Unexpected token await (and 4 more errors)
-<a href="../conformance/kangax-es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: Async generators are not supported yet at kangax-es2018/async-iterators.generators.js:44:3
+<a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: SyntaxError: async-iterators.for-await-of.js: Line 60:9 Unexpected token await (and 4 more errors)
+<a href="../conformance/kangax-es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: Async generators are not supported yet at async-iterators.generators.js:44:3
 <a href="../conformance/kangax-es2018/regex.named-capture-groups.js">regex.named-capture-groups.js</a>: TypeError: Cannot read property 'year' of undefined
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.js">regex.unicode-property-escapes.js</a>: failed
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-11.js">regex.unicode-property-escapes.unicode-11.js</a>: failed

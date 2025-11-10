@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "144cc3be3405e3d3d6bf7708f8fb466ba5723e3bfe36cfb636e502eca49d1573", "binary_size": 24519088, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "868d13ff23ce5436363c8f71cffc829206be6783", "revision_date": "2025-10-30", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "73692f54756c271239d56b4568fd73ef48b0fa9a8734b07e4d91e286ecfcbdf8", "binary_size": 24519088, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "f6601a049c322044b07825613f6768e82c0fca58", "revision_date": "2025-11-09", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1437,9 +1437,9 @@ kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:94:34)
-kangax-es2025/regex.pattern-modifiers.i.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid token at named capture group identifier at line 9, col 17 (native at /src/core/engine/src/script.rs:94:34)
-kangax-es2025/regex.pattern-modifiers.m.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid token at named capture group identifier at line 9, col 17 (native at /src/core/engine/src/script.rs:94:34)
-kangax-es2025/regex.pattern-modifiers.s.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid token at named capture group identifier at line 9, col 17 (native at /src/core/engine/src/script.rs:94:34)
+kangax-es2025/regex.pattern-modifiers.i.js: OK
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK

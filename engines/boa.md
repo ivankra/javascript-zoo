@@ -31,7 +31,7 @@ Embeddable Javascript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 87%, Next 0%, Intl 89%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 89%, Next 0%, Intl 89%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8 (native at /src/core/engine/src/script.rs:94:34)
 <a href="../conformance/kangax-es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: failed
@@ -65,7 +65,25 @@ Embeddable Javascript engine written in Rust.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 32%<br>
+<li>ES2025: 53%<pre>
+<a href="../conformance/kangax-es2025/Iterator.extends.js">Iterator.extends.js</a>: ReferenceError: Iterator is not defined
+<a href="../conformance/kangax-es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: Iterator is not defined
+<a href="../conformance/kangax-es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
+<a href="../conformance/kangax-es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
+<a href="../conformance/kangax-es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: ReferenceError: Iterator is not defined
+<a href="../conformance/kangax-es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: not a callable function
+<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:94:34)
+</pre></li>
 <li>Next: 0%<br>
 <li>Intl: 89%<pre>
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
