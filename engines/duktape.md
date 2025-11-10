@@ -2,11 +2,12 @@
 
 Embeddable Javascript engine with a focus on portability and compact footprint.
 
+* Homepage:    https://duktape.org/
 * Repository:  https://github.com/svaarala/duktape.git <span class="shields"><img src="https://img.shields.io/github/stars/svaarala/duktape?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/svaarala/duktape?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         72815 (`cloc --exclude-ext=txt src-input`)
 * Language:    C
 * License:     MIT
-* Standard:    ES5
+* Standard:    ES5 (with some ES6 features)
 * Years:       2013-
 * Interpreter: register-based VM
 
