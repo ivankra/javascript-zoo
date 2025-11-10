@@ -674,6 +674,9 @@ CONFIGS = {
       benchmark_suite=['richards.ucode.js'],    # own javascript dialect
       polyfills=[],
   ),
+  'yavashark': Config(
+      flags=['-i'],
+  ),
 }
 
 def pick_config(args, binary):

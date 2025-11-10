@@ -96,6 +96,8 @@ case "$ENGINE_NAME" in
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
   nova)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}" eval);;
+  yavashark)
+    ENGINE_CMD+=("-i");;
   dmdscript|dscriptcpp)
     export SED_PRINT=println
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh"  "${ENGINE_CMD[@]}");;
