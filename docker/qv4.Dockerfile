@@ -1,7 +1,8 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-ARG REPO=https://code.qt.io/qt/qt5.git
+#ARG REPO=https://code.qt.io/qt/qt5.git  # flaky
+ARG REPO=https://github.com/qt/qt5.git
 ARG REV=dev
 
 WORKDIR /src
