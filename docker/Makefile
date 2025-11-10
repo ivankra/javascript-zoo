@@ -11,7 +11,7 @@ DOCKER_RUN   := $(DOCKER) run --platform linux/$(DOCKER_ARCH)
 IID_DIR  := ../.cache/iid
 DIST_DIR := ../dist/$(DOCKER_ARCH)
 
-FILE_TARGETS := $(filter-out base%, $(patsubst %.Dockerfile,%,$(wildcard [a-z]*.Dockerfile)))
+FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z]*.Dockerfile)))
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 

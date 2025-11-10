@@ -46,7 +46,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
     locale-gen
 
-ENV LC_ALL=en_US.UTF-8 SHELL=/bin/bash
+ENV LC_ALL=en_US.UTF-8 \
+    SHELL=/bin/bash \
+    PATH=/bench:/opt/node/bin:$PATH
 
 # Install latest node and npm (https://nodejs.org/en/download)
 RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
@@ -56,26 +58,6 @@ RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
     bash -c 'source /opt/nvm/nvm.sh && nvm install node' && \
     ln -s /opt/nvm/versions/node/*/ /opt/node
 
-ENV PATH=/bench:/opt/node/bin:$PATH
-
 # Install other popular runtimes from npm
 RUN npm install -g bun deno && \
     (echo '' | bun repl >/dev/null 2>&1 || true)
-
-# -----------------------------------------------------------------------------
-# Dockerhub version
-
-FROM jsz-runtime AS jsz-hub
-
-ARG TARGETARCH
-
-ADD dist/$TARGETARCH.tar /dist
-COPY bench /bench
-COPY docker/hub.motd /etc/motd
-
-RUN rm -rf /bench/octane /bench/__pycache__ /bench/data.py && \
-    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:$PATH; cat /etc/motd' >>/etc/profile && \
-    sed -Ei "s/(build .*)/\\1 - $TARGETARCH/" /etc/motd
-
-WORKDIR /dist
-CMD /bin/bash --login -i

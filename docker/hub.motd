@@ -1,5 +1,5 @@
 JavaScript engines zoo
-GitHub: https://github.com/ivankra/javascript-zoo
+https://github.com/ivankra/javascript-zoo
 
   * /dist: pre-built JavaScript shell binaries
     Most can be run directly as REPL or passed a script to run

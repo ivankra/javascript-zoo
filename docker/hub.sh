@@ -9,25 +9,35 @@ DOCKER_ARCH="$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')"
 ARCHS="arm64 amd64"
 ARCHS=$(echo "$ARCHS" | sed -e "s/\b$DOCKER_ARCH\b//"; echo $DOCKER_ARCH)
 
-set -x
+if [[ -z "$TAG" ]]; then
+  TAG=$(date +%Y%m%d)
+  echo "Using tag $TAG"
+fi
 
-(cd ../bench; make clean && make)
+set -x -e -o pipefail
 
 for arch in $ARCHS; do
-  (cd ../dist/$arch; tar -c *) >../dist/$arch.tar
+  (cd ../dist; tar -c "$arch") >"../dist/$arch.tar"
 
   $DOCKER build \
       -f base-runtime.Dockerfile \
-      -t "jsz-hub:$arch" \
+      -t "jsz-runtime:$arch" \
       --build-arg BASE=debian:stable \
       --platform "linux/$arch" \
-      --target jsz-hub \
+      .
+
+  $DOCKER build \
+      -f hub.Dockerfile \
+      -t "jsz-hub:$arch" \
+      --build-arg "BASE=jsz-runtime:$arch" \
+      --build-arg "TAG=$TAG" \
+      --platform "linux/$arch" \
       ..
 done
 
 $DOCKER login docker.io
 
-for tag in $(date +%Y%m%d) latest; do
+for tag in $TAG latest; do
   for arch in $ARCHS; do
     $DOCKER push "localhost/jsz-hub:$arch" "$PUSHDEST:$tag-$arch"
   done
