@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "binary_sha256": "5800c3dc13cb0626d5097008bcdbc4b6f50a85713af3a2c280c2e96b52c14a7c", "binary_size": 67872, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-elk", "repository": "https://github.com/cesanta/elk.git", "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd", "revision_date": "2025-06-05", "version": "2.2.0-30-ga9bb856"}
+es1/Array.js: Error: ERROR: 'var' not implemented
+es1/Array.length.assignment.js: Error: ERROR: 'var' not implemented
+es1/Array.length.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.join.generic.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.join.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.reverse.generic.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.reverse.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.sort.generic.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.sort.js: Error: ERROR: 'var' not implemented
+es1/Array.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Boolean.js: Error: ERROR: 'var' not implemented
+es1/Boolean.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/Boolean.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Boolean.prototype.valueOf.js: Error: ERROR: 'var' not implemented
+es1/Date.diff.js: Error: ERROR: 'var' not implemented
+es1/Date.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.constructor.js: Error: ERROR: parse error
+es1/Date.prototype.getDate.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getDay.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getFullYear.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getHours.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getMilliseconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getMinutes.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getMonth.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getSeconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getTimezoneOffset.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getTime.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCDate.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCDay.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCFullYear.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCHours.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCMilliseconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCMinutes.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCMonth.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.getUTCSeconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setDate.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setFullYear.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setHours.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setMilliseconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setMinutes.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setMonth.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setSeconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setTime.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCDate.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCFullYear.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCHours.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCMilliseconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCMinutes.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCMonth.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.setUTCSeconds.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.toLocaleString.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.toUTCString.js: Error: ERROR: 'var' not implemented
+es1/Date.prototype.valueOf.js: Error: ERROR: 'var' not implemented
+es1/Function.js: Error: ERROR: 'var' not implemented
+es1/Function.length.js: Error: ERROR: 'var' not implemented
+es1/Function.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/Function.prototype.js: Error: ERROR: 'var' not implemented
+es1/Function.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Math.E.js: Error: ERROR: parse error
+es1/Math.LN2.js: Error: ERROR: parse error
+es1/Math.LN10.js: Error: ERROR: parse error
+es1/Math.LOG2E.js: Error: ERROR: parse error
+es1/Math.LOG10E.js: Error: ERROR: parse error
+es1/Math.PI.js: Error: ERROR: parse error
+es1/Math.SQRT1_2.js: Error: ERROR: parse error
+es1/Math.SQRT2.js: Error: ERROR: parse error
+es1/Math.abs.js: Error: ERROR: parse error
+es1/Math.acos.js: Error: ERROR: parse error
+es1/Math.asin.js: Error: ERROR: parse error
+es1/Math.atan2.js: Error: ERROR: parse error
+es1/Math.atan.js: Error: ERROR: parse error
+es1/Math.ceil.js: Error: ERROR: parse error
+es1/Math.cos.js: Error: ERROR: parse error
+es1/Math.exp.js: Error: ERROR: parse error
+es1/Math.floor.js: Error: ERROR: parse error
+es1/Math.log.js: Error: ERROR: parse error
+es1/Math.max.js: Error: ERROR: parse error
+es1/Math.min.js: Error: ERROR: parse error
+es1/Math.pow.js: Error: ERROR: parse error
+es1/Math.random.js: Error: ERROR: 'var' not implemented
+es1/Math.round.js: Error: ERROR: parse error
+es1/Math.sin.js: Error: ERROR: parse error
+es1/Math.sqrt.js: Error: ERROR: parse error
+es1/Math.tan.js: Error: ERROR: parse error
+es1/Number.MAX_VALUE.js: Error: ERROR: parse error
+es1/Number.MIN_VALUE.js: Error: ERROR: parse error
+es1/Number.NEGATIVE_INFINITY.js: Error: ERROR: parse error
+es1/Number.NaN.js: Error: ERROR: 'var' not implemented
+es1/Number.POSITIVE_INFINITY.js: Error: ERROR: 'var' not implemented
+es1/Number.js: Error: ERROR: 'var' not implemented
+es1/Number.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/Number.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Number.prototype.valueOf.js: Error: ERROR: 'var' not implemented
+es1/Object.js: Error: ERROR: 'var' not implemented
+es1/Object.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/Object.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/Object.prototype.valueOf.js: Error: ERROR: 'var' not implemented
+es1/String.fromCharCode.js: Error: ERROR: 'var' not implemented
+es1/String.generics.js: Error: ERROR: 'var' not implemented
+es1/String.js: Error: ERROR: 'var' not implemented
+es1/String.length.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.charAt.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.charCodeAt.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.constructor.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.indexOf.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.lastIndexOf.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.split.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.substring.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.toLowerCase.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.toString.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.toUpperCase.js: Error: ERROR: 'var' not implemented
+es1/String.prototype.valueOf.js: Error: ERROR: 'var' not implemented
+es1/annex-b.Date.prototype.getYear.js: Error: ERROR: 'var' not implemented
+es1/annex-b.Date.prototype.setYear.js: Error: ERROR: 'var' not implemented
+es1/annex-b.Date.prototype.toGMTString.js: Error: ERROR: 'var' not implemented
+es1/annex-b.global.escape.js: Error: ERROR: 'var' not implemented
+es1/annex-b.global.unescape.js: Error: ERROR: 'var' not implemented
+es1/annex-b.literals.octal.js: Error: ERROR: 'var' not implemented
+es1/annex-b.literals.string.octal.js: Error: ERROR: parse error
+es1/arguments.callee.js: Error: ERROR: parse error
+es1/arguments.js: Error: ERROR: 'var' not implemented
+es1/asi.eval.js: Error: ERROR: 'var' not implemented
+es1/asi.js: Error: ERROR: 'var' not implemented
+es1/assignment.bitwise.js: Error: ERROR: 'var' not implemented
+es1/assignment.js: Error: ERROR: 'var' not implemented
+es1/assignment.ltr.js: Error: ERROR: 'var' not implemented
+es1/assignment.unsigned-shift.js: Error: ERROR: 'var' not implemented
+es1/bitwise.binary.js: Error: ERROR: 'var' not implemented
+es1/bitwise.shifts.js: Error: ERROR: 'var' not implemented
+es1/bitwise.tilde.js: Error: ERROR: 'var' not implemented
+es1/bitwise.unsigned-shift.js: Error: ERROR: 'var' not implemented
+es1/break.js: Error: ERROR: 'var' not implemented
+es1/comma.js: Error: ERROR: 'var' not implemented
+es1/comments.js: OK
+es1/conditional.js: Error: ERROR: 'var' not implemented
+es1/continue.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToBoolean.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToInt32.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToInteger.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToNumber.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToObject.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToString.js: Error: ERROR: 'var' not implemented
+es1/conversions.ToUint32.js: Error: ERROR: 'var' not implemented
+es1/conversions.js: Error: ERROR: 'var' not implemented
+es1/equals.js: Error: ERROR: 'var' not implemented
+es1/eval.js: Error: ERROR: 'var' not implemented
+es1/for-in.js: Error: ERROR: 'var' not implemented
+es1/for.js: Error: ERROR: 'var' not implemented
+es1/function.js: Error: ERROR: 'var' not implemented
+es1/global.Infinity.js: Error: ERROR: 'var' not implemented
+es1/global.NaN.js: Error: ERROR: 'var' not implemented
+es1/global.isFinite.js: Error: ERROR: 'var' not implemented
+es1/global.isNaN.js: Error: ERROR: 'var' not implemented
+es1/global.parseFloat.js: Error: ERROR: 'var' not implemented
+es1/global.parseInt.hex.js: Error: ERROR: 'var' not implemented
+es1/global.parseInt.js: Error: ERROR: 'var' not implemented
+es1/global.parseInt.radix.js: Error: ERROR: 'var' not implemented
+es1/literals.decimal.js: Error: ERROR: 'var' not implemented
+es1/literals.hex.js: Error: ERROR: 'var' not implemented
+es1/literals.string.escapes.js: Error: ERROR: 'var' not implemented
+es1/literals.string.hex.js: Error: ERROR: parse error
+es1/literals.string.js: Error: ERROR: parse error
+es1/literals.string.unicode.js: Error: ERROR: parse error
+es1/logical.js: Error: ERROR: 'var' not implemented
+es1/new.typeof.js: Error: ERROR: 'var' not implemented
+es1/numbers.double.js: Error: ERROR: 'var' not implemented
+es1/numbers.fmod.js: Error: ERROR: 'var' not implemented
+es1/numbers.inf.js: Error: ERROR: 'var' not implemented
+es1/numbers.int.js: Error: ERROR: 'var' not implemented
+es1/numbers.nan.js: Error: ERROR: 'var' not implemented
+es1/postfix.decrement.js: Error: ERROR: 'var' not implemented
+es1/postfix.increment.js: Error: ERROR: 'var' not implemented
+es1/prefix.js: Error: ERROR: 'var' not implemented
+es1/relational.js: Error: ERROR: 'var' not implemented
+es1/return.js: Error: ERROR: 'var' not implemented
+es1/return.typeof.js: Error: ERROR: 'var' not implemented
+es1/this.js: Error: ERROR: 'var' not implemented
+es1/typeof.js: Error: ERROR: 'var' not implemented
+es1/typeof.null.js: Error: ERROR: 'var' not implemented
+es1/typeof.undeclared.js: Error: ERROR: 'var' not implemented
+es1/types.js: Error: ERROR: 'var' not implemented
+es1/unary.decrement.js: Error: ERROR: 'var' not implemented
+es1/unary.delete.js: Error: ERROR: 'var' not implemented
+es1/unary.delete.var.js: Error: ERROR: 'a' not found
+es1/unary.increment.js: Error: ERROR: 'var' not implemented
+es1/unary.minus.js: Error: ERROR: 'var' not implemented
+es1/unary.not.js: Error: ERROR: 'var' not implemented
+es1/unary.plus.js: Error: ERROR: 'var' not implemented
+es1/unary.plus.str.js: Error: ERROR: 'var' not implemented
+es1/unary.tilde.js: Error: ERROR: 'var' not implemented
+es1/var.js: Error: ERROR: 'var' not implemented
+es1/var.typeof.js: Error: ERROR: 'var' not implemented
+es1/void.js: Error: ERROR: parse error
+es1/void.typeof.js: Error: ERROR: 'var' not implemented
+es1/while.js: Error: ERROR: 'var' not implemented
+es1/with.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.concat.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.pop.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.pop.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.push.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.push.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.shift.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.shift.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.slice.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.slice.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.splice.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.splice.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.toLocaleString.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.unshift.generic.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.unshift.js: Error: ERROR: 'var' not implemented
+es3/Array.prototype.unshift.returns-new-length.js: Error: ERROR: 'var' not implemented
+es3/Date.prototype.toDateString.js: Error: ERROR: 'var' not implemented
+es3/Date.prototype.toLocaleDateString.js: Error: ERROR: 'var' not implemented
+es3/Date.prototype.toLocaleString.js: Error: ERROR: 'var' not implemented
+es3/Date.prototype.toLocaleTimeString.js: Error: ERROR: 'var' not implemented
+es3/Date.prototype.toTimeString.js: Error: ERROR: 'var' not implemented
+es3/Error.js: Error: ERROR: 'var' not implemented
+es3/Error.prototype.constructor.js: Error: ERROR: parse error
+es3/Error.prototype.message.js: Error: ERROR: parse error
+es3/Error.prototype.name.js: Error: ERROR: parse error
+es3/Error.prototype.toString.js: Error: ERROR: 'var' not implemented
+es3/Function.prototype.apply.js: Error: ERROR: 'var' not implemented
+es3/Function.prototype.call.js: Error: ERROR: 'var' not implemented
+es3/Math.max.variadic.js: Error: ERROR: 'var' not implemented
+es3/Math.min.variadic.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toExponential.edge-cases.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toExponential.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toExponential.rounding.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toExponential.throws-infinity.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toFixed.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toLocaleString.js: Error: ERROR: 'var' not implemented
+es3/Number.prototype.toPrecision.js: Error: ERROR: 'var' not implemented
+es3/Object.prototype.hasOwnProperty.js: Error: ERROR: 'var' not implemented
+es3/Object.prototype.isPrototypeOf.js: Error: ERROR: 'var' not implemented
+es3/Object.prototype.propertyIsEnumerable.js: Error: ERROR: 'var' not implemented
+es3/Object.prototype.toLocaleString.js: Error: ERROR: 'var' not implemented
+es3/RegExp.global.js: Error: ERROR: 'var' not implemented
+es3/RegExp.ignoreCase.js: Error: ERROR: 'var' not implemented
+es3/RegExp.js: Error: ERROR: 'var' not implemented
+es3/RegExp.lastIndex.js: Error: ERROR: 'var' not implemented
+es3/RegExp.multiline.js: Error: ERROR: 'var' not implemented
+es3/RegExp.prototype.constructor.js: Error: ERROR: parse error
+es3/RegExp.prototype.exec.js: Error: ERROR: 'var' not implemented
+es3/RegExp.prototype.test.js: Error: ERROR: 'var' not implemented
+es3/RegExp.prototype.toString.js: Error: ERROR: 'var' not implemented
+es3/RegExp.source.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.concat.generic.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.concat.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.localeCompare.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.match.generic.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.match.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.replace.capture.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.replace.extra.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.replace.generic.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.replace.regex.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.replace.str.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.search.generic.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.search.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.search.str.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.slice.generic.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.slice.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.split.bugs.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.split.limit.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.split.regex.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.toLocaleLowerCase.js: Error: ERROR: 'var' not implemented
+es3/String.prototype.toLocaleUpperCase.js: Error: ERROR: 'var' not implemented
+es3/annex-b.String.prototype.substr.js: Error: ERROR: 'var' not implemented
+es3/do-while.js: Error: ERROR: 'var' not implemented
+es3/function-expressions.IIFE.js: Error: ERROR: 'var' not implemented
+es3/function-expressions.js: Error: ERROR: 'var' not implemented
+es3/global.EvalError.js: Error: ERROR: 'var' not implemented
+es3/global.RangeError.js: Error: ERROR: 'var' not implemented
+es3/global.RangeError.thrown.js: Error: ERROR: 'var' not implemented
+es3/global.ReferenceError.js: Error: ERROR: 'var' not implemented
+es3/global.ReferenceError.thrown.js: Error: ERROR: 'var' not implemented
+es3/global.SyntaxError.js: Error: ERROR: 'var' not implemented
+es3/global.SyntaxError.thrown.js: Error: ERROR: 'var' not implemented
+es3/global.TypeError.js: Error: ERROR: 'var' not implemented
+es3/global.TypeError.thrown.js: Error: ERROR: 'var' not implemented
+es3/global.URIError.js: Error: ERROR: 'var' not implemented
+es3/global.URIError.thrown.js: Error: ERROR: 'var' not implemented
+es3/global.decodeURIComponent.js: Error: ERROR: 'var' not implemented
+es3/global.decodeURI.js: Error: ERROR: 'var' not implemented
+es3/global.encodeURIComponent.js: Error: ERROR: 'var' not implemented
+es3/global.encodeURI.js: Error: ERROR: 'var' not implemented
+es3/global.undefined.js: Error: ERROR: parse error
+es3/identifiers.unicode.js: Error: ERROR: 'var' not implemented
+es3/instanceof.js: Error: ERROR: 'var' not implemented
+es3/in.js: Error: ERROR: 'var' not implemented
+es3/labelled.break.js: Error: ERROR: 'var' not implemented
+es3/labelled.continue.js: Error: ERROR: 'var' not implemented
+es3/labelled.statements.js: Error: ERROR: 'var' not implemented
+es3/literals.array.elisions.js: Error: ERROR: 'var' not implemented
+es3/literals.array.js: Error: ERROR: 'var' not implemented
+es3/literals.array.trailing-comma.js: Error: ERROR: 'var' not implemented
+es3/literals.object.decimal.js: Error: ERROR: 'var' not implemented
+es3/literals.object.hex.js: Error: ERROR: 'var' not implemented
+es3/literals.object.int.js: Error: ERROR: 'var' not implemented
+es3/literals.object.js: Error: ERROR: 'var' not implemented
+es3/literals.object.str.js: Error: ERROR: 'var' not implemented
+es3/literals.object.unicode.js: Error: ERROR: 'var' not implemented
+es3/literals.regex.ambiguous.js: Error: ERROR: 'var' not implemented
+es3/literals.regex.empty.js: Error: ERROR: 'var' not implemented
+es3/literals.regex.js: Error: ERROR: 'var' not implemented
+es3/literals.string.esc-v.js: Error: ERROR: parse error
+es3/nested-functions.eval.js: Error: ERROR: 'var' not implemented
+es3/nested-functions.js: Error: ERROR: 'var' not implemented
+es3/regex.backref.js: Error: ERROR: 'var' not implemented
+es3/regex.begin.js: Error: ERROR: 'var' not implemented
+es3/regex.bracket.esc-b.js: Error: ERROR: parse error
+es3/regex.bracket.js: Error: ERROR: 'var' not implemented
+es3/regex.bracket.ranges.js: Error: ERROR: 'var' not implemented
+es3/regex.class.esc-d.js: Error: ERROR: 'var' not implemented
+es3/regex.class.esc-s.js: Error: ERROR: 'var' not implemented
+es3/regex.class.esc-w.js: Error: ERROR: 'var' not implemented
+es3/regex.disjunction.js: Error: ERROR: 'var' not implemented
+es3/regex.dot.js: Error: ERROR: 'var' not implemented
+es3/regex.end.js: Error: ERROR: 'var' not implemented
+es3/regex.escape.control.js: Error: ERROR: 'var' not implemented
+es3/regex.escape.hex.js: Error: ERROR: 'var' not implemented
+es3/regex.escape.js: Error: ERROR: 'var' not implemented
+es3/regex.escape.nul.js: Error: ERROR: 'var' not implemented
+es3/regex.escape.unicode.js: Error: ERROR: 'var' not implemented
+es3/regex.flag.global.js: Error: ERROR: 'var' not implemented
+es3/regex.flag.ignorecase.js: Error: ERROR: 'var' not implemented
+es3/regex.flag.multiline.js: Error: ERROR: 'var' not implemented
+es3/regex.group.js: Error: ERROR: 'var' not implemented
+es3/regex.lookahead.js: Error: ERROR: 'var' not implemented
+es3/regex.negative-lookahead.js: Error: ERROR: 'var' not implemented
+es3/regex.non-capturing-group.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.exact.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.maybe.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.min.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.plus.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.range.js: Error: ERROR: 'var' not implemented
+es3/regex.quantifier.star.js: Error: ERROR: 'var' not implemented
+es3/regex.word-boundary.js: Error: ERROR: 'var' not implemented
+es3/source.line-terminators.js: Error: ERROR: 'var' not implemented
+es3/source.whitespace.js: Error: ERROR: 'var' not implemented
+es3/source.whitespace.unicode.js: Error: ERROR: 'var' not implemented
+es3/strict-equals.js: Error: ERROR: 'var' not implemented
+es3/switch.js: Error: ERROR: 'var' not implemented
+es3/try-catch-finally.js: Error: ERROR: 'var' not implemented
+es3/try-catch-throw.js: Error: ERROR: 'var' not implemented
+es5/Array.isArray.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.every.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.filter.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.forEach.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.indexOf.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.lastIndexOf.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.map.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.reduceRight.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.reduce.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.some.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.sort.TypeError.js: Error: ERROR: 'var' not implemented
+es5/Array.prototype.sort.undefined-comparefn.js: Error: ERROR: 'var' not implemented
+es5/Date.now.js: Error: ERROR: 'var' not implemented
+es5/Date.prototype.toISOString.js: Error: ERROR: 'var' not implemented
+es5/Date.prototype.toJSON.js: Error: ERROR: 'var' not implemented
+es5/Function.prototype-not-enumerable.js: Error: ERROR: 'var' not implemented
+es5/Function.prototype.apply.array-like.js: Error: ERROR: 'var' not implemented
+es5/Function.prototype.bind.js: Error: ERROR: 'var' not implemented
+es5/JSON.js: Error: ERROR: parse error
+es5/JSON.parse.js: Error: ERROR: parse error
+es5/JSON.parse.reviver.js: Error: ERROR: parse error
+es5/JSON.stringify.js: Error: ERROR: parse error
+es5/JSON.stringify.replacer.js: Error: ERROR: parse error
+es5/JSON.stringify.space.js: Error: ERROR: parse error
+es5/Object.create.js: Error: ERROR: 'var' not implemented
+es5/Object.defineProperties.js: Error: ERROR: 'var' not implemented
+es5/Object.defineProperty.js: Error: ERROR: 'var' not implemented
+es5/Object.freeze.js: Error: ERROR: 'var' not implemented
+es5/Object.getOwnPropertyDescriptor.js: Error: ERROR: 'var' not implemented
+es5/Object.getOwnPropertyNames.js: Error: ERROR: 'var' not implemented
+es5/Object.getPrototypeOf.js: Error: ERROR: 'var' not implemented
+es5/Object.isExtensible.js: Error: ERROR: 'var' not implemented
+es5/Object.isFrozen.js: Error: ERROR: 'var' not implemented
+es5/Object.isSealed.js: Error: ERROR: 'var' not implemented
+es5/Object.keys.js: Error: ERROR: 'var' not implemented
+es5/Object.preventExtensions.js: Error: ERROR: 'var' not implemented
+es5/Object.property-shadowing.js: Error: ERROR: 'var' not implemented
+es5/Object.seal.js: Error: ERROR: 'var' not implemented
+es5/String.indexing.js: Error: ERROR: 'var' not implemented
+es5/String.prototype.trim.js: Error: ERROR: 'var' not implemented
+es5/arguments.toStringTag.js: Error: ERROR: 'var' not implemented
+es5/debugger.js: Error: ERROR: 'debugger' not found
+es5/global.Infinity.immutable.js: Error: ERROR: 'var' not implemented
+es5/global.NaN.immutable.js: Error: ERROR: 'var' not implemented
+es5/global.parseInt.no-octal.js: Error: ERROR: 'var' not implemented
+es5/global.undefined.immutable.js: Error: ERROR: 'var' not implemented
+es5/literals.object.getters.js: Error: ERROR: 'var' not implemented
+es5/literals.object.setters.js: Error: ERROR: 'var' not implemented
+es5/literals.object.trailing-comma.js: Error: ERROR: 'var' not implemented
+es5/source.keyword-properties.js: Error: ERROR: 'var' not implemented
+es5/source.unreserved-words.js: Error: ERROR: 'var' not implemented
+es5/source.whitespace.bom.js: Error: ERROR: parse error
+es5/source.zero-width-chars.js: Error: ERROR: 'var' not implemented
+es5/strict.eval-cannot-create-bindings.js: Error: ERROR: 'var' not implemented
+es5/strict.function-expr-with-matching-name.js: Error: ERROR: 'var' not implemented
+es5/strict.js: Error: ERROR: 'var' not implemented
+es5/strict.no-arguments-callee.js: Error: ERROR: 'var' not implemented
+es5/strict.no-arguments-caller.js: Error: ERROR: 'var' not implemented
+es5/strict.no-assignment-to-non-writable.js: Error: ERROR: 'var' not implemented
+es5/strict.no-assignment-to-unresolvable.js: Error: ERROR: 'var' not implemented
+es5/strict.no-delete-bindings.js: Error: ERROR: 'var' not implemented
+es5/strict.no-delete-non-configurable.js: Error: ERROR: 'var' not implemented
+es5/strict.no-duplicate-parameters.js: Error: ERROR: 'var' not implemented
+es5/strict.no-eval-or-arguments-assignment.js: Error: ERROR: 'var' not implemented
+es5/strict.no-eval-or-arguments-bindings.js: Error: ERROR: 'var' not implemented
+es5/strict.no-function-caller-or-arguments.js: Error: ERROR: 'var' not implemented
+es5/strict.no-octal-literals.js: Error: ERROR: 'var' not implemented
+es5/strict.no-with.js: Error: ERROR: 'var' not implemented
+es5/strict.reserved-words.js: Error: ERROR: 'var' not implemented
+es5/strict.this-primitive-not-coerced-in-accessors.js: Error: ERROR: 'var' not implemented
+es5/strict.this-primitive-not-coerced.js: Error: ERROR: 'var' not implemented
+es5/strict.this-undefined-in-function.js: Error: ERROR: 'var' not implemented
+es5/strict.unmapped-arguments.js: Error: ERROR: 'var' not implemented
+es5/this.thrown-function.js: Error: ERROR: 'var' not implemented

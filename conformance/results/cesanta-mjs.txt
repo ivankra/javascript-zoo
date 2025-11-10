@@ -218,9 +218,9 @@ es3/Date.prototype.toLocaleString.js: MJS error: [var] is not implemented
 es3/Date.prototype.toLocaleTimeString.js: MJS error: [var] is not implemented
 es3/Date.prototype.toTimeString.js: MJS error: [var] is not implemented
 es3/Error.js: MJS error: [var] is not implemented
-es3/Error.prototype.constructor.js: at es3/Error.prototype.constructor.js:6 MJS error: [Error] is not defined
-es3/Error.prototype.message.js: at es3/Error.prototype.message.js:6 MJS error: [Error] is not defined
-es3/Error.prototype.name.js: at es3/Error.prototype.name.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.constructor.js: at Error.prototype.constructor.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.message.js: at Error.prototype.message.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.name.js: at Error.prototype.name.js:6 MJS error: [Error] is not defined
 es3/Error.prototype.toString.js: MJS error: [var] is not implemented
 es3/Function.prototype.apply.js: MJS error: [var] is not implemented
 es3/Function.prototype.call.js: MJS error: [var] is not implemented

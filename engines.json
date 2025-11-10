@@ -455,15 +455,21 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "00cdea762cfb6af39d705a9aba2bdd5cb3c8a9720a23bc69a9930294712db962",
-        "binary_size": 67800,
+        "binary_sha256": "5800c3dc13cb0626d5097008bcdbc4b6f50a85713af3a2c280c2e96b52c14a7c",
+        "binary_size": 67872,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/elk.git",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
         "revision_date": "2025-06-05",
         "version": "2.2.0-30-ga9bb856"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.0051,
+      "es3": 0.0,
+      "es5": 0.0,
+      "es1-es5": 0.0024
+    }
   },
   {
     "id": "cesanta-mjs",

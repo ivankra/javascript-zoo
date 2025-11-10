@@ -7,12 +7,11 @@ ENGINES := $(shell \
 	  if ! [[ -f "$$bin" && -x "$$bin" && -f "$$bin.json" ]]; then continue; fi; \
 	  name=$$(basename "$$bin"); \
 	  if [[ -x "$${bin}_full" ]]; then continue; fi; \
-	  if [[ "$$name" =~ ^(cesanta-elk) ]]; then continue; fi; \
 	  if [[ "$$name" != "$${name%_*}" && ! "$$name" =~ ^(.*_full|tiny-js|mujs|js-interpreter|spidermonkey_[12]).* ]]; then continue; fi; \
 	  echo "$$name"; \
 	done)
 
-ES5_ENGINES := bali besen echosoar-jsi espruino yrm006-miniscript
+ES5 := bali besen cesanta-elk echosoar-jsi espruino yrm006-miniscript
 
 all: $(addsuffix .txt, $(ENGINES)) table
 
@@ -26,12 +25,12 @@ define ENGINE_RULE
 $(1).txt: $(DIST_DIR)/$(1)
 	../run.sh --next -j $(JOBS) -o $$@ $$<
 endef
-$(foreach engine,$(filter-out $(ES5_ENGINES),$(ENGINES)),$(eval $(call ENGINE_RULE,$(engine))))
+$(foreach engine,$(filter-out $(ES5),$(ENGINES)),$(eval $(call ENGINE_RULE,$(engine))))
 
-define ES5_ENGINE_RULE
+define ES5_RULE
 $(1).txt: $(DIST_DIR)/$(1)
 	../run.sh -j $(JOBS) -o $$@ $$< ../es[1-5]
 endef
-$(foreach engine,$(ES5_ENGINES),$(eval $(call ES5_ENGINE_RULE,$(engine))))
+$(foreach engine,$(ES5),$(eval $(call ES5_RULE,$(engine))))
 
 .PHONY: all table
