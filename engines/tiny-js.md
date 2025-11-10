@@ -16,6 +16,10 @@ No ASI, no typeof, no Date, `WHILE Loop exceeded 8192 iterations`.
 
 Richards score ~45 on M4 (78000us/iter).
 
+## Forks
+
+* [42tiny-js](42tiny-js.md)
+
 ## Conformance
 
 <details><summary>ES1-ES5: 8%</summary><ul>

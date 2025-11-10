@@ -2,6 +2,56 @@
 // SPDX-License-Identifier: MIT
 const jsz_engines = [
   {
+    "id": "42tiny-js",
+    "title": "42tiny-js",
+    "summary": "Fork of tiny-js with more features.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/42tiny-js.md",
+    "repository": "https://github.com/gfwilliams/tiny-js.git",
+    "loc": 9209,
+    "language": "C++",
+    "license": "MIT",
+    "standard": "no (can't run ES1)",
+    "years": "2010-2014",
+    "ancestors": "[tiny-js](tiny-js.md)",
+    "interpreter": "interprets from source",
+    "loc_command": "cloc *.cpp *.h",
+    "license_abbr": "MIT",
+    "github_stars": 567,
+    "github_forks": 90,
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
+        "binary_size": 727304,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gfwilliams/tiny-js.git",
+        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
+        "revision_date": "2014-10-19"
+      }
+    ],
+    "conformance": {
+      "es1": 0.6162,
+      "es3": 0.5878,
+      "es5": 0.3108,
+      "kangax-es5": 0.5232,
+      "kangax-es6": 0.0868,
+      "kangax-es2016": 0.0455,
+      "kangax-es2017": 0.1294,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.2887,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0952,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0263,
+      "kangax-intl": 0.0357,
+      "kangax-next": 0.0,
+      "es1-es5": 0.5524,
+      "kangax-es2016plus": 0.0738
+    }
+  },
+  {
     "id": "assemblyscript",
     "title": "AssemblyScript",
     "summary": "Compiler for a restricted TypeScript dialect to WebAssembly.",

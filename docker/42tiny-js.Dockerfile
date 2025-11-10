@@ -7,8 +7,8 @@ ARG REV=42tiny-js
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-COPY tiny-js_42.patch ./
-RUN git apply tiny-js_42.patch && make
+COPY 42tiny-js.patch ./
+RUN git apply 42tiny-js.patch && make
 
 ENV JS_BINARY=/src/Script
 CMD ${JS_BINARY}
