@@ -720,14 +720,16 @@ def main():
     if output_path:
         output_path = Path(output_path)
 
-    if args.skip_unchanged and output_path.exists() and \
-            'revision' in binary.metadata:
+    if args.skip_unchanged and output_path.exists():
         prev_bench = json.loads(output_path.open().read())
-        if 'metadata' in prev_bench \
-                and 'revision' in prev_bench['metadata'] and \
-                prev_bench['metadata']['revision'] == binary.metadata['revision']:
-            print(f'Skipping {args.binary}: same revision as previous benchmark run')
-            return
+        if binary.metadata.get('revision'):
+            if binary.metadata['revision'] == prev_bench.get('metadata', {}).get('revision'):
+                print(f'Skipping {args.binary}: same revision as previous run')
+                return
+        elif binary.metadata.get('revision_date'):
+            if binary.metadata['revision_date'] == prev_bench.get('metadata', {}).get('revision_date'):
+                print(f'Skipping {args.binary}: same revision date as previous run')
+                return
 
     config = pick_config(args, binary)
     if args.tests:
