@@ -31,7 +31,7 @@ Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 95%, ES2016+ 69%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 95%, ES2016+ 69%, Next 5%, Intl 25%</summary><ul>
 <li>ES6: 95%<pre>
 <a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: "message": "invalid opcode (op=0, pc=21)", name": "InternalError
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: name": "InternalError
@@ -117,5 +117,6 @@ Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
 </pre></li>
 <li>ES2024: 43%<br>
 <li>ES2025: 11%<br>
+<li>Next: 5%<br>
 <li>Intl: 25%<br>
 </ul></details>

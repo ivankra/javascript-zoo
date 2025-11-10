@@ -36,7 +36,7 @@ Pass `--script` argument to force classic sloppy script mode.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 95%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 97%, ES2016+ 95%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 97%<pre>
 <a href="../conformance/kangax-es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.construct.js">Proxy.handler.construct.js</a>: TypeError: not a function
@@ -79,5 +79,6 @@ Pass `--script` argument to force classic sloppy script mode.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: invalid group
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: invalid group
 </pre></li>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

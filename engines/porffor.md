@@ -51,7 +51,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es3/Array.prototype.slice.js">Array.prototype.slice.js</a>: slice with start and end failed; slice with start only failed; slice with negative start failed; slice with negative end failed; slice entire array failed
 <a href="../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: delete on object failed; insert on object failed; negative start on object failed
 <a href="../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: delete elements failed; delete and insert failed; insert without delete failed; negative start failed
-<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; single element toLocaleString failed; multiple elements content failed
+<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; multiple elements content failed
 <a href="../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
 <a href="../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: unshift single element failed; unshift multiple elements failed; unshift with no arguments failed; element order after unshift failed
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: TypeError: Accessor called without object
@@ -90,7 +90,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 45%, ES2016+ 56%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 45%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
 <li>ES6: 45%<br>
 <li>ES2016: 64%<pre>
 <a href="../conformance/kangax-es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: failed
@@ -171,5 +171,6 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 </pre></li>
 <li>ES2024: 47%<br>
 <li>ES2025: 21%<br>
+<li>Next: 2%<br>
 <li>Intl: 25%<br>
 </ul></details>

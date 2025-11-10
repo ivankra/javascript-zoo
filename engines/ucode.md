@@ -48,9 +48,25 @@ function Counter(start) {
 
 ## Conformance
 
-<details><summary>ES1-ES5: 6%</summary><ul>
+<details><summary>ES1-ES5: 1%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/ucode.txt">Full log</a>.</li>
-<li>ES1: 6%<br>
-<li>ES3: 7%<br>
-<li>ES5: 3%<br>
+<li>ES1: 2%<br>
+<li>ES3: 1%<br>
+<li>ES5: 1%<br>
+</ul></details>
+
+<details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
+<li>ES6: 0%<br>
+<li>ES2016: 0%<br>
+<li>ES2017: 0%<br>
+<li>ES2018: 0%<br>
+<li>ES2019: 0%<br>
+<li>ES2020: 0%<br>
+<li>ES2021: 0%<br>
+<li>ES2022: 0%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Next: 0%<br>
+<li>Intl: 0%<br>
 </ul></details>

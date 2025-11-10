@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "a1085e4aa9f96b6a668f27f48997b51ced8a98c1ef08164dcbf467d44af45e1e", "binary_size": 461616, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "05cd646bad083ed45e9e1c9846ea671d461ced30", "revision_date": "2025-06-23", "variant": "clang", "version": "1.3.7"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -207,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; single element toLocaleString failed; multiple elements content failed
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
 es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: SyntaxError: kangax-next/Array.isTemplateObject.js:10: unexpected token in expression: '>'
+kangax-next/AsyncDisposableStack.js: SyntaxError: kangax-next/AsyncDisposableStack.js:47: unexpected token: '[' (expected ':')
+kangax-next/AsyncIterator.extends.js: SyntaxError: kangax-next/AsyncIterator.extends.js:9: unexpected token: (identifier) (expected ';')
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: kangax-next/AsyncIterator.from.async-iterable.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: kangax-next/AsyncIterator.from.iterable.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: kangax-next/AsyncIterator.from.iterator.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: kangax-next/AsyncIterator.instanceof.js:9: unexpected token: 'function' (expected ')')
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: kangax-next/AsyncIterator.prototype.drop.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: kangax-next/AsyncIterator.prototype.every.js:44: unexpected token: 'function' (expected ')')
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: kangax-next/AsyncIterator.prototype.filter.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: kangax-next/AsyncIterator.prototype.find.js:44: unexpected token: 'function' (expected ')')
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: kangax-next/AsyncIterator.prototype.flatMap.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: kangax-next/AsyncIterator.prototype.forEach.js:44: unexpected token: (identifier) (expected ';')
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: kangax-next/AsyncIterator.prototype.map.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: kangax-next/AsyncIterator.prototype.reduce.js:44: unexpected token: 'function' (expected ')')
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: kangax-next/AsyncIterator.prototype.some.js:44: unexpected token: 'function' (expected ')')
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: kangax-next/AsyncIterator.prototype.take.js:44: unexpected token: 'function' (expected ';')
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: kangax-next/AsyncIterator.prototype.toArray.js:44: unexpected token: 'function' (expected ')')
+kangax-next/DisposableStack.js: SyntaxError: kangax-next/DisposableStack.js:12: unexpected token: '[' (expected identifier or keyword)
+kangax-next/Map.prototype.upsert.js: SyntaxError: kangax-next/Map.prototype.upsert.js:9: unexpected token: (identifier) (expected ';')
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: kangax-next/SuppressedError.js:13: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.fromBase64.js: SyntaxError: kangax-next/Uint8Array.fromBase64.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.fromHex.js: SyntaxError: kangax-next/Uint8Array.fromHex.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: kangax-next/Uint8Array.setFromBase64.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: kangax-next/Uint8Array.setFromHex.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.toBase64.js: SyntaxError: kangax-next/Uint8Array.toBase64.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/Uint8Array.toHex.js: SyntaxError: kangax-next/Uint8Array.toHex.js:10: unexpected token: (identifier) (expected ';')
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: kangax-next/WeakMap.prototype.upsert.js:9: unexpected token: (identifier) (expected ';')
+kangax-next/await-using.for-of.js: SyntaxError: kangax-next/await-using.for-of.js:46: unexpected token: '[' (expected ':')
+kangax-next/await-using.js: SyntaxError: kangax-next/await-using.js:44: unexpected token: 'function' (expected ')')
+kangax-next/class-decorators.js: SyntaxError: kangax-next/class-decorators.js:9: unexpected token: (identifier) (expected ';')
+kangax-next/function.sent.js: SyntaxError: kangax-next/function.sent.js:10: unexpected token: '*' (expected identifier)
+kangax-next/throw-expr.arrow.js: SyntaxError: kangax-next/throw-expr.arrow.js:9: unexpected token in expression: ')'
+kangax-next/throw-expr.conditional.js: SyntaxError: kangax-next/throw-expr.conditional.js:9: unexpected token in expression: 'throw'
+kangax-next/throw-expr.logical.js: SyntaxError: kangax-next/throw-expr.logical.js:11: unexpected token in expression: 'throw'
+kangax-next/throw-expr.param-init.js: SyntaxError: kangax-next/throw-expr.param-init.js:9: unexpected token: '=' (expected ')')
+kangax-next/using.for-of.js: SyntaxError: kangax-next/using.for-of.js:11: unexpected token: '[' (expected identifier or keyword)
+kangax-next/using.js: SyntaxError: kangax-next/using.js:11: unexpected token: '[' (expected identifier or keyword)

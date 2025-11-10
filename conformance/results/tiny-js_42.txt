@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "4717715ecd70dab765d9f62155ac9c901b1c71df8b56f40b526e1e2d1e2b03ab", "binary_size": 727304, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1", "revision_date": "2014-10-19", "variant": "42"}
 es1/Array.js: > es1/Array.js: Array.length failed > es1/Array.js: Array(len) failed > es1/Array.js: failed
 es1/Array.length.assignment.js: > es1/Array.length.assignment.js: length truncation failed > es1/Array.length.assignment.js: failed
 es1/Array.length.js: > es1/Array.length.js: length assignment failed > es1/Array.length.js: failed
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: > kangax-intl/Intl.prototype.js: failed
 kangax-intl/Number.prototype.toLocaleString.js: > kangax-intl/Number.prototype.toLocaleString.js: failed
 kangax-intl/Object.prototype.toLocaleString.js: > kangax-intl/Object.prototype.toLocaleString.js: failed
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: SyntaxError: Got unexpected > at Line:10 Column:36
+kangax-next/AsyncDisposableStack.js: SyntaxError: Got '[' expected ':' at Line:47 Column:44
+kangax-next/AsyncIterator.extends.js: SyntaxError: Got 'ID' expected ';' at Line:9 Column:9
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: Got 'function' expected ')' at Line:9 Column:17
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: > kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: failed
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Got 'function' expected ')' at Line:45 Column:10
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: Got 'function' expected ';' at Line:44 Column:9
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/DisposableStack.js: SyntaxError: Got '[' expected 'ID' or 'STRING' at Line:12 Column:38
+kangax-next/Map.prototype.upsert.js: SyntaxError: Got unexpected > at Line:10 Column:27
+kangax-next/RegExp.1-9.js: > kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: > kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: > kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: Got 'ID' expected ';' at Line:13 Column:11
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: invalid assignment left-hand side at Line:13 Column:38
+kangax-next/Uint8Array.fromHex.js: ReferenceError: invalid assignment left-hand side at Line:13 Column:38
+kangax-next/Uint8Array.setFromBase64.js: ReferenceError: invalid assignment left-hand side at Line:14 Column:38
+kangax-next/Uint8Array.setFromHex.js: ReferenceError: invalid assignment left-hand side at Line:14 Column:38
+kangax-next/Uint8Array.toBase64.js: > kangax-next/Uint8Array.toBase64.js: TypeError: Uint8Array is not a constructor at Line:11 Column:30
+kangax-next/Uint8Array.toHex.js: > kangax-next/Uint8Array.toHex.js: TypeError: Uint8Array is not a constructor at Line:11 Column:30
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: Got unexpected > at Line:11 Column:25
+kangax-next/await-using.for-of.js: SyntaxError: Got '[' expected ':' at Line:46 Column:11
+kangax-next/await-using.js: SyntaxError: Got 'function' expected ')' at Line:44 Column:10
+kangax-next/class-decorators.js: SyntaxError: Got 'ID' expected ';' at Line:9 Column:9
+kangax-next/function.sent.js: SyntaxError: Function statement requires a name. at Line:10 Column:11
+kangax-next/throw-expr.arrow.js: SyntaxError: Got unexpected ) at Line:9 Column:13
+kangax-next/throw-expr.conditional.js: SyntaxError: Got unexpected throw at Line:9 Column:15
+kangax-next/throw-expr.logical.js: SyntaxError: Got unexpected throw at Line:11 Column:15
+kangax-next/throw-expr.param-init.js: SyntaxError: Got '=' expected ',' or ')' at Line:9 Column:20
+kangax-next/using.for-of.js: SyntaxError: Got '[' expected 'ID' or 'STRING' at Line:11 Column:5
+kangax-next/using.js: SyntaxError: Got '[' expected 'ID' or 'STRING' at Line:11 Column:5

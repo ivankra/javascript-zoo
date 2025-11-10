@@ -20,7 +20,7 @@ Buggy unfinished interpreter.
 <li>ES5: 22%, <b>1 crash</b><br>
 </ul></details>
 
-<details><summary>compat-table: ES6 23%, ES2016+ 14%, Intl 0%</summary><ul>
+<details><summary>compat-table: ES6 23%, ES2016+ 14%, Next 0%, Intl 0%</summary><ul>
 <li>ES6: 23%, <b>4 crashes</b><br>
 <li>ES2016: 21%<br>
 <li>ES2017: 22%<br>
@@ -32,6 +32,7 @@ Buggy unfinished interpreter.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 18%<br>
+<li>Next: 0%<br>
 <li>Intl: 0%<br>
 </ul></details>
 

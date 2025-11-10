@@ -79,7 +79,7 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <li>ES5: 45%<br>
 </ul></details>
 
-<details><summary>compat-table: ES6 9%, ES2016+ 5%, Intl 21%</summary><ul>
+<details><summary>compat-table: ES6 9%, ES2016+ 5%, Next 0%, Intl 21%</summary><ul>
 <li>ES6: 9%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 4%<br>
@@ -91,5 +91,6 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <li>ES2023: 0%<br>
 <li>ES2024: 4%<br>
 <li>ES2025: 14%<br>
+<li>Next: 0%<br>
 <li>Intl: 21%<br>
 </ul></details>

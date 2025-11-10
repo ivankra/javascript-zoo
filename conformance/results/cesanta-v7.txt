@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "cb0006b365cfeef9126b0f874d14593baeaf0af9fb9fd3543ce7bd724907dc5e", "binary_size": 399904, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-v7", "repository": "https://github.com/cesanta/v7.git", "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27", "revision_date": "2017-08-26"}
 es1/Array.js: new Array(len) failed; Array(len) failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: new Array(len) length failed
@@ -418,3 +419,1094 @@ es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: Error: unshift is not a function
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: failed
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: failed
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: failed
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: failed
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: OK
+kangax-es5/immutable-globals.undefined.js: Exec error [kangax-es5/immutable-globals.undefined.js]: "unexpected ast node"
+kangax-es5/literals.getter-accessors.js: Exec error [kangax-es5/literals.getter-accessors.js]: "Syntax error at line 8 col 16:\n  return ({ get x(){ return 1 } }).x === 1;\n    "
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: Exec error [kangax-es5/literals.setter-accessors.js]: "Syntax error at line 9 col 9:\n  ({ set x(v){ value = v; } }).x = 1;\n        ^"
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: failed
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: Error: cannot read property 'propertyIsEnumerable' of undefined
+kangax-es5/misc.enumerable-shadow.js: failed
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: Exec error [kangax-es5/strict.assignment-non-writable-error.js]: "Syntax error at line 12 col 15:\n  try { ({ get x(){ } }).x = 1;                "
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: OK
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: OK
+kangax-es5/strict.with-error.js: OK
+kangax-es6/Array.Symbol.species.js: Error: [Symbol] is not defined
+kangax-es6/Array.from.array-like.js: Error: Array.from is not a function
+kangax-es6/Array.from.generator.js: Exec error [kangax-es6/Array.from.generator.js]: "Syntax error at line 9 col 26:\n  var iterable = (function*(){ yield 1; yield 2;"
+kangax-es6/Array.from.iterable-instance.js: Error: Array.from is not a function
+kangax-es6/Array.from.iterable.js: Error: Array.from is not a function
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: Error: Array.from is not a function
+kangax-es6/Array.from.map.generator.js: Exec error [kangax-es6/Array.from.map.generator.js]: "Syntax error at line 9 col 26:\n  var iterable = (function*(){ yield \"foo\"; yiel"
+kangax-es6/Array.from.map.iterable-instance.js: Error: Array.from is not a function
+kangax-es6/Array.from.map.iterable.js: Error: Array.from is not a function
+kangax-es6/Array.iterator-prototype-chain.js: Error: [Symbol] is not defined
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: Error: [Symbol] is not defined
+kangax-es6/Array.prototype.Symbol.unscopables.js: Error: [Symbol] is not defined
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: Error: [Symbol] is not defined
+kangax-es6/Function.name.accessor.js: Exec error [kangax-es6/Function.name.accessor.js]: "Syntax error at line 10 col 16:\n  var o = { get foo(){}, set foo(x){} };\n      "
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: Exec error [kangax-es6/Function.name.class-expression.js]: "Syntax error at line 10 col 15:\n  return class foo {}.name === \"foo\" &&\n       "
+kangax-es6/Function.name.class-object-method.js: Exec error [kangax-es6/Function.name.class-object-method.js]: "Syntax error at line 10 col 23:\n  var o = { foo: class {}, bar: class baz {}};\n"
+kangax-es6/Function.name.class-prototype.js: Exec error [kangax-es6/Function.name.class-prototype.js]: "Syntax error at line 10 col 8:\n  class C { foo(){} };\n       ^"
+kangax-es6/Function.name.class-statement.js: Exec error [kangax-es6/Function.name.class-statement.js]: "Syntax error at line 10 col 8:\n  class foo {};\n       ^"
+kangax-es6/Function.name.class-static.js: Exec error [kangax-es6/Function.name.class-static.js]: "Syntax error at line 10 col 8:\n  class C { static foo(){} };\n       ^"
+kangax-es6/Function.name.class-variable.js: Exec error [kangax-es6/Function.name.class-variable.js]: "Syntax error at line 10 col 18:\n  var foo = class {};\n                 ^"
+kangax-es6/Function.name.configurable.js: Error: cannot read property 'enumerable' of undefined
+kangax-es6/Function.name.expression.js: OK
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: Exec error [kangax-es6/Function.name.shorthand.js]: "not implemented"
+kangax-es6/Function.name.shorthand.no-lexical.js: Exec error [kangax-es6/Function.name.shorthand.no-lexical.js]: "not implemented"
+kangax-es6/Function.name.statement.js: OK
+kangax-es6/Function.name.symbol-keyed.js: Exec error [kangax-es6/Function.name.symbol-keyed.js]: "Syntax error at line 13 col 4:\n    [sym1]: function(){},\n   ^"
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: Error: [Map] is not defined
+kangax-es6/Map.constructor-accepts-null.js: Error: [Map] is not defined
+kangax-es6/Map.constructor-arguments.js: Error: [Map] is not defined
+kangax-es6/Map.constructor-invokes-set.js: Error: [Map] is not defined
+kangax-es6/Map.constructor-requires-new.js: Error: [Map] is not defined
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: Error: [Map] is not defined
+kangax-es6/Map.js: Error: [Map] is not defined
+kangax-es6/Map.prototype-not-instance.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.Symbol.iterator.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.clear.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.delete.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.entries.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.forEach.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.keys.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.set-returns-this.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.size.js: Error: [Map] is not defined
+kangax-es6/Map.prototype.values.js: Error: [Map] is not defined
+kangax-es6/Map.zero-key.js: Error: [Map] is not defined
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: Error: Math.hypot is not a function
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: Error: Object.assign is not a function
+kangax-es6/Object.getOwnPropertySymbols.js: Error: [Symbol] is not defined
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: Error: Object.setPrototypeOf is not a function
+kangax-es6/Promise.Symbol.species.js: Error: [Promise] is not defined
+kangax-es6/Promise.all.iterable.js: Error: [Promise] is not defined
+kangax-es6/Promise.all.js: Error: [Promise] is not defined
+kangax-es6/Promise.constructor-requires-new.js: Error: [Promise] is not defined
+kangax-es6/Promise.js: Error: [Promise] is not defined
+kangax-es6/Promise.prototype-not-instance.js: Error: [Promise] is not defined
+kangax-es6/Promise.race.iterable.js: Error: [Promise] is not defined
+kangax-es6/Promise.race.js: Error: [Promise] is not defined
+kangax-es6/Proxy.Array.isArray.js: failed
+kangax-es6/Proxy.JSON.stringify.js: failed
+kangax-es6/Proxy.constructor-requires-new.js: OK
+kangax-es6/Proxy.handler.apply.invariants.js: Error: value is not a function
+kangax-es6/Proxy.handler.apply.js: Error: host.method is not a function
+kangax-es6/Proxy.handler.construct.invariants.js: failed
+kangax-es6/Proxy.handler.construct.js: Error: value is not a function
+kangax-es6/Proxy.handler.defineProperty.invariants.js: failed
+kangax-es6/Proxy.handler.defineProperty.js: failed
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: failed
+kangax-es6/Proxy.handler.deleteProperty.js: failed
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: Error: cannot read property 'value' of undefined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.getPrototypeOf.js: failed
+kangax-es6/Proxy.handler.get.instances.js: failed
+kangax-es6/Proxy.handler.get.invariants.js: failed
+kangax-es6/Proxy.handler.get.js: failed
+kangax-es6/Proxy.handler.has.instances.js: failed
+kangax-es6/Proxy.handler.has.invariants.js: failed
+kangax-es6/Proxy.handler.has.js: failed
+kangax-es6/Proxy.handler.isExtensible.invariants.js: failed
+kangax-es6/Proxy.handler.isExtensible.js: failed
+kangax-es6/Proxy.handler.ownKeys.invariants.js: failed
+kangax-es6/Proxy.handler.ownKeys.js: failed
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: failed
+kangax-es6/Proxy.handler.preventExtensions.js: failed
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: Error: Object.setPrototypeOf is not a function
+kangax-es6/Proxy.handler.setPrototypeOf.js: Error: Object.setPrototypeOf is not a function
+kangax-es6/Proxy.handler.set.instances.js: failed
+kangax-es6/Proxy.handler.set.invariants.js: failed
+kangax-es6/Proxy.handler.set.js: failed
+kangax-es6/Proxy.no-prototype.js: failed
+kangax-es6/Proxy.revocable.js: Error: Proxy.revocable is not a function
+kangax-es6/Reflect.apply.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.construct.new-target.js: Exec error [kangax-es6/Reflect.construct.new-target.js]: "Syntax error at line 11 col 11:\n    if (new.target === Object) {\n          ^"
+kangax-es6/Reflect.construct.third-argument.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.defineProperty.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.deleteProperty.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.getPrototypeOf.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.get.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.has.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.isExtensible.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.ownKeys.string.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.ownKeys.symbol.js: Error: [Symbol] is not defined
+kangax-es6/Reflect.preventExtensions.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.setPrototypeOf.js: Error: [Reflect] is not defined
+kangax-es6/Reflect.set.js: Error: [Reflect] is not defined
+kangax-es6/RegExp.Symbol.species.js: Error: [Symbol] is not defined
+kangax-es6/RegExp.prototype.Symbol.match.js: Error: [Symbol] is not defined
+kangax-es6/RegExp.prototype.Symbol.replace.js: Error: [Symbol] is not defined
+kangax-es6/RegExp.prototype.Symbol.search.js: Error: [Symbol] is not defined
+kangax-es6/RegExp.prototype.Symbol.split.js: Error: [Symbol] is not defined
+kangax-es6/RegExp.prototype.flags.js: OK
+kangax-es6/Set.Symbol.species.js: Error: [Set] is not defined
+kangax-es6/Set.constructor-accepts-null.js: Error: [Set] is not defined
+kangax-es6/Set.constructor-arguments.js: Error: [Set] is not defined
+kangax-es6/Set.constructor-invokes-add.js: Error: [Set] is not defined
+kangax-es6/Set.constructor-requires-new.js: Error: [Set] is not defined
+kangax-es6/Set.iterator-closing.js: Error: [Set] is not defined
+kangax-es6/Set.iterator-prototype-chain.js: Error: [Set] is not defined
+kangax-es6/Set.js: Error: [Set] is not defined
+kangax-es6/Set.prototype-not-instance.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.Symbol.iterator.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.add-returns-this.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.clear.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.delete.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.entries.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.forEach.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.keys.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.size.js: Error: [Set] is not defined
+kangax-es6/Set.prototype.values.js: Error: [Set] is not defined
+kangax-es6/Set.zero-key.js: Error: [Set] is not defined
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: Error: [Symbol] is not defined
+kangax-es6/String.prototype.Symbol.iterator.js: Error: [Symbol] is not defined
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.JSON.stringify.primitive.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.Object.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.String.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.defineProperty.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.global-registry.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.hidden-keys.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.no-coerce.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.no-new.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.prototype.js: Error: [Symbol] is not defined
+kangax-es6/Symbol.typeof.js: Error: [Symbol] is not defined
+kangax-es6/WeakMap.accept-primitives.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.constructor-accepts-null.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.constructor-arguments.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.constructor-invokes-set.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.constructor-requires-new.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.frozen-keys.js: Error: Object.freeze is not a function
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.no-clear.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.prototype-not-instance.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.prototype.delete.js: Error: [WeakMap] is not defined
+kangax-es6/WeakMap.prototype.set-returns-this.js: Error: [WeakMap] is not defined
+kangax-es6/WeakSet.accept-primitives.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.constructor-accepts-null.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.constructor-arguments.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.constructor-invokes-add.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.constructor-requires-new.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.no-clear.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.prototype-not-instance.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.prototype.add-returns-this.js: Error: [WeakSet] is not defined
+kangax-es6/WeakSet.prototype.delete.js: Error: [WeakSet] is not defined
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: Error: rx.compile is not a function
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: Error: value is not a function
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: Error: value is not a function
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: Exec error [kangax-es6/annex-b.function.if-statement.js]: "Syntax error at line 14 col 40:\n  if(true) function baz() { return 4; } else {}"
+kangax-es6/annex-b.function.labeled.js: Exec error [kangax-es6/annex-b.function.labeled.js]: "not implemented"
+kangax-es6/annex-b.html-comments.js: Exec error [kangax-es6/annex-b.html-comments.js]: "Syntax error at line 9 col 4:\n  --> A comment\n   ^"
+kangax-es6/annex-b.regex.backreferences-octal.js: Exec error [kangax-es6/annex-b.regex.backreferences-octal.js]: "Invalid regex"
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: failed
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: Error: cannot read property '0' of null
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: Error: cannot read property '0' of null
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: Error: cannot read property '0' of null
+kangax-es6/annex-b.regex.octal-escapes.js: Error: cannot read property '0' of null
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: Exec error [kangax-es6/annex-b.__proto__.literals.not-computed.js]: "Syntax error at line 14 col 13:\n  return !({ [a] : [] } instanceof Array);\n    "
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: Exec error [kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js]: "not implemented"
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: Exec error [kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js]: "Syntax error at line 14 col 23:\n  return !({ __proto__ } instanceof Array);\n   "
+kangax-es6/arrow.0-params.js: Exec error [kangax-es6/arrow.0-params.js]: "Syntax error at line 10 col 11:\n  return (() => 5)() === 5;\n          ^"
+kangax-es6/arrow.1-param.js: Exec error [kangax-es6/arrow.1-param.js]: "Syntax error at line 10 col 13:\n  var b = x => x + \"foo\";\n            ^"
+kangax-es6/arrow.5-param.js: Exec error [kangax-es6/arrow.5-param.js]: "Syntax error at line 10 col 27:\n  var c = (v, w, x, y, z) => \"\" + v + w + x + y"
+kangax-es6/arrow.bind.js: Exec error [kangax-es6/arrow.bind.js]: "Syntax error at line 10 col 50:\n  var d = { x : \"bar\", y : function() { return "
+kangax-es6/arrow.lexical-arguments.js: Exec error [kangax-es6/arrow.lexical-arguments.js]: "Syntax error at line 10 col 34:\n  var f = (function() { return z => arguments[0"
+kangax-es6/arrow.lexical-super.constructor.js: Exec error [kangax-es6/arrow.lexical-super.constructor.js]: "Syntax error at line 12 col 8:\n  class B {\n       ^"
+kangax-es6/arrow.lexical-super.methods.js: Exec error [kangax-es6/arrow.lexical-super.methods.js]: "Syntax error at line 10 col 8:\n  class B {\n       ^"
+kangax-es6/arrow.lexical-this.js: Exec error [kangax-es6/arrow.lexical-this.js]: "Syntax error at line 10 col 50:\n  var d = { x : \"bar\", y : function() { return "
+kangax-es6/arrow.new-target.js: Exec error [kangax-es6/arrow.new-target.js]: "Syntax error at line 11 col 14:\n    return x => new.target;\n             ^"
+kangax-es6/arrow.no-line-break.js: Exec error [kangax-es6/arrow.no-line-break.js]: "Syntax error at line 10 col 11:\n  return (() => {\n          ^"
+kangax-es6/arrow.no-prototype.js: Exec error [kangax-es6/arrow.no-prototype.js]: "Syntax error at line 10 col 11:\n  var a = () => 5;\n          ^"
+kangax-es6/arrow.precedence.js: Exec error [kangax-es6/arrow.precedence.js]: "Syntax error at line 10 col 11:\n  return (() => {\n          ^"
+kangax-es6/arrow.this-call-apply.js: Exec error [kangax-es6/arrow.this-call-apply.js]: "Syntax error at line 10 col 48:\n  var d = { x : \"foo\", y : function() { return "
+kangax-es6/class.accessor-properties.js: Exec error [kangax-es6/class.accessor-properties.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.anonymous.js: Exec error [kangax-es6/class.anonymous.js]: "Syntax error at line 10 col 22:\n  return typeof class {} === \"function\";\n      "
+kangax-es6/class.block-scoped.js: Exec error [kangax-es6/class.block-scoped.js]: "Syntax error at line 10 col 8:\n  class C {}\n       ^"
+kangax-es6/class.computed-accessor-properties.js: Exec error [kangax-es6/class.computed-accessor-properties.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.computed-names-tdz.js: Exec error [kangax-es6/class.computed-names-tdz.js]: "Syntax error at line 11 col 18:\n    var B = class C {\n                 ^"
+kangax-es6/class.computed-prototype-methods.js: Exec error [kangax-es6/class.computed-prototype-methods.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.computed-static-accessor-properties.js: Exec error [kangax-es6/class.computed-static-accessor-properties.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.computed-static-methods.js: Exec error [kangax-es6/class.computed-static-methods.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.constructor-requires-new.js: Exec error [kangax-es6/class.constructor-requires-new.js]: "Syntax error at line 10 col 8:\n  class C {}\n       ^"
+kangax-es6/class.constructor.js: Exec error [kangax-es6/class.constructor.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.expression.js: Exec error [kangax-es6/class.expression.js]: "Syntax error at line 10 col 22:\n  return typeof class C {} === \"function\";\n    "
+kangax-es6/class.extends-expressions.js: Exec error [kangax-es6/class.extends-expressions.js]: "Syntax error at line 11 col 8:\n  class C extends (B = class {}) {}\n       ^"
+kangax-es6/class.extends-null.js: Exec error [kangax-es6/class.extends-null.js]: "Syntax error at line 10 col 8:\n  class C extends null {\n       ^"
+kangax-es6/class.extends.js: Exec error [kangax-es6/class.extends.js]: "Syntax error at line 10 col 8:\n  class B {}\n       ^"
+kangax-es6/class.implicit-strict.js: Exec error [kangax-es6/class.implicit-strict.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.lexical-name.js: Exec error [kangax-es6/class.lexical-name.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.methods-not-enumerable.js: Exec error [kangax-es6/class.methods-not-enumerable.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.new-target.js: Exec error [kangax-es6/class.new-target.js]: "Syntax error at line 12 col 16:\n    passed = new.target === f;\n               ^"
+kangax-es6/class.optional-semicolons.js: Exec error [kangax-es6/class.optional-semicolons.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.prototype-methods.js: Exec error [kangax-es6/class.prototype-methods.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.statement.js: Exec error [kangax-es6/class.statement.js]: "Syntax error at line 10 col 8:\n  class C {}\n       ^"
+kangax-es6/class.static-accessor-properties.js: Exec error [kangax-es6/class.static-accessor-properties.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/class.static-methods.js: Exec error [kangax-es6/class.static-methods.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/class.string-keyed-methods.js: Exec error [kangax-es6/class.string-keyed-methods.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/const.basic.js: Exec error [kangax-es6/const.basic.js]: "Syntax error at line 10 col 8:\n  const foo = 123;\n       ^"
+kangax-es6/const.block-scoped.js: Exec error [kangax-es6/const.block-scoped.js]: "Syntax error at line 10 col 8:\n  const bar = 123;\n       ^"
+kangax-es6/const.for-in.js: Exec error [kangax-es6/const.for-in.js]: "Syntax error at line 11 col 12:\n  for(const i in { a:1, b:1 }) {\n           ^"
+kangax-es6/const.for-loop.js: Exec error [kangax-es6/const.for-loop.js]: "Syntax error at line 10 col 8:\n  const baz = 1;\n       ^"
+kangax-es6/const.for-of.js: Exec error [kangax-es6/const.for-of.js]: "Syntax error at line 11 col 12:\n  for(const i of ['a','b']) {\n           ^"
+kangax-es6/const.no-redefine.js: Exec error [kangax-es6/const.no-redefine.js]: "Syntax error at line 10 col 8:\n  const baz = 1;\n       ^"
+kangax-es6/const.no-statement.js: Exec error [kangax-es6/const.no-statement.js]: "Syntax error at line 10 col 8:\n  const bar = 1;\n       ^"
+kangax-es6/const.shadow.js: Exec error [kangax-es6/const.shadow.js]: "Syntax error at line 11 col 14:\n      { const bar = 456; }\n             ^"
+kangax-es6/const.strict.basic.js: Exec error [kangax-es6/const.strict.basic.js]: "Syntax error at line 11 col 8:\n  const foo = 123;\n       ^"
+kangax-es6/const.strict.block-scoped.js: Exec error [kangax-es6/const.strict.block-scoped.js]: "Syntax error at line 11 col 8:\n  const bar = 123;\n       ^"
+kangax-es6/const.strict.for-in.js: Exec error [kangax-es6/const.strict.for-in.js]: "Syntax error at line 12 col 12:\n  for(const i in { a:1, b:1 }) {\n           ^"
+kangax-es6/const.strict.for-loop.js: Exec error [kangax-es6/const.strict.for-loop.js]: "Syntax error at line 11 col 8:\n  const baz = 1;\n       ^"
+kangax-es6/const.strict.for-of.js: Exec error [kangax-es6/const.strict.for-of.js]: "Syntax error at line 12 col 12:\n  for(const i of ['a','b']) {\n           ^"
+kangax-es6/const.strict.no-redefine.js: Exec error [kangax-es6/const.strict.no-redefine.js]: "Syntax error at line 11 col 8:\n  const baz = 1;\n       ^"
+kangax-es6/const.strict.no-statement.js: Exec error [kangax-es6/const.strict.no-statement.js]: "Syntax error at line 11 col 8:\n  const bar = 1;\n       ^"
+kangax-es6/const.strict.shadow.js: Exec error [kangax-es6/const.strict.shadow.js]: "Syntax error at line 12 col 14:\n      { const bar = 456; }\n             ^"
+kangax-es6/const.strict.tdz.js: Exec error [kangax-es6/const.strict.tdz.js]: "Syntax error at line 13 col 8:\n  const qux = 456;\n       ^"
+kangax-es6/const.tdz.js: Exec error [kangax-es6/const.tdz.js]: "Syntax error at line 12 col 8:\n  const qux = 456;\n       ^"
+kangax-es6/default-params.arguments.js: Exec error [kangax-es6/default-params.arguments.js]: "Internal error"
+kangax-es6/default-params.basic.js: Exec error [kangax-es6/default-params.basic.js]: "Internal error"
+kangax-es6/default-params.explicit-undefined.js: Exec error [kangax-es6/default-params.explicit-undefined.js]: "Internal error"
+kangax-es6/default-params.new-function.js: Error: Invalid function body
+kangax-es6/default-params.refer-previous.js: Exec error [kangax-es6/default-params.refer-previous.js]: "Internal error"
+kangax-es6/default-params.separate-scope.js: Exec error [kangax-es6/default-params.separate-scope.js]: "Internal error"
+kangax-es6/default-params.tdz.js: Exec error [kangax-es6/default-params.tdz.js]: "Internal error"
+kangax-es6/destructuring-assign.array.js: Exec error [kangax-es6/destructuring-assign.array.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.astral-string.js: Exec error [kangax-es6/destructuring-assign.astral-string.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.chained-iterable.js: Exec error [kangax-es6/destructuring-assign.chained-iterable.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.chained-object.js: Exec error [kangax-es6/destructuring-assign.chained-object.js]: "Syntax error at line 11 col 5:\n  ({a,b} = {c,d} = {a:1,b:2,c:3,d:4});\n    ^"
+kangax-es6/destructuring-assign.computed-properties.js: Exec error [kangax-es6/destructuring-assign.computed-properties.js]: "Syntax error at line 11 col 5:\n  ({ [qux]: grault } = { corge: \"garply\" });\n   "
+kangax-es6/destructuring-assign.defaults.js: Exec error [kangax-es6/destructuring-assign.defaults.js]: "Syntax error at line 11 col 6:\n  ({a = 1, b = 0, z:c = 3} = {b:2, z:undefined})"
+kangax-es6/destructuring-assign.empty-patterns.js: Exec error [kangax-es6/destructuring-assign.empty-patterns.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.generator.js: Exec error [kangax-es6/destructuring-assign.generator.js]: "Syntax error at line 11 col 23:\n  [a, b, c] = (function*(){ yield 1; yield 2; }"
+kangax-es6/destructuring-assign.iterable-expression.js: Exec error [kangax-es6/destructuring-assign.iterable-expression.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.iterable-instance.js: Exec error [kangax-es6/destructuring-assign.iterable-instance.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.iterable.js: Exec error [kangax-es6/destructuring-assign.iterable.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.iterator-closing.js: Exec error [kangax-es6/destructuring-assign.iterator-closing.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.nested-rest.js: Exec error [kangax-es6/destructuring-assign.nested-rest.js]: "Syntax error at line 11 col 10:\n  [first, ...[a[2], last]] = a;\n         ^"
+kangax-es6/destructuring-assign.nested.js: Exec error [kangax-es6/destructuring-assign.nested.js]: "Syntax error at line 11 col 13:\n  [e, {x:f, g}] = [9, {x:10}];\n            ^"
+kangax-es6/destructuring-assign.object-expression.js: Exec error [kangax-es6/destructuring-assign.object-expression.js]: "Syntax error at line 11 col 12:\n  return ({a,b} = obj) === obj;\n           ^"
+kangax-es6/destructuring-assign.object-primitives.js: Exec error [kangax-es6/destructuring-assign.object-primitives.js]: "Syntax error at line 11 col 11:\n  ({toFixed} = 2);\n          ^"
+kangax-es6/destructuring-assign.object.js: Exec error [kangax-es6/destructuring-assign.object.js]: "Syntax error at line 11 col 5:\n  ({c, x:d, e} = {c:7, x:8});\n    ^"
+kangax-es6/destructuring-assign.parenthesised-error.js: Exec error [kangax-es6/destructuring-assign.parenthesised-error.js]: "Syntax error at line 11 col 5:\n  ({a,b} = {a:1,b:2});\n    ^"
+kangax-es6/destructuring-assign.rest.js: Exec error [kangax-es6/destructuring-assign.rest.js]: "Syntax error at line 11 col 6:\n  [a, ...b] = [3, 4, 5];\n     ^"
+kangax-es6/destructuring-assign.sparse-array.js: Exec error [kangax-es6/destructuring-assign.sparse-array.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.string.js: Exec error [kangax-es6/destructuring-assign.string.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.throws-null-undefined.js: Exec error [kangax-es6/destructuring-assign.throws-null-undefined.js]: "Syntax error at line 12 col 7:\n    ({a} = null);\n      ^"
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: Exec error [kangax-es6/destructuring-assign.trailing-comma-iterable.js]: "unexpected ast node"
+kangax-es6/destructuring-assign.trailing-comma-object.js: Exec error [kangax-es6/destructuring-assign.trailing-comma-object.js]: "Syntax error at line 11 col 5:\n  ({a,} = {a:1});\n    ^"
+kangax-es6/destructuring-decl.array.js: Exec error [kangax-es6/destructuring-decl.array.js]: "Syntax error at line 10 col 6:\n  var [a, , [b], c] = [5, null, [6]];\n     ^"
+kangax-es6/destructuring-decl.astral-string.js: Exec error [kangax-es6/destructuring-decl.astral-string.js]: "Syntax error at line 10 col 6:\n  var [c] = \"𠮷𠮶\";\n     ^"
+kangax-es6/destructuring-decl.catch.js: Exec error [kangax-es6/destructuring-decl.catch.js]: "Syntax error at line 12 col 10:\n  } catch([i,j]) {\n         ^"
+kangax-es6/destructuring-decl.computed-properties.js: Exec error [kangax-es6/destructuring-decl.computed-properties.js]: "Syntax error at line 11 col 6:\n  var { [qux]: grault } = { corge: \"garply\" };\n "
+kangax-es6/destructuring-decl.defaults-tdz.js: Exec error [kangax-es6/destructuring-decl.defaults-tdz.js]: "Syntax error at line 10 col 6:\n  var {a, b = 2} = {a:1};\n     ^"
+kangax-es6/destructuring-decl.defaults.js: Exec error [kangax-es6/destructuring-decl.defaults.js]: "Syntax error at line 10 col 6:\n  var {a = 1, b = 0, z:c = 3} = {b:2, z:undefine"
+kangax-es6/destructuring-decl.for-in.js: Exec error [kangax-es6/destructuring-decl.for-in.js]: "Syntax error at line 10 col 10:\n  for(var [i, j, k] in { qux: 1 }) {\n         ^"
+kangax-es6/destructuring-decl.for-of.js: Exec error [kangax-es6/destructuring-decl.for-of.js]: "Syntax error at line 10 col 10:\n  for(var [i, j, k] of [[1,2,3]]) {\n         ^"
+kangax-es6/destructuring-decl.generator.js: Exec error [kangax-es6/destructuring-decl.generator.js]: "Syntax error at line 10 col 6:\n  var [a, b, c] = (function*(){ yield 1; yield 2"
+kangax-es6/destructuring-decl.iterable-instance.js: Exec error [kangax-es6/destructuring-decl.iterable-instance.js]: "Syntax error at line 34 col 6:\n  var [a, b, c] = Object.create(global.__createI"
+kangax-es6/destructuring-decl.iterable.js: Exec error [kangax-es6/destructuring-decl.iterable.js]: "Syntax error at line 34 col 6:\n  var [a, b, c] = global.__createIterableObject("
+kangax-es6/destructuring-decl.iterator-closing.js: Exec error [kangax-es6/destructuring-decl.iterator-closing.js]: "Syntax error at line 38 col 6:\n  var [a, b] = iter;\n     ^"
+kangax-es6/destructuring-decl.multiple-var.js: Exec error [kangax-es6/destructuring-decl.multiple-var.js]: "Syntax error at line 10 col 6:\n  var [a,b] = [5,6], {c,d} = {c:7,d:8};\n     ^"
+kangax-es6/destructuring-decl.nested.js: Exec error [kangax-es6/destructuring-decl.nested.js]: "Syntax error at line 10 col 6:\n  var [e, {x:f, g}] = [9, {x:10}];\n     ^"
+kangax-es6/destructuring-decl.object-primitives.js: Exec error [kangax-es6/destructuring-decl.object-primitives.js]: "Syntax error at line 10 col 6:\n  var {toFixed} = 2;\n     ^"
+kangax-es6/destructuring-decl.object.js: Exec error [kangax-es6/destructuring-decl.object.js]: "Syntax error at line 10 col 6:\n  var {c, x:d, e} = {c:7, x:8};\n     ^"
+kangax-es6/destructuring-decl.rest.js: Exec error [kangax-es6/destructuring-decl.rest.js]: "Syntax error at line 10 col 6:\n  var [a, ...b] = [3, 4, 5];\n     ^"
+kangax-es6/destructuring-decl.sparse-array.js: Exec error [kangax-es6/destructuring-decl.sparse-array.js]: "Syntax error at line 10 col 6:\n  var [a, , b] = [,,,];\n     ^"
+kangax-es6/destructuring-decl.string.js: Exec error [kangax-es6/destructuring-decl.string.js]: "Syntax error at line 10 col 6:\n  var [a, b, c] = \"ab\";\n     ^"
+kangax-es6/destructuring-decl.throws-null-undefined.js: Exec error [kangax-es6/destructuring-decl.throws-null-undefined.js]: "Syntax error at line 11 col 8:\n    var {a} = null;\n       ^"
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: Exec error [kangax-es6/destructuring-decl.trailing-comma-iterable.js]: "Syntax error at line 10 col 6:\n  var [a,] = [1];\n     ^"
+kangax-es6/destructuring-decl.trailing-comma-object.js: Exec error [kangax-es6/destructuring-decl.trailing-comma-object.js]: "Syntax error at line 10 col 6:\n  var {a,} = {a:1};\n     ^"
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: Exec error [kangax-es6/destructuring-params.aliased-defaults-arrow.js]: "Syntax error at line 10 col 37:\n  return ((a, {b: x = 0, c: y = 3}) => {\n      "
+kangax-es6/destructuring-params.arguments.js: Exec error [kangax-es6/destructuring-params.arguments.js]: "Syntax error at line 10 col 21:\n  return (function({a, x:b, y:e}, [c, d]) {\n   "
+kangax-es6/destructuring-params.array.js: Exec error [kangax-es6/destructuring-params.array.js]: "Internal error"
+kangax-es6/destructuring-params.astral-string.js: Exec error [kangax-es6/destructuring-params.astral-string.js]: "Internal error"
+kangax-es6/destructuring-params.computed-properties.js: Exec error [kangax-es6/destructuring-params.computed-properties.js]: "Syntax error at line 11 col 20:\n  return function({ [qux]: grault }) {\n        "
+kangax-es6/destructuring-params.defaults-new-function.js: Error: Invalid function body
+kangax-es6/destructuring-params.defaults-separate-scope.js: Exec error [kangax-es6/destructuring-params.defaults-separate-scope.js]: "Syntax error at line 10 col 21:\n  return (function({a=function(){\n             "
+kangax-es6/destructuring-params.defaults.js: Exec error [kangax-es6/destructuring-params.defaults.js]: "Syntax error at line 10 col 22:\n  return (function({a = 1, b = 0, c = 3, x:d = "
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
+kangax-es6/destructuring-params.empty-patterns.js: Exec error [kangax-es6/destructuring-params.empty-patterns.js]: "Internal error"
+kangax-es6/destructuring-params.generator.js: Exec error [kangax-es6/destructuring-params.generator.js]: "Syntax error at line 12 col 12:\n  }(function*(){ yield 1; yield 2; }());\n      "
+kangax-es6/destructuring-params.iterable-instance.js: Exec error [kangax-es6/destructuring-params.iterable-instance.js]: "Internal error"
+kangax-es6/destructuring-params.iterable.js: Exec error [kangax-es6/destructuring-params.iterable.js]: "Internal error"
+kangax-es6/destructuring-params.iterator-closing.js: Exec error [kangax-es6/destructuring-params.iterator-closing.js]: "Internal error"
+kangax-es6/destructuring-params.length.js: Exec error [kangax-es6/destructuring-params.length.js]: "Syntax error at line 10 col 20:\n  return function({a, b}, [c, d]){}.length === "
+kangax-es6/destructuring-params.nested.js: Exec error [kangax-es6/destructuring-params.nested.js]: "Syntax error at line 10 col 29:\n  return function([e, {x:f, g}], {h, x:[i]}) {\n"
+kangax-es6/destructuring-params.new-function.js: Error: Invalid function body
+kangax-es6/destructuring-params.object-primitives.js: Exec error [kangax-es6/destructuring-params.object-primitives.js]: "Syntax error at line 10 col 26:\n  return function({toFixed}, {slice}) {\n       "
+kangax-es6/destructuring-params.object.js: Exec error [kangax-es6/destructuring-params.object.js]: "Syntax error at line 10 col 20:\n  return function({c, x:d, e}) {\n              "
+kangax-es6/destructuring-params.rest.js: Exec error [kangax-es6/destructuring-params.rest.js]: "Syntax error at line 10 col 22:\n  return function([a, ...b], [c, ...d]) {\n     "
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Exec error [kangax-es6/destructuring-params.shorthand-defaults-arrow.js]: "Syntax error at line 10 col 17:\n  return ((a, {b = 0, c = 3}) => {\n            "
+kangax-es6/destructuring-params.sparse-array.js: Exec error [kangax-es6/destructuring-params.sparse-array.js]: "Internal error"
+kangax-es6/destructuring-params.string.js: Exec error [kangax-es6/destructuring-params.string.js]: "Internal error"
+kangax-es6/destructuring-params.throws-null-undefined.js: Exec error [kangax-es6/destructuring-params.throws-null-undefined.js]: "Syntax error at line 11 col 16:\n    (function({a}){}(null));\n               ^"
+kangax-es6/destructuring-params.trailing-comma-iterable.js: Exec error [kangax-es6/destructuring-params.trailing-comma-iterable.js]: "Internal error"
+kangax-es6/destructuring-params.trailing-comma-object.js: Exec error [kangax-es6/destructuring-params.trailing-comma-object.js]: "Syntax error at line 10 col 20:\n  return function({a,}) {\n                   ^"
+kangax-es6/for-of.array.js: Exec error [kangax-es6/for-of.array.js]: "Syntax error at line 11 col 16:\n  for (var item of arr)\n               ^"
+kangax-es6/for-of.astral-string.js: Exec error [kangax-es6/for-of.astral-string.js]: "Syntax error at line 11 col 16:\n  for (var item of \"𠮷𠮶\")\n               ^"
+kangax-es6/for-of.generator.js: Exec error [kangax-es6/for-of.generator.js]: "Syntax error at line 11 col 26:\n  var iterable = (function*(){ yield 1; yield 2"
+kangax-es6/for-of.iterable-instance.js: Exec error [kangax-es6/for-of.iterable-instance.js]: "Syntax error at line 36 col 16:\n  for (var item of Object.create(iterable)) {\n "
+kangax-es6/for-of.iterable.js: Exec error [kangax-es6/for-of.iterable.js]: "Syntax error at line 36 col 16:\n  for (var item of iterable) {\n               ^"
+kangax-es6/for-of.iterator-closing-break.js: Exec error [kangax-es6/for-of.iterator-closing-break.js]: "Syntax error at line 37 col 14:\n  for (var it of iter) break;\n             ^"
+kangax-es6/for-of.iterator-closing-throw.js: Exec error [kangax-es6/for-of.iterator-closing-throw.js]: "Syntax error at line 38 col 16:\n    for (var it of iter) throw 0;\n             "
+kangax-es6/for-of.sparse-array.js: Exec error [kangax-es6/for-of.sparse-array.js]: "Syntax error at line 12 col 16:\n  for (var item of arr)\n               ^"
+kangax-es6/for-of.string.js: Exec error [kangax-es6/for-of.string.js]: "Syntax error at line 11 col 16:\n  for (var item of \"foo\")\n               ^"
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: Exec error [kangax-es6/generators.basic.js]: "Syntax error at line 10 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.constructor.js: Exec error [kangax-es6/generators.constructor.js]: "Syntax error at line 10 col 11:\n  function * g (){}\n          ^"
+kangax-es6/generators.expression.js: Exec error [kangax-es6/generators.expression.js]: "Syntax error at line 10 col 27:\n  var generator = function * (){\n              "
+kangax-es6/generators.no-new-this.js: Exec error [kangax-es6/generators.no-new-this.js]: "Syntax error at line 10 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.prototype-chain.js: Exec error [kangax-es6/generators.prototype-chain.js]: "Syntax error at line 10 col 11:\n  function * generatorFn(){}\n          ^"
+kangax-es6/generators.prototype.js: Exec error [kangax-es6/generators.prototype.js]: "Syntax error at line 10 col 11:\n  function * generatorFn(){}\n          ^"
+kangax-es6/generators.return.js: Exec error [kangax-es6/generators.return.js]: "Syntax error at line 10 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.sending.js: Exec error [kangax-es6/generators.sending.js]: "Syntax error at line 11 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.shorthand.class.js: Exec error [kangax-es6/generators.shorthand.class.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/generators.shorthand.computed.class.js: Exec error [kangax-es6/generators.shorthand.computed.class.js]: "Syntax error at line 11 col 8:\n  class C {\n       ^"
+kangax-es6/generators.shorthand.computed.js: Exec error [kangax-es6/generators.shorthand.computed.js]: "Syntax error at line 12 col 4:\n    * [garply] () {\n   ^"
+kangax-es6/generators.shorthand.js: Exec error [kangax-es6/generators.shorthand.js]: "Syntax error at line 11 col 4:\n    * generator() {\n   ^"
+kangax-es6/generators.shorthand.no-constructor.js: Exec error [kangax-es6/generators.shorthand.no-constructor.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es6/generators.shorthand.string-keyed.js: Exec error [kangax-es6/generators.shorthand.string-keyed.js]: "Syntax error at line 11 col 4:\n    * \"foo bar\"() {\n   ^"
+kangax-es6/generators.this.js: Exec error [kangax-es6/generators.this.js]: "Syntax error at line 10 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.throw.js: Exec error [kangax-es6/generators.throw.js]: "Syntax error at line 11 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.yield-precedence.js: Exec error [kangax-es6/generators.yield-precedence.js]: "Syntax error at line 11 col 11:\n  function * generator(){\n          ^"
+kangax-es6/generators.yield-star.array.js: Exec error [kangax-es6/generators.yield-star.array.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.astral-string.js: Exec error [kangax-es6/generators.yield-star.astral-string.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.generator.js: Exec error [kangax-es6/generators.yield-star.generator.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.iterable-instance.js: Exec error [kangax-es6/generators.yield-star.iterable-instance.js]: "Syntax error at line 33 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.iterable.js: Exec error [kangax-es6/generators.yield-star.iterable.js]: "Syntax error at line 34 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.iterator-closing-throw.js: Exec error [kangax-es6/generators.yield-star.iterator-closing-throw.js]: "Syntax error at line 42 col 21:\n  var gen = (function*(){\n                    ^"
+kangax-es6/generators.yield-star.iterator-closing.js: Exec error [kangax-es6/generators.yield-star.iterator-closing.js]: "Syntax error at line 40 col 21:\n  var gen = (function* generator(){\n           "
+kangax-es6/generators.yield-star.non-iterable-error.js: Exec error [kangax-es6/generators.yield-star.non-iterable-error.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.sparse-array.js: Exec error [kangax-es6/generators.yield-star.sparse-array.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/generators.yield-star.string.js: Exec error [kangax-es6/generators.yield-star.string.js]: "Syntax error at line 10 col 27:\n  var iterator = (function * generator() {\n    "
+kangax-es6/let.basic.js: Exec error [kangax-es6/let.basic.js]: "Syntax error at line 10 col 6:\n  let foo = 123;\n     ^"
+kangax-es6/let.block-scoped.js: Exec error [kangax-es6/let.block-scoped.js]: "Syntax error at line 10 col 6:\n  let bar = 123;\n     ^"
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: Exec error [kangax-es6/let.for-iteration.js]: "Syntax error at line 10 col 6:\n  let scopes = [];\n     ^"
+kangax-es6/let.for-loop.js: Exec error [kangax-es6/let.for-loop.js]: "Syntax error at line 10 col 6:\n  let baz = 1;\n     ^"
+kangax-es6/let.no-statement.js: Exec error [kangax-es6/let.no-statement.js]: "Syntax error at line 10 col 6:\n  let bar = 1;\n     ^"
+kangax-es6/let.shadow.js: Exec error [kangax-es6/let.shadow.js]: "Syntax error at line 11 col 12:\n      { let bar = 456; }\n           ^"
+kangax-es6/let.strict.basic.js: Exec error [kangax-es6/let.strict.basic.js]: "Syntax error at line 11 col 6:\n  let foo = 123;\n     ^"
+kangax-es6/let.strict.block-scoped.js: Exec error [kangax-es6/let.strict.block-scoped.js]: "Syntax error at line 11 col 6:\n  let bar = 123;\n     ^"
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: Exec error [kangax-es6/let.strict.for-iteration.js]: "Syntax error at line 11 col 6:\n  let scopes = [];\n     ^"
+kangax-es6/let.strict.for-loop.js: Exec error [kangax-es6/let.strict.for-loop.js]: "Syntax error at line 11 col 6:\n  let baz = 1;\n     ^"
+kangax-es6/let.strict.no-statement.js: Exec error [kangax-es6/let.strict.no-statement.js]: "Syntax error at line 11 col 6:\n  let bar = 1;\n     ^"
+kangax-es6/let.strict.shadow.js: Exec error [kangax-es6/let.strict.shadow.js]: "Syntax error at line 12 col 12:\n      { let bar = 456; }\n           ^"
+kangax-es6/let.strict.tdz.js: Exec error [kangax-es6/let.strict.tdz.js]: "Syntax error at line 13 col 6:\n  let qux = 456;\n     ^"
+kangax-es6/let.tdz.js: Exec error [kangax-es6/let.tdz.js]: "Syntax error at line 12 col 6:\n  let qux = 456;\n     ^"
+kangax-es6/literals.binary.Number.js: OK
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: Exec error [kangax-es6/literals.object.computed-accessors.js]: "Syntax error at line 13 col 12:\n        get [x] () { return 1 },\n           ^"
+kangax-es6/literals.object.computed-properties.js: Exec error [kangax-es6/literals.object.computed-properties.js]: "Syntax error at line 11 col 12:\n  return ({ [x]: 1 }).y === 1;\n           ^"
+kangax-es6/literals.object.computed-shorthand-methods.js: Exec error [kangax-es6/literals.object.computed-shorthand-methods.js]: "Syntax error at line 11 col 12:\n  return ({ [x](){ return 1 } }).y() === 1;\n   "
+kangax-es6/literals.object.shorthand-methods.js: Exec error [kangax-es6/literals.object.shorthand-methods.js]: "not implemented"
+kangax-es6/literals.object.shorthand-properties.js: Exec error [kangax-es6/literals.object.shorthand-properties.js]: "Syntax error at line 10 col 26:\n  var a = 7, b = 8, c = {a,b};\n                "
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: Exec error [kangax-es6/literals.object.string-keyed-shorthand-methods.js]: "Syntax error at line 10 col 21:\n  return ({ \"foo bar\"() { return 4; } })[\"foo b"
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: Exec error [kangax-es6/literals.octal.js]: "Syntax error at line 9 col 10:\n  return 0o10 === 8 && 0O10 === 8;\n         ^"
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: Error: Object.freeze is not a function
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: Error: Object.keys called on non-object
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: Error: Object.getPrototypeOf called on non-object
+kangax-es6/misc.Object.isExtensible.primitives.js: Error: Object expected
+kangax-es6/misc.Object.isFrozen.primitives.js: Error: Object expected
+kangax-es6/misc.Object.isSealed.primitives.js: Error: Object expected
+kangax-es6/misc.Object.keys.primitives.js: Error: Object.keys called on non-object
+kangax-es6/misc.Object.preventExtensions.primitives.js: Error: Object expected
+kangax-es6/misc.Object.seal.primitives.js: Error: Object.seal is not a function
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: Error: Object.freeze is not a function
+kangax-es6/misc.Proxy.defineProperty.Set.js: failed
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: Error: p.copyWithin is not a function
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: failed
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: failed
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: failed
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: Error: cannot read property 'set' of undefined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: Error: p.unshift is not a function
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: Error: Cannot create proxy with a non-object as target or handler
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: Error: Object.assign is not a function
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: failed
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed
+kangax-es6/misc.Proxy.get.Array.concat.js: Error: Array expected
+kangax-es6/misc.Proxy.get.Array.from.js: Error: Array.from is not a function
+kangax-es6/misc.Proxy.get.Array.iteration.js: Error: cannot read property 'call' of undefined
+kangax-es6/misc.Proxy.get.Array.pop.js: failed
+kangax-es6/misc.Proxy.get.Array.reverse.js: failed
+kangax-es6/misc.Proxy.get.Array.shift.js: failed
+kangax-es6/misc.Proxy.get.Array.splice.js: Error: cannot read property 'set' of undefined
+kangax-es6/misc.Proxy.get.Array.toString.js: failed
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Exec error [kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js]: "Syntax error at line 13 col 8:\n  class C extends p {}\n       ^"
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: Error: p is not a function
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: Error: value is not a function
+kangax-es6/misc.Proxy.get.Date.toJSON.js: Error: This is not a Date object
+kangax-es6/misc.Proxy.get.Error.toString.js: failed
+kangax-es6/misc.Proxy.get.Function.bind.js: Error: Cannot create proxy with a non-object as target or handler
+kangax-es6/misc.Proxy.get.HasBinding.js: Exec error [kangax-es6/misc.Proxy.get.HasBinding.js]: "not implemented"
+kangax-es6/misc.Proxy.get.IteratorComplete.js: Exec error [kangax-es6/misc.Proxy.get.IteratorComplete.js]: "Syntax error at line 22 col 12:\n  for(var e of iterable) {\n           ^"
+kangax-es6/misc.Proxy.get.JSON.stringify.js: failed
+kangax-es6/misc.Proxy.get.Object.assign.js: Error: Object.assign is not a function
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: failed
+kangax-es6/misc.Proxy.get.Promise.resolve.js: Error: [Promise] is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: Error: cannot read property 'call' of undefined
+kangax-es6/misc.Proxy.get.RegExp.test.js: failed
+kangax-es6/misc.Proxy.get.RegExp.toString.js: Error: Not a regexp
+kangax-es6/misc.Proxy.get.String.match.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: Error: String.raw is not a function
+kangax-es6/misc.Proxy.get.String.replace.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.String.search.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.String.split.js: Error: [Symbol] is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: Error: Cannot convert object to primitive value
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
+kangax-es6/misc.Proxy.get.instanceof.js: Error: Cannot create proxy with a non-object as target or handler
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: OK
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: Error: Object.freeze is not a function
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: Error: p.copyWithin is not a function
+kangax-es6/misc.Proxy.set.Array.fill.js: Error: p.fill is not a function
+kangax-es6/misc.Proxy.set.Array.from.js: Error: cannot read property 'call' of undefined
+kangax-es6/misc.Proxy.set.Array.of.js: Error: cannot read property 'call' of undefined
+kangax-es6/misc.Proxy.set.Array.pop.js: failed
+kangax-es6/misc.Proxy.set.Array.push.js: failed
+kangax-es6/misc.Proxy.set.Array.reverse.js: failed
+kangax-es6/misc.Proxy.set.Array.shift.js: failed
+kangax-es6/misc.Proxy.set.Array.splice.js: Error: cannot read property 'set' of undefined
+kangax-es6/misc.Proxy.set.Array.unshift.js: Error: p.unshift is not a function
+kangax-es6/misc.Proxy.set.Object.assign.js: Error: Object.assign is not a function
+kangax-es6/misc.RegExp-alter-flags.js: Error: invalid flags
+kangax-es6/misc.RegExp-prototype-toString-generic.js: Error: Not a regexp
+kangax-es6/misc.accessors-no-constructor.js: Exec error [kangax-es6/misc.accessors-no-constructor.js]: "Syntax error at line 9 col 48:\n  var f = (Object.getOwnPropertyDescriptor({get "
+kangax-es6/misc.bound-function-prototype.arrow.js: Exec error [kangax-es6/misc.bound-function-prototype.arrow.js]: "Syntax error at line 10 col 13:\n    var f = ()=>5;\n            ^"
+kangax-es6/misc.bound-function-prototype.class.js: Exec error [kangax-es6/misc.bound-function-prototype.class.js]: "Syntax error at line 10 col 10:\n    class C {}\n         ^"
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: Exec error [kangax-es6/misc.bound-function-prototype.generator.js]: "Syntax error at line 10 col 20:\n    var f = function*(){};\n                   ^"
+kangax-es6/misc.bound-function-prototype.subclass.js: Exec error [kangax-es6/misc.bound-function-prototype.subclass.js]: "Syntax error at line 10 col 10:\n    class C extends superclass {\n         ^"
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: OK
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: Error: cannot read property 'configurable' of undefined
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: failed
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: Exec error [kangax-es6/misc.identifier-syntax.var-2.js]: "Syntax error at line 9 col 6:\n  var 𐋀;\n     ^"
+kangax-es6/misc.property-order.JSON.parse.js: failed
+kangax-es6/misc.property-order.JSON.stringify.js: failed
+kangax-es6/misc.property-order.Object.assign.js: Error: Object.assign is not a function
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
+kangax-es6/misc.property-order.Object.keys.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: Error: [Reflect] is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: Error: [Symbol] is not defined
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: Exec error [kangax-es6/new-target.assignment-error.js]: "Syntax error at line 12 col 17:\n    passed = (new.target === f);\n              "
+kangax-es6/new-target.constructor.js: Exec error [kangax-es6/new-target.constructor.js]: "Syntax error at line 12 col 17:\n    passed = (new.target === f);\n              "
+kangax-es6/regex.flags.u.case-folding.js: Exec error [kangax-es6/regex.flags.u.case-folding.js]: "Syntax error at line 10 col 24:\n  return \"ſ\".match(/S/iu) && \"S\".match(/ſ/iu)"
+kangax-es6/regex.flags.u.codepoint.js: Exec error [kangax-es6/regex.flags.u.codepoint.js]: "Syntax error at line 10 col 33:\n  return \"𝌆\".match(/\\u{1d306}/u)[0].length ="
+kangax-es6/regex.flags.u.js: Exec error [kangax-es6/regex.flags.u.js]: "Syntax error at line 10 col 27:\n  return \"𠮷\".match(/^.$/u)[0].length === 2;\n"
+kangax-es6/regex.flags.u.non-bmp.js: Exec error [kangax-es6/regex.flags.u.non-bmp.js]: "Syntax error at line 10 col 29:\n  return \"𠮷x\".match(/^.x$/u)[0].length === 3"
+kangax-es6/regex.flags.y.js: failed
+kangax-es6/regex.flags.y.lastIndex.js: failed
+kangax-es6/rest-params.arguments.js: Exec error [kangax-es6/rest-params.arguments.js]: "Syntax error at line 10 col 25:\n  return (function (foo, ...args) {\n           "
+kangax-es6/rest-params.basic.js: Exec error [kangax-es6/rest-params.basic.js]: "Syntax error at line 10 col 25:\n  return (function (foo, ...args) {\n           "
+kangax-es6/rest-params.length.js: Exec error [kangax-es6/rest-params.length.js]: "Syntax error at line 10 col 21:\n  return function(a, ...b){}.length === 1 && fu"
+kangax-es6/rest-params.new-function.js: Error: Invalid function body
+kangax-es6/rest-params.no-setter.js: Exec error [kangax-es6/rest-params.no-setter.js]: "Syntax error at line 10 col 20:\n  return (function (...args) {\n                "
+kangax-es6/spread.array-call.js: Exec error [kangax-es6/spread.array-call.js]: "Syntax error at line 10 col 18:\n  return Math.max(...[1, 2, 3]) === 3\n         "
+kangax-es6/spread.array-literal.js: Exec error [kangax-es6/spread.array-literal.js]: "Syntax error at line 10 col 10:\n  return [...[1, 2, 3]][2] === 3;\n         ^"
+kangax-es6/spread.astral-call.js: Exec error [kangax-es6/spread.astral-call.js]: "Syntax error at line 10 col 15:\n  return Array(...\"𠮷𠮶\")[0] === \"𠮷\";\n  "
+kangax-es6/spread.astral-literal.js: Exec error [kangax-es6/spread.astral-literal.js]: "Syntax error at line 10 col 10:\n  return [...\"𠮷𠮶\"][0] === \"𠮷\";\n       "
+kangax-es6/spread.generator-call.js: Exec error [kangax-es6/spread.generator-call.js]: "Syntax error at line 10 col 26:\n  var iterable = (function*(){ yield 1; yield 2"
+kangax-es6/spread.generator-literal.js: Exec error [kangax-es6/spread.generator-literal.js]: "Syntax error at line 10 col 26:\n  var iterable = (function*(){ yield \"b\"; yield"
+kangax-es6/spread.iterable-call.js: Exec error [kangax-es6/spread.iterable-call.js]: "Syntax error at line 35 col 18:\n  return Math.max(...iterable) === 3;\n         "
+kangax-es6/spread.iterable-instance-call.js: Exec error [kangax-es6/spread.iterable-instance-call.js]: "Syntax error at line 35 col 18:\n  return Math.max(...Object.create(iterable)) ="
+kangax-es6/spread.iterable-instance-literal.js: Exec error [kangax-es6/spread.iterable-instance-literal.js]: "Syntax error at line 35 col 15:\n  return [\"a\", ...Object.create(iterable), \"e\"]"
+kangax-es6/spread.iterable-literal.js: Exec error [kangax-es6/spread.iterable-literal.js]: "Syntax error at line 35 col 15:\n  return [\"a\", ...iterable, \"e\"][3] === \"d\";\n  "
+kangax-es6/spread.non-iterable-error.js: Exec error [kangax-es6/spread.non-iterable-error.js]: "Syntax error at line 11 col 13:\n    Math.max(...2);\n            ^"
+kangax-es6/spread.sparse-call.js: Exec error [kangax-es6/spread.sparse-call.js]: "Syntax error at line 10 col 16:\n  var a = Array(...[,,]);\n               ^"
+kangax-es6/spread.sparse-literal.js: Exec error [kangax-es6/spread.sparse-literal.js]: "Syntax error at line 10 col 11:\n  var a = [...[,,]];\n          ^"
+kangax-es6/spread.string-call.js: Exec error [kangax-es6/spread.string-call.js]: "Syntax error at line 10 col 18:\n  return Math.max(...\"1234\") === 4;\n           "
+kangax-es6/spread.string-literal.js: Exec error [kangax-es6/spread.string-literal.js]: "Syntax error at line 10 col 15:\n  return [\"a\", ...\"bcd\", \"e\"][3] === \"d\";\n     "
+kangax-es6/subclassing.Array.concat.js: Exec error [kangax-es6/subclassing.Array.concat.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.filter.js: Exec error [kangax-es6/subclassing.Array.filter.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.from.js: Exec error [kangax-es6/subclassing.Array.from.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.isArray.js: Exec error [kangax-es6/subclassing.Array.isArray.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.length-access.js: Exec error [kangax-es6/subclassing.Array.length-access.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.length-set.js: Exec error [kangax-es6/subclassing.Array.length-set.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.map.js: Exec error [kangax-es6/subclassing.Array.map.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.of.js: Exec error [kangax-es6/subclassing.Array.of.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.prototype-chain.js: Exec error [kangax-es6/subclassing.Array.prototype-chain.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.slice.js: Exec error [kangax-es6/subclassing.Array.slice.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Array.splice.js: Exec error [kangax-es6/subclassing.Array.splice.js]: "Syntax error at line 9 col 8:\n  class C extends Array {}\n       ^"
+kangax-es6/subclassing.Function.call.js: Exec error [kangax-es6/subclassing.Function.call.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Function.new.js: Exec error [kangax-es6/subclassing.Function.new.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Function.prototype-chain.js: Exec error [kangax-es6/subclassing.Function.prototype-chain.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Function.prototype.apply.js: Exec error [kangax-es6/subclassing.Function.prototype.apply.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Function.prototype.bind.js: Exec error [kangax-es6/subclassing.Function.prototype.bind.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Function.prototype.call.js: Exec error [kangax-es6/subclassing.Function.prototype.call.js]: "Syntax error at line 9 col 8:\n  class C extends Function {}\n       ^"
+kangax-es6/subclassing.Promise.all.js: Exec error [kangax-es6/subclassing.Promise.all.js]: "Syntax error at line 44 col 8:\n  class P extends Promise {}\n       ^"
+kangax-es6/subclassing.Promise.js: Exec error [kangax-es6/subclassing.Promise.js]: "Syntax error at line 44 col 8:\n  class P extends Promise {}\n       ^"
+kangax-es6/subclassing.Promise.prototype-chain.js: Exec error [kangax-es6/subclassing.Promise.prototype-chain.js]: "Syntax error at line 9 col 8:\n  class C extends Promise {}\n       ^"
+kangax-es6/subclassing.Promise.race.js: Exec error [kangax-es6/subclassing.Promise.race.js]: "Syntax error at line 44 col 8:\n  class P extends Promise {}\n       ^"
+kangax-es6/subclassing.RegExp.exec.js: Exec error [kangax-es6/subclassing.RegExp.exec.js]: "Syntax error at line 9 col 8:\n  class R extends RegExp {}\n       ^"
+kangax-es6/subclassing.RegExp.js: Exec error [kangax-es6/subclassing.RegExp.js]: "Syntax error at line 11 col 8:\n  class R extends RegExp {}\n       ^"
+kangax-es6/subclassing.RegExp.prototype-chain.js: Exec error [kangax-es6/subclassing.RegExp.prototype-chain.js]: "Syntax error at line 9 col 8:\n  class R extends RegExp {}\n       ^"
+kangax-es6/subclassing.RegExp.test.js: Exec error [kangax-es6/subclassing.RegExp.test.js]: "Syntax error at line 9 col 8:\n  class R extends RegExp {}\n       ^"
+kangax-es6/subclassing.misc.Boolean.js: Exec error [kangax-es6/subclassing.misc.Boolean.js]: "Syntax error at line 9 col 8:\n  class C extends Boolean {}\n       ^"
+kangax-es6/subclassing.misc.Error.js: Exec error [kangax-es6/subclassing.misc.Error.js]: "Syntax error at line 9 col 8:\n  class C extends Error {}\n       ^"
+kangax-es6/subclassing.misc.Map.js: Exec error [kangax-es6/subclassing.misc.Map.js]: "Syntax error at line 10 col 8:\n  class M extends Map {}\n       ^"
+kangax-es6/subclassing.misc.Number.js: Exec error [kangax-es6/subclassing.misc.Number.js]: "Syntax error at line 9 col 8:\n  class C extends Number {}\n       ^"
+kangax-es6/subclassing.misc.Set.js: Exec error [kangax-es6/subclassing.misc.Set.js]: "Syntax error at line 10 col 8:\n  class S extends Set {}\n       ^"
+kangax-es6/subclassing.misc.String.js: Exec error [kangax-es6/subclassing.misc.String.js]: "Syntax error at line 9 col 8:\n  class C extends String {}\n       ^"
+kangax-es6/super.correct-constructor.js: Exec error [kangax-es6/super.correct-constructor.js]: "Syntax error at line 12 col 8:\n  class B {\n       ^"
+kangax-es6/super.expression.js: Exec error [kangax-es6/super.expression.js]: "Syntax error at line 10 col 8:\n  class B {\n       ^"
+kangax-es6/super.method-calls.js: Exec error [kangax-es6/super.method-calls.js]: "Syntax error at line 10 col 8:\n  class B {\n       ^"
+kangax-es6/super.new-target-binding.js: Exec error [kangax-es6/super.new-target-binding.js]: "Syntax error at line 11 col 8:\n  class B {\n       ^"
+kangax-es6/super.property-access.js: Exec error [kangax-es6/super.property-access.js]: "Syntax error at line 10 col 8:\n  class B {}\n       ^"
+kangax-es6/super.statement.js: Exec error [kangax-es6/super.statement.js]: "Syntax error at line 11 col 8:\n  class B {\n       ^"
+kangax-es6/super.static-binding.js: Exec error [kangax-es6/super.static-binding.js]: "Syntax error at line 10 col 8:\n  class B {\n       ^"
+kangax-es6/super.this-binding.js: Exec error [kangax-es6/super.this-binding.js]: "Syntax error at line 10 col 8:\n  class B {\n       ^"
+kangax-es6/tail-calls.direct.js: timeout
+kangax-es6/tail-calls.mutual.js: timeout
+kangax-es6/template.basic.js: Exec error [kangax-es6/template.basic.js]: "Syntax error at line 11 col 7:\nreturn `foo bar\n      ^"
+kangax-es6/template.caching.js: Exec error [kangax-es6/template.caching.js]: "Syntax error at line 17 col 18:\n    return strings`foo`;\n                 ^"
+kangax-es6/template.escape-sequences.js: Exec error [kangax-es6/template.escape-sequences.js]: "Syntax error at line 13 col 19:\n  var str = strings`\\1\\xz\\uz\\u{110000}\\u{z}`;\n "
+kangax-es6/template.frozen-array.js: Exec error [kangax-es6/template.frozen-array.js]: "Syntax error at line 12 col 5:\n  }) `foo${0}bar${0}baz`;\n    ^"
+kangax-es6/template.line-break.js: Error: cannot read property 'length' of undefined
+kangax-es6/template.permanent-caching.js: Exec error [kangax-es6/template.permanent-caching.js]: "Syntax error at line 14 col 18:\n    return strings`foo`;\n                 ^"
+kangax-es6/template.tagged.js: Exec error [kangax-es6/template.tagged.js]: "Syntax error at line 21 col 12:\n  return fn `foo${123}bar\\n${456}` && called;\n "
+kangax-es6/template.toString.js: Exec error [kangax-es6/template.toString.js]: "Syntax error at line 14 col 9:\n  return `${a}` === \"foo\";\n        ^"
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Float32.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Float32Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Float64Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Int8Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Int16Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Int32Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Symbol.species.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.Uint8Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Uint16Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.Uint32Array.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.constructor-iterables.js: Error: Cannot set a primitive value as object prototype
+kangax-es6/typed-arrays.constructor-requires-new.js: Error: [ArrayBuffer] is not defined
+kangax-es6/typed-arrays.correct-prototype-chains.js: Exec error [kangax-es6/typed-arrays.correct-prototype-chains.js]: "Syntax error at line 32 col 10:\n    const keys = Object.getOwnPropertyNames(glo"
+kangax-es6/typed-arrays.from.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.of.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.copyWithin.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.entries.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.every.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.fill.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.filter.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.findIndex.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.find.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.forEach.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.indexOf.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.join.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.keys.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.map.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.reduceRight.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.reduce.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.reverse.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.slice.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.some.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.sort.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.subarray.js: Error: [Int8Array] is not defined
+kangax-es6/typed-arrays.prototype.values.js: Error: [Int8Array] is not defined
+kangax-es6/unicode-escapes.identifier.js: Exec error [kangax-es6/unicode-escapes.identifier.js]: "Syntax error at line 9 col 6:\n  var \\u{102C0} = 2;\n     ^"
+kangax-es6/unicode-escapes.property-access.js: Exec error [kangax-es6/unicode-escapes.property-access.js]: "Syntax error at line 10 col 11:\n  return o.\\u{102C0} === 2;\n          ^"
+kangax-es6/unicode-escapes.property-key.js: Exec error [kangax-es6/unicode-escapes.property-key.js]: "Syntax error at line 9 col 12:\n  var o = { \\u{102C0} : 2 };\n           ^"
+kangax-es6/unicode-escapes.string.js: failed
+kangax-es6/well-known.hasInstance.js: Error: [Symbol] is not defined
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: Error: [Symbol] is not defined
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: Error: [Symbol] is not defined
+kangax-es6/well-known.iterator.js: Error: [Symbol] is not defined
+kangax-es6/well-known.match.RegExp-constructor.js: Error: [Symbol] is not defined
+kangax-es6/well-known.match.String.endsWith.js: Error: [Symbol] is not defined
+kangax-es6/well-known.match.String.includes.js: Error: [Symbol] is not defined
+kangax-es6/well-known.match.String.startsWith.js: Error: [Symbol] is not defined
+kangax-es6/well-known.match.js: Error: [Symbol] is not defined
+kangax-es6/well-known.replace.js: Error: [Symbol] is not defined
+kangax-es6/well-known.search.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Array.concat.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Array.filter.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Array.map.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Array.slice.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Array.splice.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.Promise.then.js: Error: [Promise] is not defined
+kangax-es6/well-known.species.RegExp.split.js: Error: [Symbol] is not defined
+kangax-es6/well-known.species.js: Error: [Symbol] is not defined
+kangax-es6/well-known.split.js: Error: [Symbol] is not defined
+kangax-es6/well-known.toPrimitive.js: Error: [Symbol] is not defined
+kangax-es6/well-known.toStringTag.existing-builtins.js: Error: [Symbol] is not defined
+kangax-es6/well-known.toStringTag.js: Error: [Symbol] is not defined
+kangax-es6/well-known.toStringTag.misc-builtins.js: Error: [Symbol] is not defined
+kangax-es6/well-known.toStringTag.new-builtins.js: Exec error [kangax-es6/well-known.toStringTag.new-builtins.js]: "Syntax error at line 23 col 37:\n    && Object.getPrototypeOf(function*(){})[s] "
+kangax-es6/well-known.unscopables.js: Exec error [kangax-es6/well-known.unscopables.js]: "not implemented"
+kangax-es2016/Array.prototype.includes.generic.js: Exec error [kangax-es2016/Array.prototype.includes.generic.js]: "Syntax error at line 13 col 10:\n      get \"0\"() {\n         ^"
+kangax-es2016/Array.prototype.includes.js: Error: includes is not a function
+kangax-es2016/Array.prototype.includes.sparse.js: Error: includes is not a function
+kangax-es2016/Array.prototype.includes.typed-array.js: Error: [Int8Array] is not defined
+kangax-es2016/exponentiation.assignment.js: Exec error [kangax-es2016/exponentiation.assignment.js]: "Syntax error at line 10 col 16:\n  var a = 2; a **= 3; return a === 8;\n         "
+kangax-es2016/exponentiation.basic.js: Exec error [kangax-es2016/exponentiation.basic.js]: "Syntax error at line 10 col 12:\n  return 2 ** 3 === 8 && -(5 ** 2) === -25 && ("
+kangax-es2016/exponentiation.unary-negation-error.js: Exec error [kangax-es2016/exponentiation.unary-negation-error.js]: "Syntax error at line 10 col 9:\n  if (2 ** 3 !== 8) {\n        ^"
+kangax-es2016/misc.Proxy-Array-includes.js: Error: cannot read property 'call' of undefined
+kangax-es2016/misc.Proxy-enumerate-removed.js: OK
+kangax-es2016/misc.generator-no-new.js: Exec error [kangax-es2016/misc.generator-no-new.js]: "Syntax error at line 10 col 11:\n  function * generator() {\n          ^"
+kangax-es2016/misc.generator-throw-inner.js: Exec error [kangax-es2016/misc.generator-throw-inner.js]: "Syntax error at line 10 col 11:\n  function * generator() {\n          ^"
+kangax-es2016/misc.nested-rest-destructuring-decl.js: Exec error [kangax-es2016/misc.nested-rest-destructuring-decl.js]: "Syntax error at line 10 col 6:\n  var [x, ...[y, ...z]] = [1,2,3,4];\n     ^"
+kangax-es2016/misc.nested-rest-destructuring-params.js: Exec error [kangax-es2016/misc.nested-rest-destructuring-params.js]: "Syntax error at line 9 col 23:\n  return function ([x, ...[y, ...z]]) {\n        "
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: Exec error [kangax-es2016/misc.strict-fn-non-simple-params-error.js]: "Syntax error at line 9 col 15:\n  function foo(...a) {}\n              ^"
+kangax-es2017/Atomics.add.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.and.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.compareExchange.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.exchange.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.isLockFree.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.load.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.notify.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.or.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.store.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.sub.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.wait.js: Error: [Atomics] is not defined
+kangax-es2017/Atomics.xor.js: Error: [Atomics] is not defined
+kangax-es2017/Object.entries.js: Error: Object.entries is not a function
+kangax-es2017/Object.getOwnPropertyDescriptors.js: Error: Object.getOwnPropertyDescriptors is not a function
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Error: Object.getOwnPropertyDescriptors is not a function
+kangax-es2017/Object.values.js: Error: Object.values is not a function
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: Error: [SharedArrayBuffer] is not defined
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: Error: [SharedArrayBuffer] is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: Error: [SharedArrayBuffer] is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: Error: [SharedArrayBuffer] is not defined
+kangax-es2017/String.prototype.padEnd.js: Error: testCode.padEnd is not a function
+kangax-es2017/String.prototype.padStart.js: Error: testCode.padStart is not a function
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: Error: [__defineGetter__] is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: Error: [Symbol] is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: Error: [__defineSetter__] is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: Error: [Symbol] is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: Error: [__lookupGetter__] is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Exec error [kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js]: "Syntax error at line 11 col 6:\n  get foo() { return \"bar\"},\n     ^"
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Exec error [kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js]: "Syntax error at line 10 col 6:\n  get foo() { return \"bar\"},\n     ^"
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: Error: a.__defineGetter__ is not a function
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: Error: [Symbol] is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: Error: [__lookupSetter__] is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Exec error [kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js]: "Syntax error at line 11 col 8:\n    set foo(baz) { return \"bar\"; },\n       ^"
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Exec error [kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js]: "Syntax error at line 10 col 8:\n    set foo(baz) { return \"bar\"; },\n       ^"
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: Error: a.__defineSetter__ is not a function
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: Error: [Symbol] is not defined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: Error: cannot read property 'call' of undefined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: failed
+kangax-es2017/async.Symbol.toStringTag.js: Exec error [kangax-es2017/async.Symbol.toStringTag.js]: "Syntax error at line 10 col 37:\n  return Object.getPrototypeOf(async function ("
+kangax-es2017/async.arrow-in-class.js: Exec error [kangax-es2017/async.arrow-in-class.js]: "Syntax error at line 48 col 8:\n  class C {\n       ^"
+kangax-es2017/async.arrow.js: Exec error [kangax-es2017/async.arrow.js]: "Syntax error at line 45 col 20:\n  var a = async () => await Promise.resolve(\"fo"
+kangax-es2017/async.await-non-promise.js: Exec error [kangax-es2017/async.await-non-promise.js]: "Syntax error at line 45 col 9:\n  (async function () {\n        ^"
+kangax-es2017/async.await-rejection.js: Exec error [kangax-es2017/async.await-rejection.js]: "Syntax error at line 45 col 9:\n  (async function () {\n        ^"
+kangax-es2017/async.await.js: Exec error [kangax-es2017/async.await.js]: "Syntax error at line 45 col 9:\n  (async function () {\n        ^"
+kangax-es2017/async.constructor.js: Exec error [kangax-es2017/async.constructor.js]: "Syntax error at line 45 col 16:\n  var a = async function () {}.constructor(\"ret"
+kangax-es2017/async.methods-class.js: Exec error [kangax-es2017/async.methods-class.js]: "Syntax error at line 45 col 8:\n  class C {\n       ^"
+kangax-es2017/async.methods-object.js: Exec error [kangax-es2017/async.methods-object.js]: "Syntax error at line 46 col 10:\n    async a() { return await Promise.resolve(\"f"
+kangax-es2017/async.must-await-value.js: Exec error [kangax-es2017/async.must-await-value.js]: "Syntax error at line 10 col 8:\n  async function a() {\n       ^"
+kangax-es2017/async.no-await-in-params.js: Exec error [kangax-es2017/async.no-await-in-params.js]: "Syntax error at line 10 col 8:\n  async function a() {\n       ^"
+kangax-es2017/async.no-line-break.js: Exec error [kangax-es2017/async.no-line-break.js]: "Syntax error at line 10 col 8:\n  async function a() {}\n       ^"
+kangax-es2017/async.no-prototype.js: Exec error [kangax-es2017/async.no-prototype.js]: "Syntax error at line 10 col 8:\n  async function a() {};\n       ^"
+kangax-es2017/async.prototype-chain.js: Exec error [kangax-es2017/async.prototype-chain.js]: "Syntax error at line 10 col 55:\n  var asyncFunctionProto = Object.getPrototypeO"
+kangax-es2017/async.return.js: Exec error [kangax-es2017/async.return.js]: "Syntax error at line 45 col 8:\n  async function a() {\n       ^"
+kangax-es2017/async.throw.js: Exec error [kangax-es2017/async.throw.js]: "Syntax error at line 45 col 8:\n  async function a() {\n       ^"
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: Exec error [kangax-es2017/regex.flags.u.case-folding.js]: "Syntax error at line 9 col 25:\n  return \"ſ\".match(/\\w/iu) && !\"ſ\".match(/\\W/i"
+kangax-es2017/trailing-comma.arguments.js: Exec error [kangax-es2017/trailing-comma.arguments.js]: "Syntax error at line 10 col 24:\n  return Math.min(1,2,3,) === 1;\n              "
+kangax-es2017/trailing-comma.params.js: Exec error [kangax-es2017/trailing-comma.params.js]: "Syntax error at line 10 col 34:\n  return typeof function f( a, b, ) {} === 'fun"
+kangax-es2018/Promise.prototype.finally.change-rejection.js: Error: [Promise] is not defined
+kangax-es2018/Promise.prototype.finally.js: Error: [Promise] is not defined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Error: [Promise] is not defined
+kangax-es2018/async-iterators.for-await-of.js: Exec error [kangax-es2018/async-iterators.for-await-of.js]: "Syntax error at line 58 col 9:\n  (async function () {\n        ^"
+kangax-es2018/async-iterators.generators.js: Exec error [kangax-es2018/async-iterators.generators.js]: "Syntax error at line 44 col 8:\n  async function*generator() {\n       ^"
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: Exec error [kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js]: "not implemented"
+kangax-es2018/misc.template-literal-revision.js: Exec error [kangax-es2018/misc.template-literal-revision.js]: "Syntax error at line 16 col 12:\n  return tag`\\01\\1\\xg\\xAg\\u0\\u0g\\u00g\\u000g\\u{g"
+kangax-es2018/object-rest.js: Exec error [kangax-es2018/object-rest.js]: "Syntax error at line 9 col 6:\n  var { a, ...rest } = { a: 1, b: 2, c: 3 };\n    "
+kangax-es2018/object-spread.js: Exec error [kangax-es2018/object-spread.js]: "Syntax error at line 10 col 18:\n  var O = { a: 1, ...spread };\n                "
+kangax-es2018/regex.flags.s.js: Exec error [kangax-es2018/regex.flags.s.js]: "Syntax error at line 10 col 8:\n  const regex = /foo.bar/s;\n       ^"
+kangax-es2018/regex.lookbehind.js: Exec error [kangax-es2018/regex.lookbehind.js]: "Invalid regex"
+kangax-es2018/regex.named-capture-groups.js: Exec error [kangax-es2018/regex.named-capture-groups.js]: "Invalid regex"
+kangax-es2018/regex.unicode-property-escapes.js: Exec error [kangax-es2018/regex.unicode-property-escapes.js]: "Syntax error at line 10 col 8:\n  const regexGreekSymbol = /\\p{Script=Greek}/u;\n"
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-11.js]: "Syntax error at line 10 col 36:\n  return /\\p{Extended_Pictographic}/u.test(\"\\xA"
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js]: "Syntax error at line 10 col 27:\n  return /\\p{Other_Symbol}/u.test(\"\\u32FF\");\n  "
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-12.js]: "Syntax error at line 10 col 29:\n  return /\\p{Script=Elymaic}/u.test(\"\\u{10fe0}\""
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-13.js]: "Syntax error at line 10 col 32:\n  return /\\p{Script=Chorasmian}/u.test(\"\\u{10fb"
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-14.js]: "Syntax error at line 10 col 30:\n  return /\\p{Script=Vithkuqi}/u.test(\"\\u{10570}"
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js]: "Syntax error at line 10 col 32:\n  return /\\p{Unified_Ideograph}/u.test(\"\\u{2ebf"
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-15.js]: "Syntax error at line 10 col 26:\n  return /\\p{Script=Kawi}/u.test(\"\\u{11f00}\") &"
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js]: "Syntax error at line 10 col 28:\n  return /\\p{Script=Todhri}/u.test(\"\\u{105c0}\")"
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Exec error [kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js]: "Syntax error at line 10 col 29:\n  return /\\p{Script=Sidetic}/u.test(\"\\u{10940}\""
+kangax-es2019/Array.prototype.flatMap.js: Error: flatMap is not a function
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: Error: [Symbol] is not defined
+kangax-es2019/Array.prototype.flat.js: Error: flat is not a function
+kangax-es2019/Object.fromEntries.js: Error: [Map] is not defined
+kangax-es2019/String.prototype.trimEnd.js: Error: testCode.trimEnd is not a function
+kangax-es2019/String.prototype.trimStart.js: Error: testCode.trimStart is not a function
+kangax-es2019/Symbol.prototype.description.empty.js: Error: [Symbol] is not defined
+kangax-es2019/Symbol.prototype.description.js: Error: [Symbol] is not defined
+kangax-es2019/Symbol.prototype.description.undefined.js: Error: [Symbol] is not defined
+kangax-es2019/annex-b.String.prototype.trimLeft.js: Error: testCode.trimLeft is not a function
+kangax-es2019/annex-b.String.prototype.trimRight.js: Error: testCode.trimRight is not a function
+kangax-es2019/misc.Function-toString.Function-constructor.js: Error: Invalid function body
+kangax-es2019/misc.Function-toString.arrows.js: Error: Syntax error at line 1 col 4:
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: Error: Syntax error at line 1 col 27:
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: Error: Syntax error at line 1 col 7:
+kangax-es2019/misc.Function-toString.computed-names.js: Error: Syntax error at line 1 col 15:
+kangax-es2019/misc.Function-toString.native-code.js: Exec error [kangax-es2019/misc.Function-toString.native-code.js]: "Syntax error at line 10 col 8:\n  const NATIVE_EVAL_RE = /\\bfunction\\b[\\s\\S]*\\be"
+kangax-es2019/misc.Function-toString.unicode-escapes.js: Error: Syntax error at line 1 col 29:
+kangax-es2019/misc.JSON-stringify-well-formed.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.optional-catch-binding.await.js: Exec error [kangax-es2019/misc.optional-catch-binding.await.js]: "Syntax error at line 44 col 9:\n  (async function () {\n        ^"
+kangax-es2019/misc.optional-catch-binding.js: Exec error [kangax-es2019/misc.optional-catch-binding.js]: "Syntax error at line 12 col 8:\n  catch {\n       ^"
+kangax-es2019/misc.optional-catch-binding.yield.js: Exec error [kangax-es2019/misc.optional-catch-binding.yield.js]: "Syntax error at line 9 col 11:\n  function *foo() {\n          ^"
+kangax-es2020/BigInt64Array.js: Exec error [kangax-es2020/BigInt64Array.js]: "Syntax error at line 12 col 30:\n  view[0] = 0x8000000000000000n;\n              "
+kangax-es2020/BigInt.asIntN.js: Error: [BigInt] is not defined
+kangax-es2020/BigInt.asUintN.js: Error: [BigInt] is not defined
+kangax-es2020/BigInt.constructor.js: Exec error [kangax-es2020/BigInt.constructor.js]: "Syntax error at line 10 col 26:\n  return BigInt(\"3\") === 3n;\n                  "
+kangax-es2020/BigInt.js: Exec error [kangax-es2020/BigInt.js]: "Syntax error at line 10 col 11:\n  return (1n + 2n) === 3n;\n          ^"
+kangax-es2020/BigUint64Array.js: Exec error [kangax-es2020/BigUint64Array.js]: "Syntax error at line 12 col 31:\n  view[0] = 0x10000000000000000n;\n             "
+kangax-es2020/DataView.prototype.getBigInt64.js: Exec error [kangax-es2020/DataView.prototype.getBigInt64.js]: "Syntax error at line 12 col 23:\n  view.setBigInt64(0, 1n);\n                    "
+kangax-es2020/DataView.prototype.getBigUint64.js: Exec error [kangax-es2020/DataView.prototype.getBigUint64.js]: "Syntax error at line 12 col 24:\n  view.setBigUint64(0, 1n);\n                   "
+kangax-es2020/Promise.allSettled.js: Exec error [kangax-es2020/Promise.allSettled.js]: "Syntax error at line 49 col 14:\n  ]).then(it => {\n             ^"
+kangax-es2020/String.prototype.matchAll.js: Error: testCode.matchAll is not a function
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: Exec error [kangax-es2020/nullish-coalescing.js]: "Syntax error at line 10 col 16:\n  return (null ?? 42) === 42 &&\n               "
+kangax-es2020/optional-chaining.bracket.js: Exec error [kangax-es2020/optional-chaining.bracket.js]: "Syntax error at line 12 col 13:\n  return foo?.['baz'] === 42 && bar?.['baz'] =="
+kangax-es2020/optional-chaining.function-call.js: Exec error [kangax-es2020/optional-chaining.function-call.js]: "Syntax error at line 14 col 17:\n  return foo.baz?.() === 42 && bar.baz?.() === "
+kangax-es2020/optional-chaining.method-call.js: Exec error [kangax-es2020/optional-chaining.method-call.js]: "Syntax error at line 12 col 13:\n  return foo?.baz() === 42 && bar?.baz() === vo"
+kangax-es2020/optional-chaining.property.js: Exec error [kangax-es2020/optional-chaining.property.js]: "Syntax error at line 12 col 13:\n  return foo?.baz === 42 && bar?.baz === void u"
+kangax-es2020/optional-chaining.spread-params.js: Exec error [kangax-es2020/optional-chaining.spread-params.js]: "Syntax error at line 14 col 12:\n  return fn?.(...[], 1) === void undefined && f"
+kangax-es2021/FinalizationRegistry.js: Error: [FinalizationRegistry] is not defined
+kangax-es2021/Promise.any.AggregateError.js: Exec error [kangax-es2021/Promise.any.AggregateError.js]: "Syntax error at line 49 col 19:\n  ]).catch (error => {\n                  ^"
+kangax-es2021/Promise.any.fulfillment.js: Exec error [kangax-es2021/Promise.any.fulfillment.js]: "Syntax error at line 49 col 14:\n  ]).then(it => {\n             ^"
+kangax-es2021/String.prototype.replaceAll.js: Error: testCode.replaceAll is not a function
+kangax-es2021/WeakRef.js: Error: [WeakRef] is not defined
+kangax-es2021/logical-assignment.and.js: Exec error [kangax-es2021/logical-assignment.and.js]: "Syntax error at line 10 col 6:\n  let a;\n     ^"
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: Exec error [kangax-es2021/logical-assignment.and.setter-not-invoked.js]: "Syntax error at line 9 col 6:\n  let i = 1;\n     ^"
+kangax-es2021/logical-assignment.and.short-circuit.js: Exec error [kangax-es2021/logical-assignment.and.short-circuit.js]: "Syntax error at line 9 col 6:\n  let a;\n     ^"
+kangax-es2021/logical-assignment.nullish.js: Exec error [kangax-es2021/logical-assignment.nullish.js]: "Syntax error at line 10 col 6:\n  let a;\n     ^"
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Exec error [kangax-es2021/logical-assignment.nullish.setter-not-invoked.js]: "Syntax error at line 9 col 6:\n  let i = 1;\n     ^"
+kangax-es2021/logical-assignment.nullish.short-circuit.js: Exec error [kangax-es2021/logical-assignment.nullish.short-circuit.js]: "Syntax error at line 9 col 6:\n  let a = 1;\n     ^"
+kangax-es2021/logical-assignment.or.js: Exec error [kangax-es2021/logical-assignment.or.js]: "Syntax error at line 10 col 6:\n  let a;\n     ^"
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: Exec error [kangax-es2021/logical-assignment.or.setter-not-invoked.js]: "Syntax error at line 9 col 6:\n  let i = 1;\n     ^"
+kangax-es2021/logical-assignment.or.short-circuit.js: Exec error [kangax-es2021/logical-assignment.or.short-circuit.js]: "Syntax error at line 9 col 6:\n  let a = 1;\n     ^"
+kangax-es2021/numeric-separators.js: Exec error [kangax-es2021/numeric-separators.js]: "Syntax error at line 9 col 10:\n  return 1_000_000.000_001 === 1000000.000001 &&"
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: Error: [AggregateError] is not defined
+kangax-es2022/Error.cause.AggregateError.js: Error: [AggregateError] is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: Error: [URIError] is not defined
+kangax-es2022/Error.cause.URIError.js: Error: [URIError] is not defined
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: Error: Object.hasOwn is not a function
+kangax-es2022/at-method.Array.js: Error: arr.at is not a function
+kangax-es2022/at-method.String.js: failed
+kangax-es2022/at-method.TypedArray.js: failed
+kangax-es2022/class-fields.computed-instance.js: Exec error [kangax-es2022/class-fields.computed-instance.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.computed-static.js: Exec error [kangax-es2022/class-fields.computed-static.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.instance.parent-scope.js: Exec error [kangax-es2022/class-fields.instance.parent-scope.js]: "Syntax error at line 10 col 8:\n    let a = [\"hello world\"];\n       ^"
+kangax-es2022/class-fields.private-instance.initializers.js: Exec error [kangax-es2022/class-fields.private-instance.initializers.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.private-instance.js: Exec error [kangax-es2022/class-fields.private-instance.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.private-instance.optional-access.js: Exec error [kangax-es2022/class-fields.private-instance.optional-access.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: Exec error [kangax-es2022/class-fields.private-instance.optional-deep-access.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.private-static.js: Exec error [kangax-es2022/class-fields.private-static.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.public-instance.js: Exec error [kangax-es2022/class-fields.public-instance.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.public-static.js: Exec error [kangax-es2022/class-fields.public-static.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-fields.static.define.js: Exec error [kangax-es2022/class-fields.static.define.js]: "Syntax error at line 9 col 16:\n  return (class X { static name = \"name\"; }).nam"
+kangax-es2022/class-methods.private-accessor.js: Exec error [kangax-es2022/class-methods.private-accessor.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-methods.private-instance.js: Exec error [kangax-es2022/class-methods.private-instance.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-methods.private-static-accessor.js: Exec error [kangax-es2022/class-methods.private-static-accessor.js]: "Syntax error at line 10 col 8:\n  class C {\n       ^"
+kangax-es2022/class-methods.private-static.js: Exec error [kangax-es2022/class-methods.private-static.js]: "Syntax error at line 9 col 8:\n  class C {\n       ^"
+kangax-es2022/class-static-init-blocks.js: Exec error [kangax-es2022/class-static-init-blocks.js]: "Syntax error at line 10 col 6:\n  let ok = false;\n     ^"
+kangax-es2022/ergonomic-brand-checks.js: Exec error [kangax-es2022/ergonomic-brand-checks.js]: "Syntax error at line 9 col 8:\n  class A {\n       ^"
+kangax-es2022/regex.flags.d.constructor.js: OK
+kangax-es2022/regex.flags.d.shows-in-flags.js: Error: cannot read property 'call' of undefined
+kangax-es2023/Array.prototype.findLastIndex.js: Error: arr.findLastIndex is not a function
+kangax-es2023/Array.prototype.findLast.js: Error: arr.findLast is not a function
+kangax-es2023/Array.prototype.toReversed.js: Error: arr.toReversed is not a function
+kangax-es2023/Array.prototype.toSorted.js: Error: arr.toSorted is not a function
+kangax-es2023/Array.prototype.toSpliced.js: Error: arr.toSpliced is not a function
+kangax-es2023/Array.prototype.with.js: Error: arr.with is not a function
+kangax-es2023/TypedArray.prototype.toReversed.js: Error: [Uint8Array] is not defined
+kangax-es2023/TypedArray.prototype.toSorted.js: Error: [Uint8Array] is not defined
+kangax-es2023/TypedArray.prototype.with.js: Error: [Uint8Array] is not defined
+kangax-es2023/hashbang.js: failed
+kangax-es2024/ArrayBuffer.prototype.detached.js: Exec error [kangax-es2024/ArrayBuffer.prototype.detached.js]: "Syntax error at line 10 col 8:\n  const buffer1 = new Uint8Array([1, 2]).buffer;"
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: Exec error [kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js]: "Syntax error at line 10 col 8:\n  const buffer1 = new Uint8Array([1, 2]).buffer;"
+kangax-es2024/ArrayBuffer.prototype.transfer.js: Exec error [kangax-es2024/ArrayBuffer.prototype.transfer.js]: "Syntax error at line 10 col 8:\n  const buffer1 = new Uint8Array([1, 2]).buffer;"
+kangax-es2024/Map.groupBy.js: Exec error [kangax-es2024/Map.groupBy.js]: "Syntax error at line 10 col 8:\n  const array = [1, 2, 3, 4];\n       ^"
+kangax-es2024/Object.groupBy.js: Exec error [kangax-es2024/Object.groupBy.js]: "Syntax error at line 10 col 8:\n  const array = [1, 2, 3, 4];\n       ^"
+kangax-es2024/Promise.withResolvers.js: Error: [Promise] is not defined
+kangax-es2024/regex.flags.v.constructor.js: OK
+kangax-es2024/regex.flags.v.properties-of-strings.js: Exec error [kangax-es2024/regex.flags.v.properties-of-strings.js]: "Syntax error at line 9 col 38:\n  return /^\\p{Emoji_Keycap_Sequence}$/v.test(\"*\\"
+kangax-es2024/regex.flags.v.set-notations.js: Exec error [kangax-es2024/regex.flags.v.set-notations.js]: "Syntax error at line 9 col 42:\n  return /[\\p{ASCII}&&\\p{Decimal_Number}]/v.test"
+kangax-es2024/regex.flags.v.shows-in-flags.js: Error: cannot read property 'call' of undefined
+kangax-es2024/regex.flags.v.unicode-15.1.js: Exec error [kangax-es2024/regex.flags.v.unicode-15.1.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🐦‍🔥\");"
+kangax-es2024/regex.flags.v.unicode-16.0.js: Exec error [kangax-es2024/regex.flags.v.unicode-16.0.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🇨🇶\");\n  "
+kangax-es2024/regex.flags.v.unicode-17.0.js: Exec error [kangax-es2024/regex.flags.v.unicode-17.0.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🧑‍🩰‍"
+kangax-es2025/Iterator.extends.js: Exec error [kangax-es2025/Iterator.extends.js]: "Syntax error at line 10 col 8:\n  class Class extends Iterator { }\n       ^"
+kangax-es2025/Iterator.from.iterable.js: Exec error [kangax-es2025/Iterator.from.iterable.js]: "Syntax error at line 10 col 8:\n  const iterator = Iterator.from([1, 2, 3]);\n   "
+kangax-es2025/Iterator.from.iterator.js: Exec error [kangax-es2025/Iterator.from.iterator.js]: "Syntax error at line 10 col 8:\n  const iterator = Iterator.from({\n       ^"
+kangax-es2025/Iterator.instanceof.js: Error: values is not a function
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: Error: [Iterator] is not defined
+kangax-es2025/Iterator.prototype.drop.js: Error: values is not a function
+kangax-es2025/Iterator.prototype.every.js: Exec error [kangax-es2025/Iterator.prototype.every.js]: "Syntax error at line 10 col 38:\n  return [1, 2, 3].values().every(it => typeof "
+kangax-es2025/Iterator.prototype.filter.js: Exec error [kangax-es2025/Iterator.prototype.filter.js]: "Syntax error at line 10 col 50:\n  return Array.from([1, 2, 3].values().filter(i"
+kangax-es2025/Iterator.prototype.find.js: Exec error [kangax-es2025/Iterator.prototype.find.js]: "Syntax error at line 10 col 37:\n  return [1, 2, 3].values().find(it => it % 2) "
+kangax-es2025/Iterator.prototype.flatMap.js: Exec error [kangax-es2025/Iterator.prototype.flatMap.js]: "Syntax error at line 10 col 51:\n  return Array.from([1, 2, 3].values().flatMap("
+kangax-es2025/Iterator.prototype.forEach.js: Exec error [kangax-es2025/Iterator.prototype.forEach.js]: "Syntax error at line 10 col 6:\n  let result = '';\n     ^"
+kangax-es2025/Iterator.prototype.map.js: Exec error [kangax-es2025/Iterator.prototype.map.js]: "Syntax error at line 10 col 47:\n  return Array.from([1, 2, 3].values().map(it ="
+kangax-es2025/Iterator.prototype.reduce.js: Exec error [kangax-es2025/Iterator.prototype.reduce.js]: "Syntax error at line 10 col 43:\n  return [1, 2, 3].values().reduce((a, b) => a "
+kangax-es2025/Iterator.prototype.some.js: Exec error [kangax-es2025/Iterator.prototype.some.js]: "Syntax error at line 10 col 37:\n  return [1, 2, 3].values().some(it => typeof i"
+kangax-es2025/Iterator.prototype.take.js: Error: values is not a function
+kangax-es2025/Iterator.prototype.toArray.js: Exec error [kangax-es2025/Iterator.prototype.toArray.js]: "Syntax error at line 10 col 8:\n  const array = [1, 2, 3].values().toArray();\n  "
+kangax-es2025/Promise.try.js: Error: [Promise] is not defined
+kangax-es2025/RegExp.escape.js: Error: RegExp.escape is not a function
+kangax-es2025/Set.prototype.difference.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.intersection.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.isDisjointFrom.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.isSubsetOf.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.isSupersetOf.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.symmetricDifference.js: Error: [Set] is not defined
+kangax-es2025/Set.prototype.union.js: Error: [Set] is not defined
+kangax-es2025/regex.duplicate-named-groups.js: Exec error [kangax-es2025/regex.duplicate-named-groups.js]: "Invalid regex"
+kangax-es2025/regex.pattern-modifiers.i.js: Exec error [kangax-es2025/regex.pattern-modifiers.i.js]: "Syntax error at line 9 col 8:\n  const regex = /^[a-z](?-i:[a-z])$/i;\n       ^"
+kangax-es2025/regex.pattern-modifiers.m.js: Exec error [kangax-es2025/regex.pattern-modifiers.m.js]: "Syntax error at line 9 col 8:\n  const regex = /^a|(?m:^b)/;\n       ^"
+kangax-es2025/regex.pattern-modifiers.s.js: Exec error [kangax-es2025/regex.pattern-modifiers.s.js]: "Syntax error at line 9 col 8:\n  const regex = /.(?-s:.)/s;\n       ^"
+kangax-intl/Array.prototype.toLocaleString.js: failed
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: Error: [Intl] is not defined
+kangax-intl/Intl.Collator.new-instances.js: Error: [Intl] is not defined
+kangax-intl/Intl.Collator.prototype.compare.js: Error: [Intl] is not defined
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: Error: [Intl] is not defined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: Error: [Intl] is not defined
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: Error: [Intl] is not defined
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: Error: [Intl] is not defined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: Error: [Intl] is not defined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: Error: [Intl] is not defined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: Error: [Intl] is not defined
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: Error: [Intl] is not defined
+kangax-intl/Intl.NumberFormat.js: Error: [Intl] is not defined
+kangax-intl/Intl.NumberFormat.new-instances.js: Error: [Intl] is not defined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: Error: [Intl] is not defined
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: Error: [Intl] is not defined
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: Error: [Intl] is not defined
+kangax-intl/Number.prototype.toLocaleString.js: failed
+kangax-intl/Object.prototype.toLocaleString.js: failed
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: Exec error [kangax-next/Array.isTemplateObject.js]: "Syntax error at line 10 col 35:\n    && Array.isTemplateObject((it => it)`a${1}c"
+kangax-next/AsyncDisposableStack.js: Exec error [kangax-next/AsyncDisposableStack.js]: "Syntax error at line 47 col 43:\n  var resource3 = { disposed: false, async [Sym"
+kangax-next/AsyncIterator.extends.js: Exec error [kangax-next/AsyncIterator.extends.js]: "Syntax error at line 9 col 8:\n  class Class extends AsyncIterator { }\n       ^"
+kangax-next/AsyncIterator.from.async-iterable.js: Exec error [kangax-next/AsyncIterator.from.async-iterable.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.from.iterable.js: Exec error [kangax-next/AsyncIterator.from.iterable.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.from.iterator.js: Exec error [kangax-next/AsyncIterator.from.iterator.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.instanceof.js: Exec error [kangax-next/AsyncIterator.instanceof.js]: "Syntax error at line 9 col 16:\n  return (async function*() {})() instanceof Asy"
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: Error: [AsyncIterator] is not defined
+kangax-next/AsyncIterator.prototype.drop.js: Exec error [kangax-next/AsyncIterator.prototype.drop.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.prototype.every.js: Exec error [kangax-next/AsyncIterator.prototype.every.js]: "Syntax error at line 44 col 9:\n  (async function*() { yield * [1, 2, 3] })().ev"
+kangax-next/AsyncIterator.prototype.filter.js: Exec error [kangax-next/AsyncIterator.prototype.filter.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.prototype.find.js: Exec error [kangax-next/AsyncIterator.prototype.find.js]: "Syntax error at line 44 col 9:\n  (async function*() { yield * [1, 2, 3] })().fi"
+kangax-next/AsyncIterator.prototype.flatMap.js: Exec error [kangax-next/AsyncIterator.prototype.flatMap.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.prototype.forEach.js: Exec error [kangax-next/AsyncIterator.prototype.forEach.js]: "Syntax error at line 44 col 6:\n  let result = '';\n     ^"
+kangax-next/AsyncIterator.prototype.map.js: Exec error [kangax-next/AsyncIterator.prototype.map.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.prototype.reduce.js: Exec error [kangax-next/AsyncIterator.prototype.reduce.js]: "Syntax error at line 44 col 9:\n  (async function*() { yield * [1, 2, 3] })().re"
+kangax-next/AsyncIterator.prototype.some.js: Exec error [kangax-next/AsyncIterator.prototype.some.js]: "Syntax error at line 44 col 9:\n  (async function*() { yield * [1, 2, 3] })().so"
+kangax-next/AsyncIterator.prototype.take.js: Exec error [kangax-next/AsyncIterator.prototype.take.js]: "Syntax error at line 44 col 8:\n  async function toArray(iterator) {\n       ^"
+kangax-next/AsyncIterator.prototype.toArray.js: Exec error [kangax-next/AsyncIterator.prototype.toArray.js]: "Syntax error at line 44 col 9:\n  (async function*() { yield * [1, 2, 3] })().to"
+kangax-next/DisposableStack.js: Exec error [kangax-next/DisposableStack.js]: "Syntax error at line 12 col 37:\n  var resource3 = { disposed: false, [Symbol.di"
+kangax-next/Map.prototype.upsert.js: Exec error [kangax-next/Map.prototype.upsert.js]: "Syntax error at line 9 col 8:\n  const map = new Map([['a', 1]]);\n       ^"
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Exec error [kangax-next/SuppressedError.js]: "Syntax error at line 13 col 10:\n    using _1 = { [Symbol.dispose]() { throw err"
+kangax-next/Uint8Array.fromBase64.js: Exec error [kangax-next/Uint8Array.fromBase64.js]: "Syntax error at line 10 col 8:\n  const arr1 = new Uint8Array([72, 101, 108, 108"
+kangax-next/Uint8Array.fromHex.js: Exec error [kangax-next/Uint8Array.fromHex.js]: "Syntax error at line 10 col 8:\n  const arr1 = new Uint8Array([72, 101, 108, 108"
+kangax-next/Uint8Array.setFromBase64.js: Exec error [kangax-next/Uint8Array.setFromBase64.js]: "Syntax error at line 10 col 8:\n  const arr1 = new Uint8Array([72, 101, 108, 108"
+kangax-next/Uint8Array.setFromHex.js: Exec error [kangax-next/Uint8Array.setFromHex.js]: "Syntax error at line 10 col 8:\n  const arr1 = new Uint8Array([72, 101, 108, 108"
+kangax-next/Uint8Array.toBase64.js: Exec error [kangax-next/Uint8Array.toBase64.js]: "Syntax error at line 10 col 8:\n  const arr = new Uint8Array([72, 101, 108, 108,"
+kangax-next/Uint8Array.toHex.js: Exec error [kangax-next/Uint8Array.toHex.js]: "Syntax error at line 10 col 8:\n  const arr = new Uint8Array([72, 101, 108, 108,"
+kangax-next/WeakMap.prototype.upsert.js: Exec error [kangax-next/WeakMap.prototype.upsert.js]: "Syntax error at line 9 col 8:\n  const a = {}, b = {};\n       ^"
+kangax-next/await-using.for-of.js: Exec error [kangax-next/await-using.for-of.js]: "Syntax error at line 46 col 10:\n    async [Symbol.asyncDispose]() {\n         ^"
+kangax-next/await-using.js: Exec error [kangax-next/await-using.js]: "Syntax error at line 44 col 9:\n  (async function () {\n        ^"
+kangax-next/class-decorators.js: Exec error [kangax-next/class-decorators.js]: "Syntax error at line 9 col 8:\n  class A {\n       ^"
+kangax-next/function.sent.js: Exec error [kangax-next/function.sent.js]: "Syntax error at line 10 col 10:\n  function* generator() {\n         ^"
+kangax-next/throw-expr.arrow.js: Exec error [kangax-next/throw-expr.arrow.js]: "Syntax error at line 9 col 12:\n  var fn = () => throw 42;\n           ^"
+kangax-next/throw-expr.conditional.js: Exec error [kangax-next/throw-expr.conditional.js]: "Syntax error at line 9 col 14:\n  true ? 42 : throw 21;\n             ^"
+kangax-next/throw-expr.logical.js: Exec error [kangax-next/throw-expr.logical.js]: "Syntax error at line 11 col 14:\n    a = 19 || throw 77;\n             ^"
+kangax-next/throw-expr.param-init.js: Exec error [kangax-next/throw-expr.param-init.js]: "Syntax error at line 9 col 21:\n  function fn (arg = throw 42) {\n               "
+kangax-next/using.for-of.js: Exec error [kangax-next/using.for-of.js]: "Syntax error at line 11 col 4:\n    [Symbol.dispose]() {\n   ^"
+kangax-next/using.js: Exec error [kangax-next/using.js]: "Syntax error at line 11 col 4:\n    [Symbol.dispose]() {\n   ^"

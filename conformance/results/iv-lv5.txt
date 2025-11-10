@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "17d9065439fc5b5b24b13af83c9375f5842b1f7d6199221c8a88949ac377ec3a", "binary_size": 5108520, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "iv-lv5", "jit": "", "repository": "https://github.com/Constellation/iv.git", "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f", "revision_date": "2015-03-24", "version": "1.0.1-270-g64c3a9c7"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: SyntaxError: kangax-next/Array.isTemplateObject.js:10: SyntaxError: unexpected token >
+kangax-next/AsyncDisposableStack.js: SyntaxError: kangax-next/AsyncDisposableStack.js:47: SyntaxError: unexpected token [
+kangax-next/AsyncIterator.extends.js: SyntaxError: kangax-next/AsyncIterator.extends.js:9: SyntaxError: unexpected token class
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: kangax-next/AsyncIterator.from.async-iterable.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: kangax-next/AsyncIterator.from.iterable.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: kangax-next/AsyncIterator.from.iterator.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: kangax-next/AsyncIterator.instanceof.js:9: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" not defined
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: kangax-next/AsyncIterator.prototype.drop.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: kangax-next/AsyncIterator.prototype.every.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: kangax-next/AsyncIterator.prototype.filter.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: kangax-next/AsyncIterator.prototype.find.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: kangax-next/AsyncIterator.prototype.flatMap.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: kangax-next/AsyncIterator.prototype.forEach.js:44: SyntaxError: unexpected identifier
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: kangax-next/AsyncIterator.prototype.map.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: kangax-next/AsyncIterator.prototype.reduce.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: kangax-next/AsyncIterator.prototype.some.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: kangax-next/AsyncIterator.prototype.take.js:44: SyntaxError: unexpected token function
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: kangax-next/AsyncIterator.prototype.toArray.js:44: SyntaxError: unexpected token function
+kangax-next/DisposableStack.js: SyntaxError: kangax-next/DisposableStack.js:12: SyntaxError: invalid property name
+kangax-next/Map.prototype.upsert.js: SyntaxError: kangax-next/Map.prototype.upsert.js:10: SyntaxError: unexpected token >
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: kangax-next/SuppressedError.js:13: SyntaxError: unexpected identifier
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: kangax-next/Uint8Array.fromBase64.js:13: ReferenceError: assign to invalid left-hand-side
+kangax-next/Uint8Array.fromHex.js: ReferenceError: kangax-next/Uint8Array.fromHex.js:13: ReferenceError: assign to invalid left-hand-side
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: kangax-next/Uint8Array.setFromBase64.js:11: SyntaxError: unexpected identifier
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: kangax-next/Uint8Array.setFromHex.js:11: SyntaxError: unexpected identifier
+kangax-next/Uint8Array.toBase64.js: TypeError: not callable object
+kangax-next/Uint8Array.toHex.js: TypeError: not callable object
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: kangax-next/WeakMap.prototype.upsert.js:11: SyntaxError: unexpected token >
+kangax-next/await-using.for-of.js: SyntaxError: kangax-next/await-using.for-of.js:46: SyntaxError: unexpected token [
+kangax-next/await-using.js: SyntaxError: kangax-next/await-using.js:44: SyntaxError: unexpected token function
+kangax-next/class-decorators.js: SyntaxError: kangax-next/class-decorators.js:9: SyntaxError: unexpected token class
+kangax-next/function.sent.js: SyntaxError: kangax-next/function.sent.js:10: SyntaxError: unexpected token *
+kangax-next/throw-expr.arrow.js: SyntaxError: kangax-next/throw-expr.arrow.js:9: SyntaxError: unexpected token )
+kangax-next/throw-expr.conditional.js: SyntaxError: kangax-next/throw-expr.conditional.js:9: SyntaxError: unexpected token throw
+kangax-next/throw-expr.logical.js: SyntaxError: kangax-next/throw-expr.logical.js:11: SyntaxError: unexpected token throw
+kangax-next/throw-expr.param-init.js: SyntaxError: kangax-next/throw-expr.param-init.js:9: SyntaxError: unexpected token =
+kangax-next/using.for-of.js: SyntaxError: kangax-next/using.for-of.js:11: SyntaxError: invalid property name
+kangax-next/using.js: SyntaxError: kangax-next/using.js:11: SyntaxError: invalid property name

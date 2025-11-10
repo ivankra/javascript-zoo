@@ -271,6 +271,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9184,
       "kangax-es2025": 0.3158,
       "kangax-intl": 0.8929,
+      "kangax-next": 0.0,
       "es1-es5": 0.9857,
       "kangax-es2016plus": 0.8654
     }
@@ -334,6 +335,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.981,
       "kangax-es2016plus": 0.957
     }
@@ -410,6 +412,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0408,
       "kangax-es2025": 0.1404,
       "kangax-intl": 0.2143,
+      "kangax-next": 0.0,
       "es1-es5": 0.781,
       "kangax-es2016plus": 0.0452
     }
@@ -493,7 +496,28 @@ const jsz_engines = [
         "revision_date": "2025-10-27",
         "version": "2.20.0-17-gf4e6dfe"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.0,
+      "es3": 0.0,
+      "es5": 0.0,
+      "kangax-es5": 0.0,
+      "kangax-es6": 0.0,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.0,
+      "kangax-es2016plus": 0.0
+    }
   },
   {
     "id": "cesanta-v7",
@@ -542,7 +566,22 @@ const jsz_engines = [
       "es1": 0.8182,
       "es3": 0.6554,
       "es5": 0.4595,
-      "es1-es5": 0.6976
+      "kangax-es5": 0.6614,
+      "kangax-es6": 0.0192,
+      "kangax-es2016": 0.0909,
+      "kangax-es2017": 0.04,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.125,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0833,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.1429,
+      "kangax-next": 0.0,
+      "es1-es5": 0.6976,
+      "kangax-es2016plus": 0.04
     }
   },
   {
@@ -834,7 +873,22 @@ const jsz_engines = [
       "es1": 0.9293,
       "es3": 0.7973,
       "es5": 0.0946,
-      "es1-es5": 0.7357
+      "kangax-es5": 0.1871,
+      "kangax-es6": 0.0136,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.125,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
+      "es1-es5": 0.7357,
+      "kangax-es2016plus": 0.019
     }
   },
   {
@@ -1009,6 +1063,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9976,
       "kangax-es2016plus": 0.0778
     }
@@ -1167,6 +1222,7 @@ const jsz_engines = [
       "kangax-es2024": 0.6735,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9667,
       "kangax-es2016plus": 0.9438
     }
@@ -1328,6 +1384,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
+      "kangax-next": 0.3636,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9968
     }
@@ -1447,6 +1504,7 @@ const jsz_engines = [
       "kangax-es2024": 0.7959,
       "kangax-es2025": 0.7368,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9308
     }
@@ -1510,7 +1568,22 @@ const jsz_engines = [
       "es1": 0.7626,
       "es3": 0.277,
       "es5": 0.3919,
-      "es1-es5": 0.5262
+      "kangax-es5": 0.6132,
+      "kangax-es6": 0.0042,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0893,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0303,
+      "es1-es5": 0.5262,
+      "kangax-es2016plus": 0.0143
     }
   },
   {
@@ -1637,6 +1710,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9905,
       "kangax-es2016plus": 0.6623
     }
@@ -1763,6 +1837,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
+      "kangax-next": 0.0606,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9968
     }
@@ -1838,6 +1913,7 @@ const jsz_engines = [
       "kangax-es2024": 0.4286,
       "kangax-es2025": 0.1053,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0505,
       "es1-es5": 0.9929,
       "kangax-es2016plus": 0.6912
     }
@@ -1969,7 +2045,7 @@ const jsz_engines = [
     ],
     "conformance": {
       "es1": 0.9949,
-      "es3": 0.9865,
+      "es3": 1.0,
       "es5": 0.973,
       "kangax-es5": 0.98,
       "kangax-es6": 0.7769,
@@ -1983,8 +2059,9 @@ const jsz_engines = [
       "kangax-es2023": 0.7714,
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
-      "kangax-intl": 0.9643,
-      "es1-es5": 0.9881,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
+      "es1-es5": 0.9929,
       "kangax-es2016plus": 0.5678
     }
   },
@@ -2232,6 +2309,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.4643,
+      "kangax-next": 0.0,
       "es1-es5": 0.981,
       "kangax-es2016plus": 0.0143
     }
@@ -2395,6 +2473,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9929,
       "kangax-es2016plus": 0.6954
     }
@@ -2484,7 +2563,7 @@ const jsz_engines = [
       "es3": 0.9595,
       "es5": 0.6892,
       "kangax-es5": 0.8107,
-      "kangax-es6": 0.0286,
+      "kangax-es6": 0.0381,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.08,
       "kangax-es2018": 0.0526,
@@ -2496,6 +2575,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9238,
       "kangax-es2016plus": 0.0389
     }
@@ -2766,6 +2846,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
+      "kangax-next": 0.1212,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9981
     }
@@ -2881,7 +2962,22 @@ const jsz_engines = [
       "es1": 0.5606,
       "es3": 0.3378,
       "es5": 0.1892,
-      "es1-es5": 0.4167
+      "kangax-es5": 0.37,
+      "kangax-es6": 0.067,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0526,
+      "kangax-es2019": 0.25,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.1071,
+      "kangax-next": 0.0,
+      "es1-es5": 0.4167,
+      "kangax-es2016plus": 0.0331
     }
   },
   {
@@ -3029,6 +3125,7 @@ const jsz_engines = [
       "kangax-es2024": 0.7959,
       "kangax-es2025": 0.7368,
       "kangax-intl": 0.8214,
+      "kangax-next": 0.0505,
       "es1-es5": 0.9667,
       "kangax-es2016plus": 0.87
     }
@@ -3154,6 +3251,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
       "es1-es5": 0.8595,
       "kangax-es2016plus": 0.0422
     }
@@ -3294,6 +3392,7 @@ const jsz_engines = [
       "kangax-es2024": 0.7959,
       "kangax-es2025": 0.7895,
       "kangax-intl": 1.0,
+      "kangax-next": 0.1905,
       "es1-es5": 0.9976,
       "kangax-es2016plus": 0.9495
     }
@@ -3408,7 +3507,22 @@ const jsz_engines = [
       "es1": 0.7424,
       "es3": 0.0338,
       "es5": 0.0135,
-      "es1-es5": 0.3643
+      "kangax-es5": 0.0,
+      "kangax-es6": 0.0,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.3643,
+      "kangax-es2016plus": 0.0
     }
   },
   {
@@ -3456,6 +3570,7 @@ const jsz_engines = [
       "kangax-es2024": 0.6735,
       "kangax-es2025": 0.2632,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.7804
     }
@@ -3601,6 +3716,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.919,
       "kangax-es2016plus": 0.019
     }
@@ -3671,6 +3787,7 @@ const jsz_engines = [
       "kangax-es2024": 0.5102,
       "kangax-es2025": 0.5526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0808,
       "es1-es5": 0.9048,
       "kangax-es2016plus": 0.4355
     }
@@ -3803,6 +3920,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
       "es1-es5": 0.9857,
       "kangax-es2016plus": 0.0313
     }
@@ -3974,6 +4092,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.1404,
       "kangax-intl": 0.1071,
+      "kangax-next": 0.0,
       "es1-es5": 0.8786,
       "kangax-es2016plus": 0.2722
     }
@@ -4086,6 +4205,7 @@ const jsz_engines = [
       "kangax-es2024": 0.551,
       "kangax-es2025": 0.5526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9167,
       "kangax-es2016plus": 0.7923
     }
@@ -4214,6 +4334,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0408,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9143,
       "kangax-es2016plus": 0.0607
     }
@@ -4267,6 +4388,7 @@ const jsz_engines = [
       "kangax-es2024": 0.4694,
       "kangax-es2025": 0.2105,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0202,
       "es1-es5": 0.7429,
       "kangax-es2016plus": 0.5593
     }
@@ -4328,6 +4450,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0303,
       "es1-es5": 0.9976,
       "kangax-es2016plus": 0.6753
     }
@@ -4411,7 +4534,22 @@ const jsz_engines = [
       "es1": 0.2374,
       "es3": 0.1149,
       "es5": 0.0405,
-      "es1-es5": 0.1595
+      "kangax-es5": 0.0326,
+      "kangax-es6": 0.0084,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.125,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.1595,
+      "kangax-es2016plus": 0.0132
     }
   },
   {
@@ -4459,6 +4597,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.1842,
       "kangax-intl": 0.0,
+      "kangax-next": 0.0,
       "es1-es5": 0.431,
       "kangax-es2016plus": 0.1428
     }
@@ -4607,6 +4746,7 @@ const jsz_engines = [
       "kangax-es2024": 0.7959,
       "kangax-es2025": 0.7368,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9495
     }
@@ -4759,6 +4899,7 @@ const jsz_engines = [
       "kangax-es2024": 0.6735,
       "kangax-es2025": 0.3158,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.8974
     }
@@ -4991,6 +5132,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
       "es1-es5": 0.981,
       "kangax-es2016plus": 0.2056
     }
@@ -5039,6 +5181,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.0,
+      "kangax-next": 0.0,
       "es1-es5": 0.2143,
       "kangax-es2016plus": 0.0177
     }
@@ -5179,6 +5322,7 @@ const jsz_engines = [
       "kangax-es2024": 0.2857,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
       "es1-es5": 0.969,
       "kangax-es2016plus": 0.4328
     }
@@ -5249,6 +5393,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0408,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9048,
       "kangax-es2016plus": 0.0276
     }
@@ -5293,7 +5438,7 @@ const jsz_engines = [
       "es3": 0.7838,
       "es5": 0.3514,
       "kangax-es5": 0.5056,
-      "kangax-es6": 0.3304,
+      "kangax-es6": 0.3351,
       "kangax-es2016": 0.1061,
       "kangax-es2017": 0.32,
       "kangax-es2018": 0.393,
@@ -5305,6 +5450,7 @@ const jsz_engines = [
       "kangax-es2024": 0.1633,
       "kangax-es2025": 0.5263,
       "kangax-intl": 0.7143,
+      "kangax-next": 0.0808,
       "es1-es5": 0.7452,
       "kangax-es2016plus": 0.3452
     }
@@ -5383,6 +5529,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.9905,
       "kangax-es2016plus": 0.6623
     }
@@ -5431,6 +5578,7 @@ const jsz_engines = [
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.0,
       "es1-es5": 0.8405,
       "kangax-es2016plus": 0.0257
     }
@@ -5700,6 +5848,17 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
+        "binary_sha256": "55f366a6276c662bbc412090d0b0fcc4d04655fe508215f7a3311bd064e12020",
+        "binary_size": 37426784,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/mozilla-firefox/firefox.git",
+        "revision": "5ce8ed1e2fceea5c633c63dae85538d3241a733f",
+        "revision_date": "2025-10-09",
+        "variant": "full",
+        "version": "144.0"
+      },
+      {
+        "arch": "arm64",
         "variant": "jitless",
         "binary_size": 13357608,
         "revision": "f88de4141d59b647756e7917c7a97c3e64b88289",
@@ -5839,6 +5998,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
+      "kangax-next": 0.3636,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9968
     }
@@ -6055,7 +6215,22 @@ const jsz_engines = [
       "es1": 0.1162,
       "es3": 0.0473,
       "es5": 0.0405,
-      "es1-es5": 0.0786
+      "kangax-es5": 0.0,
+      "kangax-es6": 0.0,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.0786,
+      "kangax-es2016plus": 0.0
     }
   },
   {
@@ -6203,10 +6378,25 @@ const jsz_engines = [
       }
     ],
     "conformance": {
-      "es1": 0.0556,
-      "es3": 0.0743,
-      "es5": 0.027,
-      "es1-es5": 0.0571
+      "es1": 0.0202,
+      "es3": 0.0068,
+      "es5": 0.0135,
+      "kangax-es5": 0.0,
+      "kangax-es6": 0.0,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.0143,
+      "kangax-es2016plus": 0.0
     }
   },
   {
@@ -6304,6 +6494,17 @@ const jsz_engines = [
         "SplayLatency_note": "N=100 median=265457 mean=264294.44±933.68 max=280976",
         "Typescript_note": "N=100 median=289786 mean=279259.73±4337.80 max=300013",
         "zlib_note": "N=100 median=146235 mean=138184.02±2367.61 max=149379"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "ba53133b7457e4d73784205d534f7b4553012846c7885ce66c1de8bc0a67cdd2",
+        "binary_size": 39254424,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://chromium.googlesource.com/v8/v8.git",
+        "revision": "f1ce8f44fb72804415e6085948c6979554be4663",
+        "revision_date": "2025-11-03",
+        "variant": "full",
+        "version": "14.4.0 (candidate)"
       },
       {
         "arch": "arm64",
@@ -6457,6 +6658,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
+      "kangax-next": 0.3636,
       "es1-es5": 1.0,
       "kangax-es2016plus": 0.9968
     }
@@ -6623,6 +6825,7 @@ const jsz_engines = [
       "kangax-es2024": 0.9592,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
+      "kangax-next": 0.303,
       "es1-es5": 0.9952,
       "kangax-es2016plus": 0.9755
     }

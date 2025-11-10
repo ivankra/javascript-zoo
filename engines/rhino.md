@@ -46,7 +46,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 65%, ES2016+ 43%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 65%, ES2016+ 43%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 65%<pre>
 <a href="../conformance/kangax-es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
@@ -99,5 +99,6 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <li>ES2023: 100%</li>
 <li>ES2024: 29%<br>
 <li>ES2025: 0%<br>
+<li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>

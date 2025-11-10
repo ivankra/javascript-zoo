@@ -1,9 +1,0 @@
-{
-  "arch": "arm64",
-  "dist_size": 37707457,
-  "engine": "sablejs",
-  "repository": "https://github.com/sablejs/sablejs.git",
-  "revision": "f8236ffaeb8437230db1c3518971750586f6b842",
-  "revision_date": "2022-09-12",
-  "version": "1.1.0"
-}

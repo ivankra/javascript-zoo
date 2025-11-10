@@ -26,7 +26,7 @@
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 94%, ES2016+ 78%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 94%, ES2016+ 78%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 94%<pre>
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: failed
@@ -91,5 +91,6 @@
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 26%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

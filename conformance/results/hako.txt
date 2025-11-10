@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 1006163, "engine": "hako", "repository": "https://github.com/andrewmd5/hako.git", "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3", "revision_date": "2025-08-14", "version": "1.0.2-2-g99c76af"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: not a function
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: not a function
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: "name": "SyntaxError", stack": "    at kangax-next/SuppressedError.js:13:11\n
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: TypeError: not a function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: not a function
+kangax-next/Uint8Array.setFromHex.js: TypeError: not a function
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: TypeError: not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: not a function
+kangax-next/await-using.for-of.js: "name": "SyntaxError",
+kangax-next/await-using.js: "name": "SyntaxError",
+kangax-next/class-decorators.js: "message": "invalid property name", "name": "SyntaxError",
+kangax-next/function.sent.js: "name": "SyntaxError",
+kangax-next/throw-expr.arrow.js: "name": "SyntaxError",
+kangax-next/throw-expr.conditional.js: "name": "SyntaxError",
+kangax-next/throw-expr.logical.js: "name": "SyntaxError",
+kangax-next/throw-expr.param-init.js: "name": "SyntaxError",
+kangax-next/using.for-of.js: "name": "SyntaxError",
+kangax-next/using.js: "name": "SyntaxError",

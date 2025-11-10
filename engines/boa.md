@@ -31,7 +31,7 @@ Embeddable Javascript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 87%, Intl 89%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 87%, Next 0%, Intl 89%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8 (native at /src/core/engine/src/script.rs:94:34)
 <a href="../conformance/kangax-es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: failed
@@ -66,6 +66,7 @@ Embeddable Javascript engine written in Rust.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 32%<br>
+<li>Next: 0%<br>
 <li>Intl: 89%<pre>
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed

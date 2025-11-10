@@ -75,7 +75,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 33%, ES2016+ 44%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 33%, ES2016+ 44%, Next 8%, Intl 25%</summary><ul>
 <li>ES6: 33%<br>
 <li>ES2016: 32%<br>
 <li>ES2017: 42%<br>
@@ -142,5 +142,6 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: Array.isArray is not callable
 <a href="../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: failed
 </pre></li>
+<li>Next: 8%<br>
 <li>Intl: 25%<br>
 </ul></details>

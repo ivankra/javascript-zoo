@@ -26,7 +26,7 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 99%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 99%, Next 36%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/Map.prototype-not-instance.js">Map.prototype-not-instance.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: failed
@@ -52,5 +52,6 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 36%<br>
 <li>Intl: 100%</li>
 </ul></details>

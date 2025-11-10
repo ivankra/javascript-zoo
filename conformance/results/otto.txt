@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "80bb9e30b1499bbaf346792782197b1356f4fac00c381d16f45e93fcb1d379fd", "binary_size": 4751352, "engine": "otto", "repository": "https://github.com/robertkrimen/otto.git", "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a", "revision_date": "2025-06-13", "version": "0.5.1-2-g3ca7298"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1102,8 +1103,8 @@ kangax-es6/super.property-access.js: (anonymous): Line 10:3 Unexpected reserved 
 kangax-es6/super.statement.js: (anonymous): Line 11:3 Unexpected reserved word (and 1 more errors)
 kangax-es6/super.static-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
 kangax-es6/super.this-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000095e70 sp=0x4000095e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001e1de0?) /src/error.go:250 +0x54 fp=0x40404c1d70 sp=0x40404c1d30 pc=0x1cda94
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000095e70 sp=0x4000095e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001a9de0?) /src/error.go:250 +0x54 fp=0x40405ffd70 sp=0x40405ffd30 pc=0x1cda94
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000095e70 sp=0x4000095e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001edde0?) /src/error.go:250 +0x54 fp=0x4040901d70 sp=0x4040901d30 pc=0x1cda94
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x40005a5e70 sp=0x40005a5e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001a7de0?) /src/error.go:250 +0x54 fp=0x4040613d70 sp=0x4040613d30 pc=0x1cda94
 kangax-es6/template.basic.js: (anonymous): Line 11:8 Unexpected token ILLEGAL (and 3 more errors)
 kangax-es6/template.caching.js: (anonymous): Line 17:19 Unexpected token ILLEGAL (and 7 more errors)
 kangax-es6/template.escape-sequences.js: (anonymous): Line 13:20 Unexpected token ILLEGAL (and 4 more errors)
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: (anonymous): Line 10:36 Unexpected token > (and 10 more errors)
+kangax-next/AsyncDisposableStack.js: (anonymous): Line 47:44 Unexpected token [ (and 20 more errors)
+kangax-next/AsyncIterator.extends.js: (anonymous): Line 9:3 Unexpected reserved word (and 1 more errors)
+kangax-next/AsyncIterator.from.async-iterable.js: (anonymous): Line 44:9 Unexpected token function (and 19 more errors)
+kangax-next/AsyncIterator.from.iterable.js: (anonymous): Line 44:9 Unexpected token function (and 19 more errors)
+kangax-next/AsyncIterator.from.iterator.js: (anonymous): Line 44:9 Unexpected token function (and 19 more errors)
+kangax-next/AsyncIterator.instanceof.js: (anonymous): Line 9:17 Unexpected token function (and 7 more errors)
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: (anonymous): Line 44:9 Unexpected token function (and 17 more errors)
+kangax-next/AsyncIterator.prototype.every.js: (anonymous): Line 44:10 Unexpected token function (and 10 more errors)
+kangax-next/AsyncIterator.prototype.filter.js: (anonymous): Line 44:9 Unexpected token function (and 17 more errors)
+kangax-next/AsyncIterator.prototype.find.js: (anonymous): Line 44:10 Unexpected token function (and 10 more errors)
+kangax-next/AsyncIterator.prototype.flatMap.js: (anonymous): Line 44:9 Unexpected token function (and 17 more errors)
+kangax-next/AsyncIterator.prototype.forEach.js: (anonymous): Line 44:7 Unexpected identifier (and 10 more errors)
+kangax-next/AsyncIterator.prototype.map.js: (anonymous): Line 44:9 Unexpected token function (and 17 more errors)
+kangax-next/AsyncIterator.prototype.reduce.js: (anonymous): Line 44:10 Unexpected token function (and 10 more errors)
+kangax-next/AsyncIterator.prototype.some.js: (anonymous): Line 44:10 Unexpected token function (and 10 more errors)
+kangax-next/AsyncIterator.prototype.take.js: (anonymous): Line 44:9 Unexpected token function (and 17 more errors)
+kangax-next/AsyncIterator.prototype.toArray.js: (anonymous): Line 44:10 Unexpected token function (and 10 more errors)
+kangax-next/DisposableStack.js: (anonymous): Line 12:39 Unexpected identifier (and 25 more errors)
+kangax-next/Map.prototype.upsert.js: (anonymous): Line 9:3 Unexpected reserved word (and 7 more errors)
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: (anonymous): Line 13:11 Unexpected identifier (and 11 more errors)
+kangax-next/Uint8Array.fromBase64.js: (anonymous): Line 10:3 Unexpected reserved word (and 8 more errors)
+kangax-next/Uint8Array.fromHex.js: (anonymous): Line 10:3 Unexpected reserved word (and 8 more errors)
+kangax-next/Uint8Array.setFromBase64.js: (anonymous): Line 10:3 Unexpected reserved word (and 8 more errors)
+kangax-next/Uint8Array.setFromHex.js: (anonymous): Line 10:3 Unexpected reserved word (and 8 more errors)
+kangax-next/Uint8Array.toBase64.js: (anonymous): Line 10:3 Unexpected reserved word (and 1 more errors)
+kangax-next/Uint8Array.toHex.js: (anonymous): Line 10:3 Unexpected reserved word (and 1 more errors)
+kangax-next/WeakMap.prototype.upsert.js: (anonymous): Line 9:3 Unexpected reserved word (and 7 more errors)
+kangax-next/await-using.for-of.js: (anonymous): Line 46:11 Unexpected token [ (and 20 more errors)
+kangax-next/await-using.js: (anonymous): Line 44:10 Unexpected token function (and 16 more errors)
+kangax-next/class-decorators.js: (anonymous): Line 9:3 Unexpected reserved word (and 3 more errors)
+kangax-next/function.sent.js: (anonymous): Line 10:11 Unexpected token * (and 11 more errors)
+kangax-next/throw-expr.arrow.js: (anonymous): Line 9:13 Unexpected token ) (and 2 more errors)
+kangax-next/throw-expr.conditional.js: (anonymous): Line 9:15 Unexpected token throw (and 3 more errors)
+kangax-next/throw-expr.logical.js: (anonymous): Line 11:15 Unexpected token throw (and 3 more errors)
+kangax-next/throw-expr.param-init.js: (anonymous): Line 9:20 Unexpected token = (and 2 more errors)
+kangax-next/using.for-of.js: (anonymous): Line 11:6 Unexpected identifier (and 22 more errors)
+kangax-next/using.js: (anonymous): Line 11:6 Unexpected identifier (and 16 more errors)

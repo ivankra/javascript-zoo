@@ -33,7 +33,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 98%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 98%, Next 30%, Intl 25%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/Map.zero-key.js">Map.zero-key.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: failed
@@ -75,5 +75,6 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 30%<br>
 <li>Intl: 25%<br>
 </ul></details>

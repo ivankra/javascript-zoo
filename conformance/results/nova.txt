@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "9ed7f4e2c6a15f8fbcb0c5c1e004bdbf894b05229818b488bd274af95fa9f833", "binary_size": 8723592, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "66832e5987057409815eaf46dfbf25b1b985ff68", "revision_date": "2025-10-27", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-33-g66832e59"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -720,7 +721,7 @@ kangax-es6/annex-b.String.prototype.html.existence.js: OK
 kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 kangax-es6/annex-b.function.hoisted-block-level.js: failed
-kangax-es6/annex-b.function.if-statement.js: Parse errors: x Invalid function declaration x Invalid function declaration x Invalid function declaration x Invalid function declaration x Invalid function declaration
+kangax-es6/annex-b.function.if-statement.js: Parse errors: x Invalid function declaration
 kangax-es6/annex-b.function.labeled.js: Parse errors: x Invalid function declaration
 kangax-es6/annex-b.html-comments.js: Parse errors:
 kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: regex parse error:; error: backreferences are not supported
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Cannot access undeclared variable
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Not a callable object
+kangax-next/AsyncDisposableStack.js: ReferenceError: Cannot access undeclared variable 'AsyncDisposableStack'.
+kangax-next/AsyncIterator.extends.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Cannot access undeclared variable 'AsyncIterator'.
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.every.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.find.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.map.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.some.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.take.js: TypeError: Not a callable object
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: Not a callable object
+kangax-next/DisposableStack.js: ReferenceError: Cannot access undeclared variable 'DisposableStack'.
+kangax-next/Map.prototype.upsert.js: TypeError: Not a callable object
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2928:52:
+kangax-next/Uint8Array.fromBase64.js: TypeError: Not a callable object
+kangax-next/Uint8Array.fromHex.js: TypeError: Not a callable object
+kangax-next/Uint8Array.setFromBase64.js: TypeError: Not a callable object
+kangax-next/Uint8Array.setFromHex.js: TypeError: Not a callable object
+kangax-next/Uint8Array.toBase64.js: TypeError: Not a callable object
+kangax-next/Uint8Array.toHex.js: TypeError: Not a callable object
+kangax-next/WeakMap.prototype.upsert.js: Error: WeakMap not implemented
+kangax-next/await-using.for-of.js: failed
+kangax-next/await-using.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2929:57:
+kangax-next/class-decorators.js: failed
+kangax-next/function.sent.js: Parse errors:
+kangax-next/throw-expr.arrow.js: Parse errors:
+kangax-next/throw-expr.conditional.js: Parse errors:
+kangax-next/throw-expr.logical.js: Parse errors:
+kangax-next/throw-expr.param-init.js: Parse errors:
+kangax-next/using.for-of.js: failed
+kangax-next/using.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2928:52:

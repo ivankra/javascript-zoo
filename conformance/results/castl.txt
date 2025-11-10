@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 1101141, "engine": "castl", "repository": "https://github.com/PaulBernier/castl.git", "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c", "revision_date": "2017-03-22", "version": "1.2.4"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: TypeError: Cannot read property 'constructor' of 
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: failed
+kangax-next/Array.isTemplateObject.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unknown Expression type: TaggedTemplateExpression
+kangax-next/AsyncDisposableStack.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unexpected property key type: MemberExpression
+kangax-next/AsyncIterator.extends.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Class declaration (ES6) not supported yet.
+kangax-next/AsyncIterator.from.async-iterable.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.from.iterable.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.from.iterator.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.instanceof.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 9: Unexpected token function
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read property 'prototype' of undefined
+kangax-next/AsyncIterator.prototype.drop.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.every.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.filter.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.find.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.flatMap.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.forEach.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 45: Unexpected token function
+kangax-next/AsyncIterator.prototype.map.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.reduce.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.some.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.take.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.toArray.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/DisposableStack.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Unexpected property key type: MemberExpression
+kangax-next/Map.prototype.upsert.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 13: Unexpected identifier
+kangax-next/Uint8Array.fromBase64.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
+kangax-next/Uint8Array.fromHex.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
+kangax-next/Uint8Array.setFromBase64.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: let instruction is not supported yet
+kangax-next/Uint8Array.setFromHex.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: let instruction is not supported yet
+kangax-next/Uint8Array.toBase64.js: TypeError: undefined is not a function
+kangax-next/Uint8Array.toHex.js: TypeError: undefined is not a function
+kangax-next/WeakMap.prototype.upsert.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Arrow functions (ES6) not supported yet.
+kangax-next/await-using.for-of.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 56: Unexpected token function
+kangax-next/await-using.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 44: Unexpected token function
+kangax-next/class-decorators.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 10: Unexpected token ILLEGAL
+kangax-next/function.sent.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 11: Unexpected token .
+kangax-next/throw-expr.arrow.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 9: Unexpected token throw
+kangax-next/throw-expr.conditional.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 9: Unexpected token throw
+kangax-next/throw-expr.logical.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 11: Unexpected token throw
+kangax-next/throw-expr.param-init.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 9: Unexpected token throw
+kangax-next/using.for-of.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 22: Unexpected identifier
+kangax-next/using.js: throw new SyntaxError("Couldn't transpile JS code: " + e); SyntaxError: Couldn't transpile JS code: Error: Line 16: Unexpected identifier

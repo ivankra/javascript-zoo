@@ -31,7 +31,7 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 30%, ES2016+ 3%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 30%, ES2016+ 3%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 30%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 4%<br>
@@ -43,5 +43,6 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 <li>ES2023: 20%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>

@@ -74,8 +74,8 @@ those will just trip against the whitelist.
 <li>ES5: 35%<br>
 </ul></details>
 
-<details><summary>compat-table: ES6 33%, ES2016+ 35%, Intl 71%</summary><ul>
-<li>ES6: 33%<br>
+<details><summary>compat-table: ES6 34%, ES2016+ 35%, Next 8%, Intl 71%</summary><ul>
+<li>ES6: 34%<br>
 <li>ES2016: 11%<br>
 <li>ES2017: 32%<br>
 <li>ES2018: 39%<br>
@@ -132,6 +132,7 @@ those will just trip against the whitelist.
 <a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: arguments is not defined
 </pre></li>
+<li>Next: 8%<br>
 <li>Intl: 71%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed

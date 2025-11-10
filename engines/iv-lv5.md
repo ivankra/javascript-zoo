@@ -39,7 +39,7 @@ JIT-enabled ES5 engine in C++.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 16%, ES2016+ 1%, Intl 46%</summary><ul>
+<details><summary>compat-table: ES6 16%, ES2016+ 1%, Next 0%, Intl 46%</summary><ul>
 <li>ES6: 16%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 4%<br>
@@ -51,5 +51,6 @@ JIT-enabled ES5 engine in C++.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 46%<br>
 </ul></details>

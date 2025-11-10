@@ -58,4 +58,20 @@ No ASI.
 <li>ES5: 39%, <b>2 crashes</b><br>
 </ul></details>
 
-💥 **12 crashes during testing**
+<details><summary>compat-table: ES6 0%, ES2016+ 1%, Next 3%, Intl 25%</summary><ul>
+<li>ES6: 0%16<br>
+<li>ES2016: 0%<br>
+<li>ES2017: 0%, <b>1 crash</b><br>
+<li>ES2018: 0%<br>
+<li>ES2019: 0%<br>
+<li>ES2020: 0%<br>
+<li>ES2021: 0%<br>
+<li>ES2022: 9%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 4%<br>
+<li>ES2025: 0%<br>
+<li>Next: 3%<br>
+<li>Intl: 25%<br>
+</ul></details>
+
+💥 **30 crashes during testing**

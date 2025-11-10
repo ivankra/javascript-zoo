@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 37707457, "engine": "sablejs", "repository": "https://github.com/sablejs/sablejs.git", "revision": "f8236ffaeb8437230db1c3518971750586f6b842", "revision_date": "2022-09-12", "version": "1.1.0"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: [ERROR] compile failed: SyntaxError: Unexpected token (10:35)
+kangax-next/AsyncDisposableStack.js: [ERROR] compile failed: SyntaxError: Unexpected token (47:43)
+kangax-next/AsyncIterator.extends.js: [ERROR] compile failed: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-next/AsyncIterator.from.async-iterable.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterable.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterator.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.instanceof.js: [ERROR] compile failed: SyntaxError: Unexpected token (9:16)
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.every.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.filter.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.find.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.flatMap.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.forEach.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:6)
+kangax-next/AsyncIterator.prototype.map.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.reduce.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.some.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.take.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.toArray.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/DisposableStack.js: [ERROR] compile failed: SyntaxError: Unexpected token (12:37)
+kangax-next/Map.prototype.upsert.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: [ERROR] compile failed: SyntaxError: Unexpected token (13:10)
+kangax-next/Uint8Array.fromBase64.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.fromHex.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.setFromBase64.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.setFromHex.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.toBase64.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.toHex.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/WeakMap.prototype.upsert.js: [ERROR] compile failed: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-next/await-using.for-of.js: [ERROR] compile failed: SyntaxError: Unexpected token (46:10)
+kangax-next/await-using.js: [ERROR] compile failed: SyntaxError: Unexpected token (44:9)
+kangax-next/class-decorators.js: [ERROR] compile failed: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-next/function.sent.js: [ERROR] compile failed: SyntaxError: Unexpected token (10:10)
+kangax-next/throw-expr.arrow.js: [ERROR] compile failed: SyntaxError: Unexpected token (9:12)
+kangax-next/throw-expr.conditional.js: [ERROR] compile failed: SyntaxError: Unexpected token (9:14)
+kangax-next/throw-expr.logical.js: [ERROR] compile failed: SyntaxError: Unexpected token (11:14)
+kangax-next/throw-expr.param-init.js: [ERROR] compile failed: SyntaxError: Unexpected token (9:19)
+kangax-next/using.for-of.js: [ERROR] compile failed: SyntaxError: Unexpected token (11:4)
+kangax-next/using.js: [ERROR] compile failed: SyntaxError: Unexpected token (11:4)

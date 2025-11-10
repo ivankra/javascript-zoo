@@ -79,7 +79,7 @@ JavaScript engine of Safari/WebKit.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 100%, ES2016+ 99%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 100%, ES2016+ 99%, Next 12%, Intl 100%</summary><ul>
 <li>ES6: 100%</li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
@@ -93,5 +93,6 @@ JavaScript engine of Safari/WebKit.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 12%<br>
 <li>Intl: 100%</li>
 </ul></details>

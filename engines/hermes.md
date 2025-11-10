@@ -17,21 +17,18 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../conformance/results/hermes_full.txt">Full log</a>.</li>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/hermes.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/with.js">with.js</a>: with.js:15:1: error: invalid statement encountered. with.js:38:1: error: invalid statement encountered. Emitted 2 errors. exiting.
 </pre></li>
-<li>ES3: 99%<pre>
-<a href="../conformance/es3/String.prototype.toLocaleLowerCase.js">String.prototype.toLocaleLowerCase.js</a>: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
-<a href="../conformance/es3/String.prototype.toLocaleUpperCase.js">String.prototype.toLocaleUpperCase.js</a>: failed
-</pre></li>
+<li>ES3: 100%</li>
 <li>ES5: 97%<pre>
 <a href="../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
 <a href="../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 78%, ES2016+ 57%, Intl 96%</summary><ul>
+<details><summary>compat-table: ES6 78%, ES2016+ 57%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 78%<pre>
 <a href="../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../conformance/kangax-es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
@@ -108,7 +105,6 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 </pre></li>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
-<li>Intl: 96%<pre>
-<a href="../conformance/kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js">Intl.NumberFormat.rejects-invalid-tags.js</a>: failed
-</pre></li>
+<li>Next: 6%<br>
+<li>Intl: 25%<br>
 </ul></details>

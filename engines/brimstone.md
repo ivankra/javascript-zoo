@@ -30,7 +30,7 @@ Javascript engine written in Rust, with nearly complete ES2025 support.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 94%, ES2016+ 96%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 94%, ES2016+ 96%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 94%, <b>5 crashes</b><pre>
 <a href="../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: value is not a function
@@ -91,6 +91,7 @@ Javascript engine written in Rust, with nearly complete ES2025 support.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
 

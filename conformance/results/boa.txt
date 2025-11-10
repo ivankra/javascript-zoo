@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "144cc3be3405e3d3d6bf7708f8fb466ba5723e3bfe36cfb636e502eca49d1573", "binary_size": 24519088, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "868d13ff23ce5436363c8f71cffc829206be6783", "revision_date": "2025-10-30", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: not a callable function
+kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: not a callable function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: not a callable function
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: not a callable function
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Uncaught: SyntaxError: expected token ';', got '_1' in expression statement at line 13, col 11 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/Uint8Array.fromBase64.js: TypeError: not a callable function
+kangax-next/Uint8Array.fromHex.js: TypeError: not a callable function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: not a callable function
+kangax-next/Uint8Array.setFromHex.js: TypeError: not a callable function
+kangax-next/Uint8Array.toBase64.js: TypeError: not a callable function
+kangax-next/Uint8Array.toHex.js: TypeError: not a callable function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: not a callable function
+kangax-next/await-using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 57, col 22 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/await-using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 52, col 19 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/class-decorators.js: Uncaught: SyntaxError: unexpected '@' at line 10, column 5 at line 10, col 5 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/function.sent.js: Uncaught: SyntaxError: expected token '(', got '.' in function expression at line 11, col 22 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/throw-expr.arrow.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 18 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/throw-expr.conditional.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 15 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/throw-expr.logical.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 11, col 15 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/throw-expr.param-init.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 22 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 22, col 16 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 16, col 11 (native at /src/core/engine/src/script.rs:94:34)

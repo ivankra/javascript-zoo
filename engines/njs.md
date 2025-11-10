@@ -79,7 +79,7 @@ Always runs in strict mode, seemingly no option to disable.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 39%, ES2016+ 27%, Intl 11%</summary><ul>
+<details><summary>compat-table: ES6 39%, ES2016+ 27%, Next 0%, Intl 11%</summary><ul>
 <li>ES6: 39%<br>
 <li>ES2016: 36%<br>
 <li>ES2017: 60%<pre>
@@ -114,5 +114,6 @@ Always runs in strict mode, seemingly no option to disable.
 <li>ES2023: 29%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 14%<br>
+<li>Next: 0%<br>
 <li>Intl: 11%<br>
 </ul></details>

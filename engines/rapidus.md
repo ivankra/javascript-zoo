@@ -23,7 +23,7 @@ JavaScript engine written in Rust, aiming at ES5.
 <li>ES5: 12%<br>
 </ul></details>
 
-<details><summary>compat-table: ES6 8%, ES2016+ 2%, Intl 0%</summary><ul>
+<details><summary>compat-table: ES6 8%, ES2016+ 2%, Next 0%, Intl 0%</summary><ul>
 <li>ES6: 8%<br>
 <li>ES2016: 6%<br>
 <li>ES2017: 0%<br>
@@ -35,6 +35,7 @@ JavaScript engine written in Rust, aiming at ES5.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 0%<br>
 </ul></details>
 

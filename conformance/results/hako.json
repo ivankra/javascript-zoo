@@ -1,9 +1,0 @@
-{
-  "arch": "arm64",
-  "dist_size": 1006163,
-  "engine": "hako",
-  "repository": "https://github.com/andrewmd5/hako.git",
-  "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
-  "revision_date": "2025-08-14",
-  "version": "1.0.2-2-g99c76af"
-}

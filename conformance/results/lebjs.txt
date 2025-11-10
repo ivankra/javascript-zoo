@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 410699, "engine": "lebjs", "repository": "https://github.com/LebsterFace/LebJS.git", "revision": "7b5db4a32e9d97b6881452da59f363f514e61b76", "revision_date": "2025-08-14"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: SyntaxError: Unexpected token '`', expected ')' (10:41)
+kangax-next/AsyncDisposableStack.js: failed
+kangax-next/AsyncIterator.extends.js: failed
+kangax-next/AsyncIterator.from.async-iterable.js: failed
+kangax-next/AsyncIterator.from.iterable.js: failed
+kangax-next/AsyncIterator.from.iterator.js: failed
+kangax-next/AsyncIterator.instanceof.js: failed
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: failed
+kangax-next/AsyncIterator.prototype.every.js: failed
+kangax-next/AsyncIterator.prototype.filter.js: failed
+kangax-next/AsyncIterator.prototype.find.js: failed
+kangax-next/AsyncIterator.prototype.flatMap.js: failed
+kangax-next/AsyncIterator.prototype.forEach.js: failed
+kangax-next/AsyncIterator.prototype.map.js: failed
+kangax-next/AsyncIterator.prototype.reduce.js: failed
+kangax-next/AsyncIterator.prototype.some.js: failed
+kangax-next/AsyncIterator.prototype.take.js: failed
+kangax-next/AsyncIterator.prototype.toArray.js: failed
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: ReferenceError: SuppressedError is not defined
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: Uint8Array is not defined
+kangax-next/Uint8Array.fromHex.js: ReferenceError: Uint8Array is not defined
+kangax-next/Uint8Array.setFromBase64.js: ReferenceError: Uint8Array is not defined
+kangax-next/Uint8Array.setFromHex.js: ReferenceError: Uint8Array is not defined
+kangax-next/Uint8Array.toBase64.js: ReferenceError: Uint8Array is not defined
+kangax-next/Uint8Array.toHex.js: ReferenceError: Uint8Array is not defined
+kangax-next/WeakMap.prototype.upsert.js: ReferenceError: WeakMap is not defined
+kangax-next/await-using.for-of.js: failed
+kangax-next/await-using.js: failed
+kangax-next/class-decorators.js: SyntaxError: Unexpected token '@' (10:5)
+kangax-next/function.sent.js: failed
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token 'throw' (9:18)
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token 'throw' (9:15)
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token 'throw' (11:15)
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token 'throw' (9:22)
+kangax-next/using.for-of.js: SyntaxError: Unexpected token '_', expected ';' (22:16)
+kangax-next/using.js: ReferenceError: using is not defined

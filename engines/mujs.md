@@ -35,7 +35,7 @@ Embeddable JavaScript engine from MuPDF.
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
 </pre></li>
 <li>ES3: 89%<pre>
-<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: empty array toLocaleString failed; single element toLocaleString failed; multiple elements content failed
+<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: empty array toLocaleString failed; multiple elements content failed
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
@@ -66,7 +66,7 @@ Embeddable JavaScript engine from MuPDF.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 1%, ES2016+ 2%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 1%, ES2016+ 2%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 1%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 4%<br>
@@ -78,5 +78,6 @@ Embeddable JavaScript engine from MuPDF.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

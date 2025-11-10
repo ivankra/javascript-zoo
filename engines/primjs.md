@@ -32,7 +32,7 @@
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 95%, ES2016+ 68%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 95%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
 <li>ES6: 95%<pre>
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
@@ -113,5 +113,6 @@
 <li>ES2023: 20%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 3%<br>
 <li>Intl: 25%<br>
 </ul></details>

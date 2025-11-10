@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 97870, "engine": "js-interpreter", "host_engine": "jsc 301765@main", "repository": "https://github.com/NeilFraser/JS-Interpreter.git", "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709", "revision_date": "2025-02-27", "variant": "jsc"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: Exception: SyntaxError: Unexpected token (10:35)
+kangax-next/AsyncDisposableStack.js: Exception: SyntaxError: Unexpected token (47:43)
+kangax-next/AsyncIterator.extends.js: Exception: SyntaxError: Unexpected token (9:8)
+kangax-next/AsyncIterator.from.async-iterable.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterable.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterator.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.instanceof.js: Exception: SyntaxError: Unexpected token (9:16)
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.every.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.filter.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.find.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.flatMap.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.forEach.js: Exception: SyntaxError: Unexpected token (44:6)
+kangax-next/AsyncIterator.prototype.map.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.reduce.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.some.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.take.js: Exception: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.toArray.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/DisposableStack.js: Exception: SyntaxError: Unexpected token (12:37)
+kangax-next/Map.prototype.upsert.js: Exception: SyntaxError: Unexpected token (9:8)
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: Error: Regular expressions not supported: /\w/
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Exception: SyntaxError: Unexpected token (13:10)
+kangax-next/Uint8Array.fromBase64.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/Uint8Array.fromHex.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/Uint8Array.setFromBase64.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/Uint8Array.setFromHex.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/Uint8Array.toBase64.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/Uint8Array.toHex.js: Exception: SyntaxError: Unexpected token (10:8)
+kangax-next/WeakMap.prototype.upsert.js: Exception: SyntaxError: Unexpected token (9:8)
+kangax-next/await-using.for-of.js: Exception: SyntaxError: Unexpected token (46:10)
+kangax-next/await-using.js: Exception: SyntaxError: Unexpected token (44:9)
+kangax-next/class-decorators.js: Exception: SyntaxError: Unexpected token (9:8)
+kangax-next/function.sent.js: Exception: SyntaxError: Unexpected token (10:10)
+kangax-next/throw-expr.arrow.js: Exception: SyntaxError: Unexpected token (9:12)
+kangax-next/throw-expr.conditional.js: Exception: SyntaxError: Unexpected token (9:14)
+kangax-next/throw-expr.logical.js: Exception: SyntaxError: Unexpected token (11:14)
+kangax-next/throw-expr.param-init.js: Exception: SyntaxError: Unexpected token (9:19)
+kangax-next/using.for-of.js: Exception: SyntaxError: Unexpected token (11:4)
+kangax-next/using.js: Exception: SyntaxError: Unexpected token (11:4)

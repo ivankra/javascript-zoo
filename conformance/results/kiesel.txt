@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "ac5651d11004e1e3f5320b2a385a35f53e828f1b0b72abbda28cfef9c83e26e6", "binary_size": 13248272, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "42272ad1b0e8e4f56df9ae987ebbee4c23ae33b1", "revision_date": "2025-10-31", "version": "0.1.0-dev+42272ad1b"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: undefined is not an Object
+kangax-next/AsyncDisposableStack.js: ReferenceError: 'AsyncDisposableStack' is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.every.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.find.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.map.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.some.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined is not an Object
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not an Object
+kangax-next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: undefined is not an Object
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: // compat-table: ES Next > Stage 3 > Explicit Resource Management (large) > SuppressedError SyntaxError: Unexpected token 'function' (kangax-next/SuppressedError.js:1:1)
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: OK
+kangax-next/Uint8Array.setFromBase64.js: failed
+kangax-next/Uint8Array.setFromHex.js: OK
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not an Object
+kangax-next/await-using.for-of.js: SyntaxError: Invalid 'for in'/'for of' loop initializer expression (kangax-next/await-using.for-of.js:57:10)
+kangax-next/await-using.js: SyntaxError: Unexpected token 'function' (kangax-next/await-using.js:41:2)
+kangax-next/class-decorators.js: SyntaxError: Unexpected token 'function' (kangax-next/class-decorators.js:1:1)
+kangax-next/function.sent.js: SyntaxError: Unexpected token 'function' (kangax-next/function.sent.js:1:1)
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.arrow.js:1:1)
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.conditional.js:1:1)
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.logical.js:1:1)
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token 'function' (kangax-next/throw-expr.param-init.js:1:1)
+kangax-next/using.for-of.js: SyntaxError: Unexpected token 'function' (kangax-next/using.for-of.js:1:1)
+kangax-next/using.js: SyntaxError: Unexpected token 'function' (kangax-next/using.js:1:1)

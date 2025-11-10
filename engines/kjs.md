@@ -75,7 +75,7 @@ Original JavaScript engine of KDE's Konqueror browser.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 6%, ES2016+ 4%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 6%, ES2016+ 4%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 6%<br>
 <li>ES2016: 18%<br>
 <li>ES2017: 10%<br>
@@ -87,5 +87,6 @@ Original JavaScript engine of KDE's Konqueror browser.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>

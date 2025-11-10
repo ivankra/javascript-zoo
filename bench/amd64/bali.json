@@ -1,0 +1,128 @@
+{
+  "binary": "bali",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "a56e244b94db3c717ec215b9a4880ab5e4a50cebc268bfb5ace24ef685c14029",
+    "binary_size": 4645632,
+    "engine": "bali",
+    "repository": "https://github.com/ferus-web/bali.git",
+    "revision": "99f0aa14155d0b0c9e39f6273a51c35b497207de",
+    "revision_date": "2025-10-29",
+    "version": "0.8.2"
+  },
+  "time": "Sun Nov  9 06:57:11 2025",
+  "benchmarks": {
+    "Richards": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.03],
+      "rss_mb": [9.39]
+    },
+    "DeltaBlue": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.69]
+    },
+    "Crypto": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.71]
+    },
+    "RayTrace": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.5]
+    },
+    "EarleyBoyer": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.67]
+    },
+    "RegExp": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.3]
+    },
+    "Splay": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.5]
+    },
+    "SplayLatency": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.5]
+    },
+    "NavierStokes": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [9.44]
+    },
+    "PdfJS": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.02],
+      "sys": [0.0],
+      "real": [0.03],
+      "rss_mb": [19.58]
+    },
+    "Mandreel": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.13],
+      "sys": [0.0],
+      "real": [0.14],
+      "rss_mb": [52.82]
+    },
+    "MandreelLatency": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.13],
+      "sys": [0.0],
+      "real": [0.14],
+      "rss_mb": [52.82]
+    },
+    "Gameboy": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [12.97]
+    },
+    "CodeLoad": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.16]
+    },
+    "Box2D": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.8]
+    },
+    "zlib": {
+      "error": "\u001b[38;2;255;165;0mWARN\u001b[39m   parser[1244:12] parsing error (Other): expected expression, got nothing instead",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.72]
+    }
+  }
+}

@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 50848, "engine": "sandboxjs", "repository": "https://github.com/nyariv/SandboxJS.git", "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e", "revision_date": "2025-05-10", "version": "0.8.24-1-13-gcd391a8"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -587,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: ReferenceError: global is not defined
-kangax-es6/Promise.race.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: job is not defined
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: ReferenceError: e is not defined
 kangax-es6/Proxy.JSON.stringify.js: ReferenceError: e is not defined
 kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: e is not defined
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: failed
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: ParseError: Unexpected token after arrowFunctionSingle: `: !Array.isTemplateObject([])
+kangax-next/AsyncDisposableStack.js: ParseError: Unexpected token after call: {: var resource3 = { disposed: false, async
+kangax-next/AsyncIterator.extends.js: ParseError: Unexpected token after prop: C: class Class extends AsyncIterator { }
+kangax-next/AsyncIterator.from.async-iterable.js: ParseError: Unexpected token after prop: f: const iterator = AsyncIterator.from(asyn
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: e is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: e is not defined
+kangax-next/AsyncIterator.instanceof.js: ParseError: Unexpected token after prop: f: async function*() {}
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: e is not defined
+kangax-next/AsyncIterator.prototype.drop.js: ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
+kangax-next/AsyncIterator.prototype.every.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/AsyncIterator.prototype.filter.js: ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
+kangax-next/AsyncIterator.prototype.find.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/AsyncIterator.prototype.flatMap.js: ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
+kangax-next/AsyncIterator.prototype.forEach.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/AsyncIterator.prototype.map.js: ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
+kangax-next/AsyncIterator.prototype.reduce.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/AsyncIterator.prototype.some.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/AsyncIterator.prototype.take.js: ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
+kangax-next/AsyncIterator.prototype.toArray.js: ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
+kangax-next/DisposableStack.js: ParseError: Unexpected token after call: {: var resource3 = { disposed: false, [Symb
+kangax-next/Map.prototype.upsert.js: ReferenceError: e is not defined
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: ReferenceError: e is not defined
+kangax-next/SuppressedError.js: ParseError: Unexpected token after prop: _: using _1 = { [Symbol.dispose]() { throw
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: e is not defined
+kangax-next/Uint8Array.fromHex.js: ReferenceError: e is not defined
+kangax-next/Uint8Array.setFromBase64.js: ParseError: Unexpected token after prop: {: let { read, written } = arr2.setFromBase
+kangax-next/Uint8Array.setFromHex.js: ParseError: Unexpected token after prop: {: let { read, written } = arr2.setFromHex(
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: ReferenceError: e is not defined
+kangax-next/await-using.for-of.js: ParseError: Unexpected token after call: {: var resource1 = {
+kangax-next/await-using.js: ReferenceError: e is not defined
+kangax-next/class-decorators.js: ParseError: Unexpected token after prop: A: class A {
+kangax-next/function.sent.js: ParseError: Unexpected token after call: {: function* generator() {
+kangax-next/throw-expr.arrow.js: ReferenceError: e is not defined
+kangax-next/throw-expr.conditional.js: ParseError: Unexpected token after prop: 2: throw 21
+kangax-next/throw-expr.logical.js: ParseError: Unexpected token after prop: 7: a = 19 || throw 77
+kangax-next/throw-expr.param-init.js: ParseError: Unexpected token after prop: f: function fn (arg = throw 42) {
+kangax-next/using.for-of.js: ParseError: Unexpected token after call: {: var resource1 = {
+kangax-next/using.js: ParseError: Unexpected token after call: {: var resource = {

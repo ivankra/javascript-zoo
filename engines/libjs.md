@@ -27,7 +27,7 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 95%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 92%, ES2016+ 95%, Next 19%, Intl 100%</summary><ul>
 <li>ES6: 92%<pre>
 <a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
@@ -78,5 +78,6 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 </pre></li>
+<li>Next: 19%<br>
 <li>Intl: 100%</li>
 </ul></details>

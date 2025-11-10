@@ -65,7 +65,7 @@ which started out by forking otto's parser.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 5%, ES2016+ 6%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 5%, ES2016+ 6%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 5%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 16%<br>
@@ -77,6 +77,7 @@ which started out by forking otto's parser.
 <li>ES2023: 0%<br>
 <li>ES2024: 4%<br>
 <li>ES2025: 5%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
 

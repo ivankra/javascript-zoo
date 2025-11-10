@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "ee975255f125e4ca5d1f12bbc08f7f341fd7929bd3298cf7295c3198ae478cec", "binary_size": 1117528, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quickjs-ng", "repository": "https://github.com/quickjs-ng/quickjs.git", "revision": "07214197c24bb60066a0378ebd7690041f86e361", "revision_date": "2025-09-26", "version": "0.10.1-62-g0721419"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: not a function
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: not a function
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: expecting ';' at kangax-next/SuppressedError.js:13:10
+kangax-next/Uint8Array.fromBase64.js: TypeError: not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: not a function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: not a function
+kangax-next/Uint8Array.setFromHex.js: TypeError: not a function
+kangax-next/Uint8Array.toBase64.js: TypeError: not a function
+kangax-next/Uint8Array.toHex.js: TypeError: not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: not a function
+kangax-next/await-using.for-of.js: SyntaxError: unexpected token in expression: 'await'
+kangax-next/await-using.js: SyntaxError: expecting ';'
+kangax-next/class-decorators.js: SyntaxError: invalid property name
+kangax-next/function.sent.js: SyntaxError: Unexpected token '.'
+kangax-next/throw-expr.arrow.js: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.param-init.js: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/using.for-of.js: SyntaxError: expected 'of' or 'in' in for control expression
+kangax-next/using.js: SyntaxError: expecting ';'

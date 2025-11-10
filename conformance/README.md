@@ -42,7 +42,7 @@ can be recomputed here.
 through the whole test suite.  By default, uses `node`.
 
 ```
-Usage: run.sh [-o log.txt] engine [args] [test files/dirs]
+Usage: run.sh [-o output.txt] [-j jobs] engine [args] [test files/dirs]
 
 $ ./run.sh | less -R            # run node on all tests and paginate
 $ ./run.sh /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js

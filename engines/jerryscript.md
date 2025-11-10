@@ -35,7 +35,7 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 70%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 96%, ES2016+ 70%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 96%, <b>2 crashes</b><pre>
 <a href="../conformance/kangax-es6/String.prototype.normalize.js">String.prototype.normalize.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
@@ -93,6 +93,7 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
 

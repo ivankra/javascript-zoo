@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 197335260, "engine": "graaljs", "revision": "629f33fe3b0a744890a01962ff3beeab50b638df", "version": "25.0.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: (intermediate value).isTemplateObject is not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: (intermediate value)(...).drop is not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: (intermediate value)(...).every is not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: (intermediate value)(...).filter is not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: (intermediate value)(...).find is not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: (intermediate value)(...).flatMap is not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: (intermediate value)(...).forEach is not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: (intermediate value)(...).map is not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: (intermediate value)(...).reduce is not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: (intermediate value)(...).some is not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: (intermediate value)(...).take is not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: (intermediate value)(...).toArray is not a function
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: SuppressedError.js:13:10 Expected ; but found _1 SuppressedError.js:13:52 Expected an operand but found , SuppressedError.js:16:2 Expected eof but found }
+kangax-next/Uint8Array.fromBase64.js: TypeError: (intermediate value).fromBase64 is not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: (intermediate value).fromHex is not a function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: arr2.setFromBase64 is not a function
+kangax-next/Uint8Array.setFromHex.js: TypeError: arr2.setFromHex is not a function
+kangax-next/Uint8Array.toBase64.js: TypeError: arr.toBase64 is not a function
+kangax-next/Uint8Array.toHex.js: TypeError: arr.toHex is not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/await-using.for-of.js: SyntaxError: await-using.for-of.js:57:21 Expected ; but found _
+kangax-next/await-using.js: SyntaxError: await-using.js:52:18 Expected ; but found _
+kangax-next/class-decorators.js: SyntaxError: class-decorators.js:10:4 Expected ident but found error class-decorators.js:17:2 Invalid return statement
+kangax-next/function.sent.js: SyntaxError: function.sent.js:11:21 Expected ( but found .
+kangax-next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js:9:17 Expected an operand but found throw
+kangax-next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js:9:14 Expected an operand but found throw throw-expr.conditional.js:13:4 Invalid return statement
+kangax-next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js:11:14 Expected an operand but found throw throw-expr.logical.js:14:4 Invalid return statement
+kangax-next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js:9:21 Expected an operand but found throw throw-expr.param-init.js:13:21 Invalid return statement throw-expr.param-init.js:18:4 Invalid return statement
+kangax-next/using.for-of.js: SyntaxError: using.for-of.js:22:15 Expected ; but found _ using.for-of.js:24:2 Invalid return statement
+kangax-next/using.js: SyntaxError: using.js:16:10 Expected ; but found _ using.js:18:2 Invalid return statement

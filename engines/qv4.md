@@ -47,7 +47,7 @@ First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown e
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 87%, ES2016+ 21%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 87%, ES2016+ 21%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 87%<pre>
 <a href="../conformance/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
@@ -108,5 +108,6 @@ First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown e
 <li>ES2023: 20%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 6%<br>
 <li>Intl: 25%<br>
 </ul></details>

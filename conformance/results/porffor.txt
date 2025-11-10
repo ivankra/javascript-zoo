@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "engine": "porffor", "repository": "https://github.com/CanadaHonk/porffor.git", "revision": "769956b6c9e94dffde332650dc2d89b82a4c8df9", "revision_date": "2025-10-28"}
 es1/Array.js: Array() + array index length update failed; sparse array length failed
 es1/Array.length.assignment.js: array index length update failed
 es1/Array.length.js: length auto-update failed; length > max index failed
@@ -207,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: slice with start and end failed; slice with start only failed; slice with negative start failed; slice with negative end failed; slice entire array failed
 es3/Array.prototype.splice.generic.js: delete on object failed; insert on object failed; negative start on object failed
 es3/Array.prototype.splice.js: delete elements failed; delete and insert failed; insert without delete failed; negative start failed
-es3/Array.prototype.toLocaleString.js: basic toLocaleString failed; single element toLocaleString failed; multiple elements content failed
+es3/Array.prototype.toLocaleString.js: basic toLocaleString failed; multiple elements content failed
 es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
 es3/Array.prototype.unshift.js: unshift single element failed; unshift multiple elements failed; unshift with no arguments failed; element order after unshift failed
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: undefined is not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: 'every' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: 'filter' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.find.js: TypeError: 'find' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: 'flatMap' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: 'forEach' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.map.js: TypeError: 'map' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: 'reduce' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.some.js: TypeError: 'some' proto func tried to be called on a type without an impl
+kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined is not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not a function
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: ReferenceError: SuppressedError is not defined
+kangax-next/Uint8Array.fromBase64.js: [object Object]
+kangax-next/Uint8Array.fromHex.js: [object Object]
+kangax-next/Uint8Array.setFromBase64.js: [object Object]
+kangax-next/Uint8Array.setFromHex.js: [object Object]
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
+kangax-next/await-using.for-of.js: failed
+kangax-next/await-using.js: failed
+kangax-next/class-decorators.js: SyntaxError: Unexpected character '@' (10:4)
+kangax-next/function.sent.js: SyntaxError: Unexpected token (11:21)
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token (9:17)
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token (9:14)
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token (11:14)
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token (9:21)
+kangax-next/using.for-of.js: failed
+kangax-next/using.js: failed

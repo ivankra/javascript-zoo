@@ -1,3 +1,4 @@
+Metadata: {"arch": "amd64", "binary_sha256": "a01629ea336d2327c9a5b58787539b32e6108060d4f3003c9b7ff681b77afc68", "binary_size": 3096168, "engine": "starlight", "repository": "https://github.com/Starlight-JS/starlight.git", "revision": "503e789b9ef53594aee30c45a621018e855dcc17", "revision_date": "2021-10-31", "rustc": "rustc 1.56.0-nightly (4e282795d 2021-07-31)", "version": "0.0.1-55-g503e789"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Property 'Intl' not found
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: failed
 kangax-intl/String.prototype.localeCompare.js: failed
+kangax-next/Array.isTemplateObject.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: TaggedTpl(TaggedTpl { span: Span { lo: BytePos(360), hi: BytePos(378), ctxt: #0 }, tag: Paren(ParenExpr { span: Span { lo: BytePos(360), hi: BytePos(370), ctxt: #0 }, expr: Arrow(ArrowExpr { span: Span { lo: BytePos(361), hi: BytePos(36
+kangax-next/AsyncDisposableStack.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(1175), hi: BytePos(1196), ctxt: #0 }, expr: Member(MemberExpr { span: Span { lo: BytePos(1176), hi: BytePos(1195), ctxt: #0 }, obj: Expr(Ident(Ident { span: S
+kangax-next/AsyncIterator.extends.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI Decl: Class(ClassDecl { ident: Ident { span: Span { lo: BytePos(323), hi: BytePos(328), ctxt: #0 }, sym: Atom('Class' type=inline), optional: false }, declare: false, class: Class { span: Span { lo: BytePos(317), hi: BytePos(354), ctxt: 
+kangax-next/AsyncIterator.from.async-iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.from.iterable.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.from.iterator.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.instanceof.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'AsyncIterator' not found
+kangax-next/AsyncIterator.prototype.drop.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.every.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.filter.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.find.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.flatMap.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.forEach.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.map.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.reduce.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.some.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.take.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/AsyncIterator.prototype.toArray.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: async")
+kangax-next/DisposableStack.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Method(MethodProp { key: Computed(ComputedPropName { span: Span { lo: BytePos(474), hi: BytePos(490), ctxt: #0 }, expr: Member(MemberExpr { span: Span { lo: BytePos(475), hi: BytePos(489), ctxt: #0 }, obj: Expr(Ident(Ident { span: Span 
+kangax-next/Map.prototype.upsert.js: ReferenceError: Property 'Map' not found
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Compilation failed: SyntaxError: Expected ';', '}' or <eof>
+kangax-next/Uint8Array.fromBase64.js: ReferenceError: Property 'Uint8Array' not found
+kangax-next/Uint8Array.fromHex.js: ReferenceError: Property 'Uint8Array' not found
+kangax-next/Uint8Array.setFromBase64.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(565), hi: BytePos(582), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(567), hi: BytePos(571), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(567), hi: BytePos(571), ct
+kangax-next/Uint8Array.setFromHex.js: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Object(ObjectPat { span: Span { lo: BytePos(559), hi: BytePos(576), ctxt: #0 }, props: [Assign(AssignPatProp { span: Span { lo: BytePos(561), hi: BytePos(565), ctxt: #0 }, key: Ident { span: Span { lo: BytePos(561), hi: BytePos(565), ct
+kangax-next/Uint8Array.toBase64.js: ReferenceError: Property 'Uint8Array' not found
+kangax-next/Uint8Array.toHex.js: ReferenceError: Property 'Uint8Array' not found
+kangax-next/WeakMap.prototype.upsert.js: ReferenceError: Property 'WeakMap' not found
+kangax-next/await-using.for-of.js: Compilation failed: SyntaxError: Expected ;, got _
+kangax-next/await-using.js: Compilation failed: SyntaxError: Expected ';', '}' or <eof>
+kangax-next/class-decorators.js: Compilation failed: SyntaxError: Unexpected token `@`. Expected identifier, string literal, numeric literal or [ for the computed key
+kangax-next/function.sent.js: Compilation failed: SyntaxError: Expected (, got .
+kangax-next/throw-expr.arrow.js: Compilation failed: SyntaxError: Unexpected token `throw`. Expected this, import, async, function, [ for array literal, { for object literal, @ for decorator, function, class, null, true, false, number, bigint, string, regexp, ` for template literal, (, or an identifier
+kangax-next/throw-expr.conditional.js: Compilation failed: SyntaxError: Unexpected token `throw`. Expected this, import, async, function, [ for array literal, { for object literal, @ for decorator, function, class, null, true, false, number, bigint, string, regexp, ` for template literal, (, or an identifier
+kangax-next/throw-expr.logical.js: Compilation failed: SyntaxError: Unexpected token `throw`. Expected this, import, async, function, [ for array literal, { for object literal, @ for decorator, function, class, null, true, false, number, bigint, string, regexp, ` for template literal, (, or an identifier
+kangax-next/throw-expr.param-init.js: Compilation failed: SyntaxError: Unexpected token `throw`. Expected this, import, async, function, [ for array literal, { for object literal, @ for decorator, function, class, null, true, false, number, bigint, string, regexp, ` for template literal, (, or an identifier
+kangax-next/using.for-of.js: Compilation failed: SyntaxError: Expected ;, got _
+kangax-next/using.js: Compilation failed: SyntaxError: Expected ';', '}' or <eof>

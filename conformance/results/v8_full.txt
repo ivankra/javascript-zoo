@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "ba53133b7457e4d73784205d534f7b4553012846c7885ce66c1de8bc0a67cdd2", "binary_size": 39254424, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "v8", "repository": "https://chromium.googlesource.com/v8/v8.git", "revision": "f1ce8f44fb72804415e6085948c6979554be4663", "revision_date": "2025-11-03", "variant": "full", "version": "14.4.0 (candidate)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Array.isTemplateObject is not a function
+kangax-next/AsyncDisposableStack.js: OK
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: (intermediate value)(...).drop is not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: (intermediate value)(intermediate value)(...).every is not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: (intermediate value)(...).filter is not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: (intermediate value)(intermediate value)(...).find is not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: (intermediate value)(...).flatMap is not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: (intermediate value)(intermediate value)(...).forEach is not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: (intermediate value)(...).map is not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: (intermediate value)(intermediate value)(...).reduce is not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: (intermediate value)(intermediate value)(...).some is not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: (intermediate value)(...).take is not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: (intermediate value)(intermediate value)(...).toArray is not a function
+kangax-next/DisposableStack.js: OK
+kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: OK
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: OK
+kangax-next/Uint8Array.setFromBase64.js: OK
+kangax-next/Uint8Array.setFromHex.js: OK
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/await-using.for-of.js: OK
+kangax-next/await-using.js: OK
+kangax-next/class-decorators.js: kangax-next/class-decorators.js:10: SyntaxError: Invalid or unexpected token SyntaxError: Invalid or unexpected token
+kangax-next/function.sent.js: kangax-next/function.sent.js:11: SyntaxError: Unexpected token '.' SyntaxError: Unexpected token '.'
+kangax-next/throw-expr.arrow.js: kangax-next/throw-expr.arrow.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
+kangax-next/throw-expr.conditional.js: kangax-next/throw-expr.conditional.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
+kangax-next/throw-expr.logical.js: kangax-next/throw-expr.logical.js:11: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
+kangax-next/throw-expr.param-init.js: kangax-next/throw-expr.param-init.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
+kangax-next/using.for-of.js: OK
+kangax-next/using.js: OK

@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "0baafe6871a85e9d62b32a007b3d9e01e0de5965fed3aa534d17f9dd4223d417", "binary_size": 48023024, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "62781f4818f87d4512b3ab133732ebb8ef9d0c94", "revision_date": "2025-10-30"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: undefined is not a function (evaluated from 'Array.isTemplateObject')
+kangax-next/AsyncDisposableStack.js: OK
+kangax-next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined is not a function (evaluated from '<object>.drop')
+kangax-next/AsyncIterator.prototype.every.js: TypeError: undefined is not a function (evaluated from '<object>.every')
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: undefined is not a function (evaluated from '<object>.filter')
+kangax-next/AsyncIterator.prototype.find.js: TypeError: undefined is not a function (evaluated from '<object>.find')
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: undefined is not a function (evaluated from '<object>.flatMap')
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: undefined is not a function (evaluated from '<object>.forEach')
+kangax-next/AsyncIterator.prototype.map.js: TypeError: undefined is not a function (evaluated from '<object>.map')
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: undefined is not a function (evaluated from '<object>.reduce')
+kangax-next/AsyncIterator.prototype.some.js: TypeError: undefined is not a function (evaluated from '<object>.some')
+kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined is not a function (evaluated from '<object>.take')
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not a function (evaluated from '<object>.toArray')
+kangax-next/DisposableStack.js: OK
+kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function (evaluated from 'map.upsert')
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: OK
+kangax-next/SuppressedError.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Missing generate_bytecode() is not implemented in LibJS)
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: OK
+kangax-next/Uint8Array.setFromBase64.js: OK
+kangax-next/Uint8Array.setFromHex.js: OK
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function (evaluated from 'map.upsert')
+kangax-next/await-using.for-of.js: Uncaught exception: [SyntaxError] Unexpected token Identifier. Expected Semicolon (line: 57, column: 22)
+kangax-next/await-using.js: Uncaught exception: [SyntaxError] Unexpected token Identifier. Expected Semicolon (line: 52, column: 19)
+kangax-next/class-decorators.js: Unexpected token Invalid. Expected property key (line: 10, column: 5) Uncaught exception: [SyntaxError] Unexpected token Invalid. Expected property key (line: 10, column: 5)
+kangax-next/function.sent.js: Uncaught exception: [SyntaxError] Unexpected token Period. Expected ParenOpen (line: 11, column: 22)
+kangax-next/throw-expr.arrow.js: Uncaught exception: [SyntaxError] Unexpected token ParenClose. Expected primary expression (line: 9, column: 13)
+kangax-next/throw-expr.conditional.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 9, column: 15)
+kangax-next/throw-expr.logical.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 11, column: 15)
+kangax-next/throw-expr.param-init.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 9, column: 22)
+kangax-next/using.for-of.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Unimplemented/invalid node used a reference is not implemented in LibJS)
+kangax-next/using.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Missing generate_bytecode() is not implemented in LibJS)

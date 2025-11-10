@@ -47,7 +47,7 @@ But, very slow.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 94%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 96%, ES2016+ 94%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 96%<pre>
 <a href="../conformance/kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
@@ -62,7 +62,7 @@ But, very slow.
 <a href="../conformance/kangax-es6/annex-b.regex.backreferences-octal.js">annex-b.regex.backreferences-octal.js</a>: SyntaxError: There is no 41 capture groups
 <a href="../conformance/kangax-es6/annex-b.regex.hyphens.js">annex-b.regex.hyphens.js</a>: SyntaxError: Invalid class range
 <a href="../conformance/kangax-es6/annex-b.regex.incomplete-patterns.js">annex-b.regex.incomplete-patterns.js</a>: SyntaxError: Expected } but got
-<a href="../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: /zoo/features/kangax-es6/annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
+<a href="../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: /zoo/conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js:9:12 SyntaxError: Invalid identity escape
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.regex.octal-escapes.js">annex-b.regex.octal-escapes.js</a>: SyntaxError: Invalid identity escape
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
@@ -107,5 +107,6 @@ But, very slow.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

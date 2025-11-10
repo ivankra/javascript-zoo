@@ -1,9 +1,0 @@
-{
-  "arch": "arm64",
-  "binary_sha256": "dc48628929e2d26f2211dd5523ef2ebd03840063b4622d4fdc81cb8d892bcff2",
-  "binary_size": 2261264,
-  "engine": "besen",
-  "repository": "https://github.com/BeRo1985/besen.git",
-  "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b",
-  "revision_date": "2020-10-21"
-}

@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "714157397bda230299dd29d8c51588c58816e93db9b0501b6963e75845ae9651", "binary_size": 12750920, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "qv4", "repository": "https://code.qt.io/qt/qt5.git", "revision": "077347cc6d198053fb61cc0841c5c0c60a7deeb1", "revision_date": "2025-10-02", "version": "6.10.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Property 'isTemplateObject' of object function Array() { [native code] } is not a function
+kangax-next/AsyncDisposableStack.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: Expected token `,'
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Expected token `,'
+kangax-next/DisposableStack.js: ReferenceError: DisposableStack is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: Property 'upsert' of object [object Map] is not a function
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: Expected token `;' at  (kangax-next/SuppressedError.js:13)
+kangax-next/Uint8Array.fromBase64.js: TypeError: Property 'fromBase64' of object function Uint8Array() { [native code] } is not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: Property 'fromHex' of object function Uint8Array() { [native code] } is not a function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: Property 'setFromBase64' of object 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 is not a function
+kangax-next/Uint8Array.setFromHex.js: TypeError: Property 'setFromHex' of object 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 is not a function
+kangax-next/Uint8Array.toBase64.js: TypeError: Property 'toBase64' of object 72,101,108,108,111,32,87,111,114,108,100 is not a function
+kangax-next/Uint8Array.toHex.js: TypeError: Property 'toHex' of object 72,101,108,108,111,32,87,111,114,108,100 is not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: Property 'upsert' of object [object WeakMap] is not a function
+kangax-next/await-using.for-of.js: SyntaxError: Expected token `,'
+kangax-next/await-using.js: SyntaxError: Expected token `,'
+kangax-next/class-decorators.js: SyntaxError: Expected token `}'
+kangax-next/function.sent.js: SyntaxError: Unexpected token `.'
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token `throw'
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token `throw'
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token `throw'
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token `throw'
+kangax-next/using.for-of.js: SyntaxError: Expected token `;'
+kangax-next/using.js: SyntaxError: Expected token `;'

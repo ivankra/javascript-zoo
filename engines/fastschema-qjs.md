@@ -21,7 +21,7 @@ JavaScript in Go with QuickJS and Wazero.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 93%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 97%, ES2016+ 93%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 97%, <b>2 crashes</b><pre>
 <a href="../conformance/kangax-es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.construct.js">Proxy.handler.construct.js</a>: TypeError: not a function
@@ -36,8 +36,8 @@ JavaScript in Go with QuickJS and Wazero.
 <a href="../conformance/kangax-es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../conformance/kangax-es6/rest-params.no-setter.js">rest-params.no-setter.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4003537400?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x40000a7c40?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error:
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x40008e9660?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2654a0?, 0x4000012960?}) 	/usr/lib/go-1.24/src/runtime/panic.go:792 +0x124 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error:
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 85%<pre>
@@ -76,6 +76,7 @@ JavaScript in Go with QuickJS and Wazero.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: Error: execution error: SyntaxError: invalid group
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: Error: execution error: SyntaxError: invalid group
 </pre></li>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
 

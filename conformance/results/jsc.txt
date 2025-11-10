@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "f315fc14df5f7b4a239eb17fee8d45b19268884dc78d2f240ba4a8af213b9f6e", "binary_size": 27121128, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "jsc", "repository": "https://github.com/WebKit/WebKit.git", "revision": "9018757c64f271d2e19408850182e6b841159b53", "revision_date": "2025-10-18", "version": "301765@main"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Array.isTemplateObject is not a function. (In 'Array.isTemplateObject([])', 'Array.isTemplateObject' is undefined)
+kangax-next/AsyncDisposableStack.js: ReferenceError: Can't find variable: AsyncDisposableStack
+kangax-next/AsyncIterator.extends.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: async function*() { yield * [1, 2, 3] }().drop is not a function. (In 'async function*() { yield * [1, 2, 3] }().drop(1)', 'async function*() { yield * [1, 2, 3] }().drop' is undefined)
+kangax-next/AsyncIterator.prototype.every.js: TypeError: (async function*() { yield * [1, 2, 3] })().every is not a function. (In '(async function*() { yield * [1, 2, 3] })().every(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })().every' is undefined)
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: async function*() { yield * [1, 2, 3] }().filter is not a function. (In 'async function*() { yield * [1, 2, 3] }().filter(it => it % 2)', 'async function*() { yield * [1, 2, 3] }().filter' is undefined)
+kangax-next/AsyncIterator.prototype.find.js: TypeError: (async function*() { yield * [1, 2, 3] })().find is not a function. (In '(async function*() { yield * [1, 2, 3] })().find(it => it % 2)', '(async function*() { yield * [1, 2, 3] })().find' is undefined)
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: async function*() { yield * [1, 2, 3] }().flatMap is not a function. (In 'async function*() { yield * [1, 2, 3] }().flatMap(it => [it, 0])', 'async function*() { yield * [1, 2, 3] }().flatMap' is undefined)
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: (async function*() { yield * [1, 2, 3] })().forEach is not a function. (In '(async function*() { yield * [1, 2, 3] })().forEach(it => result += it)', '(async function*() { yield * [1, 2, 3] })().forEach' is undefined)
+kangax-next/AsyncIterator.prototype.map.js: TypeError: async function*() { yield * [1, 2, 3] }().map is not a function. (In 'async function*() { yield * [1, 2, 3] }().map(it => it * it)', 'async function*() { yield * [1, 2, 3] }().map' is undefined)
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: (async function*() { yield * [1, 2, 3] })().reduce is not a function. (In '(async function*() { yield * [1, 2, 3] })().reduce((a, b) => a + b)', '(async function*() { yield * [1, 2, 3] })().reduce' is undefined)
+kangax-next/AsyncIterator.prototype.some.js: TypeError: (async function*() { yield * [1, 2, 3] })().some is not a function. (In '(async function*() { yield * [1, 2, 3] })().some(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })().some' is undefined)
+kangax-next/AsyncIterator.prototype.take.js: TypeError: async function*() { yield * [1, 2, 3] }().take is not a function. (In 'async function*() { yield * [1, 2, 3] }().take(2)', 'async function*() { yield * [1, 2, 3] }().take' is undefined)
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: (async function*() { yield * [1, 2, 3] })().toArray is not a function. (In '(async function*() { yield * [1, 2, 3] })().toArray()', '(async function*() { yield * [1, 2, 3] })().toArray' is undefined)
+kangax-next/DisposableStack.js: ReferenceError: Can't find variable: DisposableStack
+kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function. (In 'map.upsert('a', it => 2, () => 3)', 'map.upsert' is undefined)
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Exception: SyntaxError: Unexpected identifier '_1' at kangax-next/SuppressedError.js:13
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: OK
+kangax-next/Uint8Array.setFromBase64.js: OK
+kangax-next/Uint8Array.setFromHex.js: OK
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function. (In 'map.upsert(a, it => 2, () => 3)', 'map.upsert' is undefined)
+kangax-next/await-using.for-of.js: Exception: SyntaxError: Unexpected identifier '_'. Expected either 'in' or 'of' in enumeration syntax.
+kangax-next/await-using.js: Exception: SyntaxError: Unexpected identifier '_'
+kangax-next/class-decorators.js: Exception: SyntaxError: Invalid character: '@'
+kangax-next/function.sent.js: Exception: SyntaxError: Unexpected token '.'. Expected an opening '(' before a function's parameter list.
+kangax-next/throw-expr.arrow.js: Exception: SyntaxError: Unexpected keyword 'throw'
+kangax-next/throw-expr.conditional.js: Exception: SyntaxError: Unexpected keyword 'throw'
+kangax-next/throw-expr.logical.js: Exception: SyntaxError: Unexpected keyword 'throw'
+kangax-next/throw-expr.param-init.js: Exception: SyntaxError: Unexpected keyword 'throw'
+kangax-next/using.for-of.js: Exception: SyntaxError: Unexpected identifier '_'. Expected either 'in' or 'of' in enumeration syntax.
+kangax-next/using.js: Exception: SyntaxError: Unexpected identifier '_'

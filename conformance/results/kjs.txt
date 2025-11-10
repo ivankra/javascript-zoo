@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "ad234192d4f3d24df1d8d5a3db447cb4b59a1c92a4ef7cebf88de38d4bff4740", "binary_size": 997080, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "kjs", "repository": "https://github.com/KDE/kjs.git", "revision": "5824588da24f797b4255929918efbc8b484baa09", "revision_date": "2025-07-28", "version": "5.117.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Can't find variable: Intl
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: Array.isTemplateObject.js (line 9): SyntaxError: Parse error
+kangax-next/AsyncDisposableStack.js: AsyncDisposableStack.js (line 46): SyntaxError: Parse error
+kangax-next/AsyncIterator.extends.js: AsyncIterator.extends.js (line 8): SyntaxError: Parse error
+kangax-next/AsyncIterator.from.async-iterable.js: AsyncIterator.from.async-iterable.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.from.iterable.js: AsyncIterator.from.iterable.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.from.iterator.js: AsyncIterator.from.iterator.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.instanceof.js: AsyncIterator.instanceof.js (line 8): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Can't find variable: AsyncIterator
+kangax-next/AsyncIterator.prototype.drop.js: AsyncIterator.prototype.drop.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.every.js: AsyncIterator.prototype.every.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.filter.js: AsyncIterator.prototype.filter.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.find.js: AsyncIterator.prototype.find.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.flatMap.js: AsyncIterator.prototype.flatMap.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.forEach.js: AsyncIterator.prototype.forEach.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.map.js: AsyncIterator.prototype.map.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.reduce.js: AsyncIterator.prototype.reduce.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.some.js: AsyncIterator.prototype.some.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.take.js: AsyncIterator.prototype.take.js (line 43): SyntaxError: Parse error
+kangax-next/AsyncIterator.prototype.toArray.js: AsyncIterator.prototype.toArray.js (line 43): SyntaxError: Parse error
+kangax-next/DisposableStack.js: DisposableStack.js (line 11): SyntaxError: Parse error
+kangax-next/Map.prototype.upsert.js: Map.prototype.upsert.js (line 9): SyntaxError: Parse error
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SuppressedError.js (line 12): SyntaxError: Parse error
+kangax-next/Uint8Array.fromBase64.js: Uint8Array.fromBase64.js (line 12): SyntaxError: Parse error
+kangax-next/Uint8Array.fromHex.js: Uint8Array.fromHex.js (line 12): SyntaxError: Parse error
+kangax-next/Uint8Array.setFromBase64.js: Uint8Array.setFromBase64.js (line 10): SyntaxError: Parse error
+kangax-next/Uint8Array.setFromHex.js: Uint8Array.setFromHex.js (line 10): SyntaxError: Parse error
+kangax-next/Uint8Array.toBase64.js: ReferenceError: Can't find variable: Uint8Array
+kangax-next/Uint8Array.toHex.js: ReferenceError: Can't find variable: Uint8Array
+kangax-next/WeakMap.prototype.upsert.js: WeakMap.prototype.upsert.js (line 10): SyntaxError: Parse error
+kangax-next/await-using.for-of.js: await-using.for-of.js (line 45): SyntaxError: Parse error
+kangax-next/await-using.js: await-using.js (line 43): SyntaxError: Parse error
+kangax-next/class-decorators.js: class-decorators.js (line 8): SyntaxError: Parse error
+kangax-next/function.sent.js: function.sent.js (line 9): SyntaxError: Parse error
+kangax-next/throw-expr.arrow.js: throw-expr.arrow.js (line 8): SyntaxError: Parse error
+kangax-next/throw-expr.conditional.js: throw-expr.conditional.js (line 8): SyntaxError: Parse error
+kangax-next/throw-expr.logical.js: throw-expr.logical.js (line 10): SyntaxError: Parse error
+kangax-next/throw-expr.param-init.js: throw-expr.param-init.js (line 8): SyntaxError: Parse error
+kangax-next/using.for-of.js: using.for-of.js (line 10): SyntaxError: Parse error
+kangax-next/using.js: using.js (line 10): SyntaxError: Parse error

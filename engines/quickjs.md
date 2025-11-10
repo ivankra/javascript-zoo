@@ -49,7 +49,7 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 90%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 97%, ES2016+ 90%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 97%<pre>
 <a href="../conformance/kangax-es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.construct.js">Proxy.handler.construct.js</a>: TypeError: not a function
@@ -83,5 +83,6 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 32%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

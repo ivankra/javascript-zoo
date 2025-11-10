@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 2565647, "engine": "nashorn", "repository": "https://github.com/openjdk/nashorn.git", "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d", "revision_date": "2025-08-21", "version": "15.7"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: "Intl" is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Array.isTemplateObject is not a function
+kangax-next/AsyncDisposableStack.js: failed
+kangax-next/AsyncIterator.extends.js: Exception in thread "main" java.lang.RuntimeException: kangax-next/AsyncIterator.extends.js:9:2 ES6 class declarations and expressions are not yet implemented
+kangax-next/AsyncIterator.from.async-iterable.js: kangax-next/AsyncIterator.from.async-iterable.js:52:69 Invalid return statement
+kangax-next/AsyncIterator.from.iterable.js: kangax-next/AsyncIterator.from.iterable.js:52:69 Invalid return statement
+kangax-next/AsyncIterator.from.iterator.js: kangax-next/AsyncIterator.from.iterator.js:52:69 Invalid return statement
+kangax-next/AsyncIterator.instanceof.js: failed
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined
+kangax-next/AsyncIterator.prototype.drop.js: failed
+kangax-next/AsyncIterator.prototype.every.js: failed
+kangax-next/AsyncIterator.prototype.filter.js: failed
+kangax-next/AsyncIterator.prototype.find.js: failed
+kangax-next/AsyncIterator.prototype.flatMap.js: failed
+kangax-next/AsyncIterator.prototype.forEach.js: failed
+kangax-next/AsyncIterator.prototype.map.js: failed
+kangax-next/AsyncIterator.prototype.reduce.js: failed
+kangax-next/AsyncIterator.prototype.some.js: failed
+kangax-next/AsyncIterator.prototype.take.js: failed
+kangax-next/AsyncIterator.prototype.toArray.js: failed
+kangax-next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: kangax-next/SuppressedError.js:13:10 Expected ; but found _1 kangax-next/SuppressedError.js:13:52 Expected an operand but found , kangax-next/SuppressedError.js:16:2 Expected eof but found }
+kangax-next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
+kangax-next/Uint8Array.setFromBase64.js: Exception in thread "main" java.lang.RuntimeException: kangax-next/Uint8Array.setFromBase64.js:12:6 ES6 destructuring is not yet implemented
+kangax-next/Uint8Array.setFromHex.js: Exception in thread "main" java.lang.RuntimeException: kangax-next/Uint8Array.setFromHex.js:12:6 ES6 destructuring is not yet implemented
+kangax-next/Uint8Array.toBase64.js: TypeError: arr.toBase64 is not a function
+kangax-next/Uint8Array.toHex.js: TypeError: arr.toHex is not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
+kangax-next/await-using.for-of.js: failed
+kangax-next/await-using.js: failed
+kangax-next/class-decorators.js: kangax-next/class-decorators.js:10:4 Expected ident but found error kangax-next/class-decorators.js:17:2 Invalid return statement
+kangax-next/function.sent.js: failed
+kangax-next/throw-expr.arrow.js: failed
+kangax-next/throw-expr.conditional.js: kangax-next/throw-expr.conditional.js:13:4 Invalid return statement
+kangax-next/throw-expr.logical.js: kangax-next/throw-expr.logical.js:14:4 Invalid return statement
+kangax-next/throw-expr.param-init.js: kangax-next/throw-expr.param-init.js:13:21 Invalid return statement kangax-next/throw-expr.param-init.js:18:4 Invalid return statement
+kangax-next/using.for-of.js: kangax-next/using.for-of.js:24:2 Invalid return statement
+kangax-next/using.js: kangax-next/using.js:18:2 Invalid return statement

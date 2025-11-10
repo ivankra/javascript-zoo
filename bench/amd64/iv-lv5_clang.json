@@ -1,0 +1,130 @@
+{
+  "binary": "iv-lv5_clang",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "5eee82059c19cdcb9955c2972fb7b1953971755427e07c2111e81ed5904cd95e",
+    "binary_size": 5457760,
+    "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+    "engine": "iv-lv5",
+    "repository": "https://github.com/Constellation/iv.git",
+    "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
+    "revision_date": "2015-03-24",
+    "variant": "clang",
+    "version": "1.0.1-270-g64c3a9c7"
+  },
+  "time": "Sun Nov  9 21:29:57 2025",
+  "benchmarks": {
+    "Richards": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.83]
+    },
+    "DeltaBlue": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "Crypto": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.83]
+    },
+    "RayTrace": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.82]
+    },
+    "EarleyBoyer": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.95]
+    },
+    "RegExp": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "Splay": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.92]
+    },
+    "SplayLatency": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.92]
+    },
+    "NavierStokes": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "PdfJS": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.94]
+    },
+    "Mandreel": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "MandreelLatency": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "Gameboy": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.73]
+    },
+    "CodeLoad": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.92]
+    },
+    "Box2D": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.86]
+    },
+    "zlib": {
+      "error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [0.92]
+    }
+  }
+}

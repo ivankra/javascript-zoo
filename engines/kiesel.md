@@ -37,7 +37,7 @@ JavaScript engine written in Zig.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 87%, Intl 82%</summary><ul>
+<details><summary>compat-table: ES6 92%, ES2016+ 87%, Next 5%, Intl 82%</summary><ul>
 <li>ES6: 92%<pre>
 <a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
@@ -105,6 +105,7 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.m.js:9:17)
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (kangax-es2025/regex.pattern-modifiers.s.js:9:17)
 </pre></li>
+<li>Next: 5%<br>
 <li>Intl: 82%<pre>
 <a href="../conformance/kangax-intl/Intl.NumberFormat.js">Intl.NumberFormat.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: TypeError: undefined is not a constructor

@@ -33,7 +33,7 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 66%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 96%, ES2016+ 66%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 96%<pre>
 <a href="../conformance/kangax-es6/Symbol.JSON.stringify.object.js">Symbol.JSON.stringify.object.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
@@ -107,5 +107,6 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 <li>ES2023: 100%</li>
 <li>ES2024: 0%<br>
 <li>ES2025: 5%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

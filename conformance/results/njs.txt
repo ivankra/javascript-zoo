@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "03d7b21107abfcb9a5c1368ad24be63777496ce6c298ca9e4fdd94b1d6dd1b09", "binary_size": 908232, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "njs", "repository": "https://github.com/nginx/njs.git", "revision": "927d38d8438e8b3b3db63af4d9f6324210fd5dab", "revision_date": "2025-10-27", "version": "0.9.4"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: "Intl" is not defined
 kangax-intl/Number.prototype.toLocaleString.js: failed
 kangax-intl/Object.prototype.toLocaleString.js: failed
 kangax-intl/String.prototype.localeCompare.js: failed
+kangax-next/Array.isTemplateObject.js: TypeError: (intermediate value)["isTemplateObject"] is not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: "AsyncDisposableStack" is not defined
+kangax-next/AsyncIterator.extends.js: SyntaxError: Token "class" not supported in this version in kangax-next/AsyncIterator.extends.js:9
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.from.async-iterable.js:46
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.from.iterable.js:46
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.from.iterator.js:46
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.instanceof.js:9
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.prototype.drop.js:46
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.every.js:44
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.prototype.filter.js:46
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.find.js:44
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.prototype.flatMap.js:46
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.forEach.js:45
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.prototype.map.js:46
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.reduce.js:44
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.some.js:44
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: Token "await" not supported in this version in kangax-next/AsyncIterator.prototype.take.js:46
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Token "*" not supported in this version in kangax-next/AsyncIterator.prototype.toArray.js:44
+kangax-next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined
+kangax-next/Map.prototype.upsert.js: ReferenceError: "Map" is not defined
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: Unexpected token "_1" in kangax-next/SuppressedError.js:13
+kangax-next/Uint8Array.fromBase64.js: TypeError: (intermediate value)["fromBase64"] is not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: (intermediate value)["fromHex"] is not a function
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: Token "read" not supported in this version in kangax-next/Uint8Array.setFromBase64.js:12
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: Token "read" not supported in this version in kangax-next/Uint8Array.setFromHex.js:12
+kangax-next/Uint8Array.toBase64.js: TypeError: (intermediate value)["toBase64"] is not a function
+kangax-next/Uint8Array.toHex.js: TypeError: (intermediate value)["toHex"] is not a function
+kangax-next/WeakMap.prototype.upsert.js: ReferenceError: "WeakMap" is not defined
+kangax-next/await-using.for-of.js: SyntaxError: Unexpected token "_" in kangax-next/await-using.for-of.js:57
+kangax-next/await-using.js: SyntaxError: Unexpected token "_" in kangax-next/await-using.js:52
+kangax-next/class-decorators.js: SyntaxError: Token "class" not supported in this version in kangax-next/class-decorators.js:9
+kangax-next/function.sent.js: SyntaxError: Unexpected token "*" in kangax-next/function.sent.js:10
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token "throw" in kangax-next/throw-expr.arrow.js:9
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token "throw" in kangax-next/throw-expr.conditional.js:9
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token "throw" in kangax-next/throw-expr.logical.js:11
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token "=" in kangax-next/throw-expr.param-init.js:9
+kangax-next/using.for-of.js: SyntaxError: Unexpected token "_" in kangax-next/using.for-of.js:22
+kangax-next/using.js: SyntaxError: Unexpected token "_" in kangax-next/using.js:16

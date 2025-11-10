@@ -32,7 +32,7 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 29%, ES2016+ 8%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 29%, ES2016+ 8%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 29%<br>
 <li>ES2016: 21%<br>
 <li>ES2017: 13%<br>
@@ -44,5 +44,6 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

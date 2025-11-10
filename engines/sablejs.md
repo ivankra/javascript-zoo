@@ -80,7 +80,7 @@ inline caching.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 3%, ES2016+ 3%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 3%, ES2016+ 3%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 3%<br>
 <li>ES2016: 0%<br>
 <li>ES2017: 4%<br>
@@ -92,5 +92,6 @@ inline caching.
 <li>ES2023: 0%<br>
 <li>ES2024: 4%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

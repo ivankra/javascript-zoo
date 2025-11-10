@@ -70,3 +70,19 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 </pre></li>
 <li>ES5: 9%<br>
 </ul></details>
+
+<details><summary>compat-table: ES6 1%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
+<li>ES6: 1%<br>
+<li>ES2016: 0%<br>
+<li>ES2017: 0%<br>
+<li>ES2018: 0%<br>
+<li>ES2019: 12%<br>
+<li>ES2020: 0%<br>
+<li>ES2021: 0%<br>
+<li>ES2022: 4%<br>
+<li>ES2023: 0%<br>
+<li>ES2024: 0%<br>
+<li>ES2025: 0%<br>
+<li>Next: 6%<br>
+<li>Intl: 25%<br>
+</ul></details>

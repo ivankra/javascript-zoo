@@ -3,6 +3,12 @@
 ARG BASE=debian:stable
 FROM $BASE AS jsz-runtime
 
+# luajit: for castl
+# moreutils: ts, for benchmarking
+# procps: top
+# psmisc: killall
+# time: /usr/bin/time, for benchmarking
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -y --no-install-recommends \
@@ -21,19 +27,17 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         libreadline-dev \
         locales \
         lsb-release \
-        # for castl \
         luajit \
         make \
-        # /usr/bin/ts for benchmarking \
         moreutils \
         openjdk-25-jdk-headless \
         procps \
+        psmisc \
         python3 \
         ripgrep \
         strace \
         sudo \
         tar \
-        # /usr/bin/time for benchmarking \
         time \
         unzip \
         vim \
@@ -54,9 +58,7 @@ RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
 
 ENV PATH=/bench:/opt/node/bin:$PATH
 
-# Install other popular runtimes from npm:
-#   * bun: JavaScriptCore-based JS/TS runtime written in Zig (https://github.com/oven-sh/bun)
-#   * deno: V8/tokio-based JS/TS runtime written in Rust (https://github.com/denoland/deno)
+# Install other popular runtimes from npm
 RUN npm install -g bun deno && \
     (echo '' | bun repl >/dev/null 2>&1 || true)
 

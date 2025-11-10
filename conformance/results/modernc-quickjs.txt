@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "32fba24bfd654e8dd8a552fe5a3c7f1c44fbba524ce1f23e618f445da48a80d6", "binary_size": 4619264, "engine": "modernc-quickjs", "repository": "https://gitlab.com/cznic/quickjs.git", "revision": "3694b670e94ec7c108eb73015feefa6921ec5d78", "revision_date": "2025-10-24", "version": "0.16.5"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1102,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffffc8ee82f0 sp=0xffffc8ee82c0 pc=0x7d628
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff6fffe6e0 sp=0xffff6fffe6b0 pc=0x7d628
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff4c63e6e0 sp=0xffff4c63e6b0 pc=0x7d628
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff56f3e6e0 sp=0xffff56f3e6b0 pc=0x7d628
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: not a function
+kangax-next/AsyncDisposableStack.js: ReferenceError: 'AsyncDisposableStack' is not defined
+kangax-next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: not a function
+kangax-next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: not a function
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Error: SyntaxError: expecting ';'
+kangax-next/Uint8Array.fromBase64.js: TypeError: not a function
+kangax-next/Uint8Array.fromHex.js: TypeError: not a function
+kangax-next/Uint8Array.setFromBase64.js: TypeError: not a function
+kangax-next/Uint8Array.setFromHex.js: TypeError: not a function
+kangax-next/Uint8Array.toBase64.js: TypeError: not a function
+kangax-next/Uint8Array.toHex.js: TypeError: not a function
+kangax-next/WeakMap.prototype.upsert.js: TypeError: not a function
+kangax-next/await-using.for-of.js: Error: SyntaxError: unexpected token in expression: 'await'
+kangax-next/await-using.js: Error: SyntaxError: expecting ';'
+kangax-next/class-decorators.js: Error: SyntaxError: invalid property name
+kangax-next/function.sent.js: Error: SyntaxError: expecting '('
+kangax-next/throw-expr.arrow.js: Error: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.conditional.js: Error: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.logical.js: Error: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/throw-expr.param-init.js: Error: SyntaxError: unexpected token in expression: 'throw'
+kangax-next/using.for-of.js: Error: SyntaxError: expected 'of' or 'in' in for control expression
+kangax-next/using.js: Error: SyntaxError: expecting ';'

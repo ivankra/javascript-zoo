@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "dist_size": 208294, "engine": "narcissus", "repository": "https://github.com/ivankra/narcissus.git", "revision": "a1eae5c735c3932cc435d869e68933d469d419f6", "revision_date": "2025-10-08"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1467,3 +1468,45 @@ kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: :10:1 SyntaxError: 10: missing operand; found > newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncDisposableStack.js: :47:1 SyntaxError: 47: missing : after property newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.extends.js: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.from.async-iterable.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.from.iterable.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.from.iterator.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.instanceof.js: :9:1 SyntaxError: 9: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.every.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/AsyncIterator.prototype.filter.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.find.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/AsyncIterator.prototype.flatMap.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.forEach.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.map.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.reduce.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/AsyncIterator.prototype.some.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/AsyncIterator.prototype.take.js: :44:1 SyntaxError: 44: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/AsyncIterator.prototype.toArray.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/DisposableStack.js: :12:1 SyntaxError: 12: Invalid property name newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Map.prototype.upsert.js: :10:1 SyntaxError: 10: missing operand; found > newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: :13:1 SyntaxError: 13: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Uint8Array.fromBase64.js: :13:1 SyntaxError: 13: Bad left-hand side of assignment newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Uint8Array.fromHex.js: :13:1 SyntaxError: 13: Bad left-hand side of assignment newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Uint8Array.setFromBase64.js: :11:1 SyntaxError: 11: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Uint8Array.setFromHex.js: :11:1 SyntaxError: 11: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
+kangax-next/WeakMap.prototype.upsert.js: :11:1 SyntaxError: 11: missing operand; found > newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/await-using.for-of.js: :46:1 SyntaxError: 46: missing : after property newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/await-using.js: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/class-decorators.js: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/function.sent.js: :11:1 SyntaxError: 11: Missing ( newSyntaxError@/dist/narcissus:1147:17
+kangax-next/throw-expr.arrow.js: :9:1 SyntaxError: 9: missing operand; found ) newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/throw-expr.conditional.js: :9:1 SyntaxError: 9: missing operand; found throw newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/throw-expr.logical.js: :11:1 SyntaxError: 11: missing operand; found throw newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/throw-expr.param-init.js: :9:1 SyntaxError: 9: Missing ) newSyntaxError@/dist/narcissus:1147:17
+kangax-next/using.for-of.js: :11:1 SyntaxError: 11: Invalid property name newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
+kangax-next/using.js: :11:1 SyntaxError: 11: Invalid property name newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20

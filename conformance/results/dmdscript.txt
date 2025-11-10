@@ -1,3 +1,4 @@
+Metadata: {"arch": "arm64", "binary_sha256": "5e350e6a1b6edda7e421747dcce5a46c701c9732cf8d3578824355df123ca804", "binary_size": 1806448, "engine": "dmdscript", "repository": "https://github.com/DigitalMars/DMDScript.git", "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb", "revision_date": "2024-06-18", "version": "2.1.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -418,3 +419,1094 @@ es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to o
 es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: failed
+kangax-es5/Array.prototype.every.js: failed
+kangax-es5/Array.prototype.filter.js: failed
+kangax-es5/Array.prototype.forEach.js: failed
+kangax-es5/Array.prototype.indexOf.js: failed
+kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.map.js: failed
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: failed
+kangax-es5/Array.prototype.some.js: failed
+kangax-es5/Array.prototype.sort.compareFn-type.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.prototype.sort.compareFn-type.js(9) : Error: found '[' instead of statement
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: failed
+kangax-es5/Date.prototype.toISOString.js: failed
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: failed
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: failed
+kangax-es5/Object.defineProperties.js: failed
+kangax-es5/Object.defineProperty.js: failed
+kangax-es5/Object.freeze.js: failed
+kangax-es5/Object.getOwnPropertyDescriptor.js: failed
+kangax-es5/Object.getOwnPropertyNames.js: failed
+kangax-es5/Object.getPrototypeOf.js: failed
+kangax-es5/Object.isExtensible.js: failed
+kangax-es5/Object.isFrozen.js: failed
+kangax-es5/Object.isSealed.js: failed
+kangax-es5/Object.keys.js: failed
+kangax-es5/Object.preventExtensions.js: failed
+kangax-es5/Object.seal.js: failed
+kangax-es5/String.property-access.js: failed
+kangax-es5/String.prototype.split.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+kangax-es5/String.prototype.trim.js: failed
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: failed
+kangax-es5/immutable-globals.NaN.js: failed
+kangax-es5/immutable-globals.undefined.js: failed
+kangax-es5/literals.getter-accessors.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.getter-accessors.js(8) : Error: found 'x' when expecting ':'
+kangax-es5/literals.reserved-words-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.reserved-words-properties.js(8) : Error: identifier expected
+kangax-es5/literals.setter-accessors.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.setter-accessors.js(9) : Error: found 'x' when expecting ':'
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: failed
+kangax-es5/misc.Function.apply.array-likes.js: failed
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: failed
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.unreserved-words.js(8) : Error: identifier expected instead of 'abstract'
+kangax-es5/misc.zero-width-identifiers.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.zero-width-identifiers.js(8) : Error: found '' when expecting ';'
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: failed
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): strict.assignment-non-writable-error.js(12) : Error: found 'x' when expecting ':'
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: TypeError: Object function Function() { [native code] }.defineProperty is undefined and has no Call method
+kangax-es5/strict.this-not-coerced-methods.js: failed
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Array.from.array-like.js: TypeError: Object function Array() { [native code] }.from is undefined and has no Call method
+kangax-es6/Array.from.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.from.generator.js(9) : Error: found '*' when expecting '('
+kangax-es6/Array.from.iterable-instance.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es6/Array.from.iterable.js: TypeError: Object function Array() { [native code] }.from is undefined and has no Call method
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: TypeError: Object function Array() { [native code] }.from is undefined and has no Call method
+kangax-es6/Array.from.map.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.from.map.generator.js(9) : Error: found '*' when expecting '('
+kangax-es6/Array.from.map.iterable-instance.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es6/Array.from.map.iterable.js: TypeError: Object function Array() { [native code] }.from is undefined and has no Call method
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Function.name.accessor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.accessor.js(10) : Error: found 'foo' when expecting ':'
+kangax-es6/Function.name.bound.js: TypeError: Object function foo()
+kangax-es6/Function.name.class-expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-expression.js(10) : Error: expression expected, not 'class'
+kangax-es6/Function.name.class-object-method.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-object-method.js(10) : Error: expression expected, not 'class'
+kangax-es6/Function.name.class-prototype.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-prototype.js(10) : Error: found 'class' instead of statement
+kangax-es6/Function.name.class-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-statement.js(10) : Error: found 'class' instead of statement
+kangax-es6/Function.name.class-static.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-static.js(10) : Error: found 'class' instead of statement
+kangax-es6/Function.name.class-variable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.class-variable.js(10) : Error: expression expected, not 'class'
+kangax-es6/Function.name.configurable.js: TypeError: Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.shorthand.js(10) : Error: found '(' when expecting ':'
+kangax-es6/Function.name.shorthand.no-lexical.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.shorthand.no-lexical.js(11) : Error: found '(' when expecting ':'
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Function.name.symbol-keyed.js(13) : Error: identifier expected
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.Symbol.iterator.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.clear.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.delete.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Map.prototype.delete.js(10) : Error: identifier expected following '.', not 'delete'
+kangax-es6/Map.prototype.entries.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.forEach.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.keys.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.size.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.prototype.values.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Map.zero-key.js: ReferenceError: Variable 'Map' is not defined
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: TypeError: Object [object Math].hypot is undefined and has no Call method
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: Object function Function() { [native code] }.assign is undefined and has no Call method
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: TypeError: Object function Function() { [native code] }.setPrototypeOf is undefined and has no Call method
+kangax-es6/Promise.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Promise.all.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.all.iterable.js(79) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Promise.all.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.all.js(55) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Promise.constructor-requires-new.js: ReferenceError: Variable 'Promise' is not defined
+kangax-es6/Promise.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.js(55) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Promise.prototype-not-instance.js: ReferenceError: Variable 'Promise' is not defined
+kangax-es6/Promise.race.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.race.iterable.js(79) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Promise.race.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.race.js(55) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.get.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.has.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.handler.set.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Proxy.revocable.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/Reflect.apply.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Reflect.construct.Promise-subclassing.js(55) : Error: identifier expected following '.', not 'catch'
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.construct.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.construct.new-target.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Reflect.construct.new-target.js(11) : Error: expression expected, not '.'
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.get.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.has.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.ownKeys.string.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/Reflect.set.js: ReferenceError: Variable 'Reflect' is not defined
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/RegExp.prototype.Symbol.match.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/RegExp.prototype.Symbol.replace.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/RegExp.prototype.Symbol.search.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/RegExp.prototype.Symbol.split.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.iterator-closing.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.Symbol.iterator.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.clear.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.delete.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Set.prototype.delete.js(10) : Error: identifier expected following '.', not 'delete'
+kangax-es6/Set.prototype.entries.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.forEach.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.keys.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.size.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.prototype.values.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/Set.zero-key.js: ReferenceError: Variable 'Set' is not defined
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/String.prototype.Symbol.iterator.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.Object.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.String.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.defineProperty.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.global-registry.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Symbol.global-registry.js(10) : Error: identifier expected following '.', not 'for'
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.no-coerce.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.no-new.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.prototype.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/Symbol.typeof.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/WeakMap.accept-primitives.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): WeakMap.accept-primitives.js(13) : Error: identifier expected following '.', not 'delete'
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.frozen-keys.js: TypeError: Object function Function() { [native code] }.freeze is undefined and has no Call method
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.no-clear.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakMap.prototype.delete.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): WeakMap.prototype.delete.js(10) : Error: identifier expected following '.', not 'delete'
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: Variable 'WeakMap' is not defined
+kangax-es6/WeakSet.accept-primitives.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): WeakSet.accept-primitives.js(12) : Error: identifier expected following '.', not 'delete'
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.no-clear.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: Variable 'WeakSet' is not defined
+kangax-es6/WeakSet.prototype.delete.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): WeakSet.prototype.delete.js(10) : Error: identifier expected following '.', not 'delete'
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: failed
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: failed
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.function.if-statement.js(12) : Error: found 'function' instead of statement
+kangax-es6/annex-b.function.labeled.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.function.labeled.js(12) : Error: found 'function' instead of statement
+kangax-es6/annex-b.html-comments.js: failed
+kangax-es6/annex-b.regex.backreferences-octal.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): no matching back reference
+kangax-es6/annex-b.regex.hyphens.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): inverted range in character class
+kangax-es6/annex-b.regex.incomplete-patterns.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): badly formed {n,m}
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): letter expected following \c
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: TypeError: cannot convert Null to Object
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: TypeError: cannot convert Null to Object
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: TypeError: Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: TypeError: Object function Function() { [native code] }.getOwnPropertyNames is undefined and has no Call method
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.__proto__.literals.not-computed.js(14) : Error: identifier expected
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.__proto__.literals.not-shorthand-method.js(13) : Error: found '(' when expecting ':'
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.__proto__.literals.not-shorthand-property.js(14) : Error: found '}' when expecting ':'
+kangax-es6/arrow.0-params.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.0-params.js(10) : Error: expression expected, not ''
+kangax-es6/arrow.1-param.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.1-param.js(10) : Error: expression expected, not '>'
+kangax-es6/arrow.5-param.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.5-param.js(10) : Error: expression expected, not '>'
+kangax-es6/arrow.bind.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.bind.js(10) : Error: expression expected, not '>'
+kangax-es6/arrow.lexical-arguments.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.lexical-arguments.js(10) : Error: expression expected, not '>'
+kangax-es6/arrow.lexical-super.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.lexical-super.constructor.js(12) : Error: found 'class' instead of statement
+kangax-es6/arrow.lexical-super.methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.lexical-super.methods.js(10) : Error: found 'class' instead of statement
+kangax-es6/arrow.lexical-this.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.lexical-this.js(10) : Error: expression expected, not '>'
+kangax-es6/arrow.new-target.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.new-target.js(11) : Error: expression expected, not '>'
+kangax-es6/arrow.no-line-break.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.no-line-break.js(10) : Error: expression expected, not ''
+kangax-es6/arrow.no-prototype.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.no-prototype.js(10) : Error: expression expected, not ''
+kangax-es6/arrow.precedence.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.precedence.js(10) : Error: expression expected, not ''
+kangax-es6/arrow.this-call-apply.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): arrow.this-call-apply.js(10) : Error: expression expected, not ''
+kangax-es6/class.accessor-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.accessor-properties.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.anonymous.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.anonymous.js(10) : Error: expression expected, not 'class'
+kangax-es6/class.block-scoped.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.block-scoped.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.computed-accessor-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.computed-accessor-properties.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.computed-names-tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.computed-names-tdz.js(11) : Error: expression expected, not 'class'
+kangax-es6/class.computed-prototype-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.computed-prototype-methods.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.computed-static-accessor-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.computed-static-accessor-properties.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.computed-static-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.computed-static-methods.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.constructor-requires-new.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.constructor-requires-new.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.constructor.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.expression.js(10) : Error: expression expected, not 'class'
+kangax-es6/class.extends-expressions.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.extends-expressions.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.extends-null.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.extends-null.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.extends.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.extends.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.implicit-strict.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.implicit-strict.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.lexical-name.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.lexical-name.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.methods-not-enumerable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.methods-not-enumerable.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.new-target.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.new-target.js(12) : Error: expression expected, not '.'
+kangax-es6/class.optional-semicolons.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.optional-semicolons.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.prototype-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.prototype-methods.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.statement.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.static-accessor-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.static-accessor-properties.js(11) : Error: found 'class' instead of statement
+kangax-es6/class.static-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.static-methods.js(10) : Error: found 'class' instead of statement
+kangax-es6/class.string-keyed-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class.string-keyed-methods.js(10) : Error: found 'class' instead of statement
+kangax-es6/const.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.basic.js(10) : Error: found 'const' instead of statement
+kangax-es6/const.block-scoped.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.block-scoped.js(10) : Error: found 'const' instead of statement
+kangax-es6/const.for-in.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.for-in.js(11) : Error: expression expected, not 'const'
+kangax-es6/const.for-loop.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.for-loop.js(10) : Error: found 'const' instead of statement
+kangax-es6/const.for-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.for-of.js(11) : Error: expression expected, not 'const'
+kangax-es6/const.no-redefine.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.no-redefine.js(10) : Error: found 'const' instead of statement
+kangax-es6/const.no-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.no-statement.js(10) : Error: found 'const' instead of statement
+kangax-es6/const.shadow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.shadow.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.basic.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.block-scoped.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.block-scoped.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.for-in.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.for-in.js(12) : Error: expression expected, not 'const'
+kangax-es6/const.strict.for-loop.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.for-loop.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.for-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.for-of.js(12) : Error: expression expected, not 'const'
+kangax-es6/const.strict.no-redefine.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.no-redefine.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.no-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.no-statement.js(11) : Error: found 'const' instead of statement
+kangax-es6/const.strict.shadow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.shadow.js(12) : Error: found 'const' instead of statement
+kangax-es6/const.strict.tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.strict.tdz.js(13) : Error: found 'const' instead of statement
+kangax-es6/const.tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): const.tdz.js(12) : Error: found 'const' instead of statement
+kangax-es6/default-params.arguments.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.arguments.js(10) : Error: found '=' when expecting ''
+kangax-es6/default-params.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.basic.js(10) : Error: found '=' when expecting ''
+kangax-es6/default-params.explicit-undefined.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.explicit-undefined.js(10) : Error: found '=' when expecting ''
+kangax-es6/default-params.new-function.js: SyntaxError: anonymous(1) : Error: comma expected in FormalParameterList, not =
+kangax-es6/default-params.refer-previous.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.refer-previous.js(10) : Error: found '=' when expecting ''
+kangax-es6/default-params.separate-scope.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.separate-scope.js(10) : Error: found '=' when expecting ''
+kangax-es6/default-params.tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): default-params.tdz.js(10) : Error: found '=' when expecting ''
+kangax-es6/destructuring-assign.array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.array.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.astral-string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.astral-string.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.chained-iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.chained-iterable.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.chained-object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.chained-object.js(11) : Error: found ',' when expecting ':'
+kangax-es6/destructuring-assign.computed-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.computed-properties.js(11) : Error: identifier expected
+kangax-es6/destructuring-assign.defaults.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.defaults.js(11) : Error: found '=' when expecting ':'
+kangax-es6/destructuring-assign.empty-patterns.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.empty-patterns.js(10) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.generator.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.iterable-expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): testCode(11) : Error: cannot assign to [a,b]
+kangax-es6/destructuring-assign.iterable-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.iterable-instance.js(35) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.iterable.js(35) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.iterator-closing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.iterator-closing.js(39) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.nested-rest.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.nested-rest.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.nested.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.nested.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.object-expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.object-expression.js(11) : Error: found ',' when expecting ':'
+kangax-es6/destructuring-assign.object-primitives.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.object-primitives.js(11) : Error: found '}' when expecting ':'
+kangax-es6/destructuring-assign.object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.object.js(11) : Error: found ',' when expecting ':'
+kangax-es6/destructuring-assign.parenthesised-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.parenthesised-error.js(11) : Error: found ',' when expecting ':'
+kangax-es6/destructuring-assign.rest.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.rest.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.sparse-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.sparse-array.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.string.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.throws-null-undefined.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.throws-null-undefined.js(12) : Error: found '}' when expecting ':'
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.trailing-comma-iterable.js(11) : Error: found '[' instead of statement
+kangax-es6/destructuring-assign.trailing-comma-object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-assign.trailing-comma-object.js(11) : Error: found ',' when expecting ':'
+kangax-es6/destructuring-decl.array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.array.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.astral-string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.astral-string.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.catch.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.catch.js(12) : Error: found '[' when expecting 'TOK58'
+kangax-es6/destructuring-decl.computed-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.computed-properties.js(11) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.defaults-tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.defaults-tdz.js(10) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.defaults.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.defaults.js(10) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.for-in.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.for-in.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.for-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.for-of.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.generator.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.iterable-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.iterable-instance.js(34) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.iterable.js(34) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.iterator-closing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.iterator-closing.js(38) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.multiple-var.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.multiple-var.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.nested.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.nested.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.object-primitives.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.object-primitives.js(10) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.object.js(10) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.rest.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.rest.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.sparse-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.sparse-array.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.string.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.throws-null-undefined.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.throws-null-undefined.js(11) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.trailing-comma-iterable.js(10) : Error: identifier expected instead of '['
+kangax-es6/destructuring-decl.trailing-comma-object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-decl.trailing-comma-object.js(10) : Error: identifier expected instead of '{'
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.aliased-defaults-arrow.js(10) : Error: expression expected, not '>'
+kangax-es6/destructuring-params.arguments.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.arguments.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.array.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.astral-string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.astral-string.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.computed-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.computed-properties.js(11) : Error: identifier expected
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: anonymous(1) : Error: Identifier expected in FormalParameterList, not {
+kangax-es6/destructuring-params.defaults-separate-scope.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.defaults-separate-scope.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.defaults.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.defaults.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.empty-patterns.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.generator.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.iterable-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.iterable-instance.js(34) : Error: identifier expected
+kangax-es6/destructuring-params.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.iterable.js(34) : Error: identifier expected
+kangax-es6/destructuring-params.iterator-closing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.iterator-closing.js(38) : Error: identifier expected
+kangax-es6/destructuring-params.length.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.length.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.nested.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.nested.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.new-function.js: SyntaxError: anonymous(1) : Error: Identifier expected in FormalParameterList, not {
+kangax-es6/destructuring-params.object-primitives.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.object-primitives.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.object.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.rest.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.rest.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.shorthand-defaults-arrow.js(10) : Error: found '=' when expecting ':'
+kangax-es6/destructuring-params.sparse-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.sparse-array.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.string.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.throws-null-undefined.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.throws-null-undefined.js(11) : Error: identifier expected
+kangax-es6/destructuring-params.trailing-comma-iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.trailing-comma-iterable.js(10) : Error: identifier expected
+kangax-es6/destructuring-params.trailing-comma-object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): destructuring-params.trailing-comma-object.js(10) : Error: identifier expected
+kangax-es6/for-of.array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.array.js(11) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.astral-string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.astral-string.js(11) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.generator.js(11) : Error: found '*' when expecting '('
+kangax-es6/for-of.iterable-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.iterable-instance.js(36) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.iterable.js(36) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.iterator-closing-break.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.iterator-closing-break.js(37) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.iterator-closing-throw.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.iterator-closing-throw.js(38) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.sparse-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.sparse-array.js(12) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/for-of.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): for-of.string.js(11) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.basic.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.constructor.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.expression.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.no-new-this.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.no-new-this.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.prototype-chain.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.prototype.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.prototype.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.return.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.return.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.sending.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.sending.js(11) : Error: found '*' when expecting '('
+kangax-es6/generators.shorthand.class.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.class.js(10) : Error: found 'class' instead of statement
+kangax-es6/generators.shorthand.computed.class.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.computed.class.js(11) : Error: found 'class' instead of statement
+kangax-es6/generators.shorthand.computed.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.computed.js(12) : Error: identifier expected
+kangax-es6/generators.shorthand.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.js(11) : Error: identifier expected
+kangax-es6/generators.shorthand.no-constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.no-constructor.js(10) : Error: found 'class' instead of statement
+kangax-es6/generators.shorthand.string-keyed.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.shorthand.string-keyed.js(11) : Error: identifier expected
+kangax-es6/generators.this.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.this.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.throw.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.throw.js(11) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-precedence.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-precedence.js(11) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.array.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.astral-string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.astral-string.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.generator.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.iterable-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.iterable-instance.js(33) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.iterable.js(34) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.iterator-closing-throw.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.iterator-closing-throw.js(42) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.iterator-closing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.iterator-closing.js(40) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.non-iterable-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.non-iterable-error.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.sparse-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.sparse-array.js(10) : Error: found '*' when expecting '('
+kangax-es6/generators.yield-star.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): generators.yield-star.string.js(10) : Error: found '*' when expecting '('
+kangax-es6/let.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.basic.js(10) : Error: found 'foo' when expecting ';'
+kangax-es6/let.block-scoped.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.block-scoped.js(10) : Error: found 'bar' when expecting ';'
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.for-iteration.js(10) : Error: found 'scopes' when expecting ';'
+kangax-es6/let.for-loop.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.for-loop.js(10) : Error: found 'baz' when expecting ';'
+kangax-es6/let.no-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.no-statement.js(10) : Error: found 'bar' when expecting ';'
+kangax-es6/let.shadow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.shadow.js(11) : Error: found 'bar' when expecting ';'
+kangax-es6/let.strict.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.basic.js(11) : Error: found 'foo' when expecting ';'
+kangax-es6/let.strict.block-scoped.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.block-scoped.js(11) : Error: found 'bar' when expecting ';'
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.for-iteration.js(11) : Error: found 'scopes' when expecting ';'
+kangax-es6/let.strict.for-loop.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.for-loop.js(11) : Error: found 'baz' when expecting ';'
+kangax-es6/let.strict.no-statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.no-statement.js(11) : Error: found 'bar' when expecting ';'
+kangax-es6/let.strict.shadow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.shadow.js(12) : Error: found 'bar' when expecting ';'
+kangax-es6/let.strict.tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.strict.tdz.js(13) : Error: found 'qux' when expecting ';'
+kangax-es6/let.tdz.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): let.tdz.js(12) : Error: found 'qux' when expecting ';'
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.binary.js(9) : Error: found 'b10' when expecting ';'
+kangax-es6/literals.object.computed-accessors.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.computed-accessors.js(13) : Error: found '[' when expecting ':'
+kangax-es6/literals.object.computed-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.computed-properties.js(11) : Error: identifier expected
+kangax-es6/literals.object.computed-shorthand-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.computed-shorthand-methods.js(11) : Error: identifier expected
+kangax-es6/literals.object.shorthand-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.shorthand-methods.js(10) : Error: found '(' when expecting ':'
+kangax-es6/literals.object.shorthand-properties.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.shorthand-properties.js(10) : Error: found ',' when expecting ':'
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.object.string-keyed-shorthand-methods.js(10) : Error: found '(' when expecting ':'
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): literals.octal.js(9) : Error: found 'o10' when expecting ';'
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: Object function Function() { [native code] }.freeze is undefined and has no Call method
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: Object function Function() { [native code] }.getOwnPropertyNames is undefined and has no Call method
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: TypeError: Object function Function() { [native code] }.getPrototypeOf is undefined and has no Call method
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: Object function Function() { [native code] }.isExtensible is undefined and has no Call method
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: Object function Function() { [native code] }.isFrozen is undefined and has no Call method
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: Object function Function() { [native code] }.isSealed is undefined and has no Call method
+kangax-es6/misc.Object.keys.primitives.js: TypeError: Object function Function() { [native code] }.keys is undefined and has no Call method
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: Object function Function() { [native code] }.preventExtensions is undefined and has no Call method
+kangax-es6/misc.Object.seal.primitives.js: TypeError: Object function Function() { [native code] }.seal is undefined and has no Call method
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.Proxy.get.ClassDefinitionEvaluation.js(13) : Error: found 'class' instead of statement
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.IteratorComplete.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.Proxy.get.IteratorComplete.js(22) : Error: ';' or 'in' expected, not 'of'
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: TypeError: Object function Function() { [native code] }.preventExtensions is undefined and has no Call method
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es6/misc.RegExp-alter-flags.js: TypeError: TypeError in RegExp.prototype.constructor
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: RegExp.prototype.toString() not transferrable
+kangax-es6/misc.accessors-no-constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.accessors-no-constructor.js(9) : Error: found 'a' when expecting ':'
+kangax-es6/misc.bound-function-prototype.arrow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.bound-function-prototype.arrow.js(10) : Error: expression expected, not ''
+kangax-es6/misc.bound-function-prototype.class.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.bound-function-prototype.class.js(10) : Error: found 'class' instead of statement
+kangax-es6/misc.bound-function-prototype.function.js: TypeError: Undefined undefined.call is undefined and has no Call method
+kangax-es6/misc.bound-function-prototype.generator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.bound-function-prototype.generator.js(10) : Error: found '*' when expecting '('
+kangax-es6/misc.bound-function-prototype.subclass.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.bound-function-prototype.subclass.js(10) : Error: found 'class' instead of statement
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: TypeError: Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-2.js: OK
+kangax-es6/misc.property-order.JSON.parse.js: ReferenceError: Variable 'JSON' is not defined
+kangax-es6/misc.property-order.JSON.stringify.js: TypeError: Object E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.forEach is undefined and has no Call method
+kangax-es6/misc.property-order.Object.assign.js: TypeError: Object 0,1,2,3,4,9, ,D,B,A,C,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,-1.forEach is undefined and has no Call method
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: TypeError: Object E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.forEach is undefined and has no Call method
+kangax-es6/misc.property-order.Object.keys.js: TypeError: Object E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.forEach is undefined and has no Call method
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: TypeError: Object E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z.forEach is undefined and has no Call method
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): new-target.assignment-error.js(12) : Error: expression expected, not '.'
+kangax-es6/new-target.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): new-target.constructor.js(12) : Error: expression expected, not '.'
+kangax-es6/regex.flags.u.case-folding.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/regex.flags.u.codepoint.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/regex.flags.u.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/regex.flags.u.non-bmp.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/regex.flags.y.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/regex.flags.y.lastIndex.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es6/rest-params.arguments.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): rest-params.arguments.js(10) : Error: identifier expected
+kangax-es6/rest-params.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): rest-params.basic.js(10) : Error: identifier expected
+kangax-es6/rest-params.length.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): rest-params.length.js(10) : Error: identifier expected
+kangax-es6/rest-params.new-function.js: SyntaxError: anonymous(1) : Error: Identifier expected in FormalParameterList, not .
+kangax-es6/rest-params.no-setter.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): rest-params.no-setter.js(10) : Error: identifier expected
+kangax-es6/spread.array-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.array-call.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.array-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.array-literal.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.astral-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.astral-call.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.astral-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.astral-literal.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.generator-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.generator-call.js(10) : Error: found '*' when expecting '('
+kangax-es6/spread.generator-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.generator-literal.js(10) : Error: found '*' when expecting '('
+kangax-es6/spread.iterable-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.iterable-call.js(35) : Error: expression expected, not '.'
+kangax-es6/spread.iterable-instance-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.iterable-instance-call.js(35) : Error: expression expected, not '.'
+kangax-es6/spread.iterable-instance-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.iterable-instance-literal.js(35) : Error: expression expected, not '.'
+kangax-es6/spread.iterable-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.iterable-literal.js(35) : Error: expression expected, not '.'
+kangax-es6/spread.non-iterable-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.non-iterable-error.js(11) : Error: expression expected, not '.'
+kangax-es6/spread.sparse-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.sparse-call.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.sparse-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.sparse-literal.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.string-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.string-call.js(10) : Error: expression expected, not '.'
+kangax-es6/spread.string-literal.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): spread.string-literal.js(10) : Error: expression expected, not '.'
+kangax-es6/subclassing.Array.concat.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.concat.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.filter.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.filter.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.from.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.from.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.isArray.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.isArray.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.length-access.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.length-access.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.length-set.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.length-set.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.map.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.map.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.of.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.prototype-chain.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.slice.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.slice.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Array.splice.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Array.splice.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.call.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.new.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.new.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.prototype-chain.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.prototype.apply.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.prototype.apply.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.prototype.bind.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.prototype.bind.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Function.prototype.call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Function.prototype.call.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Promise.all.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Promise.all.js(44) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Promise.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Promise.js(44) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Promise.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Promise.prototype-chain.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.Promise.race.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.Promise.race.js(44) : Error: found 'class' instead of statement
+kangax-es6/subclassing.RegExp.exec.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.RegExp.exec.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.RegExp.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.RegExp.js(11) : Error: found 'class' instead of statement
+kangax-es6/subclassing.RegExp.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.RegExp.prototype-chain.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.RegExp.test.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.RegExp.test.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.Boolean.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.Boolean.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.Error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.Error.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.Map.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.Map.js(10) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.Number.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.Number.js(9) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.Set.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.Set.js(10) : Error: found 'class' instead of statement
+kangax-es6/subclassing.misc.String.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): subclassing.misc.String.js(9) : Error: found 'class' instead of statement
+kangax-es6/super.correct-constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.correct-constructor.js(12) : Error: found 'class' instead of statement
+kangax-es6/super.expression.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.expression.js(10) : Error: found 'class' instead of statement
+kangax-es6/super.method-calls.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.method-calls.js(10) : Error: found 'class' instead of statement
+kangax-es6/super.new-target-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.new-target-binding.js(11) : Error: found 'class' instead of statement
+kangax-es6/super.property-access.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.property-access.js(10) : Error: found 'class' instead of statement
+kangax-es6/super.statement.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.statement.js(11) : Error: found 'class' instead of statement
+kangax-es6/super.static-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.static-binding.js(10) : Error: found 'class' instead of statement
+kangax-es6/super.this-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): super.this-binding.js(10) : Error: found 'class' instead of statement
+kangax-es6/tail-calls.direct.js: failed
+kangax-es6/tail-calls.mutual.js: failed
+kangax-es6/template.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.basic.js(11) : Error: unsupported char '`'
+kangax-es6/template.caching.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.caching.js(17) : Error: unsupported char '`'
+kangax-es6/template.escape-sequences.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.escape-sequences.js(13) : Error: unsupported char '`'
+kangax-es6/template.frozen-array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.frozen-array.js(12) : Error: unsupported char '`'
+kangax-es6/template.line-break.js: SyntaxError: eval(1) : Error: unsupported char '`'
+kangax-es6/template.permanent-caching.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.permanent-caching.js(14) : Error: unsupported char '`'
+kangax-es6/template.tagged.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.tagged.js(21) : Error: unsupported char '`'
+kangax-es6/template.toString.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): template.toString.js(14) : Error: unsupported char '`'
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.constructor-iterables.js: TypeError: primitive Undefined has no Construct method
+kangax-es6/typed-arrays.constructor-requires-new.js: ReferenceError: Variable 'ArrayBuffer' is not defined
+kangax-es6/typed-arrays.correct-prototype-chains.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): typed-arrays.correct-prototype-chains.js(32) : Error: found 'const' instead of statement
+kangax-es6/typed-arrays.from.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.of.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.copyWithin.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.entries.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.every.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.fill.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.filter.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.findIndex.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.find.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.forEach.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.indexOf.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.join.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.keys.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.map.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.reduceRight.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.reduce.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.reverse.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.slice.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.some.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.sort.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.subarray.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/typed-arrays.prototype.values.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es6/unicode-escapes.identifier.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): unicode-escapes.identifier.js(9) : Error: \u sequence must be followed by 4 hex characters
+kangax-es6/unicode-escapes.property-access.js: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 55296)
+kangax-es6/unicode-escapes.property-key.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): unicode-escapes.property-key.js(9) : Error: \u sequence must be followed by 4 hex characters
+kangax-es6/unicode-escapes.string.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): unicode-escapes.string.js(9) : Error: \u sequence must be followed by 4 hex characters
+kangax-es6/well-known.hasInstance.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): well-known.isConcatSpreadable.poisoned-getter.js(19) : Error: found '[' instead of statement
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.iterator.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.match.String.includes.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.match.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.replace.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.search.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Array.map.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: Variable 'Promise' is not defined
+kangax-es6/well-known.species.RegExp.split.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.split.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.toPrimitive.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.toStringTag.existing-builtins.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): well-known.toStringTag.existing-builtins.js(11) : Error: found '[' instead of statement
+kangax-es6/well-known.toStringTag.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.toStringTag.misc-builtins.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es6/well-known.toStringTag.new-builtins.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): well-known.toStringTag.new-builtins.js(11) : Error: found '[' instead of statement
+kangax-es6/well-known.unscopables.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2016/Array.prototype.includes.generic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.prototype.includes.generic.js(13) : Error: found '0' when expecting ':'
+kangax-es2016/Array.prototype.includes.js: TypeError: Object 1,2,3.includes is undefined and has no Call method
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: Object .includes is undefined and has no Call method
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Variable 'Int8Array' is not defined
+kangax-es2016/exponentiation.assignment.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): exponentiation.assignment.js(10) : Error: expression expected, not '*='
+kangax-es2016/exponentiation.basic.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): exponentiation.basic.js(10) : Error: expression expected, not '*'
+kangax-es2016/exponentiation.unary-negation-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): exponentiation.unary-negation-error.js(10) : Error: expression expected, not '*'
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2016/misc.generator-no-new.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.generator-no-new.js(10) : Error: found '*' when expecting '('
+kangax-es2016/misc.generator-throw-inner.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.generator-throw-inner.js(10) : Error: found '*' when expecting '('
+kangax-es2016/misc.nested-rest-destructuring-decl.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.nested-rest-destructuring-decl.js(10) : Error: identifier expected instead of '['
+kangax-es2016/misc.nested-rest-destructuring-params.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.nested-rest-destructuring-params.js(9) : Error: identifier expected
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.strict-fn-non-simple-params-error.js(9) : Error: identifier expected
+kangax-es2017/Atomics.add.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.and.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.exchange.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.load.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.notify.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.or.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.store.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.sub.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.wait.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Atomics.xor.js: ReferenceError: Variable 'Atomics' is not defined
+kangax-es2017/Object.entries.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: Object function Function() { [native code] }.defineProperty is undefined and has no Call method
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2017/Object.values.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'SharedArrayBuffer' is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: Variable 'SharedArrayBuffer' is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: Variable 'SharedArrayBuffer' is not defined
+kangax-es2017/String.prototype.padEnd.js: TypeError: String hello.padEnd is undefined and has no Call method
+kangax-es2017/String.prototype.padStart.js: TypeError: String hello.padStart is undefined and has no Call method
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: Variable '__defineGetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Undefined undefined.call is undefined and has no Call method
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: Variable '__defineSetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: Undefined undefined.call is undefined and has no Call method
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: Variable '__lookupGetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.Object.prototype.__lookupGetter__.js(11) : Error: found 'foo' when expecting ':'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.Object.prototype.__lookupGetter__.prototype-chain.js(10) : Error: found 'foo' when expecting ':'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: Variable '__lookupSetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.Object.prototype.__lookupSetter__.js(11) : Error: found 'foo' when expecting ':'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.Object.prototype.__lookupSetter__.prototype-chain.js(10) : Error: found 'foo' when expecting ':'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: Object function Function() { [native code] }.create is undefined and has no Call method
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): annex-b.for-in-assignment-non-strict.js(10) : Error: ';' or 'in' expected, not ''
+kangax-es2017/async.Symbol.toStringTag.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.Symbol.toStringTag.js(10) : Error: found 'function' when expecting ','
+kangax-es2017/async.arrow-in-class.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.arrow-in-class.js(48) : Error: found 'class' instead of statement
+kangax-es2017/async.arrow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.arrow.js(45) : Error: expression expected, not '>'
+kangax-es2017/async.await-non-promise.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.await-non-promise.js(45) : Error: found 'function' when expecting ''
+kangax-es2017/async.await-rejection.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.await-rejection.js(45) : Error: found 'function' when expecting ''
+kangax-es2017/async.await.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.await.js(45) : Error: found 'function' when expecting ''
+kangax-es2017/async.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.constructor.js(45) : Error: found 'function' when expecting ';'
+kangax-es2017/async.methods-class.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.methods-class.js(45) : Error: found 'class' instead of statement
+kangax-es2017/async.methods-object.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.methods-object.js(46) : Error: found 'a' when expecting ':'
+kangax-es2017/async.must-await-value.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.must-await-value.js(10) : Error: found 'function' when expecting ';'
+kangax-es2017/async.no-await-in-params.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.no-await-in-params.js(10) : Error: found 'function' when expecting ';'
+kangax-es2017/async.no-line-break.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.no-line-break.js(10) : Error: found 'function' when expecting ';'
+kangax-es2017/async.no-prototype.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.no-prototype.js(10) : Error: found 'function' when expecting ';'
+kangax-es2017/async.prototype-chain.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.prototype-chain.js(10) : Error: found 'function' when expecting ','
+kangax-es2017/async.return.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.return.js(45) : Error: found 'function' when expecting ';'
+kangax-es2017/async.throw.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async.throw.js(45) : Error: found 'function' when expecting ';'
+kangax-es2017/misc.arguments-caller-removed.js: TypeError: Object function Function() { [native code] }.getOwnPropertyDescriptor is undefined and has no Call method
+kangax-es2017/regex.flags.u.case-folding.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2017/trailing-comma.arguments.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): trailing-comma.arguments.js(10) : Error: expression expected, not ''
+kangax-es2017/trailing-comma.params.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): trailing-comma.params.js(10) : Error: identifier expected
+kangax-es2018/Promise.prototype.finally.change-rejection.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.prototype.finally.change-rejection.js(48) : Error: identifier expected following '.', not 'finally'
+kangax-es2018/Promise.prototype.finally.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.prototype.finally.js(61) : Error: identifier expected following '.', not 'finally'
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.prototype.finally.no-change-resolution.js(59) : Error: identifier expected following '.', not 'finally'
+kangax-es2018/async-iterators.for-await-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async-iterators.for-await-of.js(58) : Error: found 'function' when expecting ''
+kangax-es2018/async-iterators.generators.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): async-iterators.generators.js(44) : Error: found 'function' when expecting ';'
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.Proxy-ownKeys-duplicate-keys.js(11) : Error: found '(' when expecting ':'
+kangax-es2018/misc.template-literal-revision.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.template-literal-revision.js(16) : Error: unsupported char '`'
+kangax-es2018/object-rest.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): object-rest.js(9) : Error: identifier expected instead of '{'
+kangax-es2018/object-spread.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): object-spread.js(10) : Error: identifier expected
+kangax-es2018/regex.flags.s.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.flags.s.js(10) : Error: found 'const' instead of statement
+kangax-es2018/regex.lookbehind.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+kangax-es2018/regex.named-capture-groups.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+kangax-es2018/regex.unicode-property-escapes.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.js(10) : Error: found 'const' instead of statement
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-12.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-13.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-14.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-15.1.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-15.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-16.0.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.unicode-property-escapes.unicode-17.0.js(10) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2019/Array.prototype.flatMap.js: TypeError: Object [object Object],[object Object].flatMap is undefined and has no Call method
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2019/Array.prototype.flat.js: TypeError: Object 1,2,3,4,5,6.flat is undefined and has no Call method
+kangax-es2019/Object.fromEntries.js: ReferenceError: Variable 'Map' is not defined
+kangax-es2019/String.prototype.trimEnd.js: TypeError: String  	
+kangax-es2019/String.prototype.trimStart.js: TypeError: String  	
+kangax-es2019/Symbol.prototype.description.empty.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2019/Symbol.prototype.description.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2019/Symbol.prototype.description.undefined.js: ReferenceError: Variable 'Symbol' is not defined
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: String  	
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: String  	
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: eval(1) : Error: expression expected, not '>'
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: eval(1) : Error: expression expected, not 'class'
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: eval(1) : Error: expression expected, not 'class'
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: eval(1) : Error: identifier expected
+kangax-es2019/misc.Function-toString.native-code.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.Function-toString.native-code.js(10) : Error: found 'const' instead of statement
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: eval(1) : Error: \u sequence must be followed by 4 hex characters
+kangax-es2019/misc.JSON-stringify-well-formed.js: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 57094)
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.optional-catch-binding.await.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.optional-catch-binding.await.js(44) : Error: found 'function' when expecting ''
+kangax-es2019/misc.optional-catch-binding.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.optional-catch-binding.js(12) : Error: found '{' when expecting '('
+kangax-es2019/misc.optional-catch-binding.yield.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): misc.optional-catch-binding.yield.js(9) : Error: found '*' when expecting '('
+kangax-es2020/BigInt64Array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): BigInt64Array.js(12) : Error: found 'n' when expecting ';'
+kangax-es2020/BigInt.asIntN.js: ReferenceError: Variable 'BigInt' is not defined
+kangax-es2020/BigInt.asUintN.js: ReferenceError: Variable 'BigInt' is not defined
+kangax-es2020/BigInt.constructor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): BigInt.constructor.js(10) : Error: found 'n' when expecting ';'
+kangax-es2020/BigInt.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): BigInt.js(10) : Error: found 'n' when expecting ''
+kangax-es2020/BigUint64Array.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): BigUint64Array.js(12) : Error: found 'n' when expecting ';'
+kangax-es2020/DataView.prototype.getBigInt64.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): DataView.prototype.getBigInt64.js(12) : Error: found 'n' when expecting ','
+kangax-es2020/DataView.prototype.getBigUint64.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): DataView.prototype.getBigUint64.js(12) : Error: found 'n' when expecting ','
+kangax-es2020/Promise.allSettled.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.allSettled.js(49) : Error: expression expected, not '>'
+kangax-es2020/String.prototype.matchAll.js: TypeError: String 11a2bb.matchAll is undefined and has no Call method
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): nullish-coalescing.js(10) : Error: expression expected, not '?'
+kangax-es2020/optional-chaining.bracket.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): optional-chaining.bracket.js(12) : Error: expression expected, not '.'
+kangax-es2020/optional-chaining.function-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): optional-chaining.function-call.js(14) : Error: expression expected, not '.'
+kangax-es2020/optional-chaining.method-call.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): optional-chaining.method-call.js(12) : Error: expression expected, not '.'
+kangax-es2020/optional-chaining.property.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): optional-chaining.property.js(12) : Error: expression expected, not '.'
+kangax-es2020/optional-chaining.spread-params.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): optional-chaining.spread-params.js(14) : Error: expression expected, not '.'
+kangax-es2021/FinalizationRegistry.js: ReferenceError: Variable 'FinalizationRegistry' is not defined
+kangax-es2021/Promise.any.AggregateError.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.any.AggregateError.js(49) : Error: identifier expected following '.', not 'catch'
+kangax-es2021/Promise.any.fulfillment.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.any.fulfillment.js(49) : Error: expression expected, not '>'
+kangax-es2021/String.prototype.replaceAll.js: TypeError: String q=query+string+parameters.replaceAll is undefined and has no Call method
+kangax-es2021/WeakRef.js: ReferenceError: Variable 'WeakRef' is not defined
+kangax-es2021/logical-assignment.and.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.and.js(10) : Error: found 'a' when expecting ';'
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.and.setter-not-invoked.js(9) : Error: found 'i' when expecting ';'
+kangax-es2021/logical-assignment.and.short-circuit.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.and.short-circuit.js(9) : Error: found 'a' when expecting ';'
+kangax-es2021/logical-assignment.nullish.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.nullish.js(10) : Error: found 'a' when expecting ';'
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.nullish.setter-not-invoked.js(9) : Error: found 'i' when expecting ';'
+kangax-es2021/logical-assignment.nullish.short-circuit.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.nullish.short-circuit.js(9) : Error: found 'a' when expecting ';'
+kangax-es2021/logical-assignment.or.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.or.js(10) : Error: found 'a' when expecting ';'
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.or.setter-not-invoked.js(9) : Error: found 'i' when expecting ';'
+kangax-es2021/logical-assignment.or.short-circuit.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): logical-assignment.or.short-circuit.js(9) : Error: found 'a' when expecting ';'
+kangax-es2021/numeric-separators.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): numeric-separators.js(9) : Error: found '_000_000' when expecting ';'
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: Variable 'AggregateError' is not defined
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: Variable 'AggregateError' is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: Object function Function() { [native code] }.hasOwn is undefined and has no Call method
+kangax-es2022/at-method.Array.js: TypeError: Object 1,2,3.at is undefined and has no Call method
+kangax-es2022/at-method.String.js: TypeError: String abc.at is undefined and has no Call method
+kangax-es2022/at-method.TypedArray.js: TypeError: Object Int8Array,Uint8Array,Uint8ClampedArray,Int16Array,Uint16Array,Int32Array,Uint32Array,Float32Array,Float64Array.every is undefined and has no Call method
+kangax-es2022/class-fields.computed-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.computed-instance.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.computed-static.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.computed-static.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.instance.parent-scope.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.instance.parent-scope.js(10) : Error: found 'a' when expecting ';'
+kangax-es2022/class-fields.private-instance.initializers.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.private-instance.initializers.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.private-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.private-instance.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.private-instance.optional-access.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.private-instance.optional-access.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.private-instance.optional-deep-access.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.private-static.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.private-static.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.public-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.public-instance.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.public-static.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.public-static.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-fields.static.define.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-fields.static.define.js(9) : Error: expression expected, not 'class'
+kangax-es2022/class-methods.private-accessor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-methods.private-accessor.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-methods.private-instance.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-methods.private-instance.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-methods.private-static-accessor.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-methods.private-static-accessor.js(10) : Error: found 'class' instead of statement
+kangax-es2022/class-methods.private-static.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-methods.private-static.js(9) : Error: found 'class' instead of statement
+kangax-es2022/class-static-init-blocks.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-static-init-blocks.js(10) : Error: found 'ok' when expecting ';'
+kangax-es2022/ergonomic-brand-checks.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): ergonomic-brand-checks.js(9) : Error: found 'class' instead of statement
+kangax-es2022/regex.flags.d.constructor.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: Object [object Object],[object Object],[object Object],[object Object].findLastIndex is undefined and has no Call method
+kangax-es2023/Array.prototype.findLast.js: TypeError: Object [object Object],[object Object],[object Object],[object Object].findLast is undefined and has no Call method
+kangax-es2023/Array.prototype.toReversed.js: TypeError: Object 1,2,3.toReversed is undefined and has no Call method
+kangax-es2023/Array.prototype.toSorted.js: TypeError: Object C,A,B.toSorted is undefined and has no Call method
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: Object A,C.toSpliced is undefined and has no Call method
+kangax-es2023/Array.prototype.with.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.prototype.with.js(11) : Error: identifier expected following '.', not 'with'
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: Variable 'Uint8Array' is not defined
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: Variable 'Uint8Array' is not defined
+kangax-es2023/TypedArray.prototype.with.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): TypedArray.prototype.with.js(11) : Error: identifier expected following '.', not 'with'
+kangax-es2023/hashbang.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): hashbang.js(1) : Error: unsupported char '#'
+kangax-es2024/ArrayBuffer.prototype.detached.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): ArrayBuffer.prototype.detached.js(10) : Error: found 'const' instead of statement
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): ArrayBuffer.prototype.transferToFixedLength.js(10) : Error: found 'const' instead of statement
+kangax-es2024/ArrayBuffer.prototype.transfer.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): ArrayBuffer.prototype.transfer.js(10) : Error: found 'const' instead of statement
+kangax-es2024/Map.groupBy.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Map.groupBy.js(10) : Error: found 'const' instead of statement
+kangax-es2024/Object.groupBy.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Object.groupBy.js(10) : Error: found 'const' instead of statement
+kangax-es2024/Promise.withResolvers.js: ReferenceError: Variable 'Promise' is not defined
+kangax-es2024/regex.flags.v.constructor.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2024/regex.flags.v.properties-of-strings.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2024/regex.flags.v.set-notations.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Variable 'Proxy' is not defined
+kangax-es2024/regex.flags.v.unicode-15.1.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2024/regex.flags.v.unicode-16.0.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2024/regex.flags.v.unicode-17.0.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): unrecognized attribute
+kangax-es2025/Iterator.extends.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.extends.js(10) : Error: found 'class' instead of statement
+kangax-es2025/Iterator.from.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.from.iterable.js(10) : Error: found 'const' instead of statement
+kangax-es2025/Iterator.from.iterator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.from.iterator.js(10) : Error: found 'const' instead of statement
+kangax-es2025/Iterator.instanceof.js: TypeError: Object 1,2,3.values is undefined and has no Call method
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'Iterator' is not defined
+kangax-es2025/Iterator.prototype.drop.js: TypeError: Object 1,2,3.values is undefined and has no Call method
+kangax-es2025/Iterator.prototype.every.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.every.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.filter.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.filter.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.find.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.find.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.flatMap.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.flatMap.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.forEach.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.forEach.js(10) : Error: found 'result' when expecting ';'
+kangax-es2025/Iterator.prototype.map.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.map.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.reduce.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.reduce.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.some.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.some.js(10) : Error: expression expected, not '>'
+kangax-es2025/Iterator.prototype.take.js: TypeError: Object 1,2,3.values is undefined and has no Call method
+kangax-es2025/Iterator.prototype.toArray.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Iterator.prototype.toArray.js(10) : Error: found 'const' instead of statement
+kangax-es2025/Promise.try.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Promise.try.js(50) : Error: identifier expected following '.', not 'try'
+kangax-es2025/RegExp.escape.js: TypeError: Object function RegExp() { [native code] }.escape is undefined and has no Call method
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/Set.prototype.union.js: ReferenceError: Variable 'Set' is not defined
+kangax-es2025/regex.duplicate-named-groups.js: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+kangax-es2025/regex.pattern-modifiers.i.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.pattern-modifiers.i.js(9) : Error: found 'const' instead of statement
+kangax-es2025/regex.pattern-modifiers.m.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.pattern-modifiers.m.js(9) : Error: found 'const' instead of statement
+kangax-es2025/regex.pattern-modifiers.s.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): regex.pattern-modifiers.s.js(9) : Error: found 'const' instead of statement
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.NumberFormat.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Variable 'Intl' is not defined
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Array.isTemplateObject.js(10) : Error: expression expected, not '>'
+kangax-next/AsyncDisposableStack.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncDisposableStack.js(47) : Error: found '[' when expecting ':'
+kangax-next/AsyncIterator.extends.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.extends.js(9) : Error: found 'class' instead of statement
+kangax-next/AsyncIterator.from.async-iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.from.async-iterable.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.from.iterable.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.from.iterable.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.from.iterator.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.from.iterator.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.instanceof.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.instanceof.js(9) : Error: found 'function' when expecting ''
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'AsyncIterator' is not defined
+kangax-next/AsyncIterator.prototype.drop.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.drop.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.prototype.every.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.every.js(44) : Error: found 'function' when expecting ''
+kangax-next/AsyncIterator.prototype.filter.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.filter.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.prototype.find.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.find.js(44) : Error: found 'function' when expecting ''
+kangax-next/AsyncIterator.prototype.flatMap.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.flatMap.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.prototype.forEach.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.forEach.js(44) : Error: found 'result' when expecting ';'
+kangax-next/AsyncIterator.prototype.map.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.map.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.prototype.reduce.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.reduce.js(44) : Error: found 'function' when expecting ''
+kangax-next/AsyncIterator.prototype.some.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.some.js(44) : Error: found 'function' when expecting ''
+kangax-next/AsyncIterator.prototype.take.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.take.js(44) : Error: found 'function' when expecting ';'
+kangax-next/AsyncIterator.prototype.toArray.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): AsyncIterator.prototype.toArray.js(44) : Error: found 'function' when expecting ''
+kangax-next/DisposableStack.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): DisposableStack.js(12) : Error: identifier expected
+kangax-next/Map.prototype.upsert.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Map.prototype.upsert.js(9) : Error: found 'const' instead of statement
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): SuppressedError.js(13) : Error: found '_1' when expecting ';'
+kangax-next/Uint8Array.fromBase64.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.fromBase64.js(10) : Error: found 'const' instead of statement
+kangax-next/Uint8Array.fromHex.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.fromHex.js(10) : Error: found 'const' instead of statement
+kangax-next/Uint8Array.setFromBase64.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.setFromBase64.js(10) : Error: found 'const' instead of statement
+kangax-next/Uint8Array.setFromHex.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.setFromHex.js(10) : Error: found 'const' instead of statement
+kangax-next/Uint8Array.toBase64.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.toBase64.js(10) : Error: found 'const' instead of statement
+kangax-next/Uint8Array.toHex.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): Uint8Array.toHex.js(10) : Error: found 'const' instead of statement
+kangax-next/WeakMap.prototype.upsert.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): WeakMap.prototype.upsert.js(9) : Error: found 'const' instead of statement
+kangax-next/await-using.for-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): await-using.for-of.js(46) : Error: found '[' when expecting ':'
+kangax-next/await-using.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): await-using.js(44) : Error: found 'function' when expecting ''
+kangax-next/class-decorators.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): class-decorators.js(9) : Error: found 'class' instead of statement
+kangax-next/function.sent.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): function.sent.js(10) : Error: found '*' when expecting '('
+kangax-next/throw-expr.arrow.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): throw-expr.arrow.js(9) : Error: expression expected, not ''
+kangax-next/throw-expr.conditional.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): throw-expr.conditional.js(9) : Error: expression expected, not 'throw'
+kangax-next/throw-expr.logical.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): throw-expr.logical.js(11) : Error: expression expected, not 'throw'
+kangax-next/throw-expr.param-init.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): throw-expr.param-init.js(9) : Error: found '=' when expecting ''
+kangax-next/using.for-of.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): using.for-of.js(11) : Error: identifier expected
+kangax-next/using.js: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): using.js(11) : Error: identifier expected

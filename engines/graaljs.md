@@ -37,7 +37,7 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 99%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 99%, Next 6%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
 <a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
@@ -56,5 +56,6 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
+<li>Next: 6%<br>
 <li>Intl: 100%</li>
 </ul></details>

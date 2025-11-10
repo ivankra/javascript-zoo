@@ -60,9 +60,9 @@ Small footprint embedded ES5 engine.
 <a href="../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: LOG: es5/Date.prototype.toJSON.js: invalid date does not return null LOG: es5/Date.prototype.toJSON.js: failed
 <a href="../conformance/es5/Function.prototype.apply.array-like.js">Function.prototype.apply.array-like.js</a>: exception TypeError:Value is not an array LOG: es5/Function.prototype.apply.array-like.js: array-like object not accepted LOG: es5/Function.prototype.apply.array-like.js: failed
 <a href="../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: LOG: es5/Function.prototype.bind.js: argument binding failed LOG: es5/Function.prototype.bind.js: length property incorrect LOG: es5/Function.prototype.bind.js: bound constructor failed LOG: es5/Function.prototype.bind.js: non-callable does not throw TypeError LOG: es5/Function.prototype.bind.js: fa
-<a href="../conformance/es5/JSON.parse.js">JSON.parse.js</a>: exception SyntaxError:Parse JSON error exception SyntaxError:Parse JSON error exception SyntaxError:Parse JSON error
-<a href="../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: LOG: es5/JSON.stringify.js: stringify object failed exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape fail
-<a href="../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: failed
+<a href="../conformance/es5/JSON.parse.js">JSON.parse.js</a>: exception SyntaxError:Parse JSON error
+<a href="../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
+<a href="../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: replacer array failed LOG: es5/JSON.stringify.replacer.js: failed
 <a href="../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
 <a href="../conformance/es5/Object.create.js">Object.create.js</a>: exception TypeError:Value is not an object
 <a href="../conformance/es5/Object.keys.js">Object.keys.js</a>: LOG: es5/Object.keys.js: basic keys failed LOG: es5/Object.keys.js: failed
@@ -70,14 +70,14 @@ Small footprint embedded ES5 engine.
 <a href="../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: LOG: es5/global.NaN.immutable.js: NaN is not a number after assignment LOG: es5/global.NaN.immutable.js: NaN === NaN after assignment LOG: es5/global.NaN.immutable.js: failed
 <a href="../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: LOG: es5/global.parseInt.no-octal.js: parseInt('010') !== 10 LOG: es5/global.parseInt.no-octal.js: parseInt('0100') !== 100 LOG: es5/global.parseInt.no-octal.js: parseInt('077') !== 77 LOG: es5/global.parseInt.no-octal.js: failed
 <a href="../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: LOG: es5/global.undefined.immutable.js: undefined is not undefined after assignment LOG: es5/global.undefined.immutable.js: failed
-<a href="../conformance/es5/literals.object.trailing-comma.js">literals.object.trailing-comma.js</a>: Error: 9.21: parse error, unexpected '}', expect "if" Error: 9.21: parse error, unexpected '}', expect "if" Error: 16.24: parse error, unexpected '}', expect "if" Error: 16.24: parse error, unexpected '}', expect "if" Error: 23.24: parse error, unexpected '}', expect "if" Error: 23.24: parse error,
+<a href="../conformance/es5/literals.object.trailing-comma.js">literals.object.trailing-comma.js</a>: Error: 9.21: parse error, unexpected '}', expect "if" Error: 16.24: parse error, unexpected '}', expect "if" Error: 23.24: parse error, unexpected '}', expect "if" exception SyntaxError:Syntax error
 <a href="../conformance/es5/strict.js">strict.js</a>: exception ReferenceError:Unresolved reference LOG: es5/strict.js: failed
 <a href="../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: exception SyntaxError:Cannot delete binding in strict mode LOG: es5/strict.no-delete-bindings.js: failed
 <a href="../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: Error: 1.5-8: "eval" cannot be a variant name Error: 1.9: parse error, unexpected ';', expect '=' exception SyntaxError:Syntax error Error: 1.5-13: "arguments" cannot be a variant name Error: 1.14: parse error, unexpected ';', expect '=' exception SyntaxError:Syntax error Error: 1.11-14: "eval" cann
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 3%, ES2016+ 3%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 3%, ES2016+ 3%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 3%, <b>1 crash</b><br>
 <li>ES2016: 0%<br>
 <li>ES2017: 8%<br>
@@ -89,6 +89,7 @@ Small footprint embedded ES5 engine.
 <li>ES2023: 0%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
+<li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>
 

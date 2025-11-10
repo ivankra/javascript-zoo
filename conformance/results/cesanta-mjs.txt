@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "binary_sha256": "bc7eae9cab6a1eb40bdc0b9c2b5b4fad9e0a7d99af1eaec79c11855b182c2468", "binary_size": 199512, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-mjs", "repository": "https://github.com/cesanta/mjs.git", "revision": "f4e6dfeda0158df2f73c4926de6c64420b416387", "revision_date": "2025-10-27", "version": "2.20.0-17-gf4e6dfe"}
+es1/Array.js: MJS error: [var] is not implemented
+es1/Array.length.assignment.js: MJS error: [var] is not implemented
+es1/Array.length.js: MJS error: [var] is not implemented
+es1/Array.prototype.constructor.js: MJS error: [var] is not implemented
+es1/Array.prototype.join.generic.js: MJS error: [var] is not implemented
+es1/Array.prototype.join.js: MJS error: [var] is not implemented
+es1/Array.prototype.reverse.generic.js: MJS error: [var] is not implemented
+es1/Array.prototype.reverse.js: MJS error: [var] is not implemented
+es1/Array.prototype.sort.generic.js: MJS error: [var] is not implemented
+es1/Array.prototype.sort.js: MJS error: [var] is not implemented
+es1/Array.prototype.toString.js: MJS error: [var] is not implemented
+es1/Boolean.js: MJS error: [var] is not implemented
+es1/Boolean.prototype.constructor.js: MJS error: [var] is not implemented
+es1/Boolean.prototype.toString.js: MJS error: [var] is not implemented
+es1/Boolean.prototype.valueOf.js: MJS error: [var] is not implemented
+es1/Date.diff.js: MJS error: [var] is not implemented
+es1/Date.js: MJS error: [var] is not implemented
+es1/Date.prototype.constructor.js: MJS error: [Date] is not defined
+es1/Date.prototype.getDate.js: MJS error: [var] is not implemented
+es1/Date.prototype.getDay.js: MJS error: [var] is not implemented
+es1/Date.prototype.getFullYear.js: MJS error: [var] is not implemented
+es1/Date.prototype.getHours.js: MJS error: [var] is not implemented
+es1/Date.prototype.getMilliseconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.getMinutes.js: MJS error: [var] is not implemented
+es1/Date.prototype.getMonth.js: MJS error: [var] is not implemented
+es1/Date.prototype.getSeconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.getTimezoneOffset.js: MJS error: [var] is not implemented
+es1/Date.prototype.getTime.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCDate.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCDay.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCFullYear.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCHours.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCMilliseconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCMinutes.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCMonth.js: MJS error: [var] is not implemented
+es1/Date.prototype.getUTCSeconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.setDate.js: MJS error: [var] is not implemented
+es1/Date.prototype.setFullYear.js: MJS error: [var] is not implemented
+es1/Date.prototype.setHours.js: MJS error: [var] is not implemented
+es1/Date.prototype.setMilliseconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.setMinutes.js: MJS error: [var] is not implemented
+es1/Date.prototype.setMonth.js: MJS error: [var] is not implemented
+es1/Date.prototype.setSeconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.setTime.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCDate.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCFullYear.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCHours.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCMilliseconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCMinutes.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCMonth.js: MJS error: [var] is not implemented
+es1/Date.prototype.setUTCSeconds.js: MJS error: [var] is not implemented
+es1/Date.prototype.toLocaleString.js: MJS error: [var] is not implemented
+es1/Date.prototype.toString.js: MJS error: [var] is not implemented
+es1/Date.prototype.toUTCString.js: MJS error: [var] is not implemented
+es1/Date.prototype.valueOf.js: MJS error: [var] is not implemented
+es1/Function.js: MJS error: [var] is not implemented
+es1/Function.length.js: MJS error: [var] is not implemented
+es1/Function.prototype.constructor.js: MJS error: [var] is not implemented
+es1/Function.prototype.js: MJS error: [var] is not implemented
+es1/Function.prototype.toString.js: MJS error: [var] is not implemented
+es1/Math.E.js: MJS error: [Math] is not defined
+es1/Math.LN2.js: MJS error: [Math] is not defined
+es1/Math.LN10.js: MJS error: [Math] is not defined
+es1/Math.LOG2E.js: MJS error: [Math] is not defined
+es1/Math.LOG10E.js: MJS error: [Math] is not defined
+es1/Math.PI.js: MJS error: [Math] is not defined
+es1/Math.SQRT1_2.js: MJS error: [Math] is not defined
+es1/Math.SQRT2.js: MJS error: [Math] is not defined
+es1/Math.abs.js: MJS error: [Math] is not defined
+es1/Math.acos.js: MJS error: [Math] is not defined
+es1/Math.asin.js: MJS error: [Math] is not defined
+es1/Math.atan2.js: MJS error: [Math] is not defined
+es1/Math.atan.js: MJS error: [Math] is not defined
+es1/Math.ceil.js: MJS error: [Math] is not defined
+es1/Math.cos.js: MJS error: [Math] is not defined
+es1/Math.exp.js: MJS error: [Math] is not defined
+es1/Math.floor.js: MJS error: [Math] is not defined
+es1/Math.log.js: MJS error: [Math] is not defined
+es1/Math.max.js: MJS error: [Math] is not defined
+es1/Math.min.js: MJS error: [Math] is not defined
+es1/Math.pow.js: MJS error: [Math] is not defined
+es1/Math.random.js: MJS error: [var] is not implemented
+es1/Math.round.js: MJS error: [Math] is not defined
+es1/Math.sin.js: MJS error: [Math] is not defined
+es1/Math.sqrt.js: MJS error: [Math] is not defined
+es1/Math.tan.js: MJS error: [Math] is not defined
+es1/Number.MAX_VALUE.js: MJS error: [Number] is not defined
+es1/Number.MIN_VALUE.js: MJS error: [Number] is not defined
+es1/Number.NEGATIVE_INFINITY.js: MJS error: [Number] is not defined
+es1/Number.NaN.js: MJS error: [var] is not implemented
+es1/Number.POSITIVE_INFINITY.js: MJS error: [var] is not implemented
+es1/Number.js: MJS error: [var] is not implemented
+es1/Number.prototype.constructor.js: MJS error: [var] is not implemented
+es1/Number.prototype.toString.js: MJS error: [var] is not implemented
+es1/Number.prototype.valueOf.js: MJS error: [var] is not implemented
+es1/Object.js: MJS error: [var] is not implemented
+es1/Object.prototype.constructor.js: MJS error: [var] is not implemented
+es1/Object.prototype.toString.js: MJS error: [var] is not implemented
+es1/Object.prototype.valueOf.js: MJS error: [var] is not implemented
+es1/String.fromCharCode.js: MJS error: [var] is not implemented
+es1/String.generics.js: MJS error: [var] is not implemented
+es1/String.js: MJS error: [var] is not implemented
+es1/String.length.js: MJS error: [var] is not implemented
+es1/String.prototype.charAt.js: MJS error: [var] is not implemented
+es1/String.prototype.charCodeAt.js: MJS error: [var] is not implemented
+es1/String.prototype.constructor.js: MJS error: [var] is not implemented
+es1/String.prototype.indexOf.js: MJS error: [var] is not implemented
+es1/String.prototype.lastIndexOf.js: MJS error: [var] is not implemented
+es1/String.prototype.split.js: MJS error: [var] is not implemented
+es1/String.prototype.substring.js: MJS error: [var] is not implemented
+es1/String.prototype.toLowerCase.js: MJS error: [var] is not implemented
+es1/String.prototype.toString.js: MJS error: [var] is not implemented
+es1/String.prototype.toUpperCase.js: MJS error: [var] is not implemented
+es1/String.prototype.valueOf.js: MJS error: [var] is not implemented
+es1/annex-b.Date.prototype.getYear.js: MJS error: [var] is not implemented
+es1/annex-b.Date.prototype.setYear.js: MJS error: [var] is not implemented
+es1/annex-b.Date.prototype.toGMTString.js: MJS error: [var] is not implemented
+es1/annex-b.global.escape.js: MJS error: [var] is not implemented
+es1/annex-b.global.unescape.js: MJS error: [var] is not implemented
+es1/annex-b.literals.octal.js: MJS error: [var] is not implemented
+es1/annex-b.literals.string.octal.js: MJS error: Use ===, not ==
+es1/arguments.callee.js: MJS error: [var] is not implemented
+es1/arguments.js: MJS error: [var] is not implemented
+es1/asi.eval.js: MJS error: [var] is not implemented
+es1/asi.js: MJS error: [var] is not implemented
+es1/assignment.bitwise.js: MJS error: [var] is not implemented
+es1/assignment.js: MJS error: [var] is not implemented
+es1/assignment.ltr.js: MJS error: [var] is not implemented
+es1/assignment.unsigned-shift.js: MJS error: [var] is not implemented
+es1/bitwise.binary.js: MJS error: [var] is not implemented
+es1/bitwise.shifts.js: MJS error: [var] is not implemented
+es1/bitwise.tilde.js: MJS error: [var] is not implemented
+es1/bitwise.unsigned-shift.js: MJS error: [var] is not implemented
+es1/break.js: MJS error: [var] is not implemented
+es1/comma.js: MJS error: [var] is not implemented
+es1/comments.js: MJS error: [console] is not defined
+es1/conditional.js: MJS error: [var] is not implemented
+es1/continue.js: MJS error: [var] is not implemented
+es1/conversions.ToBoolean.js: MJS error: [var] is not implemented
+es1/conversions.ToInt32.js: MJS error: [var] is not implemented
+es1/conversions.ToInteger.js: MJS error: [var] is not implemented
+es1/conversions.ToNumber.js: MJS error: [var] is not implemented
+es1/conversions.ToObject.js: MJS error: [var] is not implemented
+es1/conversions.ToString.js: MJS error: [var] is not implemented
+es1/conversions.ToUint32.js: MJS error: [var] is not implemented
+es1/conversions.js: MJS error: [var] is not implemented
+es1/equals.js: MJS error: [var] is not implemented
+es1/eval.js: MJS error: [var] is not implemented
+es1/for-in.js: MJS error: [var] is not implemented
+es1/for.js: MJS error: [var] is not implemented
+es1/function.js: MJS error: [var] is not implemented
+es1/global.Infinity.js: MJS error: [var] is not implemented
+es1/global.NaN.js: MJS error: [var] is not implemented
+es1/global.isFinite.js: MJS error: [var] is not implemented
+es1/global.isNaN.js: MJS error: [var] is not implemented
+es1/global.parseFloat.js: MJS error: [var] is not implemented
+es1/global.parseInt.hex.js: MJS error: [var] is not implemented
+es1/global.parseInt.js: MJS error: [var] is not implemented
+es1/global.parseInt.radix.js: MJS error: [var] is not implemented
+es1/literals.decimal.js: MJS error: [var] is not implemented
+es1/literals.hex.js: MJS error: [var] is not implemented
+es1/literals.string.escapes.js: MJS error: [var] is not implemented
+es1/literals.string.hex.js: MJS error: Use ===, not ==
+es1/literals.string.js: MJS error: Use ===, not ==
+es1/literals.string.unicode.js: MJS error: Use ===, not ==
+es1/logical.js: MJS error: [var] is not implemented
+es1/new.typeof.js: MJS error: [var] is not implemented
+es1/numbers.double.js: MJS error: [var] is not implemented
+es1/numbers.fmod.js: MJS error: [var] is not implemented
+es1/numbers.inf.js: MJS error: [var] is not implemented
+es1/numbers.int.js: MJS error: [var] is not implemented
+es1/numbers.nan.js: MJS error: [var] is not implemented
+es1/postfix.decrement.js: MJS error: [var] is not implemented
+es1/postfix.increment.js: MJS error: [var] is not implemented
+es1/prefix.js: MJS error: [var] is not implemented
+es1/relational.js: MJS error: [var] is not implemented
+es1/return.js: MJS error: [var] is not implemented
+es1/return.typeof.js: MJS error: [var] is not implemented
+es1/this.js: MJS error: [var] is not implemented
+es1/typeof.js: MJS error: [var] is not implemented
+es1/typeof.null.js: MJS error: [var] is not implemented
+es1/typeof.undeclared.js: MJS error: [var] is not implemented
+es1/types.js: MJS error: [var] is not implemented
+es1/unary.decrement.js: MJS error: [var] is not implemented
+es1/unary.delete.js: MJS error: [var] is not implemented
+es1/unary.delete.var.js: MJS error: [delete] is not implemented
+es1/unary.increment.js: MJS error: [var] is not implemented
+es1/unary.minus.js: MJS error: [var] is not implemented
+es1/unary.not.js: MJS error: [var] is not implemented
+es1/unary.plus.js: MJS error: [var] is not implemented
+es1/unary.plus.str.js: MJS error: [var] is not implemented
+es1/unary.tilde.js: MJS error: [var] is not implemented
+es1/var.js: MJS error: [var] is not implemented
+es1/var.typeof.js: MJS error: [var] is not implemented
+es1/void.js: MJS error: [var] is not implemented
+es1/void.typeof.js: MJS error: [var] is not implemented
+es1/while.js: MJS error: [var] is not implemented
+es1/with.js: MJS error: [var] is not implemented
+es3/Array.prototype.concat.js: MJS error: [var] is not implemented
+es3/Array.prototype.pop.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.pop.js: MJS error: [var] is not implemented
+es3/Array.prototype.push.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.push.js: MJS error: [var] is not implemented
+es3/Array.prototype.shift.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.shift.js: MJS error: [var] is not implemented
+es3/Array.prototype.slice.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.slice.js: MJS error: [var] is not implemented
+es3/Array.prototype.splice.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.splice.js: MJS error: [var] is not implemented
+es3/Array.prototype.toLocaleString.js: MJS error: [var] is not implemented
+es3/Array.prototype.unshift.generic.js: MJS error: [var] is not implemented
+es3/Array.prototype.unshift.js: MJS error: [var] is not implemented
+es3/Array.prototype.unshift.returns-new-length.js: MJS error: [var] is not implemented
+es3/Date.prototype.toDateString.js: MJS error: [var] is not implemented
+es3/Date.prototype.toLocaleDateString.js: MJS error: [var] is not implemented
+es3/Date.prototype.toLocaleString.js: MJS error: [var] is not implemented
+es3/Date.prototype.toLocaleTimeString.js: MJS error: [var] is not implemented
+es3/Date.prototype.toTimeString.js: MJS error: [var] is not implemented
+es3/Error.js: MJS error: [var] is not implemented
+es3/Error.prototype.constructor.js: at es3/Error.prototype.constructor.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.message.js: at es3/Error.prototype.message.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.name.js: at es3/Error.prototype.name.js:6 MJS error: [Error] is not defined
+es3/Error.prototype.toString.js: MJS error: [var] is not implemented
+es3/Function.prototype.apply.js: MJS error: [var] is not implemented
+es3/Function.prototype.call.js: MJS error: [var] is not implemented
+es3/Math.max.variadic.js: MJS error: [var] is not implemented
+es3/Math.min.variadic.js: MJS error: [var] is not implemented
+es3/Number.prototype.toExponential.edge-cases.js: MJS error: [var] is not implemented
+es3/Number.prototype.toExponential.js: MJS error: [var] is not implemented
+es3/Number.prototype.toExponential.rounding.js: MJS error: [var] is not implemented
+es3/Number.prototype.toExponential.throws-infinity.js: MJS error: [var] is not implemented
+es3/Number.prototype.toFixed.js: MJS error: [var] is not implemented
+es3/Number.prototype.toLocaleString.js: MJS error: [var] is not implemented
+es3/Number.prototype.toPrecision.js: MJS error: [var] is not implemented
+es3/Object.prototype.hasOwnProperty.js: MJS error: [var] is not implemented
+es3/Object.prototype.isPrototypeOf.js: MJS error: [var] is not implemented
+es3/Object.prototype.propertyIsEnumerable.js: MJS error: [var] is not implemented
+es3/Object.prototype.toLocaleString.js: MJS error: [var] is not implemented
+es3/RegExp.global.js: MJS error: [var] is not implemented
+es3/RegExp.ignoreCase.js: MJS error: [var] is not implemented
+es3/RegExp.js: MJS error: [var] is not implemented
+es3/RegExp.lastIndex.js: MJS error: [var] is not implemented
+es3/RegExp.multiline.js: MJS error: [var] is not implemented
+es3/RegExp.prototype.constructor.js: MJS error: [RegExp] is not defined
+es3/RegExp.prototype.exec.js: MJS error: [var] is not implemented
+es3/RegExp.prototype.test.js: MJS error: [var] is not implemented
+es3/RegExp.prototype.toString.js: MJS error: [var] is not implemented
+es3/RegExp.source.js: MJS error: [var] is not implemented
+es3/String.prototype.concat.generic.js: MJS error: [var] is not implemented
+es3/String.prototype.concat.js: MJS error: [var] is not implemented
+es3/String.prototype.localeCompare.js: MJS error: [var] is not implemented
+es3/String.prototype.match.generic.js: MJS error: [var] is not implemented
+es3/String.prototype.match.js: MJS error: [var] is not implemented
+es3/String.prototype.replace.capture.js: MJS error: [var] is not implemented
+es3/String.prototype.replace.extra.js: MJS error: [var] is not implemented
+es3/String.prototype.replace.generic.js: MJS error: [var] is not implemented
+es3/String.prototype.replace.regex.js: MJS error: [var] is not implemented
+es3/String.prototype.replace.str.js: MJS error: [var] is not implemented
+es3/String.prototype.search.generic.js: MJS error: [var] is not implemented
+es3/String.prototype.search.js: MJS error: [var] is not implemented
+es3/String.prototype.search.str.js: MJS error: [var] is not implemented
+es3/String.prototype.slice.generic.js: MJS error: [var] is not implemented
+es3/String.prototype.slice.js: MJS error: [var] is not implemented
+es3/String.prototype.split.bugs.js: MJS error: [var] is not implemented
+es3/String.prototype.split.limit.js: MJS error: [var] is not implemented
+es3/String.prototype.split.regex.js: MJS error: [var] is not implemented
+es3/String.prototype.toLocaleLowerCase.js: MJS error: [var] is not implemented
+es3/String.prototype.toLocaleUpperCase.js: MJS error: [var] is not implemented
+es3/annex-b.String.prototype.substr.js: MJS error: [var] is not implemented
+es3/do-while.js: MJS error: [var] is not implemented
+es3/function-expressions.IIFE.js: MJS error: [var] is not implemented
+es3/function-expressions.js: MJS error: [var] is not implemented
+es3/global.EvalError.js: MJS error: [var] is not implemented
+es3/global.RangeError.js: MJS error: [var] is not implemented
+es3/global.RangeError.thrown.js: MJS error: [var] is not implemented
+es3/global.ReferenceError.js: MJS error: [var] is not implemented
+es3/global.ReferenceError.thrown.js: MJS error: [var] is not implemented
+es3/global.SyntaxError.js: MJS error: [var] is not implemented
+es3/global.SyntaxError.thrown.js: MJS error: [var] is not implemented
+es3/global.TypeError.js: MJS error: [var] is not implemented
+es3/global.TypeError.thrown.js: MJS error: [var] is not implemented
+es3/global.URIError.js: MJS error: [var] is not implemented
+es3/global.URIError.thrown.js: MJS error: [var] is not implemented
+es3/global.decodeURIComponent.js: MJS error: [var] is not implemented
+es3/global.decodeURI.js: MJS error: [var] is not implemented
+es3/global.encodeURIComponent.js: MJS error: [var] is not implemented
+es3/global.encodeURI.js: MJS error: [var] is not implemented
+es3/global.undefined.js: MJS error: Use ===, not ==
+es3/identifiers.unicode.js: MJS error: [var] is not implemented
+es3/instanceof.js: MJS error: [var] is not implemented
+es3/in.js: MJS error: [var] is not implemented
+es3/labelled.break.js: MJS error: [var] is not implemented
+es3/labelled.continue.js: MJS error: [var] is not implemented
+es3/labelled.statements.js: MJS error: [var] is not implemented
+es3/literals.array.elisions.js: MJS error: [var] is not implemented
+es3/literals.array.js: MJS error: [var] is not implemented
+es3/literals.array.trailing-comma.js: MJS error: [var] is not implemented
+es3/literals.object.decimal.js: MJS error: [var] is not implemented
+es3/literals.object.hex.js: MJS error: [var] is not implemented
+es3/literals.object.int.js: MJS error: [var] is not implemented
+es3/literals.object.js: MJS error: [var] is not implemented
+es3/literals.object.str.js: MJS error: [var] is not implemented
+es3/literals.object.unicode.js: MJS error: [var] is not implemented
+es3/literals.regex.ambiguous.js: MJS error: [var] is not implemented
+es3/literals.regex.empty.js: MJS error: [var] is not implemented
+es3/literals.regex.js: MJS error: [var] is not implemented
+es3/literals.string.esc-v.js: MJS error: Use ===, not ==
+es3/nested-functions.eval.js: MJS error: [var] is not implemented
+es3/nested-functions.js: MJS error: [var] is not implemented
+es3/regex.backref.js: MJS error: [var] is not implemented
+es3/regex.begin.js: MJS error: [var] is not implemented
+es3/regex.bracket.esc-b.js: MJS error: parse error at line 7: [/[\b]/.tes]
+es3/regex.bracket.js: MJS error: [var] is not implemented
+es3/regex.bracket.ranges.js: MJS error: [var] is not implemented
+es3/regex.class.esc-d.js: MJS error: [var] is not implemented
+es3/regex.class.esc-s.js: MJS error: [var] is not implemented
+es3/regex.class.esc-w.js: MJS error: [var] is not implemented
+es3/regex.disjunction.js: MJS error: [var] is not implemented
+es3/regex.dot.js: MJS error: [var] is not implemented
+es3/regex.end.js: MJS error: [var] is not implemented
+es3/regex.escape.control.js: MJS error: [var] is not implemented
+es3/regex.escape.hex.js: MJS error: [var] is not implemented
+es3/regex.escape.js: MJS error: [var] is not implemented
+es3/regex.escape.nul.js: MJS error: [var] is not implemented
+es3/regex.escape.unicode.js: MJS error: [var] is not implemented
+es3/regex.flag.global.js: MJS error: [var] is not implemented
+es3/regex.flag.ignorecase.js: MJS error: [var] is not implemented
+es3/regex.flag.multiline.js: MJS error: [var] is not implemented
+es3/regex.group.js: MJS error: [var] is not implemented
+es3/regex.lookahead.js: MJS error: [var] is not implemented
+es3/regex.negative-lookahead.js: MJS error: [var] is not implemented
+es3/regex.non-capturing-group.js: MJS error: [var] is not implemented
+es3/regex.quantifier.exact.js: MJS error: [var] is not implemented
+es3/regex.quantifier.maybe.js: MJS error: [var] is not implemented
+es3/regex.quantifier.min.js: MJS error: [var] is not implemented
+es3/regex.quantifier.plus.js: MJS error: [var] is not implemented
+es3/regex.quantifier.range.js: MJS error: [var] is not implemented
+es3/regex.quantifier.star.js: MJS error: [var] is not implemented
+es3/regex.word-boundary.js: MJS error: [var] is not implemented
+es3/source.line-terminators.js: MJS error: [var] is not implemented
+es3/source.whitespace.js: MJS error: [var] is not implemented
+es3/source.whitespace.unicode.js: MJS error: [var] is not implemented
+es3/strict-equals.js: MJS error: [var] is not implemented
+es3/switch.js: MJS error: [var] is not implemented
+es3/try-catch-finally.js: MJS error: [var] is not implemented
+es3/try-catch-throw.js: MJS error: [var] is not implemented
+es5/Array.isArray.js: MJS error: [var] is not implemented
+es5/Array.prototype.every.js: MJS error: [var] is not implemented
+es5/Array.prototype.filter.js: MJS error: [var] is not implemented
+es5/Array.prototype.forEach.js: MJS error: [var] is not implemented
+es5/Array.prototype.indexOf.js: MJS error: [var] is not implemented
+es5/Array.prototype.lastIndexOf.js: MJS error: [var] is not implemented
+es5/Array.prototype.map.js: MJS error: [var] is not implemented
+es5/Array.prototype.reduceRight.js: MJS error: [var] is not implemented
+es5/Array.prototype.reduce.js: MJS error: [var] is not implemented
+es5/Array.prototype.some.js: MJS error: [var] is not implemented
+es5/Array.prototype.sort.TypeError.js: MJS error: [var] is not implemented
+es5/Array.prototype.sort.undefined-comparefn.js: MJS error: [var] is not implemented
+es5/Date.now.js: MJS error: [var] is not implemented
+es5/Date.prototype.toISOString.js: MJS error: [var] is not implemented
+es5/Date.prototype.toJSON.js: MJS error: [var] is not implemented
+es5/Function.prototype-not-enumerable.js: MJS error: [var] is not implemented
+es5/Function.prototype.apply.array-like.js: MJS error: [var] is not implemented
+es5/Function.prototype.bind.js: MJS error: [var] is not implemented
+es5/JSON.js: MJS error: [console] is not defined
+es5/JSON.parse.js: MJS error: parse error at line 10: [var ok = 1]
+es5/JSON.parse.reviver.js: MJS error: parse error at line 10: [var ok = 1]
+es5/JSON.stringify.js: MJS error: parse error at line 10: [var ok = 1]
+es5/JSON.stringify.replacer.js: MJS error: parse error at line 10: [var ok = 1]
+es5/JSON.stringify.space.js: MJS error: parse error at line 10: [var ok = 1]
+es5/Object.create.js: MJS error: [var] is not implemented
+es5/Object.defineProperties.js: MJS error: [var] is not implemented
+es5/Object.defineProperty.js: MJS error: [var] is not implemented
+es5/Object.freeze.js: MJS error: [var] is not implemented
+es5/Object.getOwnPropertyDescriptor.js: MJS error: [var] is not implemented
+es5/Object.getOwnPropertyNames.js: MJS error: [var] is not implemented
+es5/Object.getPrototypeOf.js: MJS error: [var] is not implemented
+es5/Object.isExtensible.js: MJS error: [var] is not implemented
+es5/Object.isFrozen.js: MJS error: [var] is not implemented
+es5/Object.isSealed.js: MJS error: [var] is not implemented
+es5/Object.keys.js: MJS error: [var] is not implemented
+es5/Object.preventExtensions.js: MJS error: [var] is not implemented
+es5/Object.property-shadowing.js: MJS error: [var] is not implemented
+es5/Object.seal.js: MJS error: [var] is not implemented
+es5/String.indexing.js: MJS error: [var] is not implemented
+es5/String.prototype.trim.js: MJS error: [var] is not implemented
+es5/arguments.toStringTag.js: MJS error: [var] is not implemented
+es5/debugger.js: MJS error: parse error at line 7: [debugger
+es5/global.Infinity.immutable.js: MJS error: [var] is not implemented
+es5/global.NaN.immutable.js: MJS error: [var] is not implemented
+es5/global.parseInt.no-octal.js: MJS error: [var] is not implemented
+es5/global.undefined.immutable.js: MJS error: [var] is not implemented
+es5/literals.object.getters.js: MJS error: [var] is not implemented
+es5/literals.object.setters.js: MJS error: [var] is not implemented
+es5/literals.object.trailing-comma.js: MJS error: [var] is not implemented
+es5/source.keyword-properties.js: MJS error: [var] is not implemented
+es5/source.unreserved-words.js: MJS error: [var] is not implemented
+es5/source.whitespace.bom.js: MJS error: parse error at line 1: [﻿// ES5:]
+es5/source.zero-width-chars.js: MJS error: [var] is not implemented
+es5/strict.eval-cannot-create-bindings.js: MJS error: [var] is not implemented
+es5/strict.function-expr-with-matching-name.js: MJS error: [var] is not implemented
+es5/strict.js: MJS error: [var] is not implemented
+es5/strict.no-arguments-callee.js: MJS error: [var] is not implemented
+es5/strict.no-arguments-caller.js: MJS error: [var] is not implemented
+es5/strict.no-assignment-to-non-writable.js: MJS error: [var] is not implemented
+es5/strict.no-assignment-to-unresolvable.js: MJS error: [var] is not implemented
+es5/strict.no-delete-bindings.js: MJS error: [var] is not implemented
+es5/strict.no-delete-non-configurable.js: MJS error: [var] is not implemented
+es5/strict.no-duplicate-parameters.js: MJS error: [var] is not implemented
+es5/strict.no-eval-or-arguments-assignment.js: MJS error: [var] is not implemented
+es5/strict.no-eval-or-arguments-bindings.js: MJS error: [var] is not implemented
+es5/strict.no-function-caller-or-arguments.js: MJS error: [var] is not implemented
+es5/strict.no-octal-literals.js: MJS error: [var] is not implemented
+es5/strict.no-with.js: MJS error: [var] is not implemented
+es5/strict.reserved-words.js: MJS error: [var] is not implemented
+es5/strict.this-primitive-not-coerced-in-accessors.js: MJS error: [var] is not implemented
+es5/strict.this-primitive-not-coerced.js: MJS error: [var] is not implemented
+es5/strict.this-undefined-in-function.js: MJS error: [var] is not implemented
+es5/strict.unmapped-arguments.js: MJS error: [var] is not implemented
+es5/this.thrown-function.js: MJS error: [var] is not implemented
+kangax-es5/Array.isArray.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.every.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.filter.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.forEach.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.indexOf.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.lastIndexOf.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.map.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.reduceRight.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.reduce.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.some.js: MJS error: [try] is not implemented
+kangax-es5/Array.prototype.sort.compareFn-type.js: MJS error: parse error at line 8: [try {
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: MJS error: parse error at line 8: [try {
+kangax-es5/Array.prototype.unshift.return-count.js: MJS error: [try] is not implemented
+kangax-es5/Date.now.js: MJS error: [try] is not implemented
+kangax-es5/Date.prototype.toISOString.js: MJS error: [try] is not implemented
+kangax-es5/Date.prototype.toJSON.js: MJS error: parse error at line 9: [try {
+kangax-es5/Function.prototype.bind.js: MJS error: [try] is not implemented
+kangax-es5/JSON.js: MJS error: [try] is not implemented
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: MJS error: parse error at line 8: [try {
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: MJS error: [try] is not implemented
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: MJS error: parse error at line 8: [try {
+kangax-es5/Object.create.js: MJS error: [try] is not implemented
+kangax-es5/Object.defineProperties.js: MJS error: [try] is not implemented
+kangax-es5/Object.defineProperty.js: MJS error: [try] is not implemented
+kangax-es5/Object.freeze.js: MJS error: [try] is not implemented
+kangax-es5/Object.getOwnPropertyDescriptor.js: MJS error: [try] is not implemented
+kangax-es5/Object.getOwnPropertyNames.js: MJS error: [try] is not implemented
+kangax-es5/Object.getPrototypeOf.js: MJS error: [try] is not implemented
+kangax-es5/Object.isExtensible.js: MJS error: [try] is not implemented
+kangax-es5/Object.isFrozen.js: MJS error: [try] is not implemented
+kangax-es5/Object.isSealed.js: MJS error: [try] is not implemented
+kangax-es5/Object.keys.js: MJS error: [try] is not implemented
+kangax-es5/Object.preventExtensions.js: MJS error: [try] is not implemented
+kangax-es5/Object.seal.js: MJS error: [try] is not implemented
+kangax-es5/String.property-access.js: MJS error: [try] is not implemented
+kangax-es5/String.prototype.split.js: MJS error: parse error at line 16: [/(?:ab)*/)]
+kangax-es5/String.prototype.trim.js: MJS error: [try] is not implemented
+kangax-es5/annex-b.String.prototype.substr.js: MJS error: [try] is not implemented
+kangax-es5/immutable-globals.Infinity.js: MJS error: parse error at line 9: [var result]
+kangax-es5/immutable-globals.NaN.js: MJS error: parse error at line 9: [var result]
+kangax-es5/immutable-globals.undefined.js: MJS error: parse error at line 9: [var result]
+kangax-es5/literals.getter-accessors.js: MJS error: parse error at line 8: [(){ return]
+kangax-es5/literals.reserved-words-properties.js: MJS error: parse error at line 8: [: 1 }).if ]
+kangax-es5/literals.setter-accessors.js: MJS error: parse error at line 8: [var value ]
+kangax-es5/literals.trailing-comma-array.js: MJS error: [try] is not implemented
+kangax-es5/literals.trailing-comma-object.js: MJS error: [try] is not implemented
+kangax-es5/misc.Arguments.toStringTag.js: MJS error: [try] is not implemented
+kangax-es5/misc.Function.apply.array-likes.js: MJS error: parse error at line 8: [try {
+kangax-es5/misc.Function.prototype.non-enumerable.js: MJS error: [try] is not implemented
+kangax-es5/misc.enumerable-shadow.js: MJS error: parse error at line 8: [var result]
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: MJS error: [try] is not implemented
+kangax-es5/misc.thrown-functions-this.js: MJS error: parse error at line 8: [try {
+kangax-es5/misc.unreserved-words.js: MJS error: parse error at line 8: [var abstra]
+kangax-es5/misc.zero-width-identifiers.js: MJS error: parse error at line 8: [var _\u200]
+kangax-es5/strict.arguments-callee-error.js: MJS error: parse error at line 10: [try { argu]
+kangax-es5/strict.arguments-caller-error.js: MJS error: parse error at line 10: [in argumen]
+kangax-es5/strict.arguments-unmapped.js: MJS error: [try] is not implemented
+kangax-es5/strict.assignment-eval-arguments-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.assignment-non-writable-error.js: MJS error: parse error at line 10: [try { Obje]
+kangax-es5/strict.assignment-unresolvable-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.delete-bindings-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.delete-non-configurable-error.js: MJS error: parse error at line 10: [try { dele]
+kangax-es5/strict.eval-arguments-bindings-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.eval-no-bindings.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.function-caller-arguments-error.js: MJS error: parse error at line 10: [try { (fun]
+kangax-es5/strict.function-expr-matching-name-arg.js: MJS error: parse error at line 9: [var foo = ]
+kangax-es5/strict.legacy-octal-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.repeated-params-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es5/strict.reserved-words.js: MJS error: parse error at line 10: [var words ]
+kangax-es5/strict.this-not-coerced-accessors.js: MJS error: parse error at line 18: [var passed]
+kangax-es5/strict.this-not-coerced-methods.js: MJS error: [try] is not implemented
+kangax-es5/strict.this-undefined.js: MJS error: parse error at line 10: [void undef]
+kangax-es5/strict.with-error.js: MJS error: parse error at line 10: [try { eval]
+kangax-es6/Array.Symbol.species.js: MJS error: parse error at line 10: [var prop =]
+kangax-es6/Array.from.array-like.js: MJS error: parse error at line 10: [: "foo", 1]
+kangax-es6/Array.from.generator.js: MJS error: parse error at line 9: [var iterab]
+kangax-es6/Array.from.iterable-instance.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/Array.from.iterable.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/Array.from.iterator-closing.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/Array.from.map.array-like.js: MJS error: parse error at line 9: [: "foo", 1]
+kangax-es6/Array.from.map.generator.js: MJS error: parse error at line 9: [var iterab]
+kangax-es6/Array.from.map.iterable-instance.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/Array.from.map.iterable.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/Array.iterator-prototype-chain.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/Array.of.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.Symbol.iterator.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.Symbol.unscopables.js: MJS error: parse error at line 10: [var unscop]
+kangax-es6/Array.prototype.copyWithin.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.entries.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.fill.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.findIndex.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.find.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.keys.js: MJS error: [try] is not implemented
+kangax-es6/Array.prototype.splice.js: MJS error: parse error at line 15: [var a = [1]
+kangax-es6/Array.prototype.values.js: MJS error: [try] is not implemented
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: MJS error: parse error at line 10: [var tp = D]
+kangax-es6/Function.name.accessor.js: MJS error: parse error at line 10: [var o = { ]
+kangax-es6/Function.name.bound.js: MJS error: [try] is not implemented
+kangax-es6/Function.name.class-expression.js: MJS error: parse error at line 10: [.name === ]
+kangax-es6/Function.name.class-object-method.js: MJS error: parse error at line 10: [var o = { ]
+kangax-es6/Function.name.class-prototype.js: MJS error: parse error at line 11: [new C).foo]
+kangax-es6/Function.name.class-statement.js: MJS error: [try] is not implemented
+kangax-es6/Function.name.class-static.js: MJS error: [try] is not implemented
+kangax-es6/Function.name.class-variable.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es6/Function.name.configurable.js: MJS error: parse error at line 10: [var descri]
+kangax-es6/Function.name.expression.js: MJS error: [try] is not implemented
+kangax-es6/Function.name.new-Function.js: MJS error: parse error at line 10: [new Functi]
+kangax-es6/Function.name.object-method.js: MJS error: parse error at line 10: [var o = { ]
+kangax-es6/Function.name.shorthand.js: MJS error: parse error at line 10: [var o = { ]
+kangax-es6/Function.name.shorthand.no-lexical.js: MJS error: parse error at line 10: [var f = "f]
+kangax-es6/Function.name.statement.js: MJS error: [try] is not implemented
+kangax-es6/Function.name.symbol-keyed.js: MJS error: parse error at line 10: [var sym1 =]
+kangax-es6/Function.name.variable.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es6/Map.Symbol.species.js: MJS error: parse error at line 10: [var prop =]
+kangax-es6/Map.constructor-accepts-null.js: MJS error: parse error at line 10: [new Map(nu]
+kangax-es6/Map.constructor-arguments.js: MJS error: parse error at line 10: [var key1 =]
+kangax-es6/Map.constructor-invokes-set.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Map.constructor-requires-new.js: MJS error: parse error at line 10: [new Map();]
+kangax-es6/Map.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/Map.iterator-prototype-chain.js: MJS error: parse error at line 11: [var iterat]
+kangax-es6/Map.js: MJS error: parse error at line 10: [var key = ]
+kangax-es6/Map.prototype-not-instance.js: MJS error: parse error at line 10: [new Map();]
+kangax-es6/Map.prototype.Symbol.iterator.js: MJS error: [try] is not implemented
+kangax-es6/Map.prototype.clear.js: MJS error: [try] is not implemented
+kangax-es6/Map.prototype.delete.js: MJS error: parse error at line 10: [delete ===]
+kangax-es6/Map.prototype.entries.js: MJS error: [try] is not implemented
+kangax-es6/Map.prototype.forEach.js: MJS error: [try] is not implemented
+kangax-es6/Map.prototype.keys.js: MJS error: [try] is not implemented
+kangax-es6/Map.prototype.set-returns-this.js: MJS error: parse error at line 10: [var map = ]
+kangax-es6/Map.prototype.size.js: MJS error: parse error at line 10: [var key = ]
+kangax-es6/Map.prototype.values.js: MJS error: [try] is not implemented
+kangax-es6/Map.zero-key.js: MJS error: parse error at line 10: [var map = ]
+kangax-es6/Math.acosh.js: MJS error: [try] is not implemented
+kangax-es6/Math.asinh.js: MJS error: [try] is not implemented
+kangax-es6/Math.atanh.js: MJS error: [try] is not implemented
+kangax-es6/Math.cbrt.js: MJS error: [try] is not implemented
+kangax-es6/Math.clz32.js: MJS error: [try] is not implemented
+kangax-es6/Math.cosh.js: MJS error: [try] is not implemented
+kangax-es6/Math.expm1.js: MJS error: [try] is not implemented
+kangax-es6/Math.fround.js: MJS error: [try] is not implemented
+kangax-es6/Math.hypot.js: MJS error: [try] is not implemented
+kangax-es6/Math.imul.js: MJS error: [try] is not implemented
+kangax-es6/Math.log1p.js: MJS error: [try] is not implemented
+kangax-es6/Math.log2.js: MJS error: [try] is not implemented
+kangax-es6/Math.log10.js: MJS error: [try] is not implemented
+kangax-es6/Math.sign.js: MJS error: [try] is not implemented
+kangax-es6/Math.sinh.js: MJS error: [try] is not implemented
+kangax-es6/Math.tanh.js: MJS error: [try] is not implemented
+kangax-es6/Math.trunc.js: MJS error: [try] is not implemented
+kangax-es6/Number.EPSILON.js: MJS error: [try] is not implemented
+kangax-es6/Number.MAX_SAFE_INTEGER.js: MJS error: [try] is not implemented
+kangax-es6/Number.MIN_SAFE_INTEGER.js: MJS error: [try] is not implemented
+kangax-es6/Number.isFinite.js: MJS error: [try] is not implemented
+kangax-es6/Number.isInteger.js: MJS error: [try] is not implemented
+kangax-es6/Number.isNaN.js: MJS error: [try] is not implemented
+kangax-es6/Number.isSafeInteger.js: MJS error: [try] is not implemented
+kangax-es6/Number.parseFloat.js: MJS error: parse error at line 10: [var actual]
+kangax-es6/Number.parseInt.js: MJS error: parse error at line 10: [var actual]
+kangax-es6/Object.assign.js: MJS error: parse error at line 10: [var o = Ob]
+kangax-es6/Object.getOwnPropertySymbols.js: MJS error: parse error at line 10: [var o = {}]
+kangax-es6/Object.is.js: MJS error: [try] is not implemented
+kangax-es6/Object.setPrototypeOf.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/Promise.Symbol.species.js: MJS error: parse error at line 10: [var prop =]
+kangax-es6/Promise.all.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/Promise.all.js: MJS error: [var] is not implemented
+kangax-es6/Promise.constructor-requires-new.js: MJS error: parse error at line 10: [new Promis]
+kangax-es6/Promise.js: MJS error: [var] is not implemented
+kangax-es6/Promise.prototype-not-instance.js: MJS error: parse error at line 10: [new Promis]
+kangax-es6/Promise.race.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/Promise.race.js: MJS error: [var] is not implemented
+kangax-es6/Proxy.Array.isArray.js: MJS error: parse error at line 10: [new Proxy(]
+kangax-es6/Proxy.JSON.stringify.js: MJS error: parse error at line 10: [new Proxy(]
+kangax-es6/Proxy.constructor-requires-new.js: MJS error: parse error at line 10: [new Proxy(]
+kangax-es6/Proxy.handler.apply.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.apply.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.construct.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.construct.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.defineProperty.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.defineProperty.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.deleteProperty.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.getPrototypeOf.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.get.instances.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.get.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.get.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.has.instances.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.has.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.has.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.isExtensible.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.isExtensible.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.ownKeys.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.ownKeys.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.preventExtensions.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.setPrototypeOf.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.set.instances.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.handler.set.invariants.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Proxy.handler.set.js: MJS error: parse error at line 10: [var proxie]
+kangax-es6/Proxy.no-prototype.js: MJS error: parse error at line 10: [new Proxy(]
+kangax-es6/Proxy.revocable.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.apply.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.construct.Array-subclassing.js: MJS error: parse error at line 11: [var obj = ]
+kangax-es6/Reflect.construct.Function-subclassing.js: MJS error: parse error at line 11: [var obj = ]
+kangax-es6/Reflect.construct.Promise-subclassing.js: MJS error: [var] is not implemented
+kangax-es6/Reflect.construct.RegExp-subclassing.js: MJS error: parse error at line 11: [var obj = ]
+kangax-es6/Reflect.construct.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.construct.new-target.js: MJS error: parse error at line 11: [new.target]
+kangax-es6/Reflect.construct.third-argument.js: MJS error: parse error at line 11: [var obj = ]
+kangax-es6/Reflect.defineProperty.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.deleteProperty.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.getPrototypeOf.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.get.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.has.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.isExtensible.js: MJS error: [try] is not implemented
+kangax-es6/Reflect.ownKeys.string.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.ownKeys.symbol.js: MJS error: parse error at line 10: [var s1 = S]
+kangax-es6/Reflect.preventExtensions.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.setPrototypeOf.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Reflect.set.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/RegExp.Symbol.species.js: MJS error: parse error at line 10: [var prop =]
+kangax-es6/RegExp.prototype.Symbol.match.js: MJS error: [try] is not implemented
+kangax-es6/RegExp.prototype.Symbol.replace.js: MJS error: [try] is not implemented
+kangax-es6/RegExp.prototype.Symbol.search.js: MJS error: [try] is not implemented
+kangax-es6/RegExp.prototype.Symbol.split.js: MJS error: [try] is not implemented
+kangax-es6/RegExp.prototype.flags.js: MJS error: parse error at line 10: [/./igm.fla]
+kangax-es6/Set.Symbol.species.js: MJS error: parse error at line 10: [var prop =]
+kangax-es6/Set.constructor-accepts-null.js: MJS error: parse error at line 10: [new Set(nu]
+kangax-es6/Set.constructor-arguments.js: MJS error: parse error at line 10: [var obj1 =]
+kangax-es6/Set.constructor-invokes-add.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/Set.constructor-requires-new.js: MJS error: parse error at line 10: [new Set();]
+kangax-es6/Set.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/Set.iterator-prototype-chain.js: MJS error: parse error at line 11: [var iterat]
+kangax-es6/Set.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Set.prototype-not-instance.js: MJS error: parse error at line 10: [new Set();]
+kangax-es6/Set.prototype.Symbol.iterator.js: MJS error: [try] is not implemented
+kangax-es6/Set.prototype.add-returns-this.js: MJS error: parse error at line 10: [var set = ]
+kangax-es6/Set.prototype.clear.js: MJS error: [try] is not implemented
+kangax-es6/Set.prototype.delete.js: MJS error: parse error at line 10: [delete ===]
+kangax-es6/Set.prototype.entries.js: MJS error: [try] is not implemented
+kangax-es6/Set.prototype.forEach.js: MJS error: [try] is not implemented
+kangax-es6/Set.prototype.keys.js: MJS error: [try] is not implemented
+kangax-es6/Set.prototype.size.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es6/Set.prototype.values.js: MJS error: [try] is not implemented
+kangax-es6/Set.zero-key.js: MJS error: parse error at line 10: [var set = ]
+kangax-es6/String.fromCodePoint.js: MJS error: [try] is not implemented
+kangax-es6/String.iterator-prototype-chain.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/String.prototype.Symbol.iterator.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.codePointAt.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.endsWith.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.endsWith.throws-regex.js: MJS error: parse error at line 9: [try {
+kangax-es6/String.prototype.includes.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.normalize.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.repeat.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.startsWith.js: MJS error: [try] is not implemented
+kangax-es6/String.prototype.startsWith.throws-regex.js: MJS error: parse error at line 9: [try {
+kangax-es6/String.raw.js: MJS error: [try] is not implemented
+kangax-es6/Symbol.JSON.stringify.object.js: MJS error: parse error at line 10: [var testSy]
+kangax-es6/Symbol.JSON.stringify.primitive.js: MJS error: parse error at line 10: [var object]
+kangax-es6/Symbol.Object.js: MJS error: parse error at line 10: [var symbol]
+kangax-es6/Symbol.String.js: MJS error: [try] is not implemented
+kangax-es6/Symbol.defineProperty.js: MJS error: parse error at line 10: [var object]
+kangax-es6/Symbol.global-registry.js: MJS error: parse error at line 10: [var symbol]
+kangax-es6/Symbol.hidden-keys.js: MJS error: parse error at line 10: [var object]
+kangax-es6/Symbol.js: MJS error: parse error at line 10: [var object]
+kangax-es6/Symbol.no-coerce.js: MJS error: parse error at line 10: [var symbol]
+kangax-es6/Symbol.no-new.js: MJS error: parse error at line 10: [var symbol]
+kangax-es6/Symbol.prototype.js: MJS error: parse error at line 10: [var symbol]
+kangax-es6/Symbol.typeof.js: MJS error: [try] is not implemented
+kangax-es6/WeakMap.accept-primitives.js: MJS error: parse error at line 10: [var m = ne]
+kangax-es6/WeakMap.constructor-accepts-null.js: MJS error: parse error at line 10: [new WeakMa]
+kangax-es6/WeakMap.constructor-arguments.js: MJS error: parse error at line 10: [var key1 =]
+kangax-es6/WeakMap.constructor-invokes-set.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/WeakMap.constructor-requires-new.js: MJS error: parse error at line 10: [new WeakMa]
+kangax-es6/WeakMap.frozen-keys.js: MJS error: parse error at line 10: [var f = Ob]
+kangax-es6/WeakMap.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/WeakMap.js: MJS error: parse error at line 10: [var key = ]
+kangax-es6/WeakMap.no-clear.js: MJS error: parse error at line 10: [in WeakMap]
+kangax-es6/WeakMap.prototype-not-instance.js: MJS error: parse error at line 10: [new WeakMa]
+kangax-es6/WeakMap.prototype.delete.js: MJS error: parse error at line 10: [delete ===]
+kangax-es6/WeakMap.prototype.set-returns-this.js: MJS error: parse error at line 10: [var weakma]
+kangax-es6/WeakSet.accept-primitives.js: MJS error: parse error at line 10: [var s = ne]
+kangax-es6/WeakSet.constructor-accepts-null.js: MJS error: parse error at line 10: [new WeakSe]
+kangax-es6/WeakSet.constructor-arguments.js: MJS error: parse error at line 10: [var obj1 =]
+kangax-es6/WeakSet.constructor-invokes-add.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/WeakSet.constructor-requires-new.js: MJS error: parse error at line 10: [new WeakSe]
+kangax-es6/WeakSet.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/WeakSet.js: MJS error: parse error at line 10: [var obj1 =]
+kangax-es6/WeakSet.no-clear.js: MJS error: parse error at line 10: [in WeakSet]
+kangax-es6/WeakSet.prototype-not-instance.js: MJS error: parse error at line 10: [new WeakSe]
+kangax-es6/WeakSet.prototype.add-returns-this.js: MJS error: parse error at line 10: [var weakse]
+kangax-es6/WeakSet.prototype.delete.js: MJS error: parse error at line 10: [delete ===]
+kangax-es6/annex-b.RegExp.prototype.compile.js: MJS error: parse error at line 12: [var rx = /]
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: MJS error: parse error at line 10: [var rx = /]
+kangax-es6/annex-b.String.prototype.html.existence.js: MJS error: parse error at line 10: [var i, nam]
+kangax-es6/annex-b.String.prototype.html.lowercase.js: MJS error: parse error at line 9: [var i, nam]
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: MJS error: parse error at line 9: [var i, nam]
+kangax-es6/annex-b.function.hoisted-block-level.js: MJS error: parse error at line 11: [var passed]
+kangax-es6/annex-b.function.if-statement.js: MJS error: [try] is not implemented
+kangax-es6/annex-b.function.labeled.js: MJS error: parse error at line 12: [: function]
+kangax-es6/annex-b.html-comments.js: MJS error: parse error at line 9: [> A commen]
+kangax-es6/annex-b.regex.backreferences-octal.js: MJS error: parse error at line 9: [/\41/.exec]
+kangax-es6/annex-b.regex.hyphens.js: MJS error: parse error at line 9: [/[\w-_]/.e]
+kangax-es6/annex-b.regex.incomplete-patterns.js: MJS error: parse error at line 9: [/x{1/.exec]
+kangax-es6/annex-b.regex.invalid-char-escapes.js: MJS error: parse error at line 9: [/\z/.exec(]
+kangax-es6/annex-b.regex.invalid-control-escapes.js: MJS error: parse error at line 9: [/\c2/.exec]
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: MJS error: parse error at line 9: [/\x1/.exec]
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: MJS error: parse error at line 9: [/\u1/.exec]
+kangax-es6/annex-b.regex.octal-escapes.js: MJS error: parse error at line 9: [/\041/.exe]
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: MJS error: parse error at line 10: [var o = Ob]
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: MJS error: parse error at line 10: [var desc =]
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: MJS error: [try] is not implemented
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: MJS error: parse error at line 10: [var A = fu]
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: MJS error: [try] is not implemented
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: MJS error: parse error at line 10: [var o = {}]
+kangax-es6/annex-b.__proto__.literals.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: MJS error: parse error at line 10: [try {
+kangax-es6/annex-b.__proto__.literals.not-computed.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/arrow.0-params.js: MJS error: parse error at line 10: [=> 5)() ==]
+kangax-es6/arrow.1-param.js: MJS error: parse error at line 10: [var b = x ]
+kangax-es6/arrow.5-param.js: MJS error: parse error at line 10: [var c = (v]
+kangax-es6/arrow.bind.js: MJS error: parse error at line 10: [var d = { ]
+kangax-es6/arrow.lexical-arguments.js: MJS error: parse error at line 10: [var f = (f]
+kangax-es6/arrow.lexical-super.constructor.js: MJS error: parse error at line 10: [var receiv]
+kangax-es6/arrow.lexical-super.methods.js: MJS error: parse error at line 17: [> super.qu]
+kangax-es6/arrow.lexical-this.js: MJS error: parse error at line 10: [var d = { ]
+kangax-es6/arrow.new-target.js: MJS error: parse error at line 11: [> new.targ]
+kangax-es6/arrow.no-line-break.js: MJS error: parse error at line 10: [=> {
+kangax-es6/arrow.no-prototype.js: MJS error: parse error at line 10: [var a = ()]
+kangax-es6/arrow.precedence.js: MJS error: parse error at line 10: [=> {
+kangax-es6/arrow.this-call-apply.js: MJS error: parse error at line 10: [var d = { ]
+kangax-es6/class.accessor-properties.js: MJS error: parse error at line 10: [var baz = ]
+kangax-es6/class.anonymous.js: MJS error: parse error at line 10: [=== "funct]
+kangax-es6/class.block-scoped.js: MJS error: parse error at line 11: [var c1 = C]
+kangax-es6/class.computed-accessor-properties.js: MJS error: parse error at line 10: [var garply]
+kangax-es6/class.computed-names-tdz.js: MJS error: parse error at line 10: [try {
+kangax-es6/class.computed-prototype-methods.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es6/class.computed-static-accessor-properties.js: MJS error: parse error at line 10: [var garply]
+kangax-es6/class.computed-static-methods.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es6/class.constructor-requires-new.js: MJS error: parse error at line 11: [try {
+kangax-es6/class.constructor.js: MJS error: parse error at line 14: [new C().x ]
+kangax-es6/class.expression.js: MJS error: parse error at line 10: [=== "funct]
+kangax-es6/class.extends-expressions.js: MJS error: parse error at line 10: [var B
+kangax-es6/class.extends-null.js: MJS error: [try] is not implemented
+kangax-es6/class.extends.js: MJS error: parse error at line 12: [new C() in]
+kangax-es6/class.implicit-strict.js: MJS error: parse error at line 11: [void undef]
+kangax-es6/class.lexical-name.js: MJS error: parse error at line 13: [var M = C.]
+kangax-es6/class.methods-not-enumerable.js: MJS error: [try] is not implemented
+kangax-es6/class.new-target.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/class.optional-semicolons.js: MJS error: [try] is not implemented
+kangax-es6/class.prototype-methods.js: MJS error: parse error at line 14: [new C().me]
+kangax-es6/class.statement.js: MJS error: [try] is not implemented
+kangax-es6/class.static-accessor-properties.js: MJS error: parse error at line 10: [var baz = ]
+kangax-es6/class.static-methods.js: MJS error: [try] is not implemented
+kangax-es6/class.string-keyed-methods.js: MJS error: parse error at line 14: [new C()["f]
+kangax-es6/const.basic.js: MJS error: [try] is not implemented
+kangax-es6/const.block-scoped.js: MJS error: [try] is not implemented
+kangax-es6/const.for-in.js: MJS error: parse error at line 10: [var scopes]
+kangax-es6/const.for-loop.js: MJS error: parse error at line 11: [baz = 0; f]
+kangax-es6/const.for-of.js: MJS error: parse error at line 10: [var scopes]
+kangax-es6/const.no-redefine.js: MJS error: parse error at line 11: [try {
+kangax-es6/const.no-statement.js: MJS error: parse error at line 11: [try {
+kangax-es6/const.shadow.js: MJS error: parse error at line 10: [try {
+kangax-es6/const.strict.basic.js: MJS error: [try] is not implemented
+kangax-es6/const.strict.block-scoped.js: MJS error: [try] is not implemented
+kangax-es6/const.strict.for-in.js: MJS error: parse error at line 11: [var scopes]
+kangax-es6/const.strict.for-loop.js: MJS error: parse error at line 12: [baz = 0; f]
+kangax-es6/const.strict.for-of.js: MJS error: parse error at line 11: [var scopes]
+kangax-es6/const.strict.no-redefine.js: MJS error: parse error at line 12: [try {
+kangax-es6/const.strict.no-statement.js: MJS error: parse error at line 12: [try {
+kangax-es6/const.strict.shadow.js: MJS error: parse error at line 11: [try {
+kangax-es6/const.strict.tdz.js: MJS error: parse error at line 11: [var passed]
+kangax-es6/const.tdz.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/default-params.arguments.js: MJS error: parse error at line 10: [= "baz", b]
+kangax-es6/default-params.basic.js: MJS error: parse error at line 10: [= 1, b = 2]
+kangax-es6/default-params.explicit-undefined.js: MJS error: parse error at line 10: [= 1, b = 2]
+kangax-es6/default-params.new-function.js: MJS error: parse error at line 10: [new Functi]
+kangax-es6/default-params.refer-previous.js: MJS error: parse error at line 10: [= a) { ret]
+kangax-es6/default-params.separate-scope.js: MJS error: parse error at line 10: [=function(]
+kangax-es6/default-params.tdz.js: MJS error: parse error at line 10: [= 1) {
+kangax-es6/destructuring-assign.array.js: MJS error: parse error at line 10: [var a,b,c;]
+kangax-es6/destructuring-assign.astral-string.js: MJS error: parse error at line 10: [var c
+kangax-es6/destructuring-assign.chained-iterable.js: MJS error: parse error at line 10: [var a,b,c,]
+kangax-es6/destructuring-assign.chained-object.js: MJS error: parse error at line 10: [var a,b,c,]
+kangax-es6/destructuring-assign.computed-properties.js: MJS error: parse error at line 10: [var grault]
+kangax-es6/destructuring-assign.defaults.js: MJS error: parse error at line 10: [var a,b,c,]
+kangax-es6/destructuring-assign.empty-patterns.js: MJS error: [try] is not implemented
+kangax-es6/destructuring-assign.generator.js: MJS error: parse error at line 10: [var a,b,c;]
+kangax-es6/destructuring-assign.iterable-expression.js: MJS error: parse error at line 10: [var a, b, ]
+kangax-es6/destructuring-assign.iterable-instance.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-assign.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-assign.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-assign.nested-rest.js: MJS error: parse error at line 10: [var a = [1]
+kangax-es6/destructuring-assign.nested.js: MJS error: parse error at line 10: [var e,f,g,]
+kangax-es6/destructuring-assign.object-expression.js: MJS error: parse error at line 10: [var a, b, ]
+kangax-es6/destructuring-assign.object-primitives.js: MJS error: parse error at line 10: [var toFixe]
+kangax-es6/destructuring-assign.object.js: MJS error: parse error at line 10: [var c,d,e;]
+kangax-es6/destructuring-assign.parenthesised-error.js: MJS error: parse error at line 10: [var a, b
+kangax-es6/destructuring-assign.rest.js: MJS error: parse error at line 10: [var a,b,c,]
+kangax-es6/destructuring-assign.sparse-array.js: MJS error: parse error at line 10: [var a, b
+kangax-es6/destructuring-assign.string.js: MJS error: parse error at line 10: [var a,b,c;]
+kangax-es6/destructuring-assign.throws-null-undefined.js: MJS error: parse error at line 10: [var a,b
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: MJS error: parse error at line 10: [var a
+kangax-es6/destructuring-assign.trailing-comma-object.js: MJS error: parse error at line 10: [var a
+kangax-es6/destructuring-decl.array.js: MJS error: parse error at line 10: [var [a, , ]
+kangax-es6/destructuring-decl.astral-string.js: MJS error: parse error at line 10: [var [c] = ]
+kangax-es6/destructuring-decl.catch.js: MJS error: parse error at line 10: [try {
+kangax-es6/destructuring-decl.computed-properties.js: MJS error: parse error at line 10: [var qux = ]
+kangax-es6/destructuring-decl.defaults-tdz.js: MJS error: parse error at line 10: [var {a, b ]
+kangax-es6/destructuring-decl.defaults.js: MJS error: parse error at line 10: [var {a = 1]
+kangax-es6/destructuring-decl.for-in.js: MJS error: parse error at line 10: [var [i, j,]
+kangax-es6/destructuring-decl.for-of.js: MJS error: parse error at line 10: [var [i, j,]
+kangax-es6/destructuring-decl.generator.js: MJS error: parse error at line 10: [var [a, b,]
+kangax-es6/destructuring-decl.iterable-instance.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-decl.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-decl.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-decl.multiple-var.js: MJS error: parse error at line 10: [var [a,b] ]
+kangax-es6/destructuring-decl.nested.js: MJS error: parse error at line 10: [var [e, {x]
+kangax-es6/destructuring-decl.object-primitives.js: MJS error: parse error at line 10: [var {toFix]
+kangax-es6/destructuring-decl.object.js: MJS error: parse error at line 10: [var {c, x:]
+kangax-es6/destructuring-decl.rest.js: MJS error: parse error at line 10: [var [a, ..]
+kangax-es6/destructuring-decl.sparse-array.js: MJS error: parse error at line 10: [var [a, , ]
+kangax-es6/destructuring-decl.string.js: MJS error: parse error at line 10: [var [a, b,]
+kangax-es6/destructuring-decl.throws-null-undefined.js: MJS error: parse error at line 10: [try {
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: MJS error: parse error at line 10: [var [a,] =]
+kangax-es6/destructuring-decl.trailing-comma-object.js: MJS error: parse error at line 10: [var {a,} =]
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: MJS error: parse error at line 10: [, {b: x = ]
+kangax-es6/destructuring-params.arguments.js: MJS error: parse error at line 10: [{a, x:b, y]
+kangax-es6/destructuring-params.array.js: MJS error: parse error at line 10: [[a, , [b],]
+kangax-es6/destructuring-params.astral-string.js: MJS error: parse error at line 10: [[c]) {
+kangax-es6/destructuring-params.computed-properties.js: MJS error: parse error at line 10: [var qux = ]
+kangax-es6/destructuring-params.defaults-new-function.js: MJS error: parse error at line 10: [new Functi]
+kangax-es6/destructuring-params.defaults-separate-scope.js: MJS error: parse error at line 10: [{a=functio]
+kangax-es6/destructuring-params.defaults.js: MJS error: parse error at line 10: [{a = 1, b ]
+kangax-es6/destructuring-params.duplicate-identifier.js: MJS error: parse error at line 10: [try {
+kangax-es6/destructuring-params.empty-patterns.js: MJS error: parse error at line 10: [[],{}){
+kangax-es6/destructuring-params.generator.js: MJS error: parse error at line 10: [[a, b, c])]
+kangax-es6/destructuring-params.iterable-instance.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-params.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-params.iterator-closing.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/destructuring-params.length.js: MJS error: parse error at line 10: [{a, b}, [c]
+kangax-es6/destructuring-params.nested.js: MJS error: parse error at line 10: [[e, {x:f, ]
+kangax-es6/destructuring-params.new-function.js: MJS error: parse error at line 10: [new Functi]
+kangax-es6/destructuring-params.object-primitives.js: MJS error: parse error at line 10: [{toFixed},]
+kangax-es6/destructuring-params.object.js: MJS error: parse error at line 10: [{c, x:d, e]
+kangax-es6/destructuring-params.rest.js: MJS error: parse error at line 10: [[a, ...b],]
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: MJS error: parse error at line 10: [, {b = 0, ]
+kangax-es6/destructuring-params.sparse-array.js: MJS error: parse error at line 10: [[a, , b]) ]
+kangax-es6/destructuring-params.string.js: MJS error: parse error at line 10: [[a, b, c])]
+kangax-es6/destructuring-params.throws-null-undefined.js: MJS error: parse error at line 10: [try {
+kangax-es6/destructuring-params.trailing-comma-iterable.js: MJS error: parse error at line 10: [[a,]) {
+kangax-es6/destructuring-params.trailing-comma-object.js: MJS error: parse error at line 10: [{a,}) {
+kangax-es6/for-of.array.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es6/for-of.astral-string.js: MJS error: parse error at line 10: [var str = ]
+kangax-es6/for-of.generator.js: MJS error: parse error at line 10: [var result]
+kangax-es6/for-of.iterable-instance.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/for-of.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/for-of.iterator-closing-break.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/for-of.iterator-closing-throw.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/for-of.sparse-array.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es6/for-of.string.js: MJS error: parse error at line 10: [var str = ]
+kangax-es6/function.block-level-decl.js: MJS error: [try] is not implemented
+kangax-es6/generators.basic.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.constructor.js: MJS error: parse error at line 10: [* g (){}
+kangax-es6/generators.expression.js: MJS error: parse error at line 10: [var genera]
+kangax-es6/generators.no-new-this.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.prototype-chain.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.prototype.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.return.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.sending.js: MJS error: parse error at line 10: [var sent
+kangax-es6/generators.shorthand.class.js: MJS error: parse error at line 11: [* generato]
+kangax-es6/generators.shorthand.computed.class.js: MJS error: parse error at line 10: [var garply]
+kangax-es6/generators.shorthand.computed.js: MJS error: parse error at line 10: [var garply]
+kangax-es6/generators.shorthand.js: MJS error: parse error at line 10: [var o = {
+kangax-es6/generators.shorthand.no-constructor.js: MJS error: parse error at line 11: [* generato]
+kangax-es6/generators.shorthand.string-keyed.js: MJS error: parse error at line 10: [var o = {
+kangax-es6/generators.this.js: MJS error: parse error at line 10: [* generato]
+kangax-es6/generators.throw.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/generators.yield-precedence.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/generators.yield-star.array.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/generators.yield-star.astral-string.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/generators.yield-star.generator.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/generators.yield-star.iterable-instance.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/generators.yield-star.iterable.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/generators.yield-star.iterator-closing-throw.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/generators.yield-star.iterator-closing.js: MJS error: parse error at line 16: [var iterat]
+kangax-es6/generators.yield-star.non-iterable-error.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/generators.yield-star.sparse-array.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/generators.yield-star.string.js: MJS error: parse error at line 10: [var iterat]
+kangax-es6/let.basic.js: MJS error: [try] is not implemented
+kangax-es6/let.block-scoped.js: MJS error: [try] is not implemented
+kangax-es6/let.for-in-shadow.js: MJS error: parse error at line 10: [try {
+kangax-es6/let.for-iteration.js: MJS error: [try] is not implemented
+kangax-es6/let.for-loop.js: MJS error: parse error at line 11: [) {}
+kangax-es6/let.no-statement.js: MJS error: parse error at line 11: [try {
+kangax-es6/let.shadow.js: MJS error: parse error at line 10: [try {
+kangax-es6/let.strict.basic.js: MJS error: [try] is not implemented
+kangax-es6/let.strict.block-scoped.js: MJS error: [try] is not implemented
+kangax-es6/let.strict.for-in-shadow.js: MJS error: parse error at line 10: [try {
+kangax-es6/let.strict.for-iteration.js: MJS error: [try] is not implemented
+kangax-es6/let.strict.for-loop.js: MJS error: parse error at line 12: [) {}
+kangax-es6/let.strict.no-statement.js: MJS error: parse error at line 12: [try {
+kangax-es6/let.strict.shadow.js: MJS error: parse error at line 11: [try {
+kangax-es6/let.strict.tdz.js: MJS error: parse error at line 11: [var passed]
+kangax-es6/let.tdz.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/literals.binary.Number.js: MJS error: [try] is not implemented
+kangax-es6/literals.binary.js: MJS error: [try] is not implemented
+kangax-es6/literals.object.computed-accessors.js: MJS error: parse error at line 10: [var x = 'y]
+kangax-es6/literals.object.computed-properties.js: MJS error: parse error at line 10: [var x = 'y]
+kangax-es6/literals.object.computed-shorthand-methods.js: MJS error: parse error at line 10: [var x = 'y]
+kangax-es6/literals.object.shorthand-methods.js: MJS error: parse error at line 10: [{ return 2]
+kangax-es6/literals.object.shorthand-properties.js: MJS error: parse error at line 10: [var a = 7,]
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: MJS error: parse error at line 10: [{ return 4]
+kangax-es6/literals.octal.Number.js: MJS error: [try] is not implemented
+kangax-es6/literals.octal.js: MJS error: [try] is not implemented
+kangax-es6/misc.Invalid-Date.js: MJS error: parse error at line 9: [new Date(N]
+kangax-es6/misc.Object.freeze.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: MJS error: parse error at line 10: [void undef]
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: MJS error: parse error at line 10: [var s = Ob]
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.isExtensible.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.isFrozen.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.isSealed.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.keys.primitives.js: MJS error: parse error at line 10: [var s = Ob]
+kangax-es6/misc.Object.preventExtensions.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Object.seal.primitives.js: MJS error: [try] is not implemented
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: MJS error: parse error at line 11: [var def = ]
+kangax-es6/misc.Proxy.defineProperty.Set.js: MJS error: parse error at line 11: [var def = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: MJS error: parse error at line 11: [var del = ]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es6/misc.Proxy.get.Array.concat.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.from.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.iteration.js: MJS error: parse error at line 11: [var method]
+kangax-es6/misc.Proxy.get.Array.pop.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.reverse.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.shift.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.splice.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Array.toString.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Date.toJSON.js: MJS error: parse error at line 12: [var get = ]
+kangax-es6/misc.Proxy.get.Error.toString.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Function.bind.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.HasBinding.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.IteratorComplete.js: MJS error: parse error at line 12: [var get = ]
+kangax-es6/misc.Proxy.get.JSON.stringify.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Object.assign.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.Promise.resolve.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: MJS error: parse error at line 13: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: MJS error: parse error at line 13: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: MJS error: parse error at line 13: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.flags.js: MJS error: parse error at line 13: [var expect]
+kangax-es6/misc.Proxy.get.RegExp.test.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.RegExp.toString.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.String.match.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.String.raw.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.String.replace.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.String.search.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.String.split.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.ToPrimitive.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: MJS error: parse error at line 11: [var get = ]
+kangax-es6/misc.Proxy.get.instanceof.js: MJS error: parse error at line 12: [var get = ]
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: MJS error: parse error at line 11: [var ownKey]
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: MJS error: parse error at line 11: [var ownKey]
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: MJS error: parse error at line 11: [var ownKey]
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.fill.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.from.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.of.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.pop.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.push.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.reverse.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.shift.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.splice.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Array.unshift.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.Proxy.set.Object.assign.js: MJS error: parse error at line 11: [var set = ]
+kangax-es6/misc.RegExp-alter-flags.js: MJS error: parse error at line 11: [new RegExp]
+kangax-es6/misc.RegExp-prototype-toString-generic.js: MJS error: [try] is not implemented
+kangax-es6/misc.accessors-no-constructor.js: MJS error: parse error at line 9: [var f = (O]
+kangax-es6/misc.bound-function-prototype.arrow.js: MJS error: parse error at line 10: [var f = ()]
+kangax-es6/misc.bound-function-prototype.class.js: MJS error: parse error at line 16: [var boundF]
+kangax-es6/misc.bound-function-prototype.function.js: MJS error: parse error at line 10: [var f = fu]
+kangax-es6/misc.bound-function-prototype.generator.js: MJS error: parse error at line 10: [var f = fu]
+kangax-es6/misc.bound-function-prototype.subclass.js: MJS error: parse error at line 15: [var boundF]
+kangax-es6/misc.do-while-no-semicolon.js: MJS error: parse error at line 9: [do {} whil]
+kangax-es6/misc.duplicate-properties-strict.js: MJS error: parse error at line 10: [void undef]
+kangax-es6/misc.for-in-no-assignment-strict.js: MJS error: parse error at line 10: [try {
+kangax-es6/misc.function-length-configurable.js: MJS error: parse error at line 9: [var fn = f]
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: MJS error: parse error at line 9: [var \u0061]
+kangax-es6/misc.identifier-syntax.var-1.js: MJS error: parse error at line 9: [try {
+kangax-es6/misc.identifier-syntax.var-2.js: MJS error: parse error at line 9: [var 𐋀
+kangax-es6/misc.property-order.JSON.parse.js: MJS error: parse error at line 9: [var result]
+kangax-es6/misc.property-order.JSON.stringify.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/misc.property-order.Object.assign.js: MJS error: parse error at line 9: [var result]
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/misc.property-order.Object.keys.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: MJS error: parse error at line 9: [var sym1 =]
+kangax-es6/misc.prototypes-not-instances.js: MJS error: parse error at line 9: [try {
+kangax-es6/new-target.assignment-error.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/new-target.constructor.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/regex.flags.u.case-folding.js: MJS error: parse error at line 10: [/S/iu) && ]
+kangax-es6/regex.flags.u.codepoint.js: MJS error: parse error at line 10: [/\u{1d306}]
+kangax-es6/regex.flags.u.js: MJS error: parse error at line 10: [/^.$/u)[0]]
+kangax-es6/regex.flags.u.non-bmp.js: MJS error: parse error at line 10: [/^.x$/u)[0]
+kangax-es6/regex.flags.y.js: MJS error: parse error at line 10: [var re = n]
+kangax-es6/regex.flags.y.lastIndex.js: MJS error: parse error at line 10: [var re = n]
+kangax-es6/rest-params.arguments.js: MJS error: parse error at line 10: [...args) {]
+kangax-es6/rest-params.basic.js: MJS error: parse error at line 10: [...args) {]
+kangax-es6/rest-params.length.js: MJS error: parse error at line 10: [...b){}.le]
+kangax-es6/rest-params.new-function.js: MJS error: parse error at line 10: [new Functi]
+kangax-es6/rest-params.no-setter.js: MJS error: parse error at line 10: [...args) {]
+kangax-es6/spread.array-call.js: MJS error: parse error at line 10: [...[1, 2, ]
+kangax-es6/spread.array-literal.js: MJS error: parse error at line 10: [..[1, 2, 3]
+kangax-es6/spread.astral-call.js: failed
+kangax-es6/spread.astral-literal.js: failed
+kangax-es6/spread.generator-call.js: MJS error: parse error at line 10: [var iterab]
+kangax-es6/spread.generator-literal.js: MJS error: parse error at line 10: [var iterab]
+kangax-es6/spread.iterable-call.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/spread.iterable-instance-call.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/spread.iterable-instance-literal.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/spread.iterable-literal.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/spread.non-iterable-error.js: MJS error: parse error at line 10: [try {
+kangax-es6/spread.sparse-call.js: MJS error: parse error at line 10: [var a = Ar]
+kangax-es6/spread.sparse-literal.js: MJS error: parse error at line 10: [var a = [.]
+kangax-es6/spread.string-call.js: MJS error: parse error at line 10: [..."1234")]
+kangax-es6/spread.string-literal.js: MJS error: parse error at line 10: [.."bcd", "]
+kangax-es6/subclassing.Array.concat.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.filter.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.from.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/subclassing.Array.isArray.js: MJS error: parse error at line 10: [new C())
+kangax-es6/subclassing.Array.length-access.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.length-set.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.map.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.of.js: MJS error: parse error at line 10: [instanceof]
+kangax-es6/subclassing.Array.prototype-chain.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.slice.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Array.splice.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.call.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.new.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.prototype-chain.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.prototype.apply.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.prototype.bind.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Function.prototype.call.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Promise.all.js: MJS error: [var] is not implemented
+kangax-es6/subclassing.Promise.js: MJS error: [var] is not implemented
+kangax-es6/subclassing.Promise.prototype-chain.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.Promise.race.js: MJS error: [var] is not implemented
+kangax-es6/subclassing.RegExp.exec.js: MJS error: parse error at line 10: [var r = ne]
+kangax-es6/subclassing.RegExp.js: MJS error: parse error at line 12: [var r = ne]
+kangax-es6/subclassing.RegExp.prototype-chain.js: MJS error: parse error at line 10: [var r = ne]
+kangax-es6/subclassing.RegExp.test.js: MJS error: parse error at line 10: [var r = ne]
+kangax-es6/subclassing.misc.Boolean.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.misc.Error.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.misc.Map.js: MJS error: parse error at line 9: [var key = ]
+kangax-es6/subclassing.misc.Number.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/subclassing.misc.Set.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/subclassing.misc.String.js: MJS error: parse error at line 10: [var c = ne]
+kangax-es6/super.correct-constructor.js: MJS error: parse error at line 11: [var passed]
+kangax-es6/super.expression.js: MJS error: parse error at line 16: [new C("baz]
+kangax-es6/super.method-calls.js: MJS error: parse error at line 16: [new C().qu]
+kangax-es6/super.new-target-binding.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/super.property-access.js: MJS error: parse error at line 17: [new C().qu]
+kangax-es6/super.statement.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/super.static-binding.js: MJS error: parse error at line 16: [var obj = ]
+kangax-es6/super.this-binding.js: MJS error: parse error at line 16: [var obj = ]
+kangax-es6/tail-calls.direct.js: MJS error: [try] is not implemented
+kangax-es6/tail-calls.mutual.js: MJS error: [try] is not implemented
+kangax-es6/template.basic.js: MJS error: parse error at line 10: [var a = "b]
+kangax-es6/template.caching.js: MJS error: parse error at line 17: [`foo`
+kangax-es6/template.escape-sequences.js: MJS error: parse error at line 13: [var str = ]
+kangax-es6/template.frozen-array.js: MJS error: parse error at line 12: [`foo${0}ba]
+kangax-es6/template.line-break.js: MJS error: parse error at line 10: [var cr   =]
+kangax-es6/template.permanent-caching.js: MJS error: parse error at line 14: [`foo`
+kangax-es6/template.tagged.js: MJS error: parse error at line 10: [var called]
+kangax-es6/template.toString.js: MJS error: parse error at line 10: [var a = {
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.DataView.Float32.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Float64.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Int8.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Int16.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Int32.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Uint8.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Uint16.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.DataView.Uint32.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Float32Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Float64Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Int8Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Int16Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Int32Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Symbol.species.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.Uint8Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Uint8ClampedArray.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Uint16Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.Uint32Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es6/typed-arrays.constructor-iterables.js: MJS error: parse error at line 17: [var iterat]
+kangax-es6/typed-arrays.constructor-requires-new.js: MJS error: parse error at line 12: [var buffer]
+kangax-es6/typed-arrays.correct-prototype-chains.js: MJS error: parse error at line 12: [var constr]
+kangax-es6/typed-arrays.from.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.of.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.copyWithin.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.entries.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.every.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.fill.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.filter.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.findIndex.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.find.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.forEach.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.indexOf.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.join.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.keys.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.map.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.reduceRight.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.reduce.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.reverse.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.slice.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.some.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.sort.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.subarray.js: MJS error: [try] is not implemented
+kangax-es6/typed-arrays.prototype.values.js: MJS error: [try] is not implemented
+kangax-es6/unicode-escapes.identifier.js: MJS error: parse error at line 9: [var \u{102]
+kangax-es6/unicode-escapes.property-access.js: MJS error: parse error at line 9: [var o = { ]
+kangax-es6/unicode-escapes.property-key.js: MJS error: parse error at line 9: [var o = { ]
+kangax-es6/unicode-escapes.string.js: MJS error: [try] is not implemented
+kangax-es6/well-known.hasInstance.js: MJS error: parse error at line 10: [var passed]
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: MJS error: parse error at line 10: [var a = []]
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: MJS error: parse error at line 13: [var spread]
+kangax-es6/well-known.iterator.arguments.js: MJS error: [try] is not implemented
+kangax-es6/well-known.iterator.js: MJS error: parse error at line 10: [in Symbol;]
+kangax-es6/well-known.match.RegExp-constructor.js: MJS error: parse error at line 9: [var re = /]
+kangax-es6/well-known.match.String.endsWith.js: MJS error: parse error at line 9: [var re = /]
+kangax-es6/well-known.match.String.includes.js: MJS error: parse error at line 9: [var re = /]
+kangax-es6/well-known.match.String.startsWith.js: MJS error: parse error at line 9: [var re = /]
+kangax-es6/well-known.match.js: MJS error: parse error at line 10: [var O = {}]
+kangax-es6/well-known.replace.js: MJS error: parse error at line 10: [var O = {}]
+kangax-es6/well-known.search.js: MJS error: parse error at line 10: [var O = {}]
+kangax-es6/well-known.species.Array.concat.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/well-known.species.Array.filter.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/well-known.species.Array.map.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/well-known.species.Array.slice.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/well-known.species.Array.splice.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es6/well-known.species.Promise.then.js: MJS error: parse error at line 9: [var promis]
+kangax-es6/well-known.species.RegExp.split.js: MJS error: parse error at line 9: [var passed]
+kangax-es6/well-known.species.js: MJS error: parse error at line 10: [in Symbol;]
+kangax-es6/well-known.split.js: MJS error: parse error at line 10: [var O = {}]
+kangax-es6/well-known.toPrimitive.js: MJS error: parse error at line 10: [var a = {}]
+kangax-es6/well-known.toStringTag.existing-builtins.js: MJS error: parse error at line 9: [var s = Sy]
+kangax-es6/well-known.toStringTag.js: MJS error: parse error at line 10: [var a = {}]
+kangax-es6/well-known.toStringTag.misc-builtins.js: MJS error: parse error at line 9: [var s = Sy]
+kangax-es6/well-known.toStringTag.new-builtins.js: MJS error: parse error at line 9: [var passed]
+kangax-es6/well-known.unscopables.js: MJS error: parse error at line 10: [var a = { ]
+kangax-es2016/Array.prototype.includes.generic.js: MJS error: parse error at line 10: [var passed]
+kangax-es2016/Array.prototype.includes.js: MJS error: [try] is not implemented
+kangax-es2016/Array.prototype.includes.sparse.js: MJS error: parse error at line 10: [].includes]
+kangax-es2016/Array.prototype.includes.typed-array.js: MJS error: parse error at line 21: [new TypedA]
+kangax-es2016/exponentiation.assignment.js: MJS error: parse error at line 10: [var a = 2;]
+kangax-es2016/exponentiation.basic.js: MJS error: parse error at line 10: [* 3 === 8 ]
+kangax-es2016/exponentiation.unary-negation-error.js: MJS error: parse error at line 10: [* 3 !== 8)]
+kangax-es2016/misc.Proxy-Array-includes.js: MJS error: parse error at line 10: [var get = ]
+kangax-es2016/misc.Proxy-enumerate-removed.js: MJS error: parse error at line 10: [var passed]
+kangax-es2016/misc.generator-no-new.js: MJS error: parse error at line 10: [* generato]
+kangax-es2016/misc.generator-throw-inner.js: MJS error: parse error at line 10: [* generato]
+kangax-es2016/misc.nested-rest-destructuring-decl.js: MJS error: parse error at line 10: [var [x, ..]
+kangax-es2016/misc.nested-rest-destructuring-params.js: MJS error: parse error at line 9: [[x, ...[y,]
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: MJS error: parse error at line 9: [...a) {}
+kangax-es2017/Atomics.add.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.and.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.compareExchange.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.exchange.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.isLockFree.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.load.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.notify.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.or.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.store.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.sub.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.wait.js: MJS error: [try] is not implemented
+kangax-es2017/Atomics.xor.js: MJS error: [try] is not implemented
+kangax-es2017/Object.entries.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/Object.getOwnPropertyDescriptors.js: MJS error: parse error at line 10: [var object]
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: MJS error: parse error at line 9: [var P = ne]
+kangax-es2017/Object.values.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: MJS error: [try] is not implemented
+kangax-es2017/SharedArrayBuffer.js: MJS error: [try] is not implemented
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: MJS error: [try] is not implemented
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: MJS error: parse error at line 10: [in SharedA]
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: MJS error: [try] is not implemented
+kangax-es2017/String.prototype.padEnd.js: MJS error: [try] is not implemented
+kangax-es2017/String.prototype.padStart.js: MJS error: [try] is not implemented
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: MJS error: parse error at line 9: [var key = ]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: MJS error: parse error at line 9: [var key = ]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: MJS error: parse error at line 10: [try {
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: MJS error: parse error at line 9: [var a = {}]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: MJS error: parse error at line 9: [var sym = ]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: MJS error: parse error at line 10: [try {
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: MJS error: parse error at line 9: [var obj = ]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: MJS error: parse error at line 9: [var a = {}]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: MJS error: parse error at line 9: [var sym = ]
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: MJS error: parse error at line 10: [var def = ]
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: MJS error: parse error at line 10: [var def = ]
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: MJS error: parse error at line 11: [var gopd =]
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: MJS error: parse error at line 10: [var i = 0 ]
+kangax-es2017/async.Symbol.toStringTag.js: MJS error: [try] is not implemented
+kangax-es2017/async.arrow-in-class.js: MJS error: [var] is not implemented
+kangax-es2017/async.arrow.js: MJS error: [var] is not implemented
+kangax-es2017/async.await-non-promise.js: MJS error: [var] is not implemented
+kangax-es2017/async.await-rejection.js: MJS error: [var] is not implemented
+kangax-es2017/async.await.js: MJS error: [var] is not implemented
+kangax-es2017/async.constructor.js: MJS error: [var] is not implemented
+kangax-es2017/async.methods-class.js: MJS error: [var] is not implemented
+kangax-es2017/async.methods-object.js: MJS error: [var] is not implemented
+kangax-es2017/async.must-await-value.js: MJS error: parse error at line 13: [try {
+kangax-es2017/async.no-await-in-params.js: MJS error: parse error at line 13: [try {
+kangax-es2017/async.no-line-break.js: MJS error: parse error at line 11: [try {
+kangax-es2017/async.no-prototype.js: MJS error: [try] is not implemented
+kangax-es2017/async.prototype-chain.js: MJS error: parse error at line 10: [var asyncF]
+kangax-es2017/async.return.js: MJS error: [var] is not implemented
+kangax-es2017/async.throw.js: MJS error: [var] is not implemented
+kangax-es2017/misc.arguments-caller-removed.js: MJS error: [try] is not implemented
+kangax-es2017/regex.flags.u.case-folding.js: MJS error: parse error at line 9: [/\w/iu) &&]
+kangax-es2017/trailing-comma.arguments.js: MJS error: [try] is not implemented
+kangax-es2017/trailing-comma.params.js: MJS error: [try] is not implemented
+kangax-es2018/Promise.prototype.finally.change-rejection.js: MJS error: [var] is not implemented
+kangax-es2018/Promise.prototype.finally.js: MJS error: [var] is not implemented
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: MJS error: [var] is not implemented
+kangax-es2018/async-iterators.for-await-of.js: MJS error: [var] is not implemented
+kangax-es2018/async-iterators.generators.js: MJS error: [var] is not implemented
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: MJS error: parse error at line 10: [var p = ne]
+kangax-es2018/misc.template-literal-revision.js: MJS error: parse error at line 10: [void undef]
+kangax-es2018/object-rest.js: MJS error: parse error at line 9: [var { a, .]
+kangax-es2018/object-spread.js: MJS error: parse error at line 9: [var spread]
+kangax-es2018/regex.flags.s.js: MJS error: parse error at line 10: [/foo.bar/s]
+kangax-es2018/regex.lookbehind.js: MJS error: parse error at line 10: [/(?<=a)b/.]
+kangax-es2018/regex.named-capture-groups.js: MJS error: parse error at line 10: [var result]
+kangax-es2018/regex.unicode-property-escapes.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: MJS error: parse error at line 10: [/\p{Extend]
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: MJS error: parse error at line 10: [/\p{Other_]
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: MJS error: parse error at line 10: [/\p{Unifie]
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: MJS error: parse error at line 10: [/\p{Script]
+kangax-es2019/Array.prototype.flatMap.js: MJS error: [try] is not implemented
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: MJS error: [try] is not implemented
+kangax-es2019/Array.prototype.flat.js: MJS error: [try] is not implemented
+kangax-es2019/Object.fromEntries.js: MJS error: parse error at line 10: [var object]
+kangax-es2019/String.prototype.trimEnd.js: MJS error: [try] is not implemented
+kangax-es2019/String.prototype.trimStart.js: MJS error: [try] is not implemented
+kangax-es2019/Symbol.prototype.description.empty.js: MJS error: [try] is not implemented
+kangax-es2019/Symbol.prototype.description.js: MJS error: [try] is not implemented
+kangax-es2019/Symbol.prototype.description.undefined.js: MJS error: parse error at line 11: [void undef]
+kangax-es2019/annex-b.String.prototype.trimLeft.js: MJS error: [try] is not implemented
+kangax-es2019/annex-b.String.prototype.trimRight.js: MJS error: [try] is not implemented
+kangax-es2019/misc.Function-toString.Function-constructor.js: MJS error: parse error at line 10: [var fn = F]
+kangax-es2019/misc.Function-toString.arrows.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2019/misc.Function-toString.computed-names.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2019/misc.Function-toString.native-code.js: MJS error: parse error at line 10: [/\bfunctio]
+kangax-es2019/misc.Function-toString.unicode-escapes.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2019/misc.JSON-stringify-well-formed.js: MJS error: [try] is not implemented
+kangax-es2019/misc.JSON-superset.line-separator.js: MJS error: [try] is not implemented
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: MJS error: [try] is not implemented
+kangax-es2019/misc.optional-catch-binding.await.js: MJS error: [var] is not implemented
+kangax-es2019/misc.optional-catch-binding.js: MJS error: parse error at line 9: [try {
+kangax-es2019/misc.optional-catch-binding.yield.js: MJS error: parse error at line 9: [*foo() {
+kangax-es2020/BigInt64Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es2020/BigInt.asIntN.js: MJS error: [try] is not implemented
+kangax-es2020/BigInt.asUintN.js: MJS error: [try] is not implemented
+kangax-es2020/BigInt.constructor.js: MJS error: [try] is not implemented
+kangax-es2020/BigInt.js: MJS error: parse error at line 10: [n + 2n) ==]
+kangax-es2020/BigUint64Array.js: MJS error: parse error at line 10: [var buffer]
+kangax-es2020/DataView.prototype.getBigInt64.js: MJS error: parse error at line 10: [var buffer]
+kangax-es2020/DataView.prototype.getBigUint64.js: MJS error: parse error at line 10: [var buffer]
+kangax-es2020/Promise.allSettled.js: MJS error: [var] is not implemented
+kangax-es2020/String.prototype.matchAll.js: MJS error: parse error at line 10: [var iterat]
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: MJS error: parse error at line 11: [try {
+kangax-es2020/globalThis.descriptor.js: MJS error: parse error at line 12: [var actual]
+kangax-es2020/globalThis.js: MJS error: parse error at line 13: [var actual]
+kangax-es2020/nullish-coalescing.js: MJS error: parse error at line 10: [? 42) === ]
+kangax-es2020/optional-chaining.bracket.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es2020/optional-chaining.function-call.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es2020/optional-chaining.method-call.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es2020/optional-chaining.property.js: MJS error: parse error at line 10: [var foo = ]
+kangax-es2020/optional-chaining.spread-params.js: MJS error: parse error at line 10: [var fn = n]
+kangax-es2021/FinalizationRegistry.js: MJS error: parse error at line 10: [var fr = n]
+kangax-es2021/Promise.any.AggregateError.js: MJS error: [var] is not implemented
+kangax-es2021/Promise.any.fulfillment.js: MJS error: [var] is not implemented
+kangax-es2021/String.prototype.replaceAll.js: MJS error: [try] is not implemented
+kangax-es2021/WeakRef.js: MJS error: parse error at line 10: [var O = {}]
+kangax-es2021/logical-assignment.and.js: MJS error: parse error at line 13: [= 2
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2021/logical-assignment.and.short-circuit.js: MJS error: parse error at line 11: [= ++i
+kangax-es2021/logical-assignment.nullish.js: MJS error: parse error at line 13: [?= 2
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2021/logical-assignment.nullish.short-circuit.js: MJS error: parse error at line 11: [?= ++i
+kangax-es2021/logical-assignment.or.js: MJS error: parse error at line 13: [= 2
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2021/logical-assignment.or.short-circuit.js: MJS error: parse error at line 11: [= ++i
+kangax-es2021/numeric-separators.js: MJS error: [try] is not implemented
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: MJS error: parse error at line 9: [in Aggrega]
+kangax-es2022/Error.cause.AggregateError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.Error-prototype-lacks.js: MJS error: parse error at line 9: [in Error.p]
+kangax-es2022/Error.cause.Error.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: MJS error: parse error at line 9: [in EvalErr]
+kangax-es2022/Error.cause.EvalError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: MJS error: parse error at line 9: [in RangeEr]
+kangax-es2022/Error.cause.RangeError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: MJS error: parse error at line 9: [in Referen]
+kangax-es2022/Error.cause.ReferenceError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: MJS error: parse error at line 9: [in SyntaxE]
+kangax-es2022/Error.cause.SyntaxError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: MJS error: parse error at line 9: [in TypeErr]
+kangax-es2022/Error.cause.TypeError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: MJS error: parse error at line 9: [in URIErro]
+kangax-es2022/Error.cause.URIError.js: MJS error: parse error at line 9: [var error ]
+kangax-es2022/Object.hasOwn.ToObject-first.js: MJS error: parse error at line 10: [var ok = !]
+kangax-es2022/Object.hasOwn.js: MJS error: [try] is not implemented
+kangax-es2022/at-method.Array.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2022/at-method.String.js: MJS error: parse error at line 10: [var str = ]
+kangax-es2022/at-method.TypedArray.js: MJS error: parse error at line 22: [var Constr]
+kangax-es2022/class-fields.computed-instance.js: MJS error: parse error at line 12: [new C().x ]
+kangax-es2022/class-fields.computed-static.js: MJS error: [try] is not implemented
+kangax-es2022/class-fields.instance.parent-scope.js: MJS error: parse error at line 15: [new MyClas]
+kangax-es2022/class-fields.private-instance.initializers.js: MJS error: parse error at line 10: [#x = 42
+kangax-es2022/class-fields.private-instance.js: MJS error: parse error at line 11: [#x
+kangax-es2022/class-fields.private-instance.optional-access.js: MJS error: parse error at line 10: [#x = 42
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: MJS error: parse error at line 10: [#x = 42
+kangax-es2022/class-fields.private-static.js: MJS error: parse error at line 11: [#x = 42
+kangax-es2022/class-fields.public-instance.js: MJS error: parse error at line 13: [new C().x ]
+kangax-es2022/class-fields.public-static.js: MJS error: [try] is not implemented
+kangax-es2022/class-fields.static.define.js: MJS error: parse error at line 9: [X { static]
+kangax-es2022/class-methods.private-accessor.js: MJS error: parse error at line 9: [var y = fa]
+kangax-es2022/class-methods.private-instance.js: MJS error: parse error at line 10: [#x() { ret]
+kangax-es2022/class-methods.private-static-accessor.js: MJS error: parse error at line 9: [var y = fa]
+kangax-es2022/class-methods.private-static.js: MJS error: parse error at line 10: [#x() { ret]
+kangax-es2022/class-static-init-blocks.js: MJS error: [try] is not implemented
+kangax-es2022/ergonomic-brand-checks.js: MJS error: parse error at line 10: [#x
+kangax-es2022/regex.flags.d.constructor.js: MJS error: parse error at line 9: [new RegExp]
+kangax-es2022/regex.flags.d.shows-in-flags.js: MJS error: parse error at line 11: [var expect]
+kangax-es2023/Array.prototype.findLastIndex.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/Array.prototype.findLast.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/Array.prototype.toReversed.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/Array.prototype.toSorted.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/Array.prototype.toSpliced.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/Array.prototype.with.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/TypedArray.prototype.toReversed.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/TypedArray.prototype.toSorted.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/TypedArray.prototype.with.js: MJS error: parse error at line 10: [var arr = ]
+kangax-es2023/hashbang.js: MJS error: parse error at line 1: [#!/usr/bin]
+kangax-es2024/ArrayBuffer.prototype.detached.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-es2024/ArrayBuffer.prototype.transfer.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-es2024/Map.groupBy.js: MJS error: parse error at line 13: [, index) =]
+kangax-es2024/Object.groupBy.js: MJS error: parse error at line 11: [, index) =]
+kangax-es2024/Promise.withResolvers.js: MJS error: parse error at line 10: [var obj = ]
+kangax-es2024/regex.flags.v.constructor.js: MJS error: parse error at line 9: [new RegExp]
+kangax-es2024/regex.flags.v.properties-of-strings.js: MJS error: parse error at line 9: [/^\p{Emoji]
+kangax-es2024/regex.flags.v.set-notations.js: MJS error: parse error at line 9: [/[\p{ASCII]
+kangax-es2024/regex.flags.v.shows-in-flags.js: MJS error: parse error at line 9: [var flags ]
+kangax-es2024/regex.flags.v.unicode-15.1.js: MJS error: parse error at line 9: [/^\p{RGI_E]
+kangax-es2024/regex.flags.v.unicode-16.0.js: MJS error: parse error at line 9: [/^\p{RGI_E]
+kangax-es2024/regex.flags.v.unicode-17.0.js: MJS error: parse error at line 9: [/^\p{RGI_E]
+kangax-es2025/Iterator.extends.js: MJS error: parse error at line 11: [new Class(]
+kangax-es2025/Iterator.from.iterable.js: MJS error: parse error at line 11: [in iterato]
+kangax-es2025/Iterator.from.iterator.js: MJS error: parse error at line 12: [) {
+kangax-es2025/Iterator.instanceof.js: MJS error: parse error at line 10: [instanceof]
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: MJS error: [try] is not implemented
+kangax-es2025/Iterator.prototype.drop.js: MJS error: [try] is not implemented
+kangax-es2025/Iterator.prototype.every.js: MJS error: parse error at line 10: [> typeof i]
+kangax-es2025/Iterator.prototype.filter.js: MJS error: parse error at line 10: [> it % 2))]
+kangax-es2025/Iterator.prototype.find.js: MJS error: parse error at line 10: [> it % 2) ]
+kangax-es2025/Iterator.prototype.flatMap.js: MJS error: parse error at line 10: [> [it, 0])]
+kangax-es2025/Iterator.prototype.forEach.js: MJS error: parse error at line 11: [> result +]
+kangax-es2025/Iterator.prototype.map.js: MJS error: parse error at line 10: [> it * it)]
+kangax-es2025/Iterator.prototype.reduce.js: MJS error: parse error at line 10: [, b) => a ]
+kangax-es2025/Iterator.prototype.some.js: MJS error: parse error at line 10: [> typeof i]
+kangax-es2025/Iterator.prototype.take.js: MJS error: [try] is not implemented
+kangax-es2025/Iterator.prototype.toArray.js: MJS error: [try] is not implemented
+kangax-es2025/Promise.try.js: MJS error: [var] is not implemented
+kangax-es2025/RegExp.escape.js: MJS error: [try] is not implemented
+kangax-es2025/Set.prototype.difference.js: MJS error: parse error at line 10: [var set = ]
+kangax-es2025/Set.prototype.intersection.js: MJS error: parse error at line 10: [var set = ]
+kangax-es2025/Set.prototype.isDisjointFrom.js: MJS error: parse error at line 10: [new Set([1]
+kangax-es2025/Set.prototype.isSubsetOf.js: MJS error: parse error at line 10: [new Set([1]
+kangax-es2025/Set.prototype.isSupersetOf.js: MJS error: parse error at line 10: [new Set([5]
+kangax-es2025/Set.prototype.symmetricDifference.js: MJS error: parse error at line 10: [var set = ]
+kangax-es2025/Set.prototype.union.js: MJS error: parse error at line 10: [var set = ]
+kangax-es2025/regex.duplicate-named-groups.js: MJS error: parse error at line 9: [/(?<year>[]
+kangax-es2025/regex.pattern-modifiers.i.js: MJS error: parse error at line 9: [/^[a-z](?-]
+kangax-es2025/regex.pattern-modifiers.m.js: MJS error: parse error at line 9: [/^a|(?m:^b]
+kangax-es2025/regex.pattern-modifiers.s.js: MJS error: parse error at line 9: [/.(?-s:.)/]
+kangax-intl/Array.prototype.toLocaleString.js: MJS error: [try] is not implemented
+kangax-intl/Date.prototype.toLocaleDateString.js: MJS error: [try] is not implemented
+kangax-intl/Date.prototype.toLocaleString.js: MJS error: [try] is not implemented
+kangax-intl/Date.prototype.toLocaleTimeString.js: MJS error: [try] is not implemented
+kangax-intl/Intl.Collator.js: MJS error: [try] is not implemented
+kangax-intl/Intl.Collator.new-instances.js: MJS error: parse error at line 10: [new Intl.C]
+kangax-intl/Intl.Collator.prototype.compare.js: MJS error: [try] is not implemented
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: MJS error: [try] is not implemented
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: MJS error: parse error at line 11: [try {
+kangax-intl/Intl.Collator.valid-tags.js: MJS error: parse error at line 10: [try {
+kangax-intl/Intl.Collator.without-new.js: MJS error: parse error at line 10: [instanceof]
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: MJS error: parse error at line 10: [try {
+kangax-intl/Intl.DateTimeFormat.js: MJS error: [try] is not implemented
+kangax-intl/Intl.DateTimeFormat.new-instances.js: MJS error: parse error at line 10: [new Intl.D]
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: MJS error: parse error at line 11: [try {
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: MJS error: parse error at line 10: [var tz = I]
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: MJS error: parse error at line 10: [try {
+kangax-intl/Intl.DateTimeFormat.without-new.js: MJS error: parse error at line 10: [instanceof]
+kangax-intl/Intl.NumberFormat.js: MJS error: [try] is not implemented
+kangax-intl/Intl.NumberFormat.new-instances.js: MJS error: parse error at line 10: [new Intl.N]
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: MJS error: parse error at line 11: [try {
+kangax-intl/Intl.NumberFormat.valid-tags.js: MJS error: parse error at line 10: [try {
+kangax-intl/Intl.NumberFormat.without-new.js: MJS error: parse error at line 10: [instanceof]
+kangax-intl/Intl.js: MJS error: [try] is not implemented
+kangax-intl/Intl.prototype.js: MJS error: [try] is not implemented
+kangax-intl/Number.prototype.toLocaleString.js: MJS error: [try] is not implemented
+kangax-intl/Object.prototype.toLocaleString.js: MJS error: [try] is not implemented
+kangax-intl/String.prototype.localeCompare.js: MJS error: [try] is not implemented
+kangax-next/Array.isTemplateObject.js: MJS error: parse error at line 10: [> it)`a${1]
+kangax-next/AsyncDisposableStack.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.extends.js: MJS error: parse error at line 10: [new Class(]
+kangax-next/AsyncIterator.from.async-iterable.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.from.iterable.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.from.iterator.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.instanceof.js: MJS error: parse error at line 9: [function*(]
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: MJS error: [try] is not implemented
+kangax-next/AsyncIterator.prototype.drop.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.every.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.filter.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.find.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.flatMap.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.forEach.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.map.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.reduce.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.some.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.take.js: MJS error: [var] is not implemented
+kangax-next/AsyncIterator.prototype.toArray.js: MJS error: [var] is not implemented
+kangax-next/DisposableStack.js: MJS error: parse error at line 9: [var stack1]
+kangax-next/Map.prototype.upsert.js: MJS error: parse error at line 9: [new Map([[]
+kangax-next/RegExp.1-9.js: MJS error: parse error at line 10: [var i = 1;]
+kangax-next/RegExp.lastMatch.js: MJS error: parse error at line 10: [var re = /]
+kangax-next/ShadowRealm.js: MJS error: parse error at line 11: [in ShadowR]
+kangax-next/SuppressedError.js: MJS error: parse error at line 9: [var err1 =]
+kangax-next/Uint8Array.fromBase64.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/Uint8Array.fromHex.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/Uint8Array.setFromBase64.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/Uint8Array.setFromHex.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/Uint8Array.toBase64.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/Uint8Array.toHex.js: MJS error: parse error at line 10: [new Uint8A]
+kangax-next/WeakMap.prototype.upsert.js: MJS error: parse error at line 10: [new WeakMa]
+kangax-next/await-using.for-of.js: MJS error: [var] is not implemented
+kangax-next/await-using.js: MJS error: [var] is not implemented
+kangax-next/class-decorators.js: MJS error: parse error at line 10: [@nonconf
+kangax-next/function.sent.js: MJS error: parse error at line 9: [var result]
+kangax-next/throw-expr.arrow.js: MJS error: parse error at line 9: [var fn = (]
+kangax-next/throw-expr.conditional.js: MJS error: parse error at line 9: [throw 21
+kangax-next/throw-expr.logical.js: MJS error: parse error at line 9: [var a, b
+kangax-next/throw-expr.param-init.js: MJS error: parse error at line 9: [= throw 42]
+kangax-next/using.for-of.js: MJS error: parse error at line 9: [var resour]
+kangax-next/using.js: MJS error: parse error at line 9: [var resour]
