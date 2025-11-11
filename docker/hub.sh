@@ -33,7 +33,7 @@ for arch in $ARCHS; do
       -f hub.Dockerfile \
       -t "jsz-hub:$arch" \
       --build-arg "BASE=jsz-runtime:$arch" \
-      --build-arg "TAG=$TAG" \
+      --build-arg "REV=$TAG" \
       --platform "linux/$arch" \
       ..
 done

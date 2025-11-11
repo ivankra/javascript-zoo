@@ -19,5 +19,5 @@ RUN mkdir -p /zoo && cd /zoo && \
 
 ADD dist/$TARGETARCH.tar /zoo/dist
 
-WORKDIR /zoo/dist
+WORKDIR /dist
 CMD /bin/bash --login -i
