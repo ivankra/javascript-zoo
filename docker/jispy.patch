@@ -1,0 +1,223 @@
+diff --git a/jispy.py b/jispy.py
+old mode 100644
+new mode 100755
+index eb976b5..4591d15
+--- a/jispy.py
++++ b/jispy.py
+@@ -1,3 +1,4 @@
++#!/usr/bin/env python3
+ #############################################################################
+ #                                                                           #
+ #   Jispy: A JavaScript interpreter in Python                               #
+@@ -17,6 +18,9 @@ import inspect;
+ import sys;
+ import math;
+ import random;
++import os;
++py3_map = map
++map = lambda f, *args: list(py3_map(f, *args))  # python 2's eager map
+ isa = isinstance;
+ 
+ #############################################################
+@@ -127,7 +131,7 @@ def lex(s):
+         "Helps segmentify() with segmenting a single line." # segmentifyLine() uses an FSM which looks as follows:
+         mode = 'code'; quote = None;                        #
+         ans = [''];                                         #           .--> (CODE) <--> STRING
+-        for i in xrange(len(s)):                            #
++        for i in range(len(s)):                             #
+             if mode == 'code' and quote is None:            # CODE is the start state and the only accepting state.
+                 if s[i] in ['"', "'"]:
+                     mode = 'string';
+@@ -224,7 +228,7 @@ def lex(s):
+     def lexS(s):
+         "Shaves off quotes and decodes backslash escapes."
+         assert s[0] == s[-1] and s[-1] in ['"', "'"];
+-        tokens.append(s[1 : -1].decode('string_escape'));
++        tokens.append(s[1 : -1]);
+     
+     for seg in segmentify(s):
+         if seg.startswith('"') or seg.startswith("'"):
+@@ -252,7 +256,7 @@ def gmb(seq, i): # Get Matching (Closing) Bracket
+     left = seq[i];
+     right = brackets[left];
+     count = 0;
+-    for j in xrange(i, len(seq), 1):
++    for j in range(i, len(seq), 1):
+         if seq[j] == left: count += 1;
+         elif seq[j] == right: count -= 1;
+         if count == 0: return j;
+@@ -601,7 +605,7 @@ def gmob(li, i): # GetMatchingOpeningBacket. Cousin of gmb()
+     right = li[i];
+     left = brackets[right];
+     count = 0;
+-    for j in xrange(i, -1, -1):    # i may be -ive
++    for j in range(i, -1, -1):    # i may be -ive
+         if li[j] == right : count += 1;
+         elif li[j] == left : count -= 1;
+         if count == 0: return j;
+@@ -722,7 +726,7 @@ def lj_repr(x):
+         return out + '}';
+     if type(x) is Function:
+         return 'function (' + ', '.join(x.params) + ') { ' + ' '.join(map(lj_repr, x.iTokens[1:])) + ' }';
+-    if inspect.isfunction(x):
++    if callable(x):
+         return 'function () { [native code] }'
+     assert False;
+ #############################################################
+@@ -745,7 +749,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+             "Substitutes identifier names w/ their values."
+             #print 'entering subNames, expLi = ', expLi;
+             count = 0; # counts { and }
+-            for j in xrange(len(expLi)):
++            for j in range(len(expLi)):
+                 tok = expLi[j];
+                 if tok is sym('{'): count += 1;               # Keys in objects `{a: "apple"}` are NOT substituted
+                 elif tok is sym('}'): count -= 1;
+@@ -825,11 +829,11 @@ def run(tree, env, maxLoopTime=None, writer=None):
+             "Helps with list and string refinements."
+             msg = 'array' if type(li) is list else 'string';
+             if type(ind) is not float:
+-                raise LJTypeErr(msg + ' indices must be numbers ... ' + lj_repr(i));
++                raise LJTypeErr(msg + ' indices must be numbers ... ' + lj_repr(ind));
+             elif ind < 0:
+-                raise LJTypeErr(msg + ' indices must be non-negative ... ' + lj_repr(i));
++                raise LJTypeErr(msg + ' indices must be non-negative ... ' + lj_repr(ind));
+             elif ind != round(ind):
+-                raise LJTypeErr(msg + ' indices must integers ... ' + lj_repr(i));
++                raise LJTypeErr(msg + ' indices must integers ... ' + lj_repr(ind));
+             elif ind >= len(li):
+                 raise LJIndexErr(msg + ' index out of range ... ' + lj_repr(ind));
+             return li[int(ind)];    # intermediate result
+@@ -873,12 +877,13 @@ def run(tree, env, maxLoopTime=None, writer=None):
+         
+         def invokePyFunction(func, args):
+             "Helps invoke python's function."
+-            nParams = len(inspect.getargspec(func)[0]);        # number of parameters
++            nParams = len(inspect.getfullargspec(func)[0]);        # number of parameters
+             if len(args) != nParams:
+                 raise LJTypeErr('incorrect no. of arguments');
+             inter = func(*args);
++            if type(inter) is int: inter = float(inter);
+             types = [bool, float, str, list, dict, Function, type(None)];
+-            if type(inter) in types or inspect.isfunction(inter):
++            if type(inter) in types or callable(inter):
+                 return inter;    # intermediate result
+             #print func;
+             raise Exception('non-returning native function');            
+@@ -889,7 +894,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+             def getRetExpLi(inter):
+                 return expLi[ :j-1] + [inter] + expLi[rp+1:];
+             func = expLi[j - 1];
+-            assert type(func) is Function or inspect.isfunction(func);
++            assert type(func) is Function or callable(func);
+             rp = gmb(expLi, j);
+             inner = expLi[j + 1 : rp];
+             augInner = [sym('[')] + inner + [sym(']')];
+@@ -915,7 +920,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+             entered = cloneLi(expLi);
+             j = 0;
+             def isFunction(x) :
+-                return type(x) is Function or inspect.isfunction(x);
++                return type(x) is Function or callable(x);
+             while j < len(expLi):
+                 tok = expLi[j];
+                 if tok is sym('['):
+@@ -975,7 +980,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+                 if type(y) in [bool, float, str, type(None)]:  #        Thus `is` in py is NOT the same as `===` in JS
+                     return x == y;
+                 refTypes = [list, dict, Function];
+-                assert type(y) in refTypes or inspect.isfunction(y);
++                assert type(y) in refTypes or callable(y);
+                 return x is y;
+             return {                                        # pythonic switch statement                                
+                 sym('==='): eqeqeq,
+@@ -1113,7 +1118,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+         # having finished looping...
+         ans = expLi[0];
+         LJTypes = [bool, float, str, list, dict, Function, type(None)];
+-        if not (type(ans) in LJTypes or inspect.isfunction(ans)):
++        if not (type(ans) in LJTypes or callable(ans)):
+             raise LJTypeErr('illegal expression (of unknown type)');
+         return ans;    # end eval(..)                
+ 
+@@ -1127,7 +1132,7 @@ def run(tree, env, maxLoopTime=None, writer=None):
+     
+     def runIfLadder(stmt, env):
+         "Helps run through an if-ladder."
+-        for j in xrange(1, len(stmt), 2):
++        for j in range(1, len(stmt), 2):
+             expLi, code = stmt[j], stmt[j+1];
+             if isTruthy(eval(expLi, env)):
+                 run(code, env, maxLoopTime, writer);
+@@ -1228,7 +1233,7 @@ def inbuilts(writer):
+     
+     def n_type(x):
+         "Returns the string name of LJ type."
+-        if inspect.isfunction(x): return 'function';
++        if callable(x) and type(x) not in [bool, float, str, list, dict, Function, type(None)]: return 'function';
+         return { # pythonic switch
+             bool:    'boolean',    float:         'number',
+             str:    'string',    list:        'array',
+@@ -1243,7 +1248,7 @@ def inbuilts(writer):
+     
+     def n_keys(dicty):
+         "Returns an array of keys in an object `obj`."
+-        if type(dicty) is dict: return dicty.keys();
++        if type(dicty) is dict: return list(dicty.keys());
+         raise LJTypeErr('%s has no keys()' % n_type(dicty));
+         
+     def n_del(x, y):
+@@ -1334,7 +1339,7 @@ def addNatives(env, dicty):
+         if name in env:
+             sys.stdout.write('WARNING!! Conflicting native name ' + name);
+         # otherwise...
+-        if inspect.isfunction(dicty[key]):
++        if callable(dicty[key]):
+             env[name] = dicty[key];
+         elif type(dicty[key]) in okTypes:
+             env[name] = dicty[key];
+@@ -1402,7 +1407,7 @@ def console(rt=None, semify=False, prompt='LJ> '):       # semify __tries__ to a
+     inp = '';                                               #  If you do so, runtime will not be renewed on each call to console();
+     while True:
+         inp += '\n';
+-        try: inp += raw_input(prompt) ;
++        try: inp += input(prompt) ;
+         except (EOFError):
+             print('');
+             return;
+@@ -1417,7 +1422,20 @@ def console(rt=None, semify=False, prompt='LJ> '):       # semify __tries__ to a
+             prompt = '.' * (len(prompt) - 1) + ' ' ;
+             pass; # continue;
+ 
++def main():
++    rt = Runtime();
++    script_dir = os.path.dirname(os.path.abspath(__file__));
++    for lib in ['stdlib.l.js']:
++        lib_path = os.path.join(script_dir, lib);
++        if os.path.exists(lib_path): rt.runG(lib_path);
++    rt.runG('var console = {log: print};');
++    if len(sys.argv) > 1:
++        for arg in sys.argv[1:]:
++            rt.runG(arg);
++    else:
++        console(rt);
++
+ if __name__ == '__main__':
+-    console();
+-        
++    main();
++
+ ############################################################
+diff --git a/tests.py b/tests.py
+index 8431fb5..0684486 100644
+--- a/tests.py
++++ b/tests.py
+@@ -457,7 +457,7 @@ tests = [
+ j = -1;
+ for prog in tests:
+     j += 1;
+-    print str(j) + '. ',
++    print(str(j) + '. ')
+     #print 'test     -->\n', t, '\n';
+     tokens = lex(prog);
+     #print 'tokens   -->\n', tokens, '\n';

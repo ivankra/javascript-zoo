@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "dist_size": 82829, "engine": "jispy", "repository": "https://github.com/polydojo/jispy.git", "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e", "revision_date": "2017-09-05", "version": "1.0.0"}
+es1/Array.js: SyntaxError: unexpected token Array
+es1/Array.length.assignment.js: SyntaxError: unexpected token Array
+es1/Array.length.js: SyntaxError: unexpected token Array
+es1/Array.prototype.constructor.js: SyntaxError: unexpected token Array
+es1/Array.prototype.join.generic.js: SyntaxError: unexpected token Array
+es1/Array.prototype.join.js: SyntaxError: unexpected token Array
+es1/Array.prototype.reverse.generic.js: SyntaxError: unexpected token Array
+es1/Array.prototype.reverse.js: SyntaxError: unexpected token Array
+es1/Array.prototype.sort.generic.js: SyntaxError: unexpected token Array
+es1/Array.prototype.sort.js: SyntaxError: unexpected token Array
+es1/Array.prototype.toString.js: SyntaxError: unexpected token Array
+es1/Boolean.js: SyntaxError: unexpected token Boolean
+es1/Boolean.prototype.constructor.js: SyntaxError: unexpected token Boolean
+es1/Boolean.prototype.toString.js: SyntaxError: unexpected token Boolean
+es1/Boolean.prototype.valueOf.js: SyntaxError: unexpected token Boolean
+es1/Date.diff.js: SyntaxError: unexpected token Date
+es1/Date.js: SyntaxError: unexpected token Date
+es1/Date.prototype.constructor.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getDate.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getDay.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getFullYear.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getHours.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getMilliseconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getMinutes.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getMonth.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getSeconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getTimezoneOffset.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getTime.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCDate.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCDay.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCFullYear.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCHours.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCMilliseconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCMinutes.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCMonth.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getUTCSeconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setDate.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setFullYear.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setHours.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setMilliseconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setMinutes.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setMonth.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setSeconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setTime.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCDate.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCFullYear.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCHours.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCMilliseconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCMinutes.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCMonth.js: SyntaxError: unexpected token Date
+es1/Date.prototype.setUTCSeconds.js: SyntaxError: unexpected token Date
+es1/Date.prototype.toLocaleString.js: SyntaxError: unexpected token Date
+es1/Date.prototype.toString.js: SyntaxError: unexpected token Date
+es1/Date.prototype.toUTCString.js: SyntaxError: unexpected token Date
+es1/Date.prototype.valueOf.js: SyntaxError: unexpected token Date
+es1/Function.js: SyntaxError: unexpected token Function
+es1/Function.length.js: SyntaxError: unexpected token Function
+es1/Function.prototype.constructor.js: SyntaxError: unexpected token Function
+es1/Function.prototype.js: SyntaxError: unexpected token Function
+es1/Function.prototype.toString.js: SyntaxError: unexpected token Function
+es1/Math.E.js: SyntaxError: unexpected token Math
+es1/Math.LN2.js: SyntaxError: unexpected token Math
+es1/Math.LN10.js: SyntaxError: unexpected token Math
+es1/Math.LOG2E.js: SyntaxError: unexpected token Math
+es1/Math.LOG10E.js: SyntaxError: unexpected token Math
+es1/Math.PI.js: SyntaxError: unexpected token Math
+es1/Math.SQRT1_2.js: SyntaxError: unexpected token Math
+es1/Math.SQRT2.js: SyntaxError: unexpected token Math
+es1/Math.abs.js: SyntaxError: unexpected token Math
+es1/Math.acos.js: SyntaxError: unexpected token Math
+es1/Math.asin.js: SyntaxError: unexpected token Math
+es1/Math.atan2.js: SyntaxError: unexpected token Math
+es1/Math.atan.js: SyntaxError: unexpected token Math
+es1/Math.ceil.js: SyntaxError: unexpected token Math
+es1/Math.cos.js: SyntaxError: unexpected token Math
+es1/Math.exp.js: SyntaxError: unexpected token Math
+es1/Math.floor.js: SyntaxError: unexpected token Math
+es1/Math.log.js: SyntaxError: unexpected token Math
+es1/Math.max.js: SyntaxError: unexpected token Math
+es1/Math.min.js: SyntaxError: unexpected token Math
+es1/Math.pow.js: SyntaxError: unexpected token Math
+es1/Math.random.js: SyntaxError: unexpected token Math
+es1/Math.round.js: SyntaxError: unexpected token Math
+es1/Math.sin.js: SyntaxError: unexpected token Math
+es1/Math.sqrt.js: SyntaxError: unexpected token Math
+es1/Math.tan.js: SyntaxError: unexpected token Math
+es1/Number.MAX_VALUE.js: SyntaxError: unexpected token Number
+es1/Number.MIN_VALUE.js: SyntaxError: unexpected token Number
+es1/Number.NEGATIVE_INFINITY.js: SyntaxError: unexpected token Number
+es1/Number.NaN.js: SyntaxError: unexpected token Number
+es1/Number.POSITIVE_INFINITY.js: SyntaxError: unexpected token Number
+es1/Number.js: SyntaxError: unexpected token Number
+es1/Number.prototype.constructor.js: SyntaxError: unexpected token Number
+es1/Number.prototype.toString.js: SyntaxError: unexpected token Number
+es1/Number.prototype.valueOf.js: SyntaxError: unexpected token Number
+es1/Object.js: SyntaxError: unexpected token Object
+es1/Object.prototype.constructor.js: SyntaxError: unexpected token Object
+es1/Object.prototype.toString.js: SyntaxError: unexpected token Object
+es1/Object.prototype.valueOf.js: SyntaxError: unexpected token Object
+es1/String.fromCharCode.js: SyntaxError: unexpected token String
+es1/String.generics.js: SyntaxError: unexpected token String
+es1/String.js: SyntaxError: unexpected token String
+es1/String.length.js: SyntaxError: unexpected token String
+es1/String.prototype.charAt.js: SyntaxError: unexpected token String
+es1/String.prototype.charCodeAt.js: SyntaxError: unexpected token String
+es1/String.prototype.constructor.js: SyntaxError: unexpected token String
+es1/String.prototype.indexOf.js: SyntaxError: unexpected token String
+es1/String.prototype.lastIndexOf.js: SyntaxError: unexpected token String
+es1/String.prototype.split.js: SyntaxError: unexpected token String
+es1/String.prototype.substring.js: SyntaxError: unexpected token String
+es1/String.prototype.toLowerCase.js: SyntaxError: unexpected token String
+es1/String.prototype.toString.js: SyntaxError: unexpected token String
+es1/String.prototype.toUpperCase.js: SyntaxError: unexpected token String
+es1/String.prototype.valueOf.js: SyntaxError: unexpected token String
+es1/annex-b.Date.prototype.getYear.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "Date" ] [ "prototype" ] [ "getYear" ]
+es1/annex-b.Date.prototype.setYear.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "Date" ] [ "prototype" ] [ "setYear" ]
+es1/annex-b.Date.prototype.toGMTString.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "Date" ] [ "prototype" ] [ "toGMTString" ]
+es1/annex-b.global.escape.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "global" ] [ "escape" ] [ "js" ]
+es1/annex-b.global.unescape.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "global" ] [ "unescape" ] [ "js" ]
+es1/annex-b.literals.octal.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "literals" ] [ "octal" ] [ "js" ]
+es1/annex-b.literals.string.octal.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / annex - b [ "literals" ] [ "string" ] [ "octal" ]
+es1/arguments.callee.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / arguments [ "callee" ] [ "js" ]
+es1/arguments.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / arguments [ "js" ]
+es1/asi.eval.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / asi [ "eval" ] [ "js" ]
+es1/asi.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / asi [ "js" ]
+es1/assignment.bitwise.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / assignment [ "bitwise" ] [ "js" ]
+es1/assignment.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / assignment [ "js" ]
+es1/assignment.ltr.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / assignment [ "ltr" ] [ "js" ]
+es1/assignment.unsigned-shift.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / assignment [ "unsigned" ] - shift [ "js" ]
+es1/bitwise.binary.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / bitwise [ "binary" ] [ "js" ]
+es1/bitwise.shifts.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / bitwise [ "shifts" ] [ "js" ]
+es1/bitwise.tilde.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / bitwise [ "tilde" ] [ "js" ]
+es1/bitwise.unsigned-shift.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / bitwise [ "unsigned" ] - shift [ "js" ]
+es1/break.js: SyntaxError: unexpected token break
+es1/comma.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / comma [ "js" ]
+es1/comments.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / comments [ "js" ]
+es1/conditional.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conditional [ "js" ]
+es1/continue.js: SyntaxError: unexpected token continue
+es1/conversions.ToBoolean.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToBoolean" ] [ "js" ]
+es1/conversions.ToInt32.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToInt32" ] [ "js" ]
+es1/conversions.ToInteger.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToInteger" ] [ "js" ]
+es1/conversions.ToNumber.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToNumber" ] [ "js" ]
+es1/conversions.ToObject.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToObject" ] [ "js" ]
+es1/conversions.ToString.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToString" ] [ "js" ]
+es1/conversions.ToUint32.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "ToUint32" ] [ "js" ]
+es1/conversions.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / conversions [ "js" ]
+es1/equals.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / equals [ "js" ]
+es1/eval.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / eval [ "js" ]
+es1/for-in.js: SyntaxError: unexpected token in
+es1/for.js: SyntaxError: unexpected token for
+es1/function.js: SyntaxError: unexpected token function
+es1/global.Infinity.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "Infinity" ] [ "js" ]
+es1/global.NaN.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "NaN" ] [ "js" ]
+es1/global.isFinite.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "isFinite" ] [ "js" ]
+es1/global.isNaN.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "isNaN" ] [ "js" ]
+es1/global.parseFloat.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "parseFloat" ] [ "js" ]
+es1/global.parseInt.hex.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "parseInt" ] [ "hex" ] [ "js" ]
+es1/global.parseInt.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "parseInt" ] [ "js" ]
+es1/global.parseInt.radix.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "parseInt" ] [ "radix" ] [ "js" ]
+es1/literals.decimal.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "decimal" ] [ "js" ]
+es1/literals.hex.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "hex" ] [ "js" ]
+es1/literals.string.escapes.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "string" ] [ "escapes" ] [ "js" ]
+es1/literals.string.hex.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "string" ] [ "hex" ] [ "js" ]
+es1/literals.string.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "string" ] [ "js" ]
+es1/literals.string.unicode.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / literals [ "string" ] [ "unicode" ] [ "js" ]
+es1/logical.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / logical [ "js" ]
+es1/new.typeof.js: SyntaxError: unexpected token new
+es1/numbers.double.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / numbers [ "double" ] [ "js" ]
+es1/numbers.fmod.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / numbers [ "fmod" ] [ "js" ]
+es1/numbers.inf.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / numbers [ "inf" ] [ "js" ]
+es1/numbers.int.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / numbers [ "int" ] [ "js" ]
+es1/numbers.nan.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / numbers [ "nan" ] [ "js" ]
+es1/postfix.decrement.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / postfix [ "decrement" ] [ "js" ]
+es1/postfix.increment.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / postfix [ "increment" ] [ "js" ]
+es1/prefix.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / prefix [ "js" ]
+es1/relational.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / relational [ "js" ]
+es1/return.js: SyntaxError: unexpected token return
+es1/return.typeof.js: SyntaxError: unexpected token return
+es1/this.js: SyntaxError: unexpected token this
+es1/typeof.js: SyntaxError: unexpected token typeof
+es1/typeof.null.js: SyntaxError: unexpected token typeof
+es1/typeof.undeclared.js: SyntaxError: unexpected token typeof
+es1/types.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / types [ "js" ]
+es1/unary.decrement.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "decrement" ] [ "js" ]
+es1/unary.delete.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "delete" ] [ "js" ]
+es1/unary.delete.var.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "delete" ] [ "var" ] [ "js" ]
+es1/unary.increment.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "increment" ] [ "js" ]
+es1/unary.minus.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "minus" ] [ "js" ]
+es1/unary.not.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "not" ] [ "js" ]
+es1/unary.plus.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "plus" ] [ "js" ]
+es1/unary.plus.str.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "plus" ] [ "str" ] [ "js" ]
+es1/unary.tilde.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / unary [ "tilde" ] [ "js" ]
+es1/var.js: SyntaxError: unexpected token var
+es1/var.typeof.js: SyntaxError: unexpected token var
+es1/void.js: SyntaxError: unexpected token void
+es1/void.typeof.js: SyntaxError: unexpected token void
+es1/while.js: SyntaxError: unexpected token while
+es1/with.js: SyntaxError: unexpected token with
+es3/Array.prototype.concat.js: SyntaxError: unexpected token Array
+es3/Array.prototype.pop.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.pop.js: SyntaxError: unexpected token Array
+es3/Array.prototype.push.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.push.js: SyntaxError: unexpected token Array
+es3/Array.prototype.shift.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.shift.js: SyntaxError: unexpected token Array
+es3/Array.prototype.slice.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.slice.js: SyntaxError: unexpected token Array
+es3/Array.prototype.splice.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.splice.js: SyntaxError: unexpected token Array
+es3/Array.prototype.toLocaleString.js: SyntaxError: unexpected token Array
+es3/Array.prototype.unshift.generic.js: SyntaxError: unexpected token Array
+es3/Array.prototype.unshift.js: SyntaxError: unexpected token Array
+es3/Array.prototype.unshift.returns-new-length.js: SyntaxError: unexpected token Array
+es3/Date.prototype.toDateString.js: SyntaxError: unexpected token Date
+es3/Date.prototype.toLocaleDateString.js: SyntaxError: unexpected token Date
+es3/Date.prototype.toLocaleString.js: SyntaxError: unexpected token Date
+es3/Date.prototype.toLocaleTimeString.js: SyntaxError: unexpected token Date
+es3/Date.prototype.toTimeString.js: SyntaxError: unexpected token Date
+es3/Error.js: SyntaxError: unexpected token Error
+es3/Error.prototype.constructor.js: SyntaxError: unexpected token Error
+es3/Error.prototype.message.js: SyntaxError: unexpected token Error
+es3/Error.prototype.name.js: SyntaxError: unexpected token Error
+es3/Error.prototype.toString.js: SyntaxError: unexpected token Error
+es3/Function.prototype.apply.js: SyntaxError: unexpected token Function
+es3/Function.prototype.call.js: SyntaxError: unexpected token Function
+es3/Math.max.variadic.js: SyntaxError: unexpected token Math
+es3/Math.min.variadic.js: SyntaxError: unexpected token Math
+es3/Number.prototype.toExponential.edge-cases.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toExponential.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toExponential.rounding.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toFixed.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toLocaleString.js: SyntaxError: unexpected token Number
+es3/Number.prototype.toPrecision.js: SyntaxError: unexpected token Number
+es3/Object.prototype.hasOwnProperty.js: SyntaxError: unexpected token Object
+es3/Object.prototype.isPrototypeOf.js: SyntaxError: unexpected token Object
+es3/Object.prototype.propertyIsEnumerable.js: SyntaxError: unexpected token Object
+es3/Object.prototype.toLocaleString.js: SyntaxError: unexpected token Object
+es3/RegExp.global.js: SyntaxError: unexpected token RegExp
+es3/RegExp.ignoreCase.js: SyntaxError: unexpected token RegExp
+es3/RegExp.js: SyntaxError: unexpected token RegExp
+es3/RegExp.lastIndex.js: SyntaxError: unexpected token RegExp
+es3/RegExp.multiline.js: SyntaxError: unexpected token RegExp
+es3/RegExp.prototype.constructor.js: SyntaxError: unexpected token RegExp
+es3/RegExp.prototype.exec.js: SyntaxError: unexpected token RegExp
+es3/RegExp.prototype.test.js: SyntaxError: unexpected token RegExp
+es3/RegExp.prototype.toString.js: SyntaxError: unexpected token RegExp
+es3/RegExp.source.js: SyntaxError: unexpected token RegExp
+es3/String.prototype.concat.generic.js: SyntaxError: unexpected token String
+es3/String.prototype.concat.js: SyntaxError: unexpected token String
+es3/String.prototype.localeCompare.js: SyntaxError: unexpected token String
+es3/String.prototype.match.generic.js: SyntaxError: unexpected token String
+es3/String.prototype.match.js: SyntaxError: unexpected token String
+es3/String.prototype.replace.capture.js: SyntaxError: unexpected token String
+es3/String.prototype.replace.extra.js: SyntaxError: unexpected token String
+es3/String.prototype.replace.generic.js: SyntaxError: unexpected token String
+es3/String.prototype.replace.regex.js: SyntaxError: unexpected token String
+es3/String.prototype.replace.str.js: SyntaxError: unexpected token String
+es3/String.prototype.search.generic.js: SyntaxError: unexpected token String
+es3/String.prototype.search.js: SyntaxError: unexpected token String
+es3/String.prototype.search.str.js: SyntaxError: unexpected token String
+es3/String.prototype.slice.generic.js: SyntaxError: unexpected token String
+es3/String.prototype.slice.js: SyntaxError: unexpected token String
+es3/String.prototype.split.bugs.js: SyntaxError: unexpected token String
+es3/String.prototype.split.limit.js: SyntaxError: unexpected token String
+es3/String.prototype.split.regex.js: SyntaxError: unexpected token String
+es3/String.prototype.toLocaleLowerCase.js: SyntaxError: unexpected token String
+es3/String.prototype.toLocaleUpperCase.js: SyntaxError: unexpected token String
+es3/annex-b.String.prototype.substr.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / annex - b [ "String" ] [ "prototype" ] [ "substr" ]
+es3/do-while.js: SyntaxError: unexpected keyword do
+es3/function-expressions.IIFE.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / function - expressions [ "IIFE" ] [ "js" ]
+es3/function-expressions.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / function - expressions [ "js" ]
+es3/global.EvalError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "EvalError" ] [ "js" ]
+es3/global.RangeError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "RangeError" ] [ "js" ]
+es3/global.RangeError.thrown.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "RangeError" ] [ "thrown" ] [ "js" ]
+es3/global.ReferenceError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "ReferenceError" ] [ "js" ]
+es3/global.ReferenceError.thrown.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "ReferenceError" ] [ "thrown" ] [ "js" ]
+es3/global.SyntaxError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "SyntaxError" ] [ "js" ]
+es3/global.SyntaxError.thrown.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "SyntaxError" ] [ "thrown" ] [ "js" ]
+es3/global.TypeError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "TypeError" ] [ "js" ]
+es3/global.TypeError.thrown.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "TypeError" ] [ "thrown" ] [ "js" ]
+es3/global.URIError.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "URIError" ] [ "js" ]
+es3/global.URIError.thrown.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "URIError" ] [ "thrown" ] [ "js" ]
+es3/global.decodeURIComponent.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "decodeURIComponent" ] [ "js" ]
+es3/global.decodeURI.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "decodeURI" ] [ "js" ]
+es3/global.encodeURIComponent.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "encodeURIComponent" ] [ "js" ]
+es3/global.encodeURI.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "encodeURI" ] [ "js" ]
+es3/global.undefined.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / global [ "undefined" ] [ "js" ]
+es3/identifiers.unicode.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / identifiers [ "unicode" ] [ "js" ]
+es3/instanceof.js: SyntaxError: unexpected token instanceof
+es3/in.js: SyntaxError: unexpected token in
+es3/labelled.break.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / labelled [ "break" ] [ "js" ]
+es3/labelled.continue.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / labelled [ "continue" ] [ "js" ]
+es3/labelled.statements.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / labelled [ "statements" ] [ "js" ]
+es3/literals.array.elisions.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "array" ] [ "elisions" ] [ "js" ]
+es3/literals.array.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "array" ] [ "js" ]
+es3/literals.array.trailing-comma.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "array" ] [ "trailing" ] - comma [ "js" ]
+es3/literals.object.decimal.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "decimal" ] [ "js" ]
+es3/literals.object.hex.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "hex" ] [ "js" ]
+es3/literals.object.int.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "int" ] [ "js" ]
+es3/literals.object.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "js" ]
+es3/literals.object.str.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "str" ] [ "js" ]
+es3/literals.object.unicode.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "object" ] [ "unicode" ] [ "js" ]
+es3/literals.regex.ambiguous.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "regex" ] [ "ambiguous" ] [ "js" ]
+es3/literals.regex.empty.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "regex" ] [ "empty" ] [ "js" ]
+es3/literals.regex.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "regex" ] [ "js" ]
+es3/literals.string.esc-v.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / literals [ "string" ] [ "esc" ] - v [ "js" ]
+es3/nested-functions.eval.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / nested - functions [ "eval" ] [ "js" ]
+es3/nested-functions.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / nested - functions [ "js" ]
+es3/regex.backref.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "backref" ] [ "js" ]
+es3/regex.begin.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "begin" ] [ "js" ]
+es3/regex.bracket.esc-b.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "bracket" ] [ "esc" ] - b [ "js" ]
+es3/regex.bracket.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "bracket" ] [ "js" ]
+es3/regex.bracket.ranges.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "bracket" ] [ "ranges" ] [ "js" ]
+es3/regex.class.esc-d.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "class" ] [ "esc" ] - d [ "js" ]
+es3/regex.class.esc-s.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "class" ] [ "esc" ] - s [ "js" ]
+es3/regex.class.esc-w.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "class" ] [ "esc" ] - w [ "js" ]
+es3/regex.disjunction.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "disjunction" ] [ "js" ]
+es3/regex.dot.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "dot" ] [ "js" ]
+es3/regex.end.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "end" ] [ "js" ]
+es3/regex.escape.control.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "escape" ] [ "control" ] [ "js" ]
+es3/regex.escape.hex.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "escape" ] [ "hex" ] [ "js" ]
+es3/regex.escape.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "escape" ] [ "js" ]
+es3/regex.escape.nul.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "escape" ] [ "nul" ] [ "js" ]
+es3/regex.escape.unicode.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "escape" ] [ "unicode" ] [ "js" ]
+es3/regex.flag.global.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "flag" ] [ "global" ] [ "js" ]
+es3/regex.flag.ignorecase.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "flag" ] [ "ignorecase" ] [ "js" ]
+es3/regex.flag.multiline.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "flag" ] [ "multiline" ] [ "js" ]
+es3/regex.group.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "group" ] [ "js" ]
+es3/regex.lookahead.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "lookahead" ] [ "js" ]
+es3/regex.negative-lookahead.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "negative" ] - lookahead [ "js" ]
+es3/regex.non-capturing-group.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "non" ] - capturing - group [ "js" ]
+es3/regex.quantifier.exact.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "exact" ] [ "js" ]
+es3/regex.quantifier.maybe.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "maybe" ] [ "js" ]
+es3/regex.quantifier.min.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "min" ] [ "js" ]
+es3/regex.quantifier.plus.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "plus" ] [ "js" ]
+es3/regex.quantifier.range.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "range" ] [ "js" ]
+es3/regex.quantifier.star.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "quantifier" ] [ "star" ] [ "js" ]
+es3/regex.word-boundary.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / regex [ "word" ] - boundary [ "js" ]
+es3/source.line-terminators.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / source [ "line" ] - terminators [ "js" ]
+es3/source.whitespace.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / source [ "whitespace" ] [ "js" ]
+es3/source.whitespace.unicode.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / source [ "whitespace" ] [ "unicode" ] [ "js" ]
+es3/strict-equals.js: SyntaxError: expected ; ...  / zoo / conformance / es3 / strict - equals [ "js" ]
+es3/switch.js: SyntaxError: unexpected token switch
+es3/try-catch-finally.js: SyntaxError: unexpected keyword try
+es3/try-catch-throw.js: SyntaxError: unexpected keyword try
+es5/Array.isArray.js: SyntaxError: unexpected token Array
+es5/Array.prototype.every.js: SyntaxError: unexpected token Array
+es5/Array.prototype.filter.js: SyntaxError: unexpected token Array
+es5/Array.prototype.forEach.js: SyntaxError: unexpected token Array
+es5/Array.prototype.indexOf.js: SyntaxError: unexpected token Array
+es5/Array.prototype.lastIndexOf.js: SyntaxError: unexpected token Array
+es5/Array.prototype.map.js: SyntaxError: unexpected token Array
+es5/Array.prototype.reduceRight.js: SyntaxError: unexpected token Array
+es5/Array.prototype.reduce.js: SyntaxError: unexpected token Array
+es5/Array.prototype.some.js: SyntaxError: unexpected token Array
+es5/Array.prototype.sort.TypeError.js: SyntaxError: unexpected token Array
+es5/Array.prototype.sort.undefined-comparefn.js: SyntaxError: unexpected token Array
+es5/Date.now.js: SyntaxError: unexpected token Date
+es5/Date.prototype.toISOString.js: SyntaxError: unexpected token Date
+es5/Date.prototype.toJSON.js: SyntaxError: unexpected token Date
+es5/Function.prototype-not-enumerable.js: SyntaxError: unexpected token Function
+es5/Function.prototype.apply.array-like.js: SyntaxError: unexpected token Function
+es5/Function.prototype.bind.js: SyntaxError: unexpected token Function
+es5/JSON.js: SyntaxError: unexpected token JSON
+es5/JSON.parse.js: SyntaxError: unexpected token JSON
+es5/JSON.parse.reviver.js: SyntaxError: unexpected token JSON
+es5/JSON.stringify.js: SyntaxError: unexpected token JSON
+es5/JSON.stringify.replacer.js: SyntaxError: unexpected token JSON
+es5/JSON.stringify.space.js: SyntaxError: unexpected token JSON
+es5/Object.create.js: SyntaxError: unexpected token Object
+es5/Object.defineProperties.js: SyntaxError: unexpected token Object
+es5/Object.defineProperty.js: SyntaxError: unexpected token Object
+es5/Object.freeze.js: SyntaxError: unexpected token Object
+es5/Object.getOwnPropertyDescriptor.js: SyntaxError: unexpected token Object
+es5/Object.getOwnPropertyNames.js: SyntaxError: unexpected token Object
+es5/Object.getPrototypeOf.js: SyntaxError: unexpected token Object
+es5/Object.isExtensible.js: SyntaxError: unexpected token Object
+es5/Object.isFrozen.js: SyntaxError: unexpected token Object
+es5/Object.isSealed.js: SyntaxError: unexpected token Object
+es5/Object.keys.js: SyntaxError: unexpected token Object
+es5/Object.preventExtensions.js: SyntaxError: unexpected token Object
+es5/Object.property-shadowing.js: SyntaxError: unexpected token Object
+es5/Object.seal.js: SyntaxError: unexpected token Object
+es5/String.indexing.js: SyntaxError: unexpected token String
+es5/String.prototype.trim.js: SyntaxError: unexpected token String
+es5/arguments.toStringTag.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / arguments [ "toStringTag" ] [ "js" ]
+es5/debugger.js: SyntaxError: unexpected token debugger
+es5/global.Infinity.immutable.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / global [ "Infinity" ] [ "immutable" ] [ "js" ]
+es5/global.NaN.immutable.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / global [ "NaN" ] [ "immutable" ] [ "js" ]
+es5/global.parseInt.no-octal.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / global [ "parseInt" ] [ "no" ] - octal [ "js" ]
+es5/global.undefined.immutable.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / global [ "undefined" ] [ "immutable" ] [ "js" ]
+es5/literals.object.getters.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / literals [ "object" ] [ "getters" ] [ "js" ]
+es5/literals.object.setters.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / literals [ "object" ] [ "setters" ] [ "js" ]
+es5/literals.object.trailing-comma.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / literals [ "object" ] [ "trailing" ] - comma [ "js" ]
+es5/source.keyword-properties.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / source [ "keyword" ] - properties [ "js" ]
+es5/source.unreserved-words.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / source [ "unreserved" ] - words [ "js" ]
+es5/source.whitespace.bom.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / source [ "whitespace" ] [ "bom" ] [ "js" ]
+es5/source.zero-width-chars.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / source [ "zero" ] - width - chars [ "js" ]
+es5/strict.eval-cannot-create-bindings.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "eval" ] - cannot - create - bindings [ "js"
+es5/strict.function-expr-with-matching-name.js: SyntaxError: unexpected keyword with
+es5/strict.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "js" ]
+es5/strict.no-arguments-callee.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - arguments - callee [ "js" ]
+es5/strict.no-arguments-caller.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - arguments - caller [ "js" ]
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - assignment - to - non - writable
+es5/strict.no-assignment-to-unresolvable.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - assignment - to - unresolvable [ "js"
+es5/strict.no-delete-bindings.js: SyntaxError: unexpected keyword delete
+es5/strict.no-delete-non-configurable.js: SyntaxError: unexpected keyword delete
+es5/strict.no-duplicate-parameters.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - duplicate - parameters [ "js" ]
+es5/strict.no-eval-or-arguments-assignment.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - eval - or - arguments - assignment
+es5/strict.no-eval-or-arguments-bindings.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - eval - or - arguments - bindings
+es5/strict.no-function-caller-or-arguments.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - function - caller - or - arguments
+es5/strict.no-octal-literals.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "no" ] - octal - literals [ "js" ]
+es5/strict.no-with.js: SyntaxError: unexpected token with
+es5/strict.reserved-words.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "reserved" ] - words [ "js" ]
+es5/strict.this-primitive-not-coerced-in-accessors.js: SyntaxError: unexpected keyword in
+es5/strict.this-primitive-not-coerced.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "this" ] - primitive - not - coerced [ "js"
+es5/strict.this-undefined-in-function.js: SyntaxError: unexpected keyword undefined
+es5/strict.unmapped-arguments.js: SyntaxError: expected ; ...  / zoo / conformance / es5 / strict [ "unmapped" ] - arguments [ "js" ]
+es5/this.thrown-function.js: SyntaxError: unexpected token this

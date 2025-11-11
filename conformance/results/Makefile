@@ -13,7 +13,7 @@ all: $(addsuffix .txt, $(ENGINES)) table
 table:
 	./README-gen.py
 
-ES5 := bali besen cesanta-elk echosoar-jsi espruino ngs yrm006-miniscript
+ES5 := bali besen cesanta-elk echosoar-jsi espruino jispy ngs yrm006-miniscript
 MANUAL := topchetoeu
 
 define ENGINE_RULE

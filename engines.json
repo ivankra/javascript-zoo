@@ -16,17 +16,6 @@
     "license_abbr": "MIT",
     "github_stars": 567,
     "github_forks": 90,
-    "bench": [
-      {
-        "arch": "arm64",
-        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
-        "binary_size": 727304,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://github.com/gfwilliams/tiny-js.git",
-        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
-        "revision_date": "2014-10-19"
-      }
-    ],
     "conformance": {
       "es1": 0.6162,
       "es3": 0.5878,
@@ -1963,6 +1952,14 @@
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 1006163,
+        "repository": "https://github.com/andrewmd5/hako.git",
+        "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
+        "revision_date": "2025-08-14",
+        "version": "1.0.2-2-g99c76af"
       }
     ],
     "conformance": {
@@ -2567,19 +2564,36 @@
   {
     "id": "jispy",
     "title": "Jispy",
-    "summary": "Interpreter for a JavaScript subset written in Python.",
+    "summary": "Interpreter for a JavaScript-like language written in Python.",
     "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/jispy.md",
     "repository": "https://github.com/polydojo/jispy.git",
     "loc": 1182,
     "language": "Python",
     "license": "MPL-2.0",
     "years": "2014-2017",
+    "type": "JavaScript-like language ([ref](https://github.com/polydojo/jispy/blob/master/LittleJ.md))",
     "platform": "Python",
     "interpreter": "tree walker",
     "loc_command": "cloc jispy.py",
     "license_abbr": "MPL-2.0",
     "github_stars": 59,
-    "github_forks": 18
+    "github_forks": 18,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 82829,
+        "repository": "https://github.com/polydojo/jispy.git",
+        "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e",
+        "revision_date": "2017-09-05",
+        "version": "1.0.0"
+      }
+    ],
+    "conformance": {
+      "es1": 0.0,
+      "es3": 0.0,
+      "es5": 0.0,
+      "es1-es5": 0.0
+    }
   },
   {
     "id": "js-interpreter",
