@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "dist_size": 4376224, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: failed
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: 'undefined' is not a function (tried calling property 'getYear' of 'Date')
+es1/annex-b.Date.prototype.setYear.js: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: 'undefined' is not a function (tried calling property 'setYear' of 'Date')
+es1/annex-b.Date.prototype.toGMTString.js: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: 'undefined' is not a function (tried calling property 'toGMTString' of 'Date')
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: failed
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: KeyError: b'\x8b"\x1e\x9bg\x1d\x00\xf3\xba|/\xdd\xcf?\xef\x0f' During handling of the above exception, another exception occurred: raise NotImplementedError('With statement not implemented!') NotImplementedError: With statement not implemented!
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: NameError: name 'to' is not defined
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: TypeError: 'float' object is not iterable
+es3/Math.min.variadic.js: TypeError: 'float' object is not iterable
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; zero failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
+es3/Number.prototype.toExponential.throws-infinity.js: OK
+es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: small number exponential notation failed; large number exponential notation failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: OK
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: no exception for instanceof number; no exception for instanceof non-callable; raise TypeError('toString is not generic!') TypeError: toString is not generic!
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; string = string.encode(encoding, errors) UnicodeEncodeError: 'utf-8'
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: # not decoded failed
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: backref for a group that hasn't captured failed
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: Undefined and null dont have properties (tried getting property '0')
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: sparse array skips missing elements failed
+es5/Array.prototype.filter.js: sparse array skips missing elements failed
+es5/Array.prototype.forEach.js: sparse array skips missing elements failed
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: sparse array skips missing elements failed
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: Date.now() does not return a number
+es5/Date.prototype.toISOString.js: epoch date format incorrect; invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null; valid date format incorrect
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: Undefined and null don't have properties (tried setting property 'value')
+es5/JSON.js: OK
+es5/JSON.parse.js: parse object failed; parse null failed
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: NaN and Infinity not converted null
+es5/JSON.stringify.replacer.js: AttributeError: 'list' object has no attribute 'is_undefined'
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: OK
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: basic property names failed; non-enumerable property failed; only own properties failed
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: OK
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: OK
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: SyntaxError: duplicate argument 'x' in function definition
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: raise NotImplementedError('With statement not implemented!') NotImplementedError: With statement not implemented!
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: OK
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: OK
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: SyntaxError: duplicate argument 'x' in function definition
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: raise NotImplementedError('With statement not implemented!') NotImplementedError: With statement not implemented!
+kangax-es6/Array.Symbol.species.js: ReferenceError: Symbol is not defined
+kangax-es6/Array.from.array-like.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.from.generator.js: KeyError: b'j\xb4\x9b6\xfcH\xe6\x08X\xa87\x05G\xce#\xd3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token *
+kangax-es6/Array.from.iterable-instance.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.from.iterable.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.from.map.generator.js: KeyError: b'\xc3\xdaT\xbc5a\xc1pS\xec\xbd\x15\x13\x98\xa7\xc4' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token *
+kangax-es6/Array.from.map.iterable-instance.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.from.map.iterable.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: Symbol is not defined
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: Symbol is not defined
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: Symbol is not defined
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: KeyError: b'\xeb\x85\xff\x7f\x88\xb58\x9dz}\x8a\xe1\rL\xf1\xdc' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassExpression is not supported by ECMA 
+kangax-es6/Function.name.class-object-method.js: KeyError: b'\xff2qYl\x90\x1a;\xf6I\xf1:[\xdaR\xc4' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
+kangax-es6/Function.name.class-prototype.js: KeyError: b'[\xc0{\xdc`T\xe6\x84R\xb4\x7f\xaf6\xd1n\xb3' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/Function.name.class-statement.js: KeyError: b"\xa1>\x82k\xe3\x8e\xbe\x8f'\xf3\x87!\x1c\x7f\xe3\x98" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by EC
+kangax-es6/Function.name.class-static.js: KeyError: b'\x95\xf9\x8e\xd0\xafg\xe9\x98\xe9\xf1,+\x98\xeb\xb5W' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by EC
+kangax-es6/Function.name.class-variable.js: KeyError: b'\xe6V\xdf\xa60LQ\xc7\x8b\xb6,\x83\x9fB\x0fH' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
+kangax-es6/Function.name.configurable.js: OK
+kangax-es6/Function.name.expression.js: OK
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: failed
+kangax-es6/Function.name.shorthand.no-lexical.js: OK
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: KeyError: b'Y2\xb6V$\x9e\xbe;W^pzh\x9b\x07<' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Map is not defined
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Map is not defined
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Map is not defined
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Map is not defined
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Map is not defined
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Map is not defined
+kangax-es6/Map.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.Symbol.iterator.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.clear.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.delete.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.entries.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.forEach.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.keys.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.size.js: ReferenceError: Map is not defined
+kangax-es6/Map.prototype.values.js: ReferenceError: Map is not defined
+kangax-es6/Map.zero-key.js: ReferenceError: Map is not defined
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: TypeError: 'undefined' is not a function (tried calling property 'hypot' of 'Math')
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: 'undefined' is not a function (tried calling property 'assign' of 'Function')
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: Symbol is not defined
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: TypeError: 'undefined' is not a function (tried calling property 'setPrototypeOf' of 'Function')
+kangax-es6/Promise.Symbol.species.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.all.iterable.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.all.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.constructor-requires-new.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.prototype-not-instance.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.race.iterable.js: ReferenceError: Promise is not defined
+kangax-es6/Promise.race.js: ReferenceError: Promise is not defined
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.get.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.has.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.set.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.revocable.js: ReferenceError: Proxy is not defined
+kangax-es6/Reflect.apply.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.new-target.js: KeyError: b'j\xef\x1f(\xa2\xc4\x8b\x0c\x1d=vX\x87\x01\xb8w' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token .
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.get.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.has.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.ownKeys.string.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: Symbol is not defined
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.set.js: ReferenceError: Reflect is not defined
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.match.js: ReferenceError: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.replace.js: ReferenceError: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.search.js: ReferenceError: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.split.js: ReferenceError: Symbol is not defined
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: ReferenceError: Set is not defined
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Set is not defined
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Set is not defined
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Set is not defined
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Set is not defined
+kangax-es6/Set.iterator-closing.js: ReferenceError: Set is not defined
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Set is not defined
+kangax-es6/Set.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.Symbol.iterator.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.clear.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.delete.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.entries.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.forEach.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.keys.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.size.js: ReferenceError: Set is not defined
+kangax-es6/Set.prototype.values.js: ReferenceError: Set is not defined
+kangax-es6/Set.zero-key.js: ReferenceError: Set is not defined
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: Symbol is not defined
+kangax-es6/String.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.Object.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.String.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.defineProperty.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.global-registry.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.no-coerce.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.no-new.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.prototype.js: ReferenceError: Symbol is not defined
+kangax-es6/Symbol.typeof.js: ReferenceError: Symbol is not defined
+kangax-es6/WeakMap.accept-primitives.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.frozen-keys.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.no-clear.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.prototype.delete.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: WeakMap is not defined
+kangax-es6/WeakSet.accept-primitives.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.no-clear.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: WeakSet is not defined
+kangax-es6/WeakSet.prototype.delete.js: ReferenceError: WeakSet is not defined
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: 'undefined' is not a function (tried calling property 'compile' of 'RegExp')
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: 'undefined' is not a function (tried calling property 'anchor' of 'String')
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: 'undefined' is not a function (tried calling property 'anchor' of 'String')
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: OK
+kangax-es6/annex-b.function.labeled.js: OK
+kangax-es6/annex-b.html-comments.js: OK
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: Invalid RegExp pattern: '\\\\41' -> '\\\\41'
+kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Invalid RegExp pattern: '[\\\\w-_]' -> '[\\\\w-_]'
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: TypeError: 'undefined' is not a function
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: KeyError: b'\xe8)1h\xb5\x06\x12\xba\xd3\x80\x01\xfb\xbdz8\x02' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: KeyError: b'\x94Z\xd5\xb2\x07\xcc%F\xf2\x94\xb6\xf1\x7f\x99\x13O' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/arrow.0-params.js: KeyError: b'\xbc\x9a\x1a\xb0\x8a(\x0c\xb1\n\x01_\x9f\xf6\xb9\xf5\xe8' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by E
+kangax-es6/arrow.1-param.js: KeyError: b"7\\\xc6'\x9a+\x9a\xaf\xe6\x13G<\xf5d\xca\xb8" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECM
+kangax-es6/arrow.5-param.js: KeyError: b'\xd3\t\x94!\xd6\x90\xf3E\xa7\xea\xc7\xc0\xff\x00:\xaa' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA
+kangax-es6/arrow.bind.js: KeyError: b'\xdb\xad\xdd\xfe\xda\xf1\xa1\x0c\x04+\xe5\xa2\xc6\xd1+\xd0' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not su
+kangax-es6/arrow.lexical-arguments.js: KeyError: b'z\x9dr\xfdTt\xb2V1;\xb6wD\xecp\xe9' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
+kangax-es6/arrow.lexical-super.constructor.js: KeyError: b'\x8e\xffV\xaa\xcb\xfbe\xacm]9\x9bi\xe9\xc8\xc7' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/arrow.lexical-super.methods.js: KeyError: b"\xa0<5\xe6\xcb\xdf\x0e\x8a\x04\xe8'$\x9214\x91" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/arrow.lexical-this.js: KeyError: b"\\'\xbb\x07\xfb\xa1TRZ\xa1\x8c\xa3\x1c\xd2\xebH" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by 
+kangax-es6/arrow.new-target.js: KeyError: b'\xc6YI+\xcb\xa6\xf1\xa6\x98\xc9\x0b\xb8\x07b\x13\xd6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunctionExpression is not supporte
+kangax-es6/arrow.no-line-break.js: KeyError: b'\\P\x8c\xec\x92\x94\x9f\xf8\x15{\xa7\xb6\xed*Jx' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1.
+kangax-es6/arrow.no-prototype.js: KeyError: b'\x8a\xe9\xee\xa3\x85\xe1\xdb\x9e\x92\x06)\xb3\x0b\xc4\xe9\x94' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported
+kangax-es6/arrow.precedence.js: KeyError: b'\xf0\xa4\x05\x1d\xab\x7f\xcd\x8aI\xf6d\xa4\xb5\xc2\xf3\xb6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by
+kangax-es6/arrow.this-call-apply.js: KeyError: b'\x8a\x84\x08\x8chd\x15\xe1\xb1D\xf9\xecO\xfe\xe7\x96' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 
+kangax-es6/class.accessor-properties.js: KeyError: b'~\xa3}\x14\xa0N\xdb^\x9cw\x06\xb7\xc4B\xa0\xeb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/class.anonymous.js: KeyError: b'i\xb6\xf4\xf2]\x1dzP\xbd\x99>H\xedP\x9c\xf6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
+kangax-es6/class.block-scoped.js: KeyError: b'\xc9\x0f2o|\x85/`\x13\x08-\xc6\xc4\x1d`\x1f' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.computed-accessor-properties.js: KeyError: b'G\xc6\xc3\xb8\x03I\x96[\xc4j\x91\x84\xa2si\xd9' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/class.computed-names-tdz.js: KeyError: b')H\xe5\x92]\xfc\x99Q\xa6}\xeb."\x99%r' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassExpression is not supported by ECMA 5.1.
+kangax-es6/class.computed-prototype-methods.js: KeyError: b'V-\x11\xc1F\x98a\x95%e,\xf5\xff\xe1B\xef' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.computed-static-accessor-properties.js: KeyError: b'\x08\x86q\x1e\xda\x83\xb4\x9d\x028\xceZW\xa2\xabv' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 
+kangax-es6/class.computed-static-methods.js: KeyError: b'd\x1a\xcd\xc6*\xe72\xb6*\xd0\x02\xa6t\x1bX\xf9' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/class.constructor-requires-new.js: KeyError: b'p\xbe\x1d\xc4\\\xa0\x92\xbb\r@\xa8\xce\xd9\x17Kq' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5
+kangax-es6/class.constructor.js: KeyError: b'ea\xe3N;\x0fo\xbc\xfd\x9b\xe9\x89\xbe\t\x87`' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.expression.js: KeyError: b'\xccI\xa9U\xd2\x8d\xb3f\xa8?O\xeb\x10m\xf8f' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
+kangax-es6/class.extends-expressions.js: KeyError: b'\xa6Y\x0f\x982\xff\xc3Fj&^\x83h\x156E' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.extends-null.js: KeyError: b'q\x18\xa8\xa5G\x0e1@\xa2[\x0c\t\x87\xa5\xaa\x13' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.
+kangax-es6/class.extends.js: KeyError: b'e\x0b\x0bubS~\xe3K\xbeA\x80Oa\xef\xde' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.implicit-strict.js: KeyError: b'u\xaf\x01\xb2K\xd6\xa0\xc9\xb2\xa1d\xa1D\xa3\xb5\xb8' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by EC
+kangax-es6/class.lexical-name.js: KeyError: b'\xa1u5\xfaR\x10|Wh\xe17\xfb\x7fe!\x83' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.methods-not-enumerable.js: KeyError: b'wL\x95\x04B\x89L|\xed\x93\x12\xdb\x8a\x86_m' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.new-target.js: KeyError: b' \xdb\xa7\x18\xc2\x1d\xec\xb02G\x82\x80\x18\x1f\xfbw' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es6/class.optional-semicolons.js: KeyError: b'\xb8m"q\xb7*w=\xb3yA_\xfe\x14i\xc7' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.prototype-methods.js: KeyError: b'I\x1b\x14J\x18c\xf1T\x9a\x1d\x82p\xd9\xcbo\\' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.statement.js: KeyError: b"JZ\x82\x1e\xe7A'L\xed\xc0\xa0\x0b\xb0\x95hJ" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.static-accessor-properties.js: KeyError: b'\xdb\x9f8z\xa7n\x02j\xdb\xe0\x18\xa7\x94\x07M\xd4' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 
+kangax-es6/class.static-methods.js: KeyError: b'H\t\xd8 \xb47\xe0\x8b\x12N\xfeD\xabp>\x12' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/class.string-keyed-methods.js: KeyError: b'g<\xce&\xd8\xf7\xea\xa6\xfb\xc2\x10\xb7\xe7\xec\xac\x12' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: failed
+kangax-es6/const.for-in.js: failed
+kangax-es6/const.for-loop.js: failed
+kangax-es6/const.for-of.js: KeyError: b'\xa7>^\xa9\xe0\x81#&\x87U\xd6\xd1\x0c\xd4MX' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected identifier
+kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-statement.js: OK
+kangax-es6/const.shadow.js: OK
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: failed
+kangax-es6/const.strict.for-in.js: failed
+kangax-es6/const.strict.for-loop.js: failed
+kangax-es6/const.strict.for-of.js: KeyError: b'\xa8\xfa\x87<\xa7\xbc[j-A\x9f{n\xae\xa4\x01' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected identifier
+kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-statement.js: OK
+kangax-es6/const.strict.shadow.js: OK
+kangax-es6/const.strict.tdz.js: failed
+kangax-es6/const.tdz.js: failed
+kangax-es6/default-params.arguments.js: KeyError: b'\x12\xccM}V\xee\xc6G,\xd5cXPL`\xa0' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.basic.js: KeyError: b'\xa8E\xb8&\xcft\xef\x91W\x8f\xd70*\xb0\x15\xea' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.explicit-undefined.js: KeyError: b'\x9d\xdc\rU\xfd\xd7v\x1eT\xad\xae\x9e4\xdf\x82\x0c' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.new-function.js: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.refer-previous.js: KeyError: b'\xba\xe1\x9a\xe0\xfe\xaff\xff\x12\xa6\xfa\xca\x11\xc9f\xef' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.separate-scope.js: KeyError: b'?*z\x13\xbb\xf2L\xea\t\t\xae\xec\xec\x01\xe9>' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/default-params.tdz.js: KeyError: b'\x8b\xe6\xf0/5~\xd3\xd6\xa4,(q:X\xaf\x8f' During handling of the above exception, another exception occurred: raise NotImplementedError('Defaults not supported') NotImplementedError: Defaults not supported
+kangax-es6/destructuring-assign.array.js: KeyError: b'\xce\xcf\xcc\x92%\x0f\xae\xda\x0f\xd1\x9a\xd6\xa9\xa1\xab\x14' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.astral-string.js: KeyError: b';E\xf5\x155\xdf}C\x9c\xc8p\x82\xb5\xd7\x01\x1f' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.chained-iterable.js: KeyError: b'\xa3\xa7O\x97+\xf2\x0f\x1d\x9a\xd0\\\xbc\x01\xf0u\xbc' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.chained-object.js: KeyError: b'F\xa0\xbf\xb3.\xf0ea\xf5R\xcb.\x98\xc9<\xf5' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.computed-properties.js: KeyError: b'<t\xc3[!\x80\xf05\xa4\xb3\xce\xad\xbe\xf0\xd88' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.defaults.js: KeyError: b'~w\x97N\xf9k,\x01\xda\xc2\xc7\x071\x967I' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: AssignmentPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-assign.empty-patterns.js: KeyError: b'\xca\x16\xc9\x83"~\x82\xb2\xa4\xa1KebU\\u' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.generator.js: KeyError: b'\xf9&\x96\xcc\xc6\xc9L\x91\xe2\xe8\x87\xe9\x02\xca.f' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/destructuring-assign.iterable-expression.js: KeyError: b'\\3\x1d\xf4\xcbk\xc9n\x9d~\x88\xff\xf93\x86\xf3' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.iterable-instance.js: KeyError: b'\xbd\x1d\rP\xed\xb3na\xb0W\xad\x9f\xd5\x97\xb0\x9d' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.iterable.js: KeyError: b'g\xd6d\xc3[\xb3M\xe8\x1a6\xe3<\x0f\x81\xd2]' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.iterator-closing.js: KeyError: b'\xd6C\x9f\x05i\x0fY\xeb\xe1\xebw\xe4\x8d\x89\x16\x08' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.nested-rest.js: KeyError: b'~S\x83\x8a\xcf\xad\xbd\x1f\x18\xd3}\xa2\xc4\xe8\xbav' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token .
+kangax-es6/destructuring-assign.nested.js: KeyError: b'q\xe1\x10\xcd\xf7Tl\xf3\xa7E\xbe4\xeb\xad\xc3y' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.object-expression.js: KeyError: b'U\xe0X@\x1d\xbc9\x82\x02*|\x8e\xa8 .\x7f' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.object-primitives.js: KeyError: b'\x9a\x0b\x1b\xb1}<"\x1e\\\xfd\xa8K\xea\x11\xcc\xce' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.object.js: KeyError: b'H\x97\xb7\xcb]\x08,\x9e\xb4\x84=\xd5ka\xe6\x06' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.parenthesised-error.js: KeyError: b'\xbb\xd2\x8e\xadlK\xfe\xb3B\x06\xffA"\xa3\xa2\x94' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.rest.js: KeyError: b'\xedI\x8e\x8c0\x87fIc{\x9c\x9f\xd9\xabH\xee' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token .
+kangax-es6/destructuring-assign.sparse-array.js: KeyError: b'@\x911\xc8L\n\x9d`\xb0\x9e>\x9a\xb7p\xdfP' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.string.js: KeyError: b'g\x8ap\xf6\xa4L\xa7\xbf\x88?\xf7\x08\x8f\xb3D\t' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.throws-null-undefined.js: KeyError: b'\x02[\xf5\xe4\x97\x8f\xb7\x84\x90\x19ugpo\xc0\x15' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: KeyError: b'\xae\n\xcb\x0b\x0b\xb3H\xe3u\x94\xce\xe2\x9d8A\xf0' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-assign.trailing-comma-object.js: KeyError: b'\x1f\xd2Yr:{\x19\x8f\xec\xb2\x8e=\x00b\xcd\x8c' During handling of the above exception, another exception occurred: raise SyntaxError('Invalid left hand side in assignment!') SyntaxError: Invalid left hand side in assignment!
+kangax-es6/destructuring-decl.array.js: KeyError: b'e\x9dnM\x9a\xf9\xfa\xd1\x10im=\\L\xcb;' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.astral-string.js: KeyError: b'\xc5G\x81\xd8\x0fkA\xae4\xb1\xf1\xe0f2\xc6\x82' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.catch.js: KeyError: b'e\xean\xc5\x1a\x88N1\xf7\xfa\x9a\xef\x13\x8b}0' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.computed-properties.js: KeyError: b'v\xdd\x0c\xe5P\x07\xfb5\x05H\x8c\x95t\xee\xea\xcd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ObjectPattern is not supported by ECMA 5.1
+kangax-es6/destructuring-decl.defaults-tdz.js: KeyError: b'\xfbN\x99\xf9\xe6_\xf1["%\xa0\xe1\x19\x9b\xf7\xb2' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1
+kangax-es6/destructuring-decl.defaults.js: KeyError: b'\xd8Y\r\x9fs8^\xec\xa0Q\x10\xcfT\xa0\ri' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.for-in.js: KeyError: b'S\x12\xe9d\xfe\xd2\x18\xe1H\x0e\x92\xfe=\x85~\x12' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.for-of.js: KeyError: b'\xed\xe0\x11B\xc5\x04\x9a\xb46\r\xad\xc9\xcb6\xb2\xc1' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 
+kangax-es6/destructuring-decl.generator.js: KeyError: b'\xe9\xd8j;P\xb5\xa2\xa52\xe6\x0e\x19\x03\x10\r\xfa' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1
+kangax-es6/destructuring-decl.iterable-instance.js: KeyError: b'\xae\xd4\td7\xce\x04\xa8{\xe6\x17@\xd7/e\xbd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 34: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.iterable.js: KeyError: b'\x0cV\xb3s~\xbe\xa2\x0fN+@-\x12Kr5' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 34: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.iterator-closing.js: KeyError: b'@e\xb6\xfcZ\x11C\xcf\x98{\x03\xf5\xeb\xedBl' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 38: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.multiple-var.js: KeyError: b'\x92gl\xe1\xf0\x8bo\xec\xdenRe\xd6\x16\xed\xbd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.nested.js: KeyError: b'\xbax1\x16\xd9\x85_\xb5\x0c\xce\xb1lj\xfb\x18R' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.object-primitives.js: KeyError: b'\x16\xa5\xc3\xfd\xc2\x9e\xbf\xb9\xecA\xa5\x95\x16\x06\xc6l' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by
+kangax-es6/destructuring-decl.object.js: KeyError: b'J\x86x\xea\xbd\x10#{\x06I,X\x962Ll' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.rest.js: KeyError: b'\xcdm\x12\xcb\xb9\xfc\xe3\x9b\xdb\x9b\xc7\xcbI\xcf\x9c\x06' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by 
+kangax-es6/destructuring-decl.sparse-array.js: KeyError: b'm\x05\xc8TT\xa6\x81-\xfd|\xc0\xaa\x83v\xd3\r' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.string.js: KeyError: b"v\xfc\xef~\n'h\x01Qo\x99\x8d\xcdN>u" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.throws-null-undefined.js: KeyError: b'H\xf5t\xf5\x82=d\xc0\x05\xfc\x14S\\\xdc\xf3\xd6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: KeyError: b'\tj\x05\xa4";\xc3\x1a\x8c7\xe1\xc0\xd7\xd3\xbbi' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-decl.trailing-comma-object.js: KeyError: b'\xf9\xf6jF\x15Z"\xb2\'\xe62\x89\'\xd5\x9a|' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: KeyError: b'\x07\x9c\xb4?\xd1\xe2\x1a\xacH\xb1\x1e\xed\xb8s\xd0\xc6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by EC
+kangax-es6/destructuring-params.arguments.js: KeyError: b'\x9e\\E\x84\xb6\x9cf\xd7eJ\x80\xbb\x8f<\x11f' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.array.js: KeyError: b'2\xd0\xc3\xf2\x8d\xa9\x88\xc1\x1aYSa\x87\x06\xa6D' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.astral-string.js: KeyError: b'\x13s\x10\xf7\xdf\xe3\xff\xb3O\xc1zLI\x01\xe1\xfa' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.computed-properties.js: KeyError: b'\x9dK\xf4\xa0\x9c7M\xaeB\x83=\xc8J\x85\xaa\xcb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: Line 1: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.defaults-separate-scope.js: KeyError: b'S\x8c\xbdeZ\xe8\t\xfd 1\xa9\xac\xbfj\xda\xa6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.defaults.js: KeyError: b'\x98V\xfd\x8aP\xe4\x01\xcb\xd7/\xb9\x99\x83iZ6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: KeyError: b'iZ=\xf0r\xf5\xc0\xe5\x88\xa4\xb6\x02\xd4s\x91\x95' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.generator.js: KeyError: b'^q\xf9\xdej\xbb\x1cgne\xde2+\x9b\xe0\xea' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.iterable-instance.js: KeyError: b'/\xec5\xb0b\xdf\x04vs}\x13\x881\x05\n\xf0' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 34: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.iterable.js: KeyError: b'\x96\xd8\xa7\xf6\xab\x04\x00N\xa5\x9e\x00\xccNW\x03\xfd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 34: ArrayPattern is not supported by ECM
+kangax-es6/destructuring-params.iterator-closing.js: KeyError: b'wW0\x1a\x16\x1ak9L\xf9u\xfd\xa82\x15\xeb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 38: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.length.js: KeyError: b'\xfaUYG\x0b\xf7\xb0\xc7\xb9\xd5\xdbc5\x14\tt' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.nested.js: KeyError: b"\x00\xf0\xb9XG\xb6'\x1eG\xac\xa0?t\x00TO" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.new-function.js: SyntaxError: Line 1: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.object-primitives.js: KeyError: b')\xeb\x1b\x02\xa5G\xff\x03\xcd\xaah\x18\xf4+\x8e~' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1
+kangax-es6/destructuring-params.object.js: KeyError: b'\x89(R8\r\xc3\xaf\xe0\x9f=\xc3\xcd\xedP\xd8o' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.rest.js: KeyError: b'\xe2Jc \x1a~\xac,\xd8h\xe4|\xfc\x1a\xba\xc6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: KeyError: b'\xe2\x97\x05\xfa\x93?\xd9\xac\xcb^\xa7\xfdo\t*\x19' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.
+kangax-es6/destructuring-params.sparse-array.js: KeyError: b'R\xcc8\x14i!)([u\xf8G\xc5\xf7\x19\x80' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.string.js: KeyError: b'd\xcf=\xf1Nh\x05/tQ\x8b\xd1\xf8n\x0c\x7f' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.throws-null-undefined.js: KeyError: b'-\x06\x1e+Y-b\x8f\x83\xa8|\xc4\xc5\xfe\x14\xbb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ObjectPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.trailing-comma-iterable.js: KeyError: b'Zb5^%\xd8\xa9\xae6\r\xff\x0c\\\xe0\xe2$' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
+kangax-es6/destructuring-params.trailing-comma-object.js: KeyError: b'\xe6\xc3\xa9G\xde\xafe\xfd^\xbd}\xc2\x01\xb8\xcb\x0f' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 
+kangax-es6/for-of.array.js: KeyError: b'\xe5\xaaa"\xbe?(\xa9\xde\x9e/6\xcb\x13.T' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected identifier
+kangax-es6/for-of.astral-string.js: KeyError: b'<\x18,\xe7\x15?!\xbc3=w\x91\xd7\xdd\x97h' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected identifier
+kangax-es6/for-of.generator.js: KeyError: b'B\xa4o!\xb6\xc3\xce\xf1\xb5}01\xe5\xc8\x1do' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/for-of.iterable-instance.js: KeyError: b'\xf5\xe9\x93#ZqHW\x91\x05\xabq\xc6\xc1\x18\xe8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 36: Unexpected identifier
+kangax-es6/for-of.iterable.js: KeyError: b'\x99j\xad"Og~\xcd\x11DX\x85\xd6\xe7#\xc8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 36: Unexpected identifier
+kangax-es6/for-of.iterator-closing-break.js: KeyError: b'4\x16[\xd1\xdf\xa8\rx\xaa\xe2\x86\xd3\xed\x17\xd0\xae' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 37: Unexpected identifier
+kangax-es6/for-of.iterator-closing-throw.js: KeyError: b"\x82\xc2Bt\xb2]\xbd\xe0X\xce'[\x8cb\x95z" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 38: Unexpected identifier
+kangax-es6/for-of.sparse-array.js: KeyError: b'\x98\xba\\\x8f\x1f>\x17_{0#d\xf8n-/' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected identifier
+kangax-es6/for-of.string.js: KeyError: b'Ps\x9b\x89i\x98\xaa\x9a\x8a\xe0tv\x8c{\xc57' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected identifier
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: KeyError: b'w^\x90\xb1\x9dO\xe0>\x87\xdb/T\x8f!/R' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.constructor.js: KeyError: b'R(N\x16\xe6\xe9\x08\x9f\xcd\x07g\xdb \xc2\x83=' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.expression.js: KeyError: b'\xcbi\x82\x17\x07\xf8Sa\xa2\xc3\xcep\xeb\xc9\x8f\x8e' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.no-new-this.js: KeyError: b'o\x9f\xa8q\xf4\xdfh\x11\x14T\xc0V\xb8<?<' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.prototype-chain.js: KeyError: b'\x10\x11%\x86\x02W\xdf\xcf\xe4\xd5\x86"\xf3\xfd\x13\xae' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.prototype.js: KeyError: b'c@2T\x10\x9cm!\x12\xf7\x04I\xf2\xfa_B' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.return.js: KeyError: b'\x10m(\xf7\xee\xacky\xc7S\x844\xdc0T\xfc' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.sending.js: KeyError: b'\x07\xf3\x97\xe9\x9c"D\x9f\xe8H+\xcb\x12\x91/\x14' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/generators.shorthand.class.js: KeyError: b'\x02\xa7\xa2@\x13(\xfe\x17rr\x9d(\x1f$\xde\x03' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/generators.shorthand.computed.class.js: KeyError: b"\xba\xb7H\x00\x86\xde\xfa\x19\\^\xa4\xfc]\xd7l'" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.
+kangax-es6/generators.shorthand.computed.js: KeyError: b's;\xd3\x10\xed\xcbc\xc0\xc1\x89,\xf1\xb8z&\xe4' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token *
+kangax-es6/generators.shorthand.js: KeyError: b'O\x93N\xbc\xecDQ\x81\x85M\xd1b\xa6\xa3*\xc3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/generators.shorthand.no-constructor.js: KeyError: b'\xa8`\xd1\xf0Y\xfd\xec\x1c\xaa+\xcc\x17h\xc5\xe0\xad' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by EC
+kangax-es6/generators.shorthand.string-keyed.js: KeyError: b']\xc3\xec\\)\xa3\xb2\xda\xd9\x96\x8aR)\x04\xae\xe0' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/generators.this.js: KeyError: b"\x02>\x91\xa4\xc7\x1a\x97\xdf\xaf\xbc\x8a'\xa2\xca\xaaZ" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.throw.js: KeyError: b'\x9f\x0bE\xbc\x9a\xe0M\x1d\xc5Q\xc1\xb1\x18\xb6b\x82' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/generators.yield-precedence.js: KeyError: b'H\xe4\xaew\x81\xc3uI\xd0\xd3\x07K\xe1\xc1\xbc\x80' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token *
+kangax-es6/generators.yield-star.array.js: KeyError: b'\x9eo\xb9\xd9\xba\x1c\xfa:K\x9b\xb4.\xe3v\xfb\xa8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.yield-star.astral-string.js: KeyError: b'\xed&\xf6\x9d\x10]M\xfb;B\xf1\xac\xc6\xc2\xc3q' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.yield-star.generator.js: KeyError: b'\xfb\xd3/\xa8Y\xd5\xe91\xcco?M~T\xe9\x8e' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.yield-star.iterable-instance.js: KeyError: b'\n\xb1!\xa9\xe0\x04\x95z\xd8e\xcd\xbe\\H\x1f\xc6' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 33: Unexpected token *
+kangax-es6/generators.yield-star.iterable.js: KeyError: b'\xcd\x1737\xd8a\xe9\x8b\x0c\x11D\\\xd5P\xa9\x05' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 34: Unexpected token *
+kangax-es6/generators.yield-star.iterator-closing-throw.js: KeyError: b'\xc0\x1c\x9fr|0\xf0\xc5\xc0\xc2\xd7}; \xde/' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 42: Unexpected token *
+kangax-es6/generators.yield-star.iterator-closing.js: KeyError: b'\xae\x8f\xff\xc0\xcd\xde\x1e\x07<~\xb8;\x17=\xb1\x15' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 40: Unexpected token *
+kangax-es6/generators.yield-star.non-iterable-error.js: KeyError: b'RP\x982\x89\xff\xaf\xd6\x80\\\x04;\xb2\x05\xf9\x13' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.yield-star.sparse-array.js: KeyError: b'\xc6\xe5G\xb9\x05I\xef\xe2\xa3y\xe9\xec\xf4\x94s\xa9' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/generators.yield-star.string.js: KeyError: b'\xfb\xd7\xd8S\xa5\x10\xcf\x86\x80r\xe0\xbd\xd2\x91nY' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/let.basic.js: OK
+kangax-es6/let.block-scoped.js: failed
+kangax-es6/let.for-in-shadow.js: OK
+kangax-es6/let.for-iteration.js: failed
+kangax-es6/let.for-loop.js: failed
+kangax-es6/let.no-statement.js: OK
+kangax-es6/let.shadow.js: OK
+kangax-es6/let.strict.basic.js: OK
+kangax-es6/let.strict.block-scoped.js: failed
+kangax-es6/let.strict.for-in-shadow.js: OK
+kangax-es6/let.strict.for-iteration.js: failed
+kangax-es6/let.strict.for-loop.js: failed
+kangax-es6/let.strict.no-statement.js: OK
+kangax-es6/let.strict.shadow.js: OK
+kangax-es6/let.strict.tdz.js: failed
+kangax-es6/let.tdz.js: failed
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: KeyError: b'g\x10\xe5\xcfq\xba\xf2\x10.\x89\x0f\xd9.m\x13\xe1' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/literals.object.computed-properties.js: KeyError: b'\xc8r\xb1\x18\xac\x9e\x16\x93\x8er\x90\x1b\x0f\xa8a?' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/literals.object.computed-shorthand-methods.js: KeyError: b'\x8d\x97\xe6\x89$g[s\x1c\xda\xf1{\xeb\xc4\xc7\xdb' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/literals.object.shorthand-methods.js: OK
+kangax-es6/literals.object.shorthand-properties.js: KeyError: b"\xb4\xa0\x95Qa\\'b\x8b\xa7\x04\x13\x1c{\xe4\x00" During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: OK
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: OK
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: Object.freeze called on non-object
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: Object.getOwnPropertyDescriptor called on non-object
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: Object.getOwnPropertyDescriptor called on non-object
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: TypeError: Object.getPrototypeOf called on non-object
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: Object.isExtensible called on non-object
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: Object.isFrozen called on non-object
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: Object.isSealed called on non-object
+kangax-es6/misc.Object.keys.primitives.js: TypeError: Object.keys called on non-object
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: Object.preventExtensions on non-object
+kangax-es6/misc.Object.seal.primitives.js: TypeError: Object.seal called on non-object
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: KeyError: b'\xb3\x8f\x9e\x88\x8b\xaf\x01\x8a\xf3Lk\xef*\x8f\xc7\xe5' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ClassDeclaration is not supported by
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.HasBinding.js: KeyError: b'\xe1#\x99M\xbfdZP\xfa\x08\xe8\xc8\x03\x89\xb6.' During handling of the above exception, another exception occurred: raise NotImplementedError('With statement not implemented!') NotImplementedError: With statement not implemented!
+kangax-es6/misc.Proxy.get.IteratorComplete.js: KeyError: b'y\x98\xd6\x89\x07m\xe8\x87\x8c5\xb5\x00\xcc\x15Z\xfc' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 22: Unexpected identifier
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.RegExp-alter-flags.js: TypeError: Cannot supply flags when constructing one RegExp from another
+kangax-es6/misc.RegExp-prototype-toString-generic.js: failed
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: KeyError: b'G\x85\x8f\x90k\xf8)\xe4\xbf\xdc\x14H\xcd\xa2(\xe1' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1
+kangax-es6/misc.bound-function-prototype.class.js: KeyError: b'=\x14\x9a[nC[\xb4\x10\xc8\t8\xa1\xbc\xc0s' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: KeyError: b'?\x97\x9d\x17&.:\x9bnw$l\x16\xf0k\t' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/misc.bound-function-prototype.subclass.js: KeyError: b'\x11${V\xb6b\x0c\x9c\xe7\xc0\x80\x8b\x90\x15;Z' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: failed
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-2.js: OK
+kangax-es6/misc.property-order.JSON.parse.js: failed
+kangax-es6/misc.property-order.JSON.stringify.js: failed
+kangax-es6/misc.property-order.Object.assign.js: TypeError: 'undefined' is not a function (tried calling property 'assign' of 'Function')
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: TypeError: 'undefined' is not a function
+kangax-es6/misc.property-order.Object.keys.js: failed
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: Reflect is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Symbol is not defined
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: KeyError: b'\xaa3\xc0\x19\x1f\x06`\xe5\xeb\xc9N/\xf9j\x1c\x9c' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es6/new-target.constructor.js: KeyError: b"\x82\x89\x1ex\x1b\x96\xc8K\x03\x0b'\xc0\xa3u-7" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es6/regex.flags.u.case-folding.js: OK
+kangax-es6/regex.flags.u.codepoint.js: TypeError: Undefined and null dont have properties (tried getting property '0')
+kangax-es6/regex.flags.u.js: failed
+kangax-es6/regex.flags.u.non-bmp.js: failed
+kangax-es6/regex.flags.y.js: SyntaxError: Invalid flags supplied to RegExp constructor "y"
+kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: Invalid flags supplied to RegExp constructor "y"
+kangax-es6/rest-params.arguments.js: KeyError: b'\x13\xe2\x14\x020\xf84\xa3\xa3 \xc6\xf0\x9e3<\xda' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/rest-params.basic.js: KeyError: b'?j\xaa\xfc?~K\xd2)\xd0|p4.XA' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/rest-params.length.js: KeyError: b'\xd5\xe1*\xfb\xe0Y\xda\xe1\x92\xc8\xaa\xec\xbcL\xd8L' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/rest-params.new-function.js: SyntaxError: Line 1: Unexpected token .
+kangax-es6/rest-params.no-setter.js: KeyError: b'\xfcQ\xb2F\xf4\xba83\xd5\xb8\x08\xba\x87\x1e\x011' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.array-call.js: KeyError: b'q\xfeM\x80\xf8\xbf\xc1U\xde\x95\x0c\xb7\xf6\x1e\xf8*' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.array-literal.js: KeyError: b'|I\xb2\xb7"\xa9\x14yMe/\x83!\xc2f\xe8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.astral-call.js: KeyError: b'\xd8\xa58pf90\xdd[\x99\xdfV\x13\xfc@\xb5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.astral-literal.js: KeyError: b'\xcd\x18\xb9\xfa@\x98\x0cP\xc1\xce\xde\x9ai\x14\xda\xe0' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.generator-call.js: KeyError: b'+\xcb\xd9:\x03w\xbfy\xbb\xbe\x9e\xe0\xd7\x08H\xa3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/spread.generator-literal.js: KeyError: b'\xae\x12c\x180\xddM\xf5\xf0\xe2x\xdc\r\xa58\xfa' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es6/spread.iterable-call.js: KeyError: b'\x91T\xccL\x83:\xbeB\xfd.\n\n\xb2\xba\xad\x83' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 35: Unexpected token .
+kangax-es6/spread.iterable-instance-call.js: KeyError: b'\xc2\xba&\x05Qg\xe6d\x03\xaerW\xae\xc8\xe7\x91' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 35: Unexpected token .
+kangax-es6/spread.iterable-instance-literal.js: KeyError: b'\xacc|\tN\xee\xe9f\xaa\x81\xae\xf7\x97\xb4,\x85' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 35: Unexpected token .
+kangax-es6/spread.iterable-literal.js: KeyError: b'(\xb0\xd0\xc4"\x7f>\xfdk\xc7\x18\xcd\x98I~\xc9' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 35: Unexpected token .
+kangax-es6/spread.non-iterable-error.js: KeyError: b'\xa8U\xdew\xd5@`\xed\x17\xae3/\xd8k\xb2\xc4' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token .
+kangax-es6/spread.sparse-call.js: KeyError: b'lf\xae\xae\xcf\xd7v\xd8i\xbc\x8b\xe5@/\xab\x9b' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.sparse-literal.js: KeyError: b'\xbc\xbdJ\x94)\x99\xb5\xe8\xe1\xfbl\x07[\x9bl)' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.string-call.js: KeyError: b'\x87\t\xa0\x9a\xa3\xc2\x8b\xac#|=\x8c.\xad\xc3\xe8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/spread.string-literal.js: KeyError: b'1F\xea\x0b\x19f,\x9d\x1a\x066\xd1%w\xd9\x87' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es6/subclassing.Array.concat.js: KeyError: b"!\xfa\x83\x1atAw\xcd\x11s\xda\xf18\xce&'" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Array.filter.js: KeyError: b"\x7f\xcd\xe2'\xc6^L\r$1\x7fotsf\x90" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Array.from.js: KeyError: b'\x9b\xfc\xea\xda\'\xdd \xfd\x90\x99\xfb\xb4\xb2\xea"E' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by EC
+kangax-es6/subclassing.Array.isArray.js: KeyError: b'n\xda0\xbe\xc8\x1e7`\x00\xc1W\x85\x12\xc5\xea\x08' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5
+kangax-es6/subclassing.Array.length-access.js: KeyError: b'\x97f\xa8\xeb\x97\x87\xbc\xa5\xa0{\xe3S\xd0\xd3\x88\x8b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by 
+kangax-es6/subclassing.Array.length-set.js: KeyError: b'FA\x12l\xc2\xf6a\xa2\xc1\x0b>\xf8C\n\xfcb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Array.map.js: KeyError: b'\xac\xcb\xd1v\xd6\x91\xfcN5\xb4\xe55c`\xe8b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Array.of.js: KeyError: b'z\x8e\xd4\x80\x81\x03\xc3\x99\x10q\xfa\x8fa&\x1a\x8d' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECM
+kangax-es6/subclassing.Array.prototype-chain.js: KeyError: b'\xaf\x82_\xc5\xf4\r\xdam\xae\x84\xfcx7>\xb1\x0c' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/subclassing.Array.slice.js: KeyError: b'\xa5\xc68\xb2\xc5\x19>b~:)\xfe\xba\x91\x13\x99' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Array.splice.js: KeyError: b':\x1d\x98O5\x91\x12\x83\xff\xeb\x14\x7f\xdb\ro\x11' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 
+kangax-es6/subclassing.Function.call.js: KeyError: b'\xb2\xb3\xb1l\xb1\x1a\x9eN5dWGd\x8ev\x85' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Function.new.js: KeyError: b'\x12\xb1\xfd\t\xea_2\x90\xf2\xa5u\x06\xe6\xf0\x16\x12' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by EC
+kangax-es6/subclassing.Function.prototype-chain.js: KeyError: b'Y\x97\x96\x14\xc5f\xa3r!\x1cc\xc5\xed\xb5\x9c\xce' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5
+kangax-es6/subclassing.Function.prototype.apply.js: KeyError: b'\x15\x1f\xbc]\x91U\xcf\x02\xcf\x19\xf47\xfd>\xf2e' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5
+kangax-es6/subclassing.Function.prototype.bind.js: KeyError: b'\xbf^\xae\n\x8c\x96q\xb3\xc5\xfb\xa1\xcfawom' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Function.prototype.call.js: KeyError: b'D\xab\xb2\x83\xf1\xb3zW\xa4O\x0c\x1e{\xf5\x8e\xc9' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5
+kangax-es6/subclassing.Promise.all.js: KeyError: b'C?\x8aA$\xf6U\x860!\x13\x1a\xfbmTr' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 44: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Promise.js: KeyError: b'/\xa8e\x93I\xbbh\x06\x04u\xa1S\x93-w\x04' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 44: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Promise.prototype-chain.js: KeyError: b'MSo\x19\x12O\xffF\x11\xf6\xab\x91m\xa9\x93\x82' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.Promise.race.js: KeyError: b'\xcf\xe4\xcel\xd7\x9e\xe8\x03\x9eHb\x91\x82$\xe1.' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 44: ClassDeclaration is not supported by ECMA 
+kangax-es6/subclassing.RegExp.exec.js: KeyError: b'y$\x92\xc8D\ti\xf7uG\xa6\x0f\x87\xc7>#' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.RegExp.js: KeyError: b'\x84\xfb\x1c\xd1\xc5\xcf\x00\xbe\xc3\x10\xbb\x95\xbc\xc4\xf9\xfd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not sup
+kangax-es6/subclassing.RegExp.prototype-chain.js: KeyError: b'\xe6_\x87\xef\xa1\xf8\xb9\xec\x86\xb1^\xcc-\x17\xea\xfa' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by 
+kangax-es6/subclassing.RegExp.test.js: KeyError: b'\xab\xcewt\xa6\xdc\x81L\x0fd+4\xa7\x92\x8c\xe0' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.misc.Boolean.js: KeyError: b'\x07D\xf8\xeb\xd4\xa5j\xfe\xb9\xcb\xa6\r\x01\xf2\x1d\xcc' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by
+kangax-es6/subclassing.misc.Error.js: KeyError: b'\xa6\x06\xa0\xeb;\x993\x17\x88X\x16C\xae\xce\x01\x1e' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECM
+kangax-es6/subclassing.misc.Map.js: KeyError: b'6\xe1\xd6\x84\x08\x14\xd4\x08Ze"\xab\xa6\x80\xd1\x05' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by EC
+kangax-es6/subclassing.misc.Number.js: KeyError: b'Kr\xe29\xf5X48R\xa1\xe8\xf3?\xb4\xf0\xa2' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/subclassing.misc.Set.js: KeyError: b'vU\x04\x07\xeb\xcf\xd3ju\xad%\x92\x0e7\x08\x9b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/subclassing.misc.String.js: KeyError: b'U!A\xba\x03}<\x1fP\xf5C\x8d\xd7\xaft\xf8' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/super.correct-constructor.js: KeyError: b"\xb9\xd7\x9b\xdb\xb9\x16}\x99\xbf'\xf6\x0c\xe9\xda\x1d\x8a" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ClassDeclaration is not supported
+kangax-es6/super.expression.js: KeyError: b'&\xea\xbc3\xf5)=\x846\n\xa3\x8b\xe3\xc7Q\xab' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/super.method-calls.js: KeyError: b'\x07r\xdb\xd41{"\x91G\x8a\x87\x02C\xc4\xacX' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/super.new-target-binding.js: KeyError: b'_\xfe\xcc(\xcf\xfb\x8c\xc0\x89\xc6\x1a{\x01-&%' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/super.property-access.js: KeyError: b'\xc1\x8e,\x18U\x12p\x1eC\xda\xfe\xde\xe2D\x90\xb2' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 
+kangax-es6/super.statement.js: KeyError: b'\xeb\xef\x17\x0c"B\x82B\xeckn\x15\xecY\x15\x87' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/super.static-binding.js: KeyError: b"\x18\xe9'\x14\x8ci\xd2\xb9R|#\xcc\x8b\xc6\x94d" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es6/super.this-binding.js: KeyError: b'\xf76+c{\x95v[\x92\x1f?\xc9\xbf\x85\xea\xe4' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es6/tail-calls.direct.js: RangeError: RecursionError('maximum recursion depth exceeded while calling a Python object')
+kangax-es6/tail-calls.mutual.js: RangeError: RecursionError('maximum recursion depth exceeded while calling a Python object')
+kangax-es6/template.basic.js: KeyError: b"n\xbf\x14\xed\xe5a2'bi;\xd7\xa1](\xe9" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: TemplateElement is not supported by ECMA 5.1.
+kangax-es6/template.caching.js: KeyError: b'\x91\xc8B\x83\xed\xe4\x11i\xf7\x13\xbb\xcf\x15S\x0e)' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 17: TemplateElement is not supported by ECM
+kangax-es6/template.escape-sequences.js: KeyError: b"\xbcW\x12\xcfWPE!M'}\xbd\x97\x92\x99\x1c" During handling of the above exception, another exception occurred: self.throwError(Messages.TemplateOctalLiteral) File "/dist/js2py-dist/venv/lib/python3.10/site-packages/pyjsparser/parser.py", line 1004, in throwError raise self.createError(sel
+kangax-es6/template.frozen-array.js: KeyError: b'\xf9\x92F\xfb\x8bRN[\x19l\xdd\xcc\t\x1a\n\x0e' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: TemplateElement is not supported by ECMA 5.1.
+kangax-es6/template.line-break.js: SyntaxError: Line 3: TemplateElement is not supported by ECMA 5.1.
+kangax-es6/template.permanent-caching.js: KeyError: b'^+\x9b\x88B\xb3CN\x1b/\x85\x10\x07\xa2\xe04' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 14: TemplateElement is not supported by ECMA 5.1.
+kangax-es6/template.tagged.js: KeyError: b'\xa9\x95U\x04\xc4\xf7\xea\xc1np\xb0,\xa4\xa3SR' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 21: TemplateElement is not supported by ECMA 5.1.
+kangax-es6/template.toString.js: KeyError: b'\xa4\x01\x11\xda\x0b\x16\xd6k%\x9aL\x01\xfd\xb5\xd68' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 14: TemplateElement is not supported by ECM
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: Symbol is not defined
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: DataView is not defined
+kangax-es6/typed-arrays.Float32Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Float64Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Int8Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Int16Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Int32Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: Symbol is not defined
+kangax-es6/typed-arrays.Uint8Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Uint16Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Uint32Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.constructor-iterables.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.constructor-requires-new.js: failed
+kangax-es6/typed-arrays.correct-prototype-chains.js: failed
+kangax-es6/typed-arrays.from.js: failed
+kangax-es6/typed-arrays.of.js: failed
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
+kangax-es6/typed-arrays.prototype.copyWithin.js: failed
+kangax-es6/typed-arrays.prototype.entries.js: failed
+kangax-es6/typed-arrays.prototype.every.js: OK
+kangax-es6/typed-arrays.prototype.fill.js: failed
+kangax-es6/typed-arrays.prototype.filter.js: OK
+kangax-es6/typed-arrays.prototype.findIndex.js: failed
+kangax-es6/typed-arrays.prototype.find.js: failed
+kangax-es6/typed-arrays.prototype.forEach.js: OK
+kangax-es6/typed-arrays.prototype.indexOf.js: OK
+kangax-es6/typed-arrays.prototype.join.js: OK
+kangax-es6/typed-arrays.prototype.keys.js: failed
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: OK
+kangax-es6/typed-arrays.prototype.map.js: OK
+kangax-es6/typed-arrays.prototype.reduceRight.js: OK
+kangax-es6/typed-arrays.prototype.reduce.js: OK
+kangax-es6/typed-arrays.prototype.reverse.js: OK
+kangax-es6/typed-arrays.prototype.slice.js: OK
+kangax-es6/typed-arrays.prototype.some.js: OK
+kangax-es6/typed-arrays.prototype.sort.js: OK
+kangax-es6/typed-arrays.prototype.subarray.js: failed
+kangax-es6/typed-arrays.prototype.values.js: failed
+kangax-es6/unicode-escapes.identifier.js: KeyError: b'n\xa7\xc9d\x80\x16\xc1\x90`b}E\xfcz\x91\xad' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token ILLEGAL
+kangax-es6/unicode-escapes.property-access.js: KeyError: b'\xf5\x12\xbegf\xea\xa7x\xfa\xda\xf1\xe1\x9a\xff?\x0e' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token ILLEGAL
+kangax-es6/unicode-escapes.property-key.js: KeyError: b'\xa4\xbct!\x95u\x0bW;\r)\xf2\x04\xebV\xe3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token ILLEGAL
+kangax-es6/unicode-escapes.string.js: OK
+kangax-es6/well-known.hasInstance.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.iterator.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.match.String.includes.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.match.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.replace.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.search.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Array.map.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: Promise is not defined
+kangax-es6/well-known.species.RegExp.split.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.species.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.split.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.toPrimitive.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.toStringTag.existing-builtins.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.toStringTag.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.toStringTag.misc-builtins.js: ReferenceError: Symbol is not defined
+kangax-es6/well-known.toStringTag.new-builtins.js: KeyError: b'8\xc9\xc4f_I\x9a\x03&\x1d\x01\x9a\x8c\xcc\xe5\xa2' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 23: Unexpected token *
+kangax-es6/well-known.unscopables.js: KeyError: b'\x96\xdc\x96\t\x14DDl\x13c$\x8d\xf4\xb3\xe4u' During handling of the above exception, another exception occurred: raise NotImplementedError('With statement not implemented!') NotImplementedError: With statement not implemented!
+kangax-es2016/Array.prototype.includes.generic.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2016/Array.prototype.includes.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
+kangax-es2016/Array.prototype.includes.typed-array.js: NameError: name 'numpy' is not defined
+kangax-es2016/exponentiation.assignment.js: KeyError: b'\xb7Z4\xf7K4`B I\xf6x\x92P\x0b\xb5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *=
+kangax-es2016/exponentiation.basic.js: KeyError: b'\xc6\xb4\xae qX\xc2t=\xe5{l\xf3.\xa1\x0b' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es2016/exponentiation.unary-negation-error.js: KeyError: b'\x05C\xe5\xa3pE\xc3QX\x1a\x85\xe9N;\x8bz' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Proxy is not defined
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Proxy is not defined
+kangax-es2016/misc.generator-no-new.js: KeyError: b'\xa7$G\x07\x92\x18\x824\x84\x8c\x05\x1e<\x1b\x88\x08' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es2016/misc.generator-throw-inner.js: KeyError: b'%\xbcP\xf8\x8b^\xb0I\xca\xa8\xfc\xe7\x82\x84\xc1\t' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-es2016/misc.nested-rest-destructuring-decl.js: KeyError: b'\xbb\xaa\xef\x85\xb01&\xff\xc5\x16\xbe\x84\xed\x12\xa9\xff' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrayPattern is not supported by 
+kangax-es2016/misc.nested-rest-destructuring-params.js: KeyError: b'\xc4\xf2a#\x941\xea}]\x90\xc3xq\x90\x1b4' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ArrayPattern is not supported by ECMA 5.1.
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: KeyError: b'\xb06\\\xa1\xfc\xfc\xcc\x04\x8em\xdb3\x8a%\xf3\x13' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token .
+kangax-es2017/Atomics.add.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.and.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.exchange.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.load.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.notify.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.or.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.store.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.sub.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.wait.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.xor.js: ReferenceError: Atomics is not defined
+kangax-es2017/Object.entries.js: TypeError: 'undefined' is not a function (tried calling property 'entries' of 'Function')
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: 'undefined' is not a function (tried calling property 'getOwnPropertyDescriptors' of 'Function')
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Proxy is not defined
+kangax-es2017/Object.values.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Function')
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/String.prototype.padEnd.js: TypeError: 'undefined' is not a function (tried calling property 'padEnd' of 'String')
+kangax-es2017/String.prototype.padStart.js: TypeError: 'undefined' is not a function (tried calling property 'padStart' of 'String')
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: __defineGetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ReferenceError: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: __defineSetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: ReferenceError: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: __lookupGetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: 'undefined' is not a function (tried calling property '__defineGetter__' of 'Object')
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: __lookupSetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: 'undefined' is not a function (tried calling property '__defineSetter__' of 'Object')
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: Symbol is not defined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: KeyError: b'8j\\\xb9\x17(s\x0c\xcd\xc3\x0f\x8c\xad\x0e7B' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.arrow-in-class.js: KeyError: b'\xd62\x17\xa8\xea<\x9e<\x97]\xbd\x1a3\xc9\xee\xd2' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 48: ClassDeclaration is not supported by ECMA 
+kangax-es2017/async.arrow.js: KeyError: b'$\xdc\xbc\xd0)\xaf\x0f\xa7\xbb\x068N\x054\xd4\xcd' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 45: ArrowFunctionExpression is not supported b
+kangax-es2017/async.await-non-promise.js: KeyError: b'B@\x7fm\x14\xf8\x8b\xf4\xcd\xe8v\xcdqf\x0e\xb3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/async.await-rejection.js: KeyError: b"0Z%\xc0\xb3-\xd7\xef\x83\xac\xef'\x84\xb6\xf04" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/async.await.js: KeyError: b'\xca\xea\x91\xcb\xe53\x96\x03W\xe7\x19\x90\xf7\x01\xe7\x01' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/async.constructor.js: KeyError: b'\xfa\x9a\xca\x1f\x17\xde\xd3\x8b\x96\xe9\x18h\xf2\xd5$\xdd' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/async.methods-class.js: KeyError: b'\xc8\xdb\x13\x92\x17\xaf\xe5\x0f6\xd9\x931\x80\xa1\xb1\x8c' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 45: ClassDeclaration is not supported
+kangax-es2017/async.methods-object.js: KeyError: b'\xf6\xf6\xe7\x18&\x10\x81\x87\xdb\xcf!\x965\xaf|\xfc' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 46: Unexpected identifier
+kangax-es2017/async.must-await-value.js: KeyError: b'\xf7mAf\xaf\xc4K\xcf\xe0\x87o\x0b\xd1\x8ajx' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.no-await-in-params.js: KeyError: b"\xf6W\xf78#\xc8V\xb9'\x95\xfbm\x15q\x89\xdb" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.no-line-break.js: KeyError: b'N\x102|\x1et\x9c\xd2\x15\x14|\x0c\x92A\xc1\xe8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.no-prototype.js: KeyError: b"\x9b\xc0\x14'\x07\xf6j\xd1\xec\xb1\xbf\xd37\xbf1q" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.prototype-chain.js: KeyError: b'\x8d"*D\x14\x85\xc9\xdc\x98\xbd\xba\x92\xcau\x1e_' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token function
+kangax-es2017/async.return.js: KeyError: b'h\xb0\x7fVe\x03\x88\xc6,z\xc4\xebA#\xbch' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/async.throw.js: KeyError: b'\'\xfa\xe6\xa2\xcbE\x1fq$"\x05G,\x8f\x8c\xc8' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: OK
+kangax-es2017/trailing-comma.arguments.js: KeyError: b'\xe6,\xe7\xc2\n\x08D\x82-Z\xfa\xf4\xb5\x13\x93\x1d' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token )
+kangax-es2017/trailing-comma.params.js: KeyError: b"\xed$\xd3\xe0[\xef\xc4\n\xad'?\xd7\x04\xe9\x14A" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token )
+kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: Promise is not defined
+kangax-es2018/Promise.prototype.finally.js: ReferenceError: Promise is not defined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: Promise is not defined
+kangax-es2018/async-iterators.for-await-of.js: KeyError: b'\xba\xeb\x82\r\x8b"\x0f\xb6t\x9e)\r\xd1\xd3\x1es' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 58: Unexpected token function
+kangax-es2018/async-iterators.generators.js: KeyError: b'h6\x89\xa8\x0fcj\\\xdabi\xce\xd2\x9e\x04m' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: Proxy is not defined
+kangax-es2018/misc.template-literal-revision.js: KeyError: b'\xf0OmV_t\t\xc0\xcd\x9f)\x88\xb8>\xaf\x9f' During handling of the above exception, another exception occurred: self.throwError(Messages.TemplateOctalLiteral) File "/dist/js2py-dist/venv/lib/python3.10/site-packages/pyjsparser/parser.py", line 1004, in throwError raise self.createError(se
+kangax-es2018/object-rest.js: KeyError: b'(\xa7\xb3\x0b\xcd\xcb%\r\xa3\xef.\x1e\xe3\xeeXS' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ObjectPattern is not supported by ECMA 5.1.
+kangax-es2018/object-spread.js: KeyError: b'\x912\xe6\xcb\x96\xcdE\x00\xa1\x07\xef\xc6u\xfa\x89\xce' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token .
+kangax-es2018/regex.flags.s.js: failed
+kangax-es2018/regex.lookbehind.js: OK
+kangax-es2018/regex.named-capture-groups.js: SyntaxError: Invalid RegExp pattern: '(?<year>\\\\d{4})-(?<month>\\\\d{2})-(?<day>\\\\d{2})' -> '(?<year>\\\\d{4})-(?<month>\\\\d{2})-(?<day>\\\\d{2})'
+kangax-es2018/regex.unicode-property-escapes.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: failed
+kangax-es2019/Array.prototype.flatMap.js: TypeError: 'undefined' is not a function (tried calling property 'flatMap' of 'Array')
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: Symbol is not defined
+kangax-es2019/Array.prototype.flat.js: TypeError: 'undefined' is not a function (tried calling property 'flat' of 'Array')
+kangax-es2019/Object.fromEntries.js: ReferenceError: Map is not defined
+kangax-es2019/String.prototype.trimEnd.js: TypeError: 'undefined' is not a function (tried calling property 'trimEnd' of 'String')
+kangax-es2019/String.prototype.trimStart.js: TypeError: 'undefined' is not a function (tried calling property 'trimStart' of 'String')
+kangax-es2019/Symbol.prototype.description.empty.js: ReferenceError: Symbol is not defined
+kangax-es2019/Symbol.prototype.description.js: ReferenceError: Symbol is not defined
+kangax-es2019/Symbol.prototype.description.undefined.js: ReferenceError: Symbol is not defined
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: 'undefined' is not a function (tried calling property 'trimLeft' of 'String')
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: 'undefined' is not a function (tried calling property 'trimRight' of 'String')
+kangax-es2019/misc.Function-toString.Function-constructor.js: SyntaxError: Line 2: Unexpected token
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: Line 1: ArrowFunctionExpression is not supported by ECMA 5.1.
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Line 1: ClassExpression is not supported by ECMA 5.1.
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Line 1: ClassExpression is not supported by ECMA 5.1.
+kangax-es2019/misc.Function-toString.computed-names.js: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-es2019/misc.Function-toString.native-code.js: failed
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Line 1: Unexpected token ILLEGAL
+kangax-es2019/misc.JSON-stringify-well-formed.js: OK
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: Line 1: Unexpected token ILLEGAL
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Line 1: Unexpected token ILLEGAL
+kangax-es2019/misc.optional-catch-binding.await.js: KeyError: b'G\\#\x1b+\xe2\xd5\xab$u\xd6a~\xfb\xf5u' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-es2019/misc.optional-catch-binding.js: KeyError: b'PQ\xa6C\xbb\xe5\xeb\xf5j\xf8\x94\xbd\xc1\xc5I\xec' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token {
+kangax-es2019/misc.optional-catch-binding.yield.js: KeyError: b"\xb9\xbb\xda'\xfd1\xb0m\x83\x04\xde\xa3]:D\xe1" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token *
+kangax-es2020/BigInt64Array.js: KeyError: b'\x8c\xe79\xcf\xb6\x1c\x1c\xa3\xa0\x7f\x12\xbe\xa1\x81\xab\xdb' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token ILLEGAL
+kangax-es2020/BigInt.asIntN.js: ReferenceError: BigInt is not defined
+kangax-es2020/BigInt.asUintN.js: ReferenceError: BigInt is not defined
+kangax-es2020/BigInt.constructor.js: KeyError: b'SOJ\xb86w*\x8a\xef"\x97Go\xea@\xa3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token ILLEGAL
+kangax-es2020/BigInt.js: KeyError: b'i\xeb]\x16\x8f{^?2\x9a\x19\x14\xeb8\xa2\xbd' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token ILLEGAL
+kangax-es2020/BigUint64Array.js: KeyError: b'B\xda\x0c\x0f\x10\xd6\x8c\x82\xd0\x8f\xc4\xab\xa8\x8a\xe6v' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token ILLEGAL
+kangax-es2020/DataView.prototype.getBigInt64.js: KeyError: b'\xba\xff\xaa\xc3\xb6\x01\x8fW+\xe4ga\x06?\x12\x87' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token ILLEGAL
+kangax-es2020/DataView.prototype.getBigUint64.js: KeyError: b'}\xf3\x0esQ\x92L\xa6@\xa4\x1a\x05\xfe\xde \xc5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token ILLEGAL
+kangax-es2020/Promise.allSettled.js: KeyError: b'n\xb2@\xa2\xdb\xe4\x18R@\xa1\x8c\x8f\xd6\x9ft\x9b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 49: ArrowFunctionExpression is not supported b
+kangax-es2020/String.prototype.matchAll.js: TypeError: 'undefined' is not a function (tried calling property 'matchAll' of 'String')
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: KeyError: b'D\x86\xdd\xc2\xf6\xfbb\x19Z\x0e\x81\xfd\xe6\xfc:\xf9' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token ?
+kangax-es2020/optional-chaining.bracket.js: KeyError: b'f\xcc):\xb4i3\xe9\r:\xdf\x809\xa0\x92\xc9' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es2020/optional-chaining.function-call.js: KeyError: b'6a1\xed\x97-*4\x98"\x1e\x9f\xc6T \x98' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 14: Unexpected token .
+kangax-es2020/optional-chaining.method-call.js: KeyError: b'm?\xe8\xb4\xff\xe2\xb1\xa7\xb1\xaf\xecK\x98=BD' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es2020/optional-chaining.property.js: KeyError: b'\xf7n\x00\xa3\x1ev\x06|\xcd\x1c\xba\xa0\xc4\xd6\xf1|' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 12: Unexpected token .
+kangax-es2020/optional-chaining.spread-params.js: KeyError: b'\xa9\x95z\x1f\x05\xb8\xd6\x98\x92\x9e\x10\x9a\xc9\xd6\xdf\xa5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 14: Unexpected token .
+kangax-es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry is not defined
+kangax-es2021/Promise.any.AggregateError.js: KeyError: b'Q\xd6x\x07\x8fvq\x87\xb4\x14\xe7\x01/\xfe~\xc8' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 49: ArrowFunctionExpression is not supported by E
+kangax-es2021/Promise.any.fulfillment.js: KeyError: b'<a\x86\xcd\xe5\xbc\x88\xbb\xdf\x88\x93\x87\xa0E\xa5\xeb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 49: ArrowFunctionExpression is not suppo
+kangax-es2021/String.prototype.replaceAll.js: TypeError: 'undefined' is not a function (tried calling property 'replaceAll' of 'String')
+kangax-es2021/WeakRef.js: ReferenceError: WeakRef is not defined
+kangax-es2021/logical-assignment.and.js: KeyError: b'\xeav\xb8\xd4T\x90\x99m\x18\x9c\xcf\x1a\xaa[\x8f\xed' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 13: Unexpected token =
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: KeyError: b'\xb5f\x7f\xab\x02\x03%\xe6\x8c\xe9\x8bc\x142\x1cU' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token =
+kangax-es2021/logical-assignment.and.short-circuit.js: KeyError: b'\xaca\x9fXN\x96\x85\t\xd7\xfa\xa6\xbd\x012\xff|' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token =
+kangax-es2021/logical-assignment.nullish.js: KeyError: b'\x10o*\xaa\xcc\xf7Dai\xb6P\x95yO\xd8\xf1' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 13: Unexpected token ?
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: KeyError: b'YUf\xbc\xa9\xffs\n\xf5. \x1d\xf0x|g' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token ?
+kangax-es2021/logical-assignment.nullish.short-circuit.js: KeyError: b'\x88\x12pm\x10`\xfe\xe5\x15sA0\x18\xab\x07\xa5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token ?
+kangax-es2021/logical-assignment.or.js: KeyError: b"\x81\xae\x89'8\xe2F\x92]\x1d\x1c\x94\xb6\xa4m9" During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 13: Unexpected token =
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: KeyError: b'VO\xaa\xa9\xd4\xa5\\\xbaH\x9eK\xcc\x9f\x1dZ\xe6' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token =
+kangax-es2021/logical-assignment.or.short-circuit.js: KeyError: b'\xf4\x08JM0x\r\x88\x13U\x0b\xca\xd4\xd3\x02\xeb' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token =
+kangax-es2021/numeric-separators.js: KeyError: b'\xb8\xd7K\xefm\x9d`\x00\xbeB/t\xfb=K\xa2' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token ILLEGAL
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: AggregateError is not defined
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: AggregateError is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: 'undefined' is not a function (tried calling property 'hasOwn' of 'Function')
+kangax-es2022/at-method.Array.js: TypeError: 'undefined' is not a function (tried calling property 'at' of 'Array')
+kangax-es2022/at-method.String.js: TypeError: 'undefined' is not a function (tried calling property 'at' of 'String')
+kangax-es2022/at-method.TypedArray.js: NameError: name 'numpy' is not defined
+kangax-es2022/class-fields.computed-instance.js: KeyError: b'\x06d\xc8sl\xd1\x86\x1c\xae\xb0\xf7\xaa\x1d\xf7p\x8d' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECM
+kangax-es2022/class-fields.computed-static.js: KeyError: b'j[\x163c<y\x9d5\x04[\x13=\x1d5\x1a' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-fields.instance.parent-scope.js: KeyError: b'\xc1w\xbfA\xc8\xf9Y\xbc\xe1\xc0\x9f\x06\xbc\x17\xcb\xdc' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by
+kangax-es2022/class-fields.private-instance.initializers.js: KeyError: b'z\xd0\x1d\x0c\xd3\x88\xc68\xc3\x95V&\xc1f\xd2\xdf' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5
+kangax-es2022/class-fields.private-instance.js: KeyError: b'\ts\x11\x84r%\x02\xa7w\xd8\xf7\x93\x81\xdb\xda\xfb' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA
+kangax-es2022/class-fields.private-instance.optional-access.js: KeyError: b'\xbb\xf6\x06\xe7\x1c\x93"\x97B-\x87\xde\xf5X\xa2\x1b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECM
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: KeyError: b'Y\xdd]\xbd4T\x98A\xbf\xe9\x97\xdd\x8b\x82M\x11' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-fields.private-static.js: KeyError: b'\x06\xf1g\\\xdd{\xee9\x08\x9c\x95_\x19\xe7\xdf#' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.
+kangax-es2022/class-fields.public-instance.js: KeyError: b'\x97\xb3R\x8d\x80T=a\xf8\xa7\xcb\x07M\x16V\xa1' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1
+kangax-es2022/class-fields.public-static.js: KeyError: b'\xda\xdd\x9e\xe7\x8b\x9d\xee\xb32}))"\x97\x9b\x19' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 
+kangax-es2022/class-fields.static.define.js: KeyError: b'\xc4\xa8P\x9c;\xd5\x0baz\xa4e\x07\xb0\x914S' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassExpression is not supported by ECMA 5.1.
+kangax-es2022/class-methods.private-accessor.js: KeyError: b'`\xf2\xee?}|\xd1\x1fO{#\x14\x08\xb2.\x97' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-methods.private-instance.js: KeyError: b'I\xe7i\x00\x0ce\x9c6o\xed\xb8\xe4\xbdG\x95\xc9' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-methods.private-static-accessor.js: KeyError: b'\xc8)| \xcePH^E,%\x17\x1f\xaa\x93\x0b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-methods.private-static.js: KeyError: b'\xdbx\xcf\x80\xa6|\x11Xc\xf1?\x04\xd8t\xb0\x88' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/class-static-init-blocks.js: KeyError: b"c\x11\x93e\x94\xac\x16'^\x80\xe9K\xc0\x8b\x079" During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1
+kangax-es2022/ergonomic-brand-checks.js: KeyError: b'H\xbb\x1b\x86\x80M\x0bx\xea\x8d:\xec\xcbW#\xd1' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-es2022/regex.flags.d.constructor.js: SyntaxError: Invalid flags supplied to RegExp constructor "d"
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Proxy is not defined
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: 'undefined' is not a function (tried calling property 'findLastIndex' of 'Array')
+kangax-es2023/Array.prototype.findLast.js: TypeError: 'undefined' is not a function (tried calling property 'findLast' of 'Array')
+kangax-es2023/Array.prototype.toReversed.js: TypeError: 'undefined' is not a function (tried calling property 'toReversed' of 'Array')
+kangax-es2023/Array.prototype.toSorted.js: TypeError: 'undefined' is not a function (tried calling property 'toSorted' of 'Array')
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: 'undefined' is not a function (tried calling property 'toSpliced' of 'Array')
+kangax-es2023/Array.prototype.with.js: TypeError: 'undefined' is not a function (tried calling property 'with' of 'Array')
+kangax-es2023/TypedArray.prototype.toReversed.js: NameError: name 'numpy' is not defined
+kangax-es2023/TypedArray.prototype.toSorted.js: NameError: name 'numpy' is not defined
+kangax-es2023/TypedArray.prototype.with.js: NameError: name 'numpy' is not defined
+kangax-es2023/hashbang.js: KeyError: b'\xc5\x16\xc4\x83\xbe\xbe\x15V\xf2\xd3\xc2\x88\x9c\xa6\x0b\xb0' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 1: Unexpected token ILLEGAL
+kangax-es2024/ArrayBuffer.prototype.detached.js: NameError: name 'numpy' is not defined
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: NameError: name 'numpy' is not defined
+kangax-es2024/ArrayBuffer.prototype.transfer.js: NameError: name 'numpy' is not defined
+kangax-es2024/Map.groupBy.js: KeyError: b'\xf9\xbaH\xf0jE8\x8c}\xf4E)\xf3\x1a\xb4A' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1.
+kangax-es2024/Object.groupBy.js: KeyError: b'\xc3\xc1\xf10\xfa\xc4q0\xee\xd5\xa0\xdeC\x19u\xd5' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunction is not supported by ECMA 5.1
+kangax-es2024/Promise.withResolvers.js: ReferenceError: Promise is not defined
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid flags supplied to RegExp constructor "v"
+kangax-es2024/regex.flags.v.properties-of-strings.js: failed
+kangax-es2024/regex.flags.v.set-notations.js: failed
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Proxy is not defined
+kangax-es2024/regex.flags.v.unicode-15.1.js: failed
+kangax-es2024/regex.flags.v.unicode-16.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2025/Iterator.extends.js: KeyError: b'\x80;\x9eF\x8a\xc7x\xb1\xd3\x05v\xfd\x08F\xab\xd1' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.instanceof.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Array')
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.prototype.drop.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Array')
+kangax-es2025/Iterator.prototype.every.js: KeyError: b' \xce\xd1\xd2/(4t\x9c\x14\x8e<\xe0\xd1?D' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.
+kangax-es2025/Iterator.prototype.filter.js: KeyError: b't\xf9\xa7_\xb32\xb8\x05U\x92z\n\x89\xdf[\xc8' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECM
+kangax-es2025/Iterator.prototype.find.js: KeyError: b'gr\xa3O\x89\xaa*\xe5\xe28c\xc5\x9b\n\x1e\xca' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECM
+kangax-es2025/Iterator.prototype.flatMap.js: KeyError: b'C\x1d\x1b\xcaQ\x8d\x0f\x0f6\xa5\x86\x0b\xa2e=@' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by E
+kangax-es2025/Iterator.prototype.forEach.js: KeyError: b'\xe3\x0e\xd2\xa8\x023\xd7\x9c\xbb\xaa*\x1e\xb10\x1f\x89' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunctionExpression is not suppo
+kangax-es2025/Iterator.prototype.map.js: KeyError: b'\xe2\x1f]\x98\xb7\x8a\xf1\t\x8a\x8e\xa8\xd8\x13\xfdk\xdc' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supp
+kangax-es2025/Iterator.prototype.reduce.js: KeyError: b'q\xf9\x0e\xd2u\x03v\xa3\x84\x08\xca\xed\xc1\xf7Gm' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1
+kangax-es2025/Iterator.prototype.some.js: KeyError: b'\xbe\xa1\xf3$\xc5rh\xec\x1d\x08\xc1Dp\x1b6\xba' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by E
+kangax-es2025/Iterator.prototype.take.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Array')
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Array')
+kangax-es2025/Promise.try.js: ReferenceError: Promise is not defined
+kangax-es2025/RegExp.escape.js: TypeError: 'undefined' is not a function (tried calling property 'escape' of 'Function')
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Set is not defined
+kangax-es2025/Set.prototype.union.js: ReferenceError: Set is not defined
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid RegExp pattern: '(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4})' -> '(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4})'
+kangax-es2025/regex.pattern-modifiers.i.js: OK
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: failed
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.NumberFormat.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Intl is not defined
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Intl is not defined
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: KeyError: b'+\xea\xa4\xd3\xdb\xd3i\x07\xd6\xe3\xdc\xa1S\x99[\xe0' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supporte
+kangax-next/AsyncDisposableStack.js: KeyError: b'r+\x9a\xde\xf1\xa0y\xa5\x17>@\xb6\xfd\x0ec\x85' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 47: Unexpected token [
+kangax-next/AsyncIterator.extends.js: KeyError: b'\xafH\x85L\xdf\xe6\xe7\xc5\x17Nt2\xefF\xcc\xde' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+kangax-next/AsyncIterator.from.async-iterable.js: KeyError: b'I\x0f\\\xf6O\xd7\x01\x8a%\x81\xb8\xe8;\xab@\x9c' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.from.iterable.js: KeyError: b'\x14\x18\xc9\xa1\xed\x0f\xe7/\xe6f\xee\x08\x8d5\\\x0f' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.from.iterator.js: KeyError: b'\x03XI\x8226\xaar\xe9tlK\n\xb3\x98!' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.instanceof.js: KeyError: b'\xc9\xf0c\xba\t\xb7\x1c\xa4k\xca\xf1\xa4\xd4o8)' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token function
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: KeyError: b'\xd8\xb1\xc3\xb1\xd7=\x1a\xfdD\xc6O\x107\xc0\xfdT' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.every.js: KeyError: b'\xd8\xcbC\xc41\xe4\xfe4<\xb4\x9d\xee\xf7\x8b1I' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.filter.js: KeyError: b'\x7f\xa5C\x91\xa6\x9b\xd8\x1c\xbf\r\xd75\xd1\x0c[\xeb' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.find.js: KeyError: b'\x93\x00\xb3\xda\xae\xc0\xd2F)\x162l\xacUa\xd3' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.flatMap.js: KeyError: b'\x17\x9d,G=\xbd\xa3d\x03zfp\xa4\xc1/\xe9' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.forEach.js: KeyError: b'\xdd\x98H;\xb8\x8f\x0e\xc4,\x94\x0b\xd8\xb3\xfe=%' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 45: Unexpected token function
+kangax-next/AsyncIterator.prototype.map.js: KeyError: b'\x9d\xd4s\x85\xb2\x17J\xd2\xe8\x1dx\x93\x10+\xdbY' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.reduce.js: KeyError: b'(\x03\xac\x05\x87\x90\xac\xbcy\xcc\xd2\x10\x82hs\x9a' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.some.js: KeyError: b'29\xab\xfc\xf1\x08\xcb\xe9\xc8\x1d\x88\x9bh\xc0\r\xcc' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.take.js: KeyError: b'\x80p\xe1+\xb3\x9e\xe6\xa4XbM\xb4\x9av\xdc\xb7' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/AsyncIterator.prototype.toArray.js: KeyError: b'i/i\x998\x9a\xf85\xd4\xa9\xe8\x05\xbb3\x17\xcd' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/DisposableStack.js: KeyError: b'l\x93X\x08\xac\xb9b\x1e\x1d\xfeI\x84n3g~' During handling of the above exception, another exception occurred: raise NotImplementedError( NotImplementedError: Shorthand and Computed properties not implemented!
+kangax-next/Map.prototype.upsert.js: KeyError: b'\xf1h\x91\xce\xe5\xa7\xda\xdc\xf63\xcc`p\x0e2v' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 10: ArrowFunctionExpression is not supported by E
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: KeyError: b'#\x0c\xfc\xb1\x1b\x84`Xz\xad.$w\xc8.\xb1' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 13: Unexpected identifier
+kangax-next/Uint8Array.fromBase64.js: KeyError: b'`\x03\xf9\xdet\xf5\xa5\xf6\xea`\x1b\xa5\xa38\xd7\x1e' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 
+kangax-next/Uint8Array.fromHex.js: KeyError: b'aa\xb1Q\x7f\xfbU\xe8\x89\xe2\xa0\xe4\x98t\x80\xab' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1
+kangax-next/Uint8Array.setFromBase64.js: KeyError: b'\xa0A\xb0\x8c\xd2\xd3\x8f\x9b\xb7D\xbbw*\xb1\xb2r' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 5.1
+kangax-next/Uint8Array.setFromHex.js: KeyError: b'\xa5\xae\xbd;g\xc9\xf0\x06U\x94\x8aT\xa3\x16\x17\xd6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 
+kangax-next/Uint8Array.toBase64.js: NameError: name 'numpy' is not defined
+kangax-next/Uint8Array.toHex.js: NameError: name 'numpy' is not defined
+kangax-next/WeakMap.prototype.upsert.js: KeyError: b'\xc4\xaf \x87c\tr\x93P\x7f\x9e\x87`\xcd8:' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunctionExpression is not supported by ECMA 5
+kangax-next/await-using.for-of.js: KeyError: b'V\x06:\x94O\xc0\x11\xc5\xa0\xea^D\xcc6\xe0\xae' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 46: Unexpected token [
+kangax-next/await-using.js: KeyError: b'#\xb8\xaf\x00\xc7b,\xa3\x0e_\x81/\xb36\xd12' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function
+kangax-next/class-decorators.js: KeyError: b'\xc6.\x11\x8b\x18\xa6\x00\xc8\xb2\x86\xdf\x829\x97[\x9b' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by 
+kangax-next/function.sent.js: KeyError: b'&\xd0\x94\x12P\xd0\xe1\xdf\xcd^y\xfb|\xc6B\xf1' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
+kangax-next/throw-expr.arrow.js: KeyError: b'\xfe\xf1\x1e\r\x97\xeb\xed\x03<>+$\xd7\x19l\x88' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ArrowFunction is not supported by ECMA 5.1.
+kangax-next/throw-expr.conditional.js: KeyError: b'\xed\n\xba1\x84\xcbD\xdf\xa0?\x11?l\xb9\xbc.' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token throw
+kangax-next/throw-expr.logical.js: KeyError: b'\x88\x9d;\xf5GY]Y\xd5p\xdd-\xc2\x17\x15\x87' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 11: Unexpected token throw
+kangax-next/throw-expr.param-init.js: KeyError: b'\xd4.\x11<\x0f\x8fj\xc6\x83\xf3\x86\xa7\xae\xe0MD' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 9: Unexpected token throw
+kangax-next/using.for-of.js: KeyError: b'S<\xb8\x0b\xfb\xe5\x05\xd4\x04\x88\x8b\xea^he\xb7' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 22: Unexpected identifier
+kangax-next/using.js: KeyError: b'c<0\x9b\x16\x05.9\xf5L\xa0~\xd2\xa5u\xb5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 16: Unexpected identifier

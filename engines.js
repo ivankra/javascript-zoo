@@ -2674,13 +2674,44 @@ const jsz_engines = [
     "loc": 69402,
     "language": "Python",
     "license": "MIT",
+    "standard": "ES5",
     "years": "2014-2022",
     "platform": "Python",
     "interpreter": "stack-based VM",
     "loc_command": "cloc js2py",
     "license_abbr": "MIT",
     "github_stars": 2560,
-    "github_forks": 275
+    "github_forks": 275,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 4376224,
+        "repository": "https://github.com/PiotrDabkowski/Js2Py.git",
+        "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e",
+        "revision_date": "2022-11-06"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9596,
+      "es3": 0.9122,
+      "es5": 0.6216,
+      "kangax-es5": 0.815,
+      "kangax-es6": 0.0733,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.12,
+      "kangax-es2018": 0.0526,
+      "kangax-es2019": 0.0625,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.1404,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0,
+      "es1-es5": 0.8833,
+      "kangax-es2016plus": 0.0566
+    }
   },
   {
     "id": "jsc",
