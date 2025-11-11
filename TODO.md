@@ -1,19 +1,33 @@
 * engines
   * Standard -> Specification / Target spec
 * docker
-  * dist.py script copy/mount at the end to simplify buildsw
-    * public multiple artefacts per build
-    * has_262, has_print/has_console_log/print_function
-    * --version_cmd="$binary --version | grep ..."
-    * --wrapper="$SCRIPT_DIR/..."
-    * --summary=
+  * dist.py script copy/mount at the end to simplify builds
+    * allow publishing multiple artefacts per build
+    * function testing / intrinsics
+      * `"$262": true`
+      * `"console.log": true`
+      * `"print": "console.log"` (print, println, console.log)
+      * `"Date.now()": "(new Date()).getTime()"`
+      * `performance.now: false`
+      * putstr, read(line), eval, scriptArgs, ...
+    * `--dist_du="--exclude=*.pyc ..."`
+    * `--license_glob="LICENSE.*,xxx"`
+    * `--bash_wrapper="exec $SCRIPT_DIR/..."`
+    * `--summary=...`
+    * `--repl` / `--repl_cmd="$BINARY repl"`  => `"repl_cmd": "$BINARY ..."`
+    * `--run_cmd="$BINARY eval $FILE"` (accepts only one)
+      * `--run_files_cmd="$BINARY -- $FILES"` (accepts multiple, sharing namespace)
+    * `--run_timed_cmd="$BINARY --time $TIME $FILE"` (only time VM, exclude compilation)
+    * `--version_cmd="$BINARY --version | grep ..."`
+    * `--platform_version_cmd="echo node $(node -v)"`
+    * conformance/run lib, shared between bench and conformance
   * hub.Dockerfile; git clone ... /zoo; /dist -> zoo/dist/...
   * narcissus: vendor-in, add console.log() and multiple scripts command-line args
   * hako: go embed wasm module, update to new repo
   * wasm builds + try different wasm runtime wazero wasmtime etc
   * static hermes
   * nashorn_ot variant, record flags
-  * besen fix logging
+  * jscript via wine
   * CI
     * rebuild nightly and/or tag push
     * make sure all dockerfiles point to master/lkgr-like
