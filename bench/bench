@@ -675,6 +675,9 @@ CONFIGS = {
       polyfills=['var console={log: print};'],
       timestamp_output=True,
   ),
+  'twostroke': Config(
+      benchmark_suite=['richards.es1.js'],
+  ),
   'ucode': Config(
       benchmark_suite=['richards.ucode.js'],    # own javascript dialect
       polyfills=[],

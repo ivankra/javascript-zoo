@@ -1,0 +1,98 @@
+diff --git a/Gemfile b/Gemfile
+index fa87e6a..16929fe 100644
+--- a/Gemfile
++++ b/Gemfile
+@@ -1,4 +1,4 @@
+-source :rubygems
++source 'https://rubygems.org'
+ 
+ gem "paint"
+ gem "coderay"
+diff --git a/lib/twostroke/runtime/lib/date.rb b/lib/twostroke/runtime/lib/date.rb
+index 546e7e2..86d3093 100644
+--- a/lib/twostroke/runtime/lib/date.rb
++++ b/lib/twostroke/runtime/lib/date.rb
+@@ -17,6 +17,7 @@ module Twostroke::Runtime
+           args = args.take(7)
+             .map { |a| Types.to_uint32(a) }
+             .zip([9999, 12, 31, 23, 59, 59, 999]).map { |a,b| [a || 0, b].min }
++          args[1] += 1 if args[1] # Convert JS month (0-11) to Ruby month (1-12)
+           args[6] *= 1000 if args[6]
+           this.data[:time] = Time.local *args
+         end
+@@ -52,7 +53,7 @@ module Twostroke::Runtime
+       }, nil, "valueOf", [])
+     
+     { "Date" => :day, "Day" => :wday, "FullYear" => :year, "Year" => ->t{ t.year - 1900 }, "Hours" => :hour,
+-      "Milliseconds" => ->t{ (t.usec / 1000).to_i }, "Minutes" => :min, "Month" => :month,
++      "Milliseconds" => ->t{ (t.usec / 1000).to_i }, "Minutes" => :min, "Month" => ->t{ t.month - 1 },
+       "Seconds" => :sec, "Time" => ->t{ (t.to_f * 1000).floor }, "TimezoneOffset" => ->t{ t.utc_offset / 60 } }.each do |prop,method|
+         # Date.prototype.getXXX
+         proto.proto_put "get#{prop}", Types::Function.new(->(scope, this, args) {
+diff --git a/lib/twostroke/runtime/lib/number.rb b/lib/twostroke/runtime/lib/number.rb
+index 0df3ecd..206fea6 100644
+--- a/lib/twostroke/runtime/lib/number.rb
++++ b/lib/twostroke/runtime/lib/number.rb
+@@ -8,7 +8,7 @@ module Twostroke::Runtime
+       if this.is_a?(Types::NumberObject)
+         base = args[0] ? Types.to_uint32(args[0]) : 10
+         Lib.throw_range_error "toString() radix argument must be between 2 and 36" if base < 2 or base > 36
+-        if this.number.is_a? Fixnum or this.number.is_a? Bignum
++        if this.number.is_a? Integer
+           Types::String.new this.number.to_s base
+         else
+           Types::String.new this.number.to_s.gsub(/\.0+\z/,"")
+diff --git a/lib/twostroke/runtime/types.rb b/lib/twostroke/runtime/types.rb
+index d49db8b..20d7448 100644
+--- a/lib/twostroke/runtime/types.rb
++++ b/lib/twostroke/runtime/types.rb
+@@ -136,7 +136,7 @@ module Twostroke::Runtime::Types
+   def self.marshal(ruby_object)
+     case ruby_object
+     when ::String, Symbol;  String.new ruby_object.to_s
+-    when Fixnum, Float;     Number.new ruby_object
++    when Integer, Float;     Number.new ruby_object
+     when ::Array;           Array.new ruby_object.map { |el| marshal el }
+     when Hash;              o = Object.new
+                             ruby_object.each { |k,v| o.put k.to_s, marshal(v) }
+diff --git a/lib/twostroke/runtime/vm_frame.rb b/lib/twostroke/runtime/vm_frame.rb
+index b22a5ce..6ad1b5f 100644
+--- a/lib/twostroke/runtime/vm_frame.rb
++++ b/lib/twostroke/runtime/vm_frame.rb
+@@ -96,7 +96,7 @@ module Twostroke::Runtime
+     def push(arg)
+       if arg.is_a? Symbol
+         stack.push scope.get_var(arg)
+-      elsif arg.is_a?(Fixnum) || arg.is_a?(Float)
++      elsif arg.is_a?(Integer) || arg.is_a?(Float)
+         stack.push Types::Number.new(arg)
+       elsif arg.is_a?(String)
+         stack.push Types::String.new(arg)
+diff --git a/repl.rb b/repl.rb
+index c79c979..af9d0a0 100644
+--- a/repl.rb
++++ b/repl.rb
+@@ -55,12 +55,16 @@ trap "SIGINT" do
+   exit!
+ end
+ 
++# Only start REPL if stdin is a TTY and no scripts were executed
++exit if !STDIN.tty? || ARGV.any? { |arg| !arg.start_with?('--') }
++
+ loop do
+   src = ""
+   system "stty raw -echo"
+   print Paint[">>> ", :bright]
+   loop do
+     c = STDIN.getc
++    exit! if c.nil?
+     if c.ord == 3
+       # ctrl+c
+       if src.empty?
+@@ -145,4 +149,4 @@ if ARGV.include? "--pry"
+ end
+ 
+ vm.execute
+-=end
+\ No newline at end of file
++=end

@@ -6523,12 +6523,28 @@ const jsz_engines = [
     "loc": 4723,
     "language": "Ruby",
     "license": "MIT",
+    "standard": "ES3",
     "years": "2011-2012",
     "interpreter": "stack-based VM",
     "loc_command": "cloc *.rb lib",
     "license_abbr": "MIT",
     "github_stars": 302,
-    "github_forks": 19
+    "github_forks": 19,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 470306,
+        "repository": "https://github.com/charliesome/twostroke.git",
+        "revision": "3e6d5366bad603e987f78027d472255707ec26fa",
+        "revision_date": "2012-05-30"
+      }
+    ],
+    "conformance": {
+      "es1": 0.7475,
+      "es3": 0.5811,
+      "es5": 0.2027,
+      "es1-es5": 0.5929
+    }
   },
   {
     "id": "ucode",

@@ -7,6 +7,7 @@ FROM $BASE AS jsz-runtime
 # moreutils: ts, for benchmarking
 # procps: top
 # psmisc: killall
+# ruby: for twostroke
 # time: /usr/bin/time, for benchmarking
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
@@ -35,6 +36,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         psmisc \
         python3 \
         ripgrep \
+        ruby \
         strace \
         sudo \
         tar \
