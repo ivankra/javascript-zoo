@@ -29,6 +29,9 @@
 # JavaScript-C 1.3 1998 06 30
 # ARG TARBALL=https://ftp.mozilla.org/pub/mozilla/source/mozilla-19981008.tar.gz
 # https://github.com/mozilla-firefox/firefox.git 5858e3255b42cdd854bc3fa597abb65c07707de6
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-gcc
 FROM $BASE

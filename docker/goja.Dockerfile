@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 ARG BASE=jsz-golang
 FROM $BASE
 

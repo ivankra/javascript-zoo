@@ -1,6 +1,9 @@
 #!/bin/bash
 # This script is run after a successful build to strip and copy built binaries
 # out of build containers to ../dist/<arch>/, along with a metadata .json file.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 set -e
 

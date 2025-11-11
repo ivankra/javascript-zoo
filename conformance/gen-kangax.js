@@ -1,10 +1,19 @@
 #!/usr/bin/env node
 // Generates kangax-*/*.js tests from compat-table's data-*.js files.
 //
-// ./gen-kangax.js parse: creates/updates gen-kangax.json with
-// title => filename mapping and parsed compat-table tests.
-// ./gen-kangax.js gen: generates test files
-// ./gen-kangax.js gen --clean: removes generated files (for rename prep, etc)
+// * ./gen-kangax.js parse
+//   Parses compat-table and generated tests, creates/updates gen-kangax.json
+//   with title => filename mapping and parsed compat-table tests.
+//
+// * ./gen-kangax.js gen
+//   Generates test files
+//
+// * ./gen-kangax.js gen --clean
+//   removes generated files - for rename preparation, etc
+//
+// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+// SPDX-License-Identifier: MIT
+
 const fs = require('fs');
 const path = require('path');
 

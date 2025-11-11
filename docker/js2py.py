@@ -1,4 +1,7 @@
 #!/dist/js2py-dist/venv/bin/python3
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 import js2py, sys
 e = js2py.EvalJs()
 if len(sys.argv) <= 1:

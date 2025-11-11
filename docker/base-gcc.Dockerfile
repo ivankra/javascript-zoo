@@ -1,4 +1,7 @@
 # GCC-based build environment.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-debian
 FROM $BASE

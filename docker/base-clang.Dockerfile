@@ -1,6 +1,9 @@
 # Clang-based build environment.
 #
 # LTO is broken (LLVMgold.so errors): https://github.com/llvm/llvm-project/issues/139602
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-debian
 FROM $BASE

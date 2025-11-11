@@ -7,6 +7,9 @@
 # Versions:
 #   * https://v8.dev/docs/version-numbers
 #   * https://chromiumdash.appspot.com/releases?platform=Linux
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-clang
 FROM $BASE

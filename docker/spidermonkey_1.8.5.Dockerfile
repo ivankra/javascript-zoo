@@ -2,6 +2,9 @@
 # Features TraceMonkey tracing JIT, JägerMonkey method JIT, PIC, YARR.
 #
 # Doesn't work on arm64: JIT doesn't support this target.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-gcc
 FROM $BASE

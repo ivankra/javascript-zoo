@@ -1,4 +1,9 @@
+# XS build instructions:
 # https://github.com/Moddable-OpenSource/moddable/blob/public/documentation/Moddable%20SDK%20-%20Getting%20Started.md#lin-instructions
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 ARG BASE=jsz-gcc
 FROM $BASE
 

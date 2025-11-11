@@ -1,4 +1,7 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 set -e -o pipefail
 
 PUSHDEST="docker.io/ivankra/javascript-zoo"

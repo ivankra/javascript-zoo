@@ -1,4 +1,7 @@
 # Test container for running built binaries and common JavaScript runtimes.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=debian:stable
 FROM $BASE AS jsz-runtime

@@ -1,4 +1,7 @@
 # V8 build from Chromium's tree with profile-guided optimizations.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-clang
 FROM $BASE

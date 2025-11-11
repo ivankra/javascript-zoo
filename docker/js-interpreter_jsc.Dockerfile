@@ -1,5 +1,7 @@
 # Wrapper to run js-interpreter with JavaScriptCore shell. Faster than Node/V8.
-# TODO: implement inside bench script
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-js-interpreter
 FROM $BASE

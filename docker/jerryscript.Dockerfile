@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 # doesn't build easily with clang
 ARG BASE=jsz-gcc14
 FROM $BASE

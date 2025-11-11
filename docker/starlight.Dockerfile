@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 # Ancient Rust codebase. Only builds on x64.
 
 ARG BASE=jsz-rust

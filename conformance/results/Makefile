@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
 SHELL := /bin/bash
 ENGINES := $(shell \
 	for bin in /dist/*; do \

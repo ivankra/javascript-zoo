@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 # Generates README.md with rankings
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 import glob
 import html

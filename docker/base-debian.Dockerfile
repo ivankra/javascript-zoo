@@ -1,4 +1,7 @@
 # Debian-based build environment.
+#
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
 
 ARG BASE=debian:stable
 FROM $BASE
