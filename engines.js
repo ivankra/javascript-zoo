@@ -98,12 +98,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "ec295ecb6e7546f462eb422db06c9a26ae23a7f1885b1583ca6c786382f5af6c",
-        "binary_size": 3111168,
+        "binary_sha256": "26e67c7563c7eea84b6f079484c14a87fdedc24332352a1add77948ac7a88db5",
+        "binary_size": 4649728,
         "repository": "https://github.com/ferus-web/bali.git",
-        "revision": "8cb0b593839a9fe2fa6ec3c2a88b2efd02d2cc7c",
-        "revision_date": "2025-09-25",
-        "version": "0.8.1-7-g8cb0b59"
+        "revision": "99f0aa14155d0b0c9e39f6273a51c35b497207de",
+        "revision_date": "2025-10-29",
+        "version": "0.8.2"
       }
     ],
     "conformance": {
@@ -135,7 +135,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "c2dfc723261f0959f59fc62154244dedf23bf19ecf997e1c568cf42fcf1a3188",
+        "binary_sha256": "5bcaf57d49b3b99f1ffc13f796ff84e390e9b52b343b7bd3a857684a02cb3e59",
         "binary_size": 2040192,
         "repository": "https://github.com/BeRo1985/besen.git",
         "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b",
@@ -214,12 +214,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "86d063cd854e2d4dead863684843584565cddecb3c8f8119196b8666d3aa4104",
-        "binary_size": 27028272,
+        "binary_sha256": "ed380c276996ad9acdb5ac7cf8a700ecef6798d8d8373d4b40d9b8d570e073c5",
+        "binary_size": 26960944,
         "repository": "https://github.com/boa-dev/boa.git",
-        "revision": "9d0de12228d938b4f835f2cdca22c9dc7dc4e995",
-        "revision_date": "2025-09-29",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+        "revision": "f6601a049c322044b07825613f6768e82c0fca58",
+        "revision_date": "2025-11-09",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       },
       {
         "arch": "arm64",
@@ -357,6 +357,15 @@ const jsz_engines = [
     "github_forks": 5,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "0c9234aa2206d3560a30770f837246281d0a88803469bed0e46059ef5aeecb3e",
+        "binary_size": 6451136,
+        "repository": "https://github.com/Hans-Halverson/brimstone.git",
+        "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e",
+        "revision_date": "2025-09-04",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "440893b871c9ca0091ab238907a991ffe1dca3018e9539b10b5310317794bd3d",
         "binary_size": 5910576,
@@ -428,7 +437,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 1101175,
+        "dist_size": 1101141,
         "repository": "https://github.com/PaulBernier/castl.git",
         "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c",
         "revision_date": "2017-03-22",
@@ -485,8 +494,8 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "a2b552803cd42697bca6e8db87fa0156d10f832383b2b8d4fddaa05716a4835f",
-        "binary_size": 47424,
+        "binary_sha256": "8be1f337b4da94d225a91840358d720d7891d8920d20d2c5c1f845c7b93397f9",
+        "binary_size": 47496,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/elk.git",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
@@ -532,13 +541,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "268620fdad5f550416a0bf3055d6d9e63f84fdf6e292f0ec6732cf91a69c7598",
+        "binary_sha256": "8006cec195a7a3a55ce8da80404dd081daba7da99b1ca154dc8180a6023272f5",
         "binary_size": 195328,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/mjs.git",
-        "revision": "ed70eac9e8b334b1bfc251fc860511b2cb4aa418",
-        "revision_date": "2025-08-06",
-        "version": "2.20.0-15-ged70eac"
+        "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b",
+        "revision_date": "2025-11-10",
+        "version": "2.20.0-19-gda0d06d"
       },
       {
         "arch": "arm64",
@@ -592,7 +601,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "030ad2cee6f52813c084de225a3b22cbf8f5c521bc948f806e3f02cf8439f27e",
+        "binary_sha256": "d5feab43d9ce105f7b46d33e69a0475a75548529374d909b09d972305860ccc9",
         "binary_size": 420568,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/cesanta/v7.git",
@@ -663,19 +672,28 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "7214a102534610f98d6972cbc91fcf954ee02b895f5c67a598df87e409249883",
+        "binary_sha256": "eaced5877014a724e37e6f3463998459a2e33e3406f12a9ed53f79bb9524b7f7",
         "binary_size": 12707112,
         "repository": "https://github.com/chakra-core/ChakraCore.git",
-        "revision": "36becec43348f259e8bee08cf2fcd171bfe56f42",
-        "revision_date": "2025-02-22"
+        "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
+        "revision_date": "2025-10-11"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "ceaf8bed41c6bef9b410ac9fc52d01a19ee09861a74a4a3c0a074ab84ef03381",
+        "binary_sha256": "95023437d489f7281cbd66314b5692befed8f587d927f61927c21d83e8370bb9",
+        "binary_size": 12912448,
+        "repository": "https://github.com/chakra-core/ChakraCore.git",
+        "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
+        "revision_date": "2025-10-11",
+        "variant": "full"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "6f3910b672a71664028d2fb3b3b83572307b74a937fc19da5f6075a9fbaa25e6",
         "binary_size": 9233312,
         "repository": "https://github.com/chakra-core/ChakraCore.git",
-        "revision": "36becec43348f259e8bee08cf2fcd171bfe56f42",
-        "revision_date": "2025-02-22",
+        "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
+        "revision_date": "2025-10-11",
         "variant": "jitless"
       },
       {
@@ -848,23 +866,6 @@ const jsz_engines = [
     "github_forks": 0
   },
   {
-    "id": "cpan-je",
-    "title": "CPAN/JE",
-    "summary": "JavaScript engine in pure Perl.",
-    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/cpan-je.md",
-    "homepage": "https://metacpan.org/dist/JE",
-    "sources": "https://cpan.metacpan.org/authors/id/S/SP/SPROUT/JE-0.066.tar.gz",
-    "loc": 11007,
-    "language": "Perl",
-    "license": "Artistic-1.0-Perl OR GPL-1.0-or-later",
-    "standard": "ES3",
-    "years": "2007-2014",
-    "platform": "Perl",
-    "interpreter": "tree walker",
-    "loc_command": "cloc lib",
-    "license_abbr": "Artistic/GPL"
-  },
-  {
     "id": "criscript",
     "title": "CRIScript",
     "summary": "Lightweight ES3 interpreter for game engines.",
@@ -907,8 +908,8 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "4e33a30deb71e7dbf602cfb5644db986253fd33a3c46f999e876697a975297cf",
-        "binary_size": 1880496,
+        "binary_sha256": "9adc2ffc67b34eb2ac062e92fe00600beb640cee22883a4c3784902f89bb20e6",
+        "binary_size": 1880464,
         "repository": "https://github.com/DigitalMars/DMDScript.git",
         "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb",
         "revision_date": "2024-06-18",
@@ -982,7 +983,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "c97c3ba167ea00fa57eef2aa93c579b3f12b50835f029fc9e3cc14525d928501",
+        "binary_sha256": "c73d807c15e1c72a779c461da63605ddc43ca762fc5d8f00c2ab93b1260ae464",
         "binary_size": 1398540,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/DigitalMars/DscriptCPP.git",
@@ -1017,6 +1018,16 @@ const jsz_engines = [
         "repository": "https://github.com/svaarala/duktape.git",
         "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
         "revision_date": "2024-01-29"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "c78789522befc968e6ffdb4dcbdd1f3eb541c7c4195546b32690ffc2d6778270",
+        "binary_size": 744448,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/svaarala/duktape.git",
+        "revision": "50af773b1b32067170786c2b7c661705ec7425d4",
+        "revision_date": "2024-01-29",
+        "variant": "clang"
       },
       {
         "arch": "arm64",
@@ -1159,12 +1170,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "ca9ac67dfd93bb5bb8cae66c3e88be0ab5eb14e319478bbfa5ca65a76d433297",
-        "binary_size": 1113640,
+        "binary_sha256": "89c5710f6d292acd05b68d65d692acd53bb8fd5d52b48aeb90d219d04cf31367",
+        "binary_size": 1075400,
         "repository": "https://github.com/echosoar/jsi.git",
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)"
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
       },
       {
         "arch": "arm64",
@@ -1254,10 +1265,10 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 1593028,
+        "dist_size": 1594451,
         "repository": "https://github.com/engine262/engine262.git",
-        "revision": "f915a64e03381af90c5b1da46f9c7cf464e68799",
-        "revision_date": "2025-10-06"
+        "revision": "850461e0e7c55bb30571344f12eaa5b432b8a7b5",
+        "revision_date": "2025-11-09"
       },
       {
         "arch": "arm64",
@@ -1329,12 +1340,23 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "15e46af62c3fc0708e7b1fb823a374798fd3f9deec15ff5e16baab63cd8476f8",
+        "binary_sha256": "4b05bbecd56e3ec4fa2dd369f6df577f1ea9c2315a306c6f177fde7a25d66743",
         "binary_size": 5202576,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Samsung/escargot.git",
         "revision": "1577634b8f3e54f2934ae1739c77f812d2908f8e",
         "revision_date": "2025-08-21",
+        "version": "4.3.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "69692838861b57178d1b68a1d6e10a10d31eeecf744c5a82be7f2f9dcba11731",
+        "binary_size": 4522584,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/Samsung/escargot.git",
+        "revision": "1577634b8f3e54f2934ae1739c77f812d2908f8e",
+        "revision_date": "2025-08-21",
+        "variant": "clang",
         "version": "4.3.0"
       },
       {
@@ -1472,13 +1494,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "da4f958830f44637fddefd20d9933abd606dd00bd7c90c06de2fe755a89cbae2",
+        "binary_sha256": "1cece67fc275378401b72da3b34140c2718fbf2764ae41399c5921e0b94073fc",
         "binary_size": 1105208,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/espruino/Espruino.git",
-        "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565",
-        "revision_date": "2025-06-06",
-        "version": "2v27"
+        "revision": "37bd2082786535c052928e5e7728115950ac8096",
+        "revision_date": "2025-11-05",
+        "version": "2v28"
       },
       {
         "arch": "arm64",
@@ -1545,6 +1567,15 @@ const jsz_engines = [
     "github_stars": 425,
     "github_forks": 13,
     "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "d3eff04c274ba5650694a90f4d40b93dbe0f6dce14692a2726a75bc39f1b62f7",
+        "binary_size": 6179392,
+        "repository": "https://github.com/fastschema/qjs.git",
+        "revision": "461716f4f380f81ffd09378751f1812919cddbca",
+        "revision_date": "2025-10-28",
+        "version": "0.0.6"
+      },
       {
         "arch": "arm64",
         "binary_sha256": "911b0bd16f0a73fd11757de2717b4d641782313716dc973dd227618c63730ca2",
@@ -1678,11 +1709,11 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "ba844e331bd027fbfbb00a08c4b6f1dd0e6897158099053c0bfb96060aef63a6",
-        "binary_size": 9779512,
+        "binary_sha256": "a8c9b925d06ae0bec9a2062e97fa219a22ceaf07197d8bbce562e080c5396e4a",
+        "binary_size": 9791864,
         "repository": "https://github.com/dop251/goja.git",
-        "revision": "cf18d89f3cf612fca36ebf06c10cc70ad66c1ac8",
-        "revision_date": "2025-10-08"
+        "revision": "af2ceb9156d7feaff65273b8bfde778077fb4b7e",
+        "revision_date": "2025-11-03"
       },
       {
         "arch": "arm64",
@@ -1807,9 +1838,9 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 195827758,
-        "revision": "930257e6db1e6e7ee36ef462db67ba01a28d469c",
-        "version": "25.0.0"
+        "dist_size": 196216950,
+        "revision": "629f33fe3b0a744890a01962ff3beeab50b638df",
+        "version": "25.0.1"
       },
       {
         "arch": "arm64",
@@ -1948,9 +1979,8 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "fb7fc3bcfbc0fa36fbddd035e9299f450a1f2019b7cd7bf0443f8503449e8088",
-        "binary_size": 22507376,
-        "repository": "https://github.com/andrewmd5/hako",
+        "dist_size": 785454,
+        "repository": "https://github.com/andrewmd5/hako.git",
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af"
@@ -2009,12 +2039,23 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "8e045a18b5c63c2266b171fff14faa538782004fcf3a6565dda8b04b7a919e78",
-        "binary_size": 4524032,
+        "binary_sha256": "4d3781e8df36c6e69dad25d752458cedca03f25dd61dee88701acf7115588a01",
+        "binary_size": 4528128,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/facebook/hermes.git",
-        "revision": "100fe4068fcefcacb0f192bd3202d29dec70ab46",
-        "revision_date": "2025-09-24",
+        "revision": "bbebefee22a49d8edfe2de80350edd5e9ce52794",
+        "revision_date": "2025-11-07",
+        "version": "0.12.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "f576b7ca675c01ee3ba8736d7299a8f791b6f1eebd23736c0265fbc6591c39e5",
+        "binary_size": 3686224,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/facebook/hermes.git",
+        "revision": "bbebefee22a49d8edfe2de80350edd5e9ce52794",
+        "revision_date": "2025-11-07",
+        "variant": "clang",
         "version": "0.12.0"
       },
       {
@@ -2207,7 +2248,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "caab701238b6cf078adbf06e6fa4f3e2bf6729779d52b393d06df70dea977f23",
+        "binary_sha256": "51a58f55e1eeecc7d5133e2982ad83c92244577f350fa7003ab53c492a929a57",
         "binary_size": 6418096,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Constellation/iv.git",
@@ -2217,7 +2258,18 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "0ed2097f87f07ef72d22d526ccf80a2577e320a52074c532bfd2ce3365f9e705",
+        "binary_sha256": "971cc0a22c252f86e1fff87d12183b3c19fa2746d4a0a292cb9a02d91bb7e61e",
+        "binary_size": 5457760,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/Constellation/iv.git",
+        "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
+        "revision_date": "2015-03-24",
+        "variant": "clang",
+        "version": "1.0.1-270-g64c3a9c7"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "3bb8677c77e2eec9f022174ffb0d6ddf7b7674dea254612410a23c56683643c2",
         "binary_size": 4997488,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -2430,6 +2482,36 @@ const jsz_engines = [
     "github_forks": 21
   },
   {
+    "id": "je-perl",
+    "title": "je-perl",
+    "summary": "JavaScript engine in pure Perl.",
+    "markdown_page": "https://github.com/ivankra/javascript-zoo/blob/main/engines/je-perl.md",
+    "homepage": "https://metacpan.org/dist/JE",
+    "sources": "https://cpan.metacpan.org/authors/id/S/SP/SPROUT/JE-0.066.tar.gz",
+    "loc": 11007,
+    "language": "Perl",
+    "license": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+    "standard": "ES3",
+    "years": "2007-2014",
+    "platform": "Perl",
+    "interpreter": "tree walker",
+    "loc_command": "cloc lib",
+    "license_abbr": "Artistic/GPL",
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 577372,
+        "version": "0.066"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9697,
+      "es3": 0.8986,
+      "es5": 0.0946,
+      "es1-es5": 0.7905
+    }
+  },
+  {
     "id": "jerryscript",
     "title": "JerryScript",
     "summary": "Lightweight JavaScript engine for microcontrollers.",
@@ -2582,6 +2664,14 @@ const jsz_engines = [
     "github_forks": 18,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 82829,
+        "repository": "https://github.com/polydojo/jispy.git",
+        "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e",
+        "revision_date": "2017-09-05",
+        "version": "1.0.0"
+      },
+      {
         "arch": "arm64",
         "dist_size": 82829,
         "repository": "https://github.com/polydojo/jispy.git",
@@ -2621,10 +2711,19 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 97870,
+        "dist_size": 98013,
         "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
         "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
         "revision_date": "2025-02-27"
+      },
+      {
+        "arch": "amd64",
+        "dist_size": 98013,
+        "host_engine": "jsc 301765@main",
+        "repository": "https://github.com/NeilFraser/JS-Interpreter.git",
+        "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709",
+        "revision_date": "2025-02-27",
+        "variant": "jsc"
       },
       {
         "arch": "arm64",
@@ -2684,6 +2783,13 @@ const jsz_engines = [
     "github_forks": 275,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 4376224,
+        "repository": "https://github.com/PiotrDabkowski/Js2Py.git",
+        "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e",
+        "revision_date": "2022-11-06"
+      },
+      {
         "arch": "arm64",
         "dist_size": 4376224,
         "repository": "https://github.com/PiotrDabkowski/Js2Py.git",
@@ -2739,35 +2845,35 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "52bb9f40fae13488b4c5929f1d17da2e0afef4abd1f819f1616d1a3a6e02e2ec",
-        "binary_size": 28575160,
+        "binary_sha256": "94d7a3afbcdd2380f006e89e5f34426b7914297e8780228b3a7f9d8e2b0fa946",
+        "binary_size": 29066752,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/WebKit/WebKit.git",
-        "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
-        "revision_date": "2025-09-09",
-        "version": "299754@main"
+        "revision": "9018757c64f271d2e19408850182e6b841159b53",
+        "revision_date": "2025-10-18",
+        "version": "301765@main"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "4d98d5d57967db3410ca4eeeb3f6b9070a746bd1a17f7f05be92841060bc908d",
-        "binary_size": 32671712,
+        "binary_sha256": "e99b36f6ff2656d13611ac967d9c3071d20bc09a2b3f0c54d2ad348db120c3da",
+        "binary_size": 33252640,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/WebKit/WebKit.git",
-        "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
-        "revision_date": "2025-09-09",
+        "revision": "9018757c64f271d2e19408850182e6b841159b53",
+        "revision_date": "2025-10-18",
         "variant": "gcc",
-        "version": "299754@main"
+        "version": "301765@main"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "db8f53364656fe7964645452b69c1e907c8b50ea56dc8d48ed4c26e49ebe3a0f",
-        "binary_size": 13780328,
+        "binary_sha256": "d4fb3f896d044cd2a34a5646d88f847518c2700446c39a780639091024aaf4a4",
+        "binary_size": 13911416,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/WebKit/WebKit.git",
-        "revision": "8d2ed2e447fadb4bce5db43cbc54af8f37c00042",
-        "revision_date": "2025-09-09",
+        "revision": "9018757c64f271d2e19408850182e6b841159b53",
+        "revision_date": "2025-10-18",
         "variant": "jitless",
-        "version": "299754@main"
+        "version": "301765@main"
       },
       {
         "arch": "arm64",
@@ -3147,12 +3253,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "38039e88c083b0385e94fe722a0b149b6921b4f249c5b7d909df9a1a41b4677f",
-        "binary_size": 13683160,
+        "binary_sha256": "7346c8ba60c95969f010b15ee68664480256277fe9f65000e904d0f851f9afac",
+        "binary_size": 14076400,
         "repository": "https://codeberg.org/kiesel-js/kiesel.git",
-        "revision": "fc80d0e6f43c5ff303516cfe02dfb16f6f907d8e",
-        "revision_date": "2025-09-25",
-        "version": "0.1.0-dev+fc80d0e6f"
+        "revision": "cb5efca30764f4e10bd3abbc53a5e202763dd5de",
+        "revision_date": "2025-11-03",
+        "version": "0.1.0-dev+cb5efca30"
       },
       {
         "arch": "arm64",
@@ -3278,6 +3384,17 @@ const jsz_engines = [
         "version": "5.117.0"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "83acd556f417e4c4184e616899ae840689d513d94b6c61a011925f10c57bcc6c",
+        "binary_size": 884000,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/KDE/kjs.git",
+        "revision": "5824588da24f797b4255929918efbc8b484baa09",
+        "revision_date": "2025-07-28",
+        "variant": "clang",
+        "version": "5.117.0"
+      },
+      {
         "arch": "arm64",
         "binary_size": 997072,
         "revision": "5824588da24f797b4255929918efbc8b484baa09",
@@ -3391,6 +3508,13 @@ const jsz_engines = [
     "github_forks": 2,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 410699,
+        "repository": "https://github.com/LebsterFace/LebJS.git",
+        "revision": "7b5db4a32e9d97b6881452da59f363f514e61b76",
+        "revision_date": "2025-08-14"
+      },
+      {
         "arch": "arm64",
         "dist_size": 410699,
         "repository": "https://github.com/LebsterFace/LebJS.git",
@@ -3441,12 +3565,22 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "09c89afa248f6feb4a158062a9c1e03419213ec8c7be112e882234d9fe3ae84e",
-        "binary_size": 48097224,
+        "binary_sha256": "6c8043ec1aad2a97047a8282efd27630e55b534d3b1e15f2e0e3fb9234456464",
+        "binary_size": 49368352,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/LadybirdBrowser/ladybird.git",
-        "revision": "cb6ca85564abb57517b82754b4ac1ba78785707a",
-        "revision_date": "2025-09-25"
+        "revision": "201803f60152ca454e318c5a914a125c03ee33c0",
+        "revision_date": "2025-11-08"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "2e5387584ecfb0978a6c0fba2116513058d7b3d04c784f75e33d2cacced52946",
+        "binary_size": 51398336,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/LadybirdBrowser/ladybird.git",
+        "revision": "201803f60152ca454e318c5a914a125c03ee33c0",
+        "revision_date": "2025-11-08",
+        "variant": "gcc"
       },
       {
         "arch": "arm64",
@@ -3655,7 +3789,7 @@ const jsz_engines = [
         "binary_sha256": "926f9c38e4c1e79d9392baf74fa8251ca85f54eb51a448857f5f76a78d74d44c",
         "binary_size": 186768,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "repository": "https://github.com/doodlewind/mocha1995",
+        "repository": "https://github.com/doodlewind/mocha1995.git",
         "revision": "3d109cbf6d185c3665da2982e92ce198406cca01",
         "revision_date": "2024-10-12"
       },
@@ -3709,6 +3843,15 @@ const jsz_engines = [
     "loc_command": "cloc lib*.go ccgo_linux_amd64.go",
     "license_abbr": "BSD-3/MIT",
     "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "487ddd1a4f1de798f211b3134ce8b1c79b3316755e2fc9b203751fb1e1f0b066",
+        "binary_size": 4830752,
+        "repository": "https://gitlab.com/cznic/quickjs.git",
+        "revision": "65a58be7b45de1d1f9e7e126539a52c519edffec",
+        "revision_date": "2025-11-03",
+        "version": "0.17.0"
+      },
       {
         "arch": "arm64",
         "binary_sha256": "87a56cdb9f98f14fa4b9f9aa7a1dc1ad6f9645c6dc40ca0028089a50f96c434e",
@@ -3780,13 +3923,24 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "df36cae2856ec8558febed4f3a4c4b954adbc9abbfe31177bc1cd6f531afbbbc",
+        "binary_sha256": "c71d85d0daa62a44c0e62aa1536b65bc38cacd6fba15bc5262f017a4fd3700dd",
         "binary_size": 384304,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://codeberg.org/ccxvii/mujs.git",
-        "revision": "05cd646bad083ed45e9e1c9846ea671d461ced30",
-        "revision_date": "2025-06-23",
-        "version": "1.3.7"
+        "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a",
+        "revision_date": "2025-11-07",
+        "version": "1.3.8"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "15bcaa95881b8dd9414483fa633222b54175d1f9d4da81655eb122bf0be83a73",
+        "binary_size": 404416,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://codeberg.org/ccxvii/mujs.git",
+        "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a",
+        "revision_date": "2025-11-07",
+        "variant": "clang",
+        "version": "1.3.8"
       },
       {
         "arch": "arm64",
@@ -3981,7 +4135,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 2565636,
+        "dist_size": 2565647,
         "repository": "https://github.com/openjdk/nashorn.git",
         "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d",
         "revision_date": "2025-08-21",
@@ -4128,6 +4282,16 @@ const jsz_engines = [
     "github_forks": 1,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "58aca8cbabed21a40711bdce5d4936002601f12f85e78778b33c23f07d54db58",
+        "binary_size": 420240,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/markkurossi/js.git",
+        "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
+        "revision_date": "2023-12-05",
+        "version": "0.2.5"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "bb7718db7ac2dde574960431e33ee6140d7095752e9fe9aaaeb895deea4d118d",
         "binary_size": 489656,
@@ -4185,13 +4349,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "4b84c42e3b37d715cc290db610c0569b0a100a6e8626e1f707fd07529d46f545",
+        "binary_sha256": "ba246219f67d87f895d4b69fecbace0ea4738420d5984367ed98d19c6e20a779",
         "binary_size": 932448,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/nginx/njs.git",
-        "revision": "b31f7333c772ba837977363536297b2608f64047",
-        "revision_date": "2025-09-22",
-        "version": "0.9.2"
+        "revision": "927d38d8438e8b3b3db63af4d9f6324210fd5dab",
+        "revision_date": "2025-10-27",
+        "version": "0.9.4"
       },
       {
         "arch": "arm64",
@@ -4302,13 +4466,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "7af1a124025ec768f25c2c85b0852ab6f84392d6e8de4cccd90f4e141a6e7618",
-        "binary_size": 8850536,
+        "binary_sha256": "34adb84589dff44ae71dc4d7496a7d170e71dbac010002d6530c259d0776d942",
+        "binary_size": 9509528,
         "repository": "https://github.com/trynova/nova.git",
-        "revision": "81774d30bd814d8b7ea050e252557890f76c9b69",
-        "revision_date": "2025-09-30",
-        "rustc": "rustc 1.90.0 (1159e78c4 2025-09-14)",
-        "version": "latest-28-g81774d30"
+        "revision": "4f898062298f73bb2aa7fbabfd0b8fea6ccc6cee",
+        "revision_date": "2025-11-08",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)",
+        "version": "latest-39-g4f898062"
       },
       {
         "arch": "arm64",
@@ -4544,9 +4708,9 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "repository": "https://github.com/CanadaHonk/porffor",
-        "revision": "da698ee9e00e5f690509385f5fef74b0c43b4152",
-        "revision_date": "2025-09-23"
+        "repository": "https://github.com/CanadaHonk/porffor.git",
+        "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0",
+        "revision_date": "2025-11-09"
       },
       {
         "arch": "arm64",
@@ -4598,13 +4762,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "609001448b4d29e81a8b5d4b7a62e2683b9f10b31c3207090ce3c965d4e4bc04",
-        "binary_size": 1040504,
+        "binary_sha256": "ac7df2ee229264c1abe6056bb62bd96175aa03acb0329064a88287d79dbe6c8a",
+        "binary_size": 1044632,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://github.com/lynx-family/primjs.git",
-        "revision": "3f38620eb5a0485890e4e5c2779bb31f79012890",
-        "revision_date": "2025-10-14",
-        "version": "2.15.0-rc.2-6-g3f38620"
+        "revision": "89333c6f8215b6e2d8ba4c576aa60eb7f4e679f3",
+        "revision_date": "2025-10-20",
+        "version": "2.15.0-rc.3"
       },
       {
         "arch": "arm64",
@@ -4755,6 +4919,15 @@ const jsz_engines = [
     "github_forks": 2,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "7b40bb82c6c67700d45f7e37cf610e8206f6e0d7d8da2d970b31a1f967a51a02",
+        "binary_size": 2110464,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/solarbrowser/quanta.git",
+        "revision": "67a79b1cbdfcfe338ba971b9c3cbe8deb1b992f9",
+        "revision_date": "2025-11-09"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "be5d1662ec72428acaf5611ab17144c2ba6b8f60cb4941f9807b75080e4266e7",
         "binary_size": 1774528,
@@ -4809,13 +4982,24 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "04866f71bfe0e6dd72e90cd18d789947d3dd5fef16159e0fefa4453fb0a986a1",
+        "binary_sha256": "3ed0f40db748a2621c9547e4604f10f0f7c52f1ad60aa4dbc01765c5d1a295c7",
         "binary_size": 1236536,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/quickjs-ng/quickjs.git",
-        "revision": "07214197c24bb60066a0378ebd7690041f86e361",
-        "revision_date": "2025-09-26",
-        "version": "0.10.1-62-g0721419"
+        "revision": "ca0d50dc2991c433f1c265239790e37b38c836b8",
+        "revision_date": "2025-11-09",
+        "version": "0.11.0-15-gca0d50d"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "d3f4734fed862b24f4b58a8824e006dc037c410a21fe19805d5b4ba4ac1e5c55",
+        "binary_size": 1117776,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/quickjs-ng/quickjs.git",
+        "revision": "ca0d50dc2991c433f1c265239790e37b38c836b8",
+        "revision_date": "2025-11-09",
+        "variant": "clang",
+        "version": "0.11.0-15-gca0d50d"
       },
       {
         "arch": "arm64",
@@ -5112,24 +5296,35 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "99dd9cbbc7abc4baa26ddc2b0ac04110e8d2f2b32d4cb14f448a1b5db9a4a1bd",
-        "binary_size": 13173928,
+        "binary_sha256": "57baa825d59a542e26b4f717ca91ea3c46249b5f7900cfb9b25e8d16dc538755",
+        "binary_size": 13185816,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://code.qt.io/qt/qt5.git",
-        "revision": "28229ddfafcc0ea39526536b1998f3ef02459436",
-        "revision_date": "2025-09-26",
-        "version": "6.9.3"
+        "repository": "https://github.com/qt/qt5.git",
+        "revision": "077347cc6d198053fb61cc0841c5c0c60a7deeb1",
+        "revision_date": "2025-10-02",
+        "version": "6.10.0"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "ceb9d825d8b59742c1533ff1b3bc4d28bf5d4b39530bfc8bfdaa8ea987293664",
-        "binary_size": 12887208,
+        "binary_sha256": "91e01b7dfa3952a958ca1c4f445f5556a74961d4eeed81e03938f6963c5015bf",
+        "binary_size": 12394480,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/qt/qt5.git",
+        "revision": "077347cc6d198053fb61cc0841c5c0c60a7deeb1",
+        "revision_date": "2025-10-02",
+        "variant": "clang",
+        "version": "6.10.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "4e69d5bcfe5d77a8e5e273f5dd267bae87f44c62ae4db80de0456d4203c18162",
+        "binary_size": 12895000,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "repository": "https://code.qt.io/qt/qt5.git",
-        "revision": "28229ddfafcc0ea39526536b1998f3ef02459436",
-        "revision_date": "2025-09-26",
+        "repository": "https://github.com/qt/qt5.git",
+        "revision": "077347cc6d198053fb61cc0841c5c0c60a7deeb1",
+        "revision_date": "2025-10-02",
         "variant": "jitless",
-        "version": "6.9.3"
+        "version": "6.10.0"
       },
       {
         "arch": "arm64",
@@ -5339,6 +5534,15 @@ const jsz_engines = [
     "github_forks": 21,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "c02b14836d420be0c927cb142008b00374292cac537182db1490687e245a8bc8",
+        "binary_size": 1673616,
+        "repository": "https://github.com/maekawatoshiki/rapidus.git",
+        "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
+        "revision_date": "2023-02-25",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
         "binary_size": 1509656,
@@ -5411,7 +5615,7 @@ const jsz_engines = [
       {
         "arch": "amd64",
         "dist_size": 1526757,
-        "repository": "https://github.com/mozilla/rhino",
+        "repository": "https://github.com/mozilla/rhino.git",
         "revision": "0dcc00f6b3e2623f732828186ef8464d69ba51d1",
         "revision_date": "2025-01-02",
         "version": "1.8.0"
@@ -5526,7 +5730,16 @@ const jsz_engines = [
     "loc_command": "cloc py-js.py js",
     "license_abbr": "no",
     "github_stars": 6,
-    "github_forks": 0
+    "github_forks": 0,
+    "bench": [
+      {
+        "arch": "arm64",
+        "dist_size": 148027076,
+        "repository": "https://github.com/progval/rpython-langjs.git",
+        "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
+        "revision_date": "2017-10-01"
+      }
+    ]
   },
   {
     "id": "sablejs",
@@ -5604,7 +5817,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 50848,
+        "dist_size": 50882,
         "repository": "https://github.com/nyariv/SandboxJS.git",
         "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
         "revision_date": "2025-05-10",
@@ -5690,6 +5903,14 @@ const jsz_engines = [
     "github_forks": 8,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "3c1c267a9474107bd0a95a76dfa5c4981179c13a98276c5d078fc55d645f9a0d",
+        "binary_size": 9818328,
+        "repository": "https://github.com/grafana/sobek.git",
+        "revision": "6b40183f38e543b838d5f4472f9ce7e0d9472987",
+        "revision_date": "2025-11-03"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "02c5388962b2fd3ef8003788545389101d0f24ae47c8c7a0f880cbc98e91fcfa",
         "binary_size": 9437816,
@@ -5737,6 +5958,15 @@ const jsz_engines = [
     "github_stars": 37,
     "github_forks": 6,
     "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "b33496af425a7dbc324e6f3b18513ddc36a9130f7c7430e8a83b47f0f1032ecf",
+        "binary_size": 301568,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/gkmail/SophonJS.git",
+        "revision": "5012412ed66f76968cd6be87793b25337bda7630",
+        "revision_date": "2015-11-10"
+      },
       {
         "arch": "arm64",
         "binary_sha256": "377bfffd9c58dcef5e5ab0df9e7bebfb69d6a2f68ef0b2e8beb1ec50becd7cbd",
@@ -5794,13 +6024,13 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "90e5c40eb85505f65f4c6ff58526a161880805b7be919ca2b7ba0a6c131e0495",
-        "binary_size": 17121424,
+        "binary_sha256": "a985510eefe1a8896fabecd62f672c8475ad499199b8fa3d93fee465f48550c9",
+        "binary_size": 17161200,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "repository": "https://github.com/mozilla-firefox/firefox",
-        "revision": "5024f35d27488a1482b792f727cf880926575a71",
-        "revision_date": "2025-09-29",
-        "version": "143.0.3"
+        "repository": "https://github.com/mozilla-firefox/firefox.git",
+        "revision": "5ce8ed1e2fceea5c633c63dae85538d3241a733f",
+        "revision_date": "2025-10-09",
+        "version": "144.0"
       },
       {
         "engine": "spidermonkey",
@@ -5819,7 +6049,7 @@ const jsz_engines = [
         "loc_command": "cloc js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "0eeedb331cb44eeb1cac7af0a7dfad8fe034f881067bd76f16ecd444300975c8",
+        "binary_sha256": "2314c3c53a2814a60f5a17470fb92732eef608fb66d66890eb87e0dece44c5ed",
         "binary_size": 673536,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -5828,7 +6058,7 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "034ab215a3bcdad6617a4265177260f44ff41bcd7a8818406d75410c6663e95d",
+        "binary_sha256": "f2ff65db5fdb0027d8b59cf1c51816c05a038b353f71b99052e00b2cf206ae3c",
         "binary_size": 862720,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -5841,7 +6071,7 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "1b747d462ae889025b4849b2467f36cb00b840d5b600f616606d094d471f311b",
+        "binary_sha256": "0b826b5d095f04e1c08f4eaa4a7a6c01b0106b5aec94a85b1a50ac057c8b9bd4",
         "binary_size": 945248,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -5854,7 +6084,7 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "32ba2649a96e78de98fa7db1af4fb60202f63e7bfa27cfa5c479a3dfec804458",
+        "binary_sha256": "6bc38851de27c121500889c2122db143ebd5f18676d498ce64a35af45681c534",
         "binary_size": 990784,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "jit": "",
@@ -5885,7 +6115,7 @@ const jsz_engines = [
         "loc_command": "cloc --fullpath --not_match_f='(test|/(v8|t|ctypes|metrics)/|configure)' js-1.8.5/js/src",
         "license_abbr": "MPL-2.0",
         "arch": "amd64",
-        "binary_sha256": "c7b7fb273256bad8d03106f14a12f0da83962b92fdbad49ed5994e434c6dd895",
+        "binary_sha256": "c11a49e947058cfd6a0b437c334c08b980276b9bddaea3f210ccf8d0eaaba03c",
         "binary_size": 3682736,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "revision_date": "2011-03-31",
@@ -5893,7 +6123,7 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "377cb3d47d73cd131e748c1546cf6f6110fd5e636b569ac77483875ec409e08a",
+        "binary_sha256": "5ce110231143a9f4f3d3fd59dd21a347f033f25bdc1fe5c2d2bf5edd601eab03",
         "binary_size": 4217504,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "loc": 203542,
@@ -5906,7 +6136,7 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "4ff2938ffbc9372d8eeb7d9ce2bcb70dbf5657634c397a2da65dffaad39cb141",
+        "binary_sha256": "73b7debcfa195678aa8f11340dcecededd54afc49d0609cdcf172c3576000476",
         "binary_size": 6066320,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "loc": 286123,
@@ -5919,14 +6149,25 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "8eb218f9cfef80abbcbae5ef69cf5614fe139ce248f563ef1d1eebcacbbb0d03",
-        "binary_size": 14451600,
+        "binary_sha256": "f3dd9b2c6a1de703a4c401453e8d2e13f804a1aa380ccb5950b1330cd6708b0b",
+        "binary_size": 38941536,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "repository": "https://github.com/mozilla-firefox/firefox",
-        "revision": "5024f35d27488a1482b792f727cf880926575a71",
-        "revision_date": "2025-09-29",
+        "repository": "https://github.com/mozilla-firefox/firefox.git",
+        "revision": "5ce8ed1e2fceea5c633c63dae85538d3241a733f",
+        "revision_date": "2025-10-09",
+        "variant": "full",
+        "version": "144.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "2c632e0cd9589c76d7faad9e4664c6a7ae2904eadcc4e35125fcdd84a5aa0f1f",
+        "binary_size": 14479888,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/mozilla-firefox/firefox.git",
+        "revision": "5ce8ed1e2fceea5c633c63dae85538d3241a733f",
+        "revision_date": "2025-10-09",
         "variant": "jitless",
-        "version": "143.0.3"
+        "version": "144.0"
       },
       {
         "arch": "arm64",
@@ -6371,12 +6612,12 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "adbd8ad2ad3fdb28ad444ed06e063410262cdb0eb03f00165b9faf9f75b16af7",
+        "binary_sha256": "4bf89640796dba3ea9d05870fdd23c4107a6fb83717190bcec358b086c397ea9",
         "binary_size": 154504,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/gfwilliams/tiny-js.git",
-        "revision": "30842c88a459059f54a9fcc5e428b7da784f49ab",
-        "revision_date": "2025-10-10"
+        "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
+        "revision_date": "2025-10-21"
       },
       {
         "arch": "arm64",
@@ -6466,6 +6707,13 @@ const jsz_engines = [
     "github_forks": 0,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 6185283,
+        "repository": "https://github.com/TopchetoEU/jscript.git",
+        "revision": "262e2679c3175689cc6587c14da1ff1bccd133a2",
+        "revision_date": "2024-12-31"
+      },
+      {
         "arch": "arm64",
         "dist_size": 6185283,
         "repository": "https://github.com/TopchetoEU/jscript.git",
@@ -6532,6 +6780,13 @@ const jsz_engines = [
     "github_forks": 19,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 470305,
+        "repository": "https://github.com/charliesome/twostroke.git",
+        "revision": "3e6d5366bad603e987f78027d472255707ec26fa",
+        "revision_date": "2012-05-30"
+      },
+      {
         "arch": "arm64",
         "dist_size": 470306,
         "repository": "https://github.com/charliesome/twostroke.git",
@@ -6573,9 +6828,9 @@ const jsz_engines = [
         "binary_size": 195712,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/jow-/ucode.git",
-        "revision": "5416dcfec9ea6326ee79a82da3e103a39ecf59aa",
-        "revision_date": "2025-09-29",
-        "version": "0.0.20250529-54-g5416dcf"
+        "revision": "54fce497e262d5807f337c831a7e82bc35c5cf1b",
+        "revision_date": "2025-11-10",
+        "version": "0.0.20250529-62-g54fce49"
       },
       {
         "arch": "arm64",
@@ -6634,35 +6889,46 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "186280ae44d166ed457c35c51e5309e69e794374ae900c3c06cd10191810d0ab",
-        "binary_size": 20394632,
+        "binary_sha256": "5672fd732b56352099c30c14ca21e6d51ad3701571050d1c75c1ef4754cef665",
+        "binary_size": 20644552,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/v8/v8.git",
-        "revision": "ad8af0fc661d278e87627fcaa3a7cf795ee80dd8",
-        "revision_date": "2025-09-22",
-        "version": "14.1.146.11"
+        "revision": "3f6338e564fbfb2e67a475e89c227a4fb9964997",
+        "revision_date": "2025-11-05",
+        "version": "14.3.127.6"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "0601441438dd5361829f7229a02de6f71fdacc675c3436f739e6f7c4e4dde619",
-        "binary_size": 12370568,
+        "binary_sha256": "2165a144d6ae094955c22c60721d781c1343e4ef04d84f94390e0f3974ce13e6",
+        "binary_size": 41761912,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/v8/v8.git",
-        "revision": "ad8af0fc661d278e87627fcaa3a7cf795ee80dd8",
-        "revision_date": "2025-09-22",
+        "revision": "77dbed715898530ac7cc252b922ecd70a8567de7",
+        "revision_date": "2025-11-11",
+        "variant": "full",
+        "version": "14.4.0 (candidate)"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "69b2bbab38bfc6fb34ead070bd5c25a2a0ad5a54839e41f8c7d1273a7df1e4af",
+        "binary_size": 12329672,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://chromium.googlesource.com/v8/v8.git",
+        "revision": "3f6338e564fbfb2e67a475e89c227a4fb9964997",
+        "revision_date": "2025-11-05",
         "variant": "jitless",
-        "version": "14.1.146.11"
+        "version": "14.3.127.6"
       },
       {
         "arch": "amd64",
-        "binary_sha256": "829c485d11d187eed80df429121ea532148085c130ad42b227a3da2d5175845f",
-        "binary_size": 24192664,
+        "binary_sha256": "e6e58e11dcc7e6adfad855f3b3c90c3cb4bc5b17bed71cce81e96aa45d795c40",
+        "binary_size": 24680088,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "repository": "https://chromium.googlesource.com/chromium/src.git",
-        "revision": "b95610d5c4a562d9cd834bc0a098d3316e2f533f",
-        "revision_date": "2025-09-29",
+        "revision": "a12935200b8167a2ce2eea4b0b9a49021a1e1bb4",
+        "revision_date": "2025-11-05",
         "variant": "pgo",
-        "version": "14.1.146.11"
+        "version": "14.3.127.6"
       },
       {
         "arch": "arm64",
@@ -6932,12 +7198,23 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "de5cf5d657ba92aea11d4df17403fc051614e33a8ed0b9bed06c234cd39f009c",
-        "binary_size": 2083920,
+        "binary_sha256": "7e7ba2382d69add1d4279014853460fff59a95268b66450a1d8cb16bb98ddcdf",
+        "binary_size": 2088016,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "repository": "https://github.com/Moddable-OpenSource/moddable.git",
-        "revision": "6ff5fb489fd5fe2557989265ae0ea10847e191ca",
-        "revision_date": "2025-09-11",
+        "revision": "55293e1ec4e141d185128e168f191d2803371f6e",
+        "revision_date": "2025-11-07",
+        "version": "16.9.1"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "ffa678472aeb070e0156294b92f3aa873dfe829b878d473c5cb11ba90045cef9",
+        "binary_size": 1997960,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "repository": "https://github.com/Moddable-OpenSource/moddable.git",
+        "revision": "55293e1ec4e141d185128e168f191d2803371f6e",
+        "revision_date": "2025-11-07",
+        "variant": "clang",
         "version": "16.9.1"
       },
       {
@@ -7094,6 +7371,15 @@ const jsz_engines = [
     "github_forks": 2,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "6ee91cbd8164cc957d79dce96330c208d3db44799bda9e89499349a99984267b",
+        "binary_size": 14468768,
+        "repository": "https://github.com/Sharktheone/yavashark.git",
+        "revision": "48bb7fd96dc31ce0a2e9f242210d4b9590892c04",
+        "revision_date": "2025-11-09",
+        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "a47172c9f727a9691fc04e2539209db91a7bdb82e4b4c85a4e0af3fba2fb19e6",
         "binary_size": 12720616,
@@ -7142,6 +7428,15 @@ const jsz_engines = [
     "github_stars": 143,
     "github_forks": 6,
     "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "fecee407fca8ed6403999f3d548948993e8c1a08b28931ba6a1c6376ee4059cb",
+        "binary_size": 43328,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "repository": "https://github.com/yrm006/miniscript.git",
+        "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
+        "revision_date": "2018-08-29"
+      },
       {
         "arch": "arm64",
         "binary_sha256": "eab0b08db7c7762f446690b622e659f06b99f67c736ffad63344b579513a3cfa",
