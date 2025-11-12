@@ -353,13 +353,14 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
           <th data-col="binary_size" class="numeric" title="Binary size">Binary</th>
           <th data-col="loc" class="numeric" title="Lines of code: core engine code only, excluding blank lines, comments, tests and third-party code">LOC</th>
           <th data-col="language" title="Main programming language">Language</th>
+          <th data-col="jit" title="Just-in-time compilation">JIT</th>
+          <th data-col="years" title="Years of active development">Years</th>
           <th data-col="standard" title="Target ECMAScript specification version">Target</th>
           <th data-col="es1-es5" class="numeric" title="ES1-ES5 test suite pass rate"><nobr>ES1-5</nobr></th>
           <th data-col="kangax-es6" class="numeric" title="compat-table's ES6 conformance score">ES6</th>
           <th data-col="kangax-es2016plus" class="numeric" title="compat-table's ES2016+ conformance score">ES2016+</th>
-          <th data-col="jit" title="Just-in-time compilation">JIT</th>
-          <th data-col="years" title="Years of active development">Years</th>
           <th data-col="github_stars" class="numeric" title="GitHub stars">Stars</th>
+          <th data-col="github_contributors" class="numeric" title="GitHub contributors count">Contributors</th>
           <th data-col="org">Org</th>
           <th data-col="license" class="license-cell">License</th>
           <th data-col="description" class="description-cell">Description</th>
@@ -604,12 +605,12 @@ function renderCell(th, row) {
     } else {
       td.title = `${row.binary_size} bytes`;
     }
-  } else if (col == 'github_stars') {
-    if (Number(row.github_stars)) {
-      if (row.github_stars >= 1000) {
-        td.innerHTML = (row.github_stars / 1000).toFixed(1) + 'k';
+  } else if (col == 'github_stars' || col == 'github_contributors') {
+    if (Number(row[col])) {
+      if (row[col] >= 1000 && col == 'github_stars') {
+        td.innerHTML = (row[col] / 1000).toFixed(1) + 'k';
       } else {
-        td.innerHTML = row.github_stars.toFixed(0);
+        td.innerHTML = row[col].toFixed(0);
       }
       td.title = row.github ? row.github : row.repository;
     }

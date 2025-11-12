@@ -558,7 +558,7 @@ def process_github(row, kind, args):
         with open(cache_filename) as fp:
             github_data = json.load(fp)
     elif args.github is not None:
-        time.sleep(0.25)
+        time.sleep(0.1)
 
         headers = {}
         if args.github != '':
@@ -578,6 +578,37 @@ def process_github(row, kind, args):
 
     row['github_stars'] = github_data['stargazers_count']
     row['github_forks'] = github_data['forks_count']
+
+    contributors_cache_filename = f'.cache/github/{row["id"]}_contributors.json'
+    contributors_api_url = f"{api_url}/contributors?per_page=1&anon=true"
+
+    if os.path.exists(contributors_cache_filename):
+        with open(contributors_cache_filename) as fp:
+            contributors_data = json.load(fp)
+            row['github_contributors'] = contributors_data.get('count', 0)
+    elif args.github is not None:
+        time.sleep(0.25)
+
+        headers = {}
+        if args.github != '':
+            headers = {'Authorization': f'token {args.github}'}
+
+        response = requests.get(contributors_api_url, headers=headers)
+        if response.status_code == 200:
+            contributors_count = 0
+            link_header = response.headers.get('Link', '')
+
+            if 'rel="last"' in link_header:
+                match = re.search(r'page=(\d+)>; rel="last"', link_header)
+                if match:
+                    contributors_count = int(match.group(1))
+            else:
+                contributors_count = len(response.json()) if response.json() else 0
+
+            row['github_contributors'] = contributors_count
+
+            with open(contributors_cache_filename, 'w') as fp:
+                json.dump({'count': contributors_count}, fp, ensure_ascii=False, indent=2)
 
 def merge_jsons(*jsons):
     res = {}
@@ -872,7 +903,7 @@ def update_conformance(filename, conformance):
             if line.startswith('#'):
                 lines.append(line)
                 skip = False
-        elif line == conformance_lines[0]:
+        elif conformance_lines and line == conformance_lines[0]:
             lines.extend(conformance_lines)
             skip = True
             conformance_lines = None
