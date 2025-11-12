@@ -6,6 +6,7 @@
 ARG BASE=debian:stable
 FROM $BASE AS jsz-runtime
 
+# gcc: for rpython-langjs
 # luajit: for castl
 # moreutils: ts, for benchmarking
 # procps: top
@@ -19,6 +20,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         ca-certificates \
         curl \
         findutils \
+        gcc \
         gdb \
         git \
         less \

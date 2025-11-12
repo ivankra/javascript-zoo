@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "dist_size": 148027076, "engine": "rpython-langjs", "repository": "https://github.com/progval/rpython-langjs.git", "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9", "revision_date": "2017-10-01"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: reverse returns this failed
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: sort with comparefn failed; reverse comparefn failed
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: failed
+es1/Date.js: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: failed
+es1/Date.prototype.getDay.js: failed
+es1/Date.prototype.getFullYear.js: failed
+es1/Date.prototype.getHours.js: failed
+es1/Date.prototype.getMilliseconds.js: failed
+es1/Date.prototype.getMinutes.js: failed
+es1/Date.prototype.getMonth.js: failed
+es1/Date.prototype.getSeconds.js: failed
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCDay.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCFullYear.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCHours.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCMilliseconds.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCMinutes.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCMonth.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.getUTCSeconds.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: ERROR in Date.prototype.setTime.js: TypeError: %s is not an instnace of Date
+es1/Date.prototype.setUTCDate.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCFullYear.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCHours.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCMilliseconds.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCMinutes.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCMonth.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.setUTCSeconds.js: raise NotImplementedError() NotImplementedError
+es1/Date.prototype.toLocaleString.js: ERROR in Date.prototype.toLocaleString.js: TypeError: undefined is not a callable (toLocaleString)
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: failed
+es1/Math.LN2.js: failed
+es1/Math.LN10.js: failed
+es1/Math.LOG2E.js: failed
+es1/Math.LOG10E.js: failed
+es1/Math.PI.js: failed
+es1/Math.SQRT1_2.js: failed
+es1/Math.SQRT2.js: failed
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: failed
+es1/Number.MIN_VALUE.js: failed
+es1/Number.NEGATIVE_INFINITY.js: failed
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: failed
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: ERROR in asi.eval.js: SyntaxError: in "%s" at line:%d, column:%d
+es1/asi.js: Syntax Error in: asi.js:21 Error: ['EOF']
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OverflowError: cannot convert float infinity to integer
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OverflowError: cannot convert float infinity to integer
+es1/conversions.js: false == true
+es1/equals.js: false == true
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/function.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: failed
+es1/numbers.fmod.js: 5.5 % 2.5 failed; 7.2 % 3.0 failed; -5.5 % 2.5 sign failed
+es1/numbers.inf.js: +Infinity magnitude failed; -Infinity magnitude failed
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: ERROR in Array.prototype.concat.js: TypeError: undefined is not a callable (concat)
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: slice object with start only failed; slice object with negative start failed
+es3/Array.prototype.slice.js: timeout
+es3/Array.prototype.splice.generic.js: ERROR in Array.prototype.splice.generic.js: TypeError: W_Undefined.ToObject
+es3/Array.prototype.splice.js: ERROR in Array.prototype.splice.js: TypeError: undefined is not a callable (splice)
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
+es3/Array.prototype.unshift.generic.js: ERROR in Array.prototype.unshift.generic.js: TypeError: W_Undefined.ToObject
+es3/Array.prototype.unshift.js: ERROR in Array.prototype.unshift.js: TypeError: undefined is not a callable (unshift)
+es3/Array.prototype.unshift.returns-new-length.js: ERROR in Array.prototype.unshift.returns-new-length.js: TypeError: undefined is not a callable (unshift)
+es3/Date.prototype.toDateString.js: ERROR in Date.prototype.toDateString.js: TypeError: undefined is not a callable (toDateString)
+es3/Date.prototype.toLocaleDateString.js: ERROR in Date.prototype.toLocaleDateString.js: TypeError: undefined is not a callable (toLocaleDateString)
+es3/Date.prototype.toLocaleString.js: ERROR in Date.prototype.toLocaleString.js: TypeError: undefined is not a callable (toLocaleString)
+es3/Date.prototype.toLocaleTimeString.js: ERROR in Date.prototype.toLocaleTimeString.js: TypeError: undefined is not a callable (toLocaleTimeString)
+es3/Date.prototype.toTimeString.js: ERROR in Date.prototype.toTimeString.js: TypeError: undefined is not a callable (toTimeString)
+es3/Error.js: ERROR in Error.js: ReferenceError: Error is not defined
+es3/Error.prototype.constructor.js: ERROR in Error.prototype.constructor.js: ReferenceError: Error is not defined
+es3/Error.prototype.message.js: ERROR in Error.prototype.message.js: ReferenceError: Error is not defined
+es3/Error.prototype.name.js: ERROR in Error.prototype.name.js: ReferenceError: Error is not defined
+es3/Error.prototype.toString.js: ERROR in Error.prototype.toString.js: ReferenceError: Error is not defined
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: ERROR in Number.prototype.toExponential.js: TypeError: undefined is not a callable (toExponential)
+es3/Number.prototype.toExponential.rounding.js: ERROR in Number.prototype.toExponential.rounding.js: TypeError: undefined is not a callable (toExponential)
+es3/Number.prototype.toExponential.throws-infinity.js: ERROR in Number.prototype.toExponential.throws-infinity.js: ReferenceError: RangeError is not defined
+es3/Number.prototype.toFixed.js: ERROR in Number.prototype.toFixed.js: TypeError: undefined is not a callable (toFixed)
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: ERROR in Number.prototype.toPrecision.js: TypeError: undefined is not a callable (toPrecision)
+es3/Object.prototype.hasOwnProperty.js: ERROR in Object.prototype.hasOwnProperty.js: TypeError: undefined is not a callable (hasOwnProperty)
+es3/Object.prototype.isPrototypeOf.js: ERROR in Object.prototype.isPrototypeOf.js: TypeError: undefined is not a callable (isPrototypeOf)
+es3/Object.prototype.propertyIsEnumerable.js: ERROR in Object.prototype.propertyIsEnumerable.js: TypeError: undefined is not a callable (propertyIsEnumerable)
+es3/Object.prototype.toLocaleString.js: custom toString failed
+es3/RegExp.global.js: Syntax Error in: RegExp.global.js:20 Error: ['EOF']
+es3/RegExp.ignoreCase.js: Syntax Error in: RegExp.ignoreCase.js:20 Error: ['EOF']
+es3/RegExp.js: ERROR in RegExp.js: ReferenceError: RegExp is not defined
+es3/RegExp.lastIndex.js: ERROR in RegExp.lastIndex.js: ReferenceError: RegExp is not defined
+es3/RegExp.multiline.js: Syntax Error in: RegExp.multiline.js:20 Error: ['EOF']
+es3/RegExp.prototype.constructor.js: ERROR in RegExp.prototype.constructor.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.exec.js: ERROR in RegExp.prototype.exec.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.test.js: ERROR in RegExp.prototype.test.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.toString.js: ERROR in RegExp.prototype.toString.js: ReferenceError: RegExp is not defined
+es3/RegExp.source.js: ERROR in RegExp.source.js: ReferenceError: RegExp is not defined
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: ERROR in String.prototype.localeCompare.js: TypeError: undefined is not a callable (localeCompare)
+es3/String.prototype.match.generic.js: Syntax Error in: String.prototype.match.generic.js:5 Error: ['EOF']
+es3/String.prototype.match.js: Syntax Error in: String.prototype.match.js:7
+es3/String.prototype.replace.capture.js: Syntax Error in: String.prototype.replace.capture.js:31
+es3/String.prototype.replace.extra.js: Syntax Error in: String.prototype.replace.extra.js:7 Error: ['EOF']
+es3/String.prototype.replace.generic.js: Syntax Error in: String.prototype.replace.generic.js:44
+es3/String.prototype.replace.regex.js: Syntax Error in: String.prototype.replace.regex.js:7
+es3/String.prototype.replace.str.js: ERROR in String.prototype.replace.str.js: TypeError: undefined is not a callable (replace)
+es3/String.prototype.search.generic.js: Syntax Error in: String.prototype.search.generic.js:5 Error: ['EOF']
+es3/String.prototype.search.js: Syntax Error in: String.prototype.search.js:15
+es3/String.prototype.search.str.js: ERROR in String.prototype.search.str.js: TypeError: undefined is not a callable (search)
+es3/String.prototype.slice.generic.js: ERROR in String.prototype.slice.generic.js: TypeError: W_Undefined.ToObject
+es3/String.prototype.slice.js: ERROR in String.prototype.slice.js: TypeError: undefined is not a callable (slice)
+es3/String.prototype.split.bugs.js: Syntax Error in: String.prototype.split.bugs.js:66 Error: ['EOF']
+es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
+es3/String.prototype.split.regex.js: Syntax Error in: String.prototype.split.regex.js:7
+es3/String.prototype.toLocaleLowerCase.js: ERROR in String.prototype.toLocaleLowerCase.js: TypeError: undefined is not a callable (toLocaleLowerCase)
+es3/String.prototype.toLocaleUpperCase.js: ERROR in String.prototype.toLocaleUpperCase.js: TypeError: undefined is not a callable (toLocaleUpperCase)
+es3/annex-b.String.prototype.substr.js: ERROR in annex-b.String.prototype.substr.js: TypeError: undefined is not a callable (substr)
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: raise NotImplementedError NotImplementedError
+es3/global.EvalError.js: ERROR in global.EvalError.js: ReferenceError: EvalError is not defined constructor failed
+es3/global.RangeError.js: ERROR in global.RangeError.js: ReferenceError: RangeError is not defined constructor failed
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; wrong exception for negative array length; wrong exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: ERROR in global.ReferenceError.js: ReferenceError: ReferenceError is not defined constructor failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: ERROR in global.SyntaxError.js: ReferenceError: SyntaxError is not defined constructor failed
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: ERROR in global.TypeError.js: ReferenceError: TypeError is not defined constructor failed
+es3/global.TypeError.thrown.js: wrong exception for instanceof number; wrong exception for instanceof non-callable; wrong exception for in number; wrong exception for in null; wrong exception for new number; wrong exception for calling number; wrong exception for Function.prototype.toString on non-function; AttributeError: 'W__Obj
+es3/global.URIError.js: ERROR in global.URIError.js: ReferenceError: URIError is not defined constructor failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: ERROR in global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
+es3/global.decodeURI.js: ERROR in global.decodeURI.js: ReferenceError: decodeURI is not defined
+es3/global.encodeURIComponent.js: ERROR in global.encodeURIComponent.js: ReferenceError: encodeURIComponent is not defined
+es3/global.encodeURI.js: ERROR in global.encodeURI.js: ReferenceError: encodeURI is not defined
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Syntax Error in: identifiers.unicode.js:6
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: raise VisitError(node) VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'loop1'), iterationstatement(whiles(Symbol('__11_while', 'while'), relationalexpression(Symbol('IDENTIFIERNAME', 'x'), Symbol('__50_<', '<'), Symbol('DECIMALLITERAL', '10')), block(Symbol('__1_{', '{'), exp
+es3/labelled.continue.js: raise VisitError(node) VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'loop1'), iterationstatement(whiles(Symbol('__11_while', 'while'), relationalexpression(Symbol('IDENTIFIERNAME', 'i'), Symbol('__50_<', '<'), Symbol('DECIMALLITERAL', '5')), block(Symbol('__1_{', '{'), expr
+es3/labelled.statements.js: raise VisitError(node) VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'label1'), expressionstatement(assignmentexpression(Symbol('IDENTIFIERNAME', 'x'), Symbol('__5_=', '='), Symbol('DECIMALLITERAL', '5'))))
+es3/literals.array.elisions.js: Syntax Error in: literals.array.elisions.js:6 Error: ['EOF']
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: Syntax Error in: literals.object.unicode.js:7
+es3/literals.regex.ambiguous.js: Syntax Error in: literals.regex.ambiguous.js:16 Error: ['EOF']
+es3/literals.regex.empty.js: Syntax Error in: literals.regex.empty.js:6 Error: ['EOF']
+es3/literals.regex.js: Syntax Error in: literals.regex.js:4 Error: ['EOF']
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: Syntax Error in: regex.backref.js:7
+es3/regex.begin.js: Syntax Error in: regex.begin.js:7 Error: ['EOF']
+es3/regex.bracket.esc-b.js: Syntax Error in: regex.bracket.esc-b.js:5
+es3/regex.bracket.js: Syntax Error in: regex.bracket.js:8 Error: ['EOF']
+es3/regex.bracket.ranges.js: Syntax Error in: regex.bracket.ranges.js:8 Error: ['EOF']
+es3/regex.class.esc-d.js: Syntax Error in: regex.class.esc-d.js:9
+es3/regex.class.esc-s.js: Syntax Error in: regex.class.esc-s.js:9
+es3/regex.class.esc-w.js: Syntax Error in: regex.class.esc-w.js:9
+es3/regex.disjunction.js: Syntax Error in: regex.disjunction.js:6 Error: ['EOF']
+es3/regex.dot.js: Syntax Error in: regex.dot.js:7 Error: ['EOF']
+es3/regex.end.js: Syntax Error in: regex.end.js:7 Error: ['EOF']
+es3/regex.escape.control.js: Syntax Error in: regex.escape.control.js:7
+es3/regex.escape.hex.js: Syntax Error in: regex.escape.hex.js:7
+es3/regex.escape.js: Syntax Error in: regex.escape.js:8
+es3/regex.escape.nul.js: Syntax Error in: regex.escape.nul.js:5
+es3/regex.escape.unicode.js: Syntax Error in: regex.escape.unicode.js:7
+es3/regex.flag.global.js: Syntax Error in: regex.flag.global.js:7 Error: ['EOF']
+es3/regex.flag.ignorecase.js: Syntax Error in: regex.flag.ignorecase.js:7 Error: ['EOF']
+es3/regex.flag.multiline.js: Syntax Error in: regex.flag.multiline.js:8 Error: ['EOF']
+es3/regex.group.js: Syntax Error in: regex.group.js:7 Error: ['EOF']
+es3/regex.lookahead.js: Syntax Error in: regex.lookahead.js:7 Error: ['EOF']
+es3/regex.negative-lookahead.js: Syntax Error in: regex.negative-lookahead.js:7
+es3/regex.non-capturing-group.js: Syntax Error in: regex.non-capturing-group.js:7 Error: ['EOF']
+es3/regex.quantifier.exact.js: Syntax Error in: regex.quantifier.exact.js:7 Error: ['EOF']
+es3/regex.quantifier.maybe.js: Syntax Error in: regex.quantifier.maybe.js:7 Error: ['EOF']
+es3/regex.quantifier.min.js: Syntax Error in: regex.quantifier.min.js:7 Error: ['EOF']
+es3/regex.quantifier.plus.js: Syntax Error in: regex.quantifier.plus.js:7 Error: ['EOF']
+es3/regex.quantifier.range.js: Syntax Error in: regex.quantifier.range.js:7 Error: ['EOF']
+es3/regex.quantifier.star.js: Syntax Error in: regex.quantifier.star.js:7 Error: ['EOF']
+es3/regex.word-boundary.js: Syntax Error in: regex.word-boundary.js:8
+es3/source.line-terminators.js: Syntax Error in: source.line-terminators.js:11
+es3/source.whitespace.js: Syntax Error in: source.whitespace.js:10
+es3/source.whitespace.unicode.js: Syntax Error in: source.whitespace.unicode.js:6
+es3/strict-equals.js: OK
+es3/switch.js: switch fall-through failed
+es3/try-catch-finally.js: try/catch/finally failed
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: ERROR in Array.isArray.js: TypeError: undefined is not a callable (isArray) Array.isArray not a function
+es5/Array.prototype.every.js: Syntax Error in: Array.prototype.every.js:35 Error: ['EOF']
+es5/Array.prototype.filter.js: Syntax Error in: Array.prototype.filter.js:30 Error: ['EOF']
+es5/Array.prototype.forEach.js: Syntax Error in: Array.prototype.forEach.js:33 Error: ['EOF']
+es5/Array.prototype.indexOf.js: negative fromIndex failed
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: ERROR in Array.prototype.map.js: TypeError: undefined is not a callable (map) Array.prototype.map not a function
+es5/Array.prototype.reduceRight.js: ERROR in Array.prototype.reduceRight.js: TypeError: undefined is not a callable (reduceRight) Array.prototype.reduceRight not a function
+es5/Array.prototype.reduce.js: Syntax Error in: Array.prototype.reduce.js:38 Error: ['EOF']
+es5/Array.prototype.some.js: Syntax Error in: Array.prototype.some.js:35 Error: ['EOF']
+es5/Array.prototype.sort.TypeError.js: Syntax Error in: Array.prototype.sort.TypeError.js:32 Error: ['EOF']
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: ERROR in Date.prototype.toISOString.js: TypeError: undefined is not a callable (toISOString) Date.prototype.toISOString not a function
+es5/Date.prototype.toJSON.js: ERROR in Date.prototype.toJSON.js: TypeError: W_Undefined.ToObject Date.prototype.toJSON not a function
+es5/Function.prototype-not-enumerable.js: ERROR in Function.prototype-not-enumerable.js: TypeError: undefined is not a callable (propertyIsEnumerable)
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: ERROR in Function.prototype.bind.js: TypeError: undefined is not a callable (bind) Function.prototype.bind not a function
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: ERROR in JSON.parse.js: ReferenceError: JSON is not defined
+es5/JSON.parse.reviver.js: ERROR in JSON.parse.reviver.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.js: ERROR in JSON.stringify.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.replacer.js: ERROR in JSON.stringify.replacer.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.space.js: ERROR in JSON.stringify.space.js: ReferenceError: JSON is not defined
+es5/Object.create.js: ERROR in Object.create.js: TypeError: undefined is not a callable (create) Object.create not a function
+es5/Object.defineProperties.js: ERROR in Object.defineProperties.js: TypeError: undefined is not a callable (defineProperties) Object.defineProperties not a function
+es5/Object.defineProperty.js: ERROR in Object.defineProperty.js: TypeError: undefined is not a callable (defineProperty) Object.defineProperty not a function
+es5/Object.freeze.js: ERROR in Object.freeze.js: TypeError: undefined is not a callable (freeze) Object.freeze not a function
+es5/Object.getOwnPropertyDescriptor.js: ERROR in Object.getOwnPropertyDescriptor.js: TypeError: undefined is not a callable (getOwnPropertyDescriptor) Object.getOwnPropertyDescriptor not a function
+es5/Object.getOwnPropertyNames.js: ERROR in Object.getOwnPropertyNames.js: TypeError: undefined is not a callable (getOwnPropertyNames) Object.getOwnPropertyNames not a function
+es5/Object.getPrototypeOf.js: ERROR in Object.getPrototypeOf.js: TypeError: undefined is not a callable (create) Object.getPrototypeOf not a function
+es5/Object.isExtensible.js: ERROR in Object.isExtensible.js: TypeError: undefined is not a callable (isExtensible) Object.isExtensible not a function
+es5/Object.isFrozen.js: ERROR in Object.isFrozen.js: TypeError: undefined is not a callable (isFrozen) Object.isFrozen not a function
+es5/Object.isSealed.js: ERROR in Object.isSealed.js: TypeError: undefined is not a callable (isSealed) Object.isSealed not a function
+es5/Object.keys.js: ERROR in Object.keys.js: TypeError: undefined is not a callable (keys) Object.keys not a function
+es5/Object.preventExtensions.js: ERROR in Object.preventExtensions.js: TypeError: undefined is not a callable (preventExtensions) Object.preventExtensions not a function
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: ERROR in Object.seal.js: TypeError: undefined is not a callable (seal) Object.seal not a function
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: ERROR in String.prototype.trim.js: TypeError: undefined is not a callable (trim) String.prototype.trim not a function
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: ERROR in debugger.js: ReferenceError: debugger is not defined
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: Syntax Error in: literals.object.getters.js:7 Error: ['EOF']
+es5/literals.object.setters.js: Syntax Error in: literals.object.setters.js:8 Error: ['EOF']
+es5/literals.object.trailing-comma.js: Syntax Error in: literals.object.trailing-comma.js:7 Error: ['EOF']
+es5/source.keyword-properties.js: Syntax Error in: source.keyword-properties.js:13 Error: ['EOF']
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: Syntax Error in: source.zero-width-chars.js:9
+es5/strict.eval-cannot-create-bindings.js: OK
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: Syntax Error in: strict.no-assignment-to-non-writable.js:9 Error: ['EOF']
+es5/strict.no-assignment-to-unresolvable.js: OK
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: ERROR in strict.no-eval-or-arguments-assignment.js: ReferenceError: SyntaxError is not defined
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: ERROR in strict.reserved-words.js: Break outside loop
+es5/strict.this-primitive-not-coerced-in-accessors.js: ERROR in strict.this-primitive-not-coerced-in-accessors.js: TypeError: undefined is not a callable (defineProperty)
+es5/strict.this-primitive-not-coerced.js: AttributeError: 'This' object has no attribute 'index'
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: ERROR in this.thrown-function.js: TypeError: function() {} is not a callable (function() {})

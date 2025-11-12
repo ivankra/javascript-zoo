@@ -5722,8 +5722,9 @@
     "loc": 7189,
     "language": "Python",
     "license": "no",
+    "standard": "ES3",
     "years": "2009-2013",
-    "platform": "Python (RPython/PyPy)",
+    "platform": "Python (PyPy 2.x's RPython)",
     "interpreter": "stack-based VM",
     "loc_command": "cloc py-js.py js",
     "license_abbr": "no",
@@ -5737,7 +5738,13 @@
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.7424,
+      "es3": 0.2027,
+      "es5": 0.2703,
+      "es1-es5": 0.469
+    }
   },
   {
     "id": "sablejs",

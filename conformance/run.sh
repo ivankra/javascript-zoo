@@ -90,7 +90,7 @@ fi
 case "$ENGINE_NAME" in
   quickjs-ng)
     ENGINE_CMD+=(--script);;
-  escargot|jerryscript|jsc|nashorn|xs|cesanta-v7|topchetoeu)
+  escargot|jerryscript|jsc|nashorn|xs|cesanta-v7|rpython-langjs|topchetoeu)
     ENGINE_CMD+=("$SCRIPT_DIR/var-console-log.js");;
   hermes|mocha|spidermonkey_[12]*|kjs|ngs|starlight|yrm006-miniscript)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
