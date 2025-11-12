@@ -113,6 +113,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 main {
@@ -193,6 +194,9 @@ td {
 td.numeric {
   color: var(--text-numeric);
   text-align: right;
+  &.red {
+    color: var(--text-red);
+  }
 }
 
 td.missing, td.excluded-column {
@@ -255,6 +259,20 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
     font-weight: 500;
   }
 
+  .engine-name-variant {
+    white-space: nowrap;
+  }
+
+  .engine-variant {
+    color: var(--bg-primary);
+    background-color: var(--text-accent);
+    border-radius: 6px;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 2px 4px;
+    font-size: 12px;
+  }
+
   .engine-version {
     color: var(--text-muted);
     font-size: 12px;
@@ -314,11 +332,11 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
     <div class="control">
       <select data-state="arch">
         <option value="arm64" selected>arm64: Mac M4 4.5GHz - Linux VM</option>
-        <option value="x64">x64: i9-10900K 3.7GHz - Linux</option>
+        <option value="amd64">amd64: i9-10900K 3.7GHz - Linux</option>
       </select>
     </div>
     <div class="control">
-      <label><input data-state="jitless" type="checkbox" /> Show JIT-less variants</label>
+      <label><input data-state="variants" type="checkbox" /> Show variants</label>
     </div>
     <div class="control">
       <label><input data-state="v8" type="checkbox" /> Only v8-v7 benchmarks</label>
@@ -333,12 +351,16 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
           <th data-col="engine" class="engine-cell">Engine</th>
           <th data-col="score" class="numeric sort-desc sorted-column" title="Total score: geometric mean of selected benchmarks. Higher is better (inversely proportional to runtime)">Score</th>
           <th data-col="binary_size" class="numeric" title="Binary size">Binary</th>
-          <th data-col="loc" class="numeric" title="Lines of code: core engine code only, excluding blank lines, comments, tests and third-party code">LoC</th>
+          <th data-col="loc" class="numeric" title="Lines of code: core engine code only, excluding blank lines, comments, tests and third-party code">LOC</th>
           <th data-col="language" title="Main programming language">Language</th>
-          <th data-col="standard" title="ECMAScript standard (targeted/mostly compliant with)">Standard</th>
           <th data-col="jit" title="Just-in-time compilation">JIT</th>
           <th data-col="years" title="Years of active development">Years</th>
+          <th data-col="standard" title="Target ECMAScript specification version">Target</th>
+          <th data-col="es1-es5" class="numeric" title="ES1-ES5 test suite pass rate"><nobr>ES1-5</nobr></th>
+          <th data-col="kangax-es6" class="numeric" title="compat-table's ES6 conformance score">ES6</th>
+          <th data-col="kangax-es2016plus" class="numeric" title="compat-table's ES2016+ conformance score">ES2016+</th>
           <th data-col="github_stars" class="numeric" title="GitHub stars">Stars</th>
+          <th data-col="github_contributors" class="numeric" title="GitHub contributors count">Contributors</th>
           <th data-col="org">Org</th>
           <th data-col="license" class="license-cell">License</th>
           <th data-col="description" class="description-cell">Description</th>
@@ -368,11 +390,12 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
 <script>
 const state = {
   arch: 'arm64',
-  jitless: false,
+  variants: false,
   v8: false,
   sort: [
     { col: 'score', dir: 'desc' },  // main sort criterion
     { col: 'language', dir: 'asc' },
+    { col: 'github_stars', dir: 'desc' },
     { col: 'engine', dir: 'asc' },
   ],
   visible: {},   // col => bool
@@ -390,7 +413,7 @@ window.addEventListener('load', () => {
 function loadState() {
   const params = new URLSearchParams(window.location.search);
   state.v8 = params.has('v8');
-  state.jitless = params.has('jitless');
+  state.variants = params.has('variants');
   state.arch = params.get('arch') ?? state.arch;
   let m = (params.get('sort') ?? '').match(/^(-?)(\w+)$/);
   if (m && document.querySelector(`th[data-col="${m[2]}"]`)) {
@@ -412,7 +435,7 @@ function loadState() {
 function saveState() {
   const params = new URLSearchParams();
   if (state.arch !== 'arm64') params.set('arch', state.arch);
-  if (state.jitless) params.set('jitless', true);
+  if (state.variants) params.set('variants', true);
   if (state.v8) params.set('v8', true);
   const sortVal = (state.sort[0].dir == 'desc' ? '-' : '') + state.sort[0].col;
   if (sortVal !== '-score') params.set('sort', sortVal);
@@ -477,7 +500,7 @@ function setupListeners() {
 function render() {
   document.querySelector('[data-state=arch]').value = state.arch;
   document.querySelector('[data-state=v8]').checked = state.v8;
-  document.querySelector('[data-state=jitless]').checked = state.jitless;
+  document.querySelector('[data-state=variants]').checked = state.variants;
 
   let lastCol = '';
 
@@ -547,7 +570,7 @@ function renderCell(th, row) {
       }
     }
     if (row.revision_date) {
-      if (!ver || ver.includes(row.revision.slice(0, 7))) {
+      if (!ver || (row.revision && ver.includes(row.revision.slice(0, 7)))) {
         revLink = `<a class="engine-version" href="${revLink}" title="${row.version}" target="_blank"}>${row.revision_date}</a>`;
       } else {
         revLink = `<a class="engine-version" href="${revLink}" title="${row.version}" target="_blank"}>${row.revision_date} (${ver})</a>`;
@@ -557,9 +580,13 @@ function renderCell(th, row) {
     } else {
       revLink = '';
     }
+    variantDiv = '';
+    if (row.variant) {
+      variantDiv = `<div class="engine-variant">${row.variant}</div>`;
+    }
     td.innerHTML = `
       <div class="engine-cell">
-        <a href="https://github.com/ivankra/javascript-zoo/blob/main/${row.engine}.md" class="engine-name" target="_blank">${row.title ?? row.engine}</a>
+        <div class="engine-name-variant"><a href="${row.jsz_url}" class="engine-name" target="_blank">${row.title ?? row.engine}</a>${variantDiv}</div>
         <div class="engine-version">${revLink}</div>
       </div>`;
   } else if (col === 'loc' && Number(row.loc)) {
@@ -568,19 +595,27 @@ function renderCell(th, row) {
     td.innerHTML = size.toFixed(size < 20 ? 1 : 0) + suf[i];
     td.title = `${row.loc}`;
   } else if (col === 'binary_size' && Number(row.binary_size)) {
-    let size = Number(row.binary_size), i = 0, suf = ['', 'K', 'M'];
+    let dist = row.binary_size < 0;
+    let size = Math.abs(row.binary_size), i = 0, suf = ['', 'K', 'M'];
     while (size >= 1024 && i < suf.length - 1) { size /= 1024; i++; }
     td.innerHTML = size.toFixed(size < 20 ? 1 : 0) + suf[i];
-    td.title = `${row.binary_size} bytes`;
+    if (dist) {
+      td.title = `Non-native binary. Distribution size (usu. excluding host runtime): ${row.dist_size} bytes`;
+      td.classList.add('red');
+    } else {
+      td.title = `${row.binary_size} bytes`;
+    }
+  } else if (col == 'github_stars' || col == 'github_contributors') {
+    if (Number(row[col])) {
+      if (row[col] >= 1000 && col == 'github_stars') {
+        td.innerHTML = (row[col] / 1000).toFixed(1) + 'k';
+      } else {
+        td.innerHTML = row[col].toFixed(0);
+      }
+      td.title = row.github ? row.github : row.repository;
+    }
   } else if (col === 'license' && row.license) {
-    let s = row.license
-      .replace(/ (OR|AND) /g, ', ')
-      .replace(/(-Clause|-only)/g, '')
-      .replace(/-or-later/g, '+')
-      .replace(/ WITH[^,]*/i, '<sup>*</sup>')
-      .replace(/MPL.*GPL.*LGPL.*/, 'MPL/(L)GPL')
-      .replace(/LGPL.*Qt/, 'Qt/(L)GPL')
-      .replace(/Artistic.*GPL.*/, 'Artistic/GPL');
+    let s = row.license_abbr ?? row.license;
     if (row.license === 'UPL-1.0') {
       td.title = 'Universal Permissive License 1.0';
     } else if (row.license === 'BSL-1.0') {
@@ -588,16 +623,22 @@ function renderCell(th, row) {
     } else if (s != row.license) {
       td.title = row.license;
     }
-    s = '<nobr>' + s.split(/ /).join('</nobr> <nobr>') + '</nobr>';
+    s = '<nobr>' + s.split('/').join('</nobr>/<nobr>') + '</nobr>';
     td.innerHTML = s;
     if (row.license.match(/(proprietary|custom|agpl)/i)) {
       td.classList.add('red');
     }
   } else if (col === 'standard' && row.standard) {
-    let s = row.standard.replace(/ \(.*\)/, '<sup>*</sup>');
+    let s = row.standard.replace(/^no$/, '❌');
     td.innerHTML = s;
-    if (s != row.standard) {
-      td.title = row.standard;
+  } else if (col.startsWith('es') || col.startsWith('kangax')) {
+    if (typeof row[col] === 'number') {
+      td.innerHTML = (row[col] * 100).toFixed(0) + '%';
+      if (row[col] !== 1 && row[col] !== 0) {
+        td.title = (row[col] * 100).toFixed(2) + '%';
+      }
+    } else if (row[col]) {
+      td.innerHTML = row[col];
     }
   } else if (col === 'language' && row.language) {
     let s = row.language
@@ -610,7 +651,10 @@ function renderCell(th, row) {
     td.innerHTML = row.years.replace(/-/, '-<br>');
     td.classList.toggle('red', !row.years.endsWith('-'));
   } else if (col === 'jit') {
-    td.innerHTML = row.jit ? 'Y' : '';
+    if (row.jit) {
+      td.innerHTML = 'Y';
+      td.title = row.jit;
+    }
   } else if (col === 'description') {
     td.innerHTML = row.summary ?? '';
     if (row.tech)
@@ -619,17 +663,17 @@ function renderCell(th, row) {
       td.innerHTML += `<br>${row.note}`;
   } else if (th.classList.contains('benchmark')) {
     const val = row[col];
-    if (typeof val === 'string') {
-      td.title = row[col];
-      td.style.cursor = 'help';
-      td.classList.add('missing');
-    } else if (typeof val !== 'number' || isNaN(Number(val))) {
+    if (typeof val !== 'number' || isNaN(Number(val))) {
       td.innerHTML = '';
     } else {
       td.innerHTML = String(Math.round(val));
-      if (row[col + '_note']) {
-        td.title = row[col + '_note']
-      }
+    }
+    if (row[col + '_detailed']) {
+      td.title = row[col + '_detailed'];
+    } else if (row[col + '_error']) {
+      td.title = row[col + '_error'];
+      td.style.cursor = 'help';
+      td.classList.add('missing');
     }
   } else {
     td.innerHTML = row[col] ?? '';
@@ -640,25 +684,35 @@ function renderCell(th, row) {
 function processRawData() {
   const outputRows = [];
 
-  for (const engineRow of kJavascriptZoo) {
-    let joined = [engineRow];
-    if (Array.isArray(engineRow.bench) && engineRow.bench.length > 0) {
-      joined = engineRow.bench.map(benchRow => ({...engineRow, ...benchRow}));
+  for (let engineRow of jsz_engines) {
+    engineRow = {...engineRow};
+    if (typeof engineRow.conformance === 'object') {
+      engineRow = {...engineRow, ...engineRow.conformance};
     }
 
+    // inner join on bench and filter on arch
+    let joined = [engineRow];
+    if (Array.isArray(engineRow.bench) && engineRow.bench.length > 0) {
+      joined = engineRow.bench.map(benchRow => ({...joined[0], ...benchRow}));
+    }
     joined = joined.filter(row => row.arch == state.arch);
+
     if (joined.length === 0) {
       joined = [engineRow];
     }
 
-    if (!state.jitless) {
-      joined = joined.filter(row => row.variant != 'jitless');
+    if (!state.variants) {
+      joined = joined.filter(row => !Boolean(row.variant));
     }
 
     outputRows.push(...joined);
   }
 
   for (const row of outputRows) {
+    if (typeof row.binary_size !== 'number' && typeof row.dist_size === 'number') {
+      row.binary_size = -row.dist_size;
+    }
+
     let selectedScores = [];
     for (const col in row) {
       if (state.visible[col] === true && state.selected[col] === true && typeof row[col] === 'number') {
@@ -669,12 +723,6 @@ function processRawData() {
     if (selectedScores.length > 0) {
       row.score = Math.round(geometricMean(selectedScores));
     }
-
-    row.jit = (
-      row.tech?.match(/\bJIT\b/) &&
-      !row.engine.includes('jitless') &&
-      !(row.tech?.includes('JIT (x') && state.arch === 'arm64')
-    );
   }
 
   return outputRows;
@@ -705,8 +753,15 @@ function sortCollate(val, col) {
   if (typeof val === 'object' && 'value' in val) {
     val = val.value;
   }
+  if (col == 'binary_size' && typeof val === 'number') {
+    val = Math.abs(val);  // negative if coming from dist_size
+  }
   val = String(val).trim()
   if (col === 'standard') {
+    val = val.replace(/^no$/, 'ES0000');
+    val = val.replace(/JS1.[0-2]/, 'ES0001');
+    val = val.replace(/JS1.[3-4]/, 'ES0003');
+    val = val.replace(/JS1.[5-8]/, 'ES0004');
     val = val.replace('ESnext', 'ES9999');
     val = val.replace(/([0-9]+)/g, (g) => g.padStart(4, '0'));
     val = val.replace('+', '9');
@@ -727,6 +782,6 @@ function geometricMean(arr) {
   return Math.exp(arr.map(x => Math.log(x)).reduce((x, y) => x + y, 0) / arr.length);
 }
 </script>
-<script src="data.js"></script>
+<script src="engines.js"></script>
 </body>
 </html>
