@@ -1,3 +1,7 @@
+* dist uid and permissions;  /zoo/dist in motd
+* contributors statistic
+* update code
+
 * engines
   * Standard -> Specification / Target spec
 * docker

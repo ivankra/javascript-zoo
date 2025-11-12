@@ -23,9 +23,8 @@ import requests
 import sys
 import time
 
-from bench.data import kBenchData
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Tuple, Optional, Union
+from typing import Any, Callable, Dict, List, Tuple, Optional, Union
 
 ARCH_LIST = ['arm64', 'amd64']
 
@@ -149,72 +148,137 @@ def parse_conformance_data():
     return conformance_data
 
 def do_engine_data(args, kind, md_glob, json_file, conformance_data):
-    #orig_row_by_id = {}
-    #if json_file and os.path.exists(json_file):
-    #    with open(json_file, 'r') as fp:
-    #        for row in json.load(fp):
-    #            orig_row_by_id[row['id']] = row
-
-    rows = []
+    data = {}   # id (engine[_variant]) => row
 
     for filename in sorted(glob.glob(md_glob)):
-        if re.search('(_|README.md)', filename):
+        if re.search('README.md', filename):
             continue
 
         if os.isatty(1):
             print(f'\033[1K\r{filename} ', end='', flush=True)
 
         name = os.path.basename(filename).removesuffix('.md')
+        assert name not in data
+        row = {'id': name}
+        data[name] = row
 
-        #row = orig_row_by_id.get(name, {})
-        row = {}
-        row['id'] = name
+        if '_' in name:
+            engine, variant = name.split('_', 1)
+            row['engine'] = engine
+            row['variant'] = variant
+        else:
+            engine = name
+            variant = None
 
         process_md(row, kind, filename=filename, args=args)
         process_github(row, kind, args=args)
 
-        if kind == 'engine':
-            # Metadata from <engine>_<variant>.md files is only used as
-            # base template for process_dist/process_bench(). If there's
-            # no built binary / benchmark data for a variant, it will
-            # be ignored.
-            variants_metadata = {}
-            for variant_filename in sorted(glob.glob(f'engines/{name}_*.md')):
-                variant = os.path.basename(variant_filename)[len(name)+1:-3]
-                variants_metadata[variant] = {
-                    'engine': name,
-                    'variant': variant,
-                }
-                if os.isatty(1):
-                    print(f'\033[1K\r{variant_filename} ', end='', flush=True)
-                process_md(variants_metadata[variant], kind, filename=variant_filename, args=args)
-                del variants_metadata[variant]['title']
+        row['bench'] = {}  # arch/engine/variant => merged variant+dist+bench data
 
-            row['bench'] = {}
-            process_dist(row, variants_metadata=variants_metadata)
-            process_bench(row, variants_metadata=variants_metadata)
-
-            bench = row.pop('bench')
-            #row = {k: row[k] for k in sorted(row.keys())}
-            if bench:
-                row['bench'] = [bench[k] for k in sorted(bench.keys())]
-
-        base_name = name.split('_')[0]
-        conf = None
-        if name in conformance_data:
-            conf = conformance_data[name]
-            row['conformance'] = conf['conformance_scores']
-        elif base_name in conformance_data:
-            conf = conformance_data[base_name]
+        conf = conformance_data.get(name, conformance_data.get(engine))
+        if conf:
             row['conformance'] = conf['conformance_scores']
 
         if args.format_markdown:
             update_md(filename, row, conf)
 
-        rows.append(row)
+    # Process dist/{arch}/*.json, merge into row for the engine together
+    # with variants markdown data
+    for arch in ARCH_LIST:
+        for filename in sorted(glob.glob(f'dist/{arch}/*.json')):
+            if os.isatty(1):
+                print(f'\033[1K\r{filename} ', end='', flush=True)
+
+            dist_json = json.loads(open(filename).read())
+            engine = dist_json.get('engine')
+            if engine is None or engine not in data:
+                continue
+
+            row = data[engine]
+
+            variant = dist_json.get('variant', '')
+            assert filename.endswith(variant + '.json')
+            assert dist_json.get('arch', arch) == arch
+
+            if variant == 'full':  # only used for conformance
+                continue
+
+            if variant != '':
+                variant_row = data.get(engine + '_' + variant)
+                if variant_row:
+                    dist_json = merge_jsons(variant_row, dist_json)
+
+            bench_key = f'{arch}/{engine}/{variant}'
+            row['bench'][bench_key] = dist_json
+
+    # Process bench/{arch}/*.json
+    for arch in ARCH_LIST:
+        for filename in sorted(glob.glob(f'bench/{arch}/*.json')):
+            if os.isatty(1):
+                print(f'\033[1K\r{filename} ', end='', flush=True)
+
+            bench_json = json.loads(open(filename).read())
+            dist_json = bench_json['metadata']
+            benchmarks = bench_json['benchmarks']
+
+            engine = dist_json.get('engine')
+            if engine is None or engine not in data:
+                continue
+
+            row = data[engine]
+
+            variant = dist_json.get('variant', '')
+            assert filename.endswith(variant + '.json')
+            assert dist_json.get('arch', arch) == arch
+
+            if variant == 'full':  # only used for conformance
+                continue
+
+            bench_key = f'{arch}/{engine}/{variant}'
+            if bench_key in row['bench']:
+                dist_json = merge_jsons(row['bench'][bench_key], dist_json)
+
+            if variant == 'jitless':
+                dist_json['jit'] = ''
+
+            for col in sorted(benchmarks.keys()):
+                assert type(benchmarks[col]) is dict
+                if benchmarks[col].get('score'):
+                    scores = benchmarks[col]['score']
+                    scores = list(sorted(scores))
+                    assert len(scores) >= 1
+                    dist_json[col] = scores[len(scores) // 2]
+                    dist_json[col + '_detailed'] = summarize_scores(scores)
+                elif benchmarks[col].get('error'):
+                    dist_json[col + '_error'] = benchmarks[col]['error']
+
+            row['bench'][bench_key] = dist_json
 
     if os.isatty(1):
         print('\033[1K\rOK', flush=True)
+
+    # Drop variant rows, flatten bench
+    rows = [r for r in data.values() if r.get('variant') is None]
+    for row in rows:
+        bench_flat = []
+        for key in sorted(row['bench'].keys()):
+            dist_json = row['bench'][key]
+            engine = dist_json.pop('engine')
+            row = data[engine]
+            for key in row.keys():
+                if key in dist_json and dist_json[key] == row[key]:
+                    dist_json.pop(key)
+            for key in ['title']:
+                if key in dist_json:
+                    dist_json.pop(key)
+            bench_flat.append(dist_json)
+
+            #head_cols = ['arch', 'variant', 'binary_size', 'revision', 'revision_date', 'version']
+            #dist_json = {k: dist_json[k] for k in head_cols + sorted(dist_json.keys()) if k in dist_json}
+
+        row['bench'] = bench_flat
+        if len(row['bench']) == 0:
+            del row['bench']
 
     if json_file:
         with open(json_file, 'w') as fp:
@@ -228,6 +292,57 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
     return rows
+
+def strip_markdown_links(text):
+    return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()
+
+def strip_shields(text):
+    return re.sub(r'''(<(?:div|span) class="shields">.*?</(?:div|span)>)''', '', text).strip()
+
+def strip_html(text):
+    return re.sub('<[^<]+?>', '', text).strip()
+
+def strip_brackets(text: str) -> str:
+    return re.sub(r' +\([^()]+\)', ' ', text).strip()
+
+def strip_brackets2(text: str) -> str:
+    return re.sub(r' +\(.+\)', ' ', text).strip()
+
+def simplify_license(s):
+    if not s: return s
+    s = s.strip()
+    if not s: return s
+    s = re.sub('BSD-([0-9])-Clause(-Clear)?', r'BSD-\1', s)
+    s = re.sub('-([0-9.]+)-only', r'-\1', s)
+    s = re.sub('-([0-9.]+)-or-later', r'-\1+', s)
+    s = re.sub(' *( OR| AND|,) *', '/', s)
+    s = re.sub(' WITH[^,/]*', '', s)
+    #s = re.sub('Apache[-0-9.+]', 'Apache', s)
+    s = re.sub('Apache[-0-9.+]*/LGPL[-0-9.+]*', 'Apache/LGPL', s)
+    s = re.sub('Apache[-0-9.+]*/MIT', 'Apache/MIT', s)
+    s = re.sub('MPL[-0-9.+]*/GPL[-0-9.+]*/LGPL[-0-9.+]*', 'MPL/GPL/LGPL', s)
+    s = re.sub('Artistic[-0-9.+A-Za-z]*/GPL[-0-9.+]+', 'Artistic/GPL', s)
+    return s
+
+def maybe_parse_int(text: str) -> Union[str, int]:
+    if text:
+        return int(text)
+    else:
+        return text
+
+def escape_markdown(text: str, extra: str = "") -> str:
+    chars = r'\\`*_{}\[\]()#+\-\.\!|<>~'
+    if extra:
+        extra_esc = re.escape(extra)
+        chars = chars + extra_esc
+
+    return re.sub(r"([" + chars + r"])", r"\\\1", text)
+
+@dataclass
+class MDMapping:
+    json_key: str
+    simplify: List[Callable[str, Any]] = field(default_factory=list)
+    drop_detailed: bool = False
 
 @dataclass
 class MDParse:
@@ -243,51 +358,57 @@ class MDItem:
     indent: int   # spaces count
     tree: List['MDItem'] = field(default_factory=list)    # subitems tree
     map_key: str = ''             # key into METADATA_MAP, /-separated titles
-    key: Union[str, None] = None    # JSON key
-    value: Union[str, None] = None  # JSON value
+    mapping: Optional[MDMapping] = None
+    json_key: Union[str, None] = None    # JSON key
+    detailed_value: Union[str, None] = None  # JSON value
+    simplified_value: Union[str, None] = None
 
 # Map from metadata field names in Markdown files to metadata JSON keys
 # For nested fields, names are concatenated with slash.
 # Order of entries here us used to sort the list during reformatting.
 METADATA_MAP = {
-    'Homepage': 'homepage',
-    'NPM': 'npm',
+    'Homepage': MDMapping('homepage'),
+    'NPM': MDMapping('npm'),
 
     # Source code
-    'Repository': 'repository',
-    'GitHub': 'github',    # if github not the main repo
-    'Sources': 'sources',  # if no official repository
-    'LOC': 'loc',
-    'Language': 'language',
-    'License': 'license',
+    # Repository: primary source as of today, maybe not official
+    # GitHub: github mirror, if main repository not on github
+    # Sources: non-git source code reference (tarball, page, etc)
+    'Repository': MDMapping('repository', simplify=[strip_html, strip_markdown_links, strip_brackets]),
+    'GitHub': MDMapping('github', simplify=[strip_html, strip_markdown_links, strip_brackets]),
+    'Sources': MDMapping('sources'),
+    'LOC': MDMapping('loc', simplify=[strip_brackets2, maybe_parse_int]),
+    'Language': MDMapping('language', simplify=[strip_brackets]),
+    'License': MDMapping('license', simplify=[strip_brackets, simplify_license]),
 
-    'Org': 'org',
-    'Standard': 'standard',
-    'Years': 'years',
+    'Org': MDMapping('org'),
+    'Standard': MDMapping('standard', simplify=[strip_brackets]),
+    'Years': MDMapping('years'),
 
     # Related engines
-    'Ancestor': 'ancestors',
-    'Ancestors': 'ancestors',
-    'Fork': 'forks',
-    'Forks': 'forks',
-    'Predecessor': 'predecessors',
-    'Predecessors': 'predecessors',
-    'Successor': 'successors',
-    'Successors': 'successors',
+    'Ancestor': MDMapping('ancestors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Ancestors': MDMapping('ancestors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Fork': MDMapping('forks', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Forks': MDMapping('forks', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Predecessor': MDMapping('predecessors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Predecessors': MDMapping('predecessors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Successor': MDMapping('successors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
+    'Successors': MDMapping('successors', simplify=[strip_markdown_links, strip_brackets], drop_detailed=True),
 
     # Technical properties
-    'Type': 'type',
-    'Features': 'features',
-    'Parser': 'parser',
-    'Runtime platform': 'platform',
-    'Interpreter': 'interpreter',
-    'JIT': 'jit',
-    'GC': 'gc',
-    'Regex engine': 'regex',
-    'DLL': 'dll',
+    'Type': MDMapping('type'),
+    'Features': MDMapping('features'),
+    'Parser': MDMapping('parser', simplify=[strip_markdown_links, strip_brackets]),
+    'Runtime platform': MDMapping('platform', simplify=[strip_markdown_links, strip_brackets]),
+    'Interpreter': MDMapping('interpreter', simplify=[strip_markdown_links, strip_brackets]),
+    'JIT': MDMapping('jit'),
+    'GC': MDMapping('gc', simplify=[strip_markdown_links, strip_brackets]),
+    'Regex engine': MDMapping('regex', simplify=[strip_markdown_links, strip_brackets]),
+    'DLL': MDMapping('dll'),
 }
 
-MARKDOWN_LINKS_BASE = 'https://github.com/ivankra/javascript-zoo/blob/main/'
+MARKDOWN_LINKS_BASE = 'https://github.com/ivankra/javascript-zoo/blob/master/'
+
 
 def parse_md_metadata(filename) -> MDParse:
     lines = [s.rstrip() for s in open(filename).readlines()] + ['']
@@ -341,9 +462,18 @@ def parse_md_metadata(filename) -> MDParse:
         parent.tree.append(item)
         parsed.metadata.append(item)
 
-        item.key = METADATA_MAP.get(item.map_key)
-        if item.key is not None and ': ' in text:
-            item.value = text[text.index(': ')+1:].strip()
+        item.mapping = METADATA_MAP.get(item.map_key)
+        if item.mapping:
+            item.json_key = item.mapping.json_key
+        if item.json_key is not None and ': ' in text:
+            text = text[text.index(': ')+1:].strip()
+            text = strip_shields(text).strip()
+            item.detailed_value = text
+        if item.mapping and item.detailed_value is not None:
+            for fn in item.mapping.simplify:
+                text = text.strip()
+                text = fn(text)
+            item.simplified_value = text
 
     return parsed
 
@@ -395,65 +525,17 @@ def write_md_metadata(filename, parsed=None):
 def process_md(row, kind, filename, args):
     parsed = parse_md_metadata(filename)
 
-    # Drop existing keys that are recomputed from .md
-    drop_keys = sum([[k, k + '_note', k + '_short'] for k in METADATA_MAP.values()], [])
-    drop_keys += ['loc_command', 'summary']
-    for k in drop_keys:
-        if k in row:
-            del row[k]
-
     row['title'] = row.get('title', parsed.title)
     row['summary'] = strip_markdown_links(parsed.summary)
-    row['markdown_page'] = f'{MARKDOWN_LINKS_BASE}{kind}s/{os.path.basename(filename)}'
+    row['jsz_url'] = f'{MARKDOWN_LINKS_BASE}{kind}s/{os.path.basename(filename)}'
 
     for item in parsed.metadata:
-        if item.key is None or item.value is None: continue
-        row[item.key] = strip_html_tags(item.value)
-
-    # Split up some "text (note)" keys
-    for key in list(row.keys()):
-        val = row[key]
-        if key in ['summary', 'sources', 'tech'] or type(val) != str or ' (' not in val:
-            continue
-
-        if key in ['loc', 'license', 'language', 'repository', 'github', 'parser', 'runtime']:
-            m = re.match(r'((?:[^ ][(]|[^(])+) \((.*)\)$', val)
-
-            assert m, (key, val)
-            row[key] = strip_markdown_links(m[1])
-            row[key + '_note'] = m[2]
-
-            if key == 'loc':
-                mm = re.match(r'^`(cloc [^`]+)`(.*)$', m[2])
-                if mm:
-                    row['loc_command'] = mm[1]
-                    if mm[2] == '':
-                        del row['loc_note']
-        elif key not in ['standard', 'type', 'jit', 'vm']:
-            print(f'Unprocessed note in {key}: {val}')
-
-    if row.get('parser') and '[' in row['parser']:
-        row['parser'] = strip_markdown_links(row['parser']).lower()
-
-    # license_abbr
-    if row.get('license'):
-        s = row['license']
-        s = re.sub('BSD-([0-9])-Clause(-Clear)?', r'BSD-\1', s)
-        s = re.sub('-([0-9.]+)-only', r'-\1', s)
-        s = re.sub('-([0-9.]+)-or-later', r'-\1+', s)
-        s = re.sub(' *( OR| AND|,) *', '/', s)
-        s = re.sub(' WITH[^,/]*', '', s)
-        #s = re.sub('Apache[-0-9.+]', 'Apache', s)
-        s = re.sub('Apache[-0-9.+]*/LGPL[-0-9.+]*', 'Apache/LGPL', s)
-        s = re.sub('Apache[-0-9.+]*/MIT', 'Apache/MIT', s)
-        s = re.sub('MPL[-0-9.+]*/GPL[-0-9.+]*/LGPL[-0-9.+]*', 'MPL/GPL/LGPL', s)
-        s = re.sub('Artistic[-0-9.+A-Za-z]*/GPL[-0-9.+]+', 'Artistic/GPL', s)
-        row['license_abbr'] = s
-
-    # Integer keys
-    for key in ['loc']:
-        if key in row:
-            row[key] = int(row[key])
+        if item.json_key is None or item.detailed_value is None: continue
+        assert item.simplified_value is not None
+        row[item.json_key] = item.simplified_value
+        if item.simplified_value == item.detailed_value: continue
+        if item.mapping and item.mapping.drop_detailed: continue
+        row[item.json_key + '_detailed'] = item.detailed_value
 
 # Populate fields with github data
 def process_github(row, kind, args):
@@ -496,56 +578,6 @@ def process_github(row, kind, args):
 
     row['github_stars'] = github_data['stargazers_count']
     row['github_forks'] = github_data['forks_count']
-
-# Populate row.bench from dist/arch/engine-variant.json
-def process_dist(row, variants_metadata):
-    engine = row['id']
-
-    for arch in ARCH_LIST:
-        for filename in glob.glob(f'dist/{arch}/{engine}.json') + \
-                        glob.glob(f'dist/{arch}/{engine}_*.json'):
-            with open(filename, 'r') as fp:
-                dist_json = json.load(fp)
-
-            assert dist_json.pop('engine') == engine, f'Expected {filename} to have engine: {engine}'
-
-            assert dist_json.get('arch', arch) == arch
-            dist_json['arch'] = arch
-
-            variant = dist_json.get('variant', '')
-            assert filename.endswith(variant + '.json')
-
-            row['bench'][f'{arch}/{engine}/{variant}'] = merge_jsons(
-                variants_metadata.get(variant), dist_json)
-
-# Populate row.bench from benchmarking data in bench/data.py
-def process_bench(row, variants_metadata):
-    engine = row['id']
-
-    for bench_json in kBenchData:
-        if bench_json['engine'] != engine: continue
-
-        head_cols = ['arch', 'variant', 'binary_size', 'revision', 'revision_date', 'version']
-        bench_json = {k: bench_json[k] for k in head_cols + sorted(bench_json.keys()) if k in bench_json}
-
-        assert bench_json.pop('engine') == engine
-        arch = bench_json['arch']
-        variant = bench_json.get('variant', '')
-
-        for col in sorted(bench_json.keys()):
-            if type(bench_json[col]) is not dict: continue
-            if 'scores' not in bench_json[col]: continue
-            scores = bench_json[col]['scores']
-            scores = list(sorted(scores))
-            assert len(scores) >= 1
-            bench_json[col] = scores[len(scores) // 2]
-            bench_json[col + '_note'] = summarize_scores(scores)
-
-        if variant == 'jitless':
-            bench_json['jit'] = ''
-
-        row['bench'][f'{arch}/{engine}/{variant}'] = merge_jsons(
-            variants_metadata.get(variant), bench_json)
 
 def merge_jsons(*jsons):
     res = {}
@@ -655,11 +687,11 @@ def format_table_columns(filename, data):
         if repo_link:
             shields = get_shields_for_repo(repo_link, 'README.md').strip()
 
-        markdown_page_rel = os.path.relpath(
-            row['markdown_page'].removeprefix(MARKDOWN_LINKS_BASE),
+        jsz_url_rel = os.path.relpath(
+            row['jsz_url'].removeprefix(MARKDOWN_LINKS_BASE),
             os.path.dirname(filename))
 
-        row['engine_link'] = f'[{row["title"]}]({markdown_page_rel})'
+        row['engine_link'] = f'[{row["title"]}]({jsz_url_rel})'
         if shields:
             row['engine_link'] += f'<br>[{shields}]({repo_link})'
         elif repo_link:
@@ -865,20 +897,6 @@ def get_domain(url):
         if host.count('.') > 1:
             return '.'.join(host.split('.')[-2:])
         return host
-
-def strip_markdown_links(text):
-    return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()
-
-def strip_html_tags(text):
-    return re.sub('<[^<]+?>', '', text).strip()
-
-def escape_markdown(text: str, extra: str = "") -> str:
-    chars = r'\\`*_{}\[\]()#+\-\.\!|<>~'
-    if extra:
-        extra_esc = re.escape(extra)
-        chars = chars + extra_esc
-
-    return re.sub(r"([" + chars + r"])", r"\\\1", text)
 
 if __name__ == '__main__':
     main()

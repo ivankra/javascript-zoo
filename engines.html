@@ -194,6 +194,9 @@ td {
 td.numeric {
   color: var(--text-numeric);
   text-align: right;
+  &.red {
+    color: var(--text-red);
+  }
 }
 
 td.missing, td.excluded-column {
@@ -329,7 +332,7 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
     <div class="control">
       <select data-state="arch">
         <option value="arm64" selected>arm64: Mac M4 4.5GHz - Linux VM</option>
-        <option value="x64">x64: i9-10900K 3.7GHz - Linux</option>
+        <option value="amd64">amd64: i9-10900K 3.7GHz - Linux</option>
       </select>
     </div>
     <div class="control">
@@ -348,9 +351,12 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
           <th data-col="engine" class="engine-cell">Engine</th>
           <th data-col="score" class="numeric sort-desc sorted-column" title="Total score: geometric mean of selected benchmarks. Higher is better (inversely proportional to runtime)">Score</th>
           <th data-col="binary_size" class="numeric" title="Binary size">Binary</th>
-          <th data-col="loc" class="numeric" title="Lines of code: core engine code only, excluding blank lines, comments, tests and third-party code">LoC</th>
+          <th data-col="loc" class="numeric" title="Lines of code: core engine code only, excluding blank lines, comments, tests and third-party code">LOC</th>
           <th data-col="language" title="Main programming language">Language</th>
-          <th data-col="standard" title="ECMAScript standard (targeted/mostly compliant with)">Standard</th>
+          <th data-col="standard" title="Target ECMAScript specification version">Target</th>
+          <th data-col="es1-es5" class="numeric" title="ES1-ES5 test suite pass rate"><nobr>ES1-5</nobr></th>
+          <th data-col="kangax-es6" class="numeric" title="compat-table's ES6 conformance score">ES6</th>
+          <th data-col="kangax-es2016plus" class="numeric" title="compat-table's ES2016+ conformance score">ES2016+</th>
           <th data-col="jit" title="Just-in-time compilation">JIT</th>
           <th data-col="years" title="Years of active development">Years</th>
           <th data-col="github_stars" class="numeric" title="GitHub stars">Stars</th>
@@ -579,7 +585,7 @@ function renderCell(th, row) {
     }
     td.innerHTML = `
       <div class="engine-cell">
-        <div class="engine-name-variant"><a href="https://github.com/ivankra/javascript-zoo/blob/main/${row.engine}.md" class="engine-name" target="_blank">${row.title ?? row.engine}</a>${variantDiv}</div>
+        <div class="engine-name-variant"><a href="${row.jsz_url}" class="engine-name" target="_blank">${row.title ?? row.engine}</a>${variantDiv}</div>
         <div class="engine-version">${revLink}</div>
       </div>`;
   } else if (col === 'loc' && Number(row.loc)) {
@@ -588,10 +594,16 @@ function renderCell(th, row) {
     td.innerHTML = size.toFixed(size < 20 ? 1 : 0) + suf[i];
     td.title = `${row.loc}`;
   } else if (col === 'binary_size' && Number(row.binary_size)) {
-    let size = Number(row.binary_size), i = 0, suf = ['', 'K', 'M'];
+    let dist = row.binary_size < 0;
+    let size = Math.abs(row.binary_size), i = 0, suf = ['', 'K', 'M'];
     while (size >= 1024 && i < suf.length - 1) { size /= 1024; i++; }
     td.innerHTML = size.toFixed(size < 20 ? 1 : 0) + suf[i];
-    td.title = `${row.binary_size} bytes`;
+    if (dist) {
+      td.title = `Non-native binary. Distribution size (usu. excluding host runtime): ${row.dist_size} bytes`;
+      td.classList.add('red');
+    } else {
+      td.title = `${row.binary_size} bytes`;
+    }
   } else if (col == 'github_stars') {
     if (Number(row.github_stars)) {
       if (row.github_stars >= 1000) {
@@ -616,13 +628,16 @@ function renderCell(th, row) {
       td.classList.add('red');
     }
   } else if (col === 'standard' && row.standard) {
-    let s = row.standard
-      .replace(/(❌) \(.*\)/, '$1')
-      .replace(/ \(≈ *ES.\)/, '')
-      .replace(/ \(.*\)/, '<sup>*</sup>');
+    let s = row.standard.replace(/^no$/, '❌');
     td.innerHTML = s;
-    if (s != row.standard) {
-      td.title = row.standard;
+  } else if (col.startsWith('es') || col.startsWith('kangax')) {
+    if (typeof row[col] === 'number') {
+      td.innerHTML = (row[col] * 100).toFixed(0) + '%';
+      if (row[col] !== 1 && row[col] !== 0) {
+        td.title = (row[col] * 100).toFixed(2) + '%';
+      }
+    } else if (row[col]) {
+      td.innerHTML = row[col];
     }
   } else if (col === 'language' && row.language) {
     let s = row.language
@@ -647,17 +662,17 @@ function renderCell(th, row) {
       td.innerHTML += `<br>${row.note}`;
   } else if (th.classList.contains('benchmark')) {
     const val = row[col];
-    if (typeof val === 'string') {
-      td.title = row[col];
-      td.style.cursor = 'help';
-      td.classList.add('missing');
-    } else if (typeof val !== 'number' || isNaN(Number(val))) {
+    if (typeof val !== 'number' || isNaN(Number(val))) {
       td.innerHTML = '';
     } else {
       td.innerHTML = String(Math.round(val));
-      if (row[col + '_note']) {
-        td.title = row[col + '_note']
-      }
+    }
+    if (row[col + '_detailed']) {
+      td.title = row[col + '_detailed'];
+    } else if (row[col + '_error']) {
+      td.title = row[col + '_error'];
+      td.style.cursor = 'help';
+      td.classList.add('missing');
     }
   } else {
     td.innerHTML = row[col] ?? '';
@@ -668,13 +683,19 @@ function renderCell(th, row) {
 function processRawData() {
   const outputRows = [];
 
-  for (const engineRow of kJavascriptZoo) {
-    let joined = [engineRow];
-    if (Array.isArray(engineRow.bench) && engineRow.bench.length > 0) {
-      joined = engineRow.bench.map(benchRow => ({...engineRow, ...benchRow}));
+  for (let engineRow of jsz_engines) {
+    engineRow = {...engineRow};
+    if (typeof engineRow.conformance === 'object') {
+      engineRow = {...engineRow, ...engineRow.conformance};
     }
 
+    // inner join on bench and filter on arch
+    let joined = [engineRow];
+    if (Array.isArray(engineRow.bench) && engineRow.bench.length > 0) {
+      joined = engineRow.bench.map(benchRow => ({...joined[0], ...benchRow}));
+    }
     joined = joined.filter(row => row.arch == state.arch);
+
     if (joined.length === 0) {
       joined = [engineRow];
     }
@@ -687,6 +708,10 @@ function processRawData() {
   }
 
   for (const row of outputRows) {
+    if (typeof row.binary_size !== 'number' && typeof row.dist_size === 'number') {
+      row.binary_size = -row.dist_size;
+    }
+
     let selectedScores = [];
     for (const col in row) {
       if (state.visible[col] === true && state.selected[col] === true && typeof row[col] === 'number') {
@@ -727,11 +752,15 @@ function sortCollate(val, col) {
   if (typeof val === 'object' && 'value' in val) {
     val = val.value;
   }
+  if (col == 'binary_size' && typeof val === 'number') {
+    val = Math.abs(val);  // negative if coming from dist_size
+  }
   val = String(val).trim()
   if (col === 'standard') {
-    val = val.replace(/JS1.[0-2]/, 'ES0000');
-    val = val.replace(/JS1.[3-4]/, 'ES0001');
-    val = val.replace(/JS1.[5-8]/, 'ES0003');
+    val = val.replace(/^no$/, 'ES0000');
+    val = val.replace(/JS1.[0-2]/, 'ES0001');
+    val = val.replace(/JS1.[3-4]/, 'ES0003');
+    val = val.replace(/JS1.[5-8]/, 'ES0004');
     val = val.replace('ESnext', 'ES9999');
     val = val.replace(/([0-9]+)/g, (g) => g.padStart(4, '0'));
     val = val.replace('+', '9');
@@ -752,6 +781,6 @@ function geometricMean(arr) {
   return Math.exp(arr.map(x => Math.log(x)).reduce((x, y) => x + y, 0) / arr.length);
 }
 </script>
-<script src="data.js"></script>
+<script src="engines.js"></script>
 </body>
 </html>

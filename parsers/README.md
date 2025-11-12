@@ -1,6 +1,6 @@
 # JavaScript parsers
 
-<!-- update.py: format_table(data, columns={'Parser': 'engine_link', 'Language': 'language', 'Description': 'summary', 'Standard': 'standard', 'Years': 'years', 'LOC': 'loc_abbr', 'License': 'license_abbr'}) -->
+<!-- update.py: format_table(data, columns={'Parser': 'engine_link', 'Language': 'language', 'Description': 'summary', 'Standard': 'standard', 'Years': 'years', 'LOC': 'loc_abbr', 'License': 'license'}) -->
 | Parser | Language | Description | Standard | Years | LOC | License |
 |---|---|---|---|---|---|---|
 | [@babel/parser](babel-parser.md)<br>[<div class="shields"><img src="https://img.shields.io/github/stars/babel/babel?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/babel/babel?label=&style=flat-square" alt="Last commit" title="Last commit"></div>](https://github.com/babel/babel) | TypeScript | JavaScript/TypeScript parser used in Babel. Originally based on Acorn. | ESnext | 2012- | 21K | MIT |
