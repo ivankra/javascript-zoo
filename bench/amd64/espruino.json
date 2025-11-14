@@ -2,72 +2,72 @@
   "binary": "espruino",
   "metadata": {
     "arch": "amd64",
-    "binary_sha256": "da4f958830f44637fddefd20d9933abd606dd00bd7c90c06de2fe755a89cbae2",
+    "binary_sha256": "1cece67fc275378401b72da3b34140c2718fbf2764ae41399c5921e0b94073fc",
     "binary_size": 1105208,
     "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
     "engine": "espruino",
     "repository": "https://github.com/espruino/Espruino.git",
-    "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565",
-    "revision_date": "2025-06-06",
-    "version": "2v27"
+    "revision": "37bd2082786535c052928e5e7728115950ac8096",
+    "revision_date": "2025-11-05",
+    "version": "2v28"
   },
-  "time": "Sun Nov  9 17:34:15 2025",
+  "time": "Wed Nov 12 02:51:55 2025",
   "benchmarks": {
     "Richards": {
       "error": "Uncaught ReferenceError: \"runRichards\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.58]
+      "rss_mb": [4.57]
     },
     "DeltaBlue": {
       "error": "Uncaught ReferenceError: \"deltaBlue\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.57]
+      "rss_mb": [4.46]
     },
     "Crypto": {
       "error": "Uncaught ReferenceError: \"encrypt\" is not defined",
       "user": [0.01],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.62]
+      "rss_mb": [4.57]
     },
     "RayTrace": {
       "error": "Uncaught ReferenceError: \"renderScene\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.55]
+      "rss_mb": [4.57]
     },
     "EarleyBoyer": {
       "error": "Uncaught Error: Function \"toPrecision\" not found!",
-      "user": [1055.44],
+      "user": [1006.02],
       "sys": [0.12],
-      "real": [1055.4],
-      "rss_mb": [58.43]
+      "real": [1006.08],
+      "rss_mb": [58.42]
     },
     "RegExp": {
       "error": "Uncaught ReferenceError: \"RegExpRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.65]
+      "rss_mb": [4.71]
     },
     "Splay": {
       "error": "Uncaught ReferenceError: \"SplayRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.58]
+      "rss_mb": [4.59]
     },
     "SplayLatency": {
       "error": "Uncaught ReferenceError: \"SplayRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.58]
+      "rss_mb": [4.59]
     },
     "NavierStokes": {
       "error": "Uncaught ReferenceError: \"runNavierStokes\" is not defined",
@@ -81,21 +81,21 @@
       "user": [0.03],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [8.47]
+      "rss_mb": [8.54]
     },
     "Mandreel": {
       "error": "Uncaught ReferenceError: \"runMandreel\" is not defined",
-      "user": [1.27],
+      "user": [1.25],
       "sys": [0.0],
       "real": [1.3],
-      "rss_mb": [15.12]
+      "rss_mb": [15.13]
     },
     "MandreelLatency": {
       "error": "Uncaught ReferenceError: \"runMandreel\" is not defined",
-      "user": [1.27],
+      "user": [1.25],
       "sys": [0.0],
       "real": [1.3],
-      "rss_mb": [15.12]
+      "rss_mb": [15.13]
     },
     "Gameboy": {
       "error": "Uncaught ReferenceError: \"runGameboy\" is not defined",
@@ -109,7 +109,7 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.64]
+      "rss_mb": [4.56]
     },
     "Box2D": {
       "error": "Uncaught ReferenceError: \"runBox2D\" is not defined",
@@ -123,7 +123,7 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.87]
+      "rss_mb": [4.89]
     }
   }
 }

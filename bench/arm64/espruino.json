@@ -2,123 +2,128 @@
   "binary": "espruino",
   "metadata": {
     "arch": "arm64",
-    "binary_sha256": "fbbf669b27fed1934ad38f698bb4f9ff665399611e76bddb8d20b3f548888b11",
+    "binary_sha256": "cd6b629f4bcdea1dcc30d3755702adfed202306dcf29afa46045b5d148fe3f56",
     "binary_size": 1183488,
     "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
     "engine": "espruino",
     "repository": "https://github.com/espruino/Espruino.git",
-    "revision": "08502f84a2706a72c6ad0a525d93ec3c74f09565",
-    "revision_date": "2025-06-06",
-    "version": "2v27"
+    "revision": "37bd2082786535c052928e5e7728115950ac8096",
+    "revision_date": "2025-11-05",
+    "version": "2v28"
   },
+  "time": "Wed Nov 12 01:58:02 2025",
   "benchmarks": {
     "Richards": {
       "error": "Uncaught ReferenceError: \"runRichards\" is not defined",
       "user": [0.0],
       "sys": [0.0],
-      "real": [0.06],
-      "rss_mb": [4.02]
+      "real": [0.05],
+      "rss_mb": [3.91]
     },
     "DeltaBlue": {
       "error": "Uncaught ReferenceError: \"deltaBlue\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.15]
+      "rss_mb": [4.09]
     },
     "Crypto": {
       "error": "Uncaught ReferenceError: \"encrypt\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.06],
-      "rss_mb": [4.15]
+      "rss_mb": [4.09]
     },
     "RayTrace": {
       "error": "Uncaught ReferenceError: \"renderScene\" is not defined",
       "user": [0.0],
       "sys": [0.0],
-      "real": [0.06],
-      "rss_mb": [4.14]
+      "real": [0.05],
+      "rss_mb": [4.09]
     },
     "EarleyBoyer": {
-      "error": "Timeout (>1800s)"
+      "error": "Uncaught Error: Function \"toPrecision\" not found!",
+      "user": [992.75],
+      "sys": [0.02],
+      "real": [992.78],
+      "rss_mb": [58.11]
     },
     "RegExp": {
       "error": "Uncaught ReferenceError: \"RegExpRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.28]
+      "rss_mb": [4.21]
     },
     "Splay": {
       "error": "Uncaught ReferenceError: \"SplayRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.03]
+      "rss_mb": [3.97]
     },
     "SplayLatency": {
       "error": "Uncaught ReferenceError: \"SplayRun\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.03]
+      "rss_mb": [3.97]
     },
     "NavierStokes": {
       "error": "Uncaught ReferenceError: \"runNavierStokes\" is not defined",
       "user": [0.0],
       "sys": [0.0],
-      "real": [0.06],
-      "rss_mb": [4.03]
+      "real": [0.05],
+      "rss_mb": [3.96]
     },
     "PdfJS": {
       "error": "Uncaught ReferenceError: \"runPdfJS\" is not defined",
-      "user": [0.03],
+      "user": [0.04],
       "sys": [0.0],
       "real": [0.06],
-      "rss_mb": [8.24]
+      "rss_mb": [8.23]
     },
     "Mandreel": {
       "error": "Uncaught ReferenceError: \"runMandreel\" is not defined",
-      "user": [0.65],
+      "user": [0.64],
       "sys": [0.0],
-      "real": [0.71],
-      "rss_mb": [14.99]
+      "real": [0.68],
+      "rss_mb": [14.98]
     },
     "MandreelLatency": {
       "error": "Uncaught ReferenceError: \"runMandreel\" is not defined",
-      "user": [0.65],
+      "user": [0.64],
       "sys": [0.0],
-      "real": [0.71],
-      "rss_mb": [14.99]
+      "real": [0.68],
+      "rss_mb": [14.98]
     },
     "Gameboy": {
       "error": "Uncaught ReferenceError: \"runGameboy\" is not defined",
       "user": [0.08],
       "sys": [0.0],
       "real": [0.1],
-      "rss_mb": [4.74]
+      "rss_mb": [4.73]
     },
     "CodeLoad": {
       "error": "Uncaught ReferenceError: \"runCodeLoadClosure\" is not defined",
       "user": [0.0],
       "sys": [0.0],
-      "real": [0.05],
-      "rss_mb": [4.27]
+      "real": [0.06],
+      "rss_mb": [4.22]
     },
     "Box2D": {
       "error": "Uncaught ReferenceError: \"runBox2D\" is not defined",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.84]
+      "rss_mb": [4.61]
     },
     "zlib": {
       "error": "Uncaught ReferenceError: \"runZlib\" is not defined",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.05],
-      "rss_mb": [4.51]
+      "rss_mb": [4.47]
     }
   }
 }
