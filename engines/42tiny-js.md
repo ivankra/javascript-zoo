@@ -3,7 +3,7 @@
 Fork of [tiny-js](tiny-js.md) with more features.
 
 * Repository:  https://github.com/gfwilliams/tiny-js.git <span class="shields"><img src="https://img.shields.io/github/stars/gfwilliams/tiny-js?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/gfwilliams/tiny-js?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-  * Branch:    42tiny-js
+* Branch:      [42tiny-js](https://github.com/gfwilliams/tiny-js/tree/42tiny-js)
 * LOC:         9209 (`cloc *.cpp *.h`)
 * Language:    C++
 * License:     MIT

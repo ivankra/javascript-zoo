@@ -68,9 +68,10 @@ kangax:
 
 sh:
 	podman run --rm -it \
-	  -v $(PWD)/..:/zoo:ro \
-	  -v $(PWD):/zoo/conformance:rw \
+	  -v $(PWD)/..:/zoo:rw \
+	  -v $(PWD)/../.git:/zoo/.git:ro \
 	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
+	  -v $(PWD)/../dist/$(DOCKER_ARCH):/zoo/dist:ro \
 	  -w /zoo/conformance \
 	  jsz-runtime
 

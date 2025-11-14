@@ -146,9 +146,10 @@ def gen_table(column_data):
 def main():
     data = {}  # engine => lines
 
-    for filename in glob.glob("*.txt"):
+    for filename in sorted(glob.glob("*.txt")):
         engine = filename.removesuffix('.txt')
         engine = engine.removesuffix('_full')
+        engine = engine.removesuffix('_intl')
         data[engine] = [l.rstrip() for l in open(filename) if not l.startswith('Metadata:')]
 
     kangax_weights = get_kangax_weights()

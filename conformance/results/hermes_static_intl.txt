@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "4e1fe84daa53e5235f72f5757b6b1389e1548001e75a3d9d8d374ba9f2c70db7", "binary_size": 4073424, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "hermes", "repository": "https://github.com/facebook/hermes.git", "revision": "7ad93ab30325ed437a6eaaf310f7f87e9a3070e7", "revision_date": "2025-11-03", "version": "0.14.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "317cf0f38f1e5f297907c135691b41a3d402880342fd64bfa92ab6414126cfe7", "binary_size": 5055256, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "hermes", "repository": "https://github.com/facebook/hermes.git", "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f", "revision_date": "2025-11-04", "variant": "static_intl", "version": "250829098.0.3"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: with.js:15:1: error: invalid statement encountered. with.js:38:1: error: invalid statement encountered. Emitted 2 errors. exiting.
+es1/with.js: with.js:15:1: error: with statement is not supported with.js:38:1: error: with statement is not supported Emitted 2 errors. exiting.
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -265,8 +265,8 @@ es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: OK
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
-es3/String.prototype.toLocaleLowerCase.js: OK
-es3/String.prototype.toLocaleUpperCase.js: OK
+es3/String.prototype.toLocaleLowerCase.js: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
+es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'uppered')
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -398,12 +398,12 @@ es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: OK
-es5/strict.eval-cannot-create-bindings.js: OK
+es5/strict.eval-cannot-create-bindings.js: strict.eval-cannot-create-bindings.js:18:5: warning: Direct call to eval(), but lexical scope is not supported. strict.eval-cannot-create-bindings.js:19:5: warning: the variable "myTestVar" was not declared in anonymous function
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: OK
 es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-non-writable.js: strict.no-assignment-to-non-writable.js:35:21: error: invalid assignment left-hand side Emitted 1 errors. exiting.
 es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: OK
 es5/strict.no-delete-non-configurable.js: OK
@@ -414,9 +414,9 @@ es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: OK
 es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: OK
-es5/strict.this-primitive-not-coerced-in-accessors.js: OK
-es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: OK
+es5/strict.this-primitive-not-coerced-in-accessors.js: console.log("es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor"); OK
+es5/strict.this-primitive-not-coerced.js: console.log("es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object"); OK
+es5/strict.this-undefined-in-function.js: console.log("es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined"); OK
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 kangax-es5/Array.isArray.js: OK
@@ -477,12 +477,12 @@ kangax-es5/strict.arguments-callee-error.js: OK
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
 kangax-es5/strict.assignment-eval-arguments-error.js: OK
-kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: strict.assignment-non-writable-error.js:13:25: error: invalid assignment left-hand side try { (function f() { f = 123; })();                           return false; } catch (err) { if (!(err instanceof TypeError)) return false; } Emitted 1 errors. exiting.
 kangax-es5/strict.assignment-unresolvable-error.js: OK
 kangax-es5/strict.delete-bindings-error.js: OK
 kangax-es5/strict.delete-non-configurable-error.js: OK
 kangax-es5/strict.eval-arguments-bindings-error.js: OK
-kangax-es5/strict.eval-no-bindings.js: OK
+kangax-es5/strict.eval-no-bindings.js: try { eval('var __some_unique_variable;'); __some_unique_variable; } catch (err) { return err instanceof ReferenceError; }
 kangax-es5/strict.function-caller-arguments-error.js: OK
 kangax-es5/strict.function-expr-matching-name-arg.js: OK
 kangax-es5/strict.legacy-octal-error.js: OK
@@ -517,12 +517,12 @@ kangax-es6/Array.prototype.values.js: OK
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
 kangax-es6/Function.name.accessor.js: OK
 kangax-es6/Function.name.bound.js: OK
-kangax-es6/Function.name.class-expression.js: Function.name.class-expression.js:10:10: error: Invalid expression encountered Function.name.class-expression.js:11:12: error: Invalid expression encountered Emitted 2 errors. exiting.
-kangax-es6/Function.name.class-object-method.js: Function.name.class-object-method.js:10:18: error: Invalid expression encountered Function.name.class-object-method.js:10:33: error: Invalid expression encountered Function.name.class-object-method.js:11:11: error: Invalid expression encountered Emitted 3 errors. exiting.
-kangax-es6/Function.name.class-prototype.js: Function.name.class-prototype.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/Function.name.class-statement.js: Function.name.class-statement.js:10:3: error: invalid statement encountered. Function.name.class-statement.js:11:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/Function.name.class-static.js: Function.name.class-static.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/Function.name.class-variable.js: Function.name.class-variable.js:10:13: error: Invalid expression encountered Function.name.class-variable.js:11:13: error: Invalid expression encountered Function.name.class-variable.js:12:13: error: Invalid expression encountered Emitted 3 errors. exiting.
+kangax-es6/Function.name.class-expression.js: OK
+kangax-es6/Function.name.class-object-method.js: OK
+kangax-es6/Function.name.class-prototype.js: OK
+kangax-es6/Function.name.class-statement.js: OK
+kangax-es6/Function.name.class-static.js: OK
+kangax-es6/Function.name.class-variable.js: OK
 kangax-es6/Function.name.configurable.js: OK
 kangax-es6/Function.name.expression.js: OK
 kangax-es6/Function.name.new-Function.js: OK
@@ -627,7 +627,7 @@ kangax-es6/Reflect.apply.js: OK
 kangax-es6/Reflect.construct.Array-subclassing.js: OK
 kangax-es6/Reflect.construct.Function-subclassing.js: OK
 kangax-es6/Reflect.construct.Promise-subclassing.js: failed
-kangax-es6/Reflect.construct.RegExp-subclassing.js: failed
+kangax-es6/Reflect.construct.RegExp-subclassing.js: OK
 kangax-es6/Reflect.construct.js: OK
 kangax-es6/Reflect.construct.new-target.js: OK
 kangax-es6/Reflect.construct.third-argument.js: OK
@@ -720,10 +720,10 @@ kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefine
 kangax-es6/annex-b.String.prototype.html.existence.js: failed
 kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefined is not a function
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
-kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.hoisted-block-level.js: OK
 kangax-es6/annex-b.function.if-statement.js: OK
-kangax-es6/annex-b.function.labeled.js: annex-b.function.labeled.js:12:10: error: Function declaration not allowed as body of labeled statement
-kangax-es6/annex-b.html-comments.js: annex-b.html-comments.js:9:5: error: invalid expression
+kangax-es6/annex-b.function.labeled.js: annex-b.function.labeled.js:12:10: error: Function declaration not allowed as body of labeled statement Emitted 1 errors. exiting.
+kangax-es6/annex-b.html-comments.js: annex-b.html-comments.js:9:5: error: invalid expression Emitted 1 errors. exiting.
 kangax-es6/annex-b.regex.backreferences-octal.js: OK
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
@@ -748,52 +748,52 @@ kangax-es6/arrow.1-param.js: OK
 kangax-es6/arrow.5-param.js: OK
 kangax-es6/arrow.bind.js: OK
 kangax-es6/arrow.lexical-arguments.js: OK
-kangax-es6/arrow.lexical-super.constructor.js: arrow.lexical-super.constructor.js:12:3: error: invalid statement encountered. arrow.lexical-super.constructor.js:17:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/arrow.lexical-super.methods.js: arrow.lexical-super.methods.js:10:3: error: invalid statement encountered. arrow.lexical-super.methods.js:15:3: error: invalid statement encountered. Emitted 2 errors. exiting.
+kangax-es6/arrow.lexical-super.constructor.js: OK
+kangax-es6/arrow.lexical-super.methods.js: OK
 kangax-es6/arrow.lexical-this.js: OK
 kangax-es6/arrow.new-target.js: OK
 kangax-es6/arrow.no-line-break.js: OK
 kangax-es6/arrow.no-prototype.js: OK
 kangax-es6/arrow.precedence.js: OK
 kangax-es6/arrow.this-call-apply.js: OK
-kangax-es6/class.accessor-properties.js: class.accessor-properties.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.anonymous.js: class.anonymous.js:10:17: error: Invalid expression encountered Emitted 1 errors. exiting.
-kangax-es6/class.block-scoped.js: class.block-scoped.js:10:3: error: invalid statement encountered. class.block-scoped.js:13:5: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/class.computed-accessor-properties.js: class.computed-accessor-properties.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.computed-names-tdz.js: class.computed-names-tdz.js:11:13: error: Invalid expression encountered Emitted 1 errors. exiting.
-kangax-es6/class.computed-prototype-methods.js: class.computed-prototype-methods.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.computed-static-accessor-properties.js: class.computed-static-accessor-properties.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.computed-static-methods.js: class.computed-static-methods.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.constructor-requires-new.js: class.constructor-requires-new.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.constructor.js: class.constructor.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.expression.js: class.expression.js:10:17: error: Invalid expression encountered Emitted 1 errors. exiting.
-kangax-es6/class.extends-expressions.js: class.extends-expressions.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.extends-null.js: class.extends-null.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.extends.js: class.extends.js:10:3: error: invalid statement encountered. class.extends.js:11:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/class.implicit-strict.js: class.implicit-strict.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.lexical-name.js: class.lexical-name.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.methods-not-enumerable.js: class.methods-not-enumerable.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.new-target.js: class.new-target.js:15:3: error: invalid statement encountered. class.new-target.js:20:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/class.optional-semicolons.js: class.optional-semicolons.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.prototype-methods.js: class.prototype-methods.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.statement.js: class.statement.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.static-accessor-properties.js: class.static-accessor-properties.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.static-methods.js: class.static-methods.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/class.string-keyed-methods.js: class.string-keyed-methods.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/class.accessor-properties.js: OK
+kangax-es6/class.anonymous.js: OK
+kangax-es6/class.block-scoped.js: OK
+kangax-es6/class.computed-accessor-properties.js: OK
+kangax-es6/class.computed-names-tdz.js: failed
+kangax-es6/class.computed-prototype-methods.js: OK
+kangax-es6/class.computed-static-accessor-properties.js: OK
+kangax-es6/class.computed-static-methods.js: OK
+kangax-es6/class.constructor-requires-new.js: OK
+kangax-es6/class.constructor.js: OK
+kangax-es6/class.expression.js: OK
+kangax-es6/class.extends-expressions.js: OK
+kangax-es6/class.extends-null.js: OK
+kangax-es6/class.extends.js: OK
+kangax-es6/class.implicit-strict.js: OK
+kangax-es6/class.lexical-name.js: OK
+kangax-es6/class.methods-not-enumerable.js: OK
+kangax-es6/class.new-target.js: OK
+kangax-es6/class.optional-semicolons.js: OK
+kangax-es6/class.prototype-methods.js: OK
+kangax-es6/class.statement.js: OK
+kangax-es6/class.static-accessor-properties.js: OK
+kangax-es6/class.static-methods.js: OK
+kangax-es6/class.string-keyed-methods.js: OK
 kangax-es6/const.basic.js: OK
-kangax-es6/const.block-scoped.js: failed
+kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: failed
-kangax-es6/const.for-loop.js: failed
+kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: failed
-kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: OK
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
-kangax-es6/const.strict.block-scoped.js: failed
+kangax-es6/const.strict.block-scoped.js: OK
 kangax-es6/const.strict.for-in.js: failed
-kangax-es6/const.strict.for-loop.js: failed
+kangax-es6/const.strict.for-loop.js: OK
 kangax-es6/const.strict.for-of.js: failed
-kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-redefine.js: OK
 kangax-es6/const.strict.no-statement.js: OK
 kangax-es6/const.strict.shadow.js: OK
 kangax-es6/const.strict.tdz.js: failed
@@ -831,7 +831,7 @@ kangax-es6/destructuring-assign.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-assign.trailing-comma-object.js: OK
 kangax-es6/destructuring-decl.array.js: OK
 kangax-es6/destructuring-decl.astral-string.js: OK
-kangax-es6/destructuring-decl.catch.js: destructuring-decl.catch.js:12:11: error: Destructuring in catch parameters is currently unsupported destructuring-decl.catch.js:15:13: error: Destructuring in catch parameters is currently unsupported Emitted 2 errors. exiting.
+kangax-es6/destructuring-decl.catch.js: OK
 kangax-es6/destructuring-decl.computed-properties.js: OK
 kangax-es6/destructuring-decl.defaults-tdz.js: failed
 kangax-es6/destructuring-decl.defaults.js: OK
@@ -886,7 +886,7 @@ kangax-es6/for-of.iterator-closing-break.js: OK
 kangax-es6/for-of.iterator-closing-throw.js: OK
 kangax-es6/for-of.sparse-array.js: OK
 kangax-es6/for-of.string.js: OK
-kangax-es6/function.block-level-decl.js: failed
+kangax-es6/function.block-level-decl.js: OK
 kangax-es6/generators.basic.js: OK
 kangax-es6/generators.constructor.js: OK
 kangax-es6/generators.expression.js: OK
@@ -895,11 +895,11 @@ kangax-es6/generators.prototype-chain.js: OK
 kangax-es6/generators.prototype.js: OK
 kangax-es6/generators.return.js: OK
 kangax-es6/generators.sending.js: OK
-kangax-es6/generators.shorthand.class.js: generators.shorthand.class.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/generators.shorthand.computed.class.js: generators.shorthand.computed.class.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/generators.shorthand.class.js: OK
+kangax-es6/generators.shorthand.computed.class.js: OK
 kangax-es6/generators.shorthand.computed.js: OK
 kangax-es6/generators.shorthand.js: OK
-kangax-es6/generators.shorthand.no-constructor.js: generators.shorthand.no-constructor.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/generators.shorthand.no-constructor.js: OK
 kangax-es6/generators.shorthand.string-keyed.js: OK
 kangax-es6/generators.this.js: OK
 kangax-es6/generators.throw.js: OK
@@ -915,17 +915,17 @@ kangax-es6/generators.yield-star.non-iterable-error.js: OK
 kangax-es6/generators.yield-star.sparse-array.js: OK
 kangax-es6/generators.yield-star.string.js: OK
 kangax-es6/let.basic.js: OK
-kangax-es6/let.block-scoped.js: failed
+kangax-es6/let.block-scoped.js: OK
 kangax-es6/let.for-in-shadow.js: OK
 kangax-es6/let.for-iteration.js: failed
-kangax-es6/let.for-loop.js: failed
+kangax-es6/let.for-loop.js: OK
 kangax-es6/let.no-statement.js: OK
 kangax-es6/let.shadow.js: OK
 kangax-es6/let.strict.basic.js: OK
-kangax-es6/let.strict.block-scoped.js: failed
+kangax-es6/let.strict.block-scoped.js: OK
 kangax-es6/let.strict.for-in-shadow.js: OK
 kangax-es6/let.strict.for-iteration.js: failed
-kangax-es6/let.strict.for-loop.js: failed
+kangax-es6/let.strict.for-loop.js: OK
 kangax-es6/let.strict.no-statement.js: OK
 kangax-es6/let.strict.shadow.js: OK
 kangax-es6/let.strict.tdz.js: failed
@@ -971,13 +971,13 @@ kangax-es6/misc.Proxy.get.Array.reverse.js: OK
 kangax-es6/misc.Proxy.get.Array.shift.js: OK
 kangax-es6/misc.Proxy.get.Array.splice.js: failed
 kangax-es6/misc.Proxy.get.Array.toString.js: OK
-kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: misc.Proxy.get.ClassDefinitionEvaluation.js:13:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: OK
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: OK
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: failed
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 kangax-es6/misc.Proxy.get.Date.toJSON.js: OK
 kangax-es6/misc.Proxy.get.Error.toString.js: OK
 kangax-es6/misc.Proxy.get.Function.bind.js: OK
-kangax-es6/misc.Proxy.get.HasBinding.js: misc.Proxy.get.HasBinding.js:14:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/misc.Proxy.get.HasBinding.js: misc.Proxy.get.HasBinding.js:14:3: error: with statement is not supported Emitted 1 errors. exiting.
 kangax-es6/misc.Proxy.get.IteratorComplete.js: OK
 kangax-es6/misc.Proxy.get.JSON.stringify.js: OK
 kangax-es6/misc.Proxy.get.Object.assign.js: OK
@@ -1016,17 +1016,17 @@ kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
 kangax-es6/misc.accessors-no-constructor.js: failed
-kangax-es6/misc.bound-function-prototype.arrow.js: failed
-kangax-es6/misc.bound-function-prototype.class.js: misc.bound-function-prototype.class.js:10:5: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: failed
-kangax-es6/misc.bound-function-prototype.subclass.js: misc.bound-function-prototype.subclass.js:10:5: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/misc.bound-function-prototype.arrow.js: OK
+kangax-es6/misc.bound-function-prototype.class.js: OK
+kangax-es6/misc.bound-function-prototype.function.js: OK
+kangax-es6/misc.bound-function-prototype.generator.js: OK
+kangax-es6/misc.bound-function-prototype.subclass.js: OK
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: OK
 kangax-es6/misc.for-in-no-assignment-strict.js: OK
 kangax-es6/misc.function-length-configurable.js: OK
 kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
-kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-1.js: OK
 kangax-es6/misc.identifier-syntax.var-2.js: OK
 kangax-es6/misc.property-order.JSON.parse.js: OK
 kangax-es6/misc.property-order.JSON.stringify.js: OK
@@ -1046,7 +1046,7 @@ kangax-es6/regex.flags.y.js: OK
 kangax-es6/regex.flags.y.lastIndex.js: OK
 kangax-es6/rest-params.arguments.js: OK
 kangax-es6/rest-params.basic.js: OK
-kangax-es6/rest-params.length.js: failed
+kangax-es6/rest-params.length.js: OK
 kangax-es6/rest-params.new-function.js: OK
 kangax-es6/rest-params.no-setter.js: OK
 kangax-es6/spread.array-call.js: OK
@@ -1064,45 +1064,45 @@ kangax-es6/spread.sparse-call.js: OK
 kangax-es6/spread.sparse-literal.js: OK
 kangax-es6/spread.string-call.js: OK
 kangax-es6/spread.string-literal.js: OK
-kangax-es6/subclassing.Array.concat.js: subclassing.Array.concat.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.filter.js: subclassing.Array.filter.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.from.js: subclassing.Array.from.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.isArray.js: subclassing.Array.isArray.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.length-access.js: subclassing.Array.length-access.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.length-set.js: subclassing.Array.length-set.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.map.js: subclassing.Array.map.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.of.js: subclassing.Array.of.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.prototype-chain.js: subclassing.Array.prototype-chain.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.slice.js: subclassing.Array.slice.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Array.splice.js: subclassing.Array.splice.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.call.js: subclassing.Function.call.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.new.js: subclassing.Function.new.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.prototype-chain.js: subclassing.Function.prototype-chain.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.prototype.apply.js: subclassing.Function.prototype.apply.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.prototype.bind.js: subclassing.Function.prototype.bind.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Function.prototype.call.js: subclassing.Function.prototype.call.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Promise.all.js: subclassing.Promise.all.js:44:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Promise.js: subclassing.Promise.js:44:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Promise.prototype-chain.js: subclassing.Promise.prototype-chain.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.Promise.race.js: subclassing.Promise.race.js:44:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.RegExp.exec.js: subclassing.RegExp.exec.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.RegExp.js: subclassing.RegExp.js:11:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.RegExp.prototype-chain.js: subclassing.RegExp.prototype-chain.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.RegExp.test.js: subclassing.RegExp.test.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.Boolean.js: subclassing.misc.Boolean.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.Error.js: subclassing.misc.Error.js:9:3: error: invalid statement encountered. class C extends Error {} Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.Map.js: subclassing.misc.Map.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.Number.js: subclassing.misc.Number.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.Set.js: subclassing.misc.Set.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/subclassing.misc.String.js: subclassing.misc.String.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es6/super.correct-constructor.js: super.correct-constructor.js:12:3: error: invalid statement encountered. super.correct-constructor.js:20:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.expression.js: super.expression.js:10:3: error: invalid statement encountered. super.expression.js:13:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.method-calls.js: super.method-calls.js:10:3: error: invalid statement encountered. super.method-calls.js:13:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.new-target-binding.js: super.new-target-binding.js:11:3: error: invalid statement encountered. super.new-target-binding.js:14:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.property-access.js: super.property-access.js:10:3: error: invalid statement encountered. super.property-access.js:13:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.statement.js: super.statement.js:11:3: error: invalid statement encountered. super.statement.js:14:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.static-binding.js: super.static-binding.js:10:3: error: invalid statement encountered. super.static-binding.js:13:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-kangax-es6/super.this-binding.js: super.this-binding.js:10:3: error: invalid statement encountered. super.this-binding.js:13:3: error: invalid statement encountered. Emitted 2 errors. exiting.
+kangax-es6/subclassing.Array.concat.js: failed
+kangax-es6/subclassing.Array.filter.js: failed
+kangax-es6/subclassing.Array.from.js: OK
+kangax-es6/subclassing.Array.isArray.js: OK
+kangax-es6/subclassing.Array.length-access.js: OK
+kangax-es6/subclassing.Array.length-set.js: OK
+kangax-es6/subclassing.Array.map.js: failed
+kangax-es6/subclassing.Array.of.js: OK
+kangax-es6/subclassing.Array.prototype-chain.js: OK
+kangax-es6/subclassing.Array.slice.js: failed
+kangax-es6/subclassing.Array.splice.js: failed
+kangax-es6/subclassing.Function.call.js: OK
+kangax-es6/subclassing.Function.new.js: OK
+kangax-es6/subclassing.Function.prototype-chain.js: OK
+kangax-es6/subclassing.Function.prototype.apply.js: OK
+kangax-es6/subclassing.Function.prototype.bind.js: OK
+kangax-es6/subclassing.Function.prototype.call.js: OK
+kangax-es6/subclassing.Promise.all.js: failed
+kangax-es6/subclassing.Promise.js: OK
+kangax-es6/subclassing.Promise.prototype-chain.js: OK
+kangax-es6/subclassing.Promise.race.js: failed
+kangax-es6/subclassing.RegExp.exec.js: OK
+kangax-es6/subclassing.RegExp.js: OK
+kangax-es6/subclassing.RegExp.prototype-chain.js: OK
+kangax-es6/subclassing.RegExp.test.js: OK
+kangax-es6/subclassing.misc.Boolean.js: OK
+kangax-es6/subclassing.misc.Error.js: OK
+kangax-es6/subclassing.misc.Map.js: OK
+kangax-es6/subclassing.misc.Number.js: OK
+kangax-es6/subclassing.misc.Set.js: OK
+kangax-es6/subclassing.misc.String.js: OK
+kangax-es6/super.correct-constructor.js: OK
+kangax-es6/super.expression.js: OK
+kangax-es6/super.method-calls.js: OK
+kangax-es6/super.new-target-binding.js: OK
+kangax-es6/super.property-access.js: OK
+kangax-es6/super.statement.js: OK
+kangax-es6/super.static-binding.js: OK
+kangax-es6/super.this-binding.js: OK
 kangax-es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
 kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 kangax-es6/template.basic.js: OK
@@ -1189,7 +1189,7 @@ kangax-es6/well-known.toStringTag.existing-builtins.js: OK
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
 kangax-es6/well-known.toStringTag.new-builtins.js: failed
-kangax-es6/well-known.unscopables.js: well-known.unscopables.js:12:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es6/well-known.unscopables.js: well-known.unscopables.js:12:3: error: with statement is not supported Emitted 1 errors. exiting.
 kangax-es2016/Array.prototype.includes.generic.js: OK
 kangax-es2016/Array.prototype.includes.js: OK
 kangax-es2016/Array.prototype.includes.sparse.js: OK
@@ -1249,16 +1249,16 @@ kangax-es2017/annex-b.Proxy.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: OK
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
 kangax-es2017/async.Symbol.toStringTag.js: OK
-kangax-es2017/async.arrow-in-class.js: async.arrow-in-class.js:48:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2017/async.arrow.js: async.arrow.js:45:11: error: async functions are unsupported Emitted 1 errors. exiting.
+kangax-es2017/async.arrow-in-class.js: OK
+kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
 kangax-es2017/async.await-rejection.js: OK
 kangax-es2017/async.await.js: OK
 kangax-es2017/async.constructor.js: OK
-kangax-es2017/async.methods-class.js: async.methods-class.js:45:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es2017/async.methods-class.js: OK
 kangax-es2017/async.methods-object.js: OK
 kangax-es2017/async.must-await-value.js: OK
-kangax-es2017/async.no-await-in-params.js: failed
+kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: OK
 kangax-es2017/async.no-prototype.js: OK
 kangax-es2017/async.prototype-chain.js: OK
@@ -1271,8 +1271,8 @@ kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
 kangax-es2018/Promise.prototype.finally.js: OK
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
-kangax-es2018/async-iterators.for-await-of.js: async-iterators.for-await-of.js:60:5: error: for await..of loops are currently unsupported
-kangax-es2018/async-iterators.generators.js: async-iterators.generators.js:44:3: error: async generators are unsupported
+kangax-es2018/async-iterators.for-await-of.js: OK
+kangax-es2018/async-iterators.generators.js: async-iterators.generators.js:44:3: error: async generators are unsupported Emitted 1 errors. exiting.
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: OK
 kangax-es2018/object-rest.js: OK
@@ -1288,8 +1288,8 @@ kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: regex.unicode-property-escapes.unicode-16.0.js:10:10: error: Invalid regular expression: Invalid property name
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:10: error: Invalid regular expression: Invalid property name
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: regex.unicode-property-escapes.unicode-16.0.js:10:10: error: Invalid regular expression: Invalid property name Emitted 1 errors. exiting.
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:10: error: Invalid regular expression: Invalid property name Emitted 1 errors. exiting.
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'flat' of undefined
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1303,8 +1303,8 @@ kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
 kangax-es2019/annex-b.String.prototype.trimRight.js: OK
 kangax-es2019/misc.Function-toString.Function-constructor.js: SyntaxError: 2:1:')' expected at end of function parameter list
 kangax-es2019/misc.Function-toString.arrows.js: failed
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: 1:14:Invalid expression encountered
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: 1:2:Invalid expression encountered
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: failed
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: failed
 kangax-es2019/misc.Function-toString.computed-names.js: failed
 kangax-es2019/misc.Function-toString.native-code.js: OK
 kangax-es2019/misc.Function-toString.unicode-escapes.js: failed
@@ -1337,7 +1337,7 @@ kangax-es2021/FinalizationRegistry.js: ReferenceError: Property 'FinalizationReg
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
-kangax-es2021/WeakRef.js: ReferenceError: Property 'WeakRef' doesn't exist
+kangax-es2021/WeakRef.js: OK
 kangax-es2021/logical-assignment.and.js: OK
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: OK
 kangax-es2021/logical-assignment.and.short-circuit.js: OK
@@ -1369,23 +1369,23 @@ kangax-es2022/Object.hasOwn.js: OK
 kangax-es2022/at-method.Array.js: OK
 kangax-es2022/at-method.String.js: OK
 kangax-es2022/at-method.TypedArray.js: OK
-kangax-es2022/class-fields.computed-instance.js: class-fields.computed-instance.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2022/class-fields.computed-static.js: class-fields.computed-static.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2022/class-fields.instance.parent-scope.js: class-fields.instance.parent-scope.js:11:5: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2022/class-fields.private-instance.initializers.js: class-fields.private-instance.initializers.js:10:5: error: private properties are not supported class-fields.private-instance.initializers.js:12:19: error: private properties are not supported
-kangax-es2022/class-fields.private-instance.js: class-fields.private-instance.js:11:5: error: private properties are not supported class-fields.private-instance.js:13:12: error: private properties are not supported class-fields.private-instance.js:16:19: error: private properties are not supported
-kangax-es2022/class-fields.private-instance.optional-access.js: class-fields.private-instance.optional-access.js:10:5: error: private properties are not supported class-fields.private-instance.optional-access.js:12:17: error: private properties are not supported
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: class-fields.private-instance.optional-deep-access.js:10:5: error: private properties are not supported class-fields.private-instance.optional-deep-access.js:12:19: error: private properties are not supported
-kangax-es2022/class-fields.private-static.js: class-fields.private-static.js:11:12: error: private properties are not supported class-fields.private-static.js:13:16: error: private properties are not supported
-kangax-es2022/class-fields.public-instance.js: class-fields.public-instance.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2022/class-fields.public-static.js: class-fields.public-static.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-es2022/class-fields.static.define.js: class-fields.static.define.js:9:11: error: Invalid expression encountered Emitted 1 errors. exiting.
-kangax-es2022/class-methods.private-accessor.js: class-methods.private-accessor.js:11:5: error: private properties are not supported class-methods.private-accessor.js:12:5: error: private properties are not supported class-methods.private-accessor.js:14:12: error: private properties are not supported class-methods.private-accessor.js:15:19: error:
-kangax-es2022/class-methods.private-instance.js: class-methods.private-instance.js:10:5: error: private properties are not supported class-methods.private-instance.js:12:19: error: private properties are not supported
-kangax-es2022/class-methods.private-static-accessor.js: class-methods.private-static-accessor.js:11:12: error: private properties are not supported class-methods.private-static-accessor.js:12:12: error: private properties are not supported class-methods.private-static-accessor.js:14:9: error: private properties are not supported class-methods.private-sta
-kangax-es2022/class-methods.private-static.js: class-methods.private-static.js:10:12: error: private properties are not supported class-methods.private-static.js:12:16: error: private properties are not supported
-kangax-es2022/class-static-init-blocks.js: class-static-init-blocks.js:12:12: error: class static blocks are not supported
-kangax-es2022/ergonomic-brand-checks.js: ergonomic-brand-checks.js:10:5: error: private properties are not supported ergonomic-brand-checks.js:12:14: error: private properties are not supported
+kangax-es2022/class-fields.computed-instance.js: OK
+kangax-es2022/class-fields.computed-static.js: OK
+kangax-es2022/class-fields.instance.parent-scope.js: OK
+kangax-es2022/class-fields.private-instance.initializers.js: OK
+kangax-es2022/class-fields.private-instance.js: OK
+kangax-es2022/class-fields.private-instance.optional-access.js: OK
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: OK
+kangax-es2022/class-fields.private-static.js: OK
+kangax-es2022/class-fields.public-instance.js: OK
+kangax-es2022/class-fields.public-static.js: OK
+kangax-es2022/class-fields.static.define.js: OK
+kangax-es2022/class-methods.private-accessor.js: OK
+kangax-es2022/class-methods.private-instance.js: OK
+kangax-es2022/class-methods.private-static-accessor.js: OK
+kangax-es2022/class-methods.private-static.js: OK
+kangax-es2022/class-static-init-blocks.js: OK
+kangax-es2022/ergonomic-brand-checks.js: OK
 kangax-es2022/regex.flags.d.constructor.js: OK
 kangax-es2022/regex.flags.d.shows-in-flags.js: OK
 kangax-es2023/Array.prototype.findLastIndex.js: OK
@@ -1405,13 +1405,13 @@ kangax-es2024/Map.groupBy.js: TypeError: undefined is not a function
 kangax-es2024/Object.groupBy.js: TypeError: undefined is not a function
 kangax-es2024/Promise.withResolvers.js: TypeError: undefined is not a function
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid RegExp: Invalid flags
-kangax-es2024/regex.flags.v.properties-of-strings.js: regex.flags.v.properties-of-strings.js:9:10: error: Invalid regular expression: Invalid flags regex.flags.v.properties-of-strings.js:10:7: error: Invalid regular expression: Invalid flags
-kangax-es2024/regex.flags.v.set-notations.js: regex.flags.v.set-notations.js:9:10: error: Invalid regular expression: Invalid flags regex.flags.v.set-notations.js:10:6: error: Invalid regular expression: Invalid flags
+kangax-es2024/regex.flags.v.properties-of-strings.js: regex.flags.v.properties-of-strings.js:9:10: error: Invalid regular expression: Invalid flags regex.flags.v.properties-of-strings.js:10:7: error: Invalid regular expression: Invalid flags Emitted 2 errors. exiting.
+kangax-es2024/regex.flags.v.set-notations.js: regex.flags.v.set-notations.js:9:10: error: Invalid regular expression: Invalid flags regex.flags.v.set-notations.js:10:6: error: Invalid regular expression: Invalid flags Emitted 2 errors. exiting.
 kangax-es2024/regex.flags.v.shows-in-flags.js: failed
-kangax-es2024/regex.flags.v.unicode-15.1.js: regex.flags.v.unicode-15.1.js:9:10: error: Invalid regular expression: Invalid flags
-kangax-es2024/regex.flags.v.unicode-16.0.js: regex.flags.v.unicode-16.0.js:9:10: error: Invalid regular expression: Invalid flags
-kangax-es2024/regex.flags.v.unicode-17.0.js: regex.flags.v.unicode-17.0.js:9:10: error: Invalid regular expression: Invalid flags
-kangax-es2025/Iterator.extends.js: Iterator.extends.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+kangax-es2024/regex.flags.v.unicode-15.1.js: regex.flags.v.unicode-15.1.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
+kangax-es2024/regex.flags.v.unicode-16.0.js: regex.flags.v.unicode-16.0.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
+kangax-es2024/regex.flags.v.unicode-17.0.js: regex.flags.v.unicode-17.0.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
+kangax-es2025/Iterator.extends.js: ReferenceError: Property 'Iterator' doesn't exist
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: Property 'Iterator' doesn't exist
 kangax-es2025/Iterator.from.iterator.js: ReferenceError: Property 'Iterator' doesn't exist
 kangax-es2025/Iterator.instanceof.js: ReferenceError: Property 'Iterator' doesn't exist
@@ -1429,70 +1429,70 @@ kangax-es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
 kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
 kangax-es2025/Promise.try.js: failed
 kangax-es2025/RegExp.escape.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.difference.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.intersection.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not a function
-kangax-es2025/Set.prototype.union.js: TypeError: undefined is not a function
-kangax-es2025/regex.duplicate-named-groups.js: regex.duplicate-named-groups.js:9:10: error: Invalid regular expression: Duplicate capture group name
-kangax-es2025/regex.pattern-modifiers.i.js: regex.pattern-modifiers.i.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat
-kangax-es2025/regex.pattern-modifiers.m.js: regex.pattern-modifiers.m.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat
-kangax-es2025/regex.pattern-modifiers.s.js: regex.pattern-modifiers.s.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat
+kangax-es2025/Set.prototype.difference.js: OK
+kangax-es2025/Set.prototype.intersection.js: OK
+kangax-es2025/Set.prototype.isDisjointFrom.js: OK
+kangax-es2025/Set.prototype.isSubsetOf.js: OK
+kangax-es2025/Set.prototype.isSupersetOf.js: OK
+kangax-es2025/Set.prototype.symmetricDifference.js: OK
+kangax-es2025/Set.prototype.union.js: OK
+kangax-es2025/regex.duplicate-named-groups.js: regex.duplicate-named-groups.js:9:10: error: Invalid regular expression: Duplicate capture group name Emitted 1 errors. exiting.
+kangax-es2025/regex.pattern-modifiers.i.js: regex.pattern-modifiers.i.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+kangax-es2025/regex.pattern-modifiers.m.js: regex.pattern-modifiers.m.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+kangax-es2025/regex.pattern-modifiers.s.js: regex.pattern-modifiers.s.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: OK
-kangax-intl/Intl.Collator.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.Collator.valid-tags.js: failed
-kangax-intl/Intl.Collator.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
-kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Property 'Intl' doesn't exist
-kangax-intl/Intl.js: failed
-kangax-intl/Intl.prototype.js: ReferenceError: Property 'Intl' doesn't exist
+kangax-intl/Intl.Collator.js: OK
+kangax-intl/Intl.Collator.new-instances.js: OK
+kangax-intl/Intl.Collator.prototype.compare.js: OK
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: OK
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
+kangax-intl/Intl.Collator.valid-tags.js: OK
+kangax-intl/Intl.Collator.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: OK
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: failed
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
+kangax-intl/Intl.js: OK
+kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
 kangax-next/Array.isTemplateObject.js: TypeError: undefined is not a function
 kangax-next/AsyncDisposableStack.js: ReferenceError: Property 'AsyncDisposableStack' doesn't exist
-kangax-next/AsyncIterator.extends.js: AsyncIterator.extends.js:9:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-kangax-next/AsyncIterator.from.async-iterable.js: AsyncIterator.from.async-iterable.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.from.async-iterable.js:50:39: error: async generators are unsupported
-kangax-next/AsyncIterator.from.iterable.js: AsyncIterator.from.iterable.js:46:5: error: for await..of loops are currently unsupported
-kangax-next/AsyncIterator.from.iterator.js: AsyncIterator.from.iterator.js:46:5: error: for await..of loops are currently unsupported
-kangax-next/AsyncIterator.instanceof.js: AsyncIterator.instanceof.js:9:11: error: async generators are unsupported
+kangax-next/AsyncIterator.extends.js: ReferenceError: Property 'AsyncIterator' doesn't exist
+kangax-next/AsyncIterator.from.async-iterable.js: AsyncIterator.from.async-iterable.js:50:39: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: Property 'AsyncIterator' doesn't exist
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: Property 'AsyncIterator' doesn't exist
+kangax-next/AsyncIterator.instanceof.js: AsyncIterator.instanceof.js:9:11: error: async generators are unsupported Emitted 1 errors. exiting.
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'AsyncIterator' doesn't exist
-kangax-next/AsyncIterator.prototype.drop.js: AsyncIterator.prototype.drop.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.prototype.drop.js:50:11: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.every.js: AsyncIterator.prototype.every.js:44:4: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.filter.js: AsyncIterator.prototype.filter.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.prototype.filter.js:50:11: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.find.js: AsyncIterator.prototype.find.js:44:4: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.flatMap.js: AsyncIterator.prototype.flatMap.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.prototype.flatMap.js:50:11: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.forEach.js: AsyncIterator.prototype.forEach.js:45:4: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.map.js: AsyncIterator.prototype.map.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.prototype.map.js:50:11: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.reduce.js: AsyncIterator.prototype.reduce.js:44:4: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.some.js: AsyncIterator.prototype.some.js:44:4: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.take.js: AsyncIterator.prototype.take.js:46:5: error: for await..of loops are currently unsupported AsyncIterator.prototype.take.js:50:11: error: async generators are unsupported
-kangax-next/AsyncIterator.prototype.toArray.js: AsyncIterator.prototype.toArray.js:44:4: error: async generators are unsupported
+kangax-next/AsyncIterator.prototype.drop.js: AsyncIterator.prototype.drop.js:50:11: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.every.js: AsyncIterator.prototype.every.js:44:4: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.filter.js: AsyncIterator.prototype.filter.js:50:11: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.find.js: AsyncIterator.prototype.find.js:44:4: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.flatMap.js: AsyncIterator.prototype.flatMap.js:50:11: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.forEach.js: AsyncIterator.prototype.forEach.js:45:4: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.map.js: AsyncIterator.prototype.map.js:50:11: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.reduce.js: AsyncIterator.prototype.reduce.js:44:4: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.some.js: AsyncIterator.prototype.some.js:44:4: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.take.js: AsyncIterator.prototype.take.js:50:11: error: async generators are unsupported Emitted 1 errors. exiting.
+kangax-next/AsyncIterator.prototype.toArray.js: AsyncIterator.prototype.toArray.js:44:4: error: async generators are unsupported Emitted 1 errors. exiting.
 kangax-next/DisposableStack.js: ReferenceError: Property 'DisposableStack' doesn't exist
 kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SuppressedError.js:13:11: error: ';' expected
+kangax-next/SuppressedError.js: SuppressedError.js:13:11: error: ';' expected Emitted 1 errors. exiting.
 kangax-next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.toHex.js: TypeError: undefined is not a function
 kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
-kangax-next/await-using.for-of.js: await-using.for-of.js:57:22: error: ';' or 'in' expected inside 'for'
-kangax-next/await-using.js: await-using.js:52:19: error: ';' expected
-kangax-next/class-decorators.js: class-decorators.js:10:5: error: unrecognized character '@'
-kangax-next/function.sent.js: function.sent.js:11:22: error: '(' expected at start of function parameter list
-kangax-next/throw-expr.arrow.js: throw-expr.arrow.js:9:18: error: invalid expression
-kangax-next/throw-expr.conditional.js: throw-expr.conditional.js:9:15: error: invalid expression
-kangax-next/throw-expr.logical.js: throw-expr.logical.js:11:15: error: invalid expression
-kangax-next/throw-expr.param-init.js: throw-expr.param-init.js:9:22: error: invalid expression
-kangax-next/using.for-of.js: using.for-of.js:22:16: error: ';' or 'in' expected inside 'for'
-kangax-next/using.js: using.js:16:11: error: ';' expected
+kangax-next/await-using.for-of.js: await-using.for-of.js:57:22: error: ';' or 'in' expected inside 'for' Emitted 1 errors. exiting.
+kangax-next/await-using.js: await-using.js:52:19: error: ';' expected Emitted 1 errors. exiting.
+kangax-next/class-decorators.js: class-decorators.js:10:5: error: unrecognized character '@' Emitted 1 errors. exiting.
+kangax-next/function.sent.js: function.sent.js:11:22: error: '(' expected at start of function parameter list Emitted 1 errors. exiting.
+kangax-next/throw-expr.arrow.js: throw-expr.arrow.js:9:18: error: invalid expression Emitted 1 errors. exiting.
+kangax-next/throw-expr.conditional.js: throw-expr.conditional.js:9:15: error: invalid expression Emitted 1 errors. exiting.
+kangax-next/throw-expr.logical.js: throw-expr.logical.js:11:15: error: invalid expression Emitted 1 errors. exiting.
+kangax-next/throw-expr.param-init.js: throw-expr.param-init.js:9:22: error: invalid expression Emitted 1 errors. exiting.
+kangax-next/using.for-of.js: using.for-of.js:22:16: error: ';' or 'in' expected inside 'for' Emitted 1 errors. exiting.
+kangax-next/using.js: using.js:16:11: error: ';' expected Emitted 1 errors. exiting.

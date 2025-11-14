@@ -581,10 +581,10 @@ CONFIGS = {
   'espruino': Config(
       filter_lines_re=r'^(%s)$' % '|'.join([r' ____                 _ ', r'\|  __\|___ ___ ___ _ _\|_\|___ ___ ', r'\|  __\|_ -\| . \|  _\| \| \| \|   \| . \|', r'\|____\|___\|  _\|_\| |___\|_\|_\|_\|___\|', r' *\|_\| espruino.com', r'.* (c) 20.. G.Williams', r'Espruino is Open Source. Our work is supported', r'only by sales of official boards and donations:', r'http://espruino.com/Donate']),
   ),
-  'hermes': Config(
-      flags=['-O'],
-      warn_lines_re=r"(warning:|error\('Incorrect|throw 'Unsupported)",
-  ),
+  # -O: expensive optimizations (nearly always helps)
+  # -w: disable all warnings
+  'hermes': Config(flags=['-O', '-w']),
+  'static-hermes': Config(flags=['-O', '-w']),
   'jerryscript': Config(
       timeout_for_test={
           # Passes splay.js with --mem-heap=65536, but awfully slow: Splay 0.279, SplayLatency 1.50

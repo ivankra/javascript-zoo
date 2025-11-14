@@ -13,15 +13,32 @@ DIST_DIR := ../dist/$(DOCKER_ARCH)
 
 FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z]*.Dockerfile)))
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
-TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 
-# chakracode: doesn't support arm64 on Linux
-# dscriptcpp: 32-bit x86 build only
-# iv-lv5: no JIT on arm64 - main build is JIT-less
-# spidermonkey_1.8.5/17/24: doesn't support arm64 due to JIT that can't be compiled out
+# bali: arm64 build broken
+# chakracore: doesn't support arm64 on Linux, only Windows/macOS
+# dscriptcpp: hacky non-portable code, 32-bit x86 only
+# iv-lv5: JIT-less on arm64, don't build same thing under a different name
 # quickjit: x64 only
+# spidermonkey_1.8.5+: don't support arm64 due to JIT that can't be compiled out
+# starlight: arm64 build broken
+AMD64_ONLY_TARGETS := \
+  bali \
+  chakracore% \
+  dscriptcpp \
+  iv-lv5_jitless \
+  quickjit \
+  spidermonkey_1.8.5 \
+  spidermonkey_17 \
+  spidermonkey_24 \
+  starlight
+
+# Revamped repo
+DISABLED_TARGETS = hako%
+
+TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
+TARGETS := $(filter-out $(DISABLED_TARGETS),$(TARGETS))
 ifeq ($(DOCKER_ARCH),arm64)
-  TARGETS := $(filter-out chakracore% dscriptcpp iv-lv5_jitless quickjit spidermonkey_1.8.5 spidermonkey_17 spidermonkey_24 bali starlight,$(TARGETS))
+  TARGETS := $(filter-out $(AMD64_ONLY_TARGETS),$(TARGETS))
 endif
 
 all: base $(TARGETS)

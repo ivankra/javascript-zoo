@@ -82,6 +82,7 @@ def parse_conformance_data():
     for filename in glob.glob("conformance/results/*.txt"):
         engine = os.path.basename(filename).removesuffix('.txt')
         engine = engine.removesuffix('_full')
+        engine = engine.removesuffix('_intl')
         assert engine not in conformance_data
 
         tests = []
@@ -200,7 +201,7 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             assert filename.endswith(variant + '.json')
             assert dist_json.get('arch', arch) == arch
 
-            if variant == 'full':  # only used for conformance
+            if variant in ['full', 'intl']:  # only used for conformance
                 continue
 
             if variant != '':
@@ -268,7 +269,7 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             for key in row.keys():
                 if key in dist_json and dist_json[key] == row[key]:
                     dist_json.pop(key)
-            for key in ['title']:
+            for key in ['title', 'bench']:
                 if key in dist_json:
                     dist_json.pop(key)
             bench_flat.append(dist_json)
@@ -375,6 +376,7 @@ METADATA_MAP = {
     # GitHub: github mirror, if main repository not on github
     # Sources: non-git source code reference (tarball, page, etc)
     'Repository': MDMapping('repository', simplify=[strip_html, strip_markdown_links, strip_brackets]),
+    'Branch': MDMapping('branch', simplify=[strip_html, strip_markdown_links, strip_brackets], drop_detailed=True),
     'GitHub': MDMapping('github', simplify=[strip_html, strip_markdown_links, strip_brackets]),
     'Sources': MDMapping('sources'),
     'LOC': MDMapping('loc', simplify=[strip_brackets2, maybe_parse_int]),

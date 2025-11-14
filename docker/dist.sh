@@ -96,6 +96,8 @@ cd /dist
 ID="$ID"
 
 ENGINE="\${ID%_*}"
+ENGINE="\${ENGINE%_*}"
+ENGINE="\${ENGINE%_*}"
 echo "\$ENGINE" >jsz_engine
 
 if [[ "\$ID" == *_* ]]; then
@@ -113,7 +115,7 @@ echo "$ARCH" >jsz_arch
     if [[ \$key == binary_size || \$key == dist_size || \$key == loc ]]; then
       val=\$(cat "\$f")
     else
-      val=\$(cat "\$f" | python -c 'import sys, json; print(json.dumps(sys.stdin.read().strip()));')
+      val=\$(cat "\$f" | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read().strip()));')
     fi
     echo "  \"\$key\": \$val,"
     rm -f "\$f"
