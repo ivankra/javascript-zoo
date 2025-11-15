@@ -4,6 +4,10 @@
 ARG BASE=jsz-clang
 FROM $BASE
 
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends libicu-dev
+    #build-essential ca-certificates cmake git python3 ruby
+
 ARG REPO=https://github.com/WebKit/WebKit.git
 ARG REV=main
 
@@ -11,23 +15,26 @@ WORKDIR /src
 RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
-RUN apt-get update -y && apt-get install -y libicu-dev
-
-ARG VARIANT=
+ARG JITLESS=
 
 RUN export CXXFLAGS="-Wno-error" && \
     Tools/Scripts/build-webkit \
-      $([ "$VARIANT" = dfg      ] && echo --no-ftl-jit --no-webassembly) \
-      $([ "$VARIANT" = baseline ] && echo --no-ftl-jit --no-dfg-jit --no-webassembly) \
-      $([ "$VARIANT" = jitless  ] && echo --no-jit --no-webassembly) \
-      # LLint/offlineasm's CLoop backend: opcodes implemented in portable, \
-      # but machine-generated C++, rather than assembly, ~20% slower \
-      $([ "$VARIANT" = cloop    ] && echo --no-jit --no-webassembly --cloop --no-sampling-profiler) \
+      $(if [ "$JITLESS" = true ]; then echo --no-jit --no-webassembly; fi) \
       --jsc-only \
       --release \
       --cmakeargs="-DENABLE_STATIC_JSC=ON -DUSE_THIN_ARCHIVES=OFF -DDEVELOPER_MODE_FATAL_WARNINGS=OFF"
 
+# More trims:
+#   * JIT-less with handcoded asm in LLint:
+#     --no-jit --no-webassembly
+#   * JIT-less with CLoop: machine-generated C++ ops in LLint, ~20% slower:
+#     --no-jit --no-webassembly --cloop --no-sampling-profiler
+#   * Baseline JIT only:
+#     --no-ftl-jit --no-dfg-jit --no-webassembly
+#   * Baseline+DFG:
+#     --no-ftl-jit --no-webassembly
+
 ENV JS_BINARY=/src/WebKitBuild/JSCOnly/Release/bin/jsc LICENSE=Source/JavaScriptCore/COPYING.LIB
 RUN curl "https://commits.webkit.org/$(git rev-parse HEAD)/json" 2>&1 \
-      | sed -Ene 's/.*"identifier": "([^"]+)".*/\1/p' >jsz_version
+      | sed -En 's/.*"identifier": "([^"]+)".*/\1/p' | sed 's/@main//' >jsz_version
 CMD ${JS_BINARY}

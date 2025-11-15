@@ -14,12 +14,13 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
+# Build failures with gcc15
 ARG BASE=jsz-gcc14
 FROM $BASE
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends libicu-dev libreadline-dev
-# build-essential ca-certificates cmake git ninja-build python3 zip
+    #build-essential ca-certificates cmake git ninja-build python3 zip
 
 ARG REPO=https://github.com/facebook/hermes.git
 ARG REV=main
@@ -29,15 +30,18 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
 # For broken -DHERMES_ENABLE_INTL=ON on main branch
-#RUN sed -i 's/std::uint8_t/unsigned char/g' /src/lib/Platform/Intl/impl_icu/IntlUtils.cpp
+RUN sed -i 's/std::uint8_t/unsigned char/g' /src/lib/Platform/Intl/impl_icu/IntlUtils.cpp
 
-# -DHERMES_STATIC_LINK=ON: produces fully static binary, embedding ICU data, ~40MB
+# Static build (-DHERMES_STATIC_LINK=ON) embeds ICU data, ~40MB
 
-ARG VARIANT=
-RUN cmake -S . -B build_release -G Ninja -DCMAKE_BUILD_TYPE=Release \
-    $(if [ "$VARIANT" = intl ]; then echo -DHERMES_ENABLE_INTL=ON; fi)
-RUN cmake --build build_release
+ARG INTL=
+ARG STATIC=
 
-ENV JS_BINARY=/src/build_release/bin/hermes
-RUN git describe --tags | sed 's/hermes-//; s/^v//;' >jsz_version  # --version is broken
+RUN cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
+      $(if [ "$INTL" = true ]; then echo -DHERMES_ENABLE_INTL=ON; fi) \
+      $(if [ "$STATIC" = true ]; then echo -DHERMES_STATIC_LINK=ON; fi) && \
+    cmake --build build
+
+ENV JS_BINARY=/src/build/bin/hermes
+RUN git describe --tags | sed 's/hermes-//; s/^v//;' >jsz_version  # --version lies
 CMD ${JS_BINARY}

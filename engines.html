@@ -625,7 +625,7 @@ function renderCell(th, row) {
     }
     s = '<nobr>' + s.split('/').join('</nobr>/<nobr>') + '</nobr>';
     td.innerHTML = s;
-    if (row.license.match(/(proprietary|custom|agpl)/i)) {
+    if (row.license.match(/(proprietary|custom|missing|agpl)/i)) {
       td.classList.add('red');
     }
   } else if (col === 'standard' && row.standard) {

@@ -44,6 +44,11 @@
     * update.py to gen github workflows
     * lightweight bench
     * profile builds - time/space, optimize
+  * build variants
+    * normal full-featured and static builds by default, `*_min` for size benchmarking
+    * COPY libicu-static.sh ./ && ./libicu-static.sh
+    * -march=x86-64-v3 builds. `*_avx2` / `/dist/amd64-v3/*`
+    * Generic ways to pass extra CFLAGS: wrapper, hack system gcc spec, clang's CCC_OVERRIDE_OPTIONS.
 * /dist/runtimes
   * node, bun, deno symlinks
   * node_0.x - nvm install 0.x
@@ -54,11 +59,10 @@
   * check builds from BASE=debian:stable and other releases
   * check compatibility of builds with non-debian distros; vs engines official builds
   * test running outside /dist, fix/document exceptions
-  * fully static builds `*_static`
-  * normal full-featured builds by default, `*_min` for size benchmarking
   * version handling
 * update.py
   * checkout and update repos, update loc
+  * lint: broken links; versions start with number
 * bench
   * timestamp_output to score
   * try various strategies to reduce variance
@@ -71,7 +75,7 @@
 * parsers / transpilers
   * expand and add transpilers
   * test parsers on conformance test suite, report results
-  * test minimalistic ES5 engine (mujs, duktape, node 0.x - nvm install 0, spidermonkey_1.8.5 etc) + transpilers on conformance test suite
+  * test ES5 engines (mujs, duktape, node 0.x - nvm install 0, spidermonkey_1.8.5 etc) + transpilers on conformance test suite
 * conformance
   * test262
   * align filenames with test262
@@ -80,6 +84,4 @@
   * ES1: this/inheritance/hoisting tests
   * ESnext permalinks
   * default strict mode fixes, bun/deno
-  * run.sh embed metadata in txt
-  * run.sh parallelize / maybe rewrite in python
   * github.io conformance.html: compat-table's original + transposed layout, toggleable loadable details, opt for speed

@@ -13,7 +13,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 RUN git submodule update --depth=1 --init --recursive qtbase qtdeclarative
 
-ARG VARIANT=
+ARG JITLESS=
 
 RUN cmake -B build -G Ninja \
       -DCMAKE_BUILD_TYPE=Release \
@@ -25,7 +25,7 @@ RUN cmake -B build -G Ninja \
       -DQT_FEATURE_private_tests=ON \
       -DQT_FEATURE_qml_animation=OFF \
       -DQT_FEATURE_qml_debug=OFF \
-      -DQT_FEATURE_qml_jit="$([ "$VARIANT" = jitless ] && echo OFF || echo ON)" \
+      -DQT_FEATURE_qml_jit="$(if [ "$JITLESS" = true ]; then echo OFF; else echo ON; fi)" \
       -DQT_FEATURE_qml_locale=OFF \
       -DQT_FEATURE_qml_network=OFF \
       -DQT_FEATURE_qml_profiler=OFF

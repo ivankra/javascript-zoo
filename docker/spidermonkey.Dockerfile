@@ -24,13 +24,14 @@ RUN apt-get update -y && \
 
 # jitless: like --no-jit-backend cli flag, NOT same as: --no-ion --no-baseline --no-asmjs --no-native-regexp !
 # full: full-featured build
-ARG VARIANT=
+ARG INTL=
+ARG JITLESS=
 
 # Build instructions: https://firefox-source-docs.mozilla.org/js/build.html
 # Run './js/src/configure --help' for configure options.
 RUN { \
       echo "ac_add_options --enable-project=js"; \
-      if [ "$VARIANT" = jitless ]; then \
+      if [ "$JITLESS" = true ]; then \
         echo "ac_add_options --disable-jit"; \
       else \
         echo "ac_add_options --enable-jit"; \
@@ -41,13 +42,13 @@ RUN { \
       echo "ac_add_options --disable-debug"; \
       echo "ac_add_options --disable-debug-symbols"; \
       echo "ac_add_options --disable-tests"; \
-      if [ "$VARIANT" != full ]; then \
+      if [ "$INTL" != true ]; then \
         echo "ac_add_options --without-intl-api"; \
         echo "ac_add_options --disable-icu4x"; \
       fi; \
     } >MOZCONFIG
-RUN MOZCONFIG=/src/MOZCONFIG ./mach build
-RUN ln -s obj-*/ obj
+
+RUN MOZCONFIG=/src/MOZCONFIG ./mach build && ln -s obj-*/ obj
 
 ENV JS_BINARY=/src/obj/dist/bin/js LICENSE=toolkit/content/license.html
 RUN ${JS_BINARY} -v | egrep -o [0-9.]+ >jsz_version

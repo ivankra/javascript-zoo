@@ -19,4 +19,5 @@ RUN echo >/dist/porffor \
     chmod a+rx /dist/porffor
 
 ENV JS_BINARY=/dist/porffor
+RUN du -bc /dist/porffor-dist | tail -1 | cut -f 1 >jsz_dist_size
 CMD ${JS_BINARY}

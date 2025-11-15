@@ -6,6 +6,7 @@
 * LOC:         292098 (`cloc src`)
 * Language:    C++
 * License:     Apache-2.0
+* Org:         ByteDance
 * Standard:    ES2019
 * Years:       2024-
 * Ancestor:    [QuickJS](quickjs.md)

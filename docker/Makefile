@@ -64,9 +64,6 @@ $(IID_DIR)/base: base*.Dockerfile $(IID_DIR)/runtime
 	@mkdir -p $(IID_DIR)
 	$(DOCKER_BUILD) -t jsz-debian -t jsz-debian13 -f base-debian.Dockerfile .
 	$(DOCKER_BUILD) -t jsz-debian11 -f base-debian.Dockerfile --build-arg BASE=debian:bullseye .
-	if [[ `uname -m` == x86_64 ]]; then \
-	  $(DOCKER_BUILD) -t jsz-ubuntu22 -f base-debian.Dockerfile --build-arg BASE=ubuntu:22.04 .; \
-	fi
 	$(DOCKER_BUILD) -t jsz-gcc14 -t jsz-gcc -f base-gcc.Dockerfile --build-arg=VER=14 .
 	$(DOCKER_BUILD) -t jsz-clang20 -t jsz-clang -f base-clang.Dockerfile --build-arg=VER=20 .
 	#$(DOCKER_BUILD) -t jsz-gcc15 -f base-gcc.Dockerfile --build-arg=VER=15 .
