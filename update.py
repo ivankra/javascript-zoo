@@ -204,6 +204,9 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             if variant in ['full', 'intl']:  # only used for conformance
                 continue
 
+            if len(set(dist_json.keys()) - {'arch', 'variant', 'engine'}) == 0:
+                continue
+
             if variant != '':
                 variant_row = data.get(engine + '_' + variant)
                 if variant_row:

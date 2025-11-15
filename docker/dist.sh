@@ -143,7 +143,7 @@ rm -rf \
   "../dist/$ARCH/$ID-dist" \
   "../dist/$ARCH/$ID-lib"
 
-for subdir in "" "parsers/"; do
+for subdir in "" parsers/ transpilers/; do
   for src in "$TMPCP/dist/$subdir$ID"*; do
     if [[ -e "$src" ]]; then
       mkdir -p "../dist/$ARCH/$subdir"
