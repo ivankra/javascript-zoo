@@ -60,26 +60,22 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../conformance/results/chakracore.txt">Full log</a>.</li>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/chakracore_intl.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
-<li>ES3: 97%<pre>
+<li>ES3: 99%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: large number precision failed
-<a href="../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Invalid character
-<a href="../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Invalid character
-<a href="../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: Invalid character
 </pre></li>
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 95%, ES2016+ 50%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 95%<pre>
+<details><summary>compat-table: ES6 96%, ES2016+ 50%, Next 6%, Intl 89%</summary><ul>
+<li>ES6: 96%<pre>
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.match.js">RegExp.prototype.Symbol.match.js</a>: failed
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.replace.js">RegExp.prototype.Symbol.replace.js</a>: failed
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.search.js">RegExp.prototype.Symbol.search.js</a>: failed
 <a href="../conformance/kangax-es6/RegExp.prototype.Symbol.split.js">RegExp.prototype.Symbol.split.js</a>: failed
 <a href="../conformance/kangax-es6/RegExp.prototype.flags.js">RegExp.prototype.flags.js</a>: failed
-<a href="../conformance/kangax-es6/String.prototype.normalize.js">String.prototype.normalize.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.CreateDynamicFunction.js">misc.Proxy.get.CreateDynamicFunction.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.RegExp-constructor.js">misc.Proxy.get.RegExp-constructor.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js">misc.Proxy.get.RegExp.Symbol.match.js</a>: TypeError: Unable to get property 'call' of undefined or null reference
@@ -94,7 +90,8 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.split.js">misc.Proxy.get.String.split.js</a>: failed
 <a href="../conformance/kangax-es6/misc.RegExp-prototype-toString-generic.js">misc.RegExp-prototype-toString-generic.js</a>: TypeError: RegExp.prototype.toString: 'this' is not a RegExp object
-<a href="../conformance/kangax-es6/misc.identifier-syntax.var-2.js">misc.identifier-syntax.var-2.js</a>: SyntaxError: Invalid character
+<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: failed
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: Error: Out of stack space
 ...
 </pre></li>
 <li>ES2016: 100%</li>
@@ -154,5 +151,9 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <li>ES2024: 0%<br>
 <li>ES2025: 0%<br>
 <li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>Intl: 89%<pre>
+<a href="../conformance/kangax-intl/Intl.Collator.rejects-invalid-tags.js">Intl.Collator.rejects-invalid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js">Intl.NumberFormat.rejects-invalid-tags.js</a>: failed
+</pre></li>
 </ul></details>

@@ -65,30 +65,7 @@ Unmaintained old Rust codebase, only builds on x64.
 <a href="../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: TypeError: not a callable object
 ...
 </pre></li>
-<li>ES5: 50%<pre>
-<a href="../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: Array.prototype.every not a function; TypeError: not a callable object
-<a href="../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Array.prototype.indexOf.js">Array.prototype.indexOf.js</a>: negative fromIndex failed
-<a href="../conformance/es5/Array.prototype.lastIndexOf.js">Array.prototype.lastIndexOf.js</a>: Array.prototype.lastIndexOf not a function; TypeError: not a callable object
-<a href="../conformance/es5/Array.prototype.reduceRight.js">Array.prototype.reduceRight.js</a>: Array.prototype.reduceRight not a function; TypeError: not a callable object
-<a href="../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: date with milliseconds format incorrect; invalid date does not throw RangeError
-<a href="../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: invalid date does not return null
-<a href="../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: argument binding failed; TypeError: null does not have properties
-<a href="../conformance/es5/JSON.js">JSON.js</a>: failed: typeof JSON !== 'object'
-<a href="../conformance/es5/JSON.parse.js">JSON.parse.js</a>: TypeError: undefined does not have properties ('parse')
-<a href="../conformance/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: TypeError: undefined does not have properties ('parse')
-<a href="../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: TypeError: undefined does not have properties ('stringify')
-<a href="../conformance/es5/Object.getOwnPropertyNames.js">Object.getOwnPropertyNames.js</a>: Object.getOwnPropertyNames not a function; TypeError: not a callable object
-<a href="../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
-<a href="../conformance/es5/debugger.js">debugger.js</a>: Compilation failed: SyntaxError: Compile Error NotYetImpl("NYI: Debugger(DebuggerStmt { span: Span { lo: BytePos(216), hi: BytePos(225), ctxt: #0 } })")
-<a href="../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: Infinity is not a number after assignment; Infinity not positive infinity after assignment
-<a href="../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: NaN is not a number after assignment; NaN === NaN after assignment
-...
-</pre></li>
+<li>ES5: 49%<br>
 </ul></details>
 
 <details><summary>compat-table: ES6 28%, ES2016+ 15%, Next 0%, Intl 4%</summary><ul>

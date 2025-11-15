@@ -63,7 +63,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 86%, ES2016+ 80%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 86%, ES2016+ 81%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 86%, <b>2 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
 <a href="../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
@@ -130,10 +130,8 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <li>ES2020: 93%<pre>
 <a href="../conformance/kangax-es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: failed
 </pre></li>
-<li>ES2021: 57%<pre>
+<li>ES2021: 71%<pre>
 <a href="../conformance/kangax-es2021/FinalizationRegistry.js">FinalizationRegistry.js</a>: Error: FinalizationRegistry not implemented
-<a href="../conformance/kangax-es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: Error: Promise.any not implemented
-<a href="../conformance/kangax-es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: Error: Promise.any not implemented
 </pre></li>
 <li>ES2022: 95%<pre>
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "d424954bdce2303080955bca4e93431c0cefcc42f677e4ca913e95f7817c65a6", "binary_size": 13248272, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "cb5efca30764f4e10bd3abbc53a5e202763dd5de", "revision_date": "2025-11-03", "version": "0.1.0-dev+cb5efca30"}
+Metadata: {"arch": "arm64", "binary_sha256": "d0ac3a6e1f93e274c69e210d5ea6adf3ed7e3479331c55b4bb8ac7a972ae7b48", "binary_size": 13227896, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "e799c15d3b7c14ce93572126e4d70a568f52ae78", "revision_date": "2025-11-14", "version": "0.1.0-dev+e799c15d3"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

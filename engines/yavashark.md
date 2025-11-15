@@ -51,7 +51,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (7642) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2006) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
 <a href="../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed
@@ -87,7 +87,7 @@ JavaScript/TypeScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 57%, ES2016+ 58%, Next 4%, Intl 50%</summary><ul>
+<details><summary>compat-table: ES6 57%, ES2016+ 59%, Next 4%, Intl 50%</summary><ul>
 <li>ES6: 57%, <b>7 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: [object Error]
@@ -145,7 +145,7 @@ JavaScript/TypeScript engine written in Rust.
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (22025) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (16609) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 <a href="../conformance/kangax-es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../conformance/kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: failed
@@ -153,7 +153,21 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: [object Error]
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Unknown Unicode property Script=Sidetic
 </pre></li>
-<li>ES2019: 48%<br>
+<li>ES2019: 56%<pre>
+<a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/Object.fromEntries.js">Object.fromEntries.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/Symbol.prototype.description.empty.js">Symbol.prototype.description.empty.js</a>: failed
+<a href="../conformance/kangax-es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: failed
+<a href="../conformance/kangax-es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: [object Error]
+</pre></li>
 <li>ES2020: 73%<pre>
 <a href="../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: [object Error]
 <a href="../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: [object Error]

@@ -587,7 +587,7 @@ kangax-es6/Promise.all.js: InternalError: stack overflow
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
-kangax-es6/Promise.race.iterable.js: InternalError: stack overflow
+kangax-es6/Promise.race.iterable.js: OK
 kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: OK
@@ -1084,7 +1084,7 @@ kangax-es6/subclassing.Function.prototype.call.js: OK
 kangax-es6/subclassing.Promise.all.js: InternalError: stack overflow
 kangax-es6/subclassing.Promise.js: OK
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
-kangax-es6/subclassing.Promise.race.js: InternalError: stack overflow
+kangax-es6/subclassing.Promise.race.js: OK
 kangax-es6/subclassing.RegExp.exec.js: OK
 kangax-es6/subclassing.RegExp.js: OK
 kangax-es6/subclassing.RegExp.prototype-chain.js: OK

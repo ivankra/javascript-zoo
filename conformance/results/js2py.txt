@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 4376224, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
+Metadata: {"arch": "arm64", "dist_size": 211697110, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1122,17 +1122,17 @@ kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: DataView is not defin
 kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: DataView is not defined
 kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: DataView is not defined
 kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: DataView is not defined
-kangax-es6/typed-arrays.Float32Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Float64Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Int8Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Int16Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Int32Array.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Float32Array.js: failed
+kangax-es6/typed-arrays.Float64Array.js: failed
+kangax-es6/typed-arrays.Int8Array.js: OverflowError: Python integer 128 out of bounds for int8
+kangax-es6/typed-arrays.Int16Array.js: OverflowError: Python integer 32768 out of bounds for int16
+kangax-es6/typed-arrays.Int32Array.js: OverflowError: Python integer 2147483648 out of bounds for int32
 kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: Symbol is not defined
-kangax-es6/typed-arrays.Uint8Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Uint8ClampedArray.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Uint16Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.Uint32Array.js: NameError: name 'numpy' is not defined
-kangax-es6/typed-arrays.constructor-iterables.js: NameError: name 'numpy' is not defined
+kangax-es6/typed-arrays.Uint8Array.js: OverflowError: Python integer 256 out of bounds for uint8
+kangax-es6/typed-arrays.Uint8ClampedArray.js: OK
+kangax-es6/typed-arrays.Uint16Array.js: OverflowError: Python integer 65536 out of bounds for uint16
+kangax-es6/typed-arrays.Uint32Array.js: OverflowError: Python integer 4294967296 out of bounds for uint16
+kangax-es6/typed-arrays.constructor-iterables.js: failed
 kangax-es6/typed-arrays.constructor-requires-new.js: failed
 kangax-es6/typed-arrays.correct-prototype-chains.js: failed
 kangax-es6/typed-arrays.from.js: failed
@@ -1193,7 +1193,7 @@ kangax-es6/well-known.unscopables.js: KeyError: b'\x96\xdc\x96\t\x14DDl\x13c$\x8
 kangax-es2016/Array.prototype.includes.generic.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
 kangax-es2016/Array.prototype.includes.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
 kangax-es2016/Array.prototype.includes.sparse.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
-kangax-es2016/Array.prototype.includes.typed-array.js: NameError: name 'numpy' is not defined
+kangax-es2016/Array.prototype.includes.typed-array.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Int8Array')
 kangax-es2016/exponentiation.assignment.js: KeyError: b'\xb7Z4\xf7K4`B I\xf6x\x92P\x0b\xb5' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *=
 kangax-es2016/exponentiation.basic.js: KeyError: b'\xc6\xb4\xae qX\xc2t=\xe5{l\xf3.\xa1\x0b' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
 kangax-es2016/exponentiation.unary-negation-error.js: KeyError: b'\x05C\xe5\xa3pE\xc3QX\x1a\x85\xe9N;\x8bz' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 10: Unexpected token *
@@ -1368,7 +1368,7 @@ kangax-es2022/Object.hasOwn.ToObject-first.js: failed
 kangax-es2022/Object.hasOwn.js: TypeError: 'undefined' is not a function (tried calling property 'hasOwn' of 'Function')
 kangax-es2022/at-method.Array.js: TypeError: 'undefined' is not a function (tried calling property 'at' of 'Array')
 kangax-es2022/at-method.String.js: TypeError: 'undefined' is not a function (tried calling property 'at' of 'String')
-kangax-es2022/at-method.TypedArray.js: NameError: name 'numpy' is not defined
+kangax-es2022/at-method.TypedArray.js: TypeError: 'undefined' is not a function (tried calling property 'at' of 'Int8Array')
 kangax-es2022/class-fields.computed-instance.js: KeyError: b'\x06d\xc8sl\xd1\x86\x1c\xae\xb0\xf7\xaa\x1d\xf7p\x8d' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECM
 kangax-es2022/class-fields.computed-static.js: KeyError: b'j[\x163c<y\x9d5\x04[\x13=\x1d5\x1a' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 kangax-es2022/class-fields.instance.parent-scope.js: KeyError: b'\xc1w\xbfA\xc8\xf9Y\xbc\xe1\xc0\x9f\x06\xbc\x17\xcb\xdc' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ClassDeclaration is not supported by
@@ -1394,13 +1394,13 @@ kangax-es2023/Array.prototype.toReversed.js: TypeError: 'undefined' is not a fun
 kangax-es2023/Array.prototype.toSorted.js: TypeError: 'undefined' is not a function (tried calling property 'toSorted' of 'Array')
 kangax-es2023/Array.prototype.toSpliced.js: TypeError: 'undefined' is not a function (tried calling property 'toSpliced' of 'Array')
 kangax-es2023/Array.prototype.with.js: TypeError: 'undefined' is not a function (tried calling property 'with' of 'Array')
-kangax-es2023/TypedArray.prototype.toReversed.js: NameError: name 'numpy' is not defined
-kangax-es2023/TypedArray.prototype.toSorted.js: NameError: name 'numpy' is not defined
-kangax-es2023/TypedArray.prototype.with.js: NameError: name 'numpy' is not defined
+kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: 'undefined' is not a function (tried calling property 'toReversed' of 'Uint8Array')
+kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: 'undefined' is not a function (tried calling property 'toSorted' of 'Uint8Array')
+kangax-es2023/TypedArray.prototype.with.js: TypeError: 'undefined' is not a function (tried calling property 'with' of 'Uint8Array')
 kangax-es2023/hashbang.js: KeyError: b'\xc5\x16\xc4\x83\xbe\xbe\x15V\xf2\xd3\xc2\x88\x9c\xa6\x0b\xb0' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 1: Unexpected token ILLEGAL
-kangax-es2024/ArrayBuffer.prototype.detached.js: NameError: name 'numpy' is not defined
-kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: NameError: name 'numpy' is not defined
-kangax-es2024/ArrayBuffer.prototype.transfer.js: NameError: name 'numpy' is not defined
+kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: Undefined and null dont have properties (tried getting property 'transfer')
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: Undefined and null dont have properties (tried getting property 'transferToFixedLength')
+kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: Undefined and null dont have properties (tried getting property 'transfer')
 kangax-es2024/Map.groupBy.js: KeyError: b'\xf9\xbaH\xf0jE8\x8c}\xf4E)\xf3\x1a\xb4A' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1.
 kangax-es2024/Object.groupBy.js: KeyError: b'\xc3\xc1\xf10\xfa\xc4q0\xee\xd5\xa0\xdeC\x19u\xd5' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunction is not supported by ECMA 5.1
 kangax-es2024/Promise.withResolvers.js: ReferenceError: Promise is not defined
@@ -1497,8 +1497,8 @@ kangax-next/Uint8Array.fromBase64.js: KeyError: b'`\x03\xf9\xdet\xf5\xa5\xf6\xea
 kangax-next/Uint8Array.fromHex.js: KeyError: b'aa\xb1Q\x7f\xfbU\xe8\x89\xe2\xa0\xe4\x98t\x80\xab' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1
 kangax-next/Uint8Array.setFromBase64.js: KeyError: b'\xa0A\xb0\x8c\xd2\xd3\x8f\x9b\xb7D\xbbw*\xb1\xb2r' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 5.1
 kangax-next/Uint8Array.setFromHex.js: KeyError: b'\xa5\xae\xbd;g\xc9\xf0\x06U\x94\x8aT\xa3\x16\x17\xd6' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 
-kangax-next/Uint8Array.toBase64.js: NameError: name 'numpy' is not defined
-kangax-next/Uint8Array.toHex.js: NameError: name 'numpy' is not defined
+kangax-next/Uint8Array.toBase64.js: TypeError: 'undefined' is not a function (tried calling property 'toBase64' of 'Uint8Array')
+kangax-next/Uint8Array.toHex.js: TypeError: 'undefined' is not a function (tried calling property 'toHex' of 'Uint8Array')
 kangax-next/WeakMap.prototype.upsert.js: KeyError: b'\xc4\xaf \x87c\tr\x93P\x7f\x9e\x87`\xcd8:' During handling of the above exception, another exception occurred: raise self.createError(self.lineNumber, self.lastIndex, unicode(e)) js2py.internals.simplex.JsException: SyntaxError: Line 11: ArrowFunctionExpression is not supported by ECMA 5
 kangax-next/await-using.for-of.js: KeyError: b'V\x06:\x94O\xc0\x11\xc5\xa0\xea^D\xcc6\xe0\xae' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 46: Unexpected token [
 kangax-next/await-using.js: KeyError: b'#\xb8\xaf\x00\xc7b,\xa3\x0e_\x81/\xb36\xd12' During handling of the above exception, another exception occurred: raise self.unexpectedTokenError(token, message) js2py.internals.simplex.JsException: SyntaxError: Line 44: Unexpected token function

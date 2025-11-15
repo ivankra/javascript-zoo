@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1594451, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "850461e0e7c55bb30571344f12eaa5b432b8a7b5", "revision_date": "2025-11-09"}
+Metadata: {"arch": "arm64", "dist_size": 1594204, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "b9ea8ab5aa43b7ec69d9c2d92aa5e83099ba798a", "revision_date": "2025-11-12"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -282,8 +282,8 @@ es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
 es3/global.URIError.thrown.js: OK
-es3/global.decodeURIComponent.js: decode UTF-8 failed
-es3/global.decodeURI.js: decode UTF-8 failed; # not decoded failed
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
 es3/global.encodeURI.js: OK
 es3/global.undefined.js: OK

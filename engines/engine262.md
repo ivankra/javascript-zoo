@@ -24,7 +24,7 @@ But, very slow.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 97%</summary><ul>
+<details><summary>ES1-ES5: 98%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/engine262.txt">Full log</a>.</li>
 <li>ES1: 97%<pre>
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString is not implemented
@@ -34,13 +34,11 @@ But, very slow.
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: 'escape' is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: 'unescape' is not defined
 </pre></li>
-<li>ES3: 96%<pre>
+<li>ES3: 97%<pre>
 <a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Date.prototype.toLocaleDateString is not implemented
 <a href="../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString is not implemented
 <a href="../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Error: Date.prototype.toLocaleTimeString is not implemented
 <a href="../conformance/es3/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: TypeError: undefined is not a function
-<a href="../conformance/es3/global.decodeURIComponent.js">global.decodeURIComponent.js</a>: decode UTF-8 failed
-<a href="../conformance/es3/global.decodeURI.js">global.decodeURI.js</a>: decode UTF-8 failed; # not decoded failed
 </pre></li>
 <li>ES5: 100%</li>
 </ul></details>

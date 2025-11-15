@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffffcf04ede0 sp=0xffffcf04edb0 pc=0x7d628
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff4d3ee6e0 sp=0xffff4d3ee6b0 pc=0x7d628
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff5428d6e0 sp=0xffff5428d6b0 pc=0x7d628
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0xffff6da2d6e0 sp=0xffff6da2d6b0 pc=0x7d628
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK

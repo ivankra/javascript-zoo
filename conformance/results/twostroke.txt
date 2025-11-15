@@ -3,11 +3,11 @@ es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: Array.prototype.constructor failed
-es1/Array.prototype.join.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Array.prototype.join.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Array.prototype.join.js: OK
 es1/Array.prototype.reverse.generic.js: OK
 es1/Array.prototype.reverse.js: OK
-es1/Array.prototype.sort.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Array.prototype.sort.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Array.prototype.sort.js: OK
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: Boolean() failed
@@ -35,24 +35,24 @@ es1/Date.prototype.getUTCMilliseconds.js: OK
 es1/Date.prototype.getUTCMinutes.js: OK
 es1/Date.prototype.getUTCMonth.js: OK
 es1/Date.prototype.getUTCSeconds.js: OK
-es1/Date.prototype.setDate.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setHours.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMilliseconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMinutes.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMonth.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setSeconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setTime.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCDate.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCHours.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCMilliseconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCMinutes.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCMonth.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setUTCSeconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.toLocaleString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setDate.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setFullYear.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setHours.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setMilliseconds.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setMinutes.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setMonth.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setSeconds.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setTime.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCDate.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCFullYear.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCHours.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCMilliseconds.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCMinutes.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCMonth.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setUTCSeconds.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.toLocaleString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Date.prototype.toString.js: OK
-es1/Date.prototype.toUTCString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.toUTCString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Date.prototype.valueOf.js: OK
 es1/Function.js: OK
 es1/Function.length.js: Function.length failed
@@ -68,10 +68,10 @@ es1/Math.PI.js: OK
 es1/Math.SQRT1_2.js: failed
 es1/Math.SQRT2.js: failed
 es1/Math.abs.js: OK
-es1/Math.acos.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Math.asin.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Math.atan2.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Math.atan.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Math.acos.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Math.asin.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Math.atan2.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Math.atan.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Math.ceil.js: OK
 es1/Math.cos.js: OK
 es1/Math.exp.js: OK
@@ -90,7 +90,7 @@ es1/Number.MIN_VALUE.js: OK
 es1/Number.NEGATIVE_INFINITY.js: OK
 es1/Number.NaN.js: OK
 es1/Number.POSITIVE_INFINITY.js: OK
-es1/Number.js: /dist/twostroke-dist/lib/twostroke/runtime/types.rb:6:in `to_primitive': undefined method `default_value' for nil (NoMethodError)
+es1/Number.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/types.rb:6:in `to_primitive': undefined method `default_value' for nil (NoMethodError)
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
@@ -100,7 +100,7 @@ es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
 es1/String.generics.js: OK
-es1/String.js: /dist/twostroke-dist/lib/twostroke/runtime/types.rb:6:in `to_primitive': undefined method `default_value' for nil (NoMethodError)
+es1/String.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/types.rb:6:in `to_primitive': undefined method `default_value' for nil (NoMethodError)
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
@@ -114,17 +114,17 @@ es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: OK
-es1/annex-b.Date.prototype.setYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/annex-b.Date.prototype.toGMTString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/annex-b.global.escape.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/annex-b.global.unescape.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/annex-b.Date.prototype.setYear.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/annex-b.Date.prototype.toGMTString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/annex-b.global.escape.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/annex-b.global.unescape.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 27, col 4. Unexpected BAREWORD (Twostroke::ParseError)
-es1/assignment.bitwise.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 9, col 2. Unexpected LEFT_SHIFT_EQUALS (Twostroke::ParseError)
+es1/asi.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 27, col 4. Unexpected BAREWORD (Twostroke::ParseError)
+es1/assignment.bitwise.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 9, col 2. Unexpected LEFT_SHIFT_EQUALS (Twostroke::ParseError)
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
 es1/assignment.unsigned-shift.js: OK
@@ -198,25 +198,25 @@ es1/void.typeof.js: OK
 es1/while.js: OK
 es1/with.js: OK
 es3/Array.prototype.concat.js: OK
-es3/Array.prototype.pop.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.pop.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.push.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/Array.prototype.push.js: OK
-es3/Array.prototype.shift.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.shift.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/Array.prototype.shift.js: OK
 es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
-es3/Array.prototype.splice.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Array.prototype.splice.js: timeout
-es3/Array.prototype.toLocaleString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Array.prototype.unshift.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.splice.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.splice.js: /dist/twostroke-dist/repl.rb: failed to allocate memory (NoMemoryError)
+es3/Array.prototype.toLocaleString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Array.prototype.unshift.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/Array.prototype.unshift.js: unshift multiple elements failed; unshift on empty array failed
 es3/Array.prototype.unshift.returns-new-length.js: OK
-es3/Date.prototype.toDateString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Date.prototype.toLocaleDateString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Date.prototype.toLocaleString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Date.prototype.toLocaleTimeString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/Date.prototype.toTimeString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Date.prototype.toDateString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Date.prototype.toLocaleDateString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Date.prototype.toLocaleString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Date.prototype.toLocaleTimeString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Date.prototype.toTimeString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: failed
 es3/Error.prototype.message.js: failed
@@ -227,16 +227,16 @@ es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
-es3/Number.prototype.toExponential.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/number.rb:30:in `log': Numerical argument is out of domain - log (Math::DomainError)
-es3/Number.prototype.toExponential.rounding.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/number.rb:30:in `log': Numerical argument is out of domain - log (Math::DomainError)
+es3/Number.prototype.toExponential.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/number.rb:30:in `log': Numerical argument is out of domain - log (Math::DomainError)
+es3/Number.prototype.toExponential.rounding.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/number.rb:30:in `log': Numerical argument is out of domain - log (Math::DomainError)
 es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/number.rb:69:in `floor': NaN (FloatDomainError) toPrecision(5) fixed notation failed
+es3/Number.prototype.toPrecision.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/number.rb:69:in `floor': NaN (FloatDomainError) toPrecision(5) fixed notation failed
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
 es3/Object.prototype.propertyIsEnumerable.js: inherited property should be false failed
-es3/Object.prototype.toLocaleString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/Object.prototype.toLocaleString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
 es3/RegExp.js: lastIndex failed; RegExp passthrough failed
@@ -247,33 +247,33 @@ es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
-es3/String.prototype.concat.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/String.prototype.concat.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/String.prototype.localeCompare.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.concat.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.concat.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.localeCompare.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: /dist/twostroke-dist/lib/twostroke/runtime/types/function.rb:80:in `call': undefined method `global_scope' for nil (NoMethodError)
+es3/String.prototype.match.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/types/function.rb:80:in `call': undefined method `global_scope' for nil (NoMethodError)
 es3/String.prototype.replace.capture.js: $1 failed; $1 $2 $3 failed; undefined capture failed; spec example failed; $nn 10 captures failed; $nn reverse order failed; 4 captures reverse failed
 es3/String.prototype.replace.extra.js: $$ failed; $& failed; $` failed; $' failed; combined replacements failed
 es3/String.prototype.replace.generic.js: regex with capture failed
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
-es3/String.prototype.search.generic.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/String.prototype.search.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/String.prototype.search.str.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.search.generic.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.search.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.search.str.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/string.rb:22:in `split': integer 4294967295 too big to convert to `int' (RangeError) ''.split().length !== 1; ''.split()[0] !== ''; ''.split(undefined).length !== 1; ''.split(undefined)[0] !== ''; '0'.split(undefined, 0).length !== 0; 'ab'.split(/(?:ab)
+es3/String.prototype.split.bugs.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/string.rb:22:in `split': integer 4294967295 too big to convert to `int' (RangeError) ''.split().length !== 1; ''.split()[0] !== ''; ''.split(undefined).length !== 1; ''.split(undefined)[0] !== ''; '0'.split(undefined, 0).length !== 0; 'ab'.spl
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
 es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on single match failed; split on whitespace failed; split by empty regex failed
-es3/String.prototype.toLocaleLowerCase.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/String.prototype.toLocaleUpperCase.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.toLocaleLowerCase.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/String.prototype.toLocaleUpperCase.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: name failed
 es3/global.RangeError.js: name failed
-es3/global.RangeError.thrown.js: timeout
+es3/global.RangeError.thrown.js: /dist/twostroke-dist/repl.rb: failed to allocate memory (NoMemoryError)
 es3/global.ReferenceError.js: name failed
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: name failed
@@ -281,13 +281,13 @@ es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: name failed
 es3/global.TypeError.thrown.js: no exception for in number
 es3/global.URIError.js: name failed
-es3/global.URIError.thrown.js: /dist/twostroke-dist/lib/twostroke/tokens.rb:7:in `chr': invalid codepoint 0xDC00 in UTF-8 (RangeError)
-es3/global.decodeURIComponent.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/global.decodeURI.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/global.encodeURIComponent.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es3/global.encodeURI.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/global.URIError.thrown.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/tokens.rb:7:in `chr': invalid codepoint 0xDC00 in UTF-8 (RangeError)
+es3/global.decodeURIComponent.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/global.decodeURI.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/global.encodeURIComponent.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/global.encodeURI.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 8, col 6. (Twostroke::LexError)
+es3/identifiers.unicode.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 8, col 6. (Twostroke::LexError)
 es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: OK
@@ -301,7 +301,7 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 9, col 12. (Twostroke::LexError)
+es3/literals.object.unicode.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 9, col 12. (Twostroke::LexError)
 es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
@@ -329,7 +329,7 @@ es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
-es3/regex.negative-lookahead.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es3/regex.negative-lookahead.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -339,13 +339,13 @@ es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
 es3/source.line-terminators.js: OK
-es3/source.whitespace.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 12, col 5. (Twostroke::LexError)
-es3/source.whitespace.unicode.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 8, col 5. (Twostroke::LexError)
+es3/source.whitespace.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 12, col 5. (Twostroke::LexError)
+es3/source.whitespace.unicode.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 8, col 5. (Twostroke::LexError)
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:483:in `popexh': undefined method `[]' for nil (NoMethodError)
+es3/try-catch-finally.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:483:in `popexh': undefined method `[]' for nil (NoMethodError)
 es3/try-catch-throw.js: OK
-es5/Array.isArray.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Array.isArray not a function
+es5/Array.isArray.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Array.isArray not a function
 es5/Array.prototype.every.js: sparse array skips missing elements failed
 es5/Array.prototype.filter.js: sparse array skips missing elements failed
 es5/Array.prototype.forEach.js: sparse array skips missing elements failed
@@ -355,55 +355,55 @@ es5/Array.prototype.map.js: OK
 es5/Array.prototype.reduceRight.js: OK
 es5/Array.prototype.reduce.js: sparse array skips missing elements failed
 es5/Array.prototype.some.js: OK
-es5/Array.prototype.sort.TypeError.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Null (NoMethodError)
-es5/Array.prototype.sort.undefined-comparefn.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Undefined (NoMethodError)
+es5/Array.prototype.sort.TypeError.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Null (NoMethodError)
+es5/Array.prototype.sort.undefined-comparefn.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Undefined (NoMethodError)
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Date.prototype.toISOString not a function
-es5/Date.prototype.toJSON.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:12:in `divmod': NaN (FloatDomainError) Date.prototype.toJSON not a function
+es5/Date.prototype.toISOString.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Date.prototype.toISOString not a function
+es5/Date.prototype.toJSON.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/lib/date.rb:12:in `divmod': NaN (FloatDomainError) Date.prototype.toJSON not a function
 es5/Function.prototype-not-enumerable.js: prototype is enumerable; named function prototype is enumerable; prototype appears in for-in
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Function.prototype.bind not a function
+es5/Function.prototype.bind.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Function.prototype.bind not a function
 es5/JSON.js: OK
-es5/JSON.parse.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? trailing comma does not throw SyntaxError
+es5/JSON.parse.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
-es5/JSON.stringify.js: /dist/twostroke-dist/lib/twostroke/runtime/scope.rb:31:in `declare': stack level too deep (SystemStackError)
+es5/JSON.stringify.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/scope.rb:31:in `declare': stack level too deep (SystemStackError)
 es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
 es5/JSON.stringify.space.js: space parameter failed
-es5/Object.create.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.create not a function
-es5/Object.defineProperties.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.defineProperties not a function
-es5/Object.defineProperty.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.defineProperty not a function
-es5/Object.freeze.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.freeze not a function
-es5/Object.getOwnPropertyDescriptor.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getOwnPropertyDescriptor not a function
-es5/Object.getOwnPropertyNames.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getOwnPropertyNames not a function
-es5/Object.getPrototypeOf.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getPrototypeOf not a function
-es5/Object.isExtensible.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isExtensible not a function
-es5/Object.isFrozen.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isFrozen not a function
-es5/Object.isSealed.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isSealed not a function
-es5/Object.keys.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es5/Object.preventExtensions.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.preventExtensions not a function
+es5/Object.create.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.create not a function
+es5/Object.defineProperties.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.defineProperties not a function
+es5/Object.defineProperty.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.defineProperty not a function
+es5/Object.freeze.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.freeze not a function
+es5/Object.getOwnPropertyDescriptor.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getOwnPropertyDescriptor not a function
+es5/Object.getOwnPropertyNames.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getOwnPropertyNames not a function
+es5/Object.getPrototypeOf.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.getPrototypeOf not a function
+es5/Object.isExtensible.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isExtensible not a function
+es5/Object.isFrozen.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isFrozen not a function
+es5/Object.isSealed.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.isSealed not a function
+es5/Object.keys.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es5/Object.preventExtensions.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.preventExtensions not a function
 es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
-es5/Object.seal.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.seal not a function
+es5/Object.seal.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Object.seal not a function
 es5/String.indexing.js: OK
-es5/String.prototype.trim.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? String.prototype.trim not a function
+es5/String.prototype.trim.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? String.prototype.trim not a function
 es5/arguments.toStringTag.js: failed
-es5/debugger.js: /dist/twostroke-dist/lib/twostroke/compiler/tsasm.rb:20:in `compile': undefined method `Debugger' for an instance of Twostroke::Compiler::TSASM (NoMethodError)
+es5/debugger.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/compiler/tsasm.rb:20:in `compile': undefined method `Debugger' for an instance of Twostroke::Compiler::TSASM (NoMethodError)
 es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
 es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: undefined is not undefined after assignment
-es5/literals.object.getters.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 9, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
-es5/literals.object.setters.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 10, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
+es5/literals.object.getters.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 9, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
+es5/literals.object.setters.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 10, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
 es5/literals.object.trailing-comma.js: OK
-es5/source.keyword-properties.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 15, col 13. Found IF, expected BAREWORD, STRING, NUMBER (Twostroke::ParseError)
+es5/source.keyword-properties.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 15, col 13. Found IF, expected BAREWORD, STRING, NUMBER (Twostroke::ParseError)
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '﻿' at line 1, col 1. (Twostroke::LexError)
-es5/source.zero-width-chars.js: /dist/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 11, col 7. (Twostroke::LexError)
+es5/source.whitespace.bom.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '﻿' at line 1, col 1. (Twostroke::LexError)
+es5/source.zero-width-chars.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/lexer.rb:63:in `read_token': Illegal character '/' at line 11, col 7. (Twostroke::LexError)
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: /dist/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 29, col 13. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
+es5/strict.no-assignment-to-non-writable.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/parser.rb:23:in `error!': Syntax error at line 29, col 13. Found BAREWORD<x>, expected COLON (Twostroke::ParseError)
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
@@ -414,7 +414,7 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
 es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
-es5/strict.this-primitive-not-coerced-in-accessors.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es5/strict.this-primitive-not-coerced-in-accessors.js: /zoo/dist/arm64/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
 es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK

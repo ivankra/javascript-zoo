@@ -144,6 +144,8 @@ def gen_table(column_data):
     return ''.join(html)
 
 def main():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
     data = {}  # engine => lines
 
     for filename in sorted(glob.glob("*.txt")):

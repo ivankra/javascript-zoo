@@ -33,18 +33,16 @@
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
-<li>ES6: 96%<pre>
+<details><summary>compat-table: ES6 97%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
+<li>ES6: 97%<pre>
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
-<a href="../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: qux is not a function
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: InternalError: stack overflow
-<a href="../conformance/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: stack overflow
 </pre></li>

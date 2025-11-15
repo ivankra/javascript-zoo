@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 98013, "engine": "js-interpreter", "host_engine": "jsc 301765@main", "repository": "https://github.com/NeilFraser/JS-Interpreter.git", "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709", "revision_date": "2025-02-27", "variant": "jsc"}
+Metadata: {"arch": "arm64", "dist_size": 98013, "engine": "js-interpreter", "host_engine": "jsc 302449", "repository": "https://github.com/NeilFraser/JS-Interpreter.git", "revision": "37e73f830051d4bcfdf0e6b466e7bd8dc1d45709", "revision_date": "2025-02-27", "variant": "jsc"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1104,7 +1104,7 @@ kangax-es6/super.statement.js: Exception: SyntaxError: Unexpected token (11:8)
 kangax-es6/super.static-binding.js: Exception: SyntaxError: Unexpected token (10:8)
 kangax-es6/super.this-binding.js: Exception: SyntaxError: Unexpected token (10:8)
 kangax-es6/tail-calls.direct.js: OK
-kangax-es6/tail-calls.mutual.js: OK
+kangax-es6/tail-calls.mutual.js: timeout
 kangax-es6/template.basic.js: Exception: SyntaxError: Unexpected character '`' (11:7)
 kangax-es6/template.caching.js: Exception: SyntaxError: Unexpected character '`' (17:18)
 kangax-es6/template.escape-sequences.js: Exception: SyntaxError: Unexpected character '`' (13:19)

@@ -379,7 +379,7 @@ es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
-es5/Object.keys.js: OK
+es5/Object.keys.js: basic keys failed
 es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK

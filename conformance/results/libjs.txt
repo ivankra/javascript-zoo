@@ -588,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-kangax-es6/Promise.race.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/Promise.race.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded) WARNING: A promise was rejected without any handlers (result: [TypeError] Promise capability resolve value is not a function)
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: OK
 kangax-es6/Proxy.constructor-requires-new.js: OK
@@ -1081,10 +1081,10 @@ kangax-es6/subclassing.Function.prototype-chain.js: failed
 kangax-es6/subclassing.Function.prototype.apply.js: OK
 kangax-es6/subclassing.Function.prototype.bind.js: failed
 kangax-es6/subclassing.Function.prototype.call.js: OK
-kangax-es6/subclassing.Promise.all.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/subclassing.Promise.all.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded) WARNING: A promise was rejected without any handlers (result: [TypeError] Promise capability resolve value is not a function)
 kangax-es6/subclassing.Promise.js: OK
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
-kangax-es6/subclassing.Promise.race.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/subclassing.Promise.race.js: OK
 kangax-es6/subclassing.RegExp.exec.js: OK
 kangax-es6/subclassing.RegExp.js: OK
 kangax-es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1252,7 +1252,7 @@ kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es2017/async.await-rejection.js: OK
 kangax-es2017/async.await.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK

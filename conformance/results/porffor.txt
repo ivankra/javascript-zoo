@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "engine": "porffor", "repository": "https://github.com/CanadaHonk/porffor.git", "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0", "revision_date": "2025-11-09"}
+Metadata: {"arch": "arm64", "dist_size": 17708324, "engine": "porffor", "repository": "https://github.com/CanadaHonk/porffor.git", "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0", "revision_date": "2025-11-09"}
 es1/Array.js: Array() + array index length update failed; sparse array length failed
 es1/Array.length.assignment.js: array index length update failed
 es1/Array.length.js: length auto-update failed; length > max index failed

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "ba53133b7457e4d73784205d534f7b4553012846c7885ce66c1de8bc0a67cdd2", "binary_size": 39254424, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "v8", "repository": "https://chromium.googlesource.com/v8/v8.git", "revision": "f1ce8f44fb72804415e6085948c6979554be4663", "revision_date": "2025-11-03", "variant": "full", "version": "14.4.0 (candidate)"}
+Metadata: {"arch": "arm64", "binary_sha256": "f7ae185b2a81a0be71bb073cca401a4dc5d1ed12957576e18cc737f85ae35a37", "binary_size": 37384984, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "030a5e55591d07fddb4434a73842dcc76cde2533", "revision_date": "2025-11-06", "variant": "intl", "version": "145.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -988,7 +988,7 @@ kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
-kangax-es6/misc.Proxy.get.RegExp.flags.js: failed
+kangax-es6/misc.Proxy.get.RegExp.flags.js: OK
 kangax-es6/misc.Proxy.get.RegExp.test.js: OK
 kangax-es6/misc.Proxy.get.RegExp.toString.js: OK
 kangax-es6/misc.Proxy.get.String.match.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
-kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
+kangax-es6/tail-calls.direct.js: InternalError: too much recursion
+kangax-es6/tail-calls.mutual.js: InternalError: too much recursion
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1165,7 +1165,7 @@ kangax-es6/unicode-escapes.property-key.js: OK
 kangax-es6/unicode-escapes.string.js: OK
 kangax-es6/well-known.hasInstance.js: OK
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
-kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: OK
 kangax-es6/well-known.iterator.arguments.js: OK
 kangax-es6/well-known.iterator.js: OK
 kangax-es6/well-known.match.RegExp-constructor.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1476,17 +1476,17 @@ kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not
 kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
 kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
-kangax-next/AsyncIterator.prototype.drop.js: TypeError: (intermediate value)(...).drop is not a function
-kangax-next/AsyncIterator.prototype.every.js: TypeError: (intermediate value)(intermediate value)(...).every is not a function
-kangax-next/AsyncIterator.prototype.filter.js: TypeError: (intermediate value)(...).filter is not a function
-kangax-next/AsyncIterator.prototype.find.js: TypeError: (intermediate value)(intermediate value)(...).find is not a function
-kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: (intermediate value)(...).flatMap is not a function
-kangax-next/AsyncIterator.prototype.forEach.js: TypeError: (intermediate value)(intermediate value)(...).forEach is not a function
-kangax-next/AsyncIterator.prototype.map.js: TypeError: (intermediate value)(...).map is not a function
-kangax-next/AsyncIterator.prototype.reduce.js: TypeError: (intermediate value)(intermediate value)(...).reduce is not a function
-kangax-next/AsyncIterator.prototype.some.js: TypeError: (intermediate value)(intermediate value)(...).some is not a function
-kangax-next/AsyncIterator.prototype.take.js: TypeError: (intermediate value)(...).take is not a function
-kangax-next/AsyncIterator.prototype.toArray.js: TypeError: (intermediate value)(intermediate value)(...).toArray is not a function
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: (intermediate value)().drop is not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: (intermediate value)().every is not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: (intermediate value)().filter is not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: (intermediate value)().find is not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: (intermediate value)().flatMap is not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: (intermediate value)().forEach is not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: (intermediate value)().map is not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: (intermediate value)().reduce is not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: (intermediate value)().some is not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: (intermediate value)().take is not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: (intermediate value)().toArray is not a function
 kangax-next/DisposableStack.js: OK
 kangax-next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
 kangax-next/RegExp.1-9.js: OK
@@ -1502,11 +1502,11 @@ kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
 kangax-next/await-using.for-of.js: OK
 kangax-next/await-using.js: OK
-kangax-next/class-decorators.js: kangax-next/class-decorators.js:10: SyntaxError: Invalid or unexpected token SyntaxError: Invalid or unexpected token
-kangax-next/function.sent.js: kangax-next/function.sent.js:11: SyntaxError: Unexpected token '.' SyntaxError: Unexpected token '.'
-kangax-next/throw-expr.arrow.js: kangax-next/throw-expr.arrow.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
-kangax-next/throw-expr.conditional.js: kangax-next/throw-expr.conditional.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
-kangax-next/throw-expr.logical.js: kangax-next/throw-expr.logical.js:11: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
-kangax-next/throw-expr.param-init.js: kangax-next/throw-expr.param-init.js:9: SyntaxError: Unexpected token 'throw' SyntaxError: Unexpected token 'throw'
+kangax-next/class-decorators.js: class-decorators.js:10:5 SyntaxError: illegal character U+0040:
+kangax-next/function.sent.js: function.sent.js:11:22 SyntaxError: missing ( before formal parameters:
+kangax-next/throw-expr.arrow.js: throw-expr.arrow.js:9:18 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.conditional.js: throw-expr.conditional.js:9:15 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.logical.js: throw-expr.logical.js:11:15 SyntaxError: expected expression, got keyword 'throw':
+kangax-next/throw-expr.param-init.js: throw-expr.param-init.js:9:22 SyntaxError: expected expression, got keyword 'throw':
 kangax-next/using.for-of.js: OK
 kangax-next/using.js: OK

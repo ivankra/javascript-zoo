@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "686b979e08969f93bf6d184294dd68f5e6a54ba80b7c27c343c73fddd9ee9ed9", "binary_size": 8658056, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "4f898062298f73bb2aa7fbabfd0b8fea6ccc6cee", "revision_date": "2025-11-08", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-39-g4f898062"}
+Metadata: {"arch": "arm64", "binary_sha256": "7320f6bd9270b50ea98bf5f4507d25a38537d6ba3c7961a2ae302a626cf69478", "binary_size": 8723616, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "bb222d1a33698cf809c780fdf06dc06bd492df2a", "revision_date": "2025-11-15", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-44-gbb222d1a"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1334,8 +1334,8 @@ kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: OK
 kangax-es2021/FinalizationRegistry.js: Error: FinalizationRegistry not implemented
-kangax-es2021/Promise.any.AggregateError.js: Error: Promise.any not implemented
-kangax-es2021/Promise.any.fulfillment.js: Error: Promise.any not implemented
+kangax-es2021/Promise.any.AggregateError.js: OK
+kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
 kangax-es2021/WeakRef.js: OK
 kangax-es2021/logical-assignment.and.js: OK

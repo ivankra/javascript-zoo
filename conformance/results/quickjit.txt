@@ -123,7 +123,7 @@ es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: crashed (signal 11)
+es1/asi.js: failed: a = b + c<LF> (d + e).print()
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -745,7 +745,7 @@ kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: OK
 kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: OK
 kangax-es6/arrow.0-params.js: OK
 kangax-es6/arrow.1-param.js: OK
-kangax-es6/arrow.5-param.js: crashed (signal 11)
+kangax-es6/arrow.5-param.js: failed
 kangax-es6/arrow.bind.js: OK
 kangax-es6/arrow.lexical-arguments.js: OK
 kangax-es6/arrow.lexical-super.constructor.js: OK

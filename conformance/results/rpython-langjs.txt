@@ -1,7 +1,7 @@
 Metadata: {"arch": "arm64", "dist_size": 148027076, "engine": "rpython-langjs", "repository": "https://github.com/progval/rpython-langjs.git", "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9", "revision_date": "2017-10-01"}
-es1/Array.js: OK
-es1/Array.length.assignment.js: OK
-es1/Array.length.js: OK
+es1/Array.js: timeout
+es1/Array.length.assignment.js: timeout
+es1/Array.length.js: timeout
 es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: OK
 es1/Array.prototype.join.js: OK
@@ -17,7 +17,7 @@ es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: failed
 es1/Date.js: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
 es1/Date.prototype.constructor.js: OK
-es1/Date.prototype.getDate.js: failed
+es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: failed
 es1/Date.prototype.getFullYear.js: failed
 es1/Date.prototype.getHours.js: failed
@@ -52,9 +52,9 @@ es1/Date.prototype.setUTCMonth.js: raise NotImplementedError() NotImplementedErr
 es1/Date.prototype.setUTCSeconds.js: raise NotImplementedError() NotImplementedError
 es1/Date.prototype.toLocaleString.js: ERROR in Date.prototype.toLocaleString.js: TypeError: undefined is not a callable (toLocaleString)
 es1/Date.prototype.toString.js: OK
-es1/Date.prototype.toUTCString.js: OK
-es1/Date.prototype.valueOf.js: OK
-es1/Function.js: OK
+es1/Date.prototype.toUTCString.js: timeout
+es1/Date.prototype.valueOf.js: timeout
+es1/Function.js: timeout
 es1/Function.length.js: OK
 es1/Function.prototype.constructor.js: OK
 es1/Function.prototype.js: OK
@@ -105,9 +105,9 @@ es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
 es1/String.prototype.constructor.js: OK
-es1/String.prototype.indexOf.js: OK
-es1/String.prototype.lastIndexOf.js: OK
-es1/String.prototype.split.js: OK
+es1/String.prototype.indexOf.js: timeout
+es1/String.prototype.lastIndexOf.js: timeout
+es1/String.prototype.split.js: timeout
 es1/String.prototype.substring.js: OK
 es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
@@ -158,9 +158,9 @@ es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
 es1/global.parseInt.radix.js: OK
-es1/literals.decimal.js: OK
-es1/literals.hex.js: OK
-es1/literals.string.escapes.js: OK
+es1/literals.decimal.js: timeout
+es1/literals.hex.js: timeout
+es1/literals.string.escapes.js: timeout
 es1/literals.string.hex.js: OK
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
@@ -211,9 +211,9 @@ es3/Array.prototype.splice.js: ERROR in Array.prototype.splice.js: TypeError: un
 es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
 es3/Array.prototype.unshift.generic.js: ERROR in Array.prototype.unshift.generic.js: TypeError: W_Undefined.ToObject
 es3/Array.prototype.unshift.js: ERROR in Array.prototype.unshift.js: TypeError: undefined is not a callable (unshift)
-es3/Array.prototype.unshift.returns-new-length.js: ERROR in Array.prototype.unshift.returns-new-length.js: TypeError: undefined is not a callable (unshift)
-es3/Date.prototype.toDateString.js: ERROR in Date.prototype.toDateString.js: TypeError: undefined is not a callable (toDateString)
-es3/Date.prototype.toLocaleDateString.js: ERROR in Date.prototype.toLocaleDateString.js: TypeError: undefined is not a callable (toLocaleDateString)
+es3/Array.prototype.unshift.returns-new-length.js: timeout
+es3/Date.prototype.toDateString.js: timeout
+es3/Date.prototype.toLocaleDateString.js: timeout
 es3/Date.prototype.toLocaleString.js: ERROR in Date.prototype.toLocaleString.js: TypeError: undefined is not a callable (toLocaleString)
 es3/Date.prototype.toLocaleTimeString.js: ERROR in Date.prototype.toLocaleTimeString.js: TypeError: undefined is not a callable (toLocaleTimeString)
 es3/Date.prototype.toTimeString.js: ERROR in Date.prototype.toTimeString.js: TypeError: undefined is not a callable (toTimeString)
@@ -264,9 +264,9 @@ es3/String.prototype.slice.generic.js: ERROR in String.prototype.slice.generic.j
 es3/String.prototype.slice.js: ERROR in String.prototype.slice.js: TypeError: undefined is not a callable (slice)
 es3/String.prototype.split.bugs.js: Syntax Error in: String.prototype.split.bugs.js:66 Error: ['EOF']
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
-es3/String.prototype.split.regex.js: Syntax Error in: String.prototype.split.regex.js:7
-es3/String.prototype.toLocaleLowerCase.js: ERROR in String.prototype.toLocaleLowerCase.js: TypeError: undefined is not a callable (toLocaleLowerCase)
-es3/String.prototype.toLocaleUpperCase.js: ERROR in String.prototype.toLocaleUpperCase.js: TypeError: undefined is not a callable (toLocaleUpperCase)
+es3/String.prototype.split.regex.js: timeout
+es3/String.prototype.toLocaleLowerCase.js: timeout
+es3/String.prototype.toLocaleUpperCase.js: timeout
 es3/annex-b.String.prototype.substr.js: ERROR in annex-b.String.prototype.substr.js: TypeError: undefined is not a callable (substr)
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -321,9 +321,9 @@ es3/regex.dot.js: Syntax Error in: regex.dot.js:7 Error: ['EOF']
 es3/regex.end.js: Syntax Error in: regex.end.js:7 Error: ['EOF']
 es3/regex.escape.control.js: Syntax Error in: regex.escape.control.js:7
 es3/regex.escape.hex.js: Syntax Error in: regex.escape.hex.js:7
-es3/regex.escape.js: Syntax Error in: regex.escape.js:8
-es3/regex.escape.nul.js: Syntax Error in: regex.escape.nul.js:5
-es3/regex.escape.unicode.js: Syntax Error in: regex.escape.unicode.js:7
+es3/regex.escape.js: timeout
+es3/regex.escape.nul.js: timeout
+es3/regex.escape.unicode.js: timeout
 es3/regex.flag.global.js: Syntax Error in: regex.flag.global.js:7 Error: ['EOF']
 es3/regex.flag.ignorecase.js: Syntax Error in: regex.flag.ignorecase.js:7 Error: ['EOF']
 es3/regex.flag.multiline.js: Syntax Error in: regex.flag.multiline.js:8 Error: ['EOF']
@@ -370,9 +370,9 @@ es5/JSON.stringify.js: ERROR in JSON.stringify.js: ReferenceError: JSON is not d
 es5/JSON.stringify.replacer.js: ERROR in JSON.stringify.replacer.js: ReferenceError: JSON is not defined
 es5/JSON.stringify.space.js: ERROR in JSON.stringify.space.js: ReferenceError: JSON is not defined
 es5/Object.create.js: ERROR in Object.create.js: TypeError: undefined is not a callable (create) Object.create not a function
-es5/Object.defineProperties.js: ERROR in Object.defineProperties.js: TypeError: undefined is not a callable (defineProperties) Object.defineProperties not a function
-es5/Object.defineProperty.js: ERROR in Object.defineProperty.js: TypeError: undefined is not a callable (defineProperty) Object.defineProperty not a function
-es5/Object.freeze.js: ERROR in Object.freeze.js: TypeError: undefined is not a callable (freeze) Object.freeze not a function
+es5/Object.defineProperties.js: timeout
+es5/Object.defineProperty.js: timeout
+es5/Object.freeze.js: timeout
 es5/Object.getOwnPropertyDescriptor.js: ERROR in Object.getOwnPropertyDescriptor.js: TypeError: undefined is not a callable (getOwnPropertyDescriptor) Object.getOwnPropertyDescriptor not a function
 es5/Object.getOwnPropertyNames.js: ERROR in Object.getOwnPropertyNames.js: TypeError: undefined is not a callable (getOwnPropertyNames) Object.getOwnPropertyNames not a function
 es5/Object.getPrototypeOf.js: ERROR in Object.getPrototypeOf.js: TypeError: undefined is not a callable (create) Object.getPrototypeOf not a function

@@ -27,13 +27,13 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 95%, Next 19%, Intl 100%</summary><ul>
-<li>ES6: 92%<pre>
+<details><summary>compat-table: ES6 93%, ES2016+ 95%, Next 19%, Intl 100%</summary><ul>
+<li>ES6: 93%<pre>
 <a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 <a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 <a href="../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded) WARNING: A promise was rejected without any handlers (result: [TypeError] Promise capability resolve value is not a function)
 <a href="../conformance/kangax-es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: Uncaught exception: [SyntaxError] Not allowed to declare a function here (line: 12, column: 10)
 <a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: failed
@@ -48,13 +48,12 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <a href="../conformance/kangax-es6/misc.accessors-no-constructor.js">misc.accessors-no-constructor.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Function.prototype-chain.js">subclassing.Function.prototype-chain.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded) WARNING: A promise was rejected without any handlers (result: [TypeError] Promise capability resolve value is not a function)
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: Call stack size limit exceeded
 ...
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 92%<pre>
-<a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<li>ES2017: 94%<pre>
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
