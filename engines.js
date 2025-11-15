@@ -7,6 +7,7 @@ const jsz_engines = [
     "summary": "Fork of tiny-js with more features.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/42tiny-js.md",
     "repository": "https://github.com/gfwilliams/tiny-js.git",
+    "branch": "42tiny-js",
     "loc": 9209,
     "loc_detailed": "9209 (`cloc *.cpp *.h`)",
     "language": "C++",
@@ -19,6 +20,24 @@ const jsz_engines = [
     "github_stars": 567,
     "github_forks": 90,
     "github_contributors": 5,
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "75348311b6746436cefd81cc35ee36efb1e2685473b40053700b2c96b6d933ec",
+        "binary_size": 743832,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
+        "revision_date": "2014-10-19"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
+        "binary_size": 727304,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
+        "revision_date": "2014-10-19"
+      }
+    ],
     "conformance": {
       "es1": 0.6162,
       "es3": 0.5878,
@@ -323,7 +342,7 @@ const jsz_engines = [
     "loc": 662,
     "loc_detailed": "662 (`cloc src`)",
     "language": "TypeScript",
-    "license": "no",
+    "license": "Missing",
     "years": "2018",
     "parser": "Acorn",
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
@@ -342,7 +361,7 @@ const jsz_engines = [
     "loc": 74381,
     "loc_detailed": "74381 (`cloc src`)",
     "language": "Rust",
-    "license": "no",
+    "license": "Missing",
     "standard": "ESnext",
     "years": "2022-",
     "interpreter": "register-based VM",
@@ -776,6 +795,7 @@ const jsz_engines = [
         "arch": "amd64",
         "binary_sha256": "c959b32ae8c8db742444ef90000ee19c020ae9d09056460acef6d61d1e20eb0f",
         "binary_size": 12707112,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
         "revision_date": "2025-10-11",
         "Box2D": 48895,
@@ -815,6 +835,7 @@ const jsz_engines = [
         "arch": "amd64",
         "binary_sha256": "856e2edfe0f2cb242e2a226c2f30023dafe422aac43f547226da071b8e33a8d5",
         "binary_size": 9233312,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
         "revision_date": "2025-10-11",
         "variant": "jitless",
@@ -855,10 +876,10 @@ const jsz_engines = [
     ],
     "conformance": {
       "es1": 1.0,
-      "es3": 0.9662,
+      "es3": 0.9865,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9472,
+      "kangax-es6": 0.957,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.795,
       "kangax-es2018": 0.7368,
@@ -869,9 +890,9 @@ const jsz_engines = [
       "kangax-es2023": 0.6,
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
-      "kangax-intl": 0.25,
+      "kangax-intl": 0.8929,
       "kangax-next": 0.0606,
-      "es1-es5": 0.9881,
+      "es1-es5": 0.9952,
       "kangax-es2016plus": 0.4962
     }
   },
@@ -1110,7 +1131,28 @@ const jsz_engines = [
         "Richards": 58.952,
         "Richards_detailed": "N=100 median=58.952 mean=59.15±0.06 max=61.041"
       }
-    ]
+    ],
+    "conformance": {
+      "es1": 0.0,
+      "es3": 0.0,
+      "es5": 0.0,
+      "kangax-es5": 0.0,
+      "kangax-es6": 0.0,
+      "kangax-es2016": 0.0,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.0,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0,
+      "kangax-next": 0.0,
+      "es1-es5": 0.0,
+      "kangax-es2016plus": 0.0
+    }
   },
   {
     "id": "duktape",
@@ -1507,7 +1549,7 @@ const jsz_engines = [
     ],
     "conformance": {
       "es1": 0.9697,
-      "es3": 0.9595,
+      "es3": 0.973,
       "es5": 1.0,
       "kangax-es5": 0.9891,
       "kangax-es6": 0.9574,
@@ -1523,7 +1565,7 @@ const jsz_engines = [
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.9714,
+      "es1-es5": 0.9762,
       "kangax-es2016plus": 0.9438
     }
   },
@@ -2494,15 +2536,15 @@ const jsz_engines = [
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/hermes.md",
     "homepage": "https://hermesengine.dev/",
     "repository": "https://github.com/facebook/hermes.git",
-    "loc": 169845,
-    "loc_detailed": "169845 (`cloc include lib tools/hermes`)",
+    "loc": 170021,
+    "loc_detailed": "170021 (`cloc include lib tools/hermes`)",
     "language": "C++",
     "license": "MIT",
     "org": "Facebook",
     "standard": "ES2023",
     "standard_detailed": "ES2023 (partial)",
     "years": "2019-",
-    "features": "optimizing AOT compiler to bytecode with SSA IR",
+    "features": "optimizing LLVM-based AOT compiler to bytecode",
     "interpreter": "register-based VM",
     "gc": "generational GC",
     "github_stars": 10576,
@@ -2593,6 +2635,67 @@ const jsz_engines = [
         "zlib_detailed": "N=3 median=1563 mean=1568.67±14.99 max=1597"
       },
       {
+        "id": "hermes_static",
+        "variant": "static",
+        "summary": "Next version of Hermes engine, designed to utilize optional typing annotations for more efficient AOT code generation.",
+        "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/hermes_static.md",
+        "branch": "static_h",
+        "loc": 219313,
+        "loc_detailed": "219313 (`cloc include lib tools/hermes`)",
+        "years": "2022-",
+        "features": "optimizing LLVM-based AOT compiler to bytecode + native code; FFI; optional TypeScript/Flow typing annotations with modified semantics for sound typing",
+        "github_stars": 10595,
+        "github_forks": 717,
+        "conformance": {
+          "es1": 0.9949,
+          "es3": 0.9865,
+          "es5": 0.9189,
+          "kangax-es5": 0.9708,
+          "kangax-es6": 0.9001,
+          "kangax-es2016": 1.0,
+          "kangax-es2017": 0.76,
+          "kangax-es2018": 0.8737,
+          "kangax-es2019": 0.7679,
+          "kangax-es2020": 1.0,
+          "kangax-es2021": 0.7143,
+          "kangax-es2022": 1.0,
+          "kangax-es2023": 0.7714,
+          "kangax-es2024": 0.0,
+          "kangax-es2025": 0.2105,
+          "kangax-intl": 0.9643,
+          "kangax-next": 0.0606,
+          "es1-es5": 0.9786,
+          "kangax-es2016plus": 0.74
+        },
+        "arch": "amd64",
+        "binary_sha256": "4ae5f93d51170a1a2542a27bef9a7d483eff6d4cfe7e2b00ce131c25688d63b8",
+        "binary_size": 5423664,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "version": "250829098.0.3"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "4c445816b1165e614f5a92654f5fc43839c88e46666be7f75917baaf1f88a848",
+        "binary_size": 4274592,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "variant": "static_clang",
+        "version": "250829098.0.3"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "96a135e36654c977548b1dfbf7eb380c2bddb0849fe7ba8d2bf11b4faf8c5f12",
+        "binary_size": 5702384,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "variant": "static_intl",
+        "version": "250829098.0.3"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "efe44db9232d2ef3986379e4d2faab41c934191599530030c28c042ef3ed20da",
         "binary_size": 4073424,
@@ -2674,6 +2777,67 @@ const jsz_engines = [
         "SplayLatency_detailed": "N=100 median=21140 mean=21129.33±9.17 max=21306",
         "zlib": 2497,
         "zlib_detailed": "N=4 median=2497 mean=2484.25±10.26 max=2497"
+      },
+      {
+        "id": "hermes_static",
+        "variant": "static",
+        "summary": "Next version of Hermes engine, designed to utilize optional typing annotations for more efficient AOT code generation.",
+        "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/hermes_static.md",
+        "branch": "static_h",
+        "loc": 219313,
+        "loc_detailed": "219313 (`cloc include lib tools/hermes`)",
+        "years": "2022-",
+        "features": "optimizing LLVM-based AOT compiler to bytecode + native code; FFI; optional TypeScript/Flow typing annotations with modified semantics for sound typing",
+        "github_stars": 10595,
+        "github_forks": 717,
+        "conformance": {
+          "es1": 0.9949,
+          "es3": 0.9865,
+          "es5": 0.9189,
+          "kangax-es5": 0.9708,
+          "kangax-es6": 0.9001,
+          "kangax-es2016": 1.0,
+          "kangax-es2017": 0.76,
+          "kangax-es2018": 0.8737,
+          "kangax-es2019": 0.7679,
+          "kangax-es2020": 1.0,
+          "kangax-es2021": 0.7143,
+          "kangax-es2022": 1.0,
+          "kangax-es2023": 0.7714,
+          "kangax-es2024": 0.0,
+          "kangax-es2025": 0.2105,
+          "kangax-intl": 0.9643,
+          "kangax-next": 0.0606,
+          "es1-es5": 0.9786,
+          "kangax-es2016plus": 0.74
+        },
+        "arch": "arm64",
+        "binary_sha256": "2434ef2982130931b564483d1d2930f72fdfe27b028b6e2514a40346402a6051",
+        "binary_size": 4858456,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "version": "250829098.0.3"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "6ab7ff3b16d5be9a90cd478cfd883ab285aa5e10fb1b56f3cd33115a0c4a555c",
+        "binary_size": 4135400,
+        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "variant": "static_clang",
+        "version": "250829098.0.3"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "317cf0f38f1e5f297907c135691b41a3d402880342fd64bfa92ab6414126cfe7",
+        "binary_size": 5055256,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
+        "revision_date": "2025-11-04",
+        "variant": "static_intl",
+        "version": "250829098.0.3"
       }
     ],
     "conformance": {
@@ -2818,29 +2982,12 @@ const jsz_engines = [
       },
       {
         "arch": "amd64",
-        "binary_sha256": "5eee82059c19cdcb9955c2972fb7b1953971755427e07c2111e81ed5904cd95e",
-        "binary_size": 5457760,
+        "binary_sha256": "ff021479161bb7fe9320df129cccb1d9094f0142c3ad885a022ac24558f95578",
+        "binary_size": 6049576,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
         "revision_date": "2015-03-24",
-        "variant": "clang",
-        "version": "1.0.1-270-g64c3a9c7",
-        "Box2D_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "CodeLoad_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Crypto_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "DeltaBlue_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "EarleyBoyer_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Gameboy_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Mandreel_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "MandreelLatency_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "NavierStokes_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "PdfJS_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "RayTrace_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "RegExp_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Richards_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Splay_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "SplayLatency_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "zlib_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory"
+        "variant": "clang"
       },
       {
         "arch": "amd64",
@@ -2931,30 +3078,13 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
-        "binary_sha256": "1a99f59eeadefe158ebc4ea05217ec2fc47c432de95c6e9b34edea8ecb853580",
-        "binary_size": 4265064,
+        "binary_sha256": "645ed10a84b597cfc8017135d217f2e389ff3b252b6bbe8bce3d5b573622c97d",
+        "binary_size": 4532736,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "jit": "",
         "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
         "revision_date": "2015-03-24",
-        "variant": "clang",
-        "version": "1.0.1-270-g64c3a9c7",
-        "Box2D_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "CodeLoad_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Crypto_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "DeltaBlue_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "EarleyBoyer_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Gameboy_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Mandreel_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "MandreelLatency_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "NavierStokes_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "PdfJS_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "RayTrace_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "RegExp_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Richards_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "Splay_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "SplayLatency_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory",
-        "zlib_error": "/dist/iv-lv5_clang: error while loading shared libraries: libc++.so.1: cannot open shared object file: No such file or directory"
+        "variant": "clang"
       }
     ],
     "conformance": {
@@ -3044,6 +3174,11 @@ const jsz_engines = [
     "platform": "Perl",
     "interpreter": "tree walker",
     "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 577372,
+        "version": "0.066"
+      },
       {
         "arch": "arm64",
         "dist_size": 577372,
@@ -3538,7 +3673,7 @@ const jsz_engines = [
       "es3": 0.9122,
       "es5": 0.6216,
       "kangax-es5": 0.815,
-      "kangax-es6": 0.0733,
+      "kangax-es6": 0.0741,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.12,
       "kangax-es2018": 0.0526,
@@ -4627,9 +4762,9 @@ const jsz_engines = [
       "es3": 0.9932,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9228,
+      "kangax-es6": 0.9252,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.92,
+      "kangax-es2017": 0.94,
       "kangax-es2018": 0.9895,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
@@ -4641,7 +4776,7 @@ const jsz_engines = [
       "kangax-intl": 1.0,
       "kangax-next": 0.1905,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.9495
+      "kangax-es2016plus": 0.9528
     }
   },
   {
@@ -4671,7 +4806,7 @@ const jsz_engines = [
     "loc": 12293,
     "loc_detailed": "12293 (`cloc *.[chly] system*.js`)",
     "language": "C",
-    "license": "no",
+    "license": "Missing",
     "years": "2016-2020",
     "parser": "YACC",
     "interpreter": "tree walker",
@@ -5604,7 +5739,7 @@ const jsz_engines = [
       "kangax-es2018": 0.6737,
       "kangax-es2019": 0.9464,
       "kangax-es2020": 0.9286,
-      "kangax-es2021": 0.5714,
+      "kangax-es2021": 0.7143,
       "kangax-es2022": 0.9524,
       "kangax-es2023": 1.0,
       "kangax-es2024": 0.551,
@@ -5612,7 +5747,7 @@ const jsz_engines = [
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 0.9167,
-      "kangax-es2016plus": 0.7989
+      "kangax-es2016plus": 0.8121
     }
   },
   {
@@ -5762,6 +5897,7 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
+        "dist_size": 17917353,
         "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0",
         "revision_date": "2025-11-09",
         "Richards": 1468.987,
@@ -5769,6 +5905,7 @@ const jsz_engines = [
       },
       {
         "arch": "arm64",
+        "dist_size": 17708324,
         "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0",
         "revision_date": "2025-11-09",
         "Richards": 2617.356,
@@ -5807,6 +5944,7 @@ const jsz_engines = [
     "loc_detailed": "292098 (`cloc src`)",
     "language": "C++",
     "license": "Apache-2.0",
+    "org": "ByteDance",
     "standard": "ES2019",
     "years": "2024-",
     "ancestors": "QuickJS",
@@ -5901,7 +6039,7 @@ const jsz_engines = [
       "es3": 1.0,
       "es5": 0.9865,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9585,
+      "kangax-es6": 0.9656,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.8271,
       "kangax-es2018": 0.9368,
@@ -6058,25 +6196,25 @@ const jsz_engines = [
       }
     ],
     "conformance": {
-      "es1": 0.5152,
-      "es3": 0.5,
-      "es5": 0.2297,
-      "kangax-es5": 0.3166,
-      "kangax-es6": 0.2314,
+      "es1": 0.5354,
+      "es3": 0.5135,
+      "es5": 0.2973,
+      "kangax-es5": 0.4615,
+      "kangax-es6": 0.274,
       "kangax-es2016": 0.2121,
       "kangax-es2017": 0.22,
       "kangax-es2018": 0.2105,
       "kangax-es2019": 0.125,
       "kangax-es2020": 0.2571,
       "kangax-es2021": 0.1429,
-      "kangax-es2022": 0.0298,
+      "kangax-es2022": 0.0952,
       "kangax-es2023": 0.0,
       "kangax-es2024": 0.0,
-      "kangax-es2025": 0.1842,
+      "kangax-es2025": 0.1579,
       "kangax-intl": 0.0,
       "kangax-next": 0.0,
-      "es1-es5": 0.4595,
-      "kangax-es2016plus": 0.156
+      "es1-es5": 0.4857,
+      "kangax-es2016plus": 0.1618
     }
   },
   {
@@ -6099,6 +6237,16 @@ const jsz_engines = [
     "github_stars": 74,
     "github_forks": 8,
     "github_contributors": 1,
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "5cf6a3dc30d1005e600912e7a2bcd3da186f9686520eb075096155a76f64e998",
+        "binary_size": 1375208,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "d5a3e722aecb8412330282739b409bec1298eabe",
+        "revision_date": "2023-10-25"
+      }
+    ],
     "conformance": {
       "es1": 0.9949,
       "es3": 1.0,
@@ -7053,7 +7201,7 @@ const jsz_engines = [
     "loc": 7189,
     "loc_detailed": "7189 (`cloc py-js.py js`)",
     "language": "Python",
-    "license": "no",
+    "license": "Missing",
     "standard": "ES3",
     "years": "2009-2013",
     "platform": "Python",
@@ -7064,6 +7212,12 @@ const jsz_engines = [
     "github_contributors": 5,
     "bench": [
       {
+        "arch": "amd64",
+        "dist_size": 153479108,
+        "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
+        "revision_date": "2017-10-01"
+      },
+      {
         "arch": "arm64",
         "dist_size": 148027076,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
@@ -7071,10 +7225,10 @@ const jsz_engines = [
       }
     ],
     "conformance": {
-      "es1": 0.7424,
+      "es1": 0.6869,
       "es3": 0.2027,
       "es5": 0.2703,
-      "es1-es5": 0.469
+      "es1-es5": 0.4429
     }
   },
   {
@@ -7314,6 +7468,7 @@ const jsz_engines = [
     "loc_detailed": "46789 (`cloc --fullpath --not_match_f=\"(?i)(test)\" --exclude-lang=Markdown,YAML .`)",
     "language": "Go",
     "license": "MIT",
+    "org": "Grafana",
     "standard": "ES2023",
     "standard_detailed": "ES2023 (partial)",
     "years": "2024-",
@@ -7506,7 +7661,7 @@ const jsz_engines = [
     "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
-      "es5": 0.7297,
+      "es5": 0.7568,
       "kangax-es5": 0.7995,
       "kangax-es6": 0.0304,
       "kangax-es2016": 0.0,
@@ -7521,7 +7676,7 @@ const jsz_engines = [
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.8381,
+      "es1-es5": 0.8429,
       "kangax-es2016plus": 0.0257
     }
   },
@@ -7603,7 +7758,6 @@ const jsz_engines = [
         "language": "C",
         "standard": "ES3",
         "years": "2000",
-        "bench": {},
         "conformance": {
           "es1": 1.0,
           "es3": 0.9189,
@@ -7798,7 +7952,6 @@ const jsz_engines = [
         "features": "PIC",
         "jit": "TraceMonkey tracing JIT, JägerMonkey method JIT, x86/x64, arm, sparc",
         "regex": "YARR",
-        "bench": {},
         "conformance": {
           "es1": 1.0,
           "es3": 0.9459,
@@ -8053,7 +8206,6 @@ const jsz_engines = [
         "language": "C",
         "standard": "ES3",
         "years": "2000",
-        "bench": {},
         "conformance": {
           "es1": 1.0,
           "es3": 0.9189,
@@ -8348,7 +8500,7 @@ const jsz_engines = [
     "conformance": {
       "es1": 0.803,
       "es3": 0.6419,
-      "es5": 0.5,
+      "es5": 0.4865,
       "kangax-es5": 0.636,
       "kangax-es6": 0.2793,
       "kangax-es2016": 0.0909,
@@ -8363,7 +8515,7 @@ const jsz_engines = [
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.0357,
       "kangax-next": 0.0,
-      "es1-es5": 0.6929,
+      "es1-es5": 0.6905,
       "kangax-es2016plus": 0.1462
     }
   },
@@ -8602,7 +8754,7 @@ const jsz_engines = [
     "loc": 18576,
     "loc_detailed": "18576 (`cloc crates`)",
     "language": "Rust",
-    "license": "no",
+    "license": "Missing",
     "years": "2020-2024",
     "interpreter": "register-based VM",
     "github_stars": 38,
@@ -9400,7 +9552,7 @@ const jsz_engines = [
       "kangax-es2016": 0.5909,
       "kangax-es2017": 0.5737,
       "kangax-es2018": 0.6281,
-      "kangax-es2019": 0.4792,
+      "kangax-es2019": 0.5625,
       "kangax-es2020": 0.7286,
       "kangax-es2021": 0.5238,
       "kangax-es2022": 0.8186,
@@ -9410,7 +9562,7 @@ const jsz_engines = [
       "kangax-intl": 0.5,
       "kangax-next": 0.0404,
       "es1-es5": 0.7643,
-      "kangax-es2016plus": 0.5791
+      "kangax-es2016plus": 0.588
     }
   },
   {
@@ -9422,7 +9574,7 @@ const jsz_engines = [
     "loc": 2006,
     "loc_detailed": "2006 (`cloc *.c *.h`)",
     "language": "C",
-    "license": "no",
+    "license": "Missing",
     "standard": "no",
     "standard_detailed": "no (can't run ES1)",
     "years": "2018",
