@@ -99,6 +99,20 @@ STRICT_PF = '''
   var Mandreel_timeouts, Mandreel_XMLHttpRequest, Mandreel_document, Mandreel_window;  // mandreel.js
 '''
 
+# For zlib test, missing in some engines that chose not to implement Annex B
+UNESCAPE_PF = '''
+if (typeof unescape === 'undefined') {
+  function $unescapeImpl(s) {
+    return String(s).replace(
+      /%u([0-9A-Fa-f]{4}|[0-9A-Fa-f]{2})/gi,
+      function (_, hex) { String.fromCharCode(parseInt(hex, 16)); });
+  };
+  if (typeof globalThis == "object") globalThis.unescape = $unescapeImpl;
+  else if (typeof this == "object") this.unescape = $unescapeImpl;
+  else unescape = $unescapeImpl;
+}
+'''
+
 @dataclass
 class MemTest:
     """In-memory test case, a single self-contained script."""
@@ -555,6 +569,9 @@ CONFIGS = {
       benchmark_suite=['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js'],
       ignore_errors=True,
   ),
+  'brimstone': Config(
+      polyfills=[UNESCAPE_PF],
+  ),
   'castl': Config(
       error_lines_re='(?i)(error|unsupported|200 local variables)'
   ),
@@ -577,6 +594,9 @@ CONFIGS = {
   ),
   'echosoar-jsi': Config(
       transforms=[HexTransform()],
+  ),
+  'engine262': Config(
+      polyfills=[UNESCAPE_PF],
   ),
   'espruino': Config(
       filter_lines_re=r'^(%s)$' % '|'.join([r' ____                 _ ', r'\|  __\|___ ___ ___ _ _\|_\|___ ___ ', r'\|  __\|_ -\| . \|  _\| \| \| \|   \| . \|', r'\|____\|___\|  _\|_\| |___\|_\|_\|_\|___\|', r' *\|_\| espruino.com', r'.* (c) 20.. G.Williams', r'Espruino is Open Source. Our work is supported', r'only by sales of official boards and donations:', r'http://espruino.com/Donate']),

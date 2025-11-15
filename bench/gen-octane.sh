@@ -126,4 +126,4 @@ gen gbemu.js gbemu-part1.js gbemu-part2.js
 gen code-load.js
 gen box2d.js
 gen zlib.js zlib.js zlib-data.js
-gen typescript.js typescript-input.js typescript-compiler.js
+gen typescript.js typescript.js typescript-input.js typescript-compiler.js
