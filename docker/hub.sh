@@ -20,7 +20,7 @@ fi
 set -x -e -o pipefail
 
 for arch in $ARCHS; do
-  (cd ../dist; tar -c "$arch") >"../dist/$arch.tar"
+  (cd ../dist; tar --owner=root --group=root -c "$arch") >"../dist/$arch.tar"
 
   $DOCKER build \
       -f base-runtime.Dockerfile \

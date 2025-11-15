@@ -600,7 +600,7 @@ function renderCell(th, row) {
     while (size >= 1024 && i < suf.length - 1) { size /= 1024; i++; }
     td.innerHTML = size.toFixed(size < 20 ? 1 : 0) + suf[i];
     if (dist) {
-      td.title = `Non-native binary. Distribution size (usu. excluding host runtime): ${row.dist_size} bytes`;
+      td.title = `Not a single native binary. Distribution size: ${row.dist_size} bytes`;
       td.classList.add('red');
     } else {
       td.title = `${row.binary_size} bytes`;

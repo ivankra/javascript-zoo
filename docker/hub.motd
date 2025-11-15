@@ -1,10 +1,12 @@
 JavaScript engines zoo
 https://github.com/ivankra/javascript-zoo
 
-  * /dist: pre-built JavaScript shell binaries
-    Most can be run directly as REPL or passed a script to run
+  * /dist (/zoo/dist/<arch>): pre-built JavaScript shell binaries.
+    Most can be run directly as a REPL or with a script to run
     as a command-line argument.
 
-  * /zoo: repository checkout with benchmarks / test suites.
-    Try '/zoo/bench/bench ./v8' or '/zoo/conformance/run.sh ./v8'
+  * /zoo: repository checkout with benchmarks and test suites.
+    Examples:
+      /zoo/bench/bench ./v8
+      /zoo/conformance/run.sh ./quickjs
 

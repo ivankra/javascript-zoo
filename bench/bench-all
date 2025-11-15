@@ -22,7 +22,7 @@ cd "$SCRIPT_DIR"
 
 for binary in "$DIST_DIR"/*; do
   case "$(basename "$binary")" in
-    *_full|*_intl|bali|cesanta-elk|cesanta-mjs|tiny-js|42tiny-js|lebjs|ngs|rapidus|quad-wheel|echosoar-jsi|yrm006-miniscript|topchetoeu)
+    *_full|*_intl|bali|cesanta-elk|cesanta-mjs|tiny-js|42tiny-js|lebjs|ngs|rapidus|quad-wheel|quickjit|echosoar-jsi|yrm006-miniscript|topchetoeu|rpython-langjs)
       continue;;
   esac
 

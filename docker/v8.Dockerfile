@@ -49,7 +49,8 @@ RUN build/install-build-deps.sh --no-prompt
 #    git config --global user.name "build" && \
 #    tools/rust/build_rust.py
 
-ARG VARIANT=
+ARG JITLESS=
+ARG INTL=
 
 RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
     export IS_CLANG=$(bash -c '[[ "$CC" == *gcc* ]] && echo false || echo true'); \
@@ -79,8 +80,14 @@ RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
         treat_warnings_as_errors=false \
         v8_target_cpu='"'$ARCH'"' \
         v8_use_external_startup_data=false; \
-      # Trim fat \
-      [ "$VARIANT" != full ] && echo \
+      # icu_use_data_file=false - embed ICU data \
+      # v8_enable_temporal_support -> needs Rust \
+      if [ "$INTL" = true ]; then echo \
+        icu_use_data_file=false \
+        v8_enable_i18n_support=true \
+        v8_enable_temporal_support=false \
+        v8_enable_webassembly=true; \
+      else echo \
         v8_enable_disassembler=false \
         v8_enable_gdbjit=false \
         v8_enable_i18n_support=false \
@@ -88,20 +95,14 @@ RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
         v8_enable_test_features=false \
         v8_enable_sandbox=false \
         v8_enable_webassembly=false; \
-      # Full-featured build \
-      # * icu_use_data_file=false - embed ICU data \
-      # * v8_enable_temporal_support=false -> needs Rust \
-      [ "$VARIANT" = full ] && echo \
-        icu_use_data_file=false \
-        v8_enable_i18n_support=true \
-        v8_enable_temporal_support=false \
-        v8_enable_webassembly=true; \
+      fi; \
       # Disable JIT compilers \
-      [ "$VARIANT" = jitless ] && echo \
+      if [ "$JITLESS" = true ]; then echo \
         v8_jitless=true \
         v8_enable_sparkplug=false \
         v8_enable_maglev=false \
         v8_enable_turbofan=false; \
+      fi; \
     } | tr ' ' '\n' >out/release/args.gn
 
 RUN gn gen out/release/

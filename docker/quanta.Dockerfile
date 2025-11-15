@@ -11,6 +11,7 @@ WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN sed -i 's/\(CXXFLAGS += -msse4.2\|CORE_SOURCES += .*LinuxNativeAPI\)/#\1/' Makefile && \
+    sed -i '1i #include <climits>' core/src/Date.cpp && \
     make -j
 
 ENV JS_BINARY=/src/build/bin/quanta

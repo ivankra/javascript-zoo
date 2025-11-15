@@ -11,7 +11,7 @@ DOCKER_RUN   := $(DOCKER) run --platform linux/$(DOCKER_ARCH)
 IID_DIR  := ../.cache/iid
 DIST_DIR := ../dist/$(DOCKER_ARCH)
 
-FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z]*.Dockerfile)))
+FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z0-9]*.Dockerfile)))
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 
 # bali: arm64 build broken
@@ -48,9 +48,11 @@ dist: $(patsubst %,$(DIST_DIR)/%.json,$(TARGETS))
 
 sh: $(IID_DIR)/runtime
 	$(DOCKER_RUN) --rm -it \
-	  -v $(PWD)/..:/zoo:ro \
+	  -v $(PWD)/..:/zoo:rw \
+	  -v $(PWD)/../.git:/zoo/.git:ro \
 	  -v $(PWD)/../bench:/bench:rw \
 	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
+	  -v $(PWD)/../dist/$(DOCKER_ARCH):/zoo/dist:ro \
 	  -w /dist \
 	  jsz-runtime
 

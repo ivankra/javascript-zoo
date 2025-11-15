@@ -1,4 +1,3 @@
-* dist uid and permissions;  /zoo/dist in motd
 * engines
   * Standard -> Specification / Target spec
 * docker
@@ -12,7 +11,7 @@
       * `"Date.now()": "(new Date()).getTime()"`
       * `performance.now: false`
       * putstr, read(line), eval, scriptArgs, ...
-      * `docker/<engine>.262.js` / `conformance/runtimes/<engine>.js`
+      * `docker/<engine>.262.js` / `conformance/runtimes/<engine>.js` / preludes
         * full $262 definitions for complex cases
         * https://github.com/test262-fyi/data/tree/main/engines
         * https://github.com/tc39/eshost/blob/master/runtimes/
@@ -29,7 +28,7 @@
     * `--version_cmd="$BINARY --version | grep ..."`, git describe --tags -> only at dist time
     * host runtime meta?
       * HOST: <engine>, node, java, luajit etc; `--host=node/luajit/...`
-      * `--host_version_cmd="echo node $(node -v)"` -> metadata, or 
+      * `--host_version_cmd="echo node $(node -v)"` -> metadata
     * `--eshost=<host type>` jsvu esvu etc
     * conformance/run lib, shared between bench and conformance
   * make depend, split up make base rule
@@ -49,6 +48,8 @@
     * COPY libicu-static.sh ./ && ./libicu-static.sh
     * -march=x86-64-v3 builds. `*_avx2` / `/dist/amd64-v3/*`
     * Generic ways to pass extra CFLAGS: wrapper, hack system gcc spec, clang's CCC_OVERRIDE_OPTIONS.
+    * target triples beyond arm64/amd64; try `*-musl` for static builds
+    * riscv64 https://labs.scaleway.com/en/em-rv1/; cross-compile with qemu
 * /dist/runtimes
   * node, bun, deno symlinks
   * node_0.x - nvm install 0.x
