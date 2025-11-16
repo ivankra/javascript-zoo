@@ -5,9 +5,11 @@ ARG BASE=jsz-node
 FROM $BASE
 
 RUN npm install --prefix=/dist/mujs_babel-dist \
-        @babel/core @babel/cli @babel/preset-env
-        #rollup @rollup/plugin-babel core-js@3
+        @babel/core @babel/preset-env \
+        @rollup/plugin-babel @rollup/plugin-node-resolve @rollup/plugin-commonjs \
+        rollup core-js@3
 
 COPY mujs_babel.sh /dist/mujs_babel
+RUN chmod a+rx /dist/mujs_babel
 
 ENV JS_BINARY=/dist/mujs_babel

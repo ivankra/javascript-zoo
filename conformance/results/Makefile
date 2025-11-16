@@ -32,6 +32,12 @@ topchetoeu.txt: /dist/topchetoeu
 node.txt:
 	../run.sh --next -j 8 -o node.txt node
 
+duktape_babel.txt: /dist/duktape /dist/mujs_babel
+	../run.sh --next -j 8 -o duktape_babel.txt /dist/mujs_babel /dist/duktape
+
+iv-lv5_babel.txt: /dist/iv-lv5 /dist/mujs_babel
+	../run.sh --next -j 8 -o iv-lv5_babel.txt /dist/mujs_babel /dist/iv-lv5
+
 table:
 	./README-gen.py
 

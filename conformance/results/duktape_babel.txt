@@ -1,5 +1,5 @@
 Metadata: {"arch": "arm64", "engine": "mujs", "variant": "babel"}
-es1/Array.js: Array.length failed
+es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: OK
@@ -113,12 +113,12 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: TypeError: undefined is not callable
-es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not callable
-es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not callable
-es1/annex-b.global.escape.js: ReferenceError: 'escape' is not defined
-es1/annex-b.global.unescape.js: ReferenceError: 'unescape' is not defined
-es1/annex-b.literals.octal.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.literals.octal.js: Legacy octal literals are not allowed in strict mode. (14:8) at Parser.recordStrictModeErrors (/dist/mujs_babel-dist/node_modules/@babel/parser/lib/index.js:6561:12) Warning: babel failed, falling back to the original script Syn
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.literals.string.octal.js: The only valid numeric escape in strict mode is '\0'. (12:6) 13 |   console.log("es1/annex-b.literals.string.octal.js: OK"); 15 |   console.log("es1/annex-b.literals.string.octal.js: failed"); at Parser.recordStrictModeEr
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
@@ -155,7 +155,7 @@ es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
 es1/global.isNaN.js: OK
 es1/global.parseFloat.js: OK
-es1/global.parseInt.hex.js: failed
+es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
 es1/global.parseInt.radix.js: OK
 es1/literals.decimal.js: OK
@@ -208,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
+es3/Array.prototype.toLocaleString.js: OK
 es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -219,36 +219,36 @@ es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
-es3/Error.prototype.message.js: failed
+es3/Error.prototype.message.js: OK
 es3/Error.prototype.name.js: OK
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
+es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: RangeError: precision 0 out of range
+es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
-es3/Object.prototype.propertyIsEnumerable.js: Array index should be enumerable failed
-es3/Object.prototype.toLocaleString.js: custom toString failed
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
 es3/RegExp.js: OK
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
-es3/RegExp.prototype.exec.js: index failed
+es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
-es3/String.prototype.concat.js: concat with no arguments failed
+es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
@@ -267,7 +267,7 @@ es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
-es3/annex-b.String.prototype.substr.js: TypeError: undefined is not callable
+es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
@@ -281,7 +281,7 @@ es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: no exception for decodeURI invalid UTF-8; no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
+es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -316,7 +316,7 @@ es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
-es3/regex.disjunction.js: complex disjunction failed
+es3/regex.disjunction.js: OK
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
 es3/regex.escape.control.js: OK
@@ -329,7 +329,7 @@ es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: OK
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
-es3/regex.negative-lookahead.js: spec example failed
+es3/regex.negative-lookahead.js: OK
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -362,7 +362,7 @@ es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: length property incorrect
+es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
@@ -373,7 +373,7 @@ es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
-es5/Object.getOwnPropertyDescriptor.js: inherited property failed
+es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
@@ -410,14 +410,14 @@ es5/strict.no-delete-non-configurable.js: failed
 es5/strict.no-duplicate-parameters.js: failed
 es5/strict.no-eval-or-arguments-assignment.js: failed
 es5/strict.no-eval-or-arguments-bindings.js: failed
-es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
 es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
-es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
 es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
-es5/strict.unmapped-arguments.js: OK
+es5/strict.unmapped-arguments.js: failed
 es5/this.thrown-function.js: OK
 kangax-es5/Array.isArray.js: OK
 kangax-es5/Array.prototype.every.js: OK
@@ -437,8 +437,8 @@ kangax-es5/Date.prototype.toISOString.js: OK
 kangax-es5/Date.prototype.toJSON.js: OK
 kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
-kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
-kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
 kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
@@ -456,7 +456,7 @@ kangax-es5/Object.seal.js: OK
 kangax-es5/String.property-access.js: OK
 kangax-es5/String.prototype.split.js: OK
 kangax-es5/String.prototype.trim.js: OK
-kangax-es5/annex-b.String.prototype.substr.js: TypeError: undefined is not callable
+kangax-es5/annex-b.String.prototype.substr.js: OK
 kangax-es5/immutable-globals.Infinity.js: OK
 kangax-es5/immutable-globals.NaN.js: OK
 kangax-es5/immutable-globals.undefined.js: OK
@@ -472,10 +472,10 @@ kangax-es5/misc.enumerable-shadow.js: failed
 kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
 kangax-es5/misc.thrown-functions-this.js: OK
 kangax-es5/misc.unreserved-words.js: OK
-kangax-es5/misc.zero-width-identifiers.js: SyntaxError: /tmp/tmp.ePAcYZu0pd.js:10: unexpected character: \u200Cundefined
+kangax-es5/misc.zero-width-identifiers.js: OK
 kangax-es5/strict.arguments-callee-error.js: failed
 kangax-es5/strict.arguments-caller-error.js: OK
-kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.arguments-unmapped.js: failed
 kangax-es5/strict.assignment-eval-arguments-error.js: failed
 kangax-es5/strict.assignment-non-writable-error.js: failed
 kangax-es5/strict.assignment-unresolvable-error.js: failed
@@ -483,25 +483,25 @@ kangax-es5/strict.delete-bindings-error.js: failed
 kangax-es5/strict.delete-non-configurable-error.js: failed
 kangax-es5/strict.eval-arguments-bindings-error.js: failed
 kangax-es5/strict.eval-no-bindings.js: failed
-kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: OK
 kangax-es5/strict.function-expr-matching-name-arg.js: OK
 kangax-es5/strict.legacy-octal-error.js: failed
 kangax-es5/strict.repeated-params-error.js: failed
 kangax-es5/strict.reserved-words.js: failed
 kangax-es5/strict.this-not-coerced-accessors.js: failed
-kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: failed
 kangax-es5/strict.this-undefined.js: failed
 kangax-es5/strict.with-error.js: failed
 kangax-es6/Array.Symbol.species.js: OK
 kangax-es6/Array.from.array-like.js: OK
 kangax-es6/Array.from.generator.js: OK
-kangax-es6/Array.from.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Array.from.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Array.from.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Array.from.iterable-instance.js: OK
+kangax-es6/Array.from.iterable.js: OK
+kangax-es6/Array.from.iterator-closing.js: OK
 kangax-es6/Array.from.map.array-like.js: OK
 kangax-es6/Array.from.map.generator.js: OK
-kangax-es6/Array.from.map.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Array.from.map.iterable.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Array.from.map.iterable-instance.js: OK
+kangax-es6/Array.from.map.iterable.js: OK
 kangax-es6/Array.iterator-prototype-chain.js: OK
 kangax-es6/Array.of.js: OK
 kangax-es6/Array.prototype.Symbol.iterator.js: OK
@@ -516,28 +516,28 @@ kangax-es6/Array.prototype.splice.js: OK
 kangax-es6/Array.prototype.values.js: OK
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
 kangax-es6/Function.name.accessor.js: failed
-kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.bound.js: OK
 kangax-es6/Function.name.class-expression.js: OK
 kangax-es6/Function.name.class-object-method.js: failed
 kangax-es6/Function.name.class-prototype.js: OK
 kangax-es6/Function.name.class-statement.js: OK
 kangax-es6/Function.name.class-static.js: OK
 kangax-es6/Function.name.class-variable.js: OK
-kangax-es6/Function.name.configurable.js: TypeError: cannot convert undefined to object
+kangax-es6/Function.name.configurable.js: OK
 kangax-es6/Function.name.expression.js: OK
-kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.new-Function.js: OK
 kangax-es6/Function.name.object-method.js: OK
 kangax-es6/Function.name.shorthand.js: OK
 kangax-es6/Function.name.shorthand.no-lexical.js: OK
 kangax-es6/Function.name.statement.js: OK
-kangax-es6/Function.name.symbol-keyed.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Function.name.symbol-keyed.js: failed
 kangax-es6/Function.name.variable.js: OK
 kangax-es6/Map.Symbol.species.js: OK
 kangax-es6/Map.constructor-accepts-null.js: OK
 kangax-es6/Map.constructor-arguments.js: OK
 kangax-es6/Map.constructor-invokes-set.js: failed
 kangax-es6/Map.constructor-requires-new.js: OK
-kangax-es6/Map.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Map.iterator-closing.js: OK
 kangax-es6/Map.iterator-prototype-chain.js: OK
 kangax-es6/Map.js: OK
 kangax-es6/Map.prototype-not-instance.js: OK
@@ -575,54 +575,54 @@ kangax-es6/Number.isFinite.js: OK
 kangax-es6/Number.isInteger.js: OK
 kangax-es6/Number.isNaN.js: OK
 kangax-es6/Number.isSafeInteger.js: OK
-kangax-es6/Number.parseFloat.js: failed
-kangax-es6/Number.parseInt.js: failed
+kangax-es6/Number.parseFloat.js: OK
+kangax-es6/Number.parseInt.js: OK
 kangax-es6/Object.assign.js: OK
-kangax-es6/Object.getOwnPropertySymbols.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
-kangax-es6/Object.setPrototypeOf.js: TypeError: undefined is not callable
+kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Promise.all.js: ReferenceError: 'setTimeout' is not defined
+kangax-es6/Promise.all.iterable.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es6/Promise.all.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es6/Promise.constructor-requires-new.js: OK
-kangax-es6/Promise.js: ReferenceError: 'setTimeout' is not defined
+kangax-es6/Promise.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es6/Promise.prototype-not-instance.js: OK
-kangax-es6/Promise.race.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Promise.race.js: ReferenceError: 'setTimeout' is not defined
-kangax-es6/Proxy.Array.isArray.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.JSON.stringify.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.apply.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.construct.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.get.instances.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.get.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.has.instances.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.has.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.set.instances.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.handler.set.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.no-prototype.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/Proxy.revocable.js: ReferenceError: 'Proxy' is not defined
+kangax-es6/Promise.race.iterable.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es6/Promise.race.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es6/Proxy.Array.isArray.js: OK
+kangax-es6/Proxy.JSON.stringify.js: OK
+kangax-es6/Proxy.constructor-requires-new.js: OK
+kangax-es6/Proxy.handler.apply.invariants.js: OK
+kangax-es6/Proxy.handler.apply.js: OK
+kangax-es6/Proxy.handler.construct.invariants.js: OK
+kangax-es6/Proxy.handler.construct.js: OK
+kangax-es6/Proxy.handler.defineProperty.invariants.js: failed
+kangax-es6/Proxy.handler.defineProperty.js: OK
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: OK
+kangax-es6/Proxy.handler.deleteProperty.js: OK
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: OK
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.getPrototypeOf.js: failed
+kangax-es6/Proxy.handler.get.instances.js: OK
+kangax-es6/Proxy.handler.get.invariants.js: OK
+kangax-es6/Proxy.handler.get.js: OK
+kangax-es6/Proxy.handler.has.instances.js: OK
+kangax-es6/Proxy.handler.has.invariants.js: OK
+kangax-es6/Proxy.handler.has.js: OK
+kangax-es6/Proxy.handler.isExtensible.invariants.js: OK
+kangax-es6/Proxy.handler.isExtensible.js: OK
+kangax-es6/Proxy.handler.ownKeys.invariants.js: failed
+kangax-es6/Proxy.handler.ownKeys.js: OK
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: OK
+kangax-es6/Proxy.handler.preventExtensions.js: OK
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.setPrototypeOf.js: failed
+kangax-es6/Proxy.handler.set.instances.js: OK
+kangax-es6/Proxy.handler.set.invariants.js: OK
+kangax-es6/Proxy.handler.set.js: OK
+kangax-es6/Proxy.no-prototype.js: OK
+kangax-es6/Proxy.revocable.js: OK
 kangax-es6/Reflect.apply.js: OK
 kangax-es6/Reflect.construct.Array-subclassing.js: failed
 kangax-es6/Reflect.construct.Function-subclassing.js: failed
@@ -631,7 +631,7 @@ kangax-es6/Reflect.construct.RegExp-subclassing.js: failed
 kangax-es6/Reflect.construct.js: OK
 kangax-es6/Reflect.construct.new-target.js: failed
 kangax-es6/Reflect.construct.third-argument.js: OK
-kangax-es6/Reflect.defineProperty.js: failed
+kangax-es6/Reflect.defineProperty.js: OK
 kangax-es6/Reflect.deleteProperty.js: OK
 kangax-es6/Reflect.getOwnPropertyDescriptor.js: OK
 kangax-es6/Reflect.getPrototypeOf.js: OK
@@ -639,9 +639,9 @@ kangax-es6/Reflect.get.js: OK
 kangax-es6/Reflect.has.js: OK
 kangax-es6/Reflect.isExtensible.js: OK
 kangax-es6/Reflect.ownKeys.string.js: OK
-kangax-es6/Reflect.ownKeys.symbol.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Reflect.ownKeys.symbol.js: OK
 kangax-es6/Reflect.preventExtensions.js: OK
-kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: 'Reflect' is not defined
+kangax-es6/Reflect.setPrototypeOf.js: OK
 kangax-es6/Reflect.set.js: OK
 kangax-es6/RegExp.Symbol.species.js: OK
 kangax-es6/RegExp.prototype.Symbol.match.js: OK
@@ -654,7 +654,7 @@ kangax-es6/Set.constructor-accepts-null.js: OK
 kangax-es6/Set.constructor-arguments.js: OK
 kangax-es6/Set.constructor-invokes-add.js: failed
 kangax-es6/Set.constructor-requires-new.js: OK
-kangax-es6/Set.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Set.iterator-closing.js: OK
 kangax-es6/Set.iterator-prototype-chain.js: OK
 kangax-es6/Set.js: OK
 kangax-es6/Set.prototype-not-instance.js: OK
@@ -680,25 +680,25 @@ kangax-es6/String.prototype.repeat.js: OK
 kangax-es6/String.prototype.startsWith.js: OK
 kangax-es6/String.prototype.startsWith.throws-regex.js: OK
 kangax-es6/String.raw.js: OK
-kangax-es6/Symbol.JSON.stringify.object.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.JSON.stringify.primitive.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.Object.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.String.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.defineProperty.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.global-registry.js: ReferenceError: 'Symbol' is not defined
-kangax-es6/Symbol.hidden-keys.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.no-coerce.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.no-new.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.prototype.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/Symbol.typeof.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/Symbol.JSON.stringify.object.js: OK
+kangax-es6/Symbol.JSON.stringify.primitive.js: OK
+kangax-es6/Symbol.Object.js: OK
+kangax-es6/Symbol.String.js: OK
+kangax-es6/Symbol.defineProperty.js: OK
+kangax-es6/Symbol.global-registry.js: OK
+kangax-es6/Symbol.hidden-keys.js: OK
+kangax-es6/Symbol.js: OK
+kangax-es6/Symbol.no-coerce.js: OK
+kangax-es6/Symbol.no-new.js: OK
+kangax-es6/Symbol.prototype.js: OK
+kangax-es6/Symbol.typeof.js: OK
 kangax-es6/WeakMap.accept-primitives.js: OK
 kangax-es6/WeakMap.constructor-accepts-null.js: OK
 kangax-es6/WeakMap.constructor-arguments.js: OK
 kangax-es6/WeakMap.constructor-invokes-set.js: failed
 kangax-es6/WeakMap.constructor-requires-new.js: OK
 kangax-es6/WeakMap.frozen-keys.js: OK
-kangax-es6/WeakMap.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/WeakMap.iterator-closing.js: OK
 kangax-es6/WeakMap.js: OK
 kangax-es6/WeakMap.no-clear.js: OK
 kangax-es6/WeakMap.prototype-not-instance.js: OK
@@ -709,35 +709,35 @@ kangax-es6/WeakSet.constructor-accepts-null.js: OK
 kangax-es6/WeakSet.constructor-arguments.js: OK
 kangax-es6/WeakSet.constructor-invokes-add.js: failed
 kangax-es6/WeakSet.constructor-requires-new.js: OK
-kangax-es6/WeakSet.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/WeakSet.iterator-closing.js: OK
 kangax-es6/WeakSet.js: OK
 kangax-es6/WeakSet.no-clear.js: OK
 kangax-es6/WeakSet.prototype-not-instance.js: OK
 kangax-es6/WeakSet.prototype.add-returns-this.js: OK
 kangax-es6/WeakSet.prototype.delete.js: OK
 kangax-es6/annex-b.RegExp.prototype.compile.js: failed
-kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefined is not callable
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefined not callable (property 'compile' of [object RegExp])
 kangax-es6/annex-b.String.prototype.html.existence.js: failed
-kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefined is not callable
-kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not callable
-kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefined not callable (property 'anchor' of '')
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined not callable (property 'anchor' of '')
+kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: identifier 'g' undefined
 kangax-es6/annex-b.function.if-statement.js: OK
 kangax-es6/annex-b.function.labeled.js: OK
-kangax-es6/annex-b.html-comments.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.html-comments.js: Unexpected token (9:4) Warning: babel failed, falling back to the original script SyntaxError: annex-b.html-comments.js:9: unexpected token in expression: '>'undefined
-kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: regular expression: invalid back-reference
+kangax-es6/annex-b.html-comments.js: OK
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: invalid backreference(s) (line 2001) error in executing file /tmp/tmp.lhaJjDwDXu.js
 kangax-es6/annex-b.regex.hyphens.js: OK
-kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: regular expression: invalid quantifier
-kangax-es6/annex-b.regex.invalid-char-escapes.js: SyntaxError: regular expression: invalid escape character
-kangax-es6/annex-b.regex.invalid-control-escapes.js: TypeError: cannot convert null to object
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: regular expression: unterminated escape sequence
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: regular expression: unterminated escape sequence
-kangax-es6/annex-b.regex.octal-escapes.js: TypeError: cannot convert null to object
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.lhM27EsSEr.js
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.DO7CNKuFkN.js
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.RjVdy8r6uC.js
+kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.Lv5zr5ea8t.js
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
-kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
-kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
 kangax-es6/annex-b.__proto__.literals.js: failed
 kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
 kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
@@ -749,7 +749,7 @@ kangax-es6/arrow.5-param.js: OK
 kangax-es6/arrow.bind.js: OK
 kangax-es6/arrow.lexical-arguments.js: OK
 kangax-es6/arrow.lexical-super.constructor.js: OK
-kangax-es6/arrow.lexical-super.methods.js: OK
+kangax-es6/arrow.lexical-super.methods.js: Error: unsupported
 kangax-es6/arrow.lexical-this.js: OK
 kangax-es6/arrow.new-target.js: OK
 kangax-es6/arrow.no-line-break.js: OK
@@ -767,9 +767,9 @@ kangax-es6/class.computed-static-methods.js: OK
 kangax-es6/class.constructor-requires-new.js: OK
 kangax-es6/class.constructor.js: OK
 kangax-es6/class.expression.js: OK
-kangax-es6/class.extends-expressions.js: failed
+kangax-es6/class.extends-expressions.js: OK
 kangax-es6/class.extends-null.js: OK
-kangax-es6/class.extends.js: failed
+kangax-es6/class.extends.js: OK
 kangax-es6/class.implicit-strict.js: failed
 kangax-es6/class.lexical-name.js: OK
 kangax-es6/class.methods-not-enumerable.js: OK
@@ -785,23 +785,23 @@ kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: OK
-kangax-es6/const.no-redefine.js: OK
-kangax-es6/const.no-statement.js: OK
+kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-statement.js: failed
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
 kangax-es6/const.strict.block-scoped.js: OK
 kangax-es6/const.strict.for-in.js: OK
 kangax-es6/const.strict.for-loop.js: OK
 kangax-es6/const.strict.for-of.js: OK
-kangax-es6/const.strict.no-redefine.js: OK
-kangax-es6/const.strict.no-statement.js: OK
+kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-statement.js: failed
 kangax-es6/const.strict.shadow.js: OK
 kangax-es6/const.strict.tdz.js: failed
 kangax-es6/const.tdz.js: failed
 kangax-es6/default-params.arguments.js: OK
 kangax-es6/default-params.basic.js: OK
 kangax-es6/default-params.explicit-undefined.js: OK
-kangax-es6/default-params.new-function.js: ReferenceError: 'b' is not defined
+kangax-es6/default-params.new-function.js: SyntaxError: parse error (line 1)
 kangax-es6/default-params.refer-previous.js: OK
 kangax-es6/default-params.separate-scope.js: OK
 kangax-es6/default-params.tdz.js: OK
@@ -814,9 +814,9 @@ kangax-es6/destructuring-assign.defaults.js: OK
 kangax-es6/destructuring-assign.empty-patterns.js: OK
 kangax-es6/destructuring-assign.generator.js: OK
 kangax-es6/destructuring-assign.iterable-expression.js: OK
-kangax-es6/destructuring-assign.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-assign.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-assign.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/destructuring-assign.iterable-instance.js: OK
+kangax-es6/destructuring-assign.iterable.js: OK
+kangax-es6/destructuring-assign.iterator-closing.js: OK
 kangax-es6/destructuring-assign.nested-rest.js: OK
 kangax-es6/destructuring-assign.nested.js: OK
 kangax-es6/destructuring-assign.object-expression.js: OK
@@ -838,9 +838,9 @@ kangax-es6/destructuring-decl.defaults.js: OK
 kangax-es6/destructuring-decl.for-in.js: OK
 kangax-es6/destructuring-decl.for-of.js: OK
 kangax-es6/destructuring-decl.generator.js: OK
-kangax-es6/destructuring-decl.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-decl.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-decl.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/destructuring-decl.iterable-instance.js: OK
+kangax-es6/destructuring-decl.iterable.js: OK
+kangax-es6/destructuring-decl.iterator-closing.js: OK
 kangax-es6/destructuring-decl.multiple-var.js: OK
 kangax-es6/destructuring-decl.nested.js: OK
 kangax-es6/destructuring-decl.object-primitives.js: OK
@@ -856,18 +856,18 @@ kangax-es6/destructuring-params.arguments.js: OK
 kangax-es6/destructuring-params.array.js: OK
 kangax-es6/destructuring-params.astral-string.js: failed
 kangax-es6/destructuring-params.computed-properties.js: OK
-kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: [string]:1: unexpected token: '{' (expected identifier)
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: expected identifier (line 1)
 kangax-es6/destructuring-params.defaults-separate-scope.js: OK
 kangax-es6/destructuring-params.defaults.js: OK
 kangax-es6/destructuring-params.duplicate-identifier.js: failed
 kangax-es6/destructuring-params.empty-patterns.js: OK
 kangax-es6/destructuring-params.generator.js: OK
-kangax-es6/destructuring-params.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-params.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/destructuring-params.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/destructuring-params.iterable-instance.js: OK
+kangax-es6/destructuring-params.iterable.js: OK
+kangax-es6/destructuring-params.iterator-closing.js: OK
 kangax-es6/destructuring-params.length.js: OK
 kangax-es6/destructuring-params.nested.js: OK
-kangax-es6/destructuring-params.new-function.js: SyntaxError: [string]:1: unexpected token: '{' (expected identifier)
+kangax-es6/destructuring-params.new-function.js: SyntaxError: expected identifier (line 1)
 kangax-es6/destructuring-params.object-primitives.js: OK
 kangax-es6/destructuring-params.object.js: OK
 kangax-es6/destructuring-params.rest.js: OK
@@ -880,15 +880,15 @@ kangax-es6/destructuring-params.trailing-comma-object.js: OK
 kangax-es6/for-of.array.js: OK
 kangax-es6/for-of.astral-string.js: failed
 kangax-es6/for-of.generator.js: OK
-kangax-es6/for-of.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/for-of.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/for-of.iterator-closing-break.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/for-of.iterator-closing-throw.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/for-of.iterable-instance.js: OK
+kangax-es6/for-of.iterable.js: OK
+kangax-es6/for-of.iterator-closing-break.js: OK
+kangax-es6/for-of.iterator-closing-throw.js: OK
 kangax-es6/for-of.sparse-array.js: OK
 kangax-es6/for-of.string.js: OK
 kangax-es6/function.block-level-decl.js: OK
 kangax-es6/generators.basic.js: OK
-kangax-es6/generators.constructor.js: SyntaxError: [string]:1: unexpected token: (identifier) (expected ';')
+kangax-es6/generators.constructor.js: TypeError: [object Object] not callable
 kangax-es6/generators.expression.js: OK
 kangax-es6/generators.no-new-this.js: failed
 kangax-es6/generators.prototype-chain.js: failed
@@ -905,12 +905,12 @@ kangax-es6/generators.this.js: OK
 kangax-es6/generators.throw.js: OK
 kangax-es6/generators.yield-precedence.js: OK
 kangax-es6/generators.yield-star.array.js: OK
-kangax-es6/generators.yield-star.astral-string.js: failed
+kangax-es6/generators.yield-star.astral-string.js: OK
 kangax-es6/generators.yield-star.generator.js: OK
-kangax-es6/generators.yield-star.iterable-instance.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/generators.yield-star.iterable.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/generators.yield-star.iterator-closing-throw.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/generators.yield-star.iterator-closing.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/generators.yield-star.iterable-instance.js: OK
+kangax-es6/generators.yield-star.iterable.js: OK
+kangax-es6/generators.yield-star.iterator-closing-throw.js: OK
+kangax-es6/generators.yield-star.iterator-closing.js: OK
 kangax-es6/generators.yield-star.non-iterable-error.js: OK
 kangax-es6/generators.yield-star.sparse-array.js: OK
 kangax-es6/generators.yield-star.string.js: OK
@@ -945,120 +945,120 @@ kangax-es6/misc.Object.freeze.primitives.js: OK
 kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
 kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: OK
 kangax-es6/misc.Object.getPrototypeOf.primitives.js: OK
-kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: not an object
-kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: not an object
-kangax-es6/misc.Object.isSealed.primitives.js: TypeError: not an object
+kangax-es6/misc.Object.isExtensible.primitives.js: OK
+kangax-es6/misc.Object.isFrozen.primitives.js: OK
+kangax-es6/misc.Object.isSealed.primitives.js: OK
 kangax-es6/misc.Object.keys.primitives.js: OK
 kangax-es6/misc.Object.preventExtensions.primitives.js: OK
 kangax-es6/misc.Object.seal.primitives.js: OK
-kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.HasBinding.js: [!] (plugin commonjs--resolver) SyntaxError: misc.Proxy.get.HasBinding.js: 'with' in strict mode. (14:2) Warning: babel failed, falling back to the original script ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.IteratorComplete.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: 'Proxy' is not defined
-kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: 'Proxy' is not defined
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: OK
+kangax-es6/misc.Proxy.defineProperty.Set.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: OK
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: OK
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: failed
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: OK
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: OK
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: OK
+kangax-es6/misc.Proxy.get.Array.concat.js: OK
+kangax-es6/misc.Proxy.get.Array.from.js: TypeError: cannot string coerce Symbol
+kangax-es6/misc.Proxy.get.Array.iteration.js: TypeError: cannot read property 'call' of undefined
+kangax-es6/misc.Proxy.get.Array.pop.js: OK
+kangax-es6/misc.Proxy.get.Array.reverse.js: failed
+kangax-es6/misc.Proxy.get.Array.shift.js: OK
+kangax-es6/misc.Proxy.get.Array.splice.js: OK
+kangax-es6/misc.Proxy.get.Array.toString.js: OK
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: OK
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
+kangax-es6/misc.Proxy.get.Date.toJSON.js: OK
+kangax-es6/misc.Proxy.get.Error.toString.js: OK
+kangax-es6/misc.Proxy.get.Function.bind.js: failed
+kangax-es6/misc.Proxy.get.HasBinding.js: [!] (plugin commonjs--resolver) SyntaxError: misc.Proxy.get.HasBinding.js: 'with' in strict mode. (14:2) Warning: babel failed, falling back to the original script
+kangax-es6/misc.Proxy.get.IteratorComplete.js: failed
+kangax-es6/misc.Proxy.get.JSON.stringify.js: OK
+kangax-es6/misc.Proxy.get.Object.assign.js: OK
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: failed
+kangax-es6/misc.Proxy.get.Promise.resolve.js: OK
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: failed
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: failed
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: failed
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: RegExp#exec called on incompatible receiver
+kangax-es6/misc.Proxy.get.RegExp.flags.js: OK
+kangax-es6/misc.Proxy.get.RegExp.test.js: TypeError: RegExp required, found [object Object] (stack index -1)
+kangax-es6/misc.Proxy.get.RegExp.toString.js: OK
+kangax-es6/misc.Proxy.get.String.match.js: failed
+kangax-es6/misc.Proxy.get.String.raw.js: failed
+kangax-es6/misc.Proxy.get.String.replace.js: OK
+kangax-es6/misc.Proxy.get.String.search.js: failed
+kangax-es6/misc.Proxy.get.String.split.js: failed
+kangax-es6/misc.Proxy.get.ToPrimitive.js: failed
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: OK
+kangax-es6/misc.Proxy.get.instanceof.js: failed
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: OK
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: OK
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: OK
+kangax-es6/misc.Proxy.set.Array.fill.js: OK
+kangax-es6/misc.Proxy.set.Array.from.js: OK
+kangax-es6/misc.Proxy.set.Array.of.js: OK
+kangax-es6/misc.Proxy.set.Array.pop.js: OK
+kangax-es6/misc.Proxy.set.Array.push.js: OK
+kangax-es6/misc.Proxy.set.Array.reverse.js: OK
+kangax-es6/misc.Proxy.set.Array.shift.js: OK
+kangax-es6/misc.Proxy.set.Array.splice.js: OK
+kangax-es6/misc.Proxy.set.Array.unshift.js: OK
+kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
-kangax-es6/misc.accessors-no-constructor.js: failed
-kangax-es6/misc.bound-function-prototype.arrow.js: failed
-kangax-es6/misc.bound-function-prototype.class.js: failed
-kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: failed
+kangax-es6/misc.accessors-no-constructor.js: OK
+kangax-es6/misc.bound-function-prototype.arrow.js: OK
+kangax-es6/misc.bound-function-prototype.class.js: OK
+kangax-es6/misc.bound-function-prototype.function.js: OK
+kangax-es6/misc.bound-function-prototype.generator.js: OK
 kangax-es6/misc.bound-function-prototype.subclass.js: OK
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: failed
 kangax-es6/misc.for-in-no-assignment-strict.js: failed
-kangax-es6/misc.function-length-configurable.js: failed
-kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.function-length-configurable.js: OK
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: failed
 kangax-es6/misc.identifier-syntax.var-1.js: failed
 kangax-es6/misc.identifier-syntax.var-2.js: OK
-kangax-es6/misc.property-order.JSON.parse.js: failed
-kangax-es6/misc.property-order.JSON.stringify.js: failed
-kangax-es6/misc.property-order.Object.assign.js: failed
-kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
+kangax-es6/misc.property-order.JSON.parse.js: OK
+kangax-es6/misc.property-order.JSON.stringify.js: OK
+kangax-es6/misc.property-order.Object.assign.js: OK
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: OK
 kangax-es6/misc.property-order.Object.keys.js: OK
-kangax-es6/misc.property-order.Reflect.ownKeys.string.js: failed
-kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 kangax-es6/misc.prototypes-not-instances.js: failed
-kangax-es6/new-target.assignment-error.js: OK
+kangax-es6/new-target.assignment-error.js: failed
 kangax-es6/new-target.constructor.js: OK
 kangax-es6/regex.flags.u.case-folding.js: OK
-kangax-es6/regex.flags.u.codepoint.js: TypeError: cannot convert null to object
-kangax-es6/regex.flags.u.js: TypeError: cannot convert null to object
-kangax-es6/regex.flags.u.non-bmp.js: TypeError: cannot convert null to object
-kangax-es6/regex.flags.y.js: SyntaxError: invalid regular expression flag: 'y'
-kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: invalid regular expression flag: 'y'
-kangax-es6/rest-params.arguments.js: OK
+kangax-es6/regex.flags.u.codepoint.js: OK
+kangax-es6/regex.flags.u.js: OK
+kangax-es6/regex.flags.u.non-bmp.js: OK
+kangax-es6/regex.flags.y.js: SyntaxError: invalid regexp flags
+kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: invalid regexp flags
+kangax-es6/rest-params.arguments.js: failed
 kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: OK
-kangax-es6/rest-params.new-function.js: SyntaxError: [string]:1: unexpected token: '.' (expected identifier)
+kangax-es6/rest-params.new-function.js: SyntaxError: expected identifier (line 1)
 kangax-es6/rest-params.no-setter.js: OK
 kangax-es6/spread.array-call.js: OK
 kangax-es6/spread.array-literal.js: OK
 kangax-es6/spread.astral-call.js: failed
 kangax-es6/spread.astral-literal.js: failed
-kangax-es6/spread.generator-call.js: TypeError: undefined is not callable
-kangax-es6/spread.generator-literal.js: TypeError: undefined is not callable
-kangax-es6/spread.iterable-call.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/spread.iterable-instance-call.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/spread.iterable-instance-literal.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/spread.iterable-literal.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/spread.generator-call.js: TypeError: undefined not callable (property 'from' of [object Function])
+kangax-es6/spread.generator-literal.js: TypeError: undefined not callable (property 'from' of [object Function])
+kangax-es6/spread.iterable-call.js: TypeError: undefined not callable (property 'from' of [object Function])
+kangax-es6/spread.iterable-instance-call.js: TypeError: undefined not callable (property 'from' of [object Function])
+kangax-es6/spread.iterable-instance-literal.js: TypeError: undefined not callable (property 'from' of [object Function])
+kangax-es6/spread.iterable-literal.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/spread.non-iterable-error.js: OK
 kangax-es6/spread.sparse-call.js: OK
 kangax-es6/spread.sparse-literal.js: OK
@@ -1066,12 +1066,12 @@ kangax-es6/spread.string-call.js: OK
 kangax-es6/spread.string-literal.js: OK
 kangax-es6/subclassing.Array.concat.js: failed
 kangax-es6/subclassing.Array.filter.js: failed
-kangax-es6/subclassing.Array.from.js: TypeError: undefined is not callable
+kangax-es6/subclassing.Array.from.js: TypeError: undefined not callable (property 'from' of [object Function])
 kangax-es6/subclassing.Array.isArray.js: OK
 kangax-es6/subclassing.Array.length-access.js: OK
 kangax-es6/subclassing.Array.length-set.js: OK
 kangax-es6/subclassing.Array.map.js: failed
-kangax-es6/subclassing.Array.of.js: TypeError: undefined is not callable
+kangax-es6/subclassing.Array.of.js: TypeError: undefined not callable (property 'of' of [object Function])
 kangax-es6/subclassing.Array.prototype-chain.js: failed
 kangax-es6/subclassing.Array.slice.js: failed
 kangax-es6/subclassing.Array.splice.js: failed
@@ -1079,37 +1079,37 @@ kangax-es6/subclassing.Function.call.js: OK
 kangax-es6/subclassing.Function.new.js: OK
 kangax-es6/subclassing.Function.prototype-chain.js: failed
 kangax-es6/subclassing.Function.prototype.apply.js: OK
-kangax-es6/subclassing.Function.prototype.bind.js: failed
+kangax-es6/subclassing.Function.prototype.bind.js: OK
 kangax-es6/subclassing.Function.prototype.call.js: OK
-kangax-es6/subclassing.Promise.all.js: TypeError: undefined is not callable
-kangax-es6/subclassing.Promise.js: ReferenceError: 'setTimeout' is not defined
+kangax-es6/subclassing.Promise.all.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es6/subclassing.Promise.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es6/subclassing.Promise.prototype-chain.js: failed
-kangax-es6/subclassing.Promise.race.js: TypeError: undefined is not callable
+kangax-es6/subclassing.Promise.race.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es6/subclassing.RegExp.exec.js: OK
 kangax-es6/subclassing.RegExp.js: OK
 kangax-es6/subclassing.RegExp.prototype-chain.js: failed
 kangax-es6/subclassing.RegExp.test.js: OK
-kangax-es6/subclassing.misc.Boolean.js: failed
-kangax-es6/subclassing.misc.Error.js: failed
-kangax-es6/subclassing.misc.Map.js: failed
-kangax-es6/subclassing.misc.Number.js: failed
-kangax-es6/subclassing.misc.Set.js: failed
-kangax-es6/subclassing.misc.String.js: failed
+kangax-es6/subclassing.misc.Boolean.js: OK
+kangax-es6/subclassing.misc.Error.js: OK
+kangax-es6/subclassing.misc.Map.js: OK
+kangax-es6/subclassing.misc.Number.js: OK
+kangax-es6/subclassing.misc.Set.js: OK
+kangax-es6/subclassing.misc.String.js: OK
 kangax-es6/super.correct-constructor.js: OK
 kangax-es6/super.expression.js: OK
-kangax-es6/super.method-calls.js: OK
+kangax-es6/super.method-calls.js: Error: unsupported
 kangax-es6/super.new-target-binding.js: OK
-kangax-es6/super.property-access.js: OK
+kangax-es6/super.property-access.js: Error: unsupported
 kangax-es6/super.statement.js: OK
-kangax-es6/super.static-binding.js: OK
-kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: Error: call stack overflow
-kangax-es6/tail-calls.mutual.js: Error: call stack overflow
+kangax-es6/super.static-binding.js: Error: unsupported
+kangax-es6/super.this-binding.js: Error: unsupported
+kangax-es6/tail-calls.direct.js: OK
+kangax-es6/tail-calls.mutual.js: OK
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
 kangax-es6/template.frozen-array.js: OK
-kangax-es6/template.line-break.js: SyntaxError: (eval):1: unexpected character: '`'
+kangax-es6/template.line-break.js: SyntaxError: invalid token (line 1)
 kangax-es6/template.permanent-caching.js: OK
 kangax-es6/template.tagged.js: OK
 kangax-es6/template.toString.js: OK
@@ -1132,8 +1132,8 @@ kangax-es6/typed-arrays.Uint8Array.js: OK
 kangax-es6/typed-arrays.Uint8ClampedArray.js: OK
 kangax-es6/typed-arrays.Uint16Array.js: OK
 kangax-es6/typed-arrays.Uint32Array.js: OK
-kangax-es6/typed-arrays.constructor-iterables.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/typed-arrays.constructor-requires-new.js: failed
+kangax-es6/typed-arrays.constructor-iterables.js: failed
+kangax-es6/typed-arrays.constructor-requires-new.js: OK
 kangax-es6/typed-arrays.correct-prototype-chains.js: failed
 kangax-es6/typed-arrays.from.js: OK
 kangax-es6/typed-arrays.of.js: OK
@@ -1165,9 +1165,9 @@ kangax-es6/unicode-escapes.property-key.js: OK
 kangax-es6/unicode-escapes.string.js: OK
 kangax-es6/well-known.hasInstance.js: failed
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
-kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: OK
 kangax-es6/well-known.iterator.arguments.js: failed
-kangax-es6/well-known.iterator.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/well-known.iterator.js: OK
 kangax-es6/well-known.match.RegExp-constructor.js: OK
 kangax-es6/well-known.match.String.endsWith.js: OK
 kangax-es6/well-known.match.String.includes.js: OK
@@ -1180,149 +1180,149 @@ kangax-es6/well-known.species.Array.filter.js: OK
 kangax-es6/well-known.species.Array.map.js: OK
 kangax-es6/well-known.species.Array.slice.js: OK
 kangax-es6/well-known.species.Array.splice.js: OK
-kangax-es6/well-known.species.Promise.then.js: ReferenceError: 'setTimeout' is not defined
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es6/well-known.species.RegExp.split.js: failed
-kangax-es6/well-known.species.js: TypeError: Incompatible receiver, Symbol required
+kangax-es6/well-known.species.js: OK
 kangax-es6/well-known.split.js: OK
 kangax-es6/well-known.toPrimitive.js: failed
-kangax-es6/well-known.toStringTag.existing-builtins.js: OK
+kangax-es6/well-known.toStringTag.existing-builtins.js: failed
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
-kangax-es6/well-known.toStringTag.new-builtins.js: TypeError: Incompatible receiver, Symbol required
-kangax-es6/well-known.unscopables.js: [!] (plugin commonjs--resolver) SyntaxError: well-known.unscopables.js: 'with' in strict mode. (12:2) Warning: babel failed, falling back to the original script ReferenceError: 'Symbol' is not defined
+kangax-es6/well-known.toStringTag.new-builtins.js: OK
+kangax-es6/well-known.unscopables.js: [!] (plugin commonjs--resolver) SyntaxError: well-known.unscopables.js: 'with' in strict mode. (12:2) Warning: babel failed, falling back to the original script
 kangax-es2016/Array.prototype.includes.generic.js: OK
 kangax-es2016/Array.prototype.includes.js: OK
 kangax-es2016/Array.prototype.includes.sparse.js: OK
 kangax-es2016/Array.prototype.includes.typed-array.js: OK
 kangax-es2016/exponentiation.assignment.js: OK
 kangax-es2016/exponentiation.basic.js: OK
-kangax-es2016/exponentiation.unary-negation-error.js: OK
-kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: 'Proxy' is not defined
-kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: 'Proxy' is not defined
+kangax-es2016/exponentiation.unary-negation-error.js: failed
+kangax-es2016/misc.Proxy-Array-includes.js: OK
+kangax-es2016/misc.Proxy-enumerate-removed.js: OK
 kangax-es2016/misc.generator-no-new.js: failed
 kangax-es2016/misc.generator-throw-inner.js: OK
 kangax-es2016/misc.nested-rest-destructuring-decl.js: OK
 kangax-es2016/misc.nested-rest-destructuring-params.js: OK
 kangax-es2016/misc.strict-fn-non-simple-params-error.js: OK
-kangax-es2017/Atomics.add.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.and.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.compareExchange.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.exchange.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.isLockFree.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.load.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.notify.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.or.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.store.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.sub.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.wait.js: ReferenceError: 'Atomics' is not defined
-kangax-es2017/Atomics.xor.js: ReferenceError: 'Atomics' is not defined
+kangax-es2017/Atomics.add.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.and.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.exchange.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.load.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.notify.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.or.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.store.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.sub.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.wait.js: ReferenceError: identifier 'Atomics' undefined
+kangax-es2017/Atomics.xor.js: ReferenceError: identifier 'Atomics' undefined
 kangax-es2017/Object.entries.js: OK
-kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: 'Proxy' is not defined
+kangax-es2017/Object.getOwnPropertyDescriptors.js: OK
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: OK
 kangax-es2017/Object.values.js: OK
-kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: 'SharedArrayBuffer' is not defined
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: identifier 'SharedArrayBuffer' undefined
 kangax-es2017/SharedArrayBuffer.js: failed
-kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: 'SharedArrayBuffer' is not defined
-kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: 'SharedArrayBuffer' is not defined
-kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: 'SharedArrayBuffer' is not defined
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: identifier 'SharedArrayBuffer' undefined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: identifier 'SharedArrayBuffer' undefined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: identifier 'SharedArrayBuffer' undefined
 kangax-es2017/String.prototype.padEnd.js: OK
 kangax-es2017/String.prototype.padStart.js: OK
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: '__defineGetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: OK
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: OK
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: '__defineSetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: OK
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: OK
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: '__lookupGetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: OK
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: '__lookupSetter__' is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: OK
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: 'Proxy' is not defined
-kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: 'Proxy' is not defined
-kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: 'Proxy' is not defined
-kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: 'Proxy' is not defined
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.for-in-assignment-non-strict.js: 'for-in' loop variable declaration may not have an initializer. (10:7) Warning: babel failed, falling back to the original script
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: OK
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: OK
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: invalid descriptor
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
 kangax-es2017/async.Symbol.toStringTag.js: failed
-kangax-es2017/async.arrow-in-class.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.arrow.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.await-non-promise.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.await-rejection.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.await.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.constructor.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.methods-class.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.methods-object.js: ReferenceError: 'setTimeout' is not defined
+kangax-es2017/async.arrow-in-class.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.arrow.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.await-non-promise.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.await-rejection.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.await.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.constructor.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.methods-class.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.methods-object.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es2017/async.must-await-value.js: OK
 kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: OK
 kangax-es2017/async.no-prototype.js: failed
 kangax-es2017/async.prototype-chain.js: failed
-kangax-es2017/async.return.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2017/async.throw.js: ReferenceError: 'setTimeout' is not defined
+kangax-es2017/async.return.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2017/async.throw.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es2017/misc.arguments-caller-removed.js: OK
 kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
-kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2018/Promise.prototype.finally.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2018/async-iterators.for-await-of.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2018/async-iterators.generators.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: 'Proxy' is not defined
+kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2018/Promise.prototype.finally.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2018/async-iterators.for-await-of.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2018/async-iterators.generators.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
 kangax-es2018/misc.template-literal-revision.js: OK
 kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
-kangax-es2018/regex.lookbehind.js: SyntaxError: regular expression: syntax error
-kangax-es2018/regex.named-capture-groups.js: ReferenceError: 'WeakMap' is not defined
-kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: regular expression: too many character class ranges
+kangax-es2018/regex.lookbehind.js: SyntaxError: invalid regexp group (line 2002) error in executing file /tmp/tmp.YmuBh5tEJq.js
+kangax-es2018/regex.named-capture-groups.js: ReferenceError: identifier 'WeakMap' undefined
+kangax-es2018/regex.unicode-property-escapes.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: regular expression: too many character class ranges
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
 kangax-es2019/Object.fromEntries.js: OK
 kangax-es2019/String.prototype.trimEnd.js: OK
 kangax-es2019/String.prototype.trimStart.js: OK
-kangax-es2019/Symbol.prototype.description.empty.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2019/Symbol.prototype.description.js: TypeError: Incompatible receiver, Symbol required
-kangax-es2019/Symbol.prototype.description.undefined.js: TypeError: Incompatible receiver, Symbol required
+kangax-es2019/Symbol.prototype.description.empty.js: OK
+kangax-es2019/Symbol.prototype.description.js: OK
+kangax-es2019/Symbol.prototype.description.undefined.js: OK
 kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
 kangax-es2019/annex-b.String.prototype.trimRight.js: OK
-kangax-es2019/misc.Function-toString.Function-constructor.js: failed
-kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: (eval):1: unexpected token in expression: '>'
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
-kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: (eval):1: unexpected token: '[' (expected identifier or keyword)
-kangax-es2019/misc.Function-toString.native-code.js: EvalError: /tmp/tmp.jGIKZXXUlg.js:2003: invalid use of 'eval'undefined
-kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: (eval):1: unexpected escape sequence
-kangax-es2019/misc.JSON-stringify-well-formed.js: OK
-kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: (eval):1: string not terminated
-kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: string not terminated
-kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: 'setTimeout' is not defined
+kangax-es2019/misc.Function-toString.Function-constructor.js: SyntaxError: parse error (line 2, end of input)
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: parse error (line 1)
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: parse error (line 1)
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: parse error (line 1)
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: parse error (line 1)
+kangax-es2019/misc.Function-toString.native-code.js: OK
+kangax-es2019/misc.Function-toString.unicode-escapes.js: failed
+kangax-es2019/misc.JSON-stringify-well-formed.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: identifier 'setTimeout' undefined
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.N68soDkR3a.js:2539: unexpected token: (identifier) (expected ';')undefined
-kangax-es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
-kangax-es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.NWZ8DnK3zv.js:12: number with letter suffixundefined
-kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.Xc0uMTN06g.js:12: number with letter suffixundefined
-kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.LN2Jhzvfxa.js:2539: unexpected token: (identifier) (expected ';')undefined
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.XoWFu2bLCq.js:2539: number with letter suffixundefined
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.loNzgQGgY9.js:2539: number with letter suffixundefined
-kangax-es2020/Promise.allSettled.js: ReferenceError: 'setTimeout' is not defined
+kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.gqKD34Jssg.js
+kangax-es2020/BigInt.asIntN.js: ReferenceError: identifier 'BigInt' undefined
+kangax-es2020/BigInt.asUintN.js: ReferenceError: identifier 'BigInt' undefined
+kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.jKp8xhOHUL.js
+kangax-es2020/BigInt.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.nVvRYpz3xd.js
+kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.zdAFGB69pu.js
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.bZYD4HrHQ0.js
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.71lrvRckQV.js
+kangax-es2020/Promise.allSettled.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
 kangax-es2020/globalThis.descriptor.js: OK
@@ -1333,11 +1333,11 @@ kangax-es2020/optional-chaining.function-call.js: OK
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: OK
-kangax-es2021/FinalizationRegistry.js: ReferenceError: 'FinalizationRegistry' is not defined
-kangax-es2021/Promise.any.AggregateError.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2021/Promise.any.fulfillment.js: ReferenceError: 'setTimeout' is not defined
+kangax-es2021/FinalizationRegistry.js: ReferenceError: identifier 'FinalizationRegistry' undefined
+kangax-es2021/Promise.any.AggregateError.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2021/Promise.any.fulfillment.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es2021/String.prototype.replaceAll.js: OK
-kangax-es2021/WeakRef.js: ReferenceError: 'WeakRef' is not defined
+kangax-es2021/WeakRef.js: ReferenceError: identifier 'WeakRef' undefined
 kangax-es2021/logical-assignment.and.js: OK
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: OK
 kangax-es2021/logical-assignment.and.short-circuit.js: OK
@@ -1365,10 +1365,10 @@ kangax-es2022/Error.cause.TypeError.js: failed
 kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.URIError.js: failed
 kangax-es2022/Object.hasOwn.ToObject-first.js: failed
-kangax-es2022/Object.hasOwn.js: TypeError: undefined is not callable
-kangax-es2022/at-method.Array.js: TypeError: undefined is not callable
-kangax-es2022/at-method.String.js: TypeError: undefined is not callable
-kangax-es2022/at-method.TypedArray.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: undefined not callable (property 'hasOwn' of [object Function])
+kangax-es2022/at-method.Array.js: TypeError: undefined not callable (property 'at' of [object Array])
+kangax-es2022/at-method.String.js: TypeError: undefined not callable (property 'at' of 'abc')
+kangax-es2022/at-method.TypedArray.js: TypeError: undefined not callable (property 'at' of [object Int8Array])
 kangax-es2022/class-fields.computed-instance.js: OK
 kangax-es2022/class-fields.computed-static.js: OK
 kangax-es2022/class-fields.instance.parent-scope.js: OK
@@ -1386,127 +1386,127 @@ kangax-es2022/class-methods.private-static-accessor.js: OK
 kangax-es2022/class-methods.private-static.js: OK
 kangax-es2022/class-static-init-blocks.js: OK
 kangax-es2022/ergonomic-brand-checks.js: OK
-kangax-es2022/regex.flags.d.constructor.js: SyntaxError: invalid regular expression flag: 'd'
-kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: 'Proxy' is not defined
-kangax-es2023/Array.prototype.findLastIndex.js: TypeError: undefined is not callable
-kangax-es2023/Array.prototype.findLast.js: TypeError: undefined is not callable
-kangax-es2023/Array.prototype.toReversed.js: TypeError: undefined is not callable
-kangax-es2023/Array.prototype.toSorted.js: TypeError: undefined is not callable
-kangax-es2023/Array.prototype.toSpliced.js: TypeError: undefined is not callable
-kangax-es2023/Array.prototype.with.js: TypeError: undefined is not callable
-kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: undefined is not callable
-kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: undefined is not callable
-kangax-es2023/TypedArray.prototype.with.js: TypeError: undefined is not callable
-kangax-es2023/hashbang.js: SyntaxError: (eval):1: unexpected character: '#'
-kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined is not callable
-kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined is not callable
-kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not callable
+kangax-es2022/regex.flags.d.constructor.js: SyntaxError: invalid regexp flags
+kangax-es2022/regex.flags.d.shows-in-flags.js: failed
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: undefined not callable (property 'findLastIndex' of [object Array])
+kangax-es2023/Array.prototype.findLast.js: TypeError: undefined not callable (property 'findLast' of [object Array])
+kangax-es2023/Array.prototype.toReversed.js: TypeError: undefined not callable (property 'toReversed' of [object Array])
+kangax-es2023/Array.prototype.toSorted.js: TypeError: undefined not callable (property 'toSorted' of [object Array])
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: undefined not callable (property 'toSpliced' of [object Array])
+kangax-es2023/Array.prototype.with.js: TypeError: undefined not callable (property 'with' of [object Array])
+kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: undefined not callable (property 'toReversed' of [object Uint8Array])
+kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: undefined not callable (property 'toSorted' of [object Uint8Array])
+kangax-es2023/TypedArray.prototype.with.js: TypeError: undefined not callable (property 'with' of [object Uint8Array])
+kangax-es2023/hashbang.js: SyntaxError: invalid token (line 1)
+kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined not callable (property 'transferToFixedLength' of [object ArrayBuffer])
+kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
 kangax-es2024/Map.groupBy.js: OK
-kangax-es2024/Object.groupBy.js: TypeError: undefined is not callable
-kangax-es2024/Promise.withResolvers.js: TypeError: undefined is not callable
-kangax-es2024/regex.flags.v.constructor.js: SyntaxError: invalid regular expression flag: 'v'
+kangax-es2024/Object.groupBy.js: TypeError: undefined not callable (property 'groupBy' of [object Function])
+kangax-es2024/Promise.withResolvers.js: TypeError: undefined not callable (property 'withResolvers' of [object Function])
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: invalid regexp flags
 kangax-es2024/regex.flags.v.properties-of-strings.js: OK
 kangax-es2024/regex.flags.v.set-notations.js: OK
-kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: 'Proxy' is not defined
-kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: regular expression: program too large
-kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: regular expression: program too large
-kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: regular expression: program too large
-kangax-es2025/Iterator.extends.js: ReferenceError: 'Iterator' is not defined
-kangax-es2025/Iterator.from.iterable.js: ReferenceError: 'Iterator' is not defined
-kangax-es2025/Iterator.from.iterator.js: ReferenceError: 'Iterator' is not defined
-kangax-es2025/Iterator.instanceof.js: ReferenceError: 'Iterator' is not defined
-kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: 'Iterator' is not defined
-kangax-es2025/Iterator.prototype.drop.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.every.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.filter.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.find.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.flatMap.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.forEach.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.map.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.reduce.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.some.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.take.js: TypeError: undefined is not callable
-kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined is not callable
-kangax-es2025/Promise.try.js: ReferenceError: 'setTimeout' is not defined
-kangax-es2025/RegExp.escape.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.difference.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.intersection.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not callable
-kangax-es2025/Set.prototype.union.js: TypeError: undefined is not callable
+kangax-es2024/regex.flags.v.shows-in-flags.js: failed
+kangax-es2024/regex.flags.v.unicode-15.1.js: failed
+kangax-es2024/regex.flags.v.unicode-16.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2025/Iterator.extends.js: ReferenceError: identifier 'Iterator' undefined
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: identifier 'Iterator' undefined
+kangax-es2025/Iterator.from.iterator.js: ReferenceError: identifier 'Iterator' undefined
+kangax-es2025/Iterator.instanceof.js: ReferenceError: identifier 'Iterator' undefined
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: identifier 'Iterator' undefined
+kangax-es2025/Iterator.prototype.drop.js: TypeError: undefined not callable (property 'drop' of [object Object])
+kangax-es2025/Iterator.prototype.every.js: TypeError: undefined not callable (property 'every' of [object Object])
+kangax-es2025/Iterator.prototype.filter.js: TypeError: undefined not callable (property 'filter' of [object Object])
+kangax-es2025/Iterator.prototype.find.js: TypeError: undefined not callable (property 'find' of [object Object])
+kangax-es2025/Iterator.prototype.flatMap.js: TypeError: undefined not callable (property 'flatMap' of [object Object])
+kangax-es2025/Iterator.prototype.forEach.js: TypeError: undefined not callable (property 'forEach' of [object Object])
+kangax-es2025/Iterator.prototype.map.js: TypeError: undefined not callable (property 'map' of [object Object])
+kangax-es2025/Iterator.prototype.reduce.js: TypeError: undefined not callable (property 'reduce' of [object Object])
+kangax-es2025/Iterator.prototype.some.js: TypeError: undefined not callable (property 'some' of [object Object])
+kangax-es2025/Iterator.prototype.take.js: TypeError: undefined not callable (property 'take' of [object Object])
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined not callable (property 'toArray' of [object Object])
+kangax-es2025/Promise.try.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-es2025/RegExp.escape.js: TypeError: undefined not callable (property 'escape' of [object Function])
+kangax-es2025/Set.prototype.difference.js: TypeError: undefined not callable (property 'difference' of [object Object])
+kangax-es2025/Set.prototype.intersection.js: TypeError: undefined not callable (property 'intersection' of [object Object])
+kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined not callable (property 'isDisjointFrom' of [object Object])
+kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: undefined not callable (property 'isSubsetOf' of [object Object])
+kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: undefined not callable (property 'isSupersetOf' of [object Object])
+kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: undefined not callable (property 'symmetricDifference' of [object Object])
+kangax-es2025/Set.prototype.union.js: TypeError: undefined not callable (property 'union' of [object Object])
 kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: regular expression: syntax error
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regexp group (line 2001) error in executing file /tmp/tmp.VxPhigsTkW.js
 kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: OK
-kangax-intl/Intl.Collator.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.Collator.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Intl.Collator.valid-tags.js: failed
-kangax-intl/Intl.Collator.without-new.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
-kangax-intl/Intl.DateTimeFormat.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.NumberFormat.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: identifier 'Intl' undefined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Intl.js: failed
-kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.prototype.js: ReferenceError: identifier 'Intl' undefined
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
-kangax-next/Array.isTemplateObject.js: TypeError: undefined is not callable
-kangax-next/AsyncDisposableStack.js: ReferenceError: 'AsyncDisposableStack' is not defined
-kangax-next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.iterable.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.iterator.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.every.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.filter.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.find.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.forEach.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.map.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.reduce.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.some.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined is not callable
-kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not callable
-kangax-next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
-kangax-next/Map.prototype.upsert.js: TypeError: undefined is not callable
+kangax-next/Array.isTemplateObject.js: TypeError: undefined not callable (property 'isTemplateObject' of [object Function])
+kangax-next/AsyncDisposableStack.js: ReferenceError: identifier 'AsyncDisposableStack' undefined
+kangax-next/AsyncIterator.extends.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: identifier 'AsyncIterator' undefined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: undefined not callable (property 'drop' of [object Object])
+kangax-next/AsyncIterator.prototype.every.js: TypeError: undefined not callable (property 'every' of [object Object])
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: undefined not callable (property 'filter' of [object Object])
+kangax-next/AsyncIterator.prototype.find.js: TypeError: undefined not callable (property 'find' of [object Object])
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: undefined not callable (property 'flatMap' of [object Object])
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: undefined not callable (property 'forEach' of [object Object])
+kangax-next/AsyncIterator.prototype.map.js: TypeError: undefined not callable (property 'map' of [object Object])
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: undefined not callable (property 'reduce' of [object Object])
+kangax-next/AsyncIterator.prototype.some.js: TypeError: undefined not callable (property 'some' of [object Object])
+kangax-next/AsyncIterator.prototype.take.js: TypeError: undefined not callable (property 'take' of [object Object])
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined not callable (property 'toArray' of [object Object])
+kangax-next/DisposableStack.js: ReferenceError: identifier 'DisposableStack' undefined
+kangax-next/Map.prototype.upsert.js: TypeError: undefined not callable (property 'upsert' of [object Object])
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: ReferenceError: 'SuppressedError' is not defined
-kangax-next/Uint8Array.fromBase64.js: TypeError: undefined is not callable
-kangax-next/Uint8Array.fromHex.js: TypeError: undefined is not callable
-kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined is not callable
-kangax-next/Uint8Array.setFromHex.js: TypeError: undefined is not callable
-kangax-next/Uint8Array.toBase64.js: TypeError: undefined is not callable
-kangax-next/Uint8Array.toHex.js: TypeError: undefined is not callable
-kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not callable
-kangax-next/await-using.for-of.js: ReferenceError: 'Symbol' is not defined
-kangax-next/await-using.js: ReferenceError: 'setTimeout' is not defined
-kangax-next/class-decorators.js: [!] (plugin commonjs--resolver) SyntaxError: class-decorators.js: Support for the experimental syntax 'decorators' isn't currently enabled (10:5): Warning: babel failed, falling back to the original script SyntaxError: class-decorators.js:9: unexpected token: (identifier) (expected ';')undefined
-kangax-next/function.sent.js: [!] (plugin commonjs--resolver) SyntaxError: function.sent.js: Support for the experimental syntax 'functionSent' isn't currently enabled (11:23): Warning: babel failed, falling back to the original script SyntaxError: function.sent.js:10: unexpected token: '*' (expected identifier)undefined
-kangax-next/throw-expr.arrow.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.arrow.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:18): Warning: babel failed, falling back to the original script SyntaxError: throw-expr.arrow.js:9: unexpected token in expression: ')'undefined
-kangax-next/throw-expr.conditional.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.conditional.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:15): Warning: babel failed, falling back to the original script SyntaxError: throw-expr.conditional.js:9: unexpected token in expression: 'throw'u
-kangax-next/throw-expr.logical.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.logical.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (11:15): Warning: babel failed, falling back to the original script SyntaxError: throw-expr.logical.js:11: unexpected token in expression: 'throw'undefin
-kangax-next/throw-expr.param-init.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.param-init.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:22): Warning: babel failed, falling back to the original script SyntaxError: throw-expr.param-init.js:9: unexpected token: '=' (expected ')')undefi
+kangax-next/SuppressedError.js: ReferenceError: identifier 'SuppressedError' undefined
+kangax-next/Uint8Array.fromBase64.js: TypeError: undefined not callable (property 'fromBase64' of [object Function])
+kangax-next/Uint8Array.fromHex.js: TypeError: undefined not callable (property 'fromHex' of [object Function])
+kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined not callable (property 'setFromBase64' of [object Uint8Array])
+kangax-next/Uint8Array.setFromHex.js: TypeError: undefined not callable (property 'setFromHex' of [object Uint8Array])
+kangax-next/Uint8Array.toBase64.js: TypeError: undefined not callable (property 'toBase64' of [object Uint8Array])
+kangax-next/Uint8Array.toHex.js: TypeError: undefined not callable (property 'toHex' of [object Uint8Array])
+kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined not callable (property 'upsert' of [object Object])
+kangax-next/await-using.for-of.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-next/await-using.js: ReferenceError: identifier 'setTimeout' undefined
+kangax-next/class-decorators.js: [!] (plugin commonjs--resolver) SyntaxError: class-decorators.js: Support for the experimental syntax 'decorators' isn't currently enabled (10:5): Warning: babel failed, falling back to the original script SyntaxError: parse error (line 9) error in executing file class-decorators.js
+kangax-next/function.sent.js: [!] (plugin commonjs--resolver) SyntaxError: function.sent.js: Support for the experimental syntax 'functionSent' isn't currently enabled (11:23): Warning: babel failed, falling back to the original script SyntaxError: function name required (line 10) error in executing file function.sent.js
+kangax-next/throw-expr.arrow.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.arrow.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:18): Warning: babel failed, falling back to the original script SyntaxError: empty expression not allowed (line 9) error in executing file throw-expr.ar
+kangax-next/throw-expr.conditional.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.conditional.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:15): Warning: babel failed, falling back to the original script SyntaxError: parse error (line 9) error in executing file throw-expr.conditional.j
+kangax-next/throw-expr.logical.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.logical.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (11:15): Warning: babel failed, falling back to the original script SyntaxError: parse error (line 11) error in executing file throw-expr.logical.js
+kangax-next/throw-expr.param-init.js: [!] (plugin commonjs--resolver) SyntaxError: throw-expr.param-init.js: Support for the experimental syntax 'throwExpressions' isn't currently enabled (9:22): Warning: babel failed, falling back to the original script SyntaxError: parse error (line 9) error in executing file throw-expr.param-init.js
 kangax-next/using.for-of.js: OK
 kangax-next/using.js: OK
