@@ -11,7 +11,7 @@ function f1() {
 if (f1() == 1) {
   ok++;
 } else {
-  console.log("es1/function.js: function with no parameters failed");
+  console.log("es1/functions.js: function with no parameters failed");
 }
 
 function f2(a) {
@@ -20,7 +20,7 @@ function f2(a) {
 if (f2(5) == 5) {
   ok++;
 } else {
-  console.log("es1/function.js: function with one parameter failed");
+  console.log("es1/functions.js: function with one parameter failed");
 }
 
 function f3(a, b) {
@@ -29,7 +29,7 @@ function f3(a, b) {
 if (f3(3, 4) == 7) {
   ok++;
 } else {
-  console.log("es1/function.js: function with two parameters failed");
+  console.log("es1/functions.js: function with two parameters failed");
 }
 
 function f4(a, b, c) {
@@ -38,7 +38,7 @@ function f4(a, b, c) {
 if (f4(1, 2, 3) == 6) {
   ok++;
 } else {
-  console.log("es1/function.js: function with three parameters failed");
+  console.log("es1/functions.js: function with three parameters failed");
 }
 
 function f5(x) {
@@ -48,7 +48,7 @@ function f5(x) {
 if (f5(5) == 15) {
   ok++;
 } else {
-  console.log("es1/function.js: function with local var failed");
+  console.log("es1/functions.js: function with local var failed");
 }
 
 function f6() {
@@ -59,11 +59,11 @@ function f6() {
 if (f6() == 100) {
   ok++;
 } else {
-  console.log("es1/function.js: function with var assignment failed");
+  console.log("es1/functions.js: function with var assignment failed");
 }
 
 if (ok == 6) {
-  console.log("es1/function.js: OK");
+  console.log("es1/functions.js: OK");
 } else {
-  console.log("es1/function.js: failed");
+  console.log("es1/functions.js: failed");
 }
