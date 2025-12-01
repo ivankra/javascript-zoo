@@ -42,6 +42,7 @@ qv4_jitless:          --build-arg REV=v6.10.0 -f qv4.Dockerfile --build-arg JITL
 rhino:                --build-arg REV=Rhino1_8_0_Release
 sobek:                --build-arg REV=976a34df9c09d73af4a33eaca369050e289c1397
 spidermonkey:         --build-arg REV=FIREFOX_145_0_RELEASE -f spidermonkey.Dockerfile
+spidermonkey_gcc:     --build-arg REV=FIREFOX_145_0_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
 spidermonkey_jitless: --build-arg REV=FIREFOX_145_0_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
 spidermonkey_intl:    --build-arg REV=FIREFOX_145_0_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
 xs:                   --build-arg REV=6.0.0 -f xs.Dockerfile

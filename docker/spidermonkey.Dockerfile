@@ -1,8 +1,19 @@
+# Build instructions: https://firefox-source-docs.mozilla.org/js/build.html
+#
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
 ARG BASE=jsz-clang
 FROM $BASE
+
+RUN apt-get update -y && \
+    apt-get install -y --no-install-recommends cargo rustc libicu-dev libxml2 libz-dev
+    #ca-certificates build-essential git pkg-config python3
+
+# Some llvm utils are required even for gcc builds
+RUN which llvm-strip >/dev/null 2>&1 || apt-get install -y --no-install-recommends llvm llvm-19-tools
+
+RUN cargo install cbindgen  # debian's version is a bit old, FF 146+ needs 0.29.1
 
 ARG REPO=https://github.com/mozilla-firefox/firefox.git
 ARG REV=release
@@ -11,24 +22,14 @@ WORKDIR /src
 RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends \
-        cargo \
-        cbindgen \
-        libicu-dev \
-        libxml2 \
-        libz-dev \
-        python3-pip \
-        python3-psutil \
-        rustc
-
-# jitless: like --no-jit-backend cli flag, NOT same as: --no-ion --no-baseline --no-asmjs --no-native-regexp !
-# full: full-featured build
+# INTL=true: build with full internationalization support.
 ARG INTL=
+
+# JITLESS=true: build without JIT. Behaves like --no-jit-backend CLI flag.
+# Note: somehow, --no-jit-backend is NOT identical to --no-ion --no-baseline --no-asmjs --no-native-regexp!
 ARG JITLESS=
 
-# Build instructions: https://firefox-source-docs.mozilla.org/js/build.html
-# Run './js/src/configure --help' for configure options.
+# Run './js/src/configure --help' to see all configure options.
 RUN { \
       echo "ac_add_options --enable-project=js"; \
       if [ "$JITLESS" = true ]; then \
@@ -38,9 +39,6 @@ RUN { \
       fi; \
       echo "ac_add_options --enable-optimize"; \
       echo "ac_add_options --enable-release"; \
-      echo "ac_add_options --enable-strip"; \
-      echo "ac_add_options --disable-debug"; \
-      echo "ac_add_options --disable-debug-symbols"; \
       echo "ac_add_options --disable-tests"; \
       if [ "$INTL" != true ]; then \
         echo "ac_add_options --without-intl-api"; \
