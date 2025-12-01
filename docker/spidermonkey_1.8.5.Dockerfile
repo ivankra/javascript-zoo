@@ -39,7 +39,7 @@ RUN cd */js/src && \
     fi && \
     sed -i 's/\(QuoteString(&sprinter, s, quote)\) >= 0/\1 >= (char*)NULL/' jsopcode.cpp && \
     ./configure --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
-    make -j
+    make -j $(nproc)
 
 # Metadata
 ENV JS_BINARY=/src/js/src/shell/js

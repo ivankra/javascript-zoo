@@ -26,7 +26,7 @@ RUN export CXXFLAGS="-w -Wno-implicit-fallthrough -Wno-deprecated-copy -Wno-depr
     cmake -Bbuild -DCMAKE_BUILD_TYPE=Release \
       $(if [ "$JITLESS" = true ]; then echo -DJIT=OFF; fi) \
       $(if [ "$STATIC" = true ]; then echo -DCMAKE_EXE_LINKER_FLAGS=-static; fi) && \
-    make -C build -j lv5
+    make -C build -j $(nproc) lv5
 
 ENV JS_BINARY=/src/build/iv/lv5/lv5
 RUN if ${JS_BINARY} -v | grep -q "JIT..off"; then echo "" >jsz_jit; fi  # metadata
