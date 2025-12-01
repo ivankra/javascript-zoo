@@ -32,8 +32,9 @@ AMD64_ONLY_TARGETS := \
   spidermonkey_24 \
   starlight
 
-# Revamped repo
-DISABLED_TARGETS = hako%
+# hako: revamped repo, build scripts needs to be rewritten
+# bali: broken build
+DISABLED_TARGETS = hako% bali
 
 TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 TARGETS := $(filter-out $(DISABLED_TARGETS),$(TARGETS))
