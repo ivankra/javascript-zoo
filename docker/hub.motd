@@ -1,7 +1,7 @@
 JavaScript engines zoo
 https://github.com/ivankra/javascript-zoo
 
-  * /dist (/zoo/dist/<arch>): pre-built JavaScript shell binaries.
+  * /dist: pre-built JavaScript shell binaries.
     Most can be run directly as a REPL or with a script to run
     as a command-line argument.
 
