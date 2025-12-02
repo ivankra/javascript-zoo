@@ -50,7 +50,7 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 90%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 97%, ES2016+ 99%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 97%<pre>
 <a href="../conformance/kangax-es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.construct.js">Proxy.handler.construct.js</a>: TypeError: not a function
@@ -69,21 +69,18 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
-<li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 67%<pre>
-<a href="../conformance/kangax-es2024/ArrayBuffer.prototype.detached.js">ArrayBuffer.prototype.detached.js</a>: TypeError: not a function
-<a href="../conformance/kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js">ArrayBuffer.prototype.transferToFixedLength.js</a>: TypeError: not a function
-<a href="../conformance/kangax-es2024/ArrayBuffer.prototype.transfer.js">ArrayBuffer.prototype.transfer.js</a>: TypeError: not a function
+<li>ES2024: 96%<pre>
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 32%<br>
+<li>ES2025: 95%<pre>
+<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: duplicate group name
+</pre></li>
 <li>Next: 0%<br>
 <li>Intl: 25%<br>
 </ul></details>

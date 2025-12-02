@@ -356,16 +356,16 @@
     "summary": "Javascript engine written in Rust, with nearly complete ES2025 support.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/brimstone.md",
     "repository": "https://github.com/Hans-Halverson/brimstone.git",
-    "loc": 74381,
-    "loc_detailed": "74381 (`cloc src`)",
+    "loc": 74409,
+    "loc_detailed": "74409 (`cloc src`)",
     "language": "Rust",
-    "license": "Missing",
+    "license": "MIT",
     "standard": "ESnext",
     "years": "2022-",
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
     "regex": "own",
-    "regex_detailed": "own ([regexp/](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
+    "regex_detailed": "own ([regexp](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
     "github_stars": 26,
     "github_forks": 5,
     "github_contributors": 1,
@@ -448,15 +448,15 @@
       }
     ],
     "conformance": {
-      "es1": 0.9747,
-      "es3": 0.9865,
-      "es5": 0.9865,
-      "kangax-es5": 0.9891,
-      "kangax-es6": 0.9426,
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9573,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.8,
-      "kangax-es2018": 0.9895,
-      "kangax-es2019": 0.9375,
+      "kangax-es2018": 1.0,
+      "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
@@ -465,8 +465,8 @@
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.981,
-      "kangax-es2016plus": 0.957
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.965
     }
   },
   {
@@ -672,12 +672,12 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "82e867808c25cb0f38ba75c885d6d7832ae5201ed6e5c9d3e28179d4a1e7ccbc",
+        "binary_sha256": "6e837fa5d960dee417881c5b8782a99874b6a21cfbbdb87998a7bc55af104f62",
         "binary_size": 199512,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "f4e6dfeda0158df2f73c4926de6c64420b416387",
-        "revision_date": "2025-10-27",
-        "version": "2.20.0-17-gf4e6dfe"
+        "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b",
+        "revision_date": "2025-11-10",
+        "version": "2.20.0-19-gda0d06d"
       }
     ],
     "conformance": {
@@ -1396,11 +1396,11 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "845ab06d73147f8db5680222aea186c88bd8b0081c9e585644c0aec79ecde5d5",
+        "binary_sha256": "c0ff5f0deadb509d8203d70d79a1957854cf3532f166fbcec4569d1bf5486724",
         "binary_size": 1053384,
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
       }
     ],
     "conformance": {
@@ -1546,8 +1546,8 @@
       }
     ],
     "conformance": {
-      "es1": 0.9697,
-      "es3": 0.973,
+      "es1": 0.9747,
+      "es3": 0.9932,
       "es5": 1.0,
       "kangax-es5": 0.9891,
       "kangax-es6": 0.9574,
@@ -1562,8 +1562,8 @@
       "kangax-es2024": 0.6735,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
-      "kangax-next": 0.0,
-      "es1-es5": 0.9762,
+      "kangax-next": 0.0909,
+      "es1-es5": 0.9857,
       "kangax-es2016plus": 0.9438
     }
   },
@@ -2809,29 +2809,29 @@
         "binary_sha256": "2434ef2982130931b564483d1d2930f72fdfe27b028b6e2514a40346402a6051",
         "binary_size": 4858456,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
-        "version": "250829098.0.3"
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
+        "version": "250829098.0.4"
       },
       {
         "arch": "arm64",
         "binary_sha256": "6ab7ff3b16d5be9a90cd478cfd883ab285aa5e10fb1b56f3cd33115a0c4a555c",
         "binary_size": 4135400,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
         "variant": "static_clang",
-        "version": "250829098.0.3"
+        "version": "250829098.0.4"
       },
       {
         "arch": "arm64",
         "binary_sha256": "317cf0f38f1e5f297907c135691b41a3d402880342fd64bfa92ab6414126cfe7",
         "binary_size": 5055256,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
         "variant": "static_intl",
-        "version": "250829098.0.3"
+        "version": "250829098.0.4"
       }
     ],
     "conformance": {
@@ -3072,7 +3072,7 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "645ed10a84b597cfc8017135d217f2e389ff3b252b6bbe8bce3d5b573622c97d",
+        "binary_sha256": "4bf9b9f10f2e59f5738f631a30dac40d08845177d0d19665163bab7187195b86",
         "binary_size": 4532736,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "jit": "",
@@ -4280,19 +4280,19 @@
       "kangax-es5": 0.9214,
       "kangax-es6": 0.9169,
       "kangax-es2016": 0.8485,
-      "kangax-es2017": 0.86,
-      "kangax-es2018": 0.8316,
+      "kangax-es2017": 0.9,
+      "kangax-es2018": 0.8421,
       "kangax-es2019": 0.8333,
       "kangax-es2020": 0.8857,
       "kangax-es2021": 1.0,
       "kangax-es2022": 0.9728,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7959,
-      "kangax-es2025": 0.7368,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 0.9474,
       "kangax-intl": 0.8214,
       "kangax-next": 0.0505,
       "es1-es5": 0.969,
-      "kangax-es2016plus": 0.87
+      "kangax-es2016plus": 0.912
     }
   },
   {
@@ -4756,21 +4756,21 @@
       "es3": 0.9932,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9252,
+      "kangax-es6": 0.9228,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.94,
+      "kangax-es2017": 0.92,
       "kangax-es2018": 0.9895,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7959,
+      "kangax-es2024": 0.9592,
       "kangax-es2025": 0.7895,
       "kangax-intl": 1.0,
       "kangax-next": 0.1905,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.9528
+      "kangax-es2016plus": 0.957
     }
   },
   {
@@ -5606,24 +5606,24 @@
     ],
     "conformance": {
       "es1": 0.9343,
-      "es3": 0.8986,
+      "es3": 0.9054,
       "es5": 0.6892,
-      "kangax-es5": 0.8143,
-      "kangax-es6": 0.3886,
+      "kangax-es5": 0.8288,
+      "kangax-es6": 0.3893,
       "kangax-es2016": 0.3636,
       "kangax-es2017": 0.6,
       "kangax-es2018": 0.3158,
       "kangax-es2019": 0.1875,
       "kangax-es2020": 0.2857,
       "kangax-es2021": 0.2857,
-      "kangax-es2022": 0.0476,
+      "kangax-es2022": 0.1429,
       "kangax-es2023": 0.2857,
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.1404,
       "kangax-intl": 0.1071,
       "kangax-next": 0.0,
-      "es1-es5": 0.8786,
-      "kangax-es2016plus": 0.2722
+      "es1-es5": 0.881,
+      "kangax-es2016plus": 0.2854
     }
   },
   {
@@ -5727,13 +5727,13 @@
       "es3": 0.9054,
       "es5": 0.8514,
       "kangax-es5": 0.9312,
-      "kangax-es6": 0.8573,
+      "kangax-es6": 0.8762,
       "kangax-es2016": 0.9394,
       "kangax-es2017": 0.88,
       "kangax-es2018": 0.6737,
       "kangax-es2019": 0.9464,
       "kangax-es2020": 0.9286,
-      "kangax-es2021": 0.7143,
+      "kangax-es2021": 1.0,
       "kangax-es2022": 0.9524,
       "kangax-es2023": 1.0,
       "kangax-es2024": 0.551,
@@ -5741,7 +5741,7 @@
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 0.9167,
-      "kangax-es2016plus": 0.8121
+      "kangax-es2016plus": 0.8386
     }
   },
   {
@@ -5899,7 +5899,7 @@
       },
       {
         "arch": "arm64",
-        "dist_size": 17708324,
+        "dist_size": 17686617,
         "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0",
         "revision_date": "2025-11-09",
         "Richards": 2617.356,
@@ -5907,11 +5907,11 @@
       }
     ],
     "conformance": {
-      "es1": 0.8788,
+      "es1": 0.8838,
       "es3": 0.6149,
-      "es5": 0.6351,
+      "es5": 0.7027,
       "kangax-es5": 0.81,
-      "kangax-es6": 0.4524,
+      "kangax-es6": 0.4543,
       "kangax-es2016": 0.6364,
       "kangax-es2017": 0.6718,
       "kangax-es2018": 0.2632,
@@ -5924,7 +5924,7 @@
       "kangax-es2025": 0.2105,
       "kangax-intl": 0.25,
       "kangax-next": 0.0202,
-      "es1-es5": 0.7429,
+      "es1-es5": 0.7571,
       "kangax-es2016plus": 0.5593
     }
   },
@@ -6033,12 +6033,12 @@
       "es3": 1.0,
       "es5": 0.9865,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9656,
+      "kangax-es6": 0.9775,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.8271,
+      "kangax-es2017": 0.8471,
       "kangax-es2018": 0.9368,
       "kangax-es2019": 1.0,
-      "kangax-es2020": 0.8571,
+      "kangax-es2020": 0.5714,
       "kangax-es2021": 0.7857,
       "kangax-es2022": 0.619,
       "kangax-es2023": 0.2,
@@ -6047,7 +6047,7 @@
       "kangax-intl": 0.25,
       "kangax-next": 0.0303,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.6787
+      "kangax-es2016plus": 0.6555
     }
   },
   {
@@ -6190,25 +6190,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.5354,
+      "es1": 0.5657,
       "es3": 0.5135,
-      "es5": 0.2973,
-      "kangax-es5": 0.4615,
-      "kangax-es6": 0.274,
-      "kangax-es2016": 0.2121,
-      "kangax-es2017": 0.22,
+      "es5": 0.3514,
+      "kangax-es5": 0.5579,
+      "kangax-es6": 0.2804,
+      "kangax-es2016": 0.303,
+      "kangax-es2017": 0.24,
       "kangax-es2018": 0.2105,
-      "kangax-es2019": 0.125,
+      "kangax-es2019": 0.0,
       "kangax-es2020": 0.2571,
       "kangax-es2021": 0.1429,
-      "kangax-es2022": 0.0952,
+      "kangax-es2022": 0.1111,
       "kangax-es2023": 0.0,
       "kangax-es2024": 0.0,
-      "kangax-es2025": 0.1579,
-      "kangax-intl": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.1429,
       "kangax-next": 0.0,
-      "es1-es5": 0.4857,
-      "kangax-es2016plus": 0.1618
+      "es1-es5": 0.5095,
+      "kangax-es2016plus": 0.1408
     }
   },
   {
@@ -6674,18 +6674,18 @@
       "kangax-es6": 0.9699,
       "kangax-es2016": 1.0,
       "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.6735,
-      "kangax-es2025": 0.3158,
+      "kangax-es2024": 0.9592,
+      "kangax-es2025": 0.9474,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.8974
+      "kangax-es2016plus": 0.9915
     }
   },
   {
@@ -7020,7 +7020,7 @@
         "binary_size": 1509656,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
       }
     ],
     "conformance": {
@@ -7166,24 +7166,24 @@
     ],
     "conformance": {
       "es1": 1.0,
-      "es3": 0.9865,
+      "es3": 1.0,
       "es5": 0.8514,
-      "kangax-es5": 0.8867,
-      "kangax-es6": 0.6539,
-      "kangax-es2016": 0.6364,
-      "kangax-es2017": 0.385,
-      "kangax-es2018": 0.3684,
+      "kangax-es5": 0.9068,
+      "kangax-es6": 0.7152,
+      "kangax-es2016": 0.7273,
+      "kangax-es2017": 0.425,
+      "kangax-es2018": 0.6,
       "kangax-es2019": 0.8869,
-      "kangax-es2020": 0.7286,
+      "kangax-es2020": 0.8,
       "kangax-es2021": 0.381,
       "kangax-es2022": 0.2381,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.2857,
-      "kangax-es2025": 0.0,
+      "kangax-es2024": 0.7143,
+      "kangax-es2025": 0.3158,
       "kangax-intl": 0.25,
       "kangax-next": 0.0606,
-      "es1-es5": 0.969,
-      "kangax-es2016plus": 0.4328
+      "es1-es5": 0.9738,
+      "kangax-es2016plus": 0.5414
     }
   },
   {
@@ -7213,16 +7213,16 @@
       },
       {
         "arch": "arm64",
-        "dist_size": 148027076,
+        "dist_size": 148039972,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       }
     ],
     "conformance": {
-      "es1": 0.6869,
+      "es1": 0.702,
       "es3": 0.2027,
       "es5": 0.2703,
-      "es1-es5": 0.4429
+      "es1-es5": 0.45
     }
   },
   {
@@ -7655,7 +7655,7 @@
     "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
-      "es5": 0.7568,
+      "es5": 0.7297,
       "kangax-es5": 0.7995,
       "kangax-es6": 0.0304,
       "kangax-es2016": 0.0,
@@ -7670,7 +7670,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.8429,
+      "es1-es5": 0.8381,
       "kangax-es2016plus": 0.0257
     }
   },
@@ -8375,6 +8375,16 @@
         "SplayLatency": 2891,
         "SplayLatency_detailed": "N=100 median=2891 mean=2885.92±2.99 max=2942",
         "zlib_error": "zlib: ReferenceError: Int32Array is not defined"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "430bb1191ee4660080811e2249032d4f1c8066ca7375a781ca9c73479e11e6d6",
+        "binary_size": 18105872,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "0131ff10eec6e050cd82e9e92fdbabb747992aa5",
+        "revision_date": "2025-12-01",
+        "variant": "gcc",
+        "version": "146.0"
       },
       {
         "arch": "arm64",
@@ -9539,24 +9549,24 @@
     ],
     "conformance": {
       "es1": 0.8737,
-      "es3": 0.7095,
-      "es5": 0.5811,
-      "kangax-es5": 0.7651,
-      "kangax-es6": 0.5707,
+      "es3": 0.7365,
+      "es5": 0.5946,
+      "kangax-es5": 0.7999,
+      "kangax-es6": 0.5835,
       "kangax-es2016": 0.5909,
       "kangax-es2017": 0.5737,
       "kangax-es2018": 0.6281,
       "kangax-es2019": 0.5625,
       "kangax-es2020": 0.7286,
-      "kangax-es2021": 0.5238,
+      "kangax-es2021": 0.5952,
       "kangax-es2022": 0.8186,
       "kangax-es2023": 0.9429,
       "kangax-es2024": 0.5918,
-      "kangax-es2025": 0.1805,
-      "kangax-intl": 0.5,
+      "kangax-es2025": 0.2105,
+      "kangax-intl": 0.5714,
       "kangax-next": 0.0404,
-      "es1-es5": 0.7643,
-      "kangax-es2016plus": 0.588
+      "es1-es5": 0.7762,
+      "kangax-es2016plus": 0.5984
     }
   },
   {

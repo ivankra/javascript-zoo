@@ -14,7 +14,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 
 ## Conformance
 
-<details><summary>ES1-ES5: 74%</summary><ul>
+<details><summary>ES1-ES5: 76%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/porffor.txt">Full log</a>.</li>
 <li>ES1: 88%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array() + array index length update failed; sparse array length failed
@@ -64,7 +64,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: prototype chain failed; Object.prototype failed
 ...
 </pre></li>
-<li>ES5: 64%<pre>
+<li>ES5: 70%<pre>
 <a href="../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: thisArg binding failed; argument binding failed; length property incorrect; bound constructor failed
@@ -72,11 +72,6 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: failed to apply reviver function; failed to delete property for which reviver returned undefined
 <a href="../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: cyclic structure does not throw TypeError; didn't call user-provided toJSON() method
 <a href="../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer function failed; replacer array failed
-<a href="../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: writable attributes failed
-<a href="../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: non-writable property failed
-<a href="../conformance/es5/Object.freeze.js">Object.freeze.js</a>: prevented modification failed; prevented addition failed
-<a href="../conformance/es5/Object.preventExtensions.js">Object.preventExtensions.js</a>: prevented addition failed
-<a href="../conformance/es5/Object.seal.js">Object.seal.js</a>: prevented property addition failed
 <a href="../conformance/es5/String.indexing.js">String.indexing.js</a>: 'test'[10] !== undefined
 <a href="../conformance/es5/arguments.toStringTag.js">arguments.toStringTag.js</a>: failed
 <a href="../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
@@ -86,6 +81,11 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es5/strict.no-delete-non-configurable.js">strict.no-delete-non-configurable.js</a>: failed
 <a href="../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
 <a href="../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: failed
+<a href="../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: failed
+<a href="../conformance/es5/strict.no-function-caller-or-arguments.js">strict.no-function-caller-or-arguments.js</a>: failed
+<a href="../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
+<a href="../conformance/es5/strict.no-with.js">strict.no-with.js</a>: failed
+<a href="../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: ReferenceError: passed is not defined
 ...
 </pre></li>
 </ul></details>
@@ -125,7 +125,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 </pre></li>
 <li>ES2018: 26%<br>
 <li>ES2019: 66%<pre>
-<a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot get property of nullish value
+<a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property of undefined
 <a href="../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: Unexpected token (1:60)
 <a href="../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: SyntaxError: Dynamic code evaluation is not supported
@@ -163,7 +163,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/kangax-es2022/class-fields.instance.parent-scope.js">class-fields.instance.parent-scope.js</a>: ReferenceError: a is not defined
 <a href="../conformance/kangax-es2022/class-methods.private-accessor.js">class-methods.private-accessor.js</a>: ReferenceError: y is not defined
 <a href="../conformance/kangax-es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: ReferenceError: y is not defined
-<a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: RuntimeError: memory access out of bounds
+<a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: Proxy is not defined
 </pre></li>
 <li>ES2023: 89%<pre>
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: failed

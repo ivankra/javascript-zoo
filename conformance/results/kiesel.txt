@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "d0ac3a6e1f93e274c69e210d5ea6adf3ed7e3479331c55b4bb8ac7a972ae7b48", "binary_size": 13227896, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "e799c15d3b7c14ce93572126e4d70a568f52ae78", "revision_date": "2025-11-14", "version": "0.1.0-dev+e799c15d3"}
+Metadata: {"arch": "arm64", "binary_sha256": "97afb04a7f6485593de95c54c97f5359b45110a558c03f2342dd38ac42e8d919", "binary_size": 13231408, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "073f5d0a6dfafe96b4d2eab25c64f2b9be17e7e4", "revision_date": "2025-11-29", "version": "0.1.0-dev+073f5d0a6"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -1265,7 +1265,7 @@ kangax-es2017/async.prototype-chain.js: OK
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/regex.flags.u.case-folding.js: OK
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid RegExp pattern: unknown unicode script (regex.unicode-property-escapes.unicode-17.0.js:10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1405,11 +1405,11 @@ kangax-es2024/Map.groupBy.js: OK
 kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: OK
 kangax-es2024/regex.flags.v.constructor.js: OK
-kangax-es2024/regex.flags.v.properties-of-strings.js: failed
-kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid RegExp pattern: invalid class range (regex.flags.v.set-notations.js:10:6)
+kangax-es2024/regex.flags.v.properties-of-strings.js: OK
+kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
-kangax-es2024/regex.flags.v.unicode-15.1.js: failed
-kangax-es2024/regex.flags.v.unicode-16.0.js: failed
+kangax-es2024/regex.flags.v.unicode-15.1.js: OK
+kangax-es2024/regex.flags.v.unicode-16.0.js: OK
 kangax-es2024/regex.flags.v.unicode-17.0.js: failed
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
@@ -1437,9 +1437,9 @@ kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
-kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.i.js:9:17)
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.m.js:9:17)
-kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.s.js:9:17)
+kangax-es2025/regex.pattern-modifiers.i.js: OK
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK

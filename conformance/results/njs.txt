@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "03d7b21107abfcb9a5c1368ad24be63777496ce6c298ca9e4fdd94b1d6dd1b09", "binary_size": 908232, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "njs", "repository": "https://github.com/nginx/njs.git", "revision": "927d38d8438e8b3b3db63af4d9f6324210fd5dab", "revision_date": "2025-10-27", "version": "0.9.4"}
+Metadata: {"arch": "arm64", "binary_sha256": "7a419961eb7ac83dcdfaa4c6f92d38bedf88daf24f397e8ad0c35935aa12df3c", "binary_size": 908472, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "njs", "repository": "https://github.com/nginx/njs.git", "revision": "bd0411912b1f9007aa5101efb1de5f7f0da248c1", "revision_date": "2025-11-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -118,7 +118,7 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: (intermediate value)["setYear"
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: (intermediate value)["toGMTString"] is not a function
 es1/annex-b.global.escape.js: ReferenceError: "escape" is not defined
 es1/annex-b.global.unescape.js: ReferenceError: "unescape" is not defined
-es1/annex-b.literals.octal.js: SyntaxError: Unexpected token "07" in annex-b.literals.octal.js:14
+es1/annex-b.literals.octal.js: SyntaxError: Unexpected token "0755" in annex-b.literals.octal.js:14
 es1/annex-b.literals.string.octal.js: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code in annex-b.literals.string.octal.js:12
 es1/arguments.callee.js: TypeError: "caller", "callee", "arguments" properties may not be accessed
 es1/arguments.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: InternalError: Not implemented
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -228,7 +228,7 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
+es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: TypeError: (intermediate value)["toLocaleString"] is not a function
@@ -438,7 +438,7 @@ kangax-es5/Date.prototype.toJSON.js: failed
 kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
-kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
 kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
@@ -514,7 +514,7 @@ kangax-es6/Array.prototype.find.js: OK
 kangax-es6/Array.prototype.keys.js: OK
 kangax-es6/Array.prototype.splice.js: OK
 kangax-es6/Array.prototype.values.js: OK
-kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: cannot get property "call" of undefined
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: cannot convert object to date
 kangax-es6/Function.name.accessor.js: failed
 kangax-es6/Function.name.bound.js: OK
 kangax-es6/Function.name.class-expression.js: SyntaxError: Token "class" not supported in this version in Function.name.class-expression.js:10
@@ -1184,7 +1184,7 @@ kangax-es6/well-known.species.Promise.then.js: OK
 kangax-es6/well-known.species.RegExp.split.js: OK
 kangax-es6/well-known.species.js: OK
 kangax-es6/well-known.split.js: OK
-kangax-es6/well-known.toPrimitive.js: failed
+kangax-es6/well-known.toPrimitive.js: OK
 kangax-es6/well-known.toStringTag.existing-builtins.js: OK
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: InternalError: Not impl
 kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: Token "{" not supported in this version in misc.optional-catch-binding.await.js:48
 kangax-es2019/misc.optional-catch-binding.js: SyntaxError: Token "{" not supported in this version in misc.optional-catch-binding.js:12
 kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: Unexpected token "*" in misc.optional-catch-binding.yield.js:9
-kangax-es2020/BigInt64Array.js: SyntaxError: Unexpected token "n" in BigInt64Array.js:12
+kangax-es2020/BigInt64Array.js: SyntaxError: Unexpected token "0x8000000000000000n" in BigInt64Array.js:12
 kangax-es2020/BigInt.asIntN.js: ReferenceError: "BigInt" is not defined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: "BigInt" is not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: Unexpected token "n" in BigInt.constructor.js:10
-kangax-es2020/BigInt.js: SyntaxError: Unexpected token "n" in BigInt.js:10
-kangax-es2020/BigUint64Array.js: SyntaxError: Unexpected token "n" in BigUint64Array.js:12
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: Unexpected token "n" in DataView.prototype.getBigInt64.js:12
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: Unexpected token "n" in DataView.prototype.getBigUint64.js:12
+kangax-es2020/BigInt.constructor.js: SyntaxError: Unexpected token "3n" in BigInt.constructor.js:10
+kangax-es2020/BigInt.js: SyntaxError: Unexpected token "1n" in BigInt.js:10
+kangax-es2020/BigUint64Array.js: SyntaxError: Unexpected token "0x10000000000000000n" in BigUint64Array.js:12
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: Unexpected token "1n" in DataView.prototype.getBigInt64.js:12
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: Unexpected token "1n" in DataView.prototype.getBigUint64.js:12
 kangax-es2020/Promise.allSettled.js: OK
 kangax-es2020/String.prototype.matchAll.js: TypeError: (intermediate value)["matchAll"] is not a function
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
@@ -1364,8 +1364,8 @@ kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.TypeError.js: failed
 kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.URIError.js: failed
-kangax-es2022/Object.hasOwn.ToObject-first.js: failed
-kangax-es2022/Object.hasOwn.js: TypeError: (intermediate value)["hasOwn"] is not a function
+kangax-es2022/Object.hasOwn.ToObject-first.js: OK
+kangax-es2022/Object.hasOwn.js: OK
 kangax-es2022/at-method.Array.js: TypeError: (intermediate value)["at"] is not a function
 kangax-es2022/at-method.String.js: TypeError: (intermediate value)["at"] is not a function
 kangax-es2022/at-method.TypedArray.js: TypeError: (intermediate value)["at"] is not a function

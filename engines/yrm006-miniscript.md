@@ -15,8 +15,8 @@ Primitive unfinished interpreter.
 <details><summary>ES1-ES5: 0%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/yrm006-miniscript.txt">Full log</a>.</li>
 <li>ES1: 1%, <b>28 crashes</b><br>
-<li>ES3: 0%, <b>16 crashes</b><br>
+<li>ES3: 0%, <b>17 crashes</b><br>
 <li>ES5: 0%, <b>1 crash</b><br>
 </ul></details>
 
-💥 **45 crashes during testing**
+💥 **46 crashes during testing**

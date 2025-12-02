@@ -27,7 +27,7 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: (intermediate value)["toGMTString"] is not a function
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: "escape" is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: "unescape" is not defined
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token "07" in annex-b.literals.octal.js:14
+<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token "0755" in annex-b.literals.octal.js:14
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code in annex-b.literals.string.octal.js:12
 <a href="../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: "caller", "callee", "arguments" properties may not be accessed
 <a href="../conformance/es1/asi.eval.js">asi.eval.js</a>: InternalError: Not implemented
@@ -36,9 +36,8 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError: Delete of an unqualified identifier in unary.delete.var.js:7
 <a href="../conformance/es1/with.js">with.js</a>: SyntaxError: Token "(" not supported in this version in with.js:15
 </pre></li>
-<li>ES3: 90%<pre>
+<li>ES3: 91%<pre>
 <a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
-<a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 <a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
 <a href="../conformance/es3/RegExp.js">RegExp.js</a>: RegExp passthrough failed
@@ -79,7 +78,7 @@ Always runs in strict mode, seemingly no option to disable.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 39%, ES2016+ 27%, Next 0%, Intl 11%</summary><ul>
+<details><summary>compat-table: ES6 39%, ES2016+ 29%, Next 0%, Intl 11%</summary><ul>
 <li>ES6: 39%<br>
 <li>ES2016: 36%<br>
 <li>ES2017: 60%<pre>
@@ -110,7 +109,7 @@ Always runs in strict mode, seemingly no option to disable.
 <li>ES2019: 19%<br>
 <li>ES2020: 29%<br>
 <li>ES2021: 29%<br>
-<li>ES2022: 5%<br>
+<li>ES2022: 14%<br>
 <li>ES2023: 29%<br>
 <li>ES2024: 0%<br>
 <li>ES2025: 14%<br>

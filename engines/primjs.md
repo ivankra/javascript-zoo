@@ -33,21 +33,18 @@
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 68%, Next 3%, Intl 25%</summary><ul>
-<li>ES6: 97%<pre>
-<a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: InternalError: stack overflow
-<a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: InternalError: stack overflow
+<details><summary>compat-table: ES6 98%, ES2016+ 66%, Next 3%, Intl 25%</summary><ul>
+<li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: qux is not a function
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
-<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: stack overflow
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 83%<pre>
+<li>ES2017: 85%<pre>
 <a href="../conformance/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: Atomics is not defined
@@ -60,7 +57,6 @@
 <a href="../conformance/kangax-es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: Atomics is not defined
 <a href="../conformance/kangax-es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: Atomics is not defined
-<a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: InternalError: stack overflow
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 94%<pre>
@@ -72,7 +68,15 @@
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
 </pre></li>
 <li>ES2019: 100%</li>
-<li>ES2020: 86%<pre>
+<li>ES2020: 57%<pre>
+<a href="../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: SyntaxError: invalid number literal
+<a href="../conformance/kangax-es2020/BigInt.asIntN.js">BigInt.asIntN.js</a>: ReferenceError: BigInt is not defined
+<a href="../conformance/kangax-es2020/BigInt.asUintN.js">BigInt.asUintN.js</a>: ReferenceError: BigInt is not defined
+<a href="../conformance/kangax-es2020/BigInt.constructor.js">BigInt.constructor.js</a>: SyntaxError: invalid number literal
+<a href="../conformance/kangax-es2020/BigInt.js">BigInt.js</a>: SyntaxError: invalid number literal
+<a href="../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: SyntaxError: invalid number literal
+<a href="../conformance/kangax-es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: SyntaxError: invalid number literal
+<a href="../conformance/kangax-es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: SyntaxError: invalid number literal
 <a href="../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
 <a href="../conformance/kangax-es2020/nullish-coalescing.js">nullish-coalescing.js</a>: failed
 </pre></li>

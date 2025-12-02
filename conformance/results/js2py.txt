@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 211697110, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
+Metadata: {"arch": "arm64", "dist_size": 211714678, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

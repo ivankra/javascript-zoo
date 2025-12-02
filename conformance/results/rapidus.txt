@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8", "binary_size": 1509656, "engine": "rapidus", "repository": "https://github.com/maekawatoshiki/rapidus.git", "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0", "revision_date": "2023-02-25", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8", "binary_size": 1509656, "engine": "rapidus", "repository": "https://github.com/maekawatoshiki/rapidus.git", "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0", "revision_date": "2023-02-25", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: Runtime error: eval.js:5:8: Uncaught Exception Error(Reference error: 'eval' is not defined)
 es1/for-in.js: Syntax error: for-in.js:9:13: expect ';' or line terminator
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: Runtime error: global.isFinite.js:8:4: Uncaught Exception Error(Reference error: 'isFinite' is not defined)

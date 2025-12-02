@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "82e867808c25cb0f38ba75c885d6d7832ae5201ed6e5c9d3e28179d4a1e7ccbc", "binary_size": 199512, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-mjs", "repository": "https://github.com/cesanta/mjs.git", "revision": "f4e6dfeda0158df2f73c4926de6c64420b416387", "revision_date": "2025-10-27", "version": "2.20.0-17-gf4e6dfe"}
+Metadata: {"arch": "arm64", "binary_sha256": "6e837fa5d960dee417881c5b8782a99874b6a21cfbbdb87998a7bc55af104f62", "binary_size": 199512, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-mjs", "repository": "https://github.com/cesanta/mjs.git", "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b", "revision_date": "2025-11-10", "version": "2.20.0-19-gda0d06d"}
 es1/Array.js: MJS error: [var] is not implemented
 es1/Array.length.assignment.js: MJS error: [var] is not implemented
 es1/Array.length.js: MJS error: [var] is not implemented
@@ -149,7 +149,7 @@ es1/equals.js: MJS error: [var] is not implemented
 es1/eval.js: MJS error: [var] is not implemented
 es1/for-in.js: MJS error: [var] is not implemented
 es1/for.js: MJS error: [var] is not implemented
-es1/function.js: MJS error: [var] is not implemented
+es1/functions.js: MJS error: [var] is not implemented
 es1/global.Infinity.js: MJS error: [var] is not implemented
 es1/global.NaN.js: MJS error: [var] is not implemented
 es1/global.isFinite.js: MJS error: [var] is not implemented

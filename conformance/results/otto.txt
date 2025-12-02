@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: (anonymous): Line 10:3 Unexpected reserved 
 kangax-es6/super.statement.js: (anonymous): Line 11:3 Unexpected reserved word (and 1 more errors)
 kangax-es6/super.static-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
 kangax-es6/super.this-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000095e70 sp=0x4000095e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x4000229de0?) /src/error.go:250 +0x54 fp=0x40405ffd70 sp=0x40405ffd30 pc=0x1cda94
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000095e70 sp=0x4000095e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001e3de0?) /src/error.go:250 +0x54 fp=0x404053fd70 sp=0x404053fd30 pc=0x1cda94
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000067e70 sp=0x4000067e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x4000229de0?) /src/error.go:250 +0x54 fp=0x40405e9d70 sp=0x40405e9d30 pc=0x1cda94
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000067e70 sp=0x4000067e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001efde0?) /src/error.go:250 +0x54 fp=0x404068dd70 sp=0x404068dd30 pc=0x1cda94
 kangax-es6/template.basic.js: (anonymous): Line 11:8 Unexpected token ILLEGAL (and 3 more errors)
 kangax-es6/template.caching.js: (anonymous): Line 17:19 Unexpected token ILLEGAL (and 7 more errors)
 kangax-es6/template.escape-sequences.js: (anonymous): Line 13:20 Unexpected token ILLEGAL (and 4 more errors)

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "440893b871c9ca0091ab238907a991ffe1dca3018e9539b10b5310317794bd3d", "binary_size": 5910576, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "8d31fd1f1b0ae1247e5faef2530fd7b8d13e9d0e", "revision_date": "2025-09-04", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "b691c8495a1676609a372ecd2823a0f024e371896936d94d5e4f8671bbcab0ab", "binary_size": 5910792, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "fbbdf6db7373ced37d4b046fb3ddc7dd04e7561a", "revision_date": "2025-11-23", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -113,11 +113,11 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: TypeError: value is not a function
-es1/annex-b.Date.prototype.setYear.js: TypeError: value is not a function
-es1/annex-b.Date.prototype.toGMTString.js: TypeError: value is not a function
-es1/annex-b.global.escape.js: ReferenceError: escape is not defined
-es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -230,7 +230,7 @@ es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -267,7 +267,7 @@ es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
-es3/annex-b.String.prototype.substr.js: TypeError: value is not a function
+es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
@@ -364,7 +364,7 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: trailing comma does not throw SyntaxError
+es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
@@ -456,7 +456,7 @@ kangax-es5/Object.seal.js: OK
 kangax-es5/String.property-access.js: OK
 kangax-es5/String.prototype.split.js: OK
 kangax-es5/String.prototype.trim.js: OK
-kangax-es5/annex-b.String.prototype.substr.js: TypeError: value is not a function
+kangax-es5/annex-b.String.prototype.substr.js: OK
 kangax-es5/immutable-globals.Infinity.js: OK
 kangax-es5/immutable-globals.NaN.js: OK
 kangax-es5/immutable-globals.undefined.js: OK
@@ -717,16 +717,16 @@ kangax-es6/WeakSet.prototype.add-returns-this.js: OK
 kangax-es6/WeakSet.prototype.delete.js: OK
 kangax-es6/annex-b.RegExp.prototype.compile.js: failed
 kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: value is not a function
-kangax-es6/annex-b.String.prototype.html.existence.js: failed
-kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: value is not a function
-kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: value is not a function
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not defined
 kangax-es6/annex-b.function.if-statement.js: SyntaxError: Unexpected token function
-kangax-es6/annex-b.function.labeled.js: SyntaxError: Functions cannot be labeled
+kangax-es6/annex-b.function.labeled.js: OK
 kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token >
 kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: No capture group with index found
 kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Character class cannot be a bound in a character range
-kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: Unexpected token
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
 kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-hex-escapes.js:9:11
@@ -759,11 +759,11 @@ kangax-es6/arrow.this-call-apply.js: OK
 kangax-es6/class.accessor-properties.js: OK
 kangax-es6/class.anonymous.js: OK
 kangax-es6/class.block-scoped.js: OK
-kangax-es6/class.computed-accessor-properties.js: crashed (signal 11)
+kangax-es6/class.computed-accessor-properties.js: OK
 kangax-es6/class.computed-names-tdz.js: OK
-kangax-es6/class.computed-prototype-methods.js: crashed (signal 11)
-kangax-es6/class.computed-static-accessor-properties.js: crashed (signal 11)
-kangax-es6/class.computed-static-methods.js: crashed (signal 11)
+kangax-es6/class.computed-prototype-methods.js: OK
+kangax-es6/class.computed-static-accessor-properties.js: OK
+kangax-es6/class.computed-static-methods.js: OK
 kangax-es6/class.constructor-requires-new.js: OK
 kangax-es6/class.constructor.js: OK
 kangax-es6/class.expression.js: OK
@@ -896,7 +896,7 @@ kangax-es6/generators.prototype.js: OK
 kangax-es6/generators.return.js: OK
 kangax-es6/generators.sending.js: OK
 kangax-es6/generators.shorthand.class.js: OK
-kangax-es6/generators.shorthand.computed.class.js: crashed (signal 11)
+kangax-es6/generators.shorthand.computed.class.js: OK
 kangax-es6/generators.shorthand.computed.js: OK
 kangax-es6/generators.shorthand.js: OK
 kangax-es6/generators.shorthand.no-constructor.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid unicode property in regular expression
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1299,8 +1299,8 @@ kangax-es2019/String.prototype.trimStart.js: OK
 kangax-es2019/Symbol.prototype.description.empty.js: OK
 kangax-es2019/Symbol.prototype.description.js: OK
 kangax-es2019/Symbol.prototype.description.undefined.js: OK
-kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: value is not a function
-kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: value is not a function
+kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
+kangax-es2019/annex-b.String.prototype.trimRight.js: OK
 kangax-es2019/misc.Function-toString.Function-constructor.js: OK
 kangax-es2019/misc.Function-toString.arrows.js: OK
 kangax-es2019/misc.Function-toString.class-explicit-constructor.js: OK

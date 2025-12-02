@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "2fce2b244072dadab857412218e9456e1823e9a59b7ebed694fe8ea8959df830", "binary_size": 9440024, "engine": "goja", "repository": "https://github.com/dop251/goja.git", "revision": "af2ceb9156d7feaff65273b8bfde778077fb4b7e", "revision_date": "2025-11-03"}
+Metadata: {"arch": "arm64", "binary_sha256": "45fa4d8c3de18a9dcc95a4565b1ecd0795fb1e06927184f8844b930ba2717091", "binary_size": 9440024, "engine": "goja", "repository": "https://github.com/dop251/goja.git", "revision": "56b1242a5f863cb7e58f0403cdde74ba57ee2784", "revision_date": "2025-11-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

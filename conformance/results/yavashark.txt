@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "75dbe2dc064a1c7322328a6711adc4b79938cec414082006f674735438846c96", "binary_size": 12786152, "engine": "yavashark", "repository": "https://github.com/Sharktheone/yavashark.git", "revision": "eb46fcdebe05983f6a0821eb8d5a84a43f8ab360", "revision_date": "2025-11-14", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"}
+Metadata: {"arch": "arm64", "binary_sha256": "267c7236412493b429235a50eed2bc1dab84827af0839649057e8685b17dbae2", "binary_size": 15735272, "engine": "yavashark", "repository": "https://github.com/Sharktheone/yavashark.git", "revision": "0c5acce1cf9ceadda76b5dfe393296be266dc77a", "revision_date": "2025-11-29", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -229,7 +229,7 @@ es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: small number failed
 es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2006) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2525815) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: Error: RuntimeError: Not implemented
 es3/Number.prototype.toPrecision.js: small number exponential notation failed
@@ -250,13 +250,13 @@ es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: Error: TypeError: undefined is not a function
-es3/String.prototype.match.generic.js: Error: TypeError: Cannot read property 'call' of undefined
-es3/String.prototype.match.js: Error: TypeError: undefined is not a function
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: global match failed; Error: TypeError: Expected an object, found String(test)
 es3/String.prototype.replace.capture.js: $1 failed; $1 $2 $3 failed; undefined capture failed; spec example failed; $nn reverse order failed; 4 captures reverse failed
 es3/String.prototype.replace.extra.js: $$ failed; $& failed; $` failed; $' failed; combined replacements failed
 es3/String.prototype.replace.generic.js: Error: TypeError: Expected string, found Object([object Object])
 es3/String.prototype.replace.regex.js: non-global regex replace failed; global regex replace failed; case-insensitive replace failed; replace all occurrences failed
-es3/String.prototype.replace.str.js: replace only first occurrence failed; replace first l failed
+es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: Error: TypeError: Cannot read property 'call' of undefined
 es3/String.prototype.search.js: Error: TypeError: undefined is not a function
 es3/String.prototype.search.str.js: Error: TypeError: undefined is not a function
@@ -265,8 +265,8 @@ es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 3 failed; split with limit 1 failed
 es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on single match failed; split on whitespace failed; split by empty regex failed
-es3/String.prototype.toLocaleLowerCase.js: Error: TypeError: undefined is not a function
-es3/String.prototype.toLocaleUpperCase.js: Error: TypeError: undefined is not a function
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -324,7 +324,7 @@ es3/regex.escape.hex.js: OK
 es3/regex.escape.js: OK
 es3/regex.escape.nul.js: OK
 es3/regex.escape.unicode.js: OK
-es3/regex.flag.global.js: Error: TypeError: undefined is not a function
+es3/regex.flag.global.js: global match failed; multiple matches failed
 es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: OK
 es3/regex.group.js: OK
@@ -353,7 +353,7 @@ es5/Array.prototype.indexOf.js: OK
 es5/Array.prototype.lastIndexOf.js: OK
 es5/Array.prototype.map.js: map with index failed
 es5/Array.prototype.reduceRight.js: reduceRight without initialValue failed
-es5/Array.prototype.reduce.js: reduce without initialValue failed; sparse array skips missing elements failed
+es5/Array.prototype.reduce.js: sparse array skips missing elements failed
 es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
@@ -392,7 +392,7 @@ es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
 es5/global.undefined.immutable.js: OK
 es5/literals.object.getters.js: OK
-es5/literals.object.setters.js: { set x(v){ value = v; } }.x failed; setter with computation failed; setter accessing this failed
+es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
@@ -439,7 +439,7 @@ kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
-kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (4494) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2528105) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
 kangax-es5/Object.defineProperty.js: OK
@@ -462,7 +462,7 @@ kangax-es5/immutable-globals.NaN.js: OK
 kangax-es5/immutable-globals.undefined.js: OK
 kangax-es5/literals.getter-accessors.js: OK
 kangax-es5/literals.reserved-words-properties.js: OK
-kangax-es5/literals.setter-accessors.js: failed
+kangax-es5/literals.setter-accessors.js: OK
 kangax-es5/literals.trailing-comma-array.js: OK
 kangax-es5/literals.trailing-comma-object.js: OK
 kangax-es5/misc.Arguments.toStringTag.js: OK
@@ -585,7 +585,7 @@ kangax-es6/Promise.Symbol.species.js: [object Error]
 kangax-es6/Promise.all.iterable.js: [object Error]
 kangax-es6/Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/Promise.constructor-requires-new.js: OK
-kangax-es6/Promise.js: thread 'main' (30096) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/Promise.js: thread 'main' (2521481) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: [object Error]
 kangax-es6/Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
@@ -762,7 +762,7 @@ kangax-es6/class.block-scoped.js: OK
 kangax-es6/class.computed-accessor-properties.js: failed
 kangax-es6/class.computed-names-tdz.js: OK
 kangax-es6/class.computed-prototype-methods.js: OK
-kangax-es6/class.computed-static-accessor-properties.js: failed
+kangax-es6/class.computed-static-accessor-properties.js: OK
 kangax-es6/class.computed-static-methods.js: OK
 kangax-es6/class.constructor-requires-new.js: OK
 kangax-es6/class.constructor.js: OK
@@ -777,7 +777,7 @@ kangax-es6/class.new-target.js: failed
 kangax-es6/class.optional-semicolons.js: OK
 kangax-es6/class.prototype-methods.js: OK
 kangax-es6/class.statement.js: OK
-kangax-es6/class.static-accessor-properties.js: failed
+kangax-es6/class.static-accessor-properties.js: OK
 kangax-es6/class.static-methods.js: OK
 kangax-es6/class.string-keyed-methods.js: OK
 kangax-es6/const.basic.js: OK
@@ -932,7 +932,7 @@ kangax-es6/let.strict.tdz.js: OK
 kangax-es6/let.tdz.js: OK
 kangax-es6/literals.binary.Number.js: OK
 kangax-es6/literals.binary.js: OK
-kangax-es6/literals.object.computed-accessors.js: failed
+kangax-es6/literals.object.computed-accessors.js: OK
 kangax-es6/literals.object.computed-properties.js: OK
 kangax-es6/literals.object.computed-shorthand-methods.js: OK
 kangax-es6/literals.object.shorthand-methods.js: OK
@@ -997,7 +997,7 @@ kangax-es6/misc.Proxy.get.String.replace.js: failed
 kangax-es6/misc.Proxy.get.String.search.js: [object Error]
 kangax-es6/misc.Proxy.get.String.split.js: failed
 kangax-es6/misc.Proxy.get.ToPrimitive.js: OK
-kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: OK
 kangax-es6/misc.Proxy.get.instanceof.js: [object Error]
 kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: [object Error]
 kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: failed
@@ -1024,7 +1024,7 @@ kangax-es6/misc.bound-function-prototype.subclass.js: failed
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: failed
 kangax-es6/misc.for-in-no-assignment-strict.js: OK
-kangax-es6/misc.function-length-configurable.js: failed
+kangax-es6/misc.function-length-configurable.js: [object Error]
 kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 kangax-es6/misc.identifier-syntax.var-1.js: OK
 kangax-es6/misc.identifier-syntax.var-2.js: OK
@@ -1038,10 +1038,10 @@ kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
 kangax-es6/misc.prototypes-not-instances.js: OK
 kangax-es6/new-target.assignment-error.js: failed
 kangax-es6/new-target.constructor.js: failed
-kangax-es6/regex.flags.u.case-folding.js: [object Error]
-kangax-es6/regex.flags.u.codepoint.js: [object Error]
-kangax-es6/regex.flags.u.js: [object Error]
-kangax-es6/regex.flags.u.non-bmp.js: [object Error]
+kangax-es6/regex.flags.u.case-folding.js: OK
+kangax-es6/regex.flags.u.codepoint.js: failed
+kangax-es6/regex.flags.u.js: failed
+kangax-es6/regex.flags.u.non-bmp.js: failed
 kangax-es6/regex.flags.y.js: OK
 kangax-es6/regex.flags.y.lastIndex.js: [object Error]
 kangax-es6/rest-params.arguments.js: OK
@@ -1082,7 +1082,7 @@ kangax-es6/subclassing.Function.prototype.apply.js: [object Error]
 kangax-es6/subclassing.Function.prototype.bind.js: [object Error]
 kangax-es6/subclassing.Function.prototype.call.js: [object Error]
 kangax-es6/subclassing.Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
-kangax-es6/subclassing.Promise.js: thread 'main' (18461) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/subclassing.Promise.js: thread 'main' (2541945) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
 kangax-es6/subclassing.Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/subclassing.RegExp.exec.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (13129) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (2536953) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
 kangax-es2017/async.Symbol.toStringTag.js: failed
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1265,11 +1265,11 @@ kangax-es2017/async.prototype-chain.js: failed
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: [object Error]
+kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
-kangax-es2018/Promise.prototype.finally.js: thread 'main' (16609) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es2018/Promise.prototype.finally.js: thread 'main' (2540521) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: failed
 kangax-es2018/async-iterators.for-await-of.js: failed
 kangax-es2018/async-iterators.generators.js: OK
@@ -1323,7 +1323,7 @@ kangax-es2020/BigUint64Array.js: [object Error]
 kangax-es2020/DataView.prototype.getBigInt64.js: OK
 kangax-es2020/DataView.prototype.getBigUint64.js: OK
 kangax-es2020/Promise.allSettled.js: OK
-kangax-es2020/String.prototype.matchAll.js: [object Error]
+kangax-es2020/String.prototype.matchAll.js: failed
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
 kangax-es2020/globalThis.descriptor.js: OK
 kangax-es2020/globalThis.js: OK
@@ -1336,7 +1336,7 @@ kangax-es2020/optional-chaining.spread-params.js: OK
 kangax-es2021/FinalizationRegistry.js: [object Error]
 kangax-es2021/Promise.any.AggregateError.js: failed
 kangax-es2021/Promise.any.fulfillment.js: OK
-kangax-es2021/String.prototype.replaceAll.js: [object Error]
+kangax-es2021/String.prototype.replaceAll.js: OK
 kangax-es2021/WeakRef.js: OK
 kangax-es2021/logical-assignment.and.js: OK
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: OK
@@ -1435,7 +1435,7 @@ kangax-es2025/Set.prototype.isDisjointFrom.js: OK
 kangax-es2025/Set.prototype.isSubsetOf.js: OK
 kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
-kangax-es2025/Set.prototype.union.js: [object Error]
+kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Duplicate capture group name 'year'
 kangax-es2025/regex.pattern-modifiers.i.js: [object Error]
 kangax-es2025/regex.pattern-modifiers.m.js: [object Error]
@@ -1445,19 +1445,19 @@ kangax-intl/Date.prototype.toLocaleDateString.js: failed
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: failed
 kangax-intl/Intl.Collator.js: OK
-kangax-intl/Intl.Collator.new-instances.js: failed
+kangax-intl/Intl.Collator.new-instances.js: OK
 kangax-intl/Intl.Collator.prototype.compare.js: failed
 kangax-intl/Intl.Collator.prototype.resolvedOptions.js: failed
 kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
 kangax-intl/Intl.Collator.valid-tags.js: failed
 kangax-intl/Intl.Collator.without-new.js: [object Error]
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
 kangax-intl/Intl.DateTimeFormat.js: OK
-kangax-intl/Intl.DateTimeFormat.new-instances.js: [object Error]
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: failed
-kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
-kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: [object Error]
 kangax-intl/Intl.NumberFormat.js: OK
 kangax-intl/Intl.NumberFormat.new-instances.js: OK
 kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: [object Error]
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: [object Error]
-kangax-next/await-using.for-of.js: thread 'main' (23910) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
+kangax-next/await-using.for-of.js: thread 'main' (2547841) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
 kangax-next/await-using.js: SyntaxError: Unsupported declaration type
 kangax-next/class-decorators.js: failed
-kangax-next/function.sent.js: thread 'main' (24193) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
-kangax-next/throw-expr.arrow.js: thread 'main' (24323) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
-kangax-next/throw-expr.conditional.js: thread 'main' (24396) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
-kangax-next/throw-expr.logical.js: thread 'main' (24477) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
-kangax-next/throw-expr.param-init.js: thread 'main' (24543) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
+kangax-next/function.sent.js: thread 'main' (2548063) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
+kangax-next/throw-expr.arrow.js: thread 'main' (2548148) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
+kangax-next/throw-expr.conditional.js: thread 'main' (2548218) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
+kangax-next/throw-expr.logical.js: thread 'main' (2548274) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
+kangax-next/throw-expr.param-init.js: thread 'main' (2548344) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
 kangax-next/using.for-of.js: failed
 kangax-next/using.js: SyntaxError: Unsupported declaration type

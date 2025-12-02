@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "b8d53e7eb0ddf01b776769859e57719835fd7889e4c7c98ece875bb47a040499", "binary_size": 399904, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-v7", "repository": "https://github.com/cesanta/v7.git", "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27", "revision_date": "2017-08-26"}
+Metadata: {"arch": "arm64", "binary_sha256": "4f1ae16d83c05b46926beb3de5201c5f30caf3feb9eb098d270379c405578219", "binary_size": 399904, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "cesanta-v7", "repository": "https://github.com/cesanta/v7.git", "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27", "revision_date": "2017-08-26"}
 es1/Array.js: new Array(len) failed; Array(len) failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: new Array(len) length failed
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

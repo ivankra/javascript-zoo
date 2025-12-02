@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -1104,7 +1104,7 @@ kangax-es6/super.statement.js: Exception: SyntaxError: Unexpected token (11:8)
 kangax-es6/super.static-binding.js: Exception: SyntaxError: Unexpected token (10:8)
 kangax-es6/super.this-binding.js: Exception: SyntaxError: Unexpected token (10:8)
 kangax-es6/tail-calls.direct.js: OK
-kangax-es6/tail-calls.mutual.js: timeout
+kangax-es6/tail-calls.mutual.js: OK
 kangax-es6/template.basic.js: Exception: SyntaxError: Unexpected character '`' (11:7)
 kangax-es6/template.caching.js: Exception: SyntaxError: Unexpected character '`' (17:18)
 kangax-es6/template.escape-sequences.js: Exception: SyntaxError: Unexpected character '`' (13:19)

@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: LOG: es1/global.isFinite.js: isFinite(0/0) failed LOG: es1/global.isFinite.js: failed
@@ -367,7 +367,7 @@ es5/JSON.js: OK
 es5/JSON.parse.js: exception SyntaxError:Parse JSON error
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
-es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.replacer.js: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: replacer array failed LOG: es5/JSON.stringify.replacer.js: failed
 es5/JSON.stringify.space.js: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
 es5/Object.create.js: exception TypeError:Value is not an object
 es5/Object.defineProperties.js: OK
@@ -379,7 +379,7 @@ es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
-es5/Object.keys.js: OK
+es5/Object.keys.js: LOG: es5/Object.keys.js: basic keys failed LOG: es5/Object.keys.js: failed
 es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: OK

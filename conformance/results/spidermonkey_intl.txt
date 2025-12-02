@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "f7ae185b2a81a0be71bb073cca401a4dc5d1ed12957576e18cc737f85ae35a37", "binary_size": 37384984, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "030a5e55591d07fddb4434a73842dcc76cde2533", "revision_date": "2025-11-06", "variant": "intl", "version": "145.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "4940c670287d9ad31d1c8a79d0a407f6e9b712db377eab26a88d3865baaed143", "binary_size": 37430256, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "0131ff10eec6e050cd82e9e92fdbabb747992aa5", "revision_date": "2025-12-01", "variant": "intl", "version": "146.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

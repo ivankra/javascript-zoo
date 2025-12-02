@@ -15,16 +15,16 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 
 ## Conformance
 
-<details><summary>ES1-ES5: 44%</summary><ul>
+<details><summary>ES1-ES5: 45%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/rpython-langjs.txt">Full log</a>.</li>
-<li>ES1: 69%<pre>
+<li>ES1: 70%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: timeout
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: timeout
-<a href="../conformance/es1/Array.length.js">Array.length.js</a>: timeout
 <a href="../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse returns this failed
 <a href="../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: sort with comparefn failed; reverse comparefn failed
 <a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
 <a href="../conformance/es1/Date.js">Date.js</a>: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
+<a href="../conformance/es1/Date.prototype.getDate.js">Date.prototype.getDate.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getDay.js">Date.prototype.getDay.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getHours.js">Date.prototype.getHours.js</a>: failed

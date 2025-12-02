@@ -11,7 +11,7 @@ JavaScript/TypeScript engine written in Rust.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 76%</summary><ul>
+<details><summary>ES1-ES5: 78%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/yavashark.txt">Full log</a>.</li>
 <li>ES1: 87%<pre>
 <a href="../conformance/es1/Date.js">Date.js</a>: new Date(2000, 0, 1).getMonth() != 0
@@ -37,7 +37,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 123.0 != '0123'; false != ''
 ...
 </pre></li>
-<li>ES3: 71%<pre>
+<li>ES3: 74%<pre>
 <a href="../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: delete on object failed; negative start on object failed
 <a href="../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: delete elements failed; delete and insert failed; negative start failed
 <a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
@@ -51,7 +51,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2006) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2525815) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
 <a href="../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed
@@ -61,13 +61,13 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: Error: TypeError: undefined is not a function
 ...
 </pre></li>
-<li>ES5: 58%<pre>
+<li>ES5: 59%<pre>
 <a href="../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.map.js">Array.prototype.map.js</a>: map with index failed
 <a href="../conformance/es5/Array.prototype.reduceRight.js">Array.prototype.reduceRight.js</a>: reduceRight without initialValue failed
-<a href="../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: reduce without initialValue failed; sparse array skips missing elements failed
+<a href="../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: failed
 <a href="../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: invalid date does not throw RangeError
 <a href="../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: invalid date does not return null
@@ -79,16 +79,16 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: space parameter failed
 <a href="../conformance/es5/Object.isSealed.js">Object.isSealed.js</a>: sealed object failed; frozen object is sealed failed
 <a href="../conformance/es5/Object.seal.js">Object.seal.js</a>: prevented property addition failed; prevented property deletion failed
-<a href="../conformance/es5/literals.object.setters.js">literals.object.setters.js</a>: { set x(v){ value = v; } }.x failed; setter with computation failed; setter accessing this failed
 <a href="../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
 <a href="../conformance/es5/strict.no-assignment-to-unresolvable.js">strict.no-assignment-to-unresolvable.js</a>: failed
+<a href="../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
 ...
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 57%, ES2016+ 59%, Next 4%, Intl 50%</summary><ul>
-<li>ES6: 57%, <b>7 crashes</b><pre>
+<details><summary>compat-table: ES6 58%, ES2016+ 60%, Next 4%, Intl 57%</summary><ul>
+<li>ES6: 58%, <b>7 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: [object Error]
@@ -145,7 +145,7 @@ JavaScript/TypeScript engine written in Rust.
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (16609) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2540521) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 <a href="../conformance/kangax-es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../conformance/kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: failed
@@ -171,14 +171,13 @@ JavaScript/TypeScript engine written in Rust.
 <li>ES2020: 73%<pre>
 <a href="../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: [object Error]
 <a href="../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: [object Error]
-<a href="../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: [object Error]
+<a href="../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: failed
 <a href="../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
 <a href="../conformance/kangax-es2020/optional-chaining.method-call.js">optional-chaining.method-call.js</a>: failed
 </pre></li>
-<li>ES2021: 52%<pre>
+<li>ES2021: 60%<pre>
 <a href="../conformance/kangax-es2021/FinalizationRegistry.js">FinalizationRegistry.js</a>: [object Error]
 <a href="../conformance/kangax-es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: failed
-<a href="../conformance/kangax-es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: [object Error]
 <a href="../conformance/kangax-es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: failed
 <a href="../conformance/kangax-es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: failed
 <a href="../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: failed
@@ -208,20 +207,18 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 18%<br>
+<li>ES2025: 21%<br>
 <li>Next: 4%<br>
-<li>Intl: 50%<pre>
+<li>Intl: 57%<pre>
 <a href="../conformance/kangax-intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
 <a href="../conformance/kangax-intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: failed
-<a href="../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.valid-tags.js">Intl.Collator.valid-tags.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.without-new.js">Intl.Collator.without-new.js</a>: [object Error]
-<a href="../conformance/kangax-intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
-<a href="../conformance/kangax-intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: [object Error]
-<a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed
-<a href="../conformance/kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: [object Error]
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.valid-tags.js">Intl.DateTimeFormat.valid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.without-new.js">Intl.DateTimeFormat.without-new.js</a>: [object Error]
 <a href="../conformance/kangax-intl/Intl.NumberFormat.valid-tags.js">Intl.NumberFormat.valid-tags.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.NumberFormat.without-new.js">Intl.NumberFormat.without-new.js</a>: [object Error]
 <a href="../conformance/kangax-intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: failed

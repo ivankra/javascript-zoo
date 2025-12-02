@@ -38,8 +38,8 @@ Embeddable Javascript engine written in Rust.
 <a href="../conformance/kangax-es6/destructuring-params.defaults-new-function.js">destructuring-params.defaults-new-function.js</a>: SyntaxError: failed to parse function parameters: abrupt end
 <a href="../conformance/kangax-es6/destructuring-params.defaults-separate-scope.js">destructuring-params.defaults-separate-scope.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-params.new-function.js">destructuring-params.new-function.js</a>: SyntaxError: failed to parse function parameters: abrupt end
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: Uncaught: RuntimeLimit: exceeded maximum number of recursive calls (native at core/engine/src/vm/mod.rs:861:24)
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: Uncaught: RuntimeLimit: exceeded maximum number of recursive calls (native at core/engine/src/vm/mod.rs:861:24)
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: Uncaught: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: Uncaught: RuntimeLimitError: reached the maximum number of recursive calls on this execution
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 94%<pre>

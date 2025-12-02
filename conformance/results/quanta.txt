@@ -1,23 +1,23 @@
-Metadata: {"arch": "arm64", "binary_sha256": "69a3125a10444780a21c79901d74f2a39e29f99909fe25c1dbcd4c8254f2fa77", "binary_size": 1840064, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quanta", "repository": "https://github.com/solarbrowser/quanta.git", "revision": "189bea775591dfdfac80a4d63d154c772da8040e", "revision_date": "2025-11-15"}
-es1/Array.js: Array.length failed
+Metadata: {"arch": "arm64", "binary_sha256": "51336bb920b0762a43a97131e534f57c61a7cef7f56e2a713756663b1b02307b", "binary_size": 1905600, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quanta", "repository": "https://github.com/solarbrowser/quanta.git", "revision": "ccfcc30e15c30e4d5e180eb990c0f0d283ad625d", "revision_date": "2025-11-30"}
+es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
-es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
+es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: failed
 es1/Array.prototype.join.js: OK
 es1/Array.prototype.reverse.generic.js: failed
 es1/Array.prototype.reverse.js: OK
 es1/Array.prototype.sort.generic.js: failed
-es1/Array.prototype.sort.js: SyntaxError: Unexpected token:
+es1/Array.prototype.sort.js: OK
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: OK
-es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; boolean instance constructor failed
-es1/Boolean.prototype.toString.js: toString(true) failed; toString(false) failed
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: failed
 es1/Boolean.prototype.valueOf.js: failed
 es1/Date.diff.js: failed
 es1/Date.js: typeof Date() != 'string'; new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1; new Date(0).getTime() != 0
 es1/Date.prototype.constructor.js: failed
-es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDate.js: failed
 es1/Date.prototype.getDay.js: failed
 es1/Date.prototype.getFullYear.js: failed
 es1/Date.prototype.getHours.js: failed
@@ -91,15 +91,15 @@ es1/Number.NEGATIVE_INFINITY.js: OK
 es1/Number.NaN.js: OK
 es1/Number.POSITIVE_INFINITY.js: OK
 es1/Number.js: OK
-es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
-es1/Number.prototype.toString.js: toString() failed; toString(10) failed
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: failed
 es1/Number.prototype.valueOf.js: failed
 es1/Object.js: OK
 es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: failed
 es1/String.fromCharCode.js: failed
-es1/String.generics.js: failed
+es1/String.generics.js: charAt failed; charCodeAt failed; indexOf failed
 es1/String.js: OK
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: charAt out of bounds failed; charAt negative failed
@@ -120,14 +120,14 @@ es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: failed
-es1/arguments.callee.js: SyntaxError: Unexpected token:
+es1/arguments.callee.js: failed
 es1/arguments.js: OK
-es1/asi.eval.js: SyntaxError: Parse error: Failed to parse expression
-es1/asi.js: SyntaxError: Unexpected token:
-es1/assignment.bitwise.js: SyntaxError: Unexpected token:
+es1/asi.eval.js: failed
+es1/asi.js: failed: a<LF> ++<LF> b
+es1/assignment.bitwise.js: SyntaxError: Unexpected token: '' (type: 85) at line 9
 es1/assignment.js: OK
 es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
-es1/assignment.unsigned-shift.js: SyntaxError: Unexpected token:
+es1/assignment.unsigned-shift.js: SyntaxError: Unexpected token: '' (type: 87) at line 9
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
@@ -146,10 +146,10 @@ es1/conversions.ToString.js: -0 failed; 1e-7 failed
 es1/conversions.ToUint32.js: +Infinity failed; 2^32 failed; -1 failed; -2^31 failed
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: OK
+es1/eval.js: failed
 es1/for-in.js: OK
 es1/for.js: failed
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -165,7 +165,7 @@ es1/literals.string.hex.js: OK
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: failed
 es1/logical.js: OK
-es1/new.typeof.js: SyntaxError: Unexpected token:
+es1/new.typeof.js: OK
 es1/numbers.double.js: failed: converting max safe integer + 1 to string
 es1/numbers.fmod.js: OK
 es1/numbers.inf.js: OK
@@ -180,7 +180,7 @@ es1/return.typeof.js: OK
 es1/this.js: OK
 es1/typeof.js: OK
 es1/typeof.null.js: OK
-es1/typeof.undeclared.js: failed
+es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
@@ -193,10 +193,10 @@ es1/unary.plus.str.js: OK
 es1/unary.tilde.js: OK
 es1/var.js: OK
 es1/var.typeof.js: OK
-es1/void.js: SyntaxError: Unexpected token:
+es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: while with break failed; while with continue failed
-es1/with.js: SyntaxError: Unexpected token: with
+es1/with.js: SyntaxError: Unexpected token: 'with' (type: 41) at line 15
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: failed
 es3/Array.prototype.pop.js: OK
@@ -208,7 +208,7 @@ es3/Array.prototype.slice.generic.js: failed
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: failed
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: failed
+es3/Array.prototype.toLocaleString.js: basic toLocaleString failed; empty array toLocaleString failed; null/missing elements failed
 es3/Array.prototype.unshift.generic.js: failed
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -242,7 +242,7 @@ es3/RegExp.ignoreCase.js: OK
 es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: after first match failed; after second match failed
 es3/RegExp.multiline.js: OK
-es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: format failed
@@ -273,7 +273,7 @@ es3/function-expressions.IIFE.js: IIFE closure failed
 es3/function-expressions.js: OK
 es3/global.EvalError.js: name failed
 es3/global.RangeError.js: name failed
-es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length
 es3/global.ReferenceError.js: name failed
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: name failed
@@ -290,9 +290,9 @@ es3/global.undefined.js: OK
 es3/identifiers.unicode.js: failed
 es3/instanceof.js: OK
 es3/in.js: OK
-es3/labelled.break.js: SyntaxError: Unexpected token:
-es3/labelled.continue.js: SyntaxError: Unexpected token:
-es3/labelled.statements.js: SyntaxError: Unexpected token:
+es3/labelled.break.js: SyntaxError: Unexpected token: '' (type: 97) at line 10
+es3/labelled.continue.js: SyntaxError: Unexpected token: '' (type: 97) at line 11
+es3/labelled.statements.js: SyntaxError: Unexpected token: '' (type: 97) at line 9
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
@@ -302,11 +302,11 @@ es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
 es3/literals.object.unicode.js: failed
-es3/literals.regex.ambiguous.js: SyntaxError: Unexpected token:
+es3/literals.regex.ambiguous.js: SyntaxError: Unexpected token: '' (type: 52) at line 39
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: OK
+es3/nested-functions.eval.js: Error: 'c1' is not a function function C() returning eval'd function failed; Error: 'c2' is not a function second call to C() failed
 es3/nested-functions.js: failed
 es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
@@ -350,9 +350,9 @@ es5/Array.prototype.every.js: sparse array skips missing elements failed
 es5/Array.prototype.filter.js: OK
 es5/Array.prototype.forEach.js: forEach execution failed; forEach count failed; sparse array skips missing elements failed
 es5/Array.prototype.indexOf.js: fromIndex failed; negative fromIndex failed; fromIndex >= length failed
-es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function
+es5/Array.prototype.lastIndexOf.js: OK
 es5/Array.prototype.map.js: OK
-es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function
+es5/Array.prototype.reduceRight.js: OK
 es5/Array.prototype.reduce.js: OK
 es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
@@ -386,24 +386,24 @@ es5/Object.seal.js: Object.seal not a function
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: String.prototype.trim not a function
 es5/arguments.toStringTag.js: failed
-es5/debugger.js: SyntaxError: Unexpected token: debugger
+es5/debugger.js: SyntaxError: Unexpected token: 'debugger' (type: 15) at line 7
 es5/global.Infinity.immutable.js: OK
 es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed
-es5/literals.object.getters.js: SyntaxError: Expected ':' after property key
-es5/literals.object.setters.js: SyntaxError: Expected ':' after property key
+es5/global.undefined.immutable.js: SyntaxError: Invalid left-hand side in assignment
+es5/literals.object.getters.js: getter with side effects failed
+es5/literals.object.setters.js: { set x(v){ value = v; } }.x failed; setter with computation failed; setter accessing this failed
 es5/literals.object.trailing-comma.js: OK
-es5/source.keyword-properties.js: SyntaxError: Expected property key
+es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: failed
+es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: Lexer error at 11:12: Unsupported unicode escape sequence in identifier
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: SyntaxError: Expected ':' after property key
+es5/strict.no-assignment-to-non-writable.js: failed
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
@@ -413,7 +413,7 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: failed
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
@@ -424,9 +424,9 @@ kangax-es5/Array.prototype.every.js: OK
 kangax-es5/Array.prototype.filter.js: OK
 kangax-es5/Array.prototype.forEach.js: OK
 kangax-es5/Array.prototype.indexOf.js: OK
-kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.lastIndexOf.js: OK
 kangax-es5/Array.prototype.map.js: OK
-kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduceRight.js: OK
 kangax-es5/Array.prototype.reduce.js: OK
 kangax-es5/Array.prototype.some.js: OK
 kangax-es5/Array.prototype.sort.compareFn-type.js: failed
@@ -459,10 +459,10 @@ kangax-es5/String.prototype.trim.js: failed
 kangax-es5/annex-b.String.prototype.substr.js: OK
 kangax-es5/immutable-globals.Infinity.js: failed
 kangax-es5/immutable-globals.NaN.js: failed
-kangax-es5/immutable-globals.undefined.js: failed
-kangax-es5/literals.getter-accessors.js: SyntaxError: Expected ':' after property key
-kangax-es5/literals.reserved-words-properties.js: SyntaxError: Expected property key
-kangax-es5/literals.setter-accessors.js: SyntaxError: Expected ':' after property key
+kangax-es5/immutable-globals.undefined.js: SyntaxError: Invalid left-hand side in assignment
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: failed
 kangax-es5/literals.trailing-comma-array.js: OK
 kangax-es5/literals.trailing-comma-object.js: OK
 kangax-es5/misc.Arguments.toStringTag.js: failed
@@ -477,7 +477,7 @@ kangax-es5/strict.arguments-callee-error.js: failed
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
 kangax-es5/strict.assignment-eval-arguments-error.js: failed
-kangax-es5/strict.assignment-non-writable-error.js: SyntaxError: Expected ':' after property key
+kangax-es5/strict.assignment-non-writable-error.js: failed
 kangax-es5/strict.assignment-unresolvable-error.js: failed
 kangax-es5/strict.delete-bindings-error.js: failed
 kangax-es5/strict.delete-non-configurable-error.js: failed
@@ -494,19 +494,19 @@ kangax-es5/strict.this-undefined.js: failed
 kangax-es5/strict.with-error.js: failed
 kangax-es6/Array.Symbol.species.js: [object Object]
 kangax-es6/Array.from.array-like.js: OK
-kangax-es6/Array.from.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/Array.from.generator.js: failed
 kangax-es6/Array.from.iterable-instance.js: [object Object]
 kangax-es6/Array.from.iterable.js: [object Object]
 kangax-es6/Array.from.iterator-closing.js: failed
 kangax-es6/Array.from.map.array-like.js: failed
-kangax-es6/Array.from.map.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/Array.from.map.generator.js: failed
 kangax-es6/Array.from.map.iterable-instance.js: [object Object]
 kangax-es6/Array.from.map.iterable.js: [object Object]
 kangax-es6/Array.iterator-prototype-chain.js: failed
 kangax-es6/Array.of.js: OK
-kangax-es6/Array.prototype.Symbol.iterator.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: OK
 kangax-es6/Array.prototype.Symbol.unscopables.js: failed
-kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.copyWithin.js: OK
 kangax-es6/Array.prototype.entries.js: OK
 kangax-es6/Array.prototype.fill.js: OK
 kangax-es6/Array.prototype.findIndex.js: OK
@@ -515,21 +515,21 @@ kangax-es6/Array.prototype.keys.js: OK
 kangax-es6/Array.prototype.splice.js: failed
 kangax-es6/Array.prototype.values.js: OK
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: [object Object]
-kangax-es6/Function.name.accessor.js: SyntaxError: Expected ':' after property key
-kangax-es6/Function.name.bound.js: SyntaxError: Unexpected token:
-kangax-es6/Function.name.class-expression.js: SyntaxError: Unexpected token: class
-kangax-es6/Function.name.class-object-method.js: SyntaxError: Unexpected token: class
-kangax-es6/Function.name.class-prototype.js: SyntaxError: Unexpected token:
-kangax-es6/Function.name.class-statement.js: SyntaxError: Unexpected token:
-kangax-es6/Function.name.class-static.js: SyntaxError: Unexpected token:
-kangax-es6/Function.name.class-variable.js: SyntaxError: Unexpected token: class
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 10
+kangax-es6/Function.name.class-object-method.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 10
+kangax-es6/Function.name.class-prototype.js: OK
+kangax-es6/Function.name.class-statement.js: failed
+kangax-es6/Function.name.class-static.js: OK
+kangax-es6/Function.name.class-variable.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 10
 kangax-es6/Function.name.configurable.js: failed
 kangax-es6/Function.name.expression.js: failed
 kangax-es6/Function.name.new-Function.js: failed
 kangax-es6/Function.name.object-method.js: failed
 kangax-es6/Function.name.shorthand.js: failed
 kangax-es6/Function.name.shorthand.no-lexical.js: OK
-kangax-es6/Function.name.statement.js: SyntaxError: Unexpected token:
+kangax-es6/Function.name.statement.js: failed
 kangax-es6/Function.name.symbol-keyed.js: failed
 kangax-es6/Function.name.variable.js: failed
 kangax-es6/Map.Symbol.species.js: [object Object]
@@ -582,24 +582,24 @@ kangax-es6/Object.getOwnPropertySymbols.js: failed
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: [object Object]
-kangax-es6/Promise.all.iterable.js: SyntaxError: Expected property name after '.'
-kangax-es6/Promise.all.js: SyntaxError: Expected property name after '.'
+kangax-es6/Promise.all.iterable.js: failed
+kangax-es6/Promise.all.js: failed
 kangax-es6/Promise.constructor-requires-new.js: failed
-kangax-es6/Promise.js: SyntaxError: Expected property name after '.'
+kangax-es6/Promise.js: failed
 kangax-es6/Promise.prototype-not-instance.js: OK
-kangax-es6/Promise.race.iterable.js: SyntaxError: Expected property name after '.'
-kangax-es6/Promise.race.js: SyntaxError: Expected property name after '.'
+kangax-es6/Promise.race.iterable.js: failed
+kangax-es6/Promise.race.js: failed
 kangax-es6/Proxy.Array.isArray.js: failed
 kangax-es6/Proxy.JSON.stringify.js: failed
 kangax-es6/Proxy.constructor-requires-new.js: failed
-kangax-es6/Proxy.handler.apply.invariants.js: SyntaxError: Unexpected token:
+kangax-es6/Proxy.handler.apply.invariants.js: failed
 kangax-es6/Proxy.handler.apply.js: failed
-kangax-es6/Proxy.handler.construct.invariants.js: SyntaxError: Unexpected token: new
-kangax-es6/Proxy.handler.construct.js: SyntaxError: Unexpected token: new
+kangax-es6/Proxy.handler.construct.invariants.js: SyntaxError: Unexpected token: 'new' (type: 30) at line 16
+kangax-es6/Proxy.handler.construct.js: SyntaxError: Unexpected token: 'new' (type: 30) at line 12
 kangax-es6/Proxy.handler.defineProperty.invariants.js: failed
 kangax-es6/Proxy.handler.defineProperty.js: failed
-kangax-es6/Proxy.handler.deleteProperty.invariants.js: SyntaxError: Unexpected token:
-kangax-es6/Proxy.handler.deleteProperty.js: SyntaxError: Unexpected token:
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: failed
+kangax-es6/Proxy.handler.deleteProperty.js: failed
 kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed
 kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: [object Object]
 kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: failed
@@ -622,14 +622,14 @@ kangax-es6/Proxy.handler.set.instances.js: failed
 kangax-es6/Proxy.handler.set.invariants.js: failed
 kangax-es6/Proxy.handler.set.js: failed
 kangax-es6/Proxy.no-prototype.js: OK
-kangax-es6/Proxy.revocable.js: SyntaxError: Unexpected token:
+kangax-es6/Proxy.revocable.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
 kangax-es6/Reflect.apply.js: OK
 kangax-es6/Reflect.construct.Array-subclassing.js: failed
 kangax-es6/Reflect.construct.Function-subclassing.js: Error: 'obj' is not a function
-kangax-es6/Reflect.construct.Promise-subclassing.js: SyntaxError: Expected property name after '.'
+kangax-es6/Reflect.construct.Promise-subclassing.js: failed
 kangax-es6/Reflect.construct.RegExp-subclassing.js: [object Object]
 kangax-es6/Reflect.construct.js: OK
-kangax-es6/Reflect.construct.new-target.js: SyntaxError: Unexpected token:
+kangax-es6/Reflect.construct.new-target.js: failed
 kangax-es6/Reflect.construct.third-argument.js: failed
 kangax-es6/Reflect.defineProperty.js: failed
 kangax-es6/Reflect.deleteProperty.js: failed
@@ -648,7 +648,7 @@ kangax-es6/RegExp.prototype.Symbol.match.js: failed
 kangax-es6/RegExp.prototype.Symbol.replace.js: failed
 kangax-es6/RegExp.prototype.Symbol.search.js: failed
 kangax-es6/RegExp.prototype.Symbol.split.js: failed
-kangax-es6/RegExp.prototype.flags.js: SyntaxError: Unexpected token:
+kangax-es6/RegExp.prototype.flags.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
 kangax-es6/Set.Symbol.species.js: [object Object]
 kangax-es6/Set.constructor-accepts-null.js: OK
 kangax-es6/Set.constructor-arguments.js: OK
@@ -670,7 +670,7 @@ kangax-es6/Set.prototype.values.js: failed
 kangax-es6/Set.zero-key.js: failed
 kangax-es6/String.fromCodePoint.js: failed
 kangax-es6/String.iterator-prototype-chain.js: failed
-kangax-es6/String.prototype.Symbol.iterator.js: failed
+kangax-es6/String.prototype.Symbol.iterator.js: OK
 kangax-es6/String.prototype.codePointAt.js: failed
 kangax-es6/String.prototype.endsWith.js: OK
 kangax-es6/String.prototype.endsWith.throws-regex.js: failed
@@ -679,18 +679,18 @@ kangax-es6/String.prototype.normalize.js: failed
 kangax-es6/String.prototype.repeat.js: failed
 kangax-es6/String.prototype.startsWith.js: OK
 kangax-es6/String.prototype.startsWith.throws-regex.js: failed
-kangax-es6/String.raw.js: failed
+kangax-es6/String.raw.js: OK
 kangax-es6/Symbol.JSON.stringify.object.js: failed
 kangax-es6/Symbol.JSON.stringify.primitive.js: failed
 kangax-es6/Symbol.Object.js: failed
 kangax-es6/Symbol.String.js: OK
 kangax-es6/Symbol.defineProperty.js: OK
 kangax-es6/Symbol.global-registry.js: OK
-kangax-es6/Symbol.hidden-keys.js: SyntaxError: Unexpected token:
+kangax-es6/Symbol.hidden-keys.js: SyntaxError: Unexpected token: '' (type: 82) at line 18
 kangax-es6/Symbol.js: OK
 kangax-es6/Symbol.no-coerce.js: failed
 kangax-es6/Symbol.no-new.js: failed
-kangax-es6/Symbol.prototype.js: SyntaxError: Unexpected token:
+kangax-es6/Symbol.prototype.js: SyntaxError: Unexpected token: '' (type: 82) at line 13
 kangax-es6/Symbol.typeof.js: OK
 kangax-es6/WeakMap.accept-primitives.js: OK
 kangax-es6/WeakMap.constructor-accepts-null.js: OK
@@ -717,21 +717,21 @@ kangax-es6/WeakSet.prototype.add-returns-this.js: OK
 kangax-es6/WeakSet.prototype.delete.js: OK
 kangax-es6/annex-b.RegExp.prototype.compile.js: failed
 kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: failed
-kangax-es6/annex-b.String.prototype.html.existence.js: failed
-kangax-es6/annex-b.String.prototype.html.lowercase.js: [object Object]
-kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
-kangax-es6/annex-b.function.hoisted-block-level.js: SyntaxError: Unexpected token:
+kangax-es6/annex-b.String.prototype.html.existence.js: SyntaxError: Expected ';' after for loop init
+kangax-es6/annex-b.String.prototype.html.lowercase.js: SyntaxError: Expected ';' after for loop init
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: SyntaxError: Expected ';' after for loop init
+kangax-es6/annex-b.function.hoisted-block-level.js: SyntaxError: Unexpected token: '' (type: 82) at line 14
 kangax-es6/annex-b.function.if-statement.js: OK
-kangax-es6/annex-b.function.labeled.js: SyntaxError: Unexpected token:
-kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token:
-kangax-es6/annex-b.regex.backreferences-octal.js: Lexer error at 9:12: Unexpected character: \
-kangax-es6/annex-b.regex.hyphens.js: Lexer error at 9:13: Unexpected character: \
-kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: Unexpected token:
-kangax-es6/annex-b.regex.invalid-char-escapes.js: Lexer error at 9:12: Unexpected character: \
-kangax-es6/annex-b.regex.invalid-control-escapes.js: Lexer error at 9:12: Unexpected character: \
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: Lexer error at 9:12: Unexpected character: \
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: Lexer error at 9:12: Unexpected character: \
-kangax-es6/annex-b.regex.octal-escapes.js: Lexer error at 9:12: Unexpected character: \
+kangax-es6/annex-b.function.labeled.js: SyntaxError: Unexpected token: '' (type: 97) at line 12
+kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token: '' (type: 69) at line 9
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.invalid-char-escapes.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: Lexer error at 9:14: Invalid unicode escape sequence in identifier
+kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
 kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
@@ -749,42 +749,42 @@ kangax-es6/arrow.5-param.js: OK
 kangax-es6/arrow.bind.js: failed
 kangax-es6/arrow.lexical-arguments.js: failed
 kangax-es6/arrow.lexical-super.constructor.js: failed
-kangax-es6/arrow.lexical-super.methods.js: SyntaxError: Unexpected token:
+kangax-es6/arrow.lexical-super.methods.js: [object Object]
 kangax-es6/arrow.lexical-this.js: failed
-kangax-es6/arrow.new-target.js: SyntaxError: Unexpected token:
+kangax-es6/arrow.new-target.js: failed
 kangax-es6/arrow.no-line-break.js: OK
 kangax-es6/arrow.no-prototype.js: failed
 kangax-es6/arrow.precedence.js: OK
 kangax-es6/arrow.this-call-apply.js: failed
-kangax-es6/class.accessor-properties.js: SyntaxError: Expected '(' for method parameters
-kangax-es6/class.anonymous.js: SyntaxError: Unexpected token: class
+kangax-es6/class.accessor-properties.js: failed
+kangax-es6/class.anonymous.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 10
 kangax-es6/class.block-scoped.js: OK
-kangax-es6/class.computed-accessor-properties.js: SyntaxError: Expected '(' for method parameters
-kangax-es6/class.computed-names-tdz.js: SyntaxError: Unexpected token: class
-kangax-es6/class.computed-prototype-methods.js: SyntaxError: Expected '(' for method parameters
-kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: Expected '(' for method parameters
-kangax-es6/class.computed-static-methods.js: SyntaxError: Expected '(' for method parameters
+kangax-es6/class.computed-accessor-properties.js: failed
+kangax-es6/class.computed-names-tdz.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 11
+kangax-es6/class.computed-prototype-methods.js: failed
+kangax-es6/class.computed-static-accessor-properties.js: failed
+kangax-es6/class.computed-static-methods.js: failed
 kangax-es6/class.constructor-requires-new.js: failed
-kangax-es6/class.constructor.js: SyntaxError: Unexpected token:
-kangax-es6/class.expression.js: SyntaxError: Unexpected token: class
+kangax-es6/class.constructor.js: OK
+kangax-es6/class.expression.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 10
 kangax-es6/class.extends-expressions.js: SyntaxError: Expected superclass name after 'extends'
 kangax-es6/class.extends-null.js: SyntaxError: Expected superclass name after 'extends'
 kangax-es6/class.extends.js: failed
 kangax-es6/class.implicit-strict.js: failed
 kangax-es6/class.lexical-name.js: failed
 kangax-es6/class.methods-not-enumerable.js: failed
-kangax-es6/class.new-target.js: SyntaxError: Unexpected token:
+kangax-es6/class.new-target.js: SyntaxError: Unexpected token: '' (type: 82) at line 17
 kangax-es6/class.optional-semicolons.js: OK
-kangax-es6/class.prototype-methods.js: SyntaxError: Unexpected token:
+kangax-es6/class.prototype-methods.js: OK
 kangax-es6/class.statement.js: OK
-kangax-es6/class.static-accessor-properties.js: SyntaxError: Expected '(' for method parameters
+kangax-es6/class.static-accessor-properties.js: failed
 kangax-es6/class.static-methods.js: OK
-kangax-es6/class.string-keyed-methods.js: SyntaxError: Unexpected token:
+kangax-es6/class.string-keyed-methods.js: SyntaxError: Expected '(' for method parameters
 kangax-es6/const.basic.js: OK
 kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
-kangax-es6/const.for-of.js: OK
+kangax-es6/const.for-of.js: failed
 kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: OK
 kangax-es6/const.shadow.js: OK
@@ -792,16 +792,16 @@ kangax-es6/const.strict.basic.js: OK
 kangax-es6/const.strict.block-scoped.js: OK
 kangax-es6/const.strict.for-in.js: OK
 kangax-es6/const.strict.for-loop.js: OK
-kangax-es6/const.strict.for-of.js: OK
+kangax-es6/const.strict.for-of.js: failed
 kangax-es6/const.strict.no-redefine.js: OK
 kangax-es6/const.strict.no-statement.js: OK
 kangax-es6/const.strict.shadow.js: OK
-kangax-es6/const.strict.tdz.js: SyntaxError: Unexpected token:
-kangax-es6/const.tdz.js: SyntaxError: Unexpected token:
+kangax-es6/const.strict.tdz.js: SyntaxError: Unexpected token: '' (type: 82) at line 12
+kangax-es6/const.tdz.js: SyntaxError: Unexpected token: '' (type: 82) at line 11
 kangax-es6/default-params.arguments.js: OK
 kangax-es6/default-params.basic.js: OK
 kangax-es6/default-params.explicit-undefined.js: failed
-kangax-es6/default-params.new-function.js: OK
+kangax-es6/default-params.new-function.js: failed
 kangax-es6/default-params.refer-previous.js: OK
 kangax-es6/default-params.separate-scope.js: failed
 kangax-es6/default-params.tdz.js: failed
@@ -812,7 +812,7 @@ kangax-es6/destructuring-assign.chained-object.js: failed
 kangax-es6/destructuring-assign.computed-properties.js: failed
 kangax-es6/destructuring-assign.defaults.js: SyntaxError: Expected ':' after property key
 kangax-es6/destructuring-assign.empty-patterns.js: failed
-kangax-es6/destructuring-assign.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/destructuring-assign.generator.js: failed
 kangax-es6/destructuring-assign.iterable-expression.js: failed
 kangax-es6/destructuring-assign.iterable-instance.js: [object Object]
 kangax-es6/destructuring-assign.iterable.js: [object Object]
@@ -835,13 +835,13 @@ kangax-es6/destructuring-decl.catch.js: SyntaxError: Expected identifier in catc
 kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: Expected identifier in object destructuring
 kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: Expected '}' to close object destructuring
 kangax-es6/destructuring-decl.defaults.js: SyntaxError: Expected '}' to close object destructuring
-kangax-es6/destructuring-decl.for-in.js: SyntaxError: Expected ';' after for loop init
+kangax-es6/destructuring-decl.for-in.js: crashed (signal 11)
 kangax-es6/destructuring-decl.for-of.js: crashed (signal 11)
-kangax-es6/destructuring-decl.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/destructuring-decl.generator.js: failed
 kangax-es6/destructuring-decl.iterable-instance.js: [object Object]
 kangax-es6/destructuring-decl.iterable.js: [object Object]
 kangax-es6/destructuring-decl.iterator-closing.js: failed
-kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected token:
+kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected token: '' (type: 95) at line 10
 kangax-es6/destructuring-decl.nested.js: SyntaxError: Expected identifier or ',' in array destructuring
 kangax-es6/destructuring-decl.object-primitives.js: failed
 kangax-es6/destructuring-decl.object.js: OK
@@ -852,34 +852,34 @@ kangax-es6/destructuring-decl.throws-null-undefined.js: failed
 kangax-es6/destructuring-decl.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-decl.trailing-comma-object.js: OK
 kangax-es6/destructuring-params.aliased-defaults-arrow.js: [object Object]
-kangax-es6/destructuring-params.arguments.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.array.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.astral-string.js: failed
-kangax-es6/destructuring-params.computed-properties.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.defaults-new-function.js: OK
-kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.defaults.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.duplicate-identifier.js: OK
-kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: Expected identifier in destructuring pattern
-kangax-es6/destructuring-params.generator.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.iterable.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.length.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.nested.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.new-function.js: OK
-kangax-es6/destructuring-params.object-primitives.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.object.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.rest.js: SyntaxError: Expected ']' to close destructuring pattern
+kangax-es6/destructuring-params.arguments.js: OK
+kangax-es6/destructuring-params.array.js: [object Object]
+kangax-es6/destructuring-params.astral-string.js: [object Object]
+kangax-es6/destructuring-params.computed-properties.js: [object Object]
+kangax-es6/destructuring-params.defaults-new-function.js: failed
+kangax-es6/destructuring-params.defaults-separate-scope.js: Error: 'a' is not a function [object Object]
+kangax-es6/destructuring-params.defaults.js: [object Object]
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: OK
+kangax-es6/destructuring-params.generator.js: [object Object]
+kangax-es6/destructuring-params.iterable-instance.js: [object Object]
+kangax-es6/destructuring-params.iterable.js: [object Object]
+kangax-es6/destructuring-params.iterator-closing.js: failed
+kangax-es6/destructuring-params.length.js: OK
+kangax-es6/destructuring-params.nested.js: [object Object]
+kangax-es6/destructuring-params.new-function.js: failed
+kangax-es6/destructuring-params.object-primitives.js: [object Object]
+kangax-es6/destructuring-params.object.js: [object Object]
+kangax-es6/destructuring-params.rest.js: [object Object]
 kangax-es6/destructuring-params.shorthand-defaults-arrow.js: [object Object]
-kangax-es6/destructuring-params.sparse-array.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.string.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: Expected parameter name or destructuring pattern
-kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Expected ']' to close destructuring pattern
-kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: Expected parameter name or destructuring pattern
+kangax-es6/destructuring-params.sparse-array.js: [object Object]
+kangax-es6/destructuring-params.string.js: [object Object]
+kangax-es6/destructuring-params.throws-null-undefined.js: failed
+kangax-es6/destructuring-params.trailing-comma-iterable.js: [object Object]
+kangax-es6/destructuring-params.trailing-comma-object.js: [object Object]
 kangax-es6/for-of.array.js: OK
 kangax-es6/for-of.astral-string.js: failed
-kangax-es6/for-of.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/for-of.generator.js: failed
 kangax-es6/for-of.iterable-instance.js: [object Object]
 kangax-es6/for-of.iterable.js: [object Object]
 kangax-es6/for-of.iterator-closing-break.js: failed
@@ -887,52 +887,52 @@ kangax-es6/for-of.iterator-closing-throw.js: failed
 kangax-es6/for-of.sparse-array.js: OK
 kangax-es6/for-of.string.js: OK
 kangax-es6/function.block-level-decl.js: Function 'f' already declared
-kangax-es6/generators.basic.js: SyntaxError: Unexpected token:
-kangax-es6/generators.constructor.js: SyntaxError: Unexpected token:
-kangax-es6/generators.expression.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.no-new-this.js: SyntaxError: Unexpected token:
-kangax-es6/generators.prototype-chain.js: SyntaxError: Unexpected token:
-kangax-es6/generators.prototype.js: SyntaxError: Unexpected token:
-kangax-es6/generators.return.js: SyntaxError: Unexpected token:
-kangax-es6/generators.sending.js: SyntaxError: Unexpected token:
-kangax-es6/generators.shorthand.class.js: SyntaxError: Unexpected token:
-kangax-es6/generators.shorthand.computed.class.js: SyntaxError: Expected '(' for method parameters
-kangax-es6/generators.shorthand.computed.js: SyntaxError: Expected property key
-kangax-es6/generators.shorthand.js: SyntaxError: Expected property key
-kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: Unexpected token:
-kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: Expected property key
-kangax-es6/generators.this.js: SyntaxError: Unexpected token:
-kangax-es6/generators.throw.js: SyntaxError: Unexpected token:
-kangax-es6/generators.yield-precedence.js: SyntaxError: Unexpected token:
-kangax-es6/generators.yield-star.array.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.astral-string.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.generator.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.iterable.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/generators.yield-star.string.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/generators.basic.js: SyntaxError: Unexpected token: '' (type: 82) at line 17
+kangax-es6/generators.constructor.js: SyntaxError: Unexpected token: '' (type: 82) at line 15
+kangax-es6/generators.expression.js: SyntaxError: Unexpected token: '' (type: 82) at line 17
+kangax-es6/generators.no-new-this.js: failed
+kangax-es6/generators.prototype-chain.js: SyntaxError: Unexpected token: '' (type: 82) at line 18
+kangax-es6/generators.prototype.js: SyntaxError: Unexpected token: '' (type: 82) at line 15
+kangax-es6/generators.return.js: SyntaxError: Unexpected token: '' (type: 82) at line 17
+kangax-es6/generators.sending.js: [object Object]
+kangax-es6/generators.shorthand.class.js: SyntaxError: Unexpected token: '' (type: 82) at line 19
+kangax-es6/generators.shorthand.computed.class.js: SyntaxError: Unexpected token: '' (type: 82) at line 20
+kangax-es6/generators.shorthand.computed.js: SyntaxError: Unexpected token: '' (type: 82) at line 20
+kangax-es6/generators.shorthand.js: SyntaxError: Unexpected token: '' (type: 82) at line 19
+kangax-es6/generators.shorthand.no-constructor.js: failed
+kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: Unexpected token: '' (type: 82) at line 19
+kangax-es6/generators.this.js: SyntaxError: Unexpected token: '' (type: 82) at line 17
+kangax-es6/generators.throw.js: failed
+kangax-es6/generators.yield-precedence.js: failed
+kangax-es6/generators.yield-star.array.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
+kangax-es6/generators.yield-star.astral-string.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
+kangax-es6/generators.yield-star.generator.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
+kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: Unexpected token: '' (type: 82) at line 39
+kangax-es6/generators.yield-star.iterable.js: SyntaxError: Unexpected token: '' (type: 82) at line 40
+kangax-es6/generators.yield-star.iterator-closing-throw.js: [object Object]
+kangax-es6/generators.yield-star.iterator-closing.js: [object Object]
+kangax-es6/generators.yield-star.non-iterable-error.js: [object Object]
+kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
+kangax-es6/generators.yield-star.string.js: SyntaxError: Unexpected token: '' (type: 82) at line 16
 kangax-es6/let.basic.js: OK
 kangax-es6/let.block-scoped.js: OK
 kangax-es6/let.for-in-shadow.js: OK
-kangax-es6/let.for-iteration.js: SyntaxError: Unexpected token:
+kangax-es6/let.for-iteration.js: SyntaxError: Unexpected token: '' (type: 82) at line 20
 kangax-es6/let.for-loop.js: OK
 kangax-es6/let.no-statement.js: OK
 kangax-es6/let.shadow.js: OK
 kangax-es6/let.strict.basic.js: OK
 kangax-es6/let.strict.block-scoped.js: OK
 kangax-es6/let.strict.for-in-shadow.js: OK
-kangax-es6/let.strict.for-iteration.js: SyntaxError: Unexpected token:
+kangax-es6/let.strict.for-iteration.js: SyntaxError: Unexpected token: '' (type: 82) at line 21
 kangax-es6/let.strict.for-loop.js: OK
 kangax-es6/let.strict.no-statement.js: OK
 kangax-es6/let.strict.shadow.js: OK
-kangax-es6/let.strict.tdz.js: SyntaxError: Unexpected token:
-kangax-es6/let.tdz.js: SyntaxError: Unexpected token:
+kangax-es6/let.strict.tdz.js: SyntaxError: Unexpected token: '' (type: 82) at line 12
+kangax-es6/let.tdz.js: SyntaxError: Unexpected token: '' (type: 82) at line 11
 kangax-es6/literals.binary.Number.js: failed
 kangax-es6/literals.binary.js: OK
-kangax-es6/literals.object.computed-accessors.js: SyntaxError: Expected ':' after property key
+kangax-es6/literals.object.computed-accessors.js: failed
 kangax-es6/literals.object.computed-properties.js: OK
 kangax-es6/literals.object.computed-shorthand-methods.js: OK
 kangax-es6/literals.object.shorthand-methods.js: OK
@@ -965,7 +965,7 @@ kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: failed
 kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed
 kangax-es6/misc.Proxy.get.Array.concat.js: failed
 kangax-es6/misc.Proxy.get.Array.from.js: failed
-kangax-es6/misc.Proxy.get.Array.iteration.js: [object Object]
+kangax-es6/misc.Proxy.get.Array.iteration.js: failed
 kangax-es6/misc.Proxy.get.Array.pop.js: failed
 kangax-es6/misc.Proxy.get.Array.reverse.js: failed
 kangax-es6/misc.Proxy.get.Array.shift.js: failed
@@ -977,7 +977,7 @@ kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: [object Object]
 kangax-es6/misc.Proxy.get.Date.toJSON.js: failed
 kangax-es6/misc.Proxy.get.Error.toString.js: failed
 kangax-es6/misc.Proxy.get.Function.bind.js: [object Object]
-kangax-es6/misc.Proxy.get.HasBinding.js: SyntaxError: Unexpected token: with
+kangax-es6/misc.Proxy.get.HasBinding.js: SyntaxError: Unexpected token: 'with' (type: 41) at line 14
 kangax-es6/misc.Proxy.get.IteratorComplete.js: [object Object]
 kangax-es6/misc.Proxy.get.JSON.stringify.js: failed
 kangax-es6/misc.Proxy.get.Object.assign.js: failed
@@ -1013,31 +1013,31 @@ kangax-es6/misc.Proxy.set.Array.shift.js: failed
 kangax-es6/misc.Proxy.set.Array.splice.js: failed
 kangax-es6/misc.Proxy.set.Array.unshift.js: failed
 kangax-es6/misc.Proxy.set.Object.assign.js: failed
-kangax-es6/misc.RegExp-alter-flags.js: SyntaxError: Unexpected token:
+kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: failed
-kangax-es6/misc.accessors-no-constructor.js: SyntaxError: Expected ':' after property key
+kangax-es6/misc.accessors-no-constructor.js: OK
 kangax-es6/misc.bound-function-prototype.arrow.js: failed
 kangax-es6/misc.bound-function-prototype.class.js: failed
 kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/misc.bound-function-prototype.generator.js: failed
 kangax-es6/misc.bound-function-prototype.subclass.js: failed
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: failed
 kangax-es6/misc.for-in-no-assignment-strict.js: OK
 kangax-es6/misc.function-length-configurable.js: failed
-kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: Lexer error at 9:8: Unexpected character: \
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 kangax-es6/misc.identifier-syntax.var-1.js: OK
 kangax-es6/misc.identifier-syntax.var-2.js: failed
 kangax-es6/misc.property-order.JSON.parse.js: failed
 kangax-es6/misc.property-order.JSON.stringify.js: failed
-kangax-es6/misc.property-order.Object.assign.js: failed
+kangax-es6/misc.property-order.Object.assign.js: SyntaxError: Expected identifier in variable declaration
 kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
 kangax-es6/misc.property-order.Object.keys.js: OK
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: failed
 kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
 kangax-es6/misc.prototypes-not-instances.js: failed
-kangax-es6/new-target.assignment-error.js: SyntaxError: Unexpected token:
-kangax-es6/new-target.constructor.js: SyntaxError: Unexpected token:
+kangax-es6/new-target.assignment-error.js: [object Object]
+kangax-es6/new-target.constructor.js: SyntaxError: Unexpected token: '' (type: 82) at line 15
 kangax-es6/regex.flags.u.case-folding.js: failed
 kangax-es6/regex.flags.u.codepoint.js: [object Object]
 kangax-es6/regex.flags.u.js: [object Object]
@@ -1047,14 +1047,14 @@ kangax-es6/regex.flags.y.lastIndex.js: failed
 kangax-es6/rest-params.arguments.js: OK
 kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: failed
-kangax-es6/rest-params.new-function.js: OK
-kangax-es6/rest-params.no-setter.js: OK
+kangax-es6/rest-params.new-function.js: failed
+kangax-es6/rest-params.no-setter.js: failed
 kangax-es6/spread.array-call.js: failed
 kangax-es6/spread.array-literal.js: OK
 kangax-es6/spread.astral-call.js: failed
 kangax-es6/spread.astral-literal.js: failed
-kangax-es6/spread.generator-call.js: SyntaxError: Expected '(' after 'function'
-kangax-es6/spread.generator-literal.js: SyntaxError: Expected '(' after 'function'
+kangax-es6/spread.generator-call.js: failed
+kangax-es6/spread.generator-literal.js: failed
 kangax-es6/spread.iterable-call.js: [object Object]
 kangax-es6/spread.iterable-instance-call.js: [object Object]
 kangax-es6/spread.iterable-instance-literal.js: [object Object]
@@ -1076,15 +1076,15 @@ kangax-es6/subclassing.Array.prototype-chain.js: failed
 kangax-es6/subclassing.Array.slice.js: failed
 kangax-es6/subclassing.Array.splice.js: failed
 kangax-es6/subclassing.Function.call.js: Error: 'c' is not a function
-kangax-es6/subclassing.Function.new.js: SyntaxError: Unexpected token:
+kangax-es6/subclassing.Function.new.js: failed
 kangax-es6/subclassing.Function.prototype-chain.js: failed
 kangax-es6/subclassing.Function.prototype.apply.js: crashed (signal 11)
-kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: Unexpected token:
+kangax-es6/subclassing.Function.prototype.bind.js: crashed (signal 11)
 kangax-es6/subclassing.Function.prototype.call.js: crashed (signal 11)
-kangax-es6/subclassing.Promise.all.js: SyntaxError: Expected property name after '.'
-kangax-es6/subclassing.Promise.js: SyntaxError: Expected property name after '.'
+kangax-es6/subclassing.Promise.all.js: failed
+kangax-es6/subclassing.Promise.js: failed
 kangax-es6/subclassing.Promise.prototype-chain.js: failed
-kangax-es6/subclassing.Promise.race.js: SyntaxError: Expected property name after '.'
+kangax-es6/subclassing.Promise.race.js: failed
 kangax-es6/subclassing.RegExp.exec.js: failed
 kangax-es6/subclassing.RegExp.js: OK
 kangax-es6/subclassing.RegExp.prototype-chain.js: failed
@@ -1095,11 +1095,11 @@ kangax-es6/subclassing.misc.Map.js: failed
 kangax-es6/subclassing.misc.Number.js: failed
 kangax-es6/subclassing.misc.Set.js: failed
 kangax-es6/subclassing.misc.String.js: failed
-kangax-es6/super.correct-constructor.js: SyntaxError: Unexpected token:
-kangax-es6/super.expression.js: OK
-kangax-es6/super.method-calls.js: SyntaxError: Unexpected token:
-kangax-es6/super.new-target-binding.js: SyntaxError: Unexpected token:
-kangax-es6/super.property-access.js: SyntaxError: Unexpected token:
+kangax-es6/super.correct-constructor.js: OK
+kangax-es6/super.expression.js: failed
+kangax-es6/super.method-calls.js: OK
+kangax-es6/super.new-target-binding.js: failed
+kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: failed
 kangax-es6/super.static-binding.js: [object Object]
 kangax-es6/super.this-binding.js: failed
@@ -1108,10 +1108,10 @@ kangax-es6/tail-calls.mutual.js: crashed (signal 11)
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: failed
 kangax-es6/template.escape-sequences.js: Lexer error at 13:27: Invalid hex escape sequence
-kangax-es6/template.frozen-array.js: OK
+kangax-es6/template.frozen-array.js: failed
 kangax-es6/template.line-break.js: failed
 kangax-es6/template.permanent-caching.js: failed
-kangax-es6/template.tagged.js: OK
+kangax-es6/template.tagged.js: failed
 kangax-es6/template.toString.js: failed
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
 kangax-es6/typed-arrays.DataView.Float32.js: OK
@@ -1120,7 +1120,7 @@ kangax-es6/typed-arrays.DataView.Int8.js: failed
 kangax-es6/typed-arrays.DataView.Int16.js: OK
 kangax-es6/typed-arrays.DataView.Int32.js: failed
 kangax-es6/typed-arrays.DataView.Uint8.js: OK
-kangax-es6/typed-arrays.DataView.Uint16.js: failed
+kangax-es6/typed-arrays.DataView.Uint16.js: OK
 kangax-es6/typed-arrays.DataView.Uint32.js: failed
 kangax-es6/typed-arrays.Float32Array.js: OK
 kangax-es6/typed-arrays.Float64Array.js: OK
@@ -1132,7 +1132,7 @@ kangax-es6/typed-arrays.Uint8Array.js: failed
 kangax-es6/typed-arrays.Uint8ClampedArray.js: [object Object]
 kangax-es6/typed-arrays.Uint16Array.js: failed
 kangax-es6/typed-arrays.Uint32Array.js: failed
-kangax-es6/typed-arrays.constructor-iterables.js: [object Object]
+kangax-es6/typed-arrays.constructor-iterables.js: timeout
 kangax-es6/typed-arrays.constructor-requires-new.js: failed
 kangax-es6/typed-arrays.correct-prototype-chains.js: failed
 kangax-es6/typed-arrays.from.js: failed
@@ -1159,9 +1159,9 @@ kangax-es6/typed-arrays.prototype.some.js: failed
 kangax-es6/typed-arrays.prototype.sort.js: failed
 kangax-es6/typed-arrays.prototype.subarray.js: failed
 kangax-es6/typed-arrays.prototype.values.js: failed
-kangax-es6/unicode-escapes.identifier.js: Lexer error at 9:8: Unexpected character: \
-kangax-es6/unicode-escapes.property-access.js: Lexer error at 10:13: Unexpected character: \
-kangax-es6/unicode-escapes.property-key.js: Lexer error at 9:14: Unexpected character: \
+kangax-es6/unicode-escapes.identifier.js: Lexer error at 9:16: Unsupported unicode escape sequence in identifier
+kangax-es6/unicode-escapes.property-access.js: Lexer error at 10:21: Unsupported unicode escape sequence in identifier
+kangax-es6/unicode-escapes.property-key.js: Lexer error at 9:22: Unsupported unicode escape sequence in identifier
 kangax-es6/unicode-escapes.string.js: failed
 kangax-es6/well-known.hasInstance.js: failed
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: failed
@@ -1181,50 +1181,50 @@ kangax-es6/well-known.species.Array.map.js: failed
 kangax-es6/well-known.species.Array.slice.js: failed
 kangax-es6/well-known.species.Array.splice.js: failed
 kangax-es6/well-known.species.Promise.then.js: failed
-kangax-es6/well-known.species.RegExp.split.js: SyntaxError: Unexpected token:
+kangax-es6/well-known.species.RegExp.split.js: SyntaxError: Unexpected token: '' (type: 52) at line 14
 kangax-es6/well-known.species.js: [object Object]
 kangax-es6/well-known.split.js: failed
 kangax-es6/well-known.toPrimitive.js: failed
-kangax-es6/well-known.toStringTag.existing-builtins.js: SyntaxError: Unexpected token:
+kangax-es6/well-known.toStringTag.existing-builtins.js: SyntaxError: Unexpected token: '' (type: 82) at line 23
 kangax-es6/well-known.toStringTag.js: failed
 kangax-es6/well-known.toStringTag.misc-builtins.js: failed
-kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: Expected ')' after function arguments
-kangax-es6/well-known.unscopables.js: SyntaxError: Unexpected token: with
-kangax-es2016/Array.prototype.includes.generic.js: SyntaxError: Expected ':' after property key
+kangax-es6/well-known.toStringTag.new-builtins.js: timeout
+kangax-es6/well-known.unscopables.js: SyntaxError: Unexpected token: 'with' (type: 41) at line 12
+kangax-es2016/Array.prototype.includes.generic.js: failed
 kangax-es2016/Array.prototype.includes.js: failed
 kangax-es2016/Array.prototype.includes.sparse.js: failed
-kangax-es2016/Array.prototype.includes.typed-array.js: SyntaxError: Unexpected token:
-kangax-es2016/exponentiation.assignment.js: SyntaxError: Unexpected token:
+kangax-es2016/Array.prototype.includes.typed-array.js: [object Object]
+kangax-es2016/exponentiation.assignment.js: SyntaxError: Unexpected token: '' (type: 61) at line 10
 kangax-es2016/exponentiation.basic.js: OK
 kangax-es2016/exponentiation.unary-negation-error.js: OK
 kangax-es2016/misc.Proxy-Array-includes.js: failed
-kangax-es2016/misc.Proxy-enumerate-removed.js: SyntaxError: Unexpected token:
+kangax-es2016/misc.Proxy-enumerate-removed.js: OK
 kangax-es2016/misc.generator-no-new.js: failed
-kangax-es2016/misc.generator-throw-inner.js: SyntaxError: Expected '(' after 'function'
+kangax-es2016/misc.generator-throw-inner.js: failed
 kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Expected identifier after '...' in array destructuring
-kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Expected ']' to close destructuring pattern
+kangax-es2016/misc.nested-rest-destructuring-params.js: [object Object]
 kangax-es2016/misc.strict-fn-non-simple-params-error.js: OK
-kangax-es2017/Atomics.add.js: [object Object]
-kangax-es2017/Atomics.and.js: [object Object]
-kangax-es2017/Atomics.compareExchange.js: [object Object]
-kangax-es2017/Atomics.exchange.js: [object Object]
-kangax-es2017/Atomics.isLockFree.js: [object Object]
-kangax-es2017/Atomics.load.js: [object Object]
-kangax-es2017/Atomics.notify.js: [object Object]
-kangax-es2017/Atomics.or.js: [object Object]
-kangax-es2017/Atomics.store.js: [object Object]
-kangax-es2017/Atomics.sub.js: [object Object]
-kangax-es2017/Atomics.wait.js: [object Object]
-kangax-es2017/Atomics.xor.js: [object Object]
+kangax-es2017/Atomics.add.js: failed
+kangax-es2017/Atomics.and.js: failed
+kangax-es2017/Atomics.compareExchange.js: failed
+kangax-es2017/Atomics.exchange.js: failed
+kangax-es2017/Atomics.isLockFree.js: failed
+kangax-es2017/Atomics.load.js: failed
+kangax-es2017/Atomics.notify.js: failed
+kangax-es2017/Atomics.or.js: failed
+kangax-es2017/Atomics.store.js: failed
+kangax-es2017/Atomics.sub.js: failed
+kangax-es2017/Atomics.wait.js: failed
+kangax-es2017/Atomics.xor.js: failed
 kangax-es2017/Object.entries.js: failed
 kangax-es2017/Object.getOwnPropertyDescriptors.js: failed
 kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: failed
 kangax-es2017/Object.values.js: failed
 kangax-es2017/SharedArrayBuffer.Symbol.species.js: [object Object]
-kangax-es2017/SharedArrayBuffer.js: [object Object]
+kangax-es2017/SharedArrayBuffer.js: failed
 kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: [object Object]
 kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: [object Object]
-kangax-es2017/SharedArrayBuffer.prototype.slice.js: [object Object]
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: failed
 kangax-es2017/String.prototype.padEnd.js: OK
 kangax-es2017/String.prototype.padStart.js: OK
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: [object Object]
@@ -1234,13 +1234,13 @@ kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: [object Obj
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: [object Object]
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: [object Object]
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: [object Object]
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: SyntaxError: Expected ':' after property key
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: SyntaxError: Expected ':' after property key
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: [object Object]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: [object Object]
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: failed
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: [object Object]
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: [object Object]
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: SyntaxError: Expected ':' after property key
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: SyntaxError: Expected ':' after property key
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: [object Object]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: [object Object]
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: failed
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: [object Object]
 kangax-es2017/annex-b.Proxy.__defineGetter__.js: [object Object]
@@ -1249,47 +1249,47 @@ kangax-es2017/annex-b.Proxy.__lookupGetter__.js: [object Object]
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: [object Object]
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Expected ';' after for loop init
 kangax-es2017/async.Symbol.toStringTag.js: failed
-kangax-es2017/async.arrow-in-class.js: SyntaxError: Unexpected token:
+kangax-es2017/async.arrow-in-class.js: failed
 kangax-es2017/async.arrow.js: failed
 kangax-es2017/async.await-non-promise.js: failed
 kangax-es2017/async.await-rejection.js: failed
 kangax-es2017/async.await.js: failed
 kangax-es2017/async.constructor.js: failed
-kangax-es2017/async.methods-class.js: SyntaxError: Unexpected token:
+kangax-es2017/async.methods-class.js: failed
 kangax-es2017/async.methods-object.js: failed
 kangax-es2017/async.must-await-value.js: OK
 kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: OK
-kangax-es2017/async.no-prototype.js: SyntaxError: Unexpected token:
+kangax-es2017/async.no-prototype.js: OK
 kangax-es2017/async.prototype-chain.js: failed
 kangax-es2017/async.return.js: failed
-kangax-es2017/async.throw.js: SyntaxError: Expected property name after '.'
+kangax-es2017/async.throw.js: failed
 kangax-es2017/misc.arguments-caller-removed.js: OK
 kangax-es2017/regex.flags.u.case-folding.js: failed
-kangax-es2017/trailing-comma.arguments.js: SyntaxError: Unexpected token:
+kangax-es2017/trailing-comma.arguments.js: SyntaxError: Unexpected token: '' (type: 89) at line 10
 kangax-es2017/trailing-comma.params.js: OK
-kangax-es2018/Promise.prototype.finally.change-rejection.js: SyntaxError: Expected property name after '.'
-kangax-es2018/Promise.prototype.finally.js: SyntaxError: Expected property name after '.'
-kangax-es2018/Promise.prototype.finally.no-change-resolution.js: SyntaxError: Expected property name after '.'
-kangax-es2018/async-iterators.for-await-of.js: SyntaxError: Expected '(' after 'for'
-kangax-es2018/async-iterators.generators.js: SyntaxError: Expected function name after 'async function'
+kangax-es2018/Promise.prototype.finally.change-rejection.js: failed
+kangax-es2018/Promise.prototype.finally.js: failed
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: failed
+kangax-es2018/async-iterators.for-await-of.js: failed
+kangax-es2018/async-iterators.generators.js: failed
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
 kangax-es2018/misc.template-literal-revision.js: Lexer error at 16:23: Invalid hex escape sequence
 kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: failed
-kangax-es2018/regex.lookbehind.js: SyntaxError: Unexpected token:
+kangax-es2018/regex.lookbehind.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
 kangax-es2018/regex.named-capture-groups.js: [object Object]
 kangax-es2018/regex.unicode-property-escapes.js: failed
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Lexer error at 10:12: Unexpected character: \
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Lexer error at 10:12: Unexpected character: \
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Unexpected token: '' (type: 52) at line 10
 kangax-es2019/Array.prototype.flatMap.js: failed
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: [object Object]
 kangax-es2019/Array.prototype.flat.js: failed
@@ -1307,10 +1307,10 @@ kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError:
 kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Parse error: Failed to parse expression
 kangax-es2019/misc.Function-toString.computed-names.js: failed
 kangax-es2019/misc.Function-toString.native-code.js: failed
-kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Parse error: Failed to parse expression
+kangax-es2019/misc.Function-toString.unicode-escapes.js: failed
 kangax-es2019/misc.JSON-stringify-well-formed.js: failed
-kangax-es2019/misc.JSON-superset.line-separator.js: OK
-kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: Parse error: Failed to parse expression
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Parse error: Failed to parse expression
 kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: Expected '(' after 'catch'
 kangax-es2019/misc.optional-catch-binding.js: SyntaxError: Expected '(' after 'catch'
 kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: Expected '(' after 'catch'
@@ -1329,24 +1329,24 @@ kangax-es2020/globalThis.descriptor.js: failed
 kangax-es2020/globalThis.js: failed
 kangax-es2020/nullish-coalescing.js: OK
 kangax-es2020/optional-chaining.bracket.js: OK
-kangax-es2020/optional-chaining.function-call.js: SyntaxError: Unexpected token:
+kangax-es2020/optional-chaining.function-call.js: failed
 kangax-es2020/optional-chaining.method-call.js: failed
 kangax-es2020/optional-chaining.property.js: OK
-kangax-es2020/optional-chaining.spread-params.js: SyntaxError: Expected property name after '?.'
+kangax-es2020/optional-chaining.spread-params.js: SyntaxError: Unexpected token: '' (type: 101) at line 14
 kangax-es2021/FinalizationRegistry.js: [object Object]
-kangax-es2021/Promise.any.AggregateError.js: SyntaxError: Expected property name after '.'
+kangax-es2021/Promise.any.AggregateError.js: failed
 kangax-es2021/Promise.any.fulfillment.js: failed
 kangax-es2021/String.prototype.replaceAll.js: OK
 kangax-es2021/WeakRef.js: [object Object]
-kangax-es2021/logical-assignment.and.js: SyntaxError: Unexpected token:
-kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Expected ':' after property key
-kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: Unexpected token:
-kangax-es2021/logical-assignment.nullish.js: SyntaxError: Unexpected token:
-kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: Expected ':' after property key
-kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Unexpected token:
-kangax-es2021/logical-assignment.or.js: SyntaxError: Unexpected token:
-kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Expected ':' after property key
-kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: Unexpected token:
+kangax-es2021/logical-assignment.and.js: SyntaxError: Unexpected token: '' (type: 105) at line 13
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Unexpected token: '' (type: 91) at line 10
+kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: Unexpected token: '' (type: 105) at line 11
+kangax-es2021/logical-assignment.nullish.js: SyntaxError: Unexpected token: '' (type: 104) at line 13
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: Unexpected token: '' (type: 104) at line 11
+kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Unexpected token: '' (type: 104) at line 11
+kangax-es2021/logical-assignment.or.js: SyntaxError: Unexpected token: '' (type: 106) at line 13
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Unexpected token: '' (type: 106) at line 11
+kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: Unexpected token: '' (type: 106) at line 11
 kangax-es2021/numeric-separators.js: OK
 kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.AggregateError.js: OK
@@ -1366,26 +1366,26 @@ kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.URIError.js: OK
 kangax-es2022/Object.hasOwn.ToObject-first.js: failed
 kangax-es2022/Object.hasOwn.js: failed
-kangax-es2022/at-method.Array.js: failed
+kangax-es2022/at-method.Array.js: OK
 kangax-es2022/at-method.String.js: failed
 kangax-es2022/at-method.TypedArray.js: [object Object]
-kangax-es2022/class-fields.computed-instance.js: SyntaxError: Unexpected token:
-kangax-es2022/class-fields.computed-static.js: failed
+kangax-es2022/class-fields.computed-instance.js: SyntaxError: Expected '(' for method parameters
+kangax-es2022/class-fields.computed-static.js: SyntaxError: Expected '(' for method parameters
 kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: Expected '(' for method parameters
-kangax-es2022/class-fields.private-instance.initializers.js: Lexer error at 10:6: Unexpected character: #
-kangax-es2022/class-fields.private-instance.js: Lexer error at 11:6: Unexpected character: #
-kangax-es2022/class-fields.private-instance.optional-access.js: Lexer error at 10:6: Unexpected character: #
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: Lexer error at 10:6: Unexpected character: #
-kangax-es2022/class-fields.private-static.js: Lexer error at 11:13: Unexpected character: #
+kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: Expected '(' for method parameters
+kangax-es2022/class-fields.private-instance.js: SyntaxError: Expected '(' for method parameters
+kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: Expected '(' for method parameters
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: Expected '(' for method parameters
+kangax-es2022/class-fields.private-static.js: SyntaxError: Expected '(' for method parameters
 kangax-es2022/class-fields.public-instance.js: SyntaxError: Expected '(' for method parameters
 kangax-es2022/class-fields.public-static.js: SyntaxError: Expected '(' for method parameters
-kangax-es2022/class-fields.static.define.js: SyntaxError: Unexpected token: class
-kangax-es2022/class-methods.private-accessor.js: Lexer error at 11:10: Unexpected character: #
-kangax-es2022/class-methods.private-instance.js: Lexer error at 10:6: Unexpected character: #
-kangax-es2022/class-methods.private-static-accessor.js: Lexer error at 11:17: Unexpected character: #
-kangax-es2022/class-methods.private-static.js: Lexer error at 10:13: Unexpected character: #
+kangax-es2022/class-fields.static.define.js: SyntaxError: Unexpected token: 'class' (type: 12) at line 9
+kangax-es2022/class-methods.private-accessor.js: SyntaxError: Expected method name or computed property
+kangax-es2022/class-methods.private-instance.js: SyntaxError: Expected property name after '.'
+kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: Expected method name or computed property
+kangax-es2022/class-methods.private-static.js: SyntaxError: Expected property name after '.'
 kangax-es2022/class-static-init-blocks.js: SyntaxError: Expected '(' for method parameters
-kangax-es2022/ergonomic-brand-checks.js: Lexer error at 10:6: Unexpected character: #
+kangax-es2022/ergonomic-brand-checks.js: SyntaxError: Expected '(' for method parameters
 kangax-es2022/regex.flags.d.constructor.js: failed
 kangax-es2022/regex.flags.d.shows-in-flags.js: [object Object]
 kangax-es2023/Array.prototype.findLastIndex.js: failed
@@ -1393,105 +1393,105 @@ kangax-es2023/Array.prototype.findLast.js: failed
 kangax-es2023/Array.prototype.toReversed.js: failed
 kangax-es2023/Array.prototype.toSorted.js: failed
 kangax-es2023/Array.prototype.toSpliced.js: failed
-kangax-es2023/Array.prototype.with.js: SyntaxError: Expected property name after '.'
+kangax-es2023/Array.prototype.with.js: failed
 kangax-es2023/TypedArray.prototype.toReversed.js: [object Object]
 kangax-es2023/TypedArray.prototype.toSorted.js: [object Object]
-kangax-es2023/TypedArray.prototype.with.js: SyntaxError: Expected property name after '.'
-kangax-es2023/hashbang.js: Lexer error at 1:2: Unexpected character: #
-kangax-es2024/ArrayBuffer.prototype.detached.js: SyntaxError: Unexpected token:
-kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: Unexpected token:
-kangax-es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: Unexpected token:
+kangax-es2023/TypedArray.prototype.with.js: [object Object]
+kangax-es2023/hashbang.js: SyntaxError: Expected identifier after '#'
+kangax-es2024/ArrayBuffer.prototype.detached.js: [object Object]
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: [object Object]
+kangax-es2024/ArrayBuffer.prototype.transfer.js: [object Object]
 kangax-es2024/Map.groupBy.js: failed
 kangax-es2024/Object.groupBy.js: failed
 kangax-es2024/Promise.withResolvers.js: failed
 kangax-es2024/regex.flags.v.constructor.js: failed
-kangax-es2024/regex.flags.v.properties-of-strings.js: Lexer error at 9:13: Unexpected character: \
-kangax-es2024/regex.flags.v.set-notations.js: Lexer error at 9:13: Unexpected character: \
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
 kangax-es2024/regex.flags.v.shows-in-flags.js: [object Object]
-kangax-es2024/regex.flags.v.unicode-15.1.js: Lexer error at 9:13: Unexpected character: \
-kangax-es2024/regex.flags.v.unicode-16.0.js: Lexer error at 9:13: Unexpected character: \
-kangax-es2024/regex.flags.v.unicode-17.0.js: Lexer error at 9:13: Unexpected character: \
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
 kangax-es2025/Iterator.extends.js: failed
 kangax-es2025/Iterator.from.iterable.js: [object Object]
 kangax-es2025/Iterator.from.iterator.js: [object Object]
 kangax-es2025/Iterator.instanceof.js: [object Object]
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: [object Object]
 kangax-es2025/Iterator.prototype.drop.js: failed
-kangax-es2025/Iterator.prototype.every.js: OK
-kangax-es2025/Iterator.prototype.filter.js: OK
-kangax-es2025/Iterator.prototype.find.js: OK
+kangax-es2025/Iterator.prototype.every.js: failed
+kangax-es2025/Iterator.prototype.filter.js: failed
+kangax-es2025/Iterator.prototype.find.js: failed
 kangax-es2025/Iterator.prototype.flatMap.js: failed
 kangax-es2025/Iterator.prototype.forEach.js: failed
-kangax-es2025/Iterator.prototype.map.js: OK
-kangax-es2025/Iterator.prototype.reduce.js: OK
-kangax-es2025/Iterator.prototype.some.js: OK
+kangax-es2025/Iterator.prototype.map.js: failed
+kangax-es2025/Iterator.prototype.reduce.js: failed
+kangax-es2025/Iterator.prototype.some.js: failed
 kangax-es2025/Iterator.prototype.take.js: failed
 kangax-es2025/Iterator.prototype.toArray.js: failed
-kangax-es2025/Promise.try.js: SyntaxError: Expected property name after '.'
+kangax-es2025/Promise.try.js: failed
 kangax-es2025/RegExp.escape.js: failed
-kangax-es2025/Set.prototype.difference.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.intersection.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.isDisjointFrom.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.isSubsetOf.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.isSupersetOf.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.symmetricDifference.js: SyntaxError: Unexpected token:
-kangax-es2025/Set.prototype.union.js: SyntaxError: Unexpected token:
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Unexpected token:
+kangax-es2025/Set.prototype.difference.js: failed
+kangax-es2025/Set.prototype.intersection.js: failed
+kangax-es2025/Set.prototype.isDisjointFrom.js: failed
+kangax-es2025/Set.prototype.isSubsetOf.js: failed
+kangax-es2025/Set.prototype.isSupersetOf.js: failed
+kangax-es2025/Set.prototype.symmetricDifference.js: failed
+kangax-es2025/Set.prototype.union.js: failed
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Unexpected token: '' (type: 52) at line 9
 kangax-es2025/regex.pattern-modifiers.i.js: failed
 kangax-es2025/regex.pattern-modifiers.m.js: failed
 kangax-es2025/regex.pattern-modifiers.s.js: failed
-kangax-intl/Array.prototype.toLocaleString.js: failed
-kangax-intl/Date.prototype.toLocaleDateString.js: failed
-kangax-intl/Date.prototype.toLocaleString.js: failed
-kangax-intl/Date.prototype.toLocaleTimeString.js: failed
-kangax-intl/Intl.Collator.js: [object Object]
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: failed
 kangax-intl/Intl.Collator.new-instances.js: [object Object]
-kangax-intl/Intl.Collator.prototype.compare.js: [object Object]
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: [object Object]
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: [object Object]
+kangax-intl/Intl.Collator.prototype.compare.js: failed
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: failed
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: failed
 kangax-intl/Intl.Collator.valid-tags.js: failed
 kangax-intl/Intl.Collator.without-new.js: [object Object]
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: SyntaxError: Unexpected token:
-kangax-intl/Intl.DateTimeFormat.js: [object Object]
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: failed
 kangax-intl/Intl.DateTimeFormat.new-instances.js: [object Object]
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: [object Object]
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed
 kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: [object Object]
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
 kangax-intl/Intl.DateTimeFormat.without-new.js: [object Object]
-kangax-intl/Intl.NumberFormat.js: [object Object]
+kangax-intl/Intl.NumberFormat.js: failed
 kangax-intl/Intl.NumberFormat.new-instances.js: [object Object]
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: [object Object]
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: failed
 kangax-intl/Intl.NumberFormat.valid-tags.js: failed
 kangax-intl/Intl.NumberFormat.without-new.js: [object Object]
-kangax-intl/Intl.js: [object Object]
+kangax-intl/Intl.js: failed
 kangax-intl/Intl.prototype.js: [object Object]
 kangax-intl/Number.prototype.toLocaleString.js: failed
 kangax-intl/Object.prototype.toLocaleString.js: failed
 kangax-intl/String.prototype.localeCompare.js: failed
-kangax-next/Array.isTemplateObject.js: SyntaxError: Expected ')' after function arguments
+kangax-next/Array.isTemplateObject.js: failed
 kangax-next/AsyncDisposableStack.js: failed
 kangax-next/AsyncIterator.extends.js: failed
-kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.from.iterable.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.from.iterator.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.instanceof.js: SyntaxError: Expected '(' after async function name
+kangax-next/AsyncIterator.from.async-iterable.js: failed
+kangax-next/AsyncIterator.from.iterable.js: failed
+kangax-next/AsyncIterator.from.iterator.js: failed
+kangax-next/AsyncIterator.instanceof.js: [object Object]
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: [object Object]
-kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Expected '(' after async function name
-kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Expected '(' after async function name
-kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Expected '(' after async function name
-kangax-next/AsyncIterator.prototype.map.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Expected '(' after async function name
-kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Expected '(' after async function name
-kangax-next/AsyncIterator.prototype.take.js: SyntaxError: Expected '(' after 'for'
-kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Expected '(' after async function name
+kangax-next/AsyncIterator.prototype.drop.js: failed
+kangax-next/AsyncIterator.prototype.every.js: failed
+kangax-next/AsyncIterator.prototype.filter.js: failed
+kangax-next/AsyncIterator.prototype.find.js: failed
+kangax-next/AsyncIterator.prototype.flatMap.js: failed
+kangax-next/AsyncIterator.prototype.forEach.js: failed
+kangax-next/AsyncIterator.prototype.map.js: failed
+kangax-next/AsyncIterator.prototype.reduce.js: failed
+kangax-next/AsyncIterator.prototype.some.js: failed
+kangax-next/AsyncIterator.prototype.take.js: failed
+kangax-next/AsyncIterator.prototype.toArray.js: failed
 kangax-next/DisposableStack.js: [object Object]
 kangax-next/Map.prototype.upsert.js: failed
 kangax-next/RegExp.1-9.js: [object Object]
 kangax-next/RegExp.lastMatch.js: failed
-kangax-next/ShadowRealm.js: [object Object]
+kangax-next/ShadowRealm.js: failed
 kangax-next/SuppressedError.js: failed
 kangax-next/Uint8Array.fromBase64.js: [object Object]
 kangax-next/Uint8Array.fromHex.js: [object Object]
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: [object Object]
 kangax-next/Uint8Array.toBase64.js: [object Object]
 kangax-next/Uint8Array.toHex.js: [object Object]
 kangax-next/WeakMap.prototype.upsert.js: failed
-kangax-next/await-using.for-of.js: SyntaxError: Expected ';' after for loop init
+kangax-next/await-using.for-of.js: SyntaxError: Unexpected token: 'await' (type: 44) at line 57
 kangax-next/await-using.js: failed
 kangax-next/class-decorators.js: Lexer error at 10:6: Unexpected character: @
 kangax-next/function.sent.js: SyntaxError: Expected '(' after 'function'
-kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token: throw
-kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token: throw
-kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token: throw
-kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token: throw
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token: 'throw' (type: 35) at line 9
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token: 'throw' (type: 35) at line 9
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token: 'throw' (type: 35) at line 11
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token: 'throw' (type: 35) at line 9
 kangax-next/using.for-of.js: SyntaxError: Expected ';' after for loop init
 kangax-next/using.js: [object Object]

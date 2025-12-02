@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "7320f6bd9270b50ea98bf5f4507d25a38537d6ba3c7961a2ae302a626cf69478", "binary_size": 8723616, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "bb222d1a33698cf809c780fdf06dc06bd492df2a", "revision_date": "2025-11-15", "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)", "version": "latest-44-gbb222d1a"}
+Metadata: {"arch": "arm64", "binary_sha256": "17618c6f487d5608aff51a81b93f850c81cd97079d799ae3a5b2aee9b85dad5b", "binary_size": 8789096, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "790d80040202290325c75296fb1426eb8a3c5c65", "revision_date": "2025-11-28", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)", "version": "latest-62-g790d8004"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -117,7 +117,7 @@ es1/annex-b.Date.prototype.getYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.setYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Not a callable object
 es1/annex-b.global.escape.js: OK
-es1/annex-b.global.unescape.js: thread 'main' panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
+es1/annex-b.global.unescape.js: thread 'main' (1488050) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
 es1/annex-b.literals.octal.js: Parse errors:
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -386,7 +386,7 @@ es5/Object.seal.js: TypeError: Could not set property 'y' of [object Object].
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
-es5/debugger.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3538:43:
+es5/debugger.js: thread 'main' (1474625) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3557:43:
 es5/global.Infinity.immutable.js: TypeError: Could not set property 'Infinity'.
 es5/global.NaN.immutable.js: TypeError: Could not set property 'NaN'.
 es5/global.parseInt.no-octal.js: OK
@@ -588,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-kangax-es6/Promise.race.js: Error: Promise.race not implemented
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: OK
 kangax-es6/Proxy.constructor-requires-new.js: OK
@@ -692,18 +692,18 @@ kangax-es6/Symbol.no-coerce.js: OK
 kangax-es6/Symbol.no-new.js: OK
 kangax-es6/Symbol.prototype.js: OK
 kangax-es6/Symbol.typeof.js: OK
-kangax-es6/WeakMap.accept-primitives.js: Error: WeakMap not implemented
-kangax-es6/WeakMap.constructor-accepts-null.js: Error: WeakMap not implemented
-kangax-es6/WeakMap.constructor-arguments.js: Error: WeakMap not implemented
-kangax-es6/WeakMap.constructor-invokes-set.js: Error: WeakMap not implemented
-kangax-es6/WeakMap.constructor-requires-new.js: Error: WeakMap not implemented
-kangax-es6/WeakMap.frozen-keys.js: Error: WeakMap not implemented
+kangax-es6/WeakMap.accept-primitives.js: OK
+kangax-es6/WeakMap.constructor-accepts-null.js: OK
+kangax-es6/WeakMap.constructor-arguments.js: OK
+kangax-es6/WeakMap.constructor-invokes-set.js: OK
+kangax-es6/WeakMap.constructor-requires-new.js: OK
+kangax-es6/WeakMap.frozen-keys.js: OK
 kangax-es6/WeakMap.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-kangax-es6/WeakMap.js: Error: WeakMap not implemented
+kangax-es6/WeakMap.js: OK
 kangax-es6/WeakMap.no-clear.js: OK
-kangax-es6/WeakMap.prototype-not-instance.js: Error: WeakMap not implemented
+kangax-es6/WeakMap.prototype-not-instance.js: OK
 kangax-es6/WeakMap.prototype.delete.js: OK
-kangax-es6/WeakMap.prototype.set-returns-this.js: Error: WeakMap not implemented
+kangax-es6/WeakMap.prototype.set-returns-this.js: OK
 kangax-es6/WeakSet.accept-primitives.js: OK
 kangax-es6/WeakSet.constructor-accepts-null.js: OK
 kangax-es6/WeakSet.constructor-arguments.js: OK
@@ -1084,7 +1084,7 @@ kangax-es6/subclassing.Function.prototype.call.js: OK
 kangax-es6/subclassing.Promise.all.js: Error: Promise subclassing is not supported
 kangax-es6/subclassing.Promise.js: Error: Promise subclassing is not supported
 kangax-es6/subclassing.Promise.prototype-chain.js: Error: Promise subclassing is not supported
-kangax-es6/subclassing.Promise.race.js: Error: Promise.race not implemented
+kangax-es6/subclassing.Promise.race.js: Error: Promise subclassing is not supported
 kangax-es6/subclassing.RegExp.exec.js: OK
 kangax-es6/subclassing.RegExp.js: ReferenceError: Cannot assign to undeclared variable 'global'.
 kangax-es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1333,7 +1333,7 @@ kangax-es2020/optional-chaining.function-call.js: OK
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: OK
-kangax-es2021/FinalizationRegistry.js: Error: FinalizationRegistry not implemented
+kangax-es2021/FinalizationRegistry.js: OK
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
@@ -1492,16 +1492,16 @@ kangax-next/Map.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2928:52:
+kangax-next/SuppressedError.js: thread 'main' (1498045) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
 kangax-next/Uint8Array.fromBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.fromHex.js: TypeError: Not a callable object
 kangax-next/Uint8Array.setFromBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.setFromHex.js: TypeError: Not a callable object
 kangax-next/Uint8Array.toBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.toHex.js: TypeError: Not a callable object
-kangax-next/WeakMap.prototype.upsert.js: Error: WeakMap not implemented
+kangax-next/WeakMap.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/await-using.for-of.js: failed
-kangax-next/await-using.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2929:57:
+kangax-next/await-using.js: thread 'main' (1498734) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2948:57:
 kangax-next/class-decorators.js: failed
 kangax-next/function.sent.js: Parse errors:
 kangax-next/throw-expr.arrow.js: Parse errors:
@@ -1509,4 +1509,4 @@ kangax-next/throw-expr.conditional.js: Parse errors:
 kangax-next/throw-expr.logical.js: Parse errors:
 kangax-next/throw-expr.param-init.js: Parse errors:
 kangax-next/using.for-of.js: failed
-kangax-next/using.js: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2928:52:
+kangax-next/using.js: thread 'main' (1499504) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:

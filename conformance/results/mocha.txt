@@ -149,7 +149,7 @@ es1/equals.js: failed
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: failed
 es1/global.NaN.js: failed
 es1/global.isFinite.js: failed

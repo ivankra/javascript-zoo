@@ -24,26 +24,22 @@ But, very slow.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 98%</summary><ul>
+<details><summary>ES1-ES5: 99%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/engine262.txt">Full log</a>.</li>
 <li>ES1: 97%<pre>
-<a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString is not implemented
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: 'escape' is not defined
 <a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: 'unescape' is not defined
 </pre></li>
-<li>ES3: 97%<pre>
-<a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Date.prototype.toLocaleDateString is not implemented
-<a href="../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString is not implemented
-<a href="../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Error: Date.prototype.toLocaleTimeString is not implemented
+<li>ES3: 99%<pre>
 <a href="../conformance/es3/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: TypeError: undefined is not a function
 </pre></li>
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 94%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 96%, ES2016+ 94%, Next 9%, Intl 25%</summary><ul>
 <li>ES6: 96%<pre>
 <a href="../conformance/kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
@@ -103,6 +99,6 @@ But, very slow.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
-<li>Next: 0%<br>
+<li>Next: 9%<br>
 <li>Intl: 25%<br>
 </ul></details>

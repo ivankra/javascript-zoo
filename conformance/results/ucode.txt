@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_size": 269216, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "54fce497e262d5807f337c831a7e82bc35c5cf1b", "revision_date": "2025-11-10", "version": "0.0.20250529-62-g54fce49"}
+Metadata: {"arch": "arm64", "binary_size": 269224, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "559860cbd76de8303ea9a6d90f7a04009432b974", "revision_date": "2025-11-29", "version": "0.0.20250529-73-g559860c"}
 es1/Array.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es1/Array.js: Array.prototype failed");` Syntax error: Unexpected token
 es1/Array.length.assignment.js: Syntax error: Unexpected token
 es1/Array.length.js: Syntax error: Unexpected token
@@ -149,7 +149,7 @@ es1/equals.js: Syntax error: Unexpected token
 es1/eval.js: Syntax error: Unexpected token
 es1/for-in.js: Syntax error: Unexpected token
 es1/for.js: Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: continue must be inside loop Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting expression Syntax error: Unexpected token Syntax error: Expecting expr
-es1/function.js: Syntax error: Unexpected token
+es1/functions.js: Syntax error: Unexpected token
 es1/global.Infinity.js: Syntax error: Unexpected token
 es1/global.NaN.js: Syntax error: Unexpected token
 es1/global.isFinite.js: Syntax error: Unexpected token

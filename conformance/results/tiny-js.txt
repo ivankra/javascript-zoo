@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: ERROR: Error Got ID expected ',' at (line: 9, col: 13) at (line: 9, col: 11)
 es1/for.js: ERROR: Error Got break expected EOF at (line: 30, col: 4) at (line: 29, col: 14)
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: > es1/global.Infinity.js: failed
 es1/global.NaN.js: > es1/global.NaN.js: failed
 es1/global.isFinite.js: ERROR: Error Expecting 'isFinite' to be a function at (line: 8, col: 11)

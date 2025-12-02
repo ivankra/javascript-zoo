@@ -36,7 +36,7 @@ JavaScript engine written in Zig.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 87%, Next 5%, Intl 82%</summary><ul>
+<details><summary>compat-table: ES6 92%, ES2016+ 91%, Next 5%, Intl 82%</summary><ul>
 <li>ES6: 92%<pre>
 <a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
@@ -65,17 +65,15 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2016/exponentiation.unary-negation-error.js">exponentiation.unary-negation-error.js</a>: failed
 <a href="../conformance/kangax-es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: undefined
 </pre></li>
-<li>ES2017: 86%<pre>
+<li>ES2017: 90%<pre>
 <a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token 'function' (annex-b.for-in-assignment-non-strict.js:1:1)
 <a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: failed
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: failed
 <a href="../conformance/kangax-es2017/async.must-await-value.js">async.must-await-value.js</a>: A promise was rejected without any handlers: Promise(state: &lt;rejected&gt;, result: ReferenceError: 'await' is not defined)
-<a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
-<li>ES2018: 83%<pre>
+<li>ES2018: 84%<pre>
 <a href="../conformance/kangax-es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
 <a href="../conformance/kangax-es2018/object-rest.js">object-rest.js</a>: failed
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp pattern: unknown unicode script (regex.unicode-property-escapes.unicode-17.0.js:10:10)
 </pre></li>
 <li>ES2019: 83%<pre>
 <a href="../conformance/kangax-es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Invalid character ''' (eval:1:1)
@@ -91,18 +89,11 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot convert undefined to Object
 </pre></li>
 <li>ES2023: 100%</li>
-<li>ES2024: 80%<pre>
-<a href="../conformance/kangax-es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: failed
-<a href="../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: SyntaxError: Invalid RegExp pattern: invalid class range (regex.flags.v.set-notations.js:10:6)
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: failed
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
+<li>ES2024: 96%<pre>
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 74%<pre>
+<li>ES2025: 95%<pre>
 <a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.i.js:9:17)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.m.js:9:17)
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid RegExp pattern: invalid group (regex.pattern-modifiers.s.js:9:17)
 </pre></li>
 <li>Next: 5%<br>
 <li>Intl: 82%<pre>

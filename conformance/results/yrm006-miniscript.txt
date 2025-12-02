@@ -149,7 +149,7 @@ es1/equals.js: crashed (signal 11)
 es1/eval.js: Error: not found.('eval')
 es1/for-in.js: Error: not found.('Object')
 es1/for.js: Error: not found.('for')
-es1/function.js: failed
+es1/functions.js: failed
 es1/global.Infinity.js: Error: not found.('Infinity')
 es1/global.NaN.js: Error: not found.('NaN')
 es1/global.isFinite.js: Error: not found.('isFinite')
@@ -256,12 +256,12 @@ es3/String.prototype.replace.capture.js: Error: not found.('b')
 es3/String.prototype.replace.extra.js: Error: not found.('b')
 es3/String.prototype.replace.generic.js: Error: not found.('Object')
 es3/String.prototype.replace.regex.js: Error: not found.('\d')
-es3/String.prototype.replace.str.js: crashed (signal 11)
+es3/String.prototype.replace.str.js: crashed (signal 11); basic string replace failed
 es3/String.prototype.search.generic.js: Error: not found.('Number')
 es3/String.prototype.search.js: Error: not found.('world')
 es3/String.prototype.search.str.js: string with \\d+ pattern failed; string with \\w+ pattern failed; string with [0-9]+ pattern failed; string with \\s pattern failed; string with \\. pattern failed; Error: not found.('abc123def')
 es3/String.prototype.slice.generic.js: Error: not found.('Number')
-es3/String.prototype.slice.js: failed
+es3/String.prototype.slice.js: crashed (signal 11); slice with start and end failed
 es3/String.prototype.split.bugs.js: Error: not found.(''')
 es3/String.prototype.split.limit.js: crashed (signal 11)
 es3/String.prototype.split.regex.js: Error: not found.('\d')

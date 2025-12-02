@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: SyntaxError: dynamic expression isn't supported at eval and Function
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

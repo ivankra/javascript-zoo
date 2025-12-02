@@ -149,7 +149,7 @@ es1/equals.js: Error: ERROR: 'var' not implemented
 es1/eval.js: Error: ERROR: 'var' not implemented
 es1/for-in.js: Error: ERROR: 'var' not implemented
 es1/for.js: Error: ERROR: 'var' not implemented
-es1/function.js: Error: ERROR: 'var' not implemented
+es1/functions.js: Error: ERROR: 'var' not implemented
 es1/global.Infinity.js: Error: ERROR: 'var' not implemented
 es1/global.NaN.js: Error: ERROR: 'var' not implemented
 es1/global.isFinite.js: Error: ERROR: 'var' not implemented

@@ -149,7 +149,7 @@ es1/equals.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / equals [
 es1/eval.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / eval [ "js" ]
 es1/for-in.js: SyntaxError: unexpected token in
 es1/for.js: SyntaxError: unexpected token for
-es1/function.js: SyntaxError: unexpected token function
+es1/functions.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / functions [ "js" ]
 es1/global.Infinity.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "Infinity" ] [ "js" ]
 es1/global.NaN.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "NaN" ] [ "js" ]
 es1/global.isFinite.js: SyntaxError: expected ; ...  / zoo / conformance / es1 / global [ "isFinite" ] [ "js" ]

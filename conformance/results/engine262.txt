@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1594204, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "b9ea8ab5aa43b7ec69d9c2d92aa5e83099ba798a", "revision_date": "2025-11-12"}
+Metadata: {"arch": "arm64", "dist_size": 1612520, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "27615a19b32e5ab55bbe815959d5375c0b668e68", "revision_date": "2025-11-27"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -50,7 +50,7 @@ es1/Date.prototype.setUTCMilliseconds.js: OK
 es1/Date.prototype.setUTCMinutes.js: OK
 es1/Date.prototype.setUTCMonth.js: OK
 es1/Date.prototype.setUTCSeconds.js: OK
-es1/Date.prototype.toLocaleString.js: Error: Date.prototype.toLocaleString is not implemented
+es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: Error: Date.prototype.toLocaleDateString is not implemented
-es3/Date.prototype.toLocaleString.js: Error: Date.prototype.toLocaleString is not implemented
-es3/Date.prototype.toLocaleTimeString.js: Error: Date.prototype.toLocaleTimeString is not implemented
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
@@ -1491,14 +1491,14 @@ kangax-next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
 kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
-kangax-next/ShadowRealm.js: failed
+kangax-next/ShadowRealm.js: OK
 kangax-next/SuppressedError.js: SuppressedError.js:13:11 SyntaxError: Unexpected token
-kangax-next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
-kangax-next/Uint8Array.fromHex.js: TypeError: undefined is not a function
-kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function
-kangax-next/Uint8Array.setFromHex.js: TypeError: undefined is not a function
-kangax-next/Uint8Array.toBase64.js: TypeError: undefined is not a function
-kangax-next/Uint8Array.toHex.js: TypeError: undefined is not a function
+kangax-next/Uint8Array.fromBase64.js: OK
+kangax-next/Uint8Array.fromHex.js: OK
+kangax-next/Uint8Array.setFromBase64.js: OK
+kangax-next/Uint8Array.setFromHex.js: OK
+kangax-next/Uint8Array.toBase64.js: OK
+kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
 kangax-next/await-using.for-of.js: SyntaxError: Unexpected token
 kangax-next/await-using.js: SyntaxError: Unexpected token
