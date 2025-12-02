@@ -331,15 +331,15 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
   <div class="nav-container">
     <div class="control">
       <select data-state="arch">
-        <option value="arm64" selected>arm64: Mac M4 4.5GHz - Linux VM</option>
-        <option value="amd64">amd64: i9-10900K 3.7GHz - Linux</option>
+        <option value="amd64" selected>amd64: i9-10900K 3.7GHz - Linux</option>
+        <option value="arm64">arm64: Mac M4 4.5GHz - Linux VM</option>
       </select>
     </div>
     <div class="control">
       <label><input data-state="variants" type="checkbox" /> Show variants</label>
     </div>
     <div class="control">
-      <label><input data-state="v8" type="checkbox" /> Only v8-v7 benchmarks</label>
+      <label><input data-state="v8" type="checkbox" checked /> Only v8-v7 benchmarks</label>
     </div>
   </div>
 </nav>
@@ -389,11 +389,12 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
 </main>
 <script>
 const state = {
-  arch: 'arm64',
+  arch: 'amd64',
   variants: false,
-  v8: false,
+  v8: true,
   sort: [
-    { col: 'score', dir: 'desc' },  // main sort criterion
+    // main sort criterion first
+    { col: 'score', dir: 'desc' },
     { col: 'language', dir: 'asc' },
     { col: 'github_stars', dir: 'desc' },
     { col: 'engine', dir: 'asc' },
@@ -412,7 +413,7 @@ window.addEventListener('load', () => {
 
 function loadState() {
   const params = new URLSearchParams(window.location.search);
-  state.v8 = params.has('v8');
+  state.v8 = !params.has('v8') || params.get('v8') === false;
   state.variants = params.has('variants');
   state.arch = params.get('arch') ?? state.arch;
   let m = (params.get('sort') ?? '').match(/^(-?)(\w+)$/);
@@ -436,7 +437,7 @@ function saveState() {
   const params = new URLSearchParams();
   if (state.arch !== 'arm64') params.set('arch', state.arch);
   if (state.variants) params.set('variants', true);
-  if (state.v8) params.set('v8', true);
+  if (!state.v8) params.set('v8', false);
   const sortVal = (state.sort[0].dir == 'desc' ? '-' : '') + state.sort[0].col;
   if (sortVal !== '-score') params.set('sort', sortVal);
   let mask = 0;
