@@ -36,13 +36,14 @@ JavaScript engine written in Zig.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 91%, Next 5%, Intl 82%</summary><ul>
-<li>ES6: 92%<pre>
+<details><summary>compat-table: ES6 91%, ES2016+ 91%, Next 5%, Intl 82%</summary><ul>
+<li>ES6: 91%<pre>
 <a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.variable.js">Function.name.variable.js</a>: failed
+<a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: 'g' is not defined
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: ReferenceError: 'foo' is not defined
 <a href="../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token 'function' (annex-b.html-comments.js:1:1)
@@ -58,7 +59,6 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es6/destructuring-decl.iterable-instance.js">destructuring-decl.iterable-instance.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-decl.iterable.js">destructuring-decl.iterable.js</a>: failed
 <a href="../conformance/kangax-es6/destructuring-decl.iterator-closing.js">destructuring-decl.iterator-closing.js</a>: failed
-<a href="../conformance/kangax-es6/destructuring-params.astral-string.js">destructuring-params.astral-string.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 85%<pre>
@@ -89,9 +89,7 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot convert undefined to Object
 </pre></li>
 <li>ES2023: 100%</li>
-<li>ES2024: 96%<pre>
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 95%<pre>
 <a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
 </pre></li>

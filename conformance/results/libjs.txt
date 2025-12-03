@@ -1252,7 +1252,7 @@ kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es2017/async.await-rejection.js: OK
 kangax-es2017/async.await.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK

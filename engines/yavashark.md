@@ -51,7 +51,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2525815) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2548188) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
 <a href="../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed
@@ -145,7 +145,7 @@ JavaScript/TypeScript engine written in Rust.
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2540521) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2562928) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 <a href="../conformance/kangax-es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../conformance/kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: failed

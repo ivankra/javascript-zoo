@@ -588,7 +588,7 @@ kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: ReferenceError: global is not defined
-kangax-es6/Promise.race.js: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: job is not defined
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: ReferenceError: e is not defined
 kangax-es6/Proxy.JSON.stringify.js: ReferenceError: e is not defined
 kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: e is not defined

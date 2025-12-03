@@ -54,7 +54,7 @@ Small footprint embedded ES5 engine.
 <a href="../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: LOG: es3/String.prototype.split.regex.js: split with capturing group failed LOG: es3/String.prototype.split.regex.js: failed
 ...
 </pre></li>
-<li>ES5: 73%<pre>
+<li>ES5: 76%<pre>
 <a href="../conformance/es5/Date.now.js">Date.now.js</a>: LOG: es5/Date.now.js: Date.now not a function exception TypeError:Value is not an clousre
 <a href="../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: LOG: es5/Date.prototype.toISOString.js: invalid date does not throw RangeError LOG: es5/Date.prototype.toISOString.js: failed
 <a href="../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: LOG: es5/Date.prototype.toJSON.js: invalid date does not return null LOG: es5/Date.prototype.toJSON.js: failed
@@ -62,10 +62,8 @@ Small footprint embedded ES5 engine.
 <a href="../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: LOG: es5/Function.prototype.bind.js: argument binding failed LOG: es5/Function.prototype.bind.js: length property incorrect LOG: es5/Function.prototype.bind.js: bound constructor failed LOG: es5/Function.prototype.bind.js: non-callable does not throw TypeError LOG: es5/Function.prototype.bind.js: fa
 <a href="../conformance/es5/JSON.parse.js">JSON.parse.js</a>: exception SyntaxError:Parse JSON error
 <a href="../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
-<a href="../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: replacer array failed LOG: es5/JSON.stringify.replacer.js: failed
 <a href="../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
 <a href="../conformance/es5/Object.create.js">Object.create.js</a>: exception TypeError:Value is not an object
-<a href="../conformance/es5/Object.getOwnPropertyNames.js">Object.getOwnPropertyNames.js</a>: LOG: es5/Object.getOwnPropertyNames.js: basic property names failed LOG: es5/Object.getOwnPropertyNames.js: failed
 <a href="../conformance/es5/Object.keys.js">Object.keys.js</a>: LOG: es5/Object.keys.js: basic keys failed LOG: es5/Object.keys.js: failed
 <a href="../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: LOG: es5/global.Infinity.immutable.js: Infinity is not a number after assignment LOG: es5/global.Infinity.immutable.js: Infinity not positive infinity after assignment LOG: es5/global.Infinity.immutable.js: failed
 <a href="../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: LOG: es5/global.NaN.immutable.js: NaN is not a number after assignment LOG: es5/global.NaN.immutable.js: NaN === NaN after assignment LOG: es5/global.NaN.immutable.js: failed

@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: Exec error [regex.flags.v.set-nota
 kangax-es2024/regex.flags.v.shows-in-flags.js: Error: cannot read property 'call' of undefined
 kangax-es2024/regex.flags.v.unicode-15.1.js: Exec error [regex.flags.v.unicode-15.1.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🐦‍🔥\");"
 kangax-es2024/regex.flags.v.unicode-16.0.js: Exec error [regex.flags.v.unicode-16.0.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🇨🇶\");\n  "
-kangax-es2024/regex.flags.v.unicode-17.0.js: Exec error [regex.flags.v.unicode-17.0.js]: "Syntax error at line 9 col 26:\n  return /^\\p{RGI_Emoji}$/v.test(\"🧑‍🩰‍"
+kangax-es2024/regex.flags.v.unicode-17.0.js: failed
 kangax-es2025/Iterator.extends.js: Exec error [Iterator.extends.js]: "Syntax error at line 10 col 8:\n  class Class extends Iterator { }\n       ^"
 kangax-es2025/Iterator.from.iterable.js: Exec error [Iterator.from.iterable.js]: "Syntax error at line 10 col 8:\n  const iterator = Iterator.from([1, 2, 3]);\n   "
 kangax-es2025/Iterator.from.iterator.js: Exec error [Iterator.from.iterator.js]: "Syntax error at line 10 col 8:\n  const iterator = Iterator.from({\n       ^"

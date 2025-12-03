@@ -582,7 +582,7 @@ kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: OK
+kangax-es6/Promise.all.iterable.js: failed
 kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK

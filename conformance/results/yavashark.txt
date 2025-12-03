@@ -229,7 +229,7 @@ es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: small number failed
 es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2525815) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2548188) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: Error: RuntimeError: Not implemented
 es3/Number.prototype.toPrecision.js: small number exponential notation failed
@@ -439,7 +439,7 @@ kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
-kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2528105) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2550705) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
 kangax-es5/Object.defineProperty.js: OK
@@ -585,7 +585,7 @@ kangax-es6/Promise.Symbol.species.js: [object Error]
 kangax-es6/Promise.all.iterable.js: [object Error]
 kangax-es6/Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/Promise.constructor-requires-new.js: OK
-kangax-es6/Promise.js: thread 'main' (2521481) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/Promise.js: thread 'main' (2544168) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: [object Error]
 kangax-es6/Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
@@ -1082,7 +1082,7 @@ kangax-es6/subclassing.Function.prototype.apply.js: [object Error]
 kangax-es6/subclassing.Function.prototype.bind.js: [object Error]
 kangax-es6/subclassing.Function.prototype.call.js: [object Error]
 kangax-es6/subclassing.Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
-kangax-es6/subclassing.Promise.js: thread 'main' (2541945) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/subclassing.Promise.js: thread 'main' (2564263) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
 kangax-es6/subclassing.Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/subclassing.RegExp.exec.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (2536953) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (2559422) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
 kangax-es2017/async.Symbol.toStringTag.js: failed
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1269,7 +1269,7 @@ kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
-kangax-es2018/Promise.prototype.finally.js: thread 'main' (2540521) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es2018/Promise.prototype.finally.js: thread 'main' (2562928) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: failed
 kangax-es2018/async-iterators.for-await-of.js: failed
 kangax-es2018/async-iterators.generators.js: OK
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: [object Error]
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: [object Error]
-kangax-next/await-using.for-of.js: thread 'main' (2547841) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
+kangax-next/await-using.for-of.js: thread 'main' (2570220) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
 kangax-next/await-using.js: SyntaxError: Unsupported declaration type
 kangax-next/class-decorators.js: failed
-kangax-next/function.sent.js: thread 'main' (2548063) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
-kangax-next/throw-expr.arrow.js: thread 'main' (2548148) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
-kangax-next/throw-expr.conditional.js: thread 'main' (2548218) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
-kangax-next/throw-expr.logical.js: thread 'main' (2548274) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
-kangax-next/throw-expr.param-init.js: thread 'main' (2548344) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
+kangax-next/function.sent.js: thread 'main' (2570427) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
+kangax-next/throw-expr.arrow.js: thread 'main' (2570564) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
+kangax-next/throw-expr.conditional.js: thread 'main' (2570676) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
+kangax-next/throw-expr.logical.js: thread 'main' (2570783) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
+kangax-next/throw-expr.param-init.js: thread 'main' (2570854) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
 kangax-next/using.for-of.js: failed
 kangax-next/using.js: SyntaxError: Unsupported declaration type

@@ -367,14 +367,14 @@ es5/JSON.js: OK
 es5/JSON.parse.js: exception SyntaxError:Parse JSON error
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
-es5/JSON.stringify.replacer.js: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: replacer array failed LOG: es5/JSON.stringify.replacer.js: failed
+es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
 es5/Object.create.js: exception TypeError:Value is not an object
 es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
-es5/Object.getOwnPropertyNames.js: LOG: es5/Object.getOwnPropertyNames.js: basic property names failed LOG: es5/Object.getOwnPropertyNames.js: failed
+es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK

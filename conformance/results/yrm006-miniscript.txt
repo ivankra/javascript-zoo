@@ -107,7 +107,7 @@ es1/String.prototype.charCodeAt.js: Error: couldn't create.('charCodeAt')
 es1/String.prototype.constructor.js: Error: not found.('String')
 es1/String.prototype.indexOf.js: crashed (signal 11); Error: not found.('else')
 es1/String.prototype.lastIndexOf.js: Error: couldn't create.('lastIndexOf')
-es1/String.prototype.split.js: crashed (signal 11); Error: not found.('else')
+es1/String.prototype.split.js: crashed (signal 11)
 es1/String.prototype.substring.js: Error: couldn't create.('substring')
 es1/String.prototype.toLowerCase.js: Error: couldn't create.('toLowerCase')
 es1/String.prototype.toString.js: Error: not found.('String')
@@ -133,7 +133,7 @@ es1/bitwise.shifts.js: failed
 es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: failed
 es1/break.js: timeout
-es1/comma.js: crashed (signal 11); (1, 2, 3) failed
+es1/comma.js: crashed (signal 11); (1, 2, 3) failed; (5 + 5, 10 + 10) failed; (a = 10, b = 20, a + b) failed; first expression not evaluated; (m++, m++, m) failed; side effects not preserved; (p = 5, p * 2) failed
 es1/comments.js: crashed (signal 11); Error: not found.('fail')
 es1/conditional.js: Error: not found.('true')
 es1/continue.js: timeout
@@ -261,7 +261,7 @@ es3/String.prototype.search.generic.js: Error: not found.('Number')
 es3/String.prototype.search.js: Error: not found.('world')
 es3/String.prototype.search.str.js: string with \\d+ pattern failed; string with \\w+ pattern failed; string with [0-9]+ pattern failed; string with \\s pattern failed; string with \\. pattern failed; Error: not found.('abc123def')
 es3/String.prototype.slice.generic.js: Error: not found.('Number')
-es3/String.prototype.slice.js: crashed (signal 11); slice with start and end failed
+es3/String.prototype.slice.js: failed
 es3/String.prototype.split.bugs.js: Error: not found.(''')
 es3/String.prototype.split.limit.js: crashed (signal 11)
 es3/String.prototype.split.regex.js: Error: not found.('\d')
@@ -270,7 +270,7 @@ es3/String.prototype.toLocaleUpperCase.js: Error: couldn't create.('toLocaleUppe
 es3/annex-b.String.prototype.substr.js: crashed (signal 11); positive start failed
 es3/do-while.js: Error: not found.('do')
 es3/function-expressions.IIFE.js: Error: not found.('count')
-es3/function-expressions.js: crashed (signal 11)
+es3/function-expressions.js: crashed (signal 11); Error: not found.('else')
 es3/global.EvalError.js: Error: not found.('typeof')
 es3/global.RangeError.js: Error: not found.('typeof')
 es3/global.RangeError.thrown.js: Error: not found.('try')

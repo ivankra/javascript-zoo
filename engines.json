@@ -461,12 +461,12 @@
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.965
+      "kangax-es2016plus": 0.9669
     }
   },
   {
@@ -663,7 +663,7 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "8006cec195a7a3a55ce8da80404dd081daba7da99b1ca154dc8180a6023272f5",
+        "binary_sha256": "7fc00afd87c5a3c06cf0af7e731e184f00883ece7b76d4645f7d4d788f40144f",
         "binary_size": 195328,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
         "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b",
@@ -1388,11 +1388,11 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "89c5710f6d292acd05b68d65d692acd53bb8fd5d52b48aeb90d219d04cf31367",
-        "binary_size": 1075400,
+        "binary_sha256": "98f1e353ebdb7a9a0c2bb03ed5bfb0ae80c0dc729feee670c06987229708b85a",
+        "binary_size": 1075256,
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
       },
       {
         "arch": "arm64",
@@ -2667,29 +2667,29 @@
         "binary_sha256": "4ae5f93d51170a1a2542a27bef9a7d483eff6d4cfe7e2b00ce131c25688d63b8",
         "binary_size": 5423664,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
-        "version": "250829098.0.3"
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
+        "version": "250829098.0.4"
       },
       {
         "arch": "amd64",
         "binary_sha256": "4c445816b1165e614f5a92654f5fc43839c88e46666be7f75917baaf1f88a848",
         "binary_size": 4274592,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
         "variant": "static_clang",
-        "version": "250829098.0.3"
+        "version": "250829098.0.4"
       },
       {
         "arch": "amd64",
         "binary_sha256": "96a135e36654c977548b1dfbf7eb380c2bddb0849fe7ba8d2bf11b4faf8c5f12",
         "binary_size": 5702384,
         "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "68efca968c0ab4b4a85828aed3241eb4f5c9cf1f",
-        "revision_date": "2025-11-04",
+        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
+        "revision_date": "2025-10-24",
         "variant": "static_intl",
-        "version": "250829098.0.3"
+        "version": "250829098.0.4"
       },
       {
         "arch": "arm64",
@@ -2976,7 +2976,7 @@
       },
       {
         "arch": "amd64",
-        "binary_sha256": "ff021479161bb7fe9320df129cccb1d9094f0142c3ad885a022ac24558f95578",
+        "binary_sha256": "d6978574428d369e67acaed5eaf58e9edd27f5901ac4800c54c85a2b619a683c",
         "binary_size": 6049576,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f",
@@ -3072,7 +3072,7 @@
       },
       {
         "arch": "arm64",
-        "binary_sha256": "4bf9b9f10f2e59f5738f631a30dac40d08845177d0d19665163bab7187195b86",
+        "binary_sha256": "b610eaffa78905aab0f79094895bfd5b6159d69b2b61cf27f93095d5458094e9",
         "binary_size": 4532736,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
         "jit": "",
@@ -3981,12 +3981,12 @@
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.1212,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9981
+      "kangax-es2016plus": 1.0
     }
   },
   {
@@ -4278,7 +4278,7 @@
       "es3": 0.973,
       "es5": 0.9054,
       "kangax-es5": 0.9214,
-      "kangax-es6": 0.9169,
+      "kangax-es6": 0.9122,
       "kangax-es2016": 0.8485,
       "kangax-es2017": 0.9,
       "kangax-es2018": 0.8421,
@@ -4287,12 +4287,12 @@
       "kangax-es2021": 1.0,
       "kangax-es2022": 0.9728,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 0.9474,
       "kangax-intl": 0.8214,
       "kangax-next": 0.0505,
       "es1-es5": 0.969,
-      "kangax-es2016plus": 0.912
+      "kangax-es2016plus": 0.9139
     }
   },
   {
@@ -4758,7 +4758,7 @@
       "kangax-es5": 1.0,
       "kangax-es6": 0.9228,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.92,
+      "kangax-es2017": 0.94,
       "kangax-es2018": 0.9895,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
@@ -4770,7 +4770,7 @@
       "kangax-intl": 1.0,
       "kangax-next": 0.1905,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.957
+      "kangax-es2016plus": 0.9604
     }
   },
   {
@@ -5891,7 +5891,7 @@
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 17917353,
+        "dist_size": 17895646,
         "revision": "617cc98b86623499ccbcce4fd59e2269bb7675e0",
         "revision_date": "2025-11-09",
         "Richards": 1468.987,
@@ -6680,12 +6680,12 @@
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 0.9474,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9915
+      "kangax-es2016plus": 0.9934
     }
   },
   {
@@ -7012,7 +7012,7 @@
         "binary_size": 1673616,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.91.0 (f8297e351 2025-10-28)"
+        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
       },
       {
         "arch": "arm64",
@@ -7407,7 +7407,7 @@
       "es3": 0.7838,
       "es5": 0.3514,
       "kangax-es5": 0.5056,
-      "kangax-es6": 0.3304,
+      "kangax-es6": 0.3351,
       "kangax-es2016": 0.1061,
       "kangax-es2017": 0.32,
       "kangax-es2018": 0.393,
@@ -7655,7 +7655,7 @@
     "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
-      "es5": 0.7297,
+      "es5": 0.7568,
       "kangax-es5": 0.7995,
       "kangax-es6": 0.0304,
       "kangax-es2016": 0.0,
@@ -7670,7 +7670,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.8381,
+      "es1-es5": 0.8429,
       "kangax-es2016plus": 0.0257
     }
   },
@@ -8101,6 +8101,16 @@
         "Typescript_detailed": "N=100 median=21859 mean=21922.54±66.47 max=23141",
         "zlib": 108073,
         "zlib_detailed": "N=100 median=108073 mean=107758.77±110.14 max=110018"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "4eae07ad3822c8481f7e0df705d22604c2d9ba5230a33fc118b89252ccf6f758",
+        "binary_size": 19355272,
+        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "revision": "0131ff10eec6e050cd82e9e92fdbabb747992aa5",
+        "revision_date": "2025-12-01",
+        "variant": "gcc",
+        "version": "146.0"
       },
       {
         "arch": "amd64",

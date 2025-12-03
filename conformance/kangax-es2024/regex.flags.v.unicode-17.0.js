@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return /^\p{RGI_Emoji}$/v.test("🧑‍🩰‍🏽");
+  return /^\p{RGI_Emoji}$/v.test("🧑🏽‍🩰");
 }
 
 try {

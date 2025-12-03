@@ -53,8 +53,7 @@ JavaScript engine of Ladybird browser and SerenityOS.
 ...
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 92%<pre>
-<a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<li>ES2017: 94%<pre>
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>

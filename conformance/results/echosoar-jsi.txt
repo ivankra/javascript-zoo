@@ -90,7 +90,7 @@ es1/Number.MIN_VALUE.js: Runtime error: JSIError { error_type: SyntaxError, mess
 es1/Number.NEGATIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
 es1/Number.NaN.js: failed
 es1/Number.POSITIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
-es1/Number.js: Number(value) failed; thread 'main' (350721) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/Number.js: Number(value) failed; thread 'main' (350866) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
@@ -140,7 +140,7 @@ es1/continue.js: OK
 es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed
 es1/conversions.ToInt32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: Or, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
 es1/conversions.ToInteger.js: 2.9 failed; -0 failed; NaN failed; 1.1 failed; -1.9 failed; 5.7 failed
-es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (350224) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (349933) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e21'", line: 0, column: 0, value: None }
 es1/conversions.ToUint32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: UnsignedShiftRight, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }

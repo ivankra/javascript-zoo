@@ -34,7 +34,7 @@ can be recomputed here.
 
 `kangax-es5` is a subset of `es5`, included only for completeness.
 
-`./kangax.js` regenerates the tests.
+`./gen-kangax.js` regenerates the tests.
 
 ## Running
 
@@ -44,7 +44,8 @@ through the whole test suite.  By default, uses `node`.
 ```
 Usage: run.sh [-o output.txt] [-j jobs] engine [args] [test files/dirs]
 
-$ ./run.sh | less -R            # run node on all tests and paginate
+$ ./run.sh                      # run node on all tests
+$ ./run.sh | less -R            # paginate output
 $ ./run.sh /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js
 $ ./run.sh /dist/jsc */*regex*  # run on all regex tests
 $ ./run.sh gjs kangax-*/        # run GNOME's JS runtime on kangax tests

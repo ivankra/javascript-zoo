@@ -117,7 +117,7 @@ es1/annex-b.Date.prototype.getYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.setYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Not a callable object
 es1/annex-b.global.escape.js: OK
-es1/annex-b.global.unescape.js: thread 'main' (1488050) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
+es1/annex-b.global.unescape.js: thread 'main' (1511748) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
 es1/annex-b.literals.octal.js: Parse errors:
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
@@ -386,7 +386,7 @@ es5/Object.seal.js: TypeError: Could not set property 'y' of [object Object].
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
-es5/debugger.js: thread 'main' (1474625) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3557:43:
+es5/debugger.js: thread 'main' (1498232) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3557:43:
 es5/global.Infinity.immutable.js: TypeError: Could not set property 'Infinity'.
 es5/global.NaN.immutable.js: TypeError: Could not set property 'NaN'.
 es5/global.parseInt.no-octal.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: thread 'main' (1498045) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
+kangax-next/SuppressedError.js: thread 'main' (1521765) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
 kangax-next/Uint8Array.fromBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.fromHex.js: TypeError: Not a callable object
 kangax-next/Uint8Array.setFromBase64.js: TypeError: Not a callable object
@@ -1501,7 +1501,7 @@ kangax-next/Uint8Array.toBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.toHex.js: TypeError: Not a callable object
 kangax-next/WeakMap.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/await-using.for-of.js: failed
-kangax-next/await-using.js: thread 'main' (1498734) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2948:57:
+kangax-next/await-using.js: thread 'main' (1522523) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2948:57:
 kangax-next/class-decorators.js: failed
 kangax-next/function.sent.js: Parse errors:
 kangax-next/throw-expr.arrow.js: Parse errors:
@@ -1509,4 +1509,4 @@ kangax-next/throw-expr.conditional.js: Parse errors:
 kangax-next/throw-expr.logical.js: Parse errors:
 kangax-next/throw-expr.param-init.js: Parse errors:
 kangax-next/using.for-of.js: failed
-kangax-next/using.js: thread 'main' (1499504) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
+kangax-next/using.js: thread 'main' (1523253) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:

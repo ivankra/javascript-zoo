@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -472,7 +472,7 @@ kangax-es5/misc.enumerable-shadow.js: failed
 kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
 kangax-es5/misc.thrown-functions-this.js: OK
 kangax-es5/misc.unreserved-words.js: OK
-kangax-es5/misc.zero-width-identifiers.js: SyntaxError: /tmp/tmp.ePAcYZu0pd.js:10: unexpected character: \u200Cundefined
+kangax-es5/misc.zero-width-identifiers.js: SyntaxError: /tmp/tmp.5HyfdVWhPg.js:10: unexpected character: \u200Cundefined
 kangax-es5/strict.arguments-callee-error.js: failed
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
@@ -1306,7 +1306,7 @@ kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: (eval):1: unexpecte
 kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: (eval):1: unexpected token: '[' (expected identifier or keyword)
-kangax-es2019/misc.Function-toString.native-code.js: EvalError: /tmp/tmp.jGIKZXXUlg.js:2003: invalid use of 'eval'undefined
+kangax-es2019/misc.Function-toString.native-code.js: EvalError: /tmp/tmp.WBXav2CNgF.js:2003: invalid use of 'eval'undefined
 kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: (eval):1: unexpected escape sequence
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
 kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: (eval):1: string not terminated
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: 
 kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: 'setTimeout' is not defined
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.N68soDkR3a.js:2539: unexpected token: (identifier) (expected ';')undefined
+kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.UpkQhsyI9C.js:2539: unexpected token: (identifier) (expected ';')undefined
 kangax-es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.NWZ8DnK3zv.js:12: number with letter suffixundefined
-kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.Xc0uMTN06g.js:12: number with letter suffixundefined
-kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.LN2Jhzvfxa.js:2539: unexpected token: (identifier) (expected ';')undefined
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.XoWFu2bLCq.js:2539: number with letter suffixundefined
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.loNzgQGgY9.js:2539: number with letter suffixundefined
+kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.Tzz6tjvTlO.js:12: number with letter suffixundefined
+kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.AED9JLiccc.js:12: number with letter suffixundefined
+kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.FnLNaq3Qqt.js:2539: unexpected token: (identifier) (expected ';')undefined
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.cOfkGSNMoO.js:2539: number with letter suffixundefined
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.HDJNxQWFhR.js:2539: number with letter suffixundefined
 kangax-es2020/Promise.allSettled.js: ReferenceError: 'setTimeout' is not defined
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK

@@ -9,7 +9,7 @@
 //   Generates test files
 //
 // * ./gen-kangax.js gen --clean
-//   removes generated files - for rename preparation, etc
+//   Removes generated files. Useful for renaming, upstream updates, etc.
 //
 // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
@@ -30,10 +30,11 @@ const DATA_FILES = [
   //'data-non-standard.js'
 ];
 
-// Skip during 'gen'
+// Will be skipped during 'gen' and 'gen --clean'
 const EDITED_TESTS = [
-  'kangax-es6/typed-arrays.correct-prototype-chains.js',
   'kangax-es2023/hashbang.js',
+  'kangax-es2024/regex.flags.v.unicode-17.0.js',
+  'kangax-es6/typed-arrays.correct-prototype-chains.js',
 ];
 
 function processExec(fn) {
