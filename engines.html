@@ -413,7 +413,7 @@ window.addEventListener('load', () => {
 
 function loadState() {
   const params = new URLSearchParams(window.location.search);
-  state.v8 = !params.has('v8') || params.get('v8') === false;
+  state.v8 = !params.has('v8') || params.get('v8') === 'true';
   state.variants = params.has('variants');
   state.arch = params.get('arch') ?? state.arch;
   let m = (params.get('sort') ?? '').match(/^(-?)(\w+)$/);
