@@ -10,7 +10,7 @@
     "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
     "revision_date": "2017-04-21"
   },
-  "time": "Sun Nov  9 18:42:57 2025",
+  "time": "Sun Nov 16 23:34:50 2025",
   "benchmarks": {
     "Richards": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -24,28 +24,28 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.29]
+      "rss_mb": [3.28]
     },
     "Crypto": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.35]
+      "rss_mb": [3.41]
     },
     "RayTrace": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.28]
+      "rss_mb": [3.35]
     },
     "EarleyBoyer": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.28]
+      "rss_mb": [3.35]
     },
     "RegExp": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -59,70 +59,77 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.35]
+      "rss_mb": [3.4]
     },
     "SplayLatency": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.35]
+      "rss_mb": [3.4]
     },
     "NavierStokes": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.35]
+      "rss_mb": [3.28]
     },
     "PdfJS": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.29]
+      "rss_mb": [3.41]
     },
     "Mandreel": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.29]
+      "rss_mb": [3.35]
     },
     "MandreelLatency": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.29]
+      "rss_mb": [3.35]
     },
     "Gameboy": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.35]
+      "rss_mb": [3.36]
     },
     "CodeLoad": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.36]
+      "rss_mb": [3.28]
     },
     "Box2D": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.28]
+      "rss_mb": [3.3]
     },
     "zlib": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [3.29]
+      "rss_mb": [3.28]
+    },
+    "Typescript": {
+      "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [3.28]
     }
   }
 }

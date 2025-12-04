@@ -10,13 +10,14 @@
     "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
     "revision_date": "2017-04-21"
   },
+  "time": "Thu Dec  4 23:38:55 2025",
   "benchmarks": {
     "Richards": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [2.77]
+      "rss_mb": [2.65]
     },
     "DeltaBlue": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -30,14 +31,14 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [2.77]
+      "rss_mb": [2.76]
     },
     "RayTrace": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [2.76]
+      "rss_mb": [2.77]
     },
     "EarleyBoyer": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -51,7 +52,7 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [2.77]
+      "rss_mb": [2.76]
     },
     "Splay": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -79,7 +80,7 @@
       "user": [0.0],
       "sys": [0.0],
       "real": [0.0],
-      "rss_mb": [2.77]
+      "rss_mb": [2.76]
     },
     "Mandreel": {
       "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
@@ -122,6 +123,13 @@
       "sys": [0.0],
       "real": [0.0],
       "rss_mb": [2.77]
+    },
+    "Typescript": {
+      "error": "\u001b[0mSyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [2.75]
     }
   }
 }
