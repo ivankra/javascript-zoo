@@ -9,40 +9,40 @@
     "revision_date": "2017-09-05",
     "version": "1.0.0"
   },
-  "time": "Wed Nov 12 05:49:23 2025",
+  "time": "Mon Nov 17 11:45:09 2025",
   "benchmarks": {
     "Richards": {
       "error": "SyntaxError: expected ; ...  richards [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.75]
+      "rss_mb": [15.85]
     },
     "DeltaBlue": {
       "error": "SyntaxError: expected ; ...  deltablue [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.75]
+      "rss_mb": [15.68]
     },
     "Crypto": {
       "error": "SyntaxError: expected ; ...  crypto [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.7]
+      "rss_mb": [15.87]
     },
     "RayTrace": {
       "error": "SyntaxError: expected ; ...  raytrace [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.72]
+      "rss_mb": [15.66]
     },
     "EarleyBoyer": {
       "error": "SyntaxError: expected ; ...  earley - boyer [ \"js\" ]",
-      "user": [0.01],
-      "sys": [0.01],
+      "user": [0.02],
+      "sys": [0.0],
       "real": [0.02],
       "rss_mb": [15.76]
     },
@@ -55,22 +55,22 @@
     },
     "Splay": {
       "error": "SyntaxError: expected ; ...  splay [ \"js\" ]",
-      "user": [0.01],
+      "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.8]
+      "rss_mb": [15.87]
     },
     "SplayLatency": {
       "error": "SyntaxError: expected ; ...  splay [ \"js\" ]",
-      "user": [0.01],
+      "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.8]
+      "rss_mb": [15.87]
     },
     "NavierStokes": {
       "error": "SyntaxError: expected ; ...  navier - stokes [ \"js\" ]",
-      "user": [0.02],
-      "sys": [0.0],
+      "user": [0.01],
+      "sys": [0.01],
       "real": [0.02],
       "rss_mb": [15.7]
     },
@@ -79,49 +79,56 @@
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.75]
+      "rss_mb": [15.68]
     },
     "Mandreel": {
       "error": "SyntaxError: expected ; ...  mandreel [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.67]
+      "rss_mb": [15.85]
     },
     "MandreelLatency": {
       "error": "SyntaxError: expected ; ...  mandreel [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.67]
+      "rss_mb": [15.85]
     },
     "Gameboy": {
       "error": "SyntaxError: expected ; ...  gbemu [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.75]
+      "rss_mb": [15.64]
     },
     "CodeLoad": {
       "error": "SyntaxError: expected ; ...  code - load [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.8]
+      "rss_mb": [15.76]
     },
     "Box2D": {
       "error": "SyntaxError: expected ; ...  box2d [ \"js\" ]",
-      "user": [0.01],
+      "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.8]
+      "rss_mb": [15.76]
     },
     "zlib": {
       "error": "SyntaxError: expected ; ...  zlib [ \"js\" ]",
       "user": [0.02],
       "sys": [0.0],
       "real": [0.02],
-      "rss_mb": [15.8]
+      "rss_mb": [15.84]
+    },
+    "Typescript": {
+      "error": "SyntaxError: expected ; ...  typescript [ \"js\" ]",
+      "user": [0.02],
+      "sys": [0.0],
+      "real": [0.02],
+      "rss_mb": [15.75]
     }
   }
 }
