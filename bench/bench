@@ -28,6 +28,17 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Union
 
+V8_V7_TESTS = [
+   'richards.js',
+   'deltablue.js',
+   'crypto.js',
+   'raytrace.js',
+   'earley-boyer.js',
+   'regexp.js',
+   'splay.js',
+   'navier-stokes.js',
+]
+
 OCTANE_TESTS = [
    'richards.js',
    'deltablue.js',
@@ -468,6 +479,8 @@ class Config:
         pattern = r'(%s|Score \(version [0-9]\)): ([0-9.]+(?:e[+-][0-9]+)?)' % ('|'.join(expected))
         for name, score in re.findall(pattern, run.output):
             name = re.sub(r' \(version ([0-9])\)', r'V\1', name)
+            if run.args.v8_v7 and name.endswith('Latency'):
+                continue
             try:
                 score = int(score)
             except:
@@ -731,6 +744,7 @@ def main():
     parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-r', '--reps', default='1', type=str, metavar='repetitions (count or <seconds>s)')
     parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
+    parser.add_argument('-7', '--v8-v7', action='store_true')
     parser.add_argument('--skip-unchanged', action='store_true',
                         help="Skip run if output file exists and has same binary's revision")
     parser.add_argument('binary', help='Binary to execute, optionally with flags')
@@ -765,6 +779,8 @@ def main():
         test_files = args.tests
     elif config.benchmark_suite:
         test_files = config.benchmark_suite
+    elif args.v8_v7:
+        test_files = V8_V7_TESTS
     else:
         test_files = OCTANE_TESTS
     assert test_files
