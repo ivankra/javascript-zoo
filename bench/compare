@@ -19,6 +19,7 @@ def calc_stats(values):
     n = len(values)
     mean = sum(values) / n
     median = sorted(values)[n // 2] if n % 2 else (sorted(values)[n//2 - 1] + sorted(values)[n//2]) / 2
+    maximum = max(values)
 
     if n > 1:
         variance = sum((x - mean) ** 2 for x in values) / (n - 1)
@@ -26,10 +27,10 @@ def calc_stats(values):
     else:
         sem = 0
 
-    return mean, sem, median
+    return mean, sem, median, maximum
 
 
-def aggregate_file_stats(filepath, field='score', use_median=False):
+def aggregate_file_stats(filepath, field='score', agg='avg'):
     """Aggregate statistics from a single JSON file into column-major format.
 
     Returns: {column_name: {test_name: formatted_value}}
@@ -42,10 +43,12 @@ def aggregate_file_stats(filepath, field='score', use_median=False):
 
     for test_name, test_data in data.get('benchmarks', {}).items():
         if field in test_data:
-            mean, sem, median = calc_stats(test_data[field])
+            mean, sem, median, maximum = calc_stats(test_data[field])
             if mean is not None:
-                if use_median:
+                if agg == 'median':
                     results[col_name][test_name] = f"{median:.2f}"
+                elif agg == 'max':
+                    results[col_name][test_name] = f"{maximum:.2f}"
                 else:
                     results[col_name][test_name] = f"{mean:.2f} ± {sem:.2f}"
 
@@ -114,7 +117,7 @@ def add_percent_improvement(table_data, col1, col2, file1_path=None, file2_path=
                 pass
 
 
-def aggregate_single_file_multi_fields(filepath, use_median=False):
+def aggregate_single_file_multi_fields(filepath, agg='avg'):
     """Special case: aggregate both score and rss_mb for a single file."""
     with open(filepath) as f:
         data = json.load(f)
@@ -132,7 +135,7 @@ def aggregate_single_file_multi_fields(filepath, use_median=False):
 
     # Score: show both avg and median
     for field_name in ['score']:
-        for stat_type in ['avg ± sem', 'median'] if not use_median else ['median']:
+        for stat_type in ['avg ± sem'] + ([agg] if agg != 'avg' else []):
             if stat_type == 'avg ± sem':
                 col_name = f"{field_name}_avg"
             else:
@@ -141,10 +144,12 @@ def aggregate_single_file_multi_fields(filepath, use_median=False):
 
             for test_name, test_data in data.get('benchmarks', {}).items():
                 if field_name in test_data:
-                    mean, sem, median = calc_stats(test_data[field_name])
+                    mean, sem, median, maximum = calc_stats(test_data[field_name])
                     if mean is not None:
-                        if stat_type == 'median' or use_median:
+                        if stat_type == 'median' or agg == 'median':
                             table_data[col_name][test_name] = f"{median:.2f}"
+                        elif stat_type == 'max' or agg == 'max':
+                            table_data[col_name][test_name] = f"{maximum:.2f}"
                         else:
                             table_data[col_name][test_name] = f"{mean:.2f} ± {sem:.2f}"
 
@@ -154,10 +159,12 @@ def aggregate_single_file_multi_fields(filepath, use_median=False):
     table_data[col_name] = {}
     for test_name, test_data in data.get('benchmarks', {}).items():
         if field_name in test_data:
-            mean, sem, median = calc_stats(test_data[field_name])
+            mean, sem, median, maximum = calc_stats(test_data[field_name])
             if mean is not None:
-                if use_median:
+                if agg == 'median':
                     table_data[col_name][test_name] = f"{median:.2f}"
+                elif agg == 'maximum':
+                    table_data[col_name][test_name] = f"{maximum:.2f}"
                 else:
                     table_data[col_name][test_name] = f"{mean:.2f} ± {sem:.2f}"
 
@@ -175,7 +182,7 @@ def aggregate_single_file_multi_fields(filepath, use_median=False):
                         cores_values.append(cores)
 
             if cores_values:
-                mean, sem, median = calc_stats(cores_values)
+                mean, sem, median, maximum = calc_stats(cores_values)
                 table_data['cores_avg'][test_name] = f"{mean:.2f} ± {sem:.2f}"
 
     return table_data
@@ -245,8 +252,10 @@ def main():
                         help='Use rss_mb field instead of score')
     parser.add_argument('-f', '--field', type=str,
                         help='Use specific field name')
-    parser.add_argument('-m', '--median', action='store_true',
+    parser.add_argument('--median', action='store_true',
                         help='Show median instead of avg ± SEM')
+    parser.add_argument('--max', action='store_true',
+                        help='Show max instead of avg ± SEM')
 
     args = parser.parse_args()
 
@@ -256,12 +265,18 @@ def main():
     elif args.field:
         field = args.field
 
+    agg = 'avg'
+    if args.median:
+        agg = 'median'
+    elif args.max:
+        agg = 'max'
+
     if len(args.files) == 1:
-        table_data = aggregate_single_file_multi_fields(args.files[0], args.median)
+        table_data = aggregate_single_file_multi_fields(args.files[0], agg)
     else:
         table_data = {}
         for filepath in args.files:
-            file_stats = aggregate_file_stats(filepath, field, args.median)
+            file_stats = aggregate_file_stats(filepath, field, agg)
             table_data.update(file_stats)
 
         if len(args.files) == 2:
