@@ -10,6 +10,7 @@
 # SPDX-License-Identifier: MIT
 
 import argparse
+import datetime
 import glob
 import json
 import math
@@ -22,11 +23,14 @@ import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Union
+
+START_TIME = datetime.datetime.now(datetime.timezone.utc).strftime('%a %b %d %H:%M:%S.%f %Y %Z')
 
 V8_V7_TESTS = [
    'richards.js',
@@ -215,15 +219,25 @@ class PolyfillTransform:
         #    return "'use strict';\n" + self.code + test.script
         return self.code + test.script
 
-class Binary:
+class Engine:
     path: Path
     flags: Optional[List[str]]
     metadata: Dict[str, Any]
+    config: Optional['Config']
+    output_path: Optional[Path]
+    runs: List['Run']
+    current_thread: Optional[threading.Thread]
+    current_run: Optional['Run']
 
     def __init__(self, path_and_flags: str):
         self.path = Path(path_and_flags)
         self.flags = None
         self.metadata = {}
+        self.config = None
+        self.output_path = None
+        self.runs = []
+        self.current_thread = None
+        self.current_run = None
 
         if ' ' in path_and_flags and not self.path.exists():
             args = shlex.split(path_and_flags)
@@ -238,7 +252,7 @@ class Binary:
                 self.path = Path(which_path)
 
         if not os.path.exists(self.path):
-            raise FileNotFoundError(self.path)
+            sys.exit(f"{self.path} doesn't exist")
 
         self.path = Path(os.path.abspath(str(self.path)))
 
@@ -246,8 +260,19 @@ class Binary:
         if json_path.exists():
             self.metadata = json.load(json_path.open())
 
+    def kill(self):
+        """Kill active subprocess if running and wait for thread."""
+        if self.current_run and self.current_run.proc and self.current_run.proc.poll() is None:
+            try:
+                os.killpg(os.getpgid(self.current_run.proc.pid), signal.SIGKILL)
+                self.current_run.proc.wait()
+            except:
+                pass
+        if self.current_thread:
+            self.current_thread.join(timeout=1.0)
+
     def __str__(self):
-        return f'Binary({repr(self.__dict__)})'
+        return f'Engine({repr(self.__dict__)})'
 
 @dataclass
 class Run:
@@ -336,8 +361,8 @@ class Config:
         self.ignore_errors = ignore_errors
         self.benchmark_suite = benchmark_suite
 
-    def benchmark_run(self, binary: Binary, test: MemTest, args: argparse.Namespace) -> Run:
-        temp_dir=Path(tempfile.mkdtemp(prefix=f'{binary.path.name}-{test.basename.removesuffix(".js")}-'))
+    def benchmark_run(self, engine: Engine, test: MemTest, args: argparse.Namespace) -> Run:
+        temp_dir = Path(tempfile.mkdtemp(prefix=f'{engine.path.name}-{test.basename.removesuffix(".js")}-'))
 
         run = Run(
             temp = {
@@ -346,13 +371,15 @@ class Config:
                 'time': temp_dir / 'time',
                 'script': temp_dir / test.basename,
             },
-            binary_path=binary.path,
-            flags=(self.flags if binary.flags is None else binary.flags),
-            metadata=binary.metadata,
+            binary_path=engine.path,
+            flags=(self.flags if engine.flags is None else engine.flags),
+            metadata=engine.metadata,
             test=test,
             test_basename=test.basename,
             args=args,
         )
+
+        engine.current_run = run
 
         if run.args.timeout:
             run.timeout = run.args.timeout
@@ -378,6 +405,7 @@ class Config:
         else:
             shutil.rmtree(temp_dir)
 
+        engine.current_run = None
         return run
 
     def transform_test(self, run: Run):
@@ -470,7 +498,7 @@ class Config:
 
     def extract_benchmark_scores(self, run):
         expected = re.findall(r'''new BenchmarkSuite\(['"]([A-Za-z0-9]+)['"]''', run.test.script)
-        if 'BenchmarkSuite.GeometricMeanLatency' in run.test.script:
+        if 'BenchmarkSuite.GeometricMeanLatency' in run.test.script and not run.args.v8_v7:
             expected += [s + 'Latency' for s in expected if s in ['Splay', 'Mandreel']]
         if run.test_basename.startswith('richards.'):
             expected += ['Richards']
@@ -534,12 +562,13 @@ def coalesce_runs_to_json(runs: List[Run]) -> str:
         'binary': runs[-1].binary_path.name,
         'flags': runs[-1].flags,
         'metadata': runs[-1].metadata,
-        'time': time.ctime(),
+        'time': START_TIME,
         'benchmarks': {},
     }
 
-    if not res['flags']:
-        res.pop('flags')
+    for key in ['flags', 'metadata']:
+        if not res[key]:
+            res.pop(key)
 
     for run in runs:
         for key in run.scores.keys():
@@ -575,7 +604,6 @@ def coalesce_runs_to_json(runs: List[Run]) -> str:
     s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m[1])), s)
     return s
 
-# TODO json/jsonnet config
 CONFIGS = {
   'besen': Config(
       # too slow on other tests or crashes
@@ -627,7 +655,6 @@ CONFIGS = {
           'typescript.js': 3600,  # passes but very slow
       },
   ),
-  # TODO 'js-interpreter_jsc': Config(host_engine='jsc'),  --want to configure to run it with custom shell
   'kjs': Config(
       filter_lines_re=r'^LEAK: [0-9]+ KJS::Node$',
   ),
@@ -646,9 +673,6 @@ CONFIGS = {
   ),
   'nashorn': Config(
       flags=['--language=es6'],
-  ),
-  'nashorn_ot': Config(
-      flags=['--language=es6', '-ot'],
   ),
   'ngs': Config(
       benchmark_suite=['richards.tiny-js.js'],
@@ -694,7 +718,6 @@ CONFIGS = {
   'sablejs': Config(
       warn_lines_re=r'\[WARN\]',
   ),
-  # TODO benchmark_polyfills=[]
   'spidermonkey_1.5': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.6': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.7': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
@@ -721,125 +744,232 @@ CONFIGS = {
   ),
 }
 
-def pick_config(args, binary):
+def pick_config(args, engine):
     if args.config and args.config not in CONFIGS:
         sys.exit(f'Unknown config: {args.config}')
 
-    for name in [args.config, binary.path.name, binary.metadata.get('engine')]:
+    for name in [args.config, engine.path.name, engine.metadata.get('engine')]:
         if name:
             if name in CONFIGS:
                 return CONFIGS[name]
 
-            engine = name.split('_')[0]
-            if engine in CONFIGS:
-                return CONFIGS[engine]
+            engine_name = name.split('_')[0]
+            if engine_name in CONFIGS:
+                return CONFIGS[engine_name]
 
     return Config()
 
+def write_results(engines, partial=False):
+    for engine in engines:
+        if engine.output_path and engine.runs:
+            json_str = coalesce_runs_to_json(engine.runs)
+            out_path = engine.output_path
+            part_path = out_path.with_suffix(out_path.suffix + '.part')
+            if partial:
+                out_path = part_path
+            else:
+                part_path.unlink(missing_ok=True)
+            with open(out_path, 'w') as fp:
+                fp.write(json_str)
+
+
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--config', help='Config to use, "engine[_variant]"')
-    parser.add_argument('-k', '--keep', action='store_true', help='Keep temp dir')
-    parser.add_argument('-o', '--output', help='Write benchmark result to this file in JSON format')
+    parser = argparse.ArgumentParser(
+        usage='%(prog)s [options] engine [engine ...] [--] [test.js ...]',
+        description='Benchmark JavaScript engines. Engines and test files are positional arguments. '
+                    'Trailing *.js are treated as test scripts (up until optional -- separator). '
+                    'To pass flags to an engine, quote the engine with its flags: \'engine flags\'. '
+                    'If multiple engines are specified, they will be synchronously tested on '
+                    'the same tests in parallel.')
+    parser.add_argument('-C', '--config', action='append', metavar='engine[_variant]',
+                        help='config to use')
+    parser.add_argument('-k', '--keep', action='store_true',
+                        help='keep temp dir')
+    parser.add_argument('-o', '--output', action='append', metavar='file.json',
+                        help='output json file for benchmark results')
     parser.add_argument('-v', '--verbose', action='store_true')
-    parser.add_argument('-r', '--reps', default='1', type=str, metavar='repetitions (count or <seconds>s)')
-    parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
+    parser.add_argument('-r', '--reps', action='append', type=str, metavar='[basename:]count[s]',
+                        help='repeat each benchmark this many times. Can specify as a time budget '
+                             'and per-test limits: -r 60s -r zlib.js:10 -> run zlib.js 10 times, '
+                             'others for 1 minute.')
+    parser.add_argument('-t', '--timeout', type=float, metavar='seconds',
+                        help='time limit for each single test execution')
     parser.add_argument('-7', '--v8-v7', action='store_true')
     parser.add_argument('--skip-unchanged', action='store_true',
-                        help="Skip run if output file exists and has same binary's revision")
-    parser.add_argument('binary', help='Binary to execute, optionally with flags')
-    parser.add_argument('tests', nargs='*', help='Test files to run')
-    args = parser.parse_args()
+                        help="skip if output file exists with same binary's revision")
 
-    binary = Binary(args.binary)
+    args, remaining = parser.parse_known_args()
+
+    # Parse engines and test files from remaining positional arguments
+    if '--' in remaining:
+        i = remaining.index('--')
+        args.engines = remaining[:i]
+        args.tests = remaining[i + 1:]
+    else:
+        # Pop trailing .js files as tests, keeping at least one engine
+        args.tests = []
+        while len(remaining) > 1 and remaining[-1].endswith('.js'):
+            args.tests.append(remaining.pop())
+        args.tests.reverse()
+        args.engines = remaining
+
+    if not args.engines:
+        parser.error('At least one engine must be specified')
+
+    # Parse -r/--reps: default value and per-file overrides
+    args.reps_default = '1'
+    args.reps_for_file = {}
+    if args.reps:
+        for rep_spec in args.reps:
+            if ':' in rep_spec:
+                basename, count = rep_spec.split(':', 1)
+                args.reps_for_file[basename] = count
+            else:
+                args.reps_default = rep_spec
 
     bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
 
-    output_path = args.output
-    if not (output_path or args.tests or args.config or binary.flags):
-        output_path = bench_dir / 'output' / (binary.path.name + '.json')
-        output_path.parent.mkdir(exist_ok=True)
-        print('Saving results to: %s' % str(output_path))
-    if output_path:
-        output_path = Path(output_path)
+    engines = [Engine(spec) for spec in args.engines]
 
-    if args.skip_unchanged and output_path.exists():
-        prev_bench = json.loads(output_path.open().read())
-        if binary.metadata.get('revision'):
-            if binary.metadata['revision'] == prev_bench.get('metadata', {}).get('revision'):
-                print(f'Skipping {args.binary}: same revision as previous run')
-                return
-        elif binary.metadata.get('revision_date'):
-            if binary.metadata['revision_date'] == prev_bench.get('metadata', {}).get('revision_date'):
-                print(f'Skipping {args.binary}: same revision date as previous run')
-                return
-
-    config = pick_config(args, binary)
-    if args.tests:
-        test_files = args.tests
-    elif config.benchmark_suite:
-        test_files = config.benchmark_suite
-    elif args.v8_v7:
-        test_files = V8_V7_TESTS
+    # Set/choose config
+    if args.config:
+        if len(args.config) != len(engines):
+            sys.exit(f'Error: number of -C flags must match number of engines')
+        for idx, engine in enumerate(engines):
+            config_name = args.config[idx]
+            if config_name not in CONFIGS:
+                sys.exit(f'Unknown config: {config_name}')
+            engine.config = CONFIGS[config_name]
     else:
-        test_files = OCTANE_TESTS
-    assert test_files
+        for engine in engines:
+            engine.config = pick_config(args, engine)
 
-    all_runs = []
+    # Set/generate output paths
+    if args.output:
+        if len(args.output) != len(engines):
+            sys.exit(f'Error: number of -o flags must match number of engines')
+        for i, engine in enumerate(engines):
+            engine.output_path = Path(args.output[i])
+    else:
+        next_suffix = {}
+        for engine in engines:
+            base_name = engine.path.name
+            engine.output_path = Path.cwd() / f'{base_name}{next_suffix.get(base_name, "")}.bench'
+            next_suffix[base_name] = next_suffix.get(base_name, 1) + 1
+            engine.output_path.parent.mkdir(exist_ok=True)
+            if args.verbose:
+                print(f'Output file: {str(engine.output_path)}')
 
-    # TODO: run reps in zigzag order
+    # Quit early if same revision as previous run
+    if args.skip_unchanged and len(engines) == 1:
+        engine = engines[0]
+        if engine.output_path and engine.output_path.exists():
+            prev_bench = json.loads(engine.output_path.open().read())
+            if engine.metadata.get('revision'):
+                if engine.metadata['revision'] == prev_bench.get('metadata', {}).get('revision'):
+                    print(f'Skipping {engine.path}: same revision as previous run')
+                    return
+            elif engine.metadata.get('revision_date'):
+                if engine.metadata['revision_date'] == prev_bench.get('metadata', {}).get('revision_date'):
+                    print(f'Skipping {engine.path}: same revision date as previous run')
+                    return
 
-    for filename in test_files:
-        path = bench_dir / filename
-        test = load_test(path)
-        test_runs = []
-
-        if args.reps.endswith('s'):
-            limit = None
-            limit_sec = int(args.reps[:-1])
+    # Determine test files
+    if not args.tests:
+        if engines[0].config.benchmark_suite:
+            args.tests = engines[0].config.benchmark_suite
+        elif args.v8_v7:
+            args.tests = V8_V7_TESTS
         else:
-            limit = int(args.reps)
-            limit_sec = None
+            args.tests = OCTANE_TESTS
+    assert args.tests
 
-        while limit is None or len(test_runs) < limit:
-            run = config.benchmark_run(binary, test, args)
+    last_write_time = time.time()
 
-            test_runs.append(run)
-            all_runs.append(run)
+    # Run tests in order
+    try:
+        for filename in args.tests:
+            path = bench_dir / filename
+            test = load_test(path)
 
-            if run.errors:
-                break
+            # Determine reps for this file (check for per-file override)
+            basename = os.path.basename(filename)
+            reps = args.reps_for_file.get(basename, args.reps_default)
 
-            if limit is None:
-                if run.real_time is None or run.real_time > limit_sec:
-                    limit = 1
+            if reps.endswith('s'):
+                limit = None
+                limit_sec = int(reps[:-1])
+            else:
+                limit = int(reps)
+                limit_sec = None
+
+            rep_count = 0
+            while limit is None or rep_count < limit:
+                def run_engine_test(engine: Engine):
+                    engine.runs.append(engine.config.benchmark_run(engine, test, args))
+
+                if len(engines) == 1:
+                    run_engine_test(engines[0])
                 else:
-                    limit = math.floor(limit_sec / run.real_time)
-                    limit = max(limit, 1)
-                    limit = min(limit, 100)
-                if args.verbose:
-                    print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
+                    # Run all engines in parallel for this repetition
+                    for engine in engines:
+                        engine.current_thread = threading.Thread(target=run_engine_test, args=(engine,))
+                        engine.current_thread.start()
 
-            pause_file = bench_dir / 'pause';
-            if pause_file.exists():
-                print(f'Pausing while {pause_file.as_posix()} exists')
-                while pause_file.exists():
-                    time.sleep(1)
+                    for engine in engines:
+                        engine.current_thread.join()
 
-        json_str = coalesce_runs_to_json(all_runs)
-        if output_path:
-            with open(output_path.with_suffix('.json.part'), 'w') as fp:
-                fp.write(json_str)
+                rep_count += 1
 
-    json_str = coalesce_runs_to_json(all_runs)
-    if args.verbose:
-        print(json_str)
+                any_errors = any(engine.runs[-1].errors for engine in engines)
+                if any_errors:
+                    break
 
-    if output_path:
-        with open(output_path, 'w') as fp:
-            fp.write(json_str)
-        output_path.with_suffix('.json.part').unlink(missing_ok=True)
-        print('Saved results to: %s' % str(output_path))
+                # Write partial results periodically
+                if time.time() - last_write_time >= 30:
+                    write_results(engines, partial=True)
+                    last_write_time = time.time()
+
+                # Determine limit based on first engine's timing
+                if limit is None and engines[0].runs:
+                    run = engines[0].runs[-1]
+                    if run.real_time is None or run.real_time > limit_sec:
+                        limit = 1
+                    else:
+                        limit = math.floor(limit_sec / run.real_time)
+                        limit = max(limit, 1)
+                    if args.verbose:
+                        print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
+
+                pause_file = bench_dir / 'pause'
+                if pause_file.exists():
+                    print(f'Pausing while {pause_file.as_posix()} exists')
+                    while pause_file.exists():
+                        time.sleep(1)
+
+            # Write partial results after each test file completes
+            write_results(engines, partial=True)
+            last_write_time = time.time()
+
+    except KeyboardInterrupt:
+        for engine in engines:
+            engine.kill()
+        sys.exit(1)
+
+    write_results(engines)
+
+    # Run comparison script on output files
+    compare_script = bench_dir / 'compare'
+    if compare_script.exists() and all(e.output_path for e in engines):
+        cmd = [str(compare_script)]
+        for e in engines:
+            if e.output_path.parent == Path.cwd():
+                cmd += [e.output_path.name]
+            else:
+                cmd += [str(e.output_path)]
+
+        print('+ %s' % shlex.join(cmd))
+        subprocess.run(cmd)
 
 if __name__ == '__main__':
     main()
