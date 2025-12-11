@@ -9,12 +9,14 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
+from __future__ import annotations
+
 import argparse
-import glob
+import datetime
 import json
 import math
 import os
-import platform
+import random
 import re
 import shlex
 import shutil
@@ -22,11 +24,15 @@ import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional, Union
+from typing import Any, Callable
+
+START_TIME = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M:%S.%f %Z')
+PERIODIC_SAVE_SECONDS = 10
 
 V8_V7_TESTS = [
    'richards.js',
@@ -131,7 +137,7 @@ class MemTest:
     basename: str
     script: str
 
-def load_test(path: Union[str, Path], drop_loads=False) -> MemTest:
+def load_test(path: str | Path, drop_loads=False) -> MemTest:
     """Read test case into memory, recursively resolving load() calls."""
 
     path = Path(path)
@@ -155,7 +161,7 @@ def load_test(path: Union[str, Path], drop_loads=False) -> MemTest:
     script = ''.join(lines).strip() + '\n'
     return MemTest(basename=basename, script=script)
 
-TestTransform = Callable[[MemTest], Union[str, MemTest]]
+type TestTransform = Callable[[MemTest], str | MemTest]
 
 class OctaneHarness:
     def __init__(self):
@@ -203,7 +209,7 @@ class HexTransform:
 #                    '', test.script, re.MULTILINE),
 
 class PolyfillTransform:
-    def __init__(self, snippets: List[str]):
+    def __init__(self, snippets: list[str]):
         lines = []
         for snippet in snippets:
             for line in snippet.strip().split('\n'):
@@ -215,15 +221,27 @@ class PolyfillTransform:
         #    return "'use strict';\n" + self.code + test.script
         return self.code + test.script
 
-class Binary:
+class Engine:
     path: Path
-    flags: Optional[List[str]]
-    metadata: Dict[str, Any]
+    flags: list[str] | None
+    metadata: dict[str, Any]
+    config: Config | None
+    output_path: Path | None
+    runs: list[Run]
+    current_thread: threading.Thread | None
+    current_run: Run | None
+    bench_json: dict[str, Any] | None
 
     def __init__(self, path_and_flags: str):
         self.path = Path(path_and_flags)
         self.flags = None
         self.metadata = {}
+        self.config = None
+        self.output_path = None
+        self.runs = []
+        self.current_thread = None
+        self.current_run = None
+        self.bench_json = None
 
         if ' ' in path_and_flags and not self.path.exists():
             args = shlex.split(path_and_flags)
@@ -238,7 +256,7 @@ class Binary:
                 self.path = Path(which_path)
 
         if not os.path.exists(self.path):
-            raise FileNotFoundError(self.path)
+            sys.exit(f"{self.path} doesn't exist")
 
         self.path = Path(os.path.abspath(str(self.path)))
 
@@ -246,34 +264,126 @@ class Binary:
         if json_path.exists():
             self.metadata = json.load(json_path.open())
 
+        self.bench_json = {
+            'binary': self.path.name,
+            'flags': self.flags,
+            'metadata': self.metadata,
+            'time': START_TIME,
+            'benchmarks': {},
+        }
+
+    def kill(self):
+        """Kill active subprocess if running and wait for thread."""
+        if self.current_run and self.current_run.proc and self.current_run.proc.poll() is None:
+            try:
+                os.killpg(os.getpgid(self.current_run.proc.pid), signal.SIGKILL)
+                self.current_run.proc.wait()
+            except:
+                pass
+        if self.current_thread:
+            self.current_thread.join(timeout=1.0)
+
     def __str__(self):
-        return f'Binary({repr(self.__dict__)})'
+        return f'Engine({repr(self.__dict__)})'
+
+    def add_run(self, run: Run):
+        """Append a Run to runs list and add its metrics to bench_json."""
+        self.runs.append(run)
+
+        if self.bench_json is None:
+            return
+
+        if 'benchmarks' not in self.bench_json:
+            self.bench_json['benchmarks'] = {}
+
+        # Append time if --append flag was used to help detect non-paired runs
+        if not self.bench_json['time'].endswith(START_TIME):
+            self.bench_json['time'] += ', ' + START_TIME
+
+        if not self.bench_json['benchmarks']:
+            self.bench_json['flags'] = run.flags
+        else:
+            existing = self.bench_json.get('flags') or []
+            assert existing == run.flags, f"flags mismatch: {existing} vs {run.flags}"
+
+        for key in run.scores.keys():
+            if key not in self.bench_json['benchmarks']:
+                self.bench_json['benchmarks'][key] = {
+                    'score': [], 'error': '', 'user': [], 'sys': [], 'real': [], 'rss_mb': []
+                }
+
+            d = self.bench_json['benchmarks'][key]
+            if run.errors:
+                d['error'] = run.errors[0]
+            if run.scores[key] is not None:
+                d['score'].append(run.scores[key])
+            if run.user_time is not None:
+                d['user'].append(run.user_time)
+            if run.sys_time is not None:
+                d['sys'].append(run.sys_time)
+            if run.real_time is not None:
+                d['real'].append(run.real_time)
+            if run.max_rss_kb is not None:
+                d['rss_mb'].append(round(run.max_rss_kb / 1024.0, 2))
+
+    def bench_json_str(self) -> str:
+        """Serialize bench_json to a formatted JSON string."""
+        if self.bench_json is None:
+            return '{}'
+
+        # Work on a copy to not modify the original
+        res = dict(self.bench_json)
+
+        # Remove empty top-level fields
+        for key in ['flags', 'metadata']:
+            if not res.get(key):
+                res.pop(key, None)
+
+        # Clean up empty arrays and error fields in benchmarks
+        res['benchmarks'] = {}
+        for key, d in self.bench_json['benchmarks'].items():
+            d = dict(d)
+            if d.get('error'):
+                if 'score' in d:
+                    del d['score']
+            else:
+                if 'error' in d:
+                    del d['error']
+            for k in ['user', 'sys', 'real', 'rss_mb']:
+                if k in d and (d[k] is None or len(d[k]) == 0):
+                    del d[k]
+            res['benchmarks'][key] = d
+
+        # indent except arrays
+        s = json.dumps(res, indent=2)
+        s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m[1])), s)
+        return s
 
 @dataclass
 class Run:
-    temp: Dict[str, Path]  # Temp paths
+    temp: dict[str, Path]  # Temp paths
     binary_path: Path
-    flags: List[str]
-    metadata: Dict[str, Any]
+    flags: list[str]
+    metadata: dict[str, Any]
     test: MemTest
     test_basename: str
     args: argparse.Namespace
-    timeout: Optional[float] = None
+    timeout: float | None = None
     command: str = ''  # bash command
     output: str = ''   # stdout+stderr combined
-    errors: List[str] = field(default_factory=list)
-    # Result of subprocess.run() with self.command
-    proc: Optional[subprocess.CompletedProcess] = None
+    errors: list[str] = field(default_factory=list)
+    # Result of subprocess.Popen() with self.command
+    proc: subprocess.Popen[bytes] | None = None
     # exit_code..max_rss_kb: as measured by /usr/bin/time
     # Note: exit_code captures exit code of javascript shell itself,
     # vs proc.returncode - exit code of bash command/pipeline
-    exit_code: Optional[int] = None
-    exit_signal: Optional[int] = None
-    user_time: Optional[float] = None  # seconds
-    real_time: Optional[float] = None
-    sys_time: Optional[float] = None
-    max_rss_kb: Optional[int] = None
-    scores: Dict[str, Union[int, float]] = field(default_factory=dict)
+    exit_code: int | None = None
+    exit_signal: int | None = None
+    user_time: float | None = None  # seconds
+    real_time: float | None = None
+    sys_time: float | None = None
+    max_rss_kb: int | None = None
+    scores: dict[str, int | float | None] = field(default_factory=dict)
 
     def to_dict(self):
         res = {}
@@ -293,35 +403,35 @@ DEFAULT_TIMEOUT = 1800
 
 class Config:
     # Flags to pass to binary (before script path). binary.flags takes precedence.
-    flags: List[str]
-    transforms: List[TestTransform]
-    polyfills: List[str]
+    flags: list[str]
+    transforms: list[TestTransform]
+    polyfills: list[str]
     # Pattern for error lines
     error_lines_re: re.Pattern
     # Pattern for mere warning lines, takes precedence over error_lines_re
-    warn_lines_re: Optional[re.Pattern]
+    warn_lines_re: re.Pattern | None
     # Pattern for lines to immediately filter out during the run, via egrep
-    filter_lines_re: Optional[str]
+    filter_lines_re: str | None
     timestamp_output: bool
     timeout: float
     # test basename => timeout
-    timeout_for_test: Dict[str, float]
+    timeout_for_test: dict[str, float]
     ignore_errors: bool
-    benchmark_suite: Optional[List[str]]
+    benchmark_suite: list[str] | None
 
     def __init__(
             self,
-            flags: List[str] = [],
-            polyfills: List[str] = [PRINT_PF],
-            transforms: List[TestTransform] = [],
+            flags: list[str] = [],
+            polyfills: list[str] = [PRINT_PF],
+            transforms: list[TestTransform] = [],
             error_lines_re: str = ERROR_LINE_REGEX_I,
-            warn_lines_re: Optional[str] = None,
-            filter_lines_re: Optional[str] = None,
+            warn_lines_re: str | None = None,
+            filter_lines_re: str | None = None,
             timestamp_output: bool = False,
             timeout: float = DEFAULT_TIMEOUT,
-            timeout_for_test: Dict[str, float] = {},
+            timeout_for_test: dict[str, float] = {},
             ignore_errors: bool = False,
-            benchmark_suite: Optional[List[str]] = None,
+            benchmark_suite: list[str] | None = None,
         ):
         self.flags = list(flags)
         self.transforms = list(transforms)
@@ -336,8 +446,8 @@ class Config:
         self.ignore_errors = ignore_errors
         self.benchmark_suite = benchmark_suite
 
-    def benchmark_run(self, binary: Binary, test: MemTest, args: argparse.Namespace) -> Run:
-        temp_dir=Path(tempfile.mkdtemp(prefix=f'{binary.path.name}-{test.basename.removesuffix(".js")}-'))
+    def benchmark_run(self, engine: Engine, test: MemTest, args: argparse.Namespace) -> Run:
+        temp_dir = Path(tempfile.mkdtemp(prefix=f'{engine.path.name}-{test.basename.removesuffix(".js")}-'))
 
         run = Run(
             temp = {
@@ -346,13 +456,15 @@ class Config:
                 'time': temp_dir / 'time',
                 'script': temp_dir / test.basename,
             },
-            binary_path=binary.path,
-            flags=(self.flags if binary.flags is None else binary.flags),
-            metadata=binary.metadata,
+            binary_path=engine.path,
+            flags=(self.flags if engine.flags is None else engine.flags),
+            metadata=engine.metadata,
             test=test,
             test_basename=test.basename,
             args=args,
         )
+
+        engine.current_run = run
 
         if run.args.timeout:
             run.timeout = run.args.timeout
@@ -378,6 +490,7 @@ class Config:
         else:
             shutil.rmtree(temp_dir)
 
+        engine.current_run = None
         return run
 
     def transform_test(self, run: Run):
@@ -421,10 +534,10 @@ class Config:
             )
             run.proc.wait(timeout=run.timeout)
         except subprocess.TimeoutExpired:
-            run.errors.append('Timeout (>%.0fs)' % run.timeout)
+            run.errors.append('Timeout (>%.0fs)' % (run.timeout or 0))
         finally:
             # Kill whole process group, not just directly launched process
-            if run.proc.poll() is None:
+            if run.proc is not None and run.proc.poll() is None:
                 os.killpg(os.getpgid(run.proc.pid), signal.SIGKILL)
                 run.proc.wait()
 
@@ -451,26 +564,27 @@ class Config:
                 continue
 
             assert ': ' in line, line
-            key, val = line.strip().split(': ', 1)
+            key, val_str = line.strip().split(': ', 1)
 
             if key not in keymap:
                 continue
 
-            if ':' in val:
-                secs = 0
-                for s in val.split(':'):
+            val: int | float
+            if ':' in val_str:
+                secs = 0.0
+                for s in val_str.split(':'):
                     secs = secs * 60 + float(s)
                 val = secs
-            elif '.' in val:
-                val = float(val)
+            elif '.' in val_str:
+                val = float(val_str)
             else:
-                val = int(val)
+                val = int(val_str)
 
             setattr(run, keymap[key], val)
 
-    def extract_benchmark_scores(self, run):
+    def extract_benchmark_scores(self, run: Run):
         expected = re.findall(r'''new BenchmarkSuite\(['"]([A-Za-z0-9]+)['"]''', run.test.script)
-        if 'BenchmarkSuite.GeometricMeanLatency' in run.test.script:
+        if 'BenchmarkSuite.GeometricMeanLatency' in run.test.script and not run.args.v8_v7:
             expected += [s + 'Latency' for s in expected if s in ['Splay', 'Mandreel']]
         if run.test_basename.startswith('richards.'):
             expected += ['Richards']
@@ -504,7 +618,7 @@ class Config:
             run.errors.append(line)
             break
 
-        if run.exit_signal == 9 and run.max_rss_kb >= 50 * 1048576:
+        if run.exit_signal == 9 and run.max_rss_kb is not None and run.max_rss_kb >= 50 * 1048576:
             run.errors.append('OOM (>%.0fG)' % (run.max_rss_kb / 1048576.))
         elif run.exit_signal is not None:
             try:
@@ -520,62 +634,79 @@ class Config:
                 run.errors.append('No scores in the output')
             elif run.exit_code != 0:
                 run.errors.append(f'Exit code: {run.exit_code}')
-            elif run.proc.returncode != 0:  # of bash command
+            elif run.proc is not None and run.proc.returncode != 0:  # of bash command
                 run.errors.append(f'Command "{run.command}" exited with {run.proc.returncode}')
 
         if self.ignore_errors:
             run.errors = []
 
-def coalesce_runs_to_json(runs: List[Run]) -> str:
-    """Produce a single summary json (returned pre-formatted as string)
-       from all benchmark runs for a single binary."""
 
-    res = {
-        'binary': runs[-1].binary_path.name,
-        'flags': runs[-1].flags,
-        'metadata': runs[-1].metadata,
-        'time': time.ctime(),
-        'benchmarks': {},
-    }
+class RepSpec:
+    """Manages repetition counts and time budgets for benchmark runs."""
 
-    if not res['flags']:
-        res.pop('flags')
+    def __init__(self, reps: list[str] | None):
+        """Parse -r/--reps arguments into default and per-file specs."""
 
-    for run in runs:
-        for key in run.scores.keys():
-            res['benchmarks'][key] = {'score': [], 'error': '', 'user': [], 'sys': [], 'real': [], 'rss_mb': []}
+        self.default_spec = '1'
+        self.file_specs: dict[str, str] = {}  # basename -> spec string
+        self.counts: dict[str, int] = {}  # path -> runs completed
+        self.limits: dict[str, int | None] = {}  # path -> max runs (or None if time-based and not yet calculated)
 
-    for run in runs:
-        for key in run.scores.keys():
-            d = res['benchmarks'][key]
-            if run.errors:
-                d['error'] = run.errors[0]
-            if run.scores[key] is not None:
-                d['score'].append(run.scores[key])
-            if run.user_time is not None:
-                d['user'].append(run.user_time)
-            if run.sys_time is not None:
-                d['sys'].append(run.sys_time)
-            if run.real_time is not None:
-                d['real'].append(run.real_time)
-            if run.max_rss_kb is not None:
-                d['rss_mb'].append(round(run.max_rss_kb / 1024.0, 2))
+        if reps:
+            for rep_spec in reps:
+                if ':' in rep_spec:
+                    basename, count = rep_spec.split(':', 1)
+                    self.file_specs[basename] = count
+                else:
+                    self.default_spec = rep_spec
 
-    for d in res['benchmarks'].values():
-        if d['error']:
-            del d['score']
-        else:
-            del d['error']
-        for k in ['user', 'sys', 'real', 'rss_mb']:
-            if d[k] is not None and len(d[k]) == 0:
-                del d[k]
+    def should_run(self, path: str) -> bool:
+        """Check if we should do another run of this test."""
 
-    # indent except arrays
-    s = json.dumps(res, indent=2)
-    s = re.sub(r'(?<=": )(\[[^\[\]]+\])', lambda m: json.dumps(json.loads(m[1])), s)
-    return s
+        basename = os.path.basename(path)
 
-# TODO json/jsonnet config
+        if basename not in self.counts:
+            self.counts[basename] = 0
+            self.limits[basename] = None
+
+            spec = self.file_specs.get(basename, self.default_spec)
+            if not spec.endswith('s'):
+                self.limits[basename] = int(spec)
+
+        limit = self.limits[basename]
+        count = self.counts[basename]
+        return limit is None or count < limit
+
+    def add(self, run: Run | None, verbose: bool = False):
+        """Record that a run completed, update limit if time-based."""
+
+        if not run:
+            return
+
+        basename = run.test_basename
+        spec = self.file_specs.get(basename, self.default_spec)
+
+        self.counts[basename] += 1
+
+        # Calculate limit for time-based specs after first run
+        if spec.endswith('s') and self.limits[basename] is None:
+            limit_sec = int(spec[:-1])
+
+            if run.real_time is None or run.real_time > limit_sec:
+                self.limits[basename] = 1
+            else:
+                self.limits[basename] = max(math.floor(limit_sec / run.real_time), 1)
+
+            if verbose:
+                print('real %.2fs => %d reps' % (run.real_time or 0, self.limits[basename] or 0), flush=True)
+
+    def __getitem__(self, path: str) -> int:
+        """Return the number of runs completed for the given path."""
+
+        basename = os.path.basename(path)
+        return self.counts.get(basename, 0)
+
+
 CONFIGS = {
   'besen': Config(
       # too slow on other tests or crashes
@@ -627,7 +758,6 @@ CONFIGS = {
           'typescript.js': 3600,  # passes but very slow
       },
   ),
-  # TODO 'js-interpreter_jsc': Config(host_engine='jsc'),  --want to configure to run it with custom shell
   'kjs': Config(
       filter_lines_re=r'^LEAK: [0-9]+ KJS::Node$',
   ),
@@ -646,9 +776,6 @@ CONFIGS = {
   ),
   'nashorn': Config(
       flags=['--language=es6'],
-  ),
-  'nashorn_ot': Config(
-      flags=['--language=es6', '-ot'],
   ),
   'ngs': Config(
       benchmark_suite=['richards.tiny-js.js'],
@@ -694,7 +821,6 @@ CONFIGS = {
   'sablejs': Config(
       warn_lines_re=r'\[WARN\]',
   ),
-  # TODO benchmark_polyfills=[]
   'spidermonkey_1.5': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.6': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
   'spidermonkey_1.7': Config(polyfills=[PRINT_PF, ES5_FOR_ES3_PF]),
@@ -721,125 +847,236 @@ CONFIGS = {
   ),
 }
 
-def pick_config(args, binary):
+def pick_config(args: argparse.Namespace, engine: Engine) -> Config:
     if args.config and args.config not in CONFIGS:
         sys.exit(f'Unknown config: {args.config}')
 
-    for name in [args.config, binary.path.name, binary.metadata.get('engine')]:
+    for name in [args.config, engine.path.name, engine.metadata.get('engine')]:
         if name:
             if name in CONFIGS:
                 return CONFIGS[name]
 
-            engine = name.split('_')[0]
-            if engine in CONFIGS:
-                return CONFIGS[engine]
+            engine_name = name.split('_')[0]
+            if engine_name in CONFIGS:
+                return CONFIGS[engine_name]
 
     return Config()
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-c', '--config', help='Config to use, "engine[_variant]"')
-    parser.add_argument('-k', '--keep', action='store_true', help='Keep temp dir')
-    parser.add_argument('-o', '--output', help='Write benchmark result to this file in JSON format')
-    parser.add_argument('-v', '--verbose', action='store_true')
-    parser.add_argument('-r', '--reps', default='1', type=str, metavar='repetitions (count or <seconds>s)')
-    parser.add_argument('-t', '--timeout', type=float, metavar='seconds')
-    parser.add_argument('-7', '--v8-v7', action='store_true')
-    parser.add_argument('--skip-unchanged', action='store_true',
-                        help="Skip run if output file exists and has same binary's revision")
-    parser.add_argument('binary', help='Binary to execute, optionally with flags')
-    parser.add_argument('tests', nargs='*', help='Test files to run')
-    args = parser.parse_args()
 
-    binary = Binary(args.binary)
+def run_test(engines: list[Engine], test: MemTest, args: argparse.Namespace) -> None:
+    def thread_func(engine):
+        run = engine.config.benchmark_run(engine, test, args)
+        engine.add_run(run)
+
+    if len(engines) == 1:
+        thread_func(engines[0])
+    else:
+        # Run all engines in parallel. Shuffle starting order every time
+        engines = random.sample(engines, len(engines))
+        for engine in engines:
+            engine.current_thread = threading.Thread(target=thread_func, args=(engine,))
+            engine.current_thread.start()
+        for engine in engines:
+            if engine.current_thread is not None:
+                engine.current_thread.join()
+
+
+def write_results(engines: list[Engine]) -> None:
+    for engine in engines:
+        if engine.output_path and engine.bench_json and engine.bench_json.get('benchmarks'):
+            json_str = engine.bench_json_str()
+            out_path = engine.output_path
+            part_path = out_path.with_suffix(out_path.suffix + '.part')
+
+            with open(part_path, 'w') as fp:
+                fp.write(json_str)
+                fp.flush()
+                fp.close()
+
+            part_path.replace(out_path)
+
+
+def run_compare(engines: list[Engine], print_command: bool = True) -> None:
+    """Run comparison script on output files."""
 
     bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    compare_script = bench_dir / 'compare'
+    if not compare_script.exists() or not all(e.output_path for e in engines):
+        return
 
-    output_path = args.output
-    if not (output_path or args.tests or args.config or binary.flags):
-        output_path = bench_dir / 'output' / (binary.path.name + '.json')
-        output_path.parent.mkdir(exist_ok=True)
-        print('Saving results to: %s' % str(output_path))
-    if output_path:
-        output_path = Path(output_path)
-
-    if args.skip_unchanged and output_path.exists():
-        prev_bench = json.loads(output_path.open().read())
-        if binary.metadata.get('revision'):
-            if binary.metadata['revision'] == prev_bench.get('metadata', {}).get('revision'):
-                print(f'Skipping {args.binary}: same revision as previous run')
-                return
-        elif binary.metadata.get('revision_date'):
-            if binary.metadata['revision_date'] == prev_bench.get('metadata', {}).get('revision_date'):
-                print(f'Skipping {args.binary}: same revision date as previous run')
-                return
-
-    config = pick_config(args, binary)
-    if args.tests:
-        test_files = args.tests
-    elif config.benchmark_suite:
-        test_files = config.benchmark_suite
-    elif args.v8_v7:
-        test_files = V8_V7_TESTS
-    else:
-        test_files = OCTANE_TESTS
-    assert test_files
-
-    all_runs = []
-
-    # TODO: run reps in zigzag order
-
-    for filename in test_files:
-        path = bench_dir / filename
-        test = load_test(path)
-        test_runs = []
-
-        if args.reps.endswith('s'):
-            limit = None
-            limit_sec = int(args.reps[:-1])
+    cmd = [str(compare_script)]
+    for e in engines:
+        if e.output_path is None:
+            continue
+        if e.output_path.parent == Path.cwd():
+            cmd += [e.output_path.name]
         else:
-            limit = int(args.reps)
-            limit_sec = None
+            cmd += [str(e.output_path)]
 
-        while limit is None or len(test_runs) < limit:
-            run = config.benchmark_run(binary, test, args)
+    if print_command:
+        print('+ %s' % shlex.join(cmd))
 
-            test_runs.append(run)
-            all_runs.append(run)
+    subprocess.run(cmd)
 
-            if run.errors:
-                break
 
-            if limit is None:
-                if run.real_time is None or run.real_time > limit_sec:
-                    limit = 1
-                else:
-                    limit = math.floor(limit_sec / run.real_time)
-                    limit = max(limit, 1)
-                    limit = min(limit, 100)
-                if args.verbose:
-                    print('real %.2fs => %d reps' % (run.real_time or 0, limit), flush=True)
+def maybe_pause():
+    bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
 
-            pause_file = bench_dir / 'pause';
-            if pause_file.exists():
-                print(f'Pausing while {pause_file.as_posix()} exists')
-                while pause_file.exists():
-                    time.sleep(1)
+    for file in [Path.cwd() / 'pause', bench_dir / 'pause']:
+        if file.exists():
+            print(f'Pausing while {file.as_posix()} exists')
+            while file.exists():
+                time.sleep(1)
 
-        json_str = coalesce_runs_to_json(all_runs)
-        if output_path:
-            with open(output_path.with_suffix('.json.part'), 'w') as fp:
-                fp.write(json_str)
 
-    json_str = coalesce_runs_to_json(all_runs)
-    if args.verbose:
-        print(json_str)
+def main():
+    parser = argparse.ArgumentParser(
+        usage='%(prog)s [options] engine [engine ...] [--] [test.js ...]',
+        description='Benchmark JavaScript engines. Engines and test files are positional arguments. '
+                    'Trailing *.js are treated as test scripts (up until optional -- separator). '
+                    'To pass flags to an engine, quote the engine with its flags: \'engine flags\'. '
+                    'If multiple engines are specified, they will be synchronously tested on '
+                    'the same tests in parallel.')
+    parser.add_argument('-a', '--append', action='store_true',
+                        help='append benchmark runs to existing output file')
+    parser.add_argument('-C', '--config', action='append', metavar='engine[_variant]',
+                        help='config to use')
+    parser.add_argument('-k', '--keep', action='store_true',
+                        help='keep temp dir')
+    parser.add_argument('-o', '--output', action='append', metavar='file.json',
+                        help='output json file for benchmark results')
+    parser.add_argument('-r', '--reps', action='append', type=str, metavar='[basename:]count[s]',
+                        help='repeat each benchmark this many times. Can specify as a time budget '
+                             'and per-test limits: -r 60s -r zlib.js:10 -> run zlib.js 10 times, '
+                             'others for 1 minute.')
+    parser.add_argument('-t', '--timeout', type=float, metavar='seconds',
+                        help='time limit for each single test execution')
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='verbose execution')
+    parser.add_argument('-7', '--v8-v7', action='store_true',
+                        help='run on v8-v7 test suite')
+    parser.add_argument('--skip-unchanged', action='store_true',
+                        help="skip if output file exists with same binary's revision")
 
-    if output_path:
-        with open(output_path, 'w') as fp:
-            fp.write(json_str)
-        output_path.with_suffix('.json.part').unlink(missing_ok=True)
-        print('Saved results to: %s' % str(output_path))
+    args, remaining = parser.parse_known_args()
+
+    # Parse engines and test files from remaining positional arguments
+    if '--' in remaining:
+        i = remaining.index('--')
+        args.engines = remaining[:i]
+        args.tests = remaining[i + 1:]
+    else:
+        # Pop trailing .js files as tests, but keep at least one arg as engine
+        args.tests = []
+        while len(remaining) > 1 and remaining[-1].endswith('.js'):
+            args.tests.append(remaining.pop())
+        args.tests.reverse()
+        args.engines = remaining
+
+    if not args.engines:
+        parser.error('At least one engine must be specified')
+
+    engines = [Engine(spec) for spec in args.engines]
+
+    # Set/choose config
+    if args.config:
+        if len(args.config) != len(engines):
+            sys.exit(f'Error: number of -C flags must match number of engines')
+        for idx, engine in enumerate(engines):
+            config_name = args.config[idx]
+            if config_name not in CONFIGS:
+                sys.exit(f'Unknown config: {config_name}')
+            engine.config = CONFIGS[config_name]
+    else:
+        for engine in engines:
+            engine.config = pick_config(args, engine)
+
+    # Set/generate output paths
+    if args.output:
+        if len(args.output) != len(engines):
+            sys.exit(f'Error: number of -o flags must match number of engines')
+        for i, engine in enumerate(engines):
+            engine.output_path = Path(args.output[i])
+    else:
+        next_suffix = {}
+        for engine in engines:
+            base_name = engine.path.name
+            engine.output_path = Path.cwd() / f'{base_name}{next_suffix.get(base_name, "")}.bench'
+            next_suffix[base_name] = next_suffix.get(base_name, 1) + 1
+            engine.output_path.parent.mkdir(exist_ok=True)
+            if args.verbose:
+                print(f'Output file: {str(engine.output_path)}')
+
+    # Read existing output files for --skip-unchanged and --append
+    for engine in engines:
+        if engine.output_path and engine.output_path.exists():
+            try:
+                prev_bench = json.loads(engine.output_path.open().read())
+            except json.JSONDecodeError:
+                prev_bench = None
+
+            if args.skip_unchanged and prev_bench and len(engines) == 1:
+                if engine.metadata.get('revision'):
+                    if engine.metadata['revision'] == prev_bench.get('metadata', {}).get('revision'):
+                        print(f'Skipping {engine.path}: same revision as previous run')
+                        return
+                elif engine.metadata.get('revision_date'):
+                    if engine.metadata['revision_date'] == prev_bench.get('metadata', {}).get('revision_date'):
+                        print(f'Skipping {engine.path}: same revision date as previous run')
+                        return
+
+            if args.append and prev_bench:
+                engine.bench_json = prev_bench
+
+    # Determine test files
+    if not args.tests:
+        if engines[0].config.benchmark_suite:
+            args.tests = engines[0].config.benchmark_suite
+        elif args.v8_v7:
+            args.tests = V8_V7_TESTS
+        else:
+            args.tests = OCTANE_TESTS
+    assert args.tests
+
+    bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
+    last_write_time = time.time()
+    reps = RepSpec(args.reps)
+
+    # Run tests in order
+    try:
+        for filename in args.tests:
+            path = bench_dir / filename
+            test = load_test(path)
+
+            while reps.should_run(filename):
+                maybe_pause()
+                run_test(engines, test, args)
+                reps.add(engines[0].runs[-1], args.verbose)
+
+                if any(e.runs[-1].errors for e in engines):
+                    break
+
+                # Write partial results periodically
+                if time.time() - last_write_time >= PERIODIC_SAVE_SECONDS:
+                    write_results(engines)
+                    last_write_time = time.time()
+
+            # Write partial results after each benchmark finishes
+            write_results(engines)
+            last_write_time = time.time()
+
+            if reps[filename] > 1 and len(engines) > 1:
+                run_compare(engines, print_command=False)
+
+    except KeyboardInterrupt:
+        print(f'Aborting benchmarking')
+        for engine in engines:
+            engine.kill()
+        sys.exit(1)
+
+    write_results(engines)
+    run_compare(engines)
+
 
 if __name__ == '__main__':
     main()
