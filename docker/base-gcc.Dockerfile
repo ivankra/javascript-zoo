@@ -10,13 +10,13 @@ ARG VER=14
 
 # Add sid repository in DEB822 format, with low priority, for gcc 15.
 # TODO: use heredoc after upgrading to podman 5+
-RUN if [ "$VER" = 15 ]; then \
+RUN if [ "$VER" != 14 ]; then \
       apt-get remove -y --purge build-essential gcc g++ gcc-14 g++-14 cpp-14 libstdc++-14-dev; \
       apt-get autoremove -y; \
       { \
         echo "Types: deb"; \
         echo "URIs: http://deb.debian.org/debian"; \
-        echo "Suites: sid"; \
+        echo "Suites: sid experimental"; \
         echo "Components: main"; \
         echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg"; \
       } >/etc/apt/sources.list.d/sid.sources && \
@@ -25,10 +25,17 @@ RUN if [ "$VER" = 15 ]; then \
         echo "Pin: release a=sid"; \
         echo "Pin-Priority: 1"; \
       } >/etc/apt/preferences.d/sid; \
+      { \
+        echo "Package: *"; \
+        echo "Pin: release a=experimental"; \
+        echo "Pin-Priority: 1"; \
+      } >/etc/apt/preferences.d/experimental; \
     fi
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends $(if [ "$VER" = 15 ]; then echo -t sid; fi) \
+    apt-get install -y --no-install-recommends \
+        $(if [ "$VER" = 15 ]; then echo -t sid; fi) \
+        $(if [ "$VER" = 16 ]; then echo -t experimental; fi) \
         binutils \
         build-essential \
         g++-$VER \
@@ -38,6 +45,11 @@ RUN apt-get update -y && \
 
 # V8's build system needs these four to be explicitly set
 ENV CC=/usr/bin/gcc-$VER CXX=/usr/bin/g++-$VER AR=/usr/bin/ar NM=/usr/bin/nm
+
+RUN update-alternatives --install /usr/bin/cc cc $CC 150 && \
+    update-alternatives --install /usr/bin/c++ c++ $CXX 150 && \
+    update-alternatives --install /usr/bin/gcc gcc $CC 150 && \
+    update-alternatives --install /usr/bin/g++ g++ $CXX 150
 
 # Record compiler's version in build metadata.
 RUN mkdir -p /dist && $CC -v 2>&1 | sed -ne 's/ *$//; s/.*gcc version /gcc /p' >/dist/jsz_cc

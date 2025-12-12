@@ -68,9 +68,11 @@ $(IID_DIR)/base: base*.Dockerfile $(IID_DIR)/runtime
 	$(DOCKER_BUILD) -t jsz-debian -t jsz-debian13 -f base-debian.Dockerfile .
 	$(DOCKER_BUILD) -t jsz-debian11 -f base-debian.Dockerfile --build-arg BASE=debian:bullseye .
 	$(DOCKER_BUILD) -t jsz-gcc14 -t jsz-gcc -f base-gcc.Dockerfile --build-arg=VER=14 .
+	$(DOCKER_BUILD) -t jsz-gcc15 -f base-gcc.Dockerfile --build-arg=VER=15 .
+	$(DOCKER_BUILD) -t jsz-gcc16 -f base-gcc.Dockerfile --build-arg=VER=16 .
 	$(DOCKER_BUILD) -t jsz-clang20 -t jsz-clang -f base-clang.Dockerfile --build-arg=VER=20 .
-	#$(DOCKER_BUILD) -t jsz-gcc15 -f base-gcc.Dockerfile --build-arg=VER=15 .
-	#$(DOCKER_BUILD) -t jsz-clang21 -f base-clang.Dockerfile --build-arg=VER=21 .
+	$(DOCKER_BUILD) -t jsz-clang21 -f base-clang.Dockerfile --build-arg=VER=21 .
+	$(DOCKER_BUILD) -t jsz-clang22 -f base-clang.Dockerfile --build-arg=VER=22 .
 	$(DOCKER_BUILD) -t jsz-golang -f base-golang.Dockerfile .
 	$(DOCKER_BUILD) -t jsz-node -f base-node.Dockerfile .
 	$(DOCKER_BUILD) -t jsz-rust -f base-rust.Dockerfile .
