@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-all: v9.js
+all: gen
 
-v9.js:
+gen:
 	./gen-octane.sh
 
 clean:
