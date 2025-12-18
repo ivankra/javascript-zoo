@@ -135,7 +135,9 @@ CID=$(cat "$CIDFILE")
 TMPCP="../.cache/dist-tmp-$ID"
 rm -rf "$TMPCP"
 mkdir -p "$TMPCP"
-$DOCKER cp "$CID":/dist "$TMPCP"
+$DOCKER cp "$CID":/dist "$TMPCP" || \
+  (sleep 1 && $DOCKER cp "$CID":/dist "$TMPCP") || \
+  (sleep 1 && $DOCKER cp "$CID":/dist "$TMPCP")
 
 rm -rf \
   "../dist/$ARCH/$ID" \

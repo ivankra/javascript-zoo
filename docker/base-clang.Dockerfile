@@ -1,6 +1,6 @@
 # Clang-based build environment.
 #
-# LTO is broken (LLVMgold.so errors): https://github.com/llvm/llvm-project/issues/139602
+# clang20 LTO is broken (LLVMgold.so errors): https://github.com/llvm/llvm-project/issues/139602
 #
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
@@ -8,7 +8,7 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-ARG VER=20
+ARG VER=22
 
 RUN apt-get remove -y build-essential gcc g++ gcc-14 g++-14 libstdc++-14-dev && apt-get autoremove -y
 # Note: removes libtool - depends on gcc

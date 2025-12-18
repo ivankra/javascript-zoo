@@ -6,9 +6,9 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-ARG VER=14
+ARG VER=16
 
-# Add sid repository in DEB822 format, with low priority, for gcc 15.
+# Add sid/experimental repositories in DEB822 format, with low priority, for gcc 15+.
 # TODO: use heredoc after upgrading to podman 5+
 RUN if [ "$VER" != 14 ]; then \
       apt-get remove -y --purge build-essential gcc g++ gcc-14 g++-14 cpp-14 libstdc++-14-dev; \
