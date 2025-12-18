@@ -19,7 +19,9 @@ fastschema-qjs:       --build-arg REV=461716f4f380f81ffd09378751f1812919cddbca
 goja:                 --build-arg REV=56b1242a5f863cb7e58f0403cdde74ba57ee2784
 graaljs:              --build-arg REV=graal-25.0.1
 hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
-jerryscript:          --build-arg REV=v3.0.0
+jerryscript:          --build-arg REV=v3.0.0 -f jerryscript.Dockerfile
+jerryscript_clang:    --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg BASE=jsz-clang
+jerryscript_o3:       --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg CMAKE_BUILD_TYPE=Release
 kiesel:               --build-arg REV=073f5d0a6dfafe96b4d2eab25c64f2b9be17e7e4 --build-arg ZIG_VER=0.15.2
 libjs:                --build-arg REV=11dc254d27e8f98ef95ef07d36da4610f0502299 -f libjs.Dockerfile
 libjs_gcc:            --build-arg REV=11dc254d27e8f98ef95ef07d36da4610f0502299 -f libjs.Dockerfile --build-arg BASE=jsz-gcc
