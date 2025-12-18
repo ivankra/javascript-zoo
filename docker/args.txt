@@ -36,9 +36,9 @@ porffor:              --build-arg REV=aeff9fbfb6468f74908bd73b467bf8e30184f4ec
 primjs:               --build-arg REV=2.15.1
 quanta:               --build-arg REV=ccfcc30e15c30e4d5e180eb990c0f0d283ad625d
 quickjs-ng:           --build-arg REV=5b7087ee61075b2df1582d5af949c795c7d6733a -f quickjs-ng.Dockerfile
-quickjs-ng_clang:     --build-arg REV=5b7087ee61075b2df1582d5af949c795c7d6733a -f quickjs-ng.Dockerfile --build-arg BASE=jsz-clang
+quickjs-ng_gcc:       --build-arg REV=5b7087ee61075b2df1582d5af949c795c7d6733a -f quickjs-ng.Dockerfile --build-arg BASE=jsz-gcc
 quickjs:              --build-arg REV=b22685617750e51d95f643d8eb1382dd09dd3bf1 -f quickjs.Dockerfile
-quickjs_clang:        --build-arg REV=b22685617750e51d95f643d8eb1382dd09dd3bf1 -f quickjs.Dockerfile --build-arg BASE=jsz-clang
+quickjs_gcc:          --build-arg REV=b22685617750e51d95f643d8eb1382dd09dd3bf1 -f quickjs.Dockerfile --build-arg BASE=jsz-gcc
 qv4:                  --build-arg REV=v6.10.1 -f qv4.Dockerfile
 qv4_clang:            --build-arg REV=v6.10.1 -f qv4.Dockerfile --build-arg BASE=jsz-clang
 qv4_jitless:          --build-arg REV=v6.10.1 -f qv4.Dockerfile --build-arg JITLESS=true
