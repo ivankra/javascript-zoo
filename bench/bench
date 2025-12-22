@@ -1041,6 +1041,7 @@ def main():
     bench_dir = Path(os.path.join(os.path.dirname(os.path.abspath(__file__))))
     last_write_time = time.time()
     reps = RepSpec(args.reps)
+    need_final_compare = False
 
     # Run tests in order
     try:
@@ -1066,7 +1067,10 @@ def main():
             last_write_time = time.time()
 
             if reps[filename] > 1 and len(engines) > 1:
-                run_compare(engines, print_command=False)
+                run_compare(engines)
+                need_final_compare = False
+            else:
+                need_final_compare = True
 
     except KeyboardInterrupt:
         print(f'Aborting benchmarking')
@@ -1075,7 +1079,8 @@ def main():
         sys.exit(1)
 
     write_results(engines)
-    run_compare(engines)
+    if need_final_compare:
+        run_compare(engines)
 
 
 if __name__ == '__main__':
