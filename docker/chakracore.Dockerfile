@@ -1,6 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
+# Requires clang, gcc unsupported
 ARG BASE=jsz-clang
 FROM $BASE
 

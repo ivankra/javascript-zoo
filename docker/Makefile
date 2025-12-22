@@ -120,3 +120,4 @@ clean-docker:
 	$(DOCKER) image prune
 
 .PHONY:
+.SUFFIXES:

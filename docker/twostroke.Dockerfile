@@ -20,7 +20,8 @@ RUN git apply twostroke.patch
 
 RUN export DIST=/dist/twostroke-dist && \
     mkdir -p $DIST/.bundle && \
-    bundle install --path $DIST/bundle && \
+    bundle config set path $DIST/bundle && \
+    bundle install && \
     cp -a lib *.rb Gemfile* $DIST/ && \
     echo '---' > $DIST/.bundle/config && \
     echo 'BUNDLE_PATH: "bundle"' >> $DIST/.bundle/config

@@ -11,6 +11,6 @@ WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
 COPY cesanta-elk.c ./
-RUN gcc -o elk -O3 -I. -DJS_DUMP elk.c cesanta-elk.c #examples/cmdline/main.c
+RUN cc -o elk -O3 -I. -DJS_DUMP elk.c cesanta-elk.c #examples/cmdline/main.c
 
 ENV JS_BINARY=/src/elk
