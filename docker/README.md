@@ -7,12 +7,12 @@ Rationale: Linux is the common denominator today, you can get them to
 run on any modern system through virtualization/containerization solutions,
 and that should be enough for benchmarking and testing.
 
-Build prerequisites: Linux with podman (preferably) or docker.
+Build prerequisites: Linux with [rootless podman](https://github.com/containers/podman/blob/main/docs/tutorials/rootless_tutorial.md)
+(preferably) or docker or equivalent.
 
 Make targets:
   * `make all`: build every Dockerfile
-    * If some build fail, try deleting (or renaming with `_` prefix)
-      corresponding Dockerfile or comment out entry in args.txt to keep going.
+  * `make all-ignoring-errors`: build every Dockerfile, skip failing ones.
   * `make <name>`: build a single engine
     * Calls `./build.sh <name>[.Dockerfile]`: wrapper for `docker build`.
     * Then `./dist.sh <name>[.Dockerfile]`: strips and copies binary into
@@ -23,15 +23,14 @@ Make targets:
   * `make hub`: create a multiarch version of `sh` container for publishing
     on Dockerhub. Prerequisite: `sudo apt install qemu-user-static`.
 
-Some targets have several build variants, e.g. `*_jitless` variants with
-JIT compiled out. Naming convention: `engine_variant`. Variant-specific
-build arguments are defined in `args.txt`. It is also used to pin
-specific revisions.
+Some targets have several build variants (naming convention: `engine_variant`):
+  * `*_jitless`: built with JIT compiled out
+  * `*_clang`, `*_gcc`: built with a secondary compiler choice (usually worse)
+  * `*_intl`: built with full Intl/ECMA-402 support (in a non-intl build,
+     if possible, it is disabled to trim binary size)
 
-Most engines are built statically from the original source code.
-Some (esp. V8) are built without libicu/Intl (ECMA-402), Temporal and
-Wasm to trim excessive binary bloat. `*_full` variants are built with
-all features.
+Variant-specific build arguments are defined in `args.txt`. It is also
+used to pin specific revisions.
 
 ## Docker Hub
 

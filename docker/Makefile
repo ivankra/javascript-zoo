@@ -44,6 +44,9 @@ endif
 
 all: base $(TARGETS)
 
+all-ignoring-errors: base
+	-for target in $(TARGETS); do make "$$target"; done
+
 dist: $(patsubst %,$(DIST_DIR)/%.json,$(TARGETS))
 	@true
 
