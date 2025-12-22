@@ -84,7 +84,7 @@ ENGINE_JSON="${ENGINE_BINARY}.json"
 
 ENGINE_NAME="${ENGINE_CMD[0]##*/}"   # basename
 if [[ "$ENGINE_NAME" != spidermonkey_[12]* ]];then
-  ENGINE_NAME="${ENGINE_NAME%_*}"    # strip _variant, jsc_gcc -> jsc
+  ENGINE_NAME="${ENGINE_NAME%%_*}"   # strip _variant suffixes, quickjs_gcc_lto -> quickjs
 fi
 
 case "$ENGINE_NAME" in
