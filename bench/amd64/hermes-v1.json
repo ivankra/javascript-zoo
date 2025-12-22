@@ -1,16 +1,15 @@
 {
-  "binary": "hermes_static",
+  "binary": "hermes-v1",
   "flags": ["-O", "-w"],
   "metadata": {
     "arch": "amd64",
     "binary_sha256": "4ae5f93d51170a1a2542a27bef9a7d483eff6d4cfe7e2b00ce131c25688d63b8",
     "binary_size": 5423664,
     "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-    "engine": "hermes",
+    "engine": "hermes-v1",
     "repository": "https://github.com/facebook/hermes.git",
     "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
     "revision_date": "2025-10-24",
-    "variant": "static",
     "version": "250829098.0.4"
   },
   "time": "Wed Dec  3 11:35:00 2025",

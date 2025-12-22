@@ -1,7 +1,8 @@
-# Static Hermes
+# Hermes V1
 
-Next version of [Hermes](hermes.md) engine, designed to utilize optional
-typing annotations for more efficient AOT code generation.
+Next generation of [Hermes](hermes.md) engine (formerly "Static Hermes"),
+designed to utilize optional typing annotations for more efficient AOT
+codegen.
 
 * Homepage:    https://hermesengine.dev/
 * Repository:  https://github.com/facebook/hermes.git <span class="shields"><img src="https://img.shields.io/github/stars/facebook/hermes?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/facebook/hermes?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
@@ -18,12 +19,14 @@ typing annotations for more efficient AOT code generation.
 
 ## Links
 
-* https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement
+* [Static Hermes (React Native EU 2023 Announcement)](https://speakerdeck.com/tmikov2023/static-hermes-react-native-eu-2023-announcement)
+* [From Static Hermes to Hermes V1: The Road to Default](https://www.callstack.com/podcasts/from-static-hermes-to-hermes-v1-the-road-to-default)
+* [React Native 0.82 - A New Era](https://reactnative.dev/blog/2025/10/08/react-native-0.82)
 
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../conformance/results/hermes_static_intl.txt">Full log</a>.</li>
+<li>Based on this repository's basic test suite. <a href="../conformance/results/hermes-v1_intl.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/with.js">with.js</a>: with.js:15:1: error: with statement is not supported with.js:38:1: error: with statement is not supported Emitted 2 errors. exiting.
 </pre></li>

@@ -58,9 +58,9 @@ yavashark:            --build-arg REV=0c5acce1cf9ceadda76b5dfe393296be266dc77a
 hermes:               --build-arg REV=hermes-v0.14.0 -f hermes.Dockerfile
 hermes_clang:         --build-arg REV=hermes-v0.14.0 -f hermes.Dockerfile --build-arg BASE=jsz-clang
 # static_h: hermes-v250829098.0.4 -> 250829098.0.0-stable @20251118 -> forked from static_h @20250830
-hermes_static:        --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile
-hermes_static_clang:  --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg BASE=jsz-clang
-hermes_static_intl:   --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg INTL=true
+hermes-v1:            --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile
+hermes-v1_clang:      --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg BASE=jsz-clang
+hermes-v1_intl:       --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg INTL=true
 
 # JavaScriptCore: pick revision from https://developer.apple.com/documentation/safari-technology-preview-release-notes/
 # stp-release-232: https://commits.webkit.org/302449@main 377ac04 2025-11-02

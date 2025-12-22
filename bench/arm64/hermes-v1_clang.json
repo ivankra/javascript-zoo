@@ -1,16 +1,16 @@
 {
-  "binary": "hermes_static_clang",
+  "binary": "hermes-v1_clang",
   "flags": ["-O", "-w"],
   "metadata": {
     "arch": "arm64",
     "binary_sha256": "6ab7ff3b16d5be9a90cd478cfd883ab285aa5e10fb1b56f3cd33115a0c4a555c",
     "binary_size": 4135400,
     "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-    "engine": "hermes",
+    "engine": "hermes-v1",
     "repository": "https://github.com/facebook/hermes.git",
     "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
     "revision_date": "2025-10-24",
-    "variant": "static_clang",
+    "variant": "clang",
     "version": "250829098.0.4"
   },
   "time": "Fri Dec  5 16:57:14 2025",

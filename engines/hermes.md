@@ -4,6 +4,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 
 * Homepage:    https://hermesengine.dev/
 * Repository:  https://github.com/facebook/hermes.git <span class="shields"><img src="https://img.shields.io/github/stars/facebook/hermes?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/facebook/hermes?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Branch:      [main](https://github.com/facebook/hermes/tree/main)
 * LOC:         170021 (`cloc include lib tools/hermes`)
 * Language:    C++
 * License:     MIT
@@ -16,7 +17,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 
 ## Note
 
-Only `static_h` branch is being actively developed now - [Static Hermes](hermes_static.md).
+Only `static_h` branch is being actively developed now - [Hermes V1](hermes-v1.md) (formerly "Static Hermes").
 
 ## Conformance
 

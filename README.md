@@ -13,7 +13,7 @@
 
 ## List of JavaScript engines
 
-<!-- update.py: format_table([r for r in data if not re.search('JavaScript-like', r.get('type', ''))], columns={'Engine': 'engine_link', 'Language': 'language_abbr', 'Description': 'summary', 'Standard': 'standard_abbr', 'Years': 'years', 'LOC': 'loc_abbr', 'License': 'license'}) -->
+<!-- update.py: format_table([r for r in data if r['id'] != 'hermes-v1' and not re.search('JavaScript-like', r.get('type', ''))], columns={'Engine': 'engine_link', 'Language': 'language_abbr', 'Description': 'summary', 'Standard': 'standard_abbr', 'Years': 'years', 'LOC': 'loc_abbr', 'License': 'license'}) -->
 | Engine | Language | Description | Standard | Years | LOC | License |
 |---|---|---|---|---|---|---|
 | [V8](engines/v8.md)<br>[<div class="shields"><img src="https://img.shields.io/github/stars/v8/v8?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/v8/v8?label=&style=flat-square" alt="Last commit" title="Last commit"></div>](https://github.com/v8/v8) | C++ | JavaScript engine of Chrome, Node.js etc. | ESnext | 2008- | 1.3M | BSD-3 |

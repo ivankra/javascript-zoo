@@ -1,12 +1,12 @@
 # Building Hermes:
 # https://github.com/facebook/hermes/blob/main/doc/BuildingAndRunning.md
 #
-# Hermes (main branch):
+# Hermes - main branch:
 #   * Not actively developed anymore
 #   * Release branches: rn/0.xx-stable
 #   * Tags: v0.x.x, hermes-v0.14.0
 #
-# Static Hermes (static_h branch)
+# Hermes V1 (formerly Static Hermes) - static_h branch:
 #   * Next generation of Hermes in active development, ~3k commits ahead of main
 #   * Release branch: 250829098.0.0-stable
 #   * Tags: hermes-v250829098.0.x
