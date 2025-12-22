@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "0dea4cd5610e590b8e2d03ae41a830436a102fb00f7c1cfb487f1a11c5a5e542", "binary_size": 396408, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a", "revision_date": "2025-11-07", "version": "1.3.8"}
+Metadata: {"arch": "arm64", "binary_sha256": "e89cb74583e642217f1386302743d3b47350296d4eaa5fc37bc779fbac1f002d", "binary_size": 396080, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a", "revision_date": "2025-11-07", "version": "1.3.8"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -243,7 +243,7 @@ es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
-es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.exec.js: index failed
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
@@ -251,7 +251,7 @@ es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: concat with no arguments failed
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: OK
+es3/String.prototype.match.js: non-global match failed
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK

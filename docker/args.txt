@@ -27,7 +27,7 @@ libjs:                --build-arg REV=11dc254d27e8f98ef95ef07d36da4610f0502299 -
 libjs_gcc:            --build-arg REV=11dc254d27e8f98ef95ef07d36da4610f0502299 -f libjs.Dockerfile --build-arg BASE=jsz-gcc
 modernc-quickjs:      --build-arg REV=v0.17.0
 mujs:                 --build-arg REV=1.3.8 -f mujs.Dockerfile
-mujs_clang:           --build-arg REV=1.3.8 -f mujs.Dockerfile --build-arg BASE=jsz-clang
+mujs_gcc:             --build-arg REV=1.3.8 -f mujs.Dockerfile --build-arg BASE=jsz-gcc
 nashorn:              --build-arg REV=release-15.7
 njs:                  --build-arg REV=bd0411912b1f9007aa5101efb1de5f7f0da248c1
 nova:                 --build-arg REV=790d80040202290325c75296fb1426eb8a3c5c65

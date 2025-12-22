@@ -1,7 +1,8 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-gcc
+# clang build is slightly faster, less flaky
+ARG BASE=jsz-clang
 FROM $BASE
 
 ARG REPO=https://codeberg.org/ccxvii/mujs.git
