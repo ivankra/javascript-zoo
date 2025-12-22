@@ -10,15 +10,7 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-# LTO=y to enable link-time optimization
-ARG LTO=
-
-RUN cmake \
-      -B build \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DCMAKE_INSTALL_PREFIX=/usr/local \
-      $(if [ $LTO = y ]; then echo -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON; fi) && \
-    cmake --build build -j$(nproc)
+RUN make
 
 ENV JS_BINARY=/src/build/qjs
 CMD ${JS_BINARY}
