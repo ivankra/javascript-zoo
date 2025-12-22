@@ -38,7 +38,7 @@ RUN build/install-build-deps.sh --no-prompt
 
 # Build clang - no pre-built linux arm64 toolchain for third_party/llvm-build
 #RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
-#    if [ $ARCH = "arm64" ]; then \
+#    if [ "$ARCH" = "arm64" ]; then \
 #      python build/linux/sysroot_scripts/install-sysroot.py --arch="$ARCH" && \
 #      tools/clang/scripts/build.py --without-android --without-fuchsia --host-cc=gcc --host-cxx=g++ --use-system-cmake --disable-asserts --with-ml-inliner-model=""; \
 #    fi

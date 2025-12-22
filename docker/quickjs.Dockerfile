@@ -20,8 +20,8 @@ ARG LTO=
 
 RUN git rev-parse --short=8 HEAD >VERSION && \
     sed -i "s/ -O2/ $OPT/" Makefile && \
-    if ${CC:-cc} --version 2>/dev/null | grep -q clang; then export CONFIG_CLANG=y; fi; \
-    if [ $LTO = y ]; then export CONFIG_LTO=y; fi; \
+    if ${CC:-cc} --version 2>&1 | grep -q clang; then export CONFIG_CLANG=y; fi; \
+    if [ "$LTO" = y ]; then export CONFIG_LTO=y; fi; \
     make -j$(nproc) qjs
 
 ENV JS_BINARY=/src/qjs
