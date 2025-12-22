@@ -69,11 +69,10 @@ jsc_jitless:          --build-arg REV=377ac04d7e8c16330de03f4c2a500ec14437bbc4 -
 jsc_gcc:              --build-arg REV=377ac04d7e8c16330de03f4c2a500ec14437bbc4 -f jsc.Dockerfile --build-arg BASE=jsz-gcc
 
 # V8: pick latest beta from https://chromiumdash.appspot.com/releases?platform=Linux
-v8_pgo:               --build-arg REV=143.0.7499.40
-v8:                   --build-arg REV=14.3.127.16
-v8_jitless:           --build-arg REV=14.3.127.16 -f v8.Dockerfile --build-arg JITLESS=true
-#v8_gcc:              --build-arg REV=14.3.127.16 -f v8.Dockerfile --build-arg BASE=jsz-gcc
-# lkgr to get most recent ICU for now
+v8_pgo:               --build-arg REV=144.0.7559.31
+v8:                   --build-arg REV=14.4.258.13
+v8_jitless:           --build-arg REV=14.4.258.13 -f v8.Dockerfile --build-arg JITLESS=true
+v8_gcc:               --build-arg REV=14.4.258.13 -f v8_gcc.Dockerfile --build-arg BASE=jsz-gcc
 v8_intl:              --build-arg REV=lkgr -f v8.Dockerfile --build-arg INTL=true
 
 # Old stable engines, ~years since update
