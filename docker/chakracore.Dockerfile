@@ -15,6 +15,9 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 ARG INTL=
 ARG JITLESS=
 
+COPY chakracore-arm64.patch ./
+RUN git apply chakracore-arm64.patch
+
 RUN ./build.sh --ninja --static \
       $(if [ "$INTL" = true ]; then echo --embed-icu; else echo --no-icu --without-intl; fi) \
       $(if [ "$JITLESS" = true ]; then echo --no-jit; fi)

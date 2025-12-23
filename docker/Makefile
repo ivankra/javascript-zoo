@@ -15,7 +15,7 @@ FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 
 # bali: arm64 build broken
-# chakracore: doesn't support arm64 on Linux, only Windows/macOS
+# chakracore: only jitless builds works on linux arm64
 # dscriptcpp: hacky non-portable code, 32-bit x86 only
 # iv-lv5: JIT-less on arm64, don't build same thing under a different name
 # quickjit: x64 only
@@ -23,7 +23,7 @@ ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 # starlight: arm64 build broken
 AMD64_ONLY_TARGETS := \
   bali \
-  chakracore% \
+  chakracore \
   dscriptcpp \
   iv-lv5_jitless \
   quickjit \

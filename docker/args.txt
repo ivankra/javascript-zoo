@@ -8,9 +8,9 @@ bali:                 --build-arg REV=99f0aa14155d0b0c9e39f6273a51c35b497207de
 boa:                  --build-arg REV=5cbbb72a30a6a71e64a20054248b3bd34917d535
 brimstone:            --build-arg REV=fbbdf6db7373ced37d4b046fb3ddc7dd04e7561a
 cesanta-mjs:          --build-arg REV=da0d06d42644b04e94be7db54c0e8e2b7babe38b
-chakracore:           --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 -f chakracore.Dockerfile
-chakracore_intl:      --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 -f chakracore.Dockerfile --build-arg INTL=true
-chakracore_jitless:   --build-arg REV=2dba810c925eb366e44a1f7d7a5b2e289e2f8510 -f chakracore.Dockerfile --build-arg JITLESS=true
+chakracore:           --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile
+chakracore_intl:      --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile --build-arg INTL=true --build-arg JITLESS=true --build-arg BASE=jsz-clang20
+chakracore_jitless:   --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile --build-arg JITLESS=true
 escargot:             --build-arg REV=4a4f8a6d7ebcc578d6d6a07024173d0aea8f0db7 -f escargot.Dockerfile
 escargot_clang:       --build-arg REV=4a4f8a6d7ebcc578d6d6a07024173d0aea8f0db7 -f escargot.Dockerfile --build-arg BASE=jsz-clang
 espruino:             --build-arg REV=RELEASE_2V28
