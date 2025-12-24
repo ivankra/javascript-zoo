@@ -16,37 +16,24 @@ ARG REV1=master
 WORKDIR /src
 RUN git clone --depth=1 --branch="$REV1" "$REPO" .
 
-RUN sed -i 's/geteuid() == 0/geteuid() == 42/' Meta/ladybird.py
-RUN Meta/ladybird.py vcpkg
-
-# An extra cmake run just for docker to cache vcpkg deps build (extremely slow),
-# so that subsequent builds at a different REV would reuse them.
-RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
-    cmake \
-      -S . -B Build/release --preset Release \
-      -DCMAKE_MAKE_PROGRAM=ninja \
-      -DCMAKE_C_COMPILER=$CC \
-      -DCMAKE_CXX_COMPILER=$CXX \
-      -DBUILD_SHARED_LIBS=OFF \
-      -DENABLE_GUI_TARGETS=OFF \
-      -DENABLE_QT=OFF \
-      -DVCPKG_TARGET_TRIPLET="$ARCH-linux-release"
+RUN sed -i 's/geteuid() == 0/geteuid() == 42/' Meta/ladybird.py && \
+    Meta/ladybird.py vcpkg
 
 ARG REV=master
-RUN git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD
+RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD
 
-RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
-    cmake \
-      -S . -B Build/release --preset Release \
-      -DCMAKE_MAKE_PROGRAM=ninja \
+# Truncate vcpkg dependencies to a minimal necessary set for LibJS build
+RUN sed -i '/"dependencies":/,/^  ],$/c "dependencies": ["fast-float", "icu", "libtommath", "openssl", "simdutf", "sqlite3", "zlib"],' vcpkg.json
+
+RUN cmake -B build -G Ninja --preset=Release \
       -DCMAKE_C_COMPILER=$CC \
       -DCMAKE_CXX_COMPILER=$CXX \
       -DBUILD_SHARED_LIBS=OFF \
       -DENABLE_GUI_TARGETS=OFF \
       -DENABLE_QT=OFF \
-      -DVCPKG_TARGET_TRIPLET="$ARCH-linux-release"
+      -DVCPKG_TARGET_TRIPLET="$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/')-linux-release"
 
-RUN ninja -C Build/release test262-runner js
+RUN ninja -C build test262-runner js
 
-ENV JS_BINARY=/src/Build/release/bin/js
+ENV JS_BINARY=/src/build/bin/js
 CMD ${JS_BINARY}
