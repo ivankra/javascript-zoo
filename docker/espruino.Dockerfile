@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-gcc
+ARG BASE=jsz-gcc14
 FROM $BASE
 
 ARG REPO=https://github.com/espruino/Espruino.git
