@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "binary_sha256": "b4ff59bc7e2357d1974d908a37fd516cd4d27fe4edfc100808692092d0de1ab5", "binary_size": 264880, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "mquickjs", "repository": "https://github.com/bellard/mquickjs.git", "revision": "e8d32813e39ed7ea04c7936d2b612b57bee1ac3e", "revision_date": "2025-12-24"}
+es1/Array.js: TypeError: invalid array subscript
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: TypeError: invalid array subscript
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: TypeError: not an array
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: TypeError: not an array
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: TypeError: Boolean constructor not supported
+es1/Boolean.prototype.constructor.js: TypeError: Boolean constructor not supported
+es1/Boolean.prototype.toString.js: TypeError: Boolean constructor not supported
+es1/Boolean.prototype.valueOf.js: TypeError: Boolean constructor not supported
+es1/Date.diff.js: TypeError: only Date.now() is supported
+es1/Date.js: TypeError: only Date.now() is supported
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getDay.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getFullYear.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getHours.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getMilliseconds.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getMinutes.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getMonth.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getSeconds.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getTimezoneOffset.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getTime.js: TypeError: only Date.now() is supported
+es1/Date.prototype.getUTCDate.js: TypeError: not a function
+es1/Date.prototype.getUTCDay.js: TypeError: not a function
+es1/Date.prototype.getUTCFullYear.js: TypeError: not a function
+es1/Date.prototype.getUTCHours.js: TypeError: not a function
+es1/Date.prototype.getUTCMilliseconds.js: TypeError: not a function
+es1/Date.prototype.getUTCMinutes.js: TypeError: not a function
+es1/Date.prototype.getUTCMonth.js: TypeError: not a function
+es1/Date.prototype.getUTCSeconds.js: TypeError: not a function
+es1/Date.prototype.setDate.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setFullYear.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setHours.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setMilliseconds.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setMinutes.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setMonth.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setSeconds.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setTime.js: TypeError: only Date.now() is supported
+es1/Date.prototype.setUTCDate.js: TypeError: not a function
+es1/Date.prototype.setUTCFullYear.js: TypeError: not a function
+es1/Date.prototype.setUTCHours.js: TypeError: not a function
+es1/Date.prototype.setUTCMilliseconds.js: TypeError: not a function
+es1/Date.prototype.setUTCMinutes.js: TypeError: not a function
+es1/Date.prototype.setUTCMonth.js: TypeError: not a function
+es1/Date.prototype.setUTCSeconds.js: TypeError: not a function
+es1/Date.prototype.toLocaleString.js: TypeError: only Date.now() is supported
+es1/Date.prototype.toString.js: TypeError: only Date.now() is supported
+es1/Date.prototype.toUTCString.js: TypeError: only Date.now() is supported
+es1/Date.prototype.valueOf.js: TypeError: only Date.now() is supported
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: TypeError: number constructor not supported
+es1/Number.prototype.constructor.js: TypeError: number constructor not supported
+es1/Number.prototype.toString.js: TypeError: number constructor not supported
+es1/Number.prototype.valueOf.js: TypeError: number constructor not supported
+es1/Object.js: Object(number) failed; new Object(string) failed
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: TypeError: not a function
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: TypeError: string constructor not supported
+es1/String.length.js: TypeError: string constructor not supported
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: TypeError: string constructor not supported
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: TypeError: string constructor not supported
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: TypeError: string constructor not supported
+es1/annex-b.Date.prototype.getYear.js: TypeError: only Date.now() is supported
+es1/annex-b.Date.prototype.setYear.js: TypeError: only Date.now() is supported
+es1/annex-b.Date.prototype.toGMTString.js: TypeError: only Date.now() is supported
+es1/annex-b.global.escape.js: ReferenceError: variable 'escape' is not defined
+es1/annex-b.global.unescape.js: ReferenceError: variable 'unescape' is not defined
+es1/annex-b.literals.octal.js: SyntaxError: invalid number literal
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: TypeError: not a function
+es1/arguments.js: OK
+es1/asi.eval.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es1/asi.js: TypeError: not an object
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: TypeError: Boolean constructor not supported
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: true failed; false failed; 123 failed; 'hello' failed
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: TypeError: string constructor not supported
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: SyntaxError: invalid lvalue for delete
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: SyntaxError: unexpected character in expression
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: TypeError: not an array
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: TypeError: not an array
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: TypeError: not an array
+es3/Array.prototype.shift.js: TypeError: invalid array subscript
+es3/Array.prototype.slice.generic.js: TypeError: not an array
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: TypeError: not an array
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: TypeError: not a function
+es3/Array.prototype.unshift.generic.js: TypeError: not an array
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: TypeError: only Date.now() is supported
+es3/Date.prototype.toLocaleDateString.js: TypeError: only Date.now() is supported
+es3/Date.prototype.toLocaleString.js: TypeError: only Date.now() is supported
+es3/Date.prototype.toLocaleTimeString.js: TypeError: only Date.now() is supported
+es3/Date.prototype.toTimeString.js: TypeError: only Date.now() is supported
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: TypeError: not an Error object at <eval> (Error.prototype.message.js:6:27)
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: TypeError: not an array
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: SyntaxError: catch variable already exists
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: OK
+es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError: catch variable already exists
+es3/Number.prototype.toFixed.js: OK
+es3/Number.prototype.toLocaleString.js: TypeError: not a function
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: TypeError: not a function
+es3/Object.prototype.propertyIsEnumerable.js: TypeError: not a function
+es3/Object.prototype.toLocaleString.js: TypeError: not a function
+es3/RegExp.global.js: constructor with g failed; constructor without g failed; literal with g failed; literal without g failed
+es3/RegExp.ignoreCase.js: constructor with i failed; constructor without i failed; literal with i failed; literal without i failed
+es3/RegExp.js: global flag failed; ignoreCase flag failed; multiline flag failed; RegExp passthrough failed
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: constructor with m failed; constructor without m failed; literal with m failed; literal without m failed
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: format failed
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: TypeError: number constructor not supported
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: TypeError: not a function
+es3/String.prototype.match.generic.js: TypeError: number constructor not supported
+es3/String.prototype.match.js: TypeError: not a regular expression
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: TypeError: number constructor not supported
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: TypeError: number constructor not supported
+es3/String.prototype.search.js: TypeError: not a regular expression
+es3/String.prototype.search.str.js: TypeError: not a regular expression
+es3/String.prototype.slice.generic.js: TypeError: number constructor not supported
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: OK
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: TypeError: not a function
+es3/String.prototype.toLocaleUpperCase.js: TypeError: not a function
+es3/annex-b.String.prototype.substr.js: TypeError: not a function
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: SyntaxError: catch variable already exists at global.RangeError.thrown.js:30:10
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: SyntaxError: catch variable already exists at global.ReferenceError.thrown.js:27:10
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect at global.SyntaxError.thrown.js:11:8
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: SyntaxError: catch variable already exists at global.TypeError.thrown.js:28:10
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: SyntaxError: catch variable already exists at global.URIError.thrown.js:30:10
+es3/global.decodeURIComponent.js: ReferenceError: variable 'decodeURIComponent' is not defined
+es3/global.decodeURI.js: ReferenceError: variable 'decodeURI' is not defined
+es3/global.encodeURIComponent.js: ReferenceError: variable 'encodeURIComponent' is not defined
+es3/global.encodeURI.js: ReferenceError: variable 'encodeURI' is not defined
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: SyntaxError: unexpected character
+es3/instanceof.js: TypeError: only Date.now() is supported
+es3/in.js: TypeError: invalid array subscript
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: SyntaxError: unexpected character in expression
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: SyntaxError: unexpected character
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: SyntaxError: unexpected character
+es3/source.whitespace.js: SyntaxError: unexpected character
+es3/source.whitespace.unicode.js: SyntaxError: unexpected character
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: SyntaxError: catch variable already exists
+es3/try-catch-throw.js: SyntaxError: catch variable already exists
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: SyntaxError: unexpected character in expression
+es5/Array.prototype.filter.js: SyntaxError: unexpected character in expression
+es5/Array.prototype.forEach.js: SyntaxError: unexpected character in expression
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: SyntaxError: unexpected character in expression
+es5/Array.prototype.some.js: SyntaxError: unexpected character in expression
+es5/Array.prototype.sort.TypeError.js: SyntaxError: catch variable already exists at Array.prototype.sort.TypeError.js:18:10
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: TypeError: only Date.now() is supported
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function; TypeError: only Date.now() is supported
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; TypeError: cannot read property 'call' of undefined
+es5/Function.prototype-not-enumerable.js: TypeError: not a function
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: length property incorrect; TypeError: not a constructor
+es5/JSON.js: OK
+es5/JSON.parse.js: SyntaxError: catch variable already exists
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: failed to drop undefined/function values; didn't call user-provided toJSON() method; undefined should return undefined
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
+es5/Object.create.js: TypeError: unsupported additional properties
+es5/Object.defineProperties.js: Object.defineProperties not a function; TypeError: not a function
+es5/Object.defineProperty.js: non-writable property failed
+es5/Object.freeze.js: Object.freeze not a function; TypeError: not a function
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; TypeError: not a function
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; TypeError: not a function
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: Object.isExtensible not a function; TypeError: not a function
+es5/Object.isFrozen.js: Object.isFrozen not a function; TypeError: not a function
+es5/Object.isSealed.js: Object.isSealed not a function; TypeError: not a function
+es5/Object.keys.js: only enumerable properties failed
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; TypeError: not a function
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal not a function; TypeError: not a function
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: SyntaxError: unexpected character in expression
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: SyntaxError: unexpected character
+es5/source.zero-width-chars.js: SyntaxError: expecting ';'
+es5/strict.eval-cannot-create-bindings.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect at strict.eval-cannot-create-bindings.js:18:10
+es5/strict.function-expr-with-matching-name.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: catch variable already exists
+es5/strict.no-assignment-to-unresolvable.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-delete-bindings.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-eval-or-arguments-assignment.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-eval-or-arguments-bindings.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-function-caller-or-arguments.js: SyntaxError: catch variable already exists
+es5/strict.no-octal-literals.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.no-with.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.reserved-words.js: SyntaxError: direct eval is not supported. Use (1,eval) instead for indirect
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: TypeError: invalid 'in' operand

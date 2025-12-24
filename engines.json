@@ -5296,6 +5296,41 @@
     "github_contributors": 2
   },
   {
+    "id": "mquickjs",
+    "title": "MicroQuickJS",
+    "summary": "JavaScript engine targetted at embedded systems.",
+    "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/mquickjs.md",
+    "homepage": "https://bellard.org/mquickjs/",
+    "repository": "https://github.com/bellard/mquickjs.git",
+    "loc": 23653,
+    "loc_detailed": "23653 (`cloc *.c *.h`)",
+    "language": "C",
+    "license": "MIT",
+    "standard": "ES5",
+    "standard_detailed": "ES5 (subset)",
+    "years": "2025-",
+    "gc": "tracing GC",
+    "github_stars": 1995,
+    "github_forks": 58,
+    "github_contributors": 2,
+    "bench": [
+      {
+        "arch": "arm64",
+        "binary_sha256": "b4ff59bc7e2357d1974d908a37fd516cd4d27fe4edfc100808692092d0de1ab5",
+        "binary_size": 264880,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "e8d32813e39ed7ea04c7936d2b612b57bee1ac3e",
+        "revision_date": "2025-12-24"
+      }
+    ],
+    "conformance": {
+      "es1": 0.6263,
+      "es3": 0.6081,
+      "es5": 0.2973,
+      "es1-es5": 0.5619
+    }
+  },
+  {
     "id": "mujs",
     "title": "MuJS",
     "summary": "Embeddable JavaScript engine from MuPDF.",

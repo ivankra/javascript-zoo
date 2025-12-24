@@ -15,7 +15,7 @@ ENGINES := $(shell \
 	done)
 
 MANUAL := topchetoeu mujs_babel
-ES5 := bali besen cesanta-elk echosoar-jsi espruino je-perl jispy ngs rpython-langjs twostroke yrm006-miniscript
+ES5 := bali besen cesanta-elk echosoar-jsi espruino je-perl jispy mquickjs ngs rpython-langjs twostroke yrm006-miniscript
 ESNEXT := $(filter-out $(ES5) $(MANUAL),$(ENGINES))
 
 all: $(addsuffix .txt, $(ENGINES) $(MANUAL)) README.md

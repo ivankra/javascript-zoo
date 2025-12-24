@@ -770,6 +770,9 @@ CONFIGS = {
       benchmark_suite=['richards.es1.js'],  # JS1.1≈ES1 engine
       polyfills=["var console = new Object(); console.log = print;"],  # no object literals
   ),
+  'mquickjs': Config(
+      polyfills=[STRICT_PF],
+  ),
   'narcissus': Config(
       # prototype-based inheritance not working, need to be fixed
       benchmark_suite=['richards.js1.js'],
