@@ -11,9 +11,9 @@ ARG REPO=https://github.com/ivankra/javascript-zoo.git \
 ADD dist/$TARGETARCH.tar /tmp
 
 RUN mv /tmp/$TARGETARCH /dist && \
-    git clone --depth=1 --branch="$REV" "$REPO" /zoo && \
-    cd /zoo && git submodule update --init --depth=1 && \
-    cd /zoo/bench && make && ln -s zoo/bench /bench && \
+    git clone --depth=1 "$REPO" /zoo && \
+    cd /zoo && git fetch origin "$REV" && git reset --hard FETCH_HEAD && git submodule update --init --depth=1 && \
+    cd /zoo/bench && make gen && ln -s zoo/bench /bench && \
     mkdir -p /zoo/dist && ln -s /dist /zoo/dist/$TARGETARCH && \
     cat /zoo/docker/hub.motd | sed "2s/\$/ @$REV $TARGETARCH/" >/etc/motd && \
     echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:$PATH; cat /etc/motd' >>/etc/profile
