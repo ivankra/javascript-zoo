@@ -15,15 +15,14 @@ FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 
 # bali: arm64 build broken
-# chakracore: only jitless builds works on linux arm64
 # dscriptcpp: hacky non-portable code, 32-bit x86 only
-# iv-lv5: JIT-less on arm64, don't build same thing under a different name
 # quickjit: x64 only
-# spidermonkey_1.8.5+: don't support arm64 due to JIT that can't be compiled out
+# spidermonkey_1.8.5+: doesn't support arm64 due to JIT that can't be compiled out
 # starlight: arm64 build broken
+# *_jitless: no arm64 JIT, main build is JIT-less - don't build same thing under a different name
 AMD64_ONLY_TARGETS := \
   bali \
-  chakracore \
+  chakracore_jitless \
   dscriptcpp \
   iv-lv5_jitless \
   quickjit \
