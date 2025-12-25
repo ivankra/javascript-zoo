@@ -165,4 +165,7 @@ done
 $DOCKER rm "$CID" >/dev/null
 rm -rf "$TMPCP" "$CIDFILE"
 
+cd "../dist/$ARCH"
+(for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo $x; fi; done | sort -V) >LIST
+
 exit 0
