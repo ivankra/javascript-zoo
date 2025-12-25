@@ -22,10 +22,11 @@ hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
 jerryscript:          --build-arg REV=v3.0.0 -f jerryscript.Dockerfile
 jerryscript_clang:    --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg BASE=jsz-clang
 jerryscript_o3:       --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg CMAKE_BUILD_TYPE=Release
-kiesel:               --build-arg REV=0e9413e27b1892e3a252181e583ce5d6f7b829e5 --build-arg ZIG_VER=0.15.2
+kiesel:               --build-arg REV=1c762b6900dd3baa73171e2eee3deb07c501b55e --build-arg ZIG_VER=0.15.2
 libjs:                --build-arg REV=3610a31279dbda23085a6e1254e89c71b0c396e3 -f libjs.Dockerfile
 libjs_gcc:            --build-arg REV=3610a31279dbda23085a6e1254e89c71b0c396e3 -f libjs.Dockerfile --build-arg BASE=jsz-gcc
 modernc-quickjs:      --build-arg REV=v0.17.0
+mquickjs:             --build-arg REV=27a2391cc5a54bf8fa683979be56b266523a1374 -f mquickjs.Dockerfile
 mujs:                 --build-arg REV=1.3.8 -f mujs.Dockerfile
 mujs_gcc:             --build-arg REV=1.3.8 -f mujs.Dockerfile --build-arg BASE=jsz-gcc
 nashorn:              --build-arg REV=release-15.7
@@ -42,7 +43,7 @@ quickjs_gcc:          --build-arg REV=f1139494d18a2053630c5ed3384a42bb70db3c53 -
 qv4:                  --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile
 qv4_clang:            --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile --build-arg BASE=jsz-clang
 qv4_jitless:          --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile --build-arg JITLESS=true
-rhino:                --build-arg REV=Rhino1_8_1_Release
+rhino:                --build-arg REV=Rhino1_9_0_Release
 sobek:                --build-arg REV=22d1085c20a8fdc415a0c1719ccc1e6ac9a2e348
 spidermonkey:         --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile
 spidermonkey_gcc:     --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
@@ -51,7 +52,7 @@ spidermonkey_intl:    --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Do
 ucode:                --build-arg REV=8bbf01215ce30971eb02eee2250d51e422f700e6
 xs:                   --build-arg REV=6.1.0 -f xs.Dockerfile
 xs_clang:             --build-arg REV=6.1.0 -f xs.Dockerfile --build-arg BASE=jsz-clang
-yavashark:            --build-arg REV=2a9aacfe8179ab19b009da28ec273484a54bf983
+yavashark:            --build-arg REV=029acf54a13c7ac95936ee18f715bb8a53f39619
 
 # Hermes
 # main: hermes-v0.14.0 tag = rn/0.83-stable branch -> main @20251103
