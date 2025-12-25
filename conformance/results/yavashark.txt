@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "267c7236412493b429235a50eed2bc1dab84827af0839649057e8685b17dbae2", "binary_size": 15735272, "engine": "yavashark", "repository": "https://github.com/Sharktheone/yavashark.git", "revision": "0c5acce1cf9ceadda76b5dfe393296be266dc77a", "revision_date": "2025-11-29", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
+Metadata: {"arch": "arm64", "binary_sha256": "e5721edd9b90754133204ab17a81f2368e8c28a242aa5492683cc0058161a954", "binary_size": 15735184, "engine": "yavashark", "repository": "https://github.com/Sharktheone/yavashark.git", "revision": "029acf54a13c7ac95936ee18f715bb8a53f39619", "revision_date": "2025-12-24", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: new Date(2000, 0, 1).getMonth() != 0
+es1/Date.js: OK
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK
@@ -23,7 +23,7 @@ es1/Date.prototype.getFullYear.js: OK
 es1/Date.prototype.getHours.js: OK
 es1/Date.prototype.getMilliseconds.js: OK
 es1/Date.prototype.getMinutes.js: OK
-es1/Date.prototype.getMonth.js: failed
+es1/Date.prototype.getMonth.js: OK
 es1/Date.prototype.getSeconds.js: OK
 es1/Date.prototype.getTimezoneOffset.js: OK
 es1/Date.prototype.getTime.js: OK
@@ -33,7 +33,7 @@ es1/Date.prototype.getUTCFullYear.js: OK
 es1/Date.prototype.getUTCHours.js: OK
 es1/Date.prototype.getUTCMilliseconds.js: OK
 es1/Date.prototype.getUTCMinutes.js: OK
-es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCMonth.js: OK
 es1/Date.prototype.getUTCSeconds.js: OK
 es1/Date.prototype.setDate.js: OK
 es1/Date.prototype.setFullYear.js: OK
@@ -50,7 +50,7 @@ es1/Date.prototype.setUTCMilliseconds.js: OK
 es1/Date.prototype.setUTCMinutes.js: OK
 es1/Date.prototype.setUTCMonth.js: OK
 es1/Date.prototype.setUTCSeconds.js: OK
-es1/Date.prototype.toLocaleString.js: failed
+es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multip
 es3/Array.prototype.unshift.js: unshift single element failed; unshift multiple elements failed; unshift on empty array failed; unshift with no arguments failed; element order after unshift failed
 es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed; multiple elements unshift failed; no arguments unshift failed
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: Error: TypeError: undefined is not a function
-es3/Date.prototype.toLocaleString.js: Error: RuntimeError: Not implemented
-es3/Date.prototype.toLocaleTimeString.js: Error: TypeError: undefined is not a function
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: Error: TypeError: ErrorObjConstructor is not callable at ErrorObjConstructor (Error.js:23)
 es3/Error.prototype.constructor.js: OK
@@ -229,9 +229,9 @@ es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: small number failed
 es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2548188) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+es3/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2496245) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 es3/Number.prototype.toFixed.js: rounding failed
-es3/Number.prototype.toLocaleString.js: Error: RuntimeError: Not implemented
+es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: small number exponential notation failed
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
@@ -345,7 +345,7 @@ es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
-es5/Array.isArray.js: OK
+es5/Array.isArray.js: Error: TypeError: expected object
 es5/Array.prototype.every.js: sparse array skips missing elements failed
 es5/Array.prototype.filter.js: sparse array skips missing elements failed
 es5/Array.prototype.forEach.js: sparse array skips missing elements failed
@@ -358,8 +358,8 @@ es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
-es5/Date.prototype.toJSON.js: invalid date does not return null
+es5/Date.prototype.toISOString.js: OK
+es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: named function prototype is enumerable; prototype appears in for-in
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: length property incorrect; bound constructor failed
@@ -434,12 +434,12 @@ kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
 kangax-es5/Array.prototype.unshift.return-count.js: failed
 kangax-es5/Date.now.js: OK
 kangax-es5/Date.prototype.toISOString.js: OK
-kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Date.prototype.toJSON.js: OK
 kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
-kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2550705) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: thread 'main' (2498914) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
 kangax-es5/Object.defineProperty.js: OK
@@ -580,12 +580,12 @@ kangax-es6/Number.parseInt.js: failed
 kangax-es6/Object.assign.js: OK
 kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
-kangax-es6/Object.setPrototypeOf.js: [object Error]
+kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: [object Error]
 kangax-es6/Promise.all.iterable.js: [object Error]
 kangax-es6/Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/Promise.constructor-requires-new.js: OK
-kangax-es6/Promise.js: thread 'main' (2544168) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/Promise.js: thread 'main' (2492501) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: [object Error]
 kangax-es6/Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
@@ -616,8 +616,8 @@ kangax-es6/Proxy.handler.ownKeys.invariants.js: failed
 kangax-es6/Proxy.handler.ownKeys.js: failed
 kangax-es6/Proxy.handler.preventExtensions.invariants.js: failed
 kangax-es6/Proxy.handler.preventExtensions.js: failed
-kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: [object Error]
-kangax-es6/Proxy.handler.setPrototypeOf.js: [object Error]
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.setPrototypeOf.js: OK
 kangax-es6/Proxy.handler.set.instances.js: failed
 kangax-es6/Proxy.handler.set.invariants.js: failed
 kangax-es6/Proxy.handler.set.js: [object Error]
@@ -716,7 +716,7 @@ kangax-es6/WeakSet.prototype-not-instance.js: OK
 kangax-es6/WeakSet.prototype.add-returns-this.js: failed
 kangax-es6/WeakSet.prototype.delete.js: OK
 kangax-es6/annex-b.RegExp.prototype.compile.js: failed
-kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: [object Error]
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: failed
 kangax-es6/annex-b.String.prototype.html.existence.js: OK
 kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
@@ -739,7 +739,7 @@ kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
 kangax-es6/annex-b.__proto__.literals.js: OK
-kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: OK
 kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
 kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
 kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: failed
@@ -836,7 +836,7 @@ kangax-es6/destructuring-decl.computed-properties.js: OK
 kangax-es6/destructuring-decl.defaults-tdz.js: OK
 kangax-es6/destructuring-decl.defaults.js: OK
 kangax-es6/destructuring-decl.for-in.js: [object Error]
-kangax-es6/destructuring-decl.for-of.js: failed
+kangax-es6/destructuring-decl.for-of.js: OK
 kangax-es6/destructuring-decl.generator.js: OK
 kangax-es6/destructuring-decl.iterable-instance.js: OK
 kangax-es6/destructuring-decl.iterable.js: OK
@@ -877,7 +877,7 @@ kangax-es6/destructuring-params.string.js: [object Error]
 kangax-es6/destructuring-params.throws-null-undefined.js: OK
 kangax-es6/destructuring-params.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-params.trailing-comma-object.js: OK
-kangax-es6/for-of.array.js: failed
+kangax-es6/for-of.array.js: OK
 kangax-es6/for-of.astral-string.js: [object Error]
 kangax-es6/for-of.generator.js: OK
 kangax-es6/for-of.iterable-instance.js: OK
@@ -940,7 +940,7 @@ kangax-es6/literals.object.shorthand-properties.js: OK
 kangax-es6/literals.object.string-keyed-shorthand-methods.js: OK
 kangax-es6/literals.octal.Number.js: OK
 kangax-es6/literals.octal.js: OK
-kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Invalid-Date.js: OK
 kangax-es6/misc.Object.freeze.primitives.js: [object Error]
 kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
 kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: [object Error]
@@ -1016,10 +1016,10 @@ kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: [object Error]
 kangax-es6/misc.accessors-no-constructor.js: failed
-kangax-es6/misc.bound-function-prototype.arrow.js: [object Error]
-kangax-es6/misc.bound-function-prototype.class.js: [object Error]
-kangax-es6/misc.bound-function-prototype.function.js: [object Error]
-kangax-es6/misc.bound-function-prototype.generator.js: [object Error]
+kangax-es6/misc.bound-function-prototype.arrow.js: failed
+kangax-es6/misc.bound-function-prototype.class.js: failed
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: failed
 kangax-es6/misc.bound-function-prototype.subclass.js: failed
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: failed
@@ -1082,7 +1082,7 @@ kangax-es6/subclassing.Function.prototype.apply.js: [object Error]
 kangax-es6/subclassing.Function.prototype.bind.js: [object Error]
 kangax-es6/subclassing.Function.prototype.call.js: [object Error]
 kangax-es6/subclassing.Promise.all.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
-kangax-es6/subclassing.Promise.js: thread 'main' (2564263) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es6/subclassing.Promise.js: thread 'main' (2512414) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
 kangax-es6/subclassing.Promise.race.js: crashed (signal 6); fatal runtime error: stack overflow, aborting
 kangax-es6/subclassing.RegExp.exec.js: OK
@@ -1135,7 +1135,7 @@ kangax-es6/typed-arrays.Uint32Array.js: [object Error]
 kangax-es6/typed-arrays.constructor-iterables.js: failed
 kangax-es6/typed-arrays.constructor-requires-new.js: OK
 kangax-es6/typed-arrays.correct-prototype-chains.js: OK
-kangax-es6/typed-arrays.from.js: failed
+kangax-es6/typed-arrays.from.js: OK
 kangax-es6/typed-arrays.of.js: OK
 kangax-es6/typed-arrays.prototype.Symbol.iterator.js: OK
 kangax-es6/typed-arrays.prototype.copyWithin.js: OK
@@ -1228,11 +1228,11 @@ kangax-es2017/SharedArrayBuffer.prototype.slice.js: OK
 kangax-es2017/String.prototype.padEnd.js: failed
 kangax-es2017/String.prototype.padStart.js: failed
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: [object Error]
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: failed
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: failed
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: OK
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: [object Error]
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: failed
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: failed
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (2559422) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: thread 'main' (2507441) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
 kangax-es2017/async.Symbol.toStringTag.js: failed
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1269,7 +1269,7 @@ kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
-kangax-es2018/Promise.prototype.finally.js: thread 'main' (2562928) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+kangax-es2018/Promise.prototype.finally.js: thread 'main' (2510890) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: failed
 kangax-es2018/async-iterators.for-await-of.js: failed
 kangax-es2018/async-iterators.generators.js: OK
@@ -1441,9 +1441,9 @@ kangax-es2025/regex.pattern-modifiers.i.js: [object Error]
 kangax-es2025/regex.pattern-modifiers.m.js: [object Error]
 kangax-es2025/regex.pattern-modifiers.s.js: [object Error]
 kangax-intl/Array.prototype.toLocaleString.js: OK
-kangax-intl/Date.prototype.toLocaleDateString.js: failed
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
-kangax-intl/Date.prototype.toLocaleTimeString.js: failed
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
 kangax-intl/Intl.Collator.js: OK
 kangax-intl/Intl.Collator.new-instances.js: OK
 kangax-intl/Intl.Collator.prototype.compare.js: failed
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: [object Error]
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
 kangax-next/WeakMap.prototype.upsert.js: [object Error]
-kangax-next/await-using.for-of.js: thread 'main' (2570220) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
+kangax-next/await-using.for-of.js: thread 'main' (2518310) panicked at crates/yavashark_compiler/src/compiler/statement/for_of.rs:107:38:
 kangax-next/await-using.js: SyntaxError: Unsupported declaration type
 kangax-next/class-decorators.js: failed
-kangax-next/function.sent.js: thread 'main' (2570427) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
-kangax-next/throw-expr.arrow.js: thread 'main' (2570564) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
-kangax-next/throw-expr.conditional.js: thread 'main' (2570676) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
-kangax-next/throw-expr.logical.js: thread 'main' (2570783) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
-kangax-next/throw-expr.param-init.js: thread 'main' (2570854) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
+kangax-next/function.sent.js: thread 'main' (2518560) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (358..359, Expected("(", ".")) }
+kangax-next/throw-expr.arrow.js: thread 'main' (2518645) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (323..328, TS1109) }
+kangax-next/throw-expr.conditional.js: thread 'main' (2518729) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (311..316, TS1109) }
+kangax-next/throw-expr.logical.js: thread 'main' (2518786) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (326..331, TS1109) }
+kangax-next/throw-expr.param-init.js: thread 'main' (2518840) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (328..333, TS1109) }
 kangax-next/using.for-of.js: failed
 kangax-next/using.js: SyntaxError: Unsupported declaration type

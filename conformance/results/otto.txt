@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "80bb9e30b1499bbaf346792782197b1356f4fac00c381d16f45e93fcb1d379fd", "binary_size": 4751352, "engine": "otto", "repository": "https://github.com/robertkrimen/otto.git", "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a", "revision_date": "2025-06-13", "version": "0.5.1-2-g3ca7298"}
+Metadata: {"arch": "arm64", "binary_sha256": "4a28f5a8d60620ab230b10d47ebf9aa94d06b022c8f66455ed11e940086f6699", "binary_size": 4896184, "engine": "otto", "go": "1.25.5", "repository": "https://github.com/robertkrimen/otto.git", "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a", "revision_date": "2025-06-13", "version": "0.5.1-2-g3ca7298"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -99,7 +99,7 @@ es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: panic: runtime error: invalid memory address or nil pointer dereference [recovered] panic: runtime error: invalid memory address or nil pointer dereference github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x37c panic({0x25c280?, 0x48bf00?}) /usr/lib/go-1.24/src/runtime/panic.go:792
+es1/String.generics.js: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x358 panic({0x260700?, 0x4aef30?}) /usr/local/go/src/runtime/panic.go:783 +0x120 github.com/robertkrimen/otto.catchPanic(0x40001f9dd8?) 
 es1/String.js: OK
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: (anonymous): Line 10:3 Unexpected reserved 
 kangax-es6/super.statement.js: (anonymous): Line 11:3 Unexpected reserved word (and 1 more errors)
 kangax-es6/super.static-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
 kangax-es6/super.this-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x400006be70 sp=0x400006be40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001edde0?) /src/error.go:250 +0x54 fp=0x404077fd70 sp=0x404077fd30 pc=0x1cda94
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/lib/go-1.24/src/runtime/panic.go:1101 +0x38 fp=0x4000595e70 sp=0x4000595e40 pc=0x7f828 github.com/robertkrimen/otto.catchPanic(0x40001edde0?) /src/error.go:250 +0x54 fp=0x4040717d70 sp=0x4040717d30 pc=0x1cda94
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0xffffc6e89740 sp=0xffffc6e89710 pc=0x851f4 github.com/robertkrimen/otto.catchPanic(0x40001a9dd8?) /src/error.go:250 +0x54 fp=0x404067fd70 sp=0x404067fd30 pc=0x1cfea4
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0x40006ade80 sp=0x40006ade50 pc=0x851f4 github.com/robertkrimen/otto.catchPanic(0x40001f7dd8?) /src/error.go:250 +0x54 fp=0x4040615d70 sp=0x4040615d30 pc=0x1cfea4
 kangax-es6/template.basic.js: (anonymous): Line 11:8 Unexpected token ILLEGAL (and 3 more errors)
 kangax-es6/template.caching.js: (anonymous): Line 17:19 Unexpected token ILLEGAL (and 7 more errors)
 kangax-es6/template.escape-sequences.js: (anonymous): Line 13:20 Unexpected token ILLEGAL (and 4 more errors)

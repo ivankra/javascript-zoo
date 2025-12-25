@@ -58,9 +58,7 @@ Pass `--script` argument to force classic sloppy script mode.
 <li>ES2017: 96%<pre>
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
-<li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>

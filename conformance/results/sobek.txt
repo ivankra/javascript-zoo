@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "a2f59e0c1599166ba7176b287fa3b19a036fc12cadeb770d3091ad36a48846f8", "binary_size": 9437816, "engine": "sobek", "repository": "https://github.com/grafana/sobek.git", "revision": "9a028a30ff58964207ed60cfb82ff9136ca1a1b8", "revision_date": "2025-11-24"}
+Metadata: {"arch": "arm64", "binary_sha256": "69cc82a12c1f97acda076e8859a859d661eca55c17959b20d861fa46d635d653", "binary_size": 9517208, "engine": "sobek", "go": "1.25.5", "repository": "https://github.com/grafana/sobek.git", "revision": "22d1085c20a8fdc415a0c1719ccc1e6ac9a2e348", "revision_date": "2025-12-09"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

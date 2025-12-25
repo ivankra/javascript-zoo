@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "b691c8495a1676609a372ecd2823a0f024e371896936d94d5e4f8671bbcab0ab", "binary_size": 5910792, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "fbbdf6db7373ced37d4b046fb3ddc7dd04e7561a", "revision_date": "2025-11-23", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
+Metadata: {"arch": "arm64", "binary_sha256": "c7e55f975ecd8ebd245475caf4c549cc04a1c25c5735a4cfd09c1bd3f0752170", "binary_size": 5976328, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "6a04fef645608b7995fa119b445e3f18e2281473", "revision_date": "2025-12-17", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -715,8 +715,8 @@ kangax-es6/WeakSet.no-clear.js: OK
 kangax-es6/WeakSet.prototype-not-instance.js: OK
 kangax-es6/WeakSet.prototype.add-returns-this.js: OK
 kangax-es6/WeakSet.prototype.delete.js: OK
-kangax-es6/annex-b.RegExp.prototype.compile.js: failed
-kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: value is not a function
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
 kangax-es6/annex-b.String.prototype.html.existence.js: OK
 kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
@@ -724,14 +724,14 @@ kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not def
 kangax-es6/annex-b.function.if-statement.js: SyntaxError: Unexpected token function
 kangax-es6/annex-b.function.labeled.js: OK
 kangax-es6/annex-b.html-comments.js: SyntaxError: Unexpected token >
-kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: No capture group with index found
-kangax-es6/annex-b.regex.hyphens.js: SyntaxError: Character class cannot be a bound in a character range
+kangax-es6/annex-b.regex.backreferences-octal.js: OK
+kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
-kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-hex-escapes.js:9:11
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: Malformed escape sequence ┌ annex-b.regex.invalid-unicode-escapes.js:9:11
-kangax-es6/annex-b.regex.octal-escapes.js: TypeError: null has no properties
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
+kangax-es6/annex-b.regex.octal-escapes.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
@@ -1016,10 +1016,10 @@ kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
 kangax-es6/misc.accessors-no-constructor.js: OK
-kangax-es6/misc.bound-function-prototype.arrow.js: failed
-kangax-es6/misc.bound-function-prototype.class.js: failed
-kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: OK
+kangax-es6/misc.bound-function-prototype.class.js: OK
+kangax-es6/misc.bound-function-prototype.function.js: OK
+kangax-es6/misc.bound-function-prototype.generator.js: OK
 kangax-es6/misc.bound-function-prototype.subclass.js: OK
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: OK
@@ -1048,7 +1048,7 @@ kangax-es6/rest-params.arguments.js: OK
 kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: OK
 kangax-es6/rest-params.new-function.js: OK
-kangax-es6/rest-params.no-setter.js: failed
+kangax-es6/rest-params.no-setter.js: OK
 kangax-es6/spread.array-call.js: OK
 kangax-es6/spread.array-literal.js: OK
 kangax-es6/spread.astral-call.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: RangeError: Stack Overfloww
-kangax-es6/tail-calls.mutual.js: RangeError: Stack Overfloww
+kangax-es6/tail-calls.direct.js: RangeError: Stack Overflow
+kangax-es6/tail-calls.mutual.js: RangeError: Stack Overflow
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: OK
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Variable declarations in the left hand side of a for each loop must contain a single declaration with no initializer
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
 kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK

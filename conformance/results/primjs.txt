@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "89aa5e241adf9a9410ac7ee61d6f4eeb04f86f98e776d5a6087f6de49cd57e04", "binary_size": 986424, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "primjs", "repository": "https://github.com/lynx-family/primjs.git", "revision": "1fcbd632b6da2587463eae91a7d01b52bbad1ec1", "revision_date": "2025-11-14", "version": "2.15.1"}
+Metadata: {"arch": "arm64", "binary_sha256": "4ad233c2d5c7675b4e957b3e70dbd4cd49ae218cf310c77297cf0d9d41da3427", "binary_size": 986448, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "primjs", "repository": "https://github.com/lynx-family/primjs.git", "revision": "f8cfae988d8cbad9cba622b4ac57959a5c29fde3", "revision_date": "2025-12-04", "version": "3.6.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
 kangax-es2019/misc.optional-catch-binding.await.js: OK
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal
-kangax-es2020/BigInt.asIntN.js: ReferenceError: BigInt is not defined
-kangax-es2020/BigInt.asUintN.js: ReferenceError: BigInt is not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal
-kangax-es2020/BigInt.js: SyntaxError: invalid number literal
-kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal
+kangax-es2020/BigInt64Array.js: OK
+kangax-es2020/BigInt.asIntN.js: OK
+kangax-es2020/BigInt.asUintN.js: OK
+kangax-es2020/BigInt.constructor.js: OK
+kangax-es2020/BigInt.js: OK
+kangax-es2020/BigUint64Array.js: OK
+kangax-es2020/DataView.prototype.getBigInt64.js: OK
+kangax-es2020/DataView.prototype.getBigUint64.js: OK
 kangax-es2020/Promise.allSettled.js: OK
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed

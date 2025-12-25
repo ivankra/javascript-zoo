@@ -90,8 +90,8 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.split.js">misc.Proxy.get.String.split.js</a>: failed
 <a href="../conformance/kangax-es6/misc.RegExp-prototype-toString-generic.js">misc.RegExp-prototype-toString-generic.js</a>: TypeError: RegExp.prototype.toString: 'this' is not a RegExp object
-<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: failed
 <a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: Error: Out of stack space
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: Error: Out of stack space
 ...
 </pre></li>
 <li>ES2016: 100%</li>

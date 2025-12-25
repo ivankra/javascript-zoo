@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "1262798ce151baa455e308e1c54c83ae5eb0782afa12dd0d0c5039c0a3a0c813", "binary_size": 24584624, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "5cbbb72a30a6a71e64a20054248b3bd34917d535", "revision_date": "2025-11-25", "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"}
+Metadata: {"arch": "arm64", "binary_sha256": "cf265ac8b2cd5a1382c0089aa2286a336c7d0ab749a7611eb74556cc8b9b5175", "binary_size": 25633200, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "50a81d2d88d47e35bbf20271261864e6fef5da59", "revision_date": "2025-12-19", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

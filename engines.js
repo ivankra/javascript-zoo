@@ -17,23 +17,23 @@ const jsz_engines = [
     "years": "2010-2014",
     "ancestors": "tiny-js",
     "interpreter": "interprets from source",
-    "github_stars": 571,
+    "github_stars": 572,
     "github_forks": 90,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "75348311b6746436cefd81cc35ee36efb1e2685473b40053700b2c96b6d933ec",
-        "binary_size": 743832,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "d9d63ee14448a51dc9d500aa1a63292e5de32433c8a70804ac37c54a3adf8c70",
+        "binary_size": 809440,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
         "revision_date": "2014-10-19"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "5ed8139c48961cd60b29b193108558ff2f41b081c6a7e4cd640e4ff5b3a74559",
-        "binary_size": 727304,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "47402fa775b1b53f178a2e75ee2ac08f10806b766ed24202ed8137b984437812",
+        "binary_size": 792896,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
         "revision_date": "2014-10-19"
       }
@@ -75,8 +75,8 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 17709,
-    "github_forks": 680,
+    "github_stars": 17725,
+    "github_forks": 679,
     "github_contributors": 77
   },
   {
@@ -114,14 +114,14 @@ const jsz_engines = [
     "standard_detailed": "no (can't run basic JS code)",
     "years": "2024-",
     "interpreter": "register-based VM",
-    "github_stars": 105,
+    "github_stars": 107,
     "github_forks": 1,
     "github_contributors": 1,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "26e67c7563c7eea84b6f079484c14a87fdedc24332352a1add77948ac7a88db5",
-        "binary_size": 4649728,
+        "binary_sha256": "1926a66389fcb4d63be334d721d1d249526f0a62be14d485dda5758700437451",
+        "binary_size": 4657920,
         "revision": "99f0aa14155d0b0c9e39f6273a51c35b497207de",
         "revision_date": "2025-10-29",
         "version": "0.8.2"
@@ -150,7 +150,7 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "register-based VM",
     "jit": "context-threaded JIT, x86/x64",
-    "github_stars": 226,
+    "github_stars": 227,
     "github_forks": 48,
     "github_contributors": 1,
     "bench": [
@@ -210,8 +210,8 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "regex": "regress",
     "regex_detailed": "[regress](https://github.com/ridiculousfish/regress)",
-    "github_stars": 6701,
-    "github_forks": 477,
+    "github_stars": 6735,
+    "github_forks": 479,
     "github_contributors": 211,
     "bench": [
       {
@@ -334,7 +334,7 @@ const jsz_engines = [
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
     "interpreter": "tree walker",
-    "github_stars": 1356,
+    "github_stars": 1357,
     "github_forks": 153,
     "github_contributors": 1
   },
@@ -354,8 +354,8 @@ const jsz_engines = [
     "interpreter_detailed": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
     "regex": "own",
     "regex_detailed": "own ([regexp](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
-    "github_stars": 1174,
-    "github_forks": 28,
+    "github_stars": 1204,
+    "github_forks": 29,
     "github_contributors": 1,
     "bench": [
       {
@@ -448,9 +448,9 @@ const jsz_engines = [
       "es3": 1.0,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9573,
+      "kangax-es6": 0.9731,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.8,
+      "kangax-es2017": 0.84,
       "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
@@ -462,7 +462,7 @@ const jsz_engines = [
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9669
+      "kangax-es2016plus": 0.9735
     }
   },
   {
@@ -591,24 +591,24 @@ const jsz_engines = [
     "years": "2019-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 1825,
-    "github_forks": 94,
+    "github_stars": 1831,
+    "github_forks": 96,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "8be1f337b4da94d225a91840358d720d7891d8920d20d2c5c1f845c7b93397f9",
-        "binary_size": 47496,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "908e46cc23e12c1199a80d61561c54bbad7fdce7050a0d64ceb74f9e2e20242f",
+        "binary_size": 47616,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
         "revision_date": "2025-06-05",
         "version": "2.2.0-30-ga9bb856"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "5800c3dc13cb0626d5097008bcdbc4b6f50a85713af3a2c280c2e96b52c14a7c",
-        "binary_size": 67872,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "64e5714205286c956a96538172eff7b3fdf27eb294c8b6e0561f092d7e5ab330",
+        "binary_size": 68000,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
         "revision_date": "2025-06-05",
         "version": "2.2.0-30-ga9bb856"
@@ -638,27 +638,27 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "features": "C/C++ FFI",
     "interpreter": "stack-based VM",
-    "github_stars": 2009,
-    "github_forks": 183,
+    "github_stars": 2012,
+    "github_forks": 185,
     "github_contributors": 17,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "7fc00afd87c5a3c06cf0af7e731e184f00883ece7b76d4645f7d4d788f40144f",
-        "binary_size": 195328,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b",
-        "revision_date": "2025-11-10",
-        "version": "2.20.0-19-gda0d06d"
+        "binary_sha256": "fca1bc72c6767247883daf4a2319f52cc51a76ff5bc6078cbc7719b991e118d7",
+        "binary_size": 203648,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773",
+        "revision_date": "2025-12-17",
+        "version": "2.20.0-23-g55e5fa3"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "6e837fa5d960dee417881c5b8782a99874b6a21cfbbdb87998a7bc55af104f62",
-        "binary_size": 199512,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "da0d06d42644b04e94be7db54c0e8e2b7babe38b",
-        "revision_date": "2025-11-10",
-        "version": "2.20.0-19-gda0d06d"
+        "binary_sha256": "72f6b6b52ecd894b7d4cdd26c68b4e0ebe7fa020c33f1d97fc472d9619adf3eb",
+        "binary_size": 199648,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773",
+        "revision_date": "2025-12-17",
+        "version": "2.20.0-23-g55e5fa3"
       }
     ],
     "conformance": {
@@ -698,8 +698,8 @@ const jsz_engines = [
     "standard_detailed": "ES5 (subset)",
     "years": "2013-2017",
     "interpreter": "stack-based VM",
-    "github_stars": 1449,
-    "github_forks": 178,
+    "github_stars": 1450,
+    "github_forks": 179,
     "github_contributors": 24,
     "bench": [
       {
@@ -766,8 +766,8 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "jit": "2-tier JIT, arm/arm64, x86/x64",
     "dll": "chakra.dll",
-    "github_stars": 9229,
-    "github_forks": 1208,
+    "github_stars": 9234,
+    "github_forks": 1212,
     "github_contributors": 185,
     "bench": [
       {
@@ -814,10 +814,10 @@ const jsz_engines = [
         "binary_sha256": "297bd713111a6a0a94b7e88aee3037ef7297ec11ed50c9f53384e595e87f932e",
         "binary_size": 9184208,
         "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
+        "jit": "",
         "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510",
         "revision_date": "2025-10-11",
         "variant": "jitless",
-        "jit": "",
         "Box2D": 1609,
         "Box2D_detailed": "N=100 median=1609 mean=1617.98±3.87 max=1716",
         "CodeLoad": 27353,
@@ -852,6 +852,15 @@ const jsz_engines = [
         "Typescript_detailed": "N=13 median=5367 mean=5441.62±46.25 max=5791",
         "zlib": 986,
         "zlib_detailed": "N=1 median=986 mean=986 max=986"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "1146f881229a09dfe1264b93b1e4b55c1e6ea91143b9e758c58a494f02b6176d",
+        "binary_size": 9650992,
+        "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)",
+        "jit": "",
+        "revision": "622c745389832ede744715c826b5fcceeb20300c",
+        "revision_date": "2025-12-04"
       }
     ],
     "conformance": {
@@ -859,7 +868,7 @@ const jsz_engines = [
       "es3": 0.9865,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.957,
+      "kangax-es6": 0.9593,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.795,
       "kangax-es2018": 0.7368,
@@ -915,7 +924,7 @@ const jsz_engines = [
     "license": "MIT",
     "standard": "ES3",
     "years": "2009-2012",
-    "github_stars": 196,
+    "github_stars": 197,
     "github_forks": 35,
     "github_contributors": 16
   },
@@ -981,7 +990,7 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([opcodes.d](https://github.com/DigitalMars/DMDScript/blob/master/engine/source/dmdscript/opcodes.d))",
     "github_stars": 100,
-    "github_forks": 17,
+    "github_forks": 18,
     "github_contributors": 5,
     "bench": [
       {
@@ -1098,7 +1107,7 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))",
     "github_stars": 4,
-    "github_forks": 1,
+    "github_forks": 2,
     "github_contributors": 1,
     "bench": [
       {
@@ -1149,7 +1158,7 @@ const jsz_engines = [
     "standard_detailed": "ES5 (with some ES6 features)",
     "years": "2013-",
     "interpreter": "register-based VM",
-    "github_stars": 6139,
+    "github_stars": 6144,
     "github_forks": 537,
     "github_contributors": 73,
     "bench": [
@@ -1370,19 +1379,19 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "98f1e353ebdb7a9a0c2bb03ed5bfb0ae80c0dc729feee670c06987229708b85a",
-        "binary_size": 1075256,
+        "binary_sha256": "c581570eee76c4f711ab5a20e51e932b109f5fe741607627e27801fed7e4e3bb",
+        "binary_size": 1047608,
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
+        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "c0ff5f0deadb509d8203d70d79a1957854cf3532f166fbcec4569d1bf5486724",
-        "binary_size": 1053384,
+        "binary_sha256": "13d5d24c3d5f6afd57cc29b8b097402da17cda3e56a914eb9a1cb2f3abb95746",
+        "binary_size": 987848,
         "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
         "revision_date": "2025-08-24",
-        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
+        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
       }
     ],
     "conformance": {
@@ -1460,9 +1469,9 @@ const jsz_engines = [
     "platform": "JavaScript",
     "platform_detailed": "JavaScript (Node)",
     "interpreter": "tree walker",
-    "github_stars": 918,
-    "github_forks": 70,
-    "github_contributors": 24,
+    "github_stars": 919,
+    "github_forks": 71,
+    "github_contributors": 25,
     "bench": [
       {
         "arch": "amd64",
@@ -1567,7 +1576,7 @@ const jsz_engines = [
     "standard": "ES4",
     "standard_detailed": "ES4 (draft)",
     "years": "2000-2006",
-    "github_stars": 41,
+    "github_stars": 42,
     "github_forks": 13,
     "github_contributors": 857
   },
@@ -1587,7 +1596,7 @@ const jsz_engines = [
     "features": "WebAssembly engine, hidden classes",
     "interpreter": "register-based VM",
     "regex": "YARR",
-    "github_stars": 332,
+    "github_stars": 335,
     "github_forks": 54,
     "github_contributors": 44,
     "bench": [
@@ -1800,8 +1809,8 @@ const jsz_engines = [
     "years": "2013-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 2921,
-    "github_forks": 759,
+    "github_stars": 2924,
+    "github_forks": 758,
     "github_contributors": 159,
     "bench": [
       {
@@ -1879,8 +1888,8 @@ const jsz_engines = [
     "parser": "Acorn",
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
-    "github_stars": 730,
-    "github_forks": 104,
+    "github_stars": 731,
+    "github_forks": 103,
     "github_contributors": 3
   },
   {
@@ -1899,7 +1908,7 @@ const jsz_engines = [
     "platform": "WebAssembly , Go",
     "platform_detailed": "WebAssembly (Wazero), Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 462,
+    "github_stars": 470,
     "github_forks": 16,
     "github_contributors": 3,
     "bench": [
@@ -1907,6 +1916,7 @@ const jsz_engines = [
         "arch": "amd64",
         "binary_sha256": "d3eff04c274ba5650694a90f4d40b93dbe0f6dce14692a2726a75bc39f1b62f7",
         "binary_size": 6179392,
+        "go": "1.25.5",
         "revision": "461716f4f380f81ffd09378751f1812919cddbca",
         "revision_date": "2025-10-28",
         "version": "0.0.6",
@@ -1949,6 +1959,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "911b0bd16f0a73fd11757de2717b4d641782313716dc973dd227618c63730ca2",
         "binary_size": 6061344,
+        "go": "1.25.5",
         "revision": "461716f4f380f81ffd09378751f1812919cddbca",
         "revision_date": "2025-10-28",
         "version": "0.0.6",
@@ -2140,14 +2151,15 @@ const jsz_engines = [
     "platform": "Go",
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 6619,
-    "github_forks": 426,
+    "github_stars": 6650,
+    "github_forks": 427,
     "github_contributors": 36,
     "bench": [
       {
         "arch": "amd64",
         "binary_sha256": "f78f9c4bb65797fdc7c8753f9d1582e1369131828f807ed0697c48673c4e308c",
         "binary_size": 9791864,
+        "go": "1.25.5",
         "revision": "56b1242a5f863cb7e58f0403cdde74ba57ee2784",
         "revision_date": "2025-11-21",
         "Box2D": 679,
@@ -2188,6 +2200,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "45fa4d8c3de18a9dcc95a4565b1ecd0795fb1e06927184f8844b930ba2717091",
         "binary_size": 9440024,
+        "go": "1.25.5",
         "revision": "56b1242a5f863cb7e58f0403cdde74ba57ee2784",
         "revision_date": "2025-11-21",
         "Box2D": 1193,
@@ -2267,8 +2280,8 @@ const jsz_engines = [
     "jit": "2-tier JIT (HotSpot/Graal), arm64, x64",
     "regex": "TRegex",
     "regex_detailed": "[TRegex](https://github.com/oracle/graal/tree/master/regex) (NFA-based)",
-    "github_stars": 1967,
-    "github_forks": 204,
+    "github_stars": 1972,
+    "github_forks": 205,
     "github_contributors": 4560,
     "bench": [
       {
@@ -2407,7 +2420,7 @@ const jsz_engines = [
     "platform": "WebAssembly",
     "interpreter": "stack-based VM",
     "jit": "via WebAssembly engine",
-    "github_stars": 530,
+    "github_stars": 533,
     "github_forks": 9,
     "github_contributors": 1,
     "bench": [
@@ -2535,7 +2548,7 @@ const jsz_engines = [
     "features": "optimizing LLVM-based AOT compiler to bytecode + native code; FFI; optional TypeScript/Flow typing annotations with modified semantics for sound typing",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10653,
+    "github_stars": 10654,
     "github_forks": 717,
     "github_contributors": 243,
     "bench": [
@@ -2755,9 +2768,9 @@ const jsz_engines = [
     "features": "optimizing LLVM-based AOT compiler to bytecode",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10639,
-    "github_forks": 715,
-    "github_contributors": 315,
+    "github_stars": 10654,
+    "github_forks": 717,
+    "github_contributors": 243,
     "bench": [
       {
         "arch": "amd64",
@@ -2847,36 +2860,6 @@ const jsz_engines = [
         "zlib_detailed": "N=3 median=1553 mean=1553.00±4.04 max=1560"
       },
       {
-        "arch": "amd64",
-        "binary_sha256": "4ae5f93d51170a1a2542a27bef9a7d483eff6d4cfe7e2b00ce131c25688d63b8",
-        "binary_size": 5423664,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static",
-        "version": "250829098.0.4"
-      },
-      {
-        "arch": "amd64",
-        "binary_sha256": "4c445816b1165e614f5a92654f5fc43839c88e46666be7f75917baaf1f88a848",
-        "binary_size": 4274592,
-        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static_clang",
-        "version": "250829098.0.4"
-      },
-      {
-        "arch": "amd64",
-        "binary_sha256": "96a135e36654c977548b1dfbf7eb380c2bddb0849fe7ba8d2bf11b4faf8c5f12",
-        "binary_size": 5702384,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static_intl",
-        "version": "250829098.0.4"
-      },
-      {
         "arch": "arm64",
         "binary_sha256": "4e1fe84daa53e5235f72f5757b6b1389e1548001e75a3d9d8d374ba9f2c70db7",
         "binary_size": 4073424,
@@ -2962,36 +2945,6 @@ const jsz_engines = [
         "Typescript_detailed": "N=69 median=30416 mean=30392.33±16.71 max=30599",
         "zlib": 2498,
         "zlib_detailed": "N=4 median=2498 mean=2498.75±1.11 max=2502"
-      },
-      {
-        "arch": "arm64",
-        "binary_sha256": "2434ef2982130931b564483d1d2930f72fdfe27b028b6e2514a40346402a6051",
-        "binary_size": 4858456,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static",
-        "version": "250829098.0.4"
-      },
-      {
-        "arch": "arm64",
-        "binary_sha256": "6ab7ff3b16d5be9a90cd478cfd883ab285aa5e10fb1b56f3cd33115a0c4a555c",
-        "binary_size": 4135400,
-        "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static_clang",
-        "version": "250829098.0.4"
-      },
-      {
-        "arch": "arm64",
-        "binary_sha256": "317cf0f38f1e5f297907c135691b41a3d402880342fd64bfa92ab6414126cfe7",
-        "binary_size": 5055256,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
-        "revision": "922779f8f0d18b3865492751c832614b1e34fbac",
-        "revision_date": "2025-10-24",
-        "variant": "static_intl",
-        "version": "250829098.0.4"
       }
     ],
     "conformance": {
@@ -3030,7 +2983,7 @@ const jsz_engines = [
     "standard": "ES5",
     "years": "2012-2015",
     "jit": "x64",
-    "github_stars": 881,
+    "github_stars": 883,
     "github_forks": 64,
     "github_contributors": 31
   },
@@ -3066,7 +3019,7 @@ const jsz_engines = [
     "platform": ".NET",
     "jit": "via CLR",
     "github_stars": 686,
-    "github_forks": 82,
+    "github_forks": 83,
     "github_contributors": 10
   },
   {
@@ -3371,7 +3324,7 @@ const jsz_engines = [
     "years": "2024-",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 1048,
+    "github_stars": 1054,
     "github_forks": 22,
     "github_contributors": 4
   },
@@ -3458,8 +3411,8 @@ const jsz_engines = [
     "standard_detailed": "ES2022 (partial, missing ES2018 regex and a few other features)",
     "years": "2014-2024",
     "interpreter": "stack-based VM",
-    "github_stars": 7341,
-    "github_forks": 687,
+    "github_stars": 7344,
+    "github_forks": 688,
     "github_contributors": 127,
     "bench": [
       {
@@ -3502,6 +3455,26 @@ const jsz_engines = [
         "zlib_error": "zlib: RangeError"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "36bd4e60708f6a1ec46d160b1b60673d416a3a7e35744499502d9da56ea5a8e8",
+        "binary_size": 502568,
+        "cc": "clang 22.0.0 (++20251222083055+3fac75ce8002-1~exp1~20251222083226.285)",
+        "revision": "50200152feb724a74a5f64e44d7885151537cfad",
+        "revision_date": "2024-12-18",
+        "variant": "clang",
+        "version": "3.0.0"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "ccc68c8bf53a4e9ec5c46b9bc05b16a858c7328ec06a9b785c4b2213a63f8518",
+        "binary_size": 854808,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "50200152feb724a74a5f64e44d7885151537cfad",
+        "revision_date": "2024-12-18",
+        "variant": "o3",
+        "version": "3.0.0"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "f03be158e4e11328e92794583d57cfffcb24e837acf023c1f263c1ddeadb226a",
         "binary_size": 461336,
@@ -3539,6 +3512,26 @@ const jsz_engines = [
         "Typescript": 55.4,
         "Typescript_detailed": "N=1 median=55.4 mean=55 max=55.4",
         "zlib_error": "zlib: RangeError"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "4b26f7574b172232873c9fb7f6ea09949aaf5b8c8dbfc9ef2d170034b37cc7e7",
+        "binary_size": 527000,
+        "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)",
+        "revision": "50200152feb724a74a5f64e44d7885151537cfad",
+        "revision_date": "2024-12-18",
+        "variant": "clang",
+        "version": "3.0.0"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "0bcefd2b612ea3db4fc29d56b1697d0618e643f0fec8d8e5104ea1837a795beb",
+        "binary_size": 854688,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "50200152feb724a74a5f64e44d7885151537cfad",
+        "revision_date": "2024-12-18",
+        "variant": "o3",
+        "version": "3.0.0"
       }
     ],
     "conformance": {
@@ -3578,8 +3571,8 @@ const jsz_engines = [
     "standard_detailed": "ESnext (partial)",
     "years": "2013-",
     "platform": ".NET",
-    "github_stars": 4491,
-    "github_forks": 585,
+    "github_stars": 4503,
+    "github_forks": 588,
     "github_contributors": 149
   },
   {
@@ -3675,7 +3668,7 @@ const jsz_engines = [
     "platform": "JavaScript",
     "interpreter": "tree walker",
     "interpreter_detailed": "tree walker ([interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689)",
-    "github_stars": 2136,
+    "github_stars": 2138,
     "github_forks": 362,
     "github_contributors": 22,
     "bench": [
@@ -3823,7 +3816,7 @@ const jsz_engines = [
       "es3": 0.9595,
       "es5": 0.6892,
       "kangax-es5": 0.8107,
-      "kangax-es6": 0.0286,
+      "kangax-es6": 0.0381,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.08,
       "kangax-es2018": 0.0526,
@@ -3854,7 +3847,7 @@ const jsz_engines = [
     "years": "2014-2022",
     "platform": "Python",
     "interpreter": "stack-based VM",
-    "github_stars": 2563,
+    "github_stars": 2566,
     "github_forks": 277,
     "github_contributors": 29,
     "bench": [
@@ -3966,9 +3959,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "jit": "3-tier JIT, x86/x64, arm/arm64, mips64, riscv64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 9410,
-    "github_forks": 1767,
-    "github_contributors": 2542,
+    "github_stars": 9458,
+    "github_forks": 1786,
+    "github_contributors": 2546,
     "bench": [
       {
         "arch": "amd64",
@@ -4450,7 +4443,7 @@ const jsz_engines = [
     "years": "2010-",
     "platform": ".NET",
     "jit": "via CLR",
-    "github_stars": 932,
+    "github_stars": 933,
     "github_forks": 127,
     "github_contributors": 14
   },
@@ -4550,7 +4543,7 @@ const jsz_engines = [
       "es3": 0.973,
       "es5": 0.9054,
       "kangax-es5": 0.9214,
-      "kangax-es6": 0.9122,
+      "kangax-es6": 0.9169,
       "kangax-es2016": 0.8485,
       "kangax-es2017": 0.9,
       "kangax-es2018": 0.8421,
@@ -4560,11 +4553,11 @@ const jsz_engines = [
       "kangax-es2022": 0.9728,
       "kangax-es2023": 1.0,
       "kangax-es2024": 1.0,
-      "kangax-es2025": 0.9474,
-      "kangax-intl": 0.8214,
+      "kangax-es2025": 1.0,
+      "kangax-intl": 1.0,
       "kangax-next": 0.0505,
       "es1-es5": 0.969,
-      "kangax-es2016plus": 0.9139
+      "kangax-es2016plus": 0.9205
     }
   },
   {
@@ -4826,9 +4819,9 @@ const jsz_engines = [
     "years": "2020-",
     "features": "WebAssembly engine (LibWasm)",
     "interpreter": "register-based VM",
-    "github_stars": 56494,
-    "github_forks": 2541,
-    "github_contributors": 1481,
+    "github_stars": 57083,
+    "github_forks": 2569,
+    "github_contributors": 1484,
     "bench": [
       {
         "arch": "amd64",
@@ -5009,18 +5002,18 @@ const jsz_engines = [
       "kangax-es6": 0.9228,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.94,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 0.7895,
       "kangax-intl": 1.0,
-      "kangax-next": 0.1905,
+      "kangax-next": 0.2208,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.9604
+      "kangax-es2016plus": 0.9636
     }
   },
   {
@@ -5091,7 +5084,7 @@ const jsz_engines = [
     "platform": "native",
     "platform_detailed": "native (C-based runtime)",
     "interpreter": "stack-based VM",
-    "github_stars": 624,
+    "github_stars": 626,
     "github_forks": 27,
     "github_contributors": 6
   },
@@ -5113,7 +5106,7 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([mocha.c](https://github.com/doodlewind/mocha1995/blob/main/src/mocha.c))",
     "gc": "reference counting",
-    "github_stars": 354,
+    "github_stars": 355,
     "github_forks": 30,
     "github_contributors": 4,
     "bench": [
@@ -5183,6 +5176,7 @@ const jsz_engines = [
         "arch": "amd64",
         "binary_sha256": "487ddd1a4f1de798f211b3134ce8b1c79b3316755e2fc9b203751fb1e1f0b066",
         "binary_size": 4830752,
+        "go": "1.25.5",
         "revision": "65a58be7b45de1d1f9e7e126539a52c519edffec",
         "revision_date": "2025-11-03",
         "version": "0.17.0",
@@ -5221,6 +5215,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "87a56cdb9f98f14fa4b9f9aa7a1dc1ad6f9645c6dc40ca0028089a50f96c434e",
         "binary_size": 4619264,
+        "go": "1.25.5",
         "revision": "65a58be7b45de1d1f9e7e126539a52c519edffec",
         "revision_date": "2025-11-03",
         "version": "0.17.0",
@@ -5312,16 +5307,24 @@ const jsz_engines = [
     "standard_detailed": "ES5 (subset)",
     "years": "2025-",
     "gc": "tracing GC",
-    "github_stars": 1995,
-    "github_forks": 58,
+    "github_stars": 3176,
+    "github_forks": 96,
     "github_contributors": 2,
     "bench": [
       {
+        "arch": "amd64",
+        "binary_sha256": "246f92f7a661a31825ffd6b764aae567131bfcac4ea3a97a998fd99928db6fa7",
+        "binary_size": 215840,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "27a2391cc5a54bf8fa683979be56b266523a1374",
+        "revision_date": "2025-12-24"
+      },
+      {
         "arch": "arm64",
-        "binary_sha256": "b4ff59bc7e2357d1974d908a37fd516cd4d27fe4edfc100808692092d0de1ab5",
+        "binary_sha256": "6de773721e576e5a6f88b38066fe3fee705214b09b0c82e38e1f1d3b64be1bea",
         "binary_size": 264880,
         "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
-        "revision": "e8d32813e39ed7ea04c7936d2b612b57bee1ac3e",
+        "revision": "27a2391cc5a54bf8fa683979be56b266523a1374",
         "revision_date": "2025-12-24"
       }
     ],
@@ -5423,6 +5426,16 @@ const jsz_engines = [
         "zlib_error": "EvalError: zlib.js:450: invalid use of 'eval'undefined"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "1ae5fdf1b661d55876be69b5c3ee2984abd20b3aae9c1b65f05bab07db7bc023",
+        "binary_size": 404912,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a",
+        "revision_date": "2025-11-07",
+        "variant": "gcc",
+        "version": "1.3.8"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "0dea4cd5610e590b8e2d03ae41a830436a102fb00f7c1cfb487f1a11c5a5e542",
         "binary_size": 396408,
@@ -5492,6 +5505,16 @@ const jsz_engines = [
         "SplayLatency_detailed": "N=99 median=1928 mean=1926.81±2.06 max=1951",
         "Typescript_error": "Error: cannot open file 'fs.js': No such file or directory",
         "zlib_error": "EvalError: zlib.js:450: invalid use of 'eval'undefined"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "eb423ff3f17df16372dc4527f08d84158c535fb685575022eae40a9e12edd1c0",
+        "binary_size": 396528,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a",
+        "revision_date": "2025-11-07",
+        "variant": "gcc",
+        "version": "1.3.8"
       }
     ],
     "conformance": {
@@ -5614,7 +5637,7 @@ const jsz_engines = [
     "jit": "via JVM",
     "regex": "joni",
     "regex_detailed": "[joni](https://github.com/jruby/joni) (JRuby's Java port of Oniguruma)",
-    "github_stars": 481,
+    "github_stars": 484,
     "github_forks": 48,
     "github_contributors": 97,
     "bench": [
@@ -5736,7 +5759,7 @@ const jsz_engines = [
     "standard": "no",
     "years": "2017-2022",
     "type": "JavaScript-like language, compiler to native code",
-    "github_stars": 3610,
+    "github_stars": 3611,
     "github_forks": 129,
     "github_contributors": 21
   },
@@ -5763,18 +5786,18 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "58aca8cbabed21a40711bdce5d4936002601f12f85e78778b33c23f07d54db58",
-        "binary_size": 420240,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "253cf991cfa4f341d982e7b4ba64780fd07272233bccb5ab81278143b52f2a26",
+        "binary_size": 428560,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
         "revision_date": "2023-12-05",
         "version": "0.2.5"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "bb7718db7ac2dde574960431e33ee6140d7095752e9fe9aaaeb895deea4d118d",
-        "binary_size": 489656,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "9a5cfaa825ac5a568326ef752b3d98b7532741179f69c03d260d5e793b510945",
+        "binary_size": 489784,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
         "revision_date": "2023-12-05",
         "version": "0.2.5"
@@ -5824,9 +5847,9 @@ const jsz_engines = [
     "years": "2015-",
     "interpreter": "register-based VM",
     "regex": "PCRE2",
-    "github_stars": 1510,
-    "github_forks": 205,
-    "github_contributors": 34,
+    "github_stars": 1519,
+    "github_forks": 209,
+    "github_contributors": 35,
     "bench": [
       {
         "arch": "amd64",
@@ -5934,7 +5957,7 @@ const jsz_engines = [
     "parser": "oxc",
     "parser_detailed": "[oxc](../parsers/oxc.md)",
     "interpreter": "stack-based VM",
-    "github_stars": 1811,
+    "github_stars": 1825,
     "github_forks": 72,
     "github_contributors": 29,
     "bench": [
@@ -6029,7 +6052,7 @@ const jsz_engines = [
       "kangax-es2017": 0.88,
       "kangax-es2018": 0.6737,
       "kangax-es2019": 0.9464,
-      "kangax-es2020": 0.9286,
+      "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 0.9524,
       "kangax-es2023": 1.0,
@@ -6038,7 +6061,7 @@ const jsz_engines = [
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 0.9167,
-      "kangax-es2016plus": 0.8386
+      "kangax-es2016plus": 0.8453
     }
   },
   {
@@ -6071,14 +6094,15 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "regex": "RE2",
     "regex_detailed": "RE2 (not ECMAScript-compliant)",
-    "github_stars": 8414,
-    "github_forks": 599,
+    "github_stars": 8419,
+    "github_forks": 598,
     "github_contributors": 67,
     "bench": [
       {
         "arch": "amd64",
         "binary_sha256": "3e3685b24580208379638defd9700336841a2f7b2ee694981c96019c2b56b014",
         "binary_size": 4890648,
+        "go": "1.25.5",
         "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a",
         "revision_date": "2025-06-13",
         "version": "0.5.1-2-g3ca7298",
@@ -6113,6 +6137,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "80bb9e30b1499bbaf346792782197b1356f4fac00c381d16f45e93fcb1d379fd",
         "binary_size": 4751352,
+        "go": "1.25.5",
         "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a",
         "revision_date": "2025-06-13",
         "version": "0.5.1-2-g3ca7298",
@@ -6182,8 +6207,8 @@ const jsz_engines = [
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "WebAssembly, native",
     "jit": "via WebAssembly engine",
-    "github_stars": 4380,
-    "github_forks": 95,
+    "github_stars": 4397,
+    "github_forks": 96,
     "github_contributors": 20,
     "bench": [
       {
@@ -6241,9 +6266,9 @@ const jsz_engines = [
     "ancestors": "QuickJS",
     "interpreter": "stack-based VM",
     "gc": "mark-and-sweep / reference counting",
-    "github_stars": 1052,
-    "github_forks": 45,
-    "github_contributors": 12,
+    "github_stars": 1057,
+    "github_forks": 47,
+    "github_contributors": 13,
     "bench": [
       {
         "arch": "amd64",
@@ -6342,7 +6367,7 @@ const jsz_engines = [
       "kangax-es2017": 0.8471,
       "kangax-es2018": 0.9368,
       "kangax-es2019": 1.0,
-      "kangax-es2020": 0.5714,
+      "kangax-es2020": 0.8571,
       "kangax-es2021": 0.7857,
       "kangax-es2022": 0.619,
       "kangax-es2023": 0.2,
@@ -6351,7 +6376,7 @@ const jsz_engines = [
       "kangax-intl": 0.25,
       "kangax-next": 0.0303,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.6555
+      "kangax-es2016plus": 0.682
     }
   },
   {
@@ -6416,17 +6441,17 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "2d0cebfbe00caa2ec6ab5fa1a5b4729f74ddc6fc87f642555873d5b9223357e1",
-        "binary_size": 155064,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "d1a2abda1f8666a2e847c270efba627ad60740a8db6ecae96a819593152ee89a",
+        "binary_size": 155192,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
         "revision_date": "2012-03-26"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "115289879c9adf2bf68c0a5590fc3da003323b4762f944a1f24cbd2c41d6ed20",
-        "binary_size": 199888,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "da1bedffe406737c752fb80a591bc75ac8c4c53bb1556bf5a26634a64370971b",
+        "binary_size": 200024,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
         "revision_date": "2012-03-26"
       }
@@ -6468,7 +6493,7 @@ const jsz_engines = [
     "years": "2025-",
     "interpreter": "tree walker",
     "regex": "std::regex",
-    "github_stars": 7,
+    "github_stars": 8,
     "github_forks": 2,
     "github_contributors": 2,
     "bench": [
@@ -6494,25 +6519,25 @@ const jsz_engines = [
       }
     ],
     "conformance": {
-      "es1": 0.5657,
-      "es3": 0.5135,
-      "es5": 0.3514,
-      "kangax-es5": 0.5579,
-      "kangax-es6": 0.2804,
+      "es1": 0.5758,
+      "es3": 0.5338,
+      "es5": 0.473,
+      "kangax-es5": 0.6732,
+      "kangax-es6": 0.3088,
       "kangax-es2016": 0.303,
-      "kangax-es2017": 0.24,
+      "kangax-es2017": 0.3,
       "kangax-es2018": 0.2105,
-      "kangax-es2019": 0.0,
-      "kangax-es2020": 0.2571,
-      "kangax-es2021": 0.1429,
-      "kangax-es2022": 0.1111,
-      "kangax-es2023": 0.0,
-      "kangax-es2024": 0.0,
+      "kangax-es2019": 0.1667,
+      "kangax-es2020": 0.1857,
+      "kangax-es2021": 0.4286,
+      "kangax-es2022": 0.4376,
+      "kangax-es2023": 0.5714,
+      "kangax-es2024": 0.2041,
       "kangax-es2025": 0.0,
-      "kangax-intl": 0.1429,
+      "kangax-intl": 0.5357,
       "kangax-next": 0.0,
-      "es1-es5": 0.5095,
-      "kangax-es2016plus": 0.1408
+      "es1-es5": 0.5429,
+      "kangax-es2016plus": 0.2621
     }
   },
   {
@@ -6532,15 +6557,15 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "stack-based VM",
     "jit": "x64",
-    "github_stars": 75,
+    "github_stars": 76,
     "github_forks": 8,
     "github_contributors": 1,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "5cf6a3dc30d1005e600912e7a2bcd3da186f9686520eb075096155a76f64e998",
-        "binary_size": 1375208,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "e88d4deca04481f35aafa514a92d08732da3ed0683132e186899223a4e597039",
+        "binary_size": 1432680,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "d5a3e722aecb8412330282739b409bec1298eabe",
         "revision_date": "2023-10-25"
       }
@@ -6584,8 +6609,8 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "stack-based VM",
     "gc": "reference counting",
-    "github_stars": 2374,
-    "github_forks": 225,
+    "github_stars": 2453,
+    "github_forks": 231,
     "github_contributors": 79,
     "bench": [
       {
@@ -6676,6 +6701,16 @@ const jsz_engines = [
         "zlib_detailed": "N=4 median=2064 mean=2061.00±4.71 max=2073"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "100445cd6cfc372a169f662fe9d66331147964879f81a163db97a5403bf11219",
+        "binary_size": 1269448,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "d405777f7eefa22c17c12970317ef3d6e7658f5a",
+        "revision_date": "2025-12-15",
+        "variant": "gcc",
+        "version": "0.11.0-36-gd405777"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "6c75efbdb03046bc11c46e117bea1c2d076abac6b90d10a1069b979c35ffa765",
         "binary_size": 1183080,
@@ -6761,6 +6796,16 @@ const jsz_engines = [
         "Typescript_detailed": "N=53 median=22982 mean=22970.30±9.45 max=23090",
         "zlib": 4197,
         "zlib_detailed": "N=8 median=4197 mean=4189.25±6.01 max=4206"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "eaa5668ba9495b6deb0ad6556fdcec56b72887a161e1b7317f508e0862f1e288",
+        "binary_size": 1183216,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "d405777f7eefa22c17c12970317ef3d6e7658f5a",
+        "revision_date": "2025-12-15",
+        "variant": "gcc",
+        "version": "0.11.0-36-gd405777"
       }
     ],
     "conformance": {
@@ -6771,7 +6816,7 @@ const jsz_engines = [
       "kangax-es6": 0.9661,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.96,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
@@ -6782,7 +6827,7 @@ const jsz_engines = [
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9495
+      "kangax-es2016plus": 0.9508
     }
   },
   {
@@ -6803,8 +6848,8 @@ const jsz_engines = [
     "interpreter": "stack-based VM (`JS_CallInternal()` in quickjs.c)",
     "interpreter_detailed": "stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))",
     "gc": "reference counting",
-    "github_stars": 9828,
-    "github_forks": 1048,
+    "github_stars": 10061,
+    "github_forks": 1057,
     "github_contributors": 16,
     "bench": [
       {
@@ -6893,6 +6938,15 @@ const jsz_engines = [
         "zlib_detailed": "N=4 median=2482 mean=2470.75±7.39 max=2485"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "f042de91d3edd039cce07ad1f22b8e23bf1fec819d7ae05d43db82370a8d6672",
+        "binary_size": 1326528,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "f1139494d18a2053630c5ed3384a42bb70db3c53",
+        "revision_date": "2025-12-22",
+        "variant": "gcc"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "6e5fda54d3fdf7324551f69597931972ff50513ec7f40eaadd0ff5c6773ebb94",
         "binary_size": 1051944,
@@ -6976,6 +7030,15 @@ const jsz_engines = [
         "Typescript_detailed": "N=58 median=25109 mean=25067.43±21.32 max=25239",
         "zlib": 5130,
         "zlib_detailed": "N=10 median=5130 mean=5120.50±14.77 max=5154"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "3f2281a9fbe3205c86a7abcd9d62c47625ca7850e0b2ed819bf6ecb903c76674",
+        "binary_size": 1248688,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "f1139494d18a2053630c5ed3384a42bb70db3c53",
+        "revision_date": "2025-12-22",
+        "variant": "gcc"
       }
     ],
     "conformance": {
@@ -6993,11 +7056,11 @@ const jsz_engines = [
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
       "kangax-es2024": 1.0,
-      "kangax-es2025": 0.9474,
+      "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9934
+      "kangax-es2016plus": 1.0
     }
   },
   {
@@ -7020,8 +7083,8 @@ const jsz_engines = [
     "interpreter_detailed": "register-based VM with accumulator (\"Moth\", [qv4vme_moth.cpp](https://github.com/qt/qtdeclarative/blob/dev/src/qml/jsruntime/qv4vme_moth.cpp))",
     "jit": "x86/x64, arm/arm64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 275,
-    "github_forks": 196,
+    "github_stars": 276,
+    "github_forks": 199,
     "github_contributors": 936,
     "bench": [
       {
@@ -7330,7 +7393,7 @@ const jsz_engines = [
         "binary_size": 1673616,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
+        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
       },
       {
         "arch": "arm64",
@@ -7338,7 +7401,7 @@ const jsz_engines = [
         "binary_size": 1509656,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.91.1 (ed61e7d7e 2025-11-07)"
+        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
       }
     ],
     "conformance": {
@@ -7399,8 +7462,8 @@ const jsz_engines = [
     "platform": "Java",
     "interpreter": "tree walker",
     "jit": "via JVM (can compile to JVM bytecode)",
-    "github_stars": 4504,
-    "github_forks": 903,
+    "github_stars": 4512,
+    "github_forks": 904,
     "github_contributors": 148,
     "bench": [
       {
@@ -7485,7 +7548,7 @@ const jsz_engines = [
       "es3": 1.0,
       "es5": 0.8514,
       "kangax-es5": 0.9068,
-      "kangax-es6": 0.7152,
+      "kangax-es6": 0.722,
       "kangax-es2016": 0.7273,
       "kangax-es2017": 0.425,
       "kangax-es2018": 0.6,
@@ -7517,28 +7580,28 @@ const jsz_engines = [
     "platform": "Python",
     "platform_detailed": "Python (PyPy 2.x's RPython)",
     "interpreter": "stack-based VM",
-    "github_stars": 6,
+    "github_stars": 5,
     "github_forks": 0,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 153479108,
+        "dist_size": 153041820,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       },
       {
         "arch": "arm64",
-        "dist_size": 148039972,
+        "dist_size": 148040276,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       }
     ],
     "conformance": {
-      "es1": 0.702,
+      "es1": 0.7222,
       "es3": 0.2027,
       "es5": 0.2703,
-      "es1-es5": 0.45
+      "es1-es5": 0.4595
     }
   },
   {
@@ -7555,7 +7618,7 @@ const jsz_engines = [
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
     "interpreter": "stack-based VM",
-    "github_stars": 1114,
+    "github_stars": 1115,
     "github_forks": 54,
     "github_contributors": 6,
     "bench": [
@@ -7789,7 +7852,7 @@ const jsz_engines = [
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))",
-    "github_stars": 283,
+    "github_stars": 288,
     "github_forks": 9,
     "github_contributors": 41,
     "bench": [
@@ -7797,6 +7860,7 @@ const jsz_engines = [
         "arch": "amd64",
         "binary_sha256": "fcebabbb9da0b4a0e5f8ed8238bf24e2575452fa515cace1209987fa430f7e68",
         "binary_size": 9818328,
+        "go": "1.25.5",
         "revision": "9a028a30ff58964207ed60cfb82ff9136ca1a1b8",
         "revision_date": "2025-11-24",
         "Box2D": 679,
@@ -7838,6 +7902,7 @@ const jsz_engines = [
         "arch": "arm64",
         "binary_sha256": "a2f59e0c1599166ba7176b287fa3b19a036fc12cadeb770d3091ad36a48846f8",
         "binary_size": 9437816,
+        "go": "1.25.5",
         "revision": "9a028a30ff58964207ed60cfb82ff9136ca1a1b8",
         "revision_date": "2025-11-24",
         "Box2D": 1178,
@@ -8019,9 +8084,9 @@ const jsz_engines = [
     "gc_detailed": "generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))",
     "regex": "Irregexp, JIT-enabled",
     "regex_detailed": "Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)",
-    "github_stars": 10712,
-    "github_forks": 724,
-    "github_contributors": 12119,
+    "github_stars": 10831,
+    "github_forks": 777,
+    "github_contributors": 12142,
     "bench": [
       {
         "arch": "amd64",
@@ -8848,18 +8913,18 @@ const jsz_engines = [
       "kangax-es6": 0.981,
       "kangax-es2016": 1.0,
       "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.3636,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9968
+      "kangax-es2016plus": 1.0
     }
   },
   {
@@ -9026,23 +9091,23 @@ const jsz_engines = [
     "standard_detailed": "no (can't run ES1)",
     "years": "2009-2012",
     "interpreter": "interprets from source",
-    "github_stars": 571,
+    "github_stars": 572,
     "github_forks": 90,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "4bf89640796dba3ea9d05870fdd23c4107a6fb83717190bcec358b086c397ea9",
-        "binary_size": 154504,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "f1260560e3201b03e4a21f17cacf91edff9d38f477d6b2ee5a7117813e062229",
+        "binary_size": 166928,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
         "revision_date": "2025-10-21"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "a80cfbf558c57866e8b95e585dafba46e74b69e42d5b3508910d79a30bb73227",
-        "binary_size": 133936,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "e7f3bd77c531fa5bbacfb726885e4d152b7a1c1cc5c8cd5eaad3430ba35435cf",
+        "binary_size": 199560,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
         "revision_date": "2025-10-21"
       }
@@ -9085,8 +9150,8 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([tTJSInterCodeContext::ExecuteCode](https://github.com/krkrz/krkrz/tree/master/tjs2/tjsInterCodeExec.cpp#L1019))",
-    "github_stars": 864,
-    "github_forks": 124,
+    "github_stars": 869,
+    "github_forks": 126,
     "github_contributors": 12
   },
   {
@@ -9104,7 +9169,7 @@ const jsz_engines = [
     "platform": ".NET",
     "interpreter": "tree walker",
     "github_stars": 269,
-    "github_forks": 16,
+    "github_forks": 17,
     "github_contributors": 1
   },
   {
@@ -9178,7 +9243,7 @@ const jsz_engines = [
     "years": "2016-",
     "platform": "native",
     "platform_detailed": "native (compiles to C)",
-    "github_stars": 1341,
+    "github_stars": 1348,
     "github_forks": 96,
     "github_contributors": 9
   },
@@ -9247,7 +9312,7 @@ const jsz_engines = [
     "regex": "POSIX",
     "regex_detailed": "POSIX (regex.h)",
     "github_stars": 127,
-    "github_forks": 43,
+    "github_forks": 44,
     "github_contributors": 21,
     "bench": [
       {
@@ -9315,9 +9380,9 @@ const jsz_engines = [
     "jit": "3-tier JIT, arm/arm64, x86/x64, mips64/mips64el, riscv32/riscv64, ppc64, s390x, loong64",
     "regex": "Irregexp , Experimental/Linear",
     "regex_detailed": "Irregexp (backtracking, JIT-enabled), [Experimental](https://v8.dev/blog/non-backtracking-regexp)/Linear (non-backtracking)",
-    "github_stars": 24681,
-    "github_forks": 4197,
-    "github_contributors": 1192,
+    "github_stars": 24714,
+    "github_forks": 4204,
+    "github_contributors": 1196,
     "bench": [
       {
         "arch": "amd64",
@@ -9361,6 +9426,16 @@ const jsz_engines = [
         "Typescript_detailed": "N=100 median=149479 mean=148644.08±494.39 max=156449",
         "zlib": 79508,
         "zlib_detailed": "N=100 median=79508 mean=79419.06±108.60 max=81545"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "c1ba1f925a6391440fb081b8a7ddd4d67505eb731717f0cdf4a35236773a83c7",
+        "binary_size": 24136128,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "revision": "1358a06645e3442e8210a62e41e603224825f15b",
+        "revision_date": "2025-12-11",
+        "variant": "gcc",
+        "version": "14.4.258.13"
       },
       {
         "arch": "amd64",
@@ -9494,6 +9569,16 @@ const jsz_engines = [
         "Typescript_detailed": "N=100 median=270713 mean=270479.76±150.54 max=273617",
         "zlib": 136564,
         "zlib_detailed": "N=100 median=136564 mean=136342.30±189.71 max=138545"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "cbad44f8042a31204b031deeb13a7974ce247db4202b663e44dd8390279262d8",
+        "binary_size": 22676208,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "revision": "10baa8d454eebb28d739459ba0a14481c17714f2",
+        "revision_date": "2025-12-11",
+        "variant": "gcc",
+        "version": "14.4.258.13"
       },
       {
         "arch": "arm64",
@@ -9643,7 +9728,7 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 371,
+    "github_stars": 372,
     "github_forks": 26,
     "github_contributors": 11
   },
@@ -9663,8 +9748,8 @@ const jsz_engines = [
     "standard": "ESnext",
     "years": "2002-",
     "interpreter": "stack-based VM",
-    "github_stars": 1456,
-    "github_forks": 248,
+    "github_stars": 1461,
+    "github_forks": 249,
     "github_contributors": 73,
     "bench": [
       {
@@ -9878,7 +9963,7 @@ const jsz_engines = [
     "platform": ".NET",
     "interpreter": "tree walker",
     "jit": "via CLR",
-    "github_stars": 254,
+    "github_stars": 253,
     "github_forks": 7,
     "github_contributors": 8
   },
@@ -9894,8 +9979,8 @@ const jsz_engines = [
     "license": "MIT",
     "years": "2024-",
     "interpreter": "tree walker",
-    "github_stars": 33,
-    "github_forks": 2,
+    "github_stars": 36,
+    "github_forks": 3,
     "github_contributors": 1,
     "bench": [
       {
@@ -9964,13 +10049,13 @@ const jsz_engines = [
       }
     ],
     "conformance": {
-      "es1": 0.8737,
-      "es3": 0.7365,
-      "es5": 0.5946,
-      "kangax-es5": 0.7999,
-      "kangax-es6": 0.5835,
+      "es1": 0.8939,
+      "es3": 0.7635,
+      "es5": 0.6081,
+      "kangax-es5": 0.8144,
+      "kangax-es6": 0.5972,
       "kangax-es2016": 0.5909,
-      "kangax-es2017": 0.5737,
+      "kangax-es2017": 0.5837,
       "kangax-es2018": 0.6281,
       "kangax-es2019": 0.5625,
       "kangax-es2020": 0.7286,
@@ -9979,10 +10064,10 @@ const jsz_engines = [
       "kangax-es2023": 0.9429,
       "kangax-es2024": 0.5918,
       "kangax-es2025": 0.2105,
-      "kangax-intl": 0.5714,
+      "kangax-intl": 0.6429,
       "kangax-next": 0.0404,
-      "es1-es5": 0.7762,
-      "kangax-es2016plus": 0.5984
+      "es1-es5": 0.7976,
+      "kangax-es2016plus": 0.6
     }
   },
   {
@@ -10005,17 +10090,17 @@ const jsz_engines = [
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "fecee407fca8ed6403999f3d548948993e8c1a08b28931ba6a1c6376ee4059cb",
-        "binary_size": 43328,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "b662f175c2b259bfc3fac7163ad5413fda0eafc1920e066ff6f82af997cc14b3",
+        "binary_size": 47552,
+        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
         "revision_date": "2018-08-29"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "eab0b08db7c7762f446690b622e659f06b99f67c736ffad63344b579513a3cfa",
-        "binary_size": 67784,
-        "cc": "gcc 14.2.0 (Debian 14.2.0-19)",
+        "binary_sha256": "442df59ead31cc0b568845257ce461d14f056aac18fab5cfc4f344677f363394",
+        "binary_size": 67920,
+        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
         "revision_date": "2018-08-29"
       }

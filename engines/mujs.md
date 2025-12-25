@@ -22,7 +22,7 @@ Embeddable JavaScript engine from MuPDF.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 92%</summary><ul>
+<details><summary>ES1-ES5: 91%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/mujs.txt">Full log</a>.</li>
 <li>ES1: 96%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed
@@ -34,7 +34,7 @@ Embeddable JavaScript engine from MuPDF.
 <a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: annex-b.literals.octal.js:14: number with leading zeroundefined
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
 </pre></li>
-<li>ES3: 89%<pre>
+<li>ES3: 88%<pre>
 <a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: empty array toLocaleString failed; multiple elements content failed
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
@@ -44,7 +44,9 @@ Embeddable JavaScript engine from MuPDF.
 <a href="../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: Array index should be enumerable failed
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: custom toString failed
 <a href="../conformance/es3/RegExp.js">RegExp.js</a>: RegExp passthrough failed
+<a href="../conformance/es3/RegExp.prototype.exec.js">RegExp.prototype.exec.js</a>: index failed
 <a href="../conformance/es3/String.prototype.concat.js">String.prototype.concat.js</a>: concat with no arguments failed
+<a href="../conformance/es3/String.prototype.match.js">String.prototype.match.js</a>: non-global match failed
 <a href="../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: '0'.split(undefined, 0).length !== 0
 <a href="../conformance/es3/annex-b.String.prototype.substr.js">annex-b.String.prototype.substr.js</a>: TypeError: undefined is not callable
 <a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI invalid UTF-8; no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate

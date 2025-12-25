@@ -54,8 +54,6 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: "Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
 <a href="../conformance/kangax-es6/Map.iterator-prototype-chain.js">Map.iterator-prototype-chain.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.JSON.stringify.js">Proxy.JSON.stringify.js</a>: failed
-<a href="../conformance/kangax-es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: java.lang.IllegalStateException: FAILED ASSERTION Exception in thread "main" java.lang.IllegalStateException: FAILED ASSERTION
-<a href="../conformance/kangax-es6/Proxy.handler.construct.invariants.js">Proxy.handler.construct.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.construct.js">Proxy.handler.construct.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js">Proxy.handler.getOwnPropertyDescriptor.invariants.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: failed
@@ -66,6 +64,8 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es6/Reflect.construct.Array-subclassing.js">Reflect.construct.Array-subclassing.js</a>: failed
 <a href="../conformance/kangax-es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
 <a href="../conformance/kangax-es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: TypeError: The constructor for Promise may not be invoked as a function
+<a href="../conformance/kangax-es6/Reflect.construct.RegExp-subclassing.js">Reflect.construct.RegExp-subclassing.js</a>: failed
+<a href="../conformance/kangax-es6/Reflect.construct.new-target.js">Reflect.construct.new-target.js</a>: "Reflect.construct.new-target.js", line 11: syntax error "Reflect.construct.new-target.js", line 12: syntax error "Reflect.construct.new-target.js", line 14: syntax error "Reflect.construct.new-target.js", line 1: Compilation produced 4 syntax errors.
 ...
 </pre></li>
 <li>ES2016: 73%<pre>
@@ -77,7 +77,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <li>ES2018: 60%<pre>
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: "async-iterators.for-await-of.js", line 62: syntax error "async-iterators.for-await-of.js", line 63: syntax error "async-iterators.for-await-of.js", line 68: syntax error "async-iterators.for-await-of.js", line 69: syntax error   console.log("kangax-es2018/async-iterators.for-await-of.js: " + e); "a
 <a href="../conformance/kangax-es2018/async-iterators.generators.js">async-iterators.generators.js</a>: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
-<a href="../conformance/kangax-es2018/object-rest.js">object-rest.js</a>: java.lang.IllegalStateException: FAILED ASSERTION Exception in thread "main" java.lang.IllegalStateException: FAILED ASSERTION
+<a href="../conformance/kangax-es2018/object-rest.js">object-rest.js</a>: "object-rest.js", line 1: Compilation produced 1 syntax errors.
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-11.js">regex.unicode-property-escapes.unicode-11.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-12.js">regex.unicode-property-escapes.unicode-12.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-13.js">regex.unicode-property-escapes.unicode-13.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence

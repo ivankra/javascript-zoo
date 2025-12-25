@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "4940c670287d9ad31d1c8a79d0a407f6e9b712db377eab26a88d3865baaed143", "binary_size": 37430256, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "0131ff10eec6e050cd82e9e92fdbabb747992aa5", "revision_date": "2025-12-01", "variant": "intl", "version": "146.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "cfd651c01a70e6e36e1cdfd5d3dd7e406bafea2ac37583f86074377b7bad0e9f", "binary_size": 38118608, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "b037029e846ea659ba0d46f082973ca765271820", "revision_date": "2025-12-19", "variant": "intl", "version": "147.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:28 SyntaxError: invalid property name in regular expression:
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK

@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -724,14 +724,14 @@ kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: identifier '
 kangax-es6/annex-b.function.if-statement.js: OK
 kangax-es6/annex-b.function.labeled.js: OK
 kangax-es6/annex-b.html-comments.js: OK
-kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: invalid backreference(s) (line 2001) error in executing file /tmp/tmp.lhaJjDwDXu.js
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: invalid backreference(s) (line 2001) error in executing file /tmp/tmp.wQJPjGSG99.js
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.lhM27EsSEr.js
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.DO7CNKuFkN.js
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.RjVdy8r6uC.js
-kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.Lv5zr5ea8t.js
+kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.ITm7cQdini.js
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.GCZMr6ocQQ.js
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: invalid escape (line 2001) error in executing file /tmp/tmp.EZrkAd01pY.js
+kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: invalid regexp escape (line 2001) error in executing file /tmp/tmp.S10A8F5j56.js
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
@@ -1278,7 +1278,7 @@ kangax-es2018/misc.template-literal-revision.js: OK
 kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
-kangax-es2018/regex.lookbehind.js: SyntaxError: invalid regexp group (line 2002) error in executing file /tmp/tmp.YmuBh5tEJq.js
+kangax-es2018/regex.lookbehind.js: SyntaxError: invalid regexp group (line 2002) error in executing file /tmp/tmp.T9q01yXsR7.js
 kangax-es2018/regex.named-capture-groups.js: ReferenceError: identifier 'WeakMap' undefined
 kangax-es2018/regex.unicode-property-escapes.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
 kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: identifier 'setTimeout' undefined
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.gqKD34Jssg.js
+kangax-es2020/BigInt64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.rG4RRxpfQr.js
 kangax-es2020/BigInt.asIntN.js: ReferenceError: identifier 'BigInt' undefined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: identifier 'BigInt' undefined
-kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.jKp8xhOHUL.js
-kangax-es2020/BigInt.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.nVvRYpz3xd.js
-kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.zdAFGB69pu.js
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.bZYD4HrHQ0.js
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.71lrvRckQV.js
+kangax-es2020/BigInt.constructor.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.y6vJRSvbJB.js
+kangax-es2020/BigInt.js: SyntaxError: invalid number literal (line 12) error in executing file /tmp/tmp.lDCS3srdNy.js
+kangax-es2020/BigUint64Array.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.H0dYvElhGt.js
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.sKOP24I0Uc.js
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal (line 2539) error in executing file /tmp/tmp.lRQb36W3Le.js
 kangax-es2020/Promise.allSettled.js: ReferenceError: identifier 'setTimeout' undefined
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
@@ -1438,7 +1438,7 @@ kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: undefined not cal
 kangax-es2025/Set.prototype.union.js: TypeError: undefined not callable (property 'union' of [object Object])
 kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regexp group (line 2001) error in executing file /tmp/tmp.VxPhigsTkW.js
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regexp group (line 2001) error in executing file /tmp/tmp.Gt3CucHfv4.js
 kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK

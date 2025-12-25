@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "9d321a3ee20a06befeb4cf435821a0bc7977fafa8610e5599635a9bb3d25da74", "binary_size": 42788496, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "chakracore", "repository": "https://github.com/chakra-core/ChakraCore.git", "revision": "2dba810c925eb366e44a1f7d7a5b2e289e2f8510", "revision_date": "2025-10-11", "variant": "intl"}
+Metadata: {"arch": "arm64", "binary_sha256": "0ce90b8089ec578c3c84332bf6ac6d4399dc7aa90012d3255f41050fbad8cccb", "binary_size": 39797824, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "chakracore", "jit": "", "repository": "https://github.com/chakra-core/ChakraCore.git", "revision": "622c745389832ede744715c826b5fcceeb20300c", "revision_date": "2025-12-04", "variant": "intl"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -1081,7 +1081,7 @@ kangax-es6/subclassing.Function.prototype-chain.js: OK
 kangax-es6/subclassing.Function.prototype.apply.js: OK
 kangax-es6/subclassing.Function.prototype.bind.js: OK
 kangax-es6/subclassing.Function.prototype.call.js: OK
-kangax-es6/subclassing.Promise.all.js: failed
+kangax-es6/subclassing.Promise.all.js: OK
 kangax-es6/subclassing.Promise.js: OK
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
 kangax-es6/subclassing.Promise.race.js: OK

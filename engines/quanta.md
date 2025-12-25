@@ -13,12 +13,9 @@ Buggy unfinished interpreter.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 51%</summary><ul>
+<details><summary>ES1-ES5: 54%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/quanta.txt">Full log</a>.</li>
-<li>ES1: 57%<pre>
-<a href="../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: failed
-<a href="../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: failed
-<a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
+<li>ES1: 58%<pre>
 <a href="../conformance/es1/Boolean.prototype.toString.js">Boolean.prototype.toString.js</a>: failed
 <a href="../conformance/es1/Boolean.prototype.valueOf.js">Boolean.prototype.valueOf.js</a>: failed
 <a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
@@ -37,16 +34,17 @@ Buggy unfinished interpreter.
 <a href="../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getUTCHours.js">Date.prototype.getUTCHours.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMilliseconds.js">Date.prototype.getUTCMilliseconds.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: failed
+<a href="../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: failed
 ...
 </pre></li>
-<li>ES3: 51%<pre>
-<a href="../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: failed
-<a href="../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: failed
-<a href="../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: failed
-<a href="../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: failed
-<a href="../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: failed
-<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: basic toLocaleString failed; empty array toLocaleString failed; null/missing elements failed
-<a href="../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: failed
+<li>ES3: 53%<pre>
+<a href="../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: pop from object failed; pop single element from object failed
+<a href="../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: push to object failed; push multiple to empty object failed
+<a href="../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: shift from object failed; shift single element from object failed
+<a href="../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: delete on object failed; insert on object failed; negative start on object failed
+<a href="../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
 <a href="../conformance/es3/Date.prototype.toDateString.js">Date.prototype.toDateString.js</a>: failed
 <a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
 <a href="../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed
@@ -54,6 +52,8 @@ Buggy unfinished interpreter.
 <a href="../conformance/es3/Date.prototype.toTimeString.js">Date.prototype.toTimeString.js</a>: failed
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: failed
+<a href="../conformance/es3/Math.max.variadic.js">Math.max.variadic.js</a>: max() with 0 args failed; max() with NaN failed
+<a href="../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: min() with 0 args failed; min() with NaN failed
 <a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential(2) failed; negative number failed; NaN failed; zero failed; Infinity failed; small number failed
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
 <a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
@@ -63,23 +63,43 @@ Buggy unfinished interpreter.
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: failed
 ...
 </pre></li>
-<li>ES5: 35%, <b>1 crash</b><br>
+<li>ES5: 47%, <b>1 crash</b><br>
 </ul></details>
 
-<details><summary>compat-table: ES6 28%, ES2016+ 14%, Next 0%, Intl 14%</summary><ul>
-<li>ES6: 28%, <b>6 crashes</b><br>
+<details><summary>compat-table: ES6 31%, ES2016+ 26%, Next 0%, Intl 54%</summary><ul>
+<li>ES6: 31%, <b>9 crashes</b><br>
 <li>ES2016: 30%<br>
-<li>ES2017: 24%<br>
+<li>ES2017: 30%<br>
 <li>ES2018: 21%<br>
-<li>ES2019: 0%<br>
-<li>ES2020: 26%<br>
-<li>ES2021: 14%<br>
-<li>ES2022: 11%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
+<li>ES2019: 17%, <b>1 crash</b><br>
+<li>ES2020: 19%<br>
+<li>ES2021: 43%<br>
+<li>ES2022: 44%<br>
+<li>ES2023: 57%<pre>
+<a href="../conformance/kangax-es2023/Array.prototype.toSorted.js">Array.prototype.toSorted.js</a>: failed
+<a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: failed
+<a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: failed
+<a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: failed
+<a href="../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: SyntaxError: Expected identifier after '#'
+</pre></li>
+<li>ES2024: 20%<br>
 <li>ES2025: 0%<br>
 <li>Next: 0%<br>
-<li>Intl: 14%<br>
+<li>Intl: 54%<pre>
+<a href="../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.Collator.rejects-invalid-tags.js">Intl.Collator.rejects-invalid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.Collator.without-new.js">Intl.Collator.without-new.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.DateTimeFormat.without-new.js">Intl.DateTimeFormat.without-new.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js">Intl.NumberFormat.rejects-invalid-tags.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.NumberFormat.without-new.js">Intl.NumberFormat.without-new.js</a>: failed
+<a href="../conformance/kangax-intl/Intl.prototype.js">Intl.prototype.js</a>: failed
+<a href="../conformance/kangax-intl/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: failed
+</pre></li>
 </ul></details>
 
-💥 **7 crashes during testing**
+💥 **11 crashes during testing**

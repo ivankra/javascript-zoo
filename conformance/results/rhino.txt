@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1917987, "engine": "rhino", "repository": "https://github.com/mozilla/rhino.git", "revision": "41e016ca9c83145df0263615a7c2275604921913", "revision_date": "2025-11-29", "version": ""}
+Metadata: {"arch": "arm64", "dist_size": 1919452, "engine": "rhino", "repository": "https://github.com/mozilla/rhino.git", "revision": "b0f337d670f91298887f90a955220a683e53bfca", "revision_date": "2025-12-22", "version": "1.9.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -592,9 +592,9 @@ kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: failed
 kangax-es6/Proxy.constructor-requires-new.js: OK
-kangax-es6/Proxy.handler.apply.invariants.js: java.lang.IllegalStateException: FAILED ASSERTION Exception in thread "main" java.lang.IllegalStateException: FAILED ASSERTION
+kangax-es6/Proxy.handler.apply.invariants.js: OK
 kangax-es6/Proxy.handler.apply.js: OK
-kangax-es6/Proxy.handler.construct.invariants.js: failed
+kangax-es6/Proxy.handler.construct.invariants.js: OK
 kangax-es6/Proxy.handler.construct.js: failed
 kangax-es6/Proxy.handler.defineProperty.invariants.js: OK
 kangax-es6/Proxy.handler.defineProperty.js: OK
@@ -831,7 +831,7 @@ kangax-es6/destructuring-assign.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-assign.trailing-comma-object.js: OK
 kangax-es6/destructuring-decl.array.js: OK
 kangax-es6/destructuring-decl.astral-string.js: failed
-kangax-es6/destructuring-decl.catch.js: "destructuring-decl.catch.js", line 12: invalid catch block condition "destructuring-decl.catch.js", line 15: syntax error "destructuring-decl.catch.js", line 18: syntax error "destructuring-decl.catch.js", line 1: Compilation produced 3 syntax errors.
+kangax-es6/destructuring-decl.catch.js: OK
 kangax-es6/destructuring-decl.computed-properties.js: "destructuring-decl.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-decl.computed-properties.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/destructuring-decl.defaults-tdz.js: failed
 kangax-es6/destructuring-decl.defaults.js: OK
@@ -891,8 +891,8 @@ kangax-es6/generators.basic.js: OK
 kangax-es6/generators.constructor.js: OK
 kangax-es6/generators.expression.js: OK
 kangax-es6/generators.no-new-this.js: OK
-kangax-es6/generators.prototype-chain.js: TypeError: Cannot call method "hasOwnProperty" of null
-kangax-es6/generators.prototype.js: failed
+kangax-es6/generators.prototype-chain.js: failed
+kangax-es6/generators.prototype.js: OK
 kangax-es6/generators.return.js: OK
 kangax-es6/generators.sending.js: "generators.sending.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/generators.shorthand.class.js: "generators.shorthand.class.js", line 14: syntax error "generators.shorthand.class.js", line 22: invalid return "generators.shorthand.class.js", line 23: syntax error "generators.shorthand.class.js", line 31: syntax error "generators.shorthand.class.js", line 32: syntax error   console.log("kangax-e
@@ -999,7 +999,7 @@ kangax-es6/misc.Proxy.get.String.split.js: OK
 kangax-es6/misc.Proxy.get.ToPrimitive.js: OK
 kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
 kangax-es6/misc.Proxy.get.instanceof.js: OK
-kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: OK
 kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: OK
 kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: OK
 kangax-es6/misc.Proxy.set.Array.copyWithin.js: OK
@@ -1188,7 +1188,7 @@ kangax-es6/well-known.toPrimitive.js: OK
 kangax-es6/well-known.toStringTag.existing-builtins.js: OK
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
-kangax-es6/well-known.toStringTag.new-builtins.js: failed
+kangax-es6/well-known.toStringTag.new-builtins.js: OK
 kangax-es6/well-known.unscopables.js: failed
 kangax-es2016/Array.prototype.includes.generic.js: OK
 kangax-es2016/Array.prototype.includes.js: OK
@@ -1275,7 +1275,7 @@ kangax-es2018/async-iterators.for-await-of.js: "async-iterators.for-await-of.js"
 kangax-es2018/async-iterators.generators.js: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: OK
-kangax-es2018/object-rest.js: java.lang.IllegalStateException: FAILED ASSERTION Exception in thread "main" java.lang.IllegalStateException: FAILED ASSERTION
+kangax-es2018/object-rest.js: "object-rest.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "41e80eaf996702777add1730cbeea021c27b2dd174523e88af28ba2d34c610d0", "binary_size": 48114072, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "11dc254d27e8f98ef95ef07d36da4610f0502299", "revision_date": "2025-11-03"}
+Metadata: {"arch": "arm64", "binary_sha256": "35dc4032417f666913432ed4730b0befbcd948703d1f2048504dffdfb5fe9eba", "binary_size": 43462552, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "3610a31279dbda23085a6e1254e89c71b0c396e3", "revision_date": "2025-12-20"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: RegExp compile error: Error during parsing of regular expression: ^---- Name of property is invalid. (line: 10, column: 10) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Name of property is invalid. (line: 10, column: 10)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK
@@ -1490,7 +1490,7 @@ kangax-next/AsyncIterator.prototype.toArray.js: TypeError: undefined is not a fu
 kangax-next/DisposableStack.js: OK
 kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function (evaluated from 'map.upsert')
 kangax-next/RegExp.1-9.js: OK
-kangax-next/RegExp.lastMatch.js: failed
+kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: OK
 kangax-next/SuppressedError.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Missing generate_bytecode() is not implemented in LibJS)
 kangax-next/Uint8Array.fromBase64.js: OK

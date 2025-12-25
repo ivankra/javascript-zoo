@@ -22,7 +22,7 @@ which started out by forking otto's parser.
 <details><summary>ES1-ES5: 91%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/otto.txt">Full log</a>.</li>
 <li>ES1: 99%, <b>1 crash</b><pre>
-<a href="../conformance/es1/String.generics.js">String.generics.js</a>: panic: runtime error: invalid memory address or nil pointer dereference [recovered] panic: runtime error: invalid memory address or nil pointer dereference github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x37c panic({0x25c280?, 0x48bf00?}) /usr/lib/go-1.24/src/runtime/panic.go:792
+<a href="../conformance/es1/String.generics.js">String.generics.js</a>: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x358 panic({0x260700?, 0x4aef30?}) /usr/local/go/src/runtime/panic.go:783 +0x120 github.com/robertkrimen/otto.catchPanic(0x40001f9dd8?)
 <a href="../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
 </pre></li>
 <li>ES3: 91%<pre>

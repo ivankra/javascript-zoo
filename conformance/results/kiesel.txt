@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "97afb04a7f6485593de95c54c97f5359b45110a558c03f2342dd38ac42e8d919", "binary_size": 13231408, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "073f5d0a6dfafe96b4d2eab25c64f2b9be17e7e4", "revision_date": "2025-11-29", "version": "0.1.0-dev+073f5d0a6"}
+Metadata: {"arch": "arm64", "binary_sha256": "87e85d1c16233ec442a8d665f3e57ee49951f329d2ae0095711a06eec439fe3d", "binary_size": 13324080, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "1c762b6900dd3baa73171e2eee3deb07c501b55e", "revision_date": "2025-12-25", "version": "0.1.0-dev+1c762b690"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -582,7 +582,7 @@ kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: failed
+kangax-es6/Promise.all.iterable.js: OK
 kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
@@ -1436,7 +1436,7 @@ kangax-es2025/Set.prototype.isSubsetOf.js: OK
 kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid RegExp pattern: duplicate group name (regex.duplicate-named-groups.js:9:10)
+kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
 kangax-es2025/regex.pattern-modifiers.m.js: OK
 kangax-es2025/regex.pattern-modifiers.s.js: OK
@@ -1458,11 +1458,11 @@ kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
 kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
 kangax-intl/Intl.DateTimeFormat.without-new.js: OK
-kangax-intl/Intl.NumberFormat.js: failed
-kangax-intl/Intl.NumberFormat.new-instances.js: TypeError: undefined is not a constructor
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: failed
-kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: TypeError: undefined is not an Object
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: OK
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
 kangax-intl/Intl.js: OK
 kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK

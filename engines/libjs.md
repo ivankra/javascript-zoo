@@ -27,7 +27,7 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 96%, Next 19%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 92%, ES2016+ 96%, Next 22%, Intl 100%</summary><ul>
 <li>ES6: 92%<pre>
 <a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
@@ -57,22 +57,18 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 <a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
-<li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Name of property is invalid. (line: 10, column: 10) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Name of property is invalid. (line: 10, column: 10)
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 96%<pre>
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 79%<pre>
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 </pre></li>
-<li>Next: 19%<br>
+<li>Next: 22%<br>
 <li>Intl: 100%</li>
 </ul></details>

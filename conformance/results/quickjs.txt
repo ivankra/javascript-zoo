@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "6e5fda54d3fdf7324551f69597931972ff50513ec7f40eaadd0ff5c6773ebb94", "binary_size": 1051944, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "quickjs", "repository": "https://github.com/bellard/quickjs.git", "revision": "b22685617750e51d95f643d8eb1382dd09dd3bf1", "revision_date": "2025-11-29"}
+Metadata: {"arch": "arm64", "binary_sha256": "dfb8a761b13ff3582cceb4a3f4e42f457f7079b60579af7d7f30ec771916c582", "binary_size": 1117576, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "quickjs", "repository": "https://github.com/bellard/quickjs.git", "revision": "f1139494d18a2053630c5ed3384a42bb70db3c53", "revision_date": "2025-12-22"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1436,7 +1436,7 @@ kangax-es2025/Set.prototype.isSubsetOf.js: OK
 kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
-kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: duplicate group name
+kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
 kangax-es2025/regex.pattern-modifiers.m.js: OK
 kangax-es2025/regex.pattern-modifiers.s.js: OK

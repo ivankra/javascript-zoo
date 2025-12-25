@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
@@ -1278,7 +1278,7 @@ kangax-es2018/misc.template-literal-revision.js: OK
 kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
-kangax-es2018/regex.lookbehind.js: SyntaxError: /tmp/tmp.XsuDL1N2DH.js:2001: SyntaxError: invalid regular expression
+kangax-es2018/regex.lookbehind.js: SyntaxError: /tmp/tmp.UNzo1VUuC7.js:2001: SyntaxError: invalid regular expression
 kangax-es2018/regex.named-capture-groups.js: TypeError: null or undefined has no properties
 kangax-es2018/regex.unicode-property-escapes.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: 
 kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: "setTimeout" not defined
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.opTvI3Jal3.js:2538: SyntaxError: illegal character
+kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.WHzAbghvDL.js:2538: SyntaxError: illegal character
 kangax-es2020/BigInt.asIntN.js: ReferenceError: "BigInt" not defined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: "BigInt" not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.qYSLjTAD8w.js:12: SyntaxError: illegal character
-kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.nakFL0fslO.js:12: SyntaxError: illegal character
-kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.tln9EPnpq1.js:2538: SyntaxError: illegal character
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.7ljshdeKdg.js:2538: SyntaxError: illegal character
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.7M1xstNyTn.js:2538: SyntaxError: illegal character
+kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.kgl22zUNQG.js:12: SyntaxError: illegal character
+kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.6tXyWT9lES.js:12: SyntaxError: illegal character
+kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.KEQ4f4Xlin.js:2538: SyntaxError: illegal character
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.fQG9IQEEnO.js:2538: SyntaxError: illegal character
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.b80jj9ua8h.js:2538: SyntaxError: illegal character
 kangax-es2020/Promise.allSettled.js: ReferenceError: "setTimeout" not defined
 kangax-es2020/String.prototype.matchAll.js: TypeError: not callable object
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: "Proxy" not defined
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: ReferenceError: "Iterator" not defined
 kangax-es2025/Iterator.from.iterable.js: ReferenceError: "Iterator" not defined
 kangax-es2025/Iterator.from.iterator.js: ReferenceError: "Iterator" not defined
@@ -1438,7 +1438,7 @@ kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: not callable obje
 kangax-es2025/Set.prototype.union.js: TypeError: not callable object
 kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
-kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: /tmp/tmp.oAAtySFbvY.js:2000: SyntaxError: invalid regular expression
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: /tmp/tmp.q9vklO3in0.js:2000: SyntaxError: invalid regular expression
 kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
