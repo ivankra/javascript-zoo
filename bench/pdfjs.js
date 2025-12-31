@@ -1,10 +1,19 @@
 // Single self-contained test from octane benchmark (https://github.com/chromium/octane)
 
 // Define print() that should work across variety of shells.
-if (typeof print == "undefined" && typeof "console" != "undefined") {
+if (typeof print == "undefined" && typeof console != "undefined") {
   if (typeof globalThis == "object") globalThis.print = console.log;
   else if (typeof this == "object") this.print = console.log;
-  else print = console.log;
+  if (typeof print == "undefined") print = console.log;
+}
+
+// Annex B function, not implemented by some engines
+if (typeof String.prototype.substr == "undefined") {
+  String.prototype.substr = function(start, length) {
+    if (start < 0) start = Math.max(0, this.length + start);
+    if (length === undefined) return this.substring(start);
+    return this.substring(start, start + length);
+  };
 }
 
 // Undefine read/require for zlib and typescript tests that probe them

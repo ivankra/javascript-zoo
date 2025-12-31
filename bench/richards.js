@@ -1,10 +1,10 @@
 // Single self-contained test from octane benchmark (https://github.com/chromium/octane)
 
 // Define print() that should work across variety of shells.
-if (typeof print == "undefined" && typeof "console" != "undefined") {
+if (typeof print == "undefined" && typeof console != "undefined") {
   if (typeof globalThis == "object") globalThis.print = console.log;
   else if (typeof this == "object") this.print = console.log;
-  else print = console.log;
+  if (typeof print == "undefined") print = console.log;
 }
 
 // Undefine read/require for zlib and typescript tests that probe them

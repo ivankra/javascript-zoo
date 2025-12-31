@@ -61,7 +61,7 @@ if [[ "$1" == --clean ]]; then
 fi
 
 if ! [[ -f "$OCTANE/zlib.js" ]]; then
-  (set -x; git submodule update --init)
+  (set -x; git submodule update --init --depth=1)
 fi
 
 for f in "${OCTANE_SOURCES[@]}"; do
@@ -81,12 +81,46 @@ gen() {
 // Single self-contained test from octane benchmark (https://github.com/chromium/octane)
 
 // Define print() that should work across variety of shells.
-if (typeof print == "undefined" && typeof "console" != "undefined") {
+if (typeof print == "undefined" && typeof console != "undefined") {
   if (typeof globalThis == "object") globalThis.print = console.log;
   else if (typeof this == "object") this.print = console.log;
-  else print = console.log;
+  if (typeof print == "undefined") print = console.log;
 }
 
+EOF
+
+  if [[ "$target" == pdfjs.js ]]; then
+cat >>"$target" <<EOF
+// Annex B function, not implemented by some engines
+if (typeof String.prototype.substr == "undefined") {
+  String.prototype.substr = function(start, length) {
+    if (start < 0) start = Math.max(0, this.length + start);
+    if (length === undefined) return this.substring(start);
+    return this.substring(start, start + length);
+  };
+}
+
+EOF
+  fi
+
+  if [[ "$target" == zlib.js ]]; then
+cat >>"$target" <<'EOF'
+// Annex B function, not implemented by some engines
+if (typeof unescape == "undefined") {
+  function _unescape_polyfill(s) {
+    return String(s).replace(
+      /%u([0-9A-Fa-f]{4}|[0-9A-Fa-f]{2})/gi,
+      function (_, hex) { String.fromCharCode(parseInt(hex, 16)); });
+  };
+  if (typeof globalThis == "object") globalThis.unescape = _unescape_polyfill;
+  else if (typeof this == "object") this.unescape = _unescape_polyfill;
+  if (typeof unescape == "undefined") unescape = _unescape_polyfil;
+}
+
+EOF
+  fi
+
+cat >>"$target" <<EOF
 // Undefine read/require for zlib and typescript tests that probe them
 // and might go off track depending on how these two are defined.
 var read, require;

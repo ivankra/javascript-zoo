@@ -64,15 +64,15 @@ OCTANE_TESTS = [
 ]
 
 PRINT_PF = '''
-  if (typeof print == "undefined" && typeof "console" != "undefined") {
+  if (typeof print == "undefined" && typeof console != "undefined") {
     if (typeof globalThis == "object") globalThis.print = console.log;
     else if (typeof this == "object") this.print = console.log;
-    else print = console.log;
+    if (typeof print == "undefined") print = console.log;
   }
   if (typeof console == "undefined") {
     if (typeof globalThis == "object") globalThis.console = new Object();
     else if (typeof this == "object") this.console = new Object();
-    else console = new Object();
+    if (typeof console == "undefined") console = new Object();
   }
   if (typeof console.log == "undefined" && typeof print != "undefined") {
     console.log = print;
@@ -114,20 +114,6 @@ STRICT_PF = '''
   var setupEngine, nValue, eValue, dValue, pValue, qValue, dmp1Value, dmq1Value, coeffValue;  // crypto.js
   var result;  // earley-boyer.js
   var Mandreel_timeouts, Mandreel_XMLHttpRequest, Mandreel_document, Mandreel_window;  // mandreel.js
-'''
-
-# For zlib test, missing in some engines that chose not to implement Annex B
-UNESCAPE_PF = '''
-if (typeof unescape === 'undefined') {
-  function $unescapeImpl(s) {
-    return String(s).replace(
-      /%u([0-9A-Fa-f]{4}|[0-9A-Fa-f]{2})/gi,
-      function (_, hex) { String.fromCharCode(parseInt(hex, 16)); });
-  };
-  if (typeof globalThis == "object") globalThis.unescape = $unescapeImpl;
-  else if (typeof this == "object") this.unescape = $unescapeImpl;
-  else unescape = $unescapeImpl;
-}
 '''
 
 @dataclass
@@ -316,15 +302,15 @@ class Engine:
             if run.errors:
                 d['error'] = run.errors[0]
             if run.scores[key] is not None:
-                d['score'].append(run.scores[key])
+                d.setdefault('score', []).append(run.scores[key])
             if run.user_time is not None:
-                d['user'].append(run.user_time)
+                d.setdefault('user', []).append(run.user_time)
             if run.sys_time is not None:
-                d['sys'].append(run.sys_time)
+                d.setdefault('sys', []).append(run.sys_time)
             if run.real_time is not None:
-                d['real'].append(run.real_time)
+                d.setdefault('real', []).append(run.real_time)
             if run.max_rss_kb is not None:
-                d['rss_mb'].append(round(run.max_rss_kb / 1024.0, 2))
+                d.setdefault('rss_mb', []).append(round(run.max_rss_kb / 1024.0, 2))
 
     def bench_json_str(self) -> str:
         """Serialize bench_json to a formatted JSON string."""
@@ -692,13 +678,14 @@ class RepSpec:
         if spec.endswith('s') and self.limits[basename] is None:
             limit_sec = int(spec[:-1])
 
-            if run.real_time is None or run.real_time > limit_sec:
+            if run.real_time is None or run.real_time < 0.01 or run.real_time > limit_sec:
                 self.limits[basename] = 1
             else:
                 self.limits[basename] = max(math.floor(limit_sec / run.real_time), 1)
 
             if verbose:
-                print('real %.2fs => %d reps' % (run.real_time or 0, self.limits[basename] or 0), flush=True)
+                reps = self.limits[basename] or 0
+                print('real %.2fs => %d rep%s' % (run.real_time or 0, reps, 's' if reps != 1 else ''), flush=True)
 
     def __getitem__(self, path: str) -> int:
         """Return the number of runs completed for the given path."""
@@ -712,9 +699,6 @@ CONFIGS = {
       # too slow on other tests or crashes
       benchmark_suite=['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js'],
       ignore_errors=True,
-  ),
-  'brimstone': Config(
-      polyfills=[UNESCAPE_PF],
   ),
   'castl': Config(
       error_lines_re='(?i)(error|unsupported|200 local variables)'
@@ -739,17 +723,13 @@ CONFIGS = {
   'echosoar-jsi': Config(
       transforms=[HexTransform()],
   ),
-  'engine262': Config(
-      polyfills=[UNESCAPE_PF],
-  ),
   'espruino': Config(
       filter_lines_re=r'^(%s)$' % '|'.join([r' ____                 _ ', r'\|  __\|___ ___ ___ _ _\|_\|___ ___ ', r'\|  __\|_ -\| . \|  _\| \| \| \|   \| . \|', r'\|____\|___\|  _\|_\| |___\|_\|_\|_\|___\|', r' *\|_\| espruino.com', r'.* (c) 20.. G.Williams', r'Espruino is Open Source. Our work is supported', r'only by sales of official boards and donations:', r'http://espruino.com/Donate']),
   ),
-  'hermes': Config(
-      # -O: expensive optimizations (nearly always helps)
-      # -w: disable all warnings
-      flags=['-O', '-w']
-  ),
+  # -O: expensive optimizations (nearly always helps)
+  # -w: disable all warnings
+  'hermes': Config(flags=['-O', '-w']),
+  'hermes-v1': Config(flags=['-O', '-w']),
   'jerryscript': Config(
       timeout_for_test={
           # Passes splay.js with --mem-heap=65536, but awfully slow: Splay 0.279, SplayLatency 1.50
