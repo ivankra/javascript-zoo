@@ -12,25 +12,54 @@ if [[ -d /dist ]]; then
 else
   DIST_DIR="$SCRIPT_DIR/../dist/$DOCKER_ARCH"
 fi
+echo "DIST_DIR: $DIST_DIR"
 
 if ! [[ -d "$DIST_DIR" ]]; then
-  echo "DIST_DIR=$DIST_DIR doesn't exist" >&2
+  echo "$DIST_DIR doesn't exist" >&2
   exit 1
 fi
 
+OUTPUT_DIR="$SCRIPT_DIR/$DOCKER_ARCH"
+echo "OUTPUT_DIR: $OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIR"
+
 cd "$SCRIPT_DIR"
-
-for binary in "$DIST_DIR"/*; do
-  case "$(basename "$binary")" in
-    *_full|*_intl|bali|cesanta-elk|cesanta-mjs|tiny-js|42tiny-js|lebjs|ngs|rapidus|quad-wheel|quickjit|echosoar-jsi|yrm006-miniscript|topchetoeu|rpython-langjs)
-      continue;;
-  esac
-
-  if [[ -x "$binary" && -f "$binary.json" ]]; then
-    (set -x; ./bench -o "$DOCKER_ARCH/$(basename "$binary").json" -r 300s -v --skip-unchanged "$binary")
-  fi
-done
-
-if [[ -x "$DIST_DIR/nashorn" && -f "$DIST_DIR/nashorn.json" ]]; then
-  (set -x; ./bench -o "$DOCKER_ARCH/nashorn_ot.json" -r 300s -v --skip-unchanged "$DIST_DIR/nashorn -ot")
+if ! [[ -x ./bench ]]; then
+  echo "$SCRIPT_DIR/bench not found" >&2
+  exit 1
 fi
+
+ITER=0
+
+# Interleave runs: run each engine+benchmark for ~10s, append to output
+# file, cycle through engines in random order.
+while :; do
+  ((++ITER))
+
+  for name in $(cat $DIST_DIR/LIST | shuf); do
+    # Unsupported
+    if [[ "$name" =~ ^(.*_intl|bali|cesanta-elk|cesanta-mjs|echosoar-jsi|engine262|espruino|flathead|je-perl|jispy|jsish|tiny-js|42tiny-js|lebjs|mquickjs|mujs_babel|ngs|quad-wheel|quanta|quickjit|rapidus|rpython-langjs|sandboxjs|topchetoeu|yrm006-miniscript)$ ]]; then
+      continue
+    fi
+
+    # Prioritize data gaps
+    if [[ $ITER == 1 && -f "$OUTPUT_DIR/$name.json" ]]; then
+      continue
+    fi
+
+    (set -x; ./bench -a -o "$OUTPUT_DIR/$name.json" -r 10s -v "$DIST_DIR/$name")
+    sleep 0.1
+  done
+
+  if [[ $ITER != 1 && -x "$DIST_DIR/nashorn" ]]; then
+    (set -x; ./bench -a -o "$OUTPUT_DIR/nashorn_ot.json" -r 10s -v "$DIST_DIR/nashorn -ot")
+  fi
+
+  # Very slow, only do one run
+  if [[ -x "$DIST_DIR/engine262" && ! -f "$OUTPUT_DIR/engine262.json" ]]; then
+    (set -x; ./bench -a -o "$OUTPUT_DIR/engine262.json" -t 72000 -r 1 -v "$DIST_DIR/engine262")
+    continue
+  fi
+
+  sleep 1
+done
