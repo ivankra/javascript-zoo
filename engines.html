@@ -339,6 +339,9 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
       <label><input data-state="variants" type="checkbox" /> Show variants</label>
     </div>
     <div class="control">
+      <label><input data-state="jitless" type="checkbox" /> JITless only</label>
+    </div>
+    <div class="control">
       <label><input data-state="v8" type="checkbox" checked /> Only v8-v7 benchmarks</label>
     </div>
   </div>
@@ -391,6 +394,7 @@ th.sort-desc:not(.benchmark)::after, th.benchmark.sort-desc div.control::after {
 const state = {
   arch: 'amd64',
   variants: false,
+  jitless: false,
   v8: true,
   sort: [
     // main sort criterion first
@@ -415,6 +419,7 @@ function loadState() {
   const params = new URLSearchParams(window.location.search);
   state.v8 = !params.has('v8') || params.get('v8') === 'true';
   state.variants = params.has('variants');
+  state.jitless = params.has('jitless');
   state.arch = params.get('arch') ?? state.arch;
   let m = (params.get('sort') ?? '').match(/^(-?)(\w+)$/);
   if (m && document.querySelector(`th[data-col="${m[2]}"]`)) {
@@ -437,6 +442,7 @@ function saveState() {
   const params = new URLSearchParams();
   if (state.arch !== 'arm64') params.set('arch', state.arch);
   if (state.variants) params.set('variants', true);
+  if (state.jitless) params.set('jitless', true);
   if (!state.v8) params.set('v8', false);
   const sortVal = (state.sort[0].dir == 'desc' ? '-' : '') + state.sort[0].col;
   if (sortVal !== '-score') params.set('sort', sortVal);
@@ -502,6 +508,7 @@ function render() {
   document.querySelector('[data-state=arch]').value = state.arch;
   document.querySelector('[data-state=v8]').checked = state.v8;
   document.querySelector('[data-state=variants]').checked = state.variants;
+  document.querySelector('[data-state=jitless]').checked = state.jitless;
 
   let lastCol = '';
 
@@ -702,8 +709,35 @@ function processRawData() {
       joined = [engineRow];
     }
 
+    if (state.jitless) {
+      // Filter out JIT-enabled engines and show only JITless variants
+      const jitlessRows = joined.filter(row => {
+        const hasJit = row.jit && row.jit !== 'no';
+        const isJitlessVariant = row.variant && row.variant.toLowerCase().includes('jitless');
+        return !hasJit || isJitlessVariant;
+      });
+
+      // If there are JITless variants, only show those
+      // Otherwise, show non-JIT engines
+      const jitlessVariants = jitlessRows.filter(row =>
+        row.variant && row.variant.toLowerCase().includes('jitless')
+      );
+
+      if (jitlessVariants.length > 0) {
+        joined = jitlessVariants;
+      } else {
+        joined = jitlessRows;
+      }
+    }
+
     if (!state.variants) {
-      joined = joined.filter(row => !Boolean(row.variant));
+      // When variants are off, still allow JITless variants if jitless mode is on
+      if (state.jitless) {
+        joined = joined.filter(row => !Boolean(row.variant) ||
+          (row.variant && row.variant.toLowerCase().includes('jitless')));
+      } else {
+        joined = joined.filter(row => !Boolean(row.variant));
+      }
     }
 
     outputRows.push(...joined);
