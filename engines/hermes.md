@@ -100,16 +100,16 @@ Only `static_h` branch is being actively developed now - [Hermes V1](hermes-v1.m
 <a href="../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: failed
 </pre></li>
 <li>ES2020: 100%</li>
-<li>ES2021: 43%<br>
-<li>ES2022: 33%<br>
+<li>ES2021: 43%</li>
+<li>ES2022: 33%</li>
 <li>ES2023: 77%<pre>
 <a href="../conformance/kangax-es2023/Array.prototype.toSorted.js">Array.prototype.toSorted.js</a>: TypeError: undefined is not a function
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: TypeError: undefined is not a function
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: undefined is not a function
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: undefined is not a function
 </pre></li>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>

@@ -56,6 +56,6 @@ Related: [weval](https://github.com/bytecodealliance/weval) ([blog](https://cfal
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
-<li>Next: 6%<br>
+<li>Next: 6%</li>
 <li>Intl: 100%</li>
 </ul></details>

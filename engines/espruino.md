@@ -40,6 +40,6 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 <a href="../conformance/es1/Date.prototype.setUTCFullYear.js">Date.prototype.setUTCFullYear.js</a>: Uncaught Error: Function "UTC" not found!  Uncaught undefined
 ...
 </pre></li>
-<li>ES3: 45%<br>
-<li>ES5: 30%<br>
+<li>ES3: 45%</li>
+<li>ES5: 30%</li>
 </ul></details>

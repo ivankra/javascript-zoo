@@ -43,17 +43,17 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 </ul></details>
 
 <details><summary>compat-table: ES6 9%, ES2016+ 3%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 9%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 6%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 8%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES6: 9%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 6%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 8%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>

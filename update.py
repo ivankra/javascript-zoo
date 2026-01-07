@@ -877,7 +877,7 @@ def update_conformance(filename, conformance):
                 assert len(failing_tests) == 0
                 conformance_lines += [f'<li>{name}: {score_str}</li>\n']
             elif score < 0.5:
-                conformance_lines += [f'<li>{name}: {score_str}{crashes}<br>\n']
+                conformance_lines += [f'<li>{name}: {score_str}{crashes}</li>\n']
             else:
                 conformance_lines += [f'<li>{name}: {score_str}{crashes}<pre>\n']
 

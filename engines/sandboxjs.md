@@ -71,14 +71,14 @@ those will just trip against the whitelist.
 <a href="../conformance/es3/labelled.break.js">labelled.break.js</a>: throw new ParseError(e.message, str); ParseError: Unexpected token after prop: :: block: {
 ...
 </pre></li>
-<li>ES5: 35%<br>
+<li>ES5: 35%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 34%, ES2016+ 35%, Next 8%, Intl 71%</summary><ul>
-<li>ES6: 34%<br>
-<li>ES2016: 11%<br>
-<li>ES2017: 32%<br>
-<li>ES2018: 39%<br>
+<li>ES6: 34%</li>
+<li>ES2016: 11%</li>
+<li>ES2017: 32%</li>
+<li>ES2018: 39%</li>
 <li>ES2019: 58%<pre>
 <a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
@@ -104,15 +104,15 @@ those will just trip against the whitelist.
 <a href="../conformance/kangax-es2020/nullish-coalescing.js">nullish-coalescing.js</a>: ParseError: Unexpected token after inlineIf: ?: ? 42
 <a href="../conformance/kangax-es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: ReferenceError: e is not defined
 </pre></li>
-<li>ES2021: 14%<br>
-<li>ES2022: 13%<br>
+<li>ES2021: 14%</li>
+<li>ES2022: 13%</li>
 <li>ES2023: 63%<pre>
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str); ParseError: Unexpected token after dot: #: #!/0/r/env node
 </pre></li>
-<li>ES2024: 16%<br>
+<li>ES2024: 16%</li>
 <li>ES2025: 53%<pre>
 <a href="../conformance/kangax-es2025/Iterator.extends.js">Iterator.extends.js</a>: ParseError: Unexpected token after prop: C: class Class extends Iterator { }
 <a href="../conformance/kangax-es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: e is not defined
@@ -132,7 +132,7 @@ those will just trip against the whitelist.
 <a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: throw new ReferenceError(`${this.prop} is not defined`); ReferenceError: arguments is not defined
 </pre></li>
-<li>Next: 8%<br>
+<li>Next: 8%</li>
 <li>Intl: 71%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: ReferenceError: e is not defined
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed

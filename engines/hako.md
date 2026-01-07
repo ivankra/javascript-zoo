@@ -81,7 +81,7 @@ Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: "name": "SyntaxError",
 </pre></li>
 <li>ES2019: 100%</li>
-<li>ES2020: 46%<br>
+<li>ES2020: 46%</li>
 <li>ES2021: 79%<pre>
 <a href="../conformance/kangax-es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: TypeError: not a function
 <a href="../conformance/kangax-es2021/logical-assignment.and.js">logical-assignment.and.js</a>: "name": "SyntaxError",
@@ -115,8 +115,8 @@ Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: not a function
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: not a function
 </pre></li>
-<li>ES2024: 43%<br>
-<li>ES2025: 11%<br>
-<li>Next: 5%<br>
-<li>Intl: 25%<br>
+<li>ES2024: 43%</li>
+<li>ES2025: 11%</li>
+<li>Next: 5%</li>
+<li>Intl: 25%</li>
 </ul></details>

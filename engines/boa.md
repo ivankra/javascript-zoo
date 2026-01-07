@@ -84,7 +84,7 @@ Embeddable Javascript engine written in Rust.
 <a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: not a callable function
 <a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:94:34)
 </pre></li>
-<li>Next: 0%<br>
+<li>Next: 0%</li>
 <li>Intl: 89%<pre>
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed

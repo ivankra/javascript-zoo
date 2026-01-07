@@ -90,11 +90,11 @@ Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplayS
 <a href="../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
 </pre></li>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **2 crashes during testing**

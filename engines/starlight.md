@@ -65,21 +65,21 @@ Unmaintained old Rust codebase, only builds on x64.
 <a href="../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: TypeError: not a callable object
 ...
 </pre></li>
-<li>ES5: 49%<br>
+<li>ES5: 49%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 28%, ES2016+ 15%, Next 0%, Intl 4%</summary><ul>
-<li>ES6: 28%<br>
-<li>ES2016: 9%<br>
-<li>ES2017: 16%<br>
-<li>ES2018: 11%<br>
-<li>ES2019: 30%<br>
-<li>ES2020: 14%<br>
-<li>ES2021: 36%<br>
-<li>ES2022: 9%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 5%<br>
-<li>Next: 0%<br>
-<li>Intl: 4%<br>
+<li>ES6: 28%</li>
+<li>ES2016: 9%</li>
+<li>ES2017: 16%</li>
+<li>ES2018: 11%</li>
+<li>ES2019: 30%</li>
+<li>ES2020: 14%</li>
+<li>ES2021: 36%</li>
+<li>ES2022: 9%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 5%</li>
+<li>Next: 0%</li>
+<li>Intl: 4%</li>
 </ul></details>

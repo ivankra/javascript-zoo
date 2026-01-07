@@ -39,15 +39,15 @@ Unfinished JavaScript engine written in Java.
 <a href="../conformance/es1/Date.prototype.getUTCHours.js">Date.prototype.getUTCHours.js</a>: Uncaught ReferenceError: Date is not defined
 ...
 </pre></li>
-<li>ES3: 40%<br>
-<li>ES5: 47%<br>
+<li>ES3: 40%</li>
+<li>ES5: 47%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 37%, ES2016+ 32%, Next 0%, Intl 14%</summary><ul>
-<li>ES6: 37%<br>
-<li>ES2016: 44%<br>
-<li>ES2017: 24%<br>
-<li>ES2018: 21%<br>
+<li>ES6: 37%</li>
+<li>ES2016: 44%</li>
+<li>ES2017: 24%</li>
+<li>ES2018: 21%</li>
 <li>ES2019: 56%<pre>
 <a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property 'flat' of xyz.lebster.core.value.globals.Undefined@0
 <a href="../conformance/kangax-es2019/Object.fromEntries.js">Object.fromEntries.js</a>: TypeError: Object.fromEntries call with non-array
@@ -63,15 +63,15 @@ Unfinished JavaScript engine written in Java.
 <a href="../conformance/kangax-es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: failed
 </pre></li>
-<li>ES2020: 7%<br>
-<li>ES2021: 25%<br>
-<li>ES2022: 20%<br>
+<li>ES2020: 7%</li>
+<li>ES2021: 25%</li>
+<li>ES2022: 20%</li>
 <li>ES2023: 83%<pre>
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: Uint8Array is not defined
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: Uint8Array is not defined
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: Uint8Array is not defined
 </pre></li>
-<li>ES2024: 33%<br>
+<li>ES2024: 33%</li>
 <li>ES2025: 50%<pre>
 <a href="../conformance/kangax-es2025/Iterator.extends.js">Iterator.extends.js</a>: failed
 <a href="../conformance/kangax-es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: TypeError: Iterator.from is not a function
@@ -85,6 +85,6 @@ Unfinished JavaScript engine written in Java.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: failed
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: failed
 </pre></li>
-<li>Next: 0%<br>
-<li>Intl: 14%<br>
+<li>Next: 0%</li>
+<li>Intl: 14%</li>
 </ul></details>

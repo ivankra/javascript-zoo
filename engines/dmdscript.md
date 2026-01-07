@@ -68,23 +68,23 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <a href="../conformance/es3/in.js">in.js</a>: length in array failed
 ...
 </pre></li>
-<li>ES5: 9%<br>
+<li>ES5: 9%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 1%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 1%, <b>3 crashes</b><br>
-<li>ES2016: 0%<br>
-<li>ES2017: 0%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 12%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES6: 1%, <b>3 crashes</b></li>
+<li>ES2016: 0%</li>
+<li>ES2017: 0%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 12%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **4 crashes during testing**

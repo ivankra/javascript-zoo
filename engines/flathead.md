@@ -54,24 +54,24 @@ No ASI.
 <a href="../conformance/es1/arguments.js">arguments.js</a>: failed
 ...
 </pre></li>
-<li>ES3: 28%, <b>9 crashes</b><br>
-<li>ES5: 39%, <b>2 crashes</b><br>
+<li>ES3: 28%, <b>9 crashes</b></li>
+<li>ES5: 39%, <b>2 crashes</b></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 1%, Next 3%, Intl 25%</summary><ul>
-<li>ES6: 0%, <b>16 crashes</b><br>
-<li>ES2016: 0%<br>
-<li>ES2017: 0%, <b>1 crash</b><br>
-<li>ES2018: 0%<br>
-<li>ES2019: 0%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 9%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 0%<br>
-<li>Next: 3%<br>
-<li>Intl: 25%<br>
+<li>ES6: 0%, <b>16 crashes</b></li>
+<li>ES2016: 0%</li>
+<li>ES2017: 0%, <b>1 crash</b></li>
+<li>ES2018: 0%</li>
+<li>ES2019: 0%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 9%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 0%</li>
+<li>Next: 3%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **30 crashes during testing**

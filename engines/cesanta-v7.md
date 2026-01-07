@@ -62,23 +62,23 @@ JavaScript engine for microcontrollers.
 <a href="../conformance/es3/RegExp.prototype.exec.js">RegExp.prototype.exec.js</a>: input failed
 ...
 </pre></li>
-<li>ES5: 46%<br>
+<li>ES5: 46%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 2%, ES2016+ 4%, Next 0%, Intl 14%</summary><ul>
-<li>ES6: 2%<br>
-<li>ES2016: 9%<br>
-<li>ES2017: 4%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 12%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 8%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 14%<br>
+<li>ES6: 2%</li>
+<li>ES2016: 9%</li>
+<li>ES2017: 4%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 12%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 8%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 14%</li>
 </ul></details>
 
 💥 **1 crash during testing**

@@ -103,9 +103,9 @@
 <a href="../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError: invalid regular expression flags
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
 </pre></li>
-<li>ES2023: 20%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 3%<br>
-<li>Intl: 25%<br>
+<li>ES2023: 20%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 3%</li>
+<li>Intl: 25%</li>
 </ul></details>

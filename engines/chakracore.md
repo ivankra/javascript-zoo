@@ -136,9 +136,9 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <a href="../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
 </pre></li>
-<li>ES2020: 29%<br>
-<li>ES2021: 21%<br>
-<li>ES2022: 24%<br>
+<li>ES2020: 29%</li>
+<li>ES2021: 21%</li>
+<li>ES2022: 24%</li>
 <li>ES2023: 60%<pre>
 <a href="../conformance/kangax-es2023/Array.prototype.toReversed.js">Array.prototype.toReversed.js</a>: TypeError: Object doesn't support property or method 'toReversed'
 <a href="../conformance/kangax-es2023/Array.prototype.toSorted.js">Array.prototype.toSorted.js</a>: TypeError: Object doesn't support property or method 'toSorted'
@@ -148,9 +148,9 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: Object doesn't support property or method 'toSorted'
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: Object doesn't support property or method 'with'
 </pre></li>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
 <li>Intl: 89%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.rejects-invalid-tags.js">Intl.Collator.rejects-invalid-tags.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js">Intl.DateTimeFormat.rejects-invalid-tags.js</a>: failed

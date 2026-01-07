@@ -73,7 +73,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es2016/misc.nested-rest-destructuring-params.js">misc.nested-rest-destructuring-params.js</a>: "misc.nested-rest-destructuring-params.js", line 9: Invalid assignment left-hand side. "misc.nested-rest-destructuring-params.js", line 12: syntax error "misc.nested-rest-destructuring-params.js", line 20: syntax error "misc.nested-rest-destructuring-params.js", line 21: syntax error   console.log("
 <a href="../conformance/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
 </pre></li>
-<li>ES2017: 42%<br>
+<li>ES2017: 42%</li>
 <li>ES2018: 60%<pre>
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: "async-iterators.for-await-of.js", line 62: syntax error "async-iterators.for-await-of.js", line 63: syntax error "async-iterators.for-await-of.js", line 68: syntax error "async-iterators.for-await-of.js", line 69: syntax error   console.log("kangax-es2018/async-iterators.for-await-of.js: " + e); "a
 <a href="../conformance/kangax-es2018/async-iterators.generators.js">async-iterators.generators.js</a>: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
@@ -100,8 +100,8 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es2020/Promise.allSettled.js">Promise.allSettled.js</a>: failed
 <a href="../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: "optional-chaining.spread-params.js", line 14: syntax error "optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
 </pre></li>
-<li>ES2021: 38%<br>
-<li>ES2022: 24%<br>
+<li>ES2021: 38%</li>
+<li>ES2022: 24%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 71%<pre>
 <a href="../conformance/kangax-es2024/regex.flags.v.constructor.js">regex.flags.v.constructor.js</a>: SyntaxError: invalid flag 'v' after regular expression
@@ -112,7 +112,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: "regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-16.0.js", line 1: Compilation produced 1 syntax errors.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: "regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-17.0.js", line 1: Compilation produced 1 syntax errors.
 </pre></li>
-<li>ES2025: 32%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES2025: 32%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>

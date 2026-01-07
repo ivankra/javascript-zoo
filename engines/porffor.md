@@ -91,7 +91,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 </ul></details>
 
 <details><summary>compat-table: ES6 45%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
-<li>ES6: 45%<br>
+<li>ES6: 45%</li>
 <li>ES2016: 64%<pre>
 <a href="../conformance/kangax-es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: failed
 <a href="../conformance/kangax-es2016/Array.prototype.includes.js">Array.prototype.includes.js</a>: failed
@@ -123,7 +123,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__defineGetter__.js">annex-b.Proxy.__defineGetter__.js</a>: ReferenceError: Proxy is not defined
 ...
 </pre></li>
-<li>ES2018: 26%<br>
+<li>ES2018: 26%</li>
 <li>ES2019: 66%<pre>
 <a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property of undefined
 <a href="../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: failed
@@ -169,8 +169,8 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: failed
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: failed
 </pre></li>
-<li>ES2024: 47%<br>
-<li>ES2025: 21%<br>
-<li>Next: 2%<br>
-<li>Intl: 25%<br>
+<li>ES2024: 47%</li>
+<li>ES2025: 21%</li>
+<li>Next: 2%</li>
+<li>Intl: 25%</li>
 </ul></details>

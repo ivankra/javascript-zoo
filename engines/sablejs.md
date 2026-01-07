@@ -81,17 +81,17 @@ inline caching.
 </ul></details>
 
 <details><summary>compat-table: ES6 3%, ES2016+ 3%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 3%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 4%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 6%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 9%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES6: 3%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 4%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 6%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 9%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

@@ -77,19 +77,19 @@ Small footprint embedded ES5 engine.
 </ul></details>
 
 <details><summary>compat-table: ES6 3%, ES2016+ 3%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 3%, <b>1 crash</b><br>
-<li>ES2016: 0%<br>
-<li>ES2017: 8%<br>
-<li>ES2018: 0%, <b>6 crashes</b><br>
-<li>ES2019: 6%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES6: 3%, <b>1 crash</b></li>
+<li>ES2016: 0%</li>
+<li>ES2017: 8%</li>
+<li>ES2018: 0%, <b>6 crashes</b></li>
+<li>ES2019: 6%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **8 crashes during testing**

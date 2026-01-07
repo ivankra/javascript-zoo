@@ -100,14 +100,14 @@ First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown e
 <a href="../conformance/kangax-es2017/async.arrow-in-class.js">async.arrow-in-class.js</a>: SyntaxError: Expected token `)'
 ...
 </pre></li>
-<li>ES2018: 0%<br>
-<li>ES2019: 2%<br>
-<li>ES2020: 36%<br>
-<li>ES2021: 7%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 20%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES2018: 0%</li>
+<li>ES2019: 2%</li>
+<li>ES2020: 36%</li>
+<li>ES2021: 7%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 20%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>

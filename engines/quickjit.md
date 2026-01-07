@@ -90,7 +90,7 @@ QuickJS fork that JIT-translates bytecode using TCC.
 <a href="../conformance/kangax-es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: TypeError: invalid 'in' operand
 <a href="../conformance/kangax-es2020/globalThis.js">globalThis.js</a>: failed
 </pre></li>
-<li>ES2021: 29%<br>
+<li>ES2021: 29%</li>
 <li>ES2022: 71%<pre>
 <a href="../conformance/kangax-es2022/Error.cause.AggregateError.js">Error.cause.AggregateError.js</a>: failed
 <a href="../conformance/kangax-es2022/Error.cause.Error.js">Error.cause.Error.js</a>: failed
@@ -108,11 +108,11 @@ QuickJS fork that JIT-translates bytecode using TCC.
 <a href="../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError: invalid regular expression flags
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
 </pre></li>
-<li>ES2023: 20%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES2023: 20%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **2 crashes during testing**

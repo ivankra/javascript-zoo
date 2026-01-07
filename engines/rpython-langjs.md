@@ -41,6 +41,6 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 <a href="../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: raise NotImplementedError() NotImplementedError
 ...
 </pre></li>
-<li>ES3: 20%<br>
-<li>ES5: 27%<br>
+<li>ES3: 20%</li>
+<li>ES5: 27%</li>
 </ul></details>

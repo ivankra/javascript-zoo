@@ -76,10 +76,10 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 </ul></details>
 
 <details><summary>compat-table: ES6 33%, ES2016+ 44%, Next 8%, Intl 25%</summary><ul>
-<li>ES6: 33%<br>
-<li>ES2016: 32%<br>
-<li>ES2017: 42%<br>
-<li>ES2018: 37%<br>
+<li>ES6: 33%</li>
+<li>ES2016: 32%</li>
+<li>ES2017: 42%</li>
+<li>ES2018: 37%</li>
 <li>ES2019: 54%<pre>
 <a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Array.prototype[Symbol.unscopables] (type undefined) has no properties
 <a href="../conformance/kangax-es2019/Symbol.prototype.description.empty.js">Symbol.prototype.description.empty.js</a>: TypeError: can't convert symbol to string
@@ -96,7 +96,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../conformance/kangax-es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: :12:1 SyntaxError: 12: Missing ( newSyntaxError@/dist/narcissus:1147:17
 <a href="../conformance/kangax-es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: :13:1 SyntaxError: 13: Missing ( newSyntaxError@/dist/narcissus:1147:17
 </pre></li>
-<li>ES2020: 14%<br>
+<li>ES2020: 14%</li>
 <li>ES2021: 64%<pre>
 <a href="../conformance/kangax-es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
 <a href="../conformance/kangax-es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
@@ -111,7 +111,7 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
 <a href="../conformance/kangax-es2021/numeric-separators.js">numeric-separators.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/dist/narcissus:1147:17 fail@/dist/narcissus:1291:20
 </pre></li>
-<li>ES2022: 33%<br>
+<li>ES2022: 33%</li>
 <li>ES2023: 80%<pre>
 <a href="../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: :1:1 SyntaxError: 1: Illegal token newSyntaxError@/dist/narcissus:1147:17
 </pre></li>
@@ -142,6 +142,6 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <a href="../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: Array.isArray is not callable
 <a href="../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: failed
 </pre></li>
-<li>Next: 8%<br>
-<li>Intl: 25%<br>
+<li>Next: 8%</li>
+<li>Intl: 25%</li>
 </ul></details>

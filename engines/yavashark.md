@@ -206,8 +206,8 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 21%<br>
-<li>Next: 4%<br>
+<li>ES2025: 21%</li>
+<li>Next: 4%</li>
 <li>Intl: 64%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed

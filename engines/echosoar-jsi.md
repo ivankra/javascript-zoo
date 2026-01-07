@@ -13,7 +13,7 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 
 <details><summary>ES1-ES5: 19%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/echosoar-jsi.txt">Full log</a>.</li>
-<li>ES1: 25%<br>
-<li>ES3: 15%<br>
-<li>ES5: 9%<br>
+<li>ES1: 25%</li>
+<li>ES3: 15%</li>
+<li>ES5: 9%</li>
 </ul></details>

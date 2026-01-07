@@ -91,6 +91,6 @@ JavaScript engine written in Zig.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 5%<br>
+<li>Next: 5%</li>
 <li>Intl: 100%</li>
 </ul></details>

@@ -79,8 +79,8 @@ Always runs in strict mode, seemingly no option to disable.
 </ul></details>
 
 <details><summary>compat-table: ES6 39%, ES2016+ 29%, Next 0%, Intl 11%</summary><ul>
-<li>ES6: 39%<br>
-<li>ES2016: 36%<br>
+<li>ES6: 39%</li>
+<li>ES2016: 36%</li>
 <li>ES2017: 60%<pre>
 <a href="../conformance/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: "Atomics" is not defined
 <a href="../conformance/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: "Atomics" is not defined
@@ -105,14 +105,14 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../conformance/kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: cannot get property "call" of undefined
 ...
 </pre></li>
-<li>ES2018: 32%<br>
-<li>ES2019: 19%<br>
-<li>ES2020: 29%<br>
-<li>ES2021: 29%<br>
-<li>ES2022: 14%<br>
-<li>ES2023: 29%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 14%<br>
-<li>Next: 0%<br>
-<li>Intl: 11%<br>
+<li>ES2018: 32%</li>
+<li>ES2019: 19%</li>
+<li>ES2020: 29%</li>
+<li>ES2021: 29%</li>
+<li>ES2022: 14%</li>
+<li>ES2023: 29%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 14%</li>
+<li>Next: 0%</li>
+<li>Intl: 11%</li>
 </ul></details>

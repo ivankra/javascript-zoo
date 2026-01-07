@@ -63,5 +63,5 @@ JavaScript engine targetted at embedded systems.
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: TypeError: not a function
 ...
 </pre></li>
-<li>ES5: 30%<br>
+<li>ES5: 30%</li>
 </ul></details>

@@ -99,14 +99,14 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
-<li>ES2021: 43%<br>
+<li>ES2021: 43%</li>
 <li>ES2022: 90%<pre>
 <a href="../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: SyntaxError: Invalid flags supplied to RegExp constructor 'd'
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: failed
 </pre></li>
 <li>ES2023: 100%</li>
-<li>ES2024: 0%<br>
-<li>ES2025: 5%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES2024: 0%</li>
+<li>ES2025: 5%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

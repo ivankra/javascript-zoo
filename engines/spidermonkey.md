@@ -76,6 +76,6 @@ JavaScript engine of Firefox.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 36%<br>
+<li>Next: 36%</li>
 <li>Intl: 100%</li>
 </ul></details>

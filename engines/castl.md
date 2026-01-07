@@ -76,21 +76,21 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; no exception for encodeURI lone low surrogate; no exception for enco
 ...
 </pre></li>
-<li>ES5: 45%<br>
+<li>ES5: 45%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 9%, ES2016+ 5%, Next 0%, Intl 21%</summary><ul>
-<li>ES6: 9%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 4%<br>
-<li>ES2018: 5%<br>
-<li>ES2019: 0%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 9%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 14%<br>
-<li>Next: 0%<br>
-<li>Intl: 21%<br>
+<li>ES6: 9%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 4%</li>
+<li>ES2018: 5%</li>
+<li>ES2019: 0%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 9%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 14%</li>
+<li>Next: 0%</li>
+<li>Intl: 21%</li>
 </ul></details>

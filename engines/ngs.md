@@ -50,8 +50,8 @@ There was a short-lived fork NJS:
 <a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: ngs: evaluation of file `Date.prototype.getUTCDate.js' failed:
 ...
 </pre></li>
-<li>ES3: 25%<br>
-<li>ES5: 1%<br>
+<li>ES3: 25%</li>
+<li>ES5: 1%</li>
 </ul></details>
 
 💥 **1 crash during testing**

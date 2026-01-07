@@ -31,23 +31,23 @@ First ES3-compliant version. Shipped in Netscape Navigator 6.0 (2000) and Firefo
 <a href="../conformance/es3/source.whitespace.js">source.whitespace.js</a>: source.whitespace.js:12: SyntaxError: missing ; before statement:
 <a href="../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: source.whitespace.unicode.js:8: SyntaxError: illegal character:
 </pre></li>
-<li>ES5: 14%<br>
+<li>ES5: 14%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 3%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 3%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 4%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 2%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 6%<br>
-<li>Intl: 25%<br>
+<li>ES6: 3%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 4%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 2%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 6%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **1 crash during testing**

@@ -69,6 +69,6 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
 </pre></li>
-<li>Next: 22%<br>
+<li>Next: 22%</li>
 <li>Intl: 100%</li>
 </ul></details>

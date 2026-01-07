@@ -63,18 +63,18 @@ Buggy unfinished interpreter.
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: failed
 ...
 </pre></li>
-<li>ES5: 47%, <b>1 crash</b><br>
+<li>ES5: 47%, <b>1 crash</b></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 31%, ES2016+ 26%, Next 0%, Intl 54%</summary><ul>
-<li>ES6: 31%, <b>9 crashes</b><br>
-<li>ES2016: 30%<br>
-<li>ES2017: 30%<br>
-<li>ES2018: 21%<br>
-<li>ES2019: 17%, <b>1 crash</b><br>
-<li>ES2020: 19%<br>
-<li>ES2021: 43%<br>
-<li>ES2022: 44%<br>
+<li>ES6: 31%, <b>9 crashes</b></li>
+<li>ES2016: 30%</li>
+<li>ES2017: 30%</li>
+<li>ES2018: 21%</li>
+<li>ES2019: 17%, <b>1 crash</b></li>
+<li>ES2020: 19%</li>
+<li>ES2021: 43%</li>
+<li>ES2022: 44%</li>
 <li>ES2023: 57%<pre>
 <a href="../conformance/kangax-es2023/Array.prototype.toSorted.js">Array.prototype.toSorted.js</a>: failed
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: failed
@@ -82,9 +82,9 @@ Buggy unfinished interpreter.
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: failed
 <a href="../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: SyntaxError: Expected identifier after '#'
 </pre></li>
-<li>ES2024: 20%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
+<li>ES2024: 20%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
 <li>Intl: 54%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: failed
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed

@@ -44,22 +44,22 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 <a href="../conformance/es1/Date.prototype.getTimezoneOffset.js">Date.prototype.getTimezoneOffset.js</a>: Date.prototype.getTimezoneOffset.js:6: error: can not execute expression: 'Date' not a function ERROR:
 ...
 </pre></li>
-<li>ES3: 34%<br>
-<li>ES5: 19%<br>
+<li>ES3: 34%</li>
+<li>ES5: 19%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 7%, ES2016+ 3%, Next 0%, Intl 11%</summary><ul>
-<li>ES6: 7%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 0%<br>
-<li>ES2018: 5%<br>
-<li>ES2019: 25%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 0%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 11%<br>
+<li>ES6: 7%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 0%</li>
+<li>ES2018: 5%</li>
+<li>ES2019: 25%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 0%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 11%</li>
 </ul></details>

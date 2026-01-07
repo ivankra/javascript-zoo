@@ -159,8 +159,8 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../conformance/kangax-es2025/Set.prototype.union.js">Set.prototype.union.js</a>: TypeError: Not a callable object
 <a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: regex parse error:; error: duplicate capture group name
 </pre></li>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **2 crashes during testing**

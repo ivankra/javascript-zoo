@@ -99,6 +99,6 @@ But, very slow.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
-<li>Next: 9%<br>
-<li>Intl: 25%<br>
+<li>Next: 9%</li>
+<li>Intl: 25%</li>
 </ul></details>

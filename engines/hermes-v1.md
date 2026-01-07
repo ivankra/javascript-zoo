@@ -117,9 +117,9 @@ codegen.
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: undefined is not a function
 <a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: undefined is not a function
 </pre></li>
-<li>ES2024: 0%<br>
-<li>ES2025: 21%<br>
-<li>Next: 6%<br>
+<li>ES2024: 0%</li>
+<li>ES2025: 21%</li>
+<li>Next: 6%</li>
 <li>Intl: 96%<pre>
 <a href="../conformance/kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js">Intl.NumberFormat.rejects-invalid-tags.js</a>: failed
 </pre></li>

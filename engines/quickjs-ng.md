@@ -77,6 +77,6 @@ Pass `--script` argument to force classic sloppy script mode.
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: invalid group
 <a href="../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: invalid group
 </pre></li>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

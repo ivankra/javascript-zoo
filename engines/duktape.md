@@ -34,17 +34,17 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 </ul></details>
 
 <details><summary>compat-table: ES6 29%, ES2016+ 8%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 29%<br>
-<li>ES2016: 21%<br>
-<li>ES2017: 13%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 14%<br>
-<li>ES2020: 14%<br>
-<li>ES2021: 7%<br>
-<li>ES2022: 4%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 0%<br>
-<li>ES2025: 0%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES6: 29%</li>
+<li>ES2016: 21%</li>
+<li>ES2017: 13%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 14%</li>
+<li>ES2020: 14%</li>
+<li>ES2021: 7%</li>
+<li>ES2022: 4%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

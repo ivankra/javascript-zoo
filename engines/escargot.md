@@ -52,6 +52,6 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
-<li>Next: 36%<br>
+<li>Next: 36%</li>
 <li>Intl: 100%</li>
 </ul></details>

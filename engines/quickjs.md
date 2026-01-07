@@ -77,6 +77,6 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

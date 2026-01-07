@@ -43,5 +43,5 @@ Packaged as [libje-perl](https://packages.debian.org/search?keywords=libje-perl)
 <a href="../conformance/es3/source.whitespace.js">source.whitespace.js</a>: failed
 <a href="../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: failed
 </pre></li>
-<li>ES5: 9%<br>
+<li>ES5: 9%</li>
 </ul></details>

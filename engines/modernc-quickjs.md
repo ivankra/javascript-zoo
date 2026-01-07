@@ -90,7 +90,7 @@
 <a href="../conformance/kangax-es2024/ArrayBuffer.prototype.transfer.js">ArrayBuffer.prototype.transfer.js</a>: TypeError: not a function
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 26%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES2025: 26%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>

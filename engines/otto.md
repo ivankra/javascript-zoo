@@ -66,19 +66,19 @@ which started out by forking otto's parser.
 </ul></details>
 
 <details><summary>compat-table: ES6 5%, ES2016+ 6%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 5%<br>
-<li>ES2016: 0%<br>
-<li>ES2017: 16%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 12%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 9%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 5%<br>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>ES6: 5%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 16%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 12%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 9%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 5%</li>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
 
 💥 **1 crash during testing**

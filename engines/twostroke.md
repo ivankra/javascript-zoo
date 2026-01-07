@@ -63,5 +63,5 @@ JavaScript interpreter written in Ruby.
 <a href="../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: inherited property should be false failed
 ...
 </pre></li>
-<li>ES5: 20%<br>
+<li>ES5: 20%</li>
 </ul></details>

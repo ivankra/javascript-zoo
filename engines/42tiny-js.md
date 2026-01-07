@@ -64,21 +64,21 @@ Fork of [tiny-js](tiny-js.md) with more features.
 <a href="../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: TypeError: toExponential is not a function at Line:11 Column:20
 ...
 </pre></li>
-<li>ES5: 31%<br>
+<li>ES5: 31%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 9%, ES2016+ 7%, Next 0%, Intl 4%</summary><ul>
-<li>ES6: 9%<br>
-<li>ES2016: 5%<br>
-<li>ES2017: 13%<br>
-<li>ES2018: 0%<br>
-<li>ES2019: 29%<br>
-<li>ES2020: 0%<br>
-<li>ES2021: 0%<br>
-<li>ES2022: 10%<br>
-<li>ES2023: 0%<br>
-<li>ES2024: 4%<br>
-<li>ES2025: 3%<br>
-<li>Next: 0%<br>
-<li>Intl: 4%<br>
+<li>ES6: 9%</li>
+<li>ES2016: 5%</li>
+<li>ES2017: 13%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 29%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 10%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 4%</li>
+<li>ES2025: 3%</li>
+<li>Next: 0%</li>
+<li>Intl: 4%</li>
 </ul></details>

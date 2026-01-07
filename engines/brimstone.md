@@ -56,6 +56,6 @@ Javascript engine written in Rust, with nearly complete ES2025 support.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 0%<br>
-<li>Intl: 25%<br>
+<li>Next: 0%</li>
+<li>Intl: 25%</li>
 </ul></details>
