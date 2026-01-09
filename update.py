@@ -2,7 +2,7 @@
 #
 # - Parses engines/*.md, parsers/*.md files, extracting structured metadata
 # - Merges with other data sources: build, benchmarking, conformance, github data
-# - Updates engines.json, engines.js (JSONP)
+# - Updates dist/engines.json and dist/markdown.json
 # - Updates *.md files:
 #   - Sorts/aligns metadata list
 #   - Updates <span class="shields">...</span> blocks
@@ -46,7 +46,8 @@ def main():
     os.chdir(script_dir)
 
     conformance_data = parse_conformance_data()
-    engines_data = do_engine_data(args, 'engine', 'engines/*.md', 'engines.json', conformance_data)
+    engines_data = do_engine_data(args, 'engine', 'engines/*.md', 'dist/engines.json', conformance_data)
+    write_markdown_json('engines/*.md', 'dist/markdown.json')
     parsers_data = do_engine_data(args, 'parser', 'parsers/*.md', None, conformance_data)
 
     # Update files with dynamically-generated index tables
@@ -152,7 +153,7 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
     data = {}   # id (engine[_variant]) => row
 
     for filename in sorted(glob.glob(md_glob)):
-        if re.search('README.md', filename):
+        if re.search('README.md', filename) or os.path.basename(filename) == 'index.md':
             continue
 
         if os.isatty(1):
@@ -285,17 +286,23 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             del row['bench']
 
     if json_file:
+        os.makedirs(os.path.dirname(json_file), exist_ok=True)
         with open(json_file, 'w') as fp:
             json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
-        # JSONP for ease of importing in .html
-        with open(json_file.replace('.json', '.js'), 'w') as fp:
-            fp.write('// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov\n')
-            fp.write('// SPDX-License-Identifier: MIT\n')
-            fp.write(f'const jsz_{kind}s = ')
-            json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
-
     return rows
+
+def write_markdown_json(md_glob, out_file):
+    markdown_map = {}
+    for filename in sorted(glob.glob(md_glob)):
+        if re.search('README.md', filename) or os.path.basename(filename) == 'index.md':
+            continue
+        rel_path = os.path.relpath(filename).replace(os.sep, '/')
+        with open(filename, 'r', encoding='utf-8') as md_file:
+            markdown_map[rel_path] = md_file.read()
+    os.makedirs(os.path.dirname(out_file), exist_ok=True)
+    with open(out_file, 'w', encoding='utf-8') as fp:
+        json.dump(markdown_map, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 def strip_markdown_links(text):
     return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()
