@@ -1,6 +1,4 @@
-// SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
-// SPDX-License-Identifier: MIT
-const jsz_engines = [
+[
   {
     "id": "42tiny-js",
     "title": "42tiny-js",
@@ -17,7 +15,7 @@ const jsz_engines = [
     "years": "2010-2014",
     "ancestors": "tiny-js",
     "interpreter": "interprets from source",
-    "github_stars": 572,
+    "github_stars": 573,
     "github_forks": 90,
     "github_contributors": 5,
     "bench": [
@@ -75,8 +73,8 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 17732,
-    "github_forks": 680,
+    "github_stars": 17751,
+    "github_forks": 681,
     "github_contributors": 77
   },
   {
@@ -114,7 +112,7 @@ const jsz_engines = [
     "standard_detailed": "no (can't run basic JS code)",
     "years": "2024-",
     "interpreter": "register-based VM",
-    "github_stars": 107,
+    "github_stars": 108,
     "github_forks": 1,
     "github_contributors": 1,
     "bench": [
@@ -210,8 +208,8 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "regex": "regress",
     "regex_detailed": "[regress](https://github.com/ridiculousfish/regress)",
-    "github_stars": 6750,
-    "github_forks": 480,
+    "github_stars": 6781,
+    "github_forks": 483,
     "github_contributors": 211,
     "bench": [
       {
@@ -354,8 +352,8 @@ const jsz_engines = [
     "interpreter_detailed": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
     "regex": "own",
     "regex_detailed": "own ([regexp](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
-    "github_stars": 1212,
-    "github_forks": 29,
+    "github_stars": 1247,
+    "github_forks": 30,
     "github_contributors": 1,
     "bench": [
       {
@@ -501,7 +499,7 @@ const jsz_engines = [
     "platform_detailed": "Lua (Lua 5.2 / LuaJIT)",
     "jit": "via LuaJIT",
     "regex": "PCRE",
-    "github_stars": 380,
+    "github_stars": 381,
     "github_forks": 29,
     "github_contributors": 1,
     "bench": [
@@ -607,7 +605,7 @@ const jsz_engines = [
     "years": "2019-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 1833,
+    "github_stars": 1838,
     "github_forks": 96,
     "github_contributors": 5,
     "bench": [
@@ -654,7 +652,7 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "features": "C/C++ FFI",
     "interpreter": "stack-based VM",
-    "github_stars": 2015,
+    "github_stars": 2016,
     "github_forks": 185,
     "github_contributors": 17,
     "bench": [
@@ -783,8 +781,8 @@ const jsz_engines = [
     "jit": "2-tier JIT, arm/arm64, x86/x64",
     "dll": "chakra.dll",
     "github_stars": 9232,
-    "github_forks": 1212,
-    "github_contributors": 185,
+    "github_forks": 1214,
+    "github_contributors": 186,
     "bench": [
       {
         "arch": "amd64",
@@ -1251,8 +1249,8 @@ const jsz_engines = [
     "standard_detailed": "ES5 (with some ES6 features)",
     "years": "2013-",
     "interpreter": "register-based VM",
-    "github_stars": 6151,
-    "github_forks": 537,
+    "github_stars": 6158,
+    "github_forks": 541,
     "github_contributors": 73,
     "bench": [
       {
@@ -1521,7 +1519,7 @@ const jsz_engines = [
     "license_detailed": "GPL-2.0-only",
     "standard": "ES1",
     "years": "2008",
-    "github_stars": 10,
+    "github_stars": 11,
     "github_forks": 3,
     "github_contributors": 3
   },
@@ -1562,7 +1560,7 @@ const jsz_engines = [
     "platform": "JavaScript",
     "platform_detailed": "JavaScript (Node)",
     "interpreter": "tree walker",
-    "github_stars": 921,
+    "github_stars": 924,
     "github_forks": 71,
     "github_contributors": 25,
     "bench": [
@@ -1696,7 +1694,7 @@ const jsz_engines = [
     "features": "WebAssembly engine, hidden classes",
     "interpreter": "register-based VM",
     "regex": "YARR",
-    "github_stars": 334,
+    "github_stars": 340,
     "github_forks": 54,
     "github_contributors": 44,
     "bench": [
@@ -1909,8 +1907,8 @@ const jsz_engines = [
     "years": "2013-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 2926,
-    "github_forks": 759,
+    "github_stars": 2925,
+    "github_forks": 757,
     "github_contributors": 159,
     "bench": [
       {
@@ -1955,7 +1953,7 @@ const jsz_engines = [
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
     "github_stars": 731,
-    "github_forks": 103,
+    "github_forks": 104,
     "github_contributors": 3
   },
   {
@@ -1974,8 +1972,8 @@ const jsz_engines = [
     "platform": "WebAssembly , Go",
     "platform_detailed": "WebAssembly (Wazero), Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 485,
-    "github_forks": 16,
+    "github_stars": 504,
+    "github_forks": 18,
     "github_contributors": 3,
     "bench": [
       {
@@ -2183,8 +2181,8 @@ const jsz_engines = [
     "platform": "Go",
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 6662,
-    "github_forks": 427,
+    "github_stars": 6678,
+    "github_forks": 428,
     "github_contributors": 36,
     "bench": [
       {
@@ -2312,7 +2310,7 @@ const jsz_engines = [
     "jit": "2-tier JIT (HotSpot/Graal), arm64, x64",
     "regex": "TRegex",
     "regex_detailed": "[TRegex](https://github.com/oracle/graal/tree/master/regex) (NFA-based)",
-    "github_stars": 1974,
+    "github_stars": 1975,
     "github_forks": 206,
     "github_contributors": 4560,
     "bench": [
@@ -2452,7 +2450,7 @@ const jsz_engines = [
     "platform": "WebAssembly",
     "interpreter": "stack-based VM",
     "jit": "via WebAssembly engine",
-    "github_stars": 533,
+    "github_stars": 537,
     "github_forks": 9,
     "github_contributors": 1,
     "bench": [
@@ -2580,8 +2578,8 @@ const jsz_engines = [
     "features": "optimizing LLVM-based AOT compiler to bytecode + native code; FFI; optional TypeScript/Flow typing annotations with modified semantics for sound typing",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10699,
-    "github_forks": 723,
+    "github_stars": 10730,
+    "github_forks": 725,
     "github_contributors": 243,
     "bench": [
       {
@@ -2800,8 +2798,8 @@ const jsz_engines = [
     "features": "optimizing LLVM-based AOT compiler to bytecode",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10699,
-    "github_forks": 723,
+    "github_stars": 10730,
+    "github_forks": 725,
     "github_contributors": 243,
     "bench": [
       {
@@ -3072,7 +3070,7 @@ const jsz_engines = [
     "jit": "context-threaded/method JIT, x64",
     "regex": "own engine, JIT-enabled",
     "regex_detailed": "own engine, JIT-enabled (x64)",
-    "github_stars": 423,
+    "github_stars": 425,
     "github_forks": 35,
     "github_contributors": 7,
     "bench": [
@@ -3356,7 +3354,7 @@ const jsz_engines = [
     "years": "2024-",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 1057,
+    "github_stars": 1060,
     "github_forks": 22,
     "github_contributors": 4
   },
@@ -3411,7 +3409,7 @@ const jsz_engines = [
     "standard_detailed": "ES2022 (partial, missing ES2018 regex and a few other features)",
     "years": "2014-2024",
     "interpreter": "stack-based VM",
-    "github_stars": 7347,
+    "github_stars": 7352,
     "github_forks": 688,
     "github_contributors": 127,
     "bench": [
@@ -3688,8 +3686,8 @@ const jsz_engines = [
     "standard_detailed": "ESnext (partial)",
     "years": "2013-",
     "platform": ".NET",
-    "github_stars": 4509,
-    "github_forks": 589,
+    "github_stars": 4522,
+    "github_forks": 588,
     "github_contributors": 149
   },
   {
@@ -3706,7 +3704,7 @@ const jsz_engines = [
     "type": "JavaScript-like language ([ref](https://github.com/polydojo/jispy/blob/master/LittleJ.md))",
     "platform": "Python",
     "interpreter": "tree walker",
-    "github_stars": 59,
+    "github_stars": 60,
     "github_forks": 18,
     "github_contributors": 1,
     "bench": [
@@ -3752,7 +3750,7 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "interpreter_detailed": "tree walker ([interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689)",
     "github_stars": 2140,
-    "github_forks": 362,
+    "github_forks": 364,
     "github_contributors": 22,
     "bench": [
       {
@@ -3931,7 +3929,7 @@ const jsz_engines = [
     "platform": "Python",
     "interpreter": "stack-based VM",
     "github_stars": 2567,
-    "github_forks": 277,
+    "github_forks": 278,
     "github_contributors": 29,
     "bench": [
       {
@@ -4042,9 +4040,9 @@ const jsz_engines = [
     "interpreter": "register-based VM",
     "jit": "3-tier JIT, x86/x64, arm/arm64, mips64, riscv64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 9470,
-    "github_forks": 1791,
-    "github_contributors": 2546,
+    "github_stars": 9503,
+    "github_forks": 1797,
+    "github_contributors": 2547,
     "bench": [
       {
         "arch": "amd64",
@@ -4493,7 +4491,7 @@ const jsz_engines = [
     "platform": ".NET",
     "jit": "via CLR",
     "github_stars": 933,
-    "github_forks": 127,
+    "github_forks": 128,
     "github_contributors": 14
   },
   {
@@ -4868,9 +4866,9 @@ const jsz_engines = [
     "years": "2020-",
     "features": "WebAssembly engine (LibWasm)",
     "interpreter": "register-based VM",
-    "github_stars": 57274,
-    "github_forks": 2579,
-    "github_contributors": 1488,
+    "github_stars": 57523,
+    "github_forks": 2595,
+    "github_contributors": 1490,
     "bench": [
       {
         "arch": "amd64",
@@ -5151,7 +5149,7 @@ const jsz_engines = [
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([mocha.c](https://github.com/doodlewind/mocha1995/blob/main/src/mocha.c))",
     "gc": "reference counting",
-    "github_stars": 355,
+    "github_stars": 356,
     "github_forks": 30,
     "github_contributors": 4,
     "bench": [
@@ -5352,8 +5350,8 @@ const jsz_engines = [
     "standard_detailed": "ES5 (subset)",
     "years": "2025-",
     "gc": "tracing GC",
-    "github_stars": 4835,
-    "github_forks": 166,
+    "github_stars": 5164,
+    "github_forks": 182,
     "github_contributors": 5,
     "bench": [
       {
@@ -5597,7 +5595,7 @@ const jsz_engines = [
     "years": "2007-2012",
     "platform": "JavaScript",
     "platform_detailed": "JavaScript (SpiderMonkey)",
-    "github_stars": 918,
+    "github_stars": 919,
     "github_forks": 119,
     "github_contributors": 25,
     "bench": [
@@ -5662,7 +5660,7 @@ const jsz_engines = [
     "jit": "via JVM",
     "regex": "joni",
     "regex_detailed": "[joni](https://github.com/jruby/joni) (JRuby's Java port of Oniguruma)",
-    "github_stars": 484,
+    "github_stars": 487,
     "github_forks": 49,
     "github_contributors": 97,
     "bench": [
@@ -5784,8 +5782,8 @@ const jsz_engines = [
     "standard": "no",
     "years": "2017-2022",
     "type": "JavaScript-like language, compiler to native code",
-    "github_stars": 3611,
-    "github_forks": 129,
+    "github_stars": 3613,
+    "github_forks": 128,
     "github_contributors": 21
   },
   {
@@ -5872,7 +5870,7 @@ const jsz_engines = [
     "years": "2015-",
     "interpreter": "register-based VM",
     "regex": "PCRE2",
-    "github_stars": 1520,
+    "github_stars": 1522,
     "github_forks": 209,
     "github_contributors": 35,
     "bench": [
@@ -5982,7 +5980,7 @@ const jsz_engines = [
     "parser": "oxc",
     "parser_detailed": "[oxc](../parsers/oxc.md)",
     "interpreter": "stack-based VM",
-    "github_stars": 1833,
+    "github_stars": 1842,
     "github_forks": 73,
     "github_contributors": 29,
     "bench": [
@@ -6119,8 +6117,8 @@ const jsz_engines = [
     "interpreter": "tree walker",
     "regex": "RE2",
     "regex_detailed": "RE2 (not ECMAScript-compliant)",
-    "github_stars": 8423,
-    "github_forks": 598,
+    "github_stars": 8434,
+    "github_forks": 600,
     "github_contributors": 67,
     "bench": [
       {
@@ -6232,9 +6230,9 @@ const jsz_engines = [
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "WebAssembly, native",
     "jit": "via WebAssembly engine",
-    "github_stars": 4409,
-    "github_forks": 97,
-    "github_contributors": 20,
+    "github_stars": 4426,
+    "github_forks": 99,
+    "github_contributors": 22,
     "bench": [
       {
         "arch": "amd64",
@@ -6291,8 +6289,8 @@ const jsz_engines = [
     "ancestors": "QuickJS",
     "interpreter": "stack-based VM",
     "gc": "mark-and-sweep / reference counting",
-    "github_stars": 1061,
-    "github_forks": 47,
+    "github_stars": 1067,
+    "github_forks": 48,
     "github_contributors": 13,
     "bench": [
       {
@@ -6578,7 +6576,7 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "stack-based VM",
     "jit": "x64",
-    "github_stars": 76,
+    "github_stars": 77,
     "github_forks": 8,
     "github_contributors": 1,
     "bench": [
@@ -6630,9 +6628,9 @@ const jsz_engines = [
     "features": "PIC",
     "interpreter": "stack-based VM",
     "gc": "reference counting",
-    "github_stars": 2508,
-    "github_forks": 234,
-    "github_contributors": 80,
+    "github_stars": 2566,
+    "github_forks": 239,
+    "github_contributors": 83,
     "bench": [
       {
         "arch": "amd64",
@@ -6849,8 +6847,8 @@ const jsz_engines = [
     "interpreter": "stack-based VM (`JS_CallInternal()` in quickjs.c)",
     "interpreter_detailed": "stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))",
     "gc": "reference counting",
-    "github_stars": 10225,
-    "github_forks": 1066,
+    "github_stars": 10285,
+    "github_forks": 1067,
     "github_contributors": 16,
     "bench": [
       {
@@ -7066,7 +7064,7 @@ const jsz_engines = [
     "interpreter_detailed": "register-based VM with accumulator (\"Moth\", [qv4vme_moth.cpp](https://github.com/qt/qtdeclarative/blob/dev/src/qml/jsruntime/qv4vme_moth.cpp))",
     "jit": "x86/x64, arm/arm64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 277,
+    "github_stars": 278,
     "github_forks": 199,
     "github_contributors": 936,
     "bench": [
@@ -7366,7 +7364,7 @@ const jsz_engines = [
     "years": "2018-2021",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([vm.rs](https://github.com/maekawatoshiki/rapidus/blob/main/core/src/vm/vm.rs))",
-    "github_stars": 565,
+    "github_stars": 567,
     "github_forks": 21,
     "github_contributors": 2,
     "bench": [
@@ -7445,8 +7443,8 @@ const jsz_engines = [
     "platform": "Java",
     "interpreter": "tree walker",
     "jit": "via JVM (can compile to JVM bytecode)",
-    "github_stars": 4516,
-    "github_forks": 904,
+    "github_stars": 4524,
+    "github_forks": 905,
     "github_contributors": 148,
     "bench": [
       {
@@ -7563,7 +7561,7 @@ const jsz_engines = [
     "platform": "Python",
     "platform_detailed": "Python (PyPy 2.x's RPython)",
     "interpreter": "stack-based VM",
-    "github_stars": 5,
+    "github_stars": 6,
     "github_forks": 0,
     "github_contributors": 5,
     "bench": [
@@ -7801,7 +7799,7 @@ const jsz_engines = [
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))",
-    "github_stars": 288,
+    "github_stars": 296,
     "github_forks": 9,
     "github_contributors": 41,
     "bench": [
@@ -8033,8 +8031,9 @@ const jsz_engines = [
     "gc_detailed": "generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))",
     "regex": "Irregexp, JIT-enabled",
     "regex_detailed": "Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)",
-    "github_stars": 10879,
-    "github_forks": 785,
+    "github_stars": 10945,
+    "github_forks": 808,
+    "github_contributors": 12153,
     "bench": [
       {
         "arch": "amd64",
@@ -8906,7 +8905,7 @@ const jsz_engines = [
     "years": "2021",
     "features": "PIC",
     "interpreter": "stack-based VM",
-    "github_stars": 530,
+    "github_stars": 529,
     "github_forks": 9,
     "github_contributors": 8,
     "bench": [
@@ -8960,7 +8959,7 @@ const jsz_engines = [
     "parser": "Acorn",
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
-    "github_stars": 427,
+    "github_stars": 428,
     "github_forks": 57,
     "github_contributors": 10
   },
@@ -8998,7 +8997,7 @@ const jsz_engines = [
     "standard_detailed": "ES4 (ES3 + some ES4 draft features)",
     "years": "2006-2013",
     "jit": "yes",
-    "github_stars": 218,
+    "github_stars": 220,
     "github_forks": 73,
     "github_contributors": 3
   },
@@ -9039,7 +9038,7 @@ const jsz_engines = [
     "standard_detailed": "no (can't run ES1)",
     "years": "2009-2012",
     "interpreter": "interprets from source",
-    "github_stars": 572,
+    "github_stars": 573,
     "github_forks": 90,
     "github_contributors": 5,
     "bench": [
@@ -9098,7 +9097,7 @@ const jsz_engines = [
     "type": "JavaScript-like language",
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([tTJSInterCodeContext::ExecuteCode](https://github.com/krkrz/krkrz/tree/master/tjs2/tjsInterCodeExec.cpp#L1019))",
-    "github_stars": 870,
+    "github_stars": 873,
     "github_forks": 127,
     "github_contributors": 12
   },
@@ -9191,7 +9190,7 @@ const jsz_engines = [
     "years": "2016-",
     "platform": "native",
     "platform_detailed": "native (compiles to C)",
-    "github_stars": 1349,
+    "github_stars": 1351,
     "github_forks": 97,
     "github_contributors": 9
   },
@@ -9259,9 +9258,9 @@ const jsz_engines = [
     "gc": "reference counting + mark-and-sweep GC",
     "regex": "POSIX",
     "regex_detailed": "POSIX (regex.h)",
-    "github_stars": 128,
-    "github_forks": 46,
-    "github_contributors": 22,
+    "github_stars": 129,
+    "github_forks": 47,
+    "github_contributors": 23,
     "bench": [
       {
         "arch": "amd64",
@@ -9328,9 +9327,9 @@ const jsz_engines = [
     "jit": "3-tier JIT, arm/arm64, x86/x64, mips64/mips64el, riscv32/riscv64, ppc64, s390x, loong64",
     "regex": "Irregexp , Experimental/Linear",
     "regex_detailed": "Irregexp (backtracking, JIT-enabled), [Experimental](https://v8.dev/blog/non-backtracking-regexp)/Linear (non-backtracking)",
-    "github_stars": 24729,
+    "github_stars": 24763,
     "github_forks": 4204,
-    "github_contributors": 1196,
+    "github_contributors": 1197,
     "bench": [
       {
         "arch": "amd64",
@@ -9764,8 +9763,8 @@ const jsz_engines = [
     "standard": "ESnext",
     "years": "2002-",
     "interpreter": "stack-based VM",
-    "github_stars": 1464,
-    "github_forks": 249,
+    "github_stars": 1473,
+    "github_forks": 250,
     "github_contributors": 73,
     "bench": [
       {
