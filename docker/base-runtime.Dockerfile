@@ -41,6 +41,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         procps \
         psmisc \
         python3 \
+        python3-requests \
         python3-scipy \
         ripgrep \
         ruby \
