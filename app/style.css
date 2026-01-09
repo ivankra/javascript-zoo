@@ -1,0 +1,139 @@
+/* SPDX-FileCopyrightText: 2026 Ivan Krasilnikov */
+/* SPDX-License-Identifier: MIT */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: light;
+  --app-header-height: 64px;
+  --bg-primary: #ffffff;
+  --bg-header: #eff1f5;
+  --bg-row-odd: #fafbfe;
+  --bg-row-even: #f3f5f9;
+  --bg-muted: #f6f7fb;
+  --bg-thead: #eff1f5;
+  --bg-hover: #dfeaf9;
+  --bg-sorted: color-mix(in srgb, var(--bg-hover) 70%, transparent);
+  --bg-missing: #eeeeee;
+  --bg-control: #ffffff;
+  --border-light: #e5e3e0;
+  --border-medium: #d1cdc7;
+  --border-muted: #d1d9e0b3;
+  --text-accent: #0969da;
+  --text-muted: #333333;
+  --text-numeric: #0550ae;
+  --text-primary: #000000;
+  --text-red: #cf222e;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg-primary: #0d1117;
+  --bg-header: #0d1117;
+  --bg-row-odd: #0d1117;
+  --bg-row-even: #151b23;
+  --bg-muted: #151b23;
+  --bg-thead: #2f3751;
+  --bg-hover: #3d4766;
+  --bg-sorted: color-mix(in srgb, #99b3ff 15%, transparent);
+  --bg-missing: #44475a;
+  --bg-control: #000000;
+  --border-light: #343746;
+  --border-medium: #424450;
+  --border-muted: #3d444db3;
+  --text-accent: #50fa7b;
+  --text-muted: #99b3ff;
+  --text-numeric: #bd93f9;
+  --text-primary: #f8f8f2;
+  --text-red: #ff79c6;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+input[type='checkbox'] {
+  accent-color: var(--text-accent);
+}
+
+:global(.dark) input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--border-medium);
+  background: var(--bg-control);
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+:global(.dark) input[type='checkbox']:checked {
+  border-color: var(--text-accent);
+  background-color: var(--text-accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath fill='black' d='M4.5 7.2L1.3 4l-1.1 1.1 4.3 4.3L12 1.9 10.9.8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+:global(.dark) input[type='checkbox']:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--text-accent) 60%, transparent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+body.columns-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  body.columns-modal-open .app-header,
+  body.columns-modal-open .app-body {
+    display: none;
+  }
+}
+
+a {
+  color: var(--text-accent);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--text-muted) 50%, transparent) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--text-muted) 65%, transparent);
+  background-clip: padding-box;
+}

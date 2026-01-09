@@ -1,4 +1,5 @@
 .cache/
-dist/
-code/
 __pycache__
+code/
+dist/
+node_modules/
