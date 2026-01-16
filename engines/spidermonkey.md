@@ -33,7 +33,8 @@ JavaScript engine of Firefox.
   * https://hacks.mozilla.org/2019/08/the-baseline-interpreter-a-faster-js-interpreter-in-firefox-70/
   * https://github.com/mozilla-firefox/firefox/blob/main/js/src/vm/Interpreter.cpp
   * https://github.com/mozilla-firefox/firefox/blob/main/js/src/vm/Opcodes.h
-* 2020: WarpMonkey
+* 2020: WarpBuilder
+  * https://hacks.mozilla.org/2020/11/warp-improved-js-performance-in-firefox-83/
 
 ## Users
 
