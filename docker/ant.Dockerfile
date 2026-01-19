@@ -1,18 +1,7 @@
-FROM ubuntu:22.04
+ARG BASE=jsz-clang21
+FROM $BASE
 
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && apt-get install -y \
-    git ca-certificates gnupg wget software-properties-common curl \
-    python3-pip ninja-build cmake pkg-config \
-    uuid-dev libssl-dev libsodium-dev \
-    && wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key | tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc \
-    && echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-21 main" > /etc/apt/sources.list.d/llvm.list \
-    && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt-get update \
-    && apt-get install -y clang-21 lld-21 llvm-21 nodejs \
-    && pip3 install meson \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gnupg python3-pip ninja-build meson cmake pkg-config uuid-dev libssl-dev libsodium-dev libz-dev nodejs npm
 
 RUN export CFLAGS="-Os -flto" \
     && export AR=llvm-ar-21 \
@@ -48,12 +37,5 @@ RUN export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH" \
     && meson compile -C build \
     && llvm-strip-21 build/ant
 
-RUN cp build/ant /usr/local/bin/ant
-
-FROM ubuntu:22.04
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libssl3 libsodium23 \
-    && rm -rf /var/lib/apt/lists/*
-COPY --from=0 /usr/local/bin/ant /usr/local/bin/ant
-
-ENTRYPOINT ["ant"]
+ENV JS_BINARY=/src/build/ant
+CMD ${JS_BINARY}
