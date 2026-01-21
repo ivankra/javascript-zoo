@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "9323b14cdf0d3fb33819035a45317ddb055d09ae75d5c643f689106ba28be942", "binary_size": 3776464, "engine": "ant", "repository": "https://github.com/themackabu/ant", "revision": "60484e1771272c87b986db225d1b4eba17076790", "revision_date": "2026-1-20"}
+Metadata: {"arch": "arm64", "binary_sha256": "847c35ccef778b3f480d6829c9d7ca63b03524a6509add4a45f522db105b2f56", "binary_size": 3778064, "engine": "ant", "repository": "https://github.com/themackabu/ant", "revision": "e34f65c1181d668ed6a68ecc13a80121123de323", "revision_date": "2026-1-20"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -493,7 +493,7 @@ kangax-es5/strict.this-not-coerced-methods.js: OK
 kangax-es5/strict.this-undefined.js: OK
 kangax-es5/strict.with-error.js: OK
 kangax-es6/Array.Symbol.species.js: failed
-kangax-es6/Array.from.array-like.js: failed
+kangax-es6/Array.from.array-like.js: OK
 kangax-es6/Array.from.generator.js: failed
 kangax-es6/Array.from.iterable-instance.js: failed
 kangax-es6/Array.from.iterable.js: failed
@@ -583,7 +583,7 @@ kangax-es6/Object.is.js: failed
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: failed
 kangax-es6/Promise.all.iterable.js: failed
-kangax-es6/Promise.all.js: timeout
+kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
@@ -638,7 +638,7 @@ kangax-es6/Reflect.getPrototypeOf.js: OK
 kangax-es6/Reflect.get.js: OK
 kangax-es6/Reflect.has.js: OK
 kangax-es6/Reflect.isExtensible.js: failed
-kangax-es6/Reflect.ownKeys.string.js: failed
+kangax-es6/Reflect.ownKeys.string.js: OK
 kangax-es6/Reflect.ownKeys.symbol.js: failed
 kangax-es6/Reflect.preventExtensions.js: OK
 kangax-es6/Reflect.setPrototypeOf.js: OK
@@ -1007,7 +1007,7 @@ kangax-es6/misc.Proxy.set.Array.fill.js: failed
 kangax-es6/misc.Proxy.set.Array.from.js: failed
 kangax-es6/misc.Proxy.set.Array.of.js: failed
 kangax-es6/misc.Proxy.set.Array.pop.js: failed
-kangax-es6/misc.Proxy.set.Array.push.js: failed
+kangax-es6/misc.Proxy.set.Array.push.js: OK
 kangax-es6/misc.Proxy.set.Array.reverse.js: failed
 kangax-es6/misc.Proxy.set.Array.shift.js: failed
 kangax-es6/misc.Proxy.set.Array.splice.js: failed
@@ -1045,9 +1045,9 @@ kangax-es6/regex.flags.u.non-bmp.js: failed
 kangax-es6/regex.flags.y.js: failed
 kangax-es6/regex.flags.y.lastIndex.js: failed
 kangax-es6/rest-params.arguments.js: OK
-kangax-es6/rest-params.basic.js: failed
+kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: failed
-kangax-es6/rest-params.new-function.js: failed
+kangax-es6/rest-params.new-function.js: OK
 kangax-es6/rest-params.no-setter.js: failed
 kangax-es6/spread.array-call.js: OK
 kangax-es6/spread.array-literal.js: OK
@@ -1196,7 +1196,7 @@ kangax-es2016/Array.prototype.includes.sparse.js: failed
 kangax-es2016/Array.prototype.includes.typed-array.js: failed
 kangax-es2016/exponentiation.assignment.js: failed
 kangax-es2016/exponentiation.basic.js: OK
-kangax-es2016/exponentiation.unary-negation-error.js: failed
+kangax-es2016/exponentiation.unary-negation-error.js: OK
 kangax-es2016/misc.Proxy-Array-includes.js: failed
 kangax-es2016/misc.Proxy-enumerate-removed.js: OK
 kangax-es2016/misc.generator-no-new.js: failed

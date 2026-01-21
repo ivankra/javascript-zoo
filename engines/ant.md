@@ -25,9 +25,9 @@ Ant-sized JavaScript runtime, notable for async/await, ffi, http servers, crypto
 <li>kangax-ES5: 100% (73/73)</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 35%, ES2016+ 48%, Intl 25%</summary><ul>
-<li>ES6: 35% (242/698)</li>
-<li>ES2016: 14% (2/14)</li>
+<details><summary>compat-table: ES6 36%, ES2016+ 49%, Intl 25%</summary><ul>
+<li>ES6: 36% (248/698)</li>
+<li>ES2016: 21% (3/14)</li>
 <li>ES2017: 48% (31/64)</li>
 <li>ES2018: 55% (12/22)</li>
 <li>ES2019: 33% (8/24)</li>
