@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "f0a690244507ea60eea7e712418c6e816440cf30b544e8218c570a2765ade2b8", "binary_size": 3738800, "engine": "ant", "repository": "https://github.com/themackabu/ant", "revision": "7caf72b08240cc8d286fc96fcc0b5d9162365b61", "revision_date": "2026-1-19"}
+Metadata: {"arch": "arm64", "binary_sha256": "9323b14cdf0d3fb33819035a45317ddb055d09ae75d5c643f689106ba28be942", "binary_size": 3776464, "engine": "ant", "repository": "https://github.com/themackabu/ant", "revision": "60484e1771272c87b986db225d1b4eba17076790", "revision_date": "2026-1-20"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -584,11 +584,11 @@ kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: failed
 kangax-es6/Promise.all.iterable.js: failed
 kangax-es6/Promise.all.js: timeout
-kangax-es6/Promise.constructor-requires-new.js: failed
+kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: failed
-kangax-es6/Promise.race.js: timeout
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: failed
 kangax-es6/Proxy.JSON.stringify.js: failed
 kangax-es6/Proxy.constructor-requires-new.js: failed
@@ -683,7 +683,7 @@ kangax-es6/String.raw.js: failed
 kangax-es6/Symbol.JSON.stringify.object.js: failed
 kangax-es6/Symbol.JSON.stringify.primitive.js: failed
 kangax-es6/Symbol.Object.js: failed
-kangax-es6/Symbol.String.js: failed
+kangax-es6/Symbol.String.js: OK
 kangax-es6/Symbol.defineProperty.js: failed
 kangax-es6/Symbol.global-registry.js: OK
 kangax-es6/Symbol.hidden-keys.js: failed
@@ -880,8 +880,8 @@ kangax-es6/destructuring-params.trailing-comma-object.js: OK
 kangax-es6/for-of.array.js: OK
 kangax-es6/for-of.astral-string.js: failed
 kangax-es6/for-of.generator.js: failed
-kangax-es6/for-of.iterable-instance.js: failed
-kangax-es6/for-of.iterable.js: failed
+kangax-es6/for-of.iterable-instance.js: OK
+kangax-es6/for-of.iterable.js: OK
 kangax-es6/for-of.iterator-closing-break.js: failed
 kangax-es6/for-of.iterator-closing-throw.js: failed
 kangax-es6/for-of.sparse-array.js: OK
@@ -1082,7 +1082,7 @@ kangax-es6/subclassing.Function.prototype.apply.js: OK
 kangax-es6/subclassing.Function.prototype.bind.js: failed
 kangax-es6/subclassing.Function.prototype.call.js: OK
 kangax-es6/subclassing.Promise.all.js: failed
-kangax-es6/subclassing.Promise.js: timeout
+kangax-es6/subclassing.Promise.js: OK
 kangax-es6/subclassing.Promise.prototype-chain.js: failed
 kangax-es6/subclassing.Promise.race.js: failed
 kangax-es6/subclassing.RegExp.exec.js: OK
@@ -1115,10 +1115,10 @@ kangax-es6/template.tagged.js: failed
 kangax-es6/template.toString.js: failed
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
 kangax-es6/typed-arrays.DataView.Float32.js: failed
-kangax-es6/typed-arrays.DataView.Float64.js: failed
+kangax-es6/typed-arrays.DataView.Float64.js: OK
 kangax-es6/typed-arrays.DataView.Int8.js: failed
-kangax-es6/typed-arrays.DataView.Int16.js: failed
-kangax-es6/typed-arrays.DataView.Int32.js: failed
+kangax-es6/typed-arrays.DataView.Int16.js: OK
+kangax-es6/typed-arrays.DataView.Int32.js: OK
 kangax-es6/typed-arrays.DataView.Uint8.js: OK
 kangax-es6/typed-arrays.DataView.Uint16.js: failed
 kangax-es6/typed-arrays.DataView.Uint32.js: failed
@@ -1222,9 +1222,9 @@ kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: failed
 kangax-es2017/Object.values.js: failed
 kangax-es2017/SharedArrayBuffer.Symbol.species.js: failed
 kangax-es2017/SharedArrayBuffer.js: OK
-kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: OK
 kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: failed
-kangax-es2017/SharedArrayBuffer.prototype.slice.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: OK
 kangax-es2017/String.prototype.padEnd.js: OK
 kangax-es2017/String.prototype.padStart.js: OK
 kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: failed
@@ -1249,28 +1249,28 @@ kangax-es2017/annex-b.Proxy.__lookupGetter__.js: failed
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: failed
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: failed
 kangax-es2017/async.Symbol.toStringTag.js: failed
-kangax-es2017/async.arrow-in-class.js: crashed (signal 11)
+kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
-kangax-es2017/async.await-non-promise.js: crashed (signal 11)
-kangax-es2017/async.await-rejection.js: crashed (signal 11)
+kangax-es2017/async.await-non-promise.js: OK
+kangax-es2017/async.await-rejection.js: OK
 kangax-es2017/async.await.js: timeout
-kangax-es2017/async.constructor.js: crashed (signal 11)
-kangax-es2017/async.methods-class.js: crashed (signal 11)
+kangax-es2017/async.constructor.js: OK
+kangax-es2017/async.methods-class.js: OK
 kangax-es2017/async.methods-object.js: failed
 kangax-es2017/async.must-await-value.js: OK
 kangax-es2017/async.no-await-in-params.js: failed
 kangax-es2017/async.no-line-break.js: failed
 kangax-es2017/async.no-prototype.js: failed
-kangax-es2017/async.prototype-chain.js: failed
-kangax-es2017/async.return.js: crashed (signal 11)
-kangax-es2017/async.throw.js: crashed (signal 11)
+kangax-es2017/async.prototype-chain.js: OK
+kangax-es2017/async.return.js: OK
+kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
 kangax-es2017/regex.flags.u.case-folding.js: OK
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
-kangax-es2018/Promise.prototype.finally.change-rejection.js: crashed (signal 11)
-kangax-es2018/Promise.prototype.finally.js: crashed (signal 11)
-kangax-es2018/Promise.prototype.finally.no-change-resolution.js: crashed (signal 11)
+kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
+kangax-es2018/Promise.prototype.finally.js: OK
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
 kangax-es2018/async-iterators.for-await-of.js: failed
 kangax-es2018/async-iterators.generators.js: failed
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
@@ -1333,11 +1333,11 @@ kangax-es2020/optional-chaining.function-call.js: failed
 kangax-es2020/optional-chaining.method-call.js: failed
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: failed
-kangax-es2021/FinalizationRegistry.js: failed
-kangax-es2021/Promise.any.AggregateError.js: timeout
-kangax-es2021/Promise.any.fulfillment.js: crashed (signal 11)
+kangax-es2021/FinalizationRegistry.js: OK
+kangax-es2021/Promise.any.AggregateError.js: OK
+kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
-kangax-es2021/WeakRef.js: failed
+kangax-es2021/WeakRef.js: OK
 kangax-es2021/logical-assignment.and.js: OK
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: OK
 kangax-es2021/logical-assignment.and.short-circuit.js: OK
@@ -1348,7 +1348,7 @@ kangax-es2021/logical-assignment.or.js: OK
 kangax-es2021/logical-assignment.or.setter-not-invoked.js: OK
 kangax-es2021/logical-assignment.or.short-circuit.js: OK
 kangax-es2021/numeric-separators.js: OK
-kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: failed
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.AggregateError.js: failed
 kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
 kangax-es2022/Error.cause.Error.js: failed
@@ -1394,9 +1394,9 @@ kangax-es2023/Array.prototype.toReversed.js: OK
 kangax-es2023/Array.prototype.toSorted.js: OK
 kangax-es2023/Array.prototype.toSpliced.js: OK
 kangax-es2023/Array.prototype.with.js: OK
-kangax-es2023/TypedArray.prototype.toReversed.js: failed
-kangax-es2023/TypedArray.prototype.toSorted.js: failed
-kangax-es2023/TypedArray.prototype.with.js: failed
+kangax-es2023/TypedArray.prototype.toReversed.js: OK
+kangax-es2023/TypedArray.prototype.toSorted.js: OK
+kangax-es2023/TypedArray.prototype.with.js: OK
 kangax-es2023/hashbang.js: OK
 kangax-es2024/ArrayBuffer.prototype.detached.js: failed
 kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: failed
@@ -1427,7 +1427,7 @@ kangax-es2025/Iterator.prototype.reduce.js: OK
 kangax-es2025/Iterator.prototype.some.js: OK
 kangax-es2025/Iterator.prototype.take.js: failed
 kangax-es2025/Iterator.prototype.toArray.js: failed
-kangax-es2025/Promise.try.js: timeout
+kangax-es2025/Promise.try.js: OK
 kangax-es2025/RegExp.escape.js: failed
 kangax-es2025/Set.prototype.difference.js: failed
 kangax-es2025/Set.prototype.intersection.js: failed
