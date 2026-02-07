@@ -11,7 +11,7 @@ DOCKER_RUN   := $(DOCKER) run --platform linux/$(DOCKER_ARCH)
 IID_DIR  := ../.cache/iid
 DIST_DIR := ../dist/$(DOCKER_ARCH)
 
-FILE_TARGETS := $(filter-out base% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z0-9]*.Dockerfile)))
+FILE_TARGETS := $(filter-out jsz-% hub, $(patsubst %.Dockerfile,%,$(wildcard [a-z0-9]*.Dockerfile)))
 ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 
 # bali: arm64 build broken
@@ -64,27 +64,27 @@ hub:
 base: $(IID_DIR)/base
 	@true
 
-$(IID_DIR)/base: base*.Dockerfile $(IID_DIR)/runtime
+$(IID_DIR)/base: jsz-*.Dockerfile $(IID_DIR)/runtime
 	@mkdir -p $(IID_DIR)
-	$(DOCKER_BUILD) -t jsz-debian -t jsz-debian13 -f base-debian.Dockerfile .
-	$(DOCKER_BUILD) -t jsz-debian11 -f base-debian.Dockerfile --build-arg BASE=debian:bullseye .
-	$(DOCKER_BUILD) -t jsz-gcc14 -f base-gcc.Dockerfile --build-arg=VER=14 .
-	$(DOCKER_BUILD) -t jsz-gcc15 -f base-gcc.Dockerfile --build-arg=VER=15 .
-	$(DOCKER_BUILD) -t jsz-gcc16 -f base-gcc.Dockerfile --build-arg=VER=16 .
-	$(DOCKER_BUILD) -t jsz-gcc -f base-gcc.Dockerfile .
-	$(DOCKER_BUILD) -t jsz-clang19 -f base-clang.Dockerfile --build-arg=VER=19 .
-	$(DOCKER_BUILD) -t jsz-clang20 -f base-clang.Dockerfile --build-arg=VER=20 .
-	$(DOCKER_BUILD) -t jsz-clang21 -f base-clang.Dockerfile --build-arg=VER=21 .
-	$(DOCKER_BUILD) -t jsz-clang22 -f base-clang.Dockerfile --build-arg=VER=22 .
-	$(DOCKER_BUILD) -t jsz-clang -f base-clang.Dockerfile .
-	$(DOCKER_BUILD) -t jsz-golang -f base-golang.Dockerfile .
-	$(DOCKER_BUILD) -t jsz-node -f base-node.Dockerfile .
-	$(DOCKER_BUILD) -t jsz-rust -f base-rust.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-debian -t jsz-debian13 -f jsz-debian.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-debian11 -f jsz-debian.Dockerfile --build-arg BASE=debian:bullseye .
+	$(DOCKER_BUILD) -t jsz-gcc14 -f jsz-gcc.Dockerfile --build-arg=VER=14 .
+	$(DOCKER_BUILD) -t jsz-gcc15 -f jsz-gcc.Dockerfile --build-arg=VER=15 .
+	$(DOCKER_BUILD) -t jsz-gcc16 -f jsz-gcc.Dockerfile --build-arg=VER=16 .
+	$(DOCKER_BUILD) -t jsz-gcc -f jsz-gcc.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-clang19 -f jsz-clang.Dockerfile --build-arg=VER=19 .
+	$(DOCKER_BUILD) -t jsz-clang20 -f jsz-clang.Dockerfile --build-arg=VER=20 .
+	$(DOCKER_BUILD) -t jsz-clang21 -f jsz-clang.Dockerfile --build-arg=VER=21 .
+	$(DOCKER_BUILD) -t jsz-clang22 -f jsz-clang.Dockerfile --build-arg=VER=22 .
+	$(DOCKER_BUILD) -t jsz-clang -f jsz-clang.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-golang -f jsz-golang.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-node -f jsz-node.Dockerfile .
+	$(DOCKER_BUILD) -t jsz-rust -f jsz-rust.Dockerfile .
 	$(DOCKER) image ls --format={{.Id}} jsz-debian >$(IID_DIR)/base
 
-$(IID_DIR)/runtime: base-runtime.Dockerfile
+$(IID_DIR)/runtime: jsz-runtime.Dockerfile
 	mkdir -p $(IID_DIR)
-	$(DOCKER_BUILD) --iidfile=$(IID_DIR)/runtime -t jsz-runtime --target=jsz-runtime -f base-runtime.Dockerfile .
+	$(DOCKER_BUILD) --iidfile=$(IID_DIR)/runtime -t jsz-runtime --target=jsz-runtime -f jsz-runtime.Dockerfile .
 
 define rules
 $(1): $(IID_DIR)/$(1) $(DIST_DIR)/$(1).json

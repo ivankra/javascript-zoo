@@ -23,7 +23,7 @@ for arch in $ARCHS; do
   (cd ../dist; tar --owner=root --group=root -c "$arch") >"../dist/$arch.tar"
 
   $DOCKER build \
-      -f base-runtime.Dockerfile \
+      -f jsz-runtime.Dockerfile \
       -t "jsz-runtime:$arch" \
       --build-arg BASE=debian:stable \
       --platform "linux/$arch" \
