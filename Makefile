@@ -15,12 +15,12 @@ data:
 	./conformance/results/README-gen.py
 
 app: .PHONY
-	npm run app:build
+	npm run build
 
-app-dev:
-	npm run app:dev
+dev:
+	npm run dev
 
-app-preview:
-	npm run app:preview
+preview:
+	npm run preview
 
 .PHONY:

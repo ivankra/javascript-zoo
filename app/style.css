@@ -97,17 +97,6 @@ body.modal-open {
   overflow: hidden;
 }
 
-body.columns-modal-open {
-  overflow: hidden;
-}
-
-@media (max-width: 720px) {
-  body.columns-modal-open .app-header,
-  body.columns-modal-open .app-body {
-    display: none;
-  }
-}
-
 a {
   color: var(--text-accent);
 }

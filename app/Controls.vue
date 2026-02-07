@@ -3,11 +3,8 @@
 
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
-import GitHubIcon from './GitHubIcon.vue';
-import { buildRows, sortRows } from './data';
-import { ALL_COLUMNS, BENCHMARK_COLUMNS } from './columns';
-import type { EngineEntry } from './data';
-import type { TableState } from './state';
+import githubSvg from './github.svg?raw';
+import type { TableState } from './tableState';
 
 type ControlItem =
   | { key: 'arch'; type: 'arch' }
@@ -16,18 +13,15 @@ type ControlItem =
 
 const props = withDefaults(defineProps<{
   state: TableState;
-  theme?: 'light' | 'dark';
-  toggleTheme?: () => void;
-  showTheme?: boolean;
-  engines?: EngineEntry[];
+  darkTheme?: boolean;
+  setTheme?: (next: boolean) => void;
 }>(), {
-  theme: 'light',
-  toggleTheme: () => {},
-  showTheme: false,
-  engines: () => [],
+  darkTheme: false,
+  setTheme: () => {},
 });
 const emit = defineEmits<{
   (event: 'open-columns'): void;
+  (event: 'export-csv'): void;
 }>();
 const state = props.state;
 
@@ -41,14 +35,11 @@ const measureRefs = ref<Record<string, HTMLElement>>({});
 const visibleCount = ref(3);
 
 const items = computed<ControlItem[]>(() => {
-  const base: ControlItem[] = [
+  return [
     { key: 'arch', type: 'arch' },
     { key: 'search', type: 'search' },
+    { key: 'theme', type: 'theme' },
   ];
-  if (props.showTheme) {
-    base.push({ key: 'theme', type: 'theme' });
-  }
-  return base;
 });
 
 const visibleItems = computed(() => items.value.slice(0, visibleCount.value));
@@ -58,17 +49,19 @@ const overflowOpen = ref(false);
 const overflowHover = ref(false);
 const suppressOverflowHover = ref(false);
 const menuOpen = computed(() => overflowOpen.value || (overflowHover.value && !suppressOverflowHover.value));
-const rawEngines = computed(() => props.engines ?? []);
-
 function setArch(next: 'amd64' | 'arm64') {
   state.arch = next;
   archOpen.value = false;
 }
 
-function setTheme(next: 'light' | 'dark') {
-  if (next !== props.theme) {
-    props.toggleTheme();
+function applyTheme(next: boolean) {
+  if (next !== props.darkTheme) {
+    props.setTheme(next);
   }
+}
+
+function toggleTheme() {
+  props.setTheme(!props.darkTheme);
 }
 
 function toggleOverflow() {
@@ -98,48 +91,8 @@ function openColumnsModal() {
   suppressOverflowHover.value = true;
 }
 
-function exportCsv() {
-  const base = ALL_COLUMNS.filter((col) => !col.benchmark);
-  const baseMap = new Map(base.map((col) => [col.key, col]));
-  const orderedKeys: string[] = [];
-  if (baseMap.has('engine')) {
-    orderedKeys.push('engine');
-  }
-  for (const key of state.columnOrder) {
-    if (key !== 'engine' && baseMap.has(key)) {
-      orderedKeys.push(key);
-    }
-  }
-  for (const col of base) {
-    if (col.key !== 'engine' && !orderedKeys.includes(col.key)) {
-      orderedKeys.push(col.key);
-    }
-  }
-  for (const col of BENCHMARK_COLUMNS) {
-    orderedKeys.push(col.key);
-  }
-  const visibleKeys = orderedKeys.filter((key) => key === 'engine' || state.visibleColumns[key]);
-  if (visibleKeys.length === 0) {
-    return;
-  }
-  const rows = [visibleKeys.join(',')];
-  const dataRows = sortRows(buildRows(rawEngines.value, state, BENCHMARK_COLUMNS), state.sort);
-  for (const row of dataRows) {
-    const values = visibleKeys.map((key) => {
-      const value = key === 'engine' ? (row.title ?? row.engine ?? '') : (row as Record<string, unknown>)[key];
-      const text = value === null || value === undefined ? '' : String(value);
-      const escaped = text.replace(/"/g, '""');
-      return `"${escaped}"`;
-    });
-    rows.push(values.join(','));
-  }
-  const blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'javascript-engines.csv';
-  link.click();
-  URL.revokeObjectURL(url);
+function onExportCsv() {
+  emit('export-csv');
 }
 
 function setSearchRef(el: HTMLInputElement | null) {
@@ -258,7 +211,9 @@ onMounted(() => {
   document.addEventListener('mousedown', handleClickOutside);
 
   handleSearchShortcut = (event: KeyboardEvent) => {
-    if (event.key !== '/' && event.code !== 'Slash') {
+    const isSlash = event.key === '/' || event.code === 'Slash';
+    const isCmdOrCtrl = (event.metaKey || event.ctrlKey) && (event.key === 'k' || event.key === 'K' || event.code === 'KeyK');
+    if (!isSlash && !isCmdOrCtrl) {
       return;
     }
     const target = event.target as HTMLElement | null;
@@ -335,7 +290,7 @@ onBeforeUnmount(() => {
               type="search"
               placeholder="Search..."
               aria-label="Search engines"
-              title="Search for a string or /regex/"
+              title="Search for a string or regex"
             />
           </div>
           <button
@@ -345,7 +300,7 @@ onBeforeUnmount(() => {
             @click="toggleTheme"
             title="Toggle theme"
           >
-            {{ theme === 'dark' ? '☀️' : '🌙' }}
+            {{ darkTheme ? '☀️' : '🌙' }}
           </button>
         </template>
       </div>
@@ -410,17 +365,17 @@ onBeforeUnmount(() => {
             <div class="preset-row">
               <button
                 class="menu-button"
-                :class="{ active: theme === 'light' }"
+                :class="{ active: !darkTheme }"
                 type="button"
-                @click="setTheme('light')"
+                @click="applyTheme(false)"
               >
                 Light
               </button>
               <button
                 class="menu-button"
-                :class="{ active: theme === 'dark' }"
+                :class="{ active: darkTheme }"
                 type="button"
-                @click="setTheme('dark')"
+                @click="applyTheme(true)"
               >
                 Dark
               </button>
@@ -463,7 +418,7 @@ onBeforeUnmount(() => {
           <button class="menu-button" type="button" @click="openColumnsModal">
             Select columns
           </button>
-          <button class="menu-button" type="button" @click="exportCsv">
+          <button class="menu-button" type="button" @click="onExportCsv">
             Export .csv
           </button>
           <a
@@ -472,7 +427,7 @@ onBeforeUnmount(() => {
             target="_blank"
             rel="noreferrer"
           >
-            <GitHubIcon :size="16" />
+            <span class="github-icon" aria-hidden="true" v-html="githubSvg"></span>
             Open repo
           </a>
         </div>
@@ -487,7 +442,7 @@ onBeforeUnmount(() => {
         class="theme-toggle inline"
         type="button"
       >
-        {{ theme === 'dark' ? '☀️' : '🌙' }}
+        {{ darkTheme ? '☀️' : '🌙' }}
       </button>
       <div
         v-else-if="item.type === 'search'"
@@ -531,6 +486,19 @@ onBeforeUnmount(() => {
 
 .engine-controls input {
   accent-color: var(--text-accent);
+}
+
+.github-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+
+.github-icon :deep(svg) {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .controls-main {

@@ -2,7 +2,27 @@
 // SPDX-License-Identifier: MIT
 
 import type { ColumnDef } from './columns';
-import type { TableState } from './state';
+import type { TableState } from './tableState';
+import enginesJson from '../dist/engines.json';
+import markdownJson from '../dist/markdown.json';
+
+export const enginesData = enginesJson as EngineEntry[];
+export const markdownData = markdownJson as Record<string, string>;
+
+export function getMarkdownPage(page: string | null | undefined): string {
+  if (!page) {
+    return '';
+  }
+  const trimmed = page.trim().replace(/^engines\//, '');
+  if (!trimmed) {
+    return '';
+  }
+  return markdownData[`engines/${trimmed}.md`] ?? '';
+}
+
+export function hasMarkdownPage(page: string | null | undefined): boolean {
+  return Boolean(getMarkdownPage(page));
+}
 
 export interface BenchRow {
   arch?: string;
@@ -150,26 +170,29 @@ function buildSearchMatcher(query: string): ((row: TableRow) => boolean) | null 
   if (!query) {
     return null;
   }
-  const normalized = query.startsWith('/') && query.endsWith('/') && query.length > 1
-    ? query.slice(1, -1)
-    : query;
-  let regex: RegExp;
-  try {
-    regex = new RegExp(normalized, 'i');
-  } catch (error) {
-    console.warn('Invalid search regex, falling back to plain match:', error);
-    const tokens = query.toLowerCase().split(/\s+/).filter(Boolean);
-    return (row) => {
-      if (!tokens.length) {
-        return true;
-      }
-      const haystack = collectSearchValues(row).join(' ').toLowerCase();
-      return tokens.every((token) => haystack.includes(token));
-    };
+  const raw = query.trim();
+  if (!raw) {
+    return null;
   }
+  const regexSource = raw.replace(/^\/|\/$/g, '');
+  let regex: RegExp | null = null;
+  try {
+    regex = new RegExp(regexSource, 'i');
+  } catch {
+    regex = null;
+  }
+  const tokens = raw.toLowerCase().split(/\s+/).filter(Boolean);
+  const stringMatch = (row: TableRow) => {
+    if (!tokens.length) {
+      return true;
+    }
+    const haystack = collectSearchValues(row).join(' ').toLowerCase();
+    return tokens.every((token) => haystack.includes(token));
+  };
   return (row) => {
     const haystack = collectSearchValues(row).join(' ');
-    return regex.test(haystack);
+    const regexHit = regex ? regex.test(haystack) : false;
+    return regexHit || stringMatch(row);
   };
 }
 

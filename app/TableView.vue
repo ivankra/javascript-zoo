@@ -2,44 +2,28 @@
 <!-- SPDX-License-Identifier: MIT -->
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 import { ALL_COLUMNS, BENCHMARK_COLUMNS } from './columns';
 import { buildRows, sortRows } from './data';
-import EngineTableControls from './EngineTableControls.vue';
 import {
   applySort,
-  buildHash,
-  createInitialState,
-  initColumnOrder,
-  initVisibleColumns,
-  loadStateFromUrl,
-  parseHashLocation,
-  resetStateFromDefaults,
-  saveStateToUrl,
-  withBase,
-} from './state';
+  isColumnVisible,
+  isSortedColumn,
+} from './tableState';
 import type { ColumnDef } from './columns';
 import type { CellContent, EngineEntry, TableRow } from './data';
-import type { TableState } from './state';
+import type { TableState } from './tableState';
 
-const props = withDefaults(defineProps<{
-  state?: TableState;
-  showControls?: boolean;
-  engines?: EngineEntry[];
-}>(), {
-  showControls: true,
-  engines: () => [],
-});
+const props = defineProps<{
+  state: TableState;
+  engines: EngineEntry[];
+  engineLink: (id: string) => string;
+}>();
 const emit = defineEmits<{
   (event: 'select-engine', id: string): void;
 }>();
-const internalState = reactive(createInitialState());
-const state = props.state ?? internalState;
-const hydrated = ref(false);
+const state = props.state;
 const hasHorizontalScroll = ref(false);
-
-initVisibleColumns(state, ALL_COLUMNS);
-initColumnOrder(state, ALL_COLUMNS);
 
 const rows = computed(() => {
   const data = buildRows(props.engines ?? [], state, BENCHMARK_COLUMNS);
@@ -47,10 +31,10 @@ const rows = computed(() => {
 });
 
 const columns = computed(() => {
-  const base = ALL_COLUMNS.filter((col) => !col.benchmark);
-  const baseMap = new Map(base.map((col) => [col.key, col]));
+  const all = ALL_COLUMNS;
+  const allMap = new Map(all.map((col) => [col.key, col]));
   const ordered: ColumnDef[] = [];
-  const engine = baseMap.get('engine');
+  const engine = allMap.get('engine');
   if (engine) {
     ordered.push(engine);
   }
@@ -58,17 +42,17 @@ const columns = computed(() => {
     if (key === 'engine') {
       continue;
     }
-    const col = baseMap.get(key);
+    const col = allMap.get(key);
     if (col) {
       ordered.push(col);
     }
   }
-  for (const col of base) {
+  for (const col of all) {
     if (!ordered.includes(col) && col.key !== 'engine') {
       ordered.push(col);
     }
   }
-  return [...ordered, ...BENCHMARK_COLUMNS];
+  return ordered;
 });
 
 const displayRows = computed(() => {
@@ -81,19 +65,9 @@ const displayRows = computed(() => {
   });
 });
 
-function isColumnVisible(col: ColumnDef): boolean {
-  if (col.key === 'engine') {
-    return true;
-  }
-  if (col.benchmark) {
-    return Boolean(state.visibleColumns[col.key]);
-  }
-  return state.visibleColumns[col.key] !== false;
-}
-
-function isSorted(col: ColumnDef): boolean {
-  return state.sort[0]?.col === col.key;
-}
+const draggingKey = ref<string | null>(null);
+const dragOverKey = ref<string | null>(null);
+const suppressHeaderClick = ref(false);
 
 function columnClasses(col: ColumnDef): string[] {
   const classes = [col.key];
@@ -106,17 +80,43 @@ function columnClasses(col: ColumnDef): string[] {
   if (col.className) {
     classes.push(col.className);
   }
-  if (isSorted(col)) {
+  if (isSortedColumn(state, col)) {
     classes.push('sorted-column');
   }
-  if (!isColumnVisible(col)) {
+  if (!isColumnVisible(state, col)) {
     classes.push('hidden');
   }
   return classes;
 }
 
+function isReorderable(col: ColumnDef): boolean {
+  return col.key !== 'engine';
+}
+
+function moveColumn(fromKey: string, toKey: string) {
+  if (fromKey === toKey) {
+    return;
+  }
+  const order = [...state.columnOrder];
+  const fromIndex = order.indexOf(fromKey);
+  if (fromIndex === -1) {
+    return;
+  }
+  order.splice(fromIndex, 1);
+  if (toKey === 'engine') {
+    order.unshift(fromKey);
+  } else {
+    const toIndex = order.indexOf(toKey);
+    if (toIndex === -1) {
+      return;
+    }
+    order.splice(toIndex + 1, 0, fromKey);
+  }
+  state.columnOrder = order;
+}
+
 function sortHeaderClass(col: ColumnDef): string | undefined {
-  if (!isSorted(col)) {
+  if (!isSortedColumn(state, col)) {
     return undefined;
   }
   return state.sort[0].dir === 'asc' ? 'sort-asc' : 'sort-desc';
@@ -309,11 +309,87 @@ function formatBenchmark(value: unknown, detail?: unknown, error?: unknown): Cel
 }
 
 function onHeaderClick(col: ColumnDef, event: MouseEvent): void {
+  if (suppressHeaderClick.value) {
+    suppressHeaderClick.value = false;
+    return;
+  }
   const target = event.target as HTMLElement;
   if (target?.tagName?.toUpperCase() === 'INPUT') {
     return;
   }
   applySort(state, col);
+}
+
+function onHeaderPointerDown(event: PointerEvent, col: ColumnDef) {
+  if (!isReorderable(col)) {
+    return;
+  }
+  const target = event.currentTarget as HTMLElement | null;
+  if (!target) {
+    return;
+  }
+  event.preventDefault();
+  target.setPointerCapture(event.pointerId);
+
+  let started = false;
+  const startX = event.clientX;
+  const startY = event.clientY;
+  const originKey = col.key;
+  let dropKey: string | null = null;
+
+  const onPointerMove = (moveEvent: PointerEvent) => {
+    const delta = Math.hypot(moveEvent.clientX - startX, moveEvent.clientY - startY);
+    if (!started && delta > 4) {
+      started = true;
+      suppressHeaderClick.value = true;
+      draggingKey.value = originKey;
+    }
+    if (!started) {
+      return;
+    }
+    const element = document.elementFromPoint(moveEvent.clientX, moveEvent.clientY);
+    const cell = element?.closest<HTMLTableCellElement>('th[data-column-key]');
+    const nextKey = cell?.dataset.columnKey;
+    if (!nextKey || !cell) {
+      dragOverKey.value = null;
+      dropKey = null;
+      return;
+    }
+    const columnsList = columns.value;
+    const index = columnsList.findIndex((item) => item.key === nextKey);
+    const rect = cell.getBoundingClientRect();
+    const relX = moveEvent.clientX - rect.left;
+    const midpoint = rect.width / 2;
+    let targetKey: string | null = null;
+    if (nextKey === 'engine') {
+      targetKey = 'engine';
+    } else if (relX < midpoint) {
+      const prev = columnsList[index - 1];
+      targetKey = prev?.key ?? 'engine';
+    } else {
+      targetKey = nextKey;
+    }
+    if (targetKey && dragOverKey.value !== targetKey) {
+      dragOverKey.value = targetKey;
+    }
+    dropKey = targetKey;
+  };
+
+  const onPointerUp = () => {
+    target.releasePointerCapture(event.pointerId);
+    window.removeEventListener('pointermove', onPointerMove);
+    window.removeEventListener('pointerup', onPointerUp);
+    window.removeEventListener('pointercancel', onPointerUp);
+    if (started && dropKey && dropKey !== originKey) {
+      moveColumn(originKey, dropKey);
+    }
+    draggingKey.value = null;
+    dragOverKey.value = null;
+  };
+
+  window.addEventListener('pointermove', onPointerMove);
+  window.addEventListener('pointerup', onPointerUp);
+  window.addEventListener('pointercancel', onPointerUp);
 }
 
 function onTableClick(event: MouseEvent): void {
@@ -356,10 +432,9 @@ function onWindowScroll(): void {
   hasHorizontalScroll.value = window.scrollX > 1;
 }
 
-function engineLink(row: TableRow): string {
+function rowEngineLink(row: TableRow): string {
   if (row.id) {
-    const params = typeof window === 'undefined' ? new URLSearchParams() : parseHashLocation().params;
-    return `${withBase('/')}${buildHash(row.id, params)}`;
+    return props.engineLink(row.id);
   }
   return row.jsz_url ?? '#';
 }
@@ -398,7 +473,7 @@ function renderCell(col: ColumnDef, row: TableRow): CellContent {
   if (col.key === 'engine') {
     const name = row.title ?? row.engine ?? '';
     const variant = row.variant ? `<div class="engine-variant">${row.variant}</div>` : '';
-    const link = engineLink(row);
+    const link = rowEngineLink(row);
     const revision = revisionLink(row);
     const version = `<div class="engine-version">${revision.html ?? ''}</div>`;
 
@@ -467,43 +542,92 @@ function renderCell(col: ColumnDef, row: TableRow): CellContent {
   return value ? { text: String(value) } : {};
 }
 
-function syncStateFromUrl() {
-  hydrated.value = false;
-  resetStateFromDefaults(state, ALL_COLUMNS, BENCHMARK_COLUMNS);
-  loadStateFromUrl(state, ALL_COLUMNS, BENCHMARK_COLUMNS);
-  hydrated.value = true;
+function renderCellCsv(col: ColumnDef, row: TableRow): string {
+  if (col.key === 'engine') {
+    const name = row.title ?? row.engine ?? '';
+    const variant = row.variant ? ` (${row.variant})` : '';
+    return `${name}${variant}`.trim();
+  }
+  if (col.key === 'binary_size') {
+    if (typeof row.binary_size === 'number') {
+      return String(row.binary_size);
+    }
+    if (typeof row.dist_size === 'number') {
+      return String(row.dist_size);
+    }
+    return '';
+  }
+  if (col.key === 'description') {
+    const parts: string[] = [];
+    if (row.summary) {
+      parts.push(row.summary);
+    }
+    if (row.tech) {
+      parts.push(`Tech: ${row.tech}`);
+    }
+    if (row.note) {
+      parts.push(row.note);
+    }
+    return parts.join(' | ');
+  }
+  if (col.benchmark) {
+    const value = row[col.key];
+    if (typeof value === 'number' && !Number.isNaN(value)) {
+      return String(Math.round(value));
+    }
+    return '';
+  }
+  const value = row[col.key];
+  if (value === null || value === undefined) {
+    return '';
+  }
+  if (typeof value === 'string' || typeof value === 'number') {
+    return String(value);
+  }
+  return String(value);
 }
 
+function escapeCsv(value: string): string {
+  const escaped = value.replace(/"/g, '""');
+  return `"${escaped}"`;
+}
+
+function exportCsv(): void {
+  const visibleColumns = columns.value.filter((col) => isColumnVisible(state, col));
+  if (!visibleColumns.length) {
+    return;
+  }
+  const header = visibleColumns.map((col) => col.key);
+  const rowsOut = [header.join(',')];
+  for (const row of rows.value) {
+    const values = visibleColumns.map((col) => {
+      return escapeCsv(renderCellCsv(col, row));
+    });
+    rowsOut.push(values.join(','));
+  }
+  const blob = new Blob([rowsOut.join('\n')], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'javascript-engines.csv';
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+defineExpose({ exportCsv });
+
 onMounted(() => {
-  syncStateFromUrl();
-  window.addEventListener('hashchange', syncStateFromUrl);
-  window.addEventListener('popstate', syncStateFromUrl);
   window.addEventListener('scroll', onWindowScroll, { passive: true });
   onWindowScroll();
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('hashchange', syncStateFromUrl);
-  window.removeEventListener('popstate', syncStateFromUrl);
   window.removeEventListener('scroll', onWindowScroll);
 });
-
-watch(
-  state,
-  () => {
-    if (!hydrated.value) {
-      return;
-    }
-    saveStateToUrl(state, ALL_COLUMNS, BENCHMARK_COLUMNS);
-  },
-  { deep: true },
-);
 </script>
 
 <template>
   <section class="jsz-table">
-    <EngineTableControls v-if="props.showControls" :state="state" class="table-controls" />
-
     <div class="table-container" :class="{ 'scrolled-x': hasHorizontalScroll }" @click="onTableClick">
       <div class="table-scroll">
         <table>
@@ -512,9 +636,18 @@ watch(
             <th
               v-for="col in columns"
               :key="col.key"
-              :class="[columnClasses(col), sortHeaderClass(col)]"
+              :data-column-key="col.key"
+              :class="[
+                columnClasses(col),
+                sortHeaderClass(col),
+                {
+                  dragging: draggingKey === col.key,
+                  'drop-after': dragOverKey === col.key,
+                },
+              ]"
               :title="col.title"
               @click="onHeaderClick(col, $event)"
+              @pointerdown="onHeaderPointerDown($event, col)"
             >
               {{ col.benchmark ? shortBenchmarkLabel(col.label) : col.label }}
             </th>
@@ -553,16 +686,6 @@ watch(
   font-size: 14px;
   width: 100%;
   background-color: var(--bg-primary);
-}
-
-.table-controls {
-  padding: 8px 16px;
-  border-bottom: 1px solid var(--border-light);
-  position: sticky;
-  top: var(--app-header-height);
-  background: color-mix(in srgb, var(--bg-primary) 92%, transparent);
-  backdrop-filter: blur(6px);
-  z-index: 7;
 }
 
 .jsz-table input,
@@ -736,6 +859,26 @@ watch(
 .table-container th.sorted-column::before {
   background: var(--text-accent);
   height: 2px;
+}
+
+.table-container th.dragging {
+  opacity: 0.7;
+  cursor: grabbing;
+  outline: 1px dashed color-mix(in srgb, var(--text-accent) 70%, transparent);
+  outline-offset: -6px;
+}
+
+.table-container th.drop-after::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: color-mix(in srgb, var(--text-accent) 60%, transparent);
+}
+
+.table-container th.drop-after::after {
+  right: 2px;
 }
 
 .sort-asc::after,

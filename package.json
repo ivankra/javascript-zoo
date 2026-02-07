@@ -2,16 +2,16 @@
   "name": "javascript-zoo",
   "private": true,
   "scripts": {
-    "app:dev": "vite --config app/vite.config.ts",
-    "app:build": "vite build --config app/vite.config.ts",
-    "app:preview": "vite preview --config app/vite.config.ts"
+    "dev": "vite --config app/vite.config.ts",
+    "build": "vite build --config app/vite.config.ts",
+    "preview": "vite preview --config app/vite.config.ts"
   },
   "dependencies": {
     "markdown-it": "^14.1.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
-    "vite": "^5.4.10",
-    "vue": "^3.5.12"
+    "@vitejs/plugin-vue": "^6.0.3",
+    "vite": "^7.3.1",
+    "vue": "^3.5.26"
   }
 }

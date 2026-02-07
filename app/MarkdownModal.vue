@@ -4,11 +4,11 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import MarkdownIt from 'markdown-it';
-import GitHubIcon from './GitHubIcon.vue';
+import githubSvg from './github.svg?raw';
 import Modal from './Modal.vue';
-import { buildHash, parseHashLocation } from './state';
+import { buildPageHash } from './tableState';
 
-const props = defineProps<{ engine: Record<string, unknown>; markdown: string }>();
+const props = defineProps<{ engineId: string; markdown: string }>();
 const emit = defineEmits<{
   (event: 'close'): void;
   (event: 'open-engine', id: string): void;
@@ -29,8 +29,7 @@ markdown.renderer.rules.link_open = (tokens, idx, options, env, self) => {
     const engineMatch = rawHref.match(/^([^/]+)\.md(?:[?#].*)?$/);
     if (engineMatch) {
       token.attrSet('data-engine-id', engineMatch[1]);
-      const params = typeof window === 'undefined' ? new URLSearchParams() : parseHashLocation().params;
-      token.attrSet('href', buildHash(engineMatch[1], params));
+      token.attrSet('href', buildPageHash(engineMatch[1]));
     } else {
       token.attrSet('href', new URL(rawHref, markdownBase).toString());
       token.attrSet('target', '_blank');
@@ -40,18 +39,19 @@ markdown.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   return defaultLinkOpen(tokens, idx, options, env, self);
 };
 
-const engineId = computed(() => (typeof props.engine.id === 'string' ? props.engine.id : ''));
-const engineTitle = computed(() => {
-  if (typeof props.engine.title === 'string') {
-    return props.engine.title;
+const modalTitle = computed(() => {
+  const firstLine = (props.markdown ?? '').split(/\r?\n/, 1)[0] ?? '';
+  const match = firstLine.match(/^\s*#\s+(.+?)\s*$/);
+  if (match) {
+    return match[1];
   }
-  return engineId.value || 'Engine details';
+  return props.engineId || 'Engine details';
 });
 const engineLink = computed(() => {
-  if (!engineId.value) {
+  if (!props.engineId) {
     return '#';
   }
-  return `https://github.com/ivankra/javascript-zoo/blob/master/engines/${engineId.value}.md`;
+  return `https://github.com/ivankra/javascript-zoo/blob/master/engines/${props.engineId}.md`;
 });
 
 const renderedMarkdown = computed(() => {
@@ -78,8 +78,7 @@ const renderedMarkdown = computed(() => {
     const engineMatch = rawHref.match(/^([^/]+)\.md(?:[?#].*)?$/);
     if (engineMatch) {
       link.setAttribute('data-engine-id', engineMatch[1]);
-      const params = typeof window === 'undefined' ? new URLSearchParams() : parseHashLocation().params;
-      link.setAttribute('href', buildHash(engineMatch[1], params));
+      link.setAttribute('href', buildPageHash(engineMatch[1]));
       link.removeAttribute('target');
       link.removeAttribute('rel');
     } else {
@@ -114,33 +113,30 @@ function onMarkdownClick(event: MouseEvent) {
 </script>
 
 <template>
-  <Modal body-class="modal-open" @close="closeModal" padded>
-    <div class="engine-dialog">
-      <div class="engine-dialog-header">
-        <div class="engine-dialog-title">{{ engineTitle }}</div>
-        <div class="engine-dialog-actions">
-          <a
-            class="engine-dialog-link"
-            :href="engineLink"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="View on GitHub"
-            title="View on GitHub"
-          >
-            <GitHubIcon :size="18" />
-          </a>
-          <button type="button" class="close-button" @click="closeModal" aria-label="Close" title="Close">×</button>
-        </div>
+  <Modal body-class="modal-open" panel-class="engine-dialog" content-class="engine-dialog-body" @close="closeModal" padded>
+    <template #title>
+      {{ modalTitle }}
+    </template>
+    <template #actions>
+      <div class="engine-dialog-actions">
+        <a
+          class="engine-dialog-link"
+          :href="engineLink"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="View on GitHub"
+          title="View on GitHub"
+        >
+          <span class="github-icon" aria-hidden="true" v-html="githubSvg"></span>
+        </a>
       </div>
-      <div class="engine-dialog-body">
-        <div class="markdown-body" v-html="renderedMarkdown" @click="onMarkdownClick"></div>
-      </div>
-    </div>
+    </template>
+    <div class="markdown-body" v-html="renderedMarkdown" @click="onMarkdownClick"></div>
   </Modal>
 </template>
 
 <style scoped>
-.engine-dialog {
+:global(.engine-dialog) {
   position: relative;
   width: min(960px, 100%);
   max-height: calc(100vh - 128px);
@@ -155,13 +151,25 @@ function onMarkdownClick(event: MouseEvent) {
   overflow: hidden;
 }
 
-.engine-dialog-header {
+:global(.engine-dialog .modal-header) {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 20px 24px 12px;
   border-bottom: 1px solid var(--border-light);
+}
+
+.github-icon {
+  display: inline-flex;
+  width: 18px;
+  height: 18px;
+}
+
+.github-icon :deep(svg) {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .engine-dialog-actions {
@@ -180,35 +188,8 @@ function onMarkdownClick(event: MouseEvent) {
   text-decoration: none;
 }
 
-.engine-dialog-title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-family: -apple-system, BlinkMacSystemFont, Inter, ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-.engine-dialog-body {
+:global(.engine-dialog .engine-dialog-body) {
   padding: 20px 24px 24px;
-  overflow: auto;
-}
-
-.close-button {
-  border: 1px solid var(--border-light);
-  background: var(--bg-control);
-  color: var(--text-primary);
-  border-radius: 6px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-}
-
-.close-button:hover {
-  background: var(--bg-hover);
 }
 
 .markdown-body :deep(h1),
@@ -252,20 +233,4 @@ function onMarkdownClick(event: MouseEvent) {
   font-weight: 600;
 }
 
-@media (max-width: 720px) {
-  .engine-dialog {
-    width: 100%;
-    max-height: 100dvh;
-    height: 100dvh;
-    border-radius: 0;
-  }
-
-  .engine-dialog-header {
-    padding: 16px 16px 12px;
-  }
-
-  .engine-dialog-body {
-    padding: 16px;
-  }
-}
 </style>

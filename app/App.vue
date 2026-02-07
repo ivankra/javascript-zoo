@@ -2,102 +2,89 @@
 <!-- SPDX-License-Identifier: MIT -->
 
 <script setup lang="ts">
-import { computed, nextTick, onMounted, onUnmounted, reactive, ref } from 'vue';
-import EngineTable from './EngineTable.vue';
-import EngineTableControls from './EngineTableControls.vue';
-import {
-  buildHash,
-  createInitialState,
-  initColumnOrder,
-  initVisibleColumns,
-  parseHashLocation,
-  withBase,
-} from './state';
-import { ALL_COLUMNS } from './columns';
+import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
+import Controls from './Controls.vue';
+import TableView from './TableView.vue';
+import * as tableState from './tableState';
 import MarkdownModal from './MarkdownModal.vue';
 import ColumnsModal from './ColumnsModal.vue';
-import enginesData from '../dist/engines.json';
-import markdownData from '../dist/markdown.json';
+import { enginesData, getMarkdownPage, hasMarkdownPage } from './data';
 import type { EngineEntry } from './data';
 
-const theme = ref<'light' | 'dark'>('light');
-const state = reactive(createInitialState());
-const selectedEngineId = ref<string | null>(null);
-const columnsOpen = ref(false);
+const state = reactive(tableState.createInitialState());
+const darkTheme = ref(false);
+const columnsModalOpen = ref(false);
+const markdownModalOpen = ref(false);
+const markdownPage = ref<string | null>(null);
+const markdownPageText = computed(() => getMarkdownPage(markdownPage.value));
 const engines = ref(enginesData as EngineEntry[]);
-const markdownMap = ref(markdownData as Record<string, string>);
+const hydrated = ref(false);
+const tableViewRef = ref<{ exportCsv: () => void } | null>(null);
 
-initVisibleColumns(state, ALL_COLUMNS);
-initColumnOrder(state, ALL_COLUMNS);
-
-const engineMap = computed(() => {
-  const map = new Map<string, Record<string, unknown>>();
-  for (const row of engines.value as Record<string, unknown>[]) {
-    if (typeof row.id === 'string') {
-      map.set(row.id, row);
-    }
+function withBase(path: string): string {
+  const base = import.meta.env.BASE_URL || '/';
+  if (base === '/') {
+    return path;
   }
-  return map;
-});
+  return base.replace(/\/$/, '') + path;
+}
 
-const selectedEngine = computed(() => {
-  if (!selectedEngineId.value) {
-    return null;
-  }
-  return engineMap.value.get(selectedEngineId.value) ?? null;
-});
+function buildEngineLink(id: string): string {
+  return `${withBase('/')}${tableState.buildPageHash(id)}`;
+}
 
-const selectedMarkdown = computed(() => {
-  if (!selectedEngineId.value) {
-    return '';
-  }
-  return markdownMap.value[`engines/${selectedEngineId.value}.md`] ?? '';
-});
+function onLocationChange() {
+  const { page, params } = tableState.parseHashLocation();
 
-function syncFromLocation() {
-  const { page } = parseHashLocation();
   if (page === 'columns') {
-    columnsOpen.value = true;
-    selectedEngineId.value = null;
+    columnsModalOpen.value = true;
+    markdownPage.value = null;
+    markdownModalOpen.value = false;
+  } else {
+    columnsModalOpen.value = false;
+    markdownPage.value = page ?? null;
+    markdownModalOpen.value = Boolean(page && hasMarkdownPage(page));
+  }
+
+  if (page || !params.toString()) {
+    hydrated.value = true;
     return;
   }
-  columnsOpen.value = false;
-  selectedEngineId.value = page ?? null;
+  hydrated.value = false;
+  tableState.resetStateFromDefaults(state);
+  tableState.loadStateFromUrl(state);
+  hydrated.value = true;
 }
 
-function applyTheme(next: 'light' | 'dark') {
-  theme.value = next;
-  document.documentElement.classList.toggle('dark', next === 'dark');
-  localStorage.setItem('theme', next);
-}
-
-function toggleTheme() {
-  applyTheme(theme.value === 'dark' ? 'light' : 'dark');
+function setTheme(next: boolean) {
+  darkTheme.value = next;
+  document.documentElement.classList.toggle('dark', next);
+  localStorage.setItem('theme', next ? 'dark' : 'light');
 }
 
 function openEngine(id: string) {
-  if (!engineMap.value.has(id)) {
+  if (!hasMarkdownPage(id)) {
     return;
   }
-  columnsOpen.value = false;
-  selectedEngineId.value = id;
-  const { params } = parseHashLocation();
-  const nextHash = buildHash(id, params);
+  columnsModalOpen.value = false;
+  markdownPage.value = id;
+  markdownModalOpen.value = true;
+  const nextHash = tableState.buildPageHash(id);
   window.history.pushState(null, '', `${withBase('/')}${nextHash}`);
 }
 
 function closeEngine() {
-  selectedEngineId.value = null;
-  const { params } = parseHashLocation();
-  const nextHash = buildHash(null, params);
+  markdownPage.value = null;
+  markdownModalOpen.value = false;
+  const nextHash = tableState.buildStateHash(state);
   window.history.pushState(null, '', `${withBase('/')}${nextHash}`);
 }
 
 function openColumns() {
-  columnsOpen.value = true;
-  selectedEngineId.value = null;
-  const { params } = parseHashLocation();
-  const nextHash = buildHash('columns', params);
+  columnsModalOpen.value = true;
+  markdownPage.value = null;
+  markdownModalOpen.value = false;
+  const nextHash = tableState.buildPageHash('columns');
   window.history.pushState(null, '', `${withBase('/')}${nextHash}`);
   nextTick(() => {
     window.dispatchEvent(new Event('resize'));
@@ -105,33 +92,48 @@ function openColumns() {
 }
 
 function closeColumns() {
-  columnsOpen.value = false;
-  const { params } = parseHashLocation();
-  const nextHash = buildHash(null, params);
+  columnsModalOpen.value = false;
+  const nextHash = tableState.buildStateHash(state);
   window.history.pushState(null, '', `${withBase('/')}${nextHash}`);
   nextTick(() => {
     window.dispatchEvent(new Event('resize'));
   });
 }
 
+function exportCsv() {
+  tableViewRef.value?.exportCsv();
+}
+
 onMounted(() => {
   const stored = localStorage.getItem('theme');
   if (stored === 'light' || stored === 'dark') {
-    applyTheme(stored);
+    setTheme(stored === 'dark');
   } else {
     const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
-    applyTheme(prefersDark ? 'dark' : 'light');
+    setTheme(Boolean(prefersDark));
   }
 
-  window.addEventListener('popstate', syncFromLocation);
-  window.addEventListener('hashchange', syncFromLocation);
-  syncFromLocation();
+  window.addEventListener('popstate', onLocationChange);
+  window.addEventListener('hashchange', onLocationChange);
+  onLocationChange();
 });
 
 onUnmounted(() => {
-  window.removeEventListener('popstate', syncFromLocation);
-  window.removeEventListener('hashchange', syncFromLocation);
+  window.removeEventListener('popstate', onLocationChange);
+  window.removeEventListener('hashchange', onLocationChange);
 });
+
+watch(
+  state,
+  () => {
+    if (!hydrated.value) {
+      return;
+    }
+    tableState.saveStateToUrl(state);
+  },
+  { deep: true },
+);
+
 </script>
 
 <template>
@@ -146,33 +148,33 @@ onUnmounted(() => {
           JavaScript engines zoo
         </a>
         <div class="header-actions">
-          <EngineTableControls
+          <Controls
             :state="state"
-            :engines="engines"
-            :theme="theme"
-            :toggle-theme="toggleTheme"
-            :show-theme="true"
+            :dark-theme="darkTheme"
+            :set-theme="setTheme"
             @open-columns="openColumns"
+            @export-csv="exportCsv"
           />
         </div>
       </div>
     </header>
-    <section class="app-body" :class="{ hidden: selectedEngine || columnsOpen }">
-      <EngineTable
+    <section class="app-body" :class="{ hidden: markdownModalOpen || columnsModalOpen }">
+      <TableView
+        ref="tableViewRef"
         :state="state"
         :engines="engines"
-        :show-controls="false"
+        :engine-link="buildEngineLink"
         @select-engine="openEngine"
       />
     </section>
     <MarkdownModal
-      v-if="selectedEngine"
-      :engine="selectedEngine"
-      :markdown="selectedMarkdown"
+      v-if="markdownModalOpen && markdownPage && hasMarkdownPage(markdownPage)"
+      :engine-id="markdownPage"
+      :markdown="markdownPageText"
       @close="closeEngine"
       @open-engine="openEngine"
     />
-    <ColumnsModal v-if="columnsOpen" :state="state" @close="closeColumns" />
+    <ColumnsModal v-if="columnsModalOpen" :state="state" @close="closeColumns" />
   </main>
 </template>
 
@@ -251,5 +253,4 @@ onUnmounted(() => {
     display: block;
   }
 }
-
 </style>
