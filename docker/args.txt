@@ -5,75 +5,74 @@
 # Preferentially, a tagged release/beta commit if there is a recent one.
 
 bali:                 --build-arg REV=99f0aa14155d0b0c9e39f6273a51c35b497207de
-boa:                  --build-arg REV=50a81d2d88d47e35bbf20271261864e6fef5da59
+boa:                  --build-arg REV=a981f32197a7c60c66d0d09af4afa182b5410840
 brimstone:            --build-arg REV=6a04fef645608b7995fa119b445e3f18e2281473
 cesanta-mjs:          --build-arg REV=55e5fa395bad5c1dbf6c44b0fbc26439a40f5773
-chakracore:           --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile
-chakracore_intl:      --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile --build-arg INTL=true --build-arg JITLESS=true --build-arg BASE=jsz-clang20
-chakracore_jitless:   --build-arg REV=622c745389832ede744715c826b5fcceeb20300c -f chakracore.Dockerfile --build-arg JITLESS=true
-escargot:             --build-arg REV=c599abdc604e9ea28e284ab1f77265b1d3d315d8 -f escargot.Dockerfile
-escargot_clang:       --build-arg REV=c599abdc604e9ea28e284ab1f77265b1d3d315d8 -f escargot.Dockerfile --build-arg BASE=jsz-clang
+chakracore:           --build-arg REV=792ee7660cbb14f1b3f9f77a6f919aeed4ec1fc2 -f chakracore.Dockerfile
+chakracore_intl:      --build-arg REV=792ee7660cbb14f1b3f9f77a6f919aeed4ec1fc2 -f chakracore.Dockerfile --build-arg INTL=true --build-arg JITLESS=true --build-arg BASE=jsz-clang20
+chakracore_jitless:   --build-arg REV=792ee7660cbb14f1b3f9f77a6f919aeed4ec1fc2 -f chakracore.Dockerfile --build-arg JITLESS=true
+escargot:             --build-arg REV=d50bb8897a7ca24fc3b3446e8d20d3eece01d1df -f escargot.Dockerfile
+escargot_clang:       --build-arg REV=d50bb8897a7ca24fc3b3446e8d20d3eece01d1df -f escargot.Dockerfile --build-arg BASE=jsz-clang
 espruino:             --build-arg REV=RELEASE_2V28
-engine262:            --build-arg REV=77cc7514f8a5f1e0773a681716ba5628781f0096
+engine262:            --build-arg REV=4d5d1d017bb82a002adb06f997d7e0d57bb71226
 fastschema-qjs:       --build-arg REV=461716f4f380f81ffd09378751f1812919cddbca
 goja:                 --build-arg REV=2bb4c724c0f93e868b4ab96009bdccb6947a9379
-graaljs:              --build-arg REV=graal-25.0.1
+graaljs:              --build-arg REV=graal-25.0.2
 hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
 jerryscript:          --build-arg REV=v3.0.0 -f jerryscript.Dockerfile
 jerryscript_clang:    --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg BASE=jsz-clang
 jerryscript_o3:       --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg CMAKE_BUILD_TYPE=Release
-kiesel:               --build-arg REV=1c762b6900dd3baa73171e2eee3deb07c501b55e --build-arg ZIG_VER=0.15.2
-libjs:                --build-arg REV=3610a31279dbda23085a6e1254e89c71b0c396e3 -f libjs.Dockerfile
-libjs_gcc:            --build-arg REV=3610a31279dbda23085a6e1254e89c71b0c396e3 -f libjs.Dockerfile --build-arg BASE=jsz-gcc
-modernc-quickjs:      --build-arg REV=v0.17.0
-mquickjs:             --build-arg REV=27a2391cc5a54bf8fa683979be56b266523a1374 -f mquickjs.Dockerfile
+kiesel:               --build-arg REV=896ada3fb196d22c5e2cc8a2427d3ed93b60bc13 --build-arg ZIG_VER=0.15.2
+libjs:                --build-arg REV=72a6f59df58922f27a2bbd7dfb1b21b77167ed7f -f libjs.Dockerfile
+libjs_gcc:            --build-arg REV=72a6f59df58922f27a2bbd7dfb1b21b77167ed7f -f libjs.Dockerfile --build-arg BASE=jsz-gcc
+modernc-quickjs:      --build-arg REV=v0.17.1
+mquickjs:             --build-arg REV=ee50431eac9b14b99f722b537ec4cac0c8dd75ab -f mquickjs.Dockerfile
 mujs:                 --build-arg REV=1.3.8 -f mujs.Dockerfile
 mujs_gcc:             --build-arg REV=1.3.8 -f mujs.Dockerfile --build-arg BASE=jsz-gcc
 nashorn:              --build-arg REV=release-15.7
-njs:                  --build-arg REV=5a2650f31e5f67984c4066861a94cc6460712f21
+njs:                  --build-arg REV=0.9.5
 nova:                 --build-arg REV=eb52d2999a343cea28d494cf6ef2b05e7207aecf
 otto:                 --build-arg REV=3ca729876b8973d2faeb6f25d1c8e7dd6580063a
-porffor:              --build-arg REV=aeff9fbfb6468f74908bd73b467bf8e30184f4ec
+porffor:              --build-arg REV=cd10218477ad2ae74436f6c6e5a1bd4995a842c2
 primjs:               --build-arg REV=3.6.1
-quanta:               --build-arg REV=39a9fdb3d3eed1b4849bfa6b94fbf0a3b7411f07
-quickjs-ng:           --build-arg REV=d405777f7eefa22c17c12970317ef3d6e7658f5a -f quickjs-ng.Dockerfile
-quickjs-ng_gcc:       --build-arg REV=d405777f7eefa22c17c12970317ef3d6e7658f5a -f quickjs-ng.Dockerfile --build-arg BASE=jsz-gcc
+quanta:               --build-arg REV=3b1cff93d11352e0412924dc0bff219a6a6fa4e4
+quickjs-ng:           --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile
+quickjs-ng_gcc:       --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile --build-arg BASE=jsz-gcc
 quickjs:              --build-arg REV=f1139494d18a2053630c5ed3384a42bb70db3c53 -f quickjs.Dockerfile
 quickjs_gcc:          --build-arg REV=f1139494d18a2053630c5ed3384a42bb70db3c53 -f quickjs.Dockerfile --build-arg BASE=jsz-gcc
-qv4:                  --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile
-qv4_clang:            --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile --build-arg BASE=jsz-clang
-qv4_jitless:          --build-arg REV=v6.11.0-beta1 -f qv4.Dockerfile --build-arg JITLESS=true
+qv4:                  --build-arg REV=v6.11.0-beta2 -f qv4.Dockerfile
+qv4_clang:            --build-arg REV=v6.11.0-beta2 -f qv4.Dockerfile --build-arg BASE=jsz-clang
+qv4_jitless:          --build-arg REV=v6.11.0-beta2 -f qv4.Dockerfile --build-arg JITLESS=true
 rhino:                --build-arg REV=Rhino1_9_0_Release
-sobek:                --build-arg REV=22d1085c20a8fdc415a0c1719ccc1e6ac9a2e348
-spidermonkey:         --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile
-spidermonkey_gcc:     --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
-spidermonkey_jitless: --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
-spidermonkey_intl:    --build-arg REV=FIREFOX_147_0b6_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
+sandboxjs:            --build-arg REV=67cb186c41c78c51464f70405504e8ef0a6e43c3
+sobek:                --build-arg REV=d8d9202018c5e6870f48c8d5c1bea35e93c64205
+spidermonkey:         --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile
+spidermonkey_gcc:     --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
+spidermonkey_jitless: --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
+spidermonkey_intl:    --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
 ucode:                --build-arg REV=8bbf01215ce30971eb02eee2250d51e422f700e6
-xs:                   --build-arg REV=6.1.0 -f xs.Dockerfile
-xs_clang:             --build-arg REV=6.1.0 -f xs.Dockerfile --build-arg BASE=jsz-clang
-yavashark:            --build-arg REV=029acf54a13c7ac95936ee18f715bb8a53f39619
+xs:                   --build-arg REV=7.0.0 -f xs.Dockerfile
+xs_clang:             --build-arg REV=7.0.0 -f xs.Dockerfile --build-arg BASE=jsz-clang
+yavashark:            --build-arg REV=a0d096100962d2613f1c94ee79cb6753ee7fb918
 
 # Hermes
-# main: hermes-v0.14.0 tag = rn/0.83-stable branch -> main @20251103
-hermes:               --build-arg REV=hermes-v0.14.0 -f hermes.Dockerfile
-hermes_clang:         --build-arg REV=hermes-v0.14.0 -f hermes.Dockerfile --build-arg BASE=jsz-clang
-# static_h: hermes-v250829098.0.4 -> 250829098.0.0-stable @20251118 -> forked from static_h @20250830
-hermes-v1:            --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile
-hermes-v1_clang:      --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg BASE=jsz-clang
-hermes-v1_intl:       --build-arg REV=hermes-v250829098.0.4 -f hermes.Dockerfile --build-arg INTL=true
+hermes:               --build-arg REV=hermes-v0.15.1 -f hermes.Dockerfile
+hermes_clang:         --build-arg REV=hermes-v0.15.1 -f hermes.Dockerfile --build-arg BASE=jsz-clang
+hermes-v1:            --build-arg REV=hermes-v250829098.0.7 -f hermes.Dockerfile
+hermes-v1_clang:      --build-arg REV=hermes-v250829098.0.7 -f hermes.Dockerfile --build-arg BASE=jsz-clang
+hermes-v1_intl:       --build-arg REV=hermes-v250829098.0.7 -f hermes.Dockerfile --build-arg INTL=true
 
 # JavaScriptCore: pick revision from https://developer.apple.com/documentation/safari-technology-preview-release-notes/
-# stp-release-234: https://commits.webkit.org/304071@main 3a46c8b831c8f3efbea062a3aa56781369c13bd3 2025-12-07
-jsc:                  --build-arg REV=3a46c8b831c8f3efbea062a3aa56781369c13bd3 -f jsc.Dockerfile
-jsc_jitless:          --build-arg REV=3a46c8b831c8f3efbea062a3aa56781369c13bd3 -f jsc.Dockerfile --build-arg JITLESS=true
-jsc_gcc:              --build-arg REV=3a46c8b831c8f3efbea062a3aa56781369c13bd3 -f jsc.Dockerfile --build-arg BASE=jsz-gcc
+# stp-release-236: https://commits.webkit.org/305413@main bf61e7bd613b04b3648cac72b6197056c0094de2 2026-01-11
+jsc:                  --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile
+jsc_jitless:          --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile --build-arg JITLESS=true
+jsc_gcc:              --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile --build-arg BASE=jsz-gcc
 
 # V8: pick latest beta from https://chromiumdash.appspot.com/releases?platform=Linux
-v8_pgo:               --build-arg REV=144.0.7559.31
-v8:                   --build-arg REV=14.4.258.13
-v8_jitless:           --build-arg REV=14.4.258.13 -f v8.Dockerfile --build-arg JITLESS=true
-v8_gcc:               --build-arg REV=14.4.258.13 -f v8_gcc.Dockerfile --build-arg BASE=jsz-gcc
+v8_pgo:               --build-arg REV=145.0.7632.45
+v8:                   --build-arg REV=14.5.201.7
+v8_jitless:           --build-arg REV=14.5.201.7 -f v8.Dockerfile --build-arg JITLESS=true
+v8_gcc:               --build-arg REV=14.5.201.7 -f v8_gcc.Dockerfile --build-arg BASE=jsz-gcc
 v8_intl:              --build-arg REV=lkgr -f v8.Dockerfile --build-arg INTL=true
 
 # Old stable engines, ~years since update
