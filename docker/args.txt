@@ -1,7 +1,7 @@
 # Extra flags for docker build: "<engine>[_<variant>]: <flags>", one per line.
 # This file is used by Makefile and build.sh.
 
-# Actively developed engines: pinned revisions per end of Dec 2025.
+# Actively developed engines: pinned revisions per Feb 2026.
 # Preferentially, a tagged release/beta commit if there is a recent one.
 bali:                 --build-arg REV=99f0aa14155d0b0c9e39f6273a51c35b497207de
 boa:                  --build-arg REV=a981f32197a7c60c66d0d09af4afa182b5410840
@@ -45,10 +45,10 @@ qv4_jitless:          --build-arg REV=v6.11.0-beta2 -f qv4.Dockerfile --build-ar
 rhino:                --build-arg REV=Rhino1_9_0_Release
 sandboxjs:            --build-arg REV=67cb186c41c78c51464f70405504e8ef0a6e43c3
 sobek:                --build-arg REV=d8d9202018c5e6870f48c8d5c1bea35e93c64205
-spidermonkey:         --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile
-spidermonkey_gcc:     --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
-spidermonkey_jitless: --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
-spidermonkey_intl:    --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
+spidermonkey:         --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile
+spidermonkey_gcc:     --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile --build-arg BASE=jsz-gcc
+spidermonkey_jitless: --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
+spidermonkey_intl:    --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
 ucode:                --build-arg REV=8bbf01215ce30971eb02eee2250d51e422f700e6
 xs:                   --build-arg REV=7.0.0 -f xs.Dockerfile
 xs_clang:             --build-arg REV=7.0.0 -f xs.Dockerfile --build-arg BASE=jsz-clang

@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-gcc
+ARG BASE=jsz-gcc15
 FROM $BASE
 
 ARG REPO=https://github.com/jow-/ucode.git
@@ -12,7 +12,7 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libjson-c-dev
 
-#RUN sed -e 's/-Os /-O3 /' CMakeLists.txt
+#RUN sed -i 's/-Os /-O3 /' CMakeLists.txt
 RUN cmake -B build && cmake --build build -j
 
 RUN mkdir -p /dist && \

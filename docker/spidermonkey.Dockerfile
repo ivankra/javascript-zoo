@@ -7,13 +7,15 @@ ARG BASE=jsz-clang
 FROM $BASE
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends cargo rustc libicu-dev libxml2 libz-dev
+    apt-get install -y --no-install-recommends rustup libicu-dev libxml2 libz-dev
     #ca-certificates build-essential git pkg-config python3
 
 # Some llvm utils are required even for gcc builds
-RUN which llvm-strip >/dev/null 2>&1 || apt-get install -y --no-install-recommends llvm llvm-19-tools
+RUN ls /usr/bin/llvm-strip* >/dev/null 2>&1 || apt-get install -y --no-install-recommends llvm llvm-19-tools
 
-RUN cargo install cbindgen  # debian's version is a bit old, FF 146+ needs 0.29.1
+# Debian's packaged rustc and cbindgen are too old to build latest firefox versions
+RUN rustup toolchain install stable
+RUN cargo install cbindgen
 
 ARG REPO=https://github.com/mozilla-firefox/firefox.git
 ARG REV=release

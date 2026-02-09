@@ -24,10 +24,6 @@ RUN git config --global user.email "build@" && \
     git config --global user.name "build"
     #tools/rust/build_rust.py
 
-# src/strings/unicode.h:219:13: error: explicit specialization in non-namespace scope ‘class unibrow::Utf8’
-RUN git fetch origin ee2873a6303da9116d2b4a87caf8e1e7da50ea3e && \
-    git cherry-pick ee2873a6303da9116d2b4a87caf8e1e7da50ea3e
-
 ARG JITLESS=
 ARG INTL=
 
