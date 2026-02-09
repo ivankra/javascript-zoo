@@ -10,20 +10,19 @@ FROM $BASE
 RUN apt-get update -y && \
     apt-get install -y autoconf autoconf-archive automake build-essential ccache cmake curl fonts-liberation2 git libdrm-dev libgl1-mesa-dev libtool nasm ninja-build pkg-config python3-venv qt6-base-dev qt6-tools-dev-tools qt6-wayland tar unzip zip qt6-multimedia-dev libpulse-dev
 
-ARG REPO=https://github.com/LadybirdBrowser/ladybird.git
-ARG REV1=master
-
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV1" "$REPO" .
+ARG REPO=https://github.com/LadybirdBrowser/ladybird.git
+RUN git clone --depth=1 --branch=master "$REPO" .
 
-RUN sed -i 's/geteuid() == 0/geteuid() == 42/' Meta/ladybird.py && \
-    Meta/ladybird.py vcpkg
+RUN sed -i 's/geteuid() == 0/geteuid() == 42/' Meta/ladybird.py && Meta/ladybird.py vcpkg
 
 ARG REV=master
 RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD
 
 # Truncate vcpkg dependencies to a minimal necessary set for LibJS build
-RUN sed -i '/"dependencies":/,/^  ],$/c "dependencies": ["fast-float", "icu", "libtommath", "openssl", "simdutf", "sqlite3", "zlib"],' vcpkg.json
+# If running into cmake errors, add missing components here from
+# https://github.com/LadybirdBrowser/ladybird/blob/master/vcpkg.json
+RUN sed -i '/"dependencies":/,/^  ],$/c "dependencies": ["fast-float", "icu", "libtommath", "libxml2", "openssl", "simdjson", "simdutf", "sqlite3", "zlib"],' vcpkg.json
 
 RUN cmake -B build -G Ninja --preset=Release \
       -DCMAKE_C_COMPILER=$CC \

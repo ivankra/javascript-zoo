@@ -22,7 +22,7 @@ hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
 jerryscript:          --build-arg REV=v3.0.0 -f jerryscript.Dockerfile
 jerryscript_clang:    --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg BASE=jsz-clang
 jerryscript_o3:       --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg CMAKE_BUILD_TYPE=Release
-kiesel:               --build-arg REV=896ada3fb196d22c5e2cc8a2427d3ed93b60bc13 --build-arg ZIG_VER=0.15.2
+kiesel:               --build-arg REV=e8c30efe4d89ba182b567478c146f53d7c121334 --build-arg ZIG_VER=0.15.2
 libjs:                --build-arg REV=72a6f59df58922f27a2bbd7dfb1b21b77167ed7f -f libjs.Dockerfile
 libjs_gcc:            --build-arg REV=72a6f59df58922f27a2bbd7dfb1b21b77167ed7f -f libjs.Dockerfile --build-arg BASE=jsz-gcc
 modernc-quickjs:      --build-arg REV=v0.17.1
@@ -31,11 +31,11 @@ mujs:                 --build-arg REV=1.3.8 -f mujs.Dockerfile
 mujs_gcc:             --build-arg REV=1.3.8 -f mujs.Dockerfile --build-arg BASE=jsz-gcc
 nashorn:              --build-arg REV=release-15.7
 njs:                  --build-arg REV=0.9.5
-nova:                 --build-arg REV=eb52d2999a343cea28d494cf6ef2b05e7207aecf
+nova:                 --build-arg REV=10bd05dde516064773724e33a6fdbbd8190d8e23
 otto:                 --build-arg REV=3ca729876b8973d2faeb6f25d1c8e7dd6580063a
 porffor:              --build-arg REV=cd10218477ad2ae74436f6c6e5a1bd4995a842c2
 primjs:               --build-arg REV=3.6.1
-quanta:               --build-arg REV=3b1cff93d11352e0412924dc0bff219a6a6fa4e4
+quanta:               --build-arg REV=6dd7df27719fc81834988fca870dd7ff6b0b7a47
 quickjs-ng:           --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile
 quickjs-ng_gcc:       --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile --build-arg BASE=jsz-gcc
 quickjs:              --build-arg REV=f1139494d18a2053630c5ed3384a42bb70db3c53 -f quickjs.Dockerfile
@@ -53,7 +53,7 @@ spidermonkey_intl:    --build-arg REV=FIREFOX_148_0b12_RELEASE -f spidermonkey.D
 ucode:                --build-arg REV=8bbf01215ce30971eb02eee2250d51e422f700e6
 xs:                   --build-arg REV=7.0.0 -f xs.Dockerfile
 xs_clang:             --build-arg REV=7.0.0 -f xs.Dockerfile --build-arg BASE=jsz-clang
-yavashark:            --build-arg REV=a0d096100962d2613f1c94ee79cb6753ee7fb918
+yavashark:            --build-arg REV=9e45eb4e74e5ae0cd88e65fd2dcc95fff77c8c7d
 
 # Hermes
 hermes:               --build-arg REV=hermes-v0.15.1 -f hermes.Dockerfile
@@ -63,10 +63,11 @@ hermes-v1_clang:      --build-arg REV=hermes-v250829098.0.7 -f hermes.Dockerfile
 hermes-v1_intl:       --build-arg REV=hermes-v250829098.0.7 -f hermes.Dockerfile --build-arg INTL=true
 
 # JavaScriptCore: pick revision from https://developer.apple.com/documentation/safari-technology-preview-release-notes/
-# stp-release-236: https://commits.webkit.org/305413@main bf61e7bd613b04b3648cac72b6197056c0094de2 2026-01-11
-jsc:                  --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile
-jsc_jitless:          --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile --build-arg JITLESS=true
-jsc_gcc:              --build-arg REV=bf61e7bd613b04b3648cac72b6197056c0094de2 -f jsc.Dockerfile --build-arg BASE=jsz-gcc
+# stp-release-236: http://commits.webkit.org/305413@main.
+# Downgrade to clang 21 / gcc15: clang22 crashes on arm64, gcc16 has linker errors
+jsc:                  --build-arg REV=c0b5ca70b2e64b6af1313ad0de1329d159f1e7b8 -f jsc.Dockerfile --build-arg BASE=jsz-clang
+jsc_jitless:          --build-arg REV=c0b5ca70b2e64b6af1313ad0de1329d159f1e7b8 -f jsc.Dockerfile --build-arg JITLESS=true --build-arg BASE=jsz-clang
+jsc_gcc:              --build-arg REV=c0b5ca70b2e64b6af1313ad0de1329d159f1e7b8 -f jsc.Dockerfile --build-arg BASE=jsz-gcc15
 
 # V8: pick latest beta from https://chromiumdash.appspot.com/releases?platform=Linux
 v8_pgo:               --build-arg REV=145.0.7632.45

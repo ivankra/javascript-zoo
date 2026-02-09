@@ -23,6 +23,11 @@ RUN export CFLAGS="-Os -flto" \
     && cmake --install build \
     && rm -rf /tmp/libuv
 
+ARG ZIG_VER=0.15.2
+RUN apt-get update -y && apt-get install -y --no-install-recommends cargo
+RUN cd /opt && wget -O zig.tar.xz "https://ziglang.org/download/${ZIG_VER}/zig-$(uname -m)-linux-${ZIG_VER}.tar.xz" && \
+    tar vxf zig.tar.xz && rm -f zig.tar.xz && ln -s /opt/zig-*/zig /usr/bin/zig
+
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 

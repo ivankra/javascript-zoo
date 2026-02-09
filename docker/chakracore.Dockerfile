@@ -15,10 +15,6 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 ARG INTL=
 ARG JITLESS=
 
-# Experimental Linux ARM64 patch. Only JIT-less build supported.
-COPY chakracore-arm64.patch ./
-RUN git apply chakracore-arm64.patch
-
 # TODO: fix x64 build with --embed-icu, seems to use system ICU instead of downloaded
 # ChakraICU.h:21:10: fatal error: 'unicode/uvernum.h' file not found
 RUN apt-get update -y && apt-get install -y libicu-dev

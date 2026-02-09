@@ -13,9 +13,15 @@ ARG VER=22
 RUN apt-get remove -y build-essential gcc g++ gcc-14 g++-14 libstdc++-14-dev && apt-get autoremove -y
 # Note: removes libtool - depends on gcc
 
-RUN if [ $VER != 19 ]; then \
-      wget -O /usr/share/keyrings/llvm-snapshot.gpg.key https://apt.llvm.org/llvm-snapshot.gpg.key && \
-      echo "deb [signed-by=/usr/share/keyrings/llvm-snapshot.gpg.key] https://apt.llvm.org/$(lsb_release -sc)/ llvm-toolchain-$(lsb_release -sc)$(if [ $VER != 22 ]; then echo -$VER; fi) main" >>/etc/apt/sources.list.d/llvm.list; \
+RUN if [ "$VER" != 19 ]; then \
+      apt-get install -y --no-install-recommends gpg gpgv && \
+      wget -O /tmp/llvm-snapshot.gpg.key https://apt.llvm.org/llvm-snapshot.gpg.key && \
+      gpg --dearmor -o /usr/share/keyrings/llvm-snapshot.gpg /tmp/llvm-snapshot.gpg.key && \
+      rm -f /tmp/llvm-snapshot.gpg.key && \
+      echo "deb [signed-by=/usr/share/keyrings/llvm-snapshot.gpg] https://apt.llvm.org/$(lsb_release -sc)/ llvm-toolchain-$(lsb_release -sc)$(if [ "$VER" != 22 ]; then echo -$VER; fi) main" >>/etc/apt/sources.list.d/llvm.list && \
+      # Workaround for apt/sqv failing with:
+      # "SHA1 is not considered secure since 2026-02-01T00:00:00Z".
+      echo 'APT::Key::gpgvcommand "/usr/bin/gpgv";' >/etc/apt/apt.conf.d/99use-gpgv-for-llvm; \
     fi
 
 RUN apt-get update -y && \
