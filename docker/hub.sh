@@ -20,7 +20,13 @@ fi
 set -x -e -o pipefail
 
 for arch in $ARCHS; do
-  (cd ../dist; tar --owner=root --group=root -c "$arch") >"../dist/$arch.tar"
+  # Exclude non-distributable files due to licensing
+  (cd ../dist && tar
+    --owner=root \
+    --group=root \
+    --exclude=jscript-dist \
+    --exclude=carakan-dist \
+    -c "$arch") >"../dist/$arch.tar"
 
   $DOCKER build \
       -f jsz-runtime.Dockerfile \

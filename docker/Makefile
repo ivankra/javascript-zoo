@@ -31,6 +31,7 @@ AMD64_ONLY_TARGETS := \
   chakracore_jitless \
   dscriptcpp \
   iv-lv5_jitless \
+  jscript \
   quickjit \
   spidermonkey_1.8.5 \
   spidermonkey_17 \
