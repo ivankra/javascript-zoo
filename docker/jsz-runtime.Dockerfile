@@ -71,3 +71,13 @@ RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
 # Install other popular runtimes from npm
 RUN npm install -g bun deno && \
     (echo '' | bun repl >/dev/null 2>&1 || true)
+
+# Install dotnet SDK for .NET engines
+ENV DOTNET_ROOT=/opt/dotnet \
+    DOTNET_CLI_TELEMETRY_OPTOUT=1 \
+    DOTNET_NOLOGO=1 \
+    NUGET_XMLDOC_MODE=skip \
+    PATH=/opt/dotnet:$PATH
+RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
+    bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
+    rm -f /tmp/dotnet-install.sh
