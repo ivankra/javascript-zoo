@@ -3,7 +3,6 @@
 
 # Actively developed engines: pinned revisions per end of Dec 2025.
 # Preferentially, a tagged release/beta commit if there is a recent one.
-
 bali:                 --build-arg REV=99f0aa14155d0b0c9e39f6273a51c35b497207de
 boa:                  --build-arg REV=a981f32197a7c60c66d0d09af4afa182b5410840
 brimstone:            --build-arg REV=6a04fef645608b7995fa119b445e3f18e2281473
@@ -77,7 +76,6 @@ v8_gcc:               --build-arg REV=14.5.201.7 -f v8_gcc.Dockerfile --build-ar
 v8_intl:              --build-arg REV=lkgr -f v8.Dockerfile --build-arg INTL=true
 
 # Old stable engines, ~years since update
-
 besen:                --build-arg REV=1c271815cf13291d3e4b636999ff7ecd7aa0993b
 castl:                --build-arg REV=7d6f6c5713493e9fe737fb1435c11f690497fe4c
 dmdscript:            --build-arg REV=f93cb97b5ec1c665648f369b0fb96ff82155cdfb
@@ -93,6 +91,7 @@ mocha:                --build-arg REV=3d109cbf6d185c3665da2982e92ce198406cca01
 rapidus:              --build-arg REV=e2cbce0e2ee7bb640df056d790e7d5e61fde94e0
 starlight:            --build-arg REV=503e789b9ef53594aee30c45a621018e855dcc17
 
+# Old SpiderMonkey releases from tarballs
 #spidermonkey_1.4:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.4-2.tar.gz
 spidermonkey_1.5:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
 spidermonkey_1.6:     -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js-1.60.tar.gz
@@ -101,3 +100,15 @@ spidermonkey_1.8.0:   -f spidermonkey_1.5.Dockerfile --build-arg TARBALL=https:/
 spidermonkey_1.8.5:   -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/js185-1.0.0.tar.gz
 spidermonkey_17:      -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz
 spidermonkey_24:      -f spidermonkey_1.8.5.Dockerfile --build-arg TARBALL=https://archive.mozilla.org/pub/js/mozjs-24.2.0.tar.bz2
+
+# Variants of build containers
+jsz-gcc14:            -f jsz-gcc.Dockerfile --build-arg VER=14
+jsz-gcc15:            -f jsz-gcc.Dockerfile --build-arg VER=15
+jsz-gcc16:            -f jsz-gcc.Dockerfile --build-arg VER=16
+jsz-gcc:              -f jsz-gcc.Dockerfile --build-arg VER=16
+jsz-clang19:          -f jsz-clang.Dockerfile --build-arg VER=19
+jsz-clang20:          -f jsz-clang.Dockerfile --build-arg VER=20
+jsz-clang21:          -f jsz-clang.Dockerfile --build-arg VER=21
+jsz-clang22:          -f jsz-clang.Dockerfile --build-arg VER=22
+jsz-clang23:          -f jsz-clang.Dockerfile --build-arg VER=23
+jsz-clang:            -f jsz-clang.Dockerfile --build-arg VER=23
