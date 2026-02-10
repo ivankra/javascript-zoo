@@ -7,8 +7,9 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends ca-certificates wine wine32 xvfb xauth cabextract unzip curl
+RUN dpkg --add-architecture i386 && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends ca-certificates cabextract curl wine wine32
 
 COPY jscript.sh /dist/jscript
 
