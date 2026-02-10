@@ -1,0 +1,67 @@
+diff --git a/hosts/go/go.mod b/hosts/go/go.mod
+index fd0865a..cdd06f8 100644
+--- a/hosts/go/go.mod
++++ b/hosts/go/go.mod
+@@ -1,5 +1,5 @@
+-module github.com/aspect-build/aspect-cli/hako
++module github.com/6over3/hako/hosts/go
+ 
+ go 1.23.0
+ 
+-require github.com/tetratelabs/wazero v1.10.1
++require github.com/tetratelabs/wazero v1.11.0
+diff --git a/hosts/go/hako/callback_manager.go b/hosts/go/hako/callback_manager.go
+index 83ce8f3..8a77230 100644
+--- a/hosts/go/hako/callback_manager.go
++++ b/hosts/go/hako/callback_manager.go
+@@ -15,6 +15,7 @@ type CallbackManager struct {
+ 	runtimes map[RuntimePtr]*Runtime
+ 	memory   *MemoryManager
+ 	registry *Registry
++	CallFunctionHandler func(realm *Realm, funcID, thisArg, argc, argv int32) ValuePtr
+ }
+ 
+ // NewCallbackManager creates a new CallbackManager.
+@@ -67,7 +68,7 @@ func (cm *CallbackManager) AddToHostModule(ctx context.Context, builder wazero.H
+ 	return builder.
+ 		// call_function: (i32, i32, i32, i32, i32) -> i32
+ 		NewFunctionBuilder().
+-		WithFunc(func(ctx context.Context, jsCtx, funcID, thisArg, argc, argv int32) int32 {
++		WithFunc(func(ctx context.Context, jsCtx, thisArg, argc, argv, funcID int32) int32 {
+ 			return int32(cm.handleCallFunction(ContextPtr(jsCtx), funcID, thisArg, argc, argv))
+ 		}).
+ 		Export("call_function").
+@@ -145,6 +146,17 @@ const (
+ )
+ 
+ func (cm *CallbackManager) handleCallFunction(ctx ContextPtr, funcID, thisArg, argc, argv int32) ValuePtr {
++	cm.mu.RLock()
++	realm := cm.contexts[ctx]
++	handler := cm.CallFunctionHandler
++	cm.mu.RUnlock()
++
++	if realm == nil {
++		return 0
++	}
++	if handler != nil {
++		return handler(realm, funcID, thisArg, argc, argv)
++	}
+ 	return 0
+ }
+ 
+diff --git a/hosts/go/hako/runtime.go b/hosts/go/hako/runtime.go
+index d3e8ec8..fadbc85 100644
+--- a/hosts/go/hako/runtime.go
++++ b/hosts/go/hako/runtime.go
+@@ -144,7 +144,10 @@ func New(ctx context.Context, wasmBytes []byte, opts *Options) (*Runtime, error)
+ 	// Instantiate QuickJS as "hako_quickjs" (not "hako" to avoid name conflict).
+ 	module, err := wzr.InstantiateModule(ctx, compiled, wazero.NewModuleConfig().
+ 		WithName("hako_quickjs").
+-		WithStartFunctions("_initialize"))
++		WithStartFunctions("_initialize").
++		// Precise timing needed to run benchmarks.
++		WithSysWalltime().
++		WithSysNanotime())
+ 	if err != nil {
+ 		wzr.Close(ctx)
+ 		return nil, fmt.Errorf("instantiate module: %w", err)

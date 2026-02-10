@@ -38,8 +38,7 @@ AMD64_ONLY_TARGETS := \
   spidermonkey_24 \
   starlight
 
-# hako: revamped repo, build scripts needs to be rewritten
-DISABLED_TARGETS = hako%
+DISABLED_TARGETS :=
 
 ENGINE_TARGETS := $(filter-out $(DISABLED_TARGETS),$(ENGINE_TARGETS))
 ifeq ($(DOCKER_ARCH),arm64)

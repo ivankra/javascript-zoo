@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>hako-runner</AssemblyName>
+    <RootNamespace>hako_runner</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="hako-runner.cs" />
+    <ProjectReference Include="hosts/dotnet/Hako/Hako.csproj" />
+    <ProjectReference Include="hosts/dotnet/Hako.Backend.Wasmtime/Hako.Backend.Wasmtime.csproj" />
+  </ItemGroup>
+</Project>

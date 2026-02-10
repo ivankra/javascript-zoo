@@ -17,7 +17,7 @@ engine262:            --build-arg REV=4d5d1d017bb82a002adb06f997d7e0d57bb71226
 fastschema-qjs:       --build-arg REV=461716f4f380f81ffd09378751f1812919cddbca
 goja:                 --build-arg REV=2bb4c724c0f93e868b4ab96009bdccb6947a9379
 graaljs:              --build-arg REV=graal-25.0.2
-hako:                 --build-arg REV=99c76af6ae406e2c789c9e782a88068d5595c2d3
+hako:                 --build-arg REV=b06576afc382028cf849fa36e9bfd15115be5a71
 jerryscript:          --build-arg REV=v3.0.0 -f jerryscript.Dockerfile
 jerryscript_clang:    --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg BASE=jsz-clang
 jerryscript_o3:       --build-arg REV=v3.0.0 -f jerryscript.Dockerfile --build-arg CMAKE_BUILD_TYPE=Release
