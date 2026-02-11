@@ -81,3 +81,10 @@ ENV DOTNET_ROOT=/opt/dotnet \
 RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
     bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
     rm -f /tmp/dotnet-install.sh
+
+# Wine packages for jscript
+RUN if [ `uname -m` = x86_64 ]; then \
+      dpkg --add-architecture i386 && \
+      apt-get update -y && \
+      apt-get install -y --no-install-recommends cabextract wine wine32; \
+    fi
