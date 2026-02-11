@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e89cb74583e642217f1386302743d3b47350296d4eaa5fc37bc779fbac1f002d", "binary_size": 396080, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a", "revision_date": "2025-11-07", "version": "1.3.8"}
+Metadata: {"arch": "arm64", "binary_sha256": "30aee78f8ba6aa88229135acf1542e03f672e705c78bade3ff5374147b67aa10", "binary_size": 396080, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a", "revision_date": "2025-11-07", "version": "1.3.8"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

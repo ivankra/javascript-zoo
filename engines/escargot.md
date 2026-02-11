@@ -26,7 +26,7 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 99%, Next 36%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 36%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../conformance/kangax-es6/Map.prototype-not-instance.js">Map.prototype-not-instance.js</a>: failed
 <a href="../conformance/kangax-es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: failed
@@ -40,17 +40,13 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
-<li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Script parsing error: SyntaxError: Line 10: Invalid regular expression: invalid property expression
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 96%<pre>
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
 <li>Next: 36%</li>
 <li>Intl: 100%</li>

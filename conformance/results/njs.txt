@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "d5181c968d477e99a1c5466025796f795f60dcf1bbc51af0aad0f624887b7914", "binary_size": 843032, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "njs", "repository": "https://github.com/nginx/njs.git", "revision": "5a2650f31e5f67984c4066861a94cc6460712f21", "revision_date": "2025-12-14"}
+Metadata: {"arch": "arm64", "binary_sha256": "8c37ee793db14a5b6eab0efbf250925ea4a1cf8dce7927de63bc2619445fe3f2", "binary_size": 843072, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "njs", "repository": "https://github.com/nginx/njs.git", "revision": "b9ac319d8bfa696e3943bebbe494e8e723952bdf", "revision_date": "2026-01-12", "version": "0.9.5"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

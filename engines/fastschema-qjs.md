@@ -36,8 +36,8 @@ JavaScript in Go with QuickJS and Wazero.
 <a href="../conformance/kangax-es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../conformance/kangax-es6/rest-params.no-setter.js">rest-params.no-setter.js</a>: failed
 <a href="../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x256340?, 0x40006fbee0?}) 	/usr/local/go/src/runtime/panic.go:783 +0x120 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of bou
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x256340?, 0x40008299a0?}) 	/usr/local/go/src/runtime/panic.go:783 +0x120 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out
+<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x256340?, 0x40024d0440?}) 	/usr/local/go/src/runtime/panic.go:783 +0x120 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of bou
+<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x256340?, 0x4000127ca0?}) 	/usr/local/go/src/runtime/panic.go:783 +0x120 panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 85%<pre>

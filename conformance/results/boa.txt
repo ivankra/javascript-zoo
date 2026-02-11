@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "cf265ac8b2cd5a1382c0089aa2286a336c7d0ab749a7611eb74556cc8b9b5175", "binary_size": 25633200, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "50a81d2d88d47e35bbf20271261864e6fef5da59", "revision_date": "2025-12-19", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"}
+Metadata: {"arch": "arm64", "binary_sha256": "37b1f1de2eaad3ee075c6b2b347f59be36c33288cd1f9293e9ee36a41d2869c3", "binary_size": 28189056, "engine": "boa", "repository": "https://github.com/boa-dev/boa.git", "revision": "ab52d7abffc60bc218bcb5891637efeff7119274", "revision_date": "2026-02-10", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -729,7 +729,7 @@ kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: Uncaught: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8 (native at /src/core/engine/src/script.rs:94:34)
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: Uncaught: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8 (native at /src/core/engine/src/script.rs:95:34)
 kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
 kangax-es6/annex-b.regex.octal-escapes.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
@@ -1288,8 +1288,8 @@ kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:94:34)
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:94:34)
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:95:34)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:95:34)
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1436,7 +1436,7 @@ kangax-es2025/Set.prototype.isSubsetOf.js: OK
 kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
-kangax-es2025/regex.duplicate-named-groups.js: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:94:34)
+kangax-es2025/regex.duplicate-named-groups.js: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:95:34)
 kangax-es2025/regex.pattern-modifiers.i.js: OK
 kangax-es2025/regex.pattern-modifiers.m.js: OK
 kangax-es2025/regex.pattern-modifiers.s.js: OK
@@ -1451,10 +1451,10 @@ kangax-intl/Intl.Collator.prototype.resolvedOptions.js: OK
 kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
 kangax-intl/Intl.Collator.valid-tags.js: OK
 kangax-intl/Intl.Collator.without-new.js: OK
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
 kangax-intl/Intl.DateTimeFormat.js: OK
 kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
 kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: not a callable function
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
 kangax-intl/Intl.DateTimeFormat.without-new.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: not a callable function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: Uncaught: SyntaxError: expected token ';', got '_1' in expression statement at line 13, col 11 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/SuppressedError.js: Uncaught: SyntaxError: expected token ';', got '_1' in expression statement at line 13, col 11 (native at /src/core/engine/src/script.rs:95:34)
 kangax-next/Uint8Array.fromBase64.js: TypeError: not a callable function
 kangax-next/Uint8Array.fromHex.js: TypeError: not a callable function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: not a callable function
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: TypeError: not a callable function
 kangax-next/Uint8Array.toBase64.js: TypeError: not a callable function
 kangax-next/Uint8Array.toHex.js: TypeError: not a callable function
 kangax-next/WeakMap.prototype.upsert.js: TypeError: not a callable function
-kangax-next/await-using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 57, col 22 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/await-using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 52, col 19 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/class-decorators.js: Uncaught: SyntaxError: unexpected '@' at line 10, column 5 at line 10, col 5 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/function.sent.js: Uncaught: SyntaxError: expected token '(', got '.' in function expression at line 11, col 22 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/throw-expr.arrow.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 18 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/throw-expr.conditional.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 15 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/throw-expr.logical.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 11, col 15 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/throw-expr.param-init.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 22 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 22, col 16 (native at /src/core/engine/src/script.rs:94:34)
-kangax-next/using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 16, col 11 (native at /src/core/engine/src/script.rs:94:34)
+kangax-next/await-using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 57, col 22 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/await-using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 52, col 19 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/class-decorators.js: Uncaught: SyntaxError: unexpected '@' at line 10, column 5 at line 10, col 5 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/function.sent.js: Uncaught: SyntaxError: expected token '(', got '.' in function expression at line 11, col 22 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/throw-expr.arrow.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 18 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/throw-expr.conditional.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 15 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/throw-expr.logical.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 11, col 15 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/throw-expr.param-init.js: Uncaught: SyntaxError: unexpected token 'throw', primary expression at line 9, col 22 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/using.for-of.js: Uncaught: SyntaxError: expected token ';', got '_' in for statement at line 22, col 16 (native at /src/core/engine/src/script.rs:95:34)
+kangax-next/using.js: Uncaught: SyntaxError: expected token ';', got '_' in expression statement at line 16, col 11 (native at /src/core/engine/src/script.rs:95:34)

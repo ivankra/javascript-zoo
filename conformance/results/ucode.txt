@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_size": 269416, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "8bbf01215ce30971eb02eee2250d51e422f700e6", "revision_date": "2025-12-16", "version": "0.0.20250529-78-g8bbf012"}
+Metadata: {"arch": "arm64", "binary_size": 269456, "cc": "gcc 15.2.0 (Debian 15.2.0-13)", "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "8bbf01215ce30971eb02eee2250d51e422f700e6", "revision_date": "2025-12-16", "version": "0.0.20250529-78-g8bbf012"}
 es1/Array.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es1/Array.js: Array.prototype failed");` Syntax error: Unexpected token
 es1/Array.length.assignment.js: Syntax error: Unexpected token
 es1/Array.length.js: Syntax error: Unexpected token

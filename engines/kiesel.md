@@ -13,30 +13,22 @@ JavaScript engine written in Zig.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 97%</summary><ul>
+<details><summary>ES1-ES5: 99%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/kiesel.txt">Full log</a>.</li>
-<li>ES1: 99%<pre>
-<a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
-<a href="../conformance/es1/comments.js">comments.js</a>: fail SyntaxError: Unexpected token '*' (comments.js:10:5)
-</pre></li>
+<li>ES1: 100%</li>
 <li>ES3: 97%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: large number precision failed
 <a href="../conformance/es3/labelled.break.js">labelled.break.js</a>: labelled break to outer loop failed
 <a href="../conformance/es3/labelled.continue.js">labelled.continue.js</a>: labelled continue to outer loop failed
 </pre></li>
-<li>ES5: 91%<pre>
-<a href="../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
-<a href="../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
-<a href="../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: failed
-<a href="../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: failed
+<li>ES5: 97%<pre>
 <a href="../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
-<a href="../conformance/es5/strict.no-with.js">strict.no-with.js</a>: failed
 <a href="../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: 'var implements' did not throw in strict mode
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 92%, ES2016+ 92%, Next 5%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 92%, ES2016+ 93%, Next 5%, Intl 100%</summary><ul>
 <li>ES6: 92%<pre>
 <a href="../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
@@ -80,14 +72,9 @@ JavaScript engine written in Zig.
 <a href="../conformance/kangax-es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: SyntaxError: Invalid character ''' (eval:1:1)
 <a href="../conformance/kangax-es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: undefined
 </pre></li>
-<li>ES2020: 89%<pre>
-<a href="../conformance/kangax-es2020/optional-chaining.method-call.js">optional-chaining.method-call.js</a>: failed
-<a href="../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: TypeError: undefined is not an Object
-</pre></li>
+<li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
-<li>ES2022: 97%<pre>
-<a href="../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot convert undefined to Object
-</pre></li>
+<li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>

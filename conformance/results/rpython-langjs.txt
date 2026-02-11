@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 148040276, "engine": "rpython-langjs", "repository": "https://github.com/progval/rpython-langjs.git", "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9", "revision_date": "2017-10-01"}
+Metadata: {"arch": "arm64", "dist_size": 148043572, "engine": "rpython-langjs", "repository": "https://github.com/progval/rpython-langjs.git", "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9", "revision_date": "2017-10-01"}
 es1/Array.js: timeout
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -36,7 +36,7 @@ es1/Date.prototype.getUTCMinutes.js: raise NotImplementedError() NotImplementedE
 es1/Date.prototype.getUTCMonth.js: raise NotImplementedError() NotImplementedError
 es1/Date.prototype.getUTCSeconds.js: raise NotImplementedError() NotImplementedError
 es1/Date.prototype.setDate.js: OK
-es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setFullYear.js: failed
 es1/Date.prototype.setHours.js: OK
 es1/Date.prototype.setMilliseconds.js: OK
 es1/Date.prototype.setMinutes.js: OK

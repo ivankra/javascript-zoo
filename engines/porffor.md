@@ -16,7 +16,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 
 <details><summary>ES1-ES5: 76%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/porffor.txt">Full log</a>.</li>
-<li>ES1: 88%<pre>
+<li>ES1: 89%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array() + array index length update failed; sparse array length failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: array index length update failed
 <a href="../conformance/es1/Array.length.js">Array.length.js</a>: length auto-update failed; length &gt; max index failed
@@ -24,8 +24,6 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse even length failed; reverse single element failed
 <a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
-<a href="../conformance/es1/Math.cos.js">Math.cos.js</a>: failed
-<a href="../conformance/es1/String.generics.js">String.generics.js</a>: indexOf failed
 <a href="../conformance/es1/String.prototype.split.js">String.prototype.split.js</a>: split('') failed
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
@@ -38,7 +36,8 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/es1/conversions.ToUint32.js">conversions.ToUint32.js</a>: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^31 failed; -1 failed; -2^31 failed
 <a href="../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 0 != ''; 123.0 != '0123'; 0 == null; 0 == undefined; false != ''; 123 &gt; '123'; 123 - '123' != 0; '5' - 1 != 4; 123 - '' != 123; '5' - true != 4; '5' * '6' != 30; 123 * '' != 0; true * '5' != 5; '6' / '5' != 1.2; '5' % '6' != 5
 <a href="../conformance/es1/eval.js">eval.js</a>: SyntaxError: Dynamic code evaluation is not supported
-...
+<a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: failed
+<a href="../conformance/es1/with.js">with.js</a>: property lookup failed; second property lookup failed; assignment failed
 </pre></li>
 <li>ES3: 61%<pre>
 <a href="../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: concat two arrays failed; concat non-array items failed; concat with no arguments failed; concat mixed array and non-array failed
@@ -92,9 +91,8 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 
 <details><summary>compat-table: ES6 45%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
 <li>ES6: 45%</li>
-<li>ES2016: 64%<pre>
+<li>ES2016: 68%<pre>
 <a href="../conformance/kangax-es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: failed
-<a href="../conformance/kangax-es2016/Array.prototype.includes.js">Array.prototype.includes.js</a>: failed
 <a href="../conformance/kangax-es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: ReferenceError: Proxy is not defined
 <a href="../conformance/kangax-es2016/misc.Proxy-enumerate-removed.js">misc.Proxy-enumerate-removed.js</a>: ReferenceError: Proxy is not defined
 <a href="../conformance/kangax-es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: TypeError: undefined is not a function
@@ -163,7 +161,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 <a href="../conformance/kangax-es2022/class-fields.instance.parent-scope.js">class-fields.instance.parent-scope.js</a>: ReferenceError: a is not defined
 <a href="../conformance/kangax-es2022/class-methods.private-accessor.js">class-methods.private-accessor.js</a>: ReferenceError: y is not defined
 <a href="../conformance/kangax-es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: ReferenceError: y is not defined
-<a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: Proxy is not defined
+<a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: RuntimeError: memory access out of bounds
 </pre></li>
 <li>ES2023: 89%<pre>
 <a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: failed

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "df1c01dbd61b8a59524ad45cbb3adf67a8bd82978e234f12aca7e22eb8b86713", "binary_size": 9519416, "engine": "goja", "go": "1.25.5", "repository": "https://github.com/dop251/goja.git", "revision": "2bb4c724c0f93e868b4ab96009bdccb6947a9379", "revision_date": "2025-12-01"}
+Metadata: {"arch": "arm64", "binary_sha256": "5d14cb99a0506e884a063dba4fed715349513bc8e2eee94fdcef680d91e926c8", "binary_size": 9519512, "engine": "goja", "go": "1.25.7", "repository": "https://github.com/dop251/goja.git", "revision": "2bb4c724c0f93e868b4ab96009bdccb6947a9379", "revision_date": "2025-12-01"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

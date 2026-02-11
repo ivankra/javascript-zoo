@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "4eb8506e8043e91f8d5289e4dd8b91fafadf21dec336f4909221aad9075dadca", "binary_size": 4854488, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "escargot", "repository": "https://github.com/Samsung/escargot.git", "revision": "c599abdc604e9ea28e284ab1f77265b1d3d315d8", "revision_date": "2025-12-18"}
+Metadata: {"arch": "arm64", "binary_sha256": "0bb3302a47822a3b6ced4f3556210a39fab2210303ceeb542035d0fddf87821b", "binary_size": 4854584, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "escargot", "repository": "https://github.com/Samsung/escargot.git", "revision": "c90e358e2f54932caad1126dde7220eed22660ed", "revision_date": "2026-02-10"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Script parsing error: SyntaxError: Line 10: Invalid regular expression: invalid property expression
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1410,7 +1410,7 @@ kangax-es2024/regex.flags.v.set-notations.js: OK
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: failed
+kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK

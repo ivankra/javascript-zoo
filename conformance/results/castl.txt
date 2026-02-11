@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1101077, "engine": "castl", "repository": "https://github.com/PaulBernier/castl.git", "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c", "revision_date": "2017-03-22", "version": "1.2.4"}
+Metadata: {"arch": "arm64", "dist_size": 1561782, "engine": "castl", "repository": "https://github.com/PaulBernier/castl.git", "revision": "7d6f6c5713493e9fe737fb1435c11f690497fe4c", "revision_date": "2017-03-22", "version": "1.2.4"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1289,7 +1289,7 @@ kangax-es2018/regex.unicode-property-escapes.unicode-14.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 19)
 kangax-es2019/Array.prototype.flatMap.js: ...onformance/kangax-es2019/.Array.prototype.flatMap.js.lua:12: attempt to call method 'flatMap' (a nil value)
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'unscopables' of undefined
 kangax-es2019/Array.prototype.flat.js: /zoo/conformance/kangax-es2019/.Array.prototype.flat.js.lua:6: attempt to call method 'flat' (a nil value)

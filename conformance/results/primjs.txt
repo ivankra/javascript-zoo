@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "4ad233c2d5c7675b4e957b3e70dbd4cd49ae218cf310c77297cf0d9d41da3427", "binary_size": 986448, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "primjs", "repository": "https://github.com/lynx-family/primjs.git", "revision": "f8cfae988d8cbad9cba622b4ac57959a5c29fde3", "revision_date": "2025-12-04", "version": "3.6.1"}
+Metadata: {"arch": "arm64", "binary_sha256": "b8bcf05d8f96ddeb1e7d560e2defb4b124d0612530ef514a41173a63ba17b2c1", "binary_size": 1576360, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "primjs", "repository": "https://github.com/lynx-family/primjs.git", "revision": "f8cfae988d8cbad9cba622b4ac57959a5c29fde3", "revision_date": "2025-12-04", "version": "3.6.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

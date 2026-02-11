@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 471064, "engine": "twostroke", "repository": "https://github.com/charliesome/twostroke.git", "revision": "3e6d5366bad603e987f78027d472255707ec26fa", "revision_date": "2012-05-30"}
+Metadata: {"arch": "arm64", "dist_size": 471338, "engine": "twostroke", "repository": "https://github.com/charliesome/twostroke.git", "revision": "3e6d5366bad603e987f78027d472255707ec26fa", "revision_date": "2012-05-30"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

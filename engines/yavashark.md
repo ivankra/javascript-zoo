@@ -11,14 +11,12 @@ JavaScript/TypeScript engine written in Rust.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 80%</summary><ul>
+<details><summary>ES1-ES5: 88%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/yavashark.txt">Full log</a>.</li>
-<li>ES1: 89%<pre>
+<li>ES1: 91%<pre>
 <a href="../conformance/es1/Function.length.js">Function.length.js</a>: Function.length failed
-<a href="../conformance/es1/String.generics.js">String.generics.js</a>: Error: TypeError: Expected string, found Object([object Object])
 <a href="../conformance/es1/String.prototype.charAt.js">String.prototype.charAt.js</a>: charAt out of bounds failed; charAt negative failed
 <a href="../conformance/es1/String.prototype.charCodeAt.js">String.prototype.charCodeAt.js</a>: charCodeAt out of bounds NaN failed
-<a href="../conformance/es1/String.prototype.split.js">String.prototype.split.js</a>: split('') failed
 <a href="../conformance/es1/String.prototype.substring.js">String.prototype.substring.js</a>: substring swap failed
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: failed
 <a href="../conformance/es1/arguments.callee.js">arguments.callee.js</a>: Error: TypeError: yavashark_env::object::MutObject is not callable
@@ -28,46 +26,28 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es1/bitwise.unsigned-shift.js">bitwise.unsigned-shift.js</a>: -12345 &gt;&gt;&gt; 2 != 1073738737 (got: 0); -12345 &gt;&gt;&gt; 0 != 4294954951 (got: 0)
 <a href="../conformance/es1/conversions.ToInt32.js">conversions.ToInt32.js</a>: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
 <a href="../conformance/es1/conversions.ToInteger.js">conversions.ToInteger.js</a>: -1.9 failed
-<a href="../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: ' 456 ' failed
 <a href="../conformance/es1/conversions.ToUint32.js">conversions.ToUint32.js</a>: +Infinity failed; 2^32 failed; -1 failed; -2^31 failed
 <a href="../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 123.0 != '0123'; false != ''
 <a href="../conformance/es1/global.parseInt.hex.js">global.parseInt.hex.js</a>: failed
-<a href="../conformance/es1/relational.js">relational.js</a>: 'abc' &lt; 'def' failed; 'def' &gt; 'abc' failed; 'abc' &lt;= 'def' failed; 'def' &gt;= 'abc' failed
 <a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: failed
 <a href="../conformance/es1/with.js">with.js</a>: assignment failed
 </pre></li>
-<li>ES3: 76%<pre>
-<a href="../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: delete on object failed; negative start on object failed
-<a href="../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: delete elements failed; delete and insert failed; negative start failed
-<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
-<a href="../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
-<a href="../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: unshift single element failed; unshift multiple elements failed; unshift on empty array failed; unshift with no arguments failed; element order after unshift failed
-<a href="../conformance/es3/Array.prototype.unshift.returns-new-length.js">Array.prototype.unshift.returns-new-length.js</a>: empty array unshift failed; multiple elements unshift failed; no arguments unshift failed
+<li>ES3: 92%<pre>
+<a href="../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: Error: TypeError: expected object
 <a href="../conformance/es3/Error.js">Error.js</a>: Error: TypeError: ErrorObjConstructor is not callable at ErrorObjConstructor (Error.js:23)
 <a href="../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
-<a href="../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
-<a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9000e+-11'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
-<a href="../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: thread 'main' (2496245) panicked at crates/yavashark_env/src/builtins/number.rs:250:22:
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
-<a href="../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed
 <a href="../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: inherited property should be false failed
 <a href="../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: Error: RuntimeError: Not implemented
 <a href="../conformance/es3/RegExp.js">RegExp.js</a>: RegExp passthrough failed
 <a href="../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: Error: TypeError: undefined is not a function
-<a href="../conformance/es3/String.prototype.match.js">String.prototype.match.js</a>: global match failed; Error: TypeError: Expected an object, found String(test)
-<a href="../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $1 failed; $1 $2 $3 failed; undefined capture failed; spec example failed; $nn reverse order failed; 4 captures reverse failed
-<a href="../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; $&amp; failed; $` failed; $' failed; combined replacements failed
-<a href="../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: Error: TypeError: Expected string, found Object([object Object])
-...
+<a href="../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for negative array length; no exception for array length exceeding 2^32-1
+<a href="../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: no exception for unclosed string
+<a href="../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
+<a href="../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: SyntaxError: Nothing to repeat at position 3
 </pre></li>
-<li>ES5: 61%<pre>
+<li>ES5: 69%<pre>
 <a href="../conformance/es5/Array.isArray.js">Array.isArray.js</a>: Error: TypeError: expected object
-<a href="../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: sparse array skips missing elements failed
-<a href="../conformance/es5/Array.prototype.map.js">Array.prototype.map.js</a>: map with index failed
-<a href="../conformance/es5/Array.prototype.reduceRight.js">Array.prototype.reduceRight.js</a>: reduceRight without initialValue failed
-<a href="../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: sparse array skips missing elements failed
 <a href="../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: failed
 <a href="../conformance/es5/Function.prototype-not-enumerable.js">Function.prototype-not-enumerable.js</a>: named function prototype is enumerable; prototype appears in for-in
 <a href="../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: length property incorrect; bound constructor failed
@@ -82,12 +62,18 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/es5/strict.no-assignment-to-unresolvable.js">strict.no-assignment-to-unresolvable.js</a>: failed
 <a href="../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
 <a href="../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
+<a href="../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: failed
+<a href="../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: failed
+<a href="../conformance/es5/strict.no-function-caller-or-arguments.js">strict.no-function-caller-or-arguments.js</a>: failed
+<a href="../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
+<a href="../conformance/es5/strict.no-with.js">strict.no-with.js</a>: failed
+<a href="../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: 'var implements' did not throw in strict mode
 ...
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 60%, ES2016+ 60%, Next 4%, Intl 64%</summary><ul>
-<li>ES6: 60%, <b>7 crashes</b><pre>
+<details><summary>compat-table: ES6 64%, ES2016+ 72%, Next 4%, Intl 64%</summary><ul>
+<li>ES6: 64%, <b>6 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: [object Error]
@@ -99,7 +85,6 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
 <a href="../conformance/kangax-es6/Array.of.js">Array.of.js</a>: failed
 <a href="../conformance/kangax-es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
-<a href="../conformance/kangax-es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
 <a href="../conformance/kangax-es6/Date.prototype.Symbol.toPrimitive.js">Date.prototype.Symbol.toPrimitive.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
 <a href="../conformance/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
@@ -109,13 +94,10 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es6/Map.Symbol.species.js">Map.Symbol.species.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Map.constructor-accepts-null.js">Map.constructor-accepts-null.js</a>: [object Error]
 <a href="../conformance/kangax-es6/Map.constructor-invokes-set.js">Map.constructor-invokes-set.js</a>: failed
+<a href="../conformance/kangax-es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: failed
 ...
 </pre></li>
-<li>ES2016: 59%<pre>
-<a href="../conformance/kangax-es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: failed
-<a href="../conformance/kangax-es2016/Array.prototype.includes.js">Array.prototype.includes.js</a>: failed
-<a href="../conformance/kangax-es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: failed
-<a href="../conformance/kangax-es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: failed
+<li>ES2016: 82%<pre>
 <a href="../conformance/kangax-es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: [object Error]
 <a href="../conformance/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
 </pre></li>
@@ -137,20 +119,20 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__defineSetter__.js">annex-b.Proxy.__defineSetter__.js</a>: failed
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__lookupGetter__.js">annex-b.Proxy.__lookupGetter__.js</a>: failed
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__lookupSetter__.js">annex-b.Proxy.__lookupSetter__.js</a>: failed
-<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: thread 'main' (2507441) panicked at src/run.rs:133:39: called `Result::unwrap()` on an `Err` value: Error { error: (513..514, Expected(";", ")")) }
+<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Error { error: (513..514, Expected(";", ")")) }
 <a href="../conformance/kangax-es2017/async.Symbol.toStringTag.js">async.Symbol.toStringTag.js</a>: failed
 <a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: crashed (signal 6); fatal runtime error: stack overflow, aborting
 <a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: crashed (signal 6); fatal runtime error: stack overflow, aborting
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2510890) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+<a href="../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2889976) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 <a href="../conformance/kangax-es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../conformance/kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: failed
 <a href="../conformance/kangax-es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: SyntaxError: Invalid escape sequence in template literal
 <a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: [object Error]
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Unknown Unicode property Script=Sidetic
+<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: [object Error]
 </pre></li>
 <li>ES2019: 56%<pre>
 <a href="../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: [object Error]
@@ -165,13 +147,11 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
 <a href="../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: failed
-<a href="../conformance/kangax-es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: [object Error]
+<a href="../conformance/kangax-es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: failed
 </pre></li>
-<li>ES2020: 73%<pre>
+<li>ES2020: 87%<pre>
 <a href="../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: [object Error]
 <a href="../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: [object Error]
-<a href="../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: failed
-<a href="../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
 <a href="../conformance/kangax-es2020/optional-chaining.method-call.js">optional-chaining.method-call.js</a>: failed
 </pre></li>
 <li>ES2021: 60%<pre>
@@ -196,9 +176,7 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: [object Error]
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: [object Error]
 </pre></li>
-<li>ES2023: 94%<pre>
-<a href="../conformance/kangax-es2023/Array.prototype.toSpliced.js">Array.prototype.toSpliced.js</a>: [object Error]
-</pre></li>
+<li>ES2023: 100%</li>
 <li>ES2024: 59%<pre>
 <a href="../conformance/kangax-es2024/Map.groupBy.js">Map.groupBy.js</a>: [object Error]
 <a href="../conformance/kangax-es2024/Object.groupBy.js">Object.groupBy.js</a>: failed
@@ -206,7 +184,10 @@ JavaScript/TypeScript engine written in Rust.
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
-<li>ES2025: 21%</li>
+<li>ES2025: 89%<pre>
+<a href="../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: failed
+<a href="../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Duplicate capture group name 'year'
+</pre></li>
 <li>Next: 4%</li>
 <li>Intl: 64%<pre>
 <a href="../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed
@@ -222,4 +203,4 @@ JavaScript/TypeScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-💥 **9 crashes during testing**
+💥 **8 crashes during testing**

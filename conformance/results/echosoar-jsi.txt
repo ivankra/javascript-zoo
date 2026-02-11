@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "13d5d24c3d5f6afd57cc29b8b097402da17cda3e56a914eb9a1cb2f3abb95746", "binary_size": 987848, "engine": "echosoar-jsi", "repository": "https://github.com/echosoar/jsi.git", "revision": "fe199b5c182341a94c9b340486c25acebe163f02", "revision_date": "2025-08-24", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"}
+Metadata: {"arch": "arm64", "binary_sha256": "c2a2a4e3bdf2ca87cda32b11b867cfca7c56237be3f5b08dd0a832fd6217cde0", "binary_size": 1053384, "engine": "echosoar-jsi", "repository": "https://github.com/echosoar/jsi.git", "revision": "b164beb25bcb74c33d8541e8097c918d5271f698", "revision_date": "2026-01-06", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
 es1/Array.js: Array.length failed; Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.assignment.js: Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.js: Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
@@ -90,7 +90,7 @@ es1/Number.MIN_VALUE.js: Runtime error: JSIError { error_type: SyntaxError, mess
 es1/Number.NEGATIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
 es1/Number.NaN.js: failed
 es1/Number.POSITIVE_INFINITY.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
-es1/Number.js: Number(value) failed; thread 'main' (376174) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/Number.js: Number(value) failed; thread 'main' (405367) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
@@ -140,7 +140,7 @@ es1/continue.js: OK
 es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed
 es1/conversions.ToInt32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: Or, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
 es1/conversions.ToInteger.js: 2.9 failed; -0 failed; NaN failed; 1.1 failed; -1.9 failed; 5.7 failed
-es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (375641) panicked at src/value.rs:442:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (404688) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e21'", line: 0, column: 0, value: None }
 es1/conversions.ToUint32.js: Runtime error: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: UnsignedShiftRight, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
@@ -269,7 +269,7 @@ es3/String.prototype.toLocaleLowerCase.js: Runtime error: JSIError { error_type:
 es3/String.prototype.toLocaleUpperCase.js: Runtime error: JSIError { error_type: TypeError, message: "\"str.toLocaleUpperCase\" is not a function", line: 0, column: 0, value: None }
 es3/annex-b.String.prototype.substr.js: Runtime error: JSIError { error_type: TypeError, message: "\"s.substr\" is not a function", line: 0, column: 0, value: None }
 es3/do-while.js: OK
-es3/function-expressions.IIFE.js: Runtime error: JSIError { error_type: ReferenceError, message: "count is not defined", line: 0, column: 0, value: None }
+es3/function-expressions.IIFE.js: crashed (signal 6); OK; Function(RefCell { value: Object { class_type: Function, property: {"name": Property { enumerable: false, value: String("counter") }, "length": Property { enumerable: false, value: Number(0.0) }}, property_list: ["name", "length"], inner_property: {"bytecode": Property { enumerable: false, value
 es3/function-expressions.js: Runtime error: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es3/global.EvalError.js: constructor failed; Runtime error: JSIError { error_type: ReferenceError, message: "EvalError is not defined", line: 0, column: 0, value: None }
 es3/global.RangeError.js: constructor failed; Runtime error: JSIError { error_type: ReferenceError, message: "RangeError is not defined", line: 0, column: 0, value: None }
@@ -307,7 +307,7 @@ es3/literals.regex.empty.js: Runtime error: JSIError { error_type: SyntaxError, 
 es3/literals.regex.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected token Slash", line: 0, column: 0, value: None }
 es3/literals.string.esc-v.js: failed
 es3/nested-functions.eval.js: Runtime error: JSIError { error_type: ReferenceError, message: "eval is not defined", line: 0, column: 0, value: None }
-es3/nested-functions.js: Runtime error: JSIError { error_type: ReferenceError, message: "count is not defined", line: 0, column: 0, value: None }
+es3/nested-functions.js: crashed (signal 6); OK; fatal runtime error: stack overflow, aborting
 es3/regex.backref.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected token Slash", line: 0, column: 0, value: None }
 es3/regex.begin.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected token Slash", line: 0, column: 0, value: None }
 es3/regex.bracket.esc-b.js: Runtime error: JSIError { error_type: SyntaxError, message: "Unexpected token Slash", line: 0, column: 0, value: None }

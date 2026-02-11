@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "5e350e6a1b6edda7e421747dcce5a46c701c9732cf8d3578824355df123ca804", "binary_size": 1806448, "engine": "dmdscript", "repository": "https://github.com/DigitalMars/DMDScript.git", "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb", "revision_date": "2024-06-18", "version": "2.1.2"}
+Metadata: {"arch": "arm64", "binary_sha256": "5ced951937d74adc1bc181820b33b6d53626a6f767ca6b00e1314fad6595637f", "binary_size": 1806448, "engine": "dmdscript", "repository": "https://github.com/DigitalMars/DMDScript.git", "revision": "f93cb97b5ec1c665648f369b0fb96ff82155cdfb", "revision_date": "2024-06-18", "version": "2.1.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

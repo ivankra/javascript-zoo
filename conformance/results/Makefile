@@ -14,7 +14,7 @@ ENGINES := $(shell \
 	  echo "$$name"; \
 	done)
 
-MANUAL := topchetoeu mujs_babel
+MANUAL := topchetoeu mujs_babel jscript
 ES5 := bali besen cesanta-elk echosoar-jsi espruino je-perl jispy mquickjs ngs rpython-langjs twostroke yrm006-miniscript
 ESNEXT := $(filter-out $(ES5) $(MANUAL),$(ENGINES))
 
@@ -25,6 +25,10 @@ $(ESNEXT:%=%.txt): %.txt: /dist/%
 
 $(ES5:%=%.txt): %.txt: /dist/%
 	../run.sh -j 8 -o $@ $< ../es[1-5]
+
+jscript.txt:
+	/dist/jscript --version
+	../run.sh -j 4 -o jscript.txt /dist/jscript ../es[1-5]
 
 topchetoeu.txt:
 	../run.sh -j 1 -o topchetoeu.txt /dist/topchetoeu ../es[1-5]

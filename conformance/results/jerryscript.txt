@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e9fc6ab81d8500efcb67db6c219ddd297ba354c565c865e99d478e55c7ead688", "binary_size": 461472, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "jerryscript", "repository": "https://github.com/jerryscript-project/jerryscript.git", "revision": "50200152feb724a74a5f64e44d7885151537cfad", "revision_date": "2024-12-18", "version": "3.0.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "f670cbb005a876c75ac5ff00776676f0bc255161ca8823061d62e394544a3773", "binary_size": 461512, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "jerryscript", "repository": "https://github.com/jerryscript-project/jerryscript.git", "revision": "50200152feb724a74a5f64e44d7885151537cfad", "revision_date": "2024-12-18", "version": "3.0.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

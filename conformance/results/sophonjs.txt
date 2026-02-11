@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "6bc002421875b1ae536298d96adce0c3d38338022ee53f9d06d48bb6dea72709", "binary_size": 330232, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "sophonjs", "repository": "https://github.com/gkmail/SophonJS.git", "revision": "5012412ed66f76968cd6be87793b25337bda7630", "revision_date": "2015-11-10"}
+Metadata: {"arch": "arm64", "binary_sha256": "c1aa9340eb086f947e3ba823bb8cb2d348cf937e788c91d172b92f1e3c04bfe1", "binary_size": 330272, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "sophonjs", "repository": "https://github.com/gkmail/SophonJS.git", "revision": "5012412ed66f76968cd6be87793b25337bda7630", "revision_date": "2015-11-10"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -367,7 +367,7 @@ es5/JSON.js: OK
 es5/JSON.parse.js: exception SyntaxError:Parse JSON error
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
-es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.replacer.js: LOG: es5/JSON.stringify.replacer.js: replacer function failed LOG: es5/JSON.stringify.replacer.js: failed
 es5/JSON.stringify.space.js: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
 es5/Object.create.js: exception TypeError:Value is not an object
 es5/Object.defineProperties.js: OK

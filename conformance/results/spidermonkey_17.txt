@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "5ce110231143a9f4f3d3fd59dd21a347f033f25bdc1fe5c2d2bf5edd601eab03", "binary_size": 4217504, "cc": "gcc 14.2.0 (Debian 14.2.0-19)", "engine": "spidermonkey", "loc": 203542, "regex": "YARR", "revision_date": "2013-03-25", "sources": "https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz", "standard": "ES5", "variant": "17", "version": "17.0.0"}
+Metadata: {"arch": "amd64", "binary_sha256": "c7fe7a120e48700c365181a8f5372107e30587ece692bda738daaaa764e1620d", "binary_size": 4442840, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "spidermonkey", "loc": 203542, "regex": "YARR", "revision_date": "2013-03-25", "sources": "https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz", "standard": "ES5", "variant": "17", "version": "17.0.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -149,7 +149,7 @@ es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
-es1/function.js: OK
+es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK

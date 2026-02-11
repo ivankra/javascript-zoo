@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 197335260, "engine": "graaljs", "revision": "629f33fe3b0a744890a01962ff3beeab50b638df", "version": "25.0.1"}
+Metadata: {"arch": "arm64", "dist_size": 197351269, "engine": "graaljs", "revision": "f5e5bb68a1fc6946e21fea6bd136909871f67d8b", "version": "25.0.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "87be6f41cc68b8eb5d9ddfde8a4918b22ba46309a67053a6fd5f8dce0dca09ef", "binary_size": 39582192, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "v8", "repository": "https://chromium.googlesource.com/v8/v8.git", "revision": "0da6e850a16bcc0cceb707b921094dc99ff1919e", "revision_date": "2025-12-19", "variant": "intl", "version": "14.5.0 (candidate)"}
+Metadata: {"arch": "arm64", "binary_sha256": "2b78f54a1666523a81c7e54a5c13edb453cbfec640515e738c56e41b99d7cca0", "binary_size": 39909936, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "v8", "repository": "https://chromium.googlesource.com/v8/v8.git", "revision": "462cd097b60bc2c96d60ccaa8b698fd4d0b521ca", "revision_date": "2026-02-09", "variant": "intl", "version": "14.6.0 (candidate)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

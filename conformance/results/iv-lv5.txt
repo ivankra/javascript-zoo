@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "f66ca47ec7f592ac46d4a5d1582e518fe06a30a2c65adbddb9a55a93b89e078e", "binary_size": 5072368, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "iv-lv5", "jit": "", "repository": "https://github.com/Constellation/iv.git", "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f", "revision_date": "2015-03-24"}
+Metadata: {"arch": "arm64", "binary_sha256": "a9f892f540939941af77e6a4e213d250543ad8133bdb3a5422e5866ab51215ee", "binary_size": 5012448, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "iv-lv5", "jit": "", "repository": "https://github.com/Constellation/iv.git", "revision": "64c3a9c7c517063f29d90d449180ea8f6f4d946f", "revision_date": "2015-03-24"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "6a46b86e6b0081ee917508742a135cb347c16b4c250839eb0e9f6b68e2ab0b6d", "binary_size": 948888, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "spidermonkey", "jit": "", "loc": 85195, "revision_date": "2009-02-16", "sources": "https://archive.mozilla.org/pub/js/js-1.8.0-rc1.tar.gz", "standard": "ES3", "variant": "1.8.0", "version": "1.8.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "0be21294f9f3fb5215a9adffc3092ce2ab7464cad8aab74e17ec6faf8996f723", "binary_size": 1014464, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "spidermonkey", "jit": "", "loc": 85195, "revision_date": "2009-02-16", "sources": "https://archive.mozilla.org/pub/js/js-1.8.0-rc1.tar.gz", "standard": "ES3", "variant": "1.8.0", "version": "1.8.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 211652494, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
+Metadata: {"arch": "arm64", "dist_size": 211653638, "engine": "js2py", "repository": "https://github.com/PiotrDabkowski/Js2Py.git", "revision": "2e017b86e2f18a6c8a842293b1687f2ce7baa12e", "revision_date": "2022-11-06"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

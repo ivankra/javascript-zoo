@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "442df59ead31cc0b568845257ce461d14f056aac18fab5cfc4f344677f363394", "binary_size": 67920, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "yrm006-miniscript", "repository": "https://github.com/yrm006/miniscript.git", "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d", "revision_date": "2018-08-29"}
+Metadata: {"arch": "arm64", "binary_sha256": "73d01b8b39e6f1c3013ca80caed901599033b36d0d50709bd27018e0747f05f1", "binary_size": 67960, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "yrm006-miniscript", "repository": "https://github.com/yrm006/miniscript.git", "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d", "revision_date": "2018-08-29"}
 es1/Array.js: crashed (signal 11)
 es1/Array.length.assignment.js: crashed (signal 11); array index length update failed
 es1/Array.length.js: empty array length failed; new Array(items) length failed; length auto-update failed; length > max index failed
@@ -119,7 +119,7 @@ es1/annex-b.Date.prototype.toGMTString.js: Error: not found.('Date')
 es1/annex-b.global.escape.js: Error: not found.('escape')
 es1/annex-b.global.unescape.js: Error: not found.(''hello')
 es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
-es1/annex-b.literals.string.octal.js: crashed (signal 11); OK; Error: not found.('else')
+es1/annex-b.literals.string.octal.js: crashed (signal 11)
 es1/arguments.callee.js: Error: not found.('arguments')
 es1/arguments.js: Error: not found.('arguments')
 es1/asi.eval.js: Error: not found.('eval')
@@ -133,7 +133,7 @@ es1/bitwise.shifts.js: failed
 es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: failed
 es1/break.js: timeout
-es1/comma.js: crashed (signal 11); (1, 2, 3) failed; (5 + 5, 10 + 10) failed; (a = 10, b = 20, a + b) failed; first expression not evaluated
+es1/comma.js: crashed (signal 11); (1, 2, 3) failed
 es1/comments.js: crashed (signal 11); Error: not found.('fail')
 es1/conditional.js: Error: not found.('true')
 es1/continue.js: timeout
@@ -173,7 +173,7 @@ es1/numbers.int.js: failed
 es1/numbers.nan.js: NaN != NaN failed; NaN + 5 failed; 10 * NaN failed
 es1/postfix.decrement.js: crashed (signal 11)
 es1/postfix.increment.js: crashed (signal 11)
-es1/prefix.js: crashed (signal 11); Error: not found.('else')
+es1/prefix.js: crashed (signal 11)
 es1/relational.js: failed
 es1/return.js: Error: not found.('null')
 es1/return.typeof.js: Error: not found.('typeof')
@@ -256,12 +256,12 @@ es3/String.prototype.replace.capture.js: Error: not found.('b')
 es3/String.prototype.replace.extra.js: Error: not found.('b')
 es3/String.prototype.replace.generic.js: Error: not found.('Object')
 es3/String.prototype.replace.regex.js: Error: not found.('\d')
-es3/String.prototype.replace.str.js: crashed (signal 11)
+es3/String.prototype.replace.str.js: crashed (signal 11); basic string replace failed
 es3/String.prototype.search.generic.js: Error: not found.('Number')
 es3/String.prototype.search.js: Error: not found.('world')
 es3/String.prototype.search.str.js: string with \\d+ pattern failed; string with \\w+ pattern failed; string with [0-9]+ pattern failed; string with \\s pattern failed; string with \\. pattern failed; Error: not found.('abc123def')
 es3/String.prototype.slice.generic.js: Error: not found.('Number')
-es3/String.prototype.slice.js: failed
+es3/String.prototype.slice.js: crashed (signal 11)
 es3/String.prototype.split.bugs.js: Error: not found.(''')
 es3/String.prototype.split.limit.js: crashed (signal 11)
 es3/String.prototype.split.regex.js: Error: not found.('\d')

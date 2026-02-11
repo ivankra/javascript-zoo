@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "6de773721e576e5a6f88b38066fe3fee705214b09b0c82e38e1f1d3b64be1bea", "binary_size": 264880, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "mquickjs", "repository": "https://github.com/bellard/mquickjs.git", "revision": "27a2391cc5a54bf8fa683979be56b266523a1374", "revision_date": "2025-12-24"}
+Metadata: {"arch": "arm64", "binary_sha256": "817b1861045add98efe9871dbeba2714e40951cc46639c8b2080b5f059733427", "binary_size": 264920, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "mquickjs", "repository": "https://github.com/bellard/mquickjs.git", "revision": "ee50431eac9b14b99f722b537ec4cac0c8dd75ab", "revision_date": "2026-01-15"}
 es1/Array.js: TypeError: invalid array subscript
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: TypeError: invalid array subscript

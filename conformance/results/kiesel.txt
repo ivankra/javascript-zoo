@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "87e85d1c16233ec442a8d665f3e57ee49951f329d2ae0095711a06eec439fe3d", "binary_size": 13324080, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "1c762b6900dd3baa73171e2eee3deb07c501b55e", "revision_date": "2025-12-25", "version": "0.1.0-dev+1c762b690"}
+Metadata: {"arch": "arm64", "binary_sha256": "daa2f8cecc6e0a6c523fbc2647731639c1be76bf6f65d58bb0c11ec4a4b32089", "binary_size": 13588464, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "4f059b5a0e1cd4a5434123a75d927f547b5a9a85", "revision_date": "2026-02-11", "version": "0.1.0-dev+4f059b5a0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -119,7 +119,7 @@ es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
-es1/annex-b.literals.string.octal.js: failed
+es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
@@ -134,7 +134,7 @@ es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: OK
 es1/break.js: OK
 es1/comma.js: OK
-es1/comments.js: fail SyntaxError: Unexpected token '*' (comments.js:10:5)
+es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
@@ -405,14 +405,14 @@ es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: OK
 es5/strict.no-assignment-to-unresolvable.js: OK
-es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-bindings.js: OK
 es5/strict.no-delete-non-configurable.js: OK
-es5/strict.no-duplicate-parameters.js: failed
-es5/strict.no-eval-or-arguments-assignment.js: failed
-es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-duplicate-parameters.js: OK
+es5/strict.no-eval-or-arguments-assignment.js: OK
+es5/strict.no-eval-or-arguments-bindings.js: OK
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
-es5/strict.no-with.js: failed
+es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
@@ -476,22 +476,22 @@ kangax-es5/misc.zero-width-identifiers.js: OK
 kangax-es5/strict.arguments-callee-error.js: OK
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
-kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-eval-arguments-error.js: OK
 kangax-es5/strict.assignment-non-writable-error.js: OK
 kangax-es5/strict.assignment-unresolvable-error.js: OK
-kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: OK
 kangax-es5/strict.delete-non-configurable-error.js: OK
-kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: OK
 kangax-es5/strict.eval-no-bindings.js: OK
 kangax-es5/strict.function-caller-arguments-error.js: OK
 kangax-es5/strict.function-expr-matching-name-arg.js: OK
 kangax-es5/strict.legacy-octal-error.js: failed
-kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.repeated-params-error.js: OK
 kangax-es5/strict.reserved-words.js: failed
 kangax-es5/strict.this-not-coerced-accessors.js: OK
 kangax-es5/strict.this-not-coerced-methods.js: OK
 kangax-es5/strict.this-undefined.js: OK
-kangax-es5/strict.with-error.js: failed
+kangax-es5/strict.with-error.js: OK
 kangax-es6/Array.Symbol.species.js: OK
 kangax-es6/Array.from.array-like.js: OK
 kangax-es6/Array.from.generator.js: OK
@@ -1330,9 +1330,9 @@ kangax-es2020/globalThis.js: OK
 kangax-es2020/nullish-coalescing.js: OK
 kangax-es2020/optional-chaining.bracket.js: OK
 kangax-es2020/optional-chaining.function-call.js: OK
-kangax-es2020/optional-chaining.method-call.js: failed
+kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
-kangax-es2020/optional-chaining.spread-params.js: TypeError: undefined is not an Object
+kangax-es2020/optional-chaining.spread-params.js: OK
 kangax-es2021/FinalizationRegistry.js: OK
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
@@ -1375,7 +1375,7 @@ kangax-es2022/class-fields.instance.parent-scope.js: OK
 kangax-es2022/class-fields.private-instance.initializers.js: OK
 kangax-es2022/class-fields.private-instance.js: OK
 kangax-es2022/class-fields.private-instance.optional-access.js: OK
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: TypeError: Cannot convert undefined to Object
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: OK
 kangax-es2022/class-fields.private-static.js: OK
 kangax-es2022/class-fields.public-instance.js: OK
 kangax-es2022/class-fields.public-static.js: OK

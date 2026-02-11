@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "3882111af855ef3ed5428c55d047f15d2eff946395c7c774727455805d1e33b8", "binary_size": 8789096, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "eb52d2999a343cea28d494cf6ef2b05e7207aecf", "revision_date": "2025-12-15", "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)", "version": "latest-67-geb52d299"}
+Metadata: {"arch": "arm64", "binary_sha256": "2ff9c97bb97e60f7e385533723869bb73c662ff8b8276548a5dcaadfe93e58c2", "binary_size": 8920168, "engine": "nova", "repository": "https://github.com/trynova/nova.git", "revision": "66fca446da4e3669db0ae67448ef7cc7ea8f307c", "revision_date": "2026-02-09", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)", "version": "latest-84-g66fca446"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -117,8 +117,8 @@ es1/annex-b.Date.prototype.getYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.setYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Not a callable object
 es1/annex-b.global.escape.js: OK
-es1/annex-b.global.unescape.js: thread 'main' (1454988) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
-es1/annex-b.literals.octal.js: Parse errors:
+es1/annex-b.global.unescape.js: thread 'main' (1713622) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin <= end
+es1/annex-b.literals.octal.js: SyntaxError:
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 es1/arguments.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: Parse errors:
+es1/unary.delete.var.js: SyntaxError:
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: Parse errors:
+es1/with.js: SyntaxError:
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -386,7 +386,7 @@ es5/Object.seal.js: TypeError: Could not set property 'y' of [object Object].
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
-es5/debugger.js: thread 'main' (1441372) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3557:43:
+es5/debugger.js: OK
 es5/global.Infinity.immutable.js: TypeError: Could not set property 'Infinity'.
 es5/global.NaN.immutable.js: TypeError: Could not set property 'NaN'.
 es5/global.parseInt.no-octal.js: OK
@@ -721,9 +721,9 @@ kangax-es6/annex-b.String.prototype.html.existence.js: OK
 kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 kangax-es6/annex-b.function.hoisted-block-level.js: failed
-kangax-es6/annex-b.function.if-statement.js: Parse errors: x Invalid function declaration
-kangax-es6/annex-b.function.labeled.js: Parse errors: x Invalid function declaration
-kangax-es6/annex-b.html-comments.js: Parse errors:
+kangax-es6/annex-b.function.if-statement.js: SyntaxError: x Invalid function declaration
+kangax-es6/annex-b.function.labeled.js: SyntaxError: x Invalid function declaration
+kangax-es6/annex-b.html-comments.js: SyntaxError:
 kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: regex parse error:; error: backreferences are not supported
 kangax-es6/annex-b.regex.hyphens.js: SyntaxError: regex parse error:; error: invalid range boundary, must be a literal
 kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: regex parse error:; error: unclosed counted repetition
@@ -977,7 +977,7 @@ kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 kangax-es6/misc.Proxy.get.Date.toJSON.js: failed
 kangax-es6/misc.Proxy.get.Error.toString.js: OK
 kangax-es6/misc.Proxy.get.Function.bind.js: TypeError: Cannot bind a non-callable object
-kangax-es6/misc.Proxy.get.HasBinding.js: Parse errors:
+kangax-es6/misc.Proxy.get.HasBinding.js: SyntaxError:
 kangax-es6/misc.Proxy.get.IteratorComplete.js: OK
 kangax-es6/misc.Proxy.get.JSON.stringify.js: OK
 kangax-es6/misc.Proxy.get.Object.assign.js: OK
@@ -1189,7 +1189,7 @@ kangax-es6/well-known.toStringTag.existing-builtins.js: OK
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
 kangax-es6/well-known.toStringTag.new-builtins.js: OK
-kangax-es6/well-known.unscopables.js: Parse errors:
+kangax-es6/well-known.unscopables.js: SyntaxError:
 kangax-es2016/Array.prototype.includes.generic.js: OK
 kangax-es2016/Array.prototype.includes.js: OK
 kangax-es2016/Array.prototype.includes.sparse.js: OK
@@ -1247,7 +1247,7 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read property
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read property 'call' of undefined.
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read property 'call' of undefined.
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read property 'call' of undefined.
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: Parse errors:
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError:
 kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
@@ -1371,7 +1371,7 @@ kangax-es2022/at-method.String.js: OK
 kangax-es2022/at-method.TypedArray.js: OK
 kangax-es2022/class-fields.computed-instance.js: OK
 kangax-es2022/class-fields.computed-static.js: OK
-kangax-es2022/class-fields.instance.parent-scope.js: OK
+kangax-es2022/class-fields.instance.parent-scope.js: ReferenceError: Cannot access undeclared variable 'a'.
 kangax-es2022/class-fields.private-instance.initializers.js: OK
 kangax-es2022/class-fields.private-instance.js: OK
 kangax-es2022/class-fields.private-instance.optional-access.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: thread 'main' (1464929) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
+kangax-next/SuppressedError.js: thread 'main' (1723411) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3644:52:
 kangax-next/Uint8Array.fromBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.fromHex.js: TypeError: Not a callable object
 kangax-next/Uint8Array.setFromBase64.js: TypeError: Not a callable object
@@ -1501,12 +1501,12 @@ kangax-next/Uint8Array.toBase64.js: TypeError: Not a callable object
 kangax-next/Uint8Array.toHex.js: TypeError: Not a callable object
 kangax-next/WeakMap.prototype.upsert.js: TypeError: Not a callable object
 kangax-next/await-using.for-of.js: failed
-kangax-next/await-using.js: thread 'main' (1465742) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2948:57:
+kangax-next/await-using.js: thread 'main' (1724222) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3645:57:
 kangax-next/class-decorators.js: failed
-kangax-next/function.sent.js: Parse errors:
-kangax-next/throw-expr.arrow.js: Parse errors:
-kangax-next/throw-expr.conditional.js: Parse errors:
-kangax-next/throw-expr.logical.js: Parse errors:
-kangax-next/throw-expr.param-init.js: Parse errors:
+kangax-next/function.sent.js: SyntaxError:
+kangax-next/throw-expr.arrow.js: SyntaxError:
+kangax-next/throw-expr.conditional.js: SyntaxError:
+kangax-next/throw-expr.logical.js: SyntaxError:
+kangax-next/throw-expr.param-init.js: SyntaxError:
 kangax-next/using.for-of.js: failed
-kangax-next/using.js: thread 'main' (1466427) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:2947:52:
+kangax-next/using.js: thread 'main' (1724959) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3644:52:

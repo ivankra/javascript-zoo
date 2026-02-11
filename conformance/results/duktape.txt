@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "59d12c8b13a7992b531521ad72688ee8e016845082b6516bf2d06e692865fe5b", "binary_size": 658432, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "duktape", "repository": "https://github.com/svaarala/duktape.git", "revision": "50af773b1b32067170786c2b7c661705ec7425d4", "revision_date": "2024-01-29"}
+Metadata: {"arch": "arm64", "binary_sha256": "baf23f911e56cf5f5cc1fa451652ed1fa1fd1ad273fd1b26c853308271cdbdf9", "binary_size": 658472, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "duktape", "repository": "https://github.com/svaarala/duktape.git", "revision": "50af773b1b32067170786c2b7c661705ec7425d4", "revision_date": "2024-01-29"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

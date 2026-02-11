@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "64e5714205286c956a96538172eff7b3fdf27eb294c8b6e0561f092d7e5ab330", "binary_size": 68000, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "cesanta-elk", "repository": "https://github.com/cesanta/elk.git", "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd", "revision_date": "2025-06-05", "version": "2.2.0-30-ga9bb856"}
+Metadata: {"arch": "arm64", "binary_sha256": "0c014e00f6262fc1820a7652ae62324321a7ef53f026982b70f476e395b3decb", "binary_size": 68048, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "cesanta-elk", "repository": "https://github.com/cesanta/elk.git", "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd", "revision_date": "2025-06-05", "version": "2.2.0-30-ga9bb856"}
 es1/Array.js: Error: ERROR: 'var' not implemented
 es1/Array.length.assignment.js: Error: ERROR: 'var' not implemented
 es1/Array.length.js: Error: ERROR: 'var' not implemented

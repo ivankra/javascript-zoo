@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "03a922fe07194e8ea73d0d4b222e049804b83735e68ec91b7cbf3ca6b91ef8e5", "binary_size": 2100384, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "xs", "repository": "https://github.com/Moddable-OpenSource/moddable.git", "revision": "4b66dcf49b2cc44d22f133d115633589d12b1155", "revision_date": "2025-12-04", "version": "16.9.1"}
+Metadata: {"arch": "arm64", "binary_sha256": "492649e53746831738b8edbfa2a1aa515bb03100e5563679b8eb485fd15dc755", "binary_size": 2100424, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "xs", "repository": "https://github.com/Moddable-OpenSource/moddable.git", "revision": "862dadd47ac6152912d68406276af6e727c31166", "revision_date": "2026-01-13", "version": "16.9.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

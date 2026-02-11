@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "47402fa775b1b53f178a2e75ee2ac08f10806b766ed24202ed8137b984437812", "binary_size": 792896, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "42tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1", "revision_date": "2014-10-19"}
+Metadata: {"arch": "arm64", "binary_sha256": "4d3525beac94b349a858709494b34ff3c4e993c6592fe9937c640de16f21e030", "binary_size": 791928, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "42tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1", "revision_date": "2014-10-19"}
 es1/Array.js: > es1/Array.js: Array.length failed > es1/Array.js: Array(len) failed > es1/Array.js: failed
 es1/Array.length.assignment.js: > es1/Array.length.assignment.js: length truncation failed > es1/Array.length.assignment.js: failed
 es1/Array.length.js: > es1/Array.length.js: length assignment failed > es1/Array.length.js: failed

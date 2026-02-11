@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "dist_size": 23521262, "dotnet": "10.0.102", "engine": "yantra", "repository": "https://github.com/yantrajs/yantra.git", "revision": "afb4a5d188a2461aee959891eab7f958279b1115", "revision_date": "2026-01-18", "version": "1.2.301"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: toString(true) failed; toString(false) failed
+es1/Boolean.prototype.valueOf.js: valueOf(true) failed; valueOf(false) failed
+es1/Date.diff.js: OK
+es1/Date.js: typeof Date() != 'string'
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: Function.length failed
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: failed
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method getYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time) TypeError: Method getYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
+es1/annex-b.Date.prototype.setYear.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method setYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time) TypeError: Method setYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
+es1/annex-b.Date.prototype.toGMTString.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method toGMTString not found in Wed Feb 11 2026 16:22:17 GMT+0000 (Coordinated Universal Time) TypeError: Method toGMTString not found in Wed Feb 11 2026 16:22:17 GMT+0000 (Coordinated Universal Time)
+es1/annex-b.global.escape.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: undefined is not a function TypeError: undefined is not a function
+es1/annex-b.global.unescape.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: undefined is not a function TypeError: undefined is not a function
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot access callee in strict mode TypeError: Cannot access callee in strict mode
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: >>>= failed
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketEnd: ) at 29, 0 SyntaxError: Unexpected token BracketEnd: ) at 29, 0
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: +Infinity failed
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: -0 failed; 1e-7 failed
+es1/conversions.ToUint32.js: +Infinity failed
+es1/conversions.js: 0 == null
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: failed
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: typeof String('x') != 'string'
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot delete a variable in Strict Mode at ThrowSyntaxError in /src/YantraJS.Core/Core/JSException.cs:line 140 SyntaxError: Cannot delete a variable in Strict Mode
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: with at 15, 0 SyntaxError: Unexpected token Identifier: with at 15, 0
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: unshift on empty object failed
+es3/Array.prototype.unshift.js: unshift on empty array failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Error cannot be invoked directly TypeError: Error cannot be invoked directly at native:/zoo/conformance/es3/./Error.js:23,0
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: failed
+es3/Error.prototype.name.js: failed
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
+es3/Number.prototype.toExponential.throws-infinity.js: OK
+es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: Array index should be enumerable failed; ToString conversion failed
+es3/Object.prototype.toLocaleString.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method toLocaleString not found in [object Object] TypeError: Method toLocaleString not found in [object Object]
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: RegExp cannot be invoked directly TypeError: RegExp cannot be invoked directly
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: format failed
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: Boolean failed
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: string with \d+ pattern failed; string with \w+ pattern failed; string with [0-9]+ pattern failed; string with \s pattern failed; string with \. pattern failed
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: ''.split(/.?/).length !== 0
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: positive start failed; negative start failed; negative start with length failed
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; wrong exception for negative array length; wrong exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: crashed (signal 6); constructor failed; Unhandled exception. YantraJS.Core.JSException: Cannot get property prototype of undefined TypeError: Cannot get property prototype of undefined at native:/zoo/conformance/es3/./global.ReferenceError.js:14,0
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; no exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: wrong exception for instanceof number; wrong exception for instanceof non-callable; wrong exception for in number; wrong exception for in null; wrong exception for new number; wrong exception for calling number; wrong exception for Function.prototype.toString on non-function; wrong exception for Fun
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; no exception for encodeURI lone low surrogate; no exception
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token EOF:  at 0, 0 SyntaxError: Unexpected token EOF:  at 0, 0
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: labelled continue in while failed; labelled continue to outer loop failed
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: property name 1.5 failed; property name 3.14 failed
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: failed
+es3/literals.regex.ambiguous.js: var r = x<LF>/b/g; failed
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: failed
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: failed
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: sparse array skips missing elements failed
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: OK
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: crashed (signal 6); length property incorrect; Unhandled exception. YantraJS.Core.JSException: Cannot set property value of null Ctor: Cannot set property value of null
+es5/JSON.js: OK
+es5/JSON.parse.js: invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: crashed (signal 6)
+es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: null prototype failed; Properties argument failed
+es5/Object.defineProperties.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot modify property a of [object Object] TypeError: Cannot modify property a of [object Object]
+es5/Object.defineProperty.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot modify property y of [object Object] TypeError: Cannot modify property y of [object Object]
+es5/Object.freeze.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+es5/Object.isFrozen.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+es5/Object.isSealed.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot add property y to [object Object] TypeError: Cannot add property y to [object Object]
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: crashed (signal 6); prevented property addition failed; Unhandled exception. YantraJS.Core.JSException: Cannot delete property b of [object Object] TypeError: Cannot delete property b of [object Object]
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Infinity is not a number
+es5/global.NaN.immutable.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: NaN is not a number
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Common Language Runtime detected an invalid program. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: failed
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: OK
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: OK
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Cannot use 'in' operator to search for 'a' in undefined TypeError: Cannot use 'in' operator to search for 'a' in undefined
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: failed
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: OK
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: failed
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: failed
+kangax-es5/immutable-globals.Infinity.js: Error: Infinity is not a number
+kangax-es5/immutable-globals.NaN.js: Error: NaN is not a number
+kangax-es5/immutable-globals.undefined.js: Error: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: failed
+kangax-es5/misc.Function.apply.array-likes.js: failed
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: TypeError: Cannot use 'in' operator to search for 'a' in undefined
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: failed
+kangax-es5/strict.arguments-callee-error.js: OK
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: OK
+kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: OK
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: OK
+kangax-es5/strict.reserved-words.js: OK
+kangax-es5/strict.this-not-coerced-accessors.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: OK
+kangax-es5/strict.with-error.js: OK
+kangax-es6/Array.Symbol.species.js: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+kangax-es6/Array.from.array-like.js: OK
+kangax-es6/Array.from.generator.js: OK
+kangax-es6/Array.from.iterable-instance.js: failed
+kangax-es6/Array.from.iterable.js: OK
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: OK
+kangax-es6/Array.from.map.generator.js: OK
+kangax-es6/Array.from.map.iterable-instance.js: failed
+kangax-es6/Array.from.map.iterable.js: OK
+kangax-es6/Array.iterator-prototype-chain.js: failed
+kangax-es6/Array.of.js: OK
+kangax-es6/Array.prototype.Symbol.iterator.js: OK
+kangax-es6/Array.prototype.Symbol.unscopables.js: failed
+kangax-es6/Array.prototype.copyWithin.js: OK
+kangax-es6/Array.prototype.entries.js: OK
+kangax-es6/Array.prototype.fill.js: OK
+kangax-es6/Array.prototype.findIndex.js: OK
+kangax-es6/Array.prototype.find.js: OK
+kangax-es6/Array.prototype.keys.js: OK
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: OK
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: Cannot get property call of undefined
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: OK
+kangax-es6/Function.name.class-object-method.js: failed
+kangax-es6/Function.name.class-prototype.js: failed
+kangax-es6/Function.name.class-statement.js: OK
+kangax-es6/Function.name.class-static.js: failed
+kangax-es6/Function.name.class-variable.js: failed
+kangax-es6/Function.name.configurable.js: failed
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: OK
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: failed
+kangax-es6/Function.name.shorthand.no-lexical.js: OK
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: failed
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+kangax-es6/Map.constructor-accepts-null.js: OK
+kangax-es6/Map.constructor-arguments.js: OK
+kangax-es6/Map.constructor-invokes-set.js: failed
+kangax-es6/Map.constructor-requires-new.js: OK
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: TypeError: Method Symbol.iterator not found on [object Object]
+kangax-es6/Map.js: OK
+kangax-es6/Map.prototype-not-instance.js: OK
+kangax-es6/Map.prototype.Symbol.iterator.js: failed
+kangax-es6/Map.prototype.clear.js: OK
+kangax-es6/Map.prototype.delete.js: OK
+kangax-es6/Map.prototype.entries.js: OK
+kangax-es6/Map.prototype.forEach.js: OK
+kangax-es6/Map.prototype.keys.js: OK
+kangax-es6/Map.prototype.set-returns-this.js: failed
+kangax-es6/Map.prototype.size.js: OK
+kangax-es6/Map.prototype.values.js: OK
+kangax-es6/Map.zero-key.js: failed
+kangax-es6/Math.acosh.js: OK
+kangax-es6/Math.asinh.js: OK
+kangax-es6/Math.atanh.js: OK
+kangax-es6/Math.cbrt.js: OK
+kangax-es6/Math.clz32.js: OK
+kangax-es6/Math.cosh.js: OK
+kangax-es6/Math.expm1.js: OK
+kangax-es6/Math.fround.js: OK
+kangax-es6/Math.hypot.js: OK
+kangax-es6/Math.imul.js: OK
+kangax-es6/Math.log1p.js: OK
+kangax-es6/Math.log2.js: OK
+kangax-es6/Math.log10.js: OK
+kangax-es6/Math.sign.js: OK
+kangax-es6/Math.sinh.js: OK
+kangax-es6/Math.tanh.js: OK
+kangax-es6/Math.trunc.js: OK
+kangax-es6/Number.EPSILON.js: OK
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: OK
+kangax-es6/Number.isInteger.js: OK
+kangax-es6/Number.isNaN.js: OK
+kangax-es6/Number.isSafeInteger.js: OK
+kangax-es6/Number.parseFloat.js: TypeError: Cannot get property parseFloat of undefined
+kangax-es6/Number.parseInt.js: TypeError: Cannot get property parseInt of undefined
+kangax-es6/Object.assign.js: OK
+kangax-es6/Object.getOwnPropertySymbols.js: failed
+kangax-es6/Object.is.js: OK
+kangax-es6/Object.setPrototypeOf.js: OK
+kangax-es6/Promise.Symbol.species.js: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+kangax-es6/Promise.all.iterable.js: TypeError: Method all not found in function Promise() { [native code] }
+kangax-es6/Promise.all.js: TypeError: Method all not found in function Promise() { [native code] }
+kangax-es6/Promise.constructor-requires-new.js: failed
+kangax-es6/Promise.js: TypeError: undefined is not iterable
+kangax-es6/Promise.prototype-not-instance.js: OK
+kangax-es6/Promise.race.iterable.js: TypeError: Method race not found in function Promise() { [native code] }
+kangax-es6/Promise.race.js: TypeError: Method race not found in function Promise() { [native code] }
+kangax-es6/Proxy.Array.isArray.js: failed
+kangax-es6/Proxy.JSON.stringify.js: failed
+kangax-es6/Proxy.constructor-requires-new.js: failed
+kangax-es6/Proxy.handler.apply.invariants.js: failed
+kangax-es6/Proxy.handler.apply.js: TypeError: Method method not found in [object Object]
+kangax-es6/Proxy.handler.construct.invariants.js: failed
+kangax-es6/Proxy.handler.construct.js: failed
+kangax-es6/Proxy.handler.defineProperty.invariants.js: failed
+kangax-es6/Proxy.handler.defineProperty.js: OK
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: failed
+kangax-es6/Proxy.handler.deleteProperty.js: failed
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: TypeError: Cannot get property value of undefined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.getPrototypeOf.js: failed
+kangax-es6/Proxy.handler.get.instances.js: failed
+kangax-es6/Proxy.handler.get.invariants.js: failed
+kangax-es6/Proxy.handler.get.js: failed
+kangax-es6/Proxy.handler.has.instances.js: failed
+kangax-es6/Proxy.handler.has.invariants.js: failed
+kangax-es6/Proxy.handler.has.js: failed
+kangax-es6/Proxy.handler.isExtensible.invariants.js: failed
+kangax-es6/Proxy.handler.isExtensible.js: failed
+kangax-es6/Proxy.handler.ownKeys.invariants.js: failed
+kangax-es6/Proxy.handler.ownKeys.js: failed
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: failed
+kangax-es6/Proxy.handler.preventExtensions.js: failed
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: failed
+kangax-es6/Proxy.handler.setPrototypeOf.js: failed
+kangax-es6/Proxy.handler.set.instances.js: failed
+kangax-es6/Proxy.handler.set.invariants.js: failed
+kangax-es6/Proxy.handler.set.js: failed
+kangax-es6/Proxy.no-prototype.js: failed
+kangax-es6/Proxy.revocable.js: TypeError: Method revocable not found in function Proxy() { [native code] }
+kangax-es6/Reflect.apply.js: OK
+kangax-es6/Reflect.construct.Array-subclassing.js: failed
+kangax-es6/Reflect.construct.Function-subclassing.js: failed
+kangax-es6/Reflect.construct.Promise-subclassing.js: TypeError: undefined is not iterable
+kangax-es6/Reflect.construct.RegExp-subclassing.js: failed
+kangax-es6/Reflect.construct.js: OK
+kangax-es6/Reflect.construct.new-target.js: failed
+kangax-es6/Reflect.construct.third-argument.js: failed
+kangax-es6/Reflect.defineProperty.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/Reflect.deleteProperty.js: failed
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: OK
+kangax-es6/Reflect.getPrototypeOf.js: TypeError: Method getPrototypeOf not found in [object Object]
+kangax-es6/Reflect.get.js: OK
+kangax-es6/Reflect.has.js: OK
+kangax-es6/Reflect.isExtensible.js: OK
+kangax-es6/Reflect.ownKeys.string.js: failed
+kangax-es6/Reflect.ownKeys.symbol.js: failed
+kangax-es6/Reflect.preventExtensions.js: OK
+kangax-es6/Reflect.setPrototypeOf.js: OK
+kangax-es6/Reflect.set.js: OK
+kangax-es6/RegExp.Symbol.species.js: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+kangax-es6/RegExp.prototype.Symbol.match.js: failed
+kangax-es6/RegExp.prototype.Symbol.replace.js: failed
+kangax-es6/RegExp.prototype.Symbol.search.js: failed
+kangax-es6/RegExp.prototype.Symbol.split.js: failed
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+kangax-es6/Set.constructor-accepts-null.js: OK
+kangax-es6/Set.constructor-arguments.js: OK
+kangax-es6/Set.constructor-invokes-add.js: failed
+kangax-es6/Set.constructor-requires-new.js: OK
+kangax-es6/Set.iterator-closing.js: failed
+kangax-es6/Set.iterator-prototype-chain.js: TypeError: Method Symbol.iterator not found on [object Object]
+kangax-es6/Set.js: OK
+kangax-es6/Set.prototype-not-instance.js: OK
+kangax-es6/Set.prototype.Symbol.iterator.js: failed
+kangax-es6/Set.prototype.add-returns-this.js: failed
+kangax-es6/Set.prototype.clear.js: OK
+kangax-es6/Set.prototype.delete.js: OK
+kangax-es6/Set.prototype.entries.js: OK
+kangax-es6/Set.prototype.forEach.js: OK
+kangax-es6/Set.prototype.keys.js: OK
+kangax-es6/Set.prototype.size.js: OK
+kangax-es6/Set.prototype.values.js: OK
+kangax-es6/Set.zero-key.js: failed
+kangax-es6/String.fromCodePoint.js: OK
+kangax-es6/String.iterator-prototype-chain.js: TypeError: Method Symbol.iterator not found on
+kangax-es6/String.prototype.Symbol.iterator.js: failed
+kangax-es6/String.prototype.codePointAt.js: OK
+kangax-es6/String.prototype.endsWith.js: OK
+kangax-es6/String.prototype.endsWith.throws-regex.js: OK
+kangax-es6/String.prototype.includes.js: OK
+kangax-es6/String.prototype.normalize.js: OK
+kangax-es6/String.prototype.repeat.js: OK
+kangax-es6/String.prototype.startsWith.js: OK
+kangax-es6/String.prototype.startsWith.throws-regex.js: OK
+kangax-es6/String.raw.js: OK
+kangax-es6/Symbol.JSON.stringify.object.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/Symbol.JSON.stringify.primitive.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/Symbol.Object.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/Symbol.String.js: failed
+kangax-es6/Symbol.defineProperty.js: OK
+kangax-es6/Symbol.global-registry.js: TypeError: Method keyFor not found in function Symbol() { [native code] }
+kangax-es6/Symbol.hidden-keys.js: OK
+kangax-es6/Symbol.js: OK
+kangax-es6/Symbol.no-coerce.js: OK
+kangax-es6/Symbol.no-new.js: failed
+kangax-es6/Symbol.prototype.js: failed
+kangax-es6/Symbol.typeof.js: OK
+kangax-es6/WeakMap.accept-primitives.js: failed
+kangax-es6/WeakMap.constructor-accepts-null.js: OK
+kangax-es6/WeakMap.constructor-arguments.js: OK
+kangax-es6/WeakMap.constructor-invokes-set.js: failed
+kangax-es6/WeakMap.constructor-requires-new.js: OK
+kangax-es6/WeakMap.frozen-keys.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: OK
+kangax-es6/WeakMap.no-clear.js: OK
+kangax-es6/WeakMap.prototype-not-instance.js: OK
+kangax-es6/WeakMap.prototype.delete.js: OK
+kangax-es6/WeakMap.prototype.set-returns-this.js: failed
+kangax-es6/WeakSet.accept-primitives.js: TypeError: Method has not found in [object Object]
+kangax-es6/WeakSet.constructor-accepts-null.js: OK
+kangax-es6/WeakSet.constructor-arguments.js: TypeError: Method has not found in [object Object]
+kangax-es6/WeakSet.constructor-invokes-add.js: failed
+kangax-es6/WeakSet.constructor-requires-new.js: OK
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: TypeError: Method has not found in [object Object]
+kangax-es6/WeakSet.no-clear.js: OK
+kangax-es6/WeakSet.prototype-not-instance.js: OK
+kangax-es6/WeakSet.prototype.add-returns-this.js: failed
+kangax-es6/WeakSet.prototype.delete.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: Method compile not found in /a/
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: Method anchor not found on
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Method anchor not found on
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: qux is already defined in current scope at 15, 55 SyntaxError: qux is already defined in current scope at 15, 55
+kangax-es6/annex-b.function.labeled.js: failed
+kangax-es6/annex-b.html-comments.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Greater: > at 9, 4 SyntaxError: Unexpected token Greater: > at 9, 4
+kangax-es6/annex-b.regex.backreferences-octal.js: OK
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-control-escapes.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 at Compile in /zoo/conformance/kangax-es6/./annex-b.regex.invalid-control-escapes.js:line 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 at Compile in /zoo/conformance/kangax-es6/./annex-b.regex.invalid-hex-escapes.js:line 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 at Compile in /zoo/conformance/kangax-es6/./annex-b.regex.invalid-unicode-escapes.js:line 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: failed
+kangax-es6/arrow.0-params.js: OK
+kangax-es6/arrow.1-param.js: OK
+kangax-es6/arrow.5-param.js: OK
+kangax-es6/arrow.bind.js: OK
+kangax-es6/arrow.lexical-arguments.js: OK
+kangax-es6/arrow.lexical-super.constructor.js: Error: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+kangax-es6/arrow.lexical-super.methods.js: Error: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+kangax-es6/arrow.lexical-this.js: OK
+kangax-es6/arrow.new-target.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/arrow.no-line-break.js: failed
+kangax-es6/arrow.no-prototype.js: failed
+kangax-es6/arrow.precedence.js: OK
+kangax-es6/arrow.this-call-apply.js: OK
+kangax-es6/class.accessor-properties.js: OK
+kangax-es6/class.anonymous.js: OK
+kangax-es6/class.block-scoped.js: OK
+kangax-es6/class.computed-accessor-properties.js: OK
+kangax-es6/class.computed-names-tdz.js: failed
+kangax-es6/class.computed-prototype-methods.js: OK
+kangax-es6/class.computed-static-accessor-properties.js: OK
+kangax-es6/class.computed-static-methods.js: OK
+kangax-es6/class.constructor-requires-new.js: OK
+kangax-es6/class.constructor.js: OK
+kangax-es6/class.expression.js: OK
+kangax-es6/class.extends-expressions.js: OK
+kangax-es6/class.extends-null.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/class.extends.js: OK
+kangax-es6/class.implicit-strict.js: OK
+kangax-es6/class.lexical-name.js: failed
+kangax-es6/class.methods-not-enumerable.js: OK
+kangax-es6/class.new-target.js: OK
+kangax-es6/class.optional-semicolons.js: OK
+kangax-es6/class.prototype-methods.js: OK
+kangax-es6/class.statement.js: OK
+kangax-es6/class.static-accessor-properties.js: OK
+kangax-es6/class.static-methods.js: OK
+kangax-es6/class.string-keyed-methods.js: OK
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: OK
+kangax-es6/const.for-in.js: OK
+kangax-es6/const.for-loop.js: OK
+kangax-es6/const.for-of.js: OK
+kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-statement.js: failed
+kangax-es6/const.shadow.js: OK
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: OK
+kangax-es6/const.strict.for-in.js: OK
+kangax-es6/const.strict.for-loop.js: OK
+kangax-es6/const.strict.for-of.js: OK
+kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-statement.js: failed
+kangax-es6/const.strict.shadow.js: OK
+kangax-es6/const.strict.tdz.js: failed
+kangax-es6/const.tdz.js: failed
+kangax-es6/default-params.arguments.js: OK
+kangax-es6/default-params.basic.js: OK
+kangax-es6/default-params.explicit-undefined.js: OK
+kangax-es6/default-params.new-function.js: failed
+kangax-es6/default-params.refer-previous.js: OK
+kangax-es6/default-params.separate-scope.js: OK
+kangax-es6/default-params.tdz.js: failed
+kangax-es6/destructuring-assign.array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Object reference not set to an instance of an object. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es6/destructuring-assign.astral-string.js: failed
+kangax-es6/destructuring-assign.chained-iterable.js: failed
+kangax-es6/destructuring-assign.chained-object.js: failed
+kangax-es6/destructuring-assign.computed-properties.js: failed
+kangax-es6/destructuring-assign.defaults.js: OK
+kangax-es6/destructuring-assign.empty-patterns.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Index was outside the bounds of the array. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es6/destructuring-assign.generator.js: OK
+kangax-es6/destructuring-assign.iterable-expression.js: failed
+kangax-es6/destructuring-assign.iterable-instance.js: failed
+kangax-es6/destructuring-assign.iterable.js: OK
+kangax-es6/destructuring-assign.iterator-closing.js: failed
+kangax-es6/destructuring-assign.nested-rest.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Invalid spread pattern at 11, 10 SyntaxError: Invalid spread pattern at 11, 10
+kangax-es6/destructuring-assign.nested.js: failed
+kangax-es6/destructuring-assign.object-expression.js: failed
+kangax-es6/destructuring-assign.object-primitives.js: OK
+kangax-es6/destructuring-assign.object.js: failed
+kangax-es6/destructuring-assign.parenthesised-error.js: failed
+kangax-es6/destructuring-assign.rest.js: OK
+kangax-es6/destructuring-assign.sparse-array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Object reference not set to an instance of an object. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es6/destructuring-assign.string.js: OK
+kangax-es6/destructuring-assign.throws-null-undefined.js: OK
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: OK
+kangax-es6/destructuring-assign.trailing-comma-object.js: OK
+kangax-es6/destructuring-decl.array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Comma: , at 10, 10 SyntaxError: Unexpected token Comma: , at 10, 10
+kangax-es6/destructuring-decl.astral-string.js: failed
+kangax-es6/destructuring-decl.catch.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token SquareBracketStart: [ at 12, 10 SyntaxError: Unexpected token SquareBracketStart: [ at 12, 10
+kangax-es6/destructuring-decl.computed-properties.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es6/destructuring-decl.defaults-tdz.js: failed
+kangax-es6/destructuring-decl.defaults.js: OK
+kangax-es6/destructuring-decl.for-in.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/destructuring-decl.for-of.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/destructuring-decl.generator.js: OK
+kangax-es6/destructuring-decl.iterable-instance.js: failed
+kangax-es6/destructuring-decl.iterable.js: OK
+kangax-es6/destructuring-decl.iterator-closing.js: failed
+kangax-es6/destructuring-decl.multiple-var.js: OK
+kangax-es6/destructuring-decl.nested.js: OK
+kangax-es6/destructuring-decl.object-primitives.js: OK
+kangax-es6/destructuring-decl.object.js: OK
+kangax-es6/destructuring-decl.rest.js: OK
+kangax-es6/destructuring-decl.sparse-array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Comma: , at 10, 10 SyntaxError: Unexpected token Comma: , at 10, 10
+kangax-es6/destructuring-decl.string.js: OK
+kangax-es6/destructuring-decl.throws-null-undefined.js: OK
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: OK
+kangax-es6/destructuring-decl.trailing-comma-object.js: OK
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: failed
+kangax-es6/destructuring-params.arguments.js: OK
+kangax-es6/destructuring-params.array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Comma: , at 10, 22 SyntaxError: Unexpected token Comma: , at 10, 22
+kangax-es6/destructuring-params.astral-string.js: failed
+kangax-es6/destructuring-params.computed-properties.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es6/destructuring-params.defaults-new-function.js: failed
+kangax-es6/destructuring-params.defaults-separate-scope.js: OK
+kangax-es6/destructuring-params.defaults.js: OK
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
+kangax-es6/destructuring-params.empty-patterns.js: OK
+kangax-es6/destructuring-params.generator.js: OK
+kangax-es6/destructuring-params.iterable-instance.js: failed
+kangax-es6/destructuring-params.iterable.js: OK
+kangax-es6/destructuring-params.iterator-closing.js: failed
+kangax-es6/destructuring-params.length.js: OK
+kangax-es6/destructuring-params.nested.js: OK
+kangax-es6/destructuring-params.new-function.js: failed
+kangax-es6/destructuring-params.object-primitives.js: OK
+kangax-es6/destructuring-params.object.js: OK
+kangax-es6/destructuring-params.rest.js: OK
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: OK
+kangax-es6/destructuring-params.sparse-array.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Comma: , at 10, 22 SyntaxError: Unexpected token Comma: , at 10, 22
+kangax-es6/destructuring-params.string.js: OK
+kangax-es6/destructuring-params.throws-null-undefined.js: OK
+kangax-es6/destructuring-params.trailing-comma-iterable.js: OK
+kangax-es6/destructuring-params.trailing-comma-object.js: OK
+kangax-es6/for-of.array.js: OK
+kangax-es6/for-of.astral-string.js: failed
+kangax-es6/for-of.generator.js: OK
+kangax-es6/for-of.iterable-instance.js: failed
+kangax-es6/for-of.iterable.js: OK
+kangax-es6/for-of.iterator-closing-break.js: failed
+kangax-es6/for-of.iterator-closing-throw.js: failed
+kangax-es6/for-of.sparse-array.js: OK
+kangax-es6/for-of.string.js: OK
+kangax-es6/function.block-level-decl.js: OK
+kangax-es6/generators.basic.js: OK
+kangax-es6/generators.constructor.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/generators.expression.js: OK
+kangax-es6/generators.no-new-this.js: OK
+kangax-es6/generators.prototype-chain.js: TypeError: Cannot get property hasOwnProperty of null
+kangax-es6/generators.prototype.js: failed
+kangax-es6/generators.return.js: failed
+kangax-es6/generators.sending.js: OK
+kangax-es6/generators.shorthand.class.js: OK
+kangax-es6/generators.shorthand.computed.class.js: OK
+kangax-es6/generators.shorthand.computed.js: OK
+kangax-es6/generators.shorthand.js: OK
+kangax-es6/generators.shorthand.no-constructor.js: failed
+kangax-es6/generators.shorthand.string-keyed.js: OK
+kangax-es6/generators.this.js: OK
+kangax-es6/generators.throw.js: failed
+kangax-es6/generators.yield-precedence.js: OK
+kangax-es6/generators.yield-star.array.js: OK
+kangax-es6/generators.yield-star.astral-string.js: failed
+kangax-es6/generators.yield-star.generator.js: OK
+kangax-es6/generators.yield-star.iterable-instance.js: failed
+kangax-es6/generators.yield-star.iterable.js: OK
+kangax-es6/generators.yield-star.iterator-closing-throw.js: failed
+kangax-es6/generators.yield-star.iterator-closing.js: failed
+kangax-es6/generators.yield-star.non-iterable-error.js: failed
+kangax-es6/generators.yield-star.sparse-array.js: OK
+kangax-es6/generators.yield-star.string.js: OK
+kangax-es6/let.basic.js: OK
+kangax-es6/let.block-scoped.js: OK
+kangax-es6/let.for-in-shadow.js: OK
+kangax-es6/let.for-iteration.js: OK
+kangax-es6/let.for-loop.js: OK
+kangax-es6/let.no-statement.js: failed
+kangax-es6/let.shadow.js: OK
+kangax-es6/let.strict.basic.js: OK
+kangax-es6/let.strict.block-scoped.js: OK
+kangax-es6/let.strict.for-in-shadow.js: OK
+kangax-es6/let.strict.for-iteration.js: OK
+kangax-es6/let.strict.for-loop.js: OK
+kangax-es6/let.strict.no-statement.js: failed
+kangax-es6/let.strict.shadow.js: OK
+kangax-es6/let.strict.tdz.js: failed
+kangax-es6/let.tdz.js: failed
+kangax-es6/literals.binary.Number.js: OK
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: OK
+kangax-es6/literals.object.computed-properties.js: OK
+kangax-es6/literals.object.computed-shorthand-methods.js: OK
+kangax-es6/literals.object.shorthand-methods.js: OK
+kangax-es6/literals.object.shorthand-properties.js: OK
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: OK
+kangax-es6/literals.octal.Number.js: OK
+kangax-es6/literals.octal.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token StrictlyEqual: === at 9, 14 SyntaxError: Unexpected token StrictlyEqual: === at 9, 14
+kangax-es6/misc.Invalid-Date.js: OK
+kangax-es6/misc.Object.freeze.primitives.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: failed
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: OK
+kangax-es6/misc.Object.isExtensible.primitives.js: OK
+kangax-es6/misc.Object.isFrozen.primitives.js: failed
+kangax-es6/misc.Object.isSealed.primitives.js: failed
+kangax-es6/misc.Object.keys.primitives.js: failed
+kangax-es6/misc.Object.preventExtensions.primitives.js: OK
+kangax-es6/misc.Object.seal.primitives.js: OK
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/misc.Proxy.defineProperty.Set.js: failed
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: TypeError: Method copyWithin not found in [object Object]
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: TypeError: Method pop not found in [object Object]
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: TypeError: Method reverse not found in [object Object]
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: TypeError: Method shift not found in [object Object]
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: TypeError: Method splice not found in [object Object]
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: TypeError: Method unshift not found in [object Object]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: TypeError: Method bind not found in [object Object]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: failed
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: failed
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed
+kangax-es6/misc.Proxy.get.Array.concat.js: failed
+kangax-es6/misc.Proxy.get.Array.from.js: failed
+kangax-es6/misc.Proxy.get.Array.iteration.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/misc.Proxy.get.Array.pop.js: failed
+kangax-es6/misc.Proxy.get.Array.reverse.js: failed
+kangax-es6/misc.Proxy.get.Array.shift.js: failed
+kangax-es6/misc.Proxy.get.Array.splice.js: failed
+kangax-es6/misc.Proxy.get.Array.toString.js: TypeError: Method join not found in [object Object]
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: failed
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: Function.prototype.toString cannot be called with non function
+kangax-es6/misc.Proxy.get.Date.toJSON.js: TypeError: Failed to convert this to JSDate
+kangax-es6/misc.Proxy.get.Error.toString.js: TypeError: Failed to convert this to JSError
+kangax-es6/misc.Proxy.get.Function.bind.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.Proxy.get.HasBinding.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: with at 14, 2 SyntaxError: Unexpected token Identifier: with at 14, 2
+kangax-es6/misc.Proxy.get.IteratorComplete.js: OK
+kangax-es6/misc.Proxy.get.JSON.stringify.js: failed
+kangax-es6/misc.Proxy.get.Object.assign.js: failed
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: failed
+kangax-es6/misc.Proxy.get.Promise.resolve.js: OK
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: TypeError: RegExp cannot be invoked directly
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: TypeError: Cannot get property call of undefined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: TypeError: Cannot get property call of undefined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: TypeError: Cannot get property call of undefined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: Cannot get property call of undefined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: TypeError: Failed to convert this to JSRegExp
+kangax-es6/misc.Proxy.get.RegExp.test.js: TypeError: Failed to convert this to JSRegExp
+kangax-es6/misc.Proxy.get.RegExp.toString.js: failed
+kangax-es6/misc.Proxy.get.String.match.js: failed
+kangax-es6/misc.Proxy.get.String.raw.js: Proxy: Cannot convert undefined or null to object
+kangax-es6/misc.Proxy.get.String.replace.js: failed
+kangax-es6/misc.Proxy.get.String.search.js: failed
+kangax-es6/misc.Proxy.get.String.split.js: failed
+kangax-es6/misc.Proxy.get.ToPrimitive.js: failed
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
+kangax-es6/misc.Proxy.get.instanceof.js: TypeError: Right side of instanceof is not a function
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: Error: System.NotImplementedException: The method or operation is not implemented.
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: TypeError: Method copyWithin not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.fill.js: TypeError: Method fill not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.from.js: failed
+kangax-es6/misc.Proxy.set.Array.of.js: failed
+kangax-es6/misc.Proxy.set.Array.pop.js: TypeError: Method pop not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.push.js: TypeError: Method push not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.reverse.js: TypeError: Method reverse not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.shift.js: TypeError: Method shift not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.splice.js: TypeError: Method splice not found in [object Object]
+kangax-es6/misc.Proxy.set.Array.unshift.js: TypeError: Method unshift not found in [object Object]
+kangax-es6/misc.Proxy.set.Object.assign.js: failed
+kangax-es6/misc.RegExp-alter-flags.js: OK
+kangax-es6/misc.RegExp-prototype-toString-generic.js: failed
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.bound-function-prototype.class.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.bound-function-prototype.function.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.bound-function-prototype.generator.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.bound-function-prototype.subclass.js: TypeError: Method call not found in [object Object]
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: OK
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: OK
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token EOF:  at 0, 0 SyntaxError: Unexpected token EOF:  at 0, 0
+kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-2.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token EOF:  at 0, 0 SyntaxError: Unexpected token EOF:  at 0, 0
+kangax-es6/misc.property-order.JSON.parse.js: OK
+kangax-es6/misc.property-order.JSON.stringify.js: failed
+kangax-es6/misc.property-order.Object.assign.js: Error: System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
+kangax-es6/misc.property-order.Object.keys.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: failed
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
+kangax-es6/misc.prototypes-not-instances.js: TypeError: Cannot get property prototype of undefined
+kangax-es6/new-target.assignment-error.js: failed
+kangax-es6/new-target.constructor.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/regex.flags.u.case-folding.js: failed
+kangax-es6/regex.flags.u.codepoint.js: TypeError: Cannot get property 0 of null
+kangax-es6/regex.flags.u.js: TypeError: Cannot get property 0 of null
+kangax-es6/regex.flags.u.non-bmp.js: TypeError: Cannot get property 0 of null
+kangax-es6/regex.flags.y.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/regex.flags.y.lastIndex.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/rest-params.arguments.js: OK
+kangax-es6/rest-params.basic.js: OK
+kangax-es6/rest-params.length.js: failed
+kangax-es6/rest-params.new-function.js: failed
+kangax-es6/rest-params.no-setter.js: failed
+kangax-es6/spread.array-call.js: OK
+kangax-es6/spread.array-literal.js: OK
+kangax-es6/spread.astral-call.js: failed
+kangax-es6/spread.astral-literal.js: failed
+kangax-es6/spread.generator-call.js: Error: System.OverflowException: Arithmetic operation resulted in an overflow.
+kangax-es6/spread.generator-literal.js: OK
+kangax-es6/spread.iterable-call.js: Error: System.OverflowException: Arithmetic operation resulted in an overflow.
+kangax-es6/spread.iterable-instance-call.js: Error: System.OverflowException: Arithmetic operation resulted in an overflow.
+kangax-es6/spread.iterable-instance-literal.js: failed
+kangax-es6/spread.iterable-literal.js: OK
+kangax-es6/spread.non-iterable-error.js: failed
+kangax-es6/spread.sparse-call.js: OK
+kangax-es6/spread.sparse-literal.js: OK
+kangax-es6/spread.string-call.js: OK
+kangax-es6/spread.string-literal.js: OK
+kangax-es6/subclassing.Array.concat.js: failed
+kangax-es6/subclassing.Array.filter.js: failed
+kangax-es6/subclassing.Array.from.js: failed
+kangax-es6/subclassing.Array.isArray.js: OK
+kangax-es6/subclassing.Array.length-access.js: OK
+kangax-es6/subclassing.Array.length-set.js: OK
+kangax-es6/subclassing.Array.map.js: failed
+kangax-es6/subclassing.Array.of.js: failed
+kangax-es6/subclassing.Array.prototype-chain.js: OK
+kangax-es6/subclassing.Array.slice.js: failed
+kangax-es6/subclassing.Array.splice.js: failed
+kangax-es6/subclassing.Function.call.js: OK
+kangax-es6/subclassing.Function.new.js: OK
+kangax-es6/subclassing.Function.prototype-chain.js: OK
+kangax-es6/subclassing.Function.prototype.apply.js: OK
+kangax-es6/subclassing.Function.prototype.bind.js: OK
+kangax-es6/subclassing.Function.prototype.call.js: OK
+kangax-es6/subclassing.Promise.all.js: TypeError: Method all not found in function P() { [native] }
+kangax-es6/subclassing.Promise.js: TypeError: undefined is not iterable
+kangax-es6/subclassing.Promise.prototype-chain.js: OK
+kangax-es6/subclassing.Promise.race.js: TypeError: Method race not found in function P() { [native] }
+kangax-es6/subclassing.RegExp.exec.js: OK
+kangax-es6/subclassing.RegExp.js: OK
+kangax-es6/subclassing.RegExp.prototype-chain.js: OK
+kangax-es6/subclassing.RegExp.test.js: OK
+kangax-es6/subclassing.misc.Boolean.js: OK
+kangax-es6/subclassing.misc.Error.js: failed
+kangax-es6/subclassing.misc.Map.js: OK
+kangax-es6/subclassing.misc.Number.js: OK
+kangax-es6/subclassing.misc.Set.js: OK
+kangax-es6/subclassing.misc.String.js: OK
+kangax-es6/super.correct-constructor.js: OK
+kangax-es6/super.expression.js: OK
+kangax-es6/super.method-calls.js: OK
+kangax-es6/super.new-target-binding.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es6/super.property-access.js: OK
+kangax-es6/super.statement.js: OK
+kangax-es6/super.static-binding.js: OK
+kangax-es6/super.this-binding.js: OK
+kangax-es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
+kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
+kangax-es6/template.basic.js: failed
+kangax-es6/template.caching.js: failed
+kangax-es6/template.escape-sequences.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: strings at 13, 27 SyntaxError: Unexpected token Identifier: strings at 13, 27
+kangax-es6/template.frozen-array.js: failed
+kangax-es6/template.line-break.js: failed
+kangax-es6/template.permanent-caching.js: OK
+kangax-es6/template.tagged.js: OK
+kangax-es6/template.toString.js: OK
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
+kangax-es6/typed-arrays.DataView.Float32.js: OK
+kangax-es6/typed-arrays.DataView.Float64.js: OK
+kangax-es6/typed-arrays.DataView.Int8.js: OK
+kangax-es6/typed-arrays.DataView.Int16.js: OK
+kangax-es6/typed-arrays.DataView.Int32.js: OK
+kangax-es6/typed-arrays.DataView.Uint8.js: OK
+kangax-es6/typed-arrays.DataView.Uint16.js: OK
+kangax-es6/typed-arrays.DataView.Uint32.js: OK
+kangax-es6/typed-arrays.Float32Array.js: OK
+kangax-es6/typed-arrays.Float64Array.js: OK
+kangax-es6/typed-arrays.Int8Array.js: OK
+kangax-es6/typed-arrays.Int16Array.js: OK
+kangax-es6/typed-arrays.Int32Array.js: OK
+kangax-es6/typed-arrays.Symbol.species.js: failed
+kangax-es6/typed-arrays.Uint8Array.js: OK
+kangax-es6/typed-arrays.Uint8ClampedArray.js: OK
+kangax-es6/typed-arrays.Uint16Array.js: OK
+kangax-es6/typed-arrays.Uint32Array.js: OK
+kangax-es6/typed-arrays.constructor-iterables.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.; at YantraJS.Core.Typed.JSInt8Array.SetValue(UInt32 index, JSValue value, JSValue receiver, Boolean throwError) in /src/YantraJS.Core/Core/Array/Typed/JSInt8Array.cs:line 36
+kangax-es6/typed-arrays.constructor-requires-new.js: OK
+kangax-es6/typed-arrays.correct-prototype-chains.js: failed
+kangax-es6/typed-arrays.from.js: OK
+kangax-es6/typed-arrays.of.js: OK
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: failed
+kangax-es6/typed-arrays.prototype.copyWithin.js: OK
+kangax-es6/typed-arrays.prototype.entries.js: OK
+kangax-es6/typed-arrays.prototype.every.js: OK
+kangax-es6/typed-arrays.prototype.fill.js: OK
+kangax-es6/typed-arrays.prototype.filter.js: OK
+kangax-es6/typed-arrays.prototype.findIndex.js: OK
+kangax-es6/typed-arrays.prototype.find.js: OK
+kangax-es6/typed-arrays.prototype.forEach.js: OK
+kangax-es6/typed-arrays.prototype.indexOf.js: OK
+kangax-es6/typed-arrays.prototype.join.js: OK
+kangax-es6/typed-arrays.prototype.keys.js: OK
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: OK
+kangax-es6/typed-arrays.prototype.map.js: OK
+kangax-es6/typed-arrays.prototype.reduceRight.js: OK
+kangax-es6/typed-arrays.prototype.reduce.js: OK
+kangax-es6/typed-arrays.prototype.reverse.js: OK
+kangax-es6/typed-arrays.prototype.slice.js: OK
+kangax-es6/typed-arrays.prototype.some.js: OK
+kangax-es6/typed-arrays.prototype.sort.js: OK
+kangax-es6/typed-arrays.prototype.subarray.js: OK
+kangax-es6/typed-arrays.prototype.values.js: OK
+kangax-es6/unicode-escapes.identifier.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token EOF:  at 0, 0 SyntaxError: Unexpected token EOF:  at 0, 0
+kangax-es6/unicode-escapes.property-access.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token EOF:  at 0, 0 SyntaxError: Unexpected token EOF:  at 0, 0
+kangax-es6/unicode-escapes.property-key.js: failed
+kangax-es6/unicode-escapes.string.js: failed
+kangax-es6/well-known.hasInstance.js: failed
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: failed
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: OK
+kangax-es6/well-known.iterator.js: OK
+kangax-es6/well-known.match.RegExp-constructor.js: TypeError: RegExp cannot be invoked directly
+kangax-es6/well-known.match.String.endsWith.js: TypeError: Substring argument must not be a regular expression.
+kangax-es6/well-known.match.String.includes.js: TypeError: Substring argument must not be a regular expression.
+kangax-es6/well-known.match.String.startsWith.js: TypeError: Substring argument must not be a regular expression.
+kangax-es6/well-known.match.js: failed
+kangax-es6/well-known.replace.js: failed
+kangax-es6/well-known.search.js: failed
+kangax-es6/well-known.species.Array.concat.js: failed
+kangax-es6/well-known.species.Array.filter.js: failed
+kangax-es6/well-known.species.Array.map.js: failed
+kangax-es6/well-known.species.Array.slice.js: failed
+kangax-es6/well-known.species.Array.splice.js: failed
+kangax-es6/well-known.species.Promise.then.js: failed
+kangax-es6/well-known.species.RegExp.split.js: failed
+kangax-es6/well-known.species.js: OK
+kangax-es6/well-known.split.js: failed
+kangax-es6/well-known.toPrimitive.js: failed
+kangax-es6/well-known.toStringTag.existing-builtins.js: failed
+kangax-es6/well-known.toStringTag.js: failed
+kangax-es6/well-known.toStringTag.misc-builtins.js: failed
+kangax-es6/well-known.toStringTag.new-builtins.js: TypeError: Method Symbol.iterator not found on
+kangax-es6/well-known.unscopables.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: with at 12, 2 SyntaxError: Unexpected token Identifier: with at 12, 2
+kangax-es2016/Array.prototype.includes.generic.js: failed
+kangax-es2016/Array.prototype.includes.js: OK
+kangax-es2016/Array.prototype.includes.sparse.js: OK
+kangax-es2016/Array.prototype.includes.typed-array.js: Error: System.ArgumentException: Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray'); at YantraJS.Core.Typed.JSFloat32Array.SetValue(UInt32 index, JSValue value, JSValue receiver, Boolean throwError) in /src/YantraJ
+kangax-es2016/exponentiation.assignment.js: OK
+kangax-es2016/exponentiation.basic.js: OK
+kangax-es2016/exponentiation.unary-negation-error.js: failed
+kangax-es2016/misc.Proxy-Array-includes.js: failed
+kangax-es2016/misc.Proxy-enumerate-removed.js: OK
+kangax-es2016/misc.generator-no-new.js: failed
+kangax-es2016/misc.generator-throw-inner.js: TypeError: Cannot get property value of undefined
+kangax-es2016/misc.nested-rest-destructuring-decl.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2016/misc.nested-rest-destructuring-params.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
+kangax-es2017/Atomics.add.js: TypeError: Cannot get property add of undefined
+kangax-es2017/Atomics.and.js: TypeError: Cannot get property and of undefined
+kangax-es2017/Atomics.compareExchange.js: TypeError: Cannot get property compareExchange of undefined
+kangax-es2017/Atomics.exchange.js: TypeError: Cannot get property exchange of undefined
+kangax-es2017/Atomics.isLockFree.js: TypeError: Cannot get property isLockFree of undefined
+kangax-es2017/Atomics.load.js: TypeError: Cannot get property load of undefined
+kangax-es2017/Atomics.notify.js: TypeError: Cannot get property notify of undefined
+kangax-es2017/Atomics.or.js: TypeError: Cannot get property or of undefined
+kangax-es2017/Atomics.store.js: TypeError: Cannot get property store of undefined
+kangax-es2017/Atomics.sub.js: TypeError: Cannot get property sub of undefined
+kangax-es2017/Atomics.wait.js: TypeError: Cannot get property wait of undefined
+kangax-es2017/Atomics.xor.js: TypeError: Cannot get property xor of undefined
+kangax-es2017/Object.entries.js: failed
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: Cannot convert undefined or null to object
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: OK
+kangax-es2017/Object.values.js: failed
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: OK
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: TypeError: Cannot get property prototype of undefined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: TypeError: Cannot get property prototype of undefined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: TypeError: Cannot get property prototype of undefined
+kangax-es2017/String.prototype.padEnd.js: failed
+kangax-es2017/String.prototype.padStart.js: failed
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: Method __defineGetter__ not found in [object Object]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: Method __defineSetter__ not found in [object Object]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot get property call of undefined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketEnd: ) at 10, 22 SyntaxError: Unexpected token BracketEnd: ) at 10, 22
+kangax-es2017/async.Symbol.toStringTag.js: failed
+kangax-es2017/async.arrow-in-class.js: TypeError: undefined is not iterable
+kangax-es2017/async.arrow.js: TypeError: undefined is not iterable
+kangax-es2017/async.await-non-promise.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2017/async.await-rejection.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2017/async.await.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2017/async.constructor.js: TypeError: undefined is not iterable
+kangax-es2017/async.methods-class.js: TypeError: undefined is not iterable
+kangax-es2017/async.methods-object.js: TypeError: undefined is not iterable
+kangax-es2017/async.must-await-value.js: OK
+kangax-es2017/async.no-await-in-params.js: OK
+kangax-es2017/async.no-line-break.js: OK
+kangax-es2017/async.no-prototype.js: failed
+kangax-es2017/async.prototype-chain.js: failed
+kangax-es2017/async.return.js: OK; TypeError: undefined is not iterable
+kangax-es2017/async.throw.js: TypeError: undefined is not iterablekangax-es2017/async.throw.js: OK
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/trailing-comma.arguments.js: OK
+kangax-es2017/trailing-comma.params.js: OK
+kangax-es2018/Promise.prototype.finally.change-rejection.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2018/Promise.prototype.finally.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2018/async-iterators.for-await-of.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 60, 13 SyntaxError: Unexpected token BracketStart: ( at 60, 13
+kangax-es2018/async-iterators.generators.js: TypeError: Method then not found in [object Object]
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
+kangax-es2018/misc.template-literal-revision.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: tag at 16, 28 SyntaxError: Unexpected token Identifier: tag at 16, 28
+kangax-es2018/object-rest.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: The method or operation is not implemented. at ErrorFrom in /src/YantraJS.Core/Core/JSException.cs:line 182
+kangax-es2018/object-spread.js: OK
+kangax-es2018/regex.flags.s.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 16 SyntaxError: Unexpected token Divide: / at 10, 16
+kangax-es2018/regex.lookbehind.js: OK
+kangax-es2018/regex.named-capture-groups.js: TypeError: Cannot get property year of undefined
+kangax-es2018/regex.unicode-property-escapes.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 27 SyntaxError: Unexpected token Divide: / at 10, 27
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 10, 9 SyntaxError: Unexpected token Divide: / at 10, 9
+kangax-es2019/Array.prototype.flatMap.js: failed
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot get property flat of undefined
+kangax-es2019/Array.prototype.flat.js: OK
+kangax-es2019/Object.fromEntries.js: failed
+kangax-es2019/String.prototype.trimEnd.js: OK
+kangax-es2019/String.prototype.trimStart.js: OK
+kangax-es2019/Symbol.prototype.description.empty.js: failed
+kangax-es2019/Symbol.prototype.description.js: failed
+kangax-es2019/Symbol.prototype.description.undefined.js: failed
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: Method trimLeft not found in  	
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: Method trimRight not found in  	
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: OK
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Unexpected token Divide: / at 1, 24
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: failed
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: Unexpected token RegExLiteral: /x2A before x2A/ at 1, 4
+kangax-es2019/misc.Function-toString.native-code.js: failed
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Unexpected token EOF:  at 0, 0
+kangax-es2019/misc.JSON-stringify-well-formed.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.optional-catch-binding.await.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Expecting BracketStart at 48, 10 SyntaxError: Expecting BracketStart at 48, 10
+kangax-es2019/misc.optional-catch-binding.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Expecting BracketStart at 12, 8 SyntaxError: Expecting BracketStart at 12, 8
+kangax-es2019/misc.optional-catch-binding.yield.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token SemiColon: ; at 11, 11 SyntaxError: Unexpected token SemiColon: ; at 11, 11
+kangax-es2020/BigInt64Array.js: TypeError: cannot create instance of undefined
+kangax-es2020/BigInt.asIntN.js: OK
+kangax-es2020/BigInt.asUintN.js: OK
+kangax-es2020/BigInt.constructor.js: OK
+kangax-es2020/BigInt.js: OK
+kangax-es2020/BigUint64Array.js: TypeError: cannot create instance of undefined
+kangax-es2020/DataView.prototype.getBigInt64.js: TypeError: Cannot mix BigInt and other types, use explicit conversions
+kangax-es2020/DataView.prototype.getBigUint64.js: TypeError: Method setBigUint64 not found in [object Object]
+kangax-es2020/Promise.allSettled.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2020/String.prototype.matchAll.js: TypeError: Method matchAll not found in 11a2bb
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: TypeError: Cannot use 'in' operator to search for 'globalThis' in undefined
+kangax-es2020/globalThis.js: TypeError: Cannot set property __system_global_test__ of undefined
+kangax-es2020/nullish-coalescing.js: OK
+kangax-es2020/optional-chaining.bracket.js: OK
+kangax-es2020/optional-chaining.function-call.js: OK
+kangax-es2020/optional-chaining.method-call.js: TypeError: Cannot get property baz of null
+kangax-es2020/optional-chaining.property.js: OK
+kangax-es2020/optional-chaining.spread-params.js: TypeError: Cannot get property method of null
+kangax-es2021/FinalizationRegistry.js: OK
+kangax-es2021/Promise.any.AggregateError.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2021/Promise.any.fulfillment.js: TypeError: Method reject not found in function Promise() { [native code] }
+kangax-es2021/String.prototype.replaceAll.js: TypeError: Method replaceAll not found in q=query+string+parameters
+kangax-es2021/WeakRef.js: OK
+kangax-es2021/logical-assignment.and.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
+kangax-es2021/logical-assignment.and.short-circuit.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
+kangax-es2021/logical-assignment.nullish.js: OK
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: failed
+kangax-es2021/logical-assignment.nullish.short-circuit.js: OK
+kangax-es2021/logical-assignment.or.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
+kangax-es2021/logical-assignment.or.short-circuit.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
+kangax-es2021/numeric-separators.js: OK
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: Cannot get property prototype of undefined
+kangax-es2022/Error.cause.AggregateError.js: TypeError: cannot create instance of undefined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: TypeError: Cannot get property prototype of undefined
+kangax-es2022/Error.cause.ReferenceError.js: TypeError: cannot create instance of undefined
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: Method hasOwn not found in function Object() { [native code] }
+kangax-es2022/at-method.Array.js: failed
+kangax-es2022/at-method.String.js: TypeError: Method at not found in abc
+kangax-es2022/at-method.TypedArray.js: TypeError: Method at not found in 1,2,3
+kangax-es2022/class-fields.computed-instance.js: OK
+kangax-es2022/class-fields.computed-static.js: OK
+kangax-es2022/class-fields.instance.parent-scope.js: OK
+kangax-es2022/class-fields.private-instance.initializers.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 10, 4 SyntaxError: Unexpected token Hash: # at 10, 4
+kangax-es2022/class-fields.private-instance.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 11, 4 SyntaxError: Unexpected token Hash: # at 11, 4
+kangax-es2022/class-fields.private-instance.optional-access.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 10, 4 SyntaxError: Unexpected token Hash: # at 10, 4
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 10, 4 SyntaxError: Unexpected token Hash: # at 10, 4
+kangax-es2022/class-fields.private-static.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: static at 11, 4 SyntaxError: Unexpected token Identifier: static at 11, 4
+kangax-es2022/class-fields.public-instance.js: OK
+kangax-es2022/class-fields.public-static.js: OK
+kangax-es2022/class-fields.static.define.js: OK
+kangax-es2022/class-methods.private-accessor.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 11, 8 SyntaxError: Unexpected token Hash: # at 11, 8
+kangax-es2022/class-methods.private-instance.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 10, 4 SyntaxError: Unexpected token Hash: # at 10, 4
+kangax-es2022/class-methods.private-static-accessor.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 11, 15 SyntaxError: Unexpected token Hash: # at 11, 15
+kangax-es2022/class-methods.private-static.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: static at 10, 4 SyntaxError: Unexpected token Identifier: static at 10, 4
+kangax-es2022/class-static-init-blocks.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: static at 12, 4 SyntaxError: Unexpected token Identifier: static at 12, 4
+kangax-es2022/ergonomic-brand-checks.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 10, 4 SyntaxError: Unexpected token Hash: # at 10, 4
+kangax-es2022/regex.flags.d.constructor.js: OK
+kangax-es2022/regex.flags.d.shows-in-flags.js: TypeError: Failed to convert this to JSRegExp
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: Method findLastIndex not found in [object Object],[object Object],[object Object],[object Object]
+kangax-es2023/Array.prototype.findLast.js: TypeError: Method findLast not found in [object Object],[object Object],[object Object],[object Object]
+kangax-es2023/Array.prototype.toReversed.js: TypeError: Method toReversed not found in 1,2,3
+kangax-es2023/Array.prototype.toSorted.js: TypeError: Method toSorted not found in C,A,B
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: Method toSpliced not found in A,C
+kangax-es2023/Array.prototype.with.js: TypeError: Method with not found in A,X,C
+kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: Method toReversed not found in 1,2,3
+kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: Method toSorted not found in 3,1,2
+kangax-es2023/TypedArray.prototype.with.js: TypeError: Method with not found in 1,0,2
+kangax-es2023/hashbang.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Hash: # at 1, 1 SyntaxError: Unexpected token Hash: # at 1, 1
+kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: Method transfer not found in [object Object]
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: Method transferToFixedLength not found in [object Object]
+kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: Method transfer not found in [object Object]
+kangax-es2024/Map.groupBy.js: TypeError: Method groupBy not found in function Map() { [native code] }
+kangax-es2024/Object.groupBy.js: TypeError: Method groupBy not found in function Object() { [native code] }
+kangax-es2024/Promise.withResolvers.js: TypeError: Method withResolvers not found in function Promise() { [native code] }
+kangax-es2024/regex.flags.v.constructor.js: OK
+kangax-es2024/regex.flags.v.properties-of-strings.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es2024/regex.flags.v.set-notations.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es2024/regex.flags.v.shows-in-flags.js: TypeError: Failed to convert this to JSRegExp
+kangax-es2024/regex.flags.v.unicode-15.1.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es2024/regex.flags.v.unicode-16.0.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es2024/regex.flags.v.unicode-17.0.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 9 SyntaxError: Unexpected token Divide: / at 9, 9
+kangax-es2025/Iterator.extends.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-es2025/Iterator.from.iterable.js: TypeError: Cannot get property from of undefined
+kangax-es2025/Iterator.from.iterator.js: TypeError: Cannot get property from of undefined
+kangax-es2025/Iterator.instanceof.js: TypeError: Right side of instanceof is undefined
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: Cannot get property prototype of undefined
+kangax-es2025/Iterator.prototype.drop.js: TypeError: Method drop not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.every.js: TypeError: Method every not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.filter.js: TypeError: Method filter not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.find.js: TypeError: Method find not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.flatMap.js: TypeError: Method flatMap not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.forEach.js: TypeError: Method forEach not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.map.js: TypeError: Method map not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.reduce.js: TypeError: Method reduce not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.some.js: TypeError: Method some not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.take.js: TypeError: Method take not found in [object Array Iterator]
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: Method toArray not found in [object Array Iterator]
+kangax-es2025/Promise.try.js: TypeError: undefined is not iterable
+kangax-es2025/RegExp.escape.js: TypeError: Method escape not found in function RegExp() { [native code] }
+kangax-es2025/Set.prototype.difference.js: TypeError: Method difference not found in [object Object]
+kangax-es2025/Set.prototype.intersection.js: TypeError: Method intersection not found in [object Object]
+kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: Method isDisjointFrom not found in [object Object]
+kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: Method isSubsetOf not found in [object Object]
+kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: Method isSupersetOf not found in [object Object]
+kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: Method symmetricDifference not found in [object Object]
+kangax-es2025/Set.prototype.union.js: TypeError: Method union not found in [object Object]
+kangax-es2025/regex.duplicate-named-groups.js: OK
+kangax-es2025/regex.pattern-modifiers.i.js: OK
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Divide: / at 9, 16 SyntaxError: Unexpected token Divide: / at 9, 16
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: failed
+kangax-intl/Intl.Collator.new-instances.js: TypeError: cannot create instance of undefined
+kangax-intl/Intl.Collator.prototype.compare.js: TypeError: Method Collator not found in function JSIntl() { [clr-native] }
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: Method Collator not found in function JSIntl() { [clr-native] }
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: failed
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: TypeError: Method Collator not found in function JSIntl() { [clr-native] }
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: Method resolvedOptions not found in function JSIntlDateTimeFormat() { [clr-native] }
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: failed
+kangax-intl/Intl.NumberFormat.js: failed
+kangax-intl/Intl.NumberFormat.new-instances.js: TypeError: cannot create instance of undefined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: failed
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: TypeError: Method NumberFormat not found in function JSIntl() { [clr-native] }
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: failed
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: failed
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: TypeError: Method isTemplateObject not found in function Array() { [native code] }
+kangax-next/AsyncDisposableStack.js: TypeError: cannot create instance of undefined
+kangax-next/AsyncIterator.extends.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.
+kangax-next/AsyncIterator.from.async-iterable.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.from.iterable.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.from.iterator.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.instanceof.js: TypeError: Right side of instanceof is undefined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot get property prototype of undefined
+kangax-next/AsyncIterator.prototype.drop.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.prototype.every.js: TypeError: Method every not found in [object ]
+kangax-next/AsyncIterator.prototype.filter.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.prototype.find.js: TypeError: Method find not found in [object ]
+kangax-next/AsyncIterator.prototype.flatMap.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: Method forEach not found in [object ]
+kangax-next/AsyncIterator.prototype.map.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: Method reduce not found in [object ]
+kangax-next/AsyncIterator.prototype.some.js: TypeError: Method some not found in [object ]
+kangax-next/AsyncIterator.prototype.take.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token BracketStart: ( at 46, 14 SyntaxError: Unexpected token BracketStart: ( at 46, 14
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: Method toArray not found in [object ]
+kangax-next/DisposableStack.js: TypeError: cannot create instance of undefined
+kangax-next/Map.prototype.upsert.js: TypeError: Method upsert not found in [object Object]
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Error: System.NullReferenceException: Object reference not set to an instance of an object.; at testCode-/zoo/conformance/kangax-next/./SuppressedError.js:8,0(Closures, Arguments&)
+kangax-next/Uint8Array.fromBase64.js: TypeError: Method fromBase64 not found in function Uint8Array() { [native code] }
+kangax-next/Uint8Array.fromHex.js: TypeError: Method fromHex not found in function Uint8Array() { [native code] }
+kangax-next/Uint8Array.setFromBase64.js: TypeError: Method setFromBase64 not found in 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+kangax-next/Uint8Array.setFromHex.js: TypeError: Method setFromHex not found in 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+kangax-next/Uint8Array.toBase64.js: TypeError: Method toBase64 not found in 72,101,108,108,111,32,87,111,114,108,100
+kangax-next/Uint8Array.toHex.js: TypeError: Method toHex not found in 72,101,108,108,111,32,87,111,114,108,100
+kangax-next/WeakMap.prototype.upsert.js: TypeError: Method upsert not found in [object Object]
+kangax-next/await-using.for-of.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: await at 57, 9 SyntaxError: Unexpected token Identifier: await at 57, 9
+kangax-next/await-using.js: OK; TypeError: undefined is not iterable
+kangax-next/class-decorators.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: get at 11, 4 SyntaxError: Unexpected token Identifier: get at 11, 4
+kangax-next/function.sent.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Expecting BracketStart at 11, 21 SyntaxError: Expecting BracketStart at 11, 21
+kangax-next/throw-expr.arrow.js: failed
+kangax-next/throw-expr.conditional.js: failed
+kangax-next/throw-expr.logical.js: failed
+kangax-next/throw-expr.param-init.js: failed
+kangax-next/using.for-of.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Identifier: using at 22, 9 SyntaxError: Unexpected token Identifier: using at 22, 9
+kangax-next/using.js: OK

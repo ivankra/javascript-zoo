@@ -118,7 +118,7 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not callable
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not callable
 es1/annex-b.global.escape.js: ReferenceError: 'escape' is not defined
 es1/annex-b.global.unescape.js: ReferenceError: 'unescape' is not defined
-es1/annex-b.literals.octal.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.literals.octal.js: Legacy octal literals are not allowed in strict mode. (14:8) at Parser.recordStrictModeErrors (/dist/mujs_babel-dist/node_modules/@babel/parser/lib/index.js:6561:12) Warning: babel failed, falling back to the original script Syn
+es1/annex-b.literals.octal.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.literals.octal.js: Legacy octal literals are not allowed in strict mode. (14:8) at Parser.recordStrictModeErrors (/dist/mujs_babel-dist/node_modules/@babel/parser/lib/index.js:6536:12) Warning: babel failed, falling back to the original script Syn
 es1/annex-b.literals.string.octal.js: [!] (plugin commonjs--resolver) SyntaxError: annex-b.literals.string.octal.js: The only valid numeric escape in strict mode is '\0'. (12:6) 13 |   console.log("es1/annex-b.literals.string.octal.js: OK"); 15 |   console.log("es1/annex-b.literals.string.octal.js: failed"); at Parser.recordStrictModeEr
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
@@ -347,7 +347,7 @@ es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: OK
-es5/Array.prototype.filter.js: OK
+es5/Array.prototype.filter.js: filter even numbers failed; sparse array skips missing elements failed
 es5/Array.prototype.forEach.js: OK
 es5/Array.prototype.indexOf.js: OK
 es5/Array.prototype.lastIndexOf.js: OK
@@ -472,7 +472,7 @@ kangax-es5/misc.enumerable-shadow.js: failed
 kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
 kangax-es5/misc.thrown-functions-this.js: OK
 kangax-es5/misc.unreserved-words.js: OK
-kangax-es5/misc.zero-width-identifiers.js: SyntaxError: /tmp/tmp.fGJf8LPEBK.js:10: unexpected character: \u200Cundefined
+kangax-es5/misc.zero-width-identifiers.js: SyntaxError: /tmp/tmp.i4NU7JJHP0.js:10: unexpected character: \u200Cundefined
 kangax-es5/strict.arguments-callee-error.js: failed
 kangax-es5/strict.arguments-caller-error.js: OK
 kangax-es5/strict.arguments-unmapped.js: OK
@@ -1290,9 +1290,9 @@ kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: regular expression: too many character class ranges
 kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: regular expression: too many character class ranges
-kangax-es2019/Array.prototype.flatMap.js: OK
+kangax-es2019/Array.prototype.flatMap.js: failed
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
-kangax-es2019/Array.prototype.flat.js: OK
+kangax-es2019/Array.prototype.flat.js: failed
 kangax-es2019/Object.fromEntries.js: OK
 kangax-es2019/String.prototype.trimEnd.js: OK
 kangax-es2019/String.prototype.trimStart.js: OK
@@ -1306,7 +1306,7 @@ kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: (eval):1: unexpecte
 kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: (eval):1: unexpected token: '[' (expected identifier or keyword)
-kangax-es2019/misc.Function-toString.native-code.js: EvalError: /tmp/tmp.XRLlF6ifk3.js:2003: invalid use of 'eval'undefined
+kangax-es2019/misc.Function-toString.native-code.js: EvalError: /tmp/tmp.rTYeDwDsMo.js:2003: invalid use of 'eval'undefined
 kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: (eval):1: unexpected escape sequence
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
 kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: (eval):1: string not terminated
@@ -1314,14 +1314,14 @@ kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: 
 kangax-es2019/misc.optional-catch-binding.await.js: OK; ReferenceError: 'setTimeout' is not defined
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: OK
-kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.NHa92VXI1B.js:2539: unexpected token: (identifier) (expected ';')undefined
+kangax-es2020/BigInt64Array.js: SyntaxError: /tmp/tmp.PWRpEnCpGT.js:2539: unexpected token: (identifier) (expected ';')undefined
 kangax-es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
 kangax-es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.bnBoj4t9mY.js:12: number with letter suffixundefined
-kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.gqrNDq9sxi.js:12: number with letter suffixundefined
-kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.lmfDPeJekk.js:2539: unexpected token: (identifier) (expected ';')undefined
-kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.c1y79mLmip.js:2539: number with letter suffixundefined
-kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.8wtP6EpM1k.js:2539: number with letter suffixundefined
+kangax-es2020/BigInt.constructor.js: SyntaxError: /tmp/tmp.JiqPIiN4Yx.js:12: number with letter suffixundefined
+kangax-es2020/BigInt.js: SyntaxError: /tmp/tmp.PyyQDFZaU6.js:12: number with letter suffixundefined
+kangax-es2020/BigUint64Array.js: SyntaxError: /tmp/tmp.8xhbDvFk2c.js:2539: unexpected token: (identifier) (expected ';')undefined
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: /tmp/tmp.3VOSSpsANB.js:2539: number with letter suffixundefined
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: /tmp/tmp.F3uuTNEsJ0.js:2539: number with letter suffixundefined
 kangax-es2020/Promise.allSettled.js: ReferenceError: 'setTimeout' is not defined
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK

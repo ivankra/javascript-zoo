@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e0eb3a1c8fa2460d32abffd767c789dc766f563ec3e2835151c25b273724aa0f", "binary_size": 1117640, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "quickjs-ng", "repository": "https://github.com/quickjs-ng/quickjs.git", "revision": "d405777f7eefa22c17c12970317ef3d6e7658f5a", "revision_date": "2025-12-15", "version": "0.11.0-36-gd405777"}
+Metadata: {"arch": "arm64", "binary_sha256": "e8d8141d550c25869ce67788b6df835de7766f8bb095e34b2061c8ebd4088e3f", "binary_size": 1183160, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "quickjs-ng", "repository": "https://github.com/quickjs-ng/quickjs.git", "revision": "fb872c297aed83e81f415508e5e89545c0c440d1", "revision_date": "2026-02-10", "version": "0.12.0-2-gfb872c2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

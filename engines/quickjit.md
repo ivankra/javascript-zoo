@@ -17,15 +17,15 @@ QuickJS fork that JIT-translates bytecode using TCC.
 
 <details><summary>ES1-ES5: 99%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/quickjit.txt">Full log</a>.</li>
-<li>ES1: 99%<pre>
-<a href="../conformance/es1/asi.js">asi.js</a>: failed: a = b + c&lt;LF&gt; (d + e).print()
+<li>ES1: 99%, <b>1 crash</b><pre>
+<a href="../conformance/es1/asi.js">asi.js</a>: crashed (signal 11)
 </pre></li>
 <li>ES3: 100%</li>
 <li>ES5: 100%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 93%, ES2016+ 55%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 93%, <b>2 crashes</b><pre>
+<li>ES6: 93%, <b>3 crashes</b><pre>
 <a href="../conformance/kangax-es6/Number.parseFloat.js">Number.parseFloat.js</a>: failed
 <a href="../conformance/kangax-es6/Number.parseInt.js">Number.parseInt.js</a>: failed
 <a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
@@ -38,7 +38,7 @@ QuickJS fork that JIT-translates bytecode using TCC.
 <a href="../conformance/kangax-es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: failed
 <a href="../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: null or undefined are forbidden
 <a href="../conformance/kangax-es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: not a function
-<a href="../conformance/kangax-es6/arrow.5-param.js">arrow.5-param.js</a>: failed
+<a href="../conformance/kangax-es6/arrow.5-param.js">arrow.5-param.js</a>: crashed (signal 11)
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
 <a href="../conformance/kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
@@ -115,4 +115,4 @@ QuickJS fork that JIT-translates bytecode using TCC.
 <li>Intl: 25%</li>
 </ul></details>
 
-💥 **2 crashes during testing**
+💥 **4 crashes during testing**

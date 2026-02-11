@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "35dc4032417f666913432ed4730b0befbcd948703d1f2048504dffdfb5fe9eba", "binary_size": 43462552, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "3610a31279dbda23085a6e1254e89c71b0c396e3", "revision_date": "2025-12-20"}
+Metadata: {"arch": "arm64", "binary_sha256": "cfdc4a799667f6ba3a0bba6a6c6c697d8b2bc1da9fe49cbc3816d13743d23608", "binary_size": 43814960, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "0aec6a12b4135e6981a6e72decf0c31a92e78f15", "revision_date": "2026-02-09"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1106,11 +1106,11 @@ kangax-es6/super.this-binding.js: OK
 kangax-es6/tail-calls.direct.js: InternalError: Call stack size limit exceeded
 kangax-es6/tail-calls.mutual.js: InternalError: Call stack size limit exceeded
 kangax-es6/template.basic.js: OK
-kangax-es6/template.caching.js: failed
+kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
-kangax-es6/template.frozen-array.js: failed
+kangax-es6/template.frozen-array.js: OK
 kangax-es6/template.line-break.js: OK
-kangax-es6/template.permanent-caching.js: failed
+kangax-es6/template.permanent-caching.js: OK
 kangax-es6/template.tagged.js: OK
 kangax-es6/template.toString.js: OK
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: OK
@@ -1252,7 +1252,7 @@ kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: OK
+kangax-es2017/async.await-rejection.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 kangax-es2017/async.await.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK
@@ -1437,9 +1437,9 @@ kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: OK
-kangax-es2025/regex.pattern-modifiers.i.js: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
-kangax-es2025/regex.pattern-modifiers.m.js: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
-kangax-es2025/regex.pattern-modifiers.s.js: RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17) Uncaught exception: [SyntaxError] RegExp compile error: Error during parsing of regular expression: ^---- Content of capture group is invalid. (line: 9, column: 17)
+kangax-es2025/regex.pattern-modifiers.i.js: failed
+kangax-es2025/regex.pattern-modifiers.m.js: OK
+kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK

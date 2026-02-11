@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "72f6b6b52ecd894b7d4cdd26c68b4e0ebe7fa020c33f1d97fc472d9619adf3eb", "binary_size": 199648, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "cesanta-mjs", "repository": "https://github.com/cesanta/mjs.git", "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773", "revision_date": "2025-12-17", "version": "2.20.0-23-g55e5fa3"}
+Metadata: {"arch": "arm64", "binary_sha256": "738d25b7261e554f380c5c90d002547f23631d55b4ad6c9bbc0c4877f9b61258", "binary_size": 199688, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "cesanta-mjs", "repository": "https://github.com/cesanta/mjs.git", "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773", "revision_date": "2025-12-17", "version": "2.20.0-23-g55e5fa3"}
 es1/Array.js: MJS error: [var] is not implemented
 es1/Array.length.assignment.js: MJS error: [var] is not implemented
 es1/Array.length.js: MJS error: [var] is not implemented

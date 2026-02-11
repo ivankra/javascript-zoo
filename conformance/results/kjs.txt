@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "db7350b2be7101fd58593dc6791e31f60efcb7414a6f3ff2c205290cfe9bd824", "binary_size": 1062728, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "kjs", "repository": "https://github.com/KDE/kjs.git", "revision": "5824588da24f797b4255929918efbc8b484baa09", "revision_date": "2025-07-28", "version": "5.117.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "8412a4fdb85d58484a7926fe40f6710f3e60459678f03e3c88a3c45ce9e509a0", "binary_size": 1128304, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "kjs", "repository": "https://github.com/KDE/kjs.git", "revision": "5824588da24f797b4255929918efbc8b484baa09", "revision_date": "2025-07-28", "version": "5.117.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

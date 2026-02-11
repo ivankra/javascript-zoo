@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 2565647, "engine": "nashorn", "repository": "https://github.com/openjdk/nashorn.git", "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d", "revision_date": "2025-08-21", "version": "15.7"}
+Metadata: {"arch": "arm64", "dist_size": 2565650, "engine": "nashorn", "repository": "https://github.com/openjdk/nashorn.git", "revision": "4923f1e70e460d87c0eeb1f5232344487d46108d", "revision_date": "2025-08-21", "version": "15.7"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

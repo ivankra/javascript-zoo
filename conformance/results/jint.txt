@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 72527145, "dotnet": "10.0.102", "engine": "hako", "repository": "https://github.com/6over3/hako.git", "revision": "b06576afc382028cf849fa36e9bfd15115be5a71", "revision_date": "2026-01-04", "version": "1.0.14"}
+Metadata: {"arch": "arm64", "dist_size": 3451587, "dotnet": "10.0.102", "engine": "jint", "repository": "https://github.com/sebastienros/jint.git", "revision": "78dabcb47f3638d823fcca9cb2434810233e7dec", "revision_date": "2026-02-10"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -115,7 +115,7 @@ es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: OK
 es1/annex-b.Date.prototype.setYear.js: OK
-es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: Error: Property 'toGMTString' of object is not a function
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
@@ -230,7 +230,7 @@ es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: OK
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -364,7 +364,7 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: OK
+es5/JSON.parse.js: trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
@@ -582,7 +582,7 @@ kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: OK
+kangax-es6/Promise.all.iterable.js: failed
 kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
@@ -594,8 +594,8 @@ kangax-es6/Proxy.JSON.stringify.js: OK
 kangax-es6/Proxy.constructor-requires-new.js: OK
 kangax-es6/Proxy.handler.apply.invariants.js: OK
 kangax-es6/Proxy.handler.apply.js: OK
-kangax-es6/Proxy.handler.construct.invariants.js: failed
-kangax-es6/Proxy.handler.construct.js: TypeError: not a function
+kangax-es6/Proxy.handler.construct.invariants.js: OK
+kangax-es6/Proxy.handler.construct.js: OK
 kangax-es6/Proxy.handler.defineProperty.invariants.js: OK
 kangax-es6/Proxy.handler.defineProperty.js: OK
 kangax-es6/Proxy.handler.deleteProperty.invariants.js: OK
@@ -715,13 +715,13 @@ kangax-es6/WeakSet.no-clear.js: OK
 kangax-es6/WeakSet.prototype-not-instance.js: OK
 kangax-es6/WeakSet.prototype.add-returns-this.js: OK
 kangax-es6/WeakSet.prototype.delete.js: OK
-kangax-es6/annex-b.RegExp.prototype.compile.js: OK
-kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
-kangax-es6/annex-b.String.prototype.html.existence.js: OK
-kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: null or undefined are forbidden
-kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
-kangax-es6/annex-b.function.hoisted-block-level.js: OK
-kangax-es6/annex-b.function.if-statement.js: TypeError: not a function
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: Property 'compile' of object is not a function
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: Property 'anchor' of object is not a function
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Property 'anchor' of object is not a function
+kangax-es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not defined
+kangax-es6/annex-b.function.if-statement.js: OK
 kangax-es6/annex-b.function.labeled.js: OK
 kangax-es6/annex-b.html-comments.js: OK
 kangax-es6/annex-b.regex.backreferences-octal.js: OK
@@ -785,7 +785,7 @@ kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: OK
-kangax-es6/const.no-redefine.js: OK
+kangax-es6/const.no-redefine.js: failed
 kangax-es6/const.no-statement.js: OK
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
@@ -985,7 +985,7 @@ kangax-es6/misc.Proxy.get.Object.defineProperties.js: OK
 kangax-es6/misc.Proxy.get.Promise.resolve.js: OK
 kangax-es6/misc.Proxy.get.RegExp-constructor.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
-kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed
 kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
 kangax-es6/misc.Proxy.get.RegExp.flags.js: OK
@@ -995,7 +995,7 @@ kangax-es6/misc.Proxy.get.String.match.js: failed
 kangax-es6/misc.Proxy.get.String.raw.js: OK
 kangax-es6/misc.Proxy.get.String.replace.js: OK
 kangax-es6/misc.Proxy.get.String.search.js: failed
-kangax-es6/misc.Proxy.get.String.split.js: OK
+kangax-es6/misc.Proxy.get.String.split.js: failed
 kangax-es6/misc.Proxy.get.ToPrimitive.js: OK
 kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: OK
 kangax-es6/misc.Proxy.get.instanceof.js: OK
@@ -1016,11 +1016,11 @@ kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
 kangax-es6/misc.accessors-no-constructor.js: OK
-kangax-es6/misc.bound-function-prototype.arrow.js: failed
-kangax-es6/misc.bound-function-prototype.class.js: failed
-kangax-es6/misc.bound-function-prototype.function.js: failed
-kangax-es6/misc.bound-function-prototype.generator.js: failed
-kangax-es6/misc.bound-function-prototype.subclass.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: OK
+kangax-es6/misc.bound-function-prototype.class.js: OK
+kangax-es6/misc.bound-function-prototype.function.js: OK
+kangax-es6/misc.bound-function-prototype.generator.js: OK
+kangax-es6/misc.bound-function-prototype.subclass.js: OK
 kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: OK
 kangax-es6/misc.for-in-no-assignment-strict.js: OK
@@ -1038,7 +1038,7 @@ kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 kangax-es6/misc.prototypes-not-instances.js: OK
 kangax-es6/new-target.assignment-error.js: OK
 kangax-es6/new-target.constructor.js: OK
-kangax-es6/regex.flags.u.case-folding.js: OK
+kangax-es6/regex.flags.u.case-folding.js: failed
 kangax-es6/regex.flags.u.codepoint.js: OK
 kangax-es6/regex.flags.u.js: OK
 kangax-es6/regex.flags.u.non-bmp.js: OK
@@ -1079,7 +1079,7 @@ kangax-es6/subclassing.Function.call.js: OK
 kangax-es6/subclassing.Function.new.js: OK
 kangax-es6/subclassing.Function.prototype-chain.js: OK
 kangax-es6/subclassing.Function.prototype.apply.js: OK
-kangax-es6/subclassing.Function.prototype.bind.js: failed
+kangax-es6/subclassing.Function.prototype.bind.js: OK
 kangax-es6/subclassing.Function.prototype.call.js: OK
 kangax-es6/subclassing.Promise.all.js: OK
 kangax-es6/subclassing.Promise.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: crashed (signal 6); error while executing at wasm backtrace: Assertion failed: list_empty(&rt->gc_obj_list) (quickjs.c: JS_FreeRuntime: 2044) Unhandled exception. Wasmtime.TrapException: error while executing at wasm backtrace:
-kangax-es6/tail-calls.mutual.js: crashed (signal 6); error while executing at wasm backtrace: Assertion failed: list_empty(&rt->gc_obj_list) (quickjs.c: JS_FreeRuntime: 2044) Unhandled exception. Wasmtime.TrapException: error while executing at wasm backtrace:
+kangax-es6/tail-calls.direct.js: crashed (signal 6)
+kangax-es6/tail-calls.mutual.js: crashed (signal 6)
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK
@@ -1247,13 +1247,13 @@ kangax-es2017/annex-b.Proxy.__defineGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__defineSetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: OK
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: OK
-kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: failed
 kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: OK
-kangax-es2017/async.await.js: OK
+kangax-es2017/async.await-rejection.js: failed
+kangax-es2017/async.await.js: failed
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK
 kangax-es2017/async.methods-object.js: OK
@@ -1265,7 +1265,7 @@ kangax-es2017/async.prototype-chain.js: OK
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
@@ -1280,16 +1280,16 @@ kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: OK
 kangax-es2018/regex.named-capture-groups.js: OK
-kangax-es2018/regex.unicode-property-escapes.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: OK
+kangax-es2018/regex.unicode-property-escapes.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Greek}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.js:10:29)
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Extended_Pictographic}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-11.js:10:11)
 kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Elymaic}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-12.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Chorasmian}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-13.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Vithkuqi}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-14.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Unified_Ideograph}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-15.1.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Error: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Kawi}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-15.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Error: Invalid regular expression: /\p{Script=Todhri}/u: Invalid property name (regex.unicode-property-escapes.unicode-16.0.js:10:11)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Error: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name (regex.unicode-property-escapes.unicode-17.0.js:10:11)
 kangax-es2019/Array.prototype.flatMap.js: OK
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 kangax-es2019/Array.prototype.flat.js: OK
@@ -1301,13 +1301,13 @@ kangax-es2019/Symbol.prototype.description.js: OK
 kangax-es2019/Symbol.prototype.description.undefined.js: OK
 kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
 kangax-es2019/annex-b.String.prototype.trimRight.js: OK
-kangax-es2019/misc.Function-toString.Function-constructor.js: OK
-kangax-es2019/misc.Function-toString.arrows.js: OK
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: OK
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: OK
-kangax-es2019/misc.Function-toString.computed-names.js: OK
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: failed
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: failed
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: failed
+kangax-es2019/misc.Function-toString.computed-names.js: failed
 kangax-es2019/misc.Function-toString.native-code.js: OK
-kangax-es2019/misc.Function-toString.unicode-escapes.js: OK
+kangax-es2019/misc.Function-toString.unicode-escapes.js: failed
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
 kangax-es2019/misc.JSON-superset.line-separator.js: OK
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
@@ -1333,11 +1333,11 @@ kangax-es2020/optional-chaining.function-call.js: OK
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: OK
-kangax-es2021/FinalizationRegistry.js: ReferenceError: 'FinalizationRegistry' is not defined
+kangax-es2021/FinalizationRegistry.js: OK
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
-kangax-es2021/WeakRef.js: ReferenceError: 'WeakRef' is not defined
+kangax-es2021/WeakRef.js: OK
 kangax-es2021/logical-assignment.and.js: OK
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: OK
 kangax-es2021/logical-assignment.and.short-circuit.js: OK
@@ -1366,7 +1366,7 @@ kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
 kangax-es2022/Error.cause.URIError.js: OK
 kangax-es2022/Object.hasOwn.ToObject-first.js: OK
 kangax-es2022/Object.hasOwn.js: OK
-kangax-es2022/at-method.Array.js: OK
+kangax-es2022/at-method.Array.js: failed
 kangax-es2022/at-method.String.js: OK
 kangax-es2022/at-method.TypedArray.js: OK
 kangax-es2022/class-fields.computed-instance.js: OK
@@ -1404,13 +1404,13 @@ kangax-es2024/ArrayBuffer.prototype.transfer.js: OK
 kangax-es2024/Map.groupBy.js: OK
 kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: OK
-kangax-es2024/regex.flags.v.constructor.js: OK
-kangax-es2024/regex.flags.v.properties-of-strings.js: OK
-kangax-es2024/regex.flags.v.set-notations.js: OK
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid regular expression flags (1:1)
+kangax-es2024/regex.flags.v.properties-of-strings.js: Error: Invalid regular expression flags (regex.flags.v.properties-of-strings.js:9:39)
+kangax-es2024/regex.flags.v.set-notations.js: Error: Invalid regular expression flags (regex.flags.v.set-notations.js:9:43)
 kangax-es2024/regex.flags.v.shows-in-flags.js: OK
-kangax-es2024/regex.flags.v.unicode-15.1.js: OK
-kangax-es2024/regex.flags.v.unicode-16.0.js: OK
-kangax-es2024/regex.flags.v.unicode-17.0.js: OK
+kangax-es2024/regex.flags.v.unicode-15.1.js: Error: Invalid regular expression flags (regex.flags.v.unicode-15.1.js:9:27)
+kangax-es2024/regex.flags.v.unicode-16.0.js: Error: Invalid regular expression flags (regex.flags.v.unicode-16.0.js:9:27)
+kangax-es2024/regex.flags.v.unicode-17.0.js: Error: Invalid regular expression flags (regex.flags.v.unicode-17.0.js:9:27)
 kangax-es2025/Iterator.extends.js: OK
 kangax-es2025/Iterator.from.iterable.js: OK
 kangax-es2025/Iterator.from.iterator.js: OK
@@ -1437,76 +1437,76 @@ kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: OK
-kangax-es2025/regex.pattern-modifiers.i.js: OK
-kangax-es2025/regex.pattern-modifiers.m.js: OK
-kangax-es2025/regex.pattern-modifiers.s.js: OK
+kangax-es2025/regex.pattern-modifiers.i.js: Error: Invalid regular expression: /^[a-z](?-i:[a-z])$/i: Invalid group (regex.pattern-modifiers.i.js:9:24)
+kangax-es2025/regex.pattern-modifiers.m.js: Error: Invalid regular expression: /^a|(?m:^b)/: Invalid group (regex.pattern-modifiers.m.js:9:21)
+kangax-es2025/regex.pattern-modifiers.s.js: Error: Invalid regular expression: /.(?-s:.)/s: Invalid group (regex.pattern-modifiers.s.js:9:19)
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleTimeString.js: OK
-kangax-intl/Intl.Collator.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.Collator.valid-tags.js: failed
-kangax-intl/Intl.Collator.without-new.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
-kangax-intl/Intl.DateTimeFormat.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
-kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.NumberFormat.valid-tags.js: failed
-kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: 'Intl' is not defined
-kangax-intl/Intl.js: failed
-kangax-intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
+kangax-intl/Intl.Collator.js: OK
+kangax-intl/Intl.Collator.new-instances.js: OK
+kangax-intl/Intl.Collator.prototype.compare.js: OK
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: OK
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
+kangax-intl/Intl.Collator.valid-tags.js: OK
+kangax-intl/Intl.Collator.without-new.js: OK
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: OK
+kangax-intl/Intl.DateTimeFormat.js: OK
+kangax-intl/Intl.DateTimeFormat.new-instances.js: OK
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
+kangax-intl/Intl.DateTimeFormat.without-new.js: OK
+kangax-intl/Intl.NumberFormat.js: OK
+kangax-intl/Intl.NumberFormat.new-instances.js: OK
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
+kangax-intl/Intl.NumberFormat.valid-tags.js: OK
+kangax-intl/Intl.NumberFormat.without-new.js: OK
+kangax-intl/Intl.js: OK
+kangax-intl/Intl.prototype.js: OK
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
-kangax-next/Array.isTemplateObject.js: TypeError: not a function
-kangax-next/AsyncDisposableStack.js: ReferenceError: 'AsyncDisposableStack' is not defined
-kangax-next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.iterable.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.from.iterator.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
-kangax-next/AsyncIterator.prototype.drop.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.every.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.filter.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.find.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.forEach.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.map.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.reduce.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.some.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.take.js: TypeError: not a function
-kangax-next/AsyncIterator.prototype.toArray.js: TypeError: not a function
-kangax-next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
-kangax-next/Map.prototype.upsert.js: TypeError: not a function
+kangax-next/Array.isTemplateObject.js: TypeError: Property 'isTemplateObject' of object is not a function
+kangax-next/AsyncDisposableStack.js: failed
+kangax-next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: TypeError: Property 'drop' of object is not a function
+kangax-next/AsyncIterator.prototype.every.js: TypeError: Property 'every' of object is not a function
+kangax-next/AsyncIterator.prototype.filter.js: TypeError: Property 'filter' of object is not a function
+kangax-next/AsyncIterator.prototype.find.js: TypeError: Property 'find' of object is not a function
+kangax-next/AsyncIterator.prototype.flatMap.js: TypeError: Property 'flatMap' of object is not a function
+kangax-next/AsyncIterator.prototype.forEach.js: TypeError: Property 'forEach' of object is not a function
+kangax-next/AsyncIterator.prototype.map.js: TypeError: Property 'map' of object is not a function
+kangax-next/AsyncIterator.prototype.reduce.js: TypeError: Property 'reduce' of object is not a function
+kangax-next/AsyncIterator.prototype.some.js: TypeError: Property 'some' of object is not a function
+kangax-next/AsyncIterator.prototype.take.js: TypeError: Property 'take' of object is not a function
+kangax-next/AsyncIterator.prototype.toArray.js: TypeError: Property 'toArray' of object is not a function
+kangax-next/DisposableStack.js: OK
+kangax-next/Map.prototype.upsert.js: TypeError: Property 'upsert' of object is not a function
 kangax-next/RegExp.1-9.js: failed
 kangax-next/RegExp.lastMatch.js: failed
-kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SyntaxError: expecting ';'
+kangax-next/ShadowRealm.js: OK
+kangax-next/SuppressedError.js: OK
 kangax-next/Uint8Array.fromBase64.js: OK
 kangax-next/Uint8Array.fromHex.js: OK
 kangax-next/Uint8Array.setFromBase64.js: OK
 kangax-next/Uint8Array.setFromHex.js: OK
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
-kangax-next/WeakMap.prototype.upsert.js: TypeError: not a function
-kangax-next/await-using.for-of.js: SyntaxError: unexpected token in expression: 'await'
-kangax-next/await-using.js: SyntaxError: expecting ';'
-kangax-next/class-decorators.js: SyntaxError: invalid property name
-kangax-next/function.sent.js: SyntaxError: expecting '('
-kangax-next/throw-expr.arrow.js: SyntaxError: unexpected token in expression: 'throw'
-kangax-next/throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
-kangax-next/throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
-kangax-next/throw-expr.param-init.js: SyntaxError: unexpected token in expression: 'throw'
-kangax-next/using.for-of.js: SyntaxError: expected 'of' or 'in' in for control expression
-kangax-next/using.js: SyntaxError: expecting ';'
+kangax-next/WeakMap.prototype.upsert.js: TypeError: Property 'upsert' of object is not a function
+kangax-next/await-using.for-of.js: OK
+kangax-next/await-using.js: OK
+kangax-next/class-decorators.js: failed
+kangax-next/function.sent.js: Error: Unexpected token '.' (function.sent.js:11:22)
+kangax-next/throw-expr.arrow.js: Error: Unexpected token 'throw' (throw-expr.arrow.js:9:18)
+kangax-next/throw-expr.conditional.js: Error: Unexpected token 'throw' (throw-expr.conditional.js:9:15)
+kangax-next/throw-expr.logical.js: Error: Unexpected token 'throw' (throw-expr.logical.js:11:15)
+kangax-next/throw-expr.param-init.js: Error: Unexpected token 'throw' (throw-expr.param-init.js:9:22)
+kangax-next/using.for-of.js: OK
+kangax-next/using.js: OK

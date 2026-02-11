@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e37dee68fafe7201fff49879e16ece19cf117fc7442d26f5c987938c1bf8da6e", "binary_size": 13079120, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "qv4", "repository": "https://github.com/qt/qt5.git", "revision": "f00a460c60f8e9db2f7b542f1d321807ac318cf7", "revision_date": "2025-12-12", "version": "6.11.0-beta1"}
+Metadata: {"arch": "arm64", "binary_sha256": "21f116abeadee4671c01feaa94d837772bdd5ab08ead9c1d7ce9f85afa8e56bd", "binary_size": 13079240, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "qv4", "repository": "https://github.com/qt/qt5.git", "revision": "ac952a3cc3a8303e2d3dfca10fe634bed3757589", "revision_date": "2026-01-09", "version": "6.11.0-beta2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

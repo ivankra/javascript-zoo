@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "173231c3ab3257c6d35da38ce634ed2e62fe69673f36d40a877badf345bb491b", "binary_size": 207024, "cc": "clang 22.0.0 (++20251208082922+ec787501dc3d-1~exp1~20251208083036.255)", "engine": "mocha", "repository": "https://github.com/doodlewind/mocha1995.git", "revision": "3d109cbf6d185c3665da2982e92ce198406cca01", "revision_date": "2024-10-12"}
+Metadata: {"arch": "arm64", "binary_sha256": "eb0798a23f3d6a7aaeaa910aa07f2053c3e5f4c73cb942b39b111eba13445d66", "binary_size": 207024, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "mocha", "repository": "https://github.com/doodlewind/mocha1995.git", "revision": "3d109cbf6d185c3665da2982e92ce198406cca01", "revision_date": "2024-10-12"}
 es1/Array.js: failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

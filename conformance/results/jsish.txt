@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "55be01187386f3671189ec9fe3b213e17c6a24754592b44fffcbf9276f2a7380", "binary_size": 2488008, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "jsish", "repository": "https://github.com/pcmacdon/jsish.git", "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f", "revision_date": "2022-08-23", "version": "3.0-252-g42c694c"}
+Metadata: {"arch": "arm64", "binary_sha256": "b8d852f5b1e1526e846e5ba50e9ec7cb68ee78eaa224bbd91592eaa6cf5d5120", "binary_size": 2488056, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "jsish", "repository": "https://github.com/pcmacdon/jsish.git", "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f", "revision_date": "2022-08-23", "version": "3.0-252-g42c694c"}
 es1/Array.js: Array.js:12: "es1/Array.js: Array.length failed", Array.js:83:  "es1/Array.js: failed",
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "5b9a93be024c499d95b540c715825a623e75137017053ce97dfa8599b38067f7", "binary_size": 4204624, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "hermes", "repository": "https://github.com/facebook/hermes.git", "revision": "7ad93ab30325ed437a6eaaf310f7f87e9a3070e7", "revision_date": "2025-11-03", "version": "0.14.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "0b98bcf5f3a6e717819e89c491df873d1e62e20b55e885355cecd207016d83c6", "binary_size": 4204736, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "hermes", "repository": "https://github.com/facebook/hermes.git", "revision": "515c2b4d8c5214003bb93314df7e52fc2d4f177f", "revision_date": "2026-02-04", "version": "0.15.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1640679, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "77cc7514f8a5f1e0773a681716ba5628781f0096", "revision_date": "2025-12-21"}
+Metadata: {"arch": "arm64", "dist_size": 2913833, "engine": "engine262", "repository": "https://github.com/engine262/engine262.git", "revision": "4d5d1d017bb82a002adb06f997d7e0d57bb71226", "revision_date": "2026-01-01"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

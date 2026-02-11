@@ -25,12 +25,12 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Not a callable object
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Not a callable object
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Not a callable object
-<a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: thread 'main' (1454988) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin &lt;= end
-<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: Parse errors:
+<a href="../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: thread 'main' (1713622) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin &lt;= end
+<a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError:
 <a href="../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../conformance/es1/asi.js">asi.js</a>: TypeError: Could not set property '0' of [object Object].
-<a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: Parse errors:
-<a href="../conformance/es1/with.js">with.js</a>: Parse errors:
+<a href="../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError:
+<a href="../conformance/es1/with.js">with.js</a>: SyntaxError:
 </pre></li>
 <li>ES3: 91%<pre>
 <a href="../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Date.prototype.toLocaleDateString not implemented
@@ -48,13 +48,12 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../conformance/es3/regex.lookahead.js">regex.lookahead.js</a>: SyntaxError: regex parse error: error: look-around, including look-ahead and look-behind, is not supported
 <a href="../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: SyntaxError: regex parse error: error: look-around, including look-ahead and look-behind, is not supported
 </pre></li>
-<li>ES5: 85%<pre>
+<li>ES5: 86%<pre>
 <a href="../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Could not set property 'a' of [object Object].
 <a href="../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Could not set property 'y' of [object Object].
 <a href="../conformance/es5/Object.freeze.js">Object.freeze.js</a>: TypeError: Could not set property 'x' of [object Object].
 <a href="../conformance/es5/Object.preventExtensions.js">Object.preventExtensions.js</a>: TypeError: Could not set property 'y' of [object Object].
 <a href="../conformance/es5/Object.seal.js">Object.seal.js</a>: TypeError: Could not set property 'y' of [object Object].
-<a href="../conformance/es5/debugger.js">debugger.js</a>: thread 'main' (1441372) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3557:43:
 <a href="../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: TypeError: Could not set property 'Infinity'.
 <a href="../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: TypeError: Could not set property 'NaN'.
 <a href="../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: TypeError: Could not set property 'undefined'.
@@ -63,7 +62,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 88%, ES2016+ 85%, Next 0%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 88%, ES2016+ 84%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 88%, <b>2 crashes</b><pre>
 <a href="../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
 <a href="../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
@@ -112,7 +111,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__defineSetter__.js">annex-b.Proxy.__defineSetter__.js</a>: TypeError: Cannot read property 'call' of undefined.
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__lookupGetter__.js">annex-b.Proxy.__lookupGetter__.js</a>: TypeError: Cannot read property 'call' of undefined.
 <a href="../conformance/kangax-es2017/annex-b.Proxy.__lookupSetter__.js">annex-b.Proxy.__lookupSetter__.js</a>: TypeError: Cannot read property 'call' of undefined.
-<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: Parse errors:
+<a href="../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError:
 </pre></li>
 <li>ES2018: 67%<pre>
 <a href="../conformance/kangax-es2018/Promise.prototype.finally.change-rejection.js">Promise.prototype.finally.change-rejection.js</a>: failed
@@ -129,7 +128,8 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 </pre></li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
-<li>ES2022: 95%<pre>
+<li>ES2022: 93%<pre>
+<a href="../conformance/kangax-es2022/class-fields.instance.parent-scope.js">class-fields.instance.parent-scope.js</a>: ReferenceError: Cannot access undeclared variable 'a'.
 <a href="../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: Cannot assign to undeclared variable 'global'.
 </pre></li>
 <li>ES2023: 100%</li>

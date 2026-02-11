@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "335964632a1a29105d06b815516551571c7044ab47d53403151a0ef2f0770bb3", "binary_size": 199680, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "flathead", "repository": "https://github.com/ndreynolds/flathead.git", "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65", "revision_date": "2017-04-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "b2ef93c17e420743b828c0f9d4a10437a79149063308d4031d7e3c9c4c327b74", "binary_size": 199720, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "flathead", "repository": "https://github.com/ndreynolds/flathead.git", "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65", "revision_date": "2017-04-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
