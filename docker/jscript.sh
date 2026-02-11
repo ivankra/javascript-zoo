@@ -8,7 +8,7 @@
 #   jscript.sh --version         print engine version
 #
 # On the first run, the script will install Wine, winetricks and download
-# WSH/JScript binaries from microsoft.com into ./jscript-dist directory.
+# WSH/JScript binaries from microsoft.com into ~/.cache/jsz-jscript.
 # Due to licensing, these binaries are not redistributable - we can only
 # ship this installer script to users.
 #
@@ -21,12 +21,17 @@ set -euo pipefail
 
 SCRIPT_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
-export WINEPREFIX="$SCRIPT_DIR/jscript-dist"
+export WINEPREFIX="$HOME/.cache/jsz-jscript"
 export WINEARCH=win32
 export WINEDEBUG="${WINEDEBUG:--all,+err}"
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-$WINEPREFIX/run}
 
 mkdir -p "$XDG_RUNTIME_DIR" || true
+
+# Silence errors from using stdbuf in conformance/run.sh
+if [[ "${LD_PRELOAD:-}" == /usr/libexec/coreutils/libstdbuf.so ]]; then
+  export LD_PRELOAD=
+fi
 
 install_wine() {
   local missing_packages=0
@@ -86,6 +91,8 @@ install_wsh57() {
 
   date +%s >"$install_marker"
   echo "Success - installed JScript into $WINEPREFIX"
+
+  print_version
 }
 
 # Convert unix path to Z:\... path for wine
