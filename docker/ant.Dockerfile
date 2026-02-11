@@ -31,8 +31,12 @@ RUN cd /opt && wget -O zig.tar.xz "https://ziglang.org/download/${ZIG_VER}/zig-$
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 
-RUN git clone --depth 1 --recursive https://github.com/theMackabu/ant.git /src
+ARG REPO=https://github.com/theMackabu/ant.git
+ARG REV=master
+
 WORKDIR /src
+RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
 RUN npm ci --prefix src/tools
 
