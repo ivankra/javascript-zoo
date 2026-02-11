@@ -16,7 +16,7 @@ RUN mv /tmp/$TARGETARCH /dist && \
     cd /zoo/bench && make gen && ln -s zoo/bench /bench && \
     mkdir -p /zoo/dist && ln -s /dist /zoo/dist/$TARGETARCH && \
     cat /zoo/docker/hub.motd | sed "2s/\$/ @$REV $TARGETARCH/" >/etc/motd && \
-    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:$PATH; cat /etc/motd' >>/etc/profile
+    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
 
 WORKDIR /dist
 

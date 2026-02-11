@@ -17,31 +17,27 @@ if [[ -z "$TAG" ]]; then
   echo "Using tag $TAG"
 fi
 
-set -x -e -o pipefail
-
 for arch in $ARCHS; do
-  # Exclude non-distributable files due to licensing
-  (cd ../dist && tar
-    --owner=root \
-    --group=root \
-    --exclude=jscript-dist \
-    --exclude=carakan-dist \
-    -c "$arch") >"../dist/$arch.tar"
+  (cd ../dist/$arch; (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo $x; fi; done | sort -V) >LIST)
+  (cd ../dist && tar --owner=root --group=root -c "$arch") >"../dist/$arch.tar"
+done
+
+set -x;
+for arch in $ARCHS; do
+  $DOCKER build \
+    -f jsz-runtime.Dockerfile \
+    -t "jsz-runtime:$arch" \
+    --build-arg BASE=debian:stable \
+    --platform "linux/$arch" \
+    .
 
   $DOCKER build \
-      -f jsz-runtime.Dockerfile \
-      -t "jsz-runtime:$arch" \
-      --build-arg BASE=debian:stable \
-      --platform "linux/$arch" \
-      .
-
-  $DOCKER build \
-      -f hub.Dockerfile \
-      -t "jsz-hub:$arch" \
-      --build-arg "BASE=jsz-runtime:$arch" \
-      --build-arg "REV=$TAG" \
-      --platform "linux/$arch" \
-      ..
+    -f hub.Dockerfile \
+    -t "jsz-hub:$arch" \
+    --build-arg "BASE=jsz-runtime:$arch" \
+    --build-arg "REV=$TAG" \
+    --platform "linux/$arch" \
+    ..
 done
 
 $DOCKER login docker.io
