@@ -33,7 +33,6 @@ RUN mkdir -p /dist && \
     cp -a lua /dist/castl-dist && \
     cp -f /usr/local/lib/lua/5.1/rex_pcre2.so /dist/castl-dist/ && \
     npx esbuild bin/castl.js --outfile=/dist/castl-dist/castl.js --bundle --platform=node --external:babel-* && \
-    npx esbuild bin/castl.js --outfile=/dist/castl-dist/castl.min.js --bundle --platform=node --external:babel-* --minify && \
     echo >/dist/castl \
 '#!/bin/bash'"\n"\
 'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
@@ -42,7 +41,7 @@ RUN mkdir -p /dist && \
 'if [[ -z "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi'"\n"\
 'node "$SCRIPT_DIR/castl-dist/castl.js" --jit "$@"' && \
     chmod a+rx /dist/castl && \
-    du -bc /dist/castl-dist/castl.min.js /dist/castl-dist/castl | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    du -bc /dist/castl-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
 
 # TODO: pure-lua shell using lua/castl/jscompile/castl_jit.lua
 

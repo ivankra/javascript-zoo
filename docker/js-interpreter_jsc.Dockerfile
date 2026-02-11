@@ -11,7 +11,7 @@ COPY --from=jsz-jsc /src/jsz_version ./jsc_version
 RUN echo >/dist/js-interpreter_jsc \
 '#!/bin/bash'"\n"\
 'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'"$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter.js" -- "$@"' && \
+'"$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter" -- "$@"' && \
     chmod a+rx /dist/js-interpreter_jsc && \
     echo "jsc $(cat jsc_version)" >jsz_host_engine
 
