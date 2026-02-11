@@ -33,7 +33,8 @@ njs:                  --build-arg REV=0.9.5
 nova:                 --build-arg REV=10bd05dde516064773724e33a6fdbbd8190d8e23
 otto:                 --build-arg REV=3ca729876b8973d2faeb6f25d1c8e7dd6580063a
 porffor:              --build-arg REV=cd10218477ad2ae74436f6c6e5a1bd4995a842c2
-primjs:               --build-arg REV=3.6.1
+primjs:               --build-arg REV=3.6.1 -f primjs.Dockerfile
+primjs_nogc:          --build-arg REV=3.6.1 -f primjs.Dockerfile --build-arg DISABLE_GC=true
 quanta:               --build-arg REV=6dd7df27719fc81834988fca870dd7ff6b0b7a47
 quickjs-ng:           --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile
 quickjs-ng_gcc:       --build-arg REV=6c1af9d0dc41d8dc77d79283808960c4a1e2f303 -f quickjs-ng.Dockerfile --build-arg BASE=jsz-gcc
