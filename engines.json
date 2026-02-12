@@ -15,23 +15,23 @@
     "years": "2010-2014",
     "ancestors": "tiny-js",
     "interpreter": "interprets from source",
-    "github_stars": 573,
-    "github_forks": 90,
+    "github_stars": 578,
+    "github_forks": 91,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "d9d63ee14448a51dc9d500aa1a63292e5de32433c8a70804ac37c54a3adf8c70",
-        "binary_size": 809440,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "d80d9a98b484bbcde7021040ac579e644c5dd9b94de7f00408a496370448f536",
+        "binary_size": 816536,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
         "revision_date": "2014-10-19"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "47402fa775b1b53f178a2e75ee2ac08f10806b766ed24202ed8137b984437812",
-        "binary_size": 792896,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "4d3525beac94b349a858709494b34ff3c4e993c6592fe9937c640de16f21e030",
+        "binary_size": 791928,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "d61b911e56801489e2f72bd27304dcd15eeb60c1",
         "revision_date": "2014-10-19"
       }
@@ -59,6 +59,64 @@
     }
   },
   {
+    "id": "ant",
+    "title": "Ant",
+    "summary": "Ant-sized JavaScript runtime, notable for async/await, ffi, http servers, crypto, while being under 4mb.",
+    "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/ant.md",
+    "repository": "https://github.com/theMackabu/ant.git",
+    "loc": 34461,
+    "loc_detailed": "34461 (`cloc src`)",
+    "language": "C",
+    "license": "MIT",
+    "standard": "ES5",
+    "standard_detailed": "ES5 (ES6 Partial)",
+    "years": "2025-",
+    "interpreter": "tree-walking",
+    "regex": "PCRE2",
+    "github_stars": 130,
+    "github_forks": 9,
+    "github_contributors": 1,
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_sha256": "d93b09249b60897f369a0ab5a896e1e82b5328c2fea6c33545d44a0b0dda056f",
+        "binary_size": 4260424,
+        "cc": "clang 21.1.8 (++20251221033036+2078da43e25a-1~exp1~20251221153213.50)",
+        "revision": "a41eb672dfe434f78be3ba1443774daa973eb2e1",
+        "revision_date": "2026-02-10"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "202d0baf5cf29428948d66cbd042c06f313140dccef70259747629af4336e786",
+        "binary_size": 3737216,
+        "cc": "clang 21.1.8 (++20251221033036+2078da43e25a-1~exp1~20251221153213.50)",
+        "revision": "a41eb672dfe434f78be3ba1443774daa973eb2e1",
+        "revision_date": "2026-02-10"
+      }
+    ],
+    "conformance": {
+      "es1": 1.0,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.5005,
+      "kangax-es2016": 0.2576,
+      "kangax-es2017": 0.6812,
+      "kangax-es2018": 0.4421,
+      "kangax-es2019": 0.4792,
+      "kangax-es2020": 0.4571,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 0.7937,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.3265,
+      "kangax-es2025": 0.4035,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.5824
+    }
+  },
+  {
     "id": "assemblyscript",
     "title": "AssemblyScript",
     "summary": "Compiler for a restricted TypeScript dialect to WebAssembly.",
@@ -73,8 +131,8 @@
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 17751,
-    "github_forks": 681,
+    "github_stars": 17798,
+    "github_forks": 684,
     "github_contributors": 77
   },
   {
@@ -118,8 +176,8 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "1926a66389fcb4d63be334d721d1d249526f0a62be14d485dda5758700437451",
-        "binary_size": 4657920,
+        "binary_sha256": "4194ccf3fdc022bab197cc4396c73016eeb43e948848dadc1231809f7594a064",
+        "binary_size": 4751936,
         "revision": "99f0aa14155d0b0c9e39f6273a51c35b497207de",
         "revision_date": "2025-10-29",
         "version": "0.8.2"
@@ -208,9 +266,9 @@
     "interpreter": "stack-based VM",
     "regex": "regress",
     "regex_detailed": "[regress](https://github.com/ridiculousfish/regress)",
-    "github_stars": 6781,
-    "github_forks": 483,
-    "github_contributors": 211,
+    "github_stars": 6859,
+    "github_forks": 488,
+    "github_contributors": 215,
     "bench": [
       {
         "arch": "amd64",
@@ -311,7 +369,7 @@
       "kangax-es2023": 1.0,
       "kangax-es2024": 0.9184,
       "kangax-es2025": 0.5263,
-      "kangax-intl": 0.8929,
+      "kangax-intl": 0.9643,
       "kangax-next": 0.0,
       "es1-es5": 0.9857,
       "kangax-es2016plus": 0.8919
@@ -332,7 +390,7 @@
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
     "interpreter": "tree walker",
-    "github_stars": 1357,
+    "github_stars": 1355,
     "github_forks": 153,
     "github_contributors": 1
   },
@@ -352,8 +410,8 @@
     "interpreter_detailed": "register-based VM ([vm.rs](https://github.com/Hans-Halverson/brimstone/blob/master/src/js/runtime/bytecode/vm.rs), Ignition-inspired)",
     "regex": "own",
     "regex_detailed": "own ([regexp](https://github.com/Hans-Halverson/brimstone/tree/master/src/js/runtime/regexp/))",
-    "github_stars": 1247,
-    "github_forks": 30,
+    "github_stars": 1271,
+    "github_forks": 31,
     "github_contributors": 1,
     "bench": [
       {
@@ -500,7 +558,7 @@
     "jit": "via LuaJIT",
     "regex": "PCRE",
     "github_stars": 381,
-    "github_forks": 29,
+    "github_forks": 30,
     "github_contributors": 1,
     "bench": [
       {
@@ -605,24 +663,24 @@
     "years": "2019-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 1838,
-    "github_forks": 96,
+    "github_stars": 1844,
+    "github_forks": 97,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "908e46cc23e12c1199a80d61561c54bbad7fdce7050a0d64ceb74f9e2e20242f",
-        "binary_size": 47616,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "505b0068f113cd1d0bf10ddda6618363002747506e023447af568f59025c4675",
+        "binary_size": 47544,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
         "revision_date": "2025-06-05",
         "version": "2.2.0-30-ga9bb856"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "64e5714205286c956a96538172eff7b3fdf27eb294c8b6e0561f092d7e5ab330",
-        "binary_size": 68000,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "0c014e00f6262fc1820a7652ae62324321a7ef53f026982b70f476e395b3decb",
+        "binary_size": 68048,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
         "revision_date": "2025-06-05",
         "version": "2.2.0-30-ga9bb856"
@@ -652,24 +710,24 @@
     "type": "JavaScript-like language",
     "features": "C/C++ FFI",
     "interpreter": "stack-based VM",
-    "github_stars": 2016,
+    "github_stars": 2025,
     "github_forks": 185,
     "github_contributors": 17,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "fca1bc72c6767247883daf4a2319f52cc51a76ff5bc6078cbc7719b991e118d7",
-        "binary_size": 203648,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "32982496308d10f52a234a353b6b90de837e5142bd31a331a2976a23bc0d388a",
+        "binary_size": 203576,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773",
         "revision_date": "2025-12-17",
         "version": "2.20.0-23-g55e5fa3"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "72f6b6b52ecd894b7d4cdd26c68b4e0ebe7fa020c33f1d97fc472d9619adf3eb",
-        "binary_size": 199648,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "738d25b7261e554f380c5c90d002547f23631d55b4ad6c9bbc0c4877f9b61258",
+        "binary_size": 199688,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "55e5fa395bad5c1dbf6c44b0fbc26439a40f5773",
         "revision_date": "2025-12-17",
         "version": "2.20.0-23-g55e5fa3"
@@ -712,7 +770,7 @@
     "standard_detailed": "ES5 (subset)",
     "years": "2013-2017",
     "interpreter": "stack-based VM",
-    "github_stars": 1451,
+    "github_stars": 1452,
     "github_forks": 179,
     "github_contributors": 24,
     "bench": [
@@ -780,8 +838,8 @@
     "interpreter": "register-based VM",
     "jit": "2-tier JIT, arm/arm64, x86/x64",
     "dll": "chakra.dll",
-    "github_stars": 9232,
-    "github_forks": 1214,
+    "github_stars": 9241,
+    "github_forks": 1217,
     "github_contributors": 186,
     "bench": [
       {
@@ -1015,7 +1073,7 @@
     "license": "MIT",
     "standard": "ES3",
     "years": "2009-2012",
-    "github_stars": 197,
+    "github_stars": 198,
     "github_forks": 35,
     "github_contributors": 16
   },
@@ -1197,7 +1255,7 @@
     "platform_detailed": "native (Win32/Linux i386)",
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([opcodes.c](https://github.com/DigitalMars/DscriptCPP/blob/main/src/dscript/opcodes.c))",
-    "github_stars": 4,
+    "github_stars": 3,
     "github_forks": 2,
     "github_contributors": 1,
     "bench": [
@@ -1213,25 +1271,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.0,
-      "es3": 0.0,
-      "es5": 0.0,
-      "kangax-es5": 0.0,
-      "kangax-es6": 0.0,
+      "es1": 0.9697,
+      "es3": 0.777,
+      "es5": 0.0541,
+      "kangax-es5": 0.095,
+      "kangax-es6": 0.0142,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.0,
       "kangax-es2018": 0.0,
-      "kangax-es2019": 0.0,
+      "kangax-es2019": 0.125,
       "kangax-es2020": 0.0,
       "kangax-es2021": 0.0,
       "kangax-es2022": 0.0,
       "kangax-es2023": 0.0,
       "kangax-es2024": 0.0,
       "kangax-es2025": 0.0,
-      "kangax-intl": 0.0,
-      "kangax-next": 0.0,
-      "es1-es5": 0.0,
-      "kangax-es2016plus": 0.0
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0303,
+      "es1-es5": 0.7405,
+      "kangax-es2016plus": 0.0132
     }
   },
   {
@@ -1249,8 +1307,8 @@
     "standard_detailed": "ES5 (with some ES6 features)",
     "years": "2013-",
     "interpreter": "register-based VM",
-    "github_stars": 6158,
-    "github_forks": 541,
+    "github_stars": 6175,
+    "github_forks": 545,
     "github_contributors": 73,
     "bench": [
       {
@@ -1464,25 +1522,25 @@
     "standard": "no",
     "standard_detailed": "no (can't run ES1)",
     "years": "2022-",
-    "github_stars": 92,
+    "github_stars": 93,
     "github_forks": 7,
     "github_contributors": 1,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "c581570eee76c4f711ab5a20e51e932b109f5fe741607627e27801fed7e4e3bb",
-        "binary_size": 1047608,
-        "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
-        "revision_date": "2025-08-24",
-        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
+        "binary_sha256": "376d0926264c62ffeb5aad573fb8580c22129025c1ebe93f9ca3811e6881d0a0",
+        "binary_size": 1066840,
+        "revision": "b164beb25bcb74c33d8541e8097c918d5271f698",
+        "revision_date": "2026-01-06",
+        "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "13d5d24c3d5f6afd57cc29b8b097402da17cda3e56a914eb9a1cb2f3abb95746",
-        "binary_size": 987848,
-        "revision": "fe199b5c182341a94c9b340486c25acebe163f02",
-        "revision_date": "2025-08-24",
-        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
+        "binary_sha256": "c2a2a4e3bdf2ca87cda32b11b867cfca7c56237be3f5b08dd0a832fd6217cde0",
+        "binary_size": 1053384,
+        "revision": "b164beb25bcb74c33d8541e8097c918d5271f698",
+        "revision_date": "2026-01-06",
+        "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
       }
     ],
     "conformance": {
@@ -1539,7 +1597,7 @@
     "standard_detailed": "ES4 (ES3 + some ES4 draft features)",
     "years": "2003-2014",
     "regex": "PCRE2",
-    "github_stars": 0,
+    "github_stars": 1,
     "github_forks": 0,
     "github_contributors": 16
   },
@@ -1694,9 +1752,9 @@
     "features": "WebAssembly engine, hidden classes",
     "interpreter": "register-based VM",
     "regex": "YARR",
-    "github_stars": 340,
+    "github_stars": 341,
     "github_forks": 54,
-    "github_contributors": 44,
+    "github_contributors": 45,
     "bench": [
       {
         "arch": "amd64",
@@ -1877,18 +1935,18 @@
       "kangax-es6": 0.9766,
       "kangax-es2016": 1.0,
       "kangax-es2017": 1.0,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.3636,
       "es1-es5": 1.0,
-      "kangax-es2016plus": 0.9968
+      "kangax-es2016plus": 1.0
     }
   },
   {
@@ -1907,9 +1965,9 @@
     "years": "2013-",
     "type": "JavaScript-like language",
     "interpreter": "interprets from source",
-    "github_stars": 2925,
-    "github_forks": 757,
-    "github_contributors": 159,
+    "github_stars": 2937,
+    "github_forks": 763,
+    "github_contributors": 161,
     "bench": [
       {
         "arch": "amd64",
@@ -1952,7 +2010,7 @@
     "parser": "Acorn",
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
-    "github_stars": 731,
+    "github_stars": 734,
     "github_forks": 104,
     "github_contributors": 3
   },
@@ -1972,8 +2030,8 @@
     "platform": "WebAssembly , Go",
     "platform_detailed": "WebAssembly (Wazero), Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 504,
-    "github_forks": 18,
+    "github_stars": 519,
+    "github_forks": 19,
     "github_contributors": 3,
     "bench": [
       {
@@ -2118,23 +2176,23 @@
     "parser": "YACC",
     "interpreter": "tree walker",
     "regex": "PCRE",
-    "github_stars": 94,
+    "github_stars": 95,
     "github_forks": 18,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "b3d93dfe87560bfca58ce32e2a9f7e22536f9783de26c47addc8d2811e04ceb7",
-        "binary_size": 212096,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "a846686d8757716eaf25114795341f861b7a5499397ef8a4d1b14f21a478756f",
+        "binary_size": 212024,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
         "revision_date": "2017-04-21"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "335964632a1a29105d06b815516551571c7044ab47d53403151a0ef2f0770bb3",
-        "binary_size": 199680,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "b2ef93c17e420743b828c0f9d4a10437a79149063308d4031d7e3c9c4c327b74",
+        "binary_size": 199720,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
         "revision_date": "2017-04-21"
       }
@@ -2181,8 +2239,8 @@
     "platform": "Go",
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
-    "github_stars": 6678,
-    "github_forks": 428,
+    "github_stars": 6731,
+    "github_forks": 434,
     "github_contributors": 36,
     "bench": [
       {
@@ -2310,9 +2368,9 @@
     "jit": "2-tier JIT (HotSpot/Graal), arm64, x64",
     "regex": "TRegex",
     "regex_detailed": "[TRegex](https://github.com/oracle/graal/tree/master/regex) (NFA-based)",
-    "github_stars": 1975,
-    "github_forks": 206,
-    "github_contributors": 4560,
+    "github_stars": 1978,
+    "github_forks": 207,
+    "github_contributors": 4671,
     "bench": [
       {
         "arch": "amd64",
@@ -2450,13 +2508,14 @@
     "platform": "WebAssembly",
     "interpreter": "stack-based VM",
     "jit": "via WebAssembly engine",
-    "github_stars": 537,
+    "github_stars": 557,
     "github_forks": 9,
     "github_contributors": 1,
     "bench": [
       {
         "arch": "amd64",
         "dist_size": 785454,
+        "dotnet": "10.0.102",
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af",
@@ -2496,8 +2555,34 @@
         "zlib_detailed": "N=10 median=91.4 mean=90.90±0.59 max=93.4"
       },
       {
+        "arch": "amd64",
+        "binary_size": 10043666,
+        "go": "1.25.7",
+        "repository": "https://github.com/6over3/hako.git",
+        "revision": "6255dec9e627aeb01cab73d2df932d6b8e0b2cb6",
+        "revision_date": "2025-12-13",
+        "variant": "go"
+      },
+      {
+        "arch": "amd64",
+        "binary_sha256": "51de43a825ac8b390aee91f8abb1a687134a91dc13826a327e8e70ff051a43b9",
+        "binary_size": 1202032,
+        "cc": "gcc 15.2.0 (Debian 15.2.0-13)",
+        "repository": "https://github.com/andrewmd5/hako-cli.git",
+        "revision": "243663f4fc03daa51b97b15882ebf815f2eb70ce",
+        "revision_date": "2025-08-15",
+        "variant": "wamr"
+      },
+      {
+        "arch": "amd64",
+        "binary_size": 27808432,
+        "go": "1.25.7",
+        "variant": "wasmtime_go"
+      },
+      {
         "arch": "arm64",
         "dist_size": 1006163,
+        "dotnet": "10.0.102",
         "revision": "99c76af6ae406e2c789c9e782a88068d5595c2d3",
         "revision_date": "2025-08-14",
         "version": "1.0.2-2-g99c76af",
@@ -2535,28 +2620,53 @@
         "Typescript_detailed": "N=9 median=885 mean=894.22±7.01 max=923",
         "zlib": 138,
         "zlib_detailed": "N=9 median=138 mean=138.33±0.71 max=142"
+      },
+      {
+        "arch": "arm64",
+        "binary_size": 9823599,
+        "go": "1.25.7",
+        "repository": "https://github.com/6over3/hako.git",
+        "revision": "6255dec9e627aeb01cab73d2df932d6b8e0b2cb6",
+        "revision_date": "2025-12-13",
+        "variant": "go"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "d48550ea11caf31fec3a371b3c24653f0d75da75d30e7b6a96448548e7164c55",
+        "binary_size": 1189568,
+        "cc": "gcc 15.2.0 (Debian 15.2.0-13)",
+        "repository": "https://github.com/andrewmd5/hako-cli.git",
+        "revision": "243663f4fc03daa51b97b15882ebf815f2eb70ce",
+        "revision_date": "2025-08-15",
+        "variant": "wamr"
+      },
+      {
+        "arch": "arm64",
+        "binary_size": 24334872,
+        "go": "1.25.7",
+        "variant": "wasmtime_go"
       }
     ],
     "conformance": {
       "es1": 1.0,
-      "es3": 0.9865,
-      "es5": 0.9865,
-      "kangax-es5": 0.9855,
-      "kangax-es6": 0.9473,
+      "es3": 1.0,
+      "es5": 1.0,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9699,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.8471,
-      "kangax-es2018": 0.9368,
+      "kangax-es2017": 1.0,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
-      "kangax-es2020": 0.4571,
-      "kangax-es2021": 0.7857,
-      "kangax-es2022": 0.619,
-      "kangax-es2023": 0.6,
-      "kangax-es2024": 0.4286,
-      "kangax-es2025": 0.1053,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 0.4286,
+      "kangax-es2022": 1.0,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 1.0,
+      "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
-      "kangax-next": 0.0505,
-      "es1-es5": 0.9929,
-      "kangax-es2016plus": 0.6912
+      "kangax-next": 0.0606,
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 0.947
     }
   },
   {
@@ -2578,9 +2688,9 @@
     "features": "optimizing LLVM-based AOT compiler to bytecode + native code; FFI; optional TypeScript/Flow typing annotations with modified semantics for sound typing",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10730,
-    "github_forks": 725,
-    "github_contributors": 243,
+    "github_stars": 10786,
+    "github_forks": 732,
+    "github_contributors": 245,
     "bench": [
       {
         "arch": "amd64",
@@ -2798,9 +2908,9 @@
     "features": "optimizing LLVM-based AOT compiler to bytecode",
     "interpreter": "register-based VM",
     "gc": "generational GC",
-    "github_stars": 10730,
-    "github_forks": 725,
-    "github_contributors": 243,
+    "github_stars": 10786,
+    "github_forks": 732,
+    "github_contributors": 245,
     "bench": [
       {
         "arch": "amd64",
@@ -3014,7 +3124,7 @@
     "years": "2012-2015",
     "jit": "x64",
     "github_stars": 883,
-    "github_forks": 64,
+    "github_forks": 65,
     "github_contributors": 31
   },
   {
@@ -3354,7 +3464,7 @@
     "years": "2024-",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 1060,
+    "github_stars": 1068,
     "github_forks": 22,
     "github_contributors": 4
   },
@@ -3409,9 +3519,9 @@
     "standard_detailed": "ES2022 (partial, missing ES2018 regex and a few other features)",
     "years": "2014-2024",
     "interpreter": "stack-based VM",
-    "github_stars": 7352,
-    "github_forks": 688,
-    "github_contributors": 127,
+    "github_stars": 7364,
+    "github_forks": 691,
+    "github_contributors": 128,
     "bench": [
       {
         "arch": "amd64",
@@ -3686,9 +3796,46 @@
     "standard_detailed": "ESnext (partial)",
     "years": "2013-",
     "platform": ".NET",
-    "github_stars": 4522,
-    "github_forks": 588,
-    "github_contributors": 149
+    "github_stars": 4544,
+    "github_forks": 591,
+    "github_contributors": 151,
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 3452331,
+        "dotnet": "10.0.102",
+        "revision": "78dabcb47f3638d823fcca9cb2434810233e7dec",
+        "revision_date": "2026-02-10"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 3451587,
+        "dotnet": "10.0.102",
+        "revision": "78dabcb47f3638d823fcca9cb2434810233e7dec",
+        "revision_date": "2026-02-10"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9949,
+      "es3": 0.9932,
+      "es5": 0.9865,
+      "kangax-es5": 1.0,
+      "kangax-es6": 0.9605,
+      "kangax-es2016": 1.0,
+      "kangax-es2017": 0.88,
+      "kangax-es2018": 0.9053,
+      "kangax-es2019": 0.8929,
+      "kangax-es2020": 1.0,
+      "kangax-es2021": 1.0,
+      "kangax-es2022": 0.9841,
+      "kangax-es2023": 1.0,
+      "kangax-es2024": 0.7551,
+      "kangax-es2025": 0.7895,
+      "kangax-intl": 1.0,
+      "kangax-next": 0.2987,
+      "es1-es5": 0.9929,
+      "kangax-es2016plus": 0.9168
+    }
   },
   {
     "id": "jispy",
@@ -3704,8 +3851,8 @@
     "type": "JavaScript-like language ([ref](https://github.com/polydojo/jispy/blob/master/LittleJ.md))",
     "platform": "Python",
     "interpreter": "tree walker",
-    "github_stars": 60,
-    "github_forks": 18,
+    "github_stars": 61,
+    "github_forks": 17,
     "github_contributors": 1,
     "bench": [
       {
@@ -3749,8 +3896,8 @@
     "platform": "JavaScript",
     "interpreter": "tree walker",
     "interpreter_detailed": "tree walker ([interpreter.js](https://github.com/NeilFraser/JS-Interpreter/blob/master/interpreter.js), LOC: 3689)",
-    "github_stars": 2140,
-    "github_forks": 364,
+    "github_stars": 2160,
+    "github_forks": 365,
     "github_contributors": 22,
     "bench": [
       {
@@ -3897,7 +4044,7 @@
       "es3": 0.9595,
       "es5": 0.6892,
       "kangax-es5": 0.8107,
-      "kangax-es6": 0.0381,
+      "kangax-es6": 0.0286,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.08,
       "kangax-es2018": 0.0526,
@@ -3928,8 +4075,8 @@
     "years": "2014-2022",
     "platform": "Python",
     "interpreter": "stack-based VM",
-    "github_stars": 2567,
-    "github_forks": 278,
+    "github_stars": 2569,
+    "github_forks": 276,
     "github_contributors": 29,
     "bench": [
       {
@@ -4040,9 +4187,9 @@
     "interpreter": "register-based VM",
     "jit": "3-tier JIT, x86/x64, arm/arm64, mips64, riscv64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 9503,
-    "github_forks": 1797,
-    "github_contributors": 2547,
+    "github_stars": 9596,
+    "github_forks": 1832,
+    "github_contributors": 2558,
     "bench": [
       {
         "arch": "amd64",
@@ -4380,7 +4527,20 @@
     "standard": "ES3",
     "years": "1996-2011",
     "interpreter": "stack-based VM",
-    "dll": "jscript.dll"
+    "dll": "jscript.dll",
+    "bench": [
+      {
+        "arch": "amd64",
+        "binary_size": 491520,
+        "version": "5.7.16535"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9949,
+      "es3": 0.8581,
+      "es5": 0.0676,
+      "es1-es5": 0.7833
+    }
   },
   {
     "id": "jscript9",
@@ -4422,18 +4582,18 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "94d4263d5e7629d377b7eb9732637c95c13deccc27445dcce13f94a8f1f24697",
-        "binary_size": 2403168,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "cf19924eeae71461a16a0c97c2aba4d3a4b16f84604ee15a62d6f31e465ed606",
+        "binary_size": 2403096,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f",
         "revision_date": "2022-08-23",
         "version": "3.0-252-g42c694c"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "55be01187386f3671189ec9fe3b213e17c6a24754592b44fffcbf9276f2a7380",
-        "binary_size": 2488008,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "b8d852f5b1e1526e846e5ba50e9ec7cb68ee78eaa224bbd91592eaa6cf5d5120",
+        "binary_size": 2488056,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f",
         "revision_date": "2022-08-23",
         "version": "3.0-252-g42c694c"
@@ -4490,9 +4650,46 @@
     "years": "2010-",
     "platform": ".NET",
     "jit": "via CLR",
-    "github_stars": 933,
-    "github_forks": 128,
-    "github_contributors": 14
+    "github_stars": 943,
+    "github_forks": 129,
+    "github_contributors": 14,
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 1914194,
+        "dotnet": "10.0.102",
+        "revision": "17f72827150166c79dd7789bfe01a4a2f7bfe4aa",
+        "revision_date": "2025-02-04"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 1971778,
+        "dotnet": "10.0.102",
+        "revision": "17f72827150166c79dd7789bfe01a4a2f7bfe4aa",
+        "revision_date": "2025-02-04"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9949,
+      "es3": 0.9865,
+      "es5": 0.9459,
+      "kangax-es5": 0.9472,
+      "kangax-es6": 0.6517,
+      "kangax-es2016": 0.4394,
+      "kangax-es2017": 0.0,
+      "kangax-es2018": 0.2456,
+      "kangax-es2019": 0.497,
+      "kangax-es2020": 0.0,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.0417,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.193,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0606,
+      "es1-es5": 0.9833,
+      "kangax-es2016plus": 0.1457
+    }
   },
   {
     "id": "kiesel",
@@ -4586,25 +4783,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.9899,
+      "es1": 1.0,
       "es3": 0.973,
-      "es5": 0.9054,
-      "kangax-es5": 0.9214,
+      "es5": 0.973,
+      "kangax-es5": 0.9672,
       "kangax-es6": 0.9169,
       "kangax-es2016": 0.8485,
       "kangax-es2017": 0.9,
       "kangax-es2018": 0.8421,
       "kangax-es2019": 0.8333,
-      "kangax-es2020": 0.8857,
+      "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
-      "kangax-es2022": 0.9728,
+      "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
       "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.0505,
-      "es1-es5": 0.969,
-      "kangax-es2016plus": 0.9205
+      "es1-es5": 0.9857,
+      "kangax-es2016plus": 0.9349
     }
   },
   {
@@ -4810,7 +5007,7 @@
     "platform": "Java",
     "interpreter": "tree walker",
     "github_stars": 33,
-    "github_forks": 2,
+    "github_forks": 3,
     "github_contributors": 1,
     "bench": [
       {
@@ -4866,9 +5063,9 @@
     "years": "2020-",
     "features": "WebAssembly engine (LibWasm)",
     "interpreter": "register-based VM",
-    "github_stars": 57523,
-    "github_forks": 2595,
-    "github_contributors": 1490,
+    "github_stars": 58473,
+    "github_forks": 2666,
+    "github_contributors": 1501,
     "bench": [
       {
         "arch": "amd64",
@@ -5042,9 +5239,9 @@
       "es3": 0.9932,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9228,
+      "kangax-es6": 0.937,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.94,
+      "kangax-es2017": 0.92,
       "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
@@ -5052,11 +5249,11 @@
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
       "kangax-es2024": 1.0,
-      "kangax-es2025": 0.7895,
+      "kangax-es2025": 0.9298,
       "kangax-intl": 1.0,
       "kangax-next": 0.2208,
       "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.9636
+      "kangax-es2016plus": 0.9779
     }
   },
   {
@@ -5149,8 +5346,8 @@
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([mocha.c](https://github.com/doodlewind/mocha1995/blob/main/src/mocha.c))",
     "gc": "reference counting",
-    "github_stars": 356,
-    "github_forks": 30,
+    "github_stars": 361,
+    "github_forks": 31,
     "github_contributors": 4,
     "bench": [
       {
@@ -5350,25 +5547,25 @@
     "standard_detailed": "ES5 (subset)",
     "years": "2025-",
     "gc": "tracing GC",
-    "github_stars": 5164,
-    "github_forks": 182,
+    "github_stars": 5476,
+    "github_forks": 194,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "246f92f7a661a31825ffd6b764aae567131bfcac4ea3a97a998fd99928db6fa7",
-        "binary_size": 215840,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
-        "revision": "27a2391cc5a54bf8fa683979be56b266523a1374",
-        "revision_date": "2025-12-24"
+        "binary_sha256": "9ae86b83a45aecc625c8d4358c19d37ab3d1bb1a8345c0540a22a7a05647f15c",
+        "binary_size": 215768,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
+        "revision": "ee50431eac9b14b99f722b537ec4cac0c8dd75ab",
+        "revision_date": "2026-01-15"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "6de773721e576e5a6f88b38066fe3fee705214b09b0c82e38e1f1d3b64be1bea",
-        "binary_size": 264880,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
-        "revision": "27a2391cc5a54bf8fa683979be56b266523a1374",
-        "revision_date": "2025-12-24"
+        "binary_sha256": "817b1861045add98efe9871dbeba2714e40951cc46639c8b2080b5f059733427",
+        "binary_size": 264920,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
+        "revision": "ee50431eac9b14b99f722b537ec4cac0c8dd75ab",
+        "revision_date": "2026-01-15"
       }
     ],
     "conformance": {
@@ -5393,7 +5590,7 @@
     "standard": "ES5",
     "years": "2013-",
     "interpreter": "stack-based VM",
-    "github_stars": 864,
+    "github_stars": 863,
     "github_forks": 105,
     "github_contributors": 16,
     "bench": [
@@ -5660,7 +5857,7 @@
     "jit": "via JVM",
     "regex": "joni",
     "regex_detailed": "[joni](https://github.com/jruby/joni) (JRuby's Java port of Oniguruma)",
-    "github_stars": 487,
+    "github_stars": 491,
     "github_forks": 49,
     "github_contributors": 97,
     "bench": [
@@ -5782,7 +5979,7 @@
     "standard": "no",
     "years": "2017-2022",
     "type": "JavaScript-like language, compiler to native code",
-    "github_stars": 3613,
+    "github_stars": 3619,
     "github_forks": 128,
     "github_contributors": 21
   },
@@ -5809,18 +6006,18 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "253cf991cfa4f341d982e7b4ba64780fd07272233bccb5ab81278143b52f2a26",
-        "binary_size": 428560,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "c3edc3e9010be7cc3ebbb70dd08f42c7bf18490f1a1fad3744a060a753843f27",
+        "binary_size": 428488,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
         "revision_date": "2023-12-05",
         "version": "0.2.5"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "9a5cfaa825ac5a568326ef752b3d98b7532741179f69c03d260d5e793b510945",
-        "binary_size": 489784,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "23db2aa8c6a5f8795e47e485289e5351657d5100640613eaf6743cf5f515d749",
+        "binary_size": 489832,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
         "revision_date": "2023-12-05",
         "version": "0.2.5"
@@ -5848,9 +6045,48 @@
     "years": "2013-",
     "platform": ".NET",
     "interpreter": "tree walker",
-    "github_stars": 344,
+    "github_stars": 346,
     "github_forks": 48,
-    "github_contributors": 23
+    "github_contributors": 23,
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 914203,
+        "dotnet": "10.0.102",
+        "revision": "ebde4e9d9cd9b9d3f52eb9c40c0d5d22ff0a38d9",
+        "revision_date": "2025-12-01",
+        "version": "2.6.1712"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 913459,
+        "dotnet": "10.0.102",
+        "revision": "ebde4e9d9cd9b9d3f52eb9c40c0d5d22ff0a38d9",
+        "revision_date": "2025-12-01",
+        "version": "2.6.1712"
+      }
+    ],
+    "conformance": {
+      "es1": 0.9848,
+      "es3": 0.9392,
+      "es5": 0.9459,
+      "kangax-es5": 0.9105,
+      "kangax-es6": 0.439,
+      "kangax-es2016": 0.3939,
+      "kangax-es2017": 0.18,
+      "kangax-es2018": 0.2632,
+      "kangax-es2019": 0.1845,
+      "kangax-es2020": 0.3571,
+      "kangax-es2021": 0.0,
+      "kangax-es2022": 0.1437,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.193,
+      "kangax-intl": 0.25,
+      "kangax-next": 0.0,
+      "es1-es5": 0.9619,
+      "kangax-es2016plus": 0.1885
+    }
   },
   {
     "id": "njs",
@@ -5870,9 +6106,9 @@
     "years": "2015-",
     "interpreter": "register-based VM",
     "regex": "PCRE2",
-    "github_stars": 1522,
-    "github_forks": 209,
-    "github_contributors": 35,
+    "github_stars": 1535,
+    "github_forks": 216,
+    "github_contributors": 37,
     "bench": [
       {
         "arch": "amd64",
@@ -5881,6 +6117,7 @@
         "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
         "revision": "5a2650f31e5f67984c4066861a94cc6460712f21",
         "revision_date": "2025-12-14",
+        "version": "0.9.5",
         "Box2D": 2428,
         "Box2D_detailed": "N=20 median=2428 mean=2433.30±4.77 max=2472",
         "CodeLoad_error": "CodeLoad: InternalError: Not implemented",
@@ -5914,6 +6151,7 @@
         "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
         "revision": "5a2650f31e5f67984c4066861a94cc6460712f21",
         "revision_date": "2025-12-14",
+        "version": "0.9.5",
         "Box2D": 4733,
         "Box2D_detailed": "N=63 median=4733 mean=4494.84±89.89 max=4817",
         "CodeLoad_error": "CodeLoad: InternalError: Not implemented",
@@ -5980,8 +6218,8 @@
     "parser": "oxc",
     "parser_detailed": "[oxc](../parsers/oxc.md)",
     "interpreter": "stack-based VM",
-    "github_stars": 1842,
-    "github_forks": 73,
+    "github_stars": 1863,
+    "github_forks": 75,
     "github_contributors": 29,
     "bench": [
       {
@@ -6068,7 +6306,7 @@
     "conformance": {
       "es1": 0.9495,
       "es3": 0.9054,
-      "es5": 0.8514,
+      "es5": 0.8649,
       "kangax-es5": 0.9312,
       "kangax-es6": 0.8762,
       "kangax-es2016": 0.9394,
@@ -6077,14 +6315,14 @@
       "kangax-es2019": 0.9464,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
-      "kangax-es2022": 0.9524,
+      "kangax-es2022": 0.9252,
       "kangax-es2023": 1.0,
       "kangax-es2024": 0.551,
       "kangax-es2025": 0.5526,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.9167,
-      "kangax-es2016plus": 0.8453
+      "es1-es5": 0.919,
+      "kangax-es2016plus": 0.8415
     }
   },
   {
@@ -6117,7 +6355,7 @@
     "interpreter": "tree walker",
     "regex": "RE2",
     "regex_detailed": "RE2 (not ECMAScript-compliant)",
-    "github_stars": 8434,
+    "github_stars": 8440,
     "github_forks": 600,
     "github_contributors": 67,
     "bench": [
@@ -6230,9 +6468,9 @@
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "WebAssembly, native",
     "jit": "via WebAssembly engine",
-    "github_stars": 4426,
-    "github_forks": 99,
-    "github_contributors": 22,
+    "github_stars": 4469,
+    "github_forks": 103,
+    "github_contributors": 23,
     "bench": [
       {
         "arch": "amd64",
@@ -6252,12 +6490,12 @@
       }
     ],
     "conformance": {
-      "es1": 0.8838,
+      "es1": 0.8939,
       "es3": 0.6149,
       "es5": 0.7027,
       "kangax-es5": 0.81,
-      "kangax-es6": 0.4543,
-      "kangax-es2016": 0.6364,
+      "kangax-es6": 0.4534,
+      "kangax-es2016": 0.6818,
       "kangax-es2017": 0.6718,
       "kangax-es2018": 0.2632,
       "kangax-es2019": 0.6637,
@@ -6269,8 +6507,8 @@
       "kangax-es2025": 0.2105,
       "kangax-intl": 0.25,
       "kangax-next": 0.0202,
-      "es1-es5": 0.7571,
-      "kangax-es2016plus": 0.5593
+      "es1-es5": 0.7619,
+      "kangax-es2016plus": 0.5626
     }
   },
   {
@@ -6289,7 +6527,7 @@
     "ancestors": "QuickJS",
     "interpreter": "stack-based VM",
     "gc": "mark-and-sweep / reference counting",
-    "github_stars": 1067,
+    "github_stars": 1087,
     "github_forks": 48,
     "github_contributors": 13,
     "bench": [
@@ -6337,6 +6575,16 @@
         "zlib_detailed": "N=8 median=1891 mean=1873.88±13.32 max=1920"
       },
       {
+        "arch": "amd64",
+        "binary_sha256": "b62ba4d795056a06b5feccc18c80ecd6a0e5ba4858bedd99fc51d4d2d35218cf",
+        "binary_size": 1040552,
+        "cc": "clang 23.0.0 (++20260209082821+6c31bf047494-1~exp1~20260209082949.367)",
+        "revision": "f8cfae988d8cbad9cba622b4ac57959a5c29fde3",
+        "revision_date": "2025-12-04",
+        "variant": "nogc",
+        "version": "3.6.1"
+      },
+      {
         "arch": "arm64",
         "binary_sha256": "4ad233c2d5c7675b4e957b3e70dbd4cd49ae218cf310c77297cf0d9d41da3427",
         "binary_size": 986448,
@@ -6378,6 +6626,16 @@
         "Typescript_detailed": "N=14 median=16821 mean=17833.79±449.46 max=20398",
         "zlib": 2928,
         "zlib_detailed": "N=9 median=2928 mean=2927.78±16.68 max=3029"
+      },
+      {
+        "arch": "arm64",
+        "binary_sha256": "c2ab0f9c8a902b3967dc81154bc3fef208051b0b057605cb3e44751f2a6fac1d",
+        "binary_size": 986448,
+        "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)",
+        "revision": "f8cfae988d8cbad9cba622b4ac57959a5c29fde3",
+        "revision_date": "2025-12-04",
+        "variant": "nogc",
+        "version": "3.6.1"
       }
     ],
     "conformance": {
@@ -6464,17 +6722,17 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "d1a2abda1f8666a2e847c270efba627ad60740a8db6ecae96a819593152ee89a",
-        "binary_size": 155192,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "5212186b8ab582f3267c7d08f290d8e00c85d0de9db4f27d6ab903ab29ee921f",
+        "binary_size": 155120,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
         "revision_date": "2012-03-26"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "da1bedffe406737c752fb80a591bc75ac8c4c53bb1556bf5a26634a64370971b",
-        "binary_size": 200024,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "0e730a68381f32c1aa5b682aba6fe355c14c35ea622a3211bccdeebe64e7e1c0",
+        "binary_size": 200064,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
         "revision_date": "2012-03-26"
       }
@@ -6516,47 +6774,49 @@
     "years": "2025-",
     "interpreter": "tree walker",
     "regex": "std::regex",
-    "github_stars": 8,
-    "github_forks": 2,
+    "github_stars": 12,
+    "github_forks": 3,
     "github_contributors": 2,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "420cdc19cf72e5bce80400b01f35977e3cfea0593778fdf41dfc5951161612b0",
-        "binary_size": 3204128,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
-        "revision": "39a9fdb3d3eed1b4849bfa6b94fbf0a3b7411f07",
-        "revision_date": "2025-12-21"
+        "binary_sha256": "eb4163170b9169b51786311f837a302f8d24b55a20850227e3f71d9f1f3f8dc0",
+        "binary_size": 2232248,
+        "cc": "clang 23.0.0 (++20260209082821+6c31bf047494-1~exp1~20260209082949.367)",
+        "revision": "2e55cdd94f0289cb7726647193e5212ab13d39b4",
+        "revision_date": "2026-02-10",
+        "version": "0.3.0.2726-12-g2e55cdd"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "f1cf7f1093b34dd7ffde1431e92ff7fad8ca467df1d1cf574e86308feba10b2c",
-        "binary_size": 2626840,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
-        "revision": "39a9fdb3d3eed1b4849bfa6b94fbf0a3b7411f07",
-        "revision_date": "2025-12-21"
+        "binary_sha256": "45ea08067bbf27616927674207b15840976c1f8204f67fdeecf3d976be143597",
+        "binary_size": 2101176,
+        "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)",
+        "revision": "2e55cdd94f0289cb7726647193e5212ab13d39b4",
+        "revision_date": "2026-02-10",
+        "version": "0.3.0.2726-12-g2e55cdd"
       }
     ],
     "conformance": {
-      "es1": 0.5758,
-      "es3": 0.5338,
-      "es5": 0.473,
-      "kangax-es5": 0.6732,
-      "kangax-es6": 0.3088,
-      "kangax-es2016": 0.303,
+      "es1": 0.9899,
+      "es3": 0.9865,
+      "es5": 1.0,
+      "kangax-es5": 0.971,
+      "kangax-es6": 0.5186,
+      "kangax-es2016": 0.3485,
       "kangax-es2017": 0.3,
       "kangax-es2018": 0.2105,
-      "kangax-es2019": 0.1667,
-      "kangax-es2020": 0.1857,
+      "kangax-es2019": 0.2708,
+      "kangax-es2020": 0.4714,
       "kangax-es2021": 0.4286,
-      "kangax-es2022": 0.4376,
+      "kangax-es2022": 0.5011,
       "kangax-es2023": 0.5714,
-      "kangax-es2024": 0.2041,
+      "kangax-es2024": 0.2449,
       "kangax-es2025": 0.0,
-      "kangax-intl": 0.5357,
+      "kangax-intl": 0.6071,
       "kangax-next": 0.0,
-      "es1-es5": 0.5429,
-      "kangax-es2016plus": 0.2621
+      "es1-es5": 0.9905,
+      "kangax-es2016plus": 0.3137
     }
   },
   {
@@ -6576,15 +6836,15 @@
     "features": "PIC",
     "interpreter": "stack-based VM",
     "jit": "x64",
-    "github_stars": 77,
+    "github_stars": 78,
     "github_forks": 8,
     "github_contributors": 1,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "e88d4deca04481f35aafa514a92d08732da3ed0683132e186899223a4e597039",
-        "binary_size": 1432680,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "2ba6307ba06a88ce5e2a0b335417d77e0eccc16fb4b1cd92fb51c909cb314a80",
+        "binary_size": 1428512,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "d5a3e722aecb8412330282739b409bec1298eabe",
         "revision_date": "2023-10-25"
       }
@@ -6628,9 +6888,9 @@
     "features": "PIC",
     "interpreter": "stack-based VM",
     "gc": "reference counting",
-    "github_stars": 2566,
-    "github_forks": 239,
-    "github_contributors": 83,
+    "github_stars": 2676,
+    "github_forks": 252,
+    "github_contributors": 85,
     "bench": [
       {
         "arch": "amd64",
@@ -6847,8 +7107,8 @@
     "interpreter": "stack-based VM (`JS_CallInternal()` in quickjs.c)",
     "interpreter_detailed": "stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))",
     "gc": "reference counting",
-    "github_stars": 10285,
-    "github_forks": 1067,
+    "github_stars": 10396,
+    "github_forks": 1079,
     "github_contributors": 16,
     "bench": [
       {
@@ -7064,9 +7324,9 @@
     "interpreter_detailed": "register-based VM with accumulator (\"Moth\", [qv4vme_moth.cpp](https://github.com/qt/qtdeclarative/blob/dev/src/qml/jsruntime/qv4vme_moth.cpp))",
     "jit": "x86/x64, arm/arm64",
     "regex": "YARR, JIT-enabled",
-    "github_stars": 278,
-    "github_forks": 199,
-    "github_contributors": 936,
+    "github_stars": 282,
+    "github_forks": 201,
+    "github_contributors": 937,
     "bench": [
       {
         "arch": "amd64",
@@ -7364,7 +7624,7 @@
     "years": "2018-2021",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([vm.rs](https://github.com/maekawatoshiki/rapidus/blob/main/core/src/vm/vm.rs))",
-    "github_stars": 567,
+    "github_stars": 572,
     "github_forks": 21,
     "github_contributors": 2,
     "bench": [
@@ -7374,7 +7634,7 @@
         "binary_size": 1673616,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
+        "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
       },
       {
         "arch": "arm64",
@@ -7382,7 +7642,7 @@
         "binary_size": 1509656,
         "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
         "revision_date": "2023-02-25",
-        "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)"
+        "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"
       }
     ],
     "conformance": {
@@ -7421,7 +7681,7 @@
     "years": "2020-",
     "platform": "Java",
     "interpreter": "stack-based VM",
-    "github_stars": 92,
+    "github_stars": 91,
     "github_forks": 7,
     "github_contributors": 2
   },
@@ -7443,9 +7703,9 @@
     "platform": "Java",
     "interpreter": "tree walker",
     "jit": "via JVM (can compile to JVM bytecode)",
-    "github_stars": 4524,
-    "github_forks": 905,
-    "github_contributors": 148,
+    "github_stars": 4547,
+    "github_forks": 909,
+    "github_contributors": 152,
     "bench": [
       {
         "arch": "amd64",
@@ -7567,22 +7827,22 @@
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 153041820,
+        "dist_size": 153546020,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       },
       {
         "arch": "arm64",
-        "dist_size": 148040276,
+        "dist_size": 148043572,
         "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
         "revision_date": "2017-10-01"
       }
     ],
     "conformance": {
-      "es1": 0.7222,
+      "es1": 0.7172,
       "es3": 0.2027,
       "es5": 0.2703,
-      "es1-es5": 0.4595
+      "es1-es5": 0.4571
     }
   },
   {
@@ -7599,7 +7859,7 @@
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
     "interpreter": "stack-based VM",
-    "github_stars": 1115,
+    "github_stars": 1117,
     "github_forks": 54,
     "github_contributors": 6,
     "bench": [
@@ -7711,45 +7971,45 @@
     "years": "2019-",
     "platform": "JavaScript",
     "interpreter": "tree walker",
-    "github_stars": 176,
-    "github_forks": 13,
-    "github_contributors": 4,
+    "github_stars": 194,
+    "github_forks": 16,
+    "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "dist_size": 50882,
-        "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
-        "revision_date": "2025-05-10",
-        "version": "0.8.24-1-13-gcd391a8"
+        "dist_size": 128337,
+        "revision": "5b8985372d34dc3327c20dcbfc9a4b85d948c52b",
+        "revision_date": "2026-02-10",
+        "version": "0.8.32"
       },
       {
         "arch": "arm64",
-        "dist_size": 50882,
-        "revision": "cd391a82f7908d49a0bf707769ae1d0260bb6f5e",
-        "revision_date": "2025-05-10",
-        "version": "0.8.24-1-13-gcd391a8"
+        "dist_size": 128337,
+        "revision": "5b8985372d34dc3327c20dcbfc9a4b85d948c52b",
+        "revision_date": "2026-02-10",
+        "version": "0.8.32"
       }
     ],
     "conformance": {
-      "es1": 0.8636,
-      "es3": 0.7838,
-      "es5": 0.3514,
-      "kangax-es5": 0.5056,
-      "kangax-es6": 0.3351,
-      "kangax-es2016": 0.1061,
-      "kangax-es2017": 0.32,
-      "kangax-es2018": 0.393,
+      "es1": 0.8333,
+      "es3": 0.7027,
+      "es5": 0.1892,
+      "kangax-es5": 0.2997,
+      "kangax-es6": 0.2629,
+      "kangax-es2016": 0.1667,
+      "kangax-es2017": 0.3,
+      "kangax-es2018": 0.4561,
       "kangax-es2019": 0.5833,
       "kangax-es2020": 0.5143,
-      "kangax-es2021": 0.1429,
-      "kangax-es2022": 0.127,
+      "kangax-es2021": 0.2143,
+      "kangax-es2022": 0.121,
       "kangax-es2023": 0.6286,
-      "kangax-es2024": 0.1633,
+      "kangax-es2024": 0.2041,
       "kangax-es2025": 0.5263,
-      "kangax-intl": 0.7143,
+      "kangax-intl": 0.5,
       "kangax-next": 0.0808,
-      "es1-es5": 0.7452,
-      "kangax-es2016plus": 0.3452
+      "es1-es5": 0.6738,
+      "kangax-es2016plus": 0.3619
     }
   },
   {
@@ -7799,7 +8059,7 @@
     "platform_detailed": "Go (cgo-free)",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([vm.go](https://github.com/grafana/sobek/blob/main/vm.go))",
-    "github_stars": 296,
+    "github_stars": 301,
     "github_forks": 9,
     "github_contributors": 41,
     "bench": [
@@ -7925,8 +8185,8 @@
     "years": "2015",
     "interpreter": "stack-based VM",
     "interpreter_detailed": "stack-based VM ([sophon_ins.c](https://github.com/gkmail/SophonJS/blob/master/src/sophon_ins.c))",
-    "github_stars": 38,
-    "github_forks": 6,
+    "github_stars": 37,
+    "github_forks": 7,
     "github_contributors": 2,
     "bench": [
       {
@@ -7991,7 +8251,7 @@
     "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
-      "es5": 0.7568,
+      "es5": 0.7432,
       "kangax-es5": 0.7995,
       "kangax-es6": 0.0304,
       "kangax-es2016": 0.0,
@@ -8006,7 +8266,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.8429,
+      "es1-es5": 0.8405,
       "kangax-es2016plus": 0.0257
     }
   },
@@ -8031,9 +8291,9 @@
     "gc_detailed": "generational GC, partially concurrent ([doc](https://firefox-source-docs.mozilla.org/js/gc.html))",
     "regex": "Irregexp, JIT-enabled",
     "regex_detailed": "Irregexp, JIT-enabled (YARR in 1.8.1+ / Firefox 3.5+, Irregexp in Firefox 78+)",
-    "github_stars": 10945,
-    "github_forks": 808,
-    "github_contributors": 12153,
+    "github_stars": 11234,
+    "github_forks": 859,
+    "github_contributors": 12220,
     "bench": [
       {
         "arch": "amd64",
@@ -8959,7 +9219,7 @@
     "parser": "Acorn",
     "parser_detailed": "[Acorn](../parsers/acorn.md)",
     "platform": "JavaScript",
-    "github_stars": 428,
+    "github_stars": 431,
     "github_forks": 57,
     "github_contributors": 10
   },
@@ -8997,7 +9257,7 @@
     "standard_detailed": "ES4 (ES3 + some ES4 draft features)",
     "years": "2006-2013",
     "jit": "yes",
-    "github_stars": 220,
+    "github_stars": 222,
     "github_forks": 73,
     "github_contributors": 3
   },
@@ -9038,23 +9298,23 @@
     "standard_detailed": "no (can't run ES1)",
     "years": "2009-2012",
     "interpreter": "interprets from source",
-    "github_stars": 573,
-    "github_forks": 90,
+    "github_stars": 578,
+    "github_forks": 91,
     "github_contributors": 5,
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "f1260560e3201b03e4a21f17cacf91edff9d38f477d6b2ee5a7117813e062229",
-        "binary_size": 166928,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "3549947e6a194c8cac5cd0fa5a9a6aaf95a4bd597c92c37ebd521798495a273b",
+        "binary_size": 166856,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
         "revision_date": "2025-10-21"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "e7f3bd77c531fa5bbacfb726885e4d152b7a1c1cc5c8cd5eaad3430ba35435cf",
-        "binary_size": 199560,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "859dc175dff45f3c16435d5b625ad08f06ea520b3f9637cc4445f57e4dfc9e30",
+        "binary_size": 199608,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123",
         "revision_date": "2025-10-21"
       }
@@ -9097,7 +9357,7 @@
     "type": "JavaScript-like language",
     "interpreter": "register-based VM",
     "interpreter_detailed": "register-based VM ([tTJSInterCodeContext::ExecuteCode](https://github.com/krkrz/krkrz/tree/master/tjs2/tjsInterCodeExec.cpp#L1019))",
-    "github_stars": 873,
+    "github_stars": 882,
     "github_forks": 127,
     "github_contributors": 12
   },
@@ -9117,7 +9377,46 @@
     "interpreter": "tree walker",
     "github_stars": 269,
     "github_forks": 16,
-    "github_contributors": 1
+    "github_contributors": 1,
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 665344,
+        "dotnet": "10.0.102",
+        "revision": "03ef33706098e87e6272a43037fe44b78060f63d",
+        "revision_date": "2024-11-14",
+        "version": "release-v1.4.1"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 664952,
+        "dotnet": "10.0.102",
+        "revision": "03ef33706098e87e6272a43037fe44b78060f63d",
+        "revision_date": "2024-11-14",
+        "version": "release-v1.4.1"
+      }
+    ],
+    "conformance": {
+      "es1": 0.2172,
+      "es3": 0.1419,
+      "es5": 0.0946,
+      "kangax-es5": 0.2091,
+      "kangax-es6": 0.1492,
+      "kangax-es2016": 0.3485,
+      "kangax-es2017": 0.1094,
+      "kangax-es2018": 0.0,
+      "kangax-es2019": 0.125,
+      "kangax-es2020": 0.1714,
+      "kangax-es2021": 0.0794,
+      "kangax-es2022": 0.0,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0,
+      "kangax-es2025": 0.0,
+      "kangax-intl": 0.0714,
+      "kangax-next": 0.0143,
+      "es1-es5": 0.169,
+      "kangax-es2016plus": 0.08
+    }
   },
   {
     "id": "topchetoeu",
@@ -9133,7 +9432,7 @@
     "standard": "ES5",
     "years": "2023-2025",
     "platform": "Java",
-    "github_stars": 37,
+    "github_stars": 36,
     "github_forks": 1,
     "github_contributors": 2,
     "bench": [
@@ -9190,8 +9489,8 @@
     "years": "2016-",
     "platform": "native",
     "platform_detailed": "native (compiles to C)",
-    "github_stars": 1351,
-    "github_forks": 97,
+    "github_stars": 1354,
+    "github_forks": 98,
     "github_contributors": 9
   },
   {
@@ -9258,9 +9557,9 @@
     "gc": "reference counting + mark-and-sweep GC",
     "regex": "POSIX",
     "regex_detailed": "POSIX (regex.h)",
-    "github_stars": 129,
-    "github_forks": 47,
-    "github_contributors": 23,
+    "github_stars": 133,
+    "github_forks": 49,
+    "github_contributors": 25,
     "bench": [
       {
         "arch": "amd64",
@@ -9327,9 +9626,9 @@
     "jit": "3-tier JIT, arm/arm64, x86/x64, mips64/mips64el, riscv32/riscv64, ppc64, s390x, loong64",
     "regex": "Irregexp , Experimental/Linear",
     "regex_detailed": "Irregexp (backtracking, JIT-enabled), [Experimental](https://v8.dev/blog/non-backtracking-regexp)/Linear (non-backtracking)",
-    "github_stars": 24763,
-    "github_forks": 4204,
-    "github_contributors": 1197,
+    "github_stars": 24838,
+    "github_forks": 4215,
+    "github_contributors": 1208,
     "bench": [
       {
         "arch": "amd64",
@@ -9743,8 +10042,8 @@
     "type": "JavaScript-like language",
     "platform": "WebAssembly",
     "jit": "via WebAssembly engine",
-    "github_stars": 374,
-    "github_forks": 26,
+    "github_stars": 381,
+    "github_forks": 28,
     "github_contributors": 11
   },
   {
@@ -9763,7 +10062,7 @@
     "standard": "ESnext",
     "years": "2002-",
     "interpreter": "stack-based VM",
-    "github_stars": 1473,
+    "github_stars": 1487,
     "github_forks": 250,
     "github_contributors": 73,
     "bench": [
@@ -9980,7 +10279,46 @@
     "jit": "via CLR",
     "github_stars": 253,
     "github_forks": 7,
-    "github_contributors": 8
+    "github_contributors": 8,
+    "bench": [
+      {
+        "arch": "amd64",
+        "dist_size": 23521654,
+        "dotnet": "10.0.102",
+        "revision": "afb4a5d188a2461aee959891eab7f958279b1115",
+        "revision_date": "2026-01-18",
+        "version": "1.2.301"
+      },
+      {
+        "arch": "arm64",
+        "dist_size": 23521262,
+        "dotnet": "10.0.102",
+        "revision": "afb4a5d188a2461aee959891eab7f958279b1115",
+        "revision_date": "2026-01-18",
+        "version": "1.2.301"
+      }
+    ],
+    "conformance": {
+      "es1": 0.8788,
+      "es3": 0.7568,
+      "es5": 0.5676,
+      "kangax-es5": 0.7849,
+      "kangax-es6": 0.5089,
+      "kangax-es2016": 0.303,
+      "kangax-es2017": 0.2294,
+      "kangax-es2018": 0.1579,
+      "kangax-es2019": 0.2887,
+      "kangax-es2020": 0.3857,
+      "kangax-es2021": 0.6746,
+      "kangax-es2022": 0.3078,
+      "kangax-es2023": 0.0,
+      "kangax-es2024": 0.0408,
+      "kangax-es2025": 0.193,
+      "kangax-intl": 0.3571,
+      "kangax-next": 0.0346,
+      "es1-es5": 0.781,
+      "kangax-es2016plus": 0.2778
+    }
   },
   {
     "id": "yavashark",
@@ -10063,25 +10401,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.8939,
-      "es3": 0.7635,
-      "es5": 0.6081,
-      "kangax-es5": 0.8144,
-      "kangax-es6": 0.5972,
-      "kangax-es2016": 0.5909,
+      "es1": 0.9141,
+      "es3": 0.9189,
+      "es5": 0.6892,
+      "kangax-es5": 0.8676,
+      "kangax-es6": 0.6419,
+      "kangax-es2016": 0.8182,
       "kangax-es2017": 0.5837,
       "kangax-es2018": 0.6281,
       "kangax-es2019": 0.5625,
-      "kangax-es2020": 0.7286,
+      "kangax-es2020": 0.8714,
       "kangax-es2021": 0.5952,
       "kangax-es2022": 0.8186,
-      "kangax-es2023": 0.9429,
+      "kangax-es2023": 1.0,
       "kangax-es2024": 0.5918,
-      "kangax-es2025": 0.2105,
+      "kangax-es2025": 0.8947,
       "kangax-intl": 0.6429,
       "kangax-next": 0.0404,
-      "es1-es5": 0.7976,
-      "kangax-es2016plus": 0.6
+      "es1-es5": 0.8762,
+      "kangax-es2016plus": 0.7178
     }
   },
   {
@@ -10104,17 +10442,17 @@
     "bench": [
       {
         "arch": "amd64",
-        "binary_sha256": "b662f175c2b259bfc3fac7163ad5413fda0eafc1920e066ff6f82af997cc14b3",
-        "binary_size": 47552,
-        "cc": "gcc 16.0.0 20251214 (experimental) [trunk r16-6108-g427ddf95eef] (Debian 16-20251214-1)",
+        "binary_sha256": "dea26543e875c10df6fb6f1e7d4e95c156761edb2374dc45992adc6d3db33f0e",
+        "binary_size": 51576,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
         "revision_date": "2018-08-29"
       },
       {
         "arch": "arm64",
-        "binary_sha256": "442df59ead31cc0b568845257ce461d14f056aac18fab5cfc4f344677f363394",
-        "binary_size": 67920,
-        "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+        "binary_sha256": "73d01b8b39e6f1c3013ca80caed901599033b36d0d50709bd27018e0747f05f1",
+        "binary_size": 67960,
+        "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)",
         "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
         "revision_date": "2018-08-29"
       }
