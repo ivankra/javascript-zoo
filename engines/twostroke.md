@@ -2,41 +2,42 @@
 
 JavaScript interpreter written in Ruby.
 
-* Homepage:    https://news.ycombinator.com/item?id=3460224
-* Repository:  https://github.com/haileys/twostroke.git <span class="shields"><img src="https://img.shields.io/github/stars/haileys/twostroke?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/haileys/twostroke?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         4723 (`cloc *.rb lib`)
-* Language:    Ruby
-* License:     MIT
-* Standard:    ES3
-* Years:       2011-2012
-* Interpreter: stack-based VM
+* Homepage:         https://news.ycombinator.com/item?id=3460224
+* Repository:       https://github.com/haileys/twostroke.git <span class="shields"><img src="https://img.shields.io/github/stars/haileys/twostroke?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/haileys/twostroke?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* LOC:              4723 (`cloc *.rb lib`)
+* Language:         Ruby
+* License:          MIT
+* Standard:         ES3
+* Years:            2011-2012
+* Runtime platform: Ruby
+* Interpreter:      stack-based VM
 
 ## Conformance
 
-<details><summary>ES1-ES5: 59%</summary><ul>
+<details><summary>ES1-ES5: 57%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/twostroke.txt">Full log</a>.</li>
-<li>ES1: 75%<pre>
+<li>ES1: 70%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed
 <a href="../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 <a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 <a href="../conformance/es1/Boolean.js">Boolean.js</a>: Boolean() failed
 <a href="../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: Boolean.prototype.constructor failed
+<a href="../conformance/es1/Date.diff.js">Date.diff.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.js">Date.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 <a href="../conformance/es1/Date.prototype.constructor.js">Date.prototype.constructor.js</a>: failed
-<a href="../conformance/es1/Date.prototype.setDate.js">Date.prototype.setDate.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setHours.js">Date.prototype.setHours.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setMilliseconds.js">Date.prototype.setMilliseconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setMinutes.js">Date.prototype.setMinutes.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setMonth.js">Date.prototype.setMonth.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setSeconds.js">Date.prototype.setSeconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setTime.js">Date.prototype.setTime.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCDate.js">Date.prototype.setUTCDate.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCFullYear.js">Date.prototype.setUTCFullYear.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCHours.js">Date.prototype.setUTCHours.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCMilliseconds.js">Date.prototype.setUTCMilliseconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCMinutes.js">Date.prototype.setUTCMinutes.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-<a href="../conformance/es1/Date.prototype.setUTCMonth.js">Date.prototype.setUTCMonth.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+<a href="../conformance/es1/Date.prototype.getDay.js">Date.prototype.getDay.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getFullYear.js">Date.prototype.getFullYear.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getHours.js">Date.prototype.getHours.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getMinutes.js">Date.prototype.getMinutes.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getSeconds.js">Date.prototype.getSeconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: failed
+<a href="../conformance/es1/Date.prototype.setDate.js">Date.prototype.setDate.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.setHours.js">Date.prototype.setHours.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.setMilliseconds.js">Date.prototype.setMilliseconds.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+<a href="../conformance/es1/Date.prototype.setMinutes.js">Date.prototype.setMinutes.js</a>: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 ...
 </pre></li>
 <li>ES3: 58%<pre>

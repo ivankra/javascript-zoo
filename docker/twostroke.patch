@@ -8,27 +8,6 @@ index fa87e6a..16929fe 100644
  
  gem "paint"
  gem "coderay"
-diff --git a/lib/twostroke/runtime/lib/date.rb b/lib/twostroke/runtime/lib/date.rb
-index 546e7e2..86d3093 100644
---- a/lib/twostroke/runtime/lib/date.rb
-+++ b/lib/twostroke/runtime/lib/date.rb
-@@ -17,6 +17,7 @@ module Twostroke::Runtime
-           args = args.take(7)
-             .map { |a| Types.to_uint32(a) }
-             .zip([9999, 12, 31, 23, 59, 59, 999]).map { |a,b| [a || 0, b].min }
-+          args[1] += 1 if args[1] # Convert JS month (0-11) to Ruby month (1-12)
-           args[6] *= 1000 if args[6]
-           this.data[:time] = Time.local *args
-         end
-@@ -52,7 +53,7 @@ module Twostroke::Runtime
-       }, nil, "valueOf", [])
-     
-     { "Date" => :day, "Day" => :wday, "FullYear" => :year, "Year" => ->t{ t.year - 1900 }, "Hours" => :hour,
--      "Milliseconds" => ->t{ (t.usec / 1000).to_i }, "Minutes" => :min, "Month" => :month,
-+      "Milliseconds" => ->t{ (t.usec / 1000).to_i }, "Minutes" => :min, "Month" => ->t{ t.month - 1 },
-       "Seconds" => :sec, "Time" => ->t{ (t.to_f * 1000).floor }, "TimezoneOffset" => ->t{ t.utc_offset / 60 } }.each do |prop,method|
-         # Date.prototype.getXXX
-         proto.proto_put "get#{prop}", Types::Function.new(->(scope, this, args) {
 diff --git a/lib/twostroke/runtime/lib/number.rb b/lib/twostroke/runtime/lib/number.rb
 index 0df3ecd..206fea6 100644
 --- a/lib/twostroke/runtime/lib/number.rb
@@ -51,7 +30,7 @@ index d49db8b..20d7448 100644
      case ruby_object
      when ::String, Symbol;  String.new ruby_object.to_s
 -    when Fixnum, Float;     Number.new ruby_object
-+    when Integer, Float;     Number.new ruby_object
++    when Integer, Float;    Number.new ruby_object
      when ::Array;           Array.new ruby_object.map { |el| marshal el }
      when Hash;              o = Object.new
                              ruby_object.each { |k,v| o.put k.to_s, marshal(v) }
@@ -89,10 +68,3 @@ index c79c979..af9d0a0 100644
      if c.ord == 3
        # ctrl+c
        if src.empty?
-@@ -145,4 +149,4 @@ if ARGV.include? "--pry"
- end
- 
- vm.execute
--=end
-\ No newline at end of file
-+=end

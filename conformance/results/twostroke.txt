@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 471338, "engine": "twostroke", "repository": "https://github.com/charliesome/twostroke.git", "revision": "3e6d5366bad603e987f78027d472255707ec26fa", "revision_date": "2012-05-30"}
+Metadata: {"arch": "arm64", "dist_size": 469927, "engine": "twostroke", "repository": "https://github.com/charliesome/twostroke.git", "revision": "3e6d5366bad603e987f78027d472255707ec26fa", "revision_date": "2012-05-30"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -14,17 +14,17 @@ es1/Boolean.js: Boolean() failed
 es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
-es1/Date.diff.js: OK
-es1/Date.js: OK
+es1/Date.diff.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 es1/Date.prototype.constructor.js: failed
 es1/Date.prototype.getDate.js: OK
-es1/Date.prototype.getDay.js: OK
-es1/Date.prototype.getFullYear.js: OK
-es1/Date.prototype.getHours.js: OK
-es1/Date.prototype.getMilliseconds.js: OK
-es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getDay.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.getFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.getHours.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.getMilliseconds.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.getMinutes.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 es1/Date.prototype.getMonth.js: OK
-es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getSeconds.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 es1/Date.prototype.getTimezoneOffset.js: OK
 es1/Date.prototype.getTime.js: OK
 es1/Date.prototype.getUTCDate.js: OK
@@ -33,15 +33,15 @@ es1/Date.prototype.getUTCFullYear.js: OK
 es1/Date.prototype.getUTCHours.js: OK
 es1/Date.prototype.getUTCMilliseconds.js: OK
 es1/Date.prototype.getUTCMinutes.js: OK
-es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCMonth.js: failed
 es1/Date.prototype.getUTCSeconds.js: OK
-es1/Date.prototype.setDate.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setHours.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMilliseconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMinutes.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setMonth.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
-es1/Date.prototype.setSeconds.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/Date.prototype.setDate.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setHours.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setMilliseconds.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setMinutes.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setMonth.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/Date.prototype.setSeconds.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 es1/Date.prototype.setTime.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Date.prototype.setUTCDate.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/Date.prototype.setUTCFullYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
@@ -113,8 +113,8 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: OK
-es1/annex-b.Date.prototype.setYear.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
+es1/annex-b.Date.prototype.getYear.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
+es1/annex-b.Date.prototype.setYear.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError)
 es1/annex-b.Date.prototype.toGMTString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/annex-b.global.escape.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
 es1/annex-b.global.unescape.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty?
@@ -358,7 +358,7 @@ es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Null (NoMethodError)
 es5/Array.prototype.sort.undefined-comparefn.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/array.rb:81:in `block (3 levels) in <module:Runtime>': undefined method `call' for an instance of Twostroke::Runtime::Types::Undefined (NoMethodError)
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: /dist/twostroke-dist/lib/twostroke/runtime/vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError) throw :exception, @exception if ex_stack.empty? Date.prototype.toISOString not a function
+es5/Date.prototype.toISOString.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:21:in `local': mon out of range (ArgumentError) Date.prototype.toISOString not a function
 es5/Date.prototype.toJSON.js: /dist/twostroke-dist/lib/twostroke/runtime/lib/date.rb:12:in `divmod': NaN (FloatDomainError) Date.prototype.toJSON not a function
 es5/Function.prototype-not-enumerable.js: prototype is enumerable; named function prototype is enumerable; prototype appears in for-in
 es5/Function.prototype.apply.array-like.js: OK
