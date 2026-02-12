@@ -6,6 +6,6 @@ JavaScript interpreter for JVM written in Kotlin.
 * LOC:              25566 (`cloc --not_match_d="(?i)(test)" src`)
 * Language:         Kotlin
 * License:          BSD-2-Clause
-* Years:            2020-
+* Years:            2020-2024
 * Runtime platform: Java
 * Interpreter:      stack-based VM

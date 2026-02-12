@@ -22,11 +22,11 @@ Richards score ~45 on M4 (78000us/iter).
 
 ## Conformance
 
-<details><summary>ES1-ES5: 0%</summary><ul>
+<details><summary>ES1-ES5: 8%</summary><ul>
 <li>Based on this repository's basic test suite. <a href="../conformance/results/tiny-js.txt">Full log</a>.</li>
-<li>ES1: 0%</li>
-<li>ES3: 0%</li>
-<li>ES5: 0%</li>
+<li>ES1: 12%, <b>1 crash</b></li>
+<li>ES3: 5%</li>
+<li>ES5: 4%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
@@ -44,3 +44,5 @@ Richards score ~45 on M4 (78000us/iter).
 <li>Next: 0%</li>
 <li>Intl: 0%</li>
 </ul></details>
+
+💥 **1 crash during testing**

@@ -1,13 +1,13 @@
 # topchetoeu
 
-ES5 interpreter written in Java.
+Unfinished ES5 interpreter written in Java.
 
 * Repository:       https://git.topcheto.eu/topchetoeu/j2s
 * GitHub:           https://github.com/TopchetoEU/jscript.git <span class="shields"><img src="https://img.shields.io/github/stars/TopchetoEU/jscript?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/TopchetoEU/jscript?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              15692 (`cloc --not_match_d="(test)" */src`)
 * Language:         Java
 * License:          MIT
-* Standard:         ES5
+* Standard:         ES5 (partial)
 * Years:            2023-2025
 * Runtime platform: Java
 

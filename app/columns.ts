@@ -49,9 +49,9 @@ export const BASE_COLUMNS: ColumnDef[] = [
   { key: 'github_contributors', label: 'Contributors', numeric: true, title: 'GitHub contributors count (for whole repo)' },
   { key: 'org', label: 'Org', title: 'Organization backing the project' },
   { key: 'license', label: 'License', className: 'license-cell', title: 'Software license' },
+  { key: 'platform', label: 'Platform', title: 'Runtime platform' },
   { key: 'description', label: 'Description', className: 'description-cell', title: 'Headline summary' },
   { key: 'interpreter', label: 'Interpreter', title: 'Interpreter type', defaultHidden: true },
-  { key: 'platform', label: 'Platform', title: 'Runtime platform', defaultHidden: true },
   { key: 'regex', label: 'Regex', title: 'Regular expression engine', defaultHidden: true },
   { key: 'ancestors', label: 'Ancestor', title: 'Ancestor engine', defaultHidden: true },
 ];

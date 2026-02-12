@@ -5,16 +5,14 @@
 # GitHub Settings > Developer settings > Personal access tokens
 GITHUB_TOKEN := $(shell cat ~/.iac/github-public-token.txt 2>/dev/null || true)
 
-all: npm-install data app
-
-npm-install:
-	npm install
-
 data:
 	./update.py --format-markdown $(if $(GITHUB_TOKEN),--github="$(GITHUB_TOKEN)")
 	./conformance/results/README-gen.py
 
-app: .PHONY
+node_modules:
+	npm install
+
+app: node_modules .PHONY
 	npm run build
 
 dev:

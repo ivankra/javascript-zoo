@@ -7,12 +7,27 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 * LOC:         73590 (`cloc *.c *.h`)
 * Language:    C
 * License:     MIT
-* Standard:    ES2023
+* Standard:    ESnext
 * Years:       2019-
 * Features:    hidden classes
 * Parser:      recursive descent, directly emits bytecode
 * Interpreter: stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))
 * GC:          reference counting
+
+## Forks
+
+* [QuickJS-NG](quickjs-ng.md): community-oriented fork
+* [PrimJS](primjs.md): ByteDance's fork with a mark-and-sweep GC
+* [fastschema/qjs](fastschema-qjs.md): QuickJS-NG ported to Go via Wasm
+* [modernc.org/quickjs](modernc-quickjs.md): QuickJS transpiled to pure Go
+* [Hako](hako.md): QuickJS ported to Wasm with C#/Go bindings
+* [QuickJIT](quickjit.md): QuickJS fork that JIT-translates bytecode using TCC
+* [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>: old inactive fork
+
+## Runtimes
+
+* [LLRT](https://github.com/awslabs/llrt) <span class="shields"><img src="https://img.shields.io/github/stars/awslabs/llrt?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/awslabs/llrt?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - lightweight QuickJS/tokio-based runtime by Amazon
+* [elsa](https://github.com/elsaland/elsa) <span class="shields"><img src="https://img.shields.io/github/stars/elsaland/elsa?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/elsaland/elsa?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - minimal Deno-inspired JavaScript/TypeScript runtime written in Go
 
 ## Users
 
@@ -25,21 +40,6 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 * [quickjs-emscripten](https://github.com/justjake/quickjs-emscripten) <span class="shields"><img src="https://img.shields.io/github/stars/justjake/quickjs-emscripten?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/justjake/quickjs-emscripten?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JS/TS WASM bindings
 * [sebastianwessel/quickjs](https://github.com/sebastianwessel/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/sebastianwessel/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/sebastianwessel/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JS/TS WASM sandbox
 * [wasm-jseval](https://github.com/maple3142/wasm-jseval) <span class="shields"><img src="https://img.shields.io/github/stars/maple3142/wasm-jseval?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/maple3142/wasm-jseval?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - safe eval library based on WASM and Duktape/QuickJS
-
-## Forks
-
-* [QuickJS-NG](quickjs-ng.md)
-  * [fastschema/qjs](fastschema-qjs.md): QuickJS-NG ported to Go via WASM
-* [PrimJS](primjs.md): ByteDance's fork with a mark-and-sweep GC
-  * [Hako](hako.md): PrimJS ported to WASM
-* [QuickJIT](quickjit.md): QuickJS fork that JIT-translates bytecode using TCC
-* [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* [modernc.org/quickjs](modernc-quickjs.md): QuickJS transpiled to pure Go
-
-## Runtimes
-
-* [LLRT](https://github.com/awslabs/llrt) <span class="shields"><img src="https://img.shields.io/github/stars/awslabs/llrt?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/awslabs/llrt?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - lightweight QuickJS/tokio-based runtime by Amazon
-* [elsa](https://github.com/elsaland/elsa) <span class="shields"><img src="https://img.shields.io/github/stars/elsaland/elsa?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/elsaland/elsa?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - minimal Deno-inspired JavaScript/TypeScript runtime written in Go
 
 ## Conformance
 

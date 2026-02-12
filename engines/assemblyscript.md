@@ -9,7 +9,6 @@ Compiler for a restricted TypeScript dialect to WebAssembly.
 * License:          Apache-2.0
 * Years:            2017-
 * Type:             JavaScript-like language
-* Runtime platform: WebAssembly
-* JIT:              via WebAssembly engine
+* Runtime platform: Wasm
 
 No function closures, iterators or exceptions.

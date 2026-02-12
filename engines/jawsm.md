@@ -7,5 +7,4 @@ JavaScript to WebAssembly compiler.
 * Language:         Rust
 * License:          Apache-2.0
 * Years:            2024-
-* Runtime platform: WebAssembly
-* JIT:              via WebAssembly engine
+* Runtime platform: Wasm

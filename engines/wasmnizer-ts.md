@@ -9,5 +9,4 @@ Compiler for a TypeScript subset targetting WebAssembly.
 * Org:              Intel
 * Years:            2023-2024
 * Type:             JavaScript-like language
-* Runtime platform: WebAssembly
-* JIT:              via WebAssembly engine
+* Runtime platform: Wasm

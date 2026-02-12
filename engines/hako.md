@@ -1,21 +1,16 @@
 # Hako
 
-Embeddable WebAssembly-sandboxed [PrimJS](primjs.md) fork.
+QuickJS ported to WebAssembly with C#/Go bindings.
 
-* Repository:       https://github.com/andrewmd5/hako.git <span class="shields"><img src="https://img.shields.io/github/stars/andrewmd5/hako?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/andrewmd5/hako?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              18306 (`cloc --not_match_d="(?i)(examples)" .`)
-* Language:         Go, C++, TypeScript
+* Repository:       https://github.com/6over3/hako.git <span class="shields"><img src="https://img.shields.io/github/stars/6over3/hako?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/6over3/hako?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* LOC:              30474 (`cloc --not_match_d="(?i)(examples)" hosts/`)
+* Language:         C#, Go
 * License:          Apache-2.0
-* Standard:         ES2019
+* Standard:         ESnext
 * Years:            2025-
-* Ancestor:         [PrimJS](primjs.md)
-* Runtime platform: WebAssembly
+* Ancestor:         [QuickJS](quickjs.md)
+* Runtime platform: Wasm, .NET, Go
 * Interpreter:      stack-based VM
-* JIT:              via WebAssembly engine
-
-## Quirks
-
-* Buggy nullish coalescing operator (ES2020): `null ?? 42` => `null`
 
 ## Conformance
 

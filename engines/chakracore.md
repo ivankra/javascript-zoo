@@ -2,19 +2,18 @@
 
 JavaScript engine of Microsoft Edge Legacy.
 
-* Repository:       https://github.com/chakra-core/ChakraCore.git <span class="shields"><img src="https://img.shields.io/github/stars/chakra-core/ChakraCore?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/chakra-core/ChakraCore?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
-* Language:         C++
-* License:          MIT
-* Org:              Microsoft
-* Standard:         ES2019 (partial)
-* Years:            2015-2021
-* Ancestor:         [JScript9 / Chakra](jscript9.md)
-* Features:         WebAssembly engine, deferred parsing
-* Runtime platform: native (Windows x86/x64/arm64, Linux x64, macOS x64/arm64)
-* Interpreter:      register-based VM
-* JIT:              2-tier JIT, arm/arm64, x86/x64
-* DLL:              chakra.dll
+* Repository:  https://github.com/chakra-core/ChakraCore.git <span class="shields"><img src="https://img.shields.io/github/stars/chakra-core/ChakraCore?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/chakra-core/ChakraCore?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* LOC:         779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
+* Language:    C++
+* License:     MIT
+* Org:         Microsoft
+* Standard:    ES2019 (partial)
+* Years:       2015-2021
+* Ancestor:    [JScript9 / Chakra](jscript9.md)
+* Features:    WebAssembly engine, deferred parsing
+* Interpreter: register-based VM
+* JIT:         2-tier JIT, arm/arm64, x86/x64
+* DLL:         chakra.dll
 
 ## History
 
@@ -30,24 +29,6 @@ passed it to a rather inactive community of external maintainers.
 Continued production use (esp. with JIT) is thus risky from security perspective.
 Closed-source chakra.dll in Windows, presumably, is still maintained.
 
-## Features
-
-* ES2020
-  * BigInt: implemented, but disabled by default
-  * Optional chaining: not implemented
-
-## Shell
-
-Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1088)):
-  * `console.log(s)` / `print(s)`: print with newline
-  * `readline()`: undefined on EOF
-  * `readbuffer(filename)`
-  * `WScript`
-    * `WScript.Platform = {ARCH: "x86_64", ...}`
-    * `WScript.Arguments = [...]`
-    * `WScript.LoadTextFile(path)`
-    * ...
-
 ## Runtimes
 
 * [Node-Chakracore](https://github.com/nodejs/node-chakracore) <span class="shields"><img src="https://img.shields.io/github/stars/nodejs/node-chakracore?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/nodejs/node-chakracore?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - Node.js on ChakraCore (obsolete)
@@ -56,6 +37,7 @@ Shell built-ins ([WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blo
 
 * https://www.microsoft.com/en-us/research/wp-content/uploads/2018/04/41159.compressed.pdf
 * https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/hosting/chakra-hosting/targeting-edge-vs-legacy-engines-in-jsrt-apis
+* Shell built-ins reference: [WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1088)
 
 ## Conformance
 

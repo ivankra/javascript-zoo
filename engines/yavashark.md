@@ -6,6 +6,7 @@ JavaScript/TypeScript engine written in Rust.
 * LOC:         177309 (`cloc --not_match_d="(?i)(test)" crates src`)
 * Language:    Rust
 * License:     MIT
+* Standard:    ES6+ (partial)
 * Years:       2024-
 * Interpreter: tree walker
 
