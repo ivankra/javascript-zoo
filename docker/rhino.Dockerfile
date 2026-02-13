@@ -22,8 +22,8 @@ RUN mkdir -p /dist && \
 COPY dist.py ./
 RUN ./dist.py /dist/rhino \
       --wrapper='exec java -jar "$SCRIPT_DIR/rhino.jar" "$@"' \
+      --dist_files=/dist/rhino.jar \
       --license=LICENSE.txt \
       --license=NOTICE.txt \
       --license=NOTICE-tools.txt \
-      version="$(git describe --tags | sed -Ee 's/^Rhino([0-9_]+)_Release/\1/; s/_/./g')" \
-      dist_size="$(du -bs /dist/rhino.jar | cut -f 1)"
+      version="$(git describe --tags | sed -Ee 's/^Rhino([0-9_]+)_Release/\1/; s/_/./g')"

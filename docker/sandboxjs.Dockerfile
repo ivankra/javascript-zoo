@@ -14,8 +14,7 @@ RUN npm install && npm install esbuild && npm run build
 
 COPY sandboxjs.js ./
 
-RUN npx esbuild sandboxjs.js --outfile=/dist/sandboxjs --bundle --platform=node && \
-    sed -i '1i #!/usr/bin/env node' /dist/sandboxjs
+RUN npx esbuild sandboxjs.js --outfile=/dist/sandboxjs --bundle --platform=node
 
 COPY dist.py ./
 RUN ./dist.py /dist/sandboxjs

@@ -17,6 +17,7 @@ import shutil
 import stat
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 
@@ -51,16 +52,26 @@ def arch_name() -> str:
 
 def parse_args(
     argv: list[str],
-) -> tuple[Path, Path | None, str | None, list[str], bool, bool, dict[str, str]]:
+) -> tuple[
+    Path,
+    Path | None,
+    str | None,
+    list[str],
+    list[str],
+    bool,
+    bool,
+    dict[str, str],
+]:
     p = argparse.ArgumentParser(
         prog="./dist.py",
-        usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--no-license] [key=value ...]",
+        usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--dist_files=<path> ...] [--no-license] [run_script_cmd='<cmd>'] [key=value ...]",
     )
     p.add_argument("out", help="output path, must be under /dist")
     p.add_argument("meta", nargs="*", help="metadata entries as key=value")
     p.add_argument("--binary", dest="binary")
     p.add_argument("--wrapper", dest="wrapper")
     p.add_argument("--license", dest="licenses", action="append", default=[])
+    p.add_argument("--dist_files", dest="dist_files", action="append", default=[])
     p.add_argument("--no-license", action="store_true", dest="no_license")
     p.add_argument("--rename-variant", action="store_true", dest="rename_variant")
 
@@ -80,7 +91,16 @@ def parse_args(
         meta[k.replace("-", "_")] = v
 
     binary = Path(ns.binary) if ns.binary else None
-    return out, binary, ns.wrapper, ns.licenses, ns.no_license, ns.rename_variant, meta
+    return (
+        out,
+        binary,
+        ns.wrapper,
+        ns.licenses,
+        ns.dist_files,
+        ns.no_license,
+        ns.rename_variant,
+        meta,
+    )
 
 
 def dist_json_candidates() -> list[Path]:
@@ -161,6 +181,24 @@ def strip_or_copy(src: Path, dst: Path) -> None:
         subprocess.run(["strip", "-o", str(dst), str(src)], check=True)
     elif src.resolve() != dst.resolve():
         shutil.copy2(src, dst)
+    if dst.exists():
+        mode = dst.stat().st_mode
+        dst.chmod(mode | stat.S_IRUSR | stat.S_IXUSR | stat.S_IRGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IXOTH)
+
+
+def ensure_world_rx(path: Path) -> None:
+    if not path.exists():
+        return
+    mode = path.stat().st_mode
+    path.chmod(
+        mode
+        | stat.S_IRUSR
+        | stat.S_IXUSR
+        | stat.S_IRGRP
+        | stat.S_IXGRP
+        | stat.S_IROTH
+        | stat.S_IXOTH
+    )
 
 
 def build_wrapper(path: Path, wrapper_exec_line: str) -> None:
@@ -174,8 +212,7 @@ def build_wrapper(path: Path, wrapper_exec_line: str) -> None:
         ]
     )
     path.write_text(content, encoding="utf-8")
-    mode = path.stat().st_mode
-    path.chmod(mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
+    ensure_world_rx(path)
 
 
 def write_combined_license(license_file: Path, paths: list[Path]) -> None:
@@ -323,6 +360,35 @@ def default_size_meta(meta: dict[str, str], out: Path) -> None:
     meta["binary_size"] = str(out.stat().st_size)
 
 
+def set_dist_size_from_files(meta: dict[str, str], specs: list[str]) -> None:
+    if not specs:
+        return
+
+    seen: set[Path] = set()
+    total = 0
+    for spec in specs:
+        matches = [Path(p) for p in sorted(glob.glob(spec))]
+        if not matches:
+            pp = Path(spec)
+            if pp.exists():
+                matches = [pp]
+            else:
+                fail(f"--dist_files entry matched nothing: {spec}")
+        for p in matches:
+            if p in seen:
+                continue
+            seen.add(p)
+            if p.is_dir():
+                total += tree_size(p)
+            elif p.is_file():
+                total += p.stat().st_size
+            else:
+                fail(f"--dist_files path is neither file nor directory: {p}")
+
+    meta["dist_size"] = str(total)
+    meta.pop("binary_size", None)
+
+
 def finalize_json(out: Path, meta: dict[str, str]) -> None:
     cooked: dict[str, object] = {}
     for k, v in meta.items():
@@ -339,8 +405,70 @@ def finalize_json(out: Path, meta: dict[str, str]) -> None:
     )
 
 
+def _has_line_with_substring(text: str, needle: str) -> bool:
+    return any(needle in line for line in text.splitlines())
+
+
+def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) -> str:
+    command = run_script_cmd if run_script_cmd else "$BINARY $FILE"
+    attempts: list[tuple[str, str, str]] = []
+    expected = "hello world"
+
+    with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
+        for func in ["console.log", "print"]:
+            source = f'{func}("hello" + " world");\n'
+            script = Path(tmp) / f"{func.replace('.', '_')}.js"
+            script.write_text(source, encoding="utf-8")
+
+            env = os.environ.copy()
+            env["BINARY"] = str(binary_path)
+            env["FILE"] = str(script)
+
+            try:
+                proc = subprocess.run(
+                    ["bash", "-c", command],
+                    text=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    env=env,
+                    check=False,
+                )
+            except Exception:
+                continue
+
+            attempts.append((func, proc.stdout, proc.stderr))
+            on_stdout = _has_line_with_substring(proc.stdout, expected)
+            on_stderr = _has_line_with_substring(proc.stderr, expected)
+            if on_stdout and not on_stderr:
+                return func
+            if on_stderr and not on_stdout:
+                return func
+
+    print(
+        f"dist.py: could not detect console.log/print for {binary_path}",
+        file=sys.stderr,
+    )
+    for name, out, err in attempts:
+        print(f"dist.py: probe {name} stdout:", file=sys.stderr)
+        print(out, file=sys.stderr, end="" if out.endswith("\n") else "\n")
+        print(f"dist.py: probe {name} stderr:", file=sys.stderr)
+        print(err, file=sys.stderr, end="" if err.endswith("\n") else "\n")
+
+    fail(f"could not detect console.log/print for {binary_path}")
+
+
 def main() -> None:
-    dist_out, binary, wrapper, explicit_licenses, no_license, do_rename_variant, meta = parse_args(sys.argv[1:])
+    (
+        dist_out,
+        binary,
+        wrapper,
+        explicit_licenses,
+        dist_files,
+        no_license,
+        do_rename_variant,
+        meta,
+    ) = parse_args(sys.argv[1:])
+    run_script_cmd = meta.get("run_script_cmd")
 
     if binary is not None and not binary.exists():
         fail(f"binary does not exist: {binary}")
@@ -359,6 +487,7 @@ def main() -> None:
 
     if binary is None and wrapper is None and not dist_out.exists():
         fail(f"missing output file: {dist_out}; pass --binary=<path> or --wrapper=...")
+    ensure_world_rx(dist_out)
 
     license_dst = Path(str(dist_out) + ".LICENSE")
     if not license_dst.exists():
@@ -366,6 +495,7 @@ def main() -> None:
     if not no_license and not license_dst.exists():
         fail(f"missing license file: {license_dst} (pass --license=<path> or --no-license)")
 
+    set_dist_size_from_files(meta, dist_files)
     default_size_meta(meta, dist_out)
     load_jsz_files(meta)
     if dist_out.exists() and not has_shebang(dist_out):
@@ -373,6 +503,8 @@ def main() -> None:
         meta.setdefault("binary_sha256", sha)
     maybe_git_metadata(meta)
     default_engine_variant(meta, dist_out)
+    if dist_out.parent == Path("/dist") and "console_log" not in meta:
+        meta["console_log"] = probe_console_log_function(dist_out, run_script_cmd)
     finalize_json(dist_out, meta)
 
 

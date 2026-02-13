@@ -13,9 +13,10 @@ WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN npm install && npm run build && \
-    mkdir -p /dist && cp ./dist/njs.js /dist/narcissus && \
-    # Much faster when run under SpiderMonkey \
-    sed -i -e 's|^#!.*|#!/dist/spidermonkey|' /dist/narcissus
+    mkdir -p /dist && cp ./dist/njs.js /dist/narcissus.js
 
+# Much faster when run under SpiderMonkey
 COPY dist.py ./
-RUN ./dist.py /dist/narcissus
+RUN ./dist.py /dist/narcissus \
+      --dist_files=/dist/narcissus.js \
+      --wrapper='if [[ -x "$SCRIPT_DIR/spidermonkey" ]]; then exec "$SCRIPT_DIR/spidermonkey" "$SCRIPT_DIR/narcissus.js" "$@"; else exec node "$SCRIPT_DIR/narcissus.js" "$@"; fi'

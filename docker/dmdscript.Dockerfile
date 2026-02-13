@@ -15,4 +15,4 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends ldc dub
 RUN bash ./build.sh
 
 COPY dist.py ./
-RUN ./dist.py /dist/dmdscript --binary=/src/dmdscript
+RUN ./dist.py /dist/dmdscript --binary=/src/dmdscript console_log=println

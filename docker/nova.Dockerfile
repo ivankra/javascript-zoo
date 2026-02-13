@@ -14,4 +14,5 @@ RUN cargo build --release --bin nova_cli
 
 # Usage: nova repl / nova eval script.js
 COPY dist.py ./
-RUN ./dist.py /dist/nova --binary=/src/target/release/nova_cli
+RUN ./dist.py /dist/nova --binary=/src/target/release/nova_cli \
+      run_script_cmd='$BINARY eval ${MODULE:+--module} $FILE'

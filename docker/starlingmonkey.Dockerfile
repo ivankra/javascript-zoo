@@ -23,8 +23,7 @@ RUN cmake --build build --target starling
 
 COPY starlingmonkey.sh /dist/starlingmonkey
 
-RUN chmod a+rx /dist/starlingmonkey && \
-    mkdir -p /dist/starlingmonkey-dist && \
+RUN mkdir -p /dist/starlingmonkey-dist && \
     cp build/starling.wasm /dist/starlingmonkey-dist/ && \
     find deps -name wasmtime -type f -executable -exec cp {} /dist/starlingmonkey-dist/wasmtime ';'
 

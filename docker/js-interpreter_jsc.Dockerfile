@@ -9,4 +9,5 @@ FROM $BASE
 COPY dist.py ./
 RUN ./dist.py /dist/js-interpreter_jsc \
       --wrapper='exec "$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter" -- "$@"' \
-      dist_size="$(du -bc /dist/js-interpreter | tail -1 | cut -f 1)"
+      --dist_files=/dist/js-interpreter \
+      console_log=console.log

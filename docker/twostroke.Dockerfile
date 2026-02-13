@@ -28,7 +28,5 @@ RUN export DIST=/dist/twostroke-dist && \
 
 COPY twostroke.sh /dist/twostroke
 
-RUN chmod a+rx /dist/twostroke
-
 COPY dist.py ./
 RUN ./dist.py /dist/twostroke

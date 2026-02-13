@@ -10,7 +10,6 @@ RUN npm install --prefix=/dist/mujs_babel-dist \
         rollup core-js@3
 
 COPY mujs_babel.sh /dist/mujs_babel
-RUN chmod a+rx /dist/mujs_babel
 
 COPY dist.py ./
-RUN ./dist.py /dist/mujs_babel --no-license
+RUN ./dist.py /dist/mujs_babel --no-license console_log=console.log

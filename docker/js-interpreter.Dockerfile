@@ -14,8 +14,7 @@ RUN npm install esbuild
 
 COPY js-interpreter.js ./
 
-RUN npx esbuild js-interpreter.js --outfile=/dist/js-interpreter --bundle --platform=node && \
-    sed -i '1i #!/usr/bin/env node' /dist/js-interpreter
+RUN npx esbuild js-interpreter.js --outfile=/dist/js-interpreter --bundle --platform=node
 
 COPY dist.py ./
 RUN ./dist.py /dist/js-interpreter

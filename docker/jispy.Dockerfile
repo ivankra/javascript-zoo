@@ -19,4 +19,4 @@ RUN git apply jispy.patch && python ./tests.py && \
     ln -s jispy-dist/jispy.py /dist/jispy
 
 COPY dist.py ./
-RUN ./dist.py /dist/jispy
+RUN ./dist.py /dist/jispy console_log=console.log

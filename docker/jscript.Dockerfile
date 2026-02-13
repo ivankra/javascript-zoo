@@ -8,9 +8,9 @@ ARG BASE=jsz-debian
 FROM $BASE
 
 COPY jscript.sh /dist/jscript
-RUN chmod a+rx /dist/jscript && /dist/jscript --version
+RUN chmod a+rx /dist/jscript && /dist/jscript --version >jscript_version
 
 COPY dist.py ./
 RUN ./dist.py /dist/jscript \
-      version="$(/dist/jscript --version)" \
-      binary_size="$(du -bc ~/.cache/jsz-jscript/drive_c/windows/system32/jscript.dll | tail -1 | cut -f 1)"
+      --dist_files=/root/.cache/jsz-jscript/drive_c/windows/system32/jscript.dll \
+      version="$(cat jscript_version)"

@@ -18,6 +18,6 @@ COPY dscriptcpp.patch ./
 RUN git apply dscriptcpp.patch && make
 
 COPY dist.py ./
-RUN ./dist.py /dist/dscriptcpp --binary=/src/dscript
+RUN ./dist.py /dist/dscriptcpp --binary=/src/dscript console_log=println
 
 # TODO: wrapper with 'qemu-i386-static ./dscript' for macOS containerization or check different kernels

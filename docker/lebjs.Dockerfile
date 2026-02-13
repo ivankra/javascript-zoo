@@ -24,4 +24,4 @@ RUN mkdir -p /dist && \
 COPY dist.py ./
 RUN ./dist.py /dist/lebjs \
       --wrapper='exec java -jar "$SCRIPT_DIR/lebjs.jar" "$@"' \
-      dist_size="$(du -bc /dist/lebjs.jar | tail -1 | cut -f 1)"
+      --dist_files=/dist/lebjs.jar

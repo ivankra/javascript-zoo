@@ -39,7 +39,6 @@ RUN $DIST/python3.10/bin/python3 -m venv $DIST/venv && \
     $DIST/venv/bin/pip install .
 
 COPY js2py.py /dist/js2py
-RUN chmod a+rx /dist/js2py
 
 COPY dist.py ./
 RUN ./dist.py /dist/js2py

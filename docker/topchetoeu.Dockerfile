@@ -30,4 +30,4 @@ RUN mkdir -p /dist && \
 COPY dist.py ./
 RUN ./dist.py /dist/topchetoeu \
       --wrapper='exec java -jar "$SCRIPT_DIR/topchetoeu.jar" "$@"' \
-      dist_size="$(du -bc /dist/topchetoeu.jar | tail -1 | cut -f 1)"
+      --dist_files=/dist/topchetoeu.jar

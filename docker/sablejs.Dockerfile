@@ -13,11 +13,11 @@ RUN git clone "$REPO" . && git checkout "$REV"
 RUN npm install
 RUN sed -i 's/.*spawn.sync.*/process.exit(0);/' cli.js && node ./cli.js cli.js
 
-COPY sablejs.js ./
+COPY sablejs.js /dist/sablejs
 
 RUN mkdir -p /dist/sablejs-dist && \
     cp -r .pkg/sablejs-linux-* /dist/sablejs-dist/ && \
     cp runtime.js /dist/sablejs-dist/runtime.js
 
 COPY dist.py ./
-RUN ./dist.py /dist/sablejs --binary=/src/sablejs.js
+RUN ./dist.py /dist/sablejs
