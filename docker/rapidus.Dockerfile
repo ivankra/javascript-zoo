@@ -13,5 +13,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 RUN rustup toolchain install nightly-2023-02-01 && rustup override set nightly-2023-02-01
 RUN cargo build --release
 
-ENV JS_BINARY=/src/target/release/rapidus-repl
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/rapidus --binary=/src/target/release/rapidus-repl

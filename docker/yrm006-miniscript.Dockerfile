@@ -13,4 +13,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 COPY yrm006-miniscript.c ./
 RUN cc -O3 --std=c99 -o miniscript miniscript.c mslib.c yrm006-miniscript.c #readme.c
 
-ENV JS_BINARY=/src/miniscript
+COPY dist.py ./
+RUN ./dist.py /dist/yrm006-miniscript --binary=/src/miniscript --no-license

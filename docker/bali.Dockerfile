@@ -18,5 +18,5 @@ RUN git clone https://github.com/simdutf/simdutf && cd simdutf && cmake . && sud
 
 RUN nimble build balde
 
-ENV JS_BINARY=/src/bin/balde
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/bali --binary=/src/bin/balde

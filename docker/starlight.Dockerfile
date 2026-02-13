@@ -17,6 +17,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends rustup libss
 RUN rustup toolchain install nightly-2021-08-01 && rustup override set nightly-2021-08-01
 RUN cargo build --release
 
-ENV JS_BINARY=/src/target/release/sl
-RUN mkdir -p /dist && rustc --version >/dist/jsz_rustc && git tag -d nightly
-# No REPL
+RUN git tag -d nightly
+COPY dist.py ./
+RUN ./dist.py /dist/starlight --binary=/src/target/release/sl rustc="$(rustc --version)"

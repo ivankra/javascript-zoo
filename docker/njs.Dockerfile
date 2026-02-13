@@ -14,5 +14,5 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN apt-get update -y && apt-get install -y --no-install-recommends libpcre2-dev libedit-dev
 RUN ./configure --cc-opt="-O3" --no-openssl --no-libxml2 --no-quickjs --no-zlib && make -j
 
-ENV JS_BINARY=/src/build/njs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/njs --binary=/src/build/njs

@@ -25,13 +25,9 @@ RUN cd lib && npm install
 RUN gradle build
 
 RUN mkdir -p /dist && \
-    cp /src/build/libs/j2s-repl-*-beta-all.jar /dist/topchetoeu.jar && \
-    echo >/dist/topchetoeu \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'exec java -jar "$SCRIPT_DIR/topchetoeu.jar" "$@"' && \
-    chmod a+rx /dist/topchetoeu && \
-    du -bc /dist/topchetoeu.jar | tail -1 | cut -f 1 >jsz_dist_size
+    cp /src/build/libs/j2s-repl-*-beta-all.jar /dist/topchetoeu.jar
 
-ENV JS_BINARY=/dist/topchetoeu
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/topchetoeu \
+      --wrapper='exec java -jar "$SCRIPT_DIR/topchetoeu.jar" "$@"' \
+      dist_size="$(du -bc /dist/topchetoeu.jar | tail -1 | cut -f 1)"

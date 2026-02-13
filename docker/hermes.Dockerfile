@@ -50,6 +50,7 @@ RUN cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
       $(if [ "$STATIC" = true ]; then echo -DHERMES_STATIC_LINK=ON; fi) && \
     cmake --build build
 
-ENV JS_BINARY=/src/build/bin/hermes
-RUN git describe --tags | sed 's/hermes-//; s/^v//;' >jsz_version  # --version lies
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/hermes \
+      --binary=/src/build/bin/hermes \
+      version="$(git describe --tags | sed 's/hermes-//; s/^v//;')"  # --version lies

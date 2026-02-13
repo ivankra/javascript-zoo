@@ -62,6 +62,7 @@ RUN export ARCH=$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/x64/') && \
 RUN gn gen out/release/
 RUN autoninja -C out/release/ d8
 
-ENV JS_BINARY=/src/src/out/release/d8
-RUN ${JS_BINARY} -e 'console.log(version())' >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/v8_pgo \
+      --binary=/src/src/out/release/d8 \
+      version="$(/src/src/out/release/d8 -e 'console.log(version())')"

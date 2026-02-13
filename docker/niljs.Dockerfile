@@ -15,13 +15,7 @@ COPY niljs.cs /src/
 COPY niljs.csproj /src/
 
 RUN dotnet publish niljs.csproj -c Release -o /dist/niljs-dist && \
-    printf '%s\n' \
-      '#!/bin/bash' \
-      'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")' \
-      'exec dotnet "$SCRIPT_DIR/niljs-dist/niljs.dll" "$@"' \
-      >/dist/niljs && \
-    chmod a+rx /dist/niljs && \
-    du -bc /dist/niljs /dist/niljs-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    test -f /dist/niljs-dist/niljs.dll
 
-ENV JS_BINARY=/dist/niljs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/niljs --wrapper='exec dotnet "$SCRIPT_DIR/niljs-dist/niljs.dll" "$@"'

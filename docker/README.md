@@ -15,8 +15,8 @@ Make targets:
   * `make all-ignoring-errors`: build every Dockerfile, skip failing ones.
   * `make <name>`: build a single engine
     * Calls `./build.sh <name>[.Dockerfile]`: wrapper for `docker build`.
-    * Then `./dist.sh <name>[.Dockerfile]`: strips and copies binary into
-      `../dist/<arch>/<name>`, along with build metadata and auxialiry files.
+    * Then `./dist.sh <name>[.Dockerfile]`: copies packaged artifacts from
+      container `/dist` into `../dist/<arch>/<name>`, along with metadata files.
   * `make <engine>[-repl/-sh]`: build and drop into REPL/bash in build container
   * `make sh`: drop into bash in a throwaway test container with pre-installed
     libraries/runtimes and dist directory with all engines built so far.
@@ -50,7 +50,6 @@ Template for adding a new engine:
 ARG BASE=jsz-gcc
 FROM $BASE
 
-# Point to master/lkgr-like branch so it could be usable for daily builds later
 ARG REPO=<repository to check out>
 ARG REV=master
 
@@ -61,17 +60,10 @@ RUN git clone "$REPO" . && git checkout "$REV"
 #RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 #    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
-RUN make -j
+RUN make -j$(nproc)
 
-ENV JS_BINARY=<path to javascript shell binary>
-
-# Point WORKDIR to project's main source code directory for dist.sh -
-# it will get git metadata from current directory's repository.
-# Tweak metadata if needed: drop jsz_<key> files in source or /dist dir.
-#RUN ${JS_BINARY} --version >jsz_version
-
-# REPL command if engine supports it
-CMD ${JS_BINARY}
-
-# TODO: COPY dist.sh ./; RUN ./dist.sh ${JS_BINARY} -o /dist/engine --key=value ...
+# dist.py finishes packaging: strips and copies binary or creates bash wrapper,
+# writes /dist/engine.json with given key=value pairs, git metadata etc.
+COPY dist.py ./
+RUN ./dist.py /dist/engine --binary=./binary version="$(./binary --version)"
 ```

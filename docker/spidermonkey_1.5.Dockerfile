@@ -54,12 +54,14 @@ RUN cd js/src && \
     sed -i -e 's/^static int StackGrowthDirection/static int __attribute__((noinline)) StackGrowthDirection/' jscpucfg.c && \
     make -f Makefile.ref BUILD_OPT=1
 
-# Metadata
-ENV JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js
-RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
-    echo "$TARBALL" >jsz_sources && \
-    ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p' >jsz_version && \
-    ${JS_BINARY} --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p' >jsz_revision_date && \
-    echo ES3 >jsz_standard && \
-    echo "" >jsz_jit
-CMD ${JS_BINARY}
+# Metadata and dist packaging
+RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+COPY dist.py ./
+RUN ./dist.py /dist/spidermonkey_1.5 \
+      --binary=/src/js/src/Linux_All_OPT.OBJ/js \
+      --license=LICENSE \
+      sources="$TARBALL" \
+      version="$(/src/js/src/Linux_All_OPT.OBJ/js --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p')" \
+      revision_date="$(/src/js/src/Linux_All_OPT.OBJ/js --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p')" \
+      standard=ES3 \
+      jit=

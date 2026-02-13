@@ -12,5 +12,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN CFLAGS="-O3" make -j1
 
-ENV JS_BINARY=/src/jsish
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jsish --binary=/src/jsish

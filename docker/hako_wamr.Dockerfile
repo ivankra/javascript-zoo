@@ -18,5 +18,6 @@ RUN git submodule update --depth=1 --init --recursive
 RUN cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release && \
     cmake --build build
 
-ENV JS_BINARY=/src/build/bin/hako
-CMD ${JS_BINARY}
+COPY --from=jsz-hako /dist/hako.LICENSE /dist/hako_wamr.LICENSE
+COPY dist.py ./
+RUN ./dist.py /dist/hako_wamr --binary=/src/build/bin/hako

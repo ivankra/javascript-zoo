@@ -13,5 +13,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 RUN sed -i '/-Werror/d' CMakeLists.txt
 RUN make
 
-ENV JS_BINARY=/src/build/qjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/quickjs-ng --binary=/src/build/qjs

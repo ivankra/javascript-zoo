@@ -17,7 +17,7 @@ RUN git clone "$REPO" . && git checkout "$REV"
 COPY dscriptcpp.patch ./
 RUN git apply dscriptcpp.patch && make
 
-ENV JS_BINARY=/src/dscript
-CMD ${JS_BINARY} /bench/repl.js
+COPY dist.py ./
+RUN ./dist.py /dist/dscriptcpp --binary=/src/dscript
 
 # TODO: wrapper with 'qemu-i386-static ./dscript' for macOS containerization or check different kernels

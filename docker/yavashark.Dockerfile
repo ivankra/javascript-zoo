@@ -13,5 +13,5 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN cargo build --release
 
-ENV JS_BINARY=/src/target/release/yavashark
-CMD ${JS_BINARY} -i -s
+COPY dist.py ./
+RUN ./dist.py /dist/yavashark --binary=/src/target/release/yavashark

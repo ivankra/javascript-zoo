@@ -36,13 +36,5 @@ COPY hako.csproj /src/hako-runner.csproj
 RUN rid="$(uname -m | sed -e 's/^x86_64$/linux-x64/; s/^aarch64$/linux-arm64/; s/^arm64$/linux-arm64/')"; \
     dotnet publish /src/hako-runner.csproj -c Release -f net10.0 -r "$rid" --self-contained false -o /dist/hako-dist
 
-RUN printf '%s\n' \
-      '#!/bin/bash' \
-      'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")' \
-      'exec dotnet --roll-forward Major "$SCRIPT_DIR/hako-dist/hako-runner.dll" "$@"' \
-      >/dist/hako && \
-    chmod a+rx /dist/hako && \
-    du -bc /dist/hako /dist/hako-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
-
-ENV JS_BINARY=/dist/hako
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/hako --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/hako-dist/hako-runner.dll" "$@"'

@@ -23,5 +23,5 @@ RUN ./build.sh --ninja --static \
       $(if [ "$INTL" = true ]; then echo --embed-icu; else echo --no-icu --without-intl; fi) \
       $(if [ "$JITLESS" = true -o `uname -m` = aarch64 ]; then echo --no-jit; echo "" >jsz_jit; fi)
 
-ENV JS_BINARY=/src/out/Release/ch
-CMD ${JS_BINARY} /bench/repl.js
+COPY dist.py ./
+RUN ./dist.py /dist/chakracore --binary=/src/out/Release/ch

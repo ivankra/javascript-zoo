@@ -65,14 +65,9 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN sed -i 's/^_version_string = .*/_version_string = "1.0"/' js/builtins/js_global.py
 
 RUN cp -a js py-js.py $DIST/ && \
-    echo >/dist/rpython-langjs \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'DIST=$SCRIPT_DIR/rpython-langjs-dist'"\n"\
-'export PYTHONPATH=$DIST/pypy2.7'"\n"\
-'exec $DIST/pypy2.7/pypy/goal/pypy-c $DIST/py-js.py "$@"' && \
-    chmod a+rx /dist/rpython-langjs && \
-    du -bc $DIST | tail -1 | cut -f 1 >jsz_dist_size
+    true
 
-ENV JS_BINARY=/dist/rpython-langjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/rpython-langjs \
+      --wrapper='DIST=$SCRIPT_DIR/rpython-langjs-dist; export PYTHONPATH=$DIST/pypy2.7; exec $DIST/pypy2.7/pypy/goal/pypy-c $DIST/py-js.py "$@"' \
+      --no-license

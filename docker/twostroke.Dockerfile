@@ -28,8 +28,7 @@ RUN export DIST=/dist/twostroke-dist && \
 
 COPY twostroke.sh /dist/twostroke
 
-RUN chmod a+rx /dist/twostroke && \
-    du -bc $DIST | tail -1 | cut -f 1 >jsz_dist_size
+RUN chmod a+rx /dist/twostroke
 
-ENV JS_BINARY=/dist/twostroke
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/twostroke

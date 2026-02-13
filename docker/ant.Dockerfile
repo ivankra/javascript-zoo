@@ -46,5 +46,5 @@ RUN export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig:$PKG_CONFIG_PATH" \
     && meson compile -C build \
     && llvm-strip-21 build/ant
 
-ENV JS_BINARY=/src/build/ant
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/ant --binary=/src/build/ant

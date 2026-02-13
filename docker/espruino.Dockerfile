@@ -13,6 +13,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN make -j RELEASE=1
 
-ENV JS_BINARY=/src/bin/espruino
-RUN ${JS_BINARY} -e 'print(process.version)' | tail -2 | head -1 | tr -d '\r' >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/espruino \
+      --binary=/src/bin/espruino \
+      version="$(/src/bin/espruino -e 'print(process.version)' | tail -2 | head -1 | tr -d '\r')"

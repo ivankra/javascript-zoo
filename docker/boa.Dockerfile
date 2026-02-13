@@ -15,5 +15,5 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends libssl-dev
 
 RUN cargo build --release --bin boa
 
-ENV JS_BINARY=/src/target/release/boa
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/boa --binary=/src/target/release/boa

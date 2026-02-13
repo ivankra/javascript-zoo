@@ -12,5 +12,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN cd goja && go build
 
-ENV JS_BINARY=/src/goja/goja
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/goja --binary=/src/goja/goja

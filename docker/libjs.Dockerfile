@@ -34,5 +34,5 @@ RUN cmake -B build -G Ninja --preset=Release \
 
 RUN ninja -C build test262-runner js
 
-ENV JS_BINARY=/src/build/bin/js
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/libjs --binary=/src/build/bin/js

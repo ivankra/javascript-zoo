@@ -32,18 +32,9 @@ RUN mkdir -p /dist && \
     sed -i '/var babel =/d; s/ babel\./ require("babel-core")./' bin/castl.js && \
     cp -a lua /dist/castl-dist && \
     cp -f /usr/local/lib/lua/5.1/rex_pcre2.so /dist/castl-dist/ && \
-    npx esbuild bin/castl.js --outfile=/dist/castl-dist/castl.js --bundle --platform=node --external:babel-* && \
-    echo >/dist/castl \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'export LUA_PATH="$SCRIPT_DIR/castl-dist/?.lua;;"'"\n"\
-'export LUA_CPATH="$SCRIPT_DIR/castl-dist/?.so;;"'"\n"\
-'if [[ -z "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi'"\n"\
-'node "$SCRIPT_DIR/castl-dist/castl.js" --jit "$@"' && \
-    chmod a+rx /dist/castl && \
-    du -bc /dist/castl-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    npx esbuild bin/castl.js --outfile=/dist/castl-dist/castl.js --bundle --platform=node --external:babel-*
 
 # TODO: pure-lua shell using lua/castl/jscompile/castl_jit.lua
 
-ENV JS_BINARY=/dist/castl
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/castl --wrapper='export LUA_PATH="$SCRIPT_DIR/castl-dist/?.lua;;"; export LUA_CPATH="$SCRIPT_DIR/castl-dist/?.so;;"; if [[ -z "$1" ]]; then echo "Usage: $0 <script>"; exit 1; fi; exec node "$SCRIPT_DIR/castl-dist/castl.js" --jit "$@"'

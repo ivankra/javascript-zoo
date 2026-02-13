@@ -17,14 +17,13 @@ RUN apt-get install -y --no-install-recommends openjdk-21-jdk-headless
 RUN ./gradlew :rhino-all:build
 
 RUN mkdir -p /dist && \
-    cp rhino-all/build/libs/rhino-all-*.jar /dist/rhino.jar && \
-    echo >/dist/rhino \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'java -jar "$SCRIPT_DIR/rhino.jar" "$@"' && \
-    chmod a+rx /dist/rhino && \
-    git describe --tags | sed -Ee 's/^Rhino([0-9_]+)_Release/\1/; s/_/./g' >jsz_version && \
-    du -bs /dist/rhino.jar | cut -f 1 >jsz_dist_size
+    cp rhino-all/build/libs/rhino-all-*.jar /dist/rhino.jar
 
-ENV JS_BINARY=/dist/rhino
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/rhino \
+      --wrapper='exec java -jar "$SCRIPT_DIR/rhino.jar" "$@"' \
+      --license=LICENSE.txt \
+      --license=NOTICE.txt \
+      --license=NOTICE-tools.txt \
+      version="$(git describe --tags | sed -Ee 's/^Rhino([0-9_]+)_Release/\1/; s/_/./g')" \
+      dist_size="$(du -bs /dist/rhino.jar | cut -f 1)"

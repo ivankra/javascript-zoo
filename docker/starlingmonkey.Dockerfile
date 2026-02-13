@@ -26,8 +26,7 @@ COPY starlingmonkey.sh /dist/starlingmonkey
 RUN chmod a+rx /dist/starlingmonkey && \
     mkdir -p /dist/starlingmonkey-dist && \
     cp build/starling.wasm /dist/starlingmonkey-dist/ && \
-    find deps -name wasmtime -type f -executable -exec cp {} /dist/starlingmonkey-dist/wasmtime ';' && \
-    du -bc /dist/starlingmonkey-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    find deps -name wasmtime -type f -executable -exec cp {} /dist/starlingmonkey-dist/wasmtime ';'
 
-ENV JS_BINARY=/dist/starlingmonkey
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/starlingmonkey

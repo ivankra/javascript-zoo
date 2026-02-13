@@ -14,7 +14,6 @@ RUN cd /src && \
     go get github.com/bytecodealliance/wasmtime-go/v41 && \
     go build -mod=mod -o /dist/hako_wasmtime_go ./hako_wasmtime_go.go
 
-RUN du -bc /dist/hako_wasmtime_go | tail -1 | cut -f 1 >/dist/jsz_binary_size
-
-ENV JS_BINARY=/dist/hako_wasmtime_go
-CMD ${JS_BINARY}
+COPY --from=jsz-hako /dist/hako.LICENSE /dist/hako_wasmtime_go.LICENSE
+COPY dist.py ./
+RUN ./dist.py /dist/hako_wasmtime_go

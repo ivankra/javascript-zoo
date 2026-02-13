@@ -23,6 +23,7 @@ RUN export CFLAGS="-O3" CXXFLAGS="-O3" && \
     cmake -B build -S . -G Ninja -DKJS_FORCE_DISABLE_PCRE=true -DBUILD_SHARED_LIBS=OFF && \
     cmake --build build
 
-ENV JS_BINARY=/src/kjs/build/bin/kjs5
-RUN ${JS_BINARY} --version | egrep -o '[0-9.]+' >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/kjs \
+      --binary=/src/kjs/build/bin/kjs5 \
+      version="$(/src/kjs/build/bin/kjs5 --version | egrep -o '[0-9.]+')"

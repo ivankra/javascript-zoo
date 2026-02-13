@@ -25,5 +25,5 @@ RUN python tools/build.py \
       --cmake-param=-DCMAKE_C_COMPILER="$CC" \
       --compile-flag=-w
 
-ENV JS_BINARY=/src/build/bin/jerry
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jerryscript --binary=/src/build/bin/jerry

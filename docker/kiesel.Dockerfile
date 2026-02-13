@@ -17,6 +17,7 @@ RUN cd /opt && wget -O zig.tar.xz "https://ziglang.org/download/${ZIG_VER}/zig-$
 
 RUN zig build --release=fast
 
-ENV JS_BINARY=/src/zig-out/bin/kiesel
-RUN ${JS_BINARY} --version | grep -i kiesel | grep -o '[0-9].*' >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/kiesel \
+      --binary=/src/zig-out/bin/kiesel \
+      version="$(/src/zig-out/bin/kiesel --version | grep -i kiesel | grep -o '[0-9].*')"

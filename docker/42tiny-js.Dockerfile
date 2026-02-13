@@ -13,5 +13,7 @@ RUN git clone "$REPO" . && git checkout "$REV"
 COPY 42tiny-js.patch ./
 RUN git apply 42tiny-js.patch && make
 
-ENV JS_BINARY=/src/Script
-CMD ${JS_BINARY}
+RUN head -n 38 Script.cpp >LICENSE
+
+COPY dist.py ./
+RUN ./dist.py /dist/42tiny-js --binary=/src/Script --license=LICENSE

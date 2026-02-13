@@ -20,5 +20,8 @@ RUN sed -i -E -e 's/[(][(]int[)]([a-z]+|[(][a-z]+[)])[)] ([-+0-9* ]* sizeof[(]in
     sed -i -e 's/-O2/-O3/g; s/-Werror//g' Makefile && \
     make
 
-ENV JS_BINARY=/src/quadwheel
-CMD ${JS_BINARY}
+# Per https://code.google.com/archive/p/quad-wheel/
+RUN echo "MIT" >LICENSE
+
+COPY dist.py ./
+RUN ./dist.py /dist/quad-wheel --binary=/src/quadwheel

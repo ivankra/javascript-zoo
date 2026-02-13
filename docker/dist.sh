@@ -1,6 +1,5 @@
 #!/bin/bash
-# This script is run after a successful build to strip and copy built binaries
-# out of build containers to ../dist/<arch>/, along with a metadata .json file.
+# Copies build artefacts out of build container's /dist into ../dist/<arch>/
 #
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
@@ -30,102 +29,14 @@ if [[ -f $CIDFILE ]]; then
   rm -f "$CIDFILE"
 fi
 
-# Prepare /dist directory inside container
+# Most variant builds reuse same Dockerfile with original /dist filenames,
+# so their build artefacts may need to be renamed post-build here,
+# e.g. /dist/v8 -> /dist/v8_jitless, as well as json/LICENSE files.
 $DOCKER run --cidfile="$CIDFILE" "jsz-$ID" /bin/bash -e -c "$(cat <<EOF
-mkdir -p /dist
-
-if [[ "\$DIST_BIN" == "" ]]; then
-  export DIST_BIN="/dist/$ID"
+if ! [[ -f "/dist/$ID.json" || -f "/dist/parsers/$ID.json" || -f "/dist/transpilers/$ID.json" ]]; then
+  ./dist.py "/dist/$ID" --rename-variant
 fi
-
-if [[ "\$JS_BINARY" != "" && ! -f "\$JS_BINARY" ]]; then
-  echo "Error: JS_BINARY=\$JS_BINARY doesn't exist"
-  exit 1
-fi
-
-if [[ \$(file -b --mime-type "\$JS_BINARY" 2>/dev/null) == */*-executable && "\$JS_BINARY" != /dist/* ]]; then
-  rm -f "\$DIST_BIN" || true
-  strip -o "\$DIST_BIN" "\$JS_BINARY"
-  sha256sum "\$DIST_BIN" | cut -f 1 -d ' ' >/dist/jsz_binary_sha256
-  if ! [[ -f /dist/jsz_dist_size ]]; then
-    ls -l "\$DIST_BIN" 2>/dev/null | sed -e 's/  */ /g' | cut -f 5 -d ' ' >/dist/jsz_binary_size
-  fi
-fi
-
-if ! [[ -f "\$DIST_BIN.LICENSE" ]]; then
-  if [[ -f "\$LICENSE" ]]; then
-    cp -f "\$LICENSE" "\$DIST_BIN.LICENSE"
-  elif [[ -n "\$LICENSES" ]]; then
-    head -n -0 \$LICENSES >"\$DIST_BIN.LICENSE"
-  else
-    rm -f "\$DIST_BIN.LICENSE"
-    license_files=()
-    found=0
-    for f in LICENSE* COPYING* COPYRIGHT* *[Ll]icense*.txt *[Ll]icenses *[Ll]icense *_LICENSE* NOTICE* *NOTICE*.txt *[Nn]otice*.txt; do
-      if [[ -f "\$f" ]]; then
-        license_files+=("\$f")
-        found=1
-      fi
-    done
-    if [[ \$found == 1 ]]; then
-      head -n -0 "\${license_files[@]}" >>"\$DIST_BIN.LICENSE"
-    fi
-  fi
-fi
-
-SRC="\$(pwd)"
-
-for f in jsz_*; do
-  if [[ -f "\$f" && ! -f "/dist/\$f" ]]; then
-    cp -f "\$f" "/dist/\$f"
-  fi
-done
-
-if [[ -d .git ]]; then
-  git rev-parse HEAD >/dist/jsz_revision
-  git log -1 --format='%ad' --date=short HEAD >/dist/jsz_revision_date
-  git remote get-url origin >/dist/jsz_repository
-
-  if ! [[ -f /dist/jsz_version ]] && git describe --tags HEAD >/dev/null 2>/dev/null; then
-    git describe --tags HEAD | sed -Ee 's/^v([0-9])/\\1/' >/dist/jsz_version 2>/dev/null
-  fi
-fi
-
-cd /dist
-
-ID="$ID"
-
-ENGINE="\${ID%_*}"
-ENGINE="\${ENGINE%_*}"
-ENGINE="\${ENGINE%_*}"
-echo "\$ENGINE" >jsz_engine
-
-if [[ "\$ID" == *_* ]]; then
-  VARIANT="\${ID#*_}"
-  echo "\$VARIANT" >jsz_variant
-fi
-
-echo "$ARCH" >jsz_arch
-
-# Assemble $DIST_BIN.json from value fragments in /dist/jsz_*
-{
-  echo "{"
-  for f in jsz_*; do
-    key=\${f#jsz_}
-    if [[ \$key == binary_size || \$key == dist_size || \$key == loc ]]; then
-      val=\$(cat "\$f")
-    else
-      val=\$(cat "\$f" | python3 -c 'import sys, json; print(json.dumps(sys.stdin.read().strip()));')
-    fi
-    echo "  \"\$key\": \$val,"
-    rm -f "\$f"
-  done
-} | sed '$ s/,$//' >\$DIST_BIN.json
-echo "}" >>\$DIST_BIN.json
-
-ls -l /dist | grep -v ^total
-
-exit 0;
+ls -l /dist | grep -v ^total | grep -v ' jsz_' || true
 EOF
 )"
 
@@ -142,8 +53,7 @@ $DOCKER cp "$CID":/dist "$TMPCP" || \
 rm -rf \
   "../dist/$ARCH/$ID" \
   "../dist/$ARCH/$ID."* \
-  "../dist/$ARCH/$ID-dist" \
-  "../dist/$ARCH/$ID-lib"
+  "../dist/$ARCH/$ID-dist"
 
 for subdir in "" parsers/ transpilers/; do
   for src in "$TMPCP/dist/$subdir$ID"*; do

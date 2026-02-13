@@ -24,5 +24,5 @@ RUN git rev-parse --short=8 HEAD >VERSION && \
     if [ "$LTO" = y ]; then export CONFIG_LTO=y; fi; \
     make -j$(nproc) qjs
 
-ENV JS_BINARY=/src/qjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/quickjs --binary=/src/qjs

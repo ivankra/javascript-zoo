@@ -14,5 +14,5 @@ COPY modernc-quickjs.go main.go
 
 RUN go build main.go
 
-ENV JS_BINARY=/src/main LICENSES="LICENSE LICENSE-LIBQUICKJS"
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/modernc-quickjs --binary=/src/main --license=LICENSE*

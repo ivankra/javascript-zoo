@@ -15,5 +15,5 @@ RUN sed -i -e 's/PR_cnvtf(buf, sizeof buf, 20, fval);/snprintf(buf, sizeof(buf),
 
 RUN sed -i -e 's/CC=clang/CC="clang -O3"/' build.sh && bash -c 'source ./build.sh && compile_native'
 
-ENV JS_BINARY=/src/out/mo_shell
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/mocha --binary=/src/out/mo_shell --no-license

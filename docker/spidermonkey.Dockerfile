@@ -50,6 +50,8 @@ RUN { \
 
 RUN MOZCONFIG=/src/MOZCONFIG ./mach build && ln -s obj-*/ obj
 
-ENV JS_BINARY=/src/obj/dist/bin/js LICENSE=toolkit/content/license.html
-RUN ${JS_BINARY} -v | egrep -o [0-9.]+ >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/spidermonkey \
+      --binary=/src/obj/dist/bin/js \
+      --license=toolkit/content/license.html \
+      version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+')"

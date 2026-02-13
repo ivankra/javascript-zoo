@@ -18,14 +18,7 @@ RUN dotnet publish Jint.Repl/Jint.Repl.csproj \
       -p:PublishTrimmed=false \
       -p:EnableAotAnalyzer=false \
       -p:IsAotCompatible=false && \
-    test -f /dist/jint-dist/Jint.Repl.dll && \
-    printf '%s\n' \
-      '#!/bin/bash' \
-      'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")' \
-      'exec dotnet "$SCRIPT_DIR/jint-dist/Jint.Repl.dll" "$@"' \
-      >/dist/jint && \
-    chmod a+rx /dist/jint && \
-    du -bc /dist/jint /dist/jint-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    test -f /dist/jint-dist/Jint.Repl.dll
 
-ENV JS_BINARY=/dist/jint
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jint --wrapper='exec dotnet "$SCRIPT_DIR/jint-dist/Jint.Repl.dll" "$@"'

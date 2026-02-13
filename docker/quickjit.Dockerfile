@@ -16,5 +16,5 @@ RUN sed -i 's/CFLAGS = .*/CFLAGS = -Wall -O3/' Makefile && \
     make -j && \
     cc -o quickjit -O3 quickjit.c libquickjit.a -lm
 
-ENV JS_BINARY=/src/quickjit
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/quickjit --binary=/src/quickjit

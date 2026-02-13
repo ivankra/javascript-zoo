@@ -14,5 +14,5 @@ COPY echosoar-jsi.rs src/main.rs
 
 RUN cargo build --release
 
-ENV JS_BINARY=/src/target/release/jsi
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/echosoar-jsi --binary=/src/target/release/jsi --license=readme.md

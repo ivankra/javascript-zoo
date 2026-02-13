@@ -16,8 +16,7 @@ RUN npm run build
 # Bundle everything including the main script
 # Have to manually inline createRequire-imported package.json
 RUN sed -Ei -e 's/(const packageJson =).*/\1/; /const packageJson =/r package.json' lib/node/bin.mjs && \
-    npx esbuild lib/node/bin.mjs --outfile=/dist/engine262 --bundle --platform=node --format=esm --external:node:* && \
-    du -bc /dist/engine262 | tail -1 | cut -f 1 >/dist/jsz_dist_size
+    npx esbuild lib/node/bin.mjs --outfile=/dist/engine262 --bundle --platform=node --format=esm --external:node:*
 
-ENV JS_BINARY=/dist/engine262
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/engine262

@@ -13,6 +13,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN ./configure && make -j 1
 
-ENV JS_BINARY=/src/src/js
-RUN ${JS_BINARY} --version | egrep -o '[0-9.]*$' | head -1 >jsz_version
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/ngs \
+      --binary=/src/src/js \
+      version="$(/src/src/js --version | egrep -o '[0-9.]*$' | head -1)"

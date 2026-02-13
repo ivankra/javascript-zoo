@@ -16,8 +16,7 @@ COPY jispy.patch ./
 RUN git apply jispy.patch && python ./tests.py && \
     mkdir -p /dist/jispy-dist && \
     cp -a jispy.py *.js /dist/jispy-dist && \
-    ln -s jispy-dist/jispy.py /dist/jispy && \
-    du -bc /dist/jispy-dist | tail -1 | cut -f 1 >jsz_dist_size
+    ln -s jispy-dist/jispy.py /dist/jispy
 
-ENV JS_BINARY=/dist/jispy
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jispy

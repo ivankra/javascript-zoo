@@ -12,5 +12,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN cd otto && go build
 
-ENV JS_BINARY=/src/otto/otto
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/otto --binary=/src/otto/otto

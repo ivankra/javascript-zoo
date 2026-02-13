@@ -28,6 +28,7 @@ RUN export CXXFLAGS="-w -Wno-implicit-fallthrough -Wno-deprecated-copy -Wno-depr
       $(if [ "$STATIC" = true ]; then echo -DCMAKE_EXE_LINKER_FLAGS=-static; fi) && \
     make -C build -j $(nproc) lv5
 
-ENV JS_BINARY=/src/build/iv/lv5/lv5
-RUN if ${JS_BINARY} -v | grep -q "JIT..off"; then echo "" >jsz_jit; fi  # metadata
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/iv-lv5 \
+      --binary=/src/build/iv/lv5/lv5 \
+      jit="$(if /src/build/iv/lv5/lv5 -v | grep -q "JIT..on"; then echo true; fi)"

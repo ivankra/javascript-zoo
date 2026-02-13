@@ -16,5 +16,5 @@ RUN sed -i 's/ | JsEvalFlagStrict//' options.go
 COPY fastschema-qjs.go ./
 RUN go build fastschema-qjs.go
 
-ENV JS_BINARY=/src/fastschema-qjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/fastschema-qjs --binary=/src/fastschema-qjs

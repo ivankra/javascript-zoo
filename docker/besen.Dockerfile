@@ -17,5 +17,5 @@ RUN git apply besen.patch
 
 RUN fpc -O3 -Mdelphi src/BESENShell.lpr
 
-ENV JS_BINARY=/src/src/BESENShell
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/besen --binary=/src/src/BESENShell

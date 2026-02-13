@@ -20,7 +20,6 @@ COPY repl.js /src/hosts/go/repl.js
 COPY hako_go.go /src/hosts/go/hako_go.go
 RUN cd /src/hosts/go && go build -mod=mod -o /dist/hako_go ./hako_go.go
 
-RUN du -bc /dist/hako_go | tail -1 | cut -f 1 >/dist/jsz_binary_size
-
-ENV JS_BINARY=/dist/hako_go
-CMD ${JS_BINARY}
+COPY --from=jsz-hako /dist/hako.LICENSE /dist/hako_go.LICENSE
+COPY dist.py ./
+RUN ./dist.py /dist/hako_go

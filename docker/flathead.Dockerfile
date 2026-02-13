@@ -15,5 +15,5 @@ RUN sed -i -e 's/yycolumn/yycolumn2/' src/lexer.l && \
     (make -j regexp=off HAS_FPU=yes || true) && \
     make -j regexp=off HAS_FPU=yes
 
-ENV JS_BINARY=/src/bin/flat
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/flathead --binary=/src/bin/flat

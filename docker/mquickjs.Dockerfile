@@ -12,5 +12,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN make -j$(nproc) HOST_CC="${CC:-gcc}" CC="${CC:-gcc}"
 
-ENV JS_BINARY=/src/mqjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/mquickjs --binary=/src/mqjs

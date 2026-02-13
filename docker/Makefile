@@ -92,9 +92,6 @@ $(1)-dist: $(DIST_DIR)/$(1).json
 $(DIST_DIR)/$(1).json: $(IID_DIR)/jsz-$(1) dist.sh
 	./dist.sh $(1)
 
-$(1)-repl: $(IID_DIR)/jsz-$(1)
-	$(DOCKER_RUN) --rm -it -v $(PWD)/../bench:/bench jsz-$(1)
-
 $(1)-sh: $(IID_DIR)/jsz-$(1)
 	$(DOCKER_RUN) --rm -it -v $(PWD)/../bench:/bench jsz-$(1) \
 	  /bin/bash -c '[[ -f $$$$JS_BINARY && ! -f $(1) ]] && ln -sv "$$$$JS_BINARY" "./$(1)"; /bin/bash -i'

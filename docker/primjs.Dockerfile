@@ -24,5 +24,5 @@ RUN platform_abi="$(uname -m | sed -e 's/^aarch64$/arm64/; s/^arm64$/arm64/; s/^
     cmake -B build -G Ninja $cmake_args && \
     ninja -C build qjs
 
-ENV JS_BINARY=/src/build/qjs
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/primjs --binary=/src/build/qjs

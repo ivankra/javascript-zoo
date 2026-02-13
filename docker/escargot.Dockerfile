@@ -18,5 +18,5 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends libicu-dev
 RUN cmake -DESCARGOT_MODE=release -DESCARGOT_OUTPUT=shell -GNinja -Bbuild
 RUN ninja -C build
 
-ENV JS_BINARY=/src/build/escargot
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/escargot --binary=/src/build/escargot

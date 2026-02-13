@@ -19,13 +19,9 @@ RUN javac -d out $(find src -name "*.java") && \
     jar cfm lebjs.jar out/META-INF/MANIFEST.MF -C out .
 
 RUN mkdir -p /dist && \
-    cp lebjs.jar /dist/ && \
-    echo >/dist/lebjs \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'java -jar "$SCRIPT_DIR/lebjs.jar" "$@"' && \
-    chmod a+rx /dist/lebjs && \
-    du -bc /dist/lebjs.jar | tail -1 | cut -f 1 >jsz_dist_size
+    cp lebjs.jar /dist/lebjs.jar
 
-ENV JS_BINARY=/dist/lebjs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/lebjs \
+      --wrapper='exec java -jar "$SCRIPT_DIR/lebjs.jar" "$@"' \
+      dist_size="$(du -bc /dist/lebjs.jar | tail -1 | cut -f 1)"

@@ -19,14 +19,7 @@ RUN mkdir -p /dist && \
     cp -a build /dist/ucode-dist && \
     cd /dist/ucode-dist && \
     rm -rf examples/ CMake* cmake* Makefile && \
-    (strip * || true) && \
-    echo >/dist/ucode \
-'#!/bin/bash'"\n"\
-'LIB=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/ucode-dist'"\n"\
-'LD_LIBRARY_PATH="$LIB" "$LIB/ucode" "-L$LIB" "$@"' && \
-    chmod a+rx /dist/ucode && \
-    # Only the core interpreter, without optional modules \
-    du -bc /dist/ucode-dist/ucode /dist/ucode-dist/libucode.so.0 | tail -1 | cut -f 1 >/dist/jsz_binary_size
+    (strip * || true)
 
-ENV JS_BINARY=/dist/ucode
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/ucode --wrapper='LIB=$SCRIPT_DIR/ucode-dist; export LD_LIBRARY_PATH=$LIB; exec "$LIB/ucode" "-L$LIB" "$@"'

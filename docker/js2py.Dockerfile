@@ -39,8 +39,7 @@ RUN $DIST/python3.10/bin/python3 -m venv $DIST/venv && \
     $DIST/venv/bin/pip install .
 
 COPY js2py.py /dist/js2py
-RUN chmod a+rx /dist/js2py && \
-    du --exclude='*.pyc' -bc $DIST | tail -1 | cut -f 1 >jsz_dist_size
+RUN chmod a+rx /dist/js2py
 
-ENV JS_BINARY=/dist/js2py
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/js2py

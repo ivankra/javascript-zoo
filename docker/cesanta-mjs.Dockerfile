@@ -12,5 +12,5 @@ RUN git clone "$REPO" . && git checkout "$REV"
 
 RUN cc -O3 -DMJS_MAIN -o mjs mjs.c
 
-ENV JS_BINARY=/src/mjs
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/cesanta-mjs --binary=/src/mjs

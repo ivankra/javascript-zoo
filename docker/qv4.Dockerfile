@@ -31,6 +31,5 @@ RUN cmake -B build -G Ninja \
       -DQT_FEATURE_qml_profiler=OFF
 RUN ninja -C build qmljs
 
-ENV JS_BINARY=/src/build/qtbase/bin/qmljs
-ENV LICENSES="LICENSES/LicenseRef-Qt-Commercial.txt LICENSES/LGPL-3.0-only.txt LICENSES/GPL-2.0-only.txt LICENSES/GPL-3.0-only.txt"
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/qv4 --binary=/src/build/qtbase/bin/qmljs --license=LICENSES/*.txt

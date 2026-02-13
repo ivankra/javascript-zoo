@@ -14,5 +14,5 @@ RUN sed -i 's/\(CXXFLAGS += -msse4.2\|CORE_SOURCES += .*LinuxNativeAPI\)/#\1/' M
 RUN sed -i '1i #include <climits>' include/quanta/core/runtime/Value.h
 RUN make -j
 
-ENV JS_BINARY=/src/build/bin/quanta
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/quanta --binary=/src/build/bin/quanta

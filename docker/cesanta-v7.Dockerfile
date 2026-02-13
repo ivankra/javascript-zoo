@@ -15,5 +15,5 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN cc -o v7 -O3 -DV7_LARGE_AST -DV7_EXE -DCS_ENABLE_UTF8 v7.c -lm
 
-ENV JS_BINARY=/src/v7
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/cesanta-v7 --binary=/src/v7

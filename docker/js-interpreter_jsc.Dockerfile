@@ -6,14 +6,7 @@
 ARG BASE=jsz-js-interpreter
 FROM $BASE
 
-COPY --from=jsz-jsc /src/jsz_version ./jsc_version
-
-RUN echo >/dist/js-interpreter_jsc \
-'#!/bin/bash'"\n"\
-'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")'"\n"\
-'"$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter" -- "$@"' && \
-    chmod a+rx /dist/js-interpreter_jsc && \
-    echo "jsc $(cat jsc_version)" >jsz_host_engine
-
-ENV JS_BINARY=/dist/js-interpreter_jsc
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/js-interpreter_jsc \
+      --wrapper='exec "$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter" -- "$@"' \
+      dist_size="$(du -bc /dist/js-interpreter | tail -1 | cut -f 1)"

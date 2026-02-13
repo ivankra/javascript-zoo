@@ -13,5 +13,5 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN cargo build --release
 
-ENV JS_BINARY=/src/target/release/bs
-# No REPL
+COPY dist.py ./
+RUN ./dist.py /dist/brimstone --binary=/src/target/release/bs

@@ -16,13 +16,5 @@ COPY jurassic.cs /src/REPL/Program.cs
 RUN dotnet publish REPL/REPL.csproj -c Release -o /dist/jurassic-dist && \
     test -f /dist/jurassic-dist/REPL.dll
 
-RUN printf '%s\n' \
-      '#!/bin/bash' \
-      'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")' \
-      'exec dotnet --roll-forward Major "$SCRIPT_DIR/jurassic-dist/REPL.dll" "$@"' \
-      >/dist/jurassic && \
-    chmod a+rx /dist/jurassic && \
-    du -bc /dist/jurassic /dist/jurassic-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
-
-ENV JS_BINARY=/dist/jurassic
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jurassic --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/jurassic-dist/REPL.dll" "$@"'

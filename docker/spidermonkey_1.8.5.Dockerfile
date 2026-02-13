@@ -41,16 +41,18 @@ RUN cd */js/src && \
     ./configure --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
     make -j $(nproc)
 
-# Metadata
-ENV JS_BINARY=/src/js/src/shell/js
+# Metadata and dist packaging
 RUN ln -s */js js && \
-    (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE) && \
-    echo "$TARBALL" >jsz_sources && \
-    echo "$TARBALL" | sed -E 's/.*js185.*/1.8.5/; s/.*mozjs-?([0-9.]*)\.tar.*/\1/' >jsz_version && \
-    stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]' >jsz_revision_date && \
-    echo YARR >jsz_regex && \
-    echo ES5 >jsz_standard
-CMD ${JS_BINARY}
+    (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+COPY dist.py ./
+RUN ./dist.py /dist/spidermonkey_1.8.5 \
+      --binary=/src/js/src/shell/js \
+      --license=LICENSE \
+      sources="$TARBALL" \
+      version="$(echo "$TARBALL" | sed -E 's/.*js185.*/1.8.5/; s/.*mozjs-?([0-9.]*)\.tar.*/\1/')" \
+      revision_date="$(stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]')" \
+      regex=YARR \
+      standard=ES5
 
 # JIT-less 1.8.5 crashes on arm64:
 # sed -i 's/ -DENABLE_ASSEMBLER=.*//' Makefile.in

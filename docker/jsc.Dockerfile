@@ -34,7 +34,8 @@ RUN export CXXFLAGS="-Wno-error" && \
 #   * Baseline+DFG:
 #     --no-ftl-jit --no-webassembly
 
-ENV JS_BINARY=/src/WebKitBuild/JSCOnly/Release/bin/jsc LICENSE=Source/JavaScriptCore/COPYING.LIB
-RUN curl "https://commits.webkit.org/$(git rev-parse HEAD)/json" 2>&1 \
-      | sed -En 's/.*"identifier": "([^"]+)".*/\1/p' | sed 's/@main//' >jsz_version
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/jsc \
+      --binary=/src/WebKitBuild/JSCOnly/Release/bin/jsc \
+      --license=Source/JavaScriptCore/COPYING.LIB \
+      version="$(curl "https://commits.webkit.org/$(git rev-parse HEAD)/json" 2>&1 | sed -En 's/.*\"identifier\": \"([^\"]+)\".*/\1/p' | sed 's/@main//')"

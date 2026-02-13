@@ -17,13 +17,5 @@ COPY topaz.csproj /src/topaz_runner.csproj
 RUN dotnet publish topaz_runner.csproj -c Release -o /dist/topaz-dist && \
     test -f /dist/topaz-dist/topaz_runner.dll
 
-RUN printf '%s\n' \
-      '#!/bin/bash' \
-      'SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")' \
-      'exec dotnet --roll-forward Major "$SCRIPT_DIR/topaz-dist/topaz_runner.dll" "$@"' \
-      >/dist/topaz && \
-    chmod a+rx /dist/topaz && \
-    du -bc /dist/topaz /dist/topaz-dist | tail -1 | cut -f 1 >/dist/jsz_dist_size
-
-ENV JS_BINARY=/dist/topaz
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/topaz --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/topaz-dist/topaz_runner.dll" "$@"'

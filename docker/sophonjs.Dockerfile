@@ -14,5 +14,7 @@ RUN sed -i 's/ARCH:=i686-linux/ARCH:=x86_64-linux/' config.mk && \
     sed -i 's/GLOBAL/#GLOBAL/' build/arch/x86_64-linux.mk && \
     make -j
 
-ENV JS_BINARY=/src/out/x86_64-linux/sophonjs
-CMD ${JS_BINARY}
+RUN head -30 src/sophonjs.c >LICENSE
+
+COPY dist.py ./
+RUN ./dist.py /dist/sophonjs --binary=/src/out/x86_64-linux/sophonjs

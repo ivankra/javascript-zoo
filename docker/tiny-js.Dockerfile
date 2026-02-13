@@ -20,5 +20,5 @@ RUN git apply tiny-js.patch && \
     sed -i 's/CFLAGS=-c .*/CFLAGS=-c -O3/' Makefile && \
     make
 
-ENV JS_BINARY=/src/Script
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/tiny-js --binary=/src/Script

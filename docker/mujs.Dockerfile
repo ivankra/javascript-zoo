@@ -14,7 +14,7 @@ RUN git clone "$REPO" . && git checkout "$REV"
 RUN apt-get update -y && apt-get install -y --no-install-recommends libreadline-dev
 
 # by default builds with -O3
-RUN make -j release || make -j release || make -j release  # flaky
+RUN make -j release
 
-ENV JS_BINARY=/src/build/release/mujs
-CMD ${JS_BINARY}
+COPY dist.py ./
+RUN ./dist.py /dist/mujs --binary=/src/build/release/mujs
