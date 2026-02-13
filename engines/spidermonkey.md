@@ -51,7 +51,7 @@ JavaScript engine of Firefox.
 * [spiderfire](https://github.com/Redfire75369/spiderfire) <span class="shields"><img src="https://img.shields.io/github/stars/Redfire75369/spiderfire?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/Redfire75369/spiderfire?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [Fastly Compute](https://github.com/fastly/js-compute-runtime) <span class="shields"><img src="https://img.shields.io/github/stars/fastly/js-compute-runtime?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/fastly/js-compute-runtime?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * [gjs](https://gitlab.gnome.org/GNOME/gjs) / [cjs](https://github.com/linuxmint/cjs) <span class="shields"><img src="https://img.shields.io/github/stars/linuxmint/cjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/linuxmint/cjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - GNOME 3 / Cinnamon's runtime
-* [StarlingMonkey](https://github.com/bytecodealliance/StarlingMonkey) <span class="shields"><img src="https://img.shields.io/github/stars/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - WebAssembly Components JS Runtime
+* [StarlingMonkey](starlingmonkey.md): SpiderMonkey-based JavaScript runtime compiled to WebAssembly.
 
 ## Conformance
 
