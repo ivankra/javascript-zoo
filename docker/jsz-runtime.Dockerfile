@@ -88,3 +88,6 @@ RUN if [ `uname -m` = x86_64 ]; then \
       apt-get update -y && \
       apt-get install -y --no-install-recommends cabextract wine wine32; \
     fi
+
+RUN ln -s zoo/bench /bench && \
+    ln -s zoo/dist/"$(uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')" /dist

@@ -3,12 +3,11 @@
 
 SHELL    := /bin/bash
 
-DOCKER       := $(shell command -v podman 2>/dev/null || echo docker)
-DOCKER_ARCH  := $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
-DOCKER_BUILD := $(DOCKER) build --platform linux/$(DOCKER_ARCH)
-DOCKER_RUN   := $(DOCKER) run --platform linux/$(DOCKER_ARCH)
+DOCKER      ?= $(shell command -v podman container 2>&1 || echo docker)
+DOCKER_ARCH ?= $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
 
-IID_DIR  := ../.cache/iid
+# $IID_DIR/<image tag> is used for tracking completion of image builds for make
+IID_DIR  := ../.cache/iid/$(DOCKER_ARCH)
 DIST_DIR := ../dist/$(DOCKER_ARCH)
 
 FILE_TARGETS := $(patsubst %.Dockerfile,%,$(wildcard [a-z0-9]*.Dockerfile))
@@ -16,7 +15,7 @@ ARGS_TARGETS := $(shell cat args.txt | egrep -o '^[-a-z0-9_.]+' | sort -u)
 ALL_TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 # jsz-* targets are base containers with build and runtime environments.
 # hub has a special make rule.
-# Everything else should be an engine target
+# Everything else should be an engine target.
 BASE_TARGETS := $(filter jsz-%,$(ALL_TARGETS))
 ENGINE_TARGETS := $(filter-out jsz-% hub,$(ALL_TARGETS))
 
@@ -54,14 +53,11 @@ dist: $(patsubst %,$(DIST_DIR)/%.json,$(ENGINE_TARGETS))
 	@true
 
 sh: $(IID_DIR)/jsz-runtime
-	$(DOCKER_RUN) --rm -it \
-	  -v $(PWD)/..:/zoo:rw \
-	  -v $(PWD)/../.git:/zoo/.git:ro \
-	  -v $(PWD)/../bench:/bench:rw \
-	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
-	  -v $(PWD)/../dist/$(DOCKER_ARCH):/zoo/dist:ro \
-	  -w /dist \
-	  jsz-runtime
+	$(DOCKER) run --arch "$(DOCKER_ARCH)" --rm -it \
+	  -v "$(PWD)/..:/zoo" \
+	  -v "$(PWD)/../.git:/zoo/.git:ro" \
+	  jsz-runtime \
+	  /bin/bash -c 'cd /dist; bash -i'
 
 hub:
 	./hub.sh
@@ -70,7 +66,8 @@ base: $(BASE_TARGETS)
 	@true
 
 define base_rules
-$(IID_DIR)/$(1): $$(shell ./build.sh --dep $(1)) build.sh
+$(IID_DIR)/$(1): $$(shell bash ./build.sh --deps $(1))
+	@chmod a+rx build.sh
 	./build.sh $(1)
 
 $(1): $(IID_DIR)/$(1)
@@ -80,7 +77,8 @@ endef
 $(foreach var,$(BASE_TARGETS),$(eval $(call base_rules,$(var))))
 
 define engine_rules
-$(IID_DIR)/jsz-$(1): $$(shell ./build.sh --dep $(1)) build.sh
+$(IID_DIR)/jsz-$(1): $$(shell bash ./build.sh --deps $(1))
+	@chmod a+rx build.sh
 	./build.sh $(1)
 
 $(1): $(IID_DIR)/jsz-$(1) $(DIST_DIR)/$(1).json
@@ -90,11 +88,14 @@ $(1)-dist: $(DIST_DIR)/$(1).json
 	@true
 
 $(DIST_DIR)/$(1).json: $(IID_DIR)/jsz-$(1) dist.sh
+	@chmod a+rx dist.sh
 	./dist.sh $(1)
 
 $(1)-sh: $(IID_DIR)/jsz-$(1)
-	$(DOCKER_RUN) --rm -it -v $(PWD)/../bench:/bench jsz-$(1) \
-	  /bin/bash -c '[[ -f $$$$JS_BINARY && ! -f $(1) ]] && ln -sv "$$$$JS_BINARY" "./$(1)"; /bin/bash -i'
+	$(DOCKER) run --arch "$(DOCKER_ARCH)" --rm -it \
+	  -v "$(PWD)/..:/zoo" \
+	  -v "$(PWD)/../.git:/zoo/.git:ro" \
+	  jsz-$(1)
 endef
 
 $(foreach var,$(ENGINE_TARGETS),$(eval $(call engine_rules,$(var))))
@@ -103,9 +104,9 @@ $(foreach var,$(ENGINE_TARGETS),$(eval $(call engine_rules,$(var))))
 # for the current user, if things get messed badly.
 clean-docker:
 	rm -rf "$(IID_DIR)"
-	-$(DOCKER) container prune
+	-$(DOCKER) container prune -f
 	-$(DOCKER) image rm `$(DOCKER) image ls | grep jsz- | cut -f 1 -d ' '`
-	$(DOCKER) image prune
+	$(DOCKER) image prune -f
 
 .PHONY:
 .SUFFIXES:

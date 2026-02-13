@@ -10,7 +10,8 @@ ARG REPO=https://github.com/ivankra/javascript-zoo.git \
 
 ADD dist/$TARGETARCH.tar /tmp
 
-RUN mv /tmp/$TARGETARCH /dist && \
+RUN rm -rf /dist /bench && \
+    mv /tmp/$TARGETARCH /dist && \
     git clone --depth=1 "$REPO" /zoo && \
     cd /zoo && git fetch origin "$REV" && git reset --hard FETCH_HEAD && git submodule update --init --depth=1 && \
     cd /zoo/bench && make gen && ln -s zoo/bench /bench && \
