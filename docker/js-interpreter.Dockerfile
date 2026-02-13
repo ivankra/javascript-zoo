@@ -18,3 +18,9 @@ RUN npx esbuild js-interpreter.js --outfile=/dist/js-interpreter --bundle --plat
 
 COPY dist.py ./
 RUN ./dist.py /dist/js-interpreter
+
+# Wrapper to run with JavaScriptCore shell (faster than Node/V8)
+RUN ./dist.py /dist/js-interpreter_jsc \
+      --wrapper='exec "$SCRIPT_DIR"/jsc "$SCRIPT_DIR/js-interpreter" -- "$@"' \
+      --dist_files=/dist/js-interpreter \
+      console_log=console.log

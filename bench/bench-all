@@ -51,10 +51,6 @@ while :; do
     sleep 0.1
   done
 
-  if [[ $ITER != 1 && -x "$DIST_DIR/nashorn" ]]; then
-    (set -x; ./bench -a -o "$OUTPUT_DIR/nashorn_ot.json" -r 10s -v "$DIST_DIR/nashorn -ot")
-  fi
-
   # Very slow, only do one run
   if [[ -x "$DIST_DIR/engine262" && ! -f "$OUTPUT_DIR/engine262.json" ]]; then
     (set -x; ./bench -a -o "$OUTPUT_DIR/engine262.json" -t 72000 -r 1 -v "$DIST_DIR/engine262")
