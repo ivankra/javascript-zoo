@@ -32,6 +32,7 @@ AMD64_ONLY_TARGETS := \
   dscriptcpp \
   iv-lv5_jitless \
   jscript \
+  wine% \
   quickjit \
   spidermonkey_1.8.5 \
   spidermonkey_17 \

@@ -53,6 +53,7 @@ spidermonkey_gcc:     --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.D
 spidermonkey_jitless: --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile --build-arg JITLESS=true
 spidermonkey_intl:    --build-arg REV=FIREFOX_148_0b13_RELEASE -f spidermonkey.Dockerfile --build-arg INTL=true
 ucode:                --build-arg REV=8bbf01215ce30971eb02eee2250d51e422f700e6
+wine:                 --build-arg REV=eaea4240c4efb618be6d20c05f7fc9f3db9a104c
 xs:                   --build-arg REV=7.0.0 -f xs.Dockerfile
 xs_clang:             --build-arg REV=7.0.0 -f xs.Dockerfile --build-arg BASE=jsz-clang
 yantra:               --build-arg REV=afb4a5d188a2461aee959891eab7f958279b1115

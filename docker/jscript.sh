@@ -8,7 +8,7 @@
 #   jscript.sh --version         print engine version
 #
 # On the first run, the script will install Wine, winetricks and download
-# WSH/JScript binaries from microsoft.com into ~/.cache/jsz-jscript.
+# WSH/JScript binaries from microsoft.com into ~/.wine-jscript.
 # Due to licensing, these binaries are not redistributable - we can only
 # ship this installer script to users.
 #
@@ -21,7 +21,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
-export WINEPREFIX="$HOME/.cache/jsz-jscript"
+export WINEPREFIX="$HOME/.wine-jscript"
 export WINEARCH=win32
 export WINEDEBUG="${WINEDEBUG:--all,+err}"
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-$WINEPREFIX/run}
@@ -92,7 +92,7 @@ install_wsh57() {
   date +%s >"$install_marker"
   echo "Success - installed JScript into $WINEPREFIX"
 
-  print_version
+  print_version >/dev/null
 }
 
 # Convert unix path to Z:\... path for wine
@@ -150,8 +150,6 @@ var __stringify = (function() {
     if (t === 'number') return isFinite(v) ? '' + v : 'null';
     if (t !== 'object') return;
 
-    if (typeof v.toJSON === 'function') return go(v.toJSON(), seen);
-
     for (var i = 0; i < seen.length; i++) if (seen[i] === v) throw new TypeError('Circular');
     seen.push(v);
 
@@ -189,10 +187,12 @@ var __stringify = (function() {
         WScript.Echo(typeof __res === "object" ? __stringify(__res) : __res);
       }
     } catch (__err) {
-      WScript.Echo(__err.name + ": " + __err.message);
+      var __name = __err && __err.name;
+      var __msg = __err && __err.message;
+      WScript.Echo("Uncaught " + (__name ? __name + ": " : "") + (__msg || __err));
     }
   }
-})()
+})();
 EOF
   wine cscript.exe /logo "$(wine_path "$script")" "$@"
 }

@@ -1,0 +1,1470 @@
+Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 858624, "engine": "wine", "repository": "https://github.com/wine-mirror/wine.git", "revision": "eaea4240c4efb618be6d20c05f7fc9f3db9a104c", "revision_date": "2026-02-03", "variant": "win64"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: failed
+es1/Number.MIN_VALUE.js: failed
+es1/Number.NEGATIVE_INFINITY.js: failed
+es1/Number.NaN.js: failed
+es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: non-compliant, expected to return 100 instead of 2000
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: max safe integer failed ; failed
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: error:71:5: Syntax error
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: 1e21 failed ; 1e-7 failed ; failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: failed: converting max safe integer + 1 to string ; failed
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: unshift on object failed ; unshift multiple on object failed ; unshift on empty object failed ; failed
+es3/Array.prototype.unshift.js: unshift single element failed ; unshift multiple elements failed ; unshift on empty array failed ; unshift with no arguments failed ; failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed ; multiple elements unshift failed ; no arguments unshift failed ; failed
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: failed
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2.5e+1') ; (1.255).toExponential(2) != '1.25e+0', got '1.26e+0' ; failed
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError ; toExponential(-Infinity) does not throw RangeError ; failed
+es3/Number.prototype.toFixed.js: large number precision failed ; rounding failed ; failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: small number exponential notation failed ; failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: error:9:1:
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: Can't attach process 0614: error 5
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2 ; '.'.split(/(.?)(.?)/).length !== 4 ; failed
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: split with regex failed ; split with capturing group failed ; failed
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: negative start failed ; negative start with length failed ; failed
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; no exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: OK
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: wrong exception for decodeURIComponent incomplete escape ; wrong exception for decodeURIComponent invalid hex ; failed
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: # not decoded failed ; failed
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: error:17:5: Syntax error
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: array with only elision failed ; failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: [1,].length failed ; trailing comma failed ; multiple elements with trailing comma failed ; failed
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: error:16:11: Syntax error
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: complex disjunction failed ; failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: \v failed ; failed
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: spec example failed ; failed
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function ; error:16:1: Object doesn't support this property or method
+es5/Array.prototype.every.js: Array.prototype.every not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.filter.js: Array.prototype.filter not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function ; error:18:1: Object doesn't support this property or method
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.map.js: Array.prototype.map not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.some.js: Array.prototype.some not a function ; error:17:1: Object doesn't support this property or method
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: error:10:1: JScript object expected
+es5/Date.now.js: Date.now not a function ; error:16:1: Object doesn't support this property or method
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function ; error:17:1: Object doesn't support this property or method
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; error:16:1: Object expected
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted ; failed
+es5/Function.prototype.bind.js: Function.prototype.bind not a function ; error:18:1: Object doesn't support this property or method
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: error:7:1: 'JSON' is undefined
+es5/JSON.parse.reviver.js: error:7:1: 'JSON' is undefined
+es5/JSON.stringify.js: error:7:1: 'JSON' is undefined
+es5/JSON.stringify.replacer.js: error:7:1: 'JSON' is undefined
+es5/JSON.stringify.space.js: error:7:1: 'JSON' is undefined
+es5/Object.create.js: Object.create not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.defineProperties.js: Object.defineProperties not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.defineProperty.js: Object.defineProperty not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.freeze.js: Object.freeze not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.isExtensible.js: Object.isExtensible not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.isFrozen.js: Object.isFrozen not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.isSealed.js: Object.isSealed not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.keys.js: Object.keys not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.preventExtensions.js: Object.preventExtensions not a function ; error:17:1: Object doesn't support this property or method
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal not a function ; error:17:1: Object doesn't support this property or method
+es5/String.indexing.js: 'foobar'[3] !== 'b' ; test with variable failed ; failed
+es5/String.prototype.trim.js: String.prototype.trim not a function ; error:17:1: Object doesn't support this property or method
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: error:7:1: 'debugger' is undefined
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment ; Infinity not positive infinity after assignment ; failed
+es5/global.NaN.immutable.js: NaN is not a number after assignment ; NaN === NaN after assignment ; failed
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10 ; parseInt('0100') !== 100 ; parseInt('077') !== 77 ; failed
+es5/global.undefined.immutable.js: undefined is not undefined after assignment ; failed
+es5/literals.object.getters.js: error:9:16: Syntax error
+es5/literals.object.setters.js: error:10:16: Syntax error
+es5/literals.object.trailing-comma.js: error:9:19: Syntax error
+es5/source.keyword-properties.js: error:15:12: Syntax error
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: failed
+es5/strict.no-assignment-to-non-writable.js: error:11:24: Expected ')'
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode ; failed
+es5/strict.this-primitive-not-coerced-in-accessors.js: error:11:5: Object doesn't support this property or method
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: failed
+kangax-es5/Array.prototype.every.js: failed
+kangax-es5/Array.prototype.filter.js: failed
+kangax-es5/Array.prototype.forEach.js: failed
+kangax-es5/Array.prototype.indexOf.js: failed
+kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.map.js: failed
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: failed
+kangax-es5/Array.prototype.some.js: failed
+kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: failed
+kangax-es5/Array.prototype.unshift.return-count.js: failed
+kangax-es5/Date.now.js: failed
+kangax-es5/Date.prototype.toISOString.js: failed
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: failed
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: failed
+kangax-es5/Object.create.js: failed
+kangax-es5/Object.defineProperties.js: failed
+kangax-es5/Object.defineProperty.js: failed
+kangax-es5/Object.freeze.js: failed
+kangax-es5/Object.getOwnPropertyDescriptor.js: failed
+kangax-es5/Object.getOwnPropertyNames.js: failed
+kangax-es5/Object.getPrototypeOf.js: failed
+kangax-es5/Object.isExtensible.js: failed
+kangax-es5/Object.isFrozen.js: failed
+kangax-es5/Object.isSealed.js: failed
+kangax-es5/Object.keys.js: failed
+kangax-es5/Object.preventExtensions.js: failed
+kangax-es5/Object.seal.js: failed
+kangax-es5/String.property-access.js: failed
+kangax-es5/String.prototype.split.js: failed
+kangax-es5/String.prototype.trim.js: failed
+kangax-es5/annex-b.String.prototype.substr.js: failed
+kangax-es5/immutable-globals.Infinity.js: failed
+kangax-es5/immutable-globals.NaN.js: failed
+kangax-es5/immutable-globals.undefined.js: failed
+kangax-es5/literals.getter-accessors.js: error:7:19: Expected ')'
+kangax-es5/literals.reserved-words-properties.js: error:8:13: Syntax error
+kangax-es5/literals.setter-accessors.js: error:7:19: Expected ')'
+kangax-es5/literals.trailing-comma-array.js: failed
+kangax-es5/literals.trailing-comma-object.js: error:8:19: Syntax error
+kangax-es5/misc.Arguments.toStringTag.js: failed
+kangax-es5/misc.Function.apply.array-likes.js: failed
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: failed
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: failed
+kangax-es5/strict.arguments-unmapped.js: failed
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: error:8:19: Expected ')'
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: [object Error]
+kangax-es5/strict.this-not-coerced-methods.js: failed
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: [object Error]
+kangax-es6/Array.from.array-like.js: [object Error]
+kangax-es6/Array.from.generator.js: error:9:27: Expected '('
+kangax-es6/Array.from.iterable-instance.js: [object Error]
+kangax-es6/Array.from.iterable.js: [object Error]
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: [object Error]
+kangax-es6/Array.from.map.generator.js: error:9:27: Expected '('
+kangax-es6/Array.from.map.iterable-instance.js: [object Error]
+kangax-es6/Array.from.map.iterable.js: [object Error]
+kangax-es6/Array.iterator-prototype-chain.js: [object Error]
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: [object Error]
+kangax-es6/Array.prototype.Symbol.unscopables.js: [object Error]
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: [object Error]
+kangax-es6/Function.name.accessor.js: error:9:19: Expected ')'
+kangax-es6/Function.name.bound.js: [object Error]
+kangax-es6/Function.name.class-expression.js: error:10:16: Syntax error
+kangax-es6/Function.name.class-object-method.js: error:9:19: Expected ')'
+kangax-es6/Function.name.class-prototype.js: error:10:9: Syntax error
+kangax-es6/Function.name.class-statement.js: error:10:9: Syntax error
+kangax-es6/Function.name.class-static.js: error:10:9: Syntax error
+kangax-es6/Function.name.class-variable.js: error:10:19: Syntax error
+kangax-es6/Function.name.configurable.js: [object Error]
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: error:9:19: Expected ')'
+kangax-es6/Function.name.shorthand.no-lexical.js: error:9:19: Expected ')'
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: error:9:19: Expected ')'
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: [object Error]
+kangax-es6/Map.constructor-accepts-null.js: [object Error]
+kangax-es6/Map.constructor-arguments.js: [object Error]
+kangax-es6/Map.constructor-invokes-set.js: [object Error]
+kangax-es6/Map.constructor-requires-new.js: [object Error]
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: [object Error]
+kangax-es6/Map.js: [object Error]
+kangax-es6/Map.prototype-not-instance.js: [object Error]
+kangax-es6/Map.prototype.Symbol.iterator.js: [object Error]
+kangax-es6/Map.prototype.clear.js: [object Error]
+kangax-es6/Map.prototype.delete.js: error:10:31: Syntax error
+kangax-es6/Map.prototype.entries.js: [object Error]
+kangax-es6/Map.prototype.forEach.js: [object Error]
+kangax-es6/Map.prototype.keys.js: [object Error]
+kangax-es6/Map.prototype.set-returns-this.js: [object Error]
+kangax-es6/Map.prototype.size.js: [object Error]
+kangax-es6/Map.prototype.values.js: [object Error]
+kangax-es6/Map.zero-key.js: [object Error]
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: [object Error]
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: [object Error]
+kangax-es6/Object.getOwnPropertySymbols.js: [object Error]
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: [object Error]
+kangax-es6/Promise.Symbol.species.js: [object Error]
+kangax-es6/Promise.all.iterable.js: error:79:11: Syntax error
+kangax-es6/Promise.all.js: error:55:11: Syntax error
+kangax-es6/Promise.constructor-requires-new.js: [object Error]
+kangax-es6/Promise.js: error:55:6: Syntax error
+kangax-es6/Promise.prototype-not-instance.js: [object Error]
+kangax-es6/Promise.race.iterable.js: error:79:11: Syntax error
+kangax-es6/Promise.race.js: error:55:11: Syntax error
+kangax-es6/Proxy.Array.isArray.js: [object Error]
+kangax-es6/Proxy.JSON.stringify.js: [object Error]
+kangax-es6/Proxy.constructor-requires-new.js: [object Error]
+kangax-es6/Proxy.handler.apply.invariants.js: [object Error]
+kangax-es6/Proxy.handler.apply.js: [object Error]
+kangax-es6/Proxy.handler.construct.invariants.js: [object Error]
+kangax-es6/Proxy.handler.construct.js: [object Error]
+kangax-es6/Proxy.handler.defineProperty.invariants.js: [object Error]
+kangax-es6/Proxy.handler.defineProperty.js: [object Error]
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: [object Error]
+kangax-es6/Proxy.handler.deleteProperty.js: [object Error]
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: [object Error]
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: [object Error]
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: [object Error]
+kangax-es6/Proxy.handler.getPrototypeOf.js: [object Error]
+kangax-es6/Proxy.handler.get.instances.js: [object Error]
+kangax-es6/Proxy.handler.get.invariants.js: [object Error]
+kangax-es6/Proxy.handler.get.js: [object Error]
+kangax-es6/Proxy.handler.has.instances.js: [object Error]
+kangax-es6/Proxy.handler.has.invariants.js: [object Error]
+kangax-es6/Proxy.handler.has.js: [object Error]
+kangax-es6/Proxy.handler.isExtensible.invariants.js: [object Error]
+kangax-es6/Proxy.handler.isExtensible.js: [object Error]
+kangax-es6/Proxy.handler.ownKeys.invariants.js: [object Error]
+kangax-es6/Proxy.handler.ownKeys.js: [object Error]
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: [object Error]
+kangax-es6/Proxy.handler.preventExtensions.js: [object Error]
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: [object Error]
+kangax-es6/Proxy.handler.setPrototypeOf.js: [object Error]
+kangax-es6/Proxy.handler.set.instances.js: [object Error]
+kangax-es6/Proxy.handler.set.invariants.js: [object Error]
+kangax-es6/Proxy.handler.set.js: [object Error]
+kangax-es6/Proxy.no-prototype.js: [object Error]
+kangax-es6/Proxy.revocable.js: [object Error]
+kangax-es6/Reflect.apply.js: [object Error]
+kangax-es6/Reflect.construct.Array-subclassing.js: [object Error]
+kangax-es6/Reflect.construct.Function-subclassing.js: [object Error]
+kangax-es6/Reflect.construct.Promise-subclassing.js: error:55:6: Syntax error
+kangax-es6/Reflect.construct.RegExp-subclassing.js: [object Error]
+kangax-es6/Reflect.construct.js: [object Error]
+kangax-es6/Reflect.construct.new-target.js: error:11:9: Syntax error
+kangax-es6/Reflect.construct.third-argument.js: [object Error]
+kangax-es6/Reflect.defineProperty.js: [object Error]
+kangax-es6/Reflect.deleteProperty.js: [object Error]
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: [object Error]
+kangax-es6/Reflect.getPrototypeOf.js: [object Error]
+kangax-es6/Reflect.get.js: [object Error]
+kangax-es6/Reflect.has.js: [object Error]
+kangax-es6/Reflect.isExtensible.js: [object Error]
+kangax-es6/Reflect.ownKeys.string.js: [object Error]
+kangax-es6/Reflect.ownKeys.symbol.js: [object Error]
+kangax-es6/Reflect.preventExtensions.js: [object Error]
+kangax-es6/Reflect.setPrototypeOf.js: [object Error]
+kangax-es6/Reflect.set.js: [object Error]
+kangax-es6/RegExp.Symbol.species.js: [object Error]
+kangax-es6/RegExp.prototype.Symbol.match.js: [object Error]
+kangax-es6/RegExp.prototype.Symbol.replace.js: [object Error]
+kangax-es6/RegExp.prototype.Symbol.search.js: [object Error]
+kangax-es6/RegExp.prototype.Symbol.split.js: [object Error]
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: [object Error]
+kangax-es6/Set.constructor-accepts-null.js: [object Error]
+kangax-es6/Set.constructor-arguments.js: [object Error]
+kangax-es6/Set.constructor-invokes-add.js: [object Error]
+kangax-es6/Set.constructor-requires-new.js: [object Error]
+kangax-es6/Set.iterator-closing.js: [object Error]
+kangax-es6/Set.iterator-prototype-chain.js: [object Error]
+kangax-es6/Set.js: [object Error]
+kangax-es6/Set.prototype-not-instance.js: [object Error]
+kangax-es6/Set.prototype.Symbol.iterator.js: [object Error]
+kangax-es6/Set.prototype.add-returns-this.js: [object Error]
+kangax-es6/Set.prototype.clear.js: [object Error]
+kangax-es6/Set.prototype.delete.js: error:10:31: Syntax error
+kangax-es6/Set.prototype.entries.js: [object Error]
+kangax-es6/Set.prototype.forEach.js: [object Error]
+kangax-es6/Set.prototype.keys.js: [object Error]
+kangax-es6/Set.prototype.size.js: [object Error]
+kangax-es6/Set.prototype.values.js: [object Error]
+kangax-es6/Set.zero-key.js: [object Error]
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: [object Error]
+kangax-es6/String.prototype.Symbol.iterator.js: [object Error]
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: [object Error]
+kangax-es6/Symbol.JSON.stringify.primitive.js: [object Error]
+kangax-es6/Symbol.Object.js: [object Error]
+kangax-es6/Symbol.String.js: [object Error]
+kangax-es6/Symbol.defineProperty.js: [object Error]
+kangax-es6/Symbol.global-registry.js: error:10:23: Syntax error
+kangax-es6/Symbol.hidden-keys.js: [object Error]
+kangax-es6/Symbol.js: [object Error]
+kangax-es6/Symbol.no-coerce.js: [object Error]
+kangax-es6/Symbol.no-new.js: [object Error]
+kangax-es6/Symbol.prototype.js: [object Error]
+kangax-es6/Symbol.typeof.js: [object Error]
+kangax-es6/WeakMap.accept-primitives.js: error:13:10: Syntax error
+kangax-es6/WeakMap.constructor-accepts-null.js: [object Error]
+kangax-es6/WeakMap.constructor-arguments.js: [object Error]
+kangax-es6/WeakMap.constructor-invokes-set.js: [object Error]
+kangax-es6/WeakMap.constructor-requires-new.js: [object Error]
+kangax-es6/WeakMap.frozen-keys.js: [object Error]
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: [object Error]
+kangax-es6/WeakMap.no-clear.js: [object Error]
+kangax-es6/WeakMap.prototype-not-instance.js: [object Error]
+kangax-es6/WeakMap.prototype.delete.js: error:10:35: Syntax error
+kangax-es6/WeakMap.prototype.set-returns-this.js: [object Error]
+kangax-es6/WeakSet.accept-primitives.js: error:12:10: Syntax error
+kangax-es6/WeakSet.constructor-accepts-null.js: [object Error]
+kangax-es6/WeakSet.constructor-arguments.js: [object Error]
+kangax-es6/WeakSet.constructor-invokes-add.js: [object Error]
+kangax-es6/WeakSet.constructor-requires-new.js: [object Error]
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: [object Error]
+kangax-es6/WeakSet.no-clear.js: [object Error]
+kangax-es6/WeakSet.prototype-not-instance.js: [object Error]
+kangax-es6/WeakSet.prototype.add-returns-this.js: [object Error]
+kangax-es6/WeakSet.prototype.delete.js: error:10:35: Syntax error
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: [object Error]
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: failed
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
+kangax-es6/annex-b.function.hoisted-block-level.js: failed
+kangax-es6/annex-b.function.if-statement.js: OK
+kangax-es6/annex-b.function.labeled.js: OK
+kangax-es6/annex-b.html-comments.js: error:8:19: Expected ')'
+kangax-es6/annex-b.regex.backreferences-octal.js: OK
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: [object Error]
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: [object Error]
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: [object Error]
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: [object Error]
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: [object Error]
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: error:9:19: Expected ')'
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: error:9:19: Expected ')'
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: error:9:19: Expected ')'
+kangax-es6/arrow.0-params.js: error:9:19: Expected ')'
+kangax-es6/arrow.1-param.js: error:9:19: Expected ')'
+kangax-es6/arrow.5-param.js: error:9:19: Expected ')'
+kangax-es6/arrow.bind.js: error:10:37: Expected ')'
+kangax-es6/arrow.lexical-arguments.js: error:10:21: Expected ')'
+kangax-es6/arrow.lexical-super.constructor.js: error:12:9: Syntax error
+kangax-es6/arrow.lexical-super.methods.js: error:10:9: Syntax error
+kangax-es6/arrow.lexical-this.js: error:10:37: Expected ')'
+kangax-es6/arrow.new-target.js: error:10:14: Expected ')'
+kangax-es6/arrow.no-line-break.js: error:9:19: Expected ')'
+kangax-es6/arrow.no-prototype.js: error:9:19: Expected ')'
+kangax-es6/arrow.precedence.js: error:9:19: Expected ')'
+kangax-es6/arrow.this-call-apply.js: error:10:37: Expected ')'
+kangax-es6/class.accessor-properties.js: error:11:9: Syntax error
+kangax-es6/class.anonymous.js: error:10:23: Syntax error
+kangax-es6/class.block-scoped.js: error:10:9: Syntax error
+kangax-es6/class.computed-accessor-properties.js: error:11:9: Syntax error
+kangax-es6/class.computed-names-tdz.js: error:11:19: Syntax error
+kangax-es6/class.computed-prototype-methods.js: error:11:9: Syntax error
+kangax-es6/class.computed-static-accessor-properties.js: error:11:9: Syntax error
+kangax-es6/class.computed-static-methods.js: error:11:9: Syntax error
+kangax-es6/class.constructor-requires-new.js: error:10:9: Syntax error
+kangax-es6/class.constructor.js: error:10:9: Syntax error
+kangax-es6/class.expression.js: error:10:23: Syntax error
+kangax-es6/class.extends-expressions.js: error:11:9: Syntax error
+kangax-es6/class.extends-null.js: error:10:9: Syntax error
+kangax-es6/class.extends.js: error:10:9: Syntax error
+kangax-es6/class.implicit-strict.js: error:10:9: Syntax error
+kangax-es6/class.lexical-name.js: error:10:9: Syntax error
+kangax-es6/class.methods-not-enumerable.js: error:10:9: Syntax error
+kangax-es6/class.new-target.js: error:11:18: Expected ')'
+kangax-es6/class.optional-semicolons.js: error:10:9: Syntax error
+kangax-es6/class.prototype-methods.js: error:10:9: Syntax error
+kangax-es6/class.statement.js: error:10:9: Syntax error
+kangax-es6/class.static-accessor-properties.js: error:11:9: Syntax error
+kangax-es6/class.static-methods.js: error:10:9: Syntax error
+kangax-es6/class.string-keyed-methods.js: error:10:9: Syntax error
+kangax-es6/const.basic.js: error:10:3: Syntax error
+kangax-es6/const.block-scoped.js: error:10:3: Syntax error
+kangax-es6/const.for-in.js: error:11:15: Syntax error
+kangax-es6/const.for-loop.js: error:10:3: Syntax error
+kangax-es6/const.for-of.js: error:11:15: Syntax error
+kangax-es6/const.no-redefine.js: error:10:3: Syntax error
+kangax-es6/const.no-statement.js: error:10:3: Syntax error
+kangax-es6/const.shadow.js: error:11:9: Syntax error
+kangax-es6/const.strict.basic.js: error:11:3: Syntax error
+kangax-es6/const.strict.block-scoped.js: error:11:3: Syntax error
+kangax-es6/const.strict.for-in.js: error:12:15: Syntax error
+kangax-es6/const.strict.for-loop.js: error:11:3: Syntax error
+kangax-es6/const.strict.for-of.js: error:12:15: Syntax error
+kangax-es6/const.strict.no-redefine.js: error:11:3: Syntax error
+kangax-es6/const.strict.no-statement.js: error:11:3: Syntax error
+kangax-es6/const.strict.shadow.js: error:12:9: Syntax error
+kangax-es6/const.strict.tdz.js: error:13:3: Syntax error
+kangax-es6/const.tdz.js: error:12:3: Syntax error
+kangax-es6/default-params.arguments.js: error:10:23: Expected ')'
+kangax-es6/default-params.basic.js: error:10:23: Expected ')'
+kangax-es6/default-params.explicit-undefined.js: error:10:23: Expected ')'
+kangax-es6/default-params.new-function.js: [object Error]
+kangax-es6/default-params.refer-previous.js: error:10:26: Expected ')'
+kangax-es6/default-params.separate-scope.js: error:10:21: Expected ')'
+kangax-es6/default-params.tdz.js: error:10:22: Expected ')'
+kangax-es6/destructuring-assign.array.js: [object Error]
+kangax-es6/destructuring-assign.astral-string.js: [object Error]
+kangax-es6/destructuring-assign.chained-iterable.js: [object Error]
+kangax-es6/destructuring-assign.chained-object.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.computed-properties.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.defaults.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.empty-patterns.js: [object Error]
+kangax-es6/destructuring-assign.generator.js: error:11:24: Expected '('
+kangax-es6/destructuring-assign.iterable-expression.js: [object Error]
+kangax-es6/destructuring-assign.iterable-instance.js: [object Error]
+kangax-es6/destructuring-assign.iterable.js: [object Error]
+kangax-es6/destructuring-assign.iterator-closing.js: [object Error]
+kangax-es6/destructuring-assign.nested-rest.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.nested.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.object-expression.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.object-primitives.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.object.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.parenthesised-error.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.rest.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.sparse-array.js: [object Error]
+kangax-es6/destructuring-assign.string.js: [object Error]
+kangax-es6/destructuring-assign.throws-null-undefined.js: error:9:19: Expected ')'
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: [object Error]
+kangax-es6/destructuring-assign.trailing-comma-object.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.array.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.astral-string.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.catch.js: error:12:10: Expected '('
+kangax-es6/destructuring-decl.computed-properties.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.defaults-tdz.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.defaults.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.for-in.js: error:10:6: Expected '('
+kangax-es6/destructuring-decl.for-of.js: error:10:6: Expected '('
+kangax-es6/destructuring-decl.generator.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.iterable-instance.js: error:33:19: Expected ')'
+kangax-es6/destructuring-decl.iterable.js: error:33:19: Expected ')'
+kangax-es6/destructuring-decl.iterator-closing.js: error:33:19: Expected ')'
+kangax-es6/destructuring-decl.multiple-var.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.nested.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.object-primitives.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.object.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.rest.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.sparse-array.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.string.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.throws-null-undefined.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: error:9:19: Expected ')'
+kangax-es6/destructuring-decl.trailing-comma-object.js: error:9:19: Expected ')'
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: error:9:19: Expected ')'
+kangax-es6/destructuring-params.arguments.js: error:10:20: Expected ')'
+kangax-es6/destructuring-params.array.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.astral-string.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.computed-properties.js: error:11:19: Expected ')'
+kangax-es6/destructuring-params.defaults-new-function.js: [object Error]
+kangax-es6/destructuring-params.defaults-separate-scope.js: error:10:20: Expected ')'
+kangax-es6/destructuring-params.defaults.js: error:10:20: Expected ')'
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: error:10:20: Expected ')'
+kangax-es6/destructuring-params.generator.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.iterable-instance.js: error:34:19: Expected ')'
+kangax-es6/destructuring-params.iterable.js: error:34:19: Expected ')'
+kangax-es6/destructuring-params.iterator-closing.js: error:38:13: Expected ')'
+kangax-es6/destructuring-params.length.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.nested.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.new-function.js: [object Error]
+kangax-es6/destructuring-params.object-primitives.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.object.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.rest.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: error:9:19: Expected ')'
+kangax-es6/destructuring-params.sparse-array.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.string.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.throws-null-undefined.js: error:11:15: Expected ')'
+kangax-es6/destructuring-params.trailing-comma-iterable.js: error:10:19: Expected ')'
+kangax-es6/destructuring-params.trailing-comma-object.js: error:10:19: Expected ')'
+kangax-es6/for-of.array.js: error:11:17: Expected ';'
+kangax-es6/for-of.astral-string.js: error:11:17: Expected ';'
+kangax-es6/for-of.generator.js: error:11:27: Expected '('
+kangax-es6/for-of.iterable-instance.js: error:36:17: Expected ';'
+kangax-es6/for-of.iterable.js: error:36:17: Expected ';'
+kangax-es6/for-of.iterator-closing-break.js: error:37:15: Expected ';'
+kangax-es6/for-of.iterator-closing-throw.js: error:38:17: Expected ';'
+kangax-es6/for-of.sparse-array.js: error:12:17: Expected ';'
+kangax-es6/for-of.string.js: error:11:17: Expected ';'
+kangax-es6/function.block-level-decl.js: failed
+kangax-es6/generators.basic.js: error:10:12: Expected '('
+kangax-es6/generators.constructor.js: error:10:12: Expected '('
+kangax-es6/generators.expression.js: error:10:28: Expected '('
+kangax-es6/generators.no-new-this.js: error:10:12: Expected '('
+kangax-es6/generators.prototype-chain.js: error:10:12: Expected '('
+kangax-es6/generators.prototype.js: error:10:12: Expected '('
+kangax-es6/generators.return.js: error:10:12: Expected '('
+kangax-es6/generators.sending.js: error:11:12: Expected '('
+kangax-es6/generators.shorthand.class.js: error:10:9: Syntax error
+kangax-es6/generators.shorthand.computed.class.js: error:11:9: Syntax error
+kangax-es6/generators.shorthand.computed.js: error:9:19: Expected ')'
+kangax-es6/generators.shorthand.js: error:9:19: Expected ')'
+kangax-es6/generators.shorthand.no-constructor.js: error:10:9: Syntax error
+kangax-es6/generators.shorthand.string-keyed.js: error:9:19: Expected ')'
+kangax-es6/generators.this.js: error:10:12: Expected '('
+kangax-es6/generators.throw.js: error:11:12: Expected '('
+kangax-es6/generators.yield-precedence.js: error:11:12: Expected '('
+kangax-es6/generators.yield-star.array.js: error:10:28: Expected '('
+kangax-es6/generators.yield-star.astral-string.js: error:10:28: Expected '('
+kangax-es6/generators.yield-star.generator.js: error:10:28: Expected '('
+kangax-es6/generators.yield-star.iterable-instance.js: error:33:28: Expected '('
+kangax-es6/generators.yield-star.iterable.js: error:34:28: Expected '('
+kangax-es6/generators.yield-star.iterator-closing-throw.js: error:42:22: Expected '('
+kangax-es6/generators.yield-star.iterator-closing.js: error:40:22: Expected '('
+kangax-es6/generators.yield-star.non-iterable-error.js: error:10:28: Expected '('
+kangax-es6/generators.yield-star.sparse-array.js: error:10:28: Expected '('
+kangax-es6/generators.yield-star.string.js: error:10:28: Expected '('
+kangax-es6/let.basic.js: error:10:7: Syntax error
+kangax-es6/let.block-scoped.js: error:10:7: Syntax error
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: error:10:7: Syntax error
+kangax-es6/let.for-loop.js: error:10:7: Syntax error
+kangax-es6/let.no-statement.js: error:10:7: Syntax error
+kangax-es6/let.shadow.js: error:11:13: Syntax error
+kangax-es6/let.strict.basic.js: error:11:7: Syntax error
+kangax-es6/let.strict.block-scoped.js: error:11:7: Syntax error
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: error:11:7: Syntax error
+kangax-es6/let.strict.for-loop.js: error:11:7: Syntax error
+kangax-es6/let.strict.no-statement.js: error:11:7: Syntax error
+kangax-es6/let.strict.shadow.js: error:12:13: Syntax error
+kangax-es6/let.strict.tdz.js: error:13:7: Syntax error
+kangax-es6/let.tdz.js: error:12:7: Syntax error
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: error:9:10: Expected ';'
+kangax-es6/literals.object.computed-accessors.js: error:13:13: Syntax error
+kangax-es6/literals.object.computed-properties.js: error:9:19: Expected ')'
+kangax-es6/literals.object.computed-shorthand-methods.js: error:9:19: Expected ')'
+kangax-es6/literals.object.shorthand-methods.js: error:9:19: Expected ')'
+kangax-es6/literals.object.shorthand-properties.js: error:10:27: Syntax error
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: error:9:19: Expected ')'
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: error:9:10: Expected ';'
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: [object Error]
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: [object Error]
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: [object Error]
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: [object Error]
+kangax-es6/misc.Object.isExtensible.primitives.js: [object Error]
+kangax-es6/misc.Object.isFrozen.primitives.js: [object Error]
+kangax-es6/misc.Object.isSealed.primitives.js: [object Error]
+kangax-es6/misc.Object.keys.primitives.js: [object Error]
+kangax-es6/misc.Object.preventExtensions.primitives.js: [object Error]
+kangax-es6/misc.Object.seal.primitives.js: [object Error]
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: [object Error]
+kangax-es6/misc.Proxy.defineProperty.Set.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: [object Error]
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: [object Error]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: [object Error]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: [object Error]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: [object Error]
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.concat.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.from.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.iteration.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.pop.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.reverse.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.shift.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.splice.js: [object Error]
+kangax-es6/misc.Proxy.get.Array.toString.js: [object Error]
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: error:13:9: Syntax error
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: [object Error]
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: [object Error]
+kangax-es6/misc.Proxy.get.Date.toJSON.js: [object Error]
+kangax-es6/misc.Proxy.get.Error.toString.js: [object Error]
+kangax-es6/misc.Proxy.get.Function.bind.js: [object Error]
+kangax-es6/misc.Proxy.get.HasBinding.js: [object Error]
+kangax-es6/misc.Proxy.get.IteratorComplete.js: error:22:13: Expected ';'
+kangax-es6/misc.Proxy.get.JSON.stringify.js: [object Error]
+kangax-es6/misc.Proxy.get.Object.assign.js: [object Error]
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: [object Error]
+kangax-es6/misc.Proxy.get.Promise.resolve.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.flags.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.test.js: [object Error]
+kangax-es6/misc.Proxy.get.RegExp.toString.js: [object Error]
+kangax-es6/misc.Proxy.get.String.match.js: [object Error]
+kangax-es6/misc.Proxy.get.String.raw.js: [object Error]
+kangax-es6/misc.Proxy.get.String.replace.js: [object Error]
+kangax-es6/misc.Proxy.get.String.search.js: [object Error]
+kangax-es6/misc.Proxy.get.String.split.js: [object Error]
+kangax-es6/misc.Proxy.get.ToPrimitive.js: [object Error]
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: [object Error]
+kangax-es6/misc.Proxy.get.instanceof.js: [object Error]
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: [object Error]
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: [object Error]
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.fill.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.from.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.of.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.pop.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.push.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.reverse.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.shift.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.splice.js: [object Error]
+kangax-es6/misc.Proxy.set.Array.unshift.js: [object Error]
+kangax-es6/misc.Proxy.set.Object.assign.js: [object Error]
+kangax-es6/misc.RegExp-alter-flags.js: failed
+kangax-es6/misc.RegExp-prototype-toString-generic.js: [object Error]
+kangax-es6/misc.accessors-no-constructor.js: error:8:19: Expected ')'
+kangax-es6/misc.bound-function-prototype.arrow.js: error:9:35: Expected ')'
+kangax-es6/misc.bound-function-prototype.class.js: error:10:11: Syntax error
+kangax-es6/misc.bound-function-prototype.function.js: [object Error]
+kangax-es6/misc.bound-function-prototype.generator.js: error:10:21: Expected '('
+kangax-es6/misc.bound-function-prototype.subclass.js: error:10:11: Syntax error
+kangax-es6/misc.do-while-no-semicolon.js: error:9:23: Syntax error
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: [object Error]
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: error:8:19: Expected ')'
+kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-2.js: error:8:19: Expected ')'
+kangax-es6/misc.property-order.JSON.parse.js: [object Error]
+kangax-es6/misc.property-order.JSON.stringify.js: [object Error]
+kangax-es6/misc.property-order.Object.assign.js: [object Error]
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: [object Error]
+kangax-es6/misc.property-order.Object.keys.js: [object Error]
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: [object Error]
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: [object Error]
+kangax-es6/misc.prototypes-not-instances.js: Can't attach process 0204: error 5
+kangax-es6/new-target.assignment-error.js: error:11:18: Expected ')'
+kangax-es6/new-target.constructor.js: error:11:18: Expected ')'
+kangax-es6/regex.flags.u.case-folding.js: error:1:1:
+kangax-es6/regex.flags.u.codepoint.js: error:1:1:
+kangax-es6/regex.flags.u.js: error:1:1:
+kangax-es6/regex.flags.u.non-bmp.js: error:1:1:
+kangax-es6/regex.flags.y.js: failed
+kangax-es6/regex.flags.y.lastIndex.js: [object Error]
+kangax-es6/rest-params.arguments.js: error:10:20: Expected '('
+kangax-es6/rest-params.basic.js: error:10:20: Expected '('
+kangax-es6/rest-params.length.js: error:10:18: Expected '('
+kangax-es6/rest-params.new-function.js: [object Error]
+kangax-es6/rest-params.no-setter.js: error:10:21: Expected ')'
+kangax-es6/spread.array-call.js: error:9:19: Expected ')'
+kangax-es6/spread.array-literal.js: error:9:19: Expected ')'
+kangax-es6/spread.astral-call.js: error:9:19: Expected ')'
+kangax-es6/spread.astral-literal.js: error:9:19: Expected ')'
+kangax-es6/spread.generator-call.js: error:10:27: Expected '('
+kangax-es6/spread.generator-literal.js: error:10:27: Expected '('
+kangax-es6/spread.iterable-call.js: error:33:19: Expected ')'
+kangax-es6/spread.iterable-instance-call.js: error:33:19: Expected ')'
+kangax-es6/spread.iterable-instance-literal.js: error:33:19: Expected ')'
+kangax-es6/spread.iterable-literal.js: error:33:19: Expected ')'
+kangax-es6/spread.non-iterable-error.js: error:9:19: Expected ')'
+kangax-es6/spread.sparse-call.js: error:9:19: Expected ')'
+kangax-es6/spread.sparse-literal.js: error:9:19: Expected ')'
+kangax-es6/spread.string-call.js: error:9:19: Expected ')'
+kangax-es6/spread.string-literal.js: error:9:19: Expected ')'
+kangax-es6/subclassing.Array.concat.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.filter.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.from.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.isArray.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.length-access.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.length-set.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.map.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.of.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.prototype-chain.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.slice.js: error:9:9: Syntax error
+kangax-es6/subclassing.Array.splice.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.call.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.new.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.prototype-chain.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.prototype.apply.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.prototype.bind.js: error:9:9: Syntax error
+kangax-es6/subclassing.Function.prototype.call.js: error:9:9: Syntax error
+kangax-es6/subclassing.Promise.all.js: error:44:9: Syntax error
+kangax-es6/subclassing.Promise.js: error:44:9: Syntax error
+kangax-es6/subclassing.Promise.prototype-chain.js: error:9:9: Syntax error
+kangax-es6/subclassing.Promise.race.js: error:44:9: Syntax error
+kangax-es6/subclassing.RegExp.exec.js: error:9:9: Syntax error
+kangax-es6/subclassing.RegExp.js: error:11:9: Syntax error
+kangax-es6/subclassing.RegExp.prototype-chain.js: error:9:9: Syntax error
+kangax-es6/subclassing.RegExp.test.js: error:9:9: Syntax error
+kangax-es6/subclassing.misc.Boolean.js: error:9:9: Syntax error
+kangax-es6/subclassing.misc.Error.js: error:9:9: Syntax error
+kangax-es6/subclassing.misc.Map.js: error:10:9: Syntax error
+kangax-es6/subclassing.misc.Number.js: error:9:9: Syntax error
+kangax-es6/subclassing.misc.Set.js: error:10:9: Syntax error
+kangax-es6/subclassing.misc.String.js: error:9:9: Syntax error
+kangax-es6/super.correct-constructor.js: error:12:9: Syntax error
+kangax-es6/super.expression.js: error:10:9: Syntax error
+kangax-es6/super.method-calls.js: error:10:9: Syntax error
+kangax-es6/super.new-target-binding.js: error:11:9: Syntax error
+kangax-es6/super.property-access.js: error:10:9: Syntax error
+kangax-es6/super.statement.js: error:11:9: Syntax error
+kangax-es6/super.static-binding.js: error:10:9: Syntax error
+kangax-es6/super.this-binding.js: error:10:9: Syntax error
+kangax-es6/tail-calls.direct.js: [object Error]
+kangax-es6/tail-calls.mutual.js: [object Error]
+kangax-es6/template.basic.js: error:11:8: Syntax error
+kangax-es6/template.caching.js: error:17:19: Syntax error
+kangax-es6/template.escape-sequences.js: error:13:20: Syntax error
+kangax-es6/template.frozen-array.js: error:12:6: Syntax error
+kangax-es6/template.line-break.js: [object Error]
+kangax-es6/template.permanent-caching.js: error:14:19: Syntax error
+kangax-es6/template.tagged.js: error:21:13: Syntax error
+kangax-es6/template.toString.js: error:14:10: Syntax error
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: [object Error]
+kangax-es6/typed-arrays.DataView.Float32.js: [object Error]
+kangax-es6/typed-arrays.DataView.Float64.js: [object Error]
+kangax-es6/typed-arrays.DataView.Int8.js: [object Error]
+kangax-es6/typed-arrays.DataView.Int16.js: [object Error]
+kangax-es6/typed-arrays.DataView.Int32.js: [object Error]
+kangax-es6/typed-arrays.DataView.Uint8.js: [object Error]
+kangax-es6/typed-arrays.DataView.Uint16.js: [object Error]
+kangax-es6/typed-arrays.DataView.Uint32.js: [object Error]
+kangax-es6/typed-arrays.Float32Array.js: [object Error]
+kangax-es6/typed-arrays.Float64Array.js: [object Error]
+kangax-es6/typed-arrays.Int8Array.js: [object Error]
+kangax-es6/typed-arrays.Int16Array.js: [object Error]
+kangax-es6/typed-arrays.Int32Array.js: [object Error]
+kangax-es6/typed-arrays.Symbol.species.js: [object Error]
+kangax-es6/typed-arrays.Uint8Array.js: [object Error]
+kangax-es6/typed-arrays.Uint8ClampedArray.js: [object Error]
+kangax-es6/typed-arrays.Uint16Array.js: [object Error]
+kangax-es6/typed-arrays.Uint32Array.js: [object Error]
+kangax-es6/typed-arrays.constructor-iterables.js: [object Error]
+kangax-es6/typed-arrays.constructor-requires-new.js: [object Error]
+kangax-es6/typed-arrays.correct-prototype-chains.js: error:32:5: Syntax error
+kangax-es6/typed-arrays.from.js: [object Error]
+kangax-es6/typed-arrays.of.js: [object Error]
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: [object Error]
+kangax-es6/typed-arrays.prototype.copyWithin.js: [object Error]
+kangax-es6/typed-arrays.prototype.entries.js: [object Error]
+kangax-es6/typed-arrays.prototype.every.js: [object Error]
+kangax-es6/typed-arrays.prototype.fill.js: [object Error]
+kangax-es6/typed-arrays.prototype.filter.js: [object Error]
+kangax-es6/typed-arrays.prototype.findIndex.js: [object Error]
+kangax-es6/typed-arrays.prototype.find.js: [object Error]
+kangax-es6/typed-arrays.prototype.forEach.js: [object Error]
+kangax-es6/typed-arrays.prototype.indexOf.js: [object Error]
+kangax-es6/typed-arrays.prototype.join.js: [object Error]
+kangax-es6/typed-arrays.prototype.keys.js: [object Error]
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: [object Error]
+kangax-es6/typed-arrays.prototype.map.js: [object Error]
+kangax-es6/typed-arrays.prototype.reduceRight.js: [object Error]
+kangax-es6/typed-arrays.prototype.reduce.js: [object Error]
+kangax-es6/typed-arrays.prototype.reverse.js: [object Error]
+kangax-es6/typed-arrays.prototype.slice.js: [object Error]
+kangax-es6/typed-arrays.prototype.some.js: [object Error]
+kangax-es6/typed-arrays.prototype.sort.js: [object Error]
+kangax-es6/typed-arrays.prototype.subarray.js: [object Error]
+kangax-es6/typed-arrays.prototype.values.js: [object Error]
+kangax-es6/unicode-escapes.identifier.js: error:8:19: Expected ')'
+kangax-es6/unicode-escapes.property-access.js: error:8:19: Expected ')'
+kangax-es6/unicode-escapes.property-key.js: error:8:19: Expected ')'
+kangax-es6/unicode-escapes.string.js: error:9:10:
+kangax-es6/well-known.hasInstance.js: [object Error]
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: [object Error]
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: [object Error]
+kangax-es6/well-known.iterator.js: [object Error]
+kangax-es6/well-known.match.RegExp-constructor.js: [object Error]
+kangax-es6/well-known.match.String.endsWith.js: [object Error]
+kangax-es6/well-known.match.String.includes.js: [object Error]
+kangax-es6/well-known.match.String.startsWith.js: [object Error]
+kangax-es6/well-known.match.js: [object Error]
+kangax-es6/well-known.replace.js: [object Error]
+kangax-es6/well-known.search.js: [object Error]
+kangax-es6/well-known.species.Array.concat.js: [object Error]
+kangax-es6/well-known.species.Array.filter.js: [object Error]
+kangax-es6/well-known.species.Array.map.js: [object Error]
+kangax-es6/well-known.species.Array.slice.js: [object Error]
+kangax-es6/well-known.species.Array.splice.js: [object Error]
+kangax-es6/well-known.species.Promise.then.js: [object Error]
+kangax-es6/well-known.species.RegExp.split.js: [object Error]
+kangax-es6/well-known.species.js: [object Error]
+kangax-es6/well-known.split.js: [object Error]
+kangax-es6/well-known.toPrimitive.js: [object Error]
+kangax-es6/well-known.toStringTag.existing-builtins.js: [object Error]
+kangax-es6/well-known.toStringTag.js: [object Error]
+kangax-es6/well-known.toStringTag.misc-builtins.js: [object Error]
+kangax-es6/well-known.toStringTag.new-builtins.js: error:23:38: Expected '('
+kangax-es6/well-known.unscopables.js: [object Error]
+kangax-es2016/Array.prototype.includes.generic.js: error:9:19: Expected ')'
+kangax-es2016/Array.prototype.includes.js: [object Error]
+kangax-es2016/Array.prototype.includes.sparse.js: [object Error]
+kangax-es2016/Array.prototype.includes.typed-array.js: [object Error]
+kangax-es2016/exponentiation.assignment.js: error:9:19: Expected ')'
+kangax-es2016/exponentiation.basic.js: error:9:19: Expected ')'
+kangax-es2016/exponentiation.unary-negation-error.js: error:10:7: Syntax error
+kangax-es2016/misc.Proxy-Array-includes.js: [object Error]
+kangax-es2016/misc.Proxy-enumerate-removed.js: [object Error]
+kangax-es2016/misc.generator-no-new.js: error:10:12: Expected '('
+kangax-es2016/misc.generator-throw-inner.js: error:10:12: Expected '('
+kangax-es2016/misc.nested-rest-destructuring-decl.js: error:9:19: Expected ')'
+kangax-es2016/misc.nested-rest-destructuring-params.js: error:9:20: Expected ')'
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: error:9:16: Expected ')'
+kangax-es2017/Atomics.add.js: [object Error]
+kangax-es2017/Atomics.and.js: [object Error]
+kangax-es2017/Atomics.compareExchange.js: [object Error]
+kangax-es2017/Atomics.exchange.js: [object Error]
+kangax-es2017/Atomics.isLockFree.js: [object Error]
+kangax-es2017/Atomics.load.js: [object Error]
+kangax-es2017/Atomics.notify.js: [object Error]
+kangax-es2017/Atomics.or.js: [object Error]
+kangax-es2017/Atomics.store.js: [object Error]
+kangax-es2017/Atomics.sub.js: [object Error]
+kangax-es2017/Atomics.wait.js: [object Error]
+kangax-es2017/Atomics.xor.js: [object Error]
+kangax-es2017/Object.entries.js: [object Error]
+kangax-es2017/Object.getOwnPropertyDescriptors.js: [object Error]
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: [object Error]
+kangax-es2017/Object.values.js: [object Error]
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: [object Error]
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: [object Error]
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: [object Error]
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: [object Error]
+kangax-es2017/String.prototype.padEnd.js: [object Error]
+kangax-es2017/String.prototype.padStart.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: error:9:19: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: error:8:19: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: error:9:19: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: error:8:19: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: [object Error]
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: [object Error]
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: [object Error]
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: [object Error]
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: [object Error]
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: [object Error]
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: error:9:19: Expected ')'
+kangax-es2017/async.arrow-in-class.js: error:48:9: Syntax error
+kangax-es2017/async.arrow.js: error:44:19: Expected ')'
+kangax-es2017/async.await-non-promise.js: error:44:19: Expected ')'
+kangax-es2017/async.await-rejection.js: error:44:19: Expected ')'
+kangax-es2017/async.await.js: error:44:19: Expected ')'
+kangax-es2017/async.constructor.js: error:45:17: Syntax error
+kangax-es2017/async.methods-class.js: error:45:9: Syntax error
+kangax-es2017/async.methods-object.js: error:44:19: Expected ')'
+kangax-es2017/async.must-await-value.js: error:10:9: Syntax error
+kangax-es2017/async.no-await-in-params.js: error:10:9: Syntax error
+kangax-es2017/async.no-line-break.js: error:10:9: Syntax error
+kangax-es2017/async.no-prototype.js: error:10:9: Syntax error
+kangax-es2017/async.prototype-chain.js: error:9:19: Expected ')'
+kangax-es2017/async.return.js: error:45:9: Syntax error
+kangax-es2017/async.throw.js: error:45:9: Syntax error
+kangax-es2017/misc.arguments-caller-removed.js: [object Error]
+kangax-es2017/regex.flags.u.case-folding.js: error:1:1:
+kangax-es2017/trailing-comma.arguments.js: error:9:19: Expected ')'
+kangax-es2017/trailing-comma.params.js: error:10:27: Expected '('
+kangax-es2018/Promise.prototype.finally.change-rejection.js: error:48:6: Syntax error
+kangax-es2018/Promise.prototype.finally.js: error:61:6: Syntax error
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: error:59:26: Syntax error
+kangax-es2018/async-iterators.for-await-of.js: error:44:19: Expected ')'
+kangax-es2018/async-iterators.generators.js: error:44:9: Syntax error
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: error:9:19: Expected ')'
+kangax-es2018/misc.template-literal-revision.js: error:16:13: Syntax error
+kangax-es2018/object-rest.js: error:8:19: Expected ')'
+kangax-es2018/object-spread.js: error:8:19: Expected ')'
+kangax-es2018/regex.flags.s.js: error:1:1:
+kangax-es2018/regex.lookbehind.js: [object Error]
+kangax-es2018/regex.named-capture-groups.js: [object Error]
+kangax-es2018/regex.unicode-property-escapes.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: error:1:1:
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: error:1:1:
+kangax-es2019/Array.prototype.flatMap.js: [object Error]
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: [object Error]
+kangax-es2019/Array.prototype.flat.js: [object Error]
+kangax-es2019/Object.fromEntries.js: [object Error]
+kangax-es2019/String.prototype.trimEnd.js: [object Error]
+kangax-es2019/String.prototype.trimStart.js: [object Error]
+kangax-es2019/Symbol.prototype.description.empty.js: [object Error]
+kangax-es2019/Symbol.prototype.description.js: [object Error]
+kangax-es2019/Symbol.prototype.description.undefined.js: [object Error]
+kangax-es2019/annex-b.String.prototype.trimLeft.js: [object Error]
+kangax-es2019/annex-b.String.prototype.trimRight.js: [object Error]
+kangax-es2019/misc.Function-toString.Function-constructor.js: [object Error]
+kangax-es2019/misc.Function-toString.arrows.js: [object Error]
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: [object Error]
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: [object Error]
+kangax-es2019/misc.Function-toString.computed-names.js: [object Error]
+kangax-es2019/misc.Function-toString.native-code.js: error:10:3: Syntax error
+kangax-es2019/misc.Function-toString.unicode-escapes.js: [object Error]
+kangax-es2019/misc.JSON-stringify-well-formed.js: [object Error]
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
+kangax-es2019/misc.optional-catch-binding.await.js: error:43:19: Expected ')'
+kangax-es2019/misc.optional-catch-binding.js: error:12:9: Expected '('
+kangax-es2019/misc.optional-catch-binding.yield.js: error:9:12: Expected '('
+kangax-es2020/BigInt64Array.js: error:9:19: Expected ')'
+kangax-es2020/BigInt.asIntN.js: [object Error]
+kangax-es2020/BigInt.asUintN.js: [object Error]
+kangax-es2020/BigInt.constructor.js: error:9:19: Expected ')'
+kangax-es2020/BigInt.js: error:9:19: Expected ')'
+kangax-es2020/BigUint64Array.js: error:9:19: Expected ')'
+kangax-es2020/DataView.prototype.getBigInt64.js: error:9:19: Expected ')'
+kangax-es2020/DataView.prototype.getBigUint64.js: error:9:19: Expected ')'
+kangax-es2020/Promise.allSettled.js: error:44:19: Expected ')'
+kangax-es2020/String.prototype.matchAll.js: [object Error]
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: error:9:19: Expected ')'
+kangax-es2020/optional-chaining.bracket.js: error:9:19: Expected ')'
+kangax-es2020/optional-chaining.function-call.js: error:9:19: Expected ')'
+kangax-es2020/optional-chaining.method-call.js: error:9:19: Expected ')'
+kangax-es2020/optional-chaining.property.js: error:9:19: Expected ')'
+kangax-es2020/optional-chaining.spread-params.js: error:9:19: Expected ')'
+kangax-es2021/FinalizationRegistry.js: [object Error]
+kangax-es2021/Promise.any.AggregateError.js: error:49:6: Syntax error
+kangax-es2021/Promise.any.fulfillment.js: error:44:19: Expected ')'
+kangax-es2021/String.prototype.replaceAll.js: [object Error]
+kangax-es2021/WeakRef.js: [object Error]
+kangax-es2021/logical-assignment.and.js: error:10:7: Syntax error
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: error:9:7: Syntax error
+kangax-es2021/logical-assignment.and.short-circuit.js: error:9:7: Syntax error
+kangax-es2021/logical-assignment.nullish.js: error:10:7: Syntax error
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: error:9:7: Syntax error
+kangax-es2021/logical-assignment.nullish.short-circuit.js: error:9:7: Syntax error
+kangax-es2021/logical-assignment.or.js: error:10:7: Syntax error
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: error:9:7: Syntax error
+kangax-es2021/logical-assignment.or.short-circuit.js: error:9:7: Syntax error
+kangax-es2021/numeric-separators.js: error:9:10: Expected ';'
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: [object Error]
+kangax-es2022/Error.cause.AggregateError.js: [object Error]
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: [object Error]
+kangax-es2022/at-method.Array.js: [object Error]
+kangax-es2022/at-method.String.js: [object Error]
+kangax-es2022/at-method.TypedArray.js: [object Error]
+kangax-es2022/class-fields.computed-instance.js: error:9:9: Syntax error
+kangax-es2022/class-fields.computed-static.js: error:9:9: Syntax error
+kangax-es2022/class-fields.instance.parent-scope.js: error:10:9: Syntax error
+kangax-es2022/class-fields.private-instance.initializers.js: error:9:9: Syntax error
+kangax-es2022/class-fields.private-instance.js: error:10:9: Syntax error
+kangax-es2022/class-fields.private-instance.optional-access.js: error:9:9: Syntax error
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: error:9:9: Syntax error
+kangax-es2022/class-fields.private-static.js: error:10:9: Syntax error
+kangax-es2022/class-fields.public-instance.js: error:10:9: Syntax error
+kangax-es2022/class-fields.public-static.js: error:10:9: Syntax error
+kangax-es2022/class-fields.static.define.js: error:8:19: Expected ')'
+kangax-es2022/class-methods.private-accessor.js: error:10:9: Syntax error
+kangax-es2022/class-methods.private-instance.js: error:9:9: Syntax error
+kangax-es2022/class-methods.private-static-accessor.js: error:10:9: Syntax error
+kangax-es2022/class-methods.private-static.js: error:9:9: Syntax error
+kangax-es2022/class-static-init-blocks.js: error:10:7: Syntax error
+kangax-es2022/ergonomic-brand-checks.js: error:9:9: Syntax error
+kangax-es2022/regex.flags.d.constructor.js: [object Error]
+kangax-es2022/regex.flags.d.shows-in-flags.js: [object Error]
+kangax-es2023/Array.prototype.findLastIndex.js: [object Error]
+kangax-es2023/Array.prototype.findLast.js: [object Error]
+kangax-es2023/Array.prototype.toReversed.js: [object Error]
+kangax-es2023/Array.prototype.toSorted.js: [object Error]
+kangax-es2023/Array.prototype.toSpliced.js: [object Error]
+kangax-es2023/Array.prototype.with.js: error:11:14: Syntax error
+kangax-es2023/TypedArray.prototype.toReversed.js: [object Error]
+kangax-es2023/TypedArray.prototype.toSorted.js: [object Error]
+kangax-es2023/TypedArray.prototype.with.js: error:11:14: Syntax error
+kangax-es2023/hashbang.js: failed
+kangax-es2024/ArrayBuffer.prototype.detached.js: error:10:3: Syntax error
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: error:10:3: Syntax error
+kangax-es2024/ArrayBuffer.prototype.transfer.js: error:10:3: Syntax error
+kangax-es2024/Map.groupBy.js: error:10:3: Syntax error
+kangax-es2024/Object.groupBy.js: error:10:3: Syntax error
+kangax-es2024/Promise.withResolvers.js: [object Error]
+kangax-es2024/regex.flags.v.constructor.js: [object Error]
+kangax-es2024/regex.flags.v.properties-of-strings.js: error:1:1:
+kangax-es2024/regex.flags.v.set-notations.js: error:1:1:
+kangax-es2024/regex.flags.v.shows-in-flags.js: [object Error]
+kangax-es2024/regex.flags.v.unicode-15.1.js: error:1:1:
+kangax-es2024/regex.flags.v.unicode-16.0.js: error:1:1:
+kangax-es2024/regex.flags.v.unicode-17.0.js: error:1:1:
+kangax-es2025/Iterator.extends.js: error:10:9: Syntax error
+kangax-es2025/Iterator.from.iterable.js: error:10:3: Syntax error
+kangax-es2025/Iterator.from.iterator.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.instanceof.js: [object Error]
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: [object Error]
+kangax-es2025/Iterator.prototype.drop.js: [object Error]
+kangax-es2025/Iterator.prototype.every.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.filter.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.find.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.flatMap.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.forEach.js: error:10:7: Syntax error
+kangax-es2025/Iterator.prototype.map.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.reduce.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.some.js: error:9:19: Expected ')'
+kangax-es2025/Iterator.prototype.take.js: [object Error]
+kangax-es2025/Iterator.prototype.toArray.js: error:10:3: Syntax error
+kangax-es2025/Promise.try.js: error:50:19: Syntax error
+kangax-es2025/RegExp.escape.js: [object Error]
+kangax-es2025/Set.prototype.difference.js: [object Error]
+kangax-es2025/Set.prototype.intersection.js: [object Error]
+kangax-es2025/Set.prototype.isDisjointFrom.js: [object Error]
+kangax-es2025/Set.prototype.isSubsetOf.js: [object Error]
+kangax-es2025/Set.prototype.isSupersetOf.js: [object Error]
+kangax-es2025/Set.prototype.symmetricDifference.js: [object Error]
+kangax-es2025/Set.prototype.union.js: [object Error]
+kangax-es2025/regex.duplicate-named-groups.js: [object Error]
+kangax-es2025/regex.pattern-modifiers.i.js: error:9:3: Syntax error
+kangax-es2025/regex.pattern-modifiers.m.js: error:9:3: Syntax error
+kangax-es2025/regex.pattern-modifiers.s.js: error:1:1:
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: [object Error]
+kangax-intl/Intl.Collator.new-instances.js: [object Error]
+kangax-intl/Intl.Collator.prototype.compare.js: [object Error]
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: [object Error]
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: [object Error]
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.new-instances.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: [object Error]
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: [object Error]
+kangax-intl/Intl.NumberFormat.js: [object Error]
+kangax-intl/Intl.NumberFormat.new-instances.js: [object Error]
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: [object Error]
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: [object Error]
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: [object Error]
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK

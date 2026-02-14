@@ -86,7 +86,7 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
 RUN if [ `uname -m` = x86_64 ]; then \
       dpkg --add-architecture i386 && \
       apt-get update -y && \
-      apt-get install -y --no-install-recommends cabextract wine wine32; \
+      apt-get install -y --no-install-recommends cabextract wine wine32 wine64; \
     fi
 
 RUN ln -s zoo/bench /bench && \
