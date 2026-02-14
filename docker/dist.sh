@@ -21,12 +21,12 @@ fi
 if [[ -z "$DOCKER" ]]; then
   if command -v podman >/dev/null 2>&1; then
     DOCKER=podman
-  elif command -v docker >/dev/null 2>&1; then
-    DOCKER=docker
   elif command -v container >/dev/null 2>&1; then
     DOCKER=container
+  elif command -v docker >/dev/null 2>&1; then
+    DOCKER=docker
   else
-    echo "No container engine found. Install podman, docker, or container (or set DOCKER)." >&2
+    echo "No docker engine found. Install podman, docker, macOS containerization or point DOCKER to a docker-like tool." >&2
     exit 1
   fi
 fi
@@ -47,7 +47,6 @@ if [[ "$DOCKER" == "container" ]]; then
 if ! [[ -f "/dist/$ID.json" || -f "/dist/parsers/$ID.json" || -f "/dist/transpilers/$ID.json" ]]; then
   ./dist.py "/dist/$ID" --rename-variant
 fi
-ls -l /dist | grep -v ^total | grep -v ' jsz_' || true
 mkdir -p /out/dist
 cp -a /dist/. /out/dist/
 EOF
@@ -68,7 +67,6 @@ else
 if ! [[ -f "/dist/$ID.json" || -f "/dist/parsers/$ID.json" || -f "/dist/transpilers/$ID.json" ]]; then
   ./dist.py "/dist/$ID" --rename-variant
 fi
-ls -l /dist | grep -v ^total | grep -v ' jsz_' || true
 EOF
 )"
 
@@ -87,6 +85,8 @@ rm -rf \
   "../dist/$DOCKER_ARCH/$ID."* \
   "../dist/$DOCKER_ARCH/$ID-dist"
 
+dst_files=()
+
 for subdir in "" parsers/ transpilers/; do
   for src in "$TMPCP/dist/$subdir$ID"*; do
     if [[ -e "$src" ]]; then
@@ -100,9 +100,12 @@ for subdir in "" parsers/ transpilers/; do
       if [[ -f "$dst" ]]; then
         chmod a-w "$dst"
       fi
+      dst_files+=( "$dst" )
     fi
   done
 done
+
+ls -l "${dst_files[@]}"
 
 rm -rf "$TMPCP"
 if [[ -n "$CIDFILE" ]]; then

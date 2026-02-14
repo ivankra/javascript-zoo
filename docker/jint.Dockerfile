@@ -17,8 +17,7 @@ RUN dotnet publish Jint.Repl/Jint.Repl.csproj \
       -p:PublishAot=false \
       -p:PublishTrimmed=false \
       -p:EnableAotAnalyzer=false \
-      -p:IsAotCompatible=false && \
-    test -f /dist/jint-dist/Jint.Repl.dll
+      -p:IsAotCompatible=false
 
 COPY dist.py ./
 RUN ./dist.py /dist/jint --wrapper='exec dotnet "$SCRIPT_DIR/jint-dist/Jint.Repl.dll" "$@"'

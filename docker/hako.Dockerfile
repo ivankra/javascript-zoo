@@ -1,20 +1,8 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-dotnet
+ARG BASE=jsz-dotnet-wasi
 FROM $BASE
-
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends binaryen
-
-ARG WASI_SDK_VER=27
-ENV WASI_SDK_PATH=/opt/wasi-sdk
-
-RUN wasi_arch="$(uname -m | sed -e 's/^x86_64$/x86_64/; s/^aarch64$/arm64/; s/^arm64$/arm64/')"; \
-    curl -fsSL -o /tmp/wasi-sdk.tar.gz "https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-${WASI_SDK_VER}/wasi-sdk-${WASI_SDK_VER}.0-${wasi_arch}-linux.tar.gz" && \
-    mkdir -p "$WASI_SDK_PATH" && \
-    tar -xzf /tmp/wasi-sdk.tar.gz -C "$WASI_SDK_PATH" --strip-components=1 && \
-    rm -f /tmp/wasi-sdk.tar.gz
 
 ARG REPO=https://github.com/6over3/hako.git
 ARG REV=main
@@ -33,8 +21,12 @@ RUN cp -f /src/hosts/dotnet/Hako/Resources/hako.wasm /dist/hako.wasm
 COPY hako.cs /src/hako-runner.cs
 COPY hako.csproj /src/hako-runner.csproj
 
-RUN rid="$(uname -m | sed -e 's/^x86_64$/linux-x64/; s/^aarch64$/linux-arm64/; s/^arm64$/linux-arm64/')"; \
-    dotnet publish /src/hako-runner.csproj -c Release -f net10.0 -r "$rid" --self-contained false -o /dist/hako-dist
+RUN dotnet publish /src/hako-runner.csproj \
+      -c Release \
+      -f net10.0 \
+      -o /dist/hako-dist \
+      -r "linux-$(uname -m | sed 's/x86_64/x64/; s/aarch64/arm64/')" \
+      --self-contained false
 
 COPY dist.py ./
 RUN ./dist.py /dist/hako --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/hako-dist/hako-runner.dll" "$@"'

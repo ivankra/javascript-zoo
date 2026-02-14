@@ -10,7 +10,6 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-RUN sed -i '/-Werror/d' CMakeLists.txt
 RUN make
 
 COPY dist.py ./

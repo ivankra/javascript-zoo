@@ -16,4 +16,4 @@ RUN git apply 42tiny-js.patch && make
 RUN head -n 38 Script.cpp >LICENSE
 
 COPY dist.py ./
-RUN ./dist.py /dist/42tiny-js --binary=/src/Script --license=LICENSE
+RUN ./dist.py /dist/42tiny-js --binary=/src/Script

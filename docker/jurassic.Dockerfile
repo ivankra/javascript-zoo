@@ -13,8 +13,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 COPY jurassic.cs /src/REPL/Program.cs
 
-RUN dotnet publish REPL/REPL.csproj -c Release -o /dist/jurassic-dist && \
-    test -f /dist/jurassic-dist/REPL.dll
+RUN dotnet publish REPL/REPL.csproj -c Release -o /dist/jurassic-dist
 
 COPY dist.py ./
 RUN ./dist.py /dist/jurassic --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/jurassic-dist/REPL.dll" "$@"'

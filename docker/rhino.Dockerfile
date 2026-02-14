@@ -16,8 +16,7 @@ RUN apt-get install -y --no-install-recommends openjdk-21-jdk-headless
 
 RUN ./gradlew :rhino-all:build
 
-RUN mkdir -p /dist && \
-    cp rhino-all/build/libs/rhino-all-*.jar /dist/rhino.jar
+RUN mkdir -p /dist && cp rhino-all/build/libs/rhino-all-*.jar /dist/rhino.jar
 
 COPY dist.py ./
 RUN ./dist.py /dist/rhino \

@@ -14,8 +14,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 COPY topaz.cs /src/
 COPY topaz.csproj /src/topaz_runner.csproj
 
-RUN dotnet publish topaz_runner.csproj -c Release -o /dist/topaz-dist && \
-    test -f /dist/topaz-dist/topaz_runner.dll
+RUN dotnet publish topaz_runner.csproj -c Release -o /dist/topaz-dist
 
 COPY dist.py ./
 RUN ./dist.py /dist/topaz --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/topaz-dist/topaz_runner.dll" "$@"'

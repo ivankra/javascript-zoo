@@ -64,8 +64,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 
 RUN sed -i 's/^_version_string = .*/_version_string = "1.0"/' js/builtins/js_global.py
 
-RUN cp -a js py-js.py $DIST/ && \
-    true
+RUN cp -a js py-js.py $DIST/
 
 COPY dist.py ./
 RUN ./dist.py /dist/rpython-langjs \

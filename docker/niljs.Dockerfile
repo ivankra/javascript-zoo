@@ -14,8 +14,7 @@ RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
 COPY niljs.cs /src/
 COPY niljs.csproj /src/
 
-RUN dotnet publish niljs.csproj -c Release -o /dist/niljs-dist && \
-    test -f /dist/niljs-dist/niljs.dll
+RUN dotnet publish niljs.csproj -c Release -o /dist/niljs-dist
 
 COPY dist.py ./
 RUN ./dist.py /dist/niljs --wrapper='exec dotnet "$SCRIPT_DIR/niljs-dist/niljs.dll" "$@"'

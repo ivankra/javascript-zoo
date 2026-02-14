@@ -4,17 +4,28 @@
 # Version/feature history:
 # https://web.archive.org/web/20210420113930/https://developer.mozilla.org/en-US/docs/Archive/Web/JavaScript/New_in_JavaScript
 #
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+ARG BASE=jsz-gcc
+FROM $BASE
+
+# JavaScript-C 1.5 2004-09-24
+ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
+
 # Other pre-C++/JIT versions from https://archive.mozilla.org/pub/js/
 # should also work with this build script. 1.8.1+ (Firefox 3.5+) added JIT
 # with a much more complicated and less portable build system - won't work.
+#
+# With some more work, JS1.3 from Netscape 4.0x might build.
+# JavaScript-C 1.3 1998 06 30
+# ARG TARBALL=https://ftp.mozilla.org/pub/mozilla/source/mozilla-19981008.tar.gz
+# https://github.com/mozilla-firefox/firefox.git 5858e3255b42cdd854bc3fa597abb65c07707de6
 #
 # JavaScript-C 1.4 release 1 1998 10 31
 # ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.4-1.tar.gz
 # ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.4-2.tar.gz
 # https://github.com/mozilla-firefox/firefox.git fc767ea7421a9322194cffbeaf0e83e4a4a3543c
-#
-# JavaScript-C 1.5 2004-09-24
-# ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
 #
 # JavaScript-C 1.6 2006-11-19
 # ARG TARBALL=https://archive.mozilla.org/pub/js/js-1.60.tar.gz
@@ -24,26 +35,13 @@
 #
 # JavaScript-C 1.8.0 pre-release 1 2009-02-16
 # ARG TARBALL=https://archive.mozilla.org/pub/js/js-1.8.0-rc1.tar.gz
-#
-# With some more work, JS1.3 from Netscape 4.0x might build.
-# JavaScript-C 1.3 1998 06 30
-# ARG TARBALL=https://ftp.mozilla.org/pub/mozilla/source/mozilla-19981008.tar.gz
-# https://github.com/mozilla-firefox/firefox.git 5858e3255b42cdd854bc3fa597abb65c07707de6
-#
-# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
-# SPDX-License-Identifier: MIT
-
-ARG BASE=jsz-gcc
-FROM $BASE
-
-ARG TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz
 
 WORKDIR /src
 RUN wget "$TARBALL" && tar xf "$(basename "$TARBALL")" && \
     if [ -d src ]; then ln -s . js; fi
 
 RUN cloc js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|/(t|v8|octane|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm)/)" \
-      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
+      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >loc
 
 RUN cd js/src && \
     # -fPIC: workaround for some linker errors \
@@ -54,14 +52,16 @@ RUN cd js/src && \
     sed -i -e 's/^static int StackGrowthDirection/static int __attribute__((noinline)) StackGrowthDirection/' jscpucfg.c && \
     make -f Makefile.ref BUILD_OPT=1
 
-# Metadata and dist packaging
 RUN ([ -f LICENSE ]] || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+
 COPY dist.py ./
-RUN ./dist.py /dist/spidermonkey_1.5 \
-      --binary=/src/js/src/Linux_All_OPT.OBJ/js \
+RUN JS_BINARY=/src/js/src/Linux_All_OPT.OBJ/js; \
+    ./dist.py /dist/spidermonkey_1.5 \
+      --binary=$JS_BINARY \
       --license=LICENSE \
+      jit= \
+      loc="$(cat loc)" \
+      revision_date="$($JS_BINARY --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p')" \
       sources="$TARBALL" \
-      version="$(/src/js/src/Linux_All_OPT.OBJ/js --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p')" \
-      revision_date="$(/src/js/src/Linux_All_OPT.OBJ/js --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) (.* )?([0-9]{4}-[-0-9]+)$/\3/p')" \
       standard=ES3 \
-      jit=
+      version="$($JS_BINARY --help 2>&1 | sed -Ene 's/JavaScript-C (1[.0-9]*) .*$/\1/p')"

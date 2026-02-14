@@ -9,7 +9,7 @@ ARG REV=graal-25.0.2
 
 # Download pre-built release
 WORKDIR /dist
-RUN wget "https://github.com/oracle/graaljs/releases/download/$REV/$(echo "$REV" | sed -e 's/graal/graaljs/')-linux-$(uname -m | sed -e 's/x86_64/amd64/').tar.gz" && \
+RUN wget "https://github.com/oracle/graaljs/releases/download/$REV/$(echo "$REV" | sed 's/graal/graaljs/')-linux-$(uname -m | sed 's/x86_64/amd64/').tar.gz" && \
     tar xf graaljs-*.tar.gz && \
     rm -f graaljs-*.tar.gz && \
     mv graaljs-* graaljs-dist

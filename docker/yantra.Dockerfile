@@ -12,8 +12,7 @@ WORKDIR /src
 RUN git clone --branch="$REV" "$REPO" . || \
     (git clone "$REPO" . && git fetch origin "$REV" && git checkout FETCH_HEAD)
 
-RUN dotnet publish YantraJS/YantraJS.csproj -c Release -o /dist/yantra-dist && \
-    test -f /dist/yantra-dist/YantraJS.dll
+RUN dotnet publish YantraJS/YantraJS.csproj -c Release -o /dist/yantra-dist
 
 COPY dist.py ./
 RUN ./dist.py /dist/yantra --wrapper='exec dotnet --roll-forward Major "$SCRIPT_DIR/yantra-dist/YantraJS.dll" "$@"'

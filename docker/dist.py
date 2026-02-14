@@ -457,6 +457,15 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
     fail(f"could not detect console.log/print for {binary_path}")
 
 
+def maybe_link_to_dist_out(dist_out: Path) -> None:
+    if dist_out.parent != Path("/dist"):
+        return
+    link = Path.cwd() / dist_out.name
+    if link.exists():
+        return
+    link.symlink_to(dist_out)
+
+
 def main() -> None:
     (
         dist_out,
@@ -488,6 +497,7 @@ def main() -> None:
     if binary is None and wrapper is None and not dist_out.exists():
         fail(f"missing output file: {dist_out}; pass --binary=<path> or --wrapper=...")
     ensure_world_rx(dist_out)
+    maybe_link_to_dist_out(dist_out)
 
     license_dst = Path(str(dist_out) + ".LICENSE")
     if not license_dst.exists():

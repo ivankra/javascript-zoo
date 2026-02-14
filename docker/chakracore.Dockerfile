@@ -20,8 +20,11 @@ ARG JITLESS=
 RUN apt-get update -y && apt-get install -y libicu-dev
 
 RUN ./build.sh --ninja --static \
-      $(if [ "$INTL" = true ]; then echo --embed-icu; else echo --no-icu --without-intl; fi) \
-      $(if [ "$JITLESS" = true -o `uname -m` = aarch64 ]; then echo --no-jit; echo "" >jsz_jit; fi)
+      $([ "$INTL" = true ] && echo --embed-icu) \
+      $([ "$INTL" != true ] && echo --no-icu --without-intl) \
+      $([ "$JITLESS" = true -o `uname -m` = aarch64 ] && echo --no-jit)
 
 COPY dist.py ./
-RUN ./dist.py /dist/chakracore --binary=/src/out/Release/ch
+RUN ./dist.py /dist/chakracore \
+      --binary=/src/out/Release/ch \
+      jit="$(grep DDISABLE_JIT=1 /src/out/Release/build.ninja >/dev/null 2>&1 || echo true)"

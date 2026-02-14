@@ -12,12 +12,12 @@ ARG VER=latest
 
 ENV PATH=/usr/local/go/bin:$PATH
 
-RUN export ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/') && \
-    if [ "$VER" = latest ]; then \
+RUN if [ "$VER" = latest ]; then \
       export VER=$(curl -fsSL https://go.dev/VERSION?m=text | head -n1 | sed 's/go//'); \
     fi && \
-    curl -fL -o /tmp/go.tar.gz https://go.dev/dl/go${VER}.linux-${ARCH}.tar.gz && \
+    export GOLANG_ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/') && \
+    curl -fL -o /tmp/go.tar.gz https://go.dev/dl/go${VER}.linux-${GOLANG_ARCH}.tar.gz && \
     tar -C /usr/local -xzf /tmp/go.tar.gz && \
     rm -f /tmp/go.tar.gz && \
     # Record installed Go version in build metadata \
-    mkdir -p /dist && go version | sed -e 's/go version go\([^ ]*\).*/\1/' >/dist/jsz_go
+    mkdir -p /dist && go version | sed 's/go version go\([^ ]*\).*/\1/' >/dist/jsz_go

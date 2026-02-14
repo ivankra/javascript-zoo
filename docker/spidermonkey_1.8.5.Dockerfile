@@ -26,7 +26,7 @@ WORKDIR /src
 RUN wget "$TARBALL" && tar xf "$(basename "$TARBALL")"
 
 RUN cloc */js/src --csv --fullpath --not_match_f="(OBJ|test|/configure$|UnicodeData.txt$|/(t|v8|octane|parjs-benchmarks|ctypes|metrics|config|ref-config|build|editline|perlconnect|liveconnect|fdlibm|devtools|python)/)" \ 
-      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >jsz_loc
+      | sed -ne '$ s/.*,\([^,]*\)$/\1/p' >loc
 
 RUN cd */js/src && \
     export CXXFLAGS="--std=gnu++03" && \
@@ -41,18 +41,18 @@ RUN cd */js/src && \
     ./configure --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
     make -j $(nproc)
 
-# Metadata and dist packaging
-RUN ln -s */js js && \
-    (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+RUN (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+
 COPY dist.py ./
 RUN ./dist.py /dist/spidermonkey_1.8.5 \
-      --binary=/src/js/src/shell/js \
+      --binary=/src/*/js/src/shell/js \
       --license=LICENSE \
-      sources="$TARBALL" \
-      version="$(echo "$TARBALL" | sed -E 's/.*js185.*/1.8.5/; s/.*mozjs-?([0-9.]*)\.tar.*/\1/')" \
-      revision_date="$(stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]')" \
+      loc="$(cat loc)" \
       regex=YARR \
-      standard=ES5
+      revision_date="$(stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]')" \
+      sources="$TARBALL" \
+      standard=ES5 \
+      version="$(echo "$TARBALL" | sed -E 's/.*js185.*/1.8.5/; s/.*mozjs-?([0-9.]*)\.tar.*/\1/')"
 
 # JIT-less 1.8.5 crashes on arm64:
 # sed -i 's/ -DENABLE_ASSEMBLER=.*//' Makefile.in

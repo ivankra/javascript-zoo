@@ -4,7 +4,7 @@
 SHELL    := /bin/bash
 
 DOCKER      ?= $(shell command -v podman container 2>&1 || echo docker)
-DOCKER_ARCH ?= $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
+DOCKER_ARCH ?= $(shell uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')
 
 # $IID_DIR/<image tag> is used for tracking completion of image builds for make
 IID_DIR  := ../.cache/iid/$(DOCKER_ARCH)
@@ -16,6 +16,7 @@ ALL_TARGETS := $(sort $(FILE_TARGETS) $(ARGS_TARGETS))
 # jsz-* targets are base containers with build and runtime environments.
 # hub has a special make rule.
 # Everything else should be an engine target.
+# Note: docker image tags always will have jsz- prefix (added by build.sh).
 BASE_TARGETS := $(filter jsz-%,$(ALL_TARGETS))
 ENGINE_TARGETS := $(filter-out jsz-% hub,$(ALL_TARGETS))
 
@@ -56,8 +57,7 @@ sh: $(IID_DIR)/jsz-runtime
 	$(DOCKER) run --arch "$(DOCKER_ARCH)" --rm -it \
 	  -v "$(PWD)/..:/zoo" \
 	  -v "$(PWD)/../.git:/zoo/.git:ro" \
-	  jsz-runtime \
-	  /bin/bash -c 'cd /dist; bash -i'
+	  jsz-runtime sh -c 'cd /dist; bash -i'
 
 hub:
 	./hub.sh

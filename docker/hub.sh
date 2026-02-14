@@ -7,10 +7,10 @@ set -e -o pipefail
 PUSHDEST="docker.io/ivankra/javascript-zoo"
 
 DOCKER="$(command -v podman 2>/dev/null || echo docker)"
-DOCKER_ARCH="$(uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')"
+DOCKER_ARCH="$(uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')"
 
 ARCHS="arm64 amd64"
-ARCHS=$(echo "$ARCHS" | sed -e "s/\b$DOCKER_ARCH\b//"; echo $DOCKER_ARCH)
+ARCHS=$(echo "$ARCHS" | sed "s/\b$DOCKER_ARCH\b//"; echo $DOCKER_ARCH)
 
 if [[ -z "$TAG" ]]; then
   TAG=$(date +%Y%m%d)

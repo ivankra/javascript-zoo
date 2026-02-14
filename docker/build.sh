@@ -1,5 +1,6 @@
 #!/bin/bash
-# Wrapper for building container images (podman/docker/container)
+# Wrapper for building container images (podman/docker/container).
+# Also handles dependency tracking for Makefile.
 
 set -e
 
@@ -46,7 +47,7 @@ if [[ "$PRINT_DEPS" == 1 ]]; then
   if echo "$ARGS" | grep -Eq -- '--build-arg(=|[[:space:]]+)BASE='; then
     explicit_base_arg=1
   fi
-  for base in $(echo "$ARGS" | grep -Eo -- '--build-arg(=|[[:space:]]+)BASE=jsz-[-a-z0-9._]+' | sed -Ee 's/.*BASE=(jsz-[-a-z0-9._]+)/\1/'); do
+  for base in $(echo "$ARGS" | grep -Eo -- '--build-arg(=|[[:space:]]+)BASE=jsz-[-a-z0-9._]+' | sed -E 's/.*BASE=(jsz-[-a-z0-9._]+)/\1/'); do
     explicit_bases+=( "$base" )
     add_dep "$IID_DIR/$base"
     if [[ -f "$base.Dockerfile" ]]; then
@@ -65,9 +66,9 @@ if [[ "$PRINT_DEPS" == 1 ]]; then
     add_dep "$df"
     while read -r copy_dep; do
       [[ -n "$copy_dep" ]] && add_dep "$copy_dep"
-    done < <(egrep -o '^COPY ([a-z][-a-z0-9._]+)' "$df" | sed -e 's/COPY //' 2>/dev/null)
+    done < <(egrep -o '^COPY ([a-z][-a-z0-9._]+)' "$df" | sed 's/COPY //' 2>/dev/null)
 
-    for f in $(egrep -o '^COPY --from=jsz-([-a-z0-9._]+)' "$df" | sed -e 's/^COPY --from=//' 2>/dev/null); do
+    for f in $(egrep -o '^COPY --from=jsz-([-a-z0-9._]+)' "$df" | sed 's/^COPY --from=//' 2>/dev/null); do
       add_dep "$IID_DIR/$f"
       if [[ -f "$f.Dockerfile" ]]; then
         add_dep "$f.Dockerfile"
@@ -75,7 +76,7 @@ if [[ "$PRINT_DEPS" == 1 ]]; then
     done
 
     if [[ "$explicit_base_arg" == 0 ]]; then
-      for f in $(egrep -o '^ARG BASE=jsz-([-a-z0-9._]+)' "$df" | sed -e 's/^ARG BASE=//' 2>/dev/null); do
+      for f in $(egrep -o '^ARG BASE=jsz-([-a-z0-9._]+)' "$df" | sed 's/^ARG BASE=//' 2>/dev/null); do
         add_dep "$IID_DIR/$f"
         if [[ -f "$f.Dockerfile" ]]; then
           add_dep "$f.Dockerfile"
@@ -92,22 +93,41 @@ if [[ "$ARGS" != *-f* ]]; then
   ARGS="-f $ID.Dockerfile $ARGS"
 fi
 
-if [[ -n "$DOCKER" ]]; then
-  DOCKER="$DOCKER"
-elif command -v podman >/dev/null 2>&1; then
-  DOCKER=podman
-elif command -v docker >/dev/null 2>&1; then
-  DOCKER=docker
-elif command -v container >/dev/null 2>&1; then
-  DOCKER=container
-else
-  echo "No container engine found. Install podman, docker, macOS containerization or set DOCKER to a docker-like engine." >&2
-  exit 1
+DOCKERFILE="$(echo " $ARGS " | sed -nE 's/.* -f(=| +)([^ ]+).*/\2/p')"
+
+# Add REV/REPO overrides from the environment variables.
+if [[ -n "$REPO" && -f "$DOCKERFILE" ]] && grep -Eq '^ARG +REPO=' "$DOCKERFILE"; then
+  ARGS="$(echo " $ARGS " | sed -E \
+    -e 's/ --build-arg[= ]REPO=[^ ]+ / /g' \
+    -e 's/^ +//; s/ +$//; s/ +/ /g')"
+  ARGS="$ARGS --build-arg REPO=$REPO"
+  echo "Using REPO=$REPO override to build $DOCKERFILE"
+fi
+if [[ -n "$REV" && -f "$DOCKERFILE" ]] && grep -Eq '^ARG +REV=' "$DOCKERFILE"; then
+  ARGS="$(echo " $ARGS " | sed -E \
+    -e 's/ --build-arg[= ]REV=[^ ]+ / /g' \
+    -e 's/^ +//; s/ +$//; s/ +/ /g')"
+  ARGS="$ARGS --build-arg REV=$REV"
+  echo "Using REV=$REV override to build $DOCKERFILE"
+fi
+
+if [[ -z "$DOCKER" ]]; then
+  if command -v podman >/dev/null 2>&1; then
+    DOCKER=podman
+  elif command -v container >/dev/null 2>&1; then
+    DOCKER=container
+  elif command -v docker >/dev/null 2>&1; then
+    DOCKER=docker
+  else
+    echo "No docker engine found. Install podman, docker, macOS containerization or point DOCKER to a docker-like tool." >&2
+    exit 1
+  fi
 fi
 
 mkdir -p "$IID_DIR" "$DIST_DIR"
 rm -f "$DIST_DIR/$ID.json"
 
+# Ensure docker tags always have a jsz- prefix
 TAG="$ID"
 if [[ "$ID" != jsz-* ]]; then
   TAG="jsz-$ID"
