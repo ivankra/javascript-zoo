@@ -1,0 +1,96 @@
+# JavaScriptCore
+
+JavaScript engine of Safari/WebKit.
+
+* Homepage:     https://trac.webkit.org/wiki/JavaScriptCore
+* Repository:   https://github.com/WebKit/WebKit.git <span class="shields"><img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* LOC:          770374 (`cloc --not_match_d="(?i)(test)" Source/JavaScriptCore`)
+* Language:     C++
+* License:      LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
+* Org:          Apple
+* Standard:     ESnext
+* Years:        2001-
+* Ancestor:     [KJS](../kjs/README.md)
+* Features:     WebAssembly engine
+* Interpreter:  register-based VM
+* JIT:          3-tier JIT, x86/x64, arm/arm64, mips64, riscv64
+* Regex engine: YARR, JIT-enabled
+
+## History
+
+* 2001: KHTML/[KJS](../kjs/README.md) forked by Apple (~37k LOC)
+  * Tree-walking interpreter
+  * PCRE-based regex engine ("JSCRE")
+* 2008/06: SquirrelFish (predecessor to LLint)
+  * Direct-threaded register-based VM interpreter
+  * https://webkit.org/blog/189/announcing-squirrelfish/
+* 2008/09: SquirrelFish Extreme/Nitro (now Baseline JIT)
+  * Context-threaded JIT (later template JIT), PIC => ~2x speedup
+  * WREC: new bytecode-based regex engine.
+  * https://webkit.org/blog/214/introducing-squirrelfish-extreme/
+  * https://github.com/WebKit/WebKit/commit/9b948e40c37ad6b4402d737f1a7639889e23c597
+* 2009: YARR regex engine (interpreter, later template JIT)
+* 2011: DFG JIT (Data Flow Graph)
+  * Fast optimizing JIT engine, SSA-based IR, compiles from bytecode
+  * Speculative optimizations with runtime type checks and deopts to interpreter/baseline
+  * ~2x speedup over LLint+Baseline
+  * https://trac.webkit.org/changeset/94559/webkit
+  * https://webkit.org/blog/10308/speculation-in-javascriptcore/
+* 2014: FTL JIT (Fourth Tier LLVM / Faster Than Light)
+  * Advanced optimizing JIT engine, LLVM-based
+  * https://webkit.org/blog/3362/introducing-the-webkit-ftl-jit/
+  * https://blog.llvm.org/2014/07/ftl-webkits-llvm-based-jit.html
+* 2016: FTL switched to a new in-house B3 backend from LLVM
+  * https://webkit.org/blog/5852/introducing-the-b3-jit-compiler/
+  * B3 also used for WebAssembly.
+* 2017: WebAssembly
+  * BBQ (baseline) and OMG (optimizing) JIT tiers
+  * https://webkit.org/blog/7691/webassembly/
+
+## VM (LLint)
+
+* Register-based indirect-threaded VM, 3-arg binary ops
+* https://webkit.org/blog/9329/a-new-bytecode-format-for-javascriptcore/
+* Opcodes: https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/bytecode/BytecodeList.rb
+* Ops implemented in "offlineasm" macroassembler, a Ruby-based DSL
+  * https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/llint/LowLevelInterpreter.asm
+  * https://github.com/WebKit/WebKit/tree/main/Source/JavaScriptCore/offlineasm
+  * cloop: offlineasm backend emitting portable C++
+
+## Users
+
+* Safari and WebKit-based browsers
+  * [GNOME Web](https://en.wikipedia.org/wiki/GNOME_Web) (Epiphany)
+  * [Konqueror](https://en.wikipedia.org/wiki/Konqueror) - normally Blink/V8, but can be configured to use QtWebKit/JSC
+* Most iOS browsers - due to JSC being the only JIT-enabled engine allowed by Apple on iOS
+
+## Runtimes
+
+* [bun](https://github.com/oven-sh/bun) <span class="shields"><img src="https://img.shields.io/github/stars/oven-sh/bun?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oven-sh/bun?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JavaScript/TypeScript runtime written in Zig
+
+<!-- baseline: ./jsc-dfg --useDFGJIT=false --useFTLJIT=false -->
+
+## Conformance
+
+<details><summary>ES1-ES5: 100%</summary><ul>
+<li>Based on this repository's basic test suite. <a href="../../conformance/results/jsc.txt">Full log</a>.</li>
+<li>ES1: 100%</li>
+<li>ES3: 100%</li>
+<li>ES5: 100%</li>
+</ul></details>
+
+<details><summary>compat-table: ES6 100%, ES2016+ 100%, Next 12%, Intl 100%</summary><ul>
+<li>ES6: 100%</li>
+<li>ES2016: 100%</li>
+<li>ES2017: 100%</li>
+<li>ES2018: 100%</li>
+<li>ES2019: 100%</li>
+<li>ES2020: 100%</li>
+<li>ES2021: 100%</li>
+<li>ES2022: 100%</li>
+<li>ES2023: 100%</li>
+<li>ES2024: 100%</li>
+<li>ES2025: 100%</li>
+<li>Next: 12%</li>
+<li>Intl: 100%</li>
+</ul></details>

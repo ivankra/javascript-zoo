@@ -70,6 +70,19 @@ def make_column(data, kangax_weights, total_re, pass_re=': OK$'):
 
     return res
 
+def engine_href(engine):
+    # Prefer exact engine docs, then known special variant docs, then base engine docs.
+    if os.path.exists(f'../../engines/{engine}/README.md'):
+        return f'../../engines/{engine}/README.md'
+    if engine == 'spidermonkey_1.5':
+        return '../../engines/spidermonkey/spidermonkey_1.5.md'
+    if engine == 'spidermonkey_1.8.5':
+        return '../../engines/spidermonkey/spidermonkey_1.8.5.md'
+    base = engine.split('_')[0]
+    if os.path.exists(f'../../engines/{base}/README.md'):
+        return f'../../engines/{base}/README.md'
+    return None
+
 def gen_table(column_data):
     height = max(len(c) for c in column_data.values())
     table = [['<td>'] * (len(column_data)) for _ in range(height)]
@@ -115,10 +128,9 @@ def gen_table(column_data):
             if pct == '0.0%': pct = '0%'
 
             engine = item["engine"]
-            if os.path.exists(f'../../engines/{engine}.md'):
-                engine = f'<a href="../../engines/{engine}.md">{engine}</a>'
-            elif os.path.exists(f'../../engines/{engine.split("_")[0]}.md'):
-                engine = f'<a href="../../engines/{engine.split("_")[0]}.md">{engine}</a>'
+            href = engine_href(engine)
+            if href:
+                engine = f'<a href="{href}">{engine}</a>'
 
             if ctitle == 'Crashes':
                 table[r][c] = (
@@ -178,3 +190,15 @@ def main():
 
 if __name__ == "__main__":
     main()
+    def engine_href(engine):
+        # Prefer exact engine docs, then known special variant docs, then base engine docs.
+        if os.path.exists(f'../../engines/{engine}/README.md'):
+            return f'../../engines/{engine}/README.md'
+        if engine == 'spidermonkey_1.5':
+            return '../../engines/spidermonkey/spidermonkey_1.5.md'
+        if engine == 'spidermonkey_1.8.5':
+            return '../../engines/spidermonkey/spidermonkey_1.8.5.md'
+        base = engine.split('_')[0]
+        if os.path.exists(f'../../engines/{base}/README.md'):
+            return f'../../engines/{base}/README.md'
+        return None

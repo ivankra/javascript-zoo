@@ -1,0 +1,13 @@
+# Edbrowse
+
+Edbrowse CLI browser had own small JavaScript engine until v2.2.10 (2006).
+
+* Homepage:    https://edbrowse.org/
+* Sources:     https://web.archive.org/web/20101027132444/http://eklhad.net/edbrowse/edbrowse-2.2.10.zip
+* LOC:         2329 (`cloc jsgram.ec jshelper.c machine.c opcodes.h`)
+* Language:    C
+* License:     GPL
+* Years:       2004-2006
+* Interpreter: stack-based VM
+
+Switched to [SpiderMonkey](../spidermonkey/README.md) and later to [QuickJS](../quickjs/README.md).

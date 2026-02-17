@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# - Parses engines/*.md, parsers/*.md files, extracting structured metadata
+# - Parses engines/*/*.md, parsers/*/*.md files, extracting structured metadata
 # - Merges with other data sources: build, benchmarking, conformance, github data
 # - Updates dist/engines.json and dist/markdown.json
 # - Updates *.md files:
@@ -19,9 +19,13 @@ import json
 import os
 import os.path
 import re
-import requests
 import sys
 import time
+
+try:
+    import requests
+except ModuleNotFoundError:
+    requests = None
 
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Tuple, Optional, Union
@@ -46,14 +50,14 @@ def main():
     os.chdir(script_dir)
 
     conformance_data = parse_conformance_data()
-    engines_data = do_engine_data(args, 'engine', 'engines/*.md', 'dist/engines.json', conformance_data)
-    write_markdown_json('engines/*.md', 'dist/markdown.json')
-    parsers_data = do_engine_data(args, 'parser', 'parsers/*.md', None, conformance_data)
+    engines_data = do_engine_data(args, 'engine', 'engines/**/*.md', 'dist/engines.json', conformance_data)
+    write_markdown_json('engines/**/*.md', 'dist/markdown.json')
+    parsers_data = do_engine_data(args, 'parser', 'parsers/**/*.md', None, conformance_data)
 
     # Update files with dynamically-generated index tables
-    update_tables('README.md', engines_data)
+    update_tables('engines/README.md', engines_data)
     update_tables('parsers/README.md', parsers_data)
-    update_tables('parsers/acorn.md', engines_data)
+    update_tables('parsers/acorn/README.md', engines_data)
 
 def get_kangax_weights():
     kangax_map = json.loads(open('conformance/gen-kangax.json').read())['map']
@@ -152,14 +156,18 @@ def parse_conformance_data():
 def do_engine_data(args, kind, md_glob, json_file, conformance_data):
     data = {}   # id (engine[_variant]) => row
 
-    for filename in sorted(glob.glob(md_glob)):
-        if re.search('README.md', filename) or os.path.basename(filename) == 'index.md':
+    for filename in sorted(glob.glob(md_glob, recursive=True)):
+        rel_path = os.path.relpath(filename).replace(os.sep, '/')
+        if rel_path == f'{kind}s/README.md' or os.path.basename(filename) == 'index.md':
             continue
 
         if os.isatty(1):
             print(f'\033[1K\r{filename} ', end='', flush=True)
 
-        name = os.path.basename(filename).removesuffix('.md')
+        if os.path.basename(filename) == 'README.md':
+            name = os.path.basename(os.path.dirname(filename))
+        else:
+            name = os.path.basename(filename).removesuffix('.md')
         assert name not in data
         row = {'id': name}
         data[name] = row
@@ -294,10 +302,10 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
 
 def write_markdown_json(md_glob, out_file):
     markdown_map = {}
-    for filename in sorted(glob.glob(md_glob)):
-        if re.search('README.md', filename) or os.path.basename(filename) == 'index.md':
-            continue
+    for filename in sorted(glob.glob(md_glob, recursive=True)):
         rel_path = os.path.relpath(filename).replace(os.sep, '/')
+        if rel_path in ['README.md', 'engines/README.md', 'parsers/README.md'] or os.path.basename(filename) == 'index.md':
+            continue
         with open(filename, 'r', encoding='utf-8') as md_file:
             markdown_map[rel_path] = md_file.read()
     os.makedirs(os.path.dirname(out_file), exist_ok=True)
@@ -539,7 +547,8 @@ def process_md(row, kind, filename, args):
 
     row['title'] = row.get('title', parsed.title)
     row['summary'] = strip_markdown_links(parsed.summary)
-    row['jsz_url'] = f'{MARKDOWN_LINKS_BASE}{kind}s/{os.path.basename(filename)}'
+    rel_path = os.path.relpath(filename).replace(os.sep, '/')
+    row['jsz_url'] = f'{MARKDOWN_LINKS_BASE}{rel_path}'
 
     for item in parsed.metadata:
         if item.json_key is None or item.detailed_value is None: continue
@@ -857,7 +866,10 @@ def update_conformance(filename, conformance):
         conformance_lines += [f'<details><summary>{headline}</summary><ul>\n']
 
         if headline.startswith('ES1-ES5'):
-            link = '../' + conformance['conformance_results_path']
+            link = os.path.relpath(
+                conformance['conformance_results_path'],
+                os.path.dirname(filename)
+            ).replace(os.sep, '/')
             conformance_lines += [
                 "<li>Based on this repository's basic test suite. "
                 f'<a href="{link}">Full log</a>.</li>\n'
@@ -894,7 +906,10 @@ def update_conformance(filename, conformance):
                         break
                     else:
                         basename = os.path.basename(test['test'])
-                        link = '../conformance/' + test['test']
+                        link = os.path.relpath(
+                            os.path.join('conformance', test['test']),
+                            os.path.dirname(filename)
+                        ).replace(os.sep, '/')[3:]  # FIXME
                         result = html.escape(test['result'], quote=False)
                         conformance_lines += [f'<a href="{link}">{basename}</a>: {result}\n']
 

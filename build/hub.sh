@@ -1,0 +1,56 @@
+#!/bin/bash
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
+PUSHDEST="docker.io/ivankra/javascript-zoo"
+DOCKER="$(command -v podman 2>/dev/null || command -v docker)"
+DOCKER_ARCH="$(uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')"
+
+ARCHS="arm64 amd64"
+ARCHS=$(echo "$ARCHS" | sed "s/\b$DOCKER_ARCH\b//"; echo "$DOCKER_ARCH")
+
+if [[ -z "${TAG:-}" ]]; then
+  TAG=$(date +%Y%m%d)
+  echo "Using tag $TAG"
+fi
+
+for arch in $ARCHS; do
+  (cd "$ROOT_DIR/dist/$arch"; (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST)
+  (cd "$ROOT_DIR/dist" && tar --owner=root --group=root -c "$arch") >"$ROOT_DIR/dist/$arch.tar"
+done
+
+set -x
+for arch in $ARCHS; do
+  "$DOCKER" build \
+    -f "$ROOT_DIR/build/jsz-runtime.Dockerfile" \
+    -t "jsz-runtime:$arch" \
+    --build-arg BASE=debian:stable \
+    --platform "linux/$arch" \
+    "$ROOT_DIR"
+
+  "$DOCKER" build \
+    -f "$ROOT_DIR/build/hub.Dockerfile" \
+    -t "jsz-hub:$arch" \
+    --build-arg "BASE=jsz-runtime:$arch" \
+    --build-arg "REV=$TAG" \
+    --platform "linux/$arch" \
+    "$ROOT_DIR"
+done
+
+"$DOCKER" login docker.io
+
+for tag in "$TAG" latest; do
+  for arch in $ARCHS; do
+    "$DOCKER" push "localhost/jsz-hub:$arch" "$PUSHDEST:$tag-$arch"
+  done
+  "$DOCKER" image rm -f "$PUSHDEST:$tag" || true
+  "$DOCKER" manifest rm "$PUSHDEST:$tag" || true
+  "$DOCKER" manifest create "$PUSHDEST:$tag" $(for arch in $ARCHS; do echo "$PUSHDEST:$tag-$arch"; done)
+  "$DOCKER" manifest push "$PUSHDEST:$tag" "$PUSHDEST:$tag"
+done
+
+echo OK

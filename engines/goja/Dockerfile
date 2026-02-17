@@ -1,0 +1,16 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+ARG BASE=jsz-golang
+FROM $BASE
+
+ARG REPO=https://github.com/dop251/goja.git
+ARG REV=master
+
+WORKDIR /src
+RUN git clone "$REPO" . && git checkout "$REV"
+
+RUN cd goja && go build
+
+COPY build/dist.py ./
+RUN ./dist.py /dist/goja --binary=/src/goja/goja

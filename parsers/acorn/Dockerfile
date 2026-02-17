@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+ARG BASE=jsz-node
+FROM $BASE
+
+ARG REPO=https://github.com/acornjs/acorn.git
+ARG REV=master
+
+WORKDIR /src
+RUN git clone "$REPO" . && git checkout "$REV"
+
+RUN npm install
+RUN npm run build
+
+RUN npm install esbuild
+RUN sed -i '1i #!/usr/bin/env node' acorn/dist/bin.js && \
+    npx esbuild --bundle acorn/dist/bin.js --outfile=/dist/parsers/acorn --platform=node
+
+COPY build/dist.py ./
+RUN ./dist.py /dist/parsers/acorn --license=acorn/LICENSE
