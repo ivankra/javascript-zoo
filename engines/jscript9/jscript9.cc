@@ -1,4 +1,4 @@
-// Minimal standalone host executable for Microsoft JScript9 (IE JsRT API).
+// Minimal standalone host executable for Microsoft JScript9 (JsRT API).
 //
 // Usage:
 //   jscript9.exe [--dll jscript9.dll] [--jitless] [--version] [script.js]
@@ -9,11 +9,9 @@
 #include <windows.h>
 
 #include <cstdarg>
+#include <cstring>
 #include <cstdio>
 #include <cstdlib>
-#include <fstream>
-#include <iostream>
-#include <string>
 
 namespace {
 
@@ -88,34 +86,70 @@ struct API {
   HMODULE dll_ = nullptr;
 };
 
-std::wstring Utf8ToWide(const std::string& in) {
-  if (in.empty()) return L"";
-  int n = MultiByteToWideChar(CP_UTF8, 0, in.data(), static_cast<int>(in.size()), nullptr, 0);
-  if (n <= 0) return L"";
-  std::wstring out(static_cast<size_t>(n), L'\0');
-  MultiByteToWideChar(CP_UTF8, 0, in.data(), static_cast<int>(in.size()), out.data(), n);
+wchar_t* Utf8ToWideDup(const char* in) {
+  if (!in) return nullptr;
+  int n = MultiByteToWideChar(CP_UTF8, 0, in, -1, nullptr, 0);
+  if (n <= 0) return nullptr;
+  wchar_t* out = static_cast<wchar_t*>(malloc(static_cast<size_t>(n) * sizeof(wchar_t)));
+  if (!out) return nullptr;
+  if (MultiByteToWideChar(CP_UTF8, 0, in, -1, out, n) <= 0) {
+    free(out);
+    return nullptr;
+  }
   return out;
 }
 
-std::string WideToUtf8(const std::wstring& in) {
-  if (in.empty()) return "";
-  int n = WideCharToMultiByte(CP_UTF8, 0, in.data(), static_cast<int>(in.size()), nullptr, 0, nullptr, nullptr);
-  if (n <= 0) return "";
-  std::string out(static_cast<size_t>(n), '\0');
-  WideCharToMultiByte(CP_UTF8, 0, in.data(), static_cast<int>(in.size()), out.data(), n, nullptr, nullptr);
+char* WideToUtf8Dup(const wchar_t* in, size_t in_len) {
+  if (!in) return nullptr;
+  int n = WideCharToMultiByte(CP_UTF8, 0, in, static_cast<int>(in_len), nullptr, 0, nullptr, nullptr);
+  if (n <= 0) return nullptr;
+  char* out = static_cast<char*>(malloc(static_cast<size_t>(n) + 1));
+  if (!out) return nullptr;
+  if (WideCharToMultiByte(CP_UTF8, 0, in, static_cast<int>(in_len), out, n, nullptr, nullptr) <= 0) {
+    free(out);
+    return nullptr;
+  }
+  out[n] = '\0';
   return out;
 }
 
-std::wstring ReadFileWide(const wchar_t* path) {
+char* ReadFileUtf8(const wchar_t* path) {
   int n = WideCharToMultiByte(CP_UTF8, 0, path, -1, nullptr, 0, nullptr, nullptr);
-  if (n <= 0) return L"";
-  std::string path8(static_cast<size_t>(n), '\0');
-  WideCharToMultiByte(CP_UTF8, 0, path, -1, &path8[0], n, nullptr, nullptr);
+  if (n <= 0) return nullptr;
+  char* path8 = static_cast<char*>(malloc(static_cast<size_t>(n)));
+  if (!path8) return nullptr;
+  WideCharToMultiByte(CP_UTF8, 0, path, -1, path8, n, nullptr, nullptr);
 
-  std::ifstream file(path8.c_str(), std::ios::binary);
-  if (!file) return L"";
-  std::string data((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
-  return Utf8ToWide(data);
+  FILE* file = fopen(path8, "rb");
+  free(path8);
+  if (!file) return nullptr;
+
+  if (fseek(file, 0, SEEK_END) != 0) {
+    fclose(file);
+    return nullptr;
+  }
+  long size = ftell(file);
+  if (size < 0) {
+    fclose(file);
+    return nullptr;
+  }
+  rewind(file);
+
+  char* data = static_cast<char*>(malloc(static_cast<size_t>(size) + 1));
+  if (!data) {
+    fclose(file);
+    return nullptr;
+  }
+  size_t got = 0;
+  if (size > 0) got = fread(data, 1, static_cast<size_t>(size), file);
+  if (got != static_cast<size_t>(size)) {
+    fclose(file);
+    free(data);
+    return nullptr;
+  }
+  data[size] = '\0';
+  fclose(file);
+  return data;
 }
 
 bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout) {
@@ -124,9 +158,10 @@ bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout) {
   const wchar_t* w = nullptr;
   size_t len = 0;
   if (api.JsStringToPointer(s, &w, &len) != 0 || !w) return false;
-  std::wstring ws(w, len);
-  std::string utf8 = WideToUtf8(ws);
-  fprintf(out, "%s", utf8.c_str());
+  char* utf8 = WideToUtf8Dup(w, len);
+  if (!utf8) return false;
+  fprintf(out, "%s", utf8);
+  free(utf8);
   return true;
 }
 
@@ -141,9 +176,10 @@ JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* args, unsigned s
     const wchar_t* w = nullptr;
     size_t len = 0;
     if (api->JsStringToPointer(s, &w, &len) != 0 || !w) continue;
-    std::wstring ws(w, len);
-    std::string utf8 = WideToUtf8(ws);
-    printf("%s", utf8.c_str());
+    char* utf8 = WideToUtf8Dup(w, len);
+    if (!utf8) continue;
+    printf("%s", utf8);
+    free(utf8);
   }
   printf("\n");
   fflush(stdout);
@@ -197,15 +233,22 @@ void InitRuntime(const API& api, bool jitless) {
   if (!InstallGlobals(api)) fatal("InstallGlobals failed");
 }
 
-bool Eval(const API& api, const std::wstring& code, JsValueRef* out) {
+bool Eval(const API& api, const char* code_utf8, JsValueRef* out) {
   if (!out) return false;
   *out = nullptr;
-  JsErrorCode err = api.JsRunScript(code.c_str(), 0, L"stdin", out);
+  wchar_t* code = Utf8ToWideDup(code_utf8);
+  if (!code) {
+    fprintf(stderr, "Eval err (encoding)\n");
+    return false;
+  }
+  JsErrorCode err = api.JsRunScript(code, 0, L"stdin", out);
+  free(code);
   if (err != 0) {
     JsValueRef ex = nullptr;
     if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
       fprintf(stderr, "Uncaught ");
-      if (!PrintJsValue(api, ex, stderr)) fprintf(stderr, "exception\n");
+      if (!PrintJsValue(api, ex, stderr)) fprintf(stderr, "exception");
+      fprintf(stderr, "\n");
     } else {
       fprintf(stderr, "JsRunScript failed (0x%08x)\n", err);
     }
@@ -251,28 +294,33 @@ int wmain(int argc, wchar_t** argv) {
 
   if (show_version) {
     JsValueRef out = nullptr;
-    if (!Eval(api, L"ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
+    if (!Eval(api, "ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
       fatal("Eval failed");
     }
     PrintJsValue(api, out);
   } else if (script_path) {
-    std::wstring code = ReadFileWide(script_path);
-    if (code.empty()) fatal("Failed to read script");
+    char* code = ReadFileUtf8(script_path);
+    if (!code || !*code) {
+      free(code);
+      fatal("Failed to read script");
+    }
     JsValueRef out = nullptr;
-    if (!Eval(api, code, &out)) fatal("Eval failed");
+    bool ok = Eval(api, code, &out);
+    free(code);
+    if (!ok) fatal("Eval failed");
   } else {
     // REPL
+    char line[8192];
     for (;;) {
       printf("> ");
       fflush(stdout);
-      std::string line;
-      if (!std::getline(std::cin, line)) break;
-      if (line == "exit" || line == "quit") break;
-      if (line.empty()) continue;
+      if (!fgets(line, sizeof(line), stdin)) break;
+      line[strcspn(line, "\r\n")] = '\0';
+      if (line[0] == '\0' || line[0] == '\x04') continue;  /* ^D */
+      if (strcmp(line, "exit") == 0 || strcmp(line, "quit") == 0) break;
 
-      std::wstring code = Utf8ToWide(line);
       JsValueRef out = nullptr;
-      if (!Eval(api, code, &out) || !out) continue;
+      if (!Eval(api, line, &out) || !out) continue;
 
       JsValueType vt = JsUndefined;
       api.JsGetValueType(out, &vt);
