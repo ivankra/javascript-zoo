@@ -26,6 +26,8 @@ namespace {
   exit(1);
 }
 
+enum JsValueType { JsUndefined = 0 };
+
 typedef int JsErrorCode;
 typedef void* JsRuntimeHandle;
 typedef void* JsContextRef;
@@ -35,25 +37,9 @@ typedef unsigned int JsRuntimeAttributes;
 typedef long JsRuntimeVersion;
 typedef unsigned __int64 JsSourceContext;
 
+typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstructCall, JsValueRef* args, unsigned short argc, void* state);
+
 static const JsRuntimeAttributes JsRuntimeAttributeDisableNativeCodeGeneration = 0x00000008u;
-
-enum JsValueType {
-  JsUndefined = 0,
-  JsNull = 1,
-  JsNumber = 2,
-  JsString = 3,
-  JsBoolean = 4,
-  JsObject = 5,
-  JsFunction = 6,
-  JsError = 7,
-  JsArray = 8,
-  JsSymbol = 9,
-  JsArrayBuffer = 10,
-  JsTypedArray = 11,
-  JsDataView = 12,
-};
-
-typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstructCall, JsValueRef* arguments, unsigned short argumentCount, void* callbackState);
 
 struct API {
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime)(JsRuntimeAttributes, JsRuntimeVersion, void*, JsRuntimeHandle*) = nullptr;
@@ -70,6 +56,7 @@ struct API {
   JsErrorCode(STDAPICALLTYPE* JsGetPropertyIdFromName)(const wchar_t*, JsPropertyIdRef*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsSetProperty)(JsValueRef, JsPropertyIdRef, JsValueRef, bool) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsGetValueType)(JsValueRef, JsValueType*) = nullptr;
+  JsErrorCode(STDAPICALLTYPE* JsGetAndClearException)(JsValueRef*) = nullptr;
 
   explicit API(const wchar_t* dll_path) {
     dll_ = LoadLibraryW(dll_path);
@@ -88,6 +75,7 @@ struct API {
     LoadProc(JsGetPropertyIdFromName, "JsGetPropertyIdFromName");
     LoadProc(JsSetProperty, "JsSetProperty");
     LoadProc(JsGetValueType, "JsGetValueType");
+    LoadProc(JsGetAndClearException, "JsGetAndClearException");
   }
 
  private:
@@ -98,32 +86,6 @@ struct API {
 
   HMODULE dll_ = nullptr;
 };
-
-const char* JsErrorName(JsErrorCode e) {
-  switch (e) {
-    case 0: return "JsNoError";
-    case 0x10001: return "JsErrorInvalidArgument";
-    case 0x10002: return "JsErrorNullArgument";
-    case 0x10003: return "JsErrorNoCurrentContext";
-    case 0x10004: return "JsErrorInExceptionState";
-    case 0x10005: return "JsErrorNotImplemented";
-    case 0x10006: return "JsErrorWrongThread";
-    case 0x10007: return "JsErrorRuntimeInUse";
-    case 0x10008: return "JsErrorBadSerializedScript";
-    case 0x10009: return "JsErrorInDisabledState";
-    case 0x1000a: return "JsErrorCannotDisableExecution";
-    case 0x1000b: return "JsErrorHeapEnumInProgress";
-    case 0x1000c: return "JsErrorArgumentNotObject";
-    case 0x1000d: return "JsErrorInProfileCallback";
-    case 0x1000e: return "JsErrorInThreadServiceCallback";
-    case 0x1000f: return "JsErrorCannotSerializeDebugScript";
-    case 0x20001: return "JsErrorScriptException";
-    case 0x20002: return "JsErrorScriptCompile";
-    case 0x20003: return "JsErrorScriptTerminated";
-    case 0x30000: return "JsErrorFatal";
-    default: return "unknown";
-  }
-}
 
 std::wstring Utf8ToWide(const std::string& in) {
   if (in.empty()) return L"";
@@ -155,53 +117,24 @@ std::wstring ReadFileWide(const wchar_t* path) {
   return Utf8ToWide(data);
 }
 
-
-bool CreateRuntime(const API& api, JsRuntimeAttributes attrs, JsRuntimeHandle* runtime_out) {
-  if (!runtime_out) return false;
-  *runtime_out = nullptr;
-  const JsRuntimeVersion versions[] = {-1, 1, 0};
-  for (size_t i = 0; i < sizeof(versions) / sizeof(versions[0]); ++i) {
-    JsRuntimeHandle runtime = nullptr;
-    JsErrorCode err = api.JsCreateRuntime(attrs, versions[i], nullptr, &runtime);
-    if (err == 0 && runtime) {
-      *runtime_out = runtime;
-      return true;
-    }
-  }
-  return false;
-}
-
-JsValueRef Eval(const API& api, const std::wstring& code) {
-  JsValueRef out = nullptr;
-  JsErrorCode err = api.JsRunScript(code.c_str(), 0, L"stdin", &out);
-  if (err != 0) {
-    fatal("Script execution failed: 0x%08x (%s)", err, JsErrorName(err));
-  }
-  return out;
-}
-
-void PrintJsValue(const API& api, JsValueRef value) {
+bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout, bool newline = true) {
   JsValueRef s = nullptr;
-  if (api.JsConvertValueToString(value, &s) != 0 || !s) return;
+  if (api.JsConvertValueToString(value, &s) != 0 || !s) return false;
   const wchar_t* w = nullptr;
   size_t len = 0;
-  if (api.JsStringToPointer(s, &w, &len) != 0 || !w) return;
+  if (api.JsStringToPointer(s, &w, &len) != 0 || !w) return false;
   std::wstring ws(w, len);
   std::string utf8 = WideToUtf8(ws);
-  printf("%s\n", utf8.c_str());
+  fprintf(out, "%s", utf8.c_str());
+  if (newline) fputc('\n', out);
+  return true;
 }
 
-bool SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
-  JsPropertyIdRef id = nullptr;
-  if (api.JsGetPropertyIdFromName(name, &id) != 0 || !id) return false;
-  return api.JsSetProperty(obj, id, value, true) == 0;
-}
-
-JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* args, unsigned short count, void* callback_state) {
-  const API* api = reinterpret_cast<const API*>(callback_state);
+JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* args, unsigned short argc, void* state) {
+  const API* api = reinterpret_cast<const API*>(state);
   if (!api) return nullptr;
 
-  for (unsigned short i = 1; i < count; ++i) {
+  for (unsigned short i = 1; i < argc; ++i) {
     if (i > 1) printf(" ");
     JsValueRef s = nullptr;
     if (api->JsConvertValueToString(args[i], &s) != 0 || !s) continue;
@@ -220,6 +153,12 @@ JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* args, unsigned s
   return undef;
 }
 
+bool SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
+  JsPropertyIdRef id = nullptr;
+  if (api.JsGetPropertyIdFromName(name, &id) != 0 || !id) return false;
+  return api.JsSetProperty(obj, id, value, true) == 0;
+}
+
 bool InstallGlobals(const API& api) {
   JsValueRef global = nullptr;
   if (api.JsGetGlobalObject(&global) != 0 || !global) return false;
@@ -233,6 +172,44 @@ bool InstallGlobals(const API& api) {
   if (!SetProp(api, console_obj, L"log", print_fn)) return false;
   if (!SetProp(api, global, L"console", console_obj)) return false;
   return true;
+}
+
+void InitRuntime(const API& api, bool jitless) {
+  JsRuntimeHandle runtime = nullptr;
+  JsContextRef context = nullptr;
+  JsRuntimeAttributes attrs = jitless ? JsRuntimeAttributeDisableNativeCodeGeneration : 0;
+  const JsRuntimeVersion versions[] = {-1, 1, 0};
+  for (size_t i = 0; i < sizeof(versions) / sizeof(versions[0]); ++i) {
+    runtime = nullptr;
+    JsErrorCode err = api.JsCreateRuntime(attrs, versions[i], nullptr, &runtime);
+    if (err == 0 && runtime) {
+      break;
+    }
+  }
+  if (!runtime) fatal("JsCreateRuntime failed");
+
+  JsErrorCode err = api.JsCreateContext(runtime, nullptr, &context);
+  if (err != 0 || !context) fatal("JsCreateContext failed (0x%08x)", err);
+
+  err = api.JsSetCurrentContext(context);
+  if (err != 0) fatal("JsSetCurrentContext failed (0x%08x)", err);
+
+  if (!InstallGlobals(api)) fatal("InstallGlobals failed");
+}
+
+bool Eval(const API& api, const std::wstring& code, JsValueRef* out) {
+  if (!out) return false;
+  JsErrorCode err = api.JsRunScript(code.c_str(), 0, L"stdin", out);
+  if (err == 0) return true;
+
+  fprintf(stderr, "Eval failed (0x%08x)", err);
+  JsValueRef ex = nullptr;
+  if (api.JsGetAndClearException(&ex) == 0 && ex) {
+    fprintf(stderr, ": ");
+    if (!PrintJsValue(api, ex, stderr, false)) fprintf(stderr, "<exception>");
+  }
+  fprintf(stderr, "\n");
+  return false;
 }
 
 }  // namespace
@@ -268,27 +245,21 @@ int wmain(int argc, wchar_t** argv) {
   if (FAILED(cohr)) fatal("CoInitializeEx failed");
 
   API api(dll_path);
-  JsRuntimeHandle runtime = nullptr;
-  JsContextRef context = nullptr;
-
-  JsRuntimeAttributes attrs = jitless ? JsRuntimeAttributeDisableNativeCodeGeneration : 0;
-  if (!CreateRuntime(api, attrs, &runtime)) fatal("JsCreateRuntime failed");
-
-  JsErrorCode err = api.JsCreateContext(runtime, nullptr, &context);
-  if (err != 0 || !context) fatal("JsCreateContext failed: 0x%08x (%s)", err, JsErrorName(err));
-
-  err = api.JsSetCurrentContext(context);
-  if (err != 0) fatal("JsSetCurrentContext failed: 0x%08x (%s)", err, JsErrorName(err));
-
-  if (!InstallGlobals(api)) fatal("InstallGlobals failed");
+  InitRuntime(api, jitless);
 
   if (show_version) {
-    JsValueRef out = Eval(api, L"ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()");
+    JsValueRef out = nullptr;
+    if (!Eval(api, L"ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
+      exit(1);
+    }
     PrintJsValue(api, out);
   } else if (script_path) {
     std::wstring code = ReadFileWide(script_path);
     if (code.empty()) fatal("Failed to read script");
-    Eval(api, code);
+    JsValueRef out = nullptr;
+    if (!Eval(api, code, &out)) {
+      exit(1);
+    }
   } else {
     // REPL
     for (;;) {
@@ -300,7 +271,8 @@ int wmain(int argc, wchar_t** argv) {
       if (line.empty()) continue;
 
       std::wstring code = Utf8ToWide(line);
-      JsValueRef out = Eval(api, code);
+      JsValueRef out = nullptr;
+      if (!Eval(api, code, &out)) continue;
       if (!out) continue;
 
       JsValueType vt = JsUndefined;
