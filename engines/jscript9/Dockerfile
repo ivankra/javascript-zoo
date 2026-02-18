@@ -38,7 +38,7 @@ RUN mkdir -p /dist/jscript9-dist && \
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jscript9 \
-      --dist_files=/dist/jscript9-dist \
+      --dist_files=/dist/jscript9-dist/jscript9.dll \
       --no-license \
       --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; exec wine "$SCRIPT_DIR/jscript9-dist/jscript9.exe" --dll "$SCRIPT_DIR/jscript9-dist/jscript9.dll" "$@"' \
       console_log=console.log
