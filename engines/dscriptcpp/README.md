@@ -23,7 +23,6 @@ Hacky non-portable x86-only C++ implementation (inline assembly in gccbitops.h, 
 ## Conformance
 
 <details><summary>ES1-ES5: 74%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/dscriptcpp.txt">Full log</a>.</li>
 <li>ES1: 97%<pre>
 <a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: numeric sort failed; string sort failed; sort with comparefn failed; reverse comparefn failed

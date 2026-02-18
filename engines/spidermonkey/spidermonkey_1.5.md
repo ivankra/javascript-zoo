@@ -15,7 +15,6 @@ First ES3-compliant version. Shipped in Netscape Navigator 6.0 (2000) and Firefo
 ## Conformance
 
 <details><summary>ES1-ES5: 82%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/spidermonkey_1.5.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 92%, <b>1 crash</b><pre>
 <a href="../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws

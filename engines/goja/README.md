@@ -21,7 +21,6 @@ JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/goja.txt">Full log</a>.</li>
 <li>ES1: 98%<pre>
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Object has no member 'getYear'
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Object has no member 'setYear'

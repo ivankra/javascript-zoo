@@ -16,6 +16,11 @@ PROJECT := $(notdir $(abspath $(CURDIR)))
 # Parent directory basename e.g. "engines" or "parsers"
 GROUP := $(notdir $(patsubst %/,%,$(dir $(abspath $(CURDIR)))))
 
+# Parameters for conformance test run, can be overridden in leaf Makefiles.
+CONFORMANCE_BINARY ?= $(PROJECT)       # build name e.g. "v8_intl", not full path
+CONFORMANCE_SUITE ?= es[1-5] kangax-*  # globs for dir names inside conformance/
+CONFORMANCE_CMD ?= "$(ROOT_DIR)/conformance/run.sh" -j 8 -o conformance.txt "$(DIST_DIR)/$(strip $(CONFORMANCE_BINARY))" $(addprefix $(ROOT_DIR)/conformance/,$(CONFORMANCE_SUITE))
+
 # Delegate building any missing jsz-* docker image dependencies to build/Makefile
 $(IID_DIR)/jsz-%:
 	$(MAKE) -C $(ROOT_DIR)/build jsz-$*
@@ -74,6 +79,23 @@ $(1)-sh: $(IID_DIR)/jsz-$(1)
 
 # sh: start shell in the main image in leaf directory
 $(if $(filter $(PROJECT),$(1)),sh: $(1)-sh)
+
+# conformance: run engine on conformance test suite inside test container
+# conformance-direct: run conformance testing command directly on host without launching a test container
+$(if $(and $(filter engines,$(GROUP)),$(filter $(CONFORMANCE_BINARY),$(1)),$(strip $(CONFORMANCE_CMD))),
+conformance conformance.txt: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
+	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
+	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
+	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
+	  -w "$(CURDIR)" \
+	  jsz-runtime:$(DOCKER_ARCH) \
+	  bash -c '$(CONFORMANCE_CMD)'
+
+conformance-direct:
+	$(CONFORMANCE_CMD)
+
+.PHONY: conformance conformance-direct conformance.txt
+)
 
 .PHONY: all build dist sh $(1) $(1)-sh
 endef

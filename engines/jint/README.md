@@ -14,7 +14,6 @@ JavaScript interpreter for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/jint.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: Error: Property 'toGMTString' of object is not a function
 </pre></li>

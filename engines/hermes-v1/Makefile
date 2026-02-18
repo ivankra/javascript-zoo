@@ -5,6 +5,8 @@ include ../../build/build.mk
 
 REV ?= hermes-v250829098.0.7
 
+CONFORMANCE_BINARY = hermes-v1_intl
+
 $(eval $(call build_engine,hermes-v1,../hermes/Dockerfile))
 $(eval $(call build_engine,hermes-v1_clang,../hermes/Dockerfile,--build-arg BASE=jsz-clang))
 $(eval $(call build_engine,hermes-v1_intl,../hermes/Dockerfile,--build-arg INTL=true))

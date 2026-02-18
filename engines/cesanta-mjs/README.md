@@ -15,7 +15,6 @@ Interpreter for a subset of JavaScript for microcontrollers.
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/cesanta-mjs.txt">Full log</a>.</li>
 <li>ES1: 0%</li>
 <li>ES3: 0%</li>
 <li>ES5: 0%</li>

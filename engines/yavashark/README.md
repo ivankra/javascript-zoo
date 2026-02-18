@@ -13,7 +13,6 @@ JavaScript/TypeScript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 88%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/yavashark.txt">Full log</a>.</li>
 <li>ES1: 91%<pre>
 <a href="../conformance/es1/Function.length.js">Function.length.js</a>: Function.length failed
 <a href="../conformance/es1/String.prototype.charAt.js">String.prototype.charAt.js</a>: charAt out of bounds failed; charAt negative failed

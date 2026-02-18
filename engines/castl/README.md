@@ -27,7 +27,6 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 ## Conformance
 
 <details><summary>ES1-ES5: 78%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/castl.txt">Full log</a>.</li>
 <li>ES1: 86%<pre>
 <a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: failed
 <a href="../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: failed

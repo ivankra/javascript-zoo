@@ -3,7 +3,7 @@
 
 SUBDIRS := $(sort $(patsubst %/,%,$(dir $(wildcard */Makefile))))
 
-.PHONY: $(SUBDIRS)
+.PHONY: $(SUBDIRS) all all-ignoring-errors dist conformance base sh
 
 all: $(SUBDIRS)
 
@@ -16,6 +16,15 @@ dist:
 	    $(MAKE) -C "$$e" dist || exit $$?; \
 	  else \
 	    echo "$$e: skipping (no dist target)"; \
+	  fi; \
+	done
+
+conformance:
+	@for e in $(SUBDIRS); do \
+	  if $(MAKE) -C "$$e" -n conformance >/dev/null 2>&1; then \
+	    $(MAKE) -C "$$e" conformance || exit $$?; \
+	  else \
+	    echo "$$e: skipping (no conformance target)"; \
 	  fi; \
 	done
 

@@ -14,7 +14,6 @@ JavaScript interpreter for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 96%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/niljs.txt">Full log</a>.</li>
 <li>ES1: 98%<pre>
 <a href="../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: failed
 <a href="../conformance/es1/comments.js">comments.js</a>: NiL.JS.Core.JSException: SyntaxError: Invalid pattern '(*' at offset 2. Quantifier '*' following nothing.

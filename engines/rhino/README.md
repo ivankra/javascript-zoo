@@ -25,7 +25,6 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 ## Conformance
 
 <details><summary>ES1-ES5: 97%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/rhino.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 85%<pre>

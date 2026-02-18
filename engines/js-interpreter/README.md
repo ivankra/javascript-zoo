@@ -27,7 +27,6 @@ Sandboxed ES5 interpreter in JavaScript.
 ## Conformance
 
 <details><summary>ES1-ES5: 92%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/js-interpreter.txt">Full log</a>.</li>
 <li>ES1: 98%<pre>
 <a href="../conformance/es1/String.generics.js">String.generics.js</a>: charAt failed; charCodeAt failed; indexOf failed; lastIndexOf failed; split failed; substring failed; toLowerCase failed; toUpperCase failed
 <a href="../conformance/es1/arguments.callee.js">arguments.callee.js</a>: [TypeError: arguments.callee is not a function

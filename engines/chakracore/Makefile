@@ -5,6 +5,8 @@ include ../../build/build.mk
 
 REV ?= 792ee7660cbb14f1b3f9f77a6f919aeed4ec1fc2
 
+CONFORMANCE_BINARY = chakracore_intl
+
 # JIT is only supported on amd64
 ifeq ($(DOCKER_ARCH),amd64)
 $(eval $(call build_engine,chakracore,Dockerfile))

@@ -26,7 +26,6 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 ## Conformance
 
 <details><summary>ES1-ES5: 90%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/narcissus.txt">Full log</a>.</li>
 <li>ES1: 97%<pre>
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: array instance constructor failed
 <a href="../conformance/es1/Function.prototype.js">Function.prototype.js</a>: prototype property failed

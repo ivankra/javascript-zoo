@@ -23,7 +23,6 @@ JIT-enabled ES5 engine in C++.
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/iv-lv5.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 99%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')

@@ -16,7 +16,6 @@ QuickJS fork that JIT-translates bytecode using TCC.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/quickjit.txt">Full log</a>.</li>
 <li>ES1: 99%, <b>1 crash</b><pre>
 <a href="../conformance/es1/asi.js">asi.js</a>: crashed (signal 11)
 </pre></li>

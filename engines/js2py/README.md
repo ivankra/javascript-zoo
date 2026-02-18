@@ -14,7 +14,6 @@ JavaScript interpreter written in Python.
 ## Conformance
 
 <details><summary>ES1-ES5: 88%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/js2py.txt">Full log</a>.</li>
 <li>ES1: 96%<pre>
 <a href="../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: raise MakeError('TypeError', js2py.internals.simplex.JsException: TypeError: 'undefined' is not a function (tried calling property 'getYear' of 'Date')

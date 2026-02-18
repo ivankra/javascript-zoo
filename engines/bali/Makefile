@@ -4,6 +4,7 @@
 include ../../build/build.mk
 
 REV ?= 99f0aa14155d0b0c9e39f6273a51c35b497207de
+CONFORMANCE_SUITE = es[1-5]
 
 ifeq ($(DOCKER_ARCH),amd64)
 $(eval $(call build_engine,bali,Dockerfile))

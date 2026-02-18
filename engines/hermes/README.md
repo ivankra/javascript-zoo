@@ -22,7 +22,6 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/hermes.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/with.js">with.js</a>: with.js:15:1: error: invalid statement encountered. with.js:38:1: error: invalid statement encountered. Emitted 2 errors. exiting.
 </pre></li>

@@ -7,6 +7,8 @@ include ../../build/build.mk
 REV ?= 14.5.201.7
 REV_PGO ?= 145.0.7632.45
 
+CONFORMANCE_BINARY = v8_intl
+
 $(eval $(call build_engine,v8,Dockerfile))
 $(eval $(call build_engine,v8_gcc,v8_gcc.Dockerfile,--build-arg BASE=jsz-gcc))
 $(eval $(call build_engine,v8_intl,Dockerfile,--build-arg INTL=true --build-arg REV=lkgr))

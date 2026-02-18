@@ -31,7 +31,6 @@ inline caching.
 ## Conformance
 
 <details><summary>ES1-ES5: 90%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/sablejs.txt">Full log</a>.</li>
 <li>ES1: 92%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: failed

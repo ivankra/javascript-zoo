@@ -14,7 +14,6 @@ Multithreaded JavaScript engine for .NET.
 ## Conformance
 
 <details><summary>ES1-ES5: 17%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/topaz.txt">Full log</a>.</li>
 <li>ES1: 22%</li>
 <li>ES3: 14%</li>
 <li>ES5: 9%</li>

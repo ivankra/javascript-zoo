@@ -14,7 +14,6 @@ Unfinished JavaScript engine written in Nim.
 ## Conformance
 
 <details><summary>ES1-ES5: 3%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/bali.txt">Full log</a>.</li>
 <li>ES1: 4%</li>
 <li>ES3: 1%</li>
 <li>ES5: 7%</li>

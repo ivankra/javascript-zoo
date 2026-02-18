@@ -14,7 +14,6 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 ## Conformance
 
 <details><summary>ES1-ES5: 76%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/porffor.txt">Full log</a>.</li>
 <li>ES1: 89%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array() + array index length update failed; sparse array length failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: array index length update failed

@@ -18,7 +18,6 @@ Wine's open-source reimplementation of Microsoft's classic [JScript](../jscript/
 ## Conformance
 
 <details><summary>ES1-ES5: 76%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/wine.txt">Full log</a>.</li>
 <li>ES1: 95%<pre>
 <a href="../conformance/es1/Number.MAX_VALUE.js">Number.MAX_VALUE.js</a>: failed
 <a href="../conformance/es1/Number.MIN_VALUE.js">Number.MIN_VALUE.js</a>: failed

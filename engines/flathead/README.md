@@ -29,7 +29,6 @@ No ASI.
 ## Conformance
 
 <details><summary>ES1-ES5: 53%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/flathead.txt">Full log</a>.</li>
 <li>ES1: 76%, <b>1 crash</b><pre>
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed; array instance constructor failed
 <a href="../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: failed

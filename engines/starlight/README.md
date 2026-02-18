@@ -16,7 +16,6 @@ Unmaintained old Rust codebase, only builds on x64.
 ## Conformance
 
 <details><summary>ES1-ES5: 69%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/starlight.txt">Full log</a>.</li>
 <li>ES1: 80%<pre>
 <a href="../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: TypeError: not a callable object
 <a href="../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: TypeError: not a callable object

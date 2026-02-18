@@ -19,7 +19,6 @@ JavaScript engine of Ladybird browser and SerenityOS.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/libjs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 99%<pre>
 <a href="../conformance/es3/regex.backref.js">regex.backref.js</a>: backref for a group that hasn't captured failed

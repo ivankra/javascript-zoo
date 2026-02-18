@@ -26,7 +26,6 @@ JavaScript engine of Internet Explorer 3.0 – 8.0.
 ## Conformance
 
 <details><summary>ES1-ES5: 78%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/jscript.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: non-compliant, expected to return 100 instead of 2000
 </pre></li>

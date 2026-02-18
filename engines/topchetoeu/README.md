@@ -14,7 +14,6 @@ Unfinished ES5 interpreter written in Java.
 ## Conformance
 
 <details><summary>ES1-ES5: 37%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/topchetoeu.txt">Full log</a>.</li>
 <li>ES1: 29%</li>
 <li>ES3: 46%</li>
 <li>ES5: 42%</li>

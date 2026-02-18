@@ -24,6 +24,11 @@ Build system is make-driven:
     * `make` / `make all`: build all variants defined in Makefile
     * `make build` / `make dist`: build/dist all variants
     * `make sh` / `make <name>-sh`: build and open shell in the build container
+    * `make conformance`: test the engine on conformance test suite inside a test container (jsz-runtime). By default runs the main binary artifact on all tests in conformance/ dir. Can be customized via `CONFORMANCE_BINARY` / `CONFORMANCE_SUITE` / `CONFORMANCE_CMD` vars.
+    * `make conformance-direct`: run conformance testing command directly on host without launching a test container
+
+# Run conformance testing command directly without a container.
+conformance-direct:
   * `dist/<arch>/`: build artifacts get copied here. `make <name>` typically produces:
     * `<name>`: built binary, bash wrapper or shebanged script
     * `<name>.json`: metadata json with git revision info, compiler version, etc

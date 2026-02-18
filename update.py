@@ -84,10 +84,7 @@ def parse_conformance_data():
 
     conformance_data = {}
 
-    for filename in glob.glob("conformance/results/*.txt"):
-        engine = os.path.basename(filename).removesuffix('.txt')
-        engine = engine.removesuffix('_full')
-        engine = engine.removesuffix('_intl')
+    def parse_one(engine: str, filename: str):
         assert engine not in conformance_data
 
         tests = []
@@ -150,6 +147,25 @@ def parse_conformance_data():
             'conformance_results_path': filename,
             'conformance_scores': conformance_scores,  # kangax weighted
         }
+
+    # New layout:
+    #   engines/<engine>/conformance.txt
+    #   engines/<engine>/<engine>_<variant>.conformance
+    for engine_dir in sorted(glob.glob("engines/*")):
+        if not os.path.isdir(engine_dir):
+            continue
+
+        engine = os.path.basename(engine_dir)
+
+        default_file = os.path.join(engine_dir, "conformance.txt")
+        if os.path.exists(default_file) and engine not in conformance_data:
+            parse_one(engine, default_file)
+
+        for filename in sorted(glob.glob(os.path.join(engine_dir, f"{engine}_*.conformance"))):
+            name = os.path.basename(filename).removesuffix(".conformance")
+            if name in conformance_data:
+                continue
+            parse_one(name, filename)
 
     return conformance_data
 
@@ -864,16 +880,6 @@ def update_conformance(filename, conformance):
             conformance_lines += ['\n']
 
         conformance_lines += [f'<details><summary>{headline}</summary><ul>\n']
-
-        if headline.startswith('ES1-ES5'):
-            link = os.path.relpath(
-                conformance['conformance_results_path'],
-                os.path.dirname(filename)
-            ).replace(os.sep, '/')
-            conformance_lines += [
-                "<li>Based on this repository's basic test suite. "
-                f'<a href="{link}">Full log</a>.</li>\n'
-            ]
 
         for dir_name in section_dirs:
             name = dir_name.replace('kangax-', '')

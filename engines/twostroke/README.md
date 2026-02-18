@@ -15,7 +15,6 @@ JavaScript interpreter written in Ruby.
 ## Conformance
 
 <details><summary>ES1-ES5: 57%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/twostroke.txt">Full log</a>.</li>
 <li>ES1: 70%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed

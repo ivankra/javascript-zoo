@@ -49,7 +49,6 @@ function Counter(start) {
 ## Conformance
 
 <details><summary>ES1-ES5: 1%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/ucode.txt">Full log</a>.</li>
 <li>ES1: 2%</li>
 <li>ES3: 1%</li>
 <li>ES5: 1%</li>

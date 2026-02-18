@@ -30,7 +30,6 @@ First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown e
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/qv4.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token `'
 <a href="../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Unexpected token `'

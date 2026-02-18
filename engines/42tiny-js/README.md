@@ -15,7 +15,6 @@ Fork of [tiny-js](../tiny-js/README.md) with more features.
 ## Conformance
 
 <details><summary>ES1-ES5: 55%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/42tiny-js.txt">Full log</a>.</li>
 <li>ES1: 62%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: &gt; es1/Array.js: Array.length failed &gt; es1/Array.js: Array(len) failed &gt; es1/Array.js: failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: &gt; es1/Array.length.assignment.js: length truncation failed &gt; es1/Array.length.assignment.js: failed

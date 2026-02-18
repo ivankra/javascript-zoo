@@ -5,6 +5,20 @@ include ../../build/build.mk
 
 REV ?= FIREFOX_148_0b13_RELEASE
 
+CONFORMANCE_CMD = \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o conformance.txt /dist/spidermonkey_intl && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.5.conformance /dist/spidermonkey_1.5 && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.6.conformance /dist/spidermonkey_1.6 && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.7.conformance /dist/spidermonkey_1.7 && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.8.0.conformance /dist/spidermonkey_1.8.0
+
+ifeq ($(DOCKER_ARCH),amd64)
+CONFORMANCE_CMD += && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.8.5.conformance /dist/spidermonkey_1.8.5 && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_17.conformance /dist/spidermonkey_17 && \
+	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_24.conformance /dist/spidermonkey_24
+endif
+
 $(eval $(call build_engine,spidermonkey,Dockerfile))
 $(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
 $(eval $(call build_engine,spidermonkey_intl,Dockerfile,--build-arg INTL=true))

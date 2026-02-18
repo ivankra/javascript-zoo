@@ -14,7 +14,6 @@ Experimental JavaScript engine written in C++.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/quanta.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/String.prototype.charAt.js">String.prototype.charAt.js</a>: charAt negative failed
 <a href="../conformance/es1/conversions.ToInteger.js">conversions.ToInteger.js</a>: -1.9 failed

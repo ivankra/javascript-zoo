@@ -14,7 +14,6 @@ Unfinished JavaScript engine written in Java.
 ## Conformance
 
 <details><summary>ES1-ES5: 51%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/lebjs.txt">Full log</a>.</li>
 <li>ES1: 60%<pre>
 <a href="../conformance/es1/Boolean.js">Boolean.js</a>: Uncaught TypeError: Boolean is not a constructor
 <a href="../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: Uncaught TypeError: Boolean is not a constructor

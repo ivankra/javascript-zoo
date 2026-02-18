@@ -13,7 +13,6 @@ Small footprint embedded ES5 engine.
 ## Conformance
 
 <details><summary>ES1-ES5: 84%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/sophonjs.txt">Full log</a>.</li>
 <li>ES1: 93%<pre>
 <a href="../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: exception TypeError:Value is not an array
 <a href="../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: exception TypeError:Value is not an array

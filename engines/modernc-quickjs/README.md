@@ -20,7 +20,6 @@
 ## Conformance
 
 <details><summary>ES1-ES5: 100%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/modernc-quickjs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 100%</li>

@@ -31,7 +31,6 @@ The very first JavaScript engine that defined early JavaScript language (JS1.0/1
 ## Conformance
 
 <details><summary>ES1-ES5: 36%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/mocha.txt">Full log</a>.</li>
 <li>ES1: 74%, <b>1 crash</b><pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: failed
 <a href="../conformance/es1/Date.js">Date.js</a>: crashed (signal 11)

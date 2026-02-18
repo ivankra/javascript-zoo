@@ -23,7 +23,6 @@ Original JavaScript engine of KDE's Konqueror browser.
 ## Conformance
 
 <details><summary>ES1-ES5: 86%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/kjs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 78%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')

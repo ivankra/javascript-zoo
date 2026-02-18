@@ -23,7 +23,6 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/xs.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 99%<pre>
 <a href="../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed

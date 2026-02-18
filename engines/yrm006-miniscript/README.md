@@ -13,7 +13,6 @@ Primitive unfinished interpreter.
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/yrm006-miniscript.txt">Full log</a>.</li>
 <li>ES1: 1%, <b>28 crashes</b></li>
 <li>ES3: 0%, <b>17 crashes</b></li>
 <li>ES5: 0%, <b>1 crash</b></li>

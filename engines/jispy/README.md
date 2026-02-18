@@ -14,7 +14,6 @@ Interpreter for a JavaScript-like language written in Python.
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/jispy.txt">Full log</a>.</li>
 <li>ES1: 0%</li>
 <li>ES3: 0%</li>
 <li>ES5: 0%</li>

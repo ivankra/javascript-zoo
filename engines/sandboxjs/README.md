@@ -22,7 +22,6 @@ those will just trip against the whitelist.
 ## Conformance
 
 <details><summary>ES1-ES5: 67%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/sandboxjs.txt">Full log</a>.</li>
 <li>ES1: 83%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.prototype failed
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted

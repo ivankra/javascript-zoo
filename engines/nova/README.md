@@ -19,7 +19,6 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 ## Conformance
 
 <details><summary>ES1-ES5: 92%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/nova.txt">Full log</a>.</li>
 <li>ES1: 95%<pre>
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Date.prototype.toLocaleString not implemented
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Not a callable object

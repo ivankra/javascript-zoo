@@ -15,7 +15,6 @@ JIT-enabled ES5 engine written in Object Pascal.
 ## Conformance
 
 <details><summary>ES1-ES5: 91%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/besen.txt">Full log</a>.</li>
 <li>ES1: 94%<pre>
 <a href="../conformance/es1/Date.js">Date.js</a>: new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1
 <a href="../conformance/es1/Date.prototype.getDate.js">Date.prototype.getDate.js</a>: failed

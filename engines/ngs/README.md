@@ -25,7 +25,6 @@ There was a short-lived fork NJS:
 ## Conformance
 
 <details><summary>ES1-ES5: 36%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/ngs.txt">Full log</a>.</li>
 <li>ES1: 58%, <b>1 crash</b><pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: crashed (signal 11)
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: ngs: evaluation of file `Array.length.assignment.js' failed:

@@ -13,7 +13,6 @@ JavaScript engine for microcontrollers.
 ## Conformance
 
 <details><summary>ES1-ES5: 70%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/cesanta-v7.txt">Full log</a>.</li>
 <li>ES1: 82%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: new Array(len) failed; Array(len) failed
 <a href="../conformance/es1/Array.length.js">Array.length.js</a>: new Array(len) length failed

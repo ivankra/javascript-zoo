@@ -17,7 +17,6 @@ Packaged as [libje-perl](https://packages.debian.org/search?keywords=libje-perl)
 ## Conformance
 
 <details><summary>ES1-ES5: 79%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/je-perl.txt">Full log</a>.</li>
 <li>ES1: 97%<pre>
 <a href="../conformance/es1/Number.MAX_VALUE.js">Number.MAX_VALUE.js</a>: failed
 <a href="../conformance/es1/Number.MIN_VALUE.js">Number.MIN_VALUE.js</a>: failed

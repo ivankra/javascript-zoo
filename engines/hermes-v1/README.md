@@ -26,7 +26,6 @@ codegen.
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/hermes-v1_intl.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/with.js">with.js</a>: with.js:15:1: error: with statement is not supported with.js:38:1: error: with statement is not supported Emitted 2 errors. exiting.
 </pre></li>

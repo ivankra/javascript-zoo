@@ -15,7 +15,6 @@ JavaScript engine for .NET. Tree walking interpreter + expression compiler to .N
 ## Conformance
 
 <details><summary>ES1-ES5: 78%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/yantra.txt">Full log</a>.</li>
 <li>ES1: 88%, <b>9 crashes</b><pre>
 <a href="../conformance/es1/Boolean.prototype.toString.js">Boolean.prototype.toString.js</a>: toString(true) failed; toString(false) failed
 <a href="../conformance/es1/Boolean.prototype.valueOf.js">Boolean.prototype.valueOf.js</a>: valueOf(true) failed; valueOf(false) failed

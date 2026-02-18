@@ -14,7 +14,6 @@ JavaScript engine targetted at embedded systems.
 ## Conformance
 
 <details><summary>ES1-ES5: 56%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/mquickjs.txt">Full log</a>.</li>
 <li>ES1: 63%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: TypeError: invalid array subscript
 <a href="../conformance/es1/Array.length.js">Array.length.js</a>: TypeError: invalid array subscript

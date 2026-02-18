@@ -14,7 +14,6 @@ JavaScript engine written in Zig.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/kiesel.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 97%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'

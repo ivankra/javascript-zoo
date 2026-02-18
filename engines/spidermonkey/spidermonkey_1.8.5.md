@@ -18,7 +18,6 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 ## Conformance
 
 <details><summary>ES1-ES5: 96%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/spidermonkey_1.8.5.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 95%<pre>
 <a href="../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws

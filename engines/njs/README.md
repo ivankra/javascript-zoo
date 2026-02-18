@@ -20,7 +20,6 @@ Always runs in strict mode, seemingly no option to disable.
 ## Conformance
 
 <details><summary>ES1-ES5: 88%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/njs.txt">Full log</a>.</li>
 <li>ES1: 93%<pre>
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: (intermediate value)["getYear"] is not a function
 <a href="../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: (intermediate value)["setYear"] is not a function

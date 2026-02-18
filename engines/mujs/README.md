@@ -23,7 +23,6 @@ Embeddable JavaScript engine from MuPDF.
 ## Conformance
 
 <details><summary>ES1-ES5: 91%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/mujs.txt">Full log</a>.</li>
 <li>ES1: 96%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not callable

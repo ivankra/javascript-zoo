@@ -16,7 +16,6 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 ## Conformance
 
 <details><summary>ES1-ES5: 46%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/rpython-langjs.txt">Full log</a>.</li>
 <li>ES1: 72%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: timeout
 <a href="../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse returns this failed

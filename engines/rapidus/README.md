@@ -17,7 +17,6 @@ JavaScript engine written in Rust, aiming at ES5.
 ## Conformance
 
 <details><summary>ES1-ES5: 21%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/rapidus.txt">Full log</a>.</li>
 <li>ES1: 31%</li>
 <li>ES3: 14%, <b>1 crash</b></li>
 <li>ES5: 12%</li>

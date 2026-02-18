@@ -25,7 +25,6 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/duktape.txt">Full log</a>.</li>
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 99%<pre>

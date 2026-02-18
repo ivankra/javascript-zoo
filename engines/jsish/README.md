@@ -19,7 +19,6 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 ## Conformance
 
 <details><summary>ES1-ES5: 42%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/jsish.txt">Full log</a>.</li>
 <li>ES1: 56%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.js:12: "es1/Array.js: Array.length failed", Array.js:83:  "es1/Array.js: failed",
 <a href="../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor.js:11: "es1/Array.prototype.constructor.js: Array.prototype.constructor failed", Array.prototype.constructor.js:18:  "es1/Array.prototype.constructor.js: array instance constructor failed", Array.prototype.constructor.js:24:  "es1/Array.prototype.constructor.js: failed",

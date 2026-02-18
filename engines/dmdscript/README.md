@@ -27,7 +27,6 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 ## Conformance
 
 <details><summary>ES1-ES5: 74%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/dmdscript.txt">Full log</a>.</li>
 <li>ES1: 93%<pre>
 <a href="../conformance/es1/Date.js">Date.js</a>: typeof Date() != 'string'
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: failed

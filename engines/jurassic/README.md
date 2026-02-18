@@ -14,7 +14,6 @@ JavaScript engine for .NET, a compiler to .NET IL.
 ## Conformance
 
 <details><summary>ES1-ES5: 98%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/jurassic.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: max safe integer failed
 </pre></li>

@@ -16,7 +16,6 @@ Embeddable Javascript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/boa.txt">Full log</a>.</li>
 <li>ES1: 99%<pre>
 <a href="../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Uncaught: "Function Unimplemented]"
 </pre></li>

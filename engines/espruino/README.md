@@ -15,7 +15,6 @@ Interpreter for a subset of JavaScript for Espruino microcontrollers.
 ## Conformance
 
 <details><summary>ES1-ES5: 56%</summary><ul>
-<li>Based on this repository's basic test suite. <a href="../../conformance/results/espruino.txt">Full log</a>.</li>
 <li>ES1: 74%<pre>
 <a href="../conformance/es1/Array.js">Array.js</a>: Array.length failed ; failed
 <a href="../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: Uncaught TypeError: Assignment to a constant  Uncaught undefined
