@@ -39,6 +39,7 @@ typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstru
 
 static const JsRuntimeAttributes JsRuntimeAttributeDisableNativeCodeGeneration = 0x00000008u;
 static const JsErrorCode JsErrorScriptException = 0x00030001;
+static const JsErrorCode JsErrorScriptCompile = 0x00030002;
 
 struct API {
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime)(JsRuntimeAttributes, JsRuntimeVersion, void*, JsRuntimeHandle*) = nullptr;
@@ -238,7 +239,9 @@ bool Eval(const API& api, const char* code_utf8, JsValueRef* out) {
   free(code);
   if (err != 0) {
     JsValueRef ex = nullptr;
-    if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
+    if (err == JsErrorScriptCompile) {
+      fprintf(stderr, "Compile error\n");
+    } else if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
       fprintf(stderr, "Uncaught ");
       if (!PrintJsValue(stderr, api, ex, '\n')) {
         fprintf(stderr, "exception\n");
@@ -285,20 +288,15 @@ int wmain(int argc, wchar_t** argv) {
 
   if (show_version) {
     JsValueRef out = nullptr;
-    if (!Eval(api, "ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
-      fatal("Eval failed");
-    }
+    bool ok = Eval(api, "ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out);
+    if (!ok) exit(1);
     PrintJsValue(stdout, api, out, '\n');
   } else if (script_path) {
     char* code = ReadFileUtf8(script_path);
-    if (!code || !*code) {
-      free(code);
-      fatal("Failed to read script");
-    }
+    if (!code || !*code) fatal("Failed to read script");
     JsValueRef out = nullptr;
-    bool ok = Eval(api, code, &out);
+    if (!Eval(api, code, &out)) exit(1);
     free(code);
-    if (!ok) fatal("Eval failed");
   } else {
     // REPL
     char line[8192];
