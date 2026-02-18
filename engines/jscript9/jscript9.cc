@@ -40,6 +40,7 @@ typedef unsigned __int64 JsSourceContext;
 typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstructCall, JsValueRef* args, unsigned short argc, void* state);
 
 static const JsRuntimeAttributes JsRuntimeAttributeDisableNativeCodeGeneration = 0x00000008u;
+static const JsErrorCode JsErrorScriptException = 0x00030001;
 
 struct API {
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime)(JsRuntimeAttributes, JsRuntimeVersion, void*, JsRuntimeHandle*) = nullptr;
@@ -117,7 +118,7 @@ std::wstring ReadFileWide(const wchar_t* path) {
   return Utf8ToWide(data);
 }
 
-bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout, bool newline = true) {
+bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout) {
   JsValueRef s = nullptr;
   if (api.JsConvertValueToString(value, &s) != 0 || !s) return false;
   const wchar_t* w = nullptr;
@@ -126,7 +127,6 @@ bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout, bool new
   std::wstring ws(w, len);
   std::string utf8 = WideToUtf8(ws);
   fprintf(out, "%s", utf8.c_str());
-  if (newline) fputc('\n', out);
   return true;
 }
 
@@ -199,17 +199,19 @@ void InitRuntime(const API& api, bool jitless) {
 
 bool Eval(const API& api, const std::wstring& code, JsValueRef* out) {
   if (!out) return false;
+  *out = nullptr;
   JsErrorCode err = api.JsRunScript(code.c_str(), 0, L"stdin", out);
-  if (err == 0) return true;
-
-  fprintf(stderr, "Eval failed (0x%08x)", err);
-  JsValueRef ex = nullptr;
-  if (api.JsGetAndClearException(&ex) == 0 && ex) {
-    fprintf(stderr, ": ");
-    if (!PrintJsValue(api, ex, stderr, false)) fprintf(stderr, "<exception>");
+  if (err != 0) {
+    JsValueRef ex = nullptr;
+    if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
+      fprintf(stderr, "Uncaught ");
+      if (!PrintJsValue(api, ex, stderr)) fprintf(stderr, "exception\n");
+    } else {
+      fprintf(stderr, "JsRunScript failed (0x%08x)\n", err);
+    }
+    return false;
   }
-  fprintf(stderr, "\n");
-  return false;
+  return true;
 }
 
 }  // namespace
@@ -222,7 +224,7 @@ int wmain(int argc, wchar_t** argv) {
 
   for (int i = 1; i < argc; ++i) {
     if (lstrcmpiW(argv[i], L"--help") == 0 || lstrcmpiW(argv[i], L"-h") == 0) {
-      printf("Usage: jscript9.exe [--dll path/to/jscript9.dll] [--jitless] [--version] [script.js]\n");
+      printf("Usage: jscript9.exe [--dll jscript9.dll] [--jitless] [--version] [script.js]\n");
       return 0;
     }
     if (lstrcmpiW(argv[i], L"--dll") == 0 && i + 1 < argc) {
@@ -250,16 +252,14 @@ int wmain(int argc, wchar_t** argv) {
   if (show_version) {
     JsValueRef out = nullptr;
     if (!Eval(api, L"ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
-      exit(1);
+      fatal("Eval failed");
     }
     PrintJsValue(api, out);
   } else if (script_path) {
     std::wstring code = ReadFileWide(script_path);
     if (code.empty()) fatal("Failed to read script");
     JsValueRef out = nullptr;
-    if (!Eval(api, code, &out)) {
-      exit(1);
-    }
+    if (!Eval(api, code, &out)) fatal("Eval failed");
   } else {
     // REPL
     for (;;) {
@@ -272,8 +272,7 @@ int wmain(int argc, wchar_t** argv) {
 
       std::wstring code = Utf8ToWide(line);
       JsValueRef out = nullptr;
-      if (!Eval(api, code, &out)) continue;
-      if (!out) continue;
+      if (!Eval(api, code, &out) || !out) continue;
 
       JsValueType vt = JsUndefined;
       api.JsGetValueType(out, &vt);
