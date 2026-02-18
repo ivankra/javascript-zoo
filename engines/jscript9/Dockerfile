@@ -29,14 +29,16 @@ RUN apt-get update -y && \
 COPY engines/jscript9/download-jscript9.sh /tmp/download-jscript9.sh
 RUN chmod a+rx /tmp/download-jscript9.sh && /tmp/download-jscript9.sh /dist/jscript9-dist
 
-COPY engines/jscript9/jscript9.cc /tmp/jscript9.cc
+WORKDIR /src
+
+COPY engines/jscript9/jscript9.cc .
 RUN mkdir -p /dist/jscript9-dist && \
     x86_64-w64-mingw32-g++ -o /dist/jscript9-dist/jscript9.exe -x c++ -O2 -s -fno-rtti -fno-exceptions -municode \
-      /tmp/jscript9.cc -lole32 -loleaut32 -luuid -static-libgcc -static-libstdc++
+      jscript9.cc -static-libgcc -static-libstdc++
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jscript9 \
       --dist_files=/dist/jscript9-dist \
       --no-license \
-      --wrapper='export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}" WINEDEBUG="${WINEDEBUG:--all,+err}"; exec wine "$SCRIPT_DIR/jscript9-dist/jscript9.exe" --dll "$SCRIPT_DIR/jscript9-dist/jscript9.dll" "$@"' \
+      --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; exec wine "$SCRIPT_DIR/jscript9-dist/jscript9.exe" --dll "$SCRIPT_DIR/jscript9-dist/jscript9.dll" "$@"' \
       console_log=console.log

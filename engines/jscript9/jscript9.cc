@@ -152,7 +152,7 @@ char* ReadFileUtf8(const wchar_t* path) {
   return data;
 }
 
-bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout) {
+bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator = 0) {
   JsValueRef s = nullptr;
   if (api.JsConvertValueToString(value, &s) != 0 || !s) return false;
   const wchar_t* w = nullptr;
@@ -161,6 +161,7 @@ bool PrintJsValue(const API& api, JsValueRef value, FILE* out = stdout) {
   char* utf8 = WideToUtf8Dup(w, len);
   if (!utf8) return false;
   fprintf(out, "%s", utf8);
+  if (terminator) fputc(terminator, out);
   free(utf8);
   return true;
 }
@@ -171,17 +172,9 @@ JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* args, unsigned s
 
   for (unsigned short i = 1; i < argc; ++i) {
     if (i > 1) printf(" ");
-    JsValueRef s = nullptr;
-    if (api->JsConvertValueToString(args[i], &s) != 0 || !s) continue;
-    const wchar_t* w = nullptr;
-    size_t len = 0;
-    if (api->JsStringToPointer(s, &w, &len) != 0 || !w) continue;
-    char* utf8 = WideToUtf8Dup(w, len);
-    if (!utf8) continue;
-    printf("%s", utf8);
-    free(utf8);
+    PrintJsValue(stdout, *api, args[i]);
   }
-  printf("\n");
+  fputc('\n', stdout);
   fflush(stdout);
 
   JsValueRef undef = nullptr;
@@ -247,8 +240,9 @@ bool Eval(const API& api, const char* code_utf8, JsValueRef* out) {
     JsValueRef ex = nullptr;
     if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
       fprintf(stderr, "Uncaught ");
-      if (!PrintJsValue(api, ex, stderr)) fprintf(stderr, "exception");
-      fprintf(stderr, "\n");
+      if (!PrintJsValue(stderr, api, ex, '\n')) {
+        fprintf(stderr, "exception\n");
+      }
     } else {
       fprintf(stderr, "JsRunScript failed (0x%08x)\n", err);
     }
@@ -286,9 +280,6 @@ int wmain(int argc, wchar_t** argv) {
     break;
   }
 
-  HRESULT cohr = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
-  if (FAILED(cohr)) fatal("CoInitializeEx failed");
-
   API api(dll_path);
   InitRuntime(api, jitless);
 
@@ -297,7 +288,7 @@ int wmain(int argc, wchar_t** argv) {
     if (!Eval(api, "ScriptEngineMajorVersion()+'.'+ScriptEngineMinorVersion()+'.'+ScriptEngineBuildVersion()", &out)) {
       fatal("Eval failed");
     }
-    PrintJsValue(api, out);
+    PrintJsValue(stdout, api, out, '\n');
   } else if (script_path) {
     char* code = ReadFileUtf8(script_path);
     if (!code || !*code) {
@@ -323,8 +314,9 @@ int wmain(int argc, wchar_t** argv) {
       if (!Eval(api, line, &out) || !out) continue;
 
       JsValueType vt = JsUndefined;
-      api.JsGetValueType(out, &vt);
-      if (vt != JsUndefined) PrintJsValue(api, out);
+      if (api.JsGetValueType(out, &vt) == 0 && vt != JsUndefined) {
+        PrintJsValue(stdout, api, out, '\n');
+      }
     }
   }
 
