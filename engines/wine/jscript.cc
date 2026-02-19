@@ -340,7 +340,7 @@ static const WCHAR kInitCode[] = LR"(
 )";
 
 static const WCHAR kVersionCode[] = LR"(
-  WScript.Echo(ScriptEngineMajorVersion() + "." + ScriptEngineMinorVersion() + "." + ScriptEngineBuildVersion());
+  print(ScriptEngineMajorVersion() + "." + ScriptEngineMinorVersion() + "." + ScriptEngineBuildVersion());
 )";
 
 static const WCHAR kReplCode[] = LR"(
@@ -481,7 +481,7 @@ int wmain(int argc, WCHAR** argv) {
 
   if (show_version) {
     if (!Eval(script_parse, kVersionCode)) exit(1);
-  } else if (first_script_arg >= 0) {
+  } else if (first_script_arg != -1) {
     for (int i = first_script_arg; i < argc; ++i) {
       const WCHAR* script_path = argv[i];
       WCHAR* code = ReadUtf8File(script_path);

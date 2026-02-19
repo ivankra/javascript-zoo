@@ -53,8 +53,8 @@ RUN mkdir -p /dist/wine-dist && \
 
 # Build host
 COPY engines/wine/jscript.cc jscript.cc
-RUN i686-w64-mingw32-gcc -o /dist/wine-dist/jscript_wine32.exe -x c++ -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc
-RUN x86_64-w64-mingw32-gcc -o /dist/wine-dist/jscript_wine64.exe -x c++ -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc
+RUN i686-w64-mingw32-gcc -o /dist/wine-dist/jscript_wine32.exe -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc
+RUN x86_64-w64-mingw32-gcc -o /dist/wine-dist/jscript_wine64.exe -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc
 
 # Use 64-bit library/executable by default for compatibility with default
 # macOS containerization's amd64 kernel which doesn't run 32-bit binaries.

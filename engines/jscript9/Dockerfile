@@ -31,14 +31,13 @@ RUN chmod a+rx /tmp/download-jscript9.sh && /tmp/download-jscript9.sh /dist/jscr
 
 WORKDIR /src
 
-COPY engines/jscript9/jscript9.cc .
-RUN mkdir -p /dist/jscript9-dist && \
-    x86_64-w64-mingw32-g++ -o /dist/jscript9-dist/jscript9.exe -x c++ -O2 -s -fno-rtti -fno-exceptions -municode \
-      jscript9.cc -static-libgcc -static-libstdc++
+COPY engines/jscript9/jsrt.cc .
+RUN i686-w64-mingw32-g++ -o /dist/jscript9-dist/jsrt32.exe -Os -s -fno-rtti -fno-exceptions -municode jsrt.cc -static-libgcc -static-libstdc++
+RUN x86_64-w64-mingw32-g++ -o /dist/jscript9-dist/jsrt64.exe -Os -s -fno-rtti -fno-exceptions -municode jsrt.cc -static-libgcc -static-libstdc++
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jscript9 \
       --dist_files=/dist/jscript9-dist/jscript9.dll \
       --no-license \
-      --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; exec wine "$SCRIPT_DIR/jscript9-dist/jscript9.exe" --dll "$SCRIPT_DIR/jscript9-dist/jscript9.dll" "$@"' \
+      --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; exec wine "$SCRIPT_DIR/jscript9-dist/jsrt64.exe" --dll "$SCRIPT_DIR/jscript9-dist/jscript9.dll" "$@"' \
       console_log=console.log
