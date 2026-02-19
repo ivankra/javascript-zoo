@@ -73,7 +73,6 @@ typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstru
 struct API {
   HMODULE dll = nullptr;
   bool edge = false;      // true if Edge JSRT API, else Legacy JSRT API
-  JsValueRef undefined = nullptr;
 
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_edge)(JsRuntimeAttributes, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_legacy)(JsRuntimeAttributes, JsRuntimeVersion, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
@@ -118,10 +117,6 @@ struct API {
     Resolve(JsSetProperty, "JsSetProperty");
     Resolve(JsGetValueType, "JsGetValueType");
     Resolve(JsGetAndClearException, "JsGetAndClearException");
-    // Cache undefined value and quick sanity check
-    if (JsGetUndefinedValue(&undefined) != JsNoError) fatal("JsGetUndefinedValue failed");
-    JsValueType vt = JsNull;
-    if (JsGetValueType(undefined, &vt) != JsNoError || vt != JsUndefined) fatal("JsGetValueType failed");
   }
 
  private:
@@ -211,6 +206,14 @@ bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator =
   return true;
 }
 
+JsValueRef UndefinedValue(const API& api) {
+  JsValueRef out;
+  if (api.JsGetUndefinedValue(&out) != JsNoError) {
+    fatal("JsGetUndefinedValue failed");
+  }
+  return out;
+}
+
 JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
   const API* api = reinterpret_cast<const API*>(state);
   if (!api) return nullptr;
@@ -220,7 +223,7 @@ JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* argv, unsigned s
   }
   printf("\n");
   fflush(stdout);
-  return api->undefined;
+  return UndefinedValue(*api);
 }
 
 JsValueRef CALLBACK WriteCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
@@ -231,7 +234,7 @@ JsValueRef CALLBACK WriteCallback(JsValueRef, bool, JsValueRef* argv, unsigned s
     PrintJsValue(stdout, *api, argv[i]);
   }
   fflush(stdout);
-  return api->undefined;
+  return UndefinedValue(*api);
 }
 
 JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned short, void* state) {
@@ -239,24 +242,28 @@ JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned sho
   if (!api) return nullptr;
 
   char line[8192];
-  if (!fgets(line, sizeof(line), stdin)) return api->undefined;
+  if (!fgets(line, sizeof(line), stdin)) return UndefinedValue(*api);
   line[strcspn(line, "\r\n")] = '\0';
 
   wchar_t* w = Utf8ToWideDup(line);
-  if (!w) return api->undefined;
+  if (!w) return UndefinedValue(*api);
 
-  JsValueRef s = api->undefined;
-  JsErrorCode err = api->JsPointerToString(w, wcslen(w), &s);
+  JsValueRef res = UndefinedValue(*api);
+  JsErrorCode err = api->JsPointerToString(w, wcslen(w), &res);
   free(w);
-  return err == JsNoError ? s : api->undefined;
+  return err == JsNoError ? res : UndefinedValue(*api);
 }
 
 void SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
   JsPropertyIdRef id = nullptr;
   JsErrorCode err = api.JsGetPropertyIdFromName(name, &id);
-  if (err != JsNoError || !id) fatal("JsGetPropertyIdFromName failed (0x%08x)", err);
+  if (err != JsNoError || !id) {
+    fatal("JsGetPropertyIdFromName failed (0x%08x)", err);
+  }
   err = api.JsSetProperty(obj, id, value, true);
-  if (err != JsNoError) fatal("JsSetProperty failed (0x%08x)", err);
+  if (err != JsNoError) {
+    fatal("JsSetProperty failed (0x%08x)", err);
+  }
 }
 
 void InitRuntime(const API& api, bool jitless) {
@@ -266,57 +273,78 @@ void InitRuntime(const API& api, bool jitless) {
   JsErrorCode err = api.edge
       ? api.JsCreateRuntime_edge(attrs, nullptr, &runtime)
       : api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime);
-  if (err != JsNoError) fatal("JsCreateRuntime failed (0x%08x)", err);
-  if (!runtime) fatal("JsCreateRuntime failed");
+  if (err != JsNoError || ! runtime) {
+    fatal("JsCreateRuntime failed (0x%08x)", err);
+  }
 
   err = api.edge
       ? api.JsCreateContext_edge(runtime, &context)
       : api.JsCreateContext_legacy(runtime, nullptr, &context);
-  if (err != JsNoError || !context) fatal("JsCreateContext failed (0x%08x)", err);
+  if (err != JsNoError || !context) {
+    fatal("JsCreateContext failed (0x%08x)", err);
+  }
 
   err = api.JsSetCurrentContext(context);
-  if (err != JsNoError) fatal("JsSetCurrentContext failed (0x%08x)", err);
+  if (err != JsNoError) {
+    fatal("JsSetCurrentContext failed (0x%08x)", err);
+  }
 }
 
 // Add some WScript-compatible I/O methods useful for running REPL script
 void InitGlobals(const API& api) {
   JsValueRef print_fn = nullptr;
   JsErrorCode err = api.JsCreateFunction(&PrintCallback, const_cast<API*>(&api), &print_fn);
-  if (err != JsNoError || !print_fn) fatal("JsCreateFunction(print) failed (0x%08x)", err);
+  if (err != JsNoError || !print_fn) {
+    fatal("JsCreateFunction(print) failed (0x%08x)", err);
+  }
 
   JsValueRef readline_fn = nullptr;
   err = api.JsCreateFunction(&ReadLineCallback, const_cast<API*>(&api), &readline_fn);
-  if (err != JsNoError || !readline_fn) fatal("JsCreateFunction(readline) failed (0x%08x)", err);
+  if (err != JsNoError || !readline_fn) {
+    fatal("JsCreateFunction(readline) failed (0x%08x)", err);
+  }
 
   JsValueRef write_fn = nullptr;
   err = api.JsCreateFunction(&WriteCallback, const_cast<API*>(&api), &write_fn);
-  if (err != JsNoError || !write_fn) fatal("JsCreateFunction(write) failed (0x%08x)", err);
+  if (err != JsNoError || !write_fn) {
+    fatal("JsCreateFunction(write) failed (0x%08x)", err);
+  }
 
   JsValueRef global = nullptr;
   err = api.JsGetGlobalObject(&global);
-  if (err != JsNoError || !global) fatal("JsGetGlobalObject failed (0x%08x)", err);
+  if (err != JsNoError || !global) {
+    fatal("JsGetGlobalObject failed (0x%08x)", err);
+  }
   SetProp(api, global, L"print", print_fn);
   SetProp(api, global, L"readline", readline_fn);
 
   JsValueRef console_obj = nullptr;
   err = api.JsCreateObject(&console_obj);
-  if (err != JsNoError || !console_obj) fatal("JsCreateObject failed (0x%08x)", err);
+  if (err != JsNoError || !console_obj) {
+    fatal("JsCreateObject failed (0x%08x)", err);
+  }
   SetProp(api, console_obj, L"log", print_fn);
   SetProp(api, global, L"console", console_obj);
 
   JsValueRef stdin_obj = nullptr;
   err = api.JsCreateObject(&stdin_obj);
-  if (err != JsNoError || !stdin_obj) fatal("JsCreateObject(StdIn) failed (0x%08x)", err);
+  if (err != JsNoError || !stdin_obj) {
+    fatal("JsCreateObject(StdIn) failed (0x%08x)", err);
+  }
   SetProp(api, stdin_obj, L"ReadLine", readline_fn);
 
   JsValueRef stdout_obj = nullptr;
   err = api.JsCreateObject(&stdout_obj);
-  if (err != JsNoError || !stdout_obj) fatal("JsCreateObject(StdOut) failed (0x%08x)", err);
+  if (err != JsNoError || !stdout_obj) {
+    fatal("JsCreateObject(StdOut) failed (0x%08x)", err);
+  }
   SetProp(api, stdout_obj, L"Write", write_fn);
 
   JsValueRef wscript_obj = nullptr;
   err = api.JsCreateObject(&wscript_obj);
-  if (err != JsNoError || !wscript_obj) fatal("JsCreateObject(WScript) failed (0x%08x)", err);
+  if (err != JsNoError || !wscript_obj) {
+    fatal("JsCreateObject(WScript) failed (0x%08x)", err);
+  }
   SetProp(api, wscript_obj, L"StdOut", stdout_obj);
   SetProp(api, global, L"WScript", wscript_obj);
 }
@@ -386,7 +414,9 @@ int wmain(int argc, wchar_t** argv) {
   } else if (first_script_arg != -1) {
     for (int i = first_script_arg; i < argc; ++i) {
       char* code = ReadFileUtf8(argv[i]);
-      if (!code || !*code) fatal("Failed to read script file");
+      if (!code || !*code) {
+        fatal("Failed to read script file");
+      }
       JsValueRef out = nullptr;
       if (!Eval(api, code, &out)) exit(1);
       free(code);
