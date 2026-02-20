@@ -62,19 +62,25 @@
   })();
 
   while (true) {
-    WScript.StdOut.Write('> ');
-    if (WScript.StdIn.AtEndOfStream) break;
+    if (typeof WScript.StdOut === 'object' && typeof WScript.StdOut.Write !== 'undefined') {
+      WScript.StdOut.Write('> ');
+    } else {
+      WScript.Echo('> ');
+    }
+
+    if (typeof WScript.StdIn === 'object' && WScript.StdIn.AtEndOfStream) break;
 
     var __line = typeof readline !== 'undefined' ? readline() : WScript.StdIn.ReadLine();
     if (__line === undefined || __line === null) break;
-    __line = ('' + __line).replace(/^\s+|\s+$/g, '');
-    if (__line === '') continue;
-    if (__line === 'exit' || __line === 'quit' || __line == '\x04' /*^D*/) break;
+
+    var __trim = ('' + __line).replace(/^\s+|\s+$/g, '');
+    if (__trim === '') continue;
+    if (__trim === 'exit' || __trim === 'quit' || __trim == '\x04' /*^D*/) break;
 
     try {
-      var __res = eval(__line);
+      var __res = (0, eval)(__line);
       if (typeof __res !== 'undefined') {
-        WScript.Echo(typeof __res === 'object' ? __stringify(__res) : __res);
+        WScript.Echo(typeof __res !== 'object' ? '' + __res : __stringify(__res));
       }
     } catch (__err) {
       var __name = __err && __err.name;
