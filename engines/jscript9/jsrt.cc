@@ -2,7 +2,7 @@
 // Implements basic REPL and script runner.
 //
 // Legacy (jscript9.dll in IE9-11) and Edge (chakra.dll/ChakraCore.dll) JSRT API
-// flavors are both supported and autodetected.
+// flavors are both supported and autodetected based on DLL name.
 //
 // References:
 //   * https://blogs.windows.com/msedgedev/2015/05/18/using-chakra-for-scripting-applications-across-windows-10/
@@ -31,6 +31,8 @@ namespace {
   fputc('\n', stderr);
   exit(1);
 }
+
+#define CHECK(cond) do { if (!(cond)) { fatal("CHECK(\"%s\") failed\n", #cond); } } while(0)
 
 bool endswith_iW(const wchar_t* str, const wchar_t* suffix) {
   const int n = lstrlenW(str), m = lstrlenW(suffix);
@@ -89,14 +91,15 @@ struct API {
   JsErrorCode(STDAPICALLTYPE* JsCreateObject)(JsValueRef*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsGetPropertyIdFromName)(const wchar_t*, JsPropertyIdRef*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsSetProperty)(JsValueRef, JsPropertyIdRef, JsValueRef, bool) = nullptr;
-  JsErrorCode(STDAPICALLTYPE* JsGetValueType)(JsValueRef, JsValueType*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsGetAndClearException)(JsValueRef*) = nullptr;
 
   explicit API(const wchar_t* dll_path) {
     dll = LoadLibraryW(dll_path);
-    if (!dll) fatal("LoadLibraryW failed");
-    edge = endswith_iW(dll_path, L"chakra.dll") || endswith_iW(dll_path, L"chakracore.dll") ||
-           (!endswith_iW(dll_path, L"jscript9.dll") && GetProcAddress(dll, "JsCreateNamedFunction") != nullptr);
+    if (!dll) {
+      fwprintf(stderr, L"LoadLibraryW(\"%ls\") failed", dll_path);
+      exit(1);
+    }
+    edge = !endswith_iW(dll_path, L"jscript9.dll");
     if (edge) {
       Resolve(JsCreateRuntime_edge, "JsCreateRuntime");
       Resolve(JsCreateContext_edge, "JsCreateContext");
@@ -115,9 +118,10 @@ struct API {
     Resolve(JsCreateObject, "JsCreateObject");
     Resolve(JsGetPropertyIdFromName, "JsGetPropertyIdFromName");
     Resolve(JsSetProperty, "JsSetProperty");
-    Resolve(JsGetValueType, "JsGetValueType");
     Resolve(JsGetAndClearException, "JsGetAndClearException");
   }
+
+  JsValueRef undefined() const { JsValueRef u; CHECK(JsGetUndefinedValue(&u) == JsNoError); return u; }
 
  private:
   template <typename T> void Resolve(T& fn, const char* symbol) {
@@ -153,43 +157,31 @@ char* WideToUtf8Dup(const wchar_t* in, size_t in_len) {
   return out;
 }
 
-char* ReadFileUtf8(const wchar_t* path) {
-  int n = WideCharToMultiByte(CP_UTF8, 0, path, -1, nullptr, 0, nullptr, nullptr);
-  if (n <= 0) return nullptr;
-  char* path8 = static_cast<char*>(malloc(static_cast<size_t>(n)));
-  if (!path8) return nullptr;
-  WideCharToMultiByte(CP_UTF8, 0, path, -1, path8, n, nullptr, nullptr);
-
-  FILE* file = fopen(path8, "rb");
-  free(path8);
-  if (!file) return nullptr;
-
-  if (fseek(file, 0, SEEK_END) != 0) {
-    fclose(file);
-    return nullptr;
+wchar_t* ReadFileUtf8(const wchar_t* path) {
+  FILE* fp = _wfopen(path, L"rb");
+  if (!fp) {
+    fwprintf(stderr, L"Cannot open: %ls\n", path);
+    exit(1);
   }
-  long size = ftell(file);
-  if (size < 0) {
-    fclose(file);
-    return nullptr;
+  size_t len = 0, cap = 256;
+  char* buf = static_cast<char*>(malloc(cap));
+  CHECK(buf);
+  for (int c; (c = fgetc(fp)) != EOF;) {
+    if (c == '\r') continue;
+    if (len + 1 >= cap) {
+      cap *= 2;
+      buf = static_cast<char*>(realloc(buf, cap));
+      CHECK(buf);
+    }
+    buf[len++] = static_cast<char>(c);
   }
-  rewind(file);
-
-  char* data = static_cast<char*>(malloc(static_cast<size_t>(size) + 1));
-  if (!data) {
-    fclose(file);
-    return nullptr;
-  }
-  size_t got = 0;
-  if (size > 0) got = fread(data, 1, static_cast<size_t>(size), file);
-  if (got != static_cast<size_t>(size)) {
-    fclose(file);
-    free(data);
-    return nullptr;
-  }
-  data[size] = '\0';
-  fclose(file);
-  return data;
+  CHECK(!ferror(fp));
+  fclose(fp);
+  buf[len] = 0;
+  wchar_t* out = Utf8ToWideDup(buf);
+  CHECK(out);
+  free(buf);
+  return out;
 }
 
 bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator = 0) {
@@ -206,64 +198,55 @@ bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator =
   return true;
 }
 
-JsValueRef UndefinedValue(const API& api) {
-  JsValueRef out;
-  if (api.JsGetUndefinedValue(&out) != JsNoError) {
-    fatal("JsGetUndefinedValue failed");
+JsValueRef PrintJsValues(JsValueRef* argv, unsigned short argc, void* state, char terminator = 0) {
+  const API* api = reinterpret_cast<const API*>(state);
+  CHECK(api);
+  for (unsigned short i = 1; i < argc; i++) {
+    if (i > 1) printf(" ");
+    PrintJsValue(stdout, *api, argv[i]);
   }
-  return out;
+  if (terminator) fputc(terminator, stdout);
+  fflush(stdout);
+  return api->undefined();
 }
 
 JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
-  const API* api = reinterpret_cast<const API*>(state);
-  if (!api) return nullptr;
-  for (unsigned short i = 1; i < argc; ++i) {
-    if (i > 1) printf(" ");
-    PrintJsValue(stdout, *api, argv[i]);
-  }
-  printf("\n");
-  fflush(stdout);
-  return UndefinedValue(*api);
+  return PrintJsValues(argv, argc, state, '\n');
 }
 
 JsValueRef CALLBACK WriteCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
-  const API* api = reinterpret_cast<const API*>(state);
-  if (!api) return nullptr;
-  for (unsigned short i = 1; i < argc; ++i) {
-    if (i > 1) printf(" ");
-    PrintJsValue(stdout, *api, argv[i]);
-  }
-  fflush(stdout);
-  return UndefinedValue(*api);
+  return PrintJsValues(argv, argc, state);
 }
 
 JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned short, void* state) {
   const API* api = reinterpret_cast<const API*>(state);
-  if (!api) return nullptr;
-
-  char line[8192];
-  if (!fgets(line, sizeof(line), stdin)) return UndefinedValue(*api);
-  line[strcspn(line, "\r\n")] = '\0';
-
-  wchar_t* w = Utf8ToWideDup(line);
-  if (!w) return UndefinedValue(*api);
-
-  JsValueRef res = UndefinedValue(*api);
-  JsErrorCode err = api->JsPointerToString(w, wcslen(w), &res);
-  free(w);
-  return err == JsNoError ? res : UndefinedValue(*api);
+  CHECK(api);
+  size_t len = 0, cap = 64;
+  wchar_t* buf = static_cast<wchar_t*>(malloc(cap * sizeof(*buf)));
+  CHECK(buf);
+  wint_t c;
+  while ((c = fgetwc(stdin)) != WEOF && c != L'\n') {
+    if (c == L'\x04') { c = WEOF; break; }  // ^D / Unix-style EOF
+    if (c == L'\r') continue;
+    if (len + 1 >= cap) {
+      cap *= 2;
+      buf = static_cast<wchar_t*>(realloc(buf, cap * sizeof(*buf)));
+      CHECK(buf);
+    }
+    buf[len++] = static_cast<wchar_t>(c);
+  }
+  if (!len && (c == WEOF || feof(stdin))) { free(buf); return api->undefined(); }
+  buf[len] = 0;
+  JsValueRef res = api->undefined();
+  JsErrorCode err = api->JsPointerToString(buf, len, &res);
+  free(buf);
+  return err == JsNoError ? res : api->undefined();
 }
 
 void SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
   JsPropertyIdRef id = nullptr;
-  JsErrorCode err = api.JsGetPropertyIdFromName(name, &id);
-  if (err != JsNoError || !id) {
-    fatal("JsGetPropertyIdFromName failed (0x%08x)", err);
-  }
-  err = api.JsSetProperty(obj, id, value, true);
-  if (err != JsNoError) {
-    fatal("JsSetProperty failed (0x%08x)", err);
-  }
+  CHECK(api.JsGetPropertyIdFromName(name, &id) == JsNoError && id);
+  CHECK(api.JsSetProperty(obj, id, value, true) == JsNoError);
 }
 
 void InitRuntime(const API& api, bool jitless) {
@@ -273,7 +256,7 @@ void InitRuntime(const API& api, bool jitless) {
   JsErrorCode err = api.edge
       ? api.JsCreateRuntime_edge(attrs, nullptr, &runtime)
       : api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime);
-  if (err != JsNoError || ! runtime) {
+  if (err != JsNoError || !runtime) {
     fatal("JsCreateRuntime failed (0x%08x)", err);
   }
 
@@ -284,81 +267,33 @@ void InitRuntime(const API& api, bool jitless) {
     fatal("JsCreateContext failed (0x%08x)", err);
   }
 
-  err = api.JsSetCurrentContext(context);
-  if (err != JsNoError) {
-    fatal("JsSetCurrentContext failed (0x%08x)", err);
-  }
+  CHECK(api.JsSetCurrentContext(context) == JsNoError);
 }
 
-// Add some WScript-compatible I/O methods useful for running REPL script
+// Add WScript-like I/O methods for REPL
 void InitGlobals(const API& api) {
-  JsValueRef print_fn = nullptr;
-  JsErrorCode err = api.JsCreateFunction(&PrintCallback, const_cast<API*>(&api), &print_fn);
-  if (err != JsNoError || !print_fn) {
-    fatal("JsCreateFunction(print) failed (0x%08x)", err);
-  }
+  JsValueRef global, wscript, stdin_obj, stdout_obj;
+  CHECK(api.JsGetGlobalObject(&global) == JsNoError);
+  CHECK(api.JsCreateObject(&wscript) == JsNoError);
+  CHECK(api.JsCreateObject(&stdin_obj) == JsNoError);
+  CHECK(api.JsCreateObject(&stdout_obj) == JsNoError);
 
-  JsValueRef readline_fn = nullptr;
-  err = api.JsCreateFunction(&ReadLineCallback, const_cast<API*>(&api), &readline_fn);
-  if (err != JsNoError || !readline_fn) {
-    fatal("JsCreateFunction(readline) failed (0x%08x)", err);
-  }
+  JsValueRef print, write, readline;
+  CHECK(api.JsCreateFunction(&PrintCallback, const_cast<API*>(&api), &print) == JsNoError);
+  CHECK(api.JsCreateFunction(&WriteCallback, const_cast<API*>(&api), &write) == JsNoError);
+  CHECK(api.JsCreateFunction(&ReadLineCallback, const_cast<API*>(&api), &readline) == JsNoError);
 
-  JsValueRef write_fn = nullptr;
-  err = api.JsCreateFunction(&WriteCallback, const_cast<API*>(&api), &write_fn);
-  if (err != JsNoError || !write_fn) {
-    fatal("JsCreateFunction(write) failed (0x%08x)", err);
-  }
-
-  JsValueRef global = nullptr;
-  err = api.JsGetGlobalObject(&global);
-  if (err != JsNoError || !global) {
-    fatal("JsGetGlobalObject failed (0x%08x)", err);
-  }
-  SetProp(api, global, L"print", print_fn);
-  SetProp(api, global, L"readline", readline_fn);
-
-  JsValueRef console_obj = nullptr;
-  err = api.JsCreateObject(&console_obj);
-  if (err != JsNoError || !console_obj) {
-    fatal("JsCreateObject failed (0x%08x)", err);
-  }
-  SetProp(api, console_obj, L"log", print_fn);
-  SetProp(api, global, L"console", console_obj);
-
-  JsValueRef stdin_obj = nullptr;
-  err = api.JsCreateObject(&stdin_obj);
-  if (err != JsNoError || !stdin_obj) {
-    fatal("JsCreateObject(StdIn) failed (0x%08x)", err);
-  }
-  SetProp(api, stdin_obj, L"ReadLine", readline_fn);
-
-  JsValueRef stdout_obj = nullptr;
-  err = api.JsCreateObject(&stdout_obj);
-  if (err != JsNoError || !stdout_obj) {
-    fatal("JsCreateObject(StdOut) failed (0x%08x)", err);
-  }
-  SetProp(api, stdout_obj, L"Write", write_fn);
-
-  JsValueRef wscript_obj = nullptr;
-  err = api.JsCreateObject(&wscript_obj);
-  if (err != JsNoError || !wscript_obj) {
-    fatal("JsCreateObject(WScript) failed (0x%08x)", err);
-  }
-  SetProp(api, wscript_obj, L"StdOut", stdout_obj);
-  SetProp(api, global, L"WScript", wscript_obj);
+  SetProp(api, global, L"WScript", wscript);
+  SetProp(api, wscript, L"Echo", print);
+  SetProp(api, wscript, L"StdIn", stdin_obj);
+  SetProp(api, wscript, L"StdOut", stdout_obj);
+  SetProp(api, stdin_obj, L"ReadLine", readline);
+  SetProp(api, stdout_obj, L"Write", write);
 }
 
-bool Eval(const API& api, const char* code_utf8, JsValueRef* out) {
-  if (!out) return false;
-  *out = nullptr;
-  wchar_t* code = Utf8ToWideDup(code_utf8);
-  if (!code) {
-    fprintf(stderr, "Eval err (encoding)\n");
-    return false;
-  }
-  JsErrorCode err = api.JsRunScript(code, JS_SOURCE_CONTEXT_NONE, L"stdin", out);
-  free(code);
+bool RunScript(const API& api, const wchar_t* code) {
+  JsValueRef out;
+  JsErrorCode err = api.JsRunScript(code, JS_SOURCE_CONTEXT_NONE, L"", &out);
   if (err != 0) {
     JsValueRef ex = nullptr;
     if (err == JsErrorScriptCompile) {
@@ -376,8 +311,38 @@ bool Eval(const API& api, const char* code_utf8, JsValueRef* out) {
   return true;
 }
 
-static const char kVersionCode[] = R"(
+static const wchar_t kInitCode[] = LR"(
+  function print() { WScript.Echo('' + Array.prototype.join.call(arguments, ' ')); };
+  var console = { log: print };
+)";
+
+static const wchar_t kVersionCode[] = LR"(
   print(ScriptEngineMajorVersion() + "." + ScriptEngineMinorVersion() + "." + ScriptEngineBuildVersion());
+)";
+
+static const wchar_t kReplCode[] = LR"(
+  (function() {
+    while (true) {
+      WScript.StdOut.Write("> ");
+
+      var __line = WScript.StdIn.ReadLine();
+      if (__line === undefined || __line === null) break;
+      __line = __line.replace(/^\s+|\s+$/g, "");
+      if (__line === "exit" || __line === "quit" || __line == "\x04" /*^D*/) break;
+      if (__line === "") continue;
+
+      try {
+        var __res = eval(__line);
+        if (typeof __res !== "undefined") {
+          print(typeof __res === "object" ? JSON.stringify(__res) : __res);
+        }
+      } catch (__err) {
+        var __name = __err && __err.name;
+        var __msg = __err && __err.message;
+        print("Uncaught " + (__name ? __name + ": " : "") + (__msg || __err));
+      }
+    }
+  })();
 )";
 
 }  // namespace
@@ -388,7 +353,7 @@ int wmain(int argc, wchar_t** argv) {
   bool show_version = false;
   bool jitless = false;
 
-  for (int i = 1; i < argc; ++i) {
+  for (int i = 1; i < argc; i++) {
     if (lstrcmpiW(argv[i], L"--help") == 0 || lstrcmpiW(argv[i], L"-h") == 0) {
       printf("Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
       return 0;
@@ -407,40 +372,20 @@ int wmain(int argc, wchar_t** argv) {
   API api(dll_path);
   InitRuntime(api, jitless);
   InitGlobals(api);
+  CHECK(RunScript(api, kInitCode));
 
+  bool ok = true;
   if (show_version) {
-    JsValueRef out = nullptr;
-    if (!Eval(api, kVersionCode, &out)) exit(1);
+    ok = RunScript(api, kVersionCode);
   } else if (first_script_arg != -1) {
-    for (int i = first_script_arg; i < argc; ++i) {
-      char* code = ReadFileUtf8(argv[i]);
-      if (!code || !*code) {
-        fatal("Failed to read script file");
-      }
-      JsValueRef out = nullptr;
-      if (!Eval(api, code, &out)) exit(1);
+    for (int i = first_script_arg; i < argc && ok; i++) {
+      wchar_t* code = ReadFileUtf8(argv[i]);
+      ok &= RunScript(api, code);
       free(code);
     }
   } else {
-    // REPL
-    char line[8192];
-    for (;;) {
-      printf("> ");
-      fflush(stdout);
-      if (!fgets(line, sizeof(line), stdin)) break;
-      line[strcspn(line, "\r\n")] = '\0';
-      if (line[0] == '\0' || line[0] == '\x04') continue;  /* ^D */
-      if (strcmp(line, "exit") == 0 || strcmp(line, "quit") == 0) break;
-
-      JsValueRef out = nullptr;
-      if (!Eval(api, line, &out) || !out) continue;
-
-      JsValueType vt = JsUndefined;
-      if (api.JsGetValueType(out, &vt) == 0 && vt != JsUndefined) {
-        PrintJsValue(stdout, api, out, '\n');
-      }
-    }
+    ok = RunScript(api, kReplCode);
   }
 
-  exit(0);
+  exit(ok ? 0 : 1);
 }
