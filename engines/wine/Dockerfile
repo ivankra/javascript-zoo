@@ -4,7 +4,7 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-wine
+ARG BASE=jsz-mingw
 FROM $BASE
 
 #ARG REPO=https://gitlab.winehq.org/wine/wine.git

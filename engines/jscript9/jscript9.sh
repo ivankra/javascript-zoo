@@ -13,16 +13,11 @@ download_jscript9_ie11_x64() {
   # JScript 11.0.16428 via IE11 package for Windows 7 x64
   # https://www.microsoft.com/en-us/download/details.aspx?id=41628
   local IE11_URL="https://download.microsoft.com/download/2/9/4/29413f94-2acf-496a-ad9c-8f43598510b7/EIE11_EN-US_MCM_WIN764.EXE"
-  local JSCRIPT9_SHA256="b80642ee98e167d6376612fbbfe9a14f134fbc4de90abd2e1fa321e539b4ed78"
+  local DLL_SHA256="b80642ee98e167d6376612fbbfe9a14f134fbc4de90abd2e1fa321e539b4ed78"
 
   local out_dll="$1"
-  local work_dir="${WORK_DIR:-}"
-  if [[ -n "$work_dir" ]]; then
-    mkdir -p "$work_dir"
-  else
-    work_dir="$(mktemp -d /tmp/jscript9-payload.XXXXXX)"
-    trap "rm -rf '$work_dir'" EXIT
-  fi
+  local work_dir="$(mktemp -d /tmp/jscript9-payload.XXXXXX)"
+  trap "rm -rf '$work_dir'" EXIT
   mkdir -p "$work_dir/stage1" "$work_dir/stage2" "$(dirname "$out_dll")"
 
   curl -fL "$IE11_URL" -o "$work_dir/ie11-installer.exe"
@@ -38,7 +33,7 @@ download_jscript9_ie11_x64() {
   fi
 
   cp -f "$dll" "$out_dll"
-  echo "$JSCRIPT9_SHA256  $out_dll" | sha256sum -c -
+  echo "$DLL_SHA256  $out_dll" | sha256sum -c -
 }
 
 if ! [[ -f "$DIST_DIR/jscript9.dll" ]]; then

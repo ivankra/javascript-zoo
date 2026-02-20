@@ -1,4 +1,5 @@
-# GCC-based build environment.
+# mingw-w64 based coss-compilation build environment targetting x86/x64 Windows.
+# Wine is installed as well for testing, but not strictly required for build.
 #
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
