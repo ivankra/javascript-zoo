@@ -1,5 +1,5 @@
 // Standalone host executable for JSRT API engines (JScript9/Chakra/ChakraCore).
-// Implements basic REPL and script runner.
+// Implements REPL and script runner.
 //
 // Legacy (jscript9.dll in IE9-11) and Edge (chakra.dll/ChakraCore.dll) JSRT API
 // flavors are both supported and autodetected based on DLL name.
@@ -67,6 +67,7 @@ int my_fwprintf(FILE* out, const wchar_t* fmt, ...) {
   return rc;
 }
 
+// fgetwc variant using ReadConsoleW directly
 wint_t my_fgetwc(FILE* fp) {
   HANDLE h = GetStdHandle(STD_INPUT_HANDLE);
   DWORD mode = 0;
@@ -81,11 +82,6 @@ wint_t my_fgetwc(FILE* fp) {
 
 #define fwprintf my_fwprintf
 #define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while(0)
-
-bool endswith_iW(const wchar_t* str, const wchar_t* suffix) {
-  const int n = lstrlenW(str), m = lstrlenW(suffix);
-  return n >= m && lstrcmpiW(str + n - m, suffix) == 0;
-}
 
 typedef void* JsRuntimeHandle;
 typedef void* JsRef;
@@ -122,7 +118,7 @@ typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstru
 // Loads JScript9/Chakra DLL and resolves JSRT API symbols.
 struct API {
   HMODULE dll = nullptr;
-  bool edge = false;      // true if Edge JSRT API, else Legacy JSRT API
+  bool legacy = false;      // true if Legacy JSRT API, else Edge JSRT API
 
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_edge)(JsRuntimeAttributes, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_legacy)(JsRuntimeAttributes, JsRuntimeVersion, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
@@ -147,13 +143,14 @@ struct API {
       fwprintf(stderr, L"LoadLibraryW(\"%ls\") failed", dll_path);
       exit(1);
     }
-    edge = !endswith_iW(dll_path, L"jscript9.dll");
-    if (edge) {
-      Resolve(JsCreateRuntime_edge, "JsCreateRuntime");
-      Resolve(JsCreateContext_edge, "JsCreateContext");
-    } else {
+    const int len = lstrlenW(dll_path);
+    legacy = len >= 12 && lstrcmpiW(dll_path + len - 12, L"jscript9.dll") == 0;
+    if (legacy) {
       Resolve(JsCreateRuntime_legacy, "JsCreateRuntime");
       Resolve(JsCreateContext_legacy, "JsCreateContext");
+    } else {
+      Resolve(JsCreateRuntime_edge, "JsCreateRuntime");
+      Resolve(JsCreateContext_edge, "JsCreateContext");
     }
     Resolve(JsSetCurrentContext, "JsSetCurrentContext");
     Resolve(JsRunScript, "JsRunScript");
@@ -172,9 +169,9 @@ struct API {
   JsValueRef undefined() const { JsValueRef u; CHECK(JsGetUndefinedValue(&u) == JsNoError); return u; }
 
  private:
-  template <typename T> void Resolve(T& fn, const char* symbol) {
-    fn = reinterpret_cast<T>(GetProcAddress(dll, symbol));
-    if (!fn) {
+  template <typename T> void Resolve(T& res, const char* symbol) {
+    res = reinterpret_cast<T>(GetProcAddress(dll, symbol));
+    if (!res) {
       fwprintf(stderr, L"GetProcAddress(dll, \"%hs\") failed", symbol);
       exit(1);
     }
@@ -275,24 +272,24 @@ JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned sho
   return res;
 }
 
-void SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
-  JsPropertyIdRef id = nullptr;
-  CHECK(api.JsGetPropertyIdFromName(name, &id) == JsNoError && id);
-  CHECK(api.JsSetProperty(obj, id, value, true) == JsNoError);
-}
-
 void InitRuntime(const API& api, bool jitless) {
   JsRuntimeHandle runtime = nullptr;
   JsContextRef context = nullptr;
   JsRuntimeAttributes attrs = jitless ? JsRuntimeAttributeDisableNativeCodeGeneration : JsRuntimeAttributeNone;
-  if (api.edge) {
-    CHECK(api.JsCreateRuntime_edge(attrs, nullptr, &runtime) == JsNoError && runtime);
-    CHECK(api.JsCreateContext_edge(runtime, &context) == JsNoError && context);
-  } else {
+  if (api.legacy) {
     CHECK(api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime) == JsNoError && runtime);
     CHECK(api.JsCreateContext_legacy(runtime, nullptr, &context) == JsNoError && context);
+  } else {
+    CHECK(api.JsCreateRuntime_edge(attrs, nullptr, &runtime) == JsNoError && runtime);
+    CHECK(api.JsCreateContext_edge(runtime, &context) == JsNoError && context);
   }
   CHECK(api.JsSetCurrentContext(context) == JsNoError);
+}
+
+void SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
+  JsPropertyIdRef id = nullptr;
+  CHECK(api.JsGetPropertyIdFromName(name, &id) == JsNoError && id);
+  CHECK(api.JsSetProperty(obj, id, value, true) == JsNoError);
 }
 
 // Add WScript-like I/O methods for REPL
