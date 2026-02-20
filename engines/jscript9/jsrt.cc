@@ -23,16 +23,52 @@
 
 namespace {
 
-[[noreturn]] void fatal(const char* fmt, ...) {
-  va_list ap;
-  va_start(ap, fmt);
-  vfprintf(stderr, fmt, ap);
-  va_end(ap);
-  fputc('\n', stderr);
-  exit(1);
+// Custom printf using WriteConsoleW directly, workaround for Wine's broken CRT with unicode strings
+int my_vfwprintf(FILE* out, const wchar_t* fmt, va_list ap) {
+  va_list ap_copy;
+  va_copy(ap_copy, ap);
+  const int len = _vscwprintf(fmt, ap_copy);
+  va_end(ap_copy);
+  if (len < 0) return -1;
+
+  wchar_t* buf = static_cast<wchar_t*>(malloc((static_cast<size_t>(len) + 1) * sizeof(wchar_t)));
+  if (!buf) return -1;
+
+  va_list ap_fmt;
+  va_copy(ap_fmt, ap);
+  const int written_fmt = vswprintf(buf, static_cast<size_t>(len) + 1, fmt, ap_fmt);
+  va_end(ap_fmt);
+  if (written_fmt < 0) {
+    free(buf);
+    return -1;
+  }
+
+  HANDLE h = GetStdHandle(out == stdout ? STD_OUTPUT_HANDLE : STD_ERROR_HANDLE);
+  if (h != INVALID_HANDLE_VALUE) {
+    DWORD mode = 0;
+    if (GetFileType(h) == FILE_TYPE_CHAR && GetConsoleMode(h, &mode)) {
+      DWORD written = 0;
+      bool ok = (written_fmt == 0) || WriteConsoleW(h, buf, static_cast<DWORD>(written_fmt), &written, nullptr);
+      free(buf);
+      return ok && written == static_cast<DWORD>(written_fmt) ? written_fmt : -1;
+    }
+  }
+
+  const int ok = fputws(buf, out);
+  free(buf);
+  return ok == WEOF ? -1 : written_fmt;
 }
 
-#define CHECK(cond) do { if (!(cond)) { fatal("CHECK(\"%s\") failed\n", #cond); } } while(0)
+int my_fwprintf(FILE* out, const wchar_t* fmt, ...) {
+  va_list ap;
+  va_start(ap, fmt);
+  int rc = my_vfwprintf(out, fmt, ap);
+  va_end(ap);
+  return rc;
+}
+
+#define fwprintf my_fwprintf
+#define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while(0)
 
 bool endswith_iW(const wchar_t* str, const wchar_t* suffix) {
   const int n = lstrlenW(str), m = lstrlenW(suffix);
@@ -126,7 +162,10 @@ struct API {
  private:
   template <typename T> void Resolve(T& fn, const char* symbol) {
     fn = reinterpret_cast<T>(GetProcAddress(dll, symbol));
-    if (!fn) fatal("GetProcAddress(dll, \"%s\") failed", symbol);
+    if (!fn) {
+      fwprintf(stderr, L"GetProcAddress(dll, \"%hs\") failed", symbol);
+      exit(1);
+    }
   }
 };
 
@@ -176,24 +215,8 @@ bool PrintJsValue(FILE* out, const API& api, JsValueRef value, wchar_t terminato
   const wchar_t* buf = nullptr;
   size_t len = 0;
   if (api.JsStringToPointer(s, &buf, &len) != 0 || !buf) return false;
-
-  // Hack to get wine to properly output unicode strings
-  if (out == stdout) {
-    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-    DWORD mode = 0;
-    if (h != INVALID_HANDLE_VALUE && GetFileType(h) == FILE_TYPE_CHAR && GetConsoleMode(h, &mode)) {
-      if (len > static_cast<size_t>(MAXDWORD)) return false;
-      DWORD written = 0;
-      if (len && !WriteConsoleW(h, buf, static_cast<DWORD>(len), &written, nullptr)) return false;
-      if (written != static_cast<DWORD>(len)) return false;
-      if (terminator && !WriteConsoleW(h, &terminator, 1, nullptr, nullptr)) return false;
-      return true;
-    }
-  }
-
-  fwprintf(out, L"%.*ls", len, buf);
-  if (terminator) fputwc(terminator, out);
-  fflush(out);
+  if (fwprintf(out, L"%.*ls", static_cast<int>(len), buf) < 0) return false;
+  if (terminator && fwprintf(out, L"%lc", terminator) < 0) return false;
   return true;
 }
 
@@ -286,14 +309,14 @@ bool RunScript(const API& api, const wchar_t* code) {
   if (err != 0) {
     JsValueRef ex = nullptr;
     if (err == JsErrorScriptCompile) {
-      fprintf(stderr, "Compile error\n");
+      fwprintf(stderr, L"Compile error\n");
     } else if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
-      fprintf(stderr, "Uncaught ");
-      if (!PrintJsValue(stderr, api, ex, '\n')) {
-        fprintf(stderr, "exception\n");
+      fwprintf(stderr, L"Uncaught ");
+      if (!PrintJsValue(stderr, api, ex, L'\n')) {
+        fwprintf(stderr, L"exception\n");
       }
     } else {
-      fprintf(stderr, "JsRunScript failed (0x%08x)\n", err);
+      fwprintf(stderr, L"JsRunScript failed (0x%08x)\n", err);
     }
     return false;
   }
@@ -344,7 +367,7 @@ int wmain(int argc, wchar_t** argv) {
 
   for (int i = 1; i < argc; i++) {
     if (lstrcmpiW(argv[i], L"--help") == 0 || lstrcmpiW(argv[i], L"-h") == 0) {
-      fprintf(stderr, "Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
+      fwprintf(stderr, L"Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
       return 0;
     } else if (lstrcmpiW(argv[i], L"--dll") == 0 && i + 1 < argc) {
       dll_path = argv[++i];
