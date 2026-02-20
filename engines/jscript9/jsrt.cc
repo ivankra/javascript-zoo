@@ -164,44 +164,29 @@ struct API {
   }
 };
 
-wchar_t* Utf8ToWideDup(const char* in) {
-  if (!in) return nullptr;
-  int n = MultiByteToWideChar(CP_UTF8, 0, in, -1, nullptr, 0);
-  if (n <= 0) return nullptr;
-  wchar_t* out = static_cast<wchar_t*>(malloc(static_cast<size_t>(n) * sizeof(wchar_t)));
-  if (!out) return nullptr;
-  if (MultiByteToWideChar(CP_UTF8, 0, in, -1, out, n) <= 0) {
-    free(out);
-    return nullptr;
-  }
-  return out;
-}
-
 wchar_t* ReadFileUtf8(const wchar_t* path) {
-  FILE* fp = _wfopen(path, L"rb");
-  if (!fp) {
+  HANDLE h = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+  if (h == INVALID_HANDLE_VALUE) {
     fwprintf(stderr, L"Cannot open: %ls\n", path);
     exit(1);
   }
-  size_t len = 0, cap = 256;
-  char* buf = static_cast<char*>(malloc(cap));
+  LARGE_INTEGER size = {};
+  CHECK(GetFileSizeEx(h, &size) != 0);
+  CHECK(size.QuadPart >= 0 && size.QuadPart < 0x7FFFFFFF);
+  int len = static_cast<int>(size.QuadPart);
+  char* buf = static_cast<char*>(malloc(len + 1));
   CHECK(buf);
-  for (int c; (c = fgetc(fp)) != EOF;) {
-    if (c == '\r') continue;
-    if (len + 1 >= cap) {
-      cap *= 2;
-      buf = static_cast<char*>(realloc(buf, cap));
-      CHECK(buf);
-    }
-    buf[len++] = static_cast<char>(c);
-  }
-  CHECK(!ferror(fp));
-  fclose(fp);
+  DWORD got = 0;
+  CHECK(ReadFile(h, buf, len, &got, nullptr) && got == len);
+  CloseHandle(h);
   buf[len] = 0;
-  wchar_t* out = Utf8ToWideDup(buf);
-  CHECK(out);
+  int wlen = MultiByteToWideChar(CP_UTF8, MB_ERR_INVALID_CHARS, buf, len, nullptr, 0);
+  CHECK(wlen > 0 || len == 0);
+  wchar_t* wbuf = static_cast<wchar_t*>(calloc(wlen + 1, sizeof(wchar_t)));
+  CHECK(wbuf);
+  CHECK(MultiByteToWideChar(CP_UTF8, MB_ERR_INVALID_CHARS, buf, len, wbuf, wlen) == wlen);
   free(buf);
-  return out;
+  return wbuf;
 }
 
 void PrintJsValue(FILE* fp, const API& api, JsValueRef value, wchar_t terminator = 0) {
