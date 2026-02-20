@@ -47,7 +47,7 @@ if ! [[ -f "$DIST_DIR/jscript9.dll" ]]; then
   download_jscript9_ie11_x64 "$DIST_DIR/jscript9.dll"
 fi
 
-if [[ "$1" == --download ]]; then
+if [[ "${1:-}" == --download ]]; then
   exit 0
 fi
 

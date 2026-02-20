@@ -11,7 +11,7 @@ JavaScript engine of Internet Explorer 9.0 – 11.0.
 * Features:   deferred parsing
 * JIT:        arm, x86/x64
 * GC:         concurrent GC
-* DLL:        jscript9.dll, jscript9Legacy.dll
+* DLL:        jscript9.dll (JSRT API), jscript9Legacy.dll (IActiveScript COM API)
 
 ## History
 
