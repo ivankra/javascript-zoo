@@ -67,6 +67,18 @@ int my_fwprintf(FILE* out, const wchar_t* fmt, ...) {
   return rc;
 }
 
+wint_t my_fgetwc(FILE* fp) {
+  HANDLE h = GetStdHandle(STD_INPUT_HANDLE);
+  DWORD mode = 0;
+  if (h == INVALID_HANDLE_VALUE || GetFileType(h) != FILE_TYPE_CHAR || !GetConsoleMode(h, &mode)) {
+    return fgetwc(fp);
+  }
+  wchar_t ch = 0;
+  DWORD read = 0;
+  if (!ReadConsoleW(h, &ch, 1, &read, nullptr) || read == 0) return WEOF;
+  return static_cast<wint_t>(ch);
+}
+
 #define fwprintf my_fwprintf
 #define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while(0)
 
@@ -244,7 +256,7 @@ JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned sho
   wchar_t* buf = static_cast<wchar_t*>(malloc(cap * sizeof(*buf)));
   CHECK(buf);
   wint_t c;
-  while ((c = fgetwc(stdin)) != WEOF && c != L'\n') {
+  while ((c = my_fgetwc(stdin)) != WEOF && c != L'\n') {
     if (c == L'\x04') { c = WEOF; break; }  // ^D / Unix-style EOF
     if (c == L'\r') continue;
     if (len + 1 >= cap) {
@@ -254,12 +266,13 @@ JsValueRef CALLBACK ReadLineCallback(JsValueRef, bool, JsValueRef*, unsigned sho
     }
     buf[len++] = static_cast<wchar_t>(c);
   }
-  if (!len && (c == WEOF || feof(stdin))) { free(buf); return api->undefined(); }
-  buf[len] = 0;
   JsValueRef res = api->undefined();
-  JsErrorCode err = api->JsPointerToString(buf, len, &res);
+  if (len > 0 || c != WEOF) {
+    buf[len] = 0;
+    CHECK(api->JsPointerToString(buf, len, &res) == JsNoError);
+  }
   free(buf);
-  return err == JsNoError ? res : api->undefined();
+  return res;
 }
 
 void SetProp(const API& api, JsValueRef obj, const wchar_t* name, JsValueRef value) {
