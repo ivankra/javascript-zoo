@@ -126,7 +126,7 @@ struct API {
   API(const wchar_t* dll_path, bool legacy) : legacy(legacy) {
     dll = LoadLibraryW(dll_path);
     if (!dll) {
-      fwprintf(stderr, L"LoadLibraryW(\"%ls\") failed", dll_path);
+      fwprintf(stderr, L"LoadLibraryW(\"%ls\") failed (0x%.8x)\n", dll_path, GetLastError());
       exit(1);
     }
     if (legacy) {
@@ -156,7 +156,7 @@ struct API {
   template <typename T> void Resolve(T& res, const char* symbol) {
     FARPROC addr = GetProcAddress(dll, symbol);
     if (!addr) {
-      fwprintf(stderr, L"GetProcAddress for \"%hs\" failed", symbol);
+      fwprintf(stderr, L"GetProcAddress for \"%hs\" failed\n", symbol);
       exit(1);
     }
     memcpy(&res, &addr, sizeof(res));

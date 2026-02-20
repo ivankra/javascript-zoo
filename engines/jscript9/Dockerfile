@@ -7,23 +7,8 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-debian
+ARG BASE=jsz-wine
 FROM $BASE
-
-RUN dpkg --add-architecture i386 && \
-    apt-get update -y && \
-    apt-get install -y --no-install-recommends \
-      binutils-mingw-w64-i686 \
-      g++-mingw-w64-i686 \
-      g++-mingw-w64-x86-64 \
-      g++-multilib \
-      gcc-mingw-w64-i686 \
-      gcc-mingw-w64-x86-64 \
-      gcc-multilib \
-      libc6-dev-i386 \
-      libxkbcommon-dev \
-      cabextract p7zip-full \
-      wine wine32 wine64
 
 WORKDIR /src
 
