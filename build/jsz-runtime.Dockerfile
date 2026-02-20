@@ -88,7 +88,7 @@ RUN if grep -q /sbin/vminitd /proc/cmdline; then \
       apt-get install -y --no-install-recommends wine wine64 libwine; \
     else \
       dpkg --add-architecture i386 && \
-      apt-get update -y \
+      apt-get update -y && \
       apt-get install -y --no-install-recommends wine wine32 wine64 libwine libwine:i386; \
     fi
 RUN if [ `uname -m` = x86_64 ]; then \
