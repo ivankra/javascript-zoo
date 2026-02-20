@@ -2,13 +2,13 @@
 // Implements REPL and script runner.
 //
 // Legacy (jscript9.dll in IE9-11) and Edge (chakra.dll/ChakraCore.dll) JSRT API
-// flavors are both supported and autodetected based on DLL name.
+// flavors are both supported, autodetected based on DLL name.
 //
 // References:
 //   * https://blogs.windows.com/msedgedev/2015/05/18/using-chakra-for-scripting-applications-across-windows-10/
 //   * https://github.com/chakra-core/ChakraCore/blob/master/lib/Jsrt/ChakraCommon.h
 //
-// Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]
+// Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--legacy/--edge] [--version] [script.js ...]
 //
 // SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
@@ -104,7 +104,7 @@ typedef JsValueRef(CALLBACK* JsNativeFunction)(JsValueRef callee, bool isConstru
 // Loads JScript9/Chakra DLL and resolves JSRT API symbols.
 struct API {
   HMODULE dll = nullptr;
-  bool legacy = false;      // true if Legacy JSRT API, else Edge JSRT API
+  bool legacy = false;    // true if Legacy JSRT API, else Edge JSRT API
 
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_legacy)(JsRuntimeAttributes, JsRuntimeVersion, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsCreateRuntime_edge)(JsRuntimeAttributes, JsThreadServiceCallback, JsRuntimeHandle*) = nullptr;
@@ -123,14 +123,12 @@ struct API {
   JsErrorCode(STDAPICALLTYPE* JsSetProperty)(JsValueRef, JsPropertyIdRef, JsValueRef, bool) = nullptr;
   JsErrorCode(STDAPICALLTYPE* JsStringToPointer)(JsValueRef, const wchar_t**, size_t*) = nullptr;
 
-  explicit API(const wchar_t* dll_path) {
+  API(const wchar_t* dll_path, bool legacy) : legacy(legacy) {
     dll = LoadLibraryW(dll_path);
     if (!dll) {
       fwprintf(stderr, L"LoadLibraryW(\"%ls\") failed", dll_path);
       exit(1);
     }
-    const int len = lstrlenW(dll_path);
-    legacy = len >= 12 && lstrcmpiW(dll_path + len - 12, L"jscript9.dll") == 0;
     if (legacy) {
       Resolve(JsCreateRuntime_legacy, "JsCreateRuntime");
       Resolve(JsCreateContext_legacy, "JsCreateContext");
@@ -156,11 +154,12 @@ struct API {
 
  private:
   template <typename T> void Resolve(T& res, const char* symbol) {
-    res = reinterpret_cast<T>(GetProcAddress(dll, symbol));
-    if (!res) {
-      fwprintf(stderr, L"GetProcAddress(dll, \"%hs\") failed", symbol);
+    FARPROC addr = GetProcAddress(dll, symbol);
+    if (!addr) {
+      fwprintf(stderr, L"GetProcAddress for \"%hs\" failed", symbol);
       exit(1);
     }
+    memcpy(&res, &addr, sizeof(res));
   }
 };
 
@@ -177,7 +176,7 @@ wchar_t* ReadFileUtf8(const wchar_t* path) {
   char* buf = static_cast<char*>(malloc(len + 1));
   CHECK(buf);
   DWORD got = 0;
-  CHECK(ReadFile(h, buf, len, &got, nullptr) && got == len);
+  CHECK(ReadFile(h, buf, len, &got, nullptr) && got == static_cast<DWORD>(len));
   CloseHandle(h);
   buf[len] = 0;
   int wlen = MultiByteToWideChar(CP_UTF8, MB_ERR_INVALID_CHARS, buf, len, nullptr, 0);
@@ -194,7 +193,7 @@ void PrintJsValue(FILE* fp, const API& api, JsValueRef value, wchar_t terminator
   const wchar_t* buf = nullptr;
   size_t len = 0;
   if (api.JsConvertValueToString(value, &str) == JsNoError && api.JsStringToPointer(str, &buf, &len) == JsNoError) {
-    fwprintf(fp, L"%.*ls", len, buf);
+    fwprintf(fp, L"%.*ls", static_cast<int>(len), buf);
   }
   if (terminator) {
     fwprintf(fp, L"%lc", terminator);
@@ -248,7 +247,9 @@ void InitRuntime(const API& api, bool jitless) {
   JsContextRef context = nullptr;
   JsRuntimeAttributes attrs = jitless ? JsRuntimeAttributeDisableNativeCodeGeneration : JsRuntimeAttributeNone;
   if (api.legacy) {
-    CHECK(api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime) == JsNoError && runtime);
+    CHECK((api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime) == JsNoError ||
+           api.JsCreateRuntime_legacy(attrs, JsRuntimeVersion11, nullptr, &runtime) == JsNoError ||
+           api.JsCreateRuntime_legacy(attrs, JsRuntimeVersion10, nullptr, &runtime) == JsNoError) && runtime);
     CHECK(api.JsCreateContext_legacy(runtime, nullptr, &context) == JsNoError && context);
   } else {
     CHECK(api.JsCreateRuntime_edge(attrs, nullptr, &runtime) == JsNoError && runtime);
@@ -311,6 +312,7 @@ static const wchar_t kVersionCode[] = LR"(
   WScript.Echo(ScriptEngineMajorVersion() + '.' + ScriptEngineMinorVersion() + '.' + ScriptEngineBuildVersion());
 )";
 
+// Reuses engines/jscript/repl.js
 #include "kReplCode.inc"
 
 }  // namespace
@@ -318,12 +320,13 @@ static const wchar_t kVersionCode[] = LR"(
 int wmain(int argc, wchar_t** argv) {
   const wchar_t* dll_path = L"jscript9.dll";
   int first_script_arg = -1;
+  int legacy = -1;
   bool show_version = false;
   bool jitless = false;
 
   for (int i = 1; i < argc; i++) {
     if (lstrcmpiW(argv[i], L"--help") == 0 || lstrcmpiW(argv[i], L"-h") == 0) {
-      fwprintf(stderr, L"Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
+      fwprintf(stderr, L"Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--legacy/--edge] [--version] [script.js ...]\n");
       return 0;
     } else if (lstrcmpiW(argv[i], L"--dll") == 0 && i + 1 < argc) {
       dll_path = argv[++i];
@@ -331,13 +334,22 @@ int wmain(int argc, wchar_t** argv) {
       show_version = true;
     } else if (lstrcmpiW(argv[i], L"--jitless") == 0 || lstrcmpiW(argv[i], L"--no-jit") == 0) {
       jitless = true;
+    } else if (lstrcmpiW(argv[i], L"--legacy") == 0) {
+      legacy = 1;
+    } else if (lstrcmpiW(argv[i], L"--edge") == 0) {
+      legacy = 0;
     } else {
       first_script_arg = i;
       break;
     }
   }
 
-  API api(dll_path);
+  if (legacy == -1) {
+    const int len = lstrlenW(dll_path);
+    legacy = len >= 12 && lstrcmpiW(dll_path + len - 12, L"jscript9.dll") == 0;
+  }
+
+  API api(dll_path, legacy);
   InitRuntime(api, jitless);
   InitGlobals(api);
   CHECK(RunScript(api, kInitCode));
