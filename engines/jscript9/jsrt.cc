@@ -143,20 +143,6 @@ wchar_t* Utf8ToWideDup(const char* in) {
   return out;
 }
 
-char* WideToUtf8Dup(const wchar_t* in, size_t in_len) {
-  if (!in) return nullptr;
-  int n = WideCharToMultiByte(CP_UTF8, 0, in, static_cast<int>(in_len), nullptr, 0, nullptr, nullptr);
-  if (n <= 0) return nullptr;
-  char* out = static_cast<char*>(malloc(static_cast<size_t>(n) + 1));
-  if (!out) return nullptr;
-  if (WideCharToMultiByte(CP_UTF8, 0, in, static_cast<int>(in_len), out, n, nullptr, nullptr) <= 0) {
-    free(out);
-    return nullptr;
-  }
-  out[n] = '\0';
-  return out;
-}
-
 wchar_t* ReadFileUtf8(const wchar_t* path) {
   FILE* fp = _wfopen(path, L"rb");
   if (!fp) {
@@ -190,11 +176,8 @@ bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator =
   const wchar_t* w = nullptr;
   size_t len = 0;
   if (api.JsStringToPointer(s, &w, &len) != 0 || !w) return false;
-  char* utf8 = WideToUtf8Dup(w, len);
-  if (!utf8) return false;
-  fprintf(out, "%s", utf8);
-  if (terminator) fputc(terminator, out);
-  free(utf8);
+  fwprintf(out, L"%.*ls", static_cast<int>(len), w);
+  if (terminator) fputwc(static_cast<wchar_t>(terminator), out);
   return true;
 }
 
