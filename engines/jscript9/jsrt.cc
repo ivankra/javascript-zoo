@@ -173,10 +173,10 @@ wchar_t* ReadFileUtf8(const wchar_t* path) {
 bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator = 0) {
   JsValueRef s = nullptr;
   if (api.JsConvertValueToString(value, &s) != 0 || !s) return false;
-  const wchar_t* w = nullptr;
+  const wchar_t* buf = nullptr;
   size_t len = 0;
-  if (api.JsStringToPointer(s, &w, &len) != 0 || !w) return false;
-  fwprintf(out, L"%.*ls", static_cast<int>(len), w);
+  if (api.JsStringToPointer(s, &buf, &len) != 0 || !buf) return false;
+  for (size_t i = 0; i < len; i++) fputwc(buf[i], out);
   if (terminator) fputwc(static_cast<wchar_t>(terminator), out);
   return true;
 }
@@ -185,10 +185,10 @@ JsValueRef PrintJsValues(JsValueRef* argv, unsigned short argc, void* state, cha
   const API* api = reinterpret_cast<const API*>(state);
   CHECK(api);
   for (unsigned short i = 1; i < argc; i++) {
-    if (i > 1) printf(" ");
+    if (i > 1) fputwc(L' ', stdout);
     PrintJsValue(stdout, *api, argv[i]);
   }
-  if (terminator) fputc(terminator, stdout);
+  if (terminator) fputwc(static_cast<wchar_t>(terminator), stdout);
   fflush(stdout);
   return api->undefined();
 }
