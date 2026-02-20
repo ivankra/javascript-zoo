@@ -32,6 +32,8 @@ RUN chmod a+rx /tmp/download-jscript9.sh && /tmp/download-jscript9.sh /dist/jscr
 WORKDIR /src
 
 COPY engines/jscript9/jsrt.cc .
+COPY engines/jscript9/repl.js .
+RUN { echo 'static const wchar_t kReplCode[] = LR"(\n'; cat repl.js; echo '\n)";\n'; } >kReplCode.inc
 RUN i686-w64-mingw32-g++ -o /dist/jscript9-dist/jsrt32.exe -Os -s -fno-rtti -fno-exceptions -municode jsrt.cc -static-libgcc -static-libstdc++
 RUN x86_64-w64-mingw32-g++ -o /dist/jscript9-dist/jsrt64.exe -Os -s -fno-rtti -fno-exceptions -municode jsrt.cc -static-libgcc -static-libstdc++
 
