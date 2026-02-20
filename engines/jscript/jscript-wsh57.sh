@@ -14,6 +14,8 @@
 # WSH/JScript binaries from microsoft.com into 32-bit wine prefix ~/.wine-wsh57.
 # Due to licensing, these binaries are not redistributable.
 #
+# Note: JScript 5.7 is the latest available version in winetricks.
+#
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
@@ -61,7 +63,6 @@ install_wine() {
   fi
 }
 
-# Note: although JScript 5.8 is the last release, only 5.7 is available in winetricks
 install_wsh57() {
   local install_marker="$WINEPREFIX/wsh57-installed"
   if [[ -f "$install_marker" ]]; then

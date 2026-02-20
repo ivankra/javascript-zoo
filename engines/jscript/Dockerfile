@@ -15,7 +15,7 @@ RUN i686-w64-mingw32-g++ -o /dist/jscript-dist/jscript32.exe -Wall -Os -s -fno-r
 RUN x86_64-w64-mingw32-g++ -o /dist/jscript-dist/jscript64.exe -Wall -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc -static-libstdc++
 
 COPY engines/jscript/jscript.sh /dist/jscript
-RUN /dist/jscript --version >version
+RUN /dist/jscript --version | tr -d '\r' >version
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jscript \

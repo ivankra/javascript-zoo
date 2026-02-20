@@ -82,11 +82,14 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
     bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
     rm -f /tmp/dotnet-install.sh
 
-# Install Wine on amd64
-RUN if [ `uname -m` = x86_64 ]; then \
+# Install Wine on amd64.
+RUN if grep -q /sbin/vminitd /proc/cmdline; then \
+      # macOS containerization kernel disables CONFIG_IA32_EMULATION, win32 won't work \
+      apt-get install -y --no-install-recommends wine wine64 libwine; \
+    else \
       dpkg --add-architecture i386 && \
-      apt-get update -y && \
-      apt-get install -y --no-install-recommends cabextract wine wine32 wine64; \
+      apt-get update -y \
+      apt-get install -y --no-install-recommends wine wine32 wine64 libwine libwine:i386; \
     fi
 RUN if [ `uname -m` = x86_64 ]; then \
       wineboot --init && \

@@ -1,5 +1,4 @@
 # mingw-w64 based coss-compilation build environment targetting x86/x64 Windows.
-# Wine is installed as well for testing, but not strictly required for build.
 #
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
@@ -7,17 +6,24 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-RUN dpkg --add-architecture i386 && \
-    apt-get update -y && \
+RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-      cabextract \
+      g++-multilib \
       g++-mingw-w64-i686 \
       g++-mingw-w64-x86-64 \
-      g++-multilib \
-      p7zip-full \
-      wine \
-      wine32 \
-      wine64
+      cabextract \
+      p7zip-full
+
+
+# Wine not required for build, but install anyway for testing convenience.
+RUN if grep -q /sbin/vminitd /proc/cmdline; then \
+      # macOS containerization kernel disables CONFIG_IA32_EMULATION, win32 won't work \
+      apt-get install -y --no-install-recommends wine wine64 libwine; \
+    else \
+      dpkg --add-architecture i386 && \
+      apt-get update -y \
+      apt-get install -y --no-install-recommends wine wine32 wine64 libwine libwine:i386; \
+    fi
 
 RUN if [ `uname -m` = x86_64 ]; then \
       wineboot --init && \

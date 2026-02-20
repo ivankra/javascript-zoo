@@ -327,7 +327,7 @@ class ScriptSite : public IActiveScriptSite {
     err->GetSourcePosition(nullptr, &line, nullptr);
     EXCEPINFO ex = {};
     err->GetExceptionInfo(&ex);
-    fwprintf(stderr, L"Line %lu: %ls\n", line + 1, L"%ls", ex.bstrDescription);
+    fwprintf(stderr, L"Line %lu: %ls\n", line + 1, ex.bstrDescription);
     SysFreeString(ex.bstrSource);
     SysFreeString(ex.bstrDescription);
     SysFreeString(ex.bstrHelpFile);
