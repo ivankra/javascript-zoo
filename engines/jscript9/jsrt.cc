@@ -170,31 +170,44 @@ wchar_t* ReadFileUtf8(const wchar_t* path) {
   return out;
 }
 
-bool PrintJsValue(FILE* out, const API& api, JsValueRef value, char terminator = 0) {
+bool PrintJsValue(FILE* out, const API& api, JsValueRef value, wchar_t terminator = 0) {
   JsValueRef s = nullptr;
   if (api.JsConvertValueToString(value, &s) != 0 || !s) return false;
   const wchar_t* buf = nullptr;
   size_t len = 0;
   if (api.JsStringToPointer(s, &buf, &len) != 0 || !buf) return false;
-  for (size_t i = 0; i < len; i++) fputwc(buf[i], out);
-  if (terminator) fputwc(static_cast<wchar_t>(terminator), out);
+
+  // Hack to get wine to properly output unicode strings
+  if (out == stdout) {
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD mode = 0;
+    if (h != INVALID_HANDLE_VALUE && GetFileType(h) == FILE_TYPE_CHAR && GetConsoleMode(h, &mode)) {
+      if (len > static_cast<size_t>(MAXDWORD)) return false;
+      DWORD written = 0;
+      if (len && !WriteConsoleW(h, buf, static_cast<DWORD>(len), &written, nullptr)) return false;
+      if (written != static_cast<DWORD>(len)) return false;
+      if (terminator && !WriteConsoleW(h, &terminator, 1, nullptr, nullptr)) return false;
+      return true;
+    }
+  }
+
+  fwprintf(out, L"%.*ls", len, buf);
+  if (terminator) fputwc(terminator, out);
+  fflush(out);
   return true;
 }
 
-JsValueRef PrintJsValues(JsValueRef* argv, unsigned short argc, void* state, char terminator = 0) {
+JsValueRef PrintJsValues(JsValueRef* argv, unsigned short argc, void* state, wchar_t terminator = 0) {
   const API* api = reinterpret_cast<const API*>(state);
   CHECK(api);
   for (unsigned short i = 1; i < argc; i++) {
-    if (i > 1) fputwc(L' ', stdout);
-    PrintJsValue(stdout, *api, argv[i]);
+    PrintJsValue(stdout, *api, argv[i], i + 1 == argc ? terminator : L' ');
   }
-  if (terminator) fputwc(static_cast<wchar_t>(terminator), stdout);
-  fflush(stdout);
   return api->undefined();
 }
 
 JsValueRef CALLBACK PrintCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
-  return PrintJsValues(argv, argc, state, '\n');
+  return PrintJsValues(argv, argc, state, L'\n');
 }
 
 JsValueRef CALLBACK WriteCallback(JsValueRef, bool, JsValueRef* argv, unsigned short argc, void* state) {
@@ -236,20 +249,13 @@ void InitRuntime(const API& api, bool jitless) {
   JsRuntimeHandle runtime = nullptr;
   JsContextRef context = nullptr;
   JsRuntimeAttributes attrs = jitless ? JsRuntimeAttributeDisableNativeCodeGeneration : JsRuntimeAttributeNone;
-  JsErrorCode err = api.edge
-      ? api.JsCreateRuntime_edge(attrs, nullptr, &runtime)
-      : api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime);
-  if (err != JsNoError || !runtime) {
-    fatal("JsCreateRuntime failed (0x%08x)", err);
+  if (api.edge) {
+    CHECK(api.JsCreateRuntime_edge(attrs, nullptr, &runtime) == JsNoError && runtime);
+    CHECK(api.JsCreateContext_edge(runtime, &context) == JsNoError && context);
+  } else {
+    CHECK(api.JsCreateRuntime_legacy(attrs, JsRuntimeVersionEdge, nullptr, &runtime) == JsNoError && runtime);
+    CHECK(api.JsCreateContext_legacy(runtime, nullptr, &context) == JsNoError && context);
   }
-
-  err = api.edge
-      ? api.JsCreateContext_edge(runtime, &context)
-      : api.JsCreateContext_legacy(runtime, nullptr, &context);
-  if (err != JsNoError || !context) {
-    fatal("JsCreateContext failed (0x%08x)", err);
-  }
-
   CHECK(api.JsSetCurrentContext(context) == JsNoError);
 }
 
@@ -338,7 +344,7 @@ int wmain(int argc, wchar_t** argv) {
 
   for (int i = 1; i < argc; i++) {
     if (lstrcmpiW(argv[i], L"--help") == 0 || lstrcmpiW(argv[i], L"-h") == 0) {
-      printf("Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
+      fprintf(stderr, "Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--version] [script.js ...]\n");
       return 0;
     } else if (lstrcmpiW(argv[i], L"--dll") == 0 && i + 1 < argc) {
       dll_path = argv[++i];
