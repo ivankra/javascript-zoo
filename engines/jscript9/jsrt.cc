@@ -16,10 +16,10 @@
 #include <windows.h>
 
 #include <cstdarg>
-#include <cwchar>
-#include <cstring>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
+#include <cwchar>
 
 namespace {
 
@@ -81,7 +81,7 @@ wint_t win_fgetwc(FILE* fp) {
 }
 
 #define fwprintf win_fwprintf
-#define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while(0)
+#define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while (0)
 
 typedef void* JsRuntimeHandle;
 typedef void* JsRef;
@@ -357,14 +357,14 @@ int wmain(int argc, wchar_t** argv) {
   bool ok = true;
   if (show_version) {
     ok = RunScript(api, kVersionCode);
-  } else if (first_script_arg != -1) {
+  } else if (first_script_arg == -1) {
+    ok = RunScript(api, kReplCode);
+  } else {
     for (int i = first_script_arg; i < argc && ok; i++) {
       wchar_t* code = ReadFileUtf8(argv[i]);
       ok &= RunScript(api, code);
       free(code);
     }
-  } else {
-    ok = RunScript(api, kReplCode);
   }
 
   exit(ok ? 0 : 1);

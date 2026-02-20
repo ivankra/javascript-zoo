@@ -39,7 +39,7 @@ download_jscript9_ie11_x64() {
 if ! [[ -f "$DIST_DIR/jscript9.dll" ]]; then
   echo "Downloading jscript9.dll" >&2
   mkdir -p "$DIST_DIR"
-  download_jscript9_ie11_x64 "$DIST_DIR/jscript9.dll"
+  download_jscript9_ie11_x64 "$DIST_DIR/jscript9.dll" >&2
 fi
 
 if [[ "${1:-}" == --download ]]; then
