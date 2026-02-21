@@ -33,9 +33,18 @@ RUN mkdir -p /dist/wine-dist && \
     strip -o /dist/wine-dist/jscript32.dll build32/dlls/jscript/i386-windows/jscript.dll && \
     strip -o /dist/wine-dist/jscript64.dll build64/dlls/jscript/x86_64-windows/jscript.dll
 
-# Copy DLL host binaries from engines/jscript/
-COPY --from=jsz-jscript /dist/jscript-dist/jscript32.exe /dist/wine-dist/
-COPY --from=jsz-jscript /dist/jscript-dist/jscript64.exe /dist/wine-dist/
+# Build DLL host binaries
+COPY engines/jscript/jscript.cc .
+COPY engines/jscript/repl.js .
+RUN { echo 'static const wchar_t kReplCode[] = LR"(\n'; cat repl.js; echo '\n)";\n'; } >kReplCode.inc
+RUN mkdir -p /dist/wine-dist
+RUN i686-w64-mingw32-g++ -o /dist/wine-dist/jscript32.exe -Wall -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc -static-libstdc++
+RUN x86_64-w64-mingw32-g++ -o /dist/wine-dist/jscript64.exe -Wall -Os -s -fno-rtti -fno-exceptions -municode jscript.cc -lole32 -loleaut32 -luuid -static-libgcc -static-libstdc++
+
+# TODO: copy DLL host binaries from engines/jscript/
+# Broken under Apple's containerization - misresolves COPY --from=<local tag>
+#COPY --from=jsz-jscript /dist/jscript-dist/jscript32.exe /dist/wine-dist/
+#COPY --from=jsz-jscript /dist/jscript-dist/jscript64.exe /dist/wine-dist/
 
 # Use 64-bit library/executable by default for compatibility with default
 # macOS containerization's amd64 kernel which doesn't run 32-bit binaries.
