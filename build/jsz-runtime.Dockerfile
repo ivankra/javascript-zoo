@@ -82,11 +82,23 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
     bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
     rm -f /tmp/dotnet-install.sh
 
-# Wine packages for jscript
+# Install Wine on amd64 for jscript family of engines
 RUN if [ `uname -m` = x86_64 ]; then \
-      dpkg --add-architecture i386 && \
-      apt-get update -y && \
-      apt-get install -y --no-install-recommends cabextract wine wine32 wine64; \
+      if grep -q /sbin/vminitd /proc/cmdline; then \
+        # macOS containerization kernel disables CONFIG_IA32_EMULATION, wine32 won't work \
+        apt-get install -y --no-install-recommends wine wine64 libwine; \
+      else \
+        dpkg --add-architecture i386 && \
+        apt-get update -y && \
+        apt-get install -y --no-install-recommends wine wine32 wine64 libwine libwine:i386; \
+      fi && \
+      # Tools needed for wrapper scripts to extract Microsoft's DLLs \
+      apt-get install -y --no-install-recommends cabextract p7zip-full && \
+      # Initialize /root/.wine \
+      wineboot --init && \
+      # Enable Null graphics driver (better alternative to xvfb-run) \
+      wine reg add 'HKEY_CURRENT_USER\Software\Wine\Drivers' /v Graphics /t REG_SZ /d null /f && \
+      wineserver --wait; \
     fi
 
 RUN ln -s zoo/bench /bench && \
