@@ -1,0 +1,421 @@
+Metadata: {"arch": "amd64", "binary_size": 491520, "engine": "jscript", "version": "5.7.16535"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: non-compliant, expected to return 100 instead of 2000
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: unshift on object failed ; unshift multiple on object failed ; unshift on empty object failed ; failed
+es3/Array.prototype.unshift.js: unshift single element failed ; unshift multiple elements failed ; unshift on empty array failed ; unshift with no arguments failed ; failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed ; multiple elements unshift failed ; no arguments unshift failed ; failed
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0' ; failed
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError ; toExponential(-Infinity) does not throw RangeError ; failed
+es3/Number.prototype.toFixed.js: large number precision failed ; rounding failed ; failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2 ; '.'.split(/(.?)(.?)/).length !== 4 ; failed
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: split with regex failed ; split with capturing group failed ; failed
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: negative start failed ; negative start with length failed ; failed
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; wrong exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: OK
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: OK
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: Z:\tmp\jscript.letQYr.js(37, 1) Microsoft JScript runtime error: '$I.Ar' is undefined
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: array with only elision failed ; failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: [1,].length failed ; trailing comma failed ; multiple elements with trailing comma failed ; failed
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: Z:\tmp\jscript.4zjJVs.js(29, 1) Microsoft JScript runtime error: Object expected
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: complex disjunction failed ; failed
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: \v failed ; failed
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: spec example failed ; failed
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: failed
+es3/source.whitespace.js: Z:\tmp\jscript.b9TKYg.js(15, 6) Microsoft JScript compilation error: Expected ';'
+es3/source.whitespace.unicode.js: Z:\tmp\jscript.IIhyf8.js(15, 1) Microsoft JScript runtime error: 'x' is undefined
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function ; Z:\tmp\jscript.I9KxIC.js(19, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.every.js: Array.prototype.every not a function ; Z:\tmp\jscript.4MUXhi.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.filter.js: Array.prototype.filter not a function ; Z:\tmp\jscript.tfcaAQ.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function ; Z:\tmp\jscript.BfILK1.js(21, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function ; Z:\tmp\jscript.HIWJYh.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function ; Z:\tmp\jscript.PnFKXD.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.map.js: Array.prototype.map not a function ; Z:\tmp\jscript.LStCuW.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function ; Z:\tmp\jscript.l7tQUO.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function ; Z:\tmp\jscript.zHCVWs.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.some.js: Array.prototype.some not a function ; Z:\tmp\jscript.Pnzwhu.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: Z:\tmp\jscript.IJv7WF.js(13, 1) Microsoft JScript runtime error: JScript object expected
+es5/Date.now.js: Date.now not a function ; Z:\tmp\jscript.ZfTNKF.js(19, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function ; Z:\tmp\jscript.K03uc1.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; Z:\tmp\jscript.h6WEU2.js(19, 1) Microsoft JScript runtime error: 'Date.prototype.toJSON' is null or not an object
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted ; failed
+es5/Function.prototype.bind.js: Function.prototype.bind not a function ; Z:\tmp\jscript.Q0GFUJ.js(21, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: Z:\tmp\jscript.iazJs2.js(10, 1) Microsoft JScript runtime error: 'JSON' is undefined
+es5/JSON.parse.reviver.js: Z:\tmp\jscript.PE2tJE.js(10, 1) Microsoft JScript runtime error: 'JSON' is undefined
+es5/JSON.stringify.js: Z:\tmp\jscript.tlks05.js(10, 1) Microsoft JScript runtime error: 'JSON' is undefined
+es5/JSON.stringify.replacer.js: Z:\tmp\jscript.6J1vsG.js(10, 1) Microsoft JScript runtime error: 'JSON' is undefined
+es5/JSON.stringify.space.js: Z:\tmp\jscript.opco7M.js(10, 1) Microsoft JScript runtime error: 'JSON' is undefined
+es5/Object.create.js: Object.create not a function ; Z:\tmp\jscript.noY4HM.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.defineProperties.js: Object.defineProperties not a function ; Z:\tmp\jscript.BDvj8j.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.defineProperty.js: Object.defineProperty not a function ; Z:\tmp\jscript.QwgPcX.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.freeze.js: Object.freeze not a function ; Z:\tmp\jscript.IARaZC.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function ; Z:\tmp\jscript.VVwkCz.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function ; Z:\tmp\jscript.rQu3JH.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function ; Z:\tmp\jscript.2hIsWf.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.isExtensible.js: Object.isExtensible not a function ; Z:\tmp\jscript.H13YEc.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.isFrozen.js: Object.isFrozen not a function ; Z:\tmp\jscript.uEKpIx.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.isSealed.js: Object.isSealed not a function ; Z:\tmp\jscript.frhY6b.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.keys.js: Object.keys not a function ; Z:\tmp\jscript.zpnIEh.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.preventExtensions.js: Object.preventExtensions not a function ; Z:\tmp\jscript.mbyZ9i.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.seal.js: Object.seal not a function ; Z:\tmp\jscript.HPgxBi.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/String.indexing.js: 'foobar'[3] !== 'b' ; test with variable failed ; failed
+es5/String.prototype.trim.js: String.prototype.trim not a function ; Z:\tmp\jscript.0nWr1K.js(20, 1) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment ; Infinity not positive infinity after assignment ; failed
+es5/global.NaN.immutable.js: NaN is not a number after assignment ; NaN === NaN after assignment ; failed
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10 ; parseInt('0100') !== 100 ; parseInt('077') !== 77 ; failed
+es5/global.undefined.immutable.js: undefined is not undefined after assignment ; failed
+es5/literals.object.getters.js: Z:\tmp\jscript.SfBwPE.js(12, 16) Microsoft JScript compilation error: Expected ':'
+es5/literals.object.setters.js: Z:\tmp\jscript.7NtBwy.js(13, 16) Microsoft JScript compilation error: Expected ':'
+es5/literals.object.trailing-comma.js: Z:\tmp\jscript.J0HzJH.js(12, 21) Microsoft JScript compilation error: Expected identifier, string or number
+es5/source.keyword-properties.js: Z:\tmp\jscript.VLqvCk.js(18, 12) Microsoft JScript compilation error: Expected identifier, string or number
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: failed
+es5/source.zero-width-chars.js: Z:\tmp\jscript.J4TIkC.js(14, 6) Microsoft JScript compilation error: Invalid character
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: failed
+es5/strict.no-assignment-to-non-writable.js: Z:\tmp\jscript.fMcsMI.js(32, 12) Microsoft JScript compilation error: Expected ':'
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode ; failed
+es5/strict.this-primitive-not-coerced-in-accessors.js: Z:\tmp\jscript.hE11w9.js(14, 5) Microsoft JScript runtime error: Object doesn't support this property or method
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
