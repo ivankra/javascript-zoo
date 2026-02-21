@@ -31,7 +31,7 @@ RUN if ! grep -q /sbin/vminitd /proc/cmdline; then \
       mkdir -p build32 && cd build32 && \
       ../configure --without-x --without-freetype --disable-tests && \
       make -C dlls/jscript -j"$(nproc)" && \
-      strip -o /dist/wine-dist/jscript32.dll build32/dlls/jscript/i386-windows/jscript.dll; \
+      strip -o /dist/wine-dist/jscript32.dll dlls/jscript/i386-windows/jscript.dll; \
     fi
 
 # Build DLL host binaries
