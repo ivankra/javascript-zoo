@@ -3,7 +3,6 @@
 
 include ../../build/build.mk
 
-CONFORMANCE_SUITE = es[1-5]
 REV ?= eaea4240c4efb618be6d20c05f7fc9f3db9a104c
 
 ifeq ($(DOCKER_ARCH),amd64)

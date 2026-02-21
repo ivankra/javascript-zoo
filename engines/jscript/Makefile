@@ -3,8 +3,6 @@
 
 include ../../build/build.mk
 
-CONFORMANCE_SUITE = es[1-5]
-
 ifeq ($(DOCKER_ARCH),amd64)
 $(eval $(call build_engine,jscript,Dockerfile))
 else

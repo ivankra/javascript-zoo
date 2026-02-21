@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 1752078, "engine": "wine", "repository": "https://github.com/wine-mirror/wine.git", "revision": "eaea4240c4efb618be6d20c05f7fc9f3db9a104c", "revision_date": "2026-02-03"}
+Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 896000, "engine": "jscript", "version": "5.8.16428"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -85,11 +85,11 @@ es1/Math.round.js: OK
 es1/Math.sin.js: OK
 es1/Math.sqrt.js: OK
 es1/Math.tan.js: OK
-es1/Number.MAX_VALUE.js: failed
-es1/Number.MIN_VALUE.js: failed
-es1/Number.NEGATIVE_INFINITY.js: failed
-es1/Number.NaN.js: failed
-es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
 es1/Number.js: OK
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
@@ -118,12 +118,12 @@ es1/annex-b.Date.prototype.setYear.js: OK
 es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
-es1/annex-b.literals.octal.js: max safe integer failed ; failed
+es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: Error on line 71: Syntax error
+es1/asi.js: OK
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -142,7 +142,7 @@ es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: 1e21 failed ; 1e-7 failed ; failed
+es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
 es1/equals.js: OK
@@ -166,7 +166,7 @@ es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
 es1/new.typeof.js: OK
-es1/numbers.double.js: failed: converting max safe integer + 1 to string ; failed
+es1/numbers.double.js: OK
 es1/numbers.fmod.js: OK
 es1/numbers.inf.js: OK
 es1/numbers.int.js: OK
@@ -219,7 +219,7 @@ es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
-es3/Error.prototype.message.js: failed
+es3/Error.prototype.message.js: OK
 es3/Error.prototype.name.js: OK
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
@@ -228,11 +228,11 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2.5e+1') ; (1.255).toExponential(2) != '1.25e+0', got '1.26e+0' ; failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0' ; failed
 es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError ; toExponential(-Infinity) does not throw RangeError ; failed
 es3/Number.prototype.toFixed.js: large number precision failed ; rounding failed ; failed
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: small number exponential notation failed ; failed
+es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
 es3/Object.prototype.propertyIsEnumerable.js: OK
@@ -249,10 +249,10 @@ es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
-es3/String.prototype.localeCompare.js: Error on line 9: <unknown>
+es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
-es3/String.prototype.replace.capture.js: timeout
+es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK
 es3/String.prototype.replace.regex.js: OK
@@ -275,19 +275,19 @@ es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
 es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
-es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; no exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable ; wrong exception for undeclared function ; wrong exception for undeclared in expression ; wrong exception for property access on undeclared ; failed
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: wrong exception for decodeURIComponent incomplete escape ; wrong exception for decodeURIComponent invalid hex ; failed
+es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
-es3/global.decodeURI.js: # not decoded failed ; failed
+es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
 es3/global.encodeURI.js: OK
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: Error on line 17: Syntax error
+es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: OK
@@ -301,12 +301,12 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: Error on line 16: Syntax error
+es3/literals.object.unicode.js: OK
 es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
-es3/nested-functions.eval.js: OK
+es3/nested-functions.eval.js: Error on line 26: Object expected
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
@@ -359,7 +359,7 @@ es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: Error on line 10: JScript object expected
 es5/Date.now.js: Date.now not a function ; Error on line 16: Object doesn't support this property or method
 es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function ; Error on line 17: Object doesn't support this property or method
-es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; Error on line 16: Object expected
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function ; Error on line 16: 'Date.prototype.toJSON' is null or not an object
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: array-like object not accepted ; failed
 es5/Function.prototype.bind.js: Function.prototype.bind not a function ; Error on line 18: Object doesn't support this property or method
@@ -381,29 +381,29 @@ es5/Object.isFrozen.js: Object.isFrozen not a function ; Error on line 17: Objec
 es5/Object.isSealed.js: Object.isSealed not a function ; Error on line 17: Object doesn't support this property or method
 es5/Object.keys.js: Object.keys not a function ; Error on line 17: Object doesn't support this property or method
 es5/Object.preventExtensions.js: Object.preventExtensions not a function ; Error on line 17: Object doesn't support this property or method
-es5/Object.property-shadowing.js: OK
+es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
 es5/Object.seal.js: Object.seal not a function ; Error on line 17: Object doesn't support this property or method
 es5/String.indexing.js: 'foobar'[3] !== 'b' ; test with variable failed ; failed
 es5/String.prototype.trim.js: String.prototype.trim not a function ; Error on line 17: Object doesn't support this property or method
 es5/arguments.toStringTag.js: failed
-es5/debugger.js: Error on line 7: 'debugger' is undefined
+es5/debugger.js: OK
 es5/global.Infinity.immutable.js: Infinity is not a number after assignment ; Infinity not positive infinity after assignment ; failed
 es5/global.NaN.immutable.js: NaN is not a number after assignment ; NaN === NaN after assignment ; failed
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10 ; parseInt('0100') !== 100 ; parseInt('077') !== 77 ; failed
 es5/global.undefined.immutable.js: undefined is not undefined after assignment ; failed
-es5/literals.object.getters.js: Error on line 9: Syntax error
-es5/literals.object.setters.js: Error on line 10: Syntax error
-es5/literals.object.trailing-comma.js: Error on line 9: Syntax error
-es5/source.keyword-properties.js: Error on line 15: Syntax error
+es5/literals.object.getters.js: Error on line 9: Expected ':'
+es5/literals.object.setters.js: Error on line 10: Expected ':'
+es5/literals.object.trailing-comma.js: Error on line 9: Expected identifier, string or number
+es5/source.keyword-properties.js: Error on line 15: Expected identifier, string or number
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
-es5/source.zero-width-chars.js: OK
+es5/source.zero-width-chars.js: Error on line 11: Invalid character
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: failed
-es5/strict.no-assignment-to-non-writable.js: Error on line 11: Expected ')'
+es5/strict.no-assignment-to-non-writable.js: Error on line 29: Expected ':'
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
@@ -460,24 +460,24 @@ kangax-es5/annex-b.String.prototype.substr.js: failed
 kangax-es5/immutable-globals.Infinity.js: failed
 kangax-es5/immutable-globals.NaN.js: failed
 kangax-es5/immutable-globals.undefined.js: failed
-kangax-es5/literals.getter-accessors.js: Error on line 7: Expected ')'
-kangax-es5/literals.reserved-words-properties.js: Error on line 8: Syntax error
-kangax-es5/literals.setter-accessors.js: Error on line 7: Expected ')'
+kangax-es5/literals.getter-accessors.js: Error on line 8: Expected ':'
+kangax-es5/literals.reserved-words-properties.js: Error on line 8: Expected identifier, string or number
+kangax-es5/literals.setter-accessors.js: Error on line 9: Expected ':'
 kangax-es5/literals.trailing-comma-array.js: failed
-kangax-es5/literals.trailing-comma-object.js: Error on line 8: Syntax error
+kangax-es5/literals.trailing-comma-object.js: Error on line 8: Expected identifier, string or number
 kangax-es5/misc.Arguments.toStringTag.js: failed
 kangax-es5/misc.Function.apply.array-likes.js: failed
 kangax-es5/misc.Function.prototype.non-enumerable.js: OK
-kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.enumerable-shadow.js: failed
 kangax-es5/misc.parseInt.ignores-leading-zeros.js: failed
 kangax-es5/misc.thrown-functions-this.js: OK
 kangax-es5/misc.unreserved-words.js: OK
-kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/misc.zero-width-identifiers.js: Error on line 8: Invalid character
 kangax-es5/strict.arguments-callee-error.js: failed
 kangax-es5/strict.arguments-caller-error.js: failed
 kangax-es5/strict.arguments-unmapped.js: failed
 kangax-es5/strict.assignment-eval-arguments-error.js: failed
-kangax-es5/strict.assignment-non-writable-error.js: Error on line 8: Expected ')'
+kangax-es5/strict.assignment-non-writable-error.js: Error on line 12: Expected ':'
 kangax-es5/strict.assignment-unresolvable-error.js: failed
 kangax-es5/strict.delete-bindings-error.js: failed
 kangax-es5/strict.delete-non-configurable-error.js: failed
@@ -515,10 +515,10 @@ kangax-es6/Array.prototype.keys.js: failed
 kangax-es6/Array.prototype.splice.js: failed
 kangax-es6/Array.prototype.values.js: failed
 kangax-es6/Date.prototype.Symbol.toPrimitive.js: [object Error]
-kangax-es6/Function.name.accessor.js: Error on line 9: Expected ')'
+kangax-es6/Function.name.accessor.js: Error on line 10: Expected ':'
 kangax-es6/Function.name.bound.js: [object Error]
 kangax-es6/Function.name.class-expression.js: Error on line 10: Syntax error
-kangax-es6/Function.name.class-object-method.js: Error on line 9: Expected ')'
+kangax-es6/Function.name.class-object-method.js: Error on line 10: Syntax error
 kangax-es6/Function.name.class-prototype.js: Error on line 10: Syntax error
 kangax-es6/Function.name.class-statement.js: Error on line 10: Syntax error
 kangax-es6/Function.name.class-static.js: Error on line 10: Syntax error
@@ -527,10 +527,10 @@ kangax-es6/Function.name.configurable.js: [object Error]
 kangax-es6/Function.name.expression.js: failed
 kangax-es6/Function.name.new-Function.js: failed
 kangax-es6/Function.name.object-method.js: failed
-kangax-es6/Function.name.shorthand.js: Error on line 9: Expected ')'
-kangax-es6/Function.name.shorthand.no-lexical.js: Error on line 9: Expected ')'
+kangax-es6/Function.name.shorthand.js: Error on line 10: Expected ':'
+kangax-es6/Function.name.shorthand.no-lexical.js: Error on line 11: Expected ':'
 kangax-es6/Function.name.statement.js: failed
-kangax-es6/Function.name.symbol-keyed.js: Error on line 9: Expected ')'
+kangax-es6/Function.name.symbol-keyed.js: Error on line 13: Expected identifier, string or number
 kangax-es6/Function.name.variable.js: failed
 kangax-es6/Map.Symbol.species.js: [object Error]
 kangax-es6/Map.constructor-accepts-null.js: [object Error]
@@ -543,7 +543,7 @@ kangax-es6/Map.js: [object Error]
 kangax-es6/Map.prototype-not-instance.js: [object Error]
 kangax-es6/Map.prototype.Symbol.iterator.js: [object Error]
 kangax-es6/Map.prototype.clear.js: [object Error]
-kangax-es6/Map.prototype.delete.js: Error on line 10: Syntax error
+kangax-es6/Map.prototype.delete.js: Error on line 10: Expected identifier
 kangax-es6/Map.prototype.entries.js: [object Error]
 kangax-es6/Map.prototype.forEach.js: [object Error]
 kangax-es6/Map.prototype.keys.js: [object Error]
@@ -582,13 +582,13 @@ kangax-es6/Object.getOwnPropertySymbols.js: [object Error]
 kangax-es6/Object.is.js: failed
 kangax-es6/Object.setPrototypeOf.js: [object Error]
 kangax-es6/Promise.Symbol.species.js: [object Error]
-kangax-es6/Promise.all.iterable.js: Error on line 79: Syntax error
-kangax-es6/Promise.all.js: Error on line 55: Syntax error
+kangax-es6/Promise.all.iterable.js: Error on line 79: Expected identifier
+kangax-es6/Promise.all.js: Error on line 55: Expected identifier
 kangax-es6/Promise.constructor-requires-new.js: [object Error]
-kangax-es6/Promise.js: Error on line 55: Syntax error
+kangax-es6/Promise.js: Error on line 55: Expected identifier
 kangax-es6/Promise.prototype-not-instance.js: [object Error]
-kangax-es6/Promise.race.iterable.js: Error on line 79: Syntax error
-kangax-es6/Promise.race.js: Error on line 55: Syntax error
+kangax-es6/Promise.race.iterable.js: Error on line 79: Expected identifier
+kangax-es6/Promise.race.js: Error on line 55: Expected identifier
 kangax-es6/Proxy.Array.isArray.js: [object Error]
 kangax-es6/Proxy.JSON.stringify.js: [object Error]
 kangax-es6/Proxy.constructor-requires-new.js: [object Error]
@@ -626,7 +626,7 @@ kangax-es6/Proxy.revocable.js: [object Error]
 kangax-es6/Reflect.apply.js: [object Error]
 kangax-es6/Reflect.construct.Array-subclassing.js: [object Error]
 kangax-es6/Reflect.construct.Function-subclassing.js: [object Error]
-kangax-es6/Reflect.construct.Promise-subclassing.js: Error on line 55: Syntax error
+kangax-es6/Reflect.construct.Promise-subclassing.js: Error on line 55: Expected identifier
 kangax-es6/Reflect.construct.RegExp-subclassing.js: [object Error]
 kangax-es6/Reflect.construct.js: [object Error]
 kangax-es6/Reflect.construct.new-target.js: Error on line 11: Syntax error
@@ -661,7 +661,7 @@ kangax-es6/Set.prototype-not-instance.js: [object Error]
 kangax-es6/Set.prototype.Symbol.iterator.js: [object Error]
 kangax-es6/Set.prototype.add-returns-this.js: [object Error]
 kangax-es6/Set.prototype.clear.js: [object Error]
-kangax-es6/Set.prototype.delete.js: Error on line 10: Syntax error
+kangax-es6/Set.prototype.delete.js: Error on line 10: Expected identifier
 kangax-es6/Set.prototype.entries.js: [object Error]
 kangax-es6/Set.prototype.forEach.js: [object Error]
 kangax-es6/Set.prototype.keys.js: [object Error]
@@ -685,14 +685,14 @@ kangax-es6/Symbol.JSON.stringify.primitive.js: [object Error]
 kangax-es6/Symbol.Object.js: [object Error]
 kangax-es6/Symbol.String.js: [object Error]
 kangax-es6/Symbol.defineProperty.js: [object Error]
-kangax-es6/Symbol.global-registry.js: Error on line 10: Syntax error
+kangax-es6/Symbol.global-registry.js: Error on line 10: Expected identifier
 kangax-es6/Symbol.hidden-keys.js: [object Error]
 kangax-es6/Symbol.js: [object Error]
 kangax-es6/Symbol.no-coerce.js: [object Error]
 kangax-es6/Symbol.no-new.js: [object Error]
 kangax-es6/Symbol.prototype.js: [object Error]
 kangax-es6/Symbol.typeof.js: [object Error]
-kangax-es6/WeakMap.accept-primitives.js: Error on line 13: Syntax error
+kangax-es6/WeakMap.accept-primitives.js: Error on line 13: Expected identifier
 kangax-es6/WeakMap.constructor-accepts-null.js: [object Error]
 kangax-es6/WeakMap.constructor-arguments.js: [object Error]
 kangax-es6/WeakMap.constructor-invokes-set.js: [object Error]
@@ -702,9 +702,9 @@ kangax-es6/WeakMap.iterator-closing.js: failed
 kangax-es6/WeakMap.js: [object Error]
 kangax-es6/WeakMap.no-clear.js: [object Error]
 kangax-es6/WeakMap.prototype-not-instance.js: [object Error]
-kangax-es6/WeakMap.prototype.delete.js: Error on line 10: Syntax error
+kangax-es6/WeakMap.prototype.delete.js: Error on line 10: Expected identifier
 kangax-es6/WeakMap.prototype.set-returns-this.js: [object Error]
-kangax-es6/WeakSet.accept-primitives.js: Error on line 12: Syntax error
+kangax-es6/WeakSet.accept-primitives.js: Error on line 12: Expected identifier
 kangax-es6/WeakSet.constructor-accepts-null.js: [object Error]
 kangax-es6/WeakSet.constructor-arguments.js: [object Error]
 kangax-es6/WeakSet.constructor-invokes-add.js: [object Error]
@@ -714,23 +714,23 @@ kangax-es6/WeakSet.js: [object Error]
 kangax-es6/WeakSet.no-clear.js: [object Error]
 kangax-es6/WeakSet.prototype-not-instance.js: [object Error]
 kangax-es6/WeakSet.prototype.add-returns-this.js: [object Error]
-kangax-es6/WeakSet.prototype.delete.js: Error on line 10: Syntax error
-kangax-es6/annex-b.RegExp.prototype.compile.js: failed
-kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: [object Error]
+kangax-es6/WeakSet.prototype.delete.js: Error on line 10: Expected identifier
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
 kangax-es6/annex-b.String.prototype.html.existence.js: OK
 kangax-es6/annex-b.String.prototype.html.lowercase.js: failed
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: failed
 kangax-es6/annex-b.function.hoisted-block-level.js: failed
 kangax-es6/annex-b.function.if-statement.js: OK
 kangax-es6/annex-b.function.labeled.js: OK
-kangax-es6/annex-b.html-comments.js: Error on line 8: Expected ')'
+kangax-es6/annex-b.html-comments.js: Error on line 9: Syntax error
 kangax-es6/annex-b.regex.backreferences-octal.js: OK
 kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: [object Error]
-kangax-es6/annex-b.regex.invalid-unicode-escapes.js: [object Error]
+kangax-es6/annex-b.regex.invalid-control-escapes.js: [object Error]
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
 kangax-es6/annex-b.regex.octal-escapes.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: [object Error]
 kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: [object Error]
@@ -740,22 +740,22 @@ kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
 kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
 kangax-es6/annex-b.__proto__.literals.js: failed
 kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
-kangax-es6/annex-b.__proto__.literals.not-computed.js: Error on line 9: Expected ')'
-kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: Error on line 9: Expected ')'
-kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: Error on line 9: Expected ')'
-kangax-es6/arrow.0-params.js: Error on line 9: Expected ')'
-kangax-es6/arrow.1-param.js: Error on line 9: Expected ')'
-kangax-es6/arrow.5-param.js: Error on line 9: Expected ')'
-kangax-es6/arrow.bind.js: Error on line 10: Expected ')'
-kangax-es6/arrow.lexical-arguments.js: Error on line 10: Expected ')'
+kangax-es6/annex-b.__proto__.literals.not-computed.js: Error on line 14: Expected identifier, string or number
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: Error on line 13: Expected ':'
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: Error on line 14: Expected ':'
+kangax-es6/arrow.0-params.js: Error on line 10: Syntax error
+kangax-es6/arrow.1-param.js: Error on line 10: Syntax error
+kangax-es6/arrow.5-param.js: Error on line 10: Syntax error
+kangax-es6/arrow.bind.js: Error on line 10: Syntax error
+kangax-es6/arrow.lexical-arguments.js: Error on line 10: Syntax error
 kangax-es6/arrow.lexical-super.constructor.js: Error on line 12: Syntax error
 kangax-es6/arrow.lexical-super.methods.js: Error on line 10: Syntax error
-kangax-es6/arrow.lexical-this.js: Error on line 10: Expected ')'
-kangax-es6/arrow.new-target.js: Error on line 10: Expected ')'
-kangax-es6/arrow.no-line-break.js: Error on line 9: Expected ')'
-kangax-es6/arrow.no-prototype.js: Error on line 9: Expected ')'
-kangax-es6/arrow.precedence.js: Error on line 9: Expected ')'
-kangax-es6/arrow.this-call-apply.js: Error on line 10: Expected ')'
+kangax-es6/arrow.lexical-this.js: Error on line 10: Syntax error
+kangax-es6/arrow.new-target.js: Error on line 11: Syntax error
+kangax-es6/arrow.no-line-break.js: Error on line 10: Syntax error
+kangax-es6/arrow.no-prototype.js: Error on line 10: Syntax error
+kangax-es6/arrow.precedence.js: Error on line 10: Syntax error
+kangax-es6/arrow.this-call-apply.js: Error on line 10: Syntax error
 kangax-es6/class.accessor-properties.js: Error on line 11: Syntax error
 kangax-es6/class.anonymous.js: Error on line 10: Syntax error
 kangax-es6/class.block-scoped.js: Error on line 10: Syntax error
@@ -773,7 +773,7 @@ kangax-es6/class.extends.js: Error on line 10: Syntax error
 kangax-es6/class.implicit-strict.js: Error on line 10: Syntax error
 kangax-es6/class.lexical-name.js: Error on line 10: Syntax error
 kangax-es6/class.methods-not-enumerable.js: Error on line 10: Syntax error
-kangax-es6/class.new-target.js: Error on line 11: Expected ')'
+kangax-es6/class.new-target.js: Error on line 12: Syntax error
 kangax-es6/class.optional-semicolons.js: Error on line 10: Syntax error
 kangax-es6/class.prototype-methods.js: Error on line 10: Syntax error
 kangax-es6/class.statement.js: Error on line 10: Syntax error
@@ -808,75 +808,75 @@ kangax-es6/default-params.tdz.js: Error on line 10: Expected ')'
 kangax-es6/destructuring-assign.array.js: [object Error]
 kangax-es6/destructuring-assign.astral-string.js: [object Error]
 kangax-es6/destructuring-assign.chained-iterable.js: [object Error]
-kangax-es6/destructuring-assign.chained-object.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.computed-properties.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.defaults.js: Error on line 9: Expected ')'
+kangax-es6/destructuring-assign.chained-object.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.computed-properties.js: Error on line 11: Expected identifier, string or number
+kangax-es6/destructuring-assign.defaults.js: Error on line 11: Expected ':'
 kangax-es6/destructuring-assign.empty-patterns.js: [object Error]
 kangax-es6/destructuring-assign.generator.js: Error on line 11: Expected '('
 kangax-es6/destructuring-assign.iterable-expression.js: [object Error]
 kangax-es6/destructuring-assign.iterable-instance.js: [object Error]
 kangax-es6/destructuring-assign.iterable.js: [object Error]
 kangax-es6/destructuring-assign.iterator-closing.js: [object Error]
-kangax-es6/destructuring-assign.nested-rest.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.nested.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.object-expression.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.object-primitives.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.object.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.parenthesised-error.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-assign.rest.js: Error on line 9: Expected ')'
+kangax-es6/destructuring-assign.nested-rest.js: Error on line 11: Syntax error
+kangax-es6/destructuring-assign.nested.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.object-expression.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.object-primitives.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.object.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.parenthesised-error.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-assign.rest.js: Error on line 11: Syntax error
 kangax-es6/destructuring-assign.sparse-array.js: [object Error]
 kangax-es6/destructuring-assign.string.js: [object Error]
-kangax-es6/destructuring-assign.throws-null-undefined.js: Error on line 9: Expected ')'
+kangax-es6/destructuring-assign.throws-null-undefined.js: Error on line 12: Expected ':'
 kangax-es6/destructuring-assign.trailing-comma-iterable.js: [object Error]
-kangax-es6/destructuring-assign.trailing-comma-object.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.array.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.astral-string.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.catch.js: Error on line 12: Expected '('
-kangax-es6/destructuring-decl.computed-properties.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.defaults-tdz.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.defaults.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.for-in.js: Error on line 10: Expected '('
-kangax-es6/destructuring-decl.for-of.js: Error on line 10: Expected '('
-kangax-es6/destructuring-decl.generator.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.iterable-instance.js: Error on line 33: Expected ')'
-kangax-es6/destructuring-decl.iterable.js: Error on line 33: Expected ')'
-kangax-es6/destructuring-decl.iterator-closing.js: Error on line 33: Expected ')'
-kangax-es6/destructuring-decl.multiple-var.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.nested.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.object-primitives.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.object.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.rest.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.sparse-array.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.string.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.throws-null-undefined.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.trailing-comma-iterable.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-decl.trailing-comma-object.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-params.aliased-defaults-arrow.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-params.arguments.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.array.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.astral-string.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.computed-properties.js: Error on line 11: Expected ')'
+kangax-es6/destructuring-assign.trailing-comma-object.js: Error on line 11: Expected ':'
+kangax-es6/destructuring-decl.array.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.astral-string.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.catch.js: Error on line 12: Expected identifier
+kangax-es6/destructuring-decl.computed-properties.js: Error on line 11: Expected identifier
+kangax-es6/destructuring-decl.defaults-tdz.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.defaults.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.for-in.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.for-of.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.generator.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.iterable-instance.js: Error on line 34: Expected identifier
+kangax-es6/destructuring-decl.iterable.js: Error on line 34: Expected identifier
+kangax-es6/destructuring-decl.iterator-closing.js: Error on line 38: Expected identifier
+kangax-es6/destructuring-decl.multiple-var.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.nested.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.object-primitives.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.object.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.rest.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.sparse-array.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.string.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.throws-null-undefined.js: Error on line 11: Expected identifier
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-decl.trailing-comma-object.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: Error on line 10: Syntax error
+kangax-es6/destructuring-params.arguments.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.array.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.astral-string.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.computed-properties.js: Error on line 11: Expected identifier
 kangax-es6/destructuring-params.defaults-new-function.js: [object Error]
-kangax-es6/destructuring-params.defaults-separate-scope.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.defaults.js: Error on line 10: Expected ')'
+kangax-es6/destructuring-params.defaults-separate-scope.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.defaults.js: Error on line 10: Expected identifier
 kangax-es6/destructuring-params.duplicate-identifier.js: failed
-kangax-es6/destructuring-params.empty-patterns.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.generator.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.iterable-instance.js: Error on line 34: Expected ')'
-kangax-es6/destructuring-params.iterable.js: Error on line 34: Expected ')'
-kangax-es6/destructuring-params.iterator-closing.js: Error on line 38: Expected ')'
-kangax-es6/destructuring-params.length.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.nested.js: Error on line 10: Expected ')'
+kangax-es6/destructuring-params.empty-patterns.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.generator.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.iterable-instance.js: Error on line 34: Expected identifier
+kangax-es6/destructuring-params.iterable.js: Error on line 34: Expected identifier
+kangax-es6/destructuring-params.iterator-closing.js: Error on line 38: Expected identifier
+kangax-es6/destructuring-params.length.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.nested.js: Error on line 10: Expected identifier
 kangax-es6/destructuring-params.new-function.js: [object Error]
-kangax-es6/destructuring-params.object-primitives.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.object.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.rest.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Error on line 9: Expected ')'
-kangax-es6/destructuring-params.sparse-array.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.string.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.throws-null-undefined.js: Error on line 11: Expected ')'
-kangax-es6/destructuring-params.trailing-comma-iterable.js: Error on line 10: Expected ')'
-kangax-es6/destructuring-params.trailing-comma-object.js: Error on line 10: Expected ')'
+kangax-es6/destructuring-params.object-primitives.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.object.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.rest.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Error on line 10: Expected ':'
+kangax-es6/destructuring-params.sparse-array.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.string.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.throws-null-undefined.js: Error on line 11: Expected identifier
+kangax-es6/destructuring-params.trailing-comma-iterable.js: Error on line 10: Expected identifier
+kangax-es6/destructuring-params.trailing-comma-object.js: Error on line 10: Expected identifier
 kangax-es6/for-of.array.js: Error on line 11: Expected ';'
 kangax-es6/for-of.astral-string.js: Error on line 11: Expected ';'
 kangax-es6/for-of.generator.js: Error on line 11: Expected '('
@@ -897,10 +897,10 @@ kangax-es6/generators.return.js: Error on line 10: Expected '('
 kangax-es6/generators.sending.js: Error on line 11: Expected '('
 kangax-es6/generators.shorthand.class.js: Error on line 10: Syntax error
 kangax-es6/generators.shorthand.computed.class.js: Error on line 11: Syntax error
-kangax-es6/generators.shorthand.computed.js: Error on line 9: Expected ')'
-kangax-es6/generators.shorthand.js: Error on line 9: Expected ')'
+kangax-es6/generators.shorthand.computed.js: Error on line 12: Expected identifier, string or number
+kangax-es6/generators.shorthand.js: Error on line 11: Expected identifier, string or number
 kangax-es6/generators.shorthand.no-constructor.js: Error on line 10: Syntax error
-kangax-es6/generators.shorthand.string-keyed.js: Error on line 9: Expected ')'
+kangax-es6/generators.shorthand.string-keyed.js: Error on line 11: Expected identifier, string or number
 kangax-es6/generators.this.js: Error on line 10: Expected '('
 kangax-es6/generators.throw.js: Error on line 11: Expected '('
 kangax-es6/generators.yield-precedence.js: Error on line 11: Expected '('
@@ -914,30 +914,30 @@ kangax-es6/generators.yield-star.iterator-closing.js: Error on line 40: Expected
 kangax-es6/generators.yield-star.non-iterable-error.js: Error on line 10: Expected '('
 kangax-es6/generators.yield-star.sparse-array.js: Error on line 10: Expected '('
 kangax-es6/generators.yield-star.string.js: Error on line 10: Expected '('
-kangax-es6/let.basic.js: Error on line 10: Syntax error
-kangax-es6/let.block-scoped.js: Error on line 10: Syntax error
+kangax-es6/let.basic.js: Error on line 10: Expected ';'
+kangax-es6/let.block-scoped.js: Error on line 10: Expected ';'
 kangax-es6/let.for-in-shadow.js: failed
-kangax-es6/let.for-iteration.js: Error on line 10: Syntax error
-kangax-es6/let.for-loop.js: Error on line 10: Syntax error
-kangax-es6/let.no-statement.js: Error on line 10: Syntax error
-kangax-es6/let.shadow.js: Error on line 11: Syntax error
-kangax-es6/let.strict.basic.js: Error on line 11: Syntax error
-kangax-es6/let.strict.block-scoped.js: Error on line 11: Syntax error
+kangax-es6/let.for-iteration.js: Error on line 10: Expected ';'
+kangax-es6/let.for-loop.js: Error on line 10: Expected ';'
+kangax-es6/let.no-statement.js: Error on line 10: Expected ';'
+kangax-es6/let.shadow.js: Error on line 11: Expected ';'
+kangax-es6/let.strict.basic.js: Error on line 11: Expected ';'
+kangax-es6/let.strict.block-scoped.js: Error on line 11: Expected ';'
 kangax-es6/let.strict.for-in-shadow.js: failed
-kangax-es6/let.strict.for-iteration.js: Error on line 11: Syntax error
-kangax-es6/let.strict.for-loop.js: Error on line 11: Syntax error
-kangax-es6/let.strict.no-statement.js: Error on line 11: Syntax error
-kangax-es6/let.strict.shadow.js: Error on line 12: Syntax error
-kangax-es6/let.strict.tdz.js: Error on line 13: Syntax error
-kangax-es6/let.tdz.js: Error on line 12: Syntax error
+kangax-es6/let.strict.for-iteration.js: Error on line 11: Expected ';'
+kangax-es6/let.strict.for-loop.js: Error on line 11: Expected ';'
+kangax-es6/let.strict.no-statement.js: Error on line 11: Expected ';'
+kangax-es6/let.strict.shadow.js: Error on line 12: Expected ';'
+kangax-es6/let.strict.tdz.js: Error on line 13: Expected ';'
+kangax-es6/let.tdz.js: Error on line 12: Expected ';'
 kangax-es6/literals.binary.Number.js: failed
 kangax-es6/literals.binary.js: Error on line 9: Expected ';'
-kangax-es6/literals.object.computed-accessors.js: Error on line 13: Syntax error
-kangax-es6/literals.object.computed-properties.js: Error on line 9: Expected ')'
-kangax-es6/literals.object.computed-shorthand-methods.js: Error on line 9: Expected ')'
-kangax-es6/literals.object.shorthand-methods.js: Error on line 9: Expected ')'
-kangax-es6/literals.object.shorthand-properties.js: Error on line 10: Syntax error
-kangax-es6/literals.object.string-keyed-shorthand-methods.js: Error on line 9: Expected ')'
+kangax-es6/literals.object.computed-accessors.js: Error on line 13: Expected ':'
+kangax-es6/literals.object.computed-properties.js: Error on line 11: Expected identifier, string or number
+kangax-es6/literals.object.computed-shorthand-methods.js: Error on line 11: Expected identifier, string or number
+kangax-es6/literals.object.shorthand-methods.js: Error on line 10: Expected ':'
+kangax-es6/literals.object.shorthand-properties.js: Error on line 10: Expected ':'
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: Error on line 10: Expected ':'
 kangax-es6/literals.octal.Number.js: failed
 kangax-es6/literals.octal.js: Error on line 9: Expected ';'
 kangax-es6/misc.Invalid-Date.js: failed
@@ -1013,21 +1013,21 @@ kangax-es6/misc.Proxy.set.Array.shift.js: [object Error]
 kangax-es6/misc.Proxy.set.Array.splice.js: [object Error]
 kangax-es6/misc.Proxy.set.Array.unshift.js: [object Error]
 kangax-es6/misc.Proxy.set.Object.assign.js: [object Error]
-kangax-es6/misc.RegExp-alter-flags.js: failed
+kangax-es6/misc.RegExp-alter-flags.js: [object Error]
 kangax-es6/misc.RegExp-prototype-toString-generic.js: [object Error]
-kangax-es6/misc.accessors-no-constructor.js: Error on line 8: Expected ')'
-kangax-es6/misc.bound-function-prototype.arrow.js: Error on line 9: Expected ')'
+kangax-es6/misc.accessors-no-constructor.js: Error on line 9: Expected ':'
+kangax-es6/misc.bound-function-prototype.arrow.js: Error on line 10: Syntax error
 kangax-es6/misc.bound-function-prototype.class.js: Error on line 10: Syntax error
 kangax-es6/misc.bound-function-prototype.function.js: [object Error]
 kangax-es6/misc.bound-function-prototype.generator.js: Error on line 10: Expected '('
 kangax-es6/misc.bound-function-prototype.subclass.js: Error on line 10: Syntax error
-kangax-es6/misc.do-while-no-semicolon.js: Error on line 9: Syntax error
+kangax-es6/misc.do-while-no-semicolon.js: OK
 kangax-es6/misc.duplicate-properties-strict.js: failed
 kangax-es6/misc.for-in-no-assignment-strict.js: failed
 kangax-es6/misc.function-length-configurable.js: [object Error]
-kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: Error on line 8: Expected ')'
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 kangax-es6/misc.identifier-syntax.var-1.js: failed
-kangax-es6/misc.identifier-syntax.var-2.js: Error on line 8: Expected ')'
+kangax-es6/misc.identifier-syntax.var-2.js: Error on line 9: Invalid character
 kangax-es6/misc.property-order.JSON.parse.js: [object Error]
 kangax-es6/misc.property-order.JSON.stringify.js: [object Error]
 kangax-es6/misc.property-order.Object.assign.js: [object Error]
@@ -1035,35 +1035,35 @@ kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: [object Error]
 kangax-es6/misc.property-order.Object.keys.js: [object Error]
 kangax-es6/misc.property-order.Reflect.ownKeys.string.js: [object Error]
 kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: [object Error]
-kangax-es6/misc.prototypes-not-instances.js: timeout
-kangax-es6/new-target.assignment-error.js: Error on line 11: Expected ')'
-kangax-es6/new-target.constructor.js: Error on line 11: Expected ')'
-kangax-es6/regex.flags.u.case-folding.js: Error on line 1: <unknown>
-kangax-es6/regex.flags.u.codepoint.js: Error on line 1: <unknown>
-kangax-es6/regex.flags.u.js: Error on line 1: <unknown>
-kangax-es6/regex.flags.u.non-bmp.js: Error on line 1: <unknown>
-kangax-es6/regex.flags.y.js: failed
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: Error on line 12: Syntax error
+kangax-es6/new-target.constructor.js: Error on line 12: Syntax error
+kangax-es6/regex.flags.u.case-folding.js: Error on line 10: Expected ')'
+kangax-es6/regex.flags.u.codepoint.js: Error on line 10: Expected ')'
+kangax-es6/regex.flags.u.js: Error on line 10: Expected ')'
+kangax-es6/regex.flags.u.non-bmp.js: Error on line 10: Expected ')'
+kangax-es6/regex.flags.y.js: [object Error]
 kangax-es6/regex.flags.y.lastIndex.js: [object Error]
-kangax-es6/rest-params.arguments.js: Error on line 10: Expected '('
-kangax-es6/rest-params.basic.js: Error on line 10: Expected '('
-kangax-es6/rest-params.length.js: Error on line 10: Expected '('
+kangax-es6/rest-params.arguments.js: Error on line 10: Expected identifier
+kangax-es6/rest-params.basic.js: Error on line 10: Expected identifier
+kangax-es6/rest-params.length.js: Error on line 10: Expected identifier
 kangax-es6/rest-params.new-function.js: [object Error]
-kangax-es6/rest-params.no-setter.js: Error on line 10: Expected ')'
-kangax-es6/spread.array-call.js: Error on line 9: Expected ')'
-kangax-es6/spread.array-literal.js: Error on line 9: Expected ')'
-kangax-es6/spread.astral-call.js: Error on line 9: Expected ')'
-kangax-es6/spread.astral-literal.js: Error on line 9: Expected ')'
+kangax-es6/rest-params.no-setter.js: Error on line 10: Expected identifier
+kangax-es6/spread.array-call.js: Error on line 10: Syntax error
+kangax-es6/spread.array-literal.js: Error on line 10: Syntax error
+kangax-es6/spread.astral-call.js: Error on line 10: Syntax error
+kangax-es6/spread.astral-literal.js: Error on line 10: Syntax error
 kangax-es6/spread.generator-call.js: Error on line 10: Expected '('
 kangax-es6/spread.generator-literal.js: Error on line 10: Expected '('
-kangax-es6/spread.iterable-call.js: Error on line 33: Expected ')'
-kangax-es6/spread.iterable-instance-call.js: Error on line 33: Expected ')'
-kangax-es6/spread.iterable-instance-literal.js: Error on line 33: Expected ')'
-kangax-es6/spread.iterable-literal.js: Error on line 33: Expected ')'
-kangax-es6/spread.non-iterable-error.js: Error on line 9: Expected ')'
-kangax-es6/spread.sparse-call.js: Error on line 9: Expected ')'
-kangax-es6/spread.sparse-literal.js: Error on line 9: Expected ')'
-kangax-es6/spread.string-call.js: Error on line 9: Expected ')'
-kangax-es6/spread.string-literal.js: Error on line 9: Expected ')'
+kangax-es6/spread.iterable-call.js: Error on line 35: Syntax error
+kangax-es6/spread.iterable-instance-call.js: Error on line 35: Syntax error
+kangax-es6/spread.iterable-instance-literal.js: Error on line 35: Syntax error
+kangax-es6/spread.iterable-literal.js: Error on line 35: Syntax error
+kangax-es6/spread.non-iterable-error.js: Error on line 11: Syntax error
+kangax-es6/spread.sparse-call.js: Error on line 10: Syntax error
+kangax-es6/spread.sparse-literal.js: Error on line 10: Syntax error
+kangax-es6/spread.string-call.js: Error on line 10: Syntax error
+kangax-es6/spread.string-literal.js: Error on line 10: Syntax error
 kangax-es6/subclassing.Array.concat.js: Error on line 9: Syntax error
 kangax-es6/subclassing.Array.filter.js: Error on line 9: Syntax error
 kangax-es6/subclassing.Array.from.js: Error on line 9: Syntax error
@@ -1105,14 +1105,14 @@ kangax-es6/super.static-binding.js: Error on line 10: Syntax error
 kangax-es6/super.this-binding.js: Error on line 10: Syntax error
 kangax-es6/tail-calls.direct.js: [object Error]
 kangax-es6/tail-calls.mutual.js: [object Error]
-kangax-es6/template.basic.js: Error on line 11: Syntax error
-kangax-es6/template.caching.js: Error on line 17: Syntax error
-kangax-es6/template.escape-sequences.js: Error on line 13: Syntax error
-kangax-es6/template.frozen-array.js: Error on line 12: Syntax error
+kangax-es6/template.basic.js: Error on line 11: Invalid character
+kangax-es6/template.caching.js: Error on line 17: Invalid character
+kangax-es6/template.escape-sequences.js: Error on line 13: Invalid character
+kangax-es6/template.frozen-array.js: Error on line 12: Invalid character
 kangax-es6/template.line-break.js: [object Error]
-kangax-es6/template.permanent-caching.js: Error on line 14: Syntax error
-kangax-es6/template.tagged.js: Error on line 21: Syntax error
-kangax-es6/template.toString.js: Error on line 14: Syntax error
+kangax-es6/template.permanent-caching.js: Error on line 14: Invalid character
+kangax-es6/template.tagged.js: Error on line 21: Invalid character
+kangax-es6/template.toString.js: Error on line 14: Invalid character
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: [object Error]
 kangax-es6/typed-arrays.DataView.Float32.js: [object Error]
 kangax-es6/typed-arrays.DataView.Float64.js: [object Error]
@@ -1159,10 +1159,10 @@ kangax-es6/typed-arrays.prototype.some.js: [object Error]
 kangax-es6/typed-arrays.prototype.sort.js: [object Error]
 kangax-es6/typed-arrays.prototype.subarray.js: [object Error]
 kangax-es6/typed-arrays.prototype.values.js: [object Error]
-kangax-es6/unicode-escapes.identifier.js: Error on line 8: Expected ')'
-kangax-es6/unicode-escapes.property-access.js: Error on line 8: Expected ')'
-kangax-es6/unicode-escapes.property-key.js: Error on line 8: Expected ')'
-kangax-es6/unicode-escapes.string.js: Error on line 9: <unknown>
+kangax-es6/unicode-escapes.identifier.js: Error on line 9: Invalid character
+kangax-es6/unicode-escapes.property-access.js: Error on line 10: Invalid character
+kangax-es6/unicode-escapes.property-key.js: Error on line 9: Invalid character
+kangax-es6/unicode-escapes.string.js: Error on line 9: Expected hexadecimal digit
 kangax-es6/well-known.hasInstance.js: [object Error]
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: [object Error]
 kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
@@ -1190,20 +1190,20 @@ kangax-es6/well-known.toStringTag.js: [object Error]
 kangax-es6/well-known.toStringTag.misc-builtins.js: [object Error]
 kangax-es6/well-known.toStringTag.new-builtins.js: Error on line 23: Expected '('
 kangax-es6/well-known.unscopables.js: [object Error]
-kangax-es2016/Array.prototype.includes.generic.js: Error on line 9: Expected ')'
+kangax-es2016/Array.prototype.includes.generic.js: Error on line 13: Expected ':'
 kangax-es2016/Array.prototype.includes.js: [object Error]
 kangax-es2016/Array.prototype.includes.sparse.js: [object Error]
 kangax-es2016/Array.prototype.includes.typed-array.js: [object Error]
-kangax-es2016/exponentiation.assignment.js: Error on line 9: Expected ')'
-kangax-es2016/exponentiation.basic.js: Error on line 9: Expected ')'
+kangax-es2016/exponentiation.assignment.js: Error on line 10: Syntax error
+kangax-es2016/exponentiation.basic.js: Error on line 10: Syntax error
 kangax-es2016/exponentiation.unary-negation-error.js: Error on line 10: Syntax error
 kangax-es2016/misc.Proxy-Array-includes.js: [object Error]
 kangax-es2016/misc.Proxy-enumerate-removed.js: [object Error]
 kangax-es2016/misc.generator-no-new.js: Error on line 10: Expected '('
 kangax-es2016/misc.generator-throw-inner.js: Error on line 10: Expected '('
-kangax-es2016/misc.nested-rest-destructuring-decl.js: Error on line 9: Expected ')'
-kangax-es2016/misc.nested-rest-destructuring-params.js: Error on line 9: Expected ')'
-kangax-es2016/misc.strict-fn-non-simple-params-error.js: Error on line 9: Expected ')'
+kangax-es2016/misc.nested-rest-destructuring-decl.js: Error on line 10: Expected identifier
+kangax-es2016/misc.nested-rest-destructuring-params.js: Error on line 9: Expected identifier
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: Error on line 9: Expected identifier
 kangax-es2017/Atomics.add.js: [object Error]
 kangax-es2017/Atomics.and.js: [object Error]
 kangax-es2017/Atomics.compareExchange.js: [object Error]
@@ -1234,13 +1234,13 @@ kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: [object Err
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: [object Error]
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Error on line 9: Expected ')'
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Error on line 8: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Error on line 11: Expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Error on line 10: Expected ':'
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: [object Error]
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Error on line 9: Expected ')'
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Error on line 8: Expected ')'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Error on line 11: Expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Error on line 10: Expected ':'
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: [object Error]
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: [object Error]
 kangax-es2017/annex-b.Proxy.__defineGetter__.js: [object Error]
@@ -1248,48 +1248,48 @@ kangax-es2017/annex-b.Proxy.__defineSetter__.js: [object Error]
 kangax-es2017/annex-b.Proxy.__lookupGetter__.js: [object Error]
 kangax-es2017/annex-b.Proxy.__lookupSetter__.js: [object Error]
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
-kangax-es2017/async.Symbol.toStringTag.js: Error on line 9: Expected ')'
+kangax-es2017/async.Symbol.toStringTag.js: Error on line 10: Expected ')'
 kangax-es2017/async.arrow-in-class.js: Error on line 48: Syntax error
-kangax-es2017/async.arrow.js: Error on line 44: Expected ')'
-kangax-es2017/async.await-non-promise.js: Error on line 44: Expected ')'
-kangax-es2017/async.await-rejection.js: Error on line 44: Expected ')'
-kangax-es2017/async.await.js: Error on line 44: Expected ')'
-kangax-es2017/async.constructor.js: Error on line 45: Syntax error
+kangax-es2017/async.arrow.js: Error on line 45: Syntax error
+kangax-es2017/async.await-non-promise.js: Error on line 45: Expected ')'
+kangax-es2017/async.await-rejection.js: Error on line 45: Expected ')'
+kangax-es2017/async.await.js: Error on line 45: Expected ')'
+kangax-es2017/async.constructor.js: Error on line 45: Expected ';'
 kangax-es2017/async.methods-class.js: Error on line 45: Syntax error
-kangax-es2017/async.methods-object.js: Error on line 44: Expected ')'
-kangax-es2017/async.must-await-value.js: Error on line 10: Syntax error
-kangax-es2017/async.no-await-in-params.js: Error on line 10: Syntax error
-kangax-es2017/async.no-line-break.js: Error on line 10: Syntax error
-kangax-es2017/async.no-prototype.js: Error on line 10: Syntax error
-kangax-es2017/async.prototype-chain.js: Error on line 9: Expected ')'
-kangax-es2017/async.return.js: Error on line 45: Syntax error
-kangax-es2017/async.throw.js: Error on line 45: Syntax error
+kangax-es2017/async.methods-object.js: Error on line 46: Expected ':'
+kangax-es2017/async.must-await-value.js: Error on line 10: Expected ';'
+kangax-es2017/async.no-await-in-params.js: Error on line 10: Expected ';'
+kangax-es2017/async.no-line-break.js: Error on line 10: Expected ';'
+kangax-es2017/async.no-prototype.js: Error on line 10: Expected ';'
+kangax-es2017/async.prototype-chain.js: Error on line 10: Expected ')'
+kangax-es2017/async.return.js: Error on line 45: Expected ';'
+kangax-es2017/async.throw.js: Error on line 45: Expected ';'
 kangax-es2017/misc.arguments-caller-removed.js: [object Error]
-kangax-es2017/regex.flags.u.case-folding.js: Error on line 1: <unknown>
-kangax-es2017/trailing-comma.arguments.js: Error on line 9: Expected ')'
-kangax-es2017/trailing-comma.params.js: Error on line 10: Expected '('
-kangax-es2018/Promise.prototype.finally.change-rejection.js: Error on line 48: Syntax error
-kangax-es2018/Promise.prototype.finally.js: Error on line 61: Syntax error
-kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Error on line 59: Syntax error
-kangax-es2018/async-iterators.for-await-of.js: Error on line 44: Expected ')'
-kangax-es2018/async-iterators.generators.js: Error on line 44: Syntax error
-kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: Error on line 9: Expected ')'
-kangax-es2018/misc.template-literal-revision.js: Error on line 16: Syntax error
-kangax-es2018/object-rest.js: Error on line 8: Expected ')'
-kangax-es2018/object-spread.js: Error on line 8: Expected ')'
-kangax-es2018/regex.flags.s.js: Error on line 1: <unknown>
-kangax-es2018/regex.lookbehind.js: [object Error]
-kangax-es2018/regex.named-capture-groups.js: [object Error]
-kangax-es2018/regex.unicode-property-escapes.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Error on line 1: <unknown>
-kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Error on line 1: <unknown>
+kangax-es2017/regex.flags.u.case-folding.js: Error on line 9: Expected ')'
+kangax-es2017/trailing-comma.arguments.js: Error on line 10: Syntax error
+kangax-es2017/trailing-comma.params.js: Error on line 10: Expected identifier
+kangax-es2018/Promise.prototype.finally.change-rejection.js: Error on line 48: Expected identifier
+kangax-es2018/Promise.prototype.finally.js: Error on line 61: Expected identifier
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Error on line 59: Expected identifier
+kangax-es2018/async-iterators.for-await-of.js: Error on line 58: Expected ')'
+kangax-es2018/async-iterators.generators.js: Error on line 44: Expected ';'
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: Error on line 11: Expected ':'
+kangax-es2018/misc.template-literal-revision.js: Error on line 16: Invalid character
+kangax-es2018/object-rest.js: Error on line 9: Expected identifier
+kangax-es2018/object-spread.js: Error on line 10: Expected identifier, string or number
+kangax-es2018/regex.flags.s.js: Error on line 10: Syntax error
+kangax-es2018/regex.lookbehind.js: Error on line 10: Syntax error in regular expression
+kangax-es2018/regex.named-capture-groups.js: Error on line 10: Syntax error in regular expression
+kangax-es2018/regex.unicode-property-escapes.js: Error on line 10: Syntax error
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Error on line 10: Expected ';'
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Error on line 10: Expected ';'
 kangax-es2019/Array.prototype.flatMap.js: [object Error]
 kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: [object Error]
 kangax-es2019/Array.prototype.flat.js: [object Error]
@@ -1311,42 +1311,42 @@ kangax-es2019/misc.Function-toString.unicode-escapes.js: [object Error]
 kangax-es2019/misc.JSON-stringify-well-formed.js: [object Error]
 kangax-es2019/misc.JSON-superset.line-separator.js: OK
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
-kangax-es2019/misc.optional-catch-binding.await.js: Error on line 43: Expected ')'
+kangax-es2019/misc.optional-catch-binding.await.js: Error on line 44: Expected ')'
 kangax-es2019/misc.optional-catch-binding.js: Error on line 12: Expected '('
 kangax-es2019/misc.optional-catch-binding.yield.js: Error on line 9: Expected '('
-kangax-es2020/BigInt64Array.js: Error on line 9: Expected ')'
+kangax-es2020/BigInt64Array.js: Error on line 12: Expected ';'
 kangax-es2020/BigInt.asIntN.js: [object Error]
 kangax-es2020/BigInt.asUintN.js: [object Error]
-kangax-es2020/BigInt.constructor.js: Error on line 9: Expected ')'
-kangax-es2020/BigInt.js: Error on line 9: Expected ')'
-kangax-es2020/BigUint64Array.js: Error on line 9: Expected ')'
-kangax-es2020/DataView.prototype.getBigInt64.js: Error on line 9: Expected ')'
-kangax-es2020/DataView.prototype.getBigUint64.js: Error on line 9: Expected ')'
-kangax-es2020/Promise.allSettled.js: Error on line 44: Expected ')'
+kangax-es2020/BigInt.constructor.js: Error on line 10: Expected ';'
+kangax-es2020/BigInt.js: Error on line 10: Expected ')'
+kangax-es2020/BigUint64Array.js: Error on line 12: Expected ';'
+kangax-es2020/DataView.prototype.getBigInt64.js: Error on line 12: Expected ')'
+kangax-es2020/DataView.prototype.getBigUint64.js: Error on line 12: Expected ')'
+kangax-es2020/Promise.allSettled.js: Error on line 49: Syntax error
 kangax-es2020/String.prototype.matchAll.js: [object Error]
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
 kangax-es2020/globalThis.descriptor.js: failed
 kangax-es2020/globalThis.js: failed
-kangax-es2020/nullish-coalescing.js: Error on line 9: Expected ')'
-kangax-es2020/optional-chaining.bracket.js: Error on line 9: Expected ')'
-kangax-es2020/optional-chaining.function-call.js: Error on line 9: Expected ')'
-kangax-es2020/optional-chaining.method-call.js: Error on line 9: Expected ')'
-kangax-es2020/optional-chaining.property.js: Error on line 9: Expected ')'
-kangax-es2020/optional-chaining.spread-params.js: Error on line 9: Expected ')'
+kangax-es2020/nullish-coalescing.js: Error on line 10: Syntax error
+kangax-es2020/optional-chaining.bracket.js: Error on line 12: Syntax error
+kangax-es2020/optional-chaining.function-call.js: Error on line 14: Syntax error
+kangax-es2020/optional-chaining.method-call.js: Error on line 12: Syntax error
+kangax-es2020/optional-chaining.property.js: Error on line 12: Syntax error
+kangax-es2020/optional-chaining.spread-params.js: Error on line 14: Syntax error
 kangax-es2021/FinalizationRegistry.js: [object Error]
-kangax-es2021/Promise.any.AggregateError.js: Error on line 49: Syntax error
-kangax-es2021/Promise.any.fulfillment.js: Error on line 44: Expected ')'
+kangax-es2021/Promise.any.AggregateError.js: Error on line 49: Expected identifier
+kangax-es2021/Promise.any.fulfillment.js: Error on line 49: Syntax error
 kangax-es2021/String.prototype.replaceAll.js: [object Error]
 kangax-es2021/WeakRef.js: [object Error]
-kangax-es2021/logical-assignment.and.js: Error on line 10: Syntax error
-kangax-es2021/logical-assignment.and.setter-not-invoked.js: Error on line 9: Syntax error
-kangax-es2021/logical-assignment.and.short-circuit.js: Error on line 9: Syntax error
-kangax-es2021/logical-assignment.nullish.js: Error on line 10: Syntax error
-kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Error on line 9: Syntax error
-kangax-es2021/logical-assignment.nullish.short-circuit.js: Error on line 9: Syntax error
-kangax-es2021/logical-assignment.or.js: Error on line 10: Syntax error
-kangax-es2021/logical-assignment.or.setter-not-invoked.js: Error on line 9: Syntax error
-kangax-es2021/logical-assignment.or.short-circuit.js: Error on line 9: Syntax error
+kangax-es2021/logical-assignment.and.js: Error on line 10: Expected ';'
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: Error on line 9: Expected ';'
+kangax-es2021/logical-assignment.and.short-circuit.js: Error on line 9: Expected ';'
+kangax-es2021/logical-assignment.nullish.js: Error on line 10: Expected ';'
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Error on line 9: Expected ';'
+kangax-es2021/logical-assignment.nullish.short-circuit.js: Error on line 9: Expected ';'
+kangax-es2021/logical-assignment.or.js: Error on line 10: Expected ';'
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: Error on line 9: Expected ';'
+kangax-es2021/logical-assignment.or.short-circuit.js: Error on line 9: Expected ';'
 kangax-es2021/numeric-separators.js: Error on line 9: Expected ';'
 kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: [object Error]
 kangax-es2022/Error.cause.AggregateError.js: [object Error]
@@ -1371,7 +1371,7 @@ kangax-es2022/at-method.String.js: [object Error]
 kangax-es2022/at-method.TypedArray.js: [object Error]
 kangax-es2022/class-fields.computed-instance.js: Error on line 9: Syntax error
 kangax-es2022/class-fields.computed-static.js: Error on line 9: Syntax error
-kangax-es2022/class-fields.instance.parent-scope.js: Error on line 10: Syntax error
+kangax-es2022/class-fields.instance.parent-scope.js: Error on line 10: Expected ';'
 kangax-es2022/class-fields.private-instance.initializers.js: Error on line 9: Syntax error
 kangax-es2022/class-fields.private-instance.js: Error on line 10: Syntax error
 kangax-es2022/class-fields.private-instance.optional-access.js: Error on line 9: Syntax error
@@ -1379,12 +1379,12 @@ kangax-es2022/class-fields.private-instance.optional-deep-access.js: Error on li
 kangax-es2022/class-fields.private-static.js: Error on line 10: Syntax error
 kangax-es2022/class-fields.public-instance.js: Error on line 10: Syntax error
 kangax-es2022/class-fields.public-static.js: Error on line 10: Syntax error
-kangax-es2022/class-fields.static.define.js: Error on line 8: Expected ')'
+kangax-es2022/class-fields.static.define.js: Error on line 9: Syntax error
 kangax-es2022/class-methods.private-accessor.js: Error on line 10: Syntax error
 kangax-es2022/class-methods.private-instance.js: Error on line 9: Syntax error
 kangax-es2022/class-methods.private-static-accessor.js: Error on line 10: Syntax error
 kangax-es2022/class-methods.private-static.js: Error on line 9: Syntax error
-kangax-es2022/class-static-init-blocks.js: Error on line 10: Syntax error
+kangax-es2022/class-static-init-blocks.js: Error on line 10: Expected ';'
 kangax-es2022/ergonomic-brand-checks.js: Error on line 9: Syntax error
 kangax-es2022/regex.flags.d.constructor.js: [object Error]
 kangax-es2022/regex.flags.d.shows-in-flags.js: [object Error]
@@ -1393,11 +1393,11 @@ kangax-es2023/Array.prototype.findLast.js: [object Error]
 kangax-es2023/Array.prototype.toReversed.js: [object Error]
 kangax-es2023/Array.prototype.toSorted.js: [object Error]
 kangax-es2023/Array.prototype.toSpliced.js: [object Error]
-kangax-es2023/Array.prototype.with.js: Error on line 11: Syntax error
+kangax-es2023/Array.prototype.with.js: Error on line 11: Expected identifier
 kangax-es2023/TypedArray.prototype.toReversed.js: [object Error]
 kangax-es2023/TypedArray.prototype.toSorted.js: [object Error]
-kangax-es2023/TypedArray.prototype.with.js: Error on line 11: Syntax error
-kangax-es2023/hashbang.js: failed
+kangax-es2023/TypedArray.prototype.with.js: Error on line 11: Expected identifier
+kangax-es2023/hashbang.js: Error on line 1: Invalid character
 kangax-es2024/ArrayBuffer.prototype.detached.js: Error on line 10: Syntax error
 kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: Error on line 10: Syntax error
 kangax-es2024/ArrayBuffer.prototype.transfer.js: Error on line 10: Syntax error
@@ -1405,29 +1405,29 @@ kangax-es2024/Map.groupBy.js: Error on line 10: Syntax error
 kangax-es2024/Object.groupBy.js: Error on line 10: Syntax error
 kangax-es2024/Promise.withResolvers.js: [object Error]
 kangax-es2024/regex.flags.v.constructor.js: [object Error]
-kangax-es2024/regex.flags.v.properties-of-strings.js: Error on line 1: <unknown>
-kangax-es2024/regex.flags.v.set-notations.js: Error on line 1: <unknown>
+kangax-es2024/regex.flags.v.properties-of-strings.js: Error on line 9: Expected ';'
+kangax-es2024/regex.flags.v.set-notations.js: Error on line 9: Expected ';'
 kangax-es2024/regex.flags.v.shows-in-flags.js: [object Error]
-kangax-es2024/regex.flags.v.unicode-15.1.js: Error on line 1: <unknown>
-kangax-es2024/regex.flags.v.unicode-16.0.js: Error on line 1: <unknown>
-kangax-es2024/regex.flags.v.unicode-17.0.js: Error on line 1: <unknown>
+kangax-es2024/regex.flags.v.unicode-15.1.js: Error on line 9: Expected ';'
+kangax-es2024/regex.flags.v.unicode-16.0.js: Error on line 9: Expected ';'
+kangax-es2024/regex.flags.v.unicode-17.0.js: Error on line 9: Expected ';'
 kangax-es2025/Iterator.extends.js: Error on line 10: Syntax error
 kangax-es2025/Iterator.from.iterable.js: Error on line 10: Syntax error
-kangax-es2025/Iterator.from.iterator.js: Error on line 9: Expected ')'
+kangax-es2025/Iterator.from.iterator.js: Error on line 10: Syntax error
 kangax-es2025/Iterator.instanceof.js: [object Error]
 kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: [object Error]
 kangax-es2025/Iterator.prototype.drop.js: [object Error]
-kangax-es2025/Iterator.prototype.every.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.filter.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.find.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.flatMap.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.forEach.js: Error on line 10: Syntax error
-kangax-es2025/Iterator.prototype.map.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.reduce.js: Error on line 9: Expected ')'
-kangax-es2025/Iterator.prototype.some.js: Error on line 9: Expected ')'
+kangax-es2025/Iterator.prototype.every.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.filter.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.find.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.flatMap.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.forEach.js: Error on line 10: Expected ';'
+kangax-es2025/Iterator.prototype.map.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.reduce.js: Error on line 10: Syntax error
+kangax-es2025/Iterator.prototype.some.js: Error on line 10: Syntax error
 kangax-es2025/Iterator.prototype.take.js: [object Error]
 kangax-es2025/Iterator.prototype.toArray.js: Error on line 10: Syntax error
-kangax-es2025/Promise.try.js: Error on line 50: Syntax error
+kangax-es2025/Promise.try.js: Error on line 50: Expected identifier
 kangax-es2025/RegExp.escape.js: [object Error]
 kangax-es2025/Set.prototype.difference.js: [object Error]
 kangax-es2025/Set.prototype.intersection.js: [object Error]
@@ -1436,10 +1436,10 @@ kangax-es2025/Set.prototype.isSubsetOf.js: [object Error]
 kangax-es2025/Set.prototype.isSupersetOf.js: [object Error]
 kangax-es2025/Set.prototype.symmetricDifference.js: [object Error]
 kangax-es2025/Set.prototype.union.js: [object Error]
-kangax-es2025/regex.duplicate-named-groups.js: [object Error]
+kangax-es2025/regex.duplicate-named-groups.js: Error on line 9: Syntax error in regular expression
 kangax-es2025/regex.pattern-modifiers.i.js: Error on line 9: Syntax error
 kangax-es2025/regex.pattern-modifiers.m.js: Error on line 9: Syntax error
-kangax-es2025/regex.pattern-modifiers.s.js: Error on line 1: <unknown>
+kangax-es2025/regex.pattern-modifiers.s.js: Error on line 9: Syntax error
 kangax-intl/Array.prototype.toLocaleString.js: OK
 kangax-intl/Date.prototype.toLocaleDateString.js: OK
 kangax-intl/Date.prototype.toLocaleString.js: OK
@@ -1468,31 +1468,31 @@ kangax-intl/Intl.prototype.js: [object Error]
 kangax-intl/Number.prototype.toLocaleString.js: OK
 kangax-intl/Object.prototype.toLocaleString.js: OK
 kangax-intl/String.prototype.localeCompare.js: OK
-kangax-next/Array.isTemplateObject.js: Error on line 8: Expected ')'
-kangax-next/AsyncDisposableStack.js: Error on line 43: Expected ')'
+kangax-next/Array.isTemplateObject.js: Error on line 10: Syntax error
+kangax-next/AsyncDisposableStack.js: Error on line 47: Expected ':'
 kangax-next/AsyncIterator.extends.js: Error on line 9: Syntax error
-kangax-next/AsyncIterator.from.async-iterable.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.from.iterable.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.from.iterator.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.instanceof.js: Error on line 8: Expected ')'
+kangax-next/AsyncIterator.from.async-iterable.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.from.iterable.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.from.iterator.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.instanceof.js: Error on line 9: Expected ')'
 kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: [object Error]
-kangax-next/AsyncIterator.prototype.drop.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.every.js: Error on line 43: Expected ')'
-kangax-next/AsyncIterator.prototype.filter.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.find.js: Error on line 43: Expected ')'
-kangax-next/AsyncIterator.prototype.flatMap.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.forEach.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.map.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.reduce.js: Error on line 43: Expected ')'
-kangax-next/AsyncIterator.prototype.some.js: Error on line 43: Expected ')'
-kangax-next/AsyncIterator.prototype.take.js: Error on line 44: Syntax error
-kangax-next/AsyncIterator.prototype.toArray.js: Error on line 43: Expected ')'
-kangax-next/DisposableStack.js: Error on line 8: Expected ')'
+kangax-next/AsyncIterator.prototype.drop.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.every.js: Error on line 44: Expected ')'
+kangax-next/AsyncIterator.prototype.filter.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.find.js: Error on line 44: Expected ')'
+kangax-next/AsyncIterator.prototype.flatMap.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.forEach.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.map.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.reduce.js: Error on line 44: Expected ')'
+kangax-next/AsyncIterator.prototype.some.js: Error on line 44: Expected ')'
+kangax-next/AsyncIterator.prototype.take.js: Error on line 44: Expected ';'
+kangax-next/AsyncIterator.prototype.toArray.js: Error on line 44: Expected ')'
+kangax-next/DisposableStack.js: Error on line 12: Expected identifier, string or number
 kangax-next/Map.prototype.upsert.js: Error on line 9: Syntax error
 kangax-next/RegExp.1-9.js: OK
-kangax-next/RegExp.lastMatch.js: failed
+kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: Error on line 13: Syntax error
+kangax-next/SuppressedError.js: Error on line 13: Expected ';'
 kangax-next/Uint8Array.fromBase64.js: Error on line 10: Syntax error
 kangax-next/Uint8Array.fromHex.js: Error on line 10: Syntax error
 kangax-next/Uint8Array.setFromBase64.js: Error on line 10: Syntax error
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: Error on line 10: Syntax error
 kangax-next/Uint8Array.toBase64.js: Error on line 10: Syntax error
 kangax-next/Uint8Array.toHex.js: Error on line 10: Syntax error
 kangax-next/WeakMap.prototype.upsert.js: Error on line 9: Syntax error
-kangax-next/await-using.for-of.js: Error on line 43: Expected ')'
-kangax-next/await-using.js: Error on line 43: Expected ')'
+kangax-next/await-using.for-of.js: Error on line 46: Expected ':'
+kangax-next/await-using.js: Error on line 44: Expected ')'
 kangax-next/class-decorators.js: Error on line 9: Syntax error
 kangax-next/function.sent.js: Error on line 10: Expected '('
-kangax-next/throw-expr.arrow.js: Error on line 8: Expected ')'
-kangax-next/throw-expr.conditional.js: Error on line 8: Expected ')'
-kangax-next/throw-expr.logical.js: Error on line 8: Expected ')'
+kangax-next/throw-expr.arrow.js: Error on line 9: Syntax error
+kangax-next/throw-expr.conditional.js: Error on line 9: Syntax error
+kangax-next/throw-expr.logical.js: Error on line 11: Syntax error
 kangax-next/throw-expr.param-init.js: Error on line 9: Expected ')'
-kangax-next/using.for-of.js: Error on line 8: Expected ')'
-kangax-next/using.js: Error on line 8: Expected ')'
+kangax-next/using.for-of.js: Error on line 11: Expected identifier, string or number
+kangax-next/using.js: Error on line 11: Expected identifier, string or number
