@@ -28,8 +28,4 @@ clean-docker:
 	-$(DOCKER) image ls | awk '/jsz-/{print $$1}' | xargs -r $(DOCKER) image rm
 	$(DOCKER) image prune -f
 
-# Intra-dir dep
-jsz-jscript:
-	make -C $(ROOT_DIR)/engines/jscript jscript
-
 .PHONY: hub sh clean-docker

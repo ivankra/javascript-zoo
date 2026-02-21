@@ -1,7 +1,7 @@
 // Standalone DLL host for JSRT API engines (JScript9/Chakra/ChakraCore).
 // Implements REPL and script runner.
 //
-// Legacy (IE9-11's jscript9.dll) and Edge (chakra.dll/ChakraCore.dll) JSRT API
+// Legacy (IE9-11's jscript9.dll) and Edge (chakra.dll/chakracore.dll) JSRT API
 // flavors are both supported, autodetected based on DLL name.
 //
 // Usage: jsrt.exe [--dll jscript9.dll] [--jitless] [--legacy/--edge] [--version] [script.js ...]

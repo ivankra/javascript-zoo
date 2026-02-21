@@ -199,6 +199,7 @@ class WScript : public IDispatch {
 
     if ((flags & DISPATCH_PROPERTYGET) != 0) {
       if ((dispid == kStdIn || dispid == kStdOut) && result) {
+        // Hack: alias WScript.StdIn/WScript.StdOut to WScript object itself.
         V_VT(result) = VT_DISPATCH;
         V_DISPATCH(result) = static_cast<IDispatch*>(this);
         AddRef();
@@ -327,12 +328,13 @@ class ScriptSite : public IActiveScriptSite {
     err->GetSourcePosition(nullptr, &line, nullptr);
     EXCEPINFO ex = {};
     err->GetExceptionInfo(&ex);
-    fwprintf(stderr, L"Line %lu: %ls\n", line + 1, ex.bstrDescription);
+    fwprintf(stderr, L"Line %lu: %ls\n", line + 1, ex.bstrDescription ? ex.bstrDescription : L"<script error>");
     SysFreeString(ex.bstrSource);
     SysFreeString(ex.bstrDescription);
     SysFreeString(ex.bstrHelpFile);
     return S_OK;
   }
+
  private:
   LONG ref_;
   WScript* host_;

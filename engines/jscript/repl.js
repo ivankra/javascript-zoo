@@ -3,6 +3,7 @@
 // Tested with:
 //   * JScript 5.7/5.8/Wine + Windows Script Host (wscript.exe)
 //   * ChakraCore shell
+//     Ref: https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1085
 //   * engines/jscript/jscript.cc
 //   * engines/jscript9/jsrt.cc
 //
@@ -63,9 +64,9 @@
 
   while (true) {
     if (typeof WScript.StdOut === 'object' && typeof WScript.StdOut.Write !== 'undefined') {
-      WScript.StdOut.Write('> ');
+      WScript.StdOut.Write('> ');  // no newline
     } else {
-      WScript.Echo('> ');
+      WScript.Echo('> ');  // +newline but chakracore doesn't have an alternative
     }
 
     if (typeof WScript.StdIn === 'object' && WScript.StdIn.AtEndOfStream) break;
@@ -73,11 +74,13 @@
     var __line = typeof readline !== 'undefined' ? readline() : WScript.StdIn.ReadLine();
     if (__line === undefined || __line === null) break;
 
-    var __trim = ('' + __line).replace(/^\s+|\s+$/g, '');
-    if (__trim === '') continue;
-    if (__trim === 'exit' || __trim === 'quit' || __trim == '\x04' /*^D*/) break;
+    __line = ('' + __line).replace(/^\s+|\s+$/g, '');
+    if (__line === '') continue;
+    if (__line === 'exit' || __line === 'quit') break
+    if (__line == '\x04') break;  // Unix-style EOF with Ctrl-D
 
     try {
+      // Note: not global eval on old JScript, so keep locals prefixed with __
       var __res = (0, eval)(__line);
       if (typeof __res !== 'undefined') {
         WScript.Echo(typeof __res !== 'object' ? '' + __res : __stringify(__res));
