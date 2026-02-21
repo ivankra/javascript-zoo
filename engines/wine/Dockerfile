@@ -50,5 +50,5 @@ RUN x86_64-w64-mingw32-g++ -o /dist/wine-dist/jscript64.exe -Wall -Os -s -fno-rt
 COPY build/dist.py ./
 RUN ./dist.py /dist/wine \
       --dist_files=/dist/wine-dist/jscript64.dll \
-      --wrapper='export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}" WINEDEBUG="${WINEDEBUG:--all,+err}"; exec wine "$SCRIPT_DIR/wine-dist/jscript64.exe" --dll "$SCRIPT_DIR/wine-dist/jscript64.dll" "$@"' \
+      --wrapper='export WINEDEBUG="${WINEDEBUG:--all,+err}" LD_PRELOAD= XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"; exec wine "$SCRIPT_DIR/wine-dist/jscript64.exe" --dll "$SCRIPT_DIR/wine-dist/jscript64.dll" "$@"' \
       console_log=console.log
