@@ -393,7 +393,7 @@ IActiveScript* InitJScript(const wchar_t* dll_path) {
 bool RunScript(IActiveScriptParse_t* parser, const wchar_t* code) {
   EXCEPINFO ex = {};
   HRESULT hr = parser->ParseScriptText(code, nullptr, nullptr, nullptr, 0, 0, SCRIPTTEXT_ISVISIBLE, nullptr, &ex);
-  if (FAILED(hr) && hr != SCRIPT_E_REPORTED) {
+  if (FAILED(hr) && hr != (HRESULT)SCRIPT_E_REPORTED) {
     // Show error message unless already handled by OnScriptError()
     fwprintf(stderr, L"ParseScriptText failed (hr=0x%08lx ex.scode=0x%08lx)%ls%ls\n",
              static_cast<unsigned long>(hr),
