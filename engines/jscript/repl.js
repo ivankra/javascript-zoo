@@ -7,6 +7,8 @@
 //   * engines/jscript/jscript.cc
 //   * engines/jscript9/jsrt.cc
 //
+// jscript.cc/jsrt.cc both embed a copy of this script to implement REPL.
+//
 // SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 // SPDX-License-Identifier: MIT
 
@@ -30,14 +32,10 @@
 
     function go(v, seen) {
       if (v === null) return 'null';
-      var t = typeof v;
-      if (t === 'string') return str(v);
-      if (t === 'boolean') return v ? 'true' : 'false';
-      if (t === 'number') return isFinite(v) ? '' + v : 'null';
-      if (t !== 'object') return;
+      if (typeof v !== 'object') return '' + v;
 
       for (var i = 0; i < seen.length; i++) {
-        if (seen[i] === v) throw new TypeError('Circular');
+        if (seen[i] === v) return '[Circular]';
       }
       seen.push(v);
 

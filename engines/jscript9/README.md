@@ -18,7 +18,7 @@ JavaScript engine of Internet Explorer 9.0 – 11.0.
 Succeeded by a newer engine in Microsoft Edge (Legacy) - which originally also kept Chakra name (chakra.dll),
 later open-sourced as [ChakraCore](../chakracore/README.md).
 
-Still used in Windows as `jscript9Legacy.dll` - Windows 11 24H2's drop-in replacement of
+Still ships in Windows as `jscript9Legacy.dll` - Windows 11 24H2's drop-in replacement of
 classic [JScript](../jscript/README.md) with a Chakra-based engine.
 
 ## Links

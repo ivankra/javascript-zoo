@@ -91,7 +91,7 @@ wint_t win_fgetwc(FILE* fp) {
 wchar_t* ReadFileUtf8(const wchar_t* path) {
   HANDLE h = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
   if (h == INVALID_HANDLE_VALUE) {
-    fwprintf(stderr, L"Cannot open: %ls\n", path);
+    fwprintf(stderr, L"Cannot open file: %ls\n", path);
     exit(1);
   }
   LARGE_INTEGER size = {};
@@ -328,7 +328,7 @@ class ScriptSite : public IActiveScriptSite {
     err->GetSourcePosition(nullptr, &line, nullptr);
     EXCEPINFO ex = {};
     err->GetExceptionInfo(&ex);
-    fwprintf(stderr, L"Line %lu: %ls\n", line + 1, ex.bstrDescription ? ex.bstrDescription : L"<script error>");
+    fwprintf(stderr, L"Error on line %lu: %ls\n", line + 1, ex.bstrDescription ? ex.bstrDescription : L"<unknown>");
     SysFreeString(ex.bstrSource);
     SysFreeString(ex.bstrDescription);
     SysFreeString(ex.bstrHelpFile);
@@ -393,7 +393,8 @@ IActiveScript* InitJScript(const wchar_t* dll_path) {
 bool RunScript(IActiveScriptParse_t* parser, const wchar_t* code) {
   EXCEPINFO ex = {};
   HRESULT hr = parser->ParseScriptText(code, nullptr, nullptr, nullptr, 0, 0, SCRIPTTEXT_ISVISIBLE, nullptr, &ex);
-  if (FAILED(hr)) {
+  if (FAILED(hr) && hr != SCRIPT_E_REPORTED) {
+    // Show error message unless already handled by OnScriptError()
     fwprintf(stderr, L"ParseScriptText failed (hr=0x%08lx ex.scode=0x%08lx)%ls%ls\n",
              static_cast<unsigned long>(hr),
              static_cast<unsigned long>(ex.scode),

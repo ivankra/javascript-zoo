@@ -24,8 +24,7 @@ download_jscript9_ie11_x64() {
   7z x -y "-o$work_dir/stage1" "$work_dir/ie11-installer.exe" >/dev/null
   7z x -y "-o$work_dir/stage2" "$work_dir/stage1/IE-REDIST.EXE" >/dev/null
 
-  dll="$(find "$work_dir/stage2" -type f -iname 'jscript9.dll' | grep -Ei '/(amd64|x64)_' | head -n1 || true)"
-
+  local dll="$(find "$work_dir/stage2" -type f -iname 'jscript9.dll' | grep -Ei '/(amd64|x64)_' | head -n1 || true)"
   if [[ -z "$dll" ]]; then
     echo "Could not locate jscript9.dll in extracted IE payload" >&2
     find "$work_dir" -maxdepth 5 -type f | sed -n '1,200p' >&2 || true
@@ -44,11 +43,6 @@ fi
 
 if [[ "${1:-}" == --download ]]; then
   exit 0
-fi
-
-if ! [[ -f "$DIST_DIR/jsrt64.exe" ]]; then
-  echo "Error: $DIST_DIR/jsrt64.exe is missing" >&2
-  exit 1
 fi
 
 export WINEDEBUG="${WINEDEBUG:--all,+err}"

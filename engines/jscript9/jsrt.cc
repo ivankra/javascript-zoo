@@ -81,7 +81,9 @@ wint_t win_fgetwc(FILE* fp) {
 }
 
 #define fwprintf win_fwprintf
-#define CHECK(cond) do { if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } } while (0)
+#define CHECK(cond) do { \
+  if (!(cond)) { fwprintf(stderr, L"CHECK(\"%hs\") failed\n", #cond); exit(1); } \
+} while (0)
 
 typedef void* JsRuntimeHandle;
 typedef void* JsRef;
@@ -166,7 +168,7 @@ struct API {
 wchar_t* ReadFileUtf8(const wchar_t* path) {
   HANDLE h = CreateFileW(path, GENERIC_READ, FILE_SHARE_READ, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
   if (h == INVALID_HANDLE_VALUE) {
-    fwprintf(stderr, L"Cannot open: %ls\n", path);
+    fwprintf(stderr, L"Cannot open file: %ls\n", path);
     exit(1);
   }
   LARGE_INTEGER size = {};

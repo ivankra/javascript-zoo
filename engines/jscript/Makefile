@@ -3,8 +3,9 @@
 
 include ../../build/build.mk
 
+CONFORMANCE_SUITE = es[1-5]
+
 ifeq ($(DOCKER_ARCH),amd64)
-CONFORMANCE_CMD = "$(ROOT_DIR)/conformance/run.sh" -j 4 -o conformance.txt $(DIST_DIR)/jscript $(ROOT_DIR)/conformance/es[1-5]
 $(eval $(call build_engine,jscript,Dockerfile))
 else
 all:
