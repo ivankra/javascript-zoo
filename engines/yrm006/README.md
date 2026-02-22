@@ -13,9 +13,9 @@ Primitive unfinished interpreter.
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
-<li>ES1: 1%, <b>28 crashes</b></li>
-<li>ES3: 0%, <b>17 crashes</b></li>
+<li>ES1: 0%, <b>22 crashes</b></li>
+<li>ES3: 0%, <b>15 crashes</b></li>
 <li>ES5: 0%, <b>1 crash</b></li>
 </ul></details>
 
-💥 **46 crashes during testing**
+💥 **38 crashes during testing**

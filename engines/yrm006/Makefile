@@ -5,4 +5,4 @@ include ../../build/build.mk
 
 CONFORMANCE_SUITE = es[1-5]
 
-$(eval $(call build_engine,yrm006-miniscript,Dockerfile))
+$(eval $(call build_engine,yrm006,Dockerfile))

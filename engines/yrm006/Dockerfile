@@ -10,8 +10,8 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-COPY engines/yrm006-miniscript/main.c ./
+COPY engines/yrm006/main.c ./
 RUN cc -O3 --std=c99 -o miniscript miniscript.c mslib.c main.c #readme.c
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/yrm006-miniscript --binary=/src/miniscript --no-license console_log=print
+RUN ./dist.py /dist/yrm006 --binary=/src/miniscript --no-license console_log=print
