@@ -8,3 +8,11 @@ Toy JavaScript interpreter.
 * License:     MIT
 * Years:       2016
 * Interpreter: tree walker
+
+## Conformance
+
+<details><summary>ES1-ES5: 0%</summary><ul>
+<li>ES1: 0%, <b>1 crash</b></li>
+</ul></details>
+
+💥 **1 crash during testing**

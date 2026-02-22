@@ -1,0 +1,117 @@
+diff --git a/src/v3js.c b/src/v3js.c
+index d5964d8..5f8222c 100644
+--- a/src/v3js.c
++++ b/src/v3js.c
+@@ -1,6 +1,7 @@
+ #include <v3_core.h>
+ #include "v3_eval.h"
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ 
+ #define PROMPT "> "
+@@ -12,6 +13,76 @@ static void v3_ctx_init(v3_ctx_t *ctx)
+     memset(ctx, 0, sizeof(v3_ctx_t));
+ }
+ 
++static v3_base_object_t *host_print(v3_ctx_t *ctx)
++{
++    v3_object_t *args;
++    v3_number_object_t *len;
++    size_t i;
++    char key[32];
++
++    args = to_obj(v3_object_get(to_obj(ctx->frame->call_obj), v3_strobj("arguments")));
++    len = args ? to_number(v3_object_get(args, v3_strobj("length"))) : NULL;
++
++    for (i = 0; len && i < (size_t) len->value; i++) {
++        int n = snprintf(key, sizeof(key), "%zu", i);
++        v3_base_object_t *arg;
++        v3_string_object_t *s;
++        if (n <= 0 || (size_t) n >= sizeof(key)) continue;
++        arg = v3_object_get_by_str(args, key, (size_t) n);
++        s = arg ? v3_to_string(ctx, arg) : NULL;
++        if (i) fputc(' ', stdout);
++        if (s) fwrite(to_string(s)->value.data, 1, to_string(s)->value.length, stdout);
++        else fputs("undefined", stdout);
++    }
++    fputc('\n', stdout);
++    return to_base(&v3_undefined);
++}
++
++static char *read_file(const char *path) {
++  FILE *fp = fopen(path, "rb");
++  if (!fp) return NULL;
++
++  size_t size = 0, cap = 4096, num;
++  char *buf = (char *)malloc(cap);
++  if (!buf) {
++    fclose(fp);
++    return NULL;
++  }
++
++  while ((num = fread(buf + size, 1, cap - 1 - size, fp)) > 0) {
++    if ((size += num) >= cap - 1) {
++      char *newbuf = (char *)realloc(buf, cap *= 2);
++      if (!newbuf) {
++        free(buf);
++        fclose(fp);
++        return NULL;
++      }
++      buf = newbuf;
++    }
++  }
++  fclose(fp);
++  buf[size] = 0;
++
++  return buf;
++}
++
++static int add_host_builtins(v3_ctx_t *ctx)
++{
++    v3_object_t *console;
++    v3_function_object_t *print_fn =
++        v3_function_create_native(ctx, v3_strobj("print"), v3_numobj(1), host_print);
++    v3_function_object_t *log_fn;
++    if (print_fn == NULL) return V3_ERROR;
++    v3_obj_set(ctx->global, v3_strobj("print"), print_fn);
++    console = v3_object_create(ctx, 2);
++    if (console == NULL) return V3_ERROR;
++    log_fn = v3_function_create_native(ctx, v3_strobj("log"), v3_numobj(1), host_print);
++    if (log_fn == NULL) return V3_ERROR;
++    v3_obj_set(console, v3_strobj("log"), log_fn);
++    v3_obj_set(ctx->global, v3_strobj("console"), console);
++    return V3_OK;
++}
++
+ int main(int argc, char ** argv)
+ {
+     FILE        *stream;
+@@ -37,6 +108,7 @@ int main(int argc, char ** argv)
+ 
+     ctx.options = &options;
+     v3_init_global(&ctx);
++    add_host_builtins(&ctx);
+ 
+     // pending
+     // resolve external file passed by argv
+@@ -44,6 +116,19 @@ int main(int argc, char ** argv)
+         // execute
+         // show result or err
+         // return 
++    if (argc > 1) {
++        int i;
++        for (i = 1; i < argc; i++) {
++            char *code;
++            int rc;
++            code = read_file(argv[i]);
++            if (code == NULL) return 1;
++            rc = v3_eval(&ctx, code);
++            free(code);
++            if (rc != V3_OK) return 1;
++        }
++        return 0;
++    }
+ 
+     // read input
+     printf(PROMPT);
