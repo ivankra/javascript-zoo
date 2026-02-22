@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "console_log": "writeln", "dist_size": 929745, "engine": "yaji"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: failed
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: Syntax error detected Encountered "function" at line 54, column 3. [[Error loading file' Function.prototype.apply.js']]
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: zero failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: ''.split(/.?/).length !== 0
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: Runtime error The function 'substr' is not defined for object 'abcdefgh' [[Error loading file' annex-b.String.prototype.substr.js']]
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: wrong exception for invalid token
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: OK
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: OK
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: labelled break from block failed
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' nested-functions.eval.js']]
+es3/nested-functions.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' nested-functions.js']]
+es3/regex.backref.js: backref for a group that hasn't captured failed
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: Runtime error 'null' cannot be converted to Object [[Error loading file' regex.negative-lookahead.js']]
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: OK
+es5/Array.prototype.filter.js: OK
+es5/Array.prototype.forEach.js: OK
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: OK
+es5/Array.prototype.some.js: OK
+es5/Array.prototype.sort.TypeError.js: OK
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: OK
+es5/Date.prototype.toJSON.js: OK
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: OK
+es5/JSON.js: OK
+es5/JSON.parse.js: OK
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: escape sequences failed
+es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: OK
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: basic property names failed
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: OK
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: basic keys failed
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: OK
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: [[Error loading file' debugger.js']]
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: OK
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: Runtime error GetcallerThrower not valid in strict mode [[Error loading file' strict.no-arguments-caller.js']]
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: OK
+es5/strict.no-eval-or-arguments-assignment.js: OK
+es5/strict.no-eval-or-arguments-bindings.js: OK
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: OK
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: OK
+es5/strict.this-primitive-not-coerced-in-accessors.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' strict.this-primitive-not-coerced-in-accessors.js']]
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: OK
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: failed
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: failed
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: TypeError: The function 'substr' is not defined for object '0b'
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: OK
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: OK
+kangax-es5/strict.arguments-caller-error.js: TypeError: GetcallerThrower not valid in strict mode
+kangax-es5/strict.arguments-unmapped.js: failed
+kangax-es5/strict.assignment-eval-arguments-error.js: OK
+kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: OK
+kangax-es5/strict.delete-non-configurable-error.js: OK
+kangax-es5/strict.eval-arguments-bindings-error.js: OK
+kangax-es5/strict.eval-no-bindings.js: OK
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: OK
+kangax-es5/strict.repeated-params-error.js: OK
+kangax-es5/strict.reserved-words.js: OK
+kangax-es5/strict.this-not-coerced-accessors.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' strict.this-not-coerced-accessors.js']]
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: OK
+kangax-es5/strict.with-error.js: OK
+kangax-es6/Array.Symbol.species.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Array.from.array-like.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.from.generator.js: Syntax error detected Encountered "*" at line 9, column 27. [[Error loading file' Array.from.generator.js']]
+kangax-es6/Array.from.iterable-instance.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.from.iterable.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.from.map.generator.js: Syntax error detected Encountered "*" at line 9, column 27. [[Error loading file' Array.from.map.generator.js']]
+kangax-es6/Array.from.map.iterable-instance.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.from.map.iterable.js: TypeError: The function 'from' is not defined for object '<Array:org.yaji.data.SparseArrayConstructor>'
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Function.name.bound.js']]
+kangax-es6/Function.name.class-expression.js: [[Error loading file' Function.name.class-expression.js']]
+kangax-es6/Function.name.class-object-method.js: [[Error loading file' Function.name.class-object-method.js']]
+kangax-es6/Function.name.class-prototype.js: [[Error loading file' Function.name.class-prototype.js']]
+kangax-es6/Function.name.class-statement.js: [[Error loading file' Function.name.class-statement.js']]
+kangax-es6/Function.name.class-static.js: [[Error loading file' Function.name.class-static.js']]
+kangax-es6/Function.name.class-variable.js: [[Error loading file' Function.name.class-variable.js']]
+kangax-es6/Function.name.configurable.js: TypeError: Variable 'descriptor' has an undefined value
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: Syntax error detected Encountered "(" at line 10, column 16. [[Error loading file' Function.name.shorthand.js']]
+kangax-es6/Function.name.shorthand.no-lexical.js: Syntax error detected Encountered "(" at line 11, column 13. [[Error loading file' Function.name.shorthand.no-lexical.js']]
+kangax-es6/Function.name.statement.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Function.name.statement.js']]
+kangax-es6/Function.name.symbol-keyed.js: Syntax error detected Encountered "[" at line 13, column 5. [[Error loading file' Function.name.symbol-keyed.js']]
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.Symbol.iterator.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.clear.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.delete.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.entries.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.forEach.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.keys.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.size.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.prototype.values.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Map.zero-key.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: TypeError: The function 'hypot' is not defined for object '[object Math]'
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: The function 'assign' is not defined for object '<Object>'
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: TypeError: The function 'setPrototypeOf' is not defined for object '<Object>'
+kangax-es6/Promise.Symbol.species.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es6/Promise.all.iterable.js: Syntax error detected Encountered "function" at line 81, column 3. [[Error loading file' Promise.all.iterable.js']]
+kangax-es6/Promise.all.js: Syntax error detected Encountered "function" at line 57, column 3. [[Error loading file' Promise.all.js']]
+kangax-es6/Promise.constructor-requires-new.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es6/Promise.js: Syntax error detected Encountered "function" at line 49, column 3. [[Error loading file' Promise.js']]
+kangax-es6/Promise.prototype-not-instance.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es6/Promise.race.iterable.js: Syntax error detected Encountered "function" at line 81, column 3. [[Error loading file' Promise.race.iterable.js']]
+kangax-es6/Promise.race.js: Syntax error detected Encountered "function" at line 57, column 3. [[Error loading file' Promise.race.js']]
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.get.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.has.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.handler.set.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Proxy.revocable.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/Reflect.apply.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.construct.Array-subclassing.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Reflect.construct.Array-subclassing.js']]
+kangax-es6/Reflect.construct.Function-subclassing.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Reflect.construct.Function-subclassing.js']]
+kangax-es6/Reflect.construct.Promise-subclassing.js: Syntax error detected Encountered "function" at line 45, column 3. [[Error loading file' Reflect.construct.Promise-subclassing.js']]
+kangax-es6/Reflect.construct.RegExp-subclassing.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Reflect.construct.RegExp-subclassing.js']]
+kangax-es6/Reflect.construct.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.construct.new-target.js: Syntax error detected Encountered "." at line 11, column 12. [[Error loading file' Reflect.construct.new-target.js']]
+kangax-es6/Reflect.construct.third-argument.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' Reflect.construct.third-argument.js']]
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.get.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.has.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.ownKeys.string.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/Reflect.set.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/RegExp.prototype.Symbol.match.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/RegExp.prototype.Symbol.replace.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/RegExp.prototype.Symbol.search.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/RegExp.prototype.Symbol.split.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.iterator-closing.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.Symbol.iterator.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.clear.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.delete.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.entries.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.forEach.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.keys.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.size.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.prototype.values.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/Set.zero-key.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/String.prototype.Symbol.iterator.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.Object.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.String.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.defineProperty.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.global-registry.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.no-coerce.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.no-new.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.prototype.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/Symbol.typeof.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/WeakMap.accept-primitives.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.frozen-keys.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.no-clear.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.prototype.delete.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: Variable 'WeakMap' does not exist in the scope chain
+kangax-es6/WeakSet.accept-primitives.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.no-clear.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/WeakSet.prototype.delete.js: ReferenceError: Variable 'WeakSet' does not exist in the scope chain
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: The function 'compile' is not defined for object '/a/'
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: The function 'anchor' is not defined for object ''
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: The function 'anchor' is not defined for object ''
+kangax-es6/annex-b.function.hoisted-block-level.js: Syntax error detected Encountered "function" at line 12, column 3. [[Error loading file' annex-b.function.hoisted-block-level.js']]
+kangax-es6/annex-b.function.if-statement.js: Syntax error detected Encountered "function" at line 12, column 12. [[Error loading file' annex-b.function.if-statement.js']]
+kangax-es6/annex-b.function.labeled.js: Syntax error detected Encountered "function" at line 12, column 10. [[Error loading file' annex-b.function.labeled.js']]
+kangax-es6/annex-b.html-comments.js: Syntax error detected Encountered ">" at line 9, column 5. [[Error loading file' annex-b.html-comments.js']]
+kangax-es6/annex-b.regex.backreferences-octal.js: TypeError: 'null' cannot be converted to Object
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: PatternSyntaxException: /x{1/
+kangax-es6/annex-b.regex.invalid-char-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-control-escapes.js: TypeError: 'null' cannot be converted to Object
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: PatternSyntaxException: /\x1/
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: PatternSyntaxException: /\u1/
+kangax-es6/annex-b.regex.octal-escapes.js: TypeError: 'null' cannot be converted to Object
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: Syntax error detected Encountered "[" at line 14, column 14. [[Error loading file' annex-b.__proto__.literals.not-computed.js']]
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: Syntax error detected Encountered "(" at line 13, column 23. [[Error loading file' annex-b.__proto__.literals.not-shorthand-method.js']]
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: Syntax error detected Encountered "}" at line 14, column 24. [[Error loading file' annex-b.__proto__.literals.not-shorthand-property.js']]
+kangax-es6/arrow.0-params.js: Syntax error detected Encountered ")" at line 10, column 12. [[Error loading file' arrow.0-params.js']]
+kangax-es6/arrow.1-param.js: Syntax error detected Encountered ">" at line 10, column 14. [[Error loading file' arrow.1-param.js']]
+kangax-es6/arrow.5-param.js: Syntax error detected Encountered ">" at line 10, column 28. [[Error loading file' arrow.5-param.js']]
+kangax-es6/arrow.bind.js: Syntax error detected Encountered ">" at line 10, column 51. [[Error loading file' arrow.bind.js']]
+kangax-es6/arrow.lexical-arguments.js: Syntax error detected Encountered ">" at line 10, column 35. [[Error loading file' arrow.lexical-arguments.js']]
+kangax-es6/arrow.lexical-super.constructor.js: [[Error loading file' arrow.lexical-super.constructor.js']]
+kangax-es6/arrow.lexical-super.methods.js: [[Error loading file' arrow.lexical-super.methods.js']]
+kangax-es6/arrow.lexical-this.js: Syntax error detected Encountered ">" at line 10, column 51. [[Error loading file' arrow.lexical-this.js']]
+kangax-es6/arrow.new-target.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' arrow.new-target.js']]
+kangax-es6/arrow.no-line-break.js: Syntax error detected Encountered ")" at line 10, column 12. [[Error loading file' arrow.no-line-break.js']]
+kangax-es6/arrow.no-prototype.js: Syntax error detected Encountered ")" at line 10, column 12. [[Error loading file' arrow.no-prototype.js']]
+kangax-es6/arrow.precedence.js: Syntax error detected Encountered ")" at line 10, column 12. [[Error loading file' arrow.precedence.js']]
+kangax-es6/arrow.this-call-apply.js: Syntax error detected Encountered ")" at line 10, column 49. [[Error loading file' arrow.this-call-apply.js']]
+kangax-es6/class.accessor-properties.js: [[Error loading file' class.accessor-properties.js']]
+kangax-es6/class.anonymous.js: [[Error loading file' class.anonymous.js']]
+kangax-es6/class.block-scoped.js: [[Error loading file' class.block-scoped.js']]
+kangax-es6/class.computed-accessor-properties.js: [[Error loading file' class.computed-accessor-properties.js']]
+kangax-es6/class.computed-names-tdz.js: [[Error loading file' class.computed-names-tdz.js']]
+kangax-es6/class.computed-prototype-methods.js: [[Error loading file' class.computed-prototype-methods.js']]
+kangax-es6/class.computed-static-accessor-properties.js: [[Error loading file' class.computed-static-accessor-properties.js']]
+kangax-es6/class.computed-static-methods.js: [[Error loading file' class.computed-static-methods.js']]
+kangax-es6/class.constructor-requires-new.js: [[Error loading file' class.constructor-requires-new.js']]
+kangax-es6/class.constructor.js: [[Error loading file' class.constructor.js']]
+kangax-es6/class.expression.js: [[Error loading file' class.expression.js']]
+kangax-es6/class.extends-expressions.js: [[Error loading file' class.extends-expressions.js']]
+kangax-es6/class.extends-null.js: [[Error loading file' class.extends-null.js']]
+kangax-es6/class.extends.js: [[Error loading file' class.extends.js']]
+kangax-es6/class.implicit-strict.js: [[Error loading file' class.implicit-strict.js']]
+kangax-es6/class.lexical-name.js: [[Error loading file' class.lexical-name.js']]
+kangax-es6/class.methods-not-enumerable.js: [[Error loading file' class.methods-not-enumerable.js']]
+kangax-es6/class.new-target.js: Syntax error detected Encountered "function" at line 11, column 7. [[Error loading file' class.new-target.js']]
+kangax-es6/class.optional-semicolons.js: [[Error loading file' class.optional-semicolons.js']]
+kangax-es6/class.prototype-methods.js: [[Error loading file' class.prototype-methods.js']]
+kangax-es6/class.statement.js: [[Error loading file' class.statement.js']]
+kangax-es6/class.static-accessor-properties.js: [[Error loading file' class.static-accessor-properties.js']]
+kangax-es6/class.static-methods.js: [[Error loading file' class.static-methods.js']]
+kangax-es6/class.string-keyed-methods.js: [[Error loading file' class.string-keyed-methods.js']]
+kangax-es6/const.basic.js: [[Error loading file' const.basic.js']]
+kangax-es6/const.block-scoped.js: [[Error loading file' const.block-scoped.js']]
+kangax-es6/const.for-in.js: Syntax error detected Encountered "for" at line 11, column 3. [[Error loading file' const.for-in.js']]
+kangax-es6/const.for-loop.js: [[Error loading file' const.for-loop.js']]
+kangax-es6/const.for-of.js: Syntax error detected Encountered "for" at line 11, column 3. [[Error loading file' const.for-of.js']]
+kangax-es6/const.no-redefine.js: [[Error loading file' const.no-redefine.js']]
+kangax-es6/const.no-statement.js: [[Error loading file' const.no-statement.js']]
+kangax-es6/const.shadow.js: [[Error loading file' const.shadow.js']]
+kangax-es6/const.strict.basic.js: [[Error loading file' const.strict.basic.js']]
+kangax-es6/const.strict.block-scoped.js: [[Error loading file' const.strict.block-scoped.js']]
+kangax-es6/const.strict.for-in.js: Syntax error detected Encountered "for" at line 12, column 3. [[Error loading file' const.strict.for-in.js']]
+kangax-es6/const.strict.for-loop.js: [[Error loading file' const.strict.for-loop.js']]
+kangax-es6/const.strict.for-of.js: Syntax error detected Encountered "for" at line 12, column 3. [[Error loading file' const.strict.for-of.js']]
+kangax-es6/const.strict.no-redefine.js: [[Error loading file' const.strict.no-redefine.js']]
+kangax-es6/const.strict.no-statement.js: [[Error loading file' const.strict.no-statement.js']]
+kangax-es6/const.strict.shadow.js: [[Error loading file' const.strict.shadow.js']]
+kangax-es6/const.strict.tdz.js: Syntax error detected Encountered "function" at line 12, column 3. [[Error loading file' const.strict.tdz.js']]
+kangax-es6/const.tdz.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' const.tdz.js']]
+kangax-es6/default-params.arguments.js: Syntax error detected Encountered "=" at line 10, column 23. [[Error loading file' default-params.arguments.js']]
+kangax-es6/default-params.basic.js: Syntax error detected Encountered "=" at line 10, column 23. [[Error loading file' default-params.basic.js']]
+kangax-es6/default-params.explicit-undefined.js: Syntax error detected Encountered "=" at line 10, column 23. [[Error loading file' default-params.explicit-undefined.js']]
+kangax-es6/default-params.new-function.js: SyntaxError: All arguments passed to function constructor could not be parsed as parameters
+kangax-es6/default-params.refer-previous.js: Syntax error detected Encountered "=" at line 10, column 26. [[Error loading file' default-params.refer-previous.js']]
+kangax-es6/default-params.separate-scope.js: Syntax error detected Encountered "=" at line 10, column 21. [[Error loading file' default-params.separate-scope.js']]
+kangax-es6/default-params.tdz.js: Syntax error detected Encountered "=" at line 10, column 22. [[Error loading file' default-params.tdz.js']]
+kangax-es6/destructuring-assign.array.js: ReferenceError: Value ',,,' is not an assignable object or property
+kangax-es6/destructuring-assign.astral-string.js: ReferenceError: Value '' is not an assignable object or property
+kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: Value ',' is not an assignable object or property
+kangax-es6/destructuring-assign.chained-object.js: Syntax error detected Encountered "," at line 11, column 6. [[Error loading file' destructuring-assign.chained-object.js']]
+kangax-es6/destructuring-assign.computed-properties.js: Syntax error detected Encountered "[" at line 11, column 6. [[Error loading file' destructuring-assign.computed-properties.js']]
+kangax-es6/destructuring-assign.defaults.js: Syntax error detected Encountered "=" at line 11, column 7. [[Error loading file' destructuring-assign.defaults.js']]
+kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: Value '' is not an assignable object or property
+kangax-es6/destructuring-assign.generator.js: Syntax error detected Encountered "*" at line 11, column 24. [[Error loading file' destructuring-assign.generator.js']]
+kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: Value ',' is not an assignable object or property
+kangax-es6/destructuring-assign.iterable-instance.js: ReferenceError: Value ',,' is not an assignable object or property
+kangax-es6/destructuring-assign.iterable.js: ReferenceError: Value ',,' is not an assignable object or property
+kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: Value ',' is not an assignable object or property
+kangax-es6/destructuring-assign.nested-rest.js: Syntax error detected Encountered "." at line 11, column 11. [[Error loading file' destructuring-assign.nested-rest.js']]
+kangax-es6/destructuring-assign.nested.js: Syntax error detected Encountered "}" at line 11, column 14. [[Error loading file' destructuring-assign.nested.js']]
+kangax-es6/destructuring-assign.object-expression.js: Syntax error detected Encountered "," at line 11, column 13. [[Error loading file' destructuring-assign.object-expression.js']]
+kangax-es6/destructuring-assign.object-primitives.js: Syntax error detected Encountered "}" at line 11, column 12. [[Error loading file' destructuring-assign.object-primitives.js']]
+kangax-es6/destructuring-assign.object.js: Syntax error detected Encountered "," at line 11, column 6. [[Error loading file' destructuring-assign.object.js']]
+kangax-es6/destructuring-assign.parenthesised-error.js: Syntax error detected Encountered "," at line 11, column 6. in file: 'destructuring-assign.parenthesised-error.js' [[Error loading file' destructuring-assign.parenthesised-error.js']]
+kangax-es6/destructuring-assign.rest.js: Syntax error detected Encountered "." at line 11, column 7. [[Error loading file' destructuring-assign.rest.js']]
+kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: Value ',,' is not an assignable object or property
+kangax-es6/destructuring-assign.string.js: ReferenceError: Value ',,' is not an assignable object or property
+kangax-es6/destructuring-assign.throws-null-undefined.js: Syntax error detected Encountered "}" at line 12, column 8. [[Error loading file' destructuring-assign.throws-null-undefined.js']]
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: Value '' is not an assignable object or property
+kangax-es6/destructuring-assign.trailing-comma-object.js: Syntax error detected Encountered "," at line 11, column 6. [[Error loading file' destructuring-assign.trailing-comma-object.js']]
+kangax-es6/destructuring-decl.array.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.array.js']]
+kangax-es6/destructuring-decl.astral-string.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.astral-string.js']]
+kangax-es6/destructuring-decl.catch.js: Syntax error detected Encountered "[" at line 12, column 11. [[Error loading file' destructuring-decl.catch.js']]
+kangax-es6/destructuring-decl.computed-properties.js: Syntax error detected Encountered "{" at line 11, column 7. [[Error loading file' destructuring-decl.computed-properties.js']]
+kangax-es6/destructuring-decl.defaults-tdz.js: Syntax error detected Encountered "{" at line 10, column 7. [[Error loading file' destructuring-decl.defaults-tdz.js']]
+kangax-es6/destructuring-decl.defaults.js: Syntax error detected Encountered "{" at line 10, column 7. [[Error loading file' destructuring-decl.defaults.js']]
+kangax-es6/destructuring-decl.for-in.js: Syntax error detected Encountered "[" at line 10, column 11. [[Error loading file' destructuring-decl.for-in.js']]
+kangax-es6/destructuring-decl.for-of.js: Syntax error detected Encountered "[" at line 10, column 11. [[Error loading file' destructuring-decl.for-of.js']]
+kangax-es6/destructuring-decl.generator.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.generator.js']]
+kangax-es6/destructuring-decl.iterable-instance.js: Syntax error detected Encountered "[" at line 34, column 7. [[Error loading file' destructuring-decl.iterable-instance.js']]
+kangax-es6/destructuring-decl.iterable.js: Syntax error detected Encountered "[" at line 34, column 7. [[Error loading file' destructuring-decl.iterable.js']]
+kangax-es6/destructuring-decl.iterator-closing.js: Syntax error detected Encountered "[" at line 38, column 7. [[Error loading file' destructuring-decl.iterator-closing.js']]
+kangax-es6/destructuring-decl.multiple-var.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.multiple-var.js']]
+kangax-es6/destructuring-decl.nested.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.nested.js']]
+kangax-es6/destructuring-decl.object-primitives.js: Syntax error detected Encountered "{" at line 10, column 7. [[Error loading file' destructuring-decl.object-primitives.js']]
+kangax-es6/destructuring-decl.object.js: Syntax error detected Encountered "{" at line 10, column 7. [[Error loading file' destructuring-decl.object.js']]
+kangax-es6/destructuring-decl.rest.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.rest.js']]
+kangax-es6/destructuring-decl.sparse-array.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.sparse-array.js']]
+kangax-es6/destructuring-decl.string.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.string.js']]
+kangax-es6/destructuring-decl.throws-null-undefined.js: Syntax error detected Encountered "{" at line 11, column 9. [[Error loading file' destructuring-decl.throws-null-undefined.js']]
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' destructuring-decl.trailing-comma-iterable.js']]
+kangax-es6/destructuring-decl.trailing-comma-object.js: Syntax error detected Encountered "{" at line 10, column 7. [[Error loading file' destructuring-decl.trailing-comma-object.js']]
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: Syntax error detected Encountered ">" at line 10, column 38. [[Error loading file' destructuring-params.aliased-defaults-arrow.js']]
+kangax-es6/destructuring-params.arguments.js: Syntax error detected Encountered "{" at line 10, column 20. [[Error loading file' destructuring-params.arguments.js']]
+kangax-es6/destructuring-params.array.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.array.js']]
+kangax-es6/destructuring-params.astral-string.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.astral-string.js']]
+kangax-es6/destructuring-params.computed-properties.js: Syntax error detected Encountered "{" at line 11, column 19. [[Error loading file' destructuring-params.computed-properties.js']]
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: Parsing error
+kangax-es6/destructuring-params.defaults-separate-scope.js: Syntax error detected Encountered "{" at line 10, column 20. [[Error loading file' destructuring-params.defaults-separate-scope.js']]
+kangax-es6/destructuring-params.defaults.js: Syntax error detected Encountered "{" at line 10, column 20. [[Error loading file' destructuring-params.defaults.js']]
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: Syntax error detected Encountered "[" at line 10, column 20. [[Error loading file' destructuring-params.empty-patterns.js']]
+kangax-es6/destructuring-params.generator.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.generator.js']]
+kangax-es6/destructuring-params.iterable-instance.js: Syntax error detected Encountered "[" at line 34, column 19. [[Error loading file' destructuring-params.iterable-instance.js']]
+kangax-es6/destructuring-params.iterable.js: Syntax error detected Encountered "[" at line 34, column 19. [[Error loading file' destructuring-params.iterable.js']]
+kangax-es6/destructuring-params.iterator-closing.js: Syntax error detected Encountered "[" at line 38, column 13. [[Error loading file' destructuring-params.iterator-closing.js']]
+kangax-es6/destructuring-params.length.js: Syntax error detected Encountered "{" at line 10, column 19. [[Error loading file' destructuring-params.length.js']]
+kangax-es6/destructuring-params.nested.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.nested.js']]
+kangax-es6/destructuring-params.new-function.js: SyntaxError: Parsing error
+kangax-es6/destructuring-params.object-primitives.js: Syntax error detected Encountered "{" at line 10, column 19. [[Error loading file' destructuring-params.object-primitives.js']]
+kangax-es6/destructuring-params.object.js: Syntax error detected Encountered "{" at line 10, column 19. [[Error loading file' destructuring-params.object.js']]
+kangax-es6/destructuring-params.rest.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.rest.js']]
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Syntax error detected Encountered "=" at line 10, column 18. [[Error loading file' destructuring-params.shorthand-defaults-arrow.js']]
+kangax-es6/destructuring-params.sparse-array.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.sparse-array.js']]
+kangax-es6/destructuring-params.string.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.string.js']]
+kangax-es6/destructuring-params.throws-null-undefined.js: Syntax error detected Encountered "{" at line 11, column 15. [[Error loading file' destructuring-params.throws-null-undefined.js']]
+kangax-es6/destructuring-params.trailing-comma-iterable.js: Syntax error detected Encountered "[" at line 10, column 19. [[Error loading file' destructuring-params.trailing-comma-iterable.js']]
+kangax-es6/destructuring-params.trailing-comma-object.js: Syntax error detected Encountered "{" at line 10, column 19. [[Error loading file' destructuring-params.trailing-comma-object.js']]
+kangax-es6/for-of.array.js: Syntax error detected Encountered "of" at line 11, column 17. [[Error loading file' for-of.array.js']]
+kangax-es6/for-of.astral-string.js: Syntax error detected Encountered "of" at line 11, column 17. [[Error loading file' for-of.astral-string.js']]
+kangax-es6/for-of.generator.js: Syntax error detected Encountered "*" at line 11, column 27. [[Error loading file' for-of.generator.js']]
+kangax-es6/for-of.iterable-instance.js: Syntax error detected Encountered "of" at line 36, column 17. [[Error loading file' for-of.iterable-instance.js']]
+kangax-es6/for-of.iterable.js: Syntax error detected Encountered "of" at line 36, column 17. [[Error loading file' for-of.iterable.js']]
+kangax-es6/for-of.iterator-closing-break.js: Syntax error detected Encountered "of" at line 37, column 15. [[Error loading file' for-of.iterator-closing-break.js']]
+kangax-es6/for-of.iterator-closing-throw.js: Syntax error detected Encountered "of" at line 38, column 17. [[Error loading file' for-of.iterator-closing-throw.js']]
+kangax-es6/for-of.sparse-array.js: Syntax error detected Encountered "of" at line 12, column 17. [[Error loading file' for-of.sparse-array.js']]
+kangax-es6/for-of.string.js: Syntax error detected Encountered "of" at line 11, column 17. [[Error loading file' for-of.string.js']]
+kangax-es6/function.block-level-decl.js: Syntax error detected Encountered "function" at line 13, column 3. [[Error loading file' function.block-level-decl.js']]
+kangax-es6/generators.basic.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.basic.js']]
+kangax-es6/generators.constructor.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.constructor.js']]
+kangax-es6/generators.expression.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.expression.js']]
+kangax-es6/generators.no-new-this.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.no-new-this.js']]
+kangax-es6/generators.prototype-chain.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.prototype-chain.js']]
+kangax-es6/generators.prototype.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.prototype.js']]
+kangax-es6/generators.return.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.return.js']]
+kangax-es6/generators.sending.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' generators.sending.js']]
+kangax-es6/generators.shorthand.class.js: [[Error loading file' generators.shorthand.class.js']]
+kangax-es6/generators.shorthand.computed.class.js: [[Error loading file' generators.shorthand.computed.class.js']]
+kangax-es6/generators.shorthand.computed.js: Syntax error detected Encountered "*" at line 12, column 5. [[Error loading file' generators.shorthand.computed.js']]
+kangax-es6/generators.shorthand.js: Syntax error detected Encountered "*" at line 11, column 5. [[Error loading file' generators.shorthand.js']]
+kangax-es6/generators.shorthand.no-constructor.js: [[Error loading file' generators.shorthand.no-constructor.js']]
+kangax-es6/generators.shorthand.string-keyed.js: Syntax error detected Encountered "*" at line 11, column 5. [[Error loading file' generators.shorthand.string-keyed.js']]
+kangax-es6/generators.this.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' generators.this.js']]
+kangax-es6/generators.throw.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' generators.throw.js']]
+kangax-es6/generators.yield-precedence.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' generators.yield-precedence.js']]
+kangax-es6/generators.yield-star.array.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.yield-star.array.js']]
+kangax-es6/generators.yield-star.astral-string.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.yield-star.astral-string.js']]
+kangax-es6/generators.yield-star.generator.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.yield-star.generator.js']]
+kangax-es6/generators.yield-star.iterable-instance.js: Syntax error detected Encountered "*" at line 33, column 28. [[Error loading file' generators.yield-star.iterable-instance.js']]
+kangax-es6/generators.yield-star.iterable.js: Syntax error detected Encountered "*" at line 34, column 28. [[Error loading file' generators.yield-star.iterable.js']]
+kangax-es6/generators.yield-star.iterator-closing-throw.js: Syntax error detected Encountered "*" at line 42, column 22. [[Error loading file' generators.yield-star.iterator-closing-throw.js']]
+kangax-es6/generators.yield-star.iterator-closing.js: Syntax error detected Encountered "*" at line 40, column 22. [[Error loading file' generators.yield-star.iterator-closing.js']]
+kangax-es6/generators.yield-star.non-iterable-error.js: Syntax error detected Encountered "*" at line 10, column 28. in file: 'generators.yield-star.non-iterable-error.js' [[Error loading file' generators.yield-star.non-iterable-error.js']]
+kangax-es6/generators.yield-star.sparse-array.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.yield-star.sparse-array.js']]
+kangax-es6/generators.yield-star.string.js: Syntax error detected Encountered "*" at line 10, column 28. [[Error loading file' generators.yield-star.string.js']]
+kangax-es6/let.basic.js: Syntax error detected Encountered "foo" at line 10, column 7. [[Error loading file' let.basic.js']]
+kangax-es6/let.block-scoped.js: Syntax error detected Encountered "bar" at line 10, column 7. [[Error loading file' let.block-scoped.js']]
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: Syntax error detected Encountered "scopes" at line 10, column 7. [[Error loading file' let.for-iteration.js']]
+kangax-es6/let.for-loop.js: Syntax error detected Encountered "baz" at line 10, column 7. [[Error loading file' let.for-loop.js']]
+kangax-es6/let.no-statement.js: Syntax error detected Encountered "bar" at line 10, column 7. [[Error loading file' let.no-statement.js']]
+kangax-es6/let.shadow.js: Syntax error detected Encountered "bar" at line 11, column 13. [[Error loading file' let.shadow.js']]
+kangax-es6/let.strict.basic.js: Syntax error detected Encountered "foo" at line 11, column 7. [[Error loading file' let.strict.basic.js']]
+kangax-es6/let.strict.block-scoped.js: Syntax error detected Encountered "bar" at line 11, column 7. [[Error loading file' let.strict.block-scoped.js']]
+kangax-es6/let.strict.for-in-shadow.js: OK
+kangax-es6/let.strict.for-iteration.js: Syntax error detected Encountered "scopes" at line 11, column 7. [[Error loading file' let.strict.for-iteration.js']]
+kangax-es6/let.strict.for-loop.js: Syntax error detected Encountered "baz" at line 11, column 7. [[Error loading file' let.strict.for-loop.js']]
+kangax-es6/let.strict.no-statement.js: Syntax error detected Encountered "bar" at line 11, column 7. [[Error loading file' let.strict.no-statement.js']]
+kangax-es6/let.strict.shadow.js: Syntax error detected Encountered "bar" at line 12, column 13. [[Error loading file' let.strict.shadow.js']]
+kangax-es6/let.strict.tdz.js: Syntax error detected Encountered "function" at line 12, column 3. [[Error loading file' let.strict.tdz.js']]
+kangax-es6/let.tdz.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' let.tdz.js']]
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: Syntax error detected Encountered "b10" at line 9, column 11. [[Error loading file' literals.binary.js']]
+kangax-es6/literals.object.computed-accessors.js: Syntax error detected Encountered "[" at line 13, column 13. [[Error loading file' literals.object.computed-accessors.js']]
+kangax-es6/literals.object.computed-properties.js: Syntax error detected Encountered "[" at line 11, column 13. [[Error loading file' literals.object.computed-properties.js']]
+kangax-es6/literals.object.computed-shorthand-methods.js: Syntax error detected Encountered "[" at line 11, column 13. [[Error loading file' literals.object.computed-shorthand-methods.js']]
+kangax-es6/literals.object.shorthand-methods.js: Syntax error detected Encountered "(" at line 10, column 14. [[Error loading file' literals.object.shorthand-methods.js']]
+kangax-es6/literals.object.shorthand-properties.js: Syntax error detected Encountered "," at line 10, column 27. [[Error loading file' literals.object.shorthand-properties.js']]
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: Syntax error detected Encountered "(" at line 10, column 22. [[Error loading file' literals.object.string-keyed-shorthand-methods.js']]
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: Syntax error detected Encountered "o10" at line 9, column 11. [[Error loading file' literals.octal.js']]
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: Object.freeze() should be passed an Object
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: getOwnPropertyDescriptor expects argument 1 to be an Object
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: getOwnPropertyNames expects argument 1 to be an Object
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: TypeError: getPrototypeOf expects argument 1 to be an Object
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: isExtensible expects argument 1 to be an Object
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: Object.isFrozen() should be passed an Object
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: isSealed expects argument 1 to be an Object
+kangax-es6/misc.Object.keys.primitives.js: TypeError: keys expects argument 1 to be an Object
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: preventExtensions expects argument 1 to be an Object
+kangax-es6/misc.Object.seal.primitives.js: TypeError: seal expects argument 1 to be an Object
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: [[Error loading file' misc.Proxy.get.ClassDefinitionEvaluation.js']]
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.IteratorComplete.js: Syntax error detected Encountered "of" at line 22, column 13. [[Error loading file' misc.Proxy.get.IteratorComplete.js']]
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es6/misc.RegExp-alter-flags.js: TypeError: RegExp(<regexp>) only takes one parameter
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: RegExp.prototype.toString can only be applied to a RegExp instance
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.bound-function-prototype.arrow.js']]
+kangax-es6/misc.bound-function-prototype.class.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.bound-function-prototype.class.js']]
+kangax-es6/misc.bound-function-prototype.function.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.bound-function-prototype.function.js']]
+kangax-es6/misc.bound-function-prototype.generator.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.bound-function-prototype.generator.js']]
+kangax-es6/misc.bound-function-prototype.subclass.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.bound-function-prototype.subclass.js']]
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: Exception in thread "main" FESI.Interpreter.PackagedException: Runtime error Strict mode restriction: Property name a is repeated in object literal at FESI.Parser.StrictMode.createException(StrictMode.java:300)
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: failed
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: failed
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: Lexical error at line 9, column 7.  Encountered: "\ud800" (55296), after : "" [[Error loading file' misc.identifier-syntax.var-2.js']]
+kangax-es6/misc.property-order.JSON.parse.js: failed
+kangax-es6/misc.property-order.JSON.stringify.js: failed
+kangax-es6/misc.property-order.Object.assign.js: TypeError: The function 'assign' is not defined for object '<Object>'
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: failed
+kangax-es6/misc.property-order.Object.keys.js: OK
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: Variable 'Reflect' does not exist in the scope chain
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: no global function named 'Symbol'
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: Syntax error detected Encountered "function" at line 11, column 7. in file: 'new-target.assignment-error.js' [[Error loading file' new-target.assignment-error.js']]
+kangax-es6/new-target.constructor.js: Syntax error detected Encountered "function" at line 11, column 7. [[Error loading file' new-target.constructor.js']]
+kangax-es6/regex.flags.u.case-folding.js: failed
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: PatternSyntaxException: /\u{1d306}/
+kangax-es6/regex.flags.u.js: OK
+kangax-es6/regex.flags.u.non-bmp.js: OK
+kangax-es6/regex.flags.y.js: SyntaxError: Invalid flags y - expect g,i or m
+kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: Invalid flags y - expect g,i or m
+kangax-es6/rest-params.arguments.js: Syntax error detected Encountered "." at line 10, column 26. [[Error loading file' rest-params.arguments.js']]
+kangax-es6/rest-params.basic.js: Syntax error detected Encountered "." at line 10, column 26. [[Error loading file' rest-params.basic.js']]
+kangax-es6/rest-params.length.js: Syntax error detected Encountered "." at line 10, column 22. [[Error loading file' rest-params.length.js']]
+kangax-es6/rest-params.new-function.js: SyntaxError: Parsing error
+kangax-es6/rest-params.no-setter.js: Syntax error detected Encountered "." at line 10, column 21. [[Error loading file' rest-params.no-setter.js']]
+kangax-es6/spread.array-call.js: Syntax error detected Encountered "." at line 10, column 19. [[Error loading file' spread.array-call.js']]
+kangax-es6/spread.array-literal.js: Syntax error detected Encountered "." at line 10, column 11. [[Error loading file' spread.array-literal.js']]
+kangax-es6/spread.astral-call.js: Syntax error detected Encountered "." at line 10, column 16. [[Error loading file' spread.astral-call.js']]
+kangax-es6/spread.astral-literal.js: Syntax error detected Encountered "." at line 10, column 11. [[Error loading file' spread.astral-literal.js']]
+kangax-es6/spread.generator-call.js: Syntax error detected Encountered "*" at line 10, column 27. [[Error loading file' spread.generator-call.js']]
+kangax-es6/spread.generator-literal.js: Syntax error detected Encountered "*" at line 10, column 27. [[Error loading file' spread.generator-literal.js']]
+kangax-es6/spread.iterable-call.js: Syntax error detected Encountered "." at line 35, column 19. [[Error loading file' spread.iterable-call.js']]
+kangax-es6/spread.iterable-instance-call.js: Syntax error detected Encountered "." at line 35, column 19. [[Error loading file' spread.iterable-instance-call.js']]
+kangax-es6/spread.iterable-instance-literal.js: Syntax error detected Encountered "." at line 35, column 16. [[Error loading file' spread.iterable-instance-literal.js']]
+kangax-es6/spread.iterable-literal.js: Syntax error detected Encountered "." at line 35, column 16. [[Error loading file' spread.iterable-literal.js']]
+kangax-es6/spread.non-iterable-error.js: Syntax error detected Encountered "." at line 11, column 14. in file: 'spread.non-iterable-error.js' [[Error loading file' spread.non-iterable-error.js']]
+kangax-es6/spread.sparse-call.js: Syntax error detected Encountered "." at line 10, column 17. [[Error loading file' spread.sparse-call.js']]
+kangax-es6/spread.sparse-literal.js: Syntax error detected Encountered "." at line 10, column 12. [[Error loading file' spread.sparse-literal.js']]
+kangax-es6/spread.string-call.js: Syntax error detected Encountered "." at line 10, column 19. [[Error loading file' spread.string-call.js']]
+kangax-es6/spread.string-literal.js: Syntax error detected Encountered "." at line 10, column 16. [[Error loading file' spread.string-literal.js']]
+kangax-es6/subclassing.Array.concat.js: [[Error loading file' subclassing.Array.concat.js']]
+kangax-es6/subclassing.Array.filter.js: [[Error loading file' subclassing.Array.filter.js']]
+kangax-es6/subclassing.Array.from.js: [[Error loading file' subclassing.Array.from.js']]
+kangax-es6/subclassing.Array.isArray.js: [[Error loading file' subclassing.Array.isArray.js']]
+kangax-es6/subclassing.Array.length-access.js: [[Error loading file' subclassing.Array.length-access.js']]
+kangax-es6/subclassing.Array.length-set.js: [[Error loading file' subclassing.Array.length-set.js']]
+kangax-es6/subclassing.Array.map.js: [[Error loading file' subclassing.Array.map.js']]
+kangax-es6/subclassing.Array.of.js: [[Error loading file' subclassing.Array.of.js']]
+kangax-es6/subclassing.Array.prototype-chain.js: [[Error loading file' subclassing.Array.prototype-chain.js']]
+kangax-es6/subclassing.Array.slice.js: [[Error loading file' subclassing.Array.slice.js']]
+kangax-es6/subclassing.Array.splice.js: [[Error loading file' subclassing.Array.splice.js']]
+kangax-es6/subclassing.Function.call.js: [[Error loading file' subclassing.Function.call.js']]
+kangax-es6/subclassing.Function.new.js: [[Error loading file' subclassing.Function.new.js']]
+kangax-es6/subclassing.Function.prototype-chain.js: [[Error loading file' subclassing.Function.prototype-chain.js']]
+kangax-es6/subclassing.Function.prototype.apply.js: [[Error loading file' subclassing.Function.prototype.apply.js']]
+kangax-es6/subclassing.Function.prototype.bind.js: [[Error loading file' subclassing.Function.prototype.bind.js']]
+kangax-es6/subclassing.Function.prototype.call.js: [[Error loading file' subclassing.Function.prototype.call.js']]
+kangax-es6/subclassing.Promise.all.js: [[Error loading file' subclassing.Promise.all.js']]
+kangax-es6/subclassing.Promise.js: [[Error loading file' subclassing.Promise.js']]
+kangax-es6/subclassing.Promise.prototype-chain.js: [[Error loading file' subclassing.Promise.prototype-chain.js']]
+kangax-es6/subclassing.Promise.race.js: [[Error loading file' subclassing.Promise.race.js']]
+kangax-es6/subclassing.RegExp.exec.js: [[Error loading file' subclassing.RegExp.exec.js']]
+kangax-es6/subclassing.RegExp.js: [[Error loading file' subclassing.RegExp.js']]
+kangax-es6/subclassing.RegExp.prototype-chain.js: [[Error loading file' subclassing.RegExp.prototype-chain.js']]
+kangax-es6/subclassing.RegExp.test.js: [[Error loading file' subclassing.RegExp.test.js']]
+kangax-es6/subclassing.misc.Boolean.js: [[Error loading file' subclassing.misc.Boolean.js']]
+kangax-es6/subclassing.misc.Error.js: in file: 'subclassing.misc.Error.js' [[Error loading file' subclassing.misc.Error.js']]
+kangax-es6/subclassing.misc.Map.js: [[Error loading file' subclassing.misc.Map.js']]
+kangax-es6/subclassing.misc.Number.js: [[Error loading file' subclassing.misc.Number.js']]
+kangax-es6/subclassing.misc.Set.js: [[Error loading file' subclassing.misc.Set.js']]
+kangax-es6/subclassing.misc.String.js: [[Error loading file' subclassing.misc.String.js']]
+kangax-es6/super.correct-constructor.js: [[Error loading file' super.correct-constructor.js']]
+kangax-es6/super.expression.js: [[Error loading file' super.expression.js']]
+kangax-es6/super.method-calls.js: [[Error loading file' super.method-calls.js']]
+kangax-es6/super.new-target-binding.js: [[Error loading file' super.new-target-binding.js']]
+kangax-es6/super.property-access.js: [[Error loading file' super.property-access.js']]
+kangax-es6/super.statement.js: [[Error loading file' super.statement.js']]
+kangax-es6/super.static-binding.js: [[Error loading file' super.static-binding.js']]
+kangax-es6/super.this-binding.js: [[Error loading file' super.this-binding.js']]
+kangax-es6/tail-calls.direct.js: ReferenceError: no global function named 'f'
+kangax-es6/tail-calls.mutual.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' tail-calls.mutual.js']]
+kangax-es6/template.basic.js: Lexical error at line 11, column 8.  Encountered: "`" (96), after : "" [[Error loading file' template.basic.js']]
+kangax-es6/template.caching.js: Syntax error detected Encountered "function" at line 13, column 3. [[Error loading file' template.caching.js']]
+kangax-es6/template.escape-sequences.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' template.escape-sequences.js']]
+kangax-es6/template.frozen-array.js: Lexical error at line 12, column 6.  Encountered: "`" (96), after : "" [[Error loading file' template.frozen-array.js']]
+kangax-es6/template.line-break.js: Error: Lexical error
+kangax-es6/template.permanent-caching.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' template.permanent-caching.js']]
+kangax-es6/template.tagged.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' template.tagged.js']]
+kangax-es6/template.toString.js: Lexical error at line 14, column 10.  Encountered: "`" (96), after : "" [[Error loading file' template.toString.js']]
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.constructor-iterables.js: TypeError: 'new' called on undefined value or property
+kangax-es6/typed-arrays.constructor-requires-new.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
+kangax-es6/typed-arrays.correct-prototype-chains.js: [[Error loading file' typed-arrays.correct-prototype-chains.js']]
+kangax-es6/typed-arrays.from.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.of.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.copyWithin.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.entries.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.every.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.fill.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.filter.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.findIndex.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.find.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.forEach.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.indexOf.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.join.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.keys.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.map.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.reduceRight.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.reduce.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.reverse.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.slice.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.some.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.sort.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.subarray.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/typed-arrays.prototype.values.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es6/unicode-escapes.identifier.js: Lexical error at line 9, column 9.  Encountered: "{" (123), after : "\\u" [[Error loading file' unicode-escapes.identifier.js']]
+kangax-es6/unicode-escapes.property-access.js: Lexical error at line 10, column 14.  Encountered: "{" (123), after : "\\u" [[Error loading file' unicode-escapes.property-access.js']]
+kangax-es6/unicode-escapes.property-key.js: Lexical error at line 9, column 15.  Encountered: "{" (123), after : "\\u" [[Error loading file' unicode-escapes.property-key.js']]
+kangax-es6/unicode-escapes.string.js: failed
+kangax-es6/well-known.hasInstance.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.iterator.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.match.String.includes.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.match.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.replace.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.search.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Array.map.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es6/well-known.species.RegExp.split.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.species.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.split.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.toPrimitive.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.toStringTag.existing-builtins.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.toStringTag.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.toStringTag.misc-builtins.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es6/well-known.toStringTag.new-builtins.js: Syntax error detected Encountered "*" at line 23, column 38. [[Error loading file' well-known.toStringTag.new-builtins.js']]
+kangax-es6/well-known.unscopables.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es2016/Array.prototype.includes.generic.js: TypeError: The property 'includes' is not defined in object ''
+kangax-es2016/Array.prototype.includes.js: TypeError: The function 'includes' is not defined for object '1,2,3'
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: The function 'includes' is not defined for object ''
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
+kangax-es2016/exponentiation.assignment.js: Syntax error detected Encountered "*=" at line 10, column 17. [[Error loading file' exponentiation.assignment.js']]
+kangax-es2016/exponentiation.basic.js: Syntax error detected Encountered "*" at line 10, column 13. [[Error loading file' exponentiation.basic.js']]
+kangax-es2016/exponentiation.unary-negation-error.js: Syntax error detected Encountered "*" at line 10, column 10. in file: 'exponentiation.unary-negation-error.js' [[Error loading file' exponentiation.unary-negation-error.js']]
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2016/misc.generator-no-new.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' misc.generator-no-new.js']]
+kangax-es2016/misc.generator-throw-inner.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' misc.generator-throw-inner.js']]
+kangax-es2016/misc.nested-rest-destructuring-decl.js: Syntax error detected Encountered "[" at line 10, column 7. [[Error loading file' misc.nested-rest-destructuring-decl.js']]
+kangax-es2016/misc.nested-rest-destructuring-params.js: Syntax error detected Encountered "[" at line 9, column 20. [[Error loading file' misc.nested-rest-destructuring-params.js']]
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: Syntax error detected Encountered "function" at line 9, column 3. in file: 'misc.strict-fn-non-simple-params-error.js' [[Error loading file' misc.strict-fn-non-simple-params-error.js']]
+kangax-es2017/Atomics.add.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.and.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.exchange.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.load.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.notify.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.or.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.store.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.sub.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.wait.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Atomics.xor.js: ReferenceError: Variable 'Atomics' does not exist in the scope chain
+kangax-es2017/Object.entries.js: TypeError: The function 'entries' is not defined for object '<Object>'
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: The function 'getOwnPropertyDescriptors' is not defined for object '<Object>'
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2017/Object.values.js: TypeError: The function 'values' is not defined for object '<Object>'
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: Variable 'SharedArrayBuffer' does not exist in the scope chain
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'SharedArrayBuffer' does not exist in the scope chain
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: Variable 'SharedArrayBuffer' does not exist in the scope chain
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: Variable 'SharedArrayBuffer' does not exist in the scope chain
+kangax-es2017/String.prototype.padEnd.js: TypeError: The function 'padEnd' is not defined for object 'hello'
+kangax-es2017/String.prototype.padStart.js: TypeError: The function 'padStart' is not defined for object 'hello'
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: Variable '__defineGetter__' does not exist in the scope chain
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' annex-b.Object.prototype.__defineGetter__.js']]
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' annex-b.Object.prototype.__defineGetter__.symbols.js']]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: Variable '__defineSetter__' does not exist in the scope chain
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' annex-b.Object.prototype.__defineSetter__.js']]
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: Syntax error detected Encountered "function" at line 11, column 3. [[Error loading file' annex-b.Object.prototype.__defineSetter__.symbols.js']]
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: Variable '__lookupGetter__' does not exist in the scope chain
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: The property '__lookupGetter__' is not defined in object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: The property '__lookupGetter__' is not defined in object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: The function '__defineGetter__' is not defined for object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: no global function named 'Symbol'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: Variable '__lookupSetter__' does not exist in the scope chain
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: The property '__lookupSetter__' is not defined in object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: The property '__lookupSetter__' is not defined in object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: The function '__defineSetter__' is not defined for object '[object Object]'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: no global function named 'Symbol'
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: Syntax error detected Encountered "function" at line 10, column 38. [[Error loading file' async.Symbol.toStringTag.js']]
+kangax-es2017/async.arrow-in-class.js: Syntax error detected Encountered "function" at line 45, column 3. [[Error loading file' async.arrow-in-class.js']]
+kangax-es2017/async.arrow.js: Syntax error detected Encountered ">" at line 45, column 21. [[Error loading file' async.arrow.js']]
+kangax-es2017/async.await-non-promise.js: Syntax error detected Encountered "function" at line 45, column 10. [[Error loading file' async.await-non-promise.js']]
+kangax-es2017/async.await-rejection.js: Syntax error detected Encountered "function" at line 45, column 10. [[Error loading file' async.await-rejection.js']]
+kangax-es2017/async.await.js: Syntax error detected Encountered "function" at line 45, column 10. [[Error loading file' async.await.js']]
+kangax-es2017/async.constructor.js: Syntax error detected Encountered "function" at line 45, column 17. [[Error loading file' async.constructor.js']]
+kangax-es2017/async.methods-class.js: [[Error loading file' async.methods-class.js']]
+kangax-es2017/async.methods-object.js: Syntax error detected Encountered "a" at line 46, column 11. [[Error loading file' async.methods-object.js']]
+kangax-es2017/async.must-await-value.js: Syntax error detected Encountered "function" at line 10, column 9. [[Error loading file' async.must-await-value.js']]
+kangax-es2017/async.no-await-in-params.js: Syntax error detected Encountered "function" at line 10, column 9. [[Error loading file' async.no-await-in-params.js']]
+kangax-es2017/async.no-line-break.js: Syntax error detected Encountered "function" at line 10, column 9. [[Error loading file' async.no-line-break.js']]
+kangax-es2017/async.no-prototype.js: Syntax error detected Encountered "function" at line 10, column 9. [[Error loading file' async.no-prototype.js']]
+kangax-es2017/async.prototype-chain.js: Syntax error detected Encountered "function" at line 10, column 56. [[Error loading file' async.prototype-chain.js']]
+kangax-es2017/async.return.js: Syntax error detected Encountered "function" at line 45, column 9. [[Error loading file' async.return.js']]
+kangax-es2017/async.throw.js: Syntax error detected Encountered "function" at line 45, column 9. [[Error loading file' async.throw.js']]
+kangax-es2017/misc.arguments-caller-removed.js: failed
+kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/trailing-comma.arguments.js: Syntax error detected Encountered ")" at line 10, column 25. [[Error loading file' trailing-comma.arguments.js']]
+kangax-es2017/trailing-comma.params.js: Syntax error detected Encountered ")" at line 10, column 35. [[Error loading file' trailing-comma.params.js']]
+kangax-es2018/Promise.prototype.finally.change-rejection.js: Syntax error detected Encountered "function" at line 63, column 3. [[Error loading file' Promise.prototype.finally.change-rejection.js']]
+kangax-es2018/Promise.prototype.finally.js: Syntax error detected Encountered "function" at line 48, column 3. [[Error loading file' Promise.prototype.finally.js']]
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Syntax error detected Encountered "function" at line 46, column 3. [[Error loading file' Promise.prototype.finally.no-change-resolution.js']]
+kangax-es2018/async-iterators.for-await-of.js: Syntax error detected Encountered "function" at line 58, column 10. [[Error loading file' async-iterators.for-await-of.js']]
+kangax-es2018/async-iterators.generators.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' async-iterators.generators.js']]
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: Syntax error detected Encountered "(" at line 11, column 12. [[Error loading file' misc.Proxy-ownKeys-duplicate-keys.js']]
+kangax-es2018/misc.template-literal-revision.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.template-literal-revision.js']]
+kangax-es2018/object-rest.js: Syntax error detected Encountered "{" at line 9, column 7. [[Error loading file' object-rest.js']]
+kangax-es2018/object-spread.js: Syntax error detected Encountered "." at line 10, column 19. [[Error loading file' object-spread.js']]
+kangax-es2018/regex.flags.s.js: [[Error loading file' regex.flags.s.js']]
+kangax-es2018/regex.lookbehind.js: OK
+kangax-es2018/regex.named-capture-groups.js: TypeError: The property 'groups' is not defined in object '2016-03-11,2016,03,11'
+kangax-es2018/regex.unicode-property-escapes.js: [[Error loading file' regex.unicode-property-escapes.js']]
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: PatternSyntaxException: /\p{Extended_Pictographic}/
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: PatternSyntaxException: /\p{Other_Symbol}/
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: PatternSyntaxException: /\p{Unified_Ideograph}/
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: PatternSyntaxException: /\p{Script=Sidetic}/
+kangax-es2019/Array.prototype.flatMap.js: TypeError: The function 'flatMap' is not defined for object '[object Object],[object Object]'
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es2019/Array.prototype.flat.js: TypeError: The function 'flat' is not defined for object '1,2,3,4,5,6'
+kangax-es2019/Object.fromEntries.js: ReferenceError: Variable 'Map' does not exist in the scope chain
+kangax-es2019/String.prototype.trimEnd.js: TypeError: The function 'trimEnd' is not defined for object ' 	
+kangax-es2019/String.prototype.trimStart.js: TypeError: The function 'trimStart' is not defined for object ' 	
+kangax-es2019/Symbol.prototype.description.empty.js: ReferenceError: no global function named 'Symbol'
+kangax-es2019/Symbol.prototype.description.js: ReferenceError: no global function named 'Symbol'
+kangax-es2019/Symbol.prototype.description.undefined.js: ReferenceError: Variable 'Symbol' does not exist in the scope chain
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: The function 'trimLeft' is not defined for object ' 	
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: The function 'trimRight' is not defined for object ' 	
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: Parsing error
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Parsing error
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Parsing error
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: Parsing error
+kangax-es2019/misc.Function-toString.native-code.js: [[Error loading file' misc.Function-toString.native-code.js']]
+kangax-es2019/misc.Function-toString.unicode-escapes.js: Error: Lexical error
+kangax-es2019/misc.JSON-stringify-well-formed.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: Parsing error
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Parsing error
+kangax-es2019/misc.optional-catch-binding.await.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' misc.optional-catch-binding.await.js']]
+kangax-es2019/misc.optional-catch-binding.js: Syntax error detected Encountered "{" at line 12, column 9. [[Error loading file' misc.optional-catch-binding.js']]
+kangax-es2019/misc.optional-catch-binding.yield.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' misc.optional-catch-binding.yield.js']]
+kangax-es2020/BigInt64Array.js: Exception in thread "main" java.lang.NumberFormatException: For input string: "0x8000000000000000"
+kangax-es2020/BigInt.asIntN.js: ReferenceError: Variable 'BigInt' does not exist in the scope chain
+kangax-es2020/BigInt.asUintN.js: ReferenceError: Variable 'BigInt' does not exist in the scope chain
+kangax-es2020/BigInt.constructor.js: Syntax error detected Encountered "n" at line 10, column 27. [[Error loading file' BigInt.constructor.js']]
+kangax-es2020/BigInt.js: Syntax error detected Encountered "n" at line 10, column 12. [[Error loading file' BigInt.js']]
+kangax-es2020/BigUint64Array.js: Exception in thread "main" java.lang.NumberFormatException: For input string: "0x10000000000000000"
+kangax-es2020/DataView.prototype.getBigInt64.js: Syntax error detected Encountered "n" at line 12, column 24. [[Error loading file' DataView.prototype.getBigInt64.js']]
+kangax-es2020/DataView.prototype.getBigUint64.js: Syntax error detected Encountered "n" at line 12, column 25. [[Error loading file' DataView.prototype.getBigUint64.js']]
+kangax-es2020/Promise.allSettled.js: Syntax error detected Encountered ">" at line 49, column 15. [[Error loading file' Promise.allSettled.js']]
+kangax-es2020/String.prototype.matchAll.js: TypeError: The function 'matchAll' is not defined for object '11a2bb'
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: Syntax error detected Encountered "?" at line 10, column 17. [[Error loading file' nullish-coalescing.js']]
+kangax-es2020/optional-chaining.bracket.js: Syntax error detected Encountered "." at line 12, column 14. [[Error loading file' optional-chaining.bracket.js']]
+kangax-es2020/optional-chaining.function-call.js: Syntax error detected Encountered "function" at line 12, column 3. [[Error loading file' optional-chaining.function-call.js']]
+kangax-es2020/optional-chaining.method-call.js: Syntax error detected Encountered "." at line 12, column 14. [[Error loading file' optional-chaining.method-call.js']]
+kangax-es2020/optional-chaining.property.js: Syntax error detected Encountered "." at line 12, column 14. [[Error loading file' optional-chaining.property.js']]
+kangax-es2020/optional-chaining.spread-params.js: Syntax error detected Encountered "." at line 14, column 13. [[Error loading file' optional-chaining.spread-params.js']]
+kangax-es2021/FinalizationRegistry.js: ReferenceError: Variable 'FinalizationRegistry' does not exist in the scope chain
+kangax-es2021/Promise.any.AggregateError.js: Syntax error detected Encountered ">" at line 49, column 20. in file: 'Promise.any.AggregateError.js' [[Error loading file' Promise.any.AggregateError.js']]
+kangax-es2021/Promise.any.fulfillment.js: Syntax error detected Encountered ">" at line 49, column 15. [[Error loading file' Promise.any.fulfillment.js']]
+kangax-es2021/String.prototype.replaceAll.js: TypeError: The function 'replaceAll' is not defined for object 'q=query+string+parameters'
+kangax-es2021/WeakRef.js: ReferenceError: Variable 'WeakRef' does not exist in the scope chain
+kangax-es2021/logical-assignment.and.js: Syntax error detected Encountered "a" at line 10, column 7. [[Error loading file' logical-assignment.and.js']]
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: Syntax error detected Encountered "i" at line 9, column 7. [[Error loading file' logical-assignment.and.setter-not-invoked.js']]
+kangax-es2021/logical-assignment.and.short-circuit.js: Syntax error detected Encountered "a" at line 9, column 7. [[Error loading file' logical-assignment.and.short-circuit.js']]
+kangax-es2021/logical-assignment.nullish.js: Syntax error detected Encountered "a" at line 10, column 7. [[Error loading file' logical-assignment.nullish.js']]
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Syntax error detected Encountered "i" at line 9, column 7. [[Error loading file' logical-assignment.nullish.setter-not-invoked.js']]
+kangax-es2021/logical-assignment.nullish.short-circuit.js: Syntax error detected Encountered "a" at line 9, column 7. [[Error loading file' logical-assignment.nullish.short-circuit.js']]
+kangax-es2021/logical-assignment.or.js: Syntax error detected Encountered "a" at line 10, column 7. [[Error loading file' logical-assignment.or.js']]
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: Syntax error detected Encountered "i" at line 9, column 7. [[Error loading file' logical-assignment.or.setter-not-invoked.js']]
+kangax-es2021/logical-assignment.or.short-circuit.js: Syntax error detected Encountered "a" at line 9, column 7. [[Error loading file' logical-assignment.or.short-circuit.js']]
+kangax-es2021/numeric-separators.js: Syntax error detected Encountered "_000_000" at line 9, column 11. [[Error loading file' numeric-separators.js']]
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: Variable 'AggregateError' does not exist in the scope chain
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: Variable 'AggregateError' does not exist in the scope chain
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: The function 'hasOwn' is not defined for object '<Object>'
+kangax-es2022/at-method.Array.js: TypeError: The function 'at' is not defined for object '1,2,3'
+kangax-es2022/at-method.String.js: TypeError: The function 'at' is not defined for object 'abc'
+kangax-es2022/at-method.TypedArray.js: failed
+kangax-es2022/class-fields.computed-instance.js: [[Error loading file' class-fields.computed-instance.js']]
+kangax-es2022/class-fields.computed-static.js: [[Error loading file' class-fields.computed-static.js']]
+kangax-es2022/class-fields.instance.parent-scope.js: Syntax error detected Encountered "a" at line 10, column 9. [[Error loading file' class-fields.instance.parent-scope.js']]
+kangax-es2022/class-fields.private-instance.initializers.js: [[Error loading file' class-fields.private-instance.initializers.js']]
+kangax-es2022/class-fields.private-instance.js: [[Error loading file' class-fields.private-instance.js']]
+kangax-es2022/class-fields.private-instance.optional-access.js: [[Error loading file' class-fields.private-instance.optional-access.js']]
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: [[Error loading file' class-fields.private-instance.optional-deep-access.js']]
+kangax-es2022/class-fields.private-static.js: [[Error loading file' class-fields.private-static.js']]
+kangax-es2022/class-fields.public-instance.js: [[Error loading file' class-fields.public-instance.js']]
+kangax-es2022/class-fields.public-static.js: [[Error loading file' class-fields.public-static.js']]
+kangax-es2022/class-fields.static.define.js: [[Error loading file' class-fields.static.define.js']]
+kangax-es2022/class-methods.private-accessor.js: [[Error loading file' class-methods.private-accessor.js']]
+kangax-es2022/class-methods.private-instance.js: [[Error loading file' class-methods.private-instance.js']]
+kangax-es2022/class-methods.private-static-accessor.js: [[Error loading file' class-methods.private-static-accessor.js']]
+kangax-es2022/class-methods.private-static.js: [[Error loading file' class-methods.private-static.js']]
+kangax-es2022/class-static-init-blocks.js: Syntax error detected Encountered "ok" at line 10, column 7. [[Error loading file' class-static-init-blocks.js']]
+kangax-es2022/ergonomic-brand-checks.js: [[Error loading file' ergonomic-brand-checks.js']]
+kangax-es2022/regex.flags.d.constructor.js: SyntaxError: Invalid flags d - expect g,i or m
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: The function 'findLastIndex' is not defined for object '[object Object],[object Object],[object Object],[object Object]'
+kangax-es2023/Array.prototype.findLast.js: TypeError: The function 'findLast' is not defined for object '[object Object],[object Object],[object Object],[object Object]'
+kangax-es2023/Array.prototype.toReversed.js: TypeError: The function 'toReversed' is not defined for object '1,2,3'
+kangax-es2023/Array.prototype.toSorted.js: TypeError: The function 'toSorted' is not defined for object 'C,A,B'
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: The function 'toSpliced' is not defined for object 'A,C'
+kangax-es2023/Array.prototype.with.js: TypeError: The function 'with' is not defined for object 'A,X,C'
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: Variable 'Uint8Array' does not exist in the scope chain
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: Variable 'Uint8Array' does not exist in the scope chain
+kangax-es2023/TypedArray.prototype.with.js: ReferenceError: Variable 'Uint8Array' does not exist in the scope chain
+kangax-es2023/hashbang.js: Lexical error at line 1, column 1.  Encountered: "#" (35), after : "" [[Error loading file' hashbang.js']]
+kangax-es2024/ArrayBuffer.prototype.detached.js: [[Error loading file' ArrayBuffer.prototype.detached.js']]
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: [[Error loading file' ArrayBuffer.prototype.transferToFixedLength.js']]
+kangax-es2024/ArrayBuffer.prototype.transfer.js: [[Error loading file' ArrayBuffer.prototype.transfer.js']]
+kangax-es2024/Map.groupBy.js: [[Error loading file' Map.groupBy.js']]
+kangax-es2024/Object.groupBy.js: [[Error loading file' Object.groupBy.js']]
+kangax-es2024/Promise.withResolvers.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid flags v - expect g,i or m
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: PatternSyntaxException: /^\p{Emoji_Keycap_Sequence}$/
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: PatternSyntaxException: /[\p{ASCII}&&\p{Decimal_Number}]/
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Variable 'Proxy' does not exist in the scope chain
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: PatternSyntaxException: /^\p{RGI_Emoji}$/
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: PatternSyntaxException: /^\p{RGI_Emoji}$/
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: PatternSyntaxException: /^\p{RGI_Emoji}$/
+kangax-es2025/Iterator.extends.js: [[Error loading file' Iterator.extends.js']]
+kangax-es2025/Iterator.from.iterable.js: [[Error loading file' Iterator.from.iterable.js']]
+kangax-es2025/Iterator.from.iterator.js: [[Error loading file' Iterator.from.iterator.js']]
+kangax-es2025/Iterator.instanceof.js: TypeError: The function 'values' is not defined for object '1,2,3'
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'Iterator' does not exist in the scope chain
+kangax-es2025/Iterator.prototype.drop.js: TypeError: The function 'values' is not defined for object '1,2,3'
+kangax-es2025/Iterator.prototype.every.js: Syntax error detected Encountered ">" at line 10, column 39. [[Error loading file' Iterator.prototype.every.js']]
+kangax-es2025/Iterator.prototype.filter.js: Syntax error detected Encountered ">" at line 10, column 51. [[Error loading file' Iterator.prototype.filter.js']]
+kangax-es2025/Iterator.prototype.find.js: Syntax error detected Encountered ">" at line 10, column 38. [[Error loading file' Iterator.prototype.find.js']]
+kangax-es2025/Iterator.prototype.flatMap.js: Syntax error detected Encountered ">" at line 10, column 52. [[Error loading file' Iterator.prototype.flatMap.js']]
+kangax-es2025/Iterator.prototype.forEach.js: Syntax error detected Encountered "result" at line 10, column 7. [[Error loading file' Iterator.prototype.forEach.js']]
+kangax-es2025/Iterator.prototype.map.js: Syntax error detected Encountered ">" at line 10, column 48. [[Error loading file' Iterator.prototype.map.js']]
+kangax-es2025/Iterator.prototype.reduce.js: Syntax error detected Encountered ">" at line 10, column 44. [[Error loading file' Iterator.prototype.reduce.js']]
+kangax-es2025/Iterator.prototype.some.js: Syntax error detected Encountered ">" at line 10, column 38. [[Error loading file' Iterator.prototype.some.js']]
+kangax-es2025/Iterator.prototype.take.js: TypeError: The function 'values' is not defined for object '1,2,3'
+kangax-es2025/Iterator.prototype.toArray.js: [[Error loading file' Iterator.prototype.toArray.js']]
+kangax-es2025/Promise.try.js: ReferenceError: Variable 'Promise' does not exist in the scope chain
+kangax-es2025/RegExp.escape.js: TypeError: The function 'escape' is not defined for object '<RegExp:FESI.Data.RegExpObject>'
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/Set.prototype.union.js: ReferenceError: Variable 'Set' does not exist in the scope chain
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: PatternSyntaxException: /(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4})/
+kangax-es2025/regex.pattern-modifiers.i.js: [[Error loading file' regex.pattern-modifiers.i.js']]
+kangax-es2025/regex.pattern-modifiers.m.js: [[Error loading file' regex.pattern-modifiers.m.js']]
+kangax-es2025/regex.pattern-modifiers.s.js: [[Error loading file' regex.pattern-modifiers.s.js']]
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.NumberFormat.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Variable 'Intl' does not exist in the scope chain
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: Syntax error detected Encountered ">" at line 10, column 36. [[Error loading file' Array.isTemplateObject.js']]
+kangax-next/AsyncDisposableStack.js: Syntax error detected Encountered "[" at line 47, column 44. [[Error loading file' AsyncDisposableStack.js']]
+kangax-next/AsyncIterator.extends.js: [[Error loading file' AsyncIterator.extends.js']]
+kangax-next/AsyncIterator.from.async-iterable.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.from.async-iterable.js']]
+kangax-next/AsyncIterator.from.iterable.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.from.iterable.js']]
+kangax-next/AsyncIterator.from.iterator.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.from.iterator.js']]
+kangax-next/AsyncIterator.instanceof.js: Syntax error detected Encountered "function" at line 9, column 17. [[Error loading file' AsyncIterator.instanceof.js']]
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Variable 'AsyncIterator' does not exist in the scope chain
+kangax-next/AsyncIterator.prototype.drop.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.prototype.drop.js']]
+kangax-next/AsyncIterator.prototype.every.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' AsyncIterator.prototype.every.js']]
+kangax-next/AsyncIterator.prototype.filter.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.prototype.filter.js']]
+kangax-next/AsyncIterator.prototype.find.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' AsyncIterator.prototype.find.js']]
+kangax-next/AsyncIterator.prototype.flatMap.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.prototype.flatMap.js']]
+kangax-next/AsyncIterator.prototype.forEach.js: Syntax error detected Encountered "result" at line 44, column 7. [[Error loading file' AsyncIterator.prototype.forEach.js']]
+kangax-next/AsyncIterator.prototype.map.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.prototype.map.js']]
+kangax-next/AsyncIterator.prototype.reduce.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' AsyncIterator.prototype.reduce.js']]
+kangax-next/AsyncIterator.prototype.some.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' AsyncIterator.prototype.some.js']]
+kangax-next/AsyncIterator.prototype.take.js: Syntax error detected Encountered "function" at line 44, column 9. [[Error loading file' AsyncIterator.prototype.take.js']]
+kangax-next/AsyncIterator.prototype.toArray.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' AsyncIterator.prototype.toArray.js']]
+kangax-next/DisposableStack.js: Syntax error detected Encountered "[" at line 12, column 38. [[Error loading file' DisposableStack.js']]
+kangax-next/Map.prototype.upsert.js: [[Error loading file' Map.prototype.upsert.js']]
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Syntax error detected Encountered "_1" at line 13, column 11. in file: 'SuppressedError.js' [[Error loading file' SuppressedError.js']]
+kangax-next/Uint8Array.fromBase64.js: [[Error loading file' Uint8Array.fromBase64.js']]
+kangax-next/Uint8Array.fromHex.js: [[Error loading file' Uint8Array.fromHex.js']]
+kangax-next/Uint8Array.setFromBase64.js: [[Error loading file' Uint8Array.setFromBase64.js']]
+kangax-next/Uint8Array.setFromHex.js: [[Error loading file' Uint8Array.setFromHex.js']]
+kangax-next/Uint8Array.toBase64.js: [[Error loading file' Uint8Array.toBase64.js']]
+kangax-next/Uint8Array.toHex.js: [[Error loading file' Uint8Array.toHex.js']]
+kangax-next/WeakMap.prototype.upsert.js: [[Error loading file' WeakMap.prototype.upsert.js']]
+kangax-next/await-using.for-of.js: Syntax error detected Encountered "[" at line 46, column 11. [[Error loading file' await-using.for-of.js']]
+kangax-next/await-using.js: Syntax error detected Encountered "function" at line 44, column 10. [[Error loading file' await-using.js']]
+kangax-next/class-decorators.js: [[Error loading file' class-decorators.js']]
+kangax-next/function.sent.js: Syntax error detected Encountered "function" at line 10, column 3. [[Error loading file' function.sent.js']]
+kangax-next/throw-expr.arrow.js: Syntax error detected Encountered ")" at line 9, column 13. [[Error loading file' throw-expr.arrow.js']]
+kangax-next/throw-expr.conditional.js: [[Error loading file' throw-expr.conditional.js']]
+kangax-next/throw-expr.logical.js: [[Error loading file' throw-expr.logical.js']]
+kangax-next/throw-expr.param-init.js: Syntax error detected Encountered "function" at line 9, column 3. [[Error loading file' throw-expr.param-init.js']]
+kangax-next/using.for-of.js: Syntax error detected Encountered "[" at line 11, column 5. [[Error loading file' using.for-of.js']]
+kangax-next/using.js: Syntax error detected Encountered "[" at line 11, column 5. [[Error loading file' using.js']]
