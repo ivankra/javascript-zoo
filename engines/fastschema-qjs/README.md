@@ -8,7 +8,7 @@ QuickJS ported to Go via WebAssembly (Wazero, a cgo-free runtime).
 * License:          MIT
 * Standard:         ES2023
 * Years:            2025-
-* Ancestor:         [QuickJS](../quickjs/README.md)
+* Ancestor:         [QuickJS](../quickjs/README.md) / [QuickJS-NG](../quickjs-ng/README.md)
 * Runtime platform: Wasm, Go
 * Interpreter:      stack-based VM
 

@@ -13,6 +13,10 @@ Embeddable Javascript engine written in Rust.
 * Interpreter:  stack-based VM
 * Regex engine: [regress](https://github.com/ridiculousfish/regress)
 
+## Runtimes
+
+* [JetCrab](https://github.com/JetCrabCollab/JetCrab) <span class="shields"><img src="https://img.shields.io/github/stars/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/JetCrabCollab/JetCrab?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+
 ## Conformance
 
 <details><summary>ES1-ES5: 99%</summary><ul>

@@ -1,33 +1,41 @@
-# ChakraCore
+# ChakraCore / Chakra Edge
 
-JavaScript engine of Microsoft Edge Legacy.
+JavaScript engine of the original Microsoft Edge browser (now Microsoft Edge Legacy), later open-sourced as ChakraCore.
 
 * Repository:  https://github.com/chakra-core/ChakraCore.git <span class="shields"><img src="https://img.shields.io/github/stars/chakra-core/ChakraCore?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/chakra-core/ChakraCore?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         779986 (`cloc --fullpath --not_match_f="(?i)(test)" lib pal`)
 * Language:    C++
 * License:     MIT
 * Org:         Microsoft
-* Standard:    ES2019 (partial)
+* Standard:    ES2019
 * Years:       2015-2021
 * Ancestor:    [JScript9 / Chakra](../jscript9/README.md)
 * Features:    WebAssembly engine, deferred parsing
 * Interpreter: register-based VM
 * JIT:         2-tier JIT, arm/arm64, x86/x64
-* DLL:         chakra.dll
+* DLL:         chakra.dll, chakracore.dll
 
 ## History
 
-Originally kept the same name as the predecessor - IE9-11's [Jscript9](../jscript9/README.md)/Chakra engine (jscript9.dll).
-Sometimes called new Chakra engine, Chakra Edge or chakra.dll to distinguish from it.
+Originally kept the same name as the predecessor - IE9-11's [Jscript9](../jscript9/README.md)
+aka "Chakra" engine (jscript9.dll, or the *legacy engine*). Sometimes
+called the *new Chakra* engine, *Edge engine* or chakra.dll to distinguish
+from it. The APIs have a breakage in a couple of key functions between them:
+[Edge vs. Legacy JsRT APIs](https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/hosting/chakra-hosting/targeting-edge-vs-legacy-engines-in-jsrt-apis).
 
-Open-sourced in 2016 under the name ChakraCore (except for some parts like
-COM/browser bindings that stay in the closed-source chakra.dll).
+Open-sourced in 2016 under the name ChakraCore, except for minor
+components like COM/browser bindings that stay in the closed-source
+chakra.dll.
 
-Microsoft discontinued maintenance of ChakraCore and stopped providing security patches
-in March 2021 ([ref](https://github.com/chakra-core/ChakraCore/issues/6384)),
+Used in Microsoft Edge browser (now Microsoft Edge Legacy) which
+launched in 2015 and was discontinued in 2020 in favor of forking
+Chromium. Subsequently, Microsoft discontinued maintenance of
+ChakraCore and stopped providing security patches in March 2021
+([ref](https://github.com/chakra-core/ChakraCore/issues/6384)),
 passed it to a rather inactive community of external maintainers.
-Continued production use (esp. with JIT) is thus risky from security perspective.
-Closed-source chakra.dll in Windows, presumably, is still maintained.
+Continued production use (especially with JIT) is thus risky from
+security perspective. Has a partial ES2020 implementation,
+BigInt behind a compile flag.
 
 ## Runtimes
 
@@ -35,9 +43,8 @@ Closed-source chakra.dll in Windows, presumably, is still maintained.
 
 ## Links
 
-* https://www.microsoft.com/en-us/research/wp-content/uploads/2018/04/41159.compressed.pdf
-* https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/hosting/chakra-hosting/targeting-edge-vs-legacy-engines-in-jsrt-apis
-* Shell built-ins reference: [WScriptJsrt.cpp](https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1088)
+* [ChakraCore resources: blog posts and talks](https://github.com/chakra-core/ChakraCore/wiki/Resources)
+* [ChakraCore shell built-ins (WScriptJsrt.cpp)](https://github.com/chakra-core/ChakraCore/blob/master/bin/ch/WScriptJsrt.cpp#L1088)
 
 ## Conformance
 
