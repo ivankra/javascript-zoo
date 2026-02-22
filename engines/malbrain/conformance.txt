@@ -1,0 +1,421 @@
+Metadata: {"arch": "amd64", "binary_sha256": "87f44b8176b94d96e1e609a45d783d667fa7d496b4c1ddfdb7af6499c3b01df4", "binary_size": 369280, "cc": "gcc 16.0.1 20260217 (experimental) [trunk r16-7536-g6e52c1dbfb7] (Debian 16-20260217-1)", "console_log": "print", "engine": "malbrain", "repository": "https://github.com/malbrain/javascript-database.git", "revision": "69cf58f0c63cacc6fda0c8cc296f995bb9897e79", "revision_date": "2020-04-18"}
+es1/Array.js: failed
+es1/Array.length.assignment.js: failed
+es1/Array.length.js: failed
+es1/Array.prototype.constructor.js: failed
+es1/Array.prototype.join.generic.js: failed
+es1/Array.prototype.join.js: failed
+es1/Array.prototype.reverse.generic.js: failed
+es1/Array.prototype.reverse.js: failed
+es1/Array.prototype.sort.generic.js: failed
+es1/Array.prototype.sort.js: failed
+es1/Array.prototype.toString.js: failed
+es1/Boolean.js: failed
+es1/Boolean.prototype.constructor.js: failed
+es1/Boolean.prototype.toString.js: failed
+es1/Boolean.prototype.valueOf.js: failed
+es1/Date.diff.js: failed
+es1/Date.js: failed
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: failed
+es1/Date.prototype.getDay.js: failed
+es1/Date.prototype.getFullYear.js: failed
+es1/Date.prototype.getHours.js: failed
+es1/Date.prototype.getMilliseconds.js: failed
+es1/Date.prototype.getMinutes.js: failed
+es1/Date.prototype.getMonth.js: failed
+es1/Date.prototype.getSeconds.js: failed
+es1/Date.prototype.getTimezoneOffset.js: failed
+es1/Date.prototype.getTime.js: failed
+es1/Date.prototype.getUTCDate.js: failed
+es1/Date.prototype.getUTCDay.js: failed
+es1/Date.prototype.getUTCFullYear.js: failed
+es1/Date.prototype.getUTCHours.js: failed
+es1/Date.prototype.getUTCMilliseconds.js: failed
+es1/Date.prototype.getUTCMinutes.js: failed
+es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCSeconds.js: failed
+es1/Date.prototype.setDate.js: failed
+es1/Date.prototype.setFullYear.js: failed
+es1/Date.prototype.setHours.js: failed
+es1/Date.prototype.setMilliseconds.js: failed
+es1/Date.prototype.setMinutes.js: failed
+es1/Date.prototype.setMonth.js: failed
+es1/Date.prototype.setSeconds.js: failed
+es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setUTCDate.js: failed
+es1/Date.prototype.setUTCFullYear.js: failed
+es1/Date.prototype.setUTCHours.js: failed
+es1/Date.prototype.setUTCMilliseconds.js: failed
+es1/Date.prototype.setUTCMinutes.js: failed
+es1/Date.prototype.setUTCMonth.js: failed
+es1/Date.prototype.setUTCSeconds.js: failed
+es1/Date.prototype.toLocaleString.js: failed
+es1/Date.prototype.toString.js: failed
+es1/Date.prototype.toUTCString.js: failed
+es1/Date.prototype.valueOf.js: failed
+es1/Function.js: failed
+es1/Function.length.js: failed
+es1/Function.prototype.constructor.js: failed
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: failed
+es1/Math.E.js: failed
+es1/Math.LN2.js: failed
+es1/Math.LN10.js: failed
+es1/Math.LOG2E.js: failed
+es1/Math.LOG10E.js: failed
+es1/Math.PI.js: failed
+es1/Math.SQRT1_2.js: failed
+es1/Math.SQRT2.js: failed
+es1/Math.abs.js: failed
+es1/Math.acos.js: failed
+es1/Math.asin.js: failed
+es1/Math.atan2.js: failed
+es1/Math.atan.js: failed
+es1/Math.ceil.js: failed
+es1/Math.cos.js: failed
+es1/Math.exp.js: failed
+es1/Math.floor.js: failed
+es1/Math.log.js: failed
+es1/Math.max.js: failed
+es1/Math.min.js: failed
+es1/Math.pow.js: failed
+es1/Math.random.js: failed
+es1/Math.round.js: failed
+es1/Math.sin.js: failed
+es1/Math.sqrt.js: failed
+es1/Math.tan.js: failed
+es1/Number.MAX_VALUE.js: failed
+es1/Number.MIN_VALUE.js: failed
+es1/Number.NEGATIVE_INFINITY.js: failed
+es1/Number.NaN.js: failed
+es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.js: failed
+es1/Number.prototype.constructor.js: failed
+es1/Number.prototype.toString.js: failed
+es1/Number.prototype.valueOf.js: failed
+es1/Object.js: failed
+es1/Object.prototype.constructor.js: failed
+es1/Object.prototype.toString.js: failed
+es1/Object.prototype.valueOf.js: failed
+es1/String.fromCharCode.js: failed
+es1/String.generics.js: failed
+es1/String.js: failed
+es1/String.length.js: failed
+es1/String.prototype.charAt.js: failed
+es1/String.prototype.charCodeAt.js: failed
+es1/String.prototype.constructor.js: failed
+es1/String.prototype.indexOf.js: failed
+es1/String.prototype.lastIndexOf.js: failed
+es1/String.prototype.split.js: failed
+es1/String.prototype.substring.js: failed
+es1/String.prototype.toLowerCase.js: failed
+es1/String.prototype.toString.js: failed
+es1/String.prototype.toUpperCase.js: failed
+es1/String.prototype.valueOf.js: failed
+es1/annex-b.Date.prototype.getYear.js: failed
+es1/annex-b.Date.prototype.setYear.js: failed
+es1/annex-b.Date.prototype.toGMTString.js: failed
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: failed
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: failed
+es1/arguments.js: arguments.length not available
+es1/asi.eval.js: failed
+es1/asi.js: error in asi.js: line: 13 syntax error, unexpected RBRACE, expecting SEMI Parse error
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: error in assignment.unsigned-shift.js: line: 9 syntax error, unexpected ASSIGN Parse error
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: integer); -12345 >>> 0 != 4294954951 (got: integer)
+es1/break.js: while with break failed; for with break failed
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: failed
+es1/conversions.ToInt32.js: 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
+es1/conversions.ToInteger.js: failed
+es1/conversions.ToNumber.js: failed
+es1/conversions.ToObject.js: failed
+es1/conversions.ToString.js: failed
+es1/conversions.ToUint32.js: 2^32 failed; -1 failed; -2^31 failed
+es1/conversions.js: null != undefined; 0 == null; false != false; false == true; true <= false; 123 + '' != '123'; '' + 123 != '123'; '5' + 123 != '5123'; true + '' != 'true'; true + false != 1; true + true != 2; true - false != 1; '5' - true != 4; '5' * '6' != 30; true * '5' != 5; '6' / '5' != 1.2; '5' % '6' != 5
+es1/equals.js: undefined != undefined; false != false; false == true
+es1/eval.js: failed
+es1/for-in.js: failed
+es1/for.js: for with break failed
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: failed
+es1/global.isFinite.js: failed
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: failed
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: failed
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: failed
+es1/literals.string.hex.js: failed
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: failed
+es1/logical.js: OK
+es1/new.typeof.js: failed
+es1/numbers.double.js: failed: converting max safe integer + 1 to string
+es1/numbers.fmod.js: 5.5 % 2.5 failed
+es1/numbers.inf.js: error in numbers.inf.js: line: 6 syntax error, unexpected NAME, expecting SEMI Parse error
+es1/numbers.int.js: OK
+es1/numbers.nan.js: NaN != NaN failed; NaN + 5 failed; 10 * NaN failed
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: return without value failed
+es1/return.typeof.js: return number failed
+es1/this.js: failed
+es1/typeof.js: failed
+es1/typeof.null.js: typeof null != 'object'
+es1/typeof.undeclared.js: failed
+es1/types.js: failed
+es1/unary.decrement.js: OK
+es1/unary.delete.js: failed
+es1/unary.delete.var.js: failed
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: !false failed; !true failed; !0 failed; !1 failed
+es1/unary.plus.js: error in unary.plus.js: line: 6 syntax error, unexpected PLUS Parse error
+es1/unary.plus.str.js: error in unary.plus.str.js: line: 6 syntax error, unexpected PLUS Parse error
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: var with initializer failed; mixed initialized/uninitialized vars failed
+es1/void.js: error in void.js: line: 18 syntax error, unexpected NAME, expecting SEMI Parse error
+es1/void.typeof.js: failed
+es1/while.js: while with break failed
+es1/with.js: error in with.js: line: 15 syntax error, unexpected LBRACE, expecting SEMI Parse error
+es3/Array.prototype.concat.js: error in Array.prototype.concat.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.pop.generic.js: failed
+es3/Array.prototype.pop.js: failed
+es3/Array.prototype.push.generic.js: error in Array.prototype.push.generic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.push.js: error in Array.prototype.push.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.shift.generic.js: failed
+es3/Array.prototype.shift.js: failed
+es3/Array.prototype.slice.generic.js: failed
+es3/Array.prototype.slice.js: failed
+es3/Array.prototype.splice.generic.js: error in Array.prototype.splice.generic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.splice.js: error in Array.prototype.splice.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.toLocaleString.js: failed
+es3/Array.prototype.unshift.generic.js: error in Array.prototype.unshift.generic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.unshift.js: error in Array.prototype.unshift.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Array.prototype.unshift.returns-new-length.js: error in Array.prototype.unshift.returns-new-length.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Date.prototype.toDateString.js: failed
+es3/Date.prototype.toLocaleDateString.js: failed
+es3/Date.prototype.toLocaleString.js: failed
+es3/Date.prototype.toLocaleTimeString.js: failed
+es3/Date.prototype.toTimeString.js: failed
+es3/Error.js: Error.js: Function not found: Error line = 10 node = 46
+es3/Error.prototype.constructor.js: Error.prototype.constructor.js: Symbol not found: Error line = 6 node = 14
+es3/Error.prototype.message.js: Error.prototype.message.js: Symbol not found: Error line = 6 node = 14
+es3/Error.prototype.name.js: Error.prototype.name.js: Symbol not found: Error line = 6 node = 14
+es3/Error.prototype.toString.js: Error.prototype.toString.js: Function not found: Error line = 6 node = 29
+es3/Function.prototype.apply.js: failed
+es3/Function.prototype.call.js: error in Function.prototype.call.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Math.max.variadic.js: error in Math.max.variadic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Math.min.variadic.js: error in Math.min.variadic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/Number.prototype.toExponential.edge-cases.js: js error Number.prototype.toExponential.edge-cases.js line = 15, node id = 90 type = 31: Node type not implemented
+es3/Number.prototype.toExponential.js: failed
+es3/Number.prototype.toExponential.rounding.js: error in Number.prototype.toExponential.rounding.js: line: 6 syntax error, unexpected RBRACE, expecting COLON Parse error
+es3/Number.prototype.toExponential.throws-infinity.js: error in Number.prototype.toExponential.throws-infinity.js: line: 2 syntax error, unexpected NUM, expecting SEMI Parse error
+es3/Number.prototype.toFixed.js: failed
+es3/Number.prototype.toLocaleString.js: failed
+es3/Number.prototype.toPrecision.js: failed
+es3/Object.prototype.hasOwnProperty.js: failed
+es3/Object.prototype.isPrototypeOf.js: failed
+es3/Object.prototype.propertyIsEnumerable.js: failed
+es3/Object.prototype.toLocaleString.js: failed
+es3/RegExp.global.js: error in RegExp.global.js: line: 22 syntax error, unexpected DIV Parse error
+es3/RegExp.ignoreCase.js: error in RegExp.ignoreCase.js: line: 22 syntax error, unexpected DIV Parse error
+es3/RegExp.js: failed
+es3/RegExp.lastIndex.js: failed
+es3/RegExp.multiline.js: error in RegExp.multiline.js: line: 22 syntax error, unexpected DIV Parse error
+es3/RegExp.prototype.constructor.js: failed
+es3/RegExp.prototype.exec.js: failed
+es3/RegExp.prototype.test.js: failed
+es3/RegExp.prototype.toString.js: failed
+es3/RegExp.source.js: failed
+es3/String.prototype.concat.generic.js: error in String.prototype.concat.generic.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/String.prototype.concat.js: error in String.prototype.concat.js: line: 1 syntax error, unexpected RBRACK Parse error
+es3/String.prototype.localeCompare.js: failed
+es3/String.prototype.match.generic.js: error in String.prototype.match.generic.js: line: 7 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.match.js: error in String.prototype.match.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.replace.capture.js: error in String.prototype.replace.capture.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.replace.extra.js: error in String.prototype.replace.extra.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.replace.generic.js: error in String.prototype.replace.generic.js: line: 46 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.replace.regex.js: error in String.prototype.replace.regex.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.replace.str.js: failed
+es3/String.prototype.search.generic.js: error in String.prototype.search.generic.js: line: 7 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.search.js: error in String.prototype.search.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.search.str.js: failed
+es3/String.prototype.slice.generic.js: failed
+es3/String.prototype.slice.js: failed
+es3/String.prototype.split.bugs.js: error in String.prototype.split.bugs.js: line: 68 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.split.limit.js: failed
+es3/String.prototype.split.regex.js: error in String.prototype.split.regex.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/String.prototype.toLocaleLowerCase.js: failed
+es3/String.prototype.toLocaleUpperCase.js: failed
+es3/annex-b.String.prototype.substr.js: failed
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: failed
+es3/global.EvalError.js: global.EvalError.js: Symbol not found: EvalError line = 8 node = 30
+es3/global.RangeError.js: global.RangeError.js: Symbol not found: RangeError line = 8 node = 30
+es3/global.RangeError.thrown.js: global.RangeError.thrown.js: Function not found: Array line = 60 node = 828
+es3/global.ReferenceError.js: global.ReferenceError.js: Symbol not found: ReferenceError line = 8 node = 31
+es3/global.ReferenceError.thrown.js: js error global.ReferenceError.thrown.js line = 20, node id = 196 type = 31: Node type not implemented
+es3/global.SyntaxError.js: global.SyntaxError.js: Symbol not found: SyntaxError line = 8 node = 30
+es3/global.SyntaxError.thrown.js: js error global.SyntaxError.thrown.js line = 20, node id = 186 type = 31: Node type not implemented
+es3/global.TypeError.js: global.TypeError.js: Symbol not found: TypeError line = 8 node = 30
+es3/global.TypeError.thrown.js: error in global.TypeError.thrown.js: line: 11 syntax error, unexpected NAME, expecting SEMI Parse error
+es3/global.URIError.js: global.URIError.js: Symbol not found: URIError line = 8 node = 30
+es3/global.URIError.thrown.js: js error global.URIError.thrown.js line = 23, node id = 191 type = 31: Node type not implemented
+es3/global.decodeURIComponent.js: failed
+es3/global.decodeURI.js: failed
+es3/global.encodeURIComponent.js: failed
+es3/global.encodeURI.js: failed
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: error in identifiers.unicode.js: line: 9 syntax error, unexpected MOD, expecting NAME Parse error
+es3/instanceof.js: error in instanceof.js: line: 9 syntax error, unexpected NAME, expecting RPAR Parse error
+es3/in.js: error in in.js: line: 10 syntax error, unexpected FORIN, expecting RPAR Parse error
+es3/labelled.break.js: error in labelled.break.js: line: 10 syntax error, unexpected COLON, expecting SEMI Parse error
+es3/labelled.continue.js: error in labelled.continue.js: line: 11 syntax error, unexpected COLON, expecting SEMI Parse error
+es3/labelled.statements.js: error in labelled.statements.js: line: 9 syntax error, unexpected COLON, expecting SEMI Parse error
+es3/literals.array.elisions.js: error in literals.array.elisions.js: line: 8 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es3/literals.array.js: empty array literal failed; array literal with elements failed; array literal with expressions failed
+es3/literals.array.trailing-comma.js: [1,].length failed; trailing comma failed; multiple elements with trailing comma failed
+es3/literals.object.decimal.js: error in literals.object.decimal.js: line: 9 syntax error, unexpected NUM, expecting RBRACE Parse error
+es3/literals.object.hex.js: error in literals.object.hex.js: line: 9 syntax error, unexpected NUM, expecting RBRACE Parse error
+es3/literals.object.int.js: error in literals.object.int.js: line: 9 syntax error, unexpected NUM, expecting RBRACE Parse error
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: error in literals.object.unicode.js: line: 9 syntax error, unexpected BITOR Parse error
+es3/literals.regex.ambiguous.js: error in literals.regex.ambiguous.js: line: 19 syntax error, unexpected DIV, expecting SEMI Parse error
+es3/literals.regex.empty.js: error in literals.regex.empty.js: line: 8 syntax error, unexpected DIV Parse error
+es3/literals.regex.js: error in literals.regex.js: line: 6 syntax error, unexpected DIV Parse error
+es3/literals.string.esc-v.js: failed
+es3/nested-functions.eval.js: failed
+es3/nested-functions.js: nested function closure over parameter failed
+es3/regex.backref.js: error in regex.backref.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.begin.js: error in regex.begin.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.bracket.esc-b.js: error in regex.bracket.esc-b.js: line: 7 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.bracket.js: error in regex.bracket.js: line: 10 syntax error, unexpected DIV Parse error
+es3/regex.bracket.ranges.js: error in regex.bracket.ranges.js: line: 10 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.class.esc-d.js: error in regex.class.esc-d.js: line: 11 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.class.esc-s.js: error in regex.class.esc-s.js: line: 11 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.class.esc-w.js: error in regex.class.esc-w.js: line: 11 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.disjunction.js: error in regex.disjunction.js: line: 8 syntax error, unexpected DIV Parse error
+es3/regex.dot.js: error in regex.dot.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.end.js: error in regex.end.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.escape.control.js: error in regex.escape.control.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.escape.hex.js: error in regex.escape.hex.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.escape.js: error in regex.escape.js: line: 10 syntax error, unexpected DIV Parse error
+es3/regex.escape.nul.js: error in regex.escape.nul.js: line: 7 syntax error, unexpected DIV Parse error
+es3/regex.escape.unicode.js: error in regex.escape.unicode.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.flag.global.js: error in regex.flag.global.js: line: 9 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/regex.flag.ignorecase.js: error in regex.flag.ignorecase.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.flag.multiline.js: error in regex.flag.multiline.js: line: 10 syntax error, unexpected DIV Parse error
+es3/regex.group.js: error in regex.group.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.lookahead.js: error in regex.lookahead.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.negative-lookahead.js: error in regex.negative-lookahead.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.non-capturing-group.js: error in regex.non-capturing-group.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.exact.js: error in regex.quantifier.exact.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.maybe.js: error in regex.quantifier.maybe.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.min.js: error in regex.quantifier.min.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.plus.js: error in regex.quantifier.plus.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.range.js: error in regex.quantifier.range.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.quantifier.star.js: error in regex.quantifier.star.js: line: 9 syntax error, unexpected DIV Parse error
+es3/regex.word-boundary.js: error in regex.word-boundary.js: line: 10 syntax error, unexpected DIV, expecting RPAR Parse error
+es3/source.line-terminators.js: error in source.line-terminators.js: line: 13 syntax error, unexpected SEMI, expecting RPAR Parse error
+es3/source.whitespace.js: failed
+es3/source.whitespace.unicode.js: timeout
+es3/strict-equals.js: failed
+es3/switch.js: error in switch.js: line: 10 syntax error, unexpected LBRACE, expecting SEMI Parse error
+es3/try-catch-finally.js: js error try-catch-finally.js line = 13, node id = 87 type = 31: Node type not implemented
+es3/try-catch-throw.js: js error try-catch-throw.js line = 15, node id = 73 type = 31: Node type not implemented
+es5/Array.isArray.js: failed
+es5/Array.prototype.every.js: error in Array.prototype.every.js: line: 37 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es5/Array.prototype.filter.js: error in Array.prototype.filter.js: line: 32 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es5/Array.prototype.forEach.js: error in Array.prototype.forEach.js: line: 35 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es5/Array.prototype.indexOf.js: failed
+es5/Array.prototype.lastIndexOf.js: failed
+es5/Array.prototype.map.js: failed
+es5/Array.prototype.reduceRight.js: failed
+es5/Array.prototype.reduce.js: error in Array.prototype.reduce.js: line: 40 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es5/Array.prototype.some.js: error in Array.prototype.some.js: line: 37 syntax error, unexpected COMMA, expecting RBRACK Parse error
+es5/Array.prototype.sort.TypeError.js: error in Array.prototype.sort.TypeError.js: line: 35 syntax error, unexpected DIV, expecting RPAR Parse error
+es5/Array.prototype.sort.undefined-comparefn.js: failed
+es5/Date.now.js: failed
+es5/Date.prototype.toISOString.js: error in Date.prototype.toISOString.js: line: 45 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/Date.prototype.toJSON.js: failed
+es5/Function.prototype-not-enumerable.js: failed
+es5/Function.prototype.apply.array-like.js: error in Function.prototype.apply.array-like.js: line: 15 syntax error, unexpected NUM, expecting RBRACE Parse error
+es5/Function.prototype.bind.js: error in Function.prototype.bind.js: line: 1 syntax error, unexpected RBRACK Parse error
+es5/JSON.js: failed
+es5/JSON.parse.js: error in JSON.parse.js: line: 73 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/JSON.parse.reviver.js: error in JSON.parse.reviver.js: line: 30 syntax error, unexpected FORIN, expecting RPAR Parse error
+es5/JSON.stringify.js: error in JSON.stringify.js: line: 62 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/JSON.stringify.replacer.js: failed
+es5/JSON.stringify.space.js: failed
+es5/Object.create.js: failed
+es5/Object.defineProperties.js: failed
+es5/Object.defineProperty.js: failed
+es5/Object.freeze.js: failed
+es5/Object.getOwnPropertyDescriptor.js: failed
+es5/Object.getOwnPropertyNames.js: failed
+es5/Object.getPrototypeOf.js: failed
+es5/Object.isExtensible.js: failed
+es5/Object.isFrozen.js: failed
+es5/Object.isSealed.js: failed
+es5/Object.keys.js: failed
+es5/Object.preventExtensions.js: failed
+es5/Object.property-shadowing.js: failed
+es5/Object.seal.js: failed
+es5/String.indexing.js: crashed (signal 11)
+es5/String.prototype.trim.js: failed
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: failed
+es5/global.Infinity.immutable.js: js error global.Infinity.immutable.js line = 12, node id = 33 type = 11: not lvalue
+es5/global.NaN.immutable.js: failed
+es5/global.parseInt.no-octal.js: crashed (signal 11)
+es5/global.undefined.immutable.js: error in global.undefined.immutable.js: line: 20 syntax error, unexpected NUM, expecting SEMI Parse error
+es5/literals.object.getters.js: error in literals.object.getters.js: line: 9 syntax error, unexpected NAME, expecting COLON Parse error
+es5/literals.object.setters.js: error in literals.object.setters.js: line: 10 syntax error, unexpected NAME, expecting COLON Parse error
+es5/literals.object.trailing-comma.js: crashed (signal 11)
+es5/source.keyword-properties.js: error in source.keyword-properties.js: line: 15 syntax error, unexpected IF, expecting RBRACE Parse error
+es5/source.unreserved-words.js: crashed (signal 11)
+es5/source.whitespace.bom.js: error in source.whitespace.bom.js: line: 1 syntax error, unexpected TERN Parse error
+es5/source.zero-width-chars.js: error in source.zero-width-chars.js: line: 11 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.eval-cannot-create-bindings.js: error in strict.eval-cannot-create-bindings.js: line: 22 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.function-expr-with-matching-name.js: error in strict.function-expr-with-matching-name.js: line: 8 syntax error, unexpected RBRACE, expecting SEMI Parse error
+es5/strict.js: error in strict.js: line: 16 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.no-arguments-callee.js: error in strict.no-arguments-callee.js: line: 19 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-arguments-caller.js: error in strict.no-arguments-caller.js: line: 15 syntax error, unexpected FORIN, expecting RPAR Parse error
+es5/strict.no-assignment-to-non-writable.js: error in strict.no-assignment-to-non-writable.js: line: 19 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-assignment-to-unresolvable.js: error in strict.no-assignment-to-unresolvable.js: line: 19 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.no-delete-bindings.js: error in strict.no-delete-bindings.js: line: 20 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-delete-non-configurable.js: error in strict.no-delete-non-configurable.js: line: 19 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.no-duplicate-parameters.js: error in strict.no-duplicate-parameters.js: line: 21 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-eval-or-arguments-assignment.js: error in strict.no-eval-or-arguments-assignment.js: line: 20 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-eval-or-arguments-bindings.js: error in strict.no-eval-or-arguments-bindings.js: line: 29 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-function-caller-or-arguments.js: error in strict.no-function-caller-or-arguments.js: line: 20 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-octal-literals.js: error in strict.no-octal-literals.js: line: 24 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.no-with.js: error in strict.no-with.js: line: 18 syntax error, unexpected NAME, expecting SEMI Parse error
+es5/strict.reserved-words.js: error in strict.reserved-words.js: line: 22 syntax error, unexpected NAME, expecting RPAR Parse error
+es5/strict.this-primitive-not-coerced-in-accessors.js: failed
+es5/strict.this-primitive-not-coerced.js: failed
+es5/strict.this-undefined-in-function.js: crashed (signal 11)
+es5/strict.unmapped-arguments.js: crashed (signal 11)
+es5/this.thrown-function.js: error in this.thrown-function.js: line: 12 syntax error, unexpected FORIN, expecting RPAR Parse error

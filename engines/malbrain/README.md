@@ -9,3 +9,13 @@ JavaScript interpreter with a built-in NO-SQL database.
 * Years:       2016-2020
 * Parser:      YACC
 * Interpreter: tree walker
+
+## Conformance
+
+<details><summary>ES1-ES5: 8%</summary><ul>
+<li>ES1: 15%</li>
+<li>ES3: 3%</li>
+<li>ES5: 0%, <b>6 crashes</b></li>
+</ul></details>
+
+💥 **6 crashes during testing**

@@ -1,0 +1,39 @@
+--- a/build.linux	2026-02-22 18:49:45.018672560 +0000
++++ b/build.linux	2026-02-22 18:49:45.025872560 +0000
+@@ -1,4 +1,4 @@
+ bison -d -v -Wall js.y
+ flex -B -R --nounput --nounistd --noyywrap -f js.l
+ 
+-gcc  -Wall -Wshadow -Wpointer-arith -Wstrict-prototypes -O2 -ggdb -o jsdb -fno-omit-frame-pointer js*.c database/db*.c database/mvcc_db*c database/btree1/*.c database/btree2/*.c database/artree/*.c database/base64.c database/Hi-Performance-Timestamps/timestamps.c database/rwlock/readerwriter.c database/mutex/mutex.c -lm -lpthread -latomic
++gcc  -fcommon -Wall -Wshadow -Wpointer-arith -Wstrict-prototypes -O2 -ggdb -o jsdb -fno-omit-frame-pointer js*.c lex.yy.c database/db*.c database/mvcc_db*c database/btree1/*.c database/btree2/*.c database/artree/*.c database/base64.c database/Hi-Performance-Timestamps/timestamps.c database/rwlock/readerwriter.c database/mutex/mutex.c -lm -lpthread -latomic
+--- a/database/db.h	2026-02-22 18:49:45.025872560 +0000
++++ b/database/db.h	2026-02-22 18:49:45.029472560 +0000
+@@ -83,7 +83,7 @@
+ 
+ typedef union {
+ 	struct {
+-		enum TxnStep txnAccess : 3;
++		uint16_t txnAccess : 3;
+ 	};
+ 	uint16_t bits;
+ } *DocIdXtra;
+--- a/database/Hi-Performance-Timestamps/timestamps.c	2026-02-22 18:49:45.029472560 +0000
++++ b/database/Hi-Performance-Timestamps/timestamps.c	2026-02-22 18:49:45.033072560 +0000
+@@ -27,7 +27,7 @@
+ #endif
+     do
+ #ifndef _WIN32
+-      pause();
++      pausex();
+ #else
+       YieldProcessor();
+ #endif
+@@ -300,7 +300,7 @@
+ 
+       //  Release new Epoch via atomicCAS128
+ 
+-      atomicCAS128(rdtscEpoch, oldEpoch, newEpoch);
++      atomicCAS128((volatile __int128 *)rdtscEpoch, (__int128 *)oldEpoch, (__int128 *)newEpoch);
+     } while (true);
+ #endif
+     // emit assigned Timestamp.
