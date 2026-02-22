@@ -1,0 +1,18 @@
+--- /home/ivan/src/js/motet-a/main.c	2025-10-03 12:15:03.999699967 +0800
++++ main.c	2026-02-23 01:40:25.998808709 +0800
+@@ -2,7 +2,14 @@
+ 
+ int main(int argc, const char **argv) {
+     if (argc <= 1) {
+-        die("invoke with a file name");
++        char line[4096];
++        for (;;) {
++            printf("> ");
++            fflush(stdout);
++            if (!fgets(line, sizeof(line), stdin)) break;
++            eval_source(line);
++        }
++        return 0;
+     }
+ 
+     FILE *file = fopen(argv[1], "r");

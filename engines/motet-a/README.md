@@ -6,7 +6,12 @@ Tiny self-compiling interpreter for a subset of JavaScript.
 * LOC:         1961 (`cloc *.c *.h *.js opcode.def`)
 * Language:    C, JavaScript
 * License:     MIT
-* Standard:    no (can't run ES1)
 * Years:       2017
 * Type:        JavaScript-like language
 * Interpreter: stack-based VM
+
+## Conformance
+
+<details><summary>ES1-ES5: 0%</summary><ul>
+<li>ES1: 0%</li>
+</ul></details>
