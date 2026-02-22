@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "binary_sha256": "013d3b77eb2080a436b8d3ad2467b68afc936ecb1f7c608ce896af5be5e71fa0", "binary_size": 1116432, "console_log": "print", "engine": "delskayn", "repository": "https://github.com/DelSkayn/toyjs.git", "revision": "11f084fc09723785b4bdb0575509664ca8b05f49", "revision_date": "2022-06-04", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
+es1/Array.js: Array.length failed
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: length > max index failed
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.join.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.reverse.generic.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.reverse.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.sort.generic.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.sort.js: Uncaught TypeError: tried to call non function value
+es1/Array.prototype.toString.js: numeric array toString failed; string array toString failed; empty array toString failed
+es1/Boolean.js: Boolean(true) failed; Boolean(false) failed
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: toString(true) failed; toString(false) failed
+es1/Boolean.prototype.valueOf.js: valueOf(true) failed; valueOf(false) failed
+es1/Date.diff.js: Uncaught TypeError: tried to call non function value
+es1/Date.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.constructor.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getDate.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getDay.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getFullYear.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getHours.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getMilliseconds.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getMinutes.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getMonth.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getSeconds.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getTimezoneOffset.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getTime.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.getUTCDate.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCDay.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCFullYear.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCHours.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCMilliseconds.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCMinutes.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCMonth.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.getUTCSeconds.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setDate.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setFullYear.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setHours.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setMilliseconds.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setMinutes.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setMonth.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setSeconds.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setTime.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.setUTCDate.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCFullYear.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCHours.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCMilliseconds.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCMinutes.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCMonth.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.setUTCSeconds.js: Uncaught TypeError: undefined has no properties
+es1/Date.prototype.toLocaleString.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.toString.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.toUTCString.js: Uncaught TypeError: tried to call non function value
+es1/Date.prototype.valueOf.js: Uncaught TypeError: tried to call non function value
+es1/Function.js: Uncaught TypeError: tried to call non function value
+es1/Function.length.js: Uncaught TypeError: undefined has no properties
+es1/Function.prototype.constructor.js: Uncaught TypeError: undefined has no properties
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: Uncaught TypeError: tried to call non function value
+es1/Math.E.js: Uncaught TypeError: undefined has no properties
+es1/Math.LN2.js: Uncaught TypeError: undefined has no properties
+es1/Math.LN10.js: Uncaught TypeError: undefined has no properties
+es1/Math.LOG2E.js: Uncaught TypeError: undefined has no properties
+es1/Math.LOG10E.js: Uncaught TypeError: undefined has no properties
+es1/Math.PI.js: Uncaught TypeError: undefined has no properties
+es1/Math.SQRT1_2.js: Uncaught TypeError: undefined has no properties
+es1/Math.SQRT2.js: Uncaught TypeError: undefined has no properties
+es1/Math.abs.js: Uncaught TypeError: undefined has no properties
+es1/Math.acos.js: Uncaught TypeError: undefined has no properties
+es1/Math.asin.js: Uncaught TypeError: undefined has no properties
+es1/Math.atan2.js: Uncaught TypeError: undefined has no properties
+es1/Math.atan.js: Uncaught TypeError: undefined has no properties
+es1/Math.ceil.js: Uncaught TypeError: undefined has no properties
+es1/Math.cos.js: Uncaught TypeError: undefined has no properties
+es1/Math.exp.js: Uncaught TypeError: undefined has no properties
+es1/Math.floor.js: Uncaught TypeError: undefined has no properties
+es1/Math.log.js: Uncaught TypeError: undefined has no properties
+es1/Math.max.js: Uncaught TypeError: undefined has no properties
+es1/Math.min.js: Uncaught TypeError: undefined has no properties
+es1/Math.pow.js: Uncaught TypeError: undefined has no properties
+es1/Math.random.js: Uncaught TypeError: undefined has no properties
+es1/Math.round.js: Uncaught TypeError: undefined has no properties
+es1/Math.sin.js: Uncaught TypeError: undefined has no properties
+es1/Math.sqrt.js: Uncaught TypeError: undefined has no properties
+es1/Math.tan.js: Uncaught TypeError: undefined has no properties
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: failed
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: failed
+es1/Object.prototype.valueOf.js: Uncaught TypeError: tried to call non function value
+es1/String.fromCharCode.js: Uncaught TypeError: tried to call non function value
+es1/String.generics.js: Uncaught TypeError: tried to call non function value
+es1/String.js: OK
+es1/String.length.js: string length failed; empty string length failed; String object length failed; single char length failed
+es1/String.prototype.charAt.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.charCodeAt.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
+es1/String.prototype.indexOf.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.lastIndexOf.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.split.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.substring.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.toLowerCase.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: Uncaught TypeError: tried to call non function value
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: Uncaught TypeError: tried to call non function value
+es1/annex-b.Date.prototype.setYear.js: Uncaught TypeError: tried to call non function value
+es1/annex-b.Date.prototype.toGMTString.js: Uncaught TypeError: tried to call non function value
+es1/annex-b.global.escape.js: Uncaught TypeError: tried to call non function value
+es1/annex-b.global.unescape.js: Uncaught TypeError: tried to call non function value
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: Uncaught SyntaxError: error: invalid unicode escape code
+es1/arguments.callee.js: Uncaught TypeError: undefined has no properties
+es1/arguments.js: Uncaught TypeError: undefined has no properties
+es1/asi.eval.js: OK
+es1/asi.js: Uncaught SyntaxError: error: redeclared variable
+es1/assignment.bitwise.js: OK
+es1/assignment.js: thread 'main' panicked at 'not yet implemented: AssignOperator: Modulo', /src/crates/compiler/src/expr.rs:727:22
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Mul)
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: Boolean(true) failed; Boolean(false) failed
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: Uncaught TypeError: tried to call non function value
+es1/conversions.ToNumber.js: '' failed; ' 456 ' failed; '0xff' failed
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: Infinity failed; -Infinity failed; 1e21 failed; 1e-7 failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: 0 != ''; false != ''; 123 - '' != 123; 123 * '' != 0
+es1/equals.js: '123' == '0123'
+es1/eval.js: OK
+es1/for-in.js: Uncaught RuntimeError: invalid instruction
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: Uncaught TypeError: tried to call non function value
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: failed
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: prefix decrement failed; prefix decrement to negative failed
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: prefix decrement failed; decrement without assignment failed
+es1/unary.delete.js: Uncaught RuntimeError: invalid instruction
+es1/unary.delete.var.js: failed
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(With)
+es3/Array.prototype.concat.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.pop.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.pop.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.push.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.push.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.shift.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.shift.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.slice.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.slice.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.splice.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.splice.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.toLocaleString.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.unshift.generic.js: Uncaught TypeError: undefined has no properties
+es3/Array.prototype.unshift.js: Uncaught TypeError: tried to call non function value
+es3/Array.prototype.unshift.returns-new-length.js: Uncaught TypeError: tried to call non function value
+es3/Date.prototype.toDateString.js: Uncaught TypeError: tried to call non function value
+es3/Date.prototype.toLocaleDateString.js: Uncaught TypeError: tried to call non function value
+es3/Date.prototype.toLocaleString.js: Uncaught TypeError: tried to call non function value
+es3/Date.prototype.toLocaleTimeString.js: Uncaught TypeError: tried to call non function value
+es3/Date.prototype.toTimeString.js: Uncaught TypeError: tried to call non function value
+es3/Error.js: Uncaught TypeError: tried to call non function value
+es3/Error.prototype.constructor.js: Uncaught TypeError: undefined has no properties
+es3/Error.prototype.message.js: Uncaught TypeError: undefined has no properties
+es3/Error.prototype.name.js: Uncaught TypeError: undefined has no properties
+es3/Error.prototype.toString.js: Uncaught TypeError: tried to call non function value
+es3/Function.prototype.apply.js: Uncaught TypeError: tried to call non function value
+es3/Function.prototype.call.js: Uncaught TypeError: tried to call non function value
+es3/Math.max.variadic.js: Uncaught TypeError: undefined has no properties
+es3/Math.min.variadic.js: Uncaught TypeError: undefined has no properties
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: Uncaught TypeError: tried to call non function value
+es3/Number.prototype.toExponential.rounding.js: Uncaught TypeError: tried to call non function value
+es3/Number.prototype.toExponential.throws-infinity.js: Uncaught TypeError: invalid `instanceof` operand
+es3/Number.prototype.toFixed.js: Uncaught TypeError: tried to call non function value
+es3/Number.prototype.toLocaleString.js: Uncaught TypeError: tried to call non function value
+es3/Number.prototype.toPrecision.js: Uncaught TypeError: tried to call non function value
+es3/Object.prototype.hasOwnProperty.js: Uncaught TypeError: tried to call non function value
+es3/Object.prototype.isPrototypeOf.js: Uncaught TypeError: tried to call non function value
+es3/Object.prototype.propertyIsEnumerable.js: Uncaught TypeError: tried to call non function value
+es3/Object.prototype.toLocaleString.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.global.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/RegExp.ignoreCase.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/RegExp.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.lastIndex.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.multiline.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/RegExp.prototype.constructor.js: Uncaught TypeError: undefined has no properties
+es3/RegExp.prototype.exec.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.prototype.test.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.prototype.toString.js: Uncaught TypeError: tried to call non function value
+es3/RegExp.source.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.concat.generic.js: Uncaught TypeError: undefined has no properties
+es3/String.prototype.concat.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.localeCompare.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.match.generic.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.match.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.replace.capture.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.replace.extra.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.replace.generic.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.replace.regex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.replace.str.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.search.generic.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.search.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.search.str.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.slice.generic.js: Uncaught TypeError: undefined has no properties
+es3/String.prototype.slice.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.split.bugs.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.split.limit.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.split.regex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/String.prototype.toLocaleLowerCase.js: Uncaught TypeError: tried to call non function value
+es3/String.prototype.toLocaleUpperCase.js: Uncaught TypeError: tried to call non function value
+es3/annex-b.String.prototype.substr.js: Uncaught TypeError: tried to call non function value
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: constructor failed; Uncaught TypeError: undefined has no properties
+es3/global.RangeError.js: constructor failed; Uncaught TypeError: undefined has no properties
+es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: constructor failed; Uncaught TypeError: undefined has no properties
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: thread 'main' panicked at 'byte index 18 is out of bounds of `var s = 'unclosed`', library/core/src/str/mod.rs:107:9
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: wrong exception for in number; wrong exception for in null
+es3/global.URIError.js: constructor failed; Uncaught TypeError: undefined has no properties
+es3/global.URIError.thrown.js: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9
+es3/global.decodeURIComponent.js: Uncaught TypeError: tried to call non function value
+es3/global.decodeURI.js: Uncaught TypeError: tried to call non function value
+es3/global.encodeURIComponent.js: Uncaught TypeError: tried to call non function value
+es3/global.encodeURI.js: Uncaught TypeError: tried to call non function value
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: thread 'main' panicked at 'byte index 127 is not a char boundary; it is inside 'ж' (bytes 126..128) of `// ES3: 7.6 Identifiers console.log("es3/identifiers.unicode.js: cyrillic vars ж/ш failed")`[...]', library/core/src/str/mod.rs:127:5
+es3/instanceof.js: Uncaught TypeError: right hand instanceof operand is not a function
+es3/in.js: Uncaught RuntimeError: invalid instruction
+es3/labelled.break.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+es3/labelled.continue.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+es3/labelled.statements.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+es3/literals.array.elisions.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+es3/literals.object.hex.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+es3/literals.object.int.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+es3/literals.object.js: OK
+es3/literals.object.str.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+es3/literals.object.unicode.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es3/literals.regex.ambiguous.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/literals.regex.empty.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/literals.regex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.begin.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.bracket.esc-b.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.bracket.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.bracket.ranges.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.class.esc-d.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.class.esc-s.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.class.esc-w.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.disjunction.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.dot.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.end.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.escape.control.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.escape.hex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.escape.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.escape.nul.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.escape.unicode.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.flag.global.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.flag.ignorecase.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.flag.multiline.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.group.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.lookahead.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.negative-lookahead.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.non-capturing-group.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.exact.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.maybe.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.min.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.plus.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.range.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.quantifier.star.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/regex.word-boundary.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es3/source.line-terminators.js: thread 'main' panicked at 'byte index 327 is not a char boundary; it is inside '\u{2028}' (bytes 326..329) of `// ES3: 7.3 Line Terminators
+es3/source.whitespace.js: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9
+es3/source.whitespace.unicode.js: thread 'main' panicked at 'byte index 188 is not a char boundary; it is inside '\u{2000}' (bytes 187..190) of `// ES3: 7.2 White Space
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: Uncaught 5
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function; Uncaught TypeError: tried to call non function value
+es5/Array.prototype.every.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es5/Array.prototype.filter.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es5/Array.prototype.forEach.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function; Uncaught TypeError: tried to call non function value
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function; Uncaught TypeError: tried to call non function value
+es5/Array.prototype.map.js: Array.prototype.map not a function; Uncaught TypeError: tried to call non function value
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; Uncaught TypeError: tried to call non function value
+es5/Array.prototype.reduce.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es5/Array.prototype.some.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+es5/Array.prototype.sort.TypeError.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+es5/Array.prototype.sort.undefined-comparefn.js: Uncaught TypeError: tried to call non function value
+es5/Date.now.js: Uncaught TypeError: undefined has no properties
+es5/Date.prototype.toISOString.js: Uncaught TypeError: undefined has no properties
+es5/Date.prototype.toJSON.js: Uncaught TypeError: undefined has no properties
+es5/Function.prototype-not-enumerable.js: Uncaught TypeError: tried to call non function value
+es5/Function.prototype.apply.array-like.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+es5/Function.prototype.bind.js: Uncaught TypeError: undefined has no properties
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/JSON.parse.reviver.js: Uncaught TypeError: undefined has no properties
+es5/JSON.stringify.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/JSON.stringify.replacer.js: Uncaught TypeError: undefined has no properties
+es5/JSON.stringify.space.js: Uncaught TypeError: undefined has no properties
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: prevented addition failed; Uncaught RuntimeError: invalid instruction
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; Uncaught TypeError: tried to call non function value
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; Uncaught TypeError: tried to call non function value
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: Uncaught TypeError: tried to call non function value
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: Object.keys not a function; Uncaught TypeError: tried to call non function value
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; Uncaught TypeError: tried to call non function value
+es5/Object.property-shadowing.js: Uncaught RuntimeError: invalid instruction
+es5/Object.seal.js: prevented property addition failed; Uncaught RuntimeError: invalid instruction
+es5/String.indexing.js: 'foobar'[3] !== 'b'; test with variable failed
+es5/String.prototype.trim.js: String.prototype.trim not a function; Uncaught TypeError: tried to call non function value
+es5/arguments.toStringTag.js: Uncaught TypeError: tried to call non function value
+es5/debugger.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Debugger)
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: Uncaught TypeError: undefined has no properties
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: Uncaught SyntaxError: error: unexpected token: found 'x' expected ':'
+es5/literals.object.setters.js: Uncaught SyntaxError: error: unexpected token: found 'x' expected ':'
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: Uncaught SyntaxError: error: unexpected token: found 'if' expected 'ident'
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.no-arguments-caller.js: Uncaught RuntimeError: invalid instruction
+es5/strict.no-assignment-to-non-writable.js: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.no-duplicate-parameters.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.no-eval-or-arguments-assignment.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.no-eval-or-arguments-bindings.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: Uncaught TypeError: right hand instanceof operand is not a function
+es5/strict.reserved-words.js: Uncaught TypeError: tried to call non function value
+es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced.js: Uncaught TypeError: tried to call non function value
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: Uncaught TypeError: undefined has no properties
+es5/this.thrown-function.js: Uncaught RuntimeError: invalid instruction
+kangax-es5/Array.isArray.js: failed
+kangax-es5/Array.prototype.every.js: failed
+kangax-es5/Array.prototype.filter.js: failed
+kangax-es5/Array.prototype.forEach.js: failed
+kangax-es5/Array.prototype.indexOf.js: failed
+kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.map.js: failed
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: failed
+kangax-es5/Array.prototype.some.js: failed
+kangax-es5/Array.prototype.sort.compareFn-type.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: failed
+kangax-es5/Array.prototype.unshift.return-count.js: TypeError: tried to call non function value
+kangax-es5/Date.now.js: TypeError: undefined has no properties
+kangax-es5/Date.prototype.toISOString.js: TypeError: undefined has no properties
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: TypeError: undefined has no properties
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: TypeError: tried to call non function value
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: failed
+kangax-es5/Object.getOwnPropertyNames.js: failed
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: failed
+kangax-es5/Object.preventExtensions.js: failed
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: failed
+kangax-es5/String.prototype.split.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es5/String.prototype.trim.js: failed
+kangax-es5/annex-b.String.prototype.substr.js: TypeError: tried to call non function value
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: TypeError: undefined has no properties
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: Uncaught SyntaxError: error: unexpected token: found '{' expected '=>'
+kangax-es5/literals.reserved-words-properties.js: Uncaught SyntaxError: error: unexpected token: found ':' expected '('
+kangax-es5/literals.setter-accessors.js: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: TypeError: tried to call non function value
+kangax-es5/misc.Function.apply.array-likes.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+kangax-es5/misc.Function.prototype.non-enumerable.js: TypeError: tried to call non function value
+kangax-es5/misc.enumerable-shadow.js: RuntimeError: invalid instruction
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: RuntimeError: invalid instruction
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es5/strict.arguments-callee-error.js: TypeError: right hand instanceof operand is not a function
+kangax-es5/strict.arguments-caller-error.js: RuntimeError: invalid instruction
+kangax-es5/strict.arguments-unmapped.js: TypeError: undefined has no properties
+kangax-es5/strict.assignment-eval-arguments-error.js: TypeError: tried to call non function value
+kangax-es5/strict.assignment-non-writable-error.js: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
+kangax-es5/strict.assignment-unresolvable-error.js: RuntimeError: invalid instruction
+kangax-es5/strict.delete-bindings-error.js: RuntimeError: invalid instruction
+kangax-es5/strict.delete-non-configurable-error.js: TypeError: right hand instanceof operand is not a function
+kangax-es5/strict.eval-arguments-bindings-error.js: TypeError: tried to call non function value
+kangax-es5/strict.eval-no-bindings.js: RuntimeError: invalid instruction
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: TypeError: right hand instanceof operand is not a function
+kangax-es5/strict.reserved-words.js: TypeError: tried to call non function value
+kangax-es5/strict.this-not-coerced-accessors.js: failed
+kangax-es5/strict.this-not-coerced-methods.js: TypeError: tried to call non function value
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/Array.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/Array.from.array-like.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+kangax-es6/Array.from.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/Array.from.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Array.from.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Array.from.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Array.from.map.array-like.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+kangax-es6/Array.from.map.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/Array.from.map.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Array.from.map.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Array.iterator-prototype-chain.js: TypeError: undefined has no properties
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: TypeError: undefined has no properties
+kangax-es6/Array.prototype.Symbol.unscopables.js: TypeError: undefined has no properties
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: TypeError: tried to call non function value
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: TypeError: undefined has no properties
+kangax-es6/Function.name.accessor.js: Uncaught SyntaxError: error: unexpected token: found 'foo' expected ':'
+kangax-es6/Function.name.bound.js: TypeError: tried to call non function value
+kangax-es6/Function.name.class-expression.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.class-object-method.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.class-prototype.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.class-statement.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.class-static.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.class-variable.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/Function.name.configurable.js: TypeError: tried to call non function value
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: TypeError: tried to call non function value
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: failed
+kangax-es6/Function.name.shorthand.no-lexical.js: OK
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: Uncaught SyntaxError: error: unexpected token: found '[' expected 'ident'
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/Map.constructor-accepts-null.js: TypeError: tried to call non function value
+kangax-es6/Map.constructor-arguments.js: TypeError: tried to call non function value
+kangax-es6/Map.constructor-invokes-set.js: TypeError: undefined has no properties
+kangax-es6/Map.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/Map.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Map.iterator-prototype-chain.js: TypeError: tried to call non function value
+kangax-es6/Map.js: TypeError: tried to call non function value
+kangax-es6/Map.prototype-not-instance.js: TypeError: tried to call non function value
+kangax-es6/Map.prototype.Symbol.iterator.js: TypeError: undefined has no properties
+kangax-es6/Map.prototype.clear.js: TypeError: undefined has no properties
+kangax-es6/Map.prototype.delete.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(StrictEqual)
+kangax-es6/Map.prototype.entries.js: TypeError: undefined has no properties
+kangax-es6/Map.prototype.forEach.js: TypeError: undefined has no properties
+kangax-es6/Map.prototype.keys.js: TypeError: undefined has no properties
+kangax-es6/Map.prototype.set-returns-this.js: TypeError: tried to call non function value
+kangax-es6/Map.prototype.size.js: TypeError: tried to call non function value
+kangax-es6/Map.prototype.values.js: TypeError: undefined has no properties
+kangax-es6/Map.zero-key.js: TypeError: tried to call non function value
+kangax-es6/Math.acosh.js: TypeError: undefined has no properties
+kangax-es6/Math.asinh.js: TypeError: undefined has no properties
+kangax-es6/Math.atanh.js: TypeError: undefined has no properties
+kangax-es6/Math.cbrt.js: TypeError: undefined has no properties
+kangax-es6/Math.clz32.js: TypeError: undefined has no properties
+kangax-es6/Math.cosh.js: TypeError: undefined has no properties
+kangax-es6/Math.expm1.js: TypeError: undefined has no properties
+kangax-es6/Math.fround.js: TypeError: undefined has no properties
+kangax-es6/Math.hypot.js: TypeError: undefined has no properties
+kangax-es6/Math.imul.js: TypeError: undefined has no properties
+kangax-es6/Math.log1p.js: TypeError: undefined has no properties
+kangax-es6/Math.log2.js: TypeError: undefined has no properties
+kangax-es6/Math.log10.js: TypeError: undefined has no properties
+kangax-es6/Math.sign.js: TypeError: undefined has no properties
+kangax-es6/Math.sinh.js: TypeError: undefined has no properties
+kangax-es6/Math.tanh.js: TypeError: undefined has no properties
+kangax-es6/Math.trunc.js: TypeError: undefined has no properties
+kangax-es6/Number.EPSILON.js: OK
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: TypeError: tried to call non function value
+kangax-es6/Number.parseInt.js: TypeError: tried to call non function value
+kangax-es6/Object.assign.js: RuntimeError: invalid instruction
+kangax-es6/Object.getOwnPropertySymbols.js: TypeError: tried to call non function value
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: TypeError: tried to call non function value
+kangax-es6/Promise.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/Promise.all.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Promise.all.js: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident'
+kangax-es6/Promise.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/Promise.js: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident'
+kangax-es6/Promise.prototype-not-instance.js: TypeError: tried to call non function value
+kangax-es6/Promise.race.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Promise.race.js: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident'
+kangax-es6/Proxy.Array.isArray.js: TypeError: tried to call non function value
+kangax-es6/Proxy.JSON.stringify.js: TypeError: tried to call non function value
+kangax-es6/Proxy.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.apply.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.apply.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.construct.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.construct.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.defineProperty.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.defineProperty.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(2))), Call([Prime(Variable(SymbolId(3))), Prime(Object([(Atom::String(58), Prime(Function(ScopeId(3), None, Params([], None), [Expr([Assign(Prime(Variable(SymbolId(1))), Assign
+kangax-es6/Proxy.handler.deleteProperty.js: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(3))), Call([Prime(Variable(SymbolId(1))), Prime(Object([(Atom::String(57), Prime(Function(ScopeId(2), None, Params([Single(SymbolId(4)), Single(SymbolId(5))], None), [Expr([Ass
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.getPrototypeOf.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.get.instances.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.get.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.get.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.has.instances.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.has.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.has.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.isExtensible.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.isExtensible.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.ownKeys.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.ownKeys.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.preventExtensions.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.setPrototypeOf.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.set.instances.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.set.invariants.js: TypeError: tried to call non function value
+kangax-es6/Proxy.handler.set.js: TypeError: tried to call non function value
+kangax-es6/Proxy.no-prototype.js: TypeError: tried to call non function value
+kangax-es6/Proxy.revocable.js: TypeError: undefined has no properties
+kangax-es6/Reflect.apply.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.Array-subclassing.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.Function-subclassing.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.Promise-subclassing.js: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident'
+kangax-es6/Reflect.construct.RegExp-subclassing.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.new-target.js: TypeError: undefined has no properties
+kangax-es6/Reflect.construct.third-argument.js: TypeError: undefined has no properties
+kangax-es6/Reflect.defineProperty.js: TypeError: undefined has no properties
+kangax-es6/Reflect.deleteProperty.js: TypeError: undefined has no properties
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: TypeError: undefined has no properties
+kangax-es6/Reflect.getPrototypeOf.js: TypeError: undefined has no properties
+kangax-es6/Reflect.get.js: TypeError: undefined has no properties
+kangax-es6/Reflect.has.js: TypeError: undefined has no properties
+kangax-es6/Reflect.isExtensible.js: TypeError: undefined has no properties
+kangax-es6/Reflect.ownKeys.string.js: TypeError: undefined has no properties
+kangax-es6/Reflect.ownKeys.symbol.js: TypeError: tried to call non function value
+kangax-es6/Reflect.preventExtensions.js: TypeError: undefined has no properties
+kangax-es6/Reflect.setPrototypeOf.js: TypeError: undefined has no properties
+kangax-es6/Reflect.set.js: TypeError: undefined has no properties
+kangax-es6/RegExp.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/RegExp.prototype.Symbol.match.js: TypeError: undefined has no properties
+kangax-es6/RegExp.prototype.Symbol.replace.js: TypeError: undefined has no properties
+kangax-es6/RegExp.prototype.Symbol.search.js: TypeError: undefined has no properties
+kangax-es6/RegExp.prototype.Symbol.split.js: TypeError: undefined has no properties
+kangax-es6/RegExp.prototype.flags.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/Set.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/Set.constructor-accepts-null.js: TypeError: tried to call non function value
+kangax-es6/Set.constructor-arguments.js: TypeError: tried to call non function value
+kangax-es6/Set.constructor-invokes-add.js: TypeError: undefined has no properties
+kangax-es6/Set.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/Set.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/Set.iterator-prototype-chain.js: TypeError: tried to call non function value
+kangax-es6/Set.js: TypeError: tried to call non function value
+kangax-es6/Set.prototype-not-instance.js: TypeError: tried to call non function value
+kangax-es6/Set.prototype.Symbol.iterator.js: TypeError: undefined has no properties
+kangax-es6/Set.prototype.add-returns-this.js: TypeError: tried to call non function value
+kangax-es6/Set.prototype.clear.js: TypeError: undefined has no properties
+kangax-es6/Set.prototype.delete.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(StrictEqual)
+kangax-es6/Set.prototype.entries.js: TypeError: undefined has no properties
+kangax-es6/Set.prototype.forEach.js: TypeError: undefined has no properties
+kangax-es6/Set.prototype.keys.js: TypeError: undefined has no properties
+kangax-es6/Set.prototype.size.js: TypeError: tried to call non function value
+kangax-es6/Set.prototype.values.js: TypeError: undefined has no properties
+kangax-es6/Set.zero-key.js: TypeError: tried to call non function value
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: TypeError: undefined has no properties
+kangax-es6/String.prototype.Symbol.iterator.js: TypeError: undefined has no properties
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: TypeError: tried to call non function value
+kangax-es6/Symbol.JSON.stringify.primitive.js: TypeError: tried to call non function value
+kangax-es6/Symbol.Object.js: TypeError: tried to call non function value
+kangax-es6/Symbol.String.js: TypeError: tried to call non function value
+kangax-es6/Symbol.defineProperty.js: TypeError: tried to call non function value
+kangax-es6/Symbol.global-registry.js: Uncaught SyntaxError: error: unexpected token: found 'for' expected 'ident'
+kangax-es6/Symbol.hidden-keys.js: TypeError: tried to call non function value
+kangax-es6/Symbol.js: TypeError: tried to call non function value
+kangax-es6/Symbol.no-coerce.js: TypeError: tried to call non function value
+kangax-es6/Symbol.no-new.js: TypeError: tried to call non function value
+kangax-es6/Symbol.prototype.js: TypeError: tried to call non function value
+kangax-es6/Symbol.typeof.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.accept-primitives.js: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18
+kangax-es6/WeakMap.constructor-accepts-null.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.constructor-arguments.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.constructor-invokes-set.js: TypeError: undefined has no properties
+kangax-es6/WeakMap.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.frozen-keys.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/WeakMap.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.no-clear.js: TypeError: undefined has no properties
+kangax-es6/WeakMap.prototype-not-instance.js: TypeError: tried to call non function value
+kangax-es6/WeakMap.prototype.delete.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(StrictEqual)
+kangax-es6/WeakMap.prototype.set-returns-this.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.accept-primitives.js: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18
+kangax-es6/WeakSet.constructor-accepts-null.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.constructor-arguments.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.constructor-invokes-add.js: TypeError: undefined has no properties
+kangax-es6/WeakSet.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/WeakSet.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.no-clear.js: TypeError: undefined has no properties
+kangax-es6/WeakSet.prototype-not-instance.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.prototype.add-returns-this.js: TypeError: tried to call non function value
+kangax-es6/WeakSet.prototype.delete.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(StrictEqual)
+kangax-es6/annex-b.RegExp.prototype.compile.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: tried to call non function value
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: tried to call non function value
+kangax-es6/annex-b.function.hoisted-block-level.js: TypeError: tried to call non function value
+kangax-es6/annex-b.function.if-statement.js: failed
+kangax-es6/annex-b.function.labeled.js: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
+kangax-es6/annex-b.html-comments.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Greater)
+kangax-es6/annex-b.regex.backreferences-octal.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.hyphens.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.incomplete-patterns.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.invalid-char-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.invalid-control-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.regex.octal-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: TypeError: tried to call non function value
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: TypeError: tried to call non function value
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: TypeError: tried to call non function value
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/annex-b.__proto__.literals.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: RuntimeError: invalid instruction
+kangax-es6/annex-b.__proto__.literals.not-computed.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Bracket)
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Instanceof)
+kangax-es6/arrow.0-params.js: OK
+kangax-es6/arrow.1-param.js: OK
+kangax-es6/arrow.5-param.js: OK
+kangax-es6/arrow.bind.js: TypeError: tried to call non function value
+kangax-es6/arrow.lexical-arguments.js: TypeError: undefined has no properties
+kangax-es6/arrow.lexical-super.constructor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/arrow.lexical-super.methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/arrow.lexical-this.js: failed
+kangax-es6/arrow.new-target.js: failed
+kangax-es6/arrow.no-line-break.js: OK
+kangax-es6/arrow.no-prototype.js: TypeError: tried to call non function value
+kangax-es6/arrow.precedence.js: OK
+kangax-es6/arrow.this-call-apply.js: TypeError: tried to call non function value
+kangax-es6/class.accessor-properties.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.anonymous.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.block-scoped.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.computed-accessor-properties.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.computed-names-tdz.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.computed-prototype-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.computed-static-accessor-properties.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.computed-static-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.constructor-requires-new.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.constructor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.expression.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.extends-expressions.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.extends-null.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.extends.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.implicit-strict.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.lexical-name.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.methods-not-enumerable.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.new-target.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.optional-semicolons.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.prototype-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.statement.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.static-accessor-properties.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.static-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/class.string-keyed-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/const.basic.js: OK
+kangax-es6/const.block-scoped.js: OK
+kangax-es6/const.for-in.js: RuntimeError: invalid instruction
+kangax-es6/const.for-loop.js: OK
+kangax-es6/const.for-of.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
+kangax-es6/const.no-redefine.js: OK
+kangax-es6/const.no-statement.js: OK
+kangax-es6/const.shadow.js: OK
+kangax-es6/const.strict.basic.js: OK
+kangax-es6/const.strict.block-scoped.js: OK
+kangax-es6/const.strict.for-in.js: RuntimeError: invalid instruction
+kangax-es6/const.strict.for-loop.js: OK
+kangax-es6/const.strict.for-of.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
+kangax-es6/const.strict.no-redefine.js: OK
+kangax-es6/const.strict.no-statement.js: OK
+kangax-es6/const.strict.shadow.js: OK
+kangax-es6/const.strict.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+kangax-es6/const.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+kangax-es6/default-params.arguments.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/default-params.basic.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/default-params.explicit-undefined.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/default-params.new-function.js: TypeError: tried to call non function value
+kangax-es6/default-params.refer-previous.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/default-params.separate-scope.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/default-params.tdz.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/destructuring-assign.array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-assign.astral-string.js: Uncaught SyntaxError: error: unexpected token: found 'string'
+kangax-es6/destructuring-assign.chained-iterable.js: Uncaught SyntaxError: error: unexpected token: found '['
+kangax-es6/destructuring-assign.chained-object.js: Uncaught SyntaxError: error: unexpected token: found ',' expected '=>'
+kangax-es6/destructuring-assign.computed-properties.js: Uncaught SyntaxError: error: unexpected token: found ']' expected '=>'
+kangax-es6/destructuring-assign.defaults.js: Uncaught SyntaxError: error: unexpected token: found '=' expected '=>'
+kangax-es6/destructuring-assign.empty-patterns.js: Uncaught SyntaxError: error: unexpected token: found '['
+kangax-es6/destructuring-assign.generator.js: Uncaught SyntaxError: error: unexpected token: found '('
+kangax-es6/destructuring-assign.iterable-expression.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Paren)
+kangax-es6/destructuring-assign.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-assign.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-assign.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-assign.nested-rest.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/destructuring-assign.nested.js: Uncaught SyntaxError: error: unexpected token: found '}' expected ':'
+kangax-es6/destructuring-assign.object-expression.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-assign.object-primitives.js: Uncaught SyntaxError: error: unexpected token: found '}' expected '=>'
+kangax-es6/destructuring-assign.object.js: Uncaught SyntaxError: error: unexpected token: found ',' expected '=>'
+kangax-es6/destructuring-assign.parenthesised-error.js: Uncaught SyntaxError: error: unexpected token: found ',' expected '=>'
+kangax-es6/destructuring-assign.rest.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/destructuring-assign.sparse-array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-assign.string.js: Uncaught SyntaxError: error: unexpected token: found 'string'
+kangax-es6/destructuring-assign.throws-null-undefined.js: Uncaught SyntaxError: error: unexpected token: found '}' expected '=>'
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: Uncaught SyntaxError: error: unexpected token: found '['
+kangax-es6/destructuring-assign.trailing-comma-object.js: Uncaught SyntaxError: error: unexpected token: found ',' expected '=>'
+kangax-es6/destructuring-decl.array.js: OK
+kangax-es6/destructuring-decl.astral-string.js: failed
+kangax-es6/destructuring-decl.catch.js: OK
+kangax-es6/destructuring-decl.computed-properties.js: OK
+kangax-es6/destructuring-decl.defaults-tdz.js: failed
+kangax-es6/destructuring-decl.defaults.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-decl.for-in.js: RuntimeError: invalid instruction
+kangax-es6/destructuring-decl.for-of.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
+kangax-es6/destructuring-decl.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/destructuring-decl.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-decl.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-decl.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-decl.multiple-var.js: OK
+kangax-es6/destructuring-decl.nested.js: OK
+kangax-es6/destructuring-decl.object-primitives.js: OK
+kangax-es6/destructuring-decl.object.js: OK
+kangax-es6/destructuring-decl.rest.js: Uncaught SyntaxError: error: unexpected token: found 'b' expected '='
+kangax-es6/destructuring-decl.sparse-array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-decl.string.js: failed
+kangax-es6/destructuring-decl.throws-null-undefined.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: OK
+kangax-es6/destructuring-decl.trailing-comma-object.js: Uncaught SyntaxError: error: unexpected token: found '}'
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Paren)
+kangax-es6/destructuring-params.arguments.js: TypeError: undefined has no properties
+kangax-es6/destructuring-params.array.js: OK
+kangax-es6/destructuring-params.astral-string.js: failed
+kangax-es6/destructuring-params.computed-properties.js: OK
+kangax-es6/destructuring-params.defaults-new-function.js: TypeError: tried to call non function value
+kangax-es6/destructuring-params.defaults-separate-scope.js: failed
+kangax-es6/destructuring-params.defaults.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-params.duplicate-identifier.js: TypeError: right hand instanceof operand is not a function
+kangax-es6/destructuring-params.empty-patterns.js: TypeError: undefined has no properties
+kangax-es6/destructuring-params.generator.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Mul)
+kangax-es6/destructuring-params.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-params.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-params.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/destructuring-params.length.js: failed
+kangax-es6/destructuring-params.nested.js: OK
+kangax-es6/destructuring-params.new-function.js: TypeError: tried to call non function value
+kangax-es6/destructuring-params.object-primitives.js: OK
+kangax-es6/destructuring-params.object.js: OK
+kangax-es6/destructuring-params.rest.js: Uncaught SyntaxError: error: unexpected token: found ']' expected one of: [\n,;]
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es6/destructuring-params.sparse-array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/destructuring-params.string.js: failed
+kangax-es6/destructuring-params.throws-null-undefined.js: OK
+kangax-es6/destructuring-params.trailing-comma-iterable.js: OK
+kangax-es6/destructuring-params.trailing-comma-object.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Paren)
+kangax-es6/for-of.array.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected ';'
+kangax-es6/for-of.astral-string.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected ';'
+kangax-es6/for-of.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/for-of.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/for-of.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/for-of.iterator-closing-break.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/for-of.iterator-closing-throw.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/for-of.sparse-array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/for-of.string.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected ';'
+kangax-es6/function.block-level-decl.js: TypeError: tried to call non function value
+kangax-es6/generators.basic.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.constructor.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.expression.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '('
+kangax-es6/generators.no-new-this.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.prototype-chain.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.prototype.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.return.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.sending.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.shorthand.class.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/generators.shorthand.computed.class.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/generators.shorthand.computed.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.shorthand.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.shorthand.no-constructor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/generators.shorthand.string-keyed.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.this.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.throw.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.yield-precedence.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es6/generators.yield-star.array.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/generators.yield-star.astral-string.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/generators.yield-star.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/generators.yield-star.iterable-instance.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/generators.yield-star.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/generators.yield-star.iterator-closing-throw.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/generators.yield-star.iterator-closing.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/generators.yield-star.non-iterable-error.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/generators.yield-star.sparse-array.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/generators.yield-star.string.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/let.basic.js: OK
+kangax-es6/let.block-scoped.js: OK
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: TypeError: tried to call non function value
+kangax-es6/let.for-loop.js: OK
+kangax-es6/let.no-statement.js: OK
+kangax-es6/let.shadow.js: OK
+kangax-es6/let.strict.basic.js: OK
+kangax-es6/let.strict.block-scoped.js: OK
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: TypeError: tried to call non function value
+kangax-es6/let.strict.for-loop.js: OK
+kangax-es6/let.strict.no-statement.js: OK
+kangax-es6/let.strict.shadow.js: OK
+kangax-es6/let.strict.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+kangax-es6/let.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: OK
+kangax-es6/literals.object.computed-accessors.js: Uncaught SyntaxError: error: unexpected token: found '[' expected ':'
+kangax-es6/literals.object.computed-properties.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Bracket)
+kangax-es6/literals.object.computed-shorthand-methods.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Bracket)
+kangax-es6/literals.object.shorthand-methods.js: OK
+kangax-es6/literals.object.shorthand-properties.js: Uncaught SyntaxError: error: unexpected token: found ',' expected ':'
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: Uncaught SyntaxError: error: unexpected token: found '{' expected one of: [\n,;]
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: OK
+kangax-es6/misc.Invalid-Date.js: TypeError: tried to call non function value
+kangax-es6/misc.Object.freeze.primitives.js: OK
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: tried to call non function value
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: tried to call non function value
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: failed
+kangax-es6/misc.Object.isExtensible.primitives.js: OK
+kangax-es6/misc.Object.isFrozen.primitives.js: OK
+kangax-es6/misc.Object.isSealed.primitives.js: OK
+kangax-es6/misc.Object.keys.primitives.js: TypeError: tried to call non function value
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: tried to call non function value
+kangax-es6/misc.Object.seal.primitives.js: OK
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.defineProperty.Set.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Array.concat.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Array.from.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.Proxy.get.Array.iteration.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.Proxy.get.Array.pop.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Array.reverse.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.get.Array.shift.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Array.splice.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Array.toString.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.Proxy.get.Date.toJSON.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Error.toString.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Function.bind.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.HasBinding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(With)
+kangax-es6/misc.Proxy.get.IteratorComplete.js: Uncaught SyntaxError: error: unexpected token: found 'of' expected ';'
+kangax-es6/misc.Proxy.get.JSON.stringify.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Object.assign.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.Promise.resolve.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp.flags.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.RegExp.test.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.RegExp.toString.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.String.match.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.String.raw.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.Proxy.get.String.replace.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.String.search.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.String.split.js: TypeError: undefined has no properties
+kangax-es6/misc.Proxy.get.ToPrimitive.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.get.instanceof.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.fill.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.from.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.Proxy.set.Array.of.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.pop.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.push.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.reverse.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.set.Array.shift.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.set.Array.splice.js: TypeError: tried to call non function value
+kangax-es6/misc.Proxy.set.Array.unshift.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es6/misc.Proxy.set.Object.assign.js: TypeError: tried to call non function value
+kangax-es6/misc.RegExp-alter-flags.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: undefined has no properties
+kangax-es6/misc.accessors-no-constructor.js: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
+kangax-es6/misc.bound-function-prototype.arrow.js: TypeError: undefined has no properties
+kangax-es6/misc.bound-function-prototype.class.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/misc.bound-function-prototype.function.js: TypeError: undefined has no properties
+kangax-es6/misc.bound-function-prototype.generator.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '('
+kangax-es6/misc.bound-function-prototype.subclass.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/misc.do-while-no-semicolon.js: OK
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: TypeError: tried to call non function value
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/misc.identifier-syntax.var-1.js: thread 'main' panicked at 'byte index 8 is out of bounds of `var ⸯ`', library/core/src/str/mod.rs:107:9
+kangax-es6/misc.identifier-syntax.var-2.js: thread 'main' panicked at 'byte index 321 is not a char boundary; it is inside '𐋀' (bytes 320..324) of `// compat-table: ES6 > misc > Updated identifier syntax (small) > var 𐋀
+kangax-es6/misc.property-order.JSON.parse.js: TypeError: undefined has no properties
+kangax-es6/misc.property-order.JSON.stringify.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.property-order.Object.assign.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.property-order.Object.keys.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es6/misc.prototypes-not-instances.js: TypeError: tried to call non function value
+kangax-es6/new-target.assignment-error.js: OK
+kangax-es6/new-target.constructor.js: OK
+kangax-es6/regex.flags.u.case-folding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/regex.flags.u.codepoint.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/regex.flags.u.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/regex.flags.u.non-bmp.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/regex.flags.y.js: TypeError: tried to call non function value
+kangax-es6/regex.flags.y.lastIndex.js: TypeError: tried to call non function value
+kangax-es6/rest-params.arguments.js: TypeError: undefined has no properties
+kangax-es6/rest-params.basic.js: failed
+kangax-es6/rest-params.length.js: failed
+kangax-es6/rest-params.new-function.js: TypeError: tried to call non function value
+kangax-es6/rest-params.no-setter.js: OK
+kangax-es6/spread.array-call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.array-literal.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.astral-call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.astral-literal.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.generator-call.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/spread.generator-literal.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
+kangax-es6/spread.iterable-call.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/spread.iterable-instance-call.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/spread.iterable-instance-literal.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/spread.iterable-literal.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/spread.non-iterable-error.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.sparse-call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.sparse-literal.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.string-call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/spread.string-literal.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DotDotDot
+kangax-es6/subclassing.Array.concat.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.filter.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.from.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.isArray.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.length-access.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.length-set.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.map.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.of.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.prototype-chain.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.slice.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Array.splice.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.new.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.prototype-chain.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.prototype.apply.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.prototype.bind.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Function.prototype.call.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Promise.all.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Promise.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Promise.prototype-chain.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.Promise.race.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.RegExp.exec.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.RegExp.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.RegExp.prototype-chain.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.RegExp.test.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.misc.Boolean.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.misc.Error.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class) 9 | class C extends Error {}
+kangax-es6/subclassing.misc.Map.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.misc.Number.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.misc.Set.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/subclassing.misc.String.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.correct-constructor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.expression.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.method-calls.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.new-target-binding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.property-access.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.statement.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.static-binding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/super.this-binding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es6/tail-calls.direct.js: RuntimeError: exceeded max stack depth
+kangax-es6/tail-calls.mutual.js: TypeError: tried to call non function value
+kangax-es6/template.basic.js: TypeError: tried to call non function value
+kangax-es6/template.caching.js: TypeError: tried to call non function value
+kangax-es6/template.escape-sequences.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/template.frozen-array.js: OK
+kangax-es6/template.line-break.js: TypeError: tried to call non function value
+kangax-es6/template.permanent-caching.js: TypeError: tried to call non function value
+kangax-es6/template.tagged.js: OK
+kangax-es6/template.toString.js: OK
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.DataView.Float32.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Float64.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Int8.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Int16.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Int32.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Uint8.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Uint16.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.DataView.Uint32.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Float32Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Float64Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Int8Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Int16Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Int32Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Symbol.species.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.Uint8Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Uint8ClampedArray.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Uint16Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.Uint32Array.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.constructor-iterables.js: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
+kangax-es6/typed-arrays.constructor-requires-new.js: TypeError: tried to call non function value
+kangax-es6/typed-arrays.correct-prototype-chains.js: TypeError: cannot make null into an object
+kangax-es6/typed-arrays.from.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.of.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.copyWithin.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.entries.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.every.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.fill.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.filter.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.findIndex.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.find.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.forEach.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.indexOf.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.join.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.keys.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.map.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.reduceRight.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.reduce.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.reverse.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.slice.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.some.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.sort.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.subarray.js: TypeError: undefined has no properties
+kangax-es6/typed-arrays.prototype.values.js: TypeError: undefined has no properties
+kangax-es6/unicode-escapes.identifier.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/unicode-escapes.property-access.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/unicode-escapes.property-key.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/unicode-escapes.string.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es6/well-known.hasInstance.js: TypeError: undefined has no properties
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: TypeError: undefined has no properties
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: TypeError: undefined has no properties
+kangax-es6/well-known.iterator.js: RuntimeError: invalid instruction
+kangax-es6/well-known.match.RegExp-constructor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.match.String.endsWith.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.match.String.includes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.match.String.startsWith.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.match.js: TypeError: undefined has no properties
+kangax-es6/well-known.replace.js: TypeError: undefined has no properties
+kangax-es6/well-known.search.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Array.concat.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Array.filter.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Array.map.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Array.slice.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Array.splice.js: TypeError: undefined has no properties
+kangax-es6/well-known.species.Promise.then.js: TypeError: tried to call non function value
+kangax-es6/well-known.species.RegExp.split.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.species.js: RuntimeError: invalid instruction
+kangax-es6/well-known.split.js: TypeError: undefined has no properties
+kangax-es6/well-known.toPrimitive.js: TypeError: undefined has no properties
+kangax-es6/well-known.toStringTag.existing-builtins.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es6/well-known.toStringTag.js: TypeError: undefined has no properties
+kangax-es6/well-known.toStringTag.misc-builtins.js: TypeError: undefined has no properties
+kangax-es6/well-known.toStringTag.new-builtins.js: Uncaught SyntaxError: error: unexpected token: found '*' expected '('
+kangax-es6/well-known.unscopables.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(With)
+kangax-es2016/Array.prototype.includes.generic.js: Uncaught SyntaxError: error: unexpected token: found '{' expected one of: [\n,;]
+kangax-es2016/Array.prototype.includes.js: TypeError: tried to call non function value
+kangax-es2016/Array.prototype.includes.sparse.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
+kangax-es2016/Array.prototype.includes.typed-array.js: TypeError: tried to call non function value
+kangax-es2016/exponentiation.assignment.js: OK
+kangax-es2016/exponentiation.basic.js: OK
+kangax-es2016/exponentiation.unary-negation-error.js: OK
+kangax-es2016/misc.Proxy-Array-includes.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
+kangax-es2016/misc.Proxy-enumerate-removed.js: TypeError: tried to call non function value
+kangax-es2016/misc.generator-no-new.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es2016/misc.generator-throw-inner.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es2016/misc.nested-rest-destructuring-decl.js: Uncaught SyntaxError: error: unexpected token: found 'z' expected '='
+kangax-es2016/misc.nested-rest-destructuring-params.js: Uncaught SyntaxError: error: unexpected token: found ']' expected one of: [\n,;]
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: OK
+kangax-es2017/Atomics.add.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.and.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.compareExchange.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.exchange.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.isLockFree.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.load.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.notify.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.or.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.store.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.sub.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.wait.js: TypeError: undefined has no properties
+kangax-es2017/Atomics.xor.js: TypeError: undefined has no properties
+kangax-es2017/Object.entries.js: TypeError: tried to call non function value
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: tried to call non function value
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: TypeError: tried to call non function value
+kangax-es2017/Object.values.js: TypeError: tried to call non function value
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: TypeError: undefined has no properties
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: TypeError: undefined has no properties
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: TypeError: undefined has no properties
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: TypeError: undefined has no properties
+kangax-es2017/String.prototype.padEnd.js: TypeError: tried to call non function value
+kangax-es2017/String.prototype.padStart.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Uncaught SyntaxError: error: unexpected token: found 'foo' expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Uncaught SyntaxError: error: unexpected token: found 'foo' expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: TypeError: undefined has no properties
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Uncaught SyntaxError: error: unexpected token: found 'foo' expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Uncaught SyntaxError: error: unexpected token: found 'foo' expected ':'
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: tried to call non function value
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: Uncaught SyntaxError: error: unexpected token: found ')' expected ';'
+kangax-es2017/async.Symbol.toStringTag.js: Uncaught SyntaxError: error: unexpected token: found '(' expected 'ident'
+kangax-es2017/async.arrow-in-class.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2017/async.arrow.js: Uncaught SyntaxError: error: unexpected token: found 'await'
+kangax-es2017/async.await-non-promise.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2017/async.await-rejection.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2017/async.await.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2017/async.constructor.js: Uncaught SyntaxError: error: unexpected token: found '(' expected 'ident'
+kangax-es2017/async.methods-class.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2017/async.methods-object.js: Uncaught SyntaxError: error: unexpected token: found 'a' expected ':'
+kangax-es2017/async.must-await-value.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/async.no-await-in-params.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/async.no-line-break.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/async.no-prototype.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/async.prototype-chain.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2017/async.return.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/async.throw.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2017/misc.arguments-caller-removed.js: TypeError: tried to call non function value
+kangax-es2017/regex.flags.u.case-folding.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2017/trailing-comma.arguments.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Paren)
+kangax-es2017/trailing-comma.params.js: OK
+kangax-es2018/Promise.prototype.finally.change-rejection.js: Uncaught SyntaxError: error: unexpected token: found 'finally' expected 'ident'
+kangax-es2018/Promise.prototype.finally.js: Uncaught SyntaxError: error: unexpected token: found 'finally' expected 'ident'
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Uncaught SyntaxError: error: unexpected token: found 'finally' expected 'ident'
+kangax-es2018/async-iterators.for-await-of.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2018/async-iterators.generators.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: TypeError: tried to call non function value
+kangax-es2018/misc.template-literal-revision.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es2018/object-rest.js: thread 'main' panicked at 'not yet implemented', /src/crates/compiler/src/stmt.rs:468:21
+kangax-es2018/object-spread.js: Uncaught SyntaxError: error: unexpected token: found '...' expected 'ident'
+kangax-es2018/regex.flags.s.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.lookbehind.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.named-capture-groups.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2019/Array.prototype.flatMap.js: TypeError: tried to call non function value
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: undefined has no properties
+kangax-es2019/Array.prototype.flat.js: TypeError: tried to call non function value
+kangax-es2019/Object.fromEntries.js: TypeError: tried to call non function value
+kangax-es2019/String.prototype.trimEnd.js: TypeError: tried to call non function value
+kangax-es2019/String.prototype.trimStart.js: TypeError: tried to call non function value
+kangax-es2019/Symbol.prototype.description.empty.js: TypeError: tried to call non function value
+kangax-es2019/Symbol.prototype.description.js: TypeError: tried to call non function value
+kangax-es2019/Symbol.prototype.description.undefined.js: TypeError: undefined has no properties
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: tried to call non function value
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: tried to call non function value
+kangax-es2019/misc.Function-toString.Function-constructor.js: TypeError: tried to call non function value
+kangax-es2019/misc.Function-toString.arrows.js: failed
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: error: unexpected token: found 'class' expected '=>'
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: error: unexpected token: found 'class' expected '=>'
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: error: unexpected token: found 'string' expected '=>'
+kangax-es2019/misc.Function-toString.native-code.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2019/misc.Function-toString.unicode-escapes.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es2019/misc.JSON-stringify-well-formed.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: error: string not closed
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: error: string not closed
+kangax-es2019/misc.optional-catch-binding.await.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-es2019/misc.optional-catch-binding.js: OK
+kangax-es2019/misc.optional-catch-binding.yield.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-es2020/BigInt64Array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:95, Sorry!
+kangax-es2020/BigInt.asIntN.js: TypeError: undefined has no properties
+kangax-es2020/BigInt.asUintN.js: TypeError: undefined has no properties
+kangax-es2020/BigInt.constructor.js: failed
+kangax-es2020/BigInt.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:95, Sorry!
+kangax-es2020/BigUint64Array.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:95, Sorry!
+kangax-es2020/DataView.prototype.getBigInt64.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:95, Sorry!
+kangax-es2020/DataView.prototype.getBigUint64.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:95, Sorry!
+kangax-es2020/Promise.allSettled.js: TypeError: undefined has no properties
+kangax-es2020/String.prototype.matchAll.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2020/globalThis.descriptor.js: TypeError: tried to call non function value
+kangax-es2020/globalThis.js: Uncaught TypeError: undefined has no properties
+kangax-es2020/nullish-coalescing.js: OK
+kangax-es2020/optional-chaining.bracket.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+kangax-es2020/optional-chaining.function-call.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+kangax-es2020/optional-chaining.method-call.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+kangax-es2020/optional-chaining.property.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+kangax-es2020/optional-chaining.spread-params.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+kangax-es2021/FinalizationRegistry.js: TypeError: tried to call non function value
+kangax-es2021/Promise.any.AggregateError.js: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident' 49 | ]).catch (error => {
+kangax-es2021/Promise.any.fulfillment.js: TypeError: undefined has no properties
+kangax-es2021/String.prototype.replaceAll.js: TypeError: tried to call non function value
+kangax-es2021/WeakRef.js: TypeError: tried to call non function value
+kangax-es2021/logical-assignment.and.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: Uncaught SyntaxError: error: unexpected token: found 'x' expected ':'
+kangax-es2021/logical-assignment.and.short-circuit.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/logical-assignment.nullish.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: Uncaught SyntaxError: error: unexpected token: found 'x' expected ':'
+kangax-es2021/logical-assignment.nullish.short-circuit.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/logical-assignment.or.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: Uncaught SyntaxError: error: unexpected token: found 'x' expected ':'
+kangax-es2021/logical-assignment.or.short-circuit.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
+kangax-es2021/numeric-separators.js: Uncaught SyntaxError: error: unexpected token: found 'number' expected one of: [\n,;]
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.AggregateError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.Error-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.Error.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.EvalError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.RangeError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.ReferenceError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: RuntimeError: invalid instruction
+kangax-es2022/Error.cause.SyntaxError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: RuntimeError: invalid instruction
+kangax-es2022/Error.cause.TypeError.js: TypeError: tried to call non function value
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: TypeError: undefined has no properties
+kangax-es2022/Error.cause.URIError.js: TypeError: tried to call non function value
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: tried to call non function value
+kangax-es2022/at-method.Array.js: TypeError: tried to call non function value
+kangax-es2022/at-method.String.js: TypeError: tried to call non function value
+kangax-es2022/at-method.TypedArray.js: TypeError: tried to call non function value
+kangax-es2022/class-fields.computed-instance.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.computed-static.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.instance.parent-scope.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.private-instance.initializers.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.private-instance.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.private-instance.optional-access.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.private-static.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.public-instance.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.public-static.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-fields.static.define.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-methods.private-accessor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-methods.private-instance.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-methods.private-static-accessor.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-methods.private-static.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/class-static-init-blocks.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/ergonomic-brand-checks.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2022/regex.flags.d.constructor.js: TypeError: tried to call non function value
+kangax-es2022/regex.flags.d.shows-in-flags.js: TypeError: undefined has no properties
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: tried to call non function value
+kangax-es2023/Array.prototype.findLast.js: TypeError: tried to call non function value
+kangax-es2023/Array.prototype.toReversed.js: TypeError: tried to call non function value
+kangax-es2023/Array.prototype.toSorted.js: TypeError: tried to call non function value
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: tried to call non function value
+kangax-es2023/Array.prototype.with.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(With)
+kangax-es2023/TypedArray.prototype.toReversed.js: TypeError: tried to call non function value
+kangax-es2023/TypedArray.prototype.toSorted.js: TypeError: tried to call non function value
+kangax-es2023/TypedArray.prototype.with.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(With)
+kangax-es2023/hashbang.js: Uncaught SyntaxError: error: invalid token
+kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: tried to call non function value
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: tried to call non function value
+kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: tried to call non function value
+kangax-es2024/Map.groupBy.js: TypeError: undefined has no properties
+kangax-es2024/Object.groupBy.js: TypeError: tried to call non function value
+kangax-es2024/Promise.withResolvers.js: TypeError: undefined has no properties
+kangax-es2024/regex.flags.v.constructor.js: TypeError: tried to call non function value
+kangax-es2024/regex.flags.v.properties-of-strings.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2024/regex.flags.v.set-notations.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2024/regex.flags.v.shows-in-flags.js: TypeError: tried to call non function value
+kangax-es2024/regex.flags.v.unicode-15.1.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2024/regex.flags.v.unicode-16.0.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2024/regex.flags.v.unicode-17.0.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2025/Iterator.extends.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-es2025/Iterator.from.iterable.js: TypeError: undefined has no properties
+kangax-es2025/Iterator.from.iterator.js: TypeError: undefined has no properties
+kangax-es2025/Iterator.instanceof.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: undefined has no properties
+kangax-es2025/Iterator.prototype.drop.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.every.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.filter.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.find.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.flatMap.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.forEach.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.map.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.reduce.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.some.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.take.js: TypeError: tried to call non function value
+kangax-es2025/Iterator.prototype.toArray.js: TypeError: tried to call non function value
+kangax-es2025/Promise.try.js: Uncaught SyntaxError: error: unexpected token: found 'try' expected 'ident'
+kangax-es2025/RegExp.escape.js: TypeError: undefined has no properties
+kangax-es2025/Set.prototype.difference.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.intersection.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.isDisjointFrom.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.isSubsetOf.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.isSupersetOf.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.symmetricDifference.js: TypeError: tried to call non function value
+kangax-es2025/Set.prototype.union.js: TypeError: tried to call non function value
+kangax-es2025/regex.duplicate-named-groups.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2025/regex.pattern-modifiers.i.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2025/regex.pattern-modifiers.m.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-es2025/regex.pattern-modifiers.s.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-intl/Array.prototype.toLocaleString.js: failed
+kangax-intl/Date.prototype.toLocaleDateString.js: TypeError: undefined has no properties
+kangax-intl/Date.prototype.toLocaleString.js: TypeError: undefined has no properties
+kangax-intl/Date.prototype.toLocaleTimeString.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.new-instances.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.prototype.compare.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: TypeError: undefined has no properties
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: TypeError: undefined has no properties
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: TypeError: undefined has no properties
+kangax-intl/Intl.DateTimeFormat.new-instances.js: TypeError: undefined has no properties
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: TypeError: undefined has no properties
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: undefined has no properties
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: TypeError: undefined has no properties
+kangax-intl/Intl.NumberFormat.js: TypeError: undefined has no properties
+kangax-intl/Intl.NumberFormat.new-instances.js: TypeError: undefined has no properties
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: TypeError: undefined has no properties
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: TypeError: undefined has no properties
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: TypeError: undefined has no properties
+kangax-intl/Number.prototype.toLocaleString.js: failed
+kangax-intl/Object.prototype.toLocaleString.js: failed
+kangax-intl/String.prototype.localeCompare.js: failed
+kangax-next/Array.isTemplateObject.js: Uncaught SyntaxError: error: unexpected token: found ')' expected one of: [\n,;]
+kangax-next/AsyncDisposableStack.js: Uncaught SyntaxError: error: unexpected token: found '[' expected ':'
+kangax-next/AsyncIterator.extends.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-next/AsyncIterator.from.async-iterable.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.from.iterable.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.from.iterator.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.instanceof.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: undefined has no properties
+kangax-next/AsyncIterator.prototype.drop.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.prototype.every.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/AsyncIterator.prototype.filter.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.prototype.find.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/AsyncIterator.prototype.flatMap.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.prototype.forEach.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/AsyncIterator.prototype.map.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.prototype.reduce.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/AsyncIterator.prototype.some.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/AsyncIterator.prototype.take.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
+kangax-next/AsyncIterator.prototype.toArray.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/DisposableStack.js: Uncaught SyntaxError: error: unexpected token: found '[' expected 'ident'
+kangax-next/Map.prototype.upsert.js: TypeError: tried to call non function value
+kangax-next/RegExp.1-9.js: RuntimeError: invalid instruction
+kangax-next/RegExp.lastMatch.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: Uncaught SyntaxError: error: unexpected token: found '_1' expected one of: [\n,;]
+kangax-next/Uint8Array.fromBase64.js: TypeError: tried to call non function value
+kangax-next/Uint8Array.fromHex.js: TypeError: tried to call non function value
+kangax-next/Uint8Array.setFromBase64.js: TypeError: tried to call non function value
+kangax-next/Uint8Array.setFromHex.js: TypeError: tried to call non function value
+kangax-next/Uint8Array.toBase64.js: TypeError: tried to call non function value
+kangax-next/Uint8Array.toHex.js: TypeError: tried to call non function value
+kangax-next/WeakMap.prototype.upsert.js: TypeError: tried to call non function value
+kangax-next/await-using.for-of.js: Uncaught SyntaxError: error: unexpected token: found '[' expected ':'
+kangax-next/await-using.js: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
+kangax-next/class-decorators.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
+kangax-next/function.sent.js: Uncaught SyntaxError: error: unexpected token: found '*' expected 'ident'
+kangax-next/throw-expr.arrow.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Throw)
+kangax-next/throw-expr.conditional.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Throw)
+kangax-next/throw-expr.logical.js: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Throw)
+kangax-next/throw-expr.param-init.js: Uncaught SyntaxError: error: unexpected token: found '=' expected ')'
+kangax-next/using.for-of.js: Uncaught SyntaxError: error: unexpected token: found '[' expected 'ident'
+kangax-next/using.js: Uncaught SyntaxError: error: unexpected token: found '[' expected 'ident'
