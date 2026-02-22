@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "binary_sha256": "a1f80be9b4c43cade887e7df2d636d01c652892ce2a195bf6efbb8639addea4f", "binary_size": 789424, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "console.log", "engine": "zhuzilin", "repository": "https://github.com/zhuzilin/es.git", "revision": "943e5c09470813e26404bd3920b93601fcc5b46b", "revision_date": "2026-02-10", "version": "0.2.0"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:46: static es::Handle<es::JSValue> es::ArrayProto::reverse(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Array.prototype.reverse.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:46: static es::Handle<es::JSValue> es::ArrayProto::reverse(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: crashed (signal 11)
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getDay.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getFullYear.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getHours.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getMilliseconds.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getMinutes.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getMonth.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getSeconds.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getTimezoneOffset.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getTime.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCDate.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCDay.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCFullYear.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCHours.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCMilliseconds.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCMinutes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCMonth.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.getUTCSeconds.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setDate.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setFullYear.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setHours.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setMilliseconds.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setMinutes.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setMonth.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setSeconds.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setTime.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCDate.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCFullYear.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCHours.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCMilliseconds.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCMinutes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCMonth.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.setUTCSeconds.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle<es::JSValue> es::DateConstructor::UTC(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/Date.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.toString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.toUTCString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Date.prototype.valueOf.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/Function.js: crashed (signal 11); new Function with body failed
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: Uncaught TypeError: calling non-object.
+es1/Math.asin.js: Uncaught TypeError: calling non-object.
+es1/Math.atan2.js: Uncaught TypeError: calling non-object.
+es1/Math.atan.js: Uncaught TypeError: calling non-object.
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: Uncaught TypeError: calling non-object.
+es1/Math.max.js: OK
+es1/Math.min.js: Uncaught TypeError: calling non-object.
+es1/Math.pow.js: OK
+es1/Math.random.js: Uncaught TypeError: calling non-object.
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: Uncaught TypeError: calling non-object.
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: crashed (signal 11)
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/annex-b.Date.prototype.setYear.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/annex-b.Date.prototype.toGMTString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es1/annex-b.global.escape.js: Uncaught ReferenceError: escape is not defined
+es1/annex-b.global.unescape.js: Uncaught ReferenceError: unescape is not defined
+es1/annex-b.literals.octal.js: ParserError: var a = 0755
+es1/annex-b.literals.string.octal.js: ParserError: if ("\101" == "A"
+es1/arguments.callee.js: crashed (signal 11)
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:36: static es::Handle<es::JSValue> es::GlobalObject::isFinite(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: failed
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: Uncaught TypeError: cannot put length
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: Uncaught TypeError: cannot put 0
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: Uncaught TypeError: cannot put length
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: slice object with start and end failed; slice object with start only failed; slice object with negative start failed
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:57: static es::Handle<es::JSValue> es::ArrayProto::splice(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Array.prototype.splice.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:57: static es::Handle<es::JSValue> es::ArrayProto::splice(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Array.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:32: static es::Handle<es::JSValue> es::ArrayProto::toLocaleString(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Array.prototype.unshift.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:61: static es::Handle<es::JSValue> es::ArrayProto::unshift(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Array.prototype.unshift.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:61: static es::Handle<es::JSValue> es::ArrayProto::unshift(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Array.prototype.unshift.returns-new-length.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:61: static es::Handle<es::JSValue> es::ArrayProto::unshift(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Date.prototype.toDateString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/Date.prototype.toLocaleDateString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/Date.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/Date.prototype.toLocaleTimeString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/Date.prototype.toTimeString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: max() with 1 arg failed
+es3/Math.min.variadic.js: Uncaught TypeError: calling non-object.
+es3/Number.prototype.toExponential.edge-cases.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toExponential.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toExponential.rounding.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toExponential.throws-infinity.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toFixed.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:60: static es::Handle<es::JSValue> es::NumberProto::toFixed(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:45: static es::Handle<es::JSValue> es::NumberProto::toLocaleString(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Number.prototype.toPrecision.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:68: static es::Handle<es::JSValue> es::NumberProto::toPrecision(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:74: static es::Handle<es::JSValue> es::ObjectProto::propertyIsEnumerable(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/Object.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:31: static es::Handle<es::JSValue> es::ObjectProto::toLocaleString(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/RegExp.prototype.test.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: Uncaught TypeError: Function.prototype.toString called on non-function
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:154: static es::Handle<es::JSValue> es::StringProto::localeCompare(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.match.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.match.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.replace.capture.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:162: static es::Handle<es::JSValue> es::StringProto::replace(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.replace.extra.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:162: static es::Handle<es::JSValue> es::StringProto::replace(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.replace.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:162: static es::Handle<es::JSValue> es::StringProto::replace(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.replace.regex.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:162: static es::Handle<es::JSValue> es::StringProto::replace(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.replace.str.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:162: static es::Handle<es::JSValue> es::StringProto::replace(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.search.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:166: static es::Handle<es::JSValue> es::StringProto::search(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.search.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:166: static es::Handle<es::JSValue> es::StringProto::search(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.search.str.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:166: static es::Handle<es::JSValue> es::StringProto::search(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.slice.generic.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:170: static es::Handle<es::JSValue> es::StringProto::slice(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.slice.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:170: static es::Handle<es::JSValue> es::StringProto::slice(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.split.bugs.js: crashed (signal 6); zhuzilin: ./es/impl/builtin/string_object_impl.h:30: static es::Handle<es::JSValue> es::StringProto::split(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 3 failed
+es3/String.prototype.split.regex.js: crashed (signal 6); zhuzilin: ./es/impl/builtin/string_object_impl.h:30: static es::Handle<es::JSValue> es::StringProto::split(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: Uncaught TypeError: calling non-object.
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; wrong exception for negative array length; wrong exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: crashed (signal 11); wrong exception for instanceof number; wrong exception for instanceof non-callable; wrong exception for in number; wrong exception for in null; wrong exception for new number; wrong exception for calling number; wrong exception for Function.prototype.toString on non-function
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:41: static es::Handle<es::JSValue> es::GlobalObject::decodeURI(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/global.decodeURIComponent.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:46: static es::Handle<es::JSValue> es::GlobalObject::decodeURIComponent(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/global.decodeURI.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:41: static es::Handle<es::JSValue> es::GlobalObject::decodeURI(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/global.encodeURIComponent.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:56: static es::Handle<es::JSValue> es::GlobalObject::encodeURIComponent(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/global.encodeURI.js: crashed (signal 6); zhuzilin: ./es/types/builtin/global_object.h:51: static es::Handle<es::JSValue> es::GlobalObject::encodeURI(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es3/in.js: OK
+es3/labelled.break.js: Uncaught SyntaxError: break not in iteration or switch
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: array with single elision failed; array with leading elisions failed; array with multiple elisions failed; array with only elision failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/literals.regex.empty.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.begin.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.bracket.esc-b.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.bracket.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.bracket.ranges.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.class.esc-d.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.class.esc-s.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.class.esc-w.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.disjunction.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.dot.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.end.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.escape.control.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.escape.hex.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.escape.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.escape.nul.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.escape.unicode.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.flag.global.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.flag.ignorecase.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.flag.multiline.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.group.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.lookahead.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.negative-lookahead.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.non-capturing-group.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.exact.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.maybe.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.min.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.plus.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.range.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.quantifier.star.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/regex.word-boundary.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:73: static es::Handle<es::JSValue> es::ArrayProto::every(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.filter.js: crashed (signal 11)
+es5/Array.prototype.forEach.js: crashed (signal 11)
+es5/Array.prototype.indexOf.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.lastIndexOf.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:69: static es::Handle<es::JSValue> es::ArrayProto::lastIndexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.map.js: crashed (signal 11)
+es5/Array.prototype.reduceRight.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:95: static es::Handle<es::JSValue> es::ArrayProto::reduceRight(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.reduce.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:91: static es::Handle<es::JSValue> es::ArrayProto::reduce(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.some.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:77: static es::Handle<es::JSValue> es::ArrayProto::some(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Array.prototype.sort.TypeError.js: failed
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:234: static es::Handle<es::JSValue> es::DateConstructor::now(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Date.prototype.toISOString.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es5/Date.prototype.toJSON.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+es5/Function.prototype-not-enumerable.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:74: static es::Handle<es::JSValue> es::ObjectProto::propertyIsEnumerable(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: crashed (signal 11)
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: Uncaught ReferenceError: JSON is not defined
+es5/JSON.parse.reviver.js: Uncaught ReferenceError: JSON is not defined
+es5/JSON.stringify.js: Uncaught ReferenceError: JSON is not defined
+es5/JSON.stringify.replacer.js: Uncaught ReferenceError: JSON is not defined
+es5/JSON.stringify.space.js: Uncaught ReferenceError: JSON is not defined
+es5/Object.create.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:167: static es::Handle<es::JSValue> es::ObjectConstructor::defineProperties(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.defineProperties.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:167: static es::Handle<es::JSValue> es::ObjectConstructor::defineProperties(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:175: static es::Handle<es::JSValue> es::ObjectConstructor::freeze(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:131: static es::Handle<es::JSValue> es::ObjectConstructor::getOwnPropertyNames(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:175: static es::Handle<es::JSValue> es::ObjectConstructor::freeze(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.isFrozen.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:193: static es::Handle<es::JSValue> es::ObjectConstructor::isFrozen(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.isSealed.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:189: static es::Handle<es::JSValue> es::ObjectConstructor::isSealed(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/Object.keys.js: only own properties failed
+es5/Object.preventExtensions.js: OK
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:171: static es::Handle<es::JSValue> es::ObjectConstructor::seal(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:233: static es::Handle<es::JSValue> es::StringProto::trim(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: ParserError: var o4 = { var: 8, function: 9, new: 10, this: 11 }
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: ParserError: ﻿// ES5: 7.
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: OK
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: OK
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: crashed (signal 11)
+es5/strict.no-assignment-to-unresolvable.js: OK
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: crashed (signal 11)
+es5/strict.no-eval-or-arguments-assignment.js: OK
+es5/strict.no-eval-or-arguments-bindings.js: OK
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: OK
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: OK
+es5/strict.this-primitive-not-coerced-in-accessors.js: crashed (signal 11)
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: OK
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:61: static es::Handle<es::JSValue> es::ArrayProto::unshift(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+kangax-es5/Function.prototype.bind.js: OK
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:64: static es::Handle<es::JSValue> es::NumberProto::toExponential(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: crashed (signal 6); zhuzilin: ./es/impl/builtin/string_object_impl.h:30: static es::Handle<es::JSValue> es::StringProto::split(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: Error: calling non-object.
+kangax-es5/immutable-globals.Infinity.js: OK
+kangax-es5/immutable-globals.NaN.js: OK
+kangax-es5/immutable-globals.undefined.js: OK
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: failed
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:74: static es::Handle<es::JSValue> es::ObjectProto::propertyIsEnumerable(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: OK
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: OK
+kangax-es5/strict.assignment-non-writable-error.js: crashed (signal 11)
+kangax-es5/strict.assignment-unresolvable-error.js: OK
+kangax-es5/strict.delete-bindings-error.js: OK
+kangax-es5/strict.delete-non-configurable-error.js: OK
+kangax-es5/strict.eval-arguments-bindings-error.js: OK
+kangax-es5/strict.eval-no-bindings.js: OK
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: OK
+kangax-es5/strict.repeated-params-error.js: OK
+kangax-es5/strict.reserved-words.js: OK
+kangax-es5/strict.this-not-coerced-accessors.js: crashed (signal 11)
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: OK
+kangax-es5/strict.with-error.js: OK
+kangax-es6/Array.Symbol.species.js: Error: Symbol is not defined
+kangax-es6/Array.from.array-like.js: Error: calling non-object.
+kangax-es6/Array.from.generator.js: ParserError: erable = (function*(){ yield
+kangax-es6/Array.from.iterable-instance.js: Error: calling non-object.
+kangax-es6/Array.from.iterable.js: Error: calling non-object.
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: Error: calling non-object.
+kangax-es6/Array.from.map.generator.js: ParserError: erable = (function*(){ yield
+kangax-es6/Array.from.map.iterable-instance.js: Error: calling non-object.
+kangax-es6/Array.from.map.iterable.js: Error: calling non-object.
+kangax-es6/Array.iterator-prototype-chain.js: Error: Symbol is not defined
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: Error: Symbol is not defined
+kangax-es6/Array.prototype.Symbol.unscopables.js: Error: Symbol is not defined
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:57: static es::Handle<es::JSValue> es::ArrayProto::splice(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: Error: Symbol is not defined
+kangax-es6/Function.name.accessor.js: failed
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: ParserError: return class foo {}.na
+kangax-es6/Function.name.class-object-method.js: ParserError: var o = { foo: class {},
+kangax-es6/Function.name.class-prototype.js: ParserError: class C { foo()
+kangax-es6/Function.name.class-statement.js: ParserError: class foo {}
+kangax-es6/Function.name.class-static.js: ParserError: class C { stati
+kangax-es6/Function.name.class-variable.js: ParserError: var foo = class {}
+kangax-es6/Function.name.configurable.js: Error: cannot read property enumerable of undefined
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: ParserError: var o = { foo(){} }
+kangax-es6/Function.name.shorthand.no-lexical.js: ParserError: return ({f() { return
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: ParserError: var o = {
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: Error: Map is not defined
+kangax-es6/Map.constructor-accepts-null.js: Error: Map is not defined
+kangax-es6/Map.constructor-arguments.js: Error: Map is not defined
+kangax-es6/Map.constructor-invokes-set.js: Error: Map is not defined
+kangax-es6/Map.constructor-requires-new.js: Error: Map is not defined
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: Error: Map is not defined
+kangax-es6/Map.js: Error: Map is not defined
+kangax-es6/Map.prototype-not-instance.js: Error: Map is not defined
+kangax-es6/Map.prototype.Symbol.iterator.js: Error: Map is not defined
+kangax-es6/Map.prototype.clear.js: Error: Map is not defined
+kangax-es6/Map.prototype.delete.js: ParserError: urn typeof Map.prototype.delete === "func
+kangax-es6/Map.prototype.entries.js: Error: Map is not defined
+kangax-es6/Map.prototype.forEach.js: Error: Map is not defined
+kangax-es6/Map.prototype.keys.js: Error: Map is not defined
+kangax-es6/Map.prototype.set-returns-this.js: Error: Map is not defined
+kangax-es6/Map.prototype.size.js: Error: Map is not defined
+kangax-es6/Map.prototype.values.js: Error: Map is not defined
+kangax-es6/Map.zero-key.js: Error: Map is not defined
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: Error: calling non-object.
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: Error: calling non-object.
+kangax-es6/Object.getOwnPropertySymbols.js: Error: Symbol is not defined
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: OK
+kangax-es6/Promise.Symbol.species.js: Error: Promise is not defined
+kangax-es6/Promise.all.iterable.js: Error: Promise is not defined
+kangax-es6/Promise.all.js: Error: Promise is not defined
+kangax-es6/Promise.constructor-requires-new.js: Error: Promise is not defined
+kangax-es6/Promise.js: Error: Promise is not defined
+kangax-es6/Promise.prototype-not-instance.js: Error: Promise is not defined
+kangax-es6/Promise.race.iterable.js: Error: Promise is not defined
+kangax-es6/Promise.race.js: Error: Promise is not defined
+kangax-es6/Proxy.Array.isArray.js: Error: Proxy is not defined
+kangax-es6/Proxy.JSON.stringify.js: Error: JSON is not defined
+kangax-es6/Proxy.constructor-requires-new.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.apply.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.apply.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.construct.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.construct.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.deleteProperty.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.get.instances.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.get.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.get.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.has.instances.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.has.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.has.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.ownKeys.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.ownKeys.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.set.instances.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.set.invariants.js: Error: Proxy is not defined
+kangax-es6/Proxy.handler.set.js: Error: Proxy is not defined
+kangax-es6/Proxy.no-prototype.js: Error: Proxy is not defined
+kangax-es6/Proxy.revocable.js: Error: Proxy is not defined
+kangax-es6/Reflect.apply.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.js: Error: Reflect is not defined
+kangax-es6/Reflect.construct.new-target.js: ParserError: if (new.target ===
+kangax-es6/Reflect.construct.third-argument.js: Error: Reflect is not defined
+kangax-es6/Reflect.defineProperty.js: Error: Reflect is not defined
+kangax-es6/Reflect.deleteProperty.js: Error: Reflect is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: Error: Reflect is not defined
+kangax-es6/Reflect.getPrototypeOf.js: Error: Reflect is not defined
+kangax-es6/Reflect.get.js: Error: Reflect is not defined
+kangax-es6/Reflect.has.js: Error: Reflect is not defined
+kangax-es6/Reflect.isExtensible.js: Error: Reflect is not defined
+kangax-es6/Reflect.ownKeys.string.js: Error: Reflect is not defined
+kangax-es6/Reflect.ownKeys.symbol.js: Error: Symbol is not defined
+kangax-es6/Reflect.preventExtensions.js: Error: Reflect is not defined
+kangax-es6/Reflect.setPrototypeOf.js: Error: Reflect is not defined
+kangax-es6/Reflect.set.js: Error: Reflect is not defined
+kangax-es6/RegExp.Symbol.species.js: Error: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.match.js: Error: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.replace.js: Error: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.search.js: Error: Symbol is not defined
+kangax-es6/RegExp.prototype.Symbol.split.js: Error: Symbol is not defined
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: Error: Set is not defined
+kangax-es6/Set.constructor-accepts-null.js: Error: Set is not defined
+kangax-es6/Set.constructor-arguments.js: Error: Set is not defined
+kangax-es6/Set.constructor-invokes-add.js: Error: Set is not defined
+kangax-es6/Set.constructor-requires-new.js: Error: Set is not defined
+kangax-es6/Set.iterator-closing.js: Error: Set is not defined
+kangax-es6/Set.iterator-prototype-chain.js: Error: Set is not defined
+kangax-es6/Set.js: Error: Set is not defined
+kangax-es6/Set.prototype-not-instance.js: Error: Set is not defined
+kangax-es6/Set.prototype.Symbol.iterator.js: Error: Set is not defined
+kangax-es6/Set.prototype.add-returns-this.js: Error: Set is not defined
+kangax-es6/Set.prototype.clear.js: Error: Set is not defined
+kangax-es6/Set.prototype.delete.js: ParserError: urn typeof Set.prototype.delete === "func
+kangax-es6/Set.prototype.entries.js: Error: Set is not defined
+kangax-es6/Set.prototype.forEach.js: Error: Set is not defined
+kangax-es6/Set.prototype.keys.js: Error: Set is not defined
+kangax-es6/Set.prototype.size.js: Error: Set is not defined
+kangax-es6/Set.prototype.values.js: Error: Set is not defined
+kangax-es6/Set.zero-key.js: Error: Set is not defined
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: Error: Symbol is not defined
+kangax-es6/String.prototype.Symbol.iterator.js: Error: Symbol is not defined
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: Error: Symbol is not defined
+kangax-es6/Symbol.JSON.stringify.primitive.js: Error: Symbol is not defined
+kangax-es6/Symbol.Object.js: Error: Symbol is not defined
+kangax-es6/Symbol.String.js: Error: Symbol is not defined
+kangax-es6/Symbol.defineProperty.js: Error: Symbol is not defined
+kangax-es6/Symbol.global-registry.js: Error: Symbol is not defined
+kangax-es6/Symbol.hidden-keys.js: Error: Symbol is not defined
+kangax-es6/Symbol.js: Error: Symbol is not defined
+kangax-es6/Symbol.no-coerce.js: Error: Symbol is not defined
+kangax-es6/Symbol.no-new.js: Error: Symbol is not defined
+kangax-es6/Symbol.prototype.js: Error: Symbol is not defined
+kangax-es6/Symbol.typeof.js: Error: Symbol is not defined
+kangax-es6/WeakMap.accept-primitives.js: ParserError: && m.delete(1) === fa
+kangax-es6/WeakMap.constructor-accepts-null.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.constructor-arguments.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.constructor-invokes-set.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.constructor-requires-new.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.frozen-keys.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:175: static es::Handle<es::JSValue> es::ObjectConstructor::freeze(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.no-clear.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.prototype-not-instance.js: Error: WeakMap is not defined
+kangax-es6/WeakMap.prototype.delete.js: ParserError: urn typeof WeakMap.prototype.delete === "func
+kangax-es6/WeakMap.prototype.set-returns-this.js: Error: WeakMap is not defined
+kangax-es6/WeakSet.accept-primitives.js: ParserError: && s.delete(1) === fa
+kangax-es6/WeakSet.constructor-accepts-null.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.constructor-arguments.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.constructor-invokes-add.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.constructor-requires-new.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.no-clear.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.prototype-not-instance.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.prototype.add-returns-this.js: Error: WeakSet is not defined
+kangax-es6/WeakSet.prototype.delete.js: ParserError: urn typeof WeakSet.prototype.delete === "func
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: Error: calling non-object.
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: Error: calling non-object.
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: Error: calling non-object.
+kangax-es6/annex-b.function.hoisted-block-level.js: ParserError: { function g() { ret
+kangax-es6/annex-b.function.if-statement.js: ParserError: if(true) function foo() { r
+kangax-es6/annex-b.function.labeled.js: ParserError: label: function foo() { r
+kangax-es6/annex-b.html-comments.js: ParserError: --> A comment
+kangax-es6/annex-b.regex.backreferences-octal.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.hyphens.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.incomplete-patterns.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.invalid-char-escapes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.invalid-control-escapes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.regex.octal-escapes.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:131: static es::Handle<es::JSValue> es::ObjectConstructor::getOwnPropertyNames(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: failed
+kangax-es6/annex-b.__proto__.literals.js: failed
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: ParserError: return !({ [a] : [] }
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: ParserError: return !({ __proto__(){} } inst
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: ParserError: return !({ __proto__ } instanceo
+kangax-es6/arrow.0-params.js: ParserError: return (() => 5)() =
+kangax-es6/arrow.1-param.js: ParserError: ar b = x => x + "foo"
+kangax-es6/arrow.5-param.js: ParserError: x, y, z) => "" + v +
+kangax-es6/arrow.bind.js: ParserError: var d = { x : "bar", y : function() { return z => this.x +
+kangax-es6/arrow.lexical-arguments.js: ParserError: return z => arguments
+kangax-es6/arrow.lexical-super.constructor.js: ParserError: class B {
+kangax-es6/arrow.lexical-super.methods.js: ParserError: class B {
+kangax-es6/arrow.lexical-this.js: ParserError: var d = { x : "bar", y : function() { return z => this.x +
+kangax-es6/arrow.new-target.js: ParserError: return x => new.targe
+kangax-es6/arrow.no-line-break.js: ParserError: return (() => {
+kangax-es6/arrow.no-prototype.js: ParserError: var a = () => 5
+kangax-es6/arrow.precedence.js: ParserError: return (() => {
+kangax-es6/arrow.this-call-apply.js: ParserError: var d = { x : "foo", y : function() { return () => this.
+kangax-es6/class.accessor-properties.js: ParserError: class C {
+kangax-es6/class.anonymous.js: ParserError: rn typeof class {} === "f
+kangax-es6/class.block-scoped.js: ParserError: class C {}
+kangax-es6/class.computed-accessor-properties.js: ParserError: class C {
+kangax-es6/class.computed-names-tdz.js: ParserError: var B = class C {
+kangax-es6/class.computed-prototype-methods.js: ParserError: class C {
+kangax-es6/class.computed-static-accessor-properties.js: ParserError: class C {
+kangax-es6/class.computed-static-methods.js: ParserError: class C {
+kangax-es6/class.constructor-requires-new.js: ParserError: class C {}
+kangax-es6/class.constructor.js: ParserError: class C {
+kangax-es6/class.expression.js: ParserError: rn typeof class C {} ===
+kangax-es6/class.extends-expressions.js: ParserError: class C extends
+kangax-es6/class.extends-null.js: ParserError: class C extends
+kangax-es6/class.extends.js: ParserError: class B {}
+kangax-es6/class.implicit-strict.js: ParserError: class C {
+kangax-es6/class.lexical-name.js: ParserError: class C {
+kangax-es6/class.methods-not-enumerable.js: ParserError: class C {
+kangax-es6/class.new-target.js: ParserError: ssed = new.target ===
+kangax-es6/class.optional-semicolons.js: ParserError: class C {
+kangax-es6/class.prototype-methods.js: ParserError: class C {
+kangax-es6/class.statement.js: ParserError: class C {}
+kangax-es6/class.static-accessor-properties.js: ParserError: class C {
+kangax-es6/class.static-methods.js: ParserError: class C {
+kangax-es6/class.string-keyed-methods.js: ParserError: class C {
+kangax-es6/const.basic.js: ParserError: const foo = 123
+kangax-es6/const.block-scoped.js: ParserError: const bar = 123
+kangax-es6/const.for-in.js: ParserError: for(const i in { a:
+kangax-es6/const.for-loop.js: ParserError: const baz = 1
+kangax-es6/const.for-of.js: ParserError: for(const i of ['a'
+kangax-es6/const.no-redefine.js: ParserError: const baz = 1
+kangax-es6/const.no-statement.js: ParserError: const bar = 1
+kangax-es6/const.shadow.js: ParserError: { const bar = 456
+kangax-es6/const.strict.basic.js: ParserError: const foo = 123
+kangax-es6/const.strict.block-scoped.js: ParserError: const bar = 123
+kangax-es6/const.strict.for-in.js: ParserError: for(const i in { a:
+kangax-es6/const.strict.for-loop.js: ParserError: const baz = 1
+kangax-es6/const.strict.for-of.js: ParserError: for(const i of ['a'
+kangax-es6/const.strict.no-redefine.js: ParserError: const baz = 1
+kangax-es6/const.strict.no-statement.js: ParserError: const bar = 1
+kangax-es6/const.strict.shadow.js: ParserError: { const bar = 456
+kangax-es6/const.strict.tdz.js: ParserError: const qux = 456
+kangax-es6/const.tdz.js: ParserError: const qux = 456
+kangax-es6/default-params.arguments.js: ParserError: return (function (a = "baz",
+kangax-es6/default-params.basic.js: ParserError: return (function (a = 1, b =
+kangax-es6/default-params.explicit-undefined.js: ParserError: return (function (a = 1, b =
+kangax-es6/default-params.new-function.js: Error: invalid parameter name
+kangax-es6/default-params.refer-previous.js: ParserError: return (function (a, b = a) { re
+kangax-es6/default-params.separate-scope.js: ParserError: return (function(a=function(
+kangax-es6/default-params.tdz.js: ParserError: return (function(x = 1) {
+kangax-es6/destructuring-assign.array.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.astral-string.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.chained-iterable.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.chained-object.js: ParserError: ({a,b} = {c,d}
+kangax-es6/destructuring-assign.computed-properties.js: ParserError: ({ [qux]: grau
+kangax-es6/destructuring-assign.defaults.js: ParserError: ({a = 1, b = 0,
+kangax-es6/destructuring-assign.empty-patterns.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.generator.js: ParserError: b, c] = (function*(){ yield
+kangax-es6/destructuring-assign.iterable-expression.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.iterable-instance.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.iterable.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.iterator-closing.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.nested-rest.js: ParserError: [first, ...[a[2], l
+kangax-es6/destructuring-assign.nested.js: ParserError: [e, {x:f, g}] = [9, {x
+kangax-es6/destructuring-assign.object-expression.js: ParserError: return ({a,b} = obj)
+kangax-es6/destructuring-assign.object-primitives.js: ParserError: ({toFixed} = 2)
+kangax-es6/destructuring-assign.object.js: ParserError: ({c, x:d, e} =
+kangax-es6/destructuring-assign.parenthesised-error.js: ParserError: ({a,b} = {a:1,
+kangax-es6/destructuring-assign.rest.js: ParserError: [a, ...b] = [3,
+kangax-es6/destructuring-assign.sparse-array.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.string.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.throws-null-undefined.js: ParserError: ({a} = null)
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: Error: put value to non-reference.
+kangax-es6/destructuring-assign.trailing-comma-object.js: ParserError: ({a,} = {a:1})
+kangax-es6/destructuring-decl.array.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.astral-string.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.catch.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.computed-properties.js: ParserError: = "corge"
+kangax-es6/destructuring-decl.defaults-tdz.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.defaults.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.for-in.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.for-of.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.generator.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.iterable-instance.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.iterable.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.iterator-closing.js: ParserError: })
+kangax-es6/destructuring-decl.multiple-var.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.nested.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.object-primitives.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.object.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.rest.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.sparse-array.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.string.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.throws-null-undefined.js: ParserError: try {
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: ParserError: stCode() {
+kangax-es6/destructuring-decl.trailing-comma-object.js: ParserError: stCode() {
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: ParserError: y = 3}) => {
+kangax-es6/destructuring-params.arguments.js: ParserError: return (function({a, x:b, y:
+kangax-es6/destructuring-params.array.js: ParserError: return function([a, , [b],
+kangax-es6/destructuring-params.astral-string.js: ParserError: return function([c]) {
+kangax-es6/destructuring-params.computed-properties.js: ParserError: return function({ [qux]: gr
+kangax-es6/destructuring-params.defaults-new-function.js: Error: invalid parameter name
+kangax-es6/destructuring-params.defaults-separate-scope.js: ParserError: return (function({a=function
+kangax-es6/destructuring-params.defaults.js: ParserError: return (function({a = 1, b =
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
+kangax-es6/destructuring-params.empty-patterns.js: ParserError: return function ([],{}){
+kangax-es6/destructuring-params.generator.js: ParserError: return function([a, b, c])
+kangax-es6/destructuring-params.iterable-instance.js: ParserError: return function([a, b, c])
+kangax-es6/destructuring-params.iterable.js: ParserError: return function([a, b, c])
+kangax-es6/destructuring-params.iterator-closing.js: ParserError: (function([a,b]) {}(i
+kangax-es6/destructuring-params.length.js: ParserError: return function({a, b}, [c,
+kangax-es6/destructuring-params.nested.js: ParserError: return function([e, {x:f, g
+kangax-es6/destructuring-params.new-function.js: Error: invalid parameter name
+kangax-es6/destructuring-params.object-primitives.js: ParserError: return function({toFixed},
+kangax-es6/destructuring-params.object.js: ParserError: return function({c, x:d, e}
+kangax-es6/destructuring-params.rest.js: ParserError: return function([a, ...b],
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: ParserError: eturn ((a, {b = 0, c = 3}
+kangax-es6/destructuring-params.sparse-array.js: ParserError: return function([a, , b]) {
+kangax-es6/destructuring-params.string.js: ParserError: return function([a, b, c])
+kangax-es6/destructuring-params.throws-null-undefined.js: ParserError: (function({a}){}(null
+kangax-es6/destructuring-params.trailing-comma-iterable.js: ParserError: return function([a,]) {
+kangax-es6/destructuring-params.trailing-comma-object.js: ParserError: return function({a,}) {
+kangax-es6/for-of.array.js: ParserError: arr = [5]
+kangax-es6/for-of.astral-string.js: ParserError: str = ""
+kangax-es6/for-of.generator.js: ParserError: erable = (function*(){ yield
+kangax-es6/for-of.iterable-instance.js: ParserError: 1, 2, 3])
+kangax-es6/for-of.iterable.js: ParserError: 1, 2, 3])
+kangax-es6/for-of.iterator-closing-break.js: ParserError: })
+kangax-es6/for-of.iterator-closing-throw.js: ParserError: try {
+kangax-es6/for-of.sparse-array.js: ParserError: count = 0
+kangax-es6/for-of.string.js: ParserError: str = ""
+kangax-es6/function.block-level-decl.js: ParserError: urn false
+kangax-es6/generators.basic.js: ParserError: stCode() {
+kangax-es6/generators.constructor.js: ParserError: stCode() {
+kangax-es6/generators.expression.js: ParserError: enerator = function * (){
+kangax-es6/generators.no-new-this.js: ParserError: stCode() {
+kangax-es6/generators.prototype-chain.js: ParserError: stCode() {
+kangax-es6/generators.prototype.js: ParserError: stCode() {
+kangax-es6/generators.return.js: ParserError: stCode() {
+kangax-es6/generators.sending.js: ParserError: var sent
+kangax-es6/generators.shorthand.class.js: ParserError: class C {
+kangax-es6/generators.shorthand.computed.class.js: ParserError: class C {
+kangax-es6/generators.shorthand.computed.js: ParserError: var o = {
+kangax-es6/generators.shorthand.js: ParserError: var o = {
+kangax-es6/generators.shorthand.no-constructor.js: ParserError: class C {
+kangax-es6/generators.shorthand.string-keyed.js: ParserError: var o = {
+kangax-es6/generators.this.js: ParserError: stCode() {
+kangax-es6/generators.throw.js: ParserError: d = false
+kangax-es6/generators.yield-precedence.js: ParserError: ar passed
+kangax-es6/generators.yield-star.array.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.astral-string.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.generator.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.iterable-instance.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.iterable.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.iterator-closing-throw.js: ParserError: ar gen = (function*(){
+kangax-es6/generators.yield-star.iterator-closing.js: ParserError: ar gen = (function* generator
+kangax-es6/generators.yield-star.non-iterable-error.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.sparse-array.js: ParserError: erator = (function * generator
+kangax-es6/generators.yield-star.string.js: ParserError: erator = (function * generator
+kangax-es6/let.basic.js: ParserError: stCode() {
+kangax-es6/let.block-scoped.js: ParserError: stCode() {
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: ParserError: stCode() {
+kangax-es6/let.for-loop.js: ParserError: stCode() {
+kangax-es6/let.no-statement.js: ParserError: stCode() {
+kangax-es6/let.shadow.js: ParserError: { let bar = 456; }
+kangax-es6/let.strict.basic.js: ParserError: e strict'
+kangax-es6/let.strict.block-scoped.js: ParserError: e strict'
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: ParserError: e strict'
+kangax-es6/let.strict.for-loop.js: ParserError: e strict'
+kangax-es6/let.strict.no-statement.js: ParserError: e strict'
+kangax-es6/let.strict.shadow.js: ParserError: { let bar = 456; }
+kangax-es6/let.strict.tdz.js: ParserError: === 456; }
+kangax-es6/let.tdz.js: ParserError: === 456; }
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: ParserError: return 0b10 === 2 &
+kangax-es6/literals.object.computed-accessors.js: ParserError: obj = {
+kangax-es6/literals.object.computed-properties.js: ParserError: return ({ [x]: 1 }).y
+kangax-es6/literals.object.computed-shorthand-methods.js: ParserError: return ({ [x](){ retu
+kangax-es6/literals.object.shorthand-methods.js: ParserError: return ({ y() { return
+kangax-es6/literals.object.shorthand-properties.js: ParserError: b = 8, c = {a,b}
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: ParserError: return ({ "foo bar"() { return
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: ParserError: return 0o10 === 8 &
+kangax-es6/misc.Invalid-Date.js: crashed (signal 6); zhuzilin: ./es/impl/construct-impl.h:33: es::Handle<es::JSObject> es::Construct(Handle<Error>&, Handle<JSObject>, std::vector<Handle<JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Object.freeze.primitives.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:175: static es::Handle<es::JSValue> es::ObjectConstructor::freeze(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: Error: Object.create called on non-object
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:131: static es::Handle<es::JSValue> es::ObjectConstructor::getOwnPropertyNames(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: Error:
+kangax-es6/misc.Object.isExtensible.primitives.js: Error: Object.isExtensible called on non-object
+kangax-es6/misc.Object.isFrozen.primitives.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:193: static es::Handle<es::JSValue> es::ObjectConstructor::isFrozen(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Object.isSealed.primitives.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:189: static es::Handle<es::JSValue> es::ObjectConstructor::isSealed(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Object.keys.primitives.js: Error: Object.keys called on non-object
+kangax-es6/misc.Object.preventExtensions.primitives.js: Error: Object.preventExtensions called on non-object
+kangax-es6/misc.Object.seal.primitives.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:171: static es::Handle<es::JSValue> es::ObjectConstructor::seal(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.defineProperty.Set.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.concat.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.from.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.iteration.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.pop.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.reverse.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.shift.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.splice.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.toString.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: ParserError: class C extends
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Date.toJSON.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Error.toString.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Function.bind.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.HasBinding.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.IteratorComplete.js: ParserError: var i = 0
+kangax-es6/misc.Proxy.get.JSON.stringify.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.assign.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.Promise.resolve.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.test.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.toString.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.match.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.replace.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.search.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.String.split.js: Error: Symbol is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.get.instanceof.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.fill.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.from.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.of.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.pop.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.push.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.reverse.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.shift.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.splice.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.unshift.js: Error: Proxy is not defined
+kangax-es6/misc.Proxy.set.Object.assign.js: Error: Proxy is not defined
+kangax-es6/misc.RegExp-alter-flags.js: OK
+kangax-es6/misc.RegExp-prototype-toString-generic.js: Error: RegExp.prototype.toString called by non-regex
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: ParserError: var f = ()=>5
+kangax-es6/misc.bound-function-prototype.class.js: ParserError: class C {}
+kangax-es6/misc.bound-function-prototype.function.js: failed
+kangax-es6/misc.bound-function-prototype.generator.js: ParserError: var f = function*(){}
+kangax-es6/misc.bound-function-prototype.subclass.js: ParserError: class C extends
+kangax-es6/misc.do-while-no-semicolon.js: ParserError: stCode() {
+kangax-es6/misc.duplicate-properties-strict.js: Error: repeat object property name a
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: failed
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.identifier-syntax.var-1.js: failed
+kangax-es6/misc.identifier-syntax.var-2.js: crashed (signal 6); ParserError: stCode() { terminate called after throwing an instance of 'std::range_error'
+kangax-es6/misc.property-order.JSON.parse.js: Error: JSON is not defined
+kangax-es6/misc.property-order.JSON.stringify.js: crashed (signal 11)
+kangax-es6/misc.property-order.Object.assign.js: crashed (signal 11)
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: crashed (signal 11)
+kangax-es6/misc.property-order.Object.keys.js: crashed (signal 11)
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: crashed (signal 11)
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: Error: Symbol is not defined
+kangax-es6/misc.prototypes-not-instances.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/new-target.assignment-error.js: ParserError: sed = (new.target ===
+kangax-es6/new-target.constructor.js: ParserError: sed = (new.target ===
+kangax-es6/regex.flags.u.case-folding.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/regex.flags.u.codepoint.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/regex.flags.u.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/regex.flags.u.non-bmp.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es6/regex.flags.y.js: Error: invalid RegExp flag: y
+kangax-es6/regex.flags.y.lastIndex.js: Error: invalid RegExp flag: y
+kangax-es6/rest-params.arguments.js: ParserError: return (function (foo, ...args) {
+kangax-es6/rest-params.basic.js: ParserError: return (function (foo, ...args) {
+kangax-es6/rest-params.length.js: ParserError: return function(a, ...b){}.len
+kangax-es6/rest-params.new-function.js: Error: invalid parameter name
+kangax-es6/rest-params.no-setter.js: ParserError: return (function (...args) {
+kangax-es6/spread.array-call.js: ParserError: Math.max(...[1, 2, 3
+kangax-es6/spread.array-literal.js: ParserError: return [...[1, 2, 3
+kangax-es6/spread.astral-call.js: ParserError: urn Array(..."𠮷𠮶")[
+kangax-es6/spread.astral-literal.js: ParserError: return [..."𠮷𠮶"][
+kangax-es6/spread.generator-call.js: ParserError: erable = (function*(){ yield
+kangax-es6/spread.generator-literal.js: ParserError: erable = (function*(){ yield
+kangax-es6/spread.iterable-call.js: ParserError: Math.max(...iterable
+kangax-es6/spread.iterable-instance-call.js: ParserError: Math.max(...Object.c
+kangax-es6/spread.iterable-instance-literal.js: ParserError: urn ["a", ...Object.c
+kangax-es6/spread.iterable-literal.js: ParserError: urn ["a", ...iterable
+kangax-es6/spread.non-iterable-error.js: ParserError: Math.max(...2)
+kangax-es6/spread.sparse-call.js: ParserError: a = Array(...[,,])
+kangax-es6/spread.sparse-literal.js: ParserError: var a = [...[,,]]
+kangax-es6/spread.string-call.js: ParserError: Math.max(..."1234")
+kangax-es6/spread.string-literal.js: ParserError: urn ["a", ..."bcd", "
+kangax-es6/subclassing.Array.concat.js: ParserError: class C extends
+kangax-es6/subclassing.Array.filter.js: ParserError: class C extends
+kangax-es6/subclassing.Array.from.js: ParserError: class C extends
+kangax-es6/subclassing.Array.isArray.js: ParserError: class C extends
+kangax-es6/subclassing.Array.length-access.js: ParserError: class C extends
+kangax-es6/subclassing.Array.length-set.js: ParserError: class C extends
+kangax-es6/subclassing.Array.map.js: ParserError: class C extends
+kangax-es6/subclassing.Array.of.js: ParserError: class C extends
+kangax-es6/subclassing.Array.prototype-chain.js: ParserError: class C extends
+kangax-es6/subclassing.Array.slice.js: ParserError: class C extends
+kangax-es6/subclassing.Array.splice.js: ParserError: class C extends
+kangax-es6/subclassing.Function.call.js: ParserError: class C extends
+kangax-es6/subclassing.Function.new.js: ParserError: class C extends
+kangax-es6/subclassing.Function.prototype-chain.js: ParserError: class C extends
+kangax-es6/subclassing.Function.prototype.apply.js: ParserError: class C extends
+kangax-es6/subclassing.Function.prototype.bind.js: ParserError: class C extends
+kangax-es6/subclassing.Function.prototype.call.js: ParserError: class C extends
+kangax-es6/subclassing.Promise.all.js: ParserError: class P extends
+kangax-es6/subclassing.Promise.js: ParserError: class P extends
+kangax-es6/subclassing.Promise.prototype-chain.js: ParserError: class C extends
+kangax-es6/subclassing.Promise.race.js: ParserError: class P extends
+kangax-es6/subclassing.RegExp.exec.js: ParserError: class R extends
+kangax-es6/subclassing.RegExp.js: ParserError: class R extends
+kangax-es6/subclassing.RegExp.prototype-chain.js: ParserError: class R extends
+kangax-es6/subclassing.RegExp.test.js: ParserError: class R extends
+kangax-es6/subclassing.misc.Boolean.js: ParserError: class C extends
+kangax-es6/subclassing.misc.Error.js: ParserError: class C extends
+kangax-es6/subclassing.misc.Map.js: ParserError: class M extends
+kangax-es6/subclassing.misc.Number.js: ParserError: class C extends
+kangax-es6/subclassing.misc.Set.js: ParserError: class S extends
+kangax-es6/subclassing.misc.String.js: ParserError: class C extends
+kangax-es6/super.correct-constructor.js: ParserError: class B {
+kangax-es6/super.expression.js: ParserError: class B {
+kangax-es6/super.method-calls.js: ParserError: class B {
+kangax-es6/super.new-target-binding.js: ParserError: class B {
+kangax-es6/super.property-access.js: ParserError: class B {}
+kangax-es6/super.statement.js: ParserError: class B {
+kangax-es6/super.static-binding.js: ParserError: class B {
+kangax-es6/super.this-binding.js: ParserError: class B {
+kangax-es6/tail-calls.direct.js: crashed (signal 11)
+kangax-es6/tail-calls.mutual.js: crashed (signal 11)
+kangax-es6/template.basic.js: ParserError: return `foo bar
+kangax-es6/template.caching.js: ParserError: trings() {
+kangax-es6/template.escape-sequences.js: ParserError: }
+kangax-es6/template.frozen-array.js: ParserError: stCode() {
+kangax-es6/template.line-break.js: Error: failed to parse eval (`)
+kangax-es6/template.permanent-caching.js: ParserError: trings() {
+kangax-es6/template.tagged.js: ParserError: }
+kangax-es6/template.toString.js: ParserError: return `${a}` ===
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: Error: Symbol is not defined
+kangax-es6/typed-arrays.DataView.Float32.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Float32Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Float64Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int8Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int16Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int32Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Symbol.species.js: Error: Symbol is not defined
+kangax-es6/typed-arrays.Uint8Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint16Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint32Array.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.constructor-iterables.js: Error: base value is not a constructor
+kangax-es6/typed-arrays.constructor-requires-new.js: Error: ArrayBuffer is not defined
+kangax-es6/typed-arrays.correct-prototype-chains.js: ParserError: const keys = Ob
+kangax-es6/typed-arrays.from.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.of.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.copyWithin.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.entries.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.every.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.fill.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.filter.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.findIndex.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.find.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.forEach.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.indexOf.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.join.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.keys.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.map.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.reduceRight.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.reduce.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.reverse.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.slice.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.some.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.sort.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.subarray.js: Error: Int8Array is not defined
+kangax-es6/typed-arrays.prototype.values.js: Error: Int8Array is not defined
+kangax-es6/unicode-escapes.identifier.js: ParserError: stCode() {
+kangax-es6/unicode-escapes.property-access.js: ParserError: return o.\u{102C0} ===
+kangax-es6/unicode-escapes.property-key.js: ParserError: var o = { \u{102C0} : 2
+kangax-es6/unicode-escapes.string.js: ParserError: return '\u{1d306}' ==
+kangax-es6/well-known.hasInstance.js: Error: Symbol is not defined
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: Error: Symbol is not defined
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: Error: Symbol is not defined
+kangax-es6/well-known.iterator.js: Error: Symbol is not defined
+kangax-es6/well-known.match.RegExp-constructor.js: Error: Symbol is not defined
+kangax-es6/well-known.match.String.endsWith.js: Error: Symbol is not defined
+kangax-es6/well-known.match.String.includes.js: Error: Symbol is not defined
+kangax-es6/well-known.match.String.startsWith.js: Error: Symbol is not defined
+kangax-es6/well-known.match.js: Error: Symbol is not defined
+kangax-es6/well-known.replace.js: Error: Symbol is not defined
+kangax-es6/well-known.search.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Array.concat.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Array.filter.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Array.map.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Array.slice.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Array.splice.js: Error: Symbol is not defined
+kangax-es6/well-known.species.Promise.then.js: Error: Promise is not defined
+kangax-es6/well-known.species.RegExp.split.js: Error: Symbol is not defined
+kangax-es6/well-known.species.js: Error: Symbol is not defined
+kangax-es6/well-known.split.js: Error: Symbol is not defined
+kangax-es6/well-known.toPrimitive.js: Error: Symbol is not defined
+kangax-es6/well-known.toStringTag.existing-builtins.js: Error: Symbol is not defined
+kangax-es6/well-known.toStringTag.js: Error: Symbol is not defined
+kangax-es6/well-known.toStringTag.misc-builtins.js: Error: Symbol is not defined
+kangax-es6/well-known.toStringTag.new-builtins.js: ParserError: ototypeOf(function*(){})[s] =
+kangax-es6/well-known.unscopables.js: Error: Symbol is not defined
+kangax-es2016/Array.prototype.includes.generic.js: Error: cannot read property call of undefined
+kangax-es2016/Array.prototype.includes.js: Error: calling non-object.
+kangax-es2016/Array.prototype.includes.sparse.js: Error: calling non-object.
+kangax-es2016/Array.prototype.includes.typed-array.js: Error: Int8Array is not defined
+kangax-es2016/exponentiation.assignment.js: ParserError: a = 2; a **= 3; return
+kangax-es2016/exponentiation.basic.js: ParserError: return 2 ** 3 === 8 &
+kangax-es2016/exponentiation.unary-negation-error.js: ParserError: if (2 ** 3 !== 8)
+kangax-es2016/misc.Proxy-Array-includes.js: Error: Proxy is not defined
+kangax-es2016/misc.Proxy-enumerate-removed.js: Error: Proxy is not defined
+kangax-es2016/misc.generator-no-new.js: ParserError: stCode() {
+kangax-es2016/misc.generator-throw-inner.js: ParserError: stCode() {
+kangax-es2016/misc.nested-rest-destructuring-decl.js: ParserError: stCode() {
+kangax-es2016/misc.nested-rest-destructuring-params.js: ParserError: return function ([x, ...[y,
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: ParserError: stCode() {
+kangax-es2017/Atomics.add.js: Error: Atomics is not defined
+kangax-es2017/Atomics.and.js: Error: Atomics is not defined
+kangax-es2017/Atomics.compareExchange.js: Error: Atomics is not defined
+kangax-es2017/Atomics.exchange.js: Error: Atomics is not defined
+kangax-es2017/Atomics.isLockFree.js: Error: Atomics is not defined
+kangax-es2017/Atomics.load.js: Error: Atomics is not defined
+kangax-es2017/Atomics.notify.js: Error: Atomics is not defined
+kangax-es2017/Atomics.or.js: Error: Atomics is not defined
+kangax-es2017/Atomics.store.js: Error: Atomics is not defined
+kangax-es2017/Atomics.sub.js: Error: Atomics is not defined
+kangax-es2017/Atomics.wait.js: Error: Atomics is not defined
+kangax-es2017/Atomics.xor.js: Error: Atomics is not defined
+kangax-es2017/Object.entries.js: Error: calling non-object.
+kangax-es2017/Object.getOwnPropertyDescriptors.js: Error: calling non-object.
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Error: Proxy is not defined
+kangax-es2017/Object.values.js: Error: calling non-object.
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: Error: Symbol is not defined
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: Error: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: Error: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: Error: SharedArrayBuffer is not defined
+kangax-es2017/String.prototype.padEnd.js: Error: calling non-object.
+kangax-es2017/String.prototype.padStart.js: Error: calling non-object.
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: Error: __defineGetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: Error: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: Error: __defineSetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: Error: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: Error: __lookupGetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: Error: calling non-object.
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: Error: Symbol is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: Error: __lookupSetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Error: cannot read property call of undefined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: Error: calling non-object.
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: Error: Symbol is not defined
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: Error: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: Error: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: Error: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: Error: Proxy is not defined
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: ParserError: rototypeOf(async function
+kangax-es2017/async.arrow-in-class.js: ParserError: class C {
+kangax-es2017/async.arrow.js: ParserError: async () => await Pro
+kangax-es2017/async.await-non-promise.js: ParserError: (async func
+kangax-es2017/async.await-rejection.js: ParserError: (async func
+kangax-es2017/async.await.js: ParserError: (async func
+kangax-es2017/async.constructor.js: ParserError: stCode() {
+kangax-es2017/async.methods-class.js: ParserError: class C {
+kangax-es2017/async.methods-object.js: ParserError: var o = {
+kangax-es2017/async.must-await-value.js: ParserError: stCode() {
+kangax-es2017/async.no-await-in-params.js: ParserError: stCode() {
+kangax-es2017/async.no-line-break.js: ParserError: stCode() {
+kangax-es2017/async.no-prototype.js: ParserError: stCode() {
+kangax-es2017/async.prototype-chain.js: ParserError: rototypeOf(async function
+kangax-es2017/async.return.js: ParserError: stCode() {
+kangax-es2017/async.throw.js: ParserError: stCode() {
+kangax-es2017/misc.arguments-caller-removed.js: failed
+kangax-es2017/regex.flags.u.case-folding.js: crashed (signal 6); zhuzilin: ./es/types/builtin/string_object.h:158: static es::Handle<es::JSValue> es::StringProto::match(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2017/trailing-comma.arguments.js: ParserError: min(1,2,3,) === 1
+kangax-es2017/trailing-comma.params.js: ParserError: urn typeof function f( a, b, ) {} === 'f
+kangax-es2018/Promise.prototype.finally.change-rejection.js: Error: Promise is not defined
+kangax-es2018/Promise.prototype.finally.js: Error: Promise is not defined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: Error: Promise is not defined
+kangax-es2018/async-iterators.for-await-of.js: ParserError: (async func
+kangax-es2018/async-iterators.generators.js: ParserError: stCode() {
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: ParserError: Proxy({}, {
+kangax-es2018/misc.template-literal-revision.js: ParserError: }
+kangax-es2018/object-rest.js: ParserError: stCode() {
+kangax-es2018/object-spread.js: ParserError: var O = { a: 1, ...spread }
+kangax-es2018/regex.flags.s.js: ParserError: const regex = /
+kangax-es2018/regex.lookbehind.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2018/regex.named-capture-groups.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2018/regex.unicode-property-escapes.js: ParserError: const regexGree
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: ParserError: c}/u.test("\u{10fe0}") &
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: ParserError: n}/u.test("\u{10fb0}") &
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: ParserError: i}/u.test("\u{10570}") &
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: ParserError: h}/u.test("\u{2ebf0}")
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: ParserError: i}/u.test("\u{11f00}") &
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: ParserError: i}/u.test("\u{105c0}") &
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: ParserError: c}/u.test("\u{10940}") &
+kangax-es2019/Array.prototype.flatMap.js: Error: calling non-object.
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: Error: Symbol is not defined
+kangax-es2019/Array.prototype.flat.js: Error: calling non-object.
+kangax-es2019/Object.fromEntries.js: Error: Map is not defined
+kangax-es2019/String.prototype.trimEnd.js: Error: calling non-object.
+kangax-es2019/String.prototype.trimStart.js: Error: calling non-object.
+kangax-es2019/Symbol.prototype.description.empty.js: Error: Symbol is not defined
+kangax-es2019/Symbol.prototype.description.js: Error: Symbol is not defined
+kangax-es2019/Symbol.prototype.description.undefined.js: Error: Symbol is not defined
+kangax-es2019/annex-b.String.prototype.trimLeft.js: Error: calling non-object.
+kangax-es2019/annex-b.String.prototype.trimRight.js: Error: calling non-object.
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: Error: failed to parse eval (>)
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: Error: failed to parse eval (class)
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: Error: failed to parse eval (class)
+kangax-es2019/misc.Function-toString.computed-names.js: Error: failed to parse eval ({ /* before */[)
+kangax-es2019/misc.Function-toString.native-code.js: ParserError: const NATIVE_EV
+kangax-es2019/misc.Function-toString.unicode-escapes.js: Error: failed to parse eval (/* before */function \u0061(\u{)
+kangax-es2019/misc.JSON-stringify-well-formed.js: Error: JSON is not defined
+kangax-es2019/misc.JSON-superset.line-separator.js: Error: failed to parse eval (')
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: Error: failed to parse eval (')
+kangax-es2019/misc.optional-catch-binding.await.js: ParserError: (async func
+kangax-es2019/misc.optional-catch-binding.js: crashed (signal 11)
+kangax-es2019/misc.optional-catch-binding.yield.js: ParserError: stCode() {
+kangax-es2020/BigInt64Array.js: ParserError: view[0] = 0x8000000000000000n
+kangax-es2020/BigInt.asIntN.js: Error: BigInt is not defined
+kangax-es2020/BigInt.asUintN.js: Error: BigInt is not defined
+kangax-es2020/BigInt.constructor.js: ParserError: ("3") === 3n
+kangax-es2020/BigInt.js: ParserError: return (1n + 2n) ===
+kangax-es2020/BigUint64Array.js: ParserError: view[0] = 0x10000000000000000n
+kangax-es2020/DataView.prototype.getBigInt64.js: ParserError: gInt64(0, 1n)
+kangax-es2020/DataView.prototype.getBigUint64.js: ParserError: Uint64(0, 1n)
+kangax-es2020/Promise.allSettled.js: ParserError: .then(it => {
+kangax-es2020/String.prototype.matchAll.js: Error: calling non-object.
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:74: static es::Handle<es::JSValue> es::ObjectProto::propertyIsEnumerable(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: ParserError: rn (null ?? 42) === 4
+kangax-es2020/optional-chaining.bracket.js: ParserError: eturn foo?.['baz'] ==
+kangax-es2020/optional-chaining.function-call.js: ParserError: n foo.baz?.() === 42
+kangax-es2020/optional-chaining.method-call.js: ParserError: eturn foo?.baz() ===
+kangax-es2020/optional-chaining.property.js: ParserError: eturn foo?.baz === 42
+kangax-es2020/optional-chaining.spread-params.js: ParserError: return fn?.(...[], 1)
+kangax-es2021/FinalizationRegistry.js: Error: FinalizationRegistry is not defined
+kangax-es2021/Promise.any.AggregateError.js: ParserError: h (error => {
+kangax-es2021/Promise.any.fulfillment.js: ParserError: .then(it => {
+kangax-es2021/String.prototype.replaceAll.js: Error: calling non-object.
+kangax-es2021/WeakRef.js: Error: WeakRef is not defined
+kangax-es2021/logical-assignment.and.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.and.short-circuit.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.nullish.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.nullish.short-circuit.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.or.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: ParserError: stCode() {
+kangax-es2021/logical-assignment.or.short-circuit.js: ParserError: stCode() {
+kangax-es2021/numeric-separators.js: ParserError: return 1_000_000.00
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: Error: AggregateError is not defined
+kangax-es2022/Error.cause.AggregateError.js: Error: AggregateError is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: Error: calling non-object.
+kangax-es2022/at-method.Array.js: Error: calling non-object.
+kangax-es2022/at-method.String.js: Error: calling non-object.
+kangax-es2022/at-method.TypedArray.js: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:73: static es::Handle<es::JSValue> es::ArrayProto::every(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2022/class-fields.computed-instance.js: ParserError: class C {
+kangax-es2022/class-fields.computed-static.js: ParserError: class C {
+kangax-es2022/class-fields.instance.parent-scope.js: ParserError: {
+kangax-es2022/class-fields.private-instance.initializers.js: ParserError: class C {
+kangax-es2022/class-fields.private-instance.js: ParserError: class C {
+kangax-es2022/class-fields.private-instance.optional-access.js: ParserError: class C {
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: ParserError: class C {
+kangax-es2022/class-fields.private-static.js: ParserError: class C {
+kangax-es2022/class-fields.public-instance.js: ParserError: class C {
+kangax-es2022/class-fields.public-static.js: ParserError: class C {
+kangax-es2022/class-fields.static.define.js: ParserError: return (class X { stati
+kangax-es2022/class-methods.private-accessor.js: ParserError: class C {
+kangax-es2022/class-methods.private-instance.js: ParserError: class C {
+kangax-es2022/class-methods.private-static-accessor.js: ParserError: class C {
+kangax-es2022/class-methods.private-static.js: ParserError: class C {
+kangax-es2022/class-static-init-blocks.js: ParserError: stCode() {
+kangax-es2022/ergonomic-brand-checks.js: ParserError: class A {
+kangax-es2022/regex.flags.d.constructor.js: Error: invalid RegExp flag: d
+kangax-es2022/regex.flags.d.shows-in-flags.js: Error: Proxy is not defined
+kangax-es2023/Array.prototype.findLastIndex.js: Error: calling non-object.
+kangax-es2023/Array.prototype.findLast.js: Error: calling non-object.
+kangax-es2023/Array.prototype.toReversed.js: Error: calling non-object.
+kangax-es2023/Array.prototype.toSorted.js: Error: calling non-object.
+kangax-es2023/Array.prototype.toSpliced.js: Error: calling non-object.
+kangax-es2023/Array.prototype.with.js: Error: calling non-object.
+kangax-es2023/TypedArray.prototype.toReversed.js: Error: Uint8Array is not defined
+kangax-es2023/TypedArray.prototype.toSorted.js: Error: Uint8Array is not defined
+kangax-es2023/TypedArray.prototype.with.js: Error: Uint8Array is not defined
+kangax-es2023/hashbang.js: ParserError: #!/usr/bin/
+kangax-es2024/ArrayBuffer.prototype.detached.js: ParserError: const buffer1 =
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: ParserError: const buffer1 =
+kangax-es2024/ArrayBuffer.prototype.transfer.js: ParserError: const buffer1 =
+kangax-es2024/Map.groupBy.js: ParserError: const array = [
+kangax-es2024/Object.groupBy.js: ParserError: const array = [
+kangax-es2024/Promise.withResolvers.js: Error: Promise is not defined
+kangax-es2024/regex.flags.v.constructor.js: Error: invalid RegExp flag: v
+kangax-es2024/regex.flags.v.properties-of-strings.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2024/regex.flags.v.set-notations.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2024/regex.flags.v.shows-in-flags.js: Error: Proxy is not defined
+kangax-es2024/regex.flags.v.unicode-15.1.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2024/regex.flags.v.unicode-16.0.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2024/regex.flags.v.unicode-17.0.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2025/Iterator.extends.js: ParserError: class Class ext
+kangax-es2025/Iterator.from.iterable.js: ParserError: const iterator
+kangax-es2025/Iterator.from.iterator.js: ParserError: const iterator
+kangax-es2025/Iterator.instanceof.js: Error: calling non-object.
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: Error: Iterator is not defined
+kangax-es2025/Iterator.prototype.drop.js: Error: calling non-object.
+kangax-es2025/Iterator.prototype.every.js: ParserError: every(it => typeof it
+kangax-es2025/Iterator.prototype.filter.js: ParserError: ilter(it => it % 2)).
+kangax-es2025/Iterator.prototype.find.js: ParserError: .find(it => it % 2) =
+kangax-es2025/Iterator.prototype.flatMap.js: ParserError: atMap(it => [it, 0]))
+kangax-es2025/Iterator.prototype.forEach.js: ParserError: stCode() {
+kangax-es2025/Iterator.prototype.map.js: ParserError: ).map(it => it * it))
+kangax-es2025/Iterator.prototype.reduce.js: ParserError: e((a, b) => a + b) ==
+kangax-es2025/Iterator.prototype.some.js: ParserError: .some(it => typeof it
+kangax-es2025/Iterator.prototype.take.js: Error: calling non-object.
+kangax-es2025/Iterator.prototype.toArray.js: ParserError: const array = [
+kangax-es2025/Promise.try.js: Error: Promise is not defined
+kangax-es2025/RegExp.escape.js: Error: calling non-object.
+kangax-es2025/Set.prototype.difference.js: Error: Set is not defined
+kangax-es2025/Set.prototype.intersection.js: Error: Set is not defined
+kangax-es2025/Set.prototype.isDisjointFrom.js: Error: Set is not defined
+kangax-es2025/Set.prototype.isSubsetOf.js: Error: Set is not defined
+kangax-es2025/Set.prototype.isSupersetOf.js: Error: Set is not defined
+kangax-es2025/Set.prototype.symmetricDifference.js: Error: Set is not defined
+kangax-es2025/Set.prototype.union.js: Error: Set is not defined
+kangax-es2025/regex.duplicate-named-groups.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:23: static es::Handle<es::JSValue> es::RegExpProto::test(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-es2025/regex.pattern-modifiers.i.js: ParserError: const regex = /
+kangax-es2025/regex.pattern-modifiers.m.js: ParserError: const regex = /
+kangax-es2025/regex.pattern-modifiers.s.js: ParserError: const regex = /
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: Error: Intl is not defined
+kangax-intl/Intl.Collator.new-instances.js: Error: Intl is not defined
+kangax-intl/Intl.Collator.prototype.compare.js: Error: Intl is not defined
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: Error: Intl is not defined
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: Error: Intl is not defined
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: Error: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: Error: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: Error: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: Error: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: Error: Intl is not defined
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: Error: Intl is not defined
+kangax-intl/Intl.NumberFormat.js: Error: Intl is not defined
+kangax-intl/Intl.NumberFormat.new-instances.js: Error: Intl is not defined
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: Error: Intl is not defined
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: Error: Intl is not defined
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: Error: Intl is not defined
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: ParserError: ject((it => it)`a${1}
+kangax-next/AsyncDisposableStack.js: ParserError: esource3 = { disposed: false, async [Symbol.asy
+kangax-next/AsyncIterator.extends.js: ParserError: class Class ext
+kangax-next/AsyncIterator.from.async-iterable.js: ParserError: stCode() {
+kangax-next/AsyncIterator.from.iterable.js: ParserError: stCode() {
+kangax-next/AsyncIterator.from.iterator.js: ParserError: stCode() {
+kangax-next/AsyncIterator.instanceof.js: ParserError: return (async func
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: Error: AsyncIterator is not defined
+kangax-next/AsyncIterator.prototype.drop.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.every.js: ParserError: (async func
+kangax-next/AsyncIterator.prototype.filter.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.find.js: ParserError: (async func
+kangax-next/AsyncIterator.prototype.flatMap.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.forEach.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.map.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.reduce.js: ParserError: (async func
+kangax-next/AsyncIterator.prototype.some.js: ParserError: (async func
+kangax-next/AsyncIterator.prototype.take.js: ParserError: stCode() {
+kangax-next/AsyncIterator.prototype.toArray.js: ParserError: (async func
+kangax-next/DisposableStack.js: ParserError: esource3 = { disposed: false, [Symbol.dis
+kangax-next/Map.prototype.upsert.js: ParserError: const map = new
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: crashed (signal 6); zhuzilin: ./es/types/builtin/regexp_object.h:19: static es::Handle<es::JSValue> es::RegExpProto::exec(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: ParserError: try {
+kangax-next/Uint8Array.fromBase64.js: ParserError: const arr1 = ne
+kangax-next/Uint8Array.fromHex.js: ParserError: const arr1 = ne
+kangax-next/Uint8Array.setFromBase64.js: ParserError: const arr1 = ne
+kangax-next/Uint8Array.setFromHex.js: ParserError: const arr1 = ne
+kangax-next/Uint8Array.toBase64.js: ParserError: const arr = new
+kangax-next/Uint8Array.toHex.js: ParserError: const arr = new
+kangax-next/WeakMap.prototype.upsert.js: ParserError: const a = {}, b
+kangax-next/await-using.for-of.js: ParserError: esource1 = {
+kangax-next/await-using.js: ParserError: (async func
+kangax-next/class-decorators.js: ParserError: class A {
+kangax-next/function.sent.js: ParserError: ar result
+kangax-next/throw-expr.arrow.js: ParserError: var fn = () => throw
+kangax-next/throw-expr.conditional.js: ParserError: stCode() {
+kangax-next/throw-expr.logical.js: ParserError: a = 19 || throw 77
+kangax-next/throw-expr.param-init.js: ParserError: stCode() {
+kangax-next/using.for-of.js: ParserError: esource1 = {
+kangax-next/using.js: ParserError: resource = {
