@@ -63,7 +63,6 @@ It should work out of the box with Apple's containerization; on Linux, podman ne
 
 ```sh
 $ sudo apt install qemu-user-static
-$ rm -rf ../.cache/iid    # maybe force rebuild of base containers
 $ DOCKER_ARCH=amd64 make -C engines/quickjs sh
 ```
 
@@ -81,7 +80,8 @@ $ DOCKER_ARCH=amd64 make -C engines/quickjs sh
 Template for a new `engines/<engine>/Dockerfile`:
 
 ```Dockerfile
-# Keep BASE configurable to allow swapping compilers/build stack via Makefile.
+# Keep BASE configurable to allow swapping compilers/build stack via Makefile
+# and appending arch suffix during cross-arch builds.
 ARG BASE=jsz-gcc
 FROM $BASE
 

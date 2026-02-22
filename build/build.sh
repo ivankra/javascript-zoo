@@ -13,7 +13,7 @@ DOCKERFILE="${2:-}"
 shift $(( $# >= 2 ? 2 : $# ))
 
 if [[ -z "$ID" || -z "$DOCKERFILE" ]]; then
-  echo "Usage: ./build/build.sh <id> <dockerfile> [docker build args...]" >&2
+  echo "Usage: build.sh <id> <dockerfile> [docker build args...]" >&2
   exit 1
 fi
 
@@ -22,7 +22,6 @@ if [[ -z "${DOCKER_ARCH:-}" ]]; then
 fi
 
 IID_DIR="$ROOT_DIR/.cache/iid/$DOCKER_ARCH"
-DIST_DIR="$ROOT_DIR/dist/$DOCKER_ARCH"
 
 if [[ ! -f "$DOCKERFILE" ]]; then
   echo "build.sh: missing Dockerfile: $DOCKERFILE" >&2
@@ -60,7 +59,11 @@ if [[ -n "${REPO:-}" ]] && grep -Eq '^ARG +REPO=' "$DOCKERFILE"; then
     fi
     filtered+=("$a")
   done
-  set -- "${filtered[@]}" --build-arg "REPO=$REPO"
+  if [[ ${#filtered[@]} -gt 0 ]]; then
+    set -- "${filtered[@]}" --build-arg "REPO=$REPO"
+  else
+    set -- --build-arg "REPO=$REPO"
+  fi
   echo "Using REPO=$REPO override to build $DOCKERFILE"
 fi
 
@@ -81,12 +84,57 @@ if [[ -n "${REV:-}" ]] && grep -Eq '^ARG +REV=' "$DOCKERFILE"; then
     fi
     filtered+=("$a")
   done
-  set -- "${filtered[@]}" --build-arg "REV=$REV"
+  if [[ ${#filtered[@]} -gt 0 ]]; then
+    set -- "${filtered[@]}" --build-arg "REV=$REV"
+  else
+    set -- --build-arg "REV=$REV"
+  fi
   echo "Using REV=$REV override to build $DOCKERFILE"
 fi
 
-mkdir -p "$IID_DIR" "$DIST_DIR"
-rm -f "$DIST_DIR/$ID.json" "$DIST_DIR/parsers/$ID.json" "$DIST_DIR/transpilers/$ID.json"
+base_with_arch() {
+  local base="${1:-}"
+  [[ -z "$base" ]] && { echo "$base"; return; }
+  [[ "$base" == *:* ]] && { echo "$base"; return; }
+  echo "$base:$DOCKER_ARCH"
+}
+
+# Rewrite incoming args in-place so BASE consistently carries arch suffix.
+has_base_arg=0
+args=()
+while [[ $# -gt 0 ]]; do
+  a="$1"; shift
+  if [[ "$a" == "--build-arg" && $# -gt 0 ]]; then
+    b="$1"; shift
+    if [[ "$b" == BASE=* ]]; then has_base_arg=1; b="BASE=$(base_with_arch "${b#BASE=}")"; fi
+    args+=("--build-arg" "$b")
+    continue
+  fi
+  if [[ "$a" == --build-arg=BASE=* ]]; then
+    has_base_arg=1
+    args+=("--build-arg=BASE=$(base_with_arch "${a#--build-arg=BASE=}")")
+    continue
+  fi
+  if [[ "$a" == BASE=* ]]; then
+    has_base_arg=1
+    args+=("BASE=$(base_with_arch "${a#BASE=}")")
+    continue
+  fi
+  args+=("$a")
+done
+if [[ ${#args[@]} -gt 0 ]]; then
+  set -- "${args[@]}"
+fi
+
+if [[ "$has_base_arg" == 0 ]]; then
+  # No explicit BASE provided: inherit Dockerfile default ARG BASE=... and pin to arch.
+  dockerfile_base="$(sed -nE '/^[[:space:]]*ARG[[:space:]]+BASE=/{s/^[[:space:]]*ARG[[:space:]]+BASE=([^[:space:]]+).*$/\1/p;q;}' "$DOCKERFILE")"
+  if [[ -n "$dockerfile_base" ]]; then
+    set -- --build-arg "BASE=$(base_with_arch "$dockerfile_base")" "$@"
+  fi
+fi
+
+mkdir -p "$IID_DIR"
 
 TAG="$ID"
 if [[ "$ID" != jsz-* ]]; then
