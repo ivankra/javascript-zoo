@@ -1,0 +1,69 @@
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 13f236c6..a286c791 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -35,9 +35,24 @@ dependencies {
+     testImplementation("io.strikt:strikt-core:0.34.1")
+ }
+ 
++tasks.register<Jar>("runnerJar") {
++    dependsOn("testClasses")
++    archiveBaseName.set("reeva-runner")
++    archiveVersion.set("")
++    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
++    manifest {
++        attributes["Main-Class"] = "com.reevajs.reeva.test262.ReplKt"
++    }
++    from(sourceSets.main.get().output)
++    from(sourceSets.test.get().output)
++    from({
++        sourceSets.test.get().runtimeClasspath.filter { it.isFile && it.name.endsWith(".jar") }.map { zipTree(it) }
++    })
++}
++
+ task("runScriptRunner", JavaExec::class) {
+     classpath = sourceSets.test.get().runtimeClasspath
+-    main = "com.reevajs.reeva.test262.DebugScriptRunnerKt"
++    main = "com.reevajs.reeva.test262.ReplKt"
+ }
+ 
+ tasks {
+diff --git a/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
+new file mode 100644
+index 00000000..ec34a7d6
+--- /dev/null
++++ b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
+@@ -0,0 +1,33 @@
++package com.reevajs.reeva.test262
++
++import com.reevajs.reeva.Reeva
++import com.reevajs.reeva.core.Agent
++import com.reevajs.reeva.core.lifecycle.FileSourceInfo
++import com.reevajs.reeva.core.lifecycle.LiteralSourceInfo
++import com.reevajs.reeva.runtime.primitives.JSUndefined
++import java.io.File
++
++fun main(args: Array<String>) {
++    Agent.build().withActiveScope {
++        makeRealmAndInitializeExecutionEnvironment()
++
++        if (args.isNotEmpty()) {
++            args.forEach { runAndPrint(FileSourceInfo(File(it), false)) }
++            return@withActiveScope
++        }
++
++        while (true) {
++            print("> ")
++            val line = readLine() ?: break
++            if (line.isBlank()) continue
++            runAndPrint(LiteralSourceInfo("repl", line, false))
++        }
++    }
++}
++
++private fun runAndPrint(source: com.reevajs.reeva.core.lifecycle.SourceInfo) {
++    val result = Reeva.execute(source)
++    if (result != null && result != JSUndefined)
++        println(result)
++    Agent.activeAgent.microtaskQueue.checkpoint()
++}
