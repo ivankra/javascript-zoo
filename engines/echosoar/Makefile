@@ -3,6 +3,4 @@
 
 include ../../build/build.mk
 
-CONFORMANCE_SUITE = es[1-5]
-
-$(eval $(call build_engine,echosoar-jsi,Dockerfile))
+$(eval $(call build_engine,echosoar,Dockerfile))

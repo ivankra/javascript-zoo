@@ -17,4 +17,20 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 <li>ES5: 9%</li>
 </ul></details>
 
+<details><summary>compat-table: ES6 5%, ES2016+ 2%, Next 0%, Intl 0%</summary><ul>
+<li>ES6: 5%</li>
+<li>ES2016: 0%</li>
+<li>ES2017: 4%</li>
+<li>ES2018: 0%</li>
+<li>ES2019: 4%</li>
+<li>ES2020: 0%</li>
+<li>ES2021: 0%</li>
+<li>ES2022: 5%</li>
+<li>ES2023: 0%</li>
+<li>ES2024: 0%</li>
+<li>ES2025: 0%</li>
+<li>Next: 0%</li>
+<li>Intl: 0%</li>
+</ul></details>
+
 💥 **2 crashes during testing**
