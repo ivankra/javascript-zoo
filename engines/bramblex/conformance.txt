@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 211525, "engine": "bramblex", "repository": "https://github.com/bramblex/jsjs.git", "revision": "ab7133f7435acdf16a86473cbd36ab68d6195fba", "revision_date": "2018-03-08"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: [Error] [object Object], 'Function' 未定义
+es1/Function.length.js: [Error] [object Object], 'Function' 未定义
+es1/Function.prototype.constructor.js: [Error] [object Object], 'Function' 未定义
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: [Error] [object Object], 'Function' 未定义
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: OK
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+es1/arguments.js: OK
+es1/asi.eval.js: [Error] [object Object], 'eval' 未定义
+es1/asi.js: [Error] res 重复定义
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: [Error] x 重复定义
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: [Error] isNaN 重复定义
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: [Error] [object Object], 'eval' 未定义
+es1/for-in.js: failed
+es1/for.js: [Error] [object Object], 's' 未定义
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: failed
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: [Error] n 重复定义
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: failed
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: OK
+es3/Number.prototype.toExponential.rounding.js: OK
+es3/Number.prototype.toExponential.throws-infinity.js: OK
+es3/Number.prototype.toFixed.js: OK
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: OK
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: OK
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: OK
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: OK
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: wrong exception for Function.prototype.toString on non-function; wrong exception for Function.prototype.apply on non-function
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: OK
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: OK
+es3/instanceof.js: OK
+es3/in.js: OK
+es3/labelled.break.js: labelled break in while failed; labelled break to outer loop failed; labelled break from block failed
+es3/labelled.continue.js: labelled continue in while failed; labelled continue to outer loop failed
+es3/labelled.statements.js: basic label failed; labelled block failed; nested labelled blocks failed
+es3/literals.array.elisions.js: TypeError: Cannot read properties of null (reading 'type')
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: OK
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: [Error] [object Object], 'eval' 未定义
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: OK
+es3/source.whitespace.js: OK
+es3/source.whitespace.unicode.js: OK
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: OK
+es5/Array.prototype.every.js: TypeError: Cannot read properties of null (reading 'type')
+es5/Array.prototype.filter.js: TypeError: Cannot read properties of null (reading 'type')
+es5/Array.prototype.forEach.js: TypeError: Cannot read properties of null (reading 'type')
+es5/Array.prototype.indexOf.js: OK
+es5/Array.prototype.lastIndexOf.js: OK
+es5/Array.prototype.map.js: OK
+es5/Array.prototype.reduceRight.js: OK
+es5/Array.prototype.reduce.js: TypeError: Cannot read properties of null (reading 'type')
+es5/Array.prototype.some.js: TypeError: Cannot read properties of null (reading 'type')
+es5/Array.prototype.sort.TypeError.js: OK
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: OK
+es5/Date.prototype.toISOString.js: OK
+es5/Date.prototype.toJSON.js: OK
+es5/Function.prototype-not-enumerable.js: [Error] [object Object], 'Function' 未定义
+es5/Function.prototype.apply.array-like.js: OK
+es5/Function.prototype.bind.js: [Error] [object Object], 'Function' 未定义
+es5/JSON.js: OK
+es5/JSON.parse.js: OK
+es5/JSON.parse.reviver.js: OK
+es5/JSON.stringify.js: OK
+es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.space.js: OK
+es5/Object.create.js: OK
+es5/Object.defineProperties.js: TypeError: Cannot assign to read only property 'a' of object '#<Object>'
+es5/Object.defineProperty.js: TypeError: Cannot assign to read only property 'y' of object '#<Object>'
+es5/Object.freeze.js: TypeError: Cannot assign to read only property 'x' of object '#<Object>'
+es5/Object.getOwnPropertyDescriptor.js: OK
+es5/Object.getOwnPropertyNames.js: OK
+es5/Object.getPrototypeOf.js: OK
+es5/Object.isExtensible.js: OK
+es5/Object.isFrozen.js: OK
+es5/Object.isSealed.js: OK
+es5/Object.keys.js: OK
+es5/Object.preventExtensions.js: TypeError: Cannot add property y, object is not extensible
+es5/Object.property-shadowing.js: [Error] [object Object], 'Function' 未定义
+es5/Object.seal.js: TypeError: Cannot add property y, object is not extensible
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: OK
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: OK
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: failed
+es5/literals.object.getters.js: OK
+es5/literals.object.setters.js: OK
+es5/literals.object.trailing-comma.js: OK
+es5/source.keyword-properties.js: OK
+es5/source.unreserved-words.js: OK
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: OK
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: failed
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: failed
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: OK
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var implements' throws but not-SyntaxError
+es5/strict.this-primitive-not-coerced-in-accessors.js: OK
+es5/strict.this-primitive-not-coerced.js: OK
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: OK
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: OK
+kangax-es5/Array.prototype.every.js: OK
+kangax-es5/Array.prototype.filter.js: OK
+kangax-es5/Array.prototype.forEach.js: OK
+kangax-es5/Array.prototype.indexOf.js: OK
+kangax-es5/Array.prototype.lastIndexOf.js: OK
+kangax-es5/Array.prototype.map.js: OK
+kangax-es5/Array.prototype.reduceRight.js: OK
+kangax-es5/Array.prototype.reduce.js: OK
+kangax-es5/Array.prototype.some.js: OK
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: OK
+kangax-es5/Date.prototype.toISOString.js: OK
+kangax-es5/Date.prototype.toJSON.js: OK
+kangax-es5/Function.prototype.bind.js: [Error] [object Object], 'Function' 未定义
+kangax-es5/JSON.js: OK
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: OK
+kangax-es5/Object.defineProperties.js: OK
+kangax-es5/Object.defineProperty.js: OK
+kangax-es5/Object.freeze.js: OK
+kangax-es5/Object.getOwnPropertyDescriptor.js: OK
+kangax-es5/Object.getOwnPropertyNames.js: OK
+kangax-es5/Object.getPrototypeOf.js: OK
+kangax-es5/Object.isExtensible.js: OK
+kangax-es5/Object.isFrozen.js: OK
+kangax-es5/Object.isSealed.js: OK
+kangax-es5/Object.keys.js: OK
+kangax-es5/Object.preventExtensions.js: OK
+kangax-es5/Object.seal.js: OK
+kangax-es5/String.property-access.js: OK
+kangax-es5/String.prototype.split.js: OK
+kangax-es5/String.prototype.trim.js: OK
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: failed
+kangax-es5/immutable-globals.NaN.js: failed
+kangax-es5/immutable-globals.undefined.js: undefined 未定义
+kangax-es5/literals.getter-accessors.js: OK
+kangax-es5/literals.reserved-words-properties.js: OK
+kangax-es5/literals.setter-accessors.js: OK
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: OK
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: OK
+kangax-es5/misc.Function.prototype.non-enumerable.js: [Error] [object Object], 'Function' 未定义
+kangax-es5/misc.enumerable-shadow.js: [Error] [object Object], 'Function' 未定义
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: OK
+kangax-es5/misc.zero-width-identifiers.js: OK
+kangax-es5/strict.arguments-callee-error.js: OK
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: OK
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: failed
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: OK
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: OK
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: OK
+kangax-es5/strict.this-not-coerced-methods.js: OK
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Array.from.array-like.js: OK
+kangax-es6/Array.from.generator.js: SyntaxError: Unexpected token (9:26)
+kangax-es6/Array.from.iterable-instance.js: failed
+kangax-es6/Array.from.iterable.js: failed
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: OK
+kangax-es6/Array.from.map.generator.js: SyntaxError: Unexpected token (9:26)
+kangax-es6/Array.from.map.iterable-instance.js: failed
+kangax-es6/Array.from.map.iterable.js: failed
+kangax-es6/Array.iterator-prototype-chain.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Array.of.js: OK
+kangax-es6/Array.prototype.Symbol.iterator.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Array.prototype.Symbol.unscopables.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Array.prototype.copyWithin.js: OK
+kangax-es6/Array.prototype.entries.js: OK
+kangax-es6/Array.prototype.fill.js: OK
+kangax-es6/Array.prototype.findIndex.js: OK
+kangax-es6/Array.prototype.find.js: OK
+kangax-es6/Array.prototype.keys.js: OK
+kangax-es6/Array.prototype.splice.js: OK
+kangax-es6/Array.prototype.values.js: OK
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Function.name.accessor.js: TypeError: Cannot redefine property: foo
+kangax-es6/Function.name.bound.js: failed
+kangax-es6/Function.name.class-expression.js: SyntaxError: The keyword 'class' is reserved (10:9)
+kangax-es6/Function.name.class-object-method.js: SyntaxError: The keyword 'class' is reserved (10:17)
+kangax-es6/Function.name.class-prototype.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/Function.name.class-statement.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/Function.name.class-static.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/Function.name.class-variable.js: SyntaxError: The keyword 'class' is reserved (10:12)
+kangax-es6/Function.name.configurable.js: OK
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: SyntaxError: Unexpected token (10:15)
+kangax-es6/Function.name.shorthand.no-lexical.js: SyntaxError: Unexpected token (11:12)
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: SyntaxError: Unexpected token (13:4)
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.constructor-accepts-null.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.constructor-arguments.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.constructor-invokes-set.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.constructor-requires-new.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype-not-instance.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.Symbol.iterator.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.clear.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.delete.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.entries.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.forEach.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.keys.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.set-returns-this.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.size.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.prototype.values.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Map.zero-key.js: [Error] [object Object], 'Map' 未定义
+kangax-es6/Math.acosh.js: OK
+kangax-es6/Math.asinh.js: OK
+kangax-es6/Math.atanh.js: OK
+kangax-es6/Math.cbrt.js: OK
+kangax-es6/Math.clz32.js: OK
+kangax-es6/Math.cosh.js: OK
+kangax-es6/Math.expm1.js: OK
+kangax-es6/Math.fround.js: OK
+kangax-es6/Math.hypot.js: OK
+kangax-es6/Math.imul.js: OK
+kangax-es6/Math.log1p.js: OK
+kangax-es6/Math.log2.js: OK
+kangax-es6/Math.log10.js: OK
+kangax-es6/Math.sign.js: OK
+kangax-es6/Math.sinh.js: OK
+kangax-es6/Math.tanh.js: OK
+kangax-es6/Math.trunc.js: OK
+kangax-es6/Number.EPSILON.js: OK
+kangax-es6/Number.MAX_SAFE_INTEGER.js: OK
+kangax-es6/Number.MIN_SAFE_INTEGER.js: OK
+kangax-es6/Number.isFinite.js: OK
+kangax-es6/Number.isInteger.js: OK
+kangax-es6/Number.isNaN.js: OK
+kangax-es6/Number.isSafeInteger.js: OK
+kangax-es6/Number.parseFloat.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/Number.parseInt.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/Object.assign.js: OK
+kangax-es6/Object.getOwnPropertySymbols.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Object.is.js: OK
+kangax-es6/Object.setPrototypeOf.js: OK
+kangax-es6/Promise.Symbol.species.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Promise.all.iterable.js: failed
+kangax-es6/Promise.all.js: ReferenceError: name is not defined
+kangax-es6/Promise.constructor-requires-new.js: OK
+kangax-es6/Promise.js: ReferenceError: name is not defined
+kangax-es6/Promise.prototype-not-instance.js: OK
+kangax-es6/Promise.race.iterable.js: failed
+kangax-es6/Promise.race.js: ReferenceError: name is not defined
+kangax-es6/Proxy.Array.isArray.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.JSON.stringify.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.constructor-requires-new.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.apply.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.apply.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.construct.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.construct.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.defineProperty.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.defineProperty.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.deleteProperty.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.getPrototypeOf.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.get.instances.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.get.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.get.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.has.instances.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.has.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.has.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.isExtensible.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.isExtensible.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.ownKeys.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.ownKeys.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.preventExtensions.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.setPrototypeOf.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.set.instances.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.set.invariants.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.handler.set.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.no-prototype.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Proxy.revocable.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/Reflect.apply.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.construct.Array-subclassing.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.construct.Function-subclassing.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: name is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.construct.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.construct.new-target.js: SyntaxError: Unexpected token (11:11)
+kangax-es6/Reflect.construct.third-argument.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.defineProperty.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.deleteProperty.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.getPrototypeOf.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.get.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.has.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.isExtensible.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.ownKeys.string.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.ownKeys.symbol.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Reflect.preventExtensions.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.setPrototypeOf.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/Reflect.set.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/RegExp.Symbol.species.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/RegExp.prototype.Symbol.match.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/RegExp.prototype.Symbol.replace.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/RegExp.prototype.Symbol.search.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/RegExp.prototype.Symbol.split.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/RegExp.prototype.flags.js: OK
+kangax-es6/Set.Symbol.species.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.constructor-accepts-null.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.constructor-arguments.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.constructor-invokes-add.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.constructor-requires-new.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.iterator-closing.js: failed
+kangax-es6/Set.iterator-prototype-chain.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype-not-instance.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.Symbol.iterator.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.add-returns-this.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.clear.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.delete.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.entries.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.forEach.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.keys.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.size.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.prototype.values.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/Set.zero-key.js: [Error] [object Object], 'Set' 未定义
+kangax-es6/String.fromCodePoint.js: OK
+kangax-es6/String.iterator-prototype-chain.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/String.prototype.Symbol.iterator.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/String.prototype.codePointAt.js: OK
+kangax-es6/String.prototype.endsWith.js: OK
+kangax-es6/String.prototype.endsWith.throws-regex.js: OK
+kangax-es6/String.prototype.includes.js: OK
+kangax-es6/String.prototype.normalize.js: OK
+kangax-es6/String.prototype.repeat.js: OK
+kangax-es6/String.prototype.startsWith.js: OK
+kangax-es6/String.prototype.startsWith.throws-regex.js: OK
+kangax-es6/String.raw.js: OK
+kangax-es6/Symbol.JSON.stringify.object.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.JSON.stringify.primitive.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.Object.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.String.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.defineProperty.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.global-registry.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.hidden-keys.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.no-coerce.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.no-new.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.prototype.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/Symbol.typeof.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/WeakMap.accept-primitives.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.constructor-accepts-null.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.constructor-arguments.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.constructor-invokes-set.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.constructor-requires-new.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.frozen-keys.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.no-clear.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.prototype-not-instance.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.prototype.delete.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakMap.prototype.set-returns-this.js: [Error] [object Object], 'WeakMap' 未定义
+kangax-es6/WeakSet.accept-primitives.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.constructor-accepts-null.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.constructor-arguments.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.constructor-invokes-add.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.constructor-requires-new.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.no-clear.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.prototype-not-instance.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.prototype.add-returns-this.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/WeakSet.prototype.delete.js: [Error] [object Object], 'WeakSet' 未定义
+kangax-es6/annex-b.RegExp.prototype.compile.js: OK
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
+kangax-es6/annex-b.String.prototype.html.existence.js: OK
+kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
+kangax-es6/annex-b.function.hoisted-block-level.js: [Error] [object Object], 'f' 未定义
+kangax-es6/annex-b.function.if-statement.js: OK
+kangax-es6/annex-b.function.labeled.js: [Error] [object Object], 'foo' 未定义
+kangax-es6/annex-b.html-comments.js: OK
+kangax-es6/annex-b.regex.backreferences-octal.js: OK
+kangax-es6/annex-b.regex.hyphens.js: OK
+kangax-es6/annex-b.regex.incomplete-patterns.js: OK
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
+kangax-es6/annex-b.regex.octal-escapes.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: OK
+kangax-es6/annex-b.__proto__.literals.js: OK
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: OK
+kangax-es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: Unexpected token (14:13)
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: Unexpected token (13:22)
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: Unexpected token (14:23)
+kangax-es6/arrow.0-params.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/arrow.1-param.js: SyntaxError: Unexpected token (10:13)
+kangax-es6/arrow.5-param.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/bramblex:801:24)
+kangax-es6/arrow.bind.js: SyntaxError: Unexpected token (10:50)
+kangax-es6/arrow.lexical-arguments.js: SyntaxError: Unexpected token (10:34)
+kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: The keyword 'class' is reserved (12:2)
+kangax-es6/arrow.lexical-super.methods.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/arrow.lexical-this.js: SyntaxError: Unexpected token (10:50)
+kangax-es6/arrow.new-target.js: SyntaxError: Unexpected token (11:14)
+kangax-es6/arrow.no-line-break.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/arrow.no-prototype.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/arrow.precedence.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/arrow.this-call-apply.js: SyntaxError: Unexpected token (10:48)
+kangax-es6/class.accessor-properties.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.anonymous.js: SyntaxError: The keyword 'class' is reserved (10:16)
+kangax-es6/class.block-scoped.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.computed-accessor-properties.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.computed-names-tdz.js: SyntaxError: The keyword 'class' is reserved (11:12)
+kangax-es6/class.computed-prototype-methods.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.computed-static-accessor-properties.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.computed-static-methods.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.constructor-requires-new.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.constructor.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.expression.js: SyntaxError: The keyword 'class' is reserved (10:16)
+kangax-es6/class.extends-expressions.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.extends-null.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.extends.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.implicit-strict.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.lexical-name.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.methods-not-enumerable.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.new-target.js: SyntaxError: Unexpected token (12:16)
+kangax-es6/class.optional-semicolons.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.prototype-methods.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.statement.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.static-accessor-properties.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/class.static-methods.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/class.string-keyed-methods.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/const.basic.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es6/const.block-scoped.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es6/const.for-in.js: SyntaxError: The keyword 'const' is reserved (11:6)
+kangax-es6/const.for-loop.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es6/const.for-of.js: SyntaxError: The keyword 'const' is reserved (11:6)
+kangax-es6/const.no-redefine.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es6/const.no-statement.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es6/const.shadow.js: SyntaxError: The keyword 'const' is reserved (11:8)
+kangax-es6/const.strict.basic.js: SyntaxError: The keyword 'const' is reserved (11:2)
+kangax-es6/const.strict.block-scoped.js: SyntaxError: The keyword 'const' is reserved (11:2)
+kangax-es6/const.strict.for-in.js: SyntaxError: The keyword 'const' is reserved (12:6)
+kangax-es6/const.strict.for-loop.js: SyntaxError: The keyword 'const' is reserved (11:2)
+kangax-es6/const.strict.for-of.js: SyntaxError: The keyword 'const' is reserved (12:6)
+kangax-es6/const.strict.no-redefine.js: SyntaxError: The keyword 'const' is reserved (11:2)
+kangax-es6/const.strict.no-statement.js: SyntaxError: The keyword 'const' is reserved (11:2)
+kangax-es6/const.strict.shadow.js: SyntaxError: The keyword 'const' is reserved (12:8)
+kangax-es6/const.strict.tdz.js: SyntaxError: The keyword 'const' is reserved (13:2)
+kangax-es6/const.tdz.js: SyntaxError: The keyword 'const' is reserved (12:2)
+kangax-es6/default-params.arguments.js: SyntaxError: Unexpected token (10:22)
+kangax-es6/default-params.basic.js: SyntaxError: Unexpected token (10:22)
+kangax-es6/default-params.explicit-undefined.js: SyntaxError: Unexpected token (10:22)
+kangax-es6/default-params.new-function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/default-params.refer-previous.js: SyntaxError: Unexpected token (10:25)
+kangax-es6/default-params.separate-scope.js: SyntaxError: Unexpected token (10:20)
+kangax-es6/default-params.tdz.js: SyntaxError: Unexpected token (10:21)
+kangax-es6/destructuring-assign.array.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.astral-string.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.chained-iterable.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.chained-object.js: SyntaxError: Unexpected token (11:5)
+kangax-es6/destructuring-assign.computed-properties.js: SyntaxError: Unexpected token (11:5)
+kangax-es6/destructuring-assign.defaults.js: SyntaxError: Unexpected token (11:6)
+kangax-es6/destructuring-assign.empty-patterns.js: SyntaxError: Assigning to rvalue (10:2)
+kangax-es6/destructuring-assign.generator.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.iterable-expression.js: SyntaxError: Assigning to rvalue (11:10)
+kangax-es6/destructuring-assign.iterable-instance.js: SyntaxError: Assigning to rvalue (35:2)
+kangax-es6/destructuring-assign.iterable.js: SyntaxError: Assigning to rvalue (35:2)
+kangax-es6/destructuring-assign.iterator-closing.js: SyntaxError: Assigning to rvalue (39:2)
+kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: Unexpected token (11:10)
+kangax-es6/destructuring-assign.nested.js: SyntaxError: Unexpected token (11:13)
+kangax-es6/destructuring-assign.object-expression.js: SyntaxError: Unexpected token (11:12)
+kangax-es6/destructuring-assign.object-primitives.js: SyntaxError: Unexpected token (11:11)
+kangax-es6/destructuring-assign.object.js: SyntaxError: Unexpected token (11:5)
+kangax-es6/destructuring-assign.parenthesised-error.js: SyntaxError: Unexpected token (11:5)
+kangax-es6/destructuring-assign.rest.js: SyntaxError: Unexpected token (11:6)
+kangax-es6/destructuring-assign.sparse-array.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.string.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.throws-null-undefined.js: SyntaxError: Unexpected token (12:7)
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: Assigning to rvalue (11:2)
+kangax-es6/destructuring-assign.trailing-comma-object.js: SyntaxError: Unexpected token (11:5)
+kangax-es6/destructuring-decl.array.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.astral-string.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.catch.js: SyntaxError: Unexpected token (12:10)
+kangax-es6/destructuring-decl.computed-properties.js: SyntaxError: Unexpected token (11:6)
+kangax-es6/destructuring-decl.defaults-tdz.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.defaults.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.for-in.js: SyntaxError: Unexpected token (10:10)
+kangax-es6/destructuring-decl.for-of.js: SyntaxError: Unexpected token (10:10)
+kangax-es6/destructuring-decl.generator.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.iterable-instance.js: SyntaxError: Unexpected token (34:6)
+kangax-es6/destructuring-decl.iterable.js: SyntaxError: Unexpected token (34:6)
+kangax-es6/destructuring-decl.iterator-closing.js: SyntaxError: Unexpected token (38:6)
+kangax-es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.nested.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.object-primitives.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.object.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.rest.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.sparse-array.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.string.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Unexpected token (11:8)
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/bramblex:801:24)
+kangax-es6/destructuring-params.arguments.js: SyntaxError: Unexpected token (10:19)
+kangax-es6/destructuring-params.array.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.astral-string.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.computed-properties.js: SyntaxError: Unexpected token (11:18)
+kangax-es6/destructuring-params.defaults-new-function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Unexpected token (10:19)
+kangax-es6/destructuring-params.defaults.js: SyntaxError: Unexpected token (10:19)
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
+kangax-es6/destructuring-params.empty-patterns.js: SyntaxError: Unexpected token (10:19)
+kangax-es6/destructuring-params.generator.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.iterable-instance.js: SyntaxError: Unexpected token (34:18)
+kangax-es6/destructuring-params.iterable.js: SyntaxError: Unexpected token (34:18)
+kangax-es6/destructuring-params.iterator-closing.js: SyntaxError: Unexpected token (38:12)
+kangax-es6/destructuring-params.length.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.nested.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.new-function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/destructuring-params.object-primitives.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.object.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.rest.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Unexpected token (10:17)
+kangax-es6/destructuring-params.sparse-array.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.string.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.throws-null-undefined.js: SyntaxError: Unexpected token (11:14)
+kangax-es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/destructuring-params.trailing-comma-object.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/for-of.array.js: SyntaxError: Unexpected token (11:16)
+kangax-es6/for-of.astral-string.js: SyntaxError: Unexpected token (11:16)
+kangax-es6/for-of.generator.js: SyntaxError: Unexpected token (11:26)
+kangax-es6/for-of.iterable-instance.js: SyntaxError: Unexpected token (36:16)
+kangax-es6/for-of.iterable.js: SyntaxError: Unexpected token (36:16)
+kangax-es6/for-of.iterator-closing-break.js: SyntaxError: Unexpected token (37:14)
+kangax-es6/for-of.iterator-closing-throw.js: SyntaxError: Unexpected token (38:16)
+kangax-es6/for-of.sparse-array.js: SyntaxError: Unexpected token (12:16)
+kangax-es6/for-of.string.js: SyntaxError: Unexpected token (11:16)
+kangax-es6/function.block-level-decl.js: [Error] [object Object], 'f' 未定义
+kangax-es6/generators.basic.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.constructor.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.expression.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.no-new-this.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.prototype-chain.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.prototype.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.return.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.sending.js: SyntaxError: Unexpected token (11:11)
+kangax-es6/generators.shorthand.class.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/generators.shorthand.computed.class.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/generators.shorthand.computed.js: SyntaxError: Unexpected token (12:4)
+kangax-es6/generators.shorthand.js: SyntaxError: Unexpected token (11:4)
+kangax-es6/generators.shorthand.no-constructor.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/generators.shorthand.string-keyed.js: SyntaxError: Unexpected token (11:4)
+kangax-es6/generators.this.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/generators.throw.js: SyntaxError: Unexpected token (11:11)
+kangax-es6/generators.yield-precedence.js: SyntaxError: Unexpected token (11:11)
+kangax-es6/generators.yield-star.array.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.yield-star.astral-string.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.yield-star.generator.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.yield-star.iterable-instance.js: SyntaxError: Unexpected token (33:27)
+kangax-es6/generators.yield-star.iterable.js: SyntaxError: Unexpected token (34:27)
+kangax-es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: Unexpected token (42:21)
+kangax-es6/generators.yield-star.iterator-closing.js: SyntaxError: Unexpected token (40:21)
+kangax-es6/generators.yield-star.non-iterable-error.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.yield-star.sparse-array.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/generators.yield-star.string.js: SyntaxError: Unexpected token (10:27)
+kangax-es6/let.basic.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/let.block-scoped.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/let.for-loop.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/let.no-statement.js: SyntaxError: Unexpected token (10:6)
+kangax-es6/let.shadow.js: SyntaxError: Unexpected token (11:12)
+kangax-es6/let.strict.basic.js: SyntaxError: The keyword 'let' is reserved (11:2)
+kangax-es6/let.strict.block-scoped.js: SyntaxError: The keyword 'let' is reserved (11:2)
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: SyntaxError: The keyword 'let' is reserved (11:2)
+kangax-es6/let.strict.for-loop.js: SyntaxError: The keyword 'let' is reserved (11:2)
+kangax-es6/let.strict.no-statement.js: SyntaxError: The keyword 'let' is reserved (11:2)
+kangax-es6/let.strict.shadow.js: SyntaxError: The keyword 'let' is reserved (12:8)
+kangax-es6/let.strict.tdz.js: SyntaxError: The keyword 'let' is reserved (13:2)
+kangax-es6/let.tdz.js: SyntaxError: Unexpected token (12:6)
+kangax-es6/literals.binary.Number.js: OK
+kangax-es6/literals.binary.js: SyntaxError: Identifier directly after number (9:10)
+kangax-es6/literals.object.computed-accessors.js: SyntaxError: Unexpected token (13:12)
+kangax-es6/literals.object.computed-properties.js: SyntaxError: Unexpected token (11:12)
+kangax-es6/literals.object.computed-shorthand-methods.js: SyntaxError: Unexpected token (11:12)
+kangax-es6/literals.object.shorthand-methods.js: SyntaxError: Unexpected token (10:13)
+kangax-es6/literals.object.shorthand-properties.js: SyntaxError: Unexpected token (10:26)
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: Unexpected token (10:21)
+kangax-es6/literals.octal.Number.js: OK
+kangax-es6/literals.octal.js: SyntaxError: Identifier directly after number (9:10)
+kangax-es6/misc.Invalid-Date.js: OK
+kangax-es6/misc.Object.freeze.primitives.js: OK
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: OK
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: OK
+kangax-es6/misc.Object.isExtensible.primitives.js: OK
+kangax-es6/misc.Object.isFrozen.primitives.js: OK
+kangax-es6/misc.Object.isSealed.primitives.js: OK
+kangax-es6/misc.Object.keys.primitives.js: OK
+kangax-es6/misc.Object.preventExtensions.primitives.js: OK
+kangax-es6/misc.Object.seal.primitives.js: OK
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.defineProperty.Set.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.concat.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.from.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.iteration.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.pop.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.reverse.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.shift.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.splice.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Array.toString.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: The keyword 'class' is reserved (13:2)
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Date.toJSON.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Error.toString.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Function.bind.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.HasBinding.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: Unexpected token (22:12)
+kangax-es6/misc.Proxy.get.JSON.stringify.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Object.assign.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.Promise.resolve.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: failed
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/misc.Proxy.get.RegExp.flags.js: failed
+kangax-es6/misc.Proxy.get.RegExp.test.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.RegExp.toString.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.String.match.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.Proxy.get.String.raw.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.String.replace.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.Proxy.get.String.search.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.Proxy.get.String.split.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.Proxy.get.ToPrimitive.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.get.instanceof.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.fill.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.from.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.of.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.pop.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.push.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.reverse.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.shift.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.splice.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Array.unshift.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.Proxy.set.Object.assign.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es6/misc.RegExp-alter-flags.js: failed
+kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
+kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.bound-function-prototype.arrow.js: SyntaxError: Unexpected token (10:13)
+kangax-es6/misc.bound-function-prototype.class.js: SyntaxError: The keyword 'class' is reserved (10:4)
+kangax-es6/misc.bound-function-prototype.function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/misc.bound-function-prototype.generator.js: SyntaxError: Unexpected token (10:20)
+kangax-es6/misc.bound-function-prototype.subclass.js: SyntaxError: The keyword 'class' is reserved (10:4)
+kangax-es6/misc.do-while-no-semicolon.js: SyntaxError: Unexpected token (9:22)
+kangax-es6/misc.duplicate-properties-strict.js: SyntaxError: Redefinition of property (10:44)
+kangax-es6/misc.for-in-no-assignment-strict.js: OK
+kangax-es6/misc.function-length-configurable.js: OK
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: OK
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: SyntaxError: Unexpected character '𐋀' (9:6)
+kangax-es6/misc.property-order.JSON.parse.js: OK
+kangax-es6/misc.property-order.JSON.stringify.js: OK
+kangax-es6/misc.property-order.Object.assign.js: OK
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: OK
+kangax-es6/misc.property-order.Object.keys.js: failed
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: [Error] [object Object], 'Reflect' 未定义
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/misc.prototypes-not-instances.js: OK
+kangax-es6/new-target.assignment-error.js: SyntaxError: Unexpected token (12:17)
+kangax-es6/new-target.constructor.js: SyntaxError: Unexpected token (12:17)
+kangax-es6/regex.flags.u.case-folding.js: SyntaxError: Invalid regular expression flag (10:20)
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: Invalid regular expression flag (10:21)
+kangax-es6/regex.flags.u.js: SyntaxError: Invalid regular expression flag (10:21)
+kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: Invalid regular expression flag (10:22)
+kangax-es6/regex.flags.y.js: OK
+kangax-es6/regex.flags.y.lastIndex.js: OK
+kangax-es6/rest-params.arguments.js: SyntaxError: Unexpected token (10:25)
+kangax-es6/rest-params.basic.js: SyntaxError: Unexpected token (10:25)
+kangax-es6/rest-params.length.js: SyntaxError: Unexpected token (10:21)
+kangax-es6/rest-params.new-function.js: [Error] [object Object], 'Function' 未定义
+kangax-es6/rest-params.no-setter.js: SyntaxError: Unexpected token (10:20)
+kangax-es6/spread.array-call.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/spread.array-literal.js: SyntaxError: Unexpected token (10:10)
+kangax-es6/spread.astral-call.js: SyntaxError: Unexpected token (10:15)
+kangax-es6/spread.astral-literal.js: SyntaxError: Unexpected token (10:10)
+kangax-es6/spread.generator-call.js: SyntaxError: Unexpected token (10:26)
+kangax-es6/spread.generator-literal.js: SyntaxError: Unexpected token (10:26)
+kangax-es6/spread.iterable-call.js: SyntaxError: Unexpected token (35:18)
+kangax-es6/spread.iterable-instance-call.js: SyntaxError: Unexpected token (35:18)
+kangax-es6/spread.iterable-instance-literal.js: SyntaxError: Unexpected token (35:15)
+kangax-es6/spread.iterable-literal.js: SyntaxError: Unexpected token (35:15)
+kangax-es6/spread.non-iterable-error.js: SyntaxError: Unexpected token (11:13)
+kangax-es6/spread.sparse-call.js: SyntaxError: Unexpected token (10:16)
+kangax-es6/spread.sparse-literal.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/spread.string-call.js: SyntaxError: Unexpected token (10:18)
+kangax-es6/spread.string-literal.js: SyntaxError: Unexpected token (10:15)
+kangax-es6/subclassing.Array.concat.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.filter.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.from.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.isArray.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.length-access.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.length-set.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.map.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.of.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.prototype-chain.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.slice.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Array.splice.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.call.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.new.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.prototype-chain.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.prototype.apply.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.prototype.bind.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Function.prototype.call.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Promise.all.js: SyntaxError: The keyword 'class' is reserved (44:2)
+kangax-es6/subclassing.Promise.js: SyntaxError: The keyword 'class' is reserved (44:2)
+kangax-es6/subclassing.Promise.prototype-chain.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.Promise.race.js: SyntaxError: The keyword 'class' is reserved (44:2)
+kangax-es6/subclassing.RegExp.exec.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.RegExp.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/subclassing.RegExp.prototype-chain.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.RegExp.test.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.misc.Boolean.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.misc.Error.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.misc.Map.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/subclassing.misc.Number.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/subclassing.misc.Set.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/subclassing.misc.String.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es6/super.correct-constructor.js: SyntaxError: The keyword 'class' is reserved (12:2)
+kangax-es6/super.expression.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/super.method-calls.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/super.new-target-binding.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/super.property-access.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/super.statement.js: SyntaxError: The keyword 'class' is reserved (11:2)
+kangax-es6/super.static-binding.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/super.this-binding.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es6/tail-calls.direct.js: [Error] [object Object], 'f' 未定义
+kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
+kangax-es6/template.basic.js: SyntaxError: Unexpected character '`' (11:7)
+kangax-es6/template.caching.js: SyntaxError: Unexpected character '`' (17:18)
+kangax-es6/template.escape-sequences.js: SyntaxError: Unexpected character '`' (13:19)
+kangax-es6/template.frozen-array.js: SyntaxError: Unexpected character '`' (12:5)
+kangax-es6/template.line-break.js: [Error] [object Object], 'eval' 未定义
+kangax-es6/template.permanent-caching.js: SyntaxError: Unexpected character '`' (14:18)
+kangax-es6/template.tagged.js: SyntaxError: Unexpected character '`' (21:12)
+kangax-es6/template.toString.js: SyntaxError: Unexpected character '`' (14:9)
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Float32.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Float64.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Int8.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Int16.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Int32.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Uint8.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Uint16.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.DataView.Uint32.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Float32Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Float64Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Int8Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Int16Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Int32Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Symbol.species.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.Uint8Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Uint8ClampedArray.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Uint16Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.Uint32Array.js: [Error] [object Object], 'ArrayBuffer' 未定义
+kangax-es6/typed-arrays.constructor-iterables.js: failed
+kangax-es6/typed-arrays.constructor-requires-new.js: failed
+kangax-es6/typed-arrays.correct-prototype-chains.js: SyntaxError: The keyword 'const' is reserved (32:4)
+kangax-es6/typed-arrays.from.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.of.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.copyWithin.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.entries.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.every.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.fill.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.filter.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.findIndex.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.find.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.forEach.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.indexOf.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.join.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.keys.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.map.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.reduceRight.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.reduce.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.reverse.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.slice.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.some.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.sort.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.subarray.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/typed-arrays.prototype.values.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es6/unicode-escapes.identifier.js: SyntaxError: Unexpected token (9:6)
+kangax-es6/unicode-escapes.property-access.js: SyntaxError: Unexpected token (10:11)
+kangax-es6/unicode-escapes.property-key.js: SyntaxError: Unexpected token (9:12)
+kangax-es6/unicode-escapes.string.js: SyntaxError: Unexpected token (9:9)
+kangax-es6/well-known.hasInstance.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.iterator.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.match.RegExp-constructor.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.match.String.endsWith.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.match.String.includes.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.match.String.startsWith.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.match.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.replace.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.search.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Array.concat.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Array.filter.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Array.map.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Array.slice.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Array.splice.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.Promise.then.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.RegExp.split.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.species.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.split.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.toPrimitive.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.toStringTag.existing-builtins.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.toStringTag.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.toStringTag.misc-builtins.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es6/well-known.toStringTag.new-builtins.js: SyntaxError: Unexpected token (23:37)
+kangax-es6/well-known.unscopables.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2016/Array.prototype.includes.generic.js: OK
+kangax-es2016/Array.prototype.includes.js: OK
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: Cannot read properties of null (reading 'type')
+kangax-es2016/Array.prototype.includes.typed-array.js: [Error] [object Object], 'Int8Array' 未定义
+kangax-es2016/exponentiation.assignment.js: SyntaxError: Unexpected token (10:16)
+kangax-es2016/exponentiation.basic.js: SyntaxError: Unexpected token (10:12)
+kangax-es2016/exponentiation.unary-negation-error.js: SyntaxError: Unexpected token (10:9)
+kangax-es2016/misc.Proxy-Array-includes.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2016/misc.Proxy-enumerate-removed.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2016/misc.generator-no-new.js: SyntaxError: Unexpected token (10:11)
+kangax-es2016/misc.generator-throw-inner.js: SyntaxError: Unexpected token (10:11)
+kangax-es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Unexpected token (10:6)
+kangax-es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Unexpected token (9:19)
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: Unexpected token (9:15)
+kangax-es2017/Atomics.add.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.and.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.compareExchange.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.exchange.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.isLockFree.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.load.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.notify.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.or.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.store.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.sub.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.wait.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Atomics.xor.js: [Error] [object Object], 'Atomics' 未定义
+kangax-es2017/Object.entries.js: OK
+kangax-es2017/Object.getOwnPropertyDescriptors.js: OK
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2017/Object.values.js: OK
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: [Error] [object Object], 'SharedArrayBuffer' 未定义
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: [Error] [object Object], 'SharedArrayBuffer' 未定义
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: [Error] [object Object], 'SharedArrayBuffer' 未定义
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: [Error] [object Object], 'SharedArrayBuffer' 未定义
+kangax-es2017/String.prototype.padEnd.js: OK
+kangax-es2017/String.prototype.padStart.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: [Error] [object Object], '__defineGetter__' 未定义
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: [Error] [object Object], '__defineSetter__' 未定义
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: [Error] [object Object], '__lookupGetter__' 未定义
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: [Error] [object Object], '__lookupSetter__' 未定义
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: OK
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: [Error] [object Object], 'i' 未定义
+kangax-es2017/async.Symbol.toStringTag.js: SyntaxError: Unexpected token (10:37)
+kangax-es2017/async.arrow-in-class.js: SyntaxError: The keyword 'class' is reserved (48:2)
+kangax-es2017/async.arrow.js: SyntaxError: Assigning to rvalue (45:10)
+kangax-es2017/async.await-non-promise.js: SyntaxError: Unexpected token (45:9)
+kangax-es2017/async.await-rejection.js: SyntaxError: Unexpected token (45:9)
+kangax-es2017/async.await.js: SyntaxError: Unexpected token (45:9)
+kangax-es2017/async.constructor.js: SyntaxError: Unexpected token (45:16)
+kangax-es2017/async.methods-class.js: SyntaxError: The keyword 'class' is reserved (45:2)
+kangax-es2017/async.methods-object.js: SyntaxError: Unexpected token (46:10)
+kangax-es2017/async.must-await-value.js: SyntaxError: Unexpected token (10:8)
+kangax-es2017/async.no-await-in-params.js: SyntaxError: Unexpected token (10:8)
+kangax-es2017/async.no-line-break.js: SyntaxError: Unexpected token (10:8)
+kangax-es2017/async.no-prototype.js: SyntaxError: Unexpected token (10:8)
+kangax-es2017/async.prototype-chain.js: SyntaxError: Unexpected token (10:55)
+kangax-es2017/async.return.js: SyntaxError: Unexpected token (45:8)
+kangax-es2017/async.throw.js: SyntaxError: Unexpected token (45:8)
+kangax-es2017/misc.arguments-caller-removed.js: OK
+kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: Invalid regular expression flag (9:20)
+kangax-es2017/trailing-comma.arguments.js: SyntaxError: Unexpected token (10:24)
+kangax-es2017/trailing-comma.params.js: SyntaxError: Unexpected token (10:34)
+kangax-es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: name is not defined
+kangax-es2018/Promise.prototype.finally.js: ReferenceError: name is not defined
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: name is not defined
+kangax-es2018/async-iterators.for-await-of.js: SyntaxError: Unexpected token (58:9)
+kangax-es2018/async-iterators.generators.js: SyntaxError: Unexpected token (44:8)
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: Unexpected token (11:11)
+kangax-es2018/misc.template-literal-revision.js: SyntaxError: Unexpected character '`' (16:12)
+kangax-es2018/object-rest.js: SyntaxError: Unexpected token (9:6)
+kangax-es2018/object-spread.js: SyntaxError: Unexpected token (10:18)
+kangax-es2018/regex.flags.s.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2018/regex.lookbehind.js: OK
+kangax-es2018/regex.named-capture-groups.js: OK
+kangax-es2018/regex.unicode-property-escapes.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression flag (10:10)
+kangax-es2019/Array.prototype.flatMap.js: OK
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2019/Array.prototype.flat.js: OK
+kangax-es2019/Object.fromEntries.js: [Error] [object Object], 'Map' 未定义
+kangax-es2019/String.prototype.trimEnd.js: OK
+kangax-es2019/String.prototype.trimStart.js: OK
+kangax-es2019/Symbol.prototype.description.empty.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2019/Symbol.prototype.description.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2019/Symbol.prototype.description.undefined.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
+kangax-es2019/annex-b.String.prototype.trimRight.js: OK
+kangax-es2019/misc.Function-toString.Function-constructor.js: [Error] [object Object], 'Function' 未定义
+kangax-es2019/misc.Function-toString.arrows.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.Function-toString.computed-names.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.Function-toString.native-code.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2019/misc.Function-toString.unicode-escapes.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.JSON-stringify-well-formed.js: OK
+kangax-es2019/misc.JSON-superset.line-separator.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: [Error] [object Object], 'eval' 未定义
+kangax-es2019/misc.optional-catch-binding.await.js: SyntaxError: Unexpected token (44:9)
+kangax-es2019/misc.optional-catch-binding.js: SyntaxError: Unexpected token (12:8)
+kangax-es2019/misc.optional-catch-binding.yield.js: SyntaxError: Unexpected token (9:11)
+kangax-es2020/BigInt64Array.js: SyntaxError: Identifier directly after number (12:30)
+kangax-es2020/BigInt.asIntN.js: [Error] [object Object], 'BigInt' 未定义
+kangax-es2020/BigInt.asUintN.js: [Error] [object Object], 'BigInt' 未定义
+kangax-es2020/BigInt.constructor.js: SyntaxError: Identifier directly after number (10:26)
+kangax-es2020/BigInt.js: SyntaxError: Identifier directly after number (10:11)
+kangax-es2020/BigUint64Array.js: SyntaxError: Identifier directly after number (12:31)
+kangax-es2020/DataView.prototype.getBigInt64.js: SyntaxError: Identifier directly after number (12:23)
+kangax-es2020/DataView.prototype.getBigUint64.js: SyntaxError: Identifier directly after number (12:24)
+kangax-es2020/Promise.allSettled.js: SyntaxError: Unexpected token (49:14)
+kangax-es2020/String.prototype.matchAll.js: [Error] [object Object], 'Symbol' 未定义
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: SyntaxError: Unexpected token (10:16)
+kangax-es2020/optional-chaining.bracket.js: SyntaxError: Unexpected token (12:13)
+kangax-es2020/optional-chaining.function-call.js: SyntaxError: Unexpected token (14:17)
+kangax-es2020/optional-chaining.method-call.js: SyntaxError: Unexpected token (12:13)
+kangax-es2020/optional-chaining.property.js: SyntaxError: Unexpected token (12:13)
+kangax-es2020/optional-chaining.spread-params.js: SyntaxError: Unexpected token (14:12)
+kangax-es2021/FinalizationRegistry.js: [Error] [object Object], 'FinalizationRegistry' 未定义
+kangax-es2021/Promise.any.AggregateError.js: SyntaxError: Unexpected token (49:19)
+kangax-es2021/Promise.any.fulfillment.js: SyntaxError: Unexpected token (49:14)
+kangax-es2021/String.prototype.replaceAll.js: OK
+kangax-es2021/WeakRef.js: [Error] [object Object], 'WeakRef' 未定义
+kangax-es2021/logical-assignment.and.js: SyntaxError: Unexpected token (10:6)
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/logical-assignment.and.short-circuit.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/logical-assignment.nullish.js: SyntaxError: Unexpected token (10:6)
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/logical-assignment.or.js: SyntaxError: Unexpected token (10:6)
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/logical-assignment.or.short-circuit.js: SyntaxError: Unexpected token (9:6)
+kangax-es2021/numeric-separators.js: SyntaxError: Identifier directly after number (9:10)
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: [Error] [object Object], 'AggregateError' 未定义
+kangax-es2022/Error.cause.AggregateError.js: [Error] [object Object], 'AggregateError' 未定义
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: OK
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: OK
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: OK
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: OK
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: OK
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: OK
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: OK
+kangax-es2022/Object.hasOwn.ToObject-first.js: OK
+kangax-es2022/Object.hasOwn.js: OK
+kangax-es2022/at-method.Array.js: OK
+kangax-es2022/at-method.String.js: OK
+kangax-es2022/at-method.TypedArray.js: failed
+kangax-es2022/class-fields.computed-instance.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-fields.computed-static.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-fields.instance.parent-scope.js: SyntaxError: Unexpected token (10:8)
+kangax-es2022/class-fields.private-instance.initializers.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-fields.private-instance.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-fields.private-instance.optional-access.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-fields.private-static.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-fields.public-instance.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-fields.public-static.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-fields.static.define.js: SyntaxError: The keyword 'class' is reserved (9:10)
+kangax-es2022/class-methods.private-accessor.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-methods.private-instance.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-methods.private-static-accessor.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2022/class-methods.private-static.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/class-static-init-blocks.js: SyntaxError: Unexpected token (10:6)
+kangax-es2022/ergonomic-brand-checks.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-es2022/regex.flags.d.constructor.js: OK
+kangax-es2022/regex.flags.d.shows-in-flags.js: failed
+kangax-es2023/Array.prototype.findLastIndex.js: OK
+kangax-es2023/Array.prototype.findLast.js: OK
+kangax-es2023/Array.prototype.toReversed.js: OK
+kangax-es2023/Array.prototype.toSorted.js: OK
+kangax-es2023/Array.prototype.toSpliced.js: OK
+kangax-es2023/Array.prototype.with.js: OK
+kangax-es2023/TypedArray.prototype.toReversed.js: [Error] [object Object], 'Uint8Array' 未定义
+kangax-es2023/TypedArray.prototype.toSorted.js: [Error] [object Object], 'Uint8Array' 未定义
+kangax-es2023/TypedArray.prototype.with.js: [Error] [object Object], 'Uint8Array' 未定义
+kangax-es2023/hashbang.js: SyntaxError: Unexpected character '#' (1:0)
+kangax-es2024/ArrayBuffer.prototype.detached.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2024/Map.groupBy.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2024/Object.groupBy.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2024/Promise.withResolvers.js: OK
+kangax-es2024/regex.flags.v.constructor.js: OK
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression flag (9:10)
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression flag (9:10)
+kangax-es2024/regex.flags.v.shows-in-flags.js: [Error] [object Object], 'Proxy' 未定义
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression flag (9:10)
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression flag (9:10)
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression flag (9:10)
+kangax-es2025/Iterator.extends.js: SyntaxError: The keyword 'class' is reserved (10:2)
+kangax-es2025/Iterator.from.iterable.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2025/Iterator.from.iterator.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2025/Iterator.instanceof.js: [Error] [object Object], 'Iterator' 未定义
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: [Error] [object Object], 'Iterator' 未定义
+kangax-es2025/Iterator.prototype.drop.js: OK
+kangax-es2025/Iterator.prototype.every.js: SyntaxError: Unexpected token (10:38)
+kangax-es2025/Iterator.prototype.filter.js: SyntaxError: Unexpected token (10:50)
+kangax-es2025/Iterator.prototype.find.js: SyntaxError: Unexpected token (10:37)
+kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: Unexpected token (10:51)
+kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: Unexpected token (10:6)
+kangax-es2025/Iterator.prototype.map.js: SyntaxError: Unexpected token (10:47)
+kangax-es2025/Iterator.prototype.reduce.js: SyntaxError: Parenthesized pattern (10:35) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/bramblex:801:24)
+kangax-es2025/Iterator.prototype.some.js: SyntaxError: Unexpected token (10:37)
+kangax-es2025/Iterator.prototype.take.js: OK
+kangax-es2025/Iterator.prototype.toArray.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-es2025/Promise.try.js: ReferenceError: name is not defined
+kangax-es2025/RegExp.escape.js: OK
+kangax-es2025/Set.prototype.difference.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.intersection.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.isDisjointFrom.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.isSubsetOf.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.isSupersetOf.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.symmetricDifference.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/Set.prototype.union.js: [Error] [object Object], 'Set' 未定义
+kangax-es2025/regex.duplicate-named-groups.js: OK
+kangax-es2025/regex.pattern-modifiers.i.js: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-es2025/regex.pattern-modifiers.m.js: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-es2025/regex.pattern-modifiers.s.js: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.Collator.new-instances.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.Collator.prototype.compare.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.Collator.valid-tags.js: failed
+kangax-intl/Intl.Collator.without-new.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.DateTimeFormat.new-instances.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.NumberFormat.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.NumberFormat.new-instances.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.NumberFormat.valid-tags.js: failed
+kangax-intl/Intl.NumberFormat.without-new.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: [Error] [object Object], 'Intl' 未定义
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: SyntaxError: Unexpected token (10:35)
+kangax-next/AsyncDisposableStack.js: SyntaxError: Unexpected token (47:43)
+kangax-next/AsyncIterator.extends.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-next/AsyncIterator.from.async-iterable.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterable.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.from.iterator.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.instanceof.js: SyntaxError: Unexpected token (9:16)
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: [Error] [object Object], 'AsyncIterator' 未定义
+kangax-next/AsyncIterator.prototype.drop.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.every.js: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.filter.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.find.js: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.flatMap.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.forEach.js: SyntaxError: Unexpected token (44:6)
+kangax-next/AsyncIterator.prototype.map.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.reduce.js: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.some.js: SyntaxError: Unexpected token (44:9)
+kangax-next/AsyncIterator.prototype.take.js: SyntaxError: Unexpected token (44:8)
+kangax-next/AsyncIterator.prototype.toArray.js: SyntaxError: Unexpected token (44:9)
+kangax-next/DisposableStack.js: SyntaxError: Unexpected token (12:37)
+kangax-next/Map.prototype.upsert.js: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-next/RegExp.1-9.js: OK
+kangax-next/RegExp.lastMatch.js: OK
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: SyntaxError: Unexpected token (13:10)
+kangax-next/Uint8Array.fromBase64.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.fromHex.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.setFromBase64.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.setFromHex.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.toBase64.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/Uint8Array.toHex.js: SyntaxError: The keyword 'const' is reserved (10:2)
+kangax-next/WeakMap.prototype.upsert.js: SyntaxError: The keyword 'const' is reserved (9:2)
+kangax-next/await-using.for-of.js: SyntaxError: Unexpected token (46:10)
+kangax-next/await-using.js: SyntaxError: Unexpected token (44:9)
+kangax-next/class-decorators.js: SyntaxError: The keyword 'class' is reserved (9:2)
+kangax-next/function.sent.js: SyntaxError: Unexpected token (10:10)
+kangax-next/throw-expr.arrow.js: SyntaxError: Unexpected token (9:12)
+kangax-next/throw-expr.conditional.js: SyntaxError: Unexpected token (9:14)
+kangax-next/throw-expr.logical.js: SyntaxError: Unexpected token (11:14)
+kangax-next/throw-expr.param-init.js: SyntaxError: Unexpected token (9:19)
+kangax-next/using.for-of.js: SyntaxError: Unexpected token (11:4)
+kangax-next/using.js: SyntaxError: Unexpected token (11:4)
