@@ -57,7 +57,7 @@ qjs >
 ## Cross-arch builds
 
 Set `DOCKER_ARCH` environment variable to `amd64` or `arm64` explicitly before make.
-Other architectures supported by debian/docker/qemu may work too, but not tested/polished.
+`riscv64`, `ppc64le` and [other](https://hub.docker.com/_/debian/tags) architectures supported by debian+docker+qemu should work too in principle, but are not fully tested.
 
 It should work out of the box with Apple's containerization; on Linux, podman needs extra qemu binaries.
 
