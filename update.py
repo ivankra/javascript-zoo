@@ -341,6 +341,34 @@ def extract_first_url(text: str) -> str:
         return m[0]
     return text.strip()
 
+def extract_abbr_title(text: str) -> str:
+    m = re.search(r'''<abbr\b[^>]*\btitle=(["'])(.*?)\1''', text)
+    if not m:
+        return ''
+    return html.unescape(m[2]).strip()
+
+def extract_loc_command(text: str) -> str:
+    # New compact format: <abbr title="cloc ...">12345</abbr>
+    cmd = extract_abbr_title(text)
+    if cmd:
+        return cmd
+    # Markdown link title format: [12345](# "cloc ...")
+    m = re.search(r'''\[[^\]]+\]\(\s*[^ )]+(?:\s+"([^"]*)")\s*\)''', text)
+    if m:
+        return html.unescape(m[1]).strip()
+    # Legacy format: 12345 (`cloc ...`) or variants with a backticked command.
+    m = re.search(r'`([^`]+)`', text)
+    if m:
+        return m[1].strip()
+    return ''
+
+def extract_loc_value(text: str) -> str:
+    # Markdown link title format: [12345](# "cloc ...")
+    m = re.search(r'''\[([0-9][0-9,]*)\]\(\s*[^ )]+(?:\s+"[^"]*")?\s*\)''', text)
+    if m:
+        return m[1]
+    return strip_html(text)
+
 def strip_shields(text):
     return re.sub(r'''(<(?:div|span) class="shields">.*?</(?:div|span)>)''', '', text).strip()
 
@@ -422,9 +450,8 @@ METADATA_MAP = {
     'Repository': MDMapping('repository', simplify=[strip_html, extract_first_url, strip_brackets], drop_detailed=True),
     'Branch': MDMapping('branch', simplify=[strip_html, strip_markdown_links, strip_brackets], drop_detailed=True),
     'GitHub': MDMapping('github', simplify=[strip_html, extract_first_url, strip_brackets]),
-    'Source code': MDMapping('sources', simplify=[strip_html, extract_first_url, strip_brackets]),
-    'Sources': MDMapping('sources', simplify=[strip_html, extract_first_url, strip_brackets]),
-    'LOC': MDMapping('loc', simplify=[strip_brackets2, maybe_parse_int]),
+    'Sources': MDMapping('sources'),
+    'LOC': MDMapping('loc', simplify=[extract_loc_value, strip_brackets2, maybe_parse_int], drop_detailed=True),
     'Language': MDMapping('language', simplify=[strip_brackets]),
     'License': MDMapping('license', simplify=[strip_brackets, simplify_license]),
 
@@ -581,6 +608,10 @@ def process_md(row, kind, filename, args):
         if item.json_key is None or item.detailed_value is None: continue
         assert item.simplified_value is not None
         row[item.json_key] = item.simplified_value
+        if item.json_key == 'loc':
+            loc_command = extract_loc_command(item.detailed_value)
+            if loc_command:
+                row['loc_command'] = loc_command
         if item.simplified_value == item.detailed_value: continue
         if item.mapping and item.mapping.drop_detailed: continue
         row[item.json_key + '_detailed'] = item.detailed_value

@@ -4,7 +4,7 @@ Primitive interpreter for a limited subset of JavaScript.
 
 * Repository:  [gfwilliams/tiny-js](https://github.com/gfwilliams/tiny-js.git) <span class="shields"><img src="https://img.shields.io/github/stars/gfwilliams/tiny-js?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/gfwilliams/tiny-js?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * Branch:      [master](https://github.com/gfwilliams/tiny-js/tree/master)
-* LOC:         2423 (`cloc TinyJS*.{cpp,h}`)
+* LOC:         [2423](# "cloc TinyJS*.{cpp,h}")
 * Language:    C++
 * License:     MIT
 * Standard:    no (can't run ES1)

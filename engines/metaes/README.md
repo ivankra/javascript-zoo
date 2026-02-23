@@ -3,7 +3,7 @@
 Metacircular JavaScript interpreter.
 
 * Repository:       [metaes/metaes](https://github.com/metaes/metaes.git) <span class="shields"><img src="https://img.shields.io/github/stars/metaes/metaes?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/metaes/metaes?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              2833 (`cloc lib`)
+* LOC:              [2833](# "cloc lib")
 * Language:         TypeScript
 * License:          MIT
 * Years:            2015-2022

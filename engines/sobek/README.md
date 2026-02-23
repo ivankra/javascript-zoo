@@ -3,7 +3,7 @@
 Grafana's fork of [goja](../goja/README.md) engine.
 
 * Repository:       [grafana/sobek](https://github.com/grafana/sobek.git) <span class="shields"><img src="https://img.shields.io/github/stars/grafana/sobek?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/grafana/sobek?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              46789 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
+* LOC:              [46789](# "cloc --fullpath --not_match_f='(?i)(test)' --exclude-lang=Markdown,YAML .")
 * Language:         Go
 * License:          MIT
 * Org:              Grafana

@@ -3,7 +3,7 @@
 QuickJS fork that JIT-translates bytecode using TCC.
 
 * Repository:  [bnoordhuis/quickjit](https://github.com/bnoordhuis/quickjit.git) <span class="shields"><img src="https://img.shields.io/github/stars/bnoordhuis/quickjit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bnoordhuis/quickjit?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         87238 (`cloc *.c *.h`)
+* LOC:         [87238](# "cloc *.c *.h")
 * Language:    C
 * License:     MIT AND LGPL-2.1-or-later
 * Standard:    ES2019

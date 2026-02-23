@@ -4,7 +4,7 @@ Links browser had a basic JavaScript engine until version 2.1pre28.
 
 * Homepage:    [links.twibright.com](http://links.twibright.com/)
 * Sources:     http://links.twibright.com/download/links-2.1pre28.tar.bz2
-* LOC:         13780 (`cloc jsint.c ipret.c builtin.c parser/javascr.l parser/javascript.y`)
+* LOC:         [13780](# "cloc jsint.c ipret.c builtin.c parser/javascr.l parser/javascript.y")
 * Language:    C
 * License:     GPL-2.0-or-later
 * Standard:    ES3 (partial, no exceptions)

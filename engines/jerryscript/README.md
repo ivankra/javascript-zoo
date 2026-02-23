@@ -4,7 +4,7 @@ Lightweight JavaScript engine for microcontrollers.
 
 * Homepage:    [jerryscript.net](https://jerryscript.net/)
 * Repository:  [jerryscript-project/jerryscript](https://github.com/jerryscript-project/jerryscript.git) <span class="shields"><img src="https://img.shields.io/github/stars/jerryscript-project/jerryscript?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jerryscript-project/jerryscript?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         108762 (`cloc jerry-*`)
+* LOC:         [108762](# "cloc jerry-*")
 * Language:    C
 * License:     Apache-2.0
 * Org:         Samsung

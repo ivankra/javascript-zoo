@@ -5,7 +5,7 @@ JavaScript engine of Chrome, Node.js etc.
 * Homepage:     [v8.dev](https://v8.dev/)
 * Repository:   [v8](https://chromium.googlesource.com/v8/v8.git)
 * GitHub:       https://github.com/v8/v8.git <span class="shields"><img src="https://img.shields.io/github/stars/v8/v8?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/v8/v8?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:          1323810 (`cloc include src`)
+* LOC:          [1323810](# "cloc include src")
 * Language:     C++
 * License:      BSD-3-Clause
 * Org:          Google

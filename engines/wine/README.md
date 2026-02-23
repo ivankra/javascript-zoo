@@ -4,7 +4,7 @@ Wine's open-source reimplementation of Microsoft's classic [JScript](../jscript/
 
 * Repository: [wine](https://gitlab.winehq.org/wine/wine) (source code in [dlls/jscript](https://gitlab.winehq.org/wine/wine/-/tree/master/dlls/jscript))
 * GitHub:     https://github.com/wine-mirror/wine.git <span class="shields"><img src="https://img.shields.io/github/stars/wine-mirror/wine?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/wine-mirror/wine?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:        32084 (`cloc --not_match_d="(?i)(tests)" dlls/jscript`)
+* LOC:        [32084](# "cloc --not_match_d='(?i)(tests)' dlls/jscript")
 * Language:   C
 * License:    LGPL-2.1-or-later
 * Standard:   ES3

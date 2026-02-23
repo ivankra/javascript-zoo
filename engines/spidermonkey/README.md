@@ -4,7 +4,7 @@ JavaScript engine of Firefox.
 
 * Homepage:     [spidermonkey.dev](https://spidermonkey.dev/)
 * Repository:   [mozilla-firefox/firefox](https://github.com/mozilla-firefox/firefox.git) <span class="shields"><img src="https://img.shields.io/github/stars/mozilla-firefox/firefox?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/mozilla-firefox/firefox?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:          1028123 (`cloc --not_match_d="(?i)(test|octane)" js/src`)
+* LOC:          [1028123](# "cloc --not_match_d='(?i)(test|octane)' js/src")
 * Language:     C++
 * License:      MPL-2.0
 * Org:          Mozilla

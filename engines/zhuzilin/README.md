@@ -3,7 +3,7 @@
 JavaScript interpreter written in C++.
 
 * Repository:  [zhuzilin/es](https://github.com/zhuzilin/es.git) <span class="shields"><img src="https://img.shields.io/github/stars/zhuzilin/es?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/zhuzilin/es?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         14807 (`cloc es.cc es`)
+* LOC:         [14807](# "cloc es.cc es")
 * Language:    C++
 * License:     AGPL-3.0
 * Standard:    ES5

@@ -4,7 +4,7 @@ Web browser for Amiga with own JavaScript implementation.
 
 * Homepage:    [zapek.com/software/voyager](https://zapek.com/software/voyager/)
 * Repository:  [zapek/Voyager](https://github.com/zapek/Voyager.git) <span class="shields"><img src="https://img.shields.io/github/stars/zapek/Voyager?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/zapek/Voyager?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         11922 (`cloc js*`)
+* LOC:         [11922](# "cloc js*")
 * Language:    C
 * License:     GPL-3.0
 * Standard:    ES3

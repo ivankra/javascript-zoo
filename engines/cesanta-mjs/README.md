@@ -3,7 +3,7 @@
 Interpreter for a subset of JavaScript for microcontrollers.
 
 * Repository:  [cesanta/mjs](https://github.com/cesanta/mjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/cesanta/mjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/cesanta/mjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         10449 (`cloc --not_match_d="platforms" src`)
+* LOC:         [10449](# "cloc --not_match_d='platforms' src")
 * Language:    C
 * License:     GPL-2.0-only
 * Standard:    no (can't run ES1)

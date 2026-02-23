@@ -4,7 +4,7 @@ JavaScript engine in pure Perl.
 
 * Homepage:         [metacpan.org/dist/JE](https://metacpan.org/dist/JE)
 * Sources:          https://cpan.metacpan.org/authors/id/S/SP/SPROUT/JE-0.066.tar.gz
-* LOC:              11007 (`cloc lib`)
+* LOC:              [11007](# "cloc lib")
 * Language:         Perl
 * License:          Artistic-1.0-Perl OR GPL-1.0-or-later
 * Standard:         ES3

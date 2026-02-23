@@ -3,7 +3,7 @@
 JavaScript interpreter written in Python.
 
 * Repository:       [PiotrDabkowski/Js2Py](https://github.com/PiotrDabkowski/Js2Py.git) <span class="shields"><img src="https://img.shields.io/github/stars/PiotrDabkowski/Js2Py?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/PiotrDabkowski/Js2Py?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              69402 (`cloc js2py`)
+* LOC:              [69402](# "cloc js2py")
 * Language:         Python
 * License:          MIT
 * Standard:         ES5

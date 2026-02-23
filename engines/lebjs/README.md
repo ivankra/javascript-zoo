@@ -3,7 +3,7 @@
 Unfinished JavaScript engine written in Java.
 
 * Repository:       [LebsterFace/LebJS](https://github.com/LebsterFace/LebJS) <span class="shields"><img src="https://img.shields.io/github/stars/LebsterFace/LebJS?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/LebsterFace/LebJS?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              13761 (`cloc src`)
+* LOC:              [13761](# "cloc src")
 * Language:         Java
 * License:          Apache-2.0
 * Standard:         no (can't run ES1)

@@ -7,7 +7,7 @@ codegen.
 * Homepage:    [hermesengine.dev](https://hermesengine.dev/)
 * Repository:  [facebook/hermes](https://github.com/facebook/hermes.git) <span class="shields"><img src="https://img.shields.io/github/stars/facebook/hermes?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/facebook/hermes?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * Branch:      [static_h](https://github.com/facebook/hermes/tree/static_h)
-* LOC:         219313 (`cloc include lib tools/hermes`)
+* LOC:         [219313](# "cloc include lib tools/hermes")
 * Language:    C++
 * License:     MIT
 * Org:         Facebook

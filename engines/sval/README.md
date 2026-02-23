@@ -3,7 +3,7 @@
 Metacircular JavaScript interpreter.
 
 * Repository:       [Siubaak/sval](https://github.com/Siubaak/sval.git) <span class="shields"><img src="https://img.shields.io/github/stars/Siubaak/sval?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/Siubaak/sval?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              2124 (`cloc src`)
+* LOC:              [2124](# "cloc src")
 * Language:         TypeScript
 * License:          MIT
 * Years:            2018-

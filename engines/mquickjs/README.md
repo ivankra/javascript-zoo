@@ -4,7 +4,7 @@ JavaScript engine targetted at embedded systems.
 
 * Homepage:   [bellard.org/mquickjs](https://bellard.org/mquickjs/)
 * Repository: [bellard/mquickjs](https://github.com/bellard/mquickjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/bellard/mquickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bellard/mquickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:        23653 (`cloc *.c *.h`)
+* LOC:        [23653](# "cloc *.c *.h")
 * Language:   C
 * License:    MIT
 * Standard:   ES5 (subset)

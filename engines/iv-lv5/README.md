@@ -3,7 +3,7 @@
 JIT-enabled ES5 engine in C++.
 
 * Repository:   [Constellation/iv](https://github.com/Constellation/iv.git) <span class="shields"><img src="https://img.shields.io/github/stars/Constellation/iv?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/Constellation/iv?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:          69771 (`cloc --not_match_d="(?i)(test|third_party)" iv`)
+* LOC:          [69771](# "cloc --not_match_d='(?i)(test|third_party)' iv")
 * Language:     C++
 * License:      BSD-2-Clause
 * Standard:     ES5

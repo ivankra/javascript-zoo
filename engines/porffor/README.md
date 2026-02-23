@@ -4,7 +4,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and nat
 
 * Homepage:         [porffor.dev](https://porffor.dev/)
 * Repository:       [CanadaHonk/porffor](https://github.com/CanadaHonk/porffor.git) <span class="shields"><img src="https://img.shields.io/github/stars/CanadaHonk/porffor?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/CanadaHonk/porffor?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              27848 (`cloc compiler`)
+* LOC:              [27848](# "cloc compiler")
 * Language:         JavaScript
 * License:          MIT
 * Years:            2023-

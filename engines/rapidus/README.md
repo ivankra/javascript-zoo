@@ -3,7 +3,7 @@
 JavaScript engine written in Rust, aiming at ES5.
 
 * Repository:  [maekawatoshiki/rapidus](https://github.com/maekawatoshiki/rapidus.git) <span class="shields"><img src="https://img.shields.io/github/stars/maekawatoshiki/rapidus?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/maekawatoshiki/rapidus?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         10810 (`cloc */src`)
+* LOC:         [10810](# "cloc */src")
 * Language:    Rust
 * License:     MIT
 * Standard:    ES5 (partial)

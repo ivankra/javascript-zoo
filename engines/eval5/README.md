@@ -3,7 +3,7 @@
 ES5 interpreter written in TypeScript.
 
 * Repository:       [bplok20010/eval5](https://github.com/bplok20010/eval5.git) <span class="shields"><img src="https://img.shields.io/github/stars/bplok20010/eval5?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bplok20010/eval5?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:              1745 (`cloc src`)
+* LOC:              [1745](# "cloc src")
 * Language:         TypeScript
 * License:          MIT
 * Standard:         ES5

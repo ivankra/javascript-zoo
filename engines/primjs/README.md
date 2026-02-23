@@ -3,7 +3,7 @@
 [QuickJS](../quickjs/README.md)-based engine from ByteDance for their cross-platform mobile apps framework Lynx.
 
 * Repository:  [lynx-family/primjs](https://github.com/lynx-family/primjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/lynx-family/primjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/lynx-family/primjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-* LOC:         292098 (`cloc src`)
+* LOC:         [292098](# "cloc src")
 * Language:    C++
 * License:     Apache-2.0
 * Org:         ByteDance
