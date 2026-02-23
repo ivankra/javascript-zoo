@@ -101,7 +101,7 @@ case "$ENGINE_NAME" in
   dmdscript|dscriptcpp)
     export SED_PRINT=println
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh"  "${ENGINE_CMD[@]}");;
-  yaji)
+  fesi|yaji)
     export SED_PRINT=writeln
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh"  "${ENGINE_CMD[@]}");;
 esac
