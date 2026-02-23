@@ -1,0 +1,1512 @@
+Metadata: {"arch": "arm64", "binary_sha256": "91e0f6b9e0f1e357bf592e0393d560a9b532f580f25500b95bd2c8fe3da2703a", "binary_size": 574976, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "print", "engine": "see", "repository": "https://github.com/ivankra/SEE", "revision": "4517d907d319365898929a868a5051d645f3d874", "revision_date": "2009-04-26", "version": "3.1.1424"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: OK
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: OK
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: OK
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: OK
+es1/Function.prototype.toString.js: OK
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: OK
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: OK
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: OK
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: OK
+es1/Number.MIN_VALUE.js: OK
+es1/Number.NEGATIVE_INFINITY.js: OK
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: OK
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: OK
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: OK
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: OK
+es1/String.prototype.lastIndexOf.js: OK
+es1/String.prototype.split.js: OK
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
+es1/annex-b.literals.string.octal.js: OK
+es1/arguments.callee.js: OK
+es1/arguments.js: OK
+es1/asi.eval.js: OK
+es1/asi.js: OK
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: OK
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: OK
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: OK
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: OK
+es1/global.Infinity.js: OK
+es1/global.NaN.js: OK
+es1/global.isFinite.js: OK
+es1/global.isNaN.js: OK
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: OK
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: OK
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: OK
+es1/return.typeof.js: OK
+es1/this.js: OK
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: OK
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: OK
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: OK
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: OK
+es3/Array.prototype.concat.js: OK
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: OK
+es3/Array.prototype.shift.generic.js: OK
+es3/Array.prototype.shift.js: OK
+es3/Array.prototype.slice.generic.js: OK
+es3/Array.prototype.slice.js: OK
+es3/Array.prototype.splice.generic.js: OK
+es3/Array.prototype.splice.js: OK
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: OK
+es3/Array.prototype.unshift.js: OK
+es3/Array.prototype.unshift.returns-new-length.js: OK
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: OK
+es3/Function.prototype.call.js: OK
+es3/Math.max.variadic.js: OK
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2.5e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.230e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.0e+0'); (1.255).toExponential(2) != '1.25e+0', got '1.30e+0'
+es3/Number.prototype.toExponential.throws-infinity.js: exception: TypeError: Number.prototype.toExponential.throws-infinity.js:13: Object does not support the 'instanceof' operator
+es3/Number.prototype.toFixed.js: rounding failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: small number exponential notation failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.propertyIsEnumerable.js: Array index should be enumerable failed
+es3/Object.prototype.toLocaleString.js: OK
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: crashed (signal 11)
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: OK
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: OK
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: OK
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: OK
+es3/String.prototype.split.limit.js: OK
+es3/String.prototype.split.regex.js: OK
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: OK
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: OK
+es3/global.RangeError.js: OK
+es3/global.RangeError.thrown.js: no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: OK
+es3/global.ReferenceError.thrown.js: OK
+es3/global.SyntaxError.js: OK
+es3/global.SyntaxError.thrown.js: OK
+es3/global.TypeError.js: OK
+es3/global.TypeError.thrown.js: exception: TypeError: :0: Value following 'in' is not an object
+es3/global.URIError.js: OK
+es3/global.URIError.thrown.js: OK
+es3/global.decodeURIComponent.js: OK
+es3/global.decodeURI.js: OK
+es3/global.encodeURIComponent.js: OK
+es3/global.encodeURI.js: OK
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: exception: SyntaxError: line 8: malformed unicode input
+es3/instanceof.js: exception: TypeError: instanceof.js:9: Object does not support the 'instanceof' operator
+es3/in.js: OK
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: OK
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: exception: SyntaxError: line 9: malformed unicode input
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: OK
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: OK
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: OK
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: exception: SyntaxError: line 13: malformed unicode input
+es3/source.whitespace.js: exception: SyntaxError: line 12: malformed unicode input
+es3/source.whitespace.unicode.js: exception: SyntaxError: line 8: malformed unicode input
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: Array.isArray not a function; exception: TypeError: Array.isArray.js:16: Function is not defined
+es5/Array.prototype.every.js: Array.prototype.every not a function; exception: TypeError: Array.prototype.every.js:17: Function is not defined
+es5/Array.prototype.filter.js: Array.prototype.filter not a function; exception: TypeError: Array.prototype.filter.js:17: Function is not defined
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function; exception: TypeError: Array.prototype.forEach.js:18: Function is not defined
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function; exception: TypeError: Array.prototype.indexOf.js:17: Function is not defined
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function; exception: TypeError: Array.prototype.lastIndexOf.js:17: Function is not defined
+es5/Array.prototype.map.js: Array.prototype.map not a function; exception: TypeError: Array.prototype.map.js:17: Function is not defined
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; exception: TypeError: Array.prototype.reduceRight.js:17: Function is not defined
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function; exception: TypeError: Array.prototype.reduce.js:17: Function is not defined
+es5/Array.prototype.some.js: Array.prototype.some not a function; exception: TypeError: Array.prototype.some.js:17: Function is not defined
+es5/Array.prototype.sort.TypeError.js: OK
+es5/Array.prototype.sort.undefined-comparefn.js: OK
+es5/Date.now.js: Date.now not a function; exception: TypeError: Date.now.js:16: Function is not defined
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function; exception: TypeError: Date.prototype.toISOString.js:17: Function is not defined
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; exception: TypeError: Date.prototype.toJSON.js:16: Tried to use undefined as an object
+es5/Function.prototype-not-enumerable.js: prototype appears in for-in
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: Function.prototype.bind not a function; exception: TypeError: Function.prototype.bind.js:18: Function is not defined
+es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.parse.js: exception: ReferenceError: JSON.parse.js:7: JSON
+es5/JSON.parse.reviver.js: exception: ReferenceError: JSON.parse.reviver.js:7: JSON
+es5/JSON.stringify.js: exception: ReferenceError: JSON.stringify.js:7: JSON
+es5/JSON.stringify.replacer.js: exception: ReferenceError: JSON.stringify.replacer.js:7: JSON
+es5/JSON.stringify.space.js: exception: ReferenceError: JSON.stringify.space.js:7: JSON
+es5/Object.create.js: Object.create not a function; exception: TypeError: Object.create.js:17: Function is not defined
+es5/Object.defineProperties.js: Object.defineProperties not a function; exception: TypeError: Object.defineProperties.js:17: Function is not defined
+es5/Object.defineProperty.js: Object.defineProperty not a function; exception: TypeError: Object.defineProperty.js:17: Function is not defined
+es5/Object.freeze.js: Object.freeze not a function; exception: TypeError: Object.freeze.js:17: Function is not defined
+es5/Object.getOwnPropertyDescriptor.js: Object.getOwnPropertyDescriptor not a function; exception: TypeError: Object.getOwnPropertyDescriptor.js:17: Function is not defined
+es5/Object.getOwnPropertyNames.js: Object.getOwnPropertyNames not a function; exception: TypeError: Object.getOwnPropertyNames.js:17: Function is not defined
+es5/Object.getPrototypeOf.js: Object.getPrototypeOf not a function; exception: TypeError: Object.getPrototypeOf.js:17: Function is not defined
+es5/Object.isExtensible.js: Object.isExtensible not a function; exception: TypeError: Object.isExtensible.js:17: Function is not defined
+es5/Object.isFrozen.js: Object.isFrozen not a function; exception: TypeError: Object.isFrozen.js:17: Function is not defined
+es5/Object.isSealed.js: Object.isSealed not a function; exception: TypeError: Object.isSealed.js:17: Function is not defined
+es5/Object.keys.js: Object.keys not a function; exception: TypeError: Object.keys.js:17: Function is not defined
+es5/Object.preventExtensions.js: Object.preventExtensions not a function; exception: TypeError: Object.preventExtensions.js:17: Function is not defined
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: Object.seal not a function; exception: TypeError: Object.seal.js:17: Function is not defined
+es5/String.indexing.js: 'foobar'[3] !== 'b'; test with variable failed
+es5/String.prototype.trim.js: String.prototype.trim not a function; exception: TypeError: String.prototype.trim.js:17: Function is not defined
+es5/arguments.toStringTag.js: OK
+es5/debugger.js: exception: SyntaxError: debugger.js:7: unexpected token, near a reserved word
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: OK
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
+es5/literals.object.getters.js: exception: SyntaxError: literals.object.getters.js:9: expected ':' but got an identifier
+es5/literals.object.setters.js: exception: SyntaxError: literals.object.setters.js:10: expected ':' but got an identifier
+es5/literals.object.trailing-comma.js: exception: SyntaxError: literals.object.trailing-comma.js:9: expected string, identifier or number after ',' but got '}'
+es5/source.keyword-properties.js: exception: SyntaxError: source.keyword-properties.js:15: expected string, identifier or number but got 'if'
+es5/source.unreserved-words.js: exception: SyntaxError: source.unreserved-words.js:13: expected an identifier but got a reserved word
+es5/source.whitespace.bom.js: OK
+es5/source.zero-width-chars.js: exception: SyntaxError: line 11: Invalid \u escape in identifier
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: exception: SyntaxError: strict.no-assignment-to-non-writable.js:29: expected ':' but got an identifier
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-eval-or-arguments-assignment.js: exception: TypeError: strict.no-eval-or-arguments-assignment.js:26: Object does not support the 'instanceof' operator
+es5/strict.no-eval-or-arguments-bindings.js: exception: TypeError: strict.no-eval-or-arguments-bindings.js:35: Object does not support the 'instanceof' operator
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: exception: TypeError: strict.reserved-words.js:22: Object does not support the 'instanceof' operator
+es5/strict.this-primitive-not-coerced-in-accessors.js: exception: TypeError: strict.this-primitive-not-coerced-in-accessors.js:11: Function is not defined
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
+kangax-es5/Array.isArray.js: failed
+kangax-es5/Array.prototype.every.js: failed
+kangax-es5/Array.prototype.filter.js: failed
+kangax-es5/Array.prototype.forEach.js: failed
+kangax-es5/Array.prototype.indexOf.js: failed
+kangax-es5/Array.prototype.lastIndexOf.js: failed
+kangax-es5/Array.prototype.map.js: failed
+kangax-es5/Array.prototype.reduceRight.js: failed
+kangax-es5/Array.prototype.reduce.js: failed
+kangax-es5/Array.prototype.some.js: failed
+kangax-es5/Array.prototype.sort.compareFn-type.js: OK
+kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
+kangax-es5/Array.prototype.unshift.return-count.js: OK
+kangax-es5/Date.now.js: failed
+kangax-es5/Date.prototype.toISOString.js: failed
+kangax-es5/Date.prototype.toJSON.js: failed
+kangax-es5/Function.prototype.bind.js: failed
+kangax-es5/JSON.js: failed
+kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
+kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Object.create.js: failed
+kangax-es5/Object.defineProperties.js: failed
+kangax-es5/Object.defineProperty.js: failed
+kangax-es5/Object.freeze.js: failed
+kangax-es5/Object.getOwnPropertyDescriptor.js: failed
+kangax-es5/Object.getOwnPropertyNames.js: failed
+kangax-es5/Object.getPrototypeOf.js: failed
+kangax-es5/Object.isExtensible.js: failed
+kangax-es5/Object.isFrozen.js: failed
+kangax-es5/Object.isSealed.js: failed
+kangax-es5/Object.keys.js: failed
+kangax-es5/Object.preventExtensions.js: failed
+kangax-es5/Object.seal.js: failed
+kangax-es5/String.property-access.js: failed
+kangax-es5/String.prototype.split.js: OK
+kangax-es5/String.prototype.trim.js: failed
+kangax-es5/annex-b.String.prototype.substr.js: OK
+kangax-es5/immutable-globals.Infinity.js: failed
+kangax-es5/immutable-globals.NaN.js: failed
+kangax-es5/immutable-globals.undefined.js: failed
+kangax-es5/literals.getter-accessors.js: exception: SyntaxError: literals.getter-accessors.js:8: expected ':' but got an identifier
+kangax-es5/literals.reserved-words-properties.js: exception: SyntaxError: literals.reserved-words-properties.js:8: expected string, identifier or number but got 'if'
+kangax-es5/literals.setter-accessors.js: exception: SyntaxError: literals.setter-accessors.js:9: expected ':' but got an identifier
+kangax-es5/literals.trailing-comma-array.js: OK
+kangax-es5/literals.trailing-comma-object.js: exception: SyntaxError: literals.trailing-comma-object.js:8: expected string, identifier or number after ',' but got '}'
+kangax-es5/misc.Arguments.toStringTag.js: OK
+kangax-es5/misc.Function.apply.array-likes.js: failed
+kangax-es5/misc.Function.prototype.non-enumerable.js: OK
+kangax-es5/misc.enumerable-shadow.js: OK
+kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
+kangax-es5/misc.thrown-functions-this.js: OK
+kangax-es5/misc.unreserved-words.js: exception: SyntaxError: misc.unreserved-words.js:8: expected an identifier but got a reserved word
+kangax-es5/misc.zero-width-identifiers.js: exception: SyntaxError: line 8: Invalid \u escape in identifier
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: OK
+kangax-es5/strict.arguments-unmapped.js: failed
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
+kangax-es5/strict.assignment-non-writable-error.js: exception: SyntaxError: strict.assignment-non-writable-error.js:12: expected ':' but got an identifier
+kangax-es5/strict.assignment-unresolvable-error.js: failed
+kangax-es5/strict.delete-bindings-error.js: failed
+kangax-es5/strict.delete-non-configurable-error.js: failed
+kangax-es5/strict.eval-arguments-bindings-error.js: failed
+kangax-es5/strict.eval-no-bindings.js: failed
+kangax-es5/strict.function-caller-arguments-error.js: failed
+kangax-es5/strict.function-expr-matching-name-arg.js: OK
+kangax-es5/strict.legacy-octal-error.js: failed
+kangax-es5/strict.repeated-params-error.js: failed
+kangax-es5/strict.reserved-words.js: TypeError: strict.reserved-words.js:12: Object does not support the 'instanceof' operator
+kangax-es5/strict.this-not-coerced-accessors.js: TypeError: strict.this-not-coerced-accessors.js:12: Function is not defined
+kangax-es5/strict.this-not-coerced-methods.js: failed
+kangax-es5/strict.this-undefined.js: failed
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: ReferenceError: Array.Symbol.species.js:10: Symbol
+kangax-es6/Array.from.array-like.js: TypeError: Array.from.array-like.js:10: Function is not defined
+kangax-es6/Array.from.generator.js: exception: SyntaxError: Array.from.generator.js:9: expected '(' but got '*'
+kangax-es6/Array.from.iterable-instance.js: TypeError: Array.from.iterable-instance.js:34: Function is not defined
+kangax-es6/Array.from.iterable.js: TypeError: Array.from.iterable.js:34: Function is not defined
+kangax-es6/Array.from.iterator-closing.js: failed
+kangax-es6/Array.from.map.array-like.js: TypeError: Array.from.map.array-like.js:9: Function is not defined
+kangax-es6/Array.from.map.generator.js: exception: SyntaxError: Array.from.map.generator.js:9: expected '(' but got '*'
+kangax-es6/Array.from.map.iterable-instance.js: TypeError: Array.from.map.iterable-instance.js:34: Function is not defined
+kangax-es6/Array.from.map.iterable.js: TypeError: Array.from.map.iterable.js:34: Function is not defined
+kangax-es6/Array.iterator-prototype-chain.js: ReferenceError: Array.iterator-prototype-chain.js:10: Symbol
+kangax-es6/Array.of.js: failed
+kangax-es6/Array.prototype.Symbol.iterator.js: ReferenceError: Array.prototype.Symbol.iterator.js:10: Symbol
+kangax-es6/Array.prototype.Symbol.unscopables.js: ReferenceError: Array.prototype.Symbol.unscopables.js:10: Symbol
+kangax-es6/Array.prototype.copyWithin.js: failed
+kangax-es6/Array.prototype.entries.js: failed
+kangax-es6/Array.prototype.fill.js: failed
+kangax-es6/Array.prototype.findIndex.js: failed
+kangax-es6/Array.prototype.find.js: failed
+kangax-es6/Array.prototype.keys.js: failed
+kangax-es6/Array.prototype.splice.js: failed
+kangax-es6/Array.prototype.values.js: failed
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: Date.prototype.Symbol.toPrimitive.js:10: Symbol
+kangax-es6/Function.name.accessor.js: exception: SyntaxError: Function.name.accessor.js:10: expected ':' but got an identifier
+kangax-es6/Function.name.bound.js: TypeError: Function.name.bound.js:11: Function is not defined
+kangax-es6/Function.name.class-expression.js: exception: SyntaxError: Function.name.class-expression.js:10: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/Function.name.class-object-method.js: exception: SyntaxError: Function.name.class-object-method.js:10: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/Function.name.class-prototype.js: exception: SyntaxError: Function.name.class-prototype.js:10: expected '}' but got a reserved word
+kangax-es6/Function.name.class-statement.js: exception: SyntaxError: Function.name.class-statement.js:10: expected '}' but got a reserved word
+kangax-es6/Function.name.class-static.js: exception: SyntaxError: Function.name.class-static.js:10: expected '}' but got a reserved word
+kangax-es6/Function.name.class-variable.js: exception: SyntaxError: Function.name.class-variable.js:10: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/Function.name.configurable.js: TypeError: Function.name.configurable.js:10: Function is not defined
+kangax-es6/Function.name.expression.js: failed
+kangax-es6/Function.name.new-Function.js: failed
+kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.shorthand.js: exception: SyntaxError: Function.name.shorthand.js:10: expected ':' but got '('
+kangax-es6/Function.name.shorthand.no-lexical.js: exception: SyntaxError: Function.name.shorthand.no-lexical.js:11: expected ':' but got '('
+kangax-es6/Function.name.statement.js: failed
+kangax-es6/Function.name.symbol-keyed.js: exception: SyntaxError: Function.name.symbol-keyed.js:13: expected string, identifier or number but got '['
+kangax-es6/Function.name.variable.js: failed
+kangax-es6/Map.Symbol.species.js: ReferenceError: Map.Symbol.species.js:10: Map
+kangax-es6/Map.constructor-accepts-null.js: ReferenceError: Map.constructor-accepts-null.js:10: Map
+kangax-es6/Map.constructor-arguments.js: ReferenceError: Map.constructor-arguments.js:12: Map
+kangax-es6/Map.constructor-invokes-set.js: ReferenceError: Map.constructor-invokes-set.js:11: Map
+kangax-es6/Map.constructor-requires-new.js: ReferenceError: Map.constructor-requires-new.js:10: Map
+kangax-es6/Map.iterator-closing.js: failed
+kangax-es6/Map.iterator-prototype-chain.js: ReferenceError: Map.iterator-prototype-chain.js:11: Map
+kangax-es6/Map.js: ReferenceError: Map.js:11: Map
+kangax-es6/Map.prototype-not-instance.js: ReferenceError: Map.prototype-not-instance.js:10: Map
+kangax-es6/Map.prototype.Symbol.iterator.js: ReferenceError: Map.prototype.Symbol.iterator.js:10: Map
+kangax-es6/Map.prototype.clear.js: ReferenceError: Map.prototype.clear.js:10: Map
+kangax-es6/Map.prototype.delete.js: exception: SyntaxError: Map.prototype.delete.js:10: expected an identifier but got 'delete'
+kangax-es6/Map.prototype.entries.js: ReferenceError: Map.prototype.entries.js:10: Map
+kangax-es6/Map.prototype.forEach.js: ReferenceError: Map.prototype.forEach.js:10: Map
+kangax-es6/Map.prototype.keys.js: ReferenceError: Map.prototype.keys.js:10: Map
+kangax-es6/Map.prototype.set-returns-this.js: ReferenceError: Map.prototype.set-returns-this.js:10: Map
+kangax-es6/Map.prototype.size.js: ReferenceError: Map.prototype.size.js:11: Map
+kangax-es6/Map.prototype.values.js: ReferenceError: Map.prototype.values.js:10: Map
+kangax-es6/Map.zero-key.js: ReferenceError: Map.zero-key.js:10: Map
+kangax-es6/Math.acosh.js: failed
+kangax-es6/Math.asinh.js: failed
+kangax-es6/Math.atanh.js: failed
+kangax-es6/Math.cbrt.js: failed
+kangax-es6/Math.clz32.js: failed
+kangax-es6/Math.cosh.js: failed
+kangax-es6/Math.expm1.js: failed
+kangax-es6/Math.fround.js: failed
+kangax-es6/Math.hypot.js: TypeError: Math.hypot.js:10: Function is not defined
+kangax-es6/Math.imul.js: failed
+kangax-es6/Math.log1p.js: failed
+kangax-es6/Math.log2.js: failed
+kangax-es6/Math.log10.js: failed
+kangax-es6/Math.sign.js: failed
+kangax-es6/Math.sinh.js: failed
+kangax-es6/Math.tanh.js: failed
+kangax-es6/Math.trunc.js: failed
+kangax-es6/Number.EPSILON.js: failed
+kangax-es6/Number.MAX_SAFE_INTEGER.js: failed
+kangax-es6/Number.MIN_SAFE_INTEGER.js: failed
+kangax-es6/Number.isFinite.js: failed
+kangax-es6/Number.isInteger.js: failed
+kangax-es6/Number.isNaN.js: failed
+kangax-es6/Number.isSafeInteger.js: failed
+kangax-es6/Number.parseFloat.js: failed
+kangax-es6/Number.parseInt.js: failed
+kangax-es6/Object.assign.js: TypeError: Object.assign.js:10: Function is not defined
+kangax-es6/Object.getOwnPropertySymbols.js: ReferenceError: Object.getOwnPropertySymbols.js:11: Symbol
+kangax-es6/Object.is.js: failed
+kangax-es6/Object.setPrototypeOf.js: TypeError: Object.setPrototypeOf.js:10: Function is not defined
+kangax-es6/Promise.Symbol.species.js: ReferenceError: Promise.Symbol.species.js:10: Promise
+kangax-es6/Promise.all.iterable.js: exception: SyntaxError: :0: Promise.all.iterable.js:79: expected an identifier but got 'catch'
+kangax-es6/Promise.all.js: exception: SyntaxError: :0: Promise.all.js:55: expected an identifier but got 'catch'
+kangax-es6/Promise.constructor-requires-new.js: ReferenceError: Promise.constructor-requires-new.js:10: Promise
+kangax-es6/Promise.js: exception: SyntaxError: :0: Promise.js:55: expected an identifier but got 'catch'
+kangax-es6/Promise.prototype-not-instance.js: ReferenceError: Promise.prototype-not-instance.js:10: Promise
+kangax-es6/Promise.race.iterable.js: exception: SyntaxError: :0: Promise.race.iterable.js:79: expected an identifier but got 'catch'
+kangax-es6/Promise.race.js: exception: SyntaxError: :0: Promise.race.js:55: expected an identifier but got 'catch'
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Proxy.Array.isArray.js:10: Proxy
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Proxy.JSON.stringify.js:10: JSON
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Proxy.constructor-requires-new.js:10: Proxy
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Proxy.handler.apply.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Proxy.handler.apply.js:12: Proxy
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Proxy.handler.construct.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Proxy.handler.construct.js:12: Proxy
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Proxy.handler.defineProperty.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.defineProperty.js: ReferenceError: Proxy.handler.defineProperty.js:12: Proxy
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Proxy.handler.deleteProperty.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Proxy.handler.deleteProperty.js:12: Proxy
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Proxy.handler.getOwnPropertyDescriptor.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: ReferenceError: Proxy.handler.getOwnPropertyDescriptor.js:12: Proxy
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Proxy.handler.getPrototypeOf.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Proxy.handler.getPrototypeOf.js:12: Proxy
+kangax-es6/Proxy.handler.get.instances.js: ReferenceError: Proxy.handler.get.instances.js:11: Proxy
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Proxy.handler.get.invariants.js:12: Proxy
+kangax-es6/Proxy.handler.get.js: ReferenceError: Proxy.handler.get.js:11: Proxy
+kangax-es6/Proxy.handler.has.instances.js: ReferenceError: Proxy.handler.has.instances.js:12: Proxy
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Proxy.handler.has.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.has.js: ReferenceError: Proxy.handler.has.js:12: Proxy
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Proxy.handler.isExtensible.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.isExtensible.js: ReferenceError: Proxy.handler.isExtensible.js:12: Proxy
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Proxy.handler.ownKeys.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Proxy.handler.ownKeys.js:12: Proxy
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Proxy.handler.preventExtensions.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.preventExtensions.js: ReferenceError: Proxy.handler.preventExtensions.js:12: Proxy
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Proxy.handler.setPrototypeOf.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.setPrototypeOf.js: ReferenceError: Proxy.handler.setPrototypeOf.js:13: Proxy
+kangax-es6/Proxy.handler.set.instances.js: ReferenceError: Proxy.handler.set.instances.js:12: Proxy
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Proxy.handler.set.invariants.js:11: Proxy
+kangax-es6/Proxy.handler.set.js: ReferenceError: Proxy.handler.set.js:12: Proxy
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Proxy.no-prototype.js:10: Proxy
+kangax-es6/Proxy.revocable.js: ReferenceError: Proxy.revocable.js:10: Proxy
+kangax-es6/Reflect.apply.js: ReferenceError: Reflect.apply.js:10: Reflect
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Reflect.construct.Array-subclassing.js:11: Reflect
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Reflect.construct.Function-subclassing.js:11: Reflect
+kangax-es6/Reflect.construct.Promise-subclassing.js: exception: SyntaxError: :0: Reflect.construct.Promise-subclassing.js:55: expected an identifier but got 'catch'
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Reflect.construct.RegExp-subclassing.js:11: Reflect
+kangax-es6/Reflect.construct.js: ReferenceError: Reflect.construct.js:10: Reflect
+kangax-es6/Reflect.construct.new-target.js: exception: SyntaxError: Reflect.construct.new-target.js:11: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Reflect.construct.third-argument.js:11: Reflect
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Reflect.defineProperty.js:11: Reflect
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Reflect.deleteProperty.js:11: Reflect
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Reflect.getOwnPropertyDescriptor.js:11: Reflect
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Reflect.getPrototypeOf.js:10: Reflect
+kangax-es6/Reflect.get.js: ReferenceError: Reflect.get.js:10: Reflect
+kangax-es6/Reflect.has.js: ReferenceError: Reflect.has.js:10: Reflect
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Reflect.isExtensible.js:10: Reflect
+kangax-es6/Reflect.ownKeys.string.js: TypeError: Reflect.ownKeys.string.js:10: Function is not defined
+kangax-es6/Reflect.ownKeys.symbol.js: ReferenceError: Reflect.ownKeys.symbol.js:10: Symbol
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Reflect.preventExtensions.js:11: Reflect
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Reflect.setPrototypeOf.js:11: Reflect
+kangax-es6/Reflect.set.js: ReferenceError: Reflect.set.js:11: Reflect
+kangax-es6/RegExp.Symbol.species.js: ReferenceError: RegExp.Symbol.species.js:10: Symbol
+kangax-es6/RegExp.prototype.Symbol.match.js: ReferenceError: RegExp.prototype.Symbol.match.js:10: Symbol
+kangax-es6/RegExp.prototype.Symbol.replace.js: ReferenceError: RegExp.prototype.Symbol.replace.js:10: Symbol
+kangax-es6/RegExp.prototype.Symbol.search.js: ReferenceError: RegExp.prototype.Symbol.search.js:10: Symbol
+kangax-es6/RegExp.prototype.Symbol.split.js: ReferenceError: RegExp.prototype.Symbol.split.js:10: Symbol
+kangax-es6/RegExp.prototype.flags.js: failed
+kangax-es6/Set.Symbol.species.js: ReferenceError: Set.Symbol.species.js:10: Set
+kangax-es6/Set.constructor-accepts-null.js: ReferenceError: Set.constructor-accepts-null.js:10: Set
+kangax-es6/Set.constructor-arguments.js: ReferenceError: Set.constructor-arguments.js:12: Set
+kangax-es6/Set.constructor-invokes-add.js: ReferenceError: Set.constructor-invokes-add.js:11: Set
+kangax-es6/Set.constructor-requires-new.js: ReferenceError: Set.constructor-requires-new.js:10: Set
+kangax-es6/Set.iterator-closing.js: ReferenceError: Set.iterator-closing.js:38: Set
+kangax-es6/Set.iterator-prototype-chain.js: ReferenceError: Set.iterator-prototype-chain.js:11: Set
+kangax-es6/Set.js: ReferenceError: Set.js:11: Set
+kangax-es6/Set.prototype-not-instance.js: ReferenceError: Set.prototype-not-instance.js:10: Set
+kangax-es6/Set.prototype.Symbol.iterator.js: ReferenceError: Set.prototype.Symbol.iterator.js:10: Set
+kangax-es6/Set.prototype.add-returns-this.js: ReferenceError: Set.prototype.add-returns-this.js:10: Set
+kangax-es6/Set.prototype.clear.js: ReferenceError: Set.prototype.clear.js:10: Set
+kangax-es6/Set.prototype.delete.js: exception: SyntaxError: Set.prototype.delete.js:10: expected an identifier but got 'delete'
+kangax-es6/Set.prototype.entries.js: ReferenceError: Set.prototype.entries.js:10: Set
+kangax-es6/Set.prototype.forEach.js: ReferenceError: Set.prototype.forEach.js:10: Set
+kangax-es6/Set.prototype.keys.js: ReferenceError: Set.prototype.keys.js:10: Set
+kangax-es6/Set.prototype.size.js: ReferenceError: Set.prototype.size.js:11: Set
+kangax-es6/Set.prototype.values.js: ReferenceError: Set.prototype.values.js:10: Set
+kangax-es6/Set.zero-key.js: ReferenceError: Set.zero-key.js:10: Set
+kangax-es6/String.fromCodePoint.js: failed
+kangax-es6/String.iterator-prototype-chain.js: ReferenceError: String.iterator-prototype-chain.js:10: Symbol
+kangax-es6/String.prototype.Symbol.iterator.js: ReferenceError: String.prototype.Symbol.iterator.js:10: Symbol
+kangax-es6/String.prototype.codePointAt.js: failed
+kangax-es6/String.prototype.endsWith.js: failed
+kangax-es6/String.prototype.endsWith.throws-regex.js: failed
+kangax-es6/String.prototype.includes.js: failed
+kangax-es6/String.prototype.normalize.js: failed
+kangax-es6/String.prototype.repeat.js: failed
+kangax-es6/String.prototype.startsWith.js: failed
+kangax-es6/String.prototype.startsWith.throws-regex.js: failed
+kangax-es6/String.raw.js: failed
+kangax-es6/Symbol.JSON.stringify.object.js: ReferenceError: Symbol.JSON.stringify.object.js:20: Symbol
+kangax-es6/Symbol.JSON.stringify.primitive.js: ReferenceError: Symbol.JSON.stringify.primitive.js:10: Symbol
+kangax-es6/Symbol.Object.js: ReferenceError: Symbol.Object.js:10: Symbol
+kangax-es6/Symbol.String.js: ReferenceError: Symbol.String.js:10: Symbol
+kangax-es6/Symbol.defineProperty.js: ReferenceError: Symbol.defineProperty.js:11: Symbol
+kangax-es6/Symbol.global-registry.js: exception: SyntaxError: Symbol.global-registry.js:10: expected an identifier but got 'for'
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: Symbol.hidden-keys.js:11: Symbol
+kangax-es6/Symbol.js: ReferenceError: Symbol.js:11: Symbol
+kangax-es6/Symbol.no-coerce.js: ReferenceError: Symbol.no-coerce.js:10: Symbol
+kangax-es6/Symbol.no-new.js: ReferenceError: Symbol.no-new.js:10: Symbol
+kangax-es6/Symbol.prototype.js: ReferenceError: Symbol.prototype.js:10: Symbol
+kangax-es6/Symbol.typeof.js: ReferenceError: Symbol.typeof.js:10: Symbol
+kangax-es6/WeakMap.accept-primitives.js: exception: SyntaxError: WeakMap.accept-primitives.js:13: expected an identifier but got 'delete'
+kangax-es6/WeakMap.constructor-accepts-null.js: ReferenceError: WeakMap.constructor-accepts-null.js:10: WeakMap
+kangax-es6/WeakMap.constructor-arguments.js: ReferenceError: WeakMap.constructor-arguments.js:12: WeakMap
+kangax-es6/WeakMap.constructor-invokes-set.js: ReferenceError: WeakMap.constructor-invokes-set.js:11: WeakMap
+kangax-es6/WeakMap.constructor-requires-new.js: ReferenceError: WeakMap.constructor-requires-new.js:10: WeakMap
+kangax-es6/WeakMap.frozen-keys.js: TypeError: WeakMap.frozen-keys.js:10: Function is not defined
+kangax-es6/WeakMap.iterator-closing.js: failed
+kangax-es6/WeakMap.js: ReferenceError: WeakMap.js:11: WeakMap
+kangax-es6/WeakMap.no-clear.js: ReferenceError: WeakMap.no-clear.js:10: WeakMap
+kangax-es6/WeakMap.prototype-not-instance.js: ReferenceError: WeakMap.prototype-not-instance.js:10: WeakMap
+kangax-es6/WeakMap.prototype.delete.js: exception: SyntaxError: WeakMap.prototype.delete.js:10: expected an identifier but got 'delete'
+kangax-es6/WeakMap.prototype.set-returns-this.js: ReferenceError: WeakMap.prototype.set-returns-this.js:10: WeakMap
+kangax-es6/WeakSet.accept-primitives.js: exception: SyntaxError: WeakSet.accept-primitives.js:12: expected an identifier but got 'delete'
+kangax-es6/WeakSet.constructor-accepts-null.js: ReferenceError: WeakSet.constructor-accepts-null.js:10: WeakSet
+kangax-es6/WeakSet.constructor-arguments.js: ReferenceError: WeakSet.constructor-arguments.js:11: WeakSet
+kangax-es6/WeakSet.constructor-invokes-add.js: ReferenceError: WeakSet.constructor-invokes-add.js:11: WeakSet
+kangax-es6/WeakSet.constructor-requires-new.js: ReferenceError: WeakSet.constructor-requires-new.js:10: WeakSet
+kangax-es6/WeakSet.iterator-closing.js: failed
+kangax-es6/WeakSet.js: ReferenceError: WeakSet.js:11: WeakSet
+kangax-es6/WeakSet.no-clear.js: ReferenceError: WeakSet.no-clear.js:10: WeakSet
+kangax-es6/WeakSet.prototype-not-instance.js: ReferenceError: WeakSet.prototype-not-instance.js:10: WeakSet
+kangax-es6/WeakSet.prototype.add-returns-this.js: ReferenceError: WeakSet.prototype.add-returns-this.js:10: WeakSet
+kangax-es6/WeakSet.prototype.delete.js: exception: SyntaxError: WeakSet.prototype.delete.js:10: expected an identifier but got 'delete'
+kangax-es6/annex-b.RegExp.prototype.compile.js: failed
+kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: annex-b.RegExp.prototype.compile.returns-this.js:11: Function is not defined
+kangax-es6/annex-b.String.prototype.html.existence.js: failed
+kangax-es6/annex-b.String.prototype.html.lowercase.js: TypeError: annex-b.String.prototype.html.lowercase.js:12: Function is not defined
+kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: annex-b.String.prototype.html.quotes-escaped.js:11: Function is not defined
+kangax-es6/annex-b.function.hoisted-block-level.js: exception: SyntaxError: annex-b.function.hoisted-block-level.js:15: function keyword not allowed here, near 'function'
+kangax-es6/annex-b.function.if-statement.js: exception: SyntaxError: annex-b.function.if-statement.js:12: function keyword not allowed here, near 'function'
+kangax-es6/annex-b.function.labeled.js: exception: SyntaxError: annex-b.function.labeled.js:12: function keyword not allowed here, near 'function'
+kangax-es6/annex-b.html-comments.js: exception: SyntaxError: annex-b.html-comments.js:9: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/annex-b.regex.backreferences-octal.js: SyntaxError: annex-b.regex.backreferences-octal.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.hyphens.js: SyntaxError: annex-b.regex.hyphens.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.incomplete-patterns.js: SyntaxError: annex-b.regex.incomplete-patterns.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
+kangax-es6/annex-b.regex.invalid-control-escapes.js: SyntaxError: annex-b.regex.invalid-control-escapes.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: SyntaxError: annex-b.regex.invalid-hex-escapes.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.invalid-unicode-escapes.js: SyntaxError: annex-b.regex.invalid-unicode-escapes.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.regex.octal-escapes.js: SyntaxError: annex-b.regex.octal-escapes.js:9: Regular expression contained a syntax error
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: TypeError: annex-b.__proto__.Object.prototype.absent-from-null.js:10: Function is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: TypeError: annex-b.__proto__.Object.prototype.descriptor.js:10: Function is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: TypeError: annex-b.__proto__.Object.prototype.getOwnPropertyNames.js:10: Function is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.get.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: TypeError: annex-b.__proto__.Object.prototype.set.js:12: Object does not support the 'instanceof' operator
+kangax-es6/annex-b.__proto__.literals.js: TypeError: annex-b.__proto__.literals.js:10: Object does not support the 'instanceof' operator
+kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
+kangax-es6/annex-b.__proto__.literals.not-computed.js: exception: SyntaxError: annex-b.__proto__.literals.not-computed.js:14: expected string, identifier or number but got '['
+kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: exception: SyntaxError: annex-b.__proto__.literals.not-shorthand-method.js:13: expected ':' but got '('
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: exception: SyntaxError: annex-b.__proto__.literals.not-shorthand-property.js:14: expected ':' but got '}'
+kangax-es6/arrow.0-params.js: exception: SyntaxError: arrow.0-params.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/arrow.1-param.js: exception: SyntaxError: arrow.1-param.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.5-param.js: exception: SyntaxError: arrow.5-param.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.bind.js: exception: SyntaxError: arrow.bind.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.lexical-arguments.js: exception: SyntaxError: arrow.lexical-arguments.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.lexical-super.constructor.js: exception: SyntaxError: arrow.lexical-super.constructor.js:12: expected '}' but got a reserved word
+kangax-es6/arrow.lexical-super.methods.js: exception: SyntaxError: arrow.lexical-super.methods.js:10: expected '}' but got a reserved word
+kangax-es6/arrow.lexical-this.js: exception: SyntaxError: arrow.lexical-this.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.new-target.js: exception: SyntaxError: arrow.new-target.js:11: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/arrow.no-line-break.js: exception: SyntaxError: arrow.no-line-break.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/arrow.no-prototype.js: exception: SyntaxError: arrow.no-prototype.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/arrow.precedence.js: exception: SyntaxError: arrow.precedence.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/arrow.this-call-apply.js: exception: SyntaxError: arrow.this-call-apply.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/class.accessor-properties.js: exception: SyntaxError: class.accessor-properties.js:11: expected '}' but got a reserved word
+kangax-es6/class.anonymous.js: exception: SyntaxError: class.anonymous.js:10: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/class.block-scoped.js: exception: SyntaxError: class.block-scoped.js:10: expected '}' but got a reserved word
+kangax-es6/class.computed-accessor-properties.js: exception: SyntaxError: class.computed-accessor-properties.js:11: expected '}' but got a reserved word
+kangax-es6/class.computed-names-tdz.js: exception: SyntaxError: class.computed-names-tdz.js:11: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/class.computed-prototype-methods.js: exception: SyntaxError: class.computed-prototype-methods.js:11: expected '}' but got a reserved word
+kangax-es6/class.computed-static-accessor-properties.js: exception: SyntaxError: class.computed-static-accessor-properties.js:11: expected '}' but got a reserved word
+kangax-es6/class.computed-static-methods.js: exception: SyntaxError: class.computed-static-methods.js:11: expected '}' but got a reserved word
+kangax-es6/class.constructor-requires-new.js: exception: SyntaxError: class.constructor-requires-new.js:10: expected '}' but got a reserved word
+kangax-es6/class.constructor.js: exception: SyntaxError: class.constructor.js:10: expected '}' but got a reserved word
+kangax-es6/class.expression.js: exception: SyntaxError: class.expression.js:10: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/class.extends-expressions.js: exception: SyntaxError: class.extends-expressions.js:11: expected '}' but got a reserved word
+kangax-es6/class.extends-null.js: exception: SyntaxError: class.extends-null.js:10: expected '}' but got a reserved word
+kangax-es6/class.extends.js: exception: SyntaxError: class.extends.js:10: expected '}' but got a reserved word
+kangax-es6/class.implicit-strict.js: exception: SyntaxError: class.implicit-strict.js:10: expected '}' but got a reserved word
+kangax-es6/class.lexical-name.js: exception: SyntaxError: class.lexical-name.js:10: expected '}' but got a reserved word
+kangax-es6/class.methods-not-enumerable.js: exception: SyntaxError: class.methods-not-enumerable.js:10: expected '}' but got a reserved word
+kangax-es6/class.new-target.js: exception: SyntaxError: class.new-target.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/class.optional-semicolons.js: exception: SyntaxError: class.optional-semicolons.js:10: expected '}' but got a reserved word
+kangax-es6/class.prototype-methods.js: exception: SyntaxError: class.prototype-methods.js:10: expected '}' but got a reserved word
+kangax-es6/class.statement.js: exception: SyntaxError: class.statement.js:10: expected '}' but got a reserved word
+kangax-es6/class.static-accessor-properties.js: exception: SyntaxError: class.static-accessor-properties.js:11: expected '}' but got a reserved word
+kangax-es6/class.static-methods.js: exception: SyntaxError: class.static-methods.js:10: expected '}' but got a reserved word
+kangax-es6/class.string-keyed-methods.js: exception: SyntaxError: class.string-keyed-methods.js:10: expected '}' but got a reserved word
+kangax-es6/const.basic.js: exception: SyntaxError: const.basic.js:10: expected '}' but got a reserved word
+kangax-es6/const.block-scoped.js: exception: SyntaxError: const.block-scoped.js:10: expected '}' but got a reserved word
+kangax-es6/const.for-in.js: exception: SyntaxError: const.for-in.js:11: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.for-loop.js: exception: SyntaxError: const.for-loop.js:10: expected '}' but got a reserved word
+kangax-es6/const.for-of.js: exception: SyntaxError: const.for-of.js:11: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.no-redefine.js: exception: SyntaxError: const.no-redefine.js:10: expected '}' but got a reserved word
+kangax-es6/const.no-statement.js: exception: SyntaxError: const.no-statement.js:10: expected '}' but got a reserved word
+kangax-es6/const.shadow.js: exception: SyntaxError: const.shadow.js:11: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.strict.basic.js: exception: SyntaxError: const.strict.basic.js:11: expected '}' but got a reserved word
+kangax-es6/const.strict.block-scoped.js: exception: SyntaxError: const.strict.block-scoped.js:11: expected '}' but got a reserved word
+kangax-es6/const.strict.for-in.js: exception: SyntaxError: const.strict.for-in.js:12: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.strict.for-loop.js: exception: SyntaxError: const.strict.for-loop.js:11: expected '}' but got a reserved word
+kangax-es6/const.strict.for-of.js: exception: SyntaxError: const.strict.for-of.js:12: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.strict.no-redefine.js: exception: SyntaxError: const.strict.no-redefine.js:11: expected '}' but got a reserved word
+kangax-es6/const.strict.no-statement.js: exception: SyntaxError: const.strict.no-statement.js:11: expected '}' but got a reserved word
+kangax-es6/const.strict.shadow.js: exception: SyntaxError: const.strict.shadow.js:12: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/const.strict.tdz.js: exception: SyntaxError: const.strict.tdz.js:13: expected '}' but got a reserved word
+kangax-es6/const.tdz.js: exception: SyntaxError: const.tdz.js:12: expected '}' but got a reserved word
+kangax-es6/default-params.arguments.js: exception: SyntaxError: default-params.arguments.js:10: expected ')' but got '='
+kangax-es6/default-params.basic.js: exception: SyntaxError: default-params.basic.js:10: expected ')' but got '='
+kangax-es6/default-params.explicit-undefined.js: exception: SyntaxError: default-params.explicit-undefined.js:10: expected ')' but got '='
+kangax-es6/default-params.new-function.js: SyntaxError: default-params.new-function.js:10: <string>:1: expected end of file but got '='
+kangax-es6/default-params.refer-previous.js: exception: SyntaxError: default-params.refer-previous.js:10: expected ')' but got '='
+kangax-es6/default-params.separate-scope.js: exception: SyntaxError: default-params.separate-scope.js:10: expected ')' but got '='
+kangax-es6/default-params.tdz.js: exception: SyntaxError: default-params.tdz.js:10: expected ')' but got '='
+kangax-es6/destructuring-assign.array.js: ReferenceError: destructuring-assign.array.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.astral-string.js: ReferenceError: destructuring-assign.astral-string.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.chained-iterable.js: ReferenceError: destructuring-assign.chained-iterable.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.chained-object.js: exception: SyntaxError: destructuring-assign.chained-object.js:11: expected ':' but got ','
+kangax-es6/destructuring-assign.computed-properties.js: exception: SyntaxError: destructuring-assign.computed-properties.js:11: expected string, identifier or number but got '['
+kangax-es6/destructuring-assign.defaults.js: exception: SyntaxError: destructuring-assign.defaults.js:11: expected ':' but got '='
+kangax-es6/destructuring-assign.empty-patterns.js: ReferenceError: destructuring-assign.empty-patterns.js:10: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.generator.js: exception: SyntaxError: destructuring-assign.generator.js:11: expected '(' but got '*'
+kangax-es6/destructuring-assign.iterable-expression.js: ReferenceError: destructuring-assign.iterable-expression.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.iterable-instance.js: TypeError: destructuring-assign.iterable-instance.js:35: Function is not defined
+kangax-es6/destructuring-assign.iterable.js: ReferenceError: destructuring-assign.iterable.js:35: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.iterator-closing.js: ReferenceError: destructuring-assign.iterator-closing.js:39: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.nested-rest.js: exception: SyntaxError: destructuring-assign.nested-rest.js:11: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/destructuring-assign.nested.js: exception: SyntaxError: destructuring-assign.nested.js:11: expected ':' but got '}'
+kangax-es6/destructuring-assign.object-expression.js: exception: SyntaxError: destructuring-assign.object-expression.js:11: expected ':' but got ','
+kangax-es6/destructuring-assign.object-primitives.js: exception: SyntaxError: destructuring-assign.object-primitives.js:11: expected ':' but got '}'
+kangax-es6/destructuring-assign.object.js: exception: SyntaxError: destructuring-assign.object.js:11: expected ':' but got ','
+kangax-es6/destructuring-assign.parenthesised-error.js: exception: SyntaxError: destructuring-assign.parenthesised-error.js:11: expected ':' but got ','
+kangax-es6/destructuring-assign.rest.js: exception: SyntaxError: destructuring-assign.rest.js:11: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/destructuring-assign.sparse-array.js: ReferenceError: destructuring-assign.sparse-array.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.string.js: ReferenceError: destructuring-assign.string.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.throws-null-undefined.js: exception: SyntaxError: destructuring-assign.throws-null-undefined.js:12: expected ':' but got '}'
+kangax-es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: destructuring-assign.trailing-comma-iterable.js:11: Left-hand-side of the assignment cannot be assigned to
+kangax-es6/destructuring-assign.trailing-comma-object.js: exception: SyntaxError: destructuring-assign.trailing-comma-object.js:11: expected ':' but got ','
+kangax-es6/destructuring-decl.array.js: exception: SyntaxError: destructuring-decl.array.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.astral-string.js: exception: SyntaxError: destructuring-decl.astral-string.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.catch.js: exception: SyntaxError: destructuring-decl.catch.js:12: expected an identifier but got '['
+kangax-es6/destructuring-decl.computed-properties.js: exception: SyntaxError: destructuring-decl.computed-properties.js:11: expected an identifier but got '{'
+kangax-es6/destructuring-decl.defaults-tdz.js: exception: SyntaxError: destructuring-decl.defaults-tdz.js:10: expected an identifier but got '{'
+kangax-es6/destructuring-decl.defaults.js: exception: SyntaxError: destructuring-decl.defaults.js:10: expected an identifier but got '{'
+kangax-es6/destructuring-decl.for-in.js: exception: SyntaxError: destructuring-decl.for-in.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.for-of.js: exception: SyntaxError: destructuring-decl.for-of.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.generator.js: exception: SyntaxError: destructuring-decl.generator.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.iterable-instance.js: exception: SyntaxError: :0: destructuring-decl.iterable-instance.js:34: expected an identifier but got '['
+kangax-es6/destructuring-decl.iterable.js: exception: SyntaxError: :0: destructuring-decl.iterable.js:34: expected an identifier but got '['
+kangax-es6/destructuring-decl.iterator-closing.js: exception: SyntaxError: :0: destructuring-decl.iterator-closing.js:38: expected an identifier but got '['
+kangax-es6/destructuring-decl.multiple-var.js: exception: SyntaxError: destructuring-decl.multiple-var.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.nested.js: exception: SyntaxError: destructuring-decl.nested.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.object-primitives.js: exception: SyntaxError: destructuring-decl.object-primitives.js:10: expected an identifier but got '{'
+kangax-es6/destructuring-decl.object.js: exception: SyntaxError: destructuring-decl.object.js:10: expected an identifier but got '{'
+kangax-es6/destructuring-decl.rest.js: exception: SyntaxError: destructuring-decl.rest.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.sparse-array.js: exception: SyntaxError: destructuring-decl.sparse-array.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.string.js: exception: SyntaxError: destructuring-decl.string.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.throws-null-undefined.js: exception: SyntaxError: destructuring-decl.throws-null-undefined.js:11: expected an identifier but got '{'
+kangax-es6/destructuring-decl.trailing-comma-iterable.js: exception: SyntaxError: destructuring-decl.trailing-comma-iterable.js:10: expected an identifier but got '['
+kangax-es6/destructuring-decl.trailing-comma-object.js: exception: SyntaxError: destructuring-decl.trailing-comma-object.js:10: expected an identifier but got '{'
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: exception: SyntaxError: destructuring-params.aliased-defaults-arrow.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es6/destructuring-params.arguments.js: exception: SyntaxError: destructuring-params.arguments.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.array.js: exception: SyntaxError: destructuring-params.array.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.astral-string.js: exception: SyntaxError: destructuring-params.astral-string.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.computed-properties.js: exception: SyntaxError: destructuring-params.computed-properties.js:11: expected ')' but got '{'
+kangax-es6/destructuring-params.defaults-new-function.js: SyntaxError: destructuring-params.defaults-new-function.js:10: <string>:1: expected end of file but got '{'
+kangax-es6/destructuring-params.defaults-separate-scope.js: exception: SyntaxError: destructuring-params.defaults-separate-scope.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.defaults.js: exception: SyntaxError: destructuring-params.defaults.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.duplicate-identifier.js: TypeError: destructuring-params.duplicate-identifier.js:14: Object does not support the 'instanceof' operator
+kangax-es6/destructuring-params.empty-patterns.js: exception: SyntaxError: destructuring-params.empty-patterns.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.generator.js: exception: SyntaxError: destructuring-params.generator.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.iterable-instance.js: exception: SyntaxError: :0: destructuring-params.iterable-instance.js:34: expected ')' but got '['
+kangax-es6/destructuring-params.iterable.js: exception: SyntaxError: :0: destructuring-params.iterable.js:34: expected ')' but got '['
+kangax-es6/destructuring-params.iterator-closing.js: exception: SyntaxError: :0: destructuring-params.iterator-closing.js:38: expected ')' but got '['
+kangax-es6/destructuring-params.length.js: exception: SyntaxError: destructuring-params.length.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.nested.js: exception: SyntaxError: destructuring-params.nested.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.new-function.js: SyntaxError: destructuring-params.new-function.js:10: <string>:1: expected end of file but got '{'
+kangax-es6/destructuring-params.object-primitives.js: exception: SyntaxError: destructuring-params.object-primitives.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.object.js: exception: SyntaxError: destructuring-params.object.js:10: expected ')' but got '{'
+kangax-es6/destructuring-params.rest.js: exception: SyntaxError: destructuring-params.rest.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.shorthand-defaults-arrow.js: exception: SyntaxError: destructuring-params.shorthand-defaults-arrow.js:10: expected ':' but got '='
+kangax-es6/destructuring-params.sparse-array.js: exception: SyntaxError: destructuring-params.sparse-array.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.string.js: exception: SyntaxError: destructuring-params.string.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.throws-null-undefined.js: exception: SyntaxError: destructuring-params.throws-null-undefined.js:11: expected ')' but got '{'
+kangax-es6/destructuring-params.trailing-comma-iterable.js: exception: SyntaxError: destructuring-params.trailing-comma-iterable.js:10: expected ')' but got '['
+kangax-es6/destructuring-params.trailing-comma-object.js: exception: SyntaxError: destructuring-params.trailing-comma-object.js:10: expected ')' but got '{'
+kangax-es6/for-of.array.js: exception: SyntaxError: for-of.array.js:11: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.astral-string.js: exception: SyntaxError: for-of.astral-string.js:11: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.generator.js: exception: SyntaxError: for-of.generator.js:11: expected '(' but got '*'
+kangax-es6/for-of.iterable-instance.js: exception: SyntaxError: :0: for-of.iterable-instance.js:36: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.iterable.js: exception: SyntaxError: :0: for-of.iterable.js:36: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.iterator-closing-break.js: exception: SyntaxError: :0: for-of.iterator-closing-break.js:37: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.iterator-closing-throw.js: exception: SyntaxError: :0: for-of.iterator-closing-throw.js:38: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.sparse-array.js: exception: SyntaxError: for-of.sparse-array.js:12: expected ';' or 'in' but got an identifier
+kangax-es6/for-of.string.js: exception: SyntaxError: for-of.string.js:11: expected ';' or 'in' but got an identifier
+kangax-es6/function.block-level-decl.js: exception: SyntaxError: function.block-level-decl.js:16: expected '}' but got 'function'
+kangax-es6/generators.basic.js: exception: SyntaxError: generators.basic.js:10: expected an identifier but got '*'
+kangax-es6/generators.constructor.js: exception: SyntaxError: generators.constructor.js:10: expected an identifier but got '*'
+kangax-es6/generators.expression.js: exception: SyntaxError: generators.expression.js:10: expected '(' but got '*'
+kangax-es6/generators.no-new-this.js: exception: SyntaxError: generators.no-new-this.js:10: expected an identifier but got '*'
+kangax-es6/generators.prototype-chain.js: exception: SyntaxError: generators.prototype-chain.js:10: expected an identifier but got '*'
+kangax-es6/generators.prototype.js: exception: SyntaxError: generators.prototype.js:10: expected an identifier but got '*'
+kangax-es6/generators.return.js: exception: SyntaxError: generators.return.js:10: expected an identifier but got '*'
+kangax-es6/generators.sending.js: exception: SyntaxError: generators.sending.js:11: expected an identifier but got '*'
+kangax-es6/generators.shorthand.class.js: exception: SyntaxError: generators.shorthand.class.js:10: expected '}' but got a reserved word
+kangax-es6/generators.shorthand.computed.class.js: exception: SyntaxError: generators.shorthand.computed.class.js:11: expected '}' but got a reserved word
+kangax-es6/generators.shorthand.computed.js: exception: SyntaxError: generators.shorthand.computed.js:12: expected string, identifier or number but got '*'
+kangax-es6/generators.shorthand.js: exception: SyntaxError: generators.shorthand.js:11: expected string, identifier or number but got '*'
+kangax-es6/generators.shorthand.no-constructor.js: exception: SyntaxError: generators.shorthand.no-constructor.js:10: expected '}' but got a reserved word
+kangax-es6/generators.shorthand.string-keyed.js: exception: SyntaxError: generators.shorthand.string-keyed.js:11: expected string, identifier or number but got '*'
+kangax-es6/generators.this.js: exception: SyntaxError: generators.this.js:10: expected an identifier but got '*'
+kangax-es6/generators.throw.js: exception: SyntaxError: generators.throw.js:11: expected an identifier but got '*'
+kangax-es6/generators.yield-precedence.js: exception: SyntaxError: generators.yield-precedence.js:11: expected an identifier but got '*'
+kangax-es6/generators.yield-star.array.js: exception: SyntaxError: generators.yield-star.array.js:10: expected '(' but got '*'
+kangax-es6/generators.yield-star.astral-string.js: exception: SyntaxError: generators.yield-star.astral-string.js:10: expected '(' but got '*'
+kangax-es6/generators.yield-star.generator.js: exception: SyntaxError: generators.yield-star.generator.js:10: expected '(' but got '*'
+kangax-es6/generators.yield-star.iterable-instance.js: exception: SyntaxError: :0: generators.yield-star.iterable-instance.js:33: expected '(' but got '*'
+kangax-es6/generators.yield-star.iterable.js: exception: SyntaxError: :0: generators.yield-star.iterable.js:34: expected '(' but got '*'
+kangax-es6/generators.yield-star.iterator-closing-throw.js: exception: SyntaxError: :0: generators.yield-star.iterator-closing-throw.js:42: expected '(' but got '*'
+kangax-es6/generators.yield-star.iterator-closing.js: exception: SyntaxError: :0: generators.yield-star.iterator-closing.js:40: expected '(' but got '*'
+kangax-es6/generators.yield-star.non-iterable-error.js: exception: SyntaxError: generators.yield-star.non-iterable-error.js:10: expected '(' but got '*'
+kangax-es6/generators.yield-star.sparse-array.js: exception: SyntaxError: generators.yield-star.sparse-array.js:10: expected '(' but got '*'
+kangax-es6/generators.yield-star.string.js: exception: SyntaxError: generators.yield-star.string.js:10: expected '(' but got '*'
+kangax-es6/let.basic.js: exception: SyntaxError: let.basic.js:10: expected ';', '}' or newline but got an identifier
+kangax-es6/let.block-scoped.js: exception: SyntaxError: let.block-scoped.js:10: expected ';', '}' or newline but got an identifier
+kangax-es6/let.for-in-shadow.js: failed
+kangax-es6/let.for-iteration.js: exception: SyntaxError: let.for-iteration.js:10: expected ';', '}' or newline but got an identifier
+kangax-es6/let.for-loop.js: exception: SyntaxError: let.for-loop.js:10: expected ';', '}' or newline but got an identifier
+kangax-es6/let.no-statement.js: exception: SyntaxError: let.no-statement.js:10: expected ';', '}' or newline but got an identifier
+kangax-es6/let.shadow.js: exception: SyntaxError: let.shadow.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.basic.js: exception: SyntaxError: let.strict.basic.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.block-scoped.js: exception: SyntaxError: let.strict.block-scoped.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.for-in-shadow.js: failed
+kangax-es6/let.strict.for-iteration.js: exception: SyntaxError: let.strict.for-iteration.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.for-loop.js: exception: SyntaxError: let.strict.for-loop.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.no-statement.js: exception: SyntaxError: let.strict.no-statement.js:11: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.shadow.js: exception: SyntaxError: let.strict.shadow.js:12: expected ';', '}' or newline but got an identifier
+kangax-es6/let.strict.tdz.js: exception: SyntaxError: let.strict.tdz.js:13: expected ';', '}' or newline but got an identifier
+kangax-es6/let.tdz.js: exception: SyntaxError: let.tdz.js:12: expected ';', '}' or newline but got an identifier
+kangax-es6/literals.binary.Number.js: failed
+kangax-es6/literals.binary.js: exception: SyntaxError: literals.binary.js:9: expected ';', '}' or newline but got an identifier
+kangax-es6/literals.object.computed-accessors.js: exception: SyntaxError: literals.object.computed-accessors.js:13: expected ':' but got '['
+kangax-es6/literals.object.computed-properties.js: exception: SyntaxError: literals.object.computed-properties.js:11: expected string, identifier or number but got '['
+kangax-es6/literals.object.computed-shorthand-methods.js: exception: SyntaxError: literals.object.computed-shorthand-methods.js:11: expected string, identifier or number but got '['
+kangax-es6/literals.object.shorthand-methods.js: exception: SyntaxError: literals.object.shorthand-methods.js:10: expected ':' but got '('
+kangax-es6/literals.object.shorthand-properties.js: exception: SyntaxError: literals.object.shorthand-properties.js:10: expected ':' but got ','
+kangax-es6/literals.object.string-keyed-shorthand-methods.js: exception: SyntaxError: literals.object.string-keyed-shorthand-methods.js:10: expected ':' but got '('
+kangax-es6/literals.octal.Number.js: failed
+kangax-es6/literals.octal.js: exception: SyntaxError: literals.octal.js:9: expected ';', '}' or newline but got an identifier
+kangax-es6/misc.Invalid-Date.js: failed
+kangax-es6/misc.Object.freeze.primitives.js: TypeError: misc.Object.freeze.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: misc.Object.getOwnPropertyDescriptor.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: TypeError: misc.Object.getOwnPropertyNames.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: TypeError: misc.Object.getPrototypeOf.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.isExtensible.primitives.js: TypeError: misc.Object.isExtensible.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.isFrozen.primitives.js: TypeError: misc.Object.isFrozen.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.isSealed.primitives.js: TypeError: misc.Object.isSealed.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.keys.primitives.js: TypeError: misc.Object.keys.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.preventExtensions.primitives.js: TypeError: misc.Object.preventExtensions.primitives.js:10: Function is not defined
+kangax-es6/misc.Object.seal.primitives.js: TypeError: misc.Object.seal.primitives.js:10: Function is not defined
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: misc.Proxy.defineProperty.SetIntegrityLevel.js:12: Proxy
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: misc.Proxy.defineProperty.Set.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: misc.Proxy.deleteProperty.Array.copyWithin.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: misc.Proxy.deleteProperty.Array.pop.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: misc.Proxy.deleteProperty.Array.reverse.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: misc.Proxy.deleteProperty.Array.shift.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: misc.Proxy.deleteProperty.Array.splice.js:12: Proxy
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: misc.Proxy.deleteProperty.Array.unshift.js:12: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: misc.Proxy.getOwnPropertyDescriptor.Function.bind.js:12: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: misc.Proxy.getOwnPropertyDescriptor.Object.assign.js:12: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js:12: Proxy
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: misc.Proxy.getOwnPropertyDescriptor.Set.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.concat.js: ReferenceError: misc.Proxy.get.Array.concat.js:14: Proxy
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: misc.Proxy.get.Array.from.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: misc.Proxy.get.Array.iteration.js:14: Proxy
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: misc.Proxy.get.Array.pop.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: misc.Proxy.get.Array.reverse.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: misc.Proxy.get.Array.shift.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: misc.Proxy.get.Array.splice.js:12: Proxy
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: misc.Proxy.get.Array.toString.js:12: Proxy
+kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: exception: SyntaxError: misc.Proxy.get.ClassDefinitionEvaluation.js:13: expected '}' but got a reserved word
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: misc.Proxy.get.CreateDynamicFunction.js:12: Proxy
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: misc.Proxy.get.CreateListFromArrayLike.js:12: Proxy
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: misc.Proxy.get.Date.toJSON.js:13: Proxy
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: misc.Proxy.get.Error.toString.js:12: Proxy
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: misc.Proxy.get.Function.bind.js:12: Proxy
+kangax-es6/misc.Proxy.get.HasBinding.js: ReferenceError: misc.Proxy.get.HasBinding.js:12: Proxy
+kangax-es6/misc.Proxy.get.IteratorComplete.js: exception: SyntaxError: misc.Proxy.get.IteratorComplete.js:22: expected ';' or 'in' but got an identifier
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: misc.Proxy.get.JSON.stringify.js:12: Proxy
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: misc.Proxy.get.Object.assign.js:12: Proxy
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: misc.Proxy.get.Object.defineProperties.js:12: Proxy
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: misc.Proxy.get.Promise.resolve.js:12: Proxy
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: misc.Proxy.get.RegExp-constructor.js:13: Symbol
+kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: misc.Proxy.get.RegExp.Symbol.match.js:14: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: misc.Proxy.get.RegExp.Symbol.replace.js:14: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: misc.Proxy.get.RegExp.Symbol.search.js:14: Proxy
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: misc.Proxy.get.RegExp.Symbol.split.js:13: Symbol
+kangax-es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: misc.Proxy.get.RegExp.flags.js:25: Proxy
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: misc.Proxy.get.RegExp.test.js:12: Proxy
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: misc.Proxy.get.RegExp.toString.js:12: Proxy
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: misc.Proxy.get.String.match.js:13: Symbol
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: misc.Proxy.get.String.raw.js:12: Proxy
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: misc.Proxy.get.String.replace.js:13: Symbol
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: misc.Proxy.get.String.search.js:13: Symbol
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: misc.Proxy.get.String.split.js:13: Symbol
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: misc.Proxy.get.ToPrimitive.js:12: Proxy
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: misc.Proxy.get.ToPropertyDescriptor.js:12: Proxy
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: misc.Proxy.get.instanceof.js:13: Proxy
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: misc.Proxy.ownKeys.SerializeJSONObject.js:12: Proxy
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: misc.Proxy.ownKeys.SetIntegrityLevel.js:12: Proxy
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: misc.Proxy.ownKeys.TestIntegrityLevel.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: misc.Proxy.set.Array.copyWithin.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: misc.Proxy.set.Array.fill.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: misc.Proxy.set.Array.from.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: misc.Proxy.set.Array.of.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: misc.Proxy.set.Array.pop.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: misc.Proxy.set.Array.push.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: misc.Proxy.set.Array.reverse.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: misc.Proxy.set.Array.shift.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: misc.Proxy.set.Array.splice.js:12: Proxy
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: misc.Proxy.set.Array.unshift.js:12: Proxy
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: misc.Proxy.set.Object.assign.js:12: Proxy
+kangax-es6/misc.RegExp-alter-flags.js: TypeError: misc.RegExp-alter-flags.js:11: Bad argument was given to RegExp constructor
+kangax-es6/misc.RegExp-prototype-toString-generic.js: TypeError: misc.RegExp-prototype-toString-generic.js:9: Object is not a native RegExp object
+kangax-es6/misc.accessors-no-constructor.js: exception: SyntaxError: misc.accessors-no-constructor.js:9: expected ':' but got an identifier
+kangax-es6/misc.bound-function-prototype.arrow.js: exception: SyntaxError: misc.bound-function-prototype.arrow.js:10: expected null, true, false, number, string, or regex but got ')'
+kangax-es6/misc.bound-function-prototype.class.js: exception: SyntaxError: misc.bound-function-prototype.class.js:10: expected '}' but got a reserved word
+kangax-es6/misc.bound-function-prototype.function.js: TypeError: misc.bound-function-prototype.function.js:16: Tried to use undefined as an object
+kangax-es6/misc.bound-function-prototype.generator.js: exception: SyntaxError: misc.bound-function-prototype.generator.js:10: expected '(' but got '*'
+kangax-es6/misc.bound-function-prototype.subclass.js: exception: SyntaxError: misc.bound-function-prototype.subclass.js:10: expected '}' but got a reserved word
+kangax-es6/misc.do-while-no-semicolon.js: exception: SyntaxError: misc.do-while-no-semicolon.js:9: expected ';', '}' or newline but got 'return'
+kangax-es6/misc.duplicate-properties-strict.js: failed
+kangax-es6/misc.for-in-no-assignment-strict.js: failed
+kangax-es6/misc.function-length-configurable.js: TypeError: misc.function-length-configurable.js:11: Function is not defined
+kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: failed
+kangax-es6/misc.identifier-syntax.var-1.js: OK
+kangax-es6/misc.identifier-syntax.var-2.js: exception: SyntaxError: line 9: malformed unicode input
+kangax-es6/misc.property-order.JSON.parse.js: ReferenceError: misc.property-order.JSON.parse.js:10: JSON
+kangax-es6/misc.property-order.JSON.stringify.js: TypeError: misc.property-order.JSON.stringify.js:21: Function is not defined
+kangax-es6/misc.property-order.Object.assign.js: TypeError: misc.property-order.Object.assign.js:12: Function is not defined
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: TypeError: misc.property-order.Object.getOwnPropertyNames.js:21: Function is not defined
+kangax-es6/misc.property-order.Object.keys.js: TypeError: misc.property-order.Object.keys.js:28: Function is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: TypeError: misc.property-order.Reflect.ownKeys.string.js:21: Function is not defined
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: misc.property-order.Reflect.ownKeys.symbol.js:9: Symbol
+kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/new-target.assignment-error.js: exception: SyntaxError: new-target.assignment-error.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/new-target.constructor.js: exception: SyntaxError: new-target.constructor.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:10: Bad flag given to RegExp constructor
+kangax-es6/regex.flags.u.codepoint.js: SyntaxError: regex.flags.u.codepoint.js:10: Bad flag given to RegExp constructor
+kangax-es6/regex.flags.u.js: SyntaxError: regex.flags.u.js:10: Bad flag given to RegExp constructor
+kangax-es6/regex.flags.u.non-bmp.js: SyntaxError: regex.flags.u.non-bmp.js:10: Bad flag given to RegExp constructor
+kangax-es6/regex.flags.y.js: SyntaxError: regex.flags.y.js:10: Bad flag given to RegExp constructor
+kangax-es6/regex.flags.y.lastIndex.js: SyntaxError: regex.flags.y.lastIndex.js:10: Bad flag given to RegExp constructor
+kangax-es6/rest-params.arguments.js: exception: SyntaxError: rest-params.arguments.js:10: expected an identifier but got '.'
+kangax-es6/rest-params.basic.js: exception: SyntaxError: rest-params.basic.js:10: expected an identifier but got '.'
+kangax-es6/rest-params.length.js: exception: SyntaxError: rest-params.length.js:10: expected an identifier but got '.'
+kangax-es6/rest-params.new-function.js: SyntaxError: rest-params.new-function.js:10: <string>:1: expected an identifier but got '.'
+kangax-es6/rest-params.no-setter.js: exception: SyntaxError: rest-params.no-setter.js:10: expected ')' but got '.'
+kangax-es6/spread.array-call.js: exception: SyntaxError: spread.array-call.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.array-literal.js: exception: SyntaxError: spread.array-literal.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.astral-call.js: exception: SyntaxError: spread.astral-call.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.astral-literal.js: exception: SyntaxError: spread.astral-literal.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.generator-call.js: exception: SyntaxError: spread.generator-call.js:10: expected '(' but got '*'
+kangax-es6/spread.generator-literal.js: exception: SyntaxError: spread.generator-literal.js:10: expected '(' but got '*'
+kangax-es6/spread.iterable-call.js: exception: SyntaxError: :0: spread.iterable-call.js:35: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.iterable-instance-call.js: exception: SyntaxError: :0: spread.iterable-instance-call.js:35: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.iterable-instance-literal.js: exception: SyntaxError: :0: spread.iterable-instance-literal.js:35: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.iterable-literal.js: exception: SyntaxError: :0: spread.iterable-literal.js:35: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.non-iterable-error.js: exception: SyntaxError: spread.non-iterable-error.js:11: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.sparse-call.js: exception: SyntaxError: spread.sparse-call.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.sparse-literal.js: exception: SyntaxError: spread.sparse-literal.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.string-call.js: exception: SyntaxError: spread.string-call.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/spread.string-literal.js: exception: SyntaxError: spread.string-literal.js:10: expected null, true, false, number, string, or regex but got '.'
+kangax-es6/subclassing.Array.concat.js: exception: SyntaxError: subclassing.Array.concat.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.filter.js: exception: SyntaxError: subclassing.Array.filter.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.from.js: exception: SyntaxError: subclassing.Array.from.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.isArray.js: exception: SyntaxError: subclassing.Array.isArray.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.length-access.js: exception: SyntaxError: subclassing.Array.length-access.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.length-set.js: exception: SyntaxError: subclassing.Array.length-set.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.map.js: exception: SyntaxError: subclassing.Array.map.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.of.js: exception: SyntaxError: subclassing.Array.of.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.prototype-chain.js: exception: SyntaxError: subclassing.Array.prototype-chain.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.slice.js: exception: SyntaxError: subclassing.Array.slice.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Array.splice.js: exception: SyntaxError: subclassing.Array.splice.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.call.js: exception: SyntaxError: subclassing.Function.call.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.new.js: exception: SyntaxError: subclassing.Function.new.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.prototype-chain.js: exception: SyntaxError: subclassing.Function.prototype-chain.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.prototype.apply.js: exception: SyntaxError: subclassing.Function.prototype.apply.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.prototype.bind.js: exception: SyntaxError: subclassing.Function.prototype.bind.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Function.prototype.call.js: exception: SyntaxError: subclassing.Function.prototype.call.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Promise.all.js: exception: SyntaxError: :0: subclassing.Promise.all.js:44: expected '}' but got a reserved word
+kangax-es6/subclassing.Promise.js: exception: SyntaxError: :0: subclassing.Promise.js:44: expected '}' but got a reserved word
+kangax-es6/subclassing.Promise.prototype-chain.js: exception: SyntaxError: subclassing.Promise.prototype-chain.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.Promise.race.js: exception: SyntaxError: :0: subclassing.Promise.race.js:44: expected '}' but got a reserved word
+kangax-es6/subclassing.RegExp.exec.js: exception: SyntaxError: subclassing.RegExp.exec.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.RegExp.js: exception: SyntaxError: subclassing.RegExp.js:11: expected '}' but got a reserved word
+kangax-es6/subclassing.RegExp.prototype-chain.js: exception: SyntaxError: subclassing.RegExp.prototype-chain.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.RegExp.test.js: exception: SyntaxError: subclassing.RegExp.test.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.Boolean.js: exception: SyntaxError: subclassing.misc.Boolean.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.Error.js: exception: SyntaxError: subclassing.misc.Error.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.Map.js: exception: SyntaxError: subclassing.misc.Map.js:10: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.Number.js: exception: SyntaxError: subclassing.misc.Number.js:9: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.Set.js: exception: SyntaxError: subclassing.misc.Set.js:10: expected '}' but got a reserved word
+kangax-es6/subclassing.misc.String.js: exception: SyntaxError: subclassing.misc.String.js:9: expected '}' but got a reserved word
+kangax-es6/super.correct-constructor.js: exception: SyntaxError: super.correct-constructor.js:12: expected '}' but got a reserved word
+kangax-es6/super.expression.js: exception: SyntaxError: super.expression.js:10: expected '}' but got a reserved word
+kangax-es6/super.method-calls.js: exception: SyntaxError: super.method-calls.js:10: expected '}' but got a reserved word
+kangax-es6/super.new-target-binding.js: exception: SyntaxError: super.new-target-binding.js:11: expected '}' but got a reserved word
+kangax-es6/super.property-access.js: exception: SyntaxError: super.property-access.js:10: expected '}' but got a reserved word
+kangax-es6/super.statement.js: exception: SyntaxError: super.statement.js:11: expected '}' but got a reserved word
+kangax-es6/super.static-binding.js: exception: SyntaxError: super.static-binding.js:10: expected '}' but got a reserved word
+kangax-es6/super.this-binding.js: exception: SyntaxError: super.this-binding.js:10: expected '}' but got a reserved word
+kangax-es6/tail-calls.direct.js: crashed (signal 11)
+kangax-es6/tail-calls.mutual.js: crashed (signal 11)
+kangax-es6/template.basic.js: exception: SyntaxError: line 11: unexpected character '`'
+kangax-es6/template.caching.js: exception: SyntaxError: line 17: unexpected character '`'
+kangax-es6/template.escape-sequences.js: exception: SyntaxError: line 13: unexpected character '`'
+kangax-es6/template.frozen-array.js: exception: SyntaxError: line 12: unexpected character '`'
+kangax-es6/template.line-break.js: SyntaxError: template.line-break.js:10: line 1: unexpected character '`'
+kangax-es6/template.permanent-caching.js: exception: SyntaxError: line 14: unexpected character '`'
+kangax-es6/template.tagged.js: exception: SyntaxError: :0: line 21: unexpected character '`'
+kangax-es6/template.toString.js: exception: SyntaxError: :0: line 14: unexpected character '`'
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: typed-arrays.ArrayBuffer.Symbol.species.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: typed-arrays.DataView.Float32.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: typed-arrays.DataView.Float64.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: typed-arrays.DataView.Int8.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: typed-arrays.DataView.Int16.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: typed-arrays.DataView.Int32.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: typed-arrays.DataView.Uint8.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: typed-arrays.DataView.Uint16.js:10: ArrayBuffer
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: typed-arrays.DataView.Uint32.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: typed-arrays.Float32Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: typed-arrays.Float64Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: typed-arrays.Int8Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: typed-arrays.Int16Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: typed-arrays.Int32Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Symbol.species.js: ReferenceError: typed-arrays.Symbol.species.js:10: Int8Array
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: typed-arrays.Uint8Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: typed-arrays.Uint8ClampedArray.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: typed-arrays.Uint16Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: typed-arrays.Uint32Array.js:10: ArrayBuffer
+kangax-es6/typed-arrays.constructor-iterables.js: TypeError: typed-arrays.constructor-iterables.js:46: Function is not defined
+kangax-es6/typed-arrays.constructor-requires-new.js: ReferenceError: typed-arrays.constructor-requires-new.js:12: ArrayBuffer
+kangax-es6/typed-arrays.correct-prototype-chains.js: exception: SyntaxError: typed-arrays.correct-prototype-chains.js:32: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es6/typed-arrays.from.js: ReferenceError: typed-arrays.from.js:10: Int8Array
+kangax-es6/typed-arrays.of.js: ReferenceError: typed-arrays.of.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: typed-arrays.prototype.Symbol.iterator.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.copyWithin.js: ReferenceError: typed-arrays.prototype.copyWithin.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.entries.js: ReferenceError: typed-arrays.prototype.entries.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.every.js: ReferenceError: typed-arrays.prototype.every.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.fill.js: ReferenceError: typed-arrays.prototype.fill.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.filter.js: ReferenceError: typed-arrays.prototype.filter.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.findIndex.js: ReferenceError: typed-arrays.prototype.findIndex.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.find.js: ReferenceError: typed-arrays.prototype.find.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.forEach.js: ReferenceError: typed-arrays.prototype.forEach.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.indexOf.js: ReferenceError: typed-arrays.prototype.indexOf.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.join.js: ReferenceError: typed-arrays.prototype.join.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.keys.js: ReferenceError: typed-arrays.prototype.keys.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: ReferenceError: typed-arrays.prototype.lastIndexOf.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.map.js: ReferenceError: typed-arrays.prototype.map.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.reduceRight.js: ReferenceError: typed-arrays.prototype.reduceRight.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.reduce.js: ReferenceError: typed-arrays.prototype.reduce.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.reverse.js: ReferenceError: typed-arrays.prototype.reverse.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.slice.js: ReferenceError: typed-arrays.prototype.slice.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.some.js: ReferenceError: typed-arrays.prototype.some.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.sort.js: ReferenceError: typed-arrays.prototype.sort.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.subarray.js: ReferenceError: typed-arrays.prototype.subarray.js:10: Int8Array
+kangax-es6/typed-arrays.prototype.values.js: ReferenceError: typed-arrays.prototype.values.js:10: Int8Array
+kangax-es6/unicode-escapes.identifier.js: exception: SyntaxError: line 9: unexpected character '\'
+kangax-es6/unicode-escapes.property-access.js: exception: SyntaxError: line 10: unexpected character '\'
+kangax-es6/unicode-escapes.property-key.js: exception: SyntaxError: line 9: unexpected character '\'
+kangax-es6/unicode-escapes.string.js: exception: SyntaxError: line 9: Invalid \u escape
+kangax-es6/well-known.hasInstance.js: ReferenceError: well-known.hasInstance.js:13: Symbol
+kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: well-known.isConcatSpreadable.non-spreadable.js:11: Symbol
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: well-known.iterator.arguments.js:10: Symbol
+kangax-es6/well-known.iterator.js: ReferenceError: well-known.iterator.js:10: Symbol
+kangax-es6/well-known.match.RegExp-constructor.js: ReferenceError: well-known.match.RegExp-constructor.js:10: Symbol
+kangax-es6/well-known.match.String.endsWith.js: ReferenceError: well-known.match.String.endsWith.js:13: Symbol
+kangax-es6/well-known.match.String.includes.js: ReferenceError: well-known.match.String.includes.js:13: Symbol
+kangax-es6/well-known.match.String.startsWith.js: ReferenceError: well-known.match.String.startsWith.js:13: Symbol
+kangax-es6/well-known.match.js: ReferenceError: well-known.match.js:11: Symbol
+kangax-es6/well-known.replace.js: ReferenceError: well-known.replace.js:11: Symbol
+kangax-es6/well-known.search.js: ReferenceError: well-known.search.js:11: Symbol
+kangax-es6/well-known.species.Array.concat.js: ReferenceError: well-known.species.Array.concat.js:11: Symbol
+kangax-es6/well-known.species.Array.filter.js: ReferenceError: well-known.species.Array.filter.js:11: Symbol
+kangax-es6/well-known.species.Array.map.js: ReferenceError: well-known.species.Array.map.js:11: Symbol
+kangax-es6/well-known.species.Array.slice.js: ReferenceError: well-known.species.Array.slice.js:11: Symbol
+kangax-es6/well-known.species.Array.splice.js: ReferenceError: well-known.species.Array.splice.js:11: Symbol
+kangax-es6/well-known.species.Promise.then.js: ReferenceError: well-known.species.Promise.then.js:9: Promise
+kangax-es6/well-known.species.RegExp.split.js: ReferenceError: well-known.species.RegExp.split.js:11: Symbol
+kangax-es6/well-known.species.js: ReferenceError: well-known.species.js:10: Symbol
+kangax-es6/well-known.split.js: ReferenceError: well-known.split.js:11: Symbol
+kangax-es6/well-known.toPrimitive.js: ReferenceError: well-known.toPrimitive.js:12: Symbol
+kangax-es6/well-known.toStringTag.existing-builtins.js: ReferenceError: well-known.toStringTag.existing-builtins.js:9: Symbol
+kangax-es6/well-known.toStringTag.js: ReferenceError: well-known.toStringTag.js:11: Symbol
+kangax-es6/well-known.toStringTag.misc-builtins.js: ReferenceError: well-known.toStringTag.misc-builtins.js:9: Symbol
+kangax-es6/well-known.toStringTag.new-builtins.js: exception: SyntaxError: well-known.toStringTag.new-builtins.js:23: expected '(' but got '*'
+kangax-es6/well-known.unscopables.js: ReferenceError: well-known.unscopables.js:11: Symbol
+kangax-es2016/Array.prototype.includes.generic.js: exception: SyntaxError: Array.prototype.includes.generic.js:13: expected ':' but got a string
+kangax-es2016/Array.prototype.includes.js: TypeError: Array.prototype.includes.js:10: Function is not defined
+kangax-es2016/Array.prototype.includes.sparse.js: TypeError: Array.prototype.includes.sparse.js:10: Function is not defined
+kangax-es2016/Array.prototype.includes.typed-array.js: ReferenceError: Array.prototype.includes.typed-array.js:10: Int8Array
+kangax-es2016/exponentiation.assignment.js: exception: SyntaxError: exponentiation.assignment.js:10: expected null, true, false, number, string, or regex but got '*='
+kangax-es2016/exponentiation.basic.js: exception: SyntaxError: exponentiation.basic.js:10: expected null, true, false, number, string, or regex but got '*'
+kangax-es2016/exponentiation.unary-negation-error.js: exception: SyntaxError: exponentiation.unary-negation-error.js:10: expected null, true, false, number, string, or regex but got '*'
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: misc.Proxy-Array-includes.js:11: Proxy
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: misc.Proxy-enumerate-removed.js:11: Proxy
+kangax-es2016/misc.generator-no-new.js: exception: SyntaxError: misc.generator-no-new.js:10: expected an identifier but got '*'
+kangax-es2016/misc.generator-throw-inner.js: exception: SyntaxError: misc.generator-throw-inner.js:10: expected an identifier but got '*'
+kangax-es2016/misc.nested-rest-destructuring-decl.js: exception: SyntaxError: misc.nested-rest-destructuring-decl.js:10: expected an identifier but got '['
+kangax-es2016/misc.nested-rest-destructuring-params.js: exception: SyntaxError: misc.nested-rest-destructuring-params.js:9: expected ')' but got '['
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: exception: SyntaxError: misc.strict-fn-non-simple-params-error.js:9: expected ')' but got '.'
+kangax-es2017/Atomics.add.js: ReferenceError: Atomics.add.js:10: Atomics
+kangax-es2017/Atomics.and.js: ReferenceError: Atomics.and.js:10: Atomics
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Atomics.compareExchange.js:10: Atomics
+kangax-es2017/Atomics.exchange.js: ReferenceError: Atomics.exchange.js:10: Atomics
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Atomics.isLockFree.js:10: Atomics
+kangax-es2017/Atomics.load.js: ReferenceError: Atomics.load.js:10: Atomics
+kangax-es2017/Atomics.notify.js: ReferenceError: Atomics.notify.js:10: Atomics
+kangax-es2017/Atomics.or.js: ReferenceError: Atomics.or.js:10: Atomics
+kangax-es2017/Atomics.store.js: ReferenceError: Atomics.store.js:10: Atomics
+kangax-es2017/Atomics.sub.js: ReferenceError: Atomics.sub.js:10: Atomics
+kangax-es2017/Atomics.wait.js: ReferenceError: Atomics.wait.js:10: Atomics
+kangax-es2017/Atomics.xor.js: ReferenceError: Atomics.xor.js:10: Atomics
+kangax-es2017/Object.entries.js: TypeError: Object.entries.js:10: Function is not defined
+kangax-es2017/Object.getOwnPropertyDescriptors.js: TypeError: Object.getOwnPropertyDescriptors.js:13: Function is not defined
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Object.getOwnPropertyDescriptors.no-undefined.js:9: Proxy
+kangax-es2017/Object.values.js: TypeError: Object.values.js:10: Function is not defined
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: SharedArrayBuffer.Symbol.species.js:8: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.js: failed
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: SharedArrayBuffer.prototype.Symbol.toStringTag.js:9: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: SharedArrayBuffer.prototype.byteLength.js:10: SharedArrayBuffer
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: SharedArrayBuffer.prototype.slice.js:10: SharedArrayBuffer
+kangax-es2017/String.prototype.padEnd.js: TypeError: String.prototype.padEnd.js:10: Function is not defined
+kangax-es2017/String.prototype.padStart.js: TypeError: String.prototype.padStart.js:10: Function is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: annex-b.Object.prototype.__defineGetter__.ToObject.js:10: __defineGetter__
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: annex-b.Object.prototype.__defineGetter__.js:12: Tried to use undefined as an object
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: ReferenceError: annex-b.Object.prototype.__defineGetter__.symbols.js:10: Symbol
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: annex-b.Object.prototype.__defineSetter__.ToObject.js:10: __defineSetter__
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: annex-b.Object.prototype.__defineSetter__.js:12: Tried to use undefined as an object
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: ReferenceError: annex-b.Object.prototype.__defineSetter__.symbols.js:10: Symbol
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: annex-b.Object.prototype.__lookupGetter__.ToObject.js:9: __lookupGetter__
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: exception: SyntaxError: annex-b.Object.prototype.__lookupGetter__.js:11: expected ':' but got an identifier
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: exception: SyntaxError: annex-b.Object.prototype.__lookupGetter__.prototype-chain.js:10: expected ':' but got an identifier
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js:10: Function is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: ReferenceError: annex-b.Object.prototype.__lookupGetter__.symbols.js:9: Symbol
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: annex-b.Object.prototype.__lookupSetter__.ToObject.js:9: __lookupSetter__
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: exception: SyntaxError: annex-b.Object.prototype.__lookupSetter__.js:11: expected ':' but got an identifier
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: exception: SyntaxError: annex-b.Object.prototype.__lookupSetter__.prototype-chain.js:10: expected ':' but got an identifier
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js:10: Function is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: ReferenceError: annex-b.Object.prototype.__lookupSetter__.symbols.js:9: Symbol
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: annex-b.Proxy.__defineGetter__.js:11: Proxy
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: annex-b.Proxy.__defineSetter__.js:11: Proxy
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: annex-b.Proxy.__lookupGetter__.js:13: Proxy
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: annex-b.Proxy.__lookupSetter__.js:13: Proxy
+kangax-es2017/annex-b.for-in-assignment-non-strict.js: OK
+kangax-es2017/async.Symbol.toStringTag.js: exception: SyntaxError: async.Symbol.toStringTag.js:10: expected ',' or ')' but got 'function'
+kangax-es2017/async.arrow-in-class.js: exception: SyntaxError: :0: async.arrow-in-class.js:48: expected '}' but got a reserved word
+kangax-es2017/async.arrow.js: exception: SyntaxError: :0: async.arrow.js:45: expected null, true, false, number, string, or regex but got '>'
+kangax-es2017/async.await-non-promise.js: exception: SyntaxError: :0: async.await-non-promise.js:45: expected ')' but got 'function'
+kangax-es2017/async.await-rejection.js: exception: SyntaxError: :0: async.await-rejection.js:45: expected ')' but got 'function'
+kangax-es2017/async.await.js: exception: SyntaxError: :0: async.await.js:45: expected ')' but got 'function'
+kangax-es2017/async.constructor.js: exception: SyntaxError: :0: async.constructor.js:45: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.methods-class.js: exception: SyntaxError: :0: async.methods-class.js:45: expected '}' but got a reserved word
+kangax-es2017/async.methods-object.js: exception: SyntaxError: :0: async.methods-object.js:46: expected ':' but got an identifier
+kangax-es2017/async.must-await-value.js: exception: SyntaxError: async.must-await-value.js:10: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.no-await-in-params.js: exception: SyntaxError: async.no-await-in-params.js:10: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.no-line-break.js: exception: SyntaxError: async.no-line-break.js:10: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.no-prototype.js: exception: SyntaxError: async.no-prototype.js:10: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.prototype-chain.js: exception: SyntaxError: async.prototype-chain.js:10: expected ',' or ')' but got 'function'
+kangax-es2017/async.return.js: exception: SyntaxError: :0: async.return.js:45: expected ';', '}' or newline but got 'function'
+kangax-es2017/async.throw.js: exception: SyntaxError: :0: async.throw.js:45: expected ';', '}' or newline but got 'function'
+kangax-es2017/misc.arguments-caller-removed.js: TypeError: misc.arguments-caller-removed.js:12: Function is not defined
+kangax-es2017/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:9: Bad flag given to RegExp constructor
+kangax-es2017/trailing-comma.arguments.js: OK
+kangax-es2017/trailing-comma.params.js: exception: SyntaxError: trailing-comma.params.js:10: expected an identifier but got ')'
+kangax-es2018/Promise.prototype.finally.change-rejection.js: exception: SyntaxError: :0: Promise.prototype.finally.change-rejection.js:48: expected an identifier but got 'finally'
+kangax-es2018/Promise.prototype.finally.js: exception: SyntaxError: :0: Promise.prototype.finally.js:61: expected an identifier but got 'finally'
+kangax-es2018/Promise.prototype.finally.no-change-resolution.js: exception: SyntaxError: :0: Promise.prototype.finally.no-change-resolution.js:59: expected an identifier but got 'finally'
+kangax-es2018/async-iterators.for-await-of.js: exception: SyntaxError: :0: async-iterators.for-await-of.js:58: expected ')' but got 'function'
+kangax-es2018/async-iterators.generators.js: exception: SyntaxError: :0: async-iterators.generators.js:44: expected ';', '}' or newline but got 'function'
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: exception: SyntaxError: misc.Proxy-ownKeys-duplicate-keys.js:11: expected ':' but got '('
+kangax-es2018/misc.template-literal-revision.js: exception: SyntaxError: :0: line 16: unexpected character '`'
+kangax-es2018/object-rest.js: exception: SyntaxError: object-rest.js:9: expected an identifier but got '{'
+kangax-es2018/object-spread.js: exception: SyntaxError: object-spread.js:10: expected string, identifier or number but got '.'
+kangax-es2018/regex.flags.s.js: exception: SyntaxError: regex.flags.s.js:10: expected '}' but got a reserved word
+kangax-es2018/regex.lookbehind.js: SyntaxError: regex.lookbehind.js:10: Regular expression contained a syntax error
+kangax-es2018/regex.named-capture-groups.js: SyntaxError: regex.named-capture-groups.js:10: Regular expression contained a syntax error
+kangax-es2018/regex.unicode-property-escapes.js: exception: SyntaxError: regex.unicode-property-escapes.js:10: expected '}' but got a reserved word
+kangax-es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: regex.unicode-property-escapes.unicode-11.js:10: Bad flag given to RegExp constructor
+kangax-es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: regex.unicode-property-escapes.unicode-12.1.js:10: Bad flag given to RegExp constructor
+kangax-es2018/regex.unicode-property-escapes.unicode-12.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-13.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-14.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-15.1.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-15.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: exception: SyntaxError: line 10: Invalid \u escape
+kangax-es2019/Array.prototype.flatMap.js: TypeError: Array.prototype.flatMap.js:10: Function is not defined
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: Array.prototype.flat-flatMap.unscopables.js:9: Symbol
+kangax-es2019/Array.prototype.flat.js: TypeError: Array.prototype.flat.js:10: Function is not defined
+kangax-es2019/Object.fromEntries.js: ReferenceError: Object.fromEntries.js:10: Map
+kangax-es2019/String.prototype.trimEnd.js: TypeError: String.prototype.trimEnd.js:10: Function is not defined
+kangax-es2019/String.prototype.trimStart.js: TypeError: String.prototype.trimStart.js:10: Function is not defined
+kangax-es2019/Symbol.prototype.description.empty.js: ReferenceError: Symbol.prototype.description.empty.js:10: Symbol
+kangax-es2019/Symbol.prototype.description.js: ReferenceError: Symbol.prototype.description.js:10: Symbol
+kangax-es2019/Symbol.prototype.description.undefined.js: ReferenceError: Symbol.prototype.description.undefined.js:10: Symbol
+kangax-es2019/annex-b.String.prototype.trimLeft.js: TypeError: annex-b.String.prototype.trimLeft.js:10: Function is not defined
+kangax-es2019/annex-b.String.prototype.trimRight.js: TypeError: annex-b.String.prototype.trimRight.js:10: Function is not defined
+kangax-es2019/misc.Function-toString.Function-constructor.js: failed
+kangax-es2019/misc.Function-toString.arrows.js: SyntaxError: misc.Function-toString.arrows.js:11: <eval>:1: expected null, true, false, number, string, or regex but got '>'
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: misc.Function-toString.class-explicit-constructor.js:11: <eval>:1: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: misc.Function-toString.class-implicit-constructor.js:11: <eval>:1: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es2019/misc.Function-toString.computed-names.js: SyntaxError: misc.Function-toString.computed-names.js:11: <eval>:1: expected string, identifier or number but got '['
+kangax-es2019/misc.Function-toString.native-code.js: exception: SyntaxError: misc.Function-toString.native-code.js:10: expected '}' but got a reserved word
+kangax-es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: misc.Function-toString.unicode-escapes.js:11: line 1: unexpected character '\'
+kangax-es2019/misc.JSON-stringify-well-formed.js: ReferenceError: misc.JSON-stringify-well-formed.js:10: JSON
+kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: misc.JSON-superset.line-separator.js:9: line 1: String literal not closed at end of line
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: misc.JSON-superset.paragraph-separator.js:9: line 1: String literal not closed at end of line
+kangax-es2019/misc.optional-catch-binding.await.js: exception: SyntaxError: :0: misc.optional-catch-binding.await.js:44: expected ')' but got 'function'
+kangax-es2019/misc.optional-catch-binding.js: exception: SyntaxError: misc.optional-catch-binding.js:12: expected '(' but got '{'
+kangax-es2019/misc.optional-catch-binding.yield.js: exception: SyntaxError: misc.optional-catch-binding.yield.js:9: expected an identifier but got '*'
+kangax-es2020/BigInt64Array.js: exception: SyntaxError: line 12: Unexpected characters after hexadecimal literal
+kangax-es2020/BigInt.asIntN.js: ReferenceError: BigInt.asIntN.js:10: BigInt
+kangax-es2020/BigInt.asUintN.js: ReferenceError: BigInt.asUintN.js:10: BigInt
+kangax-es2020/BigInt.constructor.js: exception: SyntaxError: BigInt.constructor.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2020/BigInt.js: exception: SyntaxError: BigInt.js:10: expected ')' but got an identifier
+kangax-es2020/BigUint64Array.js: exception: SyntaxError: line 12: Unexpected characters after hexadecimal literal
+kangax-es2020/DataView.prototype.getBigInt64.js: exception: SyntaxError: DataView.prototype.getBigInt64.js:12: expected ',' or ')' but got an identifier
+kangax-es2020/DataView.prototype.getBigUint64.js: exception: SyntaxError: DataView.prototype.getBigUint64.js:12: expected ',' or ')' but got an identifier
+kangax-es2020/Promise.allSettled.js: exception: SyntaxError: :0: Promise.allSettled.js:49: expected null, true, false, number, string, or regex but got '>'
+kangax-es2020/String.prototype.matchAll.js: TypeError: String.prototype.matchAll.js:10: Function is not defined
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: failed
+kangax-es2020/globalThis.descriptor.js: failed
+kangax-es2020/globalThis.js: failed
+kangax-es2020/nullish-coalescing.js: exception: SyntaxError: nullish-coalescing.js:10: expected null, true, false, number, string, or regex but got '?'
+kangax-es2020/optional-chaining.bracket.js: exception: SyntaxError: optional-chaining.bracket.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es2020/optional-chaining.function-call.js: exception: SyntaxError: optional-chaining.function-call.js:14: expected null, true, false, number, string, or regex but got '.'
+kangax-es2020/optional-chaining.method-call.js: exception: SyntaxError: optional-chaining.method-call.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es2020/optional-chaining.property.js: exception: SyntaxError: optional-chaining.property.js:12: expected null, true, false, number, string, or regex but got '.'
+kangax-es2020/optional-chaining.spread-params.js: exception: SyntaxError: optional-chaining.spread-params.js:14: expected null, true, false, number, string, or regex but got '.'
+kangax-es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry.js:10: FinalizationRegistry
+kangax-es2021/Promise.any.AggregateError.js: exception: SyntaxError: :0: Promise.any.AggregateError.js:49: expected an identifier but got 'catch'
+kangax-es2021/Promise.any.fulfillment.js: exception: SyntaxError: :0: Promise.any.fulfillment.js:49: expected null, true, false, number, string, or regex but got '>'
+kangax-es2021/String.prototype.replaceAll.js: TypeError: String.prototype.replaceAll.js:10: Function is not defined
+kangax-es2021/WeakRef.js: ReferenceError: WeakRef.js:11: WeakRef
+kangax-es2021/logical-assignment.and.js: exception: SyntaxError: logical-assignment.and.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.and.setter-not-invoked.js: exception: SyntaxError: logical-assignment.and.setter-not-invoked.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.and.short-circuit.js: exception: SyntaxError: logical-assignment.and.short-circuit.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.nullish.js: exception: SyntaxError: logical-assignment.nullish.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: exception: SyntaxError: logical-assignment.nullish.setter-not-invoked.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.nullish.short-circuit.js: exception: SyntaxError: logical-assignment.nullish.short-circuit.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.or.js: exception: SyntaxError: logical-assignment.or.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.or.setter-not-invoked.js: exception: SyntaxError: logical-assignment.or.setter-not-invoked.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/logical-assignment.or.short-circuit.js: exception: SyntaxError: logical-assignment.or.short-circuit.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2021/numeric-separators.js: exception: SyntaxError: numeric-separators.js:9: expected ';', '}' or newline but got an identifier
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: Error.cause.AggregateError-prototype-lacks.js:9: AggregateError
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: Error.cause.AggregateError.js:9: AggregateError
+kangax-es2022/Error.cause.Error-prototype-lacks.js: OK
+kangax-es2022/Error.cause.Error.js: failed
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.EvalError.js: failed
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.RangeError.js: failed
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.ReferenceError.js: failed
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.SyntaxError.js: failed
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.TypeError.js: failed
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: OK
+kangax-es2022/Error.cause.URIError.js: failed
+kangax-es2022/Object.hasOwn.ToObject-first.js: failed
+kangax-es2022/Object.hasOwn.js: TypeError: Object.hasOwn.js:10: Function is not defined
+kangax-es2022/at-method.Array.js: TypeError: at-method.Array.js:11: Function is not defined
+kangax-es2022/at-method.String.js: TypeError: at-method.String.js:11: Function is not defined
+kangax-es2022/at-method.TypedArray.js: TypeError: at-method.TypedArray.js:11: Function is not defined
+kangax-es2022/class-fields.computed-instance.js: exception: SyntaxError: class-fields.computed-instance.js:9: expected '}' but got a reserved word
+kangax-es2022/class-fields.computed-static.js: exception: SyntaxError: class-fields.computed-static.js:9: expected '}' but got a reserved word
+kangax-es2022/class-fields.instance.parent-scope.js: exception: SyntaxError: class-fields.instance.parent-scope.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2022/class-fields.private-instance.initializers.js: exception: SyntaxError: class-fields.private-instance.initializers.js:9: expected '}' but got a reserved word
+kangax-es2022/class-fields.private-instance.js: exception: SyntaxError: class-fields.private-instance.js:10: expected '}' but got a reserved word
+kangax-es2022/class-fields.private-instance.optional-access.js: exception: SyntaxError: class-fields.private-instance.optional-access.js:9: expected '}' but got a reserved word
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: exception: SyntaxError: class-fields.private-instance.optional-deep-access.js:9: expected '}' but got a reserved word
+kangax-es2022/class-fields.private-static.js: exception: SyntaxError: class-fields.private-static.js:10: expected '}' but got a reserved word
+kangax-es2022/class-fields.public-instance.js: exception: SyntaxError: class-fields.public-instance.js:10: expected '}' but got a reserved word
+kangax-es2022/class-fields.public-static.js: exception: SyntaxError: class-fields.public-static.js:10: expected '}' but got a reserved word
+kangax-es2022/class-fields.static.define.js: exception: SyntaxError: class-fields.static.define.js:9: expected null, true, false, number, string, or regex but got a reserved word
+kangax-es2022/class-methods.private-accessor.js: exception: SyntaxError: class-methods.private-accessor.js:10: expected '}' but got a reserved word
+kangax-es2022/class-methods.private-instance.js: exception: SyntaxError: class-methods.private-instance.js:9: expected '}' but got a reserved word
+kangax-es2022/class-methods.private-static-accessor.js: exception: SyntaxError: class-methods.private-static-accessor.js:10: expected '}' but got a reserved word
+kangax-es2022/class-methods.private-static.js: exception: SyntaxError: class-methods.private-static.js:9: expected '}' but got a reserved word
+kangax-es2022/class-static-init-blocks.js: exception: SyntaxError: class-static-init-blocks.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2022/ergonomic-brand-checks.js: exception: SyntaxError: ergonomic-brand-checks.js:9: expected '}' but got a reserved word
+kangax-es2022/regex.flags.d.constructor.js: SyntaxError: regex.flags.d.constructor.js:9: Bad flag given to RegExp constructor
+kangax-es2022/regex.flags.d.shows-in-flags.js: ReferenceError: regex.flags.d.shows-in-flags.js:21: Proxy
+kangax-es2023/Array.prototype.findLastIndex.js: TypeError: Array.prototype.findLastIndex.js:11: Function is not defined
+kangax-es2023/Array.prototype.findLast.js: TypeError: Array.prototype.findLast.js:11: Function is not defined
+kangax-es2023/Array.prototype.toReversed.js: TypeError: Array.prototype.toReversed.js:11: Function is not defined
+kangax-es2023/Array.prototype.toSorted.js: TypeError: Array.prototype.toSorted.js:11: Function is not defined
+kangax-es2023/Array.prototype.toSpliced.js: TypeError: Array.prototype.toSpliced.js:11: Function is not defined
+kangax-es2023/Array.prototype.with.js: exception: SyntaxError: Array.prototype.with.js:11: expected an identifier but got 'with'
+kangax-es2023/TypedArray.prototype.toReversed.js: ReferenceError: TypedArray.prototype.toReversed.js:10: Uint8Array
+kangax-es2023/TypedArray.prototype.toSorted.js: ReferenceError: TypedArray.prototype.toSorted.js:10: Uint8Array
+kangax-es2023/TypedArray.prototype.with.js: exception: SyntaxError: TypedArray.prototype.with.js:11: expected an identifier but got 'with'
+kangax-es2023/hashbang.js: SyntaxError: hashbang.js:11: line 1: unexpected character '#'
+kangax-es2024/ArrayBuffer.prototype.detached.js: exception: SyntaxError: ArrayBuffer.prototype.detached.js:10: expected '}' but got a reserved word
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: exception: SyntaxError: ArrayBuffer.prototype.transferToFixedLength.js:10: expected '}' but got a reserved word
+kangax-es2024/ArrayBuffer.prototype.transfer.js: exception: SyntaxError: ArrayBuffer.prototype.transfer.js:10: expected '}' but got a reserved word
+kangax-es2024/Map.groupBy.js: exception: SyntaxError: Map.groupBy.js:10: expected '}' but got a reserved word
+kangax-es2024/Object.groupBy.js: exception: SyntaxError: Object.groupBy.js:10: expected '}' but got a reserved word
+kangax-es2024/Promise.withResolvers.js: ReferenceError: Promise.withResolvers.js:10: Promise
+kangax-es2024/regex.flags.v.constructor.js: SyntaxError: regex.flags.v.constructor.js:9: Bad flag given to RegExp constructor
+kangax-es2024/regex.flags.v.properties-of-strings.js: SyntaxError: regex.flags.v.properties-of-strings.js:9: Bad flag given to RegExp constructor
+kangax-es2024/regex.flags.v.set-notations.js: SyntaxError: regex.flags.v.set-notations.js:9: Bad flag given to RegExp constructor
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: regex.flags.v.shows-in-flags.js:10: Proxy
+kangax-es2024/regex.flags.v.unicode-15.1.js: SyntaxError: regex.flags.v.unicode-15.1.js:9: Bad flag given to RegExp constructor
+kangax-es2024/regex.flags.v.unicode-16.0.js: SyntaxError: regex.flags.v.unicode-16.0.js:9: Bad flag given to RegExp constructor
+kangax-es2024/regex.flags.v.unicode-17.0.js: SyntaxError: regex.flags.v.unicode-17.0.js:9: Bad flag given to RegExp constructor
+kangax-es2025/Iterator.extends.js: exception: SyntaxError: Iterator.extends.js:10: expected '}' but got a reserved word
+kangax-es2025/Iterator.from.iterable.js: exception: SyntaxError: Iterator.from.iterable.js:10: expected '}' but got a reserved word
+kangax-es2025/Iterator.from.iterator.js: exception: SyntaxError: Iterator.from.iterator.js:10: expected '}' but got a reserved word
+kangax-es2025/Iterator.instanceof.js: TypeError: Iterator.instanceof.js:10: Function is not defined
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator.prototype.Symbol.toStringTag.js:10: Iterator
+kangax-es2025/Iterator.prototype.drop.js: TypeError: Iterator.prototype.drop.js:10: Function is not defined
+kangax-es2025/Iterator.prototype.every.js: exception: SyntaxError: Iterator.prototype.every.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.filter.js: exception: SyntaxError: Iterator.prototype.filter.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.find.js: exception: SyntaxError: Iterator.prototype.find.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.flatMap.js: exception: SyntaxError: Iterator.prototype.flatMap.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.forEach.js: exception: SyntaxError: Iterator.prototype.forEach.js:10: expected ';', '}' or newline but got an identifier
+kangax-es2025/Iterator.prototype.map.js: exception: SyntaxError: Iterator.prototype.map.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.reduce.js: exception: SyntaxError: Iterator.prototype.reduce.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.some.js: exception: SyntaxError: Iterator.prototype.some.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-es2025/Iterator.prototype.take.js: TypeError: Iterator.prototype.take.js:10: Function is not defined
+kangax-es2025/Iterator.prototype.toArray.js: exception: SyntaxError: Iterator.prototype.toArray.js:10: expected '}' but got a reserved word
+kangax-es2025/Promise.try.js: exception: SyntaxError: :0: Promise.try.js:50: expected an identifier but got 'try'
+kangax-es2025/RegExp.escape.js: TypeError: RegExp.escape.js:10: Function is not defined
+kangax-es2025/Set.prototype.difference.js: ReferenceError: Set.prototype.difference.js:10: Set
+kangax-es2025/Set.prototype.intersection.js: ReferenceError: Set.prototype.intersection.js:10: Set
+kangax-es2025/Set.prototype.isDisjointFrom.js: ReferenceError: Set.prototype.isDisjointFrom.js:10: Set
+kangax-es2025/Set.prototype.isSubsetOf.js: ReferenceError: Set.prototype.isSubsetOf.js:10: Set
+kangax-es2025/Set.prototype.isSupersetOf.js: ReferenceError: Set.prototype.isSupersetOf.js:10: Set
+kangax-es2025/Set.prototype.symmetricDifference.js: ReferenceError: Set.prototype.symmetricDifference.js:10: Set
+kangax-es2025/Set.prototype.union.js: ReferenceError: Set.prototype.union.js:10: Set
+kangax-es2025/regex.duplicate-named-groups.js: SyntaxError: regex.duplicate-named-groups.js:9: Regular expression contained a syntax error
+kangax-es2025/regex.pattern-modifiers.i.js: exception: SyntaxError: regex.pattern-modifiers.i.js:9: expected '}' but got a reserved word
+kangax-es2025/regex.pattern-modifiers.m.js: exception: SyntaxError: regex.pattern-modifiers.m.js:9: expected '}' but got a reserved word
+kangax-es2025/regex.pattern-modifiers.s.js: exception: SyntaxError: regex.pattern-modifiers.s.js:9: expected '}' but got a reserved word
+kangax-intl/Array.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleDateString.js: OK
+kangax-intl/Date.prototype.toLocaleString.js: OK
+kangax-intl/Date.prototype.toLocaleTimeString.js: OK
+kangax-intl/Intl.Collator.js: ReferenceError: Intl.Collator.js:10: Intl
+kangax-intl/Intl.Collator.new-instances.js: ReferenceError: Intl.Collator.new-instances.js:10: Intl
+kangax-intl/Intl.Collator.prototype.compare.js: ReferenceError: Intl.Collator.prototype.compare.js:10: Intl
+kangax-intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: Intl.Collator.prototype.resolvedOptions.js:10: Intl
+kangax-intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: Intl.Collator.rejects-invalid-tags.js:10: Intl
+kangax-intl/Intl.Collator.valid-tags.js: crashed (signal 6); fatal error: code1.c:1470: assertion 'block->type == BLOCK_CATCH' failed
+kangax-intl/Intl.Collator.without-new.js: ReferenceError: Intl.Collator.without-new.js:10: Intl
+kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
+kangax-intl/Intl.DateTimeFormat.js: ReferenceError: Intl.DateTimeFormat.js:10: Intl
+kangax-intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: Intl.DateTimeFormat.new-instances.js:10: Intl
+kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: Intl.DateTimeFormat.rejects-invalid-tags.js:10: Intl
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: Intl.DateTimeFormat.resolvedOptions.timeZone-default.js:10: Intl
+kangax-intl/Intl.DateTimeFormat.valid-tags.js: crashed (signal 6); fatal error: code1.c:1470: assertion 'block->type == BLOCK_CATCH' failed
+kangax-intl/Intl.DateTimeFormat.without-new.js: ReferenceError: Intl.DateTimeFormat.without-new.js:10: Intl
+kangax-intl/Intl.NumberFormat.js: ReferenceError: Intl.NumberFormat.js:10: Intl
+kangax-intl/Intl.NumberFormat.new-instances.js: ReferenceError: Intl.NumberFormat.new-instances.js:10: Intl
+kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: Intl.NumberFormat.rejects-invalid-tags.js:10: Intl
+kangax-intl/Intl.NumberFormat.valid-tags.js: crashed (signal 6); fatal error: code1.c:1470: assertion 'block->type == BLOCK_CATCH' failed
+kangax-intl/Intl.NumberFormat.without-new.js: ReferenceError: Intl.NumberFormat.without-new.js:10: Intl
+kangax-intl/Intl.js: failed
+kangax-intl/Intl.prototype.js: ReferenceError: Intl.prototype.js:10: Intl
+kangax-intl/Number.prototype.toLocaleString.js: OK
+kangax-intl/Object.prototype.toLocaleString.js: OK
+kangax-intl/String.prototype.localeCompare.js: OK
+kangax-next/Array.isTemplateObject.js: exception: SyntaxError: Array.isTemplateObject.js:10: expected null, true, false, number, string, or regex but got '>'
+kangax-next/AsyncDisposableStack.js: exception: SyntaxError: :0: AsyncDisposableStack.js:47: expected ':' but got '['
+kangax-next/AsyncIterator.extends.js: exception: SyntaxError: AsyncIterator.extends.js:9: expected '}' but got a reserved word
+kangax-next/AsyncIterator.from.async-iterable.js: exception: SyntaxError: :0: AsyncIterator.from.async-iterable.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.from.iterable.js: exception: SyntaxError: :0: AsyncIterator.from.iterable.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.from.iterator.js: exception: SyntaxError: :0: AsyncIterator.from.iterator.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.instanceof.js: exception: SyntaxError: AsyncIterator.instanceof.js:9: expected ')' but got 'function'
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator.prototype.Symbol.toStringTag.js:9: AsyncIterator
+kangax-next/AsyncIterator.prototype.drop.js: exception: SyntaxError: :0: AsyncIterator.prototype.drop.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.prototype.every.js: exception: SyntaxError: :0: AsyncIterator.prototype.every.js:44: expected ')' but got 'function'
+kangax-next/AsyncIterator.prototype.filter.js: exception: SyntaxError: :0: AsyncIterator.prototype.filter.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.prototype.find.js: exception: SyntaxError: :0: AsyncIterator.prototype.find.js:44: expected ')' but got 'function'
+kangax-next/AsyncIterator.prototype.flatMap.js: exception: SyntaxError: :0: AsyncIterator.prototype.flatMap.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.prototype.forEach.js: exception: SyntaxError: :0: AsyncIterator.prototype.forEach.js:44: expected ';', '}' or newline but got an identifier
+kangax-next/AsyncIterator.prototype.map.js: exception: SyntaxError: :0: AsyncIterator.prototype.map.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.prototype.reduce.js: exception: SyntaxError: :0: AsyncIterator.prototype.reduce.js:44: expected ')' but got 'function'
+kangax-next/AsyncIterator.prototype.some.js: exception: SyntaxError: :0: AsyncIterator.prototype.some.js:44: expected ')' but got 'function'
+kangax-next/AsyncIterator.prototype.take.js: exception: SyntaxError: :0: AsyncIterator.prototype.take.js:44: expected ';', '}' or newline but got 'function'
+kangax-next/AsyncIterator.prototype.toArray.js: exception: SyntaxError: :0: AsyncIterator.prototype.toArray.js:44: expected ')' but got 'function'
+kangax-next/DisposableStack.js: exception: SyntaxError: DisposableStack.js:12: expected string, identifier or number but got '['
+kangax-next/Map.prototype.upsert.js: exception: SyntaxError: Map.prototype.upsert.js:9: expected '}' but got a reserved word
+kangax-next/RegExp.1-9.js: failed
+kangax-next/RegExp.lastMatch.js: failed
+kangax-next/ShadowRealm.js: failed
+kangax-next/SuppressedError.js: exception: SyntaxError: SuppressedError.js:13: expected ';', '}' or newline but got an identifier
+kangax-next/Uint8Array.fromBase64.js: exception: SyntaxError: Uint8Array.fromBase64.js:10: expected '}' but got a reserved word
+kangax-next/Uint8Array.fromHex.js: exception: SyntaxError: Uint8Array.fromHex.js:10: expected '}' but got a reserved word
+kangax-next/Uint8Array.setFromBase64.js: exception: SyntaxError: Uint8Array.setFromBase64.js:10: expected '}' but got a reserved word
+kangax-next/Uint8Array.setFromHex.js: exception: SyntaxError: Uint8Array.setFromHex.js:10: expected '}' but got a reserved word
+kangax-next/Uint8Array.toBase64.js: exception: SyntaxError: Uint8Array.toBase64.js:10: expected '}' but got a reserved word
+kangax-next/Uint8Array.toHex.js: exception: SyntaxError: Uint8Array.toHex.js:10: expected '}' but got a reserved word
+kangax-next/WeakMap.prototype.upsert.js: exception: SyntaxError: WeakMap.prototype.upsert.js:9: expected '}' but got a reserved word
+kangax-next/await-using.for-of.js: exception: SyntaxError: :0: await-using.for-of.js:46: expected ':' but got '['
+kangax-next/await-using.js: exception: SyntaxError: :0: await-using.js:44: expected ')' but got 'function'
+kangax-next/class-decorators.js: exception: SyntaxError: class-decorators.js:9: expected '}' but got a reserved word
+kangax-next/function.sent.js: exception: SyntaxError: function.sent.js:10: expected an identifier but got '*'
+kangax-next/throw-expr.arrow.js: exception: SyntaxError: throw-expr.arrow.js:9: expected null, true, false, number, string, or regex but got ')'
+kangax-next/throw-expr.conditional.js: exception: SyntaxError: throw-expr.conditional.js:9: expected null, true, false, number, string, or regex but got 'throw'
+kangax-next/throw-expr.logical.js: exception: SyntaxError: throw-expr.logical.js:11: expected null, true, false, number, string, or regex but got 'throw'
+kangax-next/throw-expr.param-init.js: exception: SyntaxError: throw-expr.param-init.js:9: expected ')' but got '='
+kangax-next/using.for-of.js: exception: SyntaxError: using.for-of.js:11: expected string, identifier or number but got '['
+kangax-next/using.js: exception: SyntaxError: using.js:11: expected string, identifier or number but got '['

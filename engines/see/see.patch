@@ -1,0 +1,34 @@
+diff --git a/libsee/dtoa_config.h b/libsee/dtoa_config.h
+index b649d10..f603e62 100644
+--- a/libsee/dtoa_config.h
++++ b/libsee/dtoa_config.h
+@@ -11,7 +11,7 @@
+ 
+ #include <see/type.h>
+ 
+-#if defined(__i386__) || defined(__amd64__) || defined(__ia64__) || defined(__alpha__)
++#if defined(__i386__) || defined(__amd64__) || defined(__ia64__) || defined(__alpha__) || defined(__aarch64__) || defined(__arm64__)
+ #   define IEEE_8087
+ #endif
+ 
+diff --git a/shell/main.c b/shell/main.c
+index cf53d4d..36de617 100644
+--- a/shell/main.c
++++ b/shell/main.c
+@@ -544,9 +544,13 @@ main(argc, argv)
+ 		error = 1;
+ 	    }
+ 
+-	/* Don't expect any more arguments */
+-	if (optind < argc)
+-	    error = 1;
++	/* Treat remaining positional arguments as script files */
++	while (!error && optind < argc) {
++	    INIT_INTERP_ONCE;
++	    add_shell_globals_once(&interp);
++	    run_file(&interp, argv[optind++]);
++	    ran_something = 1;
++	}
+ 
+ 	if (error) {
+ 	    fprintf(stderr, "usage: %s\n", argv[0]);
