@@ -1,0 +1,88 @@
+diff --git a/Makefile.criscript b/Makefile.criscript
+new file mode 100644
+index 0000000..1111111
+--- /dev/null
++++ b/Makefile.criscript
+@@ -0,0 +1,41 @@
++SHELL := /bin/bash
++
++CXX ?= g++
++AR ?= ar
++
++OBJDIR ?= /tmp/obj
++LIBDIR ?= /tmp/lib
++BINDIR ?= /tmp/bin
++
++CXXFLAGS ?= -O2 -std=gnu++03 -fpermissive -w -include string.h -D__APPLE__ -DBOOST_REGEX_NO_LIB -DBOOST_NO_EXCEPTIONS
++CPPFLAGS ?= -Iinc -Isrc/boost -Isrc/Parser -Isrc/CodeGen -Isrc/VM -Itools/cscl
++LDFLAGS ?= -Wl,--allow-multiple-definition
++
++LIB := $(LIBDIR)/libcriscript.a
++BIN := $(BINDIR)/cscl
++
++CORE_SRCS := $(shell find src/BuiltInObject src/CodeGen src/Debugger src/Parser src/VM/cil -name '*.cpp' | sort)
++BOOST_SRCS := $(shell find src/boost/libs/regex/src -name '*.cpp' | sort | grep -Ev '/(icu|w32_regex_traits|xbox360_regex_traits)\.cpp$$')
++LOCAL_SRCS := criscript_linux_stopwatch.cpp
++SRCS := $(CORE_SRCS) $(BOOST_SRCS) $(LOCAL_SRCS)
++
++OBJS := $(addprefix $(OBJDIR)/,$(addsuffix .o,$(SRCS)))
++
++.PHONY: all clean
++
++all: $(BIN)
++
++$(BIN): tools/cscl/stdafx.cpp tools/cscl/cscl.cpp $(LIB)
++	@mkdir -p "$(BINDIR)"
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $^ -o "$@" $(LDFLAGS)
++
++$(LIB): $(OBJS)
++	@mkdir -p "$(LIBDIR)"
++	$(AR) rcs "$@" $(OBJS)
++
++$(OBJDIR)/%.cpp.o: %.cpp
++	@mkdir -p "$(dir $@)"
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c "$<" -o "$@"
++
++clean:
++	rm -rf "$(OBJDIR)" "$(LIBDIR)" "$(BINDIR)"
+diff --git a/criscript_linux_stopwatch.cpp b/criscript_linux_stopwatch.cpp
+new file mode 100644
+index 0000000..2222222
+--- /dev/null
++++ b/criscript_linux_stopwatch.cpp
+@@ -0,0 +1,35 @@
++#include "stdafx.h"
++#include "osx/StopWatch_osx.h"
++#include <sys/time.h>
++
++namespace cri {
++
++void CStopWatch::Start() {
++  if (m_bStarted) return;
++  timeval tv;
++  gettimeofday(&tv, 0);
++  m_liStart = static_cast<uint64_t>(tv.tv_sec) * 1000000ULL + static_cast<uint64_t>(tv.tv_usec);
++  m_bStarted = true;
++}
++
++void CStopWatch::Stop() {
++  if (!m_bStarted) return;
++  timeval tv;
++  gettimeofday(&tv, 0);
++  m_liEnd = static_cast<uint64_t>(tv.tv_sec) * 1000000ULL + static_cast<uint64_t>(tv.tv_usec);
++  m_bStarted = false;
++  m_liDuration += (m_liEnd - m_liStart);
++}
++
++void CStopWatch::Reset() {
++  m_liStart = 0;
++  m_liEnd = 0;
++  m_liDuration = 0;
++  m_bStarted = false;
++}
++
++float CStopWatch::getResult() {
++  return static_cast<float>(m_liDuration / 1000000.0);
++}
++
++}  // namespace cri
