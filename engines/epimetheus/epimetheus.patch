@@ -1,0 +1,571 @@
+diff --git a/js2/common.mk b/js2/common.mk
+index 391ead55..9b46cc56 100644
+--- a/js2/common.mk
++++ b/js2/common.mk
+@@ -2,14 +2,13 @@
+ JS2_DIR = $(top_srcdir)/src/
+ LIBJS2 = $(JS2_DIR)/libjs2.a
+ 
+-WFLAGS = -Wmissing-prototypes -Wstrict-prototypes -Wunused \
+-         -Wswitch -Wall -Wconversion
++WFLAGS = -w
+ 
+ if DEBUG
+-CXXFLAGS = -DXP_UNIX -g -DDEBUG -DTRACE_DEBUG $(WFLAGS) -Iregexp/
++CXXFLAGS = -DXP_UNIX -g -DDEBUG -DTRACE_DEBUG $(WFLAGS) -Iregexp/ -fpermissive
+ JS1x_BINDIR = Linux_All_DBG.OBJ
+ else
+-CXXFLAGS = -DXP_UNIX -O2 -Wuninitialized $(WFLAGS) -Iregexp/
++CXXFLAGS = -DXP_UNIX -O2 -Wuninitialized $(WFLAGS) -Iregexp/ -fpermissive
+ JS1x_BINDIR = Linux_All_OPT.OBJ
+ endif
+ 
+diff --git a/js2/src/Makefile.am b/js2/src/Makefile.am
+index a62d67bf..84c1b4f9 100644
+--- a/js2/src/Makefile.am
++++ b/js2/src/Makefile.am
+@@ -1,7 +1,9 @@
+ include $(top_srcdir)/common.mk
+ 
++AM_CPPFLAGS = -Iregexp/
++
+ bin_PROGRAMS = epimetheus
+-DEFS = -DEPIMETHEUS
++DEFS = -DEPIMETHEUS -DXP_UNIX -DDEBUG -DTRACE_DEBUG
+ LIBS = -L$(FDLIBM_DIR) -lfdm
+ epimetheus_DEPENDENCIES = $(LIBFDLIBM)
+ epimetheus_SOURCES =  \
+diff --git a/js2/src/bytecodecontainer.h b/js2/src/bytecodecontainer.h
+index c703b33a..d6129e35 100644
+--- a/js2/src/bytecodecontainer.h
++++ b/js2/src/bytecodecontainer.h
+@@ -103,13 +103,13 @@ public:
+ #endif
+                             { }
+     
+-    BytecodeContainer::~BytecodeContainer();
++    ~BytecodeContainer();
+ 
+ 
+     void mark();
+     
+-    uint8 *getCodeStart()                   { return mBuffer.begin(); }
+-    uint8 *getCodeEnd()                     { return mBuffer.begin() + mBuffer.size(); }
++    uint8 *getCodeStart()                   { return mBuffer.empty() ? NULL : &mBuffer[0]; }
++    uint8 *getCodeEnd()                     { return getCodeStart() ? getCodeStart() + mBuffer.size() : NULL; }
+ 
+     uint32 getMaxStack()                    { return mStackMax; }
+ 
+@@ -130,8 +130,8 @@ public:
+ 
+     void addByte(uint8 v)                   { mBuffer.push_back(v); }
+     
+-    void addPointer(const void *v)          { ASSERT(sizeof(void *) == sizeof(uint32)); addUInt32((uint32)(v)); }
+-    static void *getPointer(void *pc)       { return (void *)getUInt32(pc); }
++    void addPointer(const void *v)          { mBuffer.insert(mBuffer.end(), (uint8 *)&v, (uint8 *)(&v) + sizeof(void *)); }
++    static void *getPointer(void *pc)       { return *((void **)pc); }
+     
+     // These insert the opcodes...
+     void addFloat64(float64 v, size_t pos)  { emitOp(eNumber, pos); mBuffer.insert(mBuffer.end(), (uint8 *)&v, (uint8 *)(&v) + sizeof(float64)); }
+@@ -167,7 +167,7 @@ public:
+     void saveObject(JS2Object *b)           { mObjectList.push_back(b); }
+ 
+     void addOffset(int32 v)                 { mBuffer.insert(mBuffer.end(), (uint8 *)&v, (uint8 *)(&v) + sizeof(int32)); }
+-    void setOffset(uint32 index, int32 v)   { *((int32 *)(mBuffer.begin() + index)) = v; }
++    void setOffset(uint32 index, int32 v)   { *((int32 *)(&mBuffer[0] + index)) = v; }
+     static int32 getOffset(void *pc)        { return *((int32 *)pc); }
+     
+     void addString(const StringAtom *x, size_t pos)     { emitOp(eString, pos); mStringList.push_back(String(*x)); addShort((uint16)(mStringList.size() - 1)); }
+diff --git a/js2/src/epimetheus.cpp b/js2/src/epimetheus.cpp
+index 4aeb5c6f..d28c781a 100644
+--- a/js2/src/epimetheus.cpp
++++ b/js2/src/epimetheus.cpp
+@@ -189,6 +189,11 @@ static bool processArgs(int argc, char **argv, int *result, bool *doTrees, bool
+     *doTrace = false;
+     for (int i = 0; i < argc; i++)  {    
+         if (argv[i][0] == '-') {
++            if (!strcmp(argv[i], "--help")) {
++                stdOut << "usage: epimetheus [-i] [-t] [-x] [-f file] [file]\n";
++                *result = 0;
++                return false;
++            }
+             switch (argv[i][1]) {
+             default:
+                 stdOut << "unrecognized command line switch\n";
+@@ -222,6 +227,14 @@ static bool processArgs(int argc, char **argv, int *result, bool *doTrees, bool
+                 // skip rest of command line
+                 break;
+             }
++            try {
++                metadata->readEvalFile(JavaScript::widenCString(argv[i]));
++            } catch (Exception &e) {
++                stdOut << '\n' << e.fullMessage();
++                *result = EXITCODE_RUNTIME_ERROR;
++                return false;
++            }
++            doInteractive = false;
+         }
+     }
+     return doInteractive;
+@@ -517,6 +530,14 @@ int main(int argc, char **argv)
+ 
+     metadata->addGlobalObjectFunction("print", print, 1);
+     metadata->addGlobalObjectFunction("load", load, 1);
++    {
++        SimpleInstance *consoleObj = new (metadata) SimpleInstance(metadata, metadata->objectClass->prototype, metadata->objectClass);
++        DEFINE_ROOTKEEPER(metadata, rkConsole, consoleObj);
++        FunctionInstance *logFn = metadata->createFunctionInstance(metadata->env, true, true, print, 1, NULL);
++        DEFINE_ROOTKEEPER(metadata, rkLog, logFn);
++        metadata->createDynamicProperty(consoleObj, metadata->world.identifiers["log"], OBJECT_TO_JS2VAL(logFn), ReadWriteAccess, false, true);
++        metadata->createDynamicProperty(metadata->glob, metadata->world.identifiers["console"], OBJECT_TO_JS2VAL(consoleObj), ReadWriteAccess, false, true);
++    }
+ #ifdef DEBUG
+     metadata->addGlobalObjectFunction("dump", dump, 1);
+     metadata->addGlobalObjectFunction("dumpAt", dumpAt, 1);
+diff --git a/js2/src/js2date.cpp b/js2/src/js2date.cpp
+index 1f3365e9..82d14e5d 100644
+--- a/js2/src/js2date.cpp
++++ b/js2/src/js2date.cpp
+@@ -47,6 +47,7 @@
+ 
+ #include <assert.h>
+ #include <ctype.h>
++#include <cstring>
+ 
+ #include "world.h"
+ #include "utilities.h"
+@@ -645,7 +646,7 @@ static float64 date_parseString(const String &s)
+             if (i <= st + 1)
+                 goto syntax;
+             for (k = (sizeof(wtb)/sizeof(char*)); --k >= 0;)
+-                if (regionMatches(wtb[k], s, st, i-st, 1)) {
++                if (regionMatches((const char *)wtb[k], s, st, i-st, true)) {
+                     int action = ttb[k];
+                     if (action != 0) {
+                         if (action < 0) {
+diff --git a/js2/src/js2engine.cpp b/js2/src/js2engine.cpp
+index 16eb61c1..b937807c 100644
+--- a/js2/src/js2engine.cpp
++++ b/js2/src/js2engine.cpp
+@@ -45,7 +45,9 @@
+ 
+ #include <algorithm>
+ #include <assert.h>
++#include <cstdio>
+ #include <list>
++#include <cstring>
+ #include <stack>
+ 
+ #include "world.h"
+@@ -342,46 +344,46 @@ namespace MetaData {
+     String *JS2Engine::numberToString(int32 i)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, i, dtosStandard, 0);
+-        return allocStringPtr(chrp);
++        ::snprintf(buf, sizeof(buf), "%d", i);
++        return allocStringPtr(buf);
+     }
+     // Convert an integer to a string
+     String *JS2Engine::numberToString(uint32 i)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, i, dtosStandard, 0);
+-        return allocStringPtr(chrp);
++        ::snprintf(buf, sizeof(buf), "%u", i);
++        return allocStringPtr(buf);
+     }
+ 
+     // Convert a double to a string
+     String *JS2Engine::numberToString(float64 *number)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, *number, dtosStandard, 0);
+-        return allocStringPtr(chrp);
++        ::snprintf(buf, sizeof(buf), "%.17g", *number);
++        return allocStringPtr(buf);
+     }
+ 
+     // Convert an integer to a stringAtom
+     StringAtom &JS2Engine::numberToStringAtom(int32 i)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, i, dtosStandard, 0);
+-        return meta->world.identifiers[chrp];
++        ::snprintf(buf, sizeof(buf), "%d", i);
++        return meta->world.identifiers[buf];
+     }
+     // Convert an integer to a stringAtom
+     StringAtom &JS2Engine::numberToStringAtom(uint32 i)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, i, dtosStandard, 0);
+-        return meta->world.identifiers[chrp];
++        ::snprintf(buf, sizeof(buf), "%u", i);
++        return meta->world.identifiers[buf];
+     }
+ 
+     // Convert a double to a stringAtom
+     StringAtom &JS2Engine::numberToStringAtom(float64 *number)
+     {
+         char buf[dtosStandardBufferSize];
+-        const char *chrp = doubleToStr(buf, dtosStandardBufferSize, *number, dtosStandard, 0);
+-        return meta->world.identifiers[chrp];
++        ::snprintf(buf, sizeof(buf), "%.17g", *number);
++        return meta->world.identifiers[buf];
+     }
+ 
+ 
+@@ -724,14 +726,14 @@ namespace MetaData {
+         case BRANCH_OFFSET:
+             {
+                 int32 offset = BytecodeContainer::getOffset(pc);
+-                stdOut << " " << offset << " --> " << (pc - start) + offset;
++                stdOut << " " << offset << " --> " << int32((pc - start) + offset);
+                 pc += sizeof(int32);
+             }
+             break;
+         case BREAK_OFFSET_AND_COUNT:
+             {
+                 int32 offset = BytecodeContainer::getOffset(pc);
+-                stdOut << " " << offset << " --> " << (pc - start) + offset;
++                stdOut << " " << offset << " --> " << int32((pc - start) + offset);
+                 pc += sizeof(int32);
+                 printFormat(stdOut, " (%d)", BytecodeContainer::getShort(pc));
+                 pc += sizeof(short);
+@@ -780,11 +782,11 @@ namespace MetaData {
+                 if (offset1 == (int32)NotALabel)
+                     stdOut << " no finally; ";
+                 else
+-                    stdOut << " (finally) " << offset1 << " --> " << (pc - start) + offset1 << "; ";
++                    stdOut << " (finally) " << offset1 << " --> " << int32((pc - start) + offset1) << "; ";
+                 if (offset2 == (int32)NotALabel)
+                     stdOut << "no catch;";
+                 else
+-                    stdOut << "(catch) " << offset2 << " --> " << (pc - start) + offset2;
++                    stdOut << "(catch) " << offset2 << " --> " << int32((pc - start) + offset2);
+             }
+             break;
+         case FLOAT64:
+@@ -1328,4 +1330,3 @@ namespace MetaData {
+ 
+ }
+ }
+-
+diff --git a/js2/src/js2eval.cpp b/js2/src/js2eval.cpp
+index d2a2ded7..94e62412 100644
+--- a/js2/src/js2eval.cpp
++++ b/js2/src/js2eval.cpp
+@@ -1164,7 +1164,7 @@ VariableMemberCommon:
+             }
+             int32 i = JS2VAL_TO_INT(indexVal);
+             if ((i >= 0) && ((uint32)(i) < str->length())) {
+-                jschar c = (*str)[i];
++                char16 c = (*str)[i];
+                 *rval = meta->engine->allocString(&c, 1);
+             }
+             else
+@@ -1181,4 +1181,3 @@ VariableMemberCommon:
+ }; // namespace Javascript
+ 
+ 
+-
+diff --git a/js2/src/js2metadata.cpp b/js2/src/js2metadata.cpp
+index e8ccb04c..b02855fc 100644
+--- a/js2/src/js2metadata.cpp
++++ b/js2/src/js2metadata.cpp
+@@ -5484,18 +5484,15 @@ XXX see EvalAttributeExpression, where identifiers are being handled for now...
+ 
+     Pond::Pond(size_t sz, Pond *next) : sanity(POND_SANITY), pondSize(sz + POND_SIZE), pondBase(new uint8[pondSize]), pondBottom(pondBase), pondTop(pondBase), freeHeader(NULL), nextPond(next) 
+     {
+-        /*
+-         * Make sure the allocation base is at (n mod 16) == 8.
+-         * That way, each allocated chunk will have it's returned pointer
+-         * at (n mod 16) == 0 after allowing for the PondScum header at the
+-         * beginning.
+-         */
+-        int32 offset = ((ptrdiff_t)pondBottom % 16);
+-        if (offset != 8) {
+-            if (offset > 8)
+-                pondBottom += 8 + (16 - offset);
++        const ptrdiff_t align = 16;
++        const ptrdiff_t header_mod = static_cast<ptrdiff_t>(sizeof(PondScum) % align);
++        const ptrdiff_t desired_base_mod = (align - header_mod) % align;
++        ptrdiff_t offset = static_cast<ptrdiff_t>(reinterpret_cast<ptrdiff_t>(pondBottom) % align);
++        if (offset != desired_base_mod) {
++            if (offset > desired_base_mod)
++                pondBottom += desired_base_mod + (align - offset);
+             else
+-                pondBottom += 8 - offset;
++                pondBottom += desired_base_mod - offset;
+         }
+         pondTop = pondBottom;
+         pondSize -= (pondTop - pondBase);
+diff --git a/js2/src/js2metadata.h b/js2/src/js2metadata.h
+index 413de71d..26f12e7a 100644
+--- a/js2/src/js2metadata.h
++++ b/js2/src/js2metadata.h
+@@ -39,6 +39,8 @@
+ #ifndef js2metadata_h___
+ #define js2metadata_h___
+ 
++struct JS2RegExp;
++
+ namespace JavaScript {
+ namespace MetaData {
+ 
+@@ -758,7 +760,7 @@ public:
+     Environment(Environment *e) : JS2Object(EnvironmentKind), frameList(e->frameList) { }
+     
+     JS2Class *getEnclosingClass();
+-    ParameterFrame *Environment::getEnclosingParameterFrame(js2val *thisP);
++    ParameterFrame *getEnclosingParameterFrame(js2val *thisP);
+     FrameListIterator getRegionalFrame();
+     FrameListIterator getRegionalEnvironment();
+     Frame *getTopFrame()                    { return frameList.front(); }
+@@ -1583,7 +1585,7 @@ public:
+ 
+     bool readLocalMember(LocalMember *m, Phase phase, js2val *rval, Frame *container);
+     bool readInstanceMember(js2val containerVal, JS2Class *c, InstanceMember *mBase, Phase phase, js2val *rval);
+-    bool JS2Metadata::hasOwnProperty(JS2Object *obj, const StringAtom &name);
++    bool hasOwnProperty(JS2Object *obj, const StringAtom &name);
+ 
+     bool writeLocalMember(LocalMember *m, js2val newValue, bool initFlag, Frame *container);
+     bool writeInstanceMember(js2val containerVal, JS2Class *c, InstanceMember *mBase, js2val newValue);
+diff --git a/js2/src/js2regexp.cpp b/js2/src/js2regexp.cpp
+index 456406be..494e0d8d 100644
+--- a/js2/src/js2regexp.cpp
++++ b/js2/src/js2regexp.cpp
+@@ -190,7 +190,7 @@ namespace MetaData {
+             }
+             index = meta->engine->float64toUInt32(lastIndex);
+         }
+-        REMatchResult *match = REExecute(meta, thisInst->mRegExp, str->begin(), index, toUInt32(str->length()), meta->toBoolean(globalMultiline));
++        REMatchResult *match = REExecute(meta, thisInst->mRegExp, str->data(), index, toUInt32(str->length()), meta->toBoolean(globalMultiline));
+         if (match) {
+             if (meta->toBoolean(thisInst->getGlobal(meta))) {
+                 index = match->endIndex;
+@@ -315,11 +315,11 @@ namespace MetaData {
+                 regexpStr = meta->toString(argv[0]);
+             if ((argc > 1) && !JS2VAL_IS_UNDEFINED(argv[1])) {
+                 flagStr = meta->toString(argv[1]);
+-                if (!parseFlags(meta, flagStr->begin(), (int32)flagStr->length(), &flags))
++                if (!parseFlags(meta, flagStr->data(), (int32)flagStr->length(), &flags))
+                     meta->reportError(Exception::syntaxError, "Failed to parse RegExp : '{0}'", meta->engine->errorPos(), *regexpStr + "/" + *flagStr);  // XXX error message?
+             }
+         }
+-        JS2RegExp *re = RECompile(meta, regexpStr->begin(), (int32)regexpStr->length(), flags, flat);
++        JS2RegExp *re = RECompile(meta, regexpStr->data(), (int32)regexpStr->length(), flags, flat);
+         if (re) {
+             thisInst->mRegExp = re;
+             // XXX ECMA spec says these are DONTENUM
+diff --git a/js2/src/js2string.cpp b/js2/src/js2string.cpp
+index 328dbe06..69d2c9ba 100644
+--- a/js2/src/js2string.cpp
++++ b/js2/src/js2string.cpp
+@@ -136,7 +136,7 @@ static js2val String_search(JS2Metadata *meta, const js2val thisValue, js2val *a
+     }
+     JS2RegExp *re = (checked_cast<RegExpInstance *>(JS2VAL_TO_OBJECT(regexp)))->mRegExp;
+ 
+-    REMatchResult *match = REExecute(meta, re, str->begin(), 0, (int32)str->length(), false);
++    REMatchResult *match = REExecute(meta, re, str->data(), 0, (int32)str->length(), false);
+     if (match) {
+         js2val result = meta->engine->allocNumber((float64)(match->startIndex));
+         free(match);
+@@ -190,7 +190,7 @@ static js2val String_match(JS2Metadata *meta, const js2val thisValue, js2val *ar
+         int32 index = 0;
+         uint32 lastIndex = 0;
+         while (true) {
+-            REMatchResult *match = REExecute(meta, re, JS2VAL_TO_STRING(S)->begin(), lastIndex, toInt32(JS2VAL_TO_STRING(S)->length()), globalMultiline);
++            REMatchResult *match = REExecute(meta, re, JS2VAL_TO_STRING(S)->data(), lastIndex, toInt32(JS2VAL_TO_STRING(S)->length()), globalMultiline);
+             if (match == NULL)
+                 break;
+             if (lastIndex == match->endIndex)
+@@ -213,7 +213,7 @@ static js2val String_match(JS2Metadata *meta, const js2val thisValue, js2val *ar
+ static const String interpretDollar(JS2Metadata *meta, const String *replaceStr, uint32 dollarPos, const String *searchStr, REMatchResult *match, uint32 &skip)
+ {
+     skip = 2;
+-    const char16 *dollarValue = replaceStr->begin() + dollarPos + 1;
++    const char16 *dollarValue = replaceStr->data() + dollarPos + 1;
+     switch (*dollarValue) {
+     case '$':
+         return meta->engine->Dollar_StringAtom;
+@@ -321,7 +321,7 @@ static js2val String_replace(JS2Metadata *meta, const js2val thisValue, js2val *
+     int32 lastIndex = 0;
+ 
+     while (true) {
+-        match = REExecute(meta, re, S->begin(), lastIndex, toInt32(S->length()), false);
++        match = REExecute(meta, re, S->data(), lastIndex, toInt32(S->length()), false);
+         if (!match)
+             break;
+         else {
+@@ -403,7 +403,7 @@ static void regexpSplitMatch(JS2Metadata *meta, const String *S, uint32 q, JS2Re
+     result.failure = true;
+     result.captures = NULL;
+ 
+-    REMatchResult *match = REMatch(meta, RE, S->begin() + q, (int32)(S->length() - q));
++    REMatchResult *match = REMatch(meta, RE, S->data() + q, (int32)(S->length() - q));
+ 
+     if (match) {
+         result.endIndex = match->endIndex + q;
+diff --git a/js2/src/js2value.h b/js2/src/js2value.h
+index 8a6f5497..835badd2 100644
+--- a/js2/src/js2value.h
++++ b/js2/src/js2value.h
+@@ -39,7 +39,6 @@
+ #ifndef js2value_h___
+ #define js2value_h___
+ 
+-
+ /*
+  * Type tags stored in the low bits of a js2val.
+  */
+@@ -173,7 +172,7 @@
+ #define JS2VAL_IS_UNDEFINED(v)  JS2VAL_IS_VOID(v)
+ #define JS2VAL_UNDEFINED JS2VAL_VOID
+ 
+-typedef uint32 js2val;
++typedef size_t js2val;
+ enum Phase  { CompilePhase, RunPhase };
+ 
+ // XXX where should these be?
+@@ -183,4 +182,3 @@ enum Access { ReadAccess = 0x1, WriteAccess = 0x2, ReadWriteAccess = ReadAccess
+ typedef std::vector<js2val> ValueList;
+ 
+ #endif
+-
+diff --git a/js2/src/numerics.h b/js2/src/numerics.h
+index 1435957b..fe22c94d 100644
+--- a/js2/src/numerics.h
++++ b/js2/src/numerics.h
+@@ -39,6 +39,8 @@
+ #ifndef numerics_h
+ #define numerics_h
+ 
++#include <cmath>
++
+ #include "systemtypes.h"
+ #include "utilities.h"
+ #include "strings.h"
+@@ -86,7 +88,7 @@ namespace JavaScript {
+     int hi0bits(uint32 x);
+ 
+     class BigInt {
+-        enum {maxLgGrossSize = 15};     // Maximum value of lg2(grossSize)
++        enum {maxLgGrossSize = 30};     // Maximum value of lg2(grossSize)
+         static uint32 *freeLists[maxLgGrossSize+1];
+ 
+         uint lgGrossSize;               // lg2(grossSize)
+diff --git a/js2/src/regexpwrapper.cpp b/js2/src/regexpwrapper.cpp
+index 63d220fa..a714f1be 100644
+--- a/js2/src/regexpwrapper.cpp
++++ b/js2/src/regexpwrapper.cpp
+@@ -93,8 +93,8 @@ void JS_ReportErrorNumber(JS2Metadata *meta, const char *message)
+ }
+ 
+ 
+-#define JS_FALSE false
+-#define JS_TRUE true
++#define JS_FALSE 0
++#define JS_TRUE 1
+ 
+ #define JSMSG_MISSING_PAREN         "Missing parentheses, {0}"
+ #define JSMSG_TOO_MANY_PARENS       "Too many parentheses, {0}"
+@@ -2995,4 +2995,3 @@ out:
+ 
+ }   // namespace MetaData
+ }   // namespace JavaScript
+-
+diff --git a/js2/src/stlcfg.h b/js2/src/stlcfg.h
+index e84abebb..63fcda63 100644
+--- a/js2/src/stlcfg.h
++++ b/js2/src/stlcfg.h
+@@ -39,16 +39,19 @@
+ #ifndef stlcfg_h___
+ #define stlcfg_h___
+ 
++#include <cstdarg>
++#include <cstdio>
++#include <cstring>
+ #include <iterator>
+ #include <string>
+ #include <memory>
+  
+ #ifndef _WIN32
+ // Microsoft Visual C++ 6.0 bug: standard identifiers should be in std namespace
+-    using std::va_list;
++    using ::va_list;
+     using std::strlen;
+     using std::strcpy;
+-    using std::FILE;
++    using ::FILE;
+     using std::getc;
+     using std::fgets;
+     using std::fputc;
+diff --git a/js2/src/string.h b/js2/src/string.h
+new file mode 100644
+index 00000000..b16bf72c
+--- /dev/null
++++ b/js2/src/string.h
+@@ -0,0 +1,8 @@
++#ifndef epimetheus_js2_src_string_h_shim___
++#define epimetheus_js2_src_string_h_shim___
++
++#define EPIMETHEUS_IN_GLIBC_STRING_H 1
++#include_next <string.h>
++#undef EPIMETHEUS_IN_GLIBC_STRING_H
++
++#endif
+diff --git a/js2/src/strings.h b/js2/src/strings.h
+index 53b351de..ac96b4b4 100644
+--- a/js2/src/strings.h
++++ b/js2/src/strings.h
+@@ -1,3 +1,6 @@
++#if defined(EPIMETHEUS_IN_GLIBC_STRING_H)
++#include_next <strings.h>
++#else
+ /* -*- Mode: C++; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*-
+  *
+  * ***** BEGIN LICENSE BLOCK *****
+@@ -39,6 +42,7 @@
+ #ifndef strings_h___
+ #define strings_h___
+ 
++#include <cstring>
+ #include <string>
+ 
+ #include "utilities.h"
+@@ -100,7 +104,7 @@ namespace JavaScript
+     // value optimization and avoid creating and destroying a temporary String when
+     // widenCString is called.  We can still hope....
+     inline String widenCString(const char *cstr) {
+-        size_t len = strlen(cstr);
++        size_t len = ::strlen(cstr);
+         const uchar *ucstr = reinterpret_cast<const uchar *>(cstr);
+         return String(ucstr, ucstr+len);
+     }
+@@ -239,6 +243,18 @@ namespace JavaScript
+         friend char16 toLower(char16 c);
+     };
+ 
++    // Explicit namespace-scope declarations for friend functions used via
++    // unqualified lookup in legacy sources.
++    CharInfo::Type cType(const CharInfo &ci);
++    CharInfo::Group cGroup(const CharInfo &ci);
++    bool isIdLeading(const CharInfo &ci);
++    bool isIdContinuing(const CharInfo &ci);
++    bool isSpace(const CharInfo &ci);
++    bool isLineBreak(const CharInfo &ci);
++    bool isFormat(const CharInfo &ci);
++    char16 toUpper(char16 c);
++    char16 toLower(char16 c);
++
+     inline bool isASCIIDecimalDigit(char16 c) {return c >= '0' && c <= '9';}
+     inline bool isASCIIOctalDigit(char16 c) {return c >= '0' && c <= '7';}
+     bool isASCIIHexDigit(char16 c, uint &digit);
+@@ -250,3 +266,5 @@ namespace JavaScript
+ #define JS7_UNHEX(c)    (uint32)(isdigit(c) ? (c) - '0' : 10 + tolower(c) - 'a')
+ 
+ #endif /* strings_h___ */
++
++#endif

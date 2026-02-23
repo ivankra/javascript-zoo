@@ -1,0 +1,421 @@
+Metadata: {"arch": "arm64", "binary_sha256": "0a38a9cb340114e9f547eeb5576bc4a3c1847899f2a6d0c0bce75e4f0ddf4aab", "binary_size": 592936, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "console.log", "engine": "epimetheus", "repository": "https://github.com/jrmuizel/mozilla-cvs-history.git", "revision": "3229d5d8b7f8376cfb7936e7be810635a14a486b", "revision_date": "2008-08-12"}
+es1/Array.js: OK
+es1/Array.length.assignment.js: OK
+es1/Array.length.js: OK
+es1/Array.prototype.constructor.js: OK
+es1/Array.prototype.join.generic.js: OK
+es1/Array.prototype.join.js: OK
+es1/Array.prototype.reverse.generic.js: OK
+es1/Array.prototype.reverse.js: timeout
+es1/Array.prototype.sort.generic.js: OK
+es1/Array.prototype.sort.js: timeout
+es1/Array.prototype.toString.js: OK
+es1/Boolean.js: OK
+es1/Boolean.prototype.constructor.js: OK
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
+es1/Date.diff.js: OK
+es1/Date.js: OK
+es1/Date.prototype.constructor.js: OK
+es1/Date.prototype.getDate.js: OK
+es1/Date.prototype.getDay.js: OK
+es1/Date.prototype.getFullYear.js: OK
+es1/Date.prototype.getHours.js: OK
+es1/Date.prototype.getMilliseconds.js: OK
+es1/Date.prototype.getMinutes.js: OK
+es1/Date.prototype.getMonth.js: OK
+es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getTimezoneOffset.js: OK
+es1/Date.prototype.getTime.js: OK
+es1/Date.prototype.getUTCDate.js: OK
+es1/Date.prototype.getUTCDay.js: OK
+es1/Date.prototype.getUTCFullYear.js: OK
+es1/Date.prototype.getUTCHours.js: OK
+es1/Date.prototype.getUTCMilliseconds.js: OK
+es1/Date.prototype.getUTCMinutes.js: OK
+es1/Date.prototype.getUTCMonth.js: OK
+es1/Date.prototype.getUTCSeconds.js: OK
+es1/Date.prototype.setDate.js: OK
+es1/Date.prototype.setFullYear.js: OK
+es1/Date.prototype.setHours.js: OK
+es1/Date.prototype.setMilliseconds.js: OK
+es1/Date.prototype.setMinutes.js: OK
+es1/Date.prototype.setMonth.js: OK
+es1/Date.prototype.setSeconds.js: OK
+es1/Date.prototype.setTime.js: OK
+es1/Date.prototype.setUTCDate.js: OK
+es1/Date.prototype.setUTCFullYear.js: OK
+es1/Date.prototype.setUTCHours.js: OK
+es1/Date.prototype.setUTCMilliseconds.js: OK
+es1/Date.prototype.setUTCMinutes.js: OK
+es1/Date.prototype.setUTCMonth.js: OK
+es1/Date.prototype.setUTCSeconds.js: OK
+es1/Date.prototype.toLocaleString.js: OK
+es1/Date.prototype.toString.js: OK
+es1/Date.prototype.toUTCString.js: OK
+es1/Date.prototype.valueOf.js: OK
+es1/Function.js: OK
+es1/Function.length.js: timeout
+es1/Function.prototype.constructor.js: OK
+es1/Function.prototype.js: timeout
+es1/Function.prototype.toString.js: timeout
+es1/Math.E.js: OK
+es1/Math.LN2.js: OK
+es1/Math.LN10.js: OK
+es1/Math.LOG2E.js: OK
+es1/Math.LOG10E.js: OK
+es1/Math.PI.js: OK
+es1/Math.SQRT1_2.js: OK
+es1/Math.SQRT2.js: OK
+es1/Math.abs.js: OK
+es1/Math.acos.js: failed
+es1/Math.asin.js: OK
+es1/Math.atan2.js: OK
+es1/Math.atan.js: OK
+es1/Math.ceil.js: OK
+es1/Math.cos.js: OK
+es1/Math.exp.js: OK
+es1/Math.floor.js: OK
+es1/Math.log.js: failed
+es1/Math.max.js: OK
+es1/Math.min.js: OK
+es1/Math.pow.js: failed
+es1/Math.random.js: OK
+es1/Math.round.js: OK
+es1/Math.sin.js: OK
+es1/Math.sqrt.js: OK
+es1/Math.tan.js: OK
+es1/Number.MAX_VALUE.js: failed
+es1/Number.MIN_VALUE.js: timeout
+es1/Number.NEGATIVE_INFINITY.js: failed
+es1/Number.NaN.js: OK
+es1/Number.POSITIVE_INFINITY.js: failed
+es1/Number.js: OK
+es1/Number.prototype.constructor.js: OK
+es1/Number.prototype.toString.js: OK
+es1/Number.prototype.valueOf.js: OK
+es1/Object.js: OK
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
+es1/Object.prototype.toString.js: OK
+es1/Object.prototype.valueOf.js: OK
+es1/String.fromCharCode.js: OK
+es1/String.generics.js: timeout
+es1/String.js: OK
+es1/String.length.js: OK
+es1/String.prototype.charAt.js: OK
+es1/String.prototype.charCodeAt.js: OK
+es1/String.prototype.constructor.js: OK
+es1/String.prototype.indexOf.js: indexOf not found failed
+es1/String.prototype.lastIndexOf.js: lastIndexOf not found failed
+es1/String.prototype.split.js: timeout
+es1/String.prototype.substring.js: OK
+es1/String.prototype.toLowerCase.js: OK
+es1/String.prototype.toString.js: OK
+es1/String.prototype.toUpperCase.js: OK
+es1/String.prototype.valueOf.js: OK
+es1/annex-b.Date.prototype.getYear.js: OK
+es1/annex-b.Date.prototype.setYear.js: OK
+es1/annex-b.Date.prototype.toGMTString.js: OK
+es1/annex-b.global.escape.js: OK
+es1/annex-b.global.unescape.js: OK
+es1/annex-b.literals.octal.js: timeout
+es1/annex-b.literals.string.octal.js: failed
+es1/arguments.callee.js: timeout
+es1/arguments.js: timeout
+es1/asi.eval.js: OK
+es1/asi.js: timeout
+es1/assignment.bitwise.js: OK
+es1/assignment.js: OK
+es1/assignment.ltr.js: timeout
+es1/assignment.unsigned-shift.js: OK
+es1/bitwise.binary.js: OK
+es1/bitwise.shifts.js: OK
+es1/bitwise.tilde.js: OK
+es1/bitwise.unsigned-shift.js: OK
+es1/break.js: OK
+es1/comma.js: OK
+es1/comments.js: OK
+es1/conditional.js: OK
+es1/continue.js: OK
+es1/conversions.ToBoolean.js: NaN failed
+es1/conversions.ToInt32.js: OK
+es1/conversions.ToInteger.js: OK
+es1/conversions.ToNumber.js: OK
+es1/conversions.ToObject.js: OK
+es1/conversions.ToString.js: NaN failed; Infinity failed; -Infinity failed; 3.14 failed; 1e-7 failed
+es1/conversions.ToUint32.js: OK
+es1/conversions.js: OK
+es1/equals.js: OK
+es1/eval.js: OK
+es1/for-in.js: OK
+es1/for.js: OK
+es1/functions.js: timeout
+es1/global.Infinity.js: failed
+es1/global.NaN.js: OK
+es1/global.isFinite.js: isFinite(1/0) failed; isFinite(-1/0) failed; isFinite(0/0) failed
+es1/global.isNaN.js: !isNaN(0 / 0)
+es1/global.parseFloat.js: OK
+es1/global.parseInt.hex.js: OK
+es1/global.parseInt.js: OK
+es1/global.parseInt.radix.js: OK
+es1/literals.decimal.js: OK
+es1/literals.hex.js: OK
+es1/literals.string.escapes.js: OK
+es1/literals.string.hex.js: OK
+es1/literals.string.js: OK
+es1/literals.string.unicode.js: OK
+es1/logical.js: OK
+es1/new.typeof.js: OK
+es1/numbers.double.js: timeout
+es1/numbers.fmod.js: OK
+es1/numbers.inf.js: -1e10000 is NaN; 1/0 != 1e10000; -1/0 != -1e10000; +Infinity magnitude failed; -Infinity magnitude failed; Infinity + Infinity != Infinity; Infinity * Infinity != Infinity; Infinity - Infinity is not NaN; Infinity / Infinity is not NaN
+es1/numbers.int.js: OK
+es1/numbers.nan.js: OK
+es1/postfix.decrement.js: OK
+es1/postfix.increment.js: OK
+es1/prefix.js: OK
+es1/relational.js: OK
+es1/return.js: timeout
+es1/return.typeof.js: timeout
+es1/this.js: timeout
+es1/typeof.js: OK
+es1/typeof.null.js: OK
+es1/typeof.undeclared.js: var b = [ERROR]typeof a; Reference error: a is undefined
+es1/types.js: OK
+es1/unary.decrement.js: OK
+es1/unary.delete.js: OK
+es1/unary.delete.var.js: if ([ERROR]typeof a == "undefined" && b == 2) { Reference error: a is undefined
+es1/unary.increment.js: OK
+es1/unary.minus.js: OK
+es1/unary.not.js: OK
+es1/unary.plus.js: OK
+es1/unary.plus.str.js: OK
+es1/unary.tilde.js: OK
+es1/var.js: OK
+es1/var.typeof.js: OK
+es1/void.js: timeout
+es1/void.typeof.js: OK
+es1/while.js: OK
+es1/with.js: property lookup failed; second property lookup failed
+es3/Array.prototype.concat.js: timeout
+es3/Array.prototype.pop.generic.js: OK
+es3/Array.prototype.pop.js: OK
+es3/Array.prototype.push.generic.js: OK
+es3/Array.prototype.push.js: timeout
+es3/Array.prototype.shift.generic.js: shift from object failed
+es3/Array.prototype.shift.js: timeout
+es3/Array.prototype.slice.generic.js: timeout
+es3/Array.prototype.slice.js: timeout
+es3/Array.prototype.splice.generic.js: timeout
+es3/Array.prototype.splice.js: timeout
+es3/Array.prototype.toLocaleString.js: OK
+es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
+es3/Array.prototype.unshift.js: timeout
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed
+es3/Date.prototype.toDateString.js: OK
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
+es3/Date.prototype.toTimeString.js: OK
+es3/Error.js: OK
+es3/Error.prototype.constructor.js: OK
+es3/Error.prototype.message.js: OK
+es3/Error.prototype.name.js: OK
+es3/Error.prototype.toString.js: OK
+es3/Function.prototype.apply.js: timeout
+es3/Function.prototype.call.js: timeout
+es3/Math.max.variadic.js: max() with 0 args failed
+es3/Math.min.variadic.js: OK
+es3/Number.prototype.toExponential.edge-cases.js: OK
+es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: ';.7959e+304')
+es3/Number.prototype.toExponential.throws-infinity.js: timeout
+es3/Number.prototype.toFixed.js: toFixed(2) failed; toFixed(0) failed; toFixed() undefined arg failed; negative number failed
+es3/Number.prototype.toLocaleString.js: OK
+es3/Number.prototype.toPrecision.js: toPrecision(5) fixed notation failed; toPrecision() undefined arg failed; small number exponential notation failed
+es3/Object.prototype.hasOwnProperty.js: OK
+es3/Object.prototype.isPrototypeOf.js: [ERROR]if (Child.prototype.isPrototypeOf(child)) { Bad Value error: undefined is not a function
+es3/Object.prototype.propertyIsEnumerable.js: OK
+es3/Object.prototype.toLocaleString.js: [ERROR]var s1 = o1.toLocaleString(); Bad Value error: undefined is not a function
+es3/RegExp.global.js: OK
+es3/RegExp.ignoreCase.js: OK
+es3/RegExp.js: OK
+es3/RegExp.lastIndex.js: OK
+es3/RegExp.multiline.js: OK
+es3/RegExp.prototype.constructor.js: OK
+es3/RegExp.prototype.exec.js: OK
+es3/RegExp.prototype.test.js: OK
+es3/RegExp.prototype.toString.js: OK
+es3/RegExp.source.js: OK
+es3/String.prototype.concat.generic.js: OK
+es3/String.prototype.concat.js: OK
+es3/String.prototype.localeCompare.js: a before b failed; b after a failed; equal strings failed; empty strings failed; abc before abd failed
+es3/String.prototype.match.generic.js: OK
+es3/String.prototype.match.js: timeout
+es3/String.prototype.replace.capture.js: OK
+es3/String.prototype.replace.extra.js: OK
+es3/String.prototype.replace.generic.js: timeout
+es3/String.prototype.replace.regex.js: OK
+es3/String.prototype.replace.str.js: crashed (signal 11)
+es3/String.prototype.search.generic.js: OK
+es3/String.prototype.search.js: OK
+es3/String.prototype.search.str.js: OK
+es3/String.prototype.slice.generic.js: OK
+es3/String.prototype.slice.js: OK
+es3/String.prototype.split.bugs.js: timeout
+es3/String.prototype.split.limit.js: timeout
+es3/String.prototype.split.regex.js: timeout
+es3/String.prototype.toLocaleLowerCase.js: OK
+es3/String.prototype.toLocaleUpperCase.js: OK
+es3/annex-b.String.prototype.substr.js: [ERROR]var x = s.substr(2, 3); Bad Value error: undefined is not a function
+es3/do-while.js: OK
+es3/function-expressions.IIFE.js: OK
+es3/function-expressions.js: OK
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: crashed (signal 11); wrong exception for instanceof number; wrong exception for instanceof non-callable; no exception for in number
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong exception for decodeURIComponent invalid hex; wrong exception for encodeURI lone low surrogate; wro
+es3/global.decodeURIComponent.js: var decoded1 = decodeURIComponent([ERROR]"hello%20world"); Reference error: decodeURIComponent is undefined
+es3/global.decodeURI.js: var decoded1 = decodeURI([ERROR]"https://example.com/path?query=value"); Reference error: decodeURI is undefined
+es3/global.encodeURIComponent.js: var encoded1 = encodeURIComponent([ERROR]"hello world"); Reference error: encodeURIComponent is undefined
+es3/global.encodeURI.js: var encoded1 = encodeURI([ERROR]"https://example.com/path?query=value"); Reference error: encodeURI is undefined
+es3/global.undefined.js: OK
+es3/identifiers.unicode.js: var <00D0>[ERROR]<00B6> = 1; Syntax error: Bad character
+es3/instanceof.js: OK
+es3/in.js: length in array failed
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
+es3/labelled.statements.js: OK
+es3/literals.array.elisions.js: array with single elision failed; array with leading elisions failed; array with multiple elisions failed; array with only elision failed
+es3/literals.array.js: OK
+es3/literals.array.trailing-comma.js: OK
+es3/literals.object.decimal.js: OK
+es3/literals.object.hex.js: OK
+es3/literals.object.int.js: OK
+es3/literals.object.js: OK
+es3/literals.object.str.js: OK
+es3/literals.object.unicode.js: var o1 = {<00D0>[ERROR]<00B6>: 42}; Syntax error: Bad character
+es3/literals.regex.ambiguous.js: OK
+es3/literals.regex.empty.js: OK
+es3/literals.regex.js: OK
+es3/literals.string.esc-v.js: OK
+es3/nested-functions.eval.js: OK
+es3/nested-functions.js: timeout
+es3/regex.backref.js: OK
+es3/regex.begin.js: OK
+es3/regex.bracket.esc-b.js: OK
+es3/regex.bracket.js: OK
+es3/regex.bracket.ranges.js: case insensitive range failed
+es3/regex.class.esc-d.js: OK
+es3/regex.class.esc-s.js: OK
+es3/regex.class.esc-w.js: OK
+es3/regex.disjunction.js: OK
+es3/regex.dot.js: OK
+es3/regex.end.js: OK
+es3/regex.escape.control.js: OK
+es3/regex.escape.hex.js: OK
+es3/regex.escape.js: OK
+es3/regex.escape.nul.js: OK
+es3/regex.escape.unicode.js: OK
+es3/regex.flag.global.js: timeout
+es3/regex.flag.ignorecase.js: OK
+es3/regex.flag.multiline.js: OK
+es3/regex.group.js: OK
+es3/regex.lookahead.js: OK
+es3/regex.negative-lookahead.js: OK
+es3/regex.non-capturing-group.js: OK
+es3/regex.quantifier.exact.js: OK
+es3/regex.quantifier.maybe.js: OK
+es3/regex.quantifier.min.js: OK
+es3/regex.quantifier.plus.js: OK
+es3/regex.quantifier.range.js: OK
+es3/regex.quantifier.star.js: OK
+es3/regex.word-boundary.js: OK
+es3/source.line-terminators.js: return<00E2>[ERROR]<0080><00A8>1; // return<U+2028>1; Syntax error: Bad character
+es3/source.whitespace.js: var<00C2><00A0>w [ERROR]= 4;      // var<NBSP>x: \y00A0 No-break space Syntax error: Bad annotated directive
+es3/source.whitespace.unicode.js: var<00E2>[ERROR]<0080><0080>x = 1;  // var<U+2000>x: \u2000 EN QUAD Syntax error: Bad character
+es3/strict-equals.js: OK
+es3/switch.js: OK
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
+es5/Array.isArray.js: if ([ERROR]typeof Array.isArray === 'function') { Property access error: No property named isArray
+es5/Array.prototype.every.js: Array.prototype.every not a function; if (arr.every(function(x) { return x % 2 === 0; }) === [ERROR]true) { Bad Value error: undefined is not a function
+es5/Array.prototype.filter.js: Array.prototype.filter not a function; [ERROR]var result = arr.filter(function(x) { return x % 2 === 0; }); Bad Value error: undefined is not a function
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function; [ERROR]arr.forEach(function(x) { sum = sum + x; }); Bad Value error: undefined is not a function
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function; if (arr.indexOf(2) === [ERROR]1) { Bad Value error: undefined is not a function
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function; if (arr.lastIndexOf(2) === [ERROR]3) { Bad Value error: undefined is not a function
+es5/Array.prototype.map.js: Array.prototype.map not a function; [ERROR]var result = arr.map(function(x) { return x * 2; }); Bad Value error: undefined is not a function
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function; [ERROR]var result = arr.reduceRight(function(acc, x) { return acc + x; }, 0); Bad Value error: undefined is not a function
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function; [ERROR]var sum = arr.reduce(function(acc, x) { return acc + x; }, 0); Bad Value error: undefined is not a function
+es5/Array.prototype.some.js: Array.prototype.some not a function; if (arr.some(function(x) { return x > 3; }) === [ERROR]true) { Bad Value error: undefined is not a function
+es5/Array.prototype.sort.TypeError.js: crashed (signal 11)
+es5/Array.prototype.sort.undefined-comparefn.js: timeout
+es5/Date.now.js: if ([ERROR]typeof Date.now === 'function') { Property access error: No property named now
+es5/Date.prototype.toISOString.js: Date.prototype.toISOString not a function; [ERROR]var iso1 = d1.toISOString(); Bad Value error: undefined is not a function
+es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; var result1 = Date.prototype.toJSON.call([ERROR]new Date(NaN)); Type error: Can't convert to Object
+es5/Function.prototype-not-enumerable.js: OK
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: Function.prototype.bind not a function; [ERROR]var boundGetX = getX.bind(obj); Bad Value error: undefined is not a function
+es5/JSON.js: if ([ERROR]typeof JSON === 'object') { Reference error: JSON is undefined
+es5/JSON.parse.js: if ([ERROR]typeof JSON.parse !== 'function') { Reference error: JSON is undefined
+es5/JSON.parse.reviver.js: if ([ERROR]typeof JSON.parse !== 'function') { Reference error: JSON is undefined
+es5/JSON.stringify.js: if ([ERROR]typeof JSON.stringify !== 'function') { Reference error: JSON is undefined
+es5/JSON.stringify.replacer.js: if ([ERROR]typeof JSON.stringify !== 'function') { Reference error: JSON is undefined
+es5/JSON.stringify.space.js: if ([ERROR]typeof JSON.stringify !== 'function') { Reference error: JSON is undefined
+es5/Object.create.js: if ([ERROR]typeof Object.create === 'function') { Property access error: No property named create
+es5/Object.defineProperties.js: if ([ERROR]typeof Object.defineProperties === 'function') { Property access error: No property named defineProperties
+es5/Object.defineProperty.js: if ([ERROR]typeof Object.defineProperty === 'function') { Property access error: No property named defineProperty
+es5/Object.freeze.js: if ([ERROR]typeof Object.freeze === 'function') { Property access error: No property named freeze
+es5/Object.getOwnPropertyDescriptor.js: if ([ERROR]typeof Object.getOwnPropertyDescriptor === 'function') { Property access error: No property named getOwnPropertyDescriptor
+es5/Object.getOwnPropertyNames.js: if ([ERROR]typeof Object.getOwnPropertyNames === 'function') { Property access error: No property named getOwnPropertyNames
+es5/Object.getPrototypeOf.js: if ([ERROR]typeof Object.getPrototypeOf === 'function') { Property access error: No property named getPrototypeOf
+es5/Object.isExtensible.js: if ([ERROR]typeof Object.isExtensible === 'function') { Property access error: No property named isExtensible
+es5/Object.isFrozen.js: if ([ERROR]typeof Object.isFrozen === 'function') { Property access error: No property named isFrozen
+es5/Object.isSealed.js: if ([ERROR]typeof Object.isSealed === 'function') { Property access error: No property named isSealed
+es5/Object.keys.js: if ([ERROR]typeof Object.keys === 'function') { Property access error: No property named keys
+es5/Object.preventExtensions.js: if ([ERROR]typeof Object.preventExtensions === 'function') { Property access error: No property named preventExtensions
+es5/Object.property-shadowing.js: OK
+es5/Object.seal.js: if ([ERROR]typeof Object.seal === 'function') { Property access error: No property named seal
+es5/String.indexing.js: OK
+es5/String.prototype.trim.js: String.prototype.trim not a function; if (s1.trim() === [ERROR]"hello") { Bad Value error: undefined is not a function
+es5/arguments.toStringTag.js: failed
+es5/debugger.js: crashed (signal 6); Assertion failure: Not Yet Implemented, at js2metadata.cpp:814
+es5/global.Infinity.immutable.js: Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: OK
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: OK
+es5/literals.object.getters.js: var o1 = { get [ERROR]x(){ return 1; } }; Syntax error: : expected
+es5/literals.object.setters.js: var o1 = { set [ERROR]x(v){ value = v; } }; Syntax error: : expected
+es5/literals.object.trailing-comma.js: var o1 = { a: true, [ERROR]}; Syntax error: Field name expected
+es5/source.keyword-properties.js: var o1 = { [ERROR]if: 1 }; Syntax error: Field name expected
+es5/source.unreserved-words.js: var [ERROR]abstract, boolean, byte, char, double, final, float, goto, int, long, Syntax error: Identifier expected
+es5/source.whitespace.bom.js: <00EF>[ERROR]<00BB><00BF>// ES5: 7.2 White Space Syntax error: Bad character
+es5/source.zero-width-chars.js: var _\u200[ERROR]c\u200d = true; Syntax error: Identifier escape expands into non-identifier character
+es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: ({ get [ERROR]x(){ } }).x = 1; Syntax error: : expected
+es5/strict.no-assignment-to-unresolvable.js: failed
+es5/strict.no-delete-bindings.js: failed
+es5/strict.no-delete-non-configurable.js: failed
+es5/strict.no-duplicate-parameters.js: crashed (signal 6); Assertion failure: count > 0, at js2metadata.h:438
+es5/strict.no-eval-or-arguments-assignment.js: failed
+es5/strict.no-eval-or-arguments-bindings.js: failed
+es5/strict.no-function-caller-or-arguments.js: failed
+es5/strict.no-octal-literals.js: failed
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: timeout
+es5/strict.this-primitive-not-coerced-in-accessors.js: timeout
+es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.unmapped-arguments.js: failed
+es5/this.thrown-function.js: OK
