@@ -92,7 +92,7 @@ case "$ENGINE_NAME" in
     ENGINE_CMD+=(--script);;
   escargot|jerryscript|jsc|nashorn|xs|cesanta-v7|rpython-langjs|topchetoeu)
     ENGINE_CMD+=("$SCRIPT_DIR/var-console-log.js");;
-  hermes|mocha|spidermonkey_[12]*|carakan|kjs|malbrain|ngs|starlight|yrm006)
+  hermes|mocha|spidermonkey_[12]*|carakan|kjs|ejscript|malbrain|ngs|starlight|yrm006)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
   nova)
     ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}" eval);;
@@ -137,7 +137,7 @@ do_part() {
 
     timeout 3s stdbuf -oL -eL /usr/bin/time -v -o "$tmpfile.time" \
       "${ENGINE_CMD[@]}" "$abspath" </dev/null 2>&1 \
-      | tee "$tmpfile"
+      | head -1000000 | tee "$tmpfile"
 
     local relpath="$abspath"
     if [[ "$relpath" == "$SCRIPT_DIR/"* ]]; then
