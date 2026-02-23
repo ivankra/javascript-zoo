@@ -3,7 +3,7 @@
 
 include ../../build/build.mk
 
-REV ?= 7.0.0
+REV ?= 7.1.0
 
 $(eval $(call build_engine,xs,Dockerfile))
 $(eval $(call build_engine,xs_clang,Dockerfile,--build-arg BASE=jsz-clang))

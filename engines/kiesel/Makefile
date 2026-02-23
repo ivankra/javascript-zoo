@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= 4f059b5a0e1cd4a5434123a75d927f547b5a9a85
+REV ?= 637e0ba1f3314c5658e4dd3da429102739ea7eae
 
 $(eval $(call build_engine,kiesel,Dockerfile))

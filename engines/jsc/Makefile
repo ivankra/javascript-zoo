@@ -4,8 +4,8 @@
 include ../../build/build.mk
 
 # Pick revision from https://developer.apple.com/documentation/safari-technology-preview-release-notes/
-# stp-release-236: http://commits.webkit.org/305413@main.
-REV ?= c0b5ca70b2e64b6af1313ad0de1329d159f1e7b8
+# stp-release-237: http://commits.webkit.org/306595@main
+REV ?= caed0239ff1d606ff67879ac662c1ae83c4aec9a
 
 $(eval $(call build_engine,jsc,Dockerfile,--build-arg BASE=jsz-clang))
 $(eval $(call build_engine,jsc_jitless,Dockerfile,--build-arg JITLESS=true --build-arg BASE=jsz-clang))

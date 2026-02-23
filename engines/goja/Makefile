@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= 2bb4c724c0f93e868b4ab96009bdccb6947a9379
+REV ?= 0ba9a5494a59554ce0c607f80b8a6dec8e9703b3
 
 $(eval $(call build_engine,goja,Dockerfile))

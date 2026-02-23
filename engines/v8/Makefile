@@ -4,8 +4,8 @@
 include ../../build/build.mk
 
 # Pick latest beta from https://chromiumdash.appspot.com/releases?platform=Linux
-REV ?= 14.5.201.7
-REV_PGO ?= 145.0.7632.45
+REV ?= 14.6.202.2
+REV_PGO ?= 146.0.7680.16
 
 CONFORMANCE_BINARY = v8_intl
 

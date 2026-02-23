@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= 2e55cdd94f0289cb7726647193e5212ab13d39b4
+REV ?= f1ba573b23262e45822f3159f7324c661b839e1a
 
 $(eval $(call build_engine,quanta,Dockerfile))

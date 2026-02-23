@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= f23f5510d87e6e8466263cbe36386e556d24f516
+REV ?= bdae4a158e94eee2e6ea388640499d41ff40ee13
 
 $(eval $(call build_engine,sobek,Dockerfile))

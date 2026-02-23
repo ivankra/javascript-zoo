@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= cd10218477ad2ae74436f6c6e5a1bd4995a842c2
+REV ?= d8b91bad05c56954cd2bcffd164e3d64bc4fcab0
 
 $(eval $(call build_engine,porffor,Dockerfile))

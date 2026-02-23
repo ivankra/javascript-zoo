@@ -3,6 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= 66fca446da4e3669db0ae67448ef7cc7ea8f307c
+REV ?= d441adbc01ddc7e3b296780a64a4c3b3eff9b1d7
 
 $(eval $(call build_engine,nova,Dockerfile))
