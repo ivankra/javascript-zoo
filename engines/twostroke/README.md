@@ -2,7 +2,6 @@
 
 JavaScript interpreter written in Ruby.
 
-* Homepage:         [news.ycombinator.com/item?id=3460224](https://news.ycombinator.com/item?id=3460224)
 * Repository:       [haileys/twostroke](https://github.com/haileys/twostroke.git) <span class="shields"><img src="https://img.shields.io/github/stars/haileys/twostroke?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/haileys/twostroke?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              [4723](# "cloc *.rb lib")
 * Language:         Ruby
@@ -11,6 +10,10 @@ JavaScript interpreter written in Ruby.
 * Years:            2011-2012
 * Runtime platform: Ruby
 * Interpreter:      stack-based VM
+
+## Links
+
+* [news.ycombinator.com/item?id=3460224](https://news.ycombinator.com/item?id=3460224)
 
 ## Conformance
 

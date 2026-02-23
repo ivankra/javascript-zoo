@@ -3,7 +3,7 @@
 JavaScript engine of Safari/WebKit.
 
 * Homepage:     [trac.webkit.org/wiki/JavaScriptCore](https://trac.webkit.org/wiki/JavaScriptCore)
-* Repository:   [WebKit/WebKit](https://github.com/WebKit/WebKit.git) <span class="shields"><img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:   [WebKit/WebKit](https://github.com/WebKit/WebKit.git) <span class="shields"><img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit"></span> (engine in [Source/JavaScriptCore/](https://github.com/WebKit/WebKit/tree/main/Source/JavaScriptCore))
 * LOC:          [770374](# "cloc --not_match_d='(?i)(test)' Source/JavaScriptCore")
 * Language:     C++
 * License:      LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
@@ -18,57 +18,30 @@ JavaScript engine of Safari/WebKit.
 
 ## History
 
-* 2001: KHTML/[KJS](../kjs/README.md) forked by Apple (~37k LOC)
-  * Tree-walking interpreter
-  * PCRE-based regex engine ("JSCRE")
-* 2008/06: SquirrelFish (predecessor to LLint)
-  * Direct-threaded register-based VM interpreter
-  * https://webkit.org/blog/189/announcing-squirrelfish/
-* 2008/09: SquirrelFish Extreme/Nitro (now Baseline JIT)
-  * Context-threaded JIT (later template JIT), PIC => ~2x speedup
-  * WREC: new bytecode-based regex engine.
-  * https://webkit.org/blog/214/introducing-squirrelfish-extreme/
-  * https://github.com/WebKit/WebKit/commit/9b948e40c37ad6b4402d737f1a7639889e23c597
+* 2001: KHTML/[KJS](../kjs/README.md) forked by Apple (~37k LOC). Tree-walking interpreter, PCRE-based regex engine ("JSCRE").
+* 2008/06: [SquirrelFish](https://webkit.org/blog/189/announcing-squirrelfish/) (predecessor to LLint) - direct-threaded register-based VM interpreter.
+* 2008/09: [SquirrelFish Extreme](https://webkit.org/blog/214/introducing-squirrelfish-extreme/) ([commit](https://github.com/WebKit/WebKit/commit/9b948e40c37ad6b4402d737f1a7639889e23c597)) aka Nitro (now Baseline JIT) - context-threaded JIT (later template JIT) + PIC, achieved ~2x speedup; now known as "Baseline JIT". WREC: new bytecode-based regex engine.
 * 2009: YARR regex engine (interpreter, later template JIT)
-* 2011: DFG JIT (Data Flow Graph)
-  * Fast optimizing JIT engine, SSA-based IR, compiles from bytecode
-  * Speculative optimizations with runtime type checks and deopts to interpreter/baseline
-  * ~2x speedup over LLint+Baseline
-  * https://trac.webkit.org/changeset/94559/webkit
-  * https://webkit.org/blog/10308/speculation-in-javascriptcore/
-* 2014: FTL JIT (Fourth Tier LLVM / Faster Than Light)
-  * Advanced optimizing JIT engine, LLVM-based
-  * https://webkit.org/blog/3362/introducing-the-webkit-ftl-jit/
-  * https://blog.llvm.org/2014/07/ftl-webkits-llvm-based-jit.html
-* 2016: FTL switched to a new in-house B3 backend from LLVM
-  * https://webkit.org/blog/5852/introducing-the-b3-jit-compiler/
-  * B3 also used for WebAssembly.
-* 2017: WebAssembly
-  * BBQ (baseline) and OMG (optimizing) JIT tiers
-  * https://webkit.org/blog/7691/webassembly/
+* 2011: [DFG JIT](https://webkit.org/blog/10308/speculation-in-javascriptcore/) (Data Flow Graph) - a fast,optimizing JIT engine, SSA-based IR, compiles from bytecode. Speculative optimizations with runtime type checks and deopts to interpreter/baseline. ~2x speedup over LLint+Baseline ([commit](https://trac.webkit.org/changeset/94559/webkit))
+* 2014: [FTL JIT](https://blog.llvm.org/2014/07/ftl-webkits-llvm-based-jit.html), Fourth Tier LLVM (later renamed Faster Than Light) - advanced optimizing JIT engine.
+* 2016: FTL switched to a new in-house [B3 backend](https://webkit.org/blog/5852/introducing-the-b3-jit-compiler/) from LLVM. B3 is also used for WebAssembly JIT.
+* 2017: [WebAssembly](https://webkit.org/blog/7691/webassembly/), BBQ (baseline) and OMG (optimizing) JIT tiers.
 
-## VM (LLint)
+## VM
 
-* Register-based indirect-threaded VM, 3-arg binary ops
-* https://webkit.org/blog/9329/a-new-bytecode-format-for-javascriptcore/
-* Opcodes: https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/bytecode/BytecodeList.rb
-* Ops implemented in "offlineasm" macroassembler, a Ruby-based DSL
-  * https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/llint/LowLevelInterpreter.asm
-  * https://github.com/WebKit/WebKit/tree/main/Source/JavaScriptCore/offlineasm
-  * cloop: offlineasm backend emitting portable C++
+* LLint: register-based indirect-threaded VM, 3-arg binary ops ([blog post](https://webkit.org/blog/9329/a-new-bytecode-format-for-javascriptcore/))
+* [Opcodes](https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/bytecode/BytecodeList.rb) are [implemented](https://github.com/WebKit/WebKit/blob/main/Source/JavaScriptCore/llint/LowLevelInterpreter.asm) in "[offlineasm](https://github.com/WebKit/WebKit/tree/main/Source/JavaScriptCore/offlineasm)" macroassembler, a Ruby-based DSL.
+* cloop: offlineasm backend emitting portable C++
 
 ## Users
 
-* Safari and WebKit-based browsers
+* Browsers:
+  * Safari and WebKit-based browsers in general
+  * Most iOS browsers due to JSC being the only JIT-enabled engine allowed by Apple on iOS
   * [GNOME Web](https://en.wikipedia.org/wiki/GNOME_Web) (Epiphany)
-  * [Konqueror](https://en.wikipedia.org/wiki/Konqueror) - normally Blink/V8, but can be configured to use QtWebKit/JSC
-* Most iOS browsers - due to JSC being the only JIT-enabled engine allowed by Apple on iOS
-
-## Runtimes
-
-* [bun](https://github.com/oven-sh/bun) <span class="shields"><img src="https://img.shields.io/github/stars/oven-sh/bun?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oven-sh/bun?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JavaScript/TypeScript runtime written in Zig
-
-<!-- baseline: ./jsc-dfg --useDFGJIT=false --useFTLJIT=false -->
+  * [Konqueror](https://en.wikipedia.org/wiki/Konqueror) (normally Blink/V8, but can use QtWebKit/JSC)
+* Runtimes:
+  * [bun](https://github.com/oven-sh/bun) <span class="shields"><img src="https://img.shields.io/github/stars/oven-sh/bun?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/oven-sh/bun?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JavaScript/TypeScript runtime written in Zig
 
 ## Conformance
 

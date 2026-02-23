@@ -15,7 +15,7 @@ JavaScript engine from Facebook optimized for running React Native mobile apps.
 * Interpreter: register-based VM
 * GC:          generational GC
 
-## Note
+## Notes
 
 Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v1/README.md) (formerly "Static Hermes").
 

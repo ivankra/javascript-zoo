@@ -12,7 +12,7 @@ Lightweight JavaScript engine for microcontrollers.
 * Years:       2014-2024
 * Interpreter: stack-based VM
 
-## Quirks
+## Notes
 
 Very slow memory manager/GC: Splay benchmark score <1 with extremely slow SplaySetup().
 

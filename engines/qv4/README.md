@@ -3,9 +3,7 @@
 JavaScript engine of Qt's QML framework (QJSEngine).
 
 * Homepage:     [wiki.qt.io/V4](https://wiki.qt.io/V4)
-* Repository:   [qt/qtdeclarative](https://github.com/qt/qtdeclarative.git) <span class="shields"><img src="https://img.shields.io/github/stars/qt/qtdeclarative?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/qt/qtdeclarative?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
-  * Top-level repository - https://code.qt.io/qt/qt5.git
-  * Engine code in [qtdeclarative/src/qml](https://github.com/qt/qtdeclarative/tree/dev/src/qml) + JSC's macroassembler and YARR in [qtdeclarative/src/3rdparty](https://github.com/qt/qtdeclarative/tree/dev/src/3rdparty)
+* Repository:   [qt/qtdeclarative](https://github.com/qt/qtdeclarative.git) <span class="shields"><img src="https://img.shields.io/github/stars/qt/qtdeclarative?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/qt/qtdeclarative?label=&style=flat-square" alt="Last commit" title="Last commit"></span> (engine in [src/qml/](https://github.com/qt/qtdeclarative/tree/dev/src/qml))
 * LOC:          [50221](# "cloc qtdeclarative/src/{qml/{jsruntime,jsapi,jit}")
 * Language:     C++
 * License:      Qt, GPL, LGPL
@@ -17,7 +15,12 @@ JavaScript engine of Qt's QML framework (QJSEngine).
 * JIT:          x86/x64, arm/arm64
 * Regex engine: YARR, JIT-enabled
 
-## History
+## Notes
+
+Top-level repository is [qt5.git](https://github.com/qt/qt5.git) (even for Qt6).
+Engine code in [qtdeclarative](https://github.com/qt/qtdeclarative.git) submodule:
+[src/qml/](https://github.com/qt/qtdeclarative/tree/dev/src/qml) +
+macroassembler and YARR in [src/3rdparty](https://github.com/qt/qtdeclarative/tree/dev/src/3rdparty).
 
 First appeared in Qt 5.0 (2012) as a V8 wrapper, then switched to a home-grown engine in Qt 5.3 (2013).
 

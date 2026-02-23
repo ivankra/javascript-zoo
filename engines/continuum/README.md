@@ -3,9 +3,8 @@
 ES6 interpreter written in ES3.
 
 * Homepage:         [npmjs.com/package/continuum](https://www.npmjs.com/package/continuum)
-* Repository:       [ivankra/continuum](https://github.com/ivankra/continuum.git)
-  * Fork of [benvie/continuum](https://web.archive.org/web/20150619174908/https://github.com/benvie/continuum) (deleted)
-* LOC:              21741 (npm version, `cloc engine`)
+* Repository:       [ivankra/continuum](https://github.com/ivankra/continuum.git) (fork of deleted [benvie/continuum](https://web.archive.org/web/20150619174908/https://github.com/benvie/continuum))
+* LOC:              [21741](# "cloc engine")
 * Language:         JavaScript (ES3)
 * License:          MIT
 * Standard:         ES6 (partial)

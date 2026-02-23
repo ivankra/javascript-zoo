@@ -14,26 +14,22 @@ Lightweight embeddable JavaScript engine by Fabrice Bellard and Charlie Gordon.
 * Interpreter: stack-based VM (`JS_CallInternal()` in [quickjs.c](https://github.com/bellard/quickjs/blob/master/quickjs.c#L16971))
 * GC:          reference counting
 
-## Forks
-
-* [QuickJS-NG](../quickjs-ng/README.md): community-oriented fork
-* [PrimJS](../primjs/README.md): ByteDance's fork with a mark-and-sweep GC
-* [fastschema/qjs](../fastschema-qjs/README.md): QuickJS-NG ported to Go via Wasm
-* [modernc.org/quickjs](../modernc-quickjs/README.md): QuickJS transpiled to pure Go
-* [Hako](../hako/README.md): QuickJS ported to Wasm with C#/Go bindings
-* [QuickJIT](../quickjit/README.md): QuickJS fork that JIT-translates bytecode using TCC
-* [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>: old inactive fork
-
-## Runtimes
-
-* [LLRT](https://github.com/awslabs/llrt) <span class="shields"><img src="https://img.shields.io/github/stars/awslabs/llrt?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/awslabs/llrt?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - lightweight QuickJS/tokio-based runtime by Amazon
-* [elsa](https://github.com/elsaland/elsa) <span class="shields"><img src="https://img.shields.io/github/stars/elsaland/elsa?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/elsaland/elsa?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - minimal Deno-inspired JavaScript/TypeScript runtime written in Go
-
 ## Users
 
 * Browsers:
   * [Elinks](https://github.com/rkd77/elinks) - can be configured to use SpiderMonkey, QuickJS or MuJS
   * [Edbrowse](https://edbrowse.org/)
+* Runtimes:
+  * [LLRT](https://github.com/awslabs/llrt) <span class="shields"><img src="https://img.shields.io/github/stars/awslabs/llrt?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/awslabs/llrt?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - lightweight QuickJS/tokio-based runtime by Amazon
+  * [elsa](https://github.com/elsaland/elsa) <span class="shields"><img src="https://img.shields.io/github/stars/elsaland/elsa?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/elsaland/elsa?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - minimal Deno-inspired JavaScript/TypeScript runtime written in Go
+* Forks:
+  * [QuickJS-NG](../quickjs-ng/README.md): community-oriented fork
+  * [Hako](../hako/README.md): QuickJS ported to Wasm with C#/Go bindings
+  * [PrimJS](../primjs/README.md): ByteDance's fork with a mark-and-sweep GC
+  * [fastschema/qjs](../fastschema-qjs/README.md): QuickJS-NG ported to Go via Wasm
+  * [modernc.org/quickjs](../modernc-quickjs/README.md): QuickJS transpiled to pure Go
+  * [QuickJIT](../quickjit/README.md): QuickJS fork that JIT-translates bytecode using TCC
+  * [OpenQuickJS](https://github.com/OpenQuickJS/quickjs) <span class="shields"><img src="https://img.shields.io/github/stars/OpenQuickJS/quickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/OpenQuickJS/quickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>: old inactive fork
 * [Nginx](https://github.com/nginx/njs) - uses QuickJS as an alternative to home-grown [njs](../njs/README.md) engine
 * [PDF.js](https://github.com/mozilla/pdf.js/tree/master/external/quickjs) - uses QuickJS compiled to WASM for sandboxing JavaScript code in .pdf
 * [javy](https://github.com/bytecodealliance/javy.git) <span class="shields"><img src="https://img.shields.io/github/stars/bytecodealliance/javy?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bytecodealliance/javy?label=&style=flat-square" alt="Last commit" title="Last commit"></span> - JS to WASM toolchain in Rust

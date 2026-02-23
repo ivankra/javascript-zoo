@@ -14,7 +14,7 @@ Community-oriented fork of QuickJS.
 * Interpreter: stack-based VM
 * GC:          reference counting
 
-## Quirks
+## Notes
 
 Engine shell frequently misdetects script / ES module mode, causing various errors.
 Pass `--script` argument to force classic sloppy script mode.
