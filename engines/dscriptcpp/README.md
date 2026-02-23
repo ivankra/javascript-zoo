@@ -2,8 +2,8 @@
 
 [DMDScript](../dmdscript/README.md) version implemented in C++.
 
-* Homepage:    https://www.digitalmars.com/dscript/cppscript.html
-* Repository:  https://github.com/DigitalMars/DscriptCPP.git <span class="shields"><img src="https://img.shields.io/github/stars/DigitalMars/DscriptCPP?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/DigitalMars/DscriptCPP?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Homepage:    [digitalmars.com/dscript/cppscript.html](https://www.digitalmars.com/dscript/cppscript.html)
+* Repository:  [DigitalMars/DscriptCPP](https://github.com/DigitalMars/DscriptCPP.git) <span class="shields"><img src="https://img.shields.io/github/stars/DigitalMars/DscriptCPP?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/DigitalMars/DscriptCPP?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         43988 (`cloc src`)
 * Language:    C++
 * License:     BSL-1.0

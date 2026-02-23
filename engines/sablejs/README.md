@@ -2,7 +2,7 @@
 
 Closed-source bytecode-based sandboxed ES5 interpreter in JavaScript.
 
-* Repository:       https://github.com/sablejs/sablejs.git <span class="shields"><img src="https://img.shields.io/github/stars/sablejs/sablejs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/sablejs/sablejs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:       [sablejs/sablejs](https://github.com/sablejs/sablejs.git) <span class="shields"><img src="https://img.shields.io/github/stars/sablejs/sablejs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/sablejs/sablejs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * Language:         JavaScript
 * License:          Custom
 * Standard:         ES5

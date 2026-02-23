@@ -2,8 +2,8 @@
 
 JavaScript engine targetted at embedded systems.
 
-* Homepage:   https://bellard.org/mquickjs/
-* Repository: https://github.com/bellard/mquickjs.git <span class="shields"><img src="https://img.shields.io/github/stars/bellard/mquickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bellard/mquickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Homepage:   [bellard.org/mquickjs](https://bellard.org/mquickjs/)
+* Repository: [bellard/mquickjs](https://github.com/bellard/mquickjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/bellard/mquickjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bellard/mquickjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        23653 (`cloc *.c *.h`)
 * Language:   C
 * License:    MIT

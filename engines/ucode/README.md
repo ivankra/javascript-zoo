@@ -2,8 +2,8 @@
 
 Interpreter for a small ES6-like language for microcontrollers from OpenWrt project.
 
-* Homepage:     https://ucode.mein.io/
-* Repository:   https://github.com/jow-/ucode.git <span class="shields"><img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Homepage:     [ucode.mein.io](https://ucode.mein.io/)
+* Repository:   [jow-/ucode](https://github.com/jow-/ucode.git) <span class="shields"><img src="https://img.shields.io/github/stars/jow-/ucode?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/jow-/ucode?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          39692 (`cloc *.c include lib`)
 * Language:     C
 * License:      ISC

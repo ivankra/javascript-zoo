@@ -2,7 +2,7 @@
 
 JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
 
-* Repository:       https://github.com/dop251/goja.git <span class="shields"><img src="https://img.shields.io/github/stars/dop251/goja?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/dop251/goja?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:       [dop251/goja](https://github.com/dop251/goja.git) <span class="shields"><img src="https://img.shields.io/github/stars/dop251/goja?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/dop251/goja?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              46141 (`cloc --fullpath --not_match_f="(?i)(test)" --exclude-lang=Markdown,YAML .`)
 * Language:         Go
 * License:          MIT

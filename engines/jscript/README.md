@@ -2,7 +2,7 @@
 
 JavaScript engine of Internet Explorer 3.0 – 8.0.
 
-* Homepage:    https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29
+* Homepage:    [learn.microsoft.com](https://learn.microsoft.com/en-us/previous-versions/hbxc2t98%28v=vs.85%29)
 * Language:    C++
 * License:     Proprietary
 * Org:         Microsoft

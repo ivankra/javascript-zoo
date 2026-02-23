@@ -2,8 +2,8 @@
 
 Qt 4.3-5.x's JavaScript engine based on [JavaScriptCore](../jsc/README.md).
 
-* Homepage:    https://en.wikipedia.org/wiki/QtScript
-* Repository:  https://code.qt.io/qt/qtscript.git ([web view](https://code.qt.io/cgit/qt/qtscript.git))
+* Homepage:    [en.wikipedia.org/wiki/QtScript](https://en.wikipedia.org/wiki/QtScript)
+* Repository:  [qtscript](https://code.qt.io/qt/qtscript.git) ([web view](https://code.qt.io/cgit/qt/qtscript.git))
 * Language:    C++
 * License:     GPL, LGPL
 * Org:         Qt

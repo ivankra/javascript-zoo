@@ -2,7 +2,7 @@
 
 Experimental JavaScript engine written in C++.
 
-* Repository:   https://github.com/solarbrowser/quanta.git <span class="shields"><img src="https://img.shields.io/github/stars/solarbrowser/quanta?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/solarbrowser/quanta?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:   [solarbrowser/quanta](https://github.com/solarbrowser/quanta.git) <span class="shields"><img src="https://img.shields.io/github/stars/solarbrowser/quanta?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/solarbrowser/quanta?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          42405 (`cloc --not_match_d="(?i)(test|third_party)" .`)
 * Language:     C++
 * License:      MPL-2.0

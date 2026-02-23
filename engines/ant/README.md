@@ -2,7 +2,7 @@
 
 Ant-sized JavaScript runtime, notable for async/await, ffi, http servers, crypto, while being under 4mb.
 
-* Repository:   https://github.com/theMackabu/ant.git <span class="shields"><img src="https://img.shields.io/github/stars/theMackabu/ant?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/theMackabu/ant?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:   [theMackabu/ant](https://github.com/theMackabu/ant.git) <span class="shields"><img src="https://img.shields.io/github/stars/theMackabu/ant?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/theMackabu/ant?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          34461 (`cloc src`)
 * Language:     C
 * License:      MIT

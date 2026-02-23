@@ -2,7 +2,7 @@
 
 Vibe-coded JavaScript engine written in C++.
 
-* Repository:  https://github.com/syoyo/lightjs.git <span class="shields"><img src="https://img.shields.io/github/stars/syoyo/lightjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/syoyo/lightjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:  [syoyo/lightjs](https://github.com/syoyo/lightjs.git) <span class="shields"><img src="https://img.shields.io/github/stars/syoyo/lightjs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/syoyo/lightjs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         28756 (`cloc src`)
 * Language:    C++
 * License:     MIT

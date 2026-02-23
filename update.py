@@ -331,6 +331,16 @@ def write_markdown_json(md_glob, out_file):
 def strip_markdown_links(text):
     return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()
 
+def extract_first_url(text: str) -> str:
+    # Prefer Markdown link targets, then fall back to the first bare URL.
+    m = re.search(r'\[[^\]]+\]\((https?://[^)\s]+)\)', text)
+    if m:
+        return m[1]
+    m = re.search(r'https?://[^)\s<>"\']+', text)
+    if m:
+        return m[0]
+    return text.strip()
+
 def strip_shields(text):
     return re.sub(r'''(<(?:div|span) class="shields">.*?</(?:div|span)>)''', '', text).strip()
 
@@ -402,17 +412,18 @@ class MDItem:
 # For nested fields, names are concatenated with slash.
 # Order of entries here us used to sort the list during reformatting.
 METADATA_MAP = {
-    'Homepage': MDMapping('homepage'),
+    'Homepage': MDMapping('homepage', simplify=[strip_html, extract_first_url, strip_brackets], drop_detailed=True),
     'NPM': MDMapping('npm'),
 
     # Source code
     # Repository: primary source as of today, maybe not official
     # GitHub: github mirror, if main repository not on github
     # Sources: non-git source code reference (tarball, page, etc)
-    'Repository': MDMapping('repository', simplify=[strip_html, strip_markdown_links, strip_brackets]),
+    'Repository': MDMapping('repository', simplify=[strip_html, extract_first_url, strip_brackets], drop_detailed=True),
     'Branch': MDMapping('branch', simplify=[strip_html, strip_markdown_links, strip_brackets], drop_detailed=True),
-    'GitHub': MDMapping('github', simplify=[strip_html, strip_markdown_links, strip_brackets]),
-    'Sources': MDMapping('sources'),
+    'GitHub': MDMapping('github', simplify=[strip_html, extract_first_url, strip_brackets]),
+    'Source code': MDMapping('sources', simplify=[strip_html, extract_first_url, strip_brackets]),
+    'Sources': MDMapping('sources', simplify=[strip_html, extract_first_url, strip_brackets]),
     'LOC': MDMapping('loc', simplify=[strip_brackets2, maybe_parse_int]),
     'Language': MDMapping('language', simplify=[strip_brackets]),
     'License': MDMapping('license', simplify=[strip_brackets, simplify_license]),
@@ -803,6 +814,13 @@ def update_md_shields(filename):
             shields = get_shields_for_repo(url, filename)
             if shields:
                 lines[i] = lines[i].replace(url + sep + old, url + sep + shields)
+
+        # Handle markdown links: [name](https://example/repo.git) <span class="shields">...</span>
+        matches = re.findall(r'''(\[[^\]]+\]\()([^) ]+)(\))([ ]*)(<(?:div|span) class="shields">.*?</(?:div|span)>)''', line)
+        for prefix, url, suffix, sep, old in matches:
+            shields = get_shields_for_repo(url, filename)
+            if shields:
+                lines[i] = lines[i].replace(prefix + url + suffix + sep + old, prefix + url + suffix + sep + shields)
 
     if lines == orig_lines:
         return

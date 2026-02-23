@@ -2,7 +2,7 @@
 
 Small footprint embedded ES5 engine.
 
-* Repository:  https://github.com/gkmail/SophonJS.git <span class="shields"><img src="https://img.shields.io/github/stars/gkmail/SophonJS?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/gkmail/SophonJS?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:  [gkmail/SophonJS](https://github.com/gkmail/SophonJS.git) <span class="shields"><img src="https://img.shields.io/github/stars/gkmail/SophonJS?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/gkmail/SophonJS?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:         22531 (`cloc src include`)
 * Language:    C
 * License:     BSD-3-Clause

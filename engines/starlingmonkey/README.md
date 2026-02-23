@@ -2,7 +2,7 @@
 
 SpiderMonkey-based JavaScript runtime compiled to WebAssembly.
 
-* Repository:       https://github.com/bytecodealliance/StarlingMonkey.git <span class="shields"><img src="https://img.shields.io/github/stars/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:       [bytecodealliance/StarlingMonkey](https://github.com/bytecodealliance/StarlingMonkey.git) <span class="shields"><img src="https://img.shields.io/github/stars/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/bytecodealliance/StarlingMonkey?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * Language:         C++
 * License:          Apache-2.0
 * Standard:         ESnext

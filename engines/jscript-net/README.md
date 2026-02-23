@@ -2,7 +2,7 @@
 
 Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.
 
-* Homepage:         http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx
+* Homepage:         [msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx)
 * Language:         C#
 * License:          Proprietary
 * Org:              Microsoft

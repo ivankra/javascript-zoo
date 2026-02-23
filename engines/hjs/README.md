@@ -2,7 +2,7 @@
 
 Haskell JavaScript parser and interpreter.
 
-* Homepage:    https://hackage.haskell.org/package/hjs-0.2.1
+* Homepage:    [hackage.haskell.org/package/hjs-0.2.1](https://hackage.haskell.org/package/hjs-0.2.1)
 * Sources:     https://hackage.haskell.org/package/hjs-0.2.1/hjs-0.2.1.tar.gz
 * LOC:         2171 (`cloc hjs-0.2.1/src`)
 * Language:    Haskell

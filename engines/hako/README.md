@@ -2,7 +2,7 @@
 
 QuickJS ported to WebAssembly with C#/Go bindings.
 
-* Repository:       https://github.com/6over3/hako.git <span class="shields"><img src="https://img.shields.io/github/stars/6over3/hako?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/6over3/hako?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
+* Repository:       [6over3/hako](https://github.com/6over3/hako.git) <span class="shields"><img src="https://img.shields.io/github/stars/6over3/hako?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/6over3/hako?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              30474 (`cloc --not_match_d="(?i)(examples)" hosts/`)
 * Language:         C#, Go
 * License:          Apache-2.0
