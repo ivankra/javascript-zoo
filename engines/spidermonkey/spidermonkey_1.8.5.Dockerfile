@@ -41,12 +41,12 @@ RUN cd */js/src && \
     ./configure --enable-static --enable-optimize="-O3" --disable-warnings-as-errors && \
     make -j $(nproc)
 
-RUN (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' js/src/jsinterp.h >LICENSE)
+RUN (cp */LICENSE ./ || sed -n '/BEGIN LICENSE BLOCK/,/END LICENSE BLOCK/p' /src/*/js/src/jsinterp.h >LICENSE)
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/spidermonkey_1.8.5 \
-      --binary=/src/*/js/src/shell/js \
-      --license=LICENSE \
+      --binary /src/*/js/src/shell/js \
+      console_log=print \
       loc="$(cat loc)" \
       regex=YARR \
       revision_date="$(stat -c %y */README | grep -o '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]')" \

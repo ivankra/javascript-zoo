@@ -12,11 +12,11 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV"
 
-RUN npm install && npm run build && \
-    mkdir -p /dist && cp ./dist/njs.js /dist/narcissus.js
+RUN npm install && npm run build
 
 # Much faster when run under SpiderMonkey
+RUN mkdir -p /dist && \
+    (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); if [[ -x "$SCRIPT_DIR/spidermonkey" ]]; then exec "$SCRIPT_DIR/spidermonkey" "$0" "$@"; else exec node "$0" "$@"; fi;'; cat ./dist/njs.js | sed 1d) >/dist/narcissus
+
 COPY build/dist.py ./
-RUN ./dist.py /dist/narcissus \
-      --dist_files=/dist/narcissus.js \
-      --wrapper='if [[ -x "$SCRIPT_DIR/spidermonkey" ]]; then exec "$SCRIPT_DIR/spidermonkey" "$SCRIPT_DIR/narcissus.js" "$@"; else exec node "$SCRIPT_DIR/narcissus.js" "$@"; fi'
+RUN ./dist.py /dist/narcissus

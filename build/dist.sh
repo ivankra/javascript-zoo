@@ -91,6 +91,9 @@ for subdir in "" parsers/ transpilers/; do
       if [[ -f "$dst" ]]; then
         chmod a-w "$dst"
       fi
+      if [[ "$dst" == *.jar ]]; then
+        chmod a-x "$dst"
+      fi
       touch -h "$dst"
       if [[ -d "$dst" ]]; then
         dst_files+=("$dst"/*)

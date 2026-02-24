@@ -7,7 +7,7 @@ FROM $BASE
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends autoconf automake libtool libltdl-dev perl subversion
 
-ARG REPO=https://github.com/ivankra/SEE
+ARG REPO=https://github.com/ivankra/SEE.git
 ARG REV=master
 
 WORKDIR /src

@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-gcc16
+ARG BASE=jsz-gcc
 FROM $BASE
 
 WORKDIR /src

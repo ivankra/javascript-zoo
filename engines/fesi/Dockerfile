@@ -4,7 +4,7 @@
 ARG BASE=jsz-debian
 FROM $BASE
 
-ARG REPO=https://github.com/ivankra/fesi.git
+ARG REPO=https://github.com/ivankra/FESI.git
 ARG REV=master
 
 WORKDIR /src
