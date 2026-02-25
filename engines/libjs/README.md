@@ -21,41 +21,41 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <details><summary>ES1-ES5: 99%</summary><ul>
 <li>ES1: 100%</li>
 <li>ES3: 99%<pre>
-<a href="../conformance/es3/regex.backref.js">regex.backref.js</a>: backref for a group that hasn't captured failed
+<a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: backref for a group that hasn't captured failed
 </pre></li>
 <li>ES5: 100%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 94%, ES2016+ 98%, Next 22%, Intl 100%</summary><ul>
 <li>ES6: 94%<pre>
-<a href="../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
-<a href="../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
-<a href="../conformance/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: Uncaught exception: [SyntaxError] Not allowed to declare a function here (line: 12, column: 10)
-<a href="../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: failed
-<a href="../conformance/kangax-es6/arrow.precedence.js">arrow.precedence.js</a>: failed
-<a href="../conformance/kangax-es6/const.no-redefine.js">const.no-redefine.js</a>: failed
-<a href="../conformance/kangax-es6/const.strict.no-redefine.js">const.strict.no-redefine.js</a>: failed
-<a href="../conformance/kangax-es6/destructuring-assign.parenthesised-error.js">destructuring-assign.parenthesised-error.js</a>: failed
-<a href="../conformance/kangax-es6/for-of.iterator-closing-break.js">for-of.iterator-closing-break.js</a>: failed
-<a href="../conformance/kangax-es6/for-of.iterator-closing-throw.js">for-of.iterator-closing-throw.js</a>: failed
-<a href="../conformance/kangax-es6/misc.Proxy.get.RegExp-constructor.js">misc.Proxy.get.RegExp-constructor.js</a>: TypeError: Cannot convert symbol to string
-<a href="../conformance/kangax-es6/misc.Proxy.get.RegExp.flags.js">misc.Proxy.get.RegExp.flags.js</a>: failed
-<a href="../conformance/kangax-es6/misc.accessors-no-constructor.js">misc.accessors-no-constructor.js</a>: failed
-<a href="../conformance/kangax-es6/subclassing.Function.prototype-chain.js">subclassing.Function.prototype-chain.js</a>: failed
-<a href="../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
+<a href="../../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/Promise.all.js">Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
+<a href="../../conformance/kangax-es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: Uncaught exception: [SyntaxError] Not allowed to declare a function here (line: 12, column: 10)
+<a href="../../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: failed
+<a href="../../conformance/kangax-es6/arrow.precedence.js">arrow.precedence.js</a>: failed
+<a href="../../conformance/kangax-es6/const.no-redefine.js">const.no-redefine.js</a>: failed
+<a href="../../conformance/kangax-es6/const.strict.no-redefine.js">const.strict.no-redefine.js</a>: failed
+<a href="../../conformance/kangax-es6/destructuring-assign.parenthesised-error.js">destructuring-assign.parenthesised-error.js</a>: failed
+<a href="../../conformance/kangax-es6/for-of.iterator-closing-break.js">for-of.iterator-closing-break.js</a>: failed
+<a href="../../conformance/kangax-es6/for-of.iterator-closing-throw.js">for-of.iterator-closing-throw.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp-constructor.js">misc.Proxy.get.RegExp-constructor.js</a>: TypeError: Cannot convert symbol to string
+<a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp.flags.js">misc.Proxy.get.RegExp.flags.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.accessors-no-constructor.js">misc.accessors-no-constructor.js</a>: failed
+<a href="../../conformance/kangax-es6/subclassing.Function.prototype-chain.js">subclassing.Function.prototype-chain.js</a>: failed
+<a href="../../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
+<a href="../../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es6/subclassing.Promise.race.js">subclassing.Promise.race.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
 ...
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 92%<pre>
-<a href="../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es2017/async.await.js">async.await.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-<a href="../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
+<a href="../../conformance/kangax-es2017/async.await-rejection.js">async.await-rejection.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es2017/async.await.js">async.await.js</a>: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+<a href="../../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 100%</li>
 <li>ES2019: 100%</li>
@@ -65,7 +65,7 @@ JavaScript engine of Ladybird browser and SerenityOS.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 93%<pre>
-<a href="../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: failed
+<a href="../../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: failed
 </pre></li>
 <li>Next: 22%</li>
 <li>Intl: 100%</li>

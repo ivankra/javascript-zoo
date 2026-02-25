@@ -27,7 +27,7 @@ Embeddable Javascript engine with a focus on portability and compact footprint.
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 99%<pre>
-<a href="../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
+<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
 </pre></li>
 </ul></details>
 

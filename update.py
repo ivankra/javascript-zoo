@@ -964,7 +964,7 @@ def update_conformance(filename, conformance):
                         link = os.path.relpath(
                             os.path.join('conformance', test['test']),
                             os.path.dirname(filename)
-                        ).replace(os.sep, '/')[3:]  # FIXME
+                        ).replace(os.sep, '/')
                         result = html.escape(test['result'], quote=False)
                         conformance_lines += [f'<a href="{link}">{basename}</a>: {result}\n']
 

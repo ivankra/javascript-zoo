@@ -54,8 +54,8 @@ JavaScript engine of Firefox.
 
 <details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 36%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: too much recursion
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: too much recursion
+<a href="../../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: too much recursion
+<a href="../../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: too much recursion
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>

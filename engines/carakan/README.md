@@ -18,8 +18,8 @@ JavaScript engine of Opera 10.50 – 12.18.
 <li>ES1: 100%</li>
 <li>ES3: 100%</li>
 <li>ES5: 97%<pre>
-<a href="../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
-<a href="../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
+<a href="../../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+<a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
 </pre></li>
 </ul></details>
 

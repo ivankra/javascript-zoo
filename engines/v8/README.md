@@ -61,15 +61,15 @@ JavaScript engine of Chrome, Node.js etc.
 
 <details><summary>compat-table: ES6 98%, ES2016+ 99%, Next 36%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../conformance/kangax-es6/misc.Proxy.get.RegExp.flags.js">misc.Proxy.get.RegExp.flags.js</a>: failed
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
-<a href="../conformance/kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js">well-known.isConcatSpreadable.poisoned-getter.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp.flags.js">misc.Proxy.get.RegExp.flags.js</a>: failed
+<a href="../../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../../conformance/kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js">well-known.isConcatSpreadable.poisoned-getter.js</a>: failed
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
 <li>ES2018: 99%<pre>
-<a href="../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name
+<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: regex.unicode-property-escapes.unicode-17.0.js:10: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
@@ -77,7 +77,7 @@ JavaScript engine of Chrome, Node.js etc.
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 96%<pre>
-<a href="../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
+<a href="../../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 100%</li>
 <li>Next: 36%</li>

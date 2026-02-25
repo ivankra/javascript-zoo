@@ -28,10 +28,10 @@ Metacircular JavaScript interpreter.
 <li>ES2021: 14%</li>
 <li>ES2022: 0%</li>
 <li>ES2023: 63%<pre>
-<a href="../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: "Uint8Array" is not defined.
-<a href="../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: "Uint8Array" is not defined.
-<a href="../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: "Uint8Array" is not defined.
-<a href="../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: ReferenceError: "eval" is not defined.
+<a href="../../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: "Uint8Array" is not defined.
+<a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: "Uint8Array" is not defined.
+<a href="../../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: "Uint8Array" is not defined.
+<a href="../../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: ReferenceError: "eval" is not defined.
 </pre></li>
 <li>ES2024: 0%</li>
 <li>ES2025: 39%</li>

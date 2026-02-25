@@ -27,15 +27,15 @@ Lightweight JavaScript engine by Samsung for mid-range devices like phones/TVs.
 
 <details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 36%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../conformance/kangax-es6/Map.prototype-not-instance.js">Map.prototype-not-instance.js</a>: failed
-<a href="../conformance/kangax-es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: failed
-<a href="../conformance/kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js">annex-b.__proto__.literals.not-shorthand-method.js</a>: failed
-<a href="../conformance/kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js">annex-b.__proto__.literals.not-shorthand-property.js</a>: failed
-<a href="../conformance/kangax-es6/misc.Proxy.get.Object.defineProperties.js">misc.Proxy.get.Object.defineProperties.js</a>: failed
-<a href="../conformance/kangax-es6/misc.Proxy.get.RegExp-constructor.js">misc.Proxy.get.RegExp-constructor.js</a>: failed
-<a href="../conformance/kangax-es6/misc.Proxy.get.RegExp.test.js">misc.Proxy.get.RegExp.test.js</a>: TypeError: RegExp.prototype.test: this value is not a RegExp object
-<a href="../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
-<a href="../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../../conformance/kangax-es6/Map.prototype-not-instance.js">Map.prototype-not-instance.js</a>: failed
+<a href="../../conformance/kangax-es6/Proxy.handler.get.instances.js">Proxy.handler.get.instances.js</a>: failed
+<a href="../../conformance/kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js">annex-b.__proto__.literals.not-shorthand-method.js</a>: failed
+<a href="../../conformance/kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js">annex-b.__proto__.literals.not-shorthand-property.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.Proxy.get.Object.defineProperties.js">misc.Proxy.get.Object.defineProperties.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp-constructor.js">misc.Proxy.get.RegExp-constructor.js</a>: failed
+<a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp.test.js">misc.Proxy.get.RegExp.test.js</a>: TypeError: RegExp.prototype.test: this value is not a RegExp object
+<a href="../../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: RangeError: Maximum call stack size exceeded
+<a href="../../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RangeError: Maximum call stack size exceeded
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
