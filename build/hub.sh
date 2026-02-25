@@ -20,7 +20,7 @@ fi
 
 for arch in $ARCHS; do
   (cd "$ROOT_DIR/dist/$arch"; (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST)
-  (cd "$ROOT_DIR/dist" && tar --owner=root --group=root -c "$arch") >"$ROOT_DIR/dist/$arch.tar"
+  (cd "$ROOT_DIR/dist" && tar --owner=root --group=root --exclude={jscript-dist/jscript*.dll,jscript9-dist/jscript*.dll,carakan*} -c "$arch") >"$ROOT_DIR/dist/$arch.tar"
 done
 
 set -x
