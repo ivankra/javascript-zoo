@@ -77,4 +77,8 @@ fi
 export WINEDEBUG="${WINEDEBUG:--all,+err}"
 export LD_PRELOAD=
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp}
-exec wine "$DIST_DIR/jsrt64.exe" --dll "$DIST_DIR/jscript9.dll" "$@"
+
+if [[ -x /usr/lib/wine/wine64 ]]; then
+  WINE=/usr/lib/wine/wine64
+fi
+exec "${WINE:-wine}" "$DIST_DIR/jsrt64.exe" --dll "$DIST_DIR/jscript9.dll" "$@"
