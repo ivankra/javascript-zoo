@@ -1,0 +1,226 @@
+# Builds all engines, publishes artifacts to GitHub Releases, pushes hub image.
+#
+# SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+name: Build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 1,15 * *'  # biweekly, 1st and 15th of month at 03:00 UTC
+
+permissions:
+  contents: write  # gh release create/edit/upload
+  packages: write  # GHCR push
+
+jobs:
+  # Init vars and create draft release
+  init:
+    runs-on: ubuntu-24.04
+    outputs:
+      build_date: ${{ steps.init.outputs.build_date }}
+      engines_amd64: ${{ steps.init.outputs.engines_amd64 }}
+      engines_arm64: ${{ steps.init.outputs.engines_arm64 }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set BUILD_DATE and engine lists
+        id: init
+        run: |
+          BUILD_DATE=$(date +%Y%m%d)
+          echo "build_date=$BUILD_DATE" >> "$GITHUB_OUTPUT"
+
+          AMD64=$(cd engines && DOCKER_ARCH=amd64 make list | jq -R . | jq -sc .)
+          echo "engines_amd64=$AMD64" >> "$GITHUB_OUTPUT"
+
+          ARM64=$(cd engines && DOCKER_ARCH=arm64 make list | jq -R . | jq -sc .)
+          echo "engines_arm64=$ARM64" >> "$GITHUB_OUTPUT"
+
+      - name: Create draft release
+        run: |
+          BUILD_DATE=${{ steps.init.outputs.build_date }}
+          gh release delete $BUILD_DATE --yes 2>/dev/null || true
+          gh release create $BUILD_DATE --title $BUILD_DATE --draft --target $GITHUB_SHA
+
+  # Builds base toolchain images (build/jsz-*.Dockerfile) and pushes them to GHCR.
+  # Images are tagged {name}:{arch}, e.g.:
+  #   ghcr.io/ivankra/javascript-zoo/jsz-gcc:amd64
+  #   ghcr.io/ivankra/javascript-zoo/jsz-clang23:arm64
+  base:
+    needs: init
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    steps:
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Build and push base toolchain images
+        run: DOCKER_PUSH=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C build all
+
+  # Builder for amd64 binaries
+  engine-amd64:
+    needs: [init, base]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: ${{ fromJson(needs.init.outputs.engines_amd64) }}
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Build engine
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          timeout_minutes: 360
+          command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
+
+      - name: Package and upload to release
+        run: |
+          rm -f dist/amd64/jscript-dist/jscript*.dll dist/amd64/jscript9-dist/jscript*.dll  # proprietary DLLs, amd64 only
+          tar -c -C dist/amd64 . | zstd -19 -o ${{ matrix.engine }}.amd64.tar.zst
+          gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst \
+            || (sleep 15 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst) \
+            || (sleep 30 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.amd64.tar.zst)
+
+      - name: Cleanup
+        if: always()
+        run: rm -rf dist/
+
+  # Builder for arm64 binaries
+  engine-arm64:
+    needs: [init, base]
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 360
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: ${{ fromJson(needs.init.outputs.engines_arm64) }}
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Build engine
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          timeout_minutes: 360
+          command: |
+            DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
+
+      - name: Package and upload to release
+        run: |
+          tar -c -C dist/arm64 . | zstd -19 -o ${{ matrix.engine }}.arm64.tar.zst
+          gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst \
+            || (sleep 15 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst) \
+            || (sleep 30 && gh release upload ${{ needs.init.outputs.build_date }} ${{ matrix.engine }}.arm64.tar.zst)
+
+      - name: Cleanup
+        if: always()
+        run: rm -rf dist/
+
+  publish:
+    needs: [init, engine-amd64, engine-arm64]
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Publish release
+        run: |
+          gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }} \
+            || (sleep 15 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }}) \
+            || (sleep 30 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }})
+
+  # Creates docker hub image with all built binaries
+  # Must be done after release is published: hub.Dockerfile checks out repo at BUILD_DATE tag.
+  hub:
+    needs: [init, publish]
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Download engine artifacts
+        run: |
+          gh release download ${{ needs.init.outputs.build_date }} --dir artifacts/ --repo ${{ github.repository }}
+
+      - name: Repack artifacts into a single tarball for each arch
+        run: |
+          mkdir -p dist/amd64 dist/arm64
+          for f in artifacts/*.tar.zst; do
+            arch=$(echo "$f" | sed -E 's/.*\.(amd64|arm64)\..*/\1/')
+            tar xf "$f" -C dist/${arch}/
+          done
+          for arch in amd64 arm64; do
+            (cd dist/${arch} && (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST)
+            (cd dist && tar --owner=root --group=root -c ${arch}) > dist/${arch}.tar
+          done
+
+      - name: Build and push jsz-runtime
+        run: |
+          BUILD_DATE=${{ needs.init.outputs.build_date }}
+          docker buildx build --platform linux/amd64,linux/arm64 --push \
+            -t ghcr.io/ivankra/javascript-zoo/jsz-runtime:${BUILD_DATE} \
+            -t ghcr.io/ivankra/javascript-zoo/jsz-runtime:latest \
+            -f build/jsz-runtime.Dockerfile .
+
+      - name: Build and push jsz-hub
+        run: |
+          BUILD_DATE=${{ needs.init.outputs.build_date }}
+          docker buildx build --platform linux/amd64,linux/arm64 --push \
+            -t ghcr.io/ivankra/javascript-zoo/jsz-hub:${BUILD_DATE} \
+            -t ghcr.io/ivankra/javascript-zoo/jsz-hub:latest \
+            --build-arg BASE=ghcr.io/ivankra/javascript-zoo/jsz-runtime:${BUILD_DATE} \
+            --build-arg REV=${BUILD_DATE} \
+            -f build/hub.Dockerfile .
