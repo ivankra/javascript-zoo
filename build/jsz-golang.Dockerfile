@@ -20,4 +20,4 @@ RUN if [ "$VER" = latest ]; then \
     tar -C /usr/local -xzf /tmp/go.tar.gz && \
     rm -f /tmp/go.tar.gz && \
     # Record installed Go version in build metadata \
-    mkdir -p /dist && go version | sed 's/go version go\([^ ]*\).*/\1/' >/dist/jsz_go
+    mkdir -p /dist && go version | sed 's/go version go\([^ ]*\).*/\1/' >/jsz_go

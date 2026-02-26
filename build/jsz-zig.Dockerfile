@@ -13,4 +13,4 @@ RUN cd /opt && \
     tar vxf zig.tar.xz && \
     rm -f zig.tar.xz && \
     ln -s /opt/zig-*/zig /usr/bin/zig && \
-    zig version >/dist/jsz_zig
+    zig version >/jsz_zig

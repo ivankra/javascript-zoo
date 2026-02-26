@@ -21,4 +21,4 @@ RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh &&
     bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
     rm -f /tmp/dotnet-install.sh && \
     mkdir -p /dist && \
-    dotnet --version >/dist/jsz_dotnet
+    dotnet --version >/jsz_dotnet

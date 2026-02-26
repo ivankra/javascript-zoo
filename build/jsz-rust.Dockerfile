@@ -9,4 +9,4 @@ RUN apt-get update -y && \
 
 RUN rustup toolchain install stable
 
-RUN mkdir -p /dist && rustc --version >/dist/jsz_rustc
+RUN mkdir -p /dist && rustc --version >/jsz_rustc
