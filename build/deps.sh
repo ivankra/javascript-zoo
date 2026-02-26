@@ -55,12 +55,12 @@ collect_jsz_deps_from_args() {
   printf '%s\n' "$*" | grep -Eo -- '--build-arg(=|[[:space:]]+)BASE=jsz-[-a-z0-9._]+' | sed -E 's/.*BASE=(jsz-[-a-z0-9._]+)/\1/' || true
 }
 
-collect_jsz_deps_from_df() {
-  local df="$1"
-  local explicit_base_arg="$2"
+collect_jsz_copy_deps() {
+  grep -Eo '^COPY --from=jsz-[-a-z0-9._]+' "$1" | sed 's/^COPY --from=//' || true
+}
 
-  grep -Eo '^COPY --from=jsz-[-a-z0-9._]+' "$df" | sed 's/^COPY --from=//' || true
-
+collect_jsz_base_deps() {
+  local df="$1" explicit_base_arg="$2"
   if [[ "$explicit_base_arg" == 0 ]]; then
     grep -Eo '^ARG BASE=jsz-[-a-z0-9._]+' "$df" | sed 's/^ARG BASE=//' || true
   fi
@@ -71,8 +71,9 @@ abs_path() {
     "$1" "${2:-$PWD}"
 }
 
-deps=("$ROOT_DIR/build/build.sh" "$ROOT_DIR/build/deps.sh" "$DOCKERFILE")
+deps=("$ROOT_DIR/build/build.sh" "$ROOT_DIR/build/deps.sh" "$ROOT_DIR/build/build.mk" "$DOCKERFILE")
 dockerfile_dir="$(cd "$(dirname "$DOCKERFILE")" && pwd)"
+[[ -f "$dockerfile_dir/Makefile" ]] && deps+=("$dockerfile_dir/Makefile")
 
 while IFS= read -r src; do
   [[ -n "$src" ]] || continue
@@ -95,8 +96,14 @@ while IFS= read -r dep; do
   deps+=("$IID_DIR/$dep")
 done < <(
   {
-    collect_jsz_deps_from_args "$*"
-    collect_jsz_deps_from_df "$DOCKERFILE" "$explicit_base_arg"
+    # COPY --from=jsz-* must always be built locally; build.sh does not rewrite them.
+    collect_jsz_copy_deps "$DOCKERFILE"
+    # ARG BASE=jsz-* are rewritten to registry URLs by build.sh when DOCKER_REGISTRY
+    # is set, so skip their iid deps — except for toolchain builds where ordering matters.
+    if [[ -z "${DOCKER_REGISTRY:-}" || "$(basename "$DOCKERFILE")" == jsz-*.Dockerfile ]]; then
+      collect_jsz_deps_from_args "$*"
+      collect_jsz_base_deps "$DOCKERFILE" "$explicit_base_arg"
+    fi
   } | awk '!x[$0]++'
 )
 
