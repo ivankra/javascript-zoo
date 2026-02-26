@@ -3,8 +3,12 @@
 
 include build.mk
 
-FILE_TARGETS := $(patsubst %.Dockerfile,%,$(wildcard jsz-*.Dockerfile))
+FILE_TARGETS := $(filter-out jsz-mingw,$(patsubst %.Dockerfile,%,$(wildcard jsz-*.Dockerfile)))
 $(foreach t,$(FILE_TARGETS),$(eval $(call build_base,$(t),$(t).Dockerfile,)))
+
+ifeq ($(DOCKER_ARCH),amd64)
+$(eval $(call build_base,jsz-mingw,jsz-mingw.Dockerfile,))
+endif
 
 $(eval $(call build_base,jsz-gcc14,jsz-gcc.Dockerfile,--build-arg VER=14))
 $(eval $(call build_base,jsz-gcc15,jsz-gcc.Dockerfile,--build-arg VER=15))

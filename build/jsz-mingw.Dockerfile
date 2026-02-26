@@ -24,9 +24,7 @@ RUN if grep -q /sbin/vminitd /proc/cmdline; then \
       apt-get install -y --no-install-recommends wine wine32 wine64 libwine libwine:i386; \
     fi
 
-RUN if [ `uname -m` = x86_64 ]; then \
-      wineboot --init && \
-      # Enable Null graphics driver (better alternative to xvfb-run) \
-      wine reg add 'HKEY_CURRENT_USER\Software\Wine\Drivers' /v Graphics /t REG_SZ /d null /f && \
-      wineserver --wait; \
-    fi
+# Set up ~/.wine, enable Null graphics driver
+RUN wineboot --init && \
+    wine reg add 'HKEY_CURRENT_USER\Software\Wine\Drivers' /v Graphics /t REG_SZ /d null /f && \
+    wineserver --wait
