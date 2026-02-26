@@ -10,7 +10,7 @@ SKIP ?=
 comma := ,
 SUBDIRS := $(filter-out $(strip $(subst $(comma), ,$(SKIP))),$(SUBDIRS))
 
-.PHONY: $(SUBDIRS) all dist conformance base sh
+.PHONY: $(SUBDIRS) all dist rev conformance base sh
 
 define make_subdirs
 	@failed=""; \
@@ -40,6 +40,9 @@ all:
 
 dist:
 	$(call make_subdirs,dist)
+
+rev:
+	$(call make_subdirs,rev)
 
 conformance:
 	$(call make_subdirs,conformance)

@@ -64,6 +64,12 @@ build: $(IID_DIR)/jsz-$(1)
 $(IID_DIR)/jsz-$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(3))
 	bash "$(ROOT_DIR)/build/build.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
 
+# rev / <name>-rev: print resolved REPO/REV that would be built (without building)
+rev: $(1)-rev
+
+$(1)-rev:
+	@bash "$(ROOT_DIR)/build/build.sh" --print-rev $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
+
 # dist: copy build artifacts out of docker image
 dist: $(call dist_json_path,$(1))
 
@@ -97,7 +103,7 @@ conformance-direct:
 .PHONY: conformance conformance-direct conformance.txt
 )
 
-.PHONY: all build dist sh $(1) $(1)-sh
+.PHONY: all build dist rev sh $(1) $(1)-rev $(1)-sh
 endef
 
 # Build rules for base images (build/jsz-*.Dockerfile).
