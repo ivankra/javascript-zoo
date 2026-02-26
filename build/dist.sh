@@ -33,6 +33,7 @@ fi
 
 DIST_ROOT="$ROOT_DIR/dist/$DOCKER_ARCH"
 CACHE_ROOT="$ROOT_DIR/.cache"
+IIDFILE="$CACHE_ROOT/iid/$DOCKER_ARCH/jsz-$ID"
 mkdir -p "$DIST_ROOT"
 rm -rf "$DIST_ROOT/$ID" "$DIST_ROOT/$ID".* >/dev/null 2>&1 || true
 
@@ -113,3 +114,21 @@ fi
 
 cd "$DIST_ROOT"
 (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST
+
+# Optionally, clean up build container's image after a successful build to free up space
+if [[ -n "${DIST_REMOVE_IMAGE:-}" && "$DOCKER" != "container" ]]; then
+  image_ref=""
+  if [[ -s "$IIDFILE" ]]; then
+    image_ref="$(cat "$IIDFILE")"
+  else
+    image_ref="$("$DOCKER" image inspect --format '{{.Id}}' "jsz-$ID:$DOCKER_ARCH" 2>/dev/null || true)"
+  fi
+
+  # Remove both engine tags (`jsz-$ID` and `jsz-$ID:$DOCKER_ARCH`) and the
+  # image id if available. This targets only the extracted engine image.
+  for ref in "jsz-$ID" "jsz-$ID:$DOCKER_ARCH" "$image_ref"; do
+    if [[ -n "$ref" ]]; then
+      "$DOCKER" image rm -f "$ref" >/dev/null 2>&1 || true
+    fi
+  done
+fi
