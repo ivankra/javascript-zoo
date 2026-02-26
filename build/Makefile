@@ -27,6 +27,9 @@ endif
 
 $(eval $(call build_base,jsz-dotnet-wasi,jsz-wasi.Dockerfile,--build-arg BASE=jsz-dotnet --build-arg VER=27))
 
+$(eval $(call build_base,jsz-jdk21,jsz-jdk.Dockerfile,--build-arg VER=21))
+$(eval $(call build_base,jsz-jdk25,jsz-jdk.Dockerfile,--build-arg VER=25))
+
 hub:
 	bash ./hub.sh
 

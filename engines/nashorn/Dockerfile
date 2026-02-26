@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-debian
+ARG BASE=jsz-jdk25
 FROM $BASE
 
 ARG REPO=https://github.com/openjdk/nashorn.git
@@ -11,7 +11,6 @@ WORKDIR /src
 RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
 
-RUN apt-get install -y --no-install-recommends openjdk-25-jdk-headless ant
 RUN cd make/nashorn && ant jar
 
 RUN mkdir -p /dist/nashorn-dist && \

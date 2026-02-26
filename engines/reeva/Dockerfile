@@ -1,11 +1,8 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-debian
+ARG BASE=jsz-jdk21
 FROM $BASE
-
-RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends openjdk-21-jdk-headless
 
 ARG REPO=https://github.com/ReevaJS/reeva.git
 ARG REV=main
