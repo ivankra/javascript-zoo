@@ -4,9 +4,8 @@
 ARG BASE=jsz-gcc
 FROM $BASE
 
-# HEAD is broken
-
 ARG REPO=https://github.com/cesanta/v7.git
+# HEAD is broken
 ARG REV=ce5212ae42dfd93247c56fbc233f65367e9def27
 
 WORKDIR /src

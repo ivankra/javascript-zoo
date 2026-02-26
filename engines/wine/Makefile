@@ -3,8 +3,6 @@
 
 include ../../build/build.mk
 
-REV ?= eaea4240c4efb618be6d20c05f7fc9f3db9a104c
-
 ifeq ($(DOCKER_ARCH),amd64)
 $(eval $(call build_engine,wine,Dockerfile))
 else

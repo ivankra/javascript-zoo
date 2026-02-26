@@ -3,6 +3,4 @@
 
 include ../../build/build.mk
 
-REV ?= b198c6df7edc2b88afef998a2147ab76f2802fae
-
 $(eval $(call build_engine,yavashark,Dockerfile))

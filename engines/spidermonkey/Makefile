@@ -3,9 +3,6 @@
 
 include ../../build/build.mk
 
-# https://github.com/mozilla-firefox/firefox/tags
-REV ?= FIREFOX_149_0b1_BUILD1
-
 CONFORMANCE_CMD = \
 	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o conformance.txt /dist/spidermonkey_intl && \
 	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_1.5.conformance /dist/spidermonkey_1.5 && \

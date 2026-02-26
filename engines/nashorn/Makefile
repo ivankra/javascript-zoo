@@ -3,6 +3,4 @@
 
 include ../../build/build.mk
 
-REV ?= release-15.7
-
 $(eval $(call build_engine,nashorn,Dockerfile))

@@ -5,6 +5,4 @@ include ../../build/build.mk
 
 CONFORMANCE_SUITE = es[1-5]
 
-REV ?= 1c271815cf13291d3e4b636999ff7ecd7aa0993b
-
 $(eval $(call build_engine,besen,Dockerfile))

@@ -3,8 +3,7 @@
 
 include ../../build/build.mk
 
-REV ?= hermes-v250829098.0.7
-
+REV ?= static_h
 CONFORMANCE_BINARY = hermes-v1_intl
 
 $(eval $(call build_engine,hermes-v1,../hermes/Dockerfile))
