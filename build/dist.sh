@@ -116,7 +116,9 @@ cd "$DIST_ROOT"
 (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST
 
 # Optionally, clean up build container's image after a successful build to free up space
-if [[ -n "${DIST_REMOVE_IMAGE:-}" && "$DOCKER" != "container" ]]; then
+# TODO breaks COPY --from containers, like hako
+if [[ -n "${DIST_REMOVE_IMAGE:-}" && "$DOCKER" != "container" && "$ID" != hako ]]; then
+
   image_ref=""
   if [[ -s "$IIDFILE" ]]; then
     image_ref="$(cat "$IIDFILE")"
@@ -128,7 +130,7 @@ if [[ -n "${DIST_REMOVE_IMAGE:-}" && "$DOCKER" != "container" ]]; then
   # image id if available. This targets only the extracted engine image.
   for ref in "jsz-$ID" "jsz-$ID:$DOCKER_ARCH" "$image_ref"; do
     if [[ -n "$ref" ]]; then
-      "$DOCKER" image rm -f "$ref" >/dev/null 2>&1 || true
+      (set -x; "$DOCKER" image rm -f "$ref" >/dev/null 2>&1 || true)
     fi
   done
 fi
