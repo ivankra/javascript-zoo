@@ -8,7 +8,34 @@ ARG BASE=jsz-clang
 FROM $BASE
 
 RUN apt-get update -y && \
-    apt-get install -y autoconf autoconf-archive automake build-essential ccache cmake curl fonts-liberation2 git libdrm-dev libgl1-mesa-dev libtool nasm ninja-build pkg-config python3-venv qt6-base-dev qt6-tools-dev-tools qt6-wayland tar unzip zip qt6-multimedia-dev libpulse-dev
+    apt-get install -y \
+      autoconf \
+      autoconf-archive \
+      automake \
+      build-essential \
+      ccache \
+      cmake \
+      curl \
+      fonts-liberation2 \
+      git \
+      libdrm-dev \
+      libgl1-mesa-dev \
+      libpulse-dev \
+      libtool \
+      nasm \
+      ninja-build \
+      pkg-config \
+      python3-venv \
+      qt6-base-dev \
+      qt6-multimedia-dev \
+      qt6-tools-dev-tools \
+      qt6-wayland \
+      rustup \
+      tar \
+      unzip \
+      zip
+
+RUN rustup toolchain install stable
 
 WORKDIR /src
 ARG REPO=https://github.com/LadybirdBrowser/ladybird.git
