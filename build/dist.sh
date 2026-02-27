@@ -118,6 +118,7 @@ cd "$DIST_ROOT"
 # Optionally, clean up build container's image after a successful build to free up space
 # TODO breaks COPY --from containers, like hako
 if [[ -n "${DIST_REMOVE_IMAGE:-}" && "$DOCKER" != "container" && "$ID" != hako ]]; then
+  (set -x; df -h; "$DOCKER" image ls --sort size --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}" || true)
 
   image_ref=""
   if [[ -s "$IIDFILE" ]]; then
