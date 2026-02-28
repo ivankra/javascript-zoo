@@ -1,0 +1,98 @@
+# Builds all engines for DOCKER_ARCH=ppc64le (experimental)
+#
+# SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+name: Build (ppc64le)
+
+env:
+  DOCKER_ARCH: ppc64le
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write  # gh release create/edit/upload
+  packages: write  # GHCR push/pull
+
+jobs:
+  init:
+    runs-on: ubuntu-24.04
+    outputs:
+      release_tag: ${{ steps.init.outputs.release_tag }}
+      engines: ${{ steps.init.outputs.engines }}
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set release tag and engine list
+        id: init
+        run: |
+          BUILD_DATE=$(date +%Y%m%d)
+          RELEASE_TAG="${BUILD_DATE}-${DOCKER_ARCH}"
+          echo "release_tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
+          ENGINES=$(cd engines && DOCKER_ARCH=${DOCKER_ARCH} make list | jq -R . | jq -sc .)
+          echo "engines=$ENGINES" >> "$GITHUB_OUTPUT"
+
+      - name: Create draft release
+        run: |
+          gh release delete "${{ steps.init.outputs.release_tag }}" --yes 2>/dev/null || true
+          gh release create "${{ steps.init.outputs.release_tag }}" --title "${{ steps.init.outputs.release_tag }}" --draft --target "$GITHUB_SHA"
+
+  base:
+    needs: init
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: docker/setup-qemu-action@v3
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Build and push base toolchain images
+        run: DOCKER_PUSH=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C build all
+
+  engine:
+    needs: [init, base]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      fail-fast: false
+      matrix:
+        engine: ${{ fromJson(needs.init.outputs.engines) }}
+    steps:
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+
+      - uses: docker/setup-qemu-action@v3
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Build engine
+        uses: nick-fields/retry@v3
+        with:
+          max_attempts: 3
+          timeout_minutes: 360
+          command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
+
+      - name: Package and upload to release
+        run: |
+          tar -c -C dist/${DOCKER_ARCH} . | zstd -19 -o ${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst
+          gh release upload "${{ needs.init.outputs.release_tag }}" ${{ matrix.engine }}.${DOCKER_ARCH}.tar.zst
