@@ -14,8 +14,11 @@ RUN apt-get update -y && \
 RUN ls /usr/bin/llvm-strip* >/dev/null 2>&1 || apt-get install -y --no-install-recommends llvm llvm-19-tools
 
 # Debian's packaged rustc and cbindgen are too old to build latest firefox versions
-RUN rustup toolchain install stable
-RUN cargo install cbindgen
+RUN if [ "$(dpkg --print-architecture)" = i386 ]; then \
+      rustup set default-host i686-unknown-linux-gnu; \
+    fi && \
+    rustup toolchain install stable && \
+    cargo install cbindgen
 
 ARG REPO=https://github.com/mozilla-firefox/firefox.git
 ARG REV=release

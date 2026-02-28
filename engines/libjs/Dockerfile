@@ -51,7 +51,8 @@ RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD
 # https://github.com/LadybirdBrowser/ladybird/blob/master/vcpkg.json
 RUN sed -i '/"dependencies":/,/^  ],$/c "dependencies": ["fast-float", "fmt", "icu", "libtommath", "libxml2", "openssl", "simdjson", "simdutf", "sqlite3", "zlib"],' vcpkg.json
 
-RUN cmake -B build -G Ninja --preset=Release \
+RUN if [ `uname -m` = riscv64 ]; then export VCPKG_FORCE_SYSTEM_BINARIES=1; fi; \
+    cmake -B build -G Ninja --preset=Release \
       -DCMAKE_C_COMPILER=$CC \
       -DCMAKE_CXX_COMPILER=$CXX \
       -DBUILD_SHARED_LIBS=OFF \

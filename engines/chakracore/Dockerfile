@@ -22,7 +22,7 @@ RUN apt-get update -y && apt-get install -y libicu-dev
 RUN ./build.sh --ninja --static \
       $([ "$INTL" = true ] && echo --embed-icu) \
       $([ "$INTL" != true ] && echo --no-icu --without-intl) \
-      $([ "$JITLESS" = true -o `uname -m` = aarch64 ] && echo --no-jit)
+      $([ "$JITLESS" = true -o `uname -m` != x86_64 ] && echo --no-jit)
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/chakracore \

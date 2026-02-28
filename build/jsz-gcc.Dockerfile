@@ -52,4 +52,4 @@ RUN update-alternatives --install /usr/bin/cc cc $CC 150 && \
     update-alternatives --install /usr/bin/g++ g++ $CXX 150
 
 # Record compiler's version in build metadata.
-RUN mkdir -p /dist && $CC -v 2>&1 | sed -ne 's/ *$//; s/.*gcc version /gcc /p' >/jsz_cc
+RUN $CC -v 2>&1 | sed -ne 's/ *$//; s/.*gcc version /gcc /p' >/jsz_cc
