@@ -51,6 +51,6 @@ RUN update-alternatives --install /usr/bin/cc cc $CC 150 && \
     update-alternatives --install /usr/bin/llvm-nm llvm-nm $NM 150
 
 # Record compiler's version in build metadata.
-RUN mkdir -p /dist && $CC -v 2>&1 | sed -ne 's/.*clang version /clang /p' >/jsz_cc
+RUN $CC -v 2>&1 | sed -ne 's/.*clang version /clang /p' >/jsz_cc
 
 # Verify binaries: readelf -p .comment <binary>

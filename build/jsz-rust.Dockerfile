@@ -5,8 +5,9 @@ ARG BASE=jsz-debian
 FROM $BASE
 
 RUN apt-get update -y && \
-    apt-get install -y --no-install-recommends rustup
-
-RUN rustup toolchain install stable
-
-RUN mkdir -p /dist && rustc --version >/jsz_rustc
+    apt-get install -y --no-install-recommends rustup && \
+    if [ "$(dpkg --print-architecture)" = i386 ]; then \
+      rustup set default-host i686-unknown-linux-gnu; \
+    fi && \
+    rustup toolchain install stable && \
+    rustc --version >/jsz_rustc

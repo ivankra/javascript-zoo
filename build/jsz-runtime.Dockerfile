@@ -60,17 +60,26 @@ ENV LC_ALL=en_US.UTF-8 \
     SHELL=/bin/bash \
     PATH=/bench:/opt/node/bin:$PATH
 
-# Install latest node and npm (https://nodejs.org/en/download)
-RUN export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
-    curl -o /opt/nvm-install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh && \
-    echo "2d8359a64a3cb07c02389ad88ceecd43f2fa469c06104f92f98df5b6f315275f  /opt/nvm-install.sh" | sha256sum -c && \
-    bash /opt/nvm-install.sh && rm -f /opt/nvm-install.sh && \
-    bash -c 'source /opt/nvm/nvm.sh && nvm install node' && \
-    ln -s /opt/nvm/versions/node/*/ /opt/node
+# Install latest node and npm via official installer (https://nodejs.org/en/download)
+# Fallback to debian packages on unsupported archs
+RUN case "$(dpkg --print-architecture)" in \
+      amd64|arm64|ppc64le|s390x) \
+        export NVM_DIR=/opt/nvm && mkdir -p "$NVM_DIR" && \
+        curl -o /opt/nvm-install.sh https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh && \
+        echo "2d8359a64a3cb07c02389ad88ceecd43f2fa469c06104f92f98df5b6f315275f  /opt/nvm-install.sh" | sha256sum -c && \
+        bash /opt/nvm-install.sh && rm -f /opt/nvm-install.sh && \
+        bash -c 'source /opt/nvm/nvm.sh && nvm install node' && \
+        ln -s /opt/nvm/versions/node/*/ /opt/node;; \
+      *) \
+        apt-get install -y nodejs npm;; \
+    esac
 
 # Install other popular runtimes from npm
-RUN npm install -g bun deno && \
-    (echo '' | bun repl >/dev/null 2>&1 || true)
+RUN case "$(dpkg --print-architecture)" in \
+      amd64|arm64) \
+        npm install -g bun deno && \
+        (echo '' | bun repl >/dev/null 2>&1 || true);; \
+    esac
 
 # Install dotnet SDK for .NET engines
 ENV DOTNET_ROOT=/opt/dotnet \
@@ -78,13 +87,18 @@ ENV DOTNET_ROOT=/opt/dotnet \
     DOTNET_NOLOGO=1 \
     NUGET_XMLDOC_MODE=skip \
     PATH=/opt/dotnet:$PATH
-RUN curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
-    bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
-    rm -f /tmp/dotnet-install.sh
+RUN case "$(dpkg --print-architecture)" in \
+      amd64|arm64) \
+        curl -fsSL https://dot.net/v1/dotnet-install.sh -o /tmp/dotnet-install.sh && \
+        bash /tmp/dotnet-install.sh --channel LTS --quality ga --install-dir /opt/dotnet && \
+        rm -f /tmp/dotnet-install.sh;; \
+    esac
 
-# Install Wine on amd64 for jscript family of engines
+# Install Wine for jscript family of engines
 RUN if [ `uname -m` = x86_64 ]; then \
-      if grep -q /sbin/vminitd /proc/cmdline; then \
+      if [ "$(dpkg --print-architecture)" = i386 ]; then \
+        apt-get install -y --no-install-recommends wine libwine; \
+      elif grep -q /sbin/vminitd /proc/cmdline; then \
         # macOS containerization kernel disables CONFIG_IA32_EMULATION, wine32 won't work \
         apt-get install -y --no-install-recommends wine wine64 libwine; \
       else \
