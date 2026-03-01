@@ -11,7 +11,8 @@ WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN apt-get update -y && \
-    apt-get install -y luajit luarocks libpcre2-dev && \
+    (apt-get install -y luajit || apt-get install -y lua5.1) && \
+    apt-get install -y luarocks libpcre2-dev && \
     # Optional runtime dependency for regex support \
     luarocks install lrexlib-pcre2
 

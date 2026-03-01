@@ -34,7 +34,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         libreadline-dev \
         locales \
         lsb-release \
-        luajit \
         make \
         moreutils \
         openjdk-25-jdk-headless \
@@ -55,6 +54,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         xz-utils && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
     locale-gen
+
+# LuaJIT / Lua 5.1 for castl
+RUN apt-get install -y luajit || apt-get install -y lua5.1
 
 ENV LC_ALL=en_US.UTF-8 \
     SHELL=/bin/bash \
