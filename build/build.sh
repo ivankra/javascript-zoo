@@ -7,6 +7,8 @@
 #   * --print-rev flag for CI/CD
 #   * Set DOCKER_PUSH=1 to push built image to DOCKER_REGISTRY
 #
+# Keep this script bash 3.x compatible for macOS.
+#
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
@@ -203,13 +205,21 @@ set_base_build_arg() {
     out+=("$a")
   done
 
-  BUILD_ARGS=("${out[@]}")
+  if [[ ${#out[@]} -gt 0 ]]; then
+    BUILD_ARGS=("${out[@]}")
+  else
+    BUILD_ARGS=()
+  fi
 
   if [[ "$has_base_arg" == 0 ]]; then
     # No explicit BASE provided: inherit Dockerfile default ARG BASE=... and pin to arch.
     local dockerfile_base="$(dockerfile_arg_default BASE)"
     if [[ -n "$dockerfile_base" ]]; then
-      BUILD_ARGS=(--build-arg "BASE=$(rewrite_base "$dockerfile_base")" "${BUILD_ARGS[@]}")
+      if [[ ${#BUILD_ARGS[@]} -gt 0 ]]; then
+        BUILD_ARGS=(--build-arg "BASE=$(rewrite_base "$dockerfile_base")" "${BUILD_ARGS[@]}")
+      else
+        BUILD_ARGS=(--build-arg "BASE=$(rewrite_base "$dockerfile_base")")
+      fi
     fi
   fi
 }
