@@ -8,7 +8,7 @@ ARG REPO=https://github.com/solarbrowser/quanta.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN sed -i 's/\(CXXFLAGS += -msse4.2\|CORE_SOURCES += .*LinuxNativeAPI\)/#\1/' Makefile
 RUN sed -i '1i #include <climits>' include/quanta/core/runtime/Value.h

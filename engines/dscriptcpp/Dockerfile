@@ -12,7 +12,7 @@ ARG REPO=https://github.com/DigitalMars/DscriptCPP.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/dscriptcpp/dscriptcpp.patch ./
 RUN git apply dscriptcpp.patch && make

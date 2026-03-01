@@ -8,7 +8,7 @@ ARG REPO=https://github.com/doodlewind/mocha1995.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 # Workaround for a crash in PR_cnvtf/PR_dtoa on arm64
 RUN sed -i -e 's/PR_cnvtf(buf, sizeof buf, 20, fval);/snprintf(buf, sizeof(buf), "%.16g", fval);/' src/mo_num.c

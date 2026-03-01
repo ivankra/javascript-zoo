@@ -9,8 +9,9 @@ ARG REPO=https://github.com/mozilla/rhino.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 RUN ./gradlew :rhino-all:build
 

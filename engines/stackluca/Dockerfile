@@ -8,7 +8,7 @@ ARG REPO=https://github.com/stackluca/v3.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/stackluca/stackluca.patch ./
 RUN git apply stackluca.patch && make -C src -f makefile

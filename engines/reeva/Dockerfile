@@ -8,7 +8,7 @@ ARG REPO=https://github.com/ReevaJS/reeva.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/reeva/reeva.patch ./
 RUN git apply reeva.patch

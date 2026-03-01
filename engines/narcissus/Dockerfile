@@ -10,7 +10,7 @@ ARG REPO=https://github.com/ivankra/narcissus.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN npm install && npm run build
 

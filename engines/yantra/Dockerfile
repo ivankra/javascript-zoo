@@ -9,8 +9,9 @@ ARG REV=main
 
 # Full git history is required for Nerdbank.GitVersioning to compute version height.
 WORKDIR /src
-RUN git clone --branch="$REV" "$REPO" . || \
-    (git clone "$REPO" . && git fetch origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --branch="$REV" "$REPO" . || \
+    (git clone "$REPO" . && git fetch origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 RUN dotnet publish YantraJS/YantraJS.csproj -c Release -o /dist/yantra-dist
 

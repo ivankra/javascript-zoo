@@ -8,8 +8,9 @@ ARG REPO=https://github.com/ivankra/continuum.git
 ARG REV=gh-pages
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 # Use Node's fs module instead of a fake browser stub
 RUN sed -i 's/^    fs: {/    browser_fs: {/' continuum.js && \

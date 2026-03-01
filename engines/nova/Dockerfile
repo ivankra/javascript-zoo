@@ -8,7 +8,7 @@ ARG REPO=https://github.com/trynova/nova.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN cargo build --release --bin nova_cli
 

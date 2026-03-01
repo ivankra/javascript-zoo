@@ -11,7 +11,7 @@ ARG REPO=https://github.com/ivankra/SEE.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/see/see.patch /tmp/see.patch
 RUN git apply /tmp/see.patch

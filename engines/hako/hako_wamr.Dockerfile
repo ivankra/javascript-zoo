@@ -11,8 +11,9 @@ ARG REPO=https://github.com/andrewmd5/hako-cli.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 RUN git submodule update --depth=1 --init --recursive
 
 RUN cmake -G Ninja -B build -DCMAKE_BUILD_TYPE=Release && \

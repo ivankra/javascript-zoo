@@ -8,7 +8,7 @@ ARG REPO=https://github.com/motet-a/toy.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/motet-a/motet-a.patch ./
 RUN git apply motet-a.patch

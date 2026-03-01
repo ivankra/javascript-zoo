@@ -10,7 +10,7 @@ ARG REPO=https://github.com/Starlight-JS/starlight.git
 ARG REV=dev
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends rustup libssl-dev
 #RUN rustup install 1.52.0 && rustup default 1.52.0

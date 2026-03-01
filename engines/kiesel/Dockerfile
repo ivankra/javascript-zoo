@@ -8,7 +8,7 @@ ARG REPO=https://codeberg.org/kiesel-js/kiesel.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN zig build --release=fast
 

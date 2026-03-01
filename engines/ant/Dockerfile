@@ -22,8 +22,9 @@ ARG REPO=https://github.com/theMackabu/ant.git
 ARG REV=master
 
 WORKDIR /src/ant
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 RUN npm ci --prefix src/tools
 

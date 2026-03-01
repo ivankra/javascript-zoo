@@ -25,8 +25,9 @@ ARG REPO=https://github.com/facebook/hermes.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 # Fix broken -DHERMES_ENABLE_INTL=ON build on main branch
 RUN grep -q cstdint lib/Platform/Intl/impl_icu/IntlUtils.cpp || \

@@ -9,8 +9,9 @@ ARG REPO=https://github.com/qt/qt5.git
 ARG REV=dev
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 RUN git submodule update --depth=1 --init --recursive qtbase qtdeclarative
 
 ARG JITLESS=

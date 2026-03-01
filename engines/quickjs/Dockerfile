@@ -11,7 +11,7 @@ ARG REPO=https://github.com/bellard/quickjs.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 # -O3 instead of default -O2 for consistency with quickjs-ng and other engines
 ARG OPT=-O3

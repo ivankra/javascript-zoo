@@ -8,7 +8,7 @@ ARG REPO=https://github.com/gkmail/SophonJS.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN sed -i 's/ARCH:=i686-linux/ARCH:=x86_64-linux/' config.mk && \
     sed -i 's/GLOBAL/#GLOBAL/' build/arch/x86_64-linux.mk && \

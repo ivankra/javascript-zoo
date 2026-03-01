@@ -8,7 +8,7 @@ ARG REPO=https://github.com/yrm006/miniscript.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/yrm006/main.c ./
 RUN cc -O3 --std=c99 -o miniscript miniscript.c mslib.c main.c #readme.c

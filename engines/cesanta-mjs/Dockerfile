@@ -8,7 +8,7 @@ ARG REPO=https://github.com/cesanta/mjs.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN cc -O3 -DMJS_MAIN -o mjs mjs.c
 

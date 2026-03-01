@@ -8,7 +8,7 @@ ARG REPO=https://github.com/radare/quad-wheel.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 # Fix crap like:
 #   unichar *rr = (unichar *)((int)r + sizeof(int));

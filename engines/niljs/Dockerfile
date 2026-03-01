@@ -8,8 +8,9 @@ ARG REPO=https://github.com/nilproject/NiL.JS.git
 ARG REV=develop
 
 WORKDIR /src
-RUN git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)
+RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+    git rev-parse HEAD
 
 COPY engines/niljs/niljs.cs /src/
 COPY engines/niljs/niljs.csproj /src/

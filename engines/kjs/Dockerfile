@@ -14,7 +14,7 @@ ARG REPO=https://github.com/KDE/kjs.git
 ARG REV=kf5
 
 WORKDIR /src/kjs
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN export CFLAGS="-O3" CXXFLAGS="-O3" && \
     # Increase memory limit for Splay benchmark \

@@ -8,7 +8,7 @@ ARG REPO=https://github.com/robertkrimen/otto.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN cd otto && go build
 

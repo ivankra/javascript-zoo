@@ -8,7 +8,7 @@ ARG REPO=https://github.com/grafana/sobek.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/sobek/sobek.go ./
 RUN go build sobek.go

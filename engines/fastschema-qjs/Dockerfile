@@ -8,7 +8,7 @@ ARG REPO=https://github.com/fastschema/qjs.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 # Disable strict mode by default. No easy way to do it from main package.
 RUN sed -i 's/ | JsEvalFlagStrict//' options.go

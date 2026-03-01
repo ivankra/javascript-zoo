@@ -8,7 +8,7 @@ ARG REPO=https://github.com/cesanta/elk.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/cesanta-elk/cesanta-elk.c ./
 RUN cc -o elk -O3 -I. -DJS_DUMP elk.c cesanta-elk.c #examples/cmdline/main.c

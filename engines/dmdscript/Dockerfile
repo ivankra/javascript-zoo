@@ -8,7 +8,7 @@ ARG REPO=https://github.com/DigitalMars/DMDScript.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends ldc dub
 

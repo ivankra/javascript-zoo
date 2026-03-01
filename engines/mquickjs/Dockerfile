@@ -8,7 +8,7 @@ ARG REPO=https://github.com/bellard/mquickjs.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN make -j$(nproc) HOST_CC="${CC:-gcc}" CC="${CC:-gcc}"
 

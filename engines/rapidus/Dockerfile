@@ -8,7 +8,7 @@ ARG REPO=https://github.com/maekawatoshiki/rapidus.git
 ARG REV=main
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN rustup toolchain install nightly-2023-02-01 && rustup override set nightly-2023-02-01
 RUN cargo build --release

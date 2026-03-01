@@ -8,7 +8,7 @@ ARG REPO=https://github.com/malbrain/javascript-database.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 RUN git submodule update --init --recursive
 
 COPY engines/malbrain/malbrain.patch ./

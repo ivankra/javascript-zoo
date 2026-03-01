@@ -8,7 +8,7 @@ ARG REPO=https://gitlab.com/cznic/quickjs.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 COPY engines/modernc-quickjs/modernc-quickjs.go main.go
 

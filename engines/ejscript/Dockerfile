@@ -8,7 +8,7 @@ ARG REPO=https://github.com/embedthis/ejscript.git
 ARG REV=master
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN sed -i '/^PUBLIC void mprAssert(cchar \\*loc, cchar \\*msg)/,/^}/ s/^}$/    exit(1);\\\n}/' src/mpr/mprLib.c
 
