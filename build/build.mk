@@ -44,13 +44,24 @@ $(1)\
 )
 endef
 
+# Rules for an engine when DOCKER_ARCH is not in SUPPORTED_ARCHS.
+define unsupported_arch
+all: arch-skip-$(1)
+
+arch-skip-$(1):
+	@echo "$(1): skipping, $(DOCKER_ARCH) is not among supported architectures ($(SUPPORTED_ARCHS))"
+	$(if $(filter 1,$(words $(SUPPORTED_ARCHS))),@echo "Build with 'DOCKER_ARCH=$(firstword $(SUPPORTED_ARCHS)) make'")
+
+.PHONY: all arch-skip-$(1)
+endef
+
 # Build rules for engines.
 # $(1): build id, either $(PROJECT) or $(PROJECT)_<suffix>
 # $(2): Dockerfile path relative to leaf dir
 # $(3): extra docker build args (optional)
 define build_engine
 $(if $(or $(filter $(PROJECT),$(1)),$(filter $(PROJECT)_%,$(1))),,$(error build_engine id "$(1)" must be "$(PROJECT)" or "$(PROJECT)_<suffix>" in $(CURDIR)))
-
+$(if $(and $(strip $(SUPPORTED_ARCHS)),$(if $(filter $(DOCKER_ARCH),$(SUPPORTED_ARCHS)),,1)),$(call unsupported_arch,$(1)),
 # Default build target, build+dist. Aggregates across all build_engine invocations.
 all: $(1)
 
@@ -104,6 +115,7 @@ conformance-direct:
 )
 
 .PHONY: all build dist rev sh $(1) $(1)-rev $(1)-sh
+)
 endef
 
 # Build rules for base images (build/jsz-*.Dockerfile).

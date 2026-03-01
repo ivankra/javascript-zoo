@@ -6,6 +6,9 @@ include ../../build/build.mk
 CONFORMANCE_CMD = "$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o conformance.txt /dist/iv-lv5 && \
 	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o iv-lv5_babel.conformance /dist/mujs_babel /dist/iv-lv5
 
+# riscv64 missing in gcconfig.h
+SUPPORTED_ARCHS = amd64 arm64 ppc64le s390x 386
+
 # JIT is only supported on amd64
 ifeq ($(DOCKER_ARCH),amd64)
 $(eval $(call build_engine,iv-lv5,Dockerfile))

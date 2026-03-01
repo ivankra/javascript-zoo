@@ -4,6 +4,7 @@
 include ../../build/build.mk
 
 CONFORMANCE_BINARY = chakracore_intl
+SUPPORTED_ARCHS = amd64 arm64
 
 # JIT is only supported on amd64
 ifeq ($(DOCKER_ARCH),amd64)
