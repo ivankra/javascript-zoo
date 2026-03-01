@@ -8,7 +8,7 @@ ARG REPO=https://github.com/lynx-family/primjs.git
 ARG REV=develop
 
 WORKDIR /src
-RUN git clone "$REPO" . && git checkout "$REV"
+RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
 RUN sed -i '/^set(quickjs_sources/a     ${CMAKE_CURRENT_SOURCE_DIR}/src/basic/log/primjs_logging.cc' CMakeLists.txt
 RUN sed -i 's/ -Os / -O3 /' CMakeLists.txt

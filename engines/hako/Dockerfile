@@ -16,7 +16,7 @@ RUN hosts/dotnet/scripts/build-engine.sh
 
 # Copy hako.wasm for reference. Used by other hako_*.Dockerfile.
 # Not needed to run the binary - it's also embedded in hako-dist.
-RUN cp -f /src/hosts/dotnet/Hako/Resources/hako.wasm /dist/hako.wasm
+RUN mkdir -p /dist && cp -f /src/hosts/dotnet/Hako/Resources/hako.wasm /dist/hako.wasm
 
 COPY engines/hako/hako-runner.cs /src/hako-runner.cs
 COPY engines/hako/hako-runner.csproj /src/hako-runner.csproj
