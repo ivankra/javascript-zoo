@@ -33,4 +33,7 @@ RUN cmake -B build -G Ninja \
 RUN ninja -C build qmljs
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/qv4 --binary=/src/build/qtbase/bin/qmljs --license=LICENSES/*.txt
+RUN ./dist.py /dist/qv4 \
+      --binary=/src/build/qtbase/bin/qmljs \
+      --license=LICENSES/*.txt \
+      $(if [ "$JITLESS" = true ]; then echo jit=; fi)

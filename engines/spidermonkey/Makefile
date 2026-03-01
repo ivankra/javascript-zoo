@@ -17,10 +17,19 @@ CONFORMANCE_CMD += && \
 	"$(ROOT_DIR)/conformance/run.sh" --next -j 8 -o spidermonkey_24.conformance /dist/spidermonkey_24
 endif
 
+# js/src/jit/Registers.h
+JIT_ARCHS = amd64 arm64 386 arm mips64 loong64 riscv64
+
+ifeq ($(filter $(DOCKER_ARCH),$(JIT_ARCHS)),$(DOCKER_ARCH))
 $(eval $(call build_engine,spidermonkey,Dockerfile))
 $(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
 $(eval $(call build_engine,spidermonkey_intl,Dockerfile,--build-arg INTL=true))
 $(eval $(call build_engine,spidermonkey_jitless,Dockerfile,--build-arg JITLESS=true))
+else
+$(eval $(call build_engine,spidermonkey,Dockerfile,--build-arg JITLESS=true))
+$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg JITLESS=true))
+$(eval $(call build_engine,spidermonkey_intl,Dockerfile,--build-arg INTL=true --build-arg JITLESS=true))
+endif
 
 $(eval $(call build_engine,spidermonkey_1.5,spidermonkey_1.5.Dockerfile,--build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz))
 $(eval $(call build_engine,spidermonkey_1.6,spidermonkey_1.5.Dockerfile,--build-arg TARBALL=https://archive.mozilla.org/pub/js/js-1.60.tar.gz))

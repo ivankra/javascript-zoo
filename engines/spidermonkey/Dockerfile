@@ -58,4 +58,5 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/spidermonkey \
       --binary=/src/obj/dist/bin/js \
       --license=toolkit/content/license.html \
-      version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+')"
+      version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+')" \
+      $(if [ "$JITLESS" = true ]; then echo jit=; fi)

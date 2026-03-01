@@ -5,4 +5,7 @@ include ../../build/build.mk
 
 REV ?= graal-25.0.2
 
+# Platforms of prebuilt binaries
+SUPPORTED_ARCHS = amd64 arm64
+
 $(eval $(call build_engine,graaljs,Dockerfile))

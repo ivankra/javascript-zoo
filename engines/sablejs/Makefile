@@ -3,4 +3,7 @@
 
 include ../../build/build.mk
 
+# Platforms of prebuilt binaries
+SUPPORTED_ARCHS = amd64 arm64
+
 $(eval $(call build_engine,sablejs,Dockerfile))
