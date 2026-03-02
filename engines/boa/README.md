@@ -1,6 +1,6 @@
 # Boa
 
-Embeddable Javascript engine written in Rust.
+Embeddable JavaScript engine written in Rust.
 
 * Homepage:     [boajs.dev](https://boajs.dev/)
 * Repository:   [boa-dev/boa](https://github.com/boa-dev/boa.git) <span class="shields"><img src="https://img.shields.io/github/stars/boa-dev/boa?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/boa-dev/boa?label=&style=flat-square" alt="Last commit" title="Last commit"></span>

@@ -27,14 +27,14 @@ Open-sourced in 2016 under the name ChakraCore, except for minor
 components like COM/browser bindings that stay in the closed-source
 chakra.dll.
 
-Used in Microsoft Edge browser (now Microsoft Edge Legacy) which
-launched in 2015 and was discontinued in 2020 in favor of forking
-Chromium. Subsequently, Microsoft discontinued maintenance of
+Used in Microsoft Edge browser (now Microsoft Edge Legacy), which
+launched in 2015 and was discontinued in 2020 in favor of Chromium
+(Blink). Subsequently, Microsoft discontinued maintenance of
 ChakraCore and stopped providing security patches in March 2021
 ([ref](https://github.com/chakra-core/ChakraCore/issues/6384)),
-passed it to a rather inactive community of external maintainers.
+then passed it to a rather inactive community of external maintainers.
 Continued production use (especially with JIT) is thus risky from
-security perspective. Has a partial ES2020 implementation,
+a security perspective. It has partial ES2020 support, with
 BigInt behind a compile flag.
 
 ## Runtimes

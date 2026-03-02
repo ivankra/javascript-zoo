@@ -9,7 +9,7 @@ JavaScript interpreter for .NET.
 * Standard:         ESnext (partial)
 * Years:            2013-
 * Runtime platform: .NET
-* Interpeter:       tree walker
+* Interpreter:      tree walker
 
 ## Conformance
 

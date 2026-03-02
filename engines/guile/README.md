@@ -11,10 +11,10 @@ Features a toy unfinished ECMAScript interpreter as of version 1.9.
 * Years:      2009
 * Type:       JavaScript-like language
 
-Run `guile --language=ecmascript` to start REPL.
+Run `guile --language=ecmascript` to start a REPL.
 
 Very incomplete implementation and not developed since the initial attempt in 2009.
-Evidently maintainer got bored / underestimated complexity of the project.
+The project appears to have been abandoned after the initial attempt in 2009.
 
 Related: [Kawa](https://www.gnu.org/software/kawa/)'s [ecmascript](https://gitlab.com/kashell/Kawa/-/tree/master/gnu/ecmascript)
 module - another incomplete implementation in another Scheme interpreter.

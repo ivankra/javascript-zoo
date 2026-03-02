@@ -1,6 +1,6 @@
 # Duktape
 
-Embeddable Javascript engine with a focus on portability and compact footprint.
+Embeddable JavaScript engine with a focus on portability and compact footprint.
 
 * Homepage:    [duktape.org](https://duktape.org/)
 * Repository:  [svaarala/duktape](https://github.com/svaarala/duktape.git) <span class="shields"><img src="https://img.shields.io/github/stars/svaarala/duktape?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/svaarala/duktape?label=&style=flat-square" alt="Last commit" title="Last commit"></span>

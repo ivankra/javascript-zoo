@@ -11,13 +11,17 @@ Contents:
 See [zoo.js.org](https://zoo.js.org/) for the main tabular view with benchmark and conformance scores,
 or perhaps [engines.json](https://zoo.js.org/engines.json) for a machine-readable json with structured data.
 
-Most engines here come with a build script. Build any engine locally:
+Most engines come with a build script. Build and play around with any engine locally (needs `docker`, `podman` or Apple's 
+<code>[container](https://github.com/apple/container/releases)</code>):
   * `cd engines/<name>/ && make`
+  * `cd engines/<name>/ && make sh` - explore the build container (build artifacts will be in `/dist`)
+  * `DOCKER_ARCH=riscv64 make sh` - cross build with qemu (`sudo apt install qemu-user-static`)
+  * `REPO=https://... REV=<commit/branch/tag> make` - build from a specific commit and/or repo
 
-Play around with pre-built binaries from [Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo):
+You can download pre-built binaries from [GitHub releases](https://github.com/ivankra/javascript-zoo/releases) or play with them using this [Docker Hub](https://hub.docker.com/r/ivankra/javascript-zoo) image:
   * `docker run -it ivankra/javascript-zoo`
   * `podman run -it docker.io/ivankra/javascript-zoo`
-  * <code>[container](https://github.com/apple/container/releases) run -it docker.io/ivankra/javascript-zoo</code>
+  * `container run -it docker.io/ivankra/javascript-zoo`
 
 ## Links
 

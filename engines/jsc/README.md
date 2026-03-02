@@ -6,7 +6,7 @@ JavaScript engine of Safari/WebKit.
 * Repository:   [WebKit/WebKit](https://github.com/WebKit/WebKit.git) <span class="shields"><img src="https://img.shields.io/github/stars/WebKit/WebKit?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/WebKit/WebKit?label=&style=flat-square" alt="Last commit" title="Last commit"></span> (engine in [Source/JavaScriptCore/](https://github.com/WebKit/WebKit/tree/main/Source/JavaScriptCore))
 * LOC:          [770374](# "cloc --not_match_d='(?i)(test)' Source/JavaScriptCore")
 * Language:     C++
-* License:      LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
+* License:      LGPL-2.0-only (LGPL 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)
 * Org:          Apple
 * Standard:     ESnext
 * Years:        2001-
@@ -22,7 +22,7 @@ JavaScript engine of Safari/WebKit.
 * 2008/06: [SquirrelFish](https://webkit.org/blog/189/announcing-squirrelfish/) (predecessor to LLint) - direct-threaded register-based VM interpreter.
 * 2008/09: [SquirrelFish Extreme](https://webkit.org/blog/214/introducing-squirrelfish-extreme/) ([commit](https://github.com/WebKit/WebKit/commit/9b948e40c37ad6b4402d737f1a7639889e23c597)) aka Nitro (now Baseline JIT) - context-threaded JIT (later template JIT) + PIC, achieved ~2x speedup; now known as "Baseline JIT". WREC: new bytecode-based regex engine.
 * 2009: YARR regex engine (interpreter, later template JIT)
-* 2011: [DFG JIT](https://webkit.org/blog/10308/speculation-in-javascriptcore/) (Data Flow Graph) - a fast,optimizing JIT engine, SSA-based IR, compiles from bytecode. Speculative optimizations with runtime type checks and deopts to interpreter/baseline. ~2x speedup over LLint+Baseline ([commit](https://trac.webkit.org/changeset/94559/webkit))
+* 2011: [DFG JIT](https://webkit.org/blog/10308/speculation-in-javascriptcore/) (Data Flow Graph) - a fast, optimizing JIT engine, SSA-based IR, compiles from bytecode. Speculative optimizations with runtime type checks and deopts to interpreter/baseline. ~2x speedup over LLint+Baseline ([commit](https://trac.webkit.org/changeset/94559/webkit))
 * 2014: [FTL JIT](https://blog.llvm.org/2014/07/ftl-webkits-llvm-based-jit.html), Fourth Tier LLVM (later renamed Faster Than Light) - advanced optimizing JIT engine.
 * 2016: FTL switched to a new in-house [B3 backend](https://webkit.org/blog/5852/introducing-the-b3-jit-compiler/) from LLVM. B3 is also used for WebAssembly JIT.
 * 2017: [WebAssembly](https://webkit.org/blog/7691/webassembly/), BBQ (baseline) and OMG (optimizing) JIT tiers.

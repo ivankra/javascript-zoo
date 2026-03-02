@@ -13,11 +13,11 @@ Interpreter for a limited subset of ES6 for sandboxing untrusted code, preventin
 
 ## Features
 
-Parses code and runs it through own tree-walking runtime, preventing it from accessing
+Parses code and runs it through its own tree-walking runtime, preventing it from accessing
 host engine's functions/prototypes outside of a user-specified whitelist.
 
-Can't run any moderately complex code using classes/prototype-based inheritance -
-those will just trip against the whitelist.
+Can't run moderately complex code using classes/prototype-based inheritance -
+those cases just trip the whitelist.
 
 ## Conformance
 

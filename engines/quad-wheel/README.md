@@ -19,7 +19,7 @@ Claims to target ES3, but poorly tested, basic ES1 features are buggy or missing
   * no typeof, hex literals, Date, Math.\*, function hoisting, ASI
   * null is treated as alias for undefined
 
-Part of code assume 32-bit CPU, need to be patched for 64-bit builds.
+Part of the code assumes a 32-bit CPU and needs to be patched for 64-bit builds.
 
 Richards score ~100 on M4 (34800us/iter).
 

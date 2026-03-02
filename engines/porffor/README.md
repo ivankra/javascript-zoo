@@ -1,6 +1,6 @@
 # Porffor
 
-Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and native binaries.
+Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and native binaries.
 
 * Homepage:         [porffor.dev](https://porffor.dev/)
 * Repository:       [CanadaHonk/porffor](https://github.com/CanadaHonk/porffor.git) <span class="shields"><img src="https://img.shields.io/github/stars/CanadaHonk/porffor?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/CanadaHonk/porffor?label=&style=flat-square" alt="Last commit" title="Last commit"></span>

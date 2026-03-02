@@ -1,6 +1,6 @@
 # jscomp
 
-AOT compiler targetting native code via C++.
+AOT compiler targeting native code via C++.
 
 * Repository:   [tmikov/jscomp](https://github.com/tmikov/jscomp.git) <span class="shields"><img src="https://img.shields.io/github/stars/tmikov/jscomp?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/tmikov/jscomp?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:          [19850](# "cloc --not_match_d='(?i)(examples|deps|test)' --exclude-ext=md src runtime")

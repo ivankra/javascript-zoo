@@ -7,7 +7,7 @@ High-performance JavaScript engine for JVM/GraalVM.
 * LOC:              [191606](# "cloc --not_match_d='(?i)(test)' graal-js/src")
 * Language:         Java
 * License:          GFTC, UPL-1.0
-  * Oracle GraamVM - GraalVM Free Terms and Conditions
+  * Oracle GraalVM - GraalVM Free Terms and Conditions
   * GraalVM Community Edition - Universal Permissive License 1.0
 * Org:              Oracle
 * Standard:         ESnext

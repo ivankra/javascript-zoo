@@ -14,7 +14,7 @@ JavaScript engine in pure Go.
 
 ## Forks
 
-Mostly obsoleted by newer, faster and full-featured [goja](../goja/README.md) engine,
+Largely superseded by the newer, faster, and full-featured [goja](../goja/README.md) engine,
 which started out by forking otto's parser.
 
 ## Conformance

@@ -16,12 +16,12 @@ Compiles SpiderMonkey to WebAssembly using WASI SDK. The output is a
 WASI component (`starling.wasm`) that can be run using a WebAssembly
 Component-aware runtime like wasmtime.
 
-Runs SpiderMonkey's baseline interpreter only - can't JIT JavaScript
-code. But the JS engine itself typically would get JITted by a JIT-enabled
+Runs SpiderMonkey's baseline interpreter only - it can't JIT JavaScript
+code. However, the JS engine itself is typically JIT-compiled by a JIT-enabled
 Wasm runtime.
 
-Provides certain Web platform APIs like Fetch, crypto, performance to
-JavaScript environment (see [builtins/web/](https://github.com/bytecodealliance/StarlingMonkey/tree/main/builtins/web)).
+Provides certain Web platform APIs like Fetch, crypto, and performance to
+the JavaScript environment (see [builtins/web/](https://github.com/bytecodealliance/StarlingMonkey/tree/main/builtins/web)).
 
 ## Users
 

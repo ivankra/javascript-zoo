@@ -1,6 +1,6 @@
 # Higgs
 
-JIT compiler for JavaScript targetting x86-64 platforms.
+JIT compiler for JavaScript targeting x86-64 platforms.
 
 * Repository: [higgsjs/Higgs](https://github.com/higgsjs/Higgs.git) <span class="shields"><img src="https://img.shields.io/github/stars/higgsjs/Higgs?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/higgsjs/Higgs?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        [40353](# "cloc --not_match_d='(?i)(test|benchmark)' source")
