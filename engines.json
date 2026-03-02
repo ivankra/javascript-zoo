@@ -61,7 +61,7 @@
   {
     "id": "ant",
     "title": "Ant",
-    "summary": "Ant-sized JavaScript runtime, notable for async/await, ffi, http servers, crypto, while being under 4mb.",
+    "summary": "Ant-sized JavaScript runtime, notable for async/await, FFI, HTTP servers, crypto, while being under 4 MB.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/ant/README.md",
     "repository": "https://github.com/theMackabu/ant.git",
     "loc": 34461,
@@ -253,7 +253,7 @@
   {
     "id": "boa",
     "title": "Boa",
-    "summary": "Embeddable Javascript engine written in Rust.",
+    "summary": "Embeddable JavaScript engine written in Rust.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/boa/README.md",
     "homepage": "https://boajs.dev/",
     "repository": "https://github.com/boa-dev/boa.git",
@@ -438,7 +438,7 @@
   {
     "id": "brimstone",
     "title": "Brimstone",
-    "summary": "Javascript engine written in Rust, with nearly complete ES2025 support.",
+    "summary": "JavaScript engine written in Rust, with nearly complete ES2025 support.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/brimstone/README.md",
     "repository": "https://github.com/Hans-Halverson/brimstone.git",
     "loc": 74409,
@@ -1283,7 +1283,7 @@
   {
     "id": "devicescript",
     "title": "DeviceScript",
-    "summary": "Engine for a limited subset of TypeScript targetting tiny IoT microcontrollers.",
+    "summary": "Engine for a limited subset of TypeScript targeting tiny IoT microcontrollers.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/devicescript/README.md",
     "repository": "https://github.com/microsoft/devicescript.git",
     "loc": 30562,
@@ -1474,7 +1474,7 @@
   {
     "id": "duktape",
     "title": "Duktape",
-    "summary": "Embeddable Javascript engine with a focus on portability and compact footprint.",
+    "summary": "Embeddable JavaScript engine with a focus on portability and compact footprint.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/duktape/README.md",
     "homepage": "https://duktape.org/",
     "repository": "https://github.com/svaarala/duktape.git",
@@ -1751,7 +1751,7 @@
   {
     "id": "edbrowse",
     "title": "Edbrowse",
-    "summary": "Edbrowse CLI browser had own small JavaScript engine until v2.2.10 (2006).",
+    "summary": "Edbrowse CLI browser had its own small JavaScript engine until v2.2.10 (2006).",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/edbrowse/README.md",
     "homepage": "https://edbrowse.org/",
     "sources": "https://web.archive.org/web/20101027132444/http://eklhad.net/edbrowse/edbrowse-2.2.10.zip",
@@ -3234,7 +3234,7 @@
       "es3": 0.9865,
       "es5": 0.9189,
       "kangax-es5": 0.9708,
-      "kangax-es6": 0.9001,
+      "kangax-es6": 0.901,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.76,
       "kangax-es2018": 0.8737,
@@ -3243,12 +3243,12 @@
       "kangax-es2021": 0.7143,
       "kangax-es2022": 1.0,
       "kangax-es2023": 0.7714,
-      "kangax-es2024": 0.0,
-      "kangax-es2025": 0.2105,
+      "kangax-es2024": 0.2857,
+      "kangax-es2025": 0.6316,
       "kangax-intl": 0.9643,
       "kangax-next": 0.0606,
       "es1-es5": 0.9786,
-      "kangax-es2016plus": 0.74
+      "kangax-es2016plus": 0.8062
     }
   },
   {
@@ -3478,7 +3478,7 @@
   {
     "id": "higgs",
     "title": "Higgs",
-    "summary": "JIT compiler for JavaScript targetting x86-64 platforms.",
+    "summary": "JIT compiler for JavaScript targeting x86-64 platforms.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/higgs/README.md",
     "repository": "https://github.com/higgsjs/Higgs.git",
     "loc": 40353,
@@ -4176,6 +4176,7 @@
     "standard_detailed": "ESnext (partial)",
     "years": "2013-",
     "platform": ".NET",
+    "interpreter": "tree walker",
     "github_stars": 4546,
     "github_forks": 591,
     "github_contributors": 151,
@@ -4200,7 +4201,7 @@
       "es3": 0.9932,
       "es5": 0.9865,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.9605,
+      "kangax-es6": 0.9663,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.88,
       "kangax-es2018": 0.9053,
@@ -4566,7 +4567,7 @@
     "loc_command": "cloc --not_match_d='(?i)(test)' Source/JavaScriptCore",
     "language": "C++",
     "license": "LGPL-2.0",
-    "license_detailed": "LGPL-2.0-only (LGLP 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)",
+    "license_detailed": "LGPL-2.0-only (LGPL 2.0+ for most of original KJS files, BSD-2/3 for most of Apple's contributions)",
     "org": "Apple",
     "standard": "ESnext",
     "years": "2001-",
@@ -4875,7 +4876,7 @@
   {
     "id": "jscomp",
     "title": "jscomp",
-    "summary": "AOT compiler targetting native code via C++.",
+    "summary": "AOT compiler targeting native code via C++.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/jscomp/README.md",
     "repository": "https://github.com/tmikov/jscomp.git",
     "loc": 19850,
@@ -4896,7 +4897,7 @@
   {
     "id": "jscript-net",
     "title": "JScript .NET",
-    "summary": "Old Microsoft's JavaScript engine for .NET Framework 1.0-4.x from early 2000s / ES4 era.",
+    "summary": "Microsoft's JavaScript engine for .NET Framework 1.0-4.x from the early 2000s / ES4 era.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/jscript-net/README.md",
     "homepage": "http://msdn.microsoft.com/en-us/library/x85xxsf4.aspx",
     "language": "C#",
@@ -5076,7 +5077,7 @@
   {
     "id": "jurassic",
     "title": "Jurassic",
-    "summary": "JavaScript engine for .NET, a compiler to .NET IL.",
+    "summary": "JavaScript engine for .NET; compiles to .NET IL.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/jurassic/README.md",
     "repository": "https://github.com/paulbartrum/jurassic.git",
     "loc": 34639,
@@ -5136,14 +5137,13 @@
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/kiesel/README.md",
     "homepage": "https://kiesel.dev/",
     "repository": "https://codeberg.org/kiesel-js/kiesel.git",
-    "loc": 59328,
+    "loc": 70969,
     "loc_command": "cloc src",
     "language": "Zig",
     "license": "MIT",
     "standard": "ESnext",
-    "standard_detailed": "ESnext (partial)",
     "years": "2023-",
-    "interpreter": "stack-based VM",
+    "interpreter": "register-based VM",
     "bench": [
       {
         "arch": "amd64",
@@ -5224,14 +5224,14 @@
     ],
     "conformance": {
       "es1": 1.0,
-      "es3": 0.973,
+      "es3": 0.9865,
       "es5": 0.973,
       "kangax-es5": 0.9672,
-      "kangax-es6": 0.9169,
+      "kangax-es6": 0.9226,
       "kangax-es2016": 0.8485,
-      "kangax-es2017": 0.9,
-      "kangax-es2018": 0.8421,
-      "kangax-es2019": 0.8333,
+      "kangax-es2017": 0.92,
+      "kangax-es2018": 0.9474,
+      "kangax-es2019": 0.744,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
@@ -5240,8 +5240,8 @@
       "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.0505,
-      "es1-es5": 0.9857,
-      "kangax-es2016plus": 0.9349
+      "es1-es5": 0.9905,
+      "kangax-es2016plus": 0.942
     }
   },
   {
@@ -5743,12 +5743,12 @@
     ],
     "conformance": {
       "es1": 1.0,
-      "es3": 0.9932,
+      "es3": 1.0,
       "es5": 1.0,
       "kangax-es5": 1.0,
-      "kangax-es6": 0.937,
+      "kangax-es6": 0.9712,
       "kangax-es2016": 1.0,
-      "kangax-es2017": 0.92,
+      "kangax-es2017": 1.0,
       "kangax-es2018": 1.0,
       "kangax-es2019": 1.0,
       "kangax-es2020": 1.0,
@@ -5756,11 +5756,11 @@
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
       "kangax-es2024": 1.0,
-      "kangax-es2025": 0.9298,
+      "kangax-es2025": 1.0,
       "kangax-intl": 1.0,
       "kangax-next": 0.2208,
-      "es1-es5": 0.9976,
-      "kangax-es2016plus": 0.9779
+      "es1-es5": 1.0,
+      "kangax-es2016plus": 1.0
     }
   },
   {
@@ -6115,7 +6115,7 @@
   {
     "id": "mquickjs",
     "title": "MicroQuickJS",
-    "summary": "JavaScript engine targetted at embedded systems.",
+    "summary": "JavaScript engine targeted at embedded systems.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/mquickjs/README.md",
     "homepage": "https://bellard.org/mquickjs/",
     "repository": "https://github.com/bellard/mquickjs.git",
@@ -6336,7 +6336,7 @@
     ],
     "conformance": {
       "es1": 0.9596,
-      "es3": 0.8784,
+      "es3": 0.8986,
       "es5": 0.8649,
       "kangax-es5": 0.8635,
       "kangax-es6": 0.0142,
@@ -6352,7 +6352,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.9143,
+      "es1-es5": 0.9214,
       "kangax-es2016plus": 0.019
     }
   },
@@ -6588,7 +6588,7 @@
   {
     "id": "nerd",
     "title": "Nerd / NectarJS",
-    "summary": "Compiler for a subset of JavaScript targetting native binaries.",
+    "summary": "Compiler for a subset of JavaScript targeting native binaries.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/nerd/README.md",
     "repository": "https://github.com/NerdLang/nerd.git",
     "loc": 12245,
@@ -6692,7 +6692,7 @@
       "kangax-es5": 0.9105,
       "kangax-es6": 0.439,
       "kangax-es2016": 0.3939,
-      "kangax-es2017": 0.18,
+      "kangax-es2017": 0.16,
       "kangax-es2018": 0.2632,
       "kangax-es2019": 0.1845,
       "kangax-es2020": 0.3571,
@@ -6704,7 +6704,7 @@
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
       "es1-es5": 0.9619,
-      "kangax-es2016plus": 0.1885
+      "kangax-es2016plus": 0.1852
     }
   },
   {
@@ -7107,7 +7107,7 @@
       "es1": 0.9899,
       "es3": 0.9122,
       "es5": 0.7162,
-      "kangax-es5": 0.7973,
+      "kangax-es5": 0.7828,
       "kangax-es6": 0.0459,
       "kangax-es2016": 0.0,
       "kangax-es2017": 0.16,
@@ -7128,7 +7128,7 @@
   {
     "id": "porffor",
     "title": "Porffor",
-    "summary": "Optimizing AOT compiler for JavaScript/TypeScript targetting WebAssembly and native binaries.",
+    "summary": "Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and native binaries.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/porffor/README.md",
     "homepage": "https://porffor.dev/",
     "repository": "https://github.com/CanadaHonk/porffor.git",
@@ -7166,9 +7166,9 @@
     "conformance": {
       "es1": 0.8939,
       "es3": 0.6149,
-      "es5": 0.7027,
+      "es5": 0.7162,
       "kangax-es5": 0.81,
-      "kangax-es6": 0.4534,
+      "kangax-es6": 0.456,
       "kangax-es2016": 0.6818,
       "kangax-es2017": 0.6718,
       "kangax-es2018": 0.2632,
@@ -7181,7 +7181,7 @@
       "kangax-es2025": 0.2105,
       "kangax-intl": 0.25,
       "kangax-next": 0.0202,
-      "es1-es5": 0.7619,
+      "es1-es5": 0.7643,
       "kangax-es2016plus": 0.5626
     }
   },
@@ -8519,12 +8519,12 @@
       "es3": 1.0,
       "es5": 0.8514,
       "kangax-es5": 0.9068,
-      "kangax-es6": 0.722,
-      "kangax-es2016": 0.7273,
+      "kangax-es6": 0.7283,
+      "kangax-es2016": 1.0,
       "kangax-es2017": 0.425,
-      "kangax-es2018": 0.6,
+      "kangax-es2018": 0.7053,
       "kangax-es2019": 0.8869,
-      "kangax-es2020": 0.8,
+      "kangax-es2020": 0.8714,
       "kangax-es2021": 0.381,
       "kangax-es2022": 0.2381,
       "kangax-es2023": 1.0,
@@ -8533,7 +8533,7 @@
       "kangax-intl": 0.25,
       "kangax-next": 0.0606,
       "es1-es5": 0.9738,
-      "kangax-es2016plus": 0.5414
+      "kangax-es2016plus": 0.5811
     }
   },
   {
@@ -8783,25 +8783,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.8333,
-      "es3": 0.7027,
-      "es5": 0.1892,
-      "kangax-es5": 0.2997,
-      "kangax-es6": 0.2629,
+      "es1": 0.8434,
+      "es3": 0.7297,
+      "es5": 0.2838,
+      "kangax-es5": 0.3289,
+      "kangax-es6": 0.269,
       "kangax-es2016": 0.1667,
       "kangax-es2017": 0.3,
       "kangax-es2018": 0.4561,
-      "kangax-es2019": 0.5833,
+      "kangax-es2019": 0.7083,
       "kangax-es2020": 0.5143,
-      "kangax-es2021": 0.2143,
+      "kangax-es2021": 0.2302,
       "kangax-es2022": 0.121,
       "kangax-es2023": 0.6286,
       "kangax-es2024": 0.2041,
       "kangax-es2025": 0.5263,
       "kangax-intl": 0.5,
       "kangax-next": 0.0808,
-      "es1-es5": 0.6738,
-      "kangax-es2016plus": 0.3619
+      "es1-es5": 0.7048,
+      "kangax-es2016plus": 0.3766
     }
   },
   {
@@ -9095,7 +9095,7 @@
     "conformance": {
       "es1": 0.9293,
       "es3": 0.7703,
-      "es5": 0.7432,
+      "es5": 0.7568,
       "kangax-es5": 0.7995,
       "kangax-es6": 0.0304,
       "kangax-es2016": 0.0,
@@ -9110,7 +9110,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.8405,
+      "es1-es5": 0.8429,
       "kangax-es2016plus": 0.0257
     }
   },
@@ -10031,25 +10031,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.9444,
+      "es1": 0.9596,
       "es3": 0.9932,
       "es5": 0.7973,
       "kangax-es5": 0.909,
-      "kangax-es6": 0.8263,
+      "kangax-es6": 0.8277,
       "kangax-es2016": 0.8485,
       "kangax-es2017": 0.87,
       "kangax-es2018": 0.9895,
-      "kangax-es2019": 0.6429,
+      "kangax-es2019": 0.8304,
       "kangax-es2020": 0.8857,
       "kangax-es2021": 0.4286,
-      "kangax-es2022": 0.8563,
+      "kangax-es2022": 0.898,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.7143,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
-      "kangax-next": 0.2035,
-      "es1-es5": 0.9357,
-      "kangax-es2016plus": 0.8315
+      "kangax-next": 0.2641,
+      "es1-es5": 0.9429,
+      "kangax-es2016plus": 0.8704
     }
   },
   {
@@ -10125,7 +10125,7 @@
     "conformance": {
       "es1": 0.803,
       "es3": 0.6419,
-      "es5": 0.4865,
+      "es5": 0.5,
       "kangax-es5": 0.636,
       "kangax-es6": 0.2793,
       "kangax-es2016": 0.0909,
@@ -10140,7 +10140,7 @@
       "kangax-es2025": 0.0526,
       "kangax-intl": 0.0357,
       "kangax-next": 0.0,
-      "es1-es5": 0.6905,
+      "es1-es5": 0.6929,
       "kangax-es2016plus": 0.1462
     }
   },
@@ -10289,25 +10289,25 @@
       }
     ],
     "conformance": {
-      "es1": 0.3687,
-      "es3": 0.277,
-      "es5": 0.3784,
-      "kangax-es5": 0.5931,
-      "kangax-es6": 0.3342,
-      "kangax-es2016": 0.197,
-      "kangax-es2017": 0.26,
+      "es1": 0.601,
+      "es3": 0.5473,
+      "es5": 0.4865,
+      "kangax-es5": 0.6481,
+      "kangax-es6": 0.429,
+      "kangax-es2016": 0.4394,
+      "kangax-es2017": 0.36,
       "kangax-es2018": 0.3158,
-      "kangax-es2019": 0.3958,
+      "kangax-es2019": 0.4375,
       "kangax-es2020": 0.7143,
       "kangax-es2021": 0.1984,
-      "kangax-es2022": 0.121,
+      "kangax-es2022": 0.57,
       "kangax-es2023": 0.6286,
       "kangax-es2024": 0.1429,
       "kangax-es2025": 0.0,
       "kangax-intl": 0.0,
       "kangax-next": 0.0,
-      "es1-es5": 0.3381,
-      "kangax-es2016plus": 0.268
+      "es1-es5": 0.5619,
+      "kangax-es2016plus": 0.369
     }
   },
   {
@@ -10544,10 +10544,10 @@
       }
     ],
     "conformance": {
-      "es1": 0.2929,
-      "es3": 0.4595,
-      "es5": 0.4189,
-      "es1-es5": 0.3738
+      "es1": 0.5303,
+      "es3": 0.5473,
+      "es5": 0.4595,
+      "es1-es5": 0.5238
     }
   },
   {
@@ -11114,7 +11114,7 @@
   {
     "id": "wasmnizer-ts",
     "title": "wasmnizer-ts",
-    "summary": "Compiler for a TypeScript subset targetting WebAssembly.",
+    "summary": "Compiler for a TypeScript subset targeting WebAssembly.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/wasmnizer-ts/README.md",
     "repository": "https://github.com/web-devkits/Wasmnizer-ts.git",
     "loc": 54506,
@@ -11365,21 +11365,21 @@
       "es3": 0.9932,
       "es5": 0.9865,
       "kangax-es5": 0.9908,
-      "kangax-es6": 0.9779,
+      "kangax-es6": 0.9799,
       "kangax-es2016": 1.0,
       "kangax-es2017": 0.94,
-      "kangax-es2018": 0.9895,
+      "kangax-es2018": 1.0,
       "kangax-es2019": 0.8929,
       "kangax-es2020": 1.0,
       "kangax-es2021": 1.0,
       "kangax-es2022": 1.0,
       "kangax-es2023": 1.0,
-      "kangax-es2024": 0.9592,
+      "kangax-es2024": 1.0,
       "kangax-es2025": 1.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.303,
       "es1-es5": 0.9952,
-      "kangax-es2016plus": 0.9755
+      "kangax-es2016plus": 0.9787
     }
   },
   {
@@ -11438,7 +11438,7 @@
   {
     "id": "yantra",
     "title": "Yantra",
-    "summary": "JavaScript engine for .NET. Tree walking interpreter + expression compiler to .NET IL.",
+    "summary": "JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .NET IL.",
     "jsz_url": "https://github.com/ivankra/javascript-zoo/blob/master/engines/yantra/README.md",
     "repository": "https://github.com/yantrajs/yantra.git",
     "loc": 54959,
@@ -11582,7 +11582,7 @@
       "es3": 0.9189,
       "es5": 0.6892,
       "kangax-es5": 0.8676,
-      "kangax-es6": 0.6419,
+      "kangax-es6": 0.6426,
       "kangax-es2016": 0.8182,
       "kangax-es2017": 0.5837,
       "kangax-es2018": 0.6281,
@@ -11635,10 +11635,10 @@
       }
     ],
     "conformance": {
-      "es1": 0.0,
+      "es1": 0.0101,
       "es3": 0.0,
       "es5": 0.0,
-      "es1-es5": 0.0
+      "es1-es5": 0.0048
     }
   },
   {
@@ -11679,7 +11679,7 @@
     ],
     "conformance": {
       "es1": 0.6818,
-      "es3": 0.3446,
+      "es3": 0.3378,
       "es5": 0.473,
       "kangax-es5": 0.836,
       "kangax-es6": 0.0097,
@@ -11695,7 +11695,7 @@
       "kangax-es2025": 0.0,
       "kangax-intl": 0.25,
       "kangax-next": 0.0,
-      "es1-es5": 0.5262,
+      "es1-es5": 0.5238,
       "kangax-es2016plus": 0.0124
     }
   }
