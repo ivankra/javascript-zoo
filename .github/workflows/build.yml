@@ -174,8 +174,7 @@ jobs:
             || (sleep 15 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }}) \
             || (sleep 30 && gh release edit ${{ needs.init.outputs.build_date }} --draft=false --repo ${{ github.repository }})
 
-  # Creates docker hub image with all built binaries
-  # Must be done after release is published: hub.Dockerfile checks out repo at BUILD_DATE tag.
+  # Create and push Docker Hub image from the latest GitHub release.
   hub:
     needs: [init, publish]
     runs-on: ubuntu-24.04
@@ -185,43 +184,18 @@ jobs:
       - uses: docker/setup-qemu-action@v3
       - uses: docker/setup-buildx-action@v3
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
 
-      - name: Download engine artifacts
-        run: |
-          gh release download ${{ needs.init.outputs.build_date }} --dir artifacts/ --repo ${{ github.repository }}
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
 
-      - name: Repack artifacts into a single tarball for each arch
-        run: |
-          mkdir -p dist/amd64 dist/arm64
-          for f in artifacts/*.tar.zst; do
-            arch=$(echo "$f" | sed -E 's/.*\.(amd64|arm64)\..*/\1/')
-            tar xf "$f" -C dist/${arch}/
-          done
-          for arch in amd64 arm64; do
-            (cd dist/${arch} && (for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST)
-            (cd dist && tar --owner=root --group=root -c ${arch}) > dist/${arch}.tar
-          done
+      - name: Build and push ghcr.io/ivankra/javascript-zoo/hub
+        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub ${{ needs.init.outputs.build_date }}
 
-      - name: Build and push jsz-runtime
-        run: |
-          BUILD_DATE=${{ needs.init.outputs.build_date }}
-          docker buildx build --platform linux/amd64,linux/arm64 --push \
-            -t ghcr.io/ivankra/javascript-zoo/jsz-runtime:${BUILD_DATE} \
-            -t ghcr.io/ivankra/javascript-zoo/jsz-runtime:latest \
-            -f build/jsz-runtime.Dockerfile .
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u ivankra --password-stdin
 
-      - name: Build and push jsz-hub
-        run: |
-          BUILD_DATE=${{ needs.init.outputs.build_date }}
-          docker buildx build --platform linux/amd64,linux/arm64 --push \
-            -t ghcr.io/ivankra/javascript-zoo/jsz-hub:${BUILD_DATE} \
-            -t ghcr.io/ivankra/javascript-zoo/jsz-hub:latest \
-            --build-arg BASE=ghcr.io/ivankra/javascript-zoo/jsz-runtime:${BUILD_DATE} \
-            --build-arg REV=${BUILD_DATE} \
-            -f build/hub.Dockerfile .
+      - name: Build and push docker.io/ivankra/javascript-zoo
+        run: build/hub.sh docker.io/ivankra/javascript-zoo ${{ needs.init.outputs.build_date }}

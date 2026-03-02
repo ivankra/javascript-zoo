@@ -1,0 +1,38 @@
+# Builds and pushes Docker Hub image from the latest published GitHub release.
+#
+# SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
+# SPDX-License-Identifier: MIT
+
+name: Hub
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  hub:
+    runs-on: ubuntu-24.04
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - name: Build and push ghcr.io/ivankra/javascript-zoo/hub from latest release
+        run: build/hub.sh ghcr.io/ivankra/javascript-zoo/hub
+
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login docker.io -u ivankra --password-stdin
+
+      - name: Build and push docker.io/ivankra/javascript-zoo from latest release
+        run: build/hub.sh docker.io/ivankra/javascript-zoo

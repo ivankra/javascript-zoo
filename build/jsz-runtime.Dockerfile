@@ -55,7 +55,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         unzip \
         vim \
         wget \
-        xz-utils && \
+        xz-utils \
+        zstd && \
     # luajit/lua5.1 for castl \
     (apt-get install -y luajit || apt-get install -y lua5.1) && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
@@ -121,5 +122,5 @@ RUN if [ `uname -m` = x86_64 ]; then \
       wineserver --wait; \
     fi
 
-ARG TARGETARCH=
+ARG TARGETARCH
 RUN ln -s zoo/bench /bench && ln -s zoo/dist/"$TARGETARCH" /dist
