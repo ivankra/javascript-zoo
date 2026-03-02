@@ -8,7 +8,7 @@ import TableView from './TableView.vue';
 import * as tableState from './tableState';
 import MarkdownModal from './MarkdownModal.vue';
 import ColumnsModal from './ColumnsModal.vue';
-import { enginesData, getMarkdownPage, hasMarkdownPage } from './data';
+import { enginesData, getMarkdownEntry, hasMarkdownPage } from './data';
 import type { EngineEntry } from './data';
 
 const state = reactive(tableState.createInitialState());
@@ -16,7 +16,7 @@ const darkTheme = ref(false);
 const columnsModalOpen = ref(false);
 const markdownModalOpen = ref(false);
 const markdownPage = ref<string | null>(null);
-const markdownPageText = computed(() => getMarkdownPage(markdownPage.value));
+const markdownEntry = computed(() => getMarkdownEntry(markdownPage.value));
 const engines = ref(enginesData as EngineEntry[]);
 const hydrated = ref(false);
 const tableViewRef = ref<{ exportCsv: () => void } | null>(null);
@@ -168,9 +168,11 @@ watch(
       />
     </section>
     <MarkdownModal
-      v-if="markdownModalOpen && markdownPage && hasMarkdownPage(markdownPage)"
+      v-if="markdownModalOpen && markdownPage && markdownEntry"
       :engine-id="markdownPage"
-      :markdown="markdownPageText"
+      :markdown="markdownEntry?.body ?? ''"
+      :markdown-url="markdownEntry?.url ?? ''"
+      :title="markdownEntry?.title ?? ''"
       @close="closeEngine"
       @open-engine="openEngine"
     />

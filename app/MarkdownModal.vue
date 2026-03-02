@@ -7,82 +7,41 @@ import MarkdownIt from 'markdown-it';
 import githubSvg from './github.svg?raw';
 import Modal from './Modal.vue';
 import { buildPageHash } from './tableState';
+import { markdownUrlIndex } from './data';
 
-const props = defineProps<{ engineId: string; markdown: string }>();
+const props = defineProps<{ engineId: string; markdown: string; markdownUrl: string; title: string }>();
 const emit = defineEmits<{
   (event: 'close'): void;
   (event: 'open-engine', id: string): void;
 }>();
 
-const markdownBase = 'https://github.com/ivankra/javascript-zoo/blob/master/engines/';
 const markdown = new MarkdownIt({ html: true, linkify: true });
-const defaultLinkOpen = markdown.renderer.rules.link_open ?? ((tokens, idx, options, _env, self) => {
-  return self.renderToken(tokens, idx, options);
-});
 
-markdown.renderer.rules.link_open = (tokens, idx, options, env, self) => {
-  const token = tokens[idx];
-  const href = token.attrGet('href') ?? '';
-  const rawHref = href.trim();
-  const isRelative = rawHref !== '' && !/^[a-zA-Z][a-zA-Z\d+.-]*:/.test(rawHref) && !rawHref.startsWith('/');
-  if (isRelative) {
-    const engineMatch = rawHref.match(/^([^/]+)\.md(?:[?#].*)?$/);
-    if (engineMatch) {
-      token.attrSet('data-engine-id', engineMatch[1]);
-      token.attrSet('href', buildPageHash(engineMatch[1]));
-    } else {
-      token.attrSet('href', new URL(rawHref, markdownBase).toString());
-      token.attrSet('target', '_blank');
-      token.attrSet('rel', 'noreferrer');
-    }
-  }
-  return defaultLinkOpen(tokens, idx, options, env, self);
-};
-
-const modalTitle = computed(() => {
-  const firstLine = (props.markdown ?? '').split(/\r?\n/, 1)[0] ?? '';
-  const match = firstLine.match(/^\s*#\s+(.+?)\s*$/);
-  if (match) {
-    return match[1];
-  }
-  return props.engineId || 'Engine details';
-});
-const engineLink = computed(() => {
-  if (!props.engineId) {
-    return '#';
-  }
-  return `https://github.com/ivankra/javascript-zoo/blob/master/engines/${props.engineId}.md`;
-});
+const modalTitle = computed(() => props.title || props.engineId || 'Engine details');
+const engineLink = computed(() => props.markdownUrl || '#');
 
 const renderedMarkdown = computed(() => {
   const html = markdown.render(props.markdown ?? '');
-  const stripped = html.replace(/<h1[^>]*>[\s\S]*?<\/h1>/i, '');
   if (typeof window === 'undefined' || typeof DOMParser === 'undefined') {
-    return stripped;
+    return html;
   }
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(stripped, 'text/html');
-  const links = Array.from(doc.querySelectorAll('a[href]'));
-  for (const link of links) {
+  const baseUrl = props.markdownUrl.substring(0, props.markdownUrl.lastIndexOf('/') + 1);
+  if (!baseUrl) return html;
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  for (const link of Array.from(doc.querySelectorAll('a[href]'))) {
     const rawHref = (link.getAttribute('href') ?? '').trim();
-    if (!rawHref) {
-      continue;
-    }
+    if (!rawHref || rawHref.startsWith('#')) continue;
     const isRelative = !/^[a-zA-Z][a-zA-Z\d+.-]*:/.test(rawHref) && !rawHref.startsWith('/');
-    if (!isRelative) {
-      continue;
-    }
-    if (rawHref.startsWith('#') || link.hasAttribute('data-engine-id')) {
-      continue;
-    }
-    const engineMatch = rawHref.match(/^([^/]+)\.md(?:[?#].*)?$/);
-    if (engineMatch) {
-      link.setAttribute('data-engine-id', engineMatch[1]);
-      link.setAttribute('href', buildPageHash(engineMatch[1]));
+    if (!isRelative) continue;
+    const absUrl = new URL(rawHref, baseUrl).href;
+    const pageId = markdownUrlIndex[absUrl.split('#')[0]];
+    if (pageId) {
+      link.setAttribute('data-engine-id', pageId);
+      link.setAttribute('href', buildPageHash(pageId));
       link.removeAttribute('target');
       link.removeAttribute('rel');
     } else {
-      link.setAttribute('href', new URL(rawHref, markdownBase).toString());
+      link.setAttribute('href', absUrl);
       link.setAttribute('target', '_blank');
       link.setAttribute('rel', 'noreferrer');
     }

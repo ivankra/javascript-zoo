@@ -7,6 +7,7 @@ GITHUB_TOKEN := $(shell cat ~/.iac/github-public-token.txt 2>/dev/null || true)
 
 data:
 	./update.py --format-markdown $(if $(GITHUB_TOKEN),--github="$(GITHUB_TOKEN)")
+	./build/gen-markdown-json.py
 
 node_modules:
 	npm install

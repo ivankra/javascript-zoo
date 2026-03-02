@@ -6,22 +6,25 @@ import type { TableState } from './tableState';
 import enginesJson from '../dist/engines.json';
 import markdownJson from '../dist/markdown.json';
 
-export const enginesData = enginesJson as EngineEntry[];
-export const markdownData = markdownJson as Record<string, string>;
+export interface MarkdownEntry {
+  url: string;
+  title: string;
+  body: string;
+}
 
-export function getMarkdownPage(page: string | null | undefined): string {
-  if (!page) {
-    return '';
-  }
-  const trimmed = page.trim().replace(/^engines\//, '');
-  if (!trimmed) {
-    return '';
-  }
-  return markdownData[`engines/${trimmed}.md`] ?? '';
+export const enginesData = enginesJson as EngineEntry[];
+export const markdownData = markdownJson as Record<string, MarkdownEntry>;
+export const markdownUrlIndex: Record<string, string> = Object.fromEntries(
+  Object.entries(markdownData).map(([id, entry]) => [entry.url, id]),
+);
+
+export function getMarkdownEntry(page: string | null | undefined): MarkdownEntry | null {
+  if (!page) return null;
+  return markdownData[page.trim()] ?? null;
 }
 
 export function hasMarkdownPage(page: string | null | undefined): boolean {
-  return Boolean(getMarkdownPage(page));
+  return Boolean(getMarkdownEntry(page));
 }
 
 export interface BenchRow {

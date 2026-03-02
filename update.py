@@ -2,7 +2,7 @@
 #
 # - Parses engines/*/*.md, parsers/*/*.md files, extracting structured metadata
 # - Merges with other data sources: build, benchmarking, conformance, github data
-# - Updates dist/engines.json and dist/markdown.json
+# - Updates dist/engines.json
 # - Updates *.md files:
 #   - Sorts/aligns metadata list
 #   - Updates <span class="shields">...</span> blocks
@@ -51,7 +51,6 @@ def main():
 
     conformance_data = parse_conformance_data()
     engines_data = do_engine_data(args, 'engine', 'engines/**/*.md', 'dist/engines.json', conformance_data)
-    write_markdown_json('engines/**/*.md', 'dist/markdown.json')
     parsers_data = do_engine_data(args, 'parser', 'parsers/**/*.md', None, conformance_data)
 
     # Update files with dynamically-generated index tables
@@ -315,18 +314,6 @@ def do_engine_data(args, kind, md_glob, json_file, conformance_data):
             json.dump(rows, fp, ensure_ascii=False, indent=2, sort_keys=False)
 
     return rows
-
-def write_markdown_json(md_glob, out_file):
-    markdown_map = {}
-    for filename in sorted(glob.glob(md_glob, recursive=True)):
-        rel_path = os.path.relpath(filename).replace(os.sep, '/')
-        if rel_path in ['README.md', 'engines/README.md', 'parsers/README.md'] or os.path.basename(filename) == 'index.md':
-            continue
-        with open(filename, 'r', encoding='utf-8') as md_file:
-            markdown_map[rel_path] = md_file.read()
-    os.makedirs(os.path.dirname(out_file), exist_ok=True)
-    with open(out_file, 'w', encoding='utf-8') as fp:
-        json.dump(markdown_map, fp, ensure_ascii=False, indent=2, sort_keys=True)
 
 def strip_markdown_links(text):
     return re.sub(r'\[([^\]]+)\]\([^\)]+\)', r'\1', text).strip()

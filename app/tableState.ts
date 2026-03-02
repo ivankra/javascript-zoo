@@ -216,7 +216,7 @@ export function buildHash(page: string | null, params: URLSearchParams): string 
   const paramsString = params.toString();
   const segments: string[] = [];
   if (page) {
-    segments.push(encodeURIComponent(page));
+    segments.push(encodeURIComponent(page).replace(/%2F/gi, '/'));
   }
   if (paramsString) {
     segments.push(paramsString);
