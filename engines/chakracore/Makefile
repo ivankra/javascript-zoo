@@ -4,7 +4,9 @@
 include ../../build/build.mk
 
 CONFORMANCE_BINARY = chakracore_intl
-SUPPORTED_ARCHS = amd64 arm64
+
+# https://github.com/chakra-core/ChakraCore/blob/master/CMakeLists.txt#L55
+SUPPORTED_ARCHS = amd64 arm64 arm 386
 JIT_ARCHS = amd64
 
 ifeq ($(filter $(DOCKER_ARCH),$(JIT_ARCHS)),$(DOCKER_ARCH))

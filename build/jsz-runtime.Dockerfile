@@ -6,21 +6,19 @@
 ARG BASE=debian:stable
 FROM $BASE AS jsz-runtime
 
-# gcc: for rpython-langjs
-# luajit: for castl
-# moreutils: ts, for benchmarking
-# procps: top
-# psmisc: killall
-# python3-scipy: for benchmarking
-# ruby: for twostroke
-# time: /usr/bin/time, for benchmarking
-
 RUN export DEBIAN_FRONTEND=noninteractive && \
+    # jdk for loong64 is in debports \
+    if [ "$(dpkg --print-architecture)" = "loong64" ]; then \
+      apt-get update -y && \
+      apt-get install -y --no-install-recommends debian-ports-archive-keyring && \
+      echo "deb http://deb.debian.org/debian-ports unstable main" >/etc/apt/sources.list.d/debian-ports.list; \
+    fi && \
     apt-get update -y && \
     apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
         findutils \
+        # gcc: for rpython-langjs \
         gcc \
         gdb \
         git \
@@ -35,30 +33,36 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         locales \
         lsb-release \
         make \
+        # moreutils: /usr/bin/ts for benchmarking \
         moreutils \
-        openjdk-25-jdk-headless \
+        openjdk-25-jre-headless \
+        # procps: /usr/bin/top \
         procps \
+        # psmisc: /usr/bin/killall \
         psmisc \
         python3 \
         python3-requests \
+        # python3-scipy: for benchmarking \
         python3-scipy \
         ripgrep \
+        # ruby: for twostroke \
         ruby \
         strace \
         sudo \
         tar \
+        # time: /usr/bin/time, for benchmarking \
         time \
         unzip \
         vim \
         wget \
         xz-utils && \
+    # luajit/lua5.1 for castl \
+    (apt-get install -y luajit || apt-get install -y lua5.1) && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
     locale-gen
 
-# LuaJIT / Lua 5.1 for castl
-RUN apt-get install -y luajit || apt-get install -y lua5.1
-
-ENV LC_ALL=en_US.UTF-8 \
+ENV DEBIAN_FRONTEND=noninteractive \
+    LC_ALL=en_US.UTF-8 \
     SHELL=/bin/bash \
     PATH=/bench:/opt/node/bin:$PATH
 
@@ -117,5 +121,5 @@ RUN if [ `uname -m` = x86_64 ]; then \
       wineserver --wait; \
     fi
 
-RUN ln -s zoo/bench /bench && \
-    ln -s zoo/dist/"$(uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')" /dist
+ARG TARGETARCH=
+RUN ln -s zoo/bench /bench && ln -s zoo/dist/"$TARGETARCH" /dist

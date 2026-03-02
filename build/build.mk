@@ -2,9 +2,11 @@
 # SPDX-License-Identifier: MIT
 
 SHELL := /bin/bash
-
 DOCKER ?= $(shell command -v podman container 2>/dev/null || echo docker)
-DOCKER_ARCH ?= $(shell uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')
+
+# GOARCH id (https://go.dev/doc/install/source#environment)
+# Keep in sync with build.sh/dist.sh
+DOCKER_ARCH ?= $(shell uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/; s/armv7l/arm/; s/i686/386/; s/loongarch64/loong64/')
 
 ROOT_DIR := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))/..)
 IID_DIR := $(ROOT_DIR)/.cache/iid/$(DOCKER_ARCH)
@@ -44,27 +46,13 @@ $(1)\
 )
 endef
 
-# Rules for an engine when DOCKER_ARCH is not in SUPPORTED_ARCHS.
-define unsupported_arch
-all: arch-skip
-
-$(if $(UNSUPPORTED_ARCH_RULE_DEFINED),,\
-UNSUPPORTED_ARCH_RULE_DEFINED := 1
-arch-skip:
-	@echo "$(PROJECT): $(DOCKER_ARCH) is not supported"
-	@echo "Build with 'DOCKER_ARCH=<arch> make', supported arch(s): $(SUPPORTED_ARCHS)"
-
-.PHONY: all arch-skip
-)
-endef
-
 # Build rules for engines.
 # $(1): build id, either $(PROJECT) or $(PROJECT)_<suffix>
 # $(2): Dockerfile path relative to leaf dir
 # $(3): extra docker build args (optional)
 define build_engine
 $(if $(or $(filter $(PROJECT),$(1)),$(filter $(PROJECT)_%,$(1))),,$(error build_engine id "$(1)" must be "$(PROJECT)" or "$(PROJECT)_<suffix>" in $(CURDIR)))
-$(if $(and $(strip $(SUPPORTED_ARCHS)),$(if $(filter $(DOCKER_ARCH),$(SUPPORTED_ARCHS)),,1)),$(call unsupported_arch,$(1)),
+$(if $(and $(strip $(SUPPORTED_ARCHS)),$(if $(filter $(DOCKER_ARCH),$(SUPPORTED_ARCHS)),,1)),$(error $(DOCKER_ARCH) is not supported. Build with 'DOCKER_ARCH=<arch> make' for: $(SUPPORTED_ARCHS)),
 # Default build target, build+dist. Aggregates across all build_engine invocations.
 all: $(1)
 

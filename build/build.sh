@@ -243,7 +243,7 @@ if [[ ! -f "$DOCKERFILE" ]]; then
 fi
 
 if [[ -z "${DOCKER_ARCH:-}" ]]; then
-  DOCKER_ARCH="$(uname -m | sed 's/aarch64/arm64/; s/x86_64/amd64/')"
+  DOCKER_ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/; s/armv7l/arm/; s/i686/386/; s/loongarch64/loong64/')
 fi
 
 IID_DIR="$ROOT_DIR/.cache/iid/$DOCKER_ARCH"

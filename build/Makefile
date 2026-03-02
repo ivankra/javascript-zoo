@@ -3,9 +3,14 @@
 
 include build.mk
 
+ifeq ($(DOCKER_ARCH),loong64)
+$(eval $(call build_base,jsz-runtime,jsz-runtime.Dockerfile,--build-arg BASE=ghcr.io/loong64/debian:unstable))
+$(eval $(call build_base,jsz-debian,jsz-debian.Dockerfile,--build-arg BASE=ghcr.io/loong64/debian:unstable))
+else
 $(eval $(call build_base,jsz-runtime,jsz-runtime.Dockerfile,))
-
 $(eval $(call build_base,jsz-debian,jsz-debian.Dockerfile,))
+endif
+
 $(eval $(call build_base,jsz-golang,jsz-golang.Dockerfile,))
 $(eval $(call build_base,jsz-node,jsz-node.Dockerfile,))
 $(eval $(call build_base,jsz-rust,jsz-rust.Dockerfile,))

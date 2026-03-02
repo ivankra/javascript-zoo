@@ -8,6 +8,13 @@ FROM $BASE
 
 ARG VER=25
 
+# jdk for loong64 is in debports
+RUN if [ "$(dpkg --print-architecture)" = "loong64" ]; then \
+      apt-get update -y && \
+      apt-get install -y --no-install-recommends debian-ports-archive-keyring && \
+      echo "deb http://deb.debian.org/debian-ports unstable main" >/etc/apt/sources.list.d/debian-ports.list; \
+    fi
+
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         openjdk-$VER-jdk-headless \

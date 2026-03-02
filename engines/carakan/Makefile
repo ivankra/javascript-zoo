@@ -3,7 +3,7 @@
 
 include ../../build/build.mk
 
-SUPPORTED_ARCHS = amd64
+SUPPORTED_ARCHS = amd64 arm
 
 ifneq ($(strip $(REPO)),)
 $(eval $(call build_engine,carakan,Dockerfile))

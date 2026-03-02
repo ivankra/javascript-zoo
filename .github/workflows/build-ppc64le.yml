@@ -1,4 +1,5 @@
-# Builds all engines for DOCKER_ARCH=ppc64le (experimental)
+# Builds all engines for DOCKER_ARCH=ppc64le (PowerPC).
+# Experimental workflow, triggered manually.
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT

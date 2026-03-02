@@ -1,13 +1,13 @@
-# Builds all engines for DOCKER_ARCH=riscv64.
+# Builds all engines for DOCKER_ARCH=loong64 (LoongArch64)
 # Experimental workflow, triggered manually.
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-name: Build (riscv64)
+name: Build (loong64)
 
 env:
-  DOCKER_ARCH: riscv64
+  DOCKER_ARCH: loong64
 
 on:
   workflow_dispatch:

@@ -8,7 +8,8 @@ FROM $BASE
 
 ARG VER=0.15.2
 
-RUN export ZIG_ARCH=$(uname -m | sed 's/ppc64le/powerpc64le/; s/i686/x86/'); \
+# https://ziglang.org/download/
+RUN export ZIG_ARCH=$(uname -m | sed 's/ppc64le/powerpc64le/; s/i686/x86/; s/armv7l/arm/'); \
     cd /opt && \
     wget -O zig.tar.xz "https://ziglang.org/download/$VER/zig-${ZIG_ARCH}-linux-$VER.tar.xz" && \
     tar vxf zig.tar.xz && \

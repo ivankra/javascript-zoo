@@ -53,9 +53,12 @@ qjs >
 
 ## Cross-arch builds
 
-Set `DOCKER_ARCH` environment variable. `amd64` and `arm64` are fully supported and tested; `riscv64`, `ppc64le`, `s390x` and `386` should mostly work.
+Set `DOCKER_ARCH` environment variable to a [GOARCH](https://go.dev/doc/install/source#environment) id.
+`amd64` and `arm64` are fully supported and tested.
+Other official [Debian architectures](https://www.debian.org/ports/) should mostly work:
+`arm`, `386`, `loong64`, `ppc64le`, `riscv64`, `s390x`.
 
-It should work out of the box with Apple's containerization; on Linux, podman needs extra qemu binaries.
+It should work out of the box with Apple's containerization; on Linux, podman needs extra qemu binaries:
 
 ```sh
 $ sudo apt install qemu-user-static
