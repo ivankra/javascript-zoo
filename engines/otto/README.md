@@ -21,13 +21,13 @@ which started out by forking otto's parser.
 
 <details><summary>ES1-ES5: 91%</summary><ul>
 <li>ES1: 99%, <b>1 crash</b><pre>
-<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x358 panic({0x260700?, 0x4aef60?}) /usr/local/go/src/runtime/panic.go:783 +0x120 github.com/robertkrimen/otto.catchPanic(0x400022bdd8?)
+<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x350 panic({0x2519a0?, 0x4af1e0?}) /usr/local/go/src/runtime/panic.go:860 +0x12c github.com/robertkrimen/otto.catchPanic(0xa1c4ce91dd0?)
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
 </pre></li>
 <li>ES3: 91%<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential(2) failed; negative number failed; zero failed; Infinity failed; small number failed
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
-<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: toExponential(Infinity) does not throw RangeError
+<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: timeout
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: Infinity failed; small number exponential notation failed; zero failed; large number exponential notation failed
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $nn 10 captures failed; $nn reverse order failed

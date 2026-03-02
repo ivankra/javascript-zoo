@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 23521262, "dotnet": "10.0.102", "engine": "yantra", "repository": "https://github.com/yantrajs/yantra.git", "revision": "afb4a5d188a2461aee959891eab7f958279b1115", "revision_date": "2026-01-18", "version": "1.2.301"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 23521106, "engine": "yantra", "repository": "https://github.com/yantrajs/yantra.git", "revision": "afb4a5d188a2461aee959891eab7f958279b1115", "revision_date": "2026-01-18", "version": "1.2.301"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -115,7 +115,7 @@ es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method getYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time) TypeError: Method getYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
 es1/annex-b.Date.prototype.setYear.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method setYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time) TypeError: Method setYear not found in Sat Jan 01 2000 00:00:00 GMT+0000 (Coordinated Universal Time)
-es1/annex-b.Date.prototype.toGMTString.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method toGMTString not found in Wed Feb 11 2026 16:22:17 GMT+0000 (Coordinated Universal Time) TypeError: Method toGMTString not found in Wed Feb 11 2026 16:22:17 GMT+0000 (Coordinated Universal Time)
+es1/annex-b.Date.prototype.toGMTString.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Method toGMTString not found in Mon Mar 02 2026 13:13:33 GMT+0000 (Coordinated Universal Time) TypeError: Method toGMTString not found in Mon Mar 02 2026 13:13:33 GMT+0000 (Coordinated Universal Time)
 es1/annex-b.global.escape.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: undefined is not a function TypeError: undefined is not a function
 es1/annex-b.global.unescape.js: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: undefined is not a function TypeError: undefined is not a function
 es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
@@ -1262,8 +1262,8 @@ kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: OK
 kangax-es2017/async.no-prototype.js: failed
 kangax-es2017/async.prototype-chain.js: failed
-kangax-es2017/async.return.js: OK; TypeError: undefined is not iterable
-kangax-es2017/async.throw.js: TypeError: undefined is not iterablekangax-es2017/async.throw.js: OK
+kangax-es2017/async.return.js: TypeError: undefined is not iterablekangax-es2017/async.return.js: OK
+kangax-es2017/async.throw.js: TypeError: undefined is not iterable; OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
 kangax-es2017/regex.flags.u.case-folding.js: failed
 kangax-es2017/trailing-comma.arguments.js: OK

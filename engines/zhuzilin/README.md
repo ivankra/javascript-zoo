@@ -12,7 +12,7 @@ JavaScript interpreter written in C++.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 53%</summary><ul>
+<details><summary>ES1-ES5: 52%</summary><ul>
 <li>ES1: 68%, <b>49 crashes</b><pre>
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:46: static es::Handle&lt;es::JSValue&gt; es::ArrayProto::reverse(es::Handle&lt;es::Error&gt;&amp;, es::Handle&lt;es::JSValue&gt;, std::vector&lt;es::Handle&lt;es::JSValue&gt; &gt;): Assertion `false' failed.
 <a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: crashed (signal 6); zhuzilin: ./es/types/builtin/array_object.h:46: static es::Handle&lt;es::JSValue&gt; es::ArrayProto::reverse(es::Handle&lt;es::Error&gt;&amp;, es::Handle&lt;es::JSValue&gt;, std::vector&lt;es::Handle&lt;es::JSValue&gt; &gt;): Assertion `false' failed.
@@ -37,12 +37,12 @@ JavaScript interpreter written in C++.
 <a href="../../conformance/es1/Date.prototype.getUTCMinutes.js">Date.prototype.getUTCMinutes.js</a>: crashed (signal 6); zhuzilin: ./es/types/builtin/date_object.h:230: static es::Handle&lt;es::JSValue&gt; es::DateConstructor::UTC(es::Handle&lt;es::Error&gt;&amp;, es::Handle&lt;es::JSValue&gt;, std::vector&lt;es::Handle&lt;es::JSValue&gt; &gt;): Assertion `false' failed.
 ...
 </pre></li>
-<li>ES3: 34%, <b>77 crashes</b></li>
+<li>ES3: 34%, <b>78 crashes</b></li>
 <li>ES5: 47%, <b>26 crashes</b></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 1%, ES2016+ 1%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 1%, <b>30 crashes</b></li>
+<li>ES6: 1%, <b>31 crashes</b></li>
 <li>ES2016: 0%</li>
 <li>ES2017: 4%, <b>1 crash</b></li>
 <li>ES2018: 0%, <b>4 crashes</b></li>
@@ -57,4 +57,4 @@ JavaScript interpreter written in C++.
 <li>Intl: 25%</li>
 </ul></details>
 
-💥 **206 crashes during testing**
+💥 **208 crashes during testing**

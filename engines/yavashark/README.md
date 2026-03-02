@@ -126,7 +126,7 @@ JavaScript/TypeScript engine written in Rust.
 ...
 </pre></li>
 <li>ES2018: 63%<pre>
-<a href="../../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (2889976) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
+<a href="../../conformance/kangax-es2018/Promise.prototype.finally.js">Promise.prototype.finally.js</a>: thread 'main' (4001988) panicked at crates/yavashark_env/src/builtins/promise.rs:33:1:
 <a href="../../conformance/kangax-es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../../conformance/kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js">misc.Proxy-ownKeys-duplicate-keys.js</a>: failed

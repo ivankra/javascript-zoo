@@ -407,7 +407,7 @@ es5/strict.no-assignment-to-non-writable.js: TypeError: Cannot read properties o
 es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
-es5/strict.no-duplicate-parameters.js: RangeError: Invalid array length at $Error.setCode (/home/ivan/src/zoo/dist/arm64/continuum-dist/continuum.js:18477:19)
+es5/strict.no-duplicate-parameters.js: RangeError: Invalid array length at $Error.setCode (/dist/continuum-dist/continuum.js:18477:19)
 es5/strict.no-eval-or-arguments-assignment.js: failed
 es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: OK
@@ -537,7 +537,7 @@ kangax-es6/Map.constructor-accepts-null.js: Uncaught Exception in Map#constructo
 kangax-es6/Map.constructor-arguments.js: OK
 kangax-es6/Map.constructor-invokes-set.js: OK
 kangax-es6/Map.constructor-requires-new.js: failed
-kangax-es6/Map.iterator-closing.js: Uncaught Exception in Map#constructor at line 129 TypeError: Property '@@@00000002kn0rk2502n884277862' is not a function $Error {
+kangax-es6/Map.iterator-closing.js: Uncaught Exception in Map#constructor at line 129 TypeError: Property '@@@00000002i1mq8t4r3tt242451692' is not a function $Error {
 kangax-es6/Map.iterator-prototype-chain.js: Uncaught Exception in testCode at line 11 ReferenceError: Symbol is not defined $Error { ReferenceError: Symbol is not defined
 kangax-es6/Map.js: OK
 kangax-es6/Map.prototype-not-instance.js: OK
@@ -654,7 +654,7 @@ kangax-es6/Set.constructor-accepts-null.js: Uncaught Exception in ToObject at li
 kangax-es6/Set.constructor-arguments.js: failed
 kangax-es6/Set.constructor-invokes-add.js: failed
 kangax-es6/Set.constructor-requires-new.js: failed
-kangax-es6/Set.iterator-closing.js: Uncaught Exception in Set#constructor at line 122 TypeError: Property '@@@00000002po570wz665438876259' is not a function $Error {
+kangax-es6/Set.iterator-closing.js: Uncaught Exception in Set#constructor at line 122 TypeError: Property '@@@00000002rd369qweccc345192382' is not a function $Error {
 kangax-es6/Set.iterator-prototype-chain.js: Uncaught Exception in testCode at line 11 ReferenceError: Symbol is not defined $Error { ReferenceError: Symbol is not defined
 kangax-es6/Set.js: OK
 kangax-es6/Set.prototype-not-instance.js: OK
@@ -698,7 +698,7 @@ kangax-es6/WeakMap.constructor-arguments.js: failed
 kangax-es6/WeakMap.constructor-invokes-set.js: OK
 kangax-es6/WeakMap.constructor-requires-new.js: failed
 kangax-es6/WeakMap.frozen-keys.js: OK
-kangax-es6/WeakMap.iterator-closing.js: Uncaught Exception in WeakMap#constructor at line 59 TypeError: Property '@@@00000002u68x76ba7ws227421863' is not a function $Error {
+kangax-es6/WeakMap.iterator-closing.js: Uncaught Exception in WeakMap#constructor at line 59 TypeError: Property '@@@000000020zj9dr4ni2jm900393182' is not a function $Error {
 kangax-es6/WeakMap.js: failed
 kangax-es6/WeakMap.no-clear.js: failed
 kangax-es6/WeakMap.prototype-not-instance.js: OK
@@ -880,9 +880,9 @@ kangax-es6/destructuring-params.trailing-comma-object.js: OK
 kangax-es6/for-of.array.js: OK
 kangax-es6/for-of.astral-string.js: TypeError: context.stack[(context.sp - 1)].Iterate is not a function
 kangax-es6/for-of.generator.js: OK
-kangax-es6/for-of.iterable-instance.js: Uncaught Exception in testCode at line 36 TypeError: Property '@@@00000002u2t9xoetby411985095' is not a function $Error { TypeError: Property '@@@00000002u2t9xoetby411985095' is not a function
-kangax-es6/for-of.iterable.js: Uncaught Exception in testCode at line 36 TypeError: Property '@@@000000020sx6nbczgfn307336741' is not a function $Error { TypeError: Property '@@@000000020sx6nbczgfn307336741' is not a function
-kangax-es6/for-of.iterator-closing-break.js: Uncaught Exception in testCode at line 37 TypeError: Property '@@@00000002cjlbdqwu4v565950532' is not a function $Error { TypeError: Property '@@@00000002cjlbdqwu4v565950532' is not a function
+kangax-es6/for-of.iterable-instance.js: Uncaught Exception in testCode at line 36 TypeError: Property '@@@000000022lah3n160oq953005016' is not a function $Error { TypeError: Property '@@@000000022lah3n160oq953005016' is not a function
+kangax-es6/for-of.iterable.js: Uncaught Exception in testCode at line 36 TypeError: Property '@@@00000002ippa0e1y10d223298618' is not a function $Error { TypeError: Property '@@@00000002ippa0e1y10d223298618' is not a function
+kangax-es6/for-of.iterator-closing-break.js: Uncaught Exception in testCode at line 37 TypeError: Property '@@@00000002ivbo9mbg2ep91560553' is not a function $Error { TypeError: Property '@@@00000002ivbo9mbg2ep91560553' is not a function
 kangax-es6/for-of.iterator-closing-throw.js: failed
 kangax-es6/for-of.sparse-array.js: failed
 kangax-es6/for-of.string.js: TypeError: context.stack[(context.sp - 1)].Iterate is not a function

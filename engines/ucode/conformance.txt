@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_size": 269456, "cc": "gcc 15.2.0 (Debian 15.2.0-13)", "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "8bbf01215ce30971eb02eee2250d51e422f700e6", "revision_date": "2025-12-16", "version": "0.0.20250529-78-g8bbf012"}
+Metadata: {"arch": "arm64", "console_log": "print", "dist_size": 820392, "engine": "ucode", "repository": "https://github.com/jow-/ucode.git", "revision": "934bb593dba520e84920865703bd4fe94490d11e", "revision_date": "2026-02-27", "version": "0.0.20250529-106-g934bb59"}
 es1/Array.js: Syntax error: Unexpected token Syntax error: Expecting expression `  console.log("es1/Array.js: Array.prototype failed");` Syntax error: Unexpected token
 es1/Array.length.assignment.js: Syntax error: Unexpected token
 es1/Array.length.js: Syntax error: Unexpected token
@@ -1039,7 +1039,7 @@ kangax-es6/misc.prototypes-not-instances.js: Reference error: left-hand side exp
 kangax-es6/new-target.assignment-error.js: Syntax error: Unexpected token Syntax error: Expecting '=>' after parameter list
 kangax-es6/new-target.constructor.js: Syntax error: Unexpected token Syntax error: Expecting '=>' after parameter list Syntax error: Unexpected token
 kangax-es6/regex.flags.u.case-folding.js: Syntax error: Unexpected token
-kangax-es6/regex.flags.u.codepoint.js: Syntax error: Invalid escape sequence Syntax error: Unterminated string `  console.log("kangax-es6/regex.flags.u.codepoint.js: " + e);`
+kangax-es6/regex.flags.u.codepoint.js: Syntax error: Invalid escape sequence
 kangax-es6/regex.flags.u.js: Syntax error: Unexpected token
 kangax-es6/regex.flags.u.non-bmp.js: Syntax error: Unexpected token
 kangax-es6/regex.flags.y.js: Syntax error: Unexpected token

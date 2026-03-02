@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 128337, "engine": "sandboxjs", "repository": "https://github.com/nyariv/SandboxJS.git", "revision": "5b8985372d34dc3327c20dcbfc9a4b85d948c52b", "revision_date": "2026-02-10", "version": "0.8.32"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 134799, "engine": "sandboxjs", "repository": "https://github.com/nyariv/SandboxJS.git", "revision": "a6816b2b5b9c2dada624910e2f05a36f4c6c3712", "revision_date": "2026-02-14", "version": "0.8.33"}
 es1/Array.js: Array.prototype failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -122,7 +122,7 @@ es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 101
 es1/arguments.callee.js: throw err.error; ReferenceError: arguments is not defined
 es1/arguments.js: throw err.error; ReferenceError: arguments is not defined
-es1/asi.eval.js: failed
+es1/asi.eval.js: OK
 es1/asi.js: throw err.error; ParseError: Unexpected end of expression: ++
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
@@ -134,7 +134,7 @@ es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: OK
 es1/break.js: OK
 es1/comma.js: OK
-es1/comments.js: throw new ParseError(e.message, str); ParseError: Unexpected end of expression: console.log fail code: 'console.log\n/\nfail\n**/\n/\n/\n"0"+\n"1"\n\n\n)'
+es1/comments.js: throw new ParseError(e.message, str); ParseError: Unexpected end of expression: console.log fail code: 'console.log\n/\nfail\n*\n\n*/\n/\n/\n\n"0"'
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
@@ -146,7 +146,7 @@ es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: null != undefined; 0 == undefined
 es1/equals.js: OK
-es1/eval.js: failed
+es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
 es1/functions.js: OK
@@ -226,10 +226,10 @@ es3/Function.prototype.apply.js: throw err.error; ReferenceError: arguments is n
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
-es3/Number.prototype.toExponential.throws-infinity.js: throw err.error; ReferenceError: e is not defined
+es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
@@ -273,15 +273,15 @@ es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: EvalError.prototype
 es3/global.RangeError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: RangeError.prototype
-es3/global.RangeError.thrown.js: throw err.error; ReferenceError: e is not defined
+es3/global.RangeError.thrown.js: throw err.error; SandboxAccessError: Method or property access not permitted: RangeError.name
 es3/global.ReferenceError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: ReferenceError.prototype
-es3/global.ReferenceError.thrown.js: throw err.error; ReferenceError: e is not defined
+es3/global.ReferenceError.thrown.js: throw err.error; SandboxAccessError: Method or property access not permitted: ReferenceError.name
 es3/global.SyntaxError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: SyntaxError.prototype
-es3/global.SyntaxError.thrown.js: failed
+es3/global.SyntaxError.thrown.js: no exception thrown for invalid syntax; no exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: TypeError.prototype
-es3/global.TypeError.thrown.js: throw err.error; ReferenceError: e is not defined
+es3/global.TypeError.thrown.js: throw err.error; SandboxAccessError: Method or property access not permitted: TypeError.name
 es3/global.URIError.js: throw err.error; SandboxAccessError: Static method or property access not permitted: URIError.prototype
-es3/global.URIError.thrown.js: throw err.error; ReferenceError: e is not defined
+es3/global.URIError.thrown.js: throw err.error; SandboxAccessError: Method or property access not permitted: URIError.name
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: throw err.error; TypeError: c1 is not a function
+es3/nested-functions.eval.js: throw err.error; ReferenceError: B is not defined
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: ParseError: Unexpected end of expression: !/1/r.test("2")
@@ -343,8 +343,8 @@ es3/source.whitespace.js: OK
 es3/source.whitespace.unicode.js: OK
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: failed
-es3/try-catch-throw.js: throw err.error; ReferenceError: e is not defined
+es3/try-catch-finally.js: OK
+es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/Array.prototype.filter.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
@@ -355,18 +355,18 @@ es5/Array.prototype.map.js: throw err.error; SandboxAccessError: Access to proto
 es5/Array.prototype.reduceRight.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/Array.prototype.reduce.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/Array.prototype.some.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
-es5/Array.prototype.sort.TypeError.js: throw err.error; ReferenceError: e is not defined
+es5/Array.prototype.sort.TypeError.js: throw err.error; SandboxAccessError: Method or property access not permitted: TypeError.name
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/Date.prototype.toJSON.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: throw err.error; SandboxAccessError: Access to prototype of global object is not permitted
 es5/JSON.js: OK
-es5/JSON.parse.js: throw err.error; ReferenceError: e is not defined
+es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
-es5/JSON.stringify.js: throw err.error; ReferenceError: e is not defined
+es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: Object.create not a function; throw err.error; SandboxAccessError: Static method or property access not permitted: Object.create
@@ -399,43 +399,43 @@ es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: throw new ParseError(e.message, str); ParseError: Unexpected token after initialize: \: var _\u200c\u200d = true
 es5/strict.eval-cannot-create-bindings.js: failed
-es5/strict.function-expr-with-matching-name.js: failed
-es5/strict.js: throw err.error; ReferenceError: e is not defined
-es5/strict.no-arguments-callee.js: throw err.error; ReferenceError: e is not defined
+es5/strict.function-expr-with-matching-name.js: OK
+es5/strict.js: failed
+es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: throw err.error; ReferenceError: arguments is not defined
 es5/strict.no-assignment-to-non-writable.js: throw err.error; ParseError: Unexpected token after prop: x: { get x(){ } }
-es5/strict.no-assignment-to-unresolvable.js: throw err.error; ReferenceError: e is not defined
+es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: failed
-es5/strict.no-delete-non-configurable.js: throw err.error; ReferenceError: e is not defined
+es5/strict.no-delete-non-configurable.js: failed
 es5/strict.no-duplicate-parameters.js: failed
-es5/strict.no-eval-or-arguments-assignment.js: throw err.error; ReferenceError: e is not defined
+es5/strict.no-eval-or-arguments-assignment.js: failed
 es5/strict.no-eval-or-arguments-bindings.js: failed
-es5/strict.no-function-caller-or-arguments.js: throw err.error; ReferenceError: e is not defined
+es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
-es5/strict.no-with.js: throw err.error; ReferenceError: e is not defined
-es5/strict.reserved-words.js: throw err.error; ReferenceError: err is not defined
+es5/strict.no-with.js: failed
+es5/strict.reserved-words.js: 'var interface' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: throw err.error; SandboxAccessError: Static method or property access not permitted: Object.defineProperty
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: throw err.error; ReferenceError: arguments is not defined
-es5/this.thrown-function.js: throw err.error; ReferenceError: e is not defined
+es5/this.thrown-function.js: OK
 kangax-es5/Array.isArray.js: OK
-kangax-es5/Array.prototype.every.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.filter.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.forEach.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.indexOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.lastIndexOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.map.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.reduceRight.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.reduce.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.some.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/Array.prototype.sort.compareFn-type.js: failed
+kangax-es5/Array.prototype.every.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.filter.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.forEach.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.indexOf.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.lastIndexOf.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.map.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.reduceRight.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.reduce.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.some.js: Error: Access to prototype of global object is not permitted
+kangax-es5/Array.prototype.sort.compareFn-type.js: TypeError: The comparison function must be either a function or undefined: null
 kangax-es5/Array.prototype.sort.compareFn-undefined.js: OK
 kangax-es5/Array.prototype.unshift.return-count.js: OK
 kangax-es5/Date.now.js: OK
-kangax-es5/Date.prototype.toISOString.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/Date.prototype.toISOString.js: Error: Access to prototype of global object is not permitted
 kangax-es5/Date.prototype.toJSON.js: failed
-kangax-es5/Function.prototype.bind.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/Function.prototype.bind.js: Error: Access to prototype of global object is not permitted
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 kangax-es5/Number.prototype.toExponential.rounds-properly.js: OK
@@ -454,8 +454,8 @@ kangax-es5/Object.keys.js: OK
 kangax-es5/Object.preventExtensions.js: failed
 kangax-es5/Object.seal.js: failed
 kangax-es5/String.property-access.js: OK
-kangax-es5/String.prototype.split.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/String.prototype.trim.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/String.prototype.split.js: Error: Access to prototype of global object is not permitted
+kangax-es5/String.prototype.trim.js: Error: Access to prototype of global object is not permitted
 kangax-es5/annex-b.String.prototype.substr.js: OK
 kangax-es5/immutable-globals.Infinity.js: throw err.error; ParseError: Unexpected token after Infinity: =: Infinity = false
 kangax-es5/immutable-globals.NaN.js: throw err.error; ParseError: Unexpected token after NaN: =: NaN = false
@@ -465,34 +465,34 @@ kangax-es5/literals.reserved-words-properties.js: throw err.error; ParseError: U
 kangax-es5/literals.setter-accessors.js: throw err.error; ParseError: Unexpected token after prop: x: { set x(v){ value = v; } }
 kangax-es5/literals.trailing-comma-array.js: OK
 kangax-es5/literals.trailing-comma-object.js: OK
-kangax-es5/misc.Arguments.toStringTag.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/misc.Arguments.toStringTag.js: Error: Static method or property access not permitted: Object.prototype
 kangax-es5/misc.Function.apply.array-likes.js: OK
 kangax-es5/misc.Function.prototype.non-enumerable.js: OK
-kangax-es5/misc.enumerable-shadow.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/misc.enumerable-shadow.js: Error: Static method or property access not permitted: Object.prototype
 kangax-es5/misc.parseInt.ignores-leading-zeros.js: OK
-kangax-es5/misc.thrown-functions-this.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/misc.thrown-functions-this.js: OK
 kangax-es5/misc.unreserved-words.js: OK
 kangax-es5/misc.zero-width-identifiers.js: throw err.error; ParseError: Unexpected token after initialize: \: var _\u200c\u200d = true
-kangax-es5/strict.arguments-callee-error.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/strict.arguments-caller-error.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/strict.arguments-unmapped.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/strict.assignment-eval-arguments-error.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.arguments-callee-error.js: failed
+kangax-es5/strict.arguments-caller-error.js: ReferenceError: arguments is not defined
+kangax-es5/strict.arguments-unmapped.js: ReferenceError: arguments is not defined
+kangax-es5/strict.assignment-eval-arguments-error.js: failed
 kangax-es5/strict.assignment-non-writable-error.js: throw err.error; ParseError: Unexpected token after prop: x: { get x(){ } }
-kangax-es5/strict.assignment-unresolvable-error.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.assignment-unresolvable-error.js: OK
 kangax-es5/strict.delete-bindings-error.js: failed
-kangax-es5/strict.delete-non-configurable-error.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.delete-non-configurable-error.js: failed
 kangax-es5/strict.eval-arguments-bindings-error.js: failed
 kangax-es5/strict.eval-no-bindings.js: failed
-kangax-es5/strict.function-caller-arguments-error.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.function-caller-arguments-error.js: OK
 kangax-es5/strict.function-expr-matching-name-arg.js: OK
 kangax-es5/strict.legacy-octal-error.js: failed
 kangax-es5/strict.repeated-params-error.js: failed
-kangax-es5/strict.reserved-words.js: throw err.error; ReferenceError: e is not defined
-kangax-es5/strict.this-not-coerced-accessors.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.reserved-words.js: failed
+kangax-es5/strict.this-not-coerced-accessors.js: Error: Static method or property access not permitted: Object.defineProperty
 kangax-es5/strict.this-not-coerced-methods.js: OK
 kangax-es5/strict.this-undefined.js: failed
-kangax-es5/strict.with-error.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.Symbol.species.js: throw err.error; ReferenceError: e is not defined
+kangax-es5/strict.with-error.js: failed
+kangax-es6/Array.Symbol.species.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/Array.from.array-like.js: OK
 kangax-es6/Array.from.generator.js: throw err.error; ParseError: Unexpected token 'function': function*(){ yield 1; yield 2; yield 3
 kangax-es6/Array.from.iterable-instance.js: throw err.error; ReferenceError: global is not defined
@@ -502,19 +502,19 @@ kangax-es6/Array.from.map.array-like.js: OK
 kangax-es6/Array.from.map.generator.js: throw err.error; ParseError: Unexpected token 'function': function*(){ yield "0"; yield "1"; yield
 kangax-es6/Array.from.map.iterable-instance.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/Array.from.map.iterable.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/Array.iterator-prototype-chain.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Array.iterator-prototype-chain.js: Error: Static method or property access not permitted: Object.getPrototypeOf
 kangax-es6/Array.of.js: OK
-kangax-es6/Array.prototype.Symbol.iterator.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.Symbol.unscopables.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.copyWithin.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.entries.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.fill.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.findIndex.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.find.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.keys.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.splice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Array.prototype.values.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Date.prototype.Symbol.toPrimitive.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Array.prototype.Symbol.iterator.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.Symbol.unscopables.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.copyWithin.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.entries.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.fill.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.findIndex.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.find.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.keys.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.splice.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Array.prototype.values.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Date.prototype.Symbol.toPrimitive.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Function.name.accessor.js: throw err.error; ParseError: Unexpected token after prop: f: var o = { get foo(){}, set foo(x){} }
 kangax-es6/Function.name.bound.js: failed
 kangax-es6/Function.name.class-expression.js: throw err.error; ParseError: Unexpected token 'class': class foo {}.name === "0" &&
@@ -523,33 +523,33 @@ kangax-es6/Function.name.class-prototype.js: throw err.error; ParseError: Unexpe
 kangax-es6/Function.name.class-statement.js: throw err.error; ParseError: Unexpected token 'class': class foo {}
 kangax-es6/Function.name.class-static.js: throw err.error; ParseError: Unexpected token 'class': class C { static foo(){} }
 kangax-es6/Function.name.class-variable.js: throw err.error; ParseError: Unexpected token 'class': var foo = class {}
-kangax-es6/Function.name.configurable.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Function.name.configurable.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/Function.name.expression.js: failed
-kangax-es6/Function.name.new-Function.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Function.name.new-Function.js: Error: Object construction not allowed: Function
 kangax-es6/Function.name.object-method.js: failed
 kangax-es6/Function.name.shorthand.js: failed
 kangax-es6/Function.name.shorthand.no-lexical.js: OK
 kangax-es6/Function.name.statement.js: failed
-kangax-es6/Function.name.symbol-keyed.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Function.name.symbol-keyed.js: TypeError: Cannot convert a Symbol value to a string
 kangax-es6/Function.name.variable.js: failed
-kangax-es6/Map.Symbol.species.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Map.Symbol.species.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/Map.constructor-accepts-null.js: OK
 kangax-es6/Map.constructor-arguments.js: OK
-kangax-es6/Map.constructor-invokes-set.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Map.constructor-invokes-set.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Map.constructor-requires-new.js: OK
 kangax-es6/Map.iterator-closing.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/Map.iterator-prototype-chain.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Map.iterator-prototype-chain.js: Error: Static method or property access not permitted: Object.getPrototypeOf
 kangax-es6/Map.js: OK
 kangax-es6/Map.prototype-not-instance.js: OK
-kangax-es6/Map.prototype.Symbol.iterator.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Map.prototype.clear.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Map.prototype.delete.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Map.prototype.entries.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Map.prototype.forEach.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Map.prototype.keys.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Map.prototype.Symbol.iterator.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Map.prototype.clear.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Map.prototype.delete.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Map.prototype.entries.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Map.prototype.forEach.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Map.prototype.keys.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Map.prototype.set-returns-this.js: OK
 kangax-es6/Map.prototype.size.js: OK
-kangax-es6/Map.prototype.values.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Map.prototype.values.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Map.zero-key.js: OK
 kangax-es6/Math.acosh.js: OK
 kangax-es6/Math.asinh.js: OK
@@ -577,11 +577,11 @@ kangax-es6/Number.isNaN.js: OK
 kangax-es6/Number.isSafeInteger.js: OK
 kangax-es6/Number.parseFloat.js: OK
 kangax-es6/Number.parseInt.js: OK
-kangax-es6/Object.assign.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Object.getOwnPropertySymbols.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Object.assign.js: Error: Static method or property access not permitted: Object.assign
+kangax-es6/Object.getOwnPropertySymbols.js: Error: Static method or property access not permitted: Object.getOwnPropertySymbols
 kangax-es6/Object.is.js: OK
-kangax-es6/Object.setPrototypeOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Promise.Symbol.species.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Object.setPrototypeOf.js: Error: Static method or property access not permitted: Object.setPrototypeOf
+kangax-es6/Promise.Symbol.species.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/Promise.all.iterable.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/Promise.all.js: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: job is not defined
 kangax-es6/Promise.constructor-requires-new.js: OK
@@ -589,135 +589,135 @@ kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
 kangax-es6/Promise.race.iterable.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/Promise.race.js: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: job is not defined
-kangax-es6/Proxy.Array.isArray.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.JSON.stringify.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.constructor-requires-new.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.apply.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.apply.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.construct.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.construct.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.defineProperty.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.defineProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.deleteProperty.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.deleteProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.getPrototypeOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.get.instances.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.get.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.get.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.has.instances.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.has.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.has.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.isExtensible.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.isExtensible.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.ownKeys.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.ownKeys.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.preventExtensions.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.preventExtensions.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.setPrototypeOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.set.instances.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.set.invariants.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.handler.set.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.no-prototype.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Proxy.revocable.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.apply.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.Array-subclassing.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.Function-subclassing.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.Promise-subclassing.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.RegExp-subclassing.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.new-target.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.construct.third-argument.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.defineProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.deleteProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.getOwnPropertyDescriptor.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.getPrototypeOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.get.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.has.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.isExtensible.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.ownKeys.string.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.ownKeys.symbol.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.preventExtensions.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.setPrototypeOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Reflect.set.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/RegExp.Symbol.species.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/RegExp.prototype.Symbol.match.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/RegExp.prototype.Symbol.replace.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/RegExp.prototype.Symbol.search.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/RegExp.prototype.Symbol.split.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Proxy.Array.isArray.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.JSON.stringify.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.constructor-requires-new.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.apply.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.apply.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.construct.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.construct.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.defineProperty.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.deleteProperty.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
+kangax-es6/Proxy.handler.getPrototypeOf.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.getPrototypeOf.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.get.instances.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/Proxy.handler.get.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.get.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.has.instances.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/Proxy.handler.has.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.has.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.isExtensible.js: Error: Static method or property access not permitted: Object.isExtensible
+kangax-es6/Proxy.handler.ownKeys.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.ownKeys.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.preventExtensions.js: Error: Static method or property access not permitted: Object.preventExtensions
+kangax-es6/Proxy.handler.setPrototypeOf.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.setPrototypeOf.js: Error: Static method or property access not permitted: Object.setPrototypeOf
+kangax-es6/Proxy.handler.set.instances.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/Proxy.handler.set.invariants.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.handler.set.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.no-prototype.js: ReferenceError: Proxy is not defined
+kangax-es6/Proxy.revocable.js: ReferenceError: Proxy is not defined
+kangax-es6/Reflect.apply.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Array-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Function-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.Promise-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.new-target.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.construct.third-argument.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.defineProperty.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.deleteProperty.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.getOwnPropertyDescriptor.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.getPrototypeOf.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.get.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.has.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.isExtensible.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.ownKeys.string.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/Reflect.ownKeys.symbol.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/Reflect.preventExtensions.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.setPrototypeOf.js: ReferenceError: Reflect is not defined
+kangax-es6/Reflect.set.js: ReferenceError: Reflect is not defined
+kangax-es6/RegExp.Symbol.species.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
+kangax-es6/RegExp.prototype.Symbol.match.js: Error: Access to prototype of global object is not permitted
+kangax-es6/RegExp.prototype.Symbol.replace.js: Error: Access to prototype of global object is not permitted
+kangax-es6/RegExp.prototype.Symbol.search.js: Error: Access to prototype of global object is not permitted
+kangax-es6/RegExp.prototype.Symbol.split.js: Error: Access to prototype of global object is not permitted
 kangax-es6/RegExp.prototype.flags.js: OK
-kangax-es6/Set.Symbol.species.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.Symbol.species.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/Set.constructor-accepts-null.js: OK
 kangax-es6/Set.constructor-arguments.js: OK
-kangax-es6/Set.constructor-invokes-add.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.constructor-invokes-add.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Set.constructor-requires-new.js: OK
 kangax-es6/Set.iterator-closing.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/Set.iterator-prototype-chain.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.iterator-prototype-chain.js: Error: Static method or property access not permitted: Object.getPrototypeOf
 kangax-es6/Set.js: OK
 kangax-es6/Set.prototype-not-instance.js: OK
-kangax-es6/Set.prototype.Symbol.iterator.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.prototype.Symbol.iterator.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Set.prototype.add-returns-this.js: OK
-kangax-es6/Set.prototype.clear.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Set.prototype.delete.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Set.prototype.entries.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Set.prototype.forEach.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/Set.prototype.keys.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.prototype.clear.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Set.prototype.delete.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Set.prototype.entries.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Set.prototype.forEach.js: Error: Access to prototype of global object is not permitted
+kangax-es6/Set.prototype.keys.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Set.prototype.size.js: OK
-kangax-es6/Set.prototype.values.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Set.prototype.values.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Set.zero-key.js: OK
 kangax-es6/String.fromCodePoint.js: OK
-kangax-es6/String.iterator-prototype-chain.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.Symbol.iterator.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.codePointAt.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.endsWith.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.endsWith.throws-regex.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.includes.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.normalize.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.repeat.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.startsWith.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/String.prototype.startsWith.throws-regex.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/String.iterator-prototype-chain.js: Error: Static method or property access not permitted: Object.getPrototypeOf
+kangax-es6/String.prototype.Symbol.iterator.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.codePointAt.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.endsWith.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.endsWith.throws-regex.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.includes.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.normalize.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.repeat.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.startsWith.js: Error: Access to prototype of global object is not permitted
+kangax-es6/String.prototype.startsWith.throws-regex.js: Error: Access to prototype of global object is not permitted
 kangax-es6/String.raw.js: OK
-kangax-es6/Symbol.JSON.stringify.object.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Symbol.JSON.stringify.object.js: Error: Static method or property access not permitted: Object.defineProperty
 kangax-es6/Symbol.JSON.stringify.primitive.js: OK
-kangax-es6/Symbol.Object.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Symbol.Object.js: TypeError: Right-hand side of 'instanceof' is not an object
 kangax-es6/Symbol.String.js: OK
-kangax-es6/Symbol.defineProperty.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Symbol.defineProperty.js: Error: Static method or property access not permitted: Object.defineProperty
 kangax-es6/Symbol.global-registry.js: OK
-kangax-es6/Symbol.hidden-keys.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Symbol.hidden-keys.js: ReferenceError: x is not defined
 kangax-es6/Symbol.js: OK
-kangax-es6/Symbol.no-coerce.js: failed
+kangax-es6/Symbol.no-coerce.js: TypeError: Cannot convert a Symbol value to a string
 kangax-es6/Symbol.no-new.js: OK
-kangax-es6/Symbol.prototype.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/Symbol.prototype.js: Error: Access to prototype of global object is not permitted
 kangax-es6/Symbol.typeof.js: OK
 kangax-es6/WeakMap.accept-primitives.js: OK
 kangax-es6/WeakMap.constructor-accepts-null.js: OK
 kangax-es6/WeakMap.constructor-arguments.js: OK
-kangax-es6/WeakMap.constructor-invokes-set.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakMap.constructor-invokes-set.js: Error: Access to prototype of global object is not permitted
 kangax-es6/WeakMap.constructor-requires-new.js: OK
-kangax-es6/WeakMap.frozen-keys.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakMap.frozen-keys.js: Error: Static method or property access not permitted: Object.freeze
 kangax-es6/WeakMap.iterator-closing.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/WeakMap.js: OK
-kangax-es6/WeakMap.no-clear.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakMap.no-clear.js: Error: Access to prototype of global object is not permitted
 kangax-es6/WeakMap.prototype-not-instance.js: OK
-kangax-es6/WeakMap.prototype.delete.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakMap.prototype.delete.js: Error: Access to prototype of global object is not permitted
 kangax-es6/WeakMap.prototype.set-returns-this.js: OK
 kangax-es6/WeakSet.accept-primitives.js: OK
 kangax-es6/WeakSet.constructor-accepts-null.js: OK
 kangax-es6/WeakSet.constructor-arguments.js: OK
-kangax-es6/WeakSet.constructor-invokes-add.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakSet.constructor-invokes-add.js: Error: Access to prototype of global object is not permitted
 kangax-es6/WeakSet.constructor-requires-new.js: OK
 kangax-es6/WeakSet.iterator-closing.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/WeakSet.js: OK
-kangax-es6/WeakSet.no-clear.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakSet.no-clear.js: Error: Access to prototype of global object is not permitted
 kangax-es6/WeakSet.prototype-not-instance.js: OK
 kangax-es6/WeakSet.prototype.add-returns-this.js: OK
-kangax-es6/WeakSet.prototype.delete.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/annex-b.RegExp.prototype.compile.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/WeakSet.prototype.delete.js: Error: Access to prototype of global object is not permitted
+kangax-es6/annex-b.RegExp.prototype.compile.js: Error: Access to prototype of global object is not permitted
 kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
-kangax-es6/annex-b.String.prototype.html.existence.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/annex-b.String.prototype.html.existence.js: Error: Access to prototype of global object is not permitted
 kangax-es6/annex-b.String.prototype.html.lowercase.js: OK
 kangax-es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 kangax-es6/annex-b.function.hoisted-block-level.js: OK
@@ -732,26 +732,26 @@ kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
 kangax-es6/annex-b.regex.octal-escapes.js: OK
-kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: Error: Static method or property access not permitted: Object.create
+kangax-es6/annex-b.__proto__.Object.prototype.descriptor.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
+kangax-es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: Error: Static method or property access not permitted: Object.prototype
 kangax-es6/annex-b.__proto__.Object.prototype.get.js: OK
-kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/annex-b.__proto__.Object.prototype.set.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/annex-b.__proto__.literals.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: Error: Static method or property access not permitted: Object.prototype
+kangax-es6/annex-b.__proto__.Object.prototype.set.js: Error: Access to prototype of global object is not permitted
+kangax-es6/annex-b.__proto__.literals.js: TypeError: Right-hand side of 'instanceof' is not an object
 kangax-es6/annex-b.__proto__.literals.multiple-error.js: failed
 kangax-es6/annex-b.__proto__.literals.not-computed.js: failed
 kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: OK
-kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: OK
+kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: ReferenceError: __proto__ is not defined
 kangax-es6/arrow.0-params.js: OK
 kangax-es6/arrow.1-param.js: OK
 kangax-es6/arrow.5-param.js: OK
 kangax-es6/arrow.bind.js: OK
-kangax-es6/arrow.lexical-arguments.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/arrow.lexical-arguments.js: ReferenceError: arguments is not defined
 kangax-es6/arrow.lexical-super.constructor.js: throw err.error; ParseError: Unexpected token 'class': class B {
 kangax-es6/arrow.lexical-super.methods.js: throw err.error; ParseError: Unexpected token 'class': class B {
 kangax-es6/arrow.lexical-this.js: OK
-kangax-es6/arrow.new-target.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/arrow.new-target.js: Error: Unexpected token after new: .: new.target
 kangax-es6/arrow.no-line-break.js: failed
 kangax-es6/arrow.no-prototype.js: OK
 kangax-es6/arrow.precedence.js: failed
@@ -781,7 +781,7 @@ kangax-es6/class.static-accessor-properties.js: throw err.error; ParseError: Une
 kangax-es6/class.static-methods.js: throw err.error; ParseError: Unexpected token 'class': class C {
 kangax-es6/class.string-keyed-methods.js: throw err.error; ParseError: Unexpected token 'class': class C {
 kangax-es6/const.basic.js: OK
-kangax-es6/const.block-scoped.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/const.block-scoped.js: SyntaxError: Identifier 'bar' has already been declared
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: OK
@@ -789,7 +789,7 @@ kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: failed
 kangax-es6/const.shadow.js: failed
 kangax-es6/const.strict.basic.js: OK
-kangax-es6/const.strict.block-scoped.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/const.strict.block-scoped.js: SyntaxError: Identifier 'bar' has already been declared
 kangax-es6/const.strict.for-in.js: OK
 kangax-es6/const.strict.for-loop.js: OK
 kangax-es6/const.strict.for-of.js: OK
@@ -801,7 +801,7 @@ kangax-es6/const.tdz.js: failed
 kangax-es6/default-params.arguments.js: throw err.error; ParseError: Unexpected token 'function': function (a = "0", b = "1", c = "2") {
 kangax-es6/default-params.basic.js: throw err.error; ParseError: Unexpected token 'function': function (a = 1, b = 2) { return a === 3
 kangax-es6/default-params.explicit-undefined.js: throw err.error; ParseError: Unexpected token 'function': function (a = 1, b = 2) { return a === 1
-kangax-es6/default-params.new-function.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/default-params.new-function.js: Error: Object construction not allowed: Function
 kangax-es6/default-params.refer-previous.js: throw err.error; ParseError: Unexpected token 'function': function (a, b = a) { return b === 5; }(
 kangax-es6/default-params.separate-scope.js: throw err.error; ParseError: Unexpected token 'function': function(a=function(){
 kangax-es6/default-params.tdz.js: throw err.error; ParseError: Unexpected token 'function': function(x = 1) {
@@ -856,10 +856,10 @@ kangax-es6/destructuring-params.arguments.js: throw err.error; ParseError: Unexp
 kangax-es6/destructuring-params.array.js: throw err.error; ParseError: Unexpected token 'function': function([a, , [b], c]) {
 kangax-es6/destructuring-params.astral-string.js: throw err.error; ParseError: Unexpected token 'function': function([c]) {
 kangax-es6/destructuring-params.computed-properties.js: throw err.error; ParseError: Unexpected token 'function': function({ [qux]: grault }) {
-kangax-es6/destructuring-params.defaults-new-function.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/destructuring-params.defaults-new-function.js: Error: Object construction not allowed: Function
 kangax-es6/destructuring-params.defaults-separate-scope.js: throw err.error; ParseError: Unexpected token 'function': function({a=function(){
 kangax-es6/destructuring-params.defaults.js: throw err.error; ParseError: Unexpected token 'function': function({a = 1, b = 0, c = 3, x:d = 0,
-kangax-es6/destructuring-params.duplicate-identifier.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/destructuring-params.duplicate-identifier.js: OK
 kangax-es6/destructuring-params.empty-patterns.js: throw err.error; ParseError: Unexpected token 'function': function ([],{}){
 kangax-es6/destructuring-params.generator.js: throw err.error; ParseError: Unexpected token 'function': function([a, b, c]) {
 kangax-es6/destructuring-params.iterable-instance.js: throw err.error; ParseError: Unexpected token 'function': function([a, b, c]) {
@@ -867,7 +867,7 @@ kangax-es6/destructuring-params.iterable.js: throw err.error; ParseError: Unexpe
 kangax-es6/destructuring-params.iterator-closing.js: throw err.error; ParseError: Unexpected token 'function': function([a,b]) {}(iter)
 kangax-es6/destructuring-params.length.js: throw err.error; ParseError: Unexpected token 'function': function({a, b}, [c, d]){}.length === 2
 kangax-es6/destructuring-params.nested.js: throw err.error; ParseError: Unexpected token 'function': function([e, {x:f, g}], {h, x:[i]}) {
-kangax-es6/destructuring-params.new-function.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/destructuring-params.new-function.js: Error: Object construction not allowed: Function
 kangax-es6/destructuring-params.object-primitives.js: throw err.error; ParseError: Unexpected token 'function': function({toFixed}, {slice}) {
 kangax-es6/destructuring-params.object.js: throw err.error; ParseError: Unexpected token 'function': function({c, x:d, e}) {
 kangax-es6/destructuring-params.rest.js: throw err.error; ParseError: Unexpected token 'function': function([a, ...b], [c, ...d]) {
@@ -878,14 +878,14 @@ kangax-es6/destructuring-params.throws-null-undefined.js: throw err.error; Parse
 kangax-es6/destructuring-params.trailing-comma-iterable.js: throw err.error; ParseError: Unexpected token 'function': function([a,]) {
 kangax-es6/destructuring-params.trailing-comma-object.js: throw err.error; ParseError: Unexpected token 'function': function({a,}) {
 kangax-es6/for-of.array.js: OK
-kangax-es6/for-of.astral-string.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/for-of.astral-string.js: Error: Method or property access not permitted: Iterator.next
 kangax-es6/for-of.generator.js: throw err.error; ParseError: Unexpected token 'function': function*(){ yield 1; yield 2; yield 3
 kangax-es6/for-of.iterable-instance.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/for-of.iterable.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/for-of.iterator-closing-break.js: failed
 kangax-es6/for-of.iterator-closing-throw.js: failed
 kangax-es6/for-of.sparse-array.js: failed
-kangax-es6/for-of.string.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/for-of.string.js: Error: Method or property access not permitted: Iterator.next
 kangax-es6/function.block-level-decl.js: failed
 kangax-es6/generators.basic.js: throw err.error; ParseError: Unexpected token 'function': function * generator(){
 kangax-es6/generators.constructor.js: throw err.error; ParseError: Unexpected token 'function': function * g (){}
@@ -915,14 +915,14 @@ kangax-es6/generators.yield-star.non-iterable-error.js: throw err.error; ParseEr
 kangax-es6/generators.yield-star.sparse-array.js: throw err.error; ParseError: Unexpected token 'function': function * generator() {
 kangax-es6/generators.yield-star.string.js: throw err.error; ParseError: Unexpected token 'function': function * generator() {
 kangax-es6/let.basic.js: OK
-kangax-es6/let.block-scoped.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/let.block-scoped.js: SyntaxError: Identifier 'bar' has already been declared
 kangax-es6/let.for-in-shadow.js: OK
 kangax-es6/let.for-iteration.js: failed
 kangax-es6/let.for-loop.js: OK
 kangax-es6/let.no-statement.js: failed
 kangax-es6/let.shadow.js: failed
 kangax-es6/let.strict.basic.js: OK
-kangax-es6/let.strict.block-scoped.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/let.strict.block-scoped.js: SyntaxError: Identifier 'bar' has already been declared
 kangax-es6/let.strict.for-in-shadow.js: OK
 kangax-es6/let.strict.for-iteration.js: failed
 kangax-es6/let.strict.for-loop.js: OK
@@ -936,106 +936,106 @@ kangax-es6/literals.object.computed-accessors.js: throw err.error; ParseError: U
 kangax-es6/literals.object.computed-properties.js: OK
 kangax-es6/literals.object.computed-shorthand-methods.js: throw err.error; ParseError: Unexpected token after call: {: { [x](){ return 1 } }
 kangax-es6/literals.object.shorthand-methods.js: OK
-kangax-es6/literals.object.shorthand-properties.js: failed
+kangax-es6/literals.object.shorthand-properties.js: OK
 kangax-es6/literals.object.string-keyed-shorthand-methods.js: throw err.error; ParseError: Unexpected token after call: {: { "0"() { return 4; } }
 kangax-es6/literals.octal.Number.js: OK
 kangax-es6/literals.octal.js: OK
 kangax-es6/misc.Invalid-Date.js: OK
-kangax-es6/misc.Object.freeze.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Object.freeze.primitives.js: Error: Static method or property access not permitted: Object.freeze
+kangax-es6/misc.Object.getOwnPropertyDescriptor.primitives.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/misc.Object.getOwnPropertyNames.primitives.js: OK
-kangax-es6/misc.Object.getPrototypeOf.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Object.isExtensible.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Object.isFrozen.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Object.isSealed.primitives.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Object.getPrototypeOf.primitives.js: Error: Static method or property access not permitted: Object.getPrototypeOf
+kangax-es6/misc.Object.isExtensible.primitives.js: Error: Static method or property access not permitted: Object.isExtensible
+kangax-es6/misc.Object.isFrozen.primitives.js: Error: Static method or property access not permitted: Object.isFrozen
+kangax-es6/misc.Object.isSealed.primitives.js: Error: Static method or property access not permitted: Object.isSealed
 kangax-es6/misc.Object.keys.primitives.js: OK
-kangax-es6/misc.Object.preventExtensions.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Object.seal.primitives.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.defineProperty.Set.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.concat.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.from.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.iteration.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.pop.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.reverse.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.shift.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.splice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Array.toString.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Object.preventExtensions.primitives.js: Error: Static method or property access not permitted: Object.preventExtensions
+kangax-es6/misc.Object.seal.primitives.js: Error: Static method or property access not permitted: Object.seal
+kangax-es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.defineProperty.Set.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.copyWithin.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.deleteProperty.Array.unshift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.concat.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/misc.Proxy.get.Array.from.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.iteration.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Array.toString.js: ReferenceError: Proxy is not defined
 kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: throw err.error; ParseError: Unexpected token 'class': class C extends p {}
-kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Date.toJSON.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Error.toString.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Function.bind.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Error.toString.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Function.bind.js: ReferenceError: Proxy is not defined
 kangax-es6/misc.Proxy.get.HasBinding.js: throw err.error; ParseError: Unexpected token 'with': with(p) {
-kangax-es6/misc.Proxy.get.IteratorComplete.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.JSON.stringify.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Object.assign.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Object.defineProperties.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.Promise.resolve.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.RegExp-constructor.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.IteratorComplete.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.assign.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: Proxy is not defined
 kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: Error: Cannot assign property 'Symbol(Symbol.species)' of a global object
 kangax-es6/misc.Proxy.get.RegExp.flags.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/misc.Proxy.get.RegExp.test.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.RegExp.toString.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.String.match.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.String.raw.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.String.replace.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.String.search.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.String.split.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.ToPrimitive.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.get.instanceof.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.copyWithin.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.fill.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.from.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.of.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.pop.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.push.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.reverse.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.shift.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.splice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Array.unshift.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.Proxy.set.Object.assign.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.Proxy.get.RegExp.test.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.match.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.raw.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.replace.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.search.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.String.split.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.ToPrimitive.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.ToPropertyDescriptor.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.get.instanceof.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SerializeJSONObject.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.copyWithin.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.fill.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.from.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.of.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.pop.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.push.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.reverse.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.shift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.splice.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Array.unshift.js: ReferenceError: Proxy is not defined
+kangax-es6/misc.Proxy.set.Object.assign.js: ReferenceError: Proxy is not defined
 kangax-es6/misc.RegExp-alter-flags.js: throw err.error; ReferenceError: global is not defined
-kangax-es6/misc.RegExp-prototype-toString-generic.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.RegExp-prototype-toString-generic.js: Error: Access to prototype of global object is not permitted
 kangax-es6/misc.accessors-no-constructor.js: throw err.error; ParseError: Unexpected token after prop: a: Object.getOwnPropertyDescriptor({get a()
-kangax-es6/misc.bound-function-prototype.arrow.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.bound-function-prototype.class.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.bound-function-prototype.function.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.bound-function-prototype.generator.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.bound-function-prototype.subclass.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.bound-function-prototype.arrow.js: Error: Access to prototype of global object is not permitted
+kangax-es6/misc.bound-function-prototype.class.js: Error: Unexpected token 'class': class C {}
+kangax-es6/misc.bound-function-prototype.function.js: Error: Access to prototype of global object is not permitted
+kangax-es6/misc.bound-function-prototype.generator.js: Error: Unexpected token 'function': var f = function*(){}
+kangax-es6/misc.bound-function-prototype.subclass.js: Error: Unexpected token 'class': class C extends superclass {
 kangax-es6/misc.do-while-no-semicolon.js: failed
 kangax-es6/misc.duplicate-properties-strict.js: failed
 kangax-es6/misc.for-in-no-assignment-strict.js: OK
-kangax-es6/misc.function-length-configurable.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/misc.function-length-configurable.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es6/misc.identifier-syntax.no-escaped-reserved.js: throw err.error; ParseError: Unexpected token 'var': var \u0061
 kangax-es6/misc.identifier-syntax.var-1.js: OK
 kangax-es6/misc.identifier-syntax.var-2.js: throw err.error; ParseError: Unexpected token 'var': var 𐋀
 kangax-es6/misc.property-order.JSON.parse.js: OK
-kangax-es6/misc.property-order.JSON.stringify.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.property-order.Object.assign.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.property-order.Object.keys.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.property-order.Reflect.ownKeys.string.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/misc.prototypes-not-instances.js: failed
+kangax-es6/misc.property-order.JSON.stringify.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.property-order.Object.assign.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.property-order.Object.getOwnPropertyNames.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.property-order.Object.keys.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.property-order.Reflect.ownKeys.string.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.property-order.Reflect.ownKeys.symbol.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/misc.prototypes-not-instances.js: Error: Access to prototype of global object is not permitted
 kangax-es6/new-target.assignment-error.js: throw err.error; ParseError: Unexpected token 'function': new function f() {
 kangax-es6/new-target.constructor.js: throw err.error; ParseError: Unexpected token 'function': new function f() {
 kangax-es6/regex.flags.u.case-folding.js: OK
@@ -1044,10 +1044,10 @@ kangax-es6/regex.flags.u.js: OK
 kangax-es6/regex.flags.u.non-bmp.js: OK
 kangax-es6/regex.flags.y.js: OK
 kangax-es6/regex.flags.y.lastIndex.js: OK
-kangax-es6/rest-params.arguments.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/rest-params.basic.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/rest-params.arguments.js: ReferenceError: arguments is not defined
+kangax-es6/rest-params.basic.js: TypeError: Right-hand side of 'instanceof' is not an object
 kangax-es6/rest-params.length.js: failed
-kangax-es6/rest-params.new-function.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/rest-params.new-function.js: Error: Object construction not allowed: Function
 kangax-es6/rest-params.no-setter.js: OK
 kangax-es6/spread.array-call.js: OK
 kangax-es6/spread.array-literal.js: OK
@@ -1060,8 +1060,8 @@ kangax-es6/spread.iterable-instance-call.js: throw err.error; ReferenceError: gl
 kangax-es6/spread.iterable-instance-literal.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/spread.iterable-literal.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/spread.non-iterable-error.js: OK
-kangax-es6/spread.sparse-call.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/spread.sparse-literal.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/spread.sparse-call.js: TypeError: Cannot use 'in' operator to search for '0' in 1
+kangax-es6/spread.sparse-literal.js: TypeError: Cannot use 'in' operator to search for '0' in 1
 kangax-es6/spread.string-call.js: OK
 kangax-es6/spread.string-literal.js: OK
 kangax-es6/subclassing.Array.concat.js: throw err.error; ParseError: Unexpected token 'class': class C extends Array {}
@@ -1103,89 +1103,89 @@ kangax-es6/super.property-access.js: throw err.error; ParseError: Unexpected tok
 kangax-es6/super.statement.js: throw err.error; ParseError: Unexpected token 'class': class B {
 kangax-es6/super.static-binding.js: throw err.error; ParseError: Unexpected token 'class': class B {
 kangax-es6/super.this-binding.js: throw err.error; ParseError: Unexpected token 'class': class B {
-kangax-es6/tail-calls.direct.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/tail-calls.mutual.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
+kangax-es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 kangax-es6/template.basic.js: OK
-kangax-es6/template.caching.js: throw err.error; ParseError: Unexpected token after prop: `: var other = strings`1`
+kangax-es6/template.caching.js: failed
 kangax-es6/template.escape-sequences.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 1
-kangax-es6/template.frozen-array.js: throw err.error; ParseError: Unexpected token after inlineFunction: `: (function(parts) {
-kangax-es6/template.line-break.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/template.permanent-caching.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/template.tagged.js: throw err.error; ParseError: Unexpected token after prop: `: fn `0` && called
+kangax-es6/template.frozen-array.js: Error: Static method or property access not permitted: Object.isFrozen
+kangax-es6/template.line-break.js: failed
+kangax-es6/template.permanent-caching.js: failed
+kangax-es6/template.tagged.js: TypeError: Cannot read properties of undefined (reading '0')
 kangax-es6/template.toString.js: OK
-kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Float32.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Float64.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Int8.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Int16.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Int32.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Uint8.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Uint16.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.DataView.Uint32.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Float32Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Float64Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Int8Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Int16Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Int32Array.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Float32.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Float64.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int8.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int16.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Int32.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint8.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint16.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.DataView.Uint32.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Float32Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Float64Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int8Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int16Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Int32Array.js: ReferenceError: ArrayBuffer is not defined
 kangax-es6/typed-arrays.Symbol.species.js: failed
-kangax-es6/typed-arrays.Uint8Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Uint8ClampedArray.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Uint16Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.Uint32Array.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/typed-arrays.Uint8Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint16Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es6/typed-arrays.Uint32Array.js: ReferenceError: ArrayBuffer is not defined
 kangax-es6/typed-arrays.constructor-iterables.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/typed-arrays.constructor-requires-new.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/typed-arrays.correct-prototype-chains.js: throw err.error; ReferenceError: global is not defined
 kangax-es6/typed-arrays.from.js: failed
 kangax-es6/typed-arrays.of.js: failed
-kangax-es6/typed-arrays.prototype.Symbol.iterator.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.copyWithin.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.entries.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.every.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.fill.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.filter.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.findIndex.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.find.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.forEach.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.indexOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.join.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.keys.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.lastIndexOf.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.map.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.reduceRight.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.reduce.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.reverse.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.slice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.some.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.sort.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.subarray.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/typed-arrays.prototype.values.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/typed-arrays.prototype.Symbol.iterator.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.copyWithin.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.entries.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.every.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.fill.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.filter.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.findIndex.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.find.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.forEach.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.indexOf.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.join.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.keys.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.lastIndexOf.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.map.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.reduceRight.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.reduce.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.reverse.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.slice.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.some.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.sort.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.subarray.js: Error: Method or property access not permitted: Function.prototype
+kangax-es6/typed-arrays.prototype.values.js: Error: Method or property access not permitted: Function.prototype
 kangax-es6/unicode-escapes.identifier.js: throw err.error; ParseError: Unexpected token 'var': var \u{102C0} = 2
 kangax-es6/unicode-escapes.property-access.js: throw err.error; ParseError: Unexpected token after prop: .: o.\u{102C0} === 2
 kangax-es6/unicode-escapes.property-key.js: throw err.error; ParseError: Unexpected token after createObject: \: var o = { \u{102C0} : 2 }
 kangax-es6/unicode-escapes.string.js: OK
-kangax-es6/well-known.hasInstance.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/well-known.hasInstance.js: Error: Static method or property access not permitted: Object.defineProperty
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
-kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.iterator.arguments.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es6/well-known.iterator.arguments.js: ReferenceError: arguments is not defined
 kangax-es6/well-known.iterator.js: OK
-kangax-es6/well-known.match.RegExp-constructor.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.match.String.endsWith.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.match.String.includes.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.match.String.startsWith.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/well-known.match.RegExp-constructor.js: Error: Override prototype property 'Symbol(Symbol.match)' not allowed
+kangax-es6/well-known.match.String.endsWith.js: Error: Override prototype property 'Symbol(Symbol.match)' not allowed
+kangax-es6/well-known.match.String.includes.js: Error: Override prototype property 'Symbol(Symbol.match)' not allowed
+kangax-es6/well-known.match.String.startsWith.js: Error: Override prototype property 'Symbol(Symbol.match)' not allowed
 kangax-es6/well-known.match.js: OK
 kangax-es6/well-known.replace.js: OK
 kangax-es6/well-known.search.js: OK
-kangax-es6/well-known.species.Array.concat.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.Array.filter.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.Array.map.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.Array.slice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.Array.splice.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.Promise.then.js: throw err.error; ReferenceError: e is not defined
-kangax-es6/well-known.species.RegExp.split.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/well-known.species.Array.concat.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.Array.filter.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.Array.map.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.Array.slice.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.Array.splice.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.Promise.then.js: Error: Override prototype property 'constructor' not allowed
+kangax-es6/well-known.species.RegExp.split.js: Error: Access to prototype of global object is not permitted
 kangax-es6/well-known.species.js: OK
 kangax-es6/well-known.split.js: OK
 kangax-es6/well-known.toPrimitive.js: OK
-kangax-es6/well-known.toStringTag.existing-builtins.js: throw err.error; ReferenceError: e is not defined
+kangax-es6/well-known.toStringTag.existing-builtins.js: Error: Access to prototype of global object is not permitted
 kangax-es6/well-known.toStringTag.js: OK
 kangax-es6/well-known.toStringTag.misc-builtins.js: OK
 kangax-es6/well-known.toStringTag.new-builtins.js: throw err.error; ParseError: Unexpected token 'function': passed = passed
@@ -1193,62 +1193,62 @@ kangax-es6/well-known.unscopables.js: throw err.error; ParseError: Unexpected to
 kangax-es2016/Array.prototype.includes.generic.js: throw err.error; ParseError: Unexpected token after prop: ": [].includes.call(
 kangax-es2016/Array.prototype.includes.js: OK
 kangax-es2016/Array.prototype.includes.sparse.js: failed
-kangax-es2016/Array.prototype.includes.typed-array.js: throw err.error; ReferenceError: e is not defined
+kangax-es2016/Array.prototype.includes.typed-array.js: Error: Method or property access not permitted: TypedArray.includes
 kangax-es2016/exponentiation.assignment.js: OK
 kangax-es2016/exponentiation.basic.js: OK
 kangax-es2016/exponentiation.unary-negation-error.js: failed
-kangax-es2016/misc.Proxy-Array-includes.js: throw err.error; ReferenceError: e is not defined
-kangax-es2016/misc.Proxy-enumerate-removed.js: throw err.error; ReferenceError: e is not defined
+kangax-es2016/misc.Proxy-Array-includes.js: ReferenceError: Proxy is not defined
+kangax-es2016/misc.Proxy-enumerate-removed.js: ReferenceError: Proxy is not defined
 kangax-es2016/misc.generator-no-new.js: throw err.error; ParseError: Unexpected token 'function': function * generator() {
 kangax-es2016/misc.generator-throw-inner.js: throw err.error; ParseError: Unexpected token 'function': function * generator() {
 kangax-es2016/misc.nested-rest-destructuring-decl.js: throw err.error; ParseError: Unexpected token 'var': var [x, ...[y, ...z]] = [1,2,3,4]
 kangax-es2016/misc.nested-rest-destructuring-params.js: throw err.error; ParseError: Unexpected token 'function': function ([x, ...[y, ...z]]) {
 kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
-kangax-es2017/Atomics.add.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.and.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.compareExchange.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.exchange.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.isLockFree.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.load.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.notify.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.or.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.store.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.sub.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.wait.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Atomics.xor.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Object.entries.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Object.getOwnPropertyDescriptors.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/Object.values.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/SharedArrayBuffer.Symbol.species.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/Atomics.add.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.and.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.compareExchange.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.exchange.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.isLockFree.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.load.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.notify.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.or.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.store.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.sub.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.wait.js: ReferenceError: Atomics is not defined
+kangax-es2017/Atomics.xor.js: ReferenceError: Atomics is not defined
+kangax-es2017/Object.entries.js: Error: Static method or property access not permitted: Object.create
+kangax-es2017/Object.getOwnPropertyDescriptors.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js: ReferenceError: Proxy is not defined
+kangax-es2017/Object.values.js: Error: Static method or property access not permitted: Object.create
+kangax-es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: SharedArrayBuffer is not defined
 kangax-es2017/SharedArrayBuffer.js: failed
-kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/SharedArrayBuffer.prototype.slice.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.byteLength.js: ReferenceError: SharedArrayBuffer is not defined
+kangax-es2017/SharedArrayBuffer.prototype.slice.js: ReferenceError: SharedArrayBuffer is not defined
 kangax-es2017/String.prototype.padEnd.js: OK
 kangax-es2017/String.prototype.padStart.js: OK
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: ReferenceError: __defineGetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.js: Error: Static method or property access not permitted: Object.prototype
+kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: Error: Static method or property access not permitted: Object.prototype
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: ReferenceError: __defineSetter__ is not defined
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.js: Error: Static method or property access not permitted: Object.prototype
+kangax-es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: Error: Static method or property access not permitted: Object.prototype
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: __lookupGetter__ is not defined
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js: throw err.error; ParseError: Unexpected token after prop: f: var obj = {
 kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: throw err.error; ParseError: Unexpected token after prop: f: var obj = {
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: Error: Static method or property access not permitted: Object.create
+kangax-es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: __lookupSetter__ is not defined
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js: throw err.error; ParseError: Unexpected token after prop: f: var obj = {
 kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: throw err.error; ParseError: Unexpected token after prop: f: var obj = {
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Proxy.__defineGetter__.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Proxy.__defineSetter__.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Proxy.__lookupGetter__.js: throw err.error; ReferenceError: e is not defined
-kangax-es2017/annex-b.Proxy.__lookupSetter__.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: Error: Static method or property access not permitted: Object.create
+kangax-es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: Error: Static method or property access not permitted: Object.defineProperty
+kangax-es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Proxy is not defined
+kangax-es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Proxy is not defined
 kangax-es2017/annex-b.for-in-assignment-non-strict.js: throw err.error; ParseError: Invalid for loop definition: for (var i = 0 in {}) {}
-kangax-es2017/async.Symbol.toStringTag.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/async.Symbol.toStringTag.js: Error: Static method or property access not permitted: Object.getPrototypeOf
 kangax-es2017/async.arrow-in-class.js: throw err.error; ParseError: Unexpected token 'class': class C {
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
@@ -1261,19 +1261,19 @@ kangax-es2017/async.must-await-value.js: failed
 kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: failed
 kangax-es2017/async.no-prototype.js: OK
-kangax-es2017/async.prototype-chain.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/async.prototype-chain.js: Error: Static method or property access not permitted: Object.getPrototypeOf
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
-kangax-es2017/misc.arguments-caller-removed.js: throw err.error; ReferenceError: e is not defined
+kangax-es2017/misc.arguments-caller-removed.js: Error: Static method or property access not permitted: Object.getOwnPropertyDescriptor
 kangax-es2017/regex.flags.u.case-folding.js: OK
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: throw err.error; ParseError: Unexpected token 'function': typeof function f( a, b, ) {} === "0"
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
 kangax-es2018/Promise.prototype.finally.js: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: arguments is not defined
 kangax-es2018/Promise.prototype.finally.no-change-resolution.js: OK
-kangax-es2018/async-iterators.for-await-of.js: throw err.error; ReferenceError: e is not defined
+kangax-es2018/async-iterators.for-await-of.js: Error: Unexpected token 'for': for await(var value of asyncIterable)res
 kangax-es2018/async-iterators.generators.js: throw err.error; ParseError: Unexpected token after prop: f: async function*generator() {
-kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: throw err.error; ReferenceError: e is not defined
+kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: Proxy is not defined
 kangax-es2018/misc.template-literal-revision.js: throw new SyntaxError("Octal Deprecation: " + octal); SyntaxError: Octal Deprecation: 01
 kangax-es2018/object-rest.js: throw err.error; ParseError: Unexpected token 'var': var { a, ...rest } = { a: 1, b: 2, c: 3
 kangax-es2018/object-spread.js: OK
@@ -1291,84 +1291,84 @@ kangax-es2018/regex.unicode-property-escapes.unicode-15.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
 kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 kangax-es2019/Array.prototype.flatMap.js: OK
-kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: throw err.error; ReferenceError: e is not defined
+kangax-es2019/Array.prototype.flat-flatMap.unscopables.js: Error: Access to prototype of global object is not permitted
 kangax-es2019/Array.prototype.flat.js: OK
 kangax-es2019/Object.fromEntries.js: OK
 kangax-es2019/String.prototype.trimEnd.js: OK
 kangax-es2019/String.prototype.trimStart.js: OK
 kangax-es2019/Symbol.prototype.description.empty.js: OK
 kangax-es2019/Symbol.prototype.description.js: OK
-kangax-es2019/Symbol.prototype.description.undefined.js: throw err.error; ReferenceError: e is not defined
+kangax-es2019/Symbol.prototype.description.undefined.js: Error: Access to prototype of global object is not permitted
 kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
 kangax-es2019/annex-b.String.prototype.trimRight.js: OK
 kangax-es2019/misc.Function-toString.Function-constructor.js: failed
 kangax-es2019/misc.Function-toString.arrows.js: failed
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: throw err.error; ReferenceError: e is not defined
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: throw err.error; ReferenceError: e is not defined
-kangax-es2019/misc.Function-toString.computed-names.js: throw err.error; ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: Error: Unexpected token 'class': class  A  extends  function B() {}  {  c
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: Error: Unexpected token 'class': class A {}
+kangax-es2019/misc.Function-toString.computed-names.js: Error: Unexpected token after call: {: { [  "0"  ]  (  )  {  } }.f
 kangax-es2019/misc.Function-toString.native-code.js: failed
-kangax-es2019/misc.Function-toString.unicode-escapes.js: throw err.error; ReferenceError: e is not defined
+kangax-es2019/misc.Function-toString.unicode-escapes.js: Error: Unexpected token 'function': function \u0061(\u{62}, \u0063) { \u0062
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
-kangax-es2019/misc.JSON-superset.line-separator.js: failed
-kangax-es2019/misc.JSON-superset.paragraph-separator.js: failed
+kangax-es2019/misc.JSON-superset.line-separator.js: OK
+kangax-es2019/misc.JSON-superset.paragraph-separator.js: OK
 kangax-es2019/misc.optional-catch-binding.await.js: OK
 kangax-es2019/misc.optional-catch-binding.js: OK
 kangax-es2019/misc.optional-catch-binding.yield.js: throw err.error; ParseError: Unexpected token 'function': function *foo() {
-kangax-es2020/BigInt64Array.js: throw err.error; ReferenceError: e is not defined
+kangax-es2020/BigInt64Array.js: ReferenceError: ArrayBuffer is not defined
 kangax-es2020/BigInt.asIntN.js: OK
 kangax-es2020/BigInt.asUintN.js: OK
 kangax-es2020/BigInt.constructor.js: OK
 kangax-es2020/BigInt.js: OK
-kangax-es2020/BigUint64Array.js: throw err.error; ReferenceError: e is not defined
-kangax-es2020/DataView.prototype.getBigInt64.js: throw err.error; ReferenceError: e is not defined
-kangax-es2020/DataView.prototype.getBigUint64.js: throw err.error; ReferenceError: e is not defined
+kangax-es2020/BigUint64Array.js: ReferenceError: ArrayBuffer is not defined
+kangax-es2020/DataView.prototype.getBigInt64.js: ReferenceError: ArrayBuffer is not defined
+kangax-es2020/DataView.prototype.getBigUint64.js: ReferenceError: ArrayBuffer is not defined
 kangax-es2020/Promise.allSettled.js: OK
-kangax-es2020/String.prototype.matchAll.js: throw err.error; ReferenceError: e is not defined
-kangax-es2020/String.prototype.matchAll.throws-non-global.js: throw err.error; ReferenceError: e is not defined
-kangax-es2020/globalThis.descriptor.js: throw err.error; ReferenceError: e is not defined
+kangax-es2020/String.prototype.matchAll.js: Error: Method or property access not permitted: Iterator.Symbol(Symbol.iterator)
+kangax-es2020/String.prototype.matchAll.throws-non-global.js: Error: Access to prototype of global object is not permitted
+kangax-es2020/globalThis.descriptor.js: Error: Static method or property access not permitted: Object.prototype
 kangax-es2020/globalThis.js: throw err.error; TypeError: Cannot read properties of null (reading 'lacksGlobalThis')
 kangax-es2020/nullish-coalescing.js: OK
 kangax-es2020/optional-chaining.bracket.js: OK
-kangax-es2020/optional-chaining.function-call.js: throw err.error; ReferenceError: e is not defined
+kangax-es2020/optional-chaining.function-call.js: TypeError: n is not a function
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
 kangax-es2020/optional-chaining.spread-params.js: OK
-kangax-es2021/FinalizationRegistry.js: throw err.error; ReferenceError: e is not defined
+kangax-es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry is not defined
 kangax-es2021/Promise.any.AggregateError.js: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: AggregateError is not defined
 kangax-es2021/Promise.any.fulfillment.js: OK
 kangax-es2021/String.prototype.replaceAll.js: OK
-kangax-es2021/WeakRef.js: throw err.error; ReferenceError: e is not defined
-kangax-es2021/logical-assignment.and.js: throw err.error; ParseError: Unexpected token after boolOpAnd: =: a &&= 2
+kangax-es2021/WeakRef.js: ReferenceError: WeakRef is not defined
+kangax-es2021/logical-assignment.and.js: failed
 kangax-es2021/logical-assignment.and.setter-not-invoked.js: throw err.error; ParseError: Unexpected token after prop: x: var obj = { get x() { return }, set x(n)
-kangax-es2021/logical-assignment.and.short-circuit.js: throw err.error; ParseError: Unexpected token after boolOpAnd: =: a &&= ++i
-kangax-es2021/logical-assignment.nullish.js: throw err.error; ParseError: Unexpected token after nullishCoalescing: =: a ??= 2
+kangax-es2021/logical-assignment.and.short-circuit.js: failed
+kangax-es2021/logical-assignment.nullish.js: failed
 kangax-es2021/logical-assignment.nullish.setter-not-invoked.js: throw err.error; ParseError: Unexpected token after prop: x: var obj = { get x() { return 1 }, set x(
-kangax-es2021/logical-assignment.nullish.short-circuit.js: throw err.error; ParseError: Unexpected token after nullishCoalescing: =: a ??= ++i
-kangax-es2021/logical-assignment.or.js: throw err.error; ParseError: Unexpected token after boolOpOr: =: a ||= 2
+kangax-es2021/logical-assignment.nullish.short-circuit.js: failed
+kangax-es2021/logical-assignment.or.js: OK
 kangax-es2021/logical-assignment.or.setter-not-invoked.js: throw err.error; ParseError: Unexpected token after prop: x: var obj = { get x() { return 1 }, set x(
-kangax-es2021/logical-assignment.or.short-circuit.js: throw err.error; ParseError: Unexpected token after boolOpOr: =: a ||= ++i
+kangax-es2021/logical-assignment.or.short-circuit.js: failed
 kangax-es2021/numeric-separators.js: OK
-kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
-kangax-es2022/Error.cause.AggregateError.js: throw err.error; ReferenceError: e is not defined
-kangax-es2022/Error.cause.Error-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: AggregateError is not defined
+kangax-es2022/Error.cause.AggregateError.js: ReferenceError: AggregateError is not defined
+kangax-es2022/Error.cause.Error-prototype-lacks.js: Error: Access to prototype of global object is not permitted
 kangax-es2022/Error.cause.Error.js: OK
-kangax-es2022/Error.cause.EvalError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.EvalError-prototype-lacks.js: Error: Static method or property access not permitted: EvalError.prototype
 kangax-es2022/Error.cause.EvalError.js: OK
-kangax-es2022/Error.cause.RangeError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.RangeError-prototype-lacks.js: Error: Static method or property access not permitted: RangeError.prototype
 kangax-es2022/Error.cause.RangeError.js: OK
-kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.ReferenceError-prototype-lacks.js: Error: Static method or property access not permitted: ReferenceError.prototype
 kangax-es2022/Error.cause.ReferenceError.js: OK
-kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.SyntaxError-prototype-lacks.js: Error: Static method or property access not permitted: SyntaxError.prototype
 kangax-es2022/Error.cause.SyntaxError.js: OK
-kangax-es2022/Error.cause.TypeError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.TypeError-prototype-lacks.js: Error: Static method or property access not permitted: TypeError.prototype
 kangax-es2022/Error.cause.TypeError.js: OK
-kangax-es2022/Error.cause.URIError-prototype-lacks.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Error.cause.URIError-prototype-lacks.js: Error: Static method or property access not permitted: URIError.prototype
 kangax-es2022/Error.cause.URIError.js: OK
-kangax-es2022/Object.hasOwn.ToObject-first.js: throw err.error; ReferenceError: e is not defined
-kangax-es2022/Object.hasOwn.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/Object.hasOwn.ToObject-first.js: Error: Static method or property access not permitted: Object.hasOwn
+kangax-es2022/Object.hasOwn.js: Error: Static method or property access not permitted: Object.hasOwn
 kangax-es2022/at-method.Array.js: OK
 kangax-es2022/at-method.String.js: OK
-kangax-es2022/at-method.TypedArray.js: throw err.error; ReferenceError: e is not defined
+kangax-es2022/at-method.TypedArray.js: Error: Method or property access not permitted: TypedArray.at
 kangax-es2022/class-fields.computed-instance.js: throw err.error; ParseError: Unexpected token 'class': class C {
 kangax-es2022/class-fields.computed-static.js: throw err.error; ParseError: Unexpected token 'class': class C {
 kangax-es2022/class-fields.instance.parent-scope.js: throw err.error; ParseError: Unexpected token 'class': class MyClass {
@@ -1394,39 +1394,39 @@ kangax-es2023/Array.prototype.toReversed.js: OK
 kangax-es2023/Array.prototype.toSorted.js: OK
 kangax-es2023/Array.prototype.toSpliced.js: OK
 kangax-es2023/Array.prototype.with.js: OK
-kangax-es2023/TypedArray.prototype.toReversed.js: throw err.error; ReferenceError: e is not defined
-kangax-es2023/TypedArray.prototype.toSorted.js: throw err.error; ReferenceError: e is not defined
-kangax-es2023/TypedArray.prototype.with.js: throw err.error; ReferenceError: e is not defined
+kangax-es2023/TypedArray.prototype.toReversed.js: Error: Method or property access not permitted: TypedArray.toReversed
+kangax-es2023/TypedArray.prototype.toSorted.js: Error: Method or property access not permitted: TypedArray.toSorted
+kangax-es2023/TypedArray.prototype.with.js: Error: Method or property access not permitted: TypedArray.with
 kangax-es2023/hashbang.js: throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str); ParseError: Unexpected token after dot: #: #!/0/r/env node
-kangax-es2024/ArrayBuffer.prototype.detached.js: throw err.error; ReferenceError: e is not defined
-kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: throw err.error; ReferenceError: e is not defined
-kangax-es2024/ArrayBuffer.prototype.transfer.js: throw err.error; ReferenceError: e is not defined
-kangax-es2024/Map.groupBy.js: throw err.error; ReferenceError: e is not defined
-kangax-es2024/Object.groupBy.js: throw err.error; ReferenceError: e is not defined
-kangax-es2024/Promise.withResolvers.js: throw err.error; ReferenceError: e is not defined
+kangax-es2024/ArrayBuffer.prototype.detached.js: Error: Method or property access not permitted: TypedArray.buffer
+kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: Error: Method or property access not permitted: TypedArray.buffer
+kangax-es2024/ArrayBuffer.prototype.transfer.js: Error: Method or property access not permitted: TypedArray.buffer
+kangax-es2024/Map.groupBy.js: TypeError: Right-hand side of 'instanceof' is not an object
+kangax-es2024/Object.groupBy.js: Error: Static method or property access not permitted: Object.groupBy
+kangax-es2024/Promise.withResolvers.js: TypeError: Right-hand side of 'instanceof' is not callable
 kangax-es2024/regex.flags.v.constructor.js: OK
 kangax-es2024/regex.flags.v.properties-of-strings.js: throw err.error; ParseError: Unexpected end of expression: /0/r.test("0")
 kangax-es2024/regex.flags.v.set-notations.js: OK
-kangax-es2024/regex.flags.v.shows-in-flags.js: throw err.error; ReferenceError: e is not defined
+kangax-es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Proxy is not defined
 kangax-es2024/regex.flags.v.unicode-15.1.js: OK
 kangax-es2024/regex.flags.v.unicode-16.0.js: OK
 kangax-es2024/regex.flags.v.unicode-17.0.js: OK
 kangax-es2025/Iterator.extends.js: throw err.error; ParseError: Unexpected token 'class': class Class extends Iterator { }
-kangax-es2025/Iterator.from.iterable.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.from.iterator.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.instanceof.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.drop.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.every.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.filter.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.find.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.flatMap.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.forEach.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.map.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.reduce.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.some.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.take.js: throw err.error; ReferenceError: e is not defined
-kangax-es2025/Iterator.prototype.toArray.js: throw err.error; ReferenceError: e is not defined
+kangax-es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.instanceof.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator is not defined
+kangax-es2025/Iterator.prototype.drop.js: Error: Method or property access not permitted: Iterator.drop
+kangax-es2025/Iterator.prototype.every.js: Error: Method or property access not permitted: Iterator.every
+kangax-es2025/Iterator.prototype.filter.js: Error: Method or property access not permitted: Iterator.filter
+kangax-es2025/Iterator.prototype.find.js: Error: Method or property access not permitted: Iterator.find
+kangax-es2025/Iterator.prototype.flatMap.js: Error: Method or property access not permitted: Iterator.flatMap
+kangax-es2025/Iterator.prototype.forEach.js: Error: Method or property access not permitted: Iterator.forEach
+kangax-es2025/Iterator.prototype.map.js: Error: Method or property access not permitted: Iterator.map
+kangax-es2025/Iterator.prototype.reduce.js: Error: Method or property access not permitted: Iterator.reduce
+kangax-es2025/Iterator.prototype.some.js: Error: Method or property access not permitted: Iterator.some
+kangax-es2025/Iterator.prototype.take.js: Error: Method or property access not permitted: Iterator.take
+kangax-es2025/Iterator.prototype.toArray.js: Error: Method or property access not permitted: Iterator.toArray
 kangax-es2025/Promise.try.js: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: arguments is not defined
 kangax-es2025/RegExp.escape.js: OK
 kangax-es2025/Set.prototype.difference.js: OK
@@ -1440,12 +1440,12 @@ kangax-es2025/regex.duplicate-named-groups.js: OK
 kangax-es2025/regex.pattern-modifiers.i.js: OK
 kangax-es2025/regex.pattern-modifiers.m.js: OK
 kangax-es2025/regex.pattern-modifiers.s.js: OK
-kangax-intl/Array.prototype.toLocaleString.js: throw err.error; ReferenceError: e is not defined
-kangax-intl/Date.prototype.toLocaleDateString.js: throw err.error; ReferenceError: e is not defined
-kangax-intl/Date.prototype.toLocaleString.js: throw err.error; ReferenceError: e is not defined
-kangax-intl/Date.prototype.toLocaleTimeString.js: throw err.error; ReferenceError: e is not defined
+kangax-intl/Array.prototype.toLocaleString.js: Error: Access to prototype of global object is not permitted
+kangax-intl/Date.prototype.toLocaleDateString.js: Error: Access to prototype of global object is not permitted
+kangax-intl/Date.prototype.toLocaleString.js: Error: Access to prototype of global object is not permitted
+kangax-intl/Date.prototype.toLocaleTimeString.js: Error: Access to prototype of global object is not permitted
 kangax-intl/Intl.Collator.js: OK
-kangax-intl/Intl.Collator.new-instances.js: throw err.error; ReferenceError: e is not defined
+kangax-intl/Intl.Collator.new-instances.js: Error: Object construction not allowed: Function
 kangax-intl/Intl.Collator.prototype.compare.js: failed
 kangax-intl/Intl.Collator.prototype.resolvedOptions.js: failed
 kangax-intl/Intl.Collator.rejects-invalid-tags.js: OK
@@ -1453,29 +1453,29 @@ kangax-intl/Intl.Collator.valid-tags.js: OK
 kangax-intl/Intl.Collator.without-new.js: OK
 kangax-intl/Intl.DateTimeFormat.iana-timezones.js: failed
 kangax-intl/Intl.DateTimeFormat.js: OK
-kangax-intl/Intl.DateTimeFormat.new-instances.js: throw err.error; ReferenceError: e is not defined
+kangax-intl/Intl.DateTimeFormat.new-instances.js: Error: Object construction not allowed: Function
 kangax-intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
-kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: throw err.error; ReferenceError: e is not defined
+kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: Error: Method or property access not permitted: DateTimeFormat.resolvedOptions
 kangax-intl/Intl.DateTimeFormat.valid-tags.js: OK
 kangax-intl/Intl.DateTimeFormat.without-new.js: OK
 kangax-intl/Intl.NumberFormat.js: OK
-kangax-intl/Intl.NumberFormat.new-instances.js: throw err.error; ReferenceError: e is not defined
+kangax-intl/Intl.NumberFormat.new-instances.js: Error: Object construction not allowed: Function
 kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
 kangax-intl/Intl.NumberFormat.valid-tags.js: OK
 kangax-intl/Intl.NumberFormat.without-new.js: OK
 kangax-intl/Intl.js: OK
 kangax-intl/Intl.prototype.js: OK
-kangax-intl/Number.prototype.toLocaleString.js: throw err.error; ReferenceError: e is not defined
-kangax-intl/Object.prototype.toLocaleString.js: throw err.error; ReferenceError: e is not defined
-kangax-intl/String.prototype.localeCompare.js: throw err.error; ReferenceError: e is not defined
-kangax-next/Array.isTemplateObject.js: throw err.error; ParseError: Unexpected token after arrowFunctionSingle: `: !Array.isTemplateObject([])
+kangax-intl/Number.prototype.toLocaleString.js: Error: Access to prototype of global object is not permitted
+kangax-intl/Object.prototype.toLocaleString.js: Error: Static method or property access not permitted: Object.prototype
+kangax-intl/String.prototype.localeCompare.js: Error: Access to prototype of global object is not permitted
+kangax-next/Array.isTemplateObject.js: TypeError: isTemplateObject is not a function
 kangax-next/AsyncDisposableStack.js: throw err.error; ParseError: Unexpected token after call: {: var resource3 = { disposed: false, async
 kangax-next/AsyncIterator.extends.js: throw err.error; ParseError: Unexpected token 'class': class Class extends AsyncIterator { }
 kangax-next/AsyncIterator.from.async-iterable.js: throw err.error; ParseError: Unexpected token after prop: f: const iterator = AsyncIterator.from(asyn
-kangax-next/AsyncIterator.from.iterable.js: throw err.error; ReferenceError: e is not defined
-kangax-next/AsyncIterator.from.iterator.js: throw err.error; ReferenceError: e is not defined
+kangax-next/AsyncIterator.from.iterable.js: Error: Unexpected token 'for': for await (const it of iterator) result.
+kangax-next/AsyncIterator.from.iterator.js: Error: Unexpected token 'for': for await (const it of iterator) result.
 kangax-next/AsyncIterator.instanceof.js: throw err.error; ParseError: Unexpected token after prop: f: async function*() {}
-kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: throw err.error; ReferenceError: e is not defined
+kangax-next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
 kangax-next/AsyncIterator.prototype.drop.js: throw err.error; ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
 kangax-next/AsyncIterator.prototype.every.js: throw err.error; ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
 kangax-next/AsyncIterator.prototype.filter.js: throw err.error; ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
@@ -1488,23 +1488,23 @@ kangax-next/AsyncIterator.prototype.some.js: throw err.error; ParseError: Unexpe
 kangax-next/AsyncIterator.prototype.take.js: throw err.error; ParseError: Unexpected token after prop: f: toArray(async function*() { yield * [1,
 kangax-next/AsyncIterator.prototype.toArray.js: throw err.error; ParseError: Unexpected token after prop: f: async function*() { yield * [1, 2, 3] }
 kangax-next/DisposableStack.js: throw err.error; ParseError: Unexpected token after call: {: var resource3 = { disposed: false, [Symb
-kangax-next/Map.prototype.upsert.js: throw err.error; ReferenceError: e is not defined
+kangax-next/Map.prototype.upsert.js: TypeError: upsert is not a function
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
-kangax-next/ShadowRealm.js: throw err.error; ReferenceError: e is not defined
+kangax-next/ShadowRealm.js: ReferenceError: ShadowRealm is not defined
 kangax-next/SuppressedError.js: throw err.error; ParseError: Unexpected token after prop: _: using _1 = { [Symbol.dispose]() { throw
-kangax-next/Uint8Array.fromBase64.js: throw err.error; ReferenceError: e is not defined
-kangax-next/Uint8Array.fromHex.js: throw err.error; ReferenceError: e is not defined
+kangax-next/Uint8Array.fromBase64.js: Error: Method or property access not permitted: TypedArray.length
+kangax-next/Uint8Array.fromHex.js: Error: Method or property access not permitted: TypedArray.length
 kangax-next/Uint8Array.setFromBase64.js: throw err.error; ParseError: Unexpected token 'let': let { read, written } = arr2.setFromBase
 kangax-next/Uint8Array.setFromHex.js: throw err.error; ParseError: Unexpected token 'let': let { read, written } = arr2.setFromHex(
 kangax-next/Uint8Array.toBase64.js: OK
 kangax-next/Uint8Array.toHex.js: OK
-kangax-next/WeakMap.prototype.upsert.js: throw err.error; ReferenceError: e is not defined
+kangax-next/WeakMap.prototype.upsert.js: TypeError: upsert is not a function
 kangax-next/await-using.for-of.js: throw err.error; ParseError: Unexpected token after call: {: var resource1 = {
-kangax-next/await-using.js: throw err.error; ReferenceError: e is not defined
+kangax-next/await-using.js: Error: Unexpected token after call: {: var resource = {
 kangax-next/class-decorators.js: throw err.error; ParseError: Unexpected token 'class': class A {
 kangax-next/function.sent.js: throw err.error; ParseError: Unexpected token 'function': function* generator() {
-kangax-next/throw-expr.arrow.js: throw err.error; ReferenceError: e is not defined
+kangax-next/throw-expr.arrow.js: Error: Unexpected token 'throw': throw 42
 kangax-next/throw-expr.conditional.js: throw err.error; ParseError: Unexpected token 'throw': throw 21
 kangax-next/throw-expr.logical.js: throw err.error; ParseError: Unexpected token 'throw': a = 19 || throw 77
 kangax-next/throw-expr.param-init.js: throw err.error; ParseError: Unexpected token 'function': function fn (arg = throw 42) {

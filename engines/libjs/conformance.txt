@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "cfdc4a799667f6ba3a0bba6a6c6c697d8b2bc1da9fe49cbc3816d13743d23608", "binary_size": 43814960, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "0aec6a12b4135e6981a6e72decf0c31a92e78f15", "revision_date": "2026-02-09"}
+Metadata: {"arch": "amd64", "binary_sha256": "5c12d3b7543c1bd674c133098143b61e9661489fbb687efad7ae6cf3049a16c9", "binary_size": 47378840, "console_log": "console.log", "engine": "libjs", "repository": "https://github.com/LadybirdBrowser/ladybird.git", "revision": "e188de89f94acbdb70d98a101ea0d615edb847d4", "revision_date": "2026-02-28"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -308,7 +308,7 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: backref for a group that hasn't captured failed
+es3/regex.backref.js: OK
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -582,13 +582,13 @@ kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-kangax-es6/Promise.all.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/Promise.all.iterable.js: OK
+kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
 kangax-es6/Promise.prototype-not-instance.js: OK
-kangax-es6/Promise.race.iterable.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-kangax-es6/Promise.race.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/Promise.race.iterable.js: OK
+kangax-es6/Promise.race.js: OK
 kangax-es6/Proxy.Array.isArray.js: OK
 kangax-es6/Proxy.JSON.stringify.js: OK
 kangax-es6/Proxy.constructor-requires-new.js: OK
@@ -729,7 +729,7 @@ kangax-es6/annex-b.regex.hyphens.js: OK
 kangax-es6/annex-b.regex.incomplete-patterns.js: OK
 kangax-es6/annex-b.regex.invalid-char-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-control-escapes.js: OK
-kangax-es6/annex-b.regex.invalid-hex-escapes.js: failed
+kangax-es6/annex-b.regex.invalid-hex-escapes.js: OK
 kangax-es6/annex-b.regex.invalid-unicode-escapes.js: OK
 kangax-es6/annex-b.regex.octal-escapes.js: OK
 kangax-es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
@@ -785,7 +785,7 @@ kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: OK
-kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: OK
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
@@ -793,7 +793,7 @@ kangax-es6/const.strict.block-scoped.js: OK
 kangax-es6/const.strict.for-in.js: OK
 kangax-es6/const.strict.for-loop.js: OK
 kangax-es6/const.strict.for-of.js: OK
-kangax-es6/const.strict.no-redefine.js: failed
+kangax-es6/const.strict.no-redefine.js: OK
 kangax-es6/const.strict.no-statement.js: OK
 kangax-es6/const.strict.shadow.js: OK
 kangax-es6/const.strict.tdz.js: OK
@@ -859,7 +859,7 @@ kangax-es6/destructuring-params.computed-properties.js: OK
 kangax-es6/destructuring-params.defaults-new-function.js: OK
 kangax-es6/destructuring-params.defaults-separate-scope.js: OK
 kangax-es6/destructuring-params.defaults.js: OK
-kangax-es6/destructuring-params.duplicate-identifier.js: OK
+kangax-es6/destructuring-params.duplicate-identifier.js: failed
 kangax-es6/destructuring-params.empty-patterns.js: OK
 kangax-es6/destructuring-params.generator.js: OK
 kangax-es6/destructuring-params.iterable-instance.js: OK
@@ -882,8 +882,8 @@ kangax-es6/for-of.astral-string.js: OK
 kangax-es6/for-of.generator.js: OK
 kangax-es6/for-of.iterable-instance.js: OK
 kangax-es6/for-of.iterable.js: OK
-kangax-es6/for-of.iterator-closing-break.js: failed
-kangax-es6/for-of.iterator-closing-throw.js: failed
+kangax-es6/for-of.iterator-closing-break.js: OK
+kangax-es6/for-of.iterator-closing-throw.js: OK
 kangax-es6/for-of.sparse-array.js: OK
 kangax-es6/for-of.string.js: OK
 kangax-es6/function.block-level-decl.js: OK
@@ -988,7 +988,7 @@ kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
-kangax-es6/misc.Proxy.get.RegExp.flags.js: failed
+kangax-es6/misc.Proxy.get.RegExp.flags.js: OK
 kangax-es6/misc.Proxy.get.RegExp.test.js: OK
 kangax-es6/misc.Proxy.get.RegExp.toString.js: OK
 kangax-es6/misc.Proxy.get.String.match.js: OK
@@ -1081,10 +1081,10 @@ kangax-es6/subclassing.Function.prototype-chain.js: failed
 kangax-es6/subclassing.Function.prototype.apply.js: OK
 kangax-es6/subclassing.Function.prototype.bind.js: failed
 kangax-es6/subclassing.Function.prototype.call.js: OK
-kangax-es6/subclassing.Promise.all.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/subclassing.Promise.all.js: OK
 kangax-es6/subclassing.Promise.js: OK
 kangax-es6/subclassing.Promise.prototype-chain.js: OK
-kangax-es6/subclassing.Promise.race.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es6/subclassing.Promise.race.js: OK
 kangax-es6/subclassing.RegExp.exec.js: OK
 kangax-es6/subclassing.RegExp.js: OK
 kangax-es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1252,8 +1252,8 @@ kangax-es2017/async.Symbol.toStringTag.js: OK
 kangax-es2017/async.arrow-in-class.js: OK
 kangax-es2017/async.arrow.js: OK
 kangax-es2017/async.await-non-promise.js: OK
-kangax-es2017/async.await-rejection.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
-kangax-es2017/async.await.js: WARNING: A promise was rejected without any handlers (result: [InternalError] Call stack size limit exceeded)
+kangax-es2017/async.await-rejection.js: OK
+kangax-es2017/async.await.js: OK
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK
 kangax-es2017/async.methods-object.js: OK
@@ -1265,7 +1265,7 @@ kangax-es2017/async.prototype-chain.js: OK
 kangax-es2017/async.return.js: OK
 kangax-es2017/async.throw.js: OK
 kangax-es2017/misc.arguments-caller-removed.js: OK
-kangax-es2017/regex.flags.u.case-folding.js: failed
+kangax-es2017/regex.flags.u.case-folding.js: OK
 kangax-es2017/trailing-comma.arguments.js: OK
 kangax-es2017/trailing-comma.params.js: OK
 kangax-es2018/Promise.prototype.finally.change-rejection.js: OK
@@ -1437,7 +1437,7 @@ kangax-es2025/Set.prototype.isSupersetOf.js: OK
 kangax-es2025/Set.prototype.symmetricDifference.js: OK
 kangax-es2025/Set.prototype.union.js: OK
 kangax-es2025/regex.duplicate-named-groups.js: OK
-kangax-es2025/regex.pattern-modifiers.i.js: failed
+kangax-es2025/regex.pattern-modifiers.i.js: OK
 kangax-es2025/regex.pattern-modifiers.m.js: OK
 kangax-es2025/regex.pattern-modifiers.s.js: OK
 kangax-intl/Array.prototype.toLocaleString.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function (eva
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: OK
-kangax-next/SuppressedError.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Missing generate_bytecode() is not implemented in LibJS)
+kangax-next/SuppressedError.js: failed
 kangax-next/Uint8Array.fromBase64.js: OK
 kangax-next/Uint8Array.fromHex.js: OK
 kangax-next/Uint8Array.setFromBase64.js: OK
@@ -1504,9 +1504,9 @@ kangax-next/await-using.for-of.js: Uncaught exception: [SyntaxError] Unexpected 
 kangax-next/await-using.js: Uncaught exception: [SyntaxError] Unexpected token Identifier. Expected Semicolon (line: 52, column: 19)
 kangax-next/class-decorators.js: Unexpected token Invalid. Expected property key (line: 10, column: 5) Uncaught exception: [SyntaxError] Unexpected token Invalid. Expected property key (line: 10, column: 5)
 kangax-next/function.sent.js: Uncaught exception: [SyntaxError] Unexpected token Period. Expected ParenOpen (line: 11, column: 22)
-kangax-next/throw-expr.arrow.js: Uncaught exception: [SyntaxError] Unexpected token ParenClose. Expected primary expression (line: 9, column: 13)
-kangax-next/throw-expr.conditional.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 9, column: 15)
-kangax-next/throw-expr.logical.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 11, column: 15)
-kangax-next/throw-expr.param-init.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected Identifier (line: 9, column: 22)
-kangax-next/using.for-of.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Unimplemented/invalid node used a reference is not implemented in LibJS)
-kangax-next/using.js: InternalError: TODO(CodeGenerationError in UsingDeclaration: Missing generate_bytecode() is not implemented in LibJS)
+kangax-next/throw-expr.arrow.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected primary expression (line: 9, column: 18)
+kangax-next/throw-expr.conditional.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected primary expression (line: 9, column: 15)
+kangax-next/throw-expr.logical.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected primary expression (line: 11, column: 15)
+kangax-next/throw-expr.param-init.js: Uncaught exception: [SyntaxError] Unexpected token Throw. Expected primary expression (line: 9, column: 22)
+kangax-next/using.for-of.js: TypeError: TODO: UsingDeclaration
+kangax-next/using.js: TypeError: TODO: UsingDeclaration

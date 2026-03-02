@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "1faf0b5ed28023fee5c58adc9f19e7c7d3f42c892200f322da24ba5d30f3cc4e", "binary_size": 4633152, "engine": "modernc-quickjs", "go": "1.25.7", "repository": "https://gitlab.com/cznic/quickjs.git", "revision": "cac47ebc1afe336be30c06a2f266faec85d6641b", "revision_date": "2025-12-18", "version": "0.17.1"}
+Metadata: {"arch": "arm64", "binary_sha256": "70c7a82ee0e4cf2dd04445b110285cf7553285c020cdec19f031769a5ec33a9a", "binary_size": 4700160, "console_log": "console.log", "engine": "modernc-quickjs", "repository": "https://gitlab.com/cznic/quickjs.git", "revision": "0002acc4598f3802c769e56e814054876d44baee", "revision_date": "2026-03-01", "version": "0.17.1-105-g0002acc"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0xffffd424dbe0 sp=0xffffd424dbb0 pc=0x81dc4
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0xffff6e56e6f0 sp=0xffff6e56e6c0 pc=0x81dc4
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1229 +0x38 fp=0xffff6137e6f0 sp=0xffff6137e6c0 pc=0x8a178
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1229 +0x38 fp=0xffff5708e6f0 sp=0xffff5708e6c0 pc=0x8a178
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK

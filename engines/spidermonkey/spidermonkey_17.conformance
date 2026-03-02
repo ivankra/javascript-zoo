@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "c7fe7a120e48700c365181a8f5372107e30587ece692bda738daaaa764e1620d", "binary_size": 4442840, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "spidermonkey", "loc": 203542, "regex": "YARR", "revision_date": "2013-03-25", "sources": "https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz", "standard": "ES5", "variant": "17", "version": "17.0.0"}
+Metadata: {"arch": "amd64", "binary_sha256": "6e4eb95f0a53f9b9f79b9665cb0e3eedc9841bbeb334930867aa3da2fa039cf1", "binary_size": 4446936, "console_log": "print", "engine": "spidermonkey", "loc": 203542, "regex": "YARR", "revision_date": "2013-03-25", "sources": "https://archive.mozilla.org/pub/js/mozjs17.0.0.tar.gz", "standard": "ES5", "variant": "17", "version": "17.0.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

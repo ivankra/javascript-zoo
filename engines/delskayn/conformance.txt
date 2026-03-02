@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "013d3b77eb2080a436b8d3ad2467b68afc936ecb1f7c608ce896af5be5e71fa0", "binary_size": 1116432, "console_log": "print", "engine": "delskayn", "repository": "https://github.com/DelSkayn/toyjs.git", "revision": "11f084fc09723785b4bdb0575509664ca8b05f49", "revision_date": "2022-06-04", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
+Metadata: {"arch": "arm64", "binary_sha256": "013d3b77eb2080a436b8d3ad2467b68afc936ecb1f7c608ce896af5be5e71fa0", "binary_size": 1116432, "console_log": "print", "engine": "delskayn", "repository": "https://github.com/DelSkayn/toyjs.git", "revision": "11f084fc09723785b4bdb0575509664ca8b05f49", "revision_date": "2022-06-04"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: length > max index failed

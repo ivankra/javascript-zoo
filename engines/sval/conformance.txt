@@ -1374,8 +1374,8 @@ kangax-es2022/class-fields.computed-static.js: OK
 kangax-es2022/class-fields.instance.parent-scope.js: OK
 kangax-es2022/class-fields.private-instance.initializers.js: OK
 kangax-es2022/class-fields.private-instance.js: OK
-kangax-es2022/class-fields.private-instance.optional-access.js: TypeError: Cannot read properties of null (reading 'privateh5xsr1wjdsi')
-kangax-es2022/class-fields.private-instance.optional-deep-access.js: TypeError: Cannot read properties of undefined (reading 'privatee9mdjothzdg')
+kangax-es2022/class-fields.private-instance.optional-access.js: TypeError: Cannot read properties of null (reading 'privatew2stg2yr9l')
+kangax-es2022/class-fields.private-instance.optional-deep-access.js: TypeError: Cannot read properties of undefined (reading 'privatelg8d5d2ukvj')
 kangax-es2022/class-fields.private-static.js: OK
 kangax-es2022/class-fields.public-instance.js: OK
 kangax-es2022/class-fields.public-static.js: OK

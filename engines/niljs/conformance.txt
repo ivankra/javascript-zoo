@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 913459, "dotnet": "10.0.102", "engine": "niljs", "repository": "https://github.com/nilproject/NiL.JS.git", "revision": "ebde4e9d9cd9b9d3f52eb9c40c0d5d22ff0a38d9", "revision_date": "2025-12-01", "version": "2.6.1712"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 913536, "engine": "niljs", "repository": "https://github.com/nilproject/NiL.JS.git", "revision": "286ccf0d6ed965ce857bd5c1650476ccba9f0c03", "revision_date": "2026-02-24", "version": "2.6.1714"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1255,7 +1255,7 @@ kangax-es2017/async.await-non-promise.js: failed
 kangax-es2017/async.await-rejection.js: failed
 kangax-es2017/async.await.js: failed
 kangax-es2017/async.constructor.js: failed
-kangax-es2017/async.methods-class.js: OK
+kangax-es2017/async.methods-class.js: failed
 kangax-es2017/async.methods-object.js: NiL.JS.Core.JSException: SyntaxError: Unexpected token (46:11) at NiL.JS.Core.Parser.Parse(ParseInfo state, Int32& index, CodeFragmentType ruleSet, Boolean throwError) in /src/NiL.JS/Core/Parser.cs:line 976
 kangax-es2017/async.must-await-value.js: OK
 kangax-es2017/async.no-await-in-params.js: OK

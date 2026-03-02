@@ -25,16 +25,14 @@ JavaScript interpreter for .NET.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 96%, ES2016+ 92%, Next 30%, Intl 100%</summary><ul>
-<li>ES6: 96%, <b>2 crashes</b><pre>
-<a href="../../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
+<details><summary>compat-table: ES6 97%, ES2016+ 92%, Next 30%, Intl 100%</summary><ul>
+<li>ES6: 97%, <b>2 crashes</b><pre>
 <a href="../../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
 <a href="../../conformance/kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: Property 'compile' of object is not a function
 <a href="../../conformance/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
 <a href="../../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Property 'anchor' of object is not a function
 <a href="../../conformance/kangax-es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: Property 'anchor' of object is not a function
 <a href="../../conformance/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: ReferenceError: g is not defined
-<a href="../../conformance/kangax-es6/const.no-redefine.js">const.no-redefine.js</a>: failed
 <a href="../../conformance/kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js">misc.Proxy.get.RegExp.Symbol.replace.js</a>: failed
 <a href="../../conformance/kangax-es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
 <a href="../../conformance/kangax-es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed

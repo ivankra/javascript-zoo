@@ -23,13 +23,13 @@ Embeddable JavaScript engine.
 ## Conformance
 
 <details><summary>ES1-ES5: 59%</summary><ul>
-<li>ES1: 75%, <b>4 crashes</b><pre>
+<li>ES1: 75%, <b>2 crashes</b><pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed
-<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: crashed (signal 11)
+<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: failed
 <a href="../../conformance/es1/Array.prototype.join.js">Array.prototype.join.js</a>: join() without separator failed
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: crashed (signal 11)
-<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: crashed (signal 11)
+<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: sort with comparefn failed; reverse comparefn failed
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: new Boolean(true) failed; new Boolean() failed
 <a href="../../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: Boolean.prototype.constructor failed
@@ -47,10 +47,10 @@ Embeddable JavaScript engine.
 <a href="../../conformance/es1/String.prototype.lastIndexOf.js">String.prototype.lastIndexOf.js</a>: lastIndexOf with position failed
 ...
 </pre></li>
-<li>ES3: 52%, <b>8 crashes</b><pre>
+<li>ES3: 52%, <b>7 crashes</b><pre>
 <a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: crashed (signal 11)
 <a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: crashed (signal 11)
-<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: crashed (signal 11); Assertion argc == 1 &amp;&amp; ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 push to object failed; Assertion argc == 1 &amp;&amp; ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 push multiple to empty object failed; Assertion argc == 1 &amp;&amp; ejsIs(ejs, argv[0], Array), failed a
+<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: Assertion argc == 1 &amp;&amp; ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 Cannot allocate memory block of size 17,868,759,056 bytes.
 <a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: crashed (signal 11)
 <a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: crashed (signal 11)
 <a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: crashed (signal 11)
@@ -74,4 +74,4 @@ Embeddable JavaScript engine.
 <li>ES5: 32%, <b>1 crash</b></li>
 </ul></details>
 
-💥 **13 crashes during testing**
+💥 **10 crashes during testing**

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "30aee78f8ba6aa88229135acf1542e03f672e705c78bade3ff5374147b67aa10", "binary_size": 396080, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "307f18c4216420f2f56e22d8e7040baa39a6304a", "revision_date": "2025-11-07", "version": "1.3.8"}
+Metadata: {"arch": "amd64", "binary_sha256": "fd790b2b7332a8b6e00c2f0f3c35709dc6ae0bbc37512473e6ea92f073906574", "binary_size": 404416, "console_log": "console.log", "engine": "mujs", "repository": "https://codeberg.org/ccxvii/mujs.git", "revision": "fe507e348a904633db307822c0ac54f3f5f01ab9", "revision_date": "2025-12-03", "version": "1.3.8-3-gfe507e3"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -219,7 +219,7 @@ es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
-es3/Error.prototype.message.js: failed
+es3/Error.prototype.message.js: OK
 es3/Error.prototype.name.js: OK
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
@@ -243,7 +243,7 @@ es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
-es3/RegExp.prototype.exec.js: index failed
+es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
@@ -251,7 +251,7 @@ es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: concat with no arguments failed
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: non-global match failed
+es3/String.prototype.match.js: OK
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "0bb3302a47822a3b6ced4f3556210a39fab2210303ceeb542035d0fddf87821b", "binary_size": 4854584, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "escargot", "repository": "https://github.com/Samsung/escargot.git", "revision": "c90e358e2f54932caad1126dde7220eed22660ed", "revision_date": "2026-02-10"}
+Metadata: {"arch": "arm64", "binary_sha256": "e1bb8ff15e1831db43e0bc02556538de019eb9e5353ac58506a68712903748d4", "binary_size": 4789048, "console_log": "print", "engine": "escargot", "repository": "https://github.com/Samsung/escargot.git", "revision": "af4c67a706e03ef4b5593106ef55ac266408881a", "revision_date": "2026-02-12"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

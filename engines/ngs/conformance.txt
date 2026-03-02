@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "23db2aa8c6a5f8795e47e485289e5351657d5100640613eaf6743cf5f515d749", "binary_size": 489832, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "ngs", "repository": "https://github.com/markkurossi/js.git", "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713", "revision_date": "2023-12-05", "version": "0.2.5"}
+Metadata: {"arch": "arm64", "binary_sha256": "ca33854ebd93da7202c37983401bf7b1df482fb30b13673df256b650dc7e92fa", "binary_size": 489832, "console_log": "print", "engine": "ngs", "repository": "https://github.com/markkurossi/js.git", "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713", "revision_date": "2023-12-05", "version": "0.2.5"}
 es1/Array.js: crashed (signal 11)
 es1/Array.length.assignment.js: ngs: evaluation of file `Array.length.assignment.js' failed:
 es1/Array.length.js: ngs: evaluation of file `Array.length.js' failed:

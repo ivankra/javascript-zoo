@@ -271,7 +271,7 @@ es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: constructor failed; ReferenceError: EvalError is not defined [14:4] at new ThrowReferenceError (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:5262:43) at main.Interpreter.Interpreter.createError (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:5719:17) at main.Interpreter.Interpreter.createInt
+es3/global.EvalError.js: constructor failed; ReferenceError: EvalError is not defined [14:4] at new ThrowReferenceError (/dist/eval5-dist/eval5.js:5262:43) at main.Interpreter.Interpreter.createError (/dist/eval5-dist/eval5.js:5719:17) at main.Interpreter.Interpreter.createInternalThrowError (/dist/eval5-dist/eval5.js:5725:
 es3/global.RangeError.js: OK
 es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
@@ -745,7 +745,7 @@ kangax-es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: Unex
 kangax-es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: Unexpected token (14:23)
 kangax-es6/arrow.0-params.js: SyntaxError: Unexpected token (10:11)
 kangax-es6/arrow.1-param.js: SyntaxError: Unexpected token (10:13)
-kangax-es6/arrow.5-param.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:750:28)
+kangax-es6/arrow.5-param.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/dist/eval5-dist/eval5.js:750:28)
 kangax-es6/arrow.bind.js: SyntaxError: Unexpected token (10:50)
 kangax-es6/arrow.lexical-arguments.js: SyntaxError: Unexpected token (10:34)
 kangax-es6/arrow.lexical-super.constructor.js: SyntaxError: The keyword 'class' is reserved (12:2)
@@ -851,7 +851,7 @@ kangax-es6/destructuring-decl.string.js: SyntaxError: Unexpected token (10:6)
 kangax-es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Unexpected token (11:8)
 kangax-es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:6)
 kangax-es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Unexpected token (10:6)
-kangax-es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:750:28)
+kangax-es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Parenthesized pattern (10:10) at pp.checkPatternErrors (/dist/eval5-dist/eval5.js:750:28)
 kangax-es6/destructuring-params.arguments.js: SyntaxError: Unexpected token (10:19)
 kangax-es6/destructuring-params.array.js: SyntaxError: Unexpected token (10:18)
 kangax-es6/destructuring-params.astral-string.js: SyntaxError: Unexpected token (10:18)
@@ -1423,7 +1423,7 @@ kangax-es2025/Iterator.prototype.find.js: SyntaxError: Unexpected token (10:37)
 kangax-es2025/Iterator.prototype.flatMap.js: SyntaxError: Unexpected token (10:51)
 kangax-es2025/Iterator.prototype.forEach.js: SyntaxError: Unexpected token (10:6)
 kangax-es2025/Iterator.prototype.map.js: SyntaxError: Unexpected token (10:47)
-kangax-es2025/Iterator.prototype.reduce.js: SyntaxError: Parenthesized pattern (10:35) at pp.checkPatternErrors (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:750:28)
+kangax-es2025/Iterator.prototype.reduce.js: SyntaxError: Parenthesized pattern (10:35) at pp.checkPatternErrors (/dist/eval5-dist/eval5.js:750:28)
 kangax-es2025/Iterator.prototype.some.js: SyntaxError: Unexpected token (10:37)
 kangax-es2025/Iterator.prototype.take.js: OK
 kangax-es2025/Iterator.prototype.toArray.js: SyntaxError: The keyword 'const' is reserved (10:2)

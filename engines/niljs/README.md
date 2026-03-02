@@ -41,7 +41,7 @@ JavaScript interpreter for .NET.
 <details><summary>compat-table: ES6 44%, ES2016+ 19%, Next 0%, Intl 25%</summary><ul>
 <li>ES6: 44%, <b>1 crash</b></li>
 <li>ES2016: 39%</li>
-<li>ES2017: 18%</li>
+<li>ES2017: 16%</li>
 <li>ES2018: 26%</li>
 <li>ES2019: 18%</li>
 <li>ES2020: 36%</li>

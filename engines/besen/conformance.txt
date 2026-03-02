@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "7d31a144584607a38a79e7d51f49d748ef53ba4b0294948b98bd60894cbd92af", "binary_size": 2261264, "engine": "besen", "repository": "https://github.com/BeRo1985/besen.git", "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b", "revision_date": "2020-10-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "7d31a144584607a38a79e7d51f49d748ef53ba4b0294948b98bd60894cbd92af", "binary_size": 2261264, "console_log": "console.log", "engine": "besen", "repository": "https://github.com/BeRo1985/besen.git", "revision": "1c271815cf13291d3e4b636999ff7ecd7aa0993b", "revision_date": "2020-10-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

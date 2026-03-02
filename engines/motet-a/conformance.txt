@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "35423b6df7fcf0a77670b23f70b8272b52781a89e4ba798a5fb7c4731dabd4a3", "binary_size": 95704, "console_log": "print", "engine": "motet-a", "repository": "https://github.com/motet-a/toy.git", "revision": "c842ba34240e4b79922b60e970c6f084af8d1ba9", "revision_date": "2019-04-12", "run_script_cmd": "$BINARY \"$FILE\""}
+Metadata: {"arch": "arm64", "binary_sha256": "35423b6df7fcf0a77670b23f70b8272b52781a89e4ba798a5fb7c4731dabd4a3", "binary_size": 95704, "console_log": "print", "engine": "motet-a", "repository": "https://github.com/motet-a/toy.git", "revision": "c842ba34240e4b79922b60e970c6f084af8d1ba9", "revision_date": "2019-04-12"}
 es1/Array.js: fatal: syntax error (line 9)
 es1/Array.length.assignment.js: fatal: syntax error (line 9)
 es1/Array.length.js: fatal: syntax error (line 8)

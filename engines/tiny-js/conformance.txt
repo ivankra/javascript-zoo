@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e7f3bd77c531fa5bbacfb726885e4d152b7a1c1cc5c8cd5eaad3430ba35435cf", "binary_size": 199560, "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)", "engine": "tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "21d9c9705b9d094637da3b3387fa5bb280bf2123", "revision_date": "2025-10-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "b7614bf9fcf3162f615502d5031c691d4f6da8724c79404f2412aab2bd77d4f3", "binary_size": 199560, "console_log": "console.log", "engine": "tiny-js", "repository": "https://github.com/gfwilliams/tiny-js.git", "revision": "821447737f3d2f79139cef97be16f4513dd75099", "revision_date": "2026-02-24"}
 es1/Array.js: > es1/Array.js: Array.length failed ERROR: Error Got ID expected ')' at (line: 16, col: 11) at (line: 16, col: 9)
 es1/Array.length.assignment.js: > es1/Array.length.assignment.js: array index length update failed ERROR: Error Got INT expected ')' at (line: 20, col: 19) at (line: 20, col: 18)
 es1/Array.length.js: ERROR: Error Got INT expected ')' at (line: 15, col: 19) at (line: 15, col: 18)

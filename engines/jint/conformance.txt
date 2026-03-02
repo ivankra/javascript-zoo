@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 3451587, "dotnet": "10.0.102", "engine": "jint", "repository": "https://github.com/sebastienros/jint.git", "revision": "78dabcb47f3638d823fcca9cb2434810233e7dec", "revision_date": "2026-02-10"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 3540087, "engine": "jint", "repository": "https://github.com/sebastienros/jint.git", "revision": "6dc26c703b5eebb3adb847a264fc397e8160e5ca", "revision_date": "2026-03-01"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -582,7 +582,7 @@ kangax-es6/Object.getOwnPropertySymbols.js: OK
 kangax-es6/Object.is.js: OK
 kangax-es6/Object.setPrototypeOf.js: OK
 kangax-es6/Promise.Symbol.species.js: OK
-kangax-es6/Promise.all.iterable.js: failed
+kangax-es6/Promise.all.iterable.js: OK
 kangax-es6/Promise.all.js: OK
 kangax-es6/Promise.constructor-requires-new.js: OK
 kangax-es6/Promise.js: OK
@@ -785,7 +785,7 @@ kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
 kangax-es6/const.for-loop.js: OK
 kangax-es6/const.for-of.js: OK
-kangax-es6/const.no-redefine.js: failed
+kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: OK
 kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK

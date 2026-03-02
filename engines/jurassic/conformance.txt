@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1971778, "dotnet": "10.0.102", "engine": "jurassic", "repository": "https://github.com/paulbartrum/jurassic.git", "revision": "17f72827150166c79dd7789bfe01a4a2f7bfe4aa", "revision_date": "2025-02-04"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 1971632, "engine": "jurassic", "repository": "https://github.com/paulbartrum/jurassic.git", "revision": "17f72827150166c79dd7789bfe01a4a2f7bfe4aa", "revision_date": "2025-02-04"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 664952, "dotnet": "10.0.102", "engine": "topaz", "repository": "https://github.com/koculu/Topaz.git", "revision": "03ef33706098e87e6272a43037fe44b78060f63d", "revision_date": "2024-11-14", "version": "release-v1.4.1"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 664793, "engine": "topaz", "repository": "https://github.com/koculu/Topaz.git", "revision": "03ef33706098e87e6272a43037fe44b78060f63d", "revision_date": "2024-11-14", "version": "release-v1.4.1"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: failed
 es1/Array.length.js: failed

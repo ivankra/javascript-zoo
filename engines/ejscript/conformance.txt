@@ -1,13 +1,13 @@
-Metadata: {"arch": "arm64", "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "print", "dist_size": 2188496, "engine": "ejscript", "repository": "https://github.com/embedthis/ejscript.git", "revision": "bb38d46e96ad20e923821d31d4a37e64de926d5a", "revision_date": "2025-03-09", "version": "2.7.7-22-gbb38d46e9"}
+Metadata: {"arch": "arm64", "console_log": "print", "dist_size": 2188496, "engine": "ejscript", "repository": "https://github.com/embedthis/ejscript.git", "revision": "bb38d46e96ad20e923821d31d4a37e64de926d5a", "revision_date": "2025-03-09", "version": "2.7.7-22-gbb38d46e9"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: Array.prototype.constructor failed
-es1/Array.prototype.join.generic.js: crashed (signal 11)
+es1/Array.prototype.join.generic.js: failed
 es1/Array.prototype.join.js: join() without separator failed
 es1/Array.prototype.reverse.generic.js: crashed (signal 11)
 es1/Array.prototype.reverse.js: OK
-es1/Array.prototype.sort.generic.js: crashed (signal 11)
+es1/Array.prototype.sort.generic.js: failed
 es1/Array.prototype.sort.js: sort with comparefn failed; reverse comparefn failed
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: new Boolean(true) failed; new Boolean() failed
@@ -200,7 +200,7 @@ es1/with.js: OK
 es3/Array.prototype.concat.js: crashed (signal 11)
 es3/Array.prototype.pop.generic.js: crashed (signal 11)
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: crashed (signal 11); Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 push to object failed; Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 push multiple to empty object failed; Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed a
+es3/Array.prototype.push.generic.js: Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1084 Cannot allocate memory block of size 17,868,759,056 bytes.
 es3/Array.prototype.push.js: OK
 es3/Array.prototype.shift.generic.js: crashed (signal 11)
 es3/Array.prototype.shift.js: OK

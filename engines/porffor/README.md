@@ -61,11 +61,10 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: prototype chain failed; Object.prototype failed
 ...
 </pre></li>
-<li>ES5: 70%<pre>
+<li>ES5: 72%<pre>
 <a href="../../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: sparse array skips missing elements failed
 <a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: sparse array skips missing elements failed
 <a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: thisArg binding failed; argument binding failed; length property incorrect; bound constructor failed
-<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: exponent failed
 <a href="../../conformance/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: failed to apply reviver function; failed to delete property for which reviver returned undefined
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: cyclic structure does not throw TypeError; didn't call user-provided toJSON() method
 <a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer function failed; replacer array failed
@@ -83,12 +82,12 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
 <a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: failed
 <a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: ReferenceError: passed is not defined
-...
+<a href="../../conformance/es5/strict.unmapped-arguments.js">strict.unmapped-arguments.js</a>: failed
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 45%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
-<li>ES6: 45%</li>
+<details><summary>compat-table: ES6 46%, ES2016+ 56%, Next 2%, Intl 25%</summary><ul>
+<li>ES6: 46%</li>
 <li>ES2016: 68%<pre>
 <a href="../../conformance/kangax-es2016/Array.prototype.includes.generic.js">Array.prototype.includes.generic.js</a>: failed
 <a href="../../conformance/kangax-es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: ReferenceError: Proxy is not defined
@@ -159,7 +158,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/kangax-es2022/class-fields.instance.parent-scope.js">class-fields.instance.parent-scope.js</a>: ReferenceError: a is not defined
 <a href="../../conformance/kangax-es2022/class-methods.private-accessor.js">class-methods.private-accessor.js</a>: ReferenceError: y is not defined
 <a href="../../conformance/kangax-es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: ReferenceError: y is not defined
-<a href="../../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: RuntimeError: memory access out of bounds
+<a href="../../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: Proxy is not defined
 </pre></li>
 <li>ES2023: 89%<pre>
 <a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: failed

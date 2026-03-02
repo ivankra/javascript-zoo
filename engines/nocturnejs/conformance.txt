@@ -1,4 +1,4 @@
-Metadata: {"__run_script_cmd": "$BINARY $FILE", "arch": "amd64", "binary_sha256": "91487667a8ed1f2d00ead30418ef830b535c089e6d20e075fe65a73094519e4e", "binary_size": 6753064, "console_log": "print", "engine": "nocturnejs", "repository": "https://github.com/Lampese/NocturneJS.git", "revision": "a418a962bdeb2933bbb4ff08788e2a7e3b12d5ea", "revision_date": "2026-01-30"}
+Metadata: {"arch": "amd64", "binary_sha256": "91487667a8ed1f2d00ead30418ef830b535c089e6d20e075fe65a73094519e4e", "binary_size": 6753064, "console_log": "print", "engine": "nocturnejs", "repository": "https://github.com/Lampese/NocturneJS.git", "revision": "a418a962bdeb2933bbb4ff08788e2a7e3b12d5ea", "revision_date": "2026-01-30"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: OK
 kangax-es6/super.statement.js: OK
 kangax-es6/super.static-binding.js: OK
 kangax-es6/super.this-binding.js: OK
-kangax-es6/tail-calls.direct.js: crashed (signal 11); qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-kangax-es6/tail-calls.mutual.js: crashed (signal 11); qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+kangax-es6/tail-calls.direct.js: crashed (signal 11)
+kangax-es6/tail-calls.mutual.js: crashed (signal 11)
 kangax-es6/template.basic.js: OK
 kangax-es6/template.caching.js: OK
 kangax-es6/template.escape-sequences.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 1752078, "engine": "wine", "repository": "https://github.com/wine-mirror/wine.git", "revision": "eaea4240c4efb618be6d20c05f7fc9f3db9a104c", "revision_date": "2026-02-03"}
+Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 1756174, "engine": "wine", "repository": "https://github.com/wine-mirror/wine.git", "revision": "739ca45017f7385340d82c9f8c35716ca6466473", "revision_date": "2026-02-13"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "a1f80be9b4c43cade887e7df2d636d01c652892ce2a195bf6efbb8639addea4f", "binary_size": 789424, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "console.log", "engine": "zhuzilin", "repository": "https://github.com/zhuzilin/es.git", "revision": "943e5c09470813e26404bd3920b93601fcc5b46b", "revision_date": "2026-02-10", "version": "0.2.0"}
+Metadata: {"arch": "arm64", "binary_sha256": "0f6a4ab4394b9aeeba52827ac806ed08b8af353be8eeb161d65a894ce50488ee", "binary_size": 789424, "console_log": "console.log", "engine": "zhuzilin", "repository": "https://github.com/zhuzilin/es.git", "revision": "943e5c09470813e26404bd3920b93601fcc5b46b", "revision_date": "2026-02-10", "version": "0.2.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -234,7 +234,7 @@ es3/Number.prototype.toFixed.js: crashed (signal 6); zhuzilin: ./es/types/builti
 es3/Number.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:45: static es::Handle<es::JSValue> es::NumberProto::toLocaleString(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
 es3/Number.prototype.toPrecision.js: crashed (signal 6); zhuzilin: ./es/types/builtin/number_object.h:68: static es::Handle<es::JSValue> es::NumberProto::toPrecision(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
 es3/Object.prototype.hasOwnProperty.js: OK
-es3/Object.prototype.isPrototypeOf.js: OK
+es3/Object.prototype.isPrototypeOf.js: crashed (signal 6); terminate called after throwing an instance of 'std::runtime_error'
 es3/Object.prototype.propertyIsEnumerable.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:74: static es::Handle<es::JSValue> es::ObjectProto::propertyIsEnumerable(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
 es3/Object.prototype.toLocaleString.js: crashed (signal 6); zhuzilin: ./es/types/builtin/object_object.h:31: static es::Handle<es::JSValue> es::ObjectProto::toLocaleString(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.
 es3/RegExp.global.js: OK
@@ -1015,7 +1015,7 @@ kangax-es6/misc.Proxy.set.Array.unshift.js: Error: Proxy is not defined
 kangax-es6/misc.Proxy.set.Object.assign.js: Error: Proxy is not defined
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: Error: RegExp.prototype.toString called by non-regex
-kangax-es6/misc.accessors-no-constructor.js: failed
+kangax-es6/misc.accessors-no-constructor.js: crashed (signal 6); terminate called after throwing an instance of 'std::runtime_error'
 kangax-es6/misc.bound-function-prototype.arrow.js: ParserError: var f = ()=>5
 kangax-es6/misc.bound-function-prototype.class.js: ParserError: class C {}
 kangax-es6/misc.bound-function-prototype.function.js: failed

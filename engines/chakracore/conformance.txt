@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e64ed8b6e0ddc6c87dac43bca3ad53dabae715d53871a283e41f3345c5fb18cb", "binary_size": 39797824, "cc": "clang 20.1.8 (++20250809043815+87f0227cb601-1~exp1~20250809163919.3)", "engine": "chakracore", "jit": "", "repository": "https://github.com/chakra-core/ChakraCore.git", "revision": "792ee7660cbb14f1b3f9f77a6f919aeed4ec1fc2", "revision_date": "2025-12-26", "variant": "intl"}
+Metadata: {"arch": "arm64", "binary_sha256": "e6227344de3977dc660595022c59576376736d215913ee663ffd6c93ecc17793", "binary_size": 39797840, "console_log": "console.log", "engine": "chakracore", "jit": "", "repository": "https://github.com/chakra-core/ChakraCore.git", "revision": "97e68c9174209413f621deb2f963941550ef6f22", "revision_date": "2026-02-19", "variant": "intl"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

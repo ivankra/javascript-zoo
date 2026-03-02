@@ -24,7 +24,7 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Not a callable object
 <a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Not a callable object
 <a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Not a callable object
-<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: thread 'main' (1713622) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin &lt;= end
+<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: thread 'main' (2318872) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5: assertion failed: begin &lt;= end
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError:
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../../conformance/es1/asi.js">asi.js</a>: TypeError: Could not set property '0' of [object Object].

@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "b57053ddf8d3e120534581b46825ce5fc2c226f9541c70a39623209e0735ebb2", "binary_size": 1973280, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "print", "engine": "carakan", "revision": "c357e547fcbdfbf7bd448f6409ecb042a807bb06", "revision_date": "2017-01-20"}
+Metadata: {"arch": "amd64", "binary_sha256": "55992da2b234fda035401cb56565beb7c2d0646cfd2515b9eb68ef144bd246c2", "binary_size": 2366496, "cc": "gcc 16.0.1 20260217 (experimental) [trunk r16-7536-g6e52c1dbfb7] (Debian 16-20260217-1)", "console_log": "print", "engine": "carakan", "repository": "", "revision": "c357e547fcbdfbf7bd448f6409ecb042a807bb06", "revision_date": "2017-01-20"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

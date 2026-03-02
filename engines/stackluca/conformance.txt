@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "17fdf8706cfa071836e8b45cb9a037b856b54034c82b1b91f45bbbc16973bf97", "binary_size": 134568, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "print", "engine": "stackluca", "repository": "https://github.com/stackluca/v3.git", "revision": "487412fbb8d2c11b3a6faf2047c0c677689c6751", "revision_date": "2016-05-21"}
+Metadata: {"arch": "arm64", "binary_sha256": "aba513f752ee1c0f2c053216d5567a1477415fe4f5df2d829ddbc573fa8d8a35", "binary_size": 134568, "console_log": "print", "engine": "stackluca", "repository": "https://github.com/stackluca/v3.git", "revision": "487412fbb8d2c11b3a6faf2047c0c677689c6751", "revision_date": "2016-05-21"}
 es1/Array.js: error_code:-3(unexpected token) index:123, token:if
 es1/Array.length.assignment.js: error_code:-3(unexpected token) index:252, token:if
 es1/Array.length.js: error_code:-3(unexpected token) index:143, token:if

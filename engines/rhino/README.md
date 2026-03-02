@@ -42,8 +42,8 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 72%, ES2016+ 54%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 72%<pre>
+<details><summary>compat-table: ES6 73%, ES2016+ 58%, Next 6%, Intl 25%</summary><ul>
+<li>ES6: 73%<pre>
 <a href="../../conformance/kangax-es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
 <a href="../../conformance/kangax-es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: "Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
 <a href="../../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: "Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
@@ -67,16 +67,11 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../../conformance/kangax-es6/Reflect.construct.new-target.js">Reflect.construct.new-target.js</a>: "Reflect.construct.new-target.js", line 11: syntax error "Reflect.construct.new-target.js", line 12: syntax error "Reflect.construct.new-target.js", line 14: syntax error "Reflect.construct.new-target.js", line 1: Compilation produced 4 syntax errors.
 ...
 </pre></li>
-<li>ES2016: 73%<pre>
-<a href="../../conformance/kangax-es2016/misc.nested-rest-destructuring-decl.js">misc.nested-rest-destructuring-decl.js</a>: "misc.nested-rest-destructuring-decl.js", line 10: Invalid assignment left-hand side. "misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
-<a href="../../conformance/kangax-es2016/misc.nested-rest-destructuring-params.js">misc.nested-rest-destructuring-params.js</a>: "misc.nested-rest-destructuring-params.js", line 9: Invalid assignment left-hand side. "misc.nested-rest-destructuring-params.js", line 12: syntax error "misc.nested-rest-destructuring-params.js", line 20: syntax error "misc.nested-rest-destructuring-params.js", line 21: syntax error   console.log("
-<a href="../../conformance/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
-</pre></li>
+<li>ES2016: 100%</li>
 <li>ES2017: 42%</li>
-<li>ES2018: 60%<pre>
+<li>ES2018: 71%<pre>
 <a href="../../conformance/kangax-es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: "async-iterators.for-await-of.js", line 62: syntax error "async-iterators.for-await-of.js", line 63: syntax error "async-iterators.for-await-of.js", line 68: syntax error "async-iterators.for-await-of.js", line 69: syntax error   console.log("kangax-es2018/async-iterators.for-await-of.js: " + e); "a
 <a href="../../conformance/kangax-es2018/async-iterators.generators.js">async-iterators.generators.js</a>: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
-<a href="../../conformance/kangax-es2018/object-rest.js">object-rest.js</a>: "object-rest.js", line 1: Compilation produced 1 syntax errors.
 <a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-11.js">regex.unicode-property-escapes.unicode-11.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence
 <a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-12.js">regex.unicode-property-escapes.unicode-12.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence
 <a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-13.js">regex.unicode-property-escapes.unicode-13.js</a>: uncaught JavaScript runtime SyntaxError: invalid Unicode escape sequence
@@ -93,11 +88,9 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
 <a href="../../conformance/kangax-es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: "misc.optional-catch-binding.await.js", line 48: syntax error "misc.optional-catch-binding.await.js", line 49: syntax error "misc.optional-catch-binding.await.js", line 51: syntax error "misc.optional-catch-binding.await.js", line 52: syntax error "misc.optional-catch-binding.await.js", line 57: syn
 </pre></li>
-<li>ES2020: 80%<pre>
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: TypeError: Cannot find function setBigInt64.
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: TypeError: Cannot find function setBigUint64.
+<li>ES2020: 87%<pre>
 <a href="../../conformance/kangax-es2020/Promise.allSettled.js">Promise.allSettled.js</a>: failed
-<a href="../../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: "optional-chaining.spread-params.js", line 14: syntax error "optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
+<a href="../../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 </pre></li>
 <li>ES2021: 38%</li>
 <li>ES2022: 24%</li>
@@ -106,7 +99,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../../conformance/kangax-es2024/regex.flags.v.constructor.js">regex.flags.v.constructor.js</a>: SyntaxError: invalid flag 'v' after regular expression
 <a href="../../conformance/kangax-es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: "regex.flags.v.properties-of-strings.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 1: Compilation produced 2 syntax errors.
 <a href="../../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: "regex.flags.v.set-notations.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 1: Compilation produced 3 syntax errors.
-<a href="../../conformance/kangax-es2024/regex.flags.v.shows-in-flags.js">regex.flags.v.shows-in-flags.js</a>: TypeError: Cannot call method "call" of undefined
+<a href="../../conformance/kangax-es2024/regex.flags.v.shows-in-flags.js">regex.flags.v.shows-in-flags.js</a>: failed
 <a href="../../conformance/kangax-es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: "regex.flags.v.unicode-15.1.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
 <a href="../../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: "regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-16.0.js", line 1: Compilation produced 1 syntax errors.
 <a href="../../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: "regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-17.0.js", line 1: Compilation produced 1 syntax errors.

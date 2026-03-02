@@ -43,7 +43,7 @@ codegen.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 90%, ES2016+ 74%, Next 6%, Intl 96%</summary><ul>
+<details><summary>compat-table: ES6 90%, ES2016+ 81%, Next 6%, Intl 96%</summary><ul>
 <li>ES6: 90%<pre>
 <a href="../../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/kangax-es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
@@ -116,8 +116,15 @@ codegen.
 <a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: undefined is not a function
 </pre></li>
-<li>ES2024: 0%</li>
-<li>ES2025: 21%</li>
+<li>ES2024: 29%</li>
+<li>ES2025: 63%<pre>
+<a href="../../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: failed
+<a href="../../conformance/kangax-es2025/RegExp.escape.js">RegExp.escape.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: regex.duplicate-named-groups.js:9:10: error: Invalid regular expression: Duplicate capture group name Emitted 1 errors. exiting.
+<a href="../../conformance/kangax-es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: regex.pattern-modifiers.i.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+<a href="../../conformance/kangax-es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: regex.pattern-modifiers.m.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+<a href="../../conformance/kangax-es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: regex.pattern-modifiers.s.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+</pre></li>
 <li>Next: 6%</li>
 <li>Intl: 96%<pre>
 <a href="../../conformance/kangax-intl/Intl.NumberFormat.rejects-invalid-tags.js">Intl.NumberFormat.rejects-invalid-tags.js</a>: failed

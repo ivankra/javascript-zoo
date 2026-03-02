@@ -38,7 +38,7 @@ Embeddable JavaScript engine written in Rust.
 
 <details><summary>compat-table: ES6 98%, ES2016+ 89%, Next 0%, Intl 96%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8 (native at /src/core/engine/src/script.rs:95:34)
+<a href="../../conformance/kangax-es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8
 <a href="../../conformance/kangax-es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: failed
 <a href="../../conformance/kangax-es6/destructuring-params.defaults-new-function.js">destructuring-params.defaults-new-function.js</a>: SyntaxError: failed to parse function parameters: abrupt end
 <a href="../../conformance/kangax-es6/destructuring-params.defaults-separate-scope.js">destructuring-params.defaults-separate-scope.js</a>: failed
@@ -52,8 +52,8 @@ Embeddable JavaScript engine written in Rust.
 <a href="../../conformance/kangax-es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 98%<pre>
-<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:95:34)
-<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10 (native at /src/core/engine/src/script.rs:95:34)
+<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
+<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
 </pre></li>
 <li>ES2019: 95%<pre>
 <a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
@@ -87,7 +87,7 @@ Embeddable JavaScript engine written in Rust.
 <a href="../../conformance/kangax-es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: TypeError: not a callable function
 <a href="../../conformance/kangax-es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: not a callable function
 <a href="../../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: not a callable function
-<a href="../../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Uncaught: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10 (native at /src/core/engine/src/script.rs:95:34)
+<a href="../../conformance/kangax-es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10
 </pre></li>
 <li>Next: 0%</li>
 <li>Intl: 96%<pre>

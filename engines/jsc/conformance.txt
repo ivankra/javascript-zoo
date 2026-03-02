@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "a31a83e6a7541e7d22b5084524c1ba3ae89c4bb14a25b6902a1798fa682418a5", "binary_size": 29103544, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "jsc", "repository": "https://github.com/WebKit/WebKit.git", "revision": "c0b5ca70b2e64b6af1313ad0de1329d159f1e7b8", "revision_date": "2026-02-08", "version": "307054"}
+Metadata: {"arch": "arm64", "binary_sha256": "a0321a438b8bad6f3ac466115ad6342b45f0f7f42f7da246feceddc521345f6e", "binary_size": 29185504, "console_log": "print", "engine": "jsc", "repository": "https://github.com/WebKit/WebKit.git", "revision": "7bdd6f4aabffd6a17c4c5663b6d4e26a90190c63", "revision_date": "2026-02-28", "version": "308420"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

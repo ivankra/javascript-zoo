@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "0a38a9cb340114e9f547eeb5576bc4a3c1847899f2a6d0c0bce75e4f0ddf4aab", "binary_size": 592936, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "console_log": "console.log", "engine": "epimetheus", "repository": "https://github.com/jrmuizel/mozilla-cvs-history.git", "revision": "3229d5d8b7f8376cfb7936e7be810635a14a486b", "revision_date": "2008-08-12"}
+Metadata: {"arch": "arm64", "binary_sha256": "3708d00f14cf6839a2cfb6dcae5796ec9c6416e52bd022d20be8c796be0d149d", "binary_size": 592936, "console_log": "console.log", "engine": "epimetheus", "repository": "https://github.com/jrmuizel/mozilla-cvs-history.git", "revision": "3229d5d8b7f8376cfb7936e7be810635a14a486b", "revision_date": "2008-08-12"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "b3838e2806bcbce75e30bf6454f622f7beb965f9f30e42aa9ca25e5d814fa5f4", "binary_size": 1053440, "console_log": "console.log", "engine": "echosoar", "repository": "https://github.com/echosoar/jsi.git", "revision": "b164beb25bcb74c33d8541e8097c918d5271f698", "revision_date": "2026-01-06", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
+Metadata: {"arch": "arm64", "binary_sha256": "20a0b4cd70c5bf2b4f6b4083e7e8d27f7a264cc14a680caa665cec719f65aad6", "binary_size": 1053440, "console_log": "console.log", "engine": "echosoar", "repository": "https://github.com/echosoar/jsi.git", "revision": "b164beb25bcb74c33d8541e8097c918d5271f698", "revision_date": "2026-01-06"}
 es1/Array.js: Array.length failed; Array.js: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.assignment.js: Array.length.assignment.js: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es1/Array.length.js: Array.length.js: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
@@ -90,7 +90,7 @@ es1/Number.MIN_VALUE.js: Number.MIN_VALUE.js: JSIError { error_type: SyntaxError
 es1/Number.NEGATIVE_INFINITY.js: Number.NEGATIVE_INFINITY.js: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
 es1/Number.NaN.js: failed
 es1/Number.POSITIVE_INFINITY.js: Number.POSITIVE_INFINITY.js: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e308'", line: 0, column: 0, value: None }
-es1/Number.js: Number(value) failed; thread 'main' (23017) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/Number.js: Number(value) failed; thread 'main' (711991) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/Number.prototype.constructor.js: OK
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
@@ -140,7 +140,7 @@ es1/continue.js: OK
 es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy; NaN failed
 es1/conversions.ToInt32.js: conversions.ToInt32.js: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: Or, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
 es1/conversions.ToInteger.js: 2.9 failed; -0 failed; NaN failed; 1.1 failed; -1.9 failed; 5.7 failed
-es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (34872) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+es1/conversions.ToNumber.js: null failed; '' failed; thread 'main' (724658) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: conversions.ToString.js: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'e21'", line: 0, column: 0, value: None }
 es1/conversions.ToUint32.js: conversions.ToUint32.js: JSIError { error_type: Unknown, message: "unsupport binary BinaryExpression { left: Number(NumberLiteral { literal: \"2.9\", value: 2.9 }), operator: UnsignedShiftRight, right: Number(NumberLiteral { literal: \"0\", value: 0.0 }) }", line: 0, column: 0, value: None }
@@ -269,7 +269,7 @@ es3/String.prototype.toLocaleLowerCase.js: String.prototype.toLocaleLowerCase.js
 es3/String.prototype.toLocaleUpperCase.js: String.prototype.toLocaleUpperCase.js: JSIError { error_type: TypeError, message: "\"str.toLocaleUpperCase\" is not a function", line: 0, column: 0, value: None }
 es3/annex-b.String.prototype.substr.js: annex-b.String.prototype.substr.js: JSIError { error_type: TypeError, message: "\"s.substr\" is not a function", line: 0, column: 0, value: None }
 es3/do-while.js: OK
-es3/function-expressions.IIFE.js: crashed (signal 6); OK; Function(RefCell { value: Object { class_type: Function, property: {"name": Property { enumerable: false, value: String("counter") }, "length": Property { enumerable: false, value: Number(0.0) }}, property_list: ["name", "length"], inner_property: {"bytecode": Property { enumerable: false, value
+es3/function-expressions.IIFE.js: crashed (signal 6); OK; fatal runtime error: stack overflow, aborting
 es3/function-expressions.js: function-expressions.js: JSIError { error_type: TypeError, message: "Array is not a constructor", line: 0, column: 0, value: None }
 es3/global.EvalError.js: constructor failed; global.EvalError.js: JSIError { error_type: ReferenceError, message: "EvalError is not defined", line: 0, column: 0, value: None }
 es3/global.RangeError.js: constructor failed; global.RangeError.js: JSIError { error_type: ReferenceError, message: "RangeError is not defined", line: 0, column: 0, value: None }
@@ -586,7 +586,7 @@ kangax-es6/Promise.all.iterable.js: Promise.all.iterable.js: JSIError { error_ty
 kangax-es6/Promise.all.js: Promise.all.js: JSIError { error_type: SyntaxError, message: "Unexpected token In", line: 0, column: 0, value: None }
 kangax-es6/Promise.constructor-requires-new.js: failed
 kangax-es6/Promise.js: Promise.js: JSIError { error_type: SyntaxError, message: "Unexpected token In", line: 0, column: 0, value: None }
-kangax-es6/Promise.prototype-not-instance.js: thread 'main' (19217) panicked at src/builtins/promise.rs:181:73:
+kangax-es6/Promise.prototype-not-instance.js: thread 'main' (708334) panicked at src/builtins/promise.rs:181:73:
 kangax-es6/Promise.race.iterable.js: Promise.race.iterable.js: JSIError { error_type: SyntaxError, message: "Unexpected token In", line: 0, column: 0, value: None }
 kangax-es6/Promise.race.js: Promise.race.js: JSIError { error_type: SyntaxError, message: "Unexpected token In", line: 0, column: 0, value: None }
 kangax-es6/Proxy.Array.isArray.js: failed
@@ -930,7 +930,7 @@ kangax-es6/let.strict.no-statement.js: OK
 kangax-es6/let.strict.shadow.js: OK
 kangax-es6/let.strict.tdz.js: failed
 kangax-es6/let.tdz.js: failed
-kangax-es6/literals.binary.Number.js: thread 'main' (12002) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+kangax-es6/literals.binary.Number.js: thread 'main' (700404) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 kangax-es6/literals.binary.js: literals.binary.js: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'b10'", line: 0, column: 0, value: None }
 kangax-es6/literals.object.computed-accessors.js: literals.object.computed-accessors.js: JSIError { error_type: SyntaxError, message: "Unexpected token LeftParenthesis", line: 0, column: 0, value: None }
 kangax-es6/literals.object.computed-properties.js: OK
@@ -938,7 +938,7 @@ kangax-es6/literals.object.computed-shorthand-methods.js: literals.object.comput
 kangax-es6/literals.object.shorthand-methods.js: literals.object.shorthand-methods.js: JSIError { error_type: SyntaxError, message: "Unexpected token LeftParenthesis", line: 0, column: 0, value: None }
 kangax-es6/literals.object.shorthand-properties.js: OK
 kangax-es6/literals.object.string-keyed-shorthand-methods.js: literals.object.string-keyed-shorthand-methods.js: JSIError { error_type: SyntaxError, message: "Unexpected token LeftParenthesis", line: 0, column: 0, value: None }
-kangax-es6/literals.octal.Number.js: thread 'main' (12537) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
+kangax-es6/literals.octal.Number.js: thread 'main' (700956) panicked at src/value.rs:440:80: called `Result::unwrap()` on an `Err` value: JSIError { error_type: TypeError, message: "Number.prototype.valueOf requires that 'this' be a Number", line: 0, column: 0, value: None }
 kangax-es6/literals.octal.js: literals.octal.js: JSIError { error_type: SyntaxError, message: "Unexpected identifier 'o10'", line: 0, column: 0, value: None }
 kangax-es6/misc.Invalid-Date.js: failed
 kangax-es6/misc.Object.freeze.primitives.js: [object Error]

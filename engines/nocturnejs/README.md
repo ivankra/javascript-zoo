@@ -39,8 +39,8 @@ JavaScript engine written in MoonBit.
 <a href="../../conformance/kangax-es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../../conformance/kangax-es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
 <a href="../../conformance/kangax-es6/subclassing.Promise.all.js">subclassing.Promise.all.js</a>: failed
-<a href="../../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed (signal 11); qemu: uncaught target signal 11 (Segmentation fault) - core dumped
-<a href="../../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed (signal 11); qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+<a href="../../conformance/kangax-es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed (signal 11)
+<a href="../../conformance/kangax-es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed (signal 11)
 ...
 </pre></li>
 <li>ES2016: 100%</li>

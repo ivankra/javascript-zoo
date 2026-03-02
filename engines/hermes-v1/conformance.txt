@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "fb56e98cf8bdd867b10e78ce21a000d51683672e3cb66f127297a6d730f22592", "binary_size": 5383176, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "hermes-v1", "repository": "https://github.com/facebook/hermes.git", "revision": "c9c70ee6cbd9cbbb2639f5337e59ec1441a28556", "revision_date": "2026-01-14", "variant": "intl", "version": "250829098.0.7"}
+Metadata: {"arch": "arm64", "binary_sha256": "565ec6aacf2780d64a2e1707df8e6c170f210a82a36e37f79f209292b3ae914d", "binary_size": 5973216, "console_log": "console.log", "engine": "hermes-v1", "repository": "https://github.com/facebook/hermes.git", "revision": "0c5949104787bc7b2257c61399db02fc7a50870b", "revision_date": "2026-02-28", "variant": "intl", "version": ""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1132,7 +1132,7 @@ kangax-es6/typed-arrays.Uint8Array.js: OK
 kangax-es6/typed-arrays.Uint8ClampedArray.js: OK
 kangax-es6/typed-arrays.Uint16Array.js: OK
 kangax-es6/typed-arrays.Uint32Array.js: OK
-kangax-es6/typed-arrays.constructor-iterables.js: failed
+kangax-es6/typed-arrays.constructor-iterables.js: OK
 kangax-es6/typed-arrays.constructor-requires-new.js: OK
 kangax-es6/typed-arrays.correct-prototype-chains.js: OK
 kangax-es6/typed-arrays.from.js: OK
@@ -1401,8 +1401,8 @@ kangax-es2023/hashbang.js: OK
 kangax-es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined is not a function
 kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined is not a function
 kangax-es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not a function
-kangax-es2024/Map.groupBy.js: TypeError: undefined is not a function
-kangax-es2024/Object.groupBy.js: TypeError: undefined is not a function
+kangax-es2024/Map.groupBy.js: OK
+kangax-es2024/Object.groupBy.js: OK
 kangax-es2024/Promise.withResolvers.js: TypeError: undefined is not a function
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: Invalid RegExp: Invalid flags
 kangax-es2024/regex.flags.v.properties-of-strings.js: regex.flags.v.properties-of-strings.js:9:10: error: Invalid regular expression: Invalid flags regex.flags.v.properties-of-strings.js:10:7: error: Invalid regular expression: Invalid flags Emitted 2 errors. exiting.
@@ -1411,22 +1411,22 @@ kangax-es2024/regex.flags.v.shows-in-flags.js: failed
 kangax-es2024/regex.flags.v.unicode-15.1.js: regex.flags.v.unicode-15.1.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
 kangax-es2024/regex.flags.v.unicode-16.0.js: regex.flags.v.unicode-16.0.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
 kangax-es2024/regex.flags.v.unicode-17.0.js: regex.flags.v.unicode-17.0.js:9:10: error: Invalid regular expression: Invalid flags Emitted 1 errors. exiting.
-kangax-es2025/Iterator.extends.js: ReferenceError: Property 'Iterator' doesn't exist
-kangax-es2025/Iterator.from.iterable.js: ReferenceError: Property 'Iterator' doesn't exist
-kangax-es2025/Iterator.from.iterator.js: ReferenceError: Property 'Iterator' doesn't exist
-kangax-es2025/Iterator.instanceof.js: ReferenceError: Property 'Iterator' doesn't exist
-kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'Iterator' doesn't exist
-kangax-es2025/Iterator.prototype.drop.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.every.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.filter.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.find.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.flatMap.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.forEach.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.map.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
-kangax-es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
+kangax-es2025/Iterator.extends.js: OK
+kangax-es2025/Iterator.from.iterable.js: OK
+kangax-es2025/Iterator.from.iterator.js: OK
+kangax-es2025/Iterator.instanceof.js: OK
+kangax-es2025/Iterator.prototype.Symbol.toStringTag.js: OK
+kangax-es2025/Iterator.prototype.drop.js: OK
+kangax-es2025/Iterator.prototype.every.js: OK
+kangax-es2025/Iterator.prototype.filter.js: OK
+kangax-es2025/Iterator.prototype.find.js: OK
+kangax-es2025/Iterator.prototype.flatMap.js: OK
+kangax-es2025/Iterator.prototype.forEach.js: OK
+kangax-es2025/Iterator.prototype.map.js: OK
+kangax-es2025/Iterator.prototype.reduce.js: OK
+kangax-es2025/Iterator.prototype.some.js: OK
+kangax-es2025/Iterator.prototype.take.js: OK
+kangax-es2025/Iterator.prototype.toArray.js: OK
 kangax-es2025/Promise.try.js: failed
 kangax-es2025/RegExp.escape.js: TypeError: undefined is not a function
 kangax-es2025/Set.prototype.difference.js: OK
@@ -1492,7 +1492,7 @@ kangax-next/Map.prototype.upsert.js: TypeError: undefined is not a function
 kangax-next/RegExp.1-9.js: OK
 kangax-next/RegExp.lastMatch.js: OK
 kangax-next/ShadowRealm.js: failed
-kangax-next/SuppressedError.js: SuppressedError.js:13:11: error: ';' expected Emitted 1 errors. exiting.
+kangax-next/SuppressedError.js: SuppressedError.js:13:5: error: using declarations are not yet supported Emitted 1 errors. exiting.
 kangax-next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function
@@ -1500,13 +1500,13 @@ kangax-next/Uint8Array.setFromHex.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 kangax-next/Uint8Array.toHex.js: TypeError: undefined is not a function
 kangax-next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
-kangax-next/await-using.for-of.js: await-using.for-of.js:57:22: error: ';' or 'in' expected inside 'for' Emitted 1 errors. exiting.
-kangax-next/await-using.js: await-using.js:52:19: error: ';' expected Emitted 1 errors. exiting.
-kangax-next/class-decorators.js: class-decorators.js:10:5: error: unrecognized character '@' Emitted 1 errors. exiting.
+kangax-next/await-using.for-of.js: await-using.for-of.js:57:10: error: using declarations are not yet supported Emitted 1 errors. exiting.
+kangax-next/await-using.js: await-using.js:52:7: error: using declarations are not yet supported Emitted 1 errors. exiting.
+kangax-next/class-decorators.js: class-decorators.js:10:5: error: decorators are not supported Emitted 1 errors. exiting.
 kangax-next/function.sent.js: function.sent.js:11:22: error: '(' expected at start of function parameter list Emitted 1 errors. exiting.
 kangax-next/throw-expr.arrow.js: throw-expr.arrow.js:9:18: error: invalid expression Emitted 1 errors. exiting.
 kangax-next/throw-expr.conditional.js: throw-expr.conditional.js:9:15: error: invalid expression Emitted 1 errors. exiting.
 kangax-next/throw-expr.logical.js: throw-expr.logical.js:11:15: error: invalid expression Emitted 1 errors. exiting.
 kangax-next/throw-expr.param-init.js: throw-expr.param-init.js:9:22: error: invalid expression Emitted 1 errors. exiting.
-kangax-next/using.for-of.js: using.for-of.js:22:16: error: ';' or 'in' expected inside 'for' Emitted 1 errors. exiting.
-kangax-next/using.js: using.js:16:11: error: ';' expected Emitted 1 errors. exiting.
+kangax-next/using.for-of.js: using.for-of.js:22:10: error: using declarations are not yet supported Emitted 1 errors. exiting.
+kangax-next/using.js: using.js:16:5: error: using declarations are not yet supported Emitted 1 errors. exiting.

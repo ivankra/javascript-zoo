@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "0e730a68381f32c1aa5b682aba6fe355c14c35ea622a3211bccdeebe64e7e1c0", "binary_size": 200064, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "quad-wheel", "repository": "https://github.com/radare/quad-wheel.git", "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1", "revision_date": "2012-03-26"}
+Metadata: {"arch": "arm64", "binary_sha256": "9ebb9c1f8124bbedb9f311952515019fe168e81adf696bc946c58b7440938513", "binary_size": 200064, "console_log": "console.log", "engine": "quad-wheel", "repository": "https://github.com/radare/quad-wheel.git", "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1", "revision_date": "2012-03-26"}
 es1/Array.js: 16[19-27]:syntax error, unexpected IDENTIFIER
 es1/Array.length.assignment.js: length truncation failed
 es1/Array.length.js: length assignment failed

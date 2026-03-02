@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "e8851b281f8eb9fc6699c2ca67c9021d1b1831809d223fbf69cc6aaf514761d8", "binary_size": 38193904, "cc": "clang 23.0.0 (++20260208082823+7509cad693b6-1~exp1~20260208203018.366)", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "a8bf93dd50da22f5fe21b4bc49eea528c43a5e46", "revision_date": "2026-02-09", "variant": "intl", "version": "148.0"}
+Metadata: {"arch": "amd64", "binary_sha256": "a5fa048a83871f47438c95cdd8cc1a512bd7b8587c5e6720dfbd41cec456903c", "binary_size": 39696656, "console_log": "console.log", "engine": "spidermonkey", "repository": "https://github.com/mozilla-firefox/firefox.git", "revision": "65b8640a153e742c52c53bda2d4da9e4f18bc1d8", "revision_date": "2026-02-28", "variant": "intl", "version": "148.0.1"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

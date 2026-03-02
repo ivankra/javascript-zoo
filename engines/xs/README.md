@@ -34,9 +34,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 
 <details><summary>compat-table: ES6 98%, ES2016+ 98%, Next 30%, Intl 25%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../../conformance/kangax-es6/Map.zero-key.js">Map.zero-key.js</a>: failed
 <a href="../../conformance/kangax-es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: failed
-<a href="../../conformance/kangax-es6/Set.zero-key.js">Set.zero-key.js</a>: failed
 <a href="../../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
 <a href="../../conformance/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
 <a href="../../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: call: not a function (in testCode)
@@ -55,9 +53,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 <a href="../../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: missing
 <a href="../../conformance/kangax-es2017/async.no-await-in-params.js">async.no-await-in-params.js</a>: failed
 </pre></li>
-<li>ES2018: 99%<pre>
-<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 89%<pre>
 <a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
 <a href="../../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
@@ -70,9 +66,7 @@ Originally developed by [Kinoma](https://en.wikipedia.org/wiki/Kinoma). First op
 <li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 96%<pre>
-<a href="../../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
 <li>Next: 30%</li>
 <li>Intl: 25%</li>

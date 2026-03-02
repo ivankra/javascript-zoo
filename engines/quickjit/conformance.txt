@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "2ba6307ba06a88ce5e2a0b335417d77e0eccc16fb4b1cd92fb51c909cb314a80", "binary_size": 1428512, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "quickjit", "repository": "https://github.com/bnoordhuis/quickjit.git", "revision": "d5a3e722aecb8412330282739b409bec1298eabe", "revision_date": "2023-10-25"}
+Metadata: {"arch": "amd64", "binary_sha256": "33dd741f6779456fc48bbc4266833684ecf1db602f4442211d9c4ef86a9b9831", "binary_size": 1428512, "console_log": "console.log", "engine": "quickjit", "repository": "https://github.com/bnoordhuis/quickjit.git", "revision": "d5a3e722aecb8412330282739b409bec1298eabe", "revision_date": "2023-10-25"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 1932094, "engine": "rhino", "repository": "https://github.com/mozilla/rhino.git", "revision": "a5fa0f818bb0ccded8de9c33bdead81ccc25c1a3", "revision_date": "2026-02-08", "version": "1.9.1"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 2737096, "engine": "rhino", "repository": "https://github.com/mozilla/rhino.git", "revision": "7386aa037d9a8020e4e69cc0af11eb73fe59d09d", "revision_date": "2026-03-01", "version": ""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -809,7 +809,7 @@ kangax-es6/destructuring-assign.array.js: OK
 kangax-es6/destructuring-assign.astral-string.js: failed
 kangax-es6/destructuring-assign.chained-iterable.js: OK
 kangax-es6/destructuring-assign.chained-object.js: OK
-kangax-es6/destructuring-assign.computed-properties.js: "destructuring-assign.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-assign.computed-properties.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-assign.computed-properties.js: OK
 kangax-es6/destructuring-assign.defaults.js: OK
 kangax-es6/destructuring-assign.empty-patterns.js: OK
 kangax-es6/destructuring-assign.generator.js: failed
@@ -817,13 +817,13 @@ kangax-es6/destructuring-assign.iterable-expression.js: OK
 kangax-es6/destructuring-assign.iterable-instance.js: failed
 kangax-es6/destructuring-assign.iterable.js: failed
 kangax-es6/destructuring-assign.iterator-closing.js: failed
-kangax-es6/destructuring-assign.nested-rest.js: "destructuring-assign.nested-rest.js", line 11: Invalid assignment left-hand side. "destructuring-assign.nested-rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-assign.nested-rest.js: OK
 kangax-es6/destructuring-assign.nested.js: OK
 kangax-es6/destructuring-assign.object-expression.js: OK
 kangax-es6/destructuring-assign.object-primitives.js: OK
 kangax-es6/destructuring-assign.object.js: OK
 kangax-es6/destructuring-assign.parenthesised-error.js: failed
-kangax-es6/destructuring-assign.rest.js: "destructuring-assign.rest.js", line 11: Invalid assignment left-hand side. "destructuring-assign.rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-assign.rest.js: OK
 kangax-es6/destructuring-assign.sparse-array.js: OK
 kangax-es6/destructuring-assign.string.js: OK
 kangax-es6/destructuring-assign.throws-null-undefined.js: OK
@@ -832,7 +832,7 @@ kangax-es6/destructuring-assign.trailing-comma-object.js: OK
 kangax-es6/destructuring-decl.array.js: OK
 kangax-es6/destructuring-decl.astral-string.js: failed
 kangax-es6/destructuring-decl.catch.js: OK
-kangax-es6/destructuring-decl.computed-properties.js: "destructuring-decl.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-decl.computed-properties.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-decl.computed-properties.js: OK
 kangax-es6/destructuring-decl.defaults-tdz.js: failed
 kangax-es6/destructuring-decl.defaults.js: OK
 kangax-es6/destructuring-decl.for-in.js: "destructuring-decl.for-in.js", line 1: Compilation produced 1 syntax errors.
@@ -845,7 +845,7 @@ kangax-es6/destructuring-decl.multiple-var.js: OK
 kangax-es6/destructuring-decl.nested.js: OK
 kangax-es6/destructuring-decl.object-primitives.js: OK
 kangax-es6/destructuring-decl.object.js: OK
-kangax-es6/destructuring-decl.rest.js: "destructuring-decl.rest.js", line 10: Invalid assignment left-hand side. "destructuring-decl.rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/destructuring-decl.rest.js: OK
 kangax-es6/destructuring-decl.sparse-array.js: OK
 kangax-es6/destructuring-decl.string.js: OK
 kangax-es6/destructuring-decl.throws-null-undefined.js: OK
@@ -855,7 +855,7 @@ kangax-es6/destructuring-params.aliased-defaults-arrow.js: OK
 kangax-es6/destructuring-params.arguments.js: OK
 kangax-es6/destructuring-params.array.js: TypeError: Cannot call method "Symbol(Symbol.iterator)" of null
 kangax-es6/destructuring-params.astral-string.js: OK
-kangax-es6/destructuring-params.computed-properties.js: "destructuring-params.computed-properties.js", line 11: Unsupported computed property in destructuring. "destructuring-params.computed-properties.js", line 14: syntax error "destructuring-params.computed-properties.js", line 22: syntax error "destructuring-params.computed-properties.js", line 23: sy
+kangax-es6/destructuring-params.computed-properties.js: OK
 kangax-es6/destructuring-params.defaults-new-function.js: OK
 kangax-es6/destructuring-params.defaults-separate-scope.js: failed
 kangax-es6/destructuring-params.defaults.js: OK
@@ -870,7 +870,7 @@ kangax-es6/destructuring-params.nested.js: OK
 kangax-es6/destructuring-params.new-function.js: OK
 kangax-es6/destructuring-params.object-primitives.js: OK
 kangax-es6/destructuring-params.object.js: OK
-kangax-es6/destructuring-params.rest.js: "destructuring-params.rest.js", line 10: Invalid assignment left-hand side. "destructuring-params.rest.js", line 14: syntax error "destructuring-params.rest.js", line 22: syntax error "destructuring-params.rest.js", line 23: syntax error   console.log("kangax-es6/destructuring-params.rest.js: " + e)
+kangax-es6/destructuring-params.rest.js: OK
 kangax-es6/destructuring-params.shorthand-defaults-arrow.js: "destructuring-params.shorthand-defaults-arrow.js", line 10: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 12: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 13: syntax error "destructuring-params.shorthand-defaults-arrow.js", line 21: syntax error "des
 kangax-es6/destructuring-params.sparse-array.js: OK
 kangax-es6/destructuring-params.string.js: OK
@@ -975,7 +975,7 @@ kangax-es6/misc.Proxy.get.ClassDefinitionEvaluation.js: "misc.Proxy.get.ClassDef
 kangax-es6/misc.Proxy.get.CreateDynamicFunction.js: failed
 kangax-es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 kangax-es6/misc.Proxy.get.Date.toJSON.js: OK
-kangax-es6/misc.Proxy.get.Error.toString.js: TypeError: Method "toString" called on incompatible object (org.mozilla.javascript.NativeProxy is not an instance of org.mozilla.javascript.NativeError).
+kangax-es6/misc.Proxy.get.Error.toString.js: TypeError: "this" is not an instance of class Object
 kangax-es6/misc.Proxy.get.Function.bind.js: failed
 kangax-es6/misc.Proxy.get.HasBinding.js: failed
 kangax-es6/misc.Proxy.get.IteratorComplete.js: OK
@@ -988,7 +988,7 @@ kangax-es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 kangax-es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
-kangax-es6/misc.Proxy.get.RegExp.flags.js: TypeError: Cannot call method "call" of undefined
+kangax-es6/misc.Proxy.get.RegExp.flags.js: failed
 kangax-es6/misc.Proxy.get.RegExp.test.js: TypeError: Method "test" called on incompatible object (org.mozilla.javascript.NativeProxy is not an instance of org.mozilla.javascript.regexp.NativeRegExp).
 kangax-es6/misc.Proxy.get.RegExp.toString.js: TypeError: Method "toString" called on incompatible object (org.mozilla.javascript.NativeProxy is not an instance of org.mozilla.javascript.regexp.NativeRegExp).
 kangax-es6/misc.Proxy.get.String.match.js: OK
@@ -1049,20 +1049,20 @@ kangax-es6/rest-params.basic.js: OK
 kangax-es6/rest-params.length.js: OK
 kangax-es6/rest-params.new-function.js: OK
 kangax-es6/rest-params.no-setter.js: failed
-kangax-es6/spread.array-call.js: "spread.array-call.js", line 10: syntax error "spread.array-call.js", line 1: Compilation produced 2 syntax errors.
+kangax-es6/spread.array-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.array-literal.js: OK
-kangax-es6/spread.astral-call.js: "spread.astral-call.js", line 10: syntax error "spread.astral-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.astral-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.astral-literal.js: OK
-kangax-es6/spread.generator-call.js: "spread.generator-call.js", line 11: syntax error "spread.generator-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.generator-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.generator-literal.js: OK
-kangax-es6/spread.iterable-call.js: "spread.iterable-call.js", line 35: syntax error "spread.iterable-call.js", line 1: Compilation produced 1 syntax errors.
-kangax-es6/spread.iterable-instance-call.js: "spread.iterable-instance-call.js", line 35: syntax error "spread.iterable-instance-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.iterable-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+kangax-es6/spread.iterable-instance-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.iterable-instance-literal.js: OK
 kangax-es6/spread.iterable-literal.js: OK
-kangax-es6/spread.non-iterable-error.js: "spread.non-iterable-error.js", line 11: syntax error "spread.non-iterable-error.js", line 13: syntax error "spread.non-iterable-error.js", line 1: Compilation produced 2 syntax errors.
-kangax-es6/spread.sparse-call.js: "spread.sparse-call.js", line 10: syntax error "spread.sparse-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.non-iterable-error.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+kangax-es6/spread.sparse-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.sparse-literal.js: OK
-kangax-es6/spread.string-call.js: "spread.string-call.js", line 10: syntax error "spread.string-call.js", line 1: Compilation produced 1 syntax errors.
+kangax-es6/spread.string-call.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es6/spread.string-literal.js: OK
 kangax-es6/subclassing.Array.concat.js: "subclassing.Array.concat.js", line 1: Compilation produced 1 syntax errors.
 kangax-es6/subclassing.Array.filter.js: "subclassing.Array.filter.js", line 1: Compilation produced 1 syntax errors.
@@ -1163,7 +1163,7 @@ kangax-es6/unicode-escapes.identifier.js: OK
 kangax-es6/unicode-escapes.property-access.js: OK
 kangax-es6/unicode-escapes.property-key.js: OK
 kangax-es6/unicode-escapes.string.js: OK
-kangax-es6/well-known.hasInstance.js: failed
+kangax-es6/well-known.hasInstance.js: OK
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
 kangax-es6/well-known.isConcatSpreadable.poisoned-getter.js: OK
 kangax-es6/well-known.iterator.arguments.js: OK
@@ -1201,9 +1201,9 @@ kangax-es2016/misc.Proxy-Array-includes.js: OK
 kangax-es2016/misc.Proxy-enumerate-removed.js: OK
 kangax-es2016/misc.generator-no-new.js: OK
 kangax-es2016/misc.generator-throw-inner.js: OK
-kangax-es2016/misc.nested-rest-destructuring-decl.js: "misc.nested-rest-destructuring-decl.js", line 10: Invalid assignment left-hand side. "misc.nested-rest-destructuring-decl.js", line 1: Compilation produced 1 syntax errors.
-kangax-es2016/misc.nested-rest-destructuring-params.js: "misc.nested-rest-destructuring-params.js", line 9: Invalid assignment left-hand side. "misc.nested-rest-destructuring-params.js", line 12: syntax error "misc.nested-rest-destructuring-params.js", line 20: syntax error "misc.nested-rest-destructuring-params.js", line 21: syntax error   console.log("
-kangax-es2016/misc.strict-fn-non-simple-params-error.js: failed
+kangax-es2016/misc.nested-rest-destructuring-decl.js: OK
+kangax-es2016/misc.nested-rest-destructuring-params.js: OK
+kangax-es2016/misc.strict-fn-non-simple-params-error.js: OK
 kangax-es2017/Atomics.add.js: ReferenceError: "Atomics" is not defined.
 kangax-es2017/Atomics.and.js: ReferenceError: "Atomics" is not defined.
 kangax-es2017/Atomics.compareExchange.js: ReferenceError: "Atomics" is not defined.
@@ -1275,7 +1275,7 @@ kangax-es2018/async-iterators.for-await-of.js: "async-iterators.for-await-of.js"
 kangax-es2018/async-iterators.generators.js: "async-iterators.generators.js", line 52: syntax error "async-iterators.generators.js", line 57: syntax error "async-iterators.generators.js", line 58: syntax error   console.log("kangax-es2018/async-iterators.generators.js: " + e); "async-iterators.generators.js", line 59: syntax error "async-itera
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: OK
-kangax-es2018/object-rest.js: "object-rest.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: OK
@@ -1320,8 +1320,8 @@ kangax-es2020/BigInt.asUintN.js: OK
 kangax-es2020/BigInt.constructor.js: OK
 kangax-es2020/BigInt.js: OK
 kangax-es2020/BigUint64Array.js: OK
-kangax-es2020/DataView.prototype.getBigInt64.js: TypeError: Cannot find function setBigInt64.
-kangax-es2020/DataView.prototype.getBigUint64.js: TypeError: Cannot find function setBigUint64.
+kangax-es2020/DataView.prototype.getBigInt64.js: OK
+kangax-es2020/DataView.prototype.getBigUint64.js: OK
 kangax-es2020/Promise.allSettled.js: failed
 kangax-es2020/String.prototype.matchAll.js: OK
 kangax-es2020/String.prototype.matchAll.throws-non-global.js: OK
@@ -1332,7 +1332,7 @@ kangax-es2020/optional-chaining.bracket.js: OK
 kangax-es2020/optional-chaining.function-call.js: OK
 kangax-es2020/optional-chaining.method-call.js: OK
 kangax-es2020/optional-chaining.property.js: OK
-kangax-es2020/optional-chaining.spread-params.js: "optional-chaining.spread-params.js", line 14: syntax error "optional-chaining.spread-params.js", line 1: Compilation produced 1 syntax errors.
+kangax-es2020/optional-chaining.spread-params.js: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 kangax-es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined.
 kangax-es2021/Promise.any.AggregateError.js: OK
 kangax-es2021/Promise.any.fulfillment.js: OK
@@ -1387,7 +1387,7 @@ kangax-es2022/class-methods.private-static.js: "class-methods.private-static.js"
 kangax-es2022/class-static-init-blocks.js: "class-static-init-blocks.js", line 14: invalid return "class-static-init-blocks.js", line 15: syntax error "class-static-init-blocks.js", line 23: syntax error "class-static-init-blocks.js", line 24: syntax error   console.log("kangax-es2022/class-static-init-blocks.js: " + e); "class-static-init-b
 kangax-es2022/ergonomic-brand-checks.js: "ergonomic-brand-checks.js", line 1: Compilation produced 5 syntax errors.
 kangax-es2022/regex.flags.d.constructor.js: SyntaxError: invalid flag 'd' after regular expression
-kangax-es2022/regex.flags.d.shows-in-flags.js: TypeError: Cannot call method "call" of undefined
+kangax-es2022/regex.flags.d.shows-in-flags.js: failed
 kangax-es2023/Array.prototype.findLastIndex.js: OK
 kangax-es2023/Array.prototype.findLast.js: OK
 kangax-es2023/Array.prototype.toReversed.js: OK
@@ -1407,7 +1407,7 @@ kangax-es2024/Promise.withResolvers.js: OK
 kangax-es2024/regex.flags.v.constructor.js: SyntaxError: invalid flag 'v' after regular expression
 kangax-es2024/regex.flags.v.properties-of-strings.js: "regex.flags.v.properties-of-strings.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.properties-of-strings.js", line 1: Compilation produced 2 syntax errors.
 kangax-es2024/regex.flags.v.set-notations.js: "regex.flags.v.set-notations.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 10: invalid flag 'v' after regular expression "regex.flags.v.set-notations.js", line 1: Compilation produced 3 syntax errors.
-kangax-es2024/regex.flags.v.shows-in-flags.js: TypeError: Cannot call method "call" of undefined
+kangax-es2024/regex.flags.v.shows-in-flags.js: failed
 kangax-es2024/regex.flags.v.unicode-15.1.js: "regex.flags.v.unicode-15.1.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-15.1.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2024/regex.flags.v.unicode-16.0.js: "regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-16.0.js", line 1: Compilation produced 1 syntax errors.
 kangax-es2024/regex.flags.v.unicode-17.0.js: "regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression "regex.flags.v.unicode-17.0.js", line 1: Compilation produced 1 syntax errors.

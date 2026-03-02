@@ -1,4 +1,4 @@
-Metadata: {"arch": "amd64", "binary_sha256": "87f44b8176b94d96e1e609a45d783d667fa7d496b4c1ddfdb7af6499c3b01df4", "binary_size": 369280, "cc": "gcc 16.0.1 20260217 (experimental) [trunk r16-7536-g6e52c1dbfb7] (Debian 16-20260217-1)", "console_log": "print", "engine": "malbrain", "repository": "https://github.com/malbrain/javascript-database.git", "revision": "69cf58f0c63cacc6fda0c8cc296f995bb9897e79", "revision_date": "2020-04-18"}
+Metadata: {"arch": "amd64", "binary_sha256": "e8375906feaf131f56f8050d1896b29ed87b9e21ee869a17f78b2922409a5ff5", "binary_size": 369280, "console_log": "print", "engine": "malbrain", "repository": "https://github.com/malbrain/javascript-database.git", "revision": "69cf58f0c63cacc6fda0c8cc296f995bb9897e79", "revision_date": "2020-04-18"}
 es1/Array.js: failed
 es1/Array.length.assignment.js: failed
 es1/Array.length.js: failed

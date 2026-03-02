@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "2dcab79033337f55010294d0bbd082c8a0113e0956aac5df0e83512912f9f42f", "binary_size": 4896344, "engine": "otto", "go": "1.25.7", "repository": "https://github.com/robertkrimen/otto.git", "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a", "revision_date": "2025-06-13", "version": "0.5.1-2-g3ca7298"}
+Metadata: {"arch": "arm64", "binary_sha256": "4a875751bd903cc312e4286656b67c0db2d75b25828185b1cff889ac36a6d834", "binary_size": 4897304, "console_log": "console.log", "engine": "otto", "repository": "https://github.com/robertkrimen/otto.git", "revision": "3ca729876b8973d2faeb6f25d1c8e7dd6580063a", "revision_date": "2025-06-13", "version": "0.5.1-2-g3ca7298"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -99,7 +99,7 @@ es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x358 panic({0x260700?, 0x4aef60?}) /usr/local/go/src/runtime/panic.go:783 +0x120 github.com/robertkrimen/otto.catchPanic(0x400022bdd8?) 
+es1/String.generics.js: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked] github.com/robertkrimen/otto.catchPanic.func1() /src/error.go:247 +0x350 panic({0x2519a0?, 0x4af1e0?}) /usr/local/go/src/runtime/panic.go:860 +0x12c github.com/robertkrimen/otto.catchPanic(0xa1c4ce91dd0?)
 es1/String.js: OK
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
@@ -229,7 +229,7 @@ es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; zero failed; Infinity failed; small number failed
 es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
-es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError
+es3/Number.prototype.toExponential.throws-infinity.js: timeout
 es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: Infinity failed; small number exponential notation failed; zero failed; large number exponential notation failed
@@ -439,7 +439,7 @@ kangax-es5/Function.prototype.bind.js: OK
 kangax-es5/JSON.js: OK
 kangax-es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 kangax-es5/Number.prototype.toExponential.rounds-properly.js: failed
-kangax-es5/Number.prototype.toExponential.throws-infinity.js: OK
+kangax-es5/Number.prototype.toExponential.throws-infinity.js: timeout
 kangax-es5/Object.create.js: OK
 kangax-es5/Object.defineProperties.js: OK
 kangax-es5/Object.defineProperty.js: OK
@@ -1103,8 +1103,8 @@ kangax-es6/super.property-access.js: (anonymous): Line 10:3 Unexpected reserved 
 kangax-es6/super.statement.js: (anonymous): Line 11:3 Unexpected reserved word (and 1 more errors)
 kangax-es6/super.static-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
 kangax-es6/super.this-binding.js: (anonymous): Line 10:3 Unexpected reserved word (and 5 more errors)
-kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0x400130be80 sp=0x400130be50 pc=0x851f4 github.com/robertkrimen/otto.catchPanic(0x4000215dd8?) /src/error.go:250 +0x54 fp=0x4040593d70 sp=0x4040593d30 pc=0x1d0264
-kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1094 +0x34 fp=0x400058be80 sp=0x400058be50 pc=0x851f4 github.com/robertkrimen/otto.catchPanic(0x40001a9dd8?) /src/error.go:250 +0x54 fp=0x4040597d70 sp=0x4040597d30 pc=0x1d0264
+kangax-es6/tail-calls.direct.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1229 +0x38 fp=0x5370402ebe80 sp=0x5370402ebe50 pc=0x8efe8 github.com/robertkrimen/otto.catchPanic(0x53704042bdd0?) /src/error.go:250 +0x50 fp=0x537080fffd60 sp=0x537080fffd20 pc=0x1cc7b0
+kangax-es6/tail-calls.mutual.js: fatal error: stack overflow /usr/local/go/src/runtime/panic.go:1229 +0x38 fp=0x4a7bec51fe80 sp=0x4a7bec51fe50 pc=0x8efe8 github.com/robertkrimen/otto.catchPanic(0x4a7bec25fdd0?) /src/error.go:250 +0x50 fp=0x4a7c2c77fd60 sp=0x4a7c2c77fd20 pc=0x1cc7b0
 kangax-es6/template.basic.js: (anonymous): Line 11:8 Unexpected token ILLEGAL (and 3 more errors)
 kangax-es6/template.caching.js: (anonymous): Line 17:19 Unexpected token ILLEGAL (and 7 more errors)
 kangax-es6/template.escape-sequences.js: (anonymous): Line 13:20 Unexpected token ILLEGAL (and 4 more errors)

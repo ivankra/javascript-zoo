@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 52786958, "engine": "starlingmonkey", "repository": "https://github.com/bytecodealliance/StarlingMonkey.git", "revision": "d59111599472cf2cd921cde323847824bea4a8a8", "revision_date": "2025-12-19", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
+Metadata: {"arch": "amd64", "console_log": "console.log", "dist_size": 54389566, "engine": "starlingmonkey", "repository": "https://github.com/bytecodealliance/StarlingMonkey.git", "revision": "d59111599472cf2cd921cde323847824bea4a8a8", "revision_date": "2025-12-19"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

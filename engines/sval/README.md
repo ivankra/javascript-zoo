@@ -107,8 +107,8 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: failed
 </pre></li>
 <li>ES2022: 90%<pre>
-<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: TypeError: Cannot read properties of null (reading 'privateh5xsr1wjdsi')
-<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of undefined (reading 'privatee9mdjothzdg')
+<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: TypeError: Cannot read properties of null (reading 'privatew2stg2yr9l')
+<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of undefined (reading 'privatelg8d5d2ukvj')
 <a href="../../conformance/kangax-es2022/class-fields.static.define.js">class-fields.static.define.js</a>: TypeError: Cannot assign to read only property 'name' of function 'function() {
 </pre></li>
 <li>ES2023: 100%</li>

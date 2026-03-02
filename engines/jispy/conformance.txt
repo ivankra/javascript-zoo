@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "dist_size": 82829, "engine": "jispy", "repository": "https://github.com/polydojo/jispy.git", "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e", "revision_date": "2017-09-05", "version": "1.0.0"}
+Metadata: {"arch": "arm64", "console_log": "console.log", "dist_size": 82829, "engine": "jispy", "repository": "https://github.com/polydojo/jispy.git", "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e", "revision_date": "2017-09-05", "version": "1.0.0"}
 es1/Array.js: SyntaxError: unexpected token Array
 es1/Array.length.assignment.js: SyntaxError: unexpected token Array
 es1/Array.length.js: SyntaxError: unexpected token Array

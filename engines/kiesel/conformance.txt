@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "daa2f8cecc6e0a6c523fbc2647731639c1be76bf6f65d58bb0c11ec4a4b32089", "binary_size": 13588464, "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "4f059b5a0e1cd4a5434123a75d927f547b5a9a85", "revision_date": "2026-02-11", "version": "0.1.0-dev+4f059b5a0"}
+Metadata: {"arch": "amd64", "binary_sha256": "2f1cc349cea033dd49310ac40b0df19fdd91d3518b534f596465984f3c874a25", "binary_size": 14414792, "console_log": "console.log", "engine": "kiesel", "repository": "https://codeberg.org/kiesel-js/kiesel.git", "revision": "8fee225daf97fbbbda6969c4f7e6217f1d25763b", "revision_date": "2026-02-28", "version": "0.1.0-dev+8fee225da"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -290,8 +290,8 @@ es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
 es3/in.js: OK
-es3/labelled.break.js: labelled break to outer loop failed
-es3/labelled.continue.js: labelled continue to outer loop failed
+es3/labelled.break.js: OK
+es3/labelled.continue.js: OK
 es3/labelled.statements.js: OK
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
@@ -518,20 +518,20 @@ kangax-es6/Date.prototype.Symbol.toPrimitive.js: OK
 kangax-es6/Function.name.accessor.js: OK
 kangax-es6/Function.name.bound.js: OK
 kangax-es6/Function.name.class-expression.js: OK
-kangax-es6/Function.name.class-object-method.js: failed
+kangax-es6/Function.name.class-object-method.js: OK
 kangax-es6/Function.name.class-prototype.js: OK
 kangax-es6/Function.name.class-statement.js: OK
 kangax-es6/Function.name.class-static.js: OK
-kangax-es6/Function.name.class-variable.js: failed
+kangax-es6/Function.name.class-variable.js: OK
 kangax-es6/Function.name.configurable.js: OK
 kangax-es6/Function.name.expression.js: OK
 kangax-es6/Function.name.new-Function.js: OK
-kangax-es6/Function.name.object-method.js: failed
+kangax-es6/Function.name.object-method.js: OK
 kangax-es6/Function.name.shorthand.js: OK
 kangax-es6/Function.name.shorthand.no-lexical.js: OK
 kangax-es6/Function.name.statement.js: OK
 kangax-es6/Function.name.symbol-keyed.js: failed
-kangax-es6/Function.name.variable.js: failed
+kangax-es6/Function.name.variable.js: OK
 kangax-es6/Map.Symbol.species.js: OK
 kangax-es6/Map.constructor-accepts-null.js: OK
 kangax-es6/Map.constructor-arguments.js: OK
@@ -783,7 +783,7 @@ kangax-es6/class.string-keyed-methods.js: OK
 kangax-es6/const.basic.js: OK
 kangax-es6/const.block-scoped.js: OK
 kangax-es6/const.for-in.js: OK
-kangax-es6/const.for-loop.js: OK
+kangax-es6/const.for-loop.js: failed
 kangax-es6/const.for-of.js: OK
 kangax-es6/const.no-redefine.js: OK
 kangax-es6/const.no-statement.js: OK
@@ -791,7 +791,7 @@ kangax-es6/const.shadow.js: OK
 kangax-es6/const.strict.basic.js: OK
 kangax-es6/const.strict.block-scoped.js: OK
 kangax-es6/const.strict.for-in.js: OK
-kangax-es6/const.strict.for-loop.js: OK
+kangax-es6/const.strict.for-loop.js: failed
 kangax-es6/const.strict.for-of.js: OK
 kangax-es6/const.strict.no-redefine.js: OK
 kangax-es6/const.strict.no-statement.js: OK
@@ -806,17 +806,17 @@ kangax-es6/default-params.refer-previous.js: OK
 kangax-es6/default-params.separate-scope.js: OK
 kangax-es6/default-params.tdz.js: OK
 kangax-es6/destructuring-assign.array.js: OK
-kangax-es6/destructuring-assign.astral-string.js: failed
+kangax-es6/destructuring-assign.astral-string.js: OK
 kangax-es6/destructuring-assign.chained-iterable.js: OK
 kangax-es6/destructuring-assign.chained-object.js: OK
 kangax-es6/destructuring-assign.computed-properties.js: OK
 kangax-es6/destructuring-assign.defaults.js: OK
 kangax-es6/destructuring-assign.empty-patterns.js: OK
-kangax-es6/destructuring-assign.generator.js: failed
+kangax-es6/destructuring-assign.generator.js: OK
 kangax-es6/destructuring-assign.iterable-expression.js: OK
-kangax-es6/destructuring-assign.iterable-instance.js: failed
-kangax-es6/destructuring-assign.iterable.js: failed
-kangax-es6/destructuring-assign.iterator-closing.js: failed
+kangax-es6/destructuring-assign.iterable-instance.js: OK
+kangax-es6/destructuring-assign.iterable.js: OK
+kangax-es6/destructuring-assign.iterator-closing.js: OK
 kangax-es6/destructuring-assign.nested-rest.js: SyntaxError: Invalid left-hand side in assignment expression (destructuring-assign.nested-rest.js:11:27)
 kangax-es6/destructuring-assign.nested.js: OK
 kangax-es6/destructuring-assign.object-expression.js: OK
@@ -830,17 +830,17 @@ kangax-es6/destructuring-assign.throws-null-undefined.js: OK
 kangax-es6/destructuring-assign.trailing-comma-iterable.js: OK
 kangax-es6/destructuring-assign.trailing-comma-object.js: OK
 kangax-es6/destructuring-decl.array.js: OK
-kangax-es6/destructuring-decl.astral-string.js: failed
+kangax-es6/destructuring-decl.astral-string.js: OK
 kangax-es6/destructuring-decl.catch.js: OK
 kangax-es6/destructuring-decl.computed-properties.js: OK
 kangax-es6/destructuring-decl.defaults-tdz.js: OK
 kangax-es6/destructuring-decl.defaults.js: OK
 kangax-es6/destructuring-decl.for-in.js: OK
 kangax-es6/destructuring-decl.for-of.js: OK
-kangax-es6/destructuring-decl.generator.js: failed
-kangax-es6/destructuring-decl.iterable-instance.js: failed
-kangax-es6/destructuring-decl.iterable.js: failed
-kangax-es6/destructuring-decl.iterator-closing.js: failed
+kangax-es6/destructuring-decl.generator.js: OK
+kangax-es6/destructuring-decl.iterable-instance.js: OK
+kangax-es6/destructuring-decl.iterable.js: OK
+kangax-es6/destructuring-decl.iterator-closing.js: OK
 kangax-es6/destructuring-decl.multiple-var.js: OK
 kangax-es6/destructuring-decl.nested.js: OK
 kangax-es6/destructuring-decl.object-primitives.js: OK
@@ -854,17 +854,17 @@ kangax-es6/destructuring-decl.trailing-comma-object.js: OK
 kangax-es6/destructuring-params.aliased-defaults-arrow.js: OK
 kangax-es6/destructuring-params.arguments.js: OK
 kangax-es6/destructuring-params.array.js: OK
-kangax-es6/destructuring-params.astral-string.js: failed
+kangax-es6/destructuring-params.astral-string.js: OK
 kangax-es6/destructuring-params.computed-properties.js: OK
 kangax-es6/destructuring-params.defaults-new-function.js: OK
 kangax-es6/destructuring-params.defaults-separate-scope.js: OK
 kangax-es6/destructuring-params.defaults.js: OK
 kangax-es6/destructuring-params.duplicate-identifier.js: failed
 kangax-es6/destructuring-params.empty-patterns.js: OK
-kangax-es6/destructuring-params.generator.js: failed
-kangax-es6/destructuring-params.iterable-instance.js: failed
-kangax-es6/destructuring-params.iterable.js: failed
-kangax-es6/destructuring-params.iterator-closing.js: failed
+kangax-es6/destructuring-params.generator.js: OK
+kangax-es6/destructuring-params.iterable-instance.js: OK
+kangax-es6/destructuring-params.iterable.js: OK
+kangax-es6/destructuring-params.iterator-closing.js: OK
 kangax-es6/destructuring-params.length.js: OK
 kangax-es6/destructuring-params.nested.js: OK
 kangax-es6/destructuring-params.new-function.js: OK
@@ -882,7 +882,7 @@ kangax-es6/for-of.astral-string.js: OK
 kangax-es6/for-of.generator.js: OK
 kangax-es6/for-of.iterable-instance.js: OK
 kangax-es6/for-of.iterable.js: OK
-kangax-es6/for-of.iterator-closing-break.js: failed
+kangax-es6/for-of.iterator-closing-break.js: OK
 kangax-es6/for-of.iterator-closing-throw.js: failed
 kangax-es6/for-of.sparse-array.js: OK
 kangax-es6/for-of.string.js: OK
@@ -918,14 +918,14 @@ kangax-es6/let.basic.js: OK
 kangax-es6/let.block-scoped.js: OK
 kangax-es6/let.for-in-shadow.js: OK
 kangax-es6/let.for-iteration.js: failed
-kangax-es6/let.for-loop.js: OK
+kangax-es6/let.for-loop.js: failed
 kangax-es6/let.no-statement.js: OK
 kangax-es6/let.shadow.js: OK
 kangax-es6/let.strict.basic.js: OK
 kangax-es6/let.strict.block-scoped.js: OK
 kangax-es6/let.strict.for-in-shadow.js: OK
 kangax-es6/let.strict.for-iteration.js: failed
-kangax-es6/let.strict.for-loop.js: OK
+kangax-es6/let.strict.for-loop.js: failed
 kangax-es6/let.strict.no-statement.js: OK
 kangax-es6/let.strict.shadow.js: OK
 kangax-es6/let.strict.tdz.js: OK
@@ -1015,7 +1015,7 @@ kangax-es6/misc.Proxy.set.Array.unshift.js: OK
 kangax-es6/misc.Proxy.set.Object.assign.js: OK
 kangax-es6/misc.RegExp-alter-flags.js: OK
 kangax-es6/misc.RegExp-prototype-toString-generic.js: OK
-kangax-es6/misc.accessors-no-constructor.js: OK
+kangax-es6/misc.accessors-no-constructor.js: failed
 kangax-es6/misc.bound-function-prototype.arrow.js: OK
 kangax-es6/misc.bound-function-prototype.class.js: OK
 kangax-es6/misc.bound-function-prototype.function.js: OK
@@ -1111,7 +1111,7 @@ kangax-es6/template.escape-sequences.js: SyntaxError: Unexpected token 'function
 kangax-es6/template.frozen-array.js: OK
 kangax-es6/template.line-break.js: OK
 kangax-es6/template.permanent-caching.js: OK
-kangax-es6/template.tagged.js: OK
+kangax-es6/template.tagged.js: failed
 kangax-es6/template.toString.js: OK
 kangax-es6/typed-arrays.ArrayBuffer.Symbol.species.js: OK
 kangax-es6/typed-arrays.DataView.Float32.js: OK
@@ -1161,7 +1161,7 @@ kangax-es6/typed-arrays.prototype.subarray.js: OK
 kangax-es6/typed-arrays.prototype.values.js: OK
 kangax-es6/unicode-escapes.identifier.js: OK
 kangax-es6/unicode-escapes.property-access.js: OK
-kangax-es6/unicode-escapes.property-key.js: OK
+kangax-es6/unicode-escapes.property-key.js: failed
 kangax-es6/unicode-escapes.string.js: OK
 kangax-es6/well-known.hasInstance.js: OK
 kangax-es6/well-known.isConcatSpreadable.non-spreadable.js: OK
@@ -1257,7 +1257,7 @@ kangax-es2017/async.await.js: failed
 kangax-es2017/async.constructor.js: OK
 kangax-es2017/async.methods-class.js: OK
 kangax-es2017/async.methods-object.js: OK
-kangax-es2017/async.must-await-value.js: A promise was rejected without any handlers: Promise(state: <rejected>, result: ReferenceError: 'await' is not defined)
+kangax-es2017/async.must-await-value.js: OK
 kangax-es2017/async.no-await-in-params.js: OK
 kangax-es2017/async.no-line-break.js: OK
 kangax-es2017/async.no-prototype.js: OK
@@ -1275,7 +1275,7 @@ kangax-es2018/async-iterators.for-await-of.js: OK
 kangax-es2018/async-iterators.generators.js: OK
 kangax-es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 kangax-es2018/misc.template-literal-revision.js: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
-kangax-es2018/object-rest.js: failed
+kangax-es2018/object-rest.js: OK
 kangax-es2018/object-spread.js: OK
 kangax-es2018/regex.flags.s.js: OK
 kangax-es2018/regex.lookbehind.js: OK
@@ -1302,12 +1302,12 @@ kangax-es2019/Symbol.prototype.description.undefined.js: OK
 kangax-es2019/annex-b.String.prototype.trimLeft.js: OK
 kangax-es2019/annex-b.String.prototype.trimRight.js: OK
 kangax-es2019/misc.Function-toString.Function-constructor.js: OK
-kangax-es2019/misc.Function-toString.arrows.js: OK
-kangax-es2019/misc.Function-toString.class-explicit-constructor.js: OK
-kangax-es2019/misc.Function-toString.class-implicit-constructor.js: OK
-kangax-es2019/misc.Function-toString.computed-names.js: OK
+kangax-es2019/misc.Function-toString.arrows.js: crashed (signal 6); thread 761042 panic: Invalid UTF-8
+kangax-es2019/misc.Function-toString.class-explicit-constructor.js: crashed (signal 6); thread 761471 panic: Invalid UTF-8
+kangax-es2019/misc.Function-toString.class-implicit-constructor.js: crashed (signal 6); thread 761753 panic: Invalid UTF-8
+kangax-es2019/misc.Function-toString.computed-names.js: crashed (signal 6); thread 762029 panic: Invalid UTF-8
 kangax-es2019/misc.Function-toString.native-code.js: OK
-kangax-es2019/misc.Function-toString.unicode-escapes.js: OK
+kangax-es2019/misc.Function-toString.unicode-escapes.js: crashed (signal 6); thread 762426 panic: Invalid UTF-8
 kangax-es2019/misc.JSON-stringify-well-formed.js: OK
 kangax-es2019/misc.JSON-superset.line-separator.js: SyntaxError: Invalid character ''' (eval:1:1)
 kangax-es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Invalid character ''' (eval:1:1)

@@ -13,10 +13,7 @@ JavaScript engine written in Rust.
 ## Conformance
 
 <details><summary>ES1-ES5: 94%</summary><ul>
-<li>ES1: 94%<pre>
-<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Not a function
-<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Not a function
-<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Not a function
+<li>ES1: 96%<pre>
 <a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: escape is not defined
 <a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: unescape is not defined
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: 0755 failed; max safe integer failed
@@ -42,13 +39,13 @@ JavaScript engine written in Rust.
 <a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: failed
 <a href="../../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
-<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: thread '&lt;unnamed&gt;' (4857) panicked at src/core/parser.rs:2312:16: Error: Custom { kind: Other, error: "js runtime thread panicked" }
+<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: thread '&lt;unnamed&gt;' (3376566) panicked at src/core/parser.rs:2312:16: Error: Custom { kind: Other, error: "js runtime thread panicked" }
 <a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: failed: string 'this' was coerced in accessor
 <a href="../../conformance/es5/this.thrown-function.js">this.thrown-function.js</a>: Error: Right-hand side of 'in' must be an object
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 83%, ES2016+ 83%, Next 20%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 83%, ES2016+ 87%, Next 26%, Intl 25%</summary><ul>
 <li>ES6: 83%, <b>2 crashes</b><pre>
 <a href="../../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: global is not defined
 <a href="../../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: global is not defined
@@ -92,7 +89,7 @@ JavaScript engine written in Rust.
 <li>ES2018: 99%<pre>
 <a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp: Invalid property name
 </pre></li>
-<li>ES2019: 64%<pre>
+<li>ES2019: 83%<pre>
 <a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: Not a function
 <a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: Not a function
 <a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
@@ -101,35 +98,21 @@ JavaScript engine written in Rust.
 <a href="../../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
 <a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
 <a href="../../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Legacy octal literals are not allowed in strict mode
-<a href="../../conformance/kangax-es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: SyntaxError: Unterminated string literal (newline in string)
-<a href="../../conformance/kangax-es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: SyntaxError: Unterminated string literal (newline in string)
 </pre></li>
 <li>ES2020: 89%<pre>
 <a href="../../conformance/kangax-es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: OptionalCall target is not a function
 <a href="../../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: TypeError: OptionalCall target is not a function
 </pre></li>
 <li>ES2021: 43%</li>
-<li>ES2022: 86%<pre>
-<a href="../../conformance/kangax-es2022/Error.cause.Error.js">Error.cause.Error.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.EvalError.js">Error.cause.EvalError.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.RangeError.js">Error.cause.RangeError.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.ReferenceError.js">Error.cause.ReferenceError.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.SyntaxError.js">Error.cause.SyntaxError.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.TypeError.js">Error.cause.TypeError.js</a>: failed
-<a href="../../conformance/kangax-es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: failed
+<li>ES2022: 90%<pre>
 <a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: failed
 <a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of null or undefined
 <a href="../../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: global is not defined
 </pre></li>
 <li>ES2023: 100%</li>
-<li>ES2024: 71%<pre>
-<a href="../../conformance/kangax-es2024/ArrayBuffer.prototype.detached.js">ArrayBuffer.prototype.detached.js</a>: TypeError: Not a function
-<a href="../../conformance/kangax-es2024/ArrayBuffer.prototype.transferToFixedLength.js">ArrayBuffer.prototype.transferToFixedLength.js</a>: TypeError: Not a function
-<a href="../../conformance/kangax-es2024/ArrayBuffer.prototype.transfer.js">ArrayBuffer.prototype.transfer.js</a>: TypeError: Not a function
-</pre></li>
+<li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 20%</li>
+<li>Next: 26%</li>
 <li>Intl: 25%</li>
 </ul></details>
 

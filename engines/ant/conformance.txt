@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "202d0baf5cf29428948d66cbd042c06f313140dccef70259747629af4336e786", "binary_size": 3737216, "cc": "clang 21.1.8 (++20251221033036+2078da43e25a-1~exp1~20251221153213.50)", "engine": "ant", "repository": "https://github.com/theMackabu/ant.git", "revision": "a41eb672dfe434f78be3ba1443774daa973eb2e1", "revision_date": "2026-02-10"}
+Metadata: {"arch": "arm64", "binary_sha256": "56c986edaeced9557c92f800ce0e5f83edacbc92f02a94e4efdb8f44f34505a6", "binary_size": 4012096, "console_log": "console.log", "engine": "ant", "repository": "https://github.com/theMackabu/ant.git", "revision": "a41eb672dfe434f78be3ba1443774daa973eb2e1", "revision_date": "2026-02-10"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

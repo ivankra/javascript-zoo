@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "edfa9150f36838ea2c1ed4cdb547ae4a46d226b89bd7811db80faddce223069b", "binary_size": 400080, "cc": "gcc 16.0.1 20260208 (experimental) [trunk r16-7394-gd93c8a679b2] (Debian 16-20260208-1)", "engine": "cesanta-v7", "repository": "https://github.com/cesanta/v7.git", "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27", "revision_date": "2017-08-26"}
+Metadata: {"arch": "arm64", "binary_sha256": "f5a2bbadcbb966c59a85e66b8e9269354b160d8791460bfaa3c099f903309157", "binary_size": 400080, "console_log": "print", "engine": "cesanta-v7", "repository": "https://github.com/cesanta/v7.git", "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27", "revision_date": "2017-08-26"}
 es1/Array.js: new Array(len) failed; Array(len) failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: new Array(len) length failed

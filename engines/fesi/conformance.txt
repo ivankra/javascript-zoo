@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "console_log": "writeln", "dist_size": 955225, "engine": "fesi", "repository": "https://github.com/ivankra/fesi.git", "revision": "ad4a0511f28f5d6c5cfbb400dd46d604812361f2", "revision_date": "2026-02-24", "version": "1.1.8"}
+Metadata: {"arch": "arm64", "console_log": "writeln", "dist_size": 955225, "engine": "fesi", "repository": "https://github.com/ivankra/FESI.git", "revision": "ad4a0511f28f5d6c5cfbb400dd46d604812361f2", "revision_date": "2026-02-24", "version": "1.1.8"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -212,11 +212,11 @@ es3/Array.prototype.toLocaleString.js: Runtime error The function 'toLocaleStrin
 es3/Array.prototype.unshift.generic.js: Runtime error The property 'unshift' is not defined in object '' [[Error loading file' Array.prototype.unshift.generic.js']]
 es3/Array.prototype.unshift.js: Runtime error The function 'unshift' is not defined for object '2,3' [[Error loading file' Array.prototype.unshift.js']]
 es3/Array.prototype.unshift.returns-new-length.js: Syntax error detected near line 9, column 15, after "=" [[Error loading file' Array.prototype.unshift.returns-new-length.js']]
-es3/Date.prototype.toDateString.js: Runtime error The function 'toDateString' is not defined for object 'Mon Feb 23 18:50:11 UTC 2026' [[Error loading file' Date.prototype.toDateString.js']]
-es3/Date.prototype.toLocaleDateString.js: Runtime error The function 'toLocaleDateString' is not defined for object 'Mon Feb 23 18:50:11 UTC 2026' [[Error loading file' Date.prototype.toLocaleDateString.js']]
+es3/Date.prototype.toDateString.js: Runtime error The function 'toDateString' is not defined for object 'Mon Mar 02 12:40:28 UTC 2026' [[Error loading file' Date.prototype.toDateString.js']]
+es3/Date.prototype.toLocaleDateString.js: Runtime error The function 'toLocaleDateString' is not defined for object 'Mon Mar 02 12:40:28 UTC 2026' [[Error loading file' Date.prototype.toLocaleDateString.js']]
 es3/Date.prototype.toLocaleString.js: OK
-es3/Date.prototype.toLocaleTimeString.js: Runtime error The function 'toLocaleTimeString' is not defined for object 'Mon Feb 23 18:50:11 UTC 2026' [[Error loading file' Date.prototype.toLocaleTimeString.js']]
-es3/Date.prototype.toTimeString.js: Runtime error The function 'toTimeString' is not defined for object 'Mon Feb 23 18:50:11 UTC 2026' [[Error loading file' Date.prototype.toTimeString.js']]
+es3/Date.prototype.toLocaleTimeString.js: Runtime error The function 'toLocaleTimeString' is not defined for object 'Mon Mar 02 12:40:28 UTC 2026' [[Error loading file' Date.prototype.toLocaleTimeString.js']]
+es3/Date.prototype.toTimeString.js: Runtime error The function 'toTimeString' is not defined for object 'Mon Mar 02 12:40:28 UTC 2026' [[Error loading file' Date.prototype.toTimeString.js']]
 es3/Error.js: Runtime error global variable 'Error' does not have a value detected at line 10 in file: 'Error.js' [[Error loading file' Error.js']]
 es3/Error.prototype.constructor.js: Runtime error global variable 'Error' does not have a value detected at line 6 in file: 'Error.prototype.constructor.js' [[Error loading file' Error.prototype.constructor.js']]
 es3/Error.prototype.message.js: Runtime error global variable 'Error' does not have a value detected at line 6 in file: 'Error.prototype.message.js' [[Error loading file' Error.prototype.message.js']]

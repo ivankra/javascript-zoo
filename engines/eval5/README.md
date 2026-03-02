@@ -26,7 +26,7 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
 </pre></li>
 <li>ES3: 99%<pre>
-<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: constructor failed; ReferenceError: EvalError is not defined [14:4] at new ThrowReferenceError (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:5262:43) at main.Interpreter.Interpreter.createError (/home/ivan/src/zoo/dist/arm64/eval5-dist/eval5.js:5719:17) at main.Interpreter.Interpreter.createInt
+<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: constructor failed; ReferenceError: EvalError is not defined [14:4] at new ThrowReferenceError (/dist/eval5-dist/eval5.js:5262:43) at main.Interpreter.Interpreter.createError (/dist/eval5-dist/eval5.js:5719:17) at main.Interpreter.Interpreter.createInternalThrowError (/dist/eval5-dist/eval5.js:5725:
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: wrong exception for calling number; no exception for Function.prototype.toString on non-function
 </pre></li>
 <li>ES5: 72%<pre>

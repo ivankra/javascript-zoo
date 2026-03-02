@@ -1,4 +1,4 @@
-Metadata: {"arch": "arm64", "binary_sha256": "2460953a64bfab6cb3e56688c3d339aaff087b1abb23c014635ef436ed7a42dd", "binary_size": 5976328, "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "6a04fef645608b7995fa119b445e3f18e2281473", "revision_date": "2025-12-17", "rustc": "rustc 1.93.0 (254b59607 2026-01-19)"}
+Metadata: {"arch": "arm64", "binary_sha256": "750641460a7314a22f86a311053a105ca76495b9c43e57b16220b469e4b49901", "binary_size": 5976328, "console_log": "console.log", "engine": "brimstone", "repository": "https://github.com/Hans-Halverson/brimstone.git", "revision": "6a04fef645608b7995fa119b445e3f18e2281473", "revision_date": "2025-12-17"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
