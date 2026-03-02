@@ -113,7 +113,6 @@ if [[ -n "$CIDFILE" ]]; then
 fi
 
 cd "$DIST_ROOT"
-(for x in *; do if [[ -f "$x" && -x "$x" && -f $x.json ]]; then echo "$x"; fi; done | sort -V) >LIST
 
 # Optionally, clean up build container's image after a successful build to free up space
 # TODO breaks COPY --from containers, like hako

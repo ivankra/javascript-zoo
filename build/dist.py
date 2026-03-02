@@ -50,57 +50,42 @@ def arch_name() -> str:
     return m
 
 
-def parse_args(
-    argv: list[str],
-) -> tuple[
-    Path,
-    Path | None,
-    str | None,
-    list[str],
-    list[str],
-    bool,
-    bool,
-    dict[str, str],
-]:
+def parse_args(argv: list[str]) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         prog="./dist.py",
         usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--dist_files=<path> ...] [--no-license] [run_script_cmd='<cmd>'] [key=value ...]",
     )
-    p.add_argument("out", help="output path, must be under /dist")
-    p.add_argument("meta", nargs="*", help="metadata entries as key=value")
-    p.add_argument("--binary", dest="binary")
-    p.add_argument("--wrapper", dest="wrapper")
-    p.add_argument("--license", dest="licenses", action="append", default=[])
-    p.add_argument("--dist_files", dest="dist_files", action="append", default=[])
-    p.add_argument("--no-license", action="store_true", dest="no_license")
-    p.add_argument("--rename-variant", action="store_true", dest="rename_variant")
+    p.add_argument("out", help="output path under /dist, e.g. /dist/v8")
+    p.add_argument("meta", nargs="*", help="metadata as key=value pairs, e.g. version=1.0 run_script_cmd='$BINARY $FILE'")
+    p.add_argument("--binary", dest="binary", help="path to binary to strip and copy to output")
+    p.add_argument("--wrapper", dest="wrapper", help="bash exec line for a wrapper script, e.g. 'exec $SCRIPT_DIR/v8 --harmony \"$@\"'")
+    p.add_argument("--license", dest="licenses", action="append", default=[], metavar="PATH", help="license file(s) to bundle; may be a glob; repeatable")
+    p.add_argument("--dist_files", dest="dist_files", action="append", default=[], metavar="PATH", help="extra files/dirs to include in dist size calculation; repeatable")
+    p.add_argument("--no-license", action="store_true", dest="no_license", help="skip license file requirement")
+    p.add_argument("--no-test", action="store_true", dest="no_test", help="skip console_log probe and test run")
+    p.add_argument("--test-code", dest="test_code", default="%(console_log)s(40+2);", metavar="JS", help="JS snippet to run as smoke test; %%(console_log)s is substituted with the detected print function")
+    p.add_argument("--test-output", dest="test_output", default="42", metavar="STR", help="expected string in test run output (default: 42)")
+    p.add_argument("--rename-variant", action="store_true", dest="rename_variant", help="rename the single existing /dist artifact to the given output name and update engine/variant in its JSON")
 
-    ns = p.parse_args(argv)
+    args = p.parse_args(argv)
 
-    out = Path(ns.out)
-    if not str(out).startswith("/dist/"):
-        fail(f"output path must be under /dist, got: {out}")
+    args.out = Path(args.out)
+    if not str(args.out).startswith("/dist/"):
+        fail(f"output path must be under /dist, got: {args.out}")
 
     meta: dict[str, str] = {}
-    for token in ns.meta:
+    for token in args.meta:
         if "=" not in token:
             fail(f"metadata must be key=value, got: {token}")
         k, v = token.split("=", 1)
         if not k:
             fail("metadata key cannot be empty")
         meta[k.replace("-", "_")] = v
+    args.meta = meta
 
-    binary = Path(ns.binary) if ns.binary else None
-    return (
-        out,
-        binary,
-        ns.wrapper,
-        ns.licenses,
-        ns.dist_files,
-        ns.no_license,
-        ns.rename_variant,
-        meta,
-    )
+    args.binary = Path(args.binary) if args.binary else None
+
+    return args
 
 
 def dist_json_candidates() -> list[Path]:
@@ -178,6 +163,7 @@ def should_strip(path: Path) -> bool:
 def strip_or_copy(src: Path, dst: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     if should_strip(src):
+        shutil.copy2(src, dst.with_suffix(".dbg"))
         subprocess.run(["strip", "-o", str(dst), str(src)], check=True)
     elif src.resolve() != dst.resolve():
         shutil.copy2(src, dst)
@@ -303,7 +289,7 @@ def maybe_git_metadata(meta: dict[str, str]) -> None:
 
 
 def load_jsz_files(meta: dict[str, str]) -> None:
-    for base in (Path("."), Path("/dist")):
+    for base in (Path("."), Path("/dist"), Path("/")):
         if not base.exists():
             continue
         for p in sorted(base.glob("jsz_*")):
@@ -457,6 +443,39 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
     fail(f"could not detect console.log/print for {binary_path}")
 
 
+def test_run(
+    binary_path: Path,
+    console_log: str,
+    run_script_cmd: str | None,
+    test_code: str,
+    test_output: str,
+) -> None:
+    command = run_script_cmd if run_script_cmd else "$BINARY $FILE"
+    script_src = (test_code % {"console_log": console_log}) + "\n"
+    with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
+        script = Path(tmp) / "test.js"
+        script.write_text(script_src, encoding="utf-8")
+
+        env = os.environ.copy()
+        env["BINARY"] = str(binary_path)
+        env["FILE"] = str(script)
+
+        proc = subprocess.run(
+            ["bash", "-c", command],
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            env=env,
+            check=False,
+        )
+
+        output = proc.stdout + proc.stderr
+        if not _has_line_with_substring(output, test_output):
+            fail(f"test run failed for {binary_path}: {script_src.strip()!r} produced {output!r}")
+
+        print(f"dist.py: test run OK: {script_src.strip()!r} => {output.strip()!r}")
+
+
 def maybe_link_to_dist_out(dist_out: Path) -> None:
     if dist_out.parent != Path("/dist"):
         return
@@ -467,55 +486,51 @@ def maybe_link_to_dist_out(dist_out: Path) -> None:
 
 
 def main() -> None:
-    (
-        dist_out,
-        binary,
-        wrapper,
-        explicit_licenses,
-        dist_files,
-        no_license,
-        do_rename_variant,
-        meta,
-    ) = parse_args(sys.argv[1:])
+    args = parse_args(sys.argv[1:])
+    meta = args.meta
     run_script_cmd = meta.get("run_script_cmd")
 
-    if binary is not None and not binary.exists():
-        fail(f"binary does not exist: {binary}")
+    if args.binary is not None and not args.binary.exists():
+        fail(f"binary does not exist: {args.binary}")
 
     Path("/dist").mkdir(parents=True, exist_ok=True)
 
-    if do_rename_variant:
-        rename_variant(dist_out)
+    if args.rename_variant:
+        rename_variant(args.out)
         return
 
-    if binary is not None:
-        strip_or_copy(binary, dist_out)
+    if args.binary is not None:
+        strip_or_copy(args.binary, args.out)
 
-    if wrapper is not None:
-        build_wrapper(dist_out, wrapper)
+    if args.wrapper is not None:
+        build_wrapper(args.out, args.wrapper)
 
-    if binary is None and wrapper is None and not dist_out.exists():
-        fail(f"missing output file: {dist_out}; pass --binary=<path> or --wrapper=...")
-    ensure_world_rx(dist_out)
-    maybe_link_to_dist_out(dist_out)
+    if args.binary is None and args.wrapper is None and not args.out.exists():
+        fail(f"missing output file: {args.out}; pass --binary=<path> or --wrapper=...")
+    ensure_world_rx(args.out)
+    maybe_link_to_dist_out(args.out)
 
-    license_dst = Path(str(dist_out) + ".LICENSE")
+    license_dst = Path(str(args.out) + ".LICENSE")
     if not license_dst.exists():
-        write_combined_license(license_dst, detect_license_sources(explicit_licenses))
-    if not no_license and not license_dst.exists():
+        write_combined_license(license_dst, detect_license_sources(args.licenses))
+    if not args.no_license and not license_dst.exists():
         fail(f"missing license file: {license_dst} (pass --license=<path> or --no-license)")
 
-    set_dist_size_from_files(meta, dist_files)
-    default_size_meta(meta, dist_out)
+    set_dist_size_from_files(meta, args.dist_files)
+    default_size_meta(meta, args.out)
     load_jsz_files(meta)
-    if dist_out.exists() and not has_shebang(dist_out):
-        sha = hashlib.sha256(dist_out.read_bytes()).hexdigest()
+    if args.out.exists() and not has_shebang(args.out):
+        sha = hashlib.sha256(args.out.read_bytes()).hexdigest()
         meta.setdefault("binary_sha256", sha)
     maybe_git_metadata(meta)
-    default_engine_variant(meta, dist_out)
-    if dist_out.parent == Path("/dist") and "console_log" not in meta:
-        meta["console_log"] = probe_console_log_function(dist_out, run_script_cmd)
-    finalize_json(dist_out, meta)
+    default_engine_variant(meta, args.out)
+    if not args.no_test:
+        if args.out.parent == Path("/dist") and "console_log" not in meta:
+            meta["console_log"] = probe_console_log_function(args.out, run_script_cmd)
+        if args.out.parent == Path("/dist") and "console_log" in meta:
+            test_run(args.out, meta["console_log"], run_script_cmd, args.test_code, args.test_output)
+    finalize_json(args.out, meta)
+    print(args.out.with_suffix(args.out.suffix + ".json").read_text(encoding="utf-8"), end="")
 
 
 if __name__ == "__main__":
