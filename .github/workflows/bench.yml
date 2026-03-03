@@ -1,14 +1,27 @@
-# Benchmarks all engines for amd64 and arm64 using the hub image via docker.
-# Engines and runtime are supplied by the hub image; binaries are in /dist.
-# Repo is bind-mounted at /zoo so the latest checked-out bench script is used.
+# Benchmarks all engines across 100 parallel shards per arch using the hub image.
 #
-# SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
-# SPDX-License-Identifier: MIT
+# Design: github-bench.py assigns every (engine, test) combo to exactly one
+# shard so all combos are covered. Each shard then fills its remaining time
+# budget with a random weighted sample from all combos, spreading runs across
+# GitHub's fleet of heterogeneous runners for more representative averages.
 
 name: Bench
 
 on:
   workflow_dispatch:
+    inputs:
+      num_shards:
+        description: 'Number of shards per arch'
+        default: '100'
+        type: string
+      time_limit:
+        description: 'Time budget per shard in seconds'
+        default: '1800'
+        type: string
+      test_timeout:
+        description: 'Per-test timeout in seconds'
+        default: '1800'
+        type: string
 
 permissions:
   contents: read
@@ -18,107 +31,111 @@ env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  # Pull the hub image for each arch and read /dist/LIST to get engine names.
+  # Get release tag and build shard index array.
   init:
     runs-on: ubuntu-24.04
     outputs:
-      tag: ${{ steps.list.outputs.tag }}
-      engines_amd64: ${{ steps.list.outputs.engines_amd64 }}
-      engines_arm64: ${{ steps.list.outputs.engines_arm64 }}
+      tag: ${{ steps.init.outputs.tag }}
+      shards: ${{ steps.init.outputs.shards }}
     steps:
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - name: Get release tag and engine lists from hub image
-        id: list
+      - name: Get release tag and shard array
+        id: init
         run: |
           TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
-          for arch in amd64 arm64; do
-            docker pull --platform "linux/$arch" ghcr.io/ivankra/javascript-zoo/hub:$TAG
-            CID=$(docker create --platform "linux/$arch" ghcr.io/ivankra/javascript-zoo/hub:$TAG)
-            docker cp "$CID:/dist/LIST" "/tmp/list-$arch.txt"
-            docker rm "$CID"
-          done
+          N="${{ inputs.num_shards }}"
+          SHARDS=$(seq 1 "$N" | jq -R 'tonumber' | jq -sc .)
+          echo "shards=$SHARDS" >> "$GITHUB_OUTPUT"
 
-          AMD64=$(jq -R . /tmp/list-amd64.txt | jq -sc .)
-          ARM64=$(jq -R . /tmp/list-arm64.txt | jq -sc .)
-          echo "engines_amd64=$AMD64" >> "$GITHUB_OUTPUT"
-          echo "engines_arm64=$ARM64" >> "$GITHUB_OUTPUT"
-
-  bench-amd64:
+  bench:
     needs: init
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - name: amd64
+            runner: ubuntu-24.04
+            platform: linux/amd64
+          - name: arm64
+            runner: ubuntu-24.04-arm
+            platform: linux/arm64
+        shard: ${{ fromJson(needs.init.outputs.shards) }}
+    runs-on: ${{ matrix.arch.runner }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - name: Pull hub image
+        run: docker pull --platform ${{ matrix.arch.platform }} ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+
+      - name: Run mandatory
+        run: |
+          mkdir -p results
+          docker run --rm --platform ${{ matrix.arch.platform }} \
+            -e PYTHONDONTWRITEBYTECODE=1 \
+            -v "$(pwd):/zoo:ro" \
+            -v "$(pwd)/results:/results" \
+            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
+            python3 /zoo/bench/github-bench.py run \
+              --index=${{ matrix.shard }} \
+              --num-shards=${{ inputs.num_shards }} \
+              --test-timeout=${{ inputs.test_timeout }} \
+              --output-dir=/results \
+              --dist-dir=/dist
+
+      - name: Run sampling
+        run: |
+          docker run --rm --platform ${{ matrix.arch.platform }} \
+            -e PYTHONDONTWRITEBYTECODE=1 \
+            -v "$(pwd):/zoo:ro" \
+            -v "$(pwd)/results:/results" \
+            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
+            python3 /zoo/bench/github-bench.py sample \
+              --time-limit=${{ inputs.time_limit }} \
+              --test-timeout=${{ inputs.test_timeout }} \
+              --output-dir=/results \
+              --dist-dir=/dist
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
+          path: results/
+          if-no-files-found: ignore
+
+  # Download all per-shard artifacts and merge into per-engine JSON files.
+  merge:
+    needs: [init, bench]
+    if: always()
     runs-on: ubuntu-24.04
-    timeout-minutes: 360
-    strategy:
-      fail-fast: false
-      matrix:
-        engine: ${{ fromJson(needs.init.outputs.engines_amd64) }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.sha }}
 
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+      - name: Download all shard results
+        uses: actions/download-artifact@v4
+        with:
+          path: all-results
+          pattern: bench-*
+          merge-multiple: false
 
-      - name: Pull hub image
-        run: docker pull --platform linux/amd64 ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+      - name: Merge amd64 results
+        run: python3 bench/github-bench.py merge all-results/bench-amd64-shard-*/ merged-results/amd64
 
-      - name: Run benchmark
-        run: |
-          mkdir -p results
-          docker run --rm --platform linux/amd64 \
-            -v "$(pwd):/zoo:ro" \
-            -v "$(pwd)/results:/results" \
-            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
-            /zoo/bench/bench -t 1200 -r 300s -v \
-              -o /results/${{ matrix.engine }}.${{ needs.init.outputs.tag }}.amd64.json \
-              /dist/${{ matrix.engine }}
+      - name: Merge arm64 results
+        run: python3 bench/github-bench.py merge all-results/bench-arm64-shard-*/ merged-results/arm64
 
-      - name: Upload result
-        if: always()
+      - name: Upload merged results
         uses: actions/upload-artifact@v4
         with:
-          name: bench-amd64-${{ matrix.engine }}
-          path: results/${{ matrix.engine }}.${{ needs.init.outputs.tag }}.amd64.json
-          if-no-files-found: ignore
-
-  bench-arm64:
-    needs: init
-    runs-on: ubuntu-24.04-arm
-    timeout-minutes: 360
-    strategy:
-      fail-fast: false
-      matrix:
-        engine: ${{ fromJson(needs.init.outputs.engines_arm64) }}
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.sha }}
-
-      - name: Log in to GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
-
-      - name: Pull hub image
-        run: docker pull --platform linux/arm64 ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
-
-      - name: Run benchmark
-        run: |
-          mkdir -p results
-          docker run --rm --platform linux/arm64 \
-            -v "$(pwd):/zoo:ro" \
-            -v "$(pwd)/results:/results" \
-            ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} \
-            /zoo/bench/bench -t 1200 -r 300s -v \
-              -o /results/${{ matrix.engine }}.${{ needs.init.outputs.tag }}.arm64.json \
-              /dist/${{ matrix.engine }}
-
-      - name: Upload result
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: bench-arm64-${{ matrix.engine }}
-          path: results/${{ matrix.engine }}.${{ needs.init.outputs.tag }}.arm64.json
-          if-no-files-found: ignore
+          name: bench-results-${{ needs.init.outputs.tag }}
+          path: merged-results/
+          if-no-files-found: warn
