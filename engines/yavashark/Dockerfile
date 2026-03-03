@@ -15,4 +15,5 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN cargo build --release
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/yavashark --binary=/src/target/release/yavashark
+RUN ./dist.py /dist/yavashark --binary=/src/target/release/yavashark \
+      run_script_cmd='$BINARY -i'

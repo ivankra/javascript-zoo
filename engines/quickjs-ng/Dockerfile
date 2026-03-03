@@ -13,4 +13,5 @@ RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 RUN make
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/quickjs-ng --binary=/src/build/qjs
+RUN ./dist.py /dist/quickjs-ng --binary=/src/build/qjs \
+      run_script_cmd='$BINARY --script'

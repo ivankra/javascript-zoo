@@ -77,37 +77,37 @@ fi
 
 ENGINE_JSON="${ENGINE_BINARY}.json"
 
-# Handle quirks of some engines:
-# - default flags for some
-# - add var-console-log.js for console.log if shell accepts multiple files
-# - use sed-console-log.sh to edit script on the fly if not
-
 ENGINE_NAME="${ENGINE_CMD[0]##*/}"   # basename
 if [[ "$ENGINE_NAME" != spidermonkey_[12]* ]];then
   ENGINE_NAME="${ENGINE_NAME%%_*}"   # strip _variant suffixes, quickjs_gcc_lto -> quickjs
 fi
 
-case "$ENGINE_NAME" in
-  quickjs-ng)
-    ENGINE_CMD+=(--script);;
-  escargot|jerryscript|jsc|nashorn|xs|cesanta-v7|rpython-langjs|topchetoeu)
-    ENGINE_CMD+=("$SCRIPT_DIR/var-console-log.js");;
-  hermes|mocha|spidermonkey_[12]*|carakan|kjs|ejscript|malbrain|ngs|nocturnejs|see|starlight|yrm006)
-    ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}");;
-  nova)
-    ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}" eval);;
-  yavashark)
-    ENGINE_CMD+=("-i");;
-  dmdscript|dscriptcpp)
-    export SED_PRINT=println
-    ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh"  "${ENGINE_CMD[@]}");;
-  fesi|yaji)
-    export SED_PRINT=writeln
-    ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh"  "${ENGINE_CMD[@]}");;
-esac
+# Read engine metadata from JSON and set up ENGINE_CMD accordingly:
+# - run_script_cmd: command prefix (default: just the binary), files appended at end
+# - console_log: print function name (console.log, print, writeln, etc.)
+#   If non-standard, sed-console-log.sh wraps each test file.
+json_field() {
+  grep -o "\"$2\": *\"[^\"]*\"" "$1" 2>/dev/null | sed 's/.*": *"//; s/"$//'
+}
+
+if [[ -f "$ENGINE_JSON" ]]; then
+  JSON_RUN_CMD=$(json_field "$ENGINE_JSON" run_script_cmd)
+  JSON_CONSOLE_LOG=$(json_field "$ENGINE_JSON" console_log)
+
+  # Apply run_script_cmd: rebuild ENGINE_CMD from template
+  if [[ -n "$JSON_RUN_CMD" ]]; then
+    export BINARY="$ENGINE_BINARY"
+    eval "ENGINE_CMD=($JSON_RUN_CMD)"
+  fi
+
+  # Handle non-standard console.log via sed
+  if [[ -n "$JSON_CONSOLE_LOG" && "$JSON_CONSOLE_LOG" != "console.log" ]]; then
+    export SED_PRINT="$JSON_CONSOLE_LOG"
+    ENGINE_CMD=("$SCRIPT_DIR/sed-console-log.sh" "${ENGINE_CMD[@]}")
+  fi
+fi
 
 if [[ ${#JS_FILES[@]} == 0 ]]; then
-  echo "Engine: $ENGINE_NAME, command: ${ENGINE_CMD[@]} <test.js>, running on whole test suite"
   mapfile -t JS_FILES < <(ls \
     $SCRIPT_DIR/es1/*.js \
     $SCRIPT_DIR/es3/*.js \
@@ -118,8 +118,6 @@ if [[ ${#JS_FILES[@]} == 0 ]]; then
     $SCRIPT_DIR/kangax-intl/*.js \
     $( ((INCLUDE_NEXT)) && echo $SCRIPT_DIR/kangax-next/*.js) \
     | sort -V)
-else
-  echo "Engine: $ENGINE_NAME, command: ${ENGINE_CMD[@]} <test.js>"
 fi
 
 export -a ENGINE_CMD  # bash 5.2+

@@ -53,10 +53,10 @@ def arch_name() -> str:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         prog="./dist.py",
-        usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--dist_files=<path> ...] [--no-license] [run_script_cmd='<cmd>'] [key=value ...]",
+        usage="./dist.py /dist/<engine> [--binary=<path>] [--wrapper=<cmd>] [--license=<path> ...] [--dist_files=<path> ...] [--no-license] [run_script_cmd='$BINARY ...'] [key=value ...]",
     )
     p.add_argument("out", help="output path under /dist, e.g. /dist/v8")
-    p.add_argument("meta", nargs="*", help="metadata as key=value pairs, e.g. version=1.0 run_script_cmd='$BINARY $FILE'")
+    p.add_argument("meta", nargs="*", help="metadata as key=value pairs, e.g. version=1.0 run_script_cmd='$BINARY eval'")
     p.add_argument("--binary", dest="binary", help="path to binary to strip and copy to output")
     p.add_argument("--wrapper", dest="wrapper", help="bash exec line for a wrapper script, e.g. 'exec $SCRIPT_DIR/v8 --harmony \"$@\"'")
     p.add_argument("--license", dest="licenses", action="append", default=[], metavar="PATH", help="license file(s) to bundle; may be a glob; repeatable")
@@ -395,8 +395,25 @@ def _has_line_with_substring(text: str, needle: str) -> bool:
     return any(needle in line for line in text.splitlines())
 
 
+def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Path) -> subprocess.CompletedProcess:
+    cmd_prefix = run_script_cmd if run_script_cmd else "$BINARY"
+    file_args = " ".join(f'"{f}"' for f in script_files)
+    full_cmd = f"{cmd_prefix} {file_args}"
+
+    env = os.environ.copy()
+    env["BINARY"] = str(binary_path)
+
+    return subprocess.run(
+        ["bash", "-c", full_cmd],
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        env=env,
+        check=False,
+    )
+
+
 def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) -> str:
-    command = run_script_cmd if run_script_cmd else "$BINARY $FILE"
     attempts: list[tuple[str, str, str]] = []
     expected = "hello world"
 
@@ -406,19 +423,8 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
             script = Path(tmp) / f"{func.replace('.', '_')}.js"
             script.write_text(source, encoding="utf-8")
 
-            env = os.environ.copy()
-            env["BINARY"] = str(binary_path)
-            env["FILE"] = str(script)
-
             try:
-                proc = subprocess.run(
-                    ["bash", "-c", command],
-                    text=True,
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE,
-                    env=env,
-                    check=False,
-                )
+                proc = _run_engine(binary_path, run_script_cmd, script)
             except Exception:
                 continue
 
@@ -450,24 +456,12 @@ def test_run(
     test_code: str,
     test_output: str,
 ) -> None:
-    command = run_script_cmd if run_script_cmd else "$BINARY $FILE"
     script_src = (test_code % {"console_log": console_log}) + "\n"
     with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
         script = Path(tmp) / "test.js"
         script.write_text(script_src, encoding="utf-8")
 
-        env = os.environ.copy()
-        env["BINARY"] = str(binary_path)
-        env["FILE"] = str(script)
-
-        proc = subprocess.run(
-            ["bash", "-c", command],
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            env=env,
-            check=False,
-        )
+        proc = _run_engine(binary_path, run_script_cmd, script)
 
         output = proc.stdout + proc.stderr
         if not _has_line_with_substring(output, test_output):
