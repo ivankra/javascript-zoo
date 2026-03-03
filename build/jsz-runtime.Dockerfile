@@ -122,5 +122,12 @@ RUN if [ `uname -m` = x86_64 ]; then \
       wineserver --wait; \
     fi
 
+# Install libicu78 from sid
+# TODO: fix jsz-gcc to avoid pulling it during the build
+RUN { echo "Types: deb"; echo "URIs: http://deb.debian.org/debian"; echo "Suites: sid"; echo "Components: main"; echo "Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg"; } >/etc/apt/sources.list.d/sid.sources && \
+    { echo "Package: *"; echo "Pin: release a=sid"; echo "Pin-Priority: 1"; } >/etc/apt/preferences.d/sid && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends -t sid libicu78
+
 ARG TARGETARCH
 RUN ln -s zoo/bench /bench && ln -s zoo/dist/"$TARGETARCH" /dist
