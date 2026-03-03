@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-ARG BASE=jsz-debian
+ARG BASE=jsz-jdk
 FROM $BASE
 
 ARG REPO=https://github.com/ivankra/FESI.git

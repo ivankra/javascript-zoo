@@ -27,5 +27,4 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/jscript9 \
       --dist_files=/dist/jscript9-dist/jscript9.dll \
       --no-license \
-      console_log=console.log \
       version="11.0.16428"

@@ -106,11 +106,14 @@ jobs:
           timeout_minutes: 360
           command: DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
 
+      - name: Pack dist artifact tarball
+        run: tar -cf dist-amd64-${{ matrix.engine }}.tar -C dist/amd64 .
+
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
           name: dist-amd64-${{ matrix.engine }}
-          path: dist/amd64/
+          path: dist-amd64-${{ matrix.engine }}.tar
           if-no-files-found: error
 
       - name: Package and upload to release
@@ -165,11 +168,14 @@ jobs:
           command: |
             DIST_REMOVE_IMAGE=1 DOCKER_REGISTRY=ghcr.io/ivankra/javascript-zoo make -C engines/${{ matrix.engine }} dist
 
+      - name: Pack dist artifact tarball
+        run: tar -cf dist-arm64-${{ matrix.engine }}.tar -C dist/arm64 .
+
       - name: Upload dist artifact
         uses: actions/upload-artifact@v4
         with:
           name: dist-arm64-${{ matrix.engine }}
-          path: dist/arm64/
+          path: dist-arm64-${{ matrix.engine }}.tar
           if-no-files-found: error
 
       - name: Package and upload to release

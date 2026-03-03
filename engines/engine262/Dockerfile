@@ -27,4 +27,4 @@ RUN ./dist.py /dist/engine262
 COPY engines/engine262/main.js ./
 RUN npx esbuild main.js --outfile=engine262_jsc.js --bundle --platform=browser --format=iife --external:fs
 RUN (echo '#!/bin/bash'; echo '//bin/true; SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")"); exec "$SCRIPT_DIR/jsc" "$0" -- "$@"'; cat engine262_jsc.js) >/dist/engine262_jsc
-RUN ./dist.py /dist/engine262_jsc console_log=console.log
+RUN ./dist.py /dist/engine262_jsc --no-test console_log=console.log

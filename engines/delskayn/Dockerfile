@@ -14,4 +14,4 @@ RUN rustup toolchain install nightly-2022-04-01 && rustup override set nightly-2
 RUN cargo build --release -p toyjs --bin cli
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/delskayn --binary=/src/target/release/cli --no-license console_log=print
+RUN ./dist.py /dist/delskayn --binary=/src/target/release/cli --no-license

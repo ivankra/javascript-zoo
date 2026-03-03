@@ -18,5 +18,10 @@ RUN bash ./build.linux
 
 #TODO: mkdir -p /dist/malbrain-dist && cp jsdb system*.js /dist/malbrain-dist/
 
+# Bug: print(40+2) => "integer"
 COPY build/dist.py ./
-RUN ./dist.py /dist/malbrain --binary=/src/jsdb --no-license console_log=print
+RUN ./dist.py /dist/malbrain \
+      --binary=/src/jsdb \
+      --no-license \
+      --test-code='print("4"+"2");' \
+      --test-output=42

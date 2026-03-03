@@ -21,5 +21,4 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/jscript \
       --dist_files=/dist/jscript-dist/jscript64.dll \
       --no-license \
-      console_log=console.log \
       version="$(cat version)"
