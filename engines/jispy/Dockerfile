@@ -19,4 +19,4 @@ RUN git apply jispy.patch && python ./tests.py && \
     cp -a jispy.py *.js /dist/jispy-dist
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/jispy --wrapper='exec "$SCRIPT_DIR/jispy-dist/jispy.py" "$@"' console_log=console.log
+RUN ./dist.py /dist/jispy --wrapper='exec "$SCRIPT_DIR/jispy-dist/jispy.py" "$@"'

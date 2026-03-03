@@ -198,7 +198,7 @@ index eb976b5..4591d15
 +    rt.runG('var console = {log: print};');
 +    if len(sys.argv) > 1:
 +        for arg in sys.argv[1:]:
-+            rt.runG(arg);
++            rt.runG(open(arg, 'r').read(), console=True);
 +    else:
 +        console(rt);
 +
