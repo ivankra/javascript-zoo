@@ -10,7 +10,13 @@ ARG REV=main
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
-RUN zig build --release=fast
+RUN case "$(dpkg --print-architecture 2>/dev/null || true)" in \
+      # Target generic ARMv8 - especially to avoid SVE extensions unavailable on Mac \
+      arm64) zig build --release=fast -Dcpu=baseline;; \
+      # Target AVX2 CPUs (2013+) \
+      amd64) zig build --release=fast -Dcpu=x86_64_v3;; \
+      *) zig build --release=fast;; \
+    esac
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/kiesel \
