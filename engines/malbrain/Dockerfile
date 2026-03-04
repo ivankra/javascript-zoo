@@ -23,5 +23,5 @@ COPY build/dist.py ./
 RUN ./dist.py /dist/malbrain \
       --binary=/src/jsdb \
       --no-license \
-      --test-code='print("4"+"2");' \
-      --test-output=42
+      smoke_test_js='print("4"+"2");' \
+      smoke_test_output=42

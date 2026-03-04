@@ -117,4 +117,8 @@ else
   "$DOCKER" rmi -f "$PUSHDEST:$TAG-amd64" "$PUSHDEST:$TAG-arm64" "jsz-runtime-amd64" "jsz-runtime-arm64" >/dev/null 2>&1 || true
 fi
 
+# Smoke test: pull the image and run dist.py --smoke-test on every engine in /dist/LIST
+"$DOCKER" run --rm "$PUSHDEST:$TAG" \
+  bash -c 'set -ex; while read f; do python3 /zoo/build/dist.py --smoke-test "/dist/$f"; done < /dist/LIST'
+
 echo OK

@@ -62,14 +62,15 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     p.add_argument("--license", dest="licenses", action="append", default=[], metavar="PATH", help="license file(s) to bundle; may be a glob; repeatable")
     p.add_argument("--dist_files", dest="dist_files", action="append", default=[], metavar="PATH", help="extra files/dirs to include in dist size calculation; repeatable")
     p.add_argument("--no-license", action="store_true", dest="no_license", help="skip license file requirement")
-    p.add_argument("--no-test", action="store_true", dest="no_test", help="skip console_log probe and test run")
-    p.add_argument("--test-code", dest="test_code", default="%(console_log)s(40+2);", metavar="JS", help="JS snippet to run as smoke test; %%(console_log)s is substituted with the detected print function")
-    p.add_argument("--test-output", dest="test_output", default="42", metavar="STR", help="expected string in test run output (default: 42)")
+    p.add_argument("--no-test", action="store_true", dest="no_test", help="skip console_log probe and smoke test")
     p.add_argument("--rename-variant", action="store_true", dest="rename_variant", help="rename the single existing /dist artifact to the given output name and update engine/variant in its JSON")
+    p.add_argument("--smoke-test", action="store_true", dest="smoke_test", help="run smoke test on an already-packaged binary only")
 
     args = p.parse_args(argv)
 
     args.out = Path(args.out)
+    if args.smoke_test:
+        return args
     if not str(args.out).startswith("/dist/"):
         fail(f"output path must be under /dist, got: {args.out}")
 
@@ -449,27 +450,6 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
     fail(f"could not detect console.log/print for {binary_path}")
 
 
-def test_run(
-    binary_path: Path,
-    console_log: str,
-    run_script_cmd: str | None,
-    test_code: str,
-    test_output: str,
-) -> None:
-    script_src = (test_code % {"console_log": console_log}) + "\n"
-    with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
-        script = Path(tmp) / "test.js"
-        script.write_text(script_src, encoding="utf-8")
-
-        proc = _run_engine(binary_path, run_script_cmd, script)
-
-        output = proc.stdout + proc.stderr
-        if not _has_line_with_substring(output, test_output):
-            fail(f"test run failed for {binary_path}: {script_src.strip()!r} produced {output!r}")
-
-        print(f"dist.py: test run OK: {script_src.strip()!r} => {output.strip()!r}")
-
-
 def maybe_link_to_dist_out(dist_out: Path) -> None:
     if dist_out.parent != Path("/dist"):
         return
@@ -479,8 +459,52 @@ def maybe_link_to_dist_out(dist_out: Path) -> None:
     link.symlink_to(dist_out)
 
 
+def run_smoke_test(binary_path: Path) -> None:
+    """Run smoke test on a packaged binary. Reads test params from its .json metadata.
+    Engines can override defaults via smoke_test_js/smoke_test_output metadata keys."""
+    json_path = binary_path.with_suffix(binary_path.suffix + ".json")
+    if not json_path.exists():
+        fail(f"metadata not found: {json_path}")
+    if not binary_path.exists():
+        fail(f"binary not found: {binary_path}")
+
+    meta = json.loads(json_path.read_text(encoding="utf-8"))
+
+    console_log = meta.get("console_log")
+    if not console_log:
+        fail(f"no console_log in {json_path}")
+
+    run_script_cmd = meta.get("run_script_cmd")
+    test_code = meta.get("smoke_test_js", "%(console_log)s(40+2);")
+    test_output = meta.get("smoke_test_output", "42")
+
+    script_src = (test_code % {"console_log": console_log}) + "\n"
+    with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
+        script = Path(tmp) / "test.js"
+        script.write_text(script_src, encoding="utf-8")
+
+        proc = _run_engine(binary_path, run_script_cmd, script)
+
+        output = proc.stdout + proc.stderr
+        if not _has_line_with_substring(output, test_output):
+            fail(f"smoke test failed for {binary_path}: {script_src.strip()!r} produced {output!r}")
+
+        parts = [f"dist.py: smoke test OK: {script_src.strip()!r} =>"]
+        if proc.stdout.strip():
+            parts.append(f"stdout={proc.stdout.strip()!r}")
+        if proc.stderr.strip():
+            parts.append(f"stderr={proc.stderr.strip()!r}")
+        print(" ".join(parts))
+
+
 def main() -> None:
     args = parse_args(sys.argv[1:])
+
+    # --smoke-test: run smoke test on already-packaged binary and exit
+    if args.smoke_test:
+        run_smoke_test(args.out)
+        return
+
     meta = args.meta
     run_script_cmd = meta.get("run_script_cmd")
 
@@ -521,10 +545,12 @@ def main() -> None:
     if not args.no_test:
         if args.out.parent == Path("/dist") and "console_log" not in meta:
             meta["console_log"] = probe_console_log_function(args.out, run_script_cmd)
-        if args.out.parent == Path("/dist") and "console_log" in meta:
-            test_run(args.out, meta["console_log"], run_script_cmd, args.test_code, args.test_output)
     finalize_json(args.out, meta)
     print(args.out.with_suffix(args.out.suffix + ".json").read_text(encoding="utf-8"), end="")
+
+    # Smoke test after finalize so run_smoke_test reads the written .json
+    if not args.no_test and args.out.parent == Path("/dist") and "console_log" in meta:
+        run_smoke_test(args.out)
 
 
 if __name__ == "__main__":
