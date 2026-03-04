@@ -9,6 +9,9 @@ include ../../build/build.mk
 
 CONFORMANCE_BINARY = v8_intl
 
+# Build on other platforms is complicated
+SUPPORTED_ARCHS = arm64 amd64
+
 $(eval $(call build_engine,v8,Dockerfile))
 $(eval $(call build_engine,v8_intl,Dockerfile,--build-arg INTL=true))
 $(eval $(call build_engine,v8_jitless,Dockerfile,--build-arg JITLESS=true))

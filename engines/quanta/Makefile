@@ -3,4 +3,6 @@
 
 include ../../build/build.mk
 
+SUPPORTED_ARCHS = amd64 arm64
+
 $(eval $(call build_engine,quanta,Dockerfile))

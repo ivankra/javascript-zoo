@@ -3,4 +3,7 @@
 
 include ../../build/build.mk
 
+# Toolchain problems on other arch; build artifact itself is universal
+SUPPORTED_ARCHS = arm64 amd64
+
 $(eval $(call build_engine,sval,Dockerfile))
