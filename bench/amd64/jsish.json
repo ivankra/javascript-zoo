@@ -1,0 +1,137 @@
+{
+  "binary": "jsish",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "048fade684a73fe82eb0ac51d7c8bc1008f459705e04ae2393f1ec51c96d75f6",
+    "binary_size": 2403096,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "jsish",
+    "repository": "https://github.com/pcmacdon/jsish.git",
+    "revision": "42c694c152f7f4fbee34d5e14be37d6e0d09673f",
+    "revision_date": "2022-08-23",
+    "version": "3.0-252-g42c694c"
+  },
+  "time": "2026-03-03 20:55:44.834378 UTC",
+  "benchmarks": {
+    "Crypto": {
+      "error": "/tmp/jsish-crypto-io1fjlc1/crypto.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.16, 4.3, 4.16]
+    },
+    "NavierStokes": {
+      "error": "/tmp/jsish-navier-stokes-0v0tq72q/navier-stokes.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.17, 4.14, 4.05]
+    },
+    "EarleyBoyer": {
+      "error": "/tmp/jsish-earley-boyer-xo9r1xqy/earley-boyer.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.37, 4.32, 4.5]
+    },
+    "Box2D": {
+      "error": "/tmp/jsish-box2d-e_dufsut/box2d.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.43, 4.55, 4.63]
+    },
+    "Gameboy": {
+      "error": "/tmp/jsish-gbemu-owt8d3ti/gbemu.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [5.0, 5.1, 5.0]
+    },
+    "DeltaBlue": {
+      "error": "/tmp/jsish-deltablue-m6i3avlw/deltablue.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.12, 4.14, 4.12, 3.99]
+    },
+    "Mandreel": {
+      "error": "/tmp/jsish-mandreel-6ivypqkr/mandreel.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.03, 0.03],
+      "sys": [0.01, 0.0],
+      "real": [0.04, 0.04],
+      "rss_mb": [13.62, 13.46]
+    },
+    "MandreelLatency": {
+      "error": "/tmp/jsish-mandreel-6ivypqkr/mandreel.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.03, 0.03],
+      "sys": [0.01, 0.0],
+      "real": [0.04, 0.04],
+      "rss_mb": [13.62, 13.46]
+    },
+    "RayTrace": {
+      "error": "/tmp/jsish-raytrace-f4_0n9ex/raytrace.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.14, 4.08]
+    },
+    "Splay": {
+      "error": "/tmp/jsish-splay-9xlinq5q/splay.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.18]
+    },
+    "SplayLatency": {
+      "error": "/tmp/jsish-splay-9xlinq5q/splay.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.18]
+    },
+    "RegExp": {
+      "error": "/tmp/jsish-regexp-lx1s9biy/regexp.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.26]
+    },
+    "CodeLoad": {
+      "error": "/tmp/jsish-code-load-k_b1xjqk/code-load.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.32, 4.41]
+    },
+    "Richards": {
+      "error": "/tmp/jsish-richards-1b1cgaqw/richards.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.11]
+    },
+    "PdfJS": {
+      "error": "/tmp/jsish-pdfjs-ekvkst7i/pdfjs.js:120: parse: :120.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.01, 0.01, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.01],
+      "rss_mb": [6.93, 7.0, 6.84]
+    },
+    "zlib": {
+      "error": "/tmp/jsish-zlib-tu2eign6/zlib.js:123: parse: :123.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.54, 4.51, 4.51, 4.52]
+    },
+    "Typescript": {
+      "error": "/tmp/jsish-typescript-qkgk8lf7/typescript.js:111: parse: :111.2: error: syntax error, unexpected FUNC, expecting end of file",
+      "user": [0.01],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [8.85]
+    }
+  }
+}

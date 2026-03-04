@@ -1,0 +1,130 @@
+{
+  "binary": "chakracore_intl",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "361f47a7c466fd269acbd4226e9ccdd9f1c8e844547bc8d9d1007a21b5e607bc",
+    "binary_size": 39351568,
+    "cc": "clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)",
+    "console_log": "console.log",
+    "engine": "chakracore",
+    "jit": "",
+    "repository": "https://github.com/chakra-core/ChakraCore.git",
+    "revision": "97e68c9174209413f621deb2f963941550ef6f22",
+    "revision_date": "2026-02-19",
+    "variant": "intl"
+  },
+  "time": "2026-03-03 20:41:36.403590 UTC, 2026-03-03 20:52:24.320762 UTC, 2026-03-03 21:16:46.631681 UTC",
+  "benchmarks": {
+    "Gameboy": {
+      "score": [2292, 2297, 2275],
+      "user": [4.64, 4.63, 4.67],
+      "sys": [0.02, 0.02, 0.03],
+      "real": [4.66, 4.65, 4.7],
+      "rss_mb": [49.95, 49.63, 51.06]
+    },
+    "Crypto": {
+      "error": "Crypto: Error: Crypto operation failed",
+      "user": [2.3, 2.29, 2.28, 2.3],
+      "sys": [0.01, 0.01, 0.02, 0.0],
+      "real": [2.31, 2.31, 2.31, 2.31],
+      "rss_mb": [35.86, 35.58, 35.98, 36.12]
+    },
+    "DeltaBlue": {
+      "score": [217, 217, 215, 221, 211],
+      "user": [2.02, 2.01, 2.02, 2.04, 2.04],
+      "sys": [0.0, 0.01, 0.01, 0.0, 0.01],
+      "real": [2.03, 2.02, 2.04, 2.05, 2.05],
+      "rss_mb": [30.27, 30.16, 30.38, 30.33, 29.78]
+    },
+    "EarleyBoyer": {
+      "score": [796, 828, 792],
+      "user": [14.24, 13.82, 14.56],
+      "sys": [0.07, 0.08, 0.07],
+      "real": [14.22, 13.84, 14.56],
+      "rss_mb": [147.97, 150.4, 146.73]
+    },
+    "PdfJS": {
+      "score": [2346, 2368, 2394],
+      "user": [2.74, 2.72, 2.7],
+      "sys": [0.14, 0.1, 0.1],
+      "real": [2.84, 2.8, 2.77],
+      "rss_mb": [186.83, 188.08, 188.17]
+    },
+    "Typescript": {
+      "score": [4686, 4649],
+      "user": [27.33, 27.52],
+      "sys": [0.19, 0.17],
+      "real": [27.29, 27.5],
+      "rss_mb": [149.88, 135.15]
+    },
+    "CodeLoad": {
+      "score": [20382, 19627],
+      "user": [1.95, 1.92],
+      "sys": [0.18, 0.23],
+      "real": [2.09, 2.1],
+      "rss_mb": [310.09, 302.33]
+    },
+    "NavierStokes": {
+      "score": [493, 482, 483],
+      "user": [6.03, 6.18, 6.15],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [6.04, 6.19, 6.16],
+      "rss_mb": [22.26, 22.57, 22.64]
+    },
+    "Richards": {
+      "score": [251, 254, 250, 250],
+      "user": [2.02, 2.01, 2.01, 2.01],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [2.02, 2.02, 2.02, 2.02],
+      "rss_mb": [21.49, 21.57, 21.52, 20.92]
+    },
+    "RayTrace": {
+      "score": [531, 532, 527, 530, 528],
+      "user": [5.58, 5.59, 6.62, 5.59, 5.62],
+      "sys": [0.11, 0.13, 0.11, 0.13, 0.13],
+      "real": [5.63, 5.64, 6.64, 5.64, 5.68],
+      "rss_mb": [199.26, 193.65, 199.37, 198.58, 192.59]
+    },
+    "Mandreel": {
+      "error": "Mandreel: Alert called with argument: Assertion failed: undefined:",
+      "user": [1.08, 1.07, 1.13],
+      "sys": [0.03, 0.03, 0.03],
+      "real": [1.11, 1.11, 1.17],
+      "rss_mb": [97.43, 97.29, 97.1]
+    },
+    "MandreelLatency": {
+      "error": "Mandreel: Alert called with argument: Assertion failed: undefined:",
+      "user": [1.08, 1.07, 1.13],
+      "sys": [0.03, 0.03, 0.03],
+      "real": [1.11, 1.11, 1.17],
+      "rss_mb": [97.43, 97.29, 97.1]
+    },
+    "RegExp": {
+      "error": "RegExp: Error: Wrong checksum.",
+      "user": [0.06, 0.06, 0.06],
+      "sys": [0.0, 0.01, 0.01],
+      "real": [0.07, 0.07, 0.07],
+      "rss_mb": [31.8, 31.84, 31.79]
+    },
+    "Box2D": {
+      "score": [1436, 1359, 1425],
+      "user": [3.42, 3.61, 3.46],
+      "sys": [0.02, 0.03, 0.02],
+      "real": [3.44, 3.64, 3.47],
+      "rss_mb": [53.96, 52.4, 53.83]
+    },
+    "zlib": {
+      "error": "zlib: Assertion failed: , at: ,25, at Error",
+      "user": [0.06],
+      "sys": [0.02],
+      "real": [0.08],
+      "rss_mb": [159.61]
+    },
+    "Splay": {
+      "error": "Timeout (>900s)"
+    },
+    "SplayLatency": {
+      "error": "Timeout (>900s)"
+    }
+  }
+}

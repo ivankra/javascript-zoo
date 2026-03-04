@@ -1,0 +1,16 @@
+{
+  "binary": "quad-wheel",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "7ff997dc140d7cf702a456bf499be96d2261d2dad91b6f5dd42bec2dfcb77d1e",
+    "binary_size": 155120,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "quad-wheel",
+    "repository": "https://github.com/radare/quad-wheel.git",
+    "revision": "ef1747ceeb28fff309de830c3ef863d6cf0b41a1",
+    "revision_date": "2012-03-26"
+  },
+  "time": "2026-03-03 21:29:47.290950 UTC",
+  "benchmarks": {}
+}

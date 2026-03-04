@@ -1,0 +1,132 @@
+{
+  "binary": "mujs_babel",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "console.log",
+    "dist_size": 24357485,
+    "engine": "mujs",
+    "variant": "babel"
+  },
+  "time": "2026-03-03 21:08:48.567820 UTC",
+  "benchmarks": {
+    "DeltaBlue": {
+      "score": [354, 350, 369, 359],
+      "user": [3.49, 3.49, 3.41, 3.43],
+      "sys": [0.25, 0.27, 0.27, 0.27],
+      "real": [3.13, 3.13, 3.08, 3.1],
+      "rss_mb": [229.02, 238.43, 234.0, 237.38]
+    },
+    "PdfJS": {
+      "error": "SyntaxError: jump address integer overflowundefined",
+      "user": [6.56, 6.76, 6.37],
+      "sys": [0.86, 0.89, 0.83],
+      "real": [4.45, 4.55, 4.32],
+      "rss_mb": [785.05, 790.09, 774.12]
+    },
+    "Mandreel": {
+      "error": "\u001b[1m\u001b[31m[!] \u001b[1m(plugin commonjs--resolver) SyntaxError: /tmp/mujs_babel-mandreel-lu7n4zvc/mandreel.js: Identifier 'assert' has already been declared. (3804:9)",
+      "user": [0.71, 0.74, 0.76, 0.73],
+      "sys": [0.16, 0.2, 0.18, 0.18],
+      "real": [0.72, 0.78, 0.79, 0.77],
+      "rss_mb": [141.64, 141.62, 141.56, 141.56]
+    },
+    "MandreelLatency": {
+      "error": "\u001b[1m\u001b[31m[!] \u001b[1m(plugin commonjs--resolver) SyntaxError: /tmp/mujs_babel-mandreel-lu7n4zvc/mandreel.js: Identifier 'assert' has already been declared. (3804:9)",
+      "user": [0.71, 0.74, 0.76, 0.73],
+      "sys": [0.16, 0.2, 0.18, 0.18],
+      "real": [0.72, 0.78, 0.79, 0.77],
+      "rss_mb": [141.64, 141.62, 141.56, 141.56]
+    },
+    "Typescript": {
+      "error": "\u001b[1m\u001b[31m[!] \u001b[1m(plugin commonjs--resolver) SyntaxError: /tmp/mujs_babel-typescript-b4ialpq7/typescript.js: Binding 'arguments' in strict mode. (1930:50)",
+      "user": [0.56, 0.56, 0.59],
+      "sys": [0.12, 0.11, 0.11],
+      "real": [0.54, 0.53, 0.55],
+      "rss_mb": [124.63, 125.48, 121.34]
+    },
+    "Crypto": {
+      "score": [187, 185, 185],
+      "user": [25.18, 25.77, 25.41],
+      "sys": [0.31, 0.28, 0.31],
+      "real": [24.65, 25.21, 24.9],
+      "rss_mb": [275.07, 271.28, 273.32]
+    },
+    "EarleyBoyer": {
+      "error": "\u001b[1m\u001b[31m[!] \u001b[1m(plugin commonjs--resolver) SyntaxError: /tmp/mujs_babel-earley-boyer-wk972n_1/earley-boyer.js: The only valid numeric escape in strict mode is '\\0'. (1497:6)",
+      "user": [19.52, 18.77],
+      "sys": [0.18, 0.15],
+      "real": [19.61, 18.83],
+      "rss_mb": [119.79, 118.44]
+    },
+    "Box2D": {
+      "score": [310],
+      "user": [17.6],
+      "sys": [0.39],
+      "real": [16.36],
+      "rss_mb": [324.65]
+    },
+    "Richards": {
+      "score": [222, 257],
+      "user": [3.41, 3.42],
+      "sys": [0.3, 0.23],
+      "real": [3.3, 3.06],
+      "rss_mb": [215.72, 213.76]
+    },
+    "RayTrace": {
+      "score": [515, 510, 489],
+      "user": [7.9, 7.69, 7.83],
+      "sys": [0.25, 0.29, 0.28],
+      "real": [7.5, 7.45, 7.47],
+      "rss_mb": [235.11, 241.27, 234.27]
+    },
+    "NavierStokes": {
+      "score": [495, 584, 500],
+      "user": [7.36, 6.35, 7.34],
+      "sys": [0.24, 0.17, 0.24],
+      "real": [7.03, 6.0, 7.01],
+      "rss_mb": [217.91, 221.44, 215.71]
+    },
+    "Gameboy": {
+      "error": "Exit code: 137",
+      "user": [84.49, 93.46],
+      "sys": [8.22, 9.95],
+      "real": [122.06, 117.44],
+      "rss_mb": [15361.88, 15282.57]
+    },
+    "Splay": {
+      "score": [877, 787],
+      "user": [4.42, 4.6],
+      "sys": [0.62, 0.61],
+      "real": [4.46, 4.57],
+      "rss_mb": [734.75, 734.9]
+    },
+    "SplayLatency": {
+      "score": [2301, 2149],
+      "user": [4.42, 4.6],
+      "sys": [0.62, 0.61],
+      "real": [4.46, 4.57],
+      "rss_mb": [734.75, 734.9]
+    },
+    "RegExp": {
+      "error": "RegExp: Error: Wrong checksum.",
+      "user": [2.8],
+      "sys": [0.43],
+      "real": [2.13],
+      "rss_mb": [303.1]
+    },
+    "zlib": {
+      "error": "\u001b[1m\u001b[31m[!] \u001b[1m(plugin commonjs--resolver) SyntaxError: /tmp/mujs_babel-zlib-bfyr_a0l/zlib.js: Deleting local variable in strict mode. (471:2)",
+      "user": [0.43],
+      "sys": [0.12],
+      "real": [0.46],
+      "rss_mb": [117.05]
+    },
+    "CodeLoad": {
+      "error": "EvalError: /tmp/tmp.aQVjcZb32i.js:4377: invalid use of 'eval'undefined",
+      "user": [1.57],
+      "sys": [0.34],
+      "real": [1.21],
+      "rss_mb": [246.09]
+    }
+  }
+}

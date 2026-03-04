@@ -2,125 +2,85 @@
   "binary": "engine262",
   "metadata": {
     "arch": "amd64",
-    "dist_size": 1640679,
+    "console_log": "console.log",
+    "dist_size": 3379621,
     "engine": "engine262",
     "repository": "https://github.com/engine262/engine262.git",
-    "revision": "77cc7514f8a5f1e0773a681716ba5628781f0096",
-    "revision_date": "2025-12-21"
+    "revision": "86373defd8d1a8980cb95055359231e1b2a45782",
+    "revision_date": "2026-02-21"
   },
-  "time": "2025-12-27 10:42:17.002036 UTC",
+  "time": "2026-03-03 20:41:21.965157 UTC",
   "benchmarks": {
-    "Richards": {
-      "score": [0.596],
-      "user": [197.89],
-      "sys": [0.28],
-      "real": [195.55],
-      "rss_mb": [372.72]
-    },
-    "DeltaBlue": {
-      "score": [0.569],
-      "user": [389.45],
-      "sys": [0.32],
-      "real": [382.88],
-      "rss_mb": [394.55]
-    },
-    "Crypto": {
-      "score": [0.495],
-      "user": [8085.03],
-      "sys": [2.59],
-      "real": [8075.0],
-      "rss_mb": [352.64]
-    },
-    "RayTrace": {
-      "score": [1.51],
-      "user": [1636.23],
-      "sys": [0.78],
-      "real": [1609.32],
-      "rss_mb": [390.42]
-    },
-    "EarleyBoyer": {
-      "score": [1.4],
-      "user": [7239.93],
-      "sys": [2.67],
-      "real": [7166.0],
-      "rss_mb": [691.59]
-    },
     "RegExp": {
-      "score": [1.05],
-      "user": [1662.55],
-      "sys": [1.43],
-      "real": [1582.75],
-      "rss_mb": [528.1]
+      "error": "Timeout (>900s)"
     },
     "Splay": {
-      "score": [3.25],
-      "user": [306.63],
-      "sys": [1.49],
-      "real": [296.55],
-      "rss_mb": [1907.53]
+      "score": [3.11, 2.87, 2.89],
+      "user": [329.63, 350.12, 343.28],
+      "sys": [1.41, 1.64, 2.42],
+      "real": [314.75, 337.87, 335.57],
+      "rss_mb": [1275.43, 1364.22, 2100.51]
     },
     "SplayLatency": {
-      "score": [32],
-      "user": [306.63],
-      "sys": [1.49],
-      "real": [296.55],
-      "rss_mb": [1907.53]
+      "score": [30.3, 28.1, 28.4],
+      "user": [329.63, 350.12, 343.28],
+      "sys": [1.41, 1.64, 2.42],
+      "real": [314.75, 337.87, 335.57],
+      "rss_mb": [1275.43, 1364.22, 2100.51]
     },
-    "NavierStokes": {
-      "score": [0.848],
-      "user": [3003.96],
-      "sys": [1.18],
-      "real": [2995.82],
-      "rss_mb": [427.27]
-    },
-    "PdfJS": {
-      "score": [3.72],
-      "user": [1171.06],
-      "sys": [0.96],
-      "real": [1162.58],
-      "rss_mb": [1237.63]
-    },
-    "Mandreel": {
-      "score": [0.321],
-      "user": [25541.03],
-      "sys": [10.51],
-      "real": [25203.0],
-      "rss_mb": [2743.75]
-    },
-    "MandreelLatency": {
-      "score": [2.82],
-      "user": [25541.03],
-      "sys": [10.51],
-      "real": [25203.0],
-      "rss_mb": [2743.75]
-    },
-    "Gameboy": {
-      "score": [3.71],
-      "user": [2869.33],
-      "sys": [1.04],
-      "real": [2852.56],
-      "rss_mb": [752.96]
-    },
-    "CodeLoad": {
-      "score": [513],
-      "user": [6.72],
-      "sys": [0.31],
-      "real": [5.54],
-      "rss_mb": [692.15]
-    },
-    "Box2D": {
-      "score": [2.71],
-      "user": [1637.07],
-      "sys": [0.98],
-      "real": [1601.45],
-      "rss_mb": [680.25]
+    "zlib": {
+      "error": "Timeout (>900s)"
     },
     "Typescript": {
-      "score": [9.26],
-      "user": [13952.05],
-      "sys": [6.44],
-      "real": [13764.0],
-      "rss_mb": [2680.96]
+      "error": "Timeout (>900s)"
+    },
+    "CodeLoad": {
+      "score": [370, 404, 368],
+      "user": [10.87, 10.05, 10.66],
+      "sys": [0.63, 0.59, 0.65],
+      "real": [8.09, 7.58, 8.11],
+      "rss_mb": [805.75, 831.47, 847.14]
+    },
+    "RayTrace": {
+      "error": "Timeout (>900s)"
+    },
+    "Crypto": {
+      "error": "Timeout (>900s)"
+    },
+    "DeltaBlue": {
+      "score": [0.452],
+      "user": [493.07],
+      "sys": [0.9],
+      "real": [482.62],
+      "rss_mb": [379.65]
+    },
+    "Richards": {
+      "score": [0.496, 0.495],
+      "user": [239.63, 239.83],
+      "sys": [0.51, 0.46],
+      "real": [235.64, 235.86],
+      "rss_mb": [366.79, 362.18]
+    },
+    "NavierStokes": {
+      "error": "Timeout (>900s)"
+    },
+    "Box2D": {
+      "error": "Timeout (>900s)"
+    },
+    "PdfJS": {
+      "error": "Timeout (>900s)"
+    },
+    "Mandreel": {
+      "error": "Timeout (>900s)"
+    },
+    "MandreelLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "Gameboy": {
+      "error": "Timeout (>900s)"
+    },
+    "EarleyBoyer": {
+      "error": "Timeout (>900s)"
     }
   }
 }

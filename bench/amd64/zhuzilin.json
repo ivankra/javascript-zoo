@@ -1,0 +1,137 @@
+{
+  "binary": "zhuzilin",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "0666bb4ab0643bded214eabc07d86c49c8e7742e7058acd043288d832cbbb8ad",
+    "binary_size": 822120,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "zhuzilin",
+    "repository": "https://github.com/zhuzilin/es.git",
+    "revision": "943e5c09470813e26404bd3920b93601fcc5b46b",
+    "revision_date": "2026-02-10",
+    "version": "0.2.0"
+  },
+  "time": "2026-03-03 20:43:40.605526 UTC",
+  "benchmarks": {
+    "Typescript": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [1.88],
+      "sys": [0.94],
+      "real": [3.88],
+      "rss_mb": [659.22]
+    },
+    "Mandreel": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [10.92, 10.67, 11.49],
+      "sys": [1.22, 1.25, 1.21],
+      "real": [13.81, 13.59, 14.41],
+      "rss_mb": [840.39, 839.53, 840.46]
+    },
+    "MandreelLatency": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [10.92, 10.67, 11.49],
+      "sys": [1.22, 1.25, 1.21],
+      "real": [13.81, 13.59, 14.41],
+      "rss_mb": [840.39, 839.53, 840.46]
+    },
+    "DeltaBlue": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.06, 0.11, 0.06, 0.06],
+      "sys": [0.72, 0.55, 0.69, 0.69],
+      "real": [1.56, 1.13, 1.5, 1.52],
+      "rss_mb": [520.46, 520.47, 520.44, 520.25]
+    },
+    "EarleyBoyer": {
+      "error": "\u001b[1;31mParserError: \u001b[0mreadable =\u001b[1;31m {",
+      "user": [0.06, 0.06, 0.06, 0.06],
+      "sys": [0.03, 0.03, 0.03, 0.03],
+      "real": [0.09, 0.1, 0.1, 0.1],
+      "rss_mb": [522.2, 522.07, 522.13, 522.18]
+    },
+    "CodeLoad": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.05, 0.06, 0.05],
+      "sys": [0.74, 0.69, 0.71],
+      "real": [1.57, 1.48, 1.51],
+      "rss_mb": [523.44, 525.48, 523.43]
+    },
+    "RegExp": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [0.22, 0.22, 0.24, 0.22],
+      "sys": [0.8, 0.83, 0.86, 0.82],
+      "real": [1.87, 1.88, 1.78, 1.93],
+      "rss_mb": [527.23, 527.09, 527.14, 527.22]
+    },
+    "Box2D": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [0.74, 0.74, 0.74],
+      "sys": [0.82, 0.81, 0.84],
+      "real": [2.49, 2.44, 2.51],
+      "rss_mb": [543.04, 543.85, 544.38]
+    },
+    "Gameboy": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [0.74, 0.72, 0.73, 0.73, 0.72, 0.74],
+      "sys": [0.87, 0.88, 0.86, 0.7, 0.86, 0.86],
+      "real": [2.52, 2.5, 2.55, 2.04, 2.47, 2.51],
+      "rss_mb": [552.3, 552.96, 552.91, 550.95, 552.09, 550.75]
+    },
+    "Splay": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.04, 0.04, 0.04],
+      "sys": [0.69, 0.7, 0.69],
+      "real": [1.48, 1.55, 1.49],
+      "rss_mb": [519.67, 519.67, 519.62]
+    },
+    "SplayLatency": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.04, 0.04, 0.04],
+      "sys": [0.69, 0.7, 0.69],
+      "real": [1.48, 1.55, 1.49],
+      "rss_mb": [519.67, 519.67, 519.62]
+    },
+    "NavierStokes": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.06, 0.05],
+      "sys": [0.7, 0.7],
+      "real": [1.52, 1.54],
+      "rss_mb": [520.12, 520.08]
+    },
+    "Crypto": {
+      "error": "\u001b[1;31mUncaught TypeError: calling non-object.\u001b[0m",
+      "user": [0.15, 0.14, 0.14, 0.14],
+      "sys": [0.02, 0.03, 0.03, 0.03],
+      "real": [0.18, 0.18, 0.17, 0.17],
+      "rss_mb": [522.33, 522.26, 522.32, 522.18]
+    },
+    "RayTrace": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [0.07, 0.07, 0.07],
+      "sys": [0.79, 0.79, 0.8],
+      "real": [1.71, 1.72, 1.68],
+      "rss_mb": [521.09, 521.14, 520.99]
+    },
+    "zlib": {
+      "error": "\u001b[1;31mParserError: \u001b[0mefined\") {\u001b[1;31m",
+      "user": [0.01, 0.02, 0.06, 0.01, 0.01, 0.02, 0.01],
+      "sys": [0.03, 0.02, 0.06, 0.03, 0.03, 0.03, 0.03],
+      "real": [0.05, 0.04, 0.13, 0.05, 0.05, 0.05, 0.05],
+      "rss_mb": [520.84, 521.11, 520.95, 520.96, 520.8, 520.94, 520.8]
+    },
+    "PdfJS": {
+      "error": "terminate called after throwing an instance of 'std::runtime_error'",
+      "user": [2.28, 2.18, 2.16],
+      "sys": [1.0, 1.02, 0.8],
+      "real": [4.52, 4.57, 3.82],
+      "rss_mb": [650.44, 649.37, 649.45]
+    },
+    "Richards": {
+      "error": "zhuzilin: ./es/types/builtin/array_object.h:65: static es::Handle<es::JSValue> es::ArrayProto::indexOf(es::Handle<es::Error>&, es::Handle<es::JSValue>, std::vector<es::Handle<es::JSValue> >): Assertion `false' failed.",
+      "user": [0.05, 0.05],
+      "sys": [0.69, 0.69],
+      "real": [1.48, 1.57],
+      "rss_mb": [519.77, 519.92]
+    }
+  }
+}

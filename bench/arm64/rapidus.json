@@ -1,0 +1,16 @@
+{
+  "binary": "rapidus",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "afd696503d9a4e583ea90b3b91261529e939820e9a1b920c78fe9c2b833740a8",
+    "binary_size": 1509656,
+    "console_log": "console.log",
+    "engine": "rapidus",
+    "repository": "https://github.com/maekawatoshiki/rapidus.git",
+    "revision": "e2cbce0e2ee7bb640df056d790e7d5e61fde94e0",
+    "revision_date": "2023-02-25",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "time": "2026-03-04 02:01:53.140939 UTC",
+  "benchmarks": {}
+}

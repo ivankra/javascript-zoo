@@ -1,0 +1,87 @@
+{
+  "binary": "engine262_jsc",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "console.log",
+    "dist_size": 3106753,
+    "engine": "engine262",
+    "repository": "https://github.com/engine262/engine262.git",
+    "revision": "86373defd8d1a8980cb95055359231e1b2a45782",
+    "revision_date": "2026-02-21",
+    "variant": "jsc"
+  },
+  "time": "2026-03-03 20:41:23.520535 UTC",
+  "benchmarks": {
+    "RayTrace": {
+      "error": "Timeout (>900s)"
+    },
+    "Gameboy": {
+      "error": "Timeout (>900s)"
+    },
+    "Crypto": {
+      "error": "Timeout (>900s)"
+    },
+    "RegExp": {
+      "error": "Timeout (>900s)"
+    },
+    "NavierStokes": {
+      "error": "Timeout (>900s)"
+    },
+    "Box2D": {
+      "error": "Timeout (>900s)"
+    },
+    "DeltaBlue": {
+      "score": [0.476, 0.462],
+      "user": [472.16, 487.02],
+      "sys": [5.66, 5.74],
+      "real": [459.27, 472.98],
+      "rss_mb": [705.73, 695.01]
+    },
+    "Mandreel": {
+      "error": "Timeout (>900s)"
+    },
+    "MandreelLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "Splay": {
+      "score": [3.09, 3.14],
+      "user": [327.19, 324.46],
+      "sys": [3.09, 2.63],
+      "real": [314.77, 311.45],
+      "rss_mb": [3050.7, 3040.77]
+    },
+    "SplayLatency": {
+      "score": [30.2, 30.6],
+      "user": [327.19, 324.46],
+      "sys": [3.09, 2.63],
+      "real": [314.77, 311.45],
+      "rss_mb": [3050.7, 3040.77]
+    },
+    "CodeLoad": {
+      "score": [286],
+      "user": [15.23],
+      "sys": [0.73],
+      "real": [8.33],
+      "rss_mb": [1145.96]
+    },
+    "Typescript": {
+      "error": "Timeout (>900s)"
+    },
+    "PdfJS": {
+      "error": "Timeout (>900s)"
+    },
+    "zlib": {
+      "error": "Timeout (>900s)"
+    },
+    "EarleyBoyer": {
+      "error": "Timeout (>900s)"
+    },
+    "Richards": {
+      "score": [0.517, 0.504],
+      "user": [234.82, 239.98],
+      "sys": [3.07, 2.94],
+      "real": [227.16, 232.13],
+      "rss_mb": [687.5, 689.23]
+    }
+  }
+}

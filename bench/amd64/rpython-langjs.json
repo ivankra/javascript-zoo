@@ -1,0 +1,134 @@
+{
+  "binary": "rpython-langjs",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "print",
+    "dist_size": 1210522223,
+    "engine": "rpython-langjs",
+    "repository": "https://github.com/progval/rpython-langjs.git",
+    "revision": "d31b8ee3be4904200d64a6cbe12c8200f2c3aaf9",
+    "revision_date": "2017-10-01"
+  },
+  "time": "2026-03-03 20:49:19.314766 UTC",
+  "benchmarks": {
+    "RayTrace": {
+      "error": "Syntax Error in: raytrace.js:109",
+      "user": [1.41, 1.53, 1.52],
+      "sys": [0.14, 0.21, 0.22],
+      "real": [6.97, 7.77, 8.18],
+      "rss_mb": [213.24, 172.75, 172.75]
+    },
+    "NavierStokes": {
+      "error": "Syntax Error in: navier-stokes.js:109",
+      "user": [1.34, 1.49, 1.46, 1.48, 1.33, 1.35, 1.34],
+      "sys": [0.15, 0.19, 0.19, 0.2, 0.14, 0.17, 0.16],
+      "real": [6.75, 7.68, 7.66, 7.89, 2.1, 2.17, 2.15],
+      "rss_mb": [211.51, 167.79, 169.61, 167.89, 167.46, 167.52, 169.3]
+    },
+    "Splay": {
+      "error": "Syntax Error in: splay.js:109",
+      "user": [1.38, 1.45, 1.42],
+      "sys": [0.19, 0.2, 0.2],
+      "real": [7.29, 7.66, 7.46],
+      "rss_mb": [168.14, 168.25, 168.58]
+    },
+    "SplayLatency": {
+      "error": "Syntax Error in: splay.js:109",
+      "user": [1.38, 1.45, 1.42],
+      "sys": [0.19, 0.2, 0.2],
+      "real": [7.29, 7.66, 7.46],
+      "rss_mb": [168.14, 168.25, 168.58]
+    },
+    "Crypto": {
+      "error": "Syntax Error in: crypto.js:109",
+      "user": [1.6, 1.65],
+      "sys": [0.21, 0.2],
+      "real": [7.5, 7.71],
+      "rss_mb": [173.5, 173.7]
+    },
+    "CodeLoad": {
+      "error": "Syntax Error in: code-load.js:109",
+      "user": [1.32, 1.45, 1.44, 1.32, 1.45],
+      "sys": [0.16, 0.19, 0.2, 0.17, 0.22],
+      "real": [2.1, 7.62, 7.73, 2.11, 7.64],
+      "rss_mb": [176.83, 177.52, 176.07, 176.69, 177.68]
+    },
+    "DeltaBlue": {
+      "error": "Syntax Error in: deltablue.js:109",
+      "user": [1.36, 1.5],
+      "sys": [0.15, 0.19],
+      "real": [2.11, 7.58],
+      "rss_mb": [170.25, 171.37]
+    },
+    "RegExp": {
+      "error": "Syntax Error in: regexp.js:501",
+      "user": [1.38, 1.29, 1.41],
+      "sys": [0.21, 0.15, 0.2],
+      "real": [7.65, 2.06, 7.89],
+      "rss_mb": [177.4, 177.7, 176.56]
+    },
+    "EarleyBoyer": {
+      "error": "Syntax Error in: earley-boyer.js:109",
+      "user": [1.81, 1.75],
+      "sys": [0.18, 0.21],
+      "real": [7.96, 7.82],
+      "rss_mb": [178.77, 195.05]
+    },
+    "PdfJS": {
+      "error": "Syntax Error in: pdfjs.js:1106",
+      "user": [1.74, 1.74, 1.75],
+      "sys": [0.26, 0.25, 0.24],
+      "real": [7.74, 7.9, 7.88],
+      "rss_mb": [286.9, 287.04, 292.94]
+    },
+    "Typescript": {
+      "error": "Syntax Error in: typescript.js:3815",
+      "user": [1.99, 1.96],
+      "sys": [0.34, 0.3],
+      "real": [8.34, 8.18],
+      "rss_mb": [447.5, 419.3]
+    },
+    "Mandreel": {
+      "error": "Syntax Error in: mandreel.js:1406",
+      "user": [2.03],
+      "sys": [0.35],
+      "real": [8.31],
+      "rss_mb": [517.77]
+    },
+    "MandreelLatency": {
+      "error": "Syntax Error in: mandreel.js:1406",
+      "user": [2.03],
+      "sys": [0.35],
+      "real": [8.31],
+      "rss_mb": [517.77]
+    },
+    "Richards": {
+      "error": "Syntax Error in: richards.js:109",
+      "user": [1.49, 1.31, 1.42],
+      "sys": [0.21, 0.17, 0.19],
+      "real": [7.72, 6.77, 7.53],
+      "rss_mb": [169.91, 212.98, 169.86]
+    },
+    "Gameboy": {
+      "error": "Syntax Error in: gbemu.js:109",
+      "user": [1.94, 2.09, 2.01, 2.04],
+      "sys": [0.18, 0.2, 0.22, 0.2],
+      "real": [2.77, 8.56, 8.12, 8.08],
+      "rss_mb": [200.2, 200.57, 200.94, 201.48]
+    },
+    "Box2D": {
+      "error": "Syntax Error in: box2d.js:109",
+      "user": [1.88, 2.0, 1.81, 1.94, 2.01],
+      "sys": [0.17, 0.23, 0.19, 0.21, 0.21],
+      "real": [2.69, 8.28, 7.32, 8.05, 8.23],
+      "rss_mb": [183.42, 182.23, 257.38, 195.27, 192.05]
+    },
+    "zlib": {
+      "error": "Syntax Error in: zlib.js:22",
+      "user": [1.43, 1.38],
+      "sys": [0.18, 0.19],
+      "real": [7.44, 7.32],
+      "rss_mb": [178.51, 178.47]
+    }
+  }
+}

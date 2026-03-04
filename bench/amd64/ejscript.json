@@ -1,0 +1,136 @@
+{
+  "binary": "ejscript",
+  "metadata": {
+    "arch": "amd64",
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
+    "dist_size": 1967048,
+    "engine": "ejscript",
+    "repository": "https://github.com/embedthis/ejscript.git",
+    "revision": "bb38d46e96ad20e923821d31d4a37e64de926d5a",
+    "revision_date": "2025-03-09",
+    "version": "2.7.7-22-gbb38d46e9"
+  },
+  "time": "2026-03-03 20:50:45.409894 UTC",
+  "benchmarks": {
+    "DeltaBlue": {
+      "error": "ejs: Error: Cannot open deltablue.js",
+      "user": [0.01, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.01, 0.01, 0.01],
+      "rss_mb": [5.57, 5.35, 5.34, 5.38, 5.36]
+    },
+    "Richards": {
+      "error": "ejs: Error: Cannot open richards.js",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.45, 5.4]
+    },
+    "NavierStokes": {
+      "error": "ejs: Error: Cannot open navier-stokes.js",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.01],
+      "real": [0.01, 0.01, 0.01],
+      "rss_mb": [5.18, 5.48, 5.3]
+    },
+    "Crypto": {
+      "error": "ejs: Error: Cannot open crypto.js",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.01],
+      "rss_mb": [5.35, 5.45, 5.42]
+    },
+    "EarleyBoyer": {
+      "error": "ejs: Error: Cannot open earley-boyer.js",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.01, 0.01],
+      "rss_mb": [5.5, 5.48, 5.45, 5.45]
+    },
+    "Splay": {
+      "error": "ejs: Error: Cannot open splay.js",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.01, 0.0, 0.01, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.02, 0.01, 0.01],
+      "rss_mb": [5.38, 5.45, 5.46, 5.22, 5.57]
+    },
+    "SplayLatency": {
+      "error": "ejs: Error: Cannot open splay.js",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.01, 0.0, 0.01, 0.0, 0.0],
+      "real": [0.01, 0.01, 0.02, 0.01, 0.01],
+      "rss_mb": [5.38, 5.45, 5.46, 5.22, 5.57]
+    },
+    "RegExp": {
+      "error": "ejs: Error: Cannot open regexp.js",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.01, 0.0, 0.01, 0.0],
+      "real": [0.01, 0.01, 0.01, 0.01],
+      "rss_mb": [5.38, 5.22, 5.57, 5.5]
+    },
+    "Box2D": {
+      "error": "ejs: Error: Cannot open box2d.js",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.01, 0.0, 0.01],
+      "real": [0.01, 0.01, 0.02],
+      "rss_mb": [5.35, 5.45, 5.16]
+    },
+    "RayTrace": {
+      "error": "ejs: Error: Cannot open raytrace.js",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.49, 5.17]
+    },
+    "CodeLoad": {
+      "error": "ejs: Error: Cannot open code-load.js",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [5.45]
+    },
+    "Gameboy": {
+      "error": "ejs: Error: Cannot open gbemu.js",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.26, 5.38]
+    },
+    "zlib": {
+      "error": "ejs: Error: Cannot open zlib.js",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.01],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.37, 5.45]
+    },
+    "Mandreel": {
+      "error": "ejs: Error: Cannot open mandreel.js",
+      "user": [0.0, 0.0],
+      "sys": [0.01, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.48, 5.25]
+    },
+    "MandreelLatency": {
+      "error": "ejs: Error: Cannot open mandreel.js",
+      "user": [0.0, 0.0],
+      "sys": [0.01, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [5.48, 5.25]
+    },
+    "Typescript": {
+      "error": "ejs: Error: Cannot open typescript.js",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [5.22]
+    },
+    "PdfJS": {
+      "error": "ejs: Error: Cannot open pdfjs.js",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [5.58]
+    }
+  }
+}

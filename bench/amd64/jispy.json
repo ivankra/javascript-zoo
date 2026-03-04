@@ -1,0 +1,135 @@
+{
+  "binary": "jispy",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "console.log",
+    "dist_size": 82861,
+    "engine": "jispy",
+    "repository": "https://github.com/polydojo/jispy.git",
+    "revision": "604963a14a206bf6a1922defdf2fd008b0fd8c8e",
+    "revision_date": "2017-09-05",
+    "version": "1.0.0"
+  },
+  "time": "2026-03-03 20:41:42.289065 UTC",
+  "benchmarks": {
+    "RegExp": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.05],
+      "sys": [0.01],
+      "real": [0.06],
+      "rss_mb": [16.64]
+    },
+    "zlib": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.04, 0.05, 0.05, 0.04, 0.04],
+      "sys": [0.01, 0.0, 0.0, 0.01, 0.01],
+      "real": [0.06, 0.06, 0.06, 0.06, 0.06],
+      "rss_mb": [16.93, 16.96, 16.76, 17.04, 16.95]
+    },
+    "DeltaBlue": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.05, 0.04],
+      "sys": [0.01, 0.01],
+      "real": [0.06, 0.06],
+      "rss_mb": [16.67, 16.59]
+    },
+    "Typescript": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [26.91, 28.21, 22.1],
+      "sys": [0.02, 0.03, 0.02],
+      "real": [26.94, 28.24, 22.12],
+      "rss_mb": [25.94, 26.11, 25.94]
+    },
+    "CodeLoad": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.04],
+      "sys": [0.01],
+      "real": [0.06],
+      "rss_mb": [16.81]
+    },
+    "Richards": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.04, 0.04, 0.04, 0.04, 0.05],
+      "sys": [0.01, 0.01, 0.0, 0.01, 0.0],
+      "real": [0.05, 0.06, 0.05, 0.06, 0.06],
+      "rss_mb": [16.39, 16.66, 16.66, 16.34, 16.65]
+    },
+    "EarleyBoyer": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.05, 0.05, 0.05, 0.04],
+      "sys": [0.0, 0.0, 0.01, 0.01],
+      "real": [0.06, 0.06, 0.06, 0.06],
+      "rss_mb": [17.04, 17.04, 17.04, 16.88]
+    },
+    "Splay": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.04, 0.04, 0.05, 0.04],
+      "sys": [0.01, 0.01, 0.0, 0.01],
+      "real": [0.05, 0.06, 0.06, 0.06],
+      "rss_mb": [16.51, 16.51, 16.67, 16.59]
+    },
+    "SplayLatency": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.04, 0.04, 0.05, 0.04],
+      "sys": [0.01, 0.01, 0.0, 0.01],
+      "real": [0.05, 0.06, 0.06, 0.06],
+      "rss_mb": [16.51, 16.51, 16.67, 16.59]
+    },
+    "RayTrace": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.05, 0.05],
+      "sys": [0.01, 0.01],
+      "real": [0.06, 0.06],
+      "rss_mb": [16.68, 16.56]
+    },
+    "Box2D": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.08, 0.07],
+      "sys": [0.01, 0.01],
+      "real": [0.09, 0.09],
+      "rss_mb": [17.21, 17.25]
+    },
+    "NavierStokes": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.05, 0.04],
+      "sys": [0.01, 0.01],
+      "real": [0.06, 0.05],
+      "rss_mb": [16.39, 16.62]
+    },
+    "Mandreel": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.74, 0.64, 0.74],
+      "sys": [0.03, 0.02, 0.03],
+      "real": [0.77, 0.66, 0.77],
+      "rss_mb": [58.19, 58.25, 58.24]
+    },
+    "MandreelLatency": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.74, 0.64, 0.74],
+      "sys": [0.03, 0.02, 0.03],
+      "real": [0.77, 0.66, 0.77],
+      "rss_mb": [58.19, 58.25, 58.24]
+    },
+    "Gameboy": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.05, 0.05, 0.05, 0.05],
+      "sys": [0.01, 0.0, 0.01, 0.0],
+      "real": [0.06, 0.06, 0.06, 0.06],
+      "rss_mb": [17.67, 17.59, 17.65, 17.66]
+    },
+    "PdfJS": {
+      "error": "SyntaxError: EOL while scanning string literal",
+      "user": [0.3, 0.3],
+      "sys": [0.01, 0.01],
+      "real": [0.32, 0.31],
+      "rss_mb": [21.13, 21.35]
+    },
+    "Crypto": {
+      "error": "SyntaxError: unexpected keyword typeof",
+      "user": [0.05, 0.05],
+      "sys": [0.0, 0.01],
+      "real": [0.06, 0.06],
+      "rss_mb": [16.79, 16.75]
+    }
+  }
+}

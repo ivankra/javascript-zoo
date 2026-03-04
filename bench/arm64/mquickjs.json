@@ -1,0 +1,136 @@
+{
+  "binary": "mquickjs",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "70f0cd52d322bf8a8acf3f799f67e596e90d5a71ff71b3fe8a46b46bfa0ad485",
+    "binary_size": 264920,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "mquickjs",
+    "repository": "https://github.com/bellard/mquickjs.git",
+    "revision": "ee50431eac9b14b99f722b537ec4cac0c8dd75ab",
+    "revision_date": "2026-01-15"
+  },
+  "time": "2026-03-03 22:24:50.845607 UTC",
+  "benchmarks": {
+    "NavierStokes": {
+      "error": "NavierStokes: TypeError: only Date.now() is supported",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.11, 3.2, 3.2]
+    },
+    "DeltaBlue": {
+      "error": "DeltaBlue: TypeError: only Date.now() is supported",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.47]
+    },
+    "Typescript": {
+      "error": "\u001b[31;1mSyntaxError: invalid argument name",
+      "user": [0.25, 0.24, 0.25, 0.25, 0.25],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.25, 0.25, 0.25, 0.25, 0.25],
+      "rss_mb": [9.46, 9.45, 9.53, 9.47, 9.47]
+    },
+    "Splay": {
+      "error": "Splay: InternalError: out of memory",
+      "user": [0.15, 0.15],
+      "sys": [0.0, 0.0],
+      "real": [0.15, 0.15],
+      "rss_mb": [17.23, 17.23]
+    },
+    "SplayLatency": {
+      "error": "Splay: InternalError: out of memory",
+      "user": [0.15, 0.15],
+      "sys": [0.0, 0.0],
+      "real": [0.15, 0.15],
+      "rss_mb": [17.23, 17.23]
+    },
+    "EarleyBoyer": {
+      "error": "\u001b[31;1mSyntaxError: invalid escape sequence",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.78, 1.72]
+    },
+    "RayTrace": {
+      "error": "RayTrace: TypeError: only Date.now() is supported",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.46, 1.48, 1.54, 1.48, 1.59]
+    },
+    "Richards": {
+      "error": "Richards: TypeError: only Date.now() is supported",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.47, 1.35, 1.47, 1.45]
+    },
+    "Mandreel": {
+      "error": "\u001b[31;1mSyntaxError: catch variable already exists",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [6.34]
+    },
+    "MandreelLatency": {
+      "error": "\u001b[31;1mSyntaxError: catch variable already exists",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [6.34]
+    },
+    "PdfJS": {
+      "error": "\u001b[31;1mSyntaxError: direct eval is not supported. Use (1,eval) instead for indirect",
+      "user": [0.02, 0.02, 0.02],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.02, 0.02, 0.02],
+      "rss_mb": [4.97, 5.03, 4.95]
+    },
+    "Box2D": {
+      "error": "Box2D: TypeError: only Date.now() is supported",
+      "user": [0.16, 0.16, 0.16, 0.16],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.17, 0.17, 0.17, 0.17],
+      "rss_mb": [5.21, 5.11, 5.11, 5.11]
+    },
+    "zlib": {
+      "error": "\u001b[31;1mSyntaxError: invalid lvalue for delete",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [2.33, 2.4]
+    },
+    "CodeLoad": {
+      "error": "CodeLoad: TypeError: only Date.now() is supported",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.73, 1.73, 1.84]
+    },
+    "RegExp": {
+      "error": "RegExp: TypeError: only Date.now() is supported",
+      "user": [0.24, 0.23],
+      "sys": [0.0, 0.0],
+      "real": [0.24, 0.24],
+      "rss_mb": [17.36, 17.47]
+    },
+    "Crypto": {
+      "error": "\u001b[31;1mTypeError: invalid array subscript",
+      "user": [0.01, 0.01],
+      "sys": [0.0, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [2.03, 1.97]
+    },
+    "Gameboy": {
+      "error": "\u001b[31;1mSyntaxError: catch variable already exists",
+      "user": [0.01, 0.01],
+      "sys": [0.0, 0.0],
+      "real": [0.01, 0.01],
+      "rss_mb": [3.03, 3.03]
+    }
+  }
+}

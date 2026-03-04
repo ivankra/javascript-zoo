@@ -274,11 +274,11 @@ onBeforeUnmount(() => {
             <div class="arch-menu" role="listbox" aria-label="Architecture">
               <button type="button" @click="setArch('amd64')">
                 <span class="arch-short">amd64</span>
-                <span class="arch-detail">i9-10900K 3.7-5.3GHz · Linux</span>
+                <span class="arch-detail">Standard GitHub-hosted runner · ubuntu-24.04</span>
               </button>
               <button type="button" @click="setArch('arm64')">
                 <span class="arch-short">arm64</span>
-                <span class="arch-detail">Mac M4 4.5GHz · Linux VM</span>
+                <span class="arch-detail">Standard GitHub-hosted runner · ubuntu-24.04-arm</span>
               </button>
             </div>
           </div>

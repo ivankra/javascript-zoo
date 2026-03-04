@@ -1,0 +1,137 @@
+{
+  "binary": "cesanta-mjs",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "11cc2433b9f13a1095d1f3cd8c17c3b85e8b6e6c8b5b921f13a4762627c8bc52",
+    "binary_size": 199688,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
+    "engine": "cesanta-mjs",
+    "repository": "https://github.com/cesanta/mjs.git",
+    "revision": "a333d3336e4c4ddb9d9345b0a0cca77dac86f039",
+    "revision_date": "2026-02-11",
+    "version": "2.20.0-30-ga333d33"
+  },
+  "time": "2026-03-03 21:30:12.212042 UTC, 2026-03-03 21:39:35.324869 UTC",
+  "benchmarks": {
+    "Typescript": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.83, 3.82, 3.83, 3.81, 3.81, 3.83]
+    },
+    "PdfJS": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [2.83, 2.83, 2.81, 2.82]
+    },
+    "Splay": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.42, 1.45, 1.45, 1.45, 1.45, 1.44, 1.45]
+    },
+    "SplayLatency": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.42, 1.45, 1.45, 1.45, 1.45, 1.44, 1.45]
+    },
+    "Box2D": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.48, 1.48, 1.56, 1.56]
+    },
+    "EarleyBoyer": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.58, 1.57, 1.58, 1.56]
+    },
+    "CodeLoad": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.45, 1.45, 1.44, 1.45, 1.44, 1.44]
+    },
+    "RayTrace": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.45, 1.44, 1.45, 1.45]
+    },
+    "zlib": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.58, 1.58, 1.58, 1.57, 1.57]
+    },
+    "Mandreel": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [6.2, 6.2, 6.11]
+    },
+    "MandreelLatency": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [6.2, 6.2, 6.11]
+    },
+    "Gameboy": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.83]
+    },
+    "Richards": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.45, 1.45, 1.44]
+    },
+    "RegExp": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.45, 1.45, 1.41]
+    },
+    "NavierStokes": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.45, 1.45, 1.45]
+    },
+    "DeltaBlue": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.45, 1.45]
+    },
+    "Crypto": {
+      "error": "MJS error: parse error at line 3: [else if (t]",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.45, 1.45]
+    }
+  }
+}

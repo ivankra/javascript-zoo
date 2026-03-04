@@ -1,0 +1,136 @@
+{
+  "binary": "fesi",
+  "metadata": {
+    "arch": "arm64",
+    "console_log": "writeln",
+    "dist_size": 955225,
+    "engine": "fesi",
+    "jdk": "openjdk version \"25.0.2\" 2026-01-20",
+    "repository": "https://github.com/ivankra/FESI.git",
+    "revision": "ad4a0511f28f5d6c5cfbb400dd46d604812361f2",
+    "revision_date": "2026-02-24",
+    "version": "1.1.8"
+  },
+  "time": "2026-03-03 21:31:48.888053 UTC",
+  "benchmarks": {
+    "RegExp": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.13, 0.12],
+      "sys": [0.03, 0.03, 0.03],
+      "real": [0.12, 0.11, 0.11],
+      "rss_mb": [48.11, 47.96, 48.11]
+    },
+    "Gameboy": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.14, 0.14],
+      "sys": [0.03, 0.03],
+      "real": [0.12, 0.12],
+      "rss_mb": [48.17, 48.05]
+    },
+    "EarleyBoyer": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.13],
+      "sys": [0.02, 0.03],
+      "real": [0.11, 0.12],
+      "rss_mb": [48.17, 44.75]
+    },
+    "Box2D": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.14, 0.15, 0.13],
+      "sys": [0.02, 0.03, 0.04],
+      "real": [0.12, 0.13, 0.12],
+      "rss_mb": [48.26, 47.82, 48.16]
+    },
+    "Mandreel": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.14, 0.12, 0.15],
+      "sys": [0.03, 0.04, 0.03, 0.03],
+      "real": [0.12, 0.13, 0.11, 0.12],
+      "rss_mb": [47.41, 48.54, 48.29, 48.07]
+    },
+    "MandreelLatency": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.14, 0.12, 0.15],
+      "sys": [0.03, 0.04, 0.03, 0.03],
+      "real": [0.12, 0.13, 0.11, 0.12],
+      "rss_mb": [47.41, 48.54, 48.29, 48.07]
+    },
+    "zlib": {
+      "error": "Syntax error detected near line 25, column 3, after \"{\"",
+      "user": [0.13, 0.13],
+      "sys": [0.03, 0.03],
+      "real": [0.12, 0.11],
+      "rss_mb": [48.0, 47.96]
+    },
+    "Richards": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.12],
+      "sys": [0.03, 0.04],
+      "real": [0.11, 0.12],
+      "rss_mb": [48.05, 48.05]
+    },
+    "Crypto": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.14],
+      "sys": [0.02, 0.02],
+      "real": [0.11, 0.12],
+      "rss_mb": [48.07, 48.01]
+    },
+    "Splay": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.15, 0.13, 0.14, 0.13],
+      "sys": [0.02, 0.04, 0.03, 0.03],
+      "real": [0.13, 0.13, 0.13, 0.12],
+      "rss_mb": [48.08, 47.83, 47.82, 48.17]
+    },
+    "SplayLatency": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.15, 0.13, 0.14, 0.13],
+      "sys": [0.02, 0.04, 0.03, 0.03],
+      "real": [0.13, 0.13, 0.13, 0.12],
+      "rss_mb": [48.08, 47.83, 47.82, 48.17]
+    },
+    "RayTrace": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.14, 0.14],
+      "sys": [0.03, 0.02],
+      "real": [0.11, 0.12],
+      "rss_mb": [48.07, 48.11]
+    },
+    "NavierStokes": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.13, 0.13, 0.13],
+      "sys": [0.03, 0.03, 0.03],
+      "real": [0.12, 0.12, 0.12],
+      "rss_mb": [47.92, 48.05, 47.89]
+    },
+    "DeltaBlue": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.14, 0.13],
+      "sys": [0.03, 0.03],
+      "real": [0.12, 0.12],
+      "rss_mb": [48.05, 48.17]
+    },
+    "CodeLoad": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.12, 0.13, 0.14],
+      "sys": [0.03, 0.03, 0.04],
+      "real": [0.11, 0.13, 0.13],
+      "rss_mb": [48.17, 47.46, 47.38]
+    },
+    "Typescript": {
+      "error": "Syntax error detected near line 56, column 34, after \"||\"",
+      "user": [0.15, 0.15, 0.13, 0.13],
+      "sys": [0.03, 0.02, 0.02, 0.03],
+      "real": [0.13, 0.12, 0.11, 0.12],
+      "rss_mb": [48.05, 48.06, 48.11, 47.61]
+    },
+    "PdfJS": {
+      "error": "Syntax error detected near line 25, column 29, after \"=\"",
+      "user": [0.14, 0.13],
+      "sys": [0.04, 0.04],
+      "real": [0.12, 0.13],
+      "rss_mb": [48.22, 47.84]
+    }
+  }
+}

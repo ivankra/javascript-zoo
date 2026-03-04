@@ -1,0 +1,137 @@
+{
+  "binary": "cesanta-elk",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "71783fc285b8a6c58932d31d4646d0a02de86070029597a43663793defe6f7a2",
+    "binary_size": 68048,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "cesanta-elk",
+    "repository": "https://github.com/cesanta/elk.git",
+    "revision": "a9bb85619c5cddf49dfa8bdf529770fc9943a7fd",
+    "revision_date": "2025-06-05",
+    "version": "2.2.0-30-ga9bb856"
+  },
+  "time": "2026-03-03 21:41:40.654958 UTC",
+  "benchmarks": {
+    "zlib": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.5, 1.5, 1.5, 1.52, 1.52]
+    },
+    "Splay": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.33, 1.39]
+    },
+    "SplayLatency": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.33, 1.39]
+    },
+    "NavierStokes": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.38]
+    },
+    "CodeLoad": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.52, 1.52, 1.5, 1.52, 1.51, 1.5, 1.52]
+    },
+    "Gameboy": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.77, 1.77, 1.77, 1.77, 1.77, 1.75]
+    },
+    "Box2D": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.51, 1.52, 1.52, 1.52, 1.52]
+    },
+    "RegExp": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.52, 1.48]
+    },
+    "Richards": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.39, 1.39, 1.37]
+    },
+    "RayTrace": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.39, 1.38, 1.39, 1.39]
+    },
+    "Typescript": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.77, 3.77, 3.75, 3.77, 3.77, 3.75]
+    },
+    "Mandreel": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [6.14, 6.14, 6.04]
+    },
+    "MandreelLatency": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [6.14, 6.14, 6.04]
+    },
+    "DeltaBlue": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.39, 1.39]
+    },
+    "PdfJS": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [2.77, 2.77, 2.77]
+    },
+    "EarleyBoyer": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.51, 1.52, 1.52, 1.52]
+    },
+    "Crypto": {
+      "error": "Error: ERROR: parse error",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.39]
+    }
+  }
+}

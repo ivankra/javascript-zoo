@@ -1,0 +1,134 @@
+{
+  "binary": "bramblex",
+  "metadata": {
+    "arch": "arm64",
+    "console_log": "console.log",
+    "dist_size": 211525,
+    "engine": "bramblex",
+    "repository": "https://github.com/bramblex/jsjs.git",
+    "revision": "ab7133f7435acdf16a86473cbd36ab68d6195fba",
+    "revision_date": "2018-03-08"
+  },
+  "time": "2026-03-03 22:28:23.687060 UTC",
+  "benchmarks": {
+    "Mandreel": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [1.01, 0.96, 0.99],
+      "sys": [0.13, 0.18, 0.15],
+      "real": [0.63, 0.62, 0.64],
+      "rss_mb": [418.65, 423.89, 419.61]
+    },
+    "MandreelLatency": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [1.01, 0.96, 0.99],
+      "sys": [0.13, 0.18, 0.15],
+      "real": [0.63, 0.62, 0.64],
+      "rss_mb": [418.65, 423.89, 419.61]
+    },
+    "Splay": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.04, 0.04, 0.04],
+      "sys": [0.01, 0.0, 0.01, 0.01],
+      "real": [0.04, 0.04, 0.04, 0.03],
+      "rss_mb": [47.56, 47.8, 47.21, 47.61]
+    },
+    "SplayLatency": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.04, 0.04, 0.04],
+      "sys": [0.01, 0.0, 0.01, 0.01],
+      "real": [0.04, 0.04, 0.04, 0.03],
+      "rss_mb": [47.56, 47.8, 47.21, 47.61]
+    },
+    "Richards": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.04, 0.04, 0.03],
+      "sys": [0.01, 0.01, 0.01, 0.01],
+      "real": [0.04, 0.04, 0.04, 0.04],
+      "rss_mb": [47.88, 47.55, 47.84, 47.69]
+    },
+    "RayTrace": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04],
+      "sys": [0.01],
+      "real": [0.04],
+      "rss_mb": [50.94]
+    },
+    "RegExp": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.07, 0.06],
+      "sys": [0.01, 0.01],
+      "real": [0.05, 0.05],
+      "rss_mb": [58.91, 62.93]
+    },
+    "PdfJS": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.32, 0.31, 0.31, 0.3, 0.32],
+      "sys": [0.05, 0.06, 0.05, 0.06, 0.05],
+      "real": [0.19, 0.19, 0.19, 0.18, 0.19],
+      "rss_mb": [138.79, 138.21, 138.68, 139.32, 139.11]
+    },
+    "Typescript": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.23, 0.25],
+      "sys": [0.04, 0.04],
+      "real": [0.16, 0.16],
+      "rss_mb": [116.49, 116.69]
+    },
+    "CodeLoad": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.04],
+      "sys": [0.01, 0.0],
+      "real": [0.04, 0.04],
+      "rss_mb": [53.56, 53.28]
+    },
+    "Crypto": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.05, 0.05],
+      "sys": [0.01, 0.01],
+      "real": [0.05, 0.04],
+      "rss_mb": [57.31, 57.19]
+    },
+    "zlib": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.03],
+      "sys": [0.02],
+      "real": [0.04],
+      "rss_mb": [53.1]
+    },
+    "NavierStokes": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.03, 0.04],
+      "sys": [0.01, 0.02, 0.01],
+      "real": [0.04, 0.04, 0.04],
+      "rss_mb": [48.69, 48.11, 48.44]
+    },
+    "Box2D": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.14, 0.15],
+      "sys": [0.02, 0.03],
+      "real": [0.08, 0.19],
+      "rss_mb": [79.95, 84.49]
+    },
+    "Gameboy": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.14],
+      "sys": [0.03],
+      "real": [0.08],
+      "rss_mb": [77.57]
+    },
+    "DeltaBlue": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.04, 0.04, 0.04],
+      "sys": [0.0, 0.01, 0.01],
+      "real": [0.04, 0.04, 0.04],
+      "rss_mb": [48.26, 48.12, 47.82]
+    },
+    "EarleyBoyer": {
+      "error": "[Error] [object Object], 'performance' \u672a\u5b9a\u4e49",
+      "user": [0.09],
+      "sys": [0.02],
+      "real": [0.07],
+      "rss_mb": [64.49]
+    }
+  }
+}

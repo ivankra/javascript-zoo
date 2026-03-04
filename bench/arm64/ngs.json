@@ -1,0 +1,25 @@
+{
+  "binary": "ngs",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "ca33854ebd93da7202c37983401bf7b1df482fb30b13673df256b650dc7e92fa",
+    "binary_size": 489832,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
+    "engine": "ngs",
+    "repository": "https://github.com/markkurossi/js.git",
+    "revision": "fa7bf821e350ebc5ef3c12e9809db3fd8cba3713",
+    "revision_date": "2023-12-05",
+    "version": "0.2.5"
+  },
+  "time": "2026-03-04 00:33:04.614530 UTC",
+  "benchmarks": {
+    "Richards": {
+      "error": "1.010987 ngs: evaluation of file `richards.tiny-js.js' failed:",
+      "user": [1.02, 1.02, 1.03, 1.02],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [1.02, 1.03, 1.03, 1.02],
+      "rss_mb": [4.8, 4.68, 4.81, 4.81]
+    }
+  }
+}

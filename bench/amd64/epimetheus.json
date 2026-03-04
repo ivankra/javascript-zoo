@@ -1,0 +1,76 @@
+{
+  "binary": "epimetheus",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "acfa61fe89cd3d5917086746a86ce175a9ad0175cf169ef8fef3119b78f0178f",
+    "binary_size": 666520,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "epimetheus",
+    "repository": "https://github.com/jrmuizel/mozilla-cvs-history.git",
+    "revision": "3229d5d8b7f8376cfb7936e7be810635a14a486b",
+    "revision_date": "2008-08-12"
+  },
+  "time": "2026-03-03 20:41:33.447838 UTC",
+  "benchmarks": {
+    "Mandreel": {
+      "error": "Timeout (>900s)"
+    },
+    "MandreelLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "Box2D": {
+      "error": "F.NVector=function(y){if(y===G)y=0;for(var w=Array(y||0),A=0;A<y;++A)w[A]=0;return w};F.[ERROR]is=function(y,w){if(y===null)return false;if(w instanceof Function&&y instanceof w)return true;if(y.constructor.__implements!=G&&y.constructor.__implements[w])return true;return false};F.parseUInt=function(y){return Math.abs(parseInt(y))}})(Box2D);var Vector=Array,Vector_a2j_Number=Box2D.NVector;if(typeof Box2D===\"undefined\")Box2D={};if(typeof Box2D.Collision===\"undefined\")Box2D.Collision={};",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [5.43]
+    },
+    "PdfJS": {
+      "error": "    get [ERROR]content() {",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [10.81]
+    },
+    "NavierStokes": {
+      "error": "Timeout (>900s)"
+    },
+    "Splay": {
+      "error": "Timeout (>900s)"
+    },
+    "SplayLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "Crypto": {
+      "error": "Timeout (>900s)"
+    },
+    "DeltaBlue": {
+      "error": "Timeout (>900s)"
+    },
+    "zlib": {
+      "error": "Timeout (>900s)"
+    },
+    "EarleyBoyer": {
+      "error": "Timeout (>900s)"
+    },
+    "RayTrace": {
+      "error": "Timeout (>900s)"
+    },
+    "RegExp": {
+      "error": "Timeout (>900s)"
+    },
+    "CodeLoad": {
+      "error": "Timeout (>900s)"
+    },
+    "Typescript": {
+      "error": "Timeout (>900s)"
+    },
+    "Gameboy": {
+      "error": "Timeout (>900s)"
+    },
+    "Richards": {
+      "error": "Timeout (>900s)"
+    }
+  }
+}

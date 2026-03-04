@@ -1,0 +1,132 @@
+{
+  "binary": "jscript",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "console.log",
+    "dist_size": 896000,
+    "engine": "jscript",
+    "version": "5.8.16428"
+  },
+  "time": "2026-03-03 20:41:42.885195 UTC",
+  "benchmarks": {
+    "Gameboy": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.62, 0.6, 0.03, 0.69],
+      "sys": [0.44, 0.47, 0.04, 0.45],
+      "real": [2.29, 2.19, 0.56, 2.26],
+      "rss_mb": [69.07, 69.11, 21.95, 69.07]
+    },
+    "RayTrace": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.61, 0.6],
+      "sys": [0.45, 0.29],
+      "real": [2.64, 2.27],
+      "rss_mb": [69.11, 68.98]
+    },
+    "Richards": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.63, 0.62, 0.57, 0.58, 0.59],
+      "sys": [0.43, 0.43, 0.44, 0.45, 0.42],
+      "real": [2.55, 2.18, 1.6, 2.1, 1.55],
+      "rss_mb": [69.05, 68.97, 69.07, 69.14, 69.07]
+    },
+    "Typescript": {
+      "error": "Error on line 25279: 'WScript.Arguments.length' is null or not an object",
+      "user": [0.66, 0.65, 0.62, 0.63],
+      "sys": [0.46, 0.46, 0.51, 0.46],
+      "real": [2.49, 2.77, 2.93, 2.31],
+      "rss_mb": [69.2, 68.96, 69.41, 69.21]
+    },
+    "NavierStokes": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.63, 0.6, 0.66, 0.59],
+      "sys": [0.42, 0.46, 0.44, 0.46],
+      "real": [2.53, 2.09, 1.66, 3.83],
+      "rss_mb": [69.11, 69.0, 69.18, 69.34]
+    },
+    "PdfJS": {
+      "error": "Error on line 919: Expected ':'",
+      "user": [0.61],
+      "sys": [0.45],
+      "real": [2.71],
+      "rss_mb": [69.32]
+    },
+    "RegExp": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.6, 0.61, 0.63, 0.02, 0.61, 0.61],
+      "sys": [0.48, 0.48, 0.43, 0.04, 0.43, 0.42],
+      "real": [2.56, 2.47, 2.4, 0.59, 2.21, 2.18],
+      "rss_mb": [68.98, 69.18, 69.0, 18.64, 69.31, 69.32]
+    },
+    "zlib": {
+      "error": "Error on line 192: Object doesn't support this property or method",
+      "user": [0.6, 0.63],
+      "sys": [0.46, 0.31],
+      "real": [2.32, 2.54],
+      "rss_mb": [69.05, 69.09]
+    },
+    "CodeLoad": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.63, 0.61],
+      "sys": [0.42, 0.44],
+      "real": [2.33, 2.62],
+      "rss_mb": [69.31, 69.36]
+    },
+    "Crypto": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.59, 0.69, 0.61, 0.59],
+      "sys": [0.46, 0.46, 0.31, 0.44],
+      "real": [4.26, 2.53, 3.97, 2.53],
+      "rss_mb": [69.26, 69.12, 69.21, 69.1]
+    },
+    "DeltaBlue": {
+      "error": "Error on line 465: Object doesn't support this property or method",
+      "user": [0.58, 0.6, 0.58, 0.61, 0.63, 0.6],
+      "sys": [0.5, 0.41, 0.49, 0.44, 0.43, 0.46],
+      "real": [2.83, 2.17, 2.62, 2.17, 2.18, 2.42],
+      "rss_mb": [69.12, 69.09, 68.94, 69.11, 69.0, 69.13]
+    },
+    "Splay": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.61, 0.58, 0.02],
+      "sys": [0.26, 0.41, 0.05],
+      "real": [2.14, 1.51, 0.57],
+      "rss_mb": [69.11, 69.11, 17.15]
+    },
+    "SplayLatency": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.61, 0.58, 0.02],
+      "sys": [0.26, 0.41, 0.05],
+      "real": [2.14, 1.51, 0.57],
+      "rss_mb": [69.11, 69.11, 17.15]
+    },
+    "EarleyBoyer": {
+      "error": "Error on line 180: Object doesn't support this property or method",
+      "user": [0.62, 0.61],
+      "sys": [0.41, 0.45],
+      "real": [2.15, 2.55],
+      "rss_mb": [69.3, 69.12]
+    },
+    "Box2D": {
+      "error": "Error on line 487: Object doesn't support this property or method",
+      "user": [0.62, 0.61, 0.6],
+      "sys": [0.44, 0.46, 0.44],
+      "real": [2.39, 2.74, 2.36],
+      "rss_mb": [69.12, 69.33, 69.03]
+    },
+    "Mandreel": {
+      "error": "Error on line 600: 'Float64Array' is undefined",
+      "user": [0.7, 0.74],
+      "sys": [0.47, 0.48],
+      "real": [2.64, 2.58],
+      "rss_mb": [93.32, 93.47]
+    },
+    "MandreelLatency": {
+      "error": "Error on line 600: 'Float64Array' is undefined",
+      "user": [0.7, 0.74],
+      "sys": [0.47, 0.48],
+      "real": [2.64, 2.58],
+      "rss_mb": [93.32, 93.47]
+    }
+  }
+}

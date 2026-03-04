@@ -1,0 +1,135 @@
+{
+  "binary": "starlingmonkey",
+  "metadata": {
+    "arch": "arm64",
+    "console_log": "console.log",
+    "dist_size": 52786958,
+    "engine": "starlingmonkey",
+    "repository": "https://github.com/bytecodealliance/StarlingMonkey.git",
+    "revision": "d59111599472cf2cd921cde323847824bea4a8a8",
+    "revision_date": "2025-12-19",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "time": "2026-03-03 21:51:49.678514 UTC",
+  "benchmarks": {
+    "PdfJS": {
+      "score": [2282, 2286],
+      "user": [11.63, 11.19],
+      "sys": [0.26, 0.21],
+      "real": [5.78, 5.42],
+      "rss_mb": [453.49, 450.19]
+    },
+    "RayTrace": {
+      "score": [572],
+      "user": [13.95],
+      "sys": [0.23],
+      "real": [8.06],
+      "rss_mb": [453.06]
+    },
+    "Crypto": {
+      "score": [411, 410, 410, 410],
+      "user": [20.64, 20.58, 20.8, 20.75],
+      "sys": [0.18, 0.2, 0.22, 0.21],
+      "real": [14.78, 14.69, 14.76, 14.71],
+      "rss_mb": [398.82, 406.34, 449.5, 421.5]
+    },
+    "Box2D": {
+      "score": [1011, 1015, 1018, 1015, 1017],
+      "user": [13.01, 12.74, 12.48, 12.77, 12.55],
+      "sys": [0.21, 0.2, 0.18, 0.23, 0.23],
+      "real": [7.0, 7.0, 6.73, 7.09, 7.12],
+      "rss_mb": [428.42, 409.19, 399.36, 395.53, 422.86]
+    },
+    "zlib": {
+      "score": [710, 709, 709, 709],
+      "user": [223.58, 223.87, 224.08, 223.99],
+      "sys": [0.22, 0.22, 0.24, 0.25],
+      "real": [217.88, 218.04, 218.18, 218.14],
+      "rss_mb": [465.36, 484.28, 486.29, 508.36]
+    },
+    "CodeLoad": {
+      "score": [22591, 22074],
+      "user": [10.47, 10.63],
+      "sys": [0.24, 0.27],
+      "real": [4.58, 4.66],
+      "rss_mb": [496.14, 500.46]
+    },
+    "Typescript": {
+      "score": [3702, 3706, 3691, 3681, 3696, 3684],
+      "user": [42.82, 42.81, 43.08, 43.16, 42.92, 43.35],
+      "sys": [0.22, 0.27, 0.22, 0.23, 0.24, 0.22],
+      "real": [37.01, 37.25, 37.2, 37.29, 37.14, 37.29],
+      "rss_mb": [440.64, 465.24, 441.66, 462.49, 454.04, 420.83]
+    },
+    "DeltaBlue": {
+      "score": [183, 182, 183],
+      "user": [11.41, 11.64, 11.4],
+      "sys": [0.19, 0.2, 0.2],
+      "real": [5.59, 5.75, 5.64],
+      "rss_mb": [438.86, 394.43, 400.32]
+    },
+    "RegExp": {
+      "score": [341, 340, 341],
+      "user": [13.97, 14.35, 14.08],
+      "sys": [0.19, 0.24, 0.19],
+      "real": [8.19, 8.32, 8.29],
+      "rss_mb": [431.69, 405.8, 433.86]
+    },
+    "Mandreel": {
+      "error": "bad_optional_access was thrown in -fno-exceptions modeRedirecting call to abort() to mozalloc_abort",
+      "user": [8.86],
+      "sys": [0.21],
+      "real": [2.85],
+      "rss_mb": [418.1]
+    },
+    "MandreelLatency": {
+      "error": "bad_optional_access was thrown in -fno-exceptions modeRedirecting call to abort() to mozalloc_abort",
+      "user": [8.86],
+      "sys": [0.21],
+      "real": [2.85],
+      "rss_mb": [418.1]
+    },
+    "Gameboy": {
+      "score": [1524, 1524, 1524],
+      "user": [15.46, 15.27, 15.33],
+      "sys": [0.22, 0.19, 0.2],
+      "real": [9.55, 9.58, 9.47],
+      "rss_mb": [428.08, 414.36, 404.79]
+    },
+    "Splay": {
+      "error": "bad_optional_access was thrown in -fno-exceptions modeRedirecting call to abort() to mozalloc_abort",
+      "user": [8.57, 8.44],
+      "sys": [0.2, 0.18],
+      "real": [2.57, 2.58],
+      "rss_mb": [426.26, 390.55]
+    },
+    "SplayLatency": {
+      "error": "bad_optional_access was thrown in -fno-exceptions modeRedirecting call to abort() to mozalloc_abort",
+      "user": [8.57, 8.44],
+      "sys": [0.2, 0.18],
+      "real": [2.57, 2.58],
+      "rss_mb": [426.26, 390.55]
+    },
+    "Richards": {
+      "score": [178],
+      "user": [10.79],
+      "sys": [0.2],
+      "real": [4.69],
+      "rss_mb": [425.19]
+    },
+    "EarleyBoyer": {
+      "score": [825],
+      "user": [24.89],
+      "sys": [0.19],
+      "real": [19.21],
+      "rss_mb": [430.97]
+    },
+    "NavierStokes": {
+      "score": [666, 666, 666],
+      "user": [13.99, 14.05, 5.66],
+      "sys": [0.19, 0.19, 0.04],
+      "real": [8.18, 8.12, 5.71],
+      "rss_mb": [411.95, 417.85, 95.61]
+    }
+  }
+}

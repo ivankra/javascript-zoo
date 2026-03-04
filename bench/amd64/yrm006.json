@@ -1,0 +1,136 @@
+{
+  "binary": "yrm006",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "5bbb067491ec3c9ab3ce3c341b166c340609e97c19a5b4d5822338260cf26ced",
+    "binary_size": 51576,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
+    "engine": "yrm006",
+    "repository": "https://github.com/yrm006/miniscript.git",
+    "revision": "a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d",
+    "revision_date": "2018-08-29"
+  },
+  "time": "2026-03-03 20:43:12.437729 UTC",
+  "benchmarks": {
+    "Typescript": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.09, 0.08, 0.07, 0.07],
+      "rss_mb": [3.96, 4.02, 3.96, 4.02]
+    },
+    "Gameboy": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.12, 0.1],
+      "rss_mb": [1.95, 2.02]
+    },
+    "DeltaBlue": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.73]
+    },
+    "PdfJS": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.13],
+      "rss_mb": [3.16]
+    },
+    "NavierStokes": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.79, 1.61]
+    },
+    "Crypto": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.74, 1.74, 1.61, 1.61]
+    },
+    "EarleyBoyer": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.07],
+      "rss_mb": [1.58]
+    },
+    "RegExp": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.11, 0.08],
+      "rss_mb": [1.59, 1.73]
+    },
+    "Box2D": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.07, 0.07, 0.05, 0.11, 0.08],
+      "rss_mb": [1.75, 1.71, 1.71, 1.75, 1.72]
+    },
+    "RayTrace": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.64, 1.63, 1.79, 1.77]
+    },
+    "Richards": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.62, 1.69]
+    },
+    "Mandreel": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.08],
+      "rss_mb": [8.26]
+    },
+    "MandreelLatency": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.08],
+      "rss_mb": [8.26]
+    },
+    "Splay": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.63, 1.77]
+    },
+    "SplayLatency": {
+      "error": "Error: not found.('typeof')",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.63, 1.77]
+    },
+    "zlib": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.07, 0.09],
+      "rss_mb": [1.91, 1.86]
+    },
+    "CodeLoad": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.13],
+      "rss_mb": [1.57]
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "binary": "flathead",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "b01bd67cf2164f57e0fe1a54cdc276f0b4be2c6196857257149449697fcd11ba",
+    "binary_size": 212024,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "flathead",
+    "repository": "https://github.com/ndreynolds/flathead.git",
+    "revision": "0dcc9cbd0eafa93b4339c487e1b77f7134a2da65",
+    "revision_date": "2017-04-21"
+  },
+  "time": "2026-03-03 20:41:35.911359 UTC",
+  "benchmarks": {
+    "RegExp": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.2, 3.34, 3.26]
+    },
+    "DeltaBlue": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.34, 3.23, 3.16, 3.26]
+    },
+    "CodeLoad": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.18, 3.25, 3.19, 3.13, 3.26, 3.2]
+    },
+    "zlib": {
+      "error": "SyntaxError: unexpected FUNCTION",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.11, 3.16, 2.95]
+    },
+    "Typescript": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.14, 3.3, 3.13]
+    },
+    "Crypto": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.23, 3.14, 3.16]
+    },
+    "Box2D": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.21, 3.25, 3.23]
+    },
+    "NavierStokes": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.25, 3.2, 3.1, 3.24]
+    },
+    "Splay": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.26, 3.25, 3.2, 3.34]
+    },
+    "SplayLatency": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.26, 3.25, 3.2, 3.34]
+    },
+    "Gameboy": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.37, 3.18]
+    },
+    "RayTrace": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.16, 3.29]
+    },
+    "EarleyBoyer": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.32, 3.17, 3.34, 3.14, 3.25]
+    },
+    "PdfJS": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [3.16]
+    },
+    "Richards": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.33, 3.39]
+    },
+    "Mandreel": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.01, 0.0, 0.0],
+      "rss_mb": [3.16, 3.19, 3.21]
+    },
+    "MandreelLatency": {
+      "error": "SyntaxError: unexpected FUNCTION, expecting ';' or ','",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.01, 0.0, 0.0],
+      "rss_mb": [3.16, 3.19, 3.21]
+    }
+  }
+}

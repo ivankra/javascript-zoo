@@ -1,0 +1,106 @@
+{
+  "binary": "syoyo",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "77bde4f707543272e571911fd9b76d37157fc9ed18f28a79873243091841e983",
+    "binary_size": 4724328,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "console.log",
+    "engine": "syoyo",
+    "repository": "https://github.com/syoyo/lightjs.git",
+    "revision": "53dea0185da5604674ab5a415a1f213304474b4b",
+    "revision_date": "2026-02-28"
+  },
+  "time": "2026-03-03 21:38:40.919813 UTC, 2026-03-03 21:42:36.767827 UTC",
+  "benchmarks": {
+    "RayTrace": {
+      "error": "RayTrace: TypeError: Cannot read properties of undefined (reading 'cross') ",
+      "user": [0.02, 0.02, 0.02],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.03, 0.03, 0.03],
+      "rss_mb": [9.36, 9.36, 9.04]
+    },
+    "NavierStokes": {
+      "error": "Timeout (>900s)"
+    },
+    "Box2D": {
+      "error": "Parse error in file 'box2d.js'",
+      "user": [0.13, 0.13, 0.12, 0.13, 0.12],
+      "sys": [0.0, 0.0, 0.01, 0.0, 0.01],
+      "real": [0.13, 0.14, 0.14, 0.13, 0.14],
+      "rss_mb": [24.64, 24.64, 24.19, 24.55, 24.64]
+    },
+    "Mandreel": {
+      "error": "Mandreel: TypedArrayUnsupported ",
+      "user": [3.28, 3.28, 3.29, 3.26, 3.26],
+      "sys": [0.16, 0.15, 0.15, 0.16, 0.18],
+      "real": [3.45, 3.43, 3.45, 3.43, 3.45],
+      "rss_mb": [440.42, 440.41, 440.41, 440.4, 440.41]
+    },
+    "MandreelLatency": {
+      "error": "Mandreel: TypedArrayUnsupported ",
+      "user": [3.28, 3.28, 3.29, 3.26, 3.26],
+      "sys": [0.16, 0.15, 0.15, 0.16, 0.18],
+      "real": [3.45, 3.43, 3.45, 3.43, 3.45],
+      "rss_mb": [440.42, 440.41, 440.41, 440.4, 440.41]
+    },
+    "RegExp": {
+      "error": "Parse error in file 'regexp.js'",
+      "user": [0.02, 0.02],
+      "sys": [0.0, 0.0],
+      "real": [0.03, 0.03],
+      "rss_mb": [9.22, 9.23]
+    },
+    "PdfJS": {
+      "error": "PdfJS: TypedArrayUnsupported ",
+      "user": [0.99, 0.99, 1.0, 0.98],
+      "sys": [0.04, 0.04, 0.03, 0.03],
+      "real": [1.04, 1.03, 1.04, 1.02],
+      "rss_mb": [103.83, 103.82, 103.84, 103.83]
+    },
+    "Splay": {
+      "error": "Timeout (>900s)"
+    },
+    "SplayLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "DeltaBlue": {
+      "error": "DeltaBlue: TypeError: Cannot read properties of null (reading 'addConstraint') ",
+      "user": [0.01, 0.02, 0.02],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.03, 0.02, 0.02],
+      "rss_mb": [8.73, 8.84, 8.86]
+    },
+    "Gameboy": {
+      "error": "Parse error in file 'gbemu.js'",
+      "user": [0.13, 0.13, 0.13, 0.13],
+      "sys": [0.01, 0.01, 0.0, 0.0],
+      "real": [0.15, 0.15, 0.14, 0.14],
+      "rss_mb": [24.31, 23.98, 24.22, 24.31]
+    },
+    "CodeLoad": {
+      "error": "CodeLoad: TypeError: Function is not a constructor ",
+      "user": [0.01, 0.01],
+      "sys": [0.0, 0.0],
+      "real": [0.02, 0.02],
+      "rss_mb": [9.33, 9.31]
+    },
+    "zlib": {
+      "error": "zlib: Error: Invalid numeric literal ",
+      "user": [0.02, 0.02, 0.02],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.02, 0.03, 0.03],
+      "rss_mb": [10.3, 10.3, 10.3]
+    },
+    "Richards": {
+      "error": "Richards: TypeError: Cannot read properties of null (reading 'link') ",
+      "user": [0.02, 0.02],
+      "sys": [0.0, 0.0],
+      "real": [0.02, 0.02],
+      "rss_mb": [8.46, 8.46]
+    },
+    "EarleyBoyer": {
+      "error": "Timeout (>900s)"
+    }
+  }
+}

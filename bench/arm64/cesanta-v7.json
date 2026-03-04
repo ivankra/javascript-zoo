@@ -2,22 +2,23 @@
   "binary": "cesanta-v7",
   "metadata": {
     "arch": "arm64",
-    "binary_sha256": "c51b9d860c1bf5659f060deff9e9fed428ddf0022e47ccde0cb0bdbc7cba0896",
-    "binary_size": 400040,
-    "cc": "gcc 16.0.0 20251210 (experimental) [master r16-6010-g9748d369e2c] (Debian 16-20251210-1)",
+    "binary_sha256": "39ec8356aa0038ef1dffbc73ab81554316a11bc14620feed52db457248b99ae2",
+    "binary_size": 400080,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
     "engine": "cesanta-v7",
     "repository": "https://github.com/cesanta/v7.git",
     "revision": "ce5212ae42dfd93247c56fbc233f65367e9def27",
     "revision_date": "2017-08-26"
   },
-  "time": "2025-12-24 05:09:42.012673 UTC",
+  "time": "2026-03-04 01:28:22.387693 UTC",
   "benchmarks": {
     "Richards": {
-      "score": [11.64, 11.77, 9.066, 8.442, 11.42, 10.72, 4.938, 4.952, 5.175, 5.173, 5.531, 5.554],
-      "user": [11.97, 11.84, 13.39, 14.93, 11.91, 12.17, 25.23, 24.44, 22.48, 23.31, 22.49, 23.07],
-      "sys": [0.0, 0.0, 0.01, 0.01, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-      "real": [10.78, 11.97, 13.56, 14.84, 12.08, 12.27, 25.42, 24.65, 22.95, 23.63, 21.54, 22.11],
-      "rss_mb": [1.77, 1.93, 1.98, 1.93, 2.01, 2.01, 2.13, 2.01, 2.13, 2.13, 2.13, 2.01]
+      "score": [3.419],
+      "user": [35.43],
+      "sys": [0.0],
+      "real": [35.43],
+      "rss_mb": [1.98]
     }
   }
 }

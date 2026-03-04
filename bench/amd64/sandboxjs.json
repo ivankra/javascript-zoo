@@ -1,0 +1,135 @@
+{
+  "binary": "sandboxjs",
+  "metadata": {
+    "arch": "amd64",
+    "console_log": "console.log",
+    "dist_size": 134799,
+    "engine": "sandboxjs",
+    "repository": "https://github.com/nyariv/SandboxJS.git",
+    "revision": "a6816b2b5b9c2dada624910e2f05a36f4c6c3712",
+    "revision_date": "2026-02-14",
+    "version": "0.8.33"
+  },
+  "time": "2026-03-03 20:42:33.392248 UTC, 2026-03-03 21:05:00.083379 UTC",
+  "benchmarks": {
+    "Gameboy": {
+      "error": "        throw err.error;",
+      "user": [0.29, 0.32, 0.29, 0.28, 0.3, 0.31],
+      "sys": [0.03, 0.03, 0.03, 0.03, 0.03, 0.03],
+      "real": [0.2, 0.22, 0.21, 0.2, 0.21, 0.21],
+      "rss_mb": [87.0, 88.48, 86.82, 87.29, 87.75, 83.51]
+    },
+    "Crypto": {
+      "error": "        throw err.error;",
+      "user": [0.18, 0.17, 0.18, 0.18, 0.17, 0.16, 0.17, 0.18, 0.18],
+      "sys": [0.02, 0.02, 0.02, 0.03, 0.02, 0.02, 0.01, 0.02, 0.02],
+      "real": [0.12, 0.12, 0.12, 0.2, 0.12, 0.12, 0.12, 0.12, 0.12],
+      "rss_mb": [66.2, 66.03, 66.12, 64.8, 66.41, 66.25, 65.95, 64.61, 66.15]
+    },
+    "DeltaBlue": {
+      "error": "        throw err.error;",
+      "user": [0.09, 0.08, 0.08],
+      "sys": [0.01, 0.01, 0.01],
+      "real": [0.07, 0.07, 0.07],
+      "rss_mb": [61.09, 61.4, 61.25]
+    },
+    "CodeLoad": {
+      "error": "        throw err.error;",
+      "user": [0.09, 0.09, 0.09, 0.08, 0.09],
+      "sys": [0.02, 0.01, 0.01, 0.02, 0.02],
+      "real": [0.07, 0.07, 0.07, 0.07, 0.07],
+      "rss_mb": [61.42, 60.92, 60.8, 60.84, 61.52]
+    },
+    "RegExp": {
+      "error": "        throw err.error;",
+      "user": [0.14, 0.19, 0.17, 0.14, 0.13],
+      "sys": [0.02, 0.03, 0.04, 0.03, 0.02],
+      "real": [0.1, 0.11, 0.22, 0.1, 0.1],
+      "rss_mb": [67.3, 70.82, 68.43, 67.64, 69.45]
+    },
+    "Box2D": {
+      "error": "        throw err.error;",
+      "user": [0.15],
+      "sys": [0.02],
+      "real": [0.12],
+      "rss_mb": [75.01]
+    },
+    "PdfJS": {
+      "error": "        throw err.error;",
+      "user": [0.31, 0.31, 0.32, 0.31],
+      "sys": [0.05, 0.05, 0.06, 0.06],
+      "real": [0.3, 0.3, 0.31, 0.3],
+      "rss_mb": [139.4, 138.45, 139.42, 136.9]
+    },
+    "EarleyBoyer": {
+      "error": "          throw new SyntaxError(\"Octal Deprecation: \" + octal);",
+      "user": [0.05, 0.04, 0.04],
+      "sys": [0.01, 0.01, 0.01],
+      "real": [0.05, 0.04, 0.04],
+      "rss_mb": [55.11, 55.34, 55.09]
+    },
+    "Mandreel": {
+      "error": "        throw err.error;",
+      "user": [5.21, 5.02],
+      "sys": [0.28, 0.29],
+      "real": [4.79, 4.65],
+      "rss_mb": [528.47, 529.1]
+    },
+    "MandreelLatency": {
+      "error": "        throw err.error;",
+      "user": [5.21, 5.02],
+      "sys": [0.28, 0.29],
+      "real": [4.79, 4.65],
+      "rss_mb": [528.47, 529.1]
+    },
+    "Typescript": {
+      "error": "        throw err.error;",
+      "user": [0.37, 0.39, 0.4],
+      "sys": [0.05, 0.06, 0.07],
+      "real": [0.36, 0.38, 0.4],
+      "rss_mb": [145.32, 144.82, 146.84]
+    },
+    "RayTrace": {
+      "error": "        throw err.error;",
+      "user": [0.09, 0.1],
+      "sys": [0.01, 0.03],
+      "real": [0.08, 0.19],
+      "rss_mb": [60.87, 59.67]
+    },
+    "NavierStokes": {
+      "error": "        throw err.error;",
+      "user": [0.08, 0.07, 0.07],
+      "sys": [0.02, 0.01, 0.01],
+      "real": [0.07, 0.06, 0.06],
+      "rss_mb": [60.34, 60.13, 59.94]
+    },
+    "Richards": {
+      "error": "        throw err.error;",
+      "user": [0.07, 0.07, 0.08, 0.07],
+      "sys": [0.02, 0.02, 0.01, 0.01],
+      "real": [0.06, 0.06, 0.06, 0.06],
+      "rss_mb": [58.77, 60.34, 58.69, 59.18]
+    },
+    "zlib": {
+      "error": "        throw err.error;",
+      "user": [0.09, 0.1],
+      "sys": [0.02, 0.02],
+      "real": [0.08, 0.08],
+      "rss_mb": [68.8, 66.57]
+    },
+    "Splay": {
+      "error": "        throw err.error;",
+      "user": [0.06],
+      "sys": [0.02],
+      "real": [0.06],
+      "rss_mb": [57.95]
+    },
+    "SplayLatency": {
+      "error": "        throw err.error;",
+      "user": [0.06],
+      "sys": [0.02],
+      "real": [0.06],
+      "rss_mb": [57.95]
+    }
+  }
+}

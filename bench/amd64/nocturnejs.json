@@ -1,0 +1,113 @@
+{
+  "binary": "nocturnejs",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "91487667a8ed1f2d00ead30418ef830b535c089e6d20e075fe65a73094519e4e",
+    "binary_size": 6753064,
+    "console_log": "print",
+    "engine": "nocturnejs",
+    "repository": "https://github.com/Lampese/NocturneJS.git",
+    "revision": "a418a962bdeb2933bbb4ff08788e2a7e3b12d5ea",
+    "revision_date": "2026-01-30"
+  },
+  "time": "2026-03-03 21:01:53.325972 UTC",
+  "benchmarks": {
+    "Gameboy": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [6.75, 6.76, 6.78, 6.77, 6.75],
+      "sys": [6.47, 6.35, 6.06, 6.37, 6.15],
+      "real": [35.91, 28.78, 24.26, 27.75, 26.73],
+      "rss_mb": [1562.02, 1561.8, 1561.89, 1562.09, 1562.07]
+    },
+    "Mandreel": {
+      "error": "Timeout (>900s)"
+    },
+    "MandreelLatency": {
+      "error": "Timeout (>900s)"
+    },
+    "CodeLoad": {
+      "score": [442, 564],
+      "user": [8.53, 8.27],
+      "sys": [0.01, 0.01],
+      "real": [8.55, 8.29],
+      "rss_mb": [166.31, 160.51]
+    },
+    "zlib": {
+      "error": "Timeout (>900s)"
+    },
+    "EarleyBoyer": {
+      "error": "Timeout (>900s)"
+    },
+    "Box2D": {
+      "error": "Timeout (>900s)",
+      "score": [5.18],
+      "user": [838.47],
+      "sys": [0.68],
+      "real": [839.29],
+      "rss_mb": [268.88]
+    },
+    "PdfJS": {
+      "error": "(while reading XRef): ReferenceError: undefined variable",
+      "user": [20.93, 19.45],
+      "sys": [0.08, 0.06],
+      "real": [21.01, 19.52],
+      "rss_mb": [214.5, 214.55]
+    },
+    "Richards": {
+      "score": [0.338, 0.415, 0.351],
+      "user": [336.66, 274.79, 325.31],
+      "sys": [0.03, 0.03, 0.03],
+      "real": [336.74, 274.85, 325.37],
+      "rss_mb": [257.58, 257.59, 257.46]
+    },
+    "Splay": {
+      "score": [2.02, 1.95],
+      "user": [489.34, 490.8],
+      "sys": [0.31, 0.31],
+      "real": [489.7, 491.16],
+      "rss_mb": [933.68, 934.16]
+    },
+    "SplayLatency": {
+      "score": [4.77, 4.68],
+      "user": [489.34, 490.8],
+      "sys": [0.31, 0.31],
+      "real": [489.7, 491.16],
+      "rss_mb": [933.68, 934.16]
+    },
+    "RayTrace": {
+      "error": "Timeout (>900s)"
+    },
+    "NavierStokes": {
+      "error": "Timeout (>900s)",
+      "score": [3.36],
+      "user": [757.23],
+      "sys": [0.01],
+      "real": [757.3],
+      "rss_mb": [28.29]
+    },
+    "Typescript": {
+      "error": "Timeout (>900s)"
+    },
+    "Crypto": {
+      "error": "Killed by signal 11 (SIGSEGV)",
+      "user": [0.45, 0.44, 0.45],
+      "sys": [1.01, 1.04, 1.02],
+      "real": [2.66, 2.69, 2.74],
+      "rss_mb": [49.23, 49.15, 49.09]
+    },
+    "RegExp": {
+      "score": [2.47, 2.52],
+      "user": [666.07, 654.09],
+      "sys": [0.06, 0.09],
+      "real": [666.2, 654.24],
+      "rss_mb": [265.73, 265.52]
+    },
+    "DeltaBlue": {
+      "score": [0.468, 0.466, 0.492],
+      "user": [461.9, 464.42, 438.95],
+      "sys": [0.24, 0.24, 0.18],
+      "real": [462.2, 464.71, 439.17],
+      "rss_mb": [259.61, 259.61, 259.67]
+    }
+  }
+}

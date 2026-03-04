@@ -1,0 +1,15 @@
+{
+  "binary": "lebjs",
+  "metadata": {
+    "arch": "arm64",
+    "console_log": "console.log",
+    "dist_size": 410699,
+    "engine": "lebjs",
+    "jdk": "openjdk version \"25.0.2\" 2026-01-20",
+    "repository": "https://github.com/LebsterFace/LebJS.git",
+    "revision": "7b5db4a32e9d97b6881452da59f363f514e61b76",
+    "revision_date": "2025-08-14"
+  },
+  "time": "2026-03-04 02:09:07.670603 UTC",
+  "benchmarks": {}
+}

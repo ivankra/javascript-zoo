@@ -1,0 +1,136 @@
+{
+  "binary": "echosoar",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "65040b90781acce45115dd1ed53807d2d0224c535368d725ab59a7ca7e1b52d6",
+    "binary_size": 1081000,
+    "console_log": "console.log",
+    "engine": "echosoar",
+    "repository": "https://github.com/echosoar/jsi.git",
+    "revision": "b164beb25bcb74c33d8541e8097c918d5271f698",
+    "revision_date": "2026-01-06",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "time": "2026-03-03 20:53:38.538427 UTC",
+  "benchmarks": {
+    "Crypto": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.04, 3.04]
+    },
+    "EarleyBoyer": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.65, 3.75, 3.62, 3.65, 3.5, 3.71, 3.66]
+    },
+    "Box2D": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.67, 3.82, 3.72]
+    },
+    "Gameboy": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [5.03, 5.09]
+    },
+    "zlib": {
+      "error": "zlib.js: JSIError { error_type: SyntaxError, message: \"Unexpected token Slash\", line: 0, column: 0, value: None }",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.61, 3.58]
+    },
+    "RegExp": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.55, 3.49, 3.46]
+    },
+    "RayTrace": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.11, 2.95, 3.12, 3.17, 3.05]
+    },
+    "Splay": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.07, 3.0]
+    },
+    "SplayLatency": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.07, 3.0]
+    },
+    "DeltaBlue": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.11, 3.16]
+    },
+    "PdfJS": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [9.57, 9.59]
+    },
+    "Richards": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [2.97, 3.27, 2.8, 3.04]
+    },
+    "CodeLoad": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [3.44]
+    },
+    "Mandreel": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [26.3]
+    },
+    "MandreelLatency": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.01],
+      "rss_mb": [26.3]
+    },
+    "NavierStokes": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [2.88]
+    },
+    "Typescript": {
+      "error": "Error: \"Illegal hex characters\"",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [14.6]
+    }
+  }
+}

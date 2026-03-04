@@ -1,0 +1,136 @@
+{
+  "binary": "stackluca",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "aba513f752ee1c0f2c053216d5567a1477415fe4f5df2d829ddbc573fa8d8a35",
+    "binary_size": 134568,
+    "cc": "gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)",
+    "console_log": "print",
+    "engine": "stackluca",
+    "repository": "https://github.com/stackluca/v3.git",
+    "revision": "487412fbb8d2c11b3a6faf2047c0c677689c6751",
+    "revision_date": "2016-05-21"
+  },
+  "time": "2026-03-03 21:31:29.189681 UTC",
+  "benchmarks": {
+    "RayTrace": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.54, 1.54, 1.54, 1.54]
+    },
+    "Typescript": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [3.77]
+    },
+    "Mandreel": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [6.09, 6.15]
+    },
+    "MandreelLatency": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [6.09, 6.15]
+    },
+    "zlib": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.66, 1.66, 1.55]
+    },
+    "Richards": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.54, 1.54, 1.54, 1.57]
+    },
+    "Gameboy": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.91, 1.91]
+    },
+    "EarleyBoyer": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.66, 1.7, 1.66]
+    },
+    "PdfJS": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [2.79, 2.79, 2.79, 2.79]
+    },
+    "RegExp": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [1.66, 1.65, 1.66, 1.66]
+    },
+    "Crypto": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.54, 1.54]
+    },
+    "Box2D": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [1.64, 1.66]
+    },
+    "NavierStokes": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.54, 1.52, 1.54]
+    },
+    "CodeLoad": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.65]
+    },
+    "Splay": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.52, 1.54, 1.52]
+    },
+    "SplayLatency": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [1.52, 1.54, 1.52]
+    },
+    "DeltaBlue": {
+      "error": " error_code:-3(unexpected token) index:0, token:if ",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [1.54]
+    }
+  }
+}

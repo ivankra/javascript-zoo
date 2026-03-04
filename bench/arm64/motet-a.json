@@ -1,0 +1,135 @@
+{
+  "binary": "motet-a",
+  "metadata": {
+    "arch": "arm64",
+    "binary_sha256": "35423b6df7fcf0a77670b23f70b8272b52781a89e4ba798a5fb7c4731dabd4a3",
+    "binary_size": 95704,
+    "console_log": "print",
+    "engine": "motet-a",
+    "repository": "https://github.com/motet-a/toy.git",
+    "revision": "c842ba34240e4b79922b60e970c6f084af8d1ba9",
+    "revision_date": "2019-04-12"
+  },
+  "time": "2026-03-03 22:20:56.217309 UTC",
+  "benchmarks": {
+    "Box2D": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.36, 4.43, 4.37, 4.43]
+    },
+    "Typescript": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.41, 4.39, 4.34, 4.36, 4.38, 4.26]
+    },
+    "Gameboy": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.37, 4.31, 4.41, 4.43]
+    },
+    "EarleyBoyer": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.43, 4.43, 4.32]
+    },
+    "RayTrace": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.6, 3.59, 3.6, 3.64]
+    },
+    "zlib": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.37, 4.36]
+    },
+    "CodeLoad": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.41, 4.43, 4.37, 4.36, 4.41]
+    },
+    "NavierStokes": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.04, 3.09, 3.04, 3.1]
+    },
+    "Mandreel": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.37]
+    },
+    "MandreelLatency": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.37]
+    },
+    "Crypto": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.41, 4.37, 4.36, 4.43, 4.43]
+    },
+    "Richards": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.16, 3.16]
+    },
+    "DeltaBlue": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [3.47, 3.47, 3.47, 3.52, 3.46, 3.47]
+    },
+    "RegExp": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.43, 4.43]
+    },
+    "Splay": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.04, 3.09, 3.09]
+    },
+    "SplayLatency": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.04, 3.09, 3.09]
+    },
+    "PdfJS": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [4.43, 4.37, 4.45]
+    }
+  }
+}

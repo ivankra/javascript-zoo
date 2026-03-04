@@ -1,0 +1,116 @@
+{
+  "binary": "ssrlive",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "7ecdc1454420562d9ed4e8af15d5c0ee196190a6e9844680d74bcf1587e86439",
+    "binary_size": 11364848,
+    "console_log": "console.log",
+    "engine": "ssrlive",
+    "repository": "https://github.com/ssrlive/javascript.git",
+    "revision": "0c723d6ae3f82b91e6f498b92eb60d9340dd9e45",
+    "revision_date": "2026-03-03",
+    "rustc": "rustc 1.93.1 (01f6ddf75 2026-02-11)"
+  },
+  "time": "2026-03-03 20:45:33.128829 UTC",
+  "benchmarks": {
+    "zlib": {
+      "error": "zlib: SyntaxError: Unexpected token",
+      "user": [0.06, 0.06, 0.05],
+      "sys": [0.0, 0.0, 0.01],
+      "real": [0.07, 0.07, 0.08],
+      "rss_mb": [25.9, 26.0, 25.53]
+    },
+    "Gameboy": {
+      "error": "Gameboy: TypeError: Cannot assign to property of non-object",
+      "user": [12.25, 12.73, 12.86, 12.72, 13.0, 13.12],
+      "sys": [1.0, 0.88, 0.82, 0.91, 0.86, 0.87],
+      "real": [13.26, 13.63, 13.69, 13.67, 13.87, 14.0],
+      "rss_mb": [1771.89, 1771.47, 1772.08, 1770.79, 1772.02, 1771.71]
+    },
+    "EarleyBoyer": {
+      "error": "SyntaxError: Unexpected token",
+      "user": [0.02, 0.02, 0.02],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.03, 0.03, 0.03],
+      "rss_mb": [10.93, 10.97, 10.98]
+    },
+    "RayTrace": {
+      "error": "Timeout (>900s)"
+    },
+    "Mandreel": {
+      "error": "SyntaxError: Unexpected token",
+      "user": [0.71, 0.71, 0.76],
+      "sys": [0.02, 0.03, 0.03],
+      "real": [0.74, 0.74, 0.79],
+      "rss_mb": [157.58, 156.42, 157.95]
+    },
+    "MandreelLatency": {
+      "error": "SyntaxError: Unexpected token",
+      "user": [0.71, 0.71, 0.76],
+      "sys": [0.02, 0.03, 0.03],
+      "real": [0.74, 0.74, 0.79],
+      "rss_mb": [157.58, 156.42, 157.95]
+    },
+    "Crypto": {
+      "error": "Timeout (>900s)"
+    },
+    "DeltaBlue": {
+      "error": "Timeout (>900s)"
+    },
+    "CodeLoad": {
+      "error": "CodeLoad: SyntaxError: Unexpected token",
+      "user": [0.06, 0.06, 0.06],
+      "sys": [0.01, 0.01, 0.0],
+      "real": [0.07, 0.07, 0.07],
+      "rss_mb": [18.8, 18.74, 18.46]
+    },
+    "Box2D": {
+      "error": "thread '<unnamed>' (164) panicked at src/core/value.rs:2239:9:",
+      "user": [0.24, 0.24, 0.23],
+      "sys": [0.04, 0.04, 0.05],
+      "real": [0.28, 0.29, 0.28],
+      "rss_mb": [57.86, 58.38, 57.3]
+    },
+    "NavierStokes": {
+      "error": "SyntaxError: Unexpected token",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [7.34, 7.3, 7.2]
+    },
+    "Splay": {
+      "score": [9.17, 9.24, 9.24],
+      "user": [88.18, 87.81, 88.08],
+      "sys": [11.81, 11.79, 11.84],
+      "real": [100.11, 99.71000000000001, 100.00999999999999],
+      "rss_mb": [11801.11, 11801.33, 11800.63]
+    },
+    "SplayLatency": {
+      "score": [94.8, 95.3, 95.3],
+      "user": [88.18, 87.81, 88.08],
+      "sys": [11.81, 11.79, 11.84],
+      "real": [100.11, 99.71000000000001, 100.00999999999999],
+      "rss_mb": [11801.11, 11801.33, 11800.63]
+    },
+    "Typescript": {
+      "error": "Timeout (>900s)"
+    },
+    "RegExp": {
+      "error": "Timeout (>900s)"
+    },
+    "PdfJS": {
+      "error": "SyntaxError: Unterminated regex literal",
+      "user": [0.08, 0.08],
+      "sys": [0.01, 0.01],
+      "real": [0.09, 0.1],
+      "rss_mb": [29.0, 30.67]
+    },
+    "Richards": {
+      "score": [0.558, 0.556],
+      "user": [202.61, 203.03],
+      "sys": [12.16, 12.41],
+      "real": [214.87, 215.55],
+      "rss_mb": [11934.38, 11934.41]
+    }
+  }
+}

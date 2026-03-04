@@ -1,0 +1,135 @@
+{
+  "binary": "motet-a",
+  "metadata": {
+    "arch": "amd64",
+    "binary_sha256": "5f0717c3dde68da627c278001529e823daef2b0991ce286fceeed5b66c4a82c1",
+    "binary_size": 105480,
+    "console_log": "print",
+    "engine": "motet-a",
+    "repository": "https://github.com/motet-a/toy.git",
+    "revision": "c842ba34240e4b79922b60e970c6f084af8d1ba9",
+    "revision_date": "2019-04-12"
+  },
+  "time": "2026-03-03 20:42:05.167217 UTC, 2026-03-03 21:11:39.507328 UTC",
+  "benchmarks": {
+    "Splay": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.28, 3.25]
+    },
+    "SplayLatency": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [3.28, 3.25]
+    },
+    "DeltaBlue": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.65, 3.71, 3.7]
+    },
+    "CodeLoad": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.55, 4.54, 4.55, 4.7, 4.55]
+    },
+    "zlib": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.7]
+    },
+    "PdfJS": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.55, 4.56]
+    },
+    "Richards": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.41, 3.57, 3.57]
+    },
+    "Mandreel": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.7, 4.66, 4.66, 4.69]
+    },
+    "MandreelLatency": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.7, 4.66, 4.66, 4.69]
+    },
+    "Crypto": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.69, 4.65]
+    },
+    "RegExp": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.58, 4.7, 4.59, 4.71]
+    },
+    "Gameboy": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.66, 4.68, 4.71, 4.66, 4.7]
+    },
+    "Typescript": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+      "rss_mb": [4.73, 4.7, 4.68, 4.69, 4.59, 4.65]
+    },
+    "NavierStokes": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [3.38]
+    },
+    "RayTrace": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0, 0.0],
+      "sys": [0.0, 0.0, 0.0],
+      "real": [0.0, 0.0, 0.0],
+      "rss_mb": [3.88, 3.92, 3.91]
+    },
+    "Box2D": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0, 0.0],
+      "sys": [0.0, 0.0],
+      "real": [0.0, 0.0],
+      "rss_mb": [4.71, 4.68]
+    },
+    "EarleyBoyer": {
+      "error": "fatal: syntax error (line 1)",
+      "user": [0.0],
+      "sys": [0.0],
+      "real": [0.0],
+      "rss_mb": [4.69]
+    }
+  }
+}
