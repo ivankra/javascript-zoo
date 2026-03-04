@@ -66,27 +66,28 @@ build: $(IID_DIR)/jsz-$(1)
 $(IID_DIR)/jsz-$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(3))
 	bash "$(ROOT_DIR)/build/build.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
 
-# rev / <name>-rev: print resolved REPO/REV that would be built (without building)
-rev: $(1)-rev
+# rev / rev-<name>: print resolved REPO/REV that would be built (without building)
+rev: rev-$(1)
 
-$(1)-rev:
+rev-$(1):
 	@bash "$(ROOT_DIR)/build/build.sh" --print-rev $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
 
-# dist: copy build artifacts out of docker image
+# dist / dist-<name>: copy build artifacts out of docker image(s)
 dist: $(call dist_json_path,$(1))
+dist-$(1): $(call dist_json_path,$(1))
 
 $(call dist_json_path,$(1)): $(IID_DIR)/jsz-$(1)
 	bash "$(ROOT_DIR)/build/dist.sh" "$(1)"
 
-# <name>-sh: start shell in the built image
-$(1)-sh: $(IID_DIR)/jsz-$(1)
+# sh-<name>: start shell in the built image
+sh-$(1) $(1)-sh: $(IID_DIR)/jsz-$(1)
 	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  jsz-$(1):$(DOCKER_ARCH)
 
 # sh: start shell in the main image in leaf directory
-$(if $(filter $(PROJECT),$(1)),sh: $(1)-sh)
+$(if $(filter $(PROJECT),$(1)),sh: sh-$(1))
 
 # conformance: run engine on conformance test suite inside test container
 # conformance-direct: run conformance testing command directly on host without launching a test container
@@ -105,7 +106,7 @@ conformance-direct:
 .PHONY: conformance conformance-direct conformance.txt
 )
 
-.PHONY: all build dist rev sh $(1) $(1)-rev $(1)-sh
+.PHONY: all build dist rev sh $(1) dist-$(1) rev-$(1) sh-$(1) $(1)-sh
 )
 endef
 
@@ -122,12 +123,12 @@ $(IID_DIR)/$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CUR
 	bash "$(ROOT_DIR)/build/build.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(3)
 
 # Start bash in the built image
-$(1)-sh: $(IID_DIR)/$(1)
+$(1)-sh sh-$(1): $(IID_DIR)/$(1)
 	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  $(1):$(DOCKER_ARCH) \
 	  $(if $(filter jsz-runtime,$(1)),sh -c 'cd /dist; bash -i')
 
-.PHONY: all $(1) $(1)-sh
+.PHONY: all $(1) $(1)-sh sh-$(1)
 endef
