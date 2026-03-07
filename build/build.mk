@@ -81,7 +81,7 @@ $(call dist_json_path,$(1)): $(IID_DIR)/jsz-$(1)
 
 # sh-<name>: start shell in the built image
 sh-$(1) $(1)-sh: $(IID_DIR)/jsz-$(1)
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
+	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  jsz-$(1):$(DOCKER_ARCH)
@@ -93,7 +93,7 @@ $(if $(filter $(PROJECT),$(1)),sh: sh-$(1))
 # conformance-direct: run conformance testing command directly on host without launching a test container
 $(if $(and $(filter engines,$(GROUP)),$(filter $(CONFORMANCE_BINARY),$(1)),$(strip $(CONFORMANCE_CMD))),
 conformance conformance.txt: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
+	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
 	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
 	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
 	  -w "$(CURDIR)" \
@@ -124,7 +124,7 @@ $(IID_DIR)/$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CUR
 
 # Start bash in the built image
 $(1)-sh sh-$(1): $(IID_DIR)/$(1)
-	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it \
+	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  $(1):$(DOCKER_ARCH) \
