@@ -396,6 +396,13 @@ def _has_line_with_substring(text: str, needle: str) -> bool:
     return any(needle in line for line in text.splitlines())
 
 
+def _decode_engine_output(data: bytes) -> tuple[str, str | None]:
+    try:
+        return data.decode("utf-8"), None
+    except UnicodeDecodeError:
+        return data.decode("utf-8", errors="replace"), repr(data[:200])
+
+
 def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Path) -> subprocess.CompletedProcess:
     cmd_prefix = run_script_cmd if run_script_cmd else "$BINARY"
     file_args = " ".join(f'"{f}"' for f in script_files)
@@ -404,14 +411,22 @@ def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Pa
     env = os.environ.copy()
     env["BINARY"] = str(binary_path)
 
-    return subprocess.run(
+    proc = subprocess.run(
         ["bash", "-c", full_cmd],
-        text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         env=env,
         check=False,
     )
+    stdout_bytes = proc.stdout
+    stderr_bytes = proc.stderr
+    stdout_text, stdout_decode_error = _decode_engine_output(stdout_bytes)
+    stderr_text, stderr_decode_error = _decode_engine_output(stderr_bytes)
+    proc.stdout = stdout_text
+    proc.stderr = stderr_text
+    proc.jsz_stdout_decode_error = stdout_decode_error
+    proc.jsz_stderr_decode_error = stderr_decode_error
+    return proc
 
 
 def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) -> str:
@@ -487,7 +502,16 @@ def run_smoke_test(binary_path: Path) -> None:
 
         output = proc.stdout + proc.stderr
         if not _has_line_with_substring(output, test_output):
-            fail(f"smoke test failed for {binary_path}: {script_src.strip()!r} produced {output!r}")
+            diag = []
+            if proc.jsz_stdout_decode_error is not None:
+                diag.append(f"stdout_bytes={proc.jsz_stdout_decode_error}")
+            if proc.jsz_stderr_decode_error is not None:
+                diag.append(f"stderr_bytes={proc.jsz_stderr_decode_error}")
+            suffix = f" ({', '.join(diag)})" if diag else ""
+            fail(
+                f"smoke test failed for {binary_path}: {script_src.strip()!r} "
+                f"produced {output!r}{suffix}"
+            )
 
         parts = [f"dist.py: smoke test OK: {script_src.strip()!r} =>"]
         if proc.stdout.strip():
