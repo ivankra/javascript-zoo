@@ -71,39 +71,39 @@ Vibe-coded JavaScript engine written in C++.
 <li>ES2018: 32%</li>
 <li>ES2019: 44%</li>
 <li>ES2020: 71%<pre>
-<a href="../../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: TypeError: Function is not a constructor
-<a href="../../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: TypeError: Function is not a constructor
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: TypeError: Function is not a constructor
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: TypeError: Function is not a constructor
-<a href="../../conformance/kangax-es2020/Promise.allSettled.js">Promise.allSettled.js</a>: failed
-<a href="../../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: TypeError: Function is not a constructor
+<a href="../../conformance/compat-table/es2020/BigUint64Array.js">BigUint64Array.js</a>: TypeError: Function is not a constructor
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: TypeError: Function is not a constructor
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: TypeError: Function is not a constructor
+<a href="../../conformance/compat-table/es2020/Promise.allSettled.js">Promise.allSettled.js</a>: failed
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: TypeError: undefined is not a function
 </pre></li>
 <li>ES2021: 20%</li>
 <li>ES2022: 57%<pre>
-<a href="../../conformance/kangax-es2022/Error.cause.AggregateError-prototype-lacks.js">Error.cause.AggregateError-prototype-lacks.js</a>: TypeError: Cannot read properties of undefined (reading 'prototype')
-<a href="../../conformance/kangax-es2022/Error.cause.AggregateError.js">Error.cause.AggregateError.js</a>: TypeError: Value is not a constructor
-<a href="../../conformance/kangax-es2022/Error.cause.Error.js">Error.cause.Error.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.EvalError.js">Error.cause.EvalError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.RangeError.js">Error.cause.RangeError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.ReferenceError.js">Error.cause.ReferenceError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.SyntaxError.js">Error.cause.SyntaxError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.TypeError.js">Error.cause.TypeError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/Object.hasOwn.ToObject-first.js">Object.hasOwn.ToObject-first.js</a>: failed
-<a href="../../conformance/kangax-es2022/at-method.TypedArray.js">at-method.TypedArray.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: Parse error in file 'class-fields.private-instance.optional-access.js'
-<a href="../../conformance/kangax-es2022/class-fields.static.define.js">class-fields.static.define.js</a>: failed
-<a href="../../conformance/kangax-es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: failed
-<a href="../../conformance/kangax-es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: Parse error in file 'class-static-init-blocks.js'
-<a href="../../conformance/kangax-es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: Parse error in file 'ergonomic-brand-checks.js'
-<a href="../../conformance/kangax-es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: TypeError: Function is not a constructor
-<a href="../../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: TypeError: Cannot read properties of undefined (reading 'call')
+<a href="../../conformance/compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js">Error.cause.AggregateError-prototype-lacks.js</a>: TypeError: Cannot read properties of undefined (reading 'prototype')
+<a href="../../conformance/compat-table/es2022/Error.cause.AggregateError.js">Error.cause.AggregateError.js</a>: TypeError: Value is not a constructor
+<a href="../../conformance/compat-table/es2022/Error.cause.Error.js">Error.cause.Error.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.EvalError.js">Error.cause.EvalError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.RangeError.js">Error.cause.RangeError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.ReferenceError.js">Error.cause.ReferenceError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.SyntaxError.js">Error.cause.SyntaxError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.TypeError.js">Error.cause.TypeError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/Object.hasOwn.ToObject-first.js">Object.hasOwn.ToObject-first.js</a>: failed
+<a href="../../conformance/compat-table/es2022/at-method.TypedArray.js">at-method.TypedArray.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: Parse error in file 'class-fields.private-instance.optional-access.js'
+<a href="../../conformance/compat-table/es2022/class-fields.static.define.js">class-fields.static.define.js</a>: failed
+<a href="../../conformance/compat-table/es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: failed
+<a href="../../conformance/compat-table/es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: Parse error in file 'class-static-init-blocks.js'
+<a href="../../conformance/compat-table/es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: Parse error in file 'ergonomic-brand-checks.js'
+<a href="../../conformance/compat-table/es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: TypeError: Function is not a constructor
+<a href="../../conformance/compat-table/es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: TypeError: Cannot read properties of undefined (reading 'call')
 </pre></li>
 <li>ES2023: 63%<pre>
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: TypeError: Cannot read properties of undefined
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: Cannot read properties of undefined
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: Cannot read properties of undefined
-<a href="../../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: Error in file 'hashbang.js': SyntaxError: Invalid private field at line 1, column 1
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: TypeError: Cannot read properties of undefined
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: Cannot read properties of undefined
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: Cannot read properties of undefined
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: Error in file 'hashbang.js': SyntaxError: Invalid private field at line 1, column 1
 </pre></li>
 <li>ES2024: 14%</li>
 <li>ES2025: 0%</li>

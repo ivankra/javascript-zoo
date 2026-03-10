@@ -81,27 +81,27 @@ Always runs in strict mode, seemingly no option to disable.
 <li>ES6: 39%</li>
 <li>ES2016: 36%</li>
 <li>ES2017: 60%<pre>
-<a href="../../conformance/kangax-es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.exchange.js">Atomics.exchange.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.isLockFree.js">Atomics.isLockFree.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.load.js">Atomics.load.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.notify.js">Atomics.notify.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.or.js">Atomics.or.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.store.js">Atomics.store.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: "Atomics" is not defined
-<a href="../../conformance/kangax-es2017/Object.getOwnPropertyDescriptors.no-undefined.js">Object.getOwnPropertyDescriptors.no-undefined.js</a>: ReferenceError: "Proxy" is not defined
-<a href="../../conformance/kangax-es2017/SharedArrayBuffer.Symbol.species.js">SharedArrayBuffer.Symbol.species.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
-<a href="../../conformance/kangax-es2017/SharedArrayBuffer.js">SharedArrayBuffer.js</a>: failed
-<a href="../../conformance/kangax-es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js">SharedArrayBuffer.prototype.Symbol.toStringTag.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
-<a href="../../conformance/kangax-es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
-<a href="../../conformance/kangax-es2017/SharedArrayBuffer.prototype.slice.js">SharedArrayBuffer.prototype.slice.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js">annex-b.Object.prototype.__defineGetter__.ToObject.js</a>: ReferenceError: "__defineGetter__" is not defined
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__defineGetter__.js">annex-b.Object.prototype.__defineGetter__.js</a>: TypeError: cannot get property "call" of undefined
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: cannot get property "call" of undefined
+<a href="../../conformance/compat-table/es2017/Atomics.add.js">Atomics.add.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.and.js">Atomics.and.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.compareExchange.js">Atomics.compareExchange.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.exchange.js">Atomics.exchange.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.isLockFree.js">Atomics.isLockFree.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.load.js">Atomics.load.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.notify.js">Atomics.notify.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.or.js">Atomics.or.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.store.js">Atomics.store.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.sub.js">Atomics.sub.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.wait.js">Atomics.wait.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Atomics.xor.js">Atomics.xor.js</a>: ReferenceError: "Atomics" is not defined
+<a href="../../conformance/compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js">Object.getOwnPropertyDescriptors.no-undefined.js</a>: ReferenceError: "Proxy" is not defined
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.Symbol.species.js">SharedArrayBuffer.Symbol.species.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.js">SharedArrayBuffer.js</a>: failed
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js">SharedArrayBuffer.prototype.Symbol.toStringTag.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
+<a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.slice.js">SharedArrayBuffer.prototype.slice.js</a>: ReferenceError: "SharedArrayBuffer" is not defined
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js">annex-b.Object.prototype.__defineGetter__.ToObject.js</a>: ReferenceError: "__defineGetter__" is not defined
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js">annex-b.Object.prototype.__defineGetter__.js</a>: TypeError: cannot get property "call" of undefined
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: cannot get property "call" of undefined
 ...
 </pre></li>
 <li>ES2018: 32%</li>

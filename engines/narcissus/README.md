@@ -80,66 +80,66 @@ Metacircular JavaScript interpreter, was used for prototyping new language featu
 <li>ES2017: 42%</li>
 <li>ES2018: 37%</li>
 <li>ES2019: 54%<pre>
-<a href="../../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Array.prototype[Symbol.unscopables] (type undefined) has no properties
-<a href="../../conformance/kangax-es2019/Symbol.prototype.description.empty.js">Symbol.prototype.description.empty.js</a>: TypeError: can't convert symbol to string
-<a href="../../conformance/kangax-es2019/Symbol.prototype.description.js">Symbol.prototype.description.js</a>: TypeError: can't convert symbol to string
-<a href="../../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: TypeError: can't convert symbol to string
-<a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: 1: Missing )
-<a href="../../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: SyntaxError: 1: missing operand; found &gt;
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: 1: Missing )
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: 1: Missing )
-<a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: 1: Invalid property name
-<a href="../../conformance/kangax-es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: 1: missing formal parameter
-<a href="../../conformance/kangax-es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
-<a href="../../conformance/kangax-es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: :12:1 SyntaxError: 12: Missing ( newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
-<a href="../../conformance/kangax-es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: :13:1 SyntaxError: 13: Missing ( newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
+<a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Array.prototype[Symbol.unscopables] (type undefined) has no properties
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.empty.js">Symbol.prototype.description.empty.js</a>: TypeError: can't convert symbol to string
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.js">Symbol.prototype.description.js</a>: TypeError: can't convert symbol to string
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: TypeError: can't convert symbol to string
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: 1: Missing )
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: SyntaxError: 1: missing operand; found &gt;
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: 1: Missing )
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: 1: Missing )
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: 1: Invalid property name
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: 1: missing formal parameter
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: :44:1 SyntaxError: 44: Missing ) newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.js">misc.optional-catch-binding.js</a>: :12:1 SyntaxError: 12: Missing ( newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: :13:1 SyntaxError: 13: Missing ( newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
 </pre></li>
 <li>ES2020: 14%</li>
 <li>ES2021: 64%<pre>
-<a href="../../conformance/kangax-es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.and.js">logical-assignment.and.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.or.js">logical-assignment.or.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2021/numeric-separators.js">numeric-separators.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: :49:1 SyntaxError: 49: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.js">logical-assignment.and.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.js">logical-assignment.nullish.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.short-circuit.js">logical-assignment.nullish.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.js">logical-assignment.or.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2021/numeric-separators.js">numeric-separators.js</a>: :9:1 SyntaxError: 9: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
 </pre></li>
 <li>ES2022: 33%</li>
 <li>ES2023: 80%<pre>
-<a href="../../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: :1:1 SyntaxError: 1: Illegal token newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: :1:1 SyntaxError: 1: Illegal token newSyntaxError@/zoo/dist/arm64/narcissus:1148:17
 </pre></li>
 <li>ES2024: 51%<pre>
-<a href="../../conformance/kangax-es2024/Map.groupBy.js">Map.groupBy.js</a>: :13:1 SyntaxError: 13: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2024/Object.groupBy.js">Object.groupBy.js</a>: :11:1 SyntaxError: 11: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
-<a href="../../conformance/kangax-es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid class property name in regular expression:
-<a href="../../conformance/kangax-es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
-<a href="../../conformance/kangax-es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
-<a href="../../conformance/kangax-es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
+<a href="../../conformance/compat-table/es2024/Map.groupBy.js">Map.groupBy.js</a>: :13:1 SyntaxError: 13: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2024/Object.groupBy.js">Object.groupBy.js</a>: :11:1 SyntaxError: 11: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
+<a href="../../conformance/compat-table/es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid class property name in regular expression:
+<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
+<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
+<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: /zoo/dist/arm64/narcissus:1:4 SyntaxError: invalid property name in regular expression:
 </pre></li>
 <li>ES2025: 55%<pre>
-<a href="../../conformance/kangax-es2025/Iterator.extends.js">Iterator.extends.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: TypeError: Array.from is not callable
-<a href="../../conformance/kangax-es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: :12:1 SyntaxError: 12: missing : after property newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: failed
-<a href="../../conformance/kangax-es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: TypeError: Array.from is not callable
-<a href="../../conformance/kangax-es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: :10:1 SyntaxError: 10: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
-<a href="../../conformance/kangax-es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: Array.from is not callable
-<a href="../../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: Array.isArray is not callable
-<a href="../../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: failed
+<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: TypeError: Array.from is not callable
+<a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: :12:1 SyntaxError: 12: missing : after property newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: failed
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: TypeError: Array.from is not callable
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: :10:1 SyntaxError: 10: missing ; before statement newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: :10:1 SyntaxError: 10: Bad left-hand side of assignment newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: :10:1 SyntaxError: 10: missing operand; found &gt; newSyntaxError@/zoo/dist/arm64/narcissus:1148:17 fail@/zoo/dist/arm64/narcissus:1292:20
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: Array.from is not callable
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: Array.isArray is not callable
+<a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: failed
 </pre></li>
 <li>Next: 8%</li>
 <li>Intl: 25%</li>

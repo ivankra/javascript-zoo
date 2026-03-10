@@ -91,27 +91,27 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 
 <details><summary>compat-table: ES6 51%, ES2016+ 28%, Next 3%, Intl 36%</summary><ul>
 <li>ES6: 51%, <b>24 crashes</b><pre>
-<a href="../../conformance/kangax-es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: Cannot use 'in' operator to search for 'get' in undefined
-<a href="../../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.from.map.iterable-instance.js">Array.from.map.iterable-instance.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
-<a href="../../conformance/kangax-es6/Date.prototype.Symbol.toPrimitive.js">Date.prototype.Symbol.toPrimitive.js</a>: TypeError: Cannot get property call of undefined
-<a href="../../conformance/kangax-es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-static.js">Function.name.class-static.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.configurable.js">Function.name.configurable.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.expression.js">Function.name.expression.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.shorthand.js">Function.name.shorthand.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.statement.js">Function.name.statement.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.variable.js">Function.name.variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: Cannot use 'in' operator to search for 'get' in undefined
+<a href="../../conformance/compat-table/es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.from.map.iterable-instance.js">Array.from.map.iterable-instance.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
+<a href="../../conformance/compat-table/es6/Date.prototype.Symbol.toPrimitive.js">Date.prototype.Symbol.toPrimitive.js</a>: TypeError: Cannot get property call of undefined
+<a href="../../conformance/compat-table/es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.bound.js">Function.name.bound.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-static.js">Function.name.class-static.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.configurable.js">Function.name.configurable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.expression.js">Function.name.expression.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.shorthand.js">Function.name.shorthand.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.statement.js">Function.name.statement.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.variable.js">Function.name.variable.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 30%, <b>2 crashes</b></li>
@@ -120,16 +120,16 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 <li>ES2019: 29%, <b>3 crashes</b></li>
 <li>ES2020: 39%</li>
 <li>ES2021: 67%, <b>6 crashes</b><pre>
-<a href="../../conformance/kangax-es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
-<a href="../../conformance/kangax-es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
-<a href="../../conformance/kangax-es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: TypeError: Method replaceAll not found in q=query+string+parameters
-<a href="../../conformance/kangax-es2021/logical-assignment.and.js">logical-assignment.and.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
-<a href="../../conformance/kangax-es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
-<a href="../../conformance/kangax-es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
-<a href="../../conformance/kangax-es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: failed
-<a href="../../conformance/kangax-es2021/logical-assignment.or.js">logical-assignment.or.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
-<a href="../../conformance/kangax-es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
-<a href="../../conformance/kangax-es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
+<a href="../../conformance/compat-table/es2021/Promise.any.AggregateError.js">Promise.any.AggregateError.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
+<a href="../../conformance/compat-table/es2021/Promise.any.fulfillment.js">Promise.any.fulfillment.js</a>: TypeError: Method reject not found in function Promise() { [native code] }
+<a href="../../conformance/compat-table/es2021/String.prototype.replaceAll.js">String.prototype.replaceAll.js</a>: TypeError: Method replaceAll not found in q=query+string+parameters
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.js">logical-assignment.and.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.setter-not-invoked.js">logical-assignment.and.setter-not-invoked.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
+<a href="../../conformance/compat-table/es2021/logical-assignment.and.short-circuit.js">logical-assignment.and.short-circuit.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
+<a href="../../conformance/compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js">logical-assignment.nullish.setter-not-invoked.js</a>: failed
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.js">logical-assignment.or.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 13, 6 SyntaxError: Unexpected token Assign: = at 13, 6
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 10 SyntaxError: Unexpected token Assign: = at 11, 10
+<a href="../../conformance/compat-table/es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: crashed (signal 6); Unhandled exception. YantraJS.Core.JSException: Unexpected token Assign: = at 11, 6 SyntaxError: Unexpected token Assign: = at 11, 6
 </pre></li>
 <li>ES2022: 31%, <b>11 crashes</b></li>
 <li>ES2023: 0%, <b>1 crash</b></li>

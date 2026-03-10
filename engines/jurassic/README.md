@@ -31,27 +31,27 @@ JavaScript engine for .NET; compiles to .NET IL.
 
 <details><summary>compat-table: ES6 65%, ES2016+ 15%, Next 6%, Intl 25%</summary><ul>
 <li>ES6: 65%, <b>2 crashes</b><pre>
-<a href="../../conformance/kangax-es6/Array.from.generator.js">Array.from.generator.js</a>: SyntaxError: Expected '(' but found '*'
-<a href="../../conformance/kangax-es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/Array.from.map.generator.js">Array.from.map.generator.js</a>: SyntaxError: Expected '(' but found '*'
-<a href="../../conformance/kangax-es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.shorthand.no-lexical.js">Function.name.shorthand.no-lexical.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.variable.js">Function.name.variable.js</a>: failed
-<a href="../../conformance/kangax-es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: failed
-<a href="../../conformance/kangax-es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
-<a href="../../conformance/kangax-es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: failed
-<a href="../../conformance/kangax-es6/Set.iterator-closing.js">Set.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/WeakMap.iterator-closing.js">WeakMap.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/WeakSet.iterator-closing.js">WeakSet.iterator-closing.js</a>: failed
-<a href="../../conformance/kangax-es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: failed
-<a href="../../conformance/kangax-es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token '&gt;' in expression.
-<a href="../../conformance/kangax-es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.from.generator.js">Array.from.generator.js</a>: SyntaxError: Expected '(' but found '*'
+<a href="../../conformance/compat-table/es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/Array.from.map.generator.js">Array.from.map.generator.js</a>: SyntaxError: Expected '(' but found '*'
+<a href="../../conformance/compat-table/es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.bound.js">Function.name.bound.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.shorthand.no-lexical.js">Function.name.shorthand.no-lexical.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.variable.js">Function.name.variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: failed
+<a href="../../conformance/compat-table/es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
+<a href="../../conformance/compat-table/es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: failed
+<a href="../../conformance/compat-table/es6/Set.iterator-closing.js">Set.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/WeakMap.iterator-closing.js">WeakMap.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/WeakSet.iterator-closing.js">WeakSet.iterator-closing.js</a>: failed
+<a href="../../conformance/compat-table/es6/annex-b.function.hoisted-block-level.js">annex-b.function.hoisted-block-level.js</a>: failed
+<a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: Unexpected token '&gt;' in expression.
+<a href="../../conformance/compat-table/es6/annex-b.regex.invalid-char-escapes.js">annex-b.regex.invalid-char-escapes.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 44%</li>

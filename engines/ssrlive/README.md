@@ -47,67 +47,67 @@ JavaScript engine written in Rust.
 
 <details><summary>compat-table: ES6 83%, ES2016+ 87%, Next 26%, Intl 25%</summary><ul>
 <li>ES6: 83%, <b>2 crashes</b><pre>
-<a href="../../conformance/kangax-es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Array.from.map.iterable-instance.js">Array.from.map.iterable-instance.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Array.from.map.iterable.js">Array.from.map.iterable.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: failed
-<a href="../../conformance/kangax-es6/Proxy.handler.deleteProperty.js">Proxy.handler.deleteProperty.js</a>: TypeError: Cannot delete property 'foo' of proxy target
-<a href="../../conformance/kangax-es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: failed
-<a href="../../conformance/kangax-es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: TypeError: Cannot assign to property
-<a href="../../conformance/kangax-es6/Proxy.handler.set.js">Proxy.handler.set.js</a>: TypeError: Cannot assign to property on proxy
-<a href="../../conformance/kangax-es6/Reflect.apply.js">Reflect.apply.js</a>: TypeError: Array.prototype method called on null or undefined
-<a href="../../conformance/kangax-es6/Set.iterator-closing.js">Set.iterator-closing.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/WeakMap.iterator-closing.js">WeakMap.iterator-closing.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/WeakSet.iterator-closing.js">WeakSet.iterator-closing.js</a>: ReferenceError: global is not defined
-<a href="../../conformance/kangax-es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
-<a href="../../conformance/kangax-es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: Not a function
-<a href="../../conformance/kangax-es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
-<a href="../../conformance/kangax-es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Not a function
+<a href="../../conformance/compat-table/es6/Array.from.iterable-instance.js">Array.from.iterable-instance.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Array.from.iterable.js">Array.from.iterable.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Array.from.iterator-closing.js">Array.from.iterator-closing.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Array.from.map.iterable-instance.js">Array.from.map.iterable-instance.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Array.from.map.iterable.js">Array.from.map.iterable.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Map.iterator-closing.js">Map.iterator-closing.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: failed
+<a href="../../conformance/compat-table/es6/Proxy.handler.deleteProperty.js">Proxy.handler.deleteProperty.js</a>: TypeError: Cannot delete property 'foo' of proxy target
+<a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: failed
+<a href="../../conformance/compat-table/es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: TypeError: Cannot assign to property
+<a href="../../conformance/compat-table/es6/Proxy.handler.set.js">Proxy.handler.set.js</a>: TypeError: Cannot assign to property on proxy
+<a href="../../conformance/compat-table/es6/Reflect.apply.js">Reflect.apply.js</a>: TypeError: Array.prototype method called on null or undefined
+<a href="../../conformance/compat-table/es6/Set.iterator-closing.js">Set.iterator-closing.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/WeakMap.iterator-closing.js">WeakMap.iterator-closing.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/WeakSet.iterator-closing.js">WeakSet.iterator-closing.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
+<a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: Not a function
+<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
+<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Not a function
 ...
 </pre></li>
 <li>ES2016: 85%<pre>
-<a href="../../conformance/kangax-es2016/exponentiation.unary-negation-error.js">exponentiation.unary-negation-error.js</a>: failed
-<a href="../../conformance/kangax-es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
+<a href="../../conformance/compat-table/es2016/exponentiation.unary-negation-error.js">exponentiation.unary-negation-error.js</a>: failed
+<a href="../../conformance/compat-table/es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed
 </pre></li>
 <li>ES2017: 87%<pre>
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.js">annex-b.Object.prototype.__lookupGetter__.js</a>: TypeError: foo is not a function
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js">annex-b.Object.prototype.__lookupGetter__.prototype-chain.js</a>: TypeError: foo is not a function
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.js">annex-b.Object.prototype.__lookupSetter__.js</a>: TypeError: foo is not a function
-<a href="../../conformance/kangax-es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js">annex-b.Object.prototype.__lookupSetter__.prototype-chain.js</a>: TypeError: foo is not a function
-<a href="../../conformance/kangax-es2017/annex-b.Proxy.__defineGetter__.js">annex-b.Proxy.__defineGetter__.js</a>: TypeError: Property descriptor getter must be a function or undefined
-<a href="../../conformance/kangax-es2017/annex-b.Proxy.__defineSetter__.js">annex-b.Proxy.__defineSetter__.js</a>: TypeError: Property descriptor setter must be a function or undefined
-<a href="../../conformance/kangax-es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token
-<a href="../../conformance/kangax-es2017/async.methods-class.js">async.methods-class.js</a>: failed
-<a href="../../conformance/kangax-es2017/async.methods-object.js">async.methods-object.js</a>: failed
-<a href="../../conformance/kangax-es2017/async.must-await-value.js">async.must-await-value.js</a>: failed
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js">annex-b.Object.prototype.__lookupGetter__.js</a>: TypeError: foo is not a function
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js">annex-b.Object.prototype.__lookupGetter__.prototype-chain.js</a>: TypeError: foo is not a function
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js">annex-b.Object.prototype.__lookupSetter__.js</a>: TypeError: foo is not a function
+<a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js">annex-b.Object.prototype.__lookupSetter__.prototype-chain.js</a>: TypeError: foo is not a function
+<a href="../../conformance/compat-table/es2017/annex-b.Proxy.__defineGetter__.js">annex-b.Proxy.__defineGetter__.js</a>: TypeError: Property descriptor getter must be a function or undefined
+<a href="../../conformance/compat-table/es2017/annex-b.Proxy.__defineSetter__.js">annex-b.Proxy.__defineSetter__.js</a>: TypeError: Property descriptor setter must be a function or undefined
+<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/compat-table/es2017/async.methods-class.js">async.methods-class.js</a>: failed
+<a href="../../conformance/compat-table/es2017/async.methods-object.js">async.methods-object.js</a>: failed
+<a href="../../conformance/compat-table/es2017/async.must-await-value.js">async.must-await-value.js</a>: failed
 </pre></li>
 <li>ES2018: 99%<pre>
-<a href="../../conformance/kangax-es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp: Invalid property name
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid RegExp: Invalid property name
 </pre></li>
 <li>ES2019: 83%<pre>
-<a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: Not a function
-<a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: Not a function
-<a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Legacy octal literals are not allowed in strict mode
+<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: Not a function
+<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: Not a function
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Legacy octal literals are not allowed in strict mode
 </pre></li>
 <li>ES2020: 89%<pre>
-<a href="../../conformance/kangax-es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: OptionalCall target is not a function
-<a href="../../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: TypeError: OptionalCall target is not a function
+<a href="../../conformance/compat-table/es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: OptionalCall target is not a function
+<a href="../../conformance/compat-table/es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: TypeError: OptionalCall target is not a function
 </pre></li>
 <li>ES2021: 43%</li>
 <li>ES2022: 90%<pre>
-<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: failed
-<a href="../../conformance/kangax-es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of null or undefined
-<a href="../../conformance/kangax-es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: global is not defined
+<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: failed
+<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of null or undefined
+<a href="../../conformance/compat-table/es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: ReferenceError: global is not defined
 </pre></li>
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>

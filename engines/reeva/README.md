@@ -86,56 +86,56 @@ JavaScript interpreter for JVM written in Kotlin.
 
 <details><summary>compat-table: ES6 60%, ES2016+ 38%, Next 0%, Intl 14%</summary><ul>
 <li>ES6: 60%<pre>
-<a href="../../conformance/kangax-es6/Function.name.bound.js">Function.name.bound.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.expression.js">Function.name.expression.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.shorthand.js">Function.name.shorthand.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.statement.js">Function.name.statement.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
-<a href="../../conformance/kangax-es6/Function.name.variable.js">Function.name.variable.js</a>: failed
-<a href="../../conformance/kangax-es6/Map.zero-key.js">Map.zero-key.js</a>: failed
-<a href="../../conformance/kangax-es6/Number.parseFloat.js">Number.parseFloat.js</a>: failed
-<a href="../../conformance/kangax-es6/Number.parseInt.js">Number.parseInt.js</a>: failed
-<a href="../../conformance/kangax-es6/Promise.Symbol.species.js">Promise.Symbol.species.js</a>: TypeError: right-hand side of "in" operator must be an object
-<a href="../../conformance/kangax-es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: TypeError: cannot call value undefined
-<a href="../../conformance/kangax-es6/Promise.race.js">Promise.race.js</a>: TypeError: cannot call value undefined
-<a href="../../conformance/kangax-es6/Proxy.handler.has.invariants.js">Proxy.handler.has.invariants.js</a>: SyntaxError: expected }, but found in
-<a href="../../conformance/kangax-es6/Proxy.handler.ownKeys.invariants.js">Proxy.handler.ownKeys.invariants.js</a>: Exception in FunctionInfo testCode, block @2 opcode 12 Exception in FunctionInfo Proxy.handler.ownKeys.invariants.js, block @2 opcode 2 java.lang.IllegalStateException: Encountered unreachable() call
-<a href="../../conformance/kangax-es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: failed
-<a href="../../conformance/kangax-es6/Proxy.handler.set.js">Proxy.handler.set.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.bound.js">Function.name.bound.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.expression.js">Function.name.expression.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.object-method.js">Function.name.object-method.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.shorthand.js">Function.name.shorthand.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.statement.js">Function.name.statement.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
+<a href="../../conformance/compat-table/es6/Function.name.variable.js">Function.name.variable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Map.zero-key.js">Map.zero-key.js</a>: failed
+<a href="../../conformance/compat-table/es6/Number.parseFloat.js">Number.parseFloat.js</a>: failed
+<a href="../../conformance/compat-table/es6/Number.parseInt.js">Number.parseInt.js</a>: failed
+<a href="../../conformance/compat-table/es6/Promise.Symbol.species.js">Promise.Symbol.species.js</a>: TypeError: right-hand side of "in" operator must be an object
+<a href="../../conformance/compat-table/es6/Promise.race.iterable.js">Promise.race.iterable.js</a>: TypeError: cannot call value undefined
+<a href="../../conformance/compat-table/es6/Promise.race.js">Promise.race.js</a>: TypeError: cannot call value undefined
+<a href="../../conformance/compat-table/es6/Proxy.handler.has.invariants.js">Proxy.handler.has.invariants.js</a>: SyntaxError: expected }, but found in
+<a href="../../conformance/compat-table/es6/Proxy.handler.ownKeys.invariants.js">Proxy.handler.ownKeys.invariants.js</a>: Exception in FunctionInfo testCode, block @2 opcode 12 Exception in FunctionInfo Proxy.handler.ownKeys.invariants.js, block @2 opcode 2 java.lang.IllegalStateException: Encountered unreachable() call
+<a href="../../conformance/compat-table/es6/Proxy.handler.set.instances.js">Proxy.handler.set.instances.js</a>: failed
+<a href="../../conformance/compat-table/es6/Proxy.handler.set.js">Proxy.handler.set.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 67%<pre>
-<a href="../../conformance/kangax-es2016/exponentiation.unary-negation-error.js">exponentiation.unary-negation-error.js</a>: failed
-<a href="../../conformance/kangax-es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: failed
-<a href="../../conformance/kangax-es2016/misc.generator-no-new.js">misc.generator-no-new.js</a>: failed
-<a href="../../conformance/kangax-es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: undefined
+<a href="../../conformance/compat-table/es2016/exponentiation.unary-negation-error.js">exponentiation.unary-negation-error.js</a>: failed
+<a href="../../conformance/compat-table/es2016/misc.Proxy-Array-includes.js">misc.Proxy-Array-includes.js</a>: failed
+<a href="../../conformance/compat-table/es2016/misc.generator-no-new.js">misc.generator-no-new.js</a>: failed
+<a href="../../conformance/compat-table/es2016/misc.generator-throw-inner.js">misc.generator-throw-inner.js</a>: undefined
 </pre></li>
 <li>ES2017: 48%</li>
 <li>ES2018: 49%</li>
 <li>ES2019: 65%<pre>
-<a href="../../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: TypeError: Symbol.prototype.description called on incompatible object
-<a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: cannot call value undefined
-<a href="../../conformance/kangax-es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: cannot call value undefined
-<a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: unicode codepoint escape sequence missing closing curly brace
-<a href="../../conformance/kangax-es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: failed
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: TypeError: Symbol.prototype.description called on incompatible object
+<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimLeft.js">annex-b.String.prototype.trimLeft.js</a>: TypeError: cannot call value undefined
+<a href="../../conformance/compat-table/es2019/annex-b.String.prototype.trimRight.js">annex-b.String.prototype.trimRight.js</a>: TypeError: cannot call value undefined
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: unicode codepoint escape sequence missing closing curly brace
+<a href="../../conformance/compat-table/es2019/misc.JSON-superset.line-separator.js">misc.JSON-superset.line-separator.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.JSON-superset.paragraph-separator.js">misc.JSON-superset.paragraph-separator.js</a>: failed
 </pre></li>
 <li>ES2020: 76%<pre>
-<a href="../../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: failed
-<a href="../../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: TypeError: cannot call value undefined
-<a href="../../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: SyntaxError: expected }, but found .
-<a href="../../conformance/kangax-es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: com.reevajs.reeva.utils.ExpectationError: Expected block 10 to have initial stack height of 2, but found 1
+<a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: failed
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: TypeError: cannot call value undefined
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: SyntaxError: expected }, but found .
+<a href="../../conformance/compat-table/es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: com.reevajs.reeva.utils.ExpectationError: Expected block 10 to have initial stack height of 2, but found 1
 </pre></li>
 <li>ES2021: 10%</li>
 <li>ES2022: 27%</li>

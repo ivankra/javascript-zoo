@@ -79,71 +79,71 @@ those cases just trip the whitelist.
 <li>ES2017: 30%</li>
 <li>ES2018: 46%</li>
 <li>ES2019: 71%<pre>
-<a href="../../conformance/kangax-es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: Error: Unexpected token 'class': class  A  extends  function B() {}  {  c
-<a href="../../conformance/kangax-es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: Error: Unexpected token 'class': class A {}
-<a href="../../conformance/kangax-es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: Error: Unexpected token after call: {: { [  "0"  ]  (  )  {  } }.f
-<a href="../../conformance/kangax-es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
-<a href="../../conformance/kangax-es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: Error: Unexpected token 'function': function \u0061(\u{62}, \u0063) { \u0062
-<a href="../../conformance/kangax-es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: throw err.error; ParseError: Unexpected token 'function': function *foo() {
+<a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: Error: Unexpected token 'class': class  A  extends  function B() {}  {  c
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: Error: Unexpected token 'class': class A {}
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: Error: Unexpected token after call: {: { [  "0"  ]  (  )  {  } }.f
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: Error: Unexpected token 'function': function \u0061(\u{62}, \u0063) { \u0062
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: throw err.error; ParseError: Unexpected token 'function': function *foo() {
 </pre></li>
 <li>ES2020: 51%<pre>
-<a href="../../conformance/kangax-es2020/BigInt64Array.js">BigInt64Array.js</a>: ReferenceError: ArrayBuffer is not defined
-<a href="../../conformance/kangax-es2020/BigUint64Array.js">BigUint64Array.js</a>: ReferenceError: ArrayBuffer is not defined
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: ReferenceError: ArrayBuffer is not defined
-<a href="../../conformance/kangax-es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: ReferenceError: ArrayBuffer is not defined
-<a href="../../conformance/kangax-es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: Error: Method or property access not permitted: Iterator.Symbol(Symbol.iterator)
-<a href="../../conformance/kangax-es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: Error: Static method or property access not permitted: Object.prototype
-<a href="../../conformance/kangax-es2020/globalThis.js">globalThis.js</a>: throw err.error; TypeError: Cannot read properties of null (reading 'lacksGlobalThis')
-<a href="../../conformance/kangax-es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: n is not a function
+<a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: ReferenceError: ArrayBuffer is not defined
+<a href="../../conformance/compat-table/es2020/BigUint64Array.js">BigUint64Array.js</a>: ReferenceError: ArrayBuffer is not defined
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: ReferenceError: ArrayBuffer is not defined
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: ReferenceError: ArrayBuffer is not defined
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: Error: Method or property access not permitted: Iterator.Symbol(Symbol.iterator)
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/es2020/globalThis.descriptor.js">globalThis.descriptor.js</a>: Error: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/compat-table/es2020/globalThis.js">globalThis.js</a>: throw err.error; TypeError: Cannot read properties of null (reading 'lacksGlobalThis')
+<a href="../../conformance/compat-table/es2020/optional-chaining.function-call.js">optional-chaining.function-call.js</a>: TypeError: n is not a function
 </pre></li>
 <li>ES2021: 23%</li>
 <li>ES2022: 12%</li>
 <li>ES2023: 63%<pre>
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: Error: Method or property access not permitted: TypedArray.toReversed
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: Error: Method or property access not permitted: TypedArray.toSorted
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: Error: Method or property access not permitted: TypedArray.with
-<a href="../../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str); ParseError: Unexpected token after dot: #: #!/0/r/env node
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: Error: Method or property access not permitted: TypedArray.toReversed
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: Error: Method or property access not permitted: TypedArray.toSorted
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: Error: Method or property access not permitted: TypedArray.with
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str); ParseError: Unexpected token after dot: #: #!/0/r/env node
 </pre></li>
 <li>ES2024: 20%</li>
 <li>ES2025: 53%<pre>
-<a href="../../conformance/kangax-es2025/Iterator.extends.js">Iterator.extends.js</a>: throw err.error; ParseError: Unexpected token 'class': class Class extends Iterator { }
-<a href="../../conformance/kangax-es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/kangax-es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/kangax-es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/kangax-es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/kangax-es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: Error: Method or property access not permitted: Iterator.drop
-<a href="../../conformance/kangax-es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: Error: Method or property access not permitted: Iterator.every
-<a href="../../conformance/kangax-es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: Error: Method or property access not permitted: Iterator.filter
-<a href="../../conformance/kangax-es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: Error: Method or property access not permitted: Iterator.find
-<a href="../../conformance/kangax-es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: Error: Method or property access not permitted: Iterator.flatMap
-<a href="../../conformance/kangax-es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: Error: Method or property access not permitted: Iterator.forEach
-<a href="../../conformance/kangax-es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: Error: Method or property access not permitted: Iterator.map
-<a href="../../conformance/kangax-es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: Error: Method or property access not permitted: Iterator.reduce
-<a href="../../conformance/kangax-es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: Error: Method or property access not permitted: Iterator.some
-<a href="../../conformance/kangax-es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: Error: Method or property access not permitted: Iterator.take
-<a href="../../conformance/kangax-es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: Error: Method or property access not permitted: Iterator.toArray
-<a href="../../conformance/kangax-es2025/Promise.try.js">Promise.try.js</a>: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: arguments is not defined
+<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: throw err.error; ParseError: Unexpected token 'class': class Class extends Iterator { }
+<a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: Iterator is not defined
+<a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
+<a href="../../conformance/compat-table/es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: ReferenceError: Iterator is not defined
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: Error: Method or property access not permitted: Iterator.drop
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: Error: Method or property access not permitted: Iterator.every
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: Error: Method or property access not permitted: Iterator.filter
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.find.js">Iterator.prototype.find.js</a>: Error: Method or property access not permitted: Iterator.find
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.flatMap.js">Iterator.prototype.flatMap.js</a>: Error: Method or property access not permitted: Iterator.flatMap
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.forEach.js">Iterator.prototype.forEach.js</a>: Error: Method or property access not permitted: Iterator.forEach
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.map.js">Iterator.prototype.map.js</a>: Error: Method or property access not permitted: Iterator.map
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.reduce.js">Iterator.prototype.reduce.js</a>: Error: Method or property access not permitted: Iterator.reduce
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: Error: Method or property access not permitted: Iterator.some
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: Error: Method or property access not permitted: Iterator.take
+<a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: Error: Method or property access not permitted: Iterator.toArray
+<a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: throw new ReferenceError(`${this.prop.toString()} is not defined`); ReferenceError: arguments is not defined
 </pre></li>
 <li>Next: 8%</li>
 <li>Intl: 50%<pre>
-<a href="../../conformance/kangax-intl/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-intl/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: Error: Object construction not allowed: Function
-<a href="../../conformance/kangax-intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed
-<a href="../../conformance/kangax-intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed
-<a href="../../conformance/kangax-intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
-<a href="../../conformance/kangax-intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: Error: Object construction not allowed: Function
-<a href="../../conformance/kangax-intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: Error: Method or property access not permitted: DateTimeFormat.resolvedOptions
-<a href="../../conformance/kangax-intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: Error: Object construction not allowed: Function
-<a href="../../conformance/kangax-intl/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
-<a href="../../conformance/kangax-intl/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: Error: Static method or property access not permitted: Object.prototype
-<a href="../../conformance/kangax-intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Intl.Collator.new-instances.js">Intl.Collator.new-instances.js</a>: Error: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Intl.Collator.prototype.compare.js">Intl.Collator.prototype.compare.js</a>: failed
+<a href="../../conformance/compat-table/intl/Intl.Collator.prototype.resolvedOptions.js">Intl.Collator.prototype.resolvedOptions.js</a>: failed
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.iana-timezones.js">Intl.DateTimeFormat.iana-timezones.js</a>: failed
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.new-instances.js">Intl.DateTimeFormat.new-instances.js</a>: Error: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: Error: Method or property access not permitted: DateTimeFormat.resolvedOptions
+<a href="../../conformance/compat-table/intl/Intl.NumberFormat.new-instances.js">Intl.NumberFormat.new-instances.js</a>: Error: Object construction not allowed: Function
+<a href="../../conformance/compat-table/intl/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: Error: Access to prototype of global object is not permitted
+<a href="../../conformance/compat-table/intl/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: Error: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/compat-table/intl/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: Error: Access to prototype of global object is not permitted
 </pre></li>
 </ul></details>

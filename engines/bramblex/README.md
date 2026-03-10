@@ -78,10 +78,10 @@ Toy metacircular JavaScript interpreter.
 <li>ES2021: 7%</li>
 <li>ES2022: 26%</li>
 <li>ES2023: 63%<pre>
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/kangax-es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/kangax-es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#' (1:0)
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#' (1:0)
 </pre></li>
 <li>ES2024: 18%</li>
 <li>ES2025: 16%</li>
