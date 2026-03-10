@@ -5,8 +5,8 @@ https://github.com/ivankra/javascript-zoo
     Most can be run directly as a REPL or with a script to run
     as a command-line argument.
 
-  * /zoo: repository checkout with benchmarks and test suites.
-    Examples:
+  * /zoo: repository checkout with benchmarks and test suites. Examples:
       /zoo/bench/bench.py ./v8
       /zoo/conformance/run.py ./quickjs
+      /zoo/conformance/test262.py ./quickjs  (experimental)
 

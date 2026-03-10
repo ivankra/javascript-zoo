@@ -13,15 +13,14 @@ ARG TARGETARCH
 # Repackaged binaries from GitHub release as a single tarball with <arch>/ directory.
 ADD dist/$TARGETARCH-$TAG.tar /tmp
 
-RUN rm -rf /bench /dist /zoo && \
+RUN rm -rf /dist /zoo && \
     mv /tmp/$TARGETARCH /dist && \
     git clone --depth=1 --branch="$TAG" "https://github.com/ivankra/javascript-zoo.git" /zoo && \
     cd /zoo && \
     git submodule update --init --depth=1 && \
-    make -C bench gen && ln -s zoo/bench /bench && \
     mkdir -p /zoo/dist && ln -s /dist /zoo/dist/$TARGETARCH && \
     cat /zoo/build/hub.motd | sed "2s/\$/ @$TAG $TARGETARCH/" >/etc/motd && \
-    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/bench:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
+    echo 'eval $(dircolors); alias ls="ls --color=auto"; export PATH=/zoo/bench:/zoo/conformance:/opt/node/bin:/opt/dotnet:$PATH; cat /etc/motd' >>/etc/profile
 
 WORKDIR /dist
 
