@@ -148,7 +148,7 @@ def main() -> None:
     by_dir_failed_tests: dict[str, list[str]] = {test_dir: [] for test_dir in dir_names}
     next_dir_index = 0
 
-    results: list[tuple[str, str]] = []
+    results_by_test: dict[str, tuple[str, str]] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         futs = {
             pool.submit(run_one, runner, arbiter, cfg, CONF_ROOT / rel, rel): rel
@@ -156,7 +156,7 @@ def main() -> None:
         }
         for fut in concurrent.futures.as_completed(futs):
             r = fut.result()
-            results.append(r)
+            results_by_test[r[0]] = r
             test_dir = os.path.dirname(r[0])
             by_dir_done[test_dir] += 1
             if r[1] == Verdict.OK.value:
@@ -191,7 +191,7 @@ def main() -> None:
                     )
                     next_dir_index += 1
 
-    results.sort(key=lambda r: version_sort_key(r[0]))
+    results = [results_by_test[rel] for rel in tests]
 
     # Write output file (compatible with run.sh format).
     if args.output:

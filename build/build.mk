@@ -19,9 +19,9 @@ PROJECT := $(notdir $(abspath $(CURDIR)))
 GROUP := $(notdir $(patsubst %/,%,$(dir $(abspath $(CURDIR)))))
 
 # Parameters for conformance test run, can be overridden in leaf Makefiles.
-CONFORMANCE_BINARY ?= $(PROJECT)       # build name e.g. "v8_intl", not full path
-CONFORMANCE_SUITE ?= es[1-5] kangax-*  # globs for dir names inside conformance/
-CONFORMANCE_CMD ?= "$(ROOT_DIR)/conformance/run.py" -j 8 -o conformance.txt "$(DIST_DIR)/$(strip $(CONFORMANCE_BINARY))" $(addprefix $(ROOT_DIR)/conformance/,$(CONFORMANCE_SUITE))
+CONFORMANCE_BINARY ?= $(PROJECT)  # build name e.g. "v8_intl", not full path
+CONFORMANCE_SUITE ?= es[1-5] compat-table  # globs for dirs in conformance/
+CONFORMANCE_CMD ?= "$(ROOT_DIR)/conformance/run.py" -o conformance.txt "$(DIST_DIR)/$(strip $(CONFORMANCE_BINARY))" $(addprefix $(ROOT_DIR)/conformance/,$(CONFORMANCE_SUITE))
 
 # Delegate building any missing jsz-* docker image dependencies to build/Makefile
 $(IID_DIR)/jsz-%:

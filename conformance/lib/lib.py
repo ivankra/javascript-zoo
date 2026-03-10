@@ -790,9 +790,11 @@ def resolve_binary(path_or_name: str) -> Path:
     return p.resolve()
 
 
-def version_sort_key(name: str) -> list[int | str]:
-    """Sort key for natural/version ordering: 'es5' < 'es6' < 'es2016'."""
-    return [int(c) if c.isdigit() else c for c in re.split(r"(\d+)", name)]
+def version_sort_key(name: str) -> list:
+    """Sort key matching `sort -V`: letters sort before punctuation/symbols."""
+    parts = re.split(r'(\d+)', name)
+    return [int(p) if i % 2 else tuple(ord(c) if c.isalpha() else ord(c) + 128 for c in p)
+            for i, p in enumerate(parts)]
 
 
 def iterate_js_files(
