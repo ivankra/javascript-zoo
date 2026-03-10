@@ -244,9 +244,11 @@ class EngineConfig:
     bench_ignore_errors: bool = False
 
     # --- Conformance mode ---
-    conformance_suite: list[str] = dataclasses.field(
-        default_factory=lambda: ["es[1-5]", "kangax-*", "kangax-next"]
-    )
+    conformance_suite: list[str] = dataclasses.field(default_factory=lambda: [
+        "es[1-5]",
+        "compat-table/es6",
+        "compat-table/es20[0-9][0-9]",
+    ])
     conformance_jobs: int = 8
 
     # --- test262 mode ---
@@ -527,8 +529,8 @@ class Arbiter:
         self._warn_cres = [re.compile(p) for p in config.warnings_re]
         self._exc_cres = [re.compile(p) for p in config.exceptions_re]
 
-        # Pattern coming from conformance/kangax-* test's wrapper
-        kangax_re = re.compile('(?:kangax|es[0-9])[^ :]+: exception: (?P<type>[A-Za-z]*Error)(?:: )?(?P<message>.*?)$')
+        # Pattern coming from conformance/compat-table test's wrapper
+        kangax_re = re.compile('(?:kangax|compat-table/|es[0-9])[^ :]+: exception: (?P<type>[A-Za-z]*Error)(?:: )?(?P<message>.*?)$')
         self._exc_cres.append(kangax_re)
 
     def classify(

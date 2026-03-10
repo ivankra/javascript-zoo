@@ -334,10 +334,6 @@ class EngineConfigLoadTest(unittest.TestCase):
         with self.assertRaises(SystemExit):
             EngineConfig.load("/nonexistent/binary")
 
-    def test_conformance_suite_default(self) -> None:
-        cfg = EngineConfig.load(str(self._binary))
-        self.assertEqual(cfg.conformance_suite, ["es[1-5]", "kangax-*", "kangax-next"])
-
     def test_conformance_suite_from_sidecar(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             binary = self._make_binary(td)

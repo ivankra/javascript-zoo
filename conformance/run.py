@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures
 import json
+import os
 import re
 import sys
 import tempfile
@@ -133,9 +134,15 @@ def main() -> None:
     runner = Runner(cfg)
     arbiter = Arbiter(cfg)
     use_color = sys.stdout.isatty()
-    dir_names = sorted({rel.split("/", 1)[0] for rel in tests}, key=version_sort_key)
+    dir_names = []
+    dir_names_set = set()
+    for rel in tests:
+        dir_name = os.path.dirname(rel)
+        if dir_name not in dir_names_set:
+            dir_names.append(dir_name)
+            dir_names_set.add(dir_name)
     dir_width = max(len(test_dir) for test_dir in dir_names) + 1
-    by_dir_total = Counter(rel.split("/", 1)[0] for rel in tests)
+    by_dir_total = Counter(os.path.dirname(rel) for rel in tests)
     by_dir_done: Counter[str] = Counter()
     by_dir_passed: Counter[str] = Counter()
     by_dir_failed_tests: dict[str, list[str]] = {test_dir: [] for test_dir in dir_names}
@@ -150,7 +157,7 @@ def main() -> None:
         for fut in concurrent.futures.as_completed(futs):
             r = fut.result()
             results.append(r)
-            test_dir = r[0].split("/", 1)[0]
+            test_dir = os.path.dirname(r[0])
             by_dir_done[test_dir] += 1
             if r[1] == Verdict.OK.value:
                 by_dir_passed[test_dir] += 1

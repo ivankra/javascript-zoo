@@ -21,9 +21,9 @@ You can pass each test directly to any engine shell.
 Most test cases are generated with LLM assistance from specification
 texts as reference and reviewed/refined.
 
-## kangax/compat-table test suite
+## compat-table test suite
 
-Test cases in `kangax-*/` are directly ported over from
+Test cases in `compat-table/` are directly ported over from
 [compat-table](https://compat-table.github.io/compat-table/es6/),
 keeping the same style: self-contained tests that only require
 `console.log()` and ES3 to run.
@@ -32,9 +32,7 @@ Each test is annotated with section, weight and title of the corresponding
 compat-table subtest, so that the original weighted compat-table scores
 can be recomputed here.
 
-`kangax-es5` is a subset of `es5`, included only for completeness.
-
-`./gen-kangax.js` regenerates the tests.
+`compat-table/es5` is a subset of `es5`, included only for completeness.
 
 ## Running
 
@@ -44,10 +42,10 @@ through the whole test suite.
 ```
 Usage: run.py [-o output.txt] [-j jobs] engine [args] [test files/dirs]
 
-$ ./run.sh node                 # run node on all tests
-$ ./run.sh /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js
-$ ./run.sh /dist/jsc */*regex*  # run on all regex tests
-$ ./run.sh gjs kangax-*/        # run GNOME's JS runtime on kangax tests
+$ ./run.py node                 # run node on all tests
+$ ./run.py /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js
+$ ./run.py /dist/jsc */*regex*  # run on all regex tests
+$ ./run.py gjs compat-table/    # run GNOME's JS runtime on compat-table tests
 ```
 
 How to run a single test file directly with different engines:
@@ -55,7 +53,7 @@ How to run a single test file directly with different engines:
 ```
 $ node es5/JSON.js
 
-# Maybe pass a polyfill for console.log() if engine shell accepts multiple files
+# Maybe pass a shim for console.log() if engine shell accepts multiple files
 $ /dist/jsc lib/var-console-log.js es5/JSON.js
 
 # Or use sed to edit test on the fly
