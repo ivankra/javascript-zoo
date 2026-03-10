@@ -4,7 +4,13 @@
 SHELL := /bin/bash
 DOCKER_ARCH = $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
 
-all: node
+all: unittest mypy node
+
+unittest:
+	python3 -m unittest -v lib_test.py
+
+mypy:
+	python3 -m mypy lib.py lib_test.py run.py
 
 node: sed
 	./run.sh node

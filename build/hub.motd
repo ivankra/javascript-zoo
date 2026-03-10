@@ -7,6 +7,6 @@ https://github.com/ivankra/javascript-zoo
 
   * /zoo: repository checkout with benchmarks and test suites.
     Examples:
-      /zoo/bench/bench ./v8
-      /zoo/conformance/run.sh ./quickjs
+      /zoo/bench/bench.py ./v8
+      /zoo/conformance/run.py ./quickjs
 

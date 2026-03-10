@@ -38,14 +38,13 @@ can be recomputed here.
 
 ## Running
 
-`run.sh` wrapper should be able to handle most engine shells and run them
-through the whole test suite.  By default, uses `node`.
+`run.py` wrapper should be able to handle most engine shells and run them
+through the whole test suite.
 
 ```
-Usage: run.sh [-o output.txt] [-j jobs] engine [args] [test files/dirs]
+Usage: run.py [-o output.txt] [-j jobs] engine [args] [test files/dirs]
 
-$ ./run.sh                      # run node on all tests
-$ ./run.sh | less -R            # paginate output
+$ ./run.sh node                 # run node on all tests
 $ ./run.sh /dist/jsc es[1-5]    # run /dist/jsc on es[1-5]/*.js
 $ ./run.sh /dist/jsc */*regex*  # run on all regex tests
 $ ./run.sh gjs kangax-*/        # run GNOME's JS runtime on kangax tests
@@ -61,7 +60,6 @@ $ /dist/jsc var-console-log.js es5/JSON.js
 
 # Or use sed to edit test on the fly
 $ /dist/hermes <(sed s/console.log/print/ es5/JSON.js)
-$ ./sed-console-log.sh /dist/hermes es5/JSON.js  # creates temp file
 ```
 
 ## test262
