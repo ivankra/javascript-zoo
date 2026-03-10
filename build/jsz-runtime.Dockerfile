@@ -18,11 +18,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         ca-certificates \
         curl \
         findutils \
-        # gcc: for rpython-langjs \
-        gcc \
-        gdb \
         git \
-        less \
         libatomic1 \
         libedit-dev \
         libgc1 \
@@ -33,30 +29,33 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         locales \
         lsb-release \
         make \
-        # moreutils: /usr/bin/ts for benchmarking \
-        moreutils \
         openjdk-25-jre-headless \
-        # procps: /usr/bin/top \
-        procps \
-        # psmisc: /usr/bin/killall \
-        psmisc \
         python3 \
-        python3-requests \
-        # python3-scipy: for benchmarking \
-        python3-scipy \
-        ripgrep \
-        # ruby: for twostroke \
-        ruby \
-        strace \
         sudo \
         tar \
-        # time: /usr/bin/time, for benchmarking \
-        time \
         unzip \
-        vim \
         wget \
         xz-utils \
-        zstd && \
+        zstd \
+        # gcc: for rpython-langjs \
+        gcc \
+        # ruby: for twostroke \
+        ruby \
+        # Packages for benchmarking and conformance testing scripts \
+        jsonnet \
+        moreutils \
+        python3-requests \
+        python3-scipy \
+        python3-yaml \
+        time \
+        # Development/debugging tools for convenience only \
+        gdb \
+        less \
+        procps \
+        psmisc \
+        ripgrep \
+        strace \
+        vim && \
     # luajit/lua5.1 for castl \
     (apt-get install -y luajit || apt-get install -y lua5.1) && \
     echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && \
