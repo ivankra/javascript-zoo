@@ -2,27 +2,14 @@
 # SPDX-License-Identifier: MIT
 
 SHELL := /bin/bash
-DOCKER_ARCH = $(shell uname -m | sed -e 's/aarch64/arm64/; s/x86_64/amd64/')
 
-all: unittest mypy node
-
-unittest:
-	python3 -m unittest -v lib_test.py
+all: mypy sed node
 
 mypy:
-	python3 -m mypy lib.py lib_test.py run.py
+	python3 -m mypy run.py test262.py
 
-node: sed
+node:
 	./run.sh node
-
-jsc: sed
-	./run.sh jsc
-
-quickjs: sed
-	./run.sh quickjs
-
-quickjs5: sed
-	./run.sh quickjs es[1-5]
 
 # Fix filenames in console.log(...) messages
 sed:
@@ -33,52 +20,5 @@ sed:
 	  fi; \
 	done
 
-spec: .PHONY spec-prep spec/es1.txt spec/es3.txt spec/es5.txt spec/es51.txt spec/es6.txt spec/es6.html
-
-spec-prep:
-	mkdir -p spec
-
-spec/es1.pdf:
-	wget -O spec/es1.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_1st_edition_june_1997.pdf
-
-spec/es3.pdf:
-	wget -O spec/es3.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_3rd_edition_december_1999.pdf
-
-spec/es5.pdf:
-	wget -O spec/es5.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5th_edition_december_2009.pdf
-
-spec/es51.pdf:
-	wget -O spec/es51.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_5.1_edition_june_2011.pdf
-
-spec/es6.pdf:
-	wget -O spec/es6.pdf https://ecma-international.org/wp-content/uploads/ECMA-262_6th_edition_june_2015.pdf
-
-spec/es6.html:
-	curl -o spec/es6.html https://262.ecma-international.org/6.0/
-
-# Normalize somewhat for diffing and grep.
-# 'dwdiff -ic spec1.txt spec3.txt | less' or meld works well diffing.
-spec/%.txt: spec/%.pdf Makefile
-	pdftotext -nopgbrk -layout $< /dev/stdout \
-	  | egrep -v '^..     *- [ivx0-9]+ -$$' \
-	  | egrep -v '^ *[0-9ivx]* *© Ecma International [0-9]* *[0-9ivx]*$$' \
-	  | sed -E '1,400 s/ *[.]{20,} ?[0-9]+$$//' \
-	  | sed -E '1,400 s/^( *[0-9]+([.][0-9.]+)? +[A-Z\[].*?) *     [0-9]+$$/\1/' \
-	  | sed -E 's/^ ? ?([0-9]+[.])/\1/' \
-	  | sed -E 's/ *$$//' \
-	  | uniq >$@
-
-kangax:
-	git submodule update --init
-	./kangax.js
-
 sh:
-	podman run --rm -it \
-	  -v $(PWD)/..:/zoo:rw \
-	  -v $(PWD)/../.git:/zoo/.git:ro \
-	  -v $(PWD)/../dist/$(DOCKER_ARCH):/dist:ro \
-	  -v $(PWD)/../dist/$(DOCKER_ARCH):/zoo/dist:ro \
-	  -w /zoo/conformance \
-	  jsz-runtime
-
-.PHONY:
+	make -C ../build sh

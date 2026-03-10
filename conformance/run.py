@@ -26,7 +26,7 @@ from lib import (
 )
 
 CONF_ROOT = _SCRIPT_DIR.parent / "conformance"
-VAR_CONSOLE_LOG_JS = CONF_ROOT / "var-console-log.js"
+VAR_CONSOLE_LOG_JS = CONF_ROOT / "lib/var-console-log.js"
 TIMEOUT_SEC = 3.0
 
 
