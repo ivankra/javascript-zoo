@@ -38,14 +38,14 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   },
 
   boa: {
-    module_flag: '--module',
     exceptions_re: [
       @"^[ ]*[0-9]+: (?:\u001b\[[0-9;]*m)?(?P<type>[A-Za-z]*Error)(?:\u001b\[[0-9;]*m)?: (?P<message>.+?)(?:\u001b\[[0-9;]*m)?$",
       '^Uncaught: (?P<type>[A-Za-z]*Error): (?P<message>.+?)(?: \\(.+\\))?$',
       @'^Uncaught: "(?P<message>.+?)\]?"$',
     ],
-    test262_flags: ['--debug-object'],
-    test262_prelude: { file: 'engines/boa/test262-prelude.js' },
+    module_flag: '--module',
+    test262_flags: ['--debug-object'],  // exposes $boa object
+    test262_prelude: { file: 'engines/boa/prelude.js' },
   },
 
   bramblex: {
@@ -54,6 +54,10 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   brimstone: {
     exceptions_re: [exception_colon_message],
+    module_flag: '--module',
+    flags: ['--no-color', '--annex-b'],
+    test262_flags: self.flags + ['--expose-test-262', '--expose-gc'],
+    test262_prelude: 'var print = console.log.bind(console);',  // built-in print() only takes strings
   },
 
   castl: {
@@ -67,6 +71,8 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   chakracore: {
     exceptions_re: [exception_colon_message],
+    module_flag: '-module',
+    //test262_flags: ['-Test262'],  // requires --test-build
   },
 
   dmdscript: {
@@ -97,7 +103,8 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   engine262: {
     exceptions_re: [exception_colon_message],
-    test262_prelude: { file: 'engines/engine262/test262-prelude.js' },
+    module_flag: '--module',
+    test262_prelude: { file: 'engines/engine262/prelude.js' },
   },
 
   eval5: {
@@ -118,10 +125,13 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   graaljs: {
     exceptions_re: [exception_colon_message],
+    module_flag: '--module',
+    test262_flags: ['--experimental-options', '--js.test262-mode=true'],
   },
 
   escargot: {
     multiple_scripts: 'shared',
+    module_flag: '--module',
     exceptions_re: ['^Uncaught (?P<type>[A-Za-z]+Error): (?P<message>.+)$'],
   },
 
@@ -136,10 +146,11 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
     exceptions_re: ['^Uncaught (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
     // "file.js:14:3: error: invalid statement encountered."
     errors_re: [@'[^ ]+:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'],
-    test262_prelude: { file: 'engines/hermes/test262-prelude.js' },
   },
 
-  'hermes-v1': $.hermes {},
+  'hermes-v1': $.hermes {
+    test262_prelude: { file: 'engines/hermes-v1/prelude.js' },
+  },
 
   'iv-lv5': {
     exceptions_re: [
@@ -151,6 +162,7 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   jerryscript: {
     bench_timeout_for_test: { 'splay.js': 300, 'typescript.js': 3600 },
+    module_flag: '--module',
     multiple_scripts: 'shared',
     exceptions_re: [
       '^Unhandled exception: (?P<type>[A-Za-z]*Error)(?:: )?(?P<message>.*)$',
@@ -160,8 +172,12 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   jsc: {
     console_log: 'print',
     multiple_scripts: 'shared',
+    module_flag: '-m',
     exceptions_re: ['^Exception: (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
-    test262_prelude: { file: 'engines/jsc/test262-prelude.js' },
+  },
+
+  kiesel: {
+    module_flag: '--module',
   },
 
   kjs: {
@@ -187,7 +203,15 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
       'Uncaught exception: \\n\\[([A-Za-z]*Error)\\] ': '\\1: ',
     },
     exceptions_re: ['^(?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
-    test262_prelude: { file: 'engines/libjs/test262-prelude.js' },
+    module_flag: '--as-module',
+    flags: [
+      '--disable-ansi-colors',
+      '--no-syntax-highlight',
+      '--disable-source-location-hints',
+      '--disable-debug-output',
+      '--raw-strings',
+    ],
+    test262_flags: self.flags + ['--use-test262-global'],
   },
 
   mocha: {
@@ -215,8 +239,9 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
 
   nashorn: {
     bench_flags: ['--language=es6'],
+    module_flag: '-m',
     multiple_scripts: 'shared',
-    test262_prelude: { file: 'engines/nashorn/test262-prelude.js' },
+    test262_prelude: { file: 'engines/nashorn/prelude.js' },
   },
 
   ngs: {
@@ -227,20 +252,22 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   njs: {
     bench_prelude: [prelude_strict],
     bench_transforms: ['octal'],
+    module_flag: '-m',
   },
 
   node: {
     exceptions_re: [exception_colon_message],
-    test262_prelude: { file: 'engines/v8/test262-prelude-node.js' },
+    test262_flags: ['--expose-gc'],
+    test262_prelude: { file: 'engines/v8/prelude-node.js' },
   },
 
   nova: {
-    bench_flags: ['eval', '--no-strict'],
     console_log: 'print',
-    flags: ['eval'],
+    flags: ['eval', '--no-strict'],
     module_flag: '--module',
+    test262_flags: ['eval', '--no-strict', '--expose-internals'],
+    test262_prelude: { file: 'engines/nova/prelude.js' },
     exceptions_re: ['^Uncaught exception: (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
-    test262_prelude: 'var console = {log: print};',
     warnings_re: ['^Parse errors:$'],
     errors_re: ["(^  x |^error:|Error:|TypeError|(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't))"],
   },
@@ -252,6 +279,7 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   porffor: {
     bench_suite: ['richards.porffor.js'],
     bench_prelude: ['var print=console.log;'],
+    module_flag: '--module',
   },
 
   'quad-wheel': {
@@ -268,22 +296,26 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
     exceptions_re: [exception_colon_message],
   },
 
-  // quick's run-test262 binary
-  quickjs_262: {
+  // quickjs's run-test262 binary
+  quickjs_262: $.quickjs {
     flags: ['-N'],  // -N: run test prepared by test262-harness+eshost
-    console_log: 'print',  // no console.log()
-    module_flag: '--module',
+    console_log: 'print',  // no console.log() in run-test262
   },
 
   'quickjs-ng': {
-    flags: ['--script'],
+    flags: ['--script'],  // misdetects module mode often enough
     module_flag: '--module',
     exceptions_re: [exception_colon_message],
-    test262_prelude: 'var print = console.log.bind(console);',
+  },
+
+  'quickjs-ng_262': $['quickjs-ng'] {
+    flags: ['-N'],  // -N: run test prepared by test262-harness+eshost
+    console_log: 'print',  // no console.log() in run-test262
   },
 
   qv4: {
     bench_transforms: ['octal'],
+    module_flag: '--module',
     stderr_replace_re: { @'qt\.qml\.usedbeforedeclared:': '' },
     exceptions_re: ['^Uncaught exception: (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
   },
@@ -309,7 +341,8 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   spidermonkey: {
     // "/tmp/x.js:1:3 ReferenceError: x is not defined"
     exceptions_re: ['^[^ ]+ (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
-    test262_prelude: { file: 'engines/spidermonkey/test262-prelude.js' },
+    module_flag: '--module',
+    test262_prelude: { file: 'engines/spidermonkey/prelude.js' },
   },
 
   sobek: {
@@ -363,14 +396,14 @@ local exception_colon_message = '^(?P<type>[A-Za-z]*Error): (?P<message>.+)$';
   v8: {
     module_flag: '--module',
     exceptions_re: ['^[^:]+:[0-9]+: (?P<type>[A-Za-z]*Error): (?P<message>.+)$'],
-    test262_flags: ['--harmony', '--future', '--js-staging'],
-    test262_prelude: { file: 'engines/v8/test262-prelude.js' },
+    test262_flags: ['--harmony', '--future', '--js-staging', '--expose-gc', '--allow-natives-syntax'],
+    test262_prelude: { file: 'engines/v8/prelude.js' },
   },
 
   xs: {
     multiple_scripts: 'shared',
+    module_flag: '-m',
     exceptions_re: [exception_colon_message],
-    test262_prelude: { file: 'engines/xs/test262-prelude.js' },
   },
 
   yavashark: {

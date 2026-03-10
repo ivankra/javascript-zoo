@@ -22,7 +22,11 @@ RUN git rev-parse --short=8 HEAD >VERSION && \
     sed -i "s/ -O2/ $OPT/" Makefile && \
     if ${CC:-cc} --version 2>&1 | grep -q clang; then export CONFIG_CLANG=y; fi; \
     if [ "$LTO" = y ]; then export CONFIG_LTO=y; fi; \
-    make -j$(nproc) qjs
+    make -j$(nproc)
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/quickjs --binary=/src/qjs
+
+# TEST262=y: package run-test262 binary as well
+ARG TEST262=
+RUN if [ $TEST262 = y ]; then ./dist.py /dist/quickjs_262 --binary=/src/run-test262 --no-test; fi

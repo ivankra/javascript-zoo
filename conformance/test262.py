@@ -664,7 +664,7 @@ class Executor:
                 self._check_negative(case.fm, run)
             else:
                 expect_ok_pattern = (
-                    rf"^{re.escape(case.case_id)}: FINISHED$" if expect_finished else None
+                    rf"{re.escape(case.case_id)}: FINISHED" if expect_finished else None
                 )
                 self.arbiter.classify(
                     run,

@@ -3,5 +3,5 @@
 
 include ../../build/build.mk
 
-$(eval $(call build_engine,quickjs-ng,Dockerfile))
+$(eval $(call build_engine,quickjs-ng,Dockerfile,--build-arg TEST262=y))
 $(eval $(call build_engine,quickjs-ng_gcc,Dockerfile,--build-arg BASE=jsz-gcc))

@@ -15,8 +15,14 @@ RUN git submodule update --init third_party
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libicu-dev
 
+# TEST262=y: build with `cmake -DESCARGOT_TEST=ON` to enable $262 object
+ARG TEST262=
+
 # Note: builds with -O2 by default
-RUN cmake -DESCARGOT_MODE=release -DESCARGOT_OUTPUT=shell -GNinja -Bbuild
+RUN cmake -GNinja -Bbuild \
+      -DESCARGOT_MODE=release \
+      -DESCARGOT_OUTPUT=shell \
+      $(if [ $TEST262 = y ]; then echo -DESCARGOT_TEST=ON; fi)
 RUN ninja -C build
 
 COPY build/dist.py ./
