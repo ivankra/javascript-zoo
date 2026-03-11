@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -15,6 +16,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import lib as lib_module
 from lib import (
     Arbiter,
     EngineConfig,
@@ -228,6 +230,12 @@ class EngineConfigLoadTest(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls._td.cleanup()
 
+    def setUp(self) -> None:
+        EngineConfig.get_configs.cache_clear()
+
+    def tearDown(self) -> None:
+        EngineConfig.get_configs.cache_clear()
+
     def _make_binary(self, td: str, name: str = "eng") -> Path:
         p = Path(td) / name
         p.write_text("#!/bin/sh\necho hi\n")
@@ -253,7 +261,7 @@ class EngineConfigLoadTest(unittest.TestCase):
 
     def test_load_flags_from_runner_json(self) -> None:
         cfg = EngineConfig.load(str(self._binary), config_name="nova")
-        self.assertEqual(cfg.flags, ["eval"])
+        self.assertEqual(cfg.flags, ["eval", "--no-strict"])
 
     def test_load_module_flag_from_runner_json(self) -> None:
         cfg = EngineConfig.load(str(self._binary), config_name="quickjs")
@@ -310,7 +318,7 @@ class EngineConfigLoadTest(unittest.TestCase):
             self.assertEqual(cfg.multiple_scripts, "isolated")
 
     def test_cmdline_flags_override_config(self) -> None:
-        # nova config has flags: ["eval"]; cmdline flags win
+        # nova config has flags, but cmdline flags win
         cfg = EngineConfig.load(f"{self._binary} --fast", config_name="nova")
         self.assertEqual(cfg.flags, ["--fast"])
 
@@ -319,7 +327,7 @@ class EngineConfigLoadTest(unittest.TestCase):
             binary = self._make_binary(td)
             (Path(td) / "eng.json").write_text(json.dumps({"engine": "quickjs"}))
             cfg = EngineConfig.load(str(binary), config_name="nova")
-            self.assertEqual(cfg.flags, ["eval"])
+            self.assertEqual(cfg.flags, ["eval", "--no-strict"])
             self.assertEqual(cfg.module_flag, "--module")
 
     def test_non_executable_raises(self) -> None:
@@ -397,6 +405,53 @@ class EngineConfigLoadTest(unittest.TestCase):
         self.assertGreater(len(cfg.warnings_re), 0)
         cre = re.compile(cfg.warnings_re[0])
         self.assertTrue(cre.search("Parse errors:"))
+
+    def test_get_configs_prefers_jsonnet_binary(self) -> None:
+        fake_module = mock.Mock()
+        fake_module.evaluate_file.return_value = '{"default": {"flags": ["--module"]}}'
+        proc = subprocess.CompletedProcess(
+            args=["jsonnet", "configs.jsonnet"],
+            returncode=0,
+            stdout='{"default": {"flags": ["--cli"]}}',
+            stderr="",
+        )
+        with tempfile.TemporaryDirectory() as td:
+            script_dir = Path(td)
+            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
+            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
+                with mock.patch.object(lib_module.shutil, "which", return_value="/usr/bin/jsonnet"):
+                    with mock.patch.object(lib_module.subprocess, "run", return_value=proc) as run_mock:
+                        with mock.patch.object(lib_module.importlib, "import_module", return_value=fake_module) as import_mock:
+                            configs = EngineConfig.get_configs()
+        self.assertEqual(configs["default"]["flags"], ["--cli"])
+        run_mock.assert_called_once()
+        import_mock.assert_not_called()
+
+    def test_get_configs_falls_back_to_jsonnet_module(self) -> None:
+        fake_module = mock.Mock()
+        fake_module.evaluate_file.return_value = '{"default": {"flags": ["--module"]}}'
+        with tempfile.TemporaryDirectory() as td:
+            script_dir = Path(td)
+            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
+            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
+                with mock.patch.object(lib_module.shutil, "which", return_value=None):
+                    with mock.patch.object(lib_module.importlib, "import_module", side_effect=[fake_module]):
+                        configs = EngineConfig.get_configs()
+        self.assertEqual(configs["default"]["flags"], ["--module"])
+
+    def test_get_configs_falls_back_to_configs_json(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            script_dir = Path(td)
+            (script_dir / "configs.json").write_text(
+                '{"default": {"flags": ["--json"]}}',
+                encoding="utf-8",
+            )
+            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
+            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
+                with mock.patch.object(lib_module.importlib, "import_module", side_effect=ImportError):
+                    with mock.patch.object(lib_module.shutil, "which", return_value=None):
+                        configs = EngineConfig.get_configs()
+        self.assertEqual(configs["default"]["flags"], ["--json"])
 
     def test_run_command_propagates_build_metadata(self) -> None:
         with tempfile.TemporaryDirectory() as td:

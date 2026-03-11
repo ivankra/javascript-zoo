@@ -6,6 +6,7 @@ from __future__ import annotations
 import dataclasses
 import datetime
 import glob
+import importlib
 import json
 import os
 import re
@@ -281,16 +282,72 @@ class EngineConfig:
     @staticmethod
     @cache
     def get_configs() -> dict[str, Any]:
-        """Load and return configs.jsonnet from this file's directory. Exits on error."""
+        """Load and return engine configs from jsonnet or JSON. Exits on error."""
         script_dir = Path(__file__).parent
         jsonnet_path = script_dir / "configs.jsonnet"
+        json_path = script_dir / "configs.json"
 
+        if jsonnet_path.exists():
+            result = EngineConfig._load_configs_using_jsonnet_binary(jsonnet_path)
+            if result is not None:
+                return result
+
+            result = EngineConfig._load_configs_using_jsonnet_module(jsonnet_path)
+            if result is not None:
+                return result
+
+        if json_path.exists():
+            return EngineConfig._load_configs_from_json_file(json_path)
+
+        if jsonnet_path.exists():
+            sys.exit(
+                f"Error: couldn't evaluate {jsonnet_path}; install the Python jsonnet module, "
+                "install the 'jsonnet' binary, or provide configs.json"
+            )
+        sys.exit(f"Error: neither {jsonnet_path} nor {json_path} exists")
+
+    @staticmethod
+    def _parse_configs_text(text: str, source: Path) -> dict[str, Any]:
+        try:
+            result = json.loads(text)
+        except json.JSONDecodeError as e:
+            sys.exit(f"failed to parse {source.name}: {e}")
+        if not isinstance(result, dict):
+            sys.exit(f"{source.name}: expected a JSON object at top level")
+        return result
+
+    @staticmethod
+    def _load_configs_using_jsonnet_module(jsonnet_path: Path) -> dict[str, Any] | None:
+        for module_name in ("_jsonnet", "jsonnet"):
+            try:
+                module = importlib.import_module(module_name)
+            except ImportError:
+                continue
+
+            text: str | None = None
+            evaluate_file = getattr(module, "evaluate_file", None)
+            if callable(evaluate_file):
+                text = evaluate_file(str(jsonnet_path))
+            else:
+                evaluate_snippet = getattr(module, "evaluate_snippet", None)
+                if callable(evaluate_snippet):
+                    text = evaluate_snippet(
+                        str(jsonnet_path),
+                        jsonnet_path.read_text(encoding="utf-8"),
+                    )
+            if text is None:
+                sys.exit(
+                    f"jsonnet module '{module_name}' does not provide evaluate_file() "
+                    "or evaluate_snippet()"
+                )
+            return EngineConfig._parse_configs_text(text, jsonnet_path)
+        return None
+
+    @staticmethod
+    def _load_configs_using_jsonnet_binary(jsonnet_path: Path) -> dict[str, Any] | None:
         jsonnet_bin = shutil.which("jsonnet")
         if not jsonnet_bin:
-            sys.exit("Error: can't find 'jsonnet'")
-
-        if not jsonnet_path.exists():
-            sys.exit(f"Error: {jsonnet_path} doesn't exist")
+            return None
         proc = subprocess.run(
             [jsonnet_bin, str(jsonnet_path)],
             text=True,
@@ -300,13 +357,14 @@ class EngineConfig:
         )
         if proc.returncode != 0:
             sys.exit(f"jsonnet failed: {proc.stderr.strip()}")
-        try:
-            result = json.loads(proc.stdout)
-        except json.JSONDecodeError as e:
-            sys.exit(f"failed to parse jsonnet output: {e}")
-        if not isinstance(result, dict):
-            sys.exit("configs.jsonnet: expected a JSON object at top level")
-        return result
+        return EngineConfig._parse_configs_text(proc.stdout, jsonnet_path)
+
+    @staticmethod
+    def _load_configs_from_json_file(json_path: Path) -> dict[str, Any]:
+        return EngineConfig._parse_configs_text(
+            json_path.read_text(encoding="utf-8"),
+            json_path,
+        )
 
     @staticmethod
     def load(path_or_cmd: str, *, config_name: str | None = None) -> EngineConfig:

@@ -1,0 +1,4 @@
+PyYAML
+jsonnet
+requests
+scipy
