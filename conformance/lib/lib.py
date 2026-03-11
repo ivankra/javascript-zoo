@@ -135,7 +135,7 @@ class RunResult:
         if not out:
             return err
         sep = "" if out.endswith("\n") else "\n"
-        return f"{out}{sep}{err}"
+        return f"{err}{sep}{out}"
 
     def verdict_message(self) -> str:
         """Render verdict plus optional error detail as a compact status string."""
@@ -352,6 +352,7 @@ class Arbiter:
         self._error_cres = [re.compile(p) for p in config.errors_re]
         self._warn_cres = [re.compile(p) for p in config.warnings_re]
         self._exc_cres = [re.compile(p) for p in config.exceptions_re]
+        self._crash_cres = [re.compile(p) for p in config.crash_re]
 
         # Pattern coming from conformance/compat-table test's wrapper
         kangax_re = re.compile('(?:kangax|compat-table/|es[0-9])[^ :]+: exception: (?P<type>[A-Za-z]*Error)(?:: )?(?P<message>.*?)$')
@@ -390,9 +391,17 @@ class Arbiter:
                 run.error_message = f"signal {signum}"
             return run
 
+        exc = (self._match_exception(run.stderr or "", self._crash_cres) or
+               self._match_exception(run.stdout or "", self._crash_cres))
+        if exc:
+            run.verdict = Verdict.FAILED
+            run.error_type = ErrorType.CRASH
+            run.error_message = exc[1]
+            return run
+
         # High-priority: structured exception pattern.
-        exc = (self._match_exception(run.stdout or "", self._exc_cres) or
-               self._match_exception(run.stderr or "", self._exc_cres))
+        exc = (self._match_exception(run.stderr or "", self._exc_cres) or
+               self._match_exception(run.stdout or "", self._exc_cres))
         if exc:
             run.verdict = Verdict.FAILED
             run.error_type, run.error_message = exc
@@ -526,19 +535,19 @@ class Arbiter:
 
     def _best_error_line(self, output: str) -> str | None:
         """Return the first diagnostic error line, or None."""
-        candidates = self._error_cres + [_ERROR_GENERIC_RE]
-        for line in output.splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            if any(r.search(line) for r in self._warn_cres):
-                continue
-            for r in candidates:
-                m = r.search(line)
-                if not m:
+        for candidates in [self._error_cres, [_ERROR_GENERIC_RE]]:
+            for line in output.splitlines():
+                line = line.strip()
+                if not line:
                     continue
-                msg = m.groupdict().get("message")
-                return msg.strip() if msg and msg.strip() else line
+                if any(r.search(line) for r in self._warn_cres):
+                    continue
+                for r in candidates:
+                    m = r.search(line)
+                    if not m:
+                        continue
+                    msg = m.groupdict().get("message")
+                    return msg.strip() if msg and msg.strip() else line
         return None
 
     def _shorten_message(self, run: RunResult) -> None:

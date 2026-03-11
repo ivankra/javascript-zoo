@@ -42,7 +42,7 @@ def run_one(
             test_path=str(test_path),
             script_path=str(test_path),
         )
-    elif console_log == "print" and cfg.multiple_scripts == "shared":
+    elif console_log == "print" and cfg.multiple_scripts_with_shared_realm is True:
         # Engine accepts multiple script files with shared environment
         # between them, so we can just tell it to load a preamble file.
         run = runner.run_command(

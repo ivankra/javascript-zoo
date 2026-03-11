@@ -310,7 +310,7 @@ class Case:
     @property
     def case_id(self) -> str:
         if self.scenario in ("strict", "sloppy") and "onlyStrict" not in self.fm.flags and "noStrict" not in self.fm.flags:
-            return f"{self.rel_path}@{self.scenario}"
+            return f"{self.rel_path[:-3]}.{self.scenario}.js"
         else:
             return f"{self.rel_path}"
 

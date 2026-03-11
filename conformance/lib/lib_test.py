@@ -100,11 +100,11 @@ class RunResultTest(unittest.TestCase):
 
     def test_combined_output_both_adds_newline(self) -> None:
         r = mk_run(stdout="out", stderr="err")
-        self.assertEqual(r.combined_output(), "out\nerr")
+        self.assertEqual(r.combined_output(), "err\nout")
 
     def test_combined_output_both_no_extra_newline(self) -> None:
         r = mk_run(stdout="out\n", stderr="err\n")
-        self.assertEqual(r.combined_output(), "out\nerr\n")
+        self.assertEqual(r.combined_output(), "err\nout\n")
 
     def test_to_dict_roundtrip(self) -> None:
         r = mk_run(
@@ -306,13 +306,12 @@ class ExceptionReTest(unittest.TestCase):
         self.assertEqual(out.error_type, ErrorType.REFERENCE_ERROR)
         self.assertEqual(out.error_message, "unk is not defined")
 
-    def test_stdout_before_stderr(self) -> None:
-        # stdout is tried before stderr.
+    def test_stderr_before_stdout(self) -> None:
         pat = r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"
         arb = self._arb([pat])
         out = arb.classify(mk_run(stdout="TypeError: from stdout", stderr="SyntaxError: from stderr"))
-        self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out.error_message, "from stdout")
+        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
+        self.assertEqual(out.error_message, "from stderr")
 
     def test_stderr_used_when_stdout_no_match(self) -> None:
         pat = r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"

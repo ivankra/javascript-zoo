@@ -40,8 +40,8 @@ class EngineConfig:
     console_log: str = ""
     # Engine base name from build_metadata (e.g. "quickjs").
     engine: str = ""
-    # Whether multiple script args share one JS realm/process, use isolated runs, or are unsupported.
-    multiple_scripts: str | None = None
+    # Whether multiple script args are supported and share one JS realm.
+    multiple_scripts_with_shared_realm: bool | None = None
 
     # --- Process defaults ---
     timeout_sec: float = 30.0
@@ -54,6 +54,8 @@ class EngineConfig:
     # Post-run output substitutions: {regex: replacement}. Use "" to drop matching text.
     stdout_replace_re: dict[str, str] = dataclasses.field(default_factory=dict)
     stderr_replace_re: dict[str, str] = dataclasses.field(default_factory=dict)
+    # Regex for crash strings from language runtime (Java, Go etc)
+    crash_re: list[str] = dataclasses.field(default_factory=list)
     # High-priority structured exception patterns with named groups "type" and "message".
     exceptions_re: list[str] = dataclasses.field(default_factory=list)
     # Warning lines pattern (to filter false positives for errors_re)

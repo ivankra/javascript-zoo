@@ -25,4 +25,7 @@ mypy:
 	make -C conformance mypy
 	make -C bench mypy
 
+sh:
+	make -C build sh
+
 .PHONY:
