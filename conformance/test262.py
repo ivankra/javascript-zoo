@@ -19,14 +19,9 @@ from pathlib import Path
 from typing import Any, ClassVar, Iterator
 
 import yaml
-
-try:
-    from yaml import CSafeLoader as SafeLoader
-except ImportError:
-    from yaml import SafeLoader as SafeLoader
+SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 _SCRIPT_DIR = Path(__file__).parent.resolve()
-sys.path.insert(0, str(_SCRIPT_DIR))
 
 from lib import Arbiter, EngineConfig, ErrorType, RunResult, Runner, Verdict, iterate_js_files
 
@@ -283,9 +278,10 @@ class Frontmatter:
         )
 
 
-def scenarios_for(fm: Frontmatter, mode: str = "all") -> tuple[str]:
+def scenarios_for(fm: Frontmatter, mode: str = "all") -> tuple[str, ...]:
     """Expand frontmatter flags into concrete execution scenarios."""
     flags = fm.flags
+    res: tuple[str, ...]
     if "raw" in flags:
         res = ("raw",)
     elif "module" in flags:
@@ -656,7 +652,7 @@ class Executor:
                 test_path=str(case.test_path),
                 script_path=str(staged.script_path),
                 timeout_sec=self.timeout_sec,
-                cwd=staged.cwd,
+                cwd=str(staged.cwd),
             )
 
             if is_negative:
@@ -690,7 +686,7 @@ class Executor:
                 return
 
         if run.error_type is not None:
-            expected = ErrorType.from_js_error(fm.negative_type)
+            expected = ErrorType.from_js_error(fm.negative_type) if fm.negative_type else None
             if expected is not None:
                 if run.error_type != expected:
                     run.verdict = Verdict.FAILED
@@ -699,7 +695,7 @@ class Executor:
                     return
             else:
                 # Type not in ErrorType enum (e.g. "EarlyError"): raw string search in output
-                if not re.search(rf'\b{re.escape(fm.negative_type)}\b', run.combined_output()):
+                if not fm.negative_type or not re.search(rf'\b{re.escape(fm.negative_type)}\b', run.combined_output()):
                     run.verdict = Verdict.FAILED
                     run.error_type = ErrorType.NEGATIVE
                     run.error_message = f"expected {fm.negative_type}, not found in output"
@@ -780,7 +776,7 @@ def _edition_feature_summary(results: list[RunResult], *, use_color: bool = Fals
 
     lines = ["Summary by edition/feature:"]
     for edition in list(FEATURES_BY_ECMASCRIPT_EDITION.keys()) + ["esnext"]:
-        ed = edition_tests.get(edition)
+        ed = edition_tests.get(edition) or {}
         if not ed:
             continue
         ok, fail, skip = counts(ed)
@@ -790,7 +786,7 @@ def _edition_feature_summary(results: list[RunResult], *, use_color: bool = Fals
         if edition == "esnext":
             feats = sorted(f for f in feature_tests if f not in FEATURE_TO_ECMASCRIPT_EDITION)
         for f in feats:
-            d = feature_tests.get(f)
+            d = feature_tests.get(f) or {}
             if not d:
                 continue
             ok, fail, skip = counts(d)
@@ -883,7 +879,7 @@ def main() -> None:
     )
     p.add_argument("engine", help="Engine binary path or name")
     p.add_argument("tests", nargs="*", help="Test paths/dirs relative to test262/test")
-    p.add_argument("--config", help="Force a specific config entry from configs.jsonnet")
+    p.add_argument("--config", help="Force a specific config entry from config.yml")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count() or 4, metavar="N",
                    help="Run N jobs in parallel")
     p.add_argument("-o", "--output", help="Write terse line-based results to file")

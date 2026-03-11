@@ -3,21 +3,14 @@
 
 from __future__ import annotations
 
-import json
 import os
 import re
-import subprocess
-import sys
 import tempfile
 import unittest
-from unittest import mock
 from pathlib import Path
 from typing import Any
 
-sys.path.insert(0, str(Path(__file__).parent))
-
-import lib as lib_module
-from lib import (
+from conformance.lib import (
     Arbiter,
     EngineConfig,
     ErrorType,
@@ -164,321 +157,6 @@ class RunResultTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# EngineConfig.command
-# ---------------------------------------------------------------------------
-
-class EngineConfigCommandTest(unittest.TestCase):
-    def _cfg(self, **kw: Any) -> EngineConfig:
-        kw.setdefault("binary_path", "/usr/bin/eng")
-        return EngineConfig(**kw)
-
-    def test_bare_command(self) -> None:
-        cmd = self._cfg().argv("/tmp/s.js")
-        self.assertEqual(cmd, ["/usr/bin/eng", "/tmp/s.js"])
-
-    def test_flags_prepended(self) -> None:
-        cmd = self._cfg(flags=["--strict", "-O"]).argv("/tmp/s.js")
-        self.assertEqual(cmd, ["/usr/bin/eng", "--strict", "-O", "/tmp/s.js"])
-
-    def test_module_flag_only_in_module_mode(self) -> None:
-        cfg = self._cfg(flags=["eval"], module_flag="--module")
-        self.assertEqual(cfg.argv("/tmp/s.js", module=False),
-                         ["/usr/bin/eng", "eval", "/tmp/s.js"])
-        self.assertEqual(cfg.argv("/tmp/s.js", module=True),
-                         ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
-
-    def test_path_object_stringified(self) -> None:
-        cmd = self._cfg().argv(Path("/tmp/s.js"))
-        self.assertEqual(cmd, ["/usr/bin/eng", "/tmp/s.js"])
-
-    def test_multiple_positional_args_appended(self) -> None:
-        cmd = self._cfg(flags=["eval"]).argv(Path("/tmp/a.js"), "--flag", "/tmp/b.js")
-        self.assertEqual(cmd, ["/usr/bin/eng", "eval", "/tmp/a.js", "--flag", "/tmp/b.js"])
-
-    def test_mode_overrides_default_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], test262_flags=["--harmony"])
-        cmd = cfg.argv("/tmp/s.js", mode="test262")
-        self.assertEqual(cmd, ["/usr/bin/eng", "--harmony", "/tmp/s.js"])
-
-    def test_mode_falls_back_to_default_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], test262_flags=None)
-        cmd = cfg.argv("/tmp/s.js", mode="test262")
-        self.assertEqual(cmd, ["/usr/bin/eng", "eval", "/tmp/s.js"])
-
-    def test_mode_appends_extra_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], bench_flags=["-O", "-w"])
-        cmd = cfg.argv("--fast", "/tmp/s.js", mode="bench")
-        self.assertEqual(cmd, ["/usr/bin/eng", "-O", "-w", "--fast", "/tmp/s.js"])
-
-
-# ---------------------------------------------------------------------------
-# EngineConfig.load
-# ---------------------------------------------------------------------------
-
-class EngineConfigLoadTest(unittest.TestCase):
-    _td: tempfile.TemporaryDirectory[str]
-    _binary: Path
-
-    @classmethod
-    def setUpClass(cls) -> None:
-        cls._td = tempfile.TemporaryDirectory()
-        cls._binary = Path(cls._td.name) / "eng"
-        cls._binary.write_text("#!/bin/sh\necho hi\n")
-        cls._binary.chmod(0o755)
-
-    @classmethod
-    def tearDownClass(cls) -> None:
-        cls._td.cleanup()
-
-    def setUp(self) -> None:
-        EngineConfig.get_configs.cache_clear()
-
-    def tearDown(self) -> None:
-        EngineConfig.get_configs.cache_clear()
-
-    def _make_binary(self, td: str, name: str = "eng") -> Path:
-        p = Path(td) / name
-        p.write_text("#!/bin/sh\necho hi\n")
-        p.chmod(0o755)
-        return p
-
-    def test_load_basic(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.binary_path, str(binary))
-            self.assertEqual(cfg.flags, [])
-
-    def test_load_sidecar_json(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(
-                json.dumps({"engine": "myeng", "console_log": "print"})
-            )
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.engine, "myeng")
-            self.assertEqual(cfg.console_log, "print")
-
-    def test_load_flags_from_runner_json(self) -> None:
-        cfg = EngineConfig.load(str(self._binary), config_name="nova")
-        self.assertEqual(cfg.flags, ["eval", "--no-strict"])
-
-    def test_load_module_flag_from_runner_json(self) -> None:
-        cfg = EngineConfig.load(str(self._binary), config_name="quickjs")
-        self.assertEqual(cfg.module_flag, "--module")
-
-    def test_load_test262_flags_from_runner_json(self) -> None:
-        cfg = EngineConfig.load(str(self._binary), config_name="v8")
-        self.assertIn("--harmony", cfg.test262_flags or [])
-        self.assertIn("--future", cfg.test262_flags or [])
-
-    def test_load_bench_flags_from_runner_json(self) -> None:
-        cfg = EngineConfig.load(str(self._binary), config_name="hermes")
-        self.assertEqual(cfg.bench_flags, ["-O", "-w"])
-        self.assertEqual(cfg.flags, [])
-
-    def test_load_multiple_scripts_from_runner_json(self) -> None:
-        cfg = EngineConfig.load(str(self._binary), config_name="jsc")
-        self.assertEqual(cfg.multiple_scripts, "shared")
-
-    def test_load_uses_binary_then_short_then_variant_then_engine(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td, "eng_variant")
-            (Path(td) / "eng_variant.json").write_text(json.dumps({
-                "engine": "engine-name",
-                "variant": "variant-name",
-            }))
-            with mock.patch.object(EngineConfig, "get_configs", return_value={
-                "eng_variant": {"console_log": "binary"},
-                "eng": {"console_log": "short"},
-                "engine-name_variant-name": {"console_log": "variant"},
-                "engine-name": {"console_log": "engine"},
-            }):
-                cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.console_log, "binary")
-
-    def test_load_any_engineconfig_field_from_sidecar(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({
-                "cwd": "/tmp/work",
-                "env": {"MODE": "test"},
-                "output_limit": 123,
-            }))
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.cwd, "/tmp/work")
-            self.assertEqual(cfg.env, {"MODE": "test"})
-            self.assertEqual(cfg.output_limit, 123)
-
-    def test_load_multiple_scripts_from_sidecar(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"multiple_scripts": "isolated"}))
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.multiple_scripts, "isolated")
-
-    def test_cmdline_flags_override_config(self) -> None:
-        # nova config has flags, but cmdline flags win
-        cfg = EngineConfig.load(f"{self._binary} --fast", config_name="nova")
-        self.assertEqual(cfg.flags, ["--fast"])
-
-    def test_explicit_config_name_overrides_detected_config(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"engine": "quickjs"}))
-            cfg = EngineConfig.load(str(binary), config_name="nova")
-            self.assertEqual(cfg.flags, ["eval", "--no-strict"])
-            self.assertEqual(cfg.module_flag, "--module")
-
-    def test_non_executable_raises(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            p = Path(td) / "eng"
-            p.write_text("not a script")
-            p.chmod(0o644)
-            with self.assertRaises(SystemExit):
-                EngineConfig.load(str(p))
-
-    def test_missing_binary_raises(self) -> None:
-        with self.assertRaises(SystemExit):
-            EngineConfig.load("/nonexistent/binary")
-
-    def test_conformance_suite_from_sidecar(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"conformance_suite": ["es5"]}))
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.conformance_suite, ["es5"])
-
-    def test_conformance_suite_explicit_empty_list(self) -> None:
-        # Explicit [] in sidecar means "no suites", not "use default".
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"conformance_suite": []}))
-            cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.conformance_suite, [])
-
-    def test_load_exceptions_re_from_configs(self) -> None:
-        # boa has exceptions_re with named groups type and message
-        cfg = EngineConfig.load(str(self._binary), config_name="boa")
-        self.assertGreater(len(cfg.exceptions_re), 0)
-        cre = re.compile(cfg.exceptions_re[1])  # Uncaught: pattern
-        self.assertIn("type", cre.groupindex)
-        self.assertIn("message", cre.groupindex)
-        m = cre.search("Uncaught: TypeError: bad")
-        self.assertIsNotNone(m)
-        assert m
-        self.assertEqual(m.group("type"), "TypeError")
-        self.assertEqual(m.group("message"), "bad")
-        # spidermonkey also has exceptions_re
-        cfg2 = EngineConfig.load(str(self._binary), config_name="spidermonkey")
-        self.assertGreater(len(cfg2.exceptions_re), 0)
-        cre2 = re.compile(cfg2.exceptions_re[0])
-        self.assertIn("type", cre2.groupindex)
-        m2 = cre2.search("/tmp/t.js:1:7 TypeError: bad")
-        self.assertIsNotNone(m2)
-        assert m2
-        self.assertEqual(m2.group("type"), "TypeError")
-
-    def test_load_stderr_replace_re_from_configs(self) -> None:
-        # kjs has stderr_replace_re to drop LEAK messages
-        cfg = EngineConfig.load(str(self._binary), config_name="kjs")
-        self.assertGreater(len(cfg.stderr_replace_re), 0)
-        pat, repl = next(iter(cfg.stderr_replace_re.items()))
-        cre = re.compile(pat)
-        self.assertTrue(cre.search("LEAK: 42 KJS::Node"))
-        self.assertFalse(cre.search("SyntaxError: oops"))
-        self.assertEqual(repl, "")
-
-    def test_load_stdout_replace_re_from_configs(self) -> None:
-        # espruino has stdout_replace_re to drop its startup banner
-        cfg = EngineConfig.load(str(self._binary), config_name="espruino")
-        self.assertGreater(len(cfg.stdout_replace_re), 0)
-        pat, repl = next(iter(cfg.stdout_replace_re.items()))
-        cre = re.compile(pat)
-        self.assertTrue(cre.search(" ____                 _ "))
-        self.assertTrue(cre.search("Espruino is Open Source. Our work is supported"))
-        self.assertEqual(repl, "")
-
-    def test_load_warnings_re_from_configs(self) -> None:
-        # nova has warnings_re: ['^Parse errors:$']
-        cfg = EngineConfig.load(str(self._binary), config_name="nova")
-        self.assertGreater(len(cfg.warnings_re), 0)
-        cre = re.compile(cfg.warnings_re[0])
-        self.assertTrue(cre.search("Parse errors:"))
-
-    def test_get_configs_prefers_jsonnet_binary(self) -> None:
-        fake_module = mock.Mock()
-        fake_module.evaluate_file.return_value = '{"default": {"flags": ["--module"]}}'
-        proc = subprocess.CompletedProcess(
-            args=["jsonnet", "configs.jsonnet"],
-            returncode=0,
-            stdout='{"default": {"flags": ["--cli"]}}',
-            stderr="",
-        )
-        with tempfile.TemporaryDirectory() as td:
-            script_dir = Path(td)
-            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
-            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
-                with mock.patch.object(lib_module.shutil, "which", return_value="/usr/bin/jsonnet"):
-                    with mock.patch.object(lib_module.subprocess, "run", return_value=proc) as run_mock:
-                        with mock.patch.object(lib_module.importlib, "import_module", return_value=fake_module) as import_mock:
-                            configs = EngineConfig.get_configs()
-        self.assertEqual(configs["default"]["flags"], ["--cli"])
-        run_mock.assert_called_once()
-        import_mock.assert_not_called()
-
-    def test_get_configs_falls_back_to_jsonnet_module(self) -> None:
-        fake_module = mock.Mock()
-        fake_module.evaluate_file.return_value = '{"default": {"flags": ["--module"]}}'
-        with tempfile.TemporaryDirectory() as td:
-            script_dir = Path(td)
-            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
-            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
-                with mock.patch.object(lib_module.shutil, "which", return_value=None):
-                    with mock.patch.object(lib_module.importlib, "import_module", side_effect=[fake_module]):
-                        configs = EngineConfig.get_configs()
-        self.assertEqual(configs["default"]["flags"], ["--module"])
-
-    def test_get_configs_falls_back_to_configs_json(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            script_dir = Path(td)
-            (script_dir / "configs.json").write_text(
-                '{"default": {"flags": ["--json"]}}',
-                encoding="utf-8",
-            )
-            (script_dir / "configs.jsonnet").write_text("{}", encoding="utf-8")
-            with mock.patch.object(lib_module, "__file__", str(script_dir / "lib.py")):
-                with mock.patch.object(lib_module.importlib, "import_module", side_effect=ImportError):
-                    with mock.patch.object(lib_module.shutil, "which", return_value=None):
-                        configs = EngineConfig.get_configs()
-        self.assertEqual(configs["default"]["flags"], ["--json"])
-
-    def test_run_command_propagates_build_metadata(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"engine": "eng", "version": "1.0"}))
-            from lib import Runner
-            cfg = EngineConfig.load(str(binary))
-            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
-            self.assertEqual(run.build_metadata.get("version"), "1.0")
-
-    def test_runner_strips_ansi_from_stdout_and_stderr(self) -> None:
-        from lib import Runner
-        with tempfile.TemporaryDirectory() as td:
-            binary = Path(td) / "eng"
-            binary.write_text(
-                "#!/bin/sh\n"
-                "printf '\\033[1;31mError\\033[0m: bad\\n'\n"
-                "printf '\\033[32mOK\\033[0m\\n' >&2\n"
-            )
-            binary.chmod(0o755)
-            cfg = EngineConfig.load(str(binary))
-            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
-        self.assertEqual(run.stdout, "Error: bad\n")
-        self.assertEqual(run.stderr, "OK\n")
-
-
-# ---------------------------------------------------------------------------
 # Arbiter
 # ---------------------------------------------------------------------------
 
@@ -572,7 +250,7 @@ class ArbiterTest(unittest.TestCase):
 
     def test_real_crash_produces_signal_name(self) -> None:
         import shutil
-        from lib import Runner
+        from conformance.lib import Runner
         python = shutil.which("python3") or shutil.which("python")
         if not python:
             self.skipTest("python not found")
@@ -681,15 +359,9 @@ class ExceptionReTest(unittest.TestCase):
         self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
         self.assertEqual(out.error_message, "bad type")
 
-    def test_ansi_optional_prefix_with_anchor(self) -> None:
-        # mquickjs full pattern from configs.jsonnet: optional ESC[...m, ^ anchor kept
-        pat = "^(?:\x1b\\[[0-9;]*m)?(?P<type>[A-Za-z]+Error): (?P<message>[^\x1b\n]+)"
+    def test_error_prefix_pattern(self) -> None:
+        pat = "^(?P<type>[A-Za-z]+Error): (?P<message>[^\n]+)"
         arb = self._arb([pat])
-        # With ANSI prefix
-        out = arb.classify(mk_run(stderr="\x1b[31;1mSyntaxError: oops"))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "oops")
-        # Without ANSI prefix
         out2 = arb.classify(mk_run(stderr="TypeError: bad"))
         self.assertEqual(out2.error_type, ErrorType.TYPE_ERROR)
         self.assertEqual(out2.error_message, "bad")

@@ -1,4 +1,3 @@
 PyYAML
-jsonnet
 requests
 scipy

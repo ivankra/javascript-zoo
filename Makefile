@@ -21,4 +21,8 @@ dev:
 preview:
 	npm run preview
 
+mypy:
+	make -C conformance mypy
+	make -C bench mypy
+
 .PHONY:

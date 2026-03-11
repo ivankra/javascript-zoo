@@ -6,7 +6,8 @@ SHELL := /bin/bash
 all: mypy sed node
 
 mypy:
-	python3 -m mypy run.py test262.py
+	python3 -m mypy *.py
+	make -C lib mypy
 
 node:
 	./run.sh node

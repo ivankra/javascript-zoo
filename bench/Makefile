@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-all: lint gen
+all: mypy gen
 
 gen:
 	./gen-octane.sh
@@ -9,6 +9,6 @@ gen:
 clean:
 	./gen-octane.sh --clean
 
-lint:
-	mypy bench
-	mypy --ignore-missing-imports compare
+mypy:
+	cd .. && python3 -m mypy bench/bench.py
+	cd .. && python3 -m mypy --ignore-missing-imports bench/compare.py

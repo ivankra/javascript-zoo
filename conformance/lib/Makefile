@@ -4,7 +4,7 @@
 all: unittest mypy
 
 unittest:
-	python3 -m unittest -v lib_test.py
+	cd ../.. && python3 -m unittest -v conformance.lib.lib_test conformance.lib.config_test
 
 mypy:
-	python3 -m mypy lib.py lib_test.py
+	cd ../.. && python3 -m mypy conformance/lib/*.py

@@ -14,20 +14,10 @@ import tempfile
 from collections import Counter
 from pathlib import Path
 
-_SCRIPT_DIR = Path(__file__).parent.resolve()
-sys.path.insert(0, str(_SCRIPT_DIR))
+from lib import Arbiter, EngineConfig, Runner, Verdict, version_sort_key, iterate_js_files
 
-from lib import (
-    Arbiter,
-    EngineConfig,
-    Runner,
-    Verdict,
-    version_sort_key,
-    iterate_js_files,
-)
-
-CONF_ROOT = _SCRIPT_DIR.parent / "conformance"
-VAR_CONSOLE_LOG_JS = CONF_ROOT / "lib/var-console-log.js"
+CONFORMANCE_DIR = Path(__file__).parent.resolve()
+VAR_CONSOLE_LOG_JS = CONFORMANCE_DIR / "lib/var-console-log.js"
 TIMEOUT_SEC = 3.0
 
 
@@ -127,7 +117,7 @@ def main() -> None:
 
     # Resolve test files from suites or config defaults.
     suites = args.suites or list(cfg.conformance_suite)
-    tests = list(iterate_js_files(suites, root=CONF_ROOT))
+    tests = list(iterate_js_files(suites, root=CONFORMANCE_DIR))
     if not tests:
         sys.exit(f"No conformance tests found for patterns: {suites}")
 
@@ -151,7 +141,7 @@ def main() -> None:
     results_by_test: dict[str, tuple[str, str]] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         futs = {
-            pool.submit(run_one, runner, arbiter, cfg, CONF_ROOT / rel, rel): rel
+            pool.submit(run_one, runner, arbiter, cfg, CONFORMANCE_DIR / rel, rel): rel
             for rel in tests
         }
         for fut in concurrent.futures.as_completed(futs):

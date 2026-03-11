@@ -22,14 +22,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-_SCRIPT_DIR = Path(__file__).parent.parent.resolve()
-sys.path.insert(0, str(_SCRIPT_DIR))
+REPO_ROOT = Path(__file__).parent.parent.resolve()
+sys.path.insert(0, str(REPO_ROOT))
 
 from conformance.lib import Arbiter, EngineConfig, RunResult, Runner, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
-REPO_ROOT = _SCRIPT_DIR.parent
 BENCH_ROOT = REPO_ROOT / "bench"
 COMPARE_SCRIPT = BENCH_ROOT / "compare.py"
 
