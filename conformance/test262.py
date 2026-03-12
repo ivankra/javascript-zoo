@@ -23,7 +23,16 @@ SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 _SCRIPT_DIR = Path(__file__).parent.resolve()
 
-from lib import Arbiter, EngineConfig, ErrorType, RunResult, Runner, Verdict, iterate_js_files
+from lib import (
+    Arbiter,
+    EngineConfig,
+    ErrorType,
+    RunResult,
+    Runner,
+    Verdict,
+    iterate_js_files,
+    expand_template_literals,
+)
 
 DEFAULT_TEST262_DIR = (_SCRIPT_DIR.parent / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
@@ -353,7 +362,7 @@ class Case:
     @property
     def case_id(self) -> str:
         if self.scenario in ("strict", "sloppy") and "onlyStrict" not in self.fm.flags and "noStrict" not in self.fm.flags:
-            return f"{self.rel_path[:-3]}.{self.scenario}.js"
+            return f"{self.rel_path}@{self.scenario}"
         else:
             return f"{self.rel_path}"
 
@@ -505,7 +514,11 @@ class Assembler:
     @lru_cache(maxsize=100)
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
-        return p.read_text(encoding="utf-8", errors="replace")
+        source = p.read_text(encoding="utf-8", errors="replace")
+        # Expand template literals in harness code for ES5 engines
+        if "`" in source:
+            source = expand_template_literals(source)
+        return source
 
     def _copy_deps_recursive(
         self,
