@@ -298,6 +298,49 @@ def scenarios_for(fm: Frontmatter, mode: str = "all") -> tuple[str, ...]:
         return tuple([s for s in res if mode == s])
 
 
+def emit_preprocessed_test(
+    tests: list[str],
+    test262_dir: Path,
+    assembler: Assembler,
+    *,
+    mode: str = "all",
+    output: str | None = None,
+) -> None:
+    """Emit one assembled test to stdout or a file."""
+    if len(tests) != 1:
+        sys.exit("-E requires exactly one test path")
+
+    emit_tests = list(itertools.islice(
+        iterate_js_files(tests, root=test262_dir / "test"),
+        2,
+    ))
+    if not emit_tests:
+        sys.exit(f"no tests matched: {tests[0]}")
+    if len(emit_tests) != 1:
+        sys.exit(f"-E requires exactly one matched test, got multiple for: {tests[0]}")
+
+    rel_path = emit_tests[0]
+    test_path = test262_dir / "test" / rel_path
+    source = test_path.read_text(encoding="utf-8", errors="replace")
+    fm = Frontmatter.parse(source)
+    scenarios = scenarios_for(fm, mode)
+    if not scenarios:
+        sys.exit(f"no runnable scenario for mode {mode!r}: {rel_path}")
+    scenario = scenarios[0]
+
+    assembled = assembler.assemble(Case(
+        test_path=test_path,
+        rel_path=rel_path,
+        source=source,
+        fm=fm,
+        scenario=scenario,
+    ))
+    if output:
+        Path(output).write_text(assembled, encoding="utf-8")
+    else:
+        sys.stdout.write(assembled)
+
+
 @dataclasses.dataclass
 class Case:
     """One test × scenario to execute (file already read)."""
@@ -394,6 +437,9 @@ class Assembler:
         # 1. "use strict"; (if strict scenario; must be file-initial)
         if case.scenario == "strict":
             pieces.append('"use strict";\n')
+        elif case.scenario == "sloppy":
+            # Add it commented-out to avoid line number drift between cases
+            pieces.append('//"use strict";\n')
 
         # 2. Engine prelude
         if self.prelude:
@@ -878,11 +924,12 @@ def main() -> None:
         usage="%(prog)s [opts] engine [test globs]",
     )
     p.add_argument("engine", help="Engine binary path or name")
-    p.add_argument("tests", nargs="*", help="Test paths/dirs relative to test262/test")
+    p.add_argument("tests", nargs="*", help="Test paths/dirs/globs relative to test262/test")
     p.add_argument("--config", help="Force a specific config entry from config.yml")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count() or 4, metavar="N",
                    help="Run N jobs in parallel")
-    p.add_argument("-o", "--output", help="Write terse line-based results to file")
+    p.add_argument("-o", "--output", metavar="FILE",
+                   help="Output file (for test results or -E)")
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
                    help="Timeout for each test in seconds")
     p.add_argument("-f", "--features", action="append", default=[], metavar="LIST",
@@ -890,16 +937,19 @@ def main() -> None:
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy", "raw", "module"], default="all",
                    help="Run only tests with this mode")
     p.add_argument("-v", "--verbose", action="store_true", help="Increase verbosity")
-    p.add_argument("--exclude", action="append", default=[],
+    p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Skip test paths matching glob pattern")
     p.add_argument("--intl", action="store_true",
                    help="Include Intl402 tests (skipped by default)")
     p.add_argument("--limit", type=int, default=0, help="Run at most N test files")
     p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
                    help="Skip tests requiring these features (comma-separated)")
+    p.add_argument("-E", action="store_true", dest="emit",
+                   help="Emit a single preprocessed test to stdout or -o FILE")
     p.add_argument("--save-compiled", metavar="DIR",
                    help="Save assembled test scripts to directory")
-    p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR))
+    p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
+                   help=f"Root of test262 repo (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
 
     engine = EngineConfig.load(args.engine, config_name=args.config)
@@ -913,6 +963,16 @@ def main() -> None:
     save_compiled = Path(args.save_compiled) if args.save_compiled else None
     if save_compiled:
         save_compiled.mkdir(parents=True, exist_ok=True)
+
+    if args.emit:
+        emit_preprocessed_test(
+            args.tests,
+            test262_dir,
+            assembler,
+            mode=args.mode,
+            output=args.output,
+        )
+        return
 
     use_color = sys.stdout.isatty()
 
