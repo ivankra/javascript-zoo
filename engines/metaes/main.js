@@ -38,13 +38,13 @@ try {
         } else if (typeof value !== "undefined") {
           console.log(String(value));
         }
-      } catch (err) {
-        console.error("Uncaught " + err);
+      } catch (e) {
+        console.log("Uncaught exception: " + e);
       }
     }
   }
 } catch (e) {
-  const msg = e && e.stack ? e.stack : String(e);
-  console.error(msg);
+  console.log("Uncaught exception: " + e);
+  if (e && e.stack) console.log(e.stack);
   process.exit(1);
 }

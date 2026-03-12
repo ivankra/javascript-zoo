@@ -293,9 +293,9 @@ bool RunScript(const API& api, const wchar_t* code) {
   if (err != 0) {
     JsValueRef ex = nullptr;
     if (err == JsErrorScriptCompile) {
-      fwprintf(stderr, L"Compile error\n");
+      fwprintf(stderr, L"Compilation error\n");
     } else if (err == JsErrorScriptException && api.JsGetAndClearException(&ex) == 0 && ex) {
-      fwprintf(stderr, L"Uncaught ");
+      fwprintf(stderr, L"Uncaught exception: ");
       PrintJsValue(stderr, api, ex, L'\n');
     } else {
       fwprintf(stderr, L"JsRunScript failed (0x%08x)\n", err);

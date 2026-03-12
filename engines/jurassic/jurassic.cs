@@ -80,10 +80,26 @@ internal static class Program {
     if (ex is JavaScriptException jse) {
       var obj = jse.GetErrorObject(engine);
       if (obj is ErrorInstance err && !string.IsNullOrEmpty(err.Stack)) {
-        Console.Error.WriteLine(err.Stack);
-        return;
+        PrintUncaught(err.Stack);
+      } else {
+        PrintUncaught(ex.Message);
       }
+      return;
     }
     Console.Error.WriteLine(ex.Message);
+  }
+
+  private static void PrintUncaught(string message) {
+    if (string.IsNullOrEmpty(message)) {
+      Console.Error.WriteLine("Uncaught exception");
+      return;
+    }
+
+    var parts = message.Split(new[] { "\r\n", "\n" }, 2, StringSplitOptions.None);
+    Console.Error.WriteLine($"Uncaught exception: {parts[0]}");
+
+    if (parts.Length > 1 && parts[1].Length > 0) {
+      Console.Error.WriteLine(parts[1]);
+    }
   }
 }

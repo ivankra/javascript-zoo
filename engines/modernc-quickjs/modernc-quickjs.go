@@ -4,10 +4,12 @@
 // SPDX-License-Identifier: MIT
 
 //go:build ignore
+
 package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"os"
 
@@ -15,6 +17,9 @@ import (
 )
 
 func main() {
+	moduleMode := flag.Bool("module", false, "execute input files as ES modules")
+	flag.Parse()
+
 	vm, err := quickjs.NewVM()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Failed to create VM: %v\n", err)
@@ -22,19 +27,25 @@ func main() {
 	}
 	defer vm.Close()
 
-	vm.StdAddHelpers()  // print, console.log bindings
+	vm.StdAddHelpers() // print, console.log bindings
 
-	if len(os.Args) > 1 {
-		for _, filename := range os.Args[1:] {
+	evalFlags := quickjs.EvalGlobal
+	if *moduleMode {
+		vm.SetDefaultModuleLoader()
+		evalFlags = quickjs.EvalModule
+	}
+
+	if flag.NArg() > 0 {
+		for _, filename := range flag.Args() {
 			data, err := os.ReadFile(filename)
 			if err != nil {
 				fmt.Fprintf(os.Stderr, "Failed to read file %s: %v\n", filename, err)
 				os.Exit(1)
 			}
 
-			_, err = vm.Eval(string(data), quickjs.EvalGlobal)
+			_, err = vm.Eval(string(data), evalFlags)
 			if err != nil {
-				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				fmt.Fprintf(os.Stderr, "Uncaught exception: %v\n", err)
 				os.Exit(1)
 			}
 		}
@@ -48,7 +59,7 @@ func main() {
 
 			result, err := vm.Eval(scanner.Text(), quickjs.EvalGlobal)
 			if err != nil {
-				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				fmt.Fprintf(os.Stderr, "Uncaught exception: %v\n", err)
 			} else if _, isUndefined := result.(quickjs.Undefined); !isUndefined {
 				fmt.Println(result)
 			}

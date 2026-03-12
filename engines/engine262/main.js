@@ -100,7 +100,15 @@ function runE262(realm, source, filename, echoResult) {
       return Q(realm.evaluateScript(source, { specifier: filename }));
     });
     if (c instanceof engine262.AbruptCompletion) {
-      print('Error: ' + engine262.inspect(c));
+      const inspected = engine262.inspect(c);
+      if (inspected.startsWith('\n')) {
+        const error = inspected.match(/\n([A-Za-z]+Error: .*)$/m);
+        if (error) {
+          print(`Uncaught exception: ${error[1]}\n${inspected}`);
+          return;
+        }
+      }
+      print(`Uncaught exception: ${inspected}`);
       return;
     }
     if (echoResult) {

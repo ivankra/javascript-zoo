@@ -1,5 +1,5 @@
 diff --git a/build.gradle.kts b/build.gradle.kts
-index 13f236c6..a286c791 100644
+index 13f236c..3675ade 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
 @@ -35,9 +35,24 @@ dependencies {
@@ -28,27 +28,105 @@ index 13f236c6..a286c791 100644
  }
  
  tasks {
+diff --git a/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt b/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
+index 2d0d6cd..667ac8f 100644
+--- a/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
++++ b/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
+@@ -18,8 +18,7 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
+         end: TokenLocation,
+     ) {
+         printSourceLines(sourceInfo, start, end)
+-        out.println()
+-        out.println("\u001b[31mSyntaxError: $cause\u001b[0m")
++        out.println("Uncaught exception: SyntaxError: $cause")
+     }
+ 
+     private fun printSourceLines(sourceInfo: SourceInfo, start: TokenLocation, end: TokenLocation) {
+@@ -50,18 +49,8 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
+             printSourceLines(sourceInfo, firstFrame.invocationLocation.start, firstFrame.invocationLocation.end)
+         }
+ 
+-        out.println("\u001B[31m")
+-
+-        if (cause is JSObject && cause.hasProperty("message".key())) {
+-            val ctor = cause.get("constructor")
+-            if (ctor is JSFunction) {
+-                out.print(ctor.get("name"))
+-                out.print(": ")
+-            }
+-            out.println(cause.get("message"))
+-        } else {
+-            out.println(cause.toString())
+-        }
++        out.print("Uncaught exception: ")
++        out.println(formatRuntimeError(cause))
+ 
+         for (frame in stackFrames.asReversed()) {
+             if (frame.function == null)
+@@ -73,12 +62,30 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
+             out.println("    at ${frame.function.debugName} $location")
+         }
+ 
+-        out.println("\u001B[0m")
+     }
+ 
+     override fun reportInternalError(sourceInfo: SourceInfo, cause: Throwable) {
+-        out.println("\u001B[31m")
+-        cause.printStackTrace(out)
+-        out.println("\u001B[0m")
++        out.print("Uncaught exception: ")
++        out.println(formatThrowable(cause))
++    }
++
++    private fun formatRuntimeError(cause: JSValue): String {
++        if (cause is JSObject && cause.hasProperty("message".key())) {
++            val ctor = cause.get("constructor")
++            val name = if (ctor is JSFunction) ctor.get("name").toString() else null
++            val message = cause.get("message").toString()
++
++            if (!name.isNullOrBlank()) {
++                return if (message.isBlank()) name else "$name: $message"
++            }
++        }
++
++        return cause.toString()
++    }
++
++    private fun formatThrowable(cause: Throwable): String {
++        val name = cause::class.simpleName ?: "Throwable"
++        val message = cause.message
++        return if (message.isNullOrBlank()) name else "$name: $message"
+     }
+ }
 diff --git a/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
 new file mode 100644
-index 00000000..ec34a7d6
+index 0000000..bddc17d
 --- /dev/null
 +++ b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
-@@ -0,0 +1,33 @@
+@@ -0,0 +1,56 @@
 +package com.reevajs.reeva.test262
 +
 +import com.reevajs.reeva.Reeva
 +import com.reevajs.reeva.core.Agent
 +import com.reevajs.reeva.core.lifecycle.FileSourceInfo
 +import com.reevajs.reeva.core.lifecycle.LiteralSourceInfo
++import com.reevajs.reeva.core.lifecycle.SourceInfo
 +import com.reevajs.reeva.runtime.primitives.JSUndefined
 +import java.io.File
 +
++private data class CliOptions(
++    val isModule: Boolean,
++    val files: List<String>,
++)
++
 +fun main(args: Array<String>) {
++    val options = parseArgs(args)
++
 +    Agent.build().withActiveScope {
 +        makeRealmAndInitializeExecutionEnvironment()
 +
-+        if (args.isNotEmpty()) {
-+            args.forEach { runAndPrint(FileSourceInfo(File(it), false)) }
++        if (options.files.isNotEmpty()) {
++            options.files.forEach { runAndPrint(FileSourceInfo(File(it), isModule = options.isModule)) }
 +            return@withActiveScope
 +        }
 +
@@ -56,12 +134,27 @@ index 00000000..ec34a7d6
 +            print("> ")
 +            val line = readLine() ?: break
 +            if (line.isBlank()) continue
-+            runAndPrint(LiteralSourceInfo("repl", line, false))
++            runAndPrint(LiteralSourceInfo("repl", line, options.isModule))
 +        }
 +    }
 +}
 +
-+private fun runAndPrint(source: com.reevajs.reeva.core.lifecycle.SourceInfo) {
++private fun parseArgs(args: Array<String>): CliOptions {
++    var isModule = false
++    val files = mutableListOf<String>()
++
++    for (arg in args) {
++        if (arg == "--module") {
++            isModule = true
++        } else {
++            files += arg
++        }
++    }
++
++    return CliOptions(isModule, files)
++}
++
++private fun runAndPrint(source: SourceInfo) {
 +    val result = Reeva.execute(source)
 +    if (result != null && result != JSUndefined)
 +        println(result)

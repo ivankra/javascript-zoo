@@ -1,5 +1,13 @@
-// Prelude for test262, copied from upstream:
+// Prelude for test262, adapted from upstream:
 // https://github.com/mozilla-firefox/firefox/blob/main/js/src/tests/test262-host.js
+
+// Tweaks for starlingmonkey
+if (typeof print === 'undefined') {
+  globalThis.print = console.log.bind(console);
+}
+if (!("createIsHTMLDDA" in globalThis) && !("document" in globalThis && "all" in globalThis.document)) {
+  globalThis.createIsHTMLDDA = function() {};
+}
 
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -36,7 +44,7 @@
 
     var IsHTMLDDA = hasCreateIsHTMLDDA
                     ? global.createIsHTMLDDA()
-                    : global.document.all;
+                    : (global.document && global.document.all);
 
     // The $262.agent framework is not appropriate for browsers yet, and some
     // test cases can't work in browsers (they block the main thread).
@@ -226,7 +234,7 @@ $262.agent = (function (global) {
             };
         })()
     };
-})(this);
+})(globalThis);  // this->globalThis for gjs/cjs
 
 /*
 var $mozAsyncTestDone = false;

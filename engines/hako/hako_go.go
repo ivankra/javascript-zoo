@@ -15,6 +15,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"regexp"
 	"strings"
 
 	"github.com/6over3/hako/hosts/go/hako"
@@ -27,13 +28,14 @@ var replJS string
 var wasmBytes []byte
 
 var stdinReader = bufio.NewReader(os.Stdin)
+var jsErrorPrefix = regexp.MustCompile(`^(?:[A-Za-z][A-Za-z0-9]*Error:|Error$)`)
 
 func main() {
 	ctx := context.Background()
 
 	rt, err := hako.New(ctx, wasmBytes, nil)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		os.Exit(1)
 	}
 	defer rt.Close()
@@ -41,12 +43,12 @@ func main() {
 
 	realm, err := rt.CreateRealm()
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		os.Exit(1)
 	}
 	defer realm.Close()
 	if err := setupGlobals(realm); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		os.Exit(1)
 	}
 
@@ -68,7 +70,7 @@ func main() {
 func runFile(realm *hako.Realm, path string) bool {
 	source, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
 
@@ -77,7 +79,7 @@ func runFile(realm *hako.Realm, path string) bool {
 		DetectModule: true,
 	})
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
 	defer result.Free()
@@ -91,7 +93,7 @@ func runFile(realm *hako.Realm, path string) bool {
 func runRepl(realm *hako.Realm) bool {
 	result, err := realm.EvalCode(replJS)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
 	result.Free()
@@ -209,4 +211,18 @@ func setupGlobalFunction(realm *hako.Realm, name string, funcID int32) error {
 	}
 
 	return nil
+}
+
+func formatExceptionMessage(message string) string {
+	if strings.TrimSpace(message) == "" {
+		return "Uncaught exception: Error"
+	}
+	if looksLikeJSException(message) {
+		return "Uncaught exception: " + message
+	}
+	return message
+}
+
+func looksLikeJSException(message string) bool {
+	return jsErrorPrefix.MatchString(message)
 }

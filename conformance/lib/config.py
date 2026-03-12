@@ -117,11 +117,7 @@ class EngineConfig:
 
     @staticmethod
     def load(path_or_cmd: str, *, config_name: str | None = None) -> EngineConfig:
-        """Resolve binary, load sidecar build_metadata, merge with configs YAML.
-
-        Merge order (later wins):
-          configs[engine] → configs[engine_variant] → build_metadata
-        """
+        """Resolve binary, load sidecar build_metadata, merge with configs YAML."""
         args = shlex.split(path_or_cmd)
         if not args:
             raise SystemExit("empty engine spec")
@@ -139,11 +135,6 @@ class EngineConfig:
             except Exception:
                 pass
 
-        # Priority for config merging:
-        #  * config.yml[defaults] (lowest-priority defaults)
-        #  * config.yml[<engine>]
-        #  * config.yml[<engine>_<variant>]
-        #  * build_metadata (highest-priority overrides)
         configs = EngineConfig.get_configs()
         cfg = configs.get("defaults", {})
         if config_name:

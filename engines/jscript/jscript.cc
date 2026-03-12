@@ -267,7 +267,9 @@ class WScript : public IDispatch {
 // IActiveScriptSite implementation used as the engine callback sink.
 class ScriptSite : public IActiveScriptSite {
  public:
-  explicit ScriptSite(WScript* host) : ref_(1), host_(host) {}
+  explicit ScriptSite(WScript* host) : ref_(1), host_(host), current_script_path_(nullptr) {}
+
+  void SetCurrentScriptPath(const wchar_t* path) { current_script_path_ = path; }
 
   HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, void** out) override {
     if (!out) return E_POINTER;
@@ -328,7 +330,11 @@ class ScriptSite : public IActiveScriptSite {
     err->GetSourcePosition(nullptr, &line, nullptr);
     EXCEPINFO ex = {};
     err->GetExceptionInfo(&ex);
-    fwprintf(stderr, L"Error on line %lu: %ls\n", line + 1, ex.bstrDescription ? ex.bstrDescription : L"<unknown>");
+    fwprintf(stderr, L"%ls:%lu %ls: %ls\n",
+             current_script_path_ ? current_script_path_ : L"<file>",
+             line + 1,
+             ex.bstrSource ? ex.bstrSource : L"JScript error",
+             ex.bstrDescription ? ex.bstrDescription : L"<unknown>");
     SysFreeString(ex.bstrSource);
     SysFreeString(ex.bstrDescription);
     SysFreeString(ex.bstrHelpFile);
@@ -338,6 +344,7 @@ class ScriptSite : public IActiveScriptSite {
  private:
   LONG ref_;
   WScript* host_;
+  const wchar_t* current_script_path_;
 };
 
 #ifdef _WIN64
@@ -390,9 +397,9 @@ IActiveScript* InitJScript(const wchar_t* dll_path) {
   return script;
 }
 
-bool RunScript(IActiveScriptParse_t* parser, const wchar_t* code) {
+bool RunScript(IActiveScriptParse_t* parser, const wchar_t* code, const wchar_t* source_name = nullptr) {
   EXCEPINFO ex = {};
-  HRESULT hr = parser->ParseScriptText(code, nullptr, nullptr, nullptr, 0, 0, SCRIPTTEXT_ISVISIBLE, nullptr, &ex);
+  HRESULT hr = parser->ParseScriptText(code, nullptr, nullptr, source_name, 0, 0, SCRIPTTEXT_ISVISIBLE, nullptr, &ex);
   if (FAILED(hr) && hr != (HRESULT)SCRIPT_E_REPORTED) {
     // Show error message unless already handled by OnScriptError()
     fwprintf(stderr, L"ParseScriptText failed (hr=0x%08lx ex.scode=0x%08lx)%ls%ls\n",
@@ -459,7 +466,8 @@ int wmain(int argc, wchar_t** argv) {
   } else {
     for (int i = first_script_arg; i < argc && ok; i++) {
       wchar_t* code = ReadFileUtf8(argv[i]);
-      ok = RunScript(parser, code);
+      site.SetCurrentScriptPath(argv[i]);
+      ok = RunScript(parser, code, argv[i]);
       free(code);
     }
   }

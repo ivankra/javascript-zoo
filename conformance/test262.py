@@ -490,7 +490,7 @@ class Assembler:
 
         if not needs_module_tree:
             # Simple case: single file in shared temp dir.
-            script_path = temp_dir / f"{os.getpid()}-{id(assembled)}.js"
+            script_path = temp_dir / f"t262-temp-{os.getpid()}-{id(assembled)}.js"
             script_path.write_bytes(assembled.encode("utf-8"))
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()))
 

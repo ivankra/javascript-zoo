@@ -198,7 +198,7 @@ if (typeof console === "undefined") { console = { log: __wscript_print }; }
     } catch (__err) {
       var __name = __err && __err.name;
       var __msg = __err && __err.message;
-      WScript.Echo('Uncaught ' + (__name ? __name + ': ' : '') + (__msg || __err));
+      WScript.Echo('Uncaught exception: ' + (__name ? __name + ': ' : '') + (__msg || __err));
     }
   }
 })();

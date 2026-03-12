@@ -53,5 +53,5 @@ try {
   }
   vm.destroy();
 } catch (e) {
-  console.log("" + e);
+  console.log("Uncaught exception: " + e);
 }

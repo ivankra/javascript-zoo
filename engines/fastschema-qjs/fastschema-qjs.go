@@ -17,28 +17,34 @@ import (
 )
 
 var strictMode bool
+var moduleMode bool
 
-func evalAndPrint(ctx *qjs.Context, name, code string) error {
+func evalAndPrint(ctx *qjs.Context, name, code string) {
 	var result *qjs.Value
 	var err error
+	options := []qjs.EvalOptionFunc{qjs.Code(code)}
 	if strictMode {
-		result, err = ctx.Eval(name, qjs.Code(code), qjs.FlagStrict())
-	} else {
-		result, err = ctx.Eval(name, qjs.Code(code))
+		options = append(options, qjs.FlagStrict())
 	}
+	if moduleMode {
+		options = append(options, qjs.TypeModule())
+	}
+
+	result, err = ctx.Eval(name, options...)
 	if err != nil {
-		return err
+		fmt.Fprintf(os.Stderr, "Uncaught exception: %v\n", err)
+		os.Exit(1)
 	}
 	defer result.Free()
 
 	if !result.IsUndefined() {
 		fmt.Println(result.String())
 	}
-	return nil
 }
 
 func main() {
 	flag.BoolVar(&strictMode, "strict", false, "enable strict mode execution")
+	flag.BoolVar(&moduleMode, "module", false, "execute input as an ES module")
 	flag.Parse()
 
 	rt, err := qjs.New()
@@ -58,10 +64,7 @@ func main() {
 				os.Exit(1)
 			}
 
-			if err := evalAndPrint(ctx, filename, string(data)); err != nil {
-				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-				os.Exit(1)
-			}
+			evalAndPrint(ctx, filename, string(data))
 		}
 	} else {
 		scanner := bufio.NewScanner(os.Stdin)
@@ -76,9 +79,7 @@ func main() {
 				continue
 			}
 
-			if err := evalAndPrint(ctx, "<stdin>", line); err != nil {
-				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
-			}
+			evalAndPrint(ctx, "<stdin>", line)
 		}
 
 		if err := scanner.Err(); err != nil {

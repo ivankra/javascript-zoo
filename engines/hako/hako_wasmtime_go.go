@@ -14,6 +14,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"regexp"
 	"strings"
 
 	"github.com/bytecodealliance/wasmtime-go/v41"
@@ -22,6 +23,7 @@ import (
 const (
 	initialMemoryPages = 25165824 / 65536  // 24 MiB
 	maximumMemoryPages = 268435456 / 65536 // 256 MiB
+	evalFlagModule     = 1 << 0
 )
 
 //go:embed repl.js
@@ -39,28 +41,35 @@ type runner struct {
 	stdin    *bufio.Reader
 }
 
+var jsErrorPrefix = regexp.MustCompile(`^(?:[A-Za-z][A-Za-z0-9]*Error:|Error$)`)
+
 func main() {
 	r, err := newRunner()
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		os.Exit(1)
 	}
 
 	runtimePtr, contextPtr, err := r.createRuntimeAndContext()
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		os.Exit(1)
 	}
 	defer r.cleanup(contextPtr, runtimePtr)
 	if err := r.setupGlobals(contextPtr); err != nil {
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
+		os.Exit(1)
+	}
+
+	moduleMode, files, err := parseArgs(os.Args[1:])
+	if err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 
-	args := os.Args[1:]
-	if len(args) > 0 {
-		for _, path := range args {
-			if !r.runFile(contextPtr, path) {
+	if len(files) > 0 {
+		for _, path := range files {
+			if !r.runFile(contextPtr, path, moduleMode) {
 				os.Exit(1)
 			}
 		}
@@ -202,28 +211,28 @@ func (r *runner) setupGlobals(contextPtr int32) error {
 	if err := r.setupGlobalFunction(contextPtr, "readline", 3); err != nil {
 		return err
 	}
-	if err := r.eval(contextPtr, "globalThis.console = { log: print };", "globals.js"); err != nil {
+	if err := r.eval(contextPtr, "globalThis.console = { log: print };", "globals.js", false); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (r *runner) runFile(contextPtr int32, path string) bool {
+func (r *runner) runFile(contextPtr int32, path string, moduleMode bool) bool {
 	scriptBytes, err := os.ReadFile(path)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
-	if err := r.eval(contextPtr, string(scriptBytes), path); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+	if err := r.eval(contextPtr, string(scriptBytes), path, moduleMode); err != nil {
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
 	return true
 }
 
 func (r *runner) runRepl(contextPtr int32) bool {
-	if err := r.eval(contextPtr, replJS, "repl.js"); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+	if err := r.eval(contextPtr, replJS, "repl.js", false); err != nil {
+		fmt.Fprintln(os.Stderr, formatExceptionMessage(err.Error()))
 		return false
 	}
 	return true
@@ -238,8 +247,9 @@ func (r *runner) cleanup(contextPtr int32, runtimePtr int32) {
 	}
 }
 
-func (r *runner) eval(contextPtr int32, jsCode string, filename string) error {
+func (r *runner) eval(contextPtr int32, jsCode string, filename string, moduleMode bool) error {
 	evalFunc := r.requiredFunc("HAKO_Eval")
+	isExceptionFunc := r.requiredFunc("HAKO_IsException")
 	freeValueFunc := r.requiredFunc("HAKO_FreeValuePointer")
 
 	codePtr, err := r.allocateString(jsCode)
@@ -254,7 +264,12 @@ func (r *runner) eval(contextPtr int32, jsCode string, filename string) error {
 	}
 	defer r.free.Call(r.store, filePtr)
 
-	ret, err := evalFunc.Call(r.store, contextPtr, codePtr, int32(len(jsCode)), filePtr, int32(0), int32(0))
+	evalFlags := int32(0)
+	if moduleMode {
+		evalFlags = evalFlagModule
+	}
+
+	ret, err := evalFunc.Call(r.store, contextPtr, codePtr, int32(len(jsCode)), filePtr, int32(0), evalFlags)
 	if err != nil {
 		return err
 	}
@@ -262,13 +277,44 @@ func (r *runner) eval(contextPtr int32, jsCode string, filename string) error {
 	if err != nil {
 		return err
 	}
-	if valuePtr != 0 {
-		_, err = freeValueFunc.Call(r.store, contextPtr, valuePtr)
-		if err != nil {
-			return err
-		}
+	if valuePtr == 0 {
+		return nil
+	}
+
+	defer freeValueFunc.Call(r.store, contextPtr, valuePtr)
+
+	isExceptionAny, err := isExceptionFunc.Call(r.store, valuePtr)
+	if err != nil {
+		return err
+	}
+	isException, err := asInt32(isExceptionAny)
+	if err != nil {
+		return err
+	}
+	if isException != 0 {
+		return fmt.Errorf("%s", r.formatJSValue(contextPtr, valuePtr))
 	}
 	return nil
+}
+
+func parseArgs(args []string) (bool, []string, error) {
+	moduleMode := false
+	files := make([]string, 0, len(args))
+
+	for _, arg := range args {
+		switch arg {
+		case "--module":
+			moduleMode = true
+		default:
+			files = append(files, arg)
+		}
+	}
+
+	if moduleMode && len(files) == 0 {
+		return false, nil, fmt.Errorf("--module requires at least one script path")
+	}
+
+	return moduleMode, files, nil
 }
 
 func (r *runner) setupGlobalFunction(contextPtr int32, name string, funcID int32) error {
@@ -476,6 +522,40 @@ func (r *runner) readString(ptr int32) string {
 		}
 	}
 	return ""
+}
+
+func (r *runner) formatJSValue(ctxPtr int32, valuePtr int32) string {
+	toCString := r.requiredFunc("HAKO_ToCString")
+	freeCString := r.requiredFunc("HAKO_FreeCString")
+
+	strAny, err := toCString.Call(r.store, ctxPtr, valuePtr)
+	if err != nil {
+		return "Error"
+	}
+	strPtr, err := asInt32(strAny)
+	if err != nil || strPtr == 0 {
+		return "Error"
+	}
+	defer freeCString.Call(r.store, ctxPtr, strPtr)
+
+	if s := r.readString(strPtr); s != "" {
+		return s
+	}
+	return "Error"
+}
+
+func formatExceptionMessage(message string) string {
+	if strings.TrimSpace(message) == "" {
+		return "Uncaught exception: Error"
+	}
+	if looksLikeJSException(message) {
+		return "Uncaught exception: " + message
+	}
+	return message
+}
+
+func looksLikeJSException(message string) bool {
+	return jsErrorPrefix.MatchString(message)
 }
 
 func asInt32(v interface{}) (int32, error) {

@@ -68,19 +68,26 @@ if (typeof scriptArgs !== 'undefined') {
   }
 }
 
-var interpreter = new Interpreter(code, function(i, g) {
-  var lastLine = null;
-  i.setProperty(g, 'print', i.createNativeFunction(print));
-  var consoleObj = i.nativeToPseudo({});
-  i.setProperty(consoleObj, 'log', i.createNativeFunction(print));
-  i.setProperty(g, 'console', consoleObj);
-  i.setProperty(g, '__prompt', i.createNativeFunction(function() {
-    putstr('JS-Interpreter> ');
-    var line = readline();
-    // Some shells return empty string on EOF.
-    if (line == null || (line === '' && lastLine === '')) return null;
-    return lastLine = line;
-  }));
-});
+try {
+  var interpreter = new Interpreter(code, function(i, g) {
+    var lastLine = null;
+    i.setProperty(g, 'print', i.createNativeFunction(print));
+    var consoleObj = i.nativeToPseudo({});
+    i.setProperty(consoleObj, 'log', i.createNativeFunction(print));
+    i.setProperty(g, 'console', consoleObj);
+    i.setProperty(g, '__prompt', i.createNativeFunction(function() {
+      putstr('JS-Interpreter> ');
+      var line = readline();
+      // Some shells return empty string on EOF.
+      if (line == null || (line === '' && lastLine === '')) return null;
+      return lastLine = line;
+    }));
+  });
 
-interpreter.run();
+  interpreter.run();
+} catch (e) {
+  print('Uncaught exception: ' + e);
+  if (typeof process === 'object') {
+    process.exit(1);
+  }
+}

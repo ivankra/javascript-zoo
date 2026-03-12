@@ -317,7 +317,7 @@ class Runner:
 
 def apply_replacements(text: str, replacements: list[tuple[re.Pattern[str], str]]) -> str:
     """Apply regex substitutions to text, then drop lines that became empty."""
-    if not replacements:
+    if not replacements or not text:
         return text
     for cre, repl in replacements:
         text = cre.sub(repl, text)
@@ -551,12 +551,24 @@ class Arbiter:
         if not run.error_message:
             return
 
+        # Shorten full absolute script path in messages to just
+        # the basename of the original test file to keep messages
+        # short and consistent between runs.
         for path in [run.script_path, run.test_path]:
             if path and path.startswith('/') and path in run.error_message:
-                # Shorten full absolute script path to just basename in error messages
-                run.error_message = run.error_message.replace(path, os.path.basename(path))
+                run.error_message = run.error_message.replace(path, os.path.basename(run.test_path or path))
+
+        # Replace temporary script basename (from test262.py) with
+        # the basename of the original test filename
+        if 't262-temp-' in run.error_message and run.test_path:
+            run.error_message = re.sub(
+                    't262-temp-[a-z0-9-]+[.]js',
+                    os.path.basename(run.test_path),
+                    run.error_message
+            )
 
         # Drop temp dir name from test262.py's staged module paths
+        # to keep messages short and consistent between runs.
         if '/tmp/t262-mod' in run.error_message:
             run.error_message = re.sub('/tmp/t262-mod-[^/]+/', '', run.error_message)
 

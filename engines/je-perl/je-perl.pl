@@ -27,7 +27,7 @@ for (;;) {
       print("" + __res);
     }
   } catch (__err) {
-    print("" + __err);
+    print("Uncaught exception: " + __err);
   }
 }
 EOF
@@ -38,6 +38,10 @@ for my $file (@ARGV) {
   open my $fh, '<', $file or die "Cannot open '$file': $!";
   my $code = do { local $/; <$fh> };
   close $fh;
-  eval { $j->eval($code) };
-  warn $@ if $@;
+  my $result = $j->eval($code, $file, 1);
+  next if defined $result || $@ eq '';
+
+  chomp(my $error = "$@");
+  warn "Uncaught exception: $error\n";
+  exit 1;
 }

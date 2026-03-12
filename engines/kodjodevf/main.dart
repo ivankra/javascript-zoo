@@ -26,7 +26,7 @@ int main(List<String> args) {
           stdout.writeln(result.toString());
         }
       } catch (e) {
-        stderr.writeln('Uncaught $e');
+        stderr.writeln('Uncaught exception: $e');
       }
     }
     return 0;
@@ -40,7 +40,7 @@ int main(List<String> args) {
         stdout.writeln(result.toString());
       }
     } catch (e) {
-      stderr.writeln('$path: $e');
+      stderr.writeln('Uncaught exception: $e');
       return 1;
     }
   }

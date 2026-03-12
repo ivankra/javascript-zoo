@@ -42,7 +42,7 @@ internal static class Program {
       engine.ExecuteScript(source);
       return true;
     } catch (Exception ex) {
-      Console.Error.WriteLine(ex.Message);
+      Console.Error.WriteLine(FormatException(ex));
       return false;
     }
   }
@@ -70,9 +70,19 @@ internal static class Program {
         try {
           engine.ExecuteScript(line);
         } catch (Exception) {
-          Console.Error.WriteLine(exprError.Message);
+          Console.Error.WriteLine(FormatException(exprError));
         }
       }
+    }
+  }
+
+  private static string FormatException(Exception ex) {
+    var message = ex.Message;
+    var typeName = ex.GetType().Name;
+    if (typeName == "ParserException" && !message.StartsWith("SyntaxError:", StringComparison.Ordinal)) {
+      return "SyntaxError: " + message;
+    } else {
+      return "Runtime error: " + typeName + ": " + message;
     }
   }
 }
