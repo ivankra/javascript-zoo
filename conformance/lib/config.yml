@@ -217,7 +217,26 @@ graaljs:
   exceptions_re:
     - *exception_colon_message
   module_flag: --module
-  test262_flags: ['--experimental-options', '--js.test262-mode=true']
+  flags:
+    - --experimental-options
+    - --js.test262-mode=true
+    - --js.global-arguments=false  # required for some test262 tests
+    - --js.shebang=true
+    - --js.performance=true
+    # Enable experimental javascript features
+    - --js.class-fields=true
+    - --js.regexp-unicode-sets=true
+    - --js.source-phase-imports=true
+    - --js.async-context=true
+    - --js.async-iterator-helpers=true
+    - --js.atomics-wait-async=true
+    - --js.error-cause=true
+    - --js.iterator-helpers=true
+    - --js.new-set-methods=true
+    - --js.shadow-realm=true
+    - --js.temporal=true
+    - --js.top-level-await=true
+    - --js.worker=true
 
 hako:
   crash_re:
