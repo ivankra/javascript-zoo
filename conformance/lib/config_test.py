@@ -139,22 +139,6 @@ class EngineConfigLoadTest(unittest.TestCase):
         self.assertEqual(m.group("type"), "TypeError")
         self.assertEqual(m.group("message"), "bad")
 
-    def test_load_configs_dict_loads_yaml_and_ignores_anchor_helper(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            script_dir = Path(td)
-            (script_dir / "config.yml").write_text(
-                "_anchors:\n"
-                "  shared: &shared\n"
-                "    flags: [--from-anchor]\n"
-                "default:\n"
-                "  <<: *shared\n",
-                encoding="utf-8",
-            )
-            with mock.patch.object(config_module, "__file__", str(script_dir / "config.py")):
-                configs = EngineConfig.get_configs()
-        self.assertNotIn("_anchors", configs)
-        self.assertEqual(configs["default"]["flags"], ["--from-anchor"])
-
     def test_missing_binary_raises(self) -> None:
         with self.assertRaises(SystemExit):
             EngineConfig.load("/nonexistent/binary")

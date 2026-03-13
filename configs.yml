@@ -1,24 +1,25 @@
-# Per-engine configuration: customization knobs on how to work with each engine.
+# Per-engine configuration: customization knobs on how to work with each engine
+# such as command-line flags, test262 options, regexes to parse output, etc.
 #
-# See EngineConfig in conformance/lib/config.py for schema.
+# See conformance/lib/config.py for schema and parser.
+#
+# Lookup key is binary's basename.
 #
 # This file is shared between benchmarking and conformance testing scripts,
-# read every time at start up to look up configuration for the binary they
-# need to run - binary's basename is used as the lookup key.
+# read at start up to find configuration for the binary to be run.
 #
-# The config is merged at runtime with with sidecar metadata (<binary>.json)
-# and the binary name without _<variant> suffix, if any,
-# in the following order, for "<engine>_<variant>" binary basename:
-#  * config.yml[default] (lowest-priority defaults, optional)
-#  * config.yml[<engine>]
-#  * config.yml[<engine>_<variant>]
-#  * <engine>_<variant>.json (highest-priority overrides)
+# The config is merged at runtime with sidecar metadata (<binary>.json file)
+# and the key without _<variant> suffix, if any, in this order:
+#  * configs.yml[default] (lowest priority defaults)
+#  * configs.yml[<engine>]
+#  * configs.yml[<engine>_<variant>] (higher priority per-variant overrides)
+#  * <engine>_<variant>.json (highest priority overrides)
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
 #default:
-#  <common settings for all engines can go here>
+#  <any overrides to the defaults for all engines can go here>
 
 .constants:
   # Common pattern to report exceptions
@@ -691,7 +692,7 @@ v8: &v8
   module_flag: --module
   exceptions_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
-  flags:
+  flags: &v8_flags
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
     - --allow-natives-syntax
@@ -707,7 +708,14 @@ v8: &v8
     - --js-source-phase-imports
     - --js-defer-import-eval
     - --js-immutable-arraybuffer
-    # TODO: { "shell": "$BINARY --help | grep '^  --js-...'" }
+    # TODO: shell expansion
+    # Enable every disabled --harmony-* / --js-* flag that the binary advertises.
+    # Snippet for both node and d8. Each output line will be expanded to a flag.
+    # - shell: |
+    #     $BINARY --help --v8-options 2>&1 | \
+    #       sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
+    #       grep 'default: --no-' | \
+    #       sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
   test262_prelude:
     file: engines/v8/prelude.js
 
@@ -744,6 +752,7 @@ node:
   test262_flags: ['--expose-gc']
   test262_prelude:
     file: engines/v8/prelude-node.js
+  flags: *v8_flags
 
 bun:
   console_log: console.log

@@ -16,6 +16,9 @@ from typing import Any
 import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
+REPO_ROOT = Path(__file__).parent.parent.parent
+CONFIGS_YML = REPO_ROOT / "configs.yml"
+
 
 @dataclasses.dataclass
 class EngineConfig:
@@ -136,7 +139,7 @@ class EngineConfig:
                 pass
 
         configs = EngineConfig.get_configs()
-        cfg = configs.get("defaults", {})
+        cfg = configs.get("default", {})
         if config_name:
             if config_name not in configs:
                 raise SystemExit(f"unknown config: {config_name}")
@@ -173,8 +176,7 @@ def resolve_binary(path_or_name: str) -> Path:
 @cache
 def load_configs_dict() -> dict[str, Any]:
     """Load and return engine configs from YAML. Exits on error."""
-    script_dir = Path(__file__).parent
-    yaml_path = script_dir / "config.yml"
+    yaml_path = CONFIGS_YML
     if not yaml_path.exists():
         sys.exit(f"Error: {yaml_path} doesn't exists")
     try:
