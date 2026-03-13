@@ -193,6 +193,7 @@ class Runner:
     _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
 
     def __init__(self, config: EngineConfig) -> None:
+        config.resolve()
         self.config = config
         self.current_proc: subprocess.Popen[bytes] | None = None
         user = [(re.compile(p), r) for p, r in config.stdout_replace_re.items()]

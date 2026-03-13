@@ -8,6 +8,7 @@ import json
 import os
 import shlex
 import shutil
+import subprocess
 import sys
 from functools import cache
 from pathlib import Path
@@ -31,7 +32,9 @@ class EngineConfig:
     # --- Invocation ---
     binary_path: str | None = None
     # Flags always prepended before the script path.
-    flags: list[str] = dataclasses.field(default_factory=list)
+    # Items may be str, {"shell": "..."} (expanded via bash), or list[str] (flattened).
+    # Call resolve() to expand these to plain list[str] before use.
+    flags: list[str | dict[str, str] | list] = dataclasses.field(default_factory=list)
     # Extra flag appended after flags, before the script path, in module mode only.
     module_flag: str | None = None
     # Raw sidecar metadata from <binary>.json kept for reporting/persistence.
@@ -69,7 +72,7 @@ class EngineConfig:
     # --- Bench mode ---
     bench_suite: list[str] = dataclasses.field(default_factory=list)
     # Bench-only flags. If set (even to []), override `flags` in bench.py.
-    bench_flags: list[str] | None = None
+    bench_flags: list[str | dict[str, str] | list] | None = None
     # JS prelude snippets prepended to each benchmark script.
     # None = use mode default (prelude-print.js); [] = no prelude; [...] = use these.
     # Each item is either an inline JS string or {"file": "path/relative/to/repo"}.
@@ -92,7 +95,7 @@ class EngineConfig:
     # Either inline JS string or {"file": "path"} dict.
     test262_prelude: str | dict[str, str] | None = None
     # Test262-only flags. If set (even to []), override `flags` in test262.py.
-    test262_flags: list[str] | None = None
+    test262_flags: list[str | dict[str, str] | list] | None = None
     # Default test262 feature skips for this engine. CLI --skip-features overrides.
     test262_skip_features: list[str] = dataclasses.field(default_factory=list)
 
@@ -100,15 +103,33 @@ class EngineConfig:
     def name(self) -> str:
         return Path(self.binary_path).name if self.binary_path else ""
 
+    def resolve(self) -> None:
+        """Expand shell items and flatten nested lists in all flags fields in-place.
+
+        Shell items: {"shell": "bash command"} — run via bash -c with $BINARY set.
+        Each non-empty output line becomes one flag.
+        Nested lists are flattened recursively.
+        Safe to call multiple times (no-op on already-resolved list[str]).
+        """
+        binary = self.binary_path or ""
+        for attr in ("flags", "test262_flags", "bench_flags"):
+            val = getattr(self, attr)
+            if val is not None:
+                setattr(self, attr, _resolve_flags_list(val, binary))
+
     def argv(self, *args: Path | str, module: bool = False, mode: str = "") -> list[str]:
         """Build execution argv: binary + selected flags [+ module_flag] + positional args."""
         cmd = [str(self.binary_path)]
         if mode == "bench" and self.bench_flags is not None:
-            cmd.extend(self.bench_flags)
+            flags = self.bench_flags
         elif mode == "test262" and self.test262_flags is not None:
-            cmd.extend(self.test262_flags)
+            flags = self.test262_flags
         else:
-            cmd.extend(self.flags)
+            flags = self.flags
+        for flag in flags:
+            if not isinstance(flag, str):
+                raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")
+        cmd.extend(flags)  # type: ignore[arg-type]
         if module and self.module_flag:
             cmd.append(self.module_flag)
         cmd.extend(str(arg) for arg in args)
@@ -159,6 +180,34 @@ class EngineConfig:
         return EngineConfig(**cfg)
 
 
+def _resolve_flags_list(items: list, binary_path: str) -> list[str]:
+    """Recursively expand shell items and flatten nested lists to list[str]."""
+    result: list[str] = []
+    for item in items:
+        if isinstance(item, str):
+            result.append(item)
+        elif isinstance(item, list):
+            result.extend(_resolve_flags_list(item, binary_path))
+        elif isinstance(item, dict) and "shell" in item:
+            env = {**os.environ, "BINARY": binary_path}
+            try:
+                proc = subprocess.run(
+                    ["bash", "-c", item["shell"]],
+                    env=env,
+                    capture_output=True,
+                    text=True,
+                    timeout=30,
+                )
+            except Exception as e:
+                sys.exit(f"shell flag expansion failed: {e}")
+            result.extend(line for line in proc.stdout.splitlines() if line.strip())
+        else:
+            sys.exit(f"unexpected flags item: {item!r}")
+    return result
+
+
+
+
 def resolve_binary(path_or_name: str) -> Path:
     """Resolve engine binary: relative/absolute path or bare name via PATH."""
     if "/" in path_or_name:
@@ -170,7 +219,7 @@ def resolve_binary(path_or_name: str) -> Path:
         raise SystemExit(f"{path_or_name}: not found")
     if not os.access(p, os.X_OK):
         raise SystemExit(f"{path_or_name}: not executable")
-    return p.resolve()
+    return p
 
 
 @cache

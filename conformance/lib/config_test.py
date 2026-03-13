@@ -13,7 +13,50 @@ from unittest import mock
 
 import conformance.lib.config as config_module
 from conformance.lib import EngineConfig, Runner
-from conformance.lib.config import load_configs_dict
+from conformance.lib.config import _resolve_flags_list, load_configs_dict
+
+
+class ResolveFlagsListTest(unittest.TestCase):
+    def test_plain_strings_passthrough(self) -> None:
+        self.assertEqual(_resolve_flags_list(["--foo", "--bar"], ""), ["--foo", "--bar"])
+
+    def test_nested_list_flattened(self) -> None:
+        self.assertEqual(_resolve_flags_list([["--a", "--b"], "--c"], ""), ["--a", "--b", "--c"])
+
+    def test_shell_item_expands_lines(self) -> None:
+        result = _resolve_flags_list([{"shell": "printf '%s\\n%s\\n' --x --y"}], "/bin/eng")
+        self.assertEqual(result, ["--x", "--y"])
+
+    def test_shell_item_empty_lines_skipped(self) -> None:
+        result = _resolve_flags_list([{"shell": "printf '\\n--x\\n\\n'"}], "/bin/eng")
+        self.assertEqual(result, ["--x"])
+
+    def test_shell_item_receives_binary_env(self) -> None:
+        result = _resolve_flags_list([{"shell": "echo $BINARY"}], "/path/to/eng")
+        self.assertEqual(result, ["/path/to/eng"])
+
+    def test_mixed_types(self) -> None:
+        result = _resolve_flags_list(["--a", ["--b", "--c"], {"shell": "echo --d"}], "/bin/e")
+        self.assertEqual(result, ["--a", "--b", "--c", "--d"])
+
+    def test_resolve_method_updates_flags_in_place(self) -> None:
+        cfg = EngineConfig(
+            binary_path="/bin/eng",
+            flags=["--a", ["--b"], {"shell": "echo --c"}],
+        )
+        cfg.resolve()
+        self.assertEqual(cfg.flags, ["--a", "--b", "--c"])
+
+    def test_resolve_method_handles_none_test262_flags(self) -> None:
+        cfg = EngineConfig(binary_path="/bin/eng", test262_flags=None)
+        cfg.resolve()
+        self.assertIsNone(cfg.test262_flags)
+
+    def test_resolve_method_is_idempotent(self) -> None:
+        cfg = EngineConfig(binary_path="/bin/eng", flags=["--a", "--b"])
+        cfg.resolve()
+        cfg.resolve()
+        self.assertEqual(cfg.flags, ["--a", "--b"])
 
 
 class EngineConfigCommandTest(unittest.TestCase):

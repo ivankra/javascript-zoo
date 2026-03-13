@@ -11,6 +11,7 @@ import itertools
 import json
 import os
 import re
+import shlex
 import shutil
 import sys
 import tempfile
@@ -400,11 +401,9 @@ class Assembler:
         self.prelude, self.prelude_file = self._resolve_prelude(engine.test262_prelude)
         if verbose:
             if self.prelude_file:
-                print(f"Using prelude file: {self.prelude_file}")
+                sys.stderr.write(f"Using prelude file: {self.prelude_file}\n")
             elif self.prelude:
-                print(f"Using prelude: {self.prelude}")
-            else:
-                print("Using prelude: <none>")
+                sys.stderr.write(f"Using prelude: {self.prelude}\n")
 
     @staticmethod
     def _resolve_prelude(entry: str | dict[str, str] | None) -> tuple[str | None, str | None]:
@@ -949,7 +948,8 @@ def main() -> None:
                    help="Only run tests requiring these features (comma-separated)")
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy", "raw", "module"], default="all",
                    help="Run only tests with this mode")
-    p.add_argument("-v", "--verbose", action="store_true", help="Increase verbosity")
+    p.add_argument("-v", "--verbose", action="count", default=0,
+                   help="Increase verbosity (-v: failures only, -vv: all results)")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Skip test paths matching glob pattern")
     p.add_argument("--intl", action="store_true",
@@ -966,6 +966,10 @@ def main() -> None:
     args = p.parse_args()
 
     engine = EngineConfig.load(args.engine, config_name=args.config)
+    if args.verbose:
+        engine.resolve()
+        argv_display = engine.argv("<file>", mode="test262")
+        print(f"Running: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
         sys.exit(f"test262 dir not found: {test262_dir}")
@@ -1022,7 +1026,7 @@ def main() -> None:
                     if use_color:
                         msg = f"\033[1;31m{msg}\033[0m"
                     print(msg, flush=True)
-                else:
+                elif args.verbose >= 2:
                     print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
         if not file_results:
             progress_tests[2] += 1

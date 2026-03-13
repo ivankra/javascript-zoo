@@ -700,22 +700,13 @@ v8: &v8
     - --js-staging
     - --harmony
     - --future
-    # Enable default-off "in progress / experimental" flags
-    - --harmony-shadow-realm
-    - --harmony-struct
-    - --js-iterator-join
-    - --js-decorators
-    - --js-source-phase-imports
-    - --js-defer-import-eval
-    - --js-immutable-arraybuffer
-    # TODO: shell expansion
-    # Enable every disabled --harmony-* / --js-* flag that the binary advertises.
-    # Snippet for both node and d8. Each output line will be expanded to a flag.
-    # - shell: |
-    #     $BINARY --help --v8-options 2>&1 | \
-    #       sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
-    #       grep 'default: --no-' | \
-    #       sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
+    # Enable every disabled --harmony-* / --js-* flag that the binary advertises
+    # (in progress / experimental flags). Snippet for both node and d8.
+    - shell: |
+        $BINARY --help --v8-options 2>&1 | \
+          sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
+          grep 'default: --no-' | \
+          sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
   test262_prelude:
     file: engines/v8/prelude.js
 
@@ -749,7 +740,6 @@ node:
   module_ext: mjs
   exceptions_re:
     - *exception_colon_message
-  test262_flags: ['--expose-gc']
   test262_prelude:
     file: engines/v8/prelude-node.js
   flags: *v8_flags
