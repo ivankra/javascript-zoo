@@ -281,7 +281,13 @@ jerryscript: &jerryscript
   exceptions_re:
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
-# TODO: jint - upstream patches needed
+jint:
+  #console_log: ["console.log", "print"]
+  exceptions_re:
+    - *uncaught_exception_colon_message
+  module_flag: --module
+  test262_flags:
+    - --expose-test-262
 
 jsc: &jsc
   console_log: print
