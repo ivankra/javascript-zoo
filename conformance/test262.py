@@ -38,6 +38,7 @@ from lib import (
 DEFAULT_TEST262_DIR = (_SCRIPT_DIR.parent / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
 INTL402_SKIP_PATHS = ("intl402", "staging/Intl402")
+FEATURES_PATH = _SCRIPT_DIR / "lib" / "features.yml"
 
 _REL_SPECIFIER_RE = re.compile(
     r"""(?:"""
@@ -48,201 +49,24 @@ _REL_SPECIFIER_RE = re.compile(
     r""")"""
 )
 
-FEATURES_BY_ECMASCRIPT_EDITION = {
-    'es5': [
-        'es5id',  # es5id tag in yaml frontmatter
-        'caller',
-    ],
-    'es6': [
-        'es6id',      # es6id tag in yaml frontmatter
-        '__proto__',  # Annex B
-        'Array.prototype.values',
-        'ArrayBuffer',
-        'DataView',
-        'DataView.prototype.getFloat32',
-        'DataView.prototype.getFloat64',
-        'DataView.prototype.getInt16',
-        'DataView.prototype.getInt32',
-        'DataView.prototype.getInt8',
-        'DataView.prototype.getUint16',
-        'DataView.prototype.getUint32',
-        'DataView.prototype.setUint8',
-        'Float32Array',
-        'Float64Array',
-        'Int16Array',
-        'Int32Array',
-        'Int8Array',
-        'Map',
-        'Object.is',
-        'Promise',
-        'Proxy',
-        'Reflect',
-        'Reflect.construct',
-        'Reflect.set',
-        'Reflect.setPrototypeOf',
-        'Set',
-        'String.fromCodePoint',
-        'String.prototype.endsWith',
-        'String.prototype.includes',
-        'Symbol',
-        'Symbol.hasInstance',
-        'Symbol.isConcatSpreadable',
-        'Symbol.iterator',
-        'Symbol.match',
-        'Symbol.replace',
-        'Symbol.search',
-        'Symbol.species',
-        'Symbol.split',
-        'Symbol.toPrimitive',
-        'Symbol.toStringTag',
-        'Symbol.unscopables',
-        'TypedArray',
-        'Uint16Array',
-        'Uint32Array',
-        'Uint8Array',
-        'Uint8ClampedArray',
-        'WeakMap',
-        'WeakSet',
-        'arrow-function',
-        'class',
-        'computed-property-names',
-        'const',
-        'cross-realm',
-        'default-parameters',
-        'destructuring-assignment',
-        'destructuring-binding',
-        'for-of',
-        'generators',
-        'let',
-        'new.target',
-        'proxy-missing-checks',
-        'rest-parameters',
-        'super',
-        'tail-call-optimization',
-        'template',
-    ],
-    'es2016': [
-        'Array.prototype.includes',
-        'exponentiation',
-        'u180e',
-    ],
-    'es2017': [
-        '__getter__',  # Annex B
-        '__setter__',  # Annex B
-        'Atomics',
-        'Intl.DateTimeFormat-dayPeriod',
-        'SharedArrayBuffer',
-        'async-functions',
-        'intl-normative-optional',
-    ],
-    'es2018': [
-        'IsHTMLDDA',
-        'Promise.prototype.finally',
-        'Symbol.asyncIterator',
-        'async-iteration',
-        'object-rest',
-        'object-spread',
-        'regexp-dotall',
-        'regexp-lookbehind',
-        'regexp-named-groups',
-        'regexp-unicode-property-escapes',
-    ],
-    'es2019': [
-        'Array.prototype.flat',
-        'Array.prototype.flatMap',
-        'Object.fromEntries',
-        'String.prototype.trimEnd',
-        'String.prototype.trimStart',
-        'Symbol.prototype.description',
-        'json-superset',
-        'optional-catch-binding',
-        'stable-array-sort',
-        'stable-typedarray-sort',
-        'string-trimming',
-        'well-formed-json-stringify',
-    ],
-    'es2020': [
-        'BigInt',
-        'Intl.NumberFormat-unified',
-        'Intl.RelativeTimeFormat',
-        'Promise.allSettled',
-        'String.prototype.matchAll',
-        'Symbol.matchAll',
-        'coalesce-expression',
-        'dynamic-import',
-        'export-star-as-namespace-from-module',
-        'for-in-order',
-        'globalThis',
-        'import.meta',
-        'optional-chaining',
-    ],
-    'es2021': [
-        'AggregateError',
-        'FinalizationRegistry',
-        'Intl.DateTimeFormat-datetimestyle',
-        'Intl.DateTimeFormat-formatRange',
-        'Intl.DateTimeFormat-fractionalSecondDigits',
-        'Intl.DisplayNames',
-        'Intl.ListFormat',
-        'Intl.Locale',
-        'Promise.any',
-        'String.prototype.replaceAll',
-        'WeakRef',
-        'align-detached-buffer-semantics-with-web-reality',
-        'logical-assignment-operators',
-        'numeric-separator-literal',
-    ],
-    'es2022': [
-        'Array.prototype.at',
-        'Intl-enumeration',
-        'Intl.DateTimeFormat-extend-timezonename',
-        'Intl.DisplayNames-v2',
-        'Intl.Segmenter',
-        'Object.hasOwn',
-        'String.prototype.at',
-        'TypedArray.prototype.at',
-        'arbitrary-module-namespace-names',
-        'class-fields-private',
-        'class-fields-private-in',
-        'class-fields-public',
-        'class-methods-private',
-        'class-static-block',
-        'class-static-fields-private',
-        'class-static-fields-public',
-        'class-static-methods-private',
-        'error-cause',
-        'regexp-match-indices',
-        'top-level-await',
-    ],
-    'es2023': [
-        'array-find-from-last',
-        'change-array-by-copy',
-        'hashbang',
-        'symbols-as-weakmap-keys',
-    ],
-    'es2024': [
-        'Atomics.waitAsync',
-        'String.prototype.isWellFormed',
-        'String.prototype.toWellFormed',
-        'array-grouping',
-        'arraybuffer-transfer',
-        'promise-with-resolvers',
-        'regexp-v-flag',
-        'resizable-arraybuffer',
-    ],
-    'es2025': [
-        'Float16Array',
-        'Intl.DurationFormat',
-        'RegExp.escape',
-        'import-attributes',
-        'iterator-helpers',
-        'json-modules',
-        'promise-try',
-        'regexp-modifiers',
-        'set-methods',
-    ],
-    # esnext: everything else
-}
+def _load_features_by_ecmascript_edition() -> dict[str, list[str]]:
+    with FEATURES_PATH.open("r", encoding="utf-8") as f:
+        data = yaml.load(f, Loader=SafeLoader)
+
+    if not isinstance(data, dict):
+        raise TypeError(f"{FEATURES_PATH} must contain a mapping")
+
+    editions: dict[str, list[str]] = {}
+    for edition, features in data.items():
+        if not isinstance(edition, str):
+            raise TypeError(f"{FEATURES_PATH} contains a non-string edition key: {edition!r}")
+        if not isinstance(features, list) or not all(isinstance(feature, str) for feature in features):
+            raise TypeError(f"{FEATURES_PATH} entry {edition!r} must be a list of strings")
+        editions[edition] = features
+    return editions
+
+
+FEATURES_BY_ECMASCRIPT_EDITION = _load_features_by_ecmascript_edition()
 
 # Reverse map: feature -> edition key
 FEATURE_TO_ECMASCRIPT_EDITION: dict[str, str] = {}
