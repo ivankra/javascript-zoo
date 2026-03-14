@@ -33,6 +33,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
         python3 \
         sudo \
         tar \
+        # Needed by some engines for Temporal and test262, e.g. Jint \
+        tzdata-legacy \
         unzip \
         wget \
         xz-utils \
