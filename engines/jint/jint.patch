@@ -1,5 +1,5 @@
 diff --git a/Jint.Repl/Program.cs b/Jint.Repl/Program.cs
-index c53c5c4d9..0763a2dd0 100644
+index c53c5c4d9..6a0ac3203 100644
 --- a/Jint.Repl/Program.cs
 +++ b/Jint.Repl/Program.cs
 @@ -1,10 +1,11 @@
@@ -15,29 +15,25 @@ index c53c5c4d9..0763a2dd0 100644
  
  // ReSharper disable LocalizableElement
  
-@@ -14,6 +15,8 @@ using Jint.Runtime;
+@@ -14,6 +15,7 @@ using Jint.Runtime;
  // Parse command line arguments
  string? inputFile = null;
  int? timeoutSeconds = null;
 +bool runAsModule = false;
-+bool exposeTest262 = false;
  
  for (int i = 0; i < args.Length; i++)
  {
-@@ -41,6 +44,12 @@ for (int i = 0; i < args.Length; i++)
+@@ -41,6 +43,9 @@ for (int i = 0; i < args.Length; i++)
                  return 1;
              }
              break;
 +        case "-m" or "--module":
 +            runAsModule = true;
 +            break;
-+        case "--expose-test-262":
-+            exposeTest262 = true;
-+            break;
          case "-h" or "--help":
              PrintHelp();
              return 0;
-@@ -61,15 +70,27 @@ var engine = new Engine(cfg =>
+@@ -61,15 +66,24 @@ var engine = new Engine(cfg =>
      {
          cfg.TimeoutInterval(TimeSpan.FromSeconds(timeoutSeconds.Value));
      }
@@ -58,15 +54,12 @@ index c53c5c4d9..0763a2dd0 100644
          path => engine.Evaluate(File.ReadAllText(path)))
      );
  
-+if (exposeTest262)
-+{
-+    Test262Object.Install(engine);
-+}
++Test262Object.Install(engine);
 +
  // Execute file if provided via -f
  if (!string.IsNullOrEmpty(inputFile))
  {
-@@ -81,18 +102,34 @@ if (!string.IsNullOrEmpty(inputFile))
+@@ -81,18 +95,34 @@ if (!string.IsNullOrEmpty(inputFile))
  
      try
      {
@@ -107,7 +100,7 @@ index c53c5c4d9..0763a2dd0 100644
          return 1;
      }
      catch (TimeoutException)
-@@ -113,17 +150,33 @@ if (Console.IsInputRedirected)
+@@ -113,17 +143,33 @@ if (Console.IsInputRedirected)
      try
      {
          var script = Console.In.ReadToEnd();
@@ -146,7 +139,7 @@ index c53c5c4d9..0763a2dd0 100644
          return 1;
      }
      catch (TimeoutException)
-@@ -167,6 +220,10 @@ while (true)
+@@ -167,6 +213,10 @@ while (true)
      try
      {
          var result = engine.Evaluate(input, parsingOptions);
@@ -157,7 +150,7 @@ index c53c5c4d9..0763a2dd0 100644
          JsValue str = result;
          if (!result.IsPrimitive() && result is not IJsPrimitive)
          {
-@@ -185,7 +242,11 @@ while (true)
+@@ -185,7 +235,11 @@ while (true)
      catch (JavaScriptException je)
      {
          Console.ForegroundColor = ConsoleColor.Red;
@@ -170,7 +163,7 @@ index c53c5c4d9..0763a2dd0 100644
      }
      catch (TimeoutException)
      {
-@@ -199,6 +260,25 @@ while (true)
+@@ -199,6 +253,25 @@ while (true)
      }
  }
  
@@ -196,7 +189,7 @@ index c53c5c4d9..0763a2dd0 100644
  static void PrintHelp()
  {
      Console.WriteLine("Jint REPL - JavaScript interpreter");
-@@ -207,12 +287,15 @@ static void PrintHelp()
+@@ -207,12 +280,15 @@ static void PrintHelp()
      Console.WriteLine();
      Console.WriteLine("Options:");
      Console.WriteLine("  -f, --file <path>     Execute JavaScript file");
@@ -212,7 +205,7 @@ index c53c5c4d9..0763a2dd0 100644
      Console.WriteLine("  jint -f script.js -t 10       Execute with 10 second timeout");
      Console.WriteLine("  echo \"1+1\" | jint             Execute from stdin");
      Console.WriteLine("  echo \"1+1\" | jint -t 5        Execute from stdin with timeout");
-@@ -220,15 +303,17 @@ static void PrintHelp()
+@@ -220,15 +296,17 @@ static void PrintHelp()
  
  file sealed class JsConsole
  {
@@ -296,6 +289,19 @@ index 99425c04c..c52bf25a8 100644
          foreach (var include in file.Includes)
          {
              engine.Execute(State.Sources[include]);
+diff --git a/Jint.Tests/Runtime/DateTests.cs b/Jint.Tests/Runtime/DateTests.cs
+index 18db0ed71..873111b24 100644
+--- a/Jint.Tests/Runtime/DateTests.cs
++++ b/Jint.Tests/Runtime/DateTests.cs
+@@ -117,7 +117,7 @@ public class DateTests
+         TimeZoneInfo timeZoneInfo;
+         try
+         {
+-            timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Europe/Kiev");
++            timeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Europe/Kyiv");
+         }
+         catch
+         {
 diff --git a/Jint/Native/JsValue.cs b/Jint/Native/JsValue.cs
 index 669396d1c..2b585a4e2 100644
 --- a/Jint/Native/JsValue.cs

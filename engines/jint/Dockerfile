@@ -23,7 +23,9 @@ RUN dotnet publish Jint.Repl/Jint.Repl.csproj \
       -p:EnableAotAnalyzer=false \
       -p:IsAotCompatible=false
 
-#Test: dotnet test --configuration Release
+#Testing:
+#RUN apt-get install -y tzdata tzdata-legacy
+#RUN dotnet test --configuration Release
 
 COPY build/dist.py ./
 RUN ./dist.py /dist/jint --wrapper='exec dotnet "$SCRIPT_DIR/jint-dist/Jint.Repl.dll" "$@"'

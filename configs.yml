@@ -287,8 +287,6 @@ jint:
   exceptions_re:
     - *uncaught_exception_colon_message
   module_flag: --module
-  test262_flags:
-    - --expose-test-262
 
 jsc: &jsc
   console_log: print
