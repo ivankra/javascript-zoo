@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import tempfile
 import unittest
@@ -132,8 +133,20 @@ class EngineConfigLoadTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             binary = self._make_binary(td)
             cfg = EngineConfig.load(str(binary))
-            self.assertEqual(cfg.binary_path, str(binary))
+            self.assertEqual(cfg.binary_path, str(binary.resolve()))
             self.assertEqual(cfg.flags, [])
+
+    def test_load_relative_binary_path_is_resolved(self) -> None:
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as td:
+            try:
+                os.chdir(td)
+                binary = self._make_binary(td)
+                cfg = EngineConfig.load("./eng")
+                self.assertEqual(cfg.binary_path, str(binary.resolve()))
+                self.assertEqual(cfg.argv("/tmp/s.js")[0], str(binary.resolve()))
+            finally:
+                os.chdir(old_cwd)
 
     def test_load_merges_config_sidecar_and_cmdline(self) -> None:
         with tempfile.TemporaryDirectory() as td:

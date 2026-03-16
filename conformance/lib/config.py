@@ -219,7 +219,9 @@ def resolve_binary(path_or_name: str) -> Path:
         raise SystemExit(f"{path_or_name}: not found")
     if not os.access(p, os.X_OK):
         raise SystemExit(f"{path_or_name}: not executable")
-    return p
+    if p.is_absolute():
+        return p
+    return Path.cwd() / p
 
 
 @cache
