@@ -413,6 +413,7 @@ def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Pa
 
     proc = subprocess.run(
         ["bash", "-c", full_cmd],
+        stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         env=env,

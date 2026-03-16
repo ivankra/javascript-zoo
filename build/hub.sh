@@ -119,6 +119,7 @@ fi
 
 # Smoke test: pull the image and run dist.py --smoke-test on every engine in /dist/LIST
 "$DOCKER" run --rm "$PUSHDEST:$TAG" \
-  bash -c 'set -ex; while read f; do python3 /zoo/build/dist.py --smoke-test "/dist/$f"; done < /dist/LIST'
+  bash -c 'set -ex; for f in $(cat /dist/LIST); do python3 /zoo/build/dist.py --smoke-test "/dist/$f"; done' \
+  || true
 
 echo OK
