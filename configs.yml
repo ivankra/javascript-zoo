@@ -121,6 +121,9 @@ chakracore: &chakracore
   module_flag: -module
   # test262_flags: ['-Test262']  # requires --test-build
 
+derkjs:
+  flags: ['-r']
+
 dmdscript:
   bench_prelude:
     - 'var console = {log: println}, print = println;'
