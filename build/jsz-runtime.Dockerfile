@@ -66,7 +66,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 ENV DEBIAN_FRONTEND=noninteractive \
     LC_ALL=en_US.UTF-8 \
     SHELL=/bin/bash \
-    PATH=/bench:/opt/node/bin:$PATH
+    PATH=/opt/node/bin:$PATH
 
 # Install latest node and npm via official installer (https://nodejs.org/en/download)
 # Fallback to debian packages on unsupported archs
@@ -131,4 +131,4 @@ RUN { echo "Types: deb"; echo "URIs: http://deb.debian.org/debian"; echo "Suites
     apt-get install -y --no-install-recommends -t sid libicu78
 
 ARG TARGETARCH
-RUN ln -s zoo/bench /bench && ln -s zoo/dist/"$TARGETARCH" /dist
+RUN ln -s zoo/dist/"$TARGETARCH" /dist

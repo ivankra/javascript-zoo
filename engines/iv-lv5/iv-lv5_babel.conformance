@@ -1,2 +1,0 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":24131824,"engine":"mujs","variant":"babel"}
-/dist/iv-lv5: SyntaxError: iv-lv5:1: unexpected character: \u007Fundefined

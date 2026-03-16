@@ -164,7 +164,7 @@ def should_strip(path: Path) -> bool:
 def strip_or_copy(src: Path, dst: Path) -> None:
     dst.parent.mkdir(parents=True, exist_ok=True)
     if should_strip(src):
-        shutil.copy2(src, dst.with_suffix(".dbg"))
+        #shutil.copy2(src, dst.with_suffix(".unstripped"))
         subprocess.run(["strip", "-o", str(dst), str(src)], check=True)
     elif src.resolve() != dst.resolve():
         shutil.copy2(src, dst)

@@ -59,7 +59,7 @@ def main():
     update_tables('parsers/acorn/README.md', engines_data)
 
 def get_kangax_weights():
-    kangax_map = json.loads(open('conformance/gen-kangax.json').read())['map']
+    kangax_map = json.loads(open('conformance/compat-table/compat-table.json').read())['map']
     kangax_groups = {}
     kangax_weights = {}
 
@@ -93,7 +93,7 @@ def parse_conformance_data():
         failing_by_dir = {}
         crashes = 0
         crashes_by_dir = {}
-        line_re = re.compile('^(([^:/]+)/([^:]+)): (.+)$')
+        line_re = re.compile('^(((?:compat-table/)?[^:/]+)/([^:]+)): (.+)$')
 
         for line in open(filename):
             if line.startswith('Metadata:'):
@@ -135,7 +135,8 @@ def parse_conformance_data():
                 conformance_scores[name] = round(p / q, 4)
 
         agg_score('es1-es5', '^es[1-5]$')
-        agg_score('kangax-es2016plus', '^kangax-es20..$')
+        agg_score('compat-table/es2016plus', '^compat-table/es20..$')
+        agg_score('compat-table', '^compat-table/.*$')
 
         conformance_data[engine] = {
             'tests': tests,
@@ -893,18 +894,18 @@ def update_conformance(filename, conformance):
         headline = 'ES1-ES5: ' + format_score(conformance_scores['es1-es5'])
         sections[headline] = ['es1', 'es3', 'es5']
 
-    if 'kangax-es6' in conformance_scores:
-        headline = 'compat-table: ES6 ' + format_score(conformance_scores['kangax-es6'])
-        if 'kangax-es2016plus' in conformance_scores:
-            headline += ', ES2016+ ' + format_score(conformance_scores['kangax-es2016plus'])
-        if 'kangax-next' in conformance_scores:
-            headline += ', Next ' + format_score(conformance_scores['kangax-next'])
-        if 'kangax-intl' in conformance_scores:
-            headline += ', Intl ' + format_score(conformance_scores['kangax-intl'])
+    if 'compat-table/es6' in conformance_scores:
+        headline = 'compat-table: ES6 ' + format_score(conformance_scores['compat-table/es6'])
+        if 'compat-table/es2016plus' in conformance_scores:
+            headline += ', ES2016+ ' + format_score(conformance_scores['compat-table/es2016plus'])
+        if 'compat-table/next' in conformance_scores:
+            headline += ', Next ' + format_score(conformance_scores['compat-table/next'])
+        if 'compat-table/intl' in conformance_scores:
+            headline += ', Intl ' + format_score(conformance_scores['compat-table/intl'])
         sections[headline] = (
-            ['kangax-es6'] +
-            [s for s in conformance_scores if re.match('^kangax-es20..$', s)] +
-            ['kangax-next', 'kangax-intl']
+            ['compat-table/es6'] +
+            [s for s in conformance_scores if re.match('^compat-table/es20..$', s)] +
+            ['compat-table/next', 'compat-table/intl']
         )
 
     for headline, section_dirs in sections.items():
@@ -918,7 +919,7 @@ def update_conformance(filename, conformance):
         conformance_lines += [f'<details><summary>{headline}</summary><ul>\n']
 
         for dir_name in section_dirs:
-            name = dir_name.replace('kangax-', '')
+            name = dir_name.replace('compat-table/', '')
             name = name.replace('es', 'ES')
             name = name.replace('intl', 'Intl')
             name = name.replace('next', 'Next')

@@ -16,4 +16,4 @@ RUN cmake -S . -G Ninja -B build && \
     cmake --build build --target lightjs_repl
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/lightjs --binary=/src/build/lightjs
+RUN ./dist.py /dist/syoyo --binary=/src/build/lightjs

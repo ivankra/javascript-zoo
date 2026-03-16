@@ -111,4 +111,4 @@ RUN autoninja -C out/release/ d8
 COPY build/dist.py ./
 RUN ./dist.py /dist/v8 \
       --binary=/src/v8/out/release/d8 \
-      version="$(/src/v8/out/release/d8 -e 'console.log(version())')"
+      version="$(/src/v8/out/release/d8 -e 'console.log(version())' | sed 's/ (candidate)//')"
