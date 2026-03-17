@@ -33,8 +33,8 @@ rev:
 conformance:
 	$(call make_subdirs,conformance)
 
-conformance-direct:
-	$(call make_subdirs,conformance-direct)
+conformance.txt:
+	$(call make_subdirs,conformance.txt)
 
 # List buildable engines for current DOCKER_ARCH (based on the presence of dist target)
 list:

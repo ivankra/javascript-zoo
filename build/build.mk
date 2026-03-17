@@ -89,10 +89,12 @@ sh-$(1) $(1)-sh: $(IID_DIR)/jsz-$(1)
 # sh: start shell in the main image in leaf directory
 $(if $(filter $(PROJECT),$(1)),sh: sh-$(1))
 
-# conformance: run engine on conformance test suite inside test container
-# conformance-direct: run conformance testing command directly on host without launching a test container
+# conformance: always re-runs the test suite (phony).
+# conformance.txt: only runs if the file does not yet exist (order-only deps).
+# Set DIRECT=1 to run the conformance command directly on the host instead of inside a container.
 $(if $(and $(filter engines,$(GROUP)),$(filter $(CONFORMANCE_BINARY),$(1)),$(strip $(CONFORMANCE_CMD))),
-conformance conformance.txt: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
+ifeq ($(DIRECT),)
+conformance: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
 	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
 	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
 	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
@@ -100,10 +102,21 @@ conformance conformance.txt: $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
 	  jsz-runtime:$(DOCKER_ARCH) \
 	  bash -c '$(CONFORMANCE_CMD)'
 
-conformance-direct:
+conformance.txt: | $(call dist_json_path,$(1)) $(IID_DIR)/jsz-runtime
+	$(DOCKER) run --arch $(DOCKER_ARCH) --rm -it --tmpfs /tmp \
+	  -v "$(ROOT_DIR):$(ROOT_DIR)" \
+	  -v "$(ROOT_DIR)/.git:$(ROOT_DIR)/.git:ro" \
+	  -w "$(CURDIR)" \
+	  jsz-runtime:$(DOCKER_ARCH) \
+	  bash -c '$(CONFORMANCE_CMD)'
+else
+conformance:
 	$(CONFORMANCE_CMD)
 
-.PHONY: conformance conformance-direct conformance.txt
+conformance.txt:
+	$(CONFORMANCE_CMD)
+endif
+.PHONY: conformance
 )
 
 .PHONY: all build dist rev sh $(1) dist-$(1) rev-$(1) sh-$(1) $(1)-sh
