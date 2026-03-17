@@ -24,51 +24,72 @@
 .constants:
   # Common pattern to report exceptions
   # e.g. "ReferenceError: x is undefined", "Test262Error: Expected SameValue(«1», «0») to be true"
-  exc1: &exception_colon_message '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+  # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
+  exc1: &exception_colon_message '^(?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   # Second common pattern, also used by most of this repo's wrappers
   exc2: &uncaught_exception_colon_message '^Uncaught exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-  # Crash strings from language runtime
-  rust: &rust_crash_re "^(?P<message>(thread '[^']+'( [(][0-9]+[)])? panicked at .*))$"
-  gola: &go_crash_re '^(?P<message>panic: .*)$'
+  # Crash strings from language runtimes
+  gola: &go_crash_re '^(?P<message>panic: .*|fatal error: stack overflow)$'
   java: &java_crash_re '^(?P<message>Exception in thread "[^"]+" java.*)'
+  rust: &rust_crash_re "^(?P<message>(thread '[^']+'( [(][0-9]+[)])? panicked at .*))$"
+  rust_norm: &rust_crash_norm_re
+    "thread '([^']+)' \\([0-9]+\\) panicked at": "thread '\\1' panicked at"
 
 42tiny-js:
-  exceptions_re:
+  errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: at Line:[0-9]+ Column:[0-9]+)*$'
+  stdout_replace_re:
+    - '^> ': ''
 
 ant:
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
   test262_prelude: 'var print = console.log.bind(console);'
+
+bali:
+  stdout_replace_re:
+    - 'Log ': ''
+  errors_re:
+    - '^WARN *parser.* (?P<message>parsing error.*)'
 
 besen:
   bench_ignore_errors: true
   bench_suite: ['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js']
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
     - '^ThrowException: (?P<message>.+?)$'
 
 boa:
   crash_re:
     - *rust_crash_re
-  exceptions_re:
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  errors_re:
+    #  0: SyntaxError: unexpected token 'using', primary expression at line 52, col 13
     - '^[ ]*[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
     - '^Uncaught: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: \(.+\))?$'
     - '^Uncaught: "(?P<message>.+?)\]?"$'
+    # Uncaught Error: "Function Unimplemented]"
+    - '^Uncaught Error: "(?P<message>.+?)\]?"$'
+    # Uncaught Error: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+    - '^Uncaught Error: (?P<message>.+)$'
   module_flag: --module
   test262_flags: ['--debug-object']  # exposes $boa object
   test262_prelude:
     file: engines/boa/prelude.js
 
 bramblex:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
+    - '^Uncaught exception: (?P<message>.+?)$'
 
 brimstone: &brimstone
   console_log: console.log
   crash_re:
     - *rust_crash_re
-  exceptions_re:
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  errors_re:
     - *exception_colon_message
   flags:
     - --no-color
@@ -85,25 +106,26 @@ brimstone: &brimstone
     globalThis.print = console.log.bind(console);
 
 carakan:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
 
 castl:
-  exceptions_re:
-    - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
   errors_re:
-    - '^luajit: [^ :]+[.]lua:[0-9]+: .+$'
-    - '(?i)(error|unsupported|200 local variables)'
+    - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
+    - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>.*)$'
+    - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>function at line [0-9]+ has more than 200 local variables)$'
+    - '[^ ]*\.js\.lua:[0-9]+: (?P<message>attempt to .*)$'
+    - 'throw new (?P<type>SyntaxError)\("(?P<message>Couldn.t transpile JS code): ".*'
 
 cesanta-elk:
-  exceptions_re:
+  errors_re:
     - '^Error: ERROR: (?P<message>.+?)$'
 
 continuum:
-  exceptions_re:
-    - *uncaught_exception_colon_message
+  stdout_replace_re:
+    - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
   errors_re:
-    - '^Uncaught Exception at line [0-9]+'
+    - *uncaught_exception_colon_message
 
 cesanta-mjs:
   errors_re:
@@ -113,13 +135,22 @@ cesanta-v7:
   bench_suite: ['richards.js']
   multiple_scripts_with_shared_realm: true
   errors_re:
-    - '^Exec error [^:]+: (?P<message>.+?)$'
+    - '^Exec error [^:]+: (?P<type>SyntaxError|InternalError)$'
+    - '^Exec error [^:]+: "?(?P<message>.+?)"?$'
+  stderr_replace_re:
+    # Exec error [/tmp/file.js]: "Syntax error at line 41 col 4:\n    break block;\n   ^"
+    - '^(Exec error [^:]+): "Syntax error at line [0-9]+ col [0-9]+.*': '\1: SyntaxError'
+    - '^(Exec error [^:]+): "Internal error"': '\1: InternalError'
 
 chakracore: &chakracore
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
   module_flag: -module
   # test262_flags: ['-Test262']  # requires --test-build
+
+delskayn:
+  errors_re:
+    - *uncaught_exception_colon_message
 
 derkjs:
   flags: ['-r']
@@ -130,10 +161,11 @@ dmdscript:
     - file: bench/prelude-es5.js
   console_log: println
   stderr_replace_re:
-    '^1 source files$': ''
+    - '^1 source files$': ''
+    # dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): /tmp/file.js(11) : Error: found '[' instead of statement
+    - '^dmdscript.script.ScriptException@[^ :]+: /[^():]+[(][0-9]+[)] : Error: (?P<message>.+)$': 'SyntaxError: \g<message>'
   errors_re:
-    - '^dmdscript.script.ScriptException@[^ :]+: /[^():]+[(][0-9]+[)] : Error: (?P<message>.+)$'  # syntax error
-    - '^dmdscript.script.ScriptException@[^ :]+: (?P<message>.+)$'
+    - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException)@[^ :]+: (?P<message>.+)$'
 
 dscriptcpp:
   bench_prelude:
@@ -141,84 +173,102 @@ dscriptcpp:
     - file: bench/prelude-es5.js
   bench_suite: ['richards.es1.js']
   console_log: println
+  stdout_replace_re:
+    - 'Exception:\n': 'Exception: '
   stderr_replace_re:
-    'Exception:\n': 'Exception: '
-  exceptions_re:
-    - '^Exception: (?P<message>.+)$'
+    - 'Exception:\n': 'Exception: '
+    - '(Digital Mars DMDScript.*|http://www.digitalmars.com|Compiled by.*|written by .*|1 source files)': ''
+  errors_re:
+    - '^Exception: ([^ ()]*\([0-9]+\) : Error: )?(?P<message>.+)$'
 
 duktape: &duktape
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 echosoar:
   bench_transforms: ['hex']
   crash_re:
     - *rust_crash_re
-  exceptions_re:
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  errors_re:
     - *uncaught_exception_colon_message
     - '^\S+: JSIError \{ error_type: (?P<type>[A-Za-z0-9]*Error), message: "(?P<message>[^"]*)"'
 
 ejscript:
-  exceptions_re:
+  crash_re:
+    - '^(?P<message>Assertion .*, failed at [^:]+:[0-9]+)'
+  errors_re:
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+[.]js: [0-9]+: (?P<message>.+)$'
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+    - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
 
 engine262:
-  exceptions_re:
+  stdout_replace_re:
+    - "^'(.*)'$": '\1'
+  errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message  # main.js wrapper
   module_flag: --module
 
+epimetheus:
+  stdout_replace_re:
+    - 'Welcome to Epimetheus.': ''
+
 escargot:
   module_flag: --module
   multiple_scripts_with_shared_realm: true
-  exceptions_re:
+  errors_re:
     - '^Script parsing error: (?P<type>SyntaxError): Line [0-9]+: (?P<message>.*)$'
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?):?$'
 
 espruino:
   stdout_replace_re:
-    '^([| ]____|[|]  |.*espruino.com|.*G.William|Espruino is Open Source|only by sales).*': ''
-  exceptions_re:
+    - '^([| ]____|[|]  |.*espruino.com|.*G.William|Espruino is Open Source|only by sales).*': ''
+    - '^>(.)\1{50,}': ''
+    - '^> *$': ''
+  errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 eval5:
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message
 
 fastschema-qjs:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
   module_flag: --module
 
 fesi: &fesi
   stderr_replace_re:
-    '^Syntax error ': 'SyntaxError: '
-    '^Lexical error ': 'SyntaxError: '
-  exceptions_re:
+    - '^Syntax error ': 'SyntaxError: '
+    - '^Lexical error ': 'SyntaxError: '
+    - "('(?:toDateString|toLocaleDateString|toTimeString|toLocaleTimeString)' is not defined) for object .*": '\1'
+  errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '^(?P<message>Runtime error .+)$'
-  errors_re:
     - '^(?P<message>.*near line [0-9]+, column [0-9]+)$'
   crash_re:
     - *java_crash_re
 
 flathead:
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 goja:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
+  stderr_replace_re:
+    - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
 
 graaljs:
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
   module_flag: --module
   flags:
@@ -245,7 +295,7 @@ graaljs:
 hako:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
     - '^  "name": "(?P<type>[A-Za-z0-9]*Error)",?$'  # hako_wamr/hako-cli
 
@@ -256,8 +306,10 @@ hermes: &hermes
   console_log: print
   stderr_replace_re:
     # Syntax errors: "file.js:14:3: error: invalid statement encountered."
-    '([^ ]+[.]js:[0-9]+:[0-9]+: error: .*)': 'SyntaxError \1'
-  exceptions_re:
+    - '([^ ]+[.]js:[0-9]+:[0-9]+: error: .*)': 'SyntaxError \1'
+    # es5/strict.this-undefined-in-function.js - dumps both ok and fail markers
+    - '[^ ]+[.]js:[0-9]+:[0-9]+: warning: the variable "console" was not declared.*\n *console.log\("[^"]+"\);': ''
+  errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
     - '(?P<type>(SyntaxError)) [^ ]+[.]js:(?P<line>[0-9]+):[0-9]+: error: (?P<message>.+?)[.]?$'
     - '^[^ ]+[.]js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
@@ -267,13 +319,13 @@ hermes: &hermes
 hermes-v1: *hermes
 
 iv-lv5:
-  exceptions_re:
+  errors_re:
     # "SyntaxError: file.js:10: SyntaxError: unexpected token class"
     - '^(?P<type>[A-Za-z0-9]*Error): [^ ]+:[0-9]+: \1: (?P<message>.+)$'
     - *exception_colon_message
 
 je-perl:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
 
 jerryscript: &jerryscript
@@ -282,12 +334,12 @@ jerryscript: &jerryscript
     typescript.js: 3600
   module_flag: --module
   multiple_scripts_with_shared_realm: true
-  exceptions_re:
+  errors_re:
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 jint:
   #console_log: ["console.log", "print"]
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
   module_flag: --module
 
@@ -295,7 +347,7 @@ jsc: &jsc
   console_log: print
   module_flag: -m
   multiple_scripts_with_shared_realm: true
-  exceptions_re:
+  errors_re:
     - '^Exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
     # Enable experimental javascript features
@@ -306,20 +358,36 @@ jsc: &jsc
     - --useShadowRealm=true
     - --useTemporal=true
 
+jsish:
+  stderr_replace_re:
+    # test.js:1:   "42",  or  typeof.null.js:11:  "...",
+    - '^\S+[.]js:[0-9]+: +"([^"]*)", *$': '\1'
+    # file.js:14: parse: :13.6: error: msg  ->  file.js:14: SyntaxError: msg
+    # file.js:2: parse: /full/path.js:2.7: error: msg  ->  file.js:2: SyntaxError: msg
+    - ': parse: (?:[^ ]+\.[0-9]+: error: )?(?:syntax error, )?': ': SyntaxError: '
+    # Drop bare "ERROR:" summary line emitted after parse errors
+    - '^ERROR: *$': ''
+  errors_re:
+    - '^[^:]+[.]js:[0-9]+: (?P<type>[A-Za-z]+Error): (?P<message>.+)$'
+    - '^[^:]+[.]js:[0-9]+: error: (?P<message>.+)$'
+
 js-interpreter:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 js2py:
-  exceptions_re:
+  stdout_replace_re:
+    - "^'(.*)'$": '\1'
+    - '^"(.*)"$': '\1'
+  errors_re:
     - '^js2py.internals.simplex.JsException: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 jscript: &jscript
   stderr_replace_re: &jscript_replace
-    'Microsoft JScript compilation error: Syntax error': 'Microsoft JScript compilation error: SyntaxError'
+    - 'Microsoft JScript compilation error: Syntax error': 'Microsoft JScript compilation error: SyntaxError'
   stderr_replace_re: *jscript_replace
-  exceptions_re:
+  errors_re:
     - '^.*Microsoft JScript compilation error: (?P<type>SyntaxError)$'
     # cscript.exe:
     # "Z:\tmp\jscript.Usdqwf.js(4, 1) Microsoft JScript runtime error: 'x' is undefined"
@@ -334,53 +402,53 @@ jscript: &jscript
 
 jscript9:
   stderr_replace_re:
-    '^Compilation error$': 'SyntaxError'
-  exceptions_re:
+    - '^Compilation error$': 'SyntaxError'
+  errors_re:
     - '^(?P<type>SyntaxError)$'
     - *uncaught_exception_colon_message
   # TODO: warmup_cmd
 
 jurassic:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
 
 kiesel:
   module_flag: --module
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
 
 kjs:
   stderr_replace_re:
-    '^LEAK: [0-9]+ KJS::Node$': ''
-  exceptions_re:
+    - '^LEAK: [0-9]+ KJS::Node$': ''
+  errors_re:
     - '^\S+ \(line [0-9]+\): (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 kodjodevf:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
 
 lebjs:
   bench_suite: ['richards.quad-wheel.js']
   crash_re:
     - *java_crash_re
-  exceptions_re:
+  errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error): ?(?P<message>.*)$'
     - *exception_colon_message
 
 libjs: &libjs
   stdout_replace_re:
     # console.log output gets quoted
-    '(?m)^"(.*)"$': '\1'
+    - '(?m)^"(.*)"$': '\1'
   stderr_replace_re:
-    'Uncaught exception: *\n\[([A-Za-z0-9]*Error)\] *': '\1: '
-  exceptions_re:
+    - '^Uncaught exception: *\n\[([A-Za-z0-9]*Error)\] *': '\1: '
+  errors_re:
     - *uncaught_exception_colon_message
     - *exception_colon_message
   flags:
     - --disable-ansi-colors
     - --no-syntax-highlight
     - --disable-source-location-hints
-    - --disable-debug-output
+    # - --disable-debug-output
     - --raw-strings
     - --use-test262-global
   module_flag: --as-module
@@ -392,30 +460,34 @@ mocha:
   errors_re:
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
+  warnings_re:
+    - '^Mocha: [^,]+[.]js, line [0-9]+: (nested comment|illegal character):?$'
 
 modernc-quickjs:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
   module_flag: --module
 
 mquickjs: &mquickjs
   bench_prelude:
     - file: bench/prelude-strict.js
-  exceptions_re:
+  errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
 mujs:
-  exceptions_re:
+  stderr_replace_re:
+    - '^(SyntaxError: .*)undefined$': '\1'
+  errors_re:
     - '^(?P<type>SyntaxError): [^:]+[.]js:[0-9]+: (?P<message>[^\n]+)'
     - *exception_colon_message
 
 narcissus:
   bench_suite: ['richards.js1.js']
   stderr_replace_re:
-    '^:[0-9]+:[0-9]+ ': ''
-  exceptions_re:
+    - '^:[0-9]+:[0-9]+ ': ''
+  errors_re:
     - *exception_colon_message
 
 nashorn:
@@ -426,27 +498,37 @@ nashorn:
   multiple_scripts_with_shared_realm: true
   test262_prelude:
     file: engines/nashorn/prelude.js
-  exceptions_re:
+  stderr_replace_re:
+    - '^Exception in thread "main" .*\.js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
+  errors_re:
     - '^[^:]+[.]js:[0-9]+(:[0-9]+)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+    - '^java.lang.RuntimeException: (?P<message>.*)$'
 
 ngs:
+  stderr_replace_re:
+    - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.js:[0-9]+: .*)$': '\1 \2'
+  errors_re:
+    - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<message>.*)$'
   bench_prelude:
     - 'var console = {log: print};'
   bench_suite: ['richards.tiny-js.js']
 
 niljs:
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
   module_flag: --module
 
 njs:
+  stderr_replace_re:
+    - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
   bench_prelude:
     - file: bench/prelude-strict.js
   bench_transforms: ['octal']
   module_flag: -m
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
+    - '^Thrown: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
 
 nova:
   console_log: print
@@ -458,19 +540,20 @@ nova:
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
-    'SyntaxError:\n\n  [x×] ': 'Uncaught exception: SyntaxError: '
-  exceptions_re:
+    - *rust_crash_norm_re
+    - 'SyntaxError:\n\n  [x×] ': 'Uncaught exception: SyntaxError: '
+  errors_re:
     - '^Uncaught exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?):?$'
     - *uncaught_exception_colon_message
   warnings_re:
     - '^Parse errors:$'
-  errors_re:
-    - '(^error:|Error:|TypeError|(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can''t))'
+  # errors_re:
+  #   - '(^error:|Error:|TypeError|(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can''t))'
 
 otto:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 porffor:
@@ -478,24 +561,31 @@ porffor:
     - 'var print=console.log;'
   bench_suite: ['richards.porffor.js']
   module_flag: --module
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 primjs:
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
+  stderr_replace_re:
+    - '^[0-9]+\[[-0-9]+\]:syntax error, ': 'SyntaxError: '
+  errors_re:
+    - '^(?P<type>SyntaxError): (?P<message>.*)$'
+    - '^\[Fatal\] (?P<message>.*)$'
 
 quanta:
   bench_prelude:
     - 'var print=console.log;'
   bench_suite: ['richards.quanta.js']
+  errors_re:
+    - *exception_colon_message
 
 quickjs: &quickjs
   module_flag: --module
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 quickjs_262:
@@ -507,7 +597,7 @@ quickjs_262:
 quickjs-ng: &quickjs_ng
   flags: ['--script']  # misdetects module mode often enough
   module_flag: --module
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
 
 quickjs-ng_262:
@@ -519,8 +609,9 @@ qv4:
   bench_transforms: ['octal']
   module_flag: --module
   stderr_replace_re:
-    'qt\.qml\.usedbeforedeclared:': ''
-  exceptions_re:
+    - 'qt\.qml\.usedbeforedeclared:': ''
+    - '^js: ': ''
+  errors_re:
     - *uncaught_exception_colon_message
 
 rapidus:
@@ -529,12 +620,17 @@ rapidus:
   bench_suite: ['richards.rapidus.js']
   crash_re:
     - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
+    - "^Syntax error: ": "SyntaxError: "
+  errors_re:
+    - '^Runtime error: [^ ]+\.js:[0-9]+:[0-9]+: (?P<message>.+)$'
 
 reeva:
   crash_re:
     - *java_crash_re
-  exceptions_re:
-    - *exception_colon_message
+  errors_re:
+    - *uncaught_exception_colon_message
 
 rhino:
   crash_re:
@@ -544,52 +640,60 @@ rhino:
     # js: 1+
     # js: .^
     # js: "file.js", line 1: Compilation produced 1 syntax errors.
-    '(js: "[^"]+", line [0-9]+): (?P<message>.+\n)(.|\n)*\1: Compilation produced .* syntax error': 'SyntaxError: \2'
+    - '(js: "[^"]+"), line [0-9]+: (?P<message>.+\n)(.|\n)*\1, line [0-9]+: Compilation produced .* syntax error': 'SyntaxError: \2'
+    - 'INFO *': ''
   stderr_replace_re:
-    'WARNING: .*': ''
-  exceptions_re:
+    - 'WARNING: .*': ''
+  errors_re:
     - '^js: "[^"]+", line [0-9]+: uncaught JavaScript runtime exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '^js: "[^"]+", line [0-9]+: exception from uncaught JavaScript throw: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '(?P<type>SyntaxError): (?P<message>.+)$'
+    - '^(?P<message>java.lang.StackOverflowError)$'
 
 rpython-langjs:
-  exceptions_re:
+  errors_re:
     - '^ERROR in [^:]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+    - '^(?P<message>NotImplementedError)$'
   multiple_scripts_with_shared_realm: true
 
 rust-js:
   crash_re:
     - *rust_crash_re
-  exceptions_re:
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  errors_re:
     - '^\S+[.]js: (?P<type>[A-Za-z0-9]*Error)(?:: (?P<message>.+))?$'
 
 sablejs:
   warnings_re:
     - '\[WARN\]'
-  exceptions_re:
+  errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
     - *uncaught_exception_colon_message
 
 see:
   stderr_replace_re:
-    'WARNING: SEE is using non-release malloc': ''
-  exceptions_re:
+    - 'WARNING: SEE is using non-release malloc': ''
+  errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+[.]js:[0-9]+: )?(?P<message>.+)$'
 
 sobek:
   crash_re:
     - *go_crash_re
-  exceptions_re:
+  errors_re:
     - *uncaught_exception_colon_message
     - '^(?P<type>[A-Za-z0-9]*Error): [^:]+[.]js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
   module_flag: --module
 
 sophonjs:
-  exceptions_re:
+  stderr_replace_re:
+    - '^LOG: ': ''
+  errors_re:
+    - '^exception (?P<type>SyntaxError):Syntax error$'
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
 
 spidermonkey: &spidermonkey
-  exceptions_re: &sm_exc
+  errors_re: &sm_exc
     # "/tmp/x.js:1: ReferenceError: x is not defined"
     - '^[^:]+:[0-9]+:?([0-9]+)?:? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     # "uncaught exception: Error: x"
@@ -618,61 +722,86 @@ spidermonkey: &spidermonkey
     - --enable-iterator-chunking
     - --enable-iterator-join
     - --enable-legacy-regexp
+  test262_prelude:
+    file: engines/spidermonkey/prelude.js
 
 spidermonkey_1.5: &sm15
-  # Old SpiderMonkey versions (1.5–1.8.5): need print() + ES5 polyfills.
+  # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
   bench_prelude:
     - file: bench/prelude-print.js
     - file: bench/prelude-es5.js
-  exceptions_re: *sm_exc
+  errors_re: *sm_exc
+  flags: []
+  module_flag:
 
 spidermonkey_1.6: *sm15
 spidermonkey_1.7: *sm15
 spidermonkey_1.8.0: *sm15
+
 spidermonkey_1.8.5:
+  <<: *sm15
   # -j  Enable the TraceMonkey tracing JIT
   # -m  Enable the JaegerMonkey method JIT
-  bench_flags: ['-jm']
+  flags: ['-jm']
 
 spidermonkey_17:
   # -m/--methodjit  Enable the JaegerMonkey method JIT
-  bench_flags: ['-m']
-  exceptions_re: *sm_exc
-  test262_prelude:
-    file: engines/spidermonkey/prelude.js
+  flags: ['-m']
+  module_flag:
+  errors_re: *sm_exc
+
+spidermonkey_24:
+  flags: []
+  module_flag:
+  errors_re: *sm_exc
 
 ssrlive:
   crash_re:
     - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
 
 starlight:
   bench_suite: ['richards.js1.js']
   crash_re:
     - *rust_crash_re
-  exceptions_re:
+  stderr_replace_re:
+    - *rust_crash_norm_re
+    - '^Executed in [0-9.]+ms$': ''
+  errors_re:
     - *uncaught_exception_colon_message
 
 starlingmonkey:
-  exceptions_re: *sm_exc
+  stdout_replace_re:
+    - '^Log: ': ''
+  errors_re: *sm_exc
   test262_prelude:
     file: engines/spidermonkey/prelude.js
   # TODO: warmup_cmd
 
 sval:
-  exceptions_re:
+  stdout_replace_re:
+    - "(Cannot read properties of null) [(]reading '.*'[)]": '\1'
+  errors_re:
     - *exception_colon_message
 
+syoyo:
+  stdout_replace_re:
+    - "LightJS REPL v1.0.0": ""
+    - "Type '.help' for help, '.exit' to quit": ""
+
 tiny-js:
-  bench_prelude:
-    - 'var console={log: print};'
   bench_suite: ['richards.tiny-js.js']
   errors_re:
-    - '^ERROR:(?: Error)?(?P<message>.+?)( at [(]line: [0-9]+, col: [0-9]+[)])*$'
+    - '^ERROR:(?: Error)?(?P<message>.+?)( at \(line: [0-9]+, col: [0-9]+\))*$'
+  stdout_replace_re:
+    - '^> ': ''
+    - 'ERROR: Error (Got .* expected .*?)( at \(line: [0-9]+, col: [0-9]+\))*$': '\nSyntaxError: \1'
 
 topaz:
-  exceptions_re:
+  errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
-    - '^Runtime error: (?P<message>.+)$'
+    - '^Runtime error: (TopazException: )?(?P<message>.+)$'
 
 topchetoeu:
   crash_re:
@@ -680,19 +809,29 @@ topchetoeu:
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Uncaught Error: (?P<message>.+)$'
+  stdout_replace_re:
+    - '^Running j2s .*': ''
 
 twostroke:
   bench_suite: ['richards.es1.js']
-  exceptions_re:
+  errors_re:
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
+  warnings_re:
+    - '.*twostroke-dist/[^:]*[.]rb:[0-9]+: warning: .*'
 
 ucode:
   bench_suite: ['richards.ucode.js']
+  stderr_replace_re:
+    - "^Syntax error: ": "SyntaxError: "
 
 v8: &v8
   module_flag: --module
-  exceptions_re:
-    - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+  stderr_replace_re:
+    - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
+  errors_re:
+    - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
+  warnings_re:
+    - '^[^:]+:[0-9]+: Error: Unhandled Promise.$'
   flags: &v8_flags
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
@@ -716,20 +855,32 @@ wine: *jscript
 xs: &xs
   module_flag: -m
   multiple_scripts_with_shared_realm: true
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
+  warnings_re:
+    - '^Error: unhandled rejection$'
 
 yaji: *fesi
 
-# TODO: yantra - upstream patches needed: "[object Object]"
+yantra:
+  stdout_replace_re:
+    - '^\[object Object\]$': ''
+    - '^[0-9]+/[0-9]+/20[0-9][0-9] [0-9]+:[0-9]+:[0-9]+.[AP]M$': ''  # uses \u202f
 
 yavashark:
   flags: ['-i']  # -i Run with the tree-walk-interpreter (more stable)
-  exceptions_re:
+  crash_re:
+    - *rust_crash_re
+  stderr_replace_re:
+    - *rust_crash_norm_re
+  stdout_replace_re:
+    - '^"(.*)"$': '\1'
+    - '^Interpreter: Undefined': ''
+  errors_re:
     - '^Error: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
 zhuzilin:
-  exceptions_re:
+  errors_re:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
 
 # --------------------------------------------------------------------
@@ -739,7 +890,7 @@ node:
   console_log: console.log
   # TODO: change extension to .mjs when staging a module script
   module_ext: mjs
-  exceptions_re:
+  errors_re:
     - *exception_colon_message
   test262_prelude:
     file: engines/v8/prelude-node.js
@@ -748,15 +899,15 @@ node:
 bun:
   console_log: console.log
   module_always: true
-  exceptions_re:
+  errors_re:
     *exception_colon_message
 
 deno:
   console_log: console.log
   module_always: true
   stderr_replace_re:
-    "error: The module's source code could not be parsed: ": "SyntaxError: "
-  exceptions_re:
+    - "error: The module's source code could not be parsed: ": "SyntaxError: "
+  errors_re:
     - '^(?P<SyntaxError>): (?P<message>.*)$'
     - '^error: Uncaught( [(][^)]+[)])? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
@@ -765,9 +916,9 @@ gjs: &gjs
   # TODO: accept list for console_log
   #console_log: ['console.log', 'print']
   stderr_replace_re:
-    '.js-Console-Message: [0-9:.]+: ': ''
-    '[(].js-console:[0-9]+[)]: ': ''
-  exceptions_re:
+    - '.js-Console-Message: [0-9:.]+: ': ''
+    - '[(].js-console:[0-9]+[)]: ': ''
+  errors_re:
     - '.*js-CRITICAL ..: [0-9:.]+: JS ERROR: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
   module_flag: --module
   test262_prelude:

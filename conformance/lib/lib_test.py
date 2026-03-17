@@ -3,7 +3,10 @@
 
 from __future__ import annotations
 
+import json
+import tempfile
 import unittest
+from pathlib import Path
 from typing import Any
 
 from conformance.lib import (
@@ -12,6 +15,7 @@ from conformance.lib import (
     ErrorType,
     RunMetrics,
     RunResult,
+    Runner,
     Verdict,
     iterate_js_files,
 )
@@ -29,56 +33,6 @@ def mk_run(**kwargs: Any) -> RunResult:
     }
     defaults.update(kwargs)
     return RunResult(**defaults)
-
-# ---------------------------------------------------------------------------
-# Arbiter.extract_error_type_from_text
-# ---------------------------------------------------------------------------
-
-class ExtractErrorTypeTest(unittest.TestCase):
-    arb = Arbiter(EngineConfig())
-
-    def _check(self, text: str, expected: ErrorType | None) -> None:
-        result = self.arb.extract_error_type_from_text(text)
-        self.assertEqual(result[0] if result else None, expected)
-
-    def test_syntax_error(self) -> None:
-        self._check("SyntaxError: Unexpected token (9:6)", ErrorType.SYNTAX_ERROR)
-
-    def test_reference_error(self) -> None:
-        self._check("ReferenceError: Proxy is not defined", ErrorType.REFERENCE_ERROR)
-        self._check('ReferenceError: "Proxy" is not defined.', ErrorType.REFERENCE_ERROR)
-        self._check("ReferenceError:Binding has not been defined", ErrorType.REFERENCE_ERROR)
-
-    def test_type_error(self) -> None:
-        self._check("TypeError: undefined is not a function", ErrorType.TYPE_ERROR)
-        self._check("Uncaught TypeError: not a function", ErrorType.TYPE_ERROR)
-
-    def test_eval_error(self) -> None:
-        self._check("EvalError: boom", ErrorType.EVAL_ERROR)
-
-    def test_test262_error(self) -> None:
-        self._check("Test262Error: custom harness failure", ErrorType.TEST262_ERROR)
-
-    def test_prefers_subclass_over_bare_error(self) -> None:
-        self._check("Error: something went wrong\nTypeError: bad type", ErrorType.TYPE_ERROR)
-
-    def test_reject_does_not_throw(self) -> None:
-        # "does not throw" lines should be skipped.
-        self._check("foo does not throw RangeError", None)
-        self._check("expected TypeError to be thrown but no exception", None)
-
-    def test_none_for_clean_output(self) -> None:
-        self._check("", None)
-        self._check("all tests passed", None)
-        self._check("42", None)
-
-    def test_skips_ok_lines_in_pass2(self) -> None:
-        # Conformance "...: OK" lines should not extract error type.
-        self._check("test.js: OK\nSyntaxError: real error", ErrorType.SYNTAX_ERROR)
-
-    def test_error_type_field(self) -> None:
-        self._check("error_type: ReferenceError", ErrorType.REFERENCE_ERROR)
-
 
 # ---------------------------------------------------------------------------
 # RunResult
@@ -104,16 +58,16 @@ class RunResultTest(unittest.TestCase):
     def test_to_dict_roundtrip(self) -> None:
         r = mk_run(
             verdict=Verdict.FAILED,
-            error_type=ErrorType.CRASH,
+            error_type=ErrorType.CRASHED,
             error_message="signal 11",
             exit_code=-11,
         )
         d = r.to_dict()
         self.assertEqual(d["verdict"], "failed")
-        self.assertEqual(d["error_type"], "crash")
+        self.assertEqual(d["error_type"], "crashed")
         r2 = RunResult.from_dict(d)
         self.assertEqual(r2.verdict, Verdict.FAILED)
-        self.assertEqual(r2.error_type, ErrorType.CRASH)
+        self.assertEqual(r2.error_type, ErrorType.CRASHED)
         self.assertEqual(r2.error_message, "signal 11")
 
     def test_from_dict_rejects_unknown_fields(self) -> None:
@@ -148,7 +102,7 @@ class RunResultTest(unittest.TestCase):
             error_type=ErrorType.GENERIC,
             error_message="failed",
         )
-        self.assertEqual(r.verdict_message(), "failed: failed")
+        self.assertEqual(r.verdict_message(), "failed")
 
 
 # ---------------------------------------------------------------------------
@@ -158,35 +112,24 @@ class RunResultTest(unittest.TestCase):
 # (label, run_kwargs, classify_kwargs, want_verdict, want_error_type, want_msg_substr)
 _CLASSIFY_CASES: list[tuple[str, dict, dict, Verdict, ErrorType | None, str]] = [
     ("timeout preset",     {"exit_code": -9, "error_type": ErrorType.TIMEOUT}, {},                          Verdict.FAILED, ErrorType.TIMEOUT,                   ""),
-    ("crash signal 11",    {"exit_code": -11},                                  {},                          Verdict.FAILED, ErrorType.CRASH,                     "SIGSEGV"),
+    ("crash signal 11",    {"exit_code": -11},                                  {},                          Verdict.FAILED, ErrorType.CRASHED,                     "SIGSEGV"),
     ("nonzero exit",       {"exit_code": 2},                                    {},                          Verdict.FAILED, ErrorType.EXIT,                      "2"),
     ("clean ok",           {"stdout": "42\n"},                                  {},                          Verdict.OK,   None,                                ""),
-    ("reference error",    {"stdout": "ReferenceError: x not defined", "exit_code": 1}, {},                 Verdict.FAILED, ErrorType.REFERENCE_ERROR,            ""),
-    ("type error",         {"stdout": "TypeError: bad", "exit_code": 1},        {},                          Verdict.FAILED, ErrorType.TYPE_ERROR,                ""),
-    ("ok pattern found",   {"stdout": "test.js: OK\nnoise"},                    {"expect_ok_pattern": r"test\.js: OK"}, Verdict.OK,   None,                    ""),
-    ("ok pattern missing", {"stdout": "plain output"},                          {"expect_ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.MISSING_OK,     ""),
-    ("ok absent+error",    {"stdout": "SyntaxError: bad"},                      {"expect_ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.SYNTAX_ERROR,   ""),
-    ("ok absent+exit 3",   {"stdout": "", "exit_code": 3},                      {"expect_ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.EXIT,           ""),
+    ("nonzero exit+output", {"stdout": "ReferenceError: x not defined", "exit_code": 1}, {},              Verdict.FAILED, ErrorType.REFERENCE_ERROR,           "x not defined"),
+    ("ok pattern found",   {"stdout": "test.js: OK\nnoise"},                    {"ok_pattern": r"test\.js: OK"}, Verdict.OK,   None,                    ""),
+    ("ok pattern missing", {"stdout": "plain output"},                          {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.GENERIC,     ""),
+    ("ok absent+error",    {"stdout": "SyntaxError: bad"},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.SYNTAX_ERROR,   "bad"),
+    ("ok absent+exit 3",   {"stdout": "", "exit_code": 3},                      {"ok_pattern": r"test\.js: OK"}, Verdict.FAILED, ErrorType.GENERIC,     ""),
+    # fail_pattern tests
+    ("ok+fail both present",  {"stdout": "test.js: OK\ntest.js: failed"},        {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.GENERIC, "both ok and fail"),
+    ("ok+fail ok only",       {"stdout": "test.js: OK"},                         {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.OK,     None,                 ""),
+    ("ok+fail exception line",{"stdout": "test.js: OK\ntest.js: exception: TypeError: bad"}, {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.GENERIC, "both ok and fail"),
+    ("ok+fail fail only",     {"stdout": "test.js: exception: TypeError: bad"},  {"ok_pattern": r"test\.js: OK", "fail_pattern": r"test\.js: (?:failed|exception)"}, Verdict.FAILED, ErrorType.TYPE_ERROR,  "bad"),
+    # async tests
     ("async complete",     {"stdout": "Test262:AsyncTestComplete"},              {"expect_async": True},      Verdict.OK,   None,                                ""),
     ("async failure",      {"stdout": "Test262:AsyncTestFailure: boom"},         {"expect_async": True},      Verdict.FAILED, ErrorType.ASYNC_TEST_FAILURE,        "boom"),
-    ("async missing",      {"stdout": "plain"},                                  {"expect_async": True},      Verdict.FAILED, ErrorType.MISSING_ASYNC_TEST_COMPLETE, ""),
+    ("async missing",      {"stdout": "plain"},                                  {"expect_async": True},      Verdict.FAILED, ErrorType.NO_ASYNC_TEST_COMPLETE, ""),
 ]
-
-_WARN_CFG = EngineConfig(errors_re=[r"(?i)error"], warnings_re=[r"^Parse errors:$"])
-
-# (label, run_kwargs, want_verdict) — uses _WARN_CFG arbiter
-_CLASSIFY_WARN_CASES: list[tuple[str, dict, Verdict]] = [
-    ("warn + error → fail", {"stdout": "Parse errors:\nsome error here"}, Verdict.FAILED),
-    ("warn only → ok",      {"stdout": "Parse errors:\nclean output"},    Verdict.OK),
-]
-
-# (label, output, want_line)
-_BEST_ERROR_LINE_CASES: list[tuple[str, str, str | None]] = [
-    ("clean output",     "42\nhello world\n",             None),
-    ("first error line", "ok line\nTypeError: bad\nmore", "TypeError: bad"),
-    ("skip blank lines", "\n\nfailed to run\n",           "failed to run"),
-]
-
 
 class ArbiterTest(unittest.TestCase):
     def test_classify(self) -> None:
@@ -199,49 +142,70 @@ class ArbiterTest(unittest.TestCase):
                 if want_msg:
                     self.assertIn(want_msg, out.error_message or "")
 
-    def test_classify_warn(self) -> None:
-        arb = Arbiter(_WARN_CFG)
-        for label, run_kw, want_v in _CLASSIFY_WARN_CASES:
-            with self.subTest(label):
-                self.assertEqual(arb.classify(mk_run(**run_kw)).verdict, want_v)
+    def test_warnings_re_suppresses_matched_lines(self) -> None:
+        arb = Arbiter(EngineConfig(
+            errors_re=[r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"],
+            warnings_re=[r"^Note:"],
+        ))
+        out = arb.classify(mk_run(stdout="Note: TypeError: warning\nSyntaxError: real", exit_code=1))
+        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
+        self.assertEqual(out.error_message, "real")
 
-    def test_best_error_line(self) -> None:
+    def test_stdout_replace_re_anchors_match_per_line(self) -> None:
+        # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
+        cfg = EngineConfig(stdout_replace_re={"^noise: ": "", "noise$": ""})
+        arb = Arbiter(cfg)
+        run = arb.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
+        self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
+
+    def test_stdout_replace_re_list_of_dicts_form(self) -> None:
+        cfg = EngineConfig(stdout_replace_re=[{"^noise: ": ""}, {"noise$": ""}])
+        arb = Arbiter(cfg)
+        run = arb.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
+        self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
+
+    def test_arbiter_strips_ansi_from_stdout_and_stderr(self) -> None:
         arb = Arbiter(EngineConfig())
-        for label, output, want in _BEST_ERROR_LINE_CASES:
-            with self.subTest(label):
-                self.assertEqual(arb._best_error_line(output), want)
+        run = arb.classify(mk_run(
+            stdout="\x1b[1;31mError\x1b[0m: bad\n",
+            stderr="\x1b[32mOK\x1b[0m\n",
+            exit_code=1,
+        ))
+        self.assertEqual(run.stdout_cleaned, "Error: bad\n")
+        self.assertEqual(run.stderr_cleaned, "OK\n")
 
-    def test_best_error_line_warn_skipped(self) -> None:
-        arb = Arbiter(EngineConfig(warnings_re=[r"^warning:"]))
-        self.assertEqual(arb._best_error_line("warning: minor\nfailed: big"), "failed: big")
-
-    def test_warnings_re_multiple_patterns_both_suppressed(self) -> None:
-        # Multiple warning patterns; matched lines are not treated as errors.
-        cfg = EngineConfig(errors_re=[r"(?i)error"], warnings_re=[r"^Parse errors:$", r"^Note:"])
-        arb = Arbiter(cfg)
-        # Both lines match warnings_re and are suppressed → no error found → OK
-        r = arb.classify(mk_run(stdout="Parse errors:\nNote: error here"))
-        self.assertEqual(r.verdict, Verdict.OK)
-        # Real error after suppressed warning → FAIL
-        r2 = arb.classify(mk_run(stdout="Parse errors:\nactual error occurred"))
-        self.assertEqual(r2.verdict, Verdict.FAILED)
-
-    def test_errors_re_multiple_patterns(self) -> None:
-        cfg = EngineConfig(errors_re=[r"panic", r"crashed"])
-        arb = Arbiter(cfg)
-        self.assertEqual(
-            arb.classify(mk_run(stdout="engine panic!", exit_code=1)).verdict, Verdict.FAILED
-        )
-        self.assertEqual(
-            arb.classify(mk_run(stdout="process crashed", exit_code=1)).verdict, Verdict.FAILED
-        )
-        self.assertEqual(arb.classify(mk_run(stdout="42")).verdict, Verdict.OK)
-
-    def test_shorten_message_strips_failed_and_error_prefixes_case_insensitively(self) -> None:
-        arb = Arbiter(EngineConfig(errors_re=[r"(?i)failed"]))
-        out = arb.classify(mk_run(stdout="FAILED: Error: boom"))
-        self.assertEqual(out.error_type, ErrorType.GENERIC)
-        self.assertEqual(out.error_message, "boom")
+    def test_jsish(self) -> None:
+        arb = Arbiter(EngineConfig.load("/bin/true", config_name="jsish"))
+        cases = [
+            (
+                "/conformance/es1/literals.string.hex.js:6: parse: Unsupported string escape: \\x\n"
+                'literals.string.hex.js:9:   "es1/literals.string.hex.js: failed",\n',
+                "SyntaxError: Unsupported string escape: \\x",
+            ),
+            (
+                "/conformance/es1/asi.js:14: parse: :13.6: error: syntax error, unexpected '}'\n"
+                "ERROR: \n",
+                "SyntaxError: unexpected '}'",
+            ),
+            (
+                "/conformance/es1/asi.eval.js:2: parse: /conformance/es1/asi.eval.js:2.7: error: syntax error, unexpected '}'\n"
+                "ERROR: \n",
+                "SyntaxError: unexpected '}'",
+            ),
+            (
+                "/conformance/es1/Array.prototype.join.generic.js:13: error: expected array object\n"
+                "ERROR: \n",
+                "expected array object",
+            ),
+            (
+                'typeof.null.js:11:  "es1/typeof.null.js: typeof null != \'object\'", \n',
+                "exit code 1",
+            ),
+        ]
+        for raw_stderr, want_vm in cases:
+            with self.subTest(want_vm):
+                run = arb.classify(mk_run(stderr=raw_stderr, exit_code=1))
+                self.assertEqual(run.verdict_message(), want_vm)
 
     def test_real_crash_produces_signal_name(self) -> None:
         import shutil
@@ -260,26 +224,19 @@ class ArbiterTest(unittest.TestCase):
         assert exit_code is not None
         self.assertLess(exit_code, 0)  # negative = killed by signal
         result = Arbiter(EngineConfig()).classify(run)
-        self.assertEqual(result.error_type, ErrorType.CRASH)
+        self.assertEqual(result.error_type, ErrorType.CRASHED)
         self.assertEqual(result.error_message, "SIGABRT")
 
 
 # ---------------------------------------------------------------------------
-# Arbiter: exceptions_re structured exception parsing
+# Arbiter: errors_re structured error parsing
 # ---------------------------------------------------------------------------
 
-class ExceptionReTest(unittest.TestCase):
-    """Tests for exceptions_re patterns."""
+class ErrorsReTest(unittest.TestCase):
+    """Tests for errors_re patterns."""
 
-    def _arb(
-        self,
-        exceptions_re: list[str] | None = None,
-        errors_re: list[str] | None = None,
-    ) -> Arbiter:
-        kw: dict[str, Any] = dict(exceptions_re=exceptions_re or [])
-        if errors_re is not None:
-            kw["errors_re"] = errors_re
-        return Arbiter(EngineConfig(**kw))
+    def _arb(self, errors_re: list[str] | None = None) -> Arbiter:
+        return Arbiter(EngineConfig(errors_re=errors_re or []))
 
     # --- stream selection ---
 
@@ -306,7 +263,7 @@ class ExceptionReTest(unittest.TestCase):
         arb = self._arb([pat])
         out = arb.classify(mk_run(stdout="TypeError: from stdout", stderr="SyntaxError: from stderr"))
         self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "from stderr")
+        self.assertEqual(out.error_message, "from stderr; from stdout")
 
     def test_stderr_used_when_stdout_no_match(self) -> None:
         pat = r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"
@@ -395,28 +352,22 @@ class ExceptionReTest(unittest.TestCase):
 
     # --- priority ---
 
-    def test_beats_errors_re_gives_clean_message(self) -> None:
-        # exceptions_re extracts just the message; errors_re path would give the full line.
-        arb = self._arb(
-            [r"^Uncaught: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"],
-            errors_re=[r"(?i)error"],
-        )
+    def test_errors_re_extracts_clean_message(self) -> None:
+        arb = self._arb([r"^Uncaught: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = arb.classify(mk_run(stdout="Uncaught: TypeError: bad"))
         self.assertEqual(out.error_type, ErrorType.TYPE_ERROR)
-        self.assertEqual(out.error_message, "bad")  # clean extract, not full line
+        self.assertEqual(out.error_message, "bad")
 
-    def test_crash_takes_priority_over_exceptions_re(self) -> None:
+    def test_crash_takes_priority_over_errors_re(self) -> None:
         arb = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = arb.classify(mk_run(stdout="TypeError: bad", exit_code=-11))
-        self.assertEqual(out.error_type, ErrorType.CRASH)
+        self.assertEqual(out.error_type, ErrorType.CRASHED)
 
-    def test_no_match_falls_through_to_errors_re(self) -> None:
-        arb = self._arb(
-            [r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"],
-            errors_re=[r"(?i)error"],
-        )
+    def test_no_match_returns_exit_code_failure(self) -> None:
+        arb = self._arb([r"^Exception: (?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = arb.classify(mk_run(stdout="some error occurred", exit_code=1))
         self.assertEqual(out.verdict, Verdict.FAILED)
+        self.assertEqual(out.error_type, ErrorType.EXIT)
 
     # --- multi-pattern / multi-line ---
 
@@ -424,7 +375,7 @@ class ExceptionReTest(unittest.TestCase):
         arb = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = arb.classify(mk_run(stderr="SyntaxError: first\nReferenceError: second"))
         self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "first")
+        self.assertEqual(out.error_message, "first; second")
 
     def test_first_matching_pattern_wins(self) -> None:
         # For each line, patterns are tried in order; first match wins.
@@ -436,10 +387,26 @@ class ExceptionReTest(unittest.TestCase):
         self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
 
     def test_raw_throw_no_match(self) -> None:
-        # A raw string throw doesn't contain "Error:" → no exceptions_re match → OK
+        # A raw string throw doesn't contain "Error:" → no errors_re match → OK
         arb = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = arb.classify(mk_run(stdout="raw string"))
         self.assertEqual(out.verdict, Verdict.OK)
+
+
+class ConfigRunnerSmokeTest(unittest.TestCase):
+    def _make_binary(self, td: str, name: str = "eng") -> Path:
+        p = Path(td) / name
+        p.write_text("#!/bin/sh\necho hi\n")
+        p.chmod(0o755)
+        return p
+
+    def test_run_command_propagates_build_metadata(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            (Path(td) / "eng.json").write_text(json.dumps({"engine": "eng", "version": "1.0"}))
+            cfg = EngineConfig.load(str(binary))
+            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
+            self.assertEqual(run.build_metadata.get("version"), "1.0")
 
 
 if __name__ == "__main__":

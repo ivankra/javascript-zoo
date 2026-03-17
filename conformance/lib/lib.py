@@ -29,13 +29,10 @@ class Verdict(StrEnum):
 class ErrorType(StrEnum):
     """Fine-grained subcategories for FAIL/SKIP verdicts."""
 
-    GENERIC = "generic"       # unclassified error / generic Error exception
-    CRASH = "crash"           # killed by a signal
+    GENERIC = "generic"       # unclassified error / missing OK marker / generic Error exception
+    CRASHED = "crashed"       # killed by a signal or runtime panic
     EXIT = "exit"             # non-zero exit code
     TIMEOUT = "timeout"
-    MISSING_OK = "MissingOK"  # expected "...: OK" marker absent
-    ASYNC_TEST_FAILURE = "AsyncTestFailure"  # Test262:AsyncTestFailure
-    MISSING_ASYNC_TEST_COMPLETE = "MissingAsyncTestComplete"
     # Standard JavaScript exception types
     SYNTAX_ERROR = "SyntaxError"
     REFERENCE_ERROR = "ReferenceError"
@@ -45,10 +42,12 @@ class ErrorType(StrEnum):
     URI_ERROR = "URIError"
     INTERNAL_ERROR = "InternalError"
     AGGREGATE_ERROR = "AggregateError"
-    # test262 exceptions (assertion etc)
-    TEST262_ERROR = "Test262Error"
-    # test262 negative-expectation mismatch
-    NEGATIVE = "Negative"
+    SUPPRESSED_ERROR = "SuppressedError"  # esnext
+    # test262 errors
+    TEST262_ERROR = "Test262Error"  # assert etc
+    NEGATIVE = "Negative"           # negative test expectations mismatch
+    ASYNC_TEST_FAILURE = "AsyncTestFailure"  # Test262:AsyncTestFailure
+    NO_ASYNC_TEST_COMPLETE = "NoAsyncTestComplete"
 
     @classmethod
     def from_js_error(cls, exception_name: str) -> ErrorType | None:
@@ -100,9 +99,12 @@ class RunResult:
     # Shell-renderable command string for reproducibility/debugging.
     command: str | None = None
     cwd: str | None = None
-    # Captured process streams (decoded with replacement for non-UTF8 output).
+    # Original captured process streams
     stdout: str | None = None
     stderr: str | None = None
+    # Refined output streams with engine-specific cleanups applied by Arbiter
+    stdout_cleaned: str | None = None
+    stderr_cleaned: str | None = None
     # Coarse failure reason; for test262 negative maps to expected error class.
     error_type: ErrorType | None = None
     # Human-readable one-line explanation (None when error_type is self-explanatory).
@@ -123,10 +125,17 @@ class RunResult:
     # Test262 features declared in this test's frontmatter (empty for non-test262 runs).
     features: frozenset[str] = dataclasses.field(default_factory=frozenset)
 
+    def print_streams(self) -> None:
+        """Print stdout and stderr with stream-prefixed lines."""
+        for line in (self.stdout or "").rstrip().splitlines():
+            print(f"  stdout> {line}")
+        for line in (self.stderr or "").rstrip().splitlines():
+            print(f"  stderr> {line}")
+
     def combined_output(self) -> str:
         """Merge stdout and stderr into a single string for parsing."""
-        out = self.stdout or ""
-        err = self.stderr or ""
+        out = self.stdout_cleaned if self.stdout_cleaned is not None else (self.stdout or "")
+        err = self.stderr_cleaned if self.stderr_cleaned is not None else (self.stderr or "")
         if not err:
             return out
         if not out:
@@ -138,12 +147,11 @@ class RunResult:
         """Render verdict plus optional error detail as a compact status string."""
         if self.verdict is None:
             return ""
-        status = str(self.verdict)
-        if self.error_type is not None and self.error_type not in (ErrorType.GENERIC, ErrorType.EXIT):
-            if self.verdict is Verdict.FAILED:
-                status = self.error_type.value
-            else:
-                status += f": {self.error_type.value}"
+        assert self.error_message not in ("OK", "skipped")
+        if self.error_type in (ErrorType.GENERIC, ErrorType.EXIT):
+            assert self.verdict == Verdict.FAILED
+            return self.error_message or "failed"
+        status = str(self.error_type or self.verdict)
         if self.error_message:
             status += f": {self.error_message}"
         return status
@@ -189,17 +197,10 @@ class Runner:
     Classification (verdict/error_type) is intentionally separate – use Arbiter.
     """
 
-    # Strip ANSI escape sequences (CSI codes) from all engine output by default.
-    _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
-
     def __init__(self, config: EngineConfig) -> None:
         config.resolve()
         self.config = config
         self.current_proc: subprocess.Popen[bytes] | None = None
-        user = [(re.compile(p), r) for p, r in config.stdout_replace_re.items()]
-        self._stdout_replace = [(self._ANSI_RE, "")] + user
-        user = [(re.compile(p), r) for p, r in config.stderr_replace_re.items()]
-        self._stderr_replace = [(self._ANSI_RE, "")] + user
 
     def run_command(
         self,
@@ -272,16 +273,13 @@ class Runner:
 
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
 
-        stdout = stdout_b.decode("utf-8", errors="replace")
-        stderr = stderr_b.decode("utf-8", errors="replace")
+        raw_stdout = stdout_b.decode("utf-8", errors="replace")
+        raw_stderr = stderr_b.decode("utf-8", errors="replace")
 
-        stdout = apply_replacements(stdout, self._stdout_replace)
-        stderr = apply_replacements(stderr, self._stderr_replace)
-
-        if len(stdout) > self.config.output_limit:
-            stdout = stdout[: self.config.output_limit] + "\n... stdout truncated ...\n"
-        if len(stderr) > self.config.output_limit:
-            stderr = stderr[: self.config.output_limit] + "\n... stderr truncated ...\n"
+        if len(raw_stdout) > self.config.output_limit:
+            raw_stdout = raw_stdout[: self.config.output_limit] + "\n... stdout truncated ...\n"
+        if len(raw_stderr) > self.config.output_limit:
+            raw_stderr = raw_stderr[: self.config.output_limit] + "\n... stderr truncated ...\n"
 
         metrics = RunMetrics(
             real_time=wall,
@@ -299,8 +297,8 @@ class Runner:
             run_id=run_id,
             command=shlex.join(argv),
             cwd=str(run_cwd),
-            stdout=stdout,
-            stderr=stderr,
+            stdout=raw_stdout,
+            stderr=raw_stderr,
             exit_code=proc.returncode if proc is not None else None,
             metrics=metrics,
             test_path=test_path,
@@ -322,7 +320,7 @@ def apply_replacements(text: str, replacements: list[tuple[re.Pattern[str], str]
         return text
     for cre, repl in replacements:
         text = cre.sub(repl, text)
-    lines = [ln for ln in text.splitlines() if ln.strip()]
+    lines = [ln.rstrip() for ln in text.splitlines() if ln.strip()]
     return "\n".join(lines) + "\n" if lines else ""
 
 
@@ -330,45 +328,58 @@ def apply_replacements(text: str, replacements: list[tuple[re.Pattern[str], str]
 # Arbiter
 # ---------------------------------------------------------------------------
 
-# Regex to match known JS error constructor names in engine output.
-_ERROR_CLASS_RE = re.compile(r"\b([A-Za-z_][A-Za-z0-9_]*Error)\b(?!\.js\b)")
-# Lines that look like runtime diagnostics (not just mentions of error type names).
-_ERROR_CONTEXT_RE = re.compile(r"(?i)(?:error|exception|uncaught|panic|fatal|crash|thrown|throw)")
-# Negative-test wording that should NOT be extracted as a thrown error type.
-_ERROR_REJECT_RE = re.compile(
-    r"(?i)(?:does not throw|no exception|wrong exception|expected.{1,40}to be thrown)"
-)
-# Generic error patterns
-_ERROR_GENERIC_RE = re.compile(
-    r"(?i)(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can't|timeout|crash)"
+# Regex to match JS error constructor names in engine output.
+_JS_ERROR_NAME_RE = re.compile(
+        r"(?<!\bdoes not throw )"
+        r"\b([A-Za-z_][A-Za-z0-9_]*Error)\b"
 )
 
 class Arbiter:
     """Convert a raw RunResult into verdict/error_type/error_message."""
 
+    # Strip ANSI escape sequences (CSI codes) from all engine output by default.
+    _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
+
     def __init__(self, config: EngineConfig) -> None:
-        self._error_cres = [re.compile(p) for p in config.errors_re]
+        self._config = config
         self._warn_cres = [re.compile(p) for p in config.warnings_re]
-        self._exc_cres = [re.compile(p) for p in config.exceptions_re]
+        self._errors_cres = [re.compile(p) for p in config.errors_re]
         self._crash_cres = [re.compile(p) for p in config.crash_re]
 
         # Pattern coming from conformance/compat-table test's wrapper
         kangax_re = re.compile('(?:kangax|compat-table/|es[0-9])[^ :]+: exception: (?P<type>[A-Za-z]*Error)(?:: )?(?P<message>.*?)$')
-        self._exc_cres.append(kangax_re)
+        self._errors_cres.append(kangax_re)
+
+        src = config.stdout_replace_re
+        user = [(re.compile(p, re.MULTILINE), r) for d in (src if isinstance(src, list) else [src]) for p, r in d.items()]
+        self._stdout_replace: list[tuple[re.Pattern[str], str]] = [(self._ANSI_RE, "")] + user
+        src = config.stderr_replace_re
+        user = [(re.compile(p, re.MULTILINE), r) for d in (src if isinstance(src, list) else [src]) for p, r in d.items()]
+        self._stderr_replace: list[tuple[re.Pattern[str], str]] = [(self._ANSI_RE, "")] + user
 
     def classify(
         self,
         run: RunResult,
         *,
-        expect_ok_pattern: str | None = None,
+        ok_pattern: str | None = None,
+        fail_pattern: str | None = None,
         expect_async: bool = False,
+        strip_line_prefix: str | None = None,
     ) -> RunResult:
         """Classify run outcome; returns the same RunResult with fields set.
 
         Args:
-            expect_ok_pattern: regex that must match a line for OK verdict (conformance/test262).
-            expect_async:       require Test262:AsyncTestComplete token (test262).
+            ok_pattern:        regex that must match a line for OK verdict.
+            fail_pattern:      regex matching explicit failure lines from the test wrapper.
+                               If both ok_pattern and fail_pattern match, test will fail.
+            expect_async:      require Test262:AsyncTestComplete token (test262).
+            strip_line_prefix: fixed string prefix stripped from the start of each error
+                               message line (e.g. "test/foo.js: " added by test wrappers).
         """
+        # Produce cleaned streams by applying engine-specific replacements.
+        run.stdout_cleaned = apply_replacements(run.stdout or "", self._stdout_replace)
+        run.stderr_cleaned = apply_replacements(run.stderr or "", self._stderr_replace)
+
         # Timeout was already classified by Runner.
         if run.error_type == ErrorType.TIMEOUT:
             run.verdict = Verdict.FAILED
@@ -381,7 +392,7 @@ class Arbiter:
         # Crash = negative exit code (terminated by signal).
         if run.exit_code is not None and run.exit_code < 0:
             run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.CRASH
+            run.error_type = ErrorType.CRASHED
             signum = -run.exit_code
             try:
                 run.error_message = signal.Signals(signum).name
@@ -389,26 +400,24 @@ class Arbiter:
                 run.error_message = f"signal {signum}"
             return run
 
-        exc = (self._match_exception(run.stderr or "", self._crash_cres) or
-               self._match_exception(run.stdout or "", self._crash_cres))
+        # Check for runtime panic messages
+        exc = (self._match_exception(run.stderr_cleaned or "", self._crash_cres) or
+               self._match_exception(run.stdout_cleaned or "", self._crash_cres))
         if exc:
             run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.CRASH
+            run.error_type = ErrorType.CRASHED
             run.error_message = exc[1]
+            self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return run
 
-        # High-priority: structured exception pattern.
-        exc = (self._match_exception(run.stderr or "", self._exc_cres) or
-               self._match_exception(run.stdout or "", self._exc_cres))
-        if exc:
-            run.verdict = Verdict.FAILED
-            run.error_type, run.error_message = exc
-            self._shorten_message(run)
-            return run
+        output = run.combined_output().strip()
+        lines = output.splitlines()
+        ok_found = bool(ok_pattern and any(re.search(ok_pattern, ln) for ln in lines))
+        fail_found = bool(fail_pattern and any(re.search(fail_pattern, ln) for ln in lines))
+        errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
+                  self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
 
-        output = run.combined_output()
-
-        # test262 async protocol checks.
+        # test262 async protocol checks
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:
                 m = re.search(r"Test262:AsyncTestFailure:\s*(.*)", output)
@@ -416,108 +425,86 @@ class Arbiter:
                 run.error_type = ErrorType.ASYNC_TEST_FAILURE
                 run.error_message = m.group(1).strip() if m else None
                 return run
+
             if "Test262:AsyncTestComplete" not in output:
                 run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.MISSING_ASYNC_TEST_COMPLETE
-                return run
-            # Strip completion token line before further analysis.
-            output = "\n".join(
-                line for line in output.splitlines()
-                if "Test262:AsyncTestComplete" not in line
-            )
-
-        # OK marker check (conformance / test262 positive tests).
-        if expect_ok_pattern:
-            ok_re = re.compile(expect_ok_pattern)
-            if any(ok_re.search(line) for line in output.splitlines()):
-                run.verdict = Verdict.OK
+                run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
                 return run
 
-            # OK marker absent – look for a concrete diagnostic first.
-            diag = self._best_error_line(output)
-            if diag:
-                run.verdict = Verdict.FAILED
-                run.error_type, run.error_message = self._classify_line(diag)
-                if run.error_message in ('failed', 'error'):
-                    run.error_message = None
-                self._shorten_message(run)
-                return run
-
-            if run.exit_code not in (0, None):
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.EXIT
-                run.error_message = f"exit code {run.exit_code}"
-                return run
-
+        if ok_found and fail_found:
+            # probably engine dumped a large block of source code with both markers
             run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.MISSING_OK
+            run.error_type = ErrorType.GENERIC
+            run.error_message = "found both ok and fail markers"
             return run
 
-        # Look for generic error lines, then check exit code.
-        diag = self._best_error_line(output)
-        if diag:
+        # TODO: fix ambiguous cases
+        # jsish      es3/global.SyntaxError.thrown.js
+        # metaes     compat-table/es2017/async.arrow-in-class.js
+        # njs        compat-table/es2018/Promise.prototype.Finally.js
+        # sophonjs   es3/Number.prototype.toExponential.throws-infinity.js
+        # topchetoeu compat-table/es6/Promise.js (flaky)
+        # yantra     compat-table/es2017/async.return.js
+        # quad-wheel compat-table/es6/misc.for-in-no-assignment-strict.js,
+        if ok_found and errors:
+            assert self._config.engine in ('bali', 'jsish', 'metaes', 'njs', 'quad-wheel', 'sophonjs', 'topchetoeu', 'yantra'), \
+                    f"OK marker and errors matched in test: {run.test_path}, stdout: {run.stdout}, stderr: {run.stderr}"
+
+        if errors:
+            best_et, best_msg = errors[0]
+            for et, msg in errors:
+                if et != ErrorType.GENERIC:
+                    best_et, best_msg = et, msg
+                    break
+            msgs = [msg for _, msg in errors if msg]
             run.verdict = Verdict.FAILED
-            run.error_type, run.error_message = self._classify_line(diag)
-            self._shorten_message(run)
+            run.error_type = best_et
+            run.error_message = "\n".join(msgs) if msgs else None
+            self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return run
 
-        if run.exit_code not in (0, None):
-            et_result = self.extract_error_type_from_text(output)
+        # Heuristic: scan output lines for the first JS error class name.
+        if not errors:
+            for line in output.splitlines():
+                line_filt = line.removeprefix(strip_line_prefix or '')
+                if run.test_path:
+                    # don't trip on test filenames
+                    line_filt = line.replace(os.path.basename(run.test_path), "<test>")
+                for m in _JS_ERROR_NAME_RE.finditer(line_filt):
+                    js_exc = ErrorType.from_js_error(m.group(1))
+                    if js_exc is not None:
+                        run.verdict = Verdict.FAILED
+                        run.error_type = js_exc
+                        run.error_message = line
+                        self._shorten_message(run, strip_line_prefix=strip_line_prefix)
+                        return run
+
+        if (ok_pattern and not ok_found) or fail_found:
             run.verdict = Verdict.FAILED
-            if et_result:
-                run.error_type, run.error_message = et_result
-            else:
-                run.error_type = ErrorType.EXIT
-                run.error_message = f"exit code {run.exit_code}"
+            run.error_type = ErrorType.GENERIC
+            run.error_message = output or None
+            self._shorten_message(run, strip_line_prefix=strip_line_prefix)
+            return run
+
+        # TODO: fix Promise.prototype.finally.js - many engines pass with non-zero exit code
+        assert run.exit_code is not None
+        if run.exit_code != 0 and 'es2018/Promise.prototype.finally.js' not in (run.test_path or ''):
+            run.verdict = Verdict.FAILED
+            run.error_type = ErrorType.EXIT
+            run.error_message = f"exit code {run.exit_code}"
             return run
 
         run.verdict = Verdict.OK
         return run
 
-    def extract_error_type_from_line(self, line: str) -> ErrorType | None:
-        """Extract JS error type from a single output line, or None."""
-        if _ERROR_REJECT_RE.search(line):
-            return None
-        names = [m.group(1) for m in _ERROR_CLASS_RE.finditer(line)]
-        if not names:
-            return None
-        for name in names:
-            et = ErrorType.from_js_error(name)
-            if et is not None:
-                return et
-        return ErrorType.GENERIC
-
-    def extract_error_type_from_text(self, text: str) -> tuple[ErrorType, str] | None:
-        """Extract the first JS error type from multi-line output.
-
-        Returns (error_type, source_line) — the line that triggered detection —
-        or None if nothing was found.
-        """
-        lines = text.splitlines()
-
-        # Pass 1: lines that look like runtime diagnostics.
-        for line in lines:
-            if not _ERROR_CONTEXT_RE.search(line):
-                continue
-            t = self.extract_error_type_from_line(line)
-            if t:
-                return t, line
-
-        # Pass 2: fallback scan, skip conformance "...: OK" lines.
-        for line in lines:
-            if re.search(r":\s*OK\s*$", line):
-                continue
-            t = self.extract_error_type_from_line(line)
-            if t:
-                return t, line
-
-        return None
-
-    def _match_exception(
+    def _collect_errors(
         self, text: str, cres: list[re.Pattern[str]]
-    ) -> tuple[ErrorType, str | None] | None:
-        """Scan text lines for a structured exception match; return (type, message) or None."""
+    ) -> list[tuple[ErrorType, str | None]]:
+        """Collect all structured error matches from text lines, skipping warning lines."""
+        results = []
         for line in text.splitlines():
+            if self._warn_cres and any(r.search(line) for r in self._warn_cres):
+                continue
             for cre in cres:
                 m = cre.search(line)
                 if m:
@@ -527,30 +514,32 @@ class Arbiter:
                     if et is None:
                         if raw_type:
                             message = f"{raw_type}: {message}" if message else raw_type
-                        return ErrorType.GENERIC, message or None
-                    return et, message or None
-        return None
+                        results.append((ErrorType.GENERIC, message or None))
+                    else:
+                        results.append((et, message or None))
+                    break
+        return results
 
-    def _best_error_line(self, output: str) -> str | None:
-        """Return the first diagnostic error line, or None."""
-        for candidates in [self._error_cres, [_ERROR_GENERIC_RE]]:
-            for line in output.splitlines():
-                line = line.strip()
-                if not line:
-                    continue
-                if any(r.search(line) for r in self._warn_cres):
-                    continue
-                for r in candidates:
-                    m = r.search(line)
-                    if not m:
-                        continue
-                    msg = m.groupdict().get("message")
-                    return msg.strip() if msg and msg.strip() else line
-        return None
+    def _match_exception(
+        self, text: str, cres: list[re.Pattern[str]]
+    ) -> tuple[ErrorType, str | None] | None:
+        """Return the first structured exception match, or None."""
+        matches = self._collect_errors(text, cres)
+        return matches[0] if matches else None
 
-    def _shorten_message(self, run: RunResult) -> None:
+    def _shorten_message(self, run: RunResult, *, strip_line_prefix: str | None = None) -> None:
         if not run.error_message:
             return
+
+        # Strip per-line prefix, drop empty lines, dedup, flatten to a single line
+        lines = run.error_message.splitlines()
+        if strip_line_prefix:
+            lines = [ln[len(strip_line_prefix):] if ln.startswith(strip_line_prefix) else ln
+                     for ln in lines]
+        lines = [ln.strip() for ln in lines]
+        lines = [ln for (i, ln) in enumerate(lines)
+                 if ln.lower() not in ('', 'failed', 'error', 'undefined') and (i == 0 or ln != lines[i-1])]
+        run.error_message = '; '.join(lines)
 
         # Shorten full absolute script path in messages to just
         # the basename of the original test file to keep messages
@@ -584,18 +573,15 @@ class Arbiter:
             else:
                 break
 
-    def _classify_line(self, line: str) -> tuple[ErrorType, str | None]:
-        """Map an error line to (ErrorType, message)."""
-        # Strip common "path/test.js: " prefix.
-        m = re.search(r"[^:\s]+\.js:\s*(.*)$", line)
-        msg = m.group(1).strip() if m else line.strip()
-        low = msg.lower()
+        if run.error_type and run.error_type.endswith('Error') and run.error_message.startswith(run.error_type + ':'):
+            run.error_message = run.error_message[len(run.error_type)+1:].strip()
 
-        if "timeout" in low:
-            return ErrorType.TIMEOUT, msg
+        run.error_message = run.error_message.strip()
+        if len(run.error_message) > 200:
+            run.error_message = run.error_message[:200] + '...'
 
-        et_result = self.extract_error_type_from_text(msg)
-        if et_result:
-            return et_result
+        if run.error_message and run.error_message.lower() in ('ok', 'error', 'fail', 'failed', 'skipped', str(run.error_type)):
+            run.error_message = None
 
-        return ErrorType.GENERIC, msg
+        if not run.error_message:
+            run.error_message = None

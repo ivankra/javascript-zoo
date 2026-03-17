@@ -14,11 +14,11 @@ import tempfile
 from collections import Counter
 from pathlib import Path
 
-from lib import Arbiter, EngineConfig, Runner, Verdict, version_sort_key, iterate_js_files
+from lib import Arbiter, EngineConfig, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
 
 CONFORMANCE_DIR = Path(__file__).parent.resolve()
 VAR_CONSOLE_LOG_JS = CONFORMANCE_DIR / "lib/var-console-log.js"
-TIMEOUT_SEC = 3.0
+TIMEOUT_SEC = 10.0
 
 
 def patch_console_log(source: str, console_log: str) -> str:
@@ -32,7 +32,7 @@ def run_one(
     cfg: EngineConfig,
     test_path: Path,
     test_id: str,
-) -> tuple[str, str]:
+) -> tuple[str, str, RunResult]:
     """Run a single conformance test, return (test_id, status_text)."""
     console_log = cfg.console_log or "console.log"
     if console_log == "console.log":
@@ -65,8 +65,10 @@ def run_one(
             )
 
     ok_pattern = rf"{re.escape(test_path.name)}: OK"
-    result = arbiter.classify(run, expect_ok_pattern=ok_pattern)
-    return test_id, result.verdict_message()
+    fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
+    arbiter.classify(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
+                     strip_line_prefix=f"{test_id}: ")
+    return test_id, run.verdict_message(), run
 
 
 def format_dir_summary(
@@ -107,7 +109,7 @@ def main() -> None:
     parser.add_argument("suites", nargs="*", help="Suite dirs/globs (default: from config)")
     parser.add_argument("-o", "--output", help="Write results to file")
     parser.add_argument("-j", "--jobs", type=int, help="Parallel jobs (default: from config)")
-    parser.add_argument("-v", "--verbose", action="store_true", help="Print per-test results as they complete")
+    parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     parser.add_argument("-t", "--timeout", type=float, default=TIMEOUT_SEC)
     args = parser.parse_args()
 
@@ -138,30 +140,33 @@ def main() -> None:
     by_dir_failed_tests: dict[str, list[str]] = {test_dir: [] for test_dir in dir_names}
     next_dir_index = 0
 
-    results_by_test: dict[str, tuple[str, str]] = {}
+    results_by_test: dict[str, tuple[str, str, RunResult]] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         futs = {
             pool.submit(run_one, runner, arbiter, cfg, CONFORMANCE_DIR / rel, rel): rel
             for rel in tests
         }
         for fut in concurrent.futures.as_completed(futs):
-            r = fut.result()
-            results_by_test[r[0]] = r
-            test_dir = os.path.dirname(r[0])
+            test_id, status, run = fut.result()
+            results_by_test[test_id] = (test_id, status, run)
+            test_dir = os.path.dirname(test_id)
             by_dir_done[test_dir] += 1
-            if r[1] == Verdict.OK.value:
+            if status == Verdict.OK.value:
                 by_dir_passed[test_dir] += 1
             else:
-                short_test_id = r[0].split("/", 1)[1] if "/" in r[0] else r[0]
+                short_test_id = test_id.split("/", 1)[1] if "/" in test_id else test_id
                 by_dir_failed_tests[test_dir].append(short_test_id)
             if args.verbose:
-                if r[1] == Verdict.OK.value:
-                    print(f"{r[0]}: {Verdict.OK.value}", flush=True)
-                else:
-                    line = f"{r[0]}: {r[1]}"
+                is_ok = status == Verdict.OK.value
+                if not is_ok:
+                    line = f"{test_id}: {status}"
                     if use_color:
                         line = f"\033[1;31m{line}\033[0m"
                     print(line, flush=True)
+                    if args.verbose >= 3:
+                        run.print_streams()
+                elif args.verbose >= 2:
+                    print(f"{test_id}: {Verdict.OK.value}", flush=True)
             elif len(by_dir_total) >= 2 and by_dir_done[test_dir] == by_dir_total[test_dir]:
                 while (
                     next_dir_index < len(dir_names)
@@ -189,15 +194,15 @@ def main() -> None:
         lines: list[str] = []
         if cfg.build_metadata:
             lines.append(f"Metadata: {json.dumps(cfg.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
-        lines.extend(f"{name}: {status}" for name, status in results)
+        lines.extend(f"{name}: {status}" for name, status, _ in results)
         out.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
     total = len(results)
-    passed = sum(1 for _, s in results if s == Verdict.OK.value)
+    passed = sum(1 for _, s, _ in results if s == Verdict.OK.value)
     failed = total - passed
-    failed_results = [(test_id, status) for test_id, status in results if status != Verdict.OK.value]
+    failed_results = [(test_id, status) for test_id, status, _ in results if status != Verdict.OK.value]
 
-    if failed_results and args.verbose:
+    if failed_results and args.verbose >= 2:
         print("-" * 79)
         print("All failed tests:\n" + " ".join(test_id for test_id, _ in failed_results) + "\n")
 

@@ -20,7 +20,7 @@ var result = (function() {
       break;
     } catch (err) {
       if (!(err instanceof SyntaxError)) {
-        console.log("es5/strict.reserved-words.js: 'var " + words[i] + "' throws but not-SyntaxError");
+        console.log("es5/strict.reserved-words.js: 'var " + words[i] + "' does not throw SyntaxError");
         break;
       } else {
         ok++;

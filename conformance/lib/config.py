@@ -57,16 +57,17 @@ class EngineConfig:
 
     # --- Output classification ---
     # In order of priority
-    # Post-run output substitutions: {regex: replacement}. Use "" to drop matching text.
-    stdout_replace_re: dict[str, str] = dataclasses.field(default_factory=dict)
-    stderr_replace_re: dict[str, str] = dataclasses.field(default_factory=dict)
+    # Post-run output substitutions applied by Arbiter: {regex: replacement}.
+    # Use "" to drop matching text. Patterns are compiled with re.MULTILINE:
+    # ^ and $ match line boundaries; . does not match \n; explicit \n works.
+    # Accepts either {regex: repl, ...} or [{regex: repl}, {regex: repl}, ...].
+    stdout_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
+    stderr_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
     # Regex for crash strings from language runtime (Java, Go etc)
     crash_re: list[str] = dataclasses.field(default_factory=list)
-    # High-priority structured exception patterns with named groups "type" and "message".
-    exceptions_re: list[str] = dataclasses.field(default_factory=list)
-    # Warning lines pattern (to filter false positives for errors_re)
+    # Warning lines to skip (false positives for errors_re)
     warnings_re: list[str] = dataclasses.field(default_factory=list)
-    # Low-priority generic error patterns
+    # Structured patterns for errors/exceptions with named groups "type" and "message"
     errors_re: list[str] = dataclasses.field(default_factory=list)
 
     # --- Bench mode ---
@@ -178,6 +179,7 @@ class EngineConfig:
         if cmd_flags:
             cfg["flags"] = cmd_flags
         return EngineConfig(**cfg)
+
 
 
 def _resolve_flags_list(items: list, binary_path: str) -> list[str]:

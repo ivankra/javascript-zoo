@@ -541,13 +541,13 @@ class Executor:
                 self.arbiter.classify(run, expect_async=is_async)
                 self._check_negative(case.fm, run)
             else:
-                expect_ok_pattern = (
+                ok_pattern = (
                     rf"{re.escape(case.case_id)}: FINISHED" if expect_finished else None
                 )
                 self.arbiter.classify(
                     run,
                     expect_async=is_async,
-                    expect_ok_pattern=expect_ok_pattern,
+                    ok_pattern=ok_pattern,
                 )
 
             run.features = frozenset(case.fm.features)
@@ -557,8 +557,8 @@ class Executor:
 
     def _check_negative(self, fm: Frontmatter, run: RunResult) -> None:
         """Post-classify check for negative tests. Mutates run in place."""
-        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASH):
-            return  # leave classify()'s FAILED verdict intact
+        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED):
+            return  # leave classify()'s verdict intact
 
         if fm.negative_phase in ("parse", "resolution"):
             if run.error_type is None:
@@ -850,6 +850,8 @@ def main() -> None:
                     if use_color:
                         msg = f"\033[1;31m{msg}\033[0m"
                     print(msg, flush=True)
+                    if args.verbose >= 3:
+                        run.print_streams()
                 elif args.verbose >= 2:
                     print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
         if not file_results:

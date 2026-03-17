@@ -65,6 +65,7 @@ def get_kangax_weights():
 
     for i in range(2):
         for key, filename in kangax_map.items():
+            filename = 'compat-table/' + filename
             m = re.match(r'^(.*) \((tiny|small|medium|large)\) > .*', key)
             if not m:
                 kangax_weights[filename] = 1
@@ -109,6 +110,9 @@ def parse_conformance_data():
                 'result': m[4],
             }
             tests.append(test)
+
+            if 'compat-table' in m[1]:
+                assert m[1] in kangax_weights, m[1]
 
             dir_total[test['dir']] = dir_total.get(test['dir'], 0) + test['weight']
             if test['result'] == 'OK':

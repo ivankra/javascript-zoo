@@ -60,6 +60,7 @@ class ResolveFlagsListTest(unittest.TestCase):
         self.assertEqual(cfg.flags, ["--a", "--b"])
 
 
+
 class EngineConfigCommandTest(unittest.TestCase):
     def _cfg(self, **kw: Any) -> EngineConfig:
         kw.setdefault("binary_path", "/usr/bin/eng")
@@ -185,8 +186,8 @@ class EngineConfigLoadTest(unittest.TestCase):
 
     def test_load_detected_config_supplies_patterns(self) -> None:
         cfg = EngineConfig.load(str(self._binary), config_name="boa")
-        self.assertGreater(len(cfg.exceptions_re), 0)
-        cre = re.compile(cfg.exceptions_re[1])
+        self.assertGreater(len(cfg.errors_re), 0)
+        cre = re.compile(cfg.errors_re[1])
         self.assertIn("type", cre.groupindex)
         self.assertIn("message", cre.groupindex)
         m = cre.search("Uncaught: TypeError: bad")
@@ -198,36 +199,6 @@ class EngineConfigLoadTest(unittest.TestCase):
     def test_missing_binary_raises(self) -> None:
         with self.assertRaises(SystemExit):
             EngineConfig.load("/nonexistent/binary")
-
-
-class ConfigRunnerSmokeTest(unittest.TestCase):
-    def _make_binary(self, td: str, name: str = "eng") -> Path:
-        p = Path(td) / name
-        p.write_text("#!/bin/sh\necho hi\n")
-        p.chmod(0o755)
-        return p
-
-    def test_run_command_propagates_build_metadata(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = self._make_binary(td)
-            (Path(td) / "eng.json").write_text(json.dumps({"engine": "eng", "version": "1.0"}))
-            cfg = EngineConfig.load(str(binary))
-            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
-            self.assertEqual(run.build_metadata.get("version"), "1.0")
-
-    def test_runner_strips_ansi_from_stdout_and_stderr(self) -> None:
-        with tempfile.TemporaryDirectory() as td:
-            binary = Path(td) / "eng"
-            binary.write_text(
-                "#!/bin/sh\n"
-                "printf '\\033[1;31mError\\033[0m: bad\\n'\n"
-                "printf '\\033[32mOK\\033[0m\\n' >&2\n"
-            )
-            binary.chmod(0o755)
-            cfg = EngineConfig.load(str(binary))
-            run = Runner(cfg).run_command(cfg.argv("/dev/null"))
-        self.assertEqual(run.stdout, "Error: bad\n")
-        self.assertEqual(run.stderr, "OK\n")
 
 
 if __name__ == "__main__":
