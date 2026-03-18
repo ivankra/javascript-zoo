@@ -25,7 +25,7 @@ JavaScript engine for .NET; compiles to .NET IL.
 <a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: bound constructor failed
 <a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
 <a href="../../conformance/es5/strict.no-function-caller-or-arguments.js">strict.no-function-caller-or-arguments.js</a>: failed
-<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: failed: string 'this' was coerced in accessor
+<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: string 'this' was coerced in accessor
 </pre></li>
 </ul></details>
 

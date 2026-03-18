@@ -1,4 +1,4 @@
-Metadata: {"arch":"amd64","binary_sha256":"33dd741f6779456fc48bbc4266833684ecf1db602f4442211d9c4ef86a9b9831","binary_size":1428512,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"quickjit","repository":"https://github.com/bnoordhuis/quickjit.git","revision":"d5a3e722aecb8412330282739b409bec1298eabe","revision_date":"2023-10-25"}
+Metadata: {"arch":"amd64","binary_sha256":"8180de75de1af4192146b211743f1a86048880ba231ee77a20babec733c0a62b","binary_size":1428512,"cc":"gcc 16.0.1 20260217 (experimental) [trunk r16-7536-g6e52c1dbfb7] (Debian 16-20260217-1)","console_log":"console.log","engine":"quickjit","repository":"https://github.com/bnoordhuis/quickjit.git","revision":"d5a3e722aecb8412330282739b409bec1298eabe","revision_date":"2023-10-25"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -123,7 +123,7 @@ es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: failed: a = b + c<LF> (d + e).print()
+es1/asi.js: crashed: SIGSEGV
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -575,26 +575,26 @@ compat-table/es6/Number.isFinite.js: OK
 compat-table/es6/Number.isInteger.js: OK
 compat-table/es6/Number.isNaN.js: OK
 compat-table/es6/Number.isSafeInteger.js: OK
-compat-table/es6/Number.parseFloat.js: failed
-compat-table/es6/Number.parseInt.js: failed
+compat-table/es6/Number.parseFloat.js: jit: bailing out, op=6c idx=16
+compat-table/es6/Number.parseInt.js: jit: bailing out, op=6c idx=16
 compat-table/es6/Object.assign.js: OK
 compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=139
+compat-table/es6/Promise.all.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: MissingOK
+compat-table/es6/Promise.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: MissingOK
-compat-table/es6/Promise.race.js: MissingOK
+compat-table/es6/Promise.race.iterable.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=139
+compat-table/es6/Promise.race.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
 compat-table/es6/Proxy.Array.isArray.js: OK
 compat-table/es6/Proxy.JSON.stringify.js: OK
 compat-table/es6/Proxy.constructor-requires-new.js: OK
 compat-table/es6/Proxy.handler.apply.invariants.js: OK
 compat-table/es6/Proxy.handler.apply.js: OK
-compat-table/es6/Proxy.handler.construct.invariants.js: failed
+compat-table/es6/Proxy.handler.construct.invariants.js: jit: bailing out, op=6c idx=14; jit: bailing out, op=6c idx=16
 compat-table/es6/Proxy.handler.construct.js: TypeError: not a function
 compat-table/es6/Proxy.handler.defineProperty.invariants.js: OK
 compat-table/es6/Proxy.handler.defineProperty.js: OK
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
+compat-table/es6/Reflect.construct.Promise-subclassing.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=a7 idx=71; jit: bailing out, op=6c idx=78
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -745,7 +745,7 @@ compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: OK
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: OK
 compat-table/es6/arrow.0-params.js: OK
 compat-table/es6/arrow.1-param.js: OK
-compat-table/es6/arrow.5-param.js: failed
+compat-table/es6/arrow.5-param.js: crashed: SIGSEGV
 compat-table/es6/arrow.bind.js: OK
 compat-table/es6/arrow.lexical-arguments.js: OK
 compat-table/es6/arrow.lexical-super.constructor.js: OK
@@ -991,13 +991,13 @@ compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.flags.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.test.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.toString.js: OK
-compat-table/es6/misc.Proxy.get.String.match.js: failed
+compat-table/es6/misc.Proxy.get.String.match.js: jit: bailing out, op=6c idx=16
 compat-table/es6/misc.Proxy.get.String.raw.js: OK
 compat-table/es6/misc.Proxy.get.String.replace.js: OK
-compat-table/es6/misc.Proxy.get.String.search.js: failed
+compat-table/es6/misc.Proxy.get.String.search.js: jit: bailing out, op=6c idx=16
 compat-table/es6/misc.Proxy.get.String.split.js: OK
 compat-table/es6/misc.Proxy.get.ToPrimitive.js: OK
-compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
+compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: jit: bailing out, op=6c idx=74; jit: bailing out, op=6c idx=16
 compat-table/es6/misc.Proxy.get.instanceof.js: OK
 compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: OK
 compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: OK
@@ -1016,11 +1016,11 @@ compat-table/es6/misc.Proxy.set.Object.assign.js: OK
 compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: OK
-compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: failed
-compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: failed
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed
+compat-table/es6/misc.bound-function-prototype.arrow.js: jit: bailing out, op=6c idx=16
+compat-table/es6/misc.bound-function-prototype.class.js: jit: bailing out, op=6c idx=16
+compat-table/es6/misc.bound-function-prototype.function.js: jit: bailing out, op=6c idx=16
+compat-table/es6/misc.bound-function-prototype.generator.js: jit: bailing out, op=87 idx=0; jit: bailing out, op=6c idx=16
+compat-table/es6/misc.bound-function-prototype.subclass.js: jit: bailing out, op=6c idx=16
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
@@ -1048,7 +1048,7 @@ compat-table/es6/rest-params.arguments.js: OK
 compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: OK
 compat-table/es6/rest-params.new-function.js: OK
-compat-table/es6/rest-params.no-setter.js: failed
+compat-table/es6/rest-params.no-setter.js: jit: bailing out, op=6c idx=16; jit: bailing out, op=54 idx=3
 compat-table/es6/spread.array-call.js: OK
 compat-table/es6/spread.array-literal.js: OK
 compat-table/es6/spread.astral-call.js: OK
@@ -1079,12 +1079,12 @@ compat-table/es6/subclassing.Function.call.js: OK
 compat-table/es6/subclassing.Function.new.js: OK
 compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
-compat-table/es6/subclassing.Function.prototype.bind.js: failed
+compat-table/es6/subclassing.Function.prototype.bind.js: jit: bailing out, op=34 idx=14; jit: bailing out, op=a7 idx=82; jit: bailing out, op=6c idx=16
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
-compat-table/es6/subclassing.Promise.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=34 idx=14; jit: bailing out, op=a7 idx=113; jit: bailing out, op=6c idx=78
+compat-table/es6/subclassing.Promise.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=34 idx=14; jit: bailing out, op=a7 idx=13; jit: bailing out, op=a7 idx=71; jit: bailing out, op=6c idx=78
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
-compat-table/es6/subclassing.Promise.race.js: MissingOK
+compat-table/es6/subclassing.Promise.race.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=34 idx=14; jit: bailing out, op=a7 idx=113; jit: bailing out, op=6c idx=78
 compat-table/es6/subclassing.RegExp.exec.js: OK
 compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGSEGV
-compat-table/es6/tail-calls.mutual.js: crash: SIGSEGV
+compat-table/es6/tail-calls.direct.js: crashed: SIGSEGV
+compat-table/es6/tail-calls.mutual.js: crashed: SIGSEGV
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1249,30 +1249,30 @@ compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
 compat-table/es2017/async.Symbol.toStringTag.js: OK
-compat-table/es2017/async.arrow-in-class.js: MissingOK
-compat-table/es2017/async.arrow.js: MissingOK
-compat-table/es2017/async.await-non-promise.js: MissingOK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
-compat-table/es2017/async.constructor.js: MissingOK
-compat-table/es2017/async.methods-class.js: MissingOK
-compat-table/es2017/async.methods-object.js: MissingOK
+compat-table/es2017/async.arrow-in-class.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=1; jit: bailing out, op=54 idx=23; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.arrow.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=18; jit: bailing out, op=a7 idx=15; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.await-non-promise.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=13; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.await-rejection.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=13; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.await.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=13; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.constructor.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=2e idx=1; jit: bailing out, op=a7 idx=23; jit: bailing out, op=6c idx=78; jit: bailing out, op=2e idx=5
+compat-table/es2017/async.methods-class.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=18; jit: bailing out, op=54 idx=20; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.methods-object.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=8b idx=18; jit: bailing out, op=54 idx=3; jit: bailing out, op=6c idx=78
 compat-table/es2017/async.must-await-value.js: OK
 compat-table/es2017/async.no-await-in-params.js: OK
 compat-table/es2017/async.no-line-break.js: OK
 compat-table/es2017/async.no-prototype.js: OK
 compat-table/es2017/async.prototype-chain.js: OK
-compat-table/es2017/async.return.js: MissingOK
-compat-table/es2017/async.throw.js: MissingOK
+compat-table/es2017/async.return.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=2e idx=5; jit: bailing out, op=a7 idx=10; jit: bailing out, op=6c idx=78
+compat-table/es2017/async.throw.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=a7 idx=10; jit: bailing out, op=6c idx=78
 compat-table/es2017/misc.arguments-caller-removed.js: OK
-compat-table/es2017/regex.flags.u.case-folding.js: failed
+compat-table/es2017/regex.flags.u.case-folding.js: jit: bailing out, op=6c idx=16
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: MissingOK
-compat-table/es2018/async-iterators.for-await-of.js: MissingOK
-compat-table/es2018/async-iterators.generators.js: MissingOK
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
+compat-table/es2018/Promise.prototype.finally.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
+compat-table/es2018/async-iterators.for-await-of.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=7e idx=3; jit: bailing out, op=6c idx=78
+compat-table/es2018/async-iterators.generators.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=87 idx=0; jit: bailing out, op=6c idx=78
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 compat-table/es2018/misc.template-literal-revision.js: OK
 compat-table/es2018/object-rest.js: OK
@@ -1286,10 +1286,10 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: SyntaxError: unknown unicode script
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: SyntaxError: unknown unicode script
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: jit: bailing out, op=6c idx=16
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Exception in regex.unicode-property-escapes.unicode-15.js: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Exception in regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Exception in regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: unknown unicode script
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1311,22 +1311,22 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: OK
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
-compat-table/es2019/misc.optional-catch-binding.await.js: MissingOK
+compat-table/es2019/misc.optional-catch-binding.await.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=0; jit: bailing out, op=6c idx=78
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: OK
-compat-table/es2020/BigInt64Array.js: SyntaxError: SyntaxError: invalid number literal
+compat-table/es2020/BigInt64Array.js: SyntaxError: Exception in BigInt64Array.js: SyntaxError: invalid number literal
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-compat-table/es2020/BigInt.constructor.js: SyntaxError: SyntaxError: invalid number literal
-compat-table/es2020/BigInt.js: SyntaxError: SyntaxError: invalid number literal
-compat-table/es2020/BigUint64Array.js: SyntaxError: SyntaxError: invalid number literal
-compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: SyntaxError: invalid number literal
-compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: SyntaxError: invalid number literal
-compat-table/es2020/Promise.allSettled.js: MissingOK
+compat-table/es2020/BigInt.constructor.js: SyntaxError: Exception in BigInt.constructor.js: SyntaxError: invalid number literal
+compat-table/es2020/BigInt.js: SyntaxError: Exception in BigInt.js: SyntaxError: invalid number literal
+compat-table/es2020/BigUint64Array.js: SyntaxError: Exception in BigUint64Array.js: SyntaxError: invalid number literal
+compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: Exception in DataView.prototype.getBigInt64.js: SyntaxError: invalid number literal
+compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Exception in DataView.prototype.getBigUint64.js: SyntaxError: invalid number literal
+compat-table/es2020/Promise.allSettled.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
 compat-table/es2020/String.prototype.matchAll.js: OK
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
 compat-table/es2020/globalThis.descriptor.js: TypeError: invalid 'in' operand
-compat-table/es2020/globalThis.js: failed
+compat-table/es2020/globalThis.js: jit: bailing out, op=6c idx=50
 compat-table/es2020/nullish-coalescing.js: OK
 compat-table/es2020/optional-chaining.bracket.js: OK
 compat-table/es2020/optional-chaining.function-call.js: OK
@@ -1334,8 +1334,8 @@ compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: OK
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: 'FinalizationRegistry' is not defined
-compat-table/es2021/Promise.any.AggregateError.js: MissingOK
-compat-table/es2021/Promise.any.fulfillment.js: MissingOK
+compat-table/es2021/Promise.any.AggregateError.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=a7 idx=6; jit: bailing out, op=6c idx=78
+compat-table/es2021/Promise.any.fulfillment.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=6c idx=78
 compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: ReferenceError: 'WeakRef' is not defined
 compat-table/es2021/logical-assignment.and.js: OK
@@ -1349,21 +1349,21 @@ compat-table/es2021/logical-assignment.or.setter-not-invoked.js: OK
 compat-table/es2021/logical-assignment.or.short-circuit.js: OK
 compat-table/es2021/numeric-separators.js: OK
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.AggregateError.js: failed
+compat-table/es2022/Error.cause.AggregateError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.Error.js: failed
+compat-table/es2022/Error.cause.Error.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.EvalError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.EvalError.js: failed
+compat-table/es2022/Error.cause.EvalError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.RangeError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.RangeError.js: failed
+compat-table/es2022/Error.cause.RangeError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.ReferenceError.js: failed
+compat-table/es2022/Error.cause.ReferenceError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.SyntaxError.js: failed
+compat-table/es2022/Error.cause.SyntaxError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.TypeError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.TypeError.js: failed
+compat-table/es2022/Error.cause.TypeError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Error.cause.URIError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.URIError.js: failed
+compat-table/es2022/Error.cause.URIError.js: jit: bailing out, op=6c idx=16
 compat-table/es2022/Object.hasOwn.ToObject-first.js: OK
 compat-table/es2022/Object.hasOwn.js: OK
 compat-table/es2022/at-method.Array.js: TypeError: not a function
@@ -1384,10 +1384,10 @@ compat-table/es2022/class-methods.private-accessor.js: OK
 compat-table/es2022/class-methods.private-instance.js: OK
 compat-table/es2022/class-methods.private-static-accessor.js: OK
 compat-table/es2022/class-methods.private-static.js: OK
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: SyntaxError: invalid property name
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: SyntaxError: unexpected token in expression: '#x'
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: Exception in class-static-init-blocks.js: SyntaxError: invalid property name
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: Exception in ergonomic-brand-checks.js: SyntaxError: unexpected token in expression: '#x'
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: invalid regular expression flags
-compat-table/es2022/regex.flags.d.shows-in-flags.js: failed
+compat-table/es2022/regex.flags.d.shows-in-flags.js: jit: bailing out, op=a8 idx=24; jit: bailing out, op=6c idx=36
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: not a function
 compat-table/es2023/Array.prototype.findLast.js: TypeError: not a function
 compat-table/es2023/Array.prototype.toReversed.js: TypeError: not a function
@@ -1405,12 +1405,12 @@ compat-table/es2024/Map.groupBy.js: TypeError: not a function
 compat-table/es2024/Object.groupBy.js: TypeError: not a function
 compat-table/es2024/Promise.withResolvers.js: TypeError: not a function
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.shows-in-flags.js: failed
-compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Exception in regex.flags.v.properties-of-strings.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Exception in regex.flags.v.set-notations.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.shows-in-flags.js: jit: bailing out, op=6c idx=16
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Exception in regex.flags.v.unicode-15.1.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Exception in regex.flags.v.unicode-16.0.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Exception in regex.flags.v.unicode-17.0.js: SyntaxError: invalid regular expression flags
 compat-table/es2025/Iterator.extends.js: ReferenceError: 'Iterator' is not defined
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: 'Iterator' is not defined
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: 'Iterator' is not defined
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.some.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: jit: bailing out, op=98 idx=46; jit: bailing out, op=a8 idx=10; jit: bailing out, op=6c idx=78
 compat-table/es2025/RegExp.escape.js: TypeError: not a function
 compat-table/es2025/Set.prototype.difference.js: TypeError: not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: not a function
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: not a function
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: not a function
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: SyntaxError: duplicate group name
-compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: SyntaxError: invalid group
-compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: SyntaxError: invalid group
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: SyntaxError: invalid group
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: Exception in regex.duplicate-named-groups.js: SyntaxError: duplicate group name
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: Exception in regex.pattern-modifiers.i.js: SyntaxError: invalid group
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: Exception in regex.pattern-modifiers.m.js: SyntaxError: invalid group
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Exception in regex.pattern-modifiers.s.js: SyntaxError: invalid group
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1449,21 +1449,21 @@ compat-table/intl/Intl.Collator.new-instances.js: ReferenceError: 'Intl' is not 
 compat-table/intl/Intl.Collator.prototype.compare.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.Collator.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-compat-table/intl/Intl.Collator.valid-tags.js: failed
+compat-table/intl/Intl.Collator.valid-tags.js: jit: bailing out, op=6c idx=0; jit: bailing out, op=6c idx=16
 compat-table/intl/Intl.Collator.without-new.js: ReferenceError: 'Intl' is not defined
-compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: failed
+compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: jit: bailing out, op=6c idx=0; jit: bailing out, op=6c idx=16
 compat-table/intl/Intl.DateTimeFormat.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.DateTimeFormat.new-instances.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: ReferenceError: 'Intl' is not defined
-compat-table/intl/Intl.DateTimeFormat.valid-tags.js: failed
+compat-table/intl/Intl.DateTimeFormat.valid-tags.js: jit: bailing out, op=6c idx=0; jit: bailing out, op=6c idx=16
 compat-table/intl/Intl.DateTimeFormat.without-new.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.NumberFormat.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.NumberFormat.new-instances.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: ReferenceError: 'Intl' is not defined
-compat-table/intl/Intl.NumberFormat.valid-tags.js: failed
+compat-table/intl/Intl.NumberFormat.valid-tags.js: jit: bailing out, op=6c idx=0; jit: bailing out, op=6c idx=16
 compat-table/intl/Intl.NumberFormat.without-new.js: ReferenceError: 'Intl' is not defined
-compat-table/intl/Intl.js: failed
+compat-table/intl/Intl.js: jit: bailing out, op=6c idx=16
 compat-table/intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
@@ -1489,10 +1489,10 @@ compat-table/next/AsyncIterator.prototype.take.js: TypeError: not a function
 compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: not a function
 compat-table/next/DisposableStack.js: ReferenceError: 'DisposableStack' is not defined
 compat-table/next/Map.prototype.upsert.js: TypeError: not a function
-compat-table/next/RegExp.1-9.js: failed
-compat-table/next/RegExp.lastMatch.js: failed
-compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/RegExp.1-9.js: jit: bailing out, op=a8 idx=20; jit: bailing out, op=6c idx=16
+compat-table/next/RegExp.lastMatch.js: jit: bailing out, op=6c idx=16
+compat-table/next/ShadowRealm.js: jit: bailing out, op=a8 idx=11; jit: bailing out, op=6c idx=16
+compat-table/next/SuppressedError.js: SyntaxError: Exception in SuppressedError.js: SyntaxError: expecting ';'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.toBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: not a function
-compat-table/next/await-using.for-of.js: SyntaxError: SyntaxError: unexpected token in expression: 'await'
-compat-table/next/await-using.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: invalid property name
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: expecting '('
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/using.for-of.js: SyntaxError: SyntaxError: expected 'of' or 'in' in for control expression
-compat-table/next/using.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/await-using.for-of.js: SyntaxError: Exception in await-using.for-of.js: SyntaxError: unexpected token in expression: 'await'
+compat-table/next/await-using.js: SyntaxError: Exception in await-using.js: SyntaxError: expecting ';'
+compat-table/next/class-decorators.js: SyntaxError: Exception in class-decorators.js: SyntaxError: invalid property name
+compat-table/next/function.sent.js: SyntaxError: Exception in function.sent.js: SyntaxError: expecting '('
+compat-table/next/throw-expr.arrow.js: SyntaxError: Exception in throw-expr.arrow.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.conditional.js: SyntaxError: Exception in throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.logical.js: SyntaxError: Exception in throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.param-init.js: SyntaxError: Exception in throw-expr.param-init.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/using.for-of.js: SyntaxError: Exception in using.for-of.js: SyntaxError: expected 'of' or 'in' in for control expression
+compat-table/next/using.js: SyntaxError: Exception in using.js: SyntaxError: expecting ';'

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"78ad7eb10e266d4db491dac0387a6b5efa07151d80cdbc44be327f61754d2138","binary_size":1772928,"console_log":"console.log","engine":"rust-js","repository":"https://github.com/rust-js/rjs.git","revision":"61391286b0f0d6ce23720ee13501f62751c26b29","revision_date":"2015-07-19","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
+Metadata: {"arch":"arm64","binary_sha256":"78ad7eb10e266d4db491dac0387a6b5efa07151d80cdbc44be327f61754d2138","binary_size":1772928,"console_log":"console.log","engine":"rust-js","repository":"https://github.com/rust-js/rjs.git","revision":"61391286b0f0d6ce23720ee13501f62751c26b29","revision_date":"2015-07-19","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -208,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: failed: empty array toLocaleString failed
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed
 es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -226,9 +226,9 @@ es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
-es3/Number.prototype.toExponential.js: failed: toExponential() undefined arg failed
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: toExponential() undefined arg failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (1.25).toExponential(1) != '1.26e+0' (got: '1.3e0'); (1.255).toExponential(2) != '1.25e+0', got '1.25e0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
@@ -252,7 +252,7 @@ es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
-es3/String.prototype.replace.capture.js: failed: $nn 10 captures failed
+es3/String.prototype.replace.capture.js: $nn 10 captures failed; $nn reverse order failed
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK
 es3/String.prototype.replace.regex.js: TypeError: Invalid operation on null
@@ -277,11 +277,11 @@ es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: failed: no exception for unclosed string
+es3/global.SyntaxError.thrown.js: no exception for unclosed string
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: no exception for encodeURI lone low surrogate
+es3/global.URIError.thrown.js: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -308,7 +308,7 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref failed
+es3/regex.backref.js: backref failed; multiple backrefs failed; backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -361,25 +361,25 @@ es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: TypeError: Target must be callable
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: stringify object failed
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: stringify object failed
+es5/JSON.stringify.replacer.js: crashed: thread '<main>' panicked at 'assertion failed: `(left == right)` (left: `Undefined`, right: `Number`)', src/rt/value.rs:291
+es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
-es5/Object.getOwnPropertyNames.js: failed: basic property names failed
+es5/Object.getOwnPropertyNames.js: basic property names failed
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
-es5/Object.keys.js: failed: basic keys failed
+es5/Object.keys.js: basic keys failed
 es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: OK
@@ -405,7 +405,7 @@ es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: failed
 es5/strict.no-assignment-to-unresolvable.js: OK
-es5/strict.no-delete-bindings.js: failed: thread '<main>' panicked at 'index out of bounds: the len is 5 but the index is 6', /buildslave/rust-buildbot/slave/nightly-dist-rustc-cross-host-linux/build/src/libcollections/vec.rs:1167
+es5/strict.no-delete-bindings.js: crashed: thread '<main>' panicked at 'index out of bounds: the len is 5 but the index is 6', /buildslave/rust-buildbot/slave/nightly-dist-rustc-cross-host-linux/build/src/libcollections/vec.rs:1167
 es5/strict.no-delete-non-configurable.js: OK
 es5/strict.no-duplicate-parameters.js: OK
 es5/strict.no-eval-or-arguments-assignment.js: OK
@@ -512,7 +512,7 @@ compat-table/es6/Array.prototype.fill.js: failed
 compat-table/es6/Array.prototype.findIndex.js: failed
 compat-table/es6/Array.prototype.find.js: failed
 compat-table/es6/Array.prototype.keys.js: failed
-compat-table/es6/Array.prototype.splice.js: failed: thread '<main>' panicked at 'assertion failed: index < (u32::MAX as usize)', src/syntax/mod.rs:57
+compat-table/es6/Array.prototype.splice.js: crashed: thread '<main>' panicked at 'assertion failed: index < (u32::MAX as usize)', src/syntax/mod.rs:57
 compat-table/es6/Array.prototype.values.js: failed
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError
 compat-table/es6/Function.name.accessor.js: failed
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: SyntaxError: 11:10: Cannot parse expr
 compat-table/es6/super.statement.js: SyntaxError: 12:10: Cannot parse expression, got Class
 compat-table/es6/super.static-binding.js: SyntaxError: 11:10: Cannot parse expression, got Class
 compat-table/es6/super.this-binding.js: SyntaxError: 11:10: Cannot parse expression, got Class
-compat-table/es6/tail-calls.direct.js: failed: thread '<main>' panicked at 'stack overflow', src/rt/stack.rs:54
-compat-table/es6/tail-calls.mutual.js: failed: thread '<main>' panicked at 'stack overflow', src/rt/stack.rs:54
+compat-table/es6/tail-calls.direct.js: crashed: thread '<main>' panicked at 'stack overflow', src/rt/stack.rs:54
+compat-table/es6/tail-calls.mutual.js: crashed: thread '<main>' panicked at 'stack overflow', src/rt/stack.rs:54
 compat-table/es6/template.basic.js: SyntaxError: 11:10: Cannot parse '`'
 compat-table/es6/template.caching.js: SyntaxError: 17:22: Cannot parse '`'
 compat-table/es6/template.escape-sequences.js: SyntaxError: 13:24: Cannot parse '`'

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"71c3d35816d0de2839fc9088ff4ccf63dc4d13c1cfcc94a3664d1c4185290c4f","binary_size":4204736,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","engine":"hermes","repository":"https://github.com/facebook/hermes.git","revision":"5642a9031d2f90a65904bd63494734e4ec4a2f77","revision_date":"2026-03-02","version":""}
+Metadata: {"arch":"arm64","binary_sha256":"c77a72a4aa07063e7a7f6d7355b80616491a9935052df95cb4358da7f67022ea","binary_size":4204736,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","engine":"hermes","repository":"https://github.com/facebook/hermes.git","revision":"72c91c3b365f18d3917b75c5f15e978ff95cbb52","revision_date":"2026-03-06","version":""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: invalid statement encountered
+es1/with.js: SyntaxError: invalid statement encountered
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -476,22 +476,22 @@ compat-table/es5/misc.zero-width-identifiers.js: OK
 compat-table/es5/strict.arguments-callee-error.js: OK
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
-compat-table/es5/strict.assignment-eval-arguments-error.js: OK
+compat-table/es5/strict.assignment-eval-arguments-error.js: SyntaxError: try { eval('eval = 1');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
 compat-table/es5/strict.assignment-non-writable-error.js: failed
-compat-table/es5/strict.assignment-unresolvable-error.js: OK
-compat-table/es5/strict.delete-bindings-error.js: OK
+compat-table/es5/strict.assignment-unresolvable-error.js: ReferenceError: try { eval('__i_dont_exist = 1'); } catch (err) { return err instanceof ReferenceError; }
+compat-table/es5/strict.delete-bindings-error.js: SyntaxError: try { eval('var x; delete x;'); } catch (err) { return err instanceof SyntaxError; }
 compat-table/es5/strict.delete-non-configurable-error.js: OK
-compat-table/es5/strict.eval-arguments-bindings-error.js: OK
-compat-table/es5/strict.eval-no-bindings.js: OK
+compat-table/es5/strict.eval-arguments-bindings-error.js: SyntaxError: try { eval('var eval');                return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+compat-table/es5/strict.eval-no-bindings.js: ReferenceError: try { eval('var __some_unique_variable;'); __some_unique_variable; } catch (err) { return err instanceof ReferenceError; }
 compat-table/es5/strict.function-caller-arguments-error.js: OK
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
-compat-table/es5/strict.legacy-octal-error.js: OK
-compat-table/es5/strict.repeated-params-error.js: OK
-compat-table/es5/strict.reserved-words.js: OK
+compat-table/es5/strict.legacy-octal-error.js: SyntaxError: try { eval('010');     return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+compat-table/es5/strict.repeated-params-error.js: SyntaxError: try { eval('function f(x, x) { }'); } catch (err) { return err instanceof SyntaxError; }
+compat-table/es5/strict.reserved-words.js: SyntaxError: try { eval('var ' + words[i]); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
 compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: OK
-compat-table/es5/strict.with-error.js: OK
+compat-table/es5/strict.with-error.js: SyntaxError: try { eval('with({}){}'); } catch (err) { return err instanceof SyntaxError; }
 compat-table/es6/Array.Symbol.species.js: TypeError: right operand of 'in' is not an object
 compat-table/es6/Array.from.array-like.js: OK
 compat-table/es6/Array.from.generator.js: OK
@@ -517,12 +517,12 @@ compat-table/es6/Array.prototype.values.js: OK
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: OK
 compat-table/es6/Function.name.accessor.js: OK
 compat-table/es6/Function.name.bound.js: OK
-compat-table/es6/Function.name.class-expression.js: failed: Invalid expression encountered
-compat-table/es6/Function.name.class-object-method.js: failed: Invalid expression encountered
-compat-table/es6/Function.name.class-prototype.js: failed: invalid statement encountered
-compat-table/es6/Function.name.class-statement.js: failed: invalid statement encountered
-compat-table/es6/Function.name.class-static.js: failed: invalid statement encountered
-compat-table/es6/Function.name.class-variable.js: failed: Invalid expression encountered
+compat-table/es6/Function.name.class-expression.js: SyntaxError: Invalid expression encountered
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: Invalid expression encountered
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: invalid statement encountered
+compat-table/es6/Function.name.class-statement.js: SyntaxError: invalid statement encountered
+compat-table/es6/Function.name.class-static.js: SyntaxError: invalid statement encountered
+compat-table/es6/Function.name.class-variable.js: SyntaxError: Invalid expression encountered
 compat-table/es6/Function.name.configurable.js: OK
 compat-table/es6/Function.name.expression.js: OK
 compat-table/es6/Function.name.new-Function.js: OK
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
+compat-table/es6/Reflect.construct.Promise-subclassing.js: failed
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -722,8 +722,8 @@ compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefine
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: failed
 compat-table/es6/annex-b.function.if-statement.js: OK
-compat-table/es6/annex-b.function.labeled.js: failed: Function declaration not allowed as body of labeled statement
-compat-table/es6/annex-b.html-comments.js: failed: invalid expression
+compat-table/es6/annex-b.function.labeled.js: SyntaxError: Function declaration not allowed as body of labeled statement
+compat-table/es6/annex-b.html-comments.js: SyntaxError: invalid expression
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
@@ -748,38 +748,38 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: OK
 compat-table/es6/arrow.lexical-arguments.js: OK
-compat-table/es6/arrow.lexical-super.constructor.js: failed: invalid statement encountered
-compat-table/es6/arrow.lexical-super.methods.js: failed: invalid statement encountered
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: invalid statement encountered
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: invalid statement encountered
 compat-table/es6/arrow.lexical-this.js: OK
 compat-table/es6/arrow.new-target.js: OK
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: OK
 compat-table/es6/arrow.precedence.js: OK
 compat-table/es6/arrow.this-call-apply.js: OK
-compat-table/es6/class.accessor-properties.js: failed: invalid statement encountered
-compat-table/es6/class.anonymous.js: failed: Invalid expression encountered
-compat-table/es6/class.block-scoped.js: failed: invalid statement encountered
-compat-table/es6/class.computed-accessor-properties.js: failed: invalid statement encountered
-compat-table/es6/class.computed-names-tdz.js: failed: Invalid expression encountered
-compat-table/es6/class.computed-prototype-methods.js: failed: invalid statement encountered
-compat-table/es6/class.computed-static-accessor-properties.js: failed: invalid statement encountered
-compat-table/es6/class.computed-static-methods.js: failed: invalid statement encountered
-compat-table/es6/class.constructor-requires-new.js: failed: invalid statement encountered
-compat-table/es6/class.constructor.js: failed: invalid statement encountered
-compat-table/es6/class.expression.js: failed: Invalid expression encountered
-compat-table/es6/class.extends-expressions.js: failed: invalid statement encountered
-compat-table/es6/class.extends-null.js: failed: invalid statement encountered
-compat-table/es6/class.extends.js: failed: invalid statement encountered
-compat-table/es6/class.implicit-strict.js: failed: invalid statement encountered
-compat-table/es6/class.lexical-name.js: failed: invalid statement encountered
-compat-table/es6/class.methods-not-enumerable.js: failed: invalid statement encountered
-compat-table/es6/class.new-target.js: failed: invalid statement encountered
-compat-table/es6/class.optional-semicolons.js: failed: invalid statement encountered
-compat-table/es6/class.prototype-methods.js: failed: invalid statement encountered
-compat-table/es6/class.statement.js: failed: invalid statement encountered
-compat-table/es6/class.static-accessor-properties.js: failed: invalid statement encountered
-compat-table/es6/class.static-methods.js: failed: invalid statement encountered
-compat-table/es6/class.string-keyed-methods.js: failed: invalid statement encountered
+compat-table/es6/class.accessor-properties.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.anonymous.js: SyntaxError: Invalid expression encountered
+compat-table/es6/class.block-scoped.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: Invalid expression encountered
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.computed-static-methods.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.constructor.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.expression.js: SyntaxError: Invalid expression encountered
+compat-table/es6/class.extends-expressions.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.extends-null.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.extends.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.implicit-strict.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.lexical-name.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.new-target.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.optional-semicolons.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.prototype-methods.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.statement.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.static-methods.js: SyntaxError: invalid statement encountered
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: invalid statement encountered
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: failed
 compat-table/es6/const.for-in.js: failed
@@ -804,7 +804,7 @@ compat-table/es6/default-params.explicit-undefined.js: OK
 compat-table/es6/default-params.new-function.js: OK
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: OK
-compat-table/es6/default-params.tdz.js: failed
+compat-table/es6/default-params.tdz.js: default-params.tdz.js:12:7: warning: Direct call to eval(), but lexical scope is not supported.; eval("(function(a=a){}())");; ^~~~~~~~~~~~~~~~~~~~~~~~~~~; default-params.tdz.js:16:7: warning: Direct ...
 compat-table/es6/destructuring-assign.array.js: OK
 compat-table/es6/destructuring-assign.astral-string.js: OK
 compat-table/es6/destructuring-assign.chained-iterable.js: OK
@@ -831,9 +831,9 @@ compat-table/es6/destructuring-assign.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-assign.trailing-comma-object.js: OK
 compat-table/es6/destructuring-decl.array.js: OK
 compat-table/es6/destructuring-decl.astral-string.js: OK
-compat-table/es6/destructuring-decl.catch.js: failed: Destructuring in catch parameters is currently unsupported
+compat-table/es6/destructuring-decl.catch.js: SyntaxError: Destructuring in catch parameters is currently unsupported
 compat-table/es6/destructuring-decl.computed-properties.js: OK
-compat-table/es6/destructuring-decl.defaults-tdz.js: failed
+compat-table/es6/destructuring-decl.defaults-tdz.js: destructuring-decl.defaults-tdz.js:12:5: warning: Direct call to eval(), but lexical scope is not supported.; eval("let {c = c} = {};");; ^~~~~~~~~~~~~~~~~~~~~~~~~; destructuring-decl.defaults-tdz.js:...
 compat-table/es6/destructuring-decl.defaults.js: OK
 compat-table/es6/destructuring-decl.for-in.js: OK
 compat-table/es6/destructuring-decl.for-of.js: OK
@@ -895,11 +895,11 @@ compat-table/es6/generators.prototype-chain.js: OK
 compat-table/es6/generators.prototype.js: OK
 compat-table/es6/generators.return.js: OK
 compat-table/es6/generators.sending.js: OK
-compat-table/es6/generators.shorthand.class.js: failed: invalid statement encountered
-compat-table/es6/generators.shorthand.computed.class.js: failed: invalid statement encountered
+compat-table/es6/generators.shorthand.class.js: SyntaxError: invalid statement encountered
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: invalid statement encountered
 compat-table/es6/generators.shorthand.computed.js: OK
 compat-table/es6/generators.shorthand.js: OK
-compat-table/es6/generators.shorthand.no-constructor.js: failed: invalid statement encountered
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: invalid statement encountered
 compat-table/es6/generators.shorthand.string-keyed.js: OK
 compat-table/es6/generators.this.js: OK
 compat-table/es6/generators.throw.js: OK
@@ -971,13 +971,13 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: OK
 compat-table/es6/misc.Proxy.get.Array.shift.js: OK
 compat-table/es6/misc.Proxy.get.Array.splice.js: failed
 compat-table/es6/misc.Proxy.get.Array.toString.js: OK
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed: invalid statement encountered
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: invalid statement encountered
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: OK
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: OK
 compat-table/es6/misc.Proxy.get.Error.toString.js: OK
 compat-table/es6/misc.Proxy.get.Function.bind.js: OK
-compat-table/es6/misc.Proxy.get.HasBinding.js: failed: invalid statement encountered
+compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: invalid statement encountered
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: OK
 compat-table/es6/misc.Proxy.get.Object.assign.js: OK
@@ -1017,16 +1017,16 @@ compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: failed
 compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: failed: invalid statement encountered
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: invalid statement encountered
 compat-table/es6/misc.bound-function-prototype.function.js: failed
 compat-table/es6/misc.bound-function-prototype.generator.js: failed
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed: invalid statement encountered
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: invalid statement encountered
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: OK
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: OK
-compat-table/es6/misc.identifier-syntax.var-1.js: failed
+compat-table/es6/misc.identifier-syntax.var-1.js: misc.identifier-syntax.var-1.js:10:5: warning: Direct call to eval(), but lexical scope is not supported.; eval('var ⸯ');
 compat-table/es6/misc.identifier-syntax.var-2.js: OK
 compat-table/es6/misc.property-order.JSON.parse.js: OK
 compat-table/es6/misc.property-order.JSON.stringify.js: OK
@@ -1064,45 +1064,45 @@ compat-table/es6/spread.sparse-call.js: OK
 compat-table/es6/spread.sparse-literal.js: OK
 compat-table/es6/spread.string-call.js: OK
 compat-table/es6/spread.string-literal.js: OK
-compat-table/es6/subclassing.Array.concat.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.filter.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.from.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.isArray.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.length-access.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.length-set.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.map.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.of.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.prototype-chain.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.slice.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Array.splice.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.call.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.new.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.prototype-chain.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.prototype.apply.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.prototype.bind.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Function.prototype.call.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Promise.all.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Promise.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: invalid statement encountered
-compat-table/es6/subclassing.Promise.race.js: failed: invalid statement encountered
-compat-table/es6/subclassing.RegExp.exec.js: failed: invalid statement encountered
-compat-table/es6/subclassing.RegExp.js: failed: invalid statement encountered
-compat-table/es6/subclassing.RegExp.prototype-chain.js: failed: invalid statement encountered
-compat-table/es6/subclassing.RegExp.test.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.Boolean.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.Error.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.Map.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.Number.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.Set.js: failed: invalid statement encountered
-compat-table/es6/subclassing.misc.String.js: failed: invalid statement encountered
-compat-table/es6/super.correct-constructor.js: failed: invalid statement encountered
-compat-table/es6/super.expression.js: failed: invalid statement encountered
-compat-table/es6/super.method-calls.js: failed: invalid statement encountered
-compat-table/es6/super.new-target-binding.js: failed: invalid statement encountered
-compat-table/es6/super.property-access.js: failed: invalid statement encountered
-compat-table/es6/super.statement.js: failed: invalid statement encountered
-compat-table/es6/super.static-binding.js: failed: invalid statement encountered
-compat-table/es6/super.this-binding.js: failed: invalid statement encountered
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.from.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.map.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.of.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.call.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.new.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Promise.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.RegExp.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: invalid statement encountered
+compat-table/es6/subclassing.misc.String.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.correct-constructor.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.expression.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.method-calls.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.new-target-binding.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.property-access.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.statement.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.static-binding.js: SyntaxError: invalid statement encountered
+compat-table/es6/super.this-binding.js: SyntaxError: invalid statement encountered
 compat-table/es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/template.basic.js: OK
@@ -1189,7 +1189,7 @@ compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
 compat-table/es6/well-known.toStringTag.new-builtins.js: failed
-compat-table/es6/well-known.unscopables.js: failed: invalid statement encountered
+compat-table/es6/well-known.unscopables.js: SyntaxError: invalid statement encountered
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
@@ -1249,13 +1249,13 @@ compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
 compat-table/es2017/async.Symbol.toStringTag.js: OK
-compat-table/es2017/async.arrow-in-class.js: failed: invalid statement encountered
-compat-table/es2017/async.arrow.js: failed: async functions are unsupported
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: invalid statement encountered
+compat-table/es2017/async.arrow.js: SyntaxError: async functions are unsupported
 compat-table/es2017/async.await-non-promise.js: OK
 compat-table/es2017/async.await-rejection.js: OK
 compat-table/es2017/async.await.js: OK
 compat-table/es2017/async.constructor.js: OK
-compat-table/es2017/async.methods-class.js: failed: invalid statement encountered
+compat-table/es2017/async.methods-class.js: SyntaxError: invalid statement encountered
 compat-table/es2017/async.methods-object.js: OK
 compat-table/es2017/async.must-await-value.js: OK
 compat-table/es2017/async.no-await-in-params.js: failed
@@ -1271,8 +1271,8 @@ compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
 compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
-compat-table/es2018/async-iterators.for-await-of.js: failed: for await..of loops are currently unsupported
-compat-table/es2018/async-iterators.generators.js: failed: async generators are unsupported
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: for await..of loops are currently unsupported
+compat-table/es2018/async-iterators.generators.js: SyntaxError: async generators are unsupported
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 compat-table/es2018/misc.template-literal-revision.js: OK
 compat-table/es2018/object-rest.js: OK
@@ -1288,8 +1288,8 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed: Invalid regular expression: Invalid property name
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed: Invalid regular expression: Invalid property name
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression: Invalid property name
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression: Invalid property name
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'flat' of undefined
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1302,12 +1302,12 @@ compat-table/es2019/Symbol.prototype.description.undefined.js: failed
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
 compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError: 2:1:')' expected at end of function parameter list
-compat-table/es2019/misc.Function-toString.arrows.js: failed
+compat-table/es2019/misc.Function-toString.arrows.js: misc.Function-toString.arrows.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~~~~~~~~~~~~~~~~~~
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: 1:14:Invalid expression encountered
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: 1:2:Invalid expression encountered
-compat-table/es2019/misc.Function-toString.computed-names.js: failed
+compat-table/es2019/misc.Function-toString.computed-names.js: misc.Function-toString.computed-names.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('({ /\x2A before \x2A/' + str + '/\x2A after \x2A/ }.f)') + '' === str;...
 compat-table/es2019/misc.Function-toString.native-code.js: OK
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: misc.Function-toString.unicode-escapes.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' === str;; ^~~...
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
@@ -1369,23 +1369,23 @@ compat-table/es2022/Object.hasOwn.js: OK
 compat-table/es2022/at-method.Array.js: OK
 compat-table/es2022/at-method.String.js: OK
 compat-table/es2022/at-method.TypedArray.js: OK
-compat-table/es2022/class-fields.computed-instance.js: failed: invalid statement encountered
-compat-table/es2022/class-fields.computed-static.js: failed: invalid statement encountered
-compat-table/es2022/class-fields.instance.parent-scope.js: failed: invalid statement encountered
-compat-table/es2022/class-fields.private-instance.initializers.js: failed: private properties are not supported
-compat-table/es2022/class-fields.private-instance.js: failed: private properties are not supported
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: private properties are not supported
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: failed: private properties are not supported
-compat-table/es2022/class-fields.private-static.js: failed: private properties are not supported
-compat-table/es2022/class-fields.public-instance.js: failed: invalid statement encountered
-compat-table/es2022/class-fields.public-static.js: failed: invalid statement encountered
-compat-table/es2022/class-fields.static.define.js: failed: Invalid expression encountered
-compat-table/es2022/class-methods.private-accessor.js: failed: private properties are not supported
-compat-table/es2022/class-methods.private-instance.js: failed: private properties are not supported
-compat-table/es2022/class-methods.private-static-accessor.js: failed: private properties are not supported
-compat-table/es2022/class-methods.private-static.js: failed: private properties are not supported
-compat-table/es2022/class-static-init-blocks.js: failed: class static blocks are not supported
-compat-table/es2022/ergonomic-brand-checks.js: failed: private properties are not supported
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: invalid statement encountered
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: invalid statement encountered
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: invalid statement encountered
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-fields.private-static.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: invalid statement encountered
+compat-table/es2022/class-fields.public-static.js: SyntaxError: invalid statement encountered
+compat-table/es2022/class-fields.static.define.js: SyntaxError: Invalid expression encountered
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-methods.private-static.js: SyntaxError: private properties are not supported
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: class static blocks are not supported
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: private properties are not supported
 compat-table/es2022/regex.flags.d.constructor.js: OK
 compat-table/es2022/regex.flags.d.shows-in-flags.js: OK
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
@@ -1405,13 +1405,13 @@ compat-table/es2024/Map.groupBy.js: TypeError: undefined is not a function
 compat-table/es2024/Object.groupBy.js: TypeError: undefined is not a function
 compat-table/es2024/Promise.withResolvers.js: TypeError: undefined is not a function
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Invalid RegExp: Invalid flags
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.set-notations.js: failed: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression: Invalid flags
 compat-table/es2024/regex.flags.v.shows-in-flags.js: failed
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2025/Iterator.extends.js: failed: invalid statement encountered
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2025/Iterator.extends.js: SyntaxError: invalid statement encountered
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: Property 'Iterator' doesn't exist
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: Property 'Iterator' doesn't exist
 compat-table/es2025/Iterator.instanceof.js: ReferenceError: Property 'Iterator' doesn't exist
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a 
 compat-table/es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.difference.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: undefined is not a function
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not a f
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: undefined is not a function
-compat-table/es2025/regex.duplicate-named-groups.js: failed: Invalid regular expression: Duplicate capture group name
-compat-table/es2025/regex.pattern-modifiers.i.js: failed: Invalid regular expression: Quantifier has nothing to repeat
-compat-table/es2025/regex.pattern-modifiers.m.js: failed: Invalid regular expression: Quantifier has nothing to repeat
-compat-table/es2025/regex.pattern-modifiers.s.js: failed: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid regular expression: Duplicate capture group name
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1470,29 +1470,29 @@ compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: undefined is not a function
 compat-table/next/AsyncDisposableStack.js: ReferenceError: Property 'AsyncDisposableStack' doesn't exist
-compat-table/next/AsyncIterator.extends.js: failed: invalid statement encountered
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.from.iterable.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.from.iterator.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.instanceof.js: failed: async generators are unsupported
+compat-table/next/AsyncIterator.extends.js: SyntaxError: invalid statement encountered
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: for await..of loops are currently unsupported
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: for await..of loops are currently unsupported
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: async generators are unsupported
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'AsyncIterator' doesn't exist
-compat-table/next/AsyncIterator.prototype.drop.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.prototype.every.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.filter.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.prototype.find.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.map.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.some.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.take.js: failed: for await..of loops are currently unsupported
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: for await..of loops are currently unsupported; async generators are unsupported
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: async generators are unsupported
 compat-table/next/DisposableStack.js: ReferenceError: Property 'DisposableStack' doesn't exist
 compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not a function
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: ';' expected
+compat-table/next/SuppressedError.js: SyntaxError: ';' expected
 compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: undefined is not a functi
 compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
-compat-table/next/await-using.for-of.js: failed: ';' or 'in' expected inside 'for'
-compat-table/next/await-using.js: failed: ';' expected
-compat-table/next/class-decorators.js: failed: unrecognized character '@'
-compat-table/next/function.sent.js: failed: '(' expected at start of function parameter list
-compat-table/next/throw-expr.arrow.js: failed: invalid expression
-compat-table/next/throw-expr.conditional.js: failed: invalid expression
-compat-table/next/throw-expr.logical.js: failed: invalid expression
-compat-table/next/throw-expr.param-init.js: failed: invalid expression
-compat-table/next/using.for-of.js: failed: ';' or 'in' expected inside 'for'
-compat-table/next/using.js: failed: ';' expected
+compat-table/next/await-using.for-of.js: SyntaxError: ';' or 'in' expected inside 'for'
+compat-table/next/await-using.js: SyntaxError: ';' expected
+compat-table/next/class-decorators.js: SyntaxError: unrecognized character '@'
+compat-table/next/function.sent.js: SyntaxError: '(' expected at start of function parameter list
+compat-table/next/throw-expr.arrow.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.conditional.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.logical.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.param-init.js: SyntaxError: invalid expression
+compat-table/next/using.for-of.js: SyntaxError: ';' or 'in' expected inside 'for'
+compat-table/next/using.js: SyntaxError: ';' expected

@@ -52,7 +52,7 @@ Vibe-coded JavaScript engine written in C++.
 <a href="../../conformance/es3/Date.prototype.toTimeString.js">Date.prototype.toTimeString.js</a>: failed
 <a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential(2) failed; negative number failed; NaN failed; zero failed; Infinity failed; small number failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0', got '1.25e+00'
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0',...
 <a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: NaN failed; rounding failed
 <a href="../../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: failed
@@ -103,7 +103,7 @@ Vibe-coded JavaScript engine written in C++.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: TypeError: Cannot read properties of undefined
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: Cannot read properties of undefined
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: Cannot read properties of undefined
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: Error in file 'hashbang.js': SyntaxError: Invalid private field at line 1, column 1
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Error in file 'hashbang.js': SyntaxError: Invalid private field at line 1, column 1
 </pre></li>
 <li>ES2024: 14%</li>
 <li>ES2025: 0%</li>

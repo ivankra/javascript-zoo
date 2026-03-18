@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"027e148c2b997851686163a6466e2faae18c43e4f76951ceff16ba3c9520a537","binary_size":658472,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"duktape","repository":"https://github.com/svaarala/duktape.git","revision":"50af773b1b32067170786c2b7c661705ec7425d4","revision_date":"2024-01-29"}
+Metadata: {"arch":"arm64","binary_sha256":"0574493648214fe71e589bfa446f4aa46ac656f49be6de613255f3cc1ac5dcc2","binary_size":658472,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"duktape","repository":"https://github.com/svaarala/duktape.git","revision":"50af773b1b32067170786c2b7c661705ec7425d4","revision_date":"2024-01-29"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -624,13 +624,13 @@ compat-table/es6/Proxy.handler.set.js: OK
 compat-table/es6/Proxy.no-prototype.js: OK
 compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
-compat-table/es6/Reflect.construct.Array-subclassing.js: failed: unsupported
-compat-table/es6/Reflect.construct.Function-subclassing.js: failed: unsupported
+compat-table/es6/Reflect.construct.Array-subclassing.js: unsupported
+compat-table/es6/Reflect.construct.Function-subclassing.js: unsupported
 compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: identifier 'Promise' undefined
-compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed: unsupported
+compat-table/es6/Reflect.construct.RegExp-subclassing.js: unsupported
 compat-table/es6/Reflect.construct.js: OK
-compat-table/es6/Reflect.construct.new-target.js: failed: unsupported
-compat-table/es6/Reflect.construct.third-argument.js: failed: unsupported
+compat-table/es6/Reflect.construct.new-target.js: unsupported
+compat-table/es6/Reflect.construct.third-argument.js: unsupported
 compat-table/es6/Reflect.defineProperty.js: OK
 compat-table/es6/Reflect.deleteProperty.js: OK
 compat-table/es6/Reflect.getOwnPropertyDescriptor.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":26061548,"engine":"reeva","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ReevaJS/reeva.git","revision":"f715163354ea06e37a97bd4e5e0bddc9c195c886","revision_date":"2024-01-18","version":"before-rewrite-306-gf7151633"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":26064214,"engine":"reeva","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ReevaJS/reeva.git","revision":"f715163354ea06e37a97bd4e5e0bddc9c195c886","revision_date":"2024-01-18","version":"before-rewrite-306-gf7151633"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -6,16 +6,16 @@ es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: OK
 es1/Array.prototype.join.js: OK
 es1/Array.prototype.reverse.generic.js: failed
-es1/Array.prototype.reverse.js: failed: reverse order failed
-es1/Array.prototype.sort.generic.js: TypeError: TypeError: cannot call value undefined
-es1/Array.prototype.sort.js: TypeError: TypeError: cannot call value undefined
+es1/Array.prototype.reverse.js: reverse order failed; reverse single element failed
+es1/Array.prototype.sort.generic.js: TypeError: cannot call value undefined
+es1/Array.prototype.sort.js: TypeError: cannot call value undefined
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: OK
 es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: failed
+es1/Date.js: new Date(2000, 0, 1).getMonth() != 0
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: failed
@@ -28,7 +28,7 @@ es1/Date.prototype.getSeconds.js: OK
 es1/Date.prototype.getTimezoneOffset.js: OK
 es1/Date.prototype.getTime.js: OK
 es1/Date.prototype.getUTCDate.js: OK
-es1/Date.prototype.getUTCDay.js: TypeError: TypeError: cannot call value undefined
+es1/Date.prototype.getUTCDay.js: TypeError: cannot call value undefined
 es1/Date.prototype.getUTCFullYear.js: OK
 es1/Date.prototype.getUTCHours.js: OK
 es1/Date.prototype.getUTCMilliseconds.js: OK
@@ -39,17 +39,17 @@ es1/Date.prototype.setDate.js: failed
 es1/Date.prototype.setFullYear.js: OK
 es1/Date.prototype.setHours.js: OK
 es1/Date.prototype.setMilliseconds.js: failed
-es1/Date.prototype.setMinutes.js: TypeError: TypeError: cannot call value undefined
+es1/Date.prototype.setMinutes.js: TypeError: cannot call value undefined
 es1/Date.prototype.setMonth.js: OK
 es1/Date.prototype.setSeconds.js: OK
-es1/Date.prototype.setTime.js: failed: Exception in FunctionInfo Date.prototype.setTime.js, block @0 opcode 10
-es1/Date.prototype.setUTCDate.js: failed: Exception in FunctionInfo Date.prototype.setUTCDate.js, block @0 opcode 18
-es1/Date.prototype.setUTCFullYear.js: failed: Exception in FunctionInfo Date.prototype.setUTCFullYear.js, block @0 opcode 18
-es1/Date.prototype.setUTCHours.js: failed: Exception in FunctionInfo Date.prototype.setUTCHours.js, block @0 opcode 22
-es1/Date.prototype.setUTCMilliseconds.js: failed: Exception in FunctionInfo Date.prototype.setUTCMilliseconds.js, block @0 opcode 22
-es1/Date.prototype.setUTCMinutes.js: failed: Exception in FunctionInfo Date.prototype.setUTCMinutes.js, block @0 opcode 22
-es1/Date.prototype.setUTCMonth.js: failed: Exception in FunctionInfo Date.prototype.setUTCMonth.js, block @0 opcode 18
-es1/Date.prototype.setUTCSeconds.js: failed: Exception in FunctionInfo Date.prototype.setUTCSeconds.js, block @0 opcode 22
+es1/Date.prototype.setTime.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCDate.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCFullYear.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCHours.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCMilliseconds.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCMinutes.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCMonth.js: ExpectationError: Expectation failed
+es1/Date.prototype.setUTCSeconds.js: ExpectationError: Expectation failed
 es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
@@ -113,14 +113,14 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: TypeError: TypeError: cannot call value undefined
-es1/annex-b.Date.prototype.setYear.js: TypeError: TypeError: cannot call value undefined
-es1/annex-b.Date.prototype.toGMTString.js: TypeError: TypeError: cannot call value undefined
-es1/annex-b.global.escape.js: ReferenceError: ReferenceError: "escape" is not defined
-es1/annex-b.global.unescape.js: ReferenceError: ReferenceError: "unescape" is not defined
-es1/annex-b.literals.octal.js: failed: 0755 failed
+es1/annex-b.Date.prototype.getYear.js: TypeError: cannot call value undefined
+es1/annex-b.Date.prototype.setYear.js: TypeError: cannot call value undefined
+es1/annex-b.Date.prototype.toGMTString.js: TypeError: cannot call value undefined
+es1/annex-b.global.escape.js: ReferenceError: "escape" is not defined
+es1/annex-b.global.unescape.js: ReferenceError: "unescape" is not defined
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: failed
-es1/arguments.callee.js: TypeError: TypeError: "callee" property may not be accessed on unmapped arguments objects
+es1/arguments.callee.js: TypeError: "callee" property may not be accessed on unmapped arguments objects
 es1/arguments.js: OK
 es1/asi.eval.js: OK
 es1/asi.js: OK
@@ -131,30 +131,30 @@ es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
-es1/bitwise.unsigned-shift.js: failed
+es1/bitwise.unsigned-shift.js: -12345 >>> 0 != 4294954951 (got: -12345)
 es1/break.js: OK
 es1/comma.js: OK
 es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: failed: -2^31-1 failed
+es1/conversions.ToInt32.js: -2^31-1 failed
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: OK
-es1/conversions.ToUint32.js: failed: NaN failed
+es1/conversions.ToUint32.js: NaN failed; 2^32-1 failed; 2^31 failed; -1 failed; -2^31 failed
 es1/conversions.js: OK
 es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
-es1/for.js: failed: for without increment failed
+es1/for.js: for without increment failed
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
 es1/global.isNaN.js: OK
-es1/global.parseFloat.js: ReferenceError: ReferenceError: "parseFloat" is not defined
+es1/global.parseFloat.js: ReferenceError: "parseFloat" is not defined
 es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
 es1/global.parseInt.radix.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: SyntaxError: SyntaxError: unsupported feature: with statements
+es1/with.js: SyntaxError: unsupported feature: with statements
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -204,8 +204,8 @@ es3/Array.prototype.push.generic.js: OK
 es3/Array.prototype.push.js: OK
 es3/Array.prototype.shift.generic.js: OK
 es3/Array.prototype.shift.js: OK
-es3/Array.prototype.slice.generic.js: failed: slice object with start and end failed
-es3/Array.prototype.slice.js: failed: slice with start and end failed
+es3/Array.prototype.slice.generic.js: slice object with start and end failed; slice object with start only failed; slice object with negative start failed
+es3/Array.prototype.slice.js: slice with start and end failed; slice with start only failed; slice with negative start failed; slice with negative end failed; slice entire array failed
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
 es3/Array.prototype.toLocaleString.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: TypeError: TypeError: cannot call value undefined
+es3/Date.prototype.toLocaleDateString.js: TypeError: cannot call value undefined
 es3/Date.prototype.toLocaleString.js: OK
-es3/Date.prototype.toLocaleTimeString.js: TypeError: TypeError: cannot call value undefined
+es3/Date.prototype.toLocaleTimeString.js: TypeError: cannot call value undefined
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
@@ -231,7 +231,7 @@ es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
-es3/Number.prototype.toLocaleString.js: failed: Exception in FunctionInfo Number.prototype.toLocaleString.js, block @0 opcode 7
+es3/Number.prototype.toLocaleString.js: NotImplementedError: An operation is not implemented.
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
@@ -239,53 +239,53 @@ es3/Object.prototype.propertyIsEnumerable.js: OK
 es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: Exception in FunctionInfo RegExp.js, block @15 opcode 3
-es3/RegExp.lastIndex.js: failed: after first match failed
+es3/RegExp.js: ECMAError: ECMA assertion failed
+es3/RegExp.lastIndex.js: after first match failed; after second match failed
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: failed
-es3/RegExp.prototype.exec.js: failed: match failed
-es3/RegExp.prototype.test.js: failed: match failed
+es3/RegExp.prototype.exec.js: TypeError: cannot convert null to Object
+es3/RegExp.prototype.test.js: match failed
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
-es3/String.prototype.localeCompare.js: TypeError: TypeError: cannot call value undefined
-es3/String.prototype.match.generic.js: TypeError: TypeError: cannot convert undefined to Object
-es3/String.prototype.match.js: TypeError: TypeError: cannot call value undefined
-es3/String.prototype.replace.capture.js: failed: Exception in FunctionInfo String.prototype.replace.capture.js, block @0 opcode 11
-es3/String.prototype.replace.extra.js: failed: Exception in FunctionInfo String.prototype.replace.extra.js, block @0 opcode 11
-es3/String.prototype.replace.generic.js: failed: Exception in FunctionInfo String.prototype.replace.generic.js, block @12 opcode 18
-es3/String.prototype.replace.regex.js: failed: Exception in FunctionInfo String.prototype.replace.regex.js, block @0 opcode 11
+es3/String.prototype.localeCompare.js: TypeError: cannot call value undefined
+es3/String.prototype.match.generic.js: TypeError: cannot convert undefined to Object
+es3/String.prototype.match.js: TypeError: cannot call value undefined
+es3/String.prototype.replace.capture.js: NotImplementedError: An operation is not implemented.
+es3/String.prototype.replace.extra.js: NotImplementedError: An operation is not implemented.
+es3/String.prototype.replace.generic.js: NotImplementedError: An operation is not implemented.
+es3/String.prototype.replace.regex.js: NotImplementedError: An operation is not implemented.
 es3/String.prototype.replace.str.js: OK
-es3/String.prototype.search.generic.js: TypeError: TypeError: cannot convert undefined to Object
-es3/String.prototype.search.js: TypeError: TypeError: cannot call value undefined
-es3/String.prototype.search.str.js: TypeError: TypeError: cannot call value undefined
+es3/String.prototype.search.generic.js: TypeError: cannot convert undefined to Object
+es3/String.prototype.search.js: TypeError: cannot call value undefined
+es3/String.prototype.search.str.js: TypeError: cannot call value undefined
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed: Exception in FunctionInfo String.prototype.split.bugs.js, block @27 opcode 5
+es3/String.prototype.split.bugs.js: NotImplementedError: An operation is not implemented.
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: Exception in FunctionInfo String.prototype.split.regex.js, block @0 opcode 10
-es3/String.prototype.toLocaleLowerCase.js: TypeError: TypeError: cannot call value undefined
-es3/String.prototype.toLocaleUpperCase.js: TypeError: TypeError: cannot call value undefined
-es3/annex-b.String.prototype.substr.js: TypeError: TypeError: cannot call value undefined
+es3/String.prototype.split.regex.js: NotImplementedError: An operation is not implemented.
+es3/String.prototype.toLocaleLowerCase.js: TypeError: cannot call value undefined
+es3/String.prototype.toLocaleUpperCase.js: TypeError: cannot call value undefined
+es3/annex-b.String.prototype.substr.js: TypeError: cannot call value undefined
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
-es3/global.RangeError.thrown.js: RangeError: Exception in FunctionInfo global.RangeError.thrown.js, block @2 opcode 4
+es3/global.RangeError.thrown.js: Exception in FunctionInfo global.RangeError.thrown.js, block @2 opcode 4; Uncaught exception: IndexOutOfBoundsException: Index -1 out of bounds for length 0
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for Function.prototype.toString on non-function
+es3/global.TypeError.thrown.js: no exception for Function.prototype.toString on non-function
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: wrong exception for decodeURI incomplete escape
-es3/global.decodeURIComponent.js: ReferenceError: ReferenceError: "decodeURIComponent" is not defined
-es3/global.decodeURI.js: ReferenceError: ReferenceError: "decodeURI" is not defined
-es3/global.encodeURIComponent.js: ReferenceError: ReferenceError: "encodeURIComponent" is not defined
-es3/global.encodeURI.js: ReferenceError: ReferenceError: "encodeURI" is not defined
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
+es3/global.decodeURIComponent.js: ReferenceError: "decodeURIComponent" is not defined
+es3/global.decodeURI.js: ReferenceError: "decodeURI" is not defined
+es3/global.encodeURIComponent.js: ReferenceError: "encodeURIComponent" is not defined
+es3/global.encodeURI.js: ReferenceError: "encodeURI" is not defined
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
@@ -311,24 +311,24 @@ es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
-es3/regex.bracket.js: TypeError: TypeError: cannot convert null to Object
-es3/regex.bracket.ranges.js: failed: Exception in FunctionInfo regex.bracket.ranges.js, block @9 opcode 5
+es3/regex.bracket.js: TypeError: cannot convert null to Object
+es3/regex.bracket.ranges.js: Exception in FunctionInfo regex.bracket.ranges.js, block @9 opcode 5; Uncaught exception: IllegalArgumentException: newPosition > limit: (7 > 6)
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
 es3/regex.disjunction.js: OK
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
-es3/regex.escape.control.js: failed: \f failed
+es3/regex.escape.control.js: \f failed
 es3/regex.escape.hex.js: OK
-es3/regex.escape.js: TypeError: TypeError: cannot convert null to Object
+es3/regex.escape.js: TypeError: cannot convert null to Object
 es3/regex.escape.nul.js: OK
 es3/regex.escape.unicode.js: OK
-es3/regex.flag.global.js: TypeError: TypeError: cannot call value undefined
-es3/regex.flag.ignorecase.js: failed: case insensitive failed
-es3/regex.flag.multiline.js: failed: ^ after LF failed
+es3/regex.flag.global.js: TypeError: cannot call value undefined
+es3/regex.flag.ignorecase.js: case insensitive failed; charclass failed; single char failed
+es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
 es3/regex.group.js: OK
-es3/regex.lookahead.js: TypeError: TypeError: cannot convert null to Object
+es3/regex.lookahead.js: TypeError: cannot convert null to Object
 es3/regex.negative-lookahead.js: OK
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
@@ -337,13 +337,13 @@ es3/regex.quantifier.min.js: OK
 es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
-es3/regex.word-boundary.js: failed: \b word boundary failed
+es3/regex.word-boundary.js: \b word boundary failed; \B non-boundary failed
 es3/source.line-terminators.js: OK
 es3/source.whitespace.js: OK
 es3/source.whitespace.unicode.js: OK
 es3/strict-equals.js: OK
-es3/switch.js: failed: switch fall-through failed
-es3/try-catch-finally.js: failed: kotlin.NotImplementedError: Try-statement finally blocks
+es3/switch.js: switch fall-through failed
+es3/try-catch-finally.js: NotImplementedError: Try-statement finally blocks
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: OK
@@ -356,16 +356,16 @@ es5/Array.prototype.reduceRight.js: OK
 es5/Array.prototype.reduce.js: OK
 es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: OK
-es5/Array.prototype.sort.undefined-comparefn.js: TypeError: TypeError: cannot call value undefined
+es5/Array.prototype.sort.undefined-comparefn.js: TypeError: cannot call value undefined
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: failed: invalid date does not throw RangeError
-es5/Date.prototype.toJSON.js: failed: invalid date does not return null
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
 es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
@@ -378,7 +378,7 @@ es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
-es5/Object.isSealed.js: failed: frozen object is sealed failed
+es5/Object.isSealed.js: frozen object is sealed failed
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
@@ -386,17 +386,17 @@ es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
-es5/debugger.js: failed: kotlin.NotImplementedError: An operation is not implemented.
+es5/debugger.js: NotImplementedError: An operation is not implemented.
 es5/global.Infinity.immutable.js: OK
 es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed: com.reevajs.reeva.utils.ExpectationError: Expectation failed
+es5/global.undefined.immutable.js: ExpectationError: Expectation failed
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: SyntaxError: SyntaxError: invalid token "\ufeff"
+es5/source.whitespace.bom.js: SyntaxError: invalid token "\ufeff"
 es5/source.zero-width-chars.js: OK
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
@@ -405,18 +405,18 @@ es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: failed
 es5/strict.no-assignment-to-unresolvable.js: failed
-es5/strict.no-delete-bindings.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.no-delete-bindings.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 es5/strict.no-delete-non-configurable.js: OK
-es5/strict.no-duplicate-parameters.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
-es5/strict.no-eval-or-arguments-assignment.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
-es5/strict.no-eval-or-arguments-bindings.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.no-duplicate-parameters.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.no-eval-or-arguments-assignment.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.no-eval-or-arguments-bindings.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 es5/strict.no-function-caller-or-arguments.js: OK
-es5/strict.no-octal-literals.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.no-octal-literals.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 es5/strict.no-with.js: OK
-es5/strict.reserved-words.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
-es5/strict.this-primitive-not-coerced-in-accessors.js: ReferenceError: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.reserved-words.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
+es5/strict.this-primitive-not-coerced-in-accessors.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: Exception in FunctionInfo <anonymous>:10, block @2 opcode 4
+es5/strict.this-undefined-in-function.js: Exception in FunctionInfo <anonymous>:10, block @2 opcode 4; Exception in FunctionInfo strict.this-undefined-in-function.js, block @0 opcode 3; Uncaught exception: IllegalArgumentException: fromIndex(...
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK
@@ -454,12 +454,12 @@ compat-table/es5/Object.keys.js: OK
 compat-table/es5/Object.preventExtensions.js: OK
 compat-table/es5/Object.seal.js: OK
 compat-table/es5/String.property-access.js: OK
-compat-table/es5/String.prototype.split.js: failed: Exception in FunctionInfo testCode, block @19 opcode 6
+compat-table/es5/String.prototype.split.js: NotImplementedError: An operation is not implemented.
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: TypeError: cannot call value undefined
 compat-table/es5/immutable-globals.Infinity.js: OK
 compat-table/es5/immutable-globals.NaN.js: OK
-compat-table/es5/immutable-globals.undefined.js: failed: com.reevajs.reeva.utils.ExpectationError: Expectation failed
+compat-table/es5/immutable-globals.undefined.js: ExpectationError: Expectation failed
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
@@ -486,11 +486,11 @@ compat-table/es5/strict.eval-no-bindings.js: failed
 compat-table/es5/strict.function-caller-arguments-error.js: OK
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
 compat-table/es5/strict.legacy-octal-error.js: failed
-compat-table/es5/strict.repeated-params-error.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es5/strict.repeated-params-error.js: NotImplementedError: An operation is not implemented: Handle duplicate parameter names
 compat-table/es5/strict.reserved-words.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es5/strict.this-not-coerced-accessors.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es5/strict.this-not-coerced-methods.js: OK
-compat-table/es5/strict.this-undefined.js: failed: Exception in FunctionInfo testCode, block @1 opcode 5
+compat-table/es5/strict.this-undefined.js: Exception in FunctionInfo testCode, block @1 opcode 5; Exception in FunctionInfo strict.this-undefined.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: fromIndex(1) > toIndex(0)
 compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: OK
 compat-table/es6/Array.from.array-like.js: OK
@@ -608,11 +608,11 @@ compat-table/es6/Proxy.handler.get.instances.js: OK
 compat-table/es6/Proxy.handler.get.invariants.js: OK
 compat-table/es6/Proxy.handler.get.js: OK
 compat-table/es6/Proxy.handler.has.instances.js: OK
-compat-table/es6/Proxy.handler.has.invariants.js: SyntaxError: SyntaxError: expected }, but found in
+compat-table/es6/Proxy.handler.has.invariants.js: SyntaxError: expected }, but found in
 compat-table/es6/Proxy.handler.has.js: OK
 compat-table/es6/Proxy.handler.isExtensible.invariants.js: OK
 compat-table/es6/Proxy.handler.isExtensible.js: OK
-compat-table/es6/Proxy.handler.ownKeys.invariants.js: failed: Exception in FunctionInfo testCode, block @2 opcode 12
+compat-table/es6/Proxy.handler.ownKeys.invariants.js: Exception in FunctionInfo testCode, block @2 opcode 12; Exception in FunctionInfo Proxy.handler.ownKeys.invariants.js, block @2 opcode 2; Uncaught exception: IllegalStateException: Encountered unreach...
 compat-table/es6/Proxy.handler.ownKeys.js: OK
 compat-table/es6/Proxy.handler.preventExtensions.invariants.js: OK
 compat-table/es6/Proxy.handler.preventExtensions.js: OK
@@ -673,12 +673,12 @@ compat-table/es6/String.iterator-prototype-chain.js: OK
 compat-table/es6/String.prototype.Symbol.iterator.js: OK
 compat-table/es6/String.prototype.codePointAt.js: OK
 compat-table/es6/String.prototype.endsWith.js: OK
-compat-table/es6/String.prototype.endsWith.throws-regex.js: SyntaxError: SyntaxError: expected }, but found .
+compat-table/es6/String.prototype.endsWith.throws-regex.js: SyntaxError: expected }, but found .
 compat-table/es6/String.prototype.includes.js: OK
 compat-table/es6/String.prototype.normalize.js: failed
 compat-table/es6/String.prototype.repeat.js: OK
 compat-table/es6/String.prototype.startsWith.js: OK
-compat-table/es6/String.prototype.startsWith.throws-regex.js: SyntaxError: SyntaxError: expected }, but found .
+compat-table/es6/String.prototype.startsWith.throws-regex.js: SyntaxError: expected }, but found .
 compat-table/es6/String.raw.js: failed
 compat-table/es6/Symbol.JSON.stringify.object.js: OK
 compat-table/es6/Symbol.JSON.stringify.primitive.js: OK
@@ -721,11 +721,11 @@ compat-table/es6/annex-b.String.prototype.html.existence.js: failed
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: cannot call value undefined
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: cannot call value undefined
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: "g" is not defined
-compat-table/es6/annex-b.function.if-statement.js: SyntaxError: SyntaxError: function declarations are not allowed in single-statement contexts
-compat-table/es6/annex-b.function.labeled.js: SyntaxError: SyntaxError: function declarations are not allowed in single-statement contexts
-compat-table/es6/annex-b.html-comments.js: SyntaxError: SyntaxError: expected primary expression, but found >
+compat-table/es6/annex-b.function.if-statement.js: SyntaxError: function declarations are not allowed in single-statement contexts
+compat-table/es6/annex-b.function.labeled.js: SyntaxError: function declarations are not allowed in single-statement contexts
+compat-table/es6/annex-b.html-comments.js: SyntaxError: expected primary expression, but found >
 compat-table/es6/annex-b.regex.backreferences-octal.js: TypeError: cannot convert null to Object
-compat-table/es6/annex-b.regex.hyphens.js: SyntaxError: SyntaxError: Invalid char class range member
+compat-table/es6/annex-b.regex.hyphens.js: SyntaxError: Invalid char class range member
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
 compat-table/es6/annex-b.regex.invalid-char-escapes.js: TypeError: cannot convert null to Object
 compat-table/es6/annex-b.regex.invalid-control-escapes.js: TypeError: cannot convert null to Object
@@ -748,13 +748,13 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: failed
 compat-table/es6/arrow.lexical-arguments.js: ReferenceError: "arguments" is not defined
-compat-table/es6/arrow.lexical-super.constructor.js: failed: Exception in FunctionInfo <anonymous>, block @0 opcode 2
-compat-table/es6/arrow.lexical-super.methods.js: failed: Exception in FunctionInfo testCode, block @0 opcode 16
+compat-table/es6/arrow.lexical-super.constructor.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/es6/arrow.lexical-super.methods.js: Exception in FunctionInfo testCode, block @0 opcode 16; Exception in FunctionInfo arrow.lexical-super.methods.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of ...
 compat-table/es6/arrow.lexical-this.js: TypeError: cannot convert undefined to Object
 compat-table/es6/arrow.new-target.js: failed
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: failed
-compat-table/es6/arrow.precedence.js: failed: Exception in FunctionInfo <anonymous>, block @2 opcode 3
+compat-table/es6/arrow.precedence.js: Exception in FunctionInfo <anonymous>, block @2 opcode 3; Exception in FunctionInfo testCode, block @0 opcode 2; Exception in FunctionInfo arrow.precedence.js, block @2 opcode 2; Uncaught exception: I...
 compat-table/es6/arrow.this-call-apply.js: failed
 compat-table/es6/class.accessor-properties.js: OK
 compat-table/es6/class.anonymous.js: OK
@@ -767,13 +767,13 @@ compat-table/es6/class.computed-static-methods.js: OK
 compat-table/es6/class.constructor-requires-new.js: OK
 compat-table/es6/class.constructor.js: OK
 compat-table/es6/class.expression.js: OK
-compat-table/es6/class.extends-expressions.js: failed: Exception in FunctionInfo testCode, block @0 opcode 14
+compat-table/es6/class.extends-expressions.js: Exception in FunctionInfo testCode, block @0 opcode 14; Exception in FunctionInfo class.extends-expressions.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bo...
 compat-table/es6/class.extends-null.js: OK
-compat-table/es6/class.extends.js: failed: Exception in FunctionInfo testCode, block @0 opcode 12
+compat-table/es6/class.extends.js: Exception in FunctionInfo testCode, block @0 opcode 12; Exception in FunctionInfo class.extends.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds for len...
 compat-table/es6/class.implicit-strict.js: OK
-compat-table/es6/class.lexical-name.js: failed: com.reevajs.reeva.utils.ExpectationError: Expectation failed
+compat-table/es6/class.lexical-name.js: ExpectationError: Expectation failed
 compat-table/es6/class.methods-not-enumerable.js: OK
-compat-table/es6/class.new-target.js: failed: Exception in FunctionInfo testCode, block @0 opcode 23
+compat-table/es6/class.new-target.js: Exception in FunctionInfo testCode, block @0 opcode 23; Exception in FunctionInfo class.new-target.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds for ...
 compat-table/es6/class.optional-semicolons.js: OK
 compat-table/es6/class.prototype-methods.js: OK
 compat-table/es6/class.statement.js: OK
@@ -785,7 +785,7 @@ compat-table/es6/const.block-scoped.js: OK
 compat-table/es6/const.for-in.js: OK
 compat-table/es6/const.for-loop.js: OK
 compat-table/es6/const.for-of.js: OK
-compat-table/es6/const.no-redefine.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es6/const.no-redefine.js: ExpectationError: Expectation failed
 compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
 compat-table/es6/const.strict.basic.js: OK
@@ -793,47 +793,47 @@ compat-table/es6/const.strict.block-scoped.js: OK
 compat-table/es6/const.strict.for-in.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es6/const.strict.for-loop.js: OK
 compat-table/es6/const.strict.for-of.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
-compat-table/es6/const.strict.no-redefine.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es6/const.strict.no-redefine.js: ExpectationError: Expectation failed
 compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
-compat-table/es6/const.strict.tdz.js: failed: Exception in FunctionInfo <anonymous>:11, block @2 opcode 0
-compat-table/es6/const.tdz.js: failed: Exception in FunctionInfo <anonymous>:10, block @2 opcode 0
+compat-table/es6/const.strict.tdz.js: ECMAError: ECMA assertion failed
+compat-table/es6/const.tdz.js: ECMAError: ECMA assertion failed
 compat-table/es6/default-params.arguments.js: ReferenceError: "arguments" is not defined
-compat-table/es6/default-params.basic.js: failed: Exception in FunctionInfo <anonymous>:10, block @4 opcode 0
-compat-table/es6/default-params.explicit-undefined.js: failed: Exception in FunctionInfo <anonymous>:10, block @5 opcode 1
-compat-table/es6/default-params.new-function.js: failed: Exception in FunctionInfo anonymous, block @4 opcode 0
+compat-table/es6/default-params.basic.js: ECMAError: ECMA assertion failed
+compat-table/es6/default-params.explicit-undefined.js: ECMAError: ECMA assertion failed
+compat-table/es6/default-params.new-function.js: ECMAError: ECMA assertion failed
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: OK
 compat-table/es6/default-params.tdz.js: failed
-compat-table/es6/destructuring-assign.array.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.defaults.js: SyntaxError: SyntaxError: expected :, but found =
-compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.generator.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.iterable.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.nested.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.object.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.rest.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.string.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: SyntaxError: invalid expression in assignment context
-compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.array.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: expected :, but found =
+compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.generator.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.iterable.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.nested.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.object.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.rest.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.string.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-decl.array.js: OK
 compat-table/es6/destructuring-decl.astral-string.js: failed
 compat-table/es6/destructuring-decl.catch.js: OK
 compat-table/es6/destructuring-decl.computed-properties.js: OK
-compat-table/es6/destructuring-decl.defaults-tdz.js: failed: Exception in FunctionInfo eval, block @1 opcode 1
+compat-table/es6/destructuring-decl.defaults-tdz.js: Exception in FunctionInfo eval, block @1 opcode 1; Exception in FunctionInfo testCode, block @4 opcode 3; Exception in FunctionInfo destructuring-decl.defaults-tdz.js, block @2 opcode 2; Uncaught exce...
 compat-table/es6/destructuring-decl.defaults.js: failed
 compat-table/es6/destructuring-decl.for-in.js: OK
 compat-table/es6/destructuring-decl.for-of.js: OK
@@ -899,7 +899,7 @@ compat-table/es6/generators.shorthand.class.js: OK
 compat-table/es6/generators.shorthand.computed.class.js: OK
 compat-table/es6/generators.shorthand.computed.js: OK
 compat-table/es6/generators.shorthand.js: OK
-compat-table/es6/generators.shorthand.no-constructor.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es6/generators.shorthand.no-constructor.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo generators.shorthand.no-constructor.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more ...
 compat-table/es6/generators.shorthand.string-keyed.js: OK
 compat-table/es6/generators.this.js: OK
 compat-table/es6/generators.throw.js: OK
@@ -910,26 +910,26 @@ compat-table/es6/generators.yield-star.generator.js: failed
 compat-table/es6/generators.yield-star.iterable-instance.js: failed
 compat-table/es6/generators.yield-star.iterable.js: failed
 compat-table/es6/generators.yield-star.iterator-closing-throw.js: failed
-compat-table/es6/generators.yield-star.iterator-closing.js: failed: kotlin.NotImplementedError: Try-statement finally blocks
+compat-table/es6/generators.yield-star.iterator-closing.js: NotImplementedError: Try-statement finally blocks
 compat-table/es6/generators.yield-star.non-iterable-error.js: failed
 compat-table/es6/generators.yield-star.sparse-array.js: failed
 compat-table/es6/generators.yield-star.string.js: failed
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: OK
-compat-table/es6/let.for-in-shadow.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es6/let.for-in-shadow.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo let.for-in-shadow.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one element.
 compat-table/es6/let.for-iteration.js: failed
 compat-table/es6/let.for-loop.js: OK
 compat-table/es6/let.no-statement.js: OK
 compat-table/es6/let.shadow.js: OK
 compat-table/es6/let.strict.basic.js: OK
 compat-table/es6/let.strict.block-scoped.js: OK
-compat-table/es6/let.strict.for-in-shadow.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es6/let.strict.for-in-shadow.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo let.strict.for-in-shadow.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one el...
 compat-table/es6/let.strict.for-iteration.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es6/let.strict.for-loop.js: OK
 compat-table/es6/let.strict.no-statement.js: OK
 compat-table/es6/let.strict.shadow.js: OK
-compat-table/es6/let.strict.tdz.js: failed: Exception in FunctionInfo <anonymous>:11, block @2 opcode 0
-compat-table/es6/let.tdz.js: failed: Exception in FunctionInfo <anonymous>:10, block @2 opcode 0
+compat-table/es6/let.strict.tdz.js: ECMAError: ECMA assertion failed
+compat-table/es6/let.tdz.js: ECMAError: ECMA assertion failed
 compat-table/es6/literals.binary.Number.js: OK
 compat-table/es6/literals.binary.js: OK
 compat-table/es6/literals.object.computed-accessors.js: OK
@@ -977,17 +977,17 @@ compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: Function.
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: failed
 compat-table/es6/misc.Proxy.get.Error.toString.js: OK
 compat-table/es6/misc.Proxy.get.Function.bind.js: failed
-compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: SyntaxError: unsupported feature: with statements
+compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: unsupported feature: with statements
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: OK
 compat-table/es6/misc.Proxy.get.Object.assign.js: OK
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: OK
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: OK
-compat-table/es6/misc.Proxy.get.RegExp-constructor.js: failed: Exception in FunctionInfo testCode, block @0 opcode 29
+compat-table/es6/misc.Proxy.get.RegExp-constructor.js: ECMAError: ECMA assertion failed
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed: Exception in FunctionInfo testCode, block @0 opcode 26
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: failed: Exception in FunctionInfo testCode, block @0 opcode 26
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: failed: Exception in FunctionInfo testCode, block @0 opcode 44
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: NotImplementedError: An operation is not implemented.
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: ExpectationError: Expectation failed
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: NotImplementedError: An operation is not implemented.
 compat-table/es6/misc.Proxy.get.RegExp.flags.js: TypeError: RegExp.prototype.flags called on incompatible object
 compat-table/es6/misc.Proxy.get.RegExp.test.js: TypeError: RegExp.prototype.test called on incompatible object
 compat-table/es6/misc.Proxy.get.RegExp.toString.js: TypeError: RegExp.prototype.toString called on incompatible object
@@ -1007,10 +1007,10 @@ compat-table/es6/misc.Proxy.set.Array.fill.js: OK
 compat-table/es6/misc.Proxy.set.Array.from.js: OK
 compat-table/es6/misc.Proxy.set.Array.of.js: OK
 compat-table/es6/misc.Proxy.set.Array.pop.js: failed
-compat-table/es6/misc.Proxy.set.Array.push.js: failed: Exception in FunctionInfo <anonymous>:12, block @0 opcode 11
+compat-table/es6/misc.Proxy.set.Array.push.js: StackOverflowError
 compat-table/es6/misc.Proxy.set.Array.reverse.js: failed
 compat-table/es6/misc.Proxy.set.Array.shift.js: RangeError: array length [Function <>] is too large
-compat-table/es6/misc.Proxy.set.Array.splice.js: failed: Exception in FunctionInfo <anonymous>:12, block @0 opcode 11
+compat-table/es6/misc.Proxy.set.Array.splice.js: StackOverflowError
 compat-table/es6/misc.Proxy.set.Array.unshift.js: RangeError: array length [Function <>] is too large
 compat-table/es6/misc.Proxy.set.Object.assign.js: OK
 compat-table/es6/misc.RegExp-alter-flags.js: OK
@@ -1027,7 +1027,7 @@ compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: OK
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 compat-table/es6/misc.identifier-syntax.var-1.js: OK
-compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: SyntaxError: invalid token "\ud800"
+compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: invalid token "\ud800"
 compat-table/es6/misc.property-order.JSON.parse.js: failed
 compat-table/es6/misc.property-order.JSON.stringify.js: failed
 compat-table/es6/misc.property-order.Object.assign.js: OK
@@ -1035,7 +1035,7 @@ compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: OK
 compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
-compat-table/es6/misc.prototypes-not-instances.js: failed: Exception in FunctionInfo testCode, block @2 opcode 5
+compat-table/es6/misc.prototypes-not-instances.js: Exception in FunctionInfo testCode, block @2 opcode 5; Exception in FunctionInfo misc.prototypes-not-instances.js, block @2 opcode 2; Uncaught exception: NullPointerException: Parameter specified as n...
 compat-table/es6/new-target.assignment-error.js: OK
 compat-table/es6/new-target.constructor.js: OK
 compat-table/es6/regex.flags.u.case-folding.js: TypeError: cannot call value undefined
@@ -1064,54 +1064,54 @@ compat-table/es6/spread.sparse-call.js: OK
 compat-table/es6/spread.sparse-literal.js: OK
 compat-table/es6/spread.string-call.js: OK
 compat-table/es6/spread.string-literal.js: OK
-compat-table/es6/subclassing.Array.concat.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.filter.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.from.js: failed: Exception in FunctionInfo testCode, block @0 opcode 13
-compat-table/es6/subclassing.Array.isArray.js: failed: Exception in FunctionInfo testCode, block @0 opcode 11
-compat-table/es6/subclassing.Array.length-access.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.length-set.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.map.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.of.js: failed: Exception in FunctionInfo testCode, block @0 opcode 10
-compat-table/es6/subclassing.Array.prototype-chain.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.slice.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Array.splice.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.Function.call.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.Function.new.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.Function.prototype-chain.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.Function.prototype.apply.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.Function.prototype.bind.js: failed: Exception in FunctionInfo testCode, block @0 opcode 10
-compat-table/es6/subclassing.Function.prototype.call.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.Promise.all.js: failed: Exception in FunctionInfo testCode, block @0 opcode 25
-compat-table/es6/subclassing.Promise.js: failed: Exception in FunctionInfo testCode, block @0 opcode 19
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
+compat-table/es6/subclassing.Array.concat.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.concat.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.Array.filter.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.filter.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.Array.from.js: Exception in FunctionInfo testCode, block @0 opcode 13; Exception in FunctionInfo subclassing.Array.from.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/subclassing.Array.isArray.js: Exception in FunctionInfo testCode, block @0 opcode 11; Exception in FunctionInfo subclassing.Array.isArray.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bo...
+compat-table/es6/subclassing.Array.length-access.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.length-access.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out ...
+compat-table/es6/subclassing.Array.length-set.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.length-set.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of ...
+compat-table/es6/subclassing.Array.map.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.map.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds ...
+compat-table/es6/subclassing.Array.of.js: Exception in FunctionInfo testCode, block @0 opcode 10; Exception in FunctionInfo subclassing.Array.of.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds ...
+compat-table/es6/subclassing.Array.prototype-chain.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.prototype-chain.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 ou...
+compat-table/es6/subclassing.Array.slice.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.slice.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/subclassing.Array.splice.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.Array.splice.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.Function.call.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.Function.call.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bou...
+compat-table/es6/subclassing.Function.new.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.Function.new.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.Function.prototype-chain.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.Function.prototype-chain.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2...
+compat-table/es6/subclassing.Function.prototype.apply.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.Function.prototype.apply.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2...
+compat-table/es6/subclassing.Function.prototype.bind.js: Exception in FunctionInfo testCode, block @0 opcode 10; Exception in FunctionInfo subclassing.Function.prototype.bind.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2...
+compat-table/es6/subclassing.Function.prototype.call.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.Function.prototype.call.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 ...
+compat-table/es6/subclassing.Promise.all.js: Exception in FunctionInfo testCode, block @0 opcode 25; Exception in FunctionInfo subclassing.Promise.all.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.Promise.js: Exception in FunctionInfo testCode, block @0 opcode 19; Exception in FunctionInfo subclassing.Promise.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds f...
+compat-table/es6/subclassing.Promise.prototype-chain.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.Promise.prototype-chain.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 ...
 compat-table/es6/subclassing.Promise.race.js: TypeError: cannot call value undefined
-compat-table/es6/subclassing.RegExp.exec.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.RegExp.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.RegExp.prototype-chain.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.RegExp.test.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.misc.Boolean.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.misc.Error.js: failed: Exception in FunctionInfo testCode, block @0 opcode 7
-compat-table/es6/subclassing.misc.Map.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.misc.Number.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/subclassing.misc.Set.js: failed: Exception in FunctionInfo testCode, block @0 opcode 9
-compat-table/es6/subclassing.misc.String.js: failed: Exception in FunctionInfo testCode, block @0 opcode 8
-compat-table/es6/super.correct-constructor.js: failed: Exception in FunctionInfo testCode, block @0 opcode 21
-compat-table/es6/super.expression.js: failed: Exception in FunctionInfo C, block @0 opcode 2
-compat-table/es6/super.method-calls.js: failed: Exception in FunctionInfo testCode, block @0 opcode 16
-compat-table/es6/super.new-target-binding.js: failed: Exception in FunctionInfo C, block @0 opcode 2
-compat-table/es6/super.property-access.js: failed: Exception in FunctionInfo testCode, block @0 opcode 32
-compat-table/es6/super.statement.js: failed: Exception in FunctionInfo C, block @0 opcode 2
-compat-table/es6/super.static-binding.js: failed: Exception in FunctionInfo qux, block @0 opcode 1
-compat-table/es6/super.this-binding.js: failed: Exception in FunctionInfo testCode, block @0 opcode 16
+compat-table/es6/subclassing.RegExp.exec.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.RegExp.exec.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/subclassing.RegExp.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.RegExp.js, block @4 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds for...
+compat-table/es6/subclassing.RegExp.prototype-chain.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.RegExp.prototype-chain.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 o...
+compat-table/es6/subclassing.RegExp.test.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.RegExp.test.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/subclassing.misc.Boolean.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.misc.Boolean.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of boun...
+compat-table/es6/subclassing.misc.Error.js: Exception in FunctionInfo testCode, block @0 opcode 7; Exception in FunctionInfo subclassing.misc.Error.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds...
+compat-table/es6/subclassing.misc.Map.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.misc.Map.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds f...
+compat-table/es6/subclassing.misc.Number.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.misc.Number.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/subclassing.misc.Set.js: Exception in FunctionInfo testCode, block @0 opcode 9; Exception in FunctionInfo subclassing.misc.Set.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds f...
+compat-table/es6/subclassing.misc.String.js: Exception in FunctionInfo testCode, block @0 opcode 8; Exception in FunctionInfo subclassing.misc.String.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bound...
+compat-table/es6/super.correct-constructor.js: Exception in FunctionInfo testCode, block @0 opcode 21; Exception in FunctionInfo super.correct-constructor.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bo...
+compat-table/es6/super.expression.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/es6/super.method-calls.js: Exception in FunctionInfo testCode, block @0 opcode 16; Exception in FunctionInfo super.method-calls.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds fo...
+compat-table/es6/super.new-target-binding.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/es6/super.property-access.js: Exception in FunctionInfo testCode, block @0 opcode 32; Exception in FunctionInfo super.property-access.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds...
+compat-table/es6/super.statement.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/es6/super.static-binding.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/es6/super.this-binding.js: Exception in FunctionInfo testCode, block @0 opcode 16; Exception in FunctionInfo super.this-binding.js, block @2 opcode 2; Uncaught exception: ArrayIndexOutOfBoundsException: Index 2 out of bounds fo...
 compat-table/es6/tail-calls.direct.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es6/tail-calls.mutual.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
-compat-table/es6/template.basic.js: SyntaxError: SyntaxError: invalid unescaped line break in string literal
-compat-table/es6/template.caching.js: SyntaxError: SyntaxError: expected ;, but found template literal
-compat-table/es6/template.escape-sequences.js: SyntaxError: SyntaxError: expected ;, but found template literal
-compat-table/es6/template.frozen-array.js: SyntaxError: SyntaxError: expected ;, but found template literal
+compat-table/es6/template.basic.js: SyntaxError: invalid unescaped line break in string literal
+compat-table/es6/template.caching.js: SyntaxError: expected ;, but found template literal
+compat-table/es6/template.escape-sequences.js: SyntaxError: expected ;, but found template literal
+compat-table/es6/template.frozen-array.js: SyntaxError: expected ;, but found template literal
 compat-table/es6/template.line-break.js: SyntaxError: invalid unescaped line break in string literal
-compat-table/es6/template.permanent-caching.js: SyntaxError: SyntaxError: expected ;, but found template literal
-compat-table/es6/template.tagged.js: SyntaxError: SyntaxError: expected ;, but found template literal
+compat-table/es6/template.permanent-caching.js: SyntaxError: expected ;, but found template literal
+compat-table/es6/template.tagged.js: SyntaxError: expected ;, but found template literal
 compat-table/es6/template.toString.js: OK
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: OK
 compat-table/es6/typed-arrays.DataView.Float32.js: OK
@@ -1159,19 +1159,19 @@ compat-table/es6/typed-arrays.prototype.some.js: OK
 compat-table/es6/typed-arrays.prototype.sort.js: failed
 compat-table/es6/typed-arrays.prototype.subarray.js: failed
 compat-table/es6/typed-arrays.prototype.values.js: failed
-compat-table/es6/unicode-escapes.identifier.js: SyntaxError: SyntaxError: unicode codepoint escape sequence missing closing curly brace
-compat-table/es6/unicode-escapes.property-access.js: SyntaxError: SyntaxError: unicode codepoint escape sequence missing closing curly brace
-compat-table/es6/unicode-escapes.property-key.js: SyntaxError: SyntaxError: unicode codepoint escape sequence missing closing curly brace
+compat-table/es6/unicode-escapes.identifier.js: SyntaxError: unicode codepoint escape sequence missing closing curly brace
+compat-table/es6/unicode-escapes.property-access.js: SyntaxError: unicode codepoint escape sequence missing closing curly brace
+compat-table/es6/unicode-escapes.property-key.js: SyntaxError: unicode codepoint escape sequence missing closing curly brace
 compat-table/es6/unicode-escapes.string.js: OK
 compat-table/es6/well-known.hasInstance.js: failed
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: OK
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: OK
 compat-table/es6/well-known.iterator.arguments.js: OK
 compat-table/es6/well-known.iterator.js: OK
-compat-table/es6/well-known.match.RegExp-constructor.js: failed: Exception in FunctionInfo testCode, block @0 opcode 24
-compat-table/es6/well-known.match.String.endsWith.js: SyntaxError: SyntaxError: expected }, but found .
-compat-table/es6/well-known.match.String.includes.js: SyntaxError: SyntaxError: expected }, but found .
-compat-table/es6/well-known.match.String.startsWith.js: SyntaxError: SyntaxError: expected }, but found .
+compat-table/es6/well-known.match.RegExp-constructor.js: ECMAError: ECMA assertion failed
+compat-table/es6/well-known.match.String.endsWith.js: SyntaxError: expected }, but found .
+compat-table/es6/well-known.match.String.includes.js: SyntaxError: expected }, but found .
+compat-table/es6/well-known.match.String.startsWith.js: SyntaxError: expected }, but found .
 compat-table/es6/well-known.match.js: TypeError: cannot call value undefined
 compat-table/es6/well-known.replace.js: OK
 compat-table/es6/well-known.search.js: TypeError: cannot call value undefined
@@ -1181,7 +1181,7 @@ compat-table/es6/well-known.species.Array.map.js: OK
 compat-table/es6/well-known.species.Array.slice.js: OK
 compat-table/es6/well-known.species.Array.splice.js: OK
 compat-table/es6/well-known.species.Promise.then.js: OK
-compat-table/es6/well-known.species.RegExp.split.js: failed: Exception in FunctionInfo testCode, block @0 opcode 32
+compat-table/es6/well-known.species.RegExp.split.js: NotImplementedError: An operation is not implemented.
 compat-table/es6/well-known.species.js: OK
 compat-table/es6/well-known.split.js: OK
 compat-table/es6/well-known.toPrimitive.js: OK
@@ -1189,7 +1189,7 @@ compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
 compat-table/es6/well-known.toStringTag.new-builtins.js: OK
-compat-table/es6/well-known.unscopables.js: SyntaxError: SyntaxError: unsupported feature: with statements
+compat-table/es6/well-known.unscopables.js: SyntaxError: unsupported feature: with statements
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
@@ -1200,7 +1200,7 @@ compat-table/es2016/exponentiation.unary-negation-error.js: failed
 compat-table/es2016/misc.Proxy-Array-includes.js: failed
 compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: failed
-compat-table/es2016/misc.generator-throw-inner.js: failed: exception: undefined
+compat-table/es2016/misc.generator-throw-inner.js: exception: undefined
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: OK
 compat-table/es2016/misc.nested-rest-destructuring-params.js: OK
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: OK
@@ -1218,7 +1218,7 @@ compat-table/es2017/Atomics.wait.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Atomics.xor.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Object.entries.js: OK
 compat-table/es2017/Object.getOwnPropertyDescriptors.js: OK
-compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: failed: Exception in FunctionInfo testCode, block @0 opcode 17
+compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Exception in FunctionInfo testCode, block @0 opcode 17; Exception in FunctionInfo Object.getOwnPropertyDescriptors.no-undefined.js, block @2 opcode 2; Uncaught exception: NullPointerException
 compat-table/es2017/Object.values.js: OK
 compat-table/es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: "SharedArrayBuffer" is not defined
 compat-table/es2017/SharedArrayBuffer.js: failed
@@ -1247,23 +1247,23 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: SyntaxError: expected ;, but found )
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: expected ;, but found )
 compat-table/es2017/async.Symbol.toStringTag.js: OK
-compat-table/es2017/async.arrow-in-class.js: SyntaxError: SyntaxError: expected function, but found (
-compat-table/es2017/async.arrow.js: SyntaxError: SyntaxError: expected function, but found (
-compat-table/es2017/async.await-non-promise.js: failed: Exception in FunctionInfo <anonymous>:45, block @2 opcode 0
-compat-table/es2017/async.await-rejection.js: failed: Exception in FunctionInfo <anonymous>:45, block @3 opcode 3
-compat-table/es2017/async.await.js: failed: Exception in FunctionInfo <anonymous>:45, block @1 opcode 3
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: expected function, but found (
+compat-table/es2017/async.arrow.js: SyntaxError: expected function, but found (
+compat-table/es2017/async.await-non-promise.js: crashed: Exception in thread "main" java.lang.NullPointerException
+compat-table/es2017/async.await-rejection.js: crashed: Exception in thread "main" java.lang.NullPointerException
+compat-table/es2017/async.await.js: crashed: Exception in thread "main" java.lang.NullPointerException
 compat-table/es2017/async.constructor.js: OK
-compat-table/es2017/async.methods-class.js: MissingOK
-compat-table/es2017/async.methods-object.js: SyntaxError: SyntaxError: unexpected token "identifier"
+compat-table/es2017/async.methods-class.js: failed
+compat-table/es2017/async.methods-object.js: SyntaxError: unexpected token "identifier"
 compat-table/es2017/async.must-await-value.js: OK
-compat-table/es2017/async.no-await-in-params.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
-compat-table/es2017/async.no-line-break.js: failed: Exception in FunctionInfo testCode, block @2 opcode 3
+compat-table/es2017/async.no-await-in-params.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo async.no-await-in-params.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one el...
+compat-table/es2017/async.no-line-break.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo async.no-line-break.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one element...
 compat-table/es2017/async.no-prototype.js: OK
 compat-table/es2017/async.prototype-chain.js: OK
 compat-table/es2017/async.return.js: OK
-compat-table/es2017/async.throw.js: failed: exception: foo
+compat-table/es2017/async.throw.js: exception: foo
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: TypeError: cannot call value undefined
 compat-table/es2017/trailing-comma.arguments.js: OK
@@ -1271,25 +1271,25 @@ compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
 compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
-compat-table/es2018/async-iterators.for-await-of.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/es2018/async-iterators.generators.js: failed: Exception in FunctionInfo testCode, block @0 opcode 1
+compat-table/es2018/async-iterators.for-await-of.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/es2018/async-iterators.generators.js: NotImplementedError: An operation is not implemented: Not yet implemented
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
-compat-table/es2018/misc.template-literal-revision.js: SyntaxError: SyntaxError: expected ;, but found template literal
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: expected ;, but found template literal
 compat-table/es2018/object-rest.js: OK
-compat-table/es2018/object-spread.js: failed: kotlin.NotImplementedError: An operation is not implemented.
+compat-table/es2018/object-spread.js: NotImplementedError: An operation is not implemented.
 compat-table/es2018/regex.flags.s.js: OK
 compat-table/es2018/regex.lookbehind.js: failed
 compat-table/es2018/regex.named-capture-groups.js: OK
 compat-table/es2018/regex.unicode-property-escapes.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: SyntaxError: Unknown unicode value "Extended_Pictographic"
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Unknown unicode value "Extended_Pictographic"
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: SyntaxError: Unknown unicode value "Emoji"
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: SyntaxError: Unknown unicode value "Emoji"
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: SyntaxError: Unknown unicode value "Emoji"
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: SyntaxError: Unknown unicode value "Unified_Ideograph"
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: SyntaxError: Unknown unicode value "Kawi"
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: SyntaxError: Unknown unicode value "Todhri"
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: SyntaxError: Unknown unicode value "Sidetic"
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: Unknown unicode value "Emoji"
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: Unknown unicode value "Emoji"
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: Unknown unicode value "Emoji"
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: Unknown unicode value "Unified_Ideograph"
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Unknown unicode value "Kawi"
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Unknown unicode value "Todhri"
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Unknown unicode value "Sidetic"
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1324,7 +1324,7 @@ compat-table/es2020/DataView.prototype.getBigInt64.js: OK
 compat-table/es2020/DataView.prototype.getBigUint64.js: OK
 compat-table/es2020/Promise.allSettled.js: OK
 compat-table/es2020/String.prototype.matchAll.js: TypeError: cannot call value undefined
-compat-table/es2020/String.prototype.matchAll.throws-non-global.js: SyntaxError: SyntaxError: expected }, but found .
+compat-table/es2020/String.prototype.matchAll.throws-non-global.js: SyntaxError: expected }, but found .
 compat-table/es2020/globalThis.descriptor.js: OK
 compat-table/es2020/globalThis.js: OK
 compat-table/es2020/nullish-coalescing.js: OK
@@ -1332,14 +1332,14 @@ compat-table/es2020/optional-chaining.bracket.js: OK
 compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
-compat-table/es2020/optional-chaining.spread-params.js: failed: com.reevajs.reeva.utils.ExpectationError: Expected block 10 to have initial stack height of 2, but found 1
+compat-table/es2020/optional-chaining.spread-params.js: ExpectationError: Expected block 10 to have initial stack height of 2, but found 1
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined
 compat-table/es2021/Promise.any.AggregateError.js: TypeError: cannot call value undefined
 compat-table/es2021/Promise.any.fulfillment.js: TypeError: cannot call value undefined
 compat-table/es2021/String.prototype.replaceAll.js: TypeError: cannot call value undefined
 compat-table/es2021/WeakRef.js: ReferenceError: "WeakRef" is not defined
 compat-table/es2021/logical-assignment.and.js: OK
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: SyntaxError: expected expression, but found }
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: expected expression, but found }
 compat-table/es2021/logical-assignment.and.short-circuit.js: OK
 compat-table/es2021/logical-assignment.nullish.js: OK
 compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed
@@ -1347,7 +1347,7 @@ compat-table/es2021/logical-assignment.nullish.short-circuit.js: OK
 compat-table/es2021/logical-assignment.or.js: OK
 compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed
 compat-table/es2021/logical-assignment.or.short-circuit.js: OK
-compat-table/es2021/numeric-separators.js: SyntaxError: SyntaxError: expected ;, but found identifier
+compat-table/es2021/numeric-separators.js: SyntaxError: expected ;, but found identifier
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: "AggregateError" is not defined
 compat-table/es2022/Error.cause.AggregateError.js: ReferenceError: "AggregateError" is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1372,20 +1372,20 @@ compat-table/es2022/at-method.TypedArray.js: OK
 compat-table/es2022/class-fields.computed-instance.js: OK
 compat-table/es2022/class-fields.computed-static.js: OK
 compat-table/es2022/class-fields.instance.parent-scope.js: OK
-compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-fields.private-instance.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-fields.private-static.js: SyntaxError: SyntaxError: unexpected token "#"
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-fields.private-static.js: SyntaxError: unexpected token "#"
 compat-table/es2022/class-fields.public-instance.js: OK
 compat-table/es2022/class-fields.public-static.js: OK
 compat-table/es2022/class-fields.static.define.js: failed
-compat-table/es2022/class-methods.private-accessor.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-methods.private-instance.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-methods.private-static.js: SyntaxError: SyntaxError: unexpected token "#"
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: SyntaxError: unexpected token "{"
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: SyntaxError: unexpected token "#"
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-methods.private-static.js: SyntaxError: unexpected token "#"
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: unexpected token "{"
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: unexpected token "#"
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: invalid RegExp flag "d"
 compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: RegExp.prototype.flags called on incompatible object
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: cannot call value undefined
@@ -1397,7 +1397,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: cannot call value undefi
 compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: cannot call value undefined
 compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: cannot call value undefined
 compat-table/es2023/TypedArray.prototype.with.js: TypeError: cannot call value undefined
-compat-table/es2023/hashbang.js: SyntaxError: SyntaxError: unexpected token "#"
+compat-table/es2023/hashbang.js: SyntaxError: unexpected token "#"
 compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: cannot call value undefined
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: cannot call value undefined
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: cannot call value undefined
@@ -1406,7 +1406,7 @@ compat-table/es2024/Object.groupBy.js: TypeError: cannot call value undefined
 compat-table/es2024/Promise.withResolvers.js: TypeError: cannot call value undefined
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: invalid RegExp flag "v"
 compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: invalid RegExp flag "v"
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: SyntaxError: Character class range is out of order: }--
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Character class range is out of order: }--
 compat-table/es2024/regex.flags.v.shows-in-flags.js: TypeError: RegExp.prototype.flags called on incompatible object
 compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: invalid RegExp flag "v"
 compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: invalid RegExp flag "v"
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: cannot call value u
 compat-table/es2025/Iterator.prototype.some.js: TypeError: cannot call value undefined
 compat-table/es2025/Iterator.prototype.take.js: TypeError: cannot call value undefined
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: cannot call value undefined
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: cannot call value undefined
 compat-table/es2025/Set.prototype.difference.js: TypeError: cannot call value undefined
 compat-table/es2025/Set.prototype.intersection.js: TypeError: cannot call value undefined
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: cannot call value un
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: cannot call value undefined
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: cannot call value undefined
 compat-table/es2025/Set.prototype.union.js: TypeError: cannot call value undefined
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: SyntaxError: Duplicate capturing group name "year"
-compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: SyntaxError: Unescaped "?"
-compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: SyntaxError: Unescaped "?"
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: SyntaxError: Unescaped "?"
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: Duplicate capturing group name "year"
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: Unescaped "?"
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: Unescaped "?"
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Unescaped "?"
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: failed
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1468,31 +1468,31 @@ compat-table/intl/Intl.prototype.js: ReferenceError: "Intl" is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: failed
-compat-table/next/Array.isTemplateObject.js: SyntaxError: SyntaxError: expected ), but found template literal
-compat-table/next/AsyncDisposableStack.js: SyntaxError: SyntaxError: unexpected token "["
+compat-table/next/Array.isTemplateObject.js: SyntaxError: expected ), but found template literal
+compat-table/next/AsyncDisposableStack.js: SyntaxError: unexpected token "["
 compat-table/next/AsyncIterator.extends.js: ReferenceError: "AsyncIterator" is not defined
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.from.iterable.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.from.iterator.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.instanceof.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
+compat-table/next/AsyncIterator.from.async-iterable.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.from.iterable.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.from.iterator.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.instanceof.js: NotImplementedError: An operation is not implemented: Not yet implemented
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.prototype.every.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
-compat-table/next/AsyncIterator.prototype.filter.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.prototype.find.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: Exception in FunctionInfo testCode, block @0 opcode 3
-compat-table/next/AsyncIterator.prototype.map.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
-compat-table/next/AsyncIterator.prototype.some.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
-compat-table/next/AsyncIterator.prototype.take.js: failed: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: Exception in FunctionInfo testCode, block @0 opcode 0
+compat-table/next/AsyncIterator.prototype.drop.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.prototype.every.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/next/AsyncIterator.prototype.filter.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.prototype.find.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/next/AsyncIterator.prototype.flatMap.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.prototype.forEach.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/next/AsyncIterator.prototype.map.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.prototype.reduce.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/next/AsyncIterator.prototype.some.js: NotImplementedError: An operation is not implemented: Not yet implemented
+compat-table/next/AsyncIterator.prototype.take.js: Exception in thread "main" kotlin.NotImplementedError: An operation is not implemented.; at com.reevajs.reeva.parsing.Parser.parseNormalForAndForEachStatement(Parser.kt:1080); at com.reevajs.reeva.par...
+compat-table/next/AsyncIterator.prototype.toArray.js: NotImplementedError: An operation is not implemented: Not yet implemented
 compat-table/next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined
 compat-table/next/Map.prototype.upsert.js: TypeError: cannot call value undefined
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: 11:      var err3 = new Error();
+compat-table/next/SuppressedError.js: SyntaxError: expected ;, but found identifier
 compat-table/next/Uint8Array.fromBase64.js: TypeError: cannot call value undefined
 compat-table/next/Uint8Array.fromHex.js: TypeError: cannot call value undefined
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: cannot call value undefined
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: cannot call value undefin
 compat-table/next/Uint8Array.toBase64.js: TypeError: cannot call value undefined
 compat-table/next/Uint8Array.toHex.js: TypeError: cannot call value undefined
 compat-table/next/WeakMap.prototype.upsert.js: ReferenceError: "WeakMap" is not defined
-compat-table/next/await-using.for-of.js: SyntaxError: SyntaxError: unexpected token "["
-compat-table/next/await-using.js: SyntaxError: SyntaxError: unexpected token "["
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: invalid token "\u0040"
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: expected (, but found .
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: expected primary expression, but found throw
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: expected primary expression, but found throw
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: expected primary expression, but found throw
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: expected primary expression, but found throw
-compat-table/next/using.for-of.js: SyntaxError: SyntaxError: expected ;, but found identifier
-compat-table/next/using.js: SyntaxError: SyntaxError: expected ;, but found identifier
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token "["
+compat-table/next/await-using.js: SyntaxError: unexpected token "["
+compat-table/next/class-decorators.js: SyntaxError: invalid token "\u0040"
+compat-table/next/function.sent.js: SyntaxError: expected (, but found .
+compat-table/next/throw-expr.arrow.js: SyntaxError: expected primary expression, but found throw
+compat-table/next/throw-expr.conditional.js: SyntaxError: expected primary expression, but found throw
+compat-table/next/throw-expr.logical.js: SyntaxError: expected primary expression, but found throw
+compat-table/next/throw-expr.param-init.js: SyntaxError: expected primary expression, but found throw
+compat-table/next/using.for-of.js: SyntaxError: expected ;, but found identifier
+compat-table/next/using.js: SyntaxError: expected ;, but found identifier

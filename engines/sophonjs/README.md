@@ -12,66 +12,70 @@ Small footprint embedded ES5 engine.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 84%</summary><ul>
+<details><summary>ES1-ES5: 80%</summary><ul>
 <li>ES1: 93%<pre>
-<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: exception TypeError:Value is not an clousre
-<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: exception TypeError:Value is not an clousre
-<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: exception TypeError:Value is not an clousre
-<a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: LOG: es1/annex-b.global.escape.js: failed
-<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: LOG: es1/annex-b.global.unescape.js: failed
-<a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: LOG: es1/annex-b.literals.string.octal.js: failed
-<a href="../../conformance/es1/comma.js">comma.js</a>: LOG: es1/comma.js: (m++, m++, m) failed LOG: es1/comma.js: failed
-<a href="../../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: timeout
-<a href="../../conformance/es1/conversions.ToString.js">conversions.ToString.js</a>: LOG: es1/conversions.ToString.js: 3.14 failed LOG: es1/conversions.ToString.js: 1e21 failed LOG: es1/conversions.ToString.js: 1e-7 failed LOG: es1/conversions.ToString.js: failed
-<a href="../../conformance/es1/conversions.js">conversions.js</a>: LOG: es1/conversions.js: 123 != '0123' LOG: es1/conversions.js: 123.0 != '0123' LOG: es1/conversions.js: failed
-<a href="../../conformance/es1/global.isFinite.js">global.isFinite.js</a>: LOG: es1/global.isFinite.js: isFinite(0/0) failed LOG: es1/global.isFinite.js: failed
+<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: failed
+<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: failed
+<a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: failed
+<a href="../../conformance/es1/comma.js">comma.js</a>: (m++, m++, m) failed
+<a href="../../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: timeout: &gt;10s
+<a href="../../conformance/es1/conversions.ToString.js">conversions.ToString.js</a>: 3.14 failed; 1e21 failed; 1e-7 failed
+<a href="../../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 123.0 != '0123'
+<a href="../../conformance/es1/global.isFinite.js">global.isFinite.js</a>: isFinite(0/0) failed
 </pre></li>
-<li>ES3: 77%, <b>1 crash</b><pre>
-<a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: LOG: es3/Array.prototype.concat.js: concat two arrays failed LOG: es3/Array.prototype.concat.js: concat mixed array and non-array failed LOG: es3/Array.prototype.concat.js: failed
-<a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: LOG: es3/Array.prototype.splice.js: delete elements failed LOG: es3/Array.prototype.splice.js: delete and insert failed LOG: es3/Array.prototype.splice.js: insert without delete failed LOG: es3/Array.prototype.splice.js: negative start failed LOG: es3/Array.prototype.splice.js: splice on empty array
-<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: exception TypeError:Value is not an array
-<a href="../../conformance/es3/Error.prototype.constructor.js">Error.prototype.constructor.js</a>: LOG: es3/Error.prototype.constructor.js: failed
-<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: LOG: es3/Error.prototype.message.js: failed
-<a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: LOG: es3/Error.prototype.name.js: failed
-<a href="../../conformance/es3/Math.max.variadic.js">Math.max.variadic.js</a>: LOG: es3/Math.max.variadic.js: max() with NaN failed LOG: es3/Math.max.variadic.js: failed
-<a href="../../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: LOG: es3/Math.min.variadic.js: min() with NaN failed LOG: es3/Math.min.variadic.js: failed
-<a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: exception RangeError:Fraction should be in 0 ~ 20 LOG: es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws exception RangeError:Fraction should be in 0 ~ 20 LOG: es3/Number.prototype.toExponential.edge-cases.js: Infinity.toExponential(Infinity) throws LOG: es3/Number
-<a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: LOG: es3/Number.prototype.toExponential.js: toExponential(2) failed LOG: es3/Number.prototype.toExponential.js: negative number failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: LOG: es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e1') LOG: es3/Number.prototype.toExponential.rounding.js: (12345).toExponential(3) != '1.235e+4' (got: '1.234e4') LOG: es3/Number.prototype.toExponential.rounding.js: (1.25).toExponential(1) != '1.26e+0' (go
-<a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: LOG: es3/Number.prototype.toFixed.js: toFixed(2) failed LOG: es3/Number.prototype.toFixed.js: negative number failed LOG: es3/Number.prototype.toFixed.js: large number precision failed LOG: es3/Number.prototype.toFixed.js: rounding failed LOG: es3/Number.prototype.toFixed.js: failed
-<a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: LOG: es3/Number.prototype.toPrecision.js: toPrecision(5) fixed notation failed LOG: es3/Number.prototype.toPrecision.js: toPrecision() undefined arg failed
-<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: exception TypeError:Value is not an clousre
-<a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: LOG: es3/String.prototype.split.bugs.js: '.'.split(/(.?)(.?)/).length !== 4 LOG: es3/String.prototype.split.bugs.js: ''.split(/.?/).length !== 0 LOG: es3/String.prototype.split.bugs.js: '.'.split(/()()/).length !== 1 LOG: es3/String.prototype.split.bugs.js: failed
-<a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: LOG: es3/String.prototype.split.regex.js: split with capturing group failed LOG: es3/String.prototype.split.regex.js: failed
+<li>ES3: 74%, <b>1 crash</b><pre>
+<a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: concat two arrays failed; concat mixed array and non-array failed
+<a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: delete elements failed; delete and insert failed; insert without delete failed; negative start failed; splice on empty array failed
+<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es3/Error.prototype.constructor.js">Error.prototype.constructor.js</a>: failed
+<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
+<a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: failed
+<a href="../../conformance/es3/Math.max.variadic.js">Math.max.variadic.js</a>: max() with NaN failed
+<a href="../../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: min() with NaN failed
+<a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: RangeError: Fraction should be in 0 ~ 20
+<a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: timeout: &gt;10s
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e0'); (1.255).toExponential(2) != '1.25e+0', got '...
+<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: RangeError: Fraction should be in 0 ~ 20
+<a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: toFixed(2) failed; negative number failed; large number precision failed; rounding failed
+<a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: timeout: &gt;10s
+<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: '.'.split(/(.?)(.?)/).length !== 4; ''.split(/.?/).length !== 0; '.'.split(/()()/).length !== 1
 ...
 </pre></li>
-<li>ES5: 76%<pre>
-<a href="../../conformance/es5/Date.now.js">Date.now.js</a>: LOG: es5/Date.now.js: Date.now not a function exception TypeError:Value is not an clousre
-<a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: LOG: es5/Date.prototype.toISOString.js: invalid date does not throw RangeError LOG: es5/Date.prototype.toISOString.js: failed
-<a href="../../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: LOG: es5/Date.prototype.toJSON.js: invalid date does not return null LOG: es5/Date.prototype.toJSON.js: failed
-<a href="../../conformance/es5/Function.prototype.apply.array-like.js">Function.prototype.apply.array-like.js</a>: exception TypeError:Value is not an array LOG: es5/Function.prototype.apply.array-like.js: array-like object not accepted LOG: es5/Function.prototype.apply.array-like.js: failed
-<a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: LOG: es5/Function.prototype.bind.js: argument binding failed LOG: es5/Function.prototype.bind.js: length property incorrect LOG: es5/Function.prototype.bind.js: bound constructor failed LOG: es5/Function.prototype.bind.js: non-callable does not throw TypeError LOG: es5/Function.prototype.bind.js: fa
-<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: exception SyntaxError:Parse JSON error
-<a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: exception TypeError:Structure is cyclical LOG: es5/JSON.stringify.js: failed to drop undefined/function values LOG: es5/JSON.stringify.js: undefined/function values in array not converted to null LOG: es5/JSON.stringify.js: control char escape failed LOG: es5/JSON.stringify.js: undefined should retu
-<a href="../../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: LOG: es5/JSON.stringify.space.js: space parameter failed LOG: es5/JSON.stringify.space.js: failed
-<a href="../../conformance/es5/Object.create.js">Object.create.js</a>: exception TypeError:Value is not an object
-<a href="../../conformance/es5/Object.keys.js">Object.keys.js</a>: LOG: es5/Object.keys.js: basic keys failed LOG: es5/Object.keys.js: failed
-<a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: LOG: es5/global.Infinity.immutable.js: Infinity is not a number after assignment LOG: es5/global.Infinity.immutable.js: Infinity not positive infinity after assignment LOG: es5/global.Infinity.immutable.js: failed
-<a href="../../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: LOG: es5/global.NaN.immutable.js: NaN is not a number after assignment LOG: es5/global.NaN.immutable.js: NaN === NaN after assignment LOG: es5/global.NaN.immutable.js: failed
-<a href="../../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: LOG: es5/global.parseInt.no-octal.js: parseInt('010') !== 10 LOG: es5/global.parseInt.no-octal.js: parseInt('0100') !== 100 LOG: es5/global.parseInt.no-octal.js: parseInt('077') !== 77 LOG: es5/global.parseInt.no-octal.js: failed
-<a href="../../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: LOG: es5/global.undefined.immutable.js: undefined is not undefined after assignment LOG: es5/global.undefined.immutable.js: failed
-<a href="../../conformance/es5/literals.object.trailing-comma.js">literals.object.trailing-comma.js</a>: Error: 9.21: parse error, unexpected '}', expect "if" Error: 16.24: parse error, unexpected '}', expect "if" Error: 23.24: parse error, unexpected '}', expect "if" exception SyntaxError:Syntax error
-<a href="../../conformance/es5/strict.js">strict.js</a>: exception ReferenceError:Unresolved reference LOG: es5/strict.js: failed
-<a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: exception SyntaxError:Cannot delete binding in strict mode LOG: es5/strict.no-delete-bindings.js: failed
-<a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: Error: 1.5-8: "eval" cannot be a variant name Error: 1.9: parse error, unexpected ';', expect '=' exception SyntaxError:Syntax error Error: 1.5-13: "arguments" cannot be a variant name Error: 1.14: parse error, unexpected ';', expect '=' exception SyntaxError:Syntax error Error: 1.11-14: "eval" cann
+<li>ES5: 58%<pre>
+<a href="../../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es5/Date.now.js">Date.now.js</a>: TypeError: Value is not an clousre
+<a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: invalid date does not throw RangeError
+<a href="../../conformance/es5/Date.prototype.toJSON.js">Date.prototype.toJSON.js</a>: invalid date does not return null
+<a href="../../conformance/es5/Function.prototype.apply.array-like.js">Function.prototype.apply.array-like.js</a>: TypeError: Value is not an array
+<a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: argument binding failed; length property incorrect; bound constructor failed; non-callable does not throw TypeError
+<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: SyntaxError: Parse JSON error
+<a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: TypeError: Structure is cyclical
+<a href="../../conformance/es5/JSON.stringify.space.js">JSON.stringify.space.js</a>: space parameter failed
+<a href="../../conformance/es5/Object.create.js">Object.create.js</a>: TypeError: Value is not an object
+<a href="../../conformance/es5/Object.keys.js">Object.keys.js</a>: basic keys failed
+<a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+<a href="../../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: NaN is not a number after assignment; NaN === NaN after assignment
+<a href="../../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+<a href="../../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: undefined is not undefined after assignment
+<a href="../../conformance/es5/literals.object.trailing-comma.js">literals.object.trailing-comma.js</a>: SyntaxError
+<a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: ReferenceError: Binding has not been defined
+<a href="../../conformance/es5/strict.js">strict.js</a>: ReferenceError: Unresolved reference
+<a href="../../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: TypeError: "callee" cannot be used in strict mode
+<a href="../../conformance/es5/strict.no-arguments-caller.js">strict.no-arguments-caller.js</a>: TypeError: "caller" cannot be used in strict mode
+<a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: TypeError: Property is not writable; Object is not extensible; Set function is undefined; Cannot reset the function name
+...
 </pre></li>
 </ul></details>
 

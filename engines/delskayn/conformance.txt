@@ -1,7 +1,7 @@
-Metadata: {"arch":"arm64","binary_sha256":"013d3b77eb2080a436b8d3ad2467b68afc936ecb1f7c608ce896af5be5e71fa0","binary_size":1116432,"console_log":"console.log","engine":"delskayn","repository":"https://github.com/DelSkayn/toyjs.git","revision":"11f084fc09723785b4bdb0575509664ca8b05f49","revision_date":"2022-06-04","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
-es1/Array.js: failed: Array.length failed
+Metadata: {"arch":"arm64","binary_sha256":"013d3b77eb2080a436b8d3ad2467b68afc936ecb1f7c608ce896af5be5e71fa0","binary_size":1116432,"console_log":"console.log","engine":"delskayn","repository":"https://github.com/DelSkayn/toyjs.git","revision":"11f084fc09723785b4bdb0575509664ca8b05f49","revision_date":"2022-06-04","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
-es1/Array.length.js: failed: length > max index failed
+es1/Array.length.js: length > max index failed
 es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/Array.prototype.join.js: TypeError: Uncaught TypeError: tried to call non function value
@@ -9,11 +9,11 @@ es1/Array.prototype.reverse.generic.js: TypeError: Uncaught TypeError: tried to 
 es1/Array.prototype.reverse.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/Array.prototype.sort.generic.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/Array.prototype.sort.js: TypeError: Uncaught TypeError: tried to call non function value
-es1/Array.prototype.toString.js: failed: numeric array toString failed
-es1/Boolean.js: failed: Boolean(true) failed
+es1/Array.prototype.toString.js: numeric array toString failed; string array toString failed; empty array toString failed
+es1/Boolean.js: Boolean(true) failed; Boolean(false) failed
 es1/Boolean.prototype.constructor.js: OK
-es1/Boolean.prototype.toString.js: failed: toString(true) failed
-es1/Boolean.prototype.valueOf.js: failed: valueOf(true) failed
+es1/Boolean.prototype.toString.js: toString(true) failed; toString(false) failed
+es1/Boolean.prototype.valueOf.js: valueOf(true) failed; valueOf(false) failed
 es1/Date.diff.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/Date.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/Date.prototype.constructor.js: TypeError: Uncaught TypeError: undefined has no properties
@@ -101,10 +101,10 @@ es1/Object.prototype.valueOf.js: TypeError: Uncaught TypeError: tried to call no
 es1/String.fromCharCode.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/String.generics.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/String.js: OK
-es1/String.length.js: failed: string length failed
+es1/String.length.js: string length failed; empty string length failed; String object length failed; single char length failed
 es1/String.prototype.charAt.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/String.prototype.charCodeAt.js: TypeError: Uncaught TypeError: tried to call non function value
-es1/String.prototype.constructor.js: failed: String.prototype.constructor failed
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
 es1/String.prototype.indexOf.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/String.prototype.lastIndexOf.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/String.prototype.split.js: TypeError: Uncaught TypeError: tried to call non function value
@@ -118,14 +118,14 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: Uncaught TypeError: tried to c
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/annex-b.global.escape.js: TypeError: Uncaught TypeError: tried to call non function value
 es1/annex-b.global.unescape.js: TypeError: Uncaught TypeError: tried to call non function value
-es1/annex-b.literals.octal.js: failed: 0755 failed
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: SyntaxError: Uncaught SyntaxError: error: invalid unicode escape code
 es1/arguments.callee.js: TypeError: Uncaught TypeError: undefined has no properties
 es1/arguments.js: TypeError: Uncaught TypeError: undefined has no properties
 es1/asi.eval.js: OK
 es1/asi.js: SyntaxError: Uncaught SyntaxError: error: redeclared variable
 es1/assignment.bitwise.js: OK
-es1/assignment.js: failed: thread 'main' panicked at 'not yet implemented: AssignOperator: Modulo', /src/crates/compiler/src/expr.rs:727:22
+es1/assignment.js: thread 'main' panicked at 'not yet implemented: AssignOperator: Modulo', /src/crates/compiler/src/expr.rs:727:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es1/assignment.ltr.js: OK
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
@@ -137,17 +137,17 @@ es1/comma.js: OK
 es1/comments.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Mul)
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: failed: Boolean(true) failed
+es1/conversions.ToBoolean.js: Boolean(true) failed; Boolean(false) failed
 es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: TypeError: Uncaught TypeError: tried to call non function value
-es1/conversions.ToNumber.js: failed: '' failed
+es1/conversions.ToNumber.js: '' failed; ' 456 ' failed; '0xff' failed
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: failed: Infinity failed
+es1/conversions.ToString.js: Infinity failed; -Infinity failed; 1e21 failed; 1e-7 failed
 es1/conversions.ToUint32.js: OK
-es1/conversions.js: failed
-es1/equals.js: failed
+es1/conversions.js: 0 != ''; false != ''; 123 - '' != 123; 123 * '' != 0
+es1/equals.js: '123' == '0123'
 es1/eval.js: OK
-es1/for-in.js: failed: Uncaught RuntimeError: invalid instruction
+es1/for-in.js: Uncaught RuntimeError: invalid instruction
 es1/for.js: OK
 es1/functions.js: OK
 es1/global.Infinity.js: OK
@@ -173,7 +173,7 @@ es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
 es1/postfix.decrement.js: OK
 es1/postfix.increment.js: OK
-es1/prefix.js: failed: prefix decrement failed
+es1/prefix.js: prefix decrement failed; prefix decrement to negative failed
 es1/relational.js: OK
 es1/return.js: OK
 es1/return.typeof.js: OK
@@ -182,8 +182,8 @@ es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: OK
 es1/types.js: OK
-es1/unary.decrement.js: failed: prefix decrement failed
-es1/unary.delete.js: failed: Uncaught RuntimeError: invalid instruction
+es1/unary.decrement.js: prefix decrement failed; decrement without assignment failed
+es1/unary.delete.js: Uncaught RuntimeError: invalid instruction
 es1/unary.delete.var.js: failed
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
@@ -226,7 +226,7 @@ es3/Function.prototype.apply.js: TypeError: Uncaught TypeError: tried to call no
 es3/Function.prototype.call.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/Math.max.variadic.js: TypeError: Uncaught TypeError: undefined has no properties
 es3/Math.min.variadic.js: TypeError: Uncaught TypeError: undefined has no properties
-es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: inf es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; inf es3/Number.prototype.toExponential.edge-cases.js: Infinity.toExponential(Infinity) throws
 es3/Number.prototype.toExponential.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/Number.prototype.toExponential.rounding.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/Number.prototype.toExponential.throws-infinity.js: TypeError: Uncaught TypeError: invalid `instanceof` operand
@@ -271,25 +271,25 @@ es3/annex-b.String.prototype.substr.js: TypeError: Uncaught TypeError: tried to 
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: failed: constructor failed
-es3/global.RangeError.js: failed: constructor failed
-es3/global.RangeError.thrown.js: failed: no exception for new Array with negative length
-es3/global.ReferenceError.js: failed: constructor failed
-es3/global.ReferenceError.thrown.js: failed: no exception for undeclared variable
+es3/global.EvalError.js: TypeError: Uncaught TypeError: undefined has no properties
+es3/global.RangeError.js: TypeError: Uncaught TypeError: undefined has no properties
+es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length >= 2^32; no exception for negative array length; no exceptio...
+es3/global.ReferenceError.js: TypeError: Uncaught TypeError: undefined has no properties
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: failed: thread 'main' panicked at 'byte index 18 is out of bounds of `var s = 'unclosed`', library/core/src/str/mod.rs:107:9
+es3/global.SyntaxError.thrown.js: thread 'main' panicked at 'byte index 18 is out of bounds of `var s = 'unclosed`', library/core/src/str/mod.rs:107:9; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: wrong exception for in number
-es3/global.URIError.js: failed: constructor failed
-es3/global.URIError.thrown.js: failed: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9
+es3/global.TypeError.thrown.js: wrong exception for in number; wrong exception for in null
+es3/global.URIError.js: TypeError: Uncaught TypeError: undefined has no properties
+es3/global.URIError.thrown.js: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es3/global.decodeURIComponent.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/global.decodeURI.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/global.encodeURIComponent.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/global.encodeURI.js: TypeError: Uncaught TypeError: tried to call non function value
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: failed: thread 'main' panicked at 'byte index 127 is not a char boundary; it is inside 'ж' (bytes 126..128) of `// ES3: 7.6 Identifiers
+es3/identifiers.unicode.js: thread 'main' panicked at 'byte index 127 is not a char boundary; it is inside 'ж' (bytes 126..128) of `// ES3: 7.6 Identifiers; //; // SPDX-FileCopyrightText: 2025 Ivan Krasilnikov; // SPDX-License-I...
 es3/instanceof.js: TypeError: Uncaught TypeError: right hand instanceof operand is not a function
-es3/in.js: failed: Uncaught RuntimeError: invalid instruction
+es3/in.js: Uncaught RuntimeError: invalid instruction
 es3/labelled.break.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
 es3/labelled.continue.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
 es3/labelled.statements.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
@@ -301,7 +301,7 @@ es3/literals.object.hex.js: SyntaxError: Uncaught SyntaxError: error: unexpected
 es3/literals.object.int.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
 es3/literals.object.js: OK
 es3/literals.object.str.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
-es3/literals.object.unicode.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es3/literals.object.unicode.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es3/literals.regex.ambiguous.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 es3/literals.regex.empty.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 es3/literals.regex.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
@@ -338,12 +338,12 @@ es3/regex.quantifier.plus.js: SyntaxError: Uncaught SyntaxError: error: parser e
 es3/regex.quantifier.range.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 es3/regex.quantifier.star.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 es3/regex.word-boundary.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
-es3/source.line-terminators.js: failed: thread 'main' panicked at 'byte index 327 is not a char boundary; it is inside '\u{2028}' (bytes 326..329) of `// ES3: 7.3 Line Terminators
-es3/source.whitespace.js: failed: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9
-es3/source.whitespace.unicode.js: failed: thread 'main' panicked at 'byte index 188 is not a char boundary; it is inside '\u{2000}' (bytes 187..190) of `// ES3: 7.2 White Space
+es3/source.line-terminators.js: thread 'main' panicked at 'byte index 327 is not a char boundary; it is inside '\u{2028}' (bytes 326..329) of `// ES3: 7.3 Line Terminators; //; // ES3 recognizes \u2028 (Line separator) and \u2029 (P...
+es3/source.whitespace.js: thread 'main' panicked at 'assertion failed: span.is_within(line_span)', /src/crates/common/src/source.rs:168:9; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+es3/source.whitespace.unicode.js: thread 'main' panicked at 'byte index 188 is not a char boundary; it is inside '\u{2000}' (bytes 187..190) of `// ES3: 7.2 White Space; //; // ES3 recognizes Unicode category "Zs" space separators as ...
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: failed: Uncaught 5
+es3/try-catch-finally.js: Uncaught 5
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/Array.prototype.every.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
@@ -363,16 +363,16 @@ es5/Date.prototype.toJSON.js: TypeError: Uncaught TypeError: undefined has no pr
 es5/Function.prototype-not-enumerable.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/Function.prototype.apply.array-like.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
 es5/Function.prototype.bind.js: TypeError: Uncaught TypeError: undefined has no properties
-es5/JSON.js: failed: typeof JSON !== 'object'
-es5/JSON.parse.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/JSON.js: typeof JSON !== 'object'
+es5/JSON.parse.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es5/JSON.parse.reviver.js: TypeError: Uncaught TypeError: undefined has no properties
-es5/JSON.stringify.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/JSON.stringify.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es5/JSON.stringify.replacer.js: TypeError: Uncaught TypeError: undefined has no properties
 es5/JSON.stringify.space.js: TypeError: Uncaught TypeError: undefined has no properties
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
-es5/Object.freeze.js: failed: prevented addition failed
+es5/Object.freeze.js: prevented addition failed; Uncaught RuntimeError: invalid instruction
 es5/Object.getOwnPropertyDescriptor.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/Object.getOwnPropertyNames.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/Object.getPrototypeOf.js: OK
@@ -381,9 +381,9 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/Object.preventExtensions.js: TypeError: Uncaught TypeError: tried to call non function value
-es5/Object.property-shadowing.js: failed: Uncaught RuntimeError: invalid instruction
-es5/Object.seal.js: failed: prevented property addition failed
-es5/String.indexing.js: failed: test with variable failed
+es5/Object.property-shadowing.js: Uncaught RuntimeError: invalid instruction
+es5/Object.seal.js: prevented property addition failed; Uncaught RuntimeError: invalid instruction
+es5/String.indexing.js: 'foobar'[3] !== 'b'; test with variable failed
 es5/String.prototype.trim.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/arguments.toStringTag.js: TypeError: Uncaught TypeError: tried to call non function value
 es5/debugger.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Debugger)
@@ -397,12 +397,12 @@ es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'if' expected 'ident'
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
-es5/source.zero-width-chars.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+es5/source.zero-width-chars.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: TypeError: Uncaught TypeError: right hand instanceof operand is not a function
-es5/strict.no-arguments-caller.js: failed: Uncaught RuntimeError: invalid instruction
+es5/strict.no-arguments-caller.js: Uncaught RuntimeError: invalid instruction
 es5/strict.no-assignment-to-non-writable.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
@@ -414,11 +414,11 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: TypeError: Uncaught TypeError: right hand instanceof operand is not a function
 es5/strict.reserved-words.js: TypeError: Uncaught TypeError: tried to call non function value
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
 es5/strict.this-primitive-not-coerced.js: TypeError: Uncaught TypeError: tried to call non function value
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: TypeError: Uncaught TypeError: undefined has no properties
-es5/this.thrown-function.js: failed: Uncaught RuntimeError: invalid instruction
+es5/this.thrown-function.js: Uncaught RuntimeError: invalid instruction
 compat-table/es5/Array.isArray.js: failed
 compat-table/es5/Array.prototype.every.js: failed
 compat-table/es5/Array.prototype.filter.js: failed
@@ -468,21 +468,21 @@ compat-table/es5/literals.trailing-comma-object.js: OK
 compat-table/es5/misc.Arguments.toStringTag.js: TypeError: tried to call non function value
 compat-table/es5/misc.Function.apply.array-likes.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found ':' expected one of: [\n,;]
 compat-table/es5/misc.Function.prototype.non-enumerable.js: TypeError: tried to call non function value
-compat-table/es5/misc.enumerable-shadow.js: failed: RuntimeError: invalid instruction
+compat-table/es5/misc.enumerable-shadow.js: RuntimeError: invalid instruction
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
-compat-table/es5/misc.thrown-functions-this.js: failed: RuntimeError: invalid instruction
+compat-table/es5/misc.thrown-functions-this.js: RuntimeError: invalid instruction
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+compat-table/es5/misc.zero-width-identifiers.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es5/strict.arguments-callee-error.js: TypeError: right hand instanceof operand is not a function
-compat-table/es5/strict.arguments-caller-error.js: failed: RuntimeError: invalid instruction
+compat-table/es5/strict.arguments-caller-error.js: RuntimeError: invalid instruction
 compat-table/es5/strict.arguments-unmapped.js: TypeError: undefined has no properties
 compat-table/es5/strict.assignment-eval-arguments-error.js: TypeError: tried to call non function value
 compat-table/es5/strict.assignment-non-writable-error.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '(' expected '=>'
-compat-table/es5/strict.assignment-unresolvable-error.js: failed: RuntimeError: invalid instruction
-compat-table/es5/strict.delete-bindings-error.js: failed: RuntimeError: invalid instruction
+compat-table/es5/strict.assignment-unresolvable-error.js: RuntimeError: invalid instruction
+compat-table/es5/strict.delete-bindings-error.js: RuntimeError: invalid instruction
 compat-table/es5/strict.delete-non-configurable-error.js: TypeError: right hand instanceof operand is not a function
 compat-table/es5/strict.eval-arguments-bindings-error.js: TypeError: tried to call non function value
-compat-table/es5/strict.eval-no-bindings.js: failed: RuntimeError: invalid instruction
+compat-table/es5/strict.eval-no-bindings.js: RuntimeError: invalid instruction
 compat-table/es5/strict.function-caller-arguments-error.js: failed
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
 compat-table/es5/strict.legacy-octal-error.js: failed
@@ -577,7 +577,7 @@ compat-table/es6/Number.isNaN.js: failed
 compat-table/es6/Number.isSafeInteger.js: failed
 compat-table/es6/Number.parseFloat.js: TypeError: tried to call non function value
 compat-table/es6/Number.parseInt.js: TypeError: tried to call non function value
-compat-table/es6/Object.assign.js: failed: RuntimeError: invalid instruction
+compat-table/es6/Object.assign.js: RuntimeError: invalid instruction
 compat-table/es6/Object.getOwnPropertySymbols.js: TypeError: tried to call non function value
 compat-table/es6/Object.is.js: failed
 compat-table/es6/Object.setPrototypeOf.js: TypeError: tried to call non function value
@@ -598,8 +598,8 @@ compat-table/es6/Proxy.handler.construct.invariants.js: TypeError: tried to call
 compat-table/es6/Proxy.handler.construct.js: TypeError: tried to call non function value
 compat-table/es6/Proxy.handler.defineProperty.invariants.js: TypeError: tried to call non function value
 compat-table/es6/Proxy.handler.defineProperty.js: TypeError: tried to call non function value
-compat-table/es6/Proxy.handler.deleteProperty.invariants.js: failed: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(2))), Call([Prime(Variable(SymbolId(3))), Prime(Object([(Atom::String(58), Prime(Function(ScopeId(3), None, Params([], None), [Expr([Assign(Prime(Variable(SymbolId(1))), Assign, Prime(Literal(Boolean(true))))]), Return(Some([Prime(Literal(Boolean(true)))]))])))]))])), Dot(Atom::String(57))))', /src/crates/compiler/src/expr.rs:66:18
-compat-table/es6/Proxy.handler.deleteProperty.js: failed: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(3))), Call([Prime(Variable(SymbolId(1))), Prime(Object([(Atom::String(57), Prime(Function(ScopeId(2), None, Params([Single(SymbolId(4)), Single(SymbolId(5))], None), [Expr([Assign(Prime(Variable(SymbolId(2))), Assign, Binary(Binary(Prime(Variable(SymbolId(4))), StrictEqual, Prime(Variable(SymbolId(1)))), And, Binary(Prime(Variable(SymbolId(5))), StrictEqual, Prime(Literal(String(Atom::String(60)))))))])])))]))])), Dot(Atom::String(60))))', /src/crates/compiler/src/expr.rs:66:18
+compat-table/es6/Proxy.handler.deleteProperty.invariants.js: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(2))), Call([Prime(Variable(SymbolId(3))), Prime(Object([(Atom::String(58), P...
+compat-table/es6/Proxy.handler.deleteProperty.js: thread 'main' panicked at 'expression is not assignable: UnaryPrefix(New, UnaryPostfix(UnaryPostfix(Prime(Variable(SymbolId(3))), Call([Prime(Variable(SymbolId(1))), Prime(Object([(Atom::String(57), P...
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: TypeError: tried to call non function value
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: TypeError: tried to call non function value
 compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: TypeError: tried to call non function value
@@ -692,7 +692,7 @@ compat-table/es6/Symbol.no-coerce.js: TypeError: tried to call non function valu
 compat-table/es6/Symbol.no-new.js: TypeError: tried to call non function value
 compat-table/es6/Symbol.prototype.js: TypeError: tried to call non function value
 compat-table/es6/Symbol.typeof.js: TypeError: tried to call non function value
-compat-table/es6/WeakMap.accept-primitives.js: failed: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18
+compat-table/es6/WeakMap.accept-primitives.js: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18; note: run with `RUST_BACKTRACE=1` environment variable t...
 compat-table/es6/WeakMap.constructor-accepts-null.js: TypeError: tried to call non function value
 compat-table/es6/WeakMap.constructor-arguments.js: TypeError: tried to call non function value
 compat-table/es6/WeakMap.constructor-invokes-set.js: TypeError: undefined has no properties
@@ -704,7 +704,7 @@ compat-table/es6/WeakMap.no-clear.js: TypeError: undefined has no properties
 compat-table/es6/WeakMap.prototype-not-instance.js: TypeError: tried to call non function value
 compat-table/es6/WeakMap.prototype.delete.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(StrictEqual)
 compat-table/es6/WeakMap.prototype.set-returns-this.js: TypeError: tried to call non function value
-compat-table/es6/WeakSet.accept-primitives.js: failed: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18
+compat-table/es6/WeakSet.accept-primitives.js: thread 'main' panicked at 'expression is not assignable: Prime(Covered([Prime(Literal(Integer(1)))]))', /src/crates/compiler/src/expr.rs:66:18; note: run with `RUST_BACKTRACE=1` environment variable t...
 compat-table/es6/WeakSet.constructor-accepts-null.js: TypeError: tried to call non function value
 compat-table/es6/WeakSet.constructor-arguments.js: TypeError: tried to call non function value
 compat-table/es6/WeakSet.constructor-invokes-add.js: TypeError: undefined has no properties
@@ -739,7 +739,7 @@ compat-table/es6/annex-b.__proto__.Object.prototype.get.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: TypeError: tried to call non function value
 compat-table/es6/annex-b.__proto__.Object.prototype.set.js: TypeError: right hand instanceof operand is not a function
 compat-table/es6/annex-b.__proto__.literals.js: TypeError: right hand instanceof operand is not a function
-compat-table/es6/annex-b.__proto__.literals.multiple-error.js: failed: RuntimeError: invalid instruction
+compat-table/es6/annex-b.__proto__.literals.multiple-error.js: RuntimeError: invalid instruction
 compat-table/es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: DelimClose(Bracket)
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: TypeError: right hand instanceof operand is not a function
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Instanceof)
@@ -782,7 +782,7 @@ compat-table/es6/class.static-methods.js: SyntaxError: Uncaught SyntaxError: err
 compat-table/es6/class.string-keyed-methods.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: OK
-compat-table/es6/const.for-in.js: failed: RuntimeError: invalid instruction
+compat-table/es6/const.for-in.js: RuntimeError: invalid instruction
 compat-table/es6/const.for-loop.js: OK
 compat-table/es6/const.for-of.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
 compat-table/es6/const.no-redefine.js: OK
@@ -790,14 +790,14 @@ compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
 compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: OK
-compat-table/es6/const.strict.for-in.js: failed: RuntimeError: invalid instruction
+compat-table/es6/const.strict.for-in.js: RuntimeError: invalid instruction
 compat-table/es6/const.strict.for-loop.js: OK
 compat-table/es6/const.strict.for-of.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
 compat-table/es6/const.strict.no-redefine.js: OK
 compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
-compat-table/es6/const.strict.tdz.js: failed: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
-compat-table/es6/const.tdz.js: failed: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+compat-table/es6/const.strict.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/const.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es6/default-params.arguments.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
 compat-table/es6/default-params.basic.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: AssignOperator(Assign)
@@ -835,7 +835,7 @@ compat-table/es6/destructuring-decl.catch.js: OK
 compat-table/es6/destructuring-decl.computed-properties.js: OK
 compat-table/es6/destructuring-decl.defaults-tdz.js: failed
 compat-table/es6/destructuring-decl.defaults.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Comma
-compat-table/es6/destructuring-decl.for-in.js: failed: RuntimeError: invalid instruction
+compat-table/es6/destructuring-decl.for-in.js: RuntimeError: invalid instruction
 compat-table/es6/destructuring-decl.for-of.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'of' expected '='
 compat-table/es6/destructuring-decl.generator.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '*' expected '=>'
 compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'string' expected 'ident'
@@ -928,8 +928,8 @@ compat-table/es6/let.strict.for-iteration.js: TypeError: tried to call non funct
 compat-table/es6/let.strict.for-loop.js: OK
 compat-table/es6/let.strict.no-statement.js: OK
 compat-table/es6/let.strict.shadow.js: OK
-compat-table/es6/let.strict.tdz.js: failed: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
-compat-table/es6/let.tdz.js: failed: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25
+compat-table/es6/let.strict.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/let.tdz.js: thread 'main' panicked at 'index out of bounds: the len is 1 but the index is 1', crates/vm/src/realm/exec.rs:273:25; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es6/literals.binary.Number.js: failed
 compat-table/es6/literals.binary.js: OK
 compat-table/es6/literals.object.computed-accessors.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '[' expected ':'
@@ -1025,9 +1025,9 @@ compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: TypeError: tried to call non function value
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es6/misc.identifier-syntax.var-1.js: failed: thread 'main' panicked at 'byte index 8 is out of bounds of `var ⸯ`', library/core/src/str/mod.rs:107:9
-compat-table/es6/misc.identifier-syntax.var-2.js: failed: thread 'main' panicked at 'byte index 321 is not a char boundary; it is inside '𐋀' (bytes 320..324) of `// compat-table: ES6 > misc > Updated identifier syntax (small) > var 𐋀;
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/misc.identifier-syntax.var-1.js: thread 'main' panicked at 'byte index 8 is out of bounds of `var ⸯ`', library/core/src/str/mod.rs:107:9; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/misc.identifier-syntax.var-2.js: thread 'main' panicked at 'byte index 321 is not a char boundary; it is inside '𐋀' (bytes 320..324) of `// compat-table: ES6 > misc > Updated identifier syntax (small) > var 𐋀;; // spec: http://www.ec...
 compat-table/es6/misc.property-order.JSON.parse.js: TypeError: undefined has no properties
 compat-table/es6/misc.property-order.JSON.stringify.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
 compat-table/es6/misc.property-order.Object.assign.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'number' expected 'ident'
@@ -1103,11 +1103,11 @@ compat-table/es6/super.property-access.js: SyntaxError: Uncaught SyntaxError: er
 compat-table/es6/super.statement.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
 compat-table/es6/super.static-binding.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
 compat-table/es6/super.this-binding.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Keyword(Class)
-compat-table/es6/tail-calls.direct.js: failed: RuntimeError: exceeded max stack depth
+compat-table/es6/tail-calls.direct.js: RuntimeError: exceeded max stack depth
 compat-table/es6/tail-calls.mutual.js: TypeError: tried to call non function value
 compat-table/es6/template.basic.js: TypeError: tried to call non function value
 compat-table/es6/template.caching.js: TypeError: tried to call non function value
-compat-table/es6/template.escape-sequences.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+compat-table/es6/template.escape-sequences.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es6/template.frozen-array.js: OK
 compat-table/es6/template.line-break.js: TypeError: tried to call non function value
 compat-table/es6/template.permanent-caching.js: TypeError: tried to call non function value
@@ -1159,15 +1159,15 @@ compat-table/es6/typed-arrays.prototype.some.js: TypeError: undefined has no pro
 compat-table/es6/typed-arrays.prototype.sort.js: TypeError: undefined has no properties
 compat-table/es6/typed-arrays.prototype.subarray.js: TypeError: undefined has no properties
 compat-table/es6/typed-arrays.prototype.values.js: TypeError: undefined has no properties
-compat-table/es6/unicode-escapes.identifier.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es6/unicode-escapes.property-access.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es6/unicode-escapes.property-key.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es6/unicode-escapes.string.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+compat-table/es6/unicode-escapes.identifier.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/unicode-escapes.property-access.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/unicode-escapes.property-key.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es6/unicode-escapes.string.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es6/well-known.hasInstance.js: TypeError: undefined has no properties
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: TypeError: undefined has no properties
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
 compat-table/es6/well-known.iterator.arguments.js: TypeError: undefined has no properties
-compat-table/es6/well-known.iterator.js: failed: RuntimeError: invalid instruction
+compat-table/es6/well-known.iterator.js: RuntimeError: invalid instruction
 compat-table/es6/well-known.match.RegExp-constructor.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 compat-table/es6/well-known.match.String.endsWith.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 compat-table/es6/well-known.match.String.includes.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
@@ -1182,7 +1182,7 @@ compat-table/es6/well-known.species.Array.slice.js: TypeError: undefined has no 
 compat-table/es6/well-known.species.Array.splice.js: TypeError: undefined has no properties
 compat-table/es6/well-known.species.Promise.then.js: TypeError: tried to call non function value
 compat-table/es6/well-known.species.RegExp.split.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
-compat-table/es6/well-known.species.js: failed: RuntimeError: invalid instruction
+compat-table/es6/well-known.species.js: RuntimeError: invalid instruction
 compat-table/es6/well-known.split.js: TypeError: undefined has no properties
 compat-table/es6/well-known.toPrimitive.js: TypeError: undefined has no properties
 compat-table/es6/well-known.toStringTag.existing-builtins.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
@@ -1274,8 +1274,8 @@ compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: SyntaxErr
 compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
 compat-table/es2018/async-iterators.generators.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'function' expected one of: [\n,;]
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: TypeError: tried to call non function value
-compat-table/es2018/misc.template-literal-revision.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es2018/object-rest.js: failed: thread 'main' panicked at 'not yet implemented', /src/crates/compiler/src/stmt.rs:468:21
+compat-table/es2018/misc.template-literal-revision.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2018/object-rest.js: thread 'main' panicked at 'not yet implemented', /src/crates/compiler/src/stmt.rs:468:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es2018/object-spread.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '...' expected 'ident'
 compat-table/es2018/regex.flags.s.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 compat-table/es2018/regex.lookbehind.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
@@ -1307,8 +1307,8 @@ compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: Syntax
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: unexpected token: found 'class' expected '=>'
 compat-table/es2019/misc.Function-toString.computed-names.js: SyntaxError: unexpected token: found 'string' expected '=>'
 compat-table/es2019/misc.Function-toString.native-code.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
-compat-table/es2019/misc.JSON-stringify-well-formed.js: failed: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2019/misc.JSON-stringify-well-formed.js: thread 'main' panicked at 'not yet implemented: token \ ', crates/lexer/src/lib.rs:489:22; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: string not closed
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: string not closed
 compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
@@ -1328,11 +1328,11 @@ compat-table/es2020/String.prototype.matchAll.throws-non-global.js: SyntaxError:
 compat-table/es2020/globalThis.descriptor.js: TypeError: tried to call non function value
 compat-table/es2020/globalThis.js: TypeError: Uncaught TypeError: undefined has no properties
 compat-table/es2020/nullish-coalescing.js: OK
-compat-table/es2020/optional-chaining.bracket.js: failed: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
-compat-table/es2020/optional-chaining.function-call.js: failed: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
-compat-table/es2020/optional-chaining.method-call.js: failed: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
-compat-table/es2020/optional-chaining.property.js: failed: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
-compat-table/es2020/optional-chaining.spread-params.js: failed: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21
+compat-table/es2020/optional-chaining.bracket.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2020/optional-chaining.function-call.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2020/optional-chaining.method-call.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2020/optional-chaining.property.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+compat-table/es2020/optional-chaining.spread-params.js: thread 'main' panicked at 'not yet implemented: token ?.', crates/lexer/src/lib.rs:292:21; note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 compat-table/es2021/FinalizationRegistry.js: TypeError: tried to call non function value
 compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'catch' expected 'ident'
 compat-table/es2021/Promise.any.fulfillment.js: TypeError: undefined has no properties
@@ -1358,9 +1358,9 @@ compat-table/es2022/Error.cause.RangeError-prototype-lacks.js: TypeError: undefi
 compat-table/es2022/Error.cause.RangeError.js: TypeError: tried to call non function value
 compat-table/es2022/Error.cause.ReferenceError-prototype-lacks.js: TypeError: undefined has no properties
 compat-table/es2022/Error.cause.ReferenceError.js: TypeError: tried to call non function value
-compat-table/es2022/Error.cause.SyntaxError-prototype-lacks.js: failed: RuntimeError: invalid instruction
+compat-table/es2022/Error.cause.SyntaxError-prototype-lacks.js: RuntimeError: invalid instruction
 compat-table/es2022/Error.cause.SyntaxError.js: TypeError: tried to call non function value
-compat-table/es2022/Error.cause.TypeError-prototype-lacks.js: failed: RuntimeError: invalid instruction
+compat-table/es2022/Error.cause.TypeError-prototype-lacks.js: RuntimeError: invalid instruction
 compat-table/es2022/Error.cause.TypeError.js: TypeError: tried to call non function value
 compat-table/es2022/Error.cause.URIError-prototype-lacks.js: TypeError: undefined has no properties
 compat-table/es2022/Error.cause.URIError.js: TypeError: tried to call non function value
@@ -1489,7 +1489,7 @@ compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: Uncaught SyntaxE
 compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found 'function' expected ')'
 compat-table/next/DisposableStack.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '[' expected 'ident'
 compat-table/next/Map.prototype.upsert.js: TypeError: tried to call non function value
-compat-table/next/RegExp.1-9.js: failed: RuntimeError: invalid instruction
+compat-table/next/RegExp.1-9.js: RuntimeError: invalid instruction
 compat-table/next/RegExp.lastMatch.js: SyntaxError: Uncaught SyntaxError: error: parser encountered an unimplemented path in: crates/parser/src/prime.rs:99, Sorry! token: Operator(Div)
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Uncaught SyntaxError: error: unexpected token: found '_1' expected one of: [\n,;]

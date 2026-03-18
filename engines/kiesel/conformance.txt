@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"983e33623cd216022fc6658ed97b55a37501c4e7c850b40fdc42de7da6923ada","binary_size":13464416,"console_log":"console.log","engine":"kiesel","repository":"https://codeberg.org/kiesel-js/kiesel.git","revision":"7a082e2af389ca9b8f4f08d563a016ede9c8d18a","revision_date":"2026-03-03","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)","version":"0.1.0-dev+7a082e2af","zig":"0.15.2"}
+Metadata: {"arch":"arm64","binary_sha256":"8e9aa2b80c1ada6d7e866fbef065ae608ccb927637a56ad93c6c8a94823c6c30","binary_size":13471000,"console_log":"console.log","engine":"kiesel","repository":"https://codeberg.org/kiesel-js/kiesel.git","revision":"f3f46b745526238bc6ab785e8b56af3f8a8c5580","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)","version":"0.1.0-dev+f3f46b745","zig":"0.15.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -228,9 +228,9 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: large number precision failed
+es3/Number.prototype.toFixed.js: large number precision failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -413,7 +413,7 @@ es5/strict.no-eval-or-arguments-bindings.js: OK
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: OK
-es5/strict.reserved-words.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
@@ -582,8 +582,8 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: OK
+compat-table/es6/Promise.all.js: OK
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: OK
 compat-table/es6/Promise.prototype-not-instance.js: OK
@@ -723,7 +723,7 @@ compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined
 compat-table/es6/annex-b.function.if-statement.js: ReferenceError: 'foo' is not defined
 compat-table/es6/annex-b.function.labeled.js: OK
-compat-table/es6/annex-b.html-comments.js: failed: 1:1)
+compat-table/es6/annex-b.html-comments.js: SyntaxError: Unexpected token 'function' (annex-b.html-comments.js:1:1)
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
@@ -817,7 +817,7 @@ compat-table/es6/destructuring-assign.iterable-expression.js: OK
 compat-table/es6/destructuring-assign.iterable-instance.js: OK
 compat-table/es6/destructuring-assign.iterable.js: OK
 compat-table/es6/destructuring-assign.iterator-closing.js: OK
-compat-table/es6/destructuring-assign.nested-rest.js: failed: 11:27)
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: Invalid left-hand side in assignment expression (destructuring-assign.nested-rest.js:11:27)
 compat-table/es6/destructuring-assign.nested.js: OK
 compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
@@ -902,18 +902,18 @@ compat-table/es6/generators.shorthand.js: OK
 compat-table/es6/generators.shorthand.no-constructor.js: failed
 compat-table/es6/generators.shorthand.string-keyed.js: OK
 compat-table/es6/generators.this.js: OK
-compat-table/es6/generators.throw.js: failed: exception: foo
+compat-table/es6/generators.throw.js: exception: foo
 compat-table/es6/generators.yield-precedence.js: OK
-compat-table/es6/generators.yield-star.array.js: failed
-compat-table/es6/generators.yield-star.astral-string.js: failed
-compat-table/es6/generators.yield-star.generator.js: failed
-compat-table/es6/generators.yield-star.iterable-instance.js: failed
-compat-table/es6/generators.yield-star.iterable.js: failed
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: failed: exception: undefined
+compat-table/es6/generators.yield-star.array.js: OK
+compat-table/es6/generators.yield-star.astral-string.js: OK
+compat-table/es6/generators.yield-star.generator.js: OK
+compat-table/es6/generators.yield-star.iterable-instance.js: OK
+compat-table/es6/generators.yield-star.iterable.js: OK
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: exception: undefined
 compat-table/es6/generators.yield-star.iterator-closing.js: failed
-compat-table/es6/generators.yield-star.non-iterable-error.js: failed
-compat-table/es6/generators.yield-star.sparse-array.js: failed
-compat-table/es6/generators.yield-star.string.js: failed
+compat-table/es6/generators.yield-star.non-iterable-error.js: OK
+compat-table/es6/generators.yield-star.sparse-array.js: OK
+compat-table/es6/generators.yield-star.string.js: OK
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: OK
 compat-table/es6/let.for-in-shadow.js: OK
@@ -945,12 +945,12 @@ compat-table/es6/misc.Object.freeze.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyNames.primitives.js: OK
 compat-table/es6/misc.Object.getPrototypeOf.primitives.js: OK
-compat-table/es6/misc.Object.isExtensible.primitives.js: failed
+compat-table/es6/misc.Object.isExtensible.primitives.js: OK
 compat-table/es6/misc.Object.isFrozen.primitives.js: OK
 compat-table/es6/misc.Object.isSealed.primitives.js: OK
 compat-table/es6/misc.Object.keys.primitives.js: OK
 compat-table/es6/misc.Object.preventExtensions.primitives.js: OK
-compat-table/es6/misc.Object.seal.primitives.js: failed
+compat-table/es6/misc.Object.seal.primitives.js: OK
 compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: OK
 compat-table/es6/misc.Proxy.defineProperty.Set.js: OK
 compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: OK
@@ -1103,11 +1103,11 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: failed: Stack overflow
-compat-table/es6/tail-calls.mutual.js: failed: Stack overflow
+compat-table/es6/tail-calls.direct.js: Stack overflow
+compat-table/es6/tail-calls.mutual.js: Stack overflow
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
-compat-table/es6/template.escape-sequences.js: failed: 1:1)
+compat-table/es6/template.escape-sequences.js: SyntaxError: Unexpected token 'function' (template.escape-sequences.js:1:1)
 compat-table/es6/template.frozen-array.js: OK
 compat-table/es6/template.line-break.js: OK
 compat-table/es6/template.permanent-caching.js: OK
@@ -1161,7 +1161,7 @@ compat-table/es6/typed-arrays.prototype.subarray.js: OK
 compat-table/es6/typed-arrays.prototype.values.js: OK
 compat-table/es6/unicode-escapes.identifier.js: OK
 compat-table/es6/unicode-escapes.property-access.js: OK
-compat-table/es6/unicode-escapes.property-key.js: failed
+compat-table/es6/unicode-escapes.property-key.js: OK
 compat-table/es6/unicode-escapes.string.js: OK
 compat-table/es6/well-known.hasInstance.js: OK
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: OK
@@ -1200,7 +1200,7 @@ compat-table/es2016/exponentiation.unary-negation-error.js: failed
 compat-table/es2016/misc.Proxy-Array-includes.js: OK
 compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: OK
-compat-table/es2016/misc.generator-throw-inner.js: failed: exception: undefined
+compat-table/es2016/misc.generator-throw-inner.js: exception: undefined
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: OK
 compat-table/es2016/misc.nested-rest-destructuring-params.js: OK
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: OK
@@ -1247,13 +1247,13 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed: 1:1)
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Unexpected token 'function' (annex-b.for-in-assignment-non-strict.js:1:1)
 compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
+compat-table/es2017/async.await-rejection.js: failed
+compat-table/es2017/async.await.js: failed
 compat-table/es2017/async.constructor.js: OK
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1274,7 +1274,7 @@ compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
 compat-table/es2018/async-iterators.for-await-of.js: OK
 compat-table/es2018/async-iterators.generators.js: OK
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
-compat-table/es2018/misc.template-literal-revision.js: failed: 1:1)
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: Unexpected token 'function' (misc.template-literal-revision.js:1:1)
 compat-table/es2018/object-rest.js: OK
 compat-table/es2018/object-spread.js: OK
 compat-table/es2018/regex.flags.s.js: OK
@@ -1302,18 +1302,18 @@ compat-table/es2019/Symbol.prototype.description.undefined.js: OK
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
 compat-table/es2019/misc.Function-toString.Function-constructor.js: OK
-compat-table/es2019/misc.Function-toString.arrows.js: crash: SIGABRT
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: crash: SIGABRT
-compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: crash: SIGABRT
-compat-table/es2019/misc.Function-toString.computed-names.js: crash: SIGABRT
+compat-table/es2019/misc.Function-toString.arrows.js: OK
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: OK
+compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: OK
+compat-table/es2019/misc.Function-toString.computed-names.js: OK
 compat-table/es2019/misc.Function-toString.native-code.js: OK
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: crash: SIGABRT
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: OK
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: Invalid character ''' (eval:1:1)
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Invalid character ''' (eval:1:1)
 compat-table/es2019/misc.optional-catch-binding.await.js: OK
 compat-table/es2019/misc.optional-catch-binding.js: OK
-compat-table/es2019/misc.optional-catch-binding.yield.js: failed: exception: undefined
+compat-table/es2019/misc.optional-catch-binding.yield.js: exception: undefined
 compat-table/es2020/BigInt64Array.js: OK
 compat-table/es2020/BigInt.asIntN.js: OK
 compat-table/es2020/BigInt.asUintN.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not an Object
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: // compat-table: ES Next > Stage 3 > Explicit Resource Management (large) > SuppressedError
+compat-table/next/SuppressedError.js: SyntaxError: Unexpected token 'function' (SuppressedError.js:1:1)
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: failed
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: OK
 compat-table/next/Uint8Array.toBase64.js: OK
 compat-table/next/Uint8Array.toHex.js: OK
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: undefined is not an Object
-compat-table/next/await-using.for-of.js: failed: 57:10)
-compat-table/next/await-using.js: failed: 41:2)
-compat-table/next/class-decorators.js: failed: 1:1)
-compat-table/next/function.sent.js: failed: 1:1)
-compat-table/next/throw-expr.arrow.js: failed: 1:1)
-compat-table/next/throw-expr.conditional.js: failed: 1:1)
-compat-table/next/throw-expr.logical.js: failed: 1:1)
-compat-table/next/throw-expr.param-init.js: failed: 1:1)
-compat-table/next/using.for-of.js: failed: 1:1)
-compat-table/next/using.js: failed: 1:1)
+compat-table/next/await-using.for-of.js: SyntaxError: Invalid 'for in'/'for of' loop initializer expression (await-using.for-of.js:57:10)
+compat-table/next/await-using.js: SyntaxError: Unexpected token 'function' (await-using.js:41:2)
+compat-table/next/class-decorators.js: SyntaxError: Unexpected token 'function' (class-decorators.js:1:1)
+compat-table/next/function.sent.js: SyntaxError: Unexpected token 'function' (function.sent.js:1:1)
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token 'function' (throw-expr.arrow.js:1:1)
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token 'function' (throw-expr.conditional.js:1:1)
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token 'function' (throw-expr.logical.js:1:1)
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token 'function' (throw-expr.param-init.js:1:1)
+compat-table/next/using.for-of.js: SyntaxError: Unexpected token 'function' (using.for-of.js:1:1)
+compat-table/next/using.js: SyntaxError: Unexpected token 'function' (using.js:1:1)

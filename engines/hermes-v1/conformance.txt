@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"9117c5448523ae1b3d37c817460079a26fecee06ec5052e5807e56a7983c3060","binary_size":5973216,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"hermes-v1","repository":"https://github.com/facebook/hermes.git","revision":"b616636cbba0047aa77d417858ebb07b83000329","revision_date":"2026-03-02","variant":"intl","version":""}
+Metadata: {"arch":"arm64","binary_sha256":"fe6643818ae52c617eff76a243971202f93b8fa0b44505a0101fd20d2bc450a2","binary_size":6038752,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"hermes-v1","repository":"https://github.com/facebook/hermes.git","revision":"bb40561cf12970047f25d58bc7670524ce7ab216","revision_date":"2026-03-15","variant":"intl","version":""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: with statement is not supported
+es1/with.js: SyntaxError: with statement is not supported
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -265,8 +265,8 @@ es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: OK
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
-es3/String.prototype.toLocaleLowerCase.js: MissingOK
-es3/String.prototype.toLocaleUpperCase.js: MissingOK
+es3/String.prototype.toLocaleLowerCase.js: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
+es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'uppered')
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -398,12 +398,12 @@ es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: OK
-es5/strict.eval-cannot-create-bindings.js: failed
+es5/strict.eval-cannot-create-bindings.js: strict.eval-cannot-create-bindings.js:18:5: warning: Direct call to eval(), but lexical scope is not supported.; eval('var myTestVar;');; ^~~~; strict.eval-cannot-create-bindings.js:19:5: warning: the...
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: OK
 es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: failed: invalid assignment left-hand side
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: invalid assignment left-hand side
 es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: OK
 es5/strict.no-delete-non-configurable.js: OK
@@ -476,22 +476,22 @@ compat-table/es5/misc.zero-width-identifiers.js: OK
 compat-table/es5/strict.arguments-callee-error.js: OK
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
-compat-table/es5/strict.assignment-eval-arguments-error.js: OK
-compat-table/es5/strict.assignment-non-writable-error.js: failed: invalid assignment left-hand side
-compat-table/es5/strict.assignment-unresolvable-error.js: OK
-compat-table/es5/strict.delete-bindings-error.js: OK
+compat-table/es5/strict.assignment-eval-arguments-error.js: SyntaxError: try { eval('eval = 1');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+compat-table/es5/strict.assignment-non-writable-error.js: SyntaxError: invalid assignment left-hand side
+compat-table/es5/strict.assignment-unresolvable-error.js: ReferenceError: try { eval('__i_dont_exist = 1'); } catch (err) { return err instanceof ReferenceError; }
+compat-table/es5/strict.delete-bindings-error.js: SyntaxError: try { eval('var x; delete x;'); } catch (err) { return err instanceof SyntaxError; }
 compat-table/es5/strict.delete-non-configurable-error.js: OK
-compat-table/es5/strict.eval-arguments-bindings-error.js: OK
-compat-table/es5/strict.eval-no-bindings.js: failed
+compat-table/es5/strict.eval-arguments-bindings-error.js: SyntaxError: try { eval('var eval');                return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+compat-table/es5/strict.eval-no-bindings.js: ReferenceError: try { eval('var __some_unique_variable;'); __some_unique_variable; } catch (err) { return err instanceof ReferenceError; }
 compat-table/es5/strict.function-caller-arguments-error.js: OK
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
-compat-table/es5/strict.legacy-octal-error.js: OK
-compat-table/es5/strict.repeated-params-error.js: OK
-compat-table/es5/strict.reserved-words.js: OK
+compat-table/es5/strict.legacy-octal-error.js: SyntaxError: try { eval('010');     return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+compat-table/es5/strict.repeated-params-error.js: SyntaxError: try { eval('function f(x, x) { }'); } catch (err) { return err instanceof SyntaxError; }
+compat-table/es5/strict.reserved-words.js: SyntaxError: try { eval('var ' + words[i]); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
 compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: OK
-compat-table/es5/strict.with-error.js: OK
+compat-table/es5/strict.with-error.js: SyntaxError: try { eval('with({}){}'); } catch (err) { return err instanceof SyntaxError; }
 compat-table/es6/Array.Symbol.species.js: TypeError: right operand of 'in' is not an object
 compat-table/es6/Array.from.array-like.js: OK
 compat-table/es6/Array.from.generator.js: OK
@@ -530,7 +530,7 @@ compat-table/es6/Function.name.object-method.js: OK
 compat-table/es6/Function.name.shorthand.js: OK
 compat-table/es6/Function.name.shorthand.no-lexical.js: OK
 compat-table/es6/Function.name.statement.js: OK
-compat-table/es6/Function.name.symbol-keyed.js: failed
+compat-table/es6/Function.name.symbol-keyed.js: OK
 compat-table/es6/Function.name.variable.js: OK
 compat-table/es6/Map.Symbol.species.js: TypeError: right operand of 'in' is not an object
 compat-table/es6/Map.constructor-accepts-null.js: OK
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
+compat-table/es6/Reflect.construct.Promise-subclassing.js: failed
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -722,8 +722,8 @@ compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefine
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: OK
 compat-table/es6/annex-b.function.if-statement.js: OK
-compat-table/es6/annex-b.function.labeled.js: failed: Function declaration not allowed as body of labeled statement
-compat-table/es6/annex-b.html-comments.js: failed: invalid expression
+compat-table/es6/annex-b.function.labeled.js: SyntaxError: Function declaration not allowed as body of labeled statement
+compat-table/es6/annex-b.html-comments.js: SyntaxError: invalid expression
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
@@ -804,7 +804,7 @@ compat-table/es6/default-params.explicit-undefined.js: OK
 compat-table/es6/default-params.new-function.js: OK
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: OK
-compat-table/es6/default-params.tdz.js: failed
+compat-table/es6/default-params.tdz.js: default-params.tdz.js:12:7: warning: Direct call to eval(), but lexical scope is not supported.; eval("(function(a=a){}())");; ^~~~; default-params.tdz.js:16:7: warning: Direct call to eval(), but lex...
 compat-table/es6/destructuring-assign.array.js: OK
 compat-table/es6/destructuring-assign.astral-string.js: OK
 compat-table/es6/destructuring-assign.chained-iterable.js: OK
@@ -833,7 +833,7 @@ compat-table/es6/destructuring-decl.array.js: OK
 compat-table/es6/destructuring-decl.astral-string.js: OK
 compat-table/es6/destructuring-decl.catch.js: OK
 compat-table/es6/destructuring-decl.computed-properties.js: OK
-compat-table/es6/destructuring-decl.defaults-tdz.js: failed
+compat-table/es6/destructuring-decl.defaults-tdz.js: destructuring-decl.defaults-tdz.js:12:5: warning: Direct call to eval(), but lexical scope is not supported.; eval("let {c = c} = {};");; ^~~~; destructuring-decl.defaults-tdz.js:16:5: warning: Direct...
 compat-table/es6/destructuring-decl.defaults.js: OK
 compat-table/es6/destructuring-decl.for-in.js: OK
 compat-table/es6/destructuring-decl.for-of.js: OK
@@ -977,7 +977,7 @@ compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: OK
 compat-table/es6/misc.Proxy.get.Error.toString.js: OK
 compat-table/es6/misc.Proxy.get.Function.bind.js: OK
-compat-table/es6/misc.Proxy.get.HasBinding.js: failed: with statement is not supported
+compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: with statement is not supported
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: OK
 compat-table/es6/misc.Proxy.get.Object.assign.js: OK
@@ -1081,10 +1081,10 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: OK
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
 compat-table/es6/subclassing.Promise.js: OK
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
-compat-table/es6/subclassing.Promise.race.js: MissingOK
+compat-table/es6/subclassing.Promise.race.js: failed
 compat-table/es6/subclassing.RegExp.exec.js: OK
 compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1189,7 +1189,7 @@ compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
 compat-table/es6/well-known.toStringTag.new-builtins.js: failed
-compat-table/es6/well-known.unscopables.js: failed: with statement is not supported
+compat-table/es6/well-known.unscopables.js: SyntaxError: with statement is not supported
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
@@ -1272,7 +1272,7 @@ compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
 compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
 compat-table/es2018/async-iterators.for-await-of.js: OK
-compat-table/es2018/async-iterators.generators.js: failed: async generators are unsupported
+compat-table/es2018/async-iterators.generators.js: SyntaxError: async generators are unsupported
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 compat-table/es2018/misc.template-literal-revision.js: OK
 compat-table/es2018/object-rest.js: OK
@@ -1288,8 +1288,8 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed: Invalid regular expression: Invalid property name
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed: Invalid regular expression: Invalid property name
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression: Invalid property name
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression: Invalid property name
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'flat' of undefined
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1302,12 +1302,12 @@ compat-table/es2019/Symbol.prototype.description.undefined.js: OK
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
 compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError: 2:1:')' expected at end of function parameter list
-compat-table/es2019/misc.Function-toString.arrows.js: failed
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed
-compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed
-compat-table/es2019/misc.Function-toString.computed-names.js: failed
+compat-table/es2019/misc.Function-toString.arrows.js: misc.Function-toString.arrows.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: misc.Function-toString.class-explicit-constructor.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' ==...
+compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: misc.Function-toString.class-implicit-constructor.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~
+compat-table/es2019/misc.Function-toString.computed-names.js: misc.Function-toString.computed-names.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('({ /\x2A before \x2A/' + str + '/\x2A after \x2A/ }.f)') + '' === str;...
 compat-table/es2019/misc.Function-toString.native-code.js: OK
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: misc.Function-toString.unicode-escapes.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' === str;; ^~~...
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
@@ -1333,7 +1333,7 @@ compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: OK
-compat-table/es2021/FinalizationRegistry.js: ReferenceError: Property 'FinalizationRegistry' doesn't exist
+compat-table/es2021/FinalizationRegistry.js: OK
 compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK
 compat-table/es2021/String.prototype.replaceAll.js: OK
@@ -1403,14 +1403,14 @@ compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: u
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not a function
 compat-table/es2024/Map.groupBy.js: OK
 compat-table/es2024/Object.groupBy.js: OK
-compat-table/es2024/Promise.withResolvers.js: TypeError: undefined is not a function
+compat-table/es2024/Promise.withResolvers.js: OK
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Invalid RegExp: Invalid flags
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.set-notations.js: failed: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression: Invalid flags
 compat-table/es2024/regex.flags.v.shows-in-flags.js: failed
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: Invalid regular expression: Invalid flags
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression: Invalid flags
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression: Invalid flags
 compat-table/es2025/Iterator.extends.js: OK
 compat-table/es2025/Iterator.from.iterable.js: OK
 compat-table/es2025/Iterator.from.iterator.js: OK
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: OK
 compat-table/es2025/Iterator.prototype.some.js: OK
 compat-table/es2025/Iterator.prototype.take.js: OK
 compat-table/es2025/Iterator.prototype.toArray.js: OK
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.difference.js: OK
 compat-table/es2025/Set.prototype.intersection.js: OK
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: OK
 compat-table/es2025/Set.prototype.isSupersetOf.js: OK
 compat-table/es2025/Set.prototype.symmetricDifference.js: OK
 compat-table/es2025/Set.prototype.union.js: OK
-compat-table/es2025/regex.duplicate-named-groups.js: failed: Invalid regular expression: Duplicate capture group name
-compat-table/es2025/regex.pattern-modifiers.i.js: failed: Invalid regular expression: Quantifier has nothing to repeat
-compat-table/es2025/regex.pattern-modifiers.m.js: failed: Invalid regular expression: Quantifier has nothing to repeat
-compat-table/es2025/regex.pattern-modifiers.s.js: failed: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid regular expression: Duplicate capture group name
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1471,28 +1471,28 @@ compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: undefined is not a function
 compat-table/next/AsyncDisposableStack.js: ReferenceError: Property 'AsyncDisposableStack' doesn't exist
 compat-table/next/AsyncIterator.extends.js: ReferenceError: Property 'AsyncIterator' doesn't exist
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: async generators are unsupported
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: async generators are unsupported
 compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: Property 'AsyncIterator' doesn't exist
 compat-table/next/AsyncIterator.from.iterator.js: ReferenceError: Property 'AsyncIterator' doesn't exist
-compat-table/next/AsyncIterator.instanceof.js: failed: async generators are unsupported
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: async generators are unsupported
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Property 'AsyncIterator' doesn't exist
-compat-table/next/AsyncIterator.prototype.drop.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.every.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.filter.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.find.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.map.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.some.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.take.js: failed: async generators are unsupported
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: async generators are unsupported
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: async generators are unsupported
 compat-table/next/DisposableStack.js: ReferenceError: Property 'DisposableStack' doesn't exist
 compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not a function
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: using declarations are not yet supported
+compat-table/next/SuppressedError.js: SyntaxError: using declarations are not yet supported
 compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: undefined is not a functi
 compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
-compat-table/next/await-using.for-of.js: failed: using declarations are not yet supported
-compat-table/next/await-using.js: failed: using declarations are not yet supported
-compat-table/next/class-decorators.js: failed: decorators are not supported
-compat-table/next/function.sent.js: failed: '(' expected at start of function parameter list
-compat-table/next/throw-expr.arrow.js: failed: invalid expression
-compat-table/next/throw-expr.conditional.js: failed: invalid expression
-compat-table/next/throw-expr.logical.js: failed: invalid expression
-compat-table/next/throw-expr.param-init.js: failed: invalid expression
-compat-table/next/using.for-of.js: failed: using declarations are not yet supported
-compat-table/next/using.js: failed: using declarations are not yet supported
+compat-table/next/await-using.for-of.js: SyntaxError: using declarations are not yet supported
+compat-table/next/await-using.js: SyntaxError: using declarations are not yet supported
+compat-table/next/class-decorators.js: SyntaxError: decorators are not supported
+compat-table/next/function.sent.js: SyntaxError: '(' expected at start of function parameter list
+compat-table/next/throw-expr.arrow.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.conditional.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.logical.js: SyntaxError: invalid expression
+compat-table/next/throw-expr.param-init.js: SyntaxError: invalid expression
+compat-table/next/using.for-of.js: SyntaxError: using declarations are not yet supported
+compat-table/next/using.js: SyntaxError: using declarations are not yet supported

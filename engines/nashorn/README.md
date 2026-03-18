@@ -26,7 +26,7 @@ JavaScript engine of JDK 8-14 (2014-2020), based on invokedynamic JVM opcode.
 <li>ES5: 96%<pre>
 <a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
 <a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
-<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: failed: string 'this' was coerced in accessor
+<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: string 'this' was coerced in accessor
 </pre></li>
 </ul></details>
 

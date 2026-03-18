@@ -1,4 +1,4 @@
-Metadata: {"arch":"amd64","binary_sha256":"91487667a8ed1f2d00ead30418ef830b535c089e6d20e075fe65a73094519e4e","binary_size":6753064,"console_log":"print","engine":"nocturnejs","repository":"https://github.com/Lampese/NocturneJS.git","revision":"a418a962bdeb2933bbb4ff08788e2a7e3b12d5ea","revision_date":"2026-01-30"}
+Metadata: {"arch":"amd64","binary_sha256":"d17c041a5dce1e4908689a41eae576da067cbc02ba4d6272fd2ccb1932a56c7c","binary_size":6704872,"console_log":"print","engine":"nocturnejs","repository":"https://github.com/Lampese/NocturneJS.git","revision":"a418a962bdeb2933bbb4ff08788e2a7e3b12d5ea","revision_date":"2026-01-30"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -582,8 +582,8 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: failed
+compat-table/es6/Promise.all.js: failed
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: OK
 compat-table/es6/Promise.prototype-not-instance.js: OK
@@ -1081,7 +1081,7 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
 compat-table/es6/subclassing.Promise.js: OK
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
 compat-table/es6/subclassing.Promise.race.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGSEGV
-compat-table/es6/tail-calls.mutual.js: crash: SIGSEGV
+compat-table/es6/tail-calls.direct.js: crashed: SIGSEGV
+compat-table/es6/tail-calls.mutual.js: crashed: SIGSEGV
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: not a function
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: expected ';':13:11
+compat-table/next/SuppressedError.js: expected ';':13:11
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.toBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: not a function
-compat-table/next/await-using.for-of.js: failed: expected ';':57:22
-compat-table/next/await-using.js: failed: expected ';':52:19
-compat-table/next/class-decorators.js: failed: expected property name:10:5
-compat-table/next/function.sent.js: failed: expected '(':11:22
-compat-table/next/throw-expr.arrow.js: failed: unexpected token:9:18
-compat-table/next/throw-expr.conditional.js: failed: unexpected token:9:15
-compat-table/next/throw-expr.logical.js: failed: unexpected token:11:15
-compat-table/next/throw-expr.param-init.js: failed: unexpected token:9:22
-compat-table/next/using.for-of.js: failed: expected ';':22:16
-compat-table/next/using.js: failed: expected ';':16:11
+compat-table/next/await-using.for-of.js: expected ';':57:22
+compat-table/next/await-using.js: expected ';':52:19
+compat-table/next/class-decorators.js: expected property name:10:5
+compat-table/next/function.sent.js: expected '(':11:22
+compat-table/next/throw-expr.arrow.js: unexpected token:9:18
+compat-table/next/throw-expr.conditional.js: unexpected token:9:15
+compat-table/next/throw-expr.logical.js: unexpected token:11:15
+compat-table/next/throw-expr.param-init.js: unexpected token:9:22
+compat-table/next/using.for-of.js: expected ';':22:16
+compat-table/next/using.js: expected ';':16:11

@@ -52,7 +52,7 @@ JavaScript engine of Firefox.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 100%, Next 36%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 100%</summary><ul>
 <li>ES6: 98%<pre>
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: InternalError: too much recursion
 <a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: InternalError: too much recursion
@@ -67,6 +67,4 @@ JavaScript engine of Firefox.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 36%</li>
-<li>Intl: 100%</li>
 </ul></details>

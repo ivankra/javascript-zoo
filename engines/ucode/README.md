@@ -54,14 +54,14 @@ function Counter(start) {
 <li>ES5: 1%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
-<li>ES6: 0%</li>
-<li>ES2016: 0%</li>
+<details><summary>compat-table: ES6 5%, ES2016+ 2%, Next 0%, Intl 0%</summary><ul>
+<li>ES6: 5%</li>
+<li>ES2016: 15%</li>
 <li>ES2017: 0%</li>
 <li>ES2018: 0%</li>
 <li>ES2019: 0%</li>
 <li>ES2020: 0%</li>
-<li>ES2021: 0%</li>
+<li>ES2021: 6%</li>
 <li>ES2022: 0%</li>
 <li>ES2023: 0%</li>
 <li>ES2024: 0%</li>

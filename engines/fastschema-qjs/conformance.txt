@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"0cb8733ec0d8ed38698c97b9b1f560ba6b55741d8ef938aea05eb8697910b89d","binary_size":6064416,"console_log":"console.log","engine":"fastschema-qjs","go":"1.26.0","repository":"https://github.com/fastschema/qjs.git","revision":"461716f4f380f81ffd09378751f1812919cddbca","revision_date":"2025-10-28","version":"0.0.6"}
+Metadata: {"arch":"arm64","binary_sha256":"90b6ef442cb59327fde886bff91d54d26ddc7a0854c1a758cf0257ebb6ebd5aa","binary_size":6064480,"console_log":"console.log","engine":"fastschema-qjs","go":"1.26.1","repository":"https://github.com/fastschema/qjs.git","revision":"461716f4f380f81ffd09378751f1812919cddbca","revision_date":"2025-10-28","version":"0.0.6"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: failed: panic: failed to call QJS_Eval: wasm error: invalid table access
-compat-table/es6/tail-calls.mutual.js: failed: panic: failed to call QJS_Eval: wasm error: out of bounds memory access
+compat-table/es6/tail-calls.direct.js: crashed: panic: failed to call QJS_Eval: wasm error: invalid table access
+compat-table/es6/tail-calls.mutual.js: crashed: panic: failed to call QJS_Eval: wasm error: out of bounds memory access
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK

@@ -33,7 +33,7 @@ JIT-enabled ES5 engine in C++.
 <a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: negative number failed
 <a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer array failed
 <a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: getter definition failed
-<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
+<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: non-enumerable did not shadow enumerable
 <a href="../../conformance/es5/literals.object.getters.js">literals.object.getters.js</a>: { get x(){ return 1 } }.x failed; getter returning value failed; getter with side effects failed; getter accessing this failed
 </pre></li>
 </ul></details>

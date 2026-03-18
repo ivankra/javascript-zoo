@@ -23,11 +23,11 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4
-<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: identifiers.unicode.js:8: SyntaxError: illegal character:
-<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: literals.object.unicode.js:9: SyntaxError: missing : after property id:
-<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: source.line-terminators.js:13: SyntaxError: illegal character:
-<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: source.whitespace.js:12: SyntaxError: missing ; before statement:
-<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: source.whitespace.unicode.js:8: SyntaxError: illegal character:
+<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: missing : after property id:
+<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: SyntaxError: missing ; before statement:
+<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: illegal character:
 </pre></li>
 <li>ES5: 89%<pre>
 <a href="../../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: failed
@@ -35,13 +35,13 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: escape sequences failed
 <a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer function failed
 <a href="../../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
-<a href="../../conformance/es5/source.whitespace.bom.js">source.whitespace.bom.js</a>: source.whitespace.bom.js:1: SyntaxError: illegal character:
-<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: source.zero-width-chars.js:11: SyntaxError: illegal character:
-<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: failed: string 'this' was coerced in accessor
+<a href="../../conformance/es5/source.whitespace.bom.js">source.whitespace.bom.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: string 'this' was coerced in accessor
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 9%, ES2016+ 3%, Next 6%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 9%, ES2016+ 3%</summary><ul>
 <li>ES6: 9%</li>
 <li>ES2016: 0%</li>
 <li>ES2017: 6%</li>
@@ -53,6 +53,4 @@ First ES5-compliant version. Shipped in Firefox 4.0 (2011).
 <li>ES2023: 0%</li>
 <li>ES2024: 0%</li>
 <li>ES2025: 0%</li>
-<li>Next: 6%</li>
-<li>Intl: 25%</li>
 </ul></details>

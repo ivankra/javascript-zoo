@@ -23,11 +23,11 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 
 <details><summary>ES1-ES5: 99%</summary><ul>
 <li>ES1: 99%<pre>
-<a href="../../conformance/es1/with.js">with.js</a>: with.js:15:1: error: invalid statement encountered. with.js:38:1: error: invalid statement encountered. Emitted 2 errors. exiting.
+<a href="../../conformance/es1/with.js">with.js</a>: SyntaxError: invalid statement encountered
 </pre></li>
 <li>ES3: 100%</li>
 <li>ES5: 97%<pre>
-<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
+<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: non-enumerable did not shadow enumerable
 <a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
 </pre></li>
 </ul></details>
@@ -36,12 +36,12 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 <li>ES6: 78%<pre>
 <a href="../../conformance/compat-table/es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
-<a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: Function.name.class-expression.js:10:10: error: Invalid expression encountered Function.name.class-expression.js:11:12: error: Invalid expression encountered Emitted 2 errors. exiting.
-<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: Function.name.class-object-method.js:10:18: error: Invalid expression encountered Function.name.class-object-method.js:10:33: error: Invalid expression encountered Function.name.class-object-method.js:11:11: error: Invalid expression encountered Emitted 3 errors. exiting.
-<a href="../../conformance/compat-table/es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: Function.name.class-prototype.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: Function.name.class-statement.js:10:3: error: invalid statement encountered. Function.name.class-statement.js:11:3: error: invalid statement encountered. Emitted 2 errors. exiting.
-<a href="../../conformance/compat-table/es6/Function.name.class-static.js">Function.name.class-static.js</a>: Function.name.class-static.js:10:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: Function.name.class-variable.js:10:13: error: Invalid expression encountered Function.name.class-variable.js:11:13: error: Invalid expression encountered Function.name.class-variable.js:12:13: error: Invalid expression encountered Emitted 3 errors. exiting.
+<a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: SyntaxError: Invalid expression encountered
+<a href="../../conformance/compat-table/es6/Function.name.class-object-method.js">Function.name.class-object-method.js</a>: SyntaxError: Invalid expression encountered
+<a href="../../conformance/compat-table/es6/Function.name.class-prototype.js">Function.name.class-prototype.js</a>: SyntaxError: invalid statement encountered
+<a href="../../conformance/compat-table/es6/Function.name.class-statement.js">Function.name.class-statement.js</a>: SyntaxError: invalid statement encountered
+<a href="../../conformance/compat-table/es6/Function.name.class-static.js">Function.name.class-static.js</a>: SyntaxError: invalid statement encountered
+<a href="../../conformance/compat-table/es6/Function.name.class-variable.js">Function.name.class-variable.js</a>: SyntaxError: Invalid expression encountered
 <a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../../conformance/compat-table/es6/Map.Symbol.species.js">Map.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Promise.Symbol.species.js">Promise.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
@@ -76,27 +76,27 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js">SharedArrayBuffer.prototype.Symbol.toStringTag.js</a>: ReferenceError: Property 'SharedArrayBuffer' doesn't exist
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js">SharedArrayBuffer.prototype.byteLength.js</a>: ReferenceError: Property 'SharedArrayBuffer' doesn't exist
 <a href="../../conformance/compat-table/es2017/SharedArrayBuffer.prototype.slice.js">SharedArrayBuffer.prototype.slice.js</a>: ReferenceError: Property 'SharedArrayBuffer' doesn't exist
-<a href="../../conformance/compat-table/es2017/async.arrow-in-class.js">async.arrow-in-class.js</a>: async.arrow-in-class.js:48:3: error: invalid statement encountered. Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2017/async.arrow.js">async.arrow.js</a>: async.arrow.js:45:11: error: async functions are unsupported Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2017/async.methods-class.js">async.methods-class.js</a>: async.methods-class.js:45:3: error: invalid statement encountered. Emitted 1 errors. exiting.
+<a href="../../conformance/compat-table/es2017/async.arrow-in-class.js">async.arrow-in-class.js</a>: SyntaxError: invalid statement encountered
+<a href="../../conformance/compat-table/es2017/async.arrow.js">async.arrow.js</a>: SyntaxError: async functions are unsupported
+<a href="../../conformance/compat-table/es2017/async.methods-class.js">async.methods-class.js</a>: SyntaxError: invalid statement encountered
 <a href="../../conformance/compat-table/es2017/async.no-await-in-params.js">async.no-await-in-params.js</a>: failed
 ...
 </pre></li>
 <li>ES2018: 77%<pre>
-<a href="../../conformance/compat-table/es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: async-iterators.for-await-of.js:60:5: error: for await..of loops are currently unsupported
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: async-iterators.generators.js:44:3: error: async generators are unsupported
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: regex.unicode-property-escapes.unicode-16.0.js:10:10: error: Invalid regular expression: Invalid property name
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: regex.unicode-property-escapes.unicode-17.0.js:10:10: error: Invalid regular expression: Invalid property name
+<a href="../../conformance/compat-table/es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: SyntaxError: for await..of loops are currently unsupported
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: async generators are unsupported
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: SyntaxError: Invalid regular expression: Invalid property name
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid regular expression: Invalid property name
 </pre></li>
 <li>ES2019: 77%<pre>
 <a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property 'flat' of undefined
 <a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: failed
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: 2:1:')' expected at end of function parameter list
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: misc.Function-toString.arrows.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~~~~~~~~~~~~~~~~~~
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: SyntaxError: 1:14:Invalid expression encountered
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: SyntaxError: 1:2:Invalid expression encountered
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: misc.Function-toString.computed-names.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('({ /\x2A before \x2A/' + str + '/\x2A after \x2A/ }.f)') + '' === str;...
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: misc.Function-toString.unicode-escapes.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' === str;; ^~~...
 </pre></li>
 <li>ES2020: 100%</li>
 <li>ES2021: 43%</li>

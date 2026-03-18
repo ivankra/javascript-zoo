@@ -22,15 +22,15 @@ Toy metacircular JavaScript interpreter.
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../../conformance/es1/asi.eval.js">asi.eval.js</a>: [Error] [object Object], 'eval' 未定义
 <a href="../../conformance/es1/asi.js">asi.js</a>: [Error] res 重复定义
-<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
+<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 <a href="../../conformance/es1/conversions.ToBoolean.js">conversions.ToBoolean.js</a>: [Error] x 重复定义
 <a href="../../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: [Error] isNaN 重复定义
 <a href="../../conformance/es1/eval.js">eval.js</a>: [Error] [object Object], 'eval' 未定义
 <a href="../../conformance/es1/for-in.js">for-in.js</a>: failed
 <a href="../../conformance/es1/for.js">for.js</a>: [Error] [object Object], 's' 未定义
-<a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: failed
+<a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: a 未定义
 <a href="../../conformance/es1/var.js">var.js</a>: [Error] n 重复定义
-<a href="../../conformance/es1/with.js">with.js</a>: failed
+<a href="../../conformance/es1/with.js">with.js</a>: 因为 with 很多问题，已经被基本弃用了，不实现
 </pre></li>
 <li>ES3: 95%<pre>
 <a href="../../conformance/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
@@ -58,7 +58,7 @@ Toy metacircular JavaScript interpreter.
 <a href="../../conformance/es5/Object.seal.js">Object.seal.js</a>: TypeError: Cannot add property y, object is not extensible
 <a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: Infinity is not a number after assignment; Infinity not positive infinity after assignment
 <a href="../../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: NaN is not a number after assignment; NaN === NaN after assignment
-<a href="../../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: failed
+<a href="../../conformance/es5/global.undefined.immutable.js">global.undefined.immutable.js</a>: undefined 未定义
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.function-expr-with-matching-name.js">strict.function-expr-with-matching-name.js</a>: failed
 <a href="../../conformance/es5/strict.js">strict.js</a>: failed
@@ -78,9 +78,9 @@ Toy metacircular JavaScript interpreter.
 <li>ES2021: 7%</li>
 <li>ES2022: 26%</li>
 <li>ES2023: 63%<pre>
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: [Error] [object Object], 'Uint8Array' 未定义
-<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: exception: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: exception: [Error] [object Object], 'Uint8Array' 未定义
+<a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: exception: [Error] [object Object], 'Uint8Array' 未定义
 <a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected character '#' (1:0)
 </pre></li>
 <li>ES2024: 18%</li>

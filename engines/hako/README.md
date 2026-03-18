@@ -34,8 +34,8 @@ QuickJS ported to WebAssembly with C#/Go bindings.
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.generator.js">misc.bound-function-prototype.generator.js</a>: failed
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../../conformance/compat-table/es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed (signal 6); error while executing at wasm backtrace: Assertion failed: list_empty(&amp;rt-&gt;gc_obj_list) (quickjs.c: JS_FreeRuntime: 2044) Unhandled exception. Wasmtime.TrapException: error while executing at wasm backtrace:
-<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed (signal 6); error while executing at wasm backtrace: Assertion failed: list_empty(&amp;rt-&gt;gc_obj_list) (quickjs.c: JS_FreeRuntime: 2044) Unhandled exception. Wasmtime.TrapException: error while executing at wasm backtrace:
+<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed: SIGABRT
+<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed: SIGABRT
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>

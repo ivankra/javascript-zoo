@@ -1,15 +1,15 @@
-Metadata: {"arch":"arm64","binary_sha256":"65c8a349ec0e57212211eaf7c6d60bc0cd142fcd2c9ac5da61a6b68fc7bcf650","binary_size":791928,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"42tiny-js","repository":"https://github.com/gfwilliams/tiny-js.git","revision":"d61b911e56801489e2f72bd27304dcd15eeb60c1","revision_date":"2014-10-19"}
-es1/Array.js: failed: Array.length failed
-es1/Array.length.assignment.js: failed: length truncation failed
-es1/Array.length.js: failed: length assignment failed
+Metadata: {"arch":"arm64","binary_sha256":"64e46e9e10805b11b4affd51afe5356b59aed1bbf424239a442bc2b35e1f100c","binary_size":791928,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"42tiny-js","repository":"https://github.com/gfwilliams/tiny-js.git","revision":"d61b911e56801489e2f72bd27304dcd15eeb60c1","revision_date":"2014-10-19"}
+es1/Array.js: Array.length failed; Array(len) failed
+es1/Array.length.assignment.js: length truncation failed
+es1/Array.length.js: length assignment failed
 es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: failed
-es1/Array.prototype.join.js: failed: join() without separator failed
+es1/Array.prototype.join.js: join() without separator failed
 es1/Array.prototype.reverse.generic.js: ReferenceError: reverse is undefined
 es1/Array.prototype.reverse.js: ReferenceError: reverse is undefined
 es1/Array.prototype.sort.generic.js: ReferenceError: sort is undefined
 es1/Array.prototype.sort.js: ReferenceError: sort is undefined
-es1/Array.prototype.toString.js: failed: numeric array toString failed
+es1/Array.prototype.toString.js: numeric array toString failed; string array toString failed
 es1/Boolean.js: OK
 es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
@@ -55,9 +55,9 @@ es1/Date.prototype.toString.js: TypeError: Date is not a constructor
 es1/Date.prototype.toUTCString.js: TypeError: Date is not a constructor
 es1/Date.prototype.valueOf.js: TypeError: Date is not a constructor
 es1/Function.js: SyntaxError: Function statement requires a name.
-es1/Function.length.js: failed: Function.length failed
+es1/Function.length.js: Function.length failed
 es1/Function.prototype.constructor.js: OK
-es1/Function.prototype.js: failed: prototype property failed
+es1/Function.prototype.js: prototype property failed
 es1/Function.prototype.toString.js: SyntaxError: Function statement requires a name.
 es1/Math.E.js: OK
 es1/Math.LN2.js: OK
@@ -118,7 +118,7 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: Date is not a constructor
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Date is not a constructor
 es1/annex-b.global.escape.js: ReferenceError: escape is undefined
 es1/annex-b.global.unescape.js: ReferenceError: unescape is undefined
-es1/annex-b.literals.octal.js: failed: max safe integer failed
+es1/annex-b.literals.octal.js: max safe integer failed
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: ReferenceError: callee is undefined
 es1/arguments.js: OK
@@ -126,7 +126,7 @@ es1/asi.eval.js: OK
 es1/asi.js: OK
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
@@ -138,13 +138,13 @@ es1/comments.js: SyntaxError: Got unexpected *
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: failed: 2^32-1 failed
+es1/conversions.ToInt32.js: 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
-es1/conversions.ToObject.js: failed: null failed
-es1/conversions.ToString.js: failed: 3.14 failed
-es1/conversions.ToUint32.js: failed: 2^32 failed
-es1/conversions.js: failed
+es1/conversions.ToObject.js: null failed
+es1/conversions.ToString.js: 3.14 failed; 1e-7 failed
+es1/conversions.ToUint32.js: 2^32 failed
+es1/conversions.js: 123 != '0123'; 123.0 != '0123'; 0 == null; null + '' != 'null'
 es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
@@ -179,9 +179,9 @@ es1/return.js: OK
 es1/return.typeof.js: OK
 es1/this.js: OK
 es1/typeof.js: OK
-es1/typeof.null.js: MissingOK
+es1/typeof.null.js: typeof null != 'object'
 es1/typeof.undeclared.js: ReferenceError: a is not defined
-es1/types.js: failed
+es1/types.js: typeof null != 'object'
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
 es1/unary.delete.var.js: ReferenceError: a is not defined
@@ -239,9 +239,9 @@ es3/Object.prototype.propertyIsEnumerable.js: ReferenceError: propertyIsEnumerab
 es3/Object.prototype.toLocaleString.js: ReferenceError: toLocaleString is undefined
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: multiline flag failed
+es3/RegExp.js: multiline flag failed; RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
-es3/RegExp.multiline.js: failed: constructor without m failed
+es3/RegExp.multiline.js: constructor without m failed; literal without m failed
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
@@ -262,24 +262,24 @@ es3/String.prototype.search.js: OK
 es3/String.prototype.search.str.js: OK
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: timeout: >3s
+es3/String.prototype.split.bugs.js: timeout: >10s
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: timeout: >3s
+es3/String.prototype.split.regex.js: timeout: >10s
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
-es3/annex-b.String.prototype.substr.js: failed: negative start failed
+es3/annex-b.String.prototype.substr.js: negative start failed; negative start with length failed
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: ReferenceError: add is not defined
 es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
-es3/global.RangeError.thrown.js: failed: no exception for negative array length
+es3/global.RangeError.thrown.js: no exception for negative array length; no exception for array length exceeding 2^32-1
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: TypeError: nonExistentFunction is not a function
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for Function.prototype.toString on non-function
+es3/global.TypeError.thrown.js: no exception for Function.prototype.toString on non-function; wrong exception for property access on null
 es3/global.URIError.js: ReferenceError: URIError is not defined
 es3/global.URIError.thrown.js: TypeError: decodeURI is not a function
 es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is undefined
@@ -293,7 +293,7 @@ es3/in.js: OK
 es3/labelled.break.js: OK
 es3/labelled.continue.js: OK
 es3/labelled.statements.js: OK
-es3/literals.array.elisions.js: failed: array with only elision failed
+es3/literals.array.elisions.js: array with only elision failed
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
 es3/literals.object.decimal.js: OK
@@ -308,7 +308,7 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref for a group that hasn't captured failed
+es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -316,7 +316,7 @@ es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
-es3/regex.disjunction.js: failed: complex disjunction failed
+es3/regex.disjunction.js: complex disjunction failed
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
 es3/regex.escape.control.js: OK
@@ -326,7 +326,7 @@ es3/regex.escape.nul.js: failed
 es3/regex.escape.unicode.js: OK
 es3/regex.flag.global.js: OK
 es3/regex.flag.ignorecase.js: OK
-es3/regex.flag.multiline.js: failed: ^ after LF failed
+es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
 es3/regex.negative-lookahead.js: ReferenceError: r1 is null
@@ -341,7 +341,7 @@ es3/regex.word-boundary.js: OK
 es3/source.line-terminators.js: SyntaxError: Got unexpected ?[226]
 es3/source.whitespace.js: SyntaxError: Got '?[11]' expected 'ID'
 es3/source.whitespace.unicode.js: SyntaxError: Got '?[226]' expected 'ID'
-es3/strict-equals.js: failed: number !== number failed
+es3/strict-equals.js: number !== number failed; string !== string failed; number !== string failed; 0 !== false failed; null !== undefined failed
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
@@ -362,19 +362,19 @@ es5/Date.prototype.toISOString.js: ReferenceError: Date is undefined
 es5/Date.prototype.toJSON.js: ReferenceError: Date is undefined
 es5/Function.prototype-not-enumerable.js: SyntaxError: Function statement requires a name.
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: failed: length property incorrect
+es5/Function.prototype.bind.js: length property incorrect; bound constructor failed
 es5/JSON.js: OK
 es5/JSON.parse.js: SyntaxError: Got unexpected - at Line:1 Column:2 in JSON.parse
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: stringify object failed
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
-es5/Object.create.js: failed: Properties argument failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: stringify object failed; stringify array failed; failed to drop undefined/function values; undefined/function values in array not converted to null; NaN and Infinity not converted null; didn't call us...
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
+es5/Object.create.js: Properties argument failed
 es5/Object.defineProperties.js: TypeError: Object.defineProperties requires 2 arguments in native function 'defineProperties'
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
-es5/Object.getOwnPropertyNames.js: failed: basic property names failed
+es5/Object.getOwnPropertyNames.js: basic property names failed; non-enumerable property failed; only own properties failed
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: ReferenceError: seal is undefined
@@ -384,12 +384,12 @@ es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: ReferenceError: seal is undefined
 es5/String.indexing.js: OK
-es5/String.prototype.trim.js: failed: '   '.trim() failed
+es5/String.prototype.trim.js: '   '.trim() failed
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: ReferenceError: debugger is not defined
 es5/global.Infinity.immutable.js: OK
-es5/global.NaN.immutable.js: failed
-es5/global.parseInt.no-octal.js: failed
+es5/global.NaN.immutable.js: NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: OK
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
@@ -413,10 +413,10 @@ es5/strict.no-eval-or-arguments-bindings.js: TypeError: eval is not a function
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: failed
@@ -454,7 +454,7 @@ compat-table/es5/Object.keys.js: OK
 compat-table/es5/Object.preventExtensions.js: OK
 compat-table/es5/Object.seal.js: failed
 compat-table/es5/String.property-access.js: OK
-compat-table/es5/String.prototype.split.js: timeout: >3s
+compat-table/es5/String.prototype.split.js: timeout: >10s
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: failed
 compat-table/es5/immutable-globals.Infinity.js: OK

@@ -21,9 +21,9 @@ Always runs in strict mode, seemingly no option to disable.
 
 <details><summary>ES1-ES5: 88%</summary><ul>
 <li>ES1: 93%<pre>
-<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: (intermediate value)["getYear"] is not a function
-<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: (intermediate value)["setYear"] is not a function
-<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: (intermediate value)["toGMTString"] is not a function
+<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: ReferenceError: "escape" is not defined
 <a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: ReferenceError: "unescape" is not defined
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: SyntaxError: Unexpected token "0755"
@@ -36,16 +36,16 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../../conformance/es1/with.js">with.js</a>: SyntaxError: Token "(" not supported in this version
 </pre></li>
 <li>ES3: 91%<pre>
-<a href="../../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
-<a href="../../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
-<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: TypeError: (intermediate value)["toLocaleString"] is not a function
+<a href="../../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es3/RegExp.js">RegExp.js</a>: RegExp passthrough failed
-<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: TypeError: (intermediate value)["localeCompare"] is not a function
-<a href="../../conformance/es3/String.prototype.toLocaleLowerCase.js">String.prototype.toLocaleLowerCase.js</a>: TypeError: (intermediate value)["toLocaleLowerCase"] is not a function
-<a href="../../conformance/es3/String.prototype.toLocaleUpperCase.js">String.prototype.toLocaleUpperCase.js</a>: TypeError: (intermediate value)["toLocaleUpperCase"] is not a function
+<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es3/String.prototype.toLocaleLowerCase.js">String.prototype.toLocaleLowerCase.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/es3/String.prototype.toLocaleUpperCase.js">String.prototype.toLocaleUpperCase.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for Function.prototype.toString on non-function
-<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high surrogate
+<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 <a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Unexpected token "�"
 <a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Unexpected token "�"
 <a href="../../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: InternalError: Not implemented
@@ -72,12 +72,12 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: failed
 <a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: failed
-<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: 'var implements' throws but not-SyntaxError
+<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: 'var implements' does not throw SyntaxError
 ...
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 39%, ES2016+ 29%, Next 0%, Intl 11%</summary><ul>
+<details><summary>compat-table: ES6 39%, ES2016+ 31%, Next 0%, Intl 11%</summary><ul>
 <li>ES6: 39%</li>
 <li>ES2016: 36%</li>
 <li>ES2017: 60%<pre>
@@ -104,10 +104,22 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: cannot get property "call" of undefined
 ...
 </pre></li>
-<li>ES2018: 32%</li>
+<li>ES2018: 25%</li>
 <li>ES2019: 19%</li>
-<li>ES2020: 29%</li>
-<li>ES2021: 29%</li>
+<li>ES2020: 51%<pre>
+<a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: SyntaxError: Unexpected token "0x8000000000000000n"
+<a href="../../conformance/compat-table/es2020/BigInt.asIntN.js">BigInt.asIntN.js</a>: ReferenceError: "BigInt" is not defined
+<a href="../../conformance/compat-table/es2020/BigInt.asUintN.js">BigInt.asUintN.js</a>: ReferenceError: "BigInt" is not defined
+<a href="../../conformance/compat-table/es2020/BigInt.constructor.js">BigInt.constructor.js</a>: SyntaxError: Unexpected token "3n"
+<a href="../../conformance/compat-table/es2020/BigInt.js">BigInt.js</a>: SyntaxError: Unexpected token "1n"
+<a href="../../conformance/compat-table/es2020/BigUint64Array.js">BigUint64Array.js</a>: SyntaxError: Unexpected token "0x10000000000000000n"
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigInt64.js">DataView.prototype.getBigInt64.js</a>: SyntaxError: Unexpected token "1n"
+<a href="../../conformance/compat-table/es2020/DataView.prototype.getBigUint64.js">DataView.prototype.getBigUint64.js</a>: SyntaxError: Unexpected token "1n"
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.js">String.prototype.matchAll.js</a>: TypeError: undefined is not a function
+<a href="../../conformance/compat-table/es2020/String.prototype.matchAll.throws-non-global.js">String.prototype.matchAll.throws-non-global.js</a>: failed
+<a href="../../conformance/compat-table/es2020/optional-chaining.spread-params.js">optional-chaining.spread-params.js</a>: SyntaxError: Unexpected token "..."
+</pre></li>
+<li>ES2021: 43%</li>
 <li>ES2022: 14%</li>
 <li>ES2023: 29%</li>
 <li>ES2024: 0%</li>

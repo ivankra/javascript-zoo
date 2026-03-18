@@ -1,17 +1,17 @@
-Metadata: {"arch":"arm64","binary_sha256":"dcc8a9bd75b3c6775d7f154a5126f0259c1f991c44116b07a4ab003eaf14fa56","binary_size":199720,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"flathead","repository":"https://github.com/ndreynolds/flathead.git","revision":"0dcc9cbd0eafa93b4339c487e1b77f7134a2da65","revision_date":"2017-04-21"}
+Metadata: {"arch":"arm64","binary_sha256":"af8b01d2bbc6eabe77091c737616efafe4d07332749305247c8df21b79250b39","binary_size":199720,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"flathead","repository":"https://github.com/ndreynolds/flathead.git","revision":"0dcc9cbd0eafa93b4339c487e1b77f7134a2da65","revision_date":"2017-04-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
-es1/Array.prototype.constructor.js: failed: Array.prototype.constructor failed
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
 es1/Array.prototype.join.generic.js: failed
 es1/Array.prototype.join.js: OK
-es1/Array.prototype.reverse.generic.js: timeout: >3s
-es1/Array.prototype.reverse.js: timeout: >3s
+es1/Array.prototype.reverse.generic.js: timeout: >10s
+es1/Array.prototype.reverse.js: timeout: >10s
 es1/Array.prototype.sort.generic.js: failed
-es1/Array.prototype.sort.js: failed: sort with comparefn failed
+es1/Array.prototype.sort.js: sort with comparefn failed
 es1/Array.prototype.toString.js: OK
 es1/Boolean.js: OK
-es1/Boolean.prototype.constructor.js: failed: Boolean.prototype.constructor failed
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed; boolean instance constructor failed
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
@@ -56,7 +56,7 @@ es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
 es1/Function.js: OK
 es1/Function.length.js: OK
-es1/Function.prototype.constructor.js: failed: Function.prototype.constructor failed
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed; function instance constructor failed
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
 es1/Math.E.js: OK
@@ -90,21 +90,21 @@ es1/Number.MIN_VALUE.js: OK
 es1/Number.NEGATIVE_INFINITY.js: OK
 es1/Number.NaN.js: OK
 es1/Number.POSITIVE_INFINITY.js: OK
-es1/Number.js: failed: Number() failed
-es1/Number.prototype.constructor.js: failed: Number.prototype.constructor failed
+es1/Number.js: Number() failed
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed; number instance constructor failed
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
 es1/Object.js: OK
-es1/Object.prototype.constructor.js: failed: Object.prototype.constructor failed
+es1/Object.prototype.constructor.js: Object.prototype.constructor failed; object instance constructor failed
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
-es1/String.fromCharCode.js: failed: Unicode is not supported
-es1/String.generics.js: failed: Unicode is not supported
+es1/String.fromCharCode.js: Unicode is not supported; at (built-in function) in String.fromCharCode.js:8:29
+es1/String.generics.js: Unicode is not supported; at (built-in function) in String.generics.js:36:20; charAt failed
 es1/String.js: OK
-es1/String.length.js: failed: String object length failed
+es1/String.length.js: String object length failed
 es1/String.prototype.charAt.js: OK
-es1/String.prototype.charCodeAt.js: failed: Unicode is not supported
-es1/String.prototype.constructor.js: failed: String.prototype.constructor failed
+es1/String.prototype.charCodeAt.js: Unicode is not supported; at (built-in function) in String.prototype.charCodeAt.js:9:18
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
 es1/String.prototype.indexOf.js: OK
 es1/String.prototype.lastIndexOf.js: OK
 es1/String.prototype.split.js: OK
@@ -121,39 +121,39 @@ es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: OK
-es1/arguments.js: MissingOK
-es1/asi.eval.js: failed: ParseError: unexpected '\'
+es1/arguments.js: failed
+es1/asi.eval.js: ParseError: unexpected '\'
 es1/asi.js: SyntaxError: unexpected '}', expecting ';' or ','
-es1/assignment.bitwise.js: failed: <<= failed
-es1/assignment.js: failed: %= failed
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
-es1/assignment.unsigned-shift.js: failed: >>>= failed
+es1/assignment.bitwise.js: <<= failed; >>= failed; &= failed; ^= failed; |= failed
+es1/assignment.js: %= failed
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
+es1/assignment.unsigned-shift.js: >>>= failed
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
-es1/bitwise.unsigned-shift.js: failed
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: 0); -12345 >>> 0 != 4294954951 (got: 0)
 es1/break.js: OK
-es1/comma.js: crash: SIGSEGV
+es1/comma.js: crashed: SIGSEGV
 es1/comments.js: OK
 es1/conditional.js: OK
-es1/continue.js: failed: while with continue failed
-es1/conversions.ToBoolean.js: failed: NaN failed
-es1/conversions.ToInt32.js: failed: -2^31-1 failed
-es1/conversions.ToInteger.js: failed: NaN failed
-es1/conversions.ToNumber.js: failed: ' 456 ' failed
+es1/continue.js: while with continue failed; for with continue failed; while with conditional continue failed
+es1/conversions.ToBoolean.js: NaN failed
+es1/conversions.ToInt32.js: -2^31-1 failed
+es1/conversions.ToInteger.js: NaN failed
+es1/conversions.ToNumber.js: ' 456 ' failed
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: failed: NaN failed
-es1/conversions.ToUint32.js: failed: -1 failed
+es1/conversions.ToString.js: NaN failed; -0 failed; -Infinity failed; 3.14 failed; 0.0001 failed; 1e21 failed; 1e-7 failed
+es1/conversions.ToUint32.js: -1 failed; -2^31 failed
 es1/conversions.js: OK
 es1/equals.js: OK
 es1/eval.js: SyntaxError: unexpected end of file, expecting ';' or ','
 es1/for-in.js: OK
-es1/for.js: failed: for with continue failed
+es1/for.js: for with continue failed
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
 es1/global.isFinite.js: OK
-es1/global.isNaN.js: failed
+es1/global.isNaN.js: !isNaN(0 / 0)
 es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
@@ -168,16 +168,16 @@ es1/logical.js: OK
 es1/new.typeof.js: OK
 es1/numbers.double.js: OK
 es1/numbers.fmod.js: OK
-es1/numbers.inf.js: failed
+es1/numbers.inf.js: -1/0 != -1e10000
 es1/numbers.int.js: OK
-es1/numbers.nan.js: failed: NaN != NaN failed
+es1/numbers.nan.js: NaN != NaN failed; NaN + 5 failed; 10 * NaN failed
 es1/postfix.decrement.js: OK
 es1/postfix.increment.js: OK
 es1/prefix.js: OK
 es1/relational.js: OK
 es1/return.js: OK
 es1/return.typeof.js: OK
-es1/this.js: failed: method call failed
+es1/this.js: method call failed
 es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: OK
@@ -195,20 +195,20 @@ es1/var.js: OK
 es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
-es1/while.js: failed: while with continue failed
+es1/while.js: while with continue failed
 es1/with.js: SyntaxError: Unsupported syntax type (50)
 es3/Array.prototype.concat.js: OK
-es3/Array.prototype.pop.generic.js: failed: pop from object failed
+es3/Array.prototype.pop.generic.js: pop from object failed; pop single element from object failed
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: failed: push to object failed
+es3/Array.prototype.push.generic.js: push to object failed; push multiple to empty object failed; push no args to object failed
 es3/Array.prototype.push.js: OK
-es3/Array.prototype.shift.generic.js: failed: shift from object failed
-es3/Array.prototype.shift.js: crash: SIGSEGV
-es3/Array.prototype.slice.generic.js: failed: slice object with start and end failed
+es3/Array.prototype.shift.generic.js: shift from object failed; shift single element from object failed
+es3/Array.prototype.shift.js: crashed: SIGSEGV
+es3/Array.prototype.slice.generic.js: slice object with start and end failed; slice object with start only failed; slice object with negative start failed
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: TypeError: undefined is not a function
-es3/Array.prototype.splice.js: failed: negative start failed
-es3/Array.prototype.toLocaleString.js: failed: empty array toLocaleString failed
+es3/Array.prototype.splice.js: negative start failed; splice on empty array failed
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
 es3/Array.prototype.unshift.generic.js: TypeError: undefined is not a function
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -222,128 +222,128 @@ es3/Error.prototype.constructor.js: failed
 es3/Error.prototype.message.js: OK
 es3/Error.prototype.name.js: OK
 es3/Error.prototype.toString.js: OK
-es3/Function.prototype.apply.js: failed: apply with arguments object failed
+es3/Function.prototype.apply.js: apply with arguments object failed
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: TypeError: undefined is not a function
 es3/Number.prototype.toExponential.js: TypeError: undefined is not a function
-es3/Number.prototype.toExponential.rounding.js: failed
-es3/Number.prototype.toExponential.throws-infinity.js: failed: toExponential(Infinity) does not throw RangeError
+es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-0.0000e-1'); (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1...
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
 es3/Number.prototype.toFixed.js: TypeError: undefined is not a function
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: TypeError: undefined is not a function
-es3/Object.prototype.hasOwnProperty.js: crash: SIGSEGV
+es3/Object.prototype.hasOwnProperty.js: crashed: SIGSEGV
 es3/Object.prototype.isPrototypeOf.js: OK
-es3/Object.prototype.propertyIsEnumerable.js: crash: SIGSEGV
-es3/Object.prototype.toLocaleString.js: failed: custom toString failed
+es3/Object.prototype.propertyIsEnumerable.js: crashed: SIGSEGV
+es3/Object.prototype.toLocaleString.js: custom toString failed
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
-es3/RegExp.lastIndex.js: failed: Regular expressions are not available
+es3/RegExp.js: RegExp passthrough failed
+es3/RegExp.lastIndex.js: Regular expressions are not available
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: failed
-es3/RegExp.prototype.exec.js: failed: Regular expressions are not available
-es3/RegExp.prototype.test.js: failed: Regular expressions are not available
+es3/RegExp.prototype.exec.js: Regular expressions are not available
+es3/RegExp.prototype.test.js: Regular expressions are not available
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
-es3/String.prototype.concat.generic.js: crash: SIGSEGV
+es3/String.prototype.concat.generic.js: crashed: SIGSEGV
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: TypeError: cannot convert object to primitive
-es3/String.prototype.match.js: failed: Regular expressions are not available
-es3/String.prototype.replace.capture.js: failed: Regular expressions are not available
-es3/String.prototype.replace.extra.js: failed: Regular expressions are not available
+es3/String.prototype.match.js: Regular expressions are not available
+es3/String.prototype.replace.capture.js: Regular expressions are not available
+es3/String.prototype.replace.extra.js: Regular expressions are not available
 es3/String.prototype.replace.generic.js: TypeError: cannot convert object to primitive
-es3/String.prototype.replace.regex.js: failed: Regular expressions are not available
+es3/String.prototype.replace.regex.js: Regular expressions are not available
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: TypeError: cannot convert object to primitive
-es3/String.prototype.search.js: failed: Regular expressions are not available
-es3/String.prototype.search.str.js: failed: Regular expressions are not available
-es3/String.prototype.slice.generic.js: crash: SIGSEGV
+es3/String.prototype.search.js: Regular expressions are not available
+es3/String.prototype.search.str.js: Regular expressions are not available
+es3/String.prototype.slice.generic.js: crashed: SIGSEGV
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed: Regular expressions are not available
+es3/String.prototype.split.bugs.js: Regular expressions are not available
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: Regular expressions are not available
+es3/String.prototype.split.regex.js: Regular expressions are not available
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: SyntaxError: Unsupported syntax type (13)
-es3/function-expressions.IIFE.js: failed: IIFE closure failed
+es3/function-expressions.IIFE.js: IIFE closure failed
 es3/function-expressions.js: OK
-es3/global.EvalError.js: failed: name failed
-es3/global.RangeError.js: failed: name failed
-es3/global.RangeError.thrown.js: failed: no exception for new Array with length >= 2^32
-es3/global.ReferenceError.js: failed: name failed
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: no exception for new Array with length >= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
 es3/global.ReferenceError.thrown.js: OK
-es3/global.SyntaxError.js: failed: name failed
-es3/global.SyntaxError.thrown.js: failed: wrong exception for unclosed string
-es3/global.TypeError.js: failed: name failed
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
 es3/global.TypeError.thrown.js: TypeError: Expecting a function in 'instanceof' check, got number
-es3/global.URIError.js: failed: name failed
-es3/global.URIError.thrown.js: failed: wrong exception for decodeURI incomplete escape
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
 es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
 es3/global.decodeURI.js: ReferenceError: decodeURI is not defined
 es3/global.encodeURIComponent.js: ReferenceError: encodeURIComponent is not defined
 es3/global.encodeURI.js: ReferenceError: encodeURI is not defined
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: failed: ParseError: unexpected '�'
+es3/identifiers.unicode.js: ParseError: unexpected '�'
 es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: SyntaxError: unexpected ':', expecting ';' or ','
 es3/labelled.continue.js: SyntaxError: unexpected ':', expecting ';' or ','
 es3/labelled.statements.js: SyntaxError: unexpected ':', expecting ';' or ','
-es3/literals.array.elisions.js: failed: array with single elision failed
+es3/literals.array.elisions.js: array with single elision failed; array with leading elisions failed; array with multiple elisions failed; array with only elision failed
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
-es3/literals.object.decimal.js: crash: SIGSEGV
-es3/literals.object.hex.js: crash: SIGSEGV
-es3/literals.object.int.js: crash: SIGSEGV
+es3/literals.object.decimal.js: crashed: SIGSEGV
+es3/literals.object.hex.js: crashed: SIGSEGV
+es3/literals.object.int.js: crashed: SIGSEGV
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: failed: ParseError: unexpected '�'
+es3/literals.object.unicode.js: ParseError: unexpected '�'
 es3/literals.regex.ambiguous.js: SyntaxError: unexpected REGEXP, expecting ';' or ','
-es3/literals.regex.empty.js: failed: Regular expressions are not available
+es3/literals.regex.empty.js: Regular expressions are not available
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
 es3/nested-functions.eval.js: SyntaxError: unexpected end of file, expecting ';' or ','
-es3/nested-functions.js: failed: closure with nested function failed
-es3/regex.backref.js: failed: Regular expressions are not available
-es3/regex.begin.js: failed: Regular expressions are not available
-es3/regex.bracket.esc-b.js: failed: Regular expressions are not available
-es3/regex.bracket.js: failed: Regular expressions are not available
-es3/regex.bracket.ranges.js: failed: Regular expressions are not available
-es3/regex.class.esc-d.js: failed: Regular expressions are not available
-es3/regex.class.esc-s.js: failed: Regular expressions are not available
-es3/regex.class.esc-w.js: failed: Regular expressions are not available
-es3/regex.disjunction.js: failed: Regular expressions are not available
-es3/regex.dot.js: failed: Regular expressions are not available
-es3/regex.end.js: failed: Regular expressions are not available
-es3/regex.escape.control.js: failed: Regular expressions are not available
-es3/regex.escape.hex.js: failed: Regular expressions are not available
-es3/regex.escape.js: failed: Regular expressions are not available
-es3/regex.escape.nul.js: failed: Regular expressions are not available
-es3/regex.escape.unicode.js: failed: Regular expressions are not available
-es3/regex.flag.global.js: failed: Regular expressions are not available
-es3/regex.flag.ignorecase.js: failed: Regular expressions are not available
-es3/regex.flag.multiline.js: failed: Regular expressions are not available
-es3/regex.group.js: failed: Regular expressions are not available
-es3/regex.lookahead.js: failed: Regular expressions are not available
-es3/regex.negative-lookahead.js: failed: Regular expressions are not available
-es3/regex.non-capturing-group.js: failed: Regular expressions are not available
-es3/regex.quantifier.exact.js: failed: Regular expressions are not available
-es3/regex.quantifier.maybe.js: failed: Regular expressions are not available
-es3/regex.quantifier.min.js: failed: Regular expressions are not available
-es3/regex.quantifier.plus.js: failed: Regular expressions are not available
-es3/regex.quantifier.range.js: failed: Regular expressions are not available
-es3/regex.quantifier.star.js: failed: Regular expressions are not available
-es3/regex.word-boundary.js: failed: Regular expressions are not available
-es3/source.line-terminators.js: failed: ParseError: unexpected '�'
-es3/source.whitespace.js: failed: ParseError: unexpected '�'
-es3/source.whitespace.unicode.js: failed: ParseError: unexpected '�'
+es3/nested-functions.js: closure with nested function failed
+es3/regex.backref.js: Regular expressions are not available
+es3/regex.begin.js: Regular expressions are not available
+es3/regex.bracket.esc-b.js: Regular expressions are not available
+es3/regex.bracket.js: Regular expressions are not available
+es3/regex.bracket.ranges.js: Regular expressions are not available
+es3/regex.class.esc-d.js: Regular expressions are not available
+es3/regex.class.esc-s.js: Regular expressions are not available
+es3/regex.class.esc-w.js: Regular expressions are not available
+es3/regex.disjunction.js: Regular expressions are not available
+es3/regex.dot.js: Regular expressions are not available
+es3/regex.end.js: Regular expressions are not available
+es3/regex.escape.control.js: Regular expressions are not available
+es3/regex.escape.hex.js: Regular expressions are not available
+es3/regex.escape.js: Regular expressions are not available
+es3/regex.escape.nul.js: Regular expressions are not available
+es3/regex.escape.unicode.js: Regular expressions are not available
+es3/regex.flag.global.js: Regular expressions are not available
+es3/regex.flag.ignorecase.js: Regular expressions are not available
+es3/regex.flag.multiline.js: Regular expressions are not available
+es3/regex.group.js: Regular expressions are not available
+es3/regex.lookahead.js: Regular expressions are not available
+es3/regex.negative-lookahead.js: Regular expressions are not available
+es3/regex.non-capturing-group.js: Regular expressions are not available
+es3/regex.quantifier.exact.js: Regular expressions are not available
+es3/regex.quantifier.maybe.js: Regular expressions are not available
+es3/regex.quantifier.min.js: Regular expressions are not available
+es3/regex.quantifier.plus.js: Regular expressions are not available
+es3/regex.quantifier.range.js: Regular expressions are not available
+es3/regex.quantifier.star.js: Regular expressions are not available
+es3/regex.word-boundary.js: Regular expressions are not available
+es3/source.line-terminators.js: ParseError: unexpected '�'
+es3/source.whitespace.js: ParseError: unexpected '�'
+es3/source.whitespace.unicode.js: ParseError: unexpected '�'
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: crash: SIGSEGV
+es3/try-catch-finally.js: crashed: SIGSEGV
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: OK
@@ -358,46 +358,46 @@ es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: failed: invalid date does not throw RangeError
-es5/Date.prototype.toJSON.js: failed: invalid date does not return null
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: crash: SIGSEGV
-es5/Function.prototype.bind.js: failed: argument binding failed
-es5/JSON.js: failed: typeof JSON !== 'object'
+es5/Function.prototype.apply.array-like.js: crashed: SIGSEGV
+es5/Function.prototype.bind.js: argument binding failed; length property incorrect; bound constructor failed; non-callable does not throw TypeError
+es5/JSON.js: typeof JSON !== 'object'
 es5/JSON.parse.js: ReferenceError: JSON is not defined
 es5/JSON.parse.reviver.js: ReferenceError: JSON is not defined
 es5/JSON.stringify.js: ReferenceError: JSON is not defined
 es5/JSON.stringify.replacer.js: ReferenceError: JSON is not defined
 es5/JSON.stringify.space.js: ReferenceError: JSON is not defined
 es5/Object.create.js: OK
-es5/Object.defineProperties.js: failed: writable attributes failed
-es5/Object.defineProperty.js: failed: non-writable property failed
-es5/Object.freeze.js: failed: prevented modification failed
-es5/Object.getOwnPropertyDescriptor.js: crash: SIGSEGV
+es5/Object.defineProperties.js: writable attributes failed
+es5/Object.defineProperty.js: non-writable property failed; getter definition failed
+es5/Object.freeze.js: prevented modification failed; prevented addition failed
+es5/Object.getOwnPropertyDescriptor.js: crashed: SIGSEGV
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
-es5/Object.isExtensible.js: failed: extensible object failed
+es5/Object.isExtensible.js: extensible object failed; non-extensible object failed
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: failed: prevented addition failed
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
-es5/Object.seal.js: failed: prevented property addition failed
+es5/Object.preventExtensions.js: prevented addition failed
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
+es5/Object.seal.js: prevented property addition failed
 es5/String.indexing.js: OK
-es5/String.prototype.trim.js: failed: failed to trim other whitespace characters
+es5/String.prototype.trim.js: failed to trim other whitespace characters
 es5/arguments.toStringTag.js: OK
 es5/debugger.js: SyntaxError: Unsupported syntax type (12)
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
 es5/literals.object.getters.js: SyntaxError: unexpected IDENT, expecting ':'
 es5/literals.object.setters.js: SyntaxError: unexpected IDENT, expecting ':'
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: SyntaxError: unexpected IF, expecting NUMBER or IDENT or STRING or '}'
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: failed: ParseError: unexpected '�'
-es5/source.zero-width-chars.js: failed: ParseError: unexpected '\'
+es5/source.whitespace.bom.js: ParseError: unexpected '�'
+es5/source.zero-width-chars.js: ParseError: unexpected '\'
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: SyntaxError: unexpected '}', expecting ';' or ','
 es5/strict.js: failed
@@ -413,10 +413,10 @@ es5/strict.no-eval-or-arguments-bindings.js: TypeError: undefined is not a funct
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: SyntaxError: 'var implements' throws but not-SyntaxError
+es5/strict.reserved-words.js: 'var implements' does not throw SyntaxError; 'var interface' does not throw SyntaxError; 'var let' does not throw SyntaxError; 'var package' does not throw SyntaxError; 'var private' does not throw Sy...
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: failed
 compat-table/es5/Array.isArray.js: OK
@@ -454,7 +454,7 @@ compat-table/es5/Object.keys.js: OK
 compat-table/es5/Object.preventExtensions.js: OK
 compat-table/es5/Object.seal.js: OK
 compat-table/es5/String.property-access.js: OK
-compat-table/es5/String.prototype.split.js: failed: Regular expressions are not available
+compat-table/es5/String.prototype.split.js: Regular expressions are not available
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: OK
 compat-table/es5/immutable-globals.Infinity.js: failed
@@ -466,13 +466,13 @@ compat-table/es5/literals.setter-accessors.js: SyntaxError: unexpected IDENT, ex
 compat-table/es5/literals.trailing-comma-array.js: OK
 compat-table/es5/literals.trailing-comma-object.js: OK
 compat-table/es5/misc.Arguments.toStringTag.js: OK
-compat-table/es5/misc.Function.apply.array-likes.js: crash: SIGSEGV
+compat-table/es5/misc.Function.apply.array-likes.js: crashed: SIGSEGV
 compat-table/es5/misc.Function.prototype.non-enumerable.js: OK
 compat-table/es5/misc.enumerable-shadow.js: failed
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: failed
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: failed: ParseError: unexpected '\'
+compat-table/es5/misc.zero-width-identifiers.js: ParseError: unexpected '\'
 compat-table/es5/strict.arguments-callee-error.js: OK
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
@@ -724,16 +724,16 @@ compat-table/es6/annex-b.function.hoisted-block-level.js: SyntaxError: unexpecte
 compat-table/es6/annex-b.function.if-statement.js: SyntaxError: unexpected FUNCTION
 compat-table/es6/annex-b.function.labeled.js: SyntaxError: unexpected ':', expecting ';' or ','
 compat-table/es6/annex-b.html-comments.js: SyntaxError: unexpected '>'
-compat-table/es6/annex-b.regex.backreferences-octal.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.hyphens.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.incomplete-patterns.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.invalid-char-escapes.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.invalid-control-escapes.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.invalid-hex-escapes.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: failed: Regular expressions are not available
-compat-table/es6/annex-b.regex.octal-escapes.js: failed: Regular expressions are not available
+compat-table/es6/annex-b.regex.backreferences-octal.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.hyphens.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.incomplete-patterns.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.invalid-char-escapes.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.invalid-control-escapes.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.invalid-hex-escapes.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: Regular expressions are not available
+compat-table/es6/annex-b.regex.octal-escapes.js: Regular expressions are not available
 compat-table/es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
-compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: crash: SIGSEGV
+compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: crashed: SIGSEGV
 compat-table/es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.get.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
@@ -805,18 +805,18 @@ compat-table/es6/default-params.new-function.js: SyntaxError: unexpected '=', ex
 compat-table/es6/default-params.refer-previous.js: SyntaxError: unexpected '=', expecting ',' or ')'
 compat-table/es6/default-params.separate-scope.js: SyntaxError: unexpected '=', expecting ',' or ')'
 compat-table/es6/default-params.tdz.js: SyntaxError: unexpected '=', expecting ',' or ')'
-compat-table/es6/destructuring-assign.array.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.astral-string.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.chained-iterable.js: crash: SIGSEGV
+compat-table/es6/destructuring-assign.array.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.astral-string.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.chained-iterable.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: unexpected '[', expecting NUMBER or IDENT or STRING or '}'
 compat-table/es6/destructuring-assign.defaults.js: SyntaxError: unexpected '=', expecting ':'
-compat-table/es6/destructuring-assign.empty-patterns.js: crash: SIGSEGV
+compat-table/es6/destructuring-assign.empty-patterns.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.generator.js: SyntaxError: unexpected '*', expecting IDENT or '('
-compat-table/es6/destructuring-assign.iterable-expression.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.iterable-instance.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.iterable.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.iterator-closing.js: crash: SIGSEGV
+compat-table/es6/destructuring-assign.iterable-expression.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.iterable-instance.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.iterable.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.iterator-closing.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.nested.js: SyntaxError: unexpected '}', expecting ':'
 compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpected ',', expecting ':'
@@ -824,10 +824,10 @@ compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected '.'
-compat-table/es6/destructuring-assign.sparse-array.js: crash: SIGSEGV
-compat-table/es6/destructuring-assign.string.js: crash: SIGSEGV
+compat-table/es6/destructuring-assign.sparse-array.js: crashed: SIGSEGV
+compat-table/es6/destructuring-assign.string.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: unexpected '}', expecting ':'
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: crash: SIGSEGV
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-decl.array.js: SyntaxError: unexpected '[', expecting IDENT
 compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: unexpected '[', expecting IDENT
@@ -1025,25 +1025,25 @@ compat-table/es6/misc.do-while-no-semicolon.js: SyntaxError: unexpected RETURNT,
 compat-table/es6/misc.duplicate-properties-strict.js: failed
 compat-table/es6/misc.for-in-no-assignment-strict.js: failed
 compat-table/es6/misc.function-length-configurable.js: failed
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: failed: ParseError: unexpected '\'
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: ParseError: unexpected '\'
 compat-table/es6/misc.identifier-syntax.var-1.js: failed
-compat-table/es6/misc.identifier-syntax.var-2.js: failed: ParseError: unexpected '�'
+compat-table/es6/misc.identifier-syntax.var-2.js: ParseError: unexpected '�'
 compat-table/es6/misc.property-order.JSON.parse.js: ReferenceError: JSON is not defined
-compat-table/es6/misc.property-order.JSON.stringify.js: crash: SIGSEGV
+compat-table/es6/misc.property-order.JSON.stringify.js: crashed: SIGSEGV
 compat-table/es6/misc.property-order.Object.assign.js: SyntaxError: unexpected '}', expecting ';' or ','
-compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: crash: SIGSEGV
-compat-table/es6/misc.property-order.Object.keys.js: crash: SIGSEGV
-compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: crash: SIGSEGV
+compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: crashed: SIGSEGV
+compat-table/es6/misc.property-order.Object.keys.js: crashed: SIGSEGV
+compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: crashed: SIGSEGV
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: Symbol is not defined
-compat-table/es6/misc.prototypes-not-instances.js: failed: Regular expressions are not available
+compat-table/es6/misc.prototypes-not-instances.js: Regular expressions are not available
 compat-table/es6/new-target.assignment-error.js: SyntaxError: unexpected '.'
 compat-table/es6/new-target.constructor.js: SyntaxError: unexpected '.'
 compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
 compat-table/es6/regex.flags.u.codepoint.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
 compat-table/es6/regex.flags.u.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
 compat-table/es6/regex.flags.u.non-bmp.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
-compat-table/es6/regex.flags.y.js: failed: Regular expressions are not available
-compat-table/es6/regex.flags.y.lastIndex.js: failed: Regular expressions are not available
+compat-table/es6/regex.flags.y.js: Regular expressions are not available
+compat-table/es6/regex.flags.y.lastIndex.js: Regular expressions are not available
 compat-table/es6/rest-params.arguments.js: SyntaxError: unexpected '.', expecting IDENT
 compat-table/es6/rest-params.basic.js: SyntaxError: unexpected '.', expecting IDENT
 compat-table/es6/rest-params.length.js: SyntaxError: unexpected '.', expecting IDENT
@@ -1109,7 +1109,7 @@ compat-table/es6/template.basic.js: SyntaxError: unexpected invalid token
 compat-table/es6/template.caching.js: SyntaxError: unexpected invalid token, expecting ';' or ','
 compat-table/es6/template.escape-sequences.js: SyntaxError: unexpected invalid token, expecting ';' or ','
 compat-table/es6/template.frozen-array.js: SyntaxError: unexpected invalid token, expecting ';' or ','
-compat-table/es6/template.line-break.js: failed: Unicode is not supported
+compat-table/es6/template.line-break.js: Unicode is not supported
 compat-table/es6/template.permanent-caching.js: SyntaxError: unexpected invalid token, expecting ';' or ','
 compat-table/es6/template.tagged.js: SyntaxError: unexpected invalid token, expecting ';' or ','
 compat-table/es6/template.toString.js: SyntaxError: unexpected invalid token
@@ -1159,9 +1159,9 @@ compat-table/es6/typed-arrays.prototype.some.js: failed
 compat-table/es6/typed-arrays.prototype.sort.js: failed
 compat-table/es6/typed-arrays.prototype.subarray.js: failed
 compat-table/es6/typed-arrays.prototype.values.js: failed
-compat-table/es6/unicode-escapes.identifier.js: failed: ParseError: unexpected '\'
-compat-table/es6/unicode-escapes.property-access.js: failed: ParseError: unexpected '\'
-compat-table/es6/unicode-escapes.property-key.js: failed: ParseError: unexpected '\'
+compat-table/es6/unicode-escapes.identifier.js: ParseError: unexpected '\'
+compat-table/es6/unicode-escapes.property-access.js: ParseError: unexpected '\'
+compat-table/es6/unicode-escapes.property-key.js: ParseError: unexpected '\'
 compat-table/es6/unicode-escapes.string.js: failed
 compat-table/es6/well-known.hasInstance.js: ReferenceError: Symbol is not defined
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Symbol is not defined
@@ -1264,7 +1264,7 @@ compat-table/es2017/async.no-prototype.js: SyntaxError: unexpected FUNCTION, exp
 compat-table/es2017/async.prototype-chain.js: SyntaxError: unexpected FUNCTION, expecting ',' or ')'
 compat-table/es2017/async.return.js: SyntaxError: unexpected FUNCTION, expecting ';' or ','
 compat-table/es2017/async.throw.js: SyntaxError: unexpected FUNCTION, expecting ';' or ','
-compat-table/es2017/misc.arguments-caller-removed.js: crash: SIGSEGV
+compat-table/es2017/misc.arguments-caller-removed.js: crashed: SIGSEGV
 compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: unexpected IDENT, expecting ',' or ')'
 compat-table/es2017/trailing-comma.arguments.js: SyntaxError: unexpected ')'
 compat-table/es2017/trailing-comma.params.js: SyntaxError: unexpected ')', expecting IDENT
@@ -1278,8 +1278,8 @@ compat-table/es2018/misc.template-literal-revision.js: SyntaxError: unexpected i
 compat-table/es2018/object-rest.js: SyntaxError: unexpected '{', expecting IDENT
 compat-table/es2018/object-spread.js: SyntaxError: unexpected '.', expecting NUMBER or IDENT or STRING or '}'
 compat-table/es2018/regex.flags.s.js: SyntaxError: unexpected IDENT, expecting ';' or ','
-compat-table/es2018/regex.lookbehind.js: failed: Regular expressions are not available
-compat-table/es2018/regex.named-capture-groups.js: failed: Regular expressions are not available
+compat-table/es2018/regex.lookbehind.js: Regular expressions are not available
+compat-table/es2018/regex.named-capture-groups.js: Regular expressions are not available
 compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: unexpected IDENT, expecting ';' or ','
@@ -1397,7 +1397,7 @@ compat-table/es2023/Array.prototype.with.js: SyntaxError: unexpected WITH, expec
 compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: undefined is not a function
 compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: undefined is not a function
 compat-table/es2023/TypedArray.prototype.with.js: SyntaxError: unexpected WITH, expecting IDENT
-compat-table/es2023/hashbang.js: failed: ParseError: unexpected '#'
+compat-table/es2023/hashbang.js: ParseError: unexpected '#'
 compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: unexpected IDENT, expecting ';' or ','
@@ -1436,7 +1436,7 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: ReferenceError: Set is not defi
 compat-table/es2025/Set.prototype.isSupersetOf.js: ReferenceError: Set is not defined
 compat-table/es2025/Set.prototype.symmetricDifference.js: ReferenceError: Set is not defined
 compat-table/es2025/Set.prototype.union.js: ReferenceError: Set is not defined
-compat-table/es2025/regex.duplicate-named-groups.js: failed: Regular expressions are not available
+compat-table/es2025/regex.duplicate-named-groups.js: Regular expressions are not available
 compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: unexpected IDENT, expecting ';' or ','
@@ -1490,7 +1490,7 @@ compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: unexpected FU
 compat-table/next/DisposableStack.js: SyntaxError: unexpected '[', expecting NUMBER or IDENT or STRING or '}'
 compat-table/next/Map.prototype.upsert.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/next/RegExp.1-9.js: OK
-compat-table/next/RegExp.lastMatch.js: failed: Regular expressions are not available
+compat-table/next/RegExp.lastMatch.js: Regular expressions are not available
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: unexpected IDENT, expecting ';' or ','

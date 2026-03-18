@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":211525,"engine":"bramblex","repository":"https://github.com/bramblex/jsjs.git","revision":"ab7133f7435acdf16a86473cbd36ab68d6195fba","revision_date":"2018-03-08"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":211549,"engine":"bramblex","repository":"https://github.com/bramblex/jsjs.git","revision":"ab7133f7435acdf16a86473cbd36ab68d6195fba","revision_date":"2018-03-08"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -54,11 +54,11 @@ es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
-es1/Function.js: failed: [Error] [object Object], 'Function' 未定义
-es1/Function.length.js: failed: [Error] [object Object], 'Function' 未定义
-es1/Function.prototype.constructor.js: failed: [Error] [object Object], 'Function' 未定义
+es1/Function.js: [Error] [object Object], 'Function' 未定义
+es1/Function.length.js: [Error] [object Object], 'Function' 未定义
+es1/Function.prototype.constructor.js: [Error] [object Object], 'Function' 未定义
 es1/Function.prototype.js: OK
-es1/Function.prototype.toString.js: failed: [Error] [object Object], 'Function' 未定义
+es1/Function.prototype.toString.js: [Error] [object Object], 'Function' 未定义
 es1/Math.E.js: OK
 es1/Math.LN2.js: OK
 es1/Math.LN10.js: OK
@@ -122,11 +122,11 @@ es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 es1/arguments.js: OK
-es1/asi.eval.js: failed: [Error] [object Object], 'eval' 未定义
-es1/asi.js: failed: [Error] res 重复定义
+es1/asi.eval.js: [Error] [object Object], 'eval' 未定义
+es1/asi.js: [Error] res 重复定义
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
@@ -137,18 +137,18 @@ es1/comma.js: OK
 es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: failed: [Error] x 重复定义
+es1/conversions.ToBoolean.js: [Error] x 重复定义
 es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: OK
-es1/conversions.ToNumber.js: failed: [Error] isNaN 重复定义
+es1/conversions.ToNumber.js: [Error] isNaN 重复定义
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: failed: [Error] [object Object], 'eval' 未定义
+es1/eval.js: [Error] [object Object], 'eval' 未定义
 es1/for-in.js: failed
-es1/for.js: failed: [Error] [object Object], 's' 未定义
+es1/for.js: [Error] [object Object], 's' 未定义
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
@@ -184,19 +184,19 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: failed: exit code 1
+es1/unary.delete.var.js: a 未定义
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
 es1/unary.plus.js: OK
 es1/unary.plus.str.js: OK
 es1/unary.tilde.js: OK
-es1/var.js: failed: [Error] n 重复定义
+es1/var.js: [Error] n 重复定义
 es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: exit code 1
+es1/with.js: 因为 with 很多问题，已经被基本弃用了，不实现
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -275,11 +275,11 @@ es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
 es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
-es3/global.ReferenceError.thrown.js: failed: wrong exception for undeclared variable
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: failed: wrong exception type
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: wrong exception for Function.prototype.toString on non-function
+es3/global.TypeError.thrown.js: wrong exception for Function.prototype.toString on non-function; wrong exception for Function.prototype.apply on non-function
 es3/global.URIError.js: OK
 es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
@@ -290,9 +290,9 @@ es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
 es3/in.js: OK
-es3/labelled.break.js: failed: labelled break in while failed
-es3/labelled.continue.js: failed: labelled continue in while failed
-es3/labelled.statements.js: failed: basic label failed
+es3/labelled.break.js: labelled break in while failed; labelled break to outer loop failed; labelled break from block failed
+es3/labelled.continue.js: labelled continue in while failed; labelled continue to outer loop failed
+es3/labelled.statements.js: basic label failed; labelled block failed; nested labelled blocks failed
 es3/literals.array.elisions.js: TypeError: Cannot read properties of null (reading 'type')
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: failed: [Error] [object Object], 'eval' 未定义
+es3/nested-functions.eval.js: [Error] [object Object], 'eval' 未定义
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
@@ -360,9 +360,9 @@ es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
-es5/Function.prototype-not-enumerable.js: failed: [Error] [object Object], 'Function' 未定义
+es5/Function.prototype-not-enumerable.js: [Error] [object Object], 'Function' 未定义
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: failed: [Error] [object Object], 'Function' 未定义
+es5/Function.prototype.bind.js: [Error] [object Object], 'Function' 未定义
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
@@ -381,16 +381,16 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: TypeError: Cannot add property y, object is not extensible
-es5/Object.property-shadowing.js: failed: [Error] [object Object], 'Function' 未定义
+es5/Object.property-shadowing.js: [Error] [object Object], 'Function' 未定义
 es5/Object.seal.js: TypeError: Cannot add property y, object is not extensible
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed: exit code 1
+es5/global.undefined.immutable.js: undefined 未定义
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
@@ -413,10 +413,10 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: SyntaxError: 'var implements' throws but not-SyntaxError
+es5/strict.reserved-words.js: 'var implements' does not throw SyntaxError
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK
@@ -435,7 +435,7 @@ compat-table/es5/Array.prototype.unshift.return-count.js: OK
 compat-table/es5/Date.now.js: OK
 compat-table/es5/Date.prototype.toISOString.js: OK
 compat-table/es5/Date.prototype.toJSON.js: OK
-compat-table/es5/Function.prototype.bind.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es5/Function.prototype.bind.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es5/JSON.js: OK
 compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
 compat-table/es5/Number.prototype.toExponential.rounds-properly.js: OK
@@ -459,7 +459,7 @@ compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: OK
 compat-table/es5/immutable-globals.Infinity.js: failed
 compat-table/es5/immutable-globals.NaN.js: failed
-compat-table/es5/immutable-globals.undefined.js: failed: exception: undefined 未定义
+compat-table/es5/immutable-globals.undefined.js: exception: undefined 未定义
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
@@ -467,8 +467,8 @@ compat-table/es5/literals.trailing-comma-array.js: OK
 compat-table/es5/literals.trailing-comma-object.js: OK
 compat-table/es5/misc.Arguments.toStringTag.js: OK
 compat-table/es5/misc.Function.apply.array-likes.js: OK
-compat-table/es5/misc.Function.prototype.non-enumerable.js: failed: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es5/misc.enumerable-shadow.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es5/misc.Function.prototype.non-enumerable.js: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es5/misc.enumerable-shadow.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: OK
 compat-table/es5/misc.unreserved-words.js: OK
@@ -492,20 +492,20 @@ compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: failed
 compat-table/es5/strict.with-error.js: failed
-compat-table/es6/Array.Symbol.species.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Array.Symbol.species.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/Array.from.array-like.js: OK
 compat-table/es6/Array.from.generator.js: SyntaxError: Unexpected token (9:26)
-compat-table/es6/Array.from.iterable-instance.js: failed: exit code 1
-compat-table/es6/Array.from.iterable.js: failed: exit code 1
-compat-table/es6/Array.from.iterator-closing.js: failed: exit code 1
+compat-table/es6/Array.from.iterable-instance.js: global 未定义
+compat-table/es6/Array.from.iterable.js: global 未定义
+compat-table/es6/Array.from.iterator-closing.js: global 未定义
 compat-table/es6/Array.from.map.array-like.js: OK
 compat-table/es6/Array.from.map.generator.js: SyntaxError: Unexpected token (9:26)
-compat-table/es6/Array.from.map.iterable-instance.js: failed: exit code 1
-compat-table/es6/Array.from.map.iterable.js: failed: exit code 1
-compat-table/es6/Array.iterator-prototype-chain.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Array.from.map.iterable-instance.js: global 未定义
+compat-table/es6/Array.from.map.iterable.js: global 未定义
+compat-table/es6/Array.iterator-prototype-chain.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/Array.of.js: OK
-compat-table/es6/Array.prototype.Symbol.iterator.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Array.prototype.Symbol.unscopables.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Array.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Array.prototype.Symbol.unscopables.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/Array.prototype.copyWithin.js: OK
 compat-table/es6/Array.prototype.entries.js: OK
 compat-table/es6/Array.prototype.fill.js: OK
@@ -514,7 +514,7 @@ compat-table/es6/Array.prototype.find.js: OK
 compat-table/es6/Array.prototype.keys.js: OK
 compat-table/es6/Array.prototype.splice.js: OK
 compat-table/es6/Array.prototype.values.js: OK
-compat-table/es6/Date.prototype.Symbol.toPrimitive.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Date.prototype.Symbol.toPrimitive.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/Function.name.accessor.js: TypeError: Cannot redefine property: foo
 compat-table/es6/Function.name.bound.js: failed
 compat-table/es6/Function.name.class-expression.js: SyntaxError: The keyword 'class' is reserved (10:9)
@@ -525,32 +525,32 @@ compat-table/es6/Function.name.class-static.js: SyntaxError: The keyword 'class'
 compat-table/es6/Function.name.class-variable.js: SyntaxError: The keyword 'class' is reserved (10:12)
 compat-table/es6/Function.name.configurable.js: OK
 compat-table/es6/Function.name.expression.js: failed
-compat-table/es6/Function.name.new-Function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/Function.name.new-Function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/Function.name.object-method.js: failed
 compat-table/es6/Function.name.shorthand.js: SyntaxError: Unexpected token (10:15)
 compat-table/es6/Function.name.shorthand.no-lexical.js: SyntaxError: Unexpected token (11:12)
 compat-table/es6/Function.name.statement.js: failed
 compat-table/es6/Function.name.symbol-keyed.js: SyntaxError: Unexpected token (13:4)
 compat-table/es6/Function.name.variable.js: failed
-compat-table/es6/Map.Symbol.species.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.constructor-accepts-null.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.constructor-arguments.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.constructor-invokes-set.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.constructor-requires-new.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.iterator-closing.js: failed: exit code 1
-compat-table/es6/Map.iterator-prototype-chain.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype-not-instance.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.Symbol.iterator.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.clear.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.delete.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.entries.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.forEach.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.keys.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.set-returns-this.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.size.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.prototype.values.js: failed: exception: [Error] [object Object], 'Map' 未定义
-compat-table/es6/Map.zero-key.js: failed: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.Symbol.species.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.constructor-accepts-null.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.constructor-arguments.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.constructor-invokes-set.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.constructor-requires-new.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.iterator-closing.js: global 未定义
+compat-table/es6/Map.iterator-prototype-chain.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype-not-instance.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.clear.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.delete.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.entries.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.forEach.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.keys.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.set-returns-this.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.size.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.prototype.values.js: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es6/Map.zero-key.js: exception: [Error] [object Object], 'Map' 未定义
 compat-table/es6/Math.acosh.js: OK
 compat-table/es6/Math.asinh.js: OK
 compat-table/es6/Math.atanh.js: OK
@@ -575,102 +575,102 @@ compat-table/es6/Number.isFinite.js: OK
 compat-table/es6/Number.isInteger.js: OK
 compat-table/es6/Number.isNaN.js: OK
 compat-table/es6/Number.isSafeInteger.js: OK
-compat-table/es6/Number.parseFloat.js: failed: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es6/Number.parseInt.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/Number.parseFloat.js: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/Number.parseInt.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/Object.assign.js: OK
-compat-table/es6/Object.getOwnPropertySymbols.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Object.getOwnPropertySymbols.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
-compat-table/es6/Promise.Symbol.species.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Promise.all.iterable.js: failed: exit code 1
+compat-table/es6/Promise.Symbol.species.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Promise.all.iterable.js: global 未定义
 compat-table/es6/Promise.all.js: ReferenceError: name is not defined
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: ReferenceError: name is not defined
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: failed: exit code 1
+compat-table/es6/Promise.race.iterable.js: global 未定义
 compat-table/es6/Promise.race.js: ReferenceError: name is not defined
-compat-table/es6/Proxy.Array.isArray.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.JSON.stringify.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.constructor-requires-new.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.apply.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.apply.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.construct.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.construct.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.defineProperty.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.defineProperty.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.deleteProperty.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.deleteProperty.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.getPrototypeOf.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.get.instances.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.get.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.get.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.has.instances.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.has.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.has.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.isExtensible.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.isExtensible.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.ownKeys.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.ownKeys.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.preventExtensions.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.preventExtensions.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.setPrototypeOf.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.setPrototypeOf.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.set.instances.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.set.invariants.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.handler.set.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.no-prototype.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Proxy.revocable.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/Reflect.apply.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.construct.Array-subclassing.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.construct.Function-subclassing.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Proxy.Array.isArray.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.JSON.stringify.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.constructor-requires-new.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.apply.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.apply.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.construct.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.construct.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.defineProperty.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.defineProperty.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.deleteProperty.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.deleteProperty.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.getPrototypeOf.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.get.instances.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.get.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.get.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.has.instances.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.has.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.has.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.isExtensible.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.isExtensible.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.ownKeys.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.ownKeys.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.preventExtensions.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.preventExtensions.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.setPrototypeOf.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.setPrototypeOf.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.set.instances.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.set.invariants.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.handler.set.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.no-prototype.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Proxy.revocable.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/Reflect.apply.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.construct.Array-subclassing.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.construct.Function-subclassing.js: exception: [Error] [object Object], 'Reflect' 未定义
 compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: name is not defined
-compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.construct.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.construct.RegExp-subclassing.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.construct.js: exception: [Error] [object Object], 'Reflect' 未定义
 compat-table/es6/Reflect.construct.new-target.js: SyntaxError: Unexpected token (11:11)
-compat-table/es6/Reflect.construct.third-argument.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.defineProperty.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.deleteProperty.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.getOwnPropertyDescriptor.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.getPrototypeOf.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.get.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.has.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.isExtensible.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.ownKeys.string.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.ownKeys.symbol.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Reflect.preventExtensions.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.setPrototypeOf.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/Reflect.set.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/RegExp.Symbol.species.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/RegExp.prototype.Symbol.match.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/RegExp.prototype.Symbol.replace.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/RegExp.prototype.Symbol.search.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/RegExp.prototype.Symbol.split.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Reflect.construct.third-argument.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.defineProperty.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.deleteProperty.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.getOwnPropertyDescriptor.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.getPrototypeOf.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.get.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.has.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.isExtensible.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.ownKeys.string.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.ownKeys.symbol.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Reflect.preventExtensions.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.setPrototypeOf.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/Reflect.set.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/RegExp.Symbol.species.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/RegExp.prototype.Symbol.match.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/RegExp.prototype.Symbol.replace.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/RegExp.prototype.Symbol.search.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/RegExp.prototype.Symbol.split.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/RegExp.prototype.flags.js: OK
-compat-table/es6/Set.Symbol.species.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.constructor-accepts-null.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.constructor-arguments.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.constructor-invokes-add.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.constructor-requires-new.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.iterator-closing.js: failed: exit code 1
-compat-table/es6/Set.iterator-prototype-chain.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype-not-instance.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.Symbol.iterator.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.add-returns-this.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.clear.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.delete.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.entries.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.forEach.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.keys.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.size.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.prototype.values.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es6/Set.zero-key.js: failed: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.Symbol.species.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.constructor-accepts-null.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.constructor-arguments.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.constructor-invokes-add.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.constructor-requires-new.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.iterator-closing.js: global 未定义
+compat-table/es6/Set.iterator-prototype-chain.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype-not-instance.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.add-returns-this.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.clear.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.delete.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.entries.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.forEach.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.keys.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.size.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.prototype.values.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es6/Set.zero-key.js: exception: [Error] [object Object], 'Set' 未定义
 compat-table/es6/String.fromCodePoint.js: OK
-compat-table/es6/String.iterator-prototype-chain.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/String.prototype.Symbol.iterator.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/String.iterator-prototype-chain.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/String.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/String.prototype.codePointAt.js: OK
 compat-table/es6/String.prototype.endsWith.js: OK
 compat-table/es6/String.prototype.endsWith.throws-regex.js: OK
@@ -680,49 +680,49 @@ compat-table/es6/String.prototype.repeat.js: OK
 compat-table/es6/String.prototype.startsWith.js: OK
 compat-table/es6/String.prototype.startsWith.throws-regex.js: OK
 compat-table/es6/String.raw.js: OK
-compat-table/es6/Symbol.JSON.stringify.object.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.JSON.stringify.primitive.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.Object.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.String.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.defineProperty.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.global-registry.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.hidden-keys.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.no-coerce.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.no-new.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.prototype.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/Symbol.typeof.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/WeakMap.accept-primitives.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.constructor-accepts-null.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.constructor-arguments.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.constructor-invokes-set.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.constructor-requires-new.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.frozen-keys.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.iterator-closing.js: failed: exit code 1
-compat-table/es6/WeakMap.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.no-clear.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.prototype-not-instance.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.prototype.delete.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakMap.prototype.set-returns-this.js: failed: exception: [Error] [object Object], 'WeakMap' 未定义
-compat-table/es6/WeakSet.accept-primitives.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.constructor-accepts-null.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.constructor-arguments.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.constructor-invokes-add.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.constructor-requires-new.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.iterator-closing.js: failed: exit code 1
-compat-table/es6/WeakSet.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.no-clear.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.prototype-not-instance.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.prototype.add-returns-this.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
-compat-table/es6/WeakSet.prototype.delete.js: failed: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/Symbol.JSON.stringify.object.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.JSON.stringify.primitive.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.Object.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.String.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.defineProperty.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.global-registry.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.hidden-keys.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.no-coerce.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.no-new.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.prototype.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/Symbol.typeof.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/WeakMap.accept-primitives.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.constructor-accepts-null.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.constructor-arguments.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.constructor-invokes-set.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.constructor-requires-new.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.frozen-keys.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.iterator-closing.js: global 未定义
+compat-table/es6/WeakMap.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.no-clear.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.prototype-not-instance.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.prototype.delete.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakMap.prototype.set-returns-this.js: exception: [Error] [object Object], 'WeakMap' 未定义
+compat-table/es6/WeakSet.accept-primitives.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.constructor-accepts-null.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.constructor-arguments.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.constructor-invokes-add.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.constructor-requires-new.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.iterator-closing.js: global 未定义
+compat-table/es6/WeakSet.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.no-clear.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.prototype-not-instance.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.prototype.add-returns-this.js: exception: [Error] [object Object], 'WeakSet' 未定义
+compat-table/es6/WeakSet.prototype.delete.js: exception: [Error] [object Object], 'WeakSet' 未定义
 compat-table/es6/annex-b.RegExp.prototype.compile.js: OK
 compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
 compat-table/es6/annex-b.String.prototype.html.existence.js: OK
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: OK
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: OK
-compat-table/es6/annex-b.function.hoisted-block-level.js: failed: exception: [Error] [object Object], 'f' 未定义
+compat-table/es6/annex-b.function.hoisted-block-level.js: exception: [Error] [object Object], 'f' 未定义
 compat-table/es6/annex-b.function.if-statement.js: OK
-compat-table/es6/annex-b.function.labeled.js: failed: exception: [Error] [object Object], 'foo' 未定义
+compat-table/es6/annex-b.function.labeled.js: exception: [Error] [object Object], 'foo' 未定义
 compat-table/es6/annex-b.html-comments.js: OK
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
@@ -801,7 +801,7 @@ compat-table/es6/const.tdz.js: SyntaxError: The keyword 'const' is reserved (12:
 compat-table/es6/default-params.arguments.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/default-params.basic.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: Unexpected token (10:22)
-compat-table/es6/default-params.new-function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/default-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/default-params.refer-previous.js: SyntaxError: Unexpected token (10:25)
 compat-table/es6/default-params.separate-scope.js: SyntaxError: Unexpected token (10:20)
 compat-table/es6/default-params.tdz.js: SyntaxError: Unexpected token (10:21)
@@ -856,7 +856,7 @@ compat-table/es6/destructuring-params.arguments.js: SyntaxError: Unexpected toke
 compat-table/es6/destructuring-params.array.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Unexpected token (11:18)
-compat-table/es6/destructuring-params.defaults-new-function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/destructuring-params.defaults-new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Unexpected token (10:19)
 compat-table/es6/destructuring-params.defaults.js: SyntaxError: Unexpected token (10:19)
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
@@ -867,7 +867,7 @@ compat-table/es6/destructuring-params.iterable.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Unexpected token (38:12)
 compat-table/es6/destructuring-params.length.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/destructuring-params.nested.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.new-function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/destructuring-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/destructuring-params.object.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/destructuring-params.rest.js: SyntaxError: Unexpected token (10:18)
@@ -886,7 +886,7 @@ compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: Unexpected token
 compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: Unexpected token (38:16)
 compat-table/es6/for-of.sparse-array.js: SyntaxError: Unexpected token (12:16)
 compat-table/es6/for-of.string.js: SyntaxError: Unexpected token (11:16)
-compat-table/es6/function.block-level-decl.js: failed: exception: [Error] [object Object], 'f' 未定义
+compat-table/es6/function.block-level-decl.js: exception: [Error] [object Object], 'f' 未定义
 compat-table/es6/generators.basic.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/generators.constructor.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/generators.expression.js: SyntaxError: Unexpected token (10:27)
@@ -951,74 +951,74 @@ compat-table/es6/misc.Object.isSealed.primitives.js: OK
 compat-table/es6/misc.Object.keys.primitives.js: OK
 compat-table/es6/misc.Object.preventExtensions.primitives.js: OK
 compat-table/es6/misc.Object.seal.primitives.js: OK
-compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.defineProperty.Set.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.concat.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.from.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.iteration.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.pop.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.reverse.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.shift.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.splice.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Array.toString.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.defineProperty.Set.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.concat.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.from.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.iteration.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.pop.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.reverse.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.shift.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.splice.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Array.toString.js: exception: [Error] [object Object], 'Proxy' 未定义
 compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: The keyword 'class' is reserved (13:2)
-compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Date.toJSON.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Error.toString.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Function.bind.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.HasBinding.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Date.toJSON.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Error.toString.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Function.bind.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.HasBinding.js: exception: [Error] [object Object], 'Proxy' 未定义
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: Unexpected token (22:12)
-compat-table/es6/misc.Proxy.get.JSON.stringify.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Object.assign.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Object.defineProperties.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.Promise.resolve.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.RegExp-constructor.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: failed: exit code 1
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed: exit code 1
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: failed: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es6/misc.Proxy.get.RegExp.flags.js: failed: exit code 1
-compat-table/es6/misc.Proxy.get.RegExp.test.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.RegExp.toString.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.String.match.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/misc.Proxy.get.String.raw.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.String.replace.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/misc.Proxy.get.String.search.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/misc.Proxy.get.String.split.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/misc.Proxy.get.ToPrimitive.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.get.instanceof.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.copyWithin.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.fill.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.from.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.of.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.pop.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.push.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.reverse.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.shift.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.splice.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Array.unshift.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.Proxy.set.Object.assign.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es6/misc.RegExp-alter-flags.js: failed: exit code 1
+compat-table/es6/misc.Proxy.get.JSON.stringify.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Object.assign.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Object.defineProperties.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.Promise.resolve.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.RegExp-constructor.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: global 未定义
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: global 未定义
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/misc.Proxy.get.RegExp.flags.js: global 未定义
+compat-table/es6/misc.Proxy.get.RegExp.test.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.RegExp.toString.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.String.match.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.Proxy.get.String.raw.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.String.replace.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.Proxy.get.String.search.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.Proxy.get.String.split.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.Proxy.get.ToPrimitive.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.get.instanceof.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.copyWithin.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.fill.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.from.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.of.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.pop.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.push.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.reverse.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.shift.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.splice.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Array.unshift.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.Proxy.set.Object.assign.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es6/misc.RegExp-alter-flags.js: global 未定义
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: failed
 compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: Unexpected token (10:13)
 compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: The keyword 'class' is reserved (10:4)
-compat-table/es6/misc.bound-function-prototype.function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/misc.bound-function-prototype.function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: Unexpected token (10:20)
 compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: The keyword 'class' is reserved (10:4)
 compat-table/es6/misc.do-while-no-semicolon.js: SyntaxError: Unexpected token (9:22)
@@ -1033,8 +1033,8 @@ compat-table/es6/misc.property-order.JSON.stringify.js: OK
 compat-table/es6/misc.property-order.Object.assign.js: OK
 compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: OK
 compat-table/es6/misc.property-order.Object.keys.js: failed
-compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: failed: exception: [Error] [object Object], 'Reflect' 未定义
-compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: exception: [Error] [object Object], 'Reflect' 未定义
+compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/misc.prototypes-not-instances.js: OK
 compat-table/es6/new-target.assignment-error.js: SyntaxError: Unexpected token (12:17)
 compat-table/es6/new-target.constructor.js: SyntaxError: Unexpected token (12:17)
@@ -1047,7 +1047,7 @@ compat-table/es6/regex.flags.y.lastIndex.js: OK
 compat-table/es6/rest-params.arguments.js: SyntaxError: Unexpected token (10:25)
 compat-table/es6/rest-params.basic.js: SyntaxError: Unexpected token (10:25)
 compat-table/es6/rest-params.length.js: SyntaxError: Unexpected token (10:21)
-compat-table/es6/rest-params.new-function.js: failed: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es6/rest-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/rest-params.no-setter.js: SyntaxError: Unexpected token (10:20)
 compat-table/es6/spread.array-call.js: SyntaxError: Unexpected token (10:18)
 compat-table/es6/spread.array-literal.js: SyntaxError: Unexpected token (10:10)
@@ -1103,151 +1103,151 @@ compat-table/es6/super.property-access.js: SyntaxError: The keyword 'class' is r
 compat-table/es6/super.statement.js: SyntaxError: The keyword 'class' is reserved (11:2)
 compat-table/es6/super.static-binding.js: SyntaxError: The keyword 'class' is reserved (10:2)
 compat-table/es6/super.this-binding.js: SyntaxError: The keyword 'class' is reserved (10:2)
-compat-table/es6/tail-calls.direct.js: failed: exception: [Error] [object Object], 'f' 未定义
+compat-table/es6/tail-calls.direct.js: exception: [Error] [object Object], 'f' 未定义
 compat-table/es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/template.basic.js: SyntaxError: Unexpected character '`' (11:7)
 compat-table/es6/template.caching.js: SyntaxError: Unexpected character '`' (17:18)
 compat-table/es6/template.escape-sequences.js: SyntaxError: Unexpected character '`' (13:19)
 compat-table/es6/template.frozen-array.js: SyntaxError: Unexpected character '`' (12:5)
-compat-table/es6/template.line-break.js: failed: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es6/template.line-break.js: exception: [Error] [object Object], 'eval' 未定义
 compat-table/es6/template.permanent-caching.js: SyntaxError: Unexpected character '`' (14:18)
 compat-table/es6/template.tagged.js: SyntaxError: Unexpected character '`' (21:12)
 compat-table/es6/template.toString.js: SyntaxError: Unexpected character '`' (14:9)
-compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Float32.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Float64.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Int8.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Int16.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Int32.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Uint8.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Uint16.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.DataView.Uint32.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Float32Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Float64Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Int8Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Int16Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Int32Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Symbol.species.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.Uint8Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Uint8ClampedArray.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Uint16Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.Uint32Array.js: failed: exception: [Error] [object Object], 'ArrayBuffer' 未定义
-compat-table/es6/typed-arrays.constructor-iterables.js: failed: exit code 1
-compat-table/es6/typed-arrays.constructor-requires-new.js: failed: exit code 1
+compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Float32.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Float64.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Int8.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Int16.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Int32.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Uint8.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Uint16.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.DataView.Uint32.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Float32Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Float64Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Int8Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Int16Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Int32Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Symbol.species.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.Uint8Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Uint8ClampedArray.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Uint16Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.Uint32Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
+compat-table/es6/typed-arrays.constructor-iterables.js: global 未定义
+compat-table/es6/typed-arrays.constructor-requires-new.js: global 未定义
 compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: The keyword 'const' is reserved (32:4)
-compat-table/es6/typed-arrays.from.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.of.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.copyWithin.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.entries.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.every.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.fill.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.filter.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.findIndex.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.find.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.forEach.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.indexOf.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.join.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.keys.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.lastIndexOf.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.map.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.reduceRight.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.reduce.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.reverse.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.slice.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.some.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.sort.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.subarray.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
-compat-table/es6/typed-arrays.prototype.values.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.from.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.of.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.copyWithin.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.entries.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.every.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.fill.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.filter.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.findIndex.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.find.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.forEach.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.indexOf.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.join.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.keys.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.lastIndexOf.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.map.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.reduceRight.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.reduce.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.reverse.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.slice.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.some.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.sort.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.subarray.js: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es6/typed-arrays.prototype.values.js: exception: [Error] [object Object], 'Int8Array' 未定义
 compat-table/es6/unicode-escapes.identifier.js: SyntaxError: Unexpected token (9:6)
 compat-table/es6/unicode-escapes.property-access.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/unicode-escapes.property-key.js: SyntaxError: Unexpected token (9:12)
 compat-table/es6/unicode-escapes.string.js: SyntaxError: Unexpected token (9:9)
-compat-table/es6/well-known.hasInstance.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.hasInstance.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
-compat-table/es6/well-known.iterator.arguments.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.iterator.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.match.RegExp-constructor.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.match.String.endsWith.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.match.String.includes.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.match.String.startsWith.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.match.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.replace.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.search.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Array.concat.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Array.filter.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Array.map.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Array.slice.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Array.splice.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.Promise.then.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.RegExp.split.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.species.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.split.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.toPrimitive.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.toStringTag.existing-builtins.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.toStringTag.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es6/well-known.toStringTag.misc-builtins.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.iterator.arguments.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.iterator.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.match.RegExp-constructor.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.match.String.endsWith.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.match.String.includes.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.match.String.startsWith.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.match.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.replace.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.search.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Array.concat.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Array.filter.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Array.map.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Array.slice.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Array.splice.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.Promise.then.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.RegExp.split.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.species.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.split.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.toPrimitive.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.toStringTag.existing-builtins.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.toStringTag.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.toStringTag.misc-builtins.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: Unexpected token (23:37)
-compat-table/es6/well-known.unscopables.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es6/well-known.unscopables.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: TypeError: Cannot read properties of null (reading 'type')
-compat-table/es2016/Array.prototype.includes.typed-array.js: failed: exception: [Error] [object Object], 'Int8Array' 未定义
+compat-table/es2016/Array.prototype.includes.typed-array.js: exception: [Error] [object Object], 'Int8Array' 未定义
 compat-table/es2016/exponentiation.assignment.js: SyntaxError: Unexpected token (10:16)
 compat-table/es2016/exponentiation.basic.js: SyntaxError: Unexpected token (10:12)
 compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: Unexpected token (10:9)
-compat-table/es2016/misc.Proxy-Array-includes.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es2016/misc.Proxy-enumerate-removed.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2016/misc.Proxy-Array-includes.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2016/misc.Proxy-enumerate-removed.js: exception: [Error] [object Object], 'Proxy' 未定义
 compat-table/es2016/misc.generator-no-new.js: SyntaxError: Unexpected token (10:11)
 compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: Unexpected token (10:11)
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Unexpected token (10:6)
 compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Unexpected token (9:19)
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: Unexpected token (9:15)
-compat-table/es2017/Atomics.add.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.and.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.compareExchange.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.exchange.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.isLockFree.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.load.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.notify.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.or.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.store.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.sub.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.wait.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
-compat-table/es2017/Atomics.xor.js: failed: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.add.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.and.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.compareExchange.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.exchange.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.isLockFree.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.load.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.notify.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.or.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.store.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.sub.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.wait.js: exception: [Error] [object Object], 'Atomics' 未定义
+compat-table/es2017/Atomics.xor.js: exception: [Error] [object Object], 'Atomics' 未定义
 compat-table/es2017/Object.entries.js: OK
 compat-table/es2017/Object.getOwnPropertyDescriptors.js: OK
-compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: exception: [Error] [object Object], 'Proxy' 未定义
 compat-table/es2017/Object.values.js: OK
-compat-table/es2017/SharedArrayBuffer.Symbol.species.js: failed: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
+compat-table/es2017/SharedArrayBuffer.Symbol.species.js: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
 compat-table/es2017/SharedArrayBuffer.js: failed
-compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: failed: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
-compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: failed: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
-compat-table/es2017/SharedArrayBuffer.prototype.slice.js: failed: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
+compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
+compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
+compat-table/es2017/SharedArrayBuffer.prototype.slice.js: exception: [Error] [object Object], 'SharedArrayBuffer' 未定义
 compat-table/es2017/String.prototype.padEnd.js: OK
 compat-table/es2017/String.prototype.padStart.js: OK
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: failed: exception: [Error] [object Object], '__defineGetter__' 未定义
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: exception: [Error] [object Object], '__defineGetter__' 未定义
 compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js: OK
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: failed: exception: [Error] [object Object], '__defineSetter__' 未定义
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: exception: [Error] [object Object], '__defineSetter__' 未定义
 compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js: OK
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: failed: exception: [Error] [object Object], '__lookupGetter__' 未定义
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: exception: [Error] [object Object], '__lookupGetter__' 未定义
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: OK
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: OK
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: failed: exception: [Error] [object Object], '__lookupSetter__' 未定义
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: exception: [Error] [object Object], '__lookupSetter__' 未定义
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: OK
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: OK
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: OK
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2017/annex-b.Proxy.__defineGetter__.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es2017/annex-b.Proxy.__defineSetter__.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed: exception: [Error] [object Object], 'i' 未定义
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2017/annex-b.Proxy.__defineGetter__.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2017/annex-b.Proxy.__defineSetter__.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: exception: [Error] [object Object], 'i' 未定义
 compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: Unexpected token (10:37)
 compat-table/es2017/async.arrow-in-class.js: SyntaxError: The keyword 'class' is reserved (48:2)
 compat-table/es2017/async.arrow.js: SyntaxError: Assigning to rvalue (45:10)
@@ -1291,53 +1291,53 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: I
 compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression flag (10:10)
 compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression flag (10:10)
 compat-table/es2019/Array.prototype.flatMap.js: OK
-compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es2019/Array.prototype.flat.js: OK
-compat-table/es2019/Object.fromEntries.js: failed: exception: [Error] [object Object], 'Map' 未定义
+compat-table/es2019/Object.fromEntries.js: exception: [Error] [object Object], 'Map' 未定义
 compat-table/es2019/String.prototype.trimEnd.js: OK
 compat-table/es2019/String.prototype.trimStart.js: OK
-compat-table/es2019/Symbol.prototype.description.empty.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2019/Symbol.prototype.description.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
-compat-table/es2019/Symbol.prototype.description.undefined.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2019/Symbol.prototype.description.empty.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2019/Symbol.prototype.description.js: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2019/Symbol.prototype.description.undefined.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
-compat-table/es2019/misc.Function-toString.Function-constructor.js: failed: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es2019/misc.Function-toString.arrows.js: failed: exception: [Error] [object Object], 'eval' 未定义
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed: exception: [Error] [object Object], 'eval' 未定义
-compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed: exception: [Error] [object Object], 'eval' 未定义
-compat-table/es2019/misc.Function-toString.computed-names.js: failed: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.Function-toString.Function-constructor.js: exception: [Error] [object Object], 'Function' 未定义
+compat-table/es2019/misc.Function-toString.arrows.js: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.Function-toString.computed-names.js: exception: [Error] [object Object], 'eval' 未定义
 compat-table/es2019/misc.Function-toString.native-code.js: SyntaxError: The keyword 'const' is reserved (10:2)
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: exception: [Error] [object Object], 'eval' 未定义
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
-compat-table/es2019/misc.JSON-superset.line-separator.js: failed: exception: [Error] [object Object], 'eval' 未定义
-compat-table/es2019/misc.JSON-superset.paragraph-separator.js: failed: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.JSON-superset.line-separator.js: exception: [Error] [object Object], 'eval' 未定义
+compat-table/es2019/misc.JSON-superset.paragraph-separator.js: exception: [Error] [object Object], 'eval' 未定义
 compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Unexpected token (44:9)
 compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Unexpected token (12:8)
 compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Unexpected token (9:11)
 compat-table/es2020/BigInt64Array.js: SyntaxError: Identifier directly after number (12:30)
-compat-table/es2020/BigInt.asIntN.js: failed: exception: [Error] [object Object], 'BigInt' 未定义
-compat-table/es2020/BigInt.asUintN.js: failed: exception: [Error] [object Object], 'BigInt' 未定义
+compat-table/es2020/BigInt.asIntN.js: exception: [Error] [object Object], 'BigInt' 未定义
+compat-table/es2020/BigInt.asUintN.js: exception: [Error] [object Object], 'BigInt' 未定义
 compat-table/es2020/BigInt.constructor.js: SyntaxError: Identifier directly after number (10:26)
 compat-table/es2020/BigInt.js: SyntaxError: Identifier directly after number (10:11)
 compat-table/es2020/BigUint64Array.js: SyntaxError: Identifier directly after number (12:31)
 compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: Identifier directly after number (12:23)
 compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Identifier directly after number (12:24)
 compat-table/es2020/Promise.allSettled.js: SyntaxError: Unexpected token (49:14)
-compat-table/es2020/String.prototype.matchAll.js: failed: exception: [Error] [object Object], 'Symbol' 未定义
+compat-table/es2020/String.prototype.matchAll.js: exception: [Error] [object Object], 'Symbol' 未定义
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
-compat-table/es2020/globalThis.descriptor.js: failed: exit code 1
-compat-table/es2020/globalThis.js: failed: exit code 1
+compat-table/es2020/globalThis.descriptor.js: globalThis 未定义
+compat-table/es2020/globalThis.js: globalThis 未定义
 compat-table/es2020/nullish-coalescing.js: SyntaxError: Unexpected token (10:16)
 compat-table/es2020/optional-chaining.bracket.js: SyntaxError: Unexpected token (12:13)
 compat-table/es2020/optional-chaining.function-call.js: SyntaxError: Unexpected token (14:17)
 compat-table/es2020/optional-chaining.method-call.js: SyntaxError: Unexpected token (12:13)
 compat-table/es2020/optional-chaining.property.js: SyntaxError: Unexpected token (12:13)
 compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: Unexpected token (14:12)
-compat-table/es2021/FinalizationRegistry.js: failed: exception: [Error] [object Object], 'FinalizationRegistry' 未定义
+compat-table/es2021/FinalizationRegistry.js: exception: [Error] [object Object], 'FinalizationRegistry' 未定义
 compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: Unexpected token (49:19)
 compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: Unexpected token (49:14)
 compat-table/es2021/String.prototype.replaceAll.js: OK
-compat-table/es2021/WeakRef.js: failed: exception: [Error] [object Object], 'WeakRef' 未定义
+compat-table/es2021/WeakRef.js: exception: [Error] [object Object], 'WeakRef' 未定义
 compat-table/es2021/logical-assignment.and.js: SyntaxError: Unexpected token (10:6)
 compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Unexpected token (9:6)
 compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: Unexpected token (9:6)
@@ -1368,7 +1368,7 @@ compat-table/es2022/Object.hasOwn.ToObject-first.js: OK
 compat-table/es2022/Object.hasOwn.js: OK
 compat-table/es2022/at-method.Array.js: OK
 compat-table/es2022/at-method.String.js: OK
-compat-table/es2022/at-method.TypedArray.js: failed: exit code 1
+compat-table/es2022/at-method.TypedArray.js: globalThis 未定义
 compat-table/es2022/class-fields.computed-instance.js: SyntaxError: The keyword 'class' is reserved (9:2)
 compat-table/es2022/class-fields.computed-static.js: SyntaxError: The keyword 'class' is reserved (9:2)
 compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: Unexpected token (10:8)
@@ -1387,16 +1387,16 @@ compat-table/es2022/class-methods.private-static.js: SyntaxError: The keyword 'c
 compat-table/es2022/class-static-init-blocks.js: SyntaxError: Unexpected token (10:6)
 compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: The keyword 'class' is reserved (9:2)
 compat-table/es2022/regex.flags.d.constructor.js: OK
-compat-table/es2022/regex.flags.d.shows-in-flags.js: failed: exit code 1
+compat-table/es2022/regex.flags.d.shows-in-flags.js: global 未定义
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
 compat-table/es2023/Array.prototype.findLast.js: OK
 compat-table/es2023/Array.prototype.toReversed.js: OK
 compat-table/es2023/Array.prototype.toSorted.js: OK
 compat-table/es2023/Array.prototype.toSpliced.js: OK
 compat-table/es2023/Array.prototype.with.js: OK
-compat-table/es2023/TypedArray.prototype.toReversed.js: failed: exception: [Error] [object Object], 'Uint8Array' 未定义
-compat-table/es2023/TypedArray.prototype.toSorted.js: failed: exception: [Error] [object Object], 'Uint8Array' 未定义
-compat-table/es2023/TypedArray.prototype.with.js: failed: exception: [Error] [object Object], 'Uint8Array' 未定义
+compat-table/es2023/TypedArray.prototype.toReversed.js: exception: [Error] [object Object], 'Uint8Array' 未定义
+compat-table/es2023/TypedArray.prototype.toSorted.js: exception: [Error] [object Object], 'Uint8Array' 未定义
+compat-table/es2023/TypedArray.prototype.with.js: exception: [Error] [object Object], 'Uint8Array' 未定义
 compat-table/es2023/hashbang.js: SyntaxError: Unexpected character '#' (1:0)
 compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: The keyword 'const' is reserved (10:2)
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: The keyword 'const' is reserved (10:2)
@@ -1407,15 +1407,15 @@ compat-table/es2024/Promise.withResolvers.js: OK
 compat-table/es2024/regex.flags.v.constructor.js: OK
 compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression flag (9:10)
 compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression flag (9:10)
-compat-table/es2024/regex.flags.v.shows-in-flags.js: failed: exception: [Error] [object Object], 'Proxy' 未定义
+compat-table/es2024/regex.flags.v.shows-in-flags.js: exception: [Error] [object Object], 'Proxy' 未定义
 compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression flag (9:10)
 compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression flag (9:10)
 compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression flag (9:10)
 compat-table/es2025/Iterator.extends.js: SyntaxError: The keyword 'class' is reserved (10:2)
 compat-table/es2025/Iterator.from.iterable.js: SyntaxError: The keyword 'const' is reserved (10:2)
 compat-table/es2025/Iterator.from.iterator.js: SyntaxError: The keyword 'const' is reserved (10:2)
-compat-table/es2025/Iterator.instanceof.js: failed: exception: [Error] [object Object], 'Iterator' 未定义
-compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: failed: exception: [Error] [object Object], 'Iterator' 未定义
+compat-table/es2025/Iterator.instanceof.js: exception: [Error] [object Object], 'Iterator' 未定义
+compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: exception: [Error] [object Object], 'Iterator' 未定义
 compat-table/es2025/Iterator.prototype.drop.js: OK
 compat-table/es2025/Iterator.prototype.every.js: SyntaxError: Unexpected token (10:38)
 compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: Unexpected token (10:50)
@@ -1429,13 +1429,13 @@ compat-table/es2025/Iterator.prototype.take.js: OK
 compat-table/es2025/Iterator.prototype.toArray.js: SyntaxError: The keyword 'const' is reserved (10:2)
 compat-table/es2025/Promise.try.js: ReferenceError: name is not defined
 compat-table/es2025/RegExp.escape.js: OK
-compat-table/es2025/Set.prototype.difference.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.intersection.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.isDisjointFrom.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.isSubsetOf.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.isSupersetOf.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.symmetricDifference.js: failed: exception: [Error] [object Object], 'Set' 未定义
-compat-table/es2025/Set.prototype.union.js: failed: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.difference.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.intersection.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.isDisjointFrom.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.isSubsetOf.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.isSupersetOf.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.symmetricDifference.js: exception: [Error] [object Object], 'Set' 未定义
+compat-table/es2025/Set.prototype.union.js: exception: [Error] [object Object], 'Set' 未定义
 compat-table/es2025/regex.duplicate-named-groups.js: OK
 compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: The keyword 'const' is reserved (9:2)
 compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: The keyword 'const' is reserved (9:2)
@@ -1444,27 +1444,27 @@ compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleTimeString.js: OK
-compat-table/intl/Intl.Collator.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.Collator.new-instances.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.Collator.prototype.compare.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.Collator.rejects-invalid-tags.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.new-instances.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.prototype.compare.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.rejects-invalid-tags.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Intl.Collator.valid-tags.js: failed
-compat-table/intl/Intl.Collator.without-new.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.Collator.without-new.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: failed
-compat-table/intl/Intl.DateTimeFormat.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.DateTimeFormat.new-instances.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.DateTimeFormat.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.DateTimeFormat.new-instances.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Intl.DateTimeFormat.valid-tags.js: failed
-compat-table/intl/Intl.DateTimeFormat.without-new.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.NumberFormat.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.NumberFormat.new-instances.js: failed: exception: [Error] [object Object], 'Intl' 未定义
-compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.DateTimeFormat.without-new.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.NumberFormat.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.NumberFormat.new-instances.js: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Intl.NumberFormat.valid-tags.js: failed
-compat-table/intl/Intl.NumberFormat.without-new.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.NumberFormat.without-new.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Intl.js: failed
-compat-table/intl/Intl.prototype.js: failed: exception: [Error] [object Object], 'Intl' 未定义
+compat-table/intl/Intl.prototype.js: exception: [Error] [object Object], 'Intl' 未定义
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
@@ -1475,7 +1475,7 @@ compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: Unexpected 
 compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: Unexpected token (44:8)
 compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: Unexpected token (44:8)
 compat-table/next/AsyncIterator.instanceof.js: SyntaxError: Unexpected token (9:16)
-compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: failed: exception: [Error] [object Object], 'AsyncIterator' 未定义
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: exception: [Error] [object Object], 'AsyncIterator' 未定义
 compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: Unexpected token (44:8)
 compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: Unexpected token (44:9)
 compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: Unexpected token (44:8)

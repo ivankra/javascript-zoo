@@ -56,8 +56,8 @@ inline caching.
 <a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: TypeError: cannot convert null to object
 <a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: custom toString failed
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: '0'.split(undefined, 0).length !== 0
-<a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: [ERROR] compile failed: SyntaxError: Unexpected token (1:8)
-<a href="../../conformance/es3/labelled.break.js">labelled.break.js</a>: timeout
+<a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: SyntaxError: Unexpected token
+<a href="../../conformance/es3/labelled.break.js">labelled.break.js</a>: timeout: &gt;10s
 </pre></li>
 <li>ES5: 78%<pre>
 <a href="../../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: failed
@@ -69,13 +69,13 @@ inline caching.
 <a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: replacer array failed
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: failed
-<a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: [ERROR] compile failed: SyntaxError: Deleting local variable in strict mode (1:20)
-<a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: [ERROR] compile failed: SyntaxError: Argument name clash (1:27)
-<a href="../../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: [ERROR] compile failed: SyntaxError: Assigning to eval in strict mode (1:13)
-<a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: [ERROR] compile failed: SyntaxError: Binding eval in strict mode (1:17)
+<a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: SyntaxError: Deleting local variable in strict mode
+<a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: SyntaxError: Argument name clash
+<a href="../../conformance/es5/strict.no-eval-or-arguments-assignment.js">strict.no-eval-or-arguments-assignment.js</a>: SyntaxError: Assigning to eval in strict mode
+<a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: SyntaxError: Binding eval in strict mode
 <a href="../../conformance/es5/strict.no-function-caller-or-arguments.js">strict.no-function-caller-or-arguments.js</a>: failed
-<a href="../../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: [ERROR] compile failed: SyntaxError: Invalid number (1:13)
-<a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: [ERROR] compile failed: SyntaxError: 'with' in strict mode (1:13)
+<a href="../../conformance/es5/strict.no-octal-literals.js">strict.no-octal-literals.js</a>: SyntaxError: Invalid number
+<a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: SyntaxError: 'with' in strict mode
 </pre></li>
 </ul></details>
 

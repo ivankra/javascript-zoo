@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":7054305,"engine":"topchetoeu","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ivankra/topchetoeu.git","revision":"139b240463dc485fd0744663272c4c4066801311","revision_date":"2026-02-01"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":7054302,"engine":"topchetoeu","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ivankra/topchetoeu.git","revision":"139b240463dc485fd0744663272c4c4066801311","revision_date":"2026-02-01"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -7,55 +7,55 @@ es1/Array.prototype.join.generic.js: OK
 es1/Array.prototype.join.js: OK
 es1/Array.prototype.reverse.generic.js: OK
 es1/Array.prototype.reverse.js: OK
-es1/Array.prototype.sort.generic.js: failed: Internal error ocurred:
+es1/Array.prototype.sort.generic.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.j2s.runtime.values.objects.ArrayValue (me.topchetoeu.j2s.runtime.values.o...
 es1/Array.prototype.sort.js: OK
-es1/Array.prototype.toString.js: failed: numeric array toString failed
+es1/Array.prototype.toString.js: numeric array toString failed; string array toString failed; empty array toString failed
 es1/Boolean.js: OK
 es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: failed
-es1/Date.js: failed: Uncaught Error: Function cannot be applied
+es1/Date.js: Function cannot be applied
 es1/Date.prototype.constructor.js: OK
-es1/Date.prototype.getDate.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getDay.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getFullYear.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getHours.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getMilliseconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getMinutes.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getMonth.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getSeconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getTimezoneOffset.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getTime.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCDate.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCDay.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCFullYear.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCHours.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCMilliseconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCMinutes.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCMonth.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.getUTCSeconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setDate.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setFullYear.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setHours.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setMilliseconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setMinutes.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setMonth.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setSeconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setTime.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCDate.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCFullYear.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCHours.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCMilliseconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCMinutes.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCMonth.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.setUTCSeconds.js: failed: Uncaught Error: Value is not a function
-es1/Date.prototype.toLocaleString.js: failed: Uncaught Error: Value is not a function
+es1/Date.prototype.getDate.js: Value is not a function
+es1/Date.prototype.getDay.js: Value is not a function
+es1/Date.prototype.getFullYear.js: Value is not a function
+es1/Date.prototype.getHours.js: Value is not a function
+es1/Date.prototype.getMilliseconds.js: Value is not a function
+es1/Date.prototype.getMinutes.js: Value is not a function
+es1/Date.prototype.getMonth.js: Value is not a function
+es1/Date.prototype.getSeconds.js: Value is not a function
+es1/Date.prototype.getTimezoneOffset.js: Value is not a function
+es1/Date.prototype.getTime.js: Value is not a function
+es1/Date.prototype.getUTCDate.js: Value is not a function
+es1/Date.prototype.getUTCDay.js: Value is not a function
+es1/Date.prototype.getUTCFullYear.js: Value is not a function
+es1/Date.prototype.getUTCHours.js: Value is not a function
+es1/Date.prototype.getUTCMilliseconds.js: Value is not a function
+es1/Date.prototype.getUTCMinutes.js: Value is not a function
+es1/Date.prototype.getUTCMonth.js: Value is not a function
+es1/Date.prototype.getUTCSeconds.js: Value is not a function
+es1/Date.prototype.setDate.js: Value is not a function
+es1/Date.prototype.setFullYear.js: Value is not a function
+es1/Date.prototype.setHours.js: Value is not a function
+es1/Date.prototype.setMilliseconds.js: Value is not a function
+es1/Date.prototype.setMinutes.js: Value is not a function
+es1/Date.prototype.setMonth.js: Value is not a function
+es1/Date.prototype.setSeconds.js: Value is not a function
+es1/Date.prototype.setTime.js: Value is not a function
+es1/Date.prototype.setUTCDate.js: Value is not a function
+es1/Date.prototype.setUTCFullYear.js: Value is not a function
+es1/Date.prototype.setUTCHours.js: Value is not a function
+es1/Date.prototype.setUTCMilliseconds.js: Value is not a function
+es1/Date.prototype.setUTCMinutes.js: Value is not a function
+es1/Date.prototype.setUTCMonth.js: Value is not a function
+es1/Date.prototype.setUTCSeconds.js: Value is not a function
+es1/Date.prototype.toLocaleString.js: Value is not a function
 es1/Date.prototype.toString.js: OK
-es1/Date.prototype.toUTCString.js: failed: Uncaught Error: Value is not a function
+es1/Date.prototype.toUTCString.js: Value is not a function
 es1/Date.prototype.valueOf.js: failed
 es1/Function.js: OK
-es1/Function.length.js: failed: Function.length failed
+es1/Function.length.js: Function.length failed
 es1/Function.prototype.constructor.js: OK
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
@@ -68,23 +68,23 @@ es1/Math.PI.js: failed
 es1/Math.SQRT1_2.js: failed
 es1/Math.SQRT2.js: failed
 es1/Math.abs.js: OK
-es1/Math.acos.js: failed: Uncaught Error: Value is not a function
-es1/Math.asin.js: failed: Uncaught Error: Value is not a function
-es1/Math.atan2.js: failed: Uncaught Error: Value is not a function
-es1/Math.atan.js: failed: Uncaught Error: Value is not a function
+es1/Math.acos.js: Value is not a function
+es1/Math.asin.js: Value is not a function
+es1/Math.atan2.js: Value is not a function
+es1/Math.atan.js: Value is not a function
 es1/Math.ceil.js: OK
-es1/Math.cos.js: failed: Uncaught Error: Value is not a function
-es1/Math.exp.js: failed: Uncaught Error: Value is not a function
+es1/Math.cos.js: Value is not a function
+es1/Math.exp.js: Value is not a function
 es1/Math.floor.js: OK
 es1/Math.log.js: OK
 es1/Math.max.js: OK
 es1/Math.min.js: OK
 es1/Math.pow.js: OK
-es1/Math.random.js: failed: Uncaught Error: Value is not a function
-es1/Math.round.js: failed: Uncaught Error: Value is not a function
-es1/Math.sin.js: failed: Uncaught Error: Value is not a function
-es1/Math.sqrt.js: failed: Uncaught Error: Value is not a function
-es1/Math.tan.js: failed: Uncaught Error: Value is not a function
+es1/Math.random.js: Value is not a function
+es1/Math.round.js: Value is not a function
+es1/Math.sin.js: Value is not a function
+es1/Math.sqrt.js: Value is not a function
+es1/Math.tan.js: Value is not a function
 es1/Number.MAX_VALUE.js: OK
 es1/Number.MIN_VALUE.js: failed
 es1/Number.NEGATIVE_INFINITY.js: OK
@@ -99,31 +99,31 @@ es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: TypeError: Uncaught Error: TypeError is not defined
+es1/String.generics.js: TypeError is not defined
 es1/String.js: OK
-es1/String.length.js: failed: String object length failed
-es1/String.prototype.charAt.js: failed: charAt out of bounds failed
-es1/String.prototype.charCodeAt.js: failed: charCodeAt out of bounds NaN failed
+es1/String.length.js: String object length failed
+es1/String.prototype.charAt.js: charAt out of bounds failed; charAt negative failed
+es1/String.prototype.charCodeAt.js: charCodeAt out of bounds NaN failed
 es1/String.prototype.constructor.js: OK
 es1/String.prototype.indexOf.js: OK
 es1/String.prototype.lastIndexOf.js: OK
 es1/String.prototype.split.js: OK
-es1/String.prototype.substring.js: failed: substring swap failed
+es1/String.prototype.substring.js: substring swap failed
 es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: failed: Uncaught Error: Value is not a function
-es1/annex-b.Date.prototype.setYear.js: failed: Uncaught Error: Value is not a function
-es1/annex-b.Date.prototype.toGMTString.js: failed: Uncaught Error: Value is not a function
-es1/annex-b.global.escape.js: failed: Uncaught Error: escape is not defined
-es1/annex-b.global.unescape.js: failed: Uncaught Error: unescape is not defined
-es1/annex-b.literals.octal.js: failed: Uncaught Error: Decimals with leading zeroes are not allowed
-es1/annex-b.literals.string.octal.js: failed: Uncaught Error: Octal escape sequences are not allowed
-es1/arguments.callee.js: failed: Uncaught Error: Value is not a function
+es1/annex-b.Date.prototype.getYear.js: Value is not a function
+es1/annex-b.Date.prototype.setYear.js: Value is not a function
+es1/annex-b.Date.prototype.toGMTString.js: Value is not a function
+es1/annex-b.global.escape.js: escape is not defined
+es1/annex-b.global.unescape.js: unescape is not defined
+es1/annex-b.literals.octal.js: Decimals with leading zeroes are not allowed
+es1/annex-b.literals.string.octal.js: Octal escape sequences are not allowed
+es1/arguments.callee.js: Value is not a function
 es1/arguments.js: OK
-es1/asi.eval.js: failed: Uncaught Error: eval is not defined
-es1/asi.js: failed: a<LF> ++<LF> b
+es1/asi.eval.js: eval is not defined
+es1/asi.js: Can't set member '0'
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -137,28 +137,28 @@ es1/comma.js: OK
 es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: failed: NaN failed
-es1/conversions.ToInt32.js: failed: +Infinity failed
-es1/conversions.ToInteger.js: failed: 2.9 failed
-es1/conversions.ToNumber.js: failed: null failed
+es1/conversions.ToBoolean.js: NaN failed
+es1/conversions.ToInt32.js: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
+es1/conversions.ToInteger.js: 2.9 failed; NaN failed; 1.1 failed; -1.9 failed; 5.7 failed
+es1/conversions.ToNumber.js: null failed; '0xff' failed; '+789' failed; 'abc' failed
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: failed: 3.14 failed
-es1/conversions.ToUint32.js: failed: +Infinity failed
+es1/conversions.ToString.js: 3.14 failed; 0.0001 failed; 1e21 failed; 1e-7 failed
+es1/conversions.ToUint32.js: +Infinity failed; -Infinity failed; 2^32 failed
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: failed: Uncaught Error: eval is not defined
+es1/eval.js: eval is not defined
 es1/for-in.js: OK
 es1/for.js: OK
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: failed
-es1/global.isFinite.js: failed: Uncaught Error: isFinite is not defined
-es1/global.isNaN.js: failed: Uncaught Error: isNaN is not defined
+es1/global.isFinite.js: isFinite is not defined
+es1/global.isNaN.js: isNaN is not defined
 es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: failed
 es1/global.parseInt.js: OK
 es1/global.parseInt.radix.js: OK
-es1/literals.decimal.js: failed: 1e-3 failed
+es1/literals.decimal.js: 1e-3 failed
 es1/literals.hex.js: OK
 es1/literals.string.escapes.js: OK
 es1/literals.string.hex.js: OK
@@ -168,9 +168,9 @@ es1/logical.js: OK
 es1/new.typeof.js: OK
 es1/numbers.double.js: OK
 es1/numbers.fmod.js: OK
-es1/numbers.inf.js: failed
+es1/numbers.inf.js: Infinity - Infinity is not NaN; Infinity / Infinity is not NaN; Infinity + -Infinity is not NaN
 es1/numbers.int.js: OK
-es1/numbers.nan.js: failed: NaN != NaN failed
+es1/numbers.nan.js: NaN != NaN failed; NaN + 5 failed; 10 * NaN failed
 es1/postfix.decrement.js: OK
 es1/postfix.increment.js: OK
 es1/prefix.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: failed: Uncaught Error: A variable may not be deleted
+es1/unary.delete.var.js: A variable may not be deleted
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,103 +196,103 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: Uncaught Error: 'with' statements are not allowed.
+es1/with.js: 'with' statements are not allowed.
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: failed: push to object failed
+es3/Array.prototype.push.generic.js: push to object failed; push multiple to empty object failed
 es3/Array.prototype.push.js: OK
 es3/Array.prototype.shift.generic.js: OK
 es3/Array.prototype.shift.js: OK
 es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
-es3/Array.prototype.splice.generic.js: failed: insert on object failed
+es3/Array.prototype.splice.generic.js: insert on object failed
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: failed: Uncaught Error: Value is not a function
-es3/Array.prototype.unshift.generic.js: failed: unshift on object failed
+es3/Array.prototype.toLocaleString.js: Value is not a function
+es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
-es3/Date.prototype.toDateString.js: failed: Uncaught Error: Value is not a function
-es3/Date.prototype.toLocaleDateString.js: failed: Uncaught Error: Value is not a function
-es3/Date.prototype.toLocaleString.js: failed: Uncaught Error: Value is not a function
-es3/Date.prototype.toLocaleTimeString.js: failed: Uncaught Error: Value is not a function
-es3/Date.prototype.toTimeString.js: failed: Uncaught Error: Value is not a function
+es3/Date.prototype.toDateString.js: Value is not a function
+es3/Date.prototype.toLocaleDateString.js: Value is not a function
+es3/Date.prototype.toLocaleString.js: Value is not a function
+es3/Date.prototype.toLocaleTimeString.js: Value is not a function
+es3/Date.prototype.toTimeString.js: Value is not a function
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
 es3/Error.prototype.message.js: OK
 es3/Error.prototype.name.js: OK
 es3/Error.prototype.toString.js: OK
-es3/Function.prototype.apply.js: failed: Internal error ocurred:
+es3/Function.prototype.apply.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.primitives.VoidValue cannot be cast to class me.topchetoeu.j2s.runtime.values.objects.ArrayLikeValue (me.topchetoeu.j2s.runtime.val...
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: failed: Uncaught Error: isNaN is not defined
-es3/Math.min.variadic.js: failed: Uncaught Error: isNaN is not defined
-es3/Number.prototype.toExponential.edge-cases.js: failed
-es3/Number.prototype.toExponential.js: failed: Uncaught Error: Value is not a function
-es3/Number.prototype.toExponential.rounding.js: failed: Uncaught Error: Value is not a function
-es3/Number.prototype.toExponential.throws-infinity.js: failed: toExponential(Infinity) does not throw RangeError
-es3/Number.prototype.toFixed.js: failed: Uncaught Error: Value is not a function
-es3/Number.prototype.toLocaleString.js: failed: Uncaught Error: Value is not a function
-es3/Number.prototype.toPrecision.js: failed: Uncaught Error: Value is not a function
-es3/Object.prototype.hasOwnProperty.js: failed: Uncaught Error: Value is not a function
-es3/Object.prototype.isPrototypeOf.js: failed: Uncaught Error: Value is not a function
-es3/Object.prototype.propertyIsEnumerable.js: failed: Uncaught Error: Value is not a function
-es3/Object.prototype.toLocaleString.js: failed: Uncaught Error: Value is not a function
+es3/Math.max.variadic.js: isNaN is not defined
+es3/Math.min.variadic.js: isNaN is not defined
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: Value is not a function
+es3/Number.prototype.toExponential.rounding.js: Value is not a function
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: Value is not a function
+es3/Number.prototype.toLocaleString.js: Value is not a function
+es3/Number.prototype.toPrecision.js: Value is not a function
+es3/Object.prototype.hasOwnProperty.js: Value is not a function
+es3/Object.prototype.isPrototypeOf.js: Value is not a function
+es3/Object.prototype.propertyIsEnumerable.js: Value is not a function
+es3/Object.prototype.toLocaleString.js: Value is not a function
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
+es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
-es3/RegExp.prototype.toString.js: failed: format failed
+es3/RegExp.prototype.toString.js: format failed
 es3/RegExp.source.js: OK
-es3/String.prototype.concat.generic.js: TypeError: Uncaught Error: TypeError is not defined
+es3/String.prototype.concat.generic.js: TypeError is not defined
 es3/String.prototype.concat.js: OK
-es3/String.prototype.localeCompare.js: failed: Uncaught Error: Value is not a function
-es3/String.prototype.match.generic.js: TypeError: Uncaught Error: TypeError is not defined
+es3/String.prototype.localeCompare.js: Value is not a function
+es3/String.prototype.match.generic.js: TypeError is not defined
 es3/String.prototype.match.js: TypeError: Uncaught TypeError: Regexp expected for String.prototype.match
-es3/String.prototype.replace.capture.js: failed: $1 failed
-es3/String.prototype.replace.extra.js: failed: $` failed
-es3/String.prototype.replace.generic.js: TypeError: Uncaught Error: TypeError is not defined
+es3/String.prototype.replace.capture.js: $1 failed; undefined capture failed; spec example failed; $nn 10 captures failed; $nn reverse order failed
+es3/String.prototype.replace.extra.js: $` failed; $' failed; combined replacements failed
+es3/String.prototype.replace.generic.js: TypeError is not defined
 es3/String.prototype.replace.regex.js: OK
-es3/String.prototype.replace.str.js: failed: no match should return original failed
-es3/String.prototype.search.generic.js: failed: Uncaught Error: Cannot read properties of undefined (reading 'call')
-es3/String.prototype.search.js: failed: Uncaught Error: Value is not a function
-es3/String.prototype.search.str.js: failed: Uncaught Error: Value is not a function
-es3/String.prototype.slice.generic.js: TypeError: Uncaught Error: TypeError is not defined
+es3/String.prototype.replace.str.js: no match should return original failed
+es3/String.prototype.search.generic.js: Cannot read properties of undefined (reading 'call')
+es3/String.prototype.search.js: Value is not a function
+es3/String.prototype.search.str.js: Value is not a function
+es3/String.prototype.slice.generic.js: TypeError is not defined
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: '0'.split(undefined, 0).length !== 0; '.'.split(/(.?)(.?)/).length !== 4; ''.split(/.?/).length !== 0
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: split with capturing group failed
-es3/String.prototype.toLocaleLowerCase.js: failed: Uncaught Error: Value is not a function
-es3/String.prototype.toLocaleUpperCase.js: failed: Uncaught Error: Value is not a function
-es3/annex-b.String.prototype.substr.js: failed: positive start failed
+es3/String.prototype.split.regex.js: split with capturing group failed
+es3/String.prototype.toLocaleLowerCase.js: Value is not a function
+es3/String.prototype.toLocaleUpperCase.js: Value is not a function
+es3/annex-b.String.prototype.substr.js: positive start failed; negative start failed; negative start with length failed
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: failed: constructor failed
+es3/global.EvalError.js: EvalError is not defined
 es3/global.RangeError.js: OK
 es3/global.RangeError.thrown.js: OK
-es3/global.ReferenceError.js: failed: constructor failed
-es3/global.ReferenceError.thrown.js: failed: wrong exception for undeclared variable
+es3/global.ReferenceError.js: ReferenceError is not defined
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for instanceof number
-es3/global.URIError.js: failed: constructor failed
-es3/global.URIError.thrown.js: failed: wrong exception for decodeURI incomplete escape
-es3/global.decodeURIComponent.js: failed: Uncaught Error: decodeURIComponent is not defined
-es3/global.decodeURI.js: failed: Uncaught Error: decodeURI is not defined
-es3/global.encodeURIComponent.js: failed: encode space failed
-es3/global.encodeURI.js: failed: encode plain URI failed
+es3/global.TypeError.thrown.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.j2s.runtime.values.functions.FunctionValue (me.topchetoeu.j2s.runtime.val...
+es3/global.URIError.js: URIError is not defined
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
+es3/global.decodeURIComponent.js: decodeURIComponent is not defined
+es3/global.decodeURI.js: decodeURI is not defined
+es3/global.encodeURIComponent.js: encode space failed; encode UTF-8 failed; encode # failed; encode reserved chars failed
+es3/global.encodeURI.js: encode plain URI failed; encode space failed; encode UTF-8 failed; # not encoded failed; reserved URI characters preserved failed
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: failed: Uncaught Error: Expected a variable name
-es3/instanceof.js: failed: number instanceof Object failed
+es3/identifiers.unicode.js: Expected a variable name
+es3/instanceof.js: number instanceof Object failed; string instanceof Object failed; custom object instanceof Object failed
 es3/in.js: OK
-es3/labelled.break.js: failed: Uncaught Error: Expected an end of statement
-es3/labelled.continue.js: failed: labelled continue to outer loop failed
-es3/labelled.statements.js: failed: Uncaught Error: Expected an end of statement
+es3/labelled.break.js: Expected an end of statement
+es3/labelled.continue.js: labelled continue to outer loop failed
+es3/labelled.statements.js: Expected an end of statement
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
@@ -301,14 +301,14 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: failed: Uncaught Error: Expected a member in object literal
+es3/literals.object.unicode.js: Expected a member in object literal
 es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
-es3/nested-functions.eval.js: failed: Uncaught Error: eval is not defined
+es3/nested-functions.eval.js: eval is not defined
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref for a group that hasn't captured failed
+es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -319,17 +319,17 @@ es3/regex.class.esc-w.js: OK
 es3/regex.disjunction.js: OK
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
-es3/regex.escape.control.js: failed: \v failed
+es3/regex.escape.control.js: \v failed
 es3/regex.escape.hex.js: OK
 es3/regex.escape.js: OK
-es3/regex.escape.nul.js: failed: Uncaught Error: (regex):2: Illegal octal escape sequence
+es3/regex.escape.nul.js: (regex):2: Illegal octal escape sequence
 es3/regex.escape.unicode.js: OK
 es3/regex.flag.global.js: OK
 es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: OK
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
-es3/regex.negative-lookahead.js: failed: Uncaught Error: Cannot read properties of null (reading '0')
+es3/regex.negative-lookahead.js: Cannot read properties of null (reading '0')
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -337,9 +337,9 @@ es3/regex.quantifier.min.js: OK
 es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
-es3/regex.word-boundary.js: failed: \b word boundary failed
+es3/regex.word-boundary.js: \b word boundary failed
 es3/source.line-terminators.js: failed
-es3/source.whitespace.js: failed: Uncaught Error: Expected a variable name
+es3/source.whitespace.js: Expected a variable name
 es3/source.whitespace.unicode.js: OK
 es3/strict-equals.js: OK
 es3/switch.js: OK
@@ -349,62 +349,62 @@ es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: OK
 es5/Array.prototype.filter.js: OK
 es5/Array.prototype.forEach.js: OK
-es5/Array.prototype.indexOf.js: failed: negative fromIndex failed
-es5/Array.prototype.lastIndexOf.js: failed: fromIndex failed
+es5/Array.prototype.indexOf.js: negative fromIndex failed
+es5/Array.prototype.lastIndexOf.js: fromIndex failed; negative fromIndex below zero failed
 es5/Array.prototype.map.js: OK
-es5/Array.prototype.reduceRight.js: failed: Uncaught Error: Value is not a function
-es5/Array.prototype.reduce.js: failed: sparse array skips missing elements failed
+es5/Array.prototype.reduceRight.js: Value is not a function
+es5/Array.prototype.reduce.js: sparse array skips missing elements failed
 es5/Array.prototype.some.js: OK
-es5/Array.prototype.sort.TypeError.js: failed: 17:11
+es5/Array.prototype.sort.TypeError.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.primitives.BoolValue cannot be cast to class me.topchetoeu.j2s.runtime.values.functions.FunctionValue (me.topchetoeu.j2s.runtime.va...
 es5/Array.prototype.sort.undefined-comparefn.js: OK
-es5/Date.now.js: failed: Uncaught Error: Value is not a function
-es5/Date.prototype.toISOString.js: failed: Uncaught Error: Value is not a function
-es5/Date.prototype.toJSON.js: failed: Uncaught Error: Cannot read properties of undefined (reading 'call')
-es5/Function.prototype-not-enumerable.js: failed: Uncaught Error: Value is not a function
-es5/Function.prototype.apply.array-like.js: failed: Internal error ocurred:
-es5/Function.prototype.bind.js: failed: length property incorrect
+es5/Date.now.js: Value is not a function
+es5/Date.prototype.toISOString.js: Value is not a function
+es5/Date.prototype.toJSON.js: Cannot read properties of undefined (reading 'call')
+es5/Function.prototype-not-enumerable.js: Value is not a function
+es5/Function.prototype.apply.array-like.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.j2s.runtime.values.objects.ArrayLikeValue (me.topchetoeu.j2s.runtime.valu...
+es5/Function.prototype.bind.js: Cannot read properties of null (reading 'value')
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: cyclic structure does not throw TypeError
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: cyclic structure does not throw TypeError; failed to drop undefined/function values; undefined/function values in array not converted to null; NaN and Infinity not converted null; didn't call user-pro...
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: OK
-es5/Object.defineProperties.js: failed: Uncaught Error: Can't set member 'a'
-es5/Object.defineProperty.js: failed: Uncaught Error: Can't set member 'y'
-es5/Object.freeze.js: failed: prevented modification failed
+es5/Object.defineProperties.js: Can't set member 'a'
+es5/Object.defineProperty.js: Can't set member 'y'
+es5/Object.freeze.js: Can't delete member '"c"'
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
-es5/Object.isExtensible.js: failed: Uncaught Error: Value is not a function
-es5/Object.isFrozen.js: failed: Uncaught Error: Value is not a function
-es5/Object.isSealed.js: failed: Uncaught Error: Value is not a function
+es5/Object.isExtensible.js: Value is not a function
+es5/Object.isFrozen.js: Value is not a function
+es5/Object.isSealed.js: Value is not a function
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: failed: prevented addition failed
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
-es5/Object.seal.js: failed: prevented property addition failed
+es5/Object.preventExtensions.js: Can't delete member '"b"'
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
+es5/Object.seal.js: Can't delete member '"b"'
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed: Uncaught Error: Value is not a function
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: Value is not a function
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed: Uncaught Error: Couldn't set variable undefined
+es5/global.undefined.immutable.js: Couldn't set variable undefined
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: failed: Uncaught Error: Unexpected syntax
-es5/source.zero-width-chars.js: failed: Uncaught Error: Expected a comma or end of statement
-es5/strict.eval-cannot-create-bindings.js: ReferenceError: Uncaught Error: ReferenceError is not defined
+es5/source.whitespace.bom.js: Unexpected syntax
+es5/source.zero-width-chars.js: Expected a comma or end of statement
+es5/strict.eval-cannot-create-bindings.js: ReferenceError is not defined
 es5/strict.function-expr-with-matching-name.js: failed
-es5/strict.js: ReferenceError: Uncaught Error: ReferenceError is not defined
+es5/strict.js: ReferenceError is not defined
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: failed
-es5/strict.no-assignment-to-unresolvable.js: ReferenceError: Uncaught Error: ReferenceError is not defined
+es5/strict.no-assignment-to-unresolvable.js: ReferenceError is not defined
 es5/strict.no-delete-bindings.js: OK
 es5/strict.no-delete-non-configurable.js: failed
 es5/strict.no-duplicate-parameters.js: failed
@@ -418,7 +418,7 @@ es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
-es5/this.thrown-function.js: failed: Uncaught Error: Cannot read properties of undefined (reading 'a')
+es5/this.thrown-function.js: Cannot read properties of undefined (reading 'a')
 compat-table/es5/Array.isArray.js: OK
 compat-table/es5/Array.prototype.every.js: OK
 compat-table/es5/Array.prototype.filter.js: OK
@@ -438,7 +438,7 @@ compat-table/es5/Date.prototype.toJSON.js: failed
 compat-table/es5/Function.prototype.bind.js: OK
 compat-table/es5/JSON.js: OK
 compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js: failed
-compat-table/es5/Number.prototype.toExponential.rounds-properly.js: failed: Value is not a function
+compat-table/es5/Number.prototype.toExponential.rounds-properly.js: Value is not a function
 compat-table/es5/Number.prototype.toExponential.throws-infinity.js: OK
 compat-table/es5/Object.create.js: OK
 compat-table/es5/Object.defineProperties.js: OK
@@ -458,31 +458,31 @@ compat-table/es5/String.prototype.split.js: failed
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: failed
 compat-table/es5/immutable-globals.Infinity.js: failed
-compat-table/es5/immutable-globals.NaN.js: failed: Value is not a function
-compat-table/es5/immutable-globals.undefined.js: failed: Couldn't set variable undefined
+compat-table/es5/immutable-globals.NaN.js: Value is not a function
+compat-table/es5/immutable-globals.undefined.js: Couldn't set variable undefined
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
 compat-table/es5/literals.trailing-comma-array.js: OK
 compat-table/es5/literals.trailing-comma-object.js: OK
 compat-table/es5/misc.Arguments.toStringTag.js: failed
-compat-table/es5/misc.Function.apply.array-likes.js: failed: Internal error ocurred:
-compat-table/es5/misc.Function.prototype.non-enumerable.js: failed: Value is not a function
+compat-table/es5/misc.Function.apply.array-likes.js: java.lang.ClassCastException: class me.topchetoeu.j2s.runtime.values.objects.ObjectValue cannot be cast to class me.topchetoeu.j2s.runtime.values.objects.ArrayLikeValue (me.topchetoeu.j2s.runtime.valu...
+compat-table/es5/misc.Function.prototype.non-enumerable.js: Value is not a function
 compat-table/es5/misc.enumerable-shadow.js: failed
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
-compat-table/es5/misc.thrown-functions-this.js: failed: Cannot read properties of undefined (reading 'a')
+compat-table/es5/misc.thrown-functions-this.js: Cannot read properties of undefined (reading 'a')
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: failed: Uncaught Error: Expected a comma or end of statement
+compat-table/es5/misc.zero-width-identifiers.js: Expected a comma or end of statement
 compat-table/es5/strict.arguments-callee-error.js: failed
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
 compat-table/es5/strict.assignment-eval-arguments-error.js: OK
 compat-table/es5/strict.assignment-non-writable-error.js: failed
-compat-table/es5/strict.assignment-unresolvable-error.js: failed: ReferenceError is not defined
+compat-table/es5/strict.assignment-unresolvable-error.js: ReferenceError is not defined
 compat-table/es5/strict.delete-bindings-error.js: OK
 compat-table/es5/strict.delete-non-configurable-error.js: failed
 compat-table/es5/strict.eval-arguments-bindings-error.js: OK
-compat-table/es5/strict.eval-no-bindings.js: failed: ReferenceError is not defined
+compat-table/es5/strict.eval-no-bindings.js: ReferenceError is not defined
 compat-table/es5/strict.function-caller-arguments-error.js: failed
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
 compat-table/es5/strict.legacy-octal-error.js: OK
@@ -492,17 +492,17 @@ compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: OK
 compat-table/es5/strict.with-error.js: OK
-compat-table/es6/Array.Symbol.species.js: failed: Cannot read properties of undefined (reading 'get')
+compat-table/es6/Array.Symbol.species.js: Cannot read properties of undefined (reading 'get')
 compat-table/es6/Array.from.array-like.js: failed
-compat-table/es6/Array.from.generator.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/Array.from.iterable-instance.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Array.from.iterable.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Array.from.iterator-closing.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
+compat-table/es6/Array.from.generator.js: Expected a parameter list
+compat-table/es6/Array.from.iterable-instance.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Array.from.iterable.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Array.from.iterator-closing.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/Array.from.map.array-like.js: failed
-compat-table/es6/Array.from.map.generator.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/Array.from.map.iterable-instance.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Array.from.map.iterable.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Array.iterator-prototype-chain.js: failed: Cannot read properties of null (reading 'hasOwnProperty')
+compat-table/es6/Array.from.map.generator.js: Expected a parameter list
+compat-table/es6/Array.from.map.iterable-instance.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Array.from.map.iterable.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Array.iterator-prototype-chain.js: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Array.of.js: failed
 compat-table/es6/Array.prototype.Symbol.iterator.js: OK
 compat-table/es6/Array.prototype.Symbol.unscopables.js: failed
@@ -514,31 +514,31 @@ compat-table/es6/Array.prototype.find.js: OK
 compat-table/es6/Array.prototype.keys.js: failed
 compat-table/es6/Array.prototype.splice.js: failed
 compat-table/es6/Array.prototype.values.js: failed
-compat-table/es6/Date.prototype.Symbol.toPrimitive.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es6/Function.name.accessor.js: failed: Cannot read properties of undefined (reading 'name')
+compat-table/es6/Date.prototype.Symbol.toPrimitive.js: Cannot read properties of undefined (reading 'call')
+compat-table/es6/Function.name.accessor.js: Cannot read properties of undefined (reading 'name')
 compat-table/es6/Function.name.bound.js: failed
-compat-table/es6/Function.name.class-expression.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/Function.name.class-object-method.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/Function.name.class-prototype.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/Function.name.class-statement.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/Function.name.class-static.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/Function.name.class-variable.js: failed: Uncaught Error: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-expression.js: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-object-method.js: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-prototype.js: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-statement.js: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-static.js: Unexpected keyword 'class'
+compat-table/es6/Function.name.class-variable.js: Unexpected keyword 'class'
 compat-table/es6/Function.name.configurable.js: OK
 compat-table/es6/Function.name.expression.js: OK
 compat-table/es6/Function.name.new-Function.js: OK
 compat-table/es6/Function.name.object-method.js: failed
-compat-table/es6/Function.name.shorthand.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/Function.name.shorthand.no-lexical.js: failed: Uncaught Error: Expected a member in object literal
+compat-table/es6/Function.name.shorthand.js: Expected a member in object literal
+compat-table/es6/Function.name.shorthand.no-lexical.js: Expected a member in object literal
 compat-table/es6/Function.name.statement.js: OK
-compat-table/es6/Function.name.symbol-keyed.js: failed: Uncaught Error: Expected a closing bracket after compute property
+compat-table/es6/Function.name.symbol-keyed.js: Expected a closing bracket after compute property
 compat-table/es6/Function.name.variable.js: failed
-compat-table/es6/Map.Symbol.species.js: failed: Cannot read properties of undefined (reading 'get')
+compat-table/es6/Map.Symbol.species.js: Cannot read properties of undefined (reading 'get')
 compat-table/es6/Map.constructor-accepts-null.js: OK
 compat-table/es6/Map.constructor-arguments.js: OK
 compat-table/es6/Map.constructor-invokes-set.js: failed
 compat-table/es6/Map.constructor-requires-new.js: OK
-compat-table/es6/Map.iterator-closing.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Map.iterator-prototype-chain.js: failed: Cannot read properties of null (reading 'hasOwnProperty')
+compat-table/es6/Map.iterator-closing.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Map.iterator-prototype-chain.js: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Map.js: OK
 compat-table/es6/Map.prototype-not-instance.js: OK
 compat-table/es6/Map.prototype.Symbol.iterator.js: OK
@@ -559,7 +559,7 @@ compat-table/es6/Math.clz32.js: failed
 compat-table/es6/Math.cosh.js: failed
 compat-table/es6/Math.expm1.js: failed
 compat-table/es6/Math.fround.js: failed
-compat-table/es6/Math.hypot.js: failed: Value is not a function
+compat-table/es6/Math.hypot.js: Value is not a function
 compat-table/es6/Math.imul.js: failed
 compat-table/es6/Math.log1p.js: failed
 compat-table/es6/Math.log2.js: failed
@@ -575,87 +575,87 @@ compat-table/es6/Number.isFinite.js: OK
 compat-table/es6/Number.isInteger.js: OK
 compat-table/es6/Number.isNaN.js: OK
 compat-table/es6/Number.isSafeInteger.js: OK
-compat-table/es6/Number.parseFloat.js: failed: Cannot read properties of undefined (reading 'parseFloat')
-compat-table/es6/Number.parseInt.js: failed: Cannot read properties of undefined (reading 'parseInt')
+compat-table/es6/Number.parseFloat.js: Cannot read properties of undefined (reading 'parseFloat')
+compat-table/es6/Number.parseInt.js: Cannot read properties of undefined (reading 'parseInt')
 compat-table/es6/Object.assign.js: OK
 compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: failed
 compat-table/es6/Object.setPrototypeOf.js: failed
-compat-table/es6/Promise.Symbol.species.js: failed: Cannot read properties of undefined (reading 'get')
-compat-table/es6/Promise.all.iterable.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Promise.all.js: failed: Value is not a function
+compat-table/es6/Promise.Symbol.species.js: Cannot read properties of undefined (reading 'get')
+compat-table/es6/Promise.all.iterable.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Promise.all.js: Value is not a function
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: failed: Value is not a function
+compat-table/es6/Promise.js: Value is not a function
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Promise.race.js: failed: Value is not a function
-compat-table/es6/Proxy.Array.isArray.js: failed: Proxy is not defined
-compat-table/es6/Proxy.JSON.stringify.js: failed: Proxy is not defined
-compat-table/es6/Proxy.constructor-requires-new.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.apply.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.apply.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.construct.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.construct.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.defineProperty.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.defineProperty.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.deleteProperty.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.deleteProperty.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.getPrototypeOf.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.get.instances.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.get.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.get.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.has.instances.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.has.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.has.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.isExtensible.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.isExtensible.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.ownKeys.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.ownKeys.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.preventExtensions.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.preventExtensions.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.setPrototypeOf.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.setPrototypeOf.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.set.instances.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.set.invariants.js: failed: Proxy is not defined
-compat-table/es6/Proxy.handler.set.js: failed: Proxy is not defined
-compat-table/es6/Proxy.no-prototype.js: failed: Proxy is not defined
-compat-table/es6/Proxy.revocable.js: failed: Proxy is not defined
-compat-table/es6/Reflect.apply.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.Array-subclassing.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.Function-subclassing.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.Promise-subclassing.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.js: failed: Reflect is not defined
-compat-table/es6/Reflect.construct.new-target.js: failed: Uncaught Error: Expected a closing paren after if condition.
-compat-table/es6/Reflect.construct.third-argument.js: failed: Reflect is not defined
-compat-table/es6/Reflect.defineProperty.js: failed: Reflect is not defined
-compat-table/es6/Reflect.deleteProperty.js: failed: Reflect is not defined
-compat-table/es6/Reflect.getOwnPropertyDescriptor.js: failed: Reflect is not defined
-compat-table/es6/Reflect.getPrototypeOf.js: failed: Reflect is not defined
-compat-table/es6/Reflect.get.js: failed: Reflect is not defined
-compat-table/es6/Reflect.has.js: failed: Reflect is not defined
-compat-table/es6/Reflect.isExtensible.js: failed: Reflect is not defined
-compat-table/es6/Reflect.ownKeys.string.js: failed: Reflect is not defined
-compat-table/es6/Reflect.ownKeys.symbol.js: failed: Reflect is not defined
-compat-table/es6/Reflect.preventExtensions.js: failed: Reflect is not defined
-compat-table/es6/Reflect.setPrototypeOf.js: failed: Reflect is not defined
-compat-table/es6/Reflect.set.js: failed: Reflect is not defined
-compat-table/es6/RegExp.Symbol.species.js: failed: Cannot read properties of undefined (reading 'get')
+compat-table/es6/Promise.race.iterable.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Promise.race.js: Value is not a function
+compat-table/es6/Proxy.Array.isArray.js: Proxy is not defined
+compat-table/es6/Proxy.JSON.stringify.js: Proxy is not defined
+compat-table/es6/Proxy.constructor-requires-new.js: Proxy is not defined
+compat-table/es6/Proxy.handler.apply.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.apply.js: Proxy is not defined
+compat-table/es6/Proxy.handler.construct.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.construct.js: Proxy is not defined
+compat-table/es6/Proxy.handler.defineProperty.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.defineProperty.js: Proxy is not defined
+compat-table/es6/Proxy.handler.deleteProperty.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.deleteProperty.js: Proxy is not defined
+compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: Proxy is not defined
+compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.getPrototypeOf.js: Proxy is not defined
+compat-table/es6/Proxy.handler.get.instances.js: Proxy is not defined
+compat-table/es6/Proxy.handler.get.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.get.js: Proxy is not defined
+compat-table/es6/Proxy.handler.has.instances.js: Proxy is not defined
+compat-table/es6/Proxy.handler.has.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.has.js: Proxy is not defined
+compat-table/es6/Proxy.handler.isExtensible.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.isExtensible.js: Proxy is not defined
+compat-table/es6/Proxy.handler.ownKeys.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.ownKeys.js: Proxy is not defined
+compat-table/es6/Proxy.handler.preventExtensions.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.preventExtensions.js: Proxy is not defined
+compat-table/es6/Proxy.handler.setPrototypeOf.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.setPrototypeOf.js: Proxy is not defined
+compat-table/es6/Proxy.handler.set.instances.js: Proxy is not defined
+compat-table/es6/Proxy.handler.set.invariants.js: Proxy is not defined
+compat-table/es6/Proxy.handler.set.js: Proxy is not defined
+compat-table/es6/Proxy.no-prototype.js: Proxy is not defined
+compat-table/es6/Proxy.revocable.js: Proxy is not defined
+compat-table/es6/Reflect.apply.js: Reflect is not defined
+compat-table/es6/Reflect.construct.Array-subclassing.js: Reflect is not defined
+compat-table/es6/Reflect.construct.Function-subclassing.js: Reflect is not defined
+compat-table/es6/Reflect.construct.Promise-subclassing.js: Reflect is not defined
+compat-table/es6/Reflect.construct.RegExp-subclassing.js: Reflect is not defined
+compat-table/es6/Reflect.construct.js: Reflect is not defined
+compat-table/es6/Reflect.construct.new-target.js: Expected a closing paren after if condition.
+compat-table/es6/Reflect.construct.third-argument.js: Reflect is not defined
+compat-table/es6/Reflect.defineProperty.js: Reflect is not defined
+compat-table/es6/Reflect.deleteProperty.js: Reflect is not defined
+compat-table/es6/Reflect.getOwnPropertyDescriptor.js: Reflect is not defined
+compat-table/es6/Reflect.getPrototypeOf.js: Reflect is not defined
+compat-table/es6/Reflect.get.js: Reflect is not defined
+compat-table/es6/Reflect.has.js: Reflect is not defined
+compat-table/es6/Reflect.isExtensible.js: Reflect is not defined
+compat-table/es6/Reflect.ownKeys.string.js: Reflect is not defined
+compat-table/es6/Reflect.ownKeys.symbol.js: Reflect is not defined
+compat-table/es6/Reflect.preventExtensions.js: Reflect is not defined
+compat-table/es6/Reflect.setPrototypeOf.js: Reflect is not defined
+compat-table/es6/Reflect.set.js: Reflect is not defined
+compat-table/es6/RegExp.Symbol.species.js: Cannot read properties of undefined (reading 'get')
 compat-table/es6/RegExp.prototype.Symbol.match.js: failed
 compat-table/es6/RegExp.prototype.Symbol.replace.js: OK
 compat-table/es6/RegExp.prototype.Symbol.search.js: failed
 compat-table/es6/RegExp.prototype.Symbol.split.js: OK
 compat-table/es6/RegExp.prototype.flags.js: OK
-compat-table/es6/Set.Symbol.species.js: failed: Cannot read properties of undefined (reading 'get')
+compat-table/es6/Set.Symbol.species.js: Cannot read properties of undefined (reading 'get')
 compat-table/es6/Set.constructor-accepts-null.js: OK
 compat-table/es6/Set.constructor-arguments.js: OK
 compat-table/es6/Set.constructor-invokes-add.js: failed
 compat-table/es6/Set.constructor-requires-new.js: OK
-compat-table/es6/Set.iterator-closing.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/Set.iterator-prototype-chain.js: failed: Cannot read properties of null (reading 'hasOwnProperty')
+compat-table/es6/Set.iterator-closing.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/Set.iterator-prototype-chain.js: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Set.js: OK
 compat-table/es6/Set.prototype-not-instance.js: OK
 compat-table/es6/Set.prototype.Symbol.iterator.js: OK
@@ -669,7 +669,7 @@ compat-table/es6/Set.prototype.size.js: OK
 compat-table/es6/Set.prototype.values.js: OK
 compat-table/es6/Set.zero-key.js: OK
 compat-table/es6/String.fromCodePoint.js: OK
-compat-table/es6/String.iterator-prototype-chain.js: failed: Cannot read properties of null (reading 'hasOwnProperty')
+compat-table/es6/String.iterator-prototype-chain.js: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/String.prototype.Symbol.iterator.js: OK
 compat-table/es6/String.prototype.codePointAt.js: OK
 compat-table/es6/String.prototype.endsWith.js: OK
@@ -683,9 +683,9 @@ compat-table/es6/String.raw.js: failed
 compat-table/es6/Symbol.JSON.stringify.object.js: OK
 compat-table/es6/Symbol.JSON.stringify.primitive.js: failed
 compat-table/es6/Symbol.Object.js: OK
-compat-table/es6/Symbol.String.js: failed: Value is not a function
+compat-table/es6/Symbol.String.js: Value is not a function
 compat-table/es6/Symbol.defineProperty.js: OK
-compat-table/es6/Symbol.global-registry.js: failed: Value is not a function
+compat-table/es6/Symbol.global-registry.js: Value is not a function
 compat-table/es6/Symbol.hidden-keys.js: failed
 compat-table/es6/Symbol.js: OK
 compat-table/es6/Symbol.no-coerce.js: OK
@@ -698,7 +698,7 @@ compat-table/es6/WeakMap.constructor-arguments.js: OK
 compat-table/es6/WeakMap.constructor-invokes-set.js: failed
 compat-table/es6/WeakMap.constructor-requires-new.js: OK
 compat-table/es6/WeakMap.frozen-keys.js: OK
-compat-table/es6/WeakMap.iterator-closing.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
+compat-table/es6/WeakMap.iterator-closing.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/WeakMap.js: OK
 compat-table/es6/WeakMap.no-clear.js: failed
 compat-table/es6/WeakMap.prototype-not-instance.js: OK
@@ -709,28 +709,28 @@ compat-table/es6/WeakSet.constructor-accepts-null.js: OK
 compat-table/es6/WeakSet.constructor-arguments.js: OK
 compat-table/es6/WeakSet.constructor-invokes-add.js: failed
 compat-table/es6/WeakSet.constructor-requires-new.js: OK
-compat-table/es6/WeakSet.iterator-closing.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
+compat-table/es6/WeakSet.iterator-closing.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/WeakSet.js: OK
 compat-table/es6/WeakSet.no-clear.js: failed
 compat-table/es6/WeakSet.prototype-not-instance.js: OK
 compat-table/es6/WeakSet.prototype.add-returns-this.js: OK
 compat-table/es6/WeakSet.prototype.delete.js: OK
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
-compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: failed: Value is not a function
+compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: Value is not a function
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: failed: Value is not a function
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: failed: Value is not a function
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: Value is not a function
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: Value is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: failed
 compat-table/es6/annex-b.function.if-statement.js: failed
-compat-table/es6/annex-b.function.labeled.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/annex-b.html-comments.js: failed: Uncaught Error: Expected assignable value after prefix operator.
-compat-table/es6/annex-b.regex.backreferences-octal.js: failed: Cannot read properties of null (reading '0')
+compat-table/es6/annex-b.function.labeled.js: Expected an end of statement
+compat-table/es6/annex-b.html-comments.js: Expected assignable value after prefix operator.
+compat-table/es6/annex-b.regex.backreferences-octal.js: Cannot read properties of null (reading '0')
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
 compat-table/es6/annex-b.regex.invalid-char-escapes.js: failed
-compat-table/es6/annex-b.regex.invalid-control-escapes.js: failed: Cannot read properties of null (reading '0')
-compat-table/es6/annex-b.regex.invalid-hex-escapes.js: failed: (regex):3: Illegal hexadecimal escape sequence
-compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: failed: (regex):3: Illegal Unicode escape sequence
+compat-table/es6/annex-b.regex.invalid-control-escapes.js: Cannot read properties of null (reading '0')
+compat-table/es6/annex-b.regex.invalid-hex-escapes.js: (regex):3: Illegal hexadecimal escape sequence
+compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: (regex):3: Illegal Unicode escape sequence
 compat-table/es6/annex-b.regex.octal-escapes.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
@@ -740,773 +740,773 @@ compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.set.js: OK
 compat-table/es6/annex-b.__proto__.literals.js: OK
 compat-table/es6/annex-b.__proto__.literals.multiple-error.js: OK
-compat-table/es6/annex-b.__proto__.literals.not-computed.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/arrow.0-params.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/arrow.1-param.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es6/arrow.5-param.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/arrow.bind.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es6/arrow.lexical-arguments.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es6/arrow.lexical-super.constructor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/arrow.lexical-super.methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/arrow.lexical-this.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es6/arrow.new-target.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es6/arrow.no-line-break.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/arrow.no-prototype.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/arrow.precedence.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/arrow.this-call-apply.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/class.accessor-properties.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.anonymous.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.block-scoped.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.computed-accessor-properties.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.computed-names-tdz.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.computed-prototype-methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.computed-static-accessor-properties.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.computed-static-methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.constructor-requires-new.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.constructor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.expression.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.extends-expressions.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.extends-null.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.extends.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.implicit-strict.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.lexical-name.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.methods-not-enumerable.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.new-target.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/class.optional-semicolons.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.prototype-methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.statement.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.static-accessor-properties.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.static-methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/class.string-keyed-methods.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/const.basic.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.block-scoped.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.for-in.js: failed: Uncaught Error: Expected a semicolon
-compat-table/es6/const.for-loop.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.for-of.js: failed: Uncaught Error: Expected a semicolon
-compat-table/es6/const.no-redefine.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.no-statement.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.shadow.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.basic.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.block-scoped.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.for-in.js: failed: Uncaught Error: Expected a semicolon
-compat-table/es6/const.strict.for-loop.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.for-of.js: failed: Uncaught Error: Expected a semicolon
-compat-table/es6/const.strict.no-redefine.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.no-statement.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.shadow.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.strict.tdz.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/const.tdz.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/default-params.arguments.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/default-params.basic.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/default-params.explicit-undefined.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/default-params.new-function.js: failed: Expected a parameter or a closing brace
-compat-table/es6/default-params.refer-previous.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/default-params.separate-scope.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/default-params.tdz.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-assign.array.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.astral-string.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.chained-iterable.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.chained-object.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.computed-properties.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/es6/destructuring-assign.defaults.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.empty-patterns.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.generator.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.iterable-expression.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.iterable-instance.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.iterable.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.iterator-closing.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.nested-rest.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/destructuring-assign.nested.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.object-expression.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.object-primitives.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.object.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.parenthesised-error.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.rest.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/destructuring-assign.sparse-array.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.string.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.throws-null-undefined.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-assign.trailing-comma-object.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-decl.array.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.astral-string.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.catch.js: failed: Uncaught Error: xpected a catch variable name
-compat-table/es6/destructuring-decl.computed-properties.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.defaults-tdz.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.defaults.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.for-in.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.for-of.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.generator.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.iterable-instance.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.iterable.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.iterator-closing.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.multiple-var.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.nested.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.object-primitives.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.object.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.rest.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.sparse-array.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.string.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.throws-null-undefined.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-decl.trailing-comma-object.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es6/destructuring-params.arguments.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.array.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.astral-string.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.computed-properties.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.defaults-new-function.js: failed: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.defaults-separate-scope.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.defaults.js: failed: Uncaught Error: Expected a parameter or a closing brace
+compat-table/es6/annex-b.__proto__.literals.not-computed.js: Expected a closing bracket after compute property
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: Expected a member in object literal
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: Expected a member in object literal
+compat-table/es6/arrow.0-params.js: Expected an expression in parens
+compat-table/es6/arrow.1-param.js: Expected a value after '='
+compat-table/es6/arrow.5-param.js: Expected an assignable expression before '='
+compat-table/es6/arrow.bind.js: Expected a value after '='
+compat-table/es6/arrow.lexical-arguments.js: Expected a value after '='
+compat-table/es6/arrow.lexical-super.constructor.js: Unexpected keyword 'class'
+compat-table/es6/arrow.lexical-super.methods.js: Unexpected keyword 'class'
+compat-table/es6/arrow.lexical-this.js: Expected a value after '='
+compat-table/es6/arrow.new-target.js: Expected a value after '='
+compat-table/es6/arrow.no-line-break.js: Expected an expression in parens
+compat-table/es6/arrow.no-prototype.js: Expected an expression in parens
+compat-table/es6/arrow.precedence.js: Expected an expression in parens
+compat-table/es6/arrow.this-call-apply.js: Expected an expression in parens
+compat-table/es6/class.accessor-properties.js: Unexpected keyword 'class'
+compat-table/es6/class.anonymous.js: Unexpected keyword 'class'
+compat-table/es6/class.block-scoped.js: Unexpected keyword 'class'
+compat-table/es6/class.computed-accessor-properties.js: Unexpected keyword 'class'
+compat-table/es6/class.computed-names-tdz.js: Unexpected keyword 'class'
+compat-table/es6/class.computed-prototype-methods.js: Unexpected keyword 'class'
+compat-table/es6/class.computed-static-accessor-properties.js: Unexpected keyword 'class'
+compat-table/es6/class.computed-static-methods.js: Unexpected keyword 'class'
+compat-table/es6/class.constructor-requires-new.js: Unexpected keyword 'class'
+compat-table/es6/class.constructor.js: Unexpected keyword 'class'
+compat-table/es6/class.expression.js: Unexpected keyword 'class'
+compat-table/es6/class.extends-expressions.js: Unexpected keyword 'class'
+compat-table/es6/class.extends-null.js: Unexpected keyword 'class'
+compat-table/es6/class.extends.js: Unexpected keyword 'class'
+compat-table/es6/class.implicit-strict.js: Unexpected keyword 'class'
+compat-table/es6/class.lexical-name.js: Unexpected keyword 'class'
+compat-table/es6/class.methods-not-enumerable.js: Unexpected keyword 'class'
+compat-table/es6/class.new-target.js: Expected an end of statement
+compat-table/es6/class.optional-semicolons.js: Unexpected keyword 'class'
+compat-table/es6/class.prototype-methods.js: Unexpected keyword 'class'
+compat-table/es6/class.statement.js: Unexpected keyword 'class'
+compat-table/es6/class.static-accessor-properties.js: Unexpected keyword 'class'
+compat-table/es6/class.static-methods.js: Unexpected keyword 'class'
+compat-table/es6/class.string-keyed-methods.js: Unexpected keyword 'class'
+compat-table/es6/const.basic.js: Expected an end of statement
+compat-table/es6/const.block-scoped.js: Expected an end of statement
+compat-table/es6/const.for-in.js: Expected a semicolon
+compat-table/es6/const.for-loop.js: Expected an end of statement
+compat-table/es6/const.for-of.js: Expected a semicolon
+compat-table/es6/const.no-redefine.js: Expected an end of statement
+compat-table/es6/const.no-statement.js: Expected an end of statement
+compat-table/es6/const.shadow.js: Expected an end of statement
+compat-table/es6/const.strict.basic.js: Expected an end of statement
+compat-table/es6/const.strict.block-scoped.js: Expected an end of statement
+compat-table/es6/const.strict.for-in.js: Expected a semicolon
+compat-table/es6/const.strict.for-loop.js: Expected an end of statement
+compat-table/es6/const.strict.for-of.js: Expected a semicolon
+compat-table/es6/const.strict.no-redefine.js: Expected an end of statement
+compat-table/es6/const.strict.no-statement.js: Expected an end of statement
+compat-table/es6/const.strict.shadow.js: Expected an end of statement
+compat-table/es6/const.strict.tdz.js: Expected an end of statement
+compat-table/es6/const.tdz.js: Expected an end of statement
+compat-table/es6/default-params.arguments.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.basic.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.explicit-undefined.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.new-function.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.refer-previous.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.separate-scope.js: Expected a parameter or a closing brace
+compat-table/es6/default-params.tdz.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-assign.array.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.astral-string.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.chained-iterable.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.chained-object.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.computed-properties.js: Expected a closing bracket after compute property
+compat-table/es6/destructuring-assign.defaults.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.empty-patterns.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.generator.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.iterable-expression.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.iterable-instance.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.iterable.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.iterator-closing.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.nested-rest.js: Expected an identifier after member access.
+compat-table/es6/destructuring-assign.nested.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.object-expression.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.object-primitives.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.object.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.parenthesised-error.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.rest.js: Expected an identifier after member access.
+compat-table/es6/destructuring-assign.sparse-array.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.string.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.throws-null-undefined.js: Expected a member in object literal
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-assign.trailing-comma-object.js: Expected a member in object literal
+compat-table/es6/destructuring-decl.array.js: Expected a variable name
+compat-table/es6/destructuring-decl.astral-string.js: Expected a variable name
+compat-table/es6/destructuring-decl.catch.js: xpected a catch variable name
+compat-table/es6/destructuring-decl.computed-properties.js: Expected a variable name
+compat-table/es6/destructuring-decl.defaults-tdz.js: Expected a variable name
+compat-table/es6/destructuring-decl.defaults.js: Expected a variable name
+compat-table/es6/destructuring-decl.for-in.js: Expected a variable name
+compat-table/es6/destructuring-decl.for-of.js: Expected a variable name
+compat-table/es6/destructuring-decl.generator.js: Expected a variable name
+compat-table/es6/destructuring-decl.iterable-instance.js: Expected a variable name
+compat-table/es6/destructuring-decl.iterable.js: Expected a variable name
+compat-table/es6/destructuring-decl.iterator-closing.js: Expected a variable name
+compat-table/es6/destructuring-decl.multiple-var.js: Expected a variable name
+compat-table/es6/destructuring-decl.nested.js: Expected a variable name
+compat-table/es6/destructuring-decl.object-primitives.js: Expected a variable name
+compat-table/es6/destructuring-decl.object.js: Expected a variable name
+compat-table/es6/destructuring-decl.rest.js: Expected a variable name
+compat-table/es6/destructuring-decl.sparse-array.js: Expected a variable name
+compat-table/es6/destructuring-decl.string.js: Expected a variable name
+compat-table/es6/destructuring-decl.throws-null-undefined.js: Expected a variable name
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: Expected a variable name
+compat-table/es6/destructuring-decl.trailing-comma-object.js: Expected a variable name
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: Expected an assignable expression before '='
+compat-table/es6/destructuring-params.arguments.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.array.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.astral-string.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.computed-properties.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.defaults-new-function.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.defaults-separate-scope.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.defaults.js: Expected a parameter or a closing brace
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
-compat-table/es6/destructuring-params.empty-patterns.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.generator.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.iterable-instance.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.iterable.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.iterator-closing.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.length.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.nested.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.new-function.js: failed: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.object-primitives.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.object.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.rest.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/destructuring-params.sparse-array.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.string.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.throws-null-undefined.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/destructuring-params.trailing-comma-object.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/for-of.array.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.astral-string.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.generator.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/for-of.iterable-instance.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.iterable.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.iterator-closing-break.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.iterator-closing-throw.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.sparse-array.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/for-of.string.js: failed: Uncaught Error: Expected a comma or end of statement
+compat-table/es6/destructuring-params.empty-patterns.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.generator.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.iterable-instance.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.iterable.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.iterator-closing.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.length.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.nested.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.new-function.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.object-primitives.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.object.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.rest.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: Expected a member in object literal
+compat-table/es6/destructuring-params.sparse-array.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.string.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.throws-null-undefined.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: Expected a parameter or a closing brace
+compat-table/es6/destructuring-params.trailing-comma-object.js: Expected a parameter or a closing brace
+compat-table/es6/for-of.array.js: Expected a comma or end of statement
+compat-table/es6/for-of.astral-string.js: Expected a comma or end of statement
+compat-table/es6/for-of.generator.js: Expected a parameter list
+compat-table/es6/for-of.iterable-instance.js: Expected a comma or end of statement
+compat-table/es6/for-of.iterable.js: Expected a comma or end of statement
+compat-table/es6/for-of.iterator-closing-break.js: Expected a comma or end of statement
+compat-table/es6/for-of.iterator-closing-throw.js: Expected a comma or end of statement
+compat-table/es6/for-of.sparse-array.js: Expected a comma or end of statement
+compat-table/es6/for-of.string.js: Expected a comma or end of statement
 compat-table/es6/function.block-level-decl.js: failed
-compat-table/es6/generators.basic.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.constructor.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.expression.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.no-new-this.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.prototype-chain.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.prototype.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.return.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.sending.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.shorthand.class.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/generators.shorthand.computed.class.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/generators.shorthand.computed.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/generators.shorthand.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/generators.shorthand.no-constructor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/generators.shorthand.string-keyed.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/generators.this.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.throw.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.yield-precedence.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es6/generators.yield-star.array.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.astral-string.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.generator.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.iterable-instance.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.iterable.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.iterator-closing.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.non-iterable-error.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.sparse-array.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/generators.yield-star.string.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/let.basic.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.block-scoped.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es6/generators.basic.js: A statement function requires a name
+compat-table/es6/generators.constructor.js: A statement function requires a name
+compat-table/es6/generators.expression.js: Expected a parameter list
+compat-table/es6/generators.no-new-this.js: A statement function requires a name
+compat-table/es6/generators.prototype-chain.js: A statement function requires a name
+compat-table/es6/generators.prototype.js: A statement function requires a name
+compat-table/es6/generators.return.js: A statement function requires a name
+compat-table/es6/generators.sending.js: A statement function requires a name
+compat-table/es6/generators.shorthand.class.js: Unexpected keyword 'class'
+compat-table/es6/generators.shorthand.computed.class.js: Unexpected keyword 'class'
+compat-table/es6/generators.shorthand.computed.js: Expected a member in object literal
+compat-table/es6/generators.shorthand.js: Expected a member in object literal
+compat-table/es6/generators.shorthand.no-constructor.js: Unexpected keyword 'class'
+compat-table/es6/generators.shorthand.string-keyed.js: Expected a member in object literal
+compat-table/es6/generators.this.js: A statement function requires a name
+compat-table/es6/generators.throw.js: A statement function requires a name
+compat-table/es6/generators.yield-precedence.js: A statement function requires a name
+compat-table/es6/generators.yield-star.array.js: Expected a parameter list
+compat-table/es6/generators.yield-star.astral-string.js: Expected a parameter list
+compat-table/es6/generators.yield-star.generator.js: Expected a parameter list
+compat-table/es6/generators.yield-star.iterable-instance.js: Expected a parameter list
+compat-table/es6/generators.yield-star.iterable.js: Expected a parameter list
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: Expected a parameter list
+compat-table/es6/generators.yield-star.iterator-closing.js: Expected a parameter list
+compat-table/es6/generators.yield-star.non-iterable-error.js: Expected a parameter list
+compat-table/es6/generators.yield-star.sparse-array.js: Expected a parameter list
+compat-table/es6/generators.yield-star.string.js: Expected a parameter list
+compat-table/es6/let.basic.js: Expected an end of statement
+compat-table/es6/let.block-scoped.js: Expected an end of statement
 compat-table/es6/let.for-in-shadow.js: failed
-compat-table/es6/let.for-iteration.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.for-loop.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.no-statement.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.shadow.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.basic.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.block-scoped.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es6/let.for-iteration.js: Expected an end of statement
+compat-table/es6/let.for-loop.js: Expected an end of statement
+compat-table/es6/let.no-statement.js: Expected an end of statement
+compat-table/es6/let.shadow.js: Expected an end of statement
+compat-table/es6/let.strict.basic.js: Expected an end of statement
+compat-table/es6/let.strict.block-scoped.js: Expected an end of statement
 compat-table/es6/let.strict.for-in-shadow.js: failed
-compat-table/es6/let.strict.for-iteration.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.for-loop.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.no-statement.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.shadow.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.strict.tdz.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/let.tdz.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es6/let.strict.for-iteration.js: Expected an end of statement
+compat-table/es6/let.strict.for-loop.js: Expected an end of statement
+compat-table/es6/let.strict.no-statement.js: Expected an end of statement
+compat-table/es6/let.strict.shadow.js: Expected an end of statement
+compat-table/es6/let.strict.tdz.js: Expected an end of statement
+compat-table/es6/let.tdz.js: Expected an end of statement
 compat-table/es6/literals.binary.Number.js: failed
 compat-table/es6/literals.binary.js: OK
-compat-table/es6/literals.object.computed-accessors.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/es6/literals.object.computed-properties.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/es6/literals.object.computed-shorthand-methods.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/es6/literals.object.shorthand-methods.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/literals.object.shorthand-properties.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/literals.object.string-keyed-shorthand-methods.js: failed: Uncaught Error: Expected a member in object literal
+compat-table/es6/literals.object.computed-accessors.js: Expected a closing bracket after compute property
+compat-table/es6/literals.object.computed-properties.js: Expected a closing bracket after compute property
+compat-table/es6/literals.object.computed-shorthand-methods.js: Expected a closing bracket after compute property
+compat-table/es6/literals.object.shorthand-methods.js: Expected a member in object literal
+compat-table/es6/literals.object.shorthand-properties.js: Expected a member in object literal
+compat-table/es6/literals.object.string-keyed-shorthand-methods.js: Expected a member in object literal
 compat-table/es6/literals.octal.Number.js: failed
 compat-table/es6/literals.octal.js: OK
 compat-table/es6/misc.Invalid-Date.js: failed
 compat-table/es6/misc.Object.freeze.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
-compat-table/es6/misc.Object.getOwnPropertyNames.primitives.js: failed: Stack overflow!
+compat-table/es6/misc.Object.getOwnPropertyNames.primitives.js: Stack overflow!
 compat-table/es6/misc.Object.getPrototypeOf.primitives.js: OK
-compat-table/es6/misc.Object.isExtensible.primitives.js: failed: Value is not a function
-compat-table/es6/misc.Object.isFrozen.primitives.js: failed: Value is not a function
-compat-table/es6/misc.Object.isSealed.primitives.js: failed: Value is not a function
-compat-table/es6/misc.Object.keys.primitives.js: failed: Stack overflow!
+compat-table/es6/misc.Object.isExtensible.primitives.js: Value is not a function
+compat-table/es6/misc.Object.isFrozen.primitives.js: Value is not a function
+compat-table/es6/misc.Object.isSealed.primitives.js: Value is not a function
+compat-table/es6/misc.Object.keys.primitives.js: Stack overflow!
 compat-table/es6/misc.Object.preventExtensions.primitives.js: OK
 compat-table/es6/misc.Object.seal.primitives.js: OK
-compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.defineProperty.Set.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.concat.js: failed: Cannot read properties of undefined (reading 'constructor')
-compat-table/es6/misc.Proxy.get.Array.from.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.iteration.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.pop.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.reverse.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.shift.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.splice.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Array.toString.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Date.toJSON.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Error.toString.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Function.bind.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.HasBinding.js: failed: Uncaught Error: 'with' statements are not allowed.
-compat-table/es6/misc.Proxy.get.IteratorComplete.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/misc.Proxy.get.JSON.stringify.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Object.assign.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Object.defineProperties.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.Promise.resolve.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.RegExp-constructor.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.RegExp.flags.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/misc.Proxy.get.RegExp.test.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.RegExp.toString.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.String.match.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.String.raw.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.String.replace.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.String.search.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.String.split.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.ToPrimitive.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.get.instanceof.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.copyWithin.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.fill.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.from.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.of.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.pop.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.push.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.reverse.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.shift.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.splice.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Array.unshift.js: failed: Proxy is not defined
-compat-table/es6/misc.Proxy.set.Object.assign.js: failed: Proxy is not defined
-compat-table/es6/misc.RegExp-alter-flags.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
+compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: Proxy is not defined
+compat-table/es6/misc.Proxy.defineProperty.Set.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: Proxy is not defined
+compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: Proxy is not defined
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: Proxy is not defined
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: Proxy is not defined
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: Proxy is not defined
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.concat.js: Cannot read properties of undefined (reading 'constructor')
+compat-table/es6/misc.Proxy.get.Array.from.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.iteration.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.pop.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.reverse.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.shift.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.splice.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Array.toString.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: Unexpected keyword 'class'
+compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Date.toJSON.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Error.toString.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Function.bind.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.HasBinding.js: 'with' statements are not allowed.
+compat-table/es6/misc.Proxy.get.IteratorComplete.js: Expected a comma or end of statement
+compat-table/es6/misc.Proxy.get.JSON.stringify.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Object.assign.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Object.defineProperties.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.Promise.resolve.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.RegExp-constructor.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.RegExp.flags.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/misc.Proxy.get.RegExp.test.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.RegExp.toString.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.String.match.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.String.raw.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.String.replace.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.String.search.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.String.split.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.ToPrimitive.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: Proxy is not defined
+compat-table/es6/misc.Proxy.get.instanceof.js: Proxy is not defined
+compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: Proxy is not defined
+compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: Proxy is not defined
+compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.copyWithin.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.fill.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.from.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.of.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.pop.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.push.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.reverse.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.shift.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.splice.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Array.unshift.js: Proxy is not defined
+compat-table/es6/misc.Proxy.set.Object.assign.js: Proxy is not defined
+compat-table/es6/misc.RegExp-alter-flags.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: failed
 compat-table/es6/misc.accessors-no-constructor.js: OK
-compat-table/es6/misc.bound-function-prototype.arrow.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/es6/misc.bound-function-prototype.class.js: failed: Uncaught Error: Unexpected keyword 'class'
+compat-table/es6/misc.bound-function-prototype.arrow.js: Expected an expression in parens
+compat-table/es6/misc.bound-function-prototype.class.js: Unexpected keyword 'class'
 compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/misc.do-while-no-semicolon.js: failed: Uncaught Error: Expected end of statement
+compat-table/es6/misc.bound-function-prototype.generator.js: Expected a parameter list
+compat-table/es6/misc.bound-function-prototype.subclass.js: Unexpected keyword 'class'
+compat-table/es6/misc.do-while-no-semicolon.js: Expected end of statement
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: failed
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: failed: Uncaught Error: Expected a variable name
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: Expected a variable name
 compat-table/es6/misc.identifier-syntax.var-1.js: OK
-compat-table/es6/misc.identifier-syntax.var-2.js: failed: Uncaught Error: Expected a variable name
+compat-table/es6/misc.identifier-syntax.var-2.js: Expected a variable name
 compat-table/es6/misc.property-order.JSON.parse.js: failed
 compat-table/es6/misc.property-order.JSON.stringify.js: failed
 compat-table/es6/misc.property-order.Object.assign.js: failed
 compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: failed
 compat-table/es6/misc.property-order.Object.keys.js: OK
-compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: failed: Reflect is not defined
-compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: failed: Reflect is not defined
+compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: Reflect is not defined
+compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: Reflect is not defined
 compat-table/es6/misc.prototypes-not-instances.js: failed
-compat-table/es6/new-target.assignment-error.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es6/new-target.constructor.js: failed: Uncaught Error: Expected a closing paren
+compat-table/es6/new-target.assignment-error.js: Expected a closing paren
+compat-table/es6/new-target.constructor.js: Expected a closing paren
 compat-table/es6/regex.flags.u.case-folding.js: OK
-compat-table/es6/regex.flags.u.codepoint.js: failed: (regex):2: Illegal Unicode escape sequence
+compat-table/es6/regex.flags.u.codepoint.js: (regex):2: Illegal Unicode escape sequence
 compat-table/es6/regex.flags.u.js: OK
 compat-table/es6/regex.flags.u.non-bmp.js: OK
 compat-table/es6/regex.flags.y.js: OK
 compat-table/es6/regex.flags.y.lastIndex.js: OK
-compat-table/es6/rest-params.arguments.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/rest-params.basic.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/rest-params.length.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/rest-params.new-function.js: failed: Expected a parameter or a closing brace
-compat-table/es6/rest-params.no-setter.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es6/spread.array-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.array-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.astral-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.astral-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.generator-call.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/spread.generator-literal.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/spread.iterable-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.iterable-instance-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.iterable-instance-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.iterable-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.non-iterable-error.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.sparse-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.sparse-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.string-call.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/spread.string-literal.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/subclassing.Array.concat.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.filter.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.from.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.isArray.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.length-access.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.length-set.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.map.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.of.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.prototype-chain.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.slice.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Array.splice.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.call.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.new.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.prototype-chain.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.prototype.apply.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.prototype.bind.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Function.prototype.call.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Promise.all.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Promise.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.Promise.race.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.RegExp.exec.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.RegExp.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.RegExp.prototype-chain.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.RegExp.test.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.Boolean.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.Error.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.Map.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.Number.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.Set.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/subclassing.misc.String.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.correct-constructor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.expression.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.method-calls.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.new-target-binding.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.property-access.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.statement.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.static-binding.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/super.this-binding.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es6/tail-calls.direct.js: failed: Stack overflow!
-compat-table/es6/tail-calls.mutual.js: failed: Stack overflow!
-compat-table/es6/template.basic.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es6/template.caching.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es6/template.escape-sequences.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es6/template.frozen-array.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es6/template.line-break.js: failed: eval is not defined
-compat-table/es6/template.permanent-caching.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es6/template.tagged.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es6/template.toString.js: failed: Uncaught Error: Expected end of statement or a return value
+compat-table/es6/rest-params.arguments.js: Expected a parameter or a closing brace
+compat-table/es6/rest-params.basic.js: Expected a parameter or a closing brace
+compat-table/es6/rest-params.length.js: Expected a parameter or a closing brace
+compat-table/es6/rest-params.new-function.js: Expected a parameter or a closing brace
+compat-table/es6/rest-params.no-setter.js: Expected a parameter or a closing brace
+compat-table/es6/spread.array-call.js: Expected an identifier after member access.
+compat-table/es6/spread.array-literal.js: Expected an identifier after member access.
+compat-table/es6/spread.astral-call.js: Expected an identifier after member access.
+compat-table/es6/spread.astral-literal.js: Expected an identifier after member access.
+compat-table/es6/spread.generator-call.js: Expected a parameter list
+compat-table/es6/spread.generator-literal.js: Expected a parameter list
+compat-table/es6/spread.iterable-call.js: Expected an identifier after member access.
+compat-table/es6/spread.iterable-instance-call.js: Expected an identifier after member access.
+compat-table/es6/spread.iterable-instance-literal.js: Expected an identifier after member access.
+compat-table/es6/spread.iterable-literal.js: Expected an identifier after member access.
+compat-table/es6/spread.non-iterable-error.js: Expected an identifier after member access.
+compat-table/es6/spread.sparse-call.js: Expected an identifier after member access.
+compat-table/es6/spread.sparse-literal.js: Expected an identifier after member access.
+compat-table/es6/spread.string-call.js: Expected an identifier after member access.
+compat-table/es6/spread.string-literal.js: Expected an identifier after member access.
+compat-table/es6/subclassing.Array.concat.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.filter.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.from.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.isArray.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.length-access.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.length-set.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.map.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.of.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.prototype-chain.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.slice.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Array.splice.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.call.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.new.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.prototype-chain.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.prototype.apply.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.prototype.bind.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Function.prototype.call.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Promise.all.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Promise.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Promise.prototype-chain.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.Promise.race.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.RegExp.exec.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.RegExp.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.RegExp.prototype-chain.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.RegExp.test.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.Boolean.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.Error.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.Map.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.Number.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.Set.js: Unexpected keyword 'class'
+compat-table/es6/subclassing.misc.String.js: Unexpected keyword 'class'
+compat-table/es6/super.correct-constructor.js: Unexpected keyword 'class'
+compat-table/es6/super.expression.js: Unexpected keyword 'class'
+compat-table/es6/super.method-calls.js: Unexpected keyword 'class'
+compat-table/es6/super.new-target-binding.js: Unexpected keyword 'class'
+compat-table/es6/super.property-access.js: Unexpected keyword 'class'
+compat-table/es6/super.statement.js: Unexpected keyword 'class'
+compat-table/es6/super.static-binding.js: Unexpected keyword 'class'
+compat-table/es6/super.this-binding.js: Unexpected keyword 'class'
+compat-table/es6/tail-calls.direct.js: Stack overflow!
+compat-table/es6/tail-calls.mutual.js: Stack overflow!
+compat-table/es6/template.basic.js: Expected end of statement or a return value
+compat-table/es6/template.caching.js: Expected end of statement or a return value
+compat-table/es6/template.escape-sequences.js: Expected a comma or end of statement
+compat-table/es6/template.frozen-array.js: Expected end of statement or a return value
+compat-table/es6/template.line-break.js: eval is not defined
+compat-table/es6/template.permanent-caching.js: Expected end of statement or a return value
+compat-table/es6/template.tagged.js: Expected end of statement or a return value
+compat-table/es6/template.toString.js: Expected end of statement or a return value
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
-compat-table/es6/typed-arrays.DataView.Float32.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Float64.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Int8.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Int16.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Int32.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Uint8.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Uint16.js: failed: Number is not defined
-compat-table/es6/typed-arrays.DataView.Uint32.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Float32Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Float64Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Int8Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Int16Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Int32Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Symbol.species.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.Uint8Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Uint8ClampedArray.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Uint16Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.Uint32Array.js: failed: Number is not defined
-compat-table/es6/typed-arrays.constructor-iterables.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/typed-arrays.constructor-requires-new.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es6/typed-arrays.correct-prototype-chains.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es6/typed-arrays.from.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.of.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.copyWithin.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.entries.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.every.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.fill.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.filter.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.findIndex.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.find.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.forEach.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.indexOf.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.join.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.keys.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.lastIndexOf.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.map.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.reduceRight.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.reduce.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.reverse.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.slice.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.some.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.sort.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.subarray.js: failed: Int8Array is not defined
-compat-table/es6/typed-arrays.prototype.values.js: failed: Int8Array is not defined
-compat-table/es6/unicode-escapes.identifier.js: failed: Uncaught Error: Expected a variable name
-compat-table/es6/unicode-escapes.property-access.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es6/unicode-escapes.property-key.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es6/unicode-escapes.string.js: failed: Uncaught Error: Invalid Unicode escape sequence
+compat-table/es6/typed-arrays.DataView.Float32.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Float64.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Int8.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Int16.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Int32.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Uint8.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Uint16.js: Number is not defined
+compat-table/es6/typed-arrays.DataView.Uint32.js: Number is not defined
+compat-table/es6/typed-arrays.Float32Array.js: Number is not defined
+compat-table/es6/typed-arrays.Float64Array.js: Number is not defined
+compat-table/es6/typed-arrays.Int8Array.js: Number is not defined
+compat-table/es6/typed-arrays.Int16Array.js: Number is not defined
+compat-table/es6/typed-arrays.Int32Array.js: Number is not defined
+compat-table/es6/typed-arrays.Symbol.species.js: Int8Array is not defined
+compat-table/es6/typed-arrays.Uint8Array.js: Number is not defined
+compat-table/es6/typed-arrays.Uint8ClampedArray.js: Number is not defined
+compat-table/es6/typed-arrays.Uint16Array.js: Number is not defined
+compat-table/es6/typed-arrays.Uint32Array.js: Number is not defined
+compat-table/es6/typed-arrays.constructor-iterables.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/typed-arrays.constructor-requires-new.js: Super constructor must be called before 'this' is accessed
+compat-table/es6/typed-arrays.correct-prototype-chains.js: Expected an end of statement
+compat-table/es6/typed-arrays.from.js: Int8Array is not defined
+compat-table/es6/typed-arrays.of.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.copyWithin.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.entries.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.every.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.fill.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.filter.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.findIndex.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.find.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.forEach.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.indexOf.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.join.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.keys.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.lastIndexOf.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.map.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.reduceRight.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.reduce.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.reverse.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.slice.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.some.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.sort.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.subarray.js: Int8Array is not defined
+compat-table/es6/typed-arrays.prototype.values.js: Int8Array is not defined
+compat-table/es6/unicode-escapes.identifier.js: Expected a variable name
+compat-table/es6/unicode-escapes.property-access.js: Expected an identifier after member access.
+compat-table/es6/unicode-escapes.property-key.js: Expected a member in object literal
+compat-table/es6/unicode-escapes.string.js: Invalid Unicode escape sequence
 compat-table/es6/well-known.hasInstance.js: failed
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: failed
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
 compat-table/es6/well-known.iterator.arguments.js: failed
 compat-table/es6/well-known.iterator.js: OK
-compat-table/es6/well-known.match.RegExp-constructor.js: failed: Value couldn't be converted to a primitive.
+compat-table/es6/well-known.match.RegExp-constructor.js: Value couldn't be converted to a primitive.
 compat-table/es6/well-known.match.String.endsWith.js: failed
 compat-table/es6/well-known.match.String.includes.js: failed
 compat-table/es6/well-known.match.String.startsWith.js: failed
-compat-table/es6/well-known.match.js: TypeError: Regexp expected for String.prototype.match 	
+compat-table/es6/well-known.match.js: TypeError: Regexp expected for String.prototype.match
 compat-table/es6/well-known.replace.js: OK
-compat-table/es6/well-known.search.js: failed: Value is not a function
+compat-table/es6/well-known.search.js: Value is not a function
 compat-table/es6/well-known.species.Array.concat.js: failed
 compat-table/es6/well-known.species.Array.filter.js: failed
 compat-table/es6/well-known.species.Array.map.js: failed
 compat-table/es6/well-known.species.Array.slice.js: failed
 compat-table/es6/well-known.species.Array.splice.js: failed
 compat-table/es6/well-known.species.Promise.then.js: failed
-compat-table/es6/well-known.species.RegExp.split.js: failed: Cannot read properties of undefined (reading 'exec')
+compat-table/es6/well-known.species.RegExp.split.js: Cannot read properties of undefined (reading 'exec')
 compat-table/es6/well-known.species.js: failed
 compat-table/es6/well-known.split.js: OK
 compat-table/es6/well-known.toPrimitive.js: failed
-compat-table/es6/well-known.toStringTag.existing-builtins.js: failed: Cannot convert a Symbol value to a string
+compat-table/es6/well-known.toStringTag.existing-builtins.js: Cannot convert a Symbol value to a string
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: failed
-compat-table/es6/well-known.toStringTag.new-builtins.js: failed: Uncaught Error: Expected a parameter list
-compat-table/es6/well-known.unscopables.js: failed: Uncaught Error: 'with' statements are not allowed.
+compat-table/es6/well-known.toStringTag.new-builtins.js: Expected a parameter list
+compat-table/es6/well-known.unscopables.js: 'with' statements are not allowed.
 compat-table/es2016/Array.prototype.includes.generic.js: failed
 compat-table/es2016/Array.prototype.includes.js: failed
 compat-table/es2016/Array.prototype.includes.sparse.js: failed
-compat-table/es2016/Array.prototype.includes.typed-array.js: failed: Int8Array is not defined
-compat-table/es2016/exponentiation.assignment.js: failed: Uncaught Error: Expected a value after '*'
-compat-table/es2016/exponentiation.basic.js: failed: Uncaught Error: Expected a value after '*'
-compat-table/es2016/exponentiation.unary-negation-error.js: failed: Uncaught Error: Expected a value after '*'
-compat-table/es2016/misc.Proxy-Array-includes.js: failed: Proxy is not defined
-compat-table/es2016/misc.Proxy-enumerate-removed.js: failed: Proxy is not defined
-compat-table/es2016/misc.generator-no-new.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es2016/misc.generator-throw-inner.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: failed: Uncaught Error: Expected a variable name
-compat-table/es2016/misc.nested-rest-destructuring-params.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es2016/misc.strict-fn-non-simple-params-error.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/es2017/Atomics.add.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.and.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.compareExchange.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.exchange.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.isLockFree.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.load.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.notify.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.or.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.store.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.sub.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.wait.js: failed: Atomics is not defined
-compat-table/es2017/Atomics.xor.js: failed: Atomics is not defined
-compat-table/es2017/Object.entries.js: failed: Value couldn't be converted to a primitive.
-compat-table/es2017/Object.getOwnPropertyDescriptors.js: failed: Value is not a function
-compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: failed: Proxy is not defined
-compat-table/es2017/Object.values.js: failed: Value couldn't be converted to a primitive.
-compat-table/es2017/SharedArrayBuffer.Symbol.species.js: failed: SharedArrayBuffer is not defined
+compat-table/es2016/Array.prototype.includes.typed-array.js: Int8Array is not defined
+compat-table/es2016/exponentiation.assignment.js: Expected a value after '*'
+compat-table/es2016/exponentiation.basic.js: Expected a value after '*'
+compat-table/es2016/exponentiation.unary-negation-error.js: Expected a value after '*'
+compat-table/es2016/misc.Proxy-Array-includes.js: Proxy is not defined
+compat-table/es2016/misc.Proxy-enumerate-removed.js: Proxy is not defined
+compat-table/es2016/misc.generator-no-new.js: A statement function requires a name
+compat-table/es2016/misc.generator-throw-inner.js: A statement function requires a name
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: Expected a variable name
+compat-table/es2016/misc.nested-rest-destructuring-params.js: Expected a parameter or a closing brace
+compat-table/es2016/misc.strict-fn-non-simple-params-error.js: Expected a parameter or a closing brace
+compat-table/es2017/Atomics.add.js: Atomics is not defined
+compat-table/es2017/Atomics.and.js: Atomics is not defined
+compat-table/es2017/Atomics.compareExchange.js: Atomics is not defined
+compat-table/es2017/Atomics.exchange.js: Atomics is not defined
+compat-table/es2017/Atomics.isLockFree.js: Atomics is not defined
+compat-table/es2017/Atomics.load.js: Atomics is not defined
+compat-table/es2017/Atomics.notify.js: Atomics is not defined
+compat-table/es2017/Atomics.or.js: Atomics is not defined
+compat-table/es2017/Atomics.store.js: Atomics is not defined
+compat-table/es2017/Atomics.sub.js: Atomics is not defined
+compat-table/es2017/Atomics.wait.js: Atomics is not defined
+compat-table/es2017/Atomics.xor.js: Atomics is not defined
+compat-table/es2017/Object.entries.js: Value couldn't be converted to a primitive.
+compat-table/es2017/Object.getOwnPropertyDescriptors.js: Value is not a function
+compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Proxy is not defined
+compat-table/es2017/Object.values.js: Value couldn't be converted to a primitive.
+compat-table/es2017/SharedArrayBuffer.Symbol.species.js: SharedArrayBuffer is not defined
 compat-table/es2017/SharedArrayBuffer.js: failed
-compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: failed: SharedArrayBuffer is not defined
-compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: failed: SharedArrayBuffer is not defined
-compat-table/es2017/SharedArrayBuffer.prototype.slice.js: failed: SharedArrayBuffer is not defined
-compat-table/es2017/String.prototype.padEnd.js: failed: Value is not a function
-compat-table/es2017/String.prototype.padStart.js: failed: Value is not a function
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: failed: __defineGetter__ is not defined
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: failed: __defineSetter__ is not defined
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: failed: __lookupGetter__ is not defined
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: failed: Value is not a function
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: failed: __lookupSetter__ is not defined
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: failed: Value is not a function
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: failed: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.Proxy.__defineGetter__.js: failed: Proxy is not defined
-compat-table/es2017/annex-b.Proxy.__defineSetter__.js: failed: Proxy is not defined
-compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: failed: Proxy is not defined
-compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: failed: Proxy is not defined
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es2017/async.Symbol.toStringTag.js: failed: Uncaught Error: Expected a comma or a closing paren
-compat-table/es2017/async.arrow-in-class.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2017/async.arrow.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es2017/async.await-non-promise.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es2017/async.await-rejection.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es2017/async.await.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es2017/async.constructor.js: failed: Uncaught Error: Expected a comma or end of statement
-compat-table/es2017/async.methods-class.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2017/async.methods-object.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es2017/async.must-await-value.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2017/async.no-await-in-params.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2017/async.no-line-break.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2017/async.no-prototype.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2017/async.prototype-chain.js: failed: Uncaught Error: Expected a comma or a closing paren
-compat-table/es2017/async.return.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2017/async.throw.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: SharedArrayBuffer is not defined
+compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: SharedArrayBuffer is not defined
+compat-table/es2017/SharedArrayBuffer.prototype.slice.js: SharedArrayBuffer is not defined
+compat-table/es2017/String.prototype.padEnd.js: Value is not a function
+compat-table/es2017/String.prototype.padStart.js: Value is not a function
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: __defineGetter__ is not defined
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: __defineSetter__ is not defined
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: __lookupGetter__ is not defined
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: Value is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: __lookupSetter__ is not defined
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: Value is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Proxy.__defineGetter__.js: Proxy is not defined
+compat-table/es2017/annex-b.Proxy.__defineSetter__.js: Proxy is not defined
+compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: Proxy is not defined
+compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: Proxy is not defined
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: Expected a comma or end of statement
+compat-table/es2017/async.Symbol.toStringTag.js: Expected a comma or a closing paren
+compat-table/es2017/async.arrow-in-class.js: Unexpected keyword 'class'
+compat-table/es2017/async.arrow.js: Expected an assignable expression before '='
+compat-table/es2017/async.await-non-promise.js: Expected a closing paren
+compat-table/es2017/async.await-rejection.js: Expected a closing paren
+compat-table/es2017/async.await.js: Expected a closing paren
+compat-table/es2017/async.constructor.js: Expected a comma or end of statement
+compat-table/es2017/async.methods-class.js: Unexpected keyword 'class'
+compat-table/es2017/async.methods-object.js: Expected a member in object literal
+compat-table/es2017/async.must-await-value.js: Expected an end of statement
+compat-table/es2017/async.no-await-in-params.js: Expected an end of statement
+compat-table/es2017/async.no-line-break.js: Expected an end of statement
+compat-table/es2017/async.no-prototype.js: Expected an end of statement
+compat-table/es2017/async.prototype-chain.js: Expected a comma or a closing paren
+compat-table/es2017/async.return.js: Expected an end of statement
+compat-table/es2017/async.throw.js: Expected an end of statement
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: failed
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: failed: Value is not a function
-compat-table/es2018/Promise.prototype.finally.js: failed: Value is not a function
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: failed: Value is not a function
-compat-table/es2018/async-iterators.for-await-of.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es2018/async-iterators.generators.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es2018/misc.template-literal-revision.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2018/object-rest.js: failed: Uncaught Error: Expected a variable name
-compat-table/es2018/object-spread.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/es2018/regex.flags.s.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: Value is not a function
+compat-table/es2018/Promise.prototype.finally.js: Value is not a function
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: Value is not a function
+compat-table/es2018/async-iterators.for-await-of.js: Expected a closing paren
+compat-table/es2018/async-iterators.generators.js: Expected an end of statement
+compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: Expected a member in object literal
+compat-table/es2018/misc.template-literal-revision.js: Expected end of statement or a return value
+compat-table/es2018/object-rest.js: Expected a variable name
+compat-table/es2018/object-spread.js: Expected a member in object literal
+compat-table/es2018/regex.flags.s.js: Expected an end of statement
 compat-table/es2018/regex.lookbehind.js: OK
-compat-table/es2018/regex.named-capture-groups.js: failed: Cannot read properties of undefined (reading 'year')
-compat-table/es2018/regex.unicode-property-escapes.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: failed: (regex):2: Unknown character property name {\}
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: failed: (regex):2: Unknown character property name {\}
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed: Uncaught Error: Invalid Unicode escape sequence
-compat-table/es2019/Array.prototype.flatMap.js: failed: Value is not a function
-compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: failed: Cannot read properties of undefined (reading 'flat')
-compat-table/es2019/Array.prototype.flat.js: failed: Value is not a function
-compat-table/es2019/Object.fromEntries.js: failed: Value is not a function
+compat-table/es2018/regex.named-capture-groups.js: Cannot read properties of undefined (reading 'year')
+compat-table/es2018/regex.unicode-property-escapes.js: Expected an end of statement
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: (regex):2: Unknown character property name {\}
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: (regex):2: Unknown character property name {\}
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: Invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: Invalid Unicode escape sequence
+compat-table/es2019/Array.prototype.flatMap.js: Value is not a function
+compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: Cannot read properties of undefined (reading 'flat')
+compat-table/es2019/Array.prototype.flat.js: Value is not a function
+compat-table/es2019/Object.fromEntries.js: Value is not a function
 compat-table/es2019/String.prototype.trimEnd.js: OK
 compat-table/es2019/String.prototype.trimStart.js: OK
-compat-table/es2019/Symbol.prototype.description.empty.js: failed: Value is not a function
-compat-table/es2019/Symbol.prototype.description.js: failed: Value is not a function
-compat-table/es2019/Symbol.prototype.description.undefined.js: failed: Value is not a function
+compat-table/es2019/Symbol.prototype.description.empty.js: Value is not a function
+compat-table/es2019/Symbol.prototype.description.js: Value is not a function
+compat-table/es2019/Symbol.prototype.description.undefined.js: Value is not a function
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
-compat-table/es2019/misc.Function-toString.Function-constructor.js: failed: Expected a parameter or a closing brace
-compat-table/es2019/misc.Function-toString.arrows.js: failed: eval is not defined
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed: eval is not defined
-compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed: eval is not defined
-compat-table/es2019/misc.Function-toString.computed-names.js: failed: eval is not defined
-compat-table/es2019/misc.Function-toString.native-code.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed: eval is not defined
+compat-table/es2019/misc.Function-toString.Function-constructor.js: Expected a parameter or a closing brace
+compat-table/es2019/misc.Function-toString.arrows.js: eval is not defined
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: eval is not defined
+compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: eval is not defined
+compat-table/es2019/misc.Function-toString.computed-names.js: eval is not defined
+compat-table/es2019/misc.Function-toString.native-code.js: Expected an end of statement
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: eval is not defined
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
-compat-table/es2019/misc.JSON-superset.line-separator.js: failed: eval is not defined
-compat-table/es2019/misc.JSON-superset.paragraph-separator.js: failed: eval is not defined
-compat-table/es2019/misc.optional-catch-binding.await.js: failed: Uncaught Error: Expected a closing paren
+compat-table/es2019/misc.JSON-superset.line-separator.js: eval is not defined
+compat-table/es2019/misc.JSON-superset.paragraph-separator.js: eval is not defined
+compat-table/es2019/misc.optional-catch-binding.await.js: Expected a closing paren
 compat-table/es2019/misc.optional-catch-binding.js: OK
-compat-table/es2019/misc.optional-catch-binding.yield.js: failed: Uncaught Error: A statement function requires a name
-compat-table/es2020/BigInt64Array.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2020/BigInt.asIntN.js: failed: BigInt is not defined
-compat-table/es2020/BigInt.asUintN.js: failed: BigInt is not defined
-compat-table/es2020/BigInt.constructor.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2020/BigInt.js: failed: Uncaught Error: Expected a closing paren
-compat-table/es2020/BigUint64Array.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2020/DataView.prototype.getBigInt64.js: failed: Uncaught Error: Expected a comma or a closing paren
-compat-table/es2020/DataView.prototype.getBigUint64.js: failed: Uncaught Error: Expected a comma or a closing paren
-compat-table/es2020/Promise.allSettled.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2020/String.prototype.matchAll.js: failed: Value is not a function
+compat-table/es2019/misc.optional-catch-binding.yield.js: A statement function requires a name
+compat-table/es2020/BigInt64Array.js: Expected an end of statement
+compat-table/es2020/BigInt.asIntN.js: BigInt is not defined
+compat-table/es2020/BigInt.asUintN.js: BigInt is not defined
+compat-table/es2020/BigInt.constructor.js: Expected end of statement or a return value
+compat-table/es2020/BigInt.js: Expected a closing paren
+compat-table/es2020/BigUint64Array.js: Expected an end of statement
+compat-table/es2020/DataView.prototype.getBigInt64.js: Expected a comma or a closing paren
+compat-table/es2020/DataView.prototype.getBigUint64.js: Expected a comma or a closing paren
+compat-table/es2020/Promise.allSettled.js: Expected a value after '='
+compat-table/es2020/String.prototype.matchAll.js: Value is not a function
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
-compat-table/es2020/globalThis.descriptor.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es2020/globalThis.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es2020/nullish-coalescing.js: failed: Uncaught Error: Expected a value after the ternary operator.
-compat-table/es2020/optional-chaining.bracket.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2020/optional-chaining.function-call.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2020/optional-chaining.method-call.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2020/optional-chaining.property.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2020/optional-chaining.spread-params.js: failed: Uncaught Error: Expected an identifier after member access.
-compat-table/es2021/FinalizationRegistry.js: failed: FinalizationRegistry is not defined
-compat-table/es2021/Promise.any.AggregateError.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2021/Promise.any.fulfillment.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2021/String.prototype.replaceAll.js: timeout: >3s
-compat-table/es2021/WeakRef.js: failed: WeakRef is not defined
-compat-table/es2021/logical-assignment.and.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.and.short-circuit.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.nullish.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.or.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/logical-assignment.or.short-circuit.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2021/numeric-separators.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: failed: AggregateError is not defined
-compat-table/es2022/Error.cause.AggregateError.js: failed: AggregateError is not defined
+compat-table/es2020/globalThis.descriptor.js: Expected an assignable expression before '='
+compat-table/es2020/globalThis.js: Expected an assignable expression before '='
+compat-table/es2020/nullish-coalescing.js: Expected a value after the ternary operator.
+compat-table/es2020/optional-chaining.bracket.js: Expected end of statement or a return value
+compat-table/es2020/optional-chaining.function-call.js: Expected end of statement or a return value
+compat-table/es2020/optional-chaining.method-call.js: Expected end of statement or a return value
+compat-table/es2020/optional-chaining.property.js: Expected end of statement or a return value
+compat-table/es2020/optional-chaining.spread-params.js: Expected an identifier after member access.
+compat-table/es2021/FinalizationRegistry.js: FinalizationRegistry is not defined
+compat-table/es2021/Promise.any.AggregateError.js: Expected a value after '='
+compat-table/es2021/Promise.any.fulfillment.js: Expected a value after '='
+compat-table/es2021/String.prototype.replaceAll.js: timeout: >10s
+compat-table/es2021/WeakRef.js: WeakRef is not defined
+compat-table/es2021/logical-assignment.and.js: Expected an end of statement
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: Expected an end of statement
+compat-table/es2021/logical-assignment.and.short-circuit.js: Expected an end of statement
+compat-table/es2021/logical-assignment.nullish.js: Expected an end of statement
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: Expected an end of statement
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: Expected an end of statement
+compat-table/es2021/logical-assignment.or.js: Expected an end of statement
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: Expected an end of statement
+compat-table/es2021/logical-assignment.or.short-circuit.js: Expected an end of statement
+compat-table/es2021/numeric-separators.js: Expected end of statement or a return value
+compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: AggregateError is not defined
+compat-table/es2022/Error.cause.AggregateError.js: AggregateError is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.Error.js: failed
-compat-table/es2022/Error.cause.EvalError-prototype-lacks.js: failed: EvalError is not defined
-compat-table/es2022/Error.cause.EvalError.js: failed: EvalError is not defined
+compat-table/es2022/Error.cause.EvalError-prototype-lacks.js: EvalError is not defined
+compat-table/es2022/Error.cause.EvalError.js: EvalError is not defined
 compat-table/es2022/Error.cause.RangeError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.RangeError.js: failed
-compat-table/es2022/Error.cause.ReferenceError-prototype-lacks.js: failed: ReferenceError is not defined
-compat-table/es2022/Error.cause.ReferenceError.js: failed: ReferenceError is not defined
+compat-table/es2022/Error.cause.ReferenceError-prototype-lacks.js: ReferenceError is not defined
+compat-table/es2022/Error.cause.ReferenceError.js: ReferenceError is not defined
 compat-table/es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.SyntaxError.js: failed
 compat-table/es2022/Error.cause.TypeError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.TypeError.js: failed
-compat-table/es2022/Error.cause.URIError-prototype-lacks.js: failed: URIError is not defined
-compat-table/es2022/Error.cause.URIError.js: failed: URIError is not defined
+compat-table/es2022/Error.cause.URIError-prototype-lacks.js: URIError is not defined
+compat-table/es2022/Error.cause.URIError.js: URIError is not defined
 compat-table/es2022/Object.hasOwn.ToObject-first.js: failed
-compat-table/es2022/Object.hasOwn.js: failed: Value is not a function
-compat-table/es2022/at-method.Array.js: failed: Value is not a function
-compat-table/es2022/at-method.String.js: failed: exception: Not implemented :/
-compat-table/es2022/at-method.TypedArray.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es2022/class-fields.computed-instance.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.computed-static.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.instance.parent-scope.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2022/class-fields.private-instance.initializers.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.private-instance.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.private-static.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.public-instance.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.public-static.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-fields.static.define.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-methods.private-accessor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-methods.private-instance.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-methods.private-static-accessor.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-methods.private-static.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2022/class-static-init-blocks.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2022/ergonomic-brand-checks.js: failed: Uncaught Error: Unexpected keyword 'class'
+compat-table/es2022/Object.hasOwn.js: Value is not a function
+compat-table/es2022/at-method.Array.js: Value is not a function
+compat-table/es2022/at-method.String.js: exception: Not implemented :/
+compat-table/es2022/at-method.TypedArray.js: Expected an assignable expression before '='
+compat-table/es2022/class-fields.computed-instance.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.computed-static.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.instance.parent-scope.js: Expected an end of statement
+compat-table/es2022/class-fields.private-instance.initializers.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.private-instance.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.private-instance.optional-access.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.private-static.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.public-instance.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.public-static.js: Unexpected keyword 'class'
+compat-table/es2022/class-fields.static.define.js: Unexpected keyword 'class'
+compat-table/es2022/class-methods.private-accessor.js: Unexpected keyword 'class'
+compat-table/es2022/class-methods.private-instance.js: Unexpected keyword 'class'
+compat-table/es2022/class-methods.private-static-accessor.js: Unexpected keyword 'class'
+compat-table/es2022/class-methods.private-static.js: Unexpected keyword 'class'
+compat-table/es2022/class-static-init-blocks.js: Expected an end of statement
+compat-table/es2022/ergonomic-brand-checks.js: Unexpected keyword 'class'
 compat-table/es2022/regex.flags.d.constructor.js: OK
-compat-table/es2022/regex.flags.d.shows-in-flags.js: failed: Uncaught Error: Super constructor must be called before 'this' is accessed
-compat-table/es2023/Array.prototype.findLastIndex.js: failed: Value is not a function
-compat-table/es2023/Array.prototype.findLast.js: failed: Value is not a function
-compat-table/es2023/Array.prototype.toReversed.js: failed: Value is not a function
-compat-table/es2023/Array.prototype.toSorted.js: failed: Value is not a function
-compat-table/es2023/Array.prototype.toSpliced.js: failed: Value is not a function
-compat-table/es2023/Array.prototype.with.js: failed: Value is not a function
-compat-table/es2023/TypedArray.prototype.toReversed.js: failed: Value is not a function
-compat-table/es2023/TypedArray.prototype.toSorted.js: failed: Value is not a function
-compat-table/es2023/TypedArray.prototype.with.js: failed: Value is not a function
-compat-table/es2023/hashbang.js: failed: eval is not defined
-compat-table/es2024/ArrayBuffer.prototype.detached.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2024/Map.groupBy.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2024/Object.groupBy.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2024/Promise.withResolvers.js: failed: Value is not a function
+compat-table/es2022/regex.flags.d.shows-in-flags.js: Super constructor must be called before 'this' is accessed
+compat-table/es2023/Array.prototype.findLastIndex.js: Value is not a function
+compat-table/es2023/Array.prototype.findLast.js: Value is not a function
+compat-table/es2023/Array.prototype.toReversed.js: Value is not a function
+compat-table/es2023/Array.prototype.toSorted.js: Value is not a function
+compat-table/es2023/Array.prototype.toSpliced.js: Value is not a function
+compat-table/es2023/Array.prototype.with.js: Value is not a function
+compat-table/es2023/TypedArray.prototype.toReversed.js: Value is not a function
+compat-table/es2023/TypedArray.prototype.toSorted.js: Value is not a function
+compat-table/es2023/TypedArray.prototype.with.js: Value is not a function
+compat-table/es2023/hashbang.js: eval is not defined
+compat-table/es2024/ArrayBuffer.prototype.detached.js: Expected an end of statement
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: Expected an end of statement
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: Expected an end of statement
+compat-table/es2024/Map.groupBy.js: Expected an end of statement
+compat-table/es2024/Object.groupBy.js: Expected an end of statement
+compat-table/es2024/Promise.withResolvers.js: Value is not a function
 compat-table/es2024/regex.flags.v.constructor.js: OK
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2024/regex.flags.v.set-notations.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2024/regex.flags.v.shows-in-flags.js: failed: Proxy is not defined
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: Uncaught Error: Expected end of statement or a return value
-compat-table/es2025/Iterator.extends.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/es2025/Iterator.from.iterable.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/Iterator.from.iterator.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/Iterator.instanceof.js: failed: Value is not a function
-compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: failed: Iterator is not defined
-compat-table/es2025/Iterator.prototype.drop.js: failed: Value is not a function
-compat-table/es2025/Iterator.prototype.every.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.filter.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.find.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.flatMap.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.forEach.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/Iterator.prototype.map.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.reduce.js: failed: Uncaught Error: Expected an assignable expression before '='
-compat-table/es2025/Iterator.prototype.some.js: failed: Uncaught Error: Expected a value after '='
-compat-table/es2025/Iterator.prototype.take.js: failed: Value is not a function
-compat-table/es2025/Iterator.prototype.toArray.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/Promise.try.js: failed: Value is not a function
-compat-table/es2025/RegExp.escape.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.difference.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.intersection.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.isDisjointFrom.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.isSubsetOf.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.isSupersetOf.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.symmetricDifference.js: failed: Value is not a function
-compat-table/es2025/Set.prototype.union.js: failed: Value is not a function
-compat-table/es2025/regex.duplicate-named-groups.js: failed: (regex):43: Named capturing group <year> is already defined
-compat-table/es2025/regex.pattern-modifiers.i.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/regex.pattern-modifiers.m.js: failed: Uncaught Error: Expected an end of statement
-compat-table/es2025/regex.pattern-modifiers.s.js: failed: Uncaught Error: Expected an end of statement
+compat-table/es2024/regex.flags.v.properties-of-strings.js: Expected end of statement or a return value
+compat-table/es2024/regex.flags.v.set-notations.js: Expected end of statement or a return value
+compat-table/es2024/regex.flags.v.shows-in-flags.js: Proxy is not defined
+compat-table/es2024/regex.flags.v.unicode-15.1.js: Expected end of statement or a return value
+compat-table/es2024/regex.flags.v.unicode-16.0.js: Expected end of statement or a return value
+compat-table/es2024/regex.flags.v.unicode-17.0.js: Expected end of statement or a return value
+compat-table/es2025/Iterator.extends.js: Unexpected keyword 'class'
+compat-table/es2025/Iterator.from.iterable.js: Expected an end of statement
+compat-table/es2025/Iterator.from.iterator.js: Expected an end of statement
+compat-table/es2025/Iterator.instanceof.js: Value is not a function
+compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: Iterator is not defined
+compat-table/es2025/Iterator.prototype.drop.js: Value is not a function
+compat-table/es2025/Iterator.prototype.every.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.filter.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.find.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.flatMap.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.forEach.js: Expected an end of statement
+compat-table/es2025/Iterator.prototype.map.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.reduce.js: Expected an assignable expression before '='
+compat-table/es2025/Iterator.prototype.some.js: Expected a value after '='
+compat-table/es2025/Iterator.prototype.take.js: Value is not a function
+compat-table/es2025/Iterator.prototype.toArray.js: Expected an end of statement
+compat-table/es2025/Promise.try.js: Value is not a function
+compat-table/es2025/RegExp.escape.js: Value is not a function
+compat-table/es2025/Set.prototype.difference.js: Value is not a function
+compat-table/es2025/Set.prototype.intersection.js: Value is not a function
+compat-table/es2025/Set.prototype.isDisjointFrom.js: Value is not a function
+compat-table/es2025/Set.prototype.isSubsetOf.js: Value is not a function
+compat-table/es2025/Set.prototype.isSupersetOf.js: Value is not a function
+compat-table/es2025/Set.prototype.symmetricDifference.js: Value is not a function
+compat-table/es2025/Set.prototype.union.js: Value is not a function
+compat-table/es2025/regex.duplicate-named-groups.js: (regex):43: Named capturing group <year> is already defined
+compat-table/es2025/regex.pattern-modifiers.i.js: Expected an end of statement
+compat-table/es2025/regex.pattern-modifiers.m.js: Expected an end of statement
+compat-table/es2025/regex.pattern-modifiers.s.js: Expected an end of statement
 compat-table/intl/Array.prototype.toLocaleString.js: failed
 compat-table/intl/Date.prototype.toLocaleDateString.js: failed
 compat-table/intl/Date.prototype.toLocaleString.js: failed
 compat-table/intl/Date.prototype.toLocaleTimeString.js: failed
-compat-table/intl/Intl.Collator.js: failed: Intl is not defined
-compat-table/intl/Intl.Collator.new-instances.js: failed: Intl is not defined
-compat-table/intl/Intl.Collator.prototype.compare.js: failed: Intl is not defined
-compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: failed: Intl is not defined
-compat-table/intl/Intl.Collator.rejects-invalid-tags.js: failed: Intl is not defined
+compat-table/intl/Intl.Collator.js: Intl is not defined
+compat-table/intl/Intl.Collator.new-instances.js: Intl is not defined
+compat-table/intl/Intl.Collator.prototype.compare.js: Intl is not defined
+compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: Intl is not defined
+compat-table/intl/Intl.Collator.rejects-invalid-tags.js: Intl is not defined
 compat-table/intl/Intl.Collator.valid-tags.js: failed
-compat-table/intl/Intl.Collator.without-new.js: failed: Intl is not defined
+compat-table/intl/Intl.Collator.without-new.js: Intl is not defined
 compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: failed
-compat-table/intl/Intl.DateTimeFormat.js: failed: Intl is not defined
-compat-table/intl/Intl.DateTimeFormat.new-instances.js: failed: Intl is not defined
-compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed: Intl is not defined
-compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: failed: Intl is not defined
+compat-table/intl/Intl.DateTimeFormat.js: Intl is not defined
+compat-table/intl/Intl.DateTimeFormat.new-instances.js: Intl is not defined
+compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: Intl is not defined
+compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: Intl is not defined
 compat-table/intl/Intl.DateTimeFormat.valid-tags.js: failed
-compat-table/intl/Intl.DateTimeFormat.without-new.js: failed: Intl is not defined
-compat-table/intl/Intl.NumberFormat.js: failed: Intl is not defined
-compat-table/intl/Intl.NumberFormat.new-instances.js: failed: Intl is not defined
-compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: failed: Intl is not defined
+compat-table/intl/Intl.DateTimeFormat.without-new.js: Intl is not defined
+compat-table/intl/Intl.NumberFormat.js: Intl is not defined
+compat-table/intl/Intl.NumberFormat.new-instances.js: Intl is not defined
+compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: Intl is not defined
 compat-table/intl/Intl.NumberFormat.valid-tags.js: failed
-compat-table/intl/Intl.NumberFormat.without-new.js: failed: Intl is not defined
+compat-table/intl/Intl.NumberFormat.without-new.js: Intl is not defined
 compat-table/intl/Intl.js: failed
-compat-table/intl/Intl.prototype.js: failed: Intl is not defined
+compat-table/intl/Intl.prototype.js: Intl is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: failed
 compat-table/intl/Object.prototype.toLocaleString.js: failed
 compat-table/intl/String.prototype.localeCompare.js: failed
-compat-table/next/Array.isTemplateObject.js: failed: Uncaught Error: Expected a value after '='
-compat-table/next/AsyncDisposableStack.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/next/AsyncIterator.extends.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.from.iterable.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.from.iterator.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.instanceof.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: failed: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.every.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/AsyncIterator.prototype.filter.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.find.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.map.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/AsyncIterator.prototype.some.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/AsyncIterator.prototype.take.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/DisposableStack.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/next/Map.prototype.upsert.js: failed: Uncaught Error: Expected an end of statement
+compat-table/next/Array.isTemplateObject.js: Expected a value after '='
+compat-table/next/AsyncDisposableStack.js: Expected a member in object literal
+compat-table/next/AsyncIterator.extends.js: Unexpected keyword 'class'
+compat-table/next/AsyncIterator.from.async-iterable.js: Expected an end of statement
+compat-table/next/AsyncIterator.from.iterable.js: Expected an end of statement
+compat-table/next/AsyncIterator.from.iterator.js: Expected an end of statement
+compat-table/next/AsyncIterator.instanceof.js: Expected a closing paren
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: AsyncIterator is not defined
+compat-table/next/AsyncIterator.prototype.drop.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.every.js: Expected a closing paren
+compat-table/next/AsyncIterator.prototype.filter.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.find.js: Expected a closing paren
+compat-table/next/AsyncIterator.prototype.flatMap.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.forEach.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.map.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.reduce.js: Expected a closing paren
+compat-table/next/AsyncIterator.prototype.some.js: Expected a closing paren
+compat-table/next/AsyncIterator.prototype.take.js: Expected an end of statement
+compat-table/next/AsyncIterator.prototype.toArray.js: Expected a closing paren
+compat-table/next/DisposableStack.js: Expected a closing bracket after compute property
+compat-table/next/Map.prototype.upsert.js: Expected an end of statement
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.fromBase64.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.fromHex.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.setFromBase64.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.setFromHex.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.toBase64.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/Uint8Array.toHex.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/WeakMap.prototype.upsert.js: failed: Uncaught Error: Expected an end of statement
-compat-table/next/await-using.for-of.js: failed: Uncaught Error: Expected a member in object literal
-compat-table/next/await-using.js: failed: Uncaught Error: Expected a closing paren
-compat-table/next/class-decorators.js: failed: Uncaught Error: Unexpected keyword 'class'
-compat-table/next/function.sent.js: failed: Uncaught Error: A statement function requires a name
-compat-table/next/throw-expr.arrow.js: failed: Uncaught Error: Expected an expression in parens
-compat-table/next/throw-expr.conditional.js: failed: Uncaught Error: Unexpected keyword 'throw'
-compat-table/next/throw-expr.logical.js: failed: Uncaught Error: Unexpected keyword 'throw'
-compat-table/next/throw-expr.param-init.js: failed: Uncaught Error: Expected a parameter or a closing brace
-compat-table/next/using.for-of.js: failed: Uncaught Error: Expected a closing bracket after compute property
-compat-table/next/using.js: failed: Uncaught Error: Expected a closing bracket after compute property
+compat-table/next/SuppressedError.js: Expected an end of statement
+compat-table/next/Uint8Array.fromBase64.js: Expected an end of statement
+compat-table/next/Uint8Array.fromHex.js: Expected an end of statement
+compat-table/next/Uint8Array.setFromBase64.js: Expected an end of statement
+compat-table/next/Uint8Array.setFromHex.js: Expected an end of statement
+compat-table/next/Uint8Array.toBase64.js: Expected an end of statement
+compat-table/next/Uint8Array.toHex.js: Expected an end of statement
+compat-table/next/WeakMap.prototype.upsert.js: Expected an end of statement
+compat-table/next/await-using.for-of.js: Expected a member in object literal
+compat-table/next/await-using.js: Expected a closing paren
+compat-table/next/class-decorators.js: Unexpected keyword 'class'
+compat-table/next/function.sent.js: A statement function requires a name
+compat-table/next/throw-expr.arrow.js: Expected an expression in parens
+compat-table/next/throw-expr.conditional.js: Unexpected keyword 'throw'
+compat-table/next/throw-expr.logical.js: Unexpected keyword 'throw'
+compat-table/next/throw-expr.param-init.js: Expected a parameter or a closing brace
+compat-table/next/using.for-of.js: Expected a closing bracket after compute property
+compat-table/next/using.js: Expected a closing bracket after compute property

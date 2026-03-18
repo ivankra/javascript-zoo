@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":2737096,"engine":"rhino","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/mozilla/rhino.git","revision":"7386aa037d9a8020e4e69cc0af11eb73fe59d09d","revision_date":"2026-03-01","version":""}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":2760485,"engine":"rhino","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/mozilla/rhino.git","revision":"4bf1df91036c7627f817d037aa768c3f79a9f8d8","revision_date":"2026-03-15","version":""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -414,9 +414,9 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: OK
-es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: js: "strict.this-primitive-not-coerced-in-accessors.js", line 19: uncaught JavaScript runtime exception: TypeError: Cannot set property "test" of  to "42"
-es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: Cannot set property "test" of  to "42"
+es5/strict.this-primitive-not-coerced.js: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK
@@ -517,12 +517,12 @@ compat-table/es6/Array.prototype.values.js: OK
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: OK
 compat-table/es6/Function.name.accessor.js: OK
 compat-table/es6/Function.name.bound.js: OK
-compat-table/es6/Function.name.class-expression.js: failed: js: "Function.name.class-expression.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/Function.name.class-object-method.js: failed: js: "Function.name.class-object-method.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/Function.name.class-prototype.js: failed: js: "Function.name.class-prototype.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/Function.name.class-statement.js: failed: js: "Function.name.class-statement.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/Function.name.class-static.js: failed: js: "Function.name.class-static.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/Function.name.class-variable.js: failed: js: "Function.name.class-variable.js", line 1: Compilation produced 3 syntax errors.
+compat-table/es6/Function.name.class-expression.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/Function.name.class-statement.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/Function.name.class-static.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/Function.name.class-variable.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/Function.name.configurable.js: OK
 compat-table/es6/Function.name.expression.js: OK
 compat-table/es6/Function.name.new-Function.js: OK
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: failed
 compat-table/es6/Reflect.construct.Promise-subclassing.js: TypeError: The constructor for Promise may not be invoked as a function
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed
 compat-table/es6/Reflect.construct.js: OK
-compat-table/es6/Reflect.construct.new-target.js: failed: js: "Reflect.construct.new-target.js", line 11: syntax error
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError: syntax error
 compat-table/es6/Reflect.construct.third-argument.js: OK
 compat-table/es6/Reflect.defineProperty.js: OK
 compat-table/es6/Reflect.deleteProperty.js: OK
@@ -748,54 +748,54 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: OK
 compat-table/es6/arrow.lexical-arguments.js: OK
-compat-table/es6/arrow.lexical-super.constructor.js: failed: js: "arrow.lexical-super.constructor.js", line 14: syntax error
-compat-table/es6/arrow.lexical-super.methods.js: failed: js: "arrow.lexical-super.methods.js", line 11: syntax error
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/arrow.lexical-this.js: OK
-compat-table/es6/arrow.new-target.js: failed: js: "arrow.new-target.js", line 11: syntax error
+compat-table/es6/arrow.new-target.js: SyntaxError: syntax error
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: OK
 compat-table/es6/arrow.precedence.js: OK
 compat-table/es6/arrow.this-call-apply.js: OK
-compat-table/es6/class.accessor-properties.js: failed: js: "class.accessor-properties.js", line 13: syntax error
-compat-table/es6/class.anonymous.js: failed: js: "class.anonymous.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/class.block-scoped.js: failed: js: "class.block-scoped.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/class.computed-accessor-properties.js: failed: js: "class.computed-accessor-properties.js", line 13: syntax error
-compat-table/es6/class.computed-names-tdz.js: failed: js: "class.computed-names-tdz.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/class.computed-prototype-methods.js: failed: js: "class.computed-prototype-methods.js", line 13: syntax error
-compat-table/es6/class.computed-static-accessor-properties.js: failed: js: "class.computed-static-accessor-properties.js", line 13: syntax error
-compat-table/es6/class.computed-static-methods.js: failed: js: "class.computed-static-methods.js", line 13: syntax error
-compat-table/es6/class.constructor-requires-new.js: failed: js: "class.constructor-requires-new.js", line 14: syntax error
-compat-table/es6/class.constructor.js: failed: js: "class.constructor.js", line 11: syntax error
-compat-table/es6/class.expression.js: failed: js: "class.expression.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/class.extends-expressions.js: failed: js: "class.extends-expressions.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/class.extends-null.js: failed: js: "class.extends-null.js", line 11: syntax error
-compat-table/es6/class.extends.js: failed: js: "class.extends.js", line 1: Compilation produced 2 syntax errors.
-compat-table/es6/class.implicit-strict.js: failed: js: "class.implicit-strict.js", line 12: syntax error
-compat-table/es6/class.lexical-name.js: failed: js: "class.lexical-name.js", line 11: syntax error
-compat-table/es6/class.methods-not-enumerable.js: failed: js: "class.methods-not-enumerable.js", line 11: syntax error
-compat-table/es6/class.new-target.js: failed: js: "class.new-target.js", line 12: syntax error
-compat-table/es6/class.optional-semicolons.js: failed: js: "class.optional-semicolons.js", line 13: syntax error
-compat-table/es6/class.prototype-methods.js: failed: js: "class.prototype-methods.js", line 11: syntax error
-compat-table/es6/class.statement.js: failed: js: "class.statement.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/class.static-accessor-properties.js: failed: js: "class.static-accessor-properties.js", line 13: syntax error
-compat-table/es6/class.static-methods.js: failed: js: "class.static-methods.js", line 12: syntax error
-compat-table/es6/class.string-keyed-methods.js: failed: js: "class.string-keyed-methods.js", line 11: syntax error
+compat-table/es6/class.accessor-properties.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.anonymous.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.block-scoped.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.computed-static-methods.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.constructor.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.expression.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.extends-expressions.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.extends-null.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.extends.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.implicit-strict.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.lexical-name.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.new-target.js: SyntaxError: syntax error
+compat-table/es6/class.optional-semicolons.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.prototype-methods.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.statement.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.static-methods.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/const.basic.js: OK
-compat-table/es6/const.block-scoped.js: failed: js: "const.block-scoped.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/const.for-in.js: failed: js: "const.for-in.js", line 11: syntax error
-compat-table/es6/const.for-loop.js: failed: js: "const.for-loop.js", line 11: syntax error
-compat-table/es6/const.for-of.js: failed: js: "const.for-of.js", line 11: syntax error
+compat-table/es6/const.block-scoped.js: SyntaxError: redeclaration of const bar.
+compat-table/es6/const.for-in.js: SyntaxError: syntax error
+compat-table/es6/const.for-loop.js: SyntaxError: syntax error
+compat-table/es6/const.for-of.js: SyntaxError: syntax error
 compat-table/es6/const.no-redefine.js: failed
 compat-table/es6/const.no-statement.js: failed
-compat-table/es6/const.shadow.js: failed: js: "const.shadow.js", line 1: Compilation produced 1 syntax errors.
+compat-table/es6/const.shadow.js: SyntaxError: redeclaration of const bar.
 compat-table/es6/const.strict.basic.js: OK
-compat-table/es6/const.strict.block-scoped.js: failed: js: "const.strict.block-scoped.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/const.strict.for-in.js: failed: js: "const.strict.for-in.js", line 12: syntax error
-compat-table/es6/const.strict.for-loop.js: failed: js: "const.strict.for-loop.js", line 12: syntax error
-compat-table/es6/const.strict.for-of.js: failed: js: "const.strict.for-of.js", line 12: syntax error
+compat-table/es6/const.strict.block-scoped.js: SyntaxError: redeclaration of const bar.
+compat-table/es6/const.strict.for-in.js: SyntaxError: syntax error
+compat-table/es6/const.strict.for-loop.js: SyntaxError: syntax error
+compat-table/es6/const.strict.for-of.js: SyntaxError: syntax error
 compat-table/es6/const.strict.no-redefine.js: OK
 compat-table/es6/const.strict.no-statement.js: failed
-compat-table/es6/const.strict.shadow.js: failed: js: "const.strict.shadow.js", line 1: Compilation produced 1 syntax errors.
+compat-table/es6/const.strict.shadow.js: SyntaxError: redeclaration of const bar.
 compat-table/es6/const.strict.tdz.js: failed
 compat-table/es6/const.tdz.js: failed
 compat-table/es6/default-params.arguments.js: OK
@@ -835,7 +835,7 @@ compat-table/es6/destructuring-decl.catch.js: OK
 compat-table/es6/destructuring-decl.computed-properties.js: OK
 compat-table/es6/destructuring-decl.defaults-tdz.js: failed
 compat-table/es6/destructuring-decl.defaults.js: OK
-compat-table/es6/destructuring-decl.for-in.js: failed: js: "destructuring-decl.for-in.js", line 1: Compilation produced 1 syntax errors.
+compat-table/es6/destructuring-decl.for-in.js: SyntaxError: Left hand side of for..in loop must be an array of length 2 to accept key/value pair.
 compat-table/es6/destructuring-decl.for-of.js: OK
 compat-table/es6/destructuring-decl.generator.js: failed
 compat-table/es6/destructuring-decl.iterable-instance.js: failed
@@ -871,7 +871,7 @@ compat-table/es6/destructuring-params.new-function.js: OK
 compat-table/es6/destructuring-params.object-primitives.js: OK
 compat-table/es6/destructuring-params.object.js: OK
 compat-table/es6/destructuring-params.rest.js: OK
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: failed: js: "destructuring-params.shorthand-defaults-arrow.js", line 10: syntax error
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: syntax error
 compat-table/es6/destructuring-params.sparse-array.js: OK
 compat-table/es6/destructuring-params.string.js: OK
 compat-table/es6/destructuring-params.throws-null-undefined.js: OK
@@ -894,12 +894,12 @@ compat-table/es6/generators.no-new-this.js: OK
 compat-table/es6/generators.prototype-chain.js: failed
 compat-table/es6/generators.prototype.js: OK
 compat-table/es6/generators.return.js: OK
-compat-table/es6/generators.sending.js: failed: js: "generators.sending.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/generators.shorthand.class.js: failed: js: "generators.shorthand.class.js", line 14: syntax error
-compat-table/es6/generators.shorthand.computed.class.js: failed: js: "generators.shorthand.computed.class.js", line 15: syntax error
+compat-table/es6/generators.sending.js: SyntaxError: yield expression must be parenthesized.
+compat-table/es6/generators.shorthand.class.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/generators.shorthand.computed.js: OK
 compat-table/es6/generators.shorthand.js: OK
-compat-table/es6/generators.shorthand.no-constructor.js: failed: js: "generators.shorthand.no-constructor.js", line 14: syntax error
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/generators.shorthand.string-keyed.js: OK
 compat-table/es6/generators.this.js: OK
 compat-table/es6/generators.throw.js: OK
@@ -971,7 +971,7 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: failed
 compat-table/es6/misc.Proxy.get.Array.shift.js: OK
 compat-table/es6/misc.Proxy.get.Array.splice.js: failed
 compat-table/es6/misc.Proxy.get.Array.toString.js: failed
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed: js: "misc.Proxy.get.ClassDefinitionEvaluation.js", line 1: Compilation produced 1 syntax errors.
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: failed
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: OK
@@ -1017,10 +1017,10 @@ compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: OK
 compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: failed: js: "misc.bound-function-prototype.class.js", line 12: syntax error
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/misc.bound-function-prototype.function.js: failed
 compat-table/es6/misc.bound-function-prototype.generator.js: failed
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed: js: "misc.bound-function-prototype.subclass.js", line 11: syntax error
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
 compat-table/es6/misc.for-in-no-assignment-strict.js: failed
@@ -1036,9 +1036,9 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 compat-table/es6/misc.prototypes-not-instances.js: failed
-compat-table/es6/new-target.assignment-error.js: failed: js: "new-target.assignment-error.js", line 12: syntax error
-compat-table/es6/new-target.constructor.js: failed: js: "new-target.constructor.js", line 12: syntax error
-compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid flag 'u and i' after regular expression
+compat-table/es6/new-target.assignment-error.js: SyntaxError: syntax error
+compat-table/es6/new-target.constructor.js: SyntaxError: syntax error
+compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: invalid flag 'u and i' after regular expression
 compat-table/es6/regex.flags.u.codepoint.js: OK
 compat-table/es6/regex.flags.u.js: OK
 compat-table/es6/regex.flags.u.non-bmp.js: OK
@@ -1049,62 +1049,62 @@ compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: OK
 compat-table/es6/rest-params.new-function.js: OK
 compat-table/es6/rest-params.no-setter.js: failed
-compat-table/es6/spread.array-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.array-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.array-literal.js: OK
-compat-table/es6/spread.astral-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.astral-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.astral-literal.js: OK
-compat-table/es6/spread.generator-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.generator-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.generator-literal.js: OK
-compat-table/es6/spread.iterable-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
-compat-table/es6/spread.iterable-instance-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.iterable-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.iterable-instance-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.iterable-instance-literal.js: OK
 compat-table/es6/spread.iterable-literal.js: OK
-compat-table/es6/spread.non-iterable-error.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
-compat-table/es6/spread.sparse-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.non-iterable-error.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.sparse-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.sparse-literal.js: OK
-compat-table/es6/spread.string-call.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es6/spread.string-call.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es6/spread.string-literal.js: OK
-compat-table/es6/subclassing.Array.concat.js: failed: js: "subclassing.Array.concat.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.filter.js: failed: js: "subclassing.Array.filter.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.from.js: failed: js: "subclassing.Array.from.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.isArray.js: failed: js: "subclassing.Array.isArray.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.length-access.js: failed: js: "subclassing.Array.length-access.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.length-set.js: failed: js: "subclassing.Array.length-set.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.map.js: failed: js: "subclassing.Array.map.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.of.js: failed: js: "subclassing.Array.of.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.prototype-chain.js: failed: js: "subclassing.Array.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.slice.js: failed: js: "subclassing.Array.slice.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Array.splice.js: failed: js: "subclassing.Array.splice.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.call.js: failed: js: "subclassing.Function.call.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.new.js: failed: js: "subclassing.Function.new.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.prototype-chain.js: failed: js: "subclassing.Function.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.prototype.apply.js: failed: js: "subclassing.Function.prototype.apply.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.prototype.bind.js: failed: js: "subclassing.Function.prototype.bind.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Function.prototype.call.js: failed: js: "subclassing.Function.prototype.call.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Promise.all.js: failed: js: "subclassing.Promise.all.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Promise.js: failed: js: "subclassing.Promise.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: js: "subclassing.Promise.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.Promise.race.js: failed: js: "subclassing.Promise.race.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.RegExp.exec.js: failed: js: "subclassing.RegExp.exec.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.RegExp.js: failed: js: "subclassing.RegExp.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.RegExp.prototype-chain.js: failed: js: "subclassing.RegExp.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.RegExp.test.js: failed: js: "subclassing.RegExp.test.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.misc.Boolean.js: failed: js: "subclassing.misc.Boolean.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.misc.Error.js: failed: js: "subclassing.misc.Error.js", line 9: identifier is a reserved word: class
-compat-table/es6/subclassing.misc.Map.js: failed: js: "subclassing.misc.Map.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.misc.Number.js: failed: js: "subclassing.misc.Number.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.misc.Set.js: failed: js: "subclassing.misc.Set.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/subclassing.misc.String.js: failed: js: "subclassing.misc.String.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es6/super.correct-constructor.js: failed: js: "super.correct-constructor.js", line 13: syntax error
-compat-table/es6/super.expression.js: failed: js: "super.expression.js", line 12: syntax error
-compat-table/es6/super.method-calls.js: failed: js: "super.method-calls.js", line 12: syntax error
-compat-table/es6/super.new-target-binding.js: failed: js: "super.new-target-binding.js", line 12: syntax error
-compat-table/es6/super.property-access.js: failed: js: "super.property-access.js", line 11: syntax error
-compat-table/es6/super.statement.js: failed: js: "super.statement.js", line 13: syntax error
-compat-table/es6/super.static-binding.js: failed: js: "super.static-binding.js", line 11: syntax error
-compat-table/es6/super.this-binding.js: failed: js: "super.this-binding.js", line 12: syntax error
-compat-table/es6/tail-calls.direct.js: failed: js: exception from uncaught JavaScript throw: java.lang.StackOverflowError
-compat-table/es6/tail-calls.mutual.js: failed: js: exception from uncaught JavaScript throw: java.lang.StackOverflowError
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.from.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.map.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.of.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.call.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.new.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Promise.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.RegExp.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/subclassing.misc.String.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.correct-constructor.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.expression.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.method-calls.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.new-target-binding.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.property-access.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.statement.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.static-binding.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/super.this-binding.js: SyntaxError: identifier is a reserved word: class
+compat-table/es6/tail-calls.direct.js: java.lang.StackOverflowError
+compat-table/es6/tail-calls.mutual.js: java.lang.StackOverflowError
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1132,7 +1132,7 @@ compat-table/es6/typed-arrays.Uint8Array.js: OK
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: OK
 compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
-compat-table/es6/typed-arrays.constructor-iterables.js: failed: invalid argument
+compat-table/es6/typed-arrays.constructor-iterables.js: invalid argument
 compat-table/es6/typed-arrays.constructor-requires-new.js: OK
 compat-table/es6/typed-arrays.correct-prototype-chains.js: OK
 compat-table/es6/typed-arrays.from.js: OK
@@ -1248,31 +1248,31 @@ compat-table/es2017/annex-b.Proxy.__defineSetter__.js: failed
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: failed
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: failed
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
-compat-table/es2017/async.Symbol.toStringTag.js: failed: js: "async.Symbol.toStringTag.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es2017/async.arrow-in-class.js: failed: js: "async.arrow-in-class.js", line 49: syntax error
-compat-table/es2017/async.arrow.js: failed: js: "async.arrow.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es2017/async.await-non-promise.js: failed: js: "async.await-non-promise.js", line 51: syntax error
-compat-table/es2017/async.await-rejection.js: timeout: js:       var a1 = await new Promise(function (_, reject) { setTimeout(reject,800,"foo"); });
-compat-table/es2017/async.await.js: timeout: js:     var a1 = await new Promise(function (resolve) { setTimeout(resolve,800,"foo"); });
-compat-table/es2017/async.constructor.js: failed: js: "async.constructor.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es2017/async.methods-class.js: failed: js: "async.methods-class.js", line 47: syntax error
-compat-table/es2017/async.methods-object.js: failed: js: "async.methods-object.js", line 46: invalid property id
-compat-table/es2017/async.must-await-value.js: failed: js: "async.must-await-value.js", line 16: invalid return
-compat-table/es2017/async.no-await-in-params.js: failed: js: "async.no-await-in-params.js", line 16: invalid return
-compat-table/es2017/async.no-line-break.js: failed: js: "async.no-line-break.js", line 13: syntax error
-compat-table/es2017/async.no-prototype.js: failed: js: "async.no-prototype.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es2017/async.prototype-chain.js: failed: js: "async.prototype-chain.js", line 1: Compilation produced 1 syntax errors.
-compat-table/es2017/async.return.js: failed: js: "async.return.js", line 50: invalid return
-compat-table/es2017/async.throw.js: failed: js: "async.throw.js", line 50: invalid return
+compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: missing ) after argument list
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2017/async.arrow.js: SyntaxError: missing formal parameter
+compat-table/es2017/async.await-non-promise.js: SyntaxError: missing ) in parenthetical
+compat-table/es2017/async.await-rejection.js: SyntaxError: missing ) in parenthetical
+compat-table/es2017/async.await.js: SyntaxError: missing ) in parenthetical
+compat-table/es2017/async.constructor.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.methods-class.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2017/async.methods-object.js: SyntaxError: identifier is a reserved word: await
+compat-table/es2017/async.must-await-value.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.no-await-in-params.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.no-line-break.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.no-prototype.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.prototype-chain.js: SyntaxError: missing ) after argument list
+compat-table/es2017/async.return.js: SyntaxError: missing ; before statement
+compat-table/es2017/async.throw.js: SyntaxError: missing ; before statement
 compat-table/es2017/misc.arguments-caller-removed.js: OK
-compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid flag 'u and i' after regular expression
+compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: invalid flag 'u and i' after regular expression
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
 compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
-compat-table/es2018/async-iterators.for-await-of.js: failed: js: "async-iterators.for-await-of.js", line 62: syntax error
-compat-table/es2018/async-iterators.generators.js: failed: js: "async-iterators.generators.js", line 52: syntax error
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: missing ) in parenthetical
+compat-table/es2018/async-iterators.generators.js: SyntaxError: missing ; before statement
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 compat-table/es2018/misc.template-literal-revision.js: OK
 compat-table/es2018/object-rest.js: OK
@@ -1281,15 +1281,15 @@ compat-table/es2018/regex.flags.s.js: OK
 compat-table/es2018/regex.lookbehind.js: OK
 compat-table/es2018/regex.named-capture-groups.js: OK
 compat-table/es2018/regex.unicode-property-escapes.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: invalid Unicode escape sequence
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: invalid Unicode escape sequence
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: invalid Unicode escape sequence
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1311,7 +1311,7 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: OK
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
-compat-table/es2019/misc.optional-catch-binding.await.js: failed: js: "misc.optional-catch-binding.await.js", line 48: syntax error
+compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: missing ) in parenthetical
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: OK
 compat-table/es2020/BigInt64Array.js: OK
@@ -1322,7 +1322,7 @@ compat-table/es2020/BigInt.js: OK
 compat-table/es2020/BigUint64Array.js: OK
 compat-table/es2020/DataView.prototype.getBigInt64.js: OK
 compat-table/es2020/DataView.prototype.getBigUint64.js: OK
-compat-table/es2020/Promise.allSettled.js: MissingOK
+compat-table/es2020/Promise.allSettled.js: failed
 compat-table/es2020/String.prototype.matchAll.js: OK
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
 compat-table/es2020/globalThis.descriptor.js: OK
@@ -1332,7 +1332,7 @@ compat-table/es2020/optional-chaining.bracket.js: OK
 compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
-compat-table/es2020/optional-chaining.spread-params.js: failed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
+compat-table/es2020/optional-chaining.spread-params.js: crashed: Exception in thread "main" java.lang.RuntimeException: Unexpected node type 186
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined.
 compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK
@@ -1369,23 +1369,23 @@ compat-table/es2022/Object.hasOwn.js: OK
 compat-table/es2022/at-method.Array.js: OK
 compat-table/es2022/at-method.String.js: OK
 compat-table/es2022/at-method.TypedArray.js: OK
-compat-table/es2022/class-fields.computed-instance.js: failed: js: "class-fields.computed-instance.js", line 12: invalid return
-compat-table/es2022/class-fields.computed-static.js: failed: js: "class-fields.computed-static.js", line 12: invalid return
-compat-table/es2022/class-fields.instance.parent-scope.js: failed: js: "class-fields.instance.parent-scope.js", line 13: syntax error
-compat-table/es2022/class-fields.private-instance.initializers.js: failed: js: "class-fields.private-instance.initializers.js", line 14: syntax error
-compat-table/es2022/class-fields.private-instance.js: failed: js: "class-fields.private-instance.js", line 13: syntax error
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: js: "class-fields.private-instance.optional-access.js", line 14: syntax error
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: failed: js: "class-fields.private-instance.optional-deep-access.js", line 14: syntax error
-compat-table/es2022/class-fields.private-static.js: failed: js: "class-fields.private-static.js", line 1: Compilation produced 3 syntax errors.
-compat-table/es2022/class-fields.public-instance.js: failed: js: "class-fields.public-instance.js", line 11: syntax error
-compat-table/es2022/class-fields.public-static.js: failed: js: "class-fields.public-static.js", line 13: invalid return
-compat-table/es2022/class-fields.static.define.js: failed: js: "class-fields.static.define.js", line 9: syntax error
-compat-table/es2022/class-methods.private-accessor.js: failed: js: "class-methods.private-accessor.js", line 1: Compilation produced 3 syntax errors.
-compat-table/es2022/class-methods.private-instance.js: failed: js: "class-methods.private-instance.js", line 13: syntax error
-compat-table/es2022/class-methods.private-static-accessor.js: failed: js: "class-methods.private-static-accessor.js", line 1: Compilation produced 3 syntax errors.
-compat-table/es2022/class-methods.private-static.js: failed: js: "class-methods.private-static.js", line 1: Compilation produced 3 syntax errors.
-compat-table/es2022/class-static-init-blocks.js: failed: js: "class-static-init-blocks.js", line 14: invalid return
-compat-table/es2022/ergonomic-brand-checks.js: failed: js: "ergonomic-brand-checks.js", line 1: Compilation produced 5 syntax errors.
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.private-static.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.public-static.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-fields.static.define.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-methods.private-static.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: identifier is a reserved word: class
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: identifier is a reserved word: class
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: invalid flag 'd' after regular expression
 compat-table/es2022/regex.flags.d.shows-in-flags.js: failed
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
@@ -1405,13 +1405,13 @@ compat-table/es2024/Map.groupBy.js: OK
 compat-table/es2024/Object.groupBy.js: OK
 compat-table/es2024/Promise.withResolvers.js: OK
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: invalid flag 'v' after regular expression
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: js: "regex.flags.v.properties-of-strings.js", line 9: invalid flag 'v' after regular expression
-compat-table/es2024/regex.flags.v.set-notations.js: failed: js: "regex.flags.v.set-notations.js", line 9: invalid flag 'v' after regular expression
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: invalid flag 'v' after regular expression
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: invalid flag 'v' after regular expression
 compat-table/es2024/regex.flags.v.shows-in-flags.js: failed
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: js: "regex.flags.v.unicode-15.1.js", line 9: invalid flag 'v' after regular expression
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: js: "regex.flags.v.unicode-16.0.js", line 9: invalid flag 'v' after regular expression
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: js: "regex.flags.v.unicode-17.0.js", line 9: invalid flag 'v' after regular expression
-compat-table/es2025/Iterator.extends.js: failed: js: "Iterator.extends.js", line 1: Compilation produced 1 syntax errors.
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: invalid flag 'v' after regular expression
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: invalid flag 'v' after regular expression
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: invalid flag 'v' after regular expression
+compat-table/es2025/Iterator.extends.js: SyntaxError: identifier is a reserved word: class
 compat-table/es2025/Iterator.from.iterable.js: TypeError: Cannot find function from.
 compat-table/es2025/Iterator.from.iterator.js: TypeError: Cannot find function from.
 compat-table/es2025/Iterator.instanceof.js: failed
@@ -1437,9 +1437,9 @@ compat-table/es2025/Set.prototype.isSupersetOf.js: OK
 compat-table/es2025/Set.prototype.symmetricDifference.js: OK
 compat-table/es2025/Set.prototype.union.js: OK
 compat-table/es2025/regex.duplicate-named-groups.js: OK
-compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: Invalid quantifier ?
-compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: Invalid quantifier ?
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: js: uncaught JavaScript runtime exception: SyntaxError: Invalid quantifier ?
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: Invalid quantifier ?
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: Invalid quantifier ?
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid quantifier ?
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1469,30 +1469,30 @@ compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Cannot find function isTemplateObject.
-compat-table/next/AsyncDisposableStack.js: failed: js: "AsyncDisposableStack.js", line 1: Compilation produced 3 syntax errors.
-compat-table/next/AsyncIterator.extends.js: failed: js: "AsyncIterator.extends.js", line 1: Compilation produced 1 syntax errors.
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: js: "AsyncIterator.from.async-iterable.js", line 52: invalid return
-compat-table/next/AsyncIterator.from.iterable.js: failed: js: "AsyncIterator.from.iterable.js", line 52: invalid return
-compat-table/next/AsyncIterator.from.iterator.js: failed: js: "AsyncIterator.from.iterator.js", line 52: invalid return
-compat-table/next/AsyncIterator.instanceof.js: failed: js: "AsyncIterator.instanceof.js", line 1: Compilation produced 1 syntax errors.
+compat-table/next/AsyncDisposableStack.js: SyntaxError: missing ( before function parameters.
+compat-table/next/AsyncIterator.extends.js: SyntaxError: identifier is a reserved word: class
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: missing ) in parenthetical
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined.
-compat-table/next/AsyncIterator.prototype.drop.js: failed: js: "AsyncIterator.prototype.drop.js", line 52: syntax error
-compat-table/next/AsyncIterator.prototype.every.js: failed: js: "AsyncIterator.prototype.every.js", line 46: syntax error
-compat-table/next/AsyncIterator.prototype.filter.js: failed: js: "AsyncIterator.prototype.filter.js", line 52: syntax error
-compat-table/next/AsyncIterator.prototype.find.js: failed: js: "AsyncIterator.prototype.find.js", line 46: syntax error
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: js: "AsyncIterator.prototype.flatMap.js", line 52: syntax error
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: js: "AsyncIterator.prototype.forEach.js", line 47: syntax error
-compat-table/next/AsyncIterator.prototype.map.js: failed: js: "AsyncIterator.prototype.map.js", line 52: syntax error
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: js: "AsyncIterator.prototype.reduce.js", line 46: syntax error
-compat-table/next/AsyncIterator.prototype.some.js: failed: js: "AsyncIterator.prototype.some.js", line 46: syntax error
-compat-table/next/AsyncIterator.prototype.take.js: failed: js: "AsyncIterator.prototype.take.js", line 52: syntax error
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: js: "AsyncIterator.prototype.toArray.js", line 46: syntax error
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: missing ) in parenthetical
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: missing ) in parenthetical
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: missing ) in parenthetical
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: missing ) in parenthetical
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: missing ) in parenthetical
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: missing ; before statement
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: missing ) in parenthetical
 compat-table/next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined.
 compat-table/next/Map.prototype.upsert.js: TypeError: Cannot find function upsert.
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: js: "SuppressedError.js", line 13: missing ; before statement
+compat-table/next/SuppressedError.js: SyntaxError: missing ; before statement
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Cannot find function fromBase64.
 compat-table/next/Uint8Array.fromHex.js: TypeError: Cannot find function fromHex.
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Cannot find function setFromBase64.
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: Cannot find function setF
 compat-table/next/Uint8Array.toBase64.js: TypeError: Cannot find function toBase64.
 compat-table/next/Uint8Array.toHex.js: TypeError: Cannot find function toHex.
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Cannot find function upsert.
-compat-table/next/await-using.for-of.js: failed: js: "await-using.for-of.js", line 47: syntax error
-compat-table/next/await-using.js: failed: js: "await-using.js", line 48: syntax error
-compat-table/next/class-decorators.js: failed: js: "class-decorators.js", line 1: Compilation produced 2 syntax errors.
-compat-table/next/function.sent.js: failed: js: "function.sent.js", line 1: Compilation produced 1 syntax errors.
-compat-table/next/throw-expr.arrow.js: failed: js: "throw-expr.arrow.js", line 9: syntax error
-compat-table/next/throw-expr.conditional.js: failed: js: "throw-expr.conditional.js", line 9: syntax error
-compat-table/next/throw-expr.logical.js: failed: js: "throw-expr.logical.js", line 11: syntax error
-compat-table/next/throw-expr.param-init.js: failed: js: "throw-expr.param-init.js", line 9: syntax error
-compat-table/next/using.for-of.js: failed: js: "using.for-of.js", line 1: Compilation produced 1 syntax errors.
-compat-table/next/using.js: failed: js: "using.js", line 1: Compilation produced 1 syntax errors.
+compat-table/next/await-using.for-of.js: SyntaxError: missing ( before function parameters.
+compat-table/next/await-using.js: SyntaxError: missing ) in parenthetical
+compat-table/next/class-decorators.js: SyntaxError: identifier is a reserved word: class
+compat-table/next/function.sent.js: SyntaxError: missing ( before function parameters.
+compat-table/next/throw-expr.arrow.js: SyntaxError: syntax error
+compat-table/next/throw-expr.conditional.js: SyntaxError: syntax error
+compat-table/next/throw-expr.logical.js: SyntaxError: syntax error
+compat-table/next/throw-expr.param-init.js: SyntaxError: syntax error
+compat-table/next/using.for-of.js: SyntaxError: missing ; after for-loop initializer
+compat-table/next/using.js: SyntaxError: missing ; before statement

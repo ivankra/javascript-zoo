@@ -29,7 +29,7 @@ Sandboxed ES5 interpreter in JavaScript.
 <details><summary>ES1-ES5: 92%</summary><ul>
 <li>ES1: 98%<pre>
 <a href="../../conformance/es1/String.generics.js">String.generics.js</a>: charAt failed; charCodeAt failed; indexOf failed; lastIndexOf failed; split failed; substring failed; toLowerCase failed; toUpperCase failed
-<a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: [TypeError: arguments.callee is not a function
+<a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: arguments.callee is not a function
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: failed
 </pre></li>
 <li>ES3: 96%<pre>
@@ -46,12 +46,12 @@ Sandboxed ES5 interpreter in JavaScript.
 <a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: length property incorrect
 <a href="../../conformance/es5/JSON.parse.reviver.js">JSON.parse.reviver.js</a>: failed to apply reviver function; failed to delete property for which reviver returned undefined
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: failed to drop undefined/function values; undefined/function values in array not converted to null; didn't call user-provided toJSON() method
-<a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: [TypeError: Function replacer on JSON.stringify not supported
-<a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: Object.freeze not a function; [TypeError: Object.freeze is not a function
-<a href="../../conformance/es5/Object.isExtensible.js">Object.isExtensible.js</a>: [TypeError: Object.freeze is not a function
-<a href="../../conformance/es5/Object.isFrozen.js">Object.isFrozen.js</a>: Object.isFrozen not a function; [TypeError: Object.isFrozen is not a function
-<a href="../../conformance/es5/Object.isSealed.js">Object.isSealed.js</a>: Object.isSealed not a function; [TypeError: Object.isSealed is not a function
-<a href="../../conformance/es5/Object.seal.js">Object.seal.js</a>: Object.seal not a function; [TypeError: Object.seal is not a function
+<a href="../../conformance/es5/JSON.stringify.replacer.js">JSON.stringify.replacer.js</a>: TypeError: Function replacer on JSON.stringify not supported
+<a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: TypeError: Object.freeze is not a function
+<a href="../../conformance/es5/Object.isExtensible.js">Object.isExtensible.js</a>: TypeError: Object.freeze is not a function
+<a href="../../conformance/es5/Object.isFrozen.js">Object.isFrozen.js</a>: TypeError: Object.isFrozen is not a function
+<a href="../../conformance/es5/Object.isSealed.js">Object.isSealed.js</a>: TypeError: Object.isSealed is not a function
+<a href="../../conformance/es5/Object.seal.js">Object.seal.js</a>: TypeError: Object.seal is not a function
 <a href="../../conformance/es5/arguments.toStringTag.js">arguments.toStringTag.js</a>: failed
 <a href="../../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: failed
 <a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
@@ -66,8 +66,8 @@ Sandboxed ES5 interpreter in JavaScript.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 3%, ES2016+ 4%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 3%</li>
+<details><summary>compat-table: ES6 5%, ES2016+ 4%, Next 0%, Intl 25%</summary><ul>
+<li>ES6: 5%</li>
 <li>ES2016: 0%</li>
 <li>ES2017: 8%</li>
 <li>ES2018: 5%</li>

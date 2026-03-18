@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"7d323e65eb3f4d5cbb6f91b3f7b5a205e1d2a60d6db71541c817d948b338bfba","binary_size":13079128,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"qv4","repository":"https://github.com/qt/qt5.git","revision":"c3679fb28524f6aa6fa52853187fc73255f52221","revision_date":"2026-01-23"}
+Metadata: {"arch":"arm64","binary_sha256":"e5806b5dc0d900c519429216d7995f917d8bc03ff5b384bd2b0a6881f70278f9","binary_size":13079128,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"qv4","repository":"https://github.com/qt/qt5.git","revision":"09d858a0deb0afeb01d195836a58a8d4f0ac4e18","revision_date":"2026-03-06"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -262,9 +262,9 @@ es3/String.prototype.search.js: OK
 es3/String.prototype.search.str.js: OK
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0; '.'.split(/()()/).length !== 1
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: split by empty regex failed
+es3/String.prototype.split.regex.js: split by empty regex failed
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
 es3/annex-b.String.prototype.substr.js: OK
@@ -365,9 +365,9 @@ es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
 es5/JSON.stringify.js: OK
-es5/JSON.stringify.replacer.js: failed: replacer array failed
+es5/JSON.stringify.replacer.js: replacer array failed
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
@@ -582,13 +582,13 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: failed
+compat-table/es6/Promise.all.js: failed
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: MissingOK
+compat-table/es6/Promise.js: failed
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: MissingOK
-compat-table/es6/Promise.race.js: MissingOK
+compat-table/es6/Promise.race.iterable.js: failed
+compat-table/es6/Promise.race.js: failed
 compat-table/es6/Proxy.Array.isArray.js: OK
 compat-table/es6/Proxy.JSON.stringify.js: failed
 compat-table/es6/Proxy.constructor-requires-new.js: OK
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
+compat-table/es6/Reflect.construct.Promise-subclassing.js: failed
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -803,7 +803,7 @@ compat-table/es6/default-params.basic.js: OK
 compat-table/es6/default-params.explicit-undefined.js: OK
 compat-table/es6/default-params.new-function.js: OK
 compat-table/es6/default-params.refer-previous.js: OK
-compat-table/es6/default-params.separate-scope.js: failed
+compat-table/es6/default-params.separate-scope.js: default-params.separate-scope.js:11:19 Variable "b" is used before its declaration at 13:9.
 compat-table/es6/default-params.tdz.js: failed
 compat-table/es6/destructuring-assign.array.js: OK
 compat-table/es6/destructuring-assign.astral-string.js: OK
@@ -857,7 +857,7 @@ compat-table/es6/destructuring-params.array.js: OK
 compat-table/es6/destructuring-params.astral-string.js: OK
 compat-table/es6/destructuring-params.computed-properties.js: OK
 compat-table/es6/destructuring-params.defaults-new-function.js: OK
-compat-table/es6/destructuring-params.defaults-separate-scope.js: failed
+compat-table/es6/destructuring-params.defaults-separate-scope.js: destructuring-params.defaults-separate-scope.js:11:19 Variable "b" is used before its declaration at 13:9.
 compat-table/es6/destructuring-params.defaults.js: failed
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
 compat-table/es6/destructuring-params.empty-patterns.js: OK
@@ -1081,10 +1081,10 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
-compat-table/es6/subclassing.Promise.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
+compat-table/es6/subclassing.Promise.js: failed
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
-compat-table/es6/subclassing.Promise.race.js: MissingOK
+compat-table/es6/subclassing.Promise.race.js: failed
 compat-table/es6/subclassing.RegExp.exec.js: OK
 compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1294,13 +1294,13 @@ compat-table/es2019/Array.prototype.flatMap.js: TypeError: Property 'flatMap' of
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: failed
 compat-table/es2019/Array.prototype.flat.js: TypeError: Property 'flat' of object 1,2,3,4,5,6 is not a function
 compat-table/es2019/Object.fromEntries.js: TypeError: Property 'fromEntries' of object function Object() { [native code] } is not a function
-compat-table/es2019/String.prototype.trimEnd.js: TypeError: Property 'trimEnd' of object  	 
-compat-table/es2019/String.prototype.trimStart.js: TypeError: Property 'trimStart' of object  	 
+compat-table/es2019/String.prototype.trimEnd.js: TypeError: Property 'trimEnd' of object
+compat-table/es2019/String.prototype.trimStart.js: TypeError: Property 'trimStart' of object
 compat-table/es2019/Symbol.prototype.description.empty.js: failed
 compat-table/es2019/Symbol.prototype.description.js: failed
 compat-table/es2019/Symbol.prototype.description.undefined.js: failed
-compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: Property 'trimLeft' of object  	 
-compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: Property 'trimRight' of object  	 
+compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: Property 'trimLeft' of object
+compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: Property 'trimRight' of object
 compat-table/es2019/misc.Function-toString.Function-constructor.js: failed
 compat-table/es2019/misc.Function-toString.arrows.js: failed
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: Property 'reduce' o
 compat-table/es2025/Iterator.prototype.some.js: TypeError: Property 'some' of object [object Array Iterator] is not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: Property 'take' of object [object Array Iterator] is not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: Property 'toArray' of object [object Array Iterator] is not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: Property 'escape' of object function RegExp() { [native code] } is not a function
 compat-table/es2025/Set.prototype.difference.js: TypeError: Property 'difference' of object [object Set] is not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: Property 'intersection' of object [object Set] is not a function

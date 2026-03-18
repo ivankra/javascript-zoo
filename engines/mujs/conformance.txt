@@ -1,5 +1,5 @@
-Metadata: {"arch":"arm64","binary_sha256":"d9b4380bb8f0184d4bebddbdac333c05d704cd515daa07d97c0897f03c98f168","binary_size":396080,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"console.log","engine":"mujs","repository":"https://codeberg.org/ccxvii/mujs.git","revision":"fe507e348a904633db307822c0ac54f3f5f01ab9","revision_date":"2025-12-03","version":"1.3.8-3-gfe507e3"}
-es1/Array.js: failed: Array.length failed
+Metadata: {"arch":"arm64","binary_sha256":"932842758f5e72a71773048c2df945954d9002dcb24e7479f4f93f26545a85cd","binary_size":396080,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"mujs","repository":"https://codeberg.org/ccxvii/mujs.git","revision":"fe507e348a904633db307822c0ac54f3f5f01ab9","revision_date":"2025-12-03","version":"1.3.8-3-gfe507e3"}
+es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: OK
@@ -118,7 +118,7 @@ es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not callable
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not callable
 es1/annex-b.global.escape.js: ReferenceError: 'escape' is not defined
 es1/annex-b.global.unescape.js: ReferenceError: 'unescape' is not defined
-es1/annex-b.literals.octal.js: SyntaxError: annex-b.literals.octal.js:14: number with leading zeroundefined
+es1/annex-b.literals.octal.js: SyntaxError: number with leading zero
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
@@ -208,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: failed: empty array toLocaleString failed
+es3/Array.prototype.toLocaleString.js: empty array toLocaleString failed; multiple elements content failed
 es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -226,32 +226,32 @@ es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: RangeError: precision 0 out of range
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
-es3/Object.prototype.propertyIsEnumerable.js: failed: Array index should be enumerable failed
-es3/Object.prototype.toLocaleString.js: failed: custom toString failed
+es3/Object.prototype.propertyIsEnumerable.js: Array index should be enumerable failed
+es3/Object.prototype.toLocaleString.js: custom toString failed
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
+es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
-es3/RegExp.prototype.exec.js: failed: index failed
+es3/RegExp.prototype.exec.js: index failed
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
-es3/String.prototype.concat.js: failed: concat with no arguments failed
+es3/String.prototype.concat.js: concat with no arguments failed
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: failed: non-global match failed
+es3/String.prototype.match.js: non-global match failed
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK
@@ -262,7 +262,7 @@ es3/String.prototype.search.js: OK
 es3/String.prototype.search.str.js: OK
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: '0'.split(undefined, 0).length !== 0
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
@@ -281,7 +281,7 @@ es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: no exception for decodeURI invalid UTF-8
+es3/global.URIError.thrown.js: no exception for decodeURI invalid UTF-8; no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exce...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -316,7 +316,7 @@ es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
-es3/regex.disjunction.js: failed: complex disjunction failed
+es3/regex.disjunction.js: complex disjunction failed
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
 es3/regex.escape.control.js: OK
@@ -329,7 +329,7 @@ es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: OK
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
-es3/regex.negative-lookahead.js: failed: spec example failed
+es3/regex.negative-lookahead.js: spec example failed
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -340,7 +340,7 @@ es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
 es3/source.line-terminators.js: OK
 es3/source.whitespace.js: OK
-es3/source.whitespace.unicode.js: SyntaxError: source.whitespace.unicode.js:8: unexpected character: \u2000undefined
+es3/source.whitespace.unicode.js: SyntaxError: unexpected character: \u2000
 es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
@@ -373,7 +373,7 @@ es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
-es5/Object.getOwnPropertyDescriptor.js: failed: inherited property failed
+es5/Object.getOwnPropertyDescriptor.js: inherited property failed
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -397,7 +397,7 @@ es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
-es5/source.zero-width-chars.js: SyntaxError: source.zero-width-chars.js:11: unexpected character: \u200Cundefined
+es5/source.zero-width-chars.js: SyntaxError: unexpected character: \u200C
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: OK
@@ -414,7 +414,7 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: OK
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
@@ -472,7 +472,7 @@ compat-table/es5/misc.enumerable-shadow.js: failed
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: OK
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: SyntaxError: misc.zero-width-identifiers.js:8: unexpected character: \u200Cundefined
+compat-table/es5/misc.zero-width-identifiers.js: SyntaxError: unexpected character: \u200C
 compat-table/es5/strict.arguments-callee-error.js: failed
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
@@ -494,12 +494,12 @@ compat-table/es5/strict.this-undefined.js: OK
 compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/Array.from.array-like.js: TypeError: undefined is not callable
-compat-table/es6/Array.from.generator.js: SyntaxError: Array.from.generator.js:9: unexpected token: '*' (expected '(')undefined
+compat-table/es6/Array.from.generator.js: SyntaxError: unexpected token: '*' (expected '(')
 compat-table/es6/Array.from.iterable-instance.js: TypeError: undefined is not callable
 compat-table/es6/Array.from.iterable.js: TypeError: undefined is not callable
 compat-table/es6/Array.from.iterator-closing.js: failed
 compat-table/es6/Array.from.map.array-like.js: TypeError: undefined is not callable
-compat-table/es6/Array.from.map.generator.js: SyntaxError: Array.from.map.generator.js:9: unexpected token: '*' (expected '(')undefined
+compat-table/es6/Array.from.map.generator.js: SyntaxError: unexpected token: '*' (expected '(')
 compat-table/es6/Array.from.map.iterable-instance.js: TypeError: undefined is not callable
 compat-table/es6/Array.from.map.iterable.js: TypeError: undefined is not callable
 compat-table/es6/Array.iterator-prototype-chain.js: ReferenceError: 'Symbol' is not defined
@@ -517,20 +517,20 @@ compat-table/es6/Array.prototype.values.js: failed
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: failed
-compat-table/es6/Function.name.class-expression.js: SyntaxError: Function.name.class-expression.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/Function.name.class-object-method.js: SyntaxError: Function.name.class-object-method.js:10: unexpected token: '{' (expected '}')undefined
-compat-table/es6/Function.name.class-prototype.js: SyntaxError: Function.name.class-prototype.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/Function.name.class-statement.js: SyntaxError: Function.name.class-statement.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/Function.name.class-static.js: SyntaxError: Function.name.class-static.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/Function.name.class-variable.js: SyntaxError: Function.name.class-variable.js:10: unexpected token: '{' (expected ';')undefined
+compat-table/es6/Function.name.class-expression.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: unexpected token: '{' (expected '}')
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/Function.name.class-statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/Function.name.class-static.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/Function.name.class-variable.js: SyntaxError: unexpected token: '{' (expected ';')
 compat-table/es6/Function.name.configurable.js: TypeError: cannot convert undefined to object
 compat-table/es6/Function.name.expression.js: failed
 compat-table/es6/Function.name.new-Function.js: failed
 compat-table/es6/Function.name.object-method.js: failed
-compat-table/es6/Function.name.shorthand.js: SyntaxError: Function.name.shorthand.js:10: unexpected token: '(' (expected ':')undefined
-compat-table/es6/Function.name.shorthand.no-lexical.js: SyntaxError: Function.name.shorthand.no-lexical.js:11: unexpected token: '(' (expected ':')undefined
+compat-table/es6/Function.name.shorthand.js: SyntaxError: unexpected token: '(' (expected ':')
+compat-table/es6/Function.name.shorthand.no-lexical.js: SyntaxError: unexpected token: '(' (expected ':')
 compat-table/es6/Function.name.statement.js: failed
-compat-table/es6/Function.name.symbol-keyed.js: SyntaxError: Function.name.symbol-keyed.js:13: unexpected token: '[' (expected identifier or keyword)undefined
+compat-table/es6/Function.name.symbol-keyed.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
 compat-table/es6/Function.name.variable.js: failed
 compat-table/es6/Map.Symbol.species.js: ReferenceError: 'Map' is not defined
 compat-table/es6/Map.constructor-accepts-null.js: ReferenceError: 'Map' is not defined
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: ReferenceError: 'Ref
 compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: 'Reflect' is not defined
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: 'Reflect' is not defined
 compat-table/es6/Reflect.construct.js: ReferenceError: 'Reflect' is not defined
-compat-table/es6/Reflect.construct.new-target.js: SyntaxError: Reflect.construct.new-target.js:11: unexpected token in expression: '.'undefined
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError: unexpected token in expression: '.'
 compat-table/es6/Reflect.construct.third-argument.js: ReferenceError: 'Reflect' is not defined
 compat-table/es6/Reflect.defineProperty.js: ReferenceError: 'Reflect' is not defined
 compat-table/es6/Reflect.deleteProperty.js: ReferenceError: 'Reflect' is not defined
@@ -723,7 +723,7 @@ compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: und
 compat-table/es6/annex-b.function.hoisted-block-level.js: OK
 compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
-compat-table/es6/annex-b.html-comments.js: SyntaxError: annex-b.html-comments.js:9: unexpected token in expression: '>'undefined
+compat-table/es6/annex-b.html-comments.js: SyntaxError: unexpected token in expression: '>'
 compat-table/es6/annex-b.regex.backreferences-octal.js: SyntaxError: regular expression: invalid back-reference
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: SyntaxError: regular expression: invalid quantifier
@@ -740,206 +740,206 @@ compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.set.js: failed
 compat-table/es6/annex-b.__proto__.literals.js: failed
 compat-table/es6/annex-b.__proto__.literals.multiple-error.js: failed
-compat-table/es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: annex-b.__proto__.literals.not-computed.js:14: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: annex-b.__proto__.literals.not-shorthand-method.js:13: unexpected token: '(' (expected ':')undefined
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: annex-b.__proto__.literals.not-shorthand-property.js:14: unexpected token: '}' (expected ':')undefined
-compat-table/es6/arrow.0-params.js: SyntaxError: arrow.0-params.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/arrow.1-param.js: SyntaxError: arrow.1-param.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.5-param.js: SyntaxError: arrow.5-param.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.bind.js: SyntaxError: arrow.bind.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.lexical-arguments.js: SyntaxError: arrow.lexical-arguments.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: arrow.lexical-super.constructor.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: arrow.lexical-super.methods.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/arrow.lexical-this.js: SyntaxError: arrow.lexical-this.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.new-target.js: SyntaxError: arrow.new-target.js:11: unexpected token in expression: '>'undefined
-compat-table/es6/arrow.no-line-break.js: SyntaxError: arrow.no-line-break.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/arrow.no-prototype.js: SyntaxError: arrow.no-prototype.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/arrow.precedence.js: SyntaxError: arrow.precedence.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/arrow.this-call-apply.js: SyntaxError: arrow.this-call-apply.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/class.accessor-properties.js: SyntaxError: class.accessor-properties.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.anonymous.js: SyntaxError: class.anonymous.js:10: unexpected token: '{' (expected ';')undefined
-compat-table/es6/class.block-scoped.js: SyntaxError: class.block-scoped.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.computed-accessor-properties.js: SyntaxError: class.computed-accessor-properties.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.computed-names-tdz.js: SyntaxError: class.computed-names-tdz.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.computed-prototype-methods.js: SyntaxError: class.computed-prototype-methods.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: class.computed-static-accessor-properties.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.computed-static-methods.js: SyntaxError: class.computed-static-methods.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.constructor-requires-new.js: SyntaxError: class.constructor-requires-new.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.constructor.js: SyntaxError: class.constructor.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.expression.js: SyntaxError: class.expression.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.extends-expressions.js: SyntaxError: class.extends-expressions.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.extends-null.js: SyntaxError: class.extends-null.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.extends.js: SyntaxError: class.extends.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.implicit-strict.js: SyntaxError: class.implicit-strict.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.lexical-name.js: SyntaxError: class.lexical-name.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.methods-not-enumerable.js: SyntaxError: class.methods-not-enumerable.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.new-target.js: SyntaxError: class.new-target.js:12: unexpected token in expression: '.'undefined
-compat-table/es6/class.optional-semicolons.js: SyntaxError: class.optional-semicolons.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.prototype-methods.js: SyntaxError: class.prototype-methods.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.statement.js: SyntaxError: class.statement.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.static-accessor-properties.js: SyntaxError: class.static-accessor-properties.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.static-methods.js: SyntaxError: class.static-methods.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/class.string-keyed-methods.js: SyntaxError: class.string-keyed-methods.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.basic.js: SyntaxError: const.basic.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.block-scoped.js: SyntaxError: const.block-scoped.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.for-in.js: SyntaxError: const.for-in.js:11: unexpected token in for-statement: (identifier)undefined
-compat-table/es6/const.for-loop.js: SyntaxError: const.for-loop.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.for-of.js: SyntaxError: const.for-of.js:11: unexpected token in for-statement: (identifier)undefined
-compat-table/es6/const.no-redefine.js: SyntaxError: const.no-redefine.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.no-statement.js: SyntaxError: const.no-statement.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.shadow.js: SyntaxError: const.shadow.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.basic.js: SyntaxError: const.strict.basic.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.block-scoped.js: SyntaxError: const.strict.block-scoped.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.for-in.js: SyntaxError: const.strict.for-in.js:12: unexpected token in for-statement: (identifier)undefined
-compat-table/es6/const.strict.for-loop.js: SyntaxError: const.strict.for-loop.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.for-of.js: SyntaxError: const.strict.for-of.js:12: unexpected token in for-statement: (identifier)undefined
-compat-table/es6/const.strict.no-redefine.js: SyntaxError: const.strict.no-redefine.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.no-statement.js: SyntaxError: const.strict.no-statement.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.shadow.js: SyntaxError: const.strict.shadow.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.strict.tdz.js: SyntaxError: const.strict.tdz.js:13: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/const.tdz.js: SyntaxError: const.tdz.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/default-params.arguments.js: SyntaxError: default-params.arguments.js:10: unexpected token: '=' (expected ')')undefined
-compat-table/es6/default-params.basic.js: SyntaxError: default-params.basic.js:10: unexpected token: '=' (expected ')')undefined
-compat-table/es6/default-params.explicit-undefined.js: SyntaxError: default-params.explicit-undefined.js:10: unexpected token: '=' (expected ')')undefined
+compat-table/es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: unexpected token: '(' (expected ':')
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: unexpected token: '}' (expected ':')
+compat-table/es6/arrow.0-params.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/arrow.1-param.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.5-param.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.bind.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/arrow.lexical-this.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.new-target.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/arrow.no-line-break.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/arrow.no-prototype.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/arrow.precedence.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/class.accessor-properties.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.anonymous.js: SyntaxError: unexpected token: '{' (expected ';')
+compat-table/es6/class.block-scoped.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.computed-static-methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.constructor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.expression.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.extends-expressions.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.extends-null.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.extends.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.implicit-strict.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.lexical-name.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.new-target.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/class.optional-semicolons.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.prototype-methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.static-methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.basic.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.block-scoped.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.for-in.js: SyntaxError: unexpected token in for-statement: (identifier)
+compat-table/es6/const.for-loop.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.for-of.js: SyntaxError: unexpected token in for-statement: (identifier)
+compat-table/es6/const.no-redefine.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.no-statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.shadow.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.basic.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.block-scoped.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.for-in.js: SyntaxError: unexpected token in for-statement: (identifier)
+compat-table/es6/const.strict.for-loop.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.for-of.js: SyntaxError: unexpected token in for-statement: (identifier)
+compat-table/es6/const.strict.no-redefine.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.no-statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.shadow.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.strict.tdz.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/const.tdz.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/default-params.arguments.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/es6/default-params.basic.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/es6/default-params.explicit-undefined.js: SyntaxError: unexpected token: '=' (expected ')')
 compat-table/es6/default-params.new-function.js: ReferenceError: 'b' is not defined
-compat-table/es6/default-params.refer-previous.js: SyntaxError: default-params.refer-previous.js:10: unexpected token: '=' (expected ')')undefined
-compat-table/es6/default-params.separate-scope.js: SyntaxError: default-params.separate-scope.js:10: unexpected token: '=' (expected ')')undefined
-compat-table/es6/default-params.tdz.js: SyntaxError: default-params.tdz.js:10: unexpected token: '=' (expected ')')undefined
-compat-table/es6/destructuring-assign.array.js: SyntaxError: destructuring-assign.array.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: destructuring-assign.astral-string.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: destructuring-assign.chained-iterable.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: destructuring-assign.chained-object.js:11: unexpected token: ',' (expected ':')undefined
-compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: destructuring-assign.computed-properties.js:11: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/es6/destructuring-assign.defaults.js: SyntaxError: destructuring-assign.defaults.js:11: unexpected token: '=' (expected ':')undefined
-compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: destructuring-assign.empty-patterns.js:10: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.generator.js: SyntaxError: destructuring-assign.generator.js:11: unexpected token: '*' (expected '(')undefined
-compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: destructuring-assign.iterable-expression.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: destructuring-assign.iterable-instance.js:35: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.iterable.js: SyntaxError: destructuring-assign.iterable.js:35: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: destructuring-assign.iterator-closing.js:39: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: destructuring-assign.nested-rest.js:11: unexpected token in expression: '.'undefined
-compat-table/es6/destructuring-assign.nested.js: SyntaxError: destructuring-assign.nested.js:11: unexpected token: '}' (expected ':')undefined
-compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: destructuring-assign.object-expression.js:11: unexpected token: ',' (expected ':')undefined
-compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: destructuring-assign.object-primitives.js:11: unexpected token: '}' (expected ':')undefined
-compat-table/es6/destructuring-assign.object.js: SyntaxError: destructuring-assign.object.js:11: unexpected token: ',' (expected ':')undefined
-compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: destructuring-assign.parenthesised-error.js:11: unexpected token: ',' (expected ':')undefined
-compat-table/es6/destructuring-assign.rest.js: SyntaxError: destructuring-assign.rest.js:11: unexpected token in expression: '.'undefined
-compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: destructuring-assign.sparse-array.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.string.js: SyntaxError: destructuring-assign.string.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: destructuring-assign.throws-null-undefined.js:12: unexpected token: '}' (expected ':')undefined
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: destructuring-assign.trailing-comma-iterable.js:11: invalid l-value in assignmentundefined
-compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: destructuring-assign.trailing-comma-object.js:11: unexpected token: ',' (expected ':')undefined
-compat-table/es6/destructuring-decl.array.js: SyntaxError: destructuring-decl.array.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: destructuring-decl.astral-string.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.catch.js: SyntaxError: destructuring-decl.catch.js:12: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: destructuring-decl.computed-properties.js:11: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: destructuring-decl.defaults-tdz.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.defaults.js: SyntaxError: destructuring-decl.defaults.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.for-in.js: SyntaxError: destructuring-decl.for-in.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.for-of.js: SyntaxError: destructuring-decl.for-of.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.generator.js: SyntaxError: destructuring-decl.generator.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: destructuring-decl.iterable-instance.js:34: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.iterable.js: SyntaxError: destructuring-decl.iterable.js:34: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: destructuring-decl.iterator-closing.js:38: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: destructuring-decl.multiple-var.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.nested.js: SyntaxError: destructuring-decl.nested.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: destructuring-decl.object-primitives.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.object.js: SyntaxError: destructuring-decl.object.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.rest.js: SyntaxError: destructuring-decl.rest.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: destructuring-decl.sparse-array.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.string.js: SyntaxError: destructuring-decl.string.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: destructuring-decl.throws-null-undefined.js:11: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: destructuring-decl.trailing-comma-iterable.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: destructuring-decl.trailing-comma-object.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: destructuring-params.aliased-defaults-arrow.js:10: unexpected token in expression: '>'undefined
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: destructuring-params.arguments.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.array.js: SyntaxError: destructuring-params.array.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: destructuring-params.astral-string.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: destructuring-params.computed-properties.js:11: unexpected token: '{' (expected identifier)undefined
+compat-table/es6/default-params.refer-previous.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/es6/default-params.separate-scope.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/es6/default-params.tdz.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/es6/destructuring-assign.array.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: unexpected token: '=' (expected ':')
+compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.generator.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.iterable.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/destructuring-assign.nested.js: SyntaxError: unexpected token: '}' (expected ':')
+compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected token: '}' (expected ':')
+compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.string.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: unexpected token: '}' (expected ':')
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: invalid l-value in assignment
+compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-decl.array.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.catch.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.defaults.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.for-in.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.for-of.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.generator.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.iterable.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.array.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: unexpected token: '{' (expected identifier)
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: [string]:1: unexpected token: '{' (expected identifier)
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: destructuring-params.defaults-separate-scope.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: destructuring-params.defaults.js:10: unexpected token: '{' (expected identifier)undefined
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: unexpected token: '{' (expected identifier)
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
-compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: destructuring-params.empty-patterns.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.generator.js: SyntaxError: destructuring-params.generator.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: destructuring-params.iterable-instance.js:34: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: destructuring-params.iterable.js:34: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: destructuring-params.iterator-closing.js:38: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.length.js: SyntaxError: destructuring-params.length.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.nested.js: SyntaxError: destructuring-params.nested.js:10: unexpected token: '[' (expected identifier)undefined
+compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.generator.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.length.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.nested.js: SyntaxError: unexpected token: '[' (expected identifier)
 compat-table/es6/destructuring-params.new-function.js: SyntaxError: [string]:1: unexpected token: '{' (expected identifier)
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: destructuring-params.object-primitives.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.object.js: SyntaxError: destructuring-params.object.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.rest.js: SyntaxError: destructuring-params.rest.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: destructuring-params.shorthand-defaults-arrow.js:10: unexpected token: '=' (expected ':')undefined
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: destructuring-params.sparse-array.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.string.js: SyntaxError: destructuring-params.string.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: destructuring-params.throws-null-undefined.js:11: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: destructuring-params.trailing-comma-iterable.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: destructuring-params.trailing-comma-object.js:10: unexpected token: '{' (expected identifier)undefined
-compat-table/es6/for-of.array.js: SyntaxError: for-of.array.js:11: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.astral-string.js: SyntaxError: for-of.astral-string.js:11: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.generator.js: SyntaxError: for-of.generator.js:11: unexpected token: '*' (expected '(')undefined
-compat-table/es6/for-of.iterable-instance.js: SyntaxError: for-of.iterable-instance.js:36: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.iterable.js: SyntaxError: for-of.iterable.js:36: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: for-of.iterator-closing-break.js:37: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: for-of.iterator-closing-throw.js:38: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.sparse-array.js: SyntaxError: for-of.sparse-array.js:12: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/for-of.string.js: SyntaxError: for-of.string.js:11: unexpected token in for-var-statement: (identifier)undefined
-compat-table/es6/function.block-level-decl.js: failed
-compat-table/es6/generators.basic.js: SyntaxError: generators.basic.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.constructor.js: SyntaxError: generators.constructor.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.expression.js: SyntaxError: generators.expression.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.no-new-this.js: SyntaxError: generators.no-new-this.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.prototype-chain.js: SyntaxError: generators.prototype-chain.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.prototype.js: SyntaxError: generators.prototype.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.return.js: SyntaxError: generators.return.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.sending.js: SyntaxError: generators.sending.js:11: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.shorthand.class.js: SyntaxError: generators.shorthand.class.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: generators.shorthand.computed.class.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/generators.shorthand.computed.js: SyntaxError: generators.shorthand.computed.js:12: unexpected token: '*' (expected identifier or keyword)undefined
-compat-table/es6/generators.shorthand.js: SyntaxError: generators.shorthand.js:11: unexpected token: '*' (expected identifier or keyword)undefined
-compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: generators.shorthand.no-constructor.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: generators.shorthand.string-keyed.js:11: unexpected token: '*' (expected identifier or keyword)undefined
-compat-table/es6/generators.this.js: SyntaxError: generators.this.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.throw.js: SyntaxError: generators.throw.js:11: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.yield-precedence.js: SyntaxError: generators.yield-precedence.js:11: unexpected token: '*' (expected identifier)undefined
-compat-table/es6/generators.yield-star.array.js: SyntaxError: generators.yield-star.array.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: generators.yield-star.astral-string.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.generator.js: SyntaxError: generators.yield-star.generator.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: generators.yield-star.iterable-instance.js:33: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.iterable.js: SyntaxError: generators.yield-star.iterable.js:34: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: generators.yield-star.iterator-closing-throw.js:42: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: generators.yield-star.iterator-closing.js:40: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: generators.yield-star.non-iterable-error.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: generators.yield-star.sparse-array.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/generators.yield-star.string.js: SyntaxError: generators.yield-star.string.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/let.basic.js: SyntaxError: let.basic.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.block-scoped.js: SyntaxError: let.block-scoped.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.object.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.rest.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: unexpected token: '=' (expected ':')
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.string.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/for-of.array.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.astral-string.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.generator.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/for-of.iterable-instance.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.iterable.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.sparse-array.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/for-of.string.js: SyntaxError: unexpected token in for-var-statement: (identifier)
+compat-table/es6/function.block-level-decl.js: function.block-level-decl.js:16: warning: function statements are not standard
+compat-table/es6/generators.basic.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.constructor.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.expression.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.no-new-this.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.prototype-chain.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.prototype.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.return.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.sending.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.shorthand.class.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/generators.shorthand.computed.js: SyntaxError: unexpected token: '*' (expected identifier or keyword)
+compat-table/es6/generators.shorthand.js: SyntaxError: unexpected token: '*' (expected identifier or keyword)
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: unexpected token: '*' (expected identifier or keyword)
+compat-table/es6/generators.this.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.throw.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.yield-precedence.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es6/generators.yield-star.array.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.generator.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.iterable.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/generators.yield-star.string.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/let.basic.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.block-scoped.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/let.for-in-shadow.js: failed
-compat-table/es6/let.for-iteration.js: SyntaxError: let.for-iteration.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.for-loop.js: SyntaxError: let.for-loop.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.no-statement.js: SyntaxError: let.no-statement.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.shadow.js: SyntaxError: let.shadow.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.basic.js: SyntaxError: let.strict.basic.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.block-scoped.js: SyntaxError: let.strict.block-scoped.js:11: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/let.for-iteration.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.for-loop.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.no-statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.shadow.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.basic.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.block-scoped.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/let.strict.for-in-shadow.js: failed
-compat-table/es6/let.strict.for-iteration.js: SyntaxError: let.strict.for-iteration.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.for-loop.js: SyntaxError: let.strict.for-loop.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.no-statement.js: SyntaxError: let.strict.no-statement.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.shadow.js: SyntaxError: let.strict.shadow.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.strict.tdz.js: SyntaxError: let.strict.tdz.js:13: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/let.tdz.js: SyntaxError: let.tdz.js:12: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/let.strict.for-iteration.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.for-loop.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.no-statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.shadow.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.strict.tdz.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/let.tdz.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/literals.binary.Number.js: failed
-compat-table/es6/literals.binary.js: SyntaxError: literals.binary.js:9: number with letter suffixundefined
-compat-table/es6/literals.object.computed-accessors.js: SyntaxError: literals.object.computed-accessors.js:13: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/es6/literals.object.computed-properties.js: SyntaxError: literals.object.computed-properties.js:11: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/es6/literals.object.computed-shorthand-methods.js: SyntaxError: literals.object.computed-shorthand-methods.js:11: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/es6/literals.object.shorthand-methods.js: SyntaxError: literals.object.shorthand-methods.js:10: unexpected token: '(' (expected ':')undefined
-compat-table/es6/literals.object.shorthand-properties.js: SyntaxError: literals.object.shorthand-properties.js:10: unexpected token: ',' (expected ':')undefined
-compat-table/es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: literals.object.string-keyed-shorthand-methods.js:10: unexpected token: '(' (expected ':')undefined
+compat-table/es6/literals.binary.js: SyntaxError: number with letter suffix
+compat-table/es6/literals.object.computed-accessors.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/es6/literals.object.computed-properties.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/es6/literals.object.computed-shorthand-methods.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/es6/literals.object.shorthand-methods.js: SyntaxError: unexpected token: '(' (expected ':')
+compat-table/es6/literals.object.shorthand-properties.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: unexpected token: '(' (expected ':')
 compat-table/es6/literals.octal.Number.js: failed
-compat-table/es6/literals.octal.js: SyntaxError: literals.octal.js:9: number with letter suffixundefined
+compat-table/es6/literals.octal.js: SyntaxError: number with letter suffix
 compat-table/es6/misc.Invalid-Date.js: OK
 compat-table/es6/misc.Object.freeze.primitives.js: TypeError: not an object
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: TypeError: not an object
@@ -971,14 +971,14 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: ReferenceError: 'Proxy' is not
 compat-table/es6/misc.Proxy.get.Array.shift.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Array.splice.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Array.toString.js: ReferenceError: 'Proxy' is not defined
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: misc.Proxy.get.ClassDefinitionEvaluation.js:13: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Error.toString.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Function.bind.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.HasBinding.js: ReferenceError: 'Proxy' is not defined
-compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: misc.Proxy.get.IteratorComplete.js:22: unexpected token in for-var-statement: (identifier)undefined
+compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: unexpected token in for-var-statement: (identifier)
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Object.assign.js: ReferenceError: 'Proxy' is not defined
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: 'Proxy' is not defined
@@ -1016,13 +1016,13 @@ compat-table/es6/misc.Proxy.set.Object.assign.js: ReferenceError: 'Proxy' is not
 compat-table/es6/misc.RegExp-alter-flags.js: TypeError: cannot supply flags when creating one RegExp from another
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: TypeError: not a regexp
 compat-table/es6/misc.accessors-no-constructor.js: failed
-compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: misc.bound-function-prototype.arrow.js:10: unexpected token in expression: ')'undefined
-compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: misc.bound-function-prototype.class.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: misc.bound-function-prototype.generator.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: misc.bound-function-prototype.subclass.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/misc.do-while-no-semicolon.js: SyntaxError: misc.do-while-no-semicolon.js:9: unexpected token: 'return' (expected ';')undefined
-compat-table/es6/misc.duplicate-properties-strict.js: SyntaxError: misc.duplicate-properties-strict.js:0: duplicate property 'a' in object literalundefined
+compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/misc.do-while-no-semicolon.js: SyntaxError: unexpected token: 'return' (expected ';')
+compat-table/es6/misc.duplicate-properties-strict.js: SyntaxError: duplicate property 'a' in object literal
 compat-table/es6/misc.for-in-no-assignment-strict.js: failed
 compat-table/es6/misc.function-length-configurable.js: failed
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: OK
@@ -1036,83 +1036,83 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: 'Reflect' is not defined
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/misc.prototypes-not-instances.js: failed
-compat-table/es6/new-target.assignment-error.js: SyntaxError: new-target.assignment-error.js:12: unexpected token in expression: '.'undefined
-compat-table/es6/new-target.constructor.js: SyntaxError: new-target.constructor.js:12: unexpected token in expression: '.'undefined
-compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:10: illegal flag in regular expression: uundefined
-compat-table/es6/regex.flags.u.codepoint.js: SyntaxError: regex.flags.u.codepoint.js:10: illegal flag in regular expression: uundefined
-compat-table/es6/regex.flags.u.js: SyntaxError: regex.flags.u.js:10: illegal flag in regular expression: uundefined
-compat-table/es6/regex.flags.u.non-bmp.js: SyntaxError: regex.flags.u.non-bmp.js:10: illegal flag in regular expression: uundefined
+compat-table/es6/new-target.assignment-error.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/new-target.constructor.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es6/regex.flags.u.codepoint.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es6/regex.flags.u.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es6/regex.flags.u.non-bmp.js: SyntaxError: illegal flag in regular expression: u
 compat-table/es6/regex.flags.y.js: SyntaxError: invalid regular expression flag: 'y'
 compat-table/es6/regex.flags.y.lastIndex.js: SyntaxError: invalid regular expression flag: 'y'
-compat-table/es6/rest-params.arguments.js: SyntaxError: rest-params.arguments.js:10: unexpected token: '.' (expected identifier)undefined
-compat-table/es6/rest-params.basic.js: SyntaxError: rest-params.basic.js:10: unexpected token: '.' (expected identifier)undefined
-compat-table/es6/rest-params.length.js: SyntaxError: rest-params.length.js:10: unexpected token: '.' (expected identifier)undefined
+compat-table/es6/rest-params.arguments.js: SyntaxError: unexpected token: '.' (expected identifier)
+compat-table/es6/rest-params.basic.js: SyntaxError: unexpected token: '.' (expected identifier)
+compat-table/es6/rest-params.length.js: SyntaxError: unexpected token: '.' (expected identifier)
 compat-table/es6/rest-params.new-function.js: SyntaxError: [string]:1: unexpected token: '.' (expected identifier)
-compat-table/es6/rest-params.no-setter.js: SyntaxError: rest-params.no-setter.js:10: unexpected token: '.' (expected identifier)undefined
-compat-table/es6/spread.array-call.js: SyntaxError: spread.array-call.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.array-literal.js: SyntaxError: spread.array-literal.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.astral-call.js: SyntaxError: spread.astral-call.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.astral-literal.js: SyntaxError: spread.astral-literal.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.generator-call.js: SyntaxError: spread.generator-call.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/spread.generator-literal.js: SyntaxError: spread.generator-literal.js:10: unexpected token: '*' (expected '(')undefined
-compat-table/es6/spread.iterable-call.js: SyntaxError: spread.iterable-call.js:35: unexpected token in expression: '.'undefined
-compat-table/es6/spread.iterable-instance-call.js: SyntaxError: spread.iterable-instance-call.js:35: unexpected token in expression: '.'undefined
-compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: spread.iterable-instance-literal.js:35: unexpected token in expression: '.'undefined
-compat-table/es6/spread.iterable-literal.js: SyntaxError: spread.iterable-literal.js:35: unexpected token in expression: '.'undefined
-compat-table/es6/spread.non-iterable-error.js: SyntaxError: spread.non-iterable-error.js:11: unexpected token in expression: '.'undefined
-compat-table/es6/spread.sparse-call.js: SyntaxError: spread.sparse-call.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.sparse-literal.js: SyntaxError: spread.sparse-literal.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.string-call.js: SyntaxError: spread.string-call.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/spread.string-literal.js: SyntaxError: spread.string-literal.js:10: unexpected token in expression: '.'undefined
-compat-table/es6/subclassing.Array.concat.js: SyntaxError: subclassing.Array.concat.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.filter.js: SyntaxError: subclassing.Array.filter.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.from.js: SyntaxError: subclassing.Array.from.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.isArray.js: SyntaxError: subclassing.Array.isArray.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.length-access.js: SyntaxError: subclassing.Array.length-access.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.length-set.js: SyntaxError: subclassing.Array.length-set.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.map.js: SyntaxError: subclassing.Array.map.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.of.js: SyntaxError: subclassing.Array.of.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: subclassing.Array.prototype-chain.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.slice.js: SyntaxError: subclassing.Array.slice.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Array.splice.js: SyntaxError: subclassing.Array.splice.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.call.js: SyntaxError: subclassing.Function.call.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.new.js: SyntaxError: subclassing.Function.new.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: subclassing.Function.prototype-chain.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: subclassing.Function.prototype.apply.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: subclassing.Function.prototype.bind.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: subclassing.Function.prototype.call.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Promise.all.js: SyntaxError: subclassing.Promise.all.js:44: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Promise.js: SyntaxError: subclassing.Promise.js:44: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: subclassing.Promise.prototype-chain.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.Promise.race.js: SyntaxError: subclassing.Promise.race.js:44: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: subclassing.RegExp.exec.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.RegExp.js: SyntaxError: subclassing.RegExp.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: subclassing.RegExp.prototype-chain.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.RegExp.test.js: SyntaxError: subclassing.RegExp.test.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: subclassing.misc.Boolean.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.Error.js: SyntaxError: subclassing.misc.Error.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.Map.js: SyntaxError: subclassing.misc.Map.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.Number.js: SyntaxError: subclassing.misc.Number.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.Set.js: SyntaxError: subclassing.misc.Set.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/subclassing.misc.String.js: SyntaxError: subclassing.misc.String.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.correct-constructor.js: SyntaxError: super.correct-constructor.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.expression.js: SyntaxError: super.expression.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.method-calls.js: SyntaxError: super.method-calls.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.new-target-binding.js: SyntaxError: super.new-target-binding.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.property-access.js: SyntaxError: super.property-access.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.statement.js: SyntaxError: super.statement.js:11: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.static-binding.js: SyntaxError: super.static-binding.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/super.this-binding.js: SyntaxError: super.this-binding.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es6/tail-calls.direct.js: failed: call stack overflow
-compat-table/es6/tail-calls.mutual.js: failed: call stack overflow
-compat-table/es6/template.basic.js: SyntaxError: template.basic.js:11: unexpected character: '`'undefined
-compat-table/es6/template.caching.js: SyntaxError: template.caching.js:17: unexpected character: '`'undefined
-compat-table/es6/template.escape-sequences.js: SyntaxError: template.escape-sequences.js:13: unexpected character: '`'undefined
-compat-table/es6/template.frozen-array.js: SyntaxError: template.frozen-array.js:12: unexpected character: '`'undefined
+compat-table/es6/rest-params.no-setter.js: SyntaxError: unexpected token: '.' (expected identifier)
+compat-table/es6/spread.array-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.array-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.astral-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.astral-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.generator-call.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/spread.generator-literal.js: SyntaxError: unexpected token: '*' (expected '(')
+compat-table/es6/spread.iterable-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.iterable-instance-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.iterable-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.non-iterable-error.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.sparse-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.sparse-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.string-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/spread.string-literal.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.from.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.map.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.of.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.call.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.new.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Promise.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.RegExp.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/subclassing.misc.String.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.correct-constructor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.expression.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.method-calls.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.new-target-binding.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.property-access.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.statement.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.static-binding.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/super.this-binding.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/tail-calls.direct.js: call stack overflow
+compat-table/es6/tail-calls.mutual.js: call stack overflow
+compat-table/es6/template.basic.js: SyntaxError: unexpected character: '`'
+compat-table/es6/template.caching.js: SyntaxError: unexpected character: '`'
+compat-table/es6/template.escape-sequences.js: SyntaxError: unexpected character: '`'
+compat-table/es6/template.frozen-array.js: SyntaxError: unexpected character: '`'
 compat-table/es6/template.line-break.js: SyntaxError: (eval):1: unexpected character: '`'
-compat-table/es6/template.permanent-caching.js: SyntaxError: template.permanent-caching.js:14: unexpected character: '`'undefined
-compat-table/es6/template.tagged.js: SyntaxError: template.tagged.js:21: unexpected character: '`'undefined
-compat-table/es6/template.toString.js: SyntaxError: template.toString.js:14: unexpected character: '`'undefined
+compat-table/es6/template.permanent-caching.js: SyntaxError: unexpected character: '`'
+compat-table/es6/template.tagged.js: SyntaxError: unexpected character: '`'
+compat-table/es6/template.toString.js: SyntaxError: unexpected character: '`'
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: ReferenceError: 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.DataView.Float32.js: ReferenceError: 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.DataView.Float64.js: ReferenceError: 'ArrayBuffer' is not defined
@@ -1134,7 +1134,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: 'ArrayBuffer' is n
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: undefined is not callable
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: 'ArrayBuffer' is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: typed-arrays.correct-prototype-chains.js:32: unexpected token: (identifier) (expected ';')undefined
+compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es6/typed-arrays.from.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.of.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: 'Int8Array' is not defined
@@ -1159,10 +1159,10 @@ compat-table/es6/typed-arrays.prototype.some.js: ReferenceError: 'Int8Array' is 
 compat-table/es6/typed-arrays.prototype.sort.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.subarray.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.values.js: ReferenceError: 'Int8Array' is not defined
-compat-table/es6/unicode-escapes.identifier.js: SyntaxError: unicode-escapes.identifier.js:9: unexpected escape sequenceundefined
-compat-table/es6/unicode-escapes.property-access.js: SyntaxError: unicode-escapes.property-access.js:10: unexpected escape sequenceundefined
-compat-table/es6/unicode-escapes.property-key.js: SyntaxError: unicode-escapes.property-key.js:9: unexpected escape sequenceundefined
-compat-table/es6/unicode-escapes.string.js: SyntaxError: unicode-escapes.string.js:9: malformed escape sequenceundefined
+compat-table/es6/unicode-escapes.identifier.js: SyntaxError: unexpected escape sequence
+compat-table/es6/unicode-escapes.property-access.js: SyntaxError: unexpected escape sequence
+compat-table/es6/unicode-escapes.property-key.js: SyntaxError: unexpected escape sequence
+compat-table/es6/unicode-escapes.string.js: SyntaxError: malformed escape sequence
 compat-table/es6/well-known.hasInstance.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
@@ -1188,22 +1188,22 @@ compat-table/es6/well-known.toPrimitive.js: ReferenceError: 'Symbol' is not defi
 compat-table/es6/well-known.toStringTag.existing-builtins.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/well-known.toStringTag.js: ReferenceError: 'Symbol' is not defined
 compat-table/es6/well-known.toStringTag.misc-builtins.js: ReferenceError: 'Symbol' is not defined
-compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: well-known.toStringTag.new-builtins.js:23: unexpected token: '*' (expected '(')undefined
+compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: unexpected token: '*' (expected '(')
 compat-table/es6/well-known.unscopables.js: ReferenceError: 'Symbol' is not defined
 compat-table/es2016/Array.prototype.includes.generic.js: TypeError: cannot convert undefined to object
 compat-table/es2016/Array.prototype.includes.js: TypeError: undefined is not callable
 compat-table/es2016/Array.prototype.includes.sparse.js: TypeError: undefined is not callable
 compat-table/es2016/Array.prototype.includes.typed-array.js: ReferenceError: 'Int8Array' is not defined
-compat-table/es2016/exponentiation.assignment.js: SyntaxError: exponentiation.assignment.js:10: unexpected token in expression: '*='undefined
-compat-table/es2016/exponentiation.basic.js: SyntaxError: exponentiation.basic.js:10: unexpected token in expression: '*'undefined
-compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: exponentiation.unary-negation-error.js:10: unexpected token in expression: '*'undefined
+compat-table/es2016/exponentiation.assignment.js: SyntaxError: unexpected token in expression: '*='
+compat-table/es2016/exponentiation.basic.js: SyntaxError: unexpected token in expression: '*'
+compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: unexpected token in expression: '*'
 compat-table/es2016/misc.Proxy-Array-includes.js: ReferenceError: 'Proxy' is not defined
 compat-table/es2016/misc.Proxy-enumerate-removed.js: ReferenceError: 'Proxy' is not defined
-compat-table/es2016/misc.generator-no-new.js: SyntaxError: misc.generator-no-new.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: misc.generator-throw-inner.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: misc.nested-rest-destructuring-decl.js:10: unexpected token: '[' (expected identifier)undefined
-compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: misc.nested-rest-destructuring-params.js:9: unexpected token: '[' (expected identifier)undefined
-compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: misc.strict-fn-non-simple-params-error.js:9: unexpected token: '.' (expected identifier)undefined
+compat-table/es2016/misc.generator-no-new.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: unexpected token: '[' (expected identifier)
+compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: unexpected token: '.' (expected identifier)
 compat-table/es2017/Atomics.add.js: ReferenceError: 'Atomics' is not defined
 compat-table/es2017/Atomics.and.js: ReferenceError: 'Atomics' is not defined
 compat-table/es2017/Atomics.compareExchange.js: ReferenceError: 'Atomics' is not defined
@@ -1248,48 +1248,48 @@ compat-table/es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: 'Proxy' i
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: 'Proxy' is not defined
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: 'Proxy' is not defined
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed
-compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: async.Symbol.toStringTag.js:10: unexpected token: 'function' (expected ')')undefined
-compat-table/es2017/async.arrow-in-class.js: SyntaxError: async.arrow-in-class.js:48: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2017/async.arrow.js: SyntaxError: async.arrow.js:45: unexpected token in expression: '>'undefined
-compat-table/es2017/async.await-non-promise.js: SyntaxError: async.await-non-promise.js:45: unexpected token: 'function' (expected ')')undefined
-compat-table/es2017/async.await-rejection.js: SyntaxError: async.await-rejection.js:45: unexpected token: 'function' (expected ')')undefined
-compat-table/es2017/async.await.js: SyntaxError: async.await.js:45: unexpected token: 'function' (expected ')')undefined
-compat-table/es2017/async.constructor.js: SyntaxError: async.constructor.js:45: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.methods-class.js: SyntaxError: async.methods-class.js:45: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2017/async.methods-object.js: SyntaxError: async.methods-object.js:46: unexpected token: (identifier) (expected ':')undefined
-compat-table/es2017/async.must-await-value.js: SyntaxError: async.must-await-value.js:10: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.no-await-in-params.js: SyntaxError: async.no-await-in-params.js:10: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.no-line-break.js: SyntaxError: async.no-line-break.js:10: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.no-prototype.js: SyntaxError: async.no-prototype.js:10: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.prototype-chain.js: SyntaxError: async.prototype-chain.js:10: unexpected token: 'function' (expected ')')undefined
-compat-table/es2017/async.return.js: SyntaxError: async.return.js:45: unexpected token: 'function' (expected ';')undefined
-compat-table/es2017/async.throw.js: SyntaxError: async.throw.js:45: unexpected token: 'function' (expected ';')undefined
+compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2017/async.arrow.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2017/async.await-non-promise.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2017/async.await-rejection.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2017/async.await.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2017/async.constructor.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.methods-class.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2017/async.methods-object.js: SyntaxError: unexpected token: (identifier) (expected ':')
+compat-table/es2017/async.must-await-value.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.no-await-in-params.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.no-line-break.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.no-prototype.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.prototype-chain.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2017/async.return.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2017/async.throw.js: SyntaxError: unexpected token: 'function' (expected ';')
 compat-table/es2017/misc.arguments-caller-removed.js: OK
-compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: regex.flags.u.case-folding.js:9: illegal flag in regular expression: uundefined
-compat-table/es2017/trailing-comma.arguments.js: SyntaxError: trailing-comma.arguments.js:10: unexpected token in expression: ')'undefined
-compat-table/es2017/trailing-comma.params.js: SyntaxError: trailing-comma.params.js:10: unexpected token: ')' (expected identifier)undefined
+compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2017/trailing-comma.arguments.js: SyntaxError: unexpected token in expression: ')'
+compat-table/es2017/trailing-comma.params.js: SyntaxError: unexpected token: ')' (expected identifier)
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: 'Promise' is not defined
 compat-table/es2018/Promise.prototype.finally.js: ReferenceError: 'Promise' is not defined
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: 'Promise' is not defined
-compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: async-iterators.for-await-of.js:58: unexpected token: 'function' (expected ')')undefined
-compat-table/es2018/async-iterators.generators.js: SyntaxError: async-iterators.generators.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: misc.Proxy-ownKeys-duplicate-keys.js:11: unexpected token: '(' (expected ':')undefined
-compat-table/es2018/misc.template-literal-revision.js: SyntaxError: misc.template-literal-revision.js:16: unexpected character: '`'undefined
-compat-table/es2018/object-rest.js: SyntaxError: object-rest.js:9: unexpected token: '{' (expected identifier)undefined
-compat-table/es2018/object-spread.js: SyntaxError: object-spread.js:10: unexpected token: '.' (expected identifier or keyword)undefined
-compat-table/es2018/regex.flags.s.js: SyntaxError: regex.flags.s.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2018/async-iterators.generators.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: unexpected token: '(' (expected ':')
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: unexpected character: '`'
+compat-table/es2018/object-rest.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es2018/object-spread.js: SyntaxError: unexpected token: '.' (expected identifier or keyword)
+compat-table/es2018/regex.flags.s.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2018/regex.lookbehind.js: SyntaxError: regular expression: syntax error
 compat-table/es2018/regex.named-capture-groups.js: SyntaxError: regular expression: syntax error
-compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: regex.unicode-property-escapes.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: regex.unicode-property-escapes.unicode-11.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: regex.unicode-property-escapes.unicode-12.1.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: regex.unicode-property-escapes.unicode-12.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: regex.unicode-property-escapes.unicode-13.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: regex.unicode-property-escapes.unicode-14.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: regex.unicode-property-escapes.unicode-15.1.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: regex.unicode-property-escapes.unicode-15.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: regex.unicode-property-escapes.unicode-16.0.js:10: illegal flag in regular expression: uundefined
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: regex.unicode-property-escapes.unicode-17.0.js:10: illegal flag in regular expression: uundefined
+compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: illegal flag in regular expression: u
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: illegal flag in regular expression: u
 compat-table/es2019/Array.prototype.flatMap.js: TypeError: undefined is not callable
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: ReferenceError: 'Symbol' is not defined
 compat-table/es2019/Array.prototype.flat.js: TypeError: undefined is not callable
@@ -1306,48 +1306,48 @@ compat-table/es2019/misc.Function-toString.arrows.js: SyntaxError: (eval):1: une
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: (eval):1: unexpected token: (identifier) (expected ')')
 compat-table/es2019/misc.Function-toString.computed-names.js: SyntaxError: (eval):1: unexpected token: '[' (expected identifier or keyword)
-compat-table/es2019/misc.Function-toString.native-code.js: SyntaxError: misc.Function-toString.native-code.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2019/misc.Function-toString.native-code.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: (eval):1: unexpected escape sequence
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: (eval):1: string not terminated
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: (eval):1: string not terminated
-compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: misc.optional-catch-binding.await.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: misc.optional-catch-binding.js:12: unexpected token: '{' (expected '(')undefined
-compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: misc.optional-catch-binding.yield.js:9: unexpected token: '*' (expected identifier)undefined
-compat-table/es2020/BigInt64Array.js: SyntaxError: BigInt64Array.js:12: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: unexpected token: '{' (expected '(')
+compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/es2020/BigInt64Array.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-compat-table/es2020/BigInt.constructor.js: SyntaxError: BigInt.constructor.js:10: number with letter suffixundefined
-compat-table/es2020/BigInt.js: SyntaxError: BigInt.js:10: number with letter suffixundefined
-compat-table/es2020/BigUint64Array.js: SyntaxError: BigUint64Array.js:12: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: DataView.prototype.getBigInt64.js:12: number with letter suffixundefined
-compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: DataView.prototype.getBigUint64.js:12: number with letter suffixundefined
-compat-table/es2020/Promise.allSettled.js: SyntaxError: Promise.allSettled.js:49: unexpected token in expression: '>'undefined
+compat-table/es2020/BigInt.constructor.js: SyntaxError: number with letter suffix
+compat-table/es2020/BigInt.js: SyntaxError: number with letter suffix
+compat-table/es2020/BigUint64Array.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: number with letter suffix
+compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: number with letter suffix
+compat-table/es2020/Promise.allSettled.js: SyntaxError: unexpected token in expression: '>'
 compat-table/es2020/String.prototype.matchAll.js: TypeError: undefined is not callable
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
 compat-table/es2020/globalThis.descriptor.js: failed
 compat-table/es2020/globalThis.js: failed
-compat-table/es2020/nullish-coalescing.js: SyntaxError: nullish-coalescing.js:10: unexpected token in expression: '?'undefined
-compat-table/es2020/optional-chaining.bracket.js: SyntaxError: optional-chaining.bracket.js:12: unexpected token in expression: '.'undefined
-compat-table/es2020/optional-chaining.function-call.js: SyntaxError: optional-chaining.function-call.js:14: unexpected token in expression: '.'undefined
-compat-table/es2020/optional-chaining.method-call.js: SyntaxError: optional-chaining.method-call.js:12: unexpected token in expression: '.'undefined
-compat-table/es2020/optional-chaining.property.js: SyntaxError: optional-chaining.property.js:12: unexpected token in expression: '.'undefined
-compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: optional-chaining.spread-params.js:14: unexpected token in expression: '.'undefined
+compat-table/es2020/nullish-coalescing.js: SyntaxError: unexpected token in expression: '?'
+compat-table/es2020/optional-chaining.bracket.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es2020/optional-chaining.function-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es2020/optional-chaining.method-call.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es2020/optional-chaining.property.js: SyntaxError: unexpected token in expression: '.'
+compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: unexpected token in expression: '.'
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: 'FinalizationRegistry' is not defined
-compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: Promise.any.AggregateError.js:49: unexpected token in expression: '>'undefined
-compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: Promise.any.fulfillment.js:49: unexpected token in expression: '>'undefined
+compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: unexpected token in expression: '>'
 compat-table/es2021/String.prototype.replaceAll.js: TypeError: undefined is not callable
 compat-table/es2021/WeakRef.js: ReferenceError: 'WeakRef' is not defined
-compat-table/es2021/logical-assignment.and.js: SyntaxError: logical-assignment.and.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: logical-assignment.and.setter-not-invoked.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: logical-assignment.and.short-circuit.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.nullish.js: SyntaxError: logical-assignment.nullish.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: logical-assignment.nullish.setter-not-invoked.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: logical-assignment.nullish.short-circuit.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.or.js: SyntaxError: logical-assignment.or.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: logical-assignment.or.setter-not-invoked.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: logical-assignment.or.short-circuit.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2021/numeric-separators.js: SyntaxError: numeric-separators.js:9: number with letter suffixundefined
+compat-table/es2021/logical-assignment.and.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.nullish.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.or.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2021/numeric-separators.js: SyntaxError: number with letter suffix
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: 'AggregateError' is not defined
 compat-table/es2022/Error.cause.AggregateError.js: ReferenceError: 'AggregateError' is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1369,23 +1369,23 @@ compat-table/es2022/Object.hasOwn.js: TypeError: undefined is not callable
 compat-table/es2022/at-method.Array.js: TypeError: undefined is not callable
 compat-table/es2022/at-method.String.js: TypeError: undefined is not callable
 compat-table/es2022/at-method.TypedArray.js: failed
-compat-table/es2022/class-fields.computed-instance.js: SyntaxError: class-fields.computed-instance.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.computed-static.js: SyntaxError: class-fields.computed-static.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: class-fields.instance.parent-scope.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: class-fields.private-instance.initializers.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.private-instance.js: SyntaxError: class-fields.private-instance.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: class-fields.private-instance.optional-access.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: class-fields.private-instance.optional-deep-access.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.private-static.js: SyntaxError: class-fields.private-static.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.public-instance.js: SyntaxError: class-fields.public-instance.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.public-static.js: SyntaxError: class-fields.public-static.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-fields.static.define.js: SyntaxError: class-fields.static.define.js:9: unexpected token: (identifier) (expected ')')undefined
-compat-table/es2022/class-methods.private-accessor.js: SyntaxError: class-methods.private-accessor.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-methods.private-instance.js: SyntaxError: class-methods.private-instance.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: class-methods.private-static-accessor.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-methods.private-static.js: SyntaxError: class-methods.private-static.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: class-static-init-blocks.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: ergonomic-brand-checks.js:9: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.private-static.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.public-static.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-fields.static.define.js: SyntaxError: unexpected token: (identifier) (expected ')')
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-methods.private-static.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: invalid regular expression flag: 'd'
 compat-table/es2022/regex.flags.d.shows-in-flags.js: ReferenceError: 'Proxy' is not defined
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: undefined is not callable
@@ -1398,35 +1398,35 @@ compat-table/es2023/TypedArray.prototype.toReversed.js: ReferenceError: 'Uint8Ar
 compat-table/es2023/TypedArray.prototype.toSorted.js: ReferenceError: 'Uint8Array' is not defined
 compat-table/es2023/TypedArray.prototype.with.js: ReferenceError: 'Uint8Array' is not defined
 compat-table/es2023/hashbang.js: SyntaxError: (eval):1: unexpected character: '#'
-compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: ArrayBuffer.prototype.detached.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: ArrayBuffer.prototype.transferToFixedLength.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: ArrayBuffer.prototype.transfer.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2024/Map.groupBy.js: SyntaxError: Map.groupBy.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2024/Object.groupBy.js: SyntaxError: Object.groupBy.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2024/Map.groupBy.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2024/Object.groupBy.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2024/Promise.withResolvers.js: ReferenceError: 'Promise' is not defined
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: invalid regular expression flag: 'v'
-compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: regex.flags.v.properties-of-strings.js:9: illegal flag in regular expression: vundefined
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: regex.flags.v.set-notations.js:9: illegal flag in regular expression: vundefined
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: illegal flag in regular expression: v
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: illegal flag in regular expression: v
 compat-table/es2024/regex.flags.v.shows-in-flags.js: ReferenceError: 'Proxy' is not defined
-compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: regex.flags.v.unicode-15.1.js:9: illegal flag in regular expression: vundefined
-compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: regex.flags.v.unicode-16.0.js:9: illegal flag in regular expression: vundefined
-compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: regex.flags.v.unicode-17.0.js:9: illegal flag in regular expression: vundefined
-compat-table/es2025/Iterator.extends.js: SyntaxError: Iterator.extends.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2025/Iterator.from.iterable.js: SyntaxError: Iterator.from.iterable.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2025/Iterator.from.iterator.js: SyntaxError: Iterator.from.iterator.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: illegal flag in regular expression: v
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: illegal flag in regular expression: v
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: illegal flag in regular expression: v
+compat-table/es2025/Iterator.extends.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2025/Iterator.from.iterable.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2025/Iterator.from.iterator.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2025/Iterator.instanceof.js: TypeError: undefined is not callable
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: 'Iterator' is not defined
 compat-table/es2025/Iterator.prototype.drop.js: TypeError: undefined is not callable
-compat-table/es2025/Iterator.prototype.every.js: SyntaxError: Iterator.prototype.every.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: Iterator.prototype.filter.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.find.js: SyntaxError: Iterator.prototype.find.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: Iterator.prototype.flatMap.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: Iterator.prototype.forEach.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2025/Iterator.prototype.map.js: SyntaxError: Iterator.prototype.map.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.reduce.js: SyntaxError: Iterator.prototype.reduce.js:10: unexpected token in expression: '>'undefined
-compat-table/es2025/Iterator.prototype.some.js: SyntaxError: Iterator.prototype.some.js:10: unexpected token in expression: '>'undefined
+compat-table/es2025/Iterator.prototype.every.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.find.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2025/Iterator.prototype.map.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.reduce.js: SyntaxError: unexpected token in expression: '>'
+compat-table/es2025/Iterator.prototype.some.js: SyntaxError: unexpected token in expression: '>'
 compat-table/es2025/Iterator.prototype.take.js: TypeError: undefined is not callable
-compat-table/es2025/Iterator.prototype.toArray.js: SyntaxError: Iterator.prototype.toArray.js:10: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2025/Iterator.prototype.toArray.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2025/Promise.try.js: ReferenceError: 'Promise' is not defined
 compat-table/es2025/RegExp.escape.js: TypeError: undefined is not callable
 compat-table/es2025/Set.prototype.difference.js: ReferenceError: 'Set' is not defined
@@ -1437,9 +1437,9 @@ compat-table/es2025/Set.prototype.isSupersetOf.js: ReferenceError: 'Set' is not 
 compat-table/es2025/Set.prototype.symmetricDifference.js: ReferenceError: 'Set' is not defined
 compat-table/es2025/Set.prototype.union.js: ReferenceError: 'Set' is not defined
 compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: regular expression: syntax error
-compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: regex.pattern-modifiers.i.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: regex.pattern-modifiers.m.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: regex.pattern-modifiers.s.js:9: unexpected token: (identifier) (expected ';')undefined
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1468,45 +1468,45 @@ compat-table/intl/Intl.prototype.js: ReferenceError: 'Intl' is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
-compat-table/next/Array.isTemplateObject.js: SyntaxError: Array.isTemplateObject.js:10: unexpected token in expression: '>'undefined
-compat-table/next/AsyncDisposableStack.js: SyntaxError: AsyncDisposableStack.js:47: unexpected token: '[' (expected ':')undefined
-compat-table/next/AsyncIterator.extends.js: SyntaxError: AsyncIterator.extends.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: AsyncIterator.from.async-iterable.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: AsyncIterator.from.iterable.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: AsyncIterator.from.iterator.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.instanceof.js: SyntaxError: AsyncIterator.instanceof.js:9: unexpected token: 'function' (expected ')')undefined
+compat-table/next/Array.isTemplateObject.js: SyntaxError: unexpected token in expression: '>'
+compat-table/next/AsyncDisposableStack.js: SyntaxError: unexpected token: '[' (expected ':')
+compat-table/next/AsyncIterator.extends.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: unexpected token: 'function' (expected ')')
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: 'AsyncIterator' is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: AsyncIterator.prototype.drop.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: AsyncIterator.prototype.every.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: AsyncIterator.prototype.filter.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: AsyncIterator.prototype.find.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: AsyncIterator.prototype.flatMap.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: AsyncIterator.prototype.forEach.js:44: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: AsyncIterator.prototype.map.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: AsyncIterator.prototype.reduce.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: AsyncIterator.prototype.some.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: AsyncIterator.prototype.take.js:44: unexpected token: 'function' (expected ';')undefined
-compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: AsyncIterator.prototype.toArray.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/DisposableStack.js: SyntaxError: DisposableStack.js:12: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/next/Map.prototype.upsert.js: SyntaxError: Map.prototype.upsert.js:9: unexpected token: (identifier) (expected ';')undefined
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: unexpected token: 'function' (expected ';')
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/DisposableStack.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/next/Map.prototype.upsert.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: SuppressedError.js:13: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Uint8Array.fromBase64.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.fromHex.js: SyntaxError: Uint8Array.fromHex.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Uint8Array.setFromBase64.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.setFromHex.js: SyntaxError: Uint8Array.setFromHex.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.toBase64.js: SyntaxError: Uint8Array.toBase64.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/Uint8Array.toHex.js: SyntaxError: Uint8Array.toHex.js:10: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: WeakMap.prototype.upsert.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/await-using.for-of.js: SyntaxError: await-using.for-of.js:46: unexpected token: '[' (expected ':')undefined
-compat-table/next/await-using.js: SyntaxError: await-using.js:44: unexpected token: 'function' (expected ')')undefined
-compat-table/next/class-decorators.js: SyntaxError: class-decorators.js:9: unexpected token: (identifier) (expected ';')undefined
-compat-table/next/function.sent.js: SyntaxError: function.sent.js:10: unexpected token: '*' (expected identifier)undefined
-compat-table/next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js:9: unexpected token in expression: ')'undefined
-compat-table/next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js:9: unexpected token in expression: 'throw'undefined
-compat-table/next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js:11: unexpected token in expression: 'throw'undefined
-compat-table/next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js:9: unexpected token: '=' (expected ')')undefined
-compat-table/next/using.for-of.js: SyntaxError: using.for-of.js:11: unexpected token: '[' (expected identifier or keyword)undefined
-compat-table/next/using.js: SyntaxError: using.js:11: unexpected token: '[' (expected identifier or keyword)undefined
+compat-table/next/SuppressedError.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.fromBase64.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.fromHex.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.setFromHex.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.toBase64.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Uint8Array.toHex.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token: '[' (expected ':')
+compat-table/next/await-using.js: SyntaxError: unexpected token: 'function' (expected ')')
+compat-table/next/class-decorators.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/function.sent.js: SyntaxError: unexpected token: '*' (expected identifier)
+compat-table/next/throw-expr.arrow.js: SyntaxError: unexpected token in expression: ')'
+compat-table/next/throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.param-init.js: SyntaxError: unexpected token: '=' (expected ')')
+compat-table/next/using.for-of.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
+compat-table/next/using.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)

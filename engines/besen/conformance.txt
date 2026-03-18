@@ -15,7 +15,7 @@ es1/Boolean.prototype.constructor.js: OK
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: failed
+es1/Date.js: new Date(2000, 0, 1).getFullYear() != 2000; new Date(2000, 0, 1).getMonth() != 0; new Date(2000, 0, 1).getDate() != 1
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: failed
 es1/Date.prototype.getDay.js: failed
@@ -118,12 +118,12 @@ es1/annex-b.Date.prototype.setYear.js: OK
 es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: failed
 es1/annex-b.global.unescape.js: OK
-es1/annex-b.literals.octal.js: SyntaxError: SyntaxError: Bad number literal
+es1/annex-b.literals.octal.js: SyntaxError: Bad number literal
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: SyntaxError: SyntaxError: Illegal line terminator before postfix increment
+es1/asi.js: SyntaxError: Illegal line terminator before postfix increment
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -167,7 +167,7 @@ es1/literals.string.unicode.js: OK
 es1/logical.js: OK
 es1/new.typeof.js: OK
 es1/numbers.double.js: OK
-es1/numbers.fmod.js: failed: -5.5 % 2.5 sign failed
+es1/numbers.fmod.js: -5.5 % 2.5 sign failed
 es1/numbers.inf.js: OK
 es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
@@ -208,10 +208,10 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: TypeError: TypeError: No string
-es3/Array.prototype.unshift.generic.js: failed: unshift on object failed
-es3/Array.prototype.unshift.js: failed: unshift single element failed
-es3/Array.prototype.unshift.returns-new-length.js: failed: empty array unshift failed
+es3/Array.prototype.toLocaleString.js: TypeError: No string
+es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
+es3/Array.prototype.unshift.js: unshift single element failed; unshift multiple elements failed; unshift on empty array failed; unshift with no arguments failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed; multiple elements unshift failed; no arguments unshift failed
 es3/Date.prototype.toDateString.js: OK
 es3/Date.prototype.toLocaleDateString.js: OK
 es3/Date.prototype.toLocaleString.js: OK
@@ -226,20 +226,20 @@ es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
-es3/Number.prototype.toExponential.js: failed: zero failed
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: zero failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.2341235e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.213e+0')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: large number precision failed
+es3/Number.prototype.toFixed.js: large number precision failed
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: failed: toPrecision() undefined arg failed
+es3/Number.prototype.toPrecision.js: toPrecision() undefined arg failed; small number exponential notation failed; zero failed
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
 es3/Object.prototype.propertyIsEnumerable.js: OK
 es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
+es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
@@ -251,7 +251,7 @@ es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: failed: global match failed
+es3/String.prototype.match.js: global match failed; multiple global matches failed
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
 es3/String.prototype.replace.generic.js: OK
@@ -277,15 +277,15 @@ es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: timeout: >3s
+es3/global.SyntaxError.thrown.js: timeout: >10s
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
 es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
-es3/global.decodeURI.js: failed: decode plain URI failed
-es3/global.encodeURIComponent.js: failed: encode UTF-8 failed
-es3/global.encodeURI.js: failed: encode UTF-8 failed
+es3/global.decodeURI.js: decode plain URI failed; # not decoded failed; reserved URI characters preserved failed
+es3/global.encodeURIComponent.js: encode UTF-8 failed; encode reserved chars failed
+es3/global.encodeURI.js: encode UTF-8 failed
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
@@ -296,7 +296,7 @@ es3/labelled.statements.js: OK
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
-es3/literals.object.decimal.js: failed: property name 1.5 failed
+es3/literals.object.decimal.js: property name 1.5 failed; property name 3.14 failed
 es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
@@ -324,9 +324,9 @@ es3/regex.escape.hex.js: OK
 es3/regex.escape.js: OK
 es3/regex.escape.nul.js: OK
 es3/regex.escape.unicode.js: OK
-es3/regex.flag.global.js: failed: global match failed
+es3/regex.flag.global.js: global match failed; multiple matches failed
 es3/regex.flag.ignorecase.js: OK
-es3/regex.flag.multiline.js: failed: $ before LF failed
+es3/regex.flag.multiline.js: $ before LF failed
 es3/regex.group.js: OK
 es3/regex.lookahead.js: OK
 es3/regex.negative-lookahead.js: OK
@@ -356,17 +356,17 @@ es5/Array.prototype.reduceRight.js: OK
 es5/Array.prototype.reduce.js: OK
 es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: OK
-es5/Array.prototype.sort.undefined-comparefn.js: TypeError: TypeError: Bad argument
+es5/Array.prototype.sort.undefined-comparefn.js: TypeError: Bad argument
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: failed: invalid date does not throw RangeError
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: timeout: >3s
+es5/JSON.parse.js: timeout: >10s
 es5/JSON.parse.reviver.js: OK
-es5/JSON.stringify.js: failed: failed to drop undefined/function values
+es5/JSON.stringify.js: failed to drop undefined/function values
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
@@ -407,13 +407,13 @@ es5/strict.no-assignment-to-non-writable.js: OK
 es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: OK
-es5/strict.no-duplicate-parameters.js: timeout: >3s
+es5/strict.no-duplicate-parameters.js: timeout: >10s
 es5/strict.no-eval-or-arguments-assignment.js: OK
-es5/strict.no-eval-or-arguments-bindings.js: timeout: >3s
+es5/strict.no-eval-or-arguments-bindings.js: timeout: >10s
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: OK
-es5/strict.no-with.js: timeout: >3s
-es5/strict.reserved-words.js: timeout: >3s
+es5/strict.no-with.js: timeout: >10s
+es5/strict.reserved-words.js: timeout: >10s
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK

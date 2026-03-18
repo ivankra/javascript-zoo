@@ -1,21 +1,21 @@
-Metadata: {"arch":"arm64","cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","dist_size":2188496,"engine":"ejscript","repository":"https://github.com/embedthis/ejscript.git","revision":"bb38d46e96ad20e923821d31d4a37e64de926d5a","revision_date":"2025-03-09","version":"2.7.7-22-gbb38d46e9"}
-es1/Array.js: failed: Array.length failed
+Metadata: {"arch":"arm64","cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","dist_size":2188482,"engine":"ejscript","repository":"https://github.com/embedthis/ejscript.git","revision":"bb38d46e96ad20e923821d31d4a37e64de926d5a","revision_date":"2025-03-09","version":"2.7.7-22-gbb38d46e9"}
+es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
-es1/Array.prototype.constructor.js: failed: Array.prototype.constructor failed
-es1/Array.prototype.join.generic.js: crash: SIGSEGV
-es1/Array.prototype.join.js: failed: join() without separator failed
-es1/Array.prototype.reverse.generic.js: failed
+es1/Array.prototype.constructor.js: Array.prototype.constructor failed
+es1/Array.prototype.join.generic.js: crashed: SIGSEGV
+es1/Array.prototype.join.js: join() without separator failed
+es1/Array.prototype.reverse.generic.js: crashed: SIGSEGV
 es1/Array.prototype.reverse.js: OK
-es1/Array.prototype.sort.generic.js: failed
-es1/Array.prototype.sort.js: failed: sort with comparefn failed
+es1/Array.prototype.sort.generic.js: crashed: SIGSEGV
+es1/Array.prototype.sort.js: sort with comparefn failed; reverse comparefn failed
 es1/Array.prototype.toString.js: OK
-es1/Boolean.js: failed: new Boolean(true) failed
-es1/Boolean.prototype.constructor.js: failed: Boolean.prototype.constructor failed
+es1/Boolean.js: new Boolean(true) failed; new Boolean() failed
+es1/Boolean.prototype.constructor.js: Boolean.prototype.constructor failed
 es1/Boolean.prototype.toString.js: OK
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: failed
+es1/Date.js: typeof Date() != 'string'
 es1/Date.prototype.constructor.js: failed
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK
@@ -54,9 +54,9 @@ es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
-es1/Function.js: crash: SIGSEGV
-es1/Function.length.js: failed: Function.length failed
-es1/Function.prototype.constructor.js: failed: Function.prototype.constructor failed
+es1/Function.js: crashed: SIGSEGV
+es1/Function.length.js: Function.length failed
+es1/Function.prototype.constructor.js: Function.prototype.constructor failed
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
 es1/Math.E.js: OK
@@ -90,24 +90,24 @@ es1/Number.MIN_VALUE.js: OK
 es1/Number.NEGATIVE_INFINITY.js: OK
 es1/Number.NaN.js: OK
 es1/Number.POSITIVE_INFINITY.js: OK
-es1/Number.js: failed: new Number(value) failed
-es1/Number.prototype.constructor.js: failed: Number.prototype.constructor failed
+es1/Number.js: new Number(value) failed; new Number() failed
+es1/Number.prototype.constructor.js: Number.prototype.constructor failed
 es1/Number.prototype.toString.js: OK
 es1/Number.prototype.valueOf.js: OK
 es1/Object.js: OK
 es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
-es1/Object.prototype.valueOf.js: failed: valueOf property access failed
+es1/Object.prototype.valueOf.js: valueOf property access failed
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: failed: charAt failed
-es1/String.js: failed: 15.5.2.1 new String(value) failed
+es1/String.generics.js: charAt failed; charCodeAt failed; indexOf failed; lastIndexOf failed; split failed; substring failed; toLowerCase failed; toUpperCase failed
+es1/String.js: 15.5.2.1 new String(value) failed; 15.5.2.2 new String() failed
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
-es1/String.prototype.constructor.js: failed: String.prototype.constructor failed
+es1/String.prototype.constructor.js: String.prototype.constructor failed
 es1/String.prototype.indexOf.js: OK
-es1/String.prototype.lastIndexOf.js: failed: lastIndexOf with position failed
-es1/String.prototype.split.js: failed: ArgError: Insufficient actual parameters 0. Call requires 1 parameter(s).
+es1/String.prototype.lastIndexOf.js: lastIndexOf with position failed
+es1/String.prototype.split.js: ArgError: Insufficient actual parameters 0. Call requires 1 parameter(s).
 es1/String.prototype.substring.js: OK
 es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
@@ -123,27 +123,27 @@ es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: TypeError: Cannot cast to this type
 es1/arguments.js: ReferenceError: arguments is not defined
 es1/asi.eval.js: OK
-es1/asi.js: failed: asi.js: 71: Invalid postfix operand
+es1/asi.js: Invalid postfix operand
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
-es1/assignment.unsigned-shift.js: failed: >>>= failed
+es1/assignment.unsigned-shift.js: >>>= failed
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
-es1/bitwise.unsigned-shift.js: failed
+es1/bitwise.unsigned-shift.js: -12345 >>> 2 != 1073738737 (got: -3087); -12345 >>> 0 != 4294954951 (got: -12345)
 es1/break.js: OK
 es1/comma.js: OK
-es1/comments.js: MissingOK
+es1/comments.js: failed
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: failed: new Boolean(false) failed - expected it to be truthy
-es1/conversions.ToInt32.js: failed: +Infinity failed
+es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy
+es1/conversions.ToInt32.js: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
 es1/conversions.ToInteger.js: OK
-es1/conversions.ToNumber.js: failed: '' failed
-es1/conversions.ToObject.js: failed: Object passthrough failed
+es1/conversions.ToNumber.js: '' failed
+es1/conversions.ToObject.js: Object passthrough failed
 es1/conversions.ToString.js: OK
-es1/conversions.ToUint32.js: failed: +Infinity failed
+es1/conversions.ToUint32.js: +Infinity failed; -Infinity failed; 2^32 failed; -1 failed; -2^31 failed
 es1/conversions.js: TypeError: Opcode 137 not implemented for type String
 es1/equals.js: OK
 es1/eval.js: OK
@@ -152,7 +152,7 @@ es1/for.js: OK
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
-es1/global.isFinite.js: failed: isFinite(0/0) failed
+es1/global.isFinite.js: isFinite(0/0) failed
 es1/global.isNaN.js: OK
 es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: OK
@@ -165,9 +165,9 @@ es1/literals.string.hex.js: OK
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
-es1/new.typeof.js: failed
+es1/new.typeof.js: typeof new String('x') != 'object'
 es1/numbers.double.js: OK
-es1/numbers.fmod.js: failed: 5.5 % 2.5 failed
+es1/numbers.fmod.js: 5.5 % 2.5 failed; 7.2 % 3.0 failed; -5.5 % 2.5 sign failed
 es1/numbers.inf.js: OK
 es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
@@ -176,12 +176,12 @@ es1/postfix.increment.js: OK
 es1/prefix.js: OK
 es1/relational.js: OK
 es1/return.js: OK
-es1/return.typeof.js: failed: return.typeof.js: 41: Function call does not return a value.
+es1/return.typeof.js: Function call does not return a value.
 es1/this.js: OK
 es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: ReferenceError: a is not defined
-es1/types.js: failed
+es1/types.js: typeof <undefined> != 'undefined'
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
 es1/unary.delete.var.js: ReferenceError: a is not defined
@@ -192,26 +192,26 @@ es1/unary.plus.js: OK
 es1/unary.plus.str.js: failed
 es1/unary.tilde.js: OK
 es1/var.js: OK
-es1/var.typeof.js: failed: multiple uninitialized vars failed
-es1/void.js: MissingOK
+es1/var.typeof.js: uninitialized var not undefined; multiple uninitialized vars failed; mixed initialized/uninitialized vars failed
+es1/void.js: failed
 es1/void.typeof.js: OK
 es1/while.js: OK
 es1/with.js: OK
-es3/Array.prototype.concat.js: crash: SIGSEGV
-es3/Array.prototype.pop.generic.js: crash: SIGSEGV
+es3/Array.prototype.concat.js: crashed: SIGSEGV
+es3/Array.prototype.pop.generic.js: crashed: SIGSEGV
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: crash: SIGSEGV
+es3/Array.prototype.push.generic.js: crashed: SIGSEGV
 es3/Array.prototype.push.js: OK
-es3/Array.prototype.shift.generic.js: crash: SIGSEGV
+es3/Array.prototype.shift.generic.js: crashed: SIGSEGV
 es3/Array.prototype.shift.js: OK
-es3/Array.prototype.slice.generic.js: crash: SIGSEGV
+es3/Array.prototype.slice.generic.js: crashed: SIGSEGV
 es3/Array.prototype.slice.js: OK
-es3/Array.prototype.splice.generic.js: crash: SIGSEGV
-es3/Array.prototype.splice.js: failed: splice on empty array failed
+es3/Array.prototype.splice.generic.js: crashed: SIGSEGV
+es3/Array.prototype.splice.js: splice on empty array failed
 es3/Array.prototype.toLocaleString.js: OK
-es3/Array.prototype.unshift.generic.js: failed: unshift on object failed
-es3/Array.prototype.unshift.js: failed: unshift single element failed
-es3/Array.prototype.unshift.returns-new-length.js: failed: empty array unshift failed
+es3/Array.prototype.unshift.generic.js: crashed: Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsArray.c:1516
+es3/Array.prototype.unshift.js: unshift single element failed; unshift multiple elements failed; unshift on empty array failed; unshift with no arguments failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed; multiple elements unshift failed; no arguments unshift failed
 es3/Date.prototype.toDateString.js: OK
 es3/Date.prototype.toLocaleDateString.js: OK
 es3/Date.prototype.toLocaleString.js: OK
@@ -222,49 +222,49 @@ es3/Error.prototype.constructor.js: failed
 es3/Error.prototype.message.js: failed
 es3/Error.prototype.name.js: failed
 es3/Error.prototype.toString.js: OK
-es3/Function.prototype.apply.js: failed: ArgError: Insufficient actual parameters 1. Call requires 2 parameter(s).
+es3/Function.prototype.apply.js: ArgError: Insufficient actual parameters 1. Call requires 2 parameter(s).
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: failed: ArgError: Insufficient actual parameters 0. Call requires 2 parameter(s).
-es3/Math.min.variadic.js: failed: ArgError: Insufficient actual parameters 0. Call requires 2 parameter(s).
+es3/Math.max.variadic.js: ArgError: Insufficient actual parameters 0. Call requires 2 parameter(s).
+es3/Math.min.variadic.js: ArgError: Insufficient actual parameters 0. Call requires 2 parameter(s).
 es3/Number.prototype.toExponential.edge-cases.js: OK
-es3/Number.prototype.toExponential.js: failed: zero failed
-es3/Number.prototype.toExponential.rounding.js: failed
-es3/Number.prototype.toExponential.throws-infinity.js: failed: toExponential(Infinity) does not throw RangeError
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toExponential.js: zero failed
+es3/Number.prototype.toExponential.rounding.js: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.9e-11'); (25).toExponential(0) != '3e+1' (got: '2.5e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1...
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: failed: small number exponential notation failed
+es3/Number.prototype.toPrecision.js: small number exponential notation failed; zero failed; large number exponential notation failed
 es3/Object.prototype.hasOwnProperty.js: OK
-es3/Object.prototype.isPrototypeOf.js: failed: prototype chain failed
+es3/Object.prototype.isPrototypeOf.js: prototype chain failed; Object.prototype failed
 es3/Object.prototype.propertyIsEnumerable.js: OK
 es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
+es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: failed
-es3/RegExp.prototype.exec.js: failed: index failed
+es3/RegExp.prototype.exec.js: index failed; input failed
 es3/RegExp.prototype.test.js: OK
 es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
-es3/String.prototype.concat.generic.js: failed
+es3/String.prototype.concat.generic.js: crashed: Assertion argc == 1 && ejsIs(ejs, argv[0], Array), failed at src/core/src/ejsString.c:378
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: ReferenceError: Cannot find function "localeCompare"
 es3/String.prototype.match.generic.js: failed
 es3/String.prototype.match.js: TypeError: Bad type for argument "pattern" in function "match"
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: failed: object with toString failed
+es3/String.prototype.replace.generic.js: crashed: Assertion sp->next == NULL || sp->next == sp, failed at src/core/src/ejsString.c:2665
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: failed
 es3/String.prototype.search.js: OK
-es3/String.prototype.search.str.js: failed: string with \d+ pattern failed
+es3/String.prototype.search.str.js: string with \d+ pattern failed; string with \w+ pattern failed; string with [0-9]+ pattern failed; string with \s pattern failed; string with \. pattern failed
 es3/String.prototype.slice.generic.js: failed
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed: ArgError: Insufficient actual parameters 0. Call requires 1 parameter(s).
-es3/String.prototype.split.limit.js: failed: split with limit 2 failed
-es3/String.prototype.split.regex.js: timeout: >3s
+es3/String.prototype.split.bugs.js: ArgError: Insufficient actual parameters 0. Call requires 1 parameter(s).
+es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
+es3/String.prototype.split.regex.js: timeout: >10s
 es3/String.prototype.toLocaleLowerCase.js: ReferenceError: Cannot find function "toLocaleLowerCase"
 es3/String.prototype.toLocaleUpperCase.js: ReferenceError: Cannot find function "toLocaleUpperCase"
 es3/annex-b.String.prototype.substr.js: ReferenceError: Cannot find function "substr"
@@ -273,27 +273,27 @@ es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: ReferenceError: EvalError is not defined
 es3/global.RangeError.js: ReferenceError: RangeError is not defined
-es3/global.RangeError.thrown.js: failed: no exception for new Array with negative length
-es3/global.ReferenceError.js: failed: constructor failed
-es3/global.ReferenceError.thrown.js: failed: wrong exception for undeclared variable
-es3/global.SyntaxError.js: failed: constructor failed
-es3/global.SyntaxError.thrown.js: failed: wrong exception type
-es3/global.TypeError.js: failed: constructor failed
-es3/global.TypeError.thrown.js: crash: SIGSEGV
-es3/global.URIError.js: failed: constructor failed
-es3/global.URIError.thrown.js: failed: no exception for decodeURI incomplete escape
-es3/global.decodeURIComponent.js: failed: decode UTF-8 failed
-es3/global.decodeURI.js: failed: decode UTF-8 failed
-es3/global.encodeURIComponent.js: failed: encode UTF-8 failed
-es3/global.encodeURI.js: failed: encode UTF-8 failed
+es3/global.RangeError.thrown.js: Cannot allocate memory block
+es3/global.ReferenceError.js: constructor failed; name failed
+es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: constructor failed; name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; no exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: constructor failed; name failed
+es3/global.TypeError.thrown.js: crashed: SIGSEGV
+es3/global.URIError.js: constructor failed; name failed
+es3/global.URIError.thrown.js: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for ...
+es3/global.decodeURIComponent.js: decode UTF-8 failed
+es3/global.decodeURI.js: decode UTF-8 failed; # not decoded failed
+es3/global.encodeURIComponent.js: encode UTF-8 failed
+es3/global.encodeURI.js: encode UTF-8 failed
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: failed: identifiers.unicode.js: 8: Unexpected input ""
-es3/instanceof.js: failed: number instanceof Object failed
-es3/in.js: failed: missing array index failed
-es3/labelled.break.js: failed: labelled.break.js: 10: Labeled statements are not yet implemented
-es3/labelled.continue.js: failed: labelled.continue.js: 11: Labeled statements are not yet implemented
-es3/labelled.statements.js: failed: labelled.statements.js: 9: Labeled statements are not yet implemented
-es3/literals.array.elisions.js: failed: array with only elision failed
+es3/identifiers.unicode.js: Unexpected input ""
+es3/instanceof.js: number instanceof Object failed; string instanceof Object failed; custom constructor instanceof failed
+es3/in.js: missing array index failed
+es3/labelled.break.js: Labeled statements are not yet implemented
+es3/labelled.continue.js: Labeled statements are not yet implemented
+es3/labelled.statements.js: Labeled statements are not yet implemented
+es3/literals.array.elisions.js: array with only elision failed
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
 es3/literals.object.decimal.js: OK
@@ -301,14 +301,14 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: failed: literals.object.unicode.js: 9: Not an identifier ""
-es3/literals.regex.ambiguous.js: crash: SIGSEGV
+es3/literals.object.unicode.js: Not an identifier ""
+es3/literals.regex.ambiguous.js: crashed: SIGSEGV
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref for a group that hasn't captured failed
+es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -316,7 +316,7 @@ es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
-es3/regex.disjunction.js: failed: complex disjunction failed
+es3/regex.disjunction.js: complex disjunction failed
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
 es3/regex.escape.control.js: OK
@@ -338,12 +338,12 @@ es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
-es3/source.line-terminators.js: failed: source.line-terminators.js: 13: Unexpected input ""
-es3/source.whitespace.js: failed: source.whitespace.js: 12: Unexpected input ""
-es3/source.whitespace.unicode.js: failed: source.whitespace.unicode.js: 8: Unexpected input ""
+es3/source.line-terminators.js: Unexpected input ""
+es3/source.whitespace.js: Unexpected input ""
+es3/source.whitespace.unicode.js: Unexpected input ""
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: failed: finally executes on throw failed
+es3/try-catch-finally.js: finally executes on throw failed
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: ReferenceError: Cannot find function "isArray"
 es5/Array.prototype.every.js: OK
@@ -352,28 +352,28 @@ es5/Array.prototype.forEach.js: OK
 es5/Array.prototype.indexOf.js: OK
 es5/Array.prototype.lastIndexOf.js: OK
 es5/Array.prototype.map.js: OK
-es5/Array.prototype.reduceRight.js: failed: reduceRight reverse concat failed
-es5/Array.prototype.reduce.js: failed: sparse array skips missing elements failed
+es5/Array.prototype.reduceRight.js: reduceRight reverse concat failed; reduceRight without initialValue failed
+es5/Array.prototype.reduce.js: sparse array skips missing elements failed
 es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
-es5/Array.prototype.sort.undefined-comparefn.js: failed: ArgError: Compare argument is not a function
+es5/Array.prototype.sort.undefined-comparefn.js: ArgError: Compare argument is not a function
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: failed: epoch date format incorrect
-es5/Date.prototype.toJSON.js: failed: invalid date does not return null
+es5/Date.prototype.toISOString.js: toISOString does not return ISO format; epoch date format incorrect; date with milliseconds format incorrect; invalid date does not throw RangeError
+es5/Date.prototype.toJSON.js: invalid date does not return null; valid date format incorrect
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
-es5/Function.prototype.bind.js: crash: SIGSEGV
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: crashed: SIGSEGV
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: parse true failed
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: cyclic structure does not throw TypeError
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
-es5/Object.create.js: ReferenceError: Object is null
+es5/JSON.parse.js: parse true failed; parse false failed; parse number failed; invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError; escape sequences failed; unicode escape failed; negative...
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: cyclic structure does not throw TypeError; failed to drop undefined/function values; undefined/function values in array not converted to null; NaN and Infinity not converted null; didn't call user-pro...
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
+es5/Object.create.js: crashed: Assertion !TYPE(ev)->isPot, failed at src/core/src/ejsType.c:998
 es5/Object.defineProperties.js: ReferenceError: Property "a" is not writable
 es5/Object.defineProperty.js: ReferenceError: Property "y" is not writable
 es5/Object.freeze.js: ReferenceError: Property "x" is not writable
-es5/Object.getOwnPropertyDescriptor.js: failed: inherited property failed
+es5/Object.getOwnPropertyDescriptor.js: inherited property failed
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: ReferenceError: Cannot find function "getPrototypeOf"
 es5/Object.isExtensible.js: OK
@@ -383,20 +383,20 @@ es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: ReferenceError: Object is not extendable
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: ReferenceError: Object is not extendable
-es5/String.indexing.js: failed
+es5/String.indexing.js: 'test'[10] !== undefined
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: ReferenceError: arguments is not defined
 es5/debugger.js: ReferenceError: debugger is not defined
 es5/global.Infinity.immutable.js: ReferenceError: Property "Infinity" is not writable
 es5/global.NaN.immutable.js: ReferenceError: Property "NaN" is not writable
-es5/global.parseInt.no-octal.js: failed
-es5/global.undefined.immutable.js: failed: global.undefined.immutable.js: 13: Unexpected input "undefined"
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: Unexpected input "undefined"
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
-es5/source.keyword-properties.js: failed: source.keyword-properties.js: 15: Not an identifier "if"
-es5/source.unreserved-words.js: failed: source.unreserved-words.js: 21: Unknown directive "="
-es5/source.whitespace.bom.js: failed: source.whitespace.bom.js: 1: Unexpected input ""
+es5/source.keyword-properties.js: Not an identifier "if"
+es5/source.unreserved-words.js: Unknown directive "="
+es5/source.whitespace.bom.js: Unexpected input ""
 es5/source.zero-width-chars.js: OK
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
@@ -407,15 +407,15 @@ es5/strict.no-assignment-to-non-writable.js: failed
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
-es5/strict.no-duplicate-parameters.js: failed
+es5/strict.no-duplicate-parameters.js: crashed: Assertion priorSlot < 0 || priorSlot == slotNum, failed at src/core/src/ejsPot.c:182
 es5/strict.no-eval-or-arguments-assignment.js: failed
 es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: failed
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: ArgError: Insufficient actual parameters 0. Call requires 255 parameter(s).
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: ArgError: Insufficient actual parameters 0. Call requires 255 parameter(s).
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: ReferenceError: arguments is not defined
 es5/this.thrown-function.js: OK

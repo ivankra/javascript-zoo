@@ -40,7 +40,7 @@ JIT-enabled ES5 engine written in Object Pascal.
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: toPrecision() undefined arg failed; small number exponential notation failed; zero failed
 <a href="../../conformance/es3/RegExp.js">RegExp.js</a>: RegExp passthrough failed
 <a href="../../conformance/es3/String.prototype.match.js">String.prototype.match.js</a>: global match failed; multiple global matches failed
-<a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: timeout
+<a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: timeout: &gt;10s
 <a href="../../conformance/es3/global.decodeURI.js">global.decodeURI.js</a>: decode plain URI failed; # not decoded failed; reserved URI characters preserved failed
 <a href="../../conformance/es3/global.encodeURIComponent.js">global.encodeURIComponent.js</a>: encode UTF-8 failed; encode reserved chars failed
 <a href="../../conformance/es3/global.encodeURI.js">global.encodeURI.js</a>: encode UTF-8 failed
@@ -51,12 +51,12 @@ JIT-enabled ES5 engine written in Object Pascal.
 <li>ES5: 88%<pre>
 <a href="../../conformance/es5/Array.prototype.sort.undefined-comparefn.js">Array.prototype.sort.undefined-comparefn.js</a>: TypeError: Bad argument
 <a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: invalid date does not throw RangeError
-<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: timeout
+<a href="../../conformance/es5/JSON.parse.js">JSON.parse.js</a>: timeout: &gt;10s
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: failed to drop undefined/function values
 <a href="../../conformance/es5/strict.no-delete-bindings.js">strict.no-delete-bindings.js</a>: failed
-<a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: timeout
-<a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: timeout
-<a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: timeout
-<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: timeout
+<a href="../../conformance/es5/strict.no-duplicate-parameters.js">strict.no-duplicate-parameters.js</a>: timeout: &gt;10s
+<a href="../../conformance/es5/strict.no-eval-or-arguments-bindings.js">strict.no-eval-or-arguments-bindings.js</a>: timeout: &gt;10s
+<a href="../../conformance/es5/strict.no-with.js">strict.no-with.js</a>: timeout: &gt;10s
+<a href="../../conformance/es5/strict.reserved-words.js">strict.reserved-words.js</a>: timeout: &gt;10s
 </pre></li>
 </ul></details>

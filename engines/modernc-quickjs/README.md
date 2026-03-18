@@ -26,7 +26,7 @@
 </ul></details>
 
 <details><summary>compat-table: ES6 94%, ES2016+ 78%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 94%<pre>
+<li>ES6: 94%, <b>2 crashes</b><pre>
 <a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
 <a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: failed
 <a href="../../conformance/compat-table/es6/Promise.js">Promise.js</a>: failed
@@ -69,7 +69,7 @@
 <a href="../../conformance/compat-table/es2018/Promise.prototype.finally.no-change-resolution.js">Promise.prototype.finally.no-change-resolution.js</a>: failed
 <a href="../../conformance/compat-table/es2018/async-iterators.for-await-of.js">async-iterators.for-await-of.js</a>: failed
 <a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: failed
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: SyntaxError: unknown unicode script
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
 </pre></li>
 <li>ES2019: 96%<pre>
 <a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.await.js">misc.optional-catch-binding.await.js</a>: failed
@@ -93,3 +93,5 @@
 <li>Next: 0%</li>
 <li>Intl: 25%</li>
 </ul></details>
+
+💥 **2 crashes during testing**

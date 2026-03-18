@@ -1470,28 +1470,28 @@ compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: (intermediate value).isTemplateObject is not a function
 compat-table/next/AsyncDisposableStack.js: ReferenceError: AsyncDisposableStack is not defined
-compat-table/next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: TypeError: (intermediate value)(...).drop is not a function
-compat-table/next/AsyncIterator.prototype.every.js: TypeError: (intermediate value)(...).every is not a function
-compat-table/next/AsyncIterator.prototype.filter.js: TypeError: (intermediate value)(...).filter is not a function
-compat-table/next/AsyncIterator.prototype.find.js: TypeError: (intermediate value)(...).find is not a function
-compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: (intermediate value)(...).flatMap is not a function
-compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: (intermediate value)(...).forEach is not a function
-compat-table/next/AsyncIterator.prototype.map.js: TypeError: (intermediate value)(...).map is not a function
-compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: (intermediate value)(...).reduce is not a function
-compat-table/next/AsyncIterator.prototype.some.js: TypeError: (intermediate value)(...).some is not a function
-compat-table/next/AsyncIterator.prototype.take.js: TypeError: (intermediate value)(...).take is not a function
-compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: (intermediate value)(...).toArray is not a function
+compat-table/next/AsyncIterator.extends.js: OK
+compat-table/next/AsyncIterator.from.async-iterable.js: OK
+compat-table/next/AsyncIterator.from.iterable.js: OK
+compat-table/next/AsyncIterator.from.iterator.js: OK
+compat-table/next/AsyncIterator.instanceof.js: OK
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: failed
+compat-table/next/AsyncIterator.prototype.drop.js: OK
+compat-table/next/AsyncIterator.prototype.every.js: OK
+compat-table/next/AsyncIterator.prototype.filter.js: OK
+compat-table/next/AsyncIterator.prototype.find.js: OK
+compat-table/next/AsyncIterator.prototype.flatMap.js: OK
+compat-table/next/AsyncIterator.prototype.forEach.js: OK
+compat-table/next/AsyncIterator.prototype.map.js: OK
+compat-table/next/AsyncIterator.prototype.reduce.js: OK
+compat-table/next/AsyncIterator.prototype.some.js: OK
+compat-table/next/AsyncIterator.prototype.take.js: OK
+compat-table/next/AsyncIterator.prototype.toArray.js: OK
 compat-table/next/DisposableStack.js: ReferenceError: DisposableStack is not defined
 compat-table/next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
-compat-table/next/ShadowRealm.js: failed
+compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: SyntaxError: SuppressedError.js:13:10 Expected ; but found _1
 compat-table/next/Uint8Array.fromBase64.js: TypeError: (intermediate value).fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: (intermediate value).fromHex is not a function

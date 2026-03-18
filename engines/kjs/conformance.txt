@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"3998951cf9508d53e205bf40def113ad1fecc49b096686fd34a4a6a86266413e","binary_size":1128304,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","engine":"kjs","repository":"https://github.com/KDE/kjs.git","revision":"5824588da24f797b4255929918efbc8b484baa09","revision_date":"2025-07-28","version":"5.117.0"}
+Metadata: {"arch":"arm64","binary_sha256":"678e2bfc0e9fa50356b340ec15a4ee350bdf230e78af9cb0c4a9f765cac79cac","binary_size":1062768,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","engine":"kjs","repository":"https://github.com/KDE/kjs.git","revision":"5824588da24f797b4255929918efbc8b484baa09","revision_date":"2025-07-28","version":"5.117.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -228,9 +228,9 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: large number precision failed
+es3/Number.prototype.toFixed.js: large number precision failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -251,15 +251,15 @@ es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
-es3/String.prototype.match.js: failed: non-global match failed
-es3/String.prototype.replace.capture.js: failed: spec example failed
+es3/String.prototype.match.js: non-global match failed; global match failed
+es3/String.prototype.replace.capture.js: spec example failed; $nn 10 captures failed; $nn reverse order failed
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: failed: regex with capture failed
-es3/String.prototype.replace.regex.js: failed: non-global regex replace failed
+es3/String.prototype.replace.generic.js: regex with capture failed
+es3/String.prototype.replace.regex.js: non-global regex replace failed; global regex replace failed
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: OK
-es3/String.prototype.search.js: failed: search for digits failed
-es3/String.prototype.search.str.js: failed: string with \d+ pattern failed
+es3/String.prototype.search.js: search for digits failed
+es3/String.prototype.search.str.js: string with \d+ pattern failed
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: SyntaxError: Invalid regular expression
@@ -279,9 +279,9 @@ es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for instanceof non-callable
+es3/global.TypeError.thrown.js: attempted toString() call on null or non-function object; no exception for instanceof non-callable
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: no exception for encodeURI lone low surrogate
+es3/global.URIError.thrown.js: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -308,25 +308,25 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref for a group that hasn't captured failed
+es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: failed
 es3/regex.bracket.js: OK
 es3/regex.bracket.ranges.js: SyntaxError: Invalid regular expression
-es3/regex.class.esc-d.js: failed: \d failed
-es3/regex.class.esc-s.js: failed: \s in bracket failed
-es3/regex.class.esc-w.js: failed: \w in bracket failed
-es3/regex.disjunction.js: failed: a|ab failed
+es3/regex.class.esc-d.js: \d failed; \d+ failed; \D failed; \d in bracket failed; range with \d failed; \D in bracket failed
+es3/regex.class.esc-s.js: \s in bracket failed; range with \s failed; \S in bracket failed
+es3/regex.class.esc-w.js: \w in bracket failed; range with \w failed; \W in bracket failed
+es3/regex.disjunction.js: a|ab failed; complex disjunction failed
 es3/regex.dot.js: OK
 es3/regex.end.js: OK
-es3/regex.escape.control.js: failed: \t failed
+es3/regex.escape.control.js: \t failed; \n failed; \v failed; \f failed; \r failed
 es3/regex.escape.hex.js: TypeError: Null value
 es3/regex.escape.js: TypeError: Null value
 es3/regex.escape.nul.js: failed
 es3/regex.escape.unicode.js: OK
 es3/regex.flag.global.js: OK
 es3/regex.flag.ignorecase.js: OK
-es3/regex.flag.multiline.js: failed: ^ after LF failed
+es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
 es3/regex.group.js: OK
 es3/regex.lookahead.js: SyntaxError: Invalid regular expression
 es3/regex.negative-lookahead.js: SyntaxError: Invalid regular expression
@@ -361,12 +361,12 @@ es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: trailing comma does not throw SyntaxError
+es5/JSON.parse.js: trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: OK
-es5/JSON.stringify.js: failed: failed to drop undefined/function values
+es5/JSON.stringify.js: failed to drop undefined/function values; undefined/function values in array not converted to null
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -389,7 +389,7 @@ es5/arguments.toStringTag.js: OK
 es5/debugger.js: OK
 es5/global.Infinity.immutable.js: OK
 es5/global.NaN.immutable.js: OK
-es5/global.parseInt.no-octal.js: failed
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: OK
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
@@ -413,10 +413,10 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: failed
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
-es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced.js: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: failed
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK

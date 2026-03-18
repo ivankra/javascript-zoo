@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"d3e4b0eec57def645b065e1963a0d180f11da9002ebed092db97884df4518cc1","binary_size":461512,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","engine":"jerryscript","repository":"https://github.com/jerryscript-project/jerryscript.git","revision":"b7069350c2e52e7dc721dfb75f067147bd79b39b","revision_date":"2025-10-08"}
+Metadata: {"arch":"arm64","binary_sha256":"0175680c2d0cd68fe0235905030e16bb1630d697c32deeca9583f9b2a0860f35","binary_size":461512,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","engine":"jerryscript","repository":"https://github.com/jerryscript-project/jerryscript.git","revision":"b7069350c2e52e7dc721dfb75f067147bd79b39b","revision_date":"2025-10-08"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -228,9 +228,9 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: large number precision failed
+es3/Number.prototype.toFixed.js: large number precision failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGSEGV
-compat-table/es6/tail-calls.mutual.js: crash: SIGSEGV
+compat-table/es6/tail-calls.direct.js: crashed: SIGSEGV
+compat-table/es6/tail-calls.mutual.js: crashed: SIGSEGV
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: SyntaxError
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError
 compat-table/es2025/Iterator.prototype.some.js: TypeError
 compat-table/es2025/Iterator.prototype.take.js: TypeError
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError
 compat-table/es2025/Set.prototype.difference.js: TypeError
 compat-table/es2025/Set.prototype.intersection.js: TypeError

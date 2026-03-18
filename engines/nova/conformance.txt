@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"38d2d8e191af6ce7633bc2c667baea7111392c3d4159d05a38193b770d6dd1e1","binary_size":9379056,"console_log":"print","engine":"nova","repository":"https://github.com/trynova/nova.git","revision":"d85a2f8d243441f4917f80b38e683d501aa62e72","revision_date":"2026-03-03","run_script_cmd":"$BINARY eval ${MODULE:+--module} $FILE","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)","version":"latest-93-gd85a2f8d"}
+Metadata: {"arch":"arm64","binary_sha256":"e76a042c3f75ba628c105ab73f6339a86f0ce6809a5aea3449f63759af4c3b9a","binary_size":9641120,"console_log":"print","engine":"nova","repository":"https://github.com/trynova/nova.git","revision":"a5d0193b88a7c4abea4819bb68447f93121ff000","revision_date":"2026-03-15","run_script_cmd":"$BINARY eval ${MODULE:+--module}","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)","version":"latest-104-ga5d0193b"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -50,7 +50,7 @@ es1/Date.prototype.setUTCMilliseconds.js: OK
 es1/Date.prototype.setUTCMinutes.js: OK
 es1/Date.prototype.setUTCMonth.js: OK
 es1/Date.prototype.setUTCSeconds.js: OK
-es1/Date.prototype.toLocaleString.js: failed: Date.prototype.toLocaleString not implemented
+es1/Date.prototype.toLocaleString.js: Date.prototype.toLocaleString not implemented
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
@@ -117,13 +117,13 @@ es1/annex-b.Date.prototype.getYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.setYear.js: TypeError: Not a callable object
 es1/annex-b.Date.prototype.toGMTString.js: TypeError: Not a callable object
 es1/annex-b.global.escape.js: OK
-es1/annex-b.global.unescape.js: failed: thread 'main' (662600) panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5:
-es1/annex-b.literals.octal.js: SyntaxError: SyntaxError:
+es1/annex-b.global.unescape.js: crashed: thread 'main' panicked at /root/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/wtf8-0.1.0/src/not_quite_std.rs:167:5:
+es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: TypeError: Could not set property '0' of [object Object].
+es1/asi.js: OK
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: SyntaxError: SyntaxError:
+es1/unary.delete.var.js: OK
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: SyntaxError: SyntaxError:
+es1/with.js: ReferenceError: Cannot access undeclared variable 'x'.
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: failed: Date.prototype.toLocaleDateString not implemented
-es3/Date.prototype.toLocaleString.js: failed: Date.prototype.toLocaleString not implemented
-es3/Date.prototype.toLocaleTimeString.js: failed: Date.prototype.toLocaleTimeString not implemented
+es3/Date.prototype.toLocaleDateString.js: Date.prototype.toLocaleDateString not implemented
+es3/Date.prototype.toLocaleString.js: Date.prototype.toLocaleString not implemented
+es3/Date.prototype.toLocaleTimeString.js: Date.prototype.toLocaleTimeString not implemented
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
@@ -228,7 +228,7 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2.5e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
@@ -245,16 +245,16 @@ es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
-es3/RegExp.prototype.toString.js: failed: format failed
+es3/RegExp.prototype.toString.js: format failed
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
-es3/String.prototype.replace.capture.js: failed: $1 failed
-es3/String.prototype.replace.extra.js: failed: $` failed
-es3/String.prototype.replace.generic.js: failed: regex with capture failed
+es3/String.prototype.replace.capture.js: $1 failed; undefined capture failed; spec example failed; $nn reverse order failed
+es3/String.prototype.replace.extra.js: $` failed; $' failed; combined replacements failed
+es3/String.prototype.replace.generic.js: regex with capture failed
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: OK
@@ -308,9 +308,9 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: SyntaxError: regex parse error:
+es3/regex.backref.js: SyntaxError: regex parse error
 es3/regex.begin.js: OK
-es3/regex.bracket.esc-b.js: SyntaxError: regex parse error:
+es3/regex.bracket.esc-b.js: SyntaxError: regex parse error
 es3/regex.bracket.js: OK
 es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
@@ -322,14 +322,14 @@ es3/regex.end.js: OK
 es3/regex.escape.control.js: OK
 es3/regex.escape.hex.js: OK
 es3/regex.escape.js: OK
-es3/regex.escape.nul.js: SyntaxError: regex parse error:
+es3/regex.escape.nul.js: SyntaxError: regex parse error
 es3/regex.escape.unicode.js: OK
 es3/regex.flag.global.js: OK
 es3/regex.flag.ignorecase.js: OK
-es3/regex.flag.multiline.js: failed: ^ after LF failed
+es3/regex.flag.multiline.js: ^ after LF failed; $ before LF failed
 es3/regex.group.js: OK
-es3/regex.lookahead.js: SyntaxError: regex parse error:
-es3/regex.negative-lookahead.js: SyntaxError: regex parse error:
+es3/regex.lookahead.js: SyntaxError: regex parse error
+es3/regex.negative-lookahead.js: SyntaxError: regex parse error
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -370,9 +370,9 @@ es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
-es5/Object.defineProperties.js: TypeError: Could not set property 'a' of [object Object].
-es5/Object.defineProperty.js: TypeError: Could not set property 'y' of [object Object].
-es5/Object.freeze.js: TypeError: Could not set property 'x' of [object Object].
+es5/Object.defineProperties.js: OK
+es5/Object.defineProperty.js: OK
+es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
@@ -380,17 +380,17 @@ es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: TypeError: Could not set property 'y' of [object Object].
+es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
-es5/Object.seal.js: TypeError: Could not set property 'y' of [object Object].
+es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: TypeError: Could not set property 'Infinity'.
-es5/global.NaN.immutable.js: TypeError: Could not set property 'NaN'.
+es5/global.Infinity.immutable.js: OK
+es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: TypeError: Could not set property 'undefined'.
+es5/global.undefined.immutable.js: OK
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
@@ -400,7 +400,7 @@ es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: OK
 es5/strict.eval-cannot-create-bindings.js: OK
 es5/strict.function-expr-with-matching-name.js: OK
-es5/strict.js: failed
+es5/strict.js: OK
 es5/strict.no-arguments-callee.js: OK
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: OK
@@ -418,7 +418,7 @@ es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
-es5/this.thrown-function.js: TypeError: right-hand side of 'in' should be an object, got undefined.
+es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK
 compat-table/es5/Array.prototype.every.js: OK
 compat-table/es5/Array.prototype.filter.js: OK
@@ -457,9 +457,9 @@ compat-table/es5/String.property-access.js: OK
 compat-table/es5/String.prototype.split.js: OK
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: OK
-compat-table/es5/immutable-globals.Infinity.js: TypeError: Could not set property 'Infinity'.
-compat-table/es5/immutable-globals.NaN.js: TypeError: Could not set property 'NaN'.
-compat-table/es5/immutable-globals.undefined.js: TypeError: Could not set property 'undefined'.
+compat-table/es5/immutable-globals.Infinity.js: OK
+compat-table/es5/immutable-globals.NaN.js: OK
+compat-table/es5/immutable-globals.undefined.js: OK
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
@@ -470,7 +470,7 @@ compat-table/es5/misc.Function.apply.array-likes.js: OK
 compat-table/es5/misc.Function.prototype.non-enumerable.js: OK
 compat-table/es5/misc.enumerable-shadow.js: OK
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
-compat-table/es5/misc.thrown-functions-this.js: TypeError: right-hand side of 'in' should be an object, got undefined.
+compat-table/es5/misc.thrown-functions-this.js: OK
 compat-table/es5/misc.unreserved-words.js: OK
 compat-table/es5/misc.zero-width-identifiers.js: OK
 compat-table/es5/strict.arguments-callee-error.js: OK
@@ -495,13 +495,13 @@ compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: OK
 compat-table/es6/Array.from.array-like.js: OK
 compat-table/es6/Array.from.generator.js: OK
-compat-table/es6/Array.from.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/Array.from.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/Array.from.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Array.from.iterable-instance.js: OK
+compat-table/es6/Array.from.iterable.js: OK
+compat-table/es6/Array.from.iterator-closing.js: OK
 compat-table/es6/Array.from.map.array-like.js: OK
 compat-table/es6/Array.from.map.generator.js: OK
-compat-table/es6/Array.from.map.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/Array.from.map.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Array.from.map.iterable-instance.js: OK
+compat-table/es6/Array.from.map.iterable.js: OK
 compat-table/es6/Array.iterator-prototype-chain.js: OK
 compat-table/es6/Array.of.js: OK
 compat-table/es6/Array.prototype.Symbol.iterator.js: OK
@@ -537,7 +537,7 @@ compat-table/es6/Map.constructor-accepts-null.js: OK
 compat-table/es6/Map.constructor-arguments.js: OK
 compat-table/es6/Map.constructor-invokes-set.js: OK
 compat-table/es6/Map.constructor-requires-new.js: OK
-compat-table/es6/Map.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Map.iterator-closing.js: OK
 compat-table/es6/Map.iterator-prototype-chain.js: OK
 compat-table/es6/Map.js: OK
 compat-table/es6/Map.prototype-not-instance.js: OK
@@ -582,12 +582,12 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Promise.all.iterable.js: OK
 compat-table/es6/Promise.all.js: OK
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: OK
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Promise.race.iterable.js: OK
 compat-table/es6/Promise.race.js: OK
 compat-table/es6/Proxy.Array.isArray.js: OK
 compat-table/es6/Proxy.JSON.stringify.js: OK
@@ -599,7 +599,7 @@ compat-table/es6/Proxy.handler.construct.js: TypeError: '[object Object]' is not
 compat-table/es6/Proxy.handler.defineProperty.invariants.js: OK
 compat-table/es6/Proxy.handler.defineProperty.js: OK
 compat-table/es6/Proxy.handler.deleteProperty.invariants.js: OK
-compat-table/es6/Proxy.handler.deleteProperty.js: TypeError: Cannot delete property
+compat-table/es6/Proxy.handler.deleteProperty.js: OK
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: OK
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: OK
 compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: OK
@@ -618,15 +618,15 @@ compat-table/es6/Proxy.handler.preventExtensions.invariants.js: OK
 compat-table/es6/Proxy.handler.preventExtensions.js: OK
 compat-table/es6/Proxy.handler.setPrototypeOf.invariants.js: OK
 compat-table/es6/Proxy.handler.setPrototypeOf.js: OK
-compat-table/es6/Proxy.handler.set.instances.js: TypeError: Could not set property 'foo' of [object Object].
+compat-table/es6/Proxy.handler.set.instances.js: OK
 compat-table/es6/Proxy.handler.set.invariants.js: OK
-compat-table/es6/Proxy.handler.set.js: TypeError: Could not set property 'foo' of [object Object].
+compat-table/es6/Proxy.handler.set.js: OK
 compat-table/es6/Proxy.no-prototype.js: OK
-compat-table/es6/Proxy.revocable.js: failed: Proxy.revocable not implemented
+compat-table/es6/Proxy.revocable.js: Proxy.revocable not implemented
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: failed: Promise subclassing is not supported
+compat-table/es6/Reflect.construct.Promise-subclassing.js: Promise subclassing is not supported
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -654,7 +654,7 @@ compat-table/es6/Set.constructor-accepts-null.js: OK
 compat-table/es6/Set.constructor-arguments.js: OK
 compat-table/es6/Set.constructor-invokes-add.js: failed
 compat-table/es6/Set.constructor-requires-new.js: OK
-compat-table/es6/Set.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/Set.iterator-closing.js: OK
 compat-table/es6/Set.iterator-prototype-chain.js: OK
 compat-table/es6/Set.js: OK
 compat-table/es6/Set.prototype-not-instance.js: OK
@@ -698,7 +698,7 @@ compat-table/es6/WeakMap.constructor-arguments.js: OK
 compat-table/es6/WeakMap.constructor-invokes-set.js: OK
 compat-table/es6/WeakMap.constructor-requires-new.js: OK
 compat-table/es6/WeakMap.frozen-keys.js: OK
-compat-table/es6/WeakMap.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/WeakMap.iterator-closing.js: OK
 compat-table/es6/WeakMap.js: OK
 compat-table/es6/WeakMap.no-clear.js: OK
 compat-table/es6/WeakMap.prototype-not-instance.js: OK
@@ -709,7 +709,7 @@ compat-table/es6/WeakSet.constructor-accepts-null.js: OK
 compat-table/es6/WeakSet.constructor-arguments.js: OK
 compat-table/es6/WeakSet.constructor-invokes-add.js: OK
 compat-table/es6/WeakSet.constructor-requires-new.js: OK
-compat-table/es6/WeakSet.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/WeakSet.iterator-closing.js: OK
 compat-table/es6/WeakSet.js: OK
 compat-table/es6/WeakSet.no-clear.js: OK
 compat-table/es6/WeakSet.prototype-not-instance.js: OK
@@ -720,10 +720,10 @@ compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: No
 compat-table/es6/annex-b.String.prototype.html.existence.js: OK
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: OK
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: OK
-compat-table/es6/annex-b.function.hoisted-block-level.js: failed
-compat-table/es6/annex-b.function.if-statement.js: SyntaxError: SyntaxError:
-compat-table/es6/annex-b.function.labeled.js: SyntaxError: SyntaxError:
-compat-table/es6/annex-b.html-comments.js: SyntaxError: SyntaxError:
+compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: Cannot access undeclared variable 'g'.
+compat-table/es6/annex-b.function.if-statement.js: ReferenceError: Cannot access undeclared variable 'foo'.
+compat-table/es6/annex-b.function.labeled.js: OK
+compat-table/es6/annex-b.html-comments.js: OK
 compat-table/es6/annex-b.regex.backreferences-octal.js: SyntaxError: regex parse error:
 compat-table/es6/annex-b.regex.hyphens.js: SyntaxError: regex parse error:
 compat-table/es6/annex-b.regex.incomplete-patterns.js: SyntaxError: regex parse error:
@@ -770,7 +770,7 @@ compat-table/es6/class.expression.js: OK
 compat-table/es6/class.extends-expressions.js: OK
 compat-table/es6/class.extends-null.js: OK
 compat-table/es6/class.extends.js: OK
-compat-table/es6/class.implicit-strict.js: OK
+compat-table/es6/class.implicit-strict.js: failed
 compat-table/es6/class.lexical-name.js: OK
 compat-table/es6/class.methods-not-enumerable.js: OK
 compat-table/es6/class.new-target.js: OK
@@ -814,9 +814,9 @@ compat-table/es6/destructuring-assign.defaults.js: OK
 compat-table/es6/destructuring-assign.empty-patterns.js: OK
 compat-table/es6/destructuring-assign.generator.js: OK
 compat-table/es6/destructuring-assign.iterable-expression.js: OK
-compat-table/es6/destructuring-assign.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-assign.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-assign.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/destructuring-assign.iterable-instance.js: OK
+compat-table/es6/destructuring-assign.iterable.js: OK
+compat-table/es6/destructuring-assign.iterator-closing.js: OK
 compat-table/es6/destructuring-assign.nested-rest.js: OK
 compat-table/es6/destructuring-assign.nested.js: OK
 compat-table/es6/destructuring-assign.object-expression.js: OK
@@ -838,9 +838,9 @@ compat-table/es6/destructuring-decl.defaults.js: OK
 compat-table/es6/destructuring-decl.for-in.js: OK
 compat-table/es6/destructuring-decl.for-of.js: OK
 compat-table/es6/destructuring-decl.generator.js: OK
-compat-table/es6/destructuring-decl.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-decl.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-decl.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/destructuring-decl.iterable-instance.js: OK
+compat-table/es6/destructuring-decl.iterable.js: OK
+compat-table/es6/destructuring-decl.iterator-closing.js: OK
 compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
@@ -862,9 +862,9 @@ compat-table/es6/destructuring-params.defaults.js: OK
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
 compat-table/es6/destructuring-params.empty-patterns.js: OK
 compat-table/es6/destructuring-params.generator.js: OK
-compat-table/es6/destructuring-params.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-params.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/destructuring-params.iterator-closing.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/destructuring-params.iterable-instance.js: OK
+compat-table/es6/destructuring-params.iterable.js: OK
+compat-table/es6/destructuring-params.iterator-closing.js: OK
 compat-table/es6/destructuring-params.length.js: OK
 compat-table/es6/destructuring-params.nested.js: OK
 compat-table/es6/destructuring-params.new-function.js: OK
@@ -880,8 +880,8 @@ compat-table/es6/destructuring-params.trailing-comma-object.js: OK
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: OK
 compat-table/es6/for-of.generator.js: OK
-compat-table/es6/for-of.iterable-instance.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/for-of.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/for-of.iterable-instance.js: OK
+compat-table/es6/for-of.iterable.js: OK
 compat-table/es6/for-of.iterator-closing-break.js: OK
 compat-table/es6/for-of.iterator-closing-throw.js: OK
 compat-table/es6/for-of.sparse-array.js: OK
@@ -908,8 +908,8 @@ compat-table/es6/generators.yield-star.array.js: OK
 compat-table/es6/generators.yield-star.astral-string.js: OK
 compat-table/es6/generators.yield-star.generator.js: OK
 compat-table/es6/generators.yield-star.iterable-instance.js: OK
-compat-table/es6/generators.yield-star.iterable.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/generators.yield-star.iterable.js: OK
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: OK
 compat-table/es6/generators.yield-star.iterator-closing.js: OK
 compat-table/es6/generators.yield-star.non-iterable-error.js: OK
 compat-table/es6/generators.yield-star.sparse-array.js: OK
@@ -977,18 +977,18 @@ compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: OK
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: failed
 compat-table/es6/misc.Proxy.get.Error.toString.js: OK
 compat-table/es6/misc.Proxy.get.Function.bind.js: TypeError: Cannot bind a non-callable object
-compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: SyntaxError:
+compat-table/es6/misc.Proxy.get.HasBinding.js: failed
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: OK
 compat-table/es6/misc.Proxy.get.Object.assign.js: OK
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: OK
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: OK
 compat-table/es6/misc.Proxy.get.RegExp-constructor.js: OK
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
-compat-table/es6/misc.Proxy.get.RegExp.flags.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/misc.Proxy.get.RegExp.flags.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.test.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.toString.js: OK
 compat-table/es6/misc.Proxy.get.String.match.js: OK
@@ -1013,7 +1013,7 @@ compat-table/es6/misc.Proxy.set.Array.shift.js: OK
 compat-table/es6/misc.Proxy.set.Array.splice.js: OK
 compat-table/es6/misc.Proxy.set.Array.unshift.js: OK
 compat-table/es6/misc.Proxy.set.Object.assign.js: OK
-compat-table/es6/misc.RegExp-alter-flags.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: OK
 compat-table/es6/misc.bound-function-prototype.arrow.js: OK
@@ -1055,10 +1055,10 @@ compat-table/es6/spread.astral-call.js: OK
 compat-table/es6/spread.astral-literal.js: OK
 compat-table/es6/spread.generator-call.js: OK
 compat-table/es6/spread.generator-literal.js: OK
-compat-table/es6/spread.iterable-call.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/spread.iterable-instance-call.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/spread.iterable-instance-literal.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/spread.iterable-literal.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/spread.iterable-call.js: OK
+compat-table/es6/spread.iterable-instance-call.js: OK
+compat-table/es6/spread.iterable-instance-literal.js: OK
+compat-table/es6/spread.iterable-literal.js: OK
 compat-table/es6/spread.non-iterable-error.js: OK
 compat-table/es6/spread.sparse-call.js: OK
 compat-table/es6/spread.sparse-literal.js: OK
@@ -1081,12 +1081,12 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: OK
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: failed: Promise subclassing is not supported
-compat-table/es6/subclassing.Promise.js: failed: Promise subclassing is not supported
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: Promise subclassing is not supported
-compat-table/es6/subclassing.Promise.race.js: failed: Promise subclassing is not supported
+compat-table/es6/subclassing.Promise.all.js: Promise subclassing is not supported
+compat-table/es6/subclassing.Promise.js: Promise subclassing is not supported
+compat-table/es6/subclassing.Promise.prototype-chain.js: Promise subclassing is not supported
+compat-table/es6/subclassing.Promise.race.js: Promise subclassing is not supported
 compat-table/es6/subclassing.RegExp.exec.js: OK
-compat-table/es6/subclassing.RegExp.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
 compat-table/es6/subclassing.RegExp.test.js: OK
 compat-table/es6/subclassing.misc.Boolean.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGABRT
-compat-table/es6/tail-calls.mutual.js: crash: SIGABRT
+compat-table/es6/tail-calls.direct.js: crashed: SIGABRT
+compat-table/es6/tail-calls.mutual.js: crashed: SIGABRT
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1132,9 +1132,9 @@ compat-table/es6/typed-arrays.Uint8Array.js: OK
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: OK
 compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
-compat-table/es6/typed-arrays.constructor-iterables.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: Cannot assign to undeclared variable 'global'.
-compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es6/typed-arrays.constructor-iterables.js: OK
+compat-table/es6/typed-arrays.constructor-requires-new.js: OK
+compat-table/es6/typed-arrays.correct-prototype-chains.js: OK
 compat-table/es6/typed-arrays.from.js: OK
 compat-table/es6/typed-arrays.of.js: OK
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: OK
@@ -1189,7 +1189,7 @@ compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
 compat-table/es6/well-known.toStringTag.new-builtins.js: OK
-compat-table/es6/well-known.unscopables.js: SyntaxError: SyntaxError:
+compat-table/es6/well-known.unscopables.js: ReferenceError: Cannot access undeclared variable 'foo'.
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
@@ -1247,7 +1247,7 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read pr
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read property 'call' of undefined.
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read property 'call' of undefined.
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read property 'call' of undefined.
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: SyntaxError:
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed
 compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
@@ -1268,9 +1268,9 @@ compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: OK
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: MissingOK
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: failed
+compat-table/es2018/Promise.prototype.finally.js: failed
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: failed
 compat-table/es2018/async-iterators.for-await-of.js: OK
 compat-table/es2018/async-iterators.generators.js: OK
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
@@ -1387,7 +1387,7 @@ compat-table/es2022/class-methods.private-static.js: OK
 compat-table/es2022/class-static-init-blocks.js: OK
 compat-table/es2022/ergonomic-brand-checks.js: OK
 compat-table/es2022/regex.flags.d.constructor.js: OK
-compat-table/es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Cannot assign to undeclared variable 'global'.
+compat-table/es2022/regex.flags.d.shows-in-flags.js: OK
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
 compat-table/es2023/Array.prototype.findLast.js: OK
 compat-table/es2023/Array.prototype.toReversed.js: OK
@@ -1398,9 +1398,9 @@ compat-table/es2023/TypedArray.prototype.toReversed.js: OK
 compat-table/es2023/TypedArray.prototype.toSorted.js: OK
 compat-table/es2023/TypedArray.prototype.with.js: OK
 compat-table/es2023/hashbang.js: OK
-compat-table/es2024/ArrayBuffer.prototype.detached.js: failed: ArrayBuffer.prototype.transfer not implemented
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: failed: ArrayBuffer.prototype.transferToFixedLength not implemented
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: failed: ArrayBuffer.prototype.transfer not implemented
+compat-table/es2024/ArrayBuffer.prototype.detached.js: ArrayBuffer.prototype.transfer not implemented
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: ArrayBuffer.prototype.transferToFixedLength not implemented
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: ArrayBuffer.prototype.transfer not implemented
 compat-table/es2024/Map.groupBy.js: OK
 compat-table/es2024/Object.groupBy.js: OK
 compat-table/es2024/Promise.withResolvers.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: Not a callable object
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: thread 'main' (664587) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:
+compat-table/next/SuppressedError.js: crashed: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.fromHex.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Not a callable object
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.toBase64.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.toHex.js: TypeError: Not a callable object
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Not a callable object
-compat-table/next/await-using.for-of.js: MissingOK
-compat-table/next/await-using.js: failed: thread 'main' (664593) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3680:57:
+compat-table/next/await-using.for-of.js: failed
+compat-table/next/await-using.js: crashed: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3680:57:
 compat-table/next/class-decorators.js: failed
-compat-table/next/function.sent.js: SyntaxError: SyntaxError:
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError:
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError:
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError:
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError:
+compat-table/next/function.sent.js: SyntaxError: Expected `(` but found `.`
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token
 compat-table/next/using.for-of.js: failed
-compat-table/next/using.js: failed: thread 'main' (664603) panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:
+compat-table/next/using.js: crashed: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:

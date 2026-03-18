@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"429def8b3c43067563d45fce96f387ffb1e173b913150dd36ca5a83eb92a25e2","binary_size":4012096,"console_log":"console.log","engine":"ant","repository":"https://github.com/theMackabu/ant.git","revision":"a41eb672dfe434f78be3ba1443774daa973eb2e1","revision_date":"2026-02-10","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)","zig":"0.15.2"}
+Metadata: {"arch":"arm64","binary_sha256":"4dae8a50ebb570f04a6c2771c1e9f09f2373266a4b68f32886fab11e644015ce","binary_size":4012096,"console_log":"console.log","engine":"ant","repository":"https://github.com/theMackabu/ant.git","revision":"a41eb672dfe434f78be3ba1443774daa973eb2e1","revision_date":"2026-02-10","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)","zig":"0.15.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -718,8 +718,8 @@ compat-table/es6/WeakSet.prototype.delete.js: OK
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
 compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: calling non-function
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: failed: exception: undefined
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: failed: exception: undefined
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: exception: undefined
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: exception: undefined
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined
 compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
@@ -790,9 +790,9 @@ compat-table/es6/const.no-statement.js: failed
 compat-table/es6/const.shadow.js: OK
 compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: OK
-compat-table/es6/const.strict.for-in.js: failed
+compat-table/es6/const.strict.for-in.js: Warning: 'var' is deprecated, use 'let' or 'const' instead
 compat-table/es6/const.strict.for-loop.js: OK
-compat-table/es6/const.strict.for-of.js: failed
+compat-table/es6/const.strict.for-of.js: Warning: 'var' is deprecated, use 'let' or 'const' instead
 compat-table/es6/const.strict.no-redefine.js: OK
 compat-table/es6/const.strict.no-statement.js: failed
 compat-table/es6/const.strict.shadow.js: OK
@@ -853,7 +853,7 @@ compat-table/es6/destructuring-decl.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-object.js: OK
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: ) expected
 compat-table/es6/destructuring-params.arguments.js: OK
-compat-table/es6/destructuring-params.array.js: failed: exception: undefined
+compat-table/es6/destructuring-params.array.js: exception: undefined
 compat-table/es6/destructuring-params.astral-string.js: failed
 compat-table/es6/destructuring-params.computed-properties.js: ReferenceError: 'grault' is not defined
 compat-table/es6/destructuring-params.defaults-new-function.js: OK
@@ -866,7 +866,7 @@ compat-table/es6/destructuring-params.iterable-instance.js: failed
 compat-table/es6/destructuring-params.iterable.js: failed
 compat-table/es6/destructuring-params.iterator-closing.js: failed
 compat-table/es6/destructuring-params.length.js: OK
-compat-table/es6/destructuring-params.nested.js: failed: exception: undefined
+compat-table/es6/destructuring-params.nested.js: exception: undefined
 compat-table/es6/destructuring-params.new-function.js: OK
 compat-table/es6/destructuring-params.object-primitives.js: OK
 compat-table/es6/destructuring-params.object.js: OK
@@ -1020,7 +1020,7 @@ compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: Invalid le
 compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: Invalid left-hand side in assignment
 compat-table/es6/misc.bound-function-prototype.function.js: SyntaxError: Invalid left-hand side in assignment
 compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: Parenthesized expression cannot be empty
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed: exception: undefined
+compat-table/es6/misc.bound-function-prototype.subclass.js: exception: undefined
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
@@ -1092,9 +1092,9 @@ compat-table/es6/subclassing.RegExp.test.js: OK
 compat-table/es6/subclassing.misc.Boolean.js: failed
 compat-table/es6/subclassing.misc.Error.js: failed
 compat-table/es6/subclassing.misc.Map.js: failed
-compat-table/es6/subclassing.misc.Number.js: failed: exception: undefined
+compat-table/es6/subclassing.misc.Number.js: exception: undefined
 compat-table/es6/subclassing.misc.Set.js: failed
-compat-table/es6/subclassing.misc.String.js: crash: SIGSEGV
+compat-table/es6/subclassing.misc.String.js: crashed: SIGSEGV
 compat-table/es6/super.correct-constructor.js: OK
 compat-table/es6/super.expression.js: OK
 compat-table/es6/super.method-calls.js: OK
@@ -1160,7 +1160,7 @@ compat-table/es6/typed-arrays.prototype.sort.js: failed
 compat-table/es6/typed-arrays.prototype.subarray.js: OK
 compat-table/es6/typed-arrays.prototype.values.js: failed
 compat-table/es6/unicode-escapes.identifier.js: SyntaxError: identifier expected
-compat-table/es6/unicode-escapes.property-access.js: MissingOK
+compat-table/es6/unicode-escapes.property-access.js: failed
 compat-table/es6/unicode-escapes.property-key.js: SyntaxError: parse error
 compat-table/es6/unicode-escapes.string.js: failed
 compat-table/es6/well-known.hasInstance.js: failed
@@ -1202,7 +1202,7 @@ compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: SyntaxError: identifier expected
 compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: identifier expected
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: failed
-compat-table/es2016/misc.nested-rest-destructuring-params.js: failed: exception: undefined
+compat-table/es2016/misc.nested-rest-destructuring-params.js: exception: undefined
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: failed
 compat-table/es2017/Atomics.add.js: OK
 compat-table/es2017/Atomics.and.js: OK
@@ -1329,10 +1329,10 @@ compat-table/es2020/globalThis.descriptor.js: failed
 compat-table/es2020/globalThis.js: OK
 compat-table/es2020/nullish-coalescing.js: OK
 compat-table/es2020/optional-chaining.bracket.js: OK
-compat-table/es2020/optional-chaining.function-call.js: MissingOK
+compat-table/es2020/optional-chaining.function-call.js: failed
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
-compat-table/es2020/optional-chaining.spread-params.js: MissingOK
+compat-table/es2020/optional-chaining.spread-params.js: failed
 compat-table/es2021/FinalizationRegistry.js: OK
 compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK

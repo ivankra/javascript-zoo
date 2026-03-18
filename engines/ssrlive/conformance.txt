@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"220999bd601cee2ac386f57da03918be5986eefc48c34fa828336b06220a24b6","binary_size":9508400,"console_log":"console.log","engine":"ssrlive","repository":"https://github.com/ssrlive/javascript.git","revision":"0c723d6ae3f82b91e6f498b92eb60d9340dd9e45","revision_date":"2026-03-03","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
+Metadata: {"arch":"arm64","binary_sha256":"c653cc65bf1adc69f2b2b06acc1e4e3b9f318d1772f67aa651b8b666dd701905","binary_size":9639576,"console_log":"console.log","engine":"ssrlive","repository":"https://github.com/ssrlive/javascript.git","revision":"ecaa910a67a744d13a0ed60029c2fa7abf97c3eb","revision_date":"2026-03-04","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -118,7 +118,7 @@ es1/annex-b.Date.prototype.setYear.js: OK
 es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
-es1/annex-b.literals.octal.js: failed: 0755 failed
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: SyntaxError: SyntaxError: Delete of an unqualified identifier 'a' in strict mode
+es1/unary.delete.var.js: SyntaxError: Delete of an unqualified identifier 'a' in strict mode
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: assignment failed
+es1/with.js: assignment failed
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -230,7 +230,7 @@ es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -370,9 +370,9 @@ es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
-es5/Object.defineProperties.js: TypeError: TypeError: Cannot assign to read-only property
-es5/Object.defineProperty.js: TypeError: TypeError: Cannot assign to read-only property
-es5/Object.freeze.js: TypeError: TypeError: Cannot assign to read-only property
+es5/Object.defineProperties.js: TypeError: Cannot assign to read-only property
+es5/Object.defineProperty.js: TypeError: Cannot assign to read-only property
+es5/Object.freeze.js: TypeError: Cannot assign to read-only property
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
@@ -413,8 +413,8 @@ es5/strict.no-eval-or-arguments-bindings.js: OK
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: OK
-es5/strict.reserved-words.js: failed: thread '<unnamed>' (895114) panicked at src/core/parser.rs:2389:16:
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.reserved-words.js: crashed: thread '<unnamed>' panicked at src/core/parser.rs:2389:16:
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
@@ -487,7 +487,7 @@ compat-table/es5/strict.function-caller-arguments-error.js: OK
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
 compat-table/es5/strict.legacy-octal-error.js: failed
 compat-table/es5/strict.repeated-params-error.js: failed
-compat-table/es5/strict.reserved-words.js: failed: thread '<unnamed>' (895262) panicked at src/core/parser.rs:2389:16:
+compat-table/es5/strict.reserved-words.js: crashed: thread '<unnamed>' panicked at src/core/parser.rs:2389:16:
 compat-table/es5/strict.this-not-coerced-accessors.js: failed
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: OK
@@ -773,7 +773,7 @@ compat-table/es6/class.extends.js: OK
 compat-table/es6/class.implicit-strict.js: OK
 compat-table/es6/class.lexical-name.js: OK
 compat-table/es6/class.methods-not-enumerable.js: OK
-compat-table/es6/class.new-target.js: ReferenceError: f is not defined
+compat-table/es6/class.new-target.js: failed
 compat-table/es6/class.optional-semicolons.js: OK
 compat-table/es6/class.prototype-methods.js: OK
 compat-table/es6/class.statement.js: OK
@@ -841,7 +841,7 @@ compat-table/es6/destructuring-decl.generator.js: OK
 compat-table/es6/destructuring-decl.iterable-instance.js: OK
 compat-table/es6/destructuring-decl.iterable.js: OK
 compat-table/es6/destructuring-decl.iterator-closing.js: OK
-compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: SyntaxError: Unexpected token
+compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: failed
 compat-table/es6/destructuring-decl.object.js: OK
@@ -1025,7 +1025,7 @@ compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: OK
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: failed: thread '<unnamed>' (896337) panicked at src/core/parser.rs:2389:16:
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: crashed: thread '<unnamed>' panicked at src/core/parser.rs:2389:16:
 compat-table/es6/misc.identifier-syntax.var-1.js: OK
 compat-table/es6/misc.identifier-syntax.var-2.js: OK
 compat-table/es6/misc.property-order.JSON.parse.js: OK
@@ -1036,8 +1036,8 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 compat-table/es6/misc.prototypes-not-instances.js: OK
-compat-table/es6/new-target.assignment-error.js: ReferenceError: f is not defined
-compat-table/es6/new-target.constructor.js: ReferenceError: f is not defined
+compat-table/es6/new-target.assignment-error.js: failed
+compat-table/es6/new-target.constructor.js: OK
 compat-table/es6/regex.flags.u.case-folding.js: OK
 compat-table/es6/regex.flags.u.codepoint.js: OK
 compat-table/es6/regex.flags.u.js: OK
@@ -1101,10 +1101,10 @@ compat-table/es6/super.method-calls.js: OK
 compat-table/es6/super.new-target-binding.js: OK
 compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
-compat-table/es6/super.static-binding.js: failed: Method 'qux' not found in parent class
+compat-table/es6/super.static-binding.js: Method 'qux' not found in parent class
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGABRT
-compat-table/es6/tail-calls.mutual.js: crash: SIGABRT
+compat-table/es6/tail-calls.direct.js: crashed: SIGABRT
+compat-table/es6/tail-calls.mutual.js: crashed: SIGABRT
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1247,7 +1247,7 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Property descr
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Property descriptor setter must be a function or undefined
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: SyntaxError: Unexpected token
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Unexpected token
 compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
@@ -1255,8 +1255,8 @@ compat-table/es2017/async.await-non-promise.js: OK
 compat-table/es2017/async.await-rejection.js: OK
 compat-table/es2017/async.await.js: OK
 compat-table/es2017/async.constructor.js: OK
-compat-table/es2017/async.methods-class.js: MissingOK
-compat-table/es2017/async.methods-object.js: MissingOK
+compat-table/es2017/async.methods-class.js: failed
+compat-table/es2017/async.methods-object.js: failed
 compat-table/es2017/async.must-await-value.js: failed
 compat-table/es2017/async.no-await-in-params.js: OK
 compat-table/es2017/async.no-line-break.js: OK
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: OK
 compat-table/next/Uint8Array.toBase64.js: OK
 compat-table/next/Uint8Array.toHex.js: OK
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Not a function
-compat-table/next/await-using.for-of.js: MissingOK
+compat-table/next/await-using.for-of.js: failed
 compat-table/next/await-using.js: OK
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: Unexpected character '@'
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: Unexpected token
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: Unexpected token
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: Unexpected token
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: Unexpected token
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: Unexpected token
+compat-table/next/class-decorators.js: SyntaxError: Unexpected character '@'
+compat-table/next/function.sent.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token
 compat-table/next/using.for-of.js: OK
 compat-table/next/using.js: OK

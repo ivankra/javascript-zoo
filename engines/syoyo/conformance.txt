@@ -1,59 +1,59 @@
-Metadata: {"arch":"arm64","binary_sha256":"77bde4f707543272e571911fd9b76d37157fc9ed18f28a79873243091841e983","binary_size":4724328,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"syoyo","repository":"https://github.com/syoyo/lightjs.git","revision":"53dea0185da5604674ab5a415a1f213304474b4b","revision_date":"2026-02-28"}
-es1/Array.js: failed: Array.length failed
-es1/Array.length.assignment.js: failed: length truncation failed
-es1/Array.length.js: failed: length assignment failed
-es1/Array.prototype.constructor.js: failed: array instance constructor failed
-es1/Array.prototype.join.generic.js: MissingOK
+Metadata: {"arch":"arm64","binary_sha256":"1b884de9c958c4be403573ebee87c89a1eb85661a3c97230f972940c991420db","binary_size":4724328,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"syoyo","repository":"https://github.com/syoyo/lightjs.git","revision":"53dea0185da5604674ab5a415a1f213304474b4b","revision_date":"2026-02-28"}
+es1/Array.js: Array.length failed
+es1/Array.length.assignment.js: length truncation failed
+es1/Array.length.js: length assignment failed
+es1/Array.prototype.constructor.js: array instance constructor failed
+es1/Array.prototype.join.generic.js: failed
 es1/Array.prototype.join.js: OK
-es1/Array.prototype.reverse.generic.js: MissingOK
+es1/Array.prototype.reverse.generic.js: failed
 es1/Array.prototype.reverse.js: OK
-es1/Array.prototype.sort.generic.js: MissingOK
+es1/Array.prototype.sort.generic.js: failed
 es1/Array.prototype.sort.js: OK
-es1/Array.prototype.toString.js: MissingOK
-es1/Boolean.js: failed: Boolean.prototype failed
-es1/Boolean.prototype.constructor.js: MissingOK
-es1/Boolean.prototype.toString.js: MissingOK
+es1/Array.prototype.toString.js: failed
+es1/Boolean.js: Boolean.prototype failed
+es1/Boolean.prototype.constructor.js: failed
+es1/Boolean.prototype.toString.js: failed
 es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: failed
-es1/Date.js: MissingOK
-es1/Date.prototype.constructor.js: MissingOK
-es1/Date.prototype.getDate.js: MissingOK
-es1/Date.prototype.getDay.js: MissingOK
-es1/Date.prototype.getFullYear.js: MissingOK
-es1/Date.prototype.getHours.js: MissingOK
-es1/Date.prototype.getMilliseconds.js: MissingOK
-es1/Date.prototype.getMinutes.js: MissingOK
-es1/Date.prototype.getMonth.js: MissingOK
-es1/Date.prototype.getSeconds.js: MissingOK
-es1/Date.prototype.getTimezoneOffset.js: MissingOK
-es1/Date.prototype.getTime.js: MissingOK
-es1/Date.prototype.getUTCDate.js: MissingOK
-es1/Date.prototype.getUTCDay.js: MissingOK
-es1/Date.prototype.getUTCFullYear.js: MissingOK
-es1/Date.prototype.getUTCHours.js: MissingOK
-es1/Date.prototype.getUTCMilliseconds.js: MissingOK
-es1/Date.prototype.getUTCMinutes.js: MissingOK
-es1/Date.prototype.getUTCMonth.js: MissingOK
-es1/Date.prototype.getUTCSeconds.js: MissingOK
-es1/Date.prototype.setDate.js: MissingOK
-es1/Date.prototype.setFullYear.js: MissingOK
-es1/Date.prototype.setHours.js: MissingOK
-es1/Date.prototype.setMilliseconds.js: MissingOK
-es1/Date.prototype.setMinutes.js: MissingOK
-es1/Date.prototype.setMonth.js: MissingOK
-es1/Date.prototype.setSeconds.js: MissingOK
-es1/Date.prototype.setTime.js: MissingOK
-es1/Date.prototype.setUTCDate.js: MissingOK
-es1/Date.prototype.setUTCFullYear.js: MissingOK
-es1/Date.prototype.setUTCHours.js: MissingOK
-es1/Date.prototype.setUTCMilliseconds.js: MissingOK
-es1/Date.prototype.setUTCMinutes.js: MissingOK
-es1/Date.prototype.setUTCMonth.js: MissingOK
-es1/Date.prototype.setUTCSeconds.js: MissingOK
-es1/Date.prototype.toLocaleString.js: MissingOK
-es1/Date.prototype.toString.js: MissingOK
-es1/Date.prototype.toUTCString.js: MissingOK
-es1/Date.prototype.valueOf.js: MissingOK
+es1/Date.js: typeof Date() != 'string'
+es1/Date.prototype.constructor.js: failed
+es1/Date.prototype.getDate.js: failed
+es1/Date.prototype.getDay.js: failed
+es1/Date.prototype.getFullYear.js: failed
+es1/Date.prototype.getHours.js: failed
+es1/Date.prototype.getMilliseconds.js: failed
+es1/Date.prototype.getMinutes.js: failed
+es1/Date.prototype.getMonth.js: failed
+es1/Date.prototype.getSeconds.js: failed
+es1/Date.prototype.getTimezoneOffset.js: failed
+es1/Date.prototype.getTime.js: failed
+es1/Date.prototype.getUTCDate.js: failed
+es1/Date.prototype.getUTCDay.js: failed
+es1/Date.prototype.getUTCFullYear.js: failed
+es1/Date.prototype.getUTCHours.js: failed
+es1/Date.prototype.getUTCMilliseconds.js: failed
+es1/Date.prototype.getUTCMinutes.js: failed
+es1/Date.prototype.getUTCMonth.js: failed
+es1/Date.prototype.getUTCSeconds.js: failed
+es1/Date.prototype.setDate.js: failed
+es1/Date.prototype.setFullYear.js: failed
+es1/Date.prototype.setHours.js: failed
+es1/Date.prototype.setMilliseconds.js: failed
+es1/Date.prototype.setMinutes.js: failed
+es1/Date.prototype.setMonth.js: failed
+es1/Date.prototype.setSeconds.js: failed
+es1/Date.prototype.setTime.js: failed
+es1/Date.prototype.setUTCDate.js: failed
+es1/Date.prototype.setUTCFullYear.js: failed
+es1/Date.prototype.setUTCHours.js: failed
+es1/Date.prototype.setUTCMilliseconds.js: failed
+es1/Date.prototype.setUTCMinutes.js: failed
+es1/Date.prototype.setUTCMonth.js: failed
+es1/Date.prototype.setUTCSeconds.js: failed
+es1/Date.prototype.toLocaleString.js: failed
+es1/Date.prototype.toString.js: failed
+es1/Date.prototype.toUTCString.js: failed
+es1/Date.prototype.valueOf.js: failed
 es1/Function.js: OK
 es1/Function.length.js: OK
 es1/Function.prototype.constructor.js: OK
@@ -90,43 +90,43 @@ es1/Number.MIN_VALUE.js: OK
 es1/Number.NEGATIVE_INFINITY.js: OK
 es1/Number.NaN.js: OK
 es1/Number.POSITIVE_INFINITY.js: OK
-es1/Number.js: failed: Number.prototype failed
-es1/Number.prototype.constructor.js: MissingOK
-es1/Number.prototype.toString.js: MissingOK
+es1/Number.js: Number.prototype failed
+es1/Number.prototype.constructor.js: failed
+es1/Number.prototype.toString.js: failed
 es1/Number.prototype.valueOf.js: OK
 es1/Object.js: OK
-es1/Object.prototype.constructor.js: failed: object instance constructor failed
-es1/Object.prototype.toString.js: MissingOK
-es1/Object.prototype.valueOf.js: MissingOK
+es1/Object.prototype.constructor.js: object instance constructor failed
+es1/Object.prototype.toString.js: failed
+es1/Object.prototype.valueOf.js: failed
 es1/String.fromCharCode.js: OK
-es1/String.generics.js: MissingOK
+es1/String.generics.js: failed
 es1/String.js: OK
-es1/String.length.js: failed: String object length failed
+es1/String.length.js: String object length failed
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
-es1/String.prototype.constructor.js: failed: String.prototype.constructor failed
+es1/String.prototype.constructor.js: String.prototype.constructor failed; string instance constructor failed
 es1/String.prototype.indexOf.js: OK
 es1/String.prototype.lastIndexOf.js: OK
 es1/String.prototype.split.js: OK
 es1/String.prototype.substring.js: OK
 es1/String.prototype.toLowerCase.js: OK
-es1/String.prototype.toString.js: MissingOK
+es1/String.prototype.toString.js: failed
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: MissingOK
-es1/annex-b.Date.prototype.setYear.js: MissingOK
-es1/annex-b.Date.prototype.toGMTString.js: MissingOK
-es1/annex-b.global.escape.js: MissingOK
-es1/annex-b.global.unescape.js: MissingOK
-es1/annex-b.literals.octal.js: failed: 0755 failed
+es1/annex-b.Date.prototype.getYear.js: failed
+es1/annex-b.Date.prototype.setYear.js: failed
+es1/annex-b.Date.prototype.toGMTString.js: failed
+es1/annex-b.global.escape.js: failed
+es1/annex-b.global.unescape.js: failed
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: failed
-es1/arguments.callee.js: MissingOK
+es1/arguments.callee.js: failed
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: failed: Parse error in file 'asi.js'
+es1/asi.js: Parse error in file 'asi.js'
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
@@ -142,10 +142,10 @@ es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: failed: NaN failed
+es1/conversions.ToString.js: NaN failed; -0 failed; Infinity failed; -Infinity failed; 1e-7 failed
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
-es1/equals.js: failed
+es1/equals.js: null != null; undefined != undefined
 es1/eval.js: OK
 es1/for-in.js: OK
 es1/for.js: OK
@@ -166,15 +166,15 @@ es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
 es1/new.typeof.js: OK
-es1/numbers.double.js: failed: converting max safe integer + 1 to string
+es1/numbers.double.js: converting max safe integer + 1 to string
 es1/numbers.fmod.js: OK
-es1/numbers.inf.js: failed: Parse error in file 'numbers.inf.js'
+es1/numbers.inf.js: Parse error in file 'numbers.inf.js'
 es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
 es1/postfix.decrement.js: OK
 es1/postfix.increment.js: OK
 es1/prefix.js: OK
-es1/relational.js: failed: 'abc' < 'def' failed
+es1/relational.js: 'abc' < 'def' failed; 'def' > 'abc' failed; 'abc' <= 'abc' failed; 'abc' <= 'def' failed; 'abc' >= 'abc' failed; 'def' >= 'abc' failed
 es1/return.js: OK
 es1/return.typeof.js: OK
 es1/this.js: OK
@@ -198,25 +198,25 @@ es1/void.typeof.js: OK
 es1/while.js: OK
 es1/with.js: OK
 es3/Array.prototype.concat.js: OK
-es3/Array.prototype.pop.generic.js: MissingOK
+es3/Array.prototype.pop.generic.js: failed
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: MissingOK
+es3/Array.prototype.push.generic.js: failed
 es3/Array.prototype.push.js: OK
-es3/Array.prototype.shift.generic.js: MissingOK
+es3/Array.prototype.shift.generic.js: failed
 es3/Array.prototype.shift.js: OK
-es3/Array.prototype.slice.generic.js: MissingOK
+es3/Array.prototype.slice.generic.js: failed
 es3/Array.prototype.slice.js: OK
-es3/Array.prototype.splice.generic.js: MissingOK
+es3/Array.prototype.splice.generic.js: failed
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: MissingOK
-es3/Array.prototype.unshift.generic.js: MissingOK
+es3/Array.prototype.toLocaleString.js: failed
+es3/Array.prototype.unshift.generic.js: failed
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
-es3/Date.prototype.toDateString.js: MissingOK
-es3/Date.prototype.toLocaleDateString.js: MissingOK
-es3/Date.prototype.toLocaleString.js: MissingOK
-es3/Date.prototype.toLocaleTimeString.js: MissingOK
-es3/Date.prototype.toTimeString.js: MissingOK
+es3/Date.prototype.toDateString.js: failed
+es3/Date.prototype.toLocaleDateString.js: failed
+es3/Date.prototype.toLocaleString.js: failed
+es3/Date.prototype.toLocaleTimeString.js: failed
+es3/Date.prototype.toTimeString.js: failed
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
 es3/Error.prototype.message.js: failed
@@ -227,44 +227,44 @@ es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
-es3/Number.prototype.toExponential.js: failed: toExponential(2) failed
-es3/Number.prototype.toExponential.rounding.js: failed
-es3/Number.prototype.toExponential.throws-infinity.js: failed: toExponential(Infinity) does not throw RangeError
-es3/Number.prototype.toFixed.js: failed: NaN failed
-es3/Number.prototype.toLocaleString.js: MissingOK
-es3/Number.prototype.toPrecision.js: failed: toPrecision() undefined arg failed
+es3/Number.prototype.toExponential.js: toExponential(2) failed; negative number failed; NaN failed; zero failed; Infinity failed; small number failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0',...
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: NaN failed; rounding failed
+es3/Number.prototype.toLocaleString.js: failed
+es3/Number.prototype.toPrecision.js: toPrecision() undefined arg failed; NaN failed; Infinity failed; small number exponential notation failed; zero failed; large number exponential notation failed
 es3/Object.prototype.hasOwnProperty.js: OK
-es3/Object.prototype.isPrototypeOf.js: MissingOK
-es3/Object.prototype.propertyIsEnumerable.js: MissingOK
-es3/Object.prototype.toLocaleString.js: MissingOK
-es3/RegExp.global.js: MissingOK
-es3/RegExp.ignoreCase.js: MissingOK
-es3/RegExp.js: MissingOK
-es3/RegExp.lastIndex.js: MissingOK
-es3/RegExp.multiline.js: MissingOK
+es3/Object.prototype.isPrototypeOf.js: failed
+es3/Object.prototype.propertyIsEnumerable.js: failed
+es3/Object.prototype.toLocaleString.js: failed
+es3/RegExp.global.js: failed
+es3/RegExp.ignoreCase.js: failed
+es3/RegExp.js: failed
+es3/RegExp.lastIndex.js: failed
+es3/RegExp.multiline.js: failed
 es3/RegExp.prototype.constructor.js: failed
-es3/RegExp.prototype.exec.js: MissingOK
-es3/RegExp.prototype.test.js: MissingOK
-es3/RegExp.prototype.toString.js: MissingOK
-es3/RegExp.source.js: MissingOK
-es3/String.prototype.concat.generic.js: MissingOK
+es3/RegExp.prototype.exec.js: failed
+es3/RegExp.prototype.test.js: failed
+es3/RegExp.prototype.toString.js: failed
+es3/RegExp.source.js: failed
+es3/String.prototype.concat.generic.js: failed
 es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
-es3/String.prototype.match.generic.js: MissingOK
-es3/String.prototype.match.js: failed: non-global match failed
+es3/String.prototype.match.generic.js: failed
+es3/String.prototype.match.js: non-global match failed; global match failed; no match should return null; match with string failed; multiple global matches failed
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: MissingOK
-es3/String.prototype.replace.regex.js: failed: case-insensitive replace failed
+es3/String.prototype.replace.generic.js: failed
+es3/String.prototype.replace.regex.js: case-insensitive replace failed
 es3/String.prototype.replace.str.js: OK
-es3/String.prototype.search.generic.js: MissingOK
+es3/String.prototype.search.generic.js: failed
 es3/String.prototype.search.js: OK
-es3/String.prototype.search.str.js: failed: string with \d+ pattern failed
-es3/String.prototype.slice.generic.js: MissingOK
+es3/String.prototype.search.str.js: string with \d+ pattern failed; string with \w+ pattern failed; string with [0-9]+ pattern failed; string with \s pattern failed; string with \. pattern failed
+es3/String.prototype.slice.generic.js: failed
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: split with regex failed
+es3/String.prototype.split.regex.js: split with regex failed; split with capturing group failed; split on single match failed; split on whitespace failed; split by empty regex failed
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
 es3/annex-b.String.prototype.substr.js: OK
@@ -273,23 +273,23 @@ es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
-es3/global.RangeError.thrown.js: MissingOK
+es3/global.RangeError.thrown.js: failed
 es3/global.ReferenceError.js: OK
-es3/global.ReferenceError.thrown.js: failed: wrong exception for property access on undeclared
+es3/global.ReferenceError.thrown.js: wrong exception for property access on undeclared
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: failed: no exception for unclosed string
+es3/global.SyntaxError.thrown.js: no exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for in number
+es3/global.TypeError.thrown.js: no exception for in number; no exception for in null; no exception for Function.prototype.toString on non-function
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: no exception for decodeURI incomplete escape
+es3/global.URIError.thrown.js: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for ...
 es3/global.decodeURIComponent.js: OK
-es3/global.decodeURI.js: failed: # not decoded failed
+es3/global.decodeURI.js: # not decoded failed
 es3/global.encodeURIComponent.js: OK
 es3/global.encodeURI.js: OK
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
-es3/in.js: failed: missing array index failed
+es3/in.js: missing array index failed
 es3/labelled.break.js: OK
 es3/labelled.continue.js: OK
 es3/labelled.statements.js: OK
@@ -308,7 +308,7 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: MissingOK
+es3/regex.backref.js: failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: failed
 es3/regex.bracket.js: OK
@@ -316,81 +316,81 @@ es3/regex.bracket.ranges.js: OK
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
-es3/regex.disjunction.js: failed: complex disjunction failed
-es3/regex.dot.js: failed: no character failed
+es3/regex.disjunction.js: complex disjunction failed
+es3/regex.dot.js: no character failed
 es3/regex.end.js: OK
-es3/regex.escape.control.js: failed: \v failed
+es3/regex.escape.control.js: \v failed; \f failed
 es3/regex.escape.hex.js: OK
 es3/regex.escape.js: OK
-es3/regex.escape.nul.js: MissingOK
+es3/regex.escape.nul.js: failed
 es3/regex.escape.unicode.js: OK
-es3/regex.flag.global.js: failed: global match failed
-es3/regex.flag.ignorecase.js: failed: case sensitive failed
-es3/regex.flag.multiline.js: MissingOK
+es3/regex.flag.global.js: global match failed; multiple matches failed
+es3/regex.flag.ignorecase.js: case sensitive failed
+es3/regex.flag.multiline.js: failed
 es3/regex.group.js: OK
-es3/regex.lookahead.js: failed: no match failed
-es3/regex.negative-lookahead.js: MissingOK
+es3/regex.lookahead.js: no match failed
+es3/regex.negative-lookahead.js: failed
 es3/regex.non-capturing-group.js: OK
-es3/regex.quantifier.exact.js: failed: too few failed
+es3/regex.quantifier.exact.js: too few failed
 es3/regex.quantifier.maybe.js: OK
-es3/regex.quantifier.min.js: failed: too few failed
-es3/regex.quantifier.plus.js: failed: no match failed
-es3/regex.quantifier.range.js: failed: below min failed
+es3/regex.quantifier.min.js: too few failed
+es3/regex.quantifier.plus.js: no match failed
+es3/regex.quantifier.range.js: below min failed
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
 es3/source.line-terminators.js: failed
 es3/source.whitespace.js: OK
-es3/source.whitespace.unicode.js: MissingOK
+es3/source.whitespace.unicode.js: failed
 es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
-es5/Array.prototype.every.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.filter.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.forEach.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.indexOf.js: failed
-es5/Array.prototype.lastIndexOf.js: failed
-es5/Array.prototype.map.js: failed
-es5/Array.prototype.reduceRight.js: failed
-es5/Array.prototype.reduce.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.some.js: failed
+es5/Array.prototype.every.js: Array.prototype.every not a function; sparse array skips missing elements failed
+es5/Array.prototype.filter.js: Array.prototype.filter not a function; sparse array skips missing elements failed
+es5/Array.prototype.forEach.js: Array.prototype.forEach not a function; sparse array skips missing elements failed
+es5/Array.prototype.indexOf.js: Array.prototype.indexOf not a function
+es5/Array.prototype.lastIndexOf.js: Array.prototype.lastIndexOf not a function
+es5/Array.prototype.map.js: Array.prototype.map not a function
+es5/Array.prototype.reduceRight.js: Array.prototype.reduceRight not a function
+es5/Array.prototype.reduce.js: Array.prototype.reduce not a function; sparse array skips missing elements failed
+es5/Array.prototype.some.js: Array.prototype.some not a function
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
-es5/Date.now.js: MissingOK
-es5/Date.prototype.toISOString.js: MissingOK
-es5/Date.prototype.toJSON.js: MissingOK
+es5/Date.now.js: failed
+es5/Date.prototype.toISOString.js: failed
+es5/Date.prototype.toJSON.js: failed
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
-es5/Function.prototype.bind.js: failed: length property incorrect
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: length property incorrect
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: invalid JSON does not throw SyntaxError
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: crash: SIGSEGV
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
-es5/Object.create.js: failed: prototype chain failed
-es5/Object.defineProperties.js: failed: writable attributes failed
+es5/JSON.parse.js: invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError; escape sequences failed; unicode escape failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: crashed: SIGSEGV
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
+es5/Object.create.js: prototype chain failed
+es5/Object.defineProperties.js: writable attributes failed
 es5/Object.defineProperty.js: OK
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
-es5/Object.getPrototypeOf.js: failed: custom prototype failed
+es5/Object.getPrototypeOf.js: custom prototype failed
 es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: failed: deletion allowed failed
+es5/Object.preventExtensions.js: deletion allowed failed
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
-es5/String.prototype.trim.js: failed
+es5/String.prototype.trim.js: String.prototype.trim not a function
 es5/arguments.toStringTag.js: failed
-es5/debugger.js: MissingOK
-es5/global.Infinity.immutable.js: MissingOK
-es5/global.NaN.immutable.js: MissingOK
+es5/debugger.js: failed
+es5/global.Infinity.immutable.js: failed
+es5/global.NaN.immutable.js: failed
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: MissingOK
+es5/global.undefined.immutable.js: failed
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
@@ -416,7 +416,7 @@ es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: OK
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
 compat-table/es5/Array.isArray.js: OK
@@ -433,7 +433,7 @@ compat-table/es5/Array.prototype.sort.compareFn-type.js: failed
 compat-table/es5/Array.prototype.sort.compareFn-undefined.js: OK
 compat-table/es5/Array.prototype.unshift.return-count.js: OK
 compat-table/es5/Date.now.js: OK
-compat-table/es5/Date.prototype.toISOString.js: TypeError: Cannot read properties of undefined (reading 'toISOString') 
+compat-table/es5/Date.prototype.toISOString.js: TypeError: Cannot read properties of undefined (reading 'toISOString')
 compat-table/es5/Date.prototype.toJSON.js: failed
 compat-table/es5/Function.prototype.bind.js: OK
 compat-table/es5/JSON.js: OK
@@ -457,9 +457,9 @@ compat-table/es5/String.property-access.js: OK
 compat-table/es5/String.prototype.split.js: failed
 compat-table/es5/String.prototype.trim.js: failed
 compat-table/es5/annex-b.String.prototype.substr.js: OK
-compat-table/es5/immutable-globals.Infinity.js: TypeError: Assignment to constant variable 'Infinity' 
-compat-table/es5/immutable-globals.NaN.js: TypeError: Assignment to constant variable 'NaN' 
-compat-table/es5/immutable-globals.undefined.js: TypeError: Assignment to constant variable 'undefined' 
+compat-table/es5/immutable-globals.Infinity.js: TypeError: Assignment to constant variable 'Infinity'
+compat-table/es5/immutable-globals.NaN.js: TypeError: Assignment to constant variable 'NaN'
+compat-table/es5/immutable-globals.undefined.js: TypeError: Assignment to constant variable 'undefined'
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
@@ -502,7 +502,7 @@ compat-table/es6/Array.from.map.array-like.js: failed
 compat-table/es6/Array.from.map.generator.js: failed
 compat-table/es6/Array.from.map.iterable-instance.js: failed
 compat-table/es6/Array.from.map.iterable.js: failed
-compat-table/es6/Array.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/Array.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Array.of.js: OK
 compat-table/es6/Array.prototype.Symbol.iterator.js: OK
 compat-table/es6/Array.prototype.Symbol.unscopables.js: failed
@@ -514,7 +514,7 @@ compat-table/es6/Array.prototype.find.js: failed
 compat-table/es6/Array.prototype.keys.js: failed
 compat-table/es6/Array.prototype.splice.js: failed
 compat-table/es6/Array.prototype.values.js: failed
-compat-table/es6/Date.prototype.Symbol.toPrimitive.js: TypeError: Cannot read properties of undefined 
+compat-table/es6/Date.prototype.Symbol.toPrimitive.js: TypeError: Cannot read properties of undefined
 compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: OK
 compat-table/es6/Function.name.class-expression.js: failed
@@ -538,7 +538,7 @@ compat-table/es6/Map.constructor-arguments.js: OK
 compat-table/es6/Map.constructor-invokes-set.js: failed
 compat-table/es6/Map.constructor-requires-new.js: failed
 compat-table/es6/Map.iterator-closing.js: failed
-compat-table/es6/Map.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/Map.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Map.js: OK
 compat-table/es6/Map.prototype-not-instance.js: OK
 compat-table/es6/Map.prototype.Symbol.iterator.js: failed
@@ -582,13 +582,13 @@ compat-table/es6/Object.getOwnPropertySymbols.js: failed
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: failed
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: failed
+compat-table/es6/Promise.all.js: failed
 compat-table/es6/Promise.constructor-requires-new.js: failed
-compat-table/es6/Promise.js: MissingOK
+compat-table/es6/Promise.js: failed
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: MissingOK
-compat-table/es6/Promise.race.js: MissingOK
+compat-table/es6/Promise.race.iterable.js: failed
+compat-table/es6/Promise.race.js: failed
 compat-table/es6/Proxy.Array.isArray.js: failed
 compat-table/es6/Proxy.JSON.stringify.js: failed
 compat-table/es6/Proxy.constructor-requires-new.js: failed
@@ -601,7 +601,7 @@ compat-table/es6/Proxy.handler.defineProperty.js: failed
 compat-table/es6/Proxy.handler.deleteProperty.invariants.js: failed
 compat-table/es6/Proxy.handler.deleteProperty.js: failed
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: failed
-compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: TypeError: Cannot read properties of undefined (reading 'value') 
+compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: TypeError: Cannot read properties of undefined (reading 'value')
 compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: failed
 compat-table/es6/Proxy.handler.getPrototypeOf.js: failed
 compat-table/es6/Proxy.handler.get.instances.js: failed
@@ -622,12 +622,12 @@ compat-table/es6/Proxy.handler.set.instances.js: failed
 compat-table/es6/Proxy.handler.set.invariants.js: failed
 compat-table/es6/Proxy.handler.set.js: OK
 compat-table/es6/Proxy.no-prototype.js: OK
-compat-table/es6/Proxy.revocable.js: TypeError: undefined is not a function 
-compat-table/es6/Reflect.apply.js: TypeError: Array.prototype.push called on non-array 
-compat-table/es6/Reflect.construct.Array-subclassing.js: TypeError: Reflect.construct target is not a function 
+compat-table/es6/Proxy.revocable.js: TypeError: undefined is not a function
+compat-table/es6/Reflect.apply.js: TypeError: Array.prototype.push called on non-array
+compat-table/es6/Reflect.construct.Array-subclassing.js: TypeError: Reflect.construct target is not a function
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
-compat-table/es6/Reflect.construct.RegExp-subclassing.js: TypeError: Function is not a constructor 
+compat-table/es6/Reflect.construct.Promise-subclassing.js: failed
+compat-table/es6/Reflect.construct.RegExp-subclassing.js: TypeError: Function is not a constructor
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
 compat-table/es6/Reflect.construct.third-argument.js: OK
@@ -655,7 +655,7 @@ compat-table/es6/Set.constructor-arguments.js: OK
 compat-table/es6/Set.constructor-invokes-add.js: failed
 compat-table/es6/Set.constructor-requires-new.js: failed
 compat-table/es6/Set.iterator-closing.js: failed
-compat-table/es6/Set.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/Set.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/Set.js: OK
 compat-table/es6/Set.prototype-not-instance.js: OK
 compat-table/es6/Set.prototype.Symbol.iterator.js: failed
@@ -669,7 +669,7 @@ compat-table/es6/Set.prototype.size.js: OK
 compat-table/es6/Set.prototype.values.js: failed
 compat-table/es6/Set.zero-key.js: failed
 compat-table/es6/String.fromCodePoint.js: OK
-compat-table/es6/String.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/String.iterator-prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/String.prototype.Symbol.iterator.js: failed
 compat-table/es6/String.prototype.codePointAt.js: failed
 compat-table/es6/String.prototype.endsWith.js: failed
@@ -692,46 +692,46 @@ compat-table/es6/Symbol.no-coerce.js: failed
 compat-table/es6/Symbol.no-new.js: OK
 compat-table/es6/Symbol.prototype.js: failed
 compat-table/es6/Symbol.typeof.js: OK
-compat-table/es6/WeakMap.accept-primitives.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakMap.constructor-accepts-null.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakMap.constructor-arguments.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakMap.constructor-invokes-set.js: TypeError: Cannot read properties of undefined (reading 'set') 
-compat-table/es6/WeakMap.constructor-requires-new.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakMap.frozen-keys.js: TypeError: Function is not a constructor 
+compat-table/es6/WeakMap.accept-primitives.js: TypeError: Function is not a constructor
+compat-table/es6/WeakMap.constructor-accepts-null.js: TypeError: Function is not a constructor
+compat-table/es6/WeakMap.constructor-arguments.js: TypeError: Function is not a constructor
+compat-table/es6/WeakMap.constructor-invokes-set.js: TypeError: Cannot read properties of undefined (reading 'set')
+compat-table/es6/WeakMap.constructor-requires-new.js: TypeError: Function is not a constructor
+compat-table/es6/WeakMap.frozen-keys.js: TypeError: Function is not a constructor
 compat-table/es6/WeakMap.iterator-closing.js: failed
-compat-table/es6/WeakMap.js: TypeError: Function is not a constructor 
+compat-table/es6/WeakMap.js: TypeError: Function is not a constructor
 compat-table/es6/WeakMap.no-clear.js: OK
-compat-table/es6/WeakMap.prototype-not-instance.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakMap.prototype.delete.js: TypeError: Cannot read properties of undefined (reading 'delete') 
-compat-table/es6/WeakMap.prototype.set-returns-this.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.accept-primitives.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.constructor-accepts-null.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.constructor-arguments.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.constructor-invokes-add.js: TypeError: Cannot read properties of undefined (reading 'add') 
-compat-table/es6/WeakSet.constructor-requires-new.js: TypeError: Function is not a constructor 
+compat-table/es6/WeakMap.prototype-not-instance.js: TypeError: Function is not a constructor
+compat-table/es6/WeakMap.prototype.delete.js: TypeError: Cannot read properties of undefined (reading 'delete')
+compat-table/es6/WeakMap.prototype.set-returns-this.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.accept-primitives.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.constructor-accepts-null.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.constructor-arguments.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.constructor-invokes-add.js: TypeError: Cannot read properties of undefined (reading 'add')
+compat-table/es6/WeakSet.constructor-requires-new.js: TypeError: Function is not a constructor
 compat-table/es6/WeakSet.iterator-closing.js: failed
-compat-table/es6/WeakSet.js: TypeError: Function is not a constructor 
+compat-table/es6/WeakSet.js: TypeError: Function is not a constructor
 compat-table/es6/WeakSet.no-clear.js: OK
-compat-table/es6/WeakSet.prototype-not-instance.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.prototype.add-returns-this.js: TypeError: Function is not a constructor 
-compat-table/es6/WeakSet.prototype.delete.js: TypeError: Cannot read properties of undefined (reading 'delete') 
+compat-table/es6/WeakSet.prototype-not-instance.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.prototype.add-returns-this.js: TypeError: Function is not a constructor
+compat-table/es6/WeakSet.prototype.delete.js: TypeError: Cannot read properties of undefined (reading 'delete')
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
-compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefined is not a function 
+compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Cannot read properties of undefined (reading 'toLowerCase') 
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function 
-compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined at line 16, column 13 
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Cannot read properties of undefined (reading 'toLowerCase')
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
+compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined at line 16, column 13
 compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
-compat-table/es6/annex-b.html-comments.js: failed: Parse error in file 'annex-b.html-comments.js'
-compat-table/es6/annex-b.regex.backreferences-octal.js: MissingOK
-compat-table/es6/annex-b.regex.hyphens.js: MissingOK
-compat-table/es6/annex-b.regex.incomplete-patterns.js: MissingOK
+compat-table/es6/annex-b.html-comments.js: Parse error in file 'annex-b.html-comments.js'
+compat-table/es6/annex-b.regex.backreferences-octal.js: failed
+compat-table/es6/annex-b.regex.hyphens.js: failed
+compat-table/es6/annex-b.regex.incomplete-patterns.js: failed
 compat-table/es6/annex-b.regex.invalid-char-escapes.js: OK
 compat-table/es6/annex-b.regex.invalid-control-escapes.js: failed
-compat-table/es6/annex-b.regex.invalid-hex-escapes.js: MissingOK
-compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: MissingOK
-compat-table/es6/annex-b.regex.octal-escapes.js: TypeError: Cannot read properties of null 
+compat-table/es6/annex-b.regex.invalid-hex-escapes.js: failed
+compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: failed
+compat-table/es6/annex-b.regex.octal-escapes.js: TypeError: Cannot read properties of null
 compat-table/es6/annex-b.__proto__.Object.prototype.absent-from-null.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.getOwnPropertyNames.js: failed
@@ -767,13 +767,13 @@ compat-table/es6/class.computed-static-methods.js: OK
 compat-table/es6/class.constructor-requires-new.js: OK
 compat-table/es6/class.constructor.js: OK
 compat-table/es6/class.expression.js: OK
-compat-table/es6/class.extends-expressions.js: TypeError: undefined is not a function 
-compat-table/es6/class.extends-null.js: TypeError: undefined is not a function 
-compat-table/es6/class.extends.js: TypeError: undefined is not a function 
+compat-table/es6/class.extends-expressions.js: TypeError: undefined is not a function
+compat-table/es6/class.extends-null.js: TypeError: undefined is not a function
+compat-table/es6/class.extends.js: TypeError: undefined is not a function
 compat-table/es6/class.implicit-strict.js: failed
 compat-table/es6/class.lexical-name.js: failed
 compat-table/es6/class.methods-not-enumerable.js: OK
-compat-table/es6/class.new-target.js: ReferenceError: 'f' is not defined at line 12, column 29 
+compat-table/es6/class.new-target.js: ReferenceError: 'f' is not defined at line 12, column 29
 compat-table/es6/class.optional-semicolons.js: OK
 compat-table/es6/class.prototype-methods.js: OK
 compat-table/es6/class.statement.js: OK
@@ -810,7 +810,7 @@ compat-table/es6/destructuring-assign.astral-string.js: failed
 compat-table/es6/destructuring-assign.chained-iterable.js: failed
 compat-table/es6/destructuring-assign.chained-object.js: failed
 compat-table/es6/destructuring-assign.computed-properties.js: failed
-compat-table/es6/destructuring-assign.defaults.js: failed: Parse error in file 'destructuring-assign.defaults.js'
+compat-table/es6/destructuring-assign.defaults.js: Parse error in file 'destructuring-assign.defaults.js'
 compat-table/es6/destructuring-assign.empty-patterns.js: OK
 compat-table/es6/destructuring-assign.generator.js: failed
 compat-table/es6/destructuring-assign.iterable-expression.js: OK
@@ -820,7 +820,7 @@ compat-table/es6/destructuring-assign.iterator-closing.js: failed
 compat-table/es6/destructuring-assign.nested-rest.js: failed
 compat-table/es6/destructuring-assign.nested.js: failed
 compat-table/es6/destructuring-assign.object-expression.js: OK
-compat-table/es6/destructuring-assign.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed') 
+compat-table/es6/destructuring-assign.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed')
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
 compat-table/es6/destructuring-assign.rest.js: failed
@@ -838,12 +838,12 @@ compat-table/es6/destructuring-decl.defaults.js: OK
 compat-table/es6/destructuring-decl.for-in.js: OK
 compat-table/es6/destructuring-decl.for-of.js: OK
 compat-table/es6/destructuring-decl.generator.js: OK
-compat-table/es6/destructuring-decl.iterable-instance.js: TypeError: [Object] is not iterable 
+compat-table/es6/destructuring-decl.iterable-instance.js: TypeError: [Object] is not iterable
 compat-table/es6/destructuring-decl.iterable.js: failed
 compat-table/es6/destructuring-decl.iterator-closing.js: OK
 compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
-compat-table/es6/destructuring-decl.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed') 
+compat-table/es6/destructuring-decl.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed')
 compat-table/es6/destructuring-decl.object.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
@@ -852,35 +852,35 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-object.js: OK
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.arguments.js: failed: Parse error in file 'destructuring-params.arguments.js'
-compat-table/es6/destructuring-params.array.js: failed: Parse error in file 'destructuring-params.array.js'
-compat-table/es6/destructuring-params.astral-string.js: failed: Parse error in file 'destructuring-params.astral-string.js'
-compat-table/es6/destructuring-params.computed-properties.js: failed: Parse error in file 'destructuring-params.computed-properties.js'
-compat-table/es6/destructuring-params.defaults-new-function.js: MissingOK
-compat-table/es6/destructuring-params.defaults-separate-scope.js: failed: Parse error in file 'destructuring-params.defaults-separate-scope.js'
-compat-table/es6/destructuring-params.defaults.js: failed: Parse error in file 'destructuring-params.defaults.js'
+compat-table/es6/destructuring-params.arguments.js: Parse error in file 'destructuring-params.arguments.js'
+compat-table/es6/destructuring-params.array.js: Parse error in file 'destructuring-params.array.js'
+compat-table/es6/destructuring-params.astral-string.js: Parse error in file 'destructuring-params.astral-string.js'
+compat-table/es6/destructuring-params.computed-properties.js: Parse error in file 'destructuring-params.computed-properties.js'
+compat-table/es6/destructuring-params.defaults-new-function.js: failed
+compat-table/es6/destructuring-params.defaults-separate-scope.js: Parse error in file 'destructuring-params.defaults-separate-scope.js'
+compat-table/es6/destructuring-params.defaults.js: Parse error in file 'destructuring-params.defaults.js'
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
 compat-table/es6/destructuring-params.empty-patterns.js: OK
-compat-table/es6/destructuring-params.generator.js: failed: Parse error in file 'destructuring-params.generator.js'
-compat-table/es6/destructuring-params.iterable-instance.js: failed: Parse error in file 'destructuring-params.iterable-instance.js'
-compat-table/es6/destructuring-params.iterable.js: failed: Parse error in file 'destructuring-params.iterable.js'
-compat-table/es6/destructuring-params.iterator-closing.js: failed: Parse error in file 'destructuring-params.iterator-closing.js'
-compat-table/es6/destructuring-params.length.js: failed: Parse error in file 'destructuring-params.length.js'
-compat-table/es6/destructuring-params.nested.js: failed: Parse error in file 'destructuring-params.nested.js'
-compat-table/es6/destructuring-params.new-function.js: MissingOK
-compat-table/es6/destructuring-params.object-primitives.js: failed: Parse error in file 'destructuring-params.object-primitives.js'
-compat-table/es6/destructuring-params.object.js: failed: Parse error in file 'destructuring-params.object.js'
-compat-table/es6/destructuring-params.rest.js: failed: Parse error in file 'destructuring-params.rest.js'
+compat-table/es6/destructuring-params.generator.js: Parse error in file 'destructuring-params.generator.js'
+compat-table/es6/destructuring-params.iterable-instance.js: Parse error in file 'destructuring-params.iterable-instance.js'
+compat-table/es6/destructuring-params.iterable.js: Parse error in file 'destructuring-params.iterable.js'
+compat-table/es6/destructuring-params.iterator-closing.js: Parse error in file 'destructuring-params.iterator-closing.js'
+compat-table/es6/destructuring-params.length.js: Parse error in file 'destructuring-params.length.js'
+compat-table/es6/destructuring-params.nested.js: Parse error in file 'destructuring-params.nested.js'
+compat-table/es6/destructuring-params.new-function.js: failed
+compat-table/es6/destructuring-params.object-primitives.js: Parse error in file 'destructuring-params.object-primitives.js'
+compat-table/es6/destructuring-params.object.js: Parse error in file 'destructuring-params.object.js'
+compat-table/es6/destructuring-params.rest.js: Parse error in file 'destructuring-params.rest.js'
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.sparse-array.js: failed: Parse error in file 'destructuring-params.sparse-array.js'
-compat-table/es6/destructuring-params.string.js: failed: Parse error in file 'destructuring-params.string.js'
-compat-table/es6/destructuring-params.throws-null-undefined.js: failed: Parse error in file 'destructuring-params.throws-null-undefined.js'
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: failed: Parse error in file 'destructuring-params.trailing-comma-iterable.js'
-compat-table/es6/destructuring-params.trailing-comma-object.js: failed: Parse error in file 'destructuring-params.trailing-comma-object.js'
+compat-table/es6/destructuring-params.sparse-array.js: Parse error in file 'destructuring-params.sparse-array.js'
+compat-table/es6/destructuring-params.string.js: Parse error in file 'destructuring-params.string.js'
+compat-table/es6/destructuring-params.throws-null-undefined.js: Parse error in file 'destructuring-params.throws-null-undefined.js'
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: Parse error in file 'destructuring-params.trailing-comma-iterable.js'
+compat-table/es6/destructuring-params.trailing-comma-object.js: Parse error in file 'destructuring-params.trailing-comma-object.js'
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: OK
 compat-table/es6/for-of.generator.js: OK
-compat-table/es6/for-of.iterable-instance.js: TypeError: Value is not iterable 
+compat-table/es6/for-of.iterable-instance.js: TypeError: Value is not iterable
 compat-table/es6/for-of.iterable.js: failed
 compat-table/es6/for-of.iterator-closing-break.js: OK
 compat-table/es6/for-of.iterator-closing-throw.js: OK
@@ -888,11 +888,11 @@ compat-table/es6/for-of.sparse-array.js: OK
 compat-table/es6/for-of.string.js: OK
 compat-table/es6/function.block-level-decl.js: failed
 compat-table/es6/generators.basic.js: OK
-compat-table/es6/generators.constructor.js: MissingOK
+compat-table/es6/generators.constructor.js: failed
 compat-table/es6/generators.expression.js: OK
 compat-table/es6/generators.no-new-this.js: OK
-compat-table/es6/generators.prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
-compat-table/es6/generators.prototype.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/generators.prototype-chain.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
+compat-table/es6/generators.prototype.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/generators.return.js: OK
 compat-table/es6/generators.sending.js: failed
 compat-table/es6/generators.shorthand.class.js: OK
@@ -944,7 +944,7 @@ compat-table/es6/misc.Invalid-Date.js: failed
 compat-table/es6/misc.Object.freeze.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyNames.primitives.js: failed
-compat-table/es6/misc.Object.getPrototypeOf.primitives.js: TypeError: Cannot read properties of null (reading 'constructor') 
+compat-table/es6/misc.Object.getPrototypeOf.primitives.js: TypeError: Cannot read properties of null (reading 'constructor')
 compat-table/es6/misc.Object.isExtensible.primitives.js: OK
 compat-table/es6/misc.Object.isFrozen.primitives.js: OK
 compat-table/es6/misc.Object.isSealed.primitives.js: OK
@@ -953,30 +953,30 @@ compat-table/es6/misc.Object.preventExtensions.primitives.js: OK
 compat-table/es6/misc.Object.seal.primitives.js: OK
 compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: failed
 compat-table/es6/misc.Proxy.defineProperty.Set.js: failed
-compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: TypeError: undefined is not a function 
+compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.deleteProperty.Array.reverse.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.deleteProperty.Array.shift.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.deleteProperty.Array.splice.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.deleteProperty.Array.unshift.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.assign.js: failed
-compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: TypeError: undefined is not a function 
+compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed
-compat-table/es6/misc.Proxy.get.Array.concat.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es6/misc.Proxy.get.Array.concat.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es6/misc.Proxy.get.Array.from.js: failed
-compat-table/es6/misc.Proxy.get.Array.iteration.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Array.pop.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Array.reverse.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Array.shift.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Array.splice.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Array.toString.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es6/misc.Proxy.get.Array.iteration.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Array.pop.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Array.reverse.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Array.shift.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Array.splice.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Array.toString.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: failed
-compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: Function.prototype.apply called on non-function 
-compat-table/es6/misc.Proxy.get.Date.toJSON.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Error.toString.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.Function.bind.js: TypeError: Function.prototype.bind called on non-function 
+compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: Function.prototype.apply called on non-function
+compat-table/es6/misc.Proxy.get.Date.toJSON.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Error.toString.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.Function.bind.js: TypeError: Function.prototype.bind called on non-function
 compat-table/es6/misc.Proxy.get.HasBinding.js: failed
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: failed
@@ -984,13 +984,13 @@ compat-table/es6/misc.Proxy.get.Object.assign.js: failed
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: failed
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: failed
 compat-table/es6/misc.Proxy.get.RegExp-constructor.js: failed
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.flags.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.test.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es6/misc.Proxy.get.RegExp.toString.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.flags.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.test.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es6/misc.Proxy.get.RegExp.toString.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es6/misc.Proxy.get.String.match.js: failed
 compat-table/es6/misc.Proxy.get.String.raw.js: failed
 compat-table/es6/misc.Proxy.get.String.replace.js: failed
@@ -998,29 +998,29 @@ compat-table/es6/misc.Proxy.get.String.search.js: failed
 compat-table/es6/misc.Proxy.get.String.split.js: failed
 compat-table/es6/misc.Proxy.get.ToPrimitive.js: failed
 compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
-compat-table/es6/misc.Proxy.get.instanceof.js: TypeError: Right-hand side of instanceof is not callable 
+compat-table/es6/misc.Proxy.get.instanceof.js: TypeError: Right-hand side of instanceof is not callable
 compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed
 compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: failed
 compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed
-compat-table/es6/misc.Proxy.set.Array.copyWithin.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.fill.js: TypeError: undefined is not a function 
+compat-table/es6/misc.Proxy.set.Array.copyWithin.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.fill.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.set.Array.from.js: failed
 compat-table/es6/misc.Proxy.set.Array.of.js: failed
-compat-table/es6/misc.Proxy.set.Array.pop.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.push.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.reverse.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.shift.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.splice.js: TypeError: undefined is not a function 
-compat-table/es6/misc.Proxy.set.Array.unshift.js: TypeError: undefined is not a function 
+compat-table/es6/misc.Proxy.set.Array.pop.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.push.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.reverse.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.shift.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.splice.js: TypeError: undefined is not a function
+compat-table/es6/misc.Proxy.set.Array.unshift.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.set.Object.assign.js: failed
-compat-table/es6/misc.RegExp-alter-flags.js: TypeError: Cannot read properties of undefined (reading 'global') 
-compat-table/es6/misc.RegExp-prototype-toString-generic.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es6/misc.RegExp-alter-flags.js: TypeError: Cannot read properties of undefined (reading 'global')
+compat-table/es6/misc.RegExp-prototype-toString-generic.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es6/misc.accessors-no-constructor.js: failed
 compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: TypeError: Function.prototype.bind called on non-function 
+compat-table/es6/misc.bound-function-prototype.class.js: TypeError: Function.prototype.bind called on non-function
 compat-table/es6/misc.bound-function-prototype.function.js: failed
 compat-table/es6/misc.bound-function-prototype.generator.js: failed
-compat-table/es6/misc.bound-function-prototype.subclass.js: TypeError: Function.prototype.bind called on non-function 
+compat-table/es6/misc.bound-function-prototype.subclass.js: TypeError: Function.prototype.bind called on non-function
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
@@ -1036,14 +1036,14 @@ compat-table/es6/misc.property-order.Object.keys.js: failed
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: failed
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
 compat-table/es6/misc.prototypes-not-instances.js: OK
-compat-table/es6/new-target.assignment-error.js: ReferenceError: 'f' is not defined at line 12, column 30 
-compat-table/es6/new-target.constructor.js: ReferenceError: 'f' is not defined at line 12, column 30 
+compat-table/es6/new-target.assignment-error.js: ReferenceError: 'f' is not defined at line 12, column 30
+compat-table/es6/new-target.constructor.js: ReferenceError: 'f' is not defined at line 12, column 30
 compat-table/es6/regex.flags.u.case-folding.js: failed
-compat-table/es6/regex.flags.u.codepoint.js: MissingOK
-compat-table/es6/regex.flags.u.js: TypeError: Cannot read properties of undefined (reading 'length') 
-compat-table/es6/regex.flags.u.non-bmp.js: TypeError: Cannot read properties of undefined (reading 'length') 
-compat-table/es6/regex.flags.y.js: TypeError: Function is not a constructor 
-compat-table/es6/regex.flags.y.lastIndex.js: TypeError: Function is not a constructor 
+compat-table/es6/regex.flags.u.codepoint.js: failed
+compat-table/es6/regex.flags.u.js: TypeError: Cannot read properties of undefined (reading 'length')
+compat-table/es6/regex.flags.u.non-bmp.js: TypeError: Cannot read properties of undefined (reading 'length')
+compat-table/es6/regex.flags.y.js: TypeError: Function is not a constructor
+compat-table/es6/regex.flags.y.lastIndex.js: TypeError: Function is not a constructor
 compat-table/es6/rest-params.arguments.js: OK
 compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: OK
@@ -1064,31 +1064,31 @@ compat-table/es6/spread.sparse-call.js: OK
 compat-table/es6/spread.sparse-literal.js: OK
 compat-table/es6/spread.string-call.js: failed
 compat-table/es6/spread.string-literal.js: OK
-compat-table/es6/subclassing.Array.concat.js: TypeError: undefined is not a function 
-compat-table/es6/subclassing.Array.filter.js: TypeError: undefined is not a function 
-compat-table/es6/subclassing.Array.from.js: TypeError: undefined is not a function 
+compat-table/es6/subclassing.Array.concat.js: TypeError: undefined is not a function
+compat-table/es6/subclassing.Array.filter.js: TypeError: undefined is not a function
+compat-table/es6/subclassing.Array.from.js: TypeError: undefined is not a function
 compat-table/es6/subclassing.Array.isArray.js: failed
 compat-table/es6/subclassing.Array.length-access.js: failed
 compat-table/es6/subclassing.Array.length-set.js: failed
-compat-table/es6/subclassing.Array.map.js: TypeError: undefined is not a function 
-compat-table/es6/subclassing.Array.of.js: TypeError: undefined is not a function 
+compat-table/es6/subclassing.Array.map.js: TypeError: undefined is not a function
+compat-table/es6/subclassing.Array.of.js: TypeError: undefined is not a function
 compat-table/es6/subclassing.Array.prototype-chain.js: failed
-compat-table/es6/subclassing.Array.slice.js: TypeError: undefined is not a function 
-compat-table/es6/subclassing.Array.splice.js: TypeError: undefined is not a function 
+compat-table/es6/subclassing.Array.slice.js: TypeError: undefined is not a function
+compat-table/es6/subclassing.Array.splice.js: TypeError: undefined is not a function
 compat-table/es6/subclassing.Function.call.js: OK
 compat-table/es6/subclassing.Function.new.js: OK
 compat-table/es6/subclassing.Function.prototype-chain.js: failed
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
-compat-table/es6/subclassing.Promise.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
+compat-table/es6/subclassing.Promise.js: failed
 compat-table/es6/subclassing.Promise.prototype-chain.js: failed
-compat-table/es6/subclassing.Promise.race.js: MissingOK
-compat-table/es6/subclassing.RegExp.exec.js: TypeError: Function is not a constructor 
-compat-table/es6/subclassing.RegExp.js: TypeError: Function is not a constructor 
-compat-table/es6/subclassing.RegExp.prototype-chain.js: TypeError: Function is not a constructor 
-compat-table/es6/subclassing.RegExp.test.js: TypeError: Function is not a constructor 
+compat-table/es6/subclassing.Promise.race.js: failed
+compat-table/es6/subclassing.RegExp.exec.js: TypeError: Function is not a constructor
+compat-table/es6/subclassing.RegExp.js: TypeError: Function is not a constructor
+compat-table/es6/subclassing.RegExp.prototype-chain.js: TypeError: Function is not a constructor
+compat-table/es6/subclassing.RegExp.test.js: TypeError: Function is not a constructor
 compat-table/es6/subclassing.misc.Boolean.js: failed
 compat-table/es6/subclassing.misc.Error.js: failed
 compat-table/es6/subclassing.misc.Map.js: failed
@@ -1103,62 +1103,62 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: timeout: >3s
-compat-table/es6/tail-calls.mutual.js: crash: SIGSEGV
+compat-table/es6/tail-calls.direct.js: timeout: >10s
+compat-table/es6/tail-calls.mutual.js: crashed: SIGSEGV
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
 compat-table/es6/template.escape-sequences.js: failed
 compat-table/es6/template.frozen-array.js: OK
 compat-table/es6/template.line-break.js: failed
 compat-table/es6/template.permanent-caching.js: failed
-compat-table/es6/template.tagged.js: TypeError: Cannot read properties of undefined 
+compat-table/es6/template.tagged.js: TypeError: Cannot read properties of undefined
 compat-table/es6/template.toString.js: OK
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: failed
-compat-table/es6/typed-arrays.DataView.Float32.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Float64.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Int8.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Int16.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Int32.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Uint8.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Uint16.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.DataView.Uint32.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Float32Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Float64Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Int8Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Int16Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Int32Array.js: TypeError: Function is not a constructor 
+compat-table/es6/typed-arrays.DataView.Float32.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Float64.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Int8.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Int16.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Int32.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Uint8.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Uint16.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.DataView.Uint32.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Float32Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Float64Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Int8Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Int16Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Int32Array.js: TypeError: Function is not a constructor
 compat-table/es6/typed-arrays.Symbol.species.js: failed
-compat-table/es6/typed-arrays.Uint8Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Uint8ClampedArray.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Uint16Array.js: TypeError: Function is not a constructor 
-compat-table/es6/typed-arrays.Uint32Array.js: TypeError: Function is not a constructor 
+compat-table/es6/typed-arrays.Uint8Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Uint8ClampedArray.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Uint16Array.js: TypeError: Function is not a constructor
+compat-table/es6/typed-arrays.Uint32Array.js: TypeError: Function is not a constructor
 compat-table/es6/typed-arrays.constructor-iterables.js: failed
-compat-table/es6/typed-arrays.constructor-requires-new.js: TypeError: Function is not a constructor 
+compat-table/es6/typed-arrays.constructor-requires-new.js: TypeError: Function is not a constructor
 compat-table/es6/typed-arrays.correct-prototype-chains.js: failed
 compat-table/es6/typed-arrays.from.js: failed
 compat-table/es6/typed-arrays.of.js: failed
-compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: TypeError: Cannot read properties of undefined 
-compat-table/es6/typed-arrays.prototype.copyWithin.js: TypeError: Cannot read properties of undefined (reading 'copyWithin') 
-compat-table/es6/typed-arrays.prototype.entries.js: TypeError: Cannot read properties of undefined (reading 'entries') 
-compat-table/es6/typed-arrays.prototype.every.js: TypeError: Cannot read properties of undefined (reading 'every') 
-compat-table/es6/typed-arrays.prototype.fill.js: TypeError: Cannot read properties of undefined (reading 'fill') 
-compat-table/es6/typed-arrays.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'filter') 
-compat-table/es6/typed-arrays.prototype.findIndex.js: TypeError: Cannot read properties of undefined (reading 'findIndex') 
-compat-table/es6/typed-arrays.prototype.find.js: TypeError: Cannot read properties of undefined (reading 'find') 
-compat-table/es6/typed-arrays.prototype.forEach.js: TypeError: Cannot read properties of undefined (reading 'forEach') 
-compat-table/es6/typed-arrays.prototype.indexOf.js: TypeError: Cannot read properties of undefined (reading 'indexOf') 
-compat-table/es6/typed-arrays.prototype.join.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es6/typed-arrays.prototype.keys.js: TypeError: Cannot read properties of undefined (reading 'keys') 
-compat-table/es6/typed-arrays.prototype.lastIndexOf.js: TypeError: Cannot read properties of undefined (reading 'lastIndexOf') 
-compat-table/es6/typed-arrays.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'map') 
-compat-table/es6/typed-arrays.prototype.reduceRight.js: TypeError: Cannot read properties of undefined (reading 'reduceRight') 
-compat-table/es6/typed-arrays.prototype.reduce.js: TypeError: Cannot read properties of undefined (reading 'reduce') 
-compat-table/es6/typed-arrays.prototype.reverse.js: TypeError: Cannot read properties of undefined (reading 'reverse') 
-compat-table/es6/typed-arrays.prototype.slice.js: TypeError: Cannot read properties of undefined (reading 'slice') 
-compat-table/es6/typed-arrays.prototype.some.js: TypeError: Cannot read properties of undefined (reading 'some') 
-compat-table/es6/typed-arrays.prototype.sort.js: TypeError: Cannot read properties of undefined (reading 'sort') 
-compat-table/es6/typed-arrays.prototype.subarray.js: TypeError: Cannot read properties of undefined (reading 'subarray') 
-compat-table/es6/typed-arrays.prototype.values.js: TypeError: Cannot read properties of undefined (reading 'values') 
+compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: TypeError: Cannot read properties of undefined
+compat-table/es6/typed-arrays.prototype.copyWithin.js: TypeError: Cannot read properties of undefined (reading 'copyWithin')
+compat-table/es6/typed-arrays.prototype.entries.js: TypeError: Cannot read properties of undefined (reading 'entries')
+compat-table/es6/typed-arrays.prototype.every.js: TypeError: Cannot read properties of undefined (reading 'every')
+compat-table/es6/typed-arrays.prototype.fill.js: TypeError: Cannot read properties of undefined (reading 'fill')
+compat-table/es6/typed-arrays.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'filter')
+compat-table/es6/typed-arrays.prototype.findIndex.js: TypeError: Cannot read properties of undefined (reading 'findIndex')
+compat-table/es6/typed-arrays.prototype.find.js: TypeError: Cannot read properties of undefined (reading 'find')
+compat-table/es6/typed-arrays.prototype.forEach.js: TypeError: Cannot read properties of undefined (reading 'forEach')
+compat-table/es6/typed-arrays.prototype.indexOf.js: TypeError: Cannot read properties of undefined (reading 'indexOf')
+compat-table/es6/typed-arrays.prototype.join.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es6/typed-arrays.prototype.keys.js: TypeError: Cannot read properties of undefined (reading 'keys')
+compat-table/es6/typed-arrays.prototype.lastIndexOf.js: TypeError: Cannot read properties of undefined (reading 'lastIndexOf')
+compat-table/es6/typed-arrays.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'map')
+compat-table/es6/typed-arrays.prototype.reduceRight.js: TypeError: Cannot read properties of undefined (reading 'reduceRight')
+compat-table/es6/typed-arrays.prototype.reduce.js: TypeError: Cannot read properties of undefined (reading 'reduce')
+compat-table/es6/typed-arrays.prototype.reverse.js: TypeError: Cannot read properties of undefined (reading 'reverse')
+compat-table/es6/typed-arrays.prototype.slice.js: TypeError: Cannot read properties of undefined (reading 'slice')
+compat-table/es6/typed-arrays.prototype.some.js: TypeError: Cannot read properties of undefined (reading 'some')
+compat-table/es6/typed-arrays.prototype.sort.js: TypeError: Cannot read properties of undefined (reading 'sort')
+compat-table/es6/typed-arrays.prototype.subarray.js: TypeError: Cannot read properties of undefined (reading 'subarray')
+compat-table/es6/typed-arrays.prototype.values.js: TypeError: Cannot read properties of undefined (reading 'values')
 compat-table/es6/unicode-escapes.identifier.js: OK
 compat-table/es6/unicode-escapes.property-access.js: OK
 compat-table/es6/unicode-escapes.property-key.js: OK
@@ -1175,11 +1175,11 @@ compat-table/es6/well-known.match.String.startsWith.js: failed
 compat-table/es6/well-known.match.js: failed
 compat-table/es6/well-known.replace.js: failed
 compat-table/es6/well-known.search.js: failed
-compat-table/es6/well-known.species.Array.concat.js: TypeError: Cannot read properties of undefined (reading 'foo') 
-compat-table/es6/well-known.species.Array.filter.js: TypeError: Cannot read properties of undefined (reading 'foo') 
-compat-table/es6/well-known.species.Array.map.js: TypeError: Cannot read properties of undefined (reading 'foo') 
-compat-table/es6/well-known.species.Array.slice.js: TypeError: Cannot read properties of undefined (reading 'foo') 
-compat-table/es6/well-known.species.Array.splice.js: TypeError: Cannot read properties of undefined (reading 'foo') 
+compat-table/es6/well-known.species.Array.concat.js: TypeError: Cannot read properties of undefined (reading 'foo')
+compat-table/es6/well-known.species.Array.filter.js: TypeError: Cannot read properties of undefined (reading 'foo')
+compat-table/es6/well-known.species.Array.map.js: TypeError: Cannot read properties of undefined (reading 'foo')
+compat-table/es6/well-known.species.Array.slice.js: TypeError: Cannot read properties of undefined (reading 'foo')
+compat-table/es6/well-known.species.Array.splice.js: TypeError: Cannot read properties of undefined (reading 'foo')
 compat-table/es6/well-known.species.Promise.then.js: failed
 compat-table/es6/well-known.species.RegExp.split.js: failed
 compat-table/es6/well-known.species.js: OK
@@ -1188,142 +1188,142 @@ compat-table/es6/well-known.toPrimitive.js: failed
 compat-table/es6/well-known.toStringTag.existing-builtins.js: failed
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: failed
-compat-table/es6/well-known.toStringTag.new-builtins.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty') 
+compat-table/es6/well-known.toStringTag.new-builtins.js: TypeError: Cannot read properties of null (reading 'hasOwnProperty')
 compat-table/es6/well-known.unscopables.js: OK
 compat-table/es2016/Array.prototype.includes.generic.js: failed
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: failed
-compat-table/es2016/Array.prototype.includes.typed-array.js: TypeError: undefined is not a function 
+compat-table/es2016/Array.prototype.includes.typed-array.js: TypeError: undefined is not a function
 compat-table/es2016/exponentiation.assignment.js: OK
 compat-table/es2016/exponentiation.basic.js: OK
 compat-table/es2016/exponentiation.unary-negation-error.js: failed
-compat-table/es2016/misc.Proxy-Array-includes.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es2016/misc.Proxy-Array-includes.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: failed
-compat-table/es2016/misc.generator-throw-inner.js: TypeError: Cannot read properties of undefined (reading 'value') 
+compat-table/es2016/misc.generator-throw-inner.js: TypeError: Cannot read properties of undefined (reading 'value')
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: OK
-compat-table/es2016/misc.nested-rest-destructuring-params.js: failed: Parse error in file 'misc.nested-rest-destructuring-params.js'
+compat-table/es2016/misc.nested-rest-destructuring-params.js: Parse error in file 'misc.nested-rest-destructuring-params.js'
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: OK
-compat-table/es2017/Atomics.add.js: TypeError: Cannot read properties of undefined (reading 'add') 
-compat-table/es2017/Atomics.and.js: TypeError: Cannot read properties of undefined (reading 'and') 
-compat-table/es2017/Atomics.compareExchange.js: TypeError: Cannot read properties of undefined (reading 'compareExchange') 
-compat-table/es2017/Atomics.exchange.js: TypeError: Cannot read properties of undefined (reading 'exchange') 
-compat-table/es2017/Atomics.isLockFree.js: TypeError: Cannot read properties of undefined (reading 'isLockFree') 
-compat-table/es2017/Atomics.load.js: TypeError: Cannot read properties of undefined (reading 'load') 
-compat-table/es2017/Atomics.notify.js: TypeError: Cannot read properties of undefined (reading 'notify') 
-compat-table/es2017/Atomics.or.js: TypeError: Cannot read properties of undefined (reading 'or') 
-compat-table/es2017/Atomics.store.js: TypeError: Cannot read properties of undefined (reading 'store') 
-compat-table/es2017/Atomics.sub.js: TypeError: Cannot read properties of undefined (reading 'sub') 
-compat-table/es2017/Atomics.wait.js: TypeError: Cannot read properties of undefined (reading 'wait') 
-compat-table/es2017/Atomics.xor.js: TypeError: Cannot read properties of undefined (reading 'xor') 
+compat-table/es2017/Atomics.add.js: TypeError: Cannot read properties of undefined (reading 'add')
+compat-table/es2017/Atomics.and.js: TypeError: Cannot read properties of undefined (reading 'and')
+compat-table/es2017/Atomics.compareExchange.js: TypeError: Cannot read properties of undefined (reading 'compareExchange')
+compat-table/es2017/Atomics.exchange.js: TypeError: Cannot read properties of undefined (reading 'exchange')
+compat-table/es2017/Atomics.isLockFree.js: TypeError: Cannot read properties of undefined (reading 'isLockFree')
+compat-table/es2017/Atomics.load.js: TypeError: Cannot read properties of undefined (reading 'load')
+compat-table/es2017/Atomics.notify.js: TypeError: Cannot read properties of undefined (reading 'notify')
+compat-table/es2017/Atomics.or.js: TypeError: Cannot read properties of undefined (reading 'or')
+compat-table/es2017/Atomics.store.js: TypeError: Cannot read properties of undefined (reading 'store')
+compat-table/es2017/Atomics.sub.js: TypeError: Cannot read properties of undefined (reading 'sub')
+compat-table/es2017/Atomics.wait.js: TypeError: Cannot read properties of undefined (reading 'wait')
+compat-table/es2017/Atomics.xor.js: TypeError: Cannot read properties of undefined (reading 'xor')
 compat-table/es2017/Object.entries.js: OK
 compat-table/es2017/Object.getOwnPropertyDescriptors.js: failed
 compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: OK
 compat-table/es2017/Object.values.js: OK
-compat-table/es2017/SharedArrayBuffer.Symbol.species.js: TypeError: Cannot read properties of undefined 
+compat-table/es2017/SharedArrayBuffer.Symbol.species.js: TypeError: Cannot read properties of undefined
 compat-table/es2017/SharedArrayBuffer.js: failed
-compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined 
-compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: TypeError: Cannot read properties of undefined (reading 'prototype') 
-compat-table/es2017/SharedArrayBuffer.prototype.slice.js: TypeError: Cannot read properties of undefined (reading 'slice') 
+compat-table/es2017/SharedArrayBuffer.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined
+compat-table/es2017/SharedArrayBuffer.prototype.byteLength.js: TypeError: Cannot read properties of undefined (reading 'prototype')
+compat-table/es2017/SharedArrayBuffer.prototype.slice.js: TypeError: Cannot read properties of undefined (reading 'slice')
 compat-table/es2017/String.prototype.padEnd.js: OK
 compat-table/es2017/String.prototype.padStart.js: OK
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: undefined is not a function 
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: undefined is not a function 
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed: Parse error in file 'annex-b.for-in-assignment-non-strict.js'
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: undefined is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: undefined is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: Parse error in file 'annex-b.for-in-assignment-non-strict.js'
 compat-table/es2017/async.Symbol.toStringTag.js: failed
-compat-table/es2017/async.arrow-in-class.js: MissingOK
-compat-table/es2017/async.arrow.js: MissingOK
-compat-table/es2017/async.await-non-promise.js: MissingOK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
-compat-table/es2017/async.constructor.js: MissingOK
-compat-table/es2017/async.methods-class.js: MissingOK
-compat-table/es2017/async.methods-object.js: MissingOK
+compat-table/es2017/async.arrow-in-class.js: failed
+compat-table/es2017/async.arrow.js: failed
+compat-table/es2017/async.await-non-promise.js: failed
+compat-table/es2017/async.await-rejection.js: failed
+compat-table/es2017/async.await.js: failed
+compat-table/es2017/async.constructor.js: failed
+compat-table/es2017/async.methods-class.js: failed
+compat-table/es2017/async.methods-object.js: failed
 compat-table/es2017/async.must-await-value.js: OK
 compat-table/es2017/async.no-await-in-params.js: failed
 compat-table/es2017/async.no-line-break.js: OK
 compat-table/es2017/async.no-prototype.js: failed
 compat-table/es2017/async.prototype-chain.js: failed
-compat-table/es2017/async.return.js: MissingOK
-compat-table/es2017/async.throw.js: MissingOK
+compat-table/es2017/async.return.js: failed
+compat-table/es2017/async.throw.js: failed
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: failed
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: MissingOK
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: failed
+compat-table/es2018/Promise.prototype.finally.js: failed
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: failed
 compat-table/es2018/async-iterators.for-await-of.js: OK
-compat-table/es2018/async-iterators.generators.js: MissingOK
+compat-table/es2018/async-iterators.generators.js: failed
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
 compat-table/es2018/misc.template-literal-revision.js: failed
 compat-table/es2018/object-rest.js: OK
 compat-table/es2018/object-spread.js: OK
 compat-table/es2018/regex.flags.s.js: failed
-compat-table/es2018/regex.lookbehind.js: MissingOK
-compat-table/es2018/regex.named-capture-groups.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: MissingOK
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: MissingOK
+compat-table/es2018/regex.lookbehind.js: failed
+compat-table/es2018/regex.named-capture-groups.js: failed
+compat-table/es2018/regex.unicode-property-escapes.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed
 compat-table/es2019/Array.prototype.flatMap.js: OK
-compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read properties of undefined (reading 'flat') 
+compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read properties of undefined (reading 'flat')
 compat-table/es2019/Array.prototype.flat.js: failed
 compat-table/es2019/Object.fromEntries.js: failed
 compat-table/es2019/String.prototype.trimEnd.js: OK
 compat-table/es2019/String.prototype.trimStart.js: OK
 compat-table/es2019/Symbol.prototype.description.empty.js: failed
 compat-table/es2019/Symbol.prototype.description.js: OK
-compat-table/es2019/Symbol.prototype.description.undefined.js: TypeError: Cannot read properties of undefined (reading 'hasOwnProperty') 
-compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: undefined is not a function 
-compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: undefined is not a function 
-compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError: Function constructor parse error 
+compat-table/es2019/Symbol.prototype.description.undefined.js: TypeError: Cannot read properties of undefined (reading 'hasOwnProperty')
+compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: undefined is not a function
+compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: undefined is not a function
+compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError: Function constructor parse error
 compat-table/es2019/misc.Function-toString.arrows.js: failed
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Parse error 
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Parse error
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed
-compat-table/es2019/misc.Function-toString.computed-names.js: SyntaxError: Parse error 
+compat-table/es2019/misc.Function-toString.computed-names.js: SyntaxError: Parse error
 compat-table/es2019/misc.Function-toString.native-code.js: failed
-compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Parse error 
+compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Parse error
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
 compat-table/es2019/misc.optional-catch-binding.await.js: OK
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: OK
-compat-table/es2020/BigInt64Array.js: TypeError: Function is not a constructor 
+compat-table/es2020/BigInt64Array.js: TypeError: Function is not a constructor
 compat-table/es2020/BigInt.asIntN.js: OK
 compat-table/es2020/BigInt.asUintN.js: OK
 compat-table/es2020/BigInt.constructor.js: OK
 compat-table/es2020/BigInt.js: OK
-compat-table/es2020/BigUint64Array.js: TypeError: Function is not a constructor 
-compat-table/es2020/DataView.prototype.getBigInt64.js: TypeError: Function is not a constructor 
-compat-table/es2020/DataView.prototype.getBigUint64.js: TypeError: Function is not a constructor 
-compat-table/es2020/Promise.allSettled.js: MissingOK
-compat-table/es2020/String.prototype.matchAll.js: TypeError: undefined is not a function 
+compat-table/es2020/BigUint64Array.js: TypeError: Function is not a constructor
+compat-table/es2020/DataView.prototype.getBigInt64.js: TypeError: Function is not a constructor
+compat-table/es2020/DataView.prototype.getBigUint64.js: TypeError: Function is not a constructor
+compat-table/es2020/Promise.allSettled.js: failed
+compat-table/es2020/String.prototype.matchAll.js: TypeError: undefined is not a function
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
 compat-table/es2020/globalThis.descriptor.js: OK
 compat-table/es2020/globalThis.js: OK
@@ -1333,13 +1333,13 @@ compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: OK
-compat-table/es2021/FinalizationRegistry.js: TypeError: Value is not a constructor 
-compat-table/es2021/Promise.any.AggregateError.js: MissingOK
-compat-table/es2021/Promise.any.fulfillment.js: MissingOK
+compat-table/es2021/FinalizationRegistry.js: TypeError: Value is not a constructor
+compat-table/es2021/Promise.any.AggregateError.js: failed
+compat-table/es2021/Promise.any.fulfillment.js: failed
 compat-table/es2021/String.prototype.replaceAll.js: OK
-compat-table/es2021/WeakRef.js: TypeError: Value is not a constructor 
+compat-table/es2021/WeakRef.js: TypeError: Value is not a constructor
 compat-table/es2021/logical-assignment.and.js: OK
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed: Parse error in file 'logical-assignment.and.setter-not-invoked.js'
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: Parse error in file 'logical-assignment.and.setter-not-invoked.js'
 compat-table/es2021/logical-assignment.and.short-circuit.js: OK
 compat-table/es2021/logical-assignment.nullish.js: OK
 compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: OK
@@ -1347,34 +1347,34 @@ compat-table/es2021/logical-assignment.nullish.short-circuit.js: OK
 compat-table/es2021/logical-assignment.or.js: OK
 compat-table/es2021/logical-assignment.or.setter-not-invoked.js: OK
 compat-table/es2021/logical-assignment.or.short-circuit.js: OK
-compat-table/es2021/numeric-separators.js: failed: Error in file 'numeric-separators.js': Invalid numeric literal
-compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: Cannot read properties of undefined (reading 'prototype') 
-compat-table/es2022/Error.cause.AggregateError.js: TypeError: Value is not a constructor 
+compat-table/es2021/numeric-separators.js: Error in file 'numeric-separators.js': Invalid numeric literal
+compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: Cannot read properties of undefined (reading 'prototype')
+compat-table/es2022/Error.cause.AggregateError.js: TypeError: Value is not a constructor
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.Error.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.Error.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.EvalError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.EvalError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.EvalError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.RangeError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.RangeError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.RangeError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.ReferenceError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.ReferenceError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.ReferenceError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.SyntaxError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.SyntaxError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.SyntaxError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.TypeError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.TypeError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.TypeError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.URIError-prototype-lacks.js: OK
-compat-table/es2022/Error.cause.URIError.js: TypeError: undefined is not a function 
+compat-table/es2022/Error.cause.URIError.js: TypeError: undefined is not a function
 compat-table/es2022/Object.hasOwn.ToObject-first.js: failed
 compat-table/es2022/Object.hasOwn.js: OK
 compat-table/es2022/at-method.Array.js: OK
 compat-table/es2022/at-method.String.js: OK
-compat-table/es2022/at-method.TypedArray.js: TypeError: undefined is not a function 
+compat-table/es2022/at-method.TypedArray.js: TypeError: undefined is not a function
 compat-table/es2022/class-fields.computed-instance.js: OK
 compat-table/es2022/class-fields.computed-static.js: OK
 compat-table/es2022/class-fields.instance.parent-scope.js: OK
 compat-table/es2022/class-fields.private-instance.initializers.js: OK
 compat-table/es2022/class-fields.private-instance.js: OK
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: Parse error in file 'class-fields.private-instance.optional-access.js'
+compat-table/es2022/class-fields.private-instance.optional-access.js: Parse error in file 'class-fields.private-instance.optional-access.js'
 compat-table/es2022/class-fields.private-instance.optional-deep-access.js: OK
 compat-table/es2022/class-fields.private-static.js: OK
 compat-table/es2022/class-fields.public-instance.js: OK
@@ -1384,129 +1384,129 @@ compat-table/es2022/class-methods.private-accessor.js: OK
 compat-table/es2022/class-methods.private-instance.js: OK
 compat-table/es2022/class-methods.private-static-accessor.js: failed
 compat-table/es2022/class-methods.private-static.js: OK
-compat-table/es2022/class-static-init-blocks.js: failed: Parse error in file 'class-static-init-blocks.js'
-compat-table/es2022/ergonomic-brand-checks.js: failed: Parse error in file 'ergonomic-brand-checks.js'
-compat-table/es2022/regex.flags.d.constructor.js: TypeError: Function is not a constructor 
-compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: Cannot read properties of undefined (reading 'call') 
+compat-table/es2022/class-static-init-blocks.js: Parse error in file 'class-static-init-blocks.js'
+compat-table/es2022/ergonomic-brand-checks.js: Parse error in file 'ergonomic-brand-checks.js'
+compat-table/es2022/regex.flags.d.constructor.js: TypeError: Function is not a constructor
+compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
 compat-table/es2023/Array.prototype.findLast.js: OK
 compat-table/es2023/Array.prototype.toReversed.js: OK
 compat-table/es2023/Array.prototype.toSorted.js: OK
 compat-table/es2023/Array.prototype.toSpliced.js: OK
 compat-table/es2023/Array.prototype.with.js: OK
-compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: Cannot read properties of undefined 
-compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: Cannot read properties of undefined 
-compat-table/es2023/TypedArray.prototype.with.js: TypeError: Cannot read properties of undefined 
+compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: Cannot read properties of undefined
+compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: Cannot read properties of undefined
+compat-table/es2023/TypedArray.prototype.with.js: TypeError: Cannot read properties of undefined
 compat-table/es2023/hashbang.js: SyntaxError: Error in file 'hashbang.js': SyntaxError: Invalid private field at line 1, column 1
-compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: Cannot read properties of undefined (reading 'transfer') 
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: Cannot read properties of undefined (reading 'transferToFixedLength') 
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: Cannot read properties of undefined (reading 'transfer') 
-compat-table/es2024/Map.groupBy.js: TypeError: undefined is not a function 
-compat-table/es2024/Object.groupBy.js: TypeError: undefined is not a function 
+compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: Cannot read properties of undefined (reading 'transfer')
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: Cannot read properties of undefined (reading 'transferToFixedLength')
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: Cannot read properties of undefined (reading 'transfer')
+compat-table/es2024/Map.groupBy.js: TypeError: undefined is not a function
+compat-table/es2024/Object.groupBy.js: TypeError: undefined is not a function
 compat-table/es2024/Promise.withResolvers.js: OK
-compat-table/es2024/regex.flags.v.constructor.js: TypeError: Function is not a constructor 
-compat-table/es2024/regex.flags.v.properties-of-strings.js: MissingOK
+compat-table/es2024/regex.flags.v.constructor.js: TypeError: Function is not a constructor
+compat-table/es2024/regex.flags.v.properties-of-strings.js: failed
 compat-table/es2024/regex.flags.v.set-notations.js: failed
-compat-table/es2024/regex.flags.v.shows-in-flags.js: TypeError: Cannot read properties of undefined (reading 'call') 
-compat-table/es2024/regex.flags.v.unicode-15.1.js: MissingOK
-compat-table/es2024/regex.flags.v.unicode-16.0.js: MissingOK
-compat-table/es2024/regex.flags.v.unicode-17.0.js: MissingOK
-compat-table/es2025/Iterator.extends.js: ReferenceError: 'Iterator' is not defined at line 10, column 23 
-compat-table/es2025/Iterator.from.iterable.js: TypeError: Cannot read properties of undefined (reading 'from') 
-compat-table/es2025/Iterator.from.iterator.js: TypeError: Cannot read properties of undefined (reading 'from') 
-compat-table/es2025/Iterator.instanceof.js: ReferenceError: 'Iterator' is not defined at line 10, column 40 
-compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined 
-compat-table/es2025/Iterator.prototype.drop.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es2025/Iterator.prototype.every.js: TypeError: undefined is not a function 
-compat-table/es2025/Iterator.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es2025/Iterator.prototype.find.js: TypeError: undefined is not a function 
-compat-table/es2025/Iterator.prototype.flatMap.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es2025/Iterator.prototype.forEach.js: TypeError: undefined is not a function 
-compat-table/es2025/Iterator.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a function 
-compat-table/es2025/Iterator.prototype.some.js: TypeError: undefined is not a function 
-compat-table/es2025/Iterator.prototype.take.js: TypeError: Cannot read properties of undefined (reading 'join') 
-compat-table/es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function 
-compat-table/es2025/Promise.try.js: MissingOK
-compat-table/es2025/RegExp.escape.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.difference.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.intersection.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not a function 
-compat-table/es2025/Set.prototype.union.js: TypeError: undefined is not a function 
-compat-table/es2025/regex.duplicate-named-groups.js: MissingOK
-compat-table/es2025/regex.pattern-modifiers.i.js: MissingOK
-compat-table/es2025/regex.pattern-modifiers.m.js: MissingOK
-compat-table/es2025/regex.pattern-modifiers.s.js: MissingOK
+compat-table/es2024/regex.flags.v.shows-in-flags.js: TypeError: Cannot read properties of undefined (reading 'call')
+compat-table/es2024/regex.flags.v.unicode-15.1.js: failed
+compat-table/es2024/regex.flags.v.unicode-16.0.js: failed
+compat-table/es2024/regex.flags.v.unicode-17.0.js: failed
+compat-table/es2025/Iterator.extends.js: ReferenceError: 'Iterator' is not defined at line 10, column 23
+compat-table/es2025/Iterator.from.iterable.js: TypeError: Cannot read properties of undefined (reading 'from')
+compat-table/es2025/Iterator.from.iterator.js: TypeError: Cannot read properties of undefined (reading 'from')
+compat-table/es2025/Iterator.instanceof.js: ReferenceError: 'Iterator' is not defined at line 10, column 40
+compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined
+compat-table/es2025/Iterator.prototype.drop.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es2025/Iterator.prototype.every.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es2025/Iterator.prototype.find.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.flatMap.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es2025/Iterator.prototype.forEach.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.take.js: TypeError: Cannot read properties of undefined (reading 'join')
+compat-table/es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
+compat-table/es2025/Promise.try.js: failed
+compat-table/es2025/RegExp.escape.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.difference.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.intersection.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.isDisjointFrom.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not a function
+compat-table/es2025/Set.prototype.union.js: TypeError: undefined is not a function
+compat-table/es2025/regex.duplicate-named-groups.js: failed
+compat-table/es2025/regex.pattern-modifiers.i.js: failed
+compat-table/es2025/regex.pattern-modifiers.m.js: failed
+compat-table/es2025/regex.pattern-modifiers.s.js: failed
 compat-table/intl/Array.prototype.toLocaleString.js: failed
-compat-table/intl/Date.prototype.toLocaleDateString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleDateString') 
-compat-table/intl/Date.prototype.toLocaleString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleString') 
-compat-table/intl/Date.prototype.toLocaleTimeString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleTimeString') 
-compat-table/intl/Intl.Collator.js: TypeError: Cannot read properties of undefined (reading 'Collator') 
-compat-table/intl/Intl.Collator.new-instances.js: TypeError: Value is not a constructor 
-compat-table/intl/Intl.Collator.prototype.compare.js: TypeError: Cannot read properties of undefined (reading 'compare') 
-compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: Cannot read properties of undefined (reading 'resolvedOptions') 
-compat-table/intl/Intl.Collator.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'Collator') 
+compat-table/intl/Date.prototype.toLocaleDateString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleDateString')
+compat-table/intl/Date.prototype.toLocaleString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleString')
+compat-table/intl/Date.prototype.toLocaleTimeString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleTimeString')
+compat-table/intl/Intl.Collator.js: TypeError: Cannot read properties of undefined (reading 'Collator')
+compat-table/intl/Intl.Collator.new-instances.js: TypeError: Value is not a constructor
+compat-table/intl/Intl.Collator.prototype.compare.js: TypeError: Cannot read properties of undefined (reading 'compare')
+compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: Cannot read properties of undefined (reading 'resolvedOptions')
+compat-table/intl/Intl.Collator.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'Collator')
 compat-table/intl/Intl.Collator.valid-tags.js: failed
-compat-table/intl/Intl.Collator.without-new.js: TypeError: Cannot read properties of undefined (reading 'Collator') 
+compat-table/intl/Intl.Collator.without-new.js: TypeError: Cannot read properties of undefined (reading 'Collator')
 compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: failed
-compat-table/intl/Intl.DateTimeFormat.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat') 
-compat-table/intl/Intl.DateTimeFormat.new-instances.js: TypeError: Value is not a constructor 
-compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat') 
-compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: Cannot read properties of undefined (reading 'timeZone') 
+compat-table/intl/Intl.DateTimeFormat.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat')
+compat-table/intl/Intl.DateTimeFormat.new-instances.js: TypeError: Value is not a constructor
+compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat')
+compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: Cannot read properties of undefined (reading 'timeZone')
 compat-table/intl/Intl.DateTimeFormat.valid-tags.js: failed
-compat-table/intl/Intl.DateTimeFormat.without-new.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat') 
-compat-table/intl/Intl.NumberFormat.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat') 
-compat-table/intl/Intl.NumberFormat.new-instances.js: TypeError: Value is not a constructor 
-compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat') 
+compat-table/intl/Intl.DateTimeFormat.without-new.js: TypeError: Cannot read properties of undefined (reading 'DateTimeFormat')
+compat-table/intl/Intl.NumberFormat.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat')
+compat-table/intl/Intl.NumberFormat.new-instances.js: TypeError: Value is not a constructor
+compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat')
 compat-table/intl/Intl.NumberFormat.valid-tags.js: failed
-compat-table/intl/Intl.NumberFormat.without-new.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat') 
+compat-table/intl/Intl.NumberFormat.without-new.js: TypeError: Cannot read properties of undefined (reading 'NumberFormat')
 compat-table/intl/Intl.js: failed
-compat-table/intl/Intl.prototype.js: TypeError: Cannot read properties of undefined (reading 'constructor') 
-compat-table/intl/Number.prototype.toLocaleString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleString') 
+compat-table/intl/Intl.prototype.js: TypeError: Cannot read properties of undefined (reading 'constructor')
+compat-table/intl/Number.prototype.toLocaleString.js: TypeError: Cannot read properties of undefined (reading 'toLocaleString')
 compat-table/intl/Object.prototype.toLocaleString.js: failed
 compat-table/intl/String.prototype.localeCompare.js: failed
-compat-table/next/Array.isTemplateObject.js: TypeError: undefined is not a function 
-compat-table/next/AsyncDisposableStack.js: TypeError: Value is not a constructor 
-compat-table/next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined at line 9, column 23 
-compat-table/next/AsyncIterator.from.async-iterable.js: TypeError: Cannot read properties of undefined (reading 'from') 
-compat-table/next/AsyncIterator.from.iterable.js: TypeError: Cannot read properties of undefined (reading 'from') 
-compat-table/next/AsyncIterator.from.iterator.js: TypeError: Cannot read properties of undefined (reading 'from') 
-compat-table/next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined at line 9, column 46 
-compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined 
-compat-table/next/AsyncIterator.prototype.drop.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.every.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.find.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.some.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.take.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: Cannot read properties of undefined (reading 'then') 
-compat-table/next/DisposableStack.js: TypeError: Value is not a constructor 
-compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not a function 
+compat-table/next/Array.isTemplateObject.js: TypeError: undefined is not a function
+compat-table/next/AsyncDisposableStack.js: TypeError: Value is not a constructor
+compat-table/next/AsyncIterator.extends.js: ReferenceError: 'AsyncIterator' is not defined at line 9, column 23
+compat-table/next/AsyncIterator.from.async-iterable.js: TypeError: Cannot read properties of undefined (reading 'from')
+compat-table/next/AsyncIterator.from.iterable.js: TypeError: Cannot read properties of undefined (reading 'from')
+compat-table/next/AsyncIterator.from.iterator.js: TypeError: Cannot read properties of undefined (reading 'from')
+compat-table/next/AsyncIterator.instanceof.js: ReferenceError: 'AsyncIterator' is not defined at line 9, column 46
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read properties of undefined
+compat-table/next/AsyncIterator.prototype.drop.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.every.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.filter.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.find.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.map.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.some.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.take.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: Cannot read properties of undefined (reading 'then')
+compat-table/next/DisposableStack.js: TypeError: Value is not a constructor
+compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not a function
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: Parse error in file 'SuppressedError.js'
-compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function 
-compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function 
-compat-table/next/Uint8Array.setFromBase64.js: TypeError: Cannot destructure undefined as it is not an object 
-compat-table/next/Uint8Array.setFromHex.js: TypeError: Cannot destructure undefined as it is not an object 
-compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function 
-compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function 
-compat-table/next/WeakMap.prototype.upsert.js: TypeError: Function is not a constructor 
-compat-table/next/await-using.for-of.js: failed: Parse error in file 'await-using.for-of.js'
-compat-table/next/await-using.js: failed: Parse error in file 'await-using.js'
-compat-table/next/class-decorators.js: failed: Error in file 'class-decorators.js': Unexpected character '@' at line 10, column 5
-compat-table/next/function.sent.js: failed: Parse error in file 'function.sent.js'
-compat-table/next/throw-expr.arrow.js: failed: Parse error in file 'throw-expr.arrow.js'
-compat-table/next/throw-expr.conditional.js: failed: Parse error in file 'throw-expr.conditional.js'
-compat-table/next/throw-expr.logical.js: failed: Parse error in file 'throw-expr.logical.js'
-compat-table/next/throw-expr.param-init.js: failed: Parse error in file 'throw-expr.param-init.js'
-compat-table/next/using.for-of.js: failed: Parse error in file 'using.for-of.js'
-compat-table/next/using.js: failed: Parse error in file 'using.js'
+compat-table/next/SuppressedError.js: Parse error in file 'SuppressedError.js'
+compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.setFromBase64.js: TypeError: Cannot destructure undefined as it is not an object
+compat-table/next/Uint8Array.setFromHex.js: TypeError: Cannot destructure undefined as it is not an object
+compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
+compat-table/next/WeakMap.prototype.upsert.js: TypeError: Function is not a constructor
+compat-table/next/await-using.for-of.js: Parse error in file 'await-using.for-of.js'
+compat-table/next/await-using.js: Parse error in file 'await-using.js'
+compat-table/next/class-decorators.js: Error in file 'class-decorators.js': Unexpected character '@' at line 10, column 5
+compat-table/next/function.sent.js: Parse error in file 'function.sent.js'
+compat-table/next/throw-expr.arrow.js: Parse error in file 'throw-expr.arrow.js'
+compat-table/next/throw-expr.conditional.js: Parse error in file 'throw-expr.conditional.js'
+compat-table/next/throw-expr.logical.js: Parse error in file 'throw-expr.logical.js'
+compat-table/next/throw-expr.param-init.js: Parse error in file 'throw-expr.param-init.js'
+compat-table/next/using.for-of.js: Parse error in file 'using.for-of.js'
+compat-table/next/using.js: Parse error in file 'using.js'

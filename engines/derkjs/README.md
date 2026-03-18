@@ -12,9 +12,9 @@ Toy JavaScript interpreter for a small subset of ES5.
 ## Conformance
 
 <details><summary>ES1-ES5: 2%</summary><ul>
-<li>ES1: 4%</li>
+<li>ES1: 4%, <b>3 crashes</b></li>
 <li>ES3: 1%</li>
-<li>ES5: 2%</li>
+<li>ES5: 1%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
@@ -32,3 +32,5 @@ Toy JavaScript interpreter for a small subset of ES5.
 <li>Next: 0%</li>
 <li>Intl: 0%</li>
 </ul></details>
+
+💥 **4 crashes during testing**

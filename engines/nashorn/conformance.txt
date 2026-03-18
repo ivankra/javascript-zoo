@@ -228,7 +228,7 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
@@ -258,7 +258,7 @@ es3/String.prototype.replace.generic.js: OK
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: OK
-es3/String.prototype.search.js: failed: search ignores lastIndex failed
+es3/String.prototype.search.js: search ignores lastIndex failed
 es3/String.prototype.search.str.js: OK
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
@@ -308,7 +308,7 @@ es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
 es3/nested-functions.js: OK
-es3/regex.backref.js: failed: backref for a group that hasn't captured failed
+es3/regex.backref.js: backref for a group that hasn't captured failed
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: OK
@@ -414,7 +414,7 @@ es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: OK
 es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: OK
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
@@ -494,12 +494,12 @@ compat-table/es5/strict.this-undefined.js: OK
 compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: TypeError: Right hand side of "in" cannot be non-Object, found undefined
 compat-table/es6/Array.from.array-like.js: TypeError: Array.from is not a function
-compat-table/es6/Array.from.generator.js: failed: 9:29 ES6 generator is not yet implemented
+compat-table/es6/Array.from.generator.js: ES6 generator is not yet implemented
 compat-table/es6/Array.from.iterable-instance.js: TypeError: Array.from is not a function
 compat-table/es6/Array.from.iterable.js: TypeError: Array.from is not a function
 compat-table/es6/Array.from.iterator-closing.js: failed
 compat-table/es6/Array.from.map.array-like.js: TypeError: Array.from is not a function
-compat-table/es6/Array.from.map.generator.js: failed: 9:29 ES6 generator is not yet implemented
+compat-table/es6/Array.from.map.generator.js: ES6 generator is not yet implemented
 compat-table/es6/Array.from.map.iterable-instance.js: TypeError: Array.from is not a function
 compat-table/es6/Array.from.map.iterable.js: TypeError: Array.from is not a function
 compat-table/es6/Array.iterator-prototype-chain.js: OK
@@ -517,12 +517,12 @@ compat-table/es6/Array.prototype.values.js: OK
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: TypeError: Cannot read property "call" from undefined
 compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: failed
-compat-table/es6/Function.name.class-expression.js: failed: 10:9 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/Function.name.class-object-method.js: failed: 10:17 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/Function.name.class-prototype.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/Function.name.class-statement.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/Function.name.class-static.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/Function.name.class-variable.js: failed: 10:12 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-expression.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-object-method.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-prototype.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-statement.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-static.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/Function.name.class-variable.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/Function.name.configurable.js: failed
 compat-table/es6/Function.name.expression.js: OK
 compat-table/es6/Function.name.new-Function.js: failed
@@ -721,9 +721,9 @@ compat-table/es6/annex-b.String.prototype.html.existence.js: failed
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: ""[names[i]] is not a function
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: ""[names[i]] is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: "g" is not defined
-compat-table/es6/annex-b.function.if-statement.js: failed: exit code 101
+compat-table/es6/annex-b.function.if-statement.js: annex-b.function.if-statement.js:12:11 Expected statement but found function declaration; if(true) function foo() { return 2; }; ^; annex-b.function.if-statement.js:13:20 Expected statement but found ...
 compat-table/es6/annex-b.function.labeled.js: OK
-compat-table/es6/annex-b.html-comments.js: failed: exit code 101
+compat-table/es6/annex-b.html-comments.js: annex-b.html-comments.js:9:4 Expected l-value but found >; --> A comment; ^; annex-b.html-comments.js:10:2 Expected an operand but found <; <!-- Another comment; ^; annex-b.html-comments.js:11:13 Expe...
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
@@ -748,38 +748,38 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: failed
 compat-table/es6/arrow.lexical-arguments.js: OK
-compat-table/es6/arrow.lexical-super.constructor.js: failed: 12:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/arrow.lexical-super.methods.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/arrow.lexical-super.constructor.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/arrow.lexical-super.methods.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/arrow.lexical-this.js: failed
 compat-table/es6/arrow.new-target.js: ReferenceError: "new.target" is not defined
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: failed
 compat-table/es6/arrow.precedence.js: OK
 compat-table/es6/arrow.this-call-apply.js: failed
-compat-table/es6/class.accessor-properties.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.anonymous.js: failed: 10:16 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.block-scoped.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.computed-accessor-properties.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.computed-names-tdz.js: failed: 11:12 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.computed-prototype-methods.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.computed-static-accessor-properties.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.computed-static-methods.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.constructor-requires-new.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.constructor.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.expression.js: failed: 10:16 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.extends-expressions.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.extends-null.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.extends.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.implicit-strict.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.lexical-name.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.methods-not-enumerable.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.new-target.js: failed: 15:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.optional-semicolons.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.prototype-methods.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.statement.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.static-accessor-properties.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.static-methods.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/class.string-keyed-methods.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.accessor-properties.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.anonymous.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.block-scoped.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.computed-accessor-properties.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.computed-names-tdz.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.computed-prototype-methods.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.computed-static-accessor-properties.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.computed-static-methods.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.constructor-requires-new.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.constructor.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.expression.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.extends-expressions.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.extends-null.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.extends.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.implicit-strict.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.lexical-name.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.methods-not-enumerable.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.new-target.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.optional-semicolons.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.prototype-methods.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.statement.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.static-accessor-properties.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.static-methods.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/class.string-keyed-methods.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: OK
 compat-table/es6/const.for-in.js: OK
@@ -805,81 +805,81 @@ compat-table/es6/default-params.new-function.js: OK
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: failed
 compat-table/es6/default-params.tdz.js: failed
-compat-table/es6/destructuring-assign.array.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.astral-string.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.chained-iterable.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.chained-object.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.computed-properties.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.defaults.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.empty-patterns.js: failed: 10:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.generator.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.iterable-expression.js: failed: 11:10 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.iterable-instance.js: failed: 35:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.iterable.js: failed: 35:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.iterator-closing.js: failed: 39:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.nested-rest.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.nested.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.object-expression.js: failed: 11:10 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.object-primitives.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.object.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.parenthesised-error.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.rest.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.sparse-array.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.string.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.throws-null-undefined.js: failed: 12:5 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: failed: 11:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-assign.trailing-comma-object.js: failed: 11:3 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.array.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.astral-string.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.catch.js: failed: 12:10 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.computed-properties.js: failed: 11:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.defaults-tdz.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.defaults.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.for-in.js: failed: 10:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.for-of.js: failed: 10:2 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.generator.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.iterable-instance.js: failed: 34:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.iterable.js: failed: 34:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.iterator-closing.js: failed: 38:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.multiple-var.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.nested.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.object-primitives.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.object.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.rest.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.sparse-array.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.string.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.throws-null-undefined.js: failed: 11:8 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-decl.trailing-comma-object.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: failed: 10:39 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.arguments.js: failed: 10:18 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.array.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.astral-string.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.computed-properties.js: failed: 11:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.defaults-new-function.js: failed: exception: java.lang.RuntimeException: <function>:1:10 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.defaults-separate-scope.js: failed: 10:18 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.defaults.js: failed: 10:18 ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.astral-string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.chained-iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.chained-object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.computed-properties.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.defaults.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.empty-patterns.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.generator.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.iterable-expression.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.iterable-instance.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.iterator-closing.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.nested-rest.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.nested.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.object-expression.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.object-primitives.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.parenthesised-error.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.rest.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.sparse-array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.throws-null-undefined.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.trailing-comma-object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.astral-string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.catch.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.computed-properties.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.defaults-tdz.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.defaults.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.for-in.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.for-of.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.generator.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.iterable-instance.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.iterator-closing.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.multiple-var.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.nested.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.object-primitives.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.rest.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.sparse-array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.throws-null-undefined.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.trailing-comma-object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.arguments.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.astral-string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.computed-properties.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.defaults-new-function.js: exception: java.lang.RuntimeException: <function>:1:10 ES6 destructuring is not yet implemented; (function ({a = 1, b = 0, c = 3, x:d = 0, y:e = 5}) {; ^
+compat-table/es6/destructuring-params.defaults-separate-scope.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.defaults.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
-compat-table/es6/destructuring-params.empty-patterns.js: failed: 10:18 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.generator.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.iterable-instance.js: failed: 34:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.iterable.js: failed: 34:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.iterator-closing.js: failed: 38:11 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.length.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.nested.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.new-function.js: failed: exception: java.lang.RuntimeException: <function>:1:10 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.object-primitives.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.object.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.rest.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: failed: 10:33 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.sparse-array.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.string.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.throws-null-undefined.js: failed: 11:13 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: failed: 10:17 ES6 destructuring is not yet implemented
-compat-table/es6/destructuring-params.trailing-comma-object.js: failed: 10:17 ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.empty-patterns.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.generator.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.iterable-instance.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.iterator-closing.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.length.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.nested.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.new-function.js: exception: java.lang.RuntimeException: <function>:1:10 ES6 destructuring is not yet implemented; (function ({a, x:b, y:e},[c, d]) {; ^
+compat-table/es6/destructuring-params.object-primitives.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.rest.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.sparse-array.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.string.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.throws-null-undefined.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-params.trailing-comma-object.js: ES6 destructuring is not yet implemented
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: OK
-compat-table/es6/for-of.generator.js: failed: 11:29 ES6 generator is not yet implemented
+compat-table/es6/for-of.generator.js: ES6 generator is not yet implemented
 compat-table/es6/for-of.iterable-instance.js: OK
 compat-table/es6/for-of.iterable.js: OK
 compat-table/es6/for-of.iterator-closing-break.js: failed
@@ -887,33 +887,33 @@ compat-table/es6/for-of.iterator-closing-throw.js: failed
 compat-table/es6/for-of.sparse-array.js: OK
 compat-table/es6/for-of.string.js: OK
 compat-table/es6/function.block-level-decl.js: OK
-compat-table/es6/generators.basic.js: failed: 10:24 ES6 generator is not yet implemented
-compat-table/es6/generators.constructor.js: failed: 10:17 ES6 generator is not yet implemented
-compat-table/es6/generators.expression.js: failed: 10:31 ES6 generator is not yet implemented
-compat-table/es6/generators.no-new-this.js: failed: 10:24 ES6 generator is not yet implemented
-compat-table/es6/generators.prototype-chain.js: failed: 10:26 ES6 generator is not yet implemented
-compat-table/es6/generators.prototype.js: failed: 10:26 ES6 generator is not yet implemented
-compat-table/es6/generators.return.js: failed: 10:24 ES6 generator is not yet implemented
-compat-table/es6/generators.sending.js: failed: 11:24 ES6 generator is not yet implemented
-compat-table/es6/generators.shorthand.class.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/generators.shorthand.computed.class.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/generators.shorthand.computed.js: failed: 12:18 ES6 generator is not yet implemented
-compat-table/es6/generators.shorthand.js: failed: 11:18 ES6 generator is not yet implemented
-compat-table/es6/generators.shorthand.no-constructor.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/generators.shorthand.string-keyed.js: failed: 11:18 ES6 generator is not yet implemented
-compat-table/es6/generators.this.js: failed: 10:24 ES6 generator is not yet implemented
-compat-table/es6/generators.throw.js: failed: 11:24 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-precedence.js: failed: 11:24 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.array.js: failed: 10:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.astral-string.js: failed: 10:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.generator.js: failed: 10:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.iterable-instance.js: failed: 33:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.iterable.js: failed: 34:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: failed: 42:24 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.iterator-closing.js: failed: 40:34 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.non-iterable-error.js: failed: 10:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.sparse-array.js: failed: 10:41 ES6 generator is not yet implemented
-compat-table/es6/generators.yield-star.string.js: failed: 10:41 ES6 generator is not yet implemented
+compat-table/es6/generators.basic.js: ES6 generator is not yet implemented
+compat-table/es6/generators.constructor.js: ES6 generator is not yet implemented
+compat-table/es6/generators.expression.js: ES6 generator is not yet implemented
+compat-table/es6/generators.no-new-this.js: ES6 generator is not yet implemented
+compat-table/es6/generators.prototype-chain.js: ES6 generator is not yet implemented
+compat-table/es6/generators.prototype.js: ES6 generator is not yet implemented
+compat-table/es6/generators.return.js: ES6 generator is not yet implemented
+compat-table/es6/generators.sending.js: ES6 generator is not yet implemented
+compat-table/es6/generators.shorthand.class.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/generators.shorthand.computed.class.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/generators.shorthand.computed.js: ES6 generator is not yet implemented
+compat-table/es6/generators.shorthand.js: ES6 generator is not yet implemented
+compat-table/es6/generators.shorthand.no-constructor.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/generators.shorthand.string-keyed.js: ES6 generator is not yet implemented
+compat-table/es6/generators.this.js: ES6 generator is not yet implemented
+compat-table/es6/generators.throw.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-precedence.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.array.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.astral-string.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.generator.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.iterable-instance.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.iterable.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.iterator-closing.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.non-iterable-error.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.sparse-array.js: ES6 generator is not yet implemented
+compat-table/es6/generators.yield-star.string.js: ES6 generator is not yet implemented
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: OK
 compat-table/es6/let.for-in-shadow.js: OK
@@ -937,7 +937,7 @@ compat-table/es6/literals.object.computed-properties.js: failed
 compat-table/es6/literals.object.computed-shorthand-methods.js: TypeError: { [<unknown>] function {U%}x()x: [<unknown>] function x() }.y is not a function
 compat-table/es6/literals.object.shorthand-methods.js: OK
 compat-table/es6/literals.object.shorthand-properties.js: OK
-compat-table/es6/literals.object.string-keyed-shorthand-methods.js: failed: exception: org.openjdk.nashorn.internal.runtime.ParserException: literals.object.string-keyed-shorthand-methods.js:10:37 Missing close quote
+compat-table/es6/literals.object.string-keyed-shorthand-methods.js: exception: org.openjdk.nashorn.internal.runtime.ParserException: literals.object.string-keyed-shorthand-methods.js:10:37 Missing close quote; return ({ "foo bar"() { return 4; } })["foo bar"]() === 4;...
 compat-table/es6/literals.octal.Number.js: failed
 compat-table/es6/literals.octal.js: OK
 compat-table/es6/misc.Invalid-Date.js: OK
@@ -971,7 +971,7 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: ReferenceError: "Proxy" is not
 compat-table/es6/misc.Proxy.get.Array.shift.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Array.splice.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Array.toString.js: ReferenceError: "Proxy" is not defined
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed: 13:2 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: "Proxy" is not defined
@@ -1017,17 +1017,17 @@ compat-table/es6/misc.RegExp-alter-flags.js: TypeError: Cannot supply flags when
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: TypeError: [object Object] is not a RegExp
 compat-table/es6/misc.accessors-no-constructor.js: failed
 compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: failed: 10:4 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/misc.bound-function-prototype.class.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: failed: 10:23 ES6 generator is not yet implemented
-compat-table/es6/misc.bound-function-prototype.subclass.js: failed: 10:4 ES6 class declarations and expressions are not yet implemented
+compat-table/es6/misc.bound-function-prototype.generator.js: ES6 generator is not yet implemented
+compat-table/es6/misc.bound-function-prototype.subclass.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: failed
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 compat-table/es6/misc.identifier-syntax.var-1.js: failed
-compat-table/es6/misc.identifier-syntax.var-2.js: failed: exit code 101
+compat-table/es6/misc.identifier-syntax.var-2.js: misc.identifier-syntax.var-2.js:9:6 expected BindingIdentifier or BindingPattern; var 𐋀;; ^
 compat-table/es6/misc.property-order.JSON.parse.js: OK
 compat-table/es6/misc.property-order.JSON.stringify.js: failed
 compat-table/es6/misc.property-order.Object.assign.js: TypeError: Object.assign is not a function
@@ -1038,76 +1038,76 @@ compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: 
 compat-table/es6/misc.prototypes-not-instances.js: failed
 compat-table/es6/new-target.assignment-error.js: ReferenceError: "new.target" is not defined
 compat-table/es6/new-target.constructor.js: ReferenceError: "new.target" is not defined
-compat-table/es6/regex.flags.u.case-folding.js: failed: 10:24 Unsupported RegExp flag: u
-compat-table/es6/regex.flags.u.codepoint.js: failed: 10:32 Unsupported RegExp flag: u
-compat-table/es6/regex.flags.u.js: failed: 10:26 Unsupported RegExp flag: u
-compat-table/es6/regex.flags.u.non-bmp.js: failed: 10:28 Unsupported RegExp flag: u
+compat-table/es6/regex.flags.u.case-folding.js: regex.flags.u.case-folding.js:10:24 Unsupported RegExp flag: u; return "ſ".match(/S/iu) && "S".match(/ſ/iu);; ^
+compat-table/es6/regex.flags.u.codepoint.js: regex.flags.u.codepoint.js:10:32 Unsupported RegExp flag: u; return "𝌆".match(/\u{1d306}/u)[0].length === 2;; ^
+compat-table/es6/regex.flags.u.js: regex.flags.u.js:10:26 Unsupported RegExp flag: u; return "𠮷".match(/^.$/u)[0].length === 2;; ^
+compat-table/es6/regex.flags.u.non-bmp.js: regex.flags.u.non-bmp.js:10:28 Unsupported RegExp flag: u; return "𠮷x".match(/^.x$/u)[0].length === 3;; ^
 compat-table/es6/regex.flags.y.js: SyntaxError: Unsupported RegExp flag: y
 compat-table/es6/regex.flags.y.lastIndex.js: SyntaxError: Unsupported RegExp flag: y
-compat-table/es6/rest-params.arguments.js: failed: 10:28 ES6 function rest parameter declaration is not yet implemented
-compat-table/es6/rest-params.basic.js: failed: 10:28 ES6 function rest parameter declaration is not yet implemented
-compat-table/es6/rest-params.length.js: failed: 10:24 ES6 function rest parameter declaration is not yet implemented
-compat-table/es6/rest-params.new-function.js: failed: exception: java.lang.RuntimeException: <function>:1:16 ES6 function rest parameter declaration is not yet implemented
-compat-table/es6/rest-params.no-setter.js: failed: 10:23 ES6 function rest parameter declaration is not yet implemented
-compat-table/es6/spread.array-call.js: failed: 10:18 ES6 spread operator is not yet implemented
-compat-table/es6/spread.array-literal.js: failed: 10:10 ES6 spread operator is not yet implemented
-compat-table/es6/spread.astral-call.js: failed: 10:15 ES6 spread operator is not yet implemented
-compat-table/es6/spread.astral-literal.js: failed: 10:10 ES6 spread operator is not yet implemented
-compat-table/es6/spread.generator-call.js: failed: 10:29 ES6 generator is not yet implemented
-compat-table/es6/spread.generator-literal.js: failed: 10:29 ES6 generator is not yet implemented
-compat-table/es6/spread.iterable-call.js: failed: 35:18 ES6 spread operator is not yet implemented
-compat-table/es6/spread.iterable-instance-call.js: failed: 35:18 ES6 spread operator is not yet implemented
-compat-table/es6/spread.iterable-instance-literal.js: failed: 35:15 ES6 spread operator is not yet implemented
-compat-table/es6/spread.iterable-literal.js: failed: 35:15 ES6 spread operator is not yet implemented
-compat-table/es6/spread.non-iterable-error.js: failed: 11:13 ES6 spread operator is not yet implemented
-compat-table/es6/spread.sparse-call.js: failed: 10:16 ES6 spread operator is not yet implemented
-compat-table/es6/spread.sparse-literal.js: failed: 10:11 ES6 spread operator is not yet implemented
-compat-table/es6/spread.string-call.js: failed: 10:18 ES6 spread operator is not yet implemented
-compat-table/es6/spread.string-literal.js: failed: 10:15 ES6 spread operator is not yet implemented
-compat-table/es6/subclassing.Array.concat.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.filter.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.from.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.isArray.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.length-access.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.length-set.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.map.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.of.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.prototype-chain.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.slice.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Array.splice.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.call.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.new.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.prototype-chain.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.prototype.apply.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.prototype.bind.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Function.prototype.call.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Promise.all.js: failed: 44:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Promise.js: failed: 44:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Promise.prototype-chain.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.Promise.race.js: failed: 44:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.RegExp.exec.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.RegExp.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.RegExp.prototype-chain.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.RegExp.test.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.Boolean.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.Error.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.Map.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.Number.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.Set.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/subclassing.misc.String.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.correct-constructor.js: failed: 12:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.expression.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.method-calls.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.new-target-binding.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.property-access.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.statement.js: failed: 11:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.static-binding.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/super.this-binding.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
-compat-table/es6/tail-calls.direct.js: failed: exception: java.lang.StackOverflowError
-compat-table/es6/tail-calls.mutual.js: failed: exception: java.lang.StackOverflowError
+compat-table/es6/rest-params.arguments.js: ES6 function rest parameter declaration is not yet implemented
+compat-table/es6/rest-params.basic.js: ES6 function rest parameter declaration is not yet implemented
+compat-table/es6/rest-params.length.js: ES6 function rest parameter declaration is not yet implemented
+compat-table/es6/rest-params.new-function.js: exception: java.lang.RuntimeException: <function>:1:16 ES6 function rest parameter declaration is not yet implemented; (function (a,...b) {; ^
+compat-table/es6/rest-params.no-setter.js: ES6 function rest parameter declaration is not yet implemented
+compat-table/es6/spread.array-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.array-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.astral-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.astral-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.generator-call.js: ES6 generator is not yet implemented
+compat-table/es6/spread.generator-literal.js: ES6 generator is not yet implemented
+compat-table/es6/spread.iterable-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.iterable-instance-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.iterable-instance-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.iterable-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.non-iterable-error.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.sparse-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.sparse-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.string-call.js: ES6 spread operator is not yet implemented
+compat-table/es6/spread.string-literal.js: ES6 spread operator is not yet implemented
+compat-table/es6/subclassing.Array.concat.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.filter.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.from.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.isArray.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.length-access.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.length-set.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.map.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.of.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.prototype-chain.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.slice.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Array.splice.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.call.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.new.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.prototype-chain.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.prototype.apply.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.prototype.bind.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Function.prototype.call.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Promise.all.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Promise.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Promise.prototype-chain.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.Promise.race.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.RegExp.exec.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.RegExp.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.RegExp.prototype-chain.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.RegExp.test.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.Boolean.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.Error.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.Map.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.Number.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.Set.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/subclassing.misc.String.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.correct-constructor.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.expression.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.method-calls.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.new-target-binding.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.property-access.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.statement.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.static-binding.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/super.this-binding.js: ES6 class declarations and expressions are not yet implemented
+compat-table/es6/tail-calls.direct.js: exception: java.lang.StackOverflowError
+compat-table/es6/tail-calls.mutual.js: exception: java.lang.StackOverflowError
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
-compat-table/es6/template.escape-sequences.js: failed: 13:22 cannot use octal escapes in strict mode
+compat-table/es6/template.escape-sequences.js: template.escape-sequences.js:13:22 cannot use octal escapes in strict mode; var str = strings`\1\xz\uz\u{110000}\u{z}`;; ^
 compat-table/es6/template.frozen-array.js: OK
 compat-table/es6/template.line-break.js: OK
 compat-table/es6/template.permanent-caching.js: failed
@@ -1159,10 +1159,10 @@ compat-table/es6/typed-arrays.prototype.some.js: failed
 compat-table/es6/typed-arrays.prototype.sort.js: failed
 compat-table/es6/typed-arrays.prototype.subarray.js: OK
 compat-table/es6/typed-arrays.prototype.values.js: failed
-compat-table/es6/unicode-escapes.identifier.js: failed: 9:8 Invalid hex digit
-compat-table/es6/unicode-escapes.property-access.js: failed: 10:13 Invalid hex digit
-compat-table/es6/unicode-escapes.property-key.js: failed: 9:14 Invalid hex digit
-compat-table/es6/unicode-escapes.string.js: failed: 9:12 Invalid hex digit
+compat-table/es6/unicode-escapes.identifier.js: unicode-escapes.identifier.js:9:8 Invalid hex digit; var \u{102C0} = 2;; ^
+compat-table/es6/unicode-escapes.property-access.js: unicode-escapes.property-access.js:10:13 Invalid hex digit; return o.\u{102C0} === 2;; ^
+compat-table/es6/unicode-escapes.property-key.js: unicode-escapes.property-key.js:9:14 Invalid hex digit; var o = { \u{102C0} : 2 };; ^
+compat-table/es6/unicode-escapes.string.js: unicode-escapes.string.js:9:12 Invalid hex digit; return '\u{1d306}' === '\ud834\udf06';; ^
 compat-table/es6/well-known.hasInstance.js: failed
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: failed
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
@@ -1188,22 +1188,22 @@ compat-table/es6/well-known.toPrimitive.js: failed
 compat-table/es6/well-known.toStringTag.existing-builtins.js: failed
 compat-table/es6/well-known.toStringTag.js: failed
 compat-table/es6/well-known.toStringTag.misc-builtins.js: failed
-compat-table/es6/well-known.toStringTag.new-builtins.js: failed: 23:40 ES6 generator is not yet implemented
+compat-table/es6/well-known.toStringTag.new-builtins.js: ES6 generator is not yet implemented
 compat-table/es6/well-known.unscopables.js: failed
 compat-table/es2016/Array.prototype.includes.generic.js: TypeError: Cannot read property "call" from undefined
 compat-table/es2016/Array.prototype.includes.js: TypeError: [1, 2, 3].includes is not a function
 compat-table/es2016/Array.prototype.includes.sparse.js: TypeError: [undefined].includes is not a function
 compat-table/es2016/Array.prototype.includes.typed-array.js: TypeError: new TypedArray([1, 2, 3]).includes is not a function
-compat-table/es2016/exponentiation.assignment.js: failed: exit code 101
-compat-table/es2016/exponentiation.basic.js: failed: exit code 101
-compat-table/es2016/exponentiation.unary-negation-error.js: failed: 10:9 Expected an operand but found *
+compat-table/es2016/exponentiation.assignment.js: exponentiation.assignment.js:10:16 Expected an operand but found *=; var a = 2; a **= 3; return a === 8;; ^
+compat-table/es2016/exponentiation.basic.js: exponentiation.basic.js:10:12 Expected an operand but found *; return 2 ** 3 === 8 && -(5 ** 2) === -25 && (-5) ** 2 === 25;; ^
+compat-table/es2016/exponentiation.unary-negation-error.js: exponentiation.unary-negation-error.js:10:9 Expected an operand but found *; if (2 ** 3 !== 8) {; ^; exponentiation.unary-negation-error.js:16:4 Invalid return statement; return true;; ^; exponentiati...
 compat-table/es2016/misc.Proxy-Array-includes.js: ReferenceError: "Proxy" is not defined
 compat-table/es2016/misc.Proxy-enumerate-removed.js: ReferenceError: "Proxy" is not defined
-compat-table/es2016/misc.generator-no-new.js: failed: 10:25 ES6 generator is not yet implemented
-compat-table/es2016/misc.generator-throw-inner.js: failed: 10:25 ES6 generator is not yet implemented
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: failed: 10:6 ES6 destructuring is not yet implemented
-compat-table/es2016/misc.nested-rest-destructuring-params.js: failed: 9:33 strict mode function cannot have duplicate parameter name "z"
-compat-table/es2016/misc.strict-fn-non-simple-params-error.js: failed: 9:18 ES6 function rest parameter declaration is not yet implemented
+compat-table/es2016/misc.generator-no-new.js: ES6 generator is not yet implemented
+compat-table/es2016/misc.generator-throw-inner.js: ES6 generator is not yet implemented
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: ES6 destructuring is not yet implemented
+compat-table/es2016/misc.nested-rest-destructuring-params.js: misc.nested-rest-destructuring-params.js:9:33 strict mode function cannot have duplicate parameter name "z"; return function ([x, ...[y, ...z]]) {; ^
+compat-table/es2016/misc.strict-fn-non-simple-params-error.js: ES6 function rest parameter declaration is not yet implemented
 compat-table/es2017/Atomics.add.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Atomics.and.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Atomics.compareExchange.js: ReferenceError: "Atomics" is not defined
@@ -1248,54 +1248,54 @@ compat-table/es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: "Proxy" i
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: "Proxy" is not defined
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: "Proxy" is not defined
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
-compat-table/es2017/async.Symbol.toStringTag.js: failed: exit code 101
-compat-table/es2017/async.arrow-in-class.js: failed: exit code 101
-compat-table/es2017/async.arrow.js: failed: exit code 101
-compat-table/es2017/async.await-non-promise.js: failed: exit code 101
-compat-table/es2017/async.await-rejection.js: timeout: var a1 = await new Promise(function (_, reject) { setTimeout(reject,800,"foo"); });
-compat-table/es2017/async.await.js: timeout: var a1 = await new Promise(function (resolve) { setTimeout(resolve,800,"foo"); });
-compat-table/es2017/async.constructor.js: failed: exit code 101
-compat-table/es2017/async.methods-class.js: failed: exit code 101
-compat-table/es2017/async.methods-object.js: failed: exit code 101
-compat-table/es2017/async.must-await-value.js: failed: 16:4 Invalid return statement
-compat-table/es2017/async.no-await-in-params.js: failed: 16:4 Invalid return statement
-compat-table/es2017/async.no-line-break.js: failed: exit code 101
-compat-table/es2017/async.no-prototype.js: failed: exit code 101
-compat-table/es2017/async.prototype-chain.js: failed: exit code 101
-compat-table/es2017/async.return.js: failed: 50:4 Invalid return statement
-compat-table/es2017/async.throw.js: failed: 50:4 Invalid return statement
+compat-table/es2017/async.Symbol.toStringTag.js: async.Symbol.toStringTag.js:10:37 Expected , but found function; return Object.getPrototypeOf(async function () {})[Symbol.toStringTag] === "AsyncFunction";; ^; async.Symbol.toStringTag.js:10:51 Expec...
+compat-table/es2017/async.arrow-in-class.js: async.arrow-in-class.js:50:18 expected arrow function parameter list; doSomething(async () => {; ^; async.arrow-in-class.js:51:14 Expected ; but found 1; await 1;; ^; async.arrow-in-class.js:53:7 Expe...
+compat-table/es2017/async.arrow.js: async.arrow.js:45:10 expected arrow function parameter list; var a = async () => await Promise.resolve("foo");; ^
+compat-table/es2017/async.await-non-promise.js: async.await-non-promise.js:45:9 Expected ) but found function; (async function () {; ^; async.await-non-promise.js:46:10 Expected ; but found Promise; await Promise.resolve();; ^; async.await-non-prom...
+compat-table/es2017/async.await-rejection.js: async.await-rejection.js:45:9 Expected ) but found function; (async function () {; ^; async.await-rejection.js:46:10 Expected ; but found Promise; await Promise.resolve();; ^; async.await-rejection.js...
+compat-table/es2017/async.await.js: async.await.js:45:9 Expected ) but found function; (async function () {; ^; async.await.js:46:10 Expected ; but found Promise; await Promise.resolve();; ^; async.await.js:47:19 Expected ; but found ne...
+compat-table/es2017/async.constructor.js: async.constructor.js:45:16 Expected ; but found function; var a = async function () {}.constructor("return 'foo';");; ^; async.constructor.js:45:30 Expected an operand but found .; var a = async funct...
+compat-table/es2017/async.methods-class.js: async.methods-class.js:46:10 Expected ( but found a; async a() { return await Promise.resolve("foo"); }; ^; async.methods-class.js:47:2 Expected eof but found }; };; ^
+compat-table/es2017/async.methods-object.js: async.methods-object.js:46:10 Expected : but found a; async a() { return await Promise.resolve("foo"); }; ^; async.methods-object.js:47:2 Expected eof but found }; };; ^
+compat-table/es2017/async.must-await-value.js: async.must-await-value.js:10:8 Expected ; but found function; async function a() {; ^; async.must-await-value.js:11:10 Expected ; but found Promise; await Promise.resolve();; ^; async.must-await-value...
+compat-table/es2017/async.no-await-in-params.js: async.no-await-in-params.js:10:8 Expected ; but found function; async function a() {; ^; async.no-await-in-params.js:11:10 Expected ; but found Promise; await Promise.resolve();; ^; async.no-await-in-...
+compat-table/es2017/async.no-line-break.js: async.no-line-break.js:10:8 Expected ; but found function; async function a() {}; ^
+compat-table/es2017/async.no-prototype.js: async.no-prototype.js:10:8 Expected ; but found function; async function a() {};; ^
+compat-table/es2017/async.prototype-chain.js: async.prototype-chain.js:10:55 Expected , but found function; var asyncFunctionProto = Object.getPrototypeOf(async function () {});; ^; async.prototype-chain.js:10:69 Expected ; but found ); var async...
+compat-table/es2017/async.return.js: async.return.js:45:8 Expected ; but found function; async function a() {; ^; async.return.js:50:4 Invalid return statement; return false;; ^; async.return.js:51:2 Expected eof but found }; }; ^
+compat-table/es2017/async.throw.js: async.throw.js:45:8 Expected ; but found function; async function a() {; ^; async.throw.js:50:4 Invalid return statement; return false;; ^; async.throw.js:51:2 Expected eof but found }; }; ^
 compat-table/es2017/misc.arguments-caller-removed.js: failed
-compat-table/es2017/regex.flags.u.case-folding.js: failed: 9:25 Unsupported RegExp flag: u
-compat-table/es2017/trailing-comma.arguments.js: failed: exit code 101
-compat-table/es2017/trailing-comma.params.js: failed: exit code 101
+compat-table/es2017/regex.flags.u.case-folding.js: regex.flags.u.case-folding.js:9:25 Unsupported RegExp flag: u; return "ſ".match(/\w/iu) && !"ſ".match(/\W/iu); ^; regex.flags.u.case-folding.js:10:4 Expected an operand but found &&; && "\u212a".match...
+compat-table/es2017/trailing-comma.arguments.js: trailing-comma.arguments.js:10:24 Expected an operand but found ); return Math.min(1,2,3,) === 1;; ^
+compat-table/es2017/trailing-comma.params.js: trailing-comma.params.js:10:34 expected BindingIdentifier or BindingPattern; return typeof function f( a, b, ) {} === 'function';; ^; trailing-comma.params.js:10:39 Expected an operand but found ===; ...
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: ReferenceError: "Promise" is not defined
 compat-table/es2018/Promise.prototype.finally.js: ReferenceError: "Promise" is not defined
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: "Promise" is not defined
-compat-table/es2018/async-iterators.for-await-of.js: failed: exit code 101
-compat-table/es2018/async-iterators.generators.js: failed: exit code 101
+compat-table/es2018/async-iterators.for-await-of.js: async-iterators.for-await-of.js:58:9 Expected ) but found function; (async function () {; ^; async-iterators.for-await-of.js:60:8 Expected ( but found await; for await(var value of asyncIterable)resul...
+compat-table/es2018/async-iterators.generators.js: async-iterators.generators.js:44:8 Expected ; but found function; async function*generator() {; ^; async-iterators.generators.js:45:10 Expected ; but found 42; yield 42;; ^; async-iterators.generators...
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: "Proxy" is not defined
-compat-table/es2018/misc.template-literal-revision.js: failed: 16:15 cannot use octal escapes in strict mode
-compat-table/es2018/object-rest.js: failed: exit code 101
-compat-table/es2018/object-spread.js: failed: exit code 101
-compat-table/es2018/regex.flags.s.js: failed: 10:26 Unsupported RegExp flag: s
-compat-table/es2018/regex.lookbehind.js: failed: exit code 101
-compat-table/es2018/regex.named-capture-groups.js: failed: exit code 101
-compat-table/es2018/regex.unicode-property-escapes.js: failed: 10:46 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: failed: 10:37 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: failed: 10:28 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: failed: 10:30 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: failed: 10:33 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: failed: 10:31 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed: 10:33 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: failed: 10:27 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed: 10:29 Unsupported RegExp flag: u
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed: 10:30 Unsupported RegExp flag: u
+compat-table/es2018/misc.template-literal-revision.js: misc.template-literal-revision.js:16:15 cannot use octal escapes in strict mode; return tag`\01\1\xg\xAg\u0\u0g\u00g\u000g\u{g\u{0\u{110000}${0}\0`;; ^
+compat-table/es2018/object-rest.js: object-rest.js:9:11 Expected ident but found ...; var { a, ...rest } = { a: 1, b: 2, c: 3 };; ^; object-rest.js:9:21 Expected an operand but found =; var { a, ...rest } = { a: 1, b: 2, c: 3 };; ^
+compat-table/es2018/object-spread.js: object-spread.js:10:18 Expected ident but found ...; var O = { a: 1, ...spread };; ^
+compat-table/es2018/regex.flags.s.js: regex.flags.s.js:10:26 Unsupported RegExp flag: s; const regex = /foo.bar/s;; ^
+compat-table/es2018/regex.lookbehind.js: regex.lookbehind.js:10:18 (?<=a)b near index 1; return /(?<=a)b/.test('ab') && /(?<!a)b/.test('cb') &&; ^; regex.lookbehind.js:11:19 (?<=a)b near index 1; !/(?<=a)b/.test('b');; ^
+compat-table/es2018/regex.named-capture-groups.js: regex.named-capture-groups.js:10:61 (?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2}) near index 1; var result = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/.exec('2016-03-11');; ^
+compat-table/es2018/regex.unicode-property-escapes.js: regex.unicode-property-escapes.js:10:46 Unsupported RegExp flag: u; const regexGreekSymbol = /\p{Script=Greek}/u;; ^
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: regex.unicode-property-escapes.unicode-11.js:10:37 Unsupported RegExp flag: u; return /\p{Extended_Pictographic}/u.test("\xA9") && /\p{Emoji}/u.test("🥰");; ^; regex.unicode-property-escapes.unicode-11...
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: regex.unicode-property-escapes.unicode-12.1.js:10:28 Unsupported RegExp flag: u; return /\p{Other_Symbol}/u.test("\u32FF");; ^
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: regex.unicode-property-escapes.unicode-12.js:10:30 Unsupported RegExp flag: u; return /\p{Script=Elymaic}/u.test("\u{10fe0}") && /\p{Emoji}/u.test("🥱");; ^; regex.unicode-property-escapes.unicode-12.j...
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: regex.unicode-property-escapes.unicode-13.js:10:33 Unsupported RegExp flag: u; return /\p{Script=Chorasmian}/u.test("\u{10fb0}") && /\p{Emoji}/u.test("🥲");; ^; regex.unicode-property-escapes.unicode-1...
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: regex.unicode-property-escapes.unicode-14.js:10:31 Unsupported RegExp flag: u; return /\p{Script=Vithkuqi}/u.test("\u{10570}") && /\p{Emoji}/u.test("🫠");; ^; regex.unicode-property-escapes.unicode-14....
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: regex.unicode-property-escapes.unicode-15.1.js:10:33 Unsupported RegExp flag: u; return /\p{Unified_Ideograph}/u.test("\u{2ebf0}");; ^
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: regex.unicode-property-escapes.unicode-15.js:10:27 Unsupported RegExp flag: u; return /\p{Script=Kawi}/u.test("\u{11f00}") && /\p{Emoji}/u.test("🫨");; ^; regex.unicode-property-escapes.unicode-15.js:1...
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: regex.unicode-property-escapes.unicode-16.0.js:10:29 Unsupported RegExp flag: u; return /\p{Script=Todhri}/u.test("\u{105c0}") && /\p{Emoji}/u.test("🫩");; ^; regex.unicode-property-escapes.unicode-16....
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: regex.unicode-property-escapes.unicode-17.0.js:10:30 Unsupported RegExp flag: u; return /\p{Script=Sidetic}/u.test("\u{10940}") && /\p{Emoji}/u.test("🫍");; ^; regex.unicode-property-escapes.unicode-17...
 compat-table/es2019/Array.prototype.flatMap.js: TypeError: [{ a: 1, b: 2 }, { a: 3, b: 4 }].flatMap is not a function
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property "flat" from undefined
 compat-table/es2019/Array.prototype.flat.js: TypeError: [1, [2, 3], [4, [5, 6]]].flat is not a function
 compat-table/es2019/Object.fromEntries.js: TypeError: Object.fromEntries is not a function
-compat-table/es2019/String.prototype.trimEnd.js: TypeError: " 	 
-compat-table/es2019/String.prototype.trimStart.js: TypeError: " 	 
+compat-table/es2019/String.prototype.trimEnd.js: TypeError: "
+compat-table/es2019/String.prototype.trimStart.js: TypeError: "
 compat-table/es2019/Symbol.prototype.description.empty.js: failed
 compat-table/es2019/Symbol.prototype.description.js: failed
 compat-table/es2019/Symbol.prototype.description.undefined.js: failed
@@ -1303,51 +1303,51 @@ compat-table/es2019/annex-b.String.prototype.trimLeft.js: OK
 compat-table/es2019/annex-b.String.prototype.trimRight.js: OK
 compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError: <function>:2:8 Expected , but found ;
 compat-table/es2019/misc.Function-toString.arrows.js: OK
-compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed: exception: java.lang.RuntimeException: misc.Function-toString.class-explicit-constructor.js#11:9<eval>:1:13 ES6 class declarations and expressions are not yet implemented
-compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed: exception: java.lang.RuntimeException: misc.Function-toString.class-implicit-constructor.js#11:9<eval>:1:1 ES6 class declarations and expressions are not yet implemented
+compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: exception: java.lang.RuntimeException: misc.Function-toString.class-explicit-constructor.js#11:9<eval>:1:13 ES6 class declarations and expressions are not yet implemented; (/* before */class /* a */ A...
+compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: exception: java.lang.RuntimeException: misc.Function-toString.class-implicit-constructor.js#11:9<eval>:1:1 ES6 class declarations and expressions are not yet implemented; (class A {}); ^
 compat-table/es2019/misc.Function-toString.computed-names.js: OK
 compat-table/es2019/misc.Function-toString.native-code.js: OK
 compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: misc.Function-toString.unicode-escapes.js#11:9<eval>:1:31 Invalid hex digit
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: misc.JSON-superset.line-separator.js#9:9<eval>:1:1 Missing close quote
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: misc.JSON-superset.paragraph-separator.js#9:9<eval>:1:1 Missing close quote
-compat-table/es2019/misc.optional-catch-binding.await.js: failed: exit code 101
-compat-table/es2019/misc.optional-catch-binding.js: failed: 15:2 Invalid return statement
-compat-table/es2019/misc.optional-catch-binding.yield.js: failed: 20:2 Invalid return statement
-compat-table/es2020/BigInt64Array.js: failed: exit code 101
+compat-table/es2019/misc.optional-catch-binding.await.js: misc.optional-catch-binding.await.js:44:9 Expected ) but found function; (async function () {; ^; misc.optional-catch-binding.await.js:46:12 Expected ; but found Promise; await Promise.reject();; ^; m...
+compat-table/es2019/misc.optional-catch-binding.js: misc.optional-catch-binding.js:12:8 Expected ( but found {; catch {; ^; misc.optional-catch-binding.js:15:2 Invalid return statement; return false;; ^; misc.optional-catch-binding.js:16:0 Expected eof...
+compat-table/es2019/misc.optional-catch-binding.yield.js: misc.optional-catch-binding.yield.js:13:10 Expected ( but found {; catch {; ^; misc.optional-catch-binding.yield.js:20:2 Invalid return statement; return it.throw().value;; ^; misc.optional-catch-bind...
+compat-table/es2020/BigInt64Array.js: BigInt64Array.js:12:30 Missing space after numeric literal; view[0] = 0x8000000000000000n;; ^
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: "BigInt" is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: "BigInt" is not defined
-compat-table/es2020/BigInt.constructor.js: failed: exit code 101
-compat-table/es2020/BigInt.js: failed: exit code 101
-compat-table/es2020/BigUint64Array.js: failed: exit code 101
-compat-table/es2020/DataView.prototype.getBigInt64.js: failed: exit code 101
-compat-table/es2020/DataView.prototype.getBigUint64.js: failed: exit code 101
+compat-table/es2020/BigInt.constructor.js: BigInt.constructor.js:10:26 Missing space after numeric literal; return BigInt("3") === 3n;; ^
+compat-table/es2020/BigInt.js: BigInt.js:10:11 Missing space after numeric literal; return (1n + 2n) === 3n;; ^
+compat-table/es2020/BigUint64Array.js: BigUint64Array.js:12:31 Missing space after numeric literal; view[0] = 0x10000000000000000n;; ^
+compat-table/es2020/DataView.prototype.getBigInt64.js: DataView.prototype.getBigInt64.js:12:23 Missing space after numeric literal; view.setBigInt64(0, 1n);; ^
+compat-table/es2020/DataView.prototype.getBigUint64.js: DataView.prototype.getBigUint64.js:12:24 Missing space after numeric literal; view.setBigUint64(0, 1n);; ^
 compat-table/es2020/Promise.allSettled.js: ReferenceError: "Promise" is not defined
 compat-table/es2020/String.prototype.matchAll.js: TypeError: "11a2bb".matchAll is not a function
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
 compat-table/es2020/globalThis.descriptor.js: failed
 compat-table/es2020/globalThis.js: failed
-compat-table/es2020/nullish-coalescing.js: failed: exit code 101
-compat-table/es2020/optional-chaining.bracket.js: failed: exit code 101
-compat-table/es2020/optional-chaining.function-call.js: failed: exit code 101
-compat-table/es2020/optional-chaining.method-call.js: failed: exit code 101
-compat-table/es2020/optional-chaining.property.js: failed: exit code 101
-compat-table/es2020/optional-chaining.spread-params.js: failed: exit code 101
+compat-table/es2020/nullish-coalescing.js: nullish-coalescing.js:10:16 Expected an operand but found ?; return (null ?? 42) === 42 &&; ^; nullish-coalescing.js:11:16 Expected an operand but found ?; (undefined ?? 42) === 42 &&; ^; nullish-coal...
+compat-table/es2020/optional-chaining.bracket.js: optional-chaining.bracket.js:12:13 Expected an operand but found .; return foo?.['baz'] === 42 && bar?.['baz'] === void undefined;; ^
+compat-table/es2020/optional-chaining.function-call.js: optional-chaining.function-call.js:14:17 Expected an operand but found .; return foo.baz?.() === 42 && bar.baz?.() === void undefined && baz?.() === 42 && n?.() === void undefined;; ^
+compat-table/es2020/optional-chaining.method-call.js: optional-chaining.method-call.js:12:13 Expected an operand but found .; return foo?.baz() === 42 && bar?.baz() === void undefined;; ^
+compat-table/es2020/optional-chaining.property.js: optional-chaining.property.js:12:13 Expected an operand but found .; return foo?.baz === 42 && bar?.baz === void undefined;; ^
+compat-table/es2020/optional-chaining.spread-params.js: optional-chaining.spread-params.js:14:12 Expected an operand but found .; return fn?.(...[], 1) === void undefined && fn?.(...[], ...[]) === void undefined && o.method?.(...[], 1) === void undefined &...
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined
 compat-table/es2021/Promise.any.AggregateError.js: ReferenceError: "Promise" is not defined
 compat-table/es2021/Promise.any.fulfillment.js: ReferenceError: "Promise" is not defined
-compat-table/es2021/String.prototype.replaceAll.js: failed: exception: java.util.regex.PatternSyntaxException: Dangling meta character '+' near index 0
+compat-table/es2021/String.prototype.replaceAll.js: exception: java.util.regex.PatternSyntaxException: Dangling meta character '+' near index 0; +; ^
 compat-table/es2021/WeakRef.js: ReferenceError: "WeakRef" is not defined
-compat-table/es2021/logical-assignment.and.js: failed: exit code 101
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed: exit code 101
-compat-table/es2021/logical-assignment.and.short-circuit.js: failed: exit code 101
-compat-table/es2021/logical-assignment.nullish.js: failed: exit code 101
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed: exit code 101
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: failed: exit code 101
-compat-table/es2021/logical-assignment.or.js: failed: exit code 101
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed: exit code 101
-compat-table/es2021/logical-assignment.or.short-circuit.js: failed: exit code 101
-compat-table/es2021/numeric-separators.js: failed: exit code 101
+compat-table/es2021/logical-assignment.and.js: logical-assignment.and.js:13:6 Expected an operand but found =; a &&= 2;; ^; logical-assignment.and.js:14:6 Expected an operand but found =; b &&= 2;; ^; logical-assignment.and.js:15:6 Expected an ope...
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: logical-assignment.and.setter-not-invoked.js:11:10 Expected an operand but found =; obj.x &&= 2;; ^
+compat-table/es2021/logical-assignment.and.short-circuit.js: logical-assignment.and.short-circuit.js:11:6 Expected an operand but found =; a &&= ++i;; ^
+compat-table/es2021/logical-assignment.nullish.js: logical-assignment.nullish.js:13:5 Expected an operand but found ?; a ??= 2;; ^; logical-assignment.nullish.js:14:5 Expected an operand but found ?; b ??= 2;; ^; logical-assignment.nullish.js:15:5 Exp...
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: logical-assignment.nullish.setter-not-invoked.js:11:9 Expected an operand but found ?; obj.x ??= 2;; ^
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: logical-assignment.nullish.short-circuit.js:11:5 Expected an operand but found ?; a ??= ++i;; ^
+compat-table/es2021/logical-assignment.or.js: logical-assignment.or.js:13:6 Expected an operand but found =; a ||= 2;; ^; logical-assignment.or.js:14:6 Expected an operand but found =; b ||= 2;; ^; logical-assignment.or.js:15:6 Expected an operan...
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: logical-assignment.or.setter-not-invoked.js:11:10 Expected an operand but found =; obj.x ||= 2;; ^
+compat-table/es2021/logical-assignment.or.short-circuit.js: logical-assignment.or.short-circuit.js:11:6 Expected an operand but found =; a ||= ++i;; ^
+compat-table/es2021/numeric-separators.js: numeric-separators.js:9:10 Missing space after numeric literal; return 1_000_000.000_001 === 1000000.000001 &&; ^
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: "AggregateError" is not defined
 compat-table/es2022/Error.cause.AggregateError.js: ReferenceError: "AggregateError" is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1369,23 +1369,23 @@ compat-table/es2022/Object.hasOwn.js: TypeError: Object.hasOwn is not a function
 compat-table/es2022/at-method.Array.js: TypeError: arr.at is not a function
 compat-table/es2022/at-method.String.js: TypeError: str.at is not a function
 compat-table/es2022/at-method.TypedArray.js: TypeError: arr.at is not a function
-compat-table/es2022/class-fields.computed-instance.js: failed: 12:2 Invalid return statement
-compat-table/es2022/class-fields.computed-static.js: failed: 12:2 Invalid return statement
-compat-table/es2022/class-fields.instance.parent-scope.js: failed: 15:4 Invalid return statement
-compat-table/es2022/class-fields.private-instance.initializers.js: failed: 10:4 Expected ident but found error
-compat-table/es2022/class-fields.private-instance.js: failed: 11:4 Expected ident but found error
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: 10:4 Expected ident but found error
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: failed: 10:4 Expected ident but found error
-compat-table/es2022/class-fields.private-static.js: failed: 11:11 Expected ident but found error
-compat-table/es2022/class-fields.public-instance.js: failed: 13:2 Invalid return statement
-compat-table/es2022/class-fields.public-static.js: failed: 13:2 Invalid return statement
-compat-table/es2022/class-fields.static.define.js: failed: exit code 101
-compat-table/es2022/class-methods.private-accessor.js: failed: 11:8 Expected ident but found error
-compat-table/es2022/class-methods.private-instance.js: failed: 10:4 Expected ident but found error
-compat-table/es2022/class-methods.private-static-accessor.js: failed: 11:15 Expected ident but found error
-compat-table/es2022/class-methods.private-static.js: failed: 10:11 Expected ident but found error
-compat-table/es2022/class-static-init-blocks.js: failed: exit code 101
-compat-table/es2022/ergonomic-brand-checks.js: failed: 10:4 Expected ident but found error
+compat-table/es2022/class-fields.computed-instance.js: class-fields.computed-instance.js:10:10 Expected ( but found =; ['x'] = 42;; ^; class-fields.computed-instance.js:12:2 Invalid return statement; return new C().x === 42;; ^; class-fields.computed-inst...
+compat-table/es2022/class-fields.computed-static.js: class-fields.computed-static.js:10:17 Expected ( but found =; static ['x'] = 42;; ^; class-fields.computed-static.js:12:2 Invalid return statement; return C.x === 42;; ^; class-fields.computed-static....
+compat-table/es2022/class-fields.instance.parent-scope.js: class-fields.instance.parent-scope.js:13:8 Expected ( but found =; c = a[(0)];; ^; class-fields.instance.parent-scope.js:15:4 Invalid return statement; return new MyClass().c === a[0];; ^; class-field...
+compat-table/es2022/class-fields.private-instance.initializers.js: class-fields.private-instance.initializers.js:10:4 Expected ident but found error; #x = 42;; ^; class-fields.private-instance.initializers.js:11:8 Expected ; but found {; x() {; ^; class-fields.privat...
+compat-table/es2022/class-fields.private-instance.js: class-fields.private-instance.js:11:4 Expected ident but found error; #x;; ^; class-fields.private-instance.js:12:19 Expected ; but found {; constructor(x) {; ^; class-fields.private-instance.js:13:11...
+compat-table/es2022/class-fields.private-instance.optional-access.js: class-fields.private-instance.optional-access.js:10:4 Expected ident but found error; #x = 42;; ^; class-fields.private-instance.optional-access.js:11:16 Expected ; but found {; x(o = this) {; ^; clas...
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: class-fields.private-instance.optional-deep-access.js:10:4 Expected ident but found error; #x = 42;; ^; class-fields.private-instance.optional-deep-access.js:11:23 Expected ; but found {; x(o = { p: t...
+compat-table/es2022/class-fields.private-static.js: class-fields.private-static.js:11:11 Expected ident but found error; static #x = 42;; ^; class-fields.private-static.js:12:8 Expected ; but found {; x() {; ^; class-fields.private-static.js:13:15 Expe...
+compat-table/es2022/class-fields.public-instance.js: class-fields.public-instance.js:11:6 Expected ( but found =; x = 'x';; ^; class-fields.public-instance.js:13:2 Invalid return statement; return new C().x === 'x';; ^; class-fields.public-instance.js:1...
+compat-table/es2022/class-fields.public-static.js: class-fields.public-static.js:11:13 Expected ( but found =; static x = 'x';; ^; class-fields.public-static.js:13:2 Invalid return statement; return C.x === 'x';; ^; class-fields.public-static.js:14:0 ...
+compat-table/es2022/class-fields.static.define.js: class-fields.static.define.js:9:32 Expected ( but found =; return (class X { static name = "name"; }).name === 'name';; ^; class-fields.static.define.js:9:43 Expected ; but found ); return (class X { ...
+compat-table/es2022/class-methods.private-accessor.js: class-methods.private-accessor.js:11:8 Expected ident but found error; get #x() { return 42; }; ^; class-methods.private-accessor.js:12:8 Expected ; but found error; set #x(x) { y = x; }; ^; class-met...
+compat-table/es2022/class-methods.private-instance.js: class-methods.private-instance.js:10:4 Expected ident but found error; #x() { return 42; }; ^; class-methods.private-instance.js:11:8 Expected ; but found {; x() {; ^; class-methods.private-instance.j...
+compat-table/es2022/class-methods.private-static-accessor.js: class-methods.private-static-accessor.js:11:15 Expected ident but found error; static get #x() { return 42; }; ^; class-methods.private-static-accessor.js:12:11 Expected ; but found set; static set #x...
+compat-table/es2022/class-methods.private-static.js: class-methods.private-static.js:10:11 Expected ident but found error; static #x() { return 42; }; ^; class-methods.private-static.js:11:8 Expected ; but found {; x() {; ^; class-methods.private-static...
+compat-table/es2022/class-static-init-blocks.js: class-static-init-blocks.js:12:11 Expected ident but found {; static { ok = true; }; ^; class-static-init-blocks.js:13:2 Expected eof but found }; }; ^
+compat-table/es2022/ergonomic-brand-checks.js: ergonomic-brand-checks.js:10:4 Expected ident but found error; #x;; ^; ergonomic-brand-checks.js:11:11 Expected ; but found check; static check(obj) {; ^; ergonomic-brand-checks.js:12:13 Expected an o...
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: Unsupported RegExp flag: d
 compat-table/es2022/regex.flags.d.shows-in-flags.js: ReferenceError: "Proxy" is not defined
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: arr.findLastIndex is not a function
@@ -1405,13 +1405,13 @@ compat-table/es2024/Map.groupBy.js: TypeError: Map.groupBy is not a function
 compat-table/es2024/Object.groupBy.js: TypeError: Object.groupBy is not a function
 compat-table/es2024/Promise.withResolvers.js: ReferenceError: "Promise" is not defined
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Unsupported RegExp flag: v
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: 9:39 Unsupported RegExp flag: v
-compat-table/es2024/regex.flags.v.set-notations.js: failed: 9:43 Unsupported RegExp flag: v
+compat-table/es2024/regex.flags.v.properties-of-strings.js: regex.flags.v.properties-of-strings.js:9:39 Unsupported RegExp flag: v; return /^\p{Emoji_Keycap_Sequence}$/v.test("*\uFE0F\u20E3"); ^; regex.flags.v.properties-of-strings.js:10:2 Expected an operand ...
+compat-table/es2024/regex.flags.v.set-notations.js: regex.flags.v.set-notations.js:9:43 Unsupported RegExp flag: v; return /[\p{ASCII}&&\p{Decimal_Number}]/v.test("0"); ^; regex.flags.v.set-notations.js:10:2 Expected an operand but found &&; && /[\p{An...
 compat-table/es2024/regex.flags.v.shows-in-flags.js: ReferenceError: "Proxy" is not defined
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: 9:27 Unsupported RegExp flag: v
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: 9:27 Unsupported RegExp flag: v
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: 9:27 Unsupported RegExp flag: v
-compat-table/es2025/Iterator.extends.js: failed: 10:2 ES6 class declarations and expressions are not yet implemented
+compat-table/es2024/regex.flags.v.unicode-15.1.js: regex.flags.v.unicode-15.1.js:9:27 Unsupported RegExp flag: v; return /^\p{RGI_Emoji}$/v.test("🐦‍🔥");; ^
+compat-table/es2024/regex.flags.v.unicode-16.0.js: regex.flags.v.unicode-16.0.js:9:27 Unsupported RegExp flag: v; return /^\p{RGI_Emoji}$/v.test("🇨🇶");; ^
+compat-table/es2024/regex.flags.v.unicode-17.0.js: regex.flags.v.unicode-17.0.js:9:27 Unsupported RegExp flag: v; return /^\p{RGI_Emoji}$/v.test("🧑🏽‍🩰");; ^
+compat-table/es2025/Iterator.extends.js: ES6 class declarations and expressions are not yet implemented
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: "Iterator" is not defined
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: "Iterator" is not defined
 compat-table/es2025/Iterator.instanceof.js: ReferenceError: "Iterator" is not defined
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: new Set([1, 2, 3]).i
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: new Set([5, 4, 3, 2, 1]).isSupersetOf is not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: new Set([1, 2]).symmetricDifference is not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: new Set([1, 2]).union is not a function
-compat-table/es2025/regex.duplicate-named-groups.js: failed: exit code 101
-compat-table/es2025/regex.pattern-modifiers.i.js: failed: exit code 101
-compat-table/es2025/regex.pattern-modifiers.m.js: failed: exit code 101
-compat-table/es2025/regex.pattern-modifiers.s.js: failed: 9:27 Unsupported RegExp flag: s
+compat-table/es2025/regex.duplicate-named-groups.js: regex.duplicate-named-groups.js:9:64 Named capturing group <year> is already defined near index 43; (?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4}); ^; return /(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2...
+compat-table/es2025/regex.pattern-modifiers.i.js: regex.pattern-modifiers.i.js:9:37 ^[a-z](?-i:[a-z])$ near index 7; ^[a-z]; const regex = /^[a-z](?-i:[a-z])$/i;; ^
+compat-table/es2025/regex.pattern-modifiers.m.js: regex.pattern-modifiers.m.js:9:28 ^a|(?m:^b) near index 4; ^a|; const regex = /^a|(?m:^b)/;; ^
+compat-table/es2025/regex.pattern-modifiers.s.js: regex.pattern-modifiers.s.js:9:27 Unsupported RegExp flag: s; const regex = /.(?-s:.)/s;; ^
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1469,44 +1469,44 @@ compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Array.isTemplateObject is not a function
-compat-table/next/AsyncDisposableStack.js: failed: exit code 101
-compat-table/next/AsyncIterator.extends.js: failed: 9:2 ES6 class declarations and expressions are not yet implemented
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: 52:69 Invalid return statement
-compat-table/next/AsyncIterator.from.iterable.js: failed: 52:69 Invalid return statement
-compat-table/next/AsyncIterator.from.iterator.js: failed: 52:69 Invalid return statement
-compat-table/next/AsyncIterator.instanceof.js: failed: exit code 101
+compat-table/next/AsyncDisposableStack.js: AsyncDisposableStack.js:47:43 Expected : but found [; var resource3 = { disposed: false, async [Symbol.asyncDispose]() { this.disposed = true } };; ^; AsyncDisposableStack.js:48:46 Expected , but foun...
+compat-table/next/AsyncIterator.extends.js: ES6 class declarations and expressions are not yet implemented
+compat-table/next/AsyncIterator.from.async-iterable.js: AsyncIterator.from.async-iterable.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.from.async-iterable.js:46:8 Expected ( but found await; for await (const i...
+compat-table/next/AsyncIterator.from.iterable.js: AsyncIterator.from.iterable.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.from.iterable.js:46:8 Expected ( but found await; for await (const it of iterato...
+compat-table/next/AsyncIterator.from.iterator.js: AsyncIterator.from.iterator.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.from.iterator.js:46:8 Expected ( but found await; for await (const it of iterato...
+compat-table/next/AsyncIterator.instanceof.js: AsyncIterator.instanceof.js:9:16 Expected ) but found function; return (async function*() {})() instanceof AsyncIterator;; ^; AsyncIterator.instanceof.js:9:30 Expected ; but found ); return (async fun...
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.every.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.filter.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.find.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.map.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.some.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.take.js: failed: exit code 101
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: exit code 101
+compat-table/next/AsyncIterator.prototype.drop.js: AsyncIterator.prototype.drop.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.prototype.drop.js:46:8 Expected ( but found await; for await (const it of itera...
+compat-table/next/AsyncIterator.prototype.every.js: AsyncIterator.prototype.every.js:44:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().every(it => typeof it === 'number').then(it => {; ^; AsyncIterator.prototype.every.js:4...
+compat-table/next/AsyncIterator.prototype.filter.js: AsyncIterator.prototype.filter.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.prototype.filter.js:46:8 Expected ( but found await; for await (const it of i...
+compat-table/next/AsyncIterator.prototype.find.js: AsyncIterator.prototype.find.js:44:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().find(it => it % 2).then(it => {; ^; AsyncIterator.prototype.find.js:44:42 Expected ; but...
+compat-table/next/AsyncIterator.prototype.flatMap.js: AsyncIterator.prototype.flatMap.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.prototype.flatMap.js:46:8 Expected ( but found await; for await (const it of...
+compat-table/next/AsyncIterator.prototype.forEach.js: AsyncIterator.prototype.forEach.js:45:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().forEach(it => result += it).then(() => {; ^; AsyncIterator.prototype.forEach.js:45:42...
+compat-table/next/AsyncIterator.prototype.map.js: AsyncIterator.prototype.map.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.prototype.map.js:46:8 Expected ( but found await; for await (const it of iterato...
+compat-table/next/AsyncIterator.prototype.reduce.js: AsyncIterator.prototype.reduce.js:44:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().reduce((a, b) => a + b).then(it => {; ^; AsyncIterator.prototype.reduce.js:44:42 Expec...
+compat-table/next/AsyncIterator.prototype.some.js: AsyncIterator.prototype.some.js:44:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().some(it => typeof it === 'number').then(it => {; ^; AsyncIterator.prototype.some.js:44:4...
+compat-table/next/AsyncIterator.prototype.take.js: AsyncIterator.prototype.take.js:44:8 Expected ; but found function; async function toArray(iterator) {; ^; AsyncIterator.prototype.take.js:46:8 Expected ( but found await; for await (const it of itera...
+compat-table/next/AsyncIterator.prototype.toArray.js: AsyncIterator.prototype.toArray.js:44:9 Expected ) but found function; (async function*() { yield * [1, 2, 3] })().toArray().then(it => {; ^; AsyncIterator.prototype.toArray.js:44:42 Expected ; but fo...
 compat-table/next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined
 compat-table/next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: 13:10 Expected ; but found _1
+compat-table/next/SuppressedError.js: SuppressedError.js:13:10 Expected ; but found _1; using _1 = { [Symbol.dispose]() { throw err1 } },; ^; SuppressedError.js:13:52 Expected an operand but found ,; using _1 = { [Symbol.dispose]() { thro...
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
-compat-table/next/Uint8Array.setFromBase64.js: failed: 12:6 ES6 destructuring is not yet implemented
-compat-table/next/Uint8Array.setFromHex.js: failed: 12:6 ES6 destructuring is not yet implemented
+compat-table/next/Uint8Array.setFromBase64.js: ES6 destructuring is not yet implemented
+compat-table/next/Uint8Array.setFromHex.js: ES6 destructuring is not yet implemented
 compat-table/next/Uint8Array.toBase64.js: TypeError: arr.toBase64 is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: arr.toHex is not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
-compat-table/next/await-using.for-of.js: failed: exit code 101
-compat-table/next/await-using.js: failed: exit code 101
-compat-table/next/class-decorators.js: failed: 10:4 Expected ident but found error
-compat-table/next/function.sent.js: failed: exit code 101
-compat-table/next/throw-expr.arrow.js: failed: exit code 101
-compat-table/next/throw-expr.conditional.js: failed: 13:4 Invalid return statement
-compat-table/next/throw-expr.logical.js: failed: 14:4 Invalid return statement
-compat-table/next/throw-expr.param-init.js: failed: 13:21 Invalid return statement
-compat-table/next/using.for-of.js: failed: 24:2 Invalid return statement
-compat-table/next/using.js: failed: 18:2 Invalid return statement
+compat-table/next/await-using.for-of.js: await-using.for-of.js:46:10 Expected : but found [; async [Symbol.asyncDispose]() {; ^; await-using.for-of.js:49:2 Expected eof but found }; };; ^
+compat-table/next/await-using.js: await-using.js:44:9 Expected ) but found function; (async function () {; ^; await-using.js:47:12 Expected : but found [; async [Symbol.asyncDispose]() {; ^; await-using.js:50:4 Expected eof but found ...
+compat-table/next/class-decorators.js: class-decorators.js:10:4 Expected ident but found error; @nonconf; ^; class-decorators.js:11:8 Expected ; but found B; get B() {}; ^; class-decorators.js:17:2 Invalid return statement; return Object.g...
+compat-table/next/function.sent.js: function.sent.js:11:21 Expected ( but found .; result = function.sent;; ^
+compat-table/next/throw-expr.arrow.js: throw-expr.arrow.js:9:17 Expected an operand but found throw; var fn = () => throw 42;; ^
+compat-table/next/throw-expr.conditional.js: throw-expr.conditional.js:9:14 Expected an operand but found throw; true ? 42 : throw 21;; ^; throw-expr.conditional.js:11:17 Expected an operand but found throw; false ? 42 : throw 21;; ^; throw-expr...
+compat-table/next/throw-expr.logical.js: throw-expr.logical.js:11:14 Expected an operand but found throw; a = 19 || throw 77;; ^; throw-expr.logical.js:12:14 Expected an operand but found throw; b = 88 && throw 23;; ^; throw-expr.logical.js:...
+compat-table/next/throw-expr.param-init.js: throw-expr.param-init.js:9:21 Expected an operand but found throw; function fn (arg = throw 42) {; ^; throw-expr.param-init.js:13:21 Invalid return statement; if (fn(21) !== 21) return false;; ^; thro...
+compat-table/next/using.for-of.js: using.for-of.js:22:15 Expected ; but found _; for (using _ of [resource1, resource2]);; ^; using.for-of.js:24:2 Invalid return statement; return resource1.disposed && resource2.disposed;; ^; using.for...
+compat-table/next/using.js: using.js:16:10 Expected ; but found _; using _ = resource;; ^; using.js:18:2 Invalid return statement; return resource.disposed; ^; using.js:19:0 Expected eof but found }; }; ^

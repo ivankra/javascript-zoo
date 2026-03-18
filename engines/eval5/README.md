@@ -23,10 +23,10 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: function instance constructor failed
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../../conformance/es1/asi.js">asi.js</a>: TypeError: Cannot create property '0' on number '1'
-<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
+<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 </pre></li>
 <li>ES3: 99%<pre>
-<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: constructor failed; ReferenceError: EvalError is not defined [14:4] at new ThrowReferenceError (/dist/eval5-dist/eval5.js:5262:43) at main.Interpreter.Interpreter.createError (/dist/eval5-dist/eval5.js:5719:17) at main.Interpreter.Interpreter.createInternalThrowError (/dist/eval5-dist/eval5.js:5725:
+<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: ReferenceError: EvalError is not defined [14:4]
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: wrong exception for calling number; no exception for Function.prototype.toString on non-function
 </pre></li>
 <li>ES5: 72%<pre>

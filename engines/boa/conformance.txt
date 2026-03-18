@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"f7b0102befced7d63cf428b861656734be3e3741d380148e0bf1659676930fb3","binary_size":28189056,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"b165d169c63a5b2bef8f3622a923d90a3c004f29","revision_date":"2026-03-03","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
+Metadata: {"arch":"arm64","binary_sha256":"e97f14e38dcb14c9abdc1bea741d2df475d072cd41e9567c07b50ebb38a90b75","binary_size":26877704,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"baaadfeeaf4a64f34e82cbbb9fee3ed4013495c0","revision_date":"2026-03-16","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -50,7 +50,7 @@ es1/Date.prototype.setUTCMilliseconds.js: OK
 es1/Date.prototype.setUTCMinutes.js: OK
 es1/Date.prototype.setUTCMonth.js: OK
 es1/Date.prototype.setUTCSeconds.js: OK
-es1/Date.prototype.toLocaleString.js: failed: Function Unimplemented
+es1/Date.prototype.toLocaleString.js: Function Unimplemented
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: failed: Function Unimplemented
-es3/Date.prototype.toLocaleString.js: failed: Function Unimplemented
-es3/Date.prototype.toLocaleTimeString.js: failed: Function Unimplemented
+es3/Date.prototype.toLocaleDateString.js: Function Unimplemented
+es3/Date.prototype.toLocaleString.js: Function Unimplemented
+es3/Date.prototype.toLocaleTimeString.js: Function Unimplemented
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
@@ -228,7 +228,7 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: failed: RuntimeLimitError: reached the maximum number of recursive calls on this execution
-compat-table/es6/tail-calls.mutual.js: failed: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+compat-table/es6/tail-calls.direct.js: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+compat-table/es6/tail-calls.mutual.js: RuntimeLimitError: reached the maximum number of recursive calls on this execution
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1265,7 +1265,7 @@ compat-table/es2017/async.prototype-chain.js: OK
 compat-table/es2017/async.return.js: OK
 compat-table/es2017/async.throw.js: OK
 compat-table/es2017/misc.arguments-caller-removed.js: OK
-compat-table/es2017/regex.flags.u.case-folding.js: failed
+compat-table/es2017/regex.flags.u.case-folding.js: OK
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
@@ -1288,8 +1288,8 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: OK
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1409,13 +1409,13 @@ compat-table/es2024/regex.flags.v.properties-of-strings.js: OK
 compat-table/es2024/regex.flags.v.set-notations.js: OK
 compat-table/es2024/regex.flags.v.shows-in-flags.js: OK
 compat-table/es2024/regex.flags.v.unicode-15.1.js: OK
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed
-compat-table/es2025/Iterator.extends.js: ReferenceError: Iterator is not defined
-compat-table/es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
-compat-table/es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
-compat-table/es2025/Iterator.instanceof.js: ReferenceError: Iterator is not defined
-compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator is not defined
+compat-table/es2024/regex.flags.v.unicode-16.0.js: OK
+compat-table/es2024/regex.flags.v.unicode-17.0.js: OK
+compat-table/es2025/Iterator.extends.js: OK
+compat-table/es2025/Iterator.from.iterable.js: OK
+compat-table/es2025/Iterator.from.iterator.js: OK
+compat-table/es2025/Iterator.instanceof.js: failed
+compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: OK
 compat-table/es2025/Iterator.prototype.drop.js: TypeError: not a callable function
 compat-table/es2025/Iterator.prototype.every.js: TypeError: not a callable function
 compat-table/es2025/Iterator.prototype.filter.js: TypeError: not a callable function
@@ -1436,7 +1436,7 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: OK
 compat-table/es2025/Set.prototype.isSupersetOf.js: OK
 compat-table/es2025/Set.prototype.symmetricDifference.js: OK
 compat-table/es2025/Set.prototype.union.js: OK
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10
+compat-table/es2025/regex.duplicate-named-groups.js: OK
 compat-table/es2025/regex.pattern-modifiers.i.js: OK
 compat-table/es2025/regex.pattern-modifiers.m.js: OK
 compat-table/es2025/regex.pattern-modifiers.s.js: OK
@@ -1455,7 +1455,7 @@ compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: OK
 compat-table/intl/Intl.DateTimeFormat.js: OK
 compat-table/intl/Intl.DateTimeFormat.new-instances.js: OK
 compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: OK
-compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: not a callable function
+compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: OK
 compat-table/intl/Intl.DateTimeFormat.valid-tags.js: OK
 compat-table/intl/Intl.DateTimeFormat.without-new.js: OK
 compat-table/intl/Intl.NumberFormat.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: not a callable function
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: expected token ';', got '_1' in expression statement at line 13, col 11
+compat-table/next/SuppressedError.js: ReferenceError: SuppressedError is not defined
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a callable function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a callable function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a callable function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: not a callable function
 compat-table/next/Uint8Array.toBase64.js: TypeError: not a callable function
 compat-table/next/Uint8Array.toHex.js: TypeError: not a callable function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: not a callable function
-compat-table/next/await-using.for-of.js: SyntaxError: expected token ';', got '_' in for statement at line 57, col 22
-compat-table/next/await-using.js: SyntaxError: expected token ';', got '_' in expression statement at line 52, col 19
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token 'using', primary expression at line 57, col 16
+compat-table/next/await-using.js: SyntaxError: unexpected token 'using', primary expression at line 52, col 13
 compat-table/next/class-decorators.js: SyntaxError: unexpected '@' at line 10, column 5 at line 10, col 5
 compat-table/next/function.sent.js: SyntaxError: expected token '(', got '.' in function expression at line 11, col 22
 compat-table/next/throw-expr.arrow.js: SyntaxError: unexpected token 'throw', primary expression at line 9, col 18
 compat-table/next/throw-expr.conditional.js: SyntaxError: unexpected token 'throw', primary expression at line 9, col 15
 compat-table/next/throw-expr.logical.js: SyntaxError: unexpected token 'throw', primary expression at line 11, col 15
 compat-table/next/throw-expr.param-init.js: SyntaxError: unexpected token 'throw', primary expression at line 9, col 22
-compat-table/next/using.for-of.js: SyntaxError: expected token ';', got '_' in for statement at line 22, col 16
-compat-table/next/using.js: SyntaxError: expected token ';', got '_' in expression statement at line 16, col 11
+compat-table/next/using.for-of.js: SyntaxError: unexpected token 'using', primary expression at line 22, col 10
+compat-table/next/using.js: failed

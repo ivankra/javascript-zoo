@@ -25,29 +25,25 @@ codegen.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 98%</summary><ul>
+<details><summary>ES1-ES5: 99%</summary><ul>
 <li>ES1: 99%<pre>
-<a href="../../conformance/es1/with.js">with.js</a>: with.js:15:1: error: with statement is not supported with.js:38:1: error: with statement is not supported Emitted 2 errors. exiting.
+<a href="../../conformance/es1/with.js">with.js</a>: SyntaxError: with statement is not supported
 </pre></li>
 <li>ES3: 99%<pre>
 <a href="../../conformance/es3/String.prototype.toLocaleLowerCase.js">String.prototype.toLocaleLowerCase.js</a>: 'HELLO'.toLocaleLowerCase() != 'hello' (got: 'lowered')
 <a href="../../conformance/es3/String.prototype.toLocaleUpperCase.js">String.prototype.toLocaleUpperCase.js</a>: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'uppered')
 </pre></li>
-<li>ES5: 92%<pre>
-<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: failed: non-enumerable did not shadow enumerable
-<a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: strict.eval-cannot-create-bindings.js:18:5: warning: Direct call to eval(), but lexical scope is not supported. strict.eval-cannot-create-bindings.js:19:5: warning: the variable "myTestVar" was not declared in anonymous function
-<a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: strict.no-assignment-to-non-writable.js:35:21: error: invalid assignment left-hand side Emitted 1 errors. exiting.
-<a href="../../conformance/es5/strict.this-primitive-not-coerced-in-accessors.js">strict.this-primitive-not-coerced-in-accessors.js</a>: console.log("es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor"); OK
-<a href="../../conformance/es5/strict.this-primitive-not-coerced.js">strict.this-primitive-not-coerced.js</a>: console.log("es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object"); OK
-<a href="../../conformance/es5/strict.this-undefined-in-function.js">strict.this-undefined-in-function.js</a>: console.log("es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined"); OK
+<li>ES5: 96%<pre>
+<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: non-enumerable did not shadow enumerable
+<a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: strict.eval-cannot-create-bindings.js:18:5: warning: Direct call to eval(), but lexical scope is not supported.; eval('var myTestVar;');; ^~~~; strict.eval-cannot-create-bindings.js:19:5: warning: the...
+<a href="../../conformance/es5/strict.no-assignment-to-non-writable.js">strict.no-assignment-to-non-writable.js</a>: SyntaxError: invalid assignment left-hand side
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 90%, ES2016+ 81%, Next 6%, Intl 96%</summary><ul>
+<details><summary>compat-table: ES6 90%, ES2016+ 84%, Next 6%, Intl 96%</summary><ul>
 <li>ES6: 90%<pre>
 <a href="../../conformance/compat-table/es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
-<a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../../conformance/compat-table/es6/Map.Symbol.species.js">Map.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Promise.Symbol.species.js">Promise.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Promise.prototype-not-instance.js">Promise.prototype-not-instance.js</a>: failed
@@ -59,13 +55,14 @@ codegen.
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: annex-b.function.labeled.js:12:10: error: Function declaration not allowed as body of labeled statement Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: annex-b.html-comments.js:9:5: error: invalid expression Emitted 1 errors. exiting.
+<a href="../../conformance/compat-table/es6/annex-b.function.labeled.js">annex-b.function.labeled.js</a>: SyntaxError: Function declaration not allowed as body of labeled statement
+<a href="../../conformance/compat-table/es6/annex-b.html-comments.js">annex-b.html-comments.js</a>: SyntaxError: invalid expression
 <a href="../../conformance/compat-table/es6/annex-b.regex.invalid-control-escapes.js">annex-b.regex.invalid-control-escapes.js</a>: failed
 <a href="../../conformance/compat-table/es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: failed
 <a href="../../conformance/compat-table/es6/const.for-in.js">const.for-in.js</a>: failed
 <a href="../../conformance/compat-table/es6/const.for-of.js">const.for-of.js</a>: failed
 <a href="../../conformance/compat-table/es6/const.strict.for-in.js">const.strict.for-in.js</a>: failed
+<a href="../../conformance/compat-table/es6/const.strict.for-of.js">const.strict.for-of.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 100%</li>
@@ -91,24 +88,21 @@ codegen.
 <a href="../../conformance/compat-table/es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 87%<pre>
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: async-iterators.generators.js:44:3: error: async generators are unsupported Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: regex.unicode-property-escapes.unicode-16.0.js:10:10: error: Invalid regular expression: Invalid property name Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: regex.unicode-property-escapes.unicode-17.0.js:10:10: error: Invalid regular expression: Invalid property name Emitted 1 errors. exiting.
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: SyntaxError: async generators are unsupported
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: SyntaxError: Invalid regular expression: Invalid property name
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid regular expression: Invalid property name
 </pre></li>
-<li>ES2019: 77%<pre>
+<li>ES2019: 81%<pre>
 <a href="../../conformance/compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js">Array.prototype.flat-flatMap.unscopables.js</a>: TypeError: Cannot read property 'flat' of undefined
-<a href="../../conformance/compat-table/es2019/Symbol.prototype.description.undefined.js">Symbol.prototype.description.undefined.js</a>: failed
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: SyntaxError: 2:1:')' expected at end of function parameter list
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: failed
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.arrows.js">misc.Function-toString.arrows.js</a>: misc.Function-toString.arrows.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: misc.Function-toString.class-explicit-constructor.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' ==...
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.class-implicit-constructor.js">misc.Function-toString.class-implicit-constructor.js</a>: misc.Function-toString.class-implicit-constructor.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(' + str + ')') + '' === str;; ^~~~
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: misc.Function-toString.computed-names.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('({ /\x2A before \x2A/' + str + '/\x2A after \x2A/ }.f)') + '' === str;...
+<a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: misc.Function-toString.unicode-escapes.js:11:10: warning: Direct call to eval(), but lexical scope is not supported.; return eval('(/\x2A before \x2A/' + str + '/\x2A after \x2A/)') + '' === str;; ^~~...
 </pre></li>
 <li>ES2020: 100%</li>
-<li>ES2021: 71%<pre>
-<a href="../../conformance/compat-table/es2021/FinalizationRegistry.js">FinalizationRegistry.js</a>: ReferenceError: Property 'FinalizationRegistry' doesn't exist
-</pre></li>
+<li>ES2021: 100%</li>
 <li>ES2022: 100%</li>
 <li>ES2023: 77%<pre>
 <a href="../../conformance/compat-table/es2023/Array.prototype.toSorted.js">Array.prototype.toSorted.js</a>: TypeError: undefined is not a function
@@ -116,14 +110,14 @@ codegen.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: TypeError: undefined is not a function
 </pre></li>
-<li>ES2024: 29%</li>
+<li>ES2024: 43%</li>
 <li>ES2025: 63%<pre>
 <a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: failed
 <a href="../../conformance/compat-table/es2025/RegExp.escape.js">RegExp.escape.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: regex.duplicate-named-groups.js:9:10: error: Invalid regular expression: Duplicate capture group name Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: regex.pattern-modifiers.i.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: regex.pattern-modifiers.m.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: regex.pattern-modifiers.s.js:9:17: error: Invalid regular expression: Quantifier has nothing to repeat Emitted 1 errors. exiting.
+<a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: Invalid regular expression: Duplicate capture group name
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: Invalid regular expression: Quantifier has nothing to repeat
 </pre></li>
 <li>Next: 6%</li>
 <li>Intl: 96%<pre>

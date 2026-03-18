@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"b4ea8a0e4962e3c25184a0de3a4819f573db3fddd7c8a161470bf2b55b03b939","binary_size":29201888,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"print","engine":"jsc","repository":"https://github.com/WebKit/WebKit.git","revision":"0622ba66c33b24a082fb6a4cf39609f24aeb3050","revision_date":"2026-03-03","version":"308531"}
+Metadata: {"arch":"arm64","binary_sha256":"ead7402cd590245d083a423fd5fe87cf0eac46d59bfa8f9c5162bec6aaa386c8","binary_size":29414888,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"print","engine":"jsc","repository":"https://github.com/WebKit/WebKit.git","revision":"e013e27a77145e63cfcc52fd23a525717759a35c","revision_date":"2026-03-16","version":"309333"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1469,7 +1469,7 @@ compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Array.isTemplateObject is not a function. (In 'Array.isTemplateObject([])', 'Array.isTemplateObject' is undefined)
-compat-table/next/AsyncDisposableStack.js: ReferenceError: Can't find variable: AsyncDisposableStack
+compat-table/next/AsyncDisposableStack.js: OK
 compat-table/next/AsyncIterator.extends.js: ReferenceError: Can't find variable: AsyncIterator
 compat-table/next/AsyncIterator.from.async-iterable.js: ReferenceError: Can't find variable: AsyncIterator
 compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: Can't find variable: AsyncIterator
@@ -1477,22 +1477,22 @@ compat-table/next/AsyncIterator.from.iterator.js: ReferenceError: Can't find var
 compat-table/next/AsyncIterator.instanceof.js: ReferenceError: Can't find variable: AsyncIterator
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: Can't find variable: AsyncIterator
 compat-table/next/AsyncIterator.prototype.drop.js: TypeError: async function*() { yield * [1, 2, 3] }().drop is not a function. (In 'async function*() { yield * [1, 2, 3] }().drop(1)', 'async function*() { yield * [1, 2, 3] }().drop' is undefined)
-compat-table/next/AsyncIterator.prototype.every.js: TypeError: (async function*() { yield * [1, 2, 3] })().every is not a function. (In '(async function*() { yield * [1, 2, 3] })().every(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })().every' is undefined)
-compat-table/next/AsyncIterator.prototype.filter.js: TypeError: async function*() { yield * [1, 2, 3] }().filter is not a function. (In 'async function*() { yield * [1, 2, 3] }().filter(it => it % 2)', 'async function*() { yield * [1, 2, 3] }().filter' is undefined)
-compat-table/next/AsyncIterator.prototype.find.js: TypeError: (async function*() { yield * [1, 2, 3] })().find is not a function. (In '(async function*() { yield * [1, 2, 3] })().find(it => it % 2)', '(async function*() { yield * [1, 2, 3] })().find' is undefined)
-compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: async function*() { yield * [1, 2, 3] }().flatMap is not a function. (In 'async function*() { yield * [1, 2, 3] }().flatMap(it => [it, 0])', 'async function*() { yield * [1, 2, 3] }().flatMap' is undefined)
-compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: (async function*() { yield * [1, 2, 3] })().forEach is not a function. (In '(async function*() { yield * [1, 2, 3] })().forEach(it => result += it)', '(async function*() { yield * [1, 2, 3] })().forEach' is undefined)
+compat-table/next/AsyncIterator.prototype.every.js: TypeError: (async function*() { yield * [1, 2, 3] })().every is not a function. (In '(async function*() { yield * [1, 2, 3] })().every(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })()...
+compat-table/next/AsyncIterator.prototype.filter.js: TypeError: async function*() { yield * [1, 2, 3] }().filter is not a function. (In 'async function*() { yield * [1, 2, 3] }().filter(it => it % 2)', 'async function*() { yield * [1, 2, 3] }().filter' is undefine...
+compat-table/next/AsyncIterator.prototype.find.js: TypeError: (async function*() { yield * [1, 2, 3] })().find is not a function. (In '(async function*() { yield * [1, 2, 3] })().find(it => it % 2)', '(async function*() { yield * [1, 2, 3] })().find' is undefine...
+compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: async function*() { yield * [1, 2, 3] }().flatMap is not a function. (In 'async function*() { yield * [1, 2, 3] }().flatMap(it => [it, 0])', 'async function*() { yield * [1, 2, 3] }().flatMap' is unde...
+compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: (async function*() { yield * [1, 2, 3] })().forEach is not a function. (In '(async function*() { yield * [1, 2, 3] })().forEach(it => result += it)', '(async function*() { yield * [1, 2, 3] })().forEa...
 compat-table/next/AsyncIterator.prototype.map.js: TypeError: async function*() { yield * [1, 2, 3] }().map is not a function. (In 'async function*() { yield * [1, 2, 3] }().map(it => it * it)', 'async function*() { yield * [1, 2, 3] }().map' is undefined)
-compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: (async function*() { yield * [1, 2, 3] })().reduce is not a function. (In '(async function*() { yield * [1, 2, 3] })().reduce((a, b) => a + b)', '(async function*() { yield * [1, 2, 3] })().reduce' is undefined)
-compat-table/next/AsyncIterator.prototype.some.js: TypeError: (async function*() { yield * [1, 2, 3] })().some is not a function. (In '(async function*() { yield * [1, 2, 3] })().some(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })().some' is undefined)
+compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: (async function*() { yield * [1, 2, 3] })().reduce is not a function. (In '(async function*() { yield * [1, 2, 3] })().reduce((a, b) => a + b)', '(async function*() { yield * [1, 2, 3] })().reduce' is...
+compat-table/next/AsyncIterator.prototype.some.js: TypeError: (async function*() { yield * [1, 2, 3] })().some is not a function. (In '(async function*() { yield * [1, 2, 3] })().some(it => typeof it === 'number')', '(async function*() { yield * [1, 2, 3] })().s...
 compat-table/next/AsyncIterator.prototype.take.js: TypeError: async function*() { yield * [1, 2, 3] }().take is not a function. (In 'async function*() { yield * [1, 2, 3] }().take(2)', 'async function*() { yield * [1, 2, 3] }().take' is undefined)
 compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: (async function*() { yield * [1, 2, 3] })().toArray is not a function. (In '(async function*() { yield * [1, 2, 3] })().toArray()', '(async function*() { yield * [1, 2, 3] })().toArray' is undefined)
-compat-table/next/DisposableStack.js: ReferenceError: Can't find variable: DisposableStack
+compat-table/next/DisposableStack.js: OK
 compat-table/next/Map.prototype.upsert.js: TypeError: map.upsert is not a function. (In 'map.upsert('a', it => 2, () => 3)', 'map.upsert' is undefined)
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
-compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: Unexpected identifier '_1'
+compat-table/next/ShadowRealm.js: OK
+compat-table/next/SuppressedError.js: OK
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK
@@ -1508,5 +1508,5 @@ compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected keyword 'throw'
 compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected keyword 'throw'
 compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected keyword 'throw'
 compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected keyword 'throw'
-compat-table/next/using.for-of.js: SyntaxError: Unexpected identifier '_'. Expected either 'in' or 'of' in enumeration syntax.
-compat-table/next/using.js: SyntaxError: Unexpected identifier '_'
+compat-table/next/using.for-of.js: OK
+compat-table/next/using.js: OK

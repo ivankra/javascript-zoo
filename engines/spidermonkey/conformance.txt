@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"4bb0d754d6f99d4e516a2487e02c081b80599e04e8db8e1be3f217d5a242798e","binary_size":38153576,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"console.log","engine":"spidermonkey","repository":"https://github.com/mozilla-firefox/firefox.git","revision":"c14b8bdbfb46a7f67132f34937679eaa4d27aba5","revision_date":"2026-03-02","variant":"intl","version":"148.0.2"}
+Metadata: {"arch":"arm64","binary_sha256":"31a2efac763175b785d8d3826657c9322eae1f4a1ec69206cc1df0ba77267f1f","binary_size":38164016,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"spidermonkey","repository":"https://github.com/mozilla-firefox/firefox.git","revision":"b9f3b8bdd412798e6d2f6c4b42c4db50ffe6dd53","revision_date":"2026-03-16","variant":"intl","version":"148.0.3"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK

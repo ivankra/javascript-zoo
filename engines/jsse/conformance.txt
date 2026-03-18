@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"d3815c9fdcdd04391c41be5c0e954bb7ad5ba829087c915154aa21c568f5eee7","binary_size":20583264,"console_log":"console.log","engine":"jsse","repository":"https://github.com/pmatos/jsse.git","revision":"8ec309b542c484b130fdcbfa160cd87f0a608419","revision_date":"2026-03-15","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
+Metadata: {"arch":"arm64","binary_sha256":"b827d573fd95252dde0cd9b9c8eb64173c02550bc26adf193b772c7fcb2c1331","binary_size":20583264,"console_log":"console.log","engine":"jsse","repository":"https://github.com/pmatos/jsse.git","revision":"59bb492e5d76fe1754c945660f8f6bb8947b2b74","revision_date":"2026-03-16","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -230,7 +230,7 @@ es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -582,13 +582,13 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: failed
+compat-table/es6/Promise.all.js: failed
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: OK
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: MissingOK
-compat-table/es6/Promise.race.js: MissingOK
+compat-table/es6/Promise.race.iterable.js: failed
+compat-table/es6/Promise.race.js: failed
 compat-table/es6/Proxy.Array.isArray.js: OK
 compat-table/es6/Proxy.JSON.stringify.js: OK
 compat-table/es6/Proxy.constructor-requires-new.js: OK
@@ -1081,10 +1081,10 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: OK
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
 compat-table/es6/subclassing.Promise.js: OK
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
-compat-table/es6/subclassing.Promise.race.js: MissingOK
+compat-table/es6/subclassing.Promise.race.js: failed
 compat-table/es6/subclassing.RegExp.exec.js: OK
 compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1104,7 +1104,7 @@ compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
 compat-table/es6/tail-calls.direct.js: OK
-compat-table/es6/tail-calls.mutual.js: timeout: >3s
+compat-table/es6/tail-calls.mutual.js: OK
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1252,8 +1252,8 @@ compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
+compat-table/es2017/async.await-rejection.js: failed
+compat-table/es2017/async.await.js: failed
 compat-table/es2017/async.constructor.js: OK
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1503,10 +1503,10 @@ compat-table/next/WeakMap.prototype.upsert.js: TypeError: undefined is not a fun
 compat-table/next/await-using.for-of.js: OK
 compat-table/next/await-using.js: OK
 compat-table/next/class-decorators.js: failed
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: ParseError { message: "Expected LeftParen, got Dot" }
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
+compat-table/next/function.sent.js: SyntaxError: ParseError { message: "Expected LeftParen, got Dot" }
+compat-table/next/throw-expr.arrow.js: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
+compat-table/next/throw-expr.conditional.js: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
+compat-table/next/throw-expr.logical.js: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
+compat-table/next/throw-expr.param-init.js: SyntaxError: ParseError { message: "Unexpected token: Keyword(Throw)" }
 compat-table/next/using.for-of.js: OK
 compat-table/next/using.js: OK

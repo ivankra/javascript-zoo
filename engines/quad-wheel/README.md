@@ -31,8 +31,8 @@ Richards score ~100 on M4 (34800us/iter).
 <li>ES5: 4%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 1%, ES2016+ 1%, Next 0%, Intl 0%</summary><ul>
-<li>ES6: 1%, <b>3 crashes</b></li>
+<details><summary>compat-table: ES6 0%, ES2016+ 1%, Next 0%, Intl 0%</summary><ul>
+<li>ES6: 0%, <b>3 crashes</b></li>
 <li>ES2016: 0%</li>
 <li>ES2017: 0%</li>
 <li>ES2018: 0%</li>

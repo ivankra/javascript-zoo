@@ -15,9 +15,9 @@ Interpreter for a subset of JavaScript for microcontrollers.
 ## Conformance
 
 <details><summary>ES1-ES5: 0%</summary><ul>
-<li>ES1: 0%</li>
+<li>ES1: 1%</li>
 <li>ES3: 0%</li>
-<li>ES5: 0%</li>
+<li>ES5: 1%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>

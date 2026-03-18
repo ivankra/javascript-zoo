@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"6ccea6288136b9e65c852220f9f54982fab92638fd6fca37dd08ee8c9d418fba","binary_size":2298800,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":"console.log","engine":"zuqe","repository":"https://github.com/nupha/zuqe.git","revision":"3d05a00633375b3aa139db116f0763e829957745","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+Metadata: {"arch":"arm64","binary_sha256":"d1643f5bf80a14278a5a1a379f95bc83b73275e20e53b10242aed1be7387cdfe","binary_size":2298800,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"zuqe","repository":"https://github.com/nupha/zuqe.git","revision":"3d05a00633375b3aa139db116f0763e829957745","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -116,8 +116,8 @@ es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: OK
 es1/annex-b.Date.prototype.setYear.js: OK
 es1/annex-b.Date.prototype.toGMTString.js: OK
-es1/annex-b.global.escape.js: ReferenceError: ReferenceError: 'escape' is not defined
-es1/annex-b.global.unescape.js: ReferenceError: ReferenceError: 'unescape' is not defined
+es1/annex-b.global.escape.js: ReferenceError: 'escape' is not defined
+es1/annex-b.global.unescape.js: ReferenceError: 'unescape' is not defined
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
@@ -138,7 +138,7 @@ es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: failed: +Infinity failed
+es1/conversions.ToInt32.js: +Infinity failed; 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31 failed; -2^31-1 failed
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
@@ -228,9 +228,9 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -281,11 +281,11 @@ es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
 es3/global.TypeError.thrown.js: OK
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: wrong exception for encodeURI lone low surrogate
+es3/global.URIError.thrown.js: wrong exception for encodeURI lone low surrogate; wrong exception for encodeURI lone high surrogate; wrong exception for encodeURIComponent lone low surrogate; wrong exception for encodeURIComponent l...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
-es3/global.encodeURIComponent.js: ReferenceError: ReferenceError: 'encodeURIComponent' is not defined
-es3/global.encodeURI.js: ReferenceError: ReferenceError: 'encodeURI' is not defined
+es3/global.encodeURIComponent.js: ReferenceError: 'encodeURIComponent' is not defined
+es3/global.encodeURI.js: ReferenceError: 'encodeURI' is not defined
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
@@ -413,8 +413,8 @@ es5/strict.no-eval-or-arguments-bindings.js: OK
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: OK
 es5/strict.no-with.js: OK
-es5/strict.reserved-words.js: failed
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: string 'this' was coerced in accessor
+es5/strict.reserved-words.js: 'var yield' did not throw in strict mode
+es5/strict.this-primitive-not-coerced-in-accessors.js: string 'this' was coerced in accessor
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
@@ -467,7 +467,7 @@ compat-table/es5/literals.trailing-comma-array.js: OK
 compat-table/es5/literals.trailing-comma-object.js: OK
 compat-table/es5/misc.Arguments.toStringTag.js: OK
 compat-table/es5/misc.Function.apply.array-likes.js: OK
-compat-table/es5/misc.Function.prototype.non-enumerable.js: crash: SIGABRT
+compat-table/es5/misc.Function.prototype.non-enumerable.js: crashed: SIGABRT
 compat-table/es5/misc.enumerable-shadow.js: OK
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGABRT
-compat-table/es6/tail-calls.mutual.js: crash: SIGABRT
+compat-table/es6/tail-calls.direct.js: crashed: SIGABRT
+compat-table/es6/tail-calls.mutual.js: crashed: SIGABRT
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1188,7 +1188,7 @@ compat-table/es6/well-known.toPrimitive.js: OK
 compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
-compat-table/es6/well-known.toStringTag.new-builtins.js: crash: SIGABRT
+compat-table/es6/well-known.toStringTag.new-builtins.js: crashed: SIGABRT
 compat-table/es6/well-known.unscopables.js: OK
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
@@ -1289,7 +1289,7 @@ compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: SyntaxError: regex compilation error: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: regex compilation error: unknown unicode script
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1314,14 +1314,14 @@ compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
 compat-table/es2019/misc.optional-catch-binding.await.js: OK
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: OK
-compat-table/es2020/BigInt64Array.js: TypeError: TypeError: big int is not supported
+compat-table/es2020/BigInt64Array.js: TypeError: big int is not supported
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: 'BigInt' is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: 'BigInt' is not defined
-compat-table/es2020/BigInt.constructor.js: TypeError: TypeError: big int is not supported
-compat-table/es2020/BigInt.js: TypeError: TypeError: big int is not supported
-compat-table/es2020/BigUint64Array.js: TypeError: TypeError: big int is not supported
-compat-table/es2020/DataView.prototype.getBigInt64.js: TypeError: TypeError: big int is not supported
-compat-table/es2020/DataView.prototype.getBigUint64.js: TypeError: TypeError: big int is not supported
+compat-table/es2020/BigInt.constructor.js: TypeError: big int is not supported
+compat-table/es2020/BigInt.js: TypeError: big int is not supported
+compat-table/es2020/BigUint64Array.js: TypeError: big int is not supported
+compat-table/es2020/DataView.prototype.getBigInt64.js: TypeError: big int is not supported
+compat-table/es2020/DataView.prototype.getBigUint64.js: TypeError: big int is not supported
 compat-table/es2020/Promise.allSettled.js: OK
 compat-table/es2020/String.prototype.matchAll.js: OK
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.some.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: not a function
 compat-table/es2025/Set.prototype.difference.js: TypeError: not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: not a function
@@ -1436,7 +1436,7 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: not a function
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: not a function
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: SyntaxError: regex compilation error: duplicate group name
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: regex compilation error: duplicate group name
 compat-table/es2025/regex.pattern-modifiers.i.js: OK
 compat-table/es2025/regex.pattern-modifiers.m.js: OK
 compat-table/es2025/regex.pattern-modifiers.s.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: not a function
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/SuppressedError.js: SyntaxError: expecting ';'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.toBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: not a function
-compat-table/next/await-using.for-of.js: SyntaxError: SyntaxError: unexpected token in expression: 'await'
-compat-table/next/await-using.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: invalid property name
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: expecting '('
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/using.for-of.js: SyntaxError: SyntaxError: expected 'of' or 'in' in for control expression
-compat-table/next/using.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token in expression: 'await'
+compat-table/next/await-using.js: SyntaxError: expecting ';'
+compat-table/next/class-decorators.js: SyntaxError: invalid property name
+compat-table/next/function.sent.js: SyntaxError: expecting '('
+compat-table/next/throw-expr.arrow.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.param-init.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/using.for-of.js: SyntaxError: expected 'of' or 'in' in for control expression
+compat-table/next/using.js: SyntaxError: expecting ';'

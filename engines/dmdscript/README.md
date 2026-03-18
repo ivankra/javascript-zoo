@@ -36,8 +36,8 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <a href="../../conformance/es1/String.js">String.js</a>: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
 <a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: non-compliant, expected to return 100 instead of 2000
 <a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: failed
-<a href="../../conformance/es1/asi.js">asi.js</a>: dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): can't Put(0, 10) to a primitive Number
-<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
+<a href="../../conformance/es1/asi.js">asi.js</a>: can't Put(0, 10) to a primitive Number
+<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 <a href="../../conformance/es1/new.typeof.js">new.typeof.js</a>: typeof String('x') != 'string'
 <a href="../../conformance/es1/return.typeof.js">return.typeof.js</a>: return string failed
 <a href="../../conformance/es1/types.js">types.js</a>: typeof '' != 'string'
@@ -53,17 +53,17 @@ Shell built-ins ([dglobal.d](https://github.com/DigitalMars/DMDScript/blob/maste
 <a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: failed
 <a href="../../conformance/es3/Error.prototype.toString.js">Error.prototype.toString.js</a>: failed
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: failed
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (-6.9e-11).toExponential(4) != '-6.9000e-11' (got: '-6.900�e-10')
 <a href="../../conformance/es3/Number.prototype.toLocaleString.js">Number.prototype.toLocaleString.js</a>: failed
 <a href="../../conformance/es3/RegExp.prototype.toString.js">RegExp.prototype.toString.js</a>: type failed
-<a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: crashed (signal 11); spec example failed
+<a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: crashed: SIGSEGV
 <a href="../../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; combined replacements failed
 <a href="../../conformance/es3/String.prototype.replace.regex.js">String.prototype.replace.regex.js</a>: global regex replace failed; replace all occurrences failed
-<a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
-<a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: undead.regexp.RegExpException@/root/.dub/packages/undead/1.2.0/undead/src/undead/regexp.d(170): *+? not allowed in atom
+<a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: *+? not allowed in atom
+<a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: *+? not allowed in atom
 <a href="../../conformance/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: no exception for undeclared variable
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for in number
-<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: std.utf.UTFException@engine/source/dmdscript/utf.d(32): encoding a surrogate code point in UTF-8 (at index 56320)
+<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: encoding a surrogate code point in UTF-8 (at index 56320)
 <a href="../../conformance/es3/in.js">in.js</a>: length in array failed
 ...
 </pre></li>

@@ -12,13 +12,13 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 ## Conformance
 
 <details><summary>ES1-ES5: 19%</summary><ul>
-<li>ES1: 25%</li>
+<li>ES1: 25%, <b>2 crashes</b></li>
 <li>ES3: 15%, <b>2 crashes</b></li>
 <li>ES5: 9%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 5%, ES2016+ 2%, Next 0%, Intl 0%</summary><ul>
-<li>ES6: 5%</li>
+<li>ES6: 5%, <b>3 crashes</b></li>
 <li>ES2016: 0%</li>
 <li>ES2017: 4%</li>
 <li>ES2018: 0%</li>
@@ -33,4 +33,4 @@ JavaScript interpreter written in Rust with QuickJS-inspired bytecode.
 <li>Intl: 0%</li>
 </ul></details>
 
-💥 **2 crashes during testing**
+💥 **7 crashes during testing**

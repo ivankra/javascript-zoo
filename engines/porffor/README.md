@@ -13,13 +13,13 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 
 ## Conformance
 
-<details><summary>ES1-ES5: 76%</summary><ul>
-<li>ES1: 89%<pre>
+<details><summary>ES1-ES5: 77%</summary><ul>
+<li>ES1: 90%<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: Array() + array index length update failed; sparse array length failed
 <a href="../../conformance/es1/Array.length.assignment.js">Array.length.assignment.js</a>: array index length update failed
 <a href="../../conformance/es1/Array.length.js">Array.length.js</a>: length auto-update failed; length &gt; max index failed
 <a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: failed
-<a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse even length failed; reverse single element failed
+<a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: reverse single element failed
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../../conformance/es1/Date.diff.js">Date.diff.js</a>: failed
 <a href="../../conformance/es1/String.prototype.split.js">String.prototype.split.js</a>: split('') failed
@@ -27,17 +27,16 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/es1/arguments.js">arguments.js</a>: arguments[i] not available; arguments.length not available
 <a href="../../conformance/es1/bitwise.unsigned-shift.js">bitwise.unsigned-shift.js</a>: -12345 &gt;&gt;&gt; 0 != 4294954951 (got: -12345)
 <a href="../../conformance/es1/conversions.ToInt32.js">conversions.ToInt32.js</a>: +Infinity failed; -Infinity failed
 <a href="../../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: '' failed; '0xff' failed; '-10' failed
 <a href="../../conformance/es1/conversions.ToUint32.js">conversions.ToUint32.js</a>: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^31 failed; -1 failed; -2^31 failed
-<a href="../../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 0 != ''; 123.0 != '0123'; 0 == null; 0 == undefined; false != ''; 123 &gt; '123'; 123 - '123' != 0; '5' - 1 != 4; 123 - '' != 123; '5' - true != 4; '5' * '6' != 30; 123 * '' != 0; true * '5' != 5; '6' / '5' != 1.2; '5' % '6' != 5
+<a href="../../conformance/es1/conversions.js">conversions.js</a>: 123 != '0123'; 0 != ''; 123.0 != '0123'; 0 == null; 0 == undefined; false != ''; 123 &gt; '123'; 123 - '123' != 0; '5' - 1 != 4; 123 - '' != 123; '5' - true != 4; '5' * '6' != 30; 123 * '' != 0; true * '...
 <a href="../../conformance/es1/eval.js">eval.js</a>: SyntaxError: Dynamic code evaluation is not supported
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: failed
 <a href="../../conformance/es1/with.js">with.js</a>: property lookup failed; second property lookup failed; assignment failed
 </pre></li>
-<li>ES3: 61%<pre>
+<li>ES3: 62%<pre>
 <a href="../../conformance/es3/Array.prototype.concat.js">Array.prototype.concat.js</a>: concat two arrays failed; concat non-array items failed; concat with no arguments failed; concat mixed array and non-array failed
 <a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: pop from object failed; pop single element from object failed
 <a href="../../conformance/es3/Array.prototype.pop.js">Array.prototype.pop.js</a>: pop from array failed; pop single element failed; remaining elements after pop failed
@@ -53,12 +52,12 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: unshift single element failed; unshift multiple elements failed; unshift with no arguments failed; element order after unshift failed
 <a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: TypeError: Accessor called without object
 <a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: failed
-<a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: apply with arguments object failed
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: small number failed
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: large number precision failed; rounding failed
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: RuntimeError: memory access out of bounds
 <a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: prototype chain failed; Object.prototype failed
+<a href="../../conformance/es3/RegExp.ignoreCase.js">RegExp.ignoreCase.js</a>: constructor with i failed; literal with i failed
 ...
 </pre></li>
 <li>ES5: 72%<pre>
@@ -129,7 +128,7 @@ Optimizing AOT compiler for JavaScript/TypeScript targeting WebAssembly and nati
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: SyntaxError: Dynamic code evaluation is not supported
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: SyntaxError: Dynamic code evaluation is not supported
 <a href="../../conformance/compat-table/es2019/misc.JSON-stringify-well-formed.js">misc.JSON-stringify-well-formed.js</a>: failed
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: undefined
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: exception: undefined
 </pre></li>
 <li>ES2020: 64%<pre>
 <a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: failed

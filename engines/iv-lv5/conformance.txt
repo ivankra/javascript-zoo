@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"95d8c81288c2f388f0568a870326543cb673caaba782c764f21aa0e624ff45bc","binary_size":5012448,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"iv-lv5","jit":"","repository":"https://github.com/Constellation/iv.git","revision":"64c3a9c7c517063f29d90d449180ea8f6f4d946f","revision_date":"2015-03-24"}
+Metadata: {"arch":"arm64","binary_sha256":"524730979690d1b3570dd733d248e74b9f1afb0e5335fe3bb11d6f5774328bad","binary_size":5012448,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"iv-lv5","jit":"","repository":"https://github.com/Constellation/iv.git","revision":"64c3a9c7c517063f29d90d449180ea8f6f4d946f","revision_date":"2015-03-24"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -228,11 +228,11 @@ es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: failed: small number exponential notation failed
+es3/Number.prototype.toPrecision.js: small number exponential notation failed; large number exponential notation failed
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
 es3/Object.prototype.propertyIsEnumerable.js: OK
@@ -364,14 +364,14 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: negative number failed
+es5/JSON.parse.js: negative number failed
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: OK
-es5/JSON.stringify.replacer.js: failed: replacer array failed
+es5/JSON.stringify.replacer.js: replacer array failed
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
-es5/Object.defineProperty.js: failed: getter definition failed
+es5/Object.defineProperty.js: getter definition failed
 es5/Object.freeze.js: OK
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
-es5/Object.property-shadowing.js: failed: non-enumerable did not shadow enumerable
+es5/Object.property-shadowing.js: non-enumerable did not shadow enumerable
 es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -391,7 +391,7 @@ es5/global.Infinity.immutable.js: OK
 es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
 es5/global.undefined.immutable.js: OK
-es5/literals.object.getters.js: failed: { get x(){ return 1 } }.x failed
+es5/literals.object.getters.js: { get x(){ return 1 } }.x failed; getter returning value failed; getter with side effects failed; getter accessing this failed
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
@@ -419,6 +419,79 @@ es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: OK
+compat-table/es5/Array.isArray.js: OK
+compat-table/es5/Array.prototype.every.js: OK
+compat-table/es5/Array.prototype.filter.js: OK
+compat-table/es5/Array.prototype.forEach.js: OK
+compat-table/es5/Array.prototype.indexOf.js: OK
+compat-table/es5/Array.prototype.lastIndexOf.js: OK
+compat-table/es5/Array.prototype.map.js: OK
+compat-table/es5/Array.prototype.reduceRight.js: OK
+compat-table/es5/Array.prototype.reduce.js: OK
+compat-table/es5/Array.prototype.some.js: OK
+compat-table/es5/Array.prototype.sort.compareFn-type.js: failed
+compat-table/es5/Array.prototype.sort.compareFn-undefined.js: OK
+compat-table/es5/Array.prototype.unshift.return-count.js: OK
+compat-table/es5/Date.now.js: OK
+compat-table/es5/Date.prototype.toISOString.js: OK
+compat-table/es5/Date.prototype.toJSON.js: OK
+compat-table/es5/Function.prototype.bind.js: OK
+compat-table/es5/JSON.js: OK
+compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js: OK
+compat-table/es5/Number.prototype.toExponential.rounds-properly.js: failed
+compat-table/es5/Number.prototype.toExponential.throws-infinity.js: OK
+compat-table/es5/Object.create.js: OK
+compat-table/es5/Object.defineProperties.js: OK
+compat-table/es5/Object.defineProperty.js: OK
+compat-table/es5/Object.freeze.js: OK
+compat-table/es5/Object.getOwnPropertyDescriptor.js: OK
+compat-table/es5/Object.getOwnPropertyNames.js: OK
+compat-table/es5/Object.getPrototypeOf.js: OK
+compat-table/es5/Object.isExtensible.js: OK
+compat-table/es5/Object.isFrozen.js: OK
+compat-table/es5/Object.isSealed.js: OK
+compat-table/es5/Object.keys.js: OK
+compat-table/es5/Object.preventExtensions.js: OK
+compat-table/es5/Object.seal.js: OK
+compat-table/es5/String.property-access.js: OK
+compat-table/es5/String.prototype.split.js: OK
+compat-table/es5/String.prototype.trim.js: OK
+compat-table/es5/annex-b.String.prototype.substr.js: OK
+compat-table/es5/immutable-globals.Infinity.js: OK
+compat-table/es5/immutable-globals.NaN.js: OK
+compat-table/es5/immutable-globals.undefined.js: OK
+compat-table/es5/literals.getter-accessors.js: failed
+compat-table/es5/literals.reserved-words-properties.js: OK
+compat-table/es5/literals.setter-accessors.js: OK
+compat-table/es5/literals.trailing-comma-array.js: OK
+compat-table/es5/literals.trailing-comma-object.js: OK
+compat-table/es5/misc.Arguments.toStringTag.js: OK
+compat-table/es5/misc.Function.apply.array-likes.js: OK
+compat-table/es5/misc.Function.prototype.non-enumerable.js: OK
+compat-table/es5/misc.enumerable-shadow.js: failed
+compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
+compat-table/es5/misc.thrown-functions-this.js: OK
+compat-table/es5/misc.unreserved-words.js: OK
+compat-table/es5/misc.zero-width-identifiers.js: OK
+compat-table/es5/strict.arguments-callee-error.js: OK
+compat-table/es5/strict.arguments-caller-error.js: OK
+compat-table/es5/strict.arguments-unmapped.js: OK
+compat-table/es5/strict.assignment-eval-arguments-error.js: OK
+compat-table/es5/strict.assignment-non-writable-error.js: OK
+compat-table/es5/strict.assignment-unresolvable-error.js: OK
+compat-table/es5/strict.delete-bindings-error.js: OK
+compat-table/es5/strict.delete-non-configurable-error.js: OK
+compat-table/es5/strict.eval-arguments-bindings-error.js: OK
+compat-table/es5/strict.eval-no-bindings.js: OK
+compat-table/es5/strict.function-caller-arguments-error.js: OK
+compat-table/es5/strict.function-expr-matching-name-arg.js: OK
+compat-table/es5/strict.legacy-octal-error.js: OK
+compat-table/es5/strict.repeated-params-error.js: OK
+compat-table/es5/strict.reserved-words.js: OK
+compat-table/es5/strict.this-not-coerced-accessors.js: OK
+compat-table/es5/strict.this-not-coerced-methods.js: OK
+compat-table/es5/strict.this-undefined.js: OK
+compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: TypeError: in requires object
 compat-table/es6/Array.from.array-like.js: OK
 compat-table/es6/Array.from.generator.js: SyntaxError: unexpected token *
@@ -1367,3 +1440,73 @@ compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: invalid regula
 compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: invalid regular expression
 compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid regular expression
 compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: invalid regular expression
+compat-table/intl/Array.prototype.toLocaleString.js: OK
+compat-table/intl/Date.prototype.toLocaleDateString.js: OK
+compat-table/intl/Date.prototype.toLocaleString.js: OK
+compat-table/intl/Date.prototype.toLocaleTimeString.js: OK
+compat-table/intl/Intl.Collator.js: failed
+compat-table/intl/Intl.Collator.new-instances.js: TypeError: not callable object
+compat-table/intl/Intl.Collator.prototype.compare.js: TypeError: not callable object
+compat-table/intl/Intl.Collator.prototype.resolvedOptions.js: TypeError: not callable object
+compat-table/intl/Intl.Collator.rejects-invalid-tags.js: failed
+compat-table/intl/Intl.Collator.valid-tags.js: failed
+compat-table/intl/Intl.Collator.without-new.js: TypeError: not callable object
+compat-table/intl/Intl.DateTimeFormat.iana-timezones.js: failed
+compat-table/intl/Intl.DateTimeFormat.js: failed
+compat-table/intl/Intl.DateTimeFormat.new-instances.js: TypeError: not callable object
+compat-table/intl/Intl.DateTimeFormat.rejects-invalid-tags.js: failed
+compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js: TypeError: not callable object
+compat-table/intl/Intl.DateTimeFormat.valid-tags.js: failed
+compat-table/intl/Intl.DateTimeFormat.without-new.js: TypeError: not callable object
+compat-table/intl/Intl.NumberFormat.js: OK
+compat-table/intl/Intl.NumberFormat.new-instances.js: OK
+compat-table/intl/Intl.NumberFormat.rejects-invalid-tags.js: OK
+compat-table/intl/Intl.NumberFormat.valid-tags.js: failed
+compat-table/intl/Intl.NumberFormat.without-new.js: OK
+compat-table/intl/Intl.js: OK
+compat-table/intl/Intl.prototype.js: OK
+compat-table/intl/Number.prototype.toLocaleString.js: OK
+compat-table/intl/Object.prototype.toLocaleString.js: OK
+compat-table/intl/String.prototype.localeCompare.js: OK
+compat-table/next/Array.isTemplateObject.js: SyntaxError: unexpected token >
+compat-table/next/AsyncDisposableStack.js: SyntaxError: unexpected token [
+compat-table/next/AsyncIterator.extends.js: SyntaxError: unexpected token class
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" not defined
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: unexpected identifier
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: unexpected token function
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: unexpected token function
+compat-table/next/DisposableStack.js: SyntaxError: invalid property name
+compat-table/next/Map.prototype.upsert.js: SyntaxError: unexpected token >
+compat-table/next/RegExp.1-9.js: failed
+compat-table/next/RegExp.lastMatch.js: failed
+compat-table/next/ShadowRealm.js: failed
+compat-table/next/SuppressedError.js: SyntaxError: unexpected identifier
+compat-table/next/Uint8Array.fromBase64.js: ReferenceError: assign to invalid left-hand-side
+compat-table/next/Uint8Array.fromHex.js: ReferenceError: assign to invalid left-hand-side
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected identifier
+compat-table/next/Uint8Array.setFromHex.js: SyntaxError: unexpected identifier
+compat-table/next/Uint8Array.toBase64.js: TypeError: not callable object
+compat-table/next/Uint8Array.toHex.js: TypeError: not callable object
+compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: unexpected token >
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token [
+compat-table/next/await-using.js: SyntaxError: unexpected token function
+compat-table/next/class-decorators.js: SyntaxError: unexpected token class
+compat-table/next/function.sent.js: SyntaxError: unexpected token *
+compat-table/next/throw-expr.arrow.js: SyntaxError: unexpected token )
+compat-table/next/throw-expr.conditional.js: SyntaxError: unexpected token throw
+compat-table/next/throw-expr.logical.js: SyntaxError: unexpected token throw
+compat-table/next/throw-expr.param-init.js: SyntaxError: unexpected token =
+compat-table/next/using.for-of.js: SyntaxError: invalid property name
+compat-table/next/using.js: SyntaxError: invalid property name

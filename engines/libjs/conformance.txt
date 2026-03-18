@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"567601f6b7c42e9f526e7e426677d8c1e3d0a358476c54fe09ab9b5d844a50ff","binary_size":45983792,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"console.log","engine":"libjs","repository":"https://github.com/LadybirdBrowser/ladybird.git","revision":"e1ba577ab789742354b66d08b392e56028c77bda","revision_date":"2026-03-02"}
+Metadata: {"arch":"arm64","binary_sha256":"99f42ef673d02de473fcbd1a6ced78aa9a628953818487ceed95bae033a6f25f","binary_size":46551520,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"libjs","repository":"https://github.com/LadybirdBrowser/ladybird.git","revision":"3a2f2f39263bb858ec5934bfd93971192604a75c","revision_date":"2026-03-15"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -822,7 +822,7 @@ compat-table/es6/destructuring-assign.nested.js: OK
 compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
-compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.parenthesised-error.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"aab478e8c69e9761d29266f3410c05b7a560bb4908d340f0fe4497bb75e5298e","binary_size":40172080,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"console.log","engine":"v8","repository":"https://chromium.googlesource.com/v8/v8.git","revision":"76f8c9ec45f2a3b64e23ada07a6e7b19ca252fa1","revision_date":"2026-03-02","variant":"intl","version":"14.7.0 (candidate)"}
+Metadata: {"arch":"arm64","binary_sha256":"ec39a6b9cb047d980f29091dcc1272b9730bf2e74cadfc016e2ba50d1ba4306e","binary_size":40303152,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"v8","repository":"https://chromium.googlesource.com/v8/v8.git","revision":"9f563e6f837336bc6e4b58946db742e94c7006d7","revision_date":"2026-03-13","variant":"intl","version":"14.8.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1269,7 +1269,7 @@ compat-table/es2017/regex.flags.u.case-folding.js: OK
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
-compat-table/es2018/Promise.prototype.finally.js: failed: Unhandled Promise.
+compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
 compat-table/es2018/async-iterators.for-await-of.js: OK
 compat-table/es2018/async-iterators.generators.js: OK
@@ -1491,7 +1491,7 @@ compat-table/next/DisposableStack.js: OK
 compat-table/next/Map.prototype.upsert.js: TypeError: map.upsert is not a function
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
-compat-table/next/ShadowRealm.js: failed
+compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: OK
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK

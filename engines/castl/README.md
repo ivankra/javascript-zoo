@@ -38,15 +38,15 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <a href="../../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: failed
 <a href="../../conformance/es1/Function.length.js">Function.length.js</a>: Function.length failed; function with 0 params length failed; function with 1 param length failed; function with 3 params length failed
 <a href="../../conformance/es1/Number.js">Number.js</a>: Number() failed
-<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: failed
+<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: calling 'charAt' on bad self (string expected, got nil)
 <a href="../../conformance/es1/String.prototype.charCodeAt.js">String.prototype.charCodeAt.js</a>: charCodeAt out of bounds NaN failed
 <a href="../../conformance/es1/String.prototype.lastIndexOf.js">String.prototype.lastIndexOf.js</a>: lastIndexOf at start failed
-<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: failed
-<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: failed
-<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: failed
-<a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: failed
-<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: failed
-<a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: failed
+<a href="../../conformance/es1/annex-b.Date.prototype.getYear.js">annex-b.Date.prototype.getYear.js</a>: attempt to call method 'getYear' (a nil value)
+<a href="../../conformance/es1/annex-b.Date.prototype.setYear.js">annex-b.Date.prototype.setYear.js</a>: attempt to call method 'setYear' (a nil value)
+<a href="../../conformance/es1/annex-b.Date.prototype.toGMTString.js">annex-b.Date.prototype.toGMTString.js</a>: attempt to call method 'toGMTString' (a nil value)
+<a href="../../conformance/es1/annex-b.global.escape.js">annex-b.global.escape.js</a>: attempt to call global 'escape' (a nil value)
+<a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: attempt to call global 'unescape' (a nil value)
+<a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: attempt to call method 'callee' (a nil value)
 <a href="../../conformance/es1/conversions.ToInteger.js">conversions.ToInteger.js</a>: NaN failed
 <a href="../../conformance/es1/conversions.ToString.js">conversions.ToString.js</a>: NaN failed; Infinity failed; -Infinity failed; 1e-7 failed
 ...
@@ -56,23 +56,23 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <a href="../../conformance/es3/Math.min.variadic.js">Math.min.variadic.js</a>: min() with 0 args failed; min() with 1 arg failed
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: NaN failed; Infinity failed; small number failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: failed
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: unexpected symbol near ':'
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: NaN failed
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: NaN failed; Infinity failed; small number exponential notation failed; zero failed
 <a href="../../conformance/es3/Object.prototype.hasOwnProperty.js">Object.prototype.hasOwnProperty.js</a>: ToString conversion failed
 <a href="../../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: inherited property should be false failed; Array.length DontEnum failed; ToString conversion failed
 <a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: custom toString failed
-<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: failed
+<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: attempt to call method 'localeCompare' (a nil value)
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $nn 10 captures failed; $nn reverse order failed
 <a href="../../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $` failed; $' failed; combined replacements failed
-<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: failed
+<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: luajit: /dist/castl-dist/castl/prototype/string.lua:419: bad argument #1 to 'gsub' (string expected, got nil); stack traceback:; [C]: in function 'gsub'; /dist/castl-dist/castl/prototype/string.lua:41...
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: '0'.split(undefined, 0).length !== 0; 'tesst'.split(/(s)*/)[1] === 't'; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0; '.'.split(/()()/).length !== 1
 <a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: split by empty regex failed
-<a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length &gt;= 2^32; no exception for negative array length; no exception for array length exceeding 2^32-1
+<a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length &gt;= 2^32; no exception for negative array length; no exceptio...
 <a href="../../conformance/es3/global.ReferenceError.thrown.js">global.ReferenceError.thrown.js</a>: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
 <a href="../../conformance/es3/global.SyntaxError.thrown.js">global.SyntaxError.thrown.js</a>: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
-<a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: luajit: /zoo/conformance/es3/.global.TypeError.thrown.js.lua:123: syntax error near ';'
-<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for decodeURIComponent invalid hex; no exception for encodeURI lone low surrogate; no exception for enco
+<a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: syntax error near ';'
+<a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for decodeURI incomplete escape; no exception for decodeURI invalid hex; no exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no exception for ...
 ...
 </pre></li>
 <li>ES5: 45%</li>

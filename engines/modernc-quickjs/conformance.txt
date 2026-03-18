@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"70c7a82ee0e4cf2dd04445b110285cf7553285c020cdec19f031769a5ec33a9a","binary_size":4700160,"console_log":"console.log","engine":"modernc-quickjs","go":"1.26.0","repository":"https://gitlab.com/cznic/quickjs.git","revision":"e0b6329e968f59850324ceafb0a2e31bc94ed893","revision_date":"2026-03-03","version":"0.17.1-111-ge0b6329"}
+Metadata: {"arch":"arm64","binary_sha256":"e50ab757a254ff0c7dfbf4af6585bd4fb07190c777dcdcc6764d2b81d47a33c5","binary_size":4766016,"console_log":"console.log","engine":"modernc-quickjs","go":"1.26.1","repository":"https://gitlab.com/cznic/quickjs.git","revision":"e94c7e54d2d849c17d0d74901ee9b56cb25e8ca0","revision_date":"2026-03-15","version":"0.17.1-141-ge94c7e5"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -582,13 +582,13 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: MissingOK
-compat-table/es6/Promise.all.js: MissingOK
+compat-table/es6/Promise.all.iterable.js: failed
+compat-table/es6/Promise.all.js: failed
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: MissingOK
+compat-table/es6/Promise.js: failed
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: MissingOK
-compat-table/es6/Promise.race.js: MissingOK
+compat-table/es6/Promise.race.iterable.js: failed
+compat-table/es6/Promise.race.js: failed
 compat-table/es6/Proxy.Array.isArray.js: OK
 compat-table/es6/Proxy.JSON.stringify.js: OK
 compat-table/es6/Proxy.constructor-requires-new.js: OK
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
 compat-table/es6/Reflect.construct.Function-subclassing.js: OK
-compat-table/es6/Reflect.construct.Promise-subclassing.js: MissingOK
+compat-table/es6/Reflect.construct.Promise-subclassing.js: failed
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -1081,10 +1081,10 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: MissingOK
-compat-table/es6/subclassing.Promise.js: MissingOK
+compat-table/es6/subclassing.Promise.all.js: failed
+compat-table/es6/subclassing.Promise.js: failed
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
-compat-table/es6/subclassing.Promise.race.js: MissingOK
+compat-table/es6/subclassing.Promise.race.js: failed
 compat-table/es6/subclassing.RegExp.exec.js: OK
 compat-table/es6/subclassing.RegExp.js: OK
 compat-table/es6/subclassing.RegExp.prototype-chain.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: failed: fatal error: stack overflow
-compat-table/es6/tail-calls.mutual.js: failed: fatal error: stack overflow
+compat-table/es6/tail-calls.direct.js: crashed: fatal error: stack overflow
+compat-table/es6/tail-calls.mutual.js: crashed: fatal error: stack overflow
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1249,30 +1249,30 @@ compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
 compat-table/es2017/async.Symbol.toStringTag.js: OK
-compat-table/es2017/async.arrow-in-class.js: MissingOK
-compat-table/es2017/async.arrow.js: MissingOK
-compat-table/es2017/async.await-non-promise.js: MissingOK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
-compat-table/es2017/async.constructor.js: MissingOK
-compat-table/es2017/async.methods-class.js: MissingOK
-compat-table/es2017/async.methods-object.js: MissingOK
+compat-table/es2017/async.arrow-in-class.js: failed
+compat-table/es2017/async.arrow.js: failed
+compat-table/es2017/async.await-non-promise.js: failed
+compat-table/es2017/async.await-rejection.js: failed
+compat-table/es2017/async.await.js: failed
+compat-table/es2017/async.constructor.js: failed
+compat-table/es2017/async.methods-class.js: failed
+compat-table/es2017/async.methods-object.js: failed
 compat-table/es2017/async.must-await-value.js: OK
 compat-table/es2017/async.no-await-in-params.js: OK
 compat-table/es2017/async.no-line-break.js: OK
 compat-table/es2017/async.no-prototype.js: OK
 compat-table/es2017/async.prototype-chain.js: OK
-compat-table/es2017/async.return.js: MissingOK
-compat-table/es2017/async.throw.js: MissingOK
+compat-table/es2017/async.return.js: failed
+compat-table/es2017/async.throw.js: failed
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: OK
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.js: MissingOK
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: MissingOK
-compat-table/es2018/async-iterators.for-await-of.js: MissingOK
-compat-table/es2018/async-iterators.generators.js: MissingOK
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: failed
+compat-table/es2018/Promise.prototype.finally.js: failed
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: failed
+compat-table/es2018/async-iterators.for-await-of.js: failed
+compat-table/es2018/async-iterators.generators.js: failed
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: OK
 compat-table/es2018/misc.template-literal-revision.js: OK
 compat-table/es2018/object-rest.js: OK
@@ -1311,7 +1311,7 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: OK
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
-compat-table/es2019/misc.optional-catch-binding.await.js: MissingOK
+compat-table/es2019/misc.optional-catch-binding.await.js: failed
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: OK
 compat-table/es2020/BigInt64Array.js: OK
@@ -1322,7 +1322,7 @@ compat-table/es2020/BigInt.js: OK
 compat-table/es2020/BigUint64Array.js: OK
 compat-table/es2020/DataView.prototype.getBigInt64.js: OK
 compat-table/es2020/DataView.prototype.getBigUint64.js: OK
-compat-table/es2020/Promise.allSettled.js: MissingOK
+compat-table/es2020/Promise.allSettled.js: failed
 compat-table/es2020/String.prototype.matchAll.js: OK
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
 compat-table/es2020/globalThis.descriptor.js: OK
@@ -1334,8 +1334,8 @@ compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: OK
 compat-table/es2021/FinalizationRegistry.js: OK
-compat-table/es2021/Promise.any.AggregateError.js: MissingOK
-compat-table/es2021/Promise.any.fulfillment.js: MissingOK
+compat-table/es2021/Promise.any.AggregateError.js: failed
+compat-table/es2021/Promise.any.fulfillment.js: failed
 compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: OK
 compat-table/es2021/logical-assignment.and.js: OK
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.some.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: OK
 compat-table/es2025/Set.prototype.difference.js: TypeError: not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: not a function

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"3046642abe85c073e8a89dec96e7186122aede73f73c7fbd6ad719130adab707","binary_size":9521752,"console_log":"console.log","engine":"goja","go":"1.26.0","repository":"https://github.com/dop251/goja.git","revision":"913bd86fb70ca757a62f329ea7458fad8e98ecb6","revision_date":"2026-02-26"}
+Metadata: {"arch":"arm64","binary_sha256":"8b4c24ba95bc8de6c60cbe927d4a533fc8e2e524eac85082d493405f3154df5a","binary_size":9521816,"console_log":"console.log","engine":"goja","go":"1.26.1","repository":"https://github.com/dop251/goja.git","revision":"065cd970411c0201a267efd3a4d5ac26d6e4e8a9","revision_date":"2026-03-11"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: timeout: >3s
-compat-table/es6/tail-calls.mutual.js: timeout: >3s
+compat-table/es6/tail-calls.direct.js: timeout: >10s
+compat-table/es6/tail-calls.mutual.js: OK
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: Object has no membe
 compat-table/es2025/Iterator.prototype.some.js: TypeError: Object has no member 'some'
 compat-table/es2025/Iterator.prototype.take.js: TypeError: Object has no member 'take'
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: Object has no member 'toArray'
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: Object has no member 'escape'
 compat-table/es2025/Set.prototype.difference.js: TypeError: Object has no member 'difference'
 compat-table/es2025/Set.prototype.intersection.js: TypeError: Object has no member 'intersection'

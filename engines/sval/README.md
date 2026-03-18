@@ -21,19 +21,19 @@ standard library - passes through most of it from the host environment.
 <li>ES1: 98%<pre>
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 <a href="../../conformance/es1/asi.js">asi.js</a>: TypeError: Cannot create property '0' on number '1'
-<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: failed: C++ like evaluation order in 'x += f()'
+<a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: SyntaxError: Delete of an unqualified identifier in strict mode
 </pre></li>
 <li>ES3: 99%<pre>
 <a href="../../conformance/es3/labelled.statements.js">labelled.statements.js</a>: SyntaxError: ExpressionStatement cannot be labeled
-<a href="../../conformance/es3/literals.array.elisions.js">literals.array.elisions.js</a>: TypeError: Cannot read properties of null (reading 'type')
+<a href="../../conformance/es3/literals.array.elisions.js">literals.array.elisions.js</a>: TypeError: Cannot read properties of null
 </pre></li>
 <li>ES5: 70%<pre>
-<a href="../../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es5/Array.prototype.some.js">Array.prototype.some.js</a>: TypeError: Cannot read properties of null (reading 'type')
+<a href="../../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: TypeError: Cannot read properties of null
+<a href="../../conformance/es5/Array.prototype.filter.js">Array.prototype.filter.js</a>: TypeError: Cannot read properties of null
+<a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: TypeError: Cannot read properties of null
+<a href="../../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: TypeError: Cannot read properties of null
+<a href="../../conformance/es5/Array.prototype.some.js">Array.prototype.some.js</a>: TypeError: Cannot read properties of null
 <a href="../../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Cannot assign to read only property 'a' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Cannot assign to read only property 'y' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: TypeError: Cannot assign to read only property 'x' of object '#&lt;Object&gt;'
@@ -80,7 +80,7 @@ standard library - passes through most of it from the host environment.
 ...
 </pre></li>
 <li>ES2016: 95%<pre>
-<a href="../../conformance/compat-table/es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: TypeError: Cannot read properties of null (reading 'type')
+<a href="../../conformance/compat-table/es2016/Array.prototype.includes.sparse.js">Array.prototype.includes.sparse.js</a>: TypeError: Cannot read properties of null
 </pre></li>
 <li>ES2017: 88%<pre>
 <a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: failed
@@ -90,7 +90,7 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/compat-table/es2017/async.prototype-chain.js">async.prototype-chain.js</a>: failed
 </pre></li>
 <li>ES2018: 83%<pre>
-<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: if (typeof r != "function") throw new TypeError(`${s} is not a function`); TypeError: Cannot convert a Symbol value to a string
+<a href="../../conformance/compat-table/es2018/async-iterators.generators.js">async-iterators.generators.js</a>: TypeError: Cannot convert a Symbol value to a string
 <a href="../../conformance/compat-table/es2018/misc.template-literal-revision.js">misc.template-literal-revision.js</a>: failed
 <a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/: Invalid property value (10:10)
 </pre></li>
@@ -106,9 +106,8 @@ standard library - passes through most of it from the host environment.
 <a href="../../conformance/compat-table/es2021/logical-assignment.or.setter-not-invoked.js">logical-assignment.or.setter-not-invoked.js</a>: failed
 <a href="../../conformance/compat-table/es2021/logical-assignment.or.short-circuit.js">logical-assignment.or.short-circuit.js</a>: failed
 </pre></li>
-<li>ES2022: 90%<pre>
-<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: TypeError: Cannot read properties of null (reading 'privatew2stg2yr9l')
-<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-deep-access.js">class-fields.private-instance.optional-deep-access.js</a>: TypeError: Cannot read properties of undefined (reading 'privatelg8d5d2ukvj')
+<li>ES2022: 93%<pre>
+<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: TypeError: Cannot read properties of null
 <a href="../../conformance/compat-table/es2022/class-fields.static.define.js">class-fields.static.define.js</a>: TypeError: Cannot assign to read only property 'name' of function 'function() {
 </pre></li>
 <li>ES2023: 100%</li>

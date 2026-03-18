@@ -27,20 +27,20 @@ Simple ECMAScript Engine.
 <li>ES3: 89%, <b>1 crash</b><pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential(2) failed; negative number failed; small number failed
-<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2.5e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.230e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.0e+0'); (1.255).toExponential(2) != '1.25e+0', got '1.30e+0'
-<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: exception: TypeError: Number.prototype.toExponential.throws-infinity.js:13: Object does not support the 'instanceof' operator
+<a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2.5e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.230e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.0e+0'); (1.255).toExponential(2) != '1.25e+0', ...
+<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: TypeError: Object does not support the 'instanceof' operator
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: small number exponential notation failed
 <a href="../../conformance/es3/Object.prototype.propertyIsEnumerable.js">Object.prototype.propertyIsEnumerable.js</a>: Array index should be enumerable failed
-<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: crashed (signal 11)
+<a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: crashed: SIGSEGV
 <a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for negative array length; no exception for array length exceeding 2^32-1
-<a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: exception: TypeError: :0: Value following 'in' is not an object
-<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: exception: SyntaxError: line 8: malformed unicode input
-<a href="../../conformance/es3/instanceof.js">instanceof.js</a>: exception: TypeError: instanceof.js:9: Object does not support the 'instanceof' operator
-<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: exception: SyntaxError: line 9: malformed unicode input
-<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: exception: SyntaxError: line 13: malformed unicode input
-<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: exception: SyntaxError: line 12: malformed unicode input
-<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: exception: SyntaxError: line 8: malformed unicode input
+<a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: TypeError: :0: Value following 'in' is not an object
+<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: line 8: malformed unicode input
+<a href="../../conformance/es3/instanceof.js">instanceof.js</a>: TypeError: Object does not support the 'instanceof' operator
+<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: line 9: malformed unicode input
+<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: line 13: malformed unicode input
+<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: SyntaxError: line 12: malformed unicode input
+<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: line 8: malformed unicode input
 </pre></li>
 <li>ES5: 12%</li>
 </ul></details>

@@ -35,8 +35,8 @@ QuickJS ported to Go via WebAssembly (Wazero, a cgo-free runtime).
 <a href="../../conformance/compat-table/es6/misc.bound-function-prototype.subclass.js">misc.bound-function-prototype.subclass.js</a>: failed
 <a href="../../conformance/compat-table/es6/rest-params.no-setter.js">rest-params.no-setter.js</a>: failed
 <a href="../../conformance/compat-table/es6/subclassing.Function.prototype.bind.js">subclassing.Function.prototype.bind.js</a>: failed
-<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: panic: failed to call QJS_Eval: wasm error: invalid table access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2570e0?, 0xfd2cfa9c3a0?}) 	/usr/local/go/src/runtime/panic.go:860 +0x12c panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: out of bo
-<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: panic: failed to call QJS_Eval: wasm error: out of bounds memory access panic: failed to call QJS_Free: wasm error: out of bounds memory access panic({0x2570e0?, 0x6626572983c0?}) 	/usr/local/go/src/runtime/panic.go:860 +0x12c panic: failed to free QJS runtime: failed to call QJS_Free: wasm error: o
+<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed: panic: failed to call QJS_Eval: wasm error: invalid table access
+<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed: panic: failed to call QJS_Eval: wasm error: out of bounds memory access
 </pre></li>
 <li>ES2016: 100%</li>
 <li>ES2017: 85%<pre>
@@ -55,7 +55,7 @@ QuickJS ported to Go via WebAssembly (Wazero, a cgo-free runtime).
 <a href="../../conformance/compat-table/es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 99%<pre>
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: SyntaxError: unknown unicode script
+<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: SyntaxError: unknown unicode script
 </pre></li>
 <li>ES2019: 100%</li>
 <li>ES2020: 100%</li>
@@ -64,16 +64,16 @@ QuickJS ported to Go via WebAssembly (Wazero, a cgo-free runtime).
 <li>ES2023: 100%</li>
 <li>ES2024: 80%<pre>
 <a href="../../conformance/compat-table/es2024/regex.flags.v.properties-of-strings.js">regex.flags.v.properties-of-strings.js</a>: failed
-<a href="../../conformance/compat-table/es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: Error: SyntaxError: invalid class range
+<a href="../../conformance/compat-table/es2024/regex.flags.v.set-notations.js">regex.flags.v.set-notations.js</a>: SyntaxError: invalid class range
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-15.1.js">regex.flags.v.unicode-15.1.js</a>: failed
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
 </pre></li>
 <li>ES2025: 74%<pre>
-<a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Error: SyntaxError: duplicate group name
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: Error: SyntaxError: invalid group
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: Error: SyntaxError: invalid group
-<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: Error: SyntaxError: invalid group
+<a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: duplicate group name
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.i.js">regex.pattern-modifiers.i.js</a>: SyntaxError: invalid group
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.m.js">regex.pattern-modifiers.m.js</a>: SyntaxError: invalid group
+<a href="../../conformance/compat-table/es2025/regex.pattern-modifiers.s.js">regex.pattern-modifiers.s.js</a>: SyntaxError: invalid group
 </pre></li>
 <li>Next: 0%</li>
 <li>Intl: 25%</li>

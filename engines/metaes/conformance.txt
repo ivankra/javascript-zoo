@@ -1,163 +1,163 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":344096,"engine":"metaes","repository":"https://github.com/metaes/metaes.git","revision":"3d328305436e3d592a3e584c8329b33012c77c96","revision_date":"2022-06-06"}
-es1/Array.js: failed: exit code 1
-es1/Array.length.assignment.js: failed: exit code 1
-es1/Array.length.js: failed: exit code 1
-es1/Array.prototype.constructor.js: failed: exit code 1
-es1/Array.prototype.join.generic.js: failed: exit code 1
-es1/Array.prototype.join.js: failed: exit code 1
-es1/Array.prototype.reverse.generic.js: failed: exit code 1
-es1/Array.prototype.reverse.js: failed: exit code 1
-es1/Array.prototype.sort.generic.js: failed: exit code 1
-es1/Array.prototype.sort.js: failed: exit code 1
-es1/Array.prototype.toString.js: failed: exit code 1
-es1/Boolean.js: failed: exit code 1
-es1/Boolean.prototype.constructor.js: failed: exit code 1
-es1/Boolean.prototype.toString.js: failed: exit code 1
-es1/Boolean.prototype.valueOf.js: failed: exit code 1
-es1/Date.diff.js: failed: exit code 1
-es1/Date.js: failed: exit code 1
-es1/Date.prototype.constructor.js: failed: exit code 1
-es1/Date.prototype.getDate.js: failed: exit code 1
-es1/Date.prototype.getDay.js: failed: exit code 1
-es1/Date.prototype.getFullYear.js: failed: exit code 1
-es1/Date.prototype.getHours.js: failed: exit code 1
-es1/Date.prototype.getMilliseconds.js: failed: exit code 1
-es1/Date.prototype.getMinutes.js: failed: exit code 1
-es1/Date.prototype.getMonth.js: failed: exit code 1
-es1/Date.prototype.getSeconds.js: failed: exit code 1
-es1/Date.prototype.getTimezoneOffset.js: failed: exit code 1
-es1/Date.prototype.getTime.js: failed: exit code 1
-es1/Date.prototype.getUTCDate.js: failed: exit code 1
-es1/Date.prototype.getUTCDay.js: failed: exit code 1
-es1/Date.prototype.getUTCFullYear.js: failed: exit code 1
-es1/Date.prototype.getUTCHours.js: failed: exit code 1
-es1/Date.prototype.getUTCMilliseconds.js: failed: exit code 1
-es1/Date.prototype.getUTCMinutes.js: failed: exit code 1
-es1/Date.prototype.getUTCMonth.js: failed: exit code 1
-es1/Date.prototype.getUTCSeconds.js: failed: exit code 1
-es1/Date.prototype.setDate.js: failed: exit code 1
-es1/Date.prototype.setFullYear.js: failed: exit code 1
-es1/Date.prototype.setHours.js: failed: exit code 1
-es1/Date.prototype.setMilliseconds.js: failed: exit code 1
-es1/Date.prototype.setMinutes.js: failed: exit code 1
-es1/Date.prototype.setMonth.js: failed: exit code 1
-es1/Date.prototype.setSeconds.js: failed: exit code 1
-es1/Date.prototype.setTime.js: failed: exit code 1
-es1/Date.prototype.setUTCDate.js: failed: exit code 1
-es1/Date.prototype.setUTCFullYear.js: failed: exit code 1
-es1/Date.prototype.setUTCHours.js: failed: exit code 1
-es1/Date.prototype.setUTCMilliseconds.js: failed: exit code 1
-es1/Date.prototype.setUTCMinutes.js: failed: exit code 1
-es1/Date.prototype.setUTCMonth.js: failed: exit code 1
-es1/Date.prototype.setUTCSeconds.js: failed: exit code 1
-es1/Date.prototype.toLocaleString.js: failed: exit code 1
-es1/Date.prototype.toString.js: failed: exit code 1
-es1/Date.prototype.toUTCString.js: failed: exit code 1
-es1/Date.prototype.valueOf.js: failed: exit code 1
-es1/Function.js: failed: exit code 1
-es1/Function.length.js: failed: exit code 1
-es1/Function.prototype.constructor.js: failed: exit code 1
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":344114,"engine":"metaes","repository":"https://github.com/metaes/metaes.git","revision":"3d328305436e3d592a3e584c8329b33012c77c96","revision_date":"2022-06-06"}
+es1/Array.js: Uncaught exception: [object Object]
+es1/Array.length.assignment.js: Uncaught exception: [object Object]
+es1/Array.length.js: Uncaught exception: [object Object]
+es1/Array.prototype.constructor.js: Uncaught exception: [object Object]
+es1/Array.prototype.join.generic.js: Uncaught exception: [object Object]
+es1/Array.prototype.join.js: Uncaught exception: [object Object]
+es1/Array.prototype.reverse.generic.js: Uncaught exception: [object Object]
+es1/Array.prototype.reverse.js: Uncaught exception: [object Object]
+es1/Array.prototype.sort.generic.js: Uncaught exception: [object Object]
+es1/Array.prototype.sort.js: Uncaught exception: [object Object]
+es1/Array.prototype.toString.js: Uncaught exception: [object Object]
+es1/Boolean.js: Uncaught exception: [object Object]
+es1/Boolean.prototype.constructor.js: Uncaught exception: [object Object]
+es1/Boolean.prototype.toString.js: Uncaught exception: [object Object]
+es1/Boolean.prototype.valueOf.js: Uncaught exception: [object Object]
+es1/Date.diff.js: Uncaught exception: [object Object]
+es1/Date.js: Uncaught exception: [object Object]
+es1/Date.prototype.constructor.js: Uncaught exception: [object Object]
+es1/Date.prototype.getDate.js: Uncaught exception: [object Object]
+es1/Date.prototype.getDay.js: Uncaught exception: [object Object]
+es1/Date.prototype.getFullYear.js: Uncaught exception: [object Object]
+es1/Date.prototype.getHours.js: Uncaught exception: [object Object]
+es1/Date.prototype.getMilliseconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.getMinutes.js: Uncaught exception: [object Object]
+es1/Date.prototype.getMonth.js: Uncaught exception: [object Object]
+es1/Date.prototype.getSeconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.getTimezoneOffset.js: Uncaught exception: [object Object]
+es1/Date.prototype.getTime.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCDate.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCDay.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCFullYear.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCHours.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCMilliseconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCMinutes.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCMonth.js: Uncaught exception: [object Object]
+es1/Date.prototype.getUTCSeconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.setDate.js: Uncaught exception: [object Object]
+es1/Date.prototype.setFullYear.js: Uncaught exception: [object Object]
+es1/Date.prototype.setHours.js: Uncaught exception: [object Object]
+es1/Date.prototype.setMilliseconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.setMinutes.js: Uncaught exception: [object Object]
+es1/Date.prototype.setMonth.js: Uncaught exception: [object Object]
+es1/Date.prototype.setSeconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.setTime.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCDate.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCFullYear.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCHours.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCMilliseconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCMinutes.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCMonth.js: Uncaught exception: [object Object]
+es1/Date.prototype.setUTCSeconds.js: Uncaught exception: [object Object]
+es1/Date.prototype.toLocaleString.js: Uncaught exception: [object Object]
+es1/Date.prototype.toString.js: Uncaught exception: [object Object]
+es1/Date.prototype.toUTCString.js: Uncaught exception: [object Object]
+es1/Date.prototype.valueOf.js: Uncaught exception: [object Object]
+es1/Function.js: Uncaught exception: [object Object]
+es1/Function.length.js: Uncaught exception: [object Object]
+es1/Function.prototype.constructor.js: Uncaught exception: [object Object]
 es1/Function.prototype.js: OK
-es1/Function.prototype.toString.js: failed: exit code 1
-es1/Math.E.js: failed: exit code 1
-es1/Math.LN2.js: failed: exit code 1
-es1/Math.LN10.js: failed: exit code 1
-es1/Math.LOG2E.js: failed: exit code 1
-es1/Math.LOG10E.js: failed: exit code 1
-es1/Math.PI.js: failed: exit code 1
-es1/Math.SQRT1_2.js: failed: exit code 1
-es1/Math.SQRT2.js: failed: exit code 1
-es1/Math.abs.js: failed: exit code 1
-es1/Math.acos.js: failed: exit code 1
-es1/Math.asin.js: failed: exit code 1
-es1/Math.atan2.js: failed: exit code 1
-es1/Math.atan.js: failed: exit code 1
-es1/Math.ceil.js: failed: exit code 1
-es1/Math.cos.js: failed: exit code 1
-es1/Math.exp.js: failed: exit code 1
-es1/Math.floor.js: failed: exit code 1
-es1/Math.log.js: failed: exit code 1
-es1/Math.max.js: failed: exit code 1
-es1/Math.min.js: failed: exit code 1
-es1/Math.pow.js: failed: exit code 1
-es1/Math.random.js: failed: exit code 1
-es1/Math.round.js: failed: exit code 1
-es1/Math.sin.js: failed: exit code 1
-es1/Math.sqrt.js: failed: exit code 1
-es1/Math.tan.js: failed: exit code 1
-es1/Number.MAX_VALUE.js: failed: exit code 1
-es1/Number.MIN_VALUE.js: failed: exit code 1
-es1/Number.NEGATIVE_INFINITY.js: failed: exit code 1
-es1/Number.NaN.js: failed: exit code 1
-es1/Number.POSITIVE_INFINITY.js: failed: exit code 1
-es1/Number.js: failed: exit code 1
-es1/Number.prototype.constructor.js: failed: exit code 1
-es1/Number.prototype.toString.js: failed: exit code 1
-es1/Number.prototype.valueOf.js: failed: exit code 1
-es1/Object.js: failed: exit code 1
-es1/Object.prototype.constructor.js: failed: exit code 1
-es1/Object.prototype.toString.js: failed: exit code 1
-es1/Object.prototype.valueOf.js: failed: exit code 1
-es1/String.fromCharCode.js: failed: exit code 1
-es1/String.generics.js: failed: exit code 1
-es1/String.js: failed: exit code 1
-es1/String.length.js: failed: exit code 1
+es1/Function.prototype.toString.js: Uncaught exception: [object Object]
+es1/Math.E.js: Uncaught exception: [object Object]
+es1/Math.LN2.js: Uncaught exception: [object Object]
+es1/Math.LN10.js: Uncaught exception: [object Object]
+es1/Math.LOG2E.js: Uncaught exception: [object Object]
+es1/Math.LOG10E.js: Uncaught exception: [object Object]
+es1/Math.PI.js: Uncaught exception: [object Object]
+es1/Math.SQRT1_2.js: Uncaught exception: [object Object]
+es1/Math.SQRT2.js: Uncaught exception: [object Object]
+es1/Math.abs.js: Uncaught exception: [object Object]
+es1/Math.acos.js: Uncaught exception: [object Object]
+es1/Math.asin.js: Uncaught exception: [object Object]
+es1/Math.atan2.js: Uncaught exception: [object Object]
+es1/Math.atan.js: Uncaught exception: [object Object]
+es1/Math.ceil.js: Uncaught exception: [object Object]
+es1/Math.cos.js: Uncaught exception: [object Object]
+es1/Math.exp.js: Uncaught exception: [object Object]
+es1/Math.floor.js: Uncaught exception: [object Object]
+es1/Math.log.js: Uncaught exception: [object Object]
+es1/Math.max.js: Uncaught exception: [object Object]
+es1/Math.min.js: Uncaught exception: [object Object]
+es1/Math.pow.js: Uncaught exception: [object Object]
+es1/Math.random.js: Uncaught exception: [object Object]
+es1/Math.round.js: Uncaught exception: [object Object]
+es1/Math.sin.js: Uncaught exception: [object Object]
+es1/Math.sqrt.js: Uncaught exception: [object Object]
+es1/Math.tan.js: Uncaught exception: [object Object]
+es1/Number.MAX_VALUE.js: Uncaught exception: [object Object]
+es1/Number.MIN_VALUE.js: Uncaught exception: [object Object]
+es1/Number.NEGATIVE_INFINITY.js: Uncaught exception: [object Object]
+es1/Number.NaN.js: Uncaught exception: [object Object]
+es1/Number.POSITIVE_INFINITY.js: Uncaught exception: [object Object]
+es1/Number.js: Uncaught exception: [object Object]
+es1/Number.prototype.constructor.js: Uncaught exception: [object Object]
+es1/Number.prototype.toString.js: Uncaught exception: [object Object]
+es1/Number.prototype.valueOf.js: Uncaught exception: [object Object]
+es1/Object.js: Uncaught exception: [object Object]
+es1/Object.prototype.constructor.js: Uncaught exception: [object Object]
+es1/Object.prototype.toString.js: Uncaught exception: [object Object]
+es1/Object.prototype.valueOf.js: Uncaught exception: [object Object]
+es1/String.fromCharCode.js: Uncaught exception: [object Object]
+es1/String.generics.js: Uncaught exception: [object Object]
+es1/String.js: Uncaught exception: [object Object]
+es1/String.length.js: Uncaught exception: [object Object]
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
-es1/String.prototype.constructor.js: failed: exit code 1
+es1/String.prototype.constructor.js: Uncaught exception: [object Object]
 es1/String.prototype.indexOf.js: OK
 es1/String.prototype.lastIndexOf.js: OK
 es1/String.prototype.split.js: OK
 es1/String.prototype.substring.js: OK
 es1/String.prototype.toLowerCase.js: OK
-es1/String.prototype.toString.js: failed: exit code 1
+es1/String.prototype.toString.js: Uncaught exception: [object Object]
 es1/String.prototype.toUpperCase.js: OK
-es1/String.prototype.valueOf.js: failed: exit code 1
-es1/annex-b.Date.prototype.getYear.js: failed: exit code 1
-es1/annex-b.Date.prototype.setYear.js: failed: exit code 1
-es1/annex-b.Date.prototype.toGMTString.js: failed: exit code 1
-es1/annex-b.global.escape.js: failed: exit code 1
-es1/annex-b.global.unescape.js: failed: exit code 1
+es1/String.prototype.valueOf.js: Uncaught exception: [object Object]
+es1/annex-b.Date.prototype.getYear.js: Uncaught exception: [object Object]
+es1/annex-b.Date.prototype.setYear.js: Uncaught exception: [object Object]
+es1/annex-b.Date.prototype.toGMTString.js: Uncaught exception: [object Object]
+es1/annex-b.global.escape.js: Uncaught exception: [object Object]
+es1/annex-b.global.unescape.js: Uncaught exception: [object Object]
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
-es1/arguments.callee.js: failed: exit code 1
+es1/arguments.callee.js: Uncaught exception: [object Object]
 es1/arguments.js: OK
-es1/asi.eval.js: failed: exit code 1
-es1/asi.js: failed: exit code 1
+es1/asi.eval.js: Uncaught exception: [object Object]
+es1/asi.js: Uncaught exception: [object Object]
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: OK
-es1/break.js: failed: exit code 1
+es1/break.js: Uncaught exception: [object Object]
 es1/comma.js: OK
 es1/comments.js: OK
 es1/conditional.js: OK
-es1/continue.js: failed: exit code 1
-es1/conversions.ToBoolean.js: failed: exit code 1
+es1/continue.js: Uncaught exception: [object Object]
+es1/conversions.ToBoolean.js: Uncaught exception: [object Object]
 es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: OK
-es1/conversions.ToNumber.js: failed: exit code 1
-es1/conversions.ToObject.js: failed: exit code 1
-es1/conversions.ToString.js: failed: exit code 1
+es1/conversions.ToNumber.js: Uncaught exception: [object Object]
+es1/conversions.ToObject.js: Uncaught exception: [object Object]
+es1/conversions.ToString.js: Uncaught exception: [object Object]
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: failed: exit code 1
-es1/for-in.js: failed: exit code 1
-es1/for.js: failed: exit code 1
+es1/eval.js: Uncaught exception: [object Object]
+es1/for-in.js: Uncaught exception: [object Object]
+es1/for.js: Uncaught exception: [object Object]
 es1/functions.js: OK
-es1/global.Infinity.js: failed: exit code 1
-es1/global.NaN.js: failed: exit code 1
-es1/global.isFinite.js: failed: exit code 1
-es1/global.isNaN.js: failed: exit code 1
-es1/global.parseFloat.js: failed: exit code 1
-es1/global.parseInt.hex.js: failed: exit code 1
-es1/global.parseInt.js: failed: exit code 1
-es1/global.parseInt.radix.js: failed: exit code 1
+es1/global.Infinity.js: Uncaught exception: [object Object]
+es1/global.NaN.js: Uncaught exception: [object Object]
+es1/global.isFinite.js: Uncaught exception: [object Object]
+es1/global.isNaN.js: Uncaught exception: [object Object]
+es1/global.parseFloat.js: Uncaught exception: [object Object]
+es1/global.parseInt.hex.js: Uncaught exception: [object Object]
+es1/global.parseInt.js: Uncaught exception: [object Object]
+es1/global.parseInt.radix.js: Uncaught exception: [object Object]
 es1/literals.decimal.js: OK
 es1/literals.hex.js: OK
 es1/literals.string.escapes.js: OK
@@ -165,7 +165,7 @@ es1/literals.string.hex.js: OK
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
-es1/new.typeof.js: failed: exit code 1
+es1/new.typeof.js: Uncaught exception: [object Object]
 es1/numbers.double.js: OK
 es1/numbers.fmod.js: OK
 es1/numbers.inf.js: OK
@@ -177,14 +177,14 @@ es1/prefix.js: OK
 es1/relational.js: OK
 es1/return.js: OK
 es1/return.typeof.js: OK
-es1/this.js: failed: exit code 1
+es1/this.js: Uncaught exception: [object Object]
 es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: OK
-es1/types.js: failed: exit code 1
+es1/types.js: Uncaught exception: [object Object]
 es1/unary.decrement.js: OK
-es1/unary.delete.js: failed: exit code 1
-es1/unary.delete.var.js: failed: exit code 1
+es1/unary.delete.js: Uncaught exception: [object Object]
+es1/unary.delete.var.js: Uncaught exception: [object Object]
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,73 +196,73 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: exit code 1
-es3/Array.prototype.concat.js: failed: exit code 1
-es3/Array.prototype.pop.generic.js: failed: exit code 1
-es3/Array.prototype.pop.js: failed: exit code 1
-es3/Array.prototype.push.generic.js: failed: exit code 1
-es3/Array.prototype.push.js: failed: exit code 1
-es3/Array.prototype.shift.generic.js: failed: exit code 1
-es3/Array.prototype.shift.js: failed: exit code 1
-es3/Array.prototype.slice.generic.js: failed: exit code 1
-es3/Array.prototype.slice.js: failed: exit code 1
-es3/Array.prototype.splice.generic.js: failed: exit code 1
-es3/Array.prototype.splice.js: failed: exit code 1
-es3/Array.prototype.toLocaleString.js: failed: exit code 1
-es3/Array.prototype.unshift.generic.js: failed: exit code 1
-es3/Array.prototype.unshift.js: failed: exit code 1
+es1/with.js: Uncaught exception: [object Object]
+es3/Array.prototype.concat.js: Uncaught exception: [object Object]
+es3/Array.prototype.pop.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.pop.js: Uncaught exception: [object Object]
+es3/Array.prototype.push.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.push.js: Uncaught exception: [object Object]
+es3/Array.prototype.shift.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.shift.js: Uncaught exception: [object Object]
+es3/Array.prototype.slice.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.slice.js: Uncaught exception: [object Object]
+es3/Array.prototype.splice.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.splice.js: Uncaught exception: [object Object]
+es3/Array.prototype.toLocaleString.js: Uncaught exception: [object Object]
+es3/Array.prototype.unshift.generic.js: Uncaught exception: [object Object]
+es3/Array.prototype.unshift.js: Uncaught exception: [object Object]
 es3/Array.prototype.unshift.returns-new-length.js: OK
-es3/Date.prototype.toDateString.js: failed: exit code 1
-es3/Date.prototype.toLocaleDateString.js: failed: exit code 1
-es3/Date.prototype.toLocaleString.js: failed: exit code 1
-es3/Date.prototype.toLocaleTimeString.js: failed: exit code 1
-es3/Date.prototype.toTimeString.js: failed: exit code 1
-es3/Error.js: failed: exit code 1
-es3/Error.prototype.constructor.js: failed: exit code 1
-es3/Error.prototype.message.js: failed: exit code 1
-es3/Error.prototype.name.js: failed: exit code 1
-es3/Error.prototype.toString.js: failed: exit code 1
+es3/Date.prototype.toDateString.js: Uncaught exception: [object Object]
+es3/Date.prototype.toLocaleDateString.js: Uncaught exception: [object Object]
+es3/Date.prototype.toLocaleString.js: Uncaught exception: [object Object]
+es3/Date.prototype.toLocaleTimeString.js: Uncaught exception: [object Object]
+es3/Date.prototype.toTimeString.js: Uncaught exception: [object Object]
+es3/Error.js: Uncaught exception: [object Object]
+es3/Error.prototype.constructor.js: Uncaught exception: [object Object]
+es3/Error.prototype.message.js: Uncaught exception: [object Object]
+es3/Error.prototype.name.js: Uncaught exception: [object Object]
+es3/Error.prototype.toString.js: Uncaught exception: [object Object]
 es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: failed: exit code 1
-es3/Math.min.variadic.js: failed: exit code 1
-es3/Number.prototype.toExponential.edge-cases.js: failed
-es3/Number.prototype.toExponential.js: failed: exit code 1
+es3/Math.max.variadic.js: Uncaught exception: [object Object]
+es3/Math.min.variadic.js: Uncaught exception: [object Object]
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
+es3/Number.prototype.toExponential.js: Uncaught exception: [object Object]
 es3/Number.prototype.toExponential.rounding.js: OK
-es3/Number.prototype.toExponential.throws-infinity.js: failed: toExponential(Infinity) does not throw RangeError
-es3/Number.prototype.toFixed.js: failed: exit code 1
+es3/Number.prototype.toExponential.throws-infinity.js: toExponential(Infinity) does not throw RangeError; toExponential(-Infinity) does not throw RangeError
+es3/Number.prototype.toFixed.js: Uncaught exception: [object Object]
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: failed: exit code 1
-es3/Object.prototype.hasOwnProperty.js: failed: exit code 1
-es3/Object.prototype.isPrototypeOf.js: failed: exit code 1
-es3/Object.prototype.propertyIsEnumerable.js: failed: exit code 1
-es3/Object.prototype.toLocaleString.js: failed: exit code 1
-es3/RegExp.global.js: failed: exit code 1
-es3/RegExp.ignoreCase.js: failed: exit code 1
-es3/RegExp.js: failed: exit code 1
-es3/RegExp.lastIndex.js: failed: exit code 1
-es3/RegExp.multiline.js: failed: exit code 1
-es3/RegExp.prototype.constructor.js: failed: exit code 1
-es3/RegExp.prototype.exec.js: failed: exit code 1
-es3/RegExp.prototype.test.js: failed: exit code 1
-es3/RegExp.prototype.toString.js: failed: exit code 1
-es3/RegExp.source.js: failed: exit code 1
-es3/String.prototype.concat.generic.js: failed: exit code 1
-es3/String.prototype.concat.js: failed: exit code 1
-es3/String.prototype.localeCompare.js: failed: exit code 1
-es3/String.prototype.match.generic.js: failed: exit code 1
+es3/Number.prototype.toPrecision.js: Uncaught exception: [object Object]
+es3/Object.prototype.hasOwnProperty.js: Uncaught exception: [object Object]
+es3/Object.prototype.isPrototypeOf.js: Uncaught exception: [object Object]
+es3/Object.prototype.propertyIsEnumerable.js: Uncaught exception: [object Object]
+es3/Object.prototype.toLocaleString.js: Uncaught exception: [object Object]
+es3/RegExp.global.js: Uncaught exception: [object Object]
+es3/RegExp.ignoreCase.js: Uncaught exception: [object Object]
+es3/RegExp.js: Uncaught exception: [object Object]
+es3/RegExp.lastIndex.js: Uncaught exception: [object Object]
+es3/RegExp.multiline.js: Uncaught exception: [object Object]
+es3/RegExp.prototype.constructor.js: Uncaught exception: [object Object]
+es3/RegExp.prototype.exec.js: Uncaught exception: [object Object]
+es3/RegExp.prototype.test.js: Uncaught exception: [object Object]
+es3/RegExp.prototype.toString.js: Uncaught exception: [object Object]
+es3/RegExp.source.js: Uncaught exception: [object Object]
+es3/String.prototype.concat.generic.js: Uncaught exception: [object Object]
+es3/String.prototype.concat.js: Uncaught exception: [object Object]
+es3/String.prototype.localeCompare.js: Uncaught exception: [object Object]
+es3/String.prototype.match.generic.js: Uncaught exception: [object Object]
 es3/String.prototype.match.js: OK
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: failed: exit code 1
+es3/String.prototype.replace.generic.js: Uncaught exception: [object Object]
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
-es3/String.prototype.search.generic.js: failed: exit code 1
+es3/String.prototype.search.generic.js: Uncaught exception: [object Object]
 es3/String.prototype.search.js: OK
 es3/String.prototype.search.str.js: OK
-es3/String.prototype.slice.generic.js: failed: exit code 1
+es3/String.prototype.slice.generic.js: Uncaught exception: [object Object]
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed: exit code 1
+es3/String.prototype.split.bugs.js: Uncaught exception: [object Object]
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
@@ -270,29 +270,29 @@ es3/String.prototype.toLocaleUpperCase.js: OK
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
-es3/function-expressions.js: failed: exit code 1
-es3/global.EvalError.js: failed: constructor failed
-es3/global.RangeError.js: failed: constructor failed
-es3/global.RangeError.thrown.js: failed: wrong exception for new Array with negative length
-es3/global.ReferenceError.js: failed: constructor failed
+es3/function-expressions.js: Uncaught exception: [object Object]
+es3/global.EvalError.js: constructor failed; Uncaught exception: [object Object]
+es3/global.RangeError.js: constructor failed; Uncaught exception: [object Object]
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; Uncaught exception: [object Object]
+es3/global.ReferenceError.js: constructor failed; Uncaught exception: [object Object]
 es3/global.ReferenceError.thrown.js: OK
-es3/global.SyntaxError.js: failed: constructor failed
-es3/global.SyntaxError.thrown.js: failed: wrong exception type
-es3/global.TypeError.js: failed: constructor failed
-es3/global.TypeError.thrown.js: TypeError: TypeError: Right-hand side of 'instanceof' is not an object
-es3/global.URIError.js: failed: constructor failed
-es3/global.URIError.thrown.js: failed: wrong exception for decodeURI incomplete escape
-es3/global.decodeURIComponent.js: failed: exit code 1
-es3/global.decodeURI.js: failed: exit code 1
-es3/global.encodeURIComponent.js: failed: exit code 1
-es3/global.encodeURI.js: failed: exit code 1
+es3/global.SyntaxError.js: constructor failed; Uncaught exception: [object Object]
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: constructor failed; Uncaught exception: [object Object]
+es3/global.TypeError.thrown.js: TypeError: Uncaught exception: TypeError: Right-hand side of 'instanceof' is not an object
+es3/global.URIError.js: constructor failed; Uncaught exception: [object Object]
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
+es3/global.decodeURIComponent.js: Uncaught exception: [object Object]
+es3/global.decodeURI.js: Uncaught exception: [object Object]
+es3/global.encodeURIComponent.js: Uncaught exception: [object Object]
+es3/global.encodeURI.js: Uncaught exception: [object Object]
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
-es3/instanceof.js: failed: exit code 1
-es3/in.js: failed: exit code 1
-es3/labelled.break.js: failed: exit code 1
-es3/labelled.continue.js: failed: exit code 1
-es3/labelled.statements.js: failed: exit code 1
+es3/instanceof.js: Uncaught exception: [object Object]
+es3/in.js: Uncaught exception: [object Object]
+es3/labelled.break.js: Uncaught exception: [object Object]
+es3/labelled.continue.js: Uncaught exception: [object Object]
+es3/labelled.statements.js: Uncaught exception: [object Object]
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: failed: exit code 1
+es3/nested-functions.eval.js: Uncaught exception: [object Object]
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
@@ -338,61 +338,61 @@ es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
-es3/source.line-terminators.js: failed: exit code 1
+es3/source.line-terminators.js: Uncaught exception: [object Object]
 es3/source.whitespace.js: OK
 es3/source.whitespace.unicode.js: OK
-es3/strict-equals.js: failed: exit code 1
+es3/strict-equals.js: Uncaught exception: [object Object]
 es3/switch.js: OK
-es3/try-catch-finally.js: failed: try/finally failed
+es3/try-catch-finally.js: TypeError: Uncaught exception: TypeError: Cannot read properties of null (reading 'type')
 es3/try-catch-throw.js: OK
-es5/Array.isArray.js: failed: exit code 1
-es5/Array.prototype.every.js: failed: exit code 1
-es5/Array.prototype.filter.js: failed: exit code 1
-es5/Array.prototype.forEach.js: failed: exit code 1
-es5/Array.prototype.indexOf.js: failed: exit code 1
-es5/Array.prototype.lastIndexOf.js: failed: exit code 1
-es5/Array.prototype.map.js: failed: exit code 1
-es5/Array.prototype.reduceRight.js: failed: exit code 1
-es5/Array.prototype.reduce.js: failed: exit code 1
-es5/Array.prototype.some.js: failed: exit code 1
+es5/Array.isArray.js: Uncaught exception: [object Object]
+es5/Array.prototype.every.js: Uncaught exception: [object Object]
+es5/Array.prototype.filter.js: Uncaught exception: [object Object]
+es5/Array.prototype.forEach.js: Uncaught exception: [object Object]
+es5/Array.prototype.indexOf.js: Uncaught exception: [object Object]
+es5/Array.prototype.lastIndexOf.js: Uncaught exception: [object Object]
+es5/Array.prototype.map.js: Uncaught exception: [object Object]
+es5/Array.prototype.reduceRight.js: Uncaught exception: [object Object]
+es5/Array.prototype.reduce.js: Uncaught exception: [object Object]
+es5/Array.prototype.some.js: Uncaught exception: [object Object]
 es5/Array.prototype.sort.TypeError.js: OK
-es5/Array.prototype.sort.undefined-comparefn.js: failed: exit code 1
-es5/Date.now.js: failed: exit code 1
-es5/Date.prototype.toISOString.js: failed: exit code 1
-es5/Date.prototype.toJSON.js: failed: exit code 1
-es5/Function.prototype-not-enumerable.js: failed: exit code 1
+es5/Array.prototype.sort.undefined-comparefn.js: Uncaught exception: [object Object]
+es5/Date.now.js: Uncaught exception: [object Object]
+es5/Date.prototype.toISOString.js: Uncaught exception: [object Object]
+es5/Date.prototype.toJSON.js: Uncaught exception: [object Object]
+es5/Function.prototype-not-enumerable.js: Uncaught exception: [object Object]
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: failed: exit code 1
-es5/JSON.js: failed: typeof JSON !== 'object'
-es5/JSON.parse.js: failed: exit code 1
-es5/JSON.parse.reviver.js: failed: exit code 1
-es5/JSON.stringify.js: failed: exit code 1
-es5/JSON.stringify.replacer.js: failed: exit code 1
-es5/JSON.stringify.space.js: failed: exit code 1
-es5/Object.create.js: failed: exit code 1
-es5/Object.defineProperties.js: failed: exit code 1
-es5/Object.defineProperty.js: failed: exit code 1
-es5/Object.freeze.js: failed: exit code 1
-es5/Object.getOwnPropertyDescriptor.js: failed: exit code 1
-es5/Object.getOwnPropertyNames.js: failed: exit code 1
-es5/Object.getPrototypeOf.js: failed: exit code 1
-es5/Object.isExtensible.js: failed: exit code 1
-es5/Object.isFrozen.js: failed: exit code 1
-es5/Object.isSealed.js: failed: exit code 1
-es5/Object.keys.js: failed: exit code 1
-es5/Object.preventExtensions.js: failed: exit code 1
-es5/Object.property-shadowing.js: failed: exit code 1
-es5/Object.seal.js: failed: exit code 1
-es5/String.indexing.js: failed: exit code 1
-es5/String.prototype.trim.js: failed: exit code 1
-es5/arguments.toStringTag.js: failed: exit code 1
+es5/Function.prototype.bind.js: Uncaught exception: [object Object]
+es5/JSON.js: typeof JSON !== 'object'
+es5/JSON.parse.js: Uncaught exception: [object Object]
+es5/JSON.parse.reviver.js: Uncaught exception: [object Object]
+es5/JSON.stringify.js: Uncaught exception: [object Object]
+es5/JSON.stringify.replacer.js: Uncaught exception: [object Object]
+es5/JSON.stringify.space.js: Uncaught exception: [object Object]
+es5/Object.create.js: Uncaught exception: [object Object]
+es5/Object.defineProperties.js: Uncaught exception: [object Object]
+es5/Object.defineProperty.js: Uncaught exception: [object Object]
+es5/Object.freeze.js: Uncaught exception: [object Object]
+es5/Object.getOwnPropertyDescriptor.js: Uncaught exception: [object Object]
+es5/Object.getOwnPropertyNames.js: Uncaught exception: [object Object]
+es5/Object.getPrototypeOf.js: Uncaught exception: [object Object]
+es5/Object.isExtensible.js: Uncaught exception: [object Object]
+es5/Object.isFrozen.js: Uncaught exception: [object Object]
+es5/Object.isSealed.js: Uncaught exception: [object Object]
+es5/Object.keys.js: Uncaught exception: [object Object]
+es5/Object.preventExtensions.js: Uncaught exception: [object Object]
+es5/Object.property-shadowing.js: Uncaught exception: [object Object]
+es5/Object.seal.js: Uncaught exception: [object Object]
+es5/String.indexing.js: Uncaught exception: [object Object]
+es5/String.prototype.trim.js: Uncaught exception: [object Object]
+es5/arguments.toStringTag.js: Uncaught exception: [object Object]
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: failed: exit code 1
-es5/global.NaN.immutable.js: failed: exit code 1
-es5/global.parseInt.no-octal.js: failed: exit code 1
-es5/global.undefined.immutable.js: failed: exit code 1
-es5/literals.object.getters.js: failed: { get x(){ return 1 } }.x failed
-es5/literals.object.setters.js: failed: { set x(v){ value = v; } }.x failed
+es5/global.Infinity.immutable.js: Uncaught exception: [object Object]
+es5/global.NaN.immutable.js: Uncaught exception: [object Object]
+es5/global.parseInt.no-octal.js: Uncaught exception: [object Object]
+es5/global.undefined.immutable.js: Uncaught exception: [object Object]
+es5/literals.object.getters.js: { get x(){ return 1 } }.x failed; getter returning value failed; getter with side effects failed; getter accessing this failed
+es5/literals.object.setters.js: { set x(v){ value = v; } }.x failed; setter with computation failed; setter accessing this failed
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
@@ -414,9 +414,9 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
 es5/strict.reserved-words.js: failed
-es5/strict.this-primitive-not-coerced-in-accessors.js: failed: exit code 1
+es5/strict.this-primitive-not-coerced-in-accessors.js: Uncaught exception: [object Object]
 es5/strict.this-primitive-not-coerced.js: OK
-es5/strict.this-undefined-in-function.js: failed: exit code 1
+es5/strict.this-undefined-in-function.js: Uncaught exception: [object Object]
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: failed
 compat-table/es5/Array.isArray.js: ReferenceError: "Array" is not defined.
@@ -494,14 +494,14 @@ compat-table/es5/strict.this-undefined.js: ReferenceError: "undefined" is not de
 compat-table/es5/strict.with-error.js: failed
 compat-table/es6/Array.Symbol.species.js: ReferenceError: "Array" is not defined.
 compat-table/es6/Array.from.array-like.js: ReferenceError: "Array" is not defined.
-compat-table/es6/Array.from.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/Array.from.iterable-instance.js: failed: exit code 1
-compat-table/es6/Array.from.iterable.js: failed: exit code 1
-compat-table/es6/Array.from.iterator-closing.js: failed: exit code 1
+compat-table/es6/Array.from.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/Array.from.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/Array.from.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/Array.from.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/Array.from.map.array-like.js: ReferenceError: "Array" is not defined.
-compat-table/es6/Array.from.map.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/Array.from.map.iterable-instance.js: failed: exit code 1
-compat-table/es6/Array.from.map.iterable.js: failed: exit code 1
+compat-table/es6/Array.from.map.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/Array.from.map.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/Array.from.map.iterable.js: Uncaught exception: [object Object]
 compat-table/es6/Array.iterator-prototype-chain.js: ReferenceError: "Symbol" is not defined.
 compat-table/es6/Array.of.js: ReferenceError: "Array" is not defined.
 compat-table/es6/Array.prototype.Symbol.iterator.js: ReferenceError: "Array" is not defined.
@@ -537,7 +537,7 @@ compat-table/es6/Map.constructor-accepts-null.js: ReferenceError: "Map" is not d
 compat-table/es6/Map.constructor-arguments.js: ReferenceError: "Map" is not defined.
 compat-table/es6/Map.constructor-invokes-set.js: ReferenceError: "Map" is not defined.
 compat-table/es6/Map.constructor-requires-new.js: ReferenceError: "Map" is not defined.
-compat-table/es6/Map.iterator-closing.js: failed: exit code 1
+compat-table/es6/Map.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/Map.iterator-prototype-chain.js: ReferenceError: "Map" is not defined.
 compat-table/es6/Map.js: ReferenceError: "Map" is not defined.
 compat-table/es6/Map.prototype-not-instance.js: ReferenceError: "Map" is not defined.
@@ -582,20 +582,20 @@ compat-table/es6/Object.getOwnPropertySymbols.js: ReferenceError: "Symbol" is no
 compat-table/es6/Object.is.js: ReferenceError: "Object" is not defined.
 compat-table/es6/Object.setPrototypeOf.js: ReferenceError: "Array" is not defined.
 compat-table/es6/Promise.Symbol.species.js: ReferenceError: "Promise" is not defined.
-compat-table/es6/Promise.all.iterable.js: failed: exit code 1
+compat-table/es6/Promise.all.iterable.js: Uncaught exception: [object Object]
 compat-table/es6/Promise.all.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/Promise.constructor-requires-new.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/Promise.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/Promise.prototype-not-instance.js: ReferenceError: "Promise" is not defined.
-compat-table/es6/Promise.race.iterable.js: failed: exit code 1
+compat-table/es6/Promise.race.iterable.js: Uncaught exception: [object Object]
 compat-table/es6/Promise.race.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/Proxy.Array.isArray.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/Proxy.JSON.stringify.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/Proxy.constructor-requires-new.js: ReferenceError: "Proxy" is not defined.
-compat-table/es6/Proxy.handler.apply.invariants.js: failed: 'NewExpression' callee node is not supported yet.
+compat-table/es6/Proxy.handler.apply.invariants.js: 'NewExpression' callee node is not supported yet.
 compat-table/es6/Proxy.handler.apply.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/Proxy.handler.construct.invariants.js: ReferenceError: "Proxy" is not defined.
-compat-table/es6/Proxy.handler.construct.js: failed: NewExpression type of callee is not supported yet.
+compat-table/es6/Proxy.handler.construct.js: NewExpression type of callee is not supported yet.
 compat-table/es6/Proxy.handler.defineProperty.invariants.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/Proxy.handler.defineProperty.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/Proxy.handler.deleteProperty.invariants.js: ReferenceError: "Proxy" is not defined.
@@ -654,7 +654,7 @@ compat-table/es6/Set.constructor-accepts-null.js: ReferenceError: "Set" is not d
 compat-table/es6/Set.constructor-arguments.js: ReferenceError: "Set" is not defined.
 compat-table/es6/Set.constructor-invokes-add.js: ReferenceError: "Set" is not defined.
 compat-table/es6/Set.constructor-requires-new.js: ReferenceError: "Set" is not defined.
-compat-table/es6/Set.iterator-closing.js: failed: exit code 1
+compat-table/es6/Set.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/Set.iterator-prototype-chain.js: ReferenceError: "Set" is not defined.
 compat-table/es6/Set.js: ReferenceError: "Set" is not defined.
 compat-table/es6/Set.prototype-not-instance.js: ReferenceError: "Set" is not defined.
@@ -698,7 +698,7 @@ compat-table/es6/WeakMap.constructor-arguments.js: ReferenceError: "WeakMap" is 
 compat-table/es6/WeakMap.constructor-invokes-set.js: ReferenceError: "WeakMap" is not defined.
 compat-table/es6/WeakMap.constructor-requires-new.js: ReferenceError: "WeakMap" is not defined.
 compat-table/es6/WeakMap.frozen-keys.js: ReferenceError: "Object" is not defined.
-compat-table/es6/WeakMap.iterator-closing.js: failed: exit code 1
+compat-table/es6/WeakMap.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/WeakMap.js: ReferenceError: "WeakMap" is not defined.
 compat-table/es6/WeakMap.no-clear.js: ReferenceError: "WeakMap" is not defined.
 compat-table/es6/WeakMap.prototype-not-instance.js: ReferenceError: "WeakMap" is not defined.
@@ -709,7 +709,7 @@ compat-table/es6/WeakSet.constructor-accepts-null.js: ReferenceError: "WeakSet" 
 compat-table/es6/WeakSet.constructor-arguments.js: ReferenceError: "WeakSet" is not defined.
 compat-table/es6/WeakSet.constructor-invokes-add.js: ReferenceError: "WeakSet" is not defined.
 compat-table/es6/WeakSet.constructor-requires-new.js: ReferenceError: "WeakSet" is not defined.
-compat-table/es6/WeakSet.iterator-closing.js: failed: exit code 1
+compat-table/es6/WeakSet.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/WeakSet.js: ReferenceError: "WeakSet" is not defined.
 compat-table/es6/WeakSet.no-clear.js: ReferenceError: "WeakSet" is not defined.
 compat-table/es6/WeakSet.prototype-not-instance.js: ReferenceError: "WeakSet" is not defined.
@@ -721,9 +721,9 @@ compat-table/es6/annex-b.String.prototype.html.existence.js: ReferenceError: "St
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Cannot read property 'anchor' of string
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Cannot read property 'anchor' of string
 compat-table/es6/annex-b.function.hoisted-block-level.js: failed
-compat-table/es6/annex-b.function.if-statement.js: failed: [12:19]: Without web compability enabled functions can not be declared at top level, inside a block, or as the body of an if statement
-compat-table/es6/annex-b.function.labeled.js: failed: [12:17]: Without web compability enabled functions can not be declared at top level, inside a block, or as the body of an if statement
-compat-table/es6/annex-b.html-comments.js: failed: [9:4]: HTML comments are only allowed with web compability (Annex B)
+compat-table/es6/annex-b.function.if-statement.js: Uncaught exception: Error: [12:19]: Without web compability enabled functions can not be declared at top level, inside a block, or as the body of an if statement; Error: [12:19]: Without web compabili...
+compat-table/es6/annex-b.function.labeled.js: Uncaught exception: Error: [12:17]: Without web compability enabled functions can not be declared at top level, inside a block, or as the body of an if statement; Error: [12:17]: Without web compabili...
+compat-table/es6/annex-b.html-comments.js: Uncaught exception: Error: [9:4]: HTML comments are only allowed with web compability (Annex B); Error: [9:4]: HTML comments are only allowed with web compability (Annex B); at parseWithLib (/dist/met...
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
@@ -749,9 +749,9 @@ compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: failed
 compat-table/es6/arrow.lexical-arguments.js: failed
 compat-table/es6/arrow.lexical-super.constructor.js: TypeError: Cannot convert undefined or null to object
-compat-table/es6/arrow.lexical-super.methods.js: failed: "Super" node type interpreter is not defined yet.
+compat-table/es6/arrow.lexical-super.methods.js: "Super" node type interpreter is not defined yet.
 compat-table/es6/arrow.lexical-this.js: TypeError: Cannot read property 'x' of undefined
-compat-table/es6/arrow.new-target.js: failed: 'NewExpression' callee node is not supported yet.
+compat-table/es6/arrow.new-target.js: 'NewExpression' callee node is not supported yet.
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: failed
 compat-table/es6/arrow.precedence.js: OK
@@ -770,10 +770,10 @@ compat-table/es6/class.expression.js: OK
 compat-table/es6/class.extends-expressions.js: failed
 compat-table/es6/class.extends-null.js: ReferenceError: "Function" is not defined.
 compat-table/es6/class.extends.js: failed
-compat-table/es6/class.implicit-strict.js: failed: 'SequenceExpression' callee node is not supported yet.
+compat-table/es6/class.implicit-strict.js: 'SequenceExpression' callee node is not supported yet.
 compat-table/es6/class.lexical-name.js: ReferenceError: "undefined" is not defined.
 compat-table/es6/class.methods-not-enumerable.js: failed
-compat-table/es6/class.new-target.js: failed: FunctionExpression type of callee is not supported yet.
+compat-table/es6/class.new-target.js: FunctionExpression type of callee is not supported yet.
 compat-table/es6/class.optional-semicolons.js: OK
 compat-table/es6/class.prototype-methods.js: OK
 compat-table/es6/class.statement.js: OK
@@ -801,48 +801,48 @@ compat-table/es6/const.tdz.js: OK
 compat-table/es6/default-params.arguments.js: OK
 compat-table/es6/default-params.basic.js: OK
 compat-table/es6/default-params.explicit-undefined.js: ReferenceError: "undefined" is not defined.
-compat-table/es6/default-params.new-function.js: failed: 'NewExpression' callee node is not supported yet.
+compat-table/es6/default-params.new-function.js: 'NewExpression' callee node is not supported yet.
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: failed
 compat-table/es6/default-params.tdz.js: OK
-compat-table/es6/destructuring-assign.array.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.astral-string.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.chained-iterable.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.chained-object.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.computed-properties.js: failed: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.array.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.astral-string.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.chained-iterable.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.chained-object.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.computed-properties.js: This assignment is not supported yet.
 compat-table/es6/destructuring-assign.defaults.js: ReferenceError: "undefined" is not defined.
-compat-table/es6/destructuring-assign.empty-patterns.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/destructuring-assign.iterable-expression.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.iterable-instance.js: failed: exit code 1
-compat-table/es6/destructuring-assign.iterable.js: failed: exit code 1
-compat-table/es6/destructuring-assign.iterator-closing.js: failed: exit code 1
-compat-table/es6/destructuring-assign.nested-rest.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.nested.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.object-expression.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.object-primitives.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.object.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.parenthesised-error.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.rest.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.sparse-array.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.string.js: failed: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.empty-patterns.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/destructuring-assign.iterable-expression.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-assign.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-assign.iterator-closing.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-assign.nested-rest.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.nested.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.object-expression.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.object-primitives.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.object.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.parenthesised-error.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.rest.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.sparse-array.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.string.js: This assignment is not supported yet.
 compat-table/es6/destructuring-assign.throws-null-undefined.js: OK
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: failed: This assignment is not supported yet.
-compat-table/es6/destructuring-assign.trailing-comma-object.js: failed: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: This assignment is not supported yet.
+compat-table/es6/destructuring-assign.trailing-comma-object.js: This assignment is not supported yet.
 compat-table/es6/destructuring-decl.array.js: TypeError: Cannot read properties of null (reading 'type')
 compat-table/es6/destructuring-decl.astral-string.js: failed
 compat-table/es6/destructuring-decl.catch.js: failed
-compat-table/es6/destructuring-decl.computed-properties.js: failed: Computed property in ObjectPattern is not supported yet.
+compat-table/es6/destructuring-decl.computed-properties.js: Computed property in ObjectPattern is not supported yet.
 compat-table/es6/destructuring-decl.defaults-tdz.js: OK
 compat-table/es6/destructuring-decl.defaults.js: ReferenceError: "undefined" is not defined.
-compat-table/es6/destructuring-decl.for-in.js: failed: Left-hand side of type ArrayPattern in ForInStatement not implemented yet.
-compat-table/es6/destructuring-decl.for-of.js: failed: Left-hand side of type ArrayPattern in ForOfStatement not implemented yet.
-compat-table/es6/destructuring-decl.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/destructuring-decl.iterable-instance.js: failed: exit code 1
-compat-table/es6/destructuring-decl.iterable.js: failed: exit code 1
-compat-table/es6/destructuring-decl.iterator-closing.js: failed: exit code 1
+compat-table/es6/destructuring-decl.for-in.js: Left-hand side of type ArrayPattern in ForInStatement not implemented yet.
+compat-table/es6/destructuring-decl.for-of.js: Left-hand side of type ArrayPattern in ForOfStatement not implemented yet.
+compat-table/es6/destructuring-decl.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/destructuring-decl.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-decl.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-decl.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/destructuring-decl.multiple-var.js: OK
-compat-table/es6/destructuring-decl.nested.js: failed: 'ObjectPattern' ArrayPattern element is not supported.
+compat-table/es6/destructuring-decl.nested.js: 'ObjectPattern' ArrayPattern element is not supported.
 compat-table/es6/destructuring-decl.object-primitives.js: TypeError: Cannot destructure property `slice` of 'undefined' or 'null'.
 compat-table/es6/destructuring-decl.object.js: ReferenceError: "undefined" is not defined.
 compat-table/es6/destructuring-decl.rest.js: ReferenceError: "Array" is not defined.
@@ -852,68 +852,68 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-object.js: OK
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: failed
-compat-table/es6/destructuring-params.arguments.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.array.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.astral-string.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.computed-properties.js: failed: Computed property in ObjectPattern is not supported yet.
+compat-table/es6/destructuring-params.arguments.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.array.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.astral-string.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.computed-properties.js: Computed property in ObjectPattern is not supported yet.
 compat-table/es6/destructuring-params.defaults-new-function.js: ReferenceError: "undefined" is not defined.
 compat-table/es6/destructuring-params.defaults-separate-scope.js: failed
 compat-table/es6/destructuring-params.defaults.js: ReferenceError: "undefined" is not defined.
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
-compat-table/es6/destructuring-params.empty-patterns.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/destructuring-params.iterable-instance.js: failed: exit code 1
-compat-table/es6/destructuring-params.iterable.js: failed: exit code 1
-compat-table/es6/destructuring-params.iterator-closing.js: failed: exit code 1
+compat-table/es6/destructuring-params.empty-patterns.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/destructuring-params.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-params.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/destructuring-params.iterator-closing.js: Uncaught exception: [object Object]
 compat-table/es6/destructuring-params.length.js: failed
-compat-table/es6/destructuring-params.nested.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.new-function.js: failed: 'NewExpression' callee node is not supported yet.
+compat-table/es6/destructuring-params.nested.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.new-function.js: 'NewExpression' callee node is not supported yet.
 compat-table/es6/destructuring-params.object-primitives.js: TypeError: Cannot destructure property `slice` of 'undefined' or 'null'.
 compat-table/es6/destructuring-params.object.js: ReferenceError: "undefined" is not defined.
-compat-table/es6/destructuring-params.rest.js: failed: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.rest.js: "ArrayPattern" is not supported type of function param.
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.sparse-array.js: failed: "ArrayPattern" is not supported type of function param.
-compat-table/es6/destructuring-params.string.js: failed: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.sparse-array.js: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.string.js: "ArrayPattern" is not supported type of function param.
 compat-table/es6/destructuring-params.throws-null-undefined.js: OK
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: failed: "ArrayPattern" is not supported type of function param.
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: "ArrayPattern" is not supported type of function param.
 compat-table/es6/destructuring-params.trailing-comma-object.js: OK
 compat-table/es6/for-of.array.js: OK
-compat-table/es6/for-of.astral-string.js: failed: Only arrays as right-hand side of for-of loop are supported for now.
-compat-table/es6/for-of.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/for-of.iterable-instance.js: failed: exit code 1
-compat-table/es6/for-of.iterable.js: failed: exit code 1
-compat-table/es6/for-of.iterator-closing-break.js: failed: Only arrays as right-hand side of for-of loop are supported for now.
+compat-table/es6/for-of.astral-string.js: Only arrays as right-hand side of for-of loop are supported for now.
+compat-table/es6/for-of.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/for-of.iterable-instance.js: Uncaught exception: [object Object]
+compat-table/es6/for-of.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/for-of.iterator-closing-break.js: Only arrays as right-hand side of for-of loop are supported for now.
 compat-table/es6/for-of.iterator-closing-throw.js: failed
 compat-table/es6/for-of.sparse-array.js: ReferenceError: "undefined" is not defined.
-compat-table/es6/for-of.string.js: failed: Only arrays as right-hand side of for-of loop are supported for now.
+compat-table/es6/for-of.string.js: Only arrays as right-hand side of for-of loop are supported for now.
 compat-table/es6/function.block-level-decl.js: failed
-compat-table/es6/generators.basic.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.constructor.js: failed: 'NewExpression' callee node is not supported yet.
-compat-table/es6/generators.expression.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.basic.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.constructor.js: 'NewExpression' callee node is not supported yet.
+compat-table/es6/generators.expression.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es6/generators.no-new-this.js: OK
 compat-table/es6/generators.prototype-chain.js: ReferenceError: "Object" is not defined.
 compat-table/es6/generators.prototype.js: ReferenceError: "Object" is not defined.
-compat-table/es6/generators.return.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.sending.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.shorthand.class.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.return.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.sending.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.shorthand.class.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es6/generators.shorthand.computed.class.js: TypeError: new C().generator is not a function
-compat-table/es6/generators.shorthand.computed.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.shorthand.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.shorthand.computed.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.shorthand.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es6/generators.shorthand.no-constructor.js: OK
-compat-table/es6/generators.shorthand.string-keyed.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.this.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.shorthand.string-keyed.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.this.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es6/generators.throw.js: TypeError: Cannot read property 'next' of undefined
-compat-table/es6/generators.yield-precedence.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.array.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.astral-string.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.generator.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.iterable-instance.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.iterable.js: failed: exit code 1
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: failed: exit code 1
+compat-table/es6/generators.yield-precedence.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.array.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.astral-string.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.generator.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.iterable-instance.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.iterable.js: Uncaught exception: [object Object]
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: Uncaught exception: [object Object]
 compat-table/es6/generators.yield-star.iterator-closing.js: TypeError: Cannot read properties of null (reading 'type')
-compat-table/es6/generators.yield-star.non-iterable-error.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.sparse-array.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/generators.yield-star.string.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.non-iterable-error.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.sparse-array.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/generators.yield-star.string.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: failed
 compat-table/es6/let.for-in-shadow.js: failed
@@ -984,11 +984,11 @@ compat-table/es6/misc.Proxy.get.Object.assign.js: ReferenceError: "Proxy" is not
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.get.RegExp-constructor.js: ReferenceError: "Symbol" is not defined.
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: failed: exit code 1
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed: exit code 1
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: Uncaught exception: [object Object]
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: Uncaught exception: [object Object]
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: ReferenceError: "Function" is not defined.
-compat-table/es6/misc.Proxy.get.RegExp.flags.js: failed: exit code 1
+compat-table/es6/misc.Proxy.get.RegExp.flags.js: Uncaught exception: [object Object]
 compat-table/es6/misc.Proxy.get.RegExp.test.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.get.RegExp.toString.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.get.String.match.js: ReferenceError: "Function" is not defined.
@@ -1013,7 +1013,7 @@ compat-table/es6/misc.Proxy.set.Array.shift.js: ReferenceError: "Proxy" is not d
 compat-table/es6/misc.Proxy.set.Array.splice.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.set.Array.unshift.js: ReferenceError: "Proxy" is not defined.
 compat-table/es6/misc.Proxy.set.Object.assign.js: ReferenceError: "Proxy" is not defined.
-compat-table/es6/misc.RegExp-alter-flags.js: failed: exit code 1
+compat-table/es6/misc.RegExp-alter-flags.js: Uncaught exception: [object Object]
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: ReferenceError: "RegExp" is not defined.
 compat-table/es6/misc.accessors-no-constructor.js: ReferenceError: "Object" is not defined.
 compat-table/es6/misc.bound-function-prototype.arrow.js: ReferenceError: "Function" is not defined.
@@ -1021,7 +1021,7 @@ compat-table/es6/misc.bound-function-prototype.class.js: ReferenceError: "Functi
 compat-table/es6/misc.bound-function-prototype.function.js: ReferenceError: "Function" is not defined.
 compat-table/es6/misc.bound-function-prototype.generator.js: ReferenceError: "Function" is not defined.
 compat-table/es6/misc.bound-function-prototype.subclass.js: ReferenceError: "Function" is not defined.
-compat-table/es6/misc.do-while-no-semicolon.js: failed: [9:28]: Unexpected token: 'return'
+compat-table/es6/misc.do-while-no-semicolon.js: Uncaught exception: Error: [9:28]: Unexpected token: 'return'; Error: [9:28]: Unexpected token: 'return'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dis...
 compat-table/es6/misc.duplicate-properties-strict.js: ReferenceError: "undefined" is not defined.
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: ReferenceError: "Object" is not defined.
@@ -1036,8 +1036,8 @@ compat-table/es6/misc.property-order.Object.keys.js: ReferenceError: "Object" is
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: "Object" is not defined.
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: "Symbol" is not defined.
 compat-table/es6/misc.prototypes-not-instances.js: ReferenceError: "Error" is not defined.
-compat-table/es6/new-target.assignment-error.js: failed: FunctionExpression type of callee is not supported yet.
-compat-table/es6/new-target.constructor.js: failed: FunctionExpression type of callee is not supported yet.
+compat-table/es6/new-target.assignment-error.js: FunctionExpression type of callee is not supported yet.
+compat-table/es6/new-target.constructor.js: FunctionExpression type of callee is not supported yet.
 compat-table/es6/regex.flags.u.case-folding.js: OK
 compat-table/es6/regex.flags.u.codepoint.js: OK
 compat-table/es6/regex.flags.u.js: OK
@@ -1047,18 +1047,18 @@ compat-table/es6/regex.flags.y.lastIndex.js: ReferenceError: "RegExp" is not def
 compat-table/es6/rest-params.arguments.js: OK
 compat-table/es6/rest-params.basic.js: ReferenceError: "Array" is not defined.
 compat-table/es6/rest-params.length.js: failed
-compat-table/es6/rest-params.new-function.js: failed: 'NewExpression' callee node is not supported yet.
+compat-table/es6/rest-params.new-function.js: 'NewExpression' callee node is not supported yet.
 compat-table/es6/rest-params.no-setter.js: OK
 compat-table/es6/spread.array-call.js: ReferenceError: "Math" is not defined.
 compat-table/es6/spread.array-literal.js: OK
 compat-table/es6/spread.astral-call.js: ReferenceError: "Array" is not defined.
 compat-table/es6/spread.astral-literal.js: failed
-compat-table/es6/spread.generator-call.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/spread.generator-literal.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/es6/spread.iterable-call.js: failed: exit code 1
-compat-table/es6/spread.iterable-instance-call.js: failed: exit code 1
-compat-table/es6/spread.iterable-instance-literal.js: failed: exit code 1
-compat-table/es6/spread.iterable-literal.js: failed: exit code 1
+compat-table/es6/spread.generator-call.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/spread.generator-literal.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es6/spread.iterable-call.js: Uncaught exception: [object Object]
+compat-table/es6/spread.iterable-instance-call.js: Uncaught exception: [object Object]
+compat-table/es6/spread.iterable-instance-literal.js: Uncaught exception: [object Object]
+compat-table/es6/spread.iterable-literal.js: Uncaught exception: [object Object]
 compat-table/es6/spread.non-iterable-error.js: failed
 compat-table/es6/spread.sparse-call.js: ReferenceError: "Array" is not defined.
 compat-table/es6/spread.sparse-literal.js: failed
@@ -1086,7 +1086,7 @@ compat-table/es6/subclassing.Promise.js: ReferenceError: "Promise" is not define
 compat-table/es6/subclassing.Promise.prototype-chain.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/subclassing.Promise.race.js: ReferenceError: "Promise" is not defined.
 compat-table/es6/subclassing.RegExp.exec.js: ReferenceError: "RegExp" is not defined.
-compat-table/es6/subclassing.RegExp.js: failed: exit code 1
+compat-table/es6/subclassing.RegExp.js: Uncaught exception: [object Object]
 compat-table/es6/subclassing.RegExp.prototype-chain.js: ReferenceError: "RegExp" is not defined.
 compat-table/es6/subclassing.RegExp.test.js: ReferenceError: "RegExp" is not defined.
 compat-table/es6/subclassing.misc.Boolean.js: ReferenceError: "Boolean" is not defined.
@@ -1097,14 +1097,14 @@ compat-table/es6/subclassing.misc.Set.js: ReferenceError: "Set" is not defined.
 compat-table/es6/subclassing.misc.String.js: ReferenceError: "String" is not defined.
 compat-table/es6/super.correct-constructor.js: failed
 compat-table/es6/super.expression.js: OK
-compat-table/es6/super.method-calls.js: failed: "Super" node type interpreter is not defined yet.
-compat-table/es6/super.new-target-binding.js: failed: "MetaProperty" node type interpreter is not defined yet.
-compat-table/es6/super.property-access.js: failed: "Super" node type interpreter is not defined yet.
+compat-table/es6/super.method-calls.js: "Super" node type interpreter is not defined yet.
+compat-table/es6/super.new-target-binding.js: "MetaProperty" node type interpreter is not defined yet.
+compat-table/es6/super.property-access.js: "Super" node type interpreter is not defined yet.
 compat-table/es6/super.statement.js: OK
-compat-table/es6/super.static-binding.js: failed: "Super" node type interpreter is not defined yet.
-compat-table/es6/super.this-binding.js: failed: "Super" node type interpreter is not defined yet.
-compat-table/es6/tail-calls.direct.js: MissingOK
-compat-table/es6/tail-calls.mutual.js: MissingOK
+compat-table/es6/super.static-binding.js: "Super" node type interpreter is not defined yet.
+compat-table/es6/super.this-binding.js: "Super" node type interpreter is not defined yet.
+compat-table/es6/tail-calls.direct.js: failed
+compat-table/es6/tail-calls.mutual.js: failed
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
 compat-table/es6/template.escape-sequences.js: failed
@@ -1132,9 +1132,9 @@ compat-table/es6/typed-arrays.Uint8Array.js: ReferenceError: "ArrayBuffer" is no
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: "ArrayBuffer" is not defined.
-compat-table/es6/typed-arrays.constructor-iterables.js: failed: exit code 1
-compat-table/es6/typed-arrays.constructor-requires-new.js: failed: exit code 1
-compat-table/es6/typed-arrays.correct-prototype-chains.js: failed: exit code 1
+compat-table/es6/typed-arrays.constructor-iterables.js: Uncaught exception: [object Object]
+compat-table/es6/typed-arrays.constructor-requires-new.js: Uncaught exception: [object Object]
+compat-table/es6/typed-arrays.correct-prototype-chains.js: Uncaught exception: [object Object]
 compat-table/es6/typed-arrays.from.js: ReferenceError: "Int8Array" is not defined.
 compat-table/es6/typed-arrays.of.js: ReferenceError: "Int8Array" is not defined.
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: "Int8Array" is not defined.
@@ -1194,15 +1194,15 @@ compat-table/es2016/Array.prototype.includes.generic.js: failed
 compat-table/es2016/Array.prototype.includes.js: ReferenceError: "NaN" is not defined.
 compat-table/es2016/Array.prototype.includes.sparse.js: ReferenceError: "Array" is not defined.
 compat-table/es2016/Array.prototype.includes.typed-array.js: ReferenceError: "Int8Array" is not defined.
-compat-table/es2016/exponentiation.assignment.js: failed: Operator '**=' is not supported.
-compat-table/es2016/exponentiation.basic.js: failed: BinaryExpression operator "**" is not implemented yet.
-compat-table/es2016/exponentiation.unary-negation-error.js: failed: BinaryExpression operator "**" is not implemented yet.
+compat-table/es2016/exponentiation.assignment.js: Operator '**=' is not supported.
+compat-table/es2016/exponentiation.basic.js: BinaryExpression operator "**" is not implemented yet.
+compat-table/es2016/exponentiation.unary-negation-error.js: BinaryExpression operator "**" is not implemented yet.
 compat-table/es2016/misc.Proxy-Array-includes.js: ReferenceError: "Proxy" is not defined.
 compat-table/es2016/misc.Proxy-enumerate-removed.js: ReferenceError: "Proxy" is not defined.
 compat-table/es2016/misc.generator-no-new.js: OK
-compat-table/es2016/misc.generator-throw-inner.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es2016/misc.generator-throw-inner.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: ReferenceError: "y" is not defined.
-compat-table/es2016/misc.nested-rest-destructuring-params.js: failed: "ArrayPattern" is not supported type of function param.
+compat-table/es2016/misc.nested-rest-destructuring-params.js: "ArrayPattern" is not supported type of function param.
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: OK
 compat-table/es2017/Atomics.add.js: ReferenceError: "Atomics" is not defined.
 compat-table/es2017/Atomics.and.js: ReferenceError: "Atomics" is not defined.
@@ -1247,9 +1247,9 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: "Proxy" i
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: "Proxy" is not defined.
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: "Proxy" is not defined.
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: "Proxy" is not defined.
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed: [10:507]: 'for-in' loop head declarations can not have an initializer
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: Uncaught exception: Error: [10:507]: 'for-in' loop head declarations can not have an initializer; Error: [10:507]: 'for-in' loop head declarations can not have an initializer; at parseWithLib (/dist/m...
 compat-table/es2017/async.Symbol.toStringTag.js: ReferenceError: "Object" is not defined.
-compat-table/es2017/async.arrow-in-class.js: ReferenceError: "Promise" is not defined.
+compat-table/es2017/async.arrow-in-class.js: found both ok and fail markers
 compat-table/es2017/async.arrow.js: ReferenceError: "Promise" is not defined.
 compat-table/es2017/async.await-non-promise.js: ReferenceError: "Promise" is not defined.
 compat-table/es2017/async.await-rejection.js: ReferenceError: "Promise" is not defined.
@@ -1263,7 +1263,7 @@ compat-table/es2017/async.no-line-break.js: OK
 compat-table/es2017/async.no-prototype.js: failed
 compat-table/es2017/async.prototype-chain.js: ReferenceError: "Object" is not defined.
 compat-table/es2017/async.return.js: ReferenceError: "Promise" is not defined.
-compat-table/es2017/async.throw.js: failed: exception: foo
+compat-table/es2017/async.throw.js: exception: foo
 compat-table/es2017/misc.arguments-caller-removed.js: ReferenceError: "Object" is not defined.
 compat-table/es2017/regex.flags.u.case-folding.js: OK
 compat-table/es2017/trailing-comma.arguments.js: ReferenceError: "Math" is not defined.
@@ -1272,7 +1272,7 @@ compat-table/es2018/Promise.prototype.finally.change-rejection.js: ReferenceErro
 compat-table/es2018/Promise.prototype.finally.js: ReferenceError: "Promise" is not defined.
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: ReferenceError: "Promise" is not defined.
 compat-table/es2018/async-iterators.for-await-of.js: ReferenceError: "Symbol" is not defined.
-compat-table/es2018/async-iterators.generators.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/es2018/async-iterators.generators.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: "Proxy" is not defined.
 compat-table/es2018/misc.template-literal-revision.js: ReferenceError: "undefined" is not defined.
 compat-table/es2018/object-rest.js: TypeError: Cannot read properties of undefined (reading 'type')
@@ -1311,42 +1311,42 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: ReferenceError: "
 compat-table/es2019/misc.JSON-stringify-well-formed.js: ReferenceError: "JSON" is not defined.
 compat-table/es2019/misc.JSON-superset.line-separator.js: ReferenceError: "eval" is not defined.
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: ReferenceError: "eval" is not defined.
-compat-table/es2019/misc.optional-catch-binding.await.js: ReferenceError: "Promise" is not defined.
+compat-table/es2019/misc.optional-catch-binding.await.js: found both ok and fail markers
 compat-table/es2019/misc.optional-catch-binding.js: OK
 compat-table/es2019/misc.optional-catch-binding.yield.js: TypeError: it.next is not a function
 compat-table/es2020/BigInt64Array.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: "BigInt" is not defined.
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: "BigInt" is not defined.
 compat-table/es2020/BigInt.constructor.js: ReferenceError: "BigInt" is not defined.
-compat-table/es2020/BigInt.js: failed: "BigIntLiteral" node type interpreter is not defined yet.
+compat-table/es2020/BigInt.js: "BigIntLiteral" node type interpreter is not defined yet.
 compat-table/es2020/BigUint64Array.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es2020/DataView.prototype.getBigInt64.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es2020/DataView.prototype.getBigUint64.js: ReferenceError: "ArrayBuffer" is not defined.
 compat-table/es2020/Promise.allSettled.js: ReferenceError: "Promise" is not defined.
 compat-table/es2020/String.prototype.matchAll.js: ReferenceError: "Symbol" is not defined.
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: ReferenceError: "String" is not defined.
-compat-table/es2020/globalThis.descriptor.js: failed: exit code 1
-compat-table/es2020/globalThis.js: failed: exit code 1
+compat-table/es2020/globalThis.descriptor.js: Uncaught exception: [object Object]
+compat-table/es2020/globalThis.js: Uncaught exception: [object Object]
 compat-table/es2020/nullish-coalescing.js: ReferenceError: "undefined" is not defined.
-compat-table/es2020/optional-chaining.bracket.js: failed: "ChainExpression" node type interpreter is not defined yet.
-compat-table/es2020/optional-chaining.function-call.js: failed: "ChainExpression" node type interpreter is not defined yet.
-compat-table/es2020/optional-chaining.method-call.js: failed: "ChainExpression" node type interpreter is not defined yet.
-compat-table/es2020/optional-chaining.property.js: failed: "ChainExpression" node type interpreter is not defined yet.
-compat-table/es2020/optional-chaining.spread-params.js: failed: "ChainExpression" node type interpreter is not defined yet.
+compat-table/es2020/optional-chaining.bracket.js: "ChainExpression" node type interpreter is not defined yet.
+compat-table/es2020/optional-chaining.function-call.js: "ChainExpression" node type interpreter is not defined yet.
+compat-table/es2020/optional-chaining.method-call.js: "ChainExpression" node type interpreter is not defined yet.
+compat-table/es2020/optional-chaining.property.js: "ChainExpression" node type interpreter is not defined yet.
+compat-table/es2020/optional-chaining.spread-params.js: "ChainExpression" node type interpreter is not defined yet.
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined.
 compat-table/es2021/Promise.any.AggregateError.js: ReferenceError: "Promise" is not defined.
 compat-table/es2021/Promise.any.fulfillment.js: ReferenceError: "Promise" is not defined.
 compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: ReferenceError: "WeakRef" is not defined.
-compat-table/es2021/logical-assignment.and.js: failed: [13:7]: Unexpected token: '='
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed: [11:11]: Unexpected token: '='
-compat-table/es2021/logical-assignment.and.short-circuit.js: failed: [11:7]: Unexpected token: '='
-compat-table/es2021/logical-assignment.nullish.js: failed: [13:7]: Unexpected token: '='
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed: [11:11]: Unexpected token: '='
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: failed: [11:7]: Unexpected token: '='
-compat-table/es2021/logical-assignment.or.js: failed: [13:7]: Unexpected token: '='
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed: [11:11]: Unexpected token: '='
-compat-table/es2021/logical-assignment.or.short-circuit.js: failed: [11:7]: Unexpected token: '='
+compat-table/es2021/logical-assignment.and.js: Uncaught exception: Error: [13:7]: Unexpected token: '='; Error: [13:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: Uncaught exception: Error: [11:11]: Unexpected token: '='; Error: [11:11]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes...
+compat-table/es2021/logical-assignment.and.short-circuit.js: Uncaught exception: Error: [11:7]: Unexpected token: '='; Error: [11:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
+compat-table/es2021/logical-assignment.nullish.js: Uncaught exception: Error: [13:7]: Unexpected token: '='; Error: [13:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: Uncaught exception: Error: [11:11]: Unexpected token: '='; Error: [11:11]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes...
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: Uncaught exception: Error: [11:7]: Unexpected token: '='; Error: [11:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
+compat-table/es2021/logical-assignment.or.js: Uncaught exception: Error: [13:7]: Unexpected token: '='; Error: [13:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: Uncaught exception: Error: [11:11]: Unexpected token: '='; Error: [11:11]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes...
+compat-table/es2021/logical-assignment.or.short-circuit.js: Uncaught exception: Error: [11:7]: Unexpected token: '='; Error: [11:7]: Unexpected token: '='; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7...
 compat-table/es2021/numeric-separators.js: OK
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: "AggregateError" is not defined.
 compat-table/es2022/Error.cause.AggregateError.js: ReferenceError: "AggregateError" is not defined.
@@ -1368,26 +1368,26 @@ compat-table/es2022/Object.hasOwn.ToObject-first.js: ReferenceError: "Object" is
 compat-table/es2022/Object.hasOwn.js: ReferenceError: "Object" is not defined.
 compat-table/es2022/at-method.Array.js: ReferenceError: "undefined" is not defined.
 compat-table/es2022/at-method.String.js: ReferenceError: "undefined" is not defined.
-compat-table/es2022/at-method.TypedArray.js: failed: exit code 1
-compat-table/es2022/class-fields.computed-instance.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.computed-static.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.instance.parent-scope.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.private-instance.initializers.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.private-instance.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.private-instance.optional-access.js: failed: [12:17]: Dot property must be an identifier
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.private-static.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.public-instance.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.public-static.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-fields.static.define.js: failed: "FieldDefinition" node type interpreter is not defined yet.
-compat-table/es2022/class-methods.private-accessor.js: failed: This kind of assignment is not implemented yet.
-compat-table/es2022/class-methods.private-instance.js: failed: "PrivateName" node type interpreter is not defined yet.
-compat-table/es2022/class-methods.private-static-accessor.js: failed: This kind of assignment is not implemented yet.
-compat-table/es2022/class-methods.private-static.js: failed: "PrivateName" node type interpreter is not defined yet.
-compat-table/es2022/class-static-init-blocks.js: failed: [12:12]: Unexpected token: '{'
-compat-table/es2022/ergonomic-brand-checks.js: failed: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/at-method.TypedArray.js: Uncaught exception: [object Object]
+compat-table/es2022/class-fields.computed-instance.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.computed-static.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.instance.parent-scope.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.private-instance.initializers.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.private-instance.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.private-instance.optional-access.js: Uncaught exception: Error: [12:17]: Dot property must be an identifier; Error: [12:17]: Dot property must be an identifier; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at ...
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.private-static.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.public-instance.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.public-static.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-fields.static.define.js: "FieldDefinition" node type interpreter is not defined yet.
+compat-table/es2022/class-methods.private-accessor.js: This kind of assignment is not implemented yet.
+compat-table/es2022/class-methods.private-instance.js: "PrivateName" node type interpreter is not defined yet.
+compat-table/es2022/class-methods.private-static-accessor.js: This kind of assignment is not implemented yet.
+compat-table/es2022/class-methods.private-static.js: "PrivateName" node type interpreter is not defined yet.
+compat-table/es2022/class-static-init-blocks.js: Uncaught exception: Error: [12:12]: Unexpected token: '{'; Error: [12:12]: Unexpected token: '{'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes...
+compat-table/es2022/ergonomic-brand-checks.js: "FieldDefinition" node type interpreter is not defined yet.
 compat-table/es2022/regex.flags.d.constructor.js: ReferenceError: "RegExp" is not defined.
-compat-table/es2022/regex.flags.d.shows-in-flags.js: failed: exit code 1
+compat-table/es2022/regex.flags.d.shows-in-flags.js: Uncaught exception: [object Object]
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
 compat-table/es2023/Array.prototype.findLast.js: OK
 compat-table/es2023/Array.prototype.toReversed.js: OK
@@ -1405,12 +1405,12 @@ compat-table/es2024/Map.groupBy.js: ReferenceError: "Map" is not defined.
 compat-table/es2024/Object.groupBy.js: ReferenceError: "Object" is not defined.
 compat-table/es2024/Promise.withResolvers.js: ReferenceError: "Promise" is not defined.
 compat-table/es2024/regex.flags.v.constructor.js: ReferenceError: "RegExp" is not defined.
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: [9:38]: Unexpected regular expression flag
-compat-table/es2024/regex.flags.v.set-notations.js: failed: [9:42]: Unexpected regular expression flag
+compat-table/es2024/regex.flags.v.properties-of-strings.js: Uncaught exception: Error: [9:38]: Unexpected regular expression flag; Error: [9:38]: Unexpected regular expression flag; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at cr...
+compat-table/es2024/regex.flags.v.set-notations.js: Uncaught exception: Error: [9:42]: Unexpected regular expression flag; Error: [9:42]: Unexpected regular expression flag; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at cr...
 compat-table/es2024/regex.flags.v.shows-in-flags.js: ReferenceError: "Proxy" is not defined.
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: [9:26]: Unexpected regular expression flag
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: [9:26]: Unexpected regular expression flag
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: [9:26]: Unexpected regular expression flag
+compat-table/es2024/regex.flags.v.unicode-15.1.js: Uncaught exception: Error: [9:26]: Unexpected regular expression flag; Error: [9:26]: Unexpected regular expression flag; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at cr...
+compat-table/es2024/regex.flags.v.unicode-16.0.js: Uncaught exception: Error: [9:26]: Unexpected regular expression flag; Error: [9:26]: Unexpected regular expression flag; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at cr...
+compat-table/es2024/regex.flags.v.unicode-17.0.js: Uncaught exception: Error: [9:26]: Unexpected regular expression flag; Error: [9:26]: Unexpected regular expression flag; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at cr...
 compat-table/es2025/Iterator.extends.js: ReferenceError: "Iterator" is not defined.
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: "Iterator" is not defined.
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: "Iterator" is not defined.
@@ -1471,28 +1471,28 @@ compat-table/intl/String.prototype.localeCompare.js: ReferenceError: "String" is
 compat-table/next/Array.isTemplateObject.js: ReferenceError: "Array" is not defined.
 compat-table/next/AsyncDisposableStack.js: ReferenceError: "AsyncDisposableStack" is not defined.
 compat-table/next/AsyncIterator.extends.js: ReferenceError: "AsyncIterator" is not defined.
-compat-table/next/AsyncIterator.from.async-iterable.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.from.async-iterable.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: "AsyncIterator" is not defined.
 compat-table/next/AsyncIterator.from.iterator.js: ReferenceError: "AsyncIterator" is not defined.
 compat-table/next/AsyncIterator.instanceof.js: ReferenceError: "AsyncIterator" is not defined.
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined.
-compat-table/next/AsyncIterator.prototype.drop.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.every.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.filter.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.find.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.flatMap.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.forEach.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.map.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.reduce.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.some.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.take.js: failed: "YieldExpression" node type interpreter is not defined yet.
-compat-table/next/AsyncIterator.prototype.toArray.js: failed: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.drop.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.every.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.filter.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.find.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.flatMap.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.forEach.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.map.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.reduce.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.some.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.take.js: "YieldExpression" node type interpreter is not defined yet.
+compat-table/next/AsyncIterator.prototype.toArray.js: "YieldExpression" node type interpreter is not defined yet.
 compat-table/next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined.
 compat-table/next/Map.prototype.upsert.js: ReferenceError: "Map" is not defined.
 compat-table/next/RegExp.1-9.js: ReferenceError: "RegExp" is not defined.
 compat-table/next/RegExp.lastMatch.js: ReferenceError: "RegExp" is not defined.
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: [13:12]: Unexpected token: 'identifier'
+compat-table/next/SuppressedError.js: Uncaught exception: Error: [13:12]: Unexpected token: 'identifier'; Error: [13:12]: Unexpected token: 'identifier'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createSc...
 compat-table/next/Uint8Array.fromBase64.js: ReferenceError: "Uint8Array" is not defined.
 compat-table/next/Uint8Array.fromHex.js: ReferenceError: "Uint8Array" is not defined.
 compat-table/next/Uint8Array.setFromBase64.js: ReferenceError: "Uint8Array" is not defined.
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: ReferenceError: "Uint8Array" is not 
 compat-table/next/Uint8Array.toBase64.js: ReferenceError: "Uint8Array" is not defined.
 compat-table/next/Uint8Array.toHex.js: ReferenceError: "Uint8Array" is not defined.
 compat-table/next/WeakMap.prototype.upsert.js: ReferenceError: "WeakMap" is not defined.
-compat-table/next/await-using.for-of.js: failed: [57:22]: Expected ';'
-compat-table/next/await-using.js: failed: [52:19]: Unexpected token: 'identifier'
+compat-table/next/await-using.for-of.js: Uncaught exception: Error: [57:22]: Expected ';'; Error: [57:22]: Expected ';'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7085:59); at toSc...
+compat-table/next/await-using.js: Uncaught exception: Error: [52:19]: Unexpected token: 'identifier'; Error: [52:19]: Unexpected token: 'identifier'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createSc...
 compat-table/next/class-decorators.js: ReferenceError: "Object" is not defined.
-compat-table/next/function.sent.js: failed: [11:22]: Expected '('
-compat-table/next/throw-expr.arrow.js: failed: [9:22]: Unexpected token: 'throw'
-compat-table/next/throw-expr.conditional.js: failed: [9:19]: Unexpected token: 'throw'
-compat-table/next/throw-expr.logical.js: failed: [11:19]: Unexpected token: 'throw'
-compat-table/next/throw-expr.param-init.js: failed: [9:26]: Unexpected token: 'throw'
-compat-table/next/using.for-of.js: failed: [22:16]: Expected ';'
-compat-table/next/using.js: failed: [16:11]: Unexpected token: 'identifier'
+compat-table/next/function.sent.js: Uncaught exception: Error: [11:22]: Expected '('; Error: [11:22]: Expected '('; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7085:59); at toSc...
+compat-table/next/throw-expr.arrow.js: Uncaught exception: Error: [9:22]: Unexpected token: 'throw'; Error: [9:22]: Unexpected token: 'throw'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/...
+compat-table/next/throw-expr.conditional.js: Uncaught exception: Error: [9:19]: Unexpected token: 'throw'; Error: [9:19]: Unexpected token: 'throw'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/...
+compat-table/next/throw-expr.logical.js: Uncaught exception: Error: [11:19]: Unexpected token: 'throw'; Error: [11:19]: Unexpected token: 'throw'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dis...
+compat-table/next/throw-expr.param-init.js: Uncaught exception: Error: [9:26]: Unexpected token: 'throw'; Error: [9:26]: Unexpected token: 'throw'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/...
+compat-table/next/using.for-of.js: Uncaught exception: Error: [22:16]: Expected ';'; Error: [22:16]: Expected ';'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createScript (/dist/metaes:7085:59); at toSc...
+compat-table/next/using.js: Uncaught exception: Error: [16:11]: Unexpected token: 'identifier'; Error: [16:11]: Unexpected token: 'identifier'; at parseWithLib (/dist/metaes:7032:15); at parse (/dist/metaes:7044:16); at createSc...

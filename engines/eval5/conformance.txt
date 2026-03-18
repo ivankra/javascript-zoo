@@ -56,7 +56,7 @@ es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
 es1/Function.js: OK
 es1/Function.length.js: OK
-es1/Function.prototype.constructor.js: failed: function instance constructor failed
+es1/Function.prototype.constructor.js: function instance constructor failed
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
 es1/Math.E.js: OK
@@ -126,7 +126,7 @@ es1/asi.eval.js: OK
 es1/asi.js: TypeError: Cannot create property '0' on number '1'
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
-es1/assignment.ltr.js: failed: C++ like evaluation order in 'x += f()'
+es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
 es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
@@ -279,7 +279,7 @@ es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: wrong exception for calling number
+es3/global.TypeError.thrown.js: wrong exception for calling number; no exception for Function.prototype.toString on non-function
 es3/global.URIError.js: OK
 es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
@@ -362,7 +362,7 @@ es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: failed
+es5/Function.prototype.bind.js: Function.prototype.bind not a function
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
@@ -387,10 +387,10 @@ es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
@@ -413,7 +413,7 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
@@ -625,7 +625,7 @@ compat-table/es6/Proxy.no-prototype.js: OK
 compat-table/es6/Proxy.revocable.js: OK
 compat-table/es6/Reflect.apply.js: OK
 compat-table/es6/Reflect.construct.Array-subclassing.js: OK
-compat-table/es6/Reflect.construct.Function-subclassing.js: failed: Illegal call
+compat-table/es6/Reflect.construct.Function-subclassing.js: Illegal call
 compat-table/es6/Reflect.construct.Promise-subclassing.js: OK
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: OK
 compat-table/es6/Reflect.construct.js: OK

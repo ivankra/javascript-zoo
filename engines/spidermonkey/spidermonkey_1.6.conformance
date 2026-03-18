@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"04cc6d7e3cf7a53af0b177b821f9d5ff4cbd1f143ae5e055b08ba6d60dd3a296","binary_size":878416,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","engine":"spidermonkey","jit":"","loc":71823,"revision_date":"2006-11-19","sources":"https://archive.mozilla.org/pub/js/js-1.60.tar.gz","standard":"ES3","variant":"1.6","version":"1.6"}
+Metadata: {"arch":"arm64","binary_sha256":"cb297c8a604fe2d6fa1215789780e69f3cefc7cdd8deb0f3f189d13dfbb05b67","binary_size":878416,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","engine":"spidermonkey","jit":"","loc":71823,"revision_date":"2006-11-19","sources":"https://archive.mozilla.org/pub/js/js-1.60.tar.gz","standard":"ES3","variant":"1.6","version":"1.6"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -226,7 +226,7 @@ es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
@@ -239,7 +239,7 @@ es3/Object.prototype.propertyIsEnumerable.js: OK
 es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: new RegExp failed
+es3/RegExp.js: new RegExp failed; RegExp as function failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
@@ -262,7 +262,7 @@ es3/String.prototype.search.js: OK
 es3/String.prototype.search.str.js: OK
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
@@ -346,9 +346,9 @@ es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: TypeError: Array.isArray is not a function
-es5/Array.prototype.every.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.filter.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.forEach.js: failed: sparse array skips missing elements failed
+es5/Array.prototype.every.js: sparse array skips missing elements failed
+es5/Array.prototype.filter.js: sparse array skips missing elements failed
+es5/Array.prototype.forEach.js: sparse array skips missing elements failed
 es5/Array.prototype.indexOf.js: OK
 es5/Array.prototype.lastIndexOf.js: OK
 es5/Array.prototype.map.js: OK
@@ -360,10 +360,10 @@ es5/Array.prototype.sort.undefined-comparefn.js: TypeError: invalid Array.protot
 es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: TypeError: d1.toISOString is not a function
 es5/Date.prototype.toJSON.js: TypeError: Date.prototype.toJSON has no properties
-es5/Function.prototype-not-enumerable.js: failed
-es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype-not-enumerable.js: prototype is enumerable; named function prototype is enumerable; prototype appears in for-in
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: TypeError: getX.bind is not a function
-es5/JSON.js: failed: typeof JSON !== 'object'
+es5/JSON.js: typeof JSON !== 'object'
 es5/JSON.parse.js: ReferenceError: JSON is not defined
 es5/JSON.parse.reviver.js: ReferenceError: JSON is not defined
 es5/JSON.stringify.js: ReferenceError: JSON is not defined
@@ -387,10 +387,10 @@ es5/String.indexing.js: OK
 es5/String.prototype.trim.js: TypeError: s1.trim is not a function
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed
-es5/global.parseInt.no-octal.js: failed
-es5/global.undefined.immutable.js: failed
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
+es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
@@ -413,10 +413,10 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: failed
+es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: Object.defineProperty is not a function
-es5/strict.this-primitive-not-coerced.js: failed: string 'this' was coerced to object
-es5/strict.this-undefined-in-function.js: failed: outer 'this' is not undefined
+es5/strict.this-primitive-not-coerced.js: string 'this' was coerced to object
+es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: failed
 es5/this.thrown-function.js: OK
 compat-table/es6/Array.Symbol.species.js: ReferenceError: Symbol is not defined

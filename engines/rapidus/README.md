@@ -17,25 +17,25 @@ JavaScript engine written in Rust, aiming at ES5.
 ## Conformance
 
 <details><summary>ES1-ES5: 21%</summary><ul>
-<li>ES1: 31%</li>
-<li>ES3: 14%, <b>1 crash</b></li>
-<li>ES5: 12%</li>
+<li>ES1: 31%, <b>4 crashes</b></li>
+<li>ES3: 14%, <b>7 crashes</b></li>
+<li>ES5: 11%, <b>7 crashes</b></li>
 </ul></details>
 
 <details><summary>compat-table: ES6 8%, ES2016+ 2%, Next 0%, Intl 0%</summary><ul>
-<li>ES6: 8%</li>
+<li>ES6: 8%, <b>26 crashes</b></li>
 <li>ES2016: 6%</li>
-<li>ES2017: 0%</li>
-<li>ES2018: 11%</li>
-<li>ES2019: 0%</li>
+<li>ES2017: 0%, <b>9 crashes</b></li>
+<li>ES2018: 11%, <b>7 crashes</b></li>
+<li>ES2019: 0%, <b>2 crashes</b></li>
 <li>ES2020: 0%</li>
 <li>ES2021: 0%</li>
 <li>ES2022: 0%</li>
 <li>ES2023: 0%</li>
-<li>ES2024: 0%</li>
+<li>ES2024: 0%, <b>3 crashes</b></li>
 <li>ES2025: 0%</li>
 <li>Next: 0%</li>
-<li>Intl: 0%</li>
+<li>Intl: 0%, <b>1 crash</b></li>
 </ul></details>
 
-💥 **1 crash during testing**
+💥 **69 crashes during testing**

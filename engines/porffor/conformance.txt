@@ -1,12 +1,12 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":17868819,"engine":"porffor","repository":"https://github.com/CanadaHonk/porffor.git","revision":"d7c4582b4a5b94fef858709de11468065bc92729","revision_date":"2026-03-02"}
-es1/Array.js: failed: Array() + array index length update failed
-es1/Array.length.assignment.js: failed: array index length update failed
-es1/Array.length.js: failed: length auto-update failed
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":17877069,"engine":"porffor","repository":"https://github.com/CanadaHonk/porffor.git","revision":"84fdcda4741ed2ee1383ae65e15743869cd6c017","revision_date":"2026-03-06"}
+es1/Array.js: Array() + array index length update failed; sparse array length failed
+es1/Array.length.assignment.js: array index length update failed
+es1/Array.length.js: length auto-update failed; length > max index failed
 es1/Array.prototype.constructor.js: OK
 es1/Array.prototype.join.generic.js: OK
 es1/Array.prototype.join.js: OK
 es1/Array.prototype.reverse.generic.js: failed
-es1/Array.prototype.reverse.js: failed: reverse single element failed
+es1/Array.prototype.reverse.js: reverse single element failed
 es1/Array.prototype.sort.generic.js: failed
 es1/Array.prototype.sort.js: OK
 es1/Array.prototype.toString.js: OK
@@ -107,20 +107,20 @@ es1/String.prototype.charCodeAt.js: OK
 es1/String.prototype.constructor.js: OK
 es1/String.prototype.indexOf.js: OK
 es1/String.prototype.lastIndexOf.js: OK
-es1/String.prototype.split.js: failed: split('') failed
+es1/String.prototype.split.js: split('') failed
 es1/String.prototype.substring.js: OK
 es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: TypeError: TypeError: undefined is not a function
-es1/annex-b.Date.prototype.setYear.js: TypeError: TypeError: undefined is not a function
-es1/annex-b.Date.prototype.toGMTString.js: TypeError: TypeError: undefined is not a function
+es1/annex-b.Date.prototype.getYear.js: TypeError: undefined is not a function
+es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not a function
+es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not a function
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
-es1/arguments.callee.js: TypeError: TypeError: undefined is not a function
+es1/arguments.callee.js: TypeError: undefined is not a function
 es1/arguments.js: OK
 es1/asi.eval.js: OK
 es1/asi.js: OK
@@ -131,22 +131,22 @@ es1/assignment.unsigned-shift.js: OK
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
-es1/bitwise.unsigned-shift.js: failed
+es1/bitwise.unsigned-shift.js: -12345 >>> 0 != 4294954951 (got: -12345)
 es1/break.js: OK
 es1/comma.js: OK
 es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: failed: +Infinity failed
+es1/conversions.ToInt32.js: +Infinity failed; -Infinity failed
 es1/conversions.ToInteger.js: OK
-es1/conversions.ToNumber.js: failed: '' failed
+es1/conversions.ToNumber.js: '' failed; '0xff' failed; '-10' failed
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: OK
-es1/conversions.ToUint32.js: failed: +Infinity failed
-es1/conversions.js: failed
+es1/conversions.ToUint32.js: +Infinity failed; -Infinity failed; 2^32-1 failed; 2^31 failed; -1 failed; -2^31 failed
+es1/conversions.js: 123 != '0123'; 0 != ''; 123.0 != '0123'; 0 == null; 0 == undefined; false != ''; 123 > '123'; 123 - '123' != 0; '5' - 1 != 4; 123 - '' != 123; '5' - true != 4; '5' * '6' != 30; 123 * '' != 0; true * '...
 es1/equals.js: OK
-es1/eval.js: SyntaxError: SyntaxError: Dynamic code evaluation is not supported
+es1/eval.js: SyntaxError: Dynamic code evaluation is not supported
 es1/for-in.js: OK
 es1/for.js: OK
 es1/functions.js: OK
@@ -196,21 +196,21 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: failed: property lookup failed
-es3/Array.prototype.concat.js: failed: concat two arrays failed
-es3/Array.prototype.pop.generic.js: failed: pop from object failed
-es3/Array.prototype.pop.js: failed: pop from array failed
-es3/Array.prototype.push.generic.js: failed: push to object failed
-es3/Array.prototype.push.js: failed: push single element failed
-es3/Array.prototype.shift.generic.js: failed: shift from object failed
-es3/Array.prototype.shift.js: failed: shift from array failed
+es1/with.js: property lookup failed; second property lookup failed; assignment failed
+es3/Array.prototype.concat.js: concat two arrays failed; concat non-array items failed; concat with no arguments failed; concat mixed array and non-array failed
+es3/Array.prototype.pop.generic.js: pop from object failed; pop single element from object failed
+es3/Array.prototype.pop.js: pop from array failed; pop single element failed; remaining elements after pop failed
+es3/Array.prototype.push.generic.js: push to object failed; push multiple to empty object failed
+es3/Array.prototype.push.js: push single element failed; push with no arguments failed; push to non-empty array failed
+es3/Array.prototype.shift.generic.js: shift from object failed; shift single element from object failed
+es3/Array.prototype.shift.js: shift from array failed; shift single element failed; multiple shifts failed; shift sparse array failed
 es3/Array.prototype.slice.generic.js: OK
-es3/Array.prototype.slice.js: failed: slice with start and end failed
-es3/Array.prototype.splice.generic.js: failed: delete on object failed
-es3/Array.prototype.splice.js: failed: delete elements failed
-es3/Array.prototype.toLocaleString.js: failed: basic toLocaleString failed
-es3/Array.prototype.unshift.generic.js: failed: unshift on object failed
-es3/Array.prototype.unshift.js: failed: unshift single element failed
+es3/Array.prototype.slice.js: slice with start and end failed; slice with start only failed; slice with negative start failed; slice with negative end failed; slice entire array failed
+es3/Array.prototype.splice.generic.js: delete on object failed; insert on object failed; negative start on object failed
+es3/Array.prototype.splice.js: delete elements failed; delete and insert failed; insert without delete failed; negative start failed
+es3/Array.prototype.toLocaleString.js: basic toLocaleString failed; multiple elements content failed
+es3/Array.prototype.unshift.generic.js: unshift on object failed; unshift multiple on object failed; unshift on empty object failed
+es3/Array.prototype.unshift.js: unshift single element failed; unshift multiple elements failed; unshift with no arguments failed; element order after unshift failed
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
 es3/Date.prototype.toLocaleDateString.js: OK
@@ -219,7 +219,7 @@ es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
-es3/Error.prototype.message.js: TypeError: TypeError: Accessor called without object
+es3/Error.prototype.message.js: TypeError: Accessor called without object
 es3/Error.prototype.name.js: failed
 es3/Error.prototype.toString.js: OK
 es3/Function.prototype.apply.js: OK
@@ -227,21 +227,21 @@ es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: OK
-es3/Number.prototype.toExponential.js: failed: small number failed
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.js: small number failed
+es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e+1'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: large number precision failed
+es3/Number.prototype.toFixed.js: large number precision failed; rounding failed
 es3/Number.prototype.toLocaleString.js: OK
-es3/Number.prototype.toPrecision.js: failed: RuntimeError: memory access out of bounds
+es3/Number.prototype.toPrecision.js: RuntimeError: memory access out of bounds
 es3/Object.prototype.hasOwnProperty.js: OK
-es3/Object.prototype.isPrototypeOf.js: failed: prototype chain failed
+es3/Object.prototype.isPrototypeOf.js: prototype chain failed; Object.prototype failed
 es3/Object.prototype.propertyIsEnumerable.js: OK
 es3/Object.prototype.toLocaleString.js: OK
 es3/RegExp.global.js: OK
-es3/RegExp.ignoreCase.js: failed: constructor with i failed
-es3/RegExp.js: failed: ignoreCase flag failed
+es3/RegExp.ignoreCase.js: constructor with i failed; literal with i failed
+es3/RegExp.js: ignoreCase flag failed; RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
-es3/RegExp.multiline.js: failed: constructor with m failed
+es3/RegExp.multiline.js: constructor with m failed; literal with m failed
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
@@ -252,45 +252,45 @@ es3/String.prototype.concat.js: OK
 es3/String.prototype.localeCompare.js: OK
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
-es3/String.prototype.replace.capture.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.replace.extra.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.replace.generic.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.replace.regex.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.replace.str.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.search.generic.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.search.js: TypeError: TypeError: undefined is not a function
-es3/String.prototype.search.str.js: TypeError: TypeError: undefined is not a function
+es3/String.prototype.replace.capture.js: TypeError: undefined is not a function
+es3/String.prototype.replace.extra.js: TypeError: undefined is not a function
+es3/String.prototype.replace.generic.js: TypeError: undefined is not a function
+es3/String.prototype.replace.regex.js: TypeError: undefined is not a function
+es3/String.prototype.replace.str.js: TypeError: undefined is not a function
+es3/String.prototype.search.generic.js: TypeError: undefined is not a function
+es3/String.prototype.search.js: TypeError: undefined is not a function
+es3/String.prototype.search.str.js: TypeError: undefined is not a function
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: '.'.split(/(.?)(.?)/).length !== 4; ''.split(/.?/).length !== 0
 es3/String.prototype.split.limit.js: OK
-es3/String.prototype.split.regex.js: failed: split with regex failed
+es3/String.prototype.split.regex.js: split with capturing group failed
 es3/String.prototype.toLocaleLowerCase.js: OK
-es3/String.prototype.toLocaleUpperCase.js: MissingOK
+es3/String.prototype.toLocaleUpperCase.js: 'hello'.toLocaleUpperCase() != 'HELLO' (got: 'hello')
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
-es3/function-expressions.IIFE.js: failed: IIFE closure failed
+es3/function-expressions.IIFE.js: IIFE closure failed
 es3/function-expressions.js: OK
-es3/global.EvalError.js: failed: name failed
-es3/global.RangeError.js: failed: name failed
-es3/global.RangeError.thrown.js: failed: no exception for negative array length
-es3/global.ReferenceError.js: failed: name failed
-es3/global.ReferenceError.thrown.js: failed: no exception for undeclared in expression
-es3/global.SyntaxError.js: failed: name failed
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: no exception for negative array length; no exception for array length exceeding 2^32-1
+es3/global.ReferenceError.js: name failed
+es3/global.ReferenceError.thrown.js: no exception for undeclared in expression
+es3/global.SyntaxError.js: name failed
 es3/global.SyntaxError.thrown.js: OK
-es3/global.TypeError.js: failed: name failed
-es3/global.TypeError.thrown.js: failed: no exception for in number
-es3/global.URIError.js: failed: name failed
-es3/global.URIError.thrown.js: failed: no exception for decodeURI incomplete escape
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: no exception for in number
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: RuntimeError: memory access out of bounds
 es3/global.decodeURIComponent.js: OK
-es3/global.decodeURI.js: failed: # not decoded failed
-es3/global.encodeURIComponent.js: failed: encode UTF-8 failed
-es3/global.encodeURI.js: failed: encode UTF-8 failed
+es3/global.decodeURI.js: # not decoded failed
+es3/global.encodeURIComponent.js: encode UTF-8 failed
+es3/global.encodeURI.js: encode UTF-8 failed
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
-es3/in.js: failed: numeric property in array failed
-es3/labelled.break.js: failed: labelled break from block failed
+es3/in.js: numeric property in array failed; sparse array index failed
+es3/labelled.break.js: labelled break from block failed
 es3/labelled.continue.js: OK
 es3/labelled.statements.js: OK
 es3/literals.array.elisions.js: OK
@@ -307,7 +307,7 @@ es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
 es3/nested-functions.eval.js: OK
-es3/nested-functions.js: failed: closure with nested function failed
+es3/nested-functions.js: ReferenceError: x is not defined
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: failed
@@ -328,8 +328,8 @@ es3/regex.flag.global.js: OK
 es3/regex.flag.ignorecase.js: OK
 es3/regex.flag.multiline.js: OK
 es3/regex.group.js: OK
-es3/regex.lookahead.js: failed: spec example failed
-es3/regex.negative-lookahead.js: failed: spec example failed
+es3/regex.lookahead.js: spec example failed
+es3/regex.negative-lookahead.js: spec example failed
 es3/regex.non-capturing-group.js: OK
 es3/regex.quantifier.exact.js: OK
 es3/regex.quantifier.maybe.js: OK
@@ -343,12 +343,12 @@ es3/source.whitespace.js: OK
 es3/source.whitespace.unicode.js: OK
 es3/strict-equals.js: OK
 es3/switch.js: OK
-es3/try-catch-finally.js: failed: finally executes on throw failed
+es3/try-catch-finally.js: finally executes on throw failed
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
 es5/Array.prototype.every.js: OK
-es5/Array.prototype.filter.js: failed: sparse array skips missing elements failed
-es5/Array.prototype.forEach.js: failed: sparse array skips missing elements failed
+es5/Array.prototype.filter.js: sparse array skips missing elements failed
+es5/Array.prototype.forEach.js: sparse array skips missing elements failed
 es5/Array.prototype.indexOf.js: OK
 es5/Array.prototype.lastIndexOf.js: OK
 es5/Array.prototype.map.js: OK
@@ -362,12 +362,12 @@ es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: failed: thisArg binding failed
+es5/Function.prototype.bind.js: thisArg binding failed; argument binding failed; length property incorrect; bound constructor failed
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: cyclic structure does not throw TypeError
-es5/JSON.stringify.replacer.js: failed: replacer function failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: cyclic structure does not throw TypeError; didn't call user-provided toJSON() method
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
@@ -383,7 +383,7 @@ es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: OK
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: OK
-es5/String.indexing.js: failed
+es5/String.indexing.js: 'test'[10] !== undefined
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: OK
@@ -414,7 +414,7 @@ es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
 es5/strict.reserved-words.js: OK
-es5/strict.this-primitive-not-coerced-in-accessors.js: ReferenceError: ReferenceError: passed is not defined
+es5/strict.this-primitive-not-coerced-in-accessors.js: ReferenceError: passed is not defined
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: failed
@@ -582,13 +582,13 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: failed
 compat-table/es6/Promise.Symbol.species.js: TypeError: Argument is nullish, expected object
-compat-table/es6/Promise.all.iterable.js: ReferenceError: ReferenceError: score is not defined
-compat-table/es6/Promise.all.js: timeout: >3s
+compat-table/es6/Promise.all.iterable.js: ReferenceError: score is not defined
+compat-table/es6/Promise.all.js: RuntimeError: memory access out of bounds
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: ReferenceError: ReferenceError: score is not defined
+compat-table/es6/Promise.js: ReferenceError: score is not defined
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: ReferenceError: ReferenceError: score is not defined
-compat-table/es6/Promise.race.js: timeout: >3s
+compat-table/es6/Promise.race.iterable.js: ReferenceError: score is not defined
+compat-table/es6/Promise.race.js: RuntimeError: memory access out of bounds
 compat-table/es6/Proxy.Array.isArray.js: ReferenceError: Proxy is not defined
 compat-table/es6/Proxy.JSON.stringify.js: ReferenceError: Proxy is not defined
 compat-table/es6/Proxy.constructor-requires-new.js: ReferenceError: Proxy is not defined
@@ -626,7 +626,7 @@ compat-table/es6/Proxy.revocable.js: ReferenceError: Proxy is not defined
 compat-table/es6/Reflect.apply.js: failed
 compat-table/es6/Reflect.construct.Array-subclassing.js: failed
 compat-table/es6/Reflect.construct.Function-subclassing.js: SyntaxError: Dynamic code evaluation is not supported
-compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: ReferenceError: score is not defined
+compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: score is not defined
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: OK
@@ -782,17 +782,17 @@ compat-table/es6/class.static-methods.js: OK
 compat-table/es6/class.string-keyed-methods.js: OK
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: OK
-compat-table/es6/const.for-in.js: failed: exception: [object Object]
+compat-table/es6/const.for-in.js: exception: [object Object]
 compat-table/es6/const.for-loop.js: OK
-compat-table/es6/const.for-of.js: failed: exception: [object Object]
+compat-table/es6/const.for-of.js: exception: [object Object]
 compat-table/es6/const.no-redefine.js: OK
 compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
 compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: OK
-compat-table/es6/const.strict.for-in.js: failed: exception: [object Object]
+compat-table/es6/const.strict.for-in.js: exception: [object Object]
 compat-table/es6/const.strict.for-loop.js: OK
-compat-table/es6/const.strict.for-of.js: failed: exception: [object Object]
+compat-table/es6/const.strict.for-of.js: exception: [object Object]
 compat-table/es6/const.strict.no-redefine.js: OK
 compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
@@ -902,7 +902,7 @@ compat-table/es6/generators.shorthand.js: failed
 compat-table/es6/generators.shorthand.no-constructor.js: OK
 compat-table/es6/generators.shorthand.string-keyed.js: failed
 compat-table/es6/generators.this.js: failed
-compat-table/es6/generators.throw.js: failed: exception: foo
+compat-table/es6/generators.throw.js: exception: foo
 compat-table/es6/generators.yield-precedence.js: failed
 compat-table/es6/generators.yield-star.array.js: failed
 compat-table/es6/generators.yield-star.astral-string.js: failed
@@ -1029,11 +1029,11 @@ compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: OK
 compat-table/es6/misc.identifier-syntax.var-1.js: OK
 compat-table/es6/misc.identifier-syntax.var-2.js: OK
 compat-table/es6/misc.property-order.JSON.parse.js: failed
-compat-table/es6/misc.property-order.JSON.stringify.js: failed: exception: [object Object]
+compat-table/es6/misc.property-order.JSON.stringify.js: exception: [object Object]
 compat-table/es6/misc.property-order.Object.assign.js: ReferenceError: target is not defined
-compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: failed: exception: [object Object]
-compat-table/es6/misc.property-order.Object.keys.js: failed: exception: [object Object]
-compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: failed: exception: [object Object]
+compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: exception: [object Object]
+compat-table/es6/misc.property-order.Object.keys.js: exception: [object Object]
+compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: exception: [object Object]
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
 compat-table/es6/misc.prototypes-not-instances.js: failed
 compat-table/es6/new-target.assignment-error.js: failed
@@ -1049,20 +1049,20 @@ compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: OK
 compat-table/es6/rest-params.new-function.js: OK
 compat-table/es6/rest-params.no-setter.js: OK
-compat-table/es6/spread.array-call.js: failed: porffor: no generation for SpreadElement
+compat-table/es6/spread.array-call.js: porffor: no generation for SpreadElement
 compat-table/es6/spread.array-literal.js: OK
 compat-table/es6/spread.astral-call.js: failed
 compat-table/es6/spread.astral-literal.js: failed
-compat-table/es6/spread.generator-call.js: failed: porffor: no generation for SpreadElement
+compat-table/es6/spread.generator-call.js: porffor: no generation for SpreadElement
 compat-table/es6/spread.generator-literal.js: failed
-compat-table/es6/spread.iterable-call.js: failed: porffor: no generation for SpreadElement
-compat-table/es6/spread.iterable-instance-call.js: failed: porffor: no generation for SpreadElement
+compat-table/es6/spread.iterable-call.js: porffor: no generation for SpreadElement
+compat-table/es6/spread.iterable-instance-call.js: porffor: no generation for SpreadElement
 compat-table/es6/spread.iterable-instance-literal.js: TypeError: Cannot spread a non-iterable
 compat-table/es6/spread.iterable-literal.js: TypeError: Cannot spread a non-iterable
-compat-table/es6/spread.non-iterable-error.js: failed: porffor: no generation for SpreadElement
+compat-table/es6/spread.non-iterable-error.js: porffor: no generation for SpreadElement
 compat-table/es6/spread.sparse-call.js: OK
 compat-table/es6/spread.sparse-literal.js: OK
-compat-table/es6/spread.string-call.js: failed: porffor: no generation for SpreadElement
+compat-table/es6/spread.string-call.js: porffor: no generation for SpreadElement
 compat-table/es6/spread.string-literal.js: failed
 compat-table/es6/subclassing.Array.concat.js: failed
 compat-table/es6/subclassing.Array.filter.js: failed
@@ -1090,7 +1090,7 @@ compat-table/es6/subclassing.RegExp.js: failed
 compat-table/es6/subclassing.RegExp.prototype-chain.js: failed
 compat-table/es6/subclassing.RegExp.test.js: failed
 compat-table/es6/subclassing.misc.Boolean.js: failed
-compat-table/es6/subclassing.misc.Error.js: failed: RuntimeError: memory access out of bounds
+compat-table/es6/subclassing.misc.Error.js: RuntimeError: memory access out of bounds
 compat-table/es6/subclassing.misc.Map.js: TypeError: Map.prototype.set expects 'this' to be a Map
 compat-table/es6/subclassing.misc.Number.js: failed
 compat-table/es6/subclassing.misc.Set.js: TypeError: Set.prototype.add expects 'this' to be a Set
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: ReferenceError: passed is not defined
 compat-table/es6/super.static-binding.js: TypeError: Cannot get property of null
 compat-table/es6/super.this-binding.js: failed
-compat-table/es6/tail-calls.direct.js: RangeError: RangeError: Maximum call stack size exceeded
-compat-table/es6/tail-calls.mutual.js: RangeError: RangeError: Maximum call stack size exceeded
+compat-table/es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
+compat-table/es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
 compat-table/es6/template.escape-sequences.js: failed
@@ -1164,7 +1164,7 @@ compat-table/es6/unicode-escapes.property-access.js: OK
 compat-table/es6/unicode-escapes.property-key.js: OK
 compat-table/es6/unicode-escapes.string.js: OK
 compat-table/es6/well-known.hasInstance.js: failed
-compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: failed: RuntimeError: memory access out of bounds
+compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: RuntimeError: memory access out of bounds
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
 compat-table/es6/well-known.iterator.arguments.js: failed
 compat-table/es6/well-known.iterator.js: failed
@@ -1252,8 +1252,8 @@ compat-table/es2017/async.Symbol.toStringTag.js: failed
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: timeout: >3s
-compat-table/es2017/async.await.js: timeout: >3s
+compat-table/es2017/async.await-rejection.js: RuntimeError: memory access out of bounds
+compat-table/es2017/async.await.js: RuntimeError: memory access out of bounds
 compat-table/es2017/async.constructor.js: TypeError: a is not a function
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1268,11 +1268,11 @@ compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: failed
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
-compat-table/es2018/Promise.prototype.finally.change-rejection.js: failed: bar
-compat-table/es2018/Promise.prototype.finally.js: ReferenceError: ReferenceError: score is not defined
-compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: MissingOK
-compat-table/es2018/async-iterators.for-await-of.js: MissingOK
-compat-table/es2018/async-iterators.generators.js: ReferenceError: ReferenceError: iterator is not defined
+compat-table/es2018/Promise.prototype.finally.change-rejection.js: bar
+compat-table/es2018/Promise.prototype.finally.js: ReferenceError: score is not defined
+compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: failed
+compat-table/es2018/async-iterators.for-await-of.js: failed
+compat-table/es2018/async-iterators.generators.js: ReferenceError: iterator is not defined
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: Proxy is not defined
 compat-table/es2018/misc.template-literal-revision.js: failed
 compat-table/es2018/object-rest.js: OK
@@ -1313,7 +1313,7 @@ compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
 compat-table/es2019/misc.optional-catch-binding.await.js: OK
 compat-table/es2019/misc.optional-catch-binding.js: OK
-compat-table/es2019/misc.optional-catch-binding.yield.js: failed: exception: undefined
+compat-table/es2019/misc.optional-catch-binding.yield.js: exception: undefined
 compat-table/es2020/BigInt64Array.js: failed
 compat-table/es2020/BigInt.asIntN.js: failed
 compat-table/es2020/BigInt.asUintN.js: failed
@@ -1323,7 +1323,7 @@ compat-table/es2020/BigUint64Array.js: OK
 compat-table/es2020/DataView.prototype.getBigInt64.js: TypeError: undefined is not a function
 compat-table/es2020/DataView.prototype.getBigUint64.js: TypeError: undefined is not a function
 compat-table/es2020/Promise.allSettled.js: OK
-compat-table/es2020/String.prototype.matchAll.js: failed: RuntimeError: memory access out of bounds
+compat-table/es2020/String.prototype.matchAll.js: RuntimeError: memory access out of bounds
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: OK
 compat-table/es2020/globalThis.descriptor.js: OK
 compat-table/es2020/globalThis.js: OK
@@ -1334,7 +1334,7 @@ compat-table/es2020/optional-chaining.method-call.js: TypeError: undefined is no
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: TypeError: undefined is not a function
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry is not defined
-compat-table/es2021/Promise.any.AggregateError.js: MissingOK
+compat-table/es2021/Promise.any.AggregateError.js: failed
 compat-table/es2021/Promise.any.fulfillment.js: OK
 compat-table/es2021/String.prototype.replaceAll.js: TypeError: undefined is not a function
 compat-table/es2021/WeakRef.js: OK
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a 
 compat-table/es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: failed
 compat-table/es2025/Set.prototype.difference.js: OK
 compat-table/es2025/Set.prototype.intersection.js: OK
@@ -1493,20 +1493,20 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: ReferenceError: SuppressedError is not defined
-compat-table/next/Uint8Array.fromBase64.js: failed: exception: [object Object]
-compat-table/next/Uint8Array.fromHex.js: failed: exception: [object Object]
-compat-table/next/Uint8Array.setFromBase64.js: failed: exception: [object Object]
-compat-table/next/Uint8Array.setFromHex.js: failed: exception: [object Object]
+compat-table/next/Uint8Array.fromBase64.js: exception: [object Object]
+compat-table/next/Uint8Array.fromHex.js: exception: [object Object]
+compat-table/next/Uint8Array.setFromBase64.js: exception: [object Object]
+compat-table/next/Uint8Array.setFromHex.js: exception: [object Object]
 compat-table/next/Uint8Array.toBase64.js: OK
 compat-table/next/Uint8Array.toHex.js: OK
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: undefined is not a function
-compat-table/next/await-using.for-of.js: MissingOK
-compat-table/next/await-using.js: MissingOK
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: Unexpected character '@' (10:4)
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: Unexpected token (11:21)
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: Unexpected token (9:17)
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: Unexpected token (9:14)
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: Unexpected token (11:14)
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: Unexpected token (9:21)
+compat-table/next/await-using.for-of.js: failed
+compat-table/next/await-using.js: failed
+compat-table/next/class-decorators.js: SyntaxError: Unexpected character '@' (10:4)
+compat-table/next/function.sent.js: SyntaxError: Unexpected token (11:21)
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token (9:17)
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token (9:14)
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token (11:14)
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token (9:21)
 compat-table/next/using.for-of.js: failed
 compat-table/next/using.js: failed

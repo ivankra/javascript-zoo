@@ -20,20 +20,20 @@ First ES3-compliant version. Shipped in Netscape Navigator 6.0 (2000) and Firefo
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 <a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: custom toString failed
 <a href="../../conformance/es3/RegExp.js">RegExp.js</a>: new RegExp failed; RegExp as function failed
-<a href="../../conformance/es3/String.prototype.match.generic.js">String.prototype.match.generic.js</a>: crashed (signal 11)
+<a href="../../conformance/es3/String.prototype.match.generic.js">String.prototype.match.generic.js</a>: crashed: SIGSEGV
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: 'ab'.split(/(?:ab)*/).length !== 2; '.'.split(/(.?)(.?)/).length !== 4; '.'.split(/()()/).length !== 1
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: no exception for instanceof non-callable
-<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: identifiers.unicode.js:8: SyntaxError: illegal character:
-<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: literals.object.unicode.js:9: SyntaxError: illegal character:
+<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: illegal character:
 <a href="../../conformance/es3/literals.regex.js">literals.regex.js</a>: failed
-<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: source.line-terminators.js:13: SyntaxError: illegal character:
-<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: source.whitespace.js:12: SyntaxError: missing ; before statement:
-<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: source.whitespace.unicode.js:8: SyntaxError: illegal character:
+<a href="../../conformance/es3/source.line-terminators.js">source.line-terminators.js</a>: SyntaxError: illegal character:
+<a href="../../conformance/es3/source.whitespace.js">source.whitespace.js</a>: SyntaxError: missing ; before statement:
+<a href="../../conformance/es3/source.whitespace.unicode.js">source.whitespace.unicode.js</a>: SyntaxError: illegal character:
 </pre></li>
 <li>ES5: 14%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 3%, ES2016+ 2%, Next 6%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 3%, ES2016+ 2%</summary><ul>
 <li>ES6: 3%</li>
 <li>ES2016: 0%</li>
 <li>ES2017: 4%</li>
@@ -45,8 +45,6 @@ First ES3-compliant version. Shipped in Netscape Navigator 6.0 (2000) and Firefo
 <li>ES2023: 0%</li>
 <li>ES2024: 0%</li>
 <li>ES2025: 0%</li>
-<li>Next: 6%</li>
-<li>Intl: 25%</li>
 </ul></details>
 
 💥 **1 crash during testing**

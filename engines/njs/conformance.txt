@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"7571046296792e20695a3c67f062b95fb03d65c71602bf340afb81137bce5375","binary_size":843080,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"njs","repository":"https://github.com/nginx/njs.git","revision":"aa8ff7d04634080d3a28a207d688cd21b9b5392b","revision_date":"2026-02-11"}
+Metadata: {"arch":"arm64","binary_sha256":"2b622908271b2b06858b6ae7fc18ea6d3c4f6051e343b3f72e71fdaa4da6f52b","binary_size":843112,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"njs","repository":"https://github.com/nginx/njs.git","revision":"e496636ec3ccab2194511cef157141301a399049","revision_date":"2026-03-04"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -113,17 +113,17 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: TypeError: TypeError: (intermediate value)["getYear"] is not a function
-es1/annex-b.Date.prototype.setYear.js: TypeError: TypeError: (intermediate value)["setYear"] is not a function
-es1/annex-b.Date.prototype.toGMTString.js: TypeError: TypeError: (intermediate value)["toGMTString"] is not a function
-es1/annex-b.global.escape.js: ReferenceError: ReferenceError: "escape" is not defined
-es1/annex-b.global.unescape.js: ReferenceError: ReferenceError: "unescape" is not defined
-es1/annex-b.literals.octal.js: SyntaxError: SyntaxError: Unexpected token "0755"
-es1/annex-b.literals.string.octal.js: SyntaxError: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code
-es1/arguments.callee.js: TypeError: TypeError: "caller", "callee", "arguments" properties may not be accessed
+es1/annex-b.Date.prototype.getYear.js: TypeError: undefined is not a function
+es1/annex-b.Date.prototype.setYear.js: TypeError: undefined is not a function
+es1/annex-b.Date.prototype.toGMTString.js: TypeError: undefined is not a function
+es1/annex-b.global.escape.js: ReferenceError: "escape" is not defined
+es1/annex-b.global.unescape.js: ReferenceError: "unescape" is not defined
+es1/annex-b.literals.octal.js: SyntaxError: Unexpected token "0755"
+es1/annex-b.literals.string.octal.js: SyntaxError: Octal escape sequences can't be used in untagged template literals or in strict mode code
+es1/arguments.callee.js: TypeError: "caller", "callee", "arguments" properties may not be accessed
 es1/arguments.js: OK
-es1/asi.eval.js: InternalError: InternalError: Not implemented
-es1/asi.js: TypeError: TypeError: property set on primitive number type
+es1/asi.eval.js: InternalError: Not implemented
+es1/asi.js: TypeError: property set on primitive number type
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
@@ -146,7 +146,7 @@ es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: InternalError: InternalError: Not implemented
+es1/eval.js: InternalError: Not implemented
 es1/for-in.js: OK
 es1/for.js: OK
 es1/functions.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: SyntaxError: SyntaxError: Delete of an unqualified identifier
+es1/unary.delete.var.js: SyntaxError: Delete of an unqualified identifier
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: SyntaxError: SyntaxError: Token "(" not supported in this version
+es1/with.js: SyntaxError: Token "(" not supported in this version
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -208,7 +208,7 @@ es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
-es3/Array.prototype.toLocaleString.js: TypeError: TypeError: (intermediate value)["toLocaleString"] is not a function
+es3/Array.prototype.toLocaleString.js: TypeError: undefined is not a function
 es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
@@ -231,15 +231,15 @@ es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
-es3/Number.prototype.toLocaleString.js: TypeError: TypeError: (intermediate value)["toLocaleString"] is not a function
+es3/Number.prototype.toLocaleString.js: TypeError: undefined is not a function
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
 es3/Object.prototype.propertyIsEnumerable.js: OK
-es3/Object.prototype.toLocaleString.js: TypeError: TypeError: (intermediate value)["toLocaleString"] is not a function
+es3/Object.prototype.toLocaleString.js: TypeError: undefined is not a function
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: failed: RegExp passthrough failed
+es3/RegExp.js: RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
@@ -249,7 +249,7 @@ es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
-es3/String.prototype.localeCompare.js: TypeError: TypeError: (intermediate value)["localeCompare"] is not a function
+es3/String.prototype.localeCompare.js: TypeError: undefined is not a function
 es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
 es3/String.prototype.replace.capture.js: OK
@@ -265,8 +265,8 @@ es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: OK
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
-es3/String.prototype.toLocaleLowerCase.js: TypeError: TypeError: (intermediate value)["toLocaleLowerCase"] is not a function
-es3/String.prototype.toLocaleUpperCase.js: TypeError: TypeError: (intermediate value)["toLocaleUpperCase"] is not a function
+es3/String.prototype.toLocaleLowerCase.js: TypeError: undefined is not a function
+es3/String.prototype.toLocaleUpperCase.js: TypeError: undefined is not a function
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
@@ -277,17 +277,17 @@ es3/global.RangeError.thrown.js: OK
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
-es3/global.SyntaxError.thrown.js: failed: wrong exception type
+es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: failed: no exception for Function.prototype.toString on non-function
+es3/global.TypeError.thrown.js: no exception for Function.prototype.toString on non-function
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: failed: no exception for encodeURI lone low surrogate
+es3/global.URIError.thrown.js: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
 es3/global.encodeURI.js: OK
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: SyntaxError: SyntaxError: Unexpected token "�"
+es3/identifiers.unicode.js: SyntaxError: Unexpected token "�"
 es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: OK
@@ -301,12 +301,12 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: SyntaxError: SyntaxError: Unexpected token "�"
+es3/literals.object.unicode.js: SyntaxError: Unexpected token "�"
 es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: InternalError: InternalError: Not implemented
+es3/nested-functions.eval.js: InternalError: Not implemented
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
@@ -359,7 +359,7 @@ es5/Array.prototype.sort.TypeError.js: OK
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: OK
-es5/Date.prototype.toJSON.js: RangeError: RangeError: Invalid time value
+es5/Date.prototype.toJSON.js: RangeError: Invalid time value
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
@@ -370,9 +370,9 @@ es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
-es5/Object.defineProperties.js: TypeError: TypeError: Cannot assign to read-only property "a" of object
-es5/Object.defineProperty.js: TypeError: TypeError: Cannot assign to read-only property "y" of object
-es5/Object.freeze.js: TypeError: TypeError: Cannot assign to read-only property "x" of object
+es5/Object.defineProperties.js: TypeError: Cannot assign to read-only property "a" of object
+es5/Object.defineProperty.js: TypeError: Cannot assign to read-only property "y" of object
+es5/Object.freeze.js: TypeError: Cannot assign to read-only property "x" of object
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
@@ -380,24 +380,24 @@ es5/Object.isExtensible.js: OK
 es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: TypeError: TypeError: Cannot add property "y", object is not extensible
+es5/Object.preventExtensions.js: TypeError: Cannot add property "y", object is not extensible
 es5/Object.property-shadowing.js: OK
-es5/Object.seal.js: TypeError: TypeError: Cannot add property "y", object is not extensible
+es5/Object.seal.js: TypeError: Cannot add property "y", object is not extensible
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: TypeError: TypeError: Cannot assign to read-only property "Infinity" of object
-es5/global.NaN.immutable.js: TypeError: TypeError: Cannot assign to read-only property "NaN" of object
+es5/global.Infinity.immutable.js: TypeError: Cannot assign to read-only property "Infinity" of object
+es5/global.NaN.immutable.js: TypeError: Cannot assign to read-only property "NaN" of object
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: TypeError: TypeError: Cannot assign to read-only property "undefined" of object
+es5/global.undefined.immutable.js: TypeError: Cannot assign to read-only property "undefined" of object
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
-es5/source.zero-width-chars.js: SyntaxError: SyntaxError: Unexpected token "\"
+es5/source.zero-width-chars.js: SyntaxError: Unexpected token "\"
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: failed
 es5/strict.js: failed
@@ -413,12 +413,12 @@ es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: OK
 es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: failed
-es5/strict.reserved-words.js: SyntaxError: 'var implements' throws but not-SyntaxError
-es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: TypeError: property set on primitive string type
+es5/strict.reserved-words.js: 'var implements' does not throw SyntaxError
+es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: property set on primitive string type
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
-es5/this.thrown-function.js: TypeError: TypeError: property "in" on primitive undefined type
+es5/this.thrown-function.js: TypeError: property "in" on primitive undefined type
 compat-table/es5/Array.isArray.js: OK
 compat-table/es5/Array.prototype.every.js: OK
 compat-table/es5/Array.prototype.filter.js: OK
@@ -472,7 +472,7 @@ compat-table/es5/misc.enumerable-shadow.js: OK
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: TypeError: property "in" on primitive undefined type
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: SyntaxError: SyntaxError: Unexpected token "\"
+compat-table/es5/misc.zero-width-identifiers.js: SyntaxError: Unexpected token "\"
 compat-table/es5/strict.arguments-callee-error.js: OK
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
@@ -494,12 +494,12 @@ compat-table/es5/strict.this-undefined.js: OK
 compat-table/es5/strict.with-error.js: failed
 compat-table/es6/Array.Symbol.species.js: TypeError: property "in" on primitive undefined type
 compat-table/es6/Array.from.array-like.js: OK
-compat-table/es6/Array.from.generator.js: SyntaxError: SyntaxError: Token "*" not supported in this version
+compat-table/es6/Array.from.generator.js: SyntaxError: Token "*" not supported in this version
 compat-table/es6/Array.from.iterable-instance.js: failed
 compat-table/es6/Array.from.iterable.js: failed
 compat-table/es6/Array.from.iterator-closing.js: failed
 compat-table/es6/Array.from.map.array-like.js: OK
-compat-table/es6/Array.from.map.generator.js: SyntaxError: SyntaxError: Token "*" not supported in this version
+compat-table/es6/Array.from.map.generator.js: SyntaxError: Token "*" not supported in this version
 compat-table/es6/Array.from.map.iterable-instance.js: failed
 compat-table/es6/Array.from.map.iterable.js: failed
 compat-table/es6/Array.iterator-prototype-chain.js: OK
@@ -517,12 +517,12 @@ compat-table/es6/Array.prototype.values.js: OK
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: TypeError: cannot convert object to date
 compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: OK
-compat-table/es6/Function.name.class-expression.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/Function.name.class-object-method.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/Function.name.class-prototype.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/Function.name.class-statement.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/Function.name.class-static.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/Function.name.class-variable.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-expression.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-statement.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-static.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/Function.name.class-variable.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/Function.name.configurable.js: OK
 compat-table/es6/Function.name.expression.js: OK
 compat-table/es6/Function.name.new-Function.js: OK
@@ -582,12 +582,12 @@ compat-table/es6/Object.getOwnPropertySymbols.js: OK
 compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: OK
 compat-table/es6/Promise.Symbol.species.js: OK
-compat-table/es6/Promise.all.iterable.js: failed: unhandled promise rejection: qux
+compat-table/es6/Promise.all.iterable.js: unhandled promise rejection: qux
 compat-table/es6/Promise.all.js: OK
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: OK
 compat-table/es6/Promise.prototype-not-instance.js: OK
-compat-table/es6/Promise.race.iterable.js: failed: unhandled promise rejection: baz
+compat-table/es6/Promise.race.iterable.js: unhandled promise rejection: baz
 compat-table/es6/Promise.race.js: OK
 compat-table/es6/Proxy.Array.isArray.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/Proxy.JSON.stringify.js: ReferenceError: "Proxy" is not defined
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: ReferenceError: "Ref
 compat-table/es6/Reflect.construct.Promise-subclassing.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/Reflect.construct.js: ReferenceError: "Reflect" is not defined
-compat-table/es6/Reflect.construct.new-target.js: SyntaxError: SyntaxError: Unexpected token "."
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError: Unexpected token "."
 compat-table/es6/Reflect.construct.third-argument.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/Reflect.defineProperty.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/Reflect.deleteProperty.js: ReferenceError: "Reflect" is not defined
@@ -716,18 +716,18 @@ compat-table/es6/WeakSet.prototype-not-instance.js: ReferenceError: "WeakSet" is
 compat-table/es6/WeakSet.prototype.add-returns-this.js: ReferenceError: "WeakSet" is not defined
 compat-table/es6/WeakSet.prototype.delete.js: ReferenceError: "WeakSet" is not defined
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
-compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: (intermediate value)["compile"] is not a function
+compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: (intermediate value)["anchor"] is not a function
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: (intermediate value)["anchor"] is not a function
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefined is not a function
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: failed
-compat-table/es6/annex-b.function.if-statement.js: SyntaxError: SyntaxError: Functions can only be declared at top level or inside a block
-compat-table/es6/annex-b.function.labeled.js: SyntaxError: SyntaxError: In strict mode code, functions can only be declared at top level or inside a block.
-compat-table/es6/annex-b.html-comments.js: SyntaxError: SyntaxError: Unexpected token ">"
+compat-table/es6/annex-b.function.if-statement.js: SyntaxError: Functions can only be declared at top level or inside a block
+compat-table/es6/annex-b.function.labeled.js: SyntaxError: In strict mode code, functions can only be declared at top level or inside a block.
+compat-table/es6/annex-b.html-comments.js: SyntaxError: Unexpected token ">"
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
-compat-table/es6/annex-b.regex.hyphens.js: SyntaxError: SyntaxError: pcre_compile2("[\w-_]") failed: invalid range in character class at "_]"
+compat-table/es6/annex-b.regex.hyphens.js: SyntaxError: pcre_compile2("[\w-_]") failed: invalid range in character class at "_]"
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
-compat-table/es6/annex-b.regex.invalid-char-escapes.js: SyntaxError: SyntaxError: pcre_compile2("[\z]") failed: escape sequence is invalid in character class at "z]"
+compat-table/es6/annex-b.regex.invalid-char-escapes.js: SyntaxError: pcre_compile2("[\z]") failed: escape sequence is invalid in character class at "z]"
 compat-table/es6/annex-b.regex.invalid-control-escapes.js: TypeError: cannot get property "0" of null
 compat-table/es6/annex-b.regex.invalid-hex-escapes.js: OK
 compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: OK
@@ -748,43 +748,43 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: OK
 compat-table/es6/arrow.lexical-arguments.js: OK
-compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/arrow.lexical-this.js: OK
-compat-table/es6/arrow.new-target.js: SyntaxError: SyntaxError: Unexpected token "."
+compat-table/es6/arrow.new-target.js: SyntaxError: Unexpected token "."
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: OK
 compat-table/es6/arrow.precedence.js: OK
 compat-table/es6/arrow.this-call-apply.js: OK
-compat-table/es6/class.accessor-properties.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.anonymous.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.block-scoped.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.computed-accessor-properties.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.computed-names-tdz.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.computed-prototype-methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.computed-static-methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.constructor-requires-new.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.constructor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.expression.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.extends-expressions.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.extends-null.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.extends.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.implicit-strict.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.lexical-name.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.methods-not-enumerable.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.new-target.js: SyntaxError: SyntaxError: Unexpected token "."
-compat-table/es6/class.optional-semicolons.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.prototype-methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.statement.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.static-accessor-properties.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.static-methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/class.string-keyed-methods.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.accessor-properties.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.anonymous.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.block-scoped.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.computed-static-methods.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.constructor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.expression.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.extends-expressions.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.extends-null.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.extends.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.implicit-strict.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.lexical-name.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.new-target.js: SyntaxError: Unexpected token "."
+compat-table/es6/class.optional-semicolons.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.prototype-methods.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.statement.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.static-methods.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: OK
 compat-table/es6/const.for-in.js: OK
 compat-table/es6/const.for-loop.js: OK
-compat-table/es6/const.for-of.js: SyntaxError: SyntaxError: Token "of" not supported in this version
+compat-table/es6/const.for-of.js: SyntaxError: Token "of" not supported in this version
 compat-table/es6/const.no-redefine.js: OK
 compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
@@ -792,128 +792,128 @@ compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: OK
 compat-table/es6/const.strict.for-in.js: OK
 compat-table/es6/const.strict.for-loop.js: OK
-compat-table/es6/const.strict.for-of.js: SyntaxError: SyntaxError: Token "of" not supported in this version
+compat-table/es6/const.strict.for-of.js: SyntaxError: Token "of" not supported in this version
 compat-table/es6/const.strict.no-redefine.js: OK
 compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
 compat-table/es6/const.strict.tdz.js: OK
 compat-table/es6/const.tdz.js: OK
-compat-table/es6/default-params.arguments.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/es6/default-params.basic.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/es6/default-params.explicit-undefined.js: SyntaxError: SyntaxError: Unexpected token "="
+compat-table/es6/default-params.arguments.js: SyntaxError: Unexpected token "="
+compat-table/es6/default-params.basic.js: SyntaxError: Unexpected token "="
+compat-table/es6/default-params.explicit-undefined.js: SyntaxError: Unexpected token "="
 compat-table/es6/default-params.new-function.js: SyntaxError: Unexpected token "="
-compat-table/es6/default-params.refer-previous.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/es6/default-params.separate-scope.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/es6/default-params.tdz.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/es6/destructuring-assign.array.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.astral-string.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.chained-iterable.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.chained-object.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.computed-properties.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.defaults.js: SyntaxError: SyntaxError: Token "=" not supported in this version
-compat-table/es6/destructuring-assign.empty-patterns.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.generator.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.iterable-expression.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.iterable-instance.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.iterable.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.iterator-closing.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/destructuring-assign.nested.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.object-expression.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.object-primitives.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.object.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.parenthesised-error.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.rest.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.string.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.throws-null-undefined.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-assign.trailing-comma-object.js: ReferenceError: ReferenceError: Invalid left-hand side in assignment
-compat-table/es6/destructuring-decl.array.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: SyntaxError: Token "c" not supported in this version
-compat-table/es6/destructuring-decl.catch.js: SyntaxError: SyntaxError: Unexpected token "["
-compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.defaults.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.for-in.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-decl.for-of.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-decl.generator.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.iterable.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.nested.js: SyntaxError: SyntaxError: Token "e" not supported in this version
-compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: SyntaxError: Token "toFixed" not supported in this version
-compat-table/es6/destructuring-decl.object.js: SyntaxError: SyntaxError: Token "c" not supported in this version
-compat-table/es6/destructuring-decl.rest.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.string.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: SyntaxError: Unexpected token "=>"
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.array.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: SyntaxError: Token "{" not supported in this version
+compat-table/es6/default-params.refer-previous.js: SyntaxError: Unexpected token "="
+compat-table/es6/default-params.separate-scope.js: SyntaxError: Unexpected token "="
+compat-table/es6/default-params.tdz.js: SyntaxError: Unexpected token "="
+compat-table/es6/destructuring-assign.array.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.astral-string.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.chained-iterable.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.chained-object.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.computed-properties.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: Token "=" not supported in this version
+compat-table/es6/destructuring-assign.empty-patterns.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.generator.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.iterable-expression.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.iterable-instance.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.iterable.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.iterator-closing.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: Unexpected token "..."
+compat-table/es6/destructuring-assign.nested.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.object-expression.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.object-primitives.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.object.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.parenthesised-error.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token "..."
+compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.string.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.throws-null-undefined.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.trailing-comma-object.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-decl.array.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: Token "c" not supported in this version
+compat-table/es6/destructuring-decl.catch.js: SyntaxError: Unexpected token "["
+compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.defaults.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.for-in.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-decl.for-of.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-decl.generator.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.iterable.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.nested.js: SyntaxError: Token "e" not supported in this version
+compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Token "toFixed" not supported in this version
+compat-table/es6/destructuring-decl.object.js: SyntaxError: Token "c" not supported in this version
+compat-table/es6/destructuring-decl.rest.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.string.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Token "a" not supported in this version
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Unexpected token "=>"
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.array.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Token "{" not supported in this version
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: Token "{" not supported in this version
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
-compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.generator.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.length.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.nested.js: SyntaxError: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.generator.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.length.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.nested.js: SyntaxError: Token "[" not supported in this version
 compat-table/es6/destructuring-params.new-function.js: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.object.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.rest.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: SyntaxError: Token "=" not supported in this version
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.string.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: SyntaxError: Token "[" not supported in this version
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es6/for-of.array.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.astral-string.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.generator.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/for-of.iterable-instance.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.iterable.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.sparse-array.js: SyntaxError: SyntaxError: Token "of" not supported in this version
-compat-table/es6/for-of.string.js: SyntaxError: SyntaxError: Token "of" not supported in this version
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.object.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.rest.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Token "=" not supported in this version
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.string.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Token "[" not supported in this version
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Token "{" not supported in this version
+compat-table/es6/for-of.array.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.astral-string.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.generator.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/for-of.iterable-instance.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.iterable.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.sparse-array.js: SyntaxError: Token "of" not supported in this version
+compat-table/es6/for-of.string.js: SyntaxError: Token "of" not supported in this version
 compat-table/es6/function.block-level-decl.js: OK
-compat-table/es6/generators.basic.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.constructor.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.expression.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.no-new-this.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.prototype-chain.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.prototype.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.return.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.sending.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.shorthand.class.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/generators.shorthand.computed.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.shorthand.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.this.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.throw.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.yield-precedence.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es6/generators.yield-star.array.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.generator.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.iterable.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/generators.yield-star.string.js: SyntaxError: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.basic.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.constructor.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.expression.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.no-new-this.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.prototype-chain.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.prototype.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.return.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.sending.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.shorthand.class.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/generators.shorthand.computed.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.shorthand.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.this.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.throw.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.yield-precedence.js: SyntaxError: Unexpected token "*"
+compat-table/es6/generators.yield-star.array.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.generator.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.iterable.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/generators.yield-star.string.js: SyntaxError: Token "*" not supported in this version
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: OK
 compat-table/es6/let.for-in-shadow.js: OK
@@ -971,14 +971,14 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: ReferenceError: "Proxy" is not
 compat-table/es6/misc.Proxy.get.Array.shift.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Array.splice.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Array.toString.js: ReferenceError: "Proxy" is not defined
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Error.toString.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Function.bind.js: ReferenceError: "Proxy" is not defined
-compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: SyntaxError: Token "(" not supported in this version
-compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: SyntaxError: Token "of" not supported in this version
+compat-table/es6/misc.Proxy.get.HasBinding.js: SyntaxError: Token "(" not supported in this version
+compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: Token "of" not supported in this version
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Object.assign.js: ReferenceError: "Proxy" is not defined
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: ReferenceError: "Proxy" is not defined
@@ -1017,17 +1017,17 @@ compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
 compat-table/es6/misc.accessors-no-constructor.js: OK
 compat-table/es6/misc.bound-function-prototype.arrow.js: failed
-compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: OK
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: SyntaxError: SyntaxError: Unexpected token "\"
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: SyntaxError: Unexpected token "\"
 compat-table/es6/misc.identifier-syntax.var-1.js: OK
-compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: SyntaxError: Unexpected token "�"
+compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: Unexpected token "�"
 compat-table/es6/misc.property-order.JSON.parse.js: failed
 compat-table/es6/misc.property-order.JSON.stringify.js: OK
 compat-table/es6/misc.property-order.Object.assign.js: OK
@@ -1036,12 +1036,12 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: ReferenceError: "Reflect" is not defined
 compat-table/es6/misc.prototypes-not-instances.js: OK
-compat-table/es6/new-target.assignment-error.js: SyntaxError: SyntaxError: Unexpected token "."
-compat-table/es6/new-target.constructor.js: SyntaxError: SyntaxError: Unexpected token "."
-compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: SyntaxError: Invalid RegExp flags "iu"
-compat-table/es6/regex.flags.u.codepoint.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es6/regex.flags.u.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es6/regex.flags.u.non-bmp.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
+compat-table/es6/new-target.assignment-error.js: SyntaxError: Unexpected token "."
+compat-table/es6/new-target.constructor.js: SyntaxError: Unexpected token "."
+compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: Invalid RegExp flags "iu"
+compat-table/es6/regex.flags.u.codepoint.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es6/regex.flags.u.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es6/regex.flags.u.non-bmp.js: SyntaxError: Invalid RegExp flags "u"
 compat-table/es6/regex.flags.y.js: OK
 compat-table/es6/regex.flags.y.lastIndex.js: OK
 compat-table/es6/rest-params.arguments.js: OK
@@ -1049,65 +1049,65 @@ compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: OK
 compat-table/es6/rest-params.new-function.js: OK
 compat-table/es6/rest-params.no-setter.js: OK
-compat-table/es6/spread.array-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.array-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.astral-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.astral-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.generator-call.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/spread.generator-literal.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/spread.iterable-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.iterable-instance-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.iterable-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.non-iterable-error.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.sparse-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.sparse-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.string-call.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/spread.string-literal.js: SyntaxError: SyntaxError: Unexpected token "..."
-compat-table/es6/subclassing.Array.concat.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.filter.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.from.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.isArray.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.length-access.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.length-set.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.map.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.of.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.slice.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Array.splice.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.call.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.new.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Promise.all.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Promise.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.Promise.race.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.RegExp.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.RegExp.test.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.Error.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.Map.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.Number.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.Set.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/subclassing.misc.String.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.correct-constructor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.expression.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.method-calls.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.new-target-binding.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.property-access.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.statement.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.static-binding.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es6/super.this-binding.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es6/spread.array-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.array-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.astral-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.astral-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.generator-call.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/spread.generator-literal.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/spread.iterable-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.iterable-instance-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.iterable-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.non-iterable-error.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.sparse-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.sparse-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.string-call.js: SyntaxError: Unexpected token "..."
+compat-table/es6/spread.string-literal.js: SyntaxError: Unexpected token "..."
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.from.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.map.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.of.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.call.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.new.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Promise.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.RegExp.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/subclassing.misc.String.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.correct-constructor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.expression.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.method-calls.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.new-target-binding.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.property-access.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.statement.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.static-binding.js: SyntaxError: Token "class" not supported in this version
+compat-table/es6/super.this-binding.js: SyntaxError: Token "class" not supported in this version
 compat-table/es6/tail-calls.direct.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
-compat-table/es6/template.escape-sequences.js: SyntaxError: SyntaxError: Invalid Unicode code point "\1\xz\uz\u{110000}\u{z}"
+compat-table/es6/template.escape-sequences.js: SyntaxError: Invalid Unicode code point "\1\xz\uz\u{110000}\u{z}"
 compat-table/es6/template.frozen-array.js: failed
 compat-table/es6/template.line-break.js: InternalError: Not implemented
 compat-table/es6/template.permanent-caching.js: failed
@@ -1159,9 +1159,9 @@ compat-table/es6/typed-arrays.prototype.some.js: OK
 compat-table/es6/typed-arrays.prototype.sort.js: OK
 compat-table/es6/typed-arrays.prototype.subarray.js: OK
 compat-table/es6/typed-arrays.prototype.values.js: OK
-compat-table/es6/unicode-escapes.identifier.js: SyntaxError: SyntaxError: Unexpected token "\"
-compat-table/es6/unicode-escapes.property-access.js: SyntaxError: SyntaxError: Unexpected token "\"
-compat-table/es6/unicode-escapes.property-key.js: SyntaxError: SyntaxError: Unexpected token "\"
+compat-table/es6/unicode-escapes.identifier.js: SyntaxError: Unexpected token "\"
+compat-table/es6/unicode-escapes.property-access.js: SyntaxError: Unexpected token "\"
+compat-table/es6/unicode-escapes.property-key.js: SyntaxError: Unexpected token "\"
 compat-table/es6/unicode-escapes.string.js: OK
 compat-table/es6/well-known.hasInstance.js: failed
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: OK
@@ -1188,8 +1188,8 @@ compat-table/es6/well-known.toPrimitive.js: OK
 compat-table/es6/well-known.toStringTag.existing-builtins.js: OK
 compat-table/es6/well-known.toStringTag.js: OK
 compat-table/es6/well-known.toStringTag.misc-builtins.js: OK
-compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/es6/well-known.unscopables.js: SyntaxError: SyntaxError: Token "(" not supported in this version
+compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: Token "*" not supported in this version
+compat-table/es6/well-known.unscopables.js: SyntaxError: Token "(" not supported in this version
 compat-table/es2016/Array.prototype.includes.generic.js: OK
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
@@ -1199,10 +1199,10 @@ compat-table/es2016/exponentiation.basic.js: OK
 compat-table/es2016/exponentiation.unary-negation-error.js: OK
 compat-table/es2016/misc.Proxy-Array-includes.js: ReferenceError: "Proxy" is not defined
 compat-table/es2016/misc.Proxy-enumerate-removed.js: ReferenceError: "Proxy" is not defined
-compat-table/es2016/misc.generator-no-new.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: SyntaxError: Token "x" not supported in this version
-compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: SyntaxError: Token "[" not supported in this version
+compat-table/es2016/misc.generator-no-new.js: SyntaxError: Unexpected token "*"
+compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: Unexpected token "*"
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Token "x" not supported in this version
+compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Token "[" not supported in this version
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: failed
 compat-table/es2017/Atomics.add.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Atomics.and.js: ReferenceError: "Atomics" is not defined
@@ -1236,26 +1236,26 @@ compat-table/es2017/annex-b.Object.prototype.__defineSetter__.symbols.js: TypeEr
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.ToObject.js: ReferenceError: "__lookupGetter__" is not defined
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.js: TypeError: cannot get property "call" of undefined
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.prototype-chain.js: TypeError: cannot get property "call" of undefined
-compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: (intermediate value)["__defineGetter__"] is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.shadow-accessors.js: TypeError: undefined is not a function
 compat-table/es2017/annex-b.Object.prototype.__lookupGetter__.symbols.js: TypeError: cannot get property "call" of undefined
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.ToObject.js: ReferenceError: "__lookupSetter__" is not defined
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.js: TypeError: cannot get property "call" of undefined
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.prototype-chain.js: TypeError: cannot get property "call" of undefined
-compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: (intermediate value)["__defineSetter__"] is not a function
+compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.shadow-accessors.js: TypeError: undefined is not a function
 compat-table/es2017/annex-b.Object.prototype.__lookupSetter__.symbols.js: TypeError: cannot get property "call" of undefined
 compat-table/es2017/annex-b.Proxy.__defineGetter__.js: ReferenceError: "Proxy" is not defined
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: ReferenceError: "Proxy" is not defined
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: "Proxy" is not defined
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: "Proxy" is not defined
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: SyntaxError: Invalid left-hand side in for-loop
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: Invalid left-hand side in for-loop
 compat-table/es2017/async.Symbol.toStringTag.js: OK
-compat-table/es2017/async.arrow-in-class.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: Token "class" not supported in this version
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
 compat-table/es2017/async.await-rejection.js: OK
 compat-table/es2017/async.await.js: OK
 compat-table/es2017/async.constructor.js: OK
-compat-table/es2017/async.methods-class.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es2017/async.methods-class.js: SyntaxError: Token "class" not supported in this version
 compat-table/es2017/async.methods-object.js: OK
 compat-table/es2017/async.must-await-value.js: OK
 compat-table/es2017/async.no-await-in-params.js: OK
@@ -1265,42 +1265,42 @@ compat-table/es2017/async.prototype-chain.js: OK
 compat-table/es2017/async.return.js: OK
 compat-table/es2017/async.throw.js: OK
 compat-table/es2017/misc.arguments-caller-removed.js: OK
-compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: SyntaxError: Invalid RegExp flags "iu"
+compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: Invalid RegExp flags "iu"
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
-compat-table/es2018/Promise.prototype.finally.js: OK
+compat-table/es2018/Promise.prototype.finally.js: unhandled promise rejection: bar
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
-compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/es2018/async-iterators.generators.js: SyntaxError: SyntaxError: Unexpected token "*"
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: Token "await" not supported in this version
+compat-table/es2018/async-iterators.generators.js: SyntaxError: Unexpected token "*"
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: ReferenceError: "Proxy" is not defined
-compat-table/es2018/misc.template-literal-revision.js: SyntaxError: SyntaxError: Invalid Unicode code point "\01\1\xg\xAg\u0\u0g\u00g\u000g\u{g\u{0\u{110000}"
-compat-table/es2018/object-rest.js: SyntaxError: SyntaxError: Token "a" not supported in this version
-compat-table/es2018/object-spread.js: SyntaxError: SyntaxError: Token "..." not supported in this version
-compat-table/es2018/regex.flags.s.js: SyntaxError: SyntaxError: Invalid RegExp flags "s"
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: Invalid Unicode code point "\01\1\xg\xAg\u0\u0g\u00g\u000g\u{g\u{0\u{110000}"
+compat-table/es2018/object-rest.js: SyntaxError: Token "a" not supported in this version
+compat-table/es2018/object-spread.js: SyntaxError: Token "..." not supported in this version
+compat-table/es2018/regex.flags.s.js: SyntaxError: Invalid RegExp flags "s"
 compat-table/es2018/regex.lookbehind.js: OK
 compat-table/es2018/regex.named-capture-groups.js: OK
-compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: SyntaxError: Invalid RegExp flags "u"
-compat-table/es2019/Array.prototype.flatMap.js: TypeError: (intermediate value)["flatMap"] is not a function
+compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid RegExp flags "u"
+compat-table/es2019/Array.prototype.flatMap.js: TypeError: undefined is not a function
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: cannot get property "flat" of undefined
-compat-table/es2019/Array.prototype.flat.js: TypeError: (intermediate value)["flat"] is not a function
-compat-table/es2019/Object.fromEntries.js: TypeError: (intermediate value)["fromEntries"] is not a function
+compat-table/es2019/Array.prototype.flat.js: TypeError: undefined is not a function
+compat-table/es2019/Object.fromEntries.js: ReferenceError: "Map" is not defined
 compat-table/es2019/String.prototype.trimEnd.js: OK
 compat-table/es2019/String.prototype.trimStart.js: OK
 compat-table/es2019/Symbol.prototype.description.empty.js: OK
 compat-table/es2019/Symbol.prototype.description.js: OK
 compat-table/es2019/Symbol.prototype.description.undefined.js: OK
-compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: (intermediate value)["trimLeft"] is not a function
-compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: (intermediate value)["trimRight"] is not a function
+compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: undefined is not a function
+compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: undefined is not a function
 compat-table/es2019/misc.Function-toString.Function-constructor.js: failed
 compat-table/es2019/misc.Function-toString.arrows.js: InternalError: Not implemented
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: InternalError: Not implemented
@@ -1311,19 +1311,19 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: InternalError: No
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: InternalError: Not implemented
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: InternalError: Not implemented
-compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: SyntaxError: Token "{" not supported in this version
-compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/es2020/BigInt64Array.js: SyntaxError: SyntaxError: Unexpected token "0x8000000000000000n"
+compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Token "{" not supported in this version
+compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Token "{" not supported in this version
+compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Unexpected token "*"
+compat-table/es2020/BigInt64Array.js: SyntaxError: Unexpected token "0x8000000000000000n"
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: "BigInt" is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: "BigInt" is not defined
-compat-table/es2020/BigInt.constructor.js: SyntaxError: SyntaxError: Unexpected token "3n"
-compat-table/es2020/BigInt.js: SyntaxError: SyntaxError: Unexpected token "1n"
-compat-table/es2020/BigUint64Array.js: SyntaxError: SyntaxError: Unexpected token "0x10000000000000000n"
-compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: SyntaxError: Unexpected token "1n"
-compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: SyntaxError: Unexpected token "1n"
+compat-table/es2020/BigInt.constructor.js: SyntaxError: Unexpected token "3n"
+compat-table/es2020/BigInt.js: SyntaxError: Unexpected token "1n"
+compat-table/es2020/BigUint64Array.js: SyntaxError: Unexpected token "0x10000000000000000n"
+compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: Unexpected token "1n"
+compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Unexpected token "1n"
 compat-table/es2020/Promise.allSettled.js: OK
-compat-table/es2020/String.prototype.matchAll.js: TypeError: (intermediate value)["matchAll"] is not a function
+compat-table/es2020/String.prototype.matchAll.js: TypeError: undefined is not a function
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
 compat-table/es2020/globalThis.descriptor.js: OK
 compat-table/es2020/globalThis.js: OK
@@ -1332,20 +1332,20 @@ compat-table/es2020/optional-chaining.bracket.js: OK
 compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
-compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: SyntaxError: Unexpected token "..."
+compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: Unexpected token "..."
 compat-table/es2021/FinalizationRegistry.js: ReferenceError: "FinalizationRegistry" is not defined
 compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK
 compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: ReferenceError: "WeakRef" is not defined
 compat-table/es2021/logical-assignment.and.js: OK
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: OK
 compat-table/es2021/logical-assignment.and.short-circuit.js: OK
 compat-table/es2021/logical-assignment.nullish.js: OK
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: OK
 compat-table/es2021/logical-assignment.nullish.short-circuit.js: OK
 compat-table/es2021/logical-assignment.or.js: OK
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: OK
 compat-table/es2021/logical-assignment.or.short-circuit.js: OK
 compat-table/es2021/numeric-separators.js: OK
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: OK
@@ -1366,69 +1366,69 @@ compat-table/es2022/Error.cause.URIError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.URIError.js: failed
 compat-table/es2022/Object.hasOwn.ToObject-first.js: OK
 compat-table/es2022/Object.hasOwn.js: OK
-compat-table/es2022/at-method.Array.js: TypeError: (intermediate value)["at"] is not a function
-compat-table/es2022/at-method.String.js: TypeError: (intermediate value)["at"] is not a function
-compat-table/es2022/at-method.TypedArray.js: TypeError: (intermediate value)["at"] is not a function
-compat-table/es2022/class-fields.computed-instance.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.computed-static.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.private-instance.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.private-static.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.public-instance.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.public-static.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-fields.static.define.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-methods.private-accessor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-methods.private-instance.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-methods.private-static.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/at-method.Array.js: TypeError: undefined is not a function
+compat-table/es2022/at-method.String.js: TypeError: undefined is not a function
+compat-table/es2022/at-method.TypedArray.js: TypeError: undefined is not a function
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.private-static.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.public-static.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-fields.static.define.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-methods.private-static.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: Token "class" not supported in this version
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: Token "class" not supported in this version
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: Invalid RegExp flags "d"
 compat-table/es2022/regex.flags.d.shows-in-flags.js: ReferenceError: "Proxy" is not defined
-compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: (intermediate value)["findLastIndex"] is not a function
-compat-table/es2023/Array.prototype.findLast.js: TypeError: (intermediate value)["findLast"] is not a function
+compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: undefined is not a function
+compat-table/es2023/Array.prototype.findLast.js: TypeError: undefined is not a function
 compat-table/es2023/Array.prototype.toReversed.js: OK
 compat-table/es2023/Array.prototype.toSorted.js: OK
 compat-table/es2023/Array.prototype.toSpliced.js: OK
-compat-table/es2023/Array.prototype.with.js: TypeError: (intermediate value)["with"] is not a function
+compat-table/es2023/Array.prototype.with.js: TypeError: undefined is not a function
 compat-table/es2023/TypedArray.prototype.toReversed.js: OK
 compat-table/es2023/TypedArray.prototype.toSorted.js: OK
-compat-table/es2023/TypedArray.prototype.with.js: TypeError: (intermediate value)["with"] is not a function
+compat-table/es2023/TypedArray.prototype.with.js: TypeError: undefined is not a function
 compat-table/es2023/hashbang.js: InternalError: Not implemented
-compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: (intermediate value)["transfer"] is not a function
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: (intermediate value)["transferToFixedLength"] is not a function
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: (intermediate value)["transfer"] is not a function
+compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined is not a function
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined is not a function
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not a function
 compat-table/es2024/Map.groupBy.js: ReferenceError: "Map" is not defined
-compat-table/es2024/Object.groupBy.js: TypeError: (intermediate value)["groupBy"] is not a function
-compat-table/es2024/Promise.withResolvers.js: TypeError: (intermediate value)["withResolvers"] is not a function
+compat-table/es2024/Object.groupBy.js: TypeError: undefined is not a function
+compat-table/es2024/Promise.withResolvers.js: TypeError: undefined is not a function
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Invalid RegExp flags "v"
-compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: SyntaxError: Invalid RegExp flags "v"
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: SyntaxError: Invalid RegExp flags "v"
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid RegExp flags "v"
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid RegExp flags "v"
 compat-table/es2024/regex.flags.v.shows-in-flags.js: ReferenceError: "Proxy" is not defined
-compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: SyntaxError: Invalid RegExp flags "v"
-compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: SyntaxError: Invalid RegExp flags "v"
-compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: SyntaxError: Invalid RegExp flags "v"
-compat-table/es2025/Iterator.extends.js: SyntaxError: SyntaxError: Token "class" not supported in this version
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid RegExp flags "v"
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid RegExp flags "v"
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid RegExp flags "v"
+compat-table/es2025/Iterator.extends.js: SyntaxError: Token "class" not supported in this version
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: "Iterator" is not defined
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: "Iterator" is not defined
 compat-table/es2025/Iterator.instanceof.js: ReferenceError: "Iterator" is not defined
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: "Iterator" is not defined
-compat-table/es2025/Iterator.prototype.drop.js: TypeError: (intermediate value)["drop"] is not a function
-compat-table/es2025/Iterator.prototype.every.js: TypeError: (intermediate value)["every"] is not a function
-compat-table/es2025/Iterator.prototype.filter.js: TypeError: (intermediate value)["filter"] is not a function
-compat-table/es2025/Iterator.prototype.find.js: TypeError: (intermediate value)["find"] is not a function
-compat-table/es2025/Iterator.prototype.flatMap.js: TypeError: (intermediate value)["flatMap"] is not a function
-compat-table/es2025/Iterator.prototype.forEach.js: TypeError: (intermediate value)["forEach"] is not a function
-compat-table/es2025/Iterator.prototype.map.js: TypeError: (intermediate value)["map"] is not a function
-compat-table/es2025/Iterator.prototype.reduce.js: TypeError: (intermediate value)["reduce"] is not a function
-compat-table/es2025/Iterator.prototype.some.js: TypeError: (intermediate value)["some"] is not a function
-compat-table/es2025/Iterator.prototype.take.js: TypeError: (intermediate value)["take"] is not a function
-compat-table/es2025/Iterator.prototype.toArray.js: TypeError: (intermediate value)["toArray"] is not a function
-compat-table/es2025/Promise.try.js: MissingOK
-compat-table/es2025/RegExp.escape.js: TypeError: (intermediate value)["escape"] is not a function
+compat-table/es2025/Iterator.prototype.drop.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.every.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.filter.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.find.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.flatMap.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.forEach.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.map.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.reduce.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.some.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.take.js: TypeError: undefined is not a function
+compat-table/es2025/Iterator.prototype.toArray.js: TypeError: undefined is not a function
+compat-table/es2025/Promise.try.js: failed
+compat-table/es2025/RegExp.escape.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.difference.js: ReferenceError: "Set" is not defined
 compat-table/es2025/Set.prototype.intersection.js: ReferenceError: "Set" is not defined
 compat-table/es2025/Set.prototype.isDisjointFrom.js: ReferenceError: "Set" is not defined
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: ReferenceError: "Set" is not de
 compat-table/es2025/Set.prototype.isSupersetOf.js: ReferenceError: "Set" is not defined
 compat-table/es2025/Set.prototype.symmetricDifference.js: ReferenceError: "Set" is not defined
 compat-table/es2025/Set.prototype.union.js: ReferenceError: "Set" is not defined
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: SyntaxError: pcre_compile2("(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4})") failed: two named subpatterns have the same name (PCRE2_DUPNAMES not set) at "[0-9]{4})"
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: pcre_compile2("(?<year>[0-9]{4})-[0-9]{2}|[0-9]{2}-(?<year>[0-9]{4})") failed: two named subpatterns have the same name (PCRE2_DUPNAMES not set) at "[0-9]{4})"
 compat-table/es2025/regex.pattern-modifiers.i.js: OK
 compat-table/es2025/regex.pattern-modifiers.m.js: OK
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: SyntaxError: Invalid RegExp flags "s"
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: Invalid RegExp flags "s"
 compat-table/intl/Array.prototype.toLocaleString.js: failed
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1468,45 +1468,45 @@ compat-table/intl/Intl.prototype.js: ReferenceError: "Intl" is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: failed
 compat-table/intl/Object.prototype.toLocaleString.js: failed
 compat-table/intl/String.prototype.localeCompare.js: failed
-compat-table/next/Array.isTemplateObject.js: TypeError: (intermediate value)["isTemplateObject"] is not a function
+compat-table/next/Array.isTemplateObject.js: TypeError: undefined is not a function
 compat-table/next/AsyncDisposableStack.js: ReferenceError: "AsyncDisposableStack" is not defined
-compat-table/next/AsyncIterator.extends.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.instanceof.js: SyntaxError: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.extends.js: SyntaxError: Token "class" not supported in this version
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: Token "*" not supported in this version
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: "AsyncIterator" is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: SyntaxError: Token "*" not supported in this version
-compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: SyntaxError: Token "await" not supported in this version
-compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: Token "*" not supported in this version
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: Token "await" not supported in this version
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: Token "*" not supported in this version
 compat-table/next/DisposableStack.js: ReferenceError: "DisposableStack" is not defined
 compat-table/next/Map.prototype.upsert.js: ReferenceError: "Map" is not defined
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: SyntaxError: Unexpected token "_1"
-compat-table/next/Uint8Array.fromBase64.js: TypeError: (intermediate value)["fromBase64"] is not a function
-compat-table/next/Uint8Array.fromHex.js: TypeError: (intermediate value)["fromHex"] is not a function
-compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: SyntaxError: Token "read" not supported in this version
-compat-table/next/Uint8Array.setFromHex.js: SyntaxError: SyntaxError: Token "read" not supported in this version
-compat-table/next/Uint8Array.toBase64.js: TypeError: (intermediate value)["toBase64"] is not a function
-compat-table/next/Uint8Array.toHex.js: TypeError: (intermediate value)["toHex"] is not a function
+compat-table/next/SuppressedError.js: SyntaxError: Unexpected token "_1"
+compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Token "read" not supported in this version
+compat-table/next/Uint8Array.setFromHex.js: SyntaxError: Token "read" not supported in this version
+compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
+compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
 compat-table/next/WeakMap.prototype.upsert.js: ReferenceError: "WeakMap" is not defined
-compat-table/next/await-using.for-of.js: SyntaxError: SyntaxError: Unexpected token "_"
-compat-table/next/await-using.js: SyntaxError: SyntaxError: Unexpected token "_"
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: Token "class" not supported in this version
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: Unexpected token "*"
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: Unexpected token "throw"
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: Unexpected token "throw"
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: Unexpected token "throw"
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: Unexpected token "="
-compat-table/next/using.for-of.js: SyntaxError: SyntaxError: Unexpected token "_"
-compat-table/next/using.js: SyntaxError: SyntaxError: Unexpected token "_"
+compat-table/next/await-using.for-of.js: SyntaxError: Unexpected token "_"
+compat-table/next/await-using.js: SyntaxError: Unexpected token "_"
+compat-table/next/class-decorators.js: SyntaxError: Token "class" not supported in this version
+compat-table/next/function.sent.js: SyntaxError: Unexpected token "*"
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token "throw"
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token "throw"
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token "throw"
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token "="
+compat-table/next/using.for-of.js: SyntaxError: Unexpected token "_"
+compat-table/next/using.js: SyntaxError: Unexpected token "_"

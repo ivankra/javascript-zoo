@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"70f0cd52d322bf8a8acf3f799f67e596e90d5a71ff71b3fe8a46b46bfa0ad485","binary_size":264920,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"mquickjs","repository":"https://github.com/bellard/mquickjs.git","revision":"ee50431eac9b14b99f722b537ec4cac0c8dd75ab","revision_date":"2026-01-15"}
+Metadata: {"arch":"arm64","binary_sha256":"0365bc45f452636852933948d68130895739cb31a77d49f3231baa023cab97f4","binary_size":264920,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"mquickjs","repository":"https://github.com/bellard/mquickjs.git","revision":"ee50431eac9b14b99f722b537ec4cac0c8dd75ab","revision_date":"2026-01-15"}
 es1/Array.js: TypeError: invalid array subscript
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: TypeError: invalid array subscript
@@ -94,7 +94,7 @@ es1/Number.js: TypeError: number constructor not supported
 es1/Number.prototype.constructor.js: TypeError: number constructor not supported
 es1/Number.prototype.toString.js: TypeError: number constructor not supported
 es1/Number.prototype.valueOf.js: TypeError: number constructor not supported
-es1/Object.js: failed: Object(number) failed
+es1/Object.js: Object(number) failed; new Object(string) failed
 es1/Object.prototype.constructor.js: OK
 es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: TypeError: not a function
@@ -141,7 +141,7 @@ es1/conversions.ToBoolean.js: TypeError: Boolean constructor not supported
 es1/conversions.ToInt32.js: OK
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
-es1/conversions.ToObject.js: failed: true failed
+es1/conversions.ToObject.js: true failed; false failed; 123 failed; 'hello' failed
 es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
@@ -237,15 +237,15 @@ es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: TypeError: not a function
 es3/Object.prototype.propertyIsEnumerable.js: TypeError: not a function
 es3/Object.prototype.toLocaleString.js: TypeError: not a function
-es3/RegExp.global.js: failed: constructor with g failed
-es3/RegExp.ignoreCase.js: failed: constructor with i failed
-es3/RegExp.js: failed: global flag failed
+es3/RegExp.global.js: constructor with g failed; constructor without g failed; literal with g failed; literal without g failed
+es3/RegExp.ignoreCase.js: constructor with i failed; constructor without i failed; literal with i failed; literal without i failed
+es3/RegExp.js: global flag failed; ignoreCase flag failed; multiline flag failed; RegExp passthrough failed
 es3/RegExp.lastIndex.js: OK
-es3/RegExp.multiline.js: failed: constructor with m failed
+es3/RegExp.multiline.js: constructor with m failed; constructor without m failed; literal with m failed; literal without m failed
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
-es3/RegExp.prototype.toString.js: failed: format failed
+es3/RegExp.prototype.toString.js: format failed
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: TypeError: number constructor not supported
 es3/String.prototype.concat.js: OK
@@ -361,17 +361,17 @@ es5/Date.now.js: TypeError: only Date.now() is supported
 es5/Date.prototype.toISOString.js: TypeError: only Date.now() is supported
 es5/Date.prototype.toJSON.js: TypeError: cannot read property 'call' of undefined
 es5/Function.prototype-not-enumerable.js: TypeError: not a function
-es5/Function.prototype.apply.array-like.js: failed
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: TypeError: not a constructor
 es5/JSON.js: OK
 es5/JSON.parse.js: SyntaxError: catch variable already exists
-es5/JSON.parse.reviver.js: failed: failed to apply reviver function
-es5/JSON.stringify.js: failed: failed to drop undefined/function values
-es5/JSON.stringify.replacer.js: failed: replacer function failed
-es5/JSON.stringify.space.js: failed: space parameter failed
+es5/JSON.parse.reviver.js: failed to apply reviver function; failed to delete property for which reviver returned undefined
+es5/JSON.stringify.js: failed to drop undefined/function values; didn't call user-provided toJSON() method; undefined should return undefined
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
+es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: TypeError: unsupported additional properties
 es5/Object.defineProperties.js: TypeError: not a function
-es5/Object.defineProperty.js: failed: non-writable property failed
+es5/Object.defineProperty.js: non-writable property failed
 es5/Object.freeze.js: TypeError: not a function
 es5/Object.getOwnPropertyDescriptor.js: TypeError: not a function
 es5/Object.getOwnPropertyNames.js: TypeError: not a function
@@ -379,7 +379,7 @@ es5/Object.getPrototypeOf.js: OK
 es5/Object.isExtensible.js: TypeError: not a function
 es5/Object.isFrozen.js: TypeError: not a function
 es5/Object.isSealed.js: TypeError: not a function
-es5/Object.keys.js: failed: only enumerable properties failed
+es5/Object.keys.js: only enumerable properties failed
 es5/Object.preventExtensions.js: TypeError: not a function
 es5/Object.property-shadowing.js: OK
 es5/Object.seal.js: TypeError: not a function
@@ -387,10 +387,10 @@ es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: SyntaxError: unexpected character in expression
-es5/global.Infinity.immutable.js: failed
-es5/global.NaN.immutable.js: failed
+es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
+es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: failed
+es5/global.undefined.immutable.js: undefined is not undefined after assignment
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK

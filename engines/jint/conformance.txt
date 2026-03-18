@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":3542371,"dotnet":"10.0.103","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"782bf838c2375486e8ff74a9963548695016e5c5","revision_date":"2026-03-01"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":3584174,"dotnet":"10.0.201","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"8e44385124edb663a030eb4074fd38279867e2b8","revision_date":"2026-03-11","version":"4.6.3"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -115,7 +115,7 @@ es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: OK
 es1/annex-b.Date.prototype.setYear.js: OK
-es1/annex-b.Date.prototype.toGMTString.js: failed: Property 'toGMTString' of object is not a function
+es1/annex-b.Date.prototype.toGMTString.js: OK
 es1/annex-b.global.escape.js: OK
 es1/annex-b.global.unescape.js: OK
 es1/annex-b.literals.octal.js: OK
@@ -230,7 +230,7 @@ es3/Number.prototype.toExponential.edge-cases.js: OK
 es3/Number.prototype.toExponential.js: OK
 es3/Number.prototype.toExponential.rounding.js: OK
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
@@ -364,7 +364,7 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: OK
 es5/Function.prototype.bind.js: OK
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: trailing comma does not throw SyntaxError
+es5/JSON.parse.js: trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: OK
 es5/JSON.stringify.replacer.js: OK
@@ -715,13 +715,13 @@ compat-table/es6/WeakSet.no-clear.js: OK
 compat-table/es6/WeakSet.prototype-not-instance.js: OK
 compat-table/es6/WeakSet.prototype.add-returns-this.js: OK
 compat-table/es6/WeakSet.prototype.delete.js: OK
-compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
-compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: Property 'compile' of object is not a function
-compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Property 'anchor' of object is not a function
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Property 'anchor' of object is not a function
-compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not defined
-compat-table/es6/annex-b.function.if-statement.js: OK
+compat-table/es6/annex-b.RegExp.prototype.compile.js: OK
+compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: OK
+compat-table/es6/annex-b.String.prototype.html.existence.js: OK
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: OK
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: OK
+compat-table/es6/annex-b.function.hoisted-block-level.js: OK
+compat-table/es6/annex-b.function.if-statement.js: TypeError: Property 'qux' of object is not a function
 compat-table/es6/annex-b.function.labeled.js: OK
 compat-table/es6/annex-b.html-comments.js: OK
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
@@ -1103,8 +1103,8 @@ compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
-compat-table/es6/tail-calls.direct.js: crash: SIGABRT
-compat-table/es6/tail-calls.mutual.js: crash: SIGABRT
+compat-table/es6/tail-calls.direct.js: crashed: SIGABRT
+compat-table/es6/tail-calls.mutual.js: crashed: SIGABRT
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: OK
 compat-table/es6/template.escape-sequences.js: OK
@@ -1252,8 +1252,8 @@ compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: MissingOK
-compat-table/es2017/async.await.js: MissingOK
+compat-table/es2017/async.await-rejection.js: [object Promise]
+compat-table/es2017/async.await.js: [object Promise]
 compat-table/es2017/async.constructor.js: OK
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1280,16 +1280,16 @@ compat-table/es2018/object-spread.js: OK
 compat-table/es2018/regex.flags.s.js: OK
 compat-table/es2018/regex.lookbehind.js: OK
 compat-table/es2018/regex.named-capture-groups.js: OK
-compat-table/es2018/regex.unicode-property-escapes.js: failed: 10:29)
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: failed: 10:11)
+compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Greek}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.js:10:29)
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Extended_Pictographic}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-11....
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed: 10:11)
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: failed: 10:11)
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Elymaic}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-12.js:10:1...
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Chorasmian}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-13.js:1...
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Vithkuqi}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-14.js:10:...
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Unified_Ideograph}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-15.1.js...
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: Cannot convert regular expression to an equivalent System.Text.RegularExpressions.Regex: /\p{Script=Kawi}/u: Inconvertible Unicode property escape (regex.unicode-property-escapes.unicode-15.js:10:11)
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: Invalid regular expression: /\p{Script=Todhri}/u: Invalid property name (regex.unicode-property-escapes.unicode-16.0.js:10:11)
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: Invalid regular expression: /\p{Script=Sidetic}/u: Invalid property name (regex.unicode-property-escapes.unicode-17.0.js:10:11)
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1405,12 +1405,12 @@ compat-table/es2024/Map.groupBy.js: OK
 compat-table/es2024/Object.groupBy.js: OK
 compat-table/es2024/Promise.withResolvers.js: OK
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Invalid regular expression flags (1:1)
-compat-table/es2024/regex.flags.v.properties-of-strings.js: failed: 9:39)
-compat-table/es2024/regex.flags.v.set-notations.js: failed: 9:43)
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: Invalid regular expression flags (regex.flags.v.properties-of-strings.js:9:39)
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Invalid regular expression flags (regex.flags.v.set-notations.js:9:43)
 compat-table/es2024/regex.flags.v.shows-in-flags.js: OK
-compat-table/es2024/regex.flags.v.unicode-15.1.js: failed: 9:27)
-compat-table/es2024/regex.flags.v.unicode-16.0.js: failed: 9:27)
-compat-table/es2024/regex.flags.v.unicode-17.0.js: failed: 9:27)
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: Invalid regular expression flags (regex.flags.v.unicode-15.1.js:9:27)
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: Invalid regular expression flags (regex.flags.v.unicode-16.0.js:9:27)
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: Invalid regular expression flags (regex.flags.v.unicode-17.0.js:9:27)
 compat-table/es2025/Iterator.extends.js: OK
 compat-table/es2025/Iterator.from.iterable.js: OK
 compat-table/es2025/Iterator.from.iterator.js: OK
@@ -1437,9 +1437,9 @@ compat-table/es2025/Set.prototype.isSupersetOf.js: OK
 compat-table/es2025/Set.prototype.symmetricDifference.js: OK
 compat-table/es2025/Set.prototype.union.js: OK
 compat-table/es2025/regex.duplicate-named-groups.js: OK
-compat-table/es2025/regex.pattern-modifiers.i.js: failed: 9:24)
-compat-table/es2025/regex.pattern-modifiers.m.js: failed: 9:21)
-compat-table/es2025/regex.pattern-modifiers.s.js: failed: 9:19)
+compat-table/es2025/regex.pattern-modifiers.i.js: OK
+compat-table/es2025/regex.pattern-modifiers.m.js: OK
+compat-table/es2025/regex.pattern-modifiers.s.js: OK
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1469,7 +1469,7 @@ compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Property 'isTemplateObject' of object is not a function
-compat-table/next/AsyncDisposableStack.js: MissingOK
+compat-table/next/AsyncDisposableStack.js: [object Promise]
 compat-table/next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
 compat-table/next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
 compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
@@ -1489,8 +1489,8 @@ compat-table/next/AsyncIterator.prototype.take.js: TypeError: Property 'take' of
 compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: Property 'toArray' of object is not a function
 compat-table/next/DisposableStack.js: OK
 compat-table/next/Map.prototype.upsert.js: TypeError: Property 'upsert' of object is not a function
-compat-table/next/RegExp.1-9.js: failed
-compat-table/next/RegExp.lastMatch.js: failed
+compat-table/next/RegExp.1-9.js: OK
+compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: OK
 compat-table/next/Uint8Array.fromBase64.js: OK
@@ -1503,10 +1503,10 @@ compat-table/next/WeakMap.prototype.upsert.js: TypeError: Property 'upsert' of o
 compat-table/next/await-using.for-of.js: OK
 compat-table/next/await-using.js: OK
 compat-table/next/class-decorators.js: failed
-compat-table/next/function.sent.js: failed: 11:22)
-compat-table/next/throw-expr.arrow.js: failed: 9:18)
-compat-table/next/throw-expr.conditional.js: failed: 9:15)
-compat-table/next/throw-expr.logical.js: failed: 11:15)
-compat-table/next/throw-expr.param-init.js: failed: 9:22)
+compat-table/next/function.sent.js: SyntaxError: Unexpected token '.' (function.sent.js:11:22)
+compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token 'throw' (throw-expr.arrow.js:9:18)
+compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token 'throw' (throw-expr.conditional.js:9:15)
+compat-table/next/throw-expr.logical.js: SyntaxError: Unexpected token 'throw' (throw-expr.logical.js:11:15)
+compat-table/next/throw-expr.param-init.js: SyntaxError: Unexpected token 'throw' (throw-expr.param-init.js:9:22)
 compat-table/next/using.for-of.js: OK
 compat-table/next/using.js: OK

@@ -13,8 +13,8 @@ Unfinished JavaScript engine written in Nim.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 3%</summary><ul>
+<details><summary>ES1-ES5: 2%</summary><ul>
 <li>ES1: 4%</li>
 <li>ES3: 1%</li>
-<li>ES5: 7%</li>
+<li>ES5: 1%</li>
 </ul></details>

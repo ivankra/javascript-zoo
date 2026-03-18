@@ -52,7 +52,7 @@ JavaScript engine targeted at embedded systems.
 <a href="../../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: TypeError: only Date.now() is supported
 <a href="../../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: TypeError: only Date.now() is supported
 <a href="../../conformance/es3/Date.prototype.toTimeString.js">Date.prototype.toTimeString.js</a>: TypeError: only Date.now() is supported
-<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: TypeError: not an Error object at &lt;eval&gt; (Error.prototype.message.js:6:27)
+<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: TypeError: not an Error object
 <a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: TypeError: not an array
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: SyntaxError: catch variable already exists
 <a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: SyntaxError: catch variable already exists

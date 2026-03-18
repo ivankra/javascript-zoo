@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":23521106,"dotnet":"10.0.103","engine":"yantra","repository":"https://github.com/yantrajs/yantra.git","revision":"afb4a5d188a2461aee959891eab7f958279b1115","revision_date":"2026-01-18","version":"1.2.301"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":22779506,"dotnet":"10.0.201","engine":"yantra","repository":"https://github.com/yantrajs/yantra.git","revision":"5c59ac0e567d5a3c1c29c5b67e786866d8ab091a","revision_date":"2026-03-11","version":"1.2.314"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -10,12 +10,12 @@ es1/Array.prototype.reverse.js: OK
 es1/Array.prototype.sort.generic.js: OK
 es1/Array.prototype.sort.js: OK
 es1/Array.prototype.toString.js: OK
-es1/Boolean.js: OK
+es1/Boolean.js: Boolean(true) failed; Boolean(false) failed
 es1/Boolean.prototype.constructor.js: OK
-es1/Boolean.prototype.toString.js: failed: toString(true) failed
-es1/Boolean.prototype.valueOf.js: failed: valueOf(true) failed
+es1/Boolean.prototype.toString.js: OK
+es1/Boolean.prototype.valueOf.js: OK
 es1/Date.diff.js: OK
-es1/Date.js: failed
+es1/Date.js: typeof Date() != 'string'
 es1/Date.prototype.constructor.js: OK
 es1/Date.prototype.getDate.js: OK
 es1/Date.prototype.getDay.js: OK
@@ -55,7 +55,7 @@ es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
 es1/Function.js: OK
-es1/Function.length.js: failed: Function.length failed
+es1/Function.length.js: Function.length failed
 es1/Function.prototype.constructor.js: OK
 es1/Function.prototype.js: OK
 es1/Function.prototype.toString.js: OK
@@ -100,7 +100,7 @@ es1/Object.prototype.toString.js: OK
 es1/Object.prototype.valueOf.js: OK
 es1/String.fromCharCode.js: OK
 es1/String.generics.js: OK
-es1/String.js: failed: 15.5.1.1 String(value) failed
+es1/String.js: 15.5.1.1 String(value) failed; 15.5.1.2 String() failed
 es1/String.length.js: OK
 es1/String.prototype.charAt.js: OK
 es1/String.prototype.charCodeAt.js: OK
@@ -113,38 +113,38 @@ es1/String.prototype.toLowerCase.js: OK
 es1/String.prototype.toString.js: OK
 es1/String.prototype.toUpperCase.js: OK
 es1/String.prototype.valueOf.js: OK
-es1/annex-b.Date.prototype.getYear.js: crash: SIGABRT
-es1/annex-b.Date.prototype.setYear.js: crash: SIGABRT
-es1/annex-b.Date.prototype.toGMTString.js: crash: SIGABRT
-es1/annex-b.global.escape.js: crash: SIGABRT
-es1/annex-b.global.unescape.js: crash: SIGABRT
-es1/annex-b.literals.octal.js: failed: 0755 failed
+es1/annex-b.Date.prototype.getYear.js: crashed: SIGABRT
+es1/annex-b.Date.prototype.setYear.js: crashed: SIGABRT
+es1/annex-b.Date.prototype.toGMTString.js: crashed: SIGABRT
+es1/annex-b.global.escape.js: crashed: SIGABRT
+es1/annex-b.global.unescape.js: crashed: SIGABRT
+es1/annex-b.literals.octal.js: 0755 failed; max safe integer failed
 es1/annex-b.literals.string.octal.js: failed
-es1/arguments.callee.js: crash: SIGABRT
+es1/arguments.callee.js: crashed: SIGABRT
 es1/arguments.js: OK
 es1/asi.eval.js: OK
 es1/asi.js: OK
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
-es1/assignment.unsigned-shift.js: failed: >>>= failed
+es1/assignment.unsigned-shift.js: >>>= failed
 es1/bitwise.binary.js: OK
 es1/bitwise.shifts.js: OK
 es1/bitwise.tilde.js: OK
 es1/bitwise.unsigned-shift.js: OK
 es1/break.js: OK
 es1/comma.js: OK
-es1/comments.js: crash: SIGABRT
+es1/comments.js: crashed: SIGABRT
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: failed: +Infinity failed
+es1/conversions.ToBoolean.js: new Boolean(false) failed - expected it to be truthy
+es1/conversions.ToInt32.js: +Infinity failed
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
-es1/conversions.ToString.js: failed: -0 failed
-es1/conversions.ToUint32.js: failed: +Infinity failed
-es1/conversions.js: failed
+es1/conversions.ToString.js: -0 failed; 1e-7 failed
+es1/conversions.ToUint32.js: +Infinity failed
+es1/conversions.js: 0 == null
 es1/equals.js: OK
 es1/eval.js: OK
 es1/for-in.js: OK
@@ -165,7 +165,7 @@ es1/literals.string.hex.js: failed
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
-es1/new.typeof.js: failed
+es1/new.typeof.js: typeof String('x') != 'string'
 es1/numbers.double.js: OK
 es1/numbers.fmod.js: OK
 es1/numbers.inf.js: OK
@@ -184,7 +184,7 @@ es1/typeof.undeclared.js: OK
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: crash: SIGABRT
+es1/unary.delete.var.js: crashed: SIGABRT
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -196,7 +196,7 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: crash: SIGABRT
+es1/with.js: crashed: SIGABRT
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
@@ -209,15 +209,15 @@ es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
 es3/Array.prototype.splice.js: OK
 es3/Array.prototype.toLocaleString.js: OK
-es3/Array.prototype.unshift.generic.js: failed: unshift on empty object failed
-es3/Array.prototype.unshift.js: failed: unshift on empty array failed
-es3/Array.prototype.unshift.returns-new-length.js: failed: empty array unshift failed
+es3/Array.prototype.unshift.generic.js: unshift on empty object failed
+es3/Array.prototype.unshift.js: unshift on empty array failed
+es3/Array.prototype.unshift.returns-new-length.js: empty array unshift failed
 es3/Date.prototype.toDateString.js: OK
 es3/Date.prototype.toLocaleDateString.js: OK
 es3/Date.prototype.toLocaleString.js: OK
 es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
-es3/Error.js: crash: SIGABRT
+es3/Error.js: crashed: SIGABRT
 es3/Error.prototype.constructor.js: OK
 es3/Error.prototype.message.js: failed
 es3/Error.prototype.name.js: failed
@@ -226,26 +226,26 @@ es3/Function.prototype.apply.js: OK
 es3/Function.prototype.call.js: OK
 es3/Math.max.variadic.js: OK
 es3/Math.min.variadic.js: OK
-es3/Number.prototype.toExponential.edge-cases.js: failed
+es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws
 es3/Number.prototype.toExponential.js: OK
-es3/Number.prototype.toExponential.rounding.js: failed
+es3/Number.prototype.toExponential.rounding.js: (1.255).toExponential(2) != '1.25e+0', got '1.26e+0'
 es3/Number.prototype.toExponential.throws-infinity.js: OK
-es3/Number.prototype.toFixed.js: failed: rounding failed
+es3/Number.prototype.toFixed.js: rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: OK
 es3/Object.prototype.hasOwnProperty.js: OK
 es3/Object.prototype.isPrototypeOf.js: OK
-es3/Object.prototype.propertyIsEnumerable.js: failed: Array index should be enumerable failed
-es3/Object.prototype.toLocaleString.js: crash: SIGABRT
+es3/Object.prototype.propertyIsEnumerable.js: Array index should be enumerable failed; ToString conversion failed
+es3/Object.prototype.toLocaleString.js: crashed: SIGABRT
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
-es3/RegExp.js: crash: SIGABRT
+es3/RegExp.js: crashed: SIGABRT
 es3/RegExp.lastIndex.js: OK
 es3/RegExp.multiline.js: OK
 es3/RegExp.prototype.constructor.js: OK
 es3/RegExp.prototype.exec.js: OK
 es3/RegExp.prototype.test.js: OK
-es3/RegExp.prototype.toString.js: failed: format failed
+es3/RegExp.prototype.toString.js: OK
 es3/RegExp.source.js: OK
 es3/String.prototype.concat.generic.js: OK
 es3/String.prototype.concat.js: OK
@@ -254,55 +254,55 @@ es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
 es3/String.prototype.replace.capture.js: OK
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: failed: Boolean failed
+es3/String.prototype.replace.generic.js: OK
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: OK
 es3/String.prototype.search.js: OK
-es3/String.prototype.search.str.js: failed: string with \d+ pattern failed
+es3/String.prototype.search.str.js: string with \d+ pattern failed; string with \w+ pattern failed; string with [0-9]+ pattern failed; string with \s pattern failed; string with \. pattern failed
 es3/String.prototype.slice.generic.js: OK
 es3/String.prototype.slice.js: OK
-es3/String.prototype.split.bugs.js: failed
+es3/String.prototype.split.bugs.js: ''.split(/.?/).length !== 0
 es3/String.prototype.split.limit.js: OK
 es3/String.prototype.split.regex.js: OK
 es3/String.prototype.toLocaleLowerCase.js: OK
 es3/String.prototype.toLocaleUpperCase.js: OK
-es3/annex-b.String.prototype.substr.js: failed: positive start failed
+es3/annex-b.String.prototype.substr.js: positive start failed; negative start failed; negative start with length failed
 es3/do-while.js: OK
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: failed: name failed
-es3/global.RangeError.js: failed: name failed
-es3/global.RangeError.thrown.js: failed: wrong exception for new Array with negative length
-es3/global.ReferenceError.js: crash: SIGABRT
-es3/global.ReferenceError.thrown.js: failed: no exception for undeclared variable
-es3/global.SyntaxError.js: failed: name failed
-es3/global.SyntaxError.thrown.js: failed: wrong exception type
-es3/global.TypeError.js: failed: name failed
-es3/global.TypeError.thrown.js: failed: wrong exception for instanceof number
-es3/global.URIError.js: failed: name failed
-es3/global.URIError.thrown.js: failed: wrong exception for decodeURI incomplete escape
+es3/global.EvalError.js: name failed
+es3/global.RangeError.js: name failed
+es3/global.RangeError.thrown.js: wrong exception for new Array with negative length; wrong exception for new Array with non-integer length; wrong exception for new Array with length >= 2^32; wrong exception for negative array length;...
+es3/global.ReferenceError.js: crashed: SIGABRT
+es3/global.ReferenceError.thrown.js: no exception for undeclared variable; wrong exception for undeclared function; no exception for undeclared in expression; wrong exception for property access on undeclared
+es3/global.SyntaxError.js: name failed
+es3/global.SyntaxError.thrown.js: wrong exception type; no exception for unclosed string; wrong exception for invalid token
+es3/global.TypeError.js: name failed
+es3/global.TypeError.thrown.js: wrong exception for instanceof number; wrong exception for instanceof non-callable; wrong exception for in number; wrong exception for in null; wrong exception for new number; wrong exception for call...
+es3/global.URIError.js: name failed
+es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; no exception for decodeURIComponent incomplete escape; no excep...
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
 es3/global.encodeURI.js: OK
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: crash: SIGABRT
+es3/identifiers.unicode.js: crashed: SIGABRT
 es3/instanceof.js: OK
 es3/in.js: OK
 es3/labelled.break.js: OK
-es3/labelled.continue.js: failed: labelled continue in while failed
+es3/labelled.continue.js: labelled continue in while failed; labelled continue to outer loop failed
 es3/labelled.statements.js: OK
 es3/literals.array.elisions.js: OK
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
-es3/literals.object.decimal.js: failed: property name 1.5 failed
+es3/literals.object.decimal.js: property name 1.5 failed; property name 3.14 failed
 es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: MissingOK
-es3/literals.regex.ambiguous.js: failed: var r = x<LF>/b/g; failed
+es3/literals.object.unicode.js: failed
+es3/literals.regex.ambiguous.js: var r = x<LF>/b/g; failed
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: failed
@@ -346,7 +346,7 @@ es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: OK
-es5/Array.prototype.every.js: failed: sparse array skips missing elements failed
+es5/Array.prototype.every.js: sparse array skips missing elements failed
 es5/Array.prototype.filter.js: OK
 es5/Array.prototype.forEach.js: OK
 es5/Array.prototype.indexOf.js: OK
@@ -358,46 +358,46 @@ es5/Array.prototype.some.js: OK
 es5/Array.prototype.sort.TypeError.js: failed
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
-es5/Date.prototype.toISOString.js: failed: invalid date does not throw RangeError
+es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
 es5/Date.prototype.toJSON.js: OK
 es5/Function.prototype-not-enumerable.js: OK
-es5/Function.prototype.apply.array-like.js: failed
-es5/Function.prototype.bind.js: crash: SIGABRT
+es5/Function.prototype.apply.array-like.js: array-like object not accepted
+es5/Function.prototype.bind.js: crashed: SIGABRT
 es5/JSON.js: OK
-es5/JSON.parse.js: failed: invalid JSON does not throw SyntaxError
+es5/JSON.parse.js: invalid JSON does not throw SyntaxError; trailing comma does not throw SyntaxError
 es5/JSON.parse.reviver.js: OK
-es5/JSON.stringify.js: crash: SIGABRT
+es5/JSON.stringify.js: crashed: SIGABRT
 es5/JSON.stringify.replacer.js: OK
 es5/JSON.stringify.space.js: OK
-es5/Object.create.js: failed: null prototype failed
-es5/Object.defineProperties.js: crash: SIGABRT
-es5/Object.defineProperty.js: crash: SIGABRT
-es5/Object.freeze.js: crash: SIGABRT
+es5/Object.create.js: null prototype failed; Properties argument failed
+es5/Object.defineProperties.js: crashed: SIGABRT
+es5/Object.defineProperty.js: crashed: SIGABRT
+es5/Object.freeze.js: crashed: SIGABRT
 es5/Object.getOwnPropertyDescriptor.js: OK
 es5/Object.getOwnPropertyNames.js: OK
 es5/Object.getPrototypeOf.js: OK
-es5/Object.isExtensible.js: crash: SIGABRT
-es5/Object.isFrozen.js: crash: SIGABRT
-es5/Object.isSealed.js: crash: SIGABRT
+es5/Object.isExtensible.js: crashed: SIGABRT
+es5/Object.isFrozen.js: crashed: SIGABRT
+es5/Object.isSealed.js: crashed: SIGABRT
 es5/Object.keys.js: OK
-es5/Object.preventExtensions.js: crash: SIGABRT
+es5/Object.preventExtensions.js: crashed: SIGABRT
 es5/Object.property-shadowing.js: OK
-es5/Object.seal.js: crash: SIGABRT
+es5/Object.seal.js: crashed: SIGABRT
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: failed
 es5/debugger.js: OK
-es5/global.Infinity.immutable.js: crash: SIGABRT
-es5/global.NaN.immutable.js: crash: SIGABRT
+es5/global.Infinity.immutable.js: crashed: SIGABRT
+es5/global.NaN.immutable.js: crashed: SIGABRT
 es5/global.parseInt.no-octal.js: OK
-es5/global.undefined.immutable.js: crash: SIGABRT
+es5/global.undefined.immutable.js: crashed: SIGABRT
 es5/literals.object.getters.js: OK
-es5/literals.object.setters.js: OK
+es5/literals.object.setters.js: crashed: SIGSEGV
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
-es5/source.zero-width-chars.js: MissingOK
+es5/source.zero-width-chars.js: failed
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
@@ -418,7 +418,7 @@ es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
 es5/strict.unmapped-arguments.js: OK
-es5/this.thrown-function.js: crash: SIGABRT
+es5/this.thrown-function.js: crashed: SIGABRT
 compat-table/es5/Array.isArray.js: OK
 compat-table/es5/Array.prototype.every.js: OK
 compat-table/es5/Array.prototype.filter.js: OK
@@ -457,9 +457,9 @@ compat-table/es5/String.property-access.js: OK
 compat-table/es5/String.prototype.split.js: failed
 compat-table/es5/String.prototype.trim.js: OK
 compat-table/es5/annex-b.String.prototype.substr.js: failed
-compat-table/es5/immutable-globals.Infinity.js: failed: Infinity is not a number
-compat-table/es5/immutable-globals.NaN.js: failed: NaN is not a number
-compat-table/es5/immutable-globals.undefined.js: failed: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+compat-table/es5/immutable-globals.Infinity.js: Infinity is not a number
+compat-table/es5/immutable-globals.NaN.js: NaN is not a number
+compat-table/es5/immutable-globals.undefined.js: System.InvalidProgramException: Common Language Runtime detected an invalid program.
 compat-table/es5/literals.getter-accessors.js: OK
 compat-table/es5/literals.reserved-words-properties.js: OK
 compat-table/es5/literals.setter-accessors.js: OK
@@ -472,7 +472,7 @@ compat-table/es5/misc.enumerable-shadow.js: OK
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
 compat-table/es5/misc.thrown-functions-this.js: TypeError: Cannot use 'in' operator to search for 'a' in undefined
 compat-table/es5/misc.unreserved-words.js: OK
-compat-table/es5/misc.zero-width-identifiers.js: MissingOK
+compat-table/es5/misc.zero-width-identifiers.js: failed
 compat-table/es5/strict.arguments-callee-error.js: OK
 compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
@@ -519,16 +519,16 @@ compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: failed
 compat-table/es6/Function.name.class-expression.js: OK
 compat-table/es6/Function.name.class-object-method.js: failed
-compat-table/es6/Function.name.class-prototype.js: failed
+compat-table/es6/Function.name.class-prototype.js: OK
 compat-table/es6/Function.name.class-statement.js: OK
-compat-table/es6/Function.name.class-static.js: failed
+compat-table/es6/Function.name.class-static.js: OK
 compat-table/es6/Function.name.class-variable.js: failed
 compat-table/es6/Function.name.configurable.js: failed
 compat-table/es6/Function.name.expression.js: failed
 compat-table/es6/Function.name.new-Function.js: OK
 compat-table/es6/Function.name.object-method.js: failed
-compat-table/es6/Function.name.shorthand.js: failed
-compat-table/es6/Function.name.shorthand.no-lexical.js: OK
+compat-table/es6/Function.name.shorthand.js: OK
+compat-table/es6/Function.name.shorthand.no-lexical.js: TypeError: Method f not found in [object Object]
 compat-table/es6/Function.name.statement.js: failed
 compat-table/es6/Function.name.symbol-keyed.js: failed
 compat-table/es6/Function.name.variable.js: failed
@@ -631,7 +631,7 @@ compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed
 compat-table/es6/Reflect.construct.js: OK
 compat-table/es6/Reflect.construct.new-target.js: failed
 compat-table/es6/Reflect.construct.third-argument.js: failed
-compat-table/es6/Reflect.defineProperty.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/Reflect.defineProperty.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/Reflect.deleteProperty.js: failed
 compat-table/es6/Reflect.getOwnPropertyDescriptor.js: OK
 compat-table/es6/Reflect.getPrototypeOf.js: TypeError: Method getPrototypeOf not found in [object Object]
@@ -669,7 +669,7 @@ compat-table/es6/Set.prototype.size.js: OK
 compat-table/es6/Set.prototype.values.js: OK
 compat-table/es6/Set.zero-key.js: failed
 compat-table/es6/String.fromCodePoint.js: OK
-compat-table/es6/String.iterator-prototype-chain.js: TypeError: Method Symbol.iterator not found on 
+compat-table/es6/String.iterator-prototype-chain.js: TypeError: Method Symbol.iterator not found on
 compat-table/es6/String.prototype.Symbol.iterator.js: failed
 compat-table/es6/String.prototype.codePointAt.js: OK
 compat-table/es6/String.prototype.endsWith.js: OK
@@ -680,9 +680,9 @@ compat-table/es6/String.prototype.repeat.js: OK
 compat-table/es6/String.prototype.startsWith.js: OK
 compat-table/es6/String.prototype.startsWith.throws-regex.js: OK
 compat-table/es6/String.raw.js: OK
-compat-table/es6/Symbol.JSON.stringify.object.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
-compat-table/es6/Symbol.JSON.stringify.primitive.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
-compat-table/es6/Symbol.Object.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/Symbol.JSON.stringify.object.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/Symbol.JSON.stringify.primitive.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/Symbol.Object.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/Symbol.String.js: failed
 compat-table/es6/Symbol.defineProperty.js: OK
 compat-table/es6/Symbol.global-registry.js: TypeError: Method keyFor not found in function Symbol() { [native code] }
@@ -697,7 +697,7 @@ compat-table/es6/WeakMap.constructor-accepts-null.js: OK
 compat-table/es6/WeakMap.constructor-arguments.js: OK
 compat-table/es6/WeakMap.constructor-invokes-set.js: failed
 compat-table/es6/WeakMap.constructor-requires-new.js: OK
-compat-table/es6/WeakMap.frozen-keys.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/WeakMap.frozen-keys.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/WeakMap.iterator-closing.js: failed
 compat-table/es6/WeakMap.js: OK
 compat-table/es6/WeakMap.no-clear.js: OK
@@ -718,19 +718,19 @@ compat-table/es6/WeakSet.prototype.delete.js: OK
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
 compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: TypeError: Method compile not found in /a/
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
-compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Method anchor not found on 
-compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Method anchor not found on 
+compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: Method anchor not found on
+compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: Method anchor not found on
 compat-table/es6/annex-b.function.hoisted-block-level.js: failed
-compat-table/es6/annex-b.function.if-statement.js: crash: SIGABRT
+compat-table/es6/annex-b.function.if-statement.js: crashed: SIGABRT
 compat-table/es6/annex-b.function.labeled.js: failed
-compat-table/es6/annex-b.html-comments.js: crash: SIGABRT
+compat-table/es6/annex-b.html-comments.js: crashed: SIGABRT
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
 compat-table/es6/annex-b.regex.hyphens.js: OK
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
 compat-table/es6/annex-b.regex.invalid-char-escapes.js: failed
-compat-table/es6/annex-b.regex.invalid-control-escapes.js: crash: SIGABRT
-compat-table/es6/annex-b.regex.invalid-hex-escapes.js: crash: SIGABRT
-compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: crash: SIGABRT
+compat-table/es6/annex-b.regex.invalid-control-escapes.js: crashed: SIGABRT
+compat-table/es6/annex-b.regex.invalid-hex-escapes.js: crashed: SIGABRT
+compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: crashed: SIGABRT
 compat-table/es6/annex-b.regex.octal-escapes.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.absent-from-null.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: OK
@@ -748,10 +748,10 @@ compat-table/es6/arrow.1-param.js: OK
 compat-table/es6/arrow.5-param.js: OK
 compat-table/es6/arrow.bind.js: OK
 compat-table/es6/arrow.lexical-arguments.js: OK
-compat-table/es6/arrow.lexical-super.constructor.js: failed: System.InvalidProgramException: Common Language Runtime detected an invalid program.
-compat-table/es6/arrow.lexical-super.methods.js: failed: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+compat-table/es6/arrow.lexical-super.constructor.js: System.InvalidProgramException: Common Language Runtime detected an invalid program.
+compat-table/es6/arrow.lexical-super.methods.js: System.InvalidProgramException: Common Language Runtime detected an invalid program.
 compat-table/es6/arrow.lexical-this.js: OK
-compat-table/es6/arrow.new-target.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/arrow.new-target.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/arrow.no-line-break.js: failed
 compat-table/es6/arrow.no-prototype.js: failed
 compat-table/es6/arrow.precedence.js: OK
@@ -759,16 +759,16 @@ compat-table/es6/arrow.this-call-apply.js: OK
 compat-table/es6/class.accessor-properties.js: OK
 compat-table/es6/class.anonymous.js: OK
 compat-table/es6/class.block-scoped.js: OK
-compat-table/es6/class.computed-accessor-properties.js: OK
+compat-table/es6/class.computed-accessor-properties.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/class.computed-names-tdz.js: failed
-compat-table/es6/class.computed-prototype-methods.js: OK
-compat-table/es6/class.computed-static-accessor-properties.js: OK
-compat-table/es6/class.computed-static-methods.js: OK
+compat-table/es6/class.computed-prototype-methods.js: failed
+compat-table/es6/class.computed-static-accessor-properties.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/class.computed-static-methods.js: failed
 compat-table/es6/class.constructor-requires-new.js: OK
 compat-table/es6/class.constructor.js: OK
 compat-table/es6/class.expression.js: OK
 compat-table/es6/class.extends-expressions.js: OK
-compat-table/es6/class.extends-null.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/class.extends-null.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/class.extends.js: OK
 compat-table/es6/class.implicit-strict.js: OK
 compat-table/es6/class.lexical-name.js: failed
@@ -805,38 +805,38 @@ compat-table/es6/default-params.new-function.js: failed
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: OK
 compat-table/es6/default-params.tdz.js: failed
-compat-table/es6/destructuring-assign.array.js: crash: SIGABRT
+compat-table/es6/destructuring-assign.array.js: crashed: SIGABRT
 compat-table/es6/destructuring-assign.astral-string.js: failed
 compat-table/es6/destructuring-assign.chained-iterable.js: failed
 compat-table/es6/destructuring-assign.chained-object.js: failed
 compat-table/es6/destructuring-assign.computed-properties.js: failed
 compat-table/es6/destructuring-assign.defaults.js: OK
-compat-table/es6/destructuring-assign.empty-patterns.js: crash: SIGABRT
+compat-table/es6/destructuring-assign.empty-patterns.js: crashed: SIGABRT
 compat-table/es6/destructuring-assign.generator.js: OK
 compat-table/es6/destructuring-assign.iterable-expression.js: failed
 compat-table/es6/destructuring-assign.iterable-instance.js: failed
 compat-table/es6/destructuring-assign.iterable.js: OK
 compat-table/es6/destructuring-assign.iterator-closing.js: failed
-compat-table/es6/destructuring-assign.nested-rest.js: crash: SIGABRT
+compat-table/es6/destructuring-assign.nested-rest.js: crashed: SIGABRT
 compat-table/es6/destructuring-assign.nested.js: failed
 compat-table/es6/destructuring-assign.object-expression.js: failed
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
 compat-table/es6/destructuring-assign.rest.js: OK
-compat-table/es6/destructuring-assign.sparse-array.js: crash: SIGABRT
+compat-table/es6/destructuring-assign.sparse-array.js: crashed: SIGABRT
 compat-table/es6/destructuring-assign.string.js: OK
 compat-table/es6/destructuring-assign.throws-null-undefined.js: OK
 compat-table/es6/destructuring-assign.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-assign.trailing-comma-object.js: OK
-compat-table/es6/destructuring-decl.array.js: crash: SIGABRT
+compat-table/es6/destructuring-decl.array.js: crashed: SIGABRT
 compat-table/es6/destructuring-decl.astral-string.js: failed
-compat-table/es6/destructuring-decl.catch.js: crash: SIGABRT
-compat-table/es6/destructuring-decl.computed-properties.js: crash: SIGABRT
+compat-table/es6/destructuring-decl.catch.js: crashed: SIGABRT
+compat-table/es6/destructuring-decl.computed-properties.js: crashed: SIGABRT
 compat-table/es6/destructuring-decl.defaults-tdz.js: failed
 compat-table/es6/destructuring-decl.defaults.js: OK
-compat-table/es6/destructuring-decl.for-in.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
-compat-table/es6/destructuring-decl.for-of.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/destructuring-decl.for-in.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/destructuring-decl.for-of.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/destructuring-decl.generator.js: OK
 compat-table/es6/destructuring-decl.iterable-instance.js: failed
 compat-table/es6/destructuring-decl.iterable.js: OK
@@ -846,16 +846,16 @@ compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
-compat-table/es6/destructuring-decl.sparse-array.js: crash: SIGABRT
+compat-table/es6/destructuring-decl.sparse-array.js: crashed: SIGABRT
 compat-table/es6/destructuring-decl.string.js: OK
 compat-table/es6/destructuring-decl.throws-null-undefined.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-object.js: OK
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: failed
 compat-table/es6/destructuring-params.arguments.js: OK
-compat-table/es6/destructuring-params.array.js: crash: SIGABRT
+compat-table/es6/destructuring-params.array.js: crashed: SIGABRT
 compat-table/es6/destructuring-params.astral-string.js: failed
-compat-table/es6/destructuring-params.computed-properties.js: crash: SIGABRT
+compat-table/es6/destructuring-params.computed-properties.js: crashed: SIGABRT
 compat-table/es6/destructuring-params.defaults-new-function.js: failed
 compat-table/es6/destructuring-params.defaults-separate-scope.js: OK
 compat-table/es6/destructuring-params.defaults.js: OK
@@ -872,7 +872,7 @@ compat-table/es6/destructuring-params.object-primitives.js: OK
 compat-table/es6/destructuring-params.object.js: OK
 compat-table/es6/destructuring-params.rest.js: OK
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.sparse-array.js: crash: SIGABRT
+compat-table/es6/destructuring-params.sparse-array.js: crashed: SIGABRT
 compat-table/es6/destructuring-params.string.js: OK
 compat-table/es6/destructuring-params.throws-null-undefined.js: OK
 compat-table/es6/destructuring-params.trailing-comma-iterable.js: OK
@@ -888,7 +888,7 @@ compat-table/es6/for-of.sparse-array.js: OK
 compat-table/es6/for-of.string.js: OK
 compat-table/es6/function.block-level-decl.js: OK
 compat-table/es6/generators.basic.js: OK
-compat-table/es6/generators.constructor.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/generators.constructor.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/generators.expression.js: OK
 compat-table/es6/generators.no-new-this.js: OK
 compat-table/es6/generators.prototype-chain.js: TypeError: Cannot get property hasOwnProperty of null
@@ -896,8 +896,8 @@ compat-table/es6/generators.prototype.js: failed
 compat-table/es6/generators.return.js: failed
 compat-table/es6/generators.sending.js: OK
 compat-table/es6/generators.shorthand.class.js: OK
-compat-table/es6/generators.shorthand.computed.class.js: OK
-compat-table/es6/generators.shorthand.computed.js: OK
+compat-table/es6/generators.shorthand.computed.class.js: TypeError: Method generator not found in [object Object]
+compat-table/es6/generators.shorthand.computed.js: TypeError: Method generator not found in [object Object]
 compat-table/es6/generators.shorthand.js: OK
 compat-table/es6/generators.shorthand.no-constructor.js: failed
 compat-table/es6/generators.shorthand.string-keyed.js: OK
@@ -932,16 +932,16 @@ compat-table/es6/let.strict.tdz.js: failed
 compat-table/es6/let.tdz.js: failed
 compat-table/es6/literals.binary.Number.js: OK
 compat-table/es6/literals.binary.js: OK
-compat-table/es6/literals.object.computed-accessors.js: OK
+compat-table/es6/literals.object.computed-accessors.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/literals.object.computed-properties.js: OK
-compat-table/es6/literals.object.computed-shorthand-methods.js: OK
+compat-table/es6/literals.object.computed-shorthand-methods.js: TypeError: Method y not found in [object Object]
 compat-table/es6/literals.object.shorthand-methods.js: OK
 compat-table/es6/literals.object.shorthand-properties.js: OK
 compat-table/es6/literals.object.string-keyed-shorthand-methods.js: OK
 compat-table/es6/literals.octal.Number.js: OK
-compat-table/es6/literals.octal.js: crash: SIGABRT
+compat-table/es6/literals.octal.js: crashed: SIGABRT
 compat-table/es6/misc.Invalid-Date.js: OK
-compat-table/es6/misc.Object.freeze.primitives.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/misc.Object.freeze.primitives.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: OK
 compat-table/es6/misc.Object.getOwnPropertyNames.primitives.js: failed
 compat-table/es6/misc.Object.getPrototypeOf.primitives.js: OK
@@ -951,7 +951,7 @@ compat-table/es6/misc.Object.isSealed.primitives.js: failed
 compat-table/es6/misc.Object.keys.primitives.js: failed
 compat-table/es6/misc.Object.preventExtensions.primitives.js: OK
 compat-table/es6/misc.Object.seal.primitives.js: OK
-compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/misc.Proxy.defineProperty.SetIntegrityLevel.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/misc.Proxy.defineProperty.Set.js: failed
 compat-table/es6/misc.Proxy.deleteProperty.Array.copyWithin.js: TypeError: Method copyWithin not found in [object Object]
 compat-table/es6/misc.Proxy.deleteProperty.Array.pop.js: TypeError: Method pop not found in [object Object]
@@ -965,19 +965,19 @@ compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Object.hasOwnProperty.js: f
 compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Set.js: failed
 compat-table/es6/misc.Proxy.get.Array.concat.js: failed
 compat-table/es6/misc.Proxy.get.Array.from.js: failed
-compat-table/es6/misc.Proxy.get.Array.iteration.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/misc.Proxy.get.Array.iteration.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/misc.Proxy.get.Array.pop.js: failed
 compat-table/es6/misc.Proxy.get.Array.reverse.js: failed
 compat-table/es6/misc.Proxy.get.Array.shift.js: failed
 compat-table/es6/misc.Proxy.get.Array.splice.js: failed
 compat-table/es6/misc.Proxy.get.Array.toString.js: TypeError: Method join not found in [object Object]
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: failed
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: Function.prototype.toString cannot be called with non function
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: TypeError: Failed to convert this to JSDate
 compat-table/es6/misc.Proxy.get.Error.toString.js: TypeError: Failed to convert this to JSError
 compat-table/es6/misc.Proxy.get.Function.bind.js: TypeError: Method call not found in [object Object]
-compat-table/es6/misc.Proxy.get.HasBinding.js: crash: SIGABRT
+compat-table/es6/misc.Proxy.get.HasBinding.js: crashed: SIGABRT
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: OK
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: failed
 compat-table/es6/misc.Proxy.get.Object.assign.js: failed
@@ -990,9 +990,9 @@ compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: TypeError: Cannot get p
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: TypeError: Cannot get property call of undefined
 compat-table/es6/misc.Proxy.get.RegExp.flags.js: TypeError: Failed to convert this to JSRegExp
 compat-table/es6/misc.Proxy.get.RegExp.test.js: TypeError: Failed to convert this to JSRegExp
-compat-table/es6/misc.Proxy.get.RegExp.toString.js: failed
+compat-table/es6/misc.Proxy.get.RegExp.toString.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/misc.Proxy.get.String.match.js: failed
-compat-table/es6/misc.Proxy.get.String.raw.js: failed: exception: Proxy: Cannot convert undefined or null to object
+compat-table/es6/misc.Proxy.get.String.raw.js: exception: Proxy: Cannot convert undefined or null to object
 compat-table/es6/misc.Proxy.get.String.replace.js: failed
 compat-table/es6/misc.Proxy.get.String.search.js: failed
 compat-table/es6/misc.Proxy.get.String.split.js: failed
@@ -1000,7 +1000,7 @@ compat-table/es6/misc.Proxy.get.ToPrimitive.js: failed
 compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: failed
 compat-table/es6/misc.Proxy.get.instanceof.js: TypeError: Right side of instanceof is not a function
 compat-table/es6/misc.Proxy.ownKeys.SerializeJSONObject.js: failed
-compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: failed: System.NotImplementedException: The method or operation is not implemented.
+compat-table/es6/misc.Proxy.ownKeys.SetIntegrityLevel.js: System.NotImplementedException: The method or operation is not implemented.
 compat-table/es6/misc.Proxy.ownKeys.TestIntegrityLevel.js: failed
 compat-table/es6/misc.Proxy.set.Array.copyWithin.js: TypeError: Method copyWithin not found in [object Object]
 compat-table/es6/misc.Proxy.set.Array.fill.js: TypeError: Method fill not found in [object Object]
@@ -1014,7 +1014,7 @@ compat-table/es6/misc.Proxy.set.Array.splice.js: TypeError: Method splice not fo
 compat-table/es6/misc.Proxy.set.Array.unshift.js: TypeError: Method unshift not found in [object Object]
 compat-table/es6/misc.Proxy.set.Object.assign.js: failed
 compat-table/es6/misc.RegExp-alter-flags.js: OK
-compat-table/es6/misc.RegExp-prototype-toString-generic.js: failed
+compat-table/es6/misc.RegExp-prototype-toString-generic.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/misc.accessors-no-constructor.js: failed
 compat-table/es6/misc.bound-function-prototype.arrow.js: TypeError: Method call not found in [object Object]
 compat-table/es6/misc.bound-function-prototype.class.js: TypeError: Method call not found in [object Object]
@@ -1025,25 +1025,25 @@ compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: OK
 compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: OK
-compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: crash: SIGABRT
+compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: crashed: SIGABRT
 compat-table/es6/misc.identifier-syntax.var-1.js: failed
-compat-table/es6/misc.identifier-syntax.var-2.js: crash: SIGABRT
+compat-table/es6/misc.identifier-syntax.var-2.js: crashed: SIGABRT
 compat-table/es6/misc.property-order.JSON.parse.js: OK
 compat-table/es6/misc.property-order.JSON.stringify.js: failed
-compat-table/es6/misc.property-order.Object.assign.js: failed: System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
+compat-table/es6/misc.property-order.Object.assign.js: System.UnauthorizedAccessException: Attempted to perform an unauthorized operation.
 compat-table/es6/misc.property-order.Object.getOwnPropertyNames.js: failed
 compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: failed
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: failed
 compat-table/es6/misc.prototypes-not-instances.js: TypeError: Cannot get property prototype of undefined
 compat-table/es6/new-target.assignment-error.js: failed
-compat-table/es6/new-target.constructor.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/new-target.constructor.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/regex.flags.u.case-folding.js: failed
 compat-table/es6/regex.flags.u.codepoint.js: TypeError: Cannot get property 0 of null
 compat-table/es6/regex.flags.u.js: TypeError: Cannot get property 0 of null
 compat-table/es6/regex.flags.u.non-bmp.js: TypeError: Cannot get property 0 of null
-compat-table/es6/regex.flags.y.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
-compat-table/es6/regex.flags.y.lastIndex.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/regex.flags.y.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/regex.flags.y.lastIndex.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/rest-params.arguments.js: OK
 compat-table/es6/rest-params.basic.js: OK
 compat-table/es6/rest-params.length.js: failed
@@ -1053,10 +1053,10 @@ compat-table/es6/spread.array-call.js: OK
 compat-table/es6/spread.array-literal.js: OK
 compat-table/es6/spread.astral-call.js: failed
 compat-table/es6/spread.astral-literal.js: failed
-compat-table/es6/spread.generator-call.js: failed: System.OverflowException: Arithmetic operation resulted in an overflow.
+compat-table/es6/spread.generator-call.js: System.OverflowException: Arithmetic operation resulted in an overflow.
 compat-table/es6/spread.generator-literal.js: OK
-compat-table/es6/spread.iterable-call.js: failed: System.OverflowException: Arithmetic operation resulted in an overflow.
-compat-table/es6/spread.iterable-instance-call.js: failed: System.OverflowException: Arithmetic operation resulted in an overflow.
+compat-table/es6/spread.iterable-call.js: System.OverflowException: Arithmetic operation resulted in an overflow.
+compat-table/es6/spread.iterable-instance-call.js: System.OverflowException: Arithmetic operation resulted in an overflow.
 compat-table/es6/spread.iterable-instance-literal.js: failed
 compat-table/es6/spread.iterable-literal.js: OK
 compat-table/es6/spread.non-iterable-error.js: failed
@@ -1098,7 +1098,7 @@ compat-table/es6/subclassing.misc.String.js: OK
 compat-table/es6/super.correct-constructor.js: OK
 compat-table/es6/super.expression.js: OK
 compat-table/es6/super.method-calls.js: OK
-compat-table/es6/super.new-target-binding.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/super.new-target-binding.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/super.property-access.js: OK
 compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
@@ -1107,7 +1107,7 @@ compat-table/es6/tail-calls.direct.js: RangeError: Maximum call stack size excee
 compat-table/es6/tail-calls.mutual.js: RangeError: Maximum call stack size exceeded
 compat-table/es6/template.basic.js: failed
 compat-table/es6/template.caching.js: failed
-compat-table/es6/template.escape-sequences.js: crash: SIGABRT
+compat-table/es6/template.escape-sequences.js: crashed: SIGABRT
 compat-table/es6/template.frozen-array.js: failed
 compat-table/es6/template.line-break.js: failed
 compat-table/es6/template.permanent-caching.js: OK
@@ -1132,9 +1132,9 @@ compat-table/es6/typed-arrays.Uint8Array.js: OK
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: OK
 compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
-compat-table/es6/typed-arrays.constructor-iterables.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es6/typed-arrays.constructor-iterables.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/typed-arrays.constructor-requires-new.js: OK
-compat-table/es6/typed-arrays.correct-prototype-chains.js: failed
+compat-table/es6/typed-arrays.correct-prototype-chains.js: constructor
 compat-table/es6/typed-arrays.from.js: OK
 compat-table/es6/typed-arrays.of.js: OK
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed
@@ -1159,9 +1159,9 @@ compat-table/es6/typed-arrays.prototype.some.js: OK
 compat-table/es6/typed-arrays.prototype.sort.js: OK
 compat-table/es6/typed-arrays.prototype.subarray.js: OK
 compat-table/es6/typed-arrays.prototype.values.js: OK
-compat-table/es6/unicode-escapes.identifier.js: crash: SIGABRT
-compat-table/es6/unicode-escapes.property-access.js: crash: SIGABRT
-compat-table/es6/unicode-escapes.property-key.js: MissingOK
+compat-table/es6/unicode-escapes.identifier.js: crashed: SIGABRT
+compat-table/es6/unicode-escapes.property-access.js: crashed: SIGABRT
+compat-table/es6/unicode-escapes.property-key.js: failed
 compat-table/es6/unicode-escapes.string.js: failed
 compat-table/es6/well-known.hasInstance.js: failed
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: failed
@@ -1188,12 +1188,12 @@ compat-table/es6/well-known.toPrimitive.js: failed
 compat-table/es6/well-known.toStringTag.existing-builtins.js: failed
 compat-table/es6/well-known.toStringTag.js: failed
 compat-table/es6/well-known.toStringTag.misc-builtins.js: failed
-compat-table/es6/well-known.toStringTag.new-builtins.js: TypeError: Method Symbol.iterator not found on 
-compat-table/es6/well-known.unscopables.js: crash: SIGABRT
+compat-table/es6/well-known.toStringTag.new-builtins.js: TypeError: Method Symbol.iterator not found on
+compat-table/es6/well-known.unscopables.js: crashed: SIGABRT
 compat-table/es2016/Array.prototype.includes.generic.js: failed
 compat-table/es2016/Array.prototype.includes.js: OK
 compat-table/es2016/Array.prototype.includes.sparse.js: OK
-compat-table/es2016/Array.prototype.includes.typed-array.js: failed: System.ArgumentException: Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
+compat-table/es2016/Array.prototype.includes.typed-array.js: System.ArgumentException: Destination array was not long enough. Check the destination index, length, and the array's lower bounds. (Parameter 'destinationArray')
 compat-table/es2016/exponentiation.assignment.js: OK
 compat-table/es2016/exponentiation.basic.js: OK
 compat-table/es2016/exponentiation.unary-negation-error.js: failed
@@ -1201,8 +1201,8 @@ compat-table/es2016/misc.Proxy-Array-includes.js: failed
 compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: failed
 compat-table/es2016/misc.generator-throw-inner.js: TypeError: Cannot get property value of undefined
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: crash: SIGABRT
-compat-table/es2016/misc.nested-rest-destructuring-params.js: crash: SIGABRT
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: crashed: SIGABRT
+compat-table/es2016/misc.nested-rest-destructuring-params.js: crashed: SIGABRT
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: failed
 compat-table/es2017/Atomics.add.js: TypeError: Cannot get property add of undefined
 compat-table/es2017/Atomics.and.js: TypeError: Cannot get property and of undefined
@@ -1247,13 +1247,13 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot get pro
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot get property call of undefined
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot get property call of undefined
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot get property call of undefined
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: crash: SIGABRT
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: crashed: SIGABRT
 compat-table/es2017/async.Symbol.toStringTag.js: failed
 compat-table/es2017/async.arrow-in-class.js: TypeError: undefined is not iterable
 compat-table/es2017/async.arrow.js: TypeError: undefined is not iterable
-compat-table/es2017/async.await-non-promise.js: crash: SIGABRT
-compat-table/es2017/async.await-rejection.js: crash: SIGABRT
-compat-table/es2017/async.await.js: crash: SIGABRT
+compat-table/es2017/async.await-non-promise.js: crashed: SIGABRT
+compat-table/es2017/async.await-rejection.js: crashed: SIGABRT
+compat-table/es2017/async.await.js: crashed: SIGABRT
 compat-table/es2017/async.constructor.js: TypeError: undefined is not iterable
 compat-table/es2017/async.methods-class.js: TypeError: undefined is not iterable
 compat-table/es2017/async.methods-object.js: TypeError: undefined is not iterable
@@ -1262,8 +1262,8 @@ compat-table/es2017/async.no-await-in-params.js: OK
 compat-table/es2017/async.no-line-break.js: OK
 compat-table/es2017/async.no-prototype.js: failed
 compat-table/es2017/async.prototype-chain.js: failed
-compat-table/es2017/async.return.js: TypeError: undefined is not iterable
-compat-table/es2017/async.throw.js: TypeError: undefined is not iterable
+compat-table/es2017/async.return.js: found both ok and fail markers
+compat-table/es2017/async.throw.js: found both ok and fail markers
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: failed
 compat-table/es2017/trailing-comma.arguments.js: OK
@@ -1271,25 +1271,25 @@ compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: TypeError: Method reject not found in function Promise() { [native code] }
 compat-table/es2018/Promise.prototype.finally.js: TypeError: Method reject not found in function Promise() { [native code] }
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: TypeError: Method reject not found in function Promise() { [native code] }
-compat-table/es2018/async-iterators.for-await-of.js: crash: SIGABRT
+compat-table/es2018/async-iterators.for-await-of.js: crashed: SIGABRT
 compat-table/es2018/async-iterators.generators.js: TypeError: Method then not found in [object Object]
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: failed
-compat-table/es2018/misc.template-literal-revision.js: crash: SIGABRT
-compat-table/es2018/object-rest.js: crash: SIGABRT
+compat-table/es2018/misc.template-literal-revision.js: crashed: SIGABRT
+compat-table/es2018/object-rest.js: crashed: SIGABRT
 compat-table/es2018/object-spread.js: OK
-compat-table/es2018/regex.flags.s.js: crash: SIGABRT
+compat-table/es2018/regex.flags.s.js: crashed: SIGABRT
 compat-table/es2018/regex.lookbehind.js: OK
 compat-table/es2018/regex.named-capture-groups.js: TypeError: Cannot get property year of undefined
-compat-table/es2018/regex.unicode-property-escapes.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: crash: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: crash: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: crashed: SIGABRT
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: crashed: SIGABRT
 compat-table/es2019/Array.prototype.flatMap.js: failed
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot get property flat of undefined
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1299,8 +1299,8 @@ compat-table/es2019/String.prototype.trimStart.js: OK
 compat-table/es2019/Symbol.prototype.description.empty.js: failed
 compat-table/es2019/Symbol.prototype.description.js: failed
 compat-table/es2019/Symbol.prototype.description.undefined.js: failed
-compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: Method trimLeft not found in  	 
-compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: Method trimRight not found in  	 
+compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: Method trimLeft not found in
+compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: Method trimRight not found in
 compat-table/es2019/misc.Function-toString.Function-constructor.js: failed
 compat-table/es2019/misc.Function-toString.arrows.js: OK
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Unexpected token Divide: / at 1, 24
@@ -1311,9 +1311,9 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Unex
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: OK
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: OK
-compat-table/es2019/misc.optional-catch-binding.await.js: crash: SIGABRT
-compat-table/es2019/misc.optional-catch-binding.js: crash: SIGABRT
-compat-table/es2019/misc.optional-catch-binding.yield.js: crash: SIGABRT
+compat-table/es2019/misc.optional-catch-binding.await.js: crashed: SIGABRT
+compat-table/es2019/misc.optional-catch-binding.js: crashed: SIGABRT
+compat-table/es2019/misc.optional-catch-binding.yield.js: crashed: SIGABRT
 compat-table/es2020/BigInt64Array.js: TypeError: cannot create instance of undefined
 compat-table/es2020/BigInt.asIntN.js: OK
 compat-table/es2020/BigInt.asUintN.js: OK
@@ -1336,17 +1336,17 @@ compat-table/es2020/optional-chaining.spread-params.js: TypeError: Cannot get pr
 compat-table/es2021/FinalizationRegistry.js: OK
 compat-table/es2021/Promise.any.AggregateError.js: TypeError: Method reject not found in function Promise() { [native code] }
 compat-table/es2021/Promise.any.fulfillment.js: TypeError: Method reject not found in function Promise() { [native code] }
-compat-table/es2021/String.prototype.replaceAll.js: TypeError: Method replaceAll not found in q=query+string+parameters
+compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: OK
-compat-table/es2021/logical-assignment.and.js: crash: SIGABRT
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: crash: SIGABRT
-compat-table/es2021/logical-assignment.and.short-circuit.js: crash: SIGABRT
+compat-table/es2021/logical-assignment.and.js: OK
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: failed
+compat-table/es2021/logical-assignment.and.short-circuit.js: OK
 compat-table/es2021/logical-assignment.nullish.js: OK
 compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: failed
 compat-table/es2021/logical-assignment.nullish.short-circuit.js: OK
-compat-table/es2021/logical-assignment.or.js: crash: SIGABRT
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: crash: SIGABRT
-compat-table/es2021/logical-assignment.or.short-circuit.js: crash: SIGABRT
+compat-table/es2021/logical-assignment.or.js: OK
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: failed
+compat-table/es2021/logical-assignment.or.short-circuit.js: OK
 compat-table/es2021/numeric-separators.js: OK
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: Cannot get property prototype of undefined
 compat-table/es2022/Error.cause.AggregateError.js: TypeError: cannot create instance of undefined
@@ -1372,20 +1372,20 @@ compat-table/es2022/at-method.TypedArray.js: TypeError: Method at not found in 1
 compat-table/es2022/class-fields.computed-instance.js: OK
 compat-table/es2022/class-fields.computed-static.js: OK
 compat-table/es2022/class-fields.instance.parent-scope.js: OK
-compat-table/es2022/class-fields.private-instance.initializers.js: crash: SIGABRT
-compat-table/es2022/class-fields.private-instance.js: crash: SIGABRT
-compat-table/es2022/class-fields.private-instance.optional-access.js: crash: SIGABRT
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: crash: SIGABRT
-compat-table/es2022/class-fields.private-static.js: crash: SIGABRT
+compat-table/es2022/class-fields.private-instance.initializers.js: crashed: SIGABRT
+compat-table/es2022/class-fields.private-instance.js: crashed: SIGABRT
+compat-table/es2022/class-fields.private-instance.optional-access.js: crashed: SIGABRT
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: crashed: SIGABRT
+compat-table/es2022/class-fields.private-static.js: crashed: SIGABRT
 compat-table/es2022/class-fields.public-instance.js: OK
 compat-table/es2022/class-fields.public-static.js: OK
 compat-table/es2022/class-fields.static.define.js: OK
-compat-table/es2022/class-methods.private-accessor.js: crash: SIGABRT
-compat-table/es2022/class-methods.private-instance.js: crash: SIGABRT
-compat-table/es2022/class-methods.private-static-accessor.js: crash: SIGABRT
-compat-table/es2022/class-methods.private-static.js: crash: SIGABRT
-compat-table/es2022/class-static-init-blocks.js: crash: SIGABRT
-compat-table/es2022/ergonomic-brand-checks.js: crash: SIGABRT
+compat-table/es2022/class-methods.private-accessor.js: crashed: SIGABRT
+compat-table/es2022/class-methods.private-instance.js: crashed: SIGABRT
+compat-table/es2022/class-methods.private-static-accessor.js: crashed: SIGABRT
+compat-table/es2022/class-methods.private-static.js: crashed: SIGABRT
+compat-table/es2022/class-static-init-blocks.js: crashed: SIGABRT
+compat-table/es2022/ergonomic-brand-checks.js: crashed: SIGABRT
 compat-table/es2022/regex.flags.d.constructor.js: OK
 compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: Failed to convert this to JSRegExp
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: Method findLastIndex not found in [object Object],[object Object],[object Object],[object Object]
@@ -1397,7 +1397,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: Method with not found in
 compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: Method toReversed not found in 1,2,3
 compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: Method toSorted not found in 3,1,2
 compat-table/es2023/TypedArray.prototype.with.js: TypeError: Method with not found in 1,0,2
-compat-table/es2023/hashbang.js: crash: SIGABRT
+compat-table/es2023/hashbang.js: crashed: SIGABRT
 compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: Method transfer not found in [object Object]
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: Method transferToFixedLength not found in [object Object]
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: Method transfer not found in [object Object]
@@ -1405,13 +1405,13 @@ compat-table/es2024/Map.groupBy.js: TypeError: Method groupBy not found in funct
 compat-table/es2024/Object.groupBy.js: TypeError: Method groupBy not found in function Object() { [native code] }
 compat-table/es2024/Promise.withResolvers.js: TypeError: Method withResolvers not found in function Promise() { [native code] }
 compat-table/es2024/regex.flags.v.constructor.js: OK
-compat-table/es2024/regex.flags.v.properties-of-strings.js: crash: SIGABRT
-compat-table/es2024/regex.flags.v.set-notations.js: crash: SIGABRT
+compat-table/es2024/regex.flags.v.properties-of-strings.js: crashed: SIGABRT
+compat-table/es2024/regex.flags.v.set-notations.js: crashed: SIGABRT
 compat-table/es2024/regex.flags.v.shows-in-flags.js: TypeError: Failed to convert this to JSRegExp
-compat-table/es2024/regex.flags.v.unicode-15.1.js: crash: SIGABRT
-compat-table/es2024/regex.flags.v.unicode-16.0.js: crash: SIGABRT
-compat-table/es2024/regex.flags.v.unicode-17.0.js: crash: SIGABRT
-compat-table/es2025/Iterator.extends.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/es2024/regex.flags.v.unicode-15.1.js: crashed: SIGABRT
+compat-table/es2024/regex.flags.v.unicode-16.0.js: crashed: SIGABRT
+compat-table/es2024/regex.flags.v.unicode-17.0.js: crashed: SIGABRT
+compat-table/es2025/Iterator.extends.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es2025/Iterator.from.iterable.js: TypeError: Cannot get property from of undefined
 compat-table/es2025/Iterator.from.iterator.js: TypeError: Cannot get property from of undefined
 compat-table/es2025/Iterator.instanceof.js: TypeError: Right side of instanceof is undefined
@@ -1439,7 +1439,7 @@ compat-table/es2025/Set.prototype.union.js: TypeError: Method union not found in
 compat-table/es2025/regex.duplicate-named-groups.js: OK
 compat-table/es2025/regex.pattern-modifiers.i.js: OK
 compat-table/es2025/regex.pattern-modifiers.m.js: OK
-compat-table/es2025/regex.pattern-modifiers.s.js: crash: SIGABRT
+compat-table/es2025/regex.pattern-modifiers.s.js: crashed: SIGABRT
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1470,29 +1470,29 @@ compat-table/intl/Object.prototype.toLocaleString.js: failed
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Method isTemplateObject not found in function Array() { [native code] }
 compat-table/next/AsyncDisposableStack.js: TypeError: cannot create instance of undefined
-compat-table/next/AsyncIterator.extends.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
-compat-table/next/AsyncIterator.from.async-iterable.js: crash: SIGABRT
-compat-table/next/AsyncIterator.from.iterable.js: crash: SIGABRT
-compat-table/next/AsyncIterator.from.iterator.js: crash: SIGABRT
+compat-table/next/AsyncIterator.extends.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/next/AsyncIterator.from.async-iterable.js: crashed: SIGABRT
+compat-table/next/AsyncIterator.from.iterable.js: crashed: SIGABRT
+compat-table/next/AsyncIterator.from.iterator.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.instanceof.js: TypeError: Right side of instanceof is undefined
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot get property prototype of undefined
-compat-table/next/AsyncIterator.prototype.drop.js: crash: SIGABRT
+compat-table/next/AsyncIterator.prototype.drop.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.prototype.every.js: TypeError: Method every not found in [object ]
-compat-table/next/AsyncIterator.prototype.filter.js: crash: SIGABRT
+compat-table/next/AsyncIterator.prototype.filter.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.prototype.find.js: TypeError: Method find not found in [object ]
-compat-table/next/AsyncIterator.prototype.flatMap.js: crash: SIGABRT
+compat-table/next/AsyncIterator.prototype.flatMap.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: Method forEach not found in [object ]
-compat-table/next/AsyncIterator.prototype.map.js: crash: SIGABRT
+compat-table/next/AsyncIterator.prototype.map.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: Method reduce not found in [object ]
 compat-table/next/AsyncIterator.prototype.some.js: TypeError: Method some not found in [object ]
-compat-table/next/AsyncIterator.prototype.take.js: crash: SIGABRT
+compat-table/next/AsyncIterator.prototype.take.js: crashed: SIGABRT
 compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: Method toArray not found in [object ]
 compat-table/next/DisposableStack.js: TypeError: cannot create instance of undefined
 compat-table/next/Map.prototype.upsert.js: TypeError: Method upsert not found in [object Object]
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: failed: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/next/SuppressedError.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Method fromBase64 not found in function Uint8Array() { [native code] }
 compat-table/next/Uint8Array.fromHex.js: TypeError: Method fromHex not found in function Uint8Array() { [native code] }
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Method setFromBase64 not found in 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: Method setFromHex not fou
 compat-table/next/Uint8Array.toBase64.js: TypeError: Method toBase64 not found in 72,101,108,108,111,32,87,111,114,108,100
 compat-table/next/Uint8Array.toHex.js: TypeError: Method toHex not found in 72,101,108,108,111,32,87,111,114,108,100
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Method upsert not found in [object Object]
-compat-table/next/await-using.for-of.js: crash: SIGABRT
-compat-table/next/await-using.js: TypeError: undefined is not iterable
-compat-table/next/class-decorators.js: crash: SIGABRT
-compat-table/next/function.sent.js: crash: SIGABRT
+compat-table/next/await-using.for-of.js: crashed: SIGABRT
+compat-table/next/await-using.js: found both ok and fail markers
+compat-table/next/class-decorators.js: crashed: SIGABRT
+compat-table/next/function.sent.js: crashed: SIGABRT
 compat-table/next/throw-expr.arrow.js: failed
 compat-table/next/throw-expr.conditional.js: failed
 compat-table/next/throw-expr.logical.js: failed
 compat-table/next/throw-expr.param-init.js: failed
-compat-table/next/using.for-of.js: crash: SIGABRT
+compat-table/next/using.for-of.js: crashed: SIGABRT
 compat-table/next/using.js: OK

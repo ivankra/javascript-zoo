@@ -1,421 +1,421 @@
 Metadata: {"arch":"arm64","console_log":"console.log","dist_size":82861,"engine":"jispy","repository":"https://github.com/polydojo/jispy.git","revision":"604963a14a206bf6a1922defdf2fd008b0fd8c8e","revision_date":"2017-09-05","version":"1.0.0"}
-es1/Array.js: SyntaxError: SyntaxError: unexpected token Array
-es1/Array.length.assignment.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.length.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Array
-es1/Array.prototype.join.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.join.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.reverse.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.reverse.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.sort.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.sort.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Array.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Boolean.js: SyntaxError: SyntaxError: unexpected token Boolean
-es1/Boolean.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Boolean
-es1/Boolean.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Boolean.prototype.valueOf.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.diff.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.js: SyntaxError: SyntaxError: unexpected token Date
-es1/Date.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Date
-es1/Date.prototype.getDate.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getDay.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getFullYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getHours.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getMilliseconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getMinutes.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getMonth.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getSeconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getTimezoneOffset.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getTime.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCDate.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCDay.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCFullYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCHours.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCMilliseconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCMinutes.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCMonth.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.getUTCSeconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setDate.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setFullYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setHours.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setMilliseconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setMinutes.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setMonth.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setSeconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setTime.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCDate.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCFullYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCHours.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCMilliseconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCMinutes.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCMonth.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.setUTCSeconds.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.toLocaleString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.toUTCString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Date.prototype.valueOf.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Function.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Function.length.js: SyntaxError: SyntaxError: unexpected token Function
-es1/Function.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Function
-es1/Function.prototype.js: SyntaxError: SyntaxError: unexpected token F
-es1/Function.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/Math.E.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.LN2.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.LN10.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.LOG2E.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.LOG10E.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.PI.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.SQRT1_2.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.SQRT2.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.abs.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.acos.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.asin.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.atan2.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.atan.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.ceil.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.cos.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.exp.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.floor.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.log.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.max.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.min.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.pow.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.random.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.round.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.sin.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.sqrt.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Math.tan.js: SyntaxError: SyntaxError: unexpected token Math
-es1/Number.MAX_VALUE.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.MIN_VALUE.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.NEGATIVE_INFINITY.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.NaN.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.POSITIVE_INFINITY.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Number
-es1/Number.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Number.prototype.valueOf.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Object.js: SyntaxError: SyntaxError: unexpected token Object
-es1/Object.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Object
-es1/Object.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/Object.prototype.valueOf.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/String.fromCharCode.js: SyntaxError: SyntaxError: unexpected token String
-es1/String.generics.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/String.js: SyntaxError: SyntaxError: unexpected token String
-es1/String.length.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.charAt.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.charCodeAt.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token String
-es1/String.prototype.indexOf.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.lastIndexOf.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.split.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.substring.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.toLowerCase.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/String.prototype.toUpperCase.js: SyntaxError: SyntaxError: unexpected token ==
-es1/String.prototype.valueOf.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/annex-b.Date.prototype.getYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/annex-b.Date.prototype.setYear.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/annex-b.Date.prototype.toGMTString.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/annex-b.global.escape.js: SyntaxError: SyntaxError: unexpected token ==
-es1/annex-b.global.unescape.js: SyntaxError: SyntaxError: unexpected token ==
-es1/annex-b.literals.octal.js: SyntaxError: SyntaxError: illegal (octal) number 0755
-es1/annex-b.literals.string.octal.js: SyntaxError: SyntaxError: unexpected token ==
-es1/arguments.callee.js: SyntaxError: SyntaxError: unexpected token ==
-es1/arguments.js: SyntaxError: SyntaxError: unexpected token ==
-es1/asi.eval.js: SyntaxError: SyntaxError: unexpected token ==
-es1/asi.js: SyntaxError: SyntaxError: unexpected token ==
-es1/assignment.bitwise.js: SyntaxError: SyntaxError: unexpected token <<=
-es1/assignment.js: SyntaxError: SyntaxError: unexpected token ==
-es1/assignment.ltr.js: SyntaxError: SyntaxError: unexpected token ==
-es1/assignment.unsigned-shift.js: SyntaxError: SyntaxError: unexpected token >>
-es1/bitwise.binary.js: SyntaxError: SyntaxError: unexpected token &
-es1/bitwise.shifts.js: SyntaxError: SyntaxError: unexpected token >>
-es1/bitwise.tilde.js: SyntaxError: SyntaxError: unexpected token ~i
-es1/bitwise.unsigned-shift.js: SyntaxError: SyntaxError: unexpected token >>
-es1/break.js: SyntaxError: SyntaxError: unexpected token ++
-es1/comma.js: SyntaxError: SyntaxError: unexpected token ==
-es1/comments.js: failed
-es1/conditional.js: SyntaxError: SyntaxError: unexpected token ?
-es1/continue.js: SyntaxError: SyntaxError: unexpected token ++
-es1/conversions.ToBoolean.js: SyntaxError: SyntaxError: unexpected token ++
-es1/conversions.ToInt32.js: SyntaxError: SyntaxError: unexpected token |
-es1/conversions.ToInteger.js: SyntaxError: SyntaxError: unexpected token ==
-es1/conversions.ToNumber.js: SyntaxError: SyntaxError: unexpected token ==
-es1/conversions.ToObject.js: SyntaxError: SyntaxError: unexpected token Object
-es1/conversions.ToString.js: SyntaxError: SyntaxError: unexpected token String
-es1/conversions.ToUint32.js: SyntaxError: SyntaxError: unexpected token >>
-es1/conversions.js: SyntaxError: SyntaxError: unexpected token ==
-es1/equals.js: SyntaxError: SyntaxError: unexpected token ==
-es1/eval.js: SyntaxError: SyntaxError: unexpected token ==
-es1/for-in.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/for.js: SyntaxError: SyntaxError: unexpected token ++
-es1/functions.js: SyntaxError: SyntaxError: unexpected token ==
-es1/global.Infinity.js: SyntaxError: SyntaxError: unexpected keyword Infinity
-es1/global.NaN.js: SyntaxError: SyntaxError: unexpected keyword NaN
-es1/global.isFinite.js: SyntaxError: SyntaxError: unexpected token ++
-es1/global.isNaN.js: SyntaxError: SyntaxError: unexpected token ++
-es1/global.parseFloat.js: SyntaxError: SyntaxError: unexpected token ==
-es1/global.parseInt.hex.js: SyntaxError: SyntaxError: unexpected token ==
-es1/global.parseInt.js: SyntaxError: SyntaxError: unexpected token ==
-es1/global.parseInt.radix.js: SyntaxError: SyntaxError: unexpected token ==
-es1/literals.decimal.js: SyntaxError: SyntaxError: unexpected token ==
-es1/literals.hex.js: SyntaxError: SyntaxError: unexpected token 0xff
-es1/literals.string.escapes.js: SyntaxError: SyntaxError: unexpected token ==
-es1/literals.string.hex.js: SyntaxError: SyntaxError: unexpected token ==
-es1/literals.string.js: SyntaxError: SyntaxError: unexpected token ==
-es1/literals.string.unicode.js: SyntaxError: SyntaxError: unexpected token ==
-es1/logical.js: SyntaxError: SyntaxError: unexpected token ++
-es1/new.typeof.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/numbers.double.js: SyntaxError: SyntaxError: unexpected token ==
-es1/numbers.fmod.js: SyntaxError: SyntaxError: unexpected token ++
-es1/numbers.inf.js: SyntaxError: SyntaxError: unexpected token !=
-es1/numbers.int.js: SyntaxError: SyntaxError: unexpected token ==
-es1/numbers.nan.js: SyntaxError: SyntaxError: unexpected token !=
-es1/postfix.decrement.js: SyntaxError: SyntaxError: unexpected token --
-es1/postfix.increment.js: SyntaxError: SyntaxError: unexpected token ++
-es1/prefix.js: SyntaxError: SyntaxError: unexpected token ++
-es1/relational.js: SyntaxError: SyntaxError: unexpected token ++
-es1/return.js: SyntaxError: SyntaxError: unexpected token ==
-es1/return.typeof.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/this.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/typeof.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/typeof.null.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/typeof.undeclared.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/types.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/unary.decrement.js: SyntaxError: SyntaxError: unexpected token --
-es1/unary.delete.js: SyntaxError: SyntaxError: unexpected keyword new
-es1/unary.delete.var.js: SyntaxError: SyntaxError: unexpected keyword delete
-es1/unary.increment.js: SyntaxError: SyntaxError: unexpected token ++
-es1/unary.minus.js: SyntaxError: SyntaxError: unexpected token ==
-es1/unary.not.js: SyntaxError: SyntaxError: unexpected token ==
-es1/unary.plus.js: SyntaxError: SyntaxError: unexpected token ==
-es1/unary.plus.str.js: SyntaxError: SyntaxError: unexpected token ==
-es1/unary.tilde.js: SyntaxError: SyntaxError: unexpected token ~5
-es1/var.js: SyntaxError: SyntaxError: unexpected token ==
-es1/var.typeof.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es1/void.js: SyntaxError: SyntaxError: unexpected token ==
-es1/void.typeof.js: SyntaxError: SyntaxError: unexpected keyword void
-es1/while.js: SyntaxError: SyntaxError: unexpected token ++
-es1/with.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.concat.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.pop.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.pop.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.push.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.push.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.shift.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.shift.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.slice.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.slice.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.splice.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.splice.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.toLocaleString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.unshift.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.unshift.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Array.prototype.unshift.returns-new-length.js: SyntaxError: SyntaxError: unexpected token ++
-es3/Date.prototype.toDateString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Date.prototype.toLocaleDateString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Date.prototype.toLocaleString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Date.prototype.toLocaleTimeString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Date.prototype.toTimeString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Error.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Error.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token Error
-es3/Error.prototype.message.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/Error.prototype.name.js: SyntaxError: SyntaxError: unexpected token Error
-es3/Error.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Function.prototype.apply.js: SyntaxError: SyntaxError: unexpected token ==
-es3/Function.prototype.call.js: SyntaxError: SyntaxError: unexpected token ==
-es3/Math.max.variadic.js: SyntaxError: SyntaxError: unexpected token Math
-es3/Math.min.variadic.js: SyntaxError: SyntaxError: unexpected token Math
-es3/Number.prototype.toExponential.edge-cases.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/Number.prototype.toExponential.js: SyntaxError: SyntaxError: unexpected token ==
-es3/Number.prototype.toExponential.rounding.js: SyntaxError: SyntaxError: unexpected token 6
-es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/Number.prototype.toFixed.js: SyntaxError: SyntaxError: unexpected token ==
-es3/Number.prototype.toLocaleString.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/Number.prototype.toPrecision.js: SyntaxError: SyntaxError: unexpected token ==
-es3/Object.prototype.hasOwnProperty.js: SyntaxError: SyntaxError: unexpected token Parent
-es3/Object.prototype.isPrototypeOf.js: SyntaxError: SyntaxError: unexpected token Parent
-es3/Object.prototype.propertyIsEnumerable.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/Object.prototype.toLocaleString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.global.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.ignoreCase.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.lastIndex.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.multiline.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.prototype.constructor.js: SyntaxError: SyntaxError: unexpected token RegExp
-es3/RegExp.prototype.exec.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.prototype.test.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.prototype.toString.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/RegExp.source.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.concat.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.concat.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.localeCompare.js: SyntaxError: SyntaxError: unexpected token ++
-es3/String.prototype.match.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.match.js: SyntaxError: SyntaxError: unexpected token \d
-es3/String.prototype.replace.capture.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.replace.extra.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.replace.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.replace.regex.js: SyntaxError: SyntaxError: unexpected token \d
-es3/String.prototype.replace.str.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.search.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.search.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.search.str.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.slice.generic.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/String.prototype.slice.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.split.bugs.js: SyntaxError: SyntaxError: unexpected token ++
-es3/String.prototype.split.limit.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.split.regex.js: SyntaxError: SyntaxError: unexpected token \d
-es3/String.prototype.toLocaleLowerCase.js: SyntaxError: SyntaxError: unexpected token ==
-es3/String.prototype.toLocaleUpperCase.js: SyntaxError: SyntaxError: unexpected token ==
-es3/annex-b.String.prototype.substr.js: SyntaxError: SyntaxError: unexpected token ==
-es3/do-while.js: SyntaxError: SyntaxError: unexpected keyword do
-es3/function-expressions.IIFE.js: SyntaxError: SyntaxError: unexpected token ==
-es3/function-expressions.js: SyntaxError: SyntaxError: unexpected token ==
-es3/global.EvalError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.RangeError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.RangeError.thrown.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/global.ReferenceError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.ReferenceError.thrown.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/global.SyntaxError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.SyntaxError.thrown.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/global.TypeError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.TypeError.thrown.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/global.URIError.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/global.URIError.thrown.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/global.decodeURIComponent.js: SyntaxError: SyntaxError: unexpected token ==
-es3/global.decodeURI.js: SyntaxError: SyntaxError: unexpected token ==
-es3/global.encodeURIComponent.js: SyntaxError: SyntaxError: unexpected token ==
-es3/global.encodeURI.js: SyntaxError: SyntaxError: unexpected token ==
-es3/global.undefined.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/identifiers.unicode.js: SyntaxError: SyntaxError: unexpected token ж
-es3/instanceof.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/in.js: SyntaxError: SyntaxError: unexpected keyword new
-es3/labelled.break.js: SyntaxError: SyntaxError: unexpected token ++
-es3/labelled.continue.js: SyntaxError: SyntaxError: unexpected token ++
-es3/labelled.statements.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.array.elisions.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.array.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.array.trailing-comma.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.object.decimal.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.object.hex.js: SyntaxError: SyntaxError: unexpected token 0xff
-es3/literals.object.int.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.object.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/literals.object.str.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.object.unicode.js: SyntaxError: SyntaxError: unexpected token ж
-es3/literals.regex.ambiguous.js: SyntaxError: SyntaxError: unexpected token ==
-es3/literals.regex.empty.js: SyntaxError: SyntaxError: unexpected token ?
-es3/literals.regex.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es3/literals.string.esc-v.js: SyntaxError: SyntaxError: unexpected token ==
-es3/nested-functions.eval.js: SyntaxError: SyntaxError: unexpected token A
-es3/nested-functions.js: SyntaxError: SyntaxError: unexpected token ==
-es3/regex.backref.js: SyntaxError: SyntaxError: unexpected token \1
-es3/regex.begin.js: SyntaxError: SyntaxError: unexpected token ^abc
-es3/regex.bracket.esc-b.js: SyntaxError: SyntaxError: unexpected token \b
-es3/regex.bracket.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.bracket.ranges.js: SyntaxError: SyntaxError: unexpected token .test/
-es3/regex.class.esc-d.js: SyntaxError: SyntaxError: unexpected token \d
-es3/regex.class.esc-s.js: SyntaxError: SyntaxError: unexpected token \s
-es3/regex.class.esc-w.js: SyntaxError: SyntaxError: unexpected token \w
-es3/regex.disjunction.js: SyntaxError: SyntaxError: unexpected token a|ab
-es3/regex.dot.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.end.js: SyntaxError: SyntaxError: unexpected token abc$
-es3/regex.escape.control.js: SyntaxError: SyntaxError: unexpected token \t
-es3/regex.escape.hex.js: SyntaxError: SyntaxError: unexpected token \x41
-es3/regex.escape.js: SyntaxError: SyntaxError: unexpected token \d
-es3/regex.escape.nul.js: SyntaxError: SyntaxError: unexpected token \0
-es3/regex.escape.unicode.js: SyntaxError: SyntaxError: unexpected token \u0041
-es3/regex.flag.global.js: SyntaxError: SyntaxError: unexpected token !=
-es3/regex.flag.ignorecase.js: SyntaxError: SyntaxError: unexpected token !=
-es3/regex.flag.multiline.js: SyntaxError: SyntaxError: unexpected token ^b
-es3/regex.group.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.lookahead.js: SyntaxError: SyntaxError: unexpected token ?
-es3/regex.negative-lookahead.js: SyntaxError: SyntaxError: unexpected trailing . (dot) .
-es3/regex.non-capturing-group.js: SyntaxError: SyntaxError: unexpected token ?
-es3/regex.quantifier.exact.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.quantifier.maybe.js: SyntaxError: SyntaxError: unexpected token a?
-es3/regex.quantifier.min.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.quantifier.plus.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.quantifier.range.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.quantifier.star.js: SyntaxError: SyntaxError: unexpected token .exec/
-es3/regex.word-boundary.js: SyntaxError: SyntaxError: unexpected token \bword\b
-es3/source.line-terminators.js: SyntaxError: SyntaxError: unexpected keyword undefined
-es3/source.whitespace.js: SyntaxError: SyntaxError: unexpected token ==
-es3/source.whitespace.unicode.js: SyntaxError: SyntaxError: unexpected token ==
-es3/strict-equals.js: SyntaxError: SyntaxError: unexpected token ++
-es3/switch.js: SyntaxError: SyntaxError: unexpected keyword switch
-es3/try-catch-finally.js: SyntaxError: SyntaxError: unexpected keyword try
-es3/try-catch-throw.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/Array.isArray.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.every.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.filter.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.forEach.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.indexOf.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.lastIndexOf.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.map.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.reduceRight.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.reduce.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.some.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Array.prototype.sort.TypeError.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/Array.prototype.sort.undefined-comparefn.js: SyntaxError: SyntaxError: unexpected keyword undefined
-es5/Date.now.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Date.prototype.toISOString.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Date.prototype.toJSON.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Function.prototype-not-enumerable.js: SyntaxError: SyntaxError: unexpected token Function
-es5/Function.prototype.apply.array-like.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/Function.prototype.bind.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.parse.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.parse.reviver.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.stringify.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.stringify.replacer.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/JSON.stringify.space.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.create.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.defineProperties.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.defineProperty.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.freeze.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.getOwnPropertyDescriptor.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.getOwnPropertyNames.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.getPrototypeOf.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.isExtensible.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.isFrozen.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.isSealed.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.keys.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.preventExtensions.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/Object.property-shadowing.js: SyntaxError: SyntaxError: unexpected token Object
-es5/Object.seal.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/String.indexing.js: SyntaxError: SyntaxError: unexpected token ++
-es5/String.prototype.trim.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/arguments.toStringTag.js: SyntaxError: SyntaxError: unexpected token Object
-es5/debugger.js: SyntaxError: SyntaxError: unexpected keyword debugger
-es5/global.Infinity.immutable.js: SyntaxError: SyntaxError: unexpected keyword Infinity
-es5/global.NaN.immutable.js: SyntaxError: SyntaxError: unexpected keyword NaN
-es5/global.parseInt.no-octal.js: SyntaxError: SyntaxError: unexpected token ++
-es5/global.undefined.immutable.js: SyntaxError: SyntaxError: unexpected keyword undefined
-es5/literals.object.getters.js: SyntaxError: SyntaxError: unexpected token ++
-es5/literals.object.setters.js: SyntaxError: SyntaxError: unexpected token ++
-es5/literals.object.trailing-comma.js: SyntaxError: SyntaxError: unexpected token ++
-es5/source.keyword-properties.js: SyntaxError: SyntaxError: unexpected token ++
-es5/source.unreserved-words.js: SyntaxError: SyntaxError: unexpected token ++
-es5/source.whitespace.bom.js: SyntaxError: SyntaxError: unexpected token ﻿
-es5/source.zero-width-chars.js: SyntaxError: SyntaxError: unexpected token _\u200c\u200d
-es5/strict.eval-cannot-create-bindings.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.function-expr-with-matching-name.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/strict.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-arguments-callee.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-arguments-caller.js: SyntaxError: SyntaxError: unexpected keyword in
-es5/strict.no-assignment-to-non-writable.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-assignment-to-unresolvable.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-delete-bindings.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-delete-non-configurable.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-duplicate-parameters.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-eval-or-arguments-assignment.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-eval-or-arguments-bindings.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-function-caller-or-arguments.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-octal-literals.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.no-with.js: SyntaxError: SyntaxError: unexpected keyword try
-es5/strict.reserved-words.js: SyntaxError: SyntaxError: unexpected token .splitimplements,interface,let,package,private,protected,public,static,yield
-es5/strict.this-primitive-not-coerced-in-accessors.js: SyntaxError: SyntaxError: unexpected token Class
-es5/strict.this-primitive-not-coerced.js: SyntaxError: SyntaxError: unexpected keyword typeof
-es5/strict.this-undefined-in-function.js: SyntaxError: SyntaxError: unexpected keyword this
-es5/strict.unmapped-arguments.js: SyntaxError: SyntaxError: unexpected var statement
-es5/this.thrown-function.js: SyntaxError: SyntaxError: unexpected keyword try
+es1/Array.js: SyntaxError: unexpected token Array
+es1/Array.length.assignment.js: SyntaxError: unexpected keyword new
+es1/Array.length.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.constructor.js: SyntaxError: unexpected token Array
+es1/Array.prototype.join.generic.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.join.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.reverse.generic.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.reverse.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.sort.generic.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.sort.js: SyntaxError: unexpected keyword new
+es1/Array.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/Boolean.js: SyntaxError: unexpected token Boolean
+es1/Boolean.prototype.constructor.js: SyntaxError: unexpected token Boolean
+es1/Boolean.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/Boolean.prototype.valueOf.js: SyntaxError: unexpected keyword new
+es1/Date.diff.js: SyntaxError: unexpected keyword new
+es1/Date.js: SyntaxError: unexpected token Date
+es1/Date.prototype.constructor.js: SyntaxError: unexpected token Date
+es1/Date.prototype.getDate.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getDay.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getFullYear.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getHours.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getMilliseconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getMinutes.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getMonth.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getSeconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getTimezoneOffset.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getTime.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCDate.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCDay.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCFullYear.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCHours.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCMilliseconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCMinutes.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCMonth.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.getUTCSeconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setDate.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setFullYear.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setHours.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setMilliseconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setMinutes.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setMonth.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setSeconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setTime.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCDate.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCFullYear.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCHours.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCMilliseconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCMinutes.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCMonth.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.setUTCSeconds.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.toLocaleString.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.toUTCString.js: SyntaxError: unexpected keyword new
+es1/Date.prototype.valueOf.js: SyntaxError: unexpected keyword new
+es1/Function.js: SyntaxError: unexpected keyword new
+es1/Function.length.js: SyntaxError: unexpected token Function
+es1/Function.prototype.constructor.js: SyntaxError: unexpected token Function
+es1/Function.prototype.js: SyntaxError: unexpected token F
+es1/Function.prototype.toString.js: SyntaxError: unexpected keyword typeof
+es1/Math.E.js: SyntaxError: unexpected token Math
+es1/Math.LN2.js: SyntaxError: unexpected token Math
+es1/Math.LN10.js: SyntaxError: unexpected token Math
+es1/Math.LOG2E.js: SyntaxError: unexpected token Math
+es1/Math.LOG10E.js: SyntaxError: unexpected token Math
+es1/Math.PI.js: SyntaxError: unexpected token Math
+es1/Math.SQRT1_2.js: SyntaxError: unexpected token Math
+es1/Math.SQRT2.js: SyntaxError: unexpected token Math
+es1/Math.abs.js: SyntaxError: unexpected token Math
+es1/Math.acos.js: SyntaxError: unexpected token Math
+es1/Math.asin.js: SyntaxError: unexpected token Math
+es1/Math.atan2.js: SyntaxError: unexpected token Math
+es1/Math.atan.js: SyntaxError: unexpected token Math
+es1/Math.ceil.js: SyntaxError: unexpected token Math
+es1/Math.cos.js: SyntaxError: unexpected token Math
+es1/Math.exp.js: SyntaxError: unexpected token Math
+es1/Math.floor.js: SyntaxError: unexpected token Math
+es1/Math.log.js: SyntaxError: unexpected token Math
+es1/Math.max.js: SyntaxError: unexpected token Math
+es1/Math.min.js: SyntaxError: unexpected token Math
+es1/Math.pow.js: SyntaxError: unexpected token Math
+es1/Math.random.js: SyntaxError: unexpected token Math
+es1/Math.round.js: SyntaxError: unexpected token Math
+es1/Math.sin.js: SyntaxError: unexpected token Math
+es1/Math.sqrt.js: SyntaxError: unexpected token Math
+es1/Math.tan.js: SyntaxError: unexpected token Math
+es1/Number.MAX_VALUE.js: SyntaxError: unexpected token Number
+es1/Number.MIN_VALUE.js: SyntaxError: unexpected token Number
+es1/Number.NEGATIVE_INFINITY.js: SyntaxError: unexpected token Number
+es1/Number.NaN.js: SyntaxError: unexpected token Number
+es1/Number.POSITIVE_INFINITY.js: SyntaxError: unexpected token Number
+es1/Number.js: SyntaxError: unexpected token Number
+es1/Number.prototype.constructor.js: SyntaxError: unexpected token Number
+es1/Number.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/Number.prototype.valueOf.js: SyntaxError: unexpected keyword new
+es1/Object.js: SyntaxError: unexpected token Object
+es1/Object.prototype.constructor.js: SyntaxError: unexpected token Object
+es1/Object.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/Object.prototype.valueOf.js: SyntaxError: unexpected keyword new
+es1/String.fromCharCode.js: SyntaxError: unexpected token String
+es1/String.generics.js: SyntaxError: unexpected keyword new
+es1/String.js: SyntaxError: unexpected token String
+es1/String.length.js: SyntaxError: unexpected token ==
+es1/String.prototype.charAt.js: SyntaxError: unexpected token ==
+es1/String.prototype.charCodeAt.js: SyntaxError: unexpected token ==
+es1/String.prototype.constructor.js: SyntaxError: unexpected token String
+es1/String.prototype.indexOf.js: SyntaxError: unexpected token ==
+es1/String.prototype.lastIndexOf.js: SyntaxError: unexpected token ==
+es1/String.prototype.split.js: SyntaxError: unexpected token ==
+es1/String.prototype.substring.js: SyntaxError: unexpected token ==
+es1/String.prototype.toLowerCase.js: SyntaxError: unexpected token ==
+es1/String.prototype.toString.js: SyntaxError: unexpected keyword new
+es1/String.prototype.toUpperCase.js: SyntaxError: unexpected token ==
+es1/String.prototype.valueOf.js: SyntaxError: unexpected keyword new
+es1/annex-b.Date.prototype.getYear.js: SyntaxError: unexpected keyword new
+es1/annex-b.Date.prototype.setYear.js: SyntaxError: unexpected keyword new
+es1/annex-b.Date.prototype.toGMTString.js: SyntaxError: unexpected keyword new
+es1/annex-b.global.escape.js: SyntaxError: unexpected token ==
+es1/annex-b.global.unescape.js: SyntaxError: unexpected token ==
+es1/annex-b.literals.octal.js: SyntaxError: illegal (octal) number 0755
+es1/annex-b.literals.string.octal.js: SyntaxError: unexpected token ==
+es1/arguments.callee.js: SyntaxError: unexpected token ==
+es1/arguments.js: SyntaxError: unexpected token ==
+es1/asi.eval.js: SyntaxError: unexpected token ==
+es1/asi.js: SyntaxError: unexpected token ==
+es1/assignment.bitwise.js: SyntaxError: unexpected token <<=
+es1/assignment.js: SyntaxError: unexpected token ==
+es1/assignment.ltr.js: SyntaxError: unexpected token ==
+es1/assignment.unsigned-shift.js: SyntaxError: unexpected token >>
+es1/bitwise.binary.js: SyntaxError: unexpected token &
+es1/bitwise.shifts.js: SyntaxError: unexpected token >>
+es1/bitwise.tilde.js: SyntaxError: unexpected token ~i
+es1/bitwise.unsigned-shift.js: SyntaxError: unexpected token >>
+es1/break.js: SyntaxError: unexpected token ++
+es1/comma.js: SyntaxError: unexpected token ==
+es1/comments.js: SyntaxError: unexpected operator /
+es1/conditional.js: SyntaxError: unexpected token ?
+es1/continue.js: SyntaxError: unexpected token ++
+es1/conversions.ToBoolean.js: SyntaxError: unexpected token ++
+es1/conversions.ToInt32.js: SyntaxError: unexpected token |
+es1/conversions.ToInteger.js: SyntaxError: unexpected token ==
+es1/conversions.ToNumber.js: SyntaxError: unexpected token ==
+es1/conversions.ToObject.js: SyntaxError: unexpected token Object
+es1/conversions.ToString.js: SyntaxError: unexpected token String
+es1/conversions.ToUint32.js: SyntaxError: unexpected token >>
+es1/conversions.js: SyntaxError: unexpected token ==
+es1/equals.js: SyntaxError: unexpected token ==
+es1/eval.js: SyntaxError: unexpected token ==
+es1/for-in.js: SyntaxError: unexpected keyword new
+es1/for.js: SyntaxError: unexpected token ++
+es1/functions.js: SyntaxError: unexpected token ==
+es1/global.Infinity.js: SyntaxError: unexpected keyword Infinity
+es1/global.NaN.js: SyntaxError: unexpected keyword NaN
+es1/global.isFinite.js: SyntaxError: unexpected token ++
+es1/global.isNaN.js: SyntaxError: unexpected token ++
+es1/global.parseFloat.js: SyntaxError: unexpected token ==
+es1/global.parseInt.hex.js: SyntaxError: unexpected token ==
+es1/global.parseInt.js: SyntaxError: unexpected token ==
+es1/global.parseInt.radix.js: SyntaxError: unexpected token ==
+es1/literals.decimal.js: SyntaxError: unexpected token ==
+es1/literals.hex.js: SyntaxError: unexpected token 0xff
+es1/literals.string.escapes.js: SyntaxError: unexpected token ==
+es1/literals.string.hex.js: SyntaxError: unexpected token ==
+es1/literals.string.js: SyntaxError: unexpected token ==
+es1/literals.string.unicode.js: SyntaxError: unexpected token ==
+es1/logical.js: SyntaxError: unexpected token ++
+es1/new.typeof.js: SyntaxError: unexpected keyword new
+es1/numbers.double.js: SyntaxError: unexpected token ==
+es1/numbers.fmod.js: SyntaxError: unexpected token ++
+es1/numbers.inf.js: SyntaxError: unexpected token !=
+es1/numbers.int.js: SyntaxError: unexpected token ==
+es1/numbers.nan.js: SyntaxError: unexpected token !=
+es1/postfix.decrement.js: SyntaxError: unexpected token --
+es1/postfix.increment.js: SyntaxError: unexpected token ++
+es1/prefix.js: SyntaxError: unexpected token ++
+es1/relational.js: SyntaxError: unexpected token ++
+es1/return.js: SyntaxError: unexpected token ==
+es1/return.typeof.js: SyntaxError: unexpected keyword typeof
+es1/this.js: SyntaxError: unexpected keyword new
+es1/typeof.js: SyntaxError: unexpected keyword typeof
+es1/typeof.null.js: SyntaxError: unexpected keyword typeof
+es1/typeof.undeclared.js: SyntaxError: unexpected keyword typeof
+es1/types.js: SyntaxError: unexpected keyword typeof
+es1/unary.decrement.js: SyntaxError: unexpected token --
+es1/unary.delete.js: SyntaxError: unexpected keyword new
+es1/unary.delete.var.js: SyntaxError: unexpected keyword delete
+es1/unary.increment.js: SyntaxError: unexpected token ++
+es1/unary.minus.js: SyntaxError: unexpected token ==
+es1/unary.not.js: SyntaxError: unexpected token ==
+es1/unary.plus.js: SyntaxError: unexpected token ==
+es1/unary.plus.str.js: SyntaxError: unexpected token ==
+es1/unary.tilde.js: SyntaxError: unexpected token ~5
+es1/var.js: SyntaxError: unexpected token ==
+es1/var.typeof.js: SyntaxError: unexpected keyword typeof
+es1/void.js: SyntaxError: unexpected token ==
+es1/void.typeof.js: SyntaxError: unexpected keyword void
+es1/while.js: SyntaxError: unexpected token ++
+es1/with.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.concat.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.pop.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.pop.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.push.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.push.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.shift.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.shift.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.slice.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.slice.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.splice.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.splice.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.toLocaleString.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.unshift.generic.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.unshift.js: SyntaxError: unexpected keyword new
+es3/Array.prototype.unshift.returns-new-length.js: SyntaxError: unexpected token ++
+es3/Date.prototype.toDateString.js: SyntaxError: unexpected keyword new
+es3/Date.prototype.toLocaleDateString.js: SyntaxError: unexpected keyword new
+es3/Date.prototype.toLocaleString.js: SyntaxError: unexpected keyword new
+es3/Date.prototype.toLocaleTimeString.js: SyntaxError: unexpected keyword new
+es3/Date.prototype.toTimeString.js: SyntaxError: unexpected keyword new
+es3/Error.js: SyntaxError: unexpected keyword new
+es3/Error.prototype.constructor.js: SyntaxError: unexpected token Error
+es3/Error.prototype.message.js: SyntaxError: unexpected keyword typeof
+es3/Error.prototype.name.js: SyntaxError: unexpected token Error
+es3/Error.prototype.toString.js: SyntaxError: unexpected keyword new
+es3/Function.prototype.apply.js: SyntaxError: unexpected token ==
+es3/Function.prototype.call.js: SyntaxError: unexpected token ==
+es3/Math.max.variadic.js: SyntaxError: unexpected token Math
+es3/Math.min.variadic.js: SyntaxError: unexpected token Math
+es3/Number.prototype.toExponential.edge-cases.js: SyntaxError: unexpected keyword try
+es3/Number.prototype.toExponential.js: SyntaxError: unexpected token ==
+es3/Number.prototype.toExponential.rounding.js: SyntaxError: unexpected token 6
+es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError: unexpected keyword try
+es3/Number.prototype.toFixed.js: SyntaxError: unexpected token ==
+es3/Number.prototype.toLocaleString.js: SyntaxError: unexpected keyword typeof
+es3/Number.prototype.toPrecision.js: SyntaxError: unexpected token ==
+es3/Object.prototype.hasOwnProperty.js: SyntaxError: unexpected token Parent
+es3/Object.prototype.isPrototypeOf.js: SyntaxError: unexpected token Parent
+es3/Object.prototype.propertyIsEnumerable.js: SyntaxError: unexpected keyword new
+es3/Object.prototype.toLocaleString.js: SyntaxError: unexpected keyword new
+es3/RegExp.global.js: SyntaxError: unexpected keyword new
+es3/RegExp.ignoreCase.js: SyntaxError: unexpected keyword new
+es3/RegExp.js: SyntaxError: unexpected keyword new
+es3/RegExp.lastIndex.js: SyntaxError: unexpected keyword new
+es3/RegExp.multiline.js: SyntaxError: unexpected keyword new
+es3/RegExp.prototype.constructor.js: SyntaxError: unexpected token RegExp
+es3/RegExp.prototype.exec.js: SyntaxError: unexpected keyword new
+es3/RegExp.prototype.test.js: SyntaxError: unexpected keyword new
+es3/RegExp.prototype.toString.js: SyntaxError: unexpected keyword new
+es3/RegExp.source.js: SyntaxError: unexpected keyword new
+es3/String.prototype.concat.generic.js: SyntaxError: unexpected keyword new
+es3/String.prototype.concat.js: SyntaxError: unexpected token ==
+es3/String.prototype.localeCompare.js: SyntaxError: unexpected token ++
+es3/String.prototype.match.generic.js: SyntaxError: unexpected keyword new
+es3/String.prototype.match.js: SyntaxError: unexpected token \d
+es3/String.prototype.replace.capture.js: SyntaxError: unexpected token ==
+es3/String.prototype.replace.extra.js: SyntaxError: unexpected token ==
+es3/String.prototype.replace.generic.js: SyntaxError: unexpected keyword new
+es3/String.prototype.replace.regex.js: SyntaxError: unexpected token \d
+es3/String.prototype.replace.str.js: SyntaxError: unexpected token ==
+es3/String.prototype.search.generic.js: SyntaxError: unexpected keyword new
+es3/String.prototype.search.js: SyntaxError: unexpected token ==
+es3/String.prototype.search.str.js: SyntaxError: unexpected token ==
+es3/String.prototype.slice.generic.js: SyntaxError: unexpected keyword new
+es3/String.prototype.slice.js: SyntaxError: unexpected token ==
+es3/String.prototype.split.bugs.js: SyntaxError: unexpected token ++
+es3/String.prototype.split.limit.js: SyntaxError: unexpected token ==
+es3/String.prototype.split.regex.js: SyntaxError: unexpected token \d
+es3/String.prototype.toLocaleLowerCase.js: SyntaxError: unexpected token ==
+es3/String.prototype.toLocaleUpperCase.js: SyntaxError: unexpected token ==
+es3/annex-b.String.prototype.substr.js: SyntaxError: unexpected token ==
+es3/do-while.js: SyntaxError: unexpected keyword do
+es3/function-expressions.IIFE.js: SyntaxError: unexpected token ==
+es3/function-expressions.js: SyntaxError: unexpected token ==
+es3/global.EvalError.js: SyntaxError: unexpected keyword typeof
+es3/global.RangeError.js: SyntaxError: unexpected keyword typeof
+es3/global.RangeError.thrown.js: SyntaxError: unexpected keyword try
+es3/global.ReferenceError.js: SyntaxError: unexpected keyword typeof
+es3/global.ReferenceError.thrown.js: SyntaxError: unexpected keyword try
+es3/global.SyntaxError.js: SyntaxError: unexpected keyword typeof
+es3/global.SyntaxError.thrown.js: SyntaxError: unexpected keyword try
+es3/global.TypeError.js: SyntaxError: unexpected keyword typeof
+es3/global.TypeError.thrown.js: SyntaxError: unexpected keyword try
+es3/global.URIError.js: SyntaxError: unexpected keyword typeof
+es3/global.URIError.thrown.js: SyntaxError: unexpected keyword try
+es3/global.decodeURIComponent.js: SyntaxError: unexpected token ==
+es3/global.decodeURI.js: SyntaxError: unexpected token ==
+es3/global.encodeURIComponent.js: SyntaxError: unexpected token ==
+es3/global.encodeURI.js: SyntaxError: unexpected token ==
+es3/global.undefined.js: SyntaxError: unexpected keyword typeof
+es3/identifiers.unicode.js: SyntaxError: unexpected token ж
+es3/instanceof.js: SyntaxError: unexpected keyword new
+es3/in.js: SyntaxError: unexpected keyword new
+es3/labelled.break.js: SyntaxError: unexpected token ++
+es3/labelled.continue.js: SyntaxError: unexpected token ++
+es3/labelled.statements.js: SyntaxError: unexpected token ==
+es3/literals.array.elisions.js: SyntaxError: unexpected token ==
+es3/literals.array.js: SyntaxError: unexpected token ==
+es3/literals.array.trailing-comma.js: SyntaxError: unexpected token ==
+es3/literals.object.decimal.js: SyntaxError: unexpected token ==
+es3/literals.object.hex.js: SyntaxError: unexpected token 0xff
+es3/literals.object.int.js: SyntaxError: unexpected token ==
+es3/literals.object.js: SyntaxError: unexpected keyword typeof
+es3/literals.object.str.js: SyntaxError: unexpected token ==
+es3/literals.object.unicode.js: SyntaxError: unexpected token ж
+es3/literals.regex.ambiguous.js: SyntaxError: unexpected token ==
+es3/literals.regex.empty.js: SyntaxError: unexpected token ?
+es3/literals.regex.js: SyntaxError: unexpected keyword typeof
+es3/literals.string.esc-v.js: SyntaxError: unexpected token ==
+es3/nested-functions.eval.js: SyntaxError: unexpected token A
+es3/nested-functions.js: SyntaxError: unexpected token ==
+es3/regex.backref.js: SyntaxError: unexpected token \1
+es3/regex.begin.js: SyntaxError: unexpected token ^abc
+es3/regex.bracket.esc-b.js: SyntaxError: unexpected token \b
+es3/regex.bracket.js: SyntaxError: unexpected token .exec/
+es3/regex.bracket.ranges.js: SyntaxError: unexpected token .test/
+es3/regex.class.esc-d.js: SyntaxError: unexpected token \d
+es3/regex.class.esc-s.js: SyntaxError: unexpected token \s
+es3/regex.class.esc-w.js: SyntaxError: unexpected token \w
+es3/regex.disjunction.js: SyntaxError: unexpected token a|ab
+es3/regex.dot.js: SyntaxError: unexpected token .exec/
+es3/regex.end.js: SyntaxError: unexpected token abc$
+es3/regex.escape.control.js: SyntaxError: unexpected token \t
+es3/regex.escape.hex.js: SyntaxError: unexpected token \x41
+es3/regex.escape.js: SyntaxError: unexpected token \d
+es3/regex.escape.nul.js: SyntaxError: unexpected token \0
+es3/regex.escape.unicode.js: SyntaxError: unexpected token \u0041
+es3/regex.flag.global.js: SyntaxError: unexpected token !=
+es3/regex.flag.ignorecase.js: SyntaxError: unexpected token !=
+es3/regex.flag.multiline.js: SyntaxError: unexpected token ^b
+es3/regex.group.js: SyntaxError: unexpected token .exec/
+es3/regex.lookahead.js: SyntaxError: unexpected token ?
+es3/regex.negative-lookahead.js: SyntaxError: unexpected trailing . (dot) .
+es3/regex.non-capturing-group.js: SyntaxError: unexpected token ?
+es3/regex.quantifier.exact.js: SyntaxError: unexpected token .exec/
+es3/regex.quantifier.maybe.js: SyntaxError: unexpected token a?
+es3/regex.quantifier.min.js: SyntaxError: unexpected token .exec/
+es3/regex.quantifier.plus.js: SyntaxError: unexpected token .exec/
+es3/regex.quantifier.range.js: SyntaxError: unexpected token .exec/
+es3/regex.quantifier.star.js: SyntaxError: unexpected token .exec/
+es3/regex.word-boundary.js: SyntaxError: unexpected token \bword\b
+es3/source.line-terminators.js: SyntaxError: unexpected keyword undefined
+es3/source.whitespace.js: SyntaxError: unexpected token ==
+es3/source.whitespace.unicode.js: SyntaxError: unexpected token ==
+es3/strict-equals.js: SyntaxError: unexpected token ++
+es3/switch.js: SyntaxError: unexpected keyword switch
+es3/try-catch-finally.js: SyntaxError: unexpected keyword try
+es3/try-catch-throw.js: SyntaxError: unexpected keyword try
+es5/Array.isArray.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.every.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.filter.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.forEach.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.indexOf.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.lastIndexOf.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.map.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.reduceRight.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.reduce.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.some.js: SyntaxError: unexpected keyword typeof
+es5/Array.prototype.sort.TypeError.js: SyntaxError: unexpected keyword try
+es5/Array.prototype.sort.undefined-comparefn.js: SyntaxError: unexpected keyword undefined
+es5/Date.now.js: SyntaxError: unexpected keyword typeof
+es5/Date.prototype.toISOString.js: SyntaxError: unexpected keyword typeof
+es5/Date.prototype.toJSON.js: SyntaxError: unexpected keyword typeof
+es5/Function.prototype-not-enumerable.js: SyntaxError: unexpected token Function
+es5/Function.prototype.apply.array-like.js: SyntaxError: unexpected keyword try
+es5/Function.prototype.bind.js: SyntaxError: unexpected keyword typeof
+es5/JSON.js: SyntaxError: unexpected keyword typeof
+es5/JSON.parse.js: SyntaxError: unexpected keyword typeof
+es5/JSON.parse.reviver.js: SyntaxError: unexpected keyword typeof
+es5/JSON.stringify.js: SyntaxError: unexpected keyword typeof
+es5/JSON.stringify.replacer.js: SyntaxError: unexpected keyword typeof
+es5/JSON.stringify.space.js: SyntaxError: unexpected keyword typeof
+es5/Object.create.js: SyntaxError: unexpected keyword typeof
+es5/Object.defineProperties.js: SyntaxError: unexpected keyword typeof
+es5/Object.defineProperty.js: SyntaxError: unexpected keyword typeof
+es5/Object.freeze.js: SyntaxError: unexpected keyword typeof
+es5/Object.getOwnPropertyDescriptor.js: SyntaxError: unexpected keyword typeof
+es5/Object.getOwnPropertyNames.js: SyntaxError: unexpected keyword typeof
+es5/Object.getPrototypeOf.js: SyntaxError: unexpected keyword typeof
+es5/Object.isExtensible.js: SyntaxError: unexpected keyword typeof
+es5/Object.isFrozen.js: SyntaxError: unexpected keyword typeof
+es5/Object.isSealed.js: SyntaxError: unexpected keyword typeof
+es5/Object.keys.js: SyntaxError: unexpected keyword typeof
+es5/Object.preventExtensions.js: SyntaxError: unexpected keyword typeof
+es5/Object.property-shadowing.js: SyntaxError: unexpected token Object
+es5/Object.seal.js: SyntaxError: unexpected keyword typeof
+es5/String.indexing.js: SyntaxError: unexpected token ++
+es5/String.prototype.trim.js: SyntaxError: unexpected keyword typeof
+es5/arguments.toStringTag.js: SyntaxError: unexpected token Object
+es5/debugger.js: SyntaxError: unexpected keyword debugger
+es5/global.Infinity.immutable.js: SyntaxError: unexpected keyword Infinity
+es5/global.NaN.immutable.js: SyntaxError: unexpected keyword NaN
+es5/global.parseInt.no-octal.js: SyntaxError: unexpected token ++
+es5/global.undefined.immutable.js: SyntaxError: unexpected keyword undefined
+es5/literals.object.getters.js: SyntaxError: unexpected token ++
+es5/literals.object.setters.js: SyntaxError: unexpected token ++
+es5/literals.object.trailing-comma.js: SyntaxError: unexpected token ++
+es5/source.keyword-properties.js: SyntaxError: unexpected token ++
+es5/source.unreserved-words.js: SyntaxError: unexpected token ++
+es5/source.whitespace.bom.js: SyntaxError: unexpected token ﻿
+es5/source.zero-width-chars.js: SyntaxError: unexpected token _\u200c\u200d
+es5/strict.eval-cannot-create-bindings.js: SyntaxError: unexpected keyword try
+es5/strict.function-expr-with-matching-name.js: SyntaxError: unexpected keyword typeof
+es5/strict.js: SyntaxError: unexpected keyword try
+es5/strict.no-arguments-callee.js: SyntaxError: unexpected keyword try
+es5/strict.no-arguments-caller.js: SyntaxError: unexpected keyword in
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: unexpected keyword try
+es5/strict.no-assignment-to-unresolvable.js: SyntaxError: unexpected keyword try
+es5/strict.no-delete-bindings.js: SyntaxError: unexpected keyword try
+es5/strict.no-delete-non-configurable.js: SyntaxError: unexpected keyword try
+es5/strict.no-duplicate-parameters.js: SyntaxError: unexpected keyword try
+es5/strict.no-eval-or-arguments-assignment.js: SyntaxError: unexpected keyword try
+es5/strict.no-eval-or-arguments-bindings.js: SyntaxError: unexpected keyword try
+es5/strict.no-function-caller-or-arguments.js: SyntaxError: unexpected keyword try
+es5/strict.no-octal-literals.js: SyntaxError: unexpected keyword try
+es5/strict.no-with.js: SyntaxError: unexpected keyword try
+es5/strict.reserved-words.js: SyntaxError: unexpected token .splitimplements,interface,let,package,private,protected,public,static,yield
+es5/strict.this-primitive-not-coerced-in-accessors.js: SyntaxError: unexpected token Class
+es5/strict.this-primitive-not-coerced.js: SyntaxError: unexpected keyword typeof
+es5/strict.this-undefined-in-function.js: SyntaxError: unexpected keyword this
+es5/strict.unmapped-arguments.js: SyntaxError: unexpected var statement
+es5/this.thrown-function.js: SyntaxError: unexpected keyword try

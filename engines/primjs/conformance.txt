@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"faa89a102104b9bc7929e683fa0c3ccc412a51acbacb3a9a3ac10f6473e857c7","binary_size":1576368,"cc":"clang 23.0.0 (++20260302082846+265c1f483398-1~exp1~20260302083011.413)","console_log":"console.log","engine":"primjs","repository":"https://github.com/lynx-family/primjs.git","revision":"7708cd5ccefffc86ed080666218d9e80703d17f4","revision_date":"2026-02-27","version":"2.15.0-rc.3-74-g7708cd5"}
+Metadata: {"arch":"arm64","binary_sha256":"1a25411c748e6b00663afafacfdbd0c6ef4c45b35e858667fc82b6388ae78dff","binary_size":1576368,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"primjs","repository":"https://github.com/lynx-family/primjs.git","revision":"7708cd5ccefffc86ed080666218d9e80703d17f4","revision_date":"2026-02-27","version":"2.15.0-rc.3-74-g7708cd5"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -386,7 +386,7 @@ es5/Object.seal.js: OK
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
 es5/arguments.toStringTag.js: OK
-es5/debugger.js: SyntaxError: SyntaxError: unsupported keyword: debugger
+es5/debugger.js: SyntaxError: unsupported keyword: debugger
 es5/global.Infinity.immutable.js: OK
 es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: OK
@@ -1284,12 +1284,12 @@ compat-table/es2018/regex.unicode-property-escapes.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: OK
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: OK
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: SyntaxError: unknown unicode script
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: unknown unicode script
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: SyntaxError: unknown unicode script
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: SyntaxError: unknown unicode script
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: unknown unicode script
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: unknown unicode script
 compat-table/es2019/Array.prototype.flatMap.js: OK
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: OK
 compat-table/es2019/Array.prototype.flat.js: OK
@@ -1338,15 +1338,15 @@ compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK
 compat-table/es2021/String.prototype.replaceAll.js: TypeError: 'q=query+string+parameters'.replaceAll is not a function
 compat-table/es2021/WeakRef.js: OK
-compat-table/es2021/logical-assignment.and.js: SyntaxError: SyntaxError: unexpected token in expression: '='
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: SyntaxError: unexpected token in expression: '='
-compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: SyntaxError: unexpected token in expression: '='
-compat-table/es2021/logical-assignment.nullish.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/es2021/logical-assignment.or.js: SyntaxError: SyntaxError: unexpected token in expression: '='
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: SyntaxError: unexpected token in expression: '='
-compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.and.js: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.nullish.js: SyntaxError: expecting ';'
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: expecting ';'
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: expecting ';'
+compat-table/es2021/logical-assignment.or.js: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: unexpected token in expression: '='
+compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: unexpected token in expression: '='
 compat-table/es2021/numeric-separators.js: OK
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.AggregateError.js: failed
@@ -1384,8 +1384,8 @@ compat-table/es2022/class-methods.private-accessor.js: OK
 compat-table/es2022/class-methods.private-instance.js: OK
 compat-table/es2022/class-methods.private-static-accessor.js: OK
 compat-table/es2022/class-methods.private-static.js: OK
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: SyntaxError: invalid property name
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: SyntaxError: unexpected token in expression: '#x'
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: invalid property name
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: unexpected token in expression: '#x'
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: invalid regular expression flags
 compat-table/es2022/regex.flags.d.shows-in-flags.js: failed
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: arr.findLastIndex is not a function
@@ -1405,12 +1405,12 @@ compat-table/es2024/Map.groupBy.js: TypeError: Map.groupBy is not a function
 compat-table/es2024/Object.groupBy.js: TypeError: Object.groupBy is not a function
 compat-table/es2024/Promise.withResolvers.js: TypeError: Promise.withResolvers is not a function
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.properties-of-strings.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: invalid regular expression flags
 compat-table/es2024/regex.flags.v.shows-in-flags.js: failed
-compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: SyntaxError: invalid regular expression flags
-compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.unicode-15.1.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.unicode-16.0.js: SyntaxError: invalid regular expression flags
+compat-table/es2024/regex.flags.v.unicode-17.0.js: SyntaxError: invalid regular expression flags
 compat-table/es2025/Iterator.extends.js: ReferenceError: Iterator is not defined
 compat-table/es2025/Iterator.from.iterable.js: ReferenceError: Iterator is not defined
 compat-table/es2025/Iterator.from.iterator.js: ReferenceError: Iterator is not defined
@@ -1427,7 +1427,7 @@ compat-table/es2025/Iterator.prototype.reduce.js: TypeError: [1, 2, 3].values().
 compat-table/es2025/Iterator.prototype.some.js: TypeError: [1, 2, 3].values().some is not a function
 compat-table/es2025/Iterator.prototype.take.js: TypeError: [1, 2, 3].values().take is not a function
 compat-table/es2025/Iterator.prototype.toArray.js: TypeError: [1, 2, 3].values().toArray is not a function
-compat-table/es2025/Promise.try.js: MissingOK
+compat-table/es2025/Promise.try.js: failed
 compat-table/es2025/RegExp.escape.js: TypeError: RegExp.escape is not a function
 compat-table/es2025/Set.prototype.difference.js: TypeError: Set([1, 2, 3]).difference is not a function
 compat-table/es2025/Set.prototype.intersection.js: TypeError: Set([1, 2, 3]).intersection is not a function
@@ -1436,10 +1436,10 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: Set([1, 2, 3]).isSub
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: Set([5, 4, 3, 2, 1]).isSupersetOf is not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: Set([1, 2]).symmetricDifference is not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: Set([1, 2]).union is not a function
-compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: SyntaxError: duplicate group name
-compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: SyntaxError: invalid group
-compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: SyntaxError: invalid group
-compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: SyntaxError: invalid group
+compat-table/es2025/regex.duplicate-named-groups.js: SyntaxError: duplicate group name
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: invalid group
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: invalid group
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: invalid group
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1492,7 +1492,7 @@ compat-table/next/Map.prototype.upsert.js: TypeError: map.upsert is not a functi
 compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/SuppressedError.js: SyntaxError: expecting ';'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: arr2.setFromBase64 is not a function
@@ -1500,13 +1500,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: arr2.setFromHex is not a 
 compat-table/next/Uint8Array.toBase64.js: TypeError: arr.toBase64 is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: arr.toHex is not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: map.upsert is not a function
-compat-table/next/await-using.for-of.js: SyntaxError: SyntaxError: unexpected token in expression: 'await'
-compat-table/next/await-using.js: SyntaxError: SyntaxError: expecting ';'
-compat-table/next/class-decorators.js: SyntaxError: SyntaxError: invalid property name
-compat-table/next/function.sent.js: SyntaxError: SyntaxError: expecting '('
-compat-table/next/throw-expr.arrow.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.conditional.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.logical.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/throw-expr.param-init.js: SyntaxError: SyntaxError: unexpected token in expression: 'throw'
-compat-table/next/using.for-of.js: SyntaxError: SyntaxError: expected 'of' or 'in' in for control expression
-compat-table/next/using.js: SyntaxError: SyntaxError: expecting ';'
+compat-table/next/await-using.for-of.js: SyntaxError: unexpected token in expression: 'await'
+compat-table/next/await-using.js: SyntaxError: expecting ';'
+compat-table/next/class-decorators.js: SyntaxError: invalid property name
+compat-table/next/function.sent.js: SyntaxError: expecting '('
+compat-table/next/throw-expr.arrow.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.conditional.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.logical.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/throw-expr.param-init.js: SyntaxError: unexpected token in expression: 'throw'
+compat-table/next/using.for-of.js: SyntaxError: expected 'of' or 'in' in for control expression
+compat-table/next/using.js: SyntaxError: expecting ';'

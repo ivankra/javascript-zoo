@@ -23,12 +23,12 @@ Embeddable JavaScript engine written in Rust.
 
 <details><summary>ES1-ES5: 99%</summary><ul>
 <li>ES1: 99%<pre>
-<a href="../../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Uncaught: "Function Unimplemented]"
+<a href="../../conformance/es1/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Function Unimplemented
 </pre></li>
 <li>ES3: 97%<pre>
-<a href="../../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Uncaught: "Function Unimplemented"
-<a href="../../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Uncaught: "Function Unimplemented]"
-<a href="../../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Uncaught: "Function Unimplemented]"
+<a href="../../conformance/es3/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: Function Unimplemented
+<a href="../../conformance/es3/Date.prototype.toLocaleString.js">Date.prototype.toLocaleString.js</a>: Function Unimplemented
+<a href="../../conformance/es3/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: Function Unimplemented
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+0')
 </pre></li>
 <li>ES5: 99%<pre>
@@ -36,25 +36,21 @@ Embeddable JavaScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 89%, Next 0%, Intl 96%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 92%, Next 0%, Intl 100%</summary><ul>
 <li>ES6: 98%<pre>
-<a href="../../conformance/compat-table/es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8
+<a href="../../conformance/compat-table/es6/annex-b.regex.invalid-hex-escapes.js">annex-b.regex.invalid-hex-escapes.js</a>: SyntaxError: Invalid regular expression literal: Unbalanced bracket at line 10, col 8
 <a href="../../conformance/compat-table/es6/class.computed-names-tdz.js">class.computed-names-tdz.js</a>: failed
 <a href="../../conformance/compat-table/es6/destructuring-params.defaults-new-function.js">destructuring-params.defaults-new-function.js</a>: SyntaxError: failed to parse function parameters: abrupt end
 <a href="../../conformance/compat-table/es6/destructuring-params.defaults-separate-scope.js">destructuring-params.defaults-separate-scope.js</a>: failed
 <a href="../../conformance/compat-table/es6/destructuring-params.new-function.js">destructuring-params.new-function.js</a>: SyntaxError: failed to parse function parameters: abrupt end
-<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: Uncaught: RuntimeLimitError: reached the maximum number of recursive calls on this execution
-<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: Uncaught: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+<a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: RuntimeLimitError: reached the maximum number of recursive calls on this execution
+<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: RuntimeLimitError: reached the maximum number of recursive calls on this execution
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 94%<pre>
+<li>ES2017: 98%<pre>
 <a href="../../conformance/compat-table/es2017/async.no-await-in-params.js">async.no-await-in-params.js</a>: failed
-<a href="../../conformance/compat-table/es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
-<li>ES2018: 98%<pre>
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js">regex.unicode-property-escapes.unicode-16.0.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
-<a href="../../conformance/compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js">regex.unicode-property-escapes.unicode-17.0.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Invalid property name at line 10, col 10
-</pre></li>
+<li>ES2018: 100%</li>
 <li>ES2019: 95%<pre>
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.Function-constructor.js">misc.Function-toString.Function-constructor.js</a>: failed
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.class-explicit-constructor.js">misc.Function-toString.class-explicit-constructor.js</a>: failed
@@ -66,16 +62,9 @@ Embeddable JavaScript engine written in Rust.
 </pre></li>
 <li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
-<li>ES2024: 92%<pre>
-<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-16.0.js">regex.flags.v.unicode-16.0.js</a>: failed
-<a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: failed
-</pre></li>
-<li>ES2025: 53%<pre>
-<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/compat-table/es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
-<a href="../../conformance/compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js">Iterator.prototype.Symbol.toStringTag.js</a>: ReferenceError: Iterator is not defined
+<li>ES2024: 100%</li>
+<li>ES2025: 68%<pre>
+<a href="../../conformance/compat-table/es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: failed
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.drop.js">Iterator.prototype.drop.js</a>: TypeError: not a callable function
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.every.js">Iterator.prototype.every.js</a>: TypeError: not a callable function
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.filter.js">Iterator.prototype.filter.js</a>: TypeError: not a callable function
@@ -87,10 +76,7 @@ Embeddable JavaScript engine written in Rust.
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: TypeError: not a callable function
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: TypeError: not a callable function
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: TypeError: not a callable function
-<a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: Error: 0: SyntaxError: Invalid regular expression literal: Duplicate capture group name at line 9, col 10
 </pre></li>
 <li>Next: 0%</li>
-<li>Intl: 96%<pre>
-<a href="../../conformance/compat-table/intl/Intl.DateTimeFormat.resolvedOptions.timeZone-default.js">Intl.DateTimeFormat.resolvedOptions.timeZone-default.js</a>: TypeError: not a callable function
-</pre></li>
+<li>Intl: 100%</li>
 </ul></details>
