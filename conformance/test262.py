@@ -759,8 +759,8 @@ def main() -> None:
     p.add_argument("engine", help="Engine binary path or name")
     p.add_argument("tests", nargs="*", help="Test paths/dirs/globs relative to test262/test")
     p.add_argument("--config", help="Force a specific config entry from config.yml")
-    p.add_argument("-j", "--jobs", type=int, default=os.cpu_count() or 4, metavar="N",
-                   help="Run N jobs in parallel")
+    p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
+                   help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
@@ -773,8 +773,9 @@ def main() -> None:
                    help="Increase verbosity (-v: failures only, -vv: all results)")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Skip test paths matching glob pattern")
-    p.add_argument("--intl", action="store_true",
-                   help="Include Intl402 tests (skipped by default)")
+    p.add_argument("--no-intl", action="store_false", dest="intl", default=True,
+                   help="Exclude Intl402 tests (included by default)")
+    p.add_argument("--intl", action="store_true", dest="intl", help=argparse.SUPPRESS)
     p.add_argument("--limit", type=int, default=0, help="Run at most N test files")
     p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
                    help="Skip tests requiring these features (comma-separated)")
