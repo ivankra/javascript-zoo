@@ -50,6 +50,11 @@ ant:
   prelude:
     - code: 'var print = console.log.bind(console);'
 
+asynkron:
+  errors_re:
+    - *uncaught_exception_colon_message
+    - *exception_colon_message
+
 bali:
   console_log: console.log
   stdout_replace_re:

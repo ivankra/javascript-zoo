@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <AssemblyName>asynkron</AssemblyName>
+    <RootNamespace>asynkron</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="asynkron.cs" />
+    <Compile Include="Test262AbstractModuleSource.cs" />
+    <Compile Include="tests/Asynkron.JsEngine.Tests.Test262/Test262AgentRuntime.cs" />
+    <ProjectReference Include="src/Asynkron.JsEngine/Asynkron.JsEngine.csproj" />
+  </ItemGroup>
+</Project>
