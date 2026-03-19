@@ -57,8 +57,7 @@ class EngineConfig:
     output_limit: int = 1000000
 
     # --- Output classification ---
-    # In order of priority
-    # Post-run output substitutions applied by Arbiter: {regex: replacement}.
+    # Post-run output cleanup applied by Classified: {regex: replacement}.
     # Use "" to drop matching text. Patterns are compiled with re.MULTILINE:
     # ^ and $ match line boundaries; . does not match \n; explicit \n works.
     # Accepts either {regex: repl, ...} or [{regex: repl}, {regex: repl}, ...].

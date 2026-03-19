@@ -25,7 +25,7 @@ SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 _SCRIPT_DIR = Path(__file__).parent.resolve()
 
 from lib import (
-    Arbiter,
+    Classifier,
     EngineConfig,
     ErrorType,
     RunResult,
@@ -405,7 +405,7 @@ class Assembler:
 class Executor:
     """Executes and classifies test262 cases via a thread pool.
 
-    Owns the Runner, Arbiter, Assembler, and thread pool lifecycle.
+    Owns the Runner, Classifier, Assembler, and thread pool lifecycle.
     """
 
     def __init__(
@@ -424,7 +424,7 @@ class Executor:
         self.test262_dir = assembler.test262_dir
         self.assembler = assembler
         self.runner = Runner(engine)
-        self.arbiter = Arbiter(engine)
+        self.classifier = Classifier(engine)
         self.timeout_sec = timeout_sec
         self.save_compiled = save_compiled
         self.mode = mode
@@ -538,13 +538,13 @@ class Executor:
             )
 
             if is_negative:
-                self.arbiter.classify(run, expect_async=is_async)
+                self.classifier.classify(run, expect_async=is_async)
                 self._check_negative(case.fm, run)
             else:
                 ok_pattern = (
                     rf"{re.escape(case.case_id)}: FINISHED" if expect_finished else None
                 )
-                self.arbiter.classify(
+                self.classifier.classify(
                     run,
                     expect_async=is_async,
                     ok_pattern=ok_pattern,

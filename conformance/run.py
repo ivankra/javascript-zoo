@@ -14,7 +14,7 @@ import tempfile
 from collections import Counter
 from pathlib import Path
 
-from lib import Arbiter, EngineConfig, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
+from lib import Classifier, EngineConfig, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
 
 CONFORMANCE_DIR = Path(__file__).parent.resolve()
 VAR_CONSOLE_LOG_JS = CONFORMANCE_DIR / "lib/var-console-log.js"
@@ -23,7 +23,7 @@ TIMEOUT_SEC = 10.0
 
 def run_one(
     runner: Runner,
-    arbiter: Arbiter,
+    classifier: Classifier,
     cfg: EngineConfig,
     test_path: Path,
     test_id: str,
@@ -64,7 +64,7 @@ def run_one(
 
     ok_pattern = rf"{re.escape(test_path.name)}: OK"
     fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
-    arbiter.classify(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
+    classifier.classify(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
                      strip_line_prefix=f"{test_id}: ")
     return test_id, run.verdict_message(), run
 
@@ -122,7 +122,7 @@ def main() -> None:
         sys.exit(f"No conformance tests found for patterns: {suites}")
 
     runner = Runner(cfg)
-    arbiter = Arbiter(cfg)
+    classifier = Classifier(cfg)
     use_color = sys.stdout.isatty()
     dir_names = []
     dir_names_set = set()
@@ -141,7 +141,7 @@ def main() -> None:
     results_by_test: dict[str, tuple[str, str, RunResult]] = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
         futs = {
-            pool.submit(run_one, runner, arbiter, cfg, CONFORMANCE_DIR / rel, rel): rel
+            pool.submit(run_one, runner, classifier, cfg, CONFORMANCE_DIR / rel, rel): rel
             for rel in tests
         }
         for fut in concurrent.futures.as_completed(futs):

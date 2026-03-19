@@ -1,3 +1,4 @@
+from .classifier import Classifier
 from .config import EngineConfig
-from .lib import *
+from .runner import ErrorType, Verdict, Runner, RunMetrics, RunResult
 from .util import *
