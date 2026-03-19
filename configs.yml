@@ -80,8 +80,8 @@ boa:
     # Uncaught Error: RuntimeLimitError: reached the maximum number of recursive calls on this execution
     - '^Uncaught Error: (?P<message>.+)$'
   flags:
+    - { tag: 'module', flag: '--module' }
     - --debug-object  # exposes $boa object
-  module_flag: --module
   prelude:
     - file: engines/boa/prelude.js
 
@@ -100,11 +100,11 @@ brimstone: &brimstone
   errors_re:
     - *exception_colon_message
   flags:
+    - { tag: 'module', flag: '--module' }
     - --no-color
     - --annex-b
     - --expose-test-262
     - --expose-gc
-  module_flag: --module
   # built-in print() with --expose-test-262 only takes strings and
   # doesn't print to stdout/stderr
   prelude:
@@ -149,8 +149,9 @@ chakracore: &chakracore
   console_log: ['console.log', 'print', 'WScript.Echo']
   errors_re:
     - *exception_colon_message
-  module_flag: -module
-  #flags: {tag: 'test262', flag: '-Test262'}  # requires --test-build
+  flags:
+    - { tag: 'module', flag: '--module' }
+    #- {tag: 'test262', flag: '-Test262'}  # requires --test-build
 
 continuum:
   console_log: console.log
@@ -228,7 +229,8 @@ engine262:
   errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message  # main.js wrapper
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 epimetheus:
   console_log: ['console.log', 'print']
@@ -237,7 +239,8 @@ epimetheus:
 
 escargot:
   console_log: print
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Script parsing error: (?P<type>SyntaxError): Line [0-9]+: (?P<message>.*)$'
@@ -264,7 +267,8 @@ fastschema-qjs:
     - *go_crash_re
   errors_re:
     - *uncaught_exception_colon_message
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 fesi: &fesi
   console_log: writeln
@@ -298,8 +302,8 @@ graaljs:
   console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
-  module_flag: --module
   flags:
+    - { tag: 'module', flag: '--module' }
     - --experimental-options
     - --js.test262-mode=true
     - --js.global-arguments=false  # required for some test262 tests
@@ -366,7 +370,8 @@ jerryscript: &jerryscript
   bench_timeout_for_test:
     splay.js: 300
     typescript.js: 3600
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -375,7 +380,8 @@ jint:
   console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 jispy:
   console_log: ['console.log', 'print']
@@ -390,11 +396,11 @@ js2py:
 
 jsc: &jsc
   console_log: print
-  module_flag: -m
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
+    - { tag: 'module', flag: '-m' }
     # Enable experimental javascript features
     - --useExplicitResourceManagement=true
     - --useImportDefer=true
@@ -460,9 +466,10 @@ jurassic:
 
 kiesel:
   console_log: console.log
-  module_flag: --module
   errors_re:
     - *uncaught_exception_colon_message
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 kjs:
   console_log: print
@@ -496,13 +503,13 @@ libjs: &libjs
     - *uncaught_exception_colon_message
     - *exception_colon_message
   flags:
+    - { tag: 'module', flag: '--as-module' }
     - --disable-ansi-colors
     - --no-syntax-highlight
     - --disable-source-location-hints
     # - --disable-debug-output
     - --raw-strings
     - --use-test262-global
-  module_flag: --as-module
 
 metaes:
   console_log: ['console.log', 'print']
@@ -524,7 +531,8 @@ modernc-quickjs:
     - *go_crash_re
   errors_re:
     - *uncaught_exception_colon_message
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 mquickjs: &mquickjs
   console_log: ['console.log', 'print']
@@ -554,8 +562,9 @@ nashorn:
   console_log: print
   crash_re:
     - *java_crash_re
-  flags: ['--language=es6']
-  module_flag: -m
+  flags:
+    - { tag: 'module', flag: '-m' }
+    - --language=es6
   multiple_scripts_with_shared_realm: true
   stderr_replace_re:
     - '^Exception in thread "main" .*\.js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
@@ -578,7 +587,8 @@ niljs:
   errors_re:
     - *uncaught_exception_colon_message
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 njs:
   console_log: ['console.log', 'print']
@@ -588,7 +598,8 @@ njs:
     - tag: bench
       file: bench/prelude-strict.js
   bench_transforms: ['octal']
-  module_flag: -m
+  flags:
+    - { tag: 'module', flag: '-m' }
   errors_re:
     - *exception_colon_message
     - '^Thrown: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
@@ -599,7 +610,7 @@ nova:
     - eval
     - --no-strict
     - --expose-internals
-  module_flag: --module
+    - { tag: 'module', flag: '--module' }
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -626,9 +637,10 @@ porffor:
   prelude:
     - code: 'var print = console.log;'
   bench_suite: ['richards.porffor.js']
-  module_flag: --module
   errors_re:
     - *exception_colon_message
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 primjs:
   console_log: ['console.log', 'print']
@@ -654,20 +666,24 @@ quanta:
 
 quickjs: &quickjs
   console_log: ['console.log', 'print']
-  module_flag: --module
   errors_re:
     - *exception_colon_message
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 quickjs_262: &quickjs_262
   # quickjs's run-test262 binary
   <<: *quickjs
   # no console.log() in run-test262
   console_log: print
-  flags: ['-N']  # -N: run test prepared by test262-harness+eshost
+  flags:
+    - { tag: 'module', flag: '--module' }
+    - -N  # -N: run test prepared by test262-harness+eshost
 
 quickjs-ng:
-  flags: ['--script']  # misdetects module mode often enough
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
+    - --script  # misdetects module mode often enough
   errors_re:
     - *exception_colon_message
 
@@ -676,12 +692,13 @@ quickjs-ng_262: *quickjs_262
 qv4:
   bench_transforms: ['octal']
   console_log: ['console.log', 'print']
-  module_flag: --module
   stderr_replace_re:
     - 'qt\.qml\.usedbeforedeclared:': ''
     - '^js: ': ''
   errors_re:
     - *uncaught_exception_colon_message
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 rapidus:
   console_log: console.log
@@ -763,7 +780,8 @@ sobek:
   errors_re:
     - *uncaught_exception_colon_message
     - '^(?P<type>[A-Za-z0-9]*Error): [^:]+[.]js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 sophonjs:
   console_log: console.log
@@ -780,8 +798,8 @@ spidermonkey: &spidermonkey
     - '^[^:]+:[0-9]+:?([0-9]+)?:? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     # "uncaught exception: Error: x"
     - '^uncaught exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
-  module_flag: --module
   flags:
+    - { tag: 'module', flag: '--module' }
     # Enable experimental javascript features
     - --enable-iterator-helpers
     - --enable-async-iterator-helpers
@@ -816,7 +834,6 @@ spidermonkey_1.5: &sm15
   console_log: print
   errors_re: *sm_exc
   flags: []
-  module_flag:
 
 spidermonkey_1.6: *sm15
 spidermonkey_1.7: *sm15
@@ -829,16 +846,13 @@ spidermonkey_1.8.5:
   flags: ['-jm']
 
 spidermonkey_17:
-  # -m/--methodjit  Enable the JaegerMonkey method JIT
   console_log: print
-  flags: ['-m']
-  module_flag:
+  flags: ['-m']  # -m/--methodjit  Enable the JaegerMonkey method JIT
   errors_re: *sm_exc
 
 spidermonkey_24:
   console_log: print
   flags: []
-  module_flag:
   errors_re: *sm_exc
 
 ssrlive:
@@ -927,7 +941,6 @@ ucode:
 # https://github.com/v8/v8/blob/master/test/test262/testcfg.py
 v8: &v8
   console_log: ['console.log', 'print']
-  module_flag: --module
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
   errors_re:
@@ -936,6 +949,7 @@ v8: &v8
     - '^[^:]+:[0-9]+: Error: Unhandled Promise.$'
   # Shared flags between d8 and node
   node_flags: &node_flags
+    - { tag: 'module', flag: '--module' }
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
     - --allow-natives-syntax
@@ -965,7 +979,8 @@ wine: *jscript
 
 xs: &xs
   console_log: print
-  module_flag: -m
+  flags:
+    - { tag: 'module', flag: '-m' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - *exception_colon_message
@@ -1038,7 +1053,8 @@ gjs: &gjs
     - '[(].js-console:[0-9]+[)]: ': ''
   errors_re:
     - '.*js-CRITICAL ..: [0-9:.]+: JS ERROR: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-  module_flag: --module
+  flags:
+    - { tag: 'module', flag: '--module' }
   prelude:
     - file: engines/spidermonkey/prelude.js
 

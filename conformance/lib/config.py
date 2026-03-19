@@ -47,8 +47,6 @@ class EngineConfig:
     # or {"tag": "<name>", "flag": "<flag>"} (included only when tag is in tags set).
     # Call resolve() to expand shell/list items before use.
     flags: list = dataclasses.field(default_factory=list)
-    # Extra flag appended after flags, before the script path, in module mode only.
-    module_flag: str | None = None
     # Raw sidecar metadata from <binary>.json kept for reporting/persistence.
     # Fields are promoted up into EngineConfig during loading.
     build_metadata: dict[str, Any] = dataclasses.field(default_factory=dict)
@@ -124,11 +122,8 @@ class EngineConfig:
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
 
-    def argv(
-        self, *args: Path | str,
-        module: bool = False, tags: set[str] = set(),
-    ) -> list[str]:
-        """Build execution argv: binary + flags [+ module_flag] + positional args.
+    def argv(self, *args: Path | str, tags: set[str] = set()) -> list[str]:
+        """Build execution argv: binary + flags + positional args.
 
         Conditional flags ({"tag": ..., "flag": ...}) are included only when
         the tag is present in the *tags* set.
@@ -142,8 +137,6 @@ class EngineConfig:
                     cmd.append(flag["flag"])
             else:
                 raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")
-        if module and self.module_flag:
-            cmd.append(self.module_flag)
         cmd.extend(str(arg) for arg in args)
         return cmd
 

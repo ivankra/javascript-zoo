@@ -493,6 +493,8 @@ class Executor:
         expect_finished = not is_negative and case.scenario != "raw"
 
         tags = case.fm.features | {f"includes:{i}" for i in case.fm.includes} | {"test262"}
+        if is_module:
+            tags.add("module")
         if is_negative:
             tags.add("negative")
         staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
@@ -500,7 +502,6 @@ class Executor:
             run = self.runner.run_command(
                 self.engine.argv(
                     staged.script_path,
-                    module=is_module,
                     tags=tags,
                 ),
                 run_id=case.case_id,

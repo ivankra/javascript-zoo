@@ -85,10 +85,10 @@ class EngineConfigCommandTest(unittest.TestCase):
         cmd = self._cfg(flags=["--strict", "-O"]).argv("/tmp/s.js")
         self.assertEqual(cmd, ["/usr/bin/eng", "--strict", "-O", "/tmp/s.js"])
 
-    def test_module_flag_only_in_module_mode(self) -> None:
-        cfg = self._cfg(flags=["eval"], module_flag="--module")
-        self.assertEqual(cfg.argv("/tmp/s.js", module=False), ["/usr/bin/eng", "eval", "/tmp/s.js"])
-        self.assertEqual(cfg.argv("/tmp/s.js", module=True), ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
+    def test_module_tag_flag(self) -> None:
+        cfg = self._cfg(flags=["eval", {"tag": "module", "flag": "--module"}])
+        self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags={"module"}), ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
 
     def test_path_object_stringified(self) -> None:
         cmd = self._cfg().argv(Path("/tmp/s.js"))
@@ -200,15 +200,15 @@ class EngineConfigLoadTest(unittest.TestCase):
             self.assertEqual(cfg.env, {"MODE": "test"})
             self.assertEqual(cfg.output_limit, 123)
             self.assertEqual(cfg.flags, ["--fast"])
-            self.assertEqual(cfg.module_flag, "--module")
 
     def test_explicit_config_name_overrides_detected_config(self) -> None:
         with tempfile.TemporaryDirectory() as td:
             binary = self._make_binary(td)
             (Path(td) / "eng.json").write_text(json.dumps({"engine": "quickjs"}))
             cfg = EngineConfig.load(str(binary), config_name="nova")
-            self.assertEqual(cfg.flags, ["eval", "--no-strict", "--expose-internals"])
-            self.assertEqual(cfg.module_flag, "--module")
+            self.assertIn("eval", cfg.flags)
+            self.assertIn("--no-strict", cfg.flags)
+            self.assertIn("--expose-internals", cfg.flags)
 
     def test_load_preserves_explicit_empty_list_from_sidecar(self) -> None:
         with tempfile.TemporaryDirectory() as td:
