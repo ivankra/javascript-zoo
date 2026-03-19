@@ -37,7 +37,7 @@ from lib import (
 
 DEFAULT_TEST262_DIR = (_SCRIPT_DIR.parent / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
-INTL402_SKIP_PATHS = ("intl402", "staging/Intl402")
+INTL402_SKIP_PATHS = ("test/intl402", "test/staging/Intl402")
 FEATURES_PATH = _SCRIPT_DIR / "lib" / "features.yml"
 
 _REL_SPECIFIER_RE = re.compile(
@@ -145,7 +145,7 @@ def emit_preprocessed_test(
         sys.exit("-E requires exactly one test path")
 
     emit_tests = list(itertools.islice(
-        iterate_js_files(tests, root=test262_dir / "test"),
+        iterate_js_files(tests, root=test262_dir),
         2,
     ))
     if not emit_tests:
@@ -350,7 +350,7 @@ class Assembler:
         source: str,
         visited: set[str],
     ) -> None:
-        test_dir = self.test262_dir / "test"
+        test_dir = self.test262_dir
         for spec in self._extract_relative_deps(source):
             dep_path = (base_dir / spec).resolve()
             try:
@@ -386,7 +386,7 @@ class Assembler:
 
     def _copy_fixture_siblings(self, dst_root: Path, base_dir: Path, visited: set[str]) -> None:
         """Copy sibling fixture files for computed import specifiers."""
-        test_dir = self.test262_dir / "test"
+        test_dir = self.test262_dir
         for dep_path in base_dir.iterdir():
             if not dep_path.is_file() or "_FIXTURE" not in dep_path.name:
                 continue
@@ -490,7 +490,7 @@ class Executor:
         Returns None if the file was skipped by feature filter,
         [] if it had no applicable scenarios for the current mode.
         """
-        test_path = self.test262_dir / "test" / rel_path
+        test_path = self.test262_dir / rel_path
         source = test_path.read_text(encoding="utf-8", errors="replace")
         fm = Frontmatter.parse(source)
 
@@ -769,12 +769,11 @@ def main() -> None:
                    help="Only run tests requiring these features (comma-separated)")
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy", "raw", "module"], default="all",
                    help="Run only tests with this mode")
-    p.add_argument("-v", "--verbose", action="count", default=0,
-                   help="Increase verbosity (-v: failures only, -vv: all results)")
+    p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
-                   help="Skip test paths matching glob pattern")
+                   help="Exclude test paths matching the pattern")
     p.add_argument("--no-intl", action="store_false", dest="intl", default=True,
-                   help="Exclude Intl402 tests (included by default)")
+                   help="Exclude Intl402 tests (i.e. --exclude={" + ",".join(INTL402_SKIP_PATHS) + "})")
     p.add_argument("--intl", action="store_true", dest="intl", help=argparse.SUPPRESS)
     p.add_argument("--limit", type=int, default=0, help="Run at most N test files")
     p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
@@ -820,9 +819,9 @@ def main() -> None:
     if not args.intl:
         exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
 
-    test_root = test262_dir / "test"
+    test_root = test262_dir
     tests = iterate_js_files(
-        args.tests or ["."], root=test_root,
+        args.tests or ["test"], root=test_root,
         exclude_re=[re.compile("_FIXTURE")] + exclude_pats,
     )
     if args.limit:
