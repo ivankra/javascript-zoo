@@ -403,10 +403,7 @@ class Assembler:
 
 
 class Executor:
-    """Executes and classifies test262 cases via a thread pool.
-
-    Owns the Runner, Classifier, Assembler, and thread pool lifecycle.
-    """
+    """Executes and classifies test262 cases via a process pool."""
 
     def __init__(
         self,
@@ -434,7 +431,7 @@ class Executor:
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
     def run(self, tests: Iterator[str], *, on_test_result: Any = None) -> tuple[list[RunResult], int]:
-        """Submit test files to thread pool, collect and return results.
+        """Submit test files to worker pool, collect and return results.
 
         Each worker reads the file, parses frontmatter, expands scenarios,
         assembles, executes, and classifies — all in parallel.
@@ -445,7 +442,7 @@ class Executor:
         n_skipped = 0
 
         try:
-            with concurrent.futures.ThreadPoolExecutor(max_workers=self._jobs) as pool:
+            with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
                 futs: dict[concurrent.futures.Future[list[RunResult] | None], None] = {}
                 test_iter = iter(tests)
                 exhausted = False
@@ -830,7 +827,7 @@ def main() -> None:
     if args.limit:
         tests = itertools.islice(tests, args.limit)
 
-    # Stage 2: read, parse, assemble, execute, classify (all in thread pool)
+    # Stage 2: read, parse, assemble, execute, classify (all in process pool)
     include_features = expand_edition_aliases({f for item in args.features for f in item.split(",") if f}) or None
     if args.skip_features:
         skip_features = expand_edition_aliases({f for item in args.skip_features for f in item.split(",") if f}) or None

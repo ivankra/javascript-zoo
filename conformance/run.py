@@ -139,7 +139,7 @@ def main() -> None:
     next_dir_index = 0
 
     results_by_test: dict[str, tuple[str, str, RunResult]] = {}
-    with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as pool:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as pool:
         futs = {
             pool.submit(run_one, runner, classifier, cfg, CONFORMANCE_DIR / rel, rel): rel
             for rel in tests
