@@ -46,7 +46,7 @@ ant:
   console_log: console.log
   errors_re:
     - *exception_colon_message
-  test262_prelude:
+  prelude:
     - code: 'var print = console.log.bind(console);'
 
 bali:
@@ -79,9 +79,10 @@ boa:
     - '^Uncaught Error: "(?P<message>.+?)\]?"$'
     # Uncaught Error: RuntimeLimitError: reached the maximum number of recursive calls on this execution
     - '^Uncaught Error: (?P<message>.+)$'
+  flags:
+    - --debug-object  # exposes $boa object
   module_flag: --module
-  test262_flags: ['--debug-object']  # exposes $boa object
-  test262_prelude:
+  prelude:
     - file: engines/boa/prelude.js
 
 bramblex:
@@ -101,15 +102,12 @@ brimstone: &brimstone
   flags:
     - --no-color
     - --annex-b
-  module_flag: --module
-  test262_flags:
-    - --no-color
-    - --annex-b
     - --expose-test-262
     - --expose-gc
+  module_flag: --module
   # built-in print() with --expose-test-262 only takes strings and
   # doesn't print to stdout/stderr
-  test262_prelude:
+  prelude:
     - code: 'globalThis.print = console.log.bind(console);'
 
 carakan:
@@ -152,7 +150,7 @@ chakracore: &chakracore
   errors_re:
     - *exception_colon_message
   module_flag: -module
-  # test262_flags: ['-Test262']  # requires --test-build
+  #flags: {tag: 'test262', flag: '-Test262'}  # requires --test-build
 
 continuum:
   console_log: console.log
@@ -171,9 +169,6 @@ derkjs:
   flags: ['-r']
 
 dmdscript:
-  bench_prelude:
-    - code: 'var console = {log: println}, print = println;'
-    - file: bench/prelude-es5.js
   console_log: println
   stderr_replace_re:
     - '^1 source files$': ''
@@ -181,11 +176,12 @@ dmdscript:
     - '^dmdscript.script.ScriptException@[^ :]+: /[^():]+[(][0-9]+[)] : Error: (?P<message>.+)$': 'SyntaxError: \g<message>'
   errors_re:
     - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException)@[^ :]+: (?P<message>.+)$'
+  prelude:
+    - code: 'var console = {log: println}, print = println;'
+    - tag: bench
+      file: bench/prelude-es5.js
 
 dscriptcpp:
-  bench_prelude:
-    - code: 'var console = {log: println}, print = println;'
-    - file: bench/prelude-es5.js
   bench_suite: ['richards.es1.js']
   console_log: println
   stdout_replace_re:
@@ -195,6 +191,10 @@ dscriptcpp:
     - '(Digital Mars DMDScript.*|http://www.digitalmars.com|Compiled by.*|written by .*|1 source files)': ''
   errors_re:
     - '^Exception: ([^ ()]*\([0-9]+\) : Error: )?(?P<message>.+)$'
+  prelude:
+    - code: 'var console = {log: println}, print = println;'
+    - tag: bench
+      file: bench/prelude-es5.js
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -342,7 +342,7 @@ hermes: &hermes
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
     - '(?P<type>(SyntaxError)) [^ ]+[.]js:(?P<line>[0-9]+):[0-9]+: error: (?P<message>.+?)[.]?$'
     - '^[^ ]+[.]js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
-  test262_prelude:
+  prelude:
     - file: engines/hermes/prelude.js
 
 hermes-v1:
@@ -508,10 +508,10 @@ metaes:
   console_log: ['console.log', 'print']
 
 mocha:
-  bench_prelude:
-    - code: 'var console = new Object(); console.log = print;'
   bench_suite: ['richards.es1.js']
   console_log: print
+  prelude:
+    - code: 'var console = new Object(); console.log = print;'
   errors_re:
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
@@ -528,10 +528,11 @@ modernc-quickjs:
 
 mquickjs: &mquickjs
   console_log: ['console.log', 'print']
-  bench_prelude:
-    - file: bench/prelude-strict.js
   errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
+  prelude:
+    - tag: bench
+      file: bench/prelude-strict.js
 
 mujs:
   console_log: ['console.log', 'print']
@@ -556,8 +557,6 @@ nashorn:
   flags: ['--language=es6']
   module_flag: -m
   multiple_scripts_with_shared_realm: true
-  test262_prelude:
-    - file: engines/nashorn/prelude.js
   stderr_replace_re:
     - '^Exception in thread "main" .*\.js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
   errors_re:
@@ -570,7 +569,7 @@ ngs:
     - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.js:[0-9]+: .*)$': '\1 \2'
   errors_re:
     - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<message>.*)$'
-  bench_prelude:
+  prelude:
     - code: 'var console = {log: print};'
   bench_suite: ['richards.tiny-js.js']
 
@@ -585,8 +584,9 @@ njs:
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
-  bench_prelude:
-    - file: bench/prelude-strict.js
+  prelude:
+    - tag: bench
+      file: bench/prelude-strict.js
   bench_transforms: ['octal']
   module_flag: -m
   errors_re:
@@ -595,11 +595,11 @@ njs:
 
 nova:
   console_log: print
-  flags: ['eval', '--no-strict']
+  flags:
+    - eval
+    - --no-strict
+    - --expose-internals
   module_flag: --module
-  test262_flags: ['eval', '--no-strict', '--expose-internals']
-  test262_prelude:
-    - file: engines/nova/prelude.js
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -610,8 +610,8 @@ nova:
     - *uncaught_exception_colon_message
   warnings_re:
     - '^Parse errors:$'
-  # errors_re:
-  #   - '(^error:|Error:|TypeError|(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can''t))'
+  prelude:
+    - file: engines/nova/prelude.js
 
 otto:
   console_log: console.log
@@ -623,8 +623,8 @@ otto:
 porffor:
   # print() exists but broken
   console_log: console.log
-  bench_prelude:
-    - code: 'var print=console.log;'
+  prelude:
+    - code: 'var print = console.log;'
   bench_suite: ['richards.porffor.js']
   module_flag: --module
   errors_re:
@@ -645,12 +645,12 @@ quad-wheel:
     - '^\[Fatal\] (?P<message>.*)$'
 
 quanta:
-  bench_prelude:
-    - code: 'var print=console.log;'
   bench_suite: ['richards.quanta.js']
   console_log: console.log
   errors_re:
     - *exception_colon_message
+  prelude:
+    - code: 'var print = console.log;'
 
 quickjs: &quickjs
   console_log: ['console.log', 'print']
@@ -685,8 +685,6 @@ qv4:
 
 rapidus:
   console_log: console.log
-  bench_prelude:
-    - code: 'var print=console.log;'
   bench_suite: ['richards.rapidus.js']
   crash_re:
     - *rust_crash_re
@@ -695,6 +693,8 @@ rapidus:
     - "^Syntax error: ": "SyntaxError: "
   errors_re:
     - '^Runtime error: [^ ]+\.js:[0-9]+:[0-9]+: (?P<message>.+)$'
+  prelude:
+    - code: 'var print = console.log;'
 
 reeva:
   console_log: console.log
@@ -804,14 +804,15 @@ spidermonkey: &spidermonkey
     - --enable-iterator-chunking
     - --enable-iterator-join
     - --enable-legacy-regexp
-  test262_prelude:
+  prelude:
     - file: engines/spidermonkey/prelude.js
 
 spidermonkey_1.5: &sm15
   # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
-  bench_prelude:
+  prelude:
     - file: bench/prelude-print.js
-    - file: bench/prelude-es5.js
+    - tag: bench
+      file: bench/prelude-es5.js
   console_log: print
   errors_re: *sm_exc
   flags: []
@@ -863,7 +864,7 @@ starlingmonkey:
   stdout_replace_re:
     - '^Log: ': ''
   errors_re: *sm_exc
-  test262_prelude:
+  prelude:
     - file: engines/spidermonkey/prelude.js
   # TODO: warmup_cmd
 
@@ -955,7 +956,7 @@ v8: &v8
     - --ignore-unhandled-promises  # e.g. test/built-ins/Promise/any/ctx-ctor.js
     - --no-arguments  # disable top-level arguments in d8
     - {tag: "CanBlockIsFalse", flag: "--no-can-block"}
-  test262_prelude:
+  prelude:
     - file: engines/v8/prelude.js
     - {tag: "IsHTMLDDA", file: engines/v8/prelude-IsHTMLDDA.js}
     - {tag: "source-phase-imports", file: engines/v8/prelude-AbstractModuleSource.js}
@@ -1009,9 +1010,9 @@ node:
   module_ext: mjs
   errors_re:
     - *exception_colon_message
-  test262_prelude:
-    - file: engines/v8/prelude-node.js
   flags: *node_flags
+  prelude:
+    - file: engines/v8/prelude-node.js
 
 bun:
   console_log: console.log
@@ -1038,7 +1039,7 @@ gjs: &gjs
   errors_re:
     - '.*js-CRITICAL ..: [0-9:.]+: JS ERROR: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
   module_flag: --module
-  test262_prelude:
+  prelude:
     - file: engines/spidermonkey/prelude.js
 
 # --------------------------------------------------------------------

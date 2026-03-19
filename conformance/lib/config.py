@@ -46,7 +46,7 @@ class EngineConfig:
     # Items may be str, {"shell": "..."} (expanded via bash), list[str] (flattened),
     # or {"tag": "<name>", "flag": "<flag>"} (included only when tag is in tags set).
     # Call resolve() to expand shell/list items before use.
-    flags: list[str | dict[str, str] | list] = dataclasses.field(default_factory=list)
+    flags: list = dataclasses.field(default_factory=list)
     # Extra flag appended after flags, before the script path, in module mode only.
     module_flag: str | None = None
     # Raw sidecar metadata from <binary>.json kept for reporting/persistence.
@@ -82,14 +82,16 @@ class EngineConfig:
     # Structured patterns for errors/exceptions with named groups "type" and "message"
     errors_re: list[str] = dataclasses.field(default_factory=list)
 
+    # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].
+    # Use tag "bench" / "test262" to gate preludes by execution mode.
+    #   {"file": "path"}             → unconditional file (relative to repo root)
+    #   {"code": "..."}              → unconditional inline JS
+    #   {"tag": "X", "file": "path"} → conditional file (when tag X present)
+    #   {"tag": "X", "code": "..."}  → conditional inline JS
+    prelude: list[Prelude] = dataclasses.field(default_factory=list)
+
     # --- Bench mode ---
     bench_suite: list[str] = dataclasses.field(default_factory=list)
-    # Bench-only flags. If set (even to []), override `flags` in bench.py.
-    bench_flags: list[str | dict[str, str] | list] | None = None
-    # JS prelude snippets prepended to each benchmark script.
-    # None = use mode default (prelude-print.js); [] = no prelude; [...] = use these.
-    # Resolved by resolve() into list[Prelude].
-    bench_prelude: list[Prelude] | None = None
     bench_transforms: list[str] = dataclasses.field(default_factory=list)
     # Per-test timeout overrides (seconds), keyed by benchmark basename.
     bench_timeout_for_test: dict[str, float] = dataclasses.field(default_factory=dict)
@@ -102,17 +104,6 @@ class EngineConfig:
         "compat-table/es20[0-9][0-9]",
     ])
     conformance_jobs: int = 8
-
-    # --- test262 mode ---
-    # JS prelude(s) injected before harness includes. List of dicts:
-    #   {"file": "path"}             → file content (unconditional)
-    #   {"code": "..."}              → inline JS (unconditional)
-    #   {"tag": "X", "file": "path"} → file content (when tag X present)
-    #   {"tag": "X", "code": "..."}  → inline JS (when tag X present)
-    # Resolved by resolve() into list[Prelude].
-    test262_prelude: list[Prelude] = dataclasses.field(default_factory=list)
-    # Test262-only flags. If set (even to []), override `flags` in test262.py.
-    test262_flags: list[str | dict[str, str] | list] | None = None
     # Default test262 feature skips for this engine. CLI --skip-features overrides.
     test262_skip_features: list[str] = dataclasses.field(default_factory=list)
 
@@ -129,33 +120,21 @@ class EngineConfig:
         Safe to call multiple times (no-op on already-resolved fields).
         """
         binary = self.binary_path or ""
-        for attr in ("flags", "test262_flags", "bench_flags"):
-            val = getattr(self, attr)
-            if val is not None:
-                setattr(self, attr, _resolve_flags_list(val, binary))
-        for attr in ("test262_prelude", "bench_prelude"):
-            val = getattr(self, attr)
-            if val is None or not val or isinstance(val[0], Prelude):
-                continue
-            setattr(self, attr, resolve_preludes(val))
+        self.flags = _resolve_flags_list(self.flags, binary)
+        if self.prelude and not isinstance(self.prelude[0], Prelude):
+            self.prelude = resolve_preludes(self.prelude)
 
     def argv(
         self, *args: Path | str,
-        module: bool = False, mode: str = "", tags: set[str] = set(),
+        module: bool = False, tags: set[str] = set(),
     ) -> list[str]:
-        """Build execution argv: binary + selected flags [+ module_flag] + positional args.
+        """Build execution argv: binary + flags [+ module_flag] + positional args.
 
         Conditional flags ({"tag": ..., "flag": ...}) are included only when
         the tag is present in the *tags* set.
         """
         cmd = [str(self.binary_path)]
-        if mode == "bench" and self.bench_flags is not None:
-            flags = self.bench_flags
-        elif mode == "test262" and self.test262_flags is not None:
-            flags = self.test262_flags
-        else:
-            flags = self.flags
-        for flag in flags:
+        for flag in self.flags:
             if isinstance(flag, str):
                 cmd.append(flag)
             elif isinstance(flag, dict) and "tag" in flag and "flag" in flag:

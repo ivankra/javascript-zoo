@@ -25,7 +25,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
-from conformance.lib import Arbiter, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
+from conformance.lib import Classifier, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
@@ -268,8 +268,12 @@ def _replace_hex(m: re.Match[str]) -> str:
     return s
 
 
-def apply_transforms(script: str, transforms: list[str], prelude: list[Prelude] | None) -> str:
-    """Apply named transforms and prepend resolved prelude to script."""
+def apply_transforms(script: str, transforms: list[str], preludes: list[Prelude]) -> str:
+    """Apply named transforms and prepend resolved preludes to script.
+
+    Only preludes with no tag or tag="bench" are included.
+    """
+    tags = {"bench"}
     for name in transforms:
         if name == "octal":
             script = re.sub(r'"\\[01]([0-9][0-9])"', _replace_octal, script)
@@ -280,7 +284,8 @@ def apply_transforms(script: str, transforms: list[str], prelude: list[Prelude] 
                 script,
             )
 
-    parts = [p.code.strip() for p in (prelude or []) if p.code and p.code.strip()]
+    parts = [p.code.strip() for p in preludes
+             if (p.tag is None or p.tag in tags) and p.code and p.code.strip()]
     if parts:
         script = "\n".join(parts) + "\n" + script
 
@@ -353,7 +358,7 @@ class BenchRunner:
         self.out = out
         self.result = result
         self._runner = Runner(cfg)
-        self._arbiter = Arbiter(cfg)
+        self.classifier = Classifier(cfg)
         self.last: RunResult | None = None
 
     @property
@@ -363,7 +368,7 @@ class BenchRunner:
     def run(self, test_path: Path, test_script: str, *, timeout: float, v8_v7: bool, keep: bool, verbose: bool) -> RunResult:
         """Execute one benchmark test and store the result in self.last."""
         basename = test_path.name
-        run_script = apply_transforms(test_script, self.cfg.bench_transforms, self.cfg.bench_prelude)
+        run_script = apply_transforms(test_script, self.cfg.bench_transforms, self.cfg.prelude)
         expected = extract_scores(run_script, basename, v8_v7=v8_v7)
 
         if keep:
@@ -376,7 +381,7 @@ class BenchRunner:
         try:
             script_path = td_path / basename
             script_path.write_text(run_script, encoding="utf-8")
-            argv = self.cfg.argv(*self.extra_flags, script_path, mode="bench")
+            argv = self.cfg.argv(*self.extra_flags, script_path, tags={"bench"})
             if verbose:
                 print(f"> cd {shlex.quote(str(td_path))}; {shlex.join(argv)}", flush=True)
             run = self._runner.run_command(
@@ -397,7 +402,7 @@ class BenchRunner:
             print(run.stderr.rstrip(), file=sys.stderr, flush=True)
 
         scores = parse_scores(run.combined_output(), expected, v8_v7=v8_v7)
-        run = self._arbiter.classify(run)
+        run = self.classifier.classify(run)
         run.benchmarks = scores  # type: ignore[assignment]
 
         if run.verdict is not Verdict.FAILED:

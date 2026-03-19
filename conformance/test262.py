@@ -168,7 +168,7 @@ def emit_preprocessed_test(
         source=source,
         fm=fm,
         scenario=scenario,
-    ), tags=fm.features | {f"includes:{i}" for i in fm.includes})
+    ), tags=fm.features | {f"includes:{i}" for i in fm.includes} | {"test262"})
     if output:
         Path(output).write_text(assembled, encoding="utf-8")
     else:
@@ -222,7 +222,7 @@ class Assembler:
     def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
-        self.preludes = engine.test262_prelude
+        self.preludes = engine.prelude
 
     def assemble(self, case: Case, *, tags: set[str] = set()) -> str:
         """Compose the runnable script for one scenario.
@@ -247,7 +247,7 @@ class Assembler:
 
         # 2. Engine prelude(s)
         for p in self.preludes:
-            if p.tag is None or p.tag in tags:
+            if (p.tag is None or p.tag in tags) and p.code:
                 pieces.append(p.code)
 
         # 3. harness/assert.js + harness/sta.js
@@ -492,7 +492,7 @@ class Executor:
         is_async = "async" in case.fm.flags
         expect_finished = not is_negative and case.scenario != "raw"
 
-        tags = case.fm.features | {f"includes:{i}" for i in case.fm.includes}
+        tags = case.fm.features | {f"includes:{i}" for i in case.fm.includes} | {"test262"}
         if is_negative:
             tags.add("negative")
         staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
@@ -501,7 +501,6 @@ class Executor:
                 self.engine.argv(
                     staged.script_path,
                     module=is_module,
-                    mode="test262",
                     tags=tags,
                 ),
                 run_id=case.case_id,
@@ -766,7 +765,7 @@ def main() -> None:
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
     if args.verbose:
-        argv_display = engine.argv("<file>", mode="test262")
+        argv_display = engine.argv("<file>", tags={"test262"})
         print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():

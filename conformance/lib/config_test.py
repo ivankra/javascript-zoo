@@ -48,11 +48,6 @@ class ResolveFlagsListTest(unittest.TestCase):
         cfg.resolve()
         self.assertEqual(cfg.flags, ["--a", "--b", "--c"])
 
-    def test_resolve_method_handles_none_test262_flags(self) -> None:
-        cfg = EngineConfig(binary_path="/bin/eng", test262_flags=None)
-        cfg.resolve()
-        self.assertIsNone(cfg.test262_flags)
-
     def test_resolve_method_is_idempotent(self) -> None:
         cfg = EngineConfig(binary_path="/bin/eng", flags=["--a", "--b"])
         cfg.resolve()
@@ -103,20 +98,16 @@ class EngineConfigCommandTest(unittest.TestCase):
         cmd = self._cfg(flags=["eval"]).argv(Path("/tmp/a.js"), "--flag", "/tmp/b.js")
         self.assertEqual(cmd, ["/usr/bin/eng", "eval", "/tmp/a.js", "--flag", "/tmp/b.js"])
 
-    def test_mode_overrides_default_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], test262_flags=["--harmony"])
-        cmd = cfg.argv("/tmp/s.js", mode="test262")
-        self.assertEqual(cmd, ["/usr/bin/eng", "--harmony", "/tmp/s.js"])
+    def test_tagged_test262_flag(self) -> None:
+        cfg = self._cfg(flags=["eval", {"tag": "test262", "flag": "--harmony"}])
+        self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags={"test262"}),
+                         ["/usr/bin/eng", "eval", "--harmony", "/tmp/s.js"])
 
-    def test_mode_falls_back_to_default_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], test262_flags=None)
-        cmd = cfg.argv("/tmp/s.js", mode="test262")
-        self.assertEqual(cmd, ["/usr/bin/eng", "eval", "/tmp/s.js"])
-
-    def test_mode_appends_extra_flags(self) -> None:
-        cfg = self._cfg(flags=["eval"], bench_flags=["-O", "-w"])
-        cmd = cfg.argv("--fast", "/tmp/s.js", mode="bench")
-        self.assertEqual(cmd, ["/usr/bin/eng", "-O", "-w", "--fast", "/tmp/s.js"])
+    def test_tagged_bench_flag(self) -> None:
+        cfg = self._cfg(flags=["eval", {"tag": "bench", "flag": "-O"}])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags={"bench"}),
+                         ["/usr/bin/eng", "eval", "-O", "/tmp/s.js"])
 
     def test_tag_flag_included_when_tag_present(self) -> None:
         cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
@@ -216,7 +207,7 @@ class EngineConfigLoadTest(unittest.TestCase):
             binary = self._make_binary(td)
             (Path(td) / "eng.json").write_text(json.dumps({"engine": "quickjs"}))
             cfg = EngineConfig.load(str(binary), config_name="nova")
-            self.assertEqual(cfg.flags, ["eval", "--no-strict"])
+            self.assertEqual(cfg.flags, ["eval", "--no-strict", "--expose-internals"])
             self.assertEqual(cfg.module_flag, "--module")
 
     def test_load_preserves_explicit_empty_list_from_sidecar(self) -> None:
@@ -305,22 +296,22 @@ class ResolvePreludesTest(unittest.TestCase):
     def test_resolve_method_resolves_preludes(self) -> None:
         cfg = EngineConfig(
             binary_path="/bin/eng",
-            test262_prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
+            prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
         )
         cfg.resolve()
-        self.assertEqual(len(cfg.test262_prelude), 1)
-        self.assertIsInstance(cfg.test262_prelude[0], Prelude)
-        self.assertEqual(cfg.test262_prelude[0].code, "var z = 1;")
+        self.assertEqual(len(cfg.prelude), 1)
+        self.assertIsInstance(cfg.prelude[0], Prelude)
+        self.assertEqual(cfg.prelude[0].code, "var z = 1;")
 
     def test_resolve_idempotent(self) -> None:
         cfg = EngineConfig(
             binary_path="/bin/eng",
-            test262_prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
+            prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
         )
         cfg.resolve()
         cfg.resolve()
-        self.assertEqual(len(cfg.test262_prelude), 1)
-        self.assertEqual(cfg.test262_prelude[0].code, "var z = 1;")
+        self.assertEqual(len(cfg.prelude), 1)
+        self.assertEqual(cfg.prelude[0].code, "var z = 1;")
 
 
 if __name__ == "__main__":
