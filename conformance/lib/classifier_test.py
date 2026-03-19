@@ -35,6 +35,7 @@ def mk_run(**kwargs: Any) -> RunResult:
 # (label, run_kwargs, classify_kwargs, want_verdict, want_error_type, want_msg_substr)
 _CLASSIFY_CASES: list[tuple[str, dict, dict, Verdict, ErrorType | None, str]] = [
     ("timeout preset",     {"exit_code": -9, "error_type": ErrorType.TIMEOUT}, {},                          Verdict.FAILED, ErrorType.TIMEOUT,                   ""),
+    ("oom preset",         {"exit_code": -9, "error_type": ErrorType.OOM, "error_message": ">1024MB"}, {}, Verdict.FAILED, ErrorType.OOM, ">1024MB"),
     ("crash signal 11",    {"exit_code": -11},                                  {},                          Verdict.FAILED, ErrorType.CRASHED,                     "SIGSEGV"),
     ("nonzero exit",       {"exit_code": 2},                                    {},                          Verdict.FAILED, ErrorType.EXIT,                      "2"),
     ("clean ok",           {"stdout": "42\n"},                                  {},                          Verdict.OK,   None,                                ""),

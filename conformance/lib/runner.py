@@ -5,10 +5,12 @@ from __future__ import annotations
 
 import dataclasses
 import os
+import re
 import resource
 import shlex
 import signal
 import subprocess
+import threading
 import time
 from enum import StrEnum
 from typing import Any
@@ -31,6 +33,7 @@ class ErrorType(StrEnum):
     CRASHED = "crashed"       # killed by a signal or runtime panic
     EXIT = "exit"             # non-zero exit code
     TIMEOUT = "timeout"
+    OOM = "OOM"
     # Standard JavaScript exception types
     SYNTAX_ERROR = "SyntaxError"
     REFERENCE_ERROR = "ReferenceError"
@@ -176,6 +179,33 @@ class RunResult:
             raise ValueError(f"invalid RunResult data: {e}") from e
 
 
+class MemoryWatchdog:
+    """Polls /proc for process group RSS and kills on limit breach."""
+
+    POLL_SEC = 1.0 / 25
+
+    def __init__(self, proc: subprocess.Popen[bytes], limit_kb: int) -> None:
+        self.proc = proc
+        self.limit_kb = limit_kb
+        self.pgid = os.getpgid(proc.pid)
+        self.oom_killed = False
+        self.peak_rss_kb = 0
+        self._thread = threading.Thread(target=self._run, daemon=True)
+        self._thread.start()
+
+    def _run(self) -> None:
+        time.sleep(self.POLL_SEC)
+        while self.proc.poll() is None:
+            rss = _read_group_rss_kb(self.pgid)
+            if rss > self.peak_rss_kb:
+                self.peak_rss_kb = rss
+            if rss > self.limit_kb:
+                self.oom_killed = True
+                _kill_pgroup(self.proc.pid, signal.SIGKILL)
+                return
+            time.sleep(self.POLL_SEC)
+
+
 class Runner:
     """Process executor: launches engine, captures output, measures resources.
 
@@ -195,6 +225,7 @@ class Runner:
         test_path: str | None = None,
         script_path: str | None = None,
         timeout_sec: float | None = None,
+        memory_limit_mb: int | None = None,
         cwd: str | None = None,
         env: dict[str, str] | None = None,
     ) -> RunResult:
@@ -202,8 +233,11 @@ class Runner:
 
         Uses resource.getrusage(RUSAGE_CHILDREN) for timing/RSS measurements.
         Timeout is two-step: SIGTERM grace period (0.2s), then SIGKILL.
+        Memory limit (when set) is enforced by polling /proc for group RSS.
         """
         timeout = timeout_sec if timeout_sec is not None else self.config.timeout_sec
+        mem_limit_mb = memory_limit_mb if memory_limit_mb is not None else self.config.memory_limit_mb
+        mem_limit_kb = mem_limit_mb * 1024
         run_cwd = cwd or self.config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
@@ -215,6 +249,7 @@ class Runner:
         start = time.monotonic()
 
         proc: subprocess.Popen[bytes] | None = None
+        watchdog: MemoryWatchdog | None = None
         stdout_b = b""
         stderr_b = b""
         timed_out = False
@@ -232,23 +267,19 @@ class Runner:
                 start_new_session=True,
             )
             self.current_proc = proc
+            if mem_limit_kb > 0:
+                watchdog = MemoryWatchdog(proc, mem_limit_kb)
             stdout_b, stderr_b = proc.communicate(timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True
             if proc is not None and proc.poll() is None:
-                try:
-                    os.killpg(os.getpgid(proc.pid), signal.SIGTERM)
-                except (ProcessLookupError, OSError):
-                    pass
+                _kill_pgroup(proc.pid, signal.SIGTERM)
                 try:
                     out, err = proc.communicate(timeout=0.2)
                     stdout_b += out
                     stderr_b += err
                 except subprocess.TimeoutExpired:
-                    try:
-                        os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
-                    except (ProcessLookupError, OSError):
-                        pass
+                    _kill_pgroup(proc.pid, signal.SIGKILL)
                     out, err = proc.communicate()
                     stdout_b += out
                     stderr_b += err
@@ -258,13 +289,13 @@ class Runner:
 
         ru_after = resource.getrusage(resource.RUSAGE_CHILDREN)
 
-        raw_stdout = stdout_b.decode("utf-8", errors="replace")
-        raw_stderr = stderr_b.decode("utf-8", errors="replace")
+        stdout = stdout_b.decode("utf-8", errors="replace")
+        stderr = stderr_b.decode("utf-8", errors="replace")
 
-        if len(raw_stdout) > self.config.output_limit:
-            raw_stdout = raw_stdout[: self.config.output_limit] + "\n... stdout truncated ...\n"
-        if len(raw_stderr) > self.config.output_limit:
-            raw_stderr = raw_stderr[: self.config.output_limit] + "\n... stderr truncated ...\n"
+        if len(stdout) > self.config.output_limit:
+            stdout = stdout[: self.config.output_limit] + "\n..."
+        if len(stderr) > self.config.output_limit:
+            stderr = stderr[: self.config.output_limit] + "\n..."
 
         metrics = RunMetrics(
             real_time=wall,
@@ -275,15 +306,17 @@ class Runner:
             ctx_switches_voluntary=max(0, int(ru_after.ru_nvcsw - ru_before.ru_nvcsw)),
             ctx_switches_involuntary=max(0, int(ru_after.ru_nivcsw - ru_before.ru_nivcsw)),
         )
-        if ru_after.ru_maxrss > 0:
-            metrics.max_rss_kb = int(ru_after.ru_maxrss)
+        peak_watchdog = watchdog.peak_rss_kb if watchdog else 0
+        peak_rusage = int(ru_after.ru_maxrss) if ru_after.ru_maxrss > 0 else 0
+        if peak_watchdog or peak_rusage:
+            metrics.max_rss_kb = max(peak_watchdog, peak_rusage)
 
         run = RunResult(
             run_id=run_id,
             command=shlex.join(argv),
             cwd=str(run_cwd),
-            stdout=raw_stdout,
-            stderr=raw_stderr,
+            stdout=stdout,
+            stderr=stderr,
             exit_code=proc.returncode if proc is not None else None,
             metrics=metrics,
             test_path=test_path,
@@ -291,9 +324,55 @@ class Runner:
             build_metadata=self.config.build_metadata,
         )
 
-        if timed_out:
+        if watchdog and watchdog.oom_killed:
+            run.verdict = Verdict.FAILED
+            run.error_type = ErrorType.OOM
+            run.error_message = f">{mem_limit_mb}MB"
+        elif timed_out:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.TIMEOUT
             run.error_message = f">{timeout:.0f}s"
 
         return run
+
+    def kill(self) -> None:
+        """Kill the currently running process group, if any."""
+        proc = self.current_proc
+        if proc is not None and proc.poll() is None:
+            _kill_pgroup(proc.pid, signal.SIGKILL)
+
+
+_RE_NSPGID = re.compile(rb"^NSpgid:\t(\d+)", re.M)
+_RE_PGID = re.compile(rb"^Pgid:\t(\d+)", re.M)
+_RE_VMRSS = re.compile(rb"^VmRSS:\s+(\d+)\s+kB", re.M)
+
+
+def _read_group_rss_kb(pgid: int) -> int:
+    """Sum VmRSS of all processes belonging to process group *pgid*."""
+    total = 0
+    try:
+        entries = os.listdir("/proc")
+    except OSError:
+        return 0
+    for entry in entries:
+        if not entry.isdigit():
+            continue
+        try:
+            with open(f"/proc/{entry}/status", "rb") as f:
+                status = f.read()
+        except (FileNotFoundError, ProcessLookupError, PermissionError):
+            continue
+        m = _RE_NSPGID.search(status) or _RE_PGID.search(status)
+        if not m or int(m.group(1)) != pgid:
+            continue
+        m = _RE_VMRSS.search(status)
+        if m:
+            total += int(m.group(1))
+    return total
+
+
+def _kill_pgroup(pid: int, sig: int) -> None:
+    try:
+        os.killpg(os.getpgid(pid), sig)
+    except (ProcessLookupError, OSError):
+        pass

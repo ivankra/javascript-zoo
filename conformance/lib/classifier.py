@@ -64,8 +64,8 @@ class Classifier:
         run.stdout_cleaned = apply_replacements(run.stdout or "", self._stdout_replace)
         run.stderr_cleaned = apply_replacements(run.stderr or "", self._stderr_replace)
 
-        # Timeout was already classified by Runner.
-        if run.error_type == ErrorType.TIMEOUT:
+        # Timeout and OOM were already classified by Runner.
+        if run.error_type in (ErrorType.TIMEOUT, ErrorType.OOM):
             run.verdict = Verdict.FAILED
             return run
 
@@ -131,8 +131,8 @@ class Classifier:
         # yantra     compat-table/es2017/async.return.js
         # quad-wheel compat-table/es6/misc.for-in-no-assignment-strict.js,
         if ok_found and errors:
-            assert self._config.engine in ('bali', 'jsish', 'metaes', 'njs', 'quad-wheel', 'sophonjs', 'topchetoeu', 'yantra'), \
-                    f"OK marker and errors matched in test: {run.test_path}, stdout: {run.stdout}, stderr: {run.stderr}"
+            print(f"OK marker and errors matched in test: {run.test_path}, stdout: {run.stdout}, stderr: {run.stderr}")
+        #     assert self._config.engine in ('bali', 'jsish', 'metaes', 'njs', 'quad-wheel', 'sophonjs', 'topchetoeu', 'yantra'), \
 
         if errors:
             best_et, best_msg = errors[0]

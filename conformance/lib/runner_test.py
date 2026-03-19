@@ -116,6 +116,20 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             run = Runner(cfg).run_command(cfg.argv("/dev/null"))
             self.assertEqual(run.build_metadata.get("version"), "1.0")
 
+    def test_oom_kill(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            cfg = EngineConfig.load(str(binary))
+            # Allocate ~100MB via python; limit to 10MB so watchdog kills it.
+            run = Runner(cfg).run_command(
+                ["python3", "-c", "x = b'A' * (100 * 1024 * 1024); import time; time.sleep(10)"],
+                memory_limit_mb=10,
+                timeout_sec=30,
+            )
+            self.assertEqual(run.verdict, Verdict.FAILED)
+            self.assertEqual(run.error_type, ErrorType.OOM)
+            self.assertIn(">10MB", run.error_message or "")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -15,6 +15,7 @@ import shlex
 import shutil
 import sys
 import tempfile
+import time
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, ClassVar, Iterator
@@ -531,7 +532,7 @@ class Executor:
 
     def _check_negative(self, fm: Frontmatter, run: RunResult) -> None:
         """Post-classify check for negative tests. Mutates run in place."""
-        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED):
+        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED, ErrorType.OOM):
             return  # leave classify()'s verdict intact
 
         if fm.negative_phase in ("parse", "resolution"):
@@ -660,6 +661,7 @@ def print_summary(
     engine_name: str,
     *,
     n_skipped: int = 0,
+    wall_sec: float = 0,
     verbose: bool = False,
     use_color: bool = False,
 ) -> int:
@@ -697,12 +699,18 @@ def print_summary(
     if edition_table:
         print(edition_table)
 
+    peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
+
     if results or n_skipped:
         line = (
             f"{engine_name}: {test_ok}/{test_ok+test_fail} tests passed "
             f"({test_ok * 100 / (test_ok + test_fail):.2f}%), "
-            f"{test_fail} failed, {n_skipped} skipped. "
+            f"{test_fail} failed, {n_skipped} skipped"
         )
+        if wall_sec:
+            line += f", wall time: {wall_sec:.3f}s"
+        if peak_rss_kb:
+            line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
     else:
         line = f"{engine_name}: no tests were run"
 
@@ -857,6 +865,7 @@ def main() -> None:
         skip_features=skip_features,
     )
 
+    wall_start = time.monotonic()
     try:
         results, n_skipped = executor.run(tests, on_test_result=on_test_result)
     except KeyboardInterrupt:
@@ -872,9 +881,10 @@ def main() -> None:
         print("No runnable scenarios")
         sys.exit(0)
 
+    wall_sec = time.monotonic() - wall_start
     fail_count = print_summary(
         results, engine.name,
-        n_skipped=n_skipped, verbose=args.verbose, use_color=use_color,
+        n_skipped=n_skipped, wall_sec=wall_sec, verbose=args.verbose, use_color=use_color,
     )
 
     if args.output:

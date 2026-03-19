@@ -11,6 +11,7 @@ import os
 import re
 import sys
 import tempfile
+import time
 from collections import Counter
 from pathlib import Path
 
@@ -139,6 +140,7 @@ def main() -> None:
     next_dir_index = 0
 
     results_by_test: dict[str, tuple[str, str, RunResult]] = {}
+    wall_start = time.monotonic()
     with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as pool:
         futs = {
             pool.submit(run_one, runner, classifier, cfg, CONFORMANCE_DIR / rel, rel): rel
@@ -219,11 +221,17 @@ def main() -> None:
             )
         print('')
 
+    wall_sec = time.monotonic() - wall_start
+    peak_rss_kb = max((r.metrics.max_rss_kb or 0) for _, _, r in results) if results else 0
+
     if failed:
         pct = passed * 100 // total if total else 0
         summary = f"{passed}/{total} ({pct}%) passed, {failed} failed"
     else:
         summary = f"All {passed} tests passed"
+    summary += f", wall time: {wall_sec:.3f}s"
+    if peak_rss_kb:
+        summary += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
     print(summary)
 
 

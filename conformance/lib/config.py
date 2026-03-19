@@ -62,6 +62,7 @@ class EngineConfig:
 
     # --- Process defaults ---
     timeout_sec: float = 30.0
+    memory_limit_mb: int = 4096
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
     output_limit: int = 1000000
