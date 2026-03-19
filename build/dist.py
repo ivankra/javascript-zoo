@@ -433,6 +433,7 @@ def _run_engine(binary_path: Path, run_script_cmd: str | None, *script_files: Pa
 def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) -> str:
     attempts: list[tuple[str, str, str]] = []
     expected = "hello world"
+    res = []
 
     with tempfile.TemporaryDirectory(prefix="jsz-dist-") as tmp:
         for func in ["console.log", "print"]:
@@ -446,12 +447,14 @@ def probe_console_log_function(binary_path: Path, run_script_cmd: str | None) ->
                 continue
 
             attempts.append((func, proc.stdout, proc.stderr))
-            on_stdout = _has_line_with_substring(proc.stdout, expected)
-            on_stderr = _has_line_with_substring(proc.stderr, expected)
-            if on_stdout and not on_stderr:
-                return func
-            if on_stderr and not on_stdout:
-                return func
+            output = proc.stdout + proc.stderr
+            if _has_line_with_substring(output, expected):
+                res.append(func)
+
+    if res:
+        if len(res) == 1:
+            return res[0]
+        return res
 
     print(
         f"dist.py: could not detect console.log/print for {binary_path}",
@@ -489,6 +492,8 @@ def run_smoke_test(binary_path: Path) -> None:
     console_log = meta.get("console_log")
     if not console_log:
         fail(f"no console_log in {json_path}")
+    if type(console_log) is list:
+        console_log = console_log[0]
 
     run_script_cmd = meta.get("run_script_cmd")
     test_code = meta.get("smoke_test_js", "%(console_log)s(40+2);")

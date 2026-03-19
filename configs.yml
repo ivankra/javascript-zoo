@@ -36,23 +36,27 @@
     "thread '([^']+)' \\([0-9]+\\) panicked at": "thread '\\1' panicked at"
 
 42tiny-js:
+  console_log: ['console.log', 'print']
   errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: at Line:[0-9]+ Column:[0-9]+)*$'
   stdout_replace_re:
     - '^> ': ''
 
 ant:
+  console_log: console.log
   errors_re:
     - *exception_colon_message
   test262_prelude: 'var print = console.log.bind(console);'
 
 bali:
+  console_log: console.log
   stdout_replace_re:
     - 'Log ': ''
   errors_re:
     - '^WARN *parser.* (?P<message>parsing error.*)'
 
 besen:
+  console_log: ['console.log', 'print']
   bench_ignore_errors: true
   bench_suite: ['richards.js', 'crypto.js', 'deltablue.js', 'navier-stokes.js']
   errors_re:
@@ -60,6 +64,7 @@ besen:
     - '^ThrowException: (?P<message>.+?)$'
 
 boa:
+  console_log: console.log
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -79,6 +84,7 @@ boa:
     file: engines/boa/prelude.js
 
 bramblex:
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
     - '^Uncaught exception: (?P<message>.+?)$'
@@ -110,6 +116,7 @@ carakan:
     - *uncaught_exception_colon_message
 
 castl:
+  console_log: console.log
   errors_re:
     - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
     - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>.*)$'
@@ -118,20 +125,17 @@ castl:
     - 'throw new (?P<type>SyntaxError)\("(?P<message>Couldn.t transpile JS code): ".*'
 
 cesanta-elk:
+  console_log: ['console.log', 'print']
   errors_re:
     - '^Error: ERROR: (?P<message>.+?)$'
 
-continuum:
-  stdout_replace_re:
-    - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
-  errors_re:
-    - *uncaught_exception_colon_message
-
 cesanta-mjs:
+  console_log: print
   errors_re:
     - '^MJS error: (?P<message>.+?)$'
 
 cesanta-v7:
+  console_log: print
   bench_suite: ['richards.js']
   multiple_scripts_with_shared_realm: true
   errors_re:
@@ -143,16 +147,26 @@ cesanta-v7:
     - '^(Exec error [^:]+): "Internal error"': '\1: InternalError'
 
 chakracore: &chakracore
+  console_log: ['console.log', 'print', 'WScript.Echo']
   errors_re:
     - *exception_colon_message
   module_flag: -module
   # test262_flags: ['-Test262']  # requires --test-build
 
+continuum:
+  console_log: console.log
+  stdout_replace_re:
+    - "Property '@@@[a-zA-Z0-9]+' is not a function": "Property is not a function"
+  errors_re:
+    - *uncaught_exception_colon_message
+
 delskayn:
+  console_log: console.log
   errors_re:
     - *uncaught_exception_colon_message
 
 derkjs:
+  console_log: console.log
   flags: ['-r']
 
 dmdscript:
@@ -182,11 +196,13 @@ dscriptcpp:
     - '^Exception: ([^ ()]*\([0-9]+\) : Error: )?(?P<message>.+)$'
 
 duktape: &duktape
+  console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
 
 echosoar:
   bench_transforms: ['hex']
+  console_log: console.log
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -196,6 +212,7 @@ echosoar:
     - '^\S+: JSIError \{ error_type: (?P<type>[A-Za-z0-9]*Error), message: "(?P<message>[^"]*)"'
 
 ejscript:
+  console_log: print
   crash_re:
     - '^(?P<message>Assertion .*, failed at [^:]+:[0-9]+)'
   errors_re:
@@ -204,6 +221,7 @@ ejscript:
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
 
 engine262:
+  console_log: ['console.log', 'print']
   stdout_replace_re:
     - "^'(.*)'$": '\1'
   errors_re:
@@ -212,10 +230,12 @@ engine262:
   module_flag: --module
 
 epimetheus:
+  console_log: ['console.log', 'print']
   stdout_replace_re:
     - 'Welcome to Epimetheus.': ''
 
 escargot:
+  console_log: print
   module_flag: --module
   multiple_scripts_with_shared_realm: true
   errors_re:
@@ -223,6 +243,7 @@ escargot:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?):?$'
 
 espruino:
+  console_log: ['console.log', 'print']
   stdout_replace_re:
     - '^([| ]____|[|]  |.*espruino.com|.*G.William|Espruino is Open Source|only by sales).*': ''
     - '^>(.)\1{50,}': ''
@@ -231,11 +252,13 @@ espruino:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 eval5:
+  console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message
 
 fastschema-qjs:
+  console_log: ['console.log', 'print']
   crash_re:
     - *go_crash_re
   errors_re:
@@ -243,6 +266,7 @@ fastschema-qjs:
   module_flag: --module
 
 fesi: &fesi
+  console_log: writeln
   stderr_replace_re:
     - '^Syntax error ': 'SyntaxError: '
     - '^Lexical error ': 'SyntaxError: '
@@ -256,10 +280,12 @@ fesi: &fesi
     - *java_crash_re
 
 flathead:
+  console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
 
 goja:
+  console_log: console.log
   crash_re:
     - *go_crash_re
   errors_re:
@@ -268,6 +294,7 @@ goja:
     - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
 
 graaljs:
+  console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
   module_flag: --module
@@ -293,6 +320,7 @@ graaljs:
     - --js.worker=true
 
 hako:
+  console_log: console.log
   crash_re:
     - *go_crash_re
   errors_re:
@@ -316,19 +344,24 @@ hermes: &hermes
   test262_prelude:
     file: engines/hermes/prelude.js
 
-hermes-v1: *hermes
+hermes-v1:
+  <<: *hermes
+  console_log: ['console.log', 'print']
 
 iv-lv5:
+  console_log: ['console.log', 'print']
   errors_re:
     # "SyntaxError: file.js:10: SyntaxError: unexpected token class"
     - '^(?P<type>[A-Za-z0-9]*Error): [^ ]+:[0-9]+: \1: (?P<message>.+)$'
     - *exception_colon_message
 
 je-perl:
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
 
 jerryscript: &jerryscript
+  console_log: print
   bench_timeout_for_test:
     splay.js: 300
     typescript.js: 3600
@@ -338,10 +371,21 @@ jerryscript: &jerryscript
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 jint:
-  #console_log: ["console.log", "print"]
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
   module_flag: --module
+
+jispy:
+  console_log: ['console.log', 'print']
+
+js2py:
+  console_log: console.log
+  stdout_replace_re:
+    - "^'(.*)'$": '\1'
+    - '^"(.*)"$': '\1'
+  errors_re:
+    - '^js2py.internals.simplex.JsException: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 jsc: &jsc
   console_log: print
@@ -359,6 +403,7 @@ jsc: &jsc
     - --useTemporal=true
 
 jsish:
+  console_log: console.log
   stderr_replace_re:
     # test.js:1:   "42",  or  typeof.null.js:11:  "...",
     - '^\S+[.]js:[0-9]+: +"([^"]*)", *$': '\1'
@@ -371,22 +416,20 @@ jsish:
     - '^[^:]+[.]js:[0-9]+: (?P<type>[A-Za-z]+Error): (?P<message>.+)$'
     - '^[^:]+[.]js:[0-9]+: error: (?P<message>.+)$'
 
+jsse:
+  console_log: ['console.log', 'print']
+
 js-interpreter:
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
-js2py:
-  stdout_replace_re:
-    - "^'(.*)'$": '\1'
-    - '^"(.*)"$': '\1'
-  errors_re:
-    - '^js2py.internals.simplex.JsException: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-
 jscript: &jscript
-  stderr_replace_re: &jscript_replace
+  console_log: ['console.log', 'print', 'WScript.Echo']
+  stderr_replace_re: &jscript_replace_re
     - 'Microsoft JScript compilation error: Syntax error': 'Microsoft JScript compilation error: SyntaxError'
-  stderr_replace_re: *jscript_replace
+  stdout_replace_re: *jscript_replace_re
   errors_re:
     - '^.*Microsoft JScript compilation error: (?P<type>SyntaxError)$'
     # cscript.exe:
@@ -401,6 +444,7 @@ jscript: &jscript
   # TODO: warmup_cmd
 
 jscript9:
+  console_log: ['console.log', 'print', 'WScript.Echo']
   stderr_replace_re:
     - '^Compilation error$': 'SyntaxError'
   errors_re:
@@ -409,26 +453,31 @@ jscript9:
   # TODO: warmup_cmd
 
 jurassic:
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
 
 kiesel:
+  console_log: console.log
   module_flag: --module
   errors_re:
     - *uncaught_exception_colon_message
 
 kjs:
+  console_log: print
   stderr_replace_re:
     - '^LEAK: [0-9]+ KJS::Node$': ''
   errors_re:
     - '^\S+ \(line [0-9]+\): (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
 kodjodevf:
+  console_log: console.log
   errors_re:
     - *uncaught_exception_colon_message
 
 lebjs:
   bench_suite: ['richards.quad-wheel.js']
+  console_log: console.log
   crash_re:
     - *java_crash_re
   errors_re:
@@ -436,6 +485,7 @@ lebjs:
     - *exception_colon_message
 
 libjs: &libjs
+  console_log: ['console.log', 'print']
   stdout_replace_re:
     # console.log output gets quoted
     - '(?m)^"(.*)"$': '\1'
@@ -453,10 +503,14 @@ libjs: &libjs
     - --use-test262-global
   module_flag: --as-module
 
+metaes:
+  console_log: ['console.log', 'print']
+
 mocha:
   bench_prelude:
     - 'var console = new Object(); console.log = print;'
   bench_suite: ['richards.es1.js']
+  console_log: print
   errors_re:
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
@@ -464,6 +518,7 @@ mocha:
     - '^Mocha: [^,]+[.]js, line [0-9]+: (nested comment|illegal character):?$'
 
 modernc-quickjs:
+  console_log: ['console.log', 'print']
   crash_re:
     - *go_crash_re
   errors_re:
@@ -471,12 +526,14 @@ modernc-quickjs:
   module_flag: --module
 
 mquickjs: &mquickjs
+  console_log: ['console.log', 'print']
   bench_prelude:
     - file: bench/prelude-strict.js
   errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
 mujs:
+  console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^(SyntaxError: .*)undefined$': '\1'
   errors_re:
@@ -484,6 +541,7 @@ mujs:
     - *exception_colon_message
 
 narcissus:
+  console_log: ['console.log', 'print']
   bench_suite: ['richards.js1.js']
   stderr_replace_re:
     - '^:[0-9]+:[0-9]+ ': ''
@@ -491,6 +549,7 @@ narcissus:
     - *exception_colon_message
 
 nashorn:
+  console_log: print
   crash_re:
     - *java_crash_re
   flags: ['--language=es6']
@@ -505,6 +564,7 @@ nashorn:
     - '^java.lang.RuntimeException: (?P<message>.*)$'
 
 ngs:
+  console_log: print
   stderr_replace_re:
     - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.js:[0-9]+: .*)$': '\1 \2'
   errors_re:
@@ -514,12 +574,14 @@ ngs:
   bench_suite: ['richards.tiny-js.js']
 
 niljs:
+  console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
   module_flag: --module
 
 njs:
+  console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
   bench_prelude:
@@ -551,12 +613,15 @@ nova:
   #   - '(^error:|Error:|TypeError|(?:error|panic|exception|uncaught|mismatch|failed|invalid|incorrect|unsupported|cannot|can''t))'
 
 otto:
+  console_log: console.log
   crash_re:
     - *go_crash_re
   errors_re:
     - *exception_colon_message
 
 porffor:
+  # print() exists but broken
+  console_log: console.log
   bench_prelude:
     - 'var print=console.log;'
   bench_suite: ['richards.porffor.js']
@@ -565,11 +630,13 @@ porffor:
     - *exception_colon_message
 
 primjs:
+  console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
+  console_log: console.log
   stderr_replace_re:
     - '^[0-9]+\[[-0-9]+\]:syntax error, ': 'SyntaxError: '
   errors_re:
@@ -580,33 +647,34 @@ quanta:
   bench_prelude:
     - 'var print=console.log;'
   bench_suite: ['richards.quanta.js']
+  console_log: console.log
   errors_re:
     - *exception_colon_message
 
 quickjs: &quickjs
+  console_log: ['console.log', 'print']
   module_flag: --module
   errors_re:
     - *exception_colon_message
 
-quickjs_262:
+quickjs_262: &quickjs_262
   # quickjs's run-test262 binary
   <<: *quickjs
-  console_log: print  # no console.log() in run-test262
+  # no console.log() in run-test262
+  console_log: print
   flags: ['-N']  # -N: run test prepared by test262-harness+eshost
 
-quickjs-ng: &quickjs_ng
+quickjs-ng:
   flags: ['--script']  # misdetects module mode often enough
   module_flag: --module
   errors_re:
     - *exception_colon_message
 
-quickjs-ng_262:
-  <<: *quickjs_ng
-  console_log: print  # no console.log() in run-test262
-  flags: ['-N']  # -N: run test prepared by test262-harness+eshost
+quickjs-ng_262: *quickjs_262
 
 qv4:
   bench_transforms: ['octal']
+  console_log: ['console.log', 'print']
   module_flag: --module
   stderr_replace_re:
     - 'qt\.qml\.usedbeforedeclared:': ''
@@ -615,6 +683,7 @@ qv4:
     - *uncaught_exception_colon_message
 
 rapidus:
+  console_log: console.log
   bench_prelude:
     - 'var print=console.log;'
   bench_suite: ['richards.rapidus.js']
@@ -627,12 +696,14 @@ rapidus:
     - '^Runtime error: [^ ]+\.js:[0-9]+:[0-9]+: (?P<message>.+)$'
 
 reeva:
+  console_log: console.log
   crash_re:
     - *java_crash_re
   errors_re:
     - *uncaught_exception_colon_message
 
 rhino:
+  console_log: ['console.log', 'print']
   crash_re:
     - *java_crash_re
   stdout_replace_re:
@@ -651,12 +722,14 @@ rhino:
     - '^(?P<message>java.lang.StackOverflowError)$'
 
 rpython-langjs:
+  console_log: print
   errors_re:
     - '^ERROR in [^:]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>NotImplementedError)$'
   multiple_scripts_with_shared_realm: true
 
 rust-js:
+  console_log: console.log
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -665,19 +738,25 @@ rust-js:
     - '^\S+[.]js: (?P<type>[A-Za-z0-9]*Error)(?:: (?P<message>.+))?$'
 
 sablejs:
+  console_log: ['console.log', 'print']
   warnings_re:
     - '\[WARN\]'
   errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
     - *uncaught_exception_colon_message
 
+sandboxjs:
+  console_log: ['console.log', 'print']
+
 see:
+  console_log: print
   stderr_replace_re:
     - 'WARNING: SEE is using non-release malloc': ''
   errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+[.]js:[0-9]+: )?(?P<message>.+)$'
 
 sobek:
+  console_log: ['console.log', 'print']
   crash_re:
     - *go_crash_re
   errors_re:
@@ -686,6 +765,7 @@ sobek:
   module_flag: --module
 
 sophonjs:
+  console_log: console.log
   stderr_replace_re:
     - '^LOG: ': ''
   errors_re:
@@ -693,6 +773,7 @@ sophonjs:
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
 
 spidermonkey: &spidermonkey
+  console_log: ['console.log', 'print']
   errors_re: &sm_exc
     # "/tmp/x.js:1: ReferenceError: x is not defined"
     - '^[^:]+:[0-9]+:?([0-9]+)?:? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -730,6 +811,7 @@ spidermonkey_1.5: &sm15
   bench_prelude:
     - file: bench/prelude-print.js
     - file: bench/prelude-es5.js
+  console_log: print
   errors_re: *sm_exc
   flags: []
   module_flag:
@@ -746,16 +828,19 @@ spidermonkey_1.8.5:
 
 spidermonkey_17:
   # -m/--methodjit  Enable the JaegerMonkey method JIT
+  console_log: print
   flags: ['-m']
   module_flag:
   errors_re: *sm_exc
 
 spidermonkey_24:
+  console_log: print
   flags: []
   module_flag:
   errors_re: *sm_exc
 
 ssrlive:
+  console_log: console.log
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -763,6 +848,7 @@ ssrlive:
 
 starlight:
   bench_suite: ['richards.js1.js']
+  console_log: print
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -772,6 +858,7 @@ starlight:
     - *uncaught_exception_colon_message
 
 starlingmonkey:
+  console_log: console.log
   stdout_replace_re:
     - '^Log: ': ''
   errors_re: *sm_exc
@@ -779,18 +866,24 @@ starlingmonkey:
     file: engines/spidermonkey/prelude.js
   # TODO: warmup_cmd
 
+stator:
+  console_log: ['console.log', 'print']
+
 sval:
+  console_log: ['console.log', 'print']
   stdout_replace_re:
     - "(Cannot read properties of null) [(]reading '.*'[)]": '\1'
   errors_re:
     - *exception_colon_message
 
 syoyo:
+  console_log: console.log
   stdout_replace_re:
     - "LightJS REPL v1.0.0": ""
     - "Type '.help' for help, '.exit' to quit": ""
 
 tiny-js:
+  console_log: ['console.log', 'print']
   bench_suite: ['richards.tiny-js.js']
   errors_re:
     - '^ERROR:(?: Error)?(?P<message>.+?)( at \(line: [0-9]+, col: [0-9]+\))*$'
@@ -799,11 +892,13 @@ tiny-js:
     - 'ERROR: Error (Got .* expected .*?)( at \(line: [0-9]+, col: [0-9]+\))*$': '\nSyntaxError: \1'
 
 topaz:
+  console_log: ['console.log', 'print']
   errors_re:
     - '^(?P<type>SyntaxError): (?P<message>.+)$'
     - '^Runtime error: (TopazException: )?(?P<message>.+)$'
 
 topchetoeu:
+  console_log: ['console.log', 'print']
   crash_re:
     - *java_crash_re
   multiple_scripts_with_shared_realm: true
@@ -813,6 +908,7 @@ topchetoeu:
     - '^Running j2s .*': ''
 
 twostroke:
+  console_log: console.log
   bench_suite: ['richards.es1.js']
   errors_re:
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
@@ -821,10 +917,12 @@ twostroke:
 
 ucode:
   bench_suite: ['richards.ucode.js']
+  console_log: print
   stderr_replace_re:
     - "^Syntax error: ": "SyntaxError: "
 
 v8: &v8
+  console_log: ['console.log', 'print']
   module_flag: --module
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
@@ -853,6 +951,7 @@ v8: &v8
 wine: *jscript
 
 xs: &xs
+  console_log: print
   module_flag: -m
   multiple_scripts_with_shared_realm: true
   errors_re:
@@ -863,14 +962,16 @@ xs: &xs
 yaji: *fesi
 
 yantra:
+  console_log: console.log
   stdout_replace_re:
     - '^\[object Object\]$': ''
     - '^[0-9]+/[0-9]+/20[0-9][0-9] [0-9]+:[0-9]+:[0-9]+.[AP]M$': ''  # uses \u202f
 
 yavashark:
-  flags: ['-i']  # -i Run with the tree-walk-interpreter (more stable)
+  console_log: console.log
   crash_re:
     - *rust_crash_re
+  flags: ['-i']  # -i Run with the tree-walk-interpreter (more stable)
   stderr_replace_re:
     - *rust_crash_norm_re
   stdout_replace_re:
@@ -880,8 +981,12 @@ yavashark:
     - '^Error: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
 zhuzilin:
+  console_log: console.log
   errors_re:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
+
+zuqe:
+  console_log: ['console.log', 'print']
 
 # --------------------------------------------------------------------
 # Runtimes
@@ -914,7 +1019,7 @@ deno:
 # GNOME/Cinnamon JavaScript runtime (SpiderMonkey)
 gjs: &gjs
   # TODO: accept list for console_log
-  #console_log: ['console.log', 'print']
+  console_log: ['console.log', 'print']
   stderr_replace_re:
     - '.js-Console-Message: [0-9:.]+: ': ''
     - '[(].js-console:[0-9]+[)]: ': ''

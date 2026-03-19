@@ -21,11 +21,6 @@ VAR_CONSOLE_LOG_JS = CONFORMANCE_DIR / "lib/var-console-log.js"
 TIMEOUT_SEC = 10.0
 
 
-def patch_console_log(source: str, console_log: str) -> str:
-    """Replace console.log with engine-specific print function."""
-    return source.replace("console.log", console_log)
-
-
 def run_one(
     runner: Runner,
     arbiter: Arbiter,
@@ -34,15 +29,18 @@ def run_one(
     test_id: str,
 ) -> tuple[str, str, RunResult]:
     """Run a single conformance test, return (test_id, status_text)."""
-    console_log = cfg.console_log or "console.log"
-    if console_log == "console.log":
+    console_log = cfg.console_log or ["console.log"]
+    if type(console_log) is str:
+        console_log = [console_log]
+
+    if "console.log" in console_log:
         run = runner.run_command(
             cfg.argv(test_path),
             run_id=test_id,
             test_path=str(test_path),
             script_path=str(test_path),
         )
-    elif console_log == "print" and cfg.multiple_scripts_with_shared_realm is True:
+    elif "print" in console_log and cfg.multiple_scripts_with_shared_realm is True:
         # Engine accepts multiple script files with shared environment
         # between them, so we can just tell it to load a preamble file.
         run = runner.run_command(
@@ -53,7 +51,7 @@ def run_one(
         )
     else:
         source = test_path.read_text(encoding="utf-8", errors="replace")
-        source = patch_console_log(source, console_log)
+        source = source.replace("console.log", console_log[0])
         with tempfile.TemporaryDirectory(prefix="conf-") as td:
             patched = Path(td) / test_path.name
             patched.write_text(source, encoding="utf-8")

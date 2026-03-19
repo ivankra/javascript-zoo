@@ -42,8 +42,9 @@ class EngineConfig:
     build_metadata: dict[str, Any] = dataclasses.field(default_factory=dict)
 
     # --- Promoted sidecar fields ---
-    # Print function name detected at build time ("console.log" or "print", etc).
-    console_log: str = ""
+    # Print function name - "console.log", "print", etc.
+    # Can be a list if multiple functions are available.
+    console_log: str | list[str] = dataclasses.field(default_factory=list)
     # Engine base name from build_metadata (e.g. "quickjs").
     engine: str = ""
     # Whether multiple script args are supported and share one JS realm.
