@@ -36,9 +36,6 @@ var $262 = {
     }
   },
 
-  // Requires --allow-natives-syntax flag
-  //IsHTMLDDA: (function() { try { return Function('%GetUndetectable()')(); } catch(e) {} })(),
-  //AbstractModuleSource: (function() { try { return Function('%GetAbstractModuleSource()')(); } catch(e) {} })(),
 };
 
 // $262.agent implementation from upstream:

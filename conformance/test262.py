@@ -168,7 +168,7 @@ def emit_preprocessed_test(
         source=source,
         fm=fm,
         scenario=scenario,
-    ))
+    ), tags=fm.features | {f"includes:{i}" for i in fm.includes})
     if output:
         Path(output).write_text(assembled, encoding="utf-8")
     else:
@@ -222,41 +222,13 @@ class Assembler:
     def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
-        self.prelude, self.prelude_file = self._resolve_prelude(engine.test262_prelude)
-        if verbose:
-            if self.prelude_file:
-                sys.stderr.write(f"Using prelude file: {self.prelude_file}\n")
-            elif self.prelude:
-                sys.stderr.write(f"Using prelude: {self.prelude}\n")
+        self.preludes = engine.test262_prelude
 
-    @staticmethod
-    def _resolve_prelude(entry: str | dict[str, str] | None) -> tuple[str | None, str | None]:
-        """Resolve test262_prelude config value to (content, file_path).
+    def assemble(self, case: Case, *, tags: set[str] = set()) -> str:
+        """Compose the runnable script for one scenario.
 
-        Accepts:
-          None           → (None, None)
-          "js code"      → ("js code", None)
-          {"file": path} → (resolved content, path)
-
-        File paths are relative to repo root. $SOURCE in file content is
-        replaced with a JSON-quoted copy of itself (eshost's inception trick).
+        *tags* gates conditional preludes ({"tag": ...} entries).
         """
-        if entry is None:
-            return None, None
-        if isinstance(entry, str):
-            return entry, None
-        if isinstance(entry, dict) and "file" in entry:
-            repo_root = Path(__file__).resolve().parent.parent
-            path = str(entry["file"])
-            content = (repo_root / path).read_text(encoding="utf-8")
-            if "$SOURCE" in content:
-                inner = content.replace("$SOURCE", '""', 1)
-                content = content.replace("$SOURCE", json.dumps(inner), 1)
-            return content, path
-        raise TypeError(f"test262_prelude must be a string or {{'file': ...}}, got {type(entry).__name__}")
-
-    def assemble(self, case: Case) -> str:
-        """Compose the runnable script for one scenario."""
 
         # "raw" tests may not be modified
         if case.scenario == "raw":
@@ -273,9 +245,10 @@ class Assembler:
             # Add it commented-out to avoid line number drift between cases
             pieces.append('//"use strict";\n')
 
-        # 2. Engine prelude
-        if self.prelude:
-            pieces.append(self.prelude)
+        # 2. Engine prelude(s)
+        for p in self.preludes:
+            if p.tag is None or p.tag in tags:
+                pieces.append(p.code)
 
         # 3. harness/assert.js + harness/sta.js
         # 4. harness/doneprintHandle.js (if async)
@@ -297,9 +270,9 @@ class Assembler:
 
         return "\n".join(pieces)
 
-    def stage(self, case: Case, *, temp_dir: Path, save_compiled: Path | None = None) -> StagedScript:
+    def stage(self, case: Case, *, temp_dir: Path, save_compiled: Path | None = None, tags: set[str] = set()) -> StagedScript:
         """Assemble and write script to disk, staging module trees if needed."""
-        assembled = self.assemble(case)
+        assembled = self.assemble(case, tags=tags)
 
         if save_compiled is not None:
             dst = save_compiled / f"{case.rel_path}.{case.scenario}.js"
@@ -519,13 +492,17 @@ class Executor:
         is_async = "async" in case.fm.flags
         expect_finished = not is_negative and case.scenario != "raw"
 
-        staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled)
+        tags = case.fm.features | {f"includes:{i}" for i in case.fm.includes}
+        if is_negative:
+            tags.add("negative")
+        staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
         try:
             run = self.runner.run_command(
                 self.engine.argv(
                     staged.script_path,
                     module=is_module,
                     mode="test262",
+                    tags=tags,
                 ),
                 run_id=case.case_id,
                 test_path=str(case.test_path),
@@ -787,10 +764,10 @@ def main() -> None:
     args = p.parse_args()
 
     engine = EngineConfig.load(args.engine, config_name=args.config)
+    engine.resolve()
     if args.verbose:
-        engine.resolve()
         argv_display = engine.argv("<file>", mode="test262")
-        print(f"Running: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
+        print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
         sys.exit(f"test262 dir not found: {test262_dir}")

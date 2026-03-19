@@ -46,7 +46,8 @@ ant:
   console_log: console.log
   errors_re:
     - *exception_colon_message
-  test262_prelude: 'var print = console.log.bind(console);'
+  test262_prelude:
+    - code: 'var print = console.log.bind(console);'
 
 bali:
   console_log: console.log
@@ -81,7 +82,7 @@ boa:
   module_flag: --module
   test262_flags: ['--debug-object']  # exposes $boa object
   test262_prelude:
-    file: engines/boa/prelude.js
+    - file: engines/boa/prelude.js
 
 bramblex:
   console_log: ['console.log', 'print']
@@ -108,8 +109,8 @@ brimstone: &brimstone
     - --expose-gc
   # built-in print() with --expose-test-262 only takes strings and
   # doesn't print to stdout/stderr
-  test262_prelude: |
-    globalThis.print = console.log.bind(console);
+  test262_prelude:
+    - code: 'globalThis.print = console.log.bind(console);'
 
 carakan:
   errors_re:
@@ -171,7 +172,7 @@ derkjs:
 
 dmdscript:
   bench_prelude:
-    - 'var console = {log: println}, print = println;'
+    - code: 'var console = {log: println}, print = println;'
     - file: bench/prelude-es5.js
   console_log: println
   stderr_replace_re:
@@ -183,7 +184,7 @@ dmdscript:
 
 dscriptcpp:
   bench_prelude:
-    - 'var console = {log: println}, print = println;'
+    - code: 'var console = {log: println}, print = println;'
     - file: bench/prelude-es5.js
   bench_suite: ['richards.es1.js']
   console_log: println
@@ -342,7 +343,7 @@ hermes: &hermes
     - '(?P<type>(SyntaxError)) [^ ]+[.]js:(?P<line>[0-9]+):[0-9]+: error: (?P<message>.+?)[.]?$'
     - '^[^ ]+[.]js:[0-9]+:[0-9]+: error: (?P<message>.+?)[.]?$'
   test262_prelude:
-    file: engines/hermes/prelude.js
+    - file: engines/hermes/prelude.js
 
 hermes-v1:
   <<: *hermes
@@ -508,7 +509,7 @@ metaes:
 
 mocha:
   bench_prelude:
-    - 'var console = new Object(); console.log = print;'
+    - code: 'var console = new Object(); console.log = print;'
   bench_suite: ['richards.es1.js']
   console_log: print
   errors_re:
@@ -556,7 +557,7 @@ nashorn:
   module_flag: -m
   multiple_scripts_with_shared_realm: true
   test262_prelude:
-    file: engines/nashorn/prelude.js
+    - file: engines/nashorn/prelude.js
   stderr_replace_re:
     - '^Exception in thread "main" .*\.js:[0-9]+:[0-9]+ (?P<message>.*not yet implemented.*)$': 'java.lang.RuntimeException: \1'
   errors_re:
@@ -570,7 +571,7 @@ ngs:
   errors_re:
     - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<message>.*)$'
   bench_prelude:
-    - 'var console = {log: print};'
+    - code: 'var console = {log: print};'
   bench_suite: ['richards.tiny-js.js']
 
 niljs:
@@ -598,7 +599,7 @@ nova:
   module_flag: --module
   test262_flags: ['eval', '--no-strict', '--expose-internals']
   test262_prelude:
-    file: engines/nova/prelude.js
+    - file: engines/nova/prelude.js
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -623,7 +624,7 @@ porffor:
   # print() exists but broken
   console_log: console.log
   bench_prelude:
-    - 'var print=console.log;'
+    - code: 'var print=console.log;'
   bench_suite: ['richards.porffor.js']
   module_flag: --module
   errors_re:
@@ -645,7 +646,7 @@ quad-wheel:
 
 quanta:
   bench_prelude:
-    - 'var print=console.log;'
+    - code: 'var print=console.log;'
   bench_suite: ['richards.quanta.js']
   console_log: console.log
   errors_re:
@@ -685,7 +686,7 @@ qv4:
 rapidus:
   console_log: console.log
   bench_prelude:
-    - 'var print=console.log;'
+    - code: 'var print=console.log;'
   bench_suite: ['richards.rapidus.js']
   crash_re:
     - *rust_crash_re
@@ -804,7 +805,7 @@ spidermonkey: &spidermonkey
     - --enable-iterator-join
     - --enable-legacy-regexp
   test262_prelude:
-    file: engines/spidermonkey/prelude.js
+    - file: engines/spidermonkey/prelude.js
 
 spidermonkey_1.5: &sm15
   # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
@@ -863,7 +864,7 @@ starlingmonkey:
     - '^Log: ': ''
   errors_re: *sm_exc
   test262_prelude:
-    file: engines/spidermonkey/prelude.js
+    - file: engines/spidermonkey/prelude.js
   # TODO: warmup_cmd
 
 stator:
@@ -921,6 +922,8 @@ ucode:
   stderr_replace_re:
     - "^Syntax error: ": "SyntaxError: "
 
+# Upstream test262 config: see _get_files_params/_get_suite_flags in
+# https://github.com/v8/v8/blob/master/test/test262/testcfg.py
 v8: &v8
   console_log: ['console.log', 'print']
   module_flag: --module
@@ -930,7 +933,8 @@ v8: &v8
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   warnings_re:
     - '^[^:]+:[0-9]+: Error: Unhandled Promise.$'
-  flags: &v8_flags
+  # Shared flags between d8 and node
+  node_flags: &node_flags
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
     - --allow-natives-syntax
@@ -945,8 +949,16 @@ v8: &v8
           sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
           grep 'default: --no-' | \
           sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
+  # d8-specific flags
+  flags:
+    - *node_flags
+    - --ignore-unhandled-promises  # e.g. test/built-ins/Promise/any/ctx-ctor.js
+    - --no-arguments  # disable top-level arguments in d8
+    - {tag: "CanBlockIsFalse", flag: "--no-can-block"}
   test262_prelude:
-    file: engines/v8/prelude.js
+    - file: engines/v8/prelude.js
+    - {tag: "IsHTMLDDA", file: engines/v8/prelude-IsHTMLDDA.js}
+    - {tag: "source-phase-imports", file: engines/v8/prelude-AbstractModuleSource.js}
 
 wine: *jscript
 
@@ -998,8 +1010,8 @@ node:
   errors_re:
     - *exception_colon_message
   test262_prelude:
-    file: engines/v8/prelude-node.js
-  flags: *v8_flags
+    - file: engines/v8/prelude-node.js
+  flags: *node_flags
 
 bun:
   console_log: console.log
@@ -1027,7 +1039,7 @@ gjs: &gjs
     - '.*js-CRITICAL ..: [0-9:.]+: JS ERROR: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
   module_flag: --module
   test262_prelude:
-    file: engines/spidermonkey/prelude.js
+    - file: engines/spidermonkey/prelude.js
 
 # --------------------------------------------------------------------
 # Aliases: eshost host types and alternative binary names

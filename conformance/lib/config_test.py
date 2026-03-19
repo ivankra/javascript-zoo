@@ -13,8 +13,8 @@ from typing import Any
 from unittest import mock
 
 import conformance.lib.config as config_module
-from conformance.lib import EngineConfig, Runner
-from conformance.lib.config import _resolve_flags_list, load_configs_dict
+from conformance.lib import EngineConfig, Prelude, Runner
+from conformance.lib.config import _resolve_flags_list, load_configs_dict, resolve_preludes
 
 
 class ResolveFlagsListTest(unittest.TestCase):
@@ -59,6 +59,22 @@ class ResolveFlagsListTest(unittest.TestCase):
         cfg.resolve()
         self.assertEqual(cfg.flags, ["--a", "--b"])
 
+    def test_tag_item_preserved(self) -> None:
+        tag_item = {"tag": "Intl", "flag": "--intl"}
+        result = _resolve_flags_list(["--a", tag_item], "")
+        self.assertEqual(result, ["--a", tag_item])
+
+    def test_tag_item_in_nested_list(self) -> None:
+        tag_item = {"tag": "Intl", "flag": "--intl"}
+        result = _resolve_flags_list([[tag_item, "--b"]], "")
+        self.assertEqual(result, [tag_item, "--b"])
+
+    def test_resolve_preserves_tag_items(self) -> None:
+        tag_item = {"tag": "Intl", "flag": "--intl"}
+        cfg = EngineConfig(binary_path="/bin/eng", flags=["--a", tag_item])
+        cfg.resolve()
+        self.assertEqual(cfg.flags, ["--a", tag_item])
+
 
 
 class EngineConfigCommandTest(unittest.TestCase):
@@ -101,6 +117,32 @@ class EngineConfigCommandTest(unittest.TestCase):
         cfg = self._cfg(flags=["eval"], bench_flags=["-O", "-w"])
         cmd = cfg.argv("--fast", "/tmp/s.js", mode="bench")
         self.assertEqual(cmd, ["/usr/bin/eng", "-O", "-w", "--fast", "/tmp/s.js"])
+
+    def test_tag_flag_included_when_tag_present(self) -> None:
+        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cmd = cfg.argv("/tmp/s.js", tags={"Intl"})
+        self.assertEqual(cmd, ["/usr/bin/eng", "--a", "--intl", "/tmp/s.js"])
+
+    def test_tag_flag_excluded_when_tag_absent(self) -> None:
+        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cmd = cfg.argv("/tmp/s.js", tags=set())
+        self.assertEqual(cmd, ["/usr/bin/eng", "--a", "/tmp/s.js"])
+
+    def test_tag_flag_excluded_by_default(self) -> None:
+        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cmd = cfg.argv("/tmp/s.js")
+        self.assertEqual(cmd, ["/usr/bin/eng", "--a", "/tmp/s.js"])
+
+    def test_multiple_tag_flags(self) -> None:
+        cfg = self._cfg(flags=[
+            "--base",
+            {"tag": "Intl", "flag": "--intl"},
+            {"tag": "Atomics", "flag": "--harmony-atomics"},
+        ])
+        cmd = cfg.argv("/tmp/s.js", tags={"Intl", "Atomics"})
+        self.assertEqual(cmd, ["/usr/bin/eng", "--base", "--intl", "--harmony-atomics", "/tmp/s.js"])
+        cmd2 = cfg.argv("/tmp/s.js", tags={"Atomics"})
+        self.assertEqual(cmd2, ["/usr/bin/eng", "--base", "--harmony-atomics", "/tmp/s.js"])
 
 
 class EngineConfigLoadTest(unittest.TestCase):
@@ -199,6 +241,86 @@ class EngineConfigLoadTest(unittest.TestCase):
     def test_missing_binary_raises(self) -> None:
         with self.assertRaises(SystemExit):
             EngineConfig.load("/nonexistent/binary")
+
+
+class ResolvePreludesTest(unittest.TestCase):
+    def test_empty_list(self) -> None:
+        self.assertEqual(resolve_preludes([]), [])
+
+    def test_code_item(self) -> None:
+        result = resolve_preludes([{"code": "var x = 1;"}])
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0].code, "var x = 1;")
+        self.assertIsNone(result[0].file)
+        self.assertIsNone(result[0].tag)
+
+    def test_file_item(self) -> None:
+        with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
+            f.write("var y = 2;\n")
+            f.flush()
+            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+        try:
+            result = resolve_preludes([{"file": rel}])
+            self.assertEqual(len(result), 1)
+            self.assertEqual(result[0].code, "var y = 2;\n")
+            self.assertEqual(result[0].file, rel)
+            self.assertIsNone(result[0].tag)
+        finally:
+            os.unlink(f.name)
+
+    def test_tag_on_code_item(self) -> None:
+        result = resolve_preludes([{"tag": "Intl", "code": "// intl"}])
+        self.assertEqual(result[0].tag, "Intl")
+        self.assertEqual(result[0].code, "// intl")
+
+    def test_tag_on_file_item(self) -> None:
+        with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
+            f.write("// tagged\n")
+            f.flush()
+            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+        try:
+            result = resolve_preludes([{"tag": "IsHTMLDDA", "file": rel}])
+            self.assertEqual(result[0].tag, "IsHTMLDDA")
+            self.assertEqual(result[0].code, "// tagged\n")
+        finally:
+            os.unlink(f.name)
+
+    def test_source_inception(self) -> None:
+        with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
+            f.write('eval($SOURCE);\n')
+            f.flush()
+            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+        try:
+            result = resolve_preludes([{"file": rel}])
+            assert result[0].code is not None
+            self.assertNotIn("$SOURCE", result[0].code)
+            self.assertIn("eval(", result[0].code)
+        finally:
+            os.unlink(f.name)
+
+    def test_missing_file_or_code_raises(self) -> None:
+        with self.assertRaises(TypeError):
+            resolve_preludes([{"tag": "X"}])
+
+    def test_resolve_method_resolves_preludes(self) -> None:
+        cfg = EngineConfig(
+            binary_path="/bin/eng",
+            test262_prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
+        )
+        cfg.resolve()
+        self.assertEqual(len(cfg.test262_prelude), 1)
+        self.assertIsInstance(cfg.test262_prelude[0], Prelude)
+        self.assertEqual(cfg.test262_prelude[0].code, "var z = 1;")
+
+    def test_resolve_idempotent(self) -> None:
+        cfg = EngineConfig(
+            binary_path="/bin/eng",
+            test262_prelude=[{"code": "var z = 1;"}],  # type: ignore[list-item]
+        )
+        cfg.resolve()
+        cfg.resolve()
+        self.assertEqual(len(cfg.test262_prelude), 1)
+        self.assertEqual(cfg.test262_prelude[0].code, "var z = 1;")
 
 
 if __name__ == "__main__":

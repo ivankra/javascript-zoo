@@ -22,6 +22,17 @@ CONFIGS_YML = REPO_ROOT / "configs.yml"
 
 
 @dataclasses.dataclass
+class Prelude:
+    """Prelude snippet, optionally gated on a tag."""
+    # Inline prelude snippet or file content (loaded by EngineConfig.resolve())
+    code: str | None = None
+    # Prelude file path relative to repo root
+    file: str | None = None
+    # If set, only include this prelude if test262 tag/feature is present
+    tag: str | None = None
+
+
+@dataclasses.dataclass
 class EngineConfig:
     """Engine invocation configuration, shared between all runs.
 
@@ -32,8 +43,9 @@ class EngineConfig:
     # --- Invocation ---
     binary_path: str | None = None
     # Flags always prepended before the script path.
-    # Items may be str, {"shell": "..."} (expanded via bash), or list[str] (flattened).
-    # Call resolve() to expand these to plain list[str] before use.
+    # Items may be str, {"shell": "..."} (expanded via bash), list[str] (flattened),
+    # or {"tag": "<name>", "flag": "<flag>"} (included only when tag is in tags set).
+    # Call resolve() to expand shell/list items before use.
     flags: list[str | dict[str, str] | list] = dataclasses.field(default_factory=list)
     # Extra flag appended after flags, before the script path, in module mode only.
     module_flag: str | None = None
@@ -76,8 +88,8 @@ class EngineConfig:
     bench_flags: list[str | dict[str, str] | list] | None = None
     # JS prelude snippets prepended to each benchmark script.
     # None = use mode default (prelude-print.js); [] = no prelude; [...] = use these.
-    # Each item is either an inline JS string or {"file": "path/relative/to/repo"}.
-    bench_prelude: list[str | dict[str, str]] | None = None
+    # Resolved by resolve() into list[Prelude].
+    bench_prelude: list[Prelude] | None = None
     bench_transforms: list[str] = dataclasses.field(default_factory=list)
     # Per-test timeout overrides (seconds), keyed by benchmark basename.
     bench_timeout_for_test: dict[str, float] = dataclasses.field(default_factory=dict)
@@ -92,9 +104,13 @@ class EngineConfig:
     conformance_jobs: int = 8
 
     # --- test262 mode ---
-    # JS prelude injected before harness includes.
-    # Either inline JS string or {"file": "path"} dict.
-    test262_prelude: str | dict[str, str] | None = None
+    # JS prelude(s) injected before harness includes. List of dicts:
+    #   {"file": "path"}             → file content (unconditional)
+    #   {"code": "..."}              → inline JS (unconditional)
+    #   {"tag": "X", "file": "path"} → file content (when tag X present)
+    #   {"tag": "X", "code": "..."}  → inline JS (when tag X present)
+    # Resolved by resolve() into list[Prelude].
+    test262_prelude: list[Prelude] = dataclasses.field(default_factory=list)
     # Test262-only flags. If set (even to []), override `flags` in test262.py.
     test262_flags: list[str | dict[str, str] | list] | None = None
     # Default test262 feature skips for this engine. CLI --skip-features overrides.
@@ -105,21 +121,33 @@ class EngineConfig:
         return Path(self.binary_path).name if self.binary_path else ""
 
     def resolve(self) -> None:
-        """Expand shell items and flatten nested lists in all flags fields in-place.
+        """Expand shell items, flatten nested lists, and resolve preludes in-place.
 
         Shell items: {"shell": "bash command"} — run via bash -c with $BINARY set.
         Each non-empty output line becomes one flag.
         Nested lists are flattened recursively.
-        Safe to call multiple times (no-op on already-resolved list[str]).
+        Safe to call multiple times (no-op on already-resolved fields).
         """
         binary = self.binary_path or ""
         for attr in ("flags", "test262_flags", "bench_flags"):
             val = getattr(self, attr)
             if val is not None:
                 setattr(self, attr, _resolve_flags_list(val, binary))
+        for attr in ("test262_prelude", "bench_prelude"):
+            val = getattr(self, attr)
+            if val is None or not val or isinstance(val[0], Prelude):
+                continue
+            setattr(self, attr, resolve_preludes(val))
 
-    def argv(self, *args: Path | str, module: bool = False, mode: str = "") -> list[str]:
-        """Build execution argv: binary + selected flags [+ module_flag] + positional args."""
+    def argv(
+        self, *args: Path | str,
+        module: bool = False, mode: str = "", tags: set[str] = set(),
+    ) -> list[str]:
+        """Build execution argv: binary + selected flags [+ module_flag] + positional args.
+
+        Conditional flags ({"tag": ..., "flag": ...}) are included only when
+        the tag is present in the *tags* set.
+        """
         cmd = [str(self.binary_path)]
         if mode == "bench" and self.bench_flags is not None:
             flags = self.bench_flags
@@ -128,9 +156,13 @@ class EngineConfig:
         else:
             flags = self.flags
         for flag in flags:
-            if not isinstance(flag, str):
+            if isinstance(flag, str):
+                cmd.append(flag)
+            elif isinstance(flag, dict) and "tag" in flag and "flag" in flag:
+                if flag["tag"] in tags:
+                    cmd.append(flag["flag"])
+            else:
                 raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")
-        cmd.extend(flags)  # type: ignore[arg-type]
         if module and self.module_flag:
             cmd.append(self.module_flag)
         cmd.extend(str(arg) for arg in args)
@@ -182,11 +214,17 @@ class EngineConfig:
 
 
 
-def _resolve_flags_list(items: list, binary_path: str) -> list[str]:
-    """Recursively expand shell items and flatten nested lists to list[str]."""
-    result: list[str] = []
+def _resolve_flags_list(items: list, binary_path: str) -> list[str | dict[str, str]]:
+    """Recursively expand shell items and flatten nested lists.
+
+    Tag-conditional items ({"tag": ..., "flag": ...}) are preserved as-is
+    and evaluated later in argv().
+    """
+    result: list[str | dict[str, str]] = []
     for item in items:
         if isinstance(item, str):
+            result.append(item)
+        elif isinstance(item, dict) and "tag" in item and "flag" in item:
             result.append(item)
         elif isinstance(item, list):
             result.extend(_resolve_flags_list(item, binary_path))
@@ -205,6 +243,35 @@ def _resolve_flags_list(items: list, binary_path: str) -> list[str]:
             result.extend(line for line in proc.stdout.splitlines() if line.strip())
         else:
             sys.exit(f"unexpected flags item: {item!r}")
+    return result
+
+
+def resolve_preludes(items: list) -> list[Prelude]:
+    """Resolve a prelude config list to a list of Prelude.
+
+    Each item is a dict with:
+      {"file": path}                 → unconditional file (relative to repo root)
+      {"code": "..."}                → unconditional inline
+      {"tag": name, "file": path}    → conditional file
+      {"tag": name, "code": "..."}   → conditional inline
+
+    File content containing $SOURCE gets the eshost inception trick applied:
+    $SOURCE is replaced with a JSON-quoted copy of itself.
+    """
+    result: list[Prelude] = []
+    for item in items:
+        tag = item.get("tag")
+        if "file" in item:
+            path = str(item["file"])
+            code = (REPO_ROOT / path).read_text(encoding="utf-8")
+            if "$SOURCE" in code:
+                inner = code.replace("$SOURCE", '""', 1)
+                code = code.replace("$SOURCE", json.dumps(inner), 1)
+            result.append(Prelude(code=code, file=path, tag=tag))
+        elif "code" in item:
+            result.append(Prelude(code=item["code"], tag=tag))
+        else:
+            raise TypeError(f"prelude dict must have 'file' or 'code', got {item!r}")
     return result
 
 

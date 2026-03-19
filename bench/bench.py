@@ -25,7 +25,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
-from conformance.lib import Arbiter, EngineConfig, RunResult, Runner, Verdict, read_json
+from conformance.lib import Arbiter, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
@@ -268,23 +268,7 @@ def _replace_hex(m: re.Match[str]) -> str:
     return s
 
 
-def resolve_prelude(prelude: list[str | dict[str, str]] | None) -> str:
-    """Resolve a bench_prelude list to a single JS string to prepend.
-
-    None/[] → empty; items may be inline JS strings or {"file": "..."} dicts.
-    """
-    parts: list[str] = []
-    for item in (prelude or []):
-        if isinstance(item, dict):
-            text = (REPO_ROOT / item["file"]).read_text(encoding="utf-8").strip()
-        else:
-            text = item.strip()
-        if text:
-            parts.append(text)
-    return "\n".join(parts) + "\n" if parts else ""
-
-
-def apply_transforms(script: str, transforms: list[str], prelude: list[str | dict[str, str]] | None) -> str:
+def apply_transforms(script: str, transforms: list[str], prelude: list[Prelude] | None) -> str:
     """Apply named transforms and prepend resolved prelude to script."""
     for name in transforms:
         if name == "octal":
@@ -296,9 +280,9 @@ def apply_transforms(script: str, transforms: list[str], prelude: list[str | dic
                 script,
             )
 
-    prelude_str = resolve_prelude(prelude)
-    if prelude_str:
-        script = prelude_str + script
+    parts = [p.code.strip() for p in (prelude or []) if p.code and p.code.strip()]
+    if parts:
+        script = "\n".join(parts) + "\n" + script
 
     return script
 
@@ -454,6 +438,7 @@ class BenchRunner:
         parts = shlex.split(spec)
         binary_spec, extra_flags = parts[0], parts[1:]
         cfg = EngineConfig.load(binary_spec, config_name=config_name)
+        cfg.resolve()
         output.parent.mkdir(parents=True, exist_ok=True)
 
         result = BenchResult.new(cfg)
