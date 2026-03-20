@@ -13,7 +13,7 @@ import tempfile
 from functools import lru_cache
 from pathlib import Path
 
-from .config import EngineConfig
+from .config import EngineConfig, Prelude
 from .frontmatter import Frontmatter
 from .util import expand_template_literals, iterate_js_files
 
@@ -71,10 +71,12 @@ class Assembler:
     temp dir mirroring the test262 layout for module resolution.
     """
 
-    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, save_compiled: str | None = None) -> None:
+    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, save_compiled: str | None = None, no_harness: bool = False) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
+        self.no_harness = no_harness
+        self.print_prelude = build_print_prelude(engine.console_log, self.preludes)
         self.save_compiled = Path(save_compiled) if save_compiled else None
         if self.save_compiled:
             self.save_compiled.mkdir(parents=True, exist_ok=True)
@@ -102,14 +104,19 @@ class Assembler:
             if (p.tag is None or p.tag in scenario.tags) and p.code:
                 pieces.append(p.code)
 
+        # 2b. Auto-generated print() prelude (when engine doesn't have print natively)
+        if self.print_prelude:
+            pieces.append(self.print_prelude)
+
         # 3. harness/assert.js + harness/sta.js
         # 4. harness/doneprintHandle.js (if async)
         # 5. Metadata includes in the order listed
-        harness = ["assert.js", "sta.js"]
-        if "async" in scenario.fm.flags:
-            harness.append("doneprintHandle.js")
-        harness.extend(name for name in scenario.fm.includes if name not in harness)
-        pieces.extend(self._read_harness(name) for name in harness)
+        if not self.no_harness:
+            harness = ["assert.js", "sta.js"]
+            if "async" in scenario.fm.flags:
+                harness.append("doneprintHandle.js")
+            harness.extend(name for name in scenario.fm.includes if name not in harness)
+            pieces.extend(self._read_harness(name) for name in harness)
 
         # 6. Test source body
         pieces.append(scenario.test_content)
@@ -260,3 +267,39 @@ class Assembler:
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(dep_path, dst)
+
+
+def build_print_prelude(console_log: str | list[str], preludes: list[Prelude]) -> str | None:
+    """Generate a JS prelude to define print() from console_log functions.
+
+    Returns None if print is already available (in console_log list or defined by a prelude).
+    """
+
+    if not console_log:
+        console_log = ["console.log"]
+    if isinstance(console_log, str):
+        console_log = [console_log]
+    if "print" in console_log:
+        return None
+    # Check if any prelude already defines print
+    if any(p.code and "print" in p.code for p in preludes if p.tag is None):
+        return None
+
+    lines = ["// Define print()"]
+    for fn in console_log:
+        parts = fn.split(".")
+        # Build typeof checks for each component: typeof console != "undefined" && typeof console.log == "function"
+        checks: list[str] = []
+        for i in range(len(parts)):
+            prefix = ".".join(parts[: i + 1])
+            if i < len(parts) - 1:
+                checks.append(f'typeof {prefix} !== "undefined"')
+            else:
+                checks.append(f'typeof {prefix} === "function"')
+        guard = " && ".join(checks)
+        lines.append(f"if (typeof print === \"undefined\" && {guard}) {{")
+        lines.append(f"  if (typeof globalThis === \"object\") globalThis.print = {fn};")
+        lines.append(f"  else if (typeof this === \"object\") this.print = {fn};")
+        lines.append(f"  if (typeof print === \"undefined\") print = {fn};")
+        lines.append("}")
+    return "\n".join(lines) + "\n"

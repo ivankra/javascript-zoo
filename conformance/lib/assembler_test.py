@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 from conformance.lib import Frontmatter, Scenario
-from conformance.lib.assembler import Assembler
+from conformance.lib.assembler import Assembler, build_print_prelude
 from conformance.lib.config import EngineConfig, Prelude
 
 
@@ -193,6 +193,40 @@ class TestStageModule(unittest.TestCase):
                 self.assertIn("var x;", content)
             finally:
                 staged.cleanup()
+
+
+class TestBuildPrintPrelude(unittest.TestCase):
+    def test_print_in_console_log_returns_none(self):
+        self.assertIsNone(build_print_prelude(["print"], []))
+
+    def test_prelude_defines_print_returns_none(self):
+        prelude = [Prelude(code="var print = function() {};")]
+        self.assertIsNone(build_print_prelude([], prelude))
+
+    def test_tagged_prelude_with_print_not_skipped(self):
+        # Tagged preludes don't count — they're conditional
+        prelude = [Prelude(code="var print = function() {};", tag="test262")]
+        result = build_print_prelude([], prelude)
+        self.assertIsNotNone(result)
+
+    def test_console_log_generates_prelude(self):
+        result = build_print_prelude(["console.log"], [])
+        self.assertIn("console.log", result)
+        self.assertIn("globalThis.print", result)
+
+    def test_empty_console_log_defaults_to_console_log(self):
+        result = build_print_prelude([], [])
+        self.assertIsNotNone(result)
+        self.assertIn("console.log", result)
+
+    def test_multiple_console_log_functions(self):
+        result = build_print_prelude(["console.log", "WScript.Echo"], [])
+        self.assertIn("console.log", result)
+        self.assertIn("WScript.Echo", result)
+
+    def test_print_with_other_fns_returns_none(self):
+        # If print is in the list, no prelude needed regardless of others
+        self.assertIsNone(build_print_prelude(["print", "console.log"], []))
 
 
 if __name__ == "__main__":
