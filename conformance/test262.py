@@ -25,7 +25,6 @@ from lib import (
     EngineConfig,
     ErrorType,
     Frontmatter,
-    test262_features_yaml,
     Reporter,
     RunResult,
     Runner,
@@ -37,7 +36,9 @@ from lib import (
 SCRIPT_DIR = Path(__file__).parent.resolve()
 DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
-INTL402_SKIP_PATHS = ("test/intl402", "test/staging/Intl402")
+INTL402_SKIP_PATHS = ["test/intl402", "test/staging/Intl402"]
+STAGING_SKIP_PATHS = ["test/staging"]
+ANNEX_B_SKIP_PATHS = ["test/annexB"]
 
 _REL_SPECIFIER_RE = re.compile(
     r"""(?:"""
@@ -49,49 +50,6 @@ _REL_SPECIFIER_RE = re.compile(
 )
 
 
-def emit_preprocessed_test(
-    tests: list[str],
-    test262_dir: Path,
-    assembler: Assembler,
-    *,
-    mode: str = "all",
-    output: str | None = None,
-) -> None:
-    """Emit one assembled test to stdout or a file."""
-    if len(tests) != 1:
-        sys.exit("-E requires exactly one test path")
-
-    emit_tests = list(itertools.islice(
-        iterate_js_files(tests, root=test262_dir),
-        2,
-    ))
-    if not emit_tests:
-        sys.exit(f"no tests matched: {tests[0]}")
-    if len(emit_tests) != 1:
-        sys.exit(f"-E requires exactly one matched test, got multiple for: {tests[0]}")
-
-    rel_path = emit_tests[0]
-    test_path = test262_dir / rel_path
-    source = test_path.read_text(encoding="utf-8", errors="replace")
-    fm = Frontmatter.parse(source)
-    modes = [m for m in fm.modes() if mode == "all" or mode == m]
-    if not modes:
-        sys.exit(f"no runnable mode for {mode!r}: {rel_path}")
-
-    assembled = assembler.assemble(Scenario(
-        test_path=test_path,
-        test_content=source,
-        rel_path=rel_path,
-        fm=fm,
-        mode=modes[0],
-    ), tags=fm.tags(modes[0])
-    )
-    if output:
-        Path(output).write_text(assembled, encoding="utf-8")
-    else:
-        sys.stdout.write(assembled)
-
-
 @dataclasses.dataclass
 class Scenario:
     """One test × mode combination to execute (file already read)."""
@@ -100,6 +58,7 @@ class Scenario:
     rel_path: str            # path relative to test262 root
     fm: Frontmatter          # parsed YAML frontmatter
     mode: str                # "strict" or "sloppy"
+    tags: frozenset[str] = frozenset()  # precomputed fm.tags()
 
     def display_id(self) -> str:
         if len(self.fm.modes()) > 1:
@@ -134,16 +93,16 @@ class Assembler:
     temp dir mirroring the test262 layout for module resolution.
     """
 
-    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False) -> None:
+    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, save_compiled: str | None = None) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
+        self.save_compiled = Path(save_compiled) if save_compiled else None
+        if self.save_compiled:
+            self.save_compiled.mkdir(parents=True, exist_ok=True)
 
-    def assemble(self, scenario: Scenario, *, tags: frozenset[str] = frozenset()) -> str:
-        """Compose the runnable script for one scenario.
-
-        *tags* gates conditional preludes ({"tag": ...} entries).
-        """
+    def assemble(self, scenario: Scenario) -> str:
+        """Compose the runnable script for one scenario."""
 
         # "raw" tests may not be modified
         if "raw" in scenario.fm.flags:
@@ -162,7 +121,7 @@ class Assembler:
 
         # 2. Engine prelude(s)
         for p in self.preludes:
-            if (p.tag is None or p.tag in tags) and p.code:
+            if (p.tag is None or p.tag in scenario.tags) and p.code:
                 pieces.append(p.code)
 
         # 3. harness/assert.js + harness/sta.js
@@ -180,18 +139,18 @@ class Assembler:
         # 7. Marker to indicate that control flow reached end of the test script
         if not scenario.fm.negative_type:
             # Separate marker with + against false positives when engine just dumps the source
-            pieces.append(f'print("ScriptExec"+"utionFinished");\n')
+            pieces.append(f'\nprint("ScriptExec"+"utionFinished");\n')
 
         return "\n".join(pieces)
 
     SCRIPT_EXECUTION_FINISHED_MARKER = "ScriptExecutionFinished"
 
-    def stage(self, scenario: Scenario, *, temp_dir: Path, save_compiled: Path | None = None, tags: frozenset[str] = frozenset()) -> StagedScript:
+    def stage(self, scenario: Scenario, *, temp_dir: Path) -> StagedScript:
         """Assemble and write script to disk, staging module trees if needed."""
-        assembled = self.assemble(scenario, tags=tags)
+        assembled = self.assemble(scenario)
 
-        if save_compiled is not None:
-            dst = save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
+        if self.save_compiled is not None:
+            dst = self.save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_text(assembled, encoding="utf-8")
 
@@ -221,6 +180,41 @@ class Assembler:
             pkg.write_text('{"type": "module"}\n', encoding="utf-8")
 
         return StagedScript(script_path=entry_dst, cwd=tmp_root, tmp_dir=tmp_root)
+
+    def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
+        """Emit one assembled test to stdout or a file."""
+        if len(tests) != 1:
+            sys.exit("-E requires exactly one test path")
+
+        emit_tests = list(itertools.islice(
+            iterate_js_files(tests, root=self.test262_dir),
+            2,
+        ))
+        if not emit_tests:
+            sys.exit(f"no tests matched: {tests[0]}")
+        if len(emit_tests) != 1:
+            sys.exit(f"-E requires exactly one matched test, got multiple for: {tests[0]}")
+
+        rel_path = emit_tests[0]
+        test_path = self.test262_dir / rel_path
+        source = test_path.read_text(encoding="utf-8", errors="replace")
+        fm = Frontmatter.parse(source)
+        modes = [m for m in fm.modes() if mode == "all" or mode == m]
+        if not modes:
+            sys.exit(f"no runnable mode for {mode!r}: {rel_path}")
+
+        assembled = self.assemble(Scenario(
+            test_path=test_path,
+            test_content=source,
+            rel_path=rel_path,
+            fm=fm,
+            mode=modes[0],
+            tags=fm.tags(modes[0]),
+        ))
+        if output:
+            Path(output).write_text(assembled, encoding="utf-8")
+        else:
+            sys.stdout.write(assembled)
 
     @lru_cache(maxsize=100)
     def _read_harness(self, name: str) -> str:
@@ -300,7 +294,6 @@ class Executor:
         *,
         jobs: int = 4,
         timeout_sec: float = DEFAULT_TIMEOUT_SEC,
-        save_compiled: Path | None = None,
         mode: str = "all",
         include_features: set[str] | None = None,
         skip_features: set[str] | None = None,
@@ -311,7 +304,6 @@ class Executor:
         self.runner = Runner(engine)
         self.classifier = Classifier(engine)
         self.timeout_sec = timeout_sec
-        self.save_compiled = save_compiled
         self.mode = mode
         self.include_features = include_features
         self.skip_features = skip_features
@@ -374,7 +366,7 @@ class Executor:
             return [RunResult(
                 run_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
-                tags=fm.tags(),
+                tags=tags,
             )]
         if self.skip_features:
             blocked = tags & self.skip_features
@@ -382,13 +374,13 @@ class Executor:
                 return [RunResult(
                     run_id=rel_path, test_path=str(test_path),
                     verdict=Verdict.SKIPPED, error_message=f"skip features: {', '.join(sorted(blocked))}",
-                    tags=fm.tags(),
+                    tags=tags,
                 )]
 
         return [
             self._execute_one(Scenario(
                 test_path=test_path, test_content=source, rel_path=rel_path,
-                fm=fm, mode=mode,
+                fm=fm, mode=mode, tags=fm.tags(mode),
             ))
             for mode in fm.modes() if self.mode == "all" or self.mode == mode
         ]
@@ -400,14 +392,10 @@ class Executor:
         is_async = "async" in scenario.fm.flags
         expect_finished = not is_negative and "raw" not in scenario.fm.flags
 
-        tags = scenario.fm.tags(scenario.mode)
-        staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
+        staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp)
         try:
             run = self.runner.run_command(
-                self.engine.argv(
-                    staged.script_path,
-                    tags=tags,
-                ),
+                self.engine.argv(staged.script_path, tags=scenario.tags),
                 run_id=scenario.display_id(),
                 test_path=str(scenario.test_path),
                 script_path=str(staged.script_path),
@@ -422,8 +410,8 @@ class Executor:
                 ok_pattern = (Assembler.SCRIPT_EXECUTION_FINISHED_MARKER if expect_finished else None)
                 self.classifier.classify(run, expect_async=is_async, ok_pattern=ok_pattern)
 
-            run.tags = tags
             run.mode = scenario.mode
+            run.tags = scenario.tags
             return run
         finally:
             staged.cleanup()
@@ -463,70 +451,75 @@ class Executor:
 def main() -> None:
     p = argparse.ArgumentParser(
         description="Run test262 conformance suite against a JavaScript engine.",
-        usage="%(prog)s [opts] engine [test globs]",
+        usage="%(prog)s [opts] engine [tests]",
     )
-    p.add_argument("engine", help="Engine binary path or name")
-    p.add_argument("tests", nargs="*", help="Test paths/dirs/globs relative to test262/test")
-    p.add_argument("--config", help="Force a specific config entry from config.yml")
+    p.add_argument("engine", help="Engine binary path or a shell command (e.g. /dist/v8, node, 'node --js-staging')")
+    p.add_argument("tests", nargs="*",
+                  help=("Test files/dirs globs relative to test262 root. "
+                        "Glob matching a directory selects all *.js files recursively. "
+                        "May use ** globs, e.g. test/**/Temporal to match all Temporal subdirs."))
+    p.add_argument("-f", "--features", action="append", default=[], metavar="LIST",
+                   help=("Only run tests which have one of these features/tags (comma-separated). "
+                         "You can filter for frontmatter features/flags/fields and esNNNN tags "
+                         "(highest ES edition of any feature)"))
+    p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
+                   help="Skip tests which have any of these features/tags (comma-separated)")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
+    p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], metavar="MODE", default="all",
+                   help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
+    p.add_argument("--output-format", choices=["auto", "simple", "json"], default="auto", metavar="FMT",
+                   help="Output format: 'simple' (one line per test), 'json', 'auto' (detect from extension, default)")
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
-                   help="Timeout for each test in seconds")
-    p.add_argument("-f", "--features", action="append", default=[], metavar="LIST",
-                   help="Only run tests requiring these features (comma-separated)")
-    p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], default="all",
-                   help="Run only strict or sloppy mode")
+                   help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
+    p.add_argument("--config", help="Force a specific config entry from configs.yml (normally inferred from binary basename)")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Exclude test paths matching the pattern")
-    p.add_argument("--no-intl", action="store_false", dest="intl", default=True,
-                   help="Exclude Intl402 tests (i.e. --exclude={" + ",".join(INTL402_SKIP_PATHS) + "})")
-    p.add_argument("--intl", action="store_true", dest="intl", help=argparse.SUPPRESS)
-    p.add_argument("--limit", type=int, default=0, help="Run at most N test files")
-    p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
-                   help="Skip tests requiring these features (comma-separated)")
-    p.add_argument("--output-format", choices=["auto", "simple", "json"], default="auto",
-                   help="Output format (default: auto, detect from extension)")
+    p.add_argument("--no-annex-b", action="store_true", default=False,
+                   help="Exclude test/annexB tests")
+    p.add_argument("--no-intl", action="store_true", default=False,
+                   help="Exclude " + " and ".join(INTL402_SKIP_PATHS) + " tests")
+    p.add_argument("--no-staging", action="store_true", default=False,
+                   help="Exclude test/staging tests")
+    p.add_argument("--limit", type=int, default=0, metavar="N",
+                   help="Stop after running N tests")
     p.add_argument("-E", action="store_true", dest="emit",
-                   help="Emit a single preprocessed test to stdout or -o FILE")
+                   help="Preprocess a single test and write it to stdout or -o FILE")
     p.add_argument("--save-compiled", metavar="DIR",
-                   help="Save assembled test scripts to directory")
+                   help="Save assembled test scripts to this directory")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
-                   help=f"Root of test262 repo (default: {DEFAULT_TEST262_DIR})")
+                   help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
 
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
+
     if args.verbose:
         argv_display = engine.argv("<file>", tags=frozenset({"test262"}))
         print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
+
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
         sys.exit(f"test262 dir not found: {test262_dir}")
     if not (test262_dir / "harness").exists():
         sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
-    assembler = Assembler(engine, test262_dir, verbose=args.verbose)
 
-    save_compiled = Path(args.save_compiled) if args.save_compiled else None
-    if save_compiled:
-        save_compiled.mkdir(parents=True, exist_ok=True)
-
+    assembler = Assembler(engine, test262_dir, verbose=args.verbose, save_compiled=args.save_compiled)
     if args.emit:
-        emit_preprocessed_test(
-            args.tests,
-            test262_dir,
-            assembler,
-            mode=args.mode,
-            output=args.output,
-        )
+        assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
 
     # Stage 1: discover test paths (no file I/O)
     exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
-    if not args.intl:
+    if args.no_intl:
         exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
+    if args.no_staging:
+        exclude_pats.extend(re.compile(re.escape(s)) for s in STAGING_SKIP_PATHS)
+    if args.no_annex_b:
+        exclude_pats.extend(re.compile(re.escape(s)) for s in ANNEX_B_SKIP_PATHS)
 
     test_root = test262_dir
     tests = iterate_js_files(
@@ -547,14 +540,13 @@ def main() -> None:
         engine,
         verbose=args.verbose,
         test262=True,
-        editions_order=list(test262_features_yaml().keys()),
+        test262_dir=test262_dir,
     )
 
     executor = Executor(
         engine, assembler,
         jobs=args.jobs,
         timeout_sec=args.timeout,
-        save_compiled=save_compiled,
         mode=args.mode,
         include_features=include_features,
         skip_features=skip_features,

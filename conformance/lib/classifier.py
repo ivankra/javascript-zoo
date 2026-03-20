@@ -19,7 +19,7 @@ _JS_ERROR_NAME_RE = re.compile(
 
 
 class Classifier:
-    """Convert a raw RunResult into verdict/error_type/error_message."""
+    """Annotates RunResult with verdict/error_type/error_message."""
 
     # Strip ANSI escape sequences (CSI codes) from all engine output by default.
     _ANSI_RE = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")

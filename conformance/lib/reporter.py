@@ -13,8 +13,9 @@ from pathlib import Path
 from typing import Any
 
 from .config import EngineConfig
-from .frontmatter import EXTRA_TAGS, TEST262_FLAGS
+from .frontmatter import EXTRA_TAGS, TEST262_FLAGS, test262_features_yaml
 from .runner import RunResult, Verdict
+from .util import get_git_revision
 
 
 # ── Stats ─────────────────────────────────────────────────────────────────────
@@ -128,8 +129,10 @@ def format_output_line(run: RunResult) -> str:
 
 # ── JSON formatting ──────────────────────────────────────────────────────────
 
+_INLINE_DICT_KEYS = frozenset({"ok", "fail", "skip", "strict", "sloppy"})
+
 def _is_inline_json(value: Any) -> bool:
-    return isinstance(value, dict) and bool(value) and all(isinstance(v, int) for v in value.values())
+    return isinstance(value, dict) and bool(value) and set(value.keys()) <= _INLINE_DICT_KEYS
 
 
 def _format_json_value(value: Any, indent: int) -> str:
@@ -143,8 +146,8 @@ def _format_json_value(value: Any, indent: int) -> str:
                  for k, v in value.items()]
         return "{\n" + ",\n".join(items) + "\n" + pad + "}"
     if isinstance(value, list):
-        if not value:
-            return "[]"
+        if not value or all(isinstance(v, (int, float, str)) for v in value):
+            return json.dumps(value)
         items = [f'{inner}{_format_json_value(v, indent + 1)}' for v in value]
         return "[\n" + ",\n".join(items) + "\n" + pad + "]"
     return json.dumps(value)
@@ -188,17 +191,18 @@ class Reporter:
         *,
         verbose: int = 0,
         test262: bool = False,
-        editions_order: list[str] | None = None,
+        test262_dir: Path | None = None,
     ) -> None:
         self._engine = engine
         self._verbose = verbose
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
+        self._test262_revision = get_git_revision(test262_dir) if test262_dir else None
         self._results: list[RunResult] = []
         # Per-file and per-mode (run) progress counters.
         self._file_counts: Counter[Verdict] = Counter()
         self._mode_counts: Counter[Verdict] = Counter()
-        self._editions_order: list[str] = list(editions_order or [])
+        self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         self._wall_sec: float = 0
         # Dir progress tracking (initialized by set_expected_dirs)
         self._dir_order: list[str] = []
@@ -348,7 +352,7 @@ class Reporter:
         dict[str, _VerdictMap],             # edition -> {test -> verdict}
         dict[str, dict[str, _VerdictMap]],  # edition -> feature -> {test -> verdict}
         dict[str, _VerdictMap],             # feature -> {test -> verdict} (flat)
-        _VerdictMap,                        # no-test262-features (no edition, no features)
+        _VerdictMap,                        # N/A (no edition, no features)
         dict[str, _VerdictMap],             # misc tag -> {test -> verdict}
     ]:
         def worst(a: Verdict | None, b: Verdict) -> Verdict:
@@ -363,7 +367,7 @@ class Reporter:
         misc_tag_tests: dict[str, _VerdictMap] = {}
 
         for r in self._results:
-            key = r.test_path or r.run_id or "?"
+            key = (r.run_id or "?").split("@")[0]
             v = r.verdict or Verdict.FAILED
             edition, features, misc = _split_tags(r.tags)
 
@@ -394,41 +398,43 @@ class Reporter:
         feature_tests: dict[str, _VerdictMap],
         no_feature_tests: _VerdictMap,
         misc_tag_tests: dict[str, _VerdictMap],
-    ) -> dict[str, dict[str, int]]:
-        """Build the "tags" section for JSON output."""
+    ) -> tuple[
+        dict[str, dict[str, int]],  # editions
+        dict[str, dict[str, int]],  # edition_features
+        dict[str, dict[str, int]],  # features
+        dict[str, dict[str, int]],  # tags (misc)
+    ]:
+        """Build editions/edition_features/features/tags dicts for JSON output."""
         def to_stats(d: _VerdictMap) -> dict[str, int]:
             s = Stats()
             for v in d.values():
                 s.add(v)
             return s.to_dict()
 
-        tags: dict[str, dict[str, int]] = {}
-        editions = self._editions_order + ["esnext"]
+        editions_order = self._editions_order + ["esnext"]
 
-        # 1. ECMAScript edition totals in order
-        for edition in editions:
+        editions: dict[str, dict[str, int]] = {}
+        for edition in editions_order:
             ed = edition_tests.get(edition)
             if ed:
-                tags[edition] = to_stats(ed)
+                editions[edition] = to_stats(ed)
 
-        # 2. Edition/feature pairs in sorted order
-        for edition in editions:
+        edition_features: dict[str, dict[str, int]] = {}
+        for edition in editions_order:
             for f in sorted(edition_feature_tests.get(edition, {})):
-                tags[f"{edition}/{f}"] = to_stats(edition_feature_tests[edition][f])
+                edition_features[f"{edition}/{f}"] = to_stats(edition_feature_tests[edition][f])
 
-        # 3. Flat per-feature stats in sorted order
+        features: dict[str, dict[str, int]] = {}
         for f in sorted(feature_tests):
-            tags[f] = to_stats(feature_tests[f])
-
-        # 4. no-test262-features bucket
+            features[f] = to_stats(feature_tests[f])
         if no_feature_tests:
-            tags["no-test262-features"] = to_stats(no_feature_tests)
+            features["N/A"] = to_stats(no_feature_tests)
 
-        # 5. Misc tags (flags, includes:*, es5id, etc.)
+        tags: dict[str, dict[str, int]] = {}
         for t in sorted(misc_tag_tests):
             tags[t] = to_stats(misc_tag_tests[t])
 
-        return tags
+        return editions, edition_features, features, tags
 
     def _edition_report(
         self,
@@ -461,7 +467,7 @@ class Reporter:
                     lines.append(f"    {format_summary_line(f, *counts(feat_map[f]), use_color=uc)}")
         if no_feature_tests and not all_skipped(no_feature_tests):
             any_data = True
-            lines.append(f"  {format_summary_line('no-test262-features', *counts(no_feature_tests), use_color=uc)}")
+            lines.append(f"  {format_summary_line('N/A', *counts(no_feature_tests), use_color=uc)}")
         return "\n".join(lines) if any_data else ""
 
     def _to_json(self) -> str:
@@ -482,30 +488,63 @@ class Reporter:
 
         if self._editions_order:
             et, eft, ft, nft, mt = self._build_tag_data()
-            tags = self._tags_json(et, eft, ft, nft, mt)
+            j_editions, j_edition_features, j_features, j_tags = self._tags_json(et, eft, ft, nft, mt)
         else:
-            tags = {}
+            j_editions = j_edition_features = j_features = j_tags = {}
 
-        peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
+        per_test_rss: dict[str, float] = {}
+        per_test_time: dict[str, float] = {}
+        for r in results:
+            key = (r.run_id or "?").split("@")[0]
+            rss = r.metrics.max_rss_kb or 0
+            if rss > per_test_rss.get(key, 0):
+                per_test_rss[key] = rss
+            t = r.metrics.real_time or 0
+            if t > per_test_time.get(key, 0):
+                per_test_time[key] = t
+
+        top_rss = sorted(per_test_rss.items(), key=lambda x: -x[1])[:20]
+        top_rss = [(path, kb) for path, kb in top_rss if kb]
+
+        top_time = sorted(per_test_time.items(), key=lambda x: -x[1])[:20]
+        top_time = [(path, t) for path, t in top_time if t]
 
         summary: dict[str, Any] = {
             "tests": test_stats.to_dict(),
         }
         if mode_stats:
             summary["modes"] = {s: ss.to_dict() for s, ss in sorted(mode_stats.items())}
-        if tags:
-            summary["tags"] = tags
+        if j_editions:
+            summary["editions"] = j_editions
+        if j_edition_features:
+            summary["edition_features"] = j_edition_features
+        if j_features:
+            summary["features"] = j_features
+        if j_tags:
+            summary["tags"] = j_tags
         summary["dirs"] = _build_dir_stats(results)
+
+        peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
+
+        metrics: dict[str, Any] = {}
         if self._wall_sec:
-            summary["total_time_s"] = round(self._wall_sec, 3)
+            metrics["total_time_s"] = round(self._wall_sec, 3)
         if peak_rss_kb:
-            summary["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
+            metrics["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
+        if top_time:
+            metrics["test_time_s"] = {path: round(t, 3) for path, t in top_time}
+        if top_rss:
+            metrics["test_rss_mb"] = {path: round(kb / 1024, 1) for path, kb in top_rss}
 
         data: dict[str, Any] = {}
         if engine.build_metadata:
-            data["metadata"] = engine.build_metadata
+            data["binary"] = engine.build_metadata
+        if self._test262_revision:
+            data["test262_revision"] = self._test262_revision
         data["summary"] = summary
         data["tests"] = _build_test_statuses(results)
+        if metrics:
+            data["metrics"] = metrics
         return _format_json_value(data, 0) + "\n"
 
     def _to_text(self) -> str:
