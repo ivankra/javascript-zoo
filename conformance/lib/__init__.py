@@ -1,3 +1,4 @@
+from .assembler import Assembler, Scenario, StagedScript
 from .classifier import Classifier
 from .config import EngineConfig, Prelude
 from .frontmatter import (
