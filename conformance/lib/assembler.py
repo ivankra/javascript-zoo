@@ -150,7 +150,11 @@ class Assembler:
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()))
 
         tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
-        entry_dst = tmp_root / scenario.rel_path
+
+        # Change file extension to .mjs for higher engine compatibility.
+        # Many engines would automatically recognize it as a module already,
+        # a few don't even have any other way to force running it as a module.
+        entry_dst = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
         entry_dst.parent.mkdir(parents=True, exist_ok=True)
         entry_dst.write_text(assembled, encoding="utf-8")
 

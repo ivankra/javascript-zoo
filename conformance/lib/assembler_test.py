@@ -49,7 +49,7 @@ class TestAssemble(unittest.TestCase):
     def test_finished_marker(self):
         asm = _assembler()
         out = asm.assemble(_scenario("var x;"))
-        self.assertIn(Assembler.SCRIPT_EXECUTION_FINISHED_MARKER, out)
+        self.assertIn('print("ScriptExec"+"utionFinished");', out)
 
     def test_negative_no_marker(self):
         source = "/*---\nnegative:\n  phase: runtime\n  type: TypeError\n---*/\nvar x;"
@@ -112,7 +112,7 @@ class TestEmitPreprocessed(unittest.TestCase):
 
             result = out_path.read_text()
             self.assertIn("var x = 1;", result)
-            self.assertIn(Assembler.SCRIPT_EXECUTION_FINISHED_MARKER, result)
+            self.assertIn('print("ScriptExec"+"utionFinished");', result)
 
     def test_emit_strict_mode(self):
         with tempfile.TemporaryDirectory() as tmpdir:
@@ -170,6 +170,11 @@ class TestStageModule(unittest.TestCase):
             try:
                 self.assertTrue(staged.script_path.exists())
                 self.assertIsNotNone(staged.tmp_dir)
+                self.assertEqual(staged.script_path.suffix, ".mjs")
+                self.assertEqual(
+                    staged.script_path.relative_to(staged.tmp_dir),
+                    Path("test/mod/main.mjs"),
+                )
                 # Helper should be copied into the module tree
                 helper = staged.tmp_dir / "test" / "mod" / "helper.js"
                 self.assertTrue(helper.exists())
