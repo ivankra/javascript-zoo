@@ -17,6 +17,17 @@ SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 # test262_feature_to_ecmascript_edition should map unknown tags to it.
 ESNEXT = 9999
 
+# Valid test262 frontmatter flags (see third_party/test262/CONTRIBUTING.md).
+TEST262_FLAGS = frozenset({
+    "onlyStrict", "noStrict", "module", "raw", "async",
+    "generated", "CanBlockIsFalse", "CanBlockIsTrue", "non-deterministic",
+})
+
+# Extra tags added by Frontmatter.tags() beyond test262 features, flags
+# and ECMAScript editions (esN/esYYYY/esnext).
+EXTRA_TAGS = frozenset({
+    "test262", "es5id", "es6id", "negative", "strict", "sloppy",
+})
 
 @cache
 def test262_features_yaml() -> dict[str, list[str]]:
@@ -27,9 +38,15 @@ def test262_features_yaml() -> dict[str, list[str]]:
         data = yaml.load(f, Loader=SafeLoader)
 
     assert isinstance(data, dict), f"{path}: expected mapping"
+    reserved = TEST262_FLAGS | EXTRA_TAGS
+    seen: dict[str, str] = {}
     for edition, features in data.items():
         assert isinstance(edition, str), f"{path}: non-string key {edition!r}"
         assert isinstance(features, list), f"{path}: {edition!r} must be a list"
+        for feat in features:
+            assert feat not in reserved, f"{path}: feature {feat!r} in {edition!r} clashes with reserved tag"
+            assert feat not in seen, f"{path}: feature {feat!r} in {edition!r} already listed under {seen[feat]!r}"
+            seen[feat] = edition
     return data
 
 
@@ -53,16 +70,6 @@ def test262_feature_to_ecmascript_edition() -> dict[str, int]:
             result.setdefault(f, num)
     return result
 
-
-# Module-level aliases for convenience.
-FEATURES_BY_ECMASCRIPT_EDITION = test262_features_yaml()
-FEATURE_TO_ECMASCRIPT_EDITION = test262_feature_to_ecmascript_edition()
-
-# String version for reporter (temporary, will be refactored).
-_FEATURE_TO_EDITION_STR: dict[str, str] = {}
-for _edition, _feats in FEATURES_BY_ECMASCRIPT_EDITION.items():
-    for _f in _feats:
-        _FEATURE_TO_EDITION_STR.setdefault(_f, _edition)
 
 
 @dataclasses.dataclass
@@ -101,6 +108,15 @@ class Frontmatter:
             es6id=str(data["es6id"]) if data.get("es6id") else None,
         )
 
+    def modes(self) -> tuple[str, ...]:
+        """Return list of modes (strict/sloppy) for this test as a tuple."""
+        if "module" in self.flags or "onlyStrict" in self.flags:
+            return ("strict",)
+        # raw implies noStrict (test262/CONTRIBUTING.md)
+        if "noStrict" in self.flags or "raw" in self.flags:
+            return ("sloppy",)
+        return ("strict", "sloppy")
+
     def ecmascript_tag(self) -> str | None:
         """Highest ES edition required by this test, as a tag string.
 
@@ -123,14 +139,24 @@ class Frontmatter:
             return "esnext"
         return f"es{edition}"
 
-    def tags(self) -> set[str]:
+    def tags(self, mode: str | None = None) -> frozenset[str]:
         """Build the full tag set for engine argv/flag matching.
 
-        Includes: features, flags, includes:*, test262, es5id/es6id,
-        negative, and es{edition}/esnext.
+        The tags include:
+          * "test262" (to distinguish from benchmarking runs)
+          * "strict" or "sloppy" execution mode
+            (note: this is a per-run/scenario flag, not per test file)
+          * test262 features, flags, "includes:*" from the frontmatter
+          * "es5id" / "es6id" if field is present in the frontmatter
+          * "negative" if negative test
+          * "es<N>" / "es<YYYY>" / "esnext" for ECMAScript edition
+            (a single tag corresponding to highest feature level)
         """
         tags = set(self.features) | self.flags
         tags.add("test262")
+        if mode is not None:
+            assert mode in ("strict", "sloppy"), f"invalid mode: {mode!r}"
+            tags.add(mode)
         for inc in self.includes:
             tags.add(f"includes:{inc}")
         if self.es5id:
@@ -142,25 +168,4 @@ class Frontmatter:
         edition = self.ecmascript_tag()
         if edition:
             tags.add(edition)
-        return tags
-
-    def modes(self) -> tuple[str, ...]:
-        """Return which of strict/sloppy modes this test runs in."""
-        if "module" in self.flags or "onlyStrict" in self.flags:
-            return ("strict",)
-        # raw implies noStrict (test262/CONTRIBUTING.md)
-        if "noStrict" in self.flags or "raw" in self.flags:
-            return ("sloppy",)
-        return ("strict", "sloppy")
-
-    def scenarios(self) -> tuple[str, ...]:
-        """Expand frontmatter flags into concrete execution scenarios."""
-        if "raw" in self.flags:
-            return ("raw",)
-        if "module" in self.flags:
-            return ("module",)
-        if "onlyStrict" in self.flags:
-            return ("strict",)
-        if "noStrict" in self.flags:
-            return ("sloppy",)
-        return ("strict", "sloppy")
+        return frozenset(tags)

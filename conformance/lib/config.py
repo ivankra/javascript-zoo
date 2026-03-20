@@ -123,7 +123,7 @@ class EngineConfig:
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
 
-    def argv(self, *args: Path | str, tags: set[str] = set()) -> list[str]:
+    def argv(self, *args: Path | str, tags: frozenset[str] = frozenset()) -> list[str]:
         """Build execution argv: binary + flags + positional args.
 
         Conditional flags ({"tag": ..., "flag": ...}) are included only when

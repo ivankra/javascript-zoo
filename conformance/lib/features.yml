@@ -7,7 +7,6 @@
 
 # Features of the test harness, rather than language features
 harness:
-  - IsHTMLDDA
   - host-gc-required
 
 es5:
@@ -95,6 +94,7 @@ es2017:
   - intl-normative-optional
 
 es2018:
+  - IsHTMLDDA
   - Promise.prototype.finally
   - Symbol.asyncIterator
   - async-iteration

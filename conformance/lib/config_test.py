@@ -88,7 +88,7 @@ class EngineConfigCommandTest(unittest.TestCase):
     def test_module_tag_flag(self) -> None:
         cfg = self._cfg(flags=["eval", {"tag": "module", "flag": "--module"}])
         self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
-        self.assertEqual(cfg.argv("/tmp/s.js", tags={"module"}), ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=frozenset({"module"})), ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
 
     def test_path_object_stringified(self) -> None:
         cmd = self._cfg().argv(Path("/tmp/s.js"))
@@ -101,22 +101,22 @@ class EngineConfigCommandTest(unittest.TestCase):
     def test_tagged_test262_flag(self) -> None:
         cfg = self._cfg(flags=["eval", {"tag": "test262", "flag": "--harmony"}])
         self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
-        self.assertEqual(cfg.argv("/tmp/s.js", tags={"test262"}),
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=frozenset({"test262"})),
                          ["/usr/bin/eng", "eval", "--harmony", "/tmp/s.js"])
 
     def test_tagged_bench_flag(self) -> None:
         cfg = self._cfg(flags=["eval", {"tag": "bench", "flag": "-O"}])
-        self.assertEqual(cfg.argv("/tmp/s.js", tags={"bench"}),
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=frozenset({"bench"})),
                          ["/usr/bin/eng", "eval", "-O", "/tmp/s.js"])
 
     def test_tag_flag_included_when_tag_present(self) -> None:
         cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
-        cmd = cfg.argv("/tmp/s.js", tags={"Intl"})
+        cmd = cfg.argv("/tmp/s.js", tags=frozenset({"Intl"}))
         self.assertEqual(cmd, ["/usr/bin/eng", "--a", "--intl", "/tmp/s.js"])
 
     def test_tag_flag_excluded_when_tag_absent(self) -> None:
         cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
-        cmd = cfg.argv("/tmp/s.js", tags=set())
+        cmd = cfg.argv("/tmp/s.js", tags=frozenset())
         self.assertEqual(cmd, ["/usr/bin/eng", "--a", "/tmp/s.js"])
 
     def test_tag_flag_excluded_by_default(self) -> None:
@@ -130,9 +130,9 @@ class EngineConfigCommandTest(unittest.TestCase):
             {"tag": "Intl", "flag": "--intl"},
             {"tag": "Atomics", "flag": "--harmony-atomics"},
         ])
-        cmd = cfg.argv("/tmp/s.js", tags={"Intl", "Atomics"})
+        cmd = cfg.argv("/tmp/s.js", tags=frozenset({"Intl", "Atomics"}))
         self.assertEqual(cmd, ["/usr/bin/eng", "--base", "--intl", "--harmony-atomics", "/tmp/s.js"])
-        cmd2 = cfg.argv("/tmp/s.js", tags={"Atomics"})
+        cmd2 = cfg.argv("/tmp/s.js", tags=frozenset({"Atomics"}))
         self.assertEqual(cmd2, ["/usr/bin/eng", "--base", "--harmony-atomics", "/tmp/s.js"])
 
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import unittest
 
-from conformance.lib import ESNEXT, Frontmatter, FEATURE_TO_ECMASCRIPT_EDITION
+from conformance.lib import ESNEXT, Frontmatter, test262_feature_to_ecmascript_edition
 
 
 class TestParse(unittest.TestCase):
@@ -49,14 +49,6 @@ class TestModes(unittest.TestCase):
         self.assertEqual(Frontmatter(flags={"raw"}).modes(), ("sloppy",))
         self.assertEqual(Frontmatter(flags={"module"}).modes(), ("strict",))
 
-
-class TestScenarios(unittest.TestCase):
-    def test(self):
-        self.assertEqual(Frontmatter().scenarios(), ("strict", "sloppy"))
-        self.assertEqual(Frontmatter(flags={"onlyStrict"}).scenarios(), ("strict",))
-        self.assertEqual(Frontmatter(flags={"noStrict"}).scenarios(), ("sloppy",))
-        self.assertEqual(Frontmatter(flags={"module"}).scenarios(), ("module",))
-        self.assertEqual(Frontmatter(flags={"raw"}).scenarios(), ("raw",))
 
 
 class TestTags(unittest.TestCase):
@@ -152,14 +144,14 @@ class TestTags(unittest.TestCase):
 
 class TestFeatureToEdition(unittest.TestCase):
     def test_values_are_ints(self):
-        for feat, edition in FEATURE_TO_ECMASCRIPT_EDITION.items():
+        for feat, edition in test262_feature_to_ecmascript_edition().items():
             self.assertIsInstance(edition, int, f"{feat} -> {edition!r}")
 
     def test_known_features_present(self):
-        self.assertIn("Symbol", FEATURE_TO_ECMASCRIPT_EDITION)
-        self.assertIn("Promise", FEATURE_TO_ECMASCRIPT_EDITION)
+        self.assertIn("Symbol", test262_feature_to_ecmascript_edition())
+        self.assertIn("Promise", test262_feature_to_ecmascript_edition())
 
     def test_non_es_keys_map_to_negative(self):
         # "harness" features should have edition -1
-        harness_feats = [f for f, e in FEATURE_TO_ECMASCRIPT_EDITION.items() if e == -1]
+        harness_feats = [f for f, e in test262_feature_to_ecmascript_edition().items() if e == -1]
         self.assertTrue(len(harness_feats) > 0)

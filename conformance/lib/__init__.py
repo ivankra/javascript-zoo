@@ -2,10 +2,11 @@ from .classifier import Classifier
 from .config import EngineConfig, Prelude
 from .frontmatter import (
     ESNEXT,
-    FEATURES_BY_ECMASCRIPT_EDITION,
-    FEATURE_TO_ECMASCRIPT_EDITION,
-    _FEATURE_TO_EDITION_STR,
+    EXTRA_TAGS,
+    TEST262_FLAGS,
     Frontmatter,
+    test262_features_yaml,
+    test262_feature_to_ecmascript_edition,
 )
 from .reporter import Reporter, Stats, format_summary_line, format_output_line
 from .runner import ErrorType, Verdict, Runner, RunMetrics, RunResult

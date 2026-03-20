@@ -24,9 +24,8 @@ from lib import (
     Classifier,
     EngineConfig,
     ErrorType,
-    FEATURES_BY_ECMASCRIPT_EDITION,
-    _FEATURE_TO_EDITION_STR,
     Frontmatter,
+    test262_features_yaml,
     Reporter,
     RunResult,
     Runner,
@@ -75,18 +74,18 @@ def emit_preprocessed_test(
     test_path = test262_dir / rel_path
     source = test_path.read_text(encoding="utf-8", errors="replace")
     fm = Frontmatter.parse(source)
-    scenarios = [s for s in fm.scenarios() if mode == "all" or mode == s]
-    if not scenarios:
-        sys.exit(f"no runnable scenario for mode {mode!r}: {rel_path}")
-    scenario = scenarios[0]
+    modes = [m for m in fm.modes() if mode == "all" or mode == m]
+    if not modes:
+        sys.exit(f"no runnable mode for {mode!r}: {rel_path}")
 
-    assembled = assembler.assemble(Case(
+    assembled = assembler.assemble(Scenario(
         test_path=test_path,
+        test_content=source,
         rel_path=rel_path,
-        source=source,
         fm=fm,
-        scenario=scenario,
-    ), tags=fm.tags())
+        mode=modes[0],
+    ), tags=fm.tags(modes[0])
+    )
     if output:
         Path(output).write_text(assembled, encoding="utf-8")
     else:
@@ -94,20 +93,18 @@ def emit_preprocessed_test(
 
 
 @dataclasses.dataclass
-class Case:
-    """One test × scenario to execute (file already read)."""
-    test_path: Path
-    rel_path: str
-    source: str
-    fm: Frontmatter
-    scenario: str  # sloppy, strict, module, raw
+class Scenario:
+    """One test × mode combination to execute (file already read)."""
+    test_path: Path          # absolute path to the test file
+    test_content: str        # original test source code
+    rel_path: str            # path relative to test262 root
+    fm: Frontmatter          # parsed YAML frontmatter
+    mode: str                # "strict" or "sloppy"
 
-    @property
-    def case_id(self) -> str:
-        if self.scenario in ("strict", "sloppy") and "onlyStrict" not in self.fm.flags and "noStrict" not in self.fm.flags:
-            return f"{self.rel_path}@{self.scenario}"
-        else:
-            return f"{self.rel_path}"
+    def display_id(self) -> str:
+        if len(self.fm.modes()) > 1:
+            return f"{self.rel_path}@{self.mode}"
+        return self.rel_path
 
 
 @dataclasses.dataclass
@@ -142,25 +139,25 @@ class Assembler:
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
 
-    def assemble(self, case: Case, *, tags: set[str] = set()) -> str:
+    def assemble(self, scenario: Scenario, *, tags: frozenset[str] = frozenset()) -> str:
         """Compose the runnable script for one scenario.
 
         *tags* gates conditional preludes ({"tag": ...} entries).
         """
 
         # "raw" tests may not be modified
-        if case.scenario == "raw":
-            return case.source
+        if "raw" in scenario.fm.flags:
+            return scenario.test_content
 
         pieces: list[str] = []
 
         # Order is dictated test262's INTERPRETING.md
 
-        # 1. "use strict"; (if strict scenario; must be file-initial)
-        if case.scenario == "strict":
+        # 1. "use strict"; (if strict mode)
+        if scenario.mode == "strict":
             pieces.append('"use strict";\n')
-        elif case.scenario == "sloppy":
-            # Add it commented-out to avoid line number drift between cases
+        elif scenario.mode == "sloppy":
+            # Add it commented-out to avoid line number drift between modes
             pieces.append('//"use strict";\n')
 
         # 2. Engine prelude(s)
@@ -172,52 +169,52 @@ class Assembler:
         # 4. harness/doneprintHandle.js (if async)
         # 5. Metadata includes in the order listed
         harness = ["assert.js", "sta.js"]
-        if "async" in case.fm.flags:
+        if "async" in scenario.fm.flags:
             harness.append("doneprintHandle.js")
-        harness.extend(name for name in case.fm.includes if name not in harness)
+        harness.extend(name for name in scenario.fm.includes if name not in harness)
         pieces.extend(self._read_harness(name) for name in harness)
 
         # 6. Test source body
-        pieces.append(case.source)
+        pieces.append(scenario.test_content)
 
         # 7. Marker to indicate that control flow reached end of the test script
-        if not case.fm.negative_type:
-            # Separate "FINISHED" to prevent a false positive
-            # in case an engine just dumps the source
-            pieces.append(f'print("{case.case_id}: FIN" + "ISHED");\n')
+        if not scenario.fm.negative_type:
+            # Separate marker with + against false positives when engine just dumps the source
+            pieces.append(f'print("ScriptExec"+"utionFinished");\n')
 
         return "\n".join(pieces)
 
-    def stage(self, case: Case, *, temp_dir: Path, save_compiled: Path | None = None, tags: set[str] = set()) -> StagedScript:
+    SCRIPT_EXECUTION_FINISHED_MARKER = "ScriptExecutionFinished"
+
+    def stage(self, scenario: Scenario, *, temp_dir: Path, save_compiled: Path | None = None, tags: frozenset[str] = frozenset()) -> StagedScript:
         """Assemble and write script to disk, staging module trees if needed."""
-        assembled = self.assemble(case, tags=tags)
+        assembled = self.assemble(scenario, tags=tags)
 
         if save_compiled is not None:
-            dst = save_compiled / f"{case.rel_path}.{case.scenario}.js"
+            dst = save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_text(assembled, encoding="utf-8")
 
         needs_module_tree = (
-            case.scenario == "module"
-            or "dynamic-import" in case.fm.features
+            "module" in scenario.fm.flags
+            or "dynamic-import" in scenario.fm.features
         )
 
         if not needs_module_tree:
-            # Simple case: single file in shared temp dir.
             script_path = temp_dir / f"t262-temp-{os.getpid()}-{id(assembled)}.js"
             script_path.write_bytes(assembled.encode("utf-8"))
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()))
 
         tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
-        entry_dst = tmp_root / case.rel_path
+        entry_dst = tmp_root / scenario.rel_path
         entry_dst.parent.mkdir(parents=True, exist_ok=True)
         entry_dst.write_text(assembled, encoding="utf-8")
 
-        visited: set[str] = {case.rel_path}
+        visited: set[str] = {scenario.rel_path}
         self._copy_deps_recursive(
-            tmp_root, case.test_path.parent, case.source, visited,
+            tmp_root, scenario.test_path.parent, scenario.test_content, visited,
         )
-        self._copy_fixture_siblings(tmp_root, case.test_path.parent, visited)
+        self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited)
 
         pkg = tmp_root / "package.json"
         if not pkg.exists():
@@ -294,7 +291,7 @@ class Assembler:
 
 
 class Executor:
-    """Executes and classifies test262 cases via a process pool."""
+    """Executes and classifies test262 scenarios via a process pool."""
 
     def __init__(
         self,
@@ -362,10 +359,10 @@ class Executor:
             shutil.rmtree(self._shared_tmp, ignore_errors=True)
 
     def _process_file(self, rel_path: str) -> list[RunResult]:
-        """Read file, parse frontmatter, expand scenarios, execute each.
+        """Read file, parse frontmatter, expand modes, execute each.
 
         Returns a single SKIPPED RunResult if filtered by features,
-        [] if it had no applicable scenarios for the current mode.
+        [] if no applicable modes.
         """
         test_path = self.test262_dir / rel_path
         source = test_path.read_text(encoding="utf-8", errors="replace")
@@ -377,7 +374,7 @@ class Executor:
             return [RunResult(
                 run_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
-                features=frozenset(fm.features),
+                tags=fm.tags(),
             )]
         if self.skip_features:
             blocked = tags & self.skip_features
@@ -385,34 +382,34 @@ class Executor:
                 return [RunResult(
                     run_id=rel_path, test_path=str(test_path),
                     verdict=Verdict.SKIPPED, error_message=f"skip features: {', '.join(sorted(blocked))}",
-                    features=frozenset(fm.features),
+                    tags=fm.tags(),
                 )]
 
         return [
-            self._execute_one(Case(
-                test_path=test_path, rel_path=rel_path, source=source,
-                fm=fm, scenario=scenario,
+            self._execute_one(Scenario(
+                test_path=test_path, test_content=source, rel_path=rel_path,
+                fm=fm, mode=mode,
             ))
-            for scenario in fm.scenarios() if self.mode == "all" or self.mode == scenario
+            for mode in fm.modes() if self.mode == "all" or self.mode == mode
         ]
 
-    def _execute_one(self, case: Case) -> RunResult:
-        """Execute engine on an assembled test, classify result."""
-        is_module = case.scenario == "module"
-        is_negative = bool(case.fm.negative_type)
-        is_async = "async" in case.fm.flags
-        expect_finished = not is_negative and case.scenario != "raw"
+    def _execute_one(self, scenario: Scenario) -> RunResult:
+        """Execute engine on an assembled scenario, classify result."""
+        is_module = "module" in scenario.fm.flags
+        is_negative = bool(scenario.fm.negative_type)
+        is_async = "async" in scenario.fm.flags
+        expect_finished = not is_negative and "raw" not in scenario.fm.flags
 
-        tags = case.fm.tags()
-        staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
+        tags = scenario.fm.tags(scenario.mode)
+        staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
         try:
             run = self.runner.run_command(
                 self.engine.argv(
                     staged.script_path,
                     tags=tags,
                 ),
-                run_id=case.case_id,
-                test_path=str(case.test_path),
+                run_id=scenario.display_id(),
+                test_path=str(scenario.test_path),
                 script_path=str(staged.script_path),
                 timeout_sec=self.timeout_sec,
                 cwd=str(staged.cwd),
@@ -420,19 +417,13 @@ class Executor:
 
             if is_negative:
                 self.classifier.classify(run, expect_async=is_async)
-                self._check_negative(case.fm, run)
+                self._check_negative(scenario.fm, run)
             else:
-                ok_pattern = (
-                    rf"{re.escape(case.case_id)}: FINISHED" if expect_finished else None
-                )
-                self.classifier.classify(
-                    run,
-                    expect_async=is_async,
-                    ok_pattern=ok_pattern,
-                )
+                ok_pattern = (Assembler.SCRIPT_EXECUTION_FINISHED_MARKER if expect_finished else None)
+                self.classifier.classify(run, expect_async=is_async, ok_pattern=ok_pattern)
 
-            run.features = frozenset(case.fm.features)
-            run.scenario = case.scenario
+            run.tags = tags
+            run.mode = scenario.mode
             return run
         finally:
             staged.cleanup()
@@ -485,8 +476,8 @@ def main() -> None:
                    help="Timeout for each test in seconds")
     p.add_argument("-f", "--features", action="append", default=[], metavar="LIST",
                    help="Only run tests requiring these features (comma-separated)")
-    p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy", "raw", "module"], default="all",
-                   help="Run only tests with this mode")
+    p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], default="all",
+                   help="Run only strict or sloppy mode")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Exclude test paths matching the pattern")
@@ -509,7 +500,7 @@ def main() -> None:
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
     if args.verbose:
-        argv_display = engine.argv("<file>", tags={"test262"})
+        argv_display = engine.argv("<file>", tags=frozenset({"test262"}))
         print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
@@ -556,9 +547,7 @@ def main() -> None:
         engine,
         verbose=args.verbose,
         test262=True,
-        editions_order=list(FEATURES_BY_ECMASCRIPT_EDITION.keys()),
-        features_by_edition=FEATURES_BY_ECMASCRIPT_EDITION,
-        feature_to_edition=_FEATURE_TO_EDITION_STR,
+        editions_order=list(test262_features_yaml().keys()),
     )
 
     executor = Executor(
@@ -582,7 +571,7 @@ def main() -> None:
     reporter.clear_progress()
 
     if not reporter.results:
-        print("No runnable scenarios")
+        print("No runnable tests")
         sys.exit(0)
 
     wall_sec = time.monotonic() - wall_start

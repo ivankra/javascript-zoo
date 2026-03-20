@@ -6,12 +6,14 @@ from __future__ import annotations
 import dataclasses
 import json
 import os
+import re
 import sys
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 from .config import EngineConfig
+from .frontmatter import EXTRA_TAGS, TEST262_FLAGS
 from .runner import RunResult, Verdict
 
 
@@ -35,8 +37,37 @@ class Stats:
             self.skipped += 1
 
     def to_dict(self) -> dict[str, int]:
-        d = {"pass": self.passed, "fail": self.failed, "skip": self.skipped}
+        d = {"ok": self.passed, "fail": self.failed, "skip": self.skipped}
         return {k: v for k, v in d.items() if v}
+
+
+# ── Tag helpers ───────────────────────────────────────────────────────────────
+
+_EDITION_RE = re.compile(r"^es(\d+|next)$")
+_NON_FEATURE_TAGS = TEST262_FLAGS | EXTRA_TAGS
+# Tags excluded from the per-tag report (too noisy / always present).
+_REPORT_EXCLUDE_TAGS = frozenset({"test262", "strict", "sloppy"})
+
+
+def _split_tags(tags: frozenset[str]) -> tuple[str | None, frozenset[str], frozenset[str]]:
+    """Extract (edition_tag, feature_tags, misc_tags) from a full tag set.
+
+    The edition tag is the single esN/esYYYY/esnext tag (or None).
+    Features are tags that aren't flags, extra tags, or includes:*.
+    Misc tags are everything else (flags, includes:*, es5id, etc.)
+    excluding test262/strict/sloppy and the edition tag.
+    """
+    edition = None
+    features: list[str] = []
+    misc: list[str] = []
+    for t in tags:
+        if _EDITION_RE.match(t):
+            edition = t
+        elif t not in _NON_FEATURE_TAGS and not t.startswith("includes:"):
+            features.append(t)
+        elif t not in _REPORT_EXCLUDE_TAGS:
+            misc.append(t)
+    return edition, frozenset(features), frozenset(misc)
 
 
 # ── Dir stats (flat, for JSON output) ────────────────────────────────────────
@@ -120,7 +151,7 @@ def _format_json_value(value: Any, indent: int) -> str:
 
 
 def _build_test_statuses(results: list[RunResult]) -> dict[str, Any]:
-    """Build per-test status map, collapsing identical scenario results."""
+    """Build per-test status map, collapsing identical mode results."""
     file_runs: dict[str, list[RunResult]] = {}
     for run in sorted(results, key=lambda r: r.run_id or ""):
         fp = (run.run_id or "").split("@")[0]
@@ -131,13 +162,12 @@ def _build_test_statuses(results: list[RunResult]) -> dict[str, Any]:
         if len(set(messages)) == 1:
             statuses[fp] = messages[0]
         else:
-            statuses[fp] = {run.scenario or run.run_id or "": run.verdict_message() for run in runs}
+            statuses[fp] = {run.mode or run.run_id or "": run.verdict_message() for run in runs}
     return statuses
 
 
 # ── Reporter ──────────────────────────────────────────────────────────────────
 
-_FeatureTests = dict[str, dict[str, Verdict]]
 _VerdictMap = dict[str, Verdict]
 
 
@@ -145,7 +175,7 @@ class Reporter:
     """Accumulates test results; prints summaries and writes output files.
 
     Works for both simple conformance runs and test262 with edition/feature
-    breakdown.  Pass edition taxonomy to enable per-edition/feature reporting.
+    breakdown.  Pass editions_order to enable per-edition/feature reporting.
 
     Optionally tracks per-directory progress for streaming dir summaries
     (call set_expected_dirs() before adding results, then
@@ -159,20 +189,16 @@ class Reporter:
         verbose: int = 0,
         test262: bool = False,
         editions_order: list[str] | None = None,
-        features_by_edition: dict[str, list[str]] | None = None,
-        feature_to_edition: dict[str, str] | None = None,
     ) -> None:
         self._engine = engine
         self._verbose = verbose
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
         self._results: list[RunResult] = []
-        # Per-file and per-scenario (run) progress counters.
+        # Per-file and per-mode (run) progress counters.
         self._file_counts: Counter[Verdict] = Counter()
-        self._scenario_counts: Counter[Verdict] = Counter()
+        self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(editions_order or [])
-        self._features_by_edition: dict[str, list[str]] = dict(features_by_edition or {})
-        self._feature_to_edition: dict[str, str] = dict(feature_to_edition or {})
         self._wall_sec: float = 0
         # Dir progress tracking (initialized by set_expected_dirs)
         self._dir_order: list[str] = []
@@ -243,7 +269,7 @@ class Reporter:
         """
         for run in runs:
             self.add(run)
-            self._scenario_counts[run.verdict or Verdict.FAILED] += 1
+            self._mode_counts[run.verdict or Verdict.FAILED] += 1
 
         if any(r.verdict is Verdict.SKIPPED for r in runs):
             self._file_counts[Verdict.SKIPPED] += 1
@@ -258,7 +284,7 @@ class Reporter:
             if fc[Verdict.SKIPPED]:
                 line += f", {fc[Verdict.SKIPPED]} skipped"
             if self._test262:
-                sc = self._scenario_counts
+                sc = self._mode_counts
                 line += f" (runs: {sc[Verdict.OK]} passed, {sc[Verdict.FAILED]} failed)"
             print(f"\r\033[K{line}", end="", file=sys.stderr, flush=True)
 
@@ -305,7 +331,7 @@ class Reporter:
     # ── Internal helpers ──────────────────────────────────────────────────────
 
     def _file_verdicts(self) -> dict[str, Verdict | None]:
-        """Compute per-file worst verdict (deduplicating across scenarios)."""
+        """Compute per-file worst verdict (deduplicating across modes)."""
         fv: dict[str, Verdict | None] = {}
         for run in self._results:
             fp = (run.run_id or "").split("@")[0]
@@ -318,71 +344,98 @@ class Reporter:
                 fv[fp] = run.verdict
         return fv
 
-    def _build_feature_data(self) -> tuple[_FeatureTests, _FeatureTests, _VerdictMap]:
-        """Compute (feature_tests, edition_tests, other_tests) from accumulated results."""
+    def _build_tag_data(self) -> tuple[
+        dict[str, _VerdictMap],             # edition -> {test -> verdict}
+        dict[str, dict[str, _VerdictMap]],  # edition -> feature -> {test -> verdict}
+        dict[str, _VerdictMap],             # feature -> {test -> verdict} (flat)
+        _VerdictMap,                        # no-test262-features (no edition, no features)
+        dict[str, _VerdictMap],             # misc tag -> {test -> verdict}
+    ]:
         def worst(a: Verdict | None, b: Verdict) -> Verdict:
             if a is Verdict.FAILED or b is Verdict.FAILED: return Verdict.FAILED
             if a is Verdict.OK or b is Verdict.OK: return Verdict.OK
             return Verdict.SKIPPED
 
-        feature_tests: _FeatureTests = {}
-        other_tests: _VerdictMap = {}
+        edition_tests: dict[str, _VerdictMap] = {}
+        edition_feature_tests: dict[str, dict[str, _VerdictMap]] = {}
+        feature_tests: dict[str, _VerdictMap] = {}
+        no_feature_tests: _VerdictMap = {}
+        misc_tag_tests: dict[str, _VerdictMap] = {}
+
         for r in self._results:
             key = r.test_path or r.run_id or "?"
             v = r.verdict or Verdict.FAILED
-            if r.features:
-                for f in r.features:
-                    d = feature_tests.setdefault(f, {})
+            edition, features, misc = _split_tags(r.tags)
+
+            if edition:
+                d = edition_tests.setdefault(edition, {})
+                d[key] = worst(d.get(key), v)
+
+            for f in features:
+                d = feature_tests.setdefault(f, {})
+                d[key] = worst(d.get(key), v)
+                if edition:
+                    d = edition_feature_tests.setdefault(edition, {}).setdefault(f, {})
                     d[key] = worst(d.get(key), v)
-            else:
-                other_tests[key] = worst(other_tests.get(key), v)
 
-        edition_tests: _FeatureTests = {}
-        for f, d in feature_tests.items():
-            ed = edition_tests.setdefault(self._feature_to_edition.get(f, "esnext"), {})
-            for key, v in d.items():
-                ed[key] = worst(ed.get(key), v)
+            for t in misc:
+                d = misc_tag_tests.setdefault(t, {})
+                d[key] = worst(d.get(key), v)
 
-        return feature_tests, edition_tests, other_tests
+            if not edition and not features:
+                no_feature_tests[key] = worst(no_feature_tests.get(key), v)
 
-    def _editions_features_json(
+        return edition_tests, edition_feature_tests, feature_tests, no_feature_tests, misc_tag_tests
+
+    def _tags_json(
         self,
-        feature_tests: _FeatureTests,
-        edition_tests: _FeatureTests,
-        other_tests: _VerdictMap,
-    ) -> tuple[dict[str, dict[str, int]], dict[str, dict[str, int]]]:
+        edition_tests: dict[str, _VerdictMap],
+        edition_feature_tests: dict[str, dict[str, _VerdictMap]],
+        feature_tests: dict[str, _VerdictMap],
+        no_feature_tests: _VerdictMap,
+        misc_tag_tests: dict[str, _VerdictMap],
+    ) -> dict[str, dict[str, int]]:
+        """Build the "tags" section for JSON output."""
         def to_stats(d: _VerdictMap) -> dict[str, int]:
             s = Stats()
             for v in d.values():
                 s.add(v)
             return s.to_dict()
 
-        editions: dict[str, dict[str, int]] = {}
-        features: dict[str, dict[str, int]] = {}
-        for edition in self._editions_order + ["esnext"]:
-            ed = edition_tests.get(edition) or {}
-            if not ed:
-                continue
-            editions[edition] = to_stats(ed)
-            feats = self._features_by_edition.get(edition, [])
-            if edition == "esnext":
-                feats = sorted(f for f in feature_tests if f not in self._feature_to_edition)
-            for f in feats:
-                d = feature_tests.get(f) or {}
-                if d:
-                    features[f] = to_stats(d)
-        if other_tests:
-            features["other"] = to_stats(other_tests)
-        return editions, features
+        tags: dict[str, dict[str, int]] = {}
+        editions = self._editions_order + ["esnext"]
+
+        # 1. ECMAScript edition totals in order
+        for edition in editions:
+            ed = edition_tests.get(edition)
+            if ed:
+                tags[edition] = to_stats(ed)
+
+        # 2. Edition/feature pairs in sorted order
+        for edition in editions:
+            for f in sorted(edition_feature_tests.get(edition, {})):
+                tags[f"{edition}/{f}"] = to_stats(edition_feature_tests[edition][f])
+
+        # 3. Flat per-feature stats in sorted order
+        for f in sorted(feature_tests):
+            tags[f] = to_stats(feature_tests[f])
+
+        # 4. no-test262-features bucket
+        if no_feature_tests:
+            tags["no-test262-features"] = to_stats(no_feature_tests)
+
+        # 5. Misc tags (flags, includes:*, es5id, etc.)
+        for t in sorted(misc_tag_tests):
+            tags[t] = to_stats(misc_tag_tests[t])
+
+        return tags
 
     def _edition_report(
         self,
-        feature_tests: _FeatureTests,
-        edition_tests: _FeatureTests,
-        other_tests: _VerdictMap,
+        edition_tests: dict[str, _VerdictMap],
+        edition_feature_tests: dict[str, dict[str, _VerdictMap]],
+        no_feature_tests: _VerdictMap,
     ) -> str:
-        if not feature_tests and not other_tests:
-            return ""
         uc = self._use_color
 
         def counts(d: _VerdictMap) -> tuple[int, int, int]:
@@ -391,22 +444,25 @@ class Reporter:
             skip = sum(1 for v in d.values() if v is Verdict.SKIPPED)
             return ok, fail, skip
 
+        def all_skipped(d: _VerdictMap) -> bool:
+            return all(v is Verdict.SKIPPED for v in d.values())
+
         lines = ["Summary by edition/feature:"]
+        any_data = False
         for edition in self._editions_order + ["esnext"]:
-            ed = edition_tests.get(edition) or {}
-            if not ed:
+            ed = edition_tests.get(edition)
+            if not ed or all_skipped(ed):
                 continue
+            any_data = True
             lines.append(f"  {format_summary_line(edition, *counts(ed), use_color=uc)}")
-            feats = self._features_by_edition.get(edition, [])
-            if edition == "esnext":
-                feats = sorted(f for f in feature_tests if f not in self._feature_to_edition)
-            for f in feats:
-                d = feature_tests.get(f) or {}
-                if d:
-                    lines.append(f"    {format_summary_line(f, *counts(d), use_color=uc)}")
-        if other_tests:
-            lines.append(f"  {format_summary_line('other', *counts(other_tests), use_color=uc)}")
-        return "\n".join(lines)
+            feat_map = edition_feature_tests.get(edition, {})
+            for f in sorted(feat_map):
+                if not all_skipped(feat_map[f]):
+                    lines.append(f"    {format_summary_line(f, *counts(feat_map[f]), use_color=uc)}")
+        if no_feature_tests and not all_skipped(no_feature_tests):
+            any_data = True
+            lines.append(f"  {format_summary_line('no-test262-features', *counts(no_feature_tests), use_color=uc)}")
+        return "\n".join(lines) if any_data else ""
 
     def _to_json(self) -> str:
         results = self._results
@@ -417,42 +473,39 @@ class Reporter:
         for v in fv.values():
             test_stats.add(v)
 
-        scenario_stats: dict[str, Stats] = {}
+        mode_stats: dict[str, Stats] = {}
         for run in results:
-            if run.scenario:
-                if run.scenario not in scenario_stats:
-                    scenario_stats[run.scenario] = Stats()
-                scenario_stats[run.scenario].add(run.verdict)
+            if run.mode:
+                if run.mode not in mode_stats:
+                    mode_stats[run.mode] = Stats()
+                mode_stats[run.mode].add(run.verdict)
 
         if self._editions_order:
-            ft, et, ot = self._build_feature_data()
-            editions, features = self._editions_features_json(ft, et, ot)
+            et, eft, ft, nft, mt = self._build_tag_data()
+            tags = self._tags_json(et, eft, ft, nft, mt)
         else:
-            editions, features = {}, {}
+            tags = {}
 
         peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
 
         summary: dict[str, Any] = {
             "tests": test_stats.to_dict(),
         }
-        if scenario_stats:
-            summary["scenarios"] = {s: ss.to_dict() for s, ss in sorted(scenario_stats.items())}
-        if editions:
-            summary["editions"] = editions
-        if features:
-            summary["features"] = features
+        if mode_stats:
+            summary["modes"] = {s: ss.to_dict() for s, ss in sorted(mode_stats.items())}
+        if tags:
+            summary["tags"] = tags
         summary["dirs"] = _build_dir_stats(results)
         if self._wall_sec:
             summary["total_time_s"] = round(self._wall_sec, 3)
         if peak_rss_kb:
             summary["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
-        if engine.build_metadata:
-            summary["metadata"] = engine.build_metadata
 
-        data: dict[str, Any] = {
-            "summary": summary,
-            "tests": _build_test_statuses(results),
-        }
+        data: dict[str, Any] = {}
+        if engine.build_metadata:
+            data["metadata"] = engine.build_metadata
+        data["summary"] = summary
+        data["tests"] = _build_test_statuses(results)
         return _format_json_value(data, 0) + "\n"
 
     def _to_text(self) -> str:
@@ -506,18 +559,19 @@ class Reporter:
         failed = [r for r in results if r.verdict is Verdict.FAILED]
         if failed and self._verbose < 1:
             print(f"\nFailures ({len(failed)}):")
-            for r in failed[:100]:
+            max_failures = 50
+            for r in failed[:max_failures]:
                 msg = f"{r.run_id or '?'}: {r.verdict_message()[:120]}"
                 if use_color:
                     msg = f"\033[31m{msg}\033[0m"
                 print(f"  {msg}")
-            if len(failed) > 100:
-                print(f"  ... and {len(failed) - 100} more")
+            if len(failed) > max_failures:
+                print(f"  ... and {len(failed) - max_failures} more")
             print()
 
         if self._editions_order:
-            ft, et, ot = self._build_feature_data()
-            edition_table = self._edition_report(ft, et, ot)
+            et, eft, _ft, nft, _mt = self._build_tag_data()
+            edition_table = self._edition_report(et, eft, nft)
             if edition_table:
                 print(edition_table)
                 print()

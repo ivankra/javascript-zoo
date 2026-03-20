@@ -381,7 +381,7 @@ class BenchRunner:
         try:
             script_path = td_path / basename
             script_path.write_text(run_script, encoding="utf-8")
-            argv = self.cfg.argv(*self.extra_flags, script_path, tags={"bench"})
+            argv = self.cfg.argv(*self.extra_flags, script_path, tags=frozenset({"bench"}))
             if verbose:
                 print(f"> cd {shlex.quote(str(td_path))}; {shlex.join(argv)}", flush=True)
             run = self._runner.run_command(
