@@ -38,7 +38,8 @@
 42tiny-js:
   console_log: ['console.log', 'print']
   errors_re:
-    - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: at Line:[0-9]+ Column:[0-9]+)*$'
+    - "^Error: uncaught exception: '(?P<type>[A-Za-z0-9]*Error): ?(?P<message>.*?)' at Line:[0-9]+ Column:[0-9]+$"
+    - '^(?P<type>[A-Za-z0-9]*Error): ?(?P<message>.*?)(?: at Line:[0-9]+ Column:[0-9]+)*$'
   stdout_replace_re:
     - '^> ': ''
 
@@ -68,20 +69,26 @@ boa:
   console_log: console.log
   crash_re:
     - *rust_crash_re
+  stdout_replace_re:
+    - 'Uncaught Error: Test262Error {\n *message: "(?P<message>.*)"': 'Uncaught Error: Test262Error: \1'
   stderr_replace_re:
     - *rust_crash_norm_re
   errors_re:
-    #  0: SyntaxError: unexpected token 'using', primary expression at line 52, col 13
+    #  0: SyntaxErrnessr: unexpected token 'using', primary expression at line 52, col 13
     - '^[ ]*[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
     - '^Uncaught: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: \(.+\))?$'
     - '^Uncaught: "(?P<message>.+?)\]?"$'
+    # Uncaught Error: ReferenceError: x is not defined
+    - '^Uncaught Error: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?)$'
+    # Uncaught Error: Test262Error {
+    - '^Uncaught Error: (?P<type>[A-Za-z0-9]*Error) [{]'
     # Uncaught Error: "Function Unimplemented]"
     - '^Uncaught Error: "(?P<message>.+?)\]?"$'
     # Uncaught Error: RuntimeLimitError: reached the maximum number of recursive calls on this execution
     - '^Uncaught Error: (?P<message>.+)$'
   flags:
-    - { tag: 'module', flag: '--module' }
     - --debug-object  # exposes $boa object
+    - { tag: 'module', flag: '--module' }
   prelude:
     - file: engines/boa/prelude.js
 
@@ -90,6 +97,8 @@ bramblex:
   errors_re:
     - *uncaught_exception_colon_message
     - '^Uncaught exception: (?P<message>.+?)$'
+  stdout_replace_re:
+    - '^Uncaught exception: \[Error\] \[object Object\], (.*) 未定义$': 'Uncaught exception: ReferenceError: \1'
 
 brimstone: &brimstone
   console_log: console.log
@@ -100,15 +109,16 @@ brimstone: &brimstone
   errors_re:
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
     - --no-color
     - --annex-b
     - --expose-test-262
     - --expose-gc
+    - { tag: 'module', flag: '--module' }
   # built-in print() with --expose-test-262 only takes strings and
   # doesn't print to stdout/stderr
   prelude:
     - code: 'globalThis.print = console.log.bind(console);'
+  exit_code_for_test262_error: 1
 
 carakan:
   errors_re:
@@ -125,12 +135,21 @@ castl:
 
 cesanta-elk:
   console_log: ['console.log', 'print']
+  stdout_replace_re:
+    - '^"(.*)"$': '\1'
+    - "^Error: ERROR: '(.+?)' not found$": 'ReferenceError: \1 not found'
+    - '^Error: ERROR: bad expr$': 'SyntaxError: bad expr'
   errors_re:
+    - *exception_colon_message
     - '^Error: ERROR: (?P<message>.+?)$'
 
 cesanta-mjs:
   console_log: print
+  stdout_replace_re:
+    - '^MJS error: parse error at line [0-9]+: ': 'SyntaxError: '
+    - '^MJS error: \[(.+?)\] is not defined$': 'ReferenceError: \1 is not defined'
   errors_re:
+    - *exception_colon_message
     - '^MJS error: (?P<message>.+?)$'
 
 cesanta-v7:
@@ -139,19 +158,23 @@ cesanta-v7:
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Exec error [^:]+: (?P<type>SyntaxError|InternalError)$'
+    - '^Exec error [^:]+: "(?P<type>Test262Error): ?(?P<message>.*)"$'
+    - '^Exec error [^:]+: (?P<type>[A-Za-z0-9]*Error): ?(?P<message>.*)$'
+    - *exception_colon_message
     - '^Exec error [^:]+: "?(?P<message>.+?)"?$'
   stderr_replace_re:
     # Exec error [/tmp/file.js]: "Syntax error at line 41 col 4:\n    break block;\n   ^"
     - '^(Exec error [^:]+): "Syntax error at line [0-9]+ col [0-9]+.*': '\1: SyntaxError'
     - '^(Exec error [^:]+): "Internal error"': '\1: InternalError'
+    - '^(Exec error [^:]+): "\[(.+?)\] is not defined"$': '\1: ReferenceError: \2 is not defined'
 
 chakracore: &chakracore
   console_log: ['console.log', 'print', 'WScript.Echo']
   errors_re:
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
     #- {tag: 'test262', flag: '-Test262'}  # requires --test-build
+    - { tag: 'module', flag: '--module' }
 
 continuum:
   console_log: console.log
@@ -168,6 +191,11 @@ delskayn:
 derkjs:
   console_log: console.log
   flags: ['-r']
+  stderr_replace_re:
+    - '\x1b\[[0-9;]*m': ''
+    - '^Syntax Error ': 'SyntaxError '
+  errors_re:
+    - '^SyntaxError \[ln [0-9]+, col [0-9]+\]:\s*\n\tnote: (?P<message>.*)$'
 
 dmdscript:
   console_log: println
@@ -175,7 +203,11 @@ dmdscript:
     - '^1 source files$': ''
     # dmdscript.script.ScriptException@engine/source/dmdscript/script.d(66): /tmp/file.js(11) : Error: found '[' instead of statement
     - '^dmdscript.script.ScriptException@[^ :]+: /[^():]+[(][0-9]+[)] : Error: (?P<message>.+)$': 'SyntaxError: \g<message>'
+    - "^dmdscript.script.ScriptException@[^ :]+: Variable (?P<message>.+ is not defined)$": 'ReferenceError: \g<message>'
+    - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>TypeError|RangeError)$': '\g<type>:'
+    - '^dmdscript.script.ScriptException@[^ :]+: (?P<type>Test262Error): ?(?P<message>.*)$': '\g<type>: \g<message>'
   errors_re:
+    - '^(?P<type>[A-Za-z0-9]+Error): ?(?P<message>.*)$'
     - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException)@[^ :]+: (?P<message>.+)$'
   prelude:
     - code: 'var console = {log: println}, print = println;'
@@ -217,6 +249,8 @@ ejscript:
   console_log: print
   crash_re:
     - '^(?P<message>Assertion .*, failed at [^:]+:[0-9]+)'
+  stderr_replace_re:
+    - '^ejs: Error: /[^ :]+[.]js: [0-9]+: (?P<message>Unexpected input .+)$': 'SyntaxError: \g<message>'
   errors_re:
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+[.]js: [0-9]+: (?P<message>.+)$'
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
@@ -236,6 +270,10 @@ epimetheus:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     - 'Welcome to Epimetheus.': ''
+    - '(?m)^Syntax error: (.+)$': 'SyntaxError: \1'
+    - '(?m)^Reference error: (.+)$': 'ReferenceError: \1'
+  errors_re:
+    - *exception_colon_message
 
 escargot:
   console_log: print
@@ -303,7 +341,6 @@ graaljs:
   errors_re:
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
     - --experimental-options
     - --js.test262-mode=true
     - --js.global-arguments=false  # required for some test262 tests
@@ -323,6 +360,8 @@ graaljs:
     - --js.temporal=true
     - --js.top-level-await=true
     - --js.worker=true
+    - { tag: "CanBlockIsFalse", flag: "--js.agent-can-block=false" }
+    - { tag: "module", flag: "--module" }  # must be last - takes path as parameter
 
 hako:
   console_log: console.log
@@ -331,6 +370,10 @@ hako:
   errors_re:
     - *uncaught_exception_colon_message
     - '^  "name": "(?P<type>[A-Za-z0-9]*Error)",?$'  # hako_wamr/hako-cli
+
+hako_wasmtime_go:
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 hermes: &hermes
   bench_flags:
@@ -371,6 +414,7 @@ jerryscript: &jerryscript
     splay.js: 300
     typescript.js: 3600
   flags:
+    - --test262-object
     - { tag: 'module', flag: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
@@ -400,7 +444,6 @@ jsc: &jsc
   errors_re:
     - '^Exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
-    - { tag: 'module', flag: '-m' }
     # Enable experimental javascript features
     - --useExplicitResourceManagement=true
     - --useImportDefer=true
@@ -408,6 +451,7 @@ jsc: &jsc
     - --useMoreCurrencyDisplayChoices=true
     - --useShadowRealm=true
     - --useTemporal=true
+    - { tag: 'module', flag: '-m' }
 
 jsish:
   console_log: console.log
@@ -425,12 +469,17 @@ jsish:
 
 jsse:
   console_log: ['console.log', 'print']
+  flags:
+    - { tag: 'module', flag: '--module' }
+  prelude:
+    - code: globalThis.$262 = undefined;
 
 js-interpreter:
   console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+  exit_code_for_test262_error: 1  # print 'Uncaught exception: [object Object]'
 
 jscript: &jscript
   console_log: ['console.log', 'print', 'WScript.Echo']
@@ -465,11 +514,14 @@ jurassic:
     - *uncaught_exception_colon_message
 
 kiesel:
-  console_log: console.log
+  console_log: ['console.log', 'Kiesel.print']
   errors_re:
     - *uncaught_exception_colon_message
   flags:
+    - --print-promise-rejection-warnings=no
     - { tag: 'module', flag: '--module' }
+  prelude:
+    - file: engines/kiesel/prelude.js
 
 kjs:
   console_log: print
@@ -481,6 +533,7 @@ kjs:
 kodjodevf:
   console_log: console.log
   errors_re:
+    - '^Uncaught exception: Error: (?P<type>Test262Error): ?(?P<message>.*)$'
     - *uncaught_exception_colon_message
 
 lebjs:
@@ -503,23 +556,30 @@ libjs: &libjs
     - *uncaught_exception_colon_message
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--as-module' }
     - --disable-ansi-colors
     - --no-syntax-highlight
     - --disable-source-location-hints
     # - --disable-debug-output
     - --raw-strings
     - --use-test262-global
+    - { tag: 'module', flag: '--as-module' }
 
 metaes:
   console_log: ['console.log', 'print']
+  stdout_replace_re:
+    - '^Uncaught exception: Error: \[[0-9]+:[0-9]+\]: ': 'Uncaught exception: SyntaxError: '
+  errors_re:
+    - *uncaught_exception_colon_message
 
 mocha:
   bench_suite: ['richards.es1.js']
   console_log: print
   prelude:
     - code: 'var console = new Object(); console.log = print;'
+  stderr_replace_re:
+    - '^Mocha: ([^,]+[.]js, line [0-9]+): syntax error:$': 'Mocha: \1: SyntaxError'
   errors_re:
+    - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<type>SyntaxError)$'
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
   warnings_re:
@@ -557,13 +617,13 @@ narcissus:
     - '^:[0-9]+:[0-9]+ ': ''
   errors_re:
     - *exception_colon_message
+  exit_code_for_test262_error: 3  # print '... uncaught exception: [object Object]'
 
 nashorn:
   console_log: print
   crash_re:
     - *java_crash_re
   flags:
-    - { tag: 'module', flag: '-m' }
     - --language=es6
   multiple_scripts_with_shared_realm: true
   stderr_replace_re:
@@ -571,12 +631,17 @@ nashorn:
   errors_re:
     - '^[^:]+[.]js:[0-9]+(:[0-9]+)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '^java.lang.RuntimeException: (?P<message>.*)$'
+  # https://github.com/openjdk/nashorn/blob/main/src/org.openjdk.nashorn/share/classes/org/openjdk/nashorn/tools/Shell.java#L98
+  exit_code_for_syntax_error: 101   # COMPILATION_ERROR
+  exit_code_for_test262_error: 102  # RUNTIME_ERROR, prints '... [object Object]'
 
 ngs:
   console_log: print
   stderr_replace_re:
     - '^(ngs: evaluation of file .* failed:)\n([^ ]+\.js:[0-9]+: .*)$': '\1 \2'
+    - '^(ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: )syntax error$': '\1SyntaxError: syntax error'
   errors_re:
+    - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<type>SyntaxError): (?P<message>.*)$'
     - '^ngs: evaluation of file .* failed: *[^ ]+\.js:[0-9]+: (?P<message>.*)$'
   prelude:
     - code: 'var console = {log: print};'
@@ -628,14 +693,17 @@ otto:
   console_log: console.log
   crash_re:
     - *go_crash_re
+  stderr_replace_re:
+    - '^\(anonymous\): Line [0-9]+:[0-9]+ ': 'SyntaxError: '
   errors_re:
+    - '^(?P<type>SyntaxError): (?P<message>.*)$'
     - *exception_colon_message
 
 porffor:
   # print() exists but broken
   console_log: console.log
   prelude:
-    - code: 'var print = console.log;'
+    - code: 'function print(...x) { console.log(...x); };'
   bench_suite: ['richards.porffor.js']
   errors_re:
     - *exception_colon_message
@@ -677,13 +745,13 @@ quickjs_262: &quickjs_262
   # no console.log() in run-test262
   console_log: print
   flags:
-    - { tag: 'module', flag: '--module' }
     - -N  # -N: run test prepared by test262-harness+eshost
+    - { tag: 'module', flag: '--module' }
 
 quickjs-ng:
   flags:
-    - { tag: 'module', flag: '--module' }
     - --script  # misdetects module mode often enough
+    - { tag: 'module', flag: '--module' }
   errors_re:
     - *exception_colon_message
 
@@ -708,8 +776,11 @@ rapidus:
   stderr_replace_re:
     - *rust_crash_norm_re
     - "^Syntax error: ": "SyntaxError: "
+  stdout_replace_re:
+    - "^Error[(]Reference error: '(.*)' is not defined[)]$": 'ReferenceError: \1 is not defined'
   errors_re:
     - '^Runtime error: [^ ]+\.js:[0-9]+:[0-9]+: (?P<message>.+)$'
+    - *exception_colon_message
   prelude:
     - code: 'var print = console.log;'
 
@@ -721,7 +792,8 @@ reeva:
     - *uncaught_exception_colon_message
 
 rhino:
-  console_log: ['console.log', 'print']
+  # print() exists but broken - doesn't print to pipes, breaks testing
+  console_log: ['console.log']
   crash_re:
     - *java_crash_re
   stdout_replace_re:
@@ -738,6 +810,10 @@ rhino:
     - '^js: "[^"]+", line [0-9]+: exception from uncaught JavaScript throw: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
     - '(?P<type>SyntaxError): (?P<message>.+)$'
     - '^(?P<message>java.lang.StackOverflowError)$'
+  prelude:
+    - file: engines/rhino/prelude.js
+  # No ES modules support (only CommonJS)
+  # Strict mode is broken
 
 rpython-langjs:
   console_log: print
@@ -761,10 +837,15 @@ sablejs:
     - '\[WARN\]'
   errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
+    - '^(?P<message>(Uncaught exception): [object Object])$'
     - *uncaught_exception_colon_message
 
 sandboxjs:
   console_log: ['console.log', 'print']
+  stderr_replace_re:
+    - '^ParseError: ?(.*)$': 'SyntaxError: \1'
+  errors_re:
+    - '^(?P<type>SyntaxError): ?(?P<message>.*)$'
 
 see:
   console_log: print
@@ -799,7 +880,6 @@ spidermonkey: &spidermonkey
     # "uncaught exception: Error: x"
     - '^uncaught exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
-    - { tag: 'module', flag: '--module' }
     # Enable experimental javascript features
     - --enable-iterator-helpers
     - --enable-async-iterator-helpers
@@ -822,6 +902,7 @@ spidermonkey: &spidermonkey
     - --enable-iterator-chunking
     - --enable-iterator-join
     - --enable-legacy-regexp
+    - { tag: 'module', flag: '--module' }  # must be last - takes path as parameter
   prelude:
     - file: engines/spidermonkey/prelude.js
 
@@ -861,6 +942,8 @@ ssrlive:
     - *rust_crash_re
   stderr_replace_re:
     - *rust_crash_norm_re
+  flags:
+    - { tag: 'module', flag: '--module' }
 
 starlight:
   bench_suite: ['richards.js1.js']
@@ -891,12 +974,19 @@ sval:
     - "(Cannot read properties of null) [(]reading '.*'[)]": '\1'
   errors_re:
     - *exception_colon_message
+  prelude:
+    # TODO: investigate
+    - code: globalThis.print = console.log;
 
 syoyo:
   console_log: console.log
   stdout_replace_re:
     - "LightJS REPL v1.0.0": ""
     - "Type '.help' for help, '.exit' to quit": ""
+  stderr_replace_re:
+    - "^Parse error in file '(.*)'$": 'SyntaxError: \1'
+  errors_re:
+    - *exception_colon_message
 
 tiny-js:
   console_log: ['console.log', 'print']
@@ -926,7 +1016,10 @@ topchetoeu:
 twostroke:
   console_log: console.log
   bench_suite: ['richards.es1.js']
+  stderr_replace_re:
+    - "^(.*parser[.]rb:[0-9]+:in `error!': )Syntax error at line [0-9]+, col [0-9]+[.] (.+) \\(Twostroke::ParseError\\)$": '\1SyntaxError: \2'
   errors_re:
+    - ".*twostroke-dist/lib/twostroke/([^: ]+/)?parser[.]rb:[0-9]+:in `error!': (?P<type>SyntaxError): (?P<message>.+)$"
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
   warnings_re:
     - '.*twostroke-dist/[^:]*[.]rb:[0-9]+: warning: .*'
@@ -937,8 +1030,6 @@ ucode:
   stderr_replace_re:
     - "^Syntax error: ": "SyntaxError: "
 
-# Upstream test262 config: see _get_files_params/_get_suite_flags in
-# https://github.com/v8/v8/blob/master/test/test262/testcfg.py
 v8: &v8
   console_log: ['console.log', 'print']
   stderr_replace_re:
@@ -947,14 +1038,12 @@ v8: &v8
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   warnings_re:
     - '^[^:]+:[0-9]+: Error: Unhandled Promise.$'
-  # Shared flags between d8 and node
-  node_flags: &node_flags
-    - { tag: 'module', flag: '--module' }
+  v8_and_node_flags: &v8_and_node_flags
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
     - --allow-natives-syntax
     # Enable all completed but not yet enabled JavaScript features
-    - --js-staging
+    # - --js-staging  # missing in node 20
     - --harmony
     - --future
     # Enable every disabled --harmony-* / --js-* flag that the binary advertises
@@ -964,16 +1053,21 @@ v8: &v8
           sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
           grep 'default: --no-' | \
           sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
-  # d8-specific flags
+  # See https://github.com/v8/v8/blob/main/test/test262/testcfg.py (_get_files_params/_get_suite_flags/FEATURE_FLAGS)
   flags:
-    - *node_flags
-    - --ignore-unhandled-promises  # e.g. test/built-ins/Promise/any/ctx-ctor.js
-    - --no-arguments  # disable top-level arguments in d8
+    - *v8_and_node_flags
+    # d8-specific flags
+    - --ignore-unhandled-promises  # test/built-ins/Promise/any/ctx-ctor.js
+    - --no-arguments  # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
+    - {tag: "module", flag: "--module"}
     - {tag: "CanBlockIsFalse", flag: "--no-can-block"}
-  prelude:
+  prelude: &v8_and_node_prelude
     - file: engines/v8/prelude.js
-    - {tag: "IsHTMLDDA", file: engines/v8/prelude-IsHTMLDDA.js}
-    - {tag: "source-phase-imports", file: engines/v8/prelude-AbstractModuleSource.js}
+    - file: engines/v8/prelude-agent.js
+    # These intrinsics don't work well with try/eval() wrapper and may not be
+    # available on older binaries, so include them conditionally if test requires.
+    - {tag: "IsHTMLDDA", file: "engines/v8/prelude-IsHTMLDDA.js"}
+    - {tag: "source-phase-imports", file: "engines/v8/prelude-AbstractModuleSource.js"}
 
 wine: *jscript
 
@@ -994,6 +1088,7 @@ yantra:
   stdout_replace_re:
     - '^\[object Object\]$': ''
     - '^[0-9]+/[0-9]+/20[0-9][0-9] [0-9]+:[0-9]+:[0-9]+.[AP]M$': ''  # uses \u202f
+  # TODO: SIGABRT stderr='Unhandled exception. YantraJS.Core.JSException: Test262Error: probe'
 
 yavashark:
   console_log: console.log
@@ -1010,34 +1105,35 @@ yavashark:
 
 zhuzilin:
   console_log: console.log
+  stdout_replace_re:
+    - '^ParserError: ?(.*)$': 'SyntaxError: \1'
   errors_re:
     - '^(?:Uncaught )?(?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
 
 zuqe:
   console_log: ['console.log', 'print']
+  flags:
+    - { tag: 'module', flag: '-m' }
 
 # --------------------------------------------------------------------
 # Runtimes
 
 node:
   console_log: console.log
-  # TODO: change extension to .mjs when staging a module script
-  module_ext: mjs
   errors_re:
     - *exception_colon_message
-  flags: *node_flags
-  prelude:
-    - file: engines/v8/prelude-node.js
+  flags: *v8_and_node_flags
+  prelude: *v8_and_node_prelude
 
 bun:
   console_log: console.log
-  module_always: true
+  #module_always: true
   errors_re:
     *exception_colon_message
 
 deno:
   console_log: console.log
-  module_always: true
+  #module_always: true
   stderr_replace_re:
     - "error: The module's source code could not be parsed: ": "SyntaxError: "
   errors_re:
