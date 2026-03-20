@@ -192,6 +192,7 @@ class Reporter:
         verbose: int = 0,
         test262: bool = False,
         test262_dir: Path | None = None,
+        probes: dict[str, str] | None = None,
     ) -> None:
         self._engine = engine
         self._verbose = verbose
@@ -211,6 +212,7 @@ class Reporter:
         self._dir_passed: Counter[str] = Counter()
         self._dir_failed_tests: dict[str, list[str]] = {}
         self._dir_next_index: int = 0
+        self._probes = probes
 
     @property
     def results(self) -> list[RunResult]:
@@ -294,8 +296,26 @@ class Reporter:
 
     def clear_progress(self) -> None:
         """Clear the progress line from stderr, if one was printed."""
-        if self._verbose < 1 and sys.stderr.isatty() and sum(self._file_counts.values()):
-            print("\r\033[K", end="", file=sys.stderr, flush=True)
+        if self._verbose < 1 and sys.stderr.isatty():
+            if sum(self._file_counts.values()) or self._probes:
+                print("\r\033[K", end="", file=sys.stderr, flush=True)
+
+    def add_probe_result(self, name: str, result: str, *, total: int = 0) -> None:
+        """Record one probe result, printing progress to stderr."""
+        if self._probes is None:
+            self._probes = {}
+        self._probes[name] = result
+        ok = result == "OK"
+        if self._verbose >= 1:
+            status = "OK" if ok else f"FAIL ({result})"
+            print(f"probe {name}: {status}", file=sys.stderr, flush=True)
+        elif sys.stderr.isatty():
+            n_done = len(self._probes)
+            n_ok = sum(1 for v in self._probes.values() if v == "OK")
+            n_fail = n_done - n_ok
+            progress = f"{n_done}/{total}" if total else str(n_done)
+            msg = f"Probes: {progress} ({n_ok} ok, {n_fail} failed)" if n_fail else f"Probes: {progress} ok"
+            print(f"\r\033[K{msg}", end="", file=sys.stderr, flush=True)
 
     def print_completed_dirs(self, *, header: bool = False) -> None:
         """Print summary lines for any dirs that just became complete, in order.
@@ -539,6 +559,8 @@ class Reporter:
         data: dict[str, Any] = {}
         if engine.build_metadata:
             data["binary"] = engine.build_metadata
+        if self._probes is not None:
+            data["harness"] = dict(sorted(self._probes.items()))
         if self._test262_revision:
             data["test262_revision"] = self._test262_revision
         data["summary"] = summary

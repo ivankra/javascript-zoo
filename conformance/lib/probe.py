@@ -21,7 +21,9 @@ import argparse
 import os
 import sys
 import tempfile
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
+from typing import Iterator
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
@@ -42,7 +44,7 @@ DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent.parent / "third_party" / "test262").res
 
 # Each probe: source uses print() which is defined by the assembler's auto-generated prelude.
 PROBES: dict[str, dict] = {
-    "printing": {
+    "print": {
         "source": 'print("PROBE_OK");\n',
         "mode": "sloppy",
         "ok": "PROBE_OK",
@@ -62,25 +64,24 @@ PROBES: dict[str, dict] = {
         "mode": "sloppy",
         "ok": "PROBE_OK",
     },
-    "harness": {
-        "source": 'assert.sameValue(1, 1);\n',
-        "mode": "sloppy",
-        "use_harness": True,
-        "ok_marker": True,  # check for ScriptExecutionFinished
-    },
-    # TODO: more tests for each third_party/test262/harness/*.js
-    "module": {
+    "module-export": {
         "source": 'export var x = 1;\nprint("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_flags": {"module"},
         "ok": "PROBE_OK",
     },
-    "staged": {
+    "module-import": {
         "source": 'import { value } from "./probe_dep.mjs";\nprint(value);\n',
         "mode": "sloppy",
         "fm_flags": {"module"},
         "ok": "PROBE_OK",
         "stage_files": {"probe_dep.mjs": 'export var value = "PROBE_OK";\n'},
+    },
+    "negative": {
+        "source": '1 +* 2;\n',
+        "mode": "sloppy",
+        "negative_phase": "parse",
+        "negative_type": "SyntaxError",
     },
     "async": {
         "source": 'Promise.resolve().then(function() { print("Test262:AsyncTestComplete"); });\n',
@@ -88,12 +89,6 @@ PROBES: dict[str, dict] = {
         "fm_flags": {"async"},
         "use_harness": True,
         "expect_async": True,
-    },
-    "negative": {
-        "source": '1 +* 2;\n',
-        "mode": "sloppy",
-        "negative_phase": "parse",
-        "negative_type": "SyntaxError",
     },
     "async-negative": {
         "source": 'Promise.resolve().then(function() { print("Test262:AsyncTestFailure:probe"); });\n',
@@ -115,11 +110,6 @@ PROBES: dict[str, dict] = {
     },
     "TypeError": {
         "source": 'throw new TypeError();\n',  #test/language/module-code/./eval-rqstd-abrupt-err-type_FIXTURE.js
-        "mode": "sloppy",
-        "expect_error": ErrorType.TYPE_ERROR,
-    },
-    "TypeError2": {
-        "source": 'null.x;\n',
         "mode": "sloppy",
         "expect_error": ErrorType.TYPE_ERROR,
     },
@@ -186,7 +176,13 @@ PROBES: dict[str, dict] = {
         "ok": "PROBE_OK",
     },
     "$262.IsHTMLDDA": {
-        "source": 'if (typeof $262 !== "undefined" && "IsHTMLDDA" in $262) print("PROBE_OK");\n',
+        "source": (
+            'if (typeof $262 !== "undefined" && "IsHTMLDDA" in $262) {\n'
+            '  var x = $262.IsHTMLDDA;\n'
+            '  if (typeof x !== "undefined" || x === undefined || x === null) throw new Error("FAKE");\n'
+            '  print("PROBE_OK");\n'
+            '}\n'
+        ),
         "mode": "sloppy",
         "fm_features": {"IsHTMLDDA"},
         "ok": "PROBE_OK",
@@ -197,128 +193,140 @@ PROBES: dict[str, dict] = {
         "fm_features": {"source-phase-imports"},
         "ok": "PROBE_OK",
     },
+    "harness": {
+        "source": 'assert.sameValue(1, 1);\n',
+        "mode": "sloppy",
+        "use_harness": True,
+        "ok_marker": True,  # check for ScriptExecutionFinished
+    },
+    # TODO: more tests for each third_party/test262/harness/*.js
 }
 
 
-def run_probe(
-    runner: Runner,
-    annotator: Annotator,
-    assembler: Assembler,
-    engine: EngineConfig,
-    name: str,
-    spec: dict,
-    tmp_dir: Path,
-) -> tuple[bool, str]:
-    """Run a single probe. Returns (passed, detail)."""
+def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict, *, timeout: float = 0) -> tuple[str, str]:
+    """Run a single probe. Returns (probe_name, "OK" or detail)."""
+    runner = Runner(cfg)
+    annotator = Annotator(cfg)
+    assembler = Assembler(cfg, test262_dir, no_harness=not spec.get("use_harness"))
+
     source = spec["source"]
     mode = spec.get("mode", "sloppy")
     fm_flags = spec.get("fm_flags", set())
     fm_features = spec.get("fm_features", set())
-    use_harness = spec.get("use_harness", False)
 
     negative_phase = spec.get("negative_phase")
     negative_type = spec.get("negative_type")
     expect_async = spec.get("expect_async", False)
 
-    # Build a minimal frontmatter
     fm = Frontmatter(
         flags=set(fm_flags),
         features=set(fm_features),
         negative_phase=negative_phase,
         negative_type=negative_type,
     )
-    if use_harness:
+    if spec.get("use_harness"):
         fm.includes = ["assert.js", "sta.js"]
 
-    # Wrap source with frontmatter comment so Frontmatter.parse would see it,
-    # but we already have the parsed fm, so just use it directly.
-    scenario = Scenario(
-        test_path=tmp_dir / "probe.js",
-        test_content=source,
-        rel_path="probe.js",
-        fm=fm,
-        mode=mode,
-        tags=fm.tags(mode) | frozenset({"test262"}),
-    )
-
-    # Write the "test file" so assembler can find it
-    (tmp_dir / "probe.js").write_text(source, encoding="utf-8")
-
-    staged = assembler.stage(scenario, temp_dir=tmp_dir)
-
-    # Write extra files for staged module tests (into staged cwd, not tmp_dir)
-    for fname, content in spec.get("stage_files", {}).items():
-        (staged.cwd / fname).write_text(content, encoding="utf-8")
-    try:
-        run = runner.run_command(
-            engine.argv(staged.script_path, tags=scenario.tags),
-            run_id=f"probe/{name}",
-            timeout_sec=engine.timeout_sec,
-            cwd=str(staged.cwd),
+    with tempfile.TemporaryDirectory(prefix="probe-") as tmp_str:
+        tmp_dir = Path(tmp_str)
+        scenario = Scenario(
+            test_path=tmp_dir / "probe.js",
+            test_content=source,
+            rel_path="probe.js",
+            fm=fm,
+            mode=mode,
+            tags=fm.tags(mode) | frozenset({"test262"}),
         )
-        annotator.classify(
-            run,
-            expect_async=expect_async,
-            negative_phase=negative_phase,
-            negative_type=negative_type,
-        )
+        (tmp_dir / "probe.js").write_text(source, encoding="utf-8")
 
-        if spec.get("expect_async_fail"):
-            ok = run.verdict == Verdict.FAILED
-            detail = run.verdict_message() if not ok else ""
-            return ok, detail
+        staged = assembler.stage(scenario, temp_dir=tmp_dir)
+        for fname, content in spec.get("stage_files", {}).items():
+            (staged.cwd / fname).write_text(content, encoding="utf-8")
+        try:
+            run = runner.run_command(
+                cfg.argv(staged.script_path, tags=scenario.tags),
+                run_id=f"probe/{probe_name}",
+                timeout_sec=timeout or cfg.timeout_sec,
+                cwd=str(staged.cwd),
+            )
+            annotator.classify(
+                run,
+                expect_async=expect_async,
+                negative_phase=negative_phase,
+                negative_type=negative_type,
+            )
+        finally:
+            staged.cleanup()
 
-        if "expect_error" in spec:
-            ok = run.error_type == spec["expect_error"]
-            if not ok:
-                parts = [str(run.error_type)]
-                if run.stdout:
-                    parts.append(f"stdout={run.stdout.strip()!r}")
-                if run.stderr:
-                    parts.append(f"stderr={run.stderr.strip()!r}")
-                detail = " ".join(parts)
-            else:
-                detail = ""
-            return ok, detail
+    if spec.get("expect_async_fail"):
+        ok = run.verdict == Verdict.FAILED
+        detail = run.verdict_message() if not ok else ""
+        return probe_name, "OK" if ok else (detail or "FAIL")
 
-        output = (run.stdout or "") + (run.stderr or "")
+    if "expect_error" in spec:
+        ok = run.error_type == spec["expect_error"]
+        if not ok:
+            parts = [str(run.error_type)]
+            if run.stdout:
+                parts.append(f"stdout={run.stdout.strip()!r}")
+            if run.stderr:
+                parts.append(f"stderr={run.stderr.strip()!r}")
+            return probe_name, " ".join(parts)
+        return probe_name, "OK"
 
-        if spec.get("ok_marker"):
-            marker = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
-            ok = run.verdict == Verdict.OK and marker in output
-            detail = run.verdict_message() if not ok else ""
-            return ok, detail
+    # Probe success markers should be checked against cleaned output so
+    # engine-specific quoting/ANSI stripping in configs.yml actually takes effect.
+    output = run.combined_output()
 
-        if "ok" in spec:
-            ok = run.verdict == Verdict.OK and spec["ok"] in output
-            if not ok:
-                detail = run.verdict_message() if run.verdict != Verdict.OK else "marker not found"
-            else:
-                detail = ""
-            return ok, detail
+    if spec.get("ok_marker"):
+        marker = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
+        ok = run.verdict == Verdict.OK and marker in output
+        return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
 
-        ok = run.verdict == Verdict.OK
-        return ok, run.verdict_message() if not ok else ""
-    finally:
-        staged.cleanup()
+    if "ok" in spec:
+        ok = run.verdict == Verdict.OK and spec["ok"] in output
+        if not ok:
+            detail = run.verdict_message() if run.verdict != Verdict.OK else "marker not found"
+            return probe_name, detail or "FAIL"
+        return probe_name, "OK"
+
+    ok = run.verdict == Verdict.OK
+    return probe_name, "OK" if ok else (run.verdict_message() or "FAIL")
 
 
-def discover_engines(dist_dir: Path) -> list[Path]:
-    """Find executable files with a sidecar .json in dist_dir (non-recursive)."""
-    engines: list[Path] = []
-    if not dist_dir.is_dir():
-        return engines
-    for entry in sorted(dist_dir.iterdir()):
-        if entry.is_file() and os.access(entry, os.X_OK):
-            if (dist_dir / (entry.name + ".json")).exists():
-                engines.append(entry)
-    return engines
+def probe_engine(
+    cfg: EngineConfig, test262_dir: Path, *, jobs: int = 1
+) -> Iterator[tuple[str, str]]:
+    """Run all probes on a single engine, yielding (probe_name, result) as each completes.
+
+    The first probe (print) runs outside the pool with a high timeout
+    as a warmup: some engines need extra time on first invocation
+    (e.g. jscript downloads a .dll from Microsoft on first run).
+    """
+    probes = list(PROBES.items())
+    first_name, first_spec = probes[0]
+    yield run_probe(cfg, test262_dir, first_name, first_spec, timeout=60)
+    rest = probes[1:]
+
+    if jobs <= 1 or not rest:
+        for name, spec in rest:
+            yield run_probe(cfg, test262_dir, name, spec)
+        return
+
+    with ProcessPoolExecutor(max_workers=min(jobs, len(rest))) as pool:
+        futures = {
+            pool.submit(run_probe, cfg, test262_dir, name, spec): name
+            for name, spec in rest
+        }
+        for future in as_completed(futures):
+            yield future.result()
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Probe JS engines for test262 readiness.")
+    p = argparse.ArgumentParser(description="Probe JavaScript engines for test262 readiness.")
     p.add_argument("engines", nargs="+", help="Engine binary paths (or path to directory with them)")
     p.add_argument("--test262-dir", default=str(DEFAULT_TEST262_DIR), help="test262 repo root")
+    p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), help="Parallel probes per engine")
     args = p.parse_args()
 
     test262_dir = Path(args.test262_dir).resolve()
@@ -327,7 +335,9 @@ def main() -> None:
     for e in args.engines:
         ep = Path(e)
         if ep.is_dir():
-            engines.extend(discover_engines(ep))
+            for entry in sorted(ep.iterdir()):
+                if entry.is_file() and os.access(entry, os.X_OK) and (ep / (entry.name + ".json")).exists():
+                    engines.append(entry)
         else:
             engines.append(ep)
 
@@ -339,21 +349,13 @@ def main() -> None:
             print(f"{binary.name}:  # load error: {e}", flush=True)
             continue
 
-        runner = Runner(cfg)
-        annotator = Annotator(cfg)
-        asm_bare = Assembler(cfg, test262_dir, no_harness=True)
-        asm_full = Assembler(cfg, test262_dir)
-
         print(f"{binary.name}:", flush=True)
-        for probe_name, spec in PROBES.items():
-            asm = asm_full if spec.get("use_harness") else asm_bare
-            with tempfile.TemporaryDirectory(prefix="probe-") as tmp:
-                ok, detail = run_probe(runner, annotator, asm, cfg, probe_name, spec, Path(tmp))
-            val = "true" if ok else "false"
-            if detail:
-                print(f"  {probe_name}: {val}  # {detail}", flush=True)
+        results = list(probe_engine(cfg, test262_dir, jobs=args.jobs))
+        for probe_name, result in sorted(results, key=lambda item: item[0]):
+            if result == "OK":
+                print(f"  {probe_name}: true", flush=True)
             else:
-                print(f"  {probe_name}: {val}", flush=True)
+                print(f"  {probe_name}: false  # {result}", flush=True)
         print(flush=True)
 
 

@@ -29,6 +29,7 @@ from lib import (
     Verdict,
     iterate_js_files,
 )
+from lib.probe import PROBES, probe_engine
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
 DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent / "third_party" / "test262").resolve()
@@ -212,6 +213,8 @@ def main() -> None:
                    help="Exclude test/staging tests")
     p.add_argument("--limit", type=int, default=0, metavar="N",
                    help="Stop after running N tests")
+    p.add_argument("--no-probe", action="store_true", default=False,
+                   help="Skip engine probing before test run")
     p.add_argument("-E", action="store_true", dest="emit",
                    help="Preprocess a single test and write it to stdout or -o FILE")
     p.add_argument("--save-compiled", metavar="DIR",
@@ -219,6 +222,11 @@ def main() -> None:
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
+
+    if args.output_format == "auto":
+        args.output_format = "json" if (args.output and args.output.endswith(".json")) else "simple"
+
+    wall_start = time.monotonic()
 
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
@@ -238,7 +246,15 @@ def main() -> None:
         assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
 
-    # Stage 1: discover test paths (no file I/O)
+    reporter = Reporter(engine, verbose=args.verbose, test262=True, test262_dir=test262_dir)
+
+    # Probe engine and harness capabilities
+    if not args.no_probe and args.output and args.output_format == "json":
+        for name, result in probe_engine(engine, test262_dir, jobs=args.jobs):
+            reporter.add_probe_result(name, result, total=len(PROBES))
+        reporter.clear_progress()
+
+    # Discover test paths (no file I/O)
     exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
     if args.no_intl:
         exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
@@ -255,19 +271,11 @@ def main() -> None:
     if args.limit:
         tests = itertools.islice(tests, args.limit)
 
-    # Stage 2: read, parse, assemble, execute, classify (all in process pool)
     include_features = {f for item in args.features for f in item.split(",") if f} or None
     if args.skip_features:
         skip_features = {f for item in args.skip_features for f in item.split(",") if f} or None
     else:
         skip_features = set(engine.test262_skip_features) or None
-
-    reporter = Reporter(
-        engine,
-        verbose=args.verbose,
-        test262=True,
-        test262_dir=test262_dir,
-    )
 
     executor = Executor(
         engine, assembler,
@@ -278,7 +286,6 @@ def main() -> None:
         skip_features=skip_features,
     )
 
-    wall_start = time.monotonic()
     try:
         executor.run(tests, on_test_result=reporter.add_file)
     except KeyboardInterrupt:
@@ -296,7 +303,7 @@ def main() -> None:
     fail_count = reporter.print_summary(wall_sec=wall_sec)
 
     if args.output:
-        reporter.write(args.output, output_format=args.output_format)
+        reporter.write(args.output, output_format=args.output_format, wall_sec=wall_sec)
 
 
 if __name__ == "__main__":
