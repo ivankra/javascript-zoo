@@ -205,9 +205,25 @@ class Assembler:
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
         source = p.read_text(encoding="utf-8", errors="replace")
+
         # Expand template literals in harness code for ES5 engines
         if "`" in source:
             source = expand_template_literals(source)
+
+        # Some engines won't report user-defined exception names nor run
+        # their toString(), but would print the message field inside -
+        # move Test262Error prefix to message field so we can properly
+        # classify it.
+        if name == "sta.js":
+            source = source.replace(
+                '  this.message = message || "";',
+                '  this.message = "Test262Error: " + (message || "");'
+            )
+            source = source.replace(
+                '  return "Test262Error: " + this.message;',
+                '  return this.message;'
+            )
+
         return source
 
     def _copy_deps_recursive(
