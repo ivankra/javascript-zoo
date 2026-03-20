@@ -129,7 +129,7 @@ def format_output_line(run: RunResult) -> str:
 
 # ── JSON formatting ──────────────────────────────────────────────────────────
 
-_INLINE_DICT_KEYS = frozenset({"ok", "fail", "skip", "strict", "sloppy"})
+_INLINE_DICT_KEYS = frozenset({"ok", "ok_percent", "fail", "skip", "strict", "sloppy"})
 
 def _is_inline_json(value: Any) -> bool:
     return isinstance(value, dict) and bool(value) and set(value.keys()) <= _INLINE_DICT_KEYS
@@ -529,13 +529,19 @@ class Reporter:
         top_time = sorted(per_test_time.items(), key=lambda x: -x[1])[:20]
         top_time = [(path, t) for path, t in top_time if t]
 
+        def add_ok_percent(d: dict[str, int]) -> dict[str, Any]:
+            total = d.get("ok", 0) + d.get("fail", 0)
+            if total:
+                return {**d, "ok_percent": round(100.0 * d.get("ok", 0) / total, 3)}
+            return d
+
         summary: dict[str, Any] = {
-            "tests": test_stats.to_dict(),
+            "tests": add_ok_percent(test_stats.to_dict()),
         }
         if mode_stats:
             summary["modes"] = {s: ss.to_dict() for s, ss in sorted(mode_stats.items())}
         if j_editions:
-            summary["editions"] = j_editions
+            summary["editions"] = {k: add_ok_percent(v) for k, v in j_editions.items()}
         if j_edition_features:
             summary["edition_features"] = j_edition_features
         if j_features:
