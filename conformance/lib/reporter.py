@@ -175,11 +175,11 @@ class Reporter:
         self._feature_to_edition: dict[str, str] = dict(feature_to_edition or {})
         self._wall_sec: float = 0
         # Dir progress tracking (initialized by set_expected_dirs)
-        self._dir_order: list[str] | None = None
-        self._dir_total: Counter[str] | None = None
-        self._dir_done: Counter[str] | None = None
-        self._dir_passed: Counter[str] | None = None
-        self._dir_failed_tests: dict[str, list[str]] | None = None
+        self._dir_order: list[str] = []
+        self._dir_total: Counter[str] = Counter()
+        self._dir_done: Counter[str] = Counter()
+        self._dir_passed: Counter[str] = Counter()
+        self._dir_failed_tests: dict[str, list[str]] = {}
         self._dir_next_index: int = 0
 
     @property
@@ -225,7 +225,7 @@ class Reporter:
             else:
                 print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
         # Dir progress tracking
-        if self._dir_done is not None:
+        if self._dir_order:
             run_id = run.run_id or ""
             fp = run_id.split("@")[0]
             d = os.path.dirname(fp)
@@ -273,7 +273,7 @@ class Reporter:
         Requires set_expected_dirs() to have been called first.
         When header=True, prints "Summary by directory:" header and 2-space indent.
         """
-        if self._dir_order is None:
+        if not self._dir_order:
             return
         # Check if there's anything to print before clearing progress.
         if (

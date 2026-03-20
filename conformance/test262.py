@@ -18,29 +18,27 @@ import tempfile
 import time
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, ClassVar, Iterator
-
-import yaml
-SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
-
-_SCRIPT_DIR = Path(__file__).parent.resolve()
+from typing import Any, Iterator
 
 from lib import (
     Classifier,
     EngineConfig,
     ErrorType,
+    FEATURES_BY_ECMASCRIPT_EDITION,
+    _FEATURE_TO_EDITION_STR,
+    Frontmatter,
     Reporter,
     RunResult,
     Runner,
     Verdict,
-    iterate_js_files,
     expand_template_literals,
+    iterate_js_files,
 )
 
-DEFAULT_TEST262_DIR = (_SCRIPT_DIR.parent / "third_party" / "test262").resolve()
+SCRIPT_DIR = Path(__file__).parent.resolve()
+DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
 INTL402_SKIP_PATHS = ("test/intl402", "test/staging/Intl402")
-FEATURES_PATH = _SCRIPT_DIR / "lib" / "features.yml"
 
 _REL_SPECIFIER_RE = re.compile(
     r"""(?:"""
@@ -50,81 +48,6 @@ _REL_SPECIFIER_RE = re.compile(
     r"""|importValue\s*\(\s*['"](\.[^'"]+)['"]"""  # ShadowRealm importValue
     r""")"""
 )
-
-def _load_features_by_ecmascript_edition() -> dict[str, list[str]]:
-    with FEATURES_PATH.open("r", encoding="utf-8") as f:
-        data = yaml.load(f, Loader=SafeLoader)
-
-    if not isinstance(data, dict):
-        raise TypeError(f"{FEATURES_PATH} must contain a mapping")
-
-    editions: dict[str, list[str]] = {}
-    for edition, features in data.items():
-        if not isinstance(edition, str):
-            raise TypeError(f"{FEATURES_PATH} contains a non-string edition key: {edition!r}")
-        if not isinstance(features, list) or not all(isinstance(feature, str) for feature in features):
-            raise TypeError(f"{FEATURES_PATH} entry {edition!r} must be a list of strings")
-        editions[edition] = features
-    return editions
-
-
-FEATURES_BY_ECMASCRIPT_EDITION = _load_features_by_ecmascript_edition()
-
-# Reverse map: feature -> edition key
-FEATURE_TO_ECMASCRIPT_EDITION: dict[str, str] = {}
-for _edition, _feats in FEATURES_BY_ECMASCRIPT_EDITION.items():
-    for _f in _feats:
-        FEATURE_TO_ECMASCRIPT_EDITION.setdefault(_f, _edition)
-
-
-@dataclasses.dataclass
-class Frontmatter:
-    """Parsed test262 YAML frontmatter."""
-    description: str = ""
-    includes: list[str] = dataclasses.field(default_factory=list)
-    flags: set[str] = dataclasses.field(default_factory=set)
-    features: set[str] = dataclasses.field(default_factory=set)
-    negative_phase: str | None = None
-    negative_type: str | None = None
-    locale: list[str] = dataclasses.field(default_factory=list)
-    es5id: str | None = None
-    es6id: str | None = None
-    _FRONTMATTER_RE: ClassVar[re.Pattern[str]] = re.compile(r"/\*---\n(.*?)\n---\*/", re.DOTALL)
-
-    @classmethod
-    def parse(cls, source_text: str) -> "Frontmatter":
-        """Parse YAML frontmatter given the source code of a test262 test."""
-        m = cls._FRONTMATTER_RE.search(source_text.replace("\r\n", "\n").replace("\r", "\n"))
-        if not m:
-            return cls()
-
-        data = yaml.load(m.group(1), Loader=SafeLoader)
-        negative = data.get("negative") or {}
-
-        return cls(
-            description=data.get("description", "") or "",
-            includes=list(data.get("includes") or []),
-            flags=set(data.get("flags") or []),
-            features=set(data.get("features") or []),
-            negative_phase=negative.get("phase"),
-            negative_type=negative.get("type"),
-            locale=list(data.get("locale") or []),
-            es5id=str(data["es5id"]) if data.get("es5id") else None,
-            es6id=str(data["es6id"]) if data.get("es6id") else None,
-        )
-
-    @property
-    def scenarios(self) -> tuple[str, ...]:
-        """Expand frontmatter flags into concrete execution scenarios."""
-        if "raw" in self.flags:
-            return ("raw",)
-        if "module" in self.flags:
-            return ("module",)
-        if "onlyStrict" in self.flags:
-            return ("strict",)
-        if "noStrict" in self.flags:
-            return ("sloppy",)
-        return ("strict", "sloppy")
 
 
 def emit_preprocessed_test(
@@ -152,7 +75,7 @@ def emit_preprocessed_test(
     test_path = test262_dir / rel_path
     source = test_path.read_text(encoding="utf-8", errors="replace")
     fm = Frontmatter.parse(source)
-    scenarios = [s for s in fm.scenarios if mode == "all" or mode == s]
+    scenarios = [s for s in fm.scenarios() if mode == "all" or mode == s]
     if not scenarios:
         sys.exit(f"no runnable scenario for mode {mode!r}: {rel_path}")
     scenario = scenarios[0]
@@ -163,7 +86,7 @@ def emit_preprocessed_test(
         source=source,
         fm=fm,
         scenario=scenario,
-    ), tags=fm.features | {f"includes:{i}" for i in fm.includes} | {"test262"})
+    ), tags=fm.tags())
     if output:
         Path(output).write_text(assembled, encoding="utf-8")
     else:
@@ -447,21 +370,17 @@ class Executor:
         test_path = self.test262_dir / rel_path
         source = test_path.read_text(encoding="utf-8", errors="replace")
         fm = Frontmatter.parse(source)
+        tags = fm.tags()
 
-        if fm.es5id:
-            fm.features.add("es5id")
-        if fm.es6id:
-            fm.features.add("es6id")
-
-        if self.include_features and not (fm.features & self.include_features):
-            missing = self.include_features - fm.features
+        if self.include_features and not (tags & self.include_features):
+            missing = self.include_features - tags
             return [RunResult(
                 run_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
                 features=frozenset(fm.features),
             )]
         if self.skip_features:
-            blocked = fm.features & self.skip_features
+            blocked = tags & self.skip_features
             if blocked:
                 return [RunResult(
                     run_id=rel_path, test_path=str(test_path),
@@ -474,7 +393,7 @@ class Executor:
                 test_path=test_path, rel_path=rel_path, source=source,
                 fm=fm, scenario=scenario,
             ))
-            for scenario in fm.scenarios if self.mode == "all" or self.mode == scenario
+            for scenario in fm.scenarios() if self.mode == "all" or self.mode == scenario
         ]
 
     def _execute_one(self, case: Case) -> RunResult:
@@ -484,11 +403,7 @@ class Executor:
         is_async = "async" in case.fm.flags
         expect_finished = not is_negative and case.scenario != "raw"
 
-        tags = case.fm.features | {f"includes:{i}" for i in case.fm.includes} | {"test262"}
-        if is_module:
-            tags.add("module")
-        if is_negative:
-            tags.add("negative")
+        tags = case.fm.tags()
         staged = self.assembler.stage(case, temp_dir=self._shared_tmp, save_compiled=self.save_compiled, tags=tags)
         try:
             run = self.runner.run_command(
@@ -552,19 +467,6 @@ class Executor:
         run.verdict = Verdict.OK
         run.error_type = None
         run.error_message = None
-
-
-
-def expand_edition_aliases(features: set[str]) -> set[str]:
-    """Expand ES edition aliases (es5, es6, es2015..es2025) to their feature sets."""
-    result: set[str] = set()
-    for f in features:
-        edition_features = FEATURES_BY_ECMASCRIPT_EDITION.get(f)
-        if edition_features is not None:
-            result.update(edition_features)
-        else:
-            result.add(f)
-    return result
 
 
 def main() -> None:
@@ -644,9 +546,9 @@ def main() -> None:
         tests = itertools.islice(tests, args.limit)
 
     # Stage 2: read, parse, assemble, execute, classify (all in process pool)
-    include_features = expand_edition_aliases({f for item in args.features for f in item.split(",") if f}) or None
+    include_features = {f for item in args.features for f in item.split(",") if f} or None
     if args.skip_features:
-        skip_features = expand_edition_aliases({f for item in args.skip_features for f in item.split(",") if f}) or None
+        skip_features = {f for item in args.skip_features for f in item.split(",") if f} or None
     else:
         skip_features = set(engine.test262_skip_features) or None
 
@@ -656,7 +558,7 @@ def main() -> None:
         test262=True,
         editions_order=list(FEATURES_BY_ECMASCRIPT_EDITION.keys()),
         features_by_edition=FEATURES_BY_ECMASCRIPT_EDITION,
-        feature_to_edition=FEATURE_TO_ECMASCRIPT_EDITION,
+        feature_to_edition=_FEATURE_TO_EDITION_STR,
     )
 
     executor = Executor(

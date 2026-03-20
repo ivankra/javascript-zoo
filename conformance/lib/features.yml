@@ -11,11 +11,9 @@ harness:
   - host-gc-required
 
 es5:
-  - es5id  # our own tag: presence of es5id field in YAML frontmatter
   - caller
 
 es6:
-  - es6id  # our own tag: presence of es5id field in YAML frontmatter
   - __proto__
   - Array.prototype.values
   - ArrayBuffer
