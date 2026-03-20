@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: MIT
 
 const fs = require("fs");
+const path = require("path");
 
 const Sval = require("./dist/sval.umd.cjs");
 
@@ -13,11 +14,19 @@ function readline() {
 }
 
 const scriptArgs = process.argv.slice(2);
+let sourceType = "script";
+
+if (scriptArgs.length > 0 && scriptArgs[0] === "--module") {
+  scriptArgs.shift();
+  sourceType = "module";
+} else if (scriptArgs.some((arg) => path.extname(arg) === ".mjs")) {
+  sourceType = "module";
+}
 
 try {
   const interpreter = new Sval({
     ecmaVer: "latest",
-    sourceType: "script",
+    sourceType,
     sandBox: true,
   });
 

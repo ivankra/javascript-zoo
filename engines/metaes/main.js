@@ -3,8 +3,9 @@
 // SPDX-License-Identifier: MIT
 
 const fs = require("fs");
+const path = require("path");
 
-const { metaesEval, uncps } = require("./build/lib");
+const { metaesEval, metaesEvalModule, uncps } = require("./build/lib");
 
 function readline() {
   const buf = Buffer.alloc(1), bytes = [];
@@ -13,13 +14,35 @@ function readline() {
 }
 
 const scriptArgs = process.argv.slice(2);
-const evalSync = uncps(metaesEval);
+let moduleMode = scriptArgs[0] === "--module";
+if (moduleMode) {
+  scriptArgs.shift();
+} else if (scriptArgs.some((arg) => path.extname(arg) === ".mjs")) {
+  moduleMode = true;
+}
+const evalSync = uncps(moduleMode ? metaesEvalModule : metaesEval);
 const env = {
   values: {
     print: console.log,
     console: { log: console.log },
   },
 };
+
+function formatThrown(err) {
+  if (err && typeof err === "object") {
+    if (typeof err.name === "string" && err.name) {
+      return err.name + (typeof err.message === "string" && err.message ? ": " + err.message : "");
+    }
+    if (typeof err.message === "string" && err.message) {
+      return err.message;
+    }
+    try {
+      const json = JSON.stringify(err);
+      if (json && json !== "{}") return json;
+    } catch {}
+  }
+  return String(err);
+}
 
 try {
   if (scriptArgs.length > 0) {
@@ -39,12 +62,12 @@ try {
           console.log(String(value));
         }
       } catch (e) {
-        console.log("Uncaught exception: " + e);
+        console.log("Uncaught exception: " + formatThrown(e));
       }
     }
   }
 } catch (e) {
-  console.log("Uncaught exception: " + e);
+  console.log("Uncaught exception: " + formatThrown(e));
   if (e && e.stack) console.log(e.stack);
   process.exit(1);
 }
