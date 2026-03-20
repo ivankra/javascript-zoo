@@ -6,7 +6,7 @@ all: unittest mypy
 unittest:
 	cd ../.. && python3 -m unittest -v \
 	  conformance.lib.config_test \
-	  conformance.lib.classifier_test \
+	  conformance.lib.annotator_test \
 	  conformance.lib.frontmatter_test \
 	  conformance.lib.runner_test
 

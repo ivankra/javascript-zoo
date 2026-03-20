@@ -18,7 +18,7 @@ _JS_ERROR_NAME_RE = re.compile(
 )
 
 
-class Classifier:
+class Annotator:
     """Annotates RunResult with verdict/error_type/error_message."""
 
     # Strip ANSI escape sequences (CSI codes) from all engine output by default.
@@ -48,6 +48,8 @@ class Classifier:
         ok_pattern: str | None = None,
         fail_pattern: str | None = None,
         expect_async: bool = False,
+        negative_phase: str | None = None,
+        negative_type: str | None = None,
         strip_line_prefix: str | None = None,
     ) -> RunResult:
         """Classify run outcome; returns the same RunResult with fields set.
@@ -57,9 +59,28 @@ class Classifier:
             fail_pattern:      regex matching explicit failure lines from the test wrapper.
                                If both ok_pattern and fail_pattern match, test will fail.
             expect_async:      require Test262:AsyncTestComplete token (test262).
+            negative_phase:    expected failure phase for negative tests ("parse", "resolution", "runtime").
+            negative_type:     expected JS error constructor name for negative tests (e.g. "SyntaxError").
             strip_line_prefix: fixed string prefix stripped from the start of each error
                                message line (e.g. "test/foo.js: " added by test wrappers).
         """
+        self._classify_impl(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
+                            expect_async=expect_async, strip_line_prefix=strip_line_prefix)
+
+        if negative_type:
+            self._check_negative(run, negative_phase=negative_phase, negative_type=negative_type)
+
+        return run
+
+    def _classify_impl(
+        self,
+        run: RunResult,
+        *,
+        ok_pattern: str | None = None,
+        fail_pattern: str | None = None,
+        expect_async: bool = False,
+        strip_line_prefix: str | None = None,
+    ) -> None:
         # Produce cleaned streams by applying engine-specific replacements.
         run.stdout_cleaned = apply_replacements(run.stdout or "", self._stdout_replace)
         run.stderr_cleaned = apply_replacements(run.stderr or "", self._stderr_replace)
@@ -67,7 +88,7 @@ class Classifier:
         # Timeout and OOM were already classified by Runner.
         if run.error_type in (ErrorType.TIMEOUT, ErrorType.OOM):
             run.verdict = Verdict.FAILED
-            return run
+            return
 
         # Clear any stale classification from Runner.
         run.error_type = None
@@ -82,7 +103,7 @@ class Classifier:
                 run.error_message = signal.Signals(signum).name
             except ValueError:
                 run.error_message = f"signal {signum}"
-            return run
+            return
 
         # Check for runtime panic messages
         exc = (self._match_exception(run.stderr_cleaned or "", self._crash_cres) or
@@ -92,7 +113,7 @@ class Classifier:
             run.error_type = ErrorType.CRASHED
             run.error_message = exc[1]
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
-            return run
+            return
 
         output = run.combined_output().strip()
         lines = output.splitlines()
@@ -108,19 +129,19 @@ class Classifier:
                 run.verdict = Verdict.FAILED
                 run.error_type = ErrorType.ASYNC_TEST_FAILURE
                 run.error_message = m.group(1).strip() if m else None
-                return run
+                return
 
             if "Test262:AsyncTestComplete" not in output:
                 run.verdict = Verdict.FAILED
                 run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
-                return run
+                return
 
         if ok_found and fail_found:
             # probably engine dumped a large block of source code with both markers
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.GENERIC
             run.error_message = "found both ok and fail markers"
-            return run
+            return
 
         # TODO: fix ambiguous cases
         # jsish      es3/global.SyntaxError.thrown.js
@@ -145,7 +166,7 @@ class Classifier:
             run.error_type = best_et
             run.error_message = "\n".join(msgs) if msgs else None
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
-            return run
+            return
 
         # Heuristic: scan output lines for the first JS error class name.
         if not errors:
@@ -161,14 +182,14 @@ class Classifier:
                         run.error_type = js_exc
                         run.error_message = line
                         self._shorten_message(run, strip_line_prefix=strip_line_prefix)
-                        return run
+                        return
 
         if (ok_pattern and not ok_found) or fail_found:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.GENERIC
             run.error_message = output or None
             self._shorten_message(run, strip_line_prefix=strip_line_prefix)
-            return run
+            return
 
         # TODO: fix Promise.prototype.finally.js - many engines pass with non-zero exit code
         assert run.exit_code is not None
@@ -176,10 +197,46 @@ class Classifier:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.EXIT
             run.error_message = f"exit code {run.exit_code}"
-            return run
+            return
 
         run.verdict = Verdict.OK
-        return run
+
+    def _check_negative(
+        self,
+        run: RunResult,
+        *,
+        negative_phase: str | None,
+        negative_type: str,
+    ) -> None:
+        """Post-classify check for negative tests. Mutates run in place."""
+        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED, ErrorType.OOM):
+            return
+
+        if negative_phase in ("parse", "resolution"):
+            if run.error_type is None:
+                run.verdict = Verdict.FAILED
+                run.error_type = ErrorType.NEGATIVE
+                run.error_message = "negative test did not fail"
+                return
+
+        if run.error_type is not None:
+            expected = ErrorType.from_js_error(negative_type)
+            assert expected is not None
+            if run.error_type != expected and run.error_type != ErrorType.EXIT:
+                orig_err = run.verdict_message()
+                run.error_message = f"expected {negative_type} (got: {orig_err})"
+                run.verdict = Verdict.FAILED
+                run.error_type = ErrorType.NEGATIVE
+                return
+        else:
+            run.verdict = Verdict.FAILED
+            run.error_type = ErrorType.NEGATIVE
+            run.error_message = "expected error not thrown"
+            return
+
+        run.verdict = Verdict.OK
+        run.error_type = None
+        run.error_message = None
 
     def _collect_errors(
         self, text: str, cres: list[re.Pattern[str]]

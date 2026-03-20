@@ -19,9 +19,8 @@ from typing import Any, Iterator
 
 from lib import (
     Assembler,
-    Classifier,
+    Annotator,
     EngineConfig,
-    ErrorType,
     Frontmatter,
     Reporter,
     RunResult,
@@ -57,7 +56,7 @@ class Executor:
         self.test262_dir = assembler.test262_dir
         self.assembler = assembler
         self.runner = Runner(engine)
-        self.classifier = Classifier(engine)
+        self.annotator = Annotator(engine)
         self.timeout_sec = timeout_sec
         self.mode = mode
         self.include_features = include_features
@@ -145,9 +144,12 @@ class Executor:
         is_module = "module" in scenario.fm.flags
         is_negative = bool(scenario.fm.negative_type)
         is_async = "async" in scenario.fm.flags
-        expect_finished = not is_negative and "raw" not in scenario.fm.flags
+        ok_pattern: str | None = Assembler.SCRIPT_EXECUTION_FINISHED_MARKER
+        if is_negative or "raw" in scenario.fm.flags:
+            ok_pattern = None
 
         staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp)
+
         try:
             run = self.runner.run_command(
                 self.engine.argv(staged.script_path, tags=scenario.tags),
@@ -158,50 +160,19 @@ class Executor:
                 cwd=str(staged.cwd),
             )
 
-            if is_negative:
-                self.classifier.classify(run, expect_async=is_async)
-                self._check_negative(scenario.fm, run)
-            else:
-                ok_pattern = (Assembler.SCRIPT_EXECUTION_FINISHED_MARKER if expect_finished else None)
-                self.classifier.classify(run, expect_async=is_async, ok_pattern=ok_pattern)
+            self.annotator.classify(
+                run,
+                expect_async=is_async,
+                ok_pattern=ok_pattern,
+                negative_phase=scenario.fm.negative_phase if is_negative else None,
+                negative_type=scenario.fm.negative_type if is_negative else None,
+            )
 
             run.mode = scenario.mode
             run.tags = scenario.tags
             return run
         finally:
             staged.cleanup()
-
-    def _check_negative(self, fm: Frontmatter, run: RunResult) -> None:
-        """Post-classify check for negative tests. Mutates run in place."""
-        if run.error_type in (ErrorType.TIMEOUT, ErrorType.CRASHED, ErrorType.OOM):
-            return  # leave classify()'s verdict intact
-
-        if fm.negative_phase in ("parse", "resolution"):
-            if run.error_type is None:
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.NEGATIVE
-                run.error_message = "negative test did not fail"
-                return
-
-        if run.error_type is not None:
-            expected = ErrorType.from_js_error(fm.negative_type) if fm.negative_type else None
-            assert expected is not None
-            if run.error_type != expected and run.error_type != ErrorType.EXIT:
-                orig_err = run.verdict_message()
-                run.error_message = f"expected {fm.negative_type} (got: {orig_err})"
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.NEGATIVE
-                return
-        else:
-            run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.NEGATIVE
-            run.error_message = "expected error not thrown"
-            return
-
-        run.verdict = Verdict.OK
-        run.error_type = None
-        run.error_message = None
-
 
 def main() -> None:
     p = argparse.ArgumentParser(

@@ -25,7 +25,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
-from conformance.lib import Classifier, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
+from conformance.lib import Annotator, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
@@ -358,7 +358,7 @@ class BenchRunner:
         self.out = out
         self.result = result
         self._runner = Runner(cfg)
-        self.classifier = Classifier(cfg)
+        self.annotator = Annotator(cfg)
         self.last: RunResult | None = None
 
     @property
@@ -402,7 +402,7 @@ class BenchRunner:
             print(run.stderr.rstrip(), file=sys.stderr, flush=True)
 
         scores = parse_scores(run.combined_output(), expected, v8_v7=v8_v7)
-        run = self.classifier.classify(run)
+        run = self.annotator.classify(run)
         run.benchmarks = scores  # type: ignore[assignment]
 
         if run.verdict is not Verdict.FAILED:

@@ -7,7 +7,7 @@ import unittest
 from typing import Any
 
 from conformance.lib import (
-    Classifier,
+    Annotator,
     EngineConfig,
     ErrorType,
     RunMetrics,
@@ -55,9 +55,9 @@ _CLASSIFY_CASES: list[tuple[str, dict, dict, Verdict, ErrorType | None, str]] = 
     ("async missing",      {"stdout": "plain"},                                  {"expect_async": True},      Verdict.FAILED, ErrorType.NO_ASYNC_TEST_COMPLETE, ""),
 ]
 
-class ClassifierTest(unittest.TestCase):
+class AnnotatorTest(unittest.TestCase):
     def test_classify(self) -> None:
-        cl = Classifier(EngineConfig())
+        cl = Annotator(EngineConfig())
         for label, run_kw, cls_kw, want_v, want_et, want_msg in _CLASSIFY_CASES:
             with self.subTest(label):
                 out = cl.classify(mk_run(**run_kw), **cls_kw)
@@ -67,7 +67,7 @@ class ClassifierTest(unittest.TestCase):
                     self.assertIn(want_msg, out.error_message or "")
 
     def test_warnings_re_suppresses_matched_lines(self) -> None:
-        cl = Classifier(EngineConfig(
+        cl = Annotator(EngineConfig(
             errors_re=[r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"],
             warnings_re=[r"^Note:"],
         ))
@@ -78,18 +78,18 @@ class ClassifierTest(unittest.TestCase):
     def test_stdout_replace_re_anchors_match_per_line(self) -> None:
         # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
         cfg = EngineConfig(stdout_replace_re={"^noise: ": "", "noise$": ""})
-        cl = Classifier(cfg)
+        cl = Annotator(cfg)
         run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
         self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
 
     def test_stdout_replace_re_list_of_dicts_form(self) -> None:
         cfg = EngineConfig(stdout_replace_re=[{"^noise: ": ""}, {"noise$": ""}])
-        cl = Classifier(cfg)
+        cl = Annotator(cfg)
         run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
         self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
 
     def test_strip_ansi_from_stdout_and_stderr(self) -> None:
-        cl = Classifier(EngineConfig())
+        cl = Annotator(EngineConfig())
         run = cl.classify(mk_run(
             stdout="\x1b[1;31mError\x1b[0m: bad\n",
             stderr="\x1b[32mOK\x1b[0m\n",
@@ -99,7 +99,7 @@ class ClassifierTest(unittest.TestCase):
         self.assertEqual(run.stderr_cleaned, "OK\n")
 
     def test_jsish(self) -> None:
-        cl = Classifier(EngineConfig.load("/bin/true", config_name="jsish"))
+        cl = Annotator(EngineConfig.load("/bin/true", config_name="jsish"))
         cases = [
             (
                 "/conformance/es1/literals.string.hex.js:6: parse: Unsupported string escape: \\x\n"
@@ -147,7 +147,7 @@ class ClassifierTest(unittest.TestCase):
         exit_code = run.exit_code
         assert exit_code is not None
         self.assertLess(exit_code, 0)  # negative = killed by signal
-        result = Classifier(EngineConfig()).classify(run)
+        result = Annotator(EngineConfig()).classify(run)
         self.assertEqual(result.error_type, ErrorType.CRASHED)
         self.assertEqual(result.error_message, "SIGABRT")
 
@@ -155,8 +155,8 @@ class ClassifierTest(unittest.TestCase):
 class ErrorsReTest(unittest.TestCase):
     """Tests for errors_re patterns."""
 
-    def _arb(self, errors_re: list[str] | None = None) -> Classifier:
-        return Classifier(EngineConfig(errors_re=errors_re or []))
+    def _arb(self, errors_re: list[str] | None = None) -> Annotator:
+        return Annotator(EngineConfig(errors_re=errors_re or []))
 
     # --- stream selection ---
 
@@ -311,6 +311,70 @@ class ErrorsReTest(unittest.TestCase):
         cl = self._arb([r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"])
         out = cl.classify(mk_run(stdout="raw string"))
         self.assertEqual(out.verdict, Verdict.OK)
+
+
+class NegativeTest(unittest.TestCase):
+    def _ann(self) -> Annotator:
+        return Annotator(EngineConfig())
+
+    def test_correct_error_passes(self) -> None:
+        run = self._ann().classify(
+            mk_run(stderr="SyntaxError: bad", exit_code=1),
+            negative_phase="parse", negative_type="SyntaxError",
+        )
+        self.assertEqual(run.verdict, Verdict.OK)
+        self.assertIsNone(run.error_type)
+
+    def test_wrong_error_type_fails(self) -> None:
+        run = self._ann().classify(
+            mk_run(stderr="TypeError: bad", exit_code=1),
+            negative_phase="runtime", negative_type="SyntaxError",
+        )
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
+        self.assertIn("expected SyntaxError", run.error_message or "")
+
+    def test_parse_no_error_fails(self) -> None:
+        run = self._ann().classify(
+            mk_run(stdout="ok"),
+            negative_phase="parse", negative_type="SyntaxError",
+        )
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
+        self.assertIn("did not fail", run.error_message or "")
+
+    def test_runtime_no_error_fails(self) -> None:
+        run = self._ann().classify(
+            mk_run(stdout="ok"),
+            negative_phase="runtime", negative_type="TypeError",
+        )
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
+        self.assertIn("expected error not thrown", run.error_message or "")
+
+    def test_timeout_preserved(self) -> None:
+        run = self._ann().classify(
+            mk_run(exit_code=-9, error_type=ErrorType.TIMEOUT),
+            negative_phase="parse", negative_type="SyntaxError",
+        )
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.TIMEOUT)
+
+    def test_crash_preserved(self) -> None:
+        run = self._ann().classify(
+            mk_run(exit_code=-11),
+            negative_phase="runtime", negative_type="TypeError",
+        )
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.CRASHED)
+
+    def test_exit_code_error_accepted(self) -> None:
+        """Non-zero exit without a recognized error type still passes negative test."""
+        run = self._ann().classify(
+            mk_run(exit_code=1),
+            negative_phase="runtime", negative_type="SyntaxError",
+        )
+        self.assertEqual(run.verdict, Verdict.OK)
 
 
 if __name__ == "__main__":

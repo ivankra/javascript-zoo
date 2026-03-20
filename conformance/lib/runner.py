@@ -83,11 +83,11 @@ _RUN_METRICS_FIELDS = frozenset(f.name for f in dataclasses.fields(RunMetrics))
 class RunResult:
     """Single script execution outcome plus post-classification fields.
 
-    Produced by Runner.run_command() and optionally refined by Classifier.classify().
+    Produced by Runner.run_command() and optionally refined by Annotator.classify().
     """
     # Stable identifier for reports (relative test path, maybe with a mode suffix)
     run_id: str | None = None
-    # Final outcome: set by Classifier
+    # Final outcome: set by Annotator
     verdict: Verdict | None = None
     # Shell-renderable command string for reproducibility/debugging.
     command: str | None = None
@@ -211,7 +211,7 @@ class MemoryWatchdog:
 class Runner:
     """Process executor: launches engine, captures output, measures resources.
 
-    Classification (verdict/error_type) is intentionally separate – use Classifier.
+    Classification (verdict/error_type) is intentionally separate – use Annotator.
     """
 
     def __init__(self, config: EngineConfig) -> None:
