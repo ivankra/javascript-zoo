@@ -29,6 +29,7 @@ from lib import (
     Classifier,
     EngineConfig,
     ErrorType,
+    Reporter,
     RunResult,
     Runner,
     Verdict,
@@ -112,25 +113,18 @@ class Frontmatter:
             es6id=str(data["es6id"]) if data.get("es6id") else None,
         )
 
-
-def scenarios_for(fm: Frontmatter, mode: str = "all") -> tuple[str, ...]:
-    """Expand frontmatter flags into concrete execution scenarios."""
-    flags = fm.flags
-    res: tuple[str, ...]
-    if "raw" in flags:
-        res = ("raw",)
-    elif "module" in flags:
-        res = ("module",)
-    elif "onlyStrict" in flags:
-        res = ("strict",)
-    elif "noStrict" in flags:
-        res = ("sloppy",)
-    else:
-        res = ("strict", "sloppy")
-    if mode == "all":
-        return res
-    else:
-        return tuple([s for s in res if mode == s])
+    @property
+    def scenarios(self) -> tuple[str, ...]:
+        """Expand frontmatter flags into concrete execution scenarios."""
+        if "raw" in self.flags:
+            return ("raw",)
+        if "module" in self.flags:
+            return ("module",)
+        if "onlyStrict" in self.flags:
+            return ("strict",)
+        if "noStrict" in self.flags:
+            return ("sloppy",)
+        return ("strict", "sloppy")
 
 
 def emit_preprocessed_test(
@@ -155,10 +149,10 @@ def emit_preprocessed_test(
         sys.exit(f"-E requires exactly one matched test, got multiple for: {tests[0]}")
 
     rel_path = emit_tests[0]
-    test_path = test262_dir / "test" / rel_path
+    test_path = test262_dir / rel_path
     source = test_path.read_text(encoding="utf-8", errors="replace")
     fm = Frontmatter.parse(source)
-    scenarios = scenarios_for(fm, mode)
+    scenarios = [s for s in fm.scenarios if mode == "all" or mode == s]
     if not scenarios:
         sys.exit(f"no runnable scenario for mode {mode!r}: {rel_path}")
     scenario = scenarios[0]
@@ -404,20 +398,14 @@ class Executor:
         self._jobs = max(1, jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
-    def run(self, tests: Iterator[str], *, on_test_result: Any = None) -> tuple[list[RunResult], int]:
-        """Submit test files to worker pool, collect and return results.
+    def run(self, tests: Iterator[str], *, on_test_result: Any = None) -> None:
+        """Submit test files to worker pool, delivering results via callback.
 
-        Each worker reads the file, parses frontmatter, expands scenarios,
-        assembles, executes, and classifies — all in parallel.
-
-        Returns (results, n_skipped).
+        Callback signature: on_test_result(results: list[RunResult]).
         """
-        results: list[RunResult] = []
-        n_skipped = 0
-
         try:
             with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
-                futs: dict[concurrent.futures.Future[list[RunResult] | None], None] = {}
+                futs: dict[concurrent.futures.Future[list[RunResult]], str] = {}
                 test_iter = iter(tests)
                 exhausted = False
 
@@ -429,7 +417,7 @@ class Executor:
                             except StopIteration:
                                 exhausted = True
                                 break
-                            futs[pool.submit(self._process_file, rel_path)] = None
+                            futs[pool.submit(self._process_file, rel_path)] = rel_path
 
                         if not futs:
                             break
@@ -441,27 +429,19 @@ class Executor:
                         for fut in done:
                             futs.pop(fut)
                             file_results = fut.result()
-                            if file_results is None:
-                                n_skipped += 1
-                                if on_test_result:
-                                    on_test_result([])
-                                continue
                             if on_test_result:
                                 on_test_result(file_results)
-                            results.extend(file_results)
                 except KeyboardInterrupt:
                     for f in futs:
                         f.cancel()
                     raise
         finally:
             shutil.rmtree(self._shared_tmp, ignore_errors=True)
-        results.sort(key=lambda r: r.run_id or "")
-        return results, n_skipped
 
-    def _process_file(self, rel_path: str) -> list[RunResult] | None:
+    def _process_file(self, rel_path: str) -> list[RunResult]:
         """Read file, parse frontmatter, expand scenarios, execute each.
 
-        Returns None if the file was skipped by feature filter,
+        Returns a single SKIPPED RunResult if filtered by features,
         [] if it had no applicable scenarios for the current mode.
         """
         test_path = self.test262_dir / rel_path
@@ -474,16 +454,27 @@ class Executor:
             fm.features.add("es6id")
 
         if self.include_features and not (fm.features & self.include_features):
-            return None
-        if self.skip_features and (fm.features & self.skip_features):
-            return None
+            missing = self.include_features - fm.features
+            return [RunResult(
+                run_id=rel_path, test_path=str(test_path),
+                verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
+                features=frozenset(fm.features),
+            )]
+        if self.skip_features:
+            blocked = fm.features & self.skip_features
+            if blocked:
+                return [RunResult(
+                    run_id=rel_path, test_path=str(test_path),
+                    verdict=Verdict.SKIPPED, error_message=f"skip features: {', '.join(sorted(blocked))}",
+                    features=frozenset(fm.features),
+                )]
 
         return [
             self._execute_one(Case(
                 test_path=test_path, rel_path=rel_path, source=source,
                 fm=fm, scenario=scenario,
             ))
-            for scenario in scenarios_for(fm, self.mode)
+            for scenario in fm.scenarios if self.mode == "all" or self.mode == scenario
         ]
 
     def _execute_one(self, case: Case) -> RunResult:
@@ -526,6 +517,7 @@ class Executor:
                 )
 
             run.features = frozenset(case.fm.features)
+            run.scenario = case.scenario
             return run
         finally:
             staged.cleanup()
@@ -544,19 +536,13 @@ class Executor:
 
         if run.error_type is not None:
             expected = ErrorType.from_js_error(fm.negative_type) if fm.negative_type else None
-            if expected is not None:
-                if run.error_type != expected:
-                    run.verdict = Verdict.FAILED
-                    run.error_type = ErrorType.NEGATIVE
-                    run.error_message = f"expected {fm.negative_type}, got {run.error_type.value}"
-                    return
-            else:
-                # Type not in ErrorType enum (e.g. "EarlyError"): raw string search in output
-                if not fm.negative_type or not re.search(rf'\b{re.escape(fm.negative_type)}\b', run.combined_output()):
-                    run.verdict = Verdict.FAILED
-                    run.error_type = ErrorType.NEGATIVE
-                    run.error_message = f"expected {fm.negative_type}, not found in output"
-                    return
+            assert expected is not None
+            if run.error_type != expected and run.error_type != ErrorType.EXIT:
+                orig_err = run.verdict_message()
+                run.error_message = f"expected {fm.negative_type} (got: {orig_err})"
+                run.verdict = Verdict.FAILED
+                run.error_type = ErrorType.NEGATIVE
+                return
         else:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.NEGATIVE
@@ -567,161 +553,6 @@ class Executor:
         run.error_type = None
         run.error_message = None
 
-
-def _format_summary_line(
-    label: str,
-    ok: int,
-    fail: int,
-    skip: int = 0,
-    *,
-    use_color: bool = False,
-) -> str:
-    """Format a summary line label and counts, with optional ANSI color."""
-    if use_color:
-        if fail == 0:
-            label = f"\033[1;32m{label}\033[0m"
-        else:
-            pct = ok * 100 // (ok + fail) if (ok + fail) else 0
-            color = "\033[1;33m" if pct > 50 else "\033[1;31m"
-            label = f"{color}{label}\033[0m"
-
-    if fail == 0:
-        counts = f"{ok} passed"
-    else:
-        counts = f"{ok}/{ok + fail} ({ok * 100 / (ok + fail):.2f}%) passed, {fail} failed"
-    if skip:
-        counts += f"; {skip} skipped"
-    return f"{label}: {counts}"
-
-
-def _edition_feature_summary(results: list[RunResult], *, use_color: bool = False) -> str:
-    """Build per-edition/feature test counts; omit editions/features with no results."""
-
-    def worst(a: Verdict | None, b: Verdict) -> Verdict:
-        if a is Verdict.FAILED or b is Verdict.FAILED: return Verdict.FAILED
-        if a is Verdict.OK or b is Verdict.OK: return Verdict.OK
-        return Verdict.SKIPPED
-
-    def counts(d: dict[str, Verdict]) -> tuple[int, int, int]:
-        ok = sum(1 for v in d.values() if v is Verdict.OK)
-        fail = sum(1 for v in d.values() if v is Verdict.FAILED)
-        skip = sum(1 for v in d.values() if v is Verdict.SKIPPED)
-        return ok, fail, skip
-
-    # Per-feature: test_path -> worst verdict across scenarios
-    feature_tests: dict[str, dict[str, Verdict]] = {}
-    other_tests: dict[str, Verdict] = {}
-    for r in results:
-        key = r.test_path or r.run_id or "?"
-        v = r.verdict or Verdict.FAILED
-        if r.features:
-            for f in r.features:
-                d = feature_tests.setdefault(f, {})
-                d[key] = worst(d.get(key), v)
-        else:
-            other_tests[key] = worst(other_tests.get(key), v)
-
-    if not feature_tests and not other_tests:
-        return ""
-
-    # Per-edition: union of test paths from member features (worst verdict)
-    edition_tests: dict[str, dict[str, Verdict]] = {}
-    for f, d in feature_tests.items():
-        ed = edition_tests.setdefault(FEATURE_TO_ECMASCRIPT_EDITION.get(f, "esnext"), {})
-        for key, v in d.items():
-            ed[key] = worst(ed.get(key), v)
-
-    lines = ["Summary by edition/feature:"]
-    for edition in list(FEATURES_BY_ECMASCRIPT_EDITION.keys()) + ["esnext"]:
-        ed = edition_tests.get(edition) or {}
-        if not ed:
-            continue
-        ok, fail, skip = counts(ed)
-        lines.append(f"  {_format_summary_line(edition, ok, fail, skip, use_color=use_color)}")
-
-        feats = FEATURES_BY_ECMASCRIPT_EDITION.get(edition, [])
-        if edition == "esnext":
-            feats = sorted(f for f in feature_tests if f not in FEATURE_TO_ECMASCRIPT_EDITION)
-        for f in feats:
-            d = feature_tests.get(f) or {}
-            if not d:
-                continue
-            ok, fail, skip = counts(d)
-            lines.append(f"    {_format_summary_line(f, ok, fail, skip, use_color=use_color)}")
-
-    if other_tests:
-        ok, fail, skip = counts(other_tests)
-        lines.append(f"  {_format_summary_line('other', ok, fail, skip, use_color=use_color)}")
-
-    return "\n".join(lines)
-
-
-def print_summary(
-    results: list[RunResult],
-    engine_name: str,
-    *,
-    n_skipped: int = 0,
-    wall_sec: float = 0,
-    verbose: bool = False,
-    use_color: bool = False,
-) -> int:
-    """Print failure list and summary line. Returns fail count."""
-    scenario_counts: dict[str, int] = {}
-    test_verdicts: dict[str, Verdict] = {}
-    for r in results:
-        key = r.verdict.value if r.verdict else "unknown"
-        scenario_counts[key] = scenario_counts.get(key, 0) + 1
-        test_key = r.test_path or r.run_id or "?"
-        verdict = r.verdict or Verdict.FAILED
-        prev = test_verdicts.get(test_key)
-        if prev is Verdict.FAILED or verdict is Verdict.FAILED:
-            test_verdicts[test_key] = Verdict.FAILED
-        else:
-            test_verdicts[test_key] = Verdict.OK
-
-    failed = [r for r in results if r.verdict is Verdict.FAILED]
-    if failed and not verbose:
-        print(f"\nFailures ({len(failed)}):")
-        for r in failed[:100]:
-            msg = f"{r.run_id or '?'}: {r.verdict_message()[:120]}"
-            if use_color:
-                msg = f"\033[31m{msg}\033[0m"
-            print(f"  {msg}")
-        if len(failed) > 100:
-            print(f"  ... and {len(failed) - 100} more")
-
-    scenario_ok = scenario_counts.get("ok", 0)
-    fail_count = scenario_counts.get("failed", 0)
-    test_ok = sum(1 for verdict in test_verdicts.values() if verdict is Verdict.OK)
-    test_fail = sum(1 for verdict in test_verdicts.values() if verdict is Verdict.FAILED)
-
-    edition_table = _edition_feature_summary(results, use_color=use_color)
-    if edition_table:
-        print(edition_table)
-
-    peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
-
-    if results or n_skipped:
-        line = (
-            f"{engine_name}: {test_ok}/{test_ok+test_fail} tests passed "
-            f"({test_ok * 100 / (test_ok + test_fail):.2f}%), "
-            f"{test_fail} failed, {n_skipped} skipped"
-        )
-        if wall_sec:
-            line += f", wall time: {wall_sec:.3f}s"
-        if peak_rss_kb:
-            line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
-    else:
-        line = f"{engine_name}: no tests were run"
-
-    print(line)
-
-    return fail_count
-
-
-def format_output_line(run: RunResult) -> str:
-    """Format one terse line for --output."""
-    return f"{run.run_id}: {run.verdict_message()}"
 
 
 def expand_edition_aliases(features: set[str]) -> set[str]:
@@ -763,6 +594,8 @@ def main() -> None:
     p.add_argument("--limit", type=int, default=0, help="Run at most N test files")
     p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
                    help="Skip tests requiring these features (comma-separated)")
+    p.add_argument("--output-format", choices=["auto", "simple", "json"], default="auto",
+                   help="Output format (default: auto, detect from extension)")
     p.add_argument("-E", action="store_true", dest="emit",
                    help="Emit a single preprocessed test to stdout or -o FILE")
     p.add_argument("--save-compiled", metavar="DIR",
@@ -797,8 +630,6 @@ def main() -> None:
         )
         return
 
-    use_color = sys.stdout.isatty()
-
     # Stage 1: discover test paths (no file I/O)
     exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
     if not args.intl:
@@ -819,41 +650,14 @@ def main() -> None:
     else:
         skip_features = set(engine.test262_skip_features) or None
 
-    progress_tests = [0, 0, 0]  # [ok, fail, skip]
-    progress_scenarios = [0, 0]  # [ok, fail]
-    is_tty = sys.stderr.isatty()
-
-    def on_test_result(file_results: list[RunResult]) -> None:
-        if args.verbose:
-            for run in file_results:
-                t = f" {run.metrics.real_time:.2f}s" if run.metrics.real_time else ""
-                if run.verdict is Verdict.FAILED:
-                    msg = f"{run.run_id}: {run.verdict_message()[:120]}{t}"
-                    if use_color:
-                        msg = f"\033[1;31m{msg}\033[0m"
-                    print(msg, flush=True)
-                    if args.verbose >= 3:
-                        run.print_streams()
-                elif args.verbose >= 2:
-                    print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
-        if not file_results:
-            progress_tests[2] += 1
-            return
-        for run in file_results:
-            if run.verdict is Verdict.OK:
-                progress_scenarios[0] += 1
-            elif run.verdict is Verdict.FAILED:
-                progress_scenarios[1] += 1
-        if any(run.verdict is Verdict.FAILED for run in file_results):
-            progress_tests[1] += 1
-        else:
-            progress_tests[0] += 1
-        if not args.verbose and is_tty:
-            print(
-                f"\rTests: {progress_tests[0]} passed, {progress_tests[1]} failed, {progress_tests[2]} skipped " +
-                f"(runs: {progress_scenarios[0]} passed, {progress_scenarios[1]} failed)",
-                end="", file=sys.stderr, flush=True
-            )
+    reporter = Reporter(
+        engine,
+        verbose=args.verbose,
+        test262=True,
+        editions_order=list(FEATURES_BY_ECMASCRIPT_EDITION.keys()),
+        features_by_edition=FEATURES_BY_ECMASCRIPT_EDITION,
+        feature_to_edition=FEATURE_TO_ECMASCRIPT_EDITION,
+    )
 
     executor = Executor(
         engine, assembler,
@@ -867,30 +671,23 @@ def main() -> None:
 
     wall_start = time.monotonic()
     try:
-        results, n_skipped = executor.run(tests, on_test_result=on_test_result)
+        executor.run(tests, on_test_result=reporter.add_file)
     except KeyboardInterrupt:
-        if is_tty and not args.verbose:
-            print("\r\033[K", end="", file=sys.stderr, flush=True)
+        reporter.clear_progress()
         print("\nInterrupted")
         sys.exit(130)
 
-    if is_tty and not args.verbose:
-        print("\r\033[K", end="", file=sys.stderr, flush=True)
+    reporter.clear_progress()
 
-    if not results:
+    if not reporter.results:
         print("No runnable scenarios")
         sys.exit(0)
 
     wall_sec = time.monotonic() - wall_start
-    fail_count = print_summary(
-        results, engine.name,
-        n_skipped=n_skipped, wall_sec=wall_sec, verbose=args.verbose, use_color=use_color,
-    )
+    fail_count = reporter.print_summary(wall_sec=wall_sec)
 
     if args.output:
-        lines = [format_output_line(r) for r in results]
-        Path(args.output).write_text("\n".join(lines) + "\n", encoding="utf-8")
-        print(f"Results written to {args.output}")
+        reporter.write(args.output, output_format=args.output_format)
 
 
 if __name__ == "__main__":

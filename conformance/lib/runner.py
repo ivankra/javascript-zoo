@@ -117,6 +117,8 @@ class RunResult:
     benchmarks: dict[str, int | float | None] = dataclasses.field(default_factory=dict)
     # Test262 features declared in this test's frontmatter (empty for non-test262 runs).
     features: frozenset[str] = dataclasses.field(default_factory=frozenset)
+    # Execution scenario: "strict", "sloppy", "module", or "raw" (test262).
+    scenario: str = ""
 
     def print_streams(self) -> None:
         """Print stdout and stderr with stream-prefixed lines."""
