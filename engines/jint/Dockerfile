@@ -12,9 +12,6 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
     git rev-parse HEAD
 
-COPY engines/jint/jint.patch ./
-RUN git apply jint.patch
-
 RUN dotnet publish Jint.Repl/Jint.Repl.csproj \
       -c Release \
       -o /dist/jint-dist \

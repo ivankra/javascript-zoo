@@ -13,7 +13,6 @@ RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 RUN apt-get update -y && apt-get install -y --no-install-recommends cmake ninja-build
 
 RUN sed -i '1s|^cmake_minimum_required(.*)$|cmake_minimum_required(VERSION 3.28)|' CMakeLists.txt
-RUN cd src/derkjs_impl/runtime; sed -i '2i #include <vector>' boolean.ixx number.ixx errors.ixx
 
 #RUN ./utility.sh build  -- macOS only
 
