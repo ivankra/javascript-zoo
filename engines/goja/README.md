@@ -1,15 +1,15 @@
 # goja
 
-JavaScript engine in pure Go. Fully ES5 compliant, partially ES6+.
+JavaScript engine in pure Go. ES5 and mostly ES2023 compliant.
 
 * Repository:       [dop251/goja](https://github.com/dop251/goja.git) <span class="shields"><img src="https://img.shields.io/github/stars/dop251/goja?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/dop251/goja?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              [46141](# "cloc --fullpath --not_match_f='(?i)(test)' --exclude-lang=Markdown,YAML .")
 * Language:         Go
 * License:          MIT
-* Standard:         ES2023 (partial)
+* Standard:         ES2023
 * Years:            2016-
 * Ancestor:         [otto](../otto/README.md) (borrowed otto's parser)
-* Forks:            [Sobek](../sobek/README.md)
+* Forks:            [Sobek](../sobek/README.md) (adds ES modules support)
 * Parser:           recursive descent ([parser/](https://github.com/dop251/goja/tree/master/parser/), LOC: 4.3k)
 * Runtime platform: Go (cgo-free)
 * Interpreter:      stack-based VM

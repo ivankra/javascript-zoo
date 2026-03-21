@@ -1,4 +1,4 @@
-// REPL and script runner with test262 support for Sobek.
+// REPL and script runner with test262 support for Goja.
 // Adapted from https://github.com/dop251/goja/blob/master/goja/main.go
 //
 // Copyright (c) 2025 Ivan Krasilnikov
@@ -17,7 +17,6 @@
 // COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-//go:build ignore
 package main
 
 import (
@@ -30,20 +29,19 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"path/filepath"
 	"runtime"
 	"runtime/debug"
 	"runtime/pprof"
 	"strings"
-	"sync"
 	"time"
 
-	"github.com/grafana/sobek"
+	"github.com/dop251/goja"
+	"github.com/dop251/goja_nodejs/console"
+	"github.com/dop251/goja_nodejs/require"
 )
 
 var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
 var timelimit = flag.Int("timelimit", 0, "max time to run (in seconds)")
-var moduleMode = flag.Bool("module", false, "execute input files as ECMAScript modules (implied for .mjs)")
 
 func readSource(filename string) ([]byte, error) {
 	if filename == "" || filename == "-" {
@@ -52,7 +50,7 @@ func readSource(filename string) ([]byte, error) {
 	return os.ReadFile(filename)
 }
 
-func load(vm *sobek.Runtime, call sobek.FunctionCall) sobek.Value {
+func load(vm *goja.Runtime, call goja.FunctionCall) goja.Value {
 	p := call.Argument(0).String()
 	b, err := readSource(p)
 	if err != nil {
@@ -65,7 +63,7 @@ func load(vm *sobek.Runtime, call sobek.FunctionCall) sobek.Value {
 	return v
 }
 
-func newRandSource() sobek.RandSource {
+func newRandSource() goja.RandSource {
 	var seed int64
 	if err := binary.Read(crand.Reader, binary.LittleEndian, &seed); err != nil {
 		panic(fmt.Errorf("Could not read random bytes: %v", err))
@@ -74,11 +72,10 @@ func newRandSource() sobek.RandSource {
 }
 
 func run() error {
-	vm := sobek.New()
+	vm := goja.New()
 	vm.SetRandSource(newRandSource())
-	loader := newModuleLoader()
 
-	printFunc := func(call sobek.FunctionCall) sobek.Value {
+	printFunc := func(call goja.FunctionCall) goja.Value {
 		for i, arg := range call.Arguments {
 			if i > 0 {
 				fmt.Print(" ")
@@ -86,21 +83,16 @@ func run() error {
 			fmt.Print(arg.String())
 		}
 		fmt.Println()
-		return sobek.Undefined()
+		return goja.Undefined()
 	}
 
 	vm.Set("print", printFunc)
 	vm.Set("$262", create262(vm))
 
-	// Setting up console with goja_nodejs:
-	//new(require.Registry).Enable(vm)
-	//console.Enable(vm)
+	new(require.Registry).Enable(vm)
+	console.Enable(vm)
 
-	console := vm.NewObject()
-	console.Set("log", printFunc)
-	vm.Set("console", console)
-
-	vm.Set("load", func(call sobek.FunctionCall) sobek.Value {
+	vm.Set("load", func(call goja.FunctionCall) goja.Value {
 		return load(vm, call)
 	})
 
@@ -130,19 +122,13 @@ func run() error {
 				filename = "<stdin>"
 			}
 
-			if *moduleMode || strings.HasSuffix(filename, ".mjs") {
-				if err := loader.run(vm, filename, src); err != nil {
-					return err
-				}
-			} else {
-				prg, err := sobek.Compile(filename, string(src), false)
-				if err != nil {
-					return err
-				}
-				_, err = vm.RunProgram(prg)
-				if err != nil {
-					return err
-				}
+			prg, err := goja.Compile(filename, string(src), false)
+			if err != nil {
+				return err
+			}
+			_, err = vm.RunProgram(prg)
+			if err != nil {
+				return err
 			}
 		}
 	} else {
@@ -151,7 +137,7 @@ func run() error {
 	return nil
 }
 
-func runREPL(vm *sobek.Runtime) error {
+func runREPL(vm *goja.Runtime) error {
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
 		fmt.Print("> ")
@@ -162,7 +148,7 @@ func runREPL(vm *sobek.Runtime) error {
 		val, err := vm.RunString(scanner.Text())
 		if err != nil {
 			fmt.Fprintln(os.Stderr, formatError(err))
-		} else if val != nil && !sobek.IsUndefined(val) {
+		} else if val != nil && !goja.IsUndefined(val) {
 			fmt.Println(val.String())
 		}
 	}
@@ -171,9 +157,9 @@ func runREPL(vm *sobek.Runtime) error {
 
 func formatError(err error) string {
 	switch err := err.(type) {
-	case *sobek.Exception:
+	case *goja.Exception:
 		return "Uncaught exception: " + strings.TrimRight(err.String(), "\n")
-	case *sobek.InterruptedError:
+	case *goja.InterruptedError:
 		return "Uncaught exception: " + strings.TrimRight(err.String(), "\n")
 	default:
 		return err.Error()
@@ -185,141 +171,27 @@ func formatError(err error) string {
 //   - agent: SharedArrayBuffer/Atomics not implemented
 //   - IsHTMLDDA: requires [[IsHTMLDDA]] internal slot, not supported by the engine
 //   - AbstractModuleSource: source phase imports proposal not implemented
-func create262(vm *sobek.Runtime) *sobek.Object {
+func create262(vm *goja.Runtime) *goja.Object {
 	o := vm.NewObject()
 	o.Set("global", vm.GlobalObject())
-	o.Set("evalScript", func(call sobek.FunctionCall) sobek.Value {
+	o.Set("evalScript", func(call goja.FunctionCall) goja.Value {
 		result, err := vm.RunString(call.Argument(0).String())
 		if err != nil {
 			panic(err)
 		}
 		return result
 	})
-	o.Set("detachArrayBuffer", func(call sobek.FunctionCall) sobek.Value {
-		if obj, ok := call.Argument(0).(*sobek.Object); ok {
-			if ab, ok := obj.Export().(sobek.ArrayBuffer); ok {
+	o.Set("detachArrayBuffer", func(call goja.FunctionCall) goja.Value {
+		if obj, ok := call.Argument(0).(*goja.Object); ok {
+			if ab, ok := obj.Export().(goja.ArrayBuffer); ok {
 				ab.Detach()
-				return sobek.Undefined()
+				return goja.Undefined()
 			}
 		}
 		panic(vm.NewTypeError("detachArrayBuffer() is called with incompatible argument"))
 	})
 	o.Set("gc", func() { runtime.GC() })
 	return o
-}
-
-// Note: module support is a Sobek feature. Goja doesn't implement ES modules.
-
-type moduleLoader struct {
-	mu    sync.Mutex
-	files map[string]sobek.ModuleRecord
-	paths map[sobek.ModuleRecord]string
-}
-
-func newModuleLoader() *moduleLoader {
-	return &moduleLoader{
-		files: make(map[string]sobek.ModuleRecord),
-		paths: make(map[sobek.ModuleRecord]string),
-	}
-}
-
-func canonicalFilename(filename string) string {
-	if filename == "" || filename == "-" {
-		return "<stdin>"
-	}
-	if abs, err := filepath.Abs(filename); err == nil {
-		return abs
-	}
-	return filename
-}
-
-func resolveModulePath(referrer, specifier string) (string, error) {
-	if specifier == "" {
-		return "", fmt.Errorf("empty module specifier")
-	}
-	if filepath.IsAbs(specifier) {
-		return filepath.Clean(specifier), nil
-	}
-
-	baseDir := "."
-	if referrer != "" && referrer != "<stdin>" {
-		baseDir = filepath.Dir(referrer)
-	}
-	return filepath.Clean(filepath.Join(baseDir, specifier)), nil
-}
-
-func (l *moduleLoader) resolve(referencingScriptOrModule interface{}, specifier string) (sobek.ModuleRecord, error) {
-	var referrer string
-	if module, ok := referencingScriptOrModule.(sobek.ModuleRecord); ok && module != nil {
-		l.mu.Lock()
-		referrer = l.paths[module]
-		l.mu.Unlock()
-	}
-
-	path, err := resolveModulePath(referrer, specifier)
-	if err != nil {
-		return nil, err
-	}
-
-	l.mu.Lock()
-	if module := l.files[path]; module != nil {
-		l.mu.Unlock()
-		return module, nil
-	}
-	l.mu.Unlock()
-
-	src, err := readSource(path)
-	if err != nil {
-		return nil, err
-	}
-
-	module, err := sobek.ParseModule(path, string(src), l.resolve)
-	if err != nil {
-		return nil, err
-	}
-
-	l.mu.Lock()
-	l.files[path] = module
-	l.paths[module] = path
-	l.mu.Unlock()
-	return module, nil
-}
-
-func (l *moduleLoader) run(vm *sobek.Runtime, filename string, src []byte) error {
-	name := canonicalFilename(filename)
-
-	module, err := sobek.ParseModule(name, string(src), l.resolve)
-	if err != nil {
-		return err
-	}
-
-	l.mu.Lock()
-	l.files[name] = module
-	l.paths[module] = name
-	l.mu.Unlock()
-
-	if err := module.Link(); err != nil {
-		return err
-	}
-
-	vm.SetImportModuleDynamically(func(referencingScriptOrModule interface{}, specifierValue sobek.Value, promiseCapability interface{}) {
-		module, err := l.resolve(referencingScriptOrModule, specifierValue.String())
-		vm.FinishLoadingImportModule(referencingScriptOrModule, specifierValue, promiseCapability, module, err)
-		_, _ = vm.RunString("")
-	})
-
-	promise := module.Evaluate(vm)
-	switch promise.State() {
-	case sobek.PromiseStateRejected:
-		if err, ok := promise.Result().Export().(error); ok {
-			return err
-		}
-		return fmt.Errorf("%v", promise.Result())
-	case sobek.PromiseStatePending:
-		return fmt.Errorf("module evaluation is still pending")
-	default:
-		return nil
-	}
 }
 
 func main() {

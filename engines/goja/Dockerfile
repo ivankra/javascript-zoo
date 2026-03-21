@@ -10,6 +10,7 @@ ARG REV=master
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
+COPY engines/goja/main.go goja/main.go
 RUN cd goja && go build
 
 COPY build/dist.py ./
