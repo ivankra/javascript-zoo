@@ -20,4 +20,4 @@ node:
 
 # Drop into shell in the test container with this repository bind-mounded
 sh:
-	make -C ../build sh
+	make -C ../build sh JSZ_RUNTIME_CWD=/zoo/conformance

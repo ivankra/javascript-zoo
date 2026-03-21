@@ -123,6 +123,8 @@ endif
 )
 endef
 
+JSZ_RUNTIME_CWD ?= /dist
+
 # Build rules for base images (build/jsz-*.Dockerfile).
 # These do not have build artifacts to copy out.
 define build_base
@@ -141,7 +143,7 @@ $(1)-sh sh-$(1): $(IID_DIR)/$(1)
 	  -v "$(ROOT_DIR):/zoo" \
 	  -v "$(ROOT_DIR)/.git:/zoo/.git:ro" \
 	  $(1):$(DOCKER_ARCH) \
-	  $(if $(filter jsz-runtime,$(1)),sh -c 'cd /dist; bash -i')
+	  $(if $(filter jsz-runtime,$(1)),sh -c "cd $(JSZ_RUNTIME_CWD); bash -i")
 
 .PHONY: all $(1) $(1)-sh sh-$(1)
 endef
