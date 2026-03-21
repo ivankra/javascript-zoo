@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import unittest
 
-from conformance.lib import ESNEXT, Frontmatter, test262_feature_to_ecmascript_edition
+from harness.frontmatter import ESNEXT, Frontmatter, test262_feature_to_ecmascript_edition
 
 
 class TestParse(unittest.TestCase):

@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
+import importlib
 import itertools
 import os
 import re
@@ -17,7 +18,10 @@ import time
 from pathlib import Path
 from typing import Any, Iterator
 
-from lib import (
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+
+from harness import (
     Assembler,
     Annotator,
     EngineConfig,
@@ -29,10 +33,10 @@ from lib import (
     Verdict,
     iterate_js_files,
 )
-from lib.probe import PROBES, probe_engine
 
-SCRIPT_DIR = Path(__file__).parent.resolve()
-DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent / "third_party" / "test262").resolve()
+test262_probe = importlib.import_module("harness.test262-probe")
+
+DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 10.0
 INTL402_SKIP_PATHS = ["test/intl402", "test/staging/Intl402"]
 STAGING_SKIP_PATHS = ["test/staging"]
@@ -202,7 +206,7 @@ def main() -> None:
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
                    help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
-    p.add_argument("--config", help="Force a specific config entry from configs.yml (normally inferred from binary basename)")
+    p.add_argument("--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Exclude test paths matching the pattern")
     p.add_argument("--no-annex-b", action="store_true", default=False,
@@ -250,8 +254,8 @@ def main() -> None:
 
     # Probe engine and harness capabilities
     if not args.no_probe and args.output and args.output_format == "json":
-        for name, result in probe_engine(engine, test262_dir, jobs=args.jobs):
-            reporter.add_probe_result(name, result, total=len(PROBES))
+        for name, result in test262_probe.probe_engine(engine, test262_dir, jobs=args.jobs):
+            reporter.add_probe_result(name, result)
         reporter.clear_progress()
 
     # Discover test paths (no file I/O)

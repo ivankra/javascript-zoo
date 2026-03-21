@@ -13,10 +13,13 @@ import tempfile
 import time
 from pathlib import Path
 
-from lib import Annotator, EngineConfig, Reporter, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
-CONFORMANCE_DIR = Path(__file__).parent.resolve()
-VAR_CONSOLE_LOG_JS = CONFORMANCE_DIR / "lib/var-console-log.js"
+from harness import Annotator, EngineConfig, Reporter, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
+
+CONFORMANCE_DIR = REPO_ROOT / "conformance"
+PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
 TIMEOUT_SEC = 10.0
 
 
@@ -43,7 +46,7 @@ def run_one(
         # Engine accepts multiple script files with shared environment
         # between them, so we can just tell it to load a preamble file.
         run = runner.run_command(
-            cfg.argv(VAR_CONSOLE_LOG_JS, test_path),
+            cfg.argv(PRELUDE_CONSOLE_JS, test_path),
             run_id=test_id,
             test_path=str(test_path),
             script_path=str(test_path),

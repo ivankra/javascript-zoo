@@ -6,16 +6,10 @@ from __future__ import annotations
 import unittest
 from typing import Any
 
-from conformance.lib import (
-    Annotator,
-    EngineConfig,
-    ErrorType,
-    RunMetrics,
-    RunResult,
-    Runner,
-    Verdict,
-    iterate_js_files,
-)
+from harness.annotator import Annotator
+from harness.config import EngineConfig
+from harness.runner import ErrorType, Runner, RunMetrics, RunResult, Verdict
+from harness.util import iterate_js_files
 
 
 def mk_run(**kwargs: Any) -> RunResult:
@@ -133,7 +127,7 @@ class AnnotatorTest(unittest.TestCase):
 
     def test_real_crash_produces_signal_name(self) -> None:
         import shutil
-        from conformance.lib import Runner
+        from harness import Runner
         python = shutil.which("python3") or shutil.which("python")
         if not python:
             self.skipTest("python not found")

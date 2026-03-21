@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from conformance.lib import expand_template_literals, iterate_js_files
+from harness.util import expand_template_literals, iterate_js_files
 
 
 class ExpandTemplateLiteralsTest(unittest.TestCase):

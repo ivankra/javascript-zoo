@@ -3,14 +3,7 @@
 
 SHELL := /bin/bash
 
-all: mypy sed node
-
-mypy:
-	python3 -m mypy *.py
-	make -C lib mypy
-
-node:
-	./run.sh node
+all: sed node
 
 # Fix filenames in console.log(...) messages
 sed:
@@ -21,5 +14,10 @@ sed:
 	  fi; \
 	done
 
+# Run the whole test suite through nodejs
+node:
+	./run.py node
+
+# Drop into shell in the test container with this repository bind-mounded
 sh:
 	make -C ../build sh

@@ -7,9 +7,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from conformance.lib import Frontmatter, Scenario
-from conformance.lib.assembler import Assembler, build_print_prelude
-from conformance.lib.config import EngineConfig, Prelude
+from harness.assembler import Assembler, Scenario, build_print_prelude
+from harness.config import EngineConfig, Prelude
+from harness.frontmatter import Frontmatter
 
 
 def _scenario(source: str, *, mode: str = "sloppy", rel_path: str = "test/x.js") -> Scenario:
@@ -26,6 +26,7 @@ def _scenario(source: str, *, mode: str = "sloppy", rel_path: str = "test/x.js")
 
 def _assembler(**kw) -> Assembler:
     engine = EngineConfig(binary_path="/fake/js", prelude=kw.pop("prelude", []))
+    kw.setdefault("no_harness", True)
     return Assembler(engine, Path("/fake/test262"), **kw)
 
 
@@ -186,7 +187,7 @@ class TestStageModule(unittest.TestCase):
     def test_non_module_single_file(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             engine = EngineConfig(binary_path="/fake/js")
-            asm = Assembler(engine, Path("/fake/test262"))
+            asm = Assembler(engine, Path("/fake/test262"), no_harness=True)
 
             scenario = _scenario("var x;")
             tmp = Path(tmpdir)

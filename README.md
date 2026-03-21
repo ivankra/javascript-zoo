@@ -6,7 +6,8 @@ Contents:
   * [app](app/): SPA app for [zoo.js.org](https://zoo.js.org/)
   * [bench](bench/): benchmarking different engines on V8's test suite
   * [build](build/README.md): docker/make-based build system for open-source engines (base build scripts and containers)
-  * [conformance](conformance/README.md): ECMAScript conformance testing
+  * [harness](harness/): testing harness for test262/benchmarking
+  * [conformance](conformance/README.md): ECMAScript conformance test suites
 
 See [zoo.js.org](https://zoo.js.org/) for the main tabular view with benchmark and conformance scores,
 or perhaps [engines.json](https://zoo.js.org/engines.json) for a machine-readable json with structured data.

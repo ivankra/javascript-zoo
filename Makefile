@@ -22,7 +22,7 @@ preview:
 	npm run preview
 
 mypy:
-	make -C conformance mypy
+	make -C harness mypy
 	make -C bench mypy
 
 sh:

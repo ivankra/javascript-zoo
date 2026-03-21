@@ -1,7 +1,7 @@
 # Per-engine configuration: customization knobs on how to work with each engine
 # such as command-line flags, test262 options, regexes to parse output, etc.
 #
-# See conformance/lib/config.py for schema and parser.
+# See harness/config.py for schema and parser.
 #
 # Lookup key is binary's basename.
 #
@@ -10,9 +10,9 @@
 #
 # The config is merged at runtime with sidecar metadata (<binary>.json file)
 # and the key without _<variant> suffix, if any, in this order:
-#  * configs.yml[default] (lowest priority defaults)
-#  * configs.yml[<engine>]
-#  * configs.yml[<engine>_<variant>] (higher priority per-variant overrides)
+#  * config.yml[default] (lowest priority defaults)
+#  * config.yml[<engine>]
+#  * config.yml[<engine>_<variant>] (higher priority per-variant overrides)
 #  * <engine>_<variant>.json (highest priority overrides)
 #
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
@@ -212,7 +212,7 @@ dmdscript:
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - tag: bench
-      file: bench/prelude-es5.js
+      file: harness/prelude-es5.js
 
 dscriptcpp:
   bench_suite: ['richards.es1.js']
@@ -227,7 +227,7 @@ dscriptcpp:
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - tag: bench
-      file: bench/prelude-es5.js
+      file: harness/prelude-es5.js
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -600,7 +600,7 @@ mquickjs: &mquickjs
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   prelude:
     - tag: bench
-      file: bench/prelude-strict.js
+      file: harness/prelude-strict.js
 
 mujs:
   console_log: ['console.log', 'print']
@@ -661,7 +661,7 @@ njs:
     - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
   prelude:
     - tag: bench
-      file: bench/prelude-strict.js
+      file: harness/prelude-strict.js
   bench_transforms: ['octal']
   flags:
     - { tag: 'module', flag: '-m' }
@@ -909,9 +909,9 @@ spidermonkey: &spidermonkey
 spidermonkey_1.5: &sm15
   # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
   prelude:
-    - file: bench/prelude-print.js
+    - file: harness/prelude-print.js
     - tag: bench
-      file: bench/prelude-es5.js
+      file: harness/prelude-es5.js
   console_log: print
   errors_re: *sm_exc
   flags: []

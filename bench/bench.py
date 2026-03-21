@@ -25,7 +25,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
-from conformance.lib import Annotator, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
+from harness import Annotator, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10

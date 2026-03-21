@@ -33,7 +33,7 @@ EXTRA_TAGS = frozenset({
 def test262_features_yaml() -> dict[str, list[str]]:
     """Load features.yml: edition name / tag -> list of test262 feature tags."""
 
-    path = Path(__file__).parent.resolve() / "features.yml"
+    path = Path(__file__).resolve().parent / "features.yml"
     with path.open("r", encoding="utf-8") as f:
         data = yaml.load(f, Loader=SafeLoader)
 

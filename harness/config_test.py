@@ -12,9 +12,7 @@ from pathlib import Path
 from typing import Any
 from unittest import mock
 
-import conformance.lib.config as config_module
-from conformance.lib import EngineConfig, Prelude, Runner
-from conformance.lib.config import _resolve_flags_list, load_configs_dict, resolve_preludes
+from harness.config import EngineConfig, Prelude, REPO_ROOT, _resolve_flags_list, load_configs_dict, resolve_preludes
 
 
 class ResolveFlagsListTest(unittest.TestCase):
@@ -249,7 +247,7 @@ class ResolvePreludesTest(unittest.TestCase):
         with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
             f.write("var y = 2;\n")
             f.flush()
-            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+            rel = os.path.relpath(f.name, REPO_ROOT)
         try:
             result = resolve_preludes([{"file": rel}])
             self.assertEqual(len(result), 1)
@@ -268,7 +266,7 @@ class ResolvePreludesTest(unittest.TestCase):
         with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
             f.write("// tagged\n")
             f.flush()
-            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+            rel = os.path.relpath(f.name, REPO_ROOT)
         try:
             result = resolve_preludes([{"tag": "IsHTMLDDA", "file": rel}])
             self.assertEqual(result[0].tag, "IsHTMLDDA")
@@ -280,7 +278,7 @@ class ResolvePreludesTest(unittest.TestCase):
         with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
             f.write('eval($SOURCE);\n')
             f.flush()
-            rel = os.path.relpath(f.name, config_module.REPO_ROOT)
+            rel = os.path.relpath(f.name, REPO_ROOT)
         try:
             result = resolve_preludes([{"file": rel}])
             assert result[0].code is not None

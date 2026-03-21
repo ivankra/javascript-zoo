@@ -300,7 +300,7 @@ class Reporter:
             if sum(self._file_counts.values()) or self._probes:
                 print("\r\033[K", end="", file=sys.stderr, flush=True)
 
-    def add_probe_result(self, name: str, result: str, *, total: int = 0) -> None:
+    def add_probe_result(self, name: str, result: str) -> None:
         """Record one probe result, printing progress to stderr."""
         if self._probes is None:
             self._probes = {}
@@ -313,8 +313,7 @@ class Reporter:
             n_done = len(self._probes)
             n_ok = sum(1 for v in self._probes.values() if v == "OK")
             n_fail = n_done - n_ok
-            progress = f"{n_done}/{total}" if total else str(n_done)
-            msg = f"Probes: {progress} ({n_ok} ok, {n_fail} failed)" if n_fail else f"Probes: {progress} ok"
+            msg = f"Probes: {n_done} ({n_ok} ok, {n_fail} failed)" if n_fail else f"Probes: {n_done} ok"
             print(f"\r\033[K{msg}", end="", file=sys.stderr, flush=True)
 
     def print_completed_dirs(self, *, header: bool = False) -> None:

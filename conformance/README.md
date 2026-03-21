@@ -54,7 +54,7 @@ How to run a single test file directly with different engines:
 $ node es5/JSON.js
 
 # Maybe pass a shim for console.log() if engine shell accepts multiple files
-$ /dist/jsc lib/var-console-log.js es5/JSON.js
+$ /dist/jsc ../harness/prelude-console.js es5/JSON.js
 
 # Or use sed to edit test on the fly
 $ /dist/hermes <(sed s/console.log/print/ es5/JSON.js)

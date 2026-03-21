@@ -12,7 +12,7 @@ check basic capabilities.
 Output: YAML to stdout, one block per engine with true/false per probe
 and failure details as comments.
 
-Usage: probe.py [engines or dirs...]
+Usage: test262-probe.py [engines or dirs...]
 """
 
 from __future__ import annotations
@@ -25,9 +25,10 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from typing import Iterator
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
 
-from lib import (  # type: ignore[import-not-found]  # noqa: E402
+from harness import (
     Annotator,
     Assembler,
     EngineConfig,
@@ -38,8 +39,7 @@ from lib import (  # type: ignore[import-not-found]  # noqa: E402
     Verdict,
 )
 
-SCRIPT_DIR = Path(__file__).parent.resolve()
-DEFAULT_TEST262_DIR = (SCRIPT_DIR.parent.parent / "third_party" / "test262").resolve()
+DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
 
 
 # Each probe: source uses print() which is defined by the assembler's auto-generated prelude.
@@ -275,7 +275,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
         return probe_name, "OK"
 
     # Probe success markers should be checked against cleaned output so
-    # engine-specific quoting/ANSI stripping in configs.yml actually takes effect.
+    # engine-specific quoting/ANSI stripping in config.yml actually takes effect.
     output = run.combined_output()
 
     if spec.get("ok_marker"):

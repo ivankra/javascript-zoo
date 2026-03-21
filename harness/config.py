@@ -17,8 +17,8 @@ from typing import Any
 import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
-REPO_ROOT = Path(__file__).parent.parent.parent
-CONFIGS_YML = REPO_ROOT / "configs.yml"
+REPO_ROOT = Path(__file__).parent.parent
+CONFIGS_YML = Path(__file__).parent / "config.yml"
 
 
 @dataclasses.dataclass
@@ -251,8 +251,6 @@ def resolve_preludes(items: list) -> list[Prelude]:
         else:
             raise TypeError(f"prelude dict must have 'file' or 'code', got {item!r}")
     return result
-
-
 
 
 def resolve_binary(path_or_name: str) -> Path:

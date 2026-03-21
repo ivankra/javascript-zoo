@@ -9,15 +9,9 @@ import unittest
 from pathlib import Path
 from typing import Any
 
-from conformance.lib import (
-    EngineConfig,
-    ErrorType,
-    RunMetrics,
-    RunResult,
-    Runner,
-    Verdict,
-    iterate_js_files,
-)
+from harness.config import EngineConfig
+from harness.runner import ErrorType, RunMetrics, RunResult, Runner, Verdict
+from harness.util import iterate_js_files
 
 
 def mk_run(**kwargs: Any) -> RunResult:
