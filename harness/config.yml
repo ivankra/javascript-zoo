@@ -425,7 +425,7 @@ jerryscript: &jerryscript
   errors_re:
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
-jint:
+jint: &jint
   console_log: ['console.log', 'print']
   errors_re:
     - *uncaught_exception_colon_message
@@ -1083,7 +1083,7 @@ xs: &xs
 
 yaji: *fesi
 
-yantra:
+yantra: &yantra
   console_log: console.log
   stdout_replace_re:
     - '^\[object Object\]$': ''
@@ -1155,9 +1155,11 @@ gjs: &gjs
     - file: engines/spidermonkey/prelude.js
 
 # --------------------------------------------------------------------
-# Aliases: eshost host types and alternative binary names
-# Note: <alias>_<variant> won't pick up primary_<variant>
+# Aliases: eshost host types and alternative binary names.
+# Note: <alias>_* variants won't automatically pick up <primary>_*.
 
+Jint.Repl: *jint
+YantraJS: *yantra
 bs: *brimstone
 ch: *chakracore
 cjs-console: *gjs

@@ -17,7 +17,7 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
 RUN apt-get install -y --no-install-recommends nodejs npm
 RUN cd lib && npm install
 
-RUN cd /opt && wget https://services.gradle.org/distributions/gradle-8.5-bin.zip && \
+RUN cd /opt && wget https://downloads.gradle.org/distributions/gradle-8.5-bin.zip && \
     echo '9d926787066a081739e8200858338b4a69e837c3a821a33aca9db09dd4a41026  gradle-8.5-bin.zip' | sha256sum -c && \
     unzip gradle-8.5-bin.zip && \
     ln -sf /opt/gradle-8.5/bin/gradle /usr/bin/gradle
