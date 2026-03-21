@@ -10,8 +10,8 @@ ARG REV=main
 WORKDIR /src
 RUN git clone "$REPO" . && git checkout "$REV" && git rev-parse HEAD
 
-COPY engines/sobek/sobek.go ./
-RUN go build sobek.go
+COPY engines/sobek/main.go ./
+RUN go build main.go
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/sobek --binary=/src/sobek
+RUN ./dist.py /dist/sobek --binary=/src/main

@@ -1,13 +1,13 @@
 # Sobek
 
-Grafana's fork of [goja](../goja/README.md) engine.
+Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 
 * Repository:       [grafana/sobek](https://github.com/grafana/sobek.git) <span class="shields"><img src="https://img.shields.io/github/stars/grafana/sobek?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/grafana/sobek?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:              [46789](# "cloc --fullpath --not_match_f='(?i)(test)' --exclude-lang=Markdown,YAML .")
 * Language:         Go
 * License:          MIT
 * Org:              Grafana
-* Standard:         ES2023 (partial)
+* Standard:         ES2023
 * Years:            2024-
 * Ancestor:         [goja](../goja/README.md)
 * Runtime platform: Go (cgo-free)

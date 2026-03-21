@@ -327,14 +327,19 @@ flathead:
   errors_re:
     - *exception_colon_message
 
-goja:
+goja: &goja
+  # While our wrapper provides print(), standard goja main doesn't
   console_log: console.log
   crash_re:
     - *go_crash_re
   errors_re:
     - *exception_colon_message
+    - *uncaught_exception_colon_message
+    - '^(?P<type>[A-Za-z0-9]*Error): [^:]+[.]js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
   stderr_replace_re:
+    # goja_nodejs/console prefixes console messages with a timestamp
     - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
+    # Note: Goja doesn't implement ES modules.
 
 graaljs:
   console_log: ['console.log', 'print']
@@ -855,14 +860,9 @@ see:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+[.]js:[0-9]+: )?(?P<message>.+)$'
 
 sobek:
-  console_log: ['console.log', 'print']
-  crash_re:
-    - *go_crash_re
-  errors_re:
-    - *uncaught_exception_colon_message
-    - '^(?P<type>[A-Za-z0-9]*Error): [^:]+[.]js: Line (?P<line>[0-9]+):[0-9]+ (?P<message>.+)$'
+  <<: *goja
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { tag: 'module', flag: '--module' }  # our wrapper would also recognize .mjs
 
 sophonjs:
   console_log: console.log
