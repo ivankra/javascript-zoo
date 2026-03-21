@@ -80,6 +80,11 @@ class EngineConfig:
     warnings_re: list[str] = dataclasses.field(default_factory=list)
     # Structured patterns for errors/exceptions with named groups "type" and "message"
     errors_re: list[str] = dataclasses.field(default_factory=list)
+    # Exit code to map to SyntaxError (needed for nashorn)
+    exit_code_for_syntax_error: int | None = None
+    # Exit code to accept for Test262Error in negative test262 case
+    # Needed for some engines that don't properly format user-defined exceptions
+    exit_code_for_test262_error: int | None = None
 
     # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].
     # Use tag "bench" / "test262" to gate preludes by execution mode.

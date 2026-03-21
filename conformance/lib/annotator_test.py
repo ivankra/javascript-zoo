@@ -151,6 +151,30 @@ class AnnotatorTest(unittest.TestCase):
         self.assertEqual(result.error_type, ErrorType.CRASHED)
         self.assertEqual(result.error_message, "SIGABRT")
 
+    def test_negative_exit_code_maps_to_syntax_error(self) -> None:
+        cfg = EngineConfig(exit_code_for_syntax_error=7)
+        run = mk_run(exit_code=7)
+        out = Annotator(cfg).classify(
+            run,
+            negative_phase="parse",
+            negative_type="SyntaxError",
+        )
+        self.assertEqual(out.verdict, Verdict.OK)
+        self.assertIsNone(out.error_type)
+        self.assertIsNone(out.error_message)
+
+    def test_negative_exit_code_maps_to_test262_error(self) -> None:
+        cfg = EngineConfig(exit_code_for_test262_error=9)
+        run = mk_run(exit_code=9)
+        out = Annotator(cfg).classify(
+            run,
+            negative_phase="runtime",
+            negative_type="Test262Error",
+        )
+        self.assertEqual(out.verdict, Verdict.OK)
+        self.assertIsNone(out.error_type)
+        self.assertIsNone(out.error_message)
+
 
 class ErrorsReTest(unittest.TestCase):
     """Tests for errors_re patterns."""
@@ -368,13 +392,14 @@ class NegativeTest(unittest.TestCase):
         self.assertEqual(run.verdict, Verdict.FAILED)
         self.assertEqual(run.error_type, ErrorType.CRASHED)
 
-    def test_exit_code_error_accepted(self) -> None:
-        """Non-zero exit without a recognized error type still passes negative test."""
+    def test_unmapped_exit_code_fails_negative(self) -> None:
         run = self._ann().classify(
             mk_run(exit_code=1),
             negative_phase="runtime", negative_type="SyntaxError",
         )
-        self.assertEqual(run.verdict, Verdict.OK)
+        self.assertEqual(run.verdict, Verdict.FAILED)
+        self.assertEqual(run.error_type, ErrorType.NEGATIVE)
+        self.assertIn("expected SyntaxError", run.error_message or "")
 
 
 if __name__ == "__main__":

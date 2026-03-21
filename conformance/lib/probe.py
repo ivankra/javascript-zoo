@@ -266,7 +266,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
     if "expect_error" in spec:
         ok = run.error_type == spec["expect_error"]
         if not ok:
-            parts = [str(run.error_type)]
+            parts = [str(run.verdict_message())]
             if run.stdout:
                 parts.append(f"stdout={run.stdout.strip()!r}")
             if run.stderr:

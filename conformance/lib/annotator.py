@@ -197,6 +197,10 @@ class Annotator:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.EXIT
             run.error_message = f"exit code {run.exit_code}"
+            if self._config.exit_code_for_syntax_error == run.exit_code:
+                run.error_type = ErrorType.SYNTAX_ERROR
+                run.error_message = f"exit code {run.exit_code}"
+            # don't map exit_code_for_test262_error - too specific for here
             return
 
         run.verdict = Verdict.OK
@@ -220,11 +224,20 @@ class Annotator:
                 return
 
         if run.error_type is not None:
+            got = run.error_type
+            got_message = run.verdict_message()
             expected = ErrorType.from_js_error(negative_type)
-            assert expected is not None
-            if run.error_type != expected and run.error_type != ErrorType.EXIT:
-                orig_err = run.verdict_message()
-                run.error_message = f"expected {negative_type} (got: {orig_err})"
+            assert expected is not None, f"Unknown negative.type in test262 frontmatter: {negative_type}"
+
+            # Map exit codes to errors as a fallback for some engines
+            if got != expected and run.error_type == ErrorType.EXIT:
+                if self._config.exit_code_for_syntax_error == run.exit_code:
+                    got = ErrorType.SYNTAX_ERROR
+                elif self._config.exit_code_for_test262_error == run.exit_code:
+                    got = ErrorType.TEST262_ERROR
+
+            if got != expected:
+                run.error_message = f"expected {negative_type}, got: {got_message}"
                 run.verdict = Verdict.FAILED
                 run.error_type = ErrorType.NEGATIVE
                 return
