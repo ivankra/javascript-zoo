@@ -65,7 +65,7 @@ PROBES: dict[str, dict] = {
         "ok": "PROBE_OK",
     },
     "module-export": {
-        "source": 'export var x = 1;\nprint("PROBE_OK");\n',
+        "source": 'export const x = 1;\nprint("PROBE_OK");\n',
         "mode": "sloppy",
         "fm_flags": {"module"},
         "ok": "PROBE_OK",
@@ -75,7 +75,7 @@ PROBES: dict[str, dict] = {
         "mode": "sloppy",
         "fm_flags": {"module"},
         "ok": "PROBE_OK",
-        "stage_files": {"probe_dep.mjs": 'export var value = "PROBE_OK";\n'},
+        "stage_files": {"probe_dep.mjs": 'export const value = "PROBE_OK";\n'},
     },
     "negative": {
         "source": '1 +* 2;\n',
