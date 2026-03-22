@@ -79,7 +79,7 @@ boa:
   stderr_replace_re:
     - *rust_crash_norm_re
   errors_re:
-    #  0: SyntaxErrnessr: unexpected token 'using', primary expression at line 52, col 13
+    #  0: SyntaxError: unexpected token 'using', primary expression at line 52, col 13
     - '^[ ]*[0-9]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)$'
     - '^Uncaught: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+?)(?: \(.+\))?$'
     - '^Uncaught: "(?P<message>.+?)\]?"$'
@@ -720,10 +720,8 @@ porffor:
   flags:
     - { tag: 'module', flag: '--module' }
 
-primjs:
-  console_log: ['console.log', 'print']
-  errors_re:
-    - *exception_colon_message
+primjs: *quickjs
+primjs_262: *quickjs_262
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
@@ -749,16 +747,18 @@ quickjs: &quickjs
   flags:
     - { tag: 'module', flag: '--module' }
 
+# QuickJS's run-test262 binary
+# Has only print() and needs -N flag to run a script.
 quickjs_262: &quickjs_262
-  # quickjs's run-test262 binary
-  <<: *quickjs
-  # no console.log() in run-test262
   console_log: print
+  errors_re:
+    - *exception_colon_message
   flags:
     - -N  # -N: run test prepared by test262-harness+eshost
     - { tag: 'module', flag: '--module' }
 
 quickjs-ng:
+  console_log: ['console.log', 'print']
   flags:
     - --script  # misdetects module mode often enough
     - { tag: 'module', flag: '--module' }
@@ -1177,7 +1177,7 @@ jerry: *jerryscript
 jsshell: *spidermonkey
 mqjs: *mquickjs
 qjs: *quickjs
-run-test262: *quickjs
+run-test262: *quickjs_262
 serenity-js: *libjs
 sm: *spidermonkey
 xst: *xs
