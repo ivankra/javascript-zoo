@@ -1,5 +1,5 @@
 diff --git a/build.gradle.kts b/build.gradle.kts
-index 13f236c..3675ade 100644
+index 13f236c6..576c9068 100644
 --- a/build.gradle.kts
 +++ b/build.gradle.kts
 @@ -35,9 +35,24 @@ dependencies {
@@ -12,7 +12,7 @@ index 13f236c..3675ade 100644
 +    archiveVersion.set("")
 +    duplicatesStrategy = org.gradle.api.file.DuplicatesStrategy.EXCLUDE
 +    manifest {
-+        attributes["Main-Class"] = "com.reevajs.reeva.test262.ReplKt"
++        attributes["Main-Class"] = "com.reevajs.reeva.test262.MainKt"
 +    }
 +    from(sourceSets.main.get().output)
 +    from(sourceSets.test.get().output)
@@ -24,109 +24,124 @@ index 13f236c..3675ade 100644
  task("runScriptRunner", JavaExec::class) {
      classpath = sourceSets.test.get().runtimeClasspath
 -    main = "com.reevajs.reeva.test262.DebugScriptRunnerKt"
-+    main = "com.reevajs.reeva.test262.ReplKt"
++    main = "com.reevajs.reeva.test262.MainKt"
  }
  
  tasks {
+diff --git a/gradle/wrapper/gradle-wrapper.properties b/gradle/wrapper/gradle-wrapper.properties
+index ffed3a25..55c6e6e7 100644
+--- a/gradle/wrapper/gradle-wrapper.properties
++++ b/gradle/wrapper/gradle-wrapper.properties
+@@ -1,5 +1,5 @@
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-7.2-bin.zip
++distributionUrl=https\://downloads.gradle.org/distributions/gradle-7.2-bin.zip
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
 diff --git a/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt b/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
-index 2d0d6cd..667ac8f 100644
+index 2d0d6cdb..33f9b04f 100644
 --- a/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
 +++ b/src/main/kotlin/com/reevajs/reeva/core/errors/DefaultErrorReporter.kt
-@@ -18,8 +18,7 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
-         end: TokenLocation,
-     ) {
-         printSourceLines(sourceInfo, start, end)
--        out.println()
--        out.println("\u001b[31mSyntaxError: $cause\u001b[0m")
-+        out.println("Uncaught exception: SyntaxError: $cause")
-     }
+@@ -52,6 +52,7 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
  
-     private fun printSourceLines(sourceInfo: SourceInfo, start: TokenLocation, end: TokenLocation) {
-@@ -50,18 +49,8 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
-             printSourceLines(sourceInfo, firstFrame.invocationLocation.start, firstFrame.invocationLocation.end)
-         }
+         out.println("\u001B[31m")
  
--        out.println("\u001B[31m")
--
--        if (cause is JSObject && cause.hasProperty("message".key())) {
--            val ctor = cause.get("constructor")
--            if (ctor is JSFunction) {
--                out.print(ctor.get("name"))
--                out.print(": ")
--            }
--            out.println(cause.get("message"))
--        } else {
--            out.println(cause.toString())
--        }
 +        out.print("Uncaught exception: ")
-+        out.println(formatRuntimeError(cause))
- 
-         for (frame in stackFrames.asReversed()) {
-             if (frame.function == null)
-@@ -73,12 +62,30 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
-             out.println("    at ${frame.function.debugName} $location")
-         }
- 
--        out.println("\u001B[0m")
-     }
+         if (cause is JSObject && cause.hasProperty("message".key())) {
+             val ctor = cause.get("constructor")
+             if (ctor is JSFunction) {
+@@ -78,6 +79,10 @@ class DefaultErrorReporter(private val out: PrintStream) : ErrorReporter() {
  
      override fun reportInternalError(sourceInfo: SourceInfo, cause: Throwable) {
--        out.println("\u001B[31m")
--        cause.printStackTrace(out)
--        out.println("\u001B[0m")
+         out.println("\u001B[31m")
 +        out.print("Uncaught exception: ")
-+        out.println(formatThrowable(cause))
-+    }
-+
-+    private fun formatRuntimeError(cause: JSValue): String {
-+        if (cause is JSObject && cause.hasProperty("message".key())) {
-+            val ctor = cause.get("constructor")
-+            val name = if (ctor is JSFunction) ctor.get("name").toString() else null
-+            val message = cause.get("message").toString()
-+
-+            if (!name.isNullOrBlank()) {
-+                return if (message.isBlank()) name else "$name: $message"
-+            }
-+        }
-+
-+        return cause.toString()
-+    }
-+
-+    private fun formatThrowable(cause: Throwable): String {
 +        val name = cause::class.simpleName ?: "Throwable"
 +        val message = cause.message
-+        return if (message.isNullOrBlank()) name else "$name: $message"
++        out.println(if (message.isNullOrBlank()) name else "$name: $message")
+         cause.printStackTrace(out)
+         out.println("\u001B[0m")
      }
- }
-diff --git a/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
+diff --git a/src/test/kotlin/com/reevajs/reeva/test262/JS262Object.kt b/src/test/kotlin/com/reevajs/reeva/test262/JS262Object.kt
+index 56a909b0..9f159e61 100644
+--- a/src/test/kotlin/com/reevajs/reeva/test262/JS262Object.kt
++++ b/src/test/kotlin/com/reevajs/reeva/test262/JS262Object.kt
+@@ -8,6 +8,9 @@ import com.reevajs.reeva.runtime.collections.JSArguments
+ import com.reevajs.reeva.runtime.objects.Descriptor
+ import com.reevajs.reeva.runtime.objects.JSObject
+ import com.reevajs.reeva.runtime.primitives.JSUndefined
++import com.reevajs.reeva.runtime.toJSString
++import com.reevajs.reeva.core.lifecycle.LiteralSourceInfo
++import com.reevajs.reeva.Reeva
+ import com.reevajs.reeva.utils.Error
+ 
+ class JS262Object private constructor(
+@@ -23,6 +26,7 @@ class JS262Object private constructor(
+         )
+         defineBuiltin("createRealm", 0, ::createRealm)
+         defineBuiltin("detachArrayBuffer", 1, ::detachArrayBuffer)
++        defineBuiltin("evalScript", 1, ::evalScript)
+         defineBuiltin("gc", 0, ::gc)
+     }
+ 
+@@ -47,6 +51,12 @@ class JS262Object private constructor(
+             return JSUndefined
+         }
+ 
++        @JvmStatic
++        fun evalScript(arguments: JSArguments): JSValue {
++            val code = arguments.argument(0).toJSString().string
++            return Reeva.execute(LiteralSourceInfo("evalScript", code, isModule = false)) ?: JSUndefined
++        }
++
+         @JvmStatic
+         fun gc(arguments: JSArguments): JSValue {
+             Error("unable to force JVM garbage collection").throwTypeError()
+diff --git a/src/test/kotlin/com/reevajs/reeva/test262/Main.kt b/src/test/kotlin/com/reevajs/reeva/test262/Main.kt
 new file mode 100644
-index 0000000..bddc17d
+index 00000000..e7eb9cfc
 --- /dev/null
-+++ b/src/test/kotlin/com/reevajs/reeva/test262/Repl.kt
-@@ -0,0 +1,56 @@
++++ b/src/test/kotlin/com/reevajs/reeva/test262/Main.kt
+@@ -0,0 +1,55 @@
 +package com.reevajs.reeva.test262
 +
 +import com.reevajs.reeva.Reeva
 +import com.reevajs.reeva.core.Agent
-+import com.reevajs.reeva.core.lifecycle.FileSourceInfo
-+import com.reevajs.reeva.core.lifecycle.LiteralSourceInfo
-+import com.reevajs.reeva.core.lifecycle.SourceInfo
++import com.reevajs.reeva.core.HostHooks
++import com.reevajs.reeva.core.Realm
++import com.reevajs.reeva.core.lifecycle.*
++import com.reevajs.reeva.runtime.AOs
++import com.reevajs.reeva.runtime.functions.JSBuiltinFunction
++import com.reevajs.reeva.runtime.global.JSConsoleProto
++import com.reevajs.reeva.runtime.objects.*
 +import com.reevajs.reeva.runtime.primitives.JSUndefined
++import com.reevajs.reeva.utils.*
 +import java.io.File
 +
-+private data class CliOptions(
-+    val isModule: Boolean,
-+    val files: List<String>,
-+)
-+
 +fun main(args: Array<String>) {
-+    val options = parseArgs(args)
++    var isModule = false
++    val files = mutableListOf<String>()
++    for (arg in args) when (arg) {
++        "-h", "--help" -> { System.err.println("Usage: reeva [-m|--module] [file.js ...]"); return }
++        "-m", "--module" -> isModule = true
++        else -> files += arg
++    }
 +
-+    Agent.build().withActiveScope {
++    Agent.build {
++        hostHooks = object : HostHooks() {
++            override fun createHostDefinedProperties(realm: Realm, globalObject: JSObject) {
++                super.createHostDefinedProperties(realm, globalObject)
++                AOs.definePropertyOrThrow(globalObject, "$262".key(),
++                    JS262Object.create(globalObject, realm).toDescriptor { +conf; -enum; +writ })
++                AOs.definePropertyOrThrow(globalObject, "print".key(),
++                    Descriptor(JSBuiltinFunction.create("print", 1, JSConsoleProto::log), attrs { +conf; +writ }))
++            }
++        }
++    }.withActiveScope {
 +        makeRealmAndInitializeExecutionEnvironment()
 +
-+        if (options.files.isNotEmpty()) {
-+            options.files.forEach { runAndPrint(FileSourceInfo(File(it), isModule = options.isModule)) }
++        if (files.isNotEmpty()) {
++            files.forEach { exec(FileSourceInfo(File(it), isModule = isModule || it.endsWith(".mjs"))) }
 +            return@withActiveScope
 +        }
 +
@@ -134,29 +149,12 @@ index 0000000..bddc17d
 +            print("> ")
 +            val line = readLine() ?: break
 +            if (line.isBlank()) continue
-+            runAndPrint(LiteralSourceInfo("repl", line, options.isModule))
++            exec(LiteralSourceInfo("repl", line, isModule))
 +        }
 +    }
 +}
 +
-+private fun parseArgs(args: Array<String>): CliOptions {
-+    var isModule = false
-+    val files = mutableListOf<String>()
-+
-+    for (arg in args) {
-+        if (arg == "--module") {
-+            isModule = true
-+        } else {
-+            files += arg
-+        }
-+    }
-+
-+    return CliOptions(isModule, files)
-+}
-+
-+private fun runAndPrint(source: SourceInfo) {
-+    val result = Reeva.execute(source)
-+    if (result != null && result != JSUndefined)
-+        println(result)
++private fun exec(source: SourceInfo) {
++    Reeva.execute(source)?.let { if (it != JSUndefined) println(it) }
 +    Agent.activeAgent.microtaskQueue.checkpoint()
 +}
