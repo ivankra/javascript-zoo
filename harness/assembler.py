@@ -139,10 +139,8 @@ class Assembler:
             dst.parent.mkdir(parents=True, exist_ok=True)
             dst.write_bytes(assembled.encode("utf-8"))
 
-        needs_module_tree = (
-            "module" in scenario.fm.flags
-            or "dynamic-import" in scenario.fm.features
-        )
+        is_module = "module" in scenario.fm.flags
+        needs_module_tree = is_module or "dynamic-import" in scenario.fm.features
 
         if not needs_module_tree:
             script_path = temp_dir / f"t262-temp-{os.getpid()}-{id(assembled)}.js"
@@ -151,24 +149,39 @@ class Assembler:
 
         tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
 
-        # Change file extension to .mjs for higher engine compatibility.
-        # Many engines would automatically recognize it as a module already,
-        # a few don't even have any other way to force running it as a module.
-        entry_dst = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
-        entry_dst.parent.mkdir(parents=True, exist_ok=True)
-        entry_dst.write_bytes(assembled.encode("utf-8"))
+        # Rename .js → .mjs for higher engine compatibility, simpler config.
+        # Many engines auto-detect module mode from the extension, avoiding
+        # the need for extra CLI flags. A few don't even have any other way
+        # to force running a file as a module.
+        rename_map = {}
+        if is_module:
+            orig_name = Path(scenario.rel_path).name
+            mjs_name = Path(scenario.rel_path).with_suffix(".mjs").name
+            if orig_name != mjs_name:
+                # Rewrite self-imports
+                assembled = assembled.replace(f"./{orig_name}", f"./{mjs_name}")
+                # Save the names to fix fixture back-references later.
+                rename_map[orig_name] = mjs_name
+            staged_path = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
+        else:
+            staged_path = tmp_root / Path(scenario.rel_path)
+
+        staged_path.parent.mkdir(parents=True, exist_ok=True)
+        staged_path.write_bytes(assembled.encode("utf-8"))
 
         visited: set[str] = {scenario.rel_path}
         self._copy_deps_recursive(
             tmp_root, scenario.test_path.parent, scenario.test_content, visited,
+            rename_map=rename_map,
         )
-        self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited)
+        self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited,
+                                    rename_map=rename_map)
 
         pkg = tmp_root / "package.json"
         if not pkg.exists():
             pkg.write_text('{"type": "module"}\n', encoding="utf-8")
 
-        return StagedScript(script_path=entry_dst, cwd=tmp_root, tmp_dir=tmp_root)
+        return StagedScript(script_path=staged_path, cwd=tmp_root, tmp_dir=tmp_root)
 
     def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
         """Emit one assembled test to stdout or a file."""
@@ -239,6 +252,7 @@ class Assembler:
         base_dir: Path,
         source: str,
         visited: set[str],
+        rename_map: dict[str, str] | None = None,
     ) -> None:
         test_dir = self.test262_dir
         for spec in self._extract_relative_deps(source):
@@ -255,14 +269,23 @@ class Assembler:
 
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(dep_path, dst)
 
             try:
                 # Binary read: preserve original line endings in test fixtures
                 dep_src = dep_path.read_bytes().decode("utf-8", errors="replace")
-                self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited)
             except Exception as e:
                 print(f"warning: skipping deps of {dep_path}: {e}", file=sys.stderr)
+                shutil.copy2(dep_path, dst)
+                continue
+
+            # Rewrite imports that reference the renamed entry file
+            if rename_map:
+                for old, new in rename_map.items():
+                    dep_src = dep_src.replace(f"./{old}", f"./{new}")
+
+            dst.write_bytes(dep_src.encode("utf-8"))
+            self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,
+                                      rename_map=rename_map)
 
     def _extract_relative_deps(self, source: str) -> list[str]:
         """Extract relative module specifiers from JS source."""
@@ -275,7 +298,8 @@ class Assembler:
                 deps.append(spec)
         return deps
 
-    def _copy_fixture_siblings(self, dst_root: Path, base_dir: Path, visited: set[str]) -> None:
+    def _copy_fixture_siblings(self, dst_root: Path, base_dir: Path, visited: set[str],
+                               rename_map: dict[str, str] | None = None) -> None:
         """Copy sibling fixture files for computed import specifiers."""
         test_dir = self.test262_dir
         for dep_path in base_dir.iterdir():
@@ -290,7 +314,13 @@ class Assembler:
             visited.add(dep_rel)
             dst = dst_root / dep_rel
             dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(dep_path, dst)
+            if rename_map:
+                src = dep_path.read_bytes().decode("utf-8", errors="replace")
+                for old, new in rename_map.items():
+                    src = src.replace(f"./{old}", f"./{new}")
+                dst.write_bytes(src.encode("utf-8"))
+            else:
+                shutil.copy2(dep_path, dst)
 
 
 def build_print_prelude(console_log: str | list[str], preludes: list[Prelude]) -> str | None:

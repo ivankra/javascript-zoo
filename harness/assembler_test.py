@@ -184,6 +184,54 @@ class TestStageModule(unittest.TestCase):
             finally:
                 staged.cleanup()
 
+    def test_module_fixture_rewrite(self):
+        """Fixtures importing the test by .js name get rewritten to .mjs."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            t262 = Path(tmpdir) / "test262"
+            harness = t262 / "harness"
+            harness.mkdir(parents=True)
+            (harness / "assert.js").write_text("")
+            (harness / "sta.js").write_text("")
+            test_dir = t262 / "test" / "mod"
+            test_dir.mkdir(parents=True)
+            (test_dir / "entry_FIXTURE.js").write_text(
+                "export { A as B } from './entry.js';\n"
+            )
+            (test_dir / "entry.js").write_text(
+                "/*---\nflags: [module]\n---*/\n"
+                "import * as self from './entry.js';\n"
+                "import { B } from './entry_FIXTURE.js';\n"
+            )
+
+            engine = EngineConfig(binary_path="/fake/js")
+            asm = Assembler(engine, t262)
+
+            source = (test_dir / "entry.js").read_bytes().decode("utf-8")
+            fm = Frontmatter.parse(source)
+            scenario = Scenario(
+                test_path=test_dir / "entry.js",
+                test_content=source,
+                rel_path="test/mod/entry.js",
+                fm=fm, mode="sloppy", tags=fm.tags("sloppy"),
+            )
+
+            tmp = Path(tmpdir) / "stage"
+            tmp.mkdir()
+            staged = asm.stage(scenario, temp_dir=tmp)
+            try:
+                # Entry self-import rewritten
+                entry_text = staged.script_path.read_text()
+                self.assertIn("./entry.mjs", entry_text)
+                self.assertNotIn("./entry.js", entry_text)
+                # Fixture back-reference rewritten
+                fixture = staged.tmp_dir / "test" / "mod" / "entry_FIXTURE.js"
+                self.assertTrue(fixture.exists())
+                fix_text = fixture.read_text()
+                self.assertIn("./entry.mjs", fix_text)
+                self.assertNotIn("./entry.js", fix_text)
+            finally:
+                staged.cleanup()
+
     def test_non_module_single_file(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             engine = EngineConfig(binary_path="/fake/js")
@@ -197,6 +245,48 @@ class TestStageModule(unittest.TestCase):
                 self.assertIsNone(staged.tmp_dir)
                 content = staged.script_path.read_text()
                 self.assertIn("var x;", content)
+            finally:
+                staged.cleanup()
+
+    def test_dynamic_import_script_keeps_js(self):
+        """dynamic-import scripts must stay .js to preserve sloppy mode."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            t262 = Path(tmpdir) / "test262"
+            harness = t262 / "harness"
+            harness.mkdir(parents=True)
+            (harness / "assert.js").write_text("")
+            (harness / "sta.js").write_text("")
+            (harness / "doneprintHandle.js").write_text("")
+            test_dir = t262 / "test" / "di"
+            test_dir.mkdir(parents=True)
+            (test_dir / "foo.js").write_text(
+                "/*---\nfeatures: [dynamic-import]\nflags: [async]\n---*/\n"
+                "import('./helper.js').then(ns => {});\n"
+            )
+            (test_dir / "helper.js").write_text("export var h = 1;\n")
+
+            engine = EngineConfig(binary_path="/fake/js")
+            asm = Assembler(engine, t262)
+
+            source = (test_dir / "foo.js").read_bytes().decode("utf-8")
+            fm = Frontmatter.parse(source)
+            scenario = Scenario(
+                test_path=test_dir / "foo.js",
+                test_content=source,
+                rel_path="test/di/foo.js",
+                fm=fm, mode="sloppy", tags=fm.tags("sloppy"),
+            )
+
+            tmp = Path(tmpdir) / "stage"
+            tmp.mkdir()
+            staged = asm.stage(scenario, temp_dir=tmp)
+            try:
+                # Script test: must keep .js extension (not .mjs)
+                self.assertEqual(staged.script_path.suffix, ".js")
+                self.assertIsNotNone(staged.tmp_dir)
+                # Helper copied into module tree
+                helper = staged.tmp_dir / "test" / "di" / "helper.js"
+                self.assertTrue(helper.exists())
             finally:
                 staged.cleanup()
 
