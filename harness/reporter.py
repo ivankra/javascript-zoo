@@ -15,7 +15,7 @@ from typing import Any
 from .config import EngineConfig
 from .frontmatter import EXTRA_TAGS, TEST262_FLAGS, test262_features_yaml
 from .runner import RunResult, Verdict
-from .util import get_git_revision
+from .util import get_git_revision, version_sort_key
 
 
 # ── Stats ─────────────────────────────────────────────────────────────────────
@@ -88,11 +88,13 @@ def _build_dir_stats(results: list[RunResult]) -> dict[str, dict[str, int]]:
     dir_stats: dict[str, Stats] = {}
     for file_path, verdict in file_verdicts.items():
         d = os.path.dirname(file_path)
-        if d not in dir_stats:
-            dir_stats[d] = Stats()
-        dir_stats[d].add(verdict)
+        while d:
+            if d not in dir_stats:
+                dir_stats[d] = Stats()
+            dir_stats[d].add(verdict)
+            d = os.path.dirname(d)
 
-    return {d: s.to_dict() for d, s in sorted(dir_stats.items()) if d}
+    return {d: s.to_dict() for d, s in sorted(dir_stats.items(), key=lambda x: version_sort_key(x[0])) if d}
 
 
 # ── Formatting helpers ────────────────────────────────────────────────────────

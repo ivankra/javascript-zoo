@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness.util import expand_template_literals, iterate_js_files
+from harness.util import expand_template_literals, iterate_js_files, version_sort_key
 
 
 class ExpandTemplateLiteralsTest(unittest.TestCase):
@@ -202,3 +202,50 @@ class IterateJsFilesTest(unittest.TestCase):
                 os.chdir(old_cwd)
         self.assertEqual(got_here, ["pick.js"])
         self.assertEqual(got_parent, ["../pick.js"])
+
+
+class VersionSortKeyTest(unittest.TestCase):
+    def _sorted(self, items: list[str]) -> list[str]:
+        return sorted(items, key=version_sort_key)
+
+    def test_numeric_components(self) -> None:
+        self.assertEqual(self._sorted(["es20", "es3", "es1"]), ["es1", "es3", "es20"])
+
+    def test_parent_dir_before_children(self) -> None:
+        self.assertEqual(self._sorted([
+            "test/intl402/Array/prototype/toLocaleString",
+            "test/intl402/Array/prototype",
+            "test/intl402/Array",
+            "test/intl402",
+            "test/harness/foo",
+            "test/harness",
+            "test/built-ins/undefined",
+            "test/built-ins/parseInt",
+            "test/built-ins",
+            "test",
+            "es5/JSON",
+            "es5",
+            "es2025/Array/from",
+            "es2025/Array",
+            "es2025",
+        ]), [
+            "es5",
+            "es5/JSON",
+            "es2025",
+            "es2025/Array",
+            "es2025/Array/from",
+            "test",
+            "test/built-ins",
+            "test/built-ins/parseInt",
+            "test/built-ins/undefined",
+            "test/harness",
+            "test/harness/foo",
+            "test/intl402",
+            "test/intl402/Array",
+            "test/intl402/Array/prototype",
+            "test/intl402/Array/prototype/toLocaleString",
+        ])
+
+    def test_slash_sorts_before_hyphen(self) -> None:
+        # "test/a/sub" should come before "test/a-b" because '/' < '-'
+        self.assertEqual(self._sorted(["test/a-b", "test/a/sub"]), ["test/a/sub", "test/a-b"])

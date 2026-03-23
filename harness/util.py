@@ -46,9 +46,12 @@ def resolve_binary(path_or_name: str) -> Path:
 
 
 def version_sort_key(name: str) -> list:
-    """Sort key matching `sort -V`: letters sort before punctuation/symbols."""
+    """Sort key matching `sort -V`: '/' sorts first (for hierarchical path
+    ordering), letters sort before other punctuation/symbols."""
     parts = re.split(r'(\d+)', name)
-    return [int(p) if i % 2 else tuple(ord(c) if c.isalpha() else ord(c) + 128 for c in p)
+    return [int(p) if i % 2 else tuple(
+                0 if c == '/' else ord(c) if c.isalpha() else ord(c) + 128
+                for c in p)
             for i, p in enumerate(parts)]
 
 
