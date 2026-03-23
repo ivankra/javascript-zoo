@@ -1,0 +1,491 @@
+From ccf7f8507a791d1c5b72b243e0c251f8012e7d6d Mon Sep 17 00:00:00 2001
+From: Ivan Krasilnikov <ivank@ivank.me>
+Date: Mon, 23 Mar 2026 14:40:45 +0800
+Subject: [PATCH 1/4] refactor(runtime): move $262 to boa_runtime, add
+ --test262-object to cli
+
+Move `$262` implementation from `tests/tester/src/exec/js262.rs` to
+`core/runtime/src/test262.rs` behind a new `test262` feature gate
+(pulls `bus` as optional dep). Add `annex-b` feature to boa_runtime
+forwarding to `boa_engine/annex-b` for `$262.IsHTMLDDA`.
+
+Both cli and boa_tester now use `boa_runtime/test262`, removing the
+tester's direct `bus` and `boa_gc` deps.
+
+CLI registers `$262` when `--test262-object` flag is passed.
+
+This change makes CLI more suitable for running test262 via an external
+harness such as eshost + test262-harness. The exact same `$262` object as
+used by the internal boa_tester can now be directly accessed in CLI.
+Existing `$boa` object doesn't expose some of the methods (like IsHTMLDDA,
+detachArrayBuffer and agent helpers) needed for full test262 support,
+and would have required users to maintain a custom shim mapping it to `$262`.
+
+Fixes #5054
+---
+ Cargo.lock                                    |  3 +-
+ README.md                                     |  1 +
+ cli/Cargo.toml                                |  3 +-
+ cli/README.md                                 |  1 +
+ cli/src/main.rs                               | 12 +++++++
+ core/runtime/Cargo.toml                       |  3 ++
+ core/runtime/src/lib.rs                       |  2 ++
+ .../js262.rs => core/runtime/src/test262.rs   | 36 +++++++++----------
+ tests/tester/Cargo.toml                       |  6 ++--
+ tests/tester/src/exec/mod.rs                  |  4 +--
+ tests/tester/src/main.rs                      |  9 -----
+ 11 files changed, 43 insertions(+), 37 deletions(-)
+ rename tests/tester/src/exec/js262.rs => core/runtime/src/test262.rs (93%)
+
+diff --git a/Cargo.lock b/Cargo.lock
+index b83a06a2..5f4a7597 100644
+--- a/Cargo.lock
++++ b/Cargo.lock
+@@ -573,6 +573,7 @@ dependencies = [
+  "base64",
+  "boa_engine",
+  "boa_gc",
++ "bus",
+  "bytemuck",
+  "either",
+  "futures",
+@@ -607,9 +608,7 @@ version = "1.0.0-dev"
+ dependencies = [
+  "bitflags",
+  "boa_engine",
+- "boa_gc",
+  "boa_runtime",
+- "bus",
+  "clap",
+  "color-eyre",
+  "colored",
+diff --git a/README.md b/README.md
+index 6b0b6d53..28bad44f 100644
+--- a/README.md
++++ b/README.md
+@@ -164,6 +164,7 @@ Options:
+       --flowgraph [<FORMAT>]          Generate instruction flowgraph. Default is Graphviz [possible values: graphviz, mermaid]
+       --flowgraph-direction <FORMAT>  Specifies the direction of the flowgraph. Default is top-top-bottom [possible values: top-to-bottom, bottom-to-top, left-to-right, right-to-left]
+       --debug-object                  Inject debugging object `$boa`
++      --test262-object                Inject the test262 host object `$262`
+   -m, --module                        Treats the input files as modules
+   -r, --root <ROOT>                   Root path from where the module resolver will try to load the modules [default: .]
+   -h, --help                          Print help (see more with '--help')
+diff --git a/cli/Cargo.toml b/cli/Cargo.toml
+index 80a153a0..99c9e552 100644
+--- a/cli/Cargo.toml
++++ b/cli/Cargo.toml
+@@ -15,7 +15,7 @@ rust-version.workspace = true
+ boa_engine = { workspace = true, features = ["deser", "float16", "flowgraph", "temporal", "trace", "xsum"] }
+ boa_parser.workspace = true
+ boa_gc.workspace = true
+-boa_runtime.workspace = true
++boa_runtime = { workspace = true, features = ["test262"] }
+ rustyline = { workspace = true, features = ["derive", "with-file-history"] }
+ clap = { workspace = true, features = ["derive"] }
+ serde_json.workspace = true
+@@ -33,6 +33,7 @@ rustls.workspace = true
+ [features]
+ default = [
+     "boa_engine/annex-b",
++    "boa_runtime/annex-b",
+     "boa_engine/experimental",
+     "boa_engine/intl_bundled",
+     "boa_engine/native-backtrace",
+diff --git a/cli/README.md b/cli/README.md
+index 9c65ddd7..873be383 100644
+--- a/cli/README.md
++++ b/cli/README.md
+@@ -58,6 +58,7 @@ Options:
+       --flowgraph [<FORMAT>]          Generate instruction flowgraph. Default is Graphviz [possible values: graphviz, mermaid]
+       --flowgraph-direction <FORMAT>  Specifies the direction of the flowgraph. Default is top-top-bottom [possible values: top-to-bottom, bottom-to-top, left-to-right, right-to-left]
+       --debug-object                  Inject debugging object `$boa`
++      --test262-object                Inject the test262 host object `$262`
+   -m, --module                        Treats the input files as modules
+   -r, --root <ROOT>                   Root path from where the module resolver will try to load the modules [default: .]
+   -e, --expression <EXPR>             Execute a JavaScript expression then exit
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index abb0418a..aa2eb8c2 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -153,6 +153,10 @@ struct Opt {
+     #[arg(long)]
+     debug_object: bool,
+ 
++    /// Inject the test262 host object `$262`.
++    #[arg(long)]
++    test262_object: bool,
++
+     /// Treats the input files as modules.
+     #[arg(long, short = 'm', group = "mod")]
+     module: bool,
+@@ -562,6 +566,14 @@ fn main() -> Result<()> {
+         init_boa_debug_object(context);
+     }
+ 
++    if args.test262_object {
++        boa_runtime::test262::register_js262(
++            boa_runtime::test262::WorkerHandles::new(),
++            true, // register `console` in $262.agent worker threads
++            context,
++        );
++    }
++
+     // Configure optimizer options
+     let mut optimizer_options = OptimizerOptions::empty();
+     optimizer_options.set(OptimizerOptions::STATISTICS, args.optimizer_statistics);
+diff --git a/core/runtime/Cargo.toml b/core/runtime/Cargo.toml
+index dd75e661..a2f45b78 100644
+--- a/core/runtime/Cargo.toml
++++ b/core/runtime/Cargo.toml
+@@ -14,6 +14,7 @@ rust-version.workspace = true
+ boa_engine.workspace = true
+ base64.workspace = true
+ boa_gc.workspace = true
++bus = { workspace = true, optional = true }
+ bytemuck.workspace = true
+ either = { workspace = true, optional = true }
+ futures = "0.3.32"
+@@ -57,3 +58,5 @@ fetch = [
+ ]
+ reqwest-blocking = ["dep:reqwest", "reqwest/blocking"]
+ process = []
++annex-b = ["boa_engine/annex-b"]
++test262 = ["dep:bus"]
+diff --git a/core/runtime/src/lib.rs b/core/runtime/src/lib.rs
+index 9e8b22d7..396e25e5 100644
+--- a/core/runtime/src/lib.rs
++++ b/core/runtime/src/lib.rs
+@@ -123,6 +123,8 @@ pub mod microtask;
+ #[cfg(feature = "process")]
+ pub mod process;
+ pub mod store;
++#[cfg(feature = "test262")]
++pub mod test262;
+ pub mod text;
+ #[cfg(feature = "url")]
+ pub mod url;
+diff --git a/tests/tester/src/exec/js262.rs b/core/runtime/src/test262.rs
+similarity index 93%
+rename from tests/tester/src/exec/js262.rs
+rename to core/runtime/src/test262.rs
+index 0edf3f93..786dd623 100644
+--- a/tests/tester/src/exec/js262.rs
++++ b/core/runtime/src/test262.rs
+@@ -1,9 +1,12 @@
+ use std::{
+     cell::RefCell,
+     rc::Rc,
+-    sync::mpsc::{self, Sender},
++    sync::{
++        OnceLock,
++        mpsc::{self, Sender},
++    },
+     thread::JoinHandle,
+-    time::Duration,
++    time::{Duration, Instant},
+ };
+ 
+ #[cfg(feature = "annex-b")]
+@@ -18,25 +21,27 @@ use boa_engine::{
+ };
+ use bus::BusReader;
+ 
+-use crate::START;
++/// Monotonic clock for `$262.agent.monotonicNow()`, initialized by `register_js262()`.
++static START: OnceLock<Instant> = OnceLock::new();
+ 
+-pub(super) enum WorkerResult {
++pub enum WorkerResult {
+     Ok,
+     Err(String),
+     Panic(String),
+ }
+ 
+-pub(super) type WorkerHandle = JoinHandle<Result<(), String>>;
++type WorkerHandle = JoinHandle<Result<(), String>>;
+ 
+ #[derive(Debug, Clone)]
+-pub(super) struct WorkerHandles(Rc<RefCell<Vec<WorkerHandle>>>);
++pub struct WorkerHandles(Rc<RefCell<Vec<WorkerHandle>>>);
+ 
+ impl WorkerHandles {
+-    pub(super) fn new() -> Self {
++    #[must_use]
++    pub fn new() -> Self {
+         Self(Rc::default())
+     }
+ 
+-    pub(super) fn join_all(&mut self) -> Vec<WorkerResult> {
++    pub fn join_all(&mut self) -> Vec<WorkerResult> {
+         let handles = std::mem::take(&mut *self.0.borrow_mut());
+ 
+         handles
+@@ -71,11 +76,8 @@ impl Drop for WorkerHandles {
+ }
+ 
+ /// Creates the object $262 in the context.
+-pub(super) fn register_js262(
+-    handles: WorkerHandles,
+-    console: bool,
+-    context: &mut Context,
+-) -> JsObject {
++pub fn register_js262(handles: WorkerHandles, console: bool, context: &mut Context) -> JsObject {
++    START.get_or_init(Instant::now);
+     let global_obj = context.global_object();
+ 
+     let agent = agent_obj(handles, console, context);
+@@ -235,14 +237,10 @@ fn agent_obj(handles: WorkerHandles, console: bool, context: &mut Context) -> Js
+                 register_js262_worker(rx, tx, context);
+ 
+                 if console {
+-                    let console = boa_runtime::Console::init(context);
++                    let console = crate::Console::init(context);
+ 
+                     context
+-                        .register_global_property(
+-                            boa_runtime::Console::NAME,
+-                            console,
+-                            Attribute::all(),
+-                        )
++                        .register_global_property(crate::Console::NAME, console, Attribute::all())
+                         .expect("the console builtin shouldn't exist");
+                 }
+ 
+diff --git a/tests/tester/Cargo.toml b/tests/tester/Cargo.toml
+index bfe03d35..f1fe5cad 100644
+--- a/tests/tester/Cargo.toml
++++ b/tests/tester/Cargo.toml
+@@ -13,8 +13,7 @@ rust-version.workspace = true
+ 
+ [dependencies]
+ boa_engine = { workspace = true, features = ["float16"] }
+-boa_runtime.workspace = true
+-boa_gc.workspace = true
++boa_runtime = { workspace = true, features = ["test262"] }
+ clap = { workspace = true, features = ["derive"] }
+ serde = { workspace = true, features = ["derive"] }
+ serde_yaml = "0.9.34" # TODO: Track https://github.com/saphyr-rs/saphyr.
+@@ -28,11 +27,10 @@ color-eyre.workspace = true
+ phf = { workspace = true, features = ["macros"] }
+ comfy-table.workspace = true
+ serde_repr.workspace = true
+-bus.workspace = true
+ cow-utils.workspace = true
+ 
+ [features]
+-annex-b = ["boa_engine/annex-b"]
++annex-b = ["boa_engine/annex-b", "boa_runtime/annex-b"]
+ default = ["boa_engine/intl_bundled", "boa_engine/experimental", "annex-b"]
+ 
+ [lints]
+diff --git a/tests/tester/src/exec/mod.rs b/tests/tester/src/exec/mod.rs
+index 602e3d62..8f0072cf 100644
+--- a/tests/tester/src/exec/mod.rs
++++ b/tests/tester/src/exec/mod.rs
+@@ -1,6 +1,6 @@
+ //! Execution module for the test runner.
+ 
+-mod js262;
++use boa_runtime::test262 as js262;
+ 
+ use crate::{
+     Harness, Outcome, Phase, SpecEdition, Statistics, SuiteResult, Test, TestFlags,
+@@ -23,7 +23,7 @@ use rayon::prelude::*;
+ use rustc_hash::FxHashSet;
+ use std::{cell::RefCell, eprintln, path::Path, rc::Rc};
+ 
+-use self::js262::WorkerHandles;
++use js262::WorkerHandles;
+ 
+ impl TestSuite {
+     /// Runs the test suite.
+diff --git a/tests/tester/src/main.rs b/tests/tester/src/main.rs
+index 80590373..c6306747 100644
+--- a/tests/tester/src/main.rs
++++ b/tests/tester/src/main.rs
+@@ -15,8 +15,6 @@ use std::{
+     ops::{Add, AddAssign},
+     path::{Path, PathBuf},
+     process::Command,
+-    sync::OnceLock,
+-    time::Instant,
+ };
+ 
+ use bitflags::bitflags;
+@@ -46,8 +44,6 @@ mod exec;
+ mod read;
+ mod results;
+ 
+-static START: OnceLock<Instant> = OnceLock::new();
+-
+ /// Structure that contains the configuration of the tester.
+ #[derive(Debug, Deserialize)]
+ struct Config {
+@@ -188,11 +184,6 @@ const DEFAULT_TEST262_DIRECTORY: &str = "test262";
+ fn main() -> Result<()> {
+     color_eyre::install()?;
+ 
+-    // initializes the monotonic clock.
+-    START
+-        .set(Instant::now())
+-        .map_err(|_| eyre!("could not initialize the monotonic clock"))?;
+-
+     match Cli::parse() {
+         Cli::Run {
+             verbose,
+-- 
+2.47.3
+
+
+From d7cd97157409018cbf2a78f39bf954a9e3fbc296 Mon Sep 17 00:00:00 2001
+From: Ivan Krasilnikov <ivank@ivank.me>
+Date: Mon, 23 Mar 2026 14:40:53 +0800
+Subject: [PATCH 2/4] cli: define print() for test262 compatibility
+
+test262 tests use print() to signal async completion and errors.
+The tester has its own print() implementation to catch reported errors,
+but CLI should just print them, so let's alias it to console.log().
+---
+ cli/src/main.rs | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index aa2eb8c2..f1bf52ac 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -572,6 +572,12 @@ fn main() -> Result<()> {
+             true, // register `console` in $262.agent worker threads
+             context,
+         );
++
++        // Add print() that test262 uses to report errors and async success.
++        // boa_tester handles it internally, but CLI should just print messages.
++        context
++            .eval(Source::from_bytes("var print = console.log.bind(console);"))
++            .expect("failed to define print");
+     }
+ 
+     // Configure optimizer options
+-- 
+2.47.3
+
+
+From 0c6e4ba7acf47322631ebe1e75016248407c3cd0 Mon Sep 17 00:00:00 2001
+From: Ivan Krasilnikov <ivank@ivank.me>
+Date: Mon, 23 Mar 2026 14:41:02 +0800
+Subject: [PATCH 3/4] cli: auto-detect .mjs files as modules
+
+Treat files with .mjs extension as modules without requiring --module flag.
+
+Many other JavaScript shells do the same - d8, jsc, graaljs, xs, escargot.
+A small quality-of-life improvement that among other things simplifies
+configuration for an external test262 harness. The harness could simply
+stage module tests into *.mjs and forget about --module flag.
+---
+ cli/src/main.rs | 18 +++++++++++++-----
+ 1 file changed, 13 insertions(+), 5 deletions(-)
+
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index f1bf52ac..09ad5144 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -289,13 +289,18 @@ impl Drop for Counters {
+ ///
+ /// Returns a error of type String with a error message,
+ /// if the source has a syntax or parsing error.
+-fn dump<R: ReadChar>(src: Source<'_, R>, args: &Opt, context: &mut Context) -> Result<()> {
++fn dump<R: ReadChar>(
++    src: Source<'_, R>,
++    args: &Opt,
++    is_module: bool,
++    context: &mut Context,
++) -> Result<()> {
+     if let Some(arg) = args.dump_ast {
+         let mut counters = Counters::new(args.time);
+         let arg = arg.unwrap_or_default();
+         let mut parser = boa_parser::Parser::new(src);
+         let dump =
+-            if args.module {
++            if is_module {
+                 let scope = context.realm().scope().clone();
+                 let module = {
+                     let _timer = counters.new_timer("Parsing");
+@@ -390,7 +395,7 @@ fn evaluate_expr(
+     printer: &SharedExternalPrinterLogger,
+ ) -> Result<()> {
+     if args.has_dump_flag() {
+-        dump(Source::from_bytes(line), args, context)?;
++        dump(Source::from_bytes(line), args, args.module, context)?;
+     } else if let Some(flowgraph) = args.flowgraph {
+         match generate_flowgraph(
+             context,
+@@ -437,8 +442,11 @@ fn evaluate_file(
+     loader: &SimpleModuleLoader,
+     printer: &SharedExternalPrinterLogger,
+ ) -> Result<()> {
++    // Treat files with .mjs extension automatically as modules.
++    let is_module = args.module || file.extension().is_some_and(|ext| ext == "mjs");
++
+     if args.has_dump_flag() {
+-        return dump(Source::from_filepath(file)?, args, context);
++        return dump(Source::from_filepath(file)?, args, is_module, context);
+     }
+ 
+     if let Some(flowgraph) = args.flowgraph {
+@@ -454,7 +462,7 @@ fn evaluate_file(
+         return Ok(());
+     }
+ 
+-    if args.module {
++    if is_module {
+         let source = Source::from_filepath(file)?;
+         let mut counters = Counters::new(args.time);
+         let module = {
+-- 
+2.47.3
+
+
+From 4c52207e66e1e1fe37d9c0702f4d3c77f6891303 Mon Sep 17 00:00:00 2001
+From: Ivan Krasilnikov <ivank@ivank.me>
+Date: Mon, 23 Mar 2026 16:05:08 +0800
+Subject: [PATCH 4/4] cli: enable can_block by default, add --no-can-block flag
+
+Make boa's cli consistent with the behaviour of other major JavaScript
+shells (d8, jsc, spidermonkey at least) as well as boa_tester by
+enabling [[CanBlock]] by default.
+
+Add --no-can-block flag to opt out, same as V8
+(https://github.com/v8/v8/blob/main/src/d8/d8.cc#L6417).
+
+Needed for Atomics tests to pass when using an external test262 harness.
+---
+ cli/src/main.rs | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index 09ad5144..30902f1a 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -157,6 +157,10 @@ struct Opt {
+     #[arg(long)]
+     test262_object: bool,
+ 
++    /// Disallow the main thread from blocking (e.g. `Atomics.wait`).
++    #[arg(long)]
++    no_can_block: bool,
++
+     /// Treats the input files as modules.
+     #[arg(long, short = 'm', group = "mod")]
+     module: bool,
+@@ -558,6 +562,7 @@ fn main() -> Result<()> {
+     let context = &mut ContextBuilder::new()
+         .job_executor(executor.clone())
+         .module_loader(loader.clone())
++        .can_block(!args.no_can_block)
+         .build()
+         .map_err(|e| eyre!(e.to_string()))?;
+ 
+-- 
+2.47.3
+

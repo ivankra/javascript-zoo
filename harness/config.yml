@@ -92,7 +92,10 @@ boa:
     # Uncaught Error: RuntimeLimitError: reached the maximum number of recursive calls on this execution
     - '^Uncaught Error: (?P<message>.+)$'
   flags:
-    - --debug-object  # exposes $boa object
+    # Add --test262-object if available for the built-in $262 object,
+    # with fallback to --debug-object + prelude.
+    - shell: $BINARY --help | egrep -o '(--debug-object|--test262-object)' | tail -1
+    - { tag: 'CanBlockIsFalse', flag: '--no-can-block' }
     - { tag: 'module', flag: '--module' }
   prelude:
     - file: engines/boa/prelude.js
@@ -720,9 +723,6 @@ porffor:
   flags:
     - { tag: 'module', flag: '--module' }
 
-primjs: *quickjs
-primjs_262: *quickjs_262
-
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
   console_log: console.log
@@ -766,6 +766,9 @@ quickjs-ng:
     - *exception_colon_message
 
 quickjs-ng_262: *quickjs_262
+
+primjs: *quickjs
+primjs_262: *quickjs_262
 
 qv4:
   bench_transforms: ['octal']
