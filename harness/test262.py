@@ -116,7 +116,9 @@ class Executor:
         [] if no applicable modes.
         """
         test_path = self.test262_dir / rel_path
-        source = test_path.read_text(encoding="utf-8", errors="replace")
+        # Binary read to preserve CR/CRLF line endings verbatim, e.g.
+        # Function/prototype/toString/line-terminator-normalisation-CR.js
+        source = test_path.read_bytes().decode("utf-8", errors="replace")
         fm = Frontmatter.parse(source)
         tags = fm.tags()
 

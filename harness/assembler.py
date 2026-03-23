@@ -137,7 +137,7 @@ class Assembler:
         if self.save_compiled is not None:
             dst = self.save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
             dst.parent.mkdir(parents=True, exist_ok=True)
-            dst.write_text(assembled, encoding="utf-8")
+            dst.write_bytes(assembled.encode("utf-8"))
 
         needs_module_tree = (
             "module" in scenario.fm.flags
@@ -156,7 +156,7 @@ class Assembler:
         # a few don't even have any other way to force running it as a module.
         entry_dst = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
         entry_dst.parent.mkdir(parents=True, exist_ok=True)
-        entry_dst.write_text(assembled, encoding="utf-8")
+        entry_dst.write_bytes(assembled.encode("utf-8"))
 
         visited: set[str] = {scenario.rel_path}
         self._copy_deps_recursive(
@@ -186,7 +186,9 @@ class Assembler:
 
         rel_path = emit_tests[0]
         test_path = self.test262_dir / rel_path
-        source = test_path.read_text(encoding="utf-8", errors="replace")
+        # Binary read to preserve CR/CRLF line endings verbatim, e.g.
+        # Function/prototype/toString/line-terminator-normalisation-CR.js
+        source = test_path.read_bytes().decode("utf-8", errors="replace")
         fm = Frontmatter.parse(source)
         modes = [m for m in fm.modes() if mode == "all" or mode == m]
         if not modes:
@@ -201,14 +203,14 @@ class Assembler:
             tags=fm.tags(modes[0]),
         ))
         if output:
-            Path(output).write_text(assembled, encoding="utf-8")
+            Path(output).write_bytes(assembled.encode("utf-8"))
         else:
-            sys.stdout.write(assembled)
+            sys.stdout.buffer.write(assembled.encode("utf-8"))
 
     @lru_cache(maxsize=100)
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
-        source = p.read_text(encoding="utf-8", errors="replace")
+        source = p.read_bytes().decode("utf-8", errors="replace")
 
         # Expand template literals in harness code for ES5 engines
         if "`" in source:
@@ -256,7 +258,8 @@ class Assembler:
             shutil.copy2(dep_path, dst)
 
             try:
-                dep_src = dep_path.read_text(encoding="utf-8", errors="replace")
+                # Binary read: preserve original line endings in test fixtures
+                dep_src = dep_path.read_bytes().decode("utf-8", errors="replace")
                 self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited)
             except Exception as e:
                 print(f"warning: skipping deps of {dep_path}: {e}", file=sys.stderr)
