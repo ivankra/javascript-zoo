@@ -218,15 +218,16 @@ class Assembler:
         # their toString(), but would print the message field inside -
         # move Test262Error prefix to message field so we can properly
         # classify it.
-        if name == "sta.js":
-            source = source.replace(
-                '  this.message = message || "";',
-                '  this.message = "Test262Error: " + (message || "");'
-            )
-            source = source.replace(
-                '  return "Test262Error: " + this.message;',
-                '  return this.message;'
-            )
+        # FIXME tests/harness
+        # if name == "sta.js":
+        #     source = source.replace(
+        #         '  this.message = message || "";',
+        #         '  this.message = "Test262Error: " + (message || "");'
+        #     )
+        #     source = source.replace(
+        #         '  return "Test262Error: " + this.message;',
+        #         '  return this.message;'
+        #     )
 
         return source
 
