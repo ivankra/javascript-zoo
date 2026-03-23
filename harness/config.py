@@ -86,6 +86,13 @@ class EngineConfig:
     # Needed for some engines that don't properly format user-defined exceptions
     exit_code_for_test262_error: int | None = None
 
+    # Stage module tests with a wrapper script that evaluates harness as a
+    # script, then dynamically imports the module.  Per INTERPRETING.md §5,
+    # harness files should be evaluated as scripts before the test module.
+    # When false (default), harness is concatenated into the .mjs with
+    # globalThis assignments to compensate for module scoping.
+    module_harness_wrapper: bool = False
+
     # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].
     # Use tag "bench" / "test262" to gate preludes by execution mode.
     #   {"file": "path"}             → unconditional file (relative to repo root)

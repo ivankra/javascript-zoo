@@ -76,6 +76,7 @@ class Assembler:
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
         self.no_harness = no_harness
+        self.module_harness_wrapper = engine.module_harness_wrapper
         self.print_prelude = build_print_prelude(engine.console_log, self.preludes)
         self.save_compiled = Path(save_compiled) if save_compiled else None
         if self.save_compiled:
@@ -118,6 +119,21 @@ class Assembler:
             harness.extend(name for name in scenario.fm.includes if name not in harness)
             pieces.extend(self._read_harness(name) for name in harness)
 
+            # In module mode, function/var declarations from prepended harness
+            # code are module-scoped — they don't land on globalThis.  Some
+            # harness helpers (e.g. asyncTest) check hasOwnProperty(globalThis,
+            # "$DONE"), which fails.  Fix by explicitly assigning all harness-
+            # defined names to globalThis.
+            # A more correct alternative (module_harness_wrapper mode) is to
+            # run harness as a separate script per INTERPRETING.md §5, but
+            # that requires engine support for running a script before the
+            # module entry point.
+            if "module" in scenario.fm.flags:
+                names = self._harness_defines(harness)
+                if names:
+                    assigns = "; ".join(f"globalThis.{n} = {n}" for n in names)
+                    pieces.append(f"{assigns};\n")
+
         # 6. Test source body
         pieces.append(scenario.test_content)
 
@@ -148,6 +164,18 @@ class Assembler:
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()))
 
         tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
+
+        # --- module_harness_wrapper mode ---
+        # Per test262 INTERPRETING.md, harness files must be evaluated as
+        # scripts in the test realm *before* the module is loaded.  In the
+        # default (non-wrapper) mode we concatenate harness into the .mjs
+        # and patch globalThis (option A).  With module_harness_wrapper we
+        # instead emit a wrapper .js script that includes the harness, then
+        # dynamically imports the module (option B).  This is more correct
+        # but requires the engine to run a plain script that uses top-level
+        # await or .then() for the dynamic import.
+        if self.module_harness_wrapper and is_module:
+            return self._stage_module_wrapper(scenario, assembled, tmp_root)
 
         # Rename .js → .mjs for higher engine compatibility, simpler config.
         # Many engines auto-detect module mode from the extension, avoiding
@@ -182,6 +210,63 @@ class Assembler:
             pkg.write_text('{"type": "module"}\n', encoding="utf-8")
 
         return StagedScript(script_path=staged_path, cwd=tmp_root, tmp_dir=tmp_root)
+
+    def _stage_module_wrapper(
+        self, scenario: Scenario, assembled: str, tmp_root: Path,
+    ) -> StagedScript:
+        """Stage a module test with a separate script wrapper (option B).
+
+        Per test262 INTERPRETING.md §5, harness code should be evaluated as
+        scripts before the module.  This method writes:
+          1. The module .mjs with only the test source (no harness).
+          2. A wrapper .js script containing prelude + harness + dynamic
+             import of the module entry point.
+
+        The engine runs the wrapper as a script, so harness declarations
+        (function $DONE, var assert, etc.) land on globalThis naturally.
+        """
+        # Write the module with test source only (no harness/prelude)
+        mod_path = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
+        mod_path.parent.mkdir(parents=True, exist_ok=True)
+        mod_path.write_bytes(scenario.test_content.encode("utf-8"))
+
+        # Build the wrapper script: prelude + harness + import()
+        pieces: list[str] = []
+
+        for p in self.preludes:
+            if (p.tag is None or p.tag in scenario.tags) and p.code:
+                pieces.append(p.code)
+        if self.print_prelude:
+            pieces.append(self.print_prelude)
+
+        if not self.no_harness:
+            harness = ["assert.js", "sta.js"]
+            if "async" in scenario.fm.flags:
+                harness.append("doneprintHandle.js")
+            harness.extend(name for name in scenario.fm.includes if name not in harness)
+            pieces.extend(self._read_harness(name) for name in harness)
+
+        mod_rel = "./" + str(Path(scenario.rel_path).with_suffix(".mjs"))
+        if not scenario.fm.negative_type:
+            pieces.append(
+                f'import("{mod_rel}").then(() => '
+                f'print("ScriptExec"+"utionFinished"), (e) => '
+                f'{{ print(e); print(e.stack || ""); }});\n'
+            )
+        else:
+            pieces.append(f'import("{mod_rel}");\n')
+
+        wrapper_path = tmp_root / "t262-wrapper.js"
+        wrapper_path.write_bytes("\n".join(pieces).encode("utf-8"))
+
+        # Copy module deps and fixtures
+        visited: set[str] = {scenario.rel_path}
+        self._copy_deps_recursive(
+            tmp_root, scenario.test_path.parent, scenario.test_content, visited,
+        )
+        self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited)
+
+        return StagedScript(script_path=wrapper_path, cwd=tmp_root, tmp_dir=tmp_root)
 
     def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
         """Emit one assembled test to stdout or a file."""
@@ -219,6 +304,34 @@ class Assembler:
             Path(output).write_bytes(assembled.encode("utf-8"))
         else:
             sys.stdout.buffer.write(assembled.encode("utf-8"))
+
+    def _harness_defines(self, harness_names: list[str]) -> list[str]:
+        """Extract top-level names from harness files' ``defines:`` metadata.
+
+        Dotted names like ``assert.throwsAsync`` are reduced to the root
+        object (``assert``) since that's the actual declaration.
+        """
+        seen: set[str] = set()
+        names: list[str] = []
+        for h in harness_names:
+            for name in self._parse_harness_defines(h):
+                root = name.split(".")[0]
+                if root not in seen:
+                    seen.add(root)
+                    names.append(root)
+        return names
+
+    _DEFINES_RE = re.compile(r"defines:\s*\[([^\]]*)\]")
+
+    @lru_cache(maxsize=100)
+    def _parse_harness_defines(self, name: str) -> tuple[str, ...]:
+        """Parse ``defines: [...]`` from a harness file's YAML frontmatter."""
+        p = self.harness_dir / name
+        source = p.read_bytes().decode("utf-8", errors="replace")
+        m = self._DEFINES_RE.search(source[:1024])  # frontmatter is near the top
+        if not m:
+            return ()
+        return tuple(n.strip() for n in m.group(1).split(",") if n.strip())
 
     @lru_cache(maxsize=100)
     def _read_harness(self, name: str) -> str:
