@@ -9,7 +9,7 @@ from pathlib import Path
 
 from harness.assembler import Assembler, Scenario, build_print_prelude
 from harness.config import EngineConfig, Prelude
-from harness.frontmatter import Frontmatter
+from harness.frontmatter import Frontmatter, Tags
 
 
 def _scenario(source: str, *, mode: str = "sloppy", rel_path: str = "test/x.js") -> Scenario:
@@ -20,7 +20,7 @@ def _scenario(source: str, *, mode: str = "sloppy", rel_path: str = "test/x.js")
         rel_path=rel_path,
         fm=fm,
         mode=mode,
-        tags=fm.tags(mode),
+        tags=Tags.test262(fm, rel_path=rel_path),
     )
 
 
@@ -89,7 +89,7 @@ class TestScenario(unittest.TestCase):
         source = "/*---\nfeatures: [Symbol]\n---*/\nvar x;"
         s = _scenario(source, mode="strict")
         self.assertIn("Symbol", s.tags)
-        self.assertIn("strict", s.tags)
+        self.assertIn("features:Symbol", s.tags)
 
 
 class TestEmitPreprocessed(unittest.TestCase):
@@ -162,7 +162,7 @@ class TestStageModule(unittest.TestCase):
                 rel_path="test/mod/main.js",
                 fm=fm,
                 mode="sloppy",
-                tags=fm.tags("sloppy"),
+                tags=Tags.test262(fm, rel_path="test/mod/main.js"),
             )
 
             tmp = Path(tmpdir) / "stage"
@@ -212,7 +212,7 @@ class TestStageModule(unittest.TestCase):
                 test_path=test_dir / "entry.js",
                 test_content=source,
                 rel_path="test/mod/entry.js",
-                fm=fm, mode="sloppy", tags=fm.tags("sloppy"),
+                fm=fm, mode="sloppy", tags=Tags.test262(fm, rel_path="test/mod/entry.js"),
             )
 
             tmp = Path(tmpdir) / "stage"
@@ -274,7 +274,7 @@ class TestStageModule(unittest.TestCase):
                 test_path=test_dir / "foo.js",
                 test_content=source,
                 rel_path="test/di/foo.js",
-                fm=fm, mode="sloppy", tags=fm.tags("sloppy"),
+                fm=fm, mode="sloppy", tags=Tags.test262(fm, rel_path="test/di/foo.js"),
             )
 
             tmp = Path(tmpdir) / "stage"

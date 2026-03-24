@@ -36,6 +36,7 @@ from harness import (
     Frontmatter,
     Runner,
     Scenario,
+    Tags,
     Verdict,
 )
 
@@ -235,7 +236,7 @@ def run_probe(cfg: EngineConfig, test262_dir: Path, probe_name: str, spec: dict,
             rel_path="probe.js",
             fm=fm,
             mode=mode,
-            tags=fm.tags(mode) | frozenset({"test262"}),
+            tags=Tags.test262(fm),
         )
         (tmp_dir / "probe.js").write_text(source, encoding="utf-8")
 

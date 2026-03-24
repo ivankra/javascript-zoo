@@ -14,7 +14,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from .config import EngineConfig, Prelude
-from .frontmatter import Frontmatter
+from .frontmatter import Frontmatter, Tags
 from .util import expand_template_literals, iterate_js_files
 
 
@@ -36,7 +36,7 @@ class Scenario:
     rel_path: str            # path relative to test262 root
     fm: Frontmatter          # parsed YAML frontmatter
     mode: str                # "strict" or "sloppy"
-    tags: frozenset[str] = frozenset()  # precomputed fm.tags()
+    tags: Tags | None = None
 
     def display_id(self) -> str:
         if len(self.fm.modes()) > 1:
@@ -101,7 +101,7 @@ class Assembler:
 
         # 2. Engine prelude(s)
         for p in self.preludes:
-            if (p.tag is None or p.tag in scenario.tags) and p.code:
+            if (p.tag is None or (scenario.tags is not None and p.tag in scenario.tags)) and p.code:
                 pieces.append(p.code)
 
         # 2b. Auto-generated print() prelude (when engine doesn't have print natively)
@@ -213,7 +213,7 @@ class Assembler:
             rel_path=rel_path,
             fm=fm,
             mode=modes[0],
-            tags=fm.tags(modes[0]),
+            tags=Tags.test262(fm, rel_path=rel_path),
         ))
         if output:
             Path(output).write_bytes(assembled.encode("utf-8"))

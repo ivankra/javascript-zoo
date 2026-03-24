@@ -16,7 +16,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from harness import Annotator, EngineConfig, Reporter, RunResult, Runner, Verdict, version_sort_key, iterate_js_files
+from harness import Annotator, EngineConfig, Reporter, RunResult, Runner, Tags, iterate_js_files
 
 CONFORMANCE_DIR = REPO_ROOT / "conformance"
 PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
@@ -68,6 +68,10 @@ def run_one(
     fail_pattern = rf"{re.escape(test_path.name)}: (?:failed|exception)"
     annotator.classify(run, ok_pattern=ok_pattern, fail_pattern=fail_pattern,
                      strip_line_prefix=f"{test_id}: ")
+
+    tags = Tags()
+    tags.add_folders(test_id)
+    run.tags = tags
     return run
 
 

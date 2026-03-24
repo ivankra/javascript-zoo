@@ -25,7 +25,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).parent.parent.resolve()
 sys.path.insert(0, str(REPO_ROOT))
 
-from harness import Annotator, EngineConfig, Prelude, RunResult, Runner, Verdict, read_json
+from harness import Annotator, EngineConfig, Prelude, RunResult, Runner, Tags, Verdict, read_json
 
 START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f %Z")
 PERIODIC_SAVE_SECONDS = 10
@@ -381,7 +381,7 @@ class BenchRunner:
         try:
             script_path = td_path / basename
             script_path.write_text(run_script, encoding="utf-8")
-            argv = self.cfg.argv(*self.extra_flags, script_path, tags=frozenset({"bench"}))
+            argv = self.cfg.argv(*self.extra_flags, script_path, tags=Tags({"bench"}))
             if verbose:
                 print(f"> cd {shlex.quote(str(td_path))}; {shlex.join(argv)}", flush=True)
             run = self._runner.run_command(

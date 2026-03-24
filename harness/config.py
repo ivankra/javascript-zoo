@@ -12,7 +12,10 @@ import subprocess
 import sys
 from functools import cache
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+if TYPE_CHECKING:
+    from .frontmatter import Tags
 
 import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
@@ -128,7 +131,7 @@ class EngineConfig:
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
 
-    def argv(self, *args: Path | str, tags: frozenset[str] = frozenset()) -> list[str]:
+    def argv(self, *args: Path | str, tags: Tags | None = None) -> list[str]:
         """Build execution argv: binary + flags + positional args.
 
         Conditional flags ({"tag": ..., "flag": ...}) are included only when
@@ -139,7 +142,7 @@ class EngineConfig:
             if isinstance(flag, str):
                 cmd.append(flag)
             elif isinstance(flag, dict) and "tag" in flag and "flag" in flag:
-                if flag["tag"] in tags:
+                if tags is not None and flag["tag"] in tags:
                     cmd.append(flag["flag"])
             else:
                 raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")

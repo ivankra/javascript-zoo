@@ -30,6 +30,7 @@ from harness import (
     RunResult,
     Runner,
     Scenario,
+    Tags,
     Verdict,
     iterate_js_files,
 )
@@ -69,10 +70,11 @@ class Executor:
         self._jobs = max(1, jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
-    def run(self, tests: Iterator[str], *, on_test_result: Any = None) -> None:
+    def run(self, tests: Iterator[str], *, on_test_result: Any = None, on_test_submit: Any = None) -> None:
         """Submit test files to worker pool, delivering results via callback.
 
         Callback signature: on_test_result(results: list[RunResult]).
+        on_test_submit(rel_path: str) is called in discovery order as tests are submitted.
         """
         try:
             with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
@@ -88,6 +90,8 @@ class Executor:
                             except StopIteration:
                                 exhausted = True
                                 break
+                            if on_test_submit:
+                                on_test_submit(rel_path)
                             futs[pool.submit(self._process_file, rel_path)] = rel_path
 
                         if not futs:
@@ -120,17 +124,18 @@ class Executor:
         # Function/prototype/toString/line-terminator-normalisation-CR.js
         source = test_path.read_bytes().decode("utf-8", errors="replace")
         fm = Frontmatter.parse(source)
-        tags = fm.tags()
 
-        if self.include_features and not (tags & self.include_features):
-            missing = self.include_features - tags
+        tags = Tags.test262(fm, rel_path=rel_path)
+
+        if self.include_features and not (self.include_features & tags.values):
+            missing = self.include_features - tags.values
             return [RunResult(
                 run_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
                 tags=tags,
             )]
         if self.skip_features:
-            blocked = tags & self.skip_features
+            blocked = self.skip_features & tags.values
             if blocked:
                 return [RunResult(
                     run_id=rel_path, test_path=str(test_path),
@@ -138,13 +143,17 @@ class Executor:
                     tags=tags,
                 )]
 
-        return [
-            self._execute_one(Scenario(
+        results: list[RunResult] = []
+        for mode in fm.modes():
+            if self.mode != "all" and self.mode != mode:
+                continue
+            mt = tags.clone()
+            mt.add("mode", mode)
+            results.append(self._execute_one(Scenario(
                 test_path=test_path, test_content=source, rel_path=rel_path,
-                fm=fm, mode=mode, tags=fm.tags(mode),
-            ))
-            for mode in fm.modes() if self.mode == "all" or self.mode == mode
-        ]
+                fm=fm, mode=mode, tags=mt,
+            )))
+        return results
 
     def _execute_one(self, scenario: Scenario) -> RunResult:
         """Execute engine on an assembled scenario, classify result."""
@@ -238,7 +247,7 @@ def main() -> None:
     engine.resolve()
 
     if args.verbose:
-        argv_display = engine.argv("<file>", tags=frozenset({"test262"}))
+        argv_display = engine.argv("<file>", tags=Tags({"test262"}))
         print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
 
     test262_dir = Path(args.test262_dir).resolve()
@@ -293,7 +302,7 @@ def main() -> None:
     )
 
     try:
-        executor.run(tests, on_test_result=reporter.add_file)
+        executor.run(tests, on_test_result=reporter.add_file, on_test_submit=reporter.note_test)
     except KeyboardInterrupt:
         reporter.clear_progress()
         print("\nInterrupted")

@@ -13,9 +13,12 @@ import subprocess
 import threading
 import time
 from enum import StrEnum
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from .config import EngineConfig
+
+if TYPE_CHECKING:
+    from .frontmatter import Tags
 
 
 class Verdict(StrEnum):
@@ -115,8 +118,7 @@ class RunResult:
     metrics: RunMetrics = dataclasses.field(default_factory=RunMetrics)
     # Benchmark-specific numeric scores extracted from output.
     benchmarks: dict[str, int | float | None] = dataclasses.field(default_factory=dict)
-    # Tags set. For test262, comes from Frontmatter.tags().
-    tags: frozenset[str] = dataclasses.field(default_factory=frozenset)
+    tags: Tags | None = None
     # Execution mode: "strict" or "sloppy" (test262).
     mode: str = ""
 
