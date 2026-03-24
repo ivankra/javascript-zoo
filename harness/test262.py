@@ -246,10 +246,6 @@ def main() -> None:
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
 
-    if args.verbose:
-        argv_display = engine.argv("<file>", tags=Tags({"test262"}))
-        print(f"Command: {shlex.join(argv_display[:-1])} <file>", file=sys.stderr)
-
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
         sys.exit(f"test262 dir not found: {test262_dir}")

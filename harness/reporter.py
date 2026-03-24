@@ -286,7 +286,7 @@ class Reporter:
 
     # ── JSON formatting ──────────────────────────────────────────────────────
 
-    _INLINE_DICT_KEYS = frozenset({"ok", "ok_percent", "fail", "skip", "strict", "sloppy"})
+    _INLINE_DICT_KEYS = frozenset({"ok", "ok_percent", "fail", "skip", "strict", "sloppy", "tag", "flag"})
 
     @staticmethod
     def _is_inline_json(value: Any) -> bool:
@@ -451,6 +451,8 @@ class Reporter:
         data: dict[str, Any] = {}
         if engine.build_metadata:
             data["binary"] = engine.build_metadata
+        if engine.flags:
+            data["flags"] = engine.flags
         if self._probes is not None:
             data["harness"] = dict(sorted(self._probes.items()))
         if self._test262_revision:
