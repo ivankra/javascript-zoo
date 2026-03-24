@@ -223,3 +223,18 @@ class Tags:
             return False
 
         return (tag[:i], tag[i+1:]) in self.pairs
+
+
+class FilterExpr:
+    def __init__(self, expr: str):
+        expr = expr.replace('!', '~').replace(',', '|')
+        split = re.split(r'([\s~&|()]+)', f'({expr})')[1:-1]
+        self.vars = split[1::2]
+        split[1::2] = ['%d'] * len(self.vars)
+        self.fmt = ''.join(split).replace('~', ' not ').replace('&', ' and ').replace('|', ' or ')
+        if not self.vars:
+            self.fmt = '1'
+
+    def eval(self, tags: Tags | set[str]) -> bool:
+        res = eval(self.fmt % tuple(int(v in tags) for v in self.vars))
+        return bool(res)

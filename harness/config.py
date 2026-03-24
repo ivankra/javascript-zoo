@@ -111,8 +111,8 @@ class EngineConfig:
         "compat-table/es20[0-9][0-9]",
     ])
     conformance_jobs: int = 8
-    # Default test262 feature skips for this engine. CLI --skip-features overrides.
-    test262_skip_features: list[str] = dataclasses.field(default_factory=list)
+    # Default test262 filter expression for this engine. CLI --filter overrides.
+    test262_filter_expr: str = ""
 
     @property
     def name(self) -> str:

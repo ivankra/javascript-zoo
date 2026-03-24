@@ -25,6 +25,7 @@ from harness import (
     Assembler,
     Annotator,
     EngineConfig,
+    FilterExpr,
     Frontmatter,
     Reporter,
     RunResult,
@@ -55,8 +56,7 @@ class Executor:
         jobs: int = 4,
         timeout_sec: float = DEFAULT_TIMEOUT_SEC,
         mode: str = "all",
-        include_features: set[str] | None = None,
-        skip_features: set[str] | None = None,
+        filter_expr: FilterExpr | None = None,
     ) -> None:
         self.engine = engine
         self.test262_dir = assembler.test262_dir
@@ -65,8 +65,7 @@ class Executor:
         self.annotator = Annotator(engine)
         self.timeout_sec = timeout_sec
         self.mode = mode
-        self.include_features = include_features
-        self.skip_features = skip_features
+        self.filter_expr = filter_expr
         self._jobs = max(1, jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
@@ -127,21 +126,12 @@ class Executor:
 
         tags = Tags.test262(fm, rel_path=rel_path)
 
-        if self.include_features and not (self.include_features & tags.values):
-            missing = self.include_features - tags.values
+        if self.filter_expr and not self.filter_expr.eval(tags):
             return [RunResult(
                 run_id=rel_path, test_path=str(test_path),
-                verdict=Verdict.SKIPPED, error_message=f"missing features: {', '.join(sorted(missing))}",
+                verdict=Verdict.SKIPPED, error_message="filtered out",
                 tags=tags,
             )]
-        if self.skip_features:
-            blocked = self.skip_features & tags.values
-            if blocked:
-                return [RunResult(
-                    run_id=rel_path, test_path=str(test_path),
-                    verdict=Verdict.SKIPPED, error_message=f"skip features: {', '.join(sorted(blocked))}",
-                    tags=tags,
-                )]
 
         results: list[RunResult] = []
         for mode in fm.modes():
@@ -200,16 +190,18 @@ def main() -> None:
         usage="%(prog)s [opts] engine [tests]",
     )
     p.add_argument("engine", help="Engine binary path or a shell command (e.g. /dist/v8, node, 'node --js-staging')")
-    p.add_argument("tests", nargs="*",
-                  help=("Test files/dirs globs relative to test262 root. "
-                        "Glob matching a directory selects all *.js files recursively. "
-                        "May use ** globs, e.g. test/**/Temporal to match all Temporal subdirs."))
-    p.add_argument("-f", "--features", action="append", default=[], metavar="LIST",
-                   help=("Only run tests which have one of these features/tags (comma-separated). "
-                         "You can filter for frontmatter features/flags/fields and esNNNN tags "
-                         "(highest ES edition of any feature)"))
-    p.add_argument("--skip-features", action="append", default=[], metavar="LIST",
-                   help="Skip tests which have any of these features/tags (comma-separated)")
+    p.add_argument("tests", nargs="*", help="""
+        Test files/dirs globs relative to test262 root. Glob matching
+        a directory selects all *.js files recursively. May use ** globs,
+        e.g. test/**/Temporal to match all Temporal subdirs.""")
+    p.add_argument("-f", "--filter", action="append", default=[], metavar="EXPR", help="""
+        Boolean expression with brackets, unary NOT ("!" / "~"),
+        binary AND ("&"), binary OR ("|" / ",", lowest precedence) over
+        "[<namespace>:]<tag>" variables indicating tag presence.
+        Examples: "Temporal" / "features:Temporal", "es6,es2016",
+        "es6&Map" (all edition:es6 tests with features:Map),
+        "esnext&(module|dynamic-import)".
+        Multiple --filter flags are joined with OR.""")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], metavar="MODE", default="all",
@@ -286,19 +278,17 @@ def main() -> None:
     if args.limit:
         tests = itertools.islice(tests, args.limit)
 
-    include_features = {f for item in args.features for f in item.split(",") if f} or None
-    if args.skip_features:
-        skip_features = {f for item in args.skip_features for f in item.split(",") if f} or None
-    else:
-        skip_features = set(engine.test262_skip_features) or None
+    filter_parts = args.filter
+    if not filter_parts and engine.test262_filter_expr:
+        filter_parts = [engine.test262_filter_expr]
+    filter_expr = FilterExpr("|".join(filter_parts)) if filter_parts else None
 
     executor = Executor(
         engine, assembler,
         jobs=args.jobs,
         timeout_sec=args.timeout,
         mode=args.mode,
-        include_features=include_features,
-        skip_features=skip_features,
+        filter_expr=filter_expr,
     )
 
     try:

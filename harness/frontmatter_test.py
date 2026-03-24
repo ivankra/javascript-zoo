@@ -211,6 +211,73 @@ class TestTags(unittest.TestCase):
         self.assertEqual(fm.features, {"Symbol"})
 
 
+class TestFilterExpr(unittest.TestCase):
+    def _eval(self, expr: str, tags: set[str]) -> bool:
+        from harness.frontmatter import FilterExpr
+        return FilterExpr(expr).eval(tags)
+
+    def test_single_tag_present(self):
+        self.assertTrue(self._eval("Temporal", {"Temporal", "Promise"}))
+
+    def test_single_tag_absent(self):
+        self.assertFalse(self._eval("Temporal", {"Promise"}))
+
+    def test_or_comma(self):
+        self.assertTrue(self._eval("es6,es2016", {"es2016"}))
+        self.assertFalse(self._eval("es6,es2016", {"es5"}))
+
+    def test_or_pipe(self):
+        self.assertTrue(self._eval("es6|es2016", {"es6"}))
+
+    def test_and(self):
+        self.assertTrue(self._eval("es6&Map", {"es6", "Map"}))
+        self.assertFalse(self._eval("es6&Map", {"es6"}))
+
+    def test_not_bang(self):
+        self.assertTrue(self._eval("!Temporal", {"Promise"}))
+        self.assertFalse(self._eval("!Temporal", {"Temporal"}))
+
+    def test_not_tilde(self):
+        self.assertTrue(self._eval("~Temporal", {"Promise"}))
+
+    def test_not_or_precedence(self):
+        # !a|b should be (!a)|b, not !(a|b)
+        self.assertTrue(self._eval("!Temporal|Promise", {"Promise"}))
+        self.assertTrue(self._eval("!Temporal|Promise", {"Map"}))
+        self.assertFalse(self._eval("!Temporal|Promise", {"Temporal"}))
+
+    def test_parens(self):
+        self.assertTrue(self._eval("esnext&(module|dynamic-import)", {"esnext", "module"}))
+        self.assertTrue(self._eval("esnext&(module|dynamic-import)", {"esnext", "dynamic-import"}))
+        self.assertFalse(self._eval("esnext&(module|dynamic-import)", {"esnext"}))
+        self.assertFalse(self._eval("esnext&(module|dynamic-import)", {"module"}))
+
+    def test_negated_group(self):
+        self.assertTrue(self._eval("!(Temporal|Intl)", {"Map"}))
+        self.assertFalse(self._eval("!(Temporal|Intl)", {"Temporal"}))
+
+    def test_empty_expr(self):
+        # Empty expression matches everything
+        self.assertTrue(self._eval("", {"anything"}))
+        self.assertTrue(self._eval("", set()))
+
+    def test_with_tags_object(self):
+        from harness.frontmatter import FilterExpr
+        tags = Tags()
+        tags.add("features", "Temporal")
+        tags.add("edition", "es6")
+        f = FilterExpr("Temporal&es6")
+        self.assertTrue(f.eval(tags))
+        f2 = FilterExpr("Temporal&es7")
+        self.assertFalse(f2.eval(tags))
+
+    def test_namespaced_tag(self):
+        tags = Tags()
+        tags.add("features", "Temporal")
+        self.assertTrue(self._eval("features:Temporal", tags))
+        self.assertFalse(self._eval("features:Promise", tags))
+
+
 class TestFeatureToEdition(unittest.TestCase):
     def test_values_are_ints(self):
         for feat, edition in test262_feature_to_ecmascript_edition().items():
