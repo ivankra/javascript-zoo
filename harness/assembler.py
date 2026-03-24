@@ -27,6 +27,8 @@ _REL_SPECIFIER_RE = re.compile(
     r""")"""
 )
 
+_USED_262_RE = re.compile(r"(?<![0-9A-Za-z_$.])\$262\.[A-Za-z_$][0-9A-Za-z_$]*")
+
 
 @dataclasses.dataclass
 class Scenario:
@@ -49,6 +51,7 @@ class StagedScript:
     """Result of Assembler.stage(): where to find the script and how to clean up."""
     script_path: Path
     cwd: Path
+    used: set[str] = dataclasses.field(default_factory=set)
     # Directory to rmtree on cleanup, or None for single-file cleanup.
     tmp_dir: Path | None = None
 
@@ -133,6 +136,7 @@ class Assembler:
     def stage(self, scenario: Scenario, *, temp_dir: Path) -> StagedScript:
         """Assemble and write script to disk, staging module trees if needed."""
         assembled = self.assemble(scenario)
+        used = set(_USED_262_RE.findall(assembled))
 
         if self.save_compiled is not None:
             dst = self.save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
@@ -145,7 +149,7 @@ class Assembler:
         if not needs_module_tree:
             script_path = temp_dir / f"t262-temp-{os.getpid()}-{id(assembled)}.js"
             script_path.write_bytes(assembled.encode("utf-8"))
-            return StagedScript(script_path=script_path, cwd=Path(os.getcwd()))
+            return StagedScript(script_path=script_path, cwd=Path(os.getcwd()), used=used)
 
         tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
 
@@ -172,7 +176,7 @@ class Assembler:
         visited: set[str] = {scenario.rel_path}
         self._copy_deps_recursive(
             tmp_root, scenario.test_path.parent, scenario.test_content, visited,
-            rename_map=rename_map,
+            rename_map=rename_map, used=used,
         )
         self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited,
                                     rename_map=rename_map)
@@ -181,7 +185,7 @@ class Assembler:
         if not pkg.exists():
             pkg.write_text('{"type": "module"}\n', encoding="utf-8")
 
-        return StagedScript(script_path=staged_path, cwd=tmp_root, tmp_dir=tmp_root)
+        return StagedScript(script_path=staged_path, cwd=tmp_root, used=used, tmp_dir=tmp_root)
 
     def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
         """Emit one assembled test to stdout or a file."""
@@ -253,6 +257,7 @@ class Assembler:
         source: str,
         visited: set[str],
         rename_map: dict[str, str] | None = None,
+        used: set[str] | None = None,
     ) -> None:
         test_dir = self.test262_dir
         for spec in self._extract_relative_deps(source):
@@ -278,6 +283,9 @@ class Assembler:
                 shutil.copy2(dep_path, dst)
                 continue
 
+            if used is not None:
+                used.update(_USED_262_RE.findall(dep_src))
+
             # Rewrite imports that reference the renamed entry file
             if rename_map:
                 for old, new in rename_map.items():
@@ -285,7 +293,7 @@ class Assembler:
 
             dst.write_bytes(dep_src.encode("utf-8"))
             self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,
-                                      rename_map=rename_map)
+                                      rename_map=rename_map, used=used)
 
     def _extract_relative_deps(self, source: str) -> list[str]:
         """Extract relative module specifiers from JS source."""

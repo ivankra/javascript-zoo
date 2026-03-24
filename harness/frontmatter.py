@@ -139,6 +139,9 @@ class Tags:
       * edition    – highest ES edition (es5, es6, es2020, ..., esnext)
       * mode       – execution mode (strict or sloppy)
       * folder     – all ancestor directory prefixes of rel_path
+      * uses       – $262.* methods usage tags (reporting only; not available
+                     for test discovery/filtering because they are added after
+                     staging)
     """
 
     __slots__ = ("values", "pairs")

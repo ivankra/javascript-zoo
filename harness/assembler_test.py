@@ -137,6 +137,52 @@ class TestEmitPreprocessed(unittest.TestCase):
 
 
 class TestStageModule(unittest.TestCase):
+    def test_stage_collects_used_262_from_script_and_deps_not_siblings(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            t262 = Path(tmpdir) / "test262"
+            harness = t262 / "harness"
+            harness.mkdir(parents=True)
+            (harness / "assert.js").write_text("")
+            (harness / "sta.js").write_text("")
+            test_dir = t262 / "test" / "mod"
+            test_dir.mkdir(parents=True)
+            (test_dir / "helper.js").write_text(
+                "export const x = $262.gc + $262.agent.start;\n"
+            )
+            (test_dir / "entry_FIXTURE.js").write_text(
+                "export const ignored = $262.detachArrayBuffer;\n"
+            )
+            (test_dir / "main.js").write_text(
+                "/*---\nflags: [module]\n---*/\n"
+                "$262.evalScript('1');\n"
+                "import {x} from './helper.js';\n"
+            )
+
+            engine = EngineConfig(binary_path="/fake/js")
+            asm = Assembler(engine, t262)
+
+            source = (test_dir / "main.js").read_text()
+            fm = Frontmatter.parse(source)
+            scenario = Scenario(
+                test_path=test_dir / "main.js",
+                test_content=source,
+                rel_path="test/mod/main.js",
+                fm=fm,
+                mode="sloppy",
+                tags=Tags.test262(fm, rel_path="test/mod/main.js"),
+            )
+
+            tmp = Path(tmpdir) / "stage"
+            tmp.mkdir()
+            staged = asm.stage(scenario, temp_dir=tmp)
+            try:
+                self.assertEqual(
+                    staged.used,
+                    {"$262.evalScript", "$262.gc", "$262.agent"},
+                )
+            finally:
+                staged.cleanup()
+
     def test_module_creates_tree(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             t262 = Path(tmpdir) / "test262"
@@ -245,6 +291,7 @@ class TestStageModule(unittest.TestCase):
                 self.assertIsNone(staged.tmp_dir)
                 content = staged.script_path.read_text()
                 self.assertIn("var x;", content)
+                self.assertEqual(staged.used, set())
             finally:
                 staged.cleanup()
 

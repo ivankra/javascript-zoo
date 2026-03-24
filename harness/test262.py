@@ -165,6 +165,10 @@ class Executor:
             ok_pattern = None
 
         staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp)
+        if scenario.tags is None:
+            scenario.tags = Tags()
+        for used in staged.used:
+            scenario.tags.add("uses", used)
 
         try:
             run = self.runner.run_command(
