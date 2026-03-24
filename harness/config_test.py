@@ -54,17 +54,17 @@ class ResolveFlagsListTest(unittest.TestCase):
         self.assertEqual(cfg.flags, ["--a", "--b"])
 
     def test_tag_item_preserved(self) -> None:
-        tag_item = {"tag": "Intl", "flag": "--intl"}
+        tag_item = {"if": "Intl", "then": "--intl"}
         result = _resolve_flags_list(["--a", tag_item], "")
         self.assertEqual(result, ["--a", tag_item])
 
     def test_tag_item_in_nested_list(self) -> None:
-        tag_item = {"tag": "Intl", "flag": "--intl"}
+        tag_item = {"if": "Intl", "then": "--intl"}
         result = _resolve_flags_list([[tag_item, "--b"]], "")
         self.assertEqual(result, [tag_item, "--b"])
 
     def test_resolve_preserves_tag_items(self) -> None:
-        tag_item = {"tag": "Intl", "flag": "--intl"}
+        tag_item = {"if": "Intl", "then": "--intl"}
         cfg = EngineConfig(binary_path="/bin/eng", flags=["--a", tag_item])
         cfg.resolve()
         self.assertEqual(cfg.flags, ["--a", tag_item])
@@ -85,7 +85,7 @@ class EngineConfigCommandTest(unittest.TestCase):
         self.assertEqual(cmd, ["/usr/bin/eng", "--strict", "-O", "/tmp/s.js"])
 
     def test_module_tag_flag(self) -> None:
-        cfg = self._cfg(flags=["eval", {"tag": "module", "flag": "--module"}])
+        cfg = self._cfg(flags=["eval", {"if": "module", "then": "--module"}])
         self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
         self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"module"})), ["/usr/bin/eng", "eval", "--module", "/tmp/s.js"])
 
@@ -98,36 +98,36 @@ class EngineConfigCommandTest(unittest.TestCase):
         self.assertEqual(cmd, ["/usr/bin/eng", "eval", "/tmp/a.js", "--flag", "/tmp/b.js"])
 
     def test_tagged_test262_flag(self) -> None:
-        cfg = self._cfg(flags=["eval", {"tag": "test262", "flag": "--harmony"}])
+        cfg = self._cfg(flags=["eval", {"if": "test262", "then": "--harmony"}])
         self.assertEqual(cfg.argv("/tmp/s.js"), ["/usr/bin/eng", "eval", "/tmp/s.js"])
         self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"test262"})),
                          ["/usr/bin/eng", "eval", "--harmony", "/tmp/s.js"])
 
     def test_tagged_bench_flag(self) -> None:
-        cfg = self._cfg(flags=["eval", {"tag": "bench", "flag": "-O"}])
+        cfg = self._cfg(flags=["eval", {"if": "bench", "then": "-O"}])
         self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"bench"})),
                          ["/usr/bin/eng", "eval", "-O", "/tmp/s.js"])
 
     def test_tag_flag_included_when_tag_present(self) -> None:
-        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cfg = self._cfg(flags=["--a", {"if": "Intl", "then": "--intl"}])
         cmd = cfg.argv("/tmp/s.js", tags=Tags({"Intl"}))
         self.assertEqual(cmd, ["/usr/bin/eng", "--a", "--intl", "/tmp/s.js"])
 
     def test_tag_flag_excluded_when_tag_absent(self) -> None:
-        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cfg = self._cfg(flags=["--a", {"if": "Intl", "then": "--intl"}])
         cmd = cfg.argv("/tmp/s.js", tags=Tags())
         self.assertEqual(cmd, ["/usr/bin/eng", "--a", "/tmp/s.js"])
 
     def test_tag_flag_excluded_by_default(self) -> None:
-        cfg = self._cfg(flags=["--a", {"tag": "Intl", "flag": "--intl"}])
+        cfg = self._cfg(flags=["--a", {"if": "Intl", "then": "--intl"}])
         cmd = cfg.argv("/tmp/s.js")
         self.assertEqual(cmd, ["/usr/bin/eng", "--a", "/tmp/s.js"])
 
     def test_multiple_tag_flags(self) -> None:
         cfg = self._cfg(flags=[
             "--base",
-            {"tag": "Intl", "flag": "--intl"},
-            {"tag": "Atomics", "flag": "--harmony-atomics"},
+            {"if": "Intl", "then": "--intl"},
+            {"if": "Atomics", "then": "--harmony-atomics"},
         ])
         cmd = cfg.argv("/tmp/s.js", tags=Tags({"Intl", "Atomics"}))
         self.assertEqual(cmd, ["/usr/bin/eng", "--base", "--intl", "--harmony-atomics", "/tmp/s.js"])
@@ -242,7 +242,7 @@ class ResolvePreludesTest(unittest.TestCase):
         self.assertEqual(len(result), 1)
         self.assertEqual(result[0].code, "var x = 1;")
         self.assertIsNone(result[0].file)
-        self.assertIsNone(result[0].tag)
+        self.assertIsNone(result[0].if_tag)
 
     def test_file_item(self) -> None:
         with tempfile.NamedTemporaryFile(suffix=".js", mode="w", delete=False) as f:
@@ -254,13 +254,13 @@ class ResolvePreludesTest(unittest.TestCase):
             self.assertEqual(len(result), 1)
             self.assertEqual(result[0].code, "var y = 2;\n")
             self.assertEqual(result[0].file, rel)
-            self.assertIsNone(result[0].tag)
+            self.assertIsNone(result[0].if_tag)
         finally:
             os.unlink(f.name)
 
     def test_tag_on_code_item(self) -> None:
-        result = resolve_preludes([{"tag": "Intl", "code": "// intl"}])
-        self.assertEqual(result[0].tag, "Intl")
+        result = resolve_preludes([{"if": "Intl", "code": "// intl"}])
+        self.assertEqual(result[0].if_tag, "Intl")
         self.assertEqual(result[0].code, "// intl")
 
     def test_tag_on_file_item(self) -> None:
@@ -269,8 +269,8 @@ class ResolvePreludesTest(unittest.TestCase):
             f.flush()
             rel = os.path.relpath(f.name, REPO_ROOT)
         try:
-            result = resolve_preludes([{"tag": "IsHTMLDDA", "file": rel}])
-            self.assertEqual(result[0].tag, "IsHTMLDDA")
+            result = resolve_preludes([{"if": "IsHTMLDDA", "file": rel}])
+            self.assertEqual(result[0].if_tag, "IsHTMLDDA")
             self.assertEqual(result[0].code, "// tagged\n")
         finally:
             os.unlink(f.name)
@@ -290,7 +290,7 @@ class ResolvePreludesTest(unittest.TestCase):
 
     def test_missing_file_or_code_raises(self) -> None:
         with self.assertRaises(TypeError):
-            resolve_preludes([{"tag": "X"}])
+            resolve_preludes([{"if": "X"}])
 
     def test_resolve_method_resolves_preludes(self) -> None:
         cfg = EngineConfig(

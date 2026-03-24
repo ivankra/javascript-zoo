@@ -31,8 +31,8 @@ class Prelude:
     code: str | None = None
     # Prelude file path relative to repo root
     file: str | None = None
-    # If set, only include this prelude if test262 tag/feature is present
-    tag: str | None = None
+    # If set, only include this prelude when the named tag is present
+    if_tag: str | None = None
 
 
 @dataclasses.dataclass
@@ -47,7 +47,7 @@ class EngineConfig:
     binary_path: str | None = None
     # Flags always prepended before the script path.
     # Items may be str, {"shell": "..."} (expanded via bash), list[str] (flattened),
-    # or {"tag": "<name>", "flag": "<flag>"} (included only when tag is in tags set).
+    # or {"if": "<tag>", "then": "<arg>"} (included only when tag is in tags set).
     # Call resolve() to expand shell/list items before use.
     flags: list = dataclasses.field(default_factory=list)
     # Raw sidecar metadata from <binary>.json kept for reporting/persistence.
@@ -91,10 +91,10 @@ class EngineConfig:
 
     # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].
     # Use tag "bench" / "test262" to gate preludes by execution mode.
-    #   {"file": "path"}             → unconditional file (relative to repo root)
-    #   {"code": "..."}              → unconditional inline JS
-    #   {"tag": "X", "file": "path"} → conditional file (when tag X present)
-    #   {"tag": "X", "code": "..."}  → conditional inline JS
+    #   {"file": "path"}            → unconditional file (relative to repo root)
+    #   {"code": "..."}             → unconditional inline JS
+    #   {"if": "X", "file": "path"} → conditional file (when tag X present)
+    #   {"if": "X", "code": "..."}  → conditional inline JS
     prelude: list[Prelude] = dataclasses.field(default_factory=list)
 
     # --- Bench mode ---
@@ -134,16 +134,16 @@ class EngineConfig:
     def argv(self, *args: Path | str, tags: Tags | None = None) -> list[str]:
         """Build execution argv: binary + flags + positional args.
 
-        Conditional flags ({"tag": ..., "flag": ...}) are included only when
+        Conditional flags ({"if": ..., "then": ...}) are included only when
         the tag is present in the *tags* set.
         """
         cmd = [str(self.binary_path)]
         for flag in self.flags:
             if isinstance(flag, str):
                 cmd.append(flag)
-            elif isinstance(flag, dict) and "tag" in flag and "flag" in flag:
-                if tags is not None and flag["tag"] in tags:
-                    cmd.append(flag["flag"])
+            elif isinstance(flag, dict) and "if" in flag and "then" in flag:
+                if tags is not None and flag["if"] in tags:
+                    cmd.append(flag["then"])
             else:
                 raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")
         cmd.extend(str(arg) for arg in args)
@@ -198,14 +198,14 @@ class EngineConfig:
 def _resolve_flags_list(items: list, binary_path: str) -> list[str | dict[str, str]]:
     """Recursively expand shell items and flatten nested lists.
 
-    Tag-conditional items ({"tag": ..., "flag": ...}) are preserved as-is
+    Tag-conditional items ({"if": ..., "then": ...}) are preserved as-is
     and evaluated later in argv().
     """
     result: list[str | dict[str, str]] = []
     for item in items:
         if isinstance(item, str):
             result.append(item)
-        elif isinstance(item, dict) and "tag" in item and "flag" in item:
+        elif isinstance(item, dict) and "if" in item and "then" in item:
             result.append(item)
         elif isinstance(item, list):
             result.extend(_resolve_flags_list(item, binary_path))
@@ -231,26 +231,26 @@ def resolve_preludes(items: list) -> list[Prelude]:
     """Resolve a prelude config list to a list of Prelude.
 
     Each item is a dict with:
-      {"file": path}                 → unconditional file (relative to repo root)
-      {"code": "..."}                → unconditional inline
-      {"tag": name, "file": path}    → conditional file
-      {"tag": name, "code": "..."}   → conditional inline
+      {"file": path}                → unconditional file (relative to repo root)
+      {"code": "..."}               → unconditional inline
+      {"if": name, "file": path}    → conditional file
+      {"if": name, "code": "..."}   → conditional inline
 
     File content containing $SOURCE gets the eshost inception trick applied:
     $SOURCE is replaced with a JSON-quoted copy of itself.
     """
     result: list[Prelude] = []
     for item in items:
-        tag = item.get("tag")
+        tag = item.get("if")
         if "file" in item:
             path = str(item["file"])
             code = (REPO_ROOT / path).read_text(encoding="utf-8")
             if "$SOURCE" in code:
                 inner = code.replace("$SOURCE", '""', 1)
                 code = code.replace("$SOURCE", json.dumps(inner), 1)
-            result.append(Prelude(code=code, file=path, tag=tag))
+            result.append(Prelude(code=code, file=path, if_tag=tag))
         elif "code" in item:
-            result.append(Prelude(code=item["code"], tag=tag))
+            result.append(Prelude(code=item["code"], if_tag=tag))
         else:
             raise TypeError(f"prelude dict must have 'file' or 'code', got {item!r}")
     return result

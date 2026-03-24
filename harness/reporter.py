@@ -286,7 +286,7 @@ class Reporter:
 
     # ── JSON formatting ──────────────────────────────────────────────────────
 
-    _INLINE_DICT_KEYS = frozenset({"ok", "ok_percent", "fail", "skip", "strict", "sloppy", "tag", "flag"})
+    _INLINE_DICT_KEYS = frozenset({"ok", "ok_percent", "fail", "skip", "strict", "sloppy", "if", "then"})
 
     @staticmethod
     def _is_inline_json(value: Any) -> bool:

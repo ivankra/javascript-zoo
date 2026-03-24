@@ -101,7 +101,7 @@ class Assembler:
 
         # 2. Engine prelude(s)
         for p in self.preludes:
-            if (p.tag is None or (scenario.tags is not None and p.tag in scenario.tags)) and p.code:
+            if (p.if_tag is None or (scenario.tags is not None and p.if_tag in scenario.tags)) and p.code:
                 pieces.append(p.code)
 
         # 2b. Auto-generated print() prelude (when engine doesn't have print natively)
@@ -336,7 +336,7 @@ def build_print_prelude(console_log: str | list[str], preludes: list[Prelude]) -
     if "print" in console_log:
         return None
     # Check if any prelude already defines print
-    if any(p.code and "print" in p.code for p in preludes if p.tag is None):
+    if any(p.code and "print" in p.code for p in preludes if p.if_tag is None):
         return None
 
     lines = ["// Define print()"]

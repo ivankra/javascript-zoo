@@ -95,8 +95,8 @@ boa:
     # Add --test262-object if available for the built-in $262 object,
     # with fallback to --debug-object + prelude.
     - shell: $BINARY --help | egrep -o '(--debug-object|--test262-object)' | tail -1
-    - { tag: 'CanBlockIsFalse', flag: '--no-can-block' }
-    - { tag: 'module', flag: '--module' }
+    - { if: 'features:CanBlockIsFalse', then: '--no-can-block' }
+    - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/boa/prelude.js
 
@@ -121,7 +121,7 @@ brimstone: &brimstone
     - --annex-b
     - --expose-test-262
     - --expose-gc
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   # built-in print() with --expose-test-262 only takes strings and
   # doesn't print to stdout/stderr
   prelude:
@@ -181,8 +181,8 @@ chakracore: &chakracore
   errors_re:
     - *exception_colon_message
   flags:
-    #- {tag: 'test262', flag: '-Test262'}  # requires --test-build
-    - { tag: 'module', flag: '--module' }
+    #- { if: 'test262', then: '-Test262' }  # requires --test-build
+    - { if: 'flags:module', then: '--module' }
 
 continuum:
   console_log: console.log
@@ -219,8 +219,7 @@ dmdscript:
     - '^(dmdscript.script.ScriptException|undead.regexp.RegExpException|std.utf.UTFException)@[^ :]+: (?P<message>.+)$'
   prelude:
     - code: 'var console = {log: println}, print = println;'
-    - tag: bench
-      file: harness/prelude-es5.js
+    - { if: 'bench', file: 'harness/prelude-es5.js' }
 
 dscriptcpp:
   bench_suite: ['richards.es1.js']
@@ -234,8 +233,7 @@ dscriptcpp:
     - '^Exception: ([^ ()]*\([0-9]+\) : Error: )?(?P<message>.+)$'
   prelude:
     - code: 'var console = {log: println}, print = println;'
-    - tag: bench
-      file: harness/prelude-es5.js
+    - { if: 'bench', file: 'harness/prelude-es5.js' }
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -272,7 +270,7 @@ engine262:
     - *exception_colon_message
     - *uncaught_exception_colon_message  # main.js wrapper
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 epimetheus:
   console_log: ['console.log', 'print']
@@ -286,7 +284,7 @@ epimetheus:
 escargot:
   console_log: print
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Script parsing error: (?P<type>SyntaxError): Line [0-9]+: (?P<message>.*)$'
@@ -314,7 +312,7 @@ fastschema-qjs:
   errors_re:
     - *uncaught_exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 fesi: &fesi
   console_log: writeln
@@ -373,8 +371,8 @@ graaljs:
     - --js.temporal=true
     - --js.top-level-await=true
     - --js.worker=true
-    - { tag: "CanBlockIsFalse", flag: "--js.agent-can-block=false" }
-    - { tag: "module", flag: "--module" }  # must be last - takes path as parameter
+    - { if: 'features:CanBlockIsFalse', then: '--js.agent-can-block=false' }
+    - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
 
 hako:
   console_log: console.log
@@ -386,7 +384,7 @@ hako:
 
 hako_wasmtime_go:
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 hermes: &hermes
   bench_flags:
@@ -428,7 +426,7 @@ jerryscript: &jerryscript
     typescript.js: 3600
   flags:
     - --test262-object
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - '^Unhandled exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
@@ -438,7 +436,7 @@ jint: &jint
   errors_re:
     - *uncaught_exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 jispy:
   console_log: ['console.log', 'print']
@@ -464,7 +462,7 @@ jsc: &jsc
     - --useMoreCurrencyDisplayChoices=true
     - --useShadowRealm=true
     - --useTemporal=true
-    - { tag: 'module', flag: '-m' }
+    - { if: 'flags:module', then: '-m' }
 
 jsish:
   console_log: console.log
@@ -483,7 +481,7 @@ jsish:
 jsse:
   console_log: ['console.log', 'print']
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   prelude:
     - code: globalThis.$262 = undefined;
 
@@ -532,7 +530,7 @@ kiesel:
     - *uncaught_exception_colon_message
   flags:
     - --print-promise-rejection-warnings=no
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/kiesel/prelude.js
 
@@ -575,7 +573,7 @@ libjs: &libjs
     # - --disable-debug-output
     - --raw-strings
     - --use-test262-global
-    - { tag: 'module', flag: '--as-module' }
+    - { if: 'flags:module', then: '--as-module' }
 
 metaes:
   console_log: ['console.log', 'print']
@@ -605,15 +603,14 @@ modernc-quickjs:
   errors_re:
     - *uncaught_exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 mquickjs: &mquickjs
   console_log: ['console.log', 'print']
   errors_re:
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   prelude:
-    - tag: bench
-      file: harness/prelude-strict.js
+    - { if: 'bench', file: 'harness/prelude-strict.js' }
 
 mujs:
   console_log: ['console.log', 'print']
@@ -666,18 +663,17 @@ niljs:
     - *uncaught_exception_colon_message
     - '^NiL.JS.Core.JSException: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.+)$'
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 njs:
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - '^Thrown:\n([A-Za-z0-9]*Error)': 'Thrown: \1'
   prelude:
-    - tag: bench
-      file: harness/prelude-strict.js
+    - { if: 'bench', file: 'harness/prelude-strict.js' }
   bench_transforms: ['octal']
   flags:
-    - { tag: 'module', flag: '-m' }
+    - { if: 'flags:module', then: '-m' }
   errors_re:
     - *exception_colon_message
     - '^Thrown: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.+)$'
@@ -688,7 +684,7 @@ nova:
     - eval
     - --no-strict
     - --expose-internals
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -721,7 +717,7 @@ porffor:
   errors_re:
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 quad-wheel:
   bench_suite: ['richards.quad-wheel.js']
@@ -745,7 +741,7 @@ quickjs: &quickjs
   errors_re:
     - *exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 # QuickJS's run-test262 binary
 # Has only print() and needs -N flag to run a script.
@@ -755,13 +751,13 @@ quickjs_262: &quickjs_262
     - *exception_colon_message
   flags:
     - -N  # -N: run test prepared by test262-harness+eshost
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 quickjs-ng:
   console_log: ['console.log', 'print']
   flags:
     - --script  # misdetects module mode often enough
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   errors_re:
     - *exception_colon_message
 
@@ -779,7 +775,7 @@ qv4:
   errors_re:
     - *uncaught_exception_colon_message
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 rapidus:
   console_log: console.log
@@ -870,7 +866,7 @@ see:
 sobek:
   <<: *goja
   flags:
-    - { tag: 'module', flag: '--module' }  # our wrapper would also recognize .mjs
+    - { if: 'flags:module', then: '--module' }  # our wrapper would also recognize .mjs
 
 sophonjs:
   console_log: console.log
@@ -910,7 +906,7 @@ spidermonkey: &spidermonkey
     - --enable-iterator-chunking
     - --enable-iterator-join
     - --enable-legacy-regexp
-    - { tag: 'module', flag: '--module' }  # must be last - takes path as parameter
+    - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
   prelude:
     - file: engines/spidermonkey/prelude.js
 
@@ -918,8 +914,7 @@ spidermonkey_1.5: &sm15
   # SpiderMonkey 1.5–1.8.5: need print() + ES5 polyfills.
   prelude:
     - file: harness/prelude-print.js
-    - tag: bench
-      file: harness/prelude-es5.js
+    - { if: 'bench', file: 'harness/prelude-es5.js' }
   console_log: print
   errors_re: *sm_exc
   flags: []
@@ -951,7 +946,7 @@ ssrlive:
   stderr_replace_re:
     - *rust_crash_norm_re
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
 
 starlight:
   bench_suite: ['richards.js1.js']
@@ -1067,22 +1062,22 @@ v8: &v8
     # d8-specific flags
     - --ignore-unhandled-promises  # test/built-ins/Promise/any/ctx-ctor.js
     - --no-arguments  # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
-    - {tag: "module", flag: "--module"}
-    - {tag: "CanBlockIsFalse", flag: "--no-can-block"}
+    - { if: 'flags:module', then: '--module' }
+    - { if: 'features:CanBlockIsFalse', then: '--no-can-block' }
   prelude: &v8_and_node_prelude
     - file: engines/v8/prelude.js
     - file: engines/v8/prelude-agent.js
     # These intrinsics don't work well with try/eval() wrapper and may not be
     # available on older binaries, so include them conditionally if test requires.
-    - {tag: "IsHTMLDDA", file: "engines/v8/prelude-IsHTMLDDA.js"}
-    - {tag: "source-phase-imports", file: "engines/v8/prelude-AbstractModuleSource.js"}
+    - { if: 'features:IsHTMLDDA', file: 'engines/v8/prelude-IsHTMLDDA.js' }
+    - { if: 'features:source-phase-imports', file: 'engines/v8/prelude-AbstractModuleSource.js' }
 
 wine: *jscript
 
 xs: &xs
   console_log: print
   flags:
-    - { tag: 'module', flag: '-m' }
+    - { if: 'flags:module', then: '-m' }
   multiple_scripts_with_shared_realm: true
   errors_re:
     - *exception_colon_message
@@ -1121,7 +1116,7 @@ zhuzilin:
 zuqe:
   console_log: ['console.log', 'print']
   flags:
-    - { tag: 'module', flag: '-m' }
+    - { if: 'flags:module', then: '-m' }
 
 # --------------------------------------------------------------------
 # Runtimes
@@ -1158,7 +1153,7 @@ gjs: &gjs
   errors_re:
     - '.*js-CRITICAL ..: [0-9:.]+: JS ERROR: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
   flags:
-    - { tag: 'module', flag: '--module' }
+    - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/spidermonkey/prelude.js
 

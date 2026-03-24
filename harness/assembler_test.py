@@ -64,13 +64,13 @@ class TestAssemble(unittest.TestCase):
         self.assertIn("/* prelude */", out)
 
     def test_tagged_prelude_excluded(self):
-        asm = _assembler(prelude=[Prelude(code="/* intl */", tag="Intl")])
+        asm = _assembler(prelude=[Prelude(code="/* intl */", if_tag="Intl")])
         out = asm.assemble(_scenario("var x;"))
         self.assertNotIn("/* intl */", out)
 
     def test_tagged_prelude_included(self):
         source = "/*---\nfeatures: [Intl]\n---*/\nvar x;"
-        asm = _assembler(prelude=[Prelude(code="/* intl */", tag="Intl")])
+        asm = _assembler(prelude=[Prelude(code="/* intl */", if_tag="Intl")])
         out = asm.assemble(_scenario(source))
         self.assertIn("/* intl */", out)
 
@@ -301,7 +301,7 @@ class TestBuildPrintPrelude(unittest.TestCase):
 
     def test_tagged_prelude_with_print_not_skipped(self):
         # Tagged preludes don't count — they're conditional
-        prelude = [Prelude(code="var print = function() {};", tag="test262")]
+        prelude = [Prelude(code="var print = function() {};", if_tag="test262")]
         result = build_print_prelude([], prelude)
         self.assertIsNotNone(result)
 

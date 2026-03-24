@@ -285,7 +285,7 @@ def apply_transforms(script: str, transforms: list[str], preludes: list[Prelude]
             )
 
     parts = [p.code.strip() for p in preludes
-             if (p.tag is None or p.tag in tags) and p.code and p.code.strip()]
+             if (p.if_tag is None or p.if_tag in tags) and p.code and p.code.strip()]
     if parts:
         script = "\n".join(parts) + "\n" + script
 
