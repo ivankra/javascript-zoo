@@ -9,52 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness.util import expand_template_literals, iterate_js_files, version_sort_key
-
-
-class ExpandTemplateLiteralsTest(unittest.TestCase):
-    def test_rewrites_assert_js_example(self) -> None:
-        source = """assert(false, `Actual argument [${actual}] shouldn't be primitive. ${message}`);"""
-        expected = """assert(false, "Actual argument [" + (actual) + "] shouldn't be primitive. " + (message));"""
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_rewrites_compare_array_format_example(self) -> None:
-        source = """return `[${Array.prototype.map.call(arrayLike, String).join(', ')}]`;"""
-        expected = """return "[" + (Array.prototype.map.call(arrayLike, String).join(', ')) + "]";"""
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_rewrites_promise_helper_example(self) -> None:
-        source = """assert.sameValue(settled.status, expected[i].status, `${prefix}status for item ${i}`);"""
-        expected = """assert.sameValue(settled.status, expected[i].status, (prefix) + "status for item " + (i));"""
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_rewrites_regexp_utils_example_with_escaped_backticks(self) -> None:
-        source = """`\\`${ expression }\\` should match ${ formatted } (\\`${ symbol }\\`)`"""
-        expected = """"`" + ( expression ) + "` should match " + ( formatted ) + " (`" + ( symbol ) + "`)\""""
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_rewrites_nested_template_inside_tagged_template_expression(self) -> None:
-        source = """return lazyResult`function${value.name ? ` ${String(value.name)}` : ''}`;"""
-        expected = """return lazyResult`function${value.name ? " " + (String(value.name)) : ''}`;"""
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_rewrites_multiline_eval_template_from_non262_expressions_shell(self) -> None:
-        source = 'eval(`\nfunction f${i}() {\n  ${stmt}\n}\nf${i}();\n`);'
-        expected = 'eval("\\nfunction f" + (i) + "() {\\n  " + (stmt) + "\\n}\\nf" + (i) + "();\\n");'
-        self.assertEqual(expand_template_literals(source), expected)
-
-    def test_skips_backticks_in_comments_from_harness(self) -> None:
-        source = """// These regexes should be kept up to date with Unicode using `regexpu-core`."""
-        self.assertEqual(expand_template_literals(source), source)
-
-    def test_skips_backticks_in_quoted_strings_from_harness(self) -> None:
-        source = """assert.sameValue(result.value, undefined, 'Expected value of `undefined` when iterator completes. ' + message);"""
-        self.assertEqual(expand_template_literals(source), source)
-
-    def test_raises_for_multiline_template_literal(self) -> None:
-        source = "var s = `hello\nworld`;\n"
-        with self.assertRaisesRegex(ValueError, "multiline template literals"):
-            expand_template_literals(source)
+from harness.util import iterate_js_files, version_sort_key
 
 
 class IterateJsFilesTest(unittest.TestCase):

@@ -16,7 +16,7 @@ from pathlib import Path
 from .config import EngineConfig, Prelude
 from .frontmatter import Frontmatter
 from .tags import Tags
-from .util import expand_template_literals, iterate_js_files
+from .util import iterate_js_files
 
 
 _REL_SPECIFIER_RE = re.compile(
@@ -229,10 +229,6 @@ class Assembler:
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
         source = p.read_bytes().decode("utf-8", errors="replace")
-
-        # Expand template literals in harness code for ES5 engines
-        if "`" in source:
-            source = expand_template_literals(source)
 
         # Some engines won't report user-defined exception names nor run
         # their toString(), but would print the message field inside -
