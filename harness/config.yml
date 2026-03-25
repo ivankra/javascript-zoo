@@ -129,6 +129,11 @@ brimstone: &brimstone
   exit_code_for_test262_error: 1
 
 carakan:
+  stdout_replace_re:
+    '^(Opera JavaScript shell.*|Setting address space limit.*|done!|-+)$': ''
+    '^(Compilation time|Execution time|(Major|Minor) collection|  Tracing|  Sweeping|  Number|Total in collection|(Total|Peak) bytes allocated|Total external bytes) *:.*$': ''
+    '^Syntax error at line [0-9]+: (.*)$': 'Uncaught exception: SyntaxError: \1'
+    '^Uncaught exception: Error: (.*)$': 'Uncaught exception: Test262Error: \1'
   errors_re:
     - *uncaught_exception_colon_message
 
