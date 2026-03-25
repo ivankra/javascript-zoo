@@ -512,8 +512,6 @@ jsse:
   console_log: ['console.log', 'print']
   flags:
     - { if: 'flags:module', then: '--module' }
-  prelude:
-    - code: globalThis.$262 = undefined;
 
 js-interpreter:
   console_log: ['console.log', 'print']
@@ -929,24 +927,25 @@ spidermonkey: &spidermonkey
     # Enable experimental javascript features
     - --enable-iterator-helpers
     - --enable-async-iterator-helpers
-    - --enable-shadow-realms
+    # - --enable-shadow-realms
     - --enable-symbols-as-weakmap-keys
-    - --enable-uint8array-base64
+    # - --enable-uint8array-base64
     - --enable-top-level-await
     - --enable-iterator-sequencing
-    - --enable-math-sumprecise
+    # - --enable-math-sumprecise
     - --enable-error-iserror
     - --enable-iterator-range
     - --enable-joint-iteration
     - --enable-atomics-pause
     - --enable-explicit-resource-management
     - --enable-temporal
-    - --enable-upsert
+    # - --enable-upsert
     - --enable-import-bytes
     - --enable-promise-allkeyed
     - --enable-arraybuffer-immutable
     - --enable-iterator-chunking
     - --enable-iterator-join
+    - --enable-source-phase-imports
     - --enable-legacy-regexp
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
   prelude:
