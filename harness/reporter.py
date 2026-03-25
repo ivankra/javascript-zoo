@@ -440,7 +440,8 @@ class Reporter:
 
         return "\n".join(lines) if any_data else ""
 
-    def _to_json(self) -> str:
+    def format_to_json(self) -> str:
+        """Format results as JSON with summary, per-test statuses, and metrics."""
         results = self._results
         engine = self._engine
 
@@ -491,29 +492,48 @@ class Reporter:
             data["metrics"] = metrics
         return self.format_json_value(data) + "\n"
 
-    def _to_text(self) -> str:
+    def format_to_text(self, output_format: str = "tests") -> str:
+        """Format results as text.
+
+        output_format: "text"/"tests" or "runs".
+        """
         lines: list[str] = []
         if self._engine.build_metadata:
             lines.append(f"Metadata: {json.dumps(self._engine.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
-        results = self._results
-        if self._input_order:
-            n = len(self._input_order)
-            results = sorted(results, key=lambda r: self._input_order.get((r.run_id or "").split("@")[0], n))
-        lines.extend(format_output_line(r) for r in results)
+        if output_format == "runs":
+            results = self._results
+            if self._input_order:
+                n = len(self._input_order)
+                results = sorted(results, key=lambda r: self._input_order.get((r.run_id or "").split("@")[0], n))
+            lines.extend(format_output_line(r) for r in results)
+        else:
+            statuses = _build_test_statuses(self._results, list(self._input_order))
+            for fp, status in statuses.items():
+                if isinstance(status, str):
+                    lines.append(f"{fp}: {status}")
+                else:
+                    lines.append(f"{fp}: {json.dumps(status, ensure_ascii=False)}")
         return "\n".join(lines) + "\n" if lines else ""
 
-    # ── Public output ─────────────────────────────────────────────────────────
+    def write(self, path: str | Path, *, output_format: str | None = None, wall_sec: float = 0) -> None:
+        """Write results to file.
 
-    def write(self, path: str | Path, *, output_format: str = "auto", wall_sec: float = 0) -> None:
-        """Write results to file. Format: "json", "simple", or "auto" (detect from extension).
+        Formats:
+          * "tests" (or "text" / "simple"): one line per test file,
+            collapsing verdicts for sloppy and strict modes when identical.
+          * "runs": one line per run/scenario (`filename[@mode]: verdict`).
+          * "json": structured output.
 
-        Written atomically via a temp file + os.replace().
+        Default format is "tests", or "json" if writing to a *.json file.
         """
         if wall_sec:
             self._wall_sec = wall_sec
         path = Path(path)
-        use_json = (output_format == "json") or (output_format != "simple" and path.suffix == ".json")
-        out = self._to_json() if use_json else self._to_text()
+        if output_format in ("text", "simple"):
+            output_format = "tests"
+        if not output_format:
+            output_format = "json" if path.suffix == ".json" else "tests"
+        out = self.format_to_json() if output_format == "json" else self.format_to_text(output_format=output_format)
         tmp = path.with_suffix(path.suffix + ".tmp")
         try:
             tmp.write_text(out, encoding="utf-8")

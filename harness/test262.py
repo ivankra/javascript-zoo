@@ -207,8 +207,12 @@ def main() -> None:
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
-    p.add_argument("--output-format", choices=["auto", "simple", "json"], default="auto", metavar="FMT",
-                   help="Output format: 'simple' (one line per test), 'json', 'auto' (detect from extension, default)")
+    p.add_argument(
+        "--output-format", choices=["tests", "runs", "json"], default=None, metavar="FMT",
+        help="""
+            Output format: 'tests' (one line per test file),
+            'runs' (one line per strict/sloppy mode run) or
+            'json' (default for *.json, else tests).""")
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
                    help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
@@ -233,8 +237,8 @@ def main() -> None:
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
 
-    if args.output_format == "auto":
-        args.output_format = "json" if (args.output and args.output.endswith(".json")) else "simple"
+    if not args.output_format:
+        args.output_format = "json" if (args.output and args.output.endswith(".json")) else "tests"
 
     wall_start = time.monotonic()
 
