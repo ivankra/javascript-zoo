@@ -34,6 +34,12 @@ class Stats:
         else:
             self.skipped += 1
 
+    def merge(self, other: Stats) -> None:
+        self.total += other.total
+        self.passed += other.passed
+        self.failed += other.failed
+        self.skipped += other.skipped
+
     def to_dict(self) -> dict[str, int]:
         d = {"ok": self.passed, "fail": self.failed, "skip": self.skipped}
         return {k: v for k, v in d.items() if v}
@@ -49,11 +55,13 @@ def format_summary_line(
 ) -> str:
     """Format a summary line: label and counts, with optional ANSI color."""
     if use_color:
-        if fail == 0:
+        if ok + fail == 0:
+            label = f"\033[1;33m{label}\033[0m"
+        elif fail == 0:
             label = f"\033[1;32m{label}\033[0m"
         else:
-            pct = ok * 100 // (ok + fail) if (ok + fail) else 0
-            color = "\033[1;33m" if pct > 50 else "\033[1;31m"
+            pct = ok * 100 // (ok + fail)
+            color = "\033[1;33m" if pct >= 50 else "\033[1;31m"
             label = f"{color}{label}\033[0m"
     if fail == 0:
         counts = f"{ok} passed"
@@ -384,13 +392,19 @@ class Reporter:
         uc = self._use_color
         features_yaml = test262_features_yaml()
 
+        # All features listed in features.yml (to detect unlisted ones).
+        all_known_features = {f for feats in features_yaml.values() for f in feats}
+
         editions_order = self._editions_order + ["esnext"]
 
         lines = ["Summary by edition / feature (note: feature stats aggregate across all editions):"]
         any_data = False
+        other = Stats()
         for edition in editions_order:
             s = tag_stats.get(f"edition:{edition}")
             if not s or s.total == s.skipped:
+                if s:
+                    other.merge(s)
                 continue
             any_data = True
             lines.append(f"  {format_summary_line(edition, s.passed, s.failed, s.skipped, use_color=uc)}")
@@ -400,7 +414,16 @@ class Reporter:
                 fs = tag_stats.get(f"field:{field}")
                 if fs and fs.total > fs.skipped:
                     lines.append(f"    {format_summary_line(field, fs.passed, fs.failed, fs.skipped, use_color=uc)}")
-            for feat in features_yaml.get(edition, []):
+            features = list(features_yaml.get(edition, []))
+            # For esnext: also show features not listed in features.yml.
+            if edition == "esnext":
+                unlisted = sorted(
+                    qt.removeprefix("features:")
+                    for qt in tag_stats
+                    if qt.startswith("features:") and qt.removeprefix("features:") and qt.removeprefix("features:") not in all_known_features
+                )
+                features.extend(unlisted)
+            for feat in features:
                 fs = tag_stats.get(f"features:{feat}")
                 if not fs or fs.total == fs.skipped:
                     continue
@@ -408,9 +431,11 @@ class Reporter:
 
         # Tests with no edition
         na = tag_stats.get("edition:")
-        if na and na.total > na.skipped:
+        if na:
+            other.merge(na)
+        if other.total > 0:
             any_data = True
-            lines.append(f"  {format_summary_line('N/A', na.passed, na.failed, na.skipped, use_color=uc)}")
+            lines.append(f"  {format_summary_line('other', other.passed, other.failed, other.skipped, use_color=uc)}")
 
         return "\n".join(lines) if any_data else ""
 

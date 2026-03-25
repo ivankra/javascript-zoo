@@ -132,6 +132,78 @@ class TestTagStats(unittest.TestCase):
         self.assertIn("edition:", summary)
 
 
+class TestEditionReport(unittest.TestCase):
+    """Test _edition_report grouping and 'other' bucket."""
+
+    def _reporter(self, runs: list[RunResult]) -> Reporter:
+        r = Reporter(EngineConfig(binary_path="/fake/js"), test262=True)
+        for run in runs:
+            r.add_file([run])
+        return r
+
+    def test_editions_partition(self):
+        """Edition passed+failed+skipped sums match total across all edition lines."""
+        runs = []
+        for i, (feat, verdict) in enumerate([
+            ("Symbol", Verdict.OK),        # es6
+            ("Promise", Verdict.OK),        # es6
+            ("BigInt", Verdict.FAILED),     # es2020
+        ]):
+            tags = _t262({feat}, mode="strict")
+            runs.append(_run(f"test/{i}.js@strict", verdict, tags=tags, mode="strict"))
+        r = self._reporter(runs)
+        stats = r._build_tag_stats()
+        # Each test belongs to exactly one edition
+        edition_total = sum(
+            s.total for qt, s in stats.items()
+            if qt.startswith("edition:")
+        )
+        self.assertEqual(edition_total, 3)
+
+    def test_other_collects_no_edition(self):
+        """Tests with no features land in 'other', not in any edition."""
+        tags = _t262(mode="strict")
+        r = self._reporter([
+            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+        ])
+        report = r._edition_report()
+        self.assertIn("other", report)
+        self.assertNotIn("esnext", report)
+
+    def test_skipped_edition_goes_to_other(self):
+        """An edition where all tests are skipped merges into 'other'."""
+        tags = _t262({"Symbol"}, mode="strict")
+        r = self._reporter([
+            _run("test/a.js@strict", Verdict.SKIPPED, tags=tags, mode="strict"),
+        ])
+        report = r._edition_report()
+        self.assertIn("other", report)
+        self.assertNotIn("es6", report)
+
+    def test_unlisted_feature_under_esnext(self):
+        """Features not in features.yml appear under esnext."""
+        tags = _t262({"SomeNewProposal"}, mode="strict")
+        r = self._reporter([
+            _run("test/a.js@strict", Verdict.FAILED, tags=tags, mode="strict"),
+        ])
+        report = r._edition_report()
+        self.assertIn("esnext", report)
+        self.assertIn("SomeNewProposal", report)
+
+    def test_empty_feature_not_shown(self):
+        """The empty 'features:' sentinel never appears as a feature line."""
+        tags = _t262(mode="strict")  # no features
+        r = self._reporter([
+            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+        ])
+        report = r._edition_report()
+        # Should not have a bare "    : " line
+        for line in report.splitlines():
+            stripped = line.strip()
+            if stripped.startswith(":"):
+                self.fail(f"Empty feature label in report: {line!r}")
+
+
 class TestJsonFormatting(unittest.TestCase):
     def test_per_mode_verdict_dict_is_inline(self):
         """Per-mode verdict dicts render on a single line, not expanded."""
