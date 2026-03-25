@@ -8,7 +8,7 @@
 
 function testCode() {
   var passed = false;
-  new Proxy(function(){}, {
+  new Proxy(function (){}, {
       apply: function () { passed = true; }
   })();
   // A Proxy exotic object only has a [[Call]] internal method if the

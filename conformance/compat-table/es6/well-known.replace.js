@@ -8,7 +8,7 @@
 
 function testCode() {
   var O = {};
-  O[Symbol.replace] = function(){
+  O[Symbol.replace] = function (){
     return 42;
   };
   return ''.replace(O) === 42;

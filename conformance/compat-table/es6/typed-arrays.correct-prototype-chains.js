@@ -26,14 +26,9 @@ function testCode() {
   for(var i = 0; i < constructors.length; i+=1) {
     if (!(constructors[i] in global
         && Object.getPrototypeOf(global[constructors[i]]) === constructor
-        && Object.getPrototypeOf(global[constructors[i]].prototype) === prototype)) {
-      return false;
-    }
-    const keys = Object.getOwnPropertyNames(global[constructors[i]].prototype).sort() + '';
-    if (keys !== "BYTES_PER_ELEMENT,constructor" &&
-        /* arraybuffer-base64 proposal */
-        keys !== "BYTES_PER_ELEMENT,constructor,setFromBase64,setFromHex,toBase64,toHex") {
-      console.log(keys);
+        && Object.getPrototypeOf(global[constructors[i]].prototype) === prototype
+        && Object.getOwnPropertyNames(global[constructors[i]].prototype).indexOf('BYTES_PER_ELEMENT') !== -1
+        && Object.getOwnPropertyNames(global[constructors[i]].prototype).indexOf('constructor') !== -1)) {
       return false;
     }
   }

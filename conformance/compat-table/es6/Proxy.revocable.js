@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  var obj = Proxy.revocable({}, { get: function() { return 5; } });
+  var obj = Proxy.revocable({}, { get: function () { return 5; } });
   var passed = (obj.proxy.foo === 5);
   obj.revoke();
   try {

@@ -7,7 +7,7 @@
 
 function testCode() {
   return typeof ShadowRealm === "function"
-    && ["evaluate", "importValue"].every(function(key){
+    && ["evaluate", "importValue"].every(function (key){
       return key in ShadowRealm.prototype;
     });
 }

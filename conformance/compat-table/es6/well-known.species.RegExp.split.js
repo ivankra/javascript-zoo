@@ -9,7 +9,7 @@ function testCode() {
   var passed = false;
   var obj = { constructor: {} };
   obj[Symbol.split] = RegExp.prototype[Symbol.split];
-  obj.constructor[Symbol.species] = function() {
+  obj.constructor[Symbol.species] = function () {
     passed = true;
     return /./;
   };

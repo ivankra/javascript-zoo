@@ -18,7 +18,7 @@ function testCode() {
   };
   obj.A = true;
   obj[3] = true;
-  "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+  "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
     obj[key] = true;
   });
   Object.defineProperty(obj, 'C', { value: true, enumerable: true });

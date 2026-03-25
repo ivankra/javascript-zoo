@@ -8,7 +8,7 @@
 
 function testCode() {
   var O = {};
-  O[Symbol.search] = function(){
+  O[Symbol.search] = function (){
     return 42;
   };
   return ''.search(O) === 42;

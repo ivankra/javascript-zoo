@@ -8,7 +8,11 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return !eval('#!/wash/your/hands');
+  try {
+    return !eval('#!/wash/your/hands');
+  } catch (e) {
+    return false
+  }
 }
 
 try {

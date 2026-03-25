@@ -10,7 +10,7 @@ function testCode() {
   var passed = false;
   var _set = Map.prototype.set;
 
-  Map.prototype.set = function(k, v) {
+  Map.prototype.set = function (k, v) {
     passed = true;
   };
 

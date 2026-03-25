@@ -1,4 +1,4 @@
-// compat-table: ES5 > Strict mode (large) > (function(){}).caller and (function(){}).arguments is a TypeError
+// compat-table: ES5 > Strict mode (large) > (function (){}).caller and (function (){}).arguments is a TypeError
 // mdn: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 //
 // SPDX-FileCopyrightText: 2010-2013 Juriy Zaytsev
@@ -7,8 +7,8 @@
 
 function testCode() {
   'use strict';
-  try { (function(){}).caller;    return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
-  try { (function(){}).arguments; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
+  try { (function (){}).caller;    return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
+  try { (function (){}).arguments; return false; } catch (err) { if (!(err instanceof TypeError)) return false; }
   return true;
 }
 

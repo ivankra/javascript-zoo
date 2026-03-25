@@ -9,9 +9,9 @@ function testCode() {
   var result = '';
   var target = {};
 
-  "012349 DBACEFGHIJKLMNOPQRST".split('').concat(-1).forEach(function(key){
+  "012349 DBACEFGHIJKLMNOPQRST".split('').concat(-1).forEach(function (key){
     Object.defineProperty(target, key, {
-      set: function(){
+      set: function (){
         result += key;
       }
     })
@@ -25,7 +25,7 @@ function testCode() {
   delete obj[2];
   obj[2] = true;
 
-  "EFGHIJKLMNOPQRST".split('').forEach(function(key){
+  "EFGHIJKLMNOPQRST".split('').forEach(function (key){
     obj[key] = key;
   });
 

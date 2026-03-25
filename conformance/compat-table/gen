@@ -32,9 +32,6 @@ const DATA_FILES = [
 
 // Will be skipped during 'gen' and 'gen --clean'
 const EDITED_TESTS = [
-  'es2023/hashbang.js',
-  'es2024/regex.flags.v.unicode-17.0.js',
-  'es6/typed-arrays.correct-prototype-chains.js',
 ];
 
 function processExec(fn) {
@@ -265,7 +262,11 @@ function doGen(cleanMode) {
 }
 
 function genTest(compatKey, filename, spec, mdn, evalcode, notes) {
-  let header = `// compat-table: ${compatKey}\n`;
+  let header = '';
+  if (filename.endsWith('hashbang.js')) {
+    header += '#!/usr/bin/env node\n';
+  }
+  header += `// compat-table: ${compatKey}\n`;
   if (mdn) {
     header += `// mdn: ${mdn}\n`;
   }
@@ -434,7 +435,7 @@ try {
   }
 
   fs.writeFileSync(filename, script);
-  console.log(`Generated ${filename}`);
+  // console.log(`Generated ${filename}`);
 }
 
 function main() {

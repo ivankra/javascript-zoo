@@ -9,7 +9,7 @@
 function testCode() {
   function foo(){};
   return foo.name === 'foo' &&
-    (function(){}).name === '';
+    (function (){}).name === '';
 }
 
 try {

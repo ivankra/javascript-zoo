@@ -22,7 +22,7 @@ function testCode() {
   } catch(e) {}
   // The result of [[Construct]] must be an Object.
   try {
-    new new Proxy(function(){}, {
+    new new Proxy(function (){}, {
       construct: function (t, args) {
         passed = true;
         return 5;

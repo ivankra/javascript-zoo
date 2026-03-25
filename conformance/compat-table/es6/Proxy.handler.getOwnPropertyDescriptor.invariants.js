@@ -35,7 +35,7 @@ function testCode() {
   // of the target object and the target object is not extensible.
   try {
     Object.getOwnPropertyDescriptor(new Proxy(proxied, {
-      getOwnPropertyDescriptor: function() {
+      getOwnPropertyDescriptor: function () {
         return { value: 2, configurable: true, writable: true, enumerable: true };
       }}), "baz");
     return false;
@@ -45,14 +45,14 @@ function testCode() {
   // the target object.
   try {
     Object.getOwnPropertyDescriptor(new Proxy({}, {
-      getOwnPropertyDescriptor: function() {
+      getOwnPropertyDescriptor: function () {
         return { value: 2, configurable: false, writable: true, enumerable: true };
       }}), "baz");
     return false;
   } catch(e) {}
   try {
     Object.getOwnPropertyDescriptor(new Proxy({baz:1}, {
-      getOwnPropertyDescriptor: function() {
+      getOwnPropertyDescriptor: function () {
         return { value: 1, configurable: false, writable: true, enumerable: true };
       }}), "baz");
     return false;

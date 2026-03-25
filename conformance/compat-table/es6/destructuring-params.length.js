@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return function({a, b}, [c, d]){}.length === 2;
+  return function ({a, b}, [c, d]){}.length === 2;
 }
 
 try {

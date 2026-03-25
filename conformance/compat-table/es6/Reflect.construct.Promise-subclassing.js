@@ -43,8 +43,8 @@ function asyncTestPassed() {
 
 function testCode() {
   function F(){}
-  var p1 = Reflect.construct(Promise,[function(resolve, reject) { resolve("foo"); }], F);
-  var p2 = Reflect.construct(Promise,[function(resolve, reject) { reject("quux"); }], F);
+  var p1 = Reflect.construct(Promise,[function (resolve, reject) { resolve("foo"); }], F);
+  var p2 = Reflect.construct(Promise,[function (resolve, reject) { reject("quux"); }], F);
   var score = +(p1 instanceof F && p2 instanceof F);
 
   function thenFn(result)  { score += (result === "foo");  check(); }

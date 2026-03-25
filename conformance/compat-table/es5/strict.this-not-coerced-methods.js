@@ -7,9 +7,9 @@
 
 function testCode() {
   'use strict';
-  return (function(){ return typeof this === 'string' }).call('')
-    && (function(){ return typeof this === 'number' }).call(1)
-    && (function(){ return typeof this === 'boolean' }).call(true);
+  return (function (){ return typeof this === 'string' }).call('')
+    && (function (){ return typeof this === 'number' }).call(1)
+    && (function (){ return typeof this === 'boolean' }).call(true);
 }
 
 try {

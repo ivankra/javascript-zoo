@@ -6,7 +6,7 @@
 
 function testCode() {
   try {
-    return (function(a,b) { return a === 1 && b === 2; }).apply({}, {0:1, 1:2, length:2});
+    return (function (a,b) { return a === 1 && b === 2; }).apply({}, {0:1, 1:2, length:2});
   } catch (e) {
     return false;
   }

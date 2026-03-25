@@ -9,8 +9,8 @@ function testCode() {
   'use strict';
   try { eval('var eval');                return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
   try { eval('var arguments');           return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
-  try { eval('(function(eval){})');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
-  try { eval('(function(arguments){})'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+  try { eval('(function (eval){})');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
+  try { eval('(function (arguments){})'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
   try { eval('try{}catch(eval){}');      return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
   try { eval('try{}catch(arguments){}'); return false; } catch (err) { if (!(err instanceof SyntaxError)) return false; }
   return true;

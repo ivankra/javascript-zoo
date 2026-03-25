@@ -7,7 +7,7 @@
 
 function testCode() {
   'use strict';
-  return this === void undefined && (function(){ return this === void undefined; }).call();
+  return this === void undefined && (function (){ return this === void undefined; }).call();
 }
 
 try {

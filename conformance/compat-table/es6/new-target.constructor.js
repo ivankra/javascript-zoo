@@ -11,7 +11,7 @@ function testCode() {
   new function f() {
     passed = (new.target === f);
   }();
-  (function() {
+  (function () {
     passed &= (new.target === void undefined);
   }());
   return passed;

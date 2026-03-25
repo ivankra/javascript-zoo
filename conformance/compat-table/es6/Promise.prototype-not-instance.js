@@ -7,9 +7,9 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  new Promise(function(){});
+  new Promise(function (){});
   try {
-    Promise.prototype.then(function(){});
+    Promise.prototype.then(function (){});
   } catch (e) {
     return true;
   }

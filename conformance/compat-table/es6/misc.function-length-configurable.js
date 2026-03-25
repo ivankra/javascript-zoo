@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  var fn = function(a, b) {};
+  var fn = function (a, b) {};
 
   var desc = Object.getOwnPropertyDescriptor(fn, "length");
   if (desc.configurable) {

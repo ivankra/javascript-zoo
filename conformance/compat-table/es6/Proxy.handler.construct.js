@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  var proxied = function(){};
+  var proxied = function (){};
   var passed = false;
   new new Proxy(proxied, {
     construct: function (t, args) {

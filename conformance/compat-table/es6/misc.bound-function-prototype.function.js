@@ -7,7 +7,7 @@
 
 function testCode() {
   function correctProtoBound(proto) {
-    var f = function(){};
+    var f = function (){};
     if (Object.setPrototypeOf) {
       Object.setPrototypeOf(f, proto);
     } else {

@@ -5,7 +5,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return (function(){ return Object.prototype.toString.call(arguments) === '[object Arguments]'; }());
+  return (function (){ return Object.prototype.toString.call(arguments) === '[object Arguments]'; }());
 }
 
 try {

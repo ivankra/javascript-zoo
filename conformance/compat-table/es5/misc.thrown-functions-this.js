@@ -6,7 +6,7 @@
 
 function testCode() {
   try {
-    throw function() { return !('a' in this); };
+    throw function () { return !('a' in this); };
   }
   catch(e) {
     var a = true;

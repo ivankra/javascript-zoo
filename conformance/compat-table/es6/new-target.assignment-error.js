@@ -13,7 +13,7 @@ function testCode() {
   }();
 
   try {
-    Function("new.target = function(){};");
+    Function("new.target = function (){};");
   } catch(e) {
     return passed;
   }

@@ -29,7 +29,7 @@ function testCode() {
   // object property is a non-configurable own accessor property
   // that has undefined as its [[Set]] attribute.
   Object.defineProperty(proxied, "bar",
-    { get: function(){}, enumerable: true });
+    { get: function (){}, enumerable: true });
   try {
     proxy.bar = 2;
     return false;

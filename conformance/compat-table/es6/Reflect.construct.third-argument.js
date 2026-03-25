@@ -8,7 +8,7 @@
 
 function testCode() {
   function F(){}
-  var obj = Reflect.construct(function(){ this.y = 1; }, [], F);
+  var obj = Reflect.construct(function (){ this.y = 1; }, [], F);
   return obj.y === 1 && obj instanceof F;
 }
 

@@ -11,7 +11,7 @@ function testCode() {
   var methods = ['copyWithin', 'every', 'fill', 'filter', 'find', 'findIndex', 'forEach',
     'indexOf', 'join', 'lastIndexOf', 'map', 'reduce', 'reduceRight', 'some'];
   var get;
-  var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function(o, k) { get.push(k); return o[k]; }});
+  var p = new Proxy({length: 2, 0: '', 1: ''}, { get: function (o, k) { get.push(k); return o[k]; }});
   for(var i = 0; i < methods.length; i+=1) {
     get = [];
     Array.prototype[methods[i]].call(p, Function());

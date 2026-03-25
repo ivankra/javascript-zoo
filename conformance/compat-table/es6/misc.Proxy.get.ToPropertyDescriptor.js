@@ -12,7 +12,7 @@ function testCode() {
   var p = new Proxy({
       enumerable: true, configurable: true, value: true,
       writable: true, get: Function(), set: Function()
-    }, { get: function(o, k) { get.push(k); return o[k]; }});
+    }, { get: function (o, k) { get.push(k); return o[k]; }});
   try {
     // This will throw, since it will have true for both "get" and "value",
     // but not before performing a Get on every property.

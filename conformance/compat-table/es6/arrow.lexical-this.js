@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  var d = { x : "bar", y : function() { return z => this.x + z; }}.y();
+  var d = { x : "bar", y : function () { return z => this.x + z; }}.y();
   var e = { x : "baz", y : d };
   return d("ley") === "barley" && e.y("ley") === "barley";
 }

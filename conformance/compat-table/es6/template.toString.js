@@ -8,8 +8,8 @@
 
 function testCode() {
   var a = {
-    toString: function() { return "foo"; },
-    valueOf: function() { return "bar"; }
+    toString: function () { return "foo"; },
+    valueOf: function () { return "bar"; }
   };
   return `${a}` === "foo";
 }

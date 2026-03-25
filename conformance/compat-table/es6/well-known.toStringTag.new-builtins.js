@@ -13,7 +13,7 @@ function testCode() {
     [Array, "Array Iterator"],
     [Map, "Map Iterator"],
     [Set, "Set Iterator"]
-  ].forEach(function(pair){
+  ].forEach(function (pair){
     var iterProto = Object.getPrototypeOf(new pair[0]()[Symbol.iterator]());
     passed = passed
       && iterProto.hasOwnProperty(s)

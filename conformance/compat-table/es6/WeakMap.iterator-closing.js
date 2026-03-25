@@ -33,7 +33,7 @@ if (typeof global !== "undefined") {
 function testCode() {
   var closed = false;
   var iter = global.__createIterableObject([1, 2, 3], {
-    'return': function(){ closed = true; return {}; }
+    'return': function (){ closed = true; return {}; }
   });
   try {
     new WeakMap(iter);

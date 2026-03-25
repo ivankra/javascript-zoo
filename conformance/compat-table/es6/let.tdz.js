@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  var passed = (function(){ try {  qux; } catch(e) { return true; }}());
+  var passed = (function (){ try {  qux; } catch(e) { return true; }}());
   function fn() { passed &= qux === 456; }
   let qux = 456;
   fn();

@@ -10,7 +10,7 @@ function testCode() {
   var passed = false;
   var _add = Set.prototype.add;
 
-  Set.prototype.add = function(v) {
+  Set.prototype.add = function (v) {
     passed = true;
   };
 

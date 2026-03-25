@@ -12,7 +12,7 @@ function testCode() {
   // A property cannot be added, if the target object is not extensible.
   var proxied = Object.preventExtensions({});
   var proxy = new Proxy(proxied, {
-    defineProperty: function() {
+    defineProperty: function () {
       passed = true;
       return true;
     }

@@ -7,10 +7,10 @@
 
 function testCode() {
   'use strict';
-  return (function(x){
+  return (function (x){
     x = 2;
     return arguments[0] === 1;
-  })(1) && (function(x){
+  })(1) && (function (x){
     arguments[0] = 2;
     return x === 1;
   })(1);

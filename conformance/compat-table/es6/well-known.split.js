@@ -8,7 +8,7 @@
 
 function testCode() {
   var O = {};
-  O[Symbol.split] = function(){
+  O[Symbol.split] = function (){
     return 42;
   };
   return ''.split(O) === 42;

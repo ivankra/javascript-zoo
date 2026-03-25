@@ -42,8 +42,8 @@ function asyncTestPassed() {
 }
 
 function testCode() {
-  var p1 = new Promise(function(resolve, reject) { resolve("foo"); });
-  var p2 = new Promise(function(resolve, reject) { reject("quux"); });
+  var p1 = new Promise(function (resolve, reject) { resolve("foo"); });
+  var p2 = new Promise(function (resolve, reject) { reject("quux"); });
   var score = 0;
 
   function thenFn(result)  { score += (result === "foo");  check(); }
@@ -55,7 +55,7 @@ function testCode() {
   p1.catch(shouldNotRun);
   p2.catch(catchFn);
 
-  p1.then(function() {
+  p1.then(function () {
     // Promise.prototype.then() should return a new Promise
     score += p1.then() !== p1;
     check();

@@ -15,7 +15,7 @@ function testCode() {
     var boundF = Function.prototype.bind.call(C, null);
     return Object.getPrototypeOf(boundF) === Object.getPrototypeOf(C);
   }
-  return correctProtoBound(function(){})
+  return correctProtoBound(function (){})
     && correctProtoBound(Array)
     && correctProtoBound(null);
 }

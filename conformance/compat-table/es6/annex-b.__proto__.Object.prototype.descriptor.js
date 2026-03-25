@@ -8,7 +8,7 @@
 
 function testCode() {
   var desc = Object.getOwnPropertyDescriptor(Object.prototype,"__proto__");
-  var A = function(){};
+  var A = function (){};
 
   return (desc
     && "get" in desc

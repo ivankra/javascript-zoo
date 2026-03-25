@@ -25,7 +25,7 @@ function testCode() {
   // Non-negative integer names, conversely, ignore order of creation
   obj[3] = true;
   // Having a total of 20+ properties doesn't affect property order
-  "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function(key){
+  "EFGHIJKLMNOPQRSTUVWXYZ".split('').forEach(function (key){
     obj[key] = true;
   });
   // Object.defineProperty doesn't affect the above rules

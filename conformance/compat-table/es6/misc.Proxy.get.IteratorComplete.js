@@ -11,10 +11,10 @@ function testCode() {
   // IteratorValue -> Get -> [[Get]]
   var get = [];
   var iterable = {};
-  iterable[Symbol.iterator] = function() {
+  iterable[Symbol.iterator] = function () {
     return {
-      next: function() {
-        return new Proxy({ value: 2, done: false }, { get: function(o, k) { get.push(k); return o[k]; }});
+      next: function () {
+        return new Proxy({ value: 2, done: false }, { get: function (o, k) { get.push(k); return o[k]; }});
       }
     };
   }

@@ -8,7 +8,7 @@
 
 function testCode() {
   var qux = "corge";
-  return function({ [qux]: grault }) {
+  return function ({ [qux]: grault }) {
     return grault === "garply";
   }({ corge: "garply" });
 }

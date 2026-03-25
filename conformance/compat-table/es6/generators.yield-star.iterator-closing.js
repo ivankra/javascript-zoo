@@ -32,7 +32,7 @@ if (typeof global !== "undefined") {
 function testCode() {
   var closed = '';
   var iter = __createIterableObject([1, 2, 3], {
-    'return': function(){
+    'return': function (){
       closed += 'a';
       return {done: true};
     }

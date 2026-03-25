@@ -11,7 +11,7 @@ if (typeof global === "undefined") global = this;
 function testCode() {
   // RegExp.prototype[Symbol.match] -> Get -> [[Get]]
   var get = [];
-  var p = new Proxy({ exec: function() { return null; } }, { get: function(o, k) { get.push(k); return o[k]; }});
+  var p = new Proxy({ exec: function () { return null; } }, { get: function (o, k) { get.push(k); return o[k]; }});
   RegExp.prototype[Symbol.match].call(p);
   p.global = true;
   p.unicode = true;

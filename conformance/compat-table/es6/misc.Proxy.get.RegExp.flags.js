@@ -22,7 +22,7 @@ function testCode() {
   if ('sticky' in RegExp.prototype) expected.push('sticky');
 
   var actual = [];
-  var p = new Proxy({}, { get: function(o, k) { actual.push(k); return o[k]; }});
+  var p = new Proxy({}, { get: function (o, k) { actual.push(k); return o[k]; }});
   Object.getOwnPropertyDescriptor(RegExp.prototype, 'flags').get.call(p);
   if (expected.length !== actual.length) return false;
   for (var i = 0; i < expected.length; i++) {

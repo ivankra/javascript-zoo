@@ -8,7 +8,7 @@
 
 function testCode() {
   return (function foo(){}).name === 'foo' &&
-    (function(){}).name === '';
+    (function (){}).name === '';
 }
 
 try {

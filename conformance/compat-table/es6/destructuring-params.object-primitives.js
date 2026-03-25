@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return function({toFixed}, {slice}) {
+  return function ({toFixed}, {slice}) {
     return toFixed === Number.prototype.toFixed
       && slice === String.prototype.slice;
   }(2,'');

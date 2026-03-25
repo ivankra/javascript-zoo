@@ -12,13 +12,13 @@ function testCode() {
     [Array.prototype, []],
     [String.prototype, ''],
     [arguments, arguments],
-    [Function.prototype, function(){}],
+    [Function.prototype, function (){}],
     [Error.prototype, new Error()],
     [Boolean.prototype, true],
     [Number.prototype, 2],
     [Date.prototype, new Date()],
     [RegExp.prototype, /./]
-  ].forEach(function(pair){
+  ].forEach(function (pair){
     pair[0][s] = "foo";
     passed &= (Object.prototype.toString.call(pair[1]) === "[object foo]");
     delete pair[0][s];

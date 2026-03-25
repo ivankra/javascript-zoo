@@ -6,7 +6,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return (function() {
+  return (function () {
     return typeof arguments[Symbol.iterator] === 'function'
       && Object.hasOwnProperty.call(arguments, Symbol.iterator);
   }());

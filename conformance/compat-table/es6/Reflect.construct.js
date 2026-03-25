@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: MIT
 
 function testCode() {
-  return Reflect.construct(function(a, b, c) {
+  return Reflect.construct(function (a, b, c) {
     this.qux = a + b + c;
   }, ["foo", "bar", "baz"]).qux === "foobarbaz";
 }

@@ -34,7 +34,7 @@ function testCode() {
   var closed = false;
   var iter = global.__createIterableObject([1, 2, 3], {
     'throw': undefined,
-    'return': function() {
+    'return': function () {
       closed = true;
       return {done: true};
     }

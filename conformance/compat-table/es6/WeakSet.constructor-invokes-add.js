@@ -10,7 +10,7 @@ function testCode() {
   var passed = false;
   var _add = WeakSet.prototype.add;
 
-  WeakSet.prototype.add = function(v) {
+  WeakSet.prototype.add = function (v) {
     passed = true;
   };
 
