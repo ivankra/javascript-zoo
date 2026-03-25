@@ -39,7 +39,8 @@ RUN $DIST/python3.10/bin/python3 -m venv $DIST/venv && \
     $DIST/venv/bin/pip install numpy && \
     $DIST/venv/bin/pip install .
 
-COPY engines/js2py/js2py.py /dist/js2py
+COPY engines/js2py/main.py $DIST/main.py
 
 COPY build/dist.py ./
-RUN ./dist.py /dist/js2py
+RUN ./dist.py /dist/js2py \
+      --wrapper='DIST="$SCRIPT_DIR/js2py-dist"; export PYTHONPATH="$DIST/venv/lib/python3.10/site-packages"; exec "$DIST/python3.10/bin/python3.10" "$DIST/main.py" "$@"'
