@@ -175,7 +175,7 @@ class TestTestOrder(unittest.TestCase):
         r.note_test("a.js")
         r.note_test("b.js")
         r.note_test("a.js")  # duplicate
-        self.assertEqual(r._test_order, ["c.js", "a.js", "b.js"])
+        self.assertEqual(list(r._input_order), ["c.js", "a.js", "b.js"])
 
 
 if __name__ == "__main__":

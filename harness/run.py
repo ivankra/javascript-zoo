@@ -100,6 +100,8 @@ def main() -> None:
     runner = Runner(cfg)
     annotator = Annotator(cfg)
     reporter = Reporter(cfg, verbose=args.verbose)
+    for rel in tests:
+        reporter.note_test(rel)
     multi_dir = len(set(os.path.dirname(rel) for rel in tests)) >= 2
     if multi_dir:
         reporter.set_expected_dirs(tests)

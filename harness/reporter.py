@@ -128,8 +128,8 @@ class Reporter:
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         self._wall_sec: float = 0
-        self._test_order: list[str] = []
-        self._test_order_seen: set[str] = set()
+        # dict used as ordered set (Python 3.7+ insertion order); values unused.
+        self._input_order: dict[str, int] = {}
         # Dir progress tracking (initialized by set_expected_dirs)
         self._dir_order: list[str] = []
         self._dir_total: Counter[str] = Counter()
@@ -145,9 +145,8 @@ class Reporter:
 
     def note_test(self, test_id: str) -> None:
         """Record a test ID in discovery order (before results arrive)."""
-        if test_id not in self._test_order_seen:
-            self._test_order_seen.add(test_id)
-            self._test_order.append(test_id)
+        if test_id not in self._input_order:
+            self._input_order[test_id] = len(self._input_order)
 
     def set_expected_dirs(self, test_ids: list[str]) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
@@ -458,7 +457,7 @@ class Reporter:
         if self._test262_revision:
             data["test262_revision"] = self._test262_revision
         data["summary"] = self._summary_json()
-        data["tests"] = _build_test_statuses(results, self._test_order)
+        data["tests"] = _build_test_statuses(results, list(self._input_order))
         if metrics:
             data["metrics"] = metrics
         return self.format_json_value(data) + "\n"
@@ -467,7 +466,11 @@ class Reporter:
         lines: list[str] = []
         if self._engine.build_metadata:
             lines.append(f"Metadata: {json.dumps(self._engine.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
-        lines.extend(format_output_line(r) for r in self._results)
+        results = self._results
+        if self._input_order:
+            n = len(self._input_order)
+            results = sorted(results, key=lambda r: self._input_order.get((r.run_id or "").split("@")[0], n))
+        lines.extend(format_output_line(r) for r in results)
         return "\n".join(lines) + "\n" if lines else ""
 
     # ── Public output ─────────────────────────────────────────────────────────
