@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Compare test262 results: our harness JSON vs boa_tester latest.json.
 
-Usage: tester-compare.py <ours.json> <latest.json>
+Usage: compare262.py <ours.json> <latest.json>
 
 Generate ours:
   ./harness/test262.py -o boa.json dist/arm64/boa
