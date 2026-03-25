@@ -27,9 +27,6 @@ all:
 dist:
 	$(call make_subdirs,dist)
 
-rev:
-	$(call make_subdirs,rev)
-
 conformance:
 	$(call make_subdirs,conformance)
 
@@ -52,4 +49,4 @@ endef
 
 $(foreach d,$(SUBDIRS),$(eval $(call subdir_targets,$(d))))
 
-.PHONY: $(SUBDIRS) all dist rev conformance list sh
+.PHONY: $(SUBDIRS) all dist conformance list sh

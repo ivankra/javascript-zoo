@@ -22,7 +22,8 @@ Build system is make-driven:
       * Calls `build/build.sh <name> <dockerfile> [<args>]` to build the image - wrapper for `docker build`
       * Then `build/dist.sh <name>`: copies build artifacts into `../dist/<arch>/<name>`
     * `make` / `make all`: build all variants defined in Makefile
-    * `make build` / `make dist`: build/dist all variants
+    * `make build[-<name>]` / `make dist[-<name>]`: build/dist all variants or a single variant
+    * `make rebuild[-<name>]`: force rebuild with docker's `--no-cache` flag
     * `make sh` / `make <name>-sh`: build and open shell in the build container
     * `make conformance`: test the engine on conformance test suite inside a test container (jsz-runtime). By default runs the main binary artifact on all tests in conformance/ dir. Can be customized via `CONFORMANCE_BINARY` / `CONFORMANCE_SUITE` / `CONFORMANCE_CMD` vars.
     * `make conformance-direct`: run conformance testing command directly on host without launching a test container

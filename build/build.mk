@@ -61,16 +61,18 @@ $(1): $(IID_DIR)/jsz-$(1) $(call dist_json_path,$(1))
 	@true
 
 # Build docker image
-build: $(IID_DIR)/jsz-$(1)
+build: build-$(1)
+build-$(1): $(IID_DIR)/jsz-$(1)
 
 $(IID_DIR)/jsz-$(1): $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(3))
 	bash "$(ROOT_DIR)/build/build.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
 
-# rev / rev-<name>: print resolved REPO/REV that would be built (without building)
-rev: rev-$(1)
+# Force rebuild without cache
+rebuild: rebuild-$(1)
+rebuild-$(1): $(IID_DIR)/jsz-$(1).no-cache
 
-rev-$(1):
-	@bash "$(ROOT_DIR)/build/build.sh" --print-rev $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3))
+$(IID_DIR)/jsz-$(1).no-cache: $$(shell bash "$(ROOT_DIR)/build/deps.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(3))
+	bash "$(ROOT_DIR)/build/build.sh" $(1) "$(abspath $(CURDIR)/$(2))" $(call add_default_rev,$(3)) --no-cache
 
 # dist / dist-<name>: copy build artifacts out of docker image(s)
 dist: $(call dist_json_path,$(1))
@@ -119,7 +121,8 @@ endif
 .PHONY: conformance
 )
 
-.PHONY: all build dist rev sh $(1) dist-$(1) rev-$(1) sh-$(1) $(1)-sh
+.PHONY: all build rebuild dist sh
+.PHONY: $(1) build-$(1) rebuild-$(1) dist-$(1) sh-$(1) $(1)-sh
 )
 endef
 
