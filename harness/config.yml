@@ -134,12 +134,21 @@ carakan:
 
 castl:
   console_log: console.log
+  stdout_replace_re:
+    # Shorten long/path/to/file.lua:123 -> file.lua:123.
+    - '([ (<])(?:\.\.\.)?/??(?:[^/\s]+/)*([^/\s]+[.]lua:[0-9]+)': '\1\2'
+    - "^attempt to call global '([^']+)' \\(a nil value\\)$": 'ReferenceError: \1 is not defined'
+    - "^attempt to call method '([^']+)' \\(a nil value\\)$": 'TypeError: \1 is not a function'
+    - '^undefined is not a function$': 'TypeError: undefined is not a function'
+  stderr_replace_re:
+    - "^SyntaxError: Couldn't transpile JS code: Error: (.*)$": 'SyntaxError: \1'
   errors_re:
     - '^luajit: (?P<type>[A-Za-z0-9]+Error)(: )?(?P<message>.*)$'
+    - '^luajit: [^ ]*[.]lua:[0-9]+: (?P<message>.*)$'
     - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>.*)$'
     - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>function at line [0-9]+ has more than 200 local variables)$'
     - '[^ ]*\.js\.lua:[0-9]+: (?P<message>attempt to .*)$'
-    - 'throw new (?P<type>SyntaxError)\("(?P<message>Couldn.t transpile JS code): ".*'
+    - *exception_colon_message
 
 cesanta-elk:
   console_log: ['console.log', 'print']
@@ -193,7 +202,10 @@ continuum:
 
 delskayn:
   console_log: console.log
+  stdout_replace_re:
+    - '^Uncaught SyntaxError: error: ': 'Uncaught SyntaxError: '
   errors_re:
+    - '^Uncaught (?P<type>[A-Za-z0-9]*Error): (?P<message>.*)$'
     - *uncaught_exception_colon_message
 
 derkjs:
@@ -433,6 +445,9 @@ jerryscript: &jerryscript
 
 jint: &jint
   console_log: ['console.log', 'print']
+  stdout_replace_re:
+    # REPL prints last expression's value to stdout
+    - '^(null|undefined|\[object Promise\])$': ''
   errors_re:
     - *uncaught_exception_colon_message
   flags:
@@ -446,8 +461,18 @@ js2py:
   stdout_replace_re:
     - "^'(.*)'$": '\1'
     - '^"(.*)"$': '\1'
+    - "KeyError: b'.*$": 'KeyError'
+  stderr_replace_re:
+    - '^Traceback \(most recent call last\):$': ''
+    - '^  File ".*$",?': ''
+    - '^    .*$': ''
+    - "^During handling of the above exception, another exception occurred:$": ''
+    - "KeyError: b'.*$": ''
+    - '(?m)^.*: FutureWarning: .*(?:\n  .*)?$': ''
   errors_re:
     - '^js2py.internals.simplex.JsException: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+    - *exception_colon_message
+    - '^(?P<message>KeyError)$'
 
 jsc: &jsc
   console_log: print
@@ -538,6 +563,7 @@ kjs:
   console_log: print
   stderr_replace_re:
     - '^LEAK: [0-9]+ KJS::Node$': ''
+    - '^(.*\bSyntaxError): Parse error$': '\1'
   errors_re:
     - '^\S+ \(line [0-9]+\): (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
 
@@ -589,12 +615,11 @@ mocha:
     - code: 'var console = new Object(); console.log = print;'
   stderr_replace_re:
     - '^Mocha: ([^,]+[.]js, line [0-9]+): syntax error:$': 'Mocha: \1: SyntaxError'
+    - '^Mocha: [^,]+[.]js, line [0-9]+: (nested comment|illegal character):?$': ''
   errors_re:
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<type>SyntaxError)$'
     - '^Mocha: [^,]+[.]js, line [0-9]+: (?P<message>.+?):?$'
     - '^Mocha: (?P<message>.+)$'
-  warnings_re:
-    - '^Mocha: [^,]+[.]js, line [0-9]+: (nested comment|illegal character):?$'
 
 modernc-quickjs:
   console_log: ['console.log', 'print']
@@ -690,11 +715,10 @@ nova:
   stderr_replace_re:
     - *rust_crash_norm_re
     - 'SyntaxError:\n\n  [x×] ': 'Uncaught exception: SyntaxError: '
+    - '^Parse errors:$': ''
   errors_re:
     - '^Uncaught exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*?):?$'
     - *uncaught_exception_colon_message
-  warnings_re:
-    - '^Parse errors:$'
   prelude:
     - file: engines/nova/prelude.js
 
@@ -787,8 +811,10 @@ rapidus:
     - "^Syntax error: ": "SyntaxError: "
   stdout_replace_re:
     - "^Error[(]Reference error: '(.*)' is not defined[)]$": 'ReferenceError: \1 is not defined'
+    - '^Error[(]Type error: (.*)[)]$': 'TypeError: \1'
+    - '^Runtime error: .*: Uncaught Exception$': ''
+    - '^[ ]*\^$': ''
   errors_re:
-    - '^Runtime error: [^ ]+\.js:[0-9]+:[0-9]+: (?P<message>.+)$'
     - *exception_colon_message
   prelude:
     - code: 'var print = console.log;'
@@ -826,9 +852,14 @@ rhino:
 
 rpython-langjs:
   console_log: print
+  stderr_replace_re:
+    - '^Traceback \(most recent call last\):$': ''
+    - '^  File ".*$",?': ''
+    - '^    .*$': ''
   errors_re:
     - '^ERROR in [^:]+: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>NotImplementedError)$'
+    - *exception_colon_message
   multiple_scripts_with_shared_realm: true
 
 rust-js:
@@ -842,8 +873,10 @@ rust-js:
 
 sablejs:
   console_log: ['console.log', 'print']
-  warnings_re:
-    - '\[WARN\]'
+  stdout_replace_re:
+    # SableJS always logs a transient compile path on stdout before the real result.
+    - '^\[INFO\] compile in [0-9]+ms: /tmp/sablejs\.[^/]+/\S+[.]sablejs$': ''
+    - '^([^:\n]+[.]js: )\[INFO\] compile in [0-9]+ms: /tmp/sablejs\.[^/]+/\S+[.]sablejs; ': '\1'
   errors_re:
     - '\[ERROR\] compile failed: (?P<type>SyntaxError): (?P<message>.+?)( [(][0-9:]+[)])?$'
     - '^(?P<message>(Uncaught exception): [object Object])$'
@@ -852,9 +885,13 @@ sablejs:
 sandboxjs:
   console_log: ['console.log', 'print']
   stderr_replace_re:
+    - '^[^\n]*sandboxjs:[0-9]+\n\s*throw err\.error;\n\s*\^\n\n': ''
+    - '^    at .*$': ''
+    - '^Node\.js v[0-9.]+$': ''
     - '^ParseError: ?(.*)$': 'SyntaxError: \1'
   errors_re:
     - '^(?P<type>SyntaxError): ?(?P<message>.*)$'
+    - *exception_colon_message
 
 see:
   console_log: print
@@ -1021,11 +1058,10 @@ twostroke:
   bench_suite: ['richards.es1.js']
   stderr_replace_re:
     - "^(.*parser[.]rb:[0-9]+:in `error!': )Syntax error at line [0-9]+, col [0-9]+[.] (.+) \\(Twostroke::ParseError\\)$": '\1SyntaxError: \2'
+    - '.*twostroke-dist/[^:]*[.]rb:[0-9]+: warning: .*': ''
   errors_re:
     - ".*twostroke-dist/lib/twostroke/([^: ]+/)?parser[.]rb:[0-9]+:in `error!': (?P<type>SyntaxError): (?P<message>.+)$"
     - '.*twostroke-dist/lib/twostroke/([^: ]+/)?(?P<message>[^/ ]*[.]rb:[0-9]+.*)'
-  warnings_re:
-    - '.*twostroke-dist/[^:]*[.]rb:[0-9]+: warning: .*'
 
 ucode:
   bench_suite: ['richards.ucode.js']
@@ -1037,10 +1073,9 @@ v8: &v8
   console_log: ['console.log', 'print']
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
+    - '^[^:]+:[0-9]+: Error: Unhandled Promise.$': ''
   errors_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
-  warnings_re:
-    - '^[^:]+:[0-9]+: Error: Unhandled Promise.$'
   v8_and_node_flags: &v8_and_node_flags
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
@@ -1079,10 +1114,10 @@ xs: &xs
   flags:
     - { if: 'flags:module', then: '-m' }
   multiple_scripts_with_shared_realm: true
+  stderr_replace_re:
+    - '^Error: unhandled rejection$': ''
   errors_re:
     - *exception_colon_message
-  warnings_re:
-    - '^Error: unhandled rejection$'
 
 yaji: *fesi
 
@@ -1092,6 +1127,13 @@ yantra: &yantra
     - '^\[object Object\]$': ''
     - '^[0-9]+/[0-9]+/20[0-9][0-9] [0-9]+:[0-9]+:[0-9]+.[AP]M$': ''  # uses \u202f
   # TODO: SIGABRT stderr='Unhandled exception. YantraJS.Core.JSException: Test262Error: probe'
+
+yrm006:
+  console_log: print
+  stdout_replace_re:
+    # This engine sometimes emits unstable bare integers instead of failure text
+    # for broken bitwise/print paths; keep conformance output deterministic.
+    - '^-?[0-9]+$': ''
 
 yavashark:
   console_log: console.log

@@ -60,15 +60,6 @@ class AnnotatorTest(unittest.TestCase):
                 if want_msg:
                     self.assertIn(want_msg, out.error_message or "")
 
-    def test_warnings_re_suppresses_matched_lines(self) -> None:
-        cl = Annotator(EngineConfig(
-            errors_re=[r"^(?P<type>[A-Za-z]+Error): (?P<message>.+)$"],
-            warnings_re=[r"^Note:"],
-        ))
-        out = cl.classify(mk_run(stdout="Note: TypeError: warning\nSyntaxError: real", exit_code=1))
-        self.assertEqual(out.error_type, ErrorType.SYNTAX_ERROR)
-        self.assertEqual(out.error_message, "real")
-
     def test_stdout_replace_re_anchors_match_per_line(self) -> None:
         # ^ and $ in *_replace_re patterns are line-anchored (re.MULTILINE).
         cfg = EngineConfig(stdout_replace_re={"^noise: ": "", "noise$": ""})
@@ -81,6 +72,15 @@ class AnnotatorTest(unittest.TestCase):
         cl = Annotator(cfg)
         run = cl.classify(mk_run(stdout="noise: keep this\nkeep noise\n"))
         self.assertEqual(run.stdout_cleaned, "keep this\nkeep\n")
+
+    def test_shorten_message_drops_redundant_syntax_error_text(self) -> None:
+        cl = Annotator(EngineConfig(
+            errors_re=[r"^(?P<type>SyntaxError): (?P<message>.*)$"],
+        ))
+        run = cl.classify(mk_run(stdout="SyntaxError: syntax error\n", exit_code=1))
+        self.assertEqual(run.error_type, ErrorType.SYNTAX_ERROR)
+        self.assertIsNone(run.error_message)
+        self.assertEqual(run.verdict_message(), "SyntaxError")
 
     def test_strip_ansi_from_stdout_and_stderr(self) -> None:
         cl = Annotator(EngineConfig())

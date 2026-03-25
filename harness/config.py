@@ -71,17 +71,31 @@ class EngineConfig:
     output_limit: int = 1000000
 
     # --- Output classification ---
-    # Post-run output cleanup applied by Classified: {regex: replacement}.
-    # Use "" to drop matching text. Patterns are compiled with re.MULTILINE:
-    # ^ and $ match line boundaries; . does not match \n; explicit \n works.
-    # Accepts either {regex: repl, ...} or [{regex: repl}, {regex: repl}, ...].
+    # Post-run output cleanups to be applied by Annotator: {regex: replacement}.
+    # Patterns are run against the whole stdout/stderr input and compiled
+    # with re.MULTILINE: ^ and $ match line boundaries; . does not match \n;
+    # explicit \n works.
+    # Accepts either {regex: repl, ...} or [{regex: repl}, {regex: repl}, ...]
+    # for YAML templating convenience.
+    # Use "" as a replacement to drop matching text.
+    # Note: replacements run before ok/fail detection and errors_re matching,
+    # so prefer doing noisy wrapper cleanup here first.
     stdout_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
     stderr_replace_re: dict[str, str] | list[dict[str, str]] = dataclasses.field(default_factory=dict)
-    # Regex for crash strings from language runtime (Java, Go etc)
+    # Regex for crash strings from the language runtime (Java, Go etc).
+    # If matches stdout or stderr, run will be classified as ErrorType.CRASHED with
+    # the text captured by the "message" group as error_message.
     crash_re: list[str] = dataclasses.field(default_factory=list)
-    # Warning lines to skip (false positives for errors_re)
-    warnings_re: list[str] = dataclasses.field(default_factory=list)
-    # Structured patterns for errors/exceptions with named groups "type" and "message"
+    # Structured patterns for errors/exceptions with named groups "type" and "message".
+    # Currently these are ran against each individual line of the combined
+    # stdout/stderr, one line after another - first line with errors wins.
+    # Order matters - first regex to match against the current line wins.
+    # "type" group should capture standard JavaScript error name / one of
+    # ErrorType enum values, else it'll map to uninformative ErrorType.GENERIC.
+    # Advise: try to match stable terminal exception lines (e.g. "TypeError: ..."),
+    # not traceback scaffolding; use *_replace_re to strip traceback boilerplate,
+    # normalize multi-line exceptions to one-liners, normalize exception names,
+    # silence false positive warning lines etc.
     errors_re: list[str] = dataclasses.field(default_factory=list)
     # Exit code to map to SyntaxError (needed for nashorn)
     exit_code_for_syntax_error: int | None = None

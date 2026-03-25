@@ -26,7 +26,6 @@ class Annotator:
 
     def __init__(self, config: EngineConfig) -> None:
         self._config = config
-        self._warn_cres = [re.compile(p) for p in config.warnings_re]
         self._errors_cres = [re.compile(p) for p in config.errors_re]
         self._crash_cres = [re.compile(p) for p in config.crash_re]
 
@@ -254,11 +253,9 @@ class Annotator:
     def _collect_errors(
         self, text: str, cres: list[re.Pattern[str]]
     ) -> list[tuple[ErrorType, str | None]]:
-        """Collect all structured error matches from text lines, skipping warning lines."""
+        """Collect all structured error matches from text lines."""
         results = []
         for line in text.splitlines():
-            if self._warn_cres and any(r.search(line) for r in self._warn_cres):
-                continue
             for cre in cres:
                 m = cre.search(line)
                 if m:
@@ -329,6 +326,10 @@ class Annotator:
 
         if run.error_type and run.error_type.endswith('Error') and run.error_message.startswith(run.error_type + ':'):
             run.error_message = run.error_message[len(run.error_type)+1:].strip()
+
+        # Collapse tautological pairs like "SyntaxError: syntax error".
+        if run.error_type == ErrorType.SYNTAX_ERROR and run.error_message.lower() == 'syntax error':
+            run.error_message = ''
 
         run.error_message = run.error_message.strip()
         if len(run.error_message) > 200:
