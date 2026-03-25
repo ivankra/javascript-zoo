@@ -13,46 +13,6 @@ import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
 
-@cache
-def test262_features_yaml() -> dict[str, list[str]]:
-    """Load features.yml: edition name / tag -> list of test262 feature tags."""
-
-    path = Path(__file__).resolve().parent / "features.yml"
-    with path.open("r", encoding="utf-8") as f:
-        data = yaml.load(f, Loader=SafeLoader)
-
-    assert isinstance(data, dict), f"{path}: expected mapping"
-    seen: dict[str, str] = {}
-    for edition, features in data.items():
-        assert isinstance(edition, str), f"{path}: non-string key {edition!r}"
-        assert isinstance(features, list), f"{path}: {edition!r} must be a list"
-        for feat in features:
-            assert feat not in seen, f"{path}: feature {feat!r} in {edition!r} already listed under {seen[feat]!r}"
-            seen[feat] = edition
-    return data
-
-
-@cache
-def test262_feature_to_ecmascript_edition() -> dict[str, int]:
-    """Returns mapping: feature -> edition number (e.g. 5, 6, 2020).
-
-    es* keys are parsed numerically (es5 -> 5, es2020 -> 2020).
-    Non-es keys (e.g. "harness") map to -1.
-    """
-    result: dict[str, int] = {}
-    for key, feats in test262_features_yaml().items():
-        if key.startswith("es"):
-            try:
-                num = int(key[2:])
-            except ValueError:
-                num = -1
-        else:
-            num = -1
-        for f in feats:
-            result.setdefault(f, num)
-    return result
-
-
 @dataclasses.dataclass
 class Frontmatter:
     """Parsed test262 YAML frontmatter."""
@@ -122,119 +82,41 @@ class Frontmatter:
         return f"es{edition}"
 
 
-class Tags:
-    """Tag set for engine argv/flag matching and reporting.
+@cache
+def test262_features_yaml() -> dict[str, list[str]]:
+    """Load features.yml: edition name / tag -> list of test262 feature tags."""
 
-    Stores bare values for fast ``tag in tags`` lookups, plus namespaced
-    pairs for qualified ``namespace:value`` lookups.
+    path = Path(__file__).resolve().parent / "features.yml"
+    with path.open("r", encoding="utf-8") as f:
+        data = yaml.load(f, Loader=SafeLoader)
 
-    Use ``Tags({"bench"})`` for simple tag sets, or
-    ``Tags.test262(fm, rel_path=...)`` for test262.
+    assert isinstance(data, dict), f"{path}: expected mapping"
+    seen: dict[str, str] = {}
+    for edition, features in data.items():
+        assert isinstance(edition, str), f"{path}: non-string key {edition!r}"
+        assert isinstance(features, list), f"{path}: {edition!r} must be a list"
+        for feat in features:
+            assert feat not in seen, f"{path}: feature {feat!r} in {edition!r} already listed under {seen[feat]!r}"
+            seen[feat] = edition
+    return data
 
-    Namespaces (test262):
-      * features   – test262 feature tags (Symbol, Promise, ...)
-      * flags      – test262 flags (module, async, onlyStrict, ...)
-      * includes   – harness includes (assert.js, sta.js, ...)
-      * field      – frontmatter fields present (es5id, es6id, negative)
-      * edition    – highest ES edition (es5, es6, es2020, ..., esnext)
-      * mode       – execution mode (strict or sloppy)
-      * folder     – all ancestor directory prefixes of rel_path
-      * uses       – $262.* methods usage tags (reporting only; not available
-                     for test discovery/filtering because they are added after
-                     staging)
+
+@cache
+def test262_feature_to_ecmascript_edition() -> dict[str, int]:
+    """Returns mapping: feature -> edition number (e.g. 5, 6, 2020).
+
+    es* keys are parsed numerically (es5 -> 5, es2020 -> 2020).
+    Non-es keys (e.g. "harness") map to -1.
     """
-
-    __slots__ = ("values", "pairs")
-
-    def __init__(self, values: set[str] | None = None, *, pairs: set[tuple[str, str]] | None = None):
-        self.values: set[str] = set(values) if values else set()
-        self.pairs: set[tuple[str, str]] = set(pairs) if pairs else set()
-
-    @classmethod
-    def test262(cls, fm: Frontmatter, *, rel_path: str = "") -> Tags:
-        """Build a full tag set from test262 frontmatter."""
-        tags = cls({"test262"})
-
-        tags.values.update(fm.features)
-        for s in fm.features:
-            tags.pairs.add(("features", s))
-        if not fm.features:
-            tags.pairs.add(("features", ""))
-
-        tags.values.update(fm.flags)
-        for s in fm.flags:
-            tags.pairs.add(("flags", s))
-        if not fm.flags:
-            tags.pairs.add(("flags", ""))
-
-        tags.values.update(fm.includes)
-        for s in fm.includes:
-            tags.pairs.add(("includes", s))
-
-        if fm.es5id:
-            tags.add("field", "es5id")
-        if fm.es6id:
-            tags.add("field", "es6id")
-        if fm.negative_type:
-            tags.add("field", "negative")
-
-        edition = fm.edition()
-        if edition:
-            tags.add("edition", edition)
+    result: dict[str, int] = {}
+    for key, feats in test262_features_yaml().items():
+        if key.startswith("es"):
+            try:
+                num = int(key[2:])
+            except ValueError:
+                num = -1
         else:
-            tags.pairs.add(("edition", ""))
-
-        if rel_path:
-            assert not rel_path.startswith("/")
-            tags.add_folders(rel_path)
-
-        return tags
-
-    def clone(self) -> Tags:
-        """Return a shallow copy."""
-        return Tags(self.values, pairs=self.pairs)
-
-    def add(self, ns: str, value: str) -> None:
-        self.pairs.add((ns, value))
-        self.values.add(value)
-
-    def add_folders(self, rel_path: str) -> None:
-        """Add folder:prefix pairs for all ancestor directories of rel_path."""
-        i = 0
-        while i < len(rel_path):
-            i = rel_path.find("/", i)
-            if i == -1:
-                break
-            self.add("folder", rel_path[:i])
-            i += 1
-
-    def qualified_tags(self) -> list[str]:
-        """Return all fully-qualified 'namespace:value' tags, sorted."""
-        return sorted(f"{ns}:{val}" for ns, val in self.pairs)
-
-    def __contains__(self, tag: object) -> bool:
-        if tag in self.values:
-            return True
-        if not isinstance(tag, str):
-            return False
-
-        i = tag.find(":")
-        if i == -1:
-            return False
-
-        return (tag[:i], tag[i+1:]) in self.pairs
-
-
-class FilterExpr:
-    def __init__(self, expr: str):
-        expr = expr.replace('!', '~').replace(',', '|')
-        split = re.split(r'([\s~&|()]+)', f'({expr})')[1:-1]
-        self.vars = split[1::2]
-        split[1::2] = ['%d'] * len(self.vars)
-        self.fmt = ''.join(split).replace('~', ' not ').replace('&', ' and ').replace('|', ' or ')
-        if not self.vars:
-            self.fmt = '1'
-
-    def eval(self, tags: Tags | set[str]) -> bool:
-        res = eval(self.fmt % tuple(int(v in tags) for v in self.vars))
-        return bool(res)
+            num = -1
+        for f in feats:
+            result.setdefault(f, num)
+    return result

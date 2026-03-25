@@ -195,13 +195,12 @@ def main() -> None:
         a directory selects all *.js files recursively. May use ** globs,
         e.g. test/**/Temporal to match all Temporal subdirs.""")
     p.add_argument("-f", "--filter", action="append", default=[], metavar="EXPR", help="""
-        Boolean expression with brackets, unary NOT ("!" / "~"),
-        binary AND ("&"), binary OR ("|" / ",", lowest precedence) over
-        "[<namespace>:]<tag>" variables indicating tag presence.
-        Examples: "Temporal" / "features:Temporal", "es6,es2016",
-        "es6&Map" (all edition:es6 tests with features:Map),
-        "esnext&(module|dynamic-import)".
-        Multiple --filter flags are joined with OR.""")
+        Boolean expression with parenthesis, NOT ("!" / "~"), AND ("&"),
+        OR ("|" / ",", lowest precedence) over "[<namespace>:]<tag>"
+        booleans indicating tag presence. Examples: "Temporal" or
+        "features:Temporal" (select all Temporal tests), "~Atomics"
+        (exclude features:Atomics tests), "es6&Map" (all edition:es6
+        tests with features:Map). Multiple flags are joined with OR.""")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], metavar="MODE", default="all",
@@ -279,8 +278,8 @@ def main() -> None:
         tests = itertools.islice(tests, args.limit)
 
     filter_parts = args.filter
-    if not filter_parts and engine.test262_filter_expr:
-        filter_parts = [engine.test262_filter_expr]
+    if not filter_parts and engine.test262_filter:
+        filter_parts = [engine.test262_filter]
     filter_expr = FilterExpr("|".join(filter_parts)) if filter_parts else None
 
     executor = Executor(

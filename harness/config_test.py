@@ -13,7 +13,7 @@ from typing import Any
 from unittest import mock
 
 from harness.config import EngineConfig, Prelude, REPO_ROOT, _resolve_flags_list, load_configs_dict, resolve_preludes
-from harness.frontmatter import Tags
+from harness.tags import Tags
 
 
 class ResolveFlagsListTest(unittest.TestCase):

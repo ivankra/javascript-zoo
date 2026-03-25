@@ -14,7 +14,8 @@ from functools import lru_cache
 from pathlib import Path
 
 from .config import EngineConfig, Prelude
-from .frontmatter import Frontmatter, Tags
+from .frontmatter import Frontmatter
+from .tags import Tags
 from .util import expand_template_literals, iterate_js_files
 
 

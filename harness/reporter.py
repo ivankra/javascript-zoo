@@ -12,7 +12,8 @@ from pathlib import Path
 from typing import Any
 
 from .config import EngineConfig
-from .frontmatter import Tags, test262_features_yaml
+from .frontmatter import test262_features_yaml
+from .tags import Tags
 from .runner import RunResult, Verdict
 from .util import get_git_revision, version_sort_key
 

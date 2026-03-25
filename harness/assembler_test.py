@@ -9,7 +9,8 @@ from pathlib import Path
 
 from harness.assembler import Assembler, Scenario, build_print_prelude
 from harness.config import EngineConfig, Prelude
-from harness.frontmatter import Frontmatter, Tags
+from harness.frontmatter import Frontmatter
+from harness.tags import Tags
 
 
 def _scenario(source: str, *, mode: str = "sloppy", rel_path: str = "test/x.js") -> Scenario:

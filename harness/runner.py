@@ -18,7 +18,7 @@ from typing import TYPE_CHECKING, Any
 from .config import EngineConfig
 
 if TYPE_CHECKING:
-    from .frontmatter import Tags
+    from .tags import Tags
 
 
 class Verdict(StrEnum):

@@ -6,7 +6,8 @@ from __future__ import annotations
 import unittest
 
 from harness.config import EngineConfig
-from harness.frontmatter import Frontmatter, Tags
+from harness.frontmatter import Frontmatter
+from harness.tags import Tags
 from harness.reporter import Reporter
 from harness.runner import RunResult, Verdict
 

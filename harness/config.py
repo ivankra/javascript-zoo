@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from .frontmatter import Tags
+    from .tags import Tags
 
 import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
@@ -125,8 +125,9 @@ class EngineConfig:
         "compat-table/es20[0-9][0-9]",
     ])
     conformance_jobs: int = 8
-    # Default test262 filter expression for this engine. CLI --filter overrides.
-    test262_filter_expr: str = ""
+    # Default test262 filter expression for this engine.
+    # See test262.py --filter; if flag is specified it takes precedence.
+    test262_filter: str = ""
 
     @property
     def name(self) -> str:
