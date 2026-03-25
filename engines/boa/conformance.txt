@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"e97f14e38dcb14c9abdc1bea741d2df475d072cd41e9567c07b50ebb38a90b75","binary_size":26877704,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"baaadfeeaf4a64f34e82cbbb9fee3ed4013495c0","revision_date":"2026-03-16","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+Metadata: {"arch":"arm64","binary_sha256":"04a99d94a9f467bab2043093c0c4db63207bcdd1f7aa470eb73a623079878a62","binary_size":27598624,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"66a1cd268ce6006918032b5d0f98d3a63c81b188","revision_date":"2026-03-23","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -50,7 +50,7 @@ es1/Date.prototype.setUTCMilliseconds.js: OK
 es1/Date.prototype.setUTCMinutes.js: OK
 es1/Date.prototype.setUTCMonth.js: OK
 es1/Date.prototype.setUTCSeconds.js: OK
-es1/Date.prototype.toLocaleString.js: Function Unimplemented
+es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
@@ -213,9 +213,9 @@ es3/Array.prototype.unshift.generic.js: OK
 es3/Array.prototype.unshift.js: OK
 es3/Array.prototype.unshift.returns-new-length.js: OK
 es3/Date.prototype.toDateString.js: OK
-es3/Date.prototype.toLocaleDateString.js: Function Unimplemented
-es3/Date.prototype.toLocaleString.js: Function Unimplemented
-es3/Date.prototype.toLocaleTimeString.js: Function Unimplemented
+es3/Date.prototype.toLocaleDateString.js: OK
+es3/Date.prototype.toLocaleString.js: OK
+es3/Date.prototype.toLocaleTimeString.js: OK
 es3/Date.prototype.toTimeString.js: OK
 es3/Error.js: OK
 es3/Error.prototype.constructor.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1333,7 +1335,7 @@ compat-table/es2020/optional-chaining.function-call.js: OK
 compat-table/es2020/optional-chaining.method-call.js: OK
 compat-table/es2020/optional-chaining.property.js: OK
 compat-table/es2020/optional-chaining.spread-params.js: OK
-compat-table/es2021/FinalizationRegistry.js: ReferenceError: FinalizationRegistry is not defined
+compat-table/es2021/FinalizationRegistry.js: OK
 compat-table/es2021/Promise.any.AggregateError.js: OK
 compat-table/es2021/Promise.any.fulfillment.js: OK
 compat-table/es2021/String.prototype.replaceAll.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: ReferenceError: SuppressedError is not defined
+compat-table/next/Symbol.dispose.bound.js: failed
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a callable function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a callable function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a callable function

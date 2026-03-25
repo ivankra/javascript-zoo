@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: ES6 destructuring is
 compat-table/es6/destructuring-assign.object-primitives.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-assign.object.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-assign.parenthesised-error.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-assign.rest.identical.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-assign.rest.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-assign.sparse-array.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-assign.string.js: ES6 destructuring is not yet implemented
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: ES6 destructuring is not ye
 compat-table/es6/destructuring-decl.nested.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-decl.object-primitives.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-decl.object.js: ES6 destructuring is not yet implemented
+compat-table/es6/destructuring-decl.rest.identical.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-decl.rest.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-decl.sparse-array.js: ES6 destructuring is not yet implemented
 compat-table/es6/destructuring-decl.string.js: ES6 destructuring is not yet implemented
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SuppressedError.js:13:10 Expected ; but found _1; using _1 = { [Symbol.dispose]() { throw err1 } },; ^; SuppressedError.js:13:52 Expected an operand but found ,; using _1 = { [Symbol.dispose]() { thro...
+compat-table/next/Symbol.dispose.bound.js: Symbol.dispose.bound.js:17:10 Expected ; but found _; using _ = resource;; ^; Symbol.dispose.bound.js:19:2 Invalid return statement; return disposed;; ^; Symbol.dispose.bound.js:20:0 Expected eof but ...
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
 compat-table/next/Uint8Array.setFromBase64.js: ES6 destructuring is not yet implemented

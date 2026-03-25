@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":4979506,"dotnet":"10.0.103","engine":"asynkron","repository":"https://github.com/asynkron/Asynkron.JsEngine.git","revision":"8f9f6cf53c7fe090b2d98b784bd7f1626ddf8523","revision_date":"2026-03-21"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":3894638,"dotnet":"10.0.103","engine":"asynkron","repository":"https://github.com/asynkron/Asynkron.JsEngine.git","revision":"8f9f6cf53c7fe090b2d98b784bd7f1626ddf8523","revision_date":"2026-03-21"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: failed
 compat-table/es6/destructuring-decl.nested.js: failed
 compat-table/es6/destructuring-decl.object-primitives.js: failed
 compat-table/es6/destructuring-decl.object.js: failed
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: Explicit resource management is not implemented for object resources.
+compat-table/next/Symbol.dispose.bound.js: Explicit resource management is not implemented for object resources.
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Attempted to call a non-callable value 'Uint8Array.fromBase64' of type 'Undefined'.
 compat-table/next/Uint8Array.fromHex.js: TypeError: Attempted to call a non-callable value 'Uint8Array.fromHex' of type 'Undefined'.
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Attempted to call a non-callable value 'arr2.setFromBase64' of type 'Undefined'.

@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: TypeError: can't acc
 compat-table/es6/destructuring-assign.object-primitives.js: TypeError: can't access property "length", node2.params is undefined
 compat-table/es6/destructuring-assign.object.js: TypeError: can't access property "length", node2.params is undefined
 compat-table/es6/destructuring-assign.parenthesised-error.js: TypeError: can't access property "length", node2.params is undefined
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: 11: missing operand; found .
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: 11: missing operand; found .
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: Invalid assignment left-hand side
 compat-table/es6/destructuring-assign.string.js: ReferenceError: Invalid assignment left-hand side
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: TypeError: can't access pro
 compat-table/es6/destructuring-decl.nested.js: TypeError: can't access property "object", s is null
 compat-table/es6/destructuring-decl.object-primitives.js: TypeError: can't access property "object", s is null
 compat-table/es6/destructuring-decl.object.js: TypeError: can't access property "object", s is null
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: 10: missing operand; found .
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: 10: missing operand; found .
 compat-table/es6/destructuring-decl.sparse-array.js: TypeError: can't access property "object", s is null
 compat-table/es6/destructuring-decl.string.js: TypeError: can't access property "object", s is null
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
 compat-table/es6/typed-arrays.constructor-iterables.js: failed
 compat-table/es6/typed-arrays.constructor-requires-new.js: OK
-compat-table/es6/typed-arrays.correct-prototype-chains.js: TypeError: can't redefine non-configurable property "keys"
+compat-table/es6/typed-arrays.correct-prototype-chains.js: OK
 compat-table/es6/typed-arrays.from.js: OK
 compat-table/es6/typed-arrays.of.js: OK
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: 13: missing ; before statement
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: 11: Invalid property name
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: 13: Bad left-hand side of assignment
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: 13: Bad left-hand side of assignment
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: 11: missing ; before statement

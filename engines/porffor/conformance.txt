@@ -583,12 +583,12 @@ compat-table/es6/Object.is.js: OK
 compat-table/es6/Object.setPrototypeOf.js: failed
 compat-table/es6/Promise.Symbol.species.js: TypeError: Argument is nullish, expected object
 compat-table/es6/Promise.all.iterable.js: ReferenceError: score is not defined
-compat-table/es6/Promise.all.js: RuntimeError: memory access out of bounds
+compat-table/es6/Promise.all.js: OOM: >4096MB
 compat-table/es6/Promise.constructor-requires-new.js: OK
 compat-table/es6/Promise.js: ReferenceError: score is not defined
 compat-table/es6/Promise.prototype-not-instance.js: OK
 compat-table/es6/Promise.race.iterable.js: ReferenceError: score is not defined
-compat-table/es6/Promise.race.js: RuntimeError: memory access out of bounds
+compat-table/es6/Promise.race.js: OOM: >4096MB
 compat-table/es6/Proxy.Array.isArray.js: ReferenceError: Proxy is not defined
 compat-table/es6/Proxy.JSON.stringify.js: ReferenceError: Proxy is not defined
 compat-table/es6/Proxy.constructor-requires-new.js: ReferenceError: Proxy is not defined
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: failed
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.rest.identical.js: failed
 compat-table/es6/destructuring-assign.rest.js: failed
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: failed
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: failed
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: failed
@@ -1252,8 +1254,8 @@ compat-table/es2017/async.Symbol.toStringTag.js: failed
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: RuntimeError: memory access out of bounds
-compat-table/es2017/async.await.js: RuntimeError: memory access out of bounds
+compat-table/es2017/async.await-rejection.js: OOM: >4096MB
+compat-table/es2017/async.await.js: OOM: >4096MB
 compat-table/es2017/async.constructor.js: TypeError: a is not a function
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: ReferenceError: SuppressedError is not defined
+compat-table/next/Symbol.dispose.bound.js: failed
 compat-table/next/Uint8Array.fromBase64.js: exception: [object Object]
 compat-table/next/Uint8Array.fromHex.js: exception: [object Object]
 compat-table/next/Uint8Array.setFromBase64.js: exception: [object Object]

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"f164c59ff13f653acd7dce10c743914159c578c675af9aca2d1e78c7796ea971","binary_size":1806448,"console_log":"println","engine":"dmdscript","repository":"https://github.com/DigitalMars/DMDScript.git","revision":"45a0ba2b11162e90de7e96876289c3020ab208f5","revision_date":"2026-03-03","version":"2.1.3"}
+Metadata: {"arch":"arm64","binary_sha256":"a56577e06674521560b425142fc3a310a2ad2a296478aa1d2a367759e348a3f7","binary_size":1806448,"console_log":"println","engine":"dmdscript","repository":"https://github.com/DigitalMars/DMDScript.git","revision":"45a0ba2b11162e90de7e96876289c3020ab208f5","revision_date":"2026-03-03","version":"2.1.3"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -364,11 +364,11 @@ es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: Object function getX()
 es5/JSON.js: typeof JSON !== 'object'
-es5/JSON.parse.js: Variable 'JSON' is not defined
-es5/JSON.parse.reviver.js: Variable 'JSON' is not defined
-es5/JSON.stringify.js: Variable 'JSON' is not defined
-es5/JSON.stringify.replacer.js: Variable 'JSON' is not defined
-es5/JSON.stringify.space.js: Variable 'JSON' is not defined
+es5/JSON.parse.js: ReferenceError: 'JSON' is not defined
+es5/JSON.parse.reviver.js: ReferenceError: 'JSON' is not defined
+es5/JSON.stringify.js: ReferenceError: 'JSON' is not defined
+es5/JSON.stringify.replacer.js: ReferenceError: 'JSON' is not defined
+es5/JSON.stringify.space.js: ReferenceError: 'JSON' is not defined
 es5/Object.create.js: Object function Function() { [native code] }.create is undefined and has no Call method
 es5/Object.defineProperties.js: Object function Function() { [native code] }.defineProperties is undefined and has no Call method
 es5/Object.defineProperty.js: Object function Function() { [native code] }.defineProperty is undefined and has no Call method
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: found '
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: found '}' when expecting ':'
 compat-table/es6/destructuring-assign.object.js: SyntaxError: found ',' when expecting ':'
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: found ',' when expecting ':'
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: found '[' instead of statement
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: found '[' instead of statement
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: found '[' instead of statement
 compat-table/es6/destructuring-assign.string.js: SyntaxError: found '[' instead of statement
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: identifier exp
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: identifier expected instead of '['
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: identifier expected instead of '{'
 compat-table/es6/destructuring-decl.object.js: SyntaxError: identifier expected instead of '{'
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: identifier expected instead of '['
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: identifier expected instead of '['
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: identifier expected instead of '['
 compat-table/es6/destructuring-decl.string.js: SyntaxError: identifier expected instead of '['
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: Variable 'ArrayBuf
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: Variable 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: primitive Undefined has no Construct method
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: Variable 'ArrayBuffer' is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: found 'const' instead of statement
+compat-table/es6/typed-arrays.correct-prototype-chains.js: TypeError: Object function Function() { [native code] }.getPrototypeOf is undefined and has no Call method
 compat-table/es6/typed-arrays.from.js: ReferenceError: Variable 'Int8Array' is not defined
 compat-table/es6/typed-arrays.of.js: ReferenceError: Variable 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Variable 'Int8Array' is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: found '_1' when expecting ';'
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: identifier expected
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: found 'const' instead of statement
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: found 'const' instead of statement
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: found 'const' instead of statement

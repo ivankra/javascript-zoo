@@ -3,62 +3,62 @@ es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: OK
-es1/Array.prototype.join.generic.js: Uncaught Exception
+es1/Array.prototype.join.generic.js: Runtime error: Array.prototype.join.generic.js:13:13: Uncaught Exception; var result = obj.join(",");; Error(Unknown)
 es1/Array.prototype.join.js: OK
-es1/Array.prototype.reverse.generic.js: Uncaught Exception
-es1/Array.prototype.reverse.js: Uncaught Exception
-es1/Array.prototype.sort.generic.js: Uncaught Exception
-es1/Array.prototype.sort.js: Uncaught Exception
-es1/Array.prototype.toString.js: Uncaught Exception
-es1/Boolean.js: Uncaught Exception
-es1/Boolean.prototype.constructor.js: Uncaught Exception
-es1/Boolean.prototype.toString.js: Uncaught Exception
-es1/Boolean.prototype.valueOf.js: Uncaught Exception
+es1/Array.prototype.reverse.generic.js: TypeError: Not a function
+es1/Array.prototype.reverse.js: TypeError: Not a function
+es1/Array.prototype.sort.generic.js: TypeError: Not a function
+es1/Array.prototype.sort.js: TypeError: Not a function
+es1/Array.prototype.toString.js: TypeError: Not a function
+es1/Boolean.js: ReferenceError: Boolean is not defined
+es1/Boolean.prototype.constructor.js: ReferenceError: Boolean is not defined
+es1/Boolean.prototype.toString.js: ReferenceError: Boolean is not defined
+es1/Boolean.prototype.valueOf.js: ReferenceError: Boolean is not defined
 es1/Date.diff.js: failed
-es1/Date.js: Uncaught Exception
+es1/Date.js: TypeError: Not a function
 es1/Date.prototype.constructor.js: OK
-es1/Date.prototype.getDate.js: Uncaught Exception
-es1/Date.prototype.getDay.js: Uncaught Exception
-es1/Date.prototype.getFullYear.js: Uncaught Exception
+es1/Date.prototype.getDate.js: TypeError: Not a function
+es1/Date.prototype.getDay.js: TypeError: Not a function
+es1/Date.prototype.getFullYear.js: TypeError: Not a function
 es1/Date.prototype.getHours.js: failed
-es1/Date.prototype.getMilliseconds.js: Uncaught Exception
+es1/Date.prototype.getMilliseconds.js: TypeError: Not a function
 es1/Date.prototype.getMinutes.js: failed
-es1/Date.prototype.getMonth.js: Uncaught Exception
-es1/Date.prototype.getSeconds.js: Uncaught Exception
-es1/Date.prototype.getTimezoneOffset.js: Uncaught Exception
-es1/Date.prototype.getTime.js: Uncaught Exception
-es1/Date.prototype.getUTCDate.js: Uncaught Exception
-es1/Date.prototype.getUTCDay.js: Uncaught Exception
-es1/Date.prototype.getUTCFullYear.js: Uncaught Exception
-es1/Date.prototype.getUTCHours.js: Uncaught Exception
-es1/Date.prototype.getUTCMilliseconds.js: Uncaught Exception
-es1/Date.prototype.getUTCMinutes.js: Uncaught Exception
-es1/Date.prototype.getUTCMonth.js: Uncaught Exception
-es1/Date.prototype.getUTCSeconds.js: Uncaught Exception
-es1/Date.prototype.setDate.js: Uncaught Exception
-es1/Date.prototype.setFullYear.js: Uncaught Exception
-es1/Date.prototype.setHours.js: Uncaught Exception
-es1/Date.prototype.setMilliseconds.js: Uncaught Exception
-es1/Date.prototype.setMinutes.js: Uncaught Exception
-es1/Date.prototype.setMonth.js: Uncaught Exception
-es1/Date.prototype.setSeconds.js: Uncaught Exception
-es1/Date.prototype.setTime.js: Uncaught Exception
-es1/Date.prototype.setUTCDate.js: Uncaught Exception
-es1/Date.prototype.setUTCFullYear.js: Uncaught Exception
-es1/Date.prototype.setUTCHours.js: Uncaught Exception
-es1/Date.prototype.setUTCMilliseconds.js: Uncaught Exception
-es1/Date.prototype.setUTCMinutes.js: Uncaught Exception
-es1/Date.prototype.setUTCMonth.js: Uncaught Exception
-es1/Date.prototype.setUTCSeconds.js: Uncaught Exception
-es1/Date.prototype.toLocaleString.js: Uncaught Exception
-es1/Date.prototype.toString.js: Uncaught Exception
-es1/Date.prototype.toUTCString.js: Uncaught Exception
-es1/Date.prototype.valueOf.js: Uncaught Exception
+es1/Date.prototype.getMonth.js: TypeError: Not a function
+es1/Date.prototype.getSeconds.js: TypeError: Not a function
+es1/Date.prototype.getTimezoneOffset.js: TypeError: Not a function
+es1/Date.prototype.getTime.js: TypeError: Not a function
+es1/Date.prototype.getUTCDate.js: TypeError: Not a function
+es1/Date.prototype.getUTCDay.js: TypeError: Not a function
+es1/Date.prototype.getUTCFullYear.js: TypeError: Not a function
+es1/Date.prototype.getUTCHours.js: TypeError: Not a function
+es1/Date.prototype.getUTCMilliseconds.js: TypeError: Not a function
+es1/Date.prototype.getUTCMinutes.js: TypeError: Not a function
+es1/Date.prototype.getUTCMonth.js: TypeError: Not a function
+es1/Date.prototype.getUTCSeconds.js: TypeError: Not a function
+es1/Date.prototype.setDate.js: TypeError: Not a function
+es1/Date.prototype.setFullYear.js: TypeError: Not a function
+es1/Date.prototype.setHours.js: TypeError: Not a function
+es1/Date.prototype.setMilliseconds.js: TypeError: Not a function
+es1/Date.prototype.setMinutes.js: TypeError: Not a function
+es1/Date.prototype.setMonth.js: TypeError: Not a function
+es1/Date.prototype.setSeconds.js: TypeError: Not a function
+es1/Date.prototype.setTime.js: TypeError: Not a function
+es1/Date.prototype.setUTCDate.js: TypeError: Not a function
+es1/Date.prototype.setUTCFullYear.js: TypeError: Not a function
+es1/Date.prototype.setUTCHours.js: TypeError: Not a function
+es1/Date.prototype.setUTCMilliseconds.js: TypeError: Not a function
+es1/Date.prototype.setUTCMinutes.js: TypeError: Not a function
+es1/Date.prototype.setUTCMonth.js: TypeError: Not a function
+es1/Date.prototype.setUTCSeconds.js: TypeError: Not a function
+es1/Date.prototype.toLocaleString.js: TypeError: Not a function
+es1/Date.prototype.toString.js: TypeError: Not a function
+es1/Date.prototype.toUTCString.js: TypeError: Not a function
+es1/Date.prototype.valueOf.js: TypeError: Not a function
 es1/Function.js: new Function with body failed; new Function with parameter failed; new Function with two parameters failed; Function as function failed
 es1/Function.length.js: Function.length failed
 es1/Function.prototype.constructor.js: OK
 es1/Function.prototype.js: OK
-es1/Function.prototype.toString.js: Uncaught Exception
+es1/Function.prototype.toString.js: TypeError: Not a function
 es1/Math.E.js: failed
 es1/Math.LN2.js: failed
 es1/Math.LN10.js: failed
@@ -67,62 +67,62 @@ es1/Math.LOG10E.js: failed
 es1/Math.PI.js: failed
 es1/Math.SQRT1_2.js: failed
 es1/Math.SQRT2.js: failed
-es1/Math.abs.js: Uncaught Exception
-es1/Math.acos.js: Uncaught Exception
-es1/Math.asin.js: Uncaught Exception
-es1/Math.atan2.js: Uncaught Exception
-es1/Math.atan.js: Uncaught Exception
-es1/Math.ceil.js: Uncaught Exception
-es1/Math.cos.js: Uncaught Exception
-es1/Math.exp.js: Uncaught Exception
-es1/Math.floor.js: Uncaught Exception
-es1/Math.log.js: Uncaught Exception
-es1/Math.max.js: Uncaught Exception
-es1/Math.min.js: Uncaught Exception
-es1/Math.pow.js: Uncaught Exception
+es1/Math.abs.js: TypeError: Not a function
+es1/Math.acos.js: TypeError: Not a function
+es1/Math.asin.js: TypeError: Not a function
+es1/Math.atan2.js: TypeError: Not a function
+es1/Math.atan.js: TypeError: Not a function
+es1/Math.ceil.js: TypeError: Not a function
+es1/Math.cos.js: TypeError: Not a function
+es1/Math.exp.js: TypeError: Not a function
+es1/Math.floor.js: TypeError: Not a function
+es1/Math.log.js: TypeError: Not a function
+es1/Math.max.js: TypeError: Not a function
+es1/Math.min.js: TypeError: Not a function
+es1/Math.pow.js: TypeError: Not a function
 es1/Math.random.js: OK
-es1/Math.round.js: Uncaught Exception
-es1/Math.sin.js: Uncaught Exception
-es1/Math.sqrt.js: Uncaught Exception
-es1/Math.tan.js: Uncaught Exception
-es1/Number.MAX_VALUE.js: Uncaught Exception
-es1/Number.MIN_VALUE.js: Uncaught Exception
-es1/Number.NEGATIVE_INFINITY.js: Uncaught Exception
-es1/Number.NaN.js: Uncaught Exception
-es1/Number.POSITIVE_INFINITY.js: Uncaught Exception
-es1/Number.js: Uncaught Exception
-es1/Number.prototype.constructor.js: Uncaught Exception
-es1/Number.prototype.toString.js: Uncaught Exception
-es1/Number.prototype.valueOf.js: Uncaught Exception
+es1/Math.round.js: TypeError: Not a function
+es1/Math.sin.js: TypeError: Not a function
+es1/Math.sqrt.js: TypeError: Not a function
+es1/Math.tan.js: TypeError: Not a function
+es1/Number.MAX_VALUE.js: ReferenceError: Number is not defined
+es1/Number.MIN_VALUE.js: ReferenceError: Number is not defined
+es1/Number.NEGATIVE_INFINITY.js: ReferenceError: Number is not defined
+es1/Number.NaN.js: ReferenceError: Number is not defined
+es1/Number.POSITIVE_INFINITY.js: ReferenceError: Number is not defined
+es1/Number.js: ReferenceError: Number is not defined
+es1/Number.prototype.constructor.js: ReferenceError: Number is not defined
+es1/Number.prototype.toString.js: ReferenceError: Number is not defined
+es1/Number.prototype.valueOf.js: ReferenceError: Number is not defined
 es1/Object.js: Object(number) failed; new Object(string) failed
 es1/Object.prototype.constructor.js: OK
-es1/Object.prototype.toString.js: Uncaught Exception
-es1/Object.prototype.valueOf.js: Uncaught Exception
-es1/String.fromCharCode.js: Uncaught Exception
-es1/String.generics.js: Uncaught Exception
-es1/String.js: Uncaught Exception
-es1/String.length.js: Uncaught Exception
-es1/String.prototype.charAt.js: Uncaught Exception
-es1/String.prototype.charCodeAt.js: Uncaught Exception
-es1/String.prototype.constructor.js: Uncaught Exception
+es1/Object.prototype.toString.js: TypeError: Not a function
+es1/Object.prototype.valueOf.js: TypeError: Not a function
+es1/String.fromCharCode.js: ReferenceError: String is not defined
+es1/String.generics.js: ReferenceError: String is not defined
+es1/String.js: ReferenceError: String is not defined
+es1/String.length.js: ReferenceError: String is not defined
+es1/String.prototype.charAt.js: TypeError: Not a function
+es1/String.prototype.charCodeAt.js: TypeError: Not a function
+es1/String.prototype.constructor.js: ReferenceError: String is not defined
 es1/String.prototype.indexOf.js: indexOf with position failed
-es1/String.prototype.lastIndexOf.js: Uncaught Exception
+es1/String.prototype.lastIndexOf.js: TypeError: Not a function
 es1/String.prototype.split.js: split('') failed
-es1/String.prototype.substring.js: Uncaught Exception
-es1/String.prototype.toLowerCase.js: Uncaught Exception
-es1/String.prototype.toString.js: Uncaught Exception
-es1/String.prototype.toUpperCase.js: Uncaught Exception
-es1/String.prototype.valueOf.js: Uncaught Exception
-es1/annex-b.Date.prototype.getYear.js: Uncaught Exception
-es1/annex-b.Date.prototype.setYear.js: Uncaught Exception
-es1/annex-b.Date.prototype.toGMTString.js: Uncaught Exception
-es1/annex-b.global.escape.js: Uncaught Exception
-es1/annex-b.global.unescape.js: Uncaught Exception
+es1/String.prototype.substring.js: TypeError: Not a function
+es1/String.prototype.toLowerCase.js: TypeError: Not a function
+es1/String.prototype.toString.js: ReferenceError: String is not defined
+es1/String.prototype.toUpperCase.js: TypeError: Not a function
+es1/String.prototype.valueOf.js: ReferenceError: String is not defined
+es1/annex-b.Date.prototype.getYear.js: TypeError: Not a function
+es1/annex-b.Date.prototype.setYear.js: TypeError: Not a function
+es1/annex-b.Date.prototype.toGMTString.js: TypeError: Not a function
+es1/annex-b.global.escape.js: ReferenceError: escape is not defined
+es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
-es1/asi.eval.js: Uncaught Exception
+es1/asi.eval.js: ReferenceError: eval is not defined
 es1/asi.js: OK
 es1/assignment.bitwise.js: SyntaxError: assignment.bitwise.js:9:2: unexpected token.
 es1/assignment.js: OK
@@ -137,23 +137,23 @@ es1/comma.js: OK
 es1/comments.js: SyntaxError: comments.js:13:4: unexpected token.
 es1/conditional.js: OK
 es1/continue.js: OK
-es1/conversions.ToBoolean.js: Uncaught Exception
+es1/conversions.ToBoolean.js: ReferenceError: Boolean is not defined
 es1/conversions.ToInt32.js: 2^32-1 failed; 2^32 failed; 2^31 failed; -2^31-1 failed
-es1/conversions.ToInteger.js: Uncaught Exception
-es1/conversions.ToNumber.js: Uncaught Exception
+es1/conversions.ToInteger.js: TypeError: Not a function
+es1/conversions.ToNumber.js: ReferenceError: Number is not defined
 es1/conversions.ToObject.js: true failed; false failed; 123 failed; 'hello' failed
-es1/conversions.ToString.js: Uncaught Exception
+es1/conversions.ToString.js: ReferenceError: String is not defined
 es1/conversions.ToUint32.js: 2^32 failed; -1 failed; -2^31 failed
 es1/conversions.js: false != ''; '5' * '6' != 30; 123 * '' != 0; true * '5' != 5; false * 123 != 0; '6' / '5' != 1.2; false / 1 != 0; '5' % '6' != 5
 es1/equals.js: OK
-es1/eval.js: Uncaught Exception
+es1/eval.js: ReferenceError: eval is not defined
 es1/for-in.js: SyntaxError: for-in.js:9:13: expect ';' or line terminator
 es1/for.js: OK
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
-es1/global.isFinite.js: Uncaught Exception
-es1/global.isNaN.js: Uncaught Exception
+es1/global.isFinite.js: ReferenceError: isFinite is not defined
+es1/global.isNaN.js: ReferenceError: isNaN is not defined
 es1/global.parseFloat.js: OK
 es1/global.parseInt.hex.js: OK
 es1/global.parseInt.js: OK
@@ -165,7 +165,7 @@ es1/literals.string.hex.js: OK
 es1/literals.string.js: OK
 es1/literals.string.unicode.js: OK
 es1/logical.js: OK
-es1/new.typeof.js: Uncaught Exception
+es1/new.typeof.js: ReferenceError: String is not defined
 es1/numbers.double.js: OK
 es1/numbers.fmod.js: 5.5 % 2.5 failed; 7.2 % 3.0 failed; -5.5 % 2.5 sign failed
 es1/numbers.inf.js: OK
@@ -180,7 +180,7 @@ es1/return.typeof.js: OK
 es1/this.js: OK
 es1/typeof.js: OK
 es1/typeof.null.js: OK
-es1/typeof.undeclared.js: Uncaught Exception
+es1/typeof.undeclared.js: ReferenceError: a is not defined
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
@@ -197,95 +197,95 @@ es1/void.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/c
 es1/void.typeof.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
 es1/while.js: OK
 es1/with.js: SyntaxError: with.js:15:5: unexpected token.
-es3/Array.prototype.concat.js: Uncaught Exception
-es3/Array.prototype.pop.generic.js: Uncaught Exception
+es3/Array.prototype.concat.js: TypeError: Not a function
+es3/Array.prototype.pop.generic.js: Runtime error: Array.prototype.pop.generic.js:13:14: Uncaught Exception; var popped1 = Array.prototype.pop.call(obj1);; Error(Unknown)
 es3/Array.prototype.pop.js: OK
-es3/Array.prototype.push.generic.js: Uncaught Exception
+es3/Array.prototype.push.generic.js: Runtime error: Array.prototype.push.generic.js:12:11: Uncaught Exception; var len1 = Array.prototype.push.call(obj1, "c");; Error(Unknown)
 es3/Array.prototype.push.js: OK
-es3/Array.prototype.shift.generic.js: Uncaught Exception
-es3/Array.prototype.shift.js: Uncaught Exception
-es3/Array.prototype.slice.generic.js: Uncaught Exception
-es3/Array.prototype.slice.js: Uncaught Exception
-es3/Array.prototype.splice.generic.js: Uncaught Exception
-es3/Array.prototype.splice.js: Uncaught Exception
-es3/Array.prototype.toLocaleString.js: Uncaught Exception
-es3/Array.prototype.unshift.generic.js: Uncaught Exception
-es3/Array.prototype.unshift.js: Uncaught Exception
-es3/Array.prototype.unshift.returns-new-length.js: Uncaught Exception
-es3/Date.prototype.toDateString.js: Uncaught Exception
-es3/Date.prototype.toLocaleDateString.js: Uncaught Exception
-es3/Date.prototype.toLocaleString.js: Uncaught Exception
-es3/Date.prototype.toLocaleTimeString.js: Uncaught Exception
-es3/Date.prototype.toTimeString.js: Uncaught Exception
+es3/Array.prototype.shift.generic.js: TypeError: Cannot read property 'call' of undefined
+es3/Array.prototype.shift.js: TypeError: Not a function
+es3/Array.prototype.slice.generic.js: TypeError: Cannot read property 'call' of undefined
+es3/Array.prototype.slice.js: TypeError: Not a function
+es3/Array.prototype.splice.generic.js: TypeError: Cannot read property 'call' of undefined
+es3/Array.prototype.splice.js: TypeError: Not a function
+es3/Array.prototype.toLocaleString.js: TypeError: Not a function
+es3/Array.prototype.unshift.generic.js: TypeError: Cannot read property 'call' of undefined
+es3/Array.prototype.unshift.js: TypeError: Not a function
+es3/Array.prototype.unshift.returns-new-length.js: TypeError: Not a function
+es3/Date.prototype.toDateString.js: TypeError: Not a function
+es3/Date.prototype.toLocaleDateString.js: TypeError: Not a function
+es3/Date.prototype.toLocaleString.js: TypeError: Not a function
+es3/Date.prototype.toLocaleTimeString.js: TypeError: Not a function
+es3/Date.prototype.toTimeString.js: TypeError: Not a function
 es3/Error.js: new Error failed; Error as function failed; Error without message failed
 es3/Error.prototype.constructor.js: OK
 es3/Error.prototype.message.js: failed
 es3/Error.prototype.name.js: failed
-es3/Error.prototype.toString.js: Uncaught Exception
-es3/Function.prototype.apply.js: Uncaught Exception
+es3/Error.prototype.toString.js: TypeError: Not a function
+es3/Function.prototype.apply.js: TypeError: Not a function
 es3/Function.prototype.call.js: OK
-es3/Math.max.variadic.js: Uncaught Exception
-es3/Math.min.variadic.js: Uncaught Exception
+es3/Math.max.variadic.js: TypeError: Not a function
+es3/Math.min.variadic.js: TypeError: Not a function
 es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
-es3/Number.prototype.toExponential.js: Uncaught Exception
-es3/Number.prototype.toExponential.rounding.js: Uncaught Exception
+es3/Number.prototype.toExponential.js: TypeError: Not a function
+es3/Number.prototype.toExponential.rounding.js: TypeError: Not a function
 es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError: Number.prototype.toExponential.throws-infinity.js:13:8: expect ')'
-es3/Number.prototype.toFixed.js: Uncaught Exception
-es3/Number.prototype.toLocaleString.js: Uncaught Exception
-es3/Number.prototype.toPrecision.js: Uncaught Exception
-es3/Object.prototype.hasOwnProperty.js: Uncaught Exception
-es3/Object.prototype.isPrototypeOf.js: Uncaught Exception
-es3/Object.prototype.propertyIsEnumerable.js: Uncaught Exception
-es3/Object.prototype.toLocaleString.js: Uncaught Exception
+es3/Number.prototype.toFixed.js: TypeError: Not a function
+es3/Number.prototype.toLocaleString.js: TypeError: Not a function
+es3/Number.prototype.toPrecision.js: TypeError: Not a function
+es3/Object.prototype.hasOwnProperty.js: TypeError: Not a function
+es3/Object.prototype.isPrototypeOf.js: TypeError: Not a function
+es3/Object.prototype.propertyIsEnumerable.js: TypeError: Not a function
+es3/Object.prototype.toLocaleString.js: TypeError: Not a function
 es3/RegExp.global.js: SyntaxError: RegExp.global.js:22:10: unexpected token.
 es3/RegExp.ignoreCase.js: SyntaxError: RegExp.ignoreCase.js:22:10: unexpected token.
-es3/RegExp.js: Uncaught Exception
-es3/RegExp.lastIndex.js: Uncaught Exception
+es3/RegExp.js: ReferenceError: RegExp is not defined
+es3/RegExp.lastIndex.js: ReferenceError: RegExp is not defined
 es3/RegExp.multiline.js: SyntaxError: RegExp.multiline.js:22:10: unexpected token.
-es3/RegExp.prototype.constructor.js: Uncaught Exception
-es3/RegExp.prototype.exec.js: Uncaught Exception
-es3/RegExp.prototype.test.js: Uncaught Exception
-es3/RegExp.prototype.toString.js: Uncaught Exception
-es3/RegExp.source.js: Uncaught Exception
-es3/String.prototype.concat.generic.js: Uncaught Exception
-es3/String.prototype.concat.js: Uncaught Exception
-es3/String.prototype.localeCompare.js: Uncaught Exception
+es3/RegExp.prototype.constructor.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.exec.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.test.js: ReferenceError: RegExp is not defined
+es3/RegExp.prototype.toString.js: ReferenceError: RegExp is not defined
+es3/RegExp.source.js: ReferenceError: RegExp is not defined
+es3/String.prototype.concat.generic.js: ReferenceError: Number is not defined
+es3/String.prototype.concat.js: TypeError: Not a function
+es3/String.prototype.localeCompare.js: TypeError: Not a function
 es3/String.prototype.match.generic.js: SyntaxError: String.prototype.match.generic.js:7:46: unexpected token.
 es3/String.prototype.match.js: SyntaxError: String.prototype.match.js:9:23: unexpected token.
 es3/String.prototype.replace.capture.js: SyntaxError: String.prototype.replace.capture.js:9:20: unexpected token.
 es3/String.prototype.replace.extra.js: SyntaxError: String.prototype.replace.extra.js:9:20: unexpected token.
 es3/String.prototype.replace.generic.js: SyntaxError: String.prototype.replace.generic.js:46:45: unexpected token.
 es3/String.prototype.replace.regex.js: SyntaxError: String.prototype.replace.regex.js:9:25: unexpected token.
-es3/String.prototype.replace.str.js: Uncaught Exception
+es3/String.prototype.replace.str.js: TypeError: Not a function
 es3/String.prototype.search.generic.js: SyntaxError: String.prototype.search.generic.js:7:47: unexpected token.
 es3/String.prototype.search.js: SyntaxError: String.prototype.search.js:9:24: unexpected token.
-es3/String.prototype.search.str.js: Uncaught Exception
-es3/String.prototype.slice.generic.js: Uncaught Exception
-es3/String.prototype.slice.js: Uncaught Exception
+es3/String.prototype.search.str.js: TypeError: Not a function
+es3/String.prototype.slice.generic.js: ReferenceError: Number is not defined
+es3/String.prototype.slice.js: TypeError: Not a function
 es3/String.prototype.split.bugs.js: SyntaxError: String.prototype.split.bugs.js:68:15: unexpected token.
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
 es3/String.prototype.split.regex.js: SyntaxError: String.prototype.split.regex.js:9:23: unexpected token.
-es3/String.prototype.toLocaleLowerCase.js: Uncaught Exception
-es3/String.prototype.toLocaleUpperCase.js: Uncaught Exception
-es3/annex-b.String.prototype.substr.js: Uncaught Exception
+es3/String.prototype.toLocaleLowerCase.js: TypeError: Not a function
+es3/String.prototype.toLocaleUpperCase.js: TypeError: Not a function
+es3/annex-b.String.prototype.substr.js: TypeError: Not a function
 es3/do-while.js: SyntaxError: do-while.js:9:3: unexpected token.
 es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
-es3/global.EvalError.js: Uncaught Exception
-es3/global.RangeError.js: Uncaught Exception
+es3/global.EvalError.js: ReferenceError: EvalError is not defined
+es3/global.RangeError.js: ReferenceError: RangeError is not defined
 es3/global.RangeError.thrown.js: crashed: SIGABRT
-es3/global.ReferenceError.js: Uncaught Exception
+es3/global.ReferenceError.js: ReferenceError: ReferenceError is not defined
 es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wrong exception for undeclared function; wrong exception for undeclared in expression; wrong exception for property access on undeclared
-es3/global.SyntaxError.js: Uncaught Exception
+es3/global.SyntaxError.js: ReferenceError: SyntaxError is not defined
 es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
-es3/global.TypeError.js: Uncaught Exception
+es3/global.TypeError.js: ReferenceError: TypeError is not defined
 es3/global.TypeError.thrown.js: SyntaxError: global.TypeError.thrown.js:11:13: expect ';' or line terminator
-es3/global.URIError.js: Uncaught Exception
+es3/global.URIError.js: ReferenceError: URIError is not defined
 es3/global.URIError.thrown.js: crashed: thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: "invalid sequence"', lexer/src/lib.rs:449:22
-es3/global.decodeURIComponent.js: Uncaught Exception
-es3/global.decodeURI.js: Uncaught Exception
-es3/global.encodeURIComponent.js: Uncaught Exception
-es3/global.encodeURI.js: Uncaught Exception
+es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
+es3/global.decodeURI.js: ReferenceError: decodeURI is not defined
+es3/global.encodeURIComponent.js: ReferenceError: encodeURIComponent is not defined
+es3/global.encodeURI.js: ReferenceError: encodeURI is not defined
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: crashed: thread 'main' panicked at 'byte index 127 is not a char boundary; it is inside 'ж' (bytes 126..128) of `// ES3: 7.6 Identifiers
 es3/instanceof.js: SyntaxError: instanceof.js:9:8: expect ')'
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: SyntaxError: literals.regex.ambiguous.js:19:12:
 es3/literals.regex.empty.js: SyntaxError: literals.regex.empty.js:8:9: unexpected token.
 es3/literals.regex.js: SyntaxError: literals.regex.js:6:9: unexpected token.
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: Uncaught Exception
+es3/nested-functions.eval.js: ReferenceError: eval is not defined
 es3/nested-functions.js: OK
 es3/regex.backref.js: SyntaxError: regex.backref.js:9:9: unexpected token.
 es3/regex.begin.js: SyntaxError: regex.begin.js:9:4: unexpected token.
@@ -345,50 +345,50 @@ es3/strict-equals.js: OK
 es3/switch.js: SyntaxError: switch.js:36:9: unexpected token.
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
-es5/Array.isArray.js: Uncaught Exception
-es5/Array.prototype.every.js: Uncaught Exception
-es5/Array.prototype.filter.js: Uncaught Exception
-es5/Array.prototype.forEach.js: Uncaught Exception
-es5/Array.prototype.indexOf.js: Uncaught Exception
-es5/Array.prototype.lastIndexOf.js: Uncaught Exception
+es5/Array.isArray.js: TypeError: Not a function
+es5/Array.prototype.every.js: TypeError: Not a function
+es5/Array.prototype.filter.js: TypeError: Not a function
+es5/Array.prototype.forEach.js: TypeError: Not a function
+es5/Array.prototype.indexOf.js: TypeError: Not a function
+es5/Array.prototype.lastIndexOf.js: TypeError: Not a function
 es5/Array.prototype.map.js: OK
-es5/Array.prototype.reduceRight.js: Uncaught Exception
-es5/Array.prototype.reduce.js: Uncaught Exception
-es5/Array.prototype.some.js: Uncaught Exception
+es5/Array.prototype.reduceRight.js: TypeError: Not a function
+es5/Array.prototype.reduce.js: TypeError: Not a function
+es5/Array.prototype.some.js: TypeError: Not a function
 es5/Array.prototype.sort.TypeError.js: SyntaxError: Array.prototype.sort.TypeError.js:35:12: unexpected token.
-es5/Array.prototype.sort.undefined-comparefn.js: Uncaught Exception
-es5/Date.now.js: Uncaught Exception
+es5/Array.prototype.sort.undefined-comparefn.js: TypeError: Not a function
+es5/Date.now.js: TypeError: Not a function
 es5/Date.prototype.toISOString.js: SyntaxError: Date.prototype.toISOString.js:45:8: expect ')'
-es5/Date.prototype.toJSON.js: Uncaught Exception
+es5/Date.prototype.toJSON.js: TypeError: Cannot read property 'call' of undefined
 es5/Function.prototype-not-enumerable.js: SyntaxError: Function.prototype-not-enumerable.js:25:13: expect ';' or line terminator
 es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: SyntaxError: Function.prototype.bind.js:44:30: expect ')'
-es5/JSON.js: Uncaught Exception
+es5/JSON.js: ReferenceError: JSON is not defined
 es5/JSON.parse.js: SyntaxError: JSON.parse.js:73:10: expect ')'
 es5/JSON.parse.reviver.js: SyntaxError: JSON.parse.reviver.js:30:31: expect ')'
 es5/JSON.stringify.js: SyntaxError: JSON.stringify.js:62:10: expect ')'
-es5/JSON.stringify.replacer.js: Uncaught Exception
-es5/JSON.stringify.space.js: Uncaught Exception
-es5/Object.create.js: Uncaught Exception
-es5/Object.defineProperties.js: Uncaught Exception
-es5/Object.defineProperty.js: Uncaught Exception
+es5/JSON.stringify.replacer.js: ReferenceError: JSON is not defined
+es5/JSON.stringify.space.js: ReferenceError: JSON is not defined
+es5/Object.create.js: TypeError: Not a function
+es5/Object.defineProperties.js: TypeError: Not a function
+es5/Object.defineProperty.js: TypeError: Not a function
 es5/Object.freeze.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
-es5/Object.getOwnPropertyDescriptor.js: Uncaught Exception
-es5/Object.getOwnPropertyNames.js: Uncaught Exception
-es5/Object.getPrototypeOf.js: Uncaught Exception
-es5/Object.isExtensible.js: Uncaught Exception
-es5/Object.isFrozen.js: Uncaught Exception
-es5/Object.isSealed.js: Uncaught Exception
-es5/Object.keys.js: Uncaught Exception
+es5/Object.getOwnPropertyDescriptor.js: TypeError: Not a function
+es5/Object.getOwnPropertyNames.js: TypeError: Not a function
+es5/Object.getPrototypeOf.js: TypeError: Not a function
+es5/Object.isExtensible.js: TypeError: Not a function
+es5/Object.isFrozen.js: TypeError: Not a function
+es5/Object.isSealed.js: TypeError: Not a function
+es5/Object.keys.js: TypeError: Not a function
 es5/Object.preventExtensions.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
 es5/Object.property-shadowing.js: SyntaxError: Object.property-shadowing.js:12:11: expect ';' or line terminator
 es5/Object.seal.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
 es5/String.indexing.js: crashed: thread 'main' panicked at 'called `Option::unwrap()` on a `None` value', core/src/vm/jsvalue/value.rs:379:64
-es5/String.prototype.trim.js: Uncaught Exception
-es5/arguments.toStringTag.js: Uncaught Exception
+es5/String.prototype.trim.js: ReferenceError: String is not defined
+es5/arguments.toStringTag.js: TypeError: Cannot read property 'call' of undefined
 es5/debugger.js: SyntaxError: debugger.js:7:0: unexpected token.
 es5/global.Infinity.immutable.js: OK
-es5/global.NaN.immutable.js: Uncaught Exception
+es5/global.NaN.immutable.js: TypeError: Not a function
 es5/global.parseInt.no-octal.js: OK
 es5/global.undefined.immutable.js: crashed: thread 'main' panicked at 'not implemented', core/src/vm/codegen.rs:816:18
 es5/literals.object.getters.js: OK
@@ -414,7 +414,7 @@ es5/strict.no-function-caller-or-arguments.js: SyntaxError: strict.no-function-c
 es5/strict.no-octal-literals.js: SyntaxError: strict.no-octal-literals.js:24:21: expect ')'
 es5/strict.no-with.js: SyntaxError: strict.no-with.js:18:24: expect ')'
 es5/strict.reserved-words.js: SyntaxError: strict.reserved-words.js:22:27: expect ')'
-es5/strict.this-primitive-not-coerced-in-accessors.js: Uncaught Exception
+es5/strict.this-primitive-not-coerced-in-accessors.js: ReferenceError: String is not defined
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
@@ -470,7 +470,7 @@ compat-table/es5/misc.Function.apply.array-likes.js: failed
 compat-table/es5/misc.Function.prototype.non-enumerable.js: exception: [unimplemented]
 compat-table/es5/misc.enumerable-shadow.js: SyntaxError: misc.enumerable-shadow.js:10:13: expect ';' or line terminator
 compat-table/es5/misc.parseInt.ignores-leading-zeros.js: OK
-compat-table/es5/misc.thrown-functions-this.js: SyntaxError: misc.thrown-functions-this.js:9:36: expect ')'
+compat-table/es5/misc.thrown-functions-this.js: SyntaxError: misc.thrown-functions-this.js:9:37: expect ')'
 compat-table/es5/misc.unreserved-words.js: SyntaxError: misc.unreserved-words.js:8:6: Expect identifier.
 compat-table/es5/misc.zero-width-identifiers.js: SyntaxError: misc.zero-width-identifiers.js:8:7: expect ';' or line terminator
 compat-table/es5/strict.arguments-callee-error.js: SyntaxError: strict.arguments-callee-error.js:10:66: expect ')'
@@ -483,7 +483,7 @@ compat-table/es5/strict.delete-bindings-error.js: SyntaxError: strict.delete-bin
 compat-table/es5/strict.delete-non-configurable-error.js: SyntaxError: strict.delete-non-configurable-error.js:10:71: unexpected token.
 compat-table/es5/strict.eval-arguments-bindings-error.js: SyntaxError: strict.eval-arguments-bindings-error.js:10:81: expect ')'
 compat-table/es5/strict.eval-no-bindings.js: SyntaxError: strict.eval-no-bindings.js:10:107: unexpected token.
-compat-table/es5/strict.function-caller-arguments-error.js: SyntaxError: strict.function-caller-arguments-error.js:10:74: expect ')'
+compat-table/es5/strict.function-caller-arguments-error.js: SyntaxError: strict.function-caller-arguments-error.js:10:75: expect ')'
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
 compat-table/es5/strict.legacy-octal-error.js: SyntaxError: strict.legacy-octal-error.js:10:65: expect ')'
 compat-table/es5/strict.repeated-params-error.js: SyntaxError: strict.repeated-params-error.js:10:76: unexpected token.
@@ -495,13 +495,13 @@ compat-table/es5/strict.with-error.js: SyntaxError: strict.with-error.js:10:66: 
 compat-table/es6/Array.Symbol.species.js: SyntaxError: Array.Symbol.species.js:11:18: unexpected token.
 compat-table/es6/Array.from.array-like.js: exception: [unimplemented]
 compat-table/es6/Array.from.generator.js: SyntaxError: Array.from.generator.js:9:27: expect ')'
-compat-table/es6/Array.from.iterable-instance.js: Uncaught Exception
-compat-table/es6/Array.from.iterable.js: Uncaught Exception
-compat-table/es6/Array.from.iterator-closing.js: Uncaught Exception
+compat-table/es6/Array.from.iterable-instance.js: ReferenceError: global is not defined
+compat-table/es6/Array.from.iterable.js: ReferenceError: global is not defined
+compat-table/es6/Array.from.iterator-closing.js: ReferenceError: global is not defined
 compat-table/es6/Array.from.map.array-like.js: exception: [unimplemented]
 compat-table/es6/Array.from.map.generator.js: SyntaxError: Array.from.map.generator.js:9:27: expect ')'
-compat-table/es6/Array.from.map.iterable-instance.js: Uncaught Exception
-compat-table/es6/Array.from.map.iterable.js: Uncaught Exception
+compat-table/es6/Array.from.map.iterable-instance.js: ReferenceError: global is not defined
+compat-table/es6/Array.from.map.iterable.js: ReferenceError: global is not defined
 compat-table/es6/Array.iterator-prototype-chain.js: SyntaxError: Array.iterator-prototype-chain.js:17:4: unexpected token.
 compat-table/es6/Array.of.js: failed
 compat-table/es6/Array.prototype.Symbol.iterator.js: failed
@@ -537,7 +537,7 @@ compat-table/es6/Map.constructor-accepts-null.js: exception: [unimplemented]
 compat-table/es6/Map.constructor-arguments.js: exception: [unimplemented]
 compat-table/es6/Map.constructor-invokes-set.js: exception: [unimplemented]
 compat-table/es6/Map.constructor-requires-new.js: exception: [unimplemented]
-compat-table/es6/Map.iterator-closing.js: Uncaught Exception
+compat-table/es6/Map.iterator-closing.js: ReferenceError: global is not defined
 compat-table/es6/Map.iterator-prototype-chain.js: SyntaxError: Map.iterator-prototype-chain.js:18:4: unexpected token.
 compat-table/es6/Map.js: exception: [unimplemented]
 compat-table/es6/Map.prototype-not-instance.js: exception: [unimplemented]
@@ -654,7 +654,7 @@ compat-table/es6/Set.constructor-accepts-null.js: exception: [unimplemented]
 compat-table/es6/Set.constructor-arguments.js: exception: [unimplemented]
 compat-table/es6/Set.constructor-invokes-add.js: exception: [unimplemented]
 compat-table/es6/Set.constructor-requires-new.js: exception: [unimplemented]
-compat-table/es6/Set.iterator-closing.js: Uncaught Exception
+compat-table/es6/Set.iterator-closing.js: ReferenceError: global is not defined
 compat-table/es6/Set.iterator-prototype-chain.js: SyntaxError: Set.iterator-prototype-chain.js:18:4: unexpected token.
 compat-table/es6/Set.js: exception: [unimplemented]
 compat-table/es6/Set.prototype-not-instance.js: exception: [unimplemented]
@@ -698,7 +698,7 @@ compat-table/es6/WeakMap.constructor-arguments.js: exception: [unimplemented]
 compat-table/es6/WeakMap.constructor-invokes-set.js: exception: [unimplemented]
 compat-table/es6/WeakMap.constructor-requires-new.js: exception: [unimplemented]
 compat-table/es6/WeakMap.frozen-keys.js: SyntaxError: WeakMap.frozen-keys.js:11:21: expect '('.
-compat-table/es6/WeakMap.iterator-closing.js: Uncaught Exception
+compat-table/es6/WeakMap.iterator-closing.js: ReferenceError: global is not defined
 compat-table/es6/WeakMap.js: exception: [unimplemented]
 compat-table/es6/WeakMap.no-clear.js: SyntaxError: WeakMap.no-clear.js:10:16: expect ')'
 compat-table/es6/WeakMap.prototype-not-instance.js: exception: [unimplemented]
@@ -709,7 +709,7 @@ compat-table/es6/WeakSet.constructor-accepts-null.js: exception: [unimplemented]
 compat-table/es6/WeakSet.constructor-arguments.js: exception: [unimplemented]
 compat-table/es6/WeakSet.constructor-invokes-add.js: exception: [unimplemented]
 compat-table/es6/WeakSet.constructor-requires-new.js: exception: [unimplemented]
-compat-table/es6/WeakSet.iterator-closing.js: Uncaught Exception
+compat-table/es6/WeakSet.iterator-closing.js: ReferenceError: global is not defined
 compat-table/es6/WeakSet.js: exception: [unimplemented]
 compat-table/es6/WeakSet.no-clear.js: SyntaxError: WeakSet.no-clear.js:10:16: expect ')'
 compat-table/es6/WeakSet.prototype-not-instance.js: exception: [unimplemented]
@@ -803,8 +803,8 @@ compat-table/es6/default-params.basic.js: SyntaxError: default-params.basic.js:1
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: default-params.explicit-undefined.js:10:24: expect ')'
 compat-table/es6/default-params.new-function.js: failed
 compat-table/es6/default-params.refer-previous.js: SyntaxError: default-params.refer-previous.js:10:27: expect ')'
-compat-table/es6/default-params.separate-scope.js: SyntaxError: default-params.separate-scope.js:10:21: expect ')'
-compat-table/es6/default-params.tdz.js: SyntaxError: default-params.tdz.js:10:23: expect ')'
+compat-table/es6/default-params.separate-scope.js: SyntaxError: default-params.separate-scope.js:10:22: expect ')'
+compat-table/es6/default-params.tdz.js: SyntaxError: default-params.tdz.js:10:24: expect ')'
 compat-table/es6/destructuring-assign.array.js: SyntaxError: destructuring-assign.array.js:11:3: Reference error: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.astral-string.js: crashed: thread 'main' panicked at 'byte index 467 is not a char boundary; it is inside '𠮷' (bytes 466..470) of `// compat-table: ES6 > syntax > destructuring, assignment (medium) > with astral plane strings
 compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: destructuring-assign.chained-iterable.js:11:11: Reference error: Invalid left-hand side in assignment.
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: destruc
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: destructuring-assign.object-primitives.js:11:4: Reference error: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.object.js: SyntaxError: destructuring-assign.object.js:11:4: Reference error: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: destructuring-assign.parenthesised-error.js:11:4: Reference error: Invalid left-hand side in assignment.
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: destructuring-assign.rest.identical.js:13:33: unexpected token.
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: destructuring-assign.rest.js:13:33: unexpected token.
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: destructuring-assign.sparse-array.js:11:3: Reference error: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.string.js: SyntaxError: destructuring-assign.string.js:11:3: Reference error: Invalid left-hand side in assignment.
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: destructuring-
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: destructuring-decl.nested.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: destructuring-decl.object-primitives.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.object.js: SyntaxError: destructuring-decl.object.js:10:6: Expect identifier.
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: destructuring-decl.rest.identical.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: destructuring-decl.rest.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: destructuring-decl.sparse-array.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.string.js: SyntaxError: destructuring-decl.string.js:10:6: Expect identifier.
@@ -852,31 +854,31 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: destr
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: destructuring-decl.trailing-comma-iterable.js:10:6: Expect identifier.
 compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: destructuring-decl.trailing-comma-object.js:10:6: Expect identifier.
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: destructuring-params.aliased-defaults-arrow.js:10:36: expect ')'
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: destructuring-params.arguments.js:10:20: expect ')'
-compat-table/es6/destructuring-params.array.js: SyntaxError: destructuring-params.array.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: destructuring-params.astral-string.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: destructuring-params.computed-properties.js:11:18: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: destructuring-params.arguments.js:10:21: expect ')'
+compat-table/es6/destructuring-params.array.js: SyntaxError: destructuring-params.array.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: destructuring-params.astral-string.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: destructuring-params.computed-properties.js:11:19: expect identifier (unsupported feature)
 compat-table/es6/destructuring-params.defaults-new-function.js: failed
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: destructuring-params.defaults-separate-scope.js:10:20: expect ')'
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: destructuring-params.defaults.js:10:20: expect ')'
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: destructuring-params.defaults-separate-scope.js:10:21: expect ')'
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: destructuring-params.defaults.js:10:21: expect ')'
 compat-table/es6/destructuring-params.duplicate-identifier.js: SyntaxError: destructuring-params.duplicate-identifier.js:14:15: expect ')'
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: destructuring-params.empty-patterns.js:10:19: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.generator.js: SyntaxError: destructuring-params.generator.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: destructuring-params.iterable-instance.js:34:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: destructuring-params.iterable.js:34:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: destructuring-params.iterator-closing.js:38:14: unexpected token.
-compat-table/es6/destructuring-params.length.js: SyntaxError: destructuring-params.length.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.nested.js: SyntaxError: destructuring-params.nested.js:10:18: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.generator.js: SyntaxError: destructuring-params.generator.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: destructuring-params.iterable-instance.js:34:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: destructuring-params.iterable.js:34:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: destructuring-params.iterator-closing.js:38:15: unexpected token.
+compat-table/es6/destructuring-params.length.js: SyntaxError: destructuring-params.length.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.nested.js: SyntaxError: destructuring-params.nested.js:10:19: expect identifier (unsupported feature)
 compat-table/es6/destructuring-params.new-function.js: failed
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: destructuring-params.object-primitives.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.object.js: SyntaxError: destructuring-params.object.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.rest.js: SyntaxError: destructuring-params.rest.js:10:18: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: destructuring-params.object-primitives.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.object.js: SyntaxError: destructuring-params.object.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.rest.js: SyntaxError: destructuring-params.rest.js:10:19: expect identifier (unsupported feature)
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: destructuring-params.shorthand-defaults-arrow.js:10:19: expect ')'
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: destructuring-params.sparse-array.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.string.js: SyntaxError: destructuring-params.string.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: destructuring-params.throws-null-undefined.js:11:15: expect ')'
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: destructuring-params.trailing-comma-iterable.js:10:18: expect identifier (unsupported feature)
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: destructuring-params.trailing-comma-object.js:10:18: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: destructuring-params.sparse-array.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.string.js: SyntaxError: destructuring-params.string.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: destructuring-params.throws-null-undefined.js:11:16: expect ')'
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: destructuring-params.trailing-comma-iterable.js:10:19: expect identifier (unsupported feature)
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: destructuring-params.trailing-comma-object.js:10:19: expect identifier (unsupported feature)
 compat-table/es6/for-of.array.js: SyntaxError: for-of.array.js:11:16: expect ';' or line terminator
 compat-table/es6/for-of.astral-string.js: crashed: thread 'main' panicked at 'byte index 461 is not a char boundary; it is inside '𠮷' (bytes 460..464) of `// compat-table: ES6 > syntax > for..of loops (large) > with astral plane strings
 compat-table/es6/for-of.generator.js: SyntaxError: for-of.generator.js:11:27: expect ')'
@@ -984,8 +986,8 @@ compat-table/es6/misc.Proxy.get.Object.assign.js: exception: [unimplemented]
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: exception: [unimplemented]
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: exception: [unimplemented]
 compat-table/es6/misc.Proxy.get.RegExp-constructor.js: exception: [unimplemented]
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: Uncaught Exception
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: Uncaught Exception
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: ReferenceError: global is not defined
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: ReferenceError: global is not defined
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: exception: [unimplemented]
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: exception: [unimplemented]
 compat-table/es6/misc.Proxy.get.RegExp.flags.js: SyntaxError: misc.Proxy.get.RegExp.flags.js:15:19: expect ')'
@@ -1057,8 +1059,8 @@ compat-table/es6/spread.generator-call.js: SyntaxError: spread.generator-call.js
 compat-table/es6/spread.generator-literal.js: SyntaxError: spread.generator-literal.js:10:27: expect ')'
 compat-table/es6/spread.iterable-call.js: SyntaxError: spread.iterable-call.js:35:18: unexpected token.
 compat-table/es6/spread.iterable-instance-call.js: SyntaxError: spread.iterable-instance-call.js:35:18: unexpected token.
-compat-table/es6/spread.iterable-instance-literal.js: Uncaught Exception
-compat-table/es6/spread.iterable-literal.js: Uncaught Exception
+compat-table/es6/spread.iterable-instance-literal.js: ReferenceError: global is not defined
+compat-table/es6/spread.iterable-literal.js: ReferenceError: global is not defined
 compat-table/es6/spread.non-iterable-error.js: SyntaxError: spread.non-iterable-error.js:11:16: unexpected token.
 compat-table/es6/spread.sparse-call.js: SyntaxError: spread.sparse-call.js:10:16: unexpected token.
 compat-table/es6/spread.sparse-literal.js: SyntaxError: spread.sparse-literal.js:11:16: unexpected token.
@@ -1132,7 +1134,7 @@ compat-table/es6/typed-arrays.Uint8Array.js: exception: [unimplemented]
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: exception: [unimplemented]
 compat-table/es6/typed-arrays.Uint16Array.js: exception: [unimplemented]
 compat-table/es6/typed-arrays.Uint32Array.js: exception: [unimplemented]
-compat-table/es6/typed-arrays.constructor-iterables.js: Uncaught Exception
+compat-table/es6/typed-arrays.constructor-iterables.js: ReferenceError: global is not defined
 compat-table/es6/typed-arrays.constructor-requires-new.js: SyntaxError: typed-arrays.constructor-requires-new.js:28:22: expect ')'
 compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: typed-arrays.correct-prototype-chains.js:27:26: expect ')'
 compat-table/es6/typed-arrays.from.js: SyntaxError: typed-arrays.from.js:11:6: unexpected token.
@@ -1180,7 +1182,7 @@ compat-table/es6/well-known.species.Array.filter.js: exception: [unimplemented]
 compat-table/es6/well-known.species.Array.map.js: exception: [unimplemented]
 compat-table/es6/well-known.species.Array.slice.js: exception: [unimplemented]
 compat-table/es6/well-known.species.Array.splice.js: exception: [unimplemented]
-compat-table/es6/well-known.species.Promise.then.js: SyntaxError: well-known.species.Promise.then.js:13:47: unexpected token.
+compat-table/es6/well-known.species.Promise.then.js: SyntaxError: well-known.species.Promise.then.js:13:48: unexpected token.
 compat-table/es6/well-known.species.RegExp.split.js: SyntaxError: well-known.species.RegExp.split.js:14:12: unexpected token.
 compat-table/es6/well-known.species.js: SyntaxError: well-known.species.js:10:22: unexpected token.
 compat-table/es6/well-known.split.js: failed
@@ -1326,7 +1328,7 @@ compat-table/es2020/Promise.allSettled.js: SyntaxError: Promise.allSettled.js:25
 compat-table/es2020/String.prototype.matchAll.js: SyntaxError: String.prototype.matchAll.js:10:35: unexpected token.
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: SyntaxError: String.prototype.matchAll.throws-non-global.js:12:23: unexpected token.
 compat-table/es2020/globalThis.descriptor.js: SyntaxError: globalThis.descriptor.js:14:21: expect ')'
-compat-table/es2020/globalThis.js: Uncaught Exception
+compat-table/es2020/globalThis.js: ReferenceError: globalThis is not defined
 compat-table/es2020/nullish-coalescing.js: SyntaxError: nullish-coalescing.js:10:18: expect ')'
 compat-table/es2020/optional-chaining.bracket.js: SyntaxError: optional-chaining.bracket.js:12:13: unexpected token.
 compat-table/es2020/optional-chaining.function-call.js: SyntaxError: optional-chaining.function-call.js:14:17: unexpected token.
@@ -1368,7 +1370,7 @@ compat-table/es2022/Object.hasOwn.ToObject-first.js: failed
 compat-table/es2022/Object.hasOwn.js: exception: [unimplemented]
 compat-table/es2022/at-method.Array.js: exception: [unimplemented]
 compat-table/es2022/at-method.String.js: exception: [unimplemented]
-compat-table/es2022/at-method.TypedArray.js: Uncaught Exception
+compat-table/es2022/at-method.TypedArray.js: ReferenceError: globalThis is not defined
 compat-table/es2022/class-fields.computed-instance.js: SyntaxError: class-fields.computed-instance.js:9:8: unexpected token.
 compat-table/es2022/class-fields.computed-static.js: SyntaxError: class-fields.computed-static.js:9:8: unexpected token.
 compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: class-fields.instance.parent-scope.js:11:10: unexpected token.
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: SyntaxError: RegExp.1-9.js:11:20: expect ')'
 compat-table/next/RegExp.lastMatch.js: SyntaxError: RegExp.lastMatch.js:10:11: unexpected token.
 compat-table/next/ShadowRealm.js: SyntaxError: ShadowRealm.js:11:20: unexpected token.
 compat-table/next/SuppressedError.js: SyntaxError: SuppressedError.js:13:10: unexpected token.
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Symbol.dispose.bound.js:11:4: Expect property definition.
 compat-table/next/Uint8Array.fromBase64.js: exception: [unimplemented]
 compat-table/next/Uint8Array.fromHex.js: exception: [unimplemented]
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Uint8Array.setFromBase64.js:12:6: Expect identifier.

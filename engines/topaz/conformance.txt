@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: failed
 compat-table/es6/destructuring-assign.rest.js: failed
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: failed
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: failed
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: failed
+compat-table/es6/destructuring-decl.rest.identical.js: failed
 compat-table/es6/destructuring-decl.rest.js: failed
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: failed
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: TypeError: exception: Tenray.Topaz.TopazExcepti
 compat-table/next/RegExp.lastMatch.js: exception: Tenray.Topaz.TopazException: Function re.exec is not defined.; at Tenray.Topaz.ErrorHandling.Exceptions.ThrowFunctionIsNotDefined(Object callee, ScriptExecutor scope) in /_/src/Topaz/ErrorH...
 compat-table/next/ShadowRealm.js: TypeError: ---> Tenray.Topaz.TopazException: TypeError: Cannot use 'in' operator to search for 'evaluate' in null
 compat-table/next/SuppressedError.js: SyntaxError: Line 13: Unexpected identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Line 17: Unexpected identifier
 compat-table/next/Uint8Array.fromBase64.js: exception: Tenray.Topaz.TopazException: Constructor call on null is not defined.; at Tenray.Topaz.ErrorHandling.Exceptions.ThrowCanNotCallConstructor(Object callee) in /_/src/Topaz/ErrorHandling/Excep...
 compat-table/next/Uint8Array.fromHex.js: exception: Tenray.Topaz.TopazException: Constructor call on null is not defined.; at Tenray.Topaz.ErrorHandling.Exceptions.ThrowCanNotCallConstructor(Object callee) in /_/src/Topaz/ErrorHandling/Excep...
 compat-table/next/Uint8Array.setFromBase64.js: exception: Tenray.Topaz.TopazException: Constructor call on null is not defined.; at Tenray.Topaz.ErrorHandling.Exceptions.ThrowCanNotCallConstructor(Object callee) in /_/src/Topaz/ErrorHandling/Excep...

@@ -24,7 +24,7 @@ es1/Date.prototype.getHours.js: failed
 es1/Date.prototype.getMilliseconds.js: failed
 es1/Date.prototype.getMinutes.js: failed
 es1/Date.prototype.getMonth.js: failed
-es1/Date.prototype.getSeconds.js: OK
+es1/Date.prototype.getSeconds.js: failed
 es1/Date.prototype.getTimezoneOffset.js: OK
 es1/Date.prototype.getTime.js: OK
 es1/Date.prototype.getUTCDate.js: NotImplementedError
@@ -138,12 +138,12 @@ es1/comments.js: OK
 es1/conditional.js: OK
 es1/continue.js: OK
 es1/conversions.ToBoolean.js: OK
-es1/conversions.ToInt32.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
+es1/conversions.ToInt32.js: OverflowError: cannot convert float infinity to integer
 es1/conversions.ToInteger.js: OK
 es1/conversions.ToNumber.js: OK
 es1/conversions.ToObject.js: OK
 es1/conversions.ToString.js: OK
-es1/conversions.ToUint32.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
+es1/conversions.ToUint32.js: OverflowError: cannot convert float infinity to integer
 es1/conversions.js: false == true
 es1/equals.js: false == true
 es1/eval.js: OK
@@ -279,7 +279,7 @@ es3/global.ReferenceError.thrown.js: wrong exception for undeclared variable; wr
 es3/global.SyntaxError.js: ReferenceError: SyntaxError is not defined
 es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: ReferenceError: TypeError is not defined
-es3/global.TypeError.thrown.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
+es3/global.TypeError.thrown.js: AttributeError: 'W__Object' object has no attribute 'Call'
 es3/global.URIError.js: ReferenceError: URIError is not defined
 es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
 es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
@@ -290,9 +290,9 @@ es3/global.undefined.js: OK
 es3/identifiers.unicode.js: Syntax Error in: identifiers.unicode.js:6; ^
 es3/instanceof.js: OK
 es3/in.js: OK
-es3/labelled.break.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
-es3/labelled.continue.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
-es3/labelled.statements.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
+es3/labelled.break.js: VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'loop1'), iterationstatement(whiles(Symbol('__11_while', 'while'), relationalexpression(Symbol('IDENTIFIERNAME', 'x'), Symbol('__...
+es3/labelled.continue.js: VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'loop1'), iterationstatement(whiles(Symbol('__11_while', 'while'), relationalexpression(Symbol('IDENTIFIERNAME', 'i'), Symbol('__...
+es3/labelled.statements.js: VisitError: could not visit labelledstatement(Symbol('IDENTIFIERNAME', 'label1'), expressionstatement(assignmentexpression(Symbol('IDENTIFIERNAME', 'x'), Symbol('__5_=', '='), Symbol('DECIMALLITERAL',...
 es3/literals.array.elisions.js: Syntax Error in: literals.array.elisions.js:6; ^; Error: ['EOF']
 es3/literals.array.js: OK
 es3/literals.array.trailing-comma.js: OK
@@ -415,7 +415,7 @@ es5/strict.no-octal-literals.js: failed
 es5/strict.no-with.js: OK
 es5/strict.reserved-words.js: ERROR in strict.reserved-words.js: Break outside loop
 es5/strict.this-primitive-not-coerced-in-accessors.js: TypeError: undefined is not a callable (defineProperty)
-es5/strict.this-primitive-not-coerced.js: Traceback (most recent call last):; File "/dist/rpython-langjs-dist/py-js.py", line 139, in <module>; main(sys.argv); File "/dist/rpython-langjs-dist/py-js.py", line 16, in main; run(files, opts); Fil...
+es5/strict.this-primitive-not-coerced.js: AttributeError: 'This' object has no attribute 'index'
 es5/strict.this-undefined-in-function.js: outer 'this' is not undefined
 es5/strict.unmapped-arguments.js: OK
 es5/this.thrown-function.js: TypeError: function() {} is not a callable (function() {})

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"8b4c24ba95bc8de6c60cbe927d4a533fc8e2e524eac85082d493405f3154df5a","binary_size":9521816,"console_log":"console.log","engine":"goja","go":"1.26.1","repository":"https://github.com/dop251/goja.git","revision":"065cd970411c0201a267efd3a4d5ac26d6e4e8a9","revision_date":"2026-03-11"}
+Metadata: {"arch":"arm64","binary_sha256":"911c6a0e0a98930afe7259504449f64a90b6f778e4dc271af7f7d590cffc2e1d","binary_size":9521944,"console_log":["console.log","print"],"engine":"goja","go":"1.26.0","repository":"https://github.com/dop251/goja.git","revision":"065cd970411c0201a267efd3a4d5ac26d6e4e8a9","revision_date":"2026-03-11"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: SuppressedError.js: Line 13:11 Unexpected identifier (and 11 more errors)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Symbol.dispose.bound.js: Line 17:11 Unexpected identifier (and 2 more errors)
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Object has no member 'fromBase64'
 compat-table/next/Uint8Array.fromHex.js: TypeError: Object has no member 'fromHex'
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Object has no member 'setFromBase64'

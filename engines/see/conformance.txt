@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: expecte
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: expected ':' but got '}'
 compat-table/es6/destructuring-assign.object.js: SyntaxError: expected ':' but got ','
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: expected ':' but got ','
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: expected null, true, false, number, string, or regex but got '.'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: expected null, true, false, number, string, or regex but got '.'
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: destructuring-assign.sparse-array.js:11: Left-hand-side of the assignment cannot be assigned to
 compat-table/es6/destructuring-assign.string.js: ReferenceError: destructuring-assign.string.js:11: Left-hand-side of the assignment cannot be assigned to
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: expected an id
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: expected an identifier but got '['
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: expected an identifier but got '{'
 compat-table/es6/destructuring-decl.object.js: SyntaxError: expected an identifier but got '{'
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: expected an identifier but got '['
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: expected an identifier but got '['
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: expected an identifier but got '['
 compat-table/es6/destructuring-decl.string.js: SyntaxError: expected an identifier but got '['
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: typed-arrays.Uint1
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: typed-arrays.Uint32Array.js:10: ArrayBuffer
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: typed-arrays.constructor-iterables.js:46: Function is not defined
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: typed-arrays.constructor-requires-new.js:12: ArrayBuffer
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: expected null, true, false, number, string, or regex but got a reserved word
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: typed-arrays.correct-prototype-chains.js:23: Int8Array
 compat-table/es6/typed-arrays.from.js: ReferenceError: typed-arrays.from.js:10: Int8Array
 compat-table/es6/typed-arrays.of.js: ReferenceError: typed-arrays.of.js:10: Int8Array
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: typed-arrays.prototype.Symbol.iterator.js:10: Int8Array
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: SyntaxError: expected an identifier
 compat-table/es2023/TypedArray.prototype.toReversed.js: ReferenceError: TypedArray.prototype.toReversed.js:10: Uint8Array
 compat-table/es2023/TypedArray.prototype.toSorted.js: ReferenceError: TypedArray.prototype.toSorted.js:10: Uint8Array
 compat-table/es2023/TypedArray.prototype.with.js: SyntaxError: expected an identifier but got 'with'
-compat-table/es2023/hashbang.js: SyntaxError: hashbang.js:11: line 1: unexpected character '#'
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: expected '}' but got a reserved word
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: expected '}' but got a reserved word
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: expected '}' but got a reserved word
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: expected ';', '}' or newline but got an identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: expected string, identifier or number but got '['
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: expected '}' but got a reserved word
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: expected '}' but got a reserved word
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: expected '}' but got a reserved word

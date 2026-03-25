@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: ReferenceError: inva
 compat-table/es6/destructuring-assign.object-primitives.js: ReferenceError: invalid lvalue
 compat-table/es6/destructuring-assign.object.js: ReferenceError: invalid lvalue
 compat-table/es6/destructuring-assign.parenthesised-error.js: ReferenceError: invalid lvalue
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: parse error (line 11)
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: parse error (line 11)
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: invalid lvalue
 compat-table/es6/destructuring-assign.string.js: ReferenceError: invalid lvalue
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: invalid variab
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: invalid variable declaration (line 10)
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: invalid variable declaration (line 10)
 compat-table/es6/destructuring-decl.object.js: SyntaxError: invalid variable declaration (line 10)
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: invalid variable declaration (line 10)
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: invalid variable declaration (line 10)
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: invalid variable declaration (line 10)
 compat-table/es6/destructuring-decl.string.js: SyntaxError: invalid variable declaration (line 10)
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: undefined not callable (
 compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: undefined not callable (property 'toReversed' of [object Uint8Array])
 compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: undefined not callable (property 'toSorted' of [object Uint8Array])
 compat-table/es2023/TypedArray.prototype.with.js: TypeError: undefined not callable (property 'with' of [object Uint8Array])
-compat-table/es2023/hashbang.js: SyntaxError: invalid token (line 1)
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined not callable (property 'transferToFixedLength' of [object ArrayBuffer])
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined not callable (property 'transfer' of [object ArrayBuffer])
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unterminated statement (line 13)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: unterminated statement (line 17)
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: parse error (line 13)
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: parse error (line 13)
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unterminated statement (line 11)

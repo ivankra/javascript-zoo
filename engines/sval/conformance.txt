@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":246413,"engine":"sval","repository":"https://github.com/Siubaak/sval.git","revision":"e42261766e4acec6c0ce61174590e2bec193f80b","revision_date":"2026-03-14","version":"0.6.9"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":246662,"engine":"sval","repository":"https://github.com/Siubaak/sval.git","revision":"4d006b0130fe082f14a9dc932158062219c0cc6a","revision_date":"2026-03-19"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: failed
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: TypeError: Cannot read properties of null
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: TypeError: Cannot read properties of null
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token (13:10)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token (17:10)
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK

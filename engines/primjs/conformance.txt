@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"1a25411c748e6b00663afafacfdbd0c6ef4c45b35e858667fc82b6388ae78dff","binary_size":1576368,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"primjs","repository":"https://github.com/lynx-family/primjs.git","revision":"7708cd5ccefffc86ed080666218d9e80703d17f4","revision_date":"2026-02-27","version":"2.15.0-rc.3-74-g7708cd5"}
+Metadata: {"arch":"arm64","binary_sha256":"9d476e5ea0df897829a962767d51974b2d09f3ac607593ab3fd36fc878a679be","binary_size":1576368,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":["console.log","print"],"engine":"primjs","repository":"https://github.com/lynx-family/primjs.git","revision":"f3de779e5169f219f65415870b1365395393130b","revision_date":"2026-03-20"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: expecting ';'
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: expecting ';'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: arr2.setFromBase64 is not a function

@@ -123,8 +123,8 @@ es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: OK
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: parser.rb:23:in `error!': Syntax error at line 27, col 4. Unexpected BAREWORD (Twostroke::ParseError); parser.rb:653:in `var_rest'; parser.rb:633:in `var'; parser.rb:62:in `statement'; parser.rb:734:i...
-es1/assignment.bitwise.js: parser.rb:23:in `error!': Syntax error at line 9, col 2. Unexpected LEFT_SHIFT_EQUALS (Twostroke::ParseError); parser.rb:332:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in...
+es1/asi.js: SyntaxError: Unexpected BAREWORD; parser.rb:653:in `var_rest'; parser.rb:633:in `var'; parser.rb:62:in `statement'; parser.rb:734:in `function'; parser.rb:71:in `statement'; parser.rb:16:in `parse'
+es1/assignment.bitwise.js: SyntaxError: Unexpected LEFT_SHIFT_EQUALS; parser.rb:332:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in `increment_expression'; parser.rb:275:in `unary_expression'; parser.rb:258:in `m...
 es1/assignment.js: OK
 es1/assignment.ltr.js: OK
 es1/assignment.unsigned-shift.js: OK
@@ -207,7 +207,7 @@ es3/Array.prototype.shift.js: OK
 es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
-es3/Array.prototype.splice.js: crashed: SIGKILL
+es3/Array.prototype.splice.js: OOM: >4096MB
 es3/Array.prototype.toLocaleString.js: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 es3/Array.prototype.unshift.generic.js: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 es3/Array.prototype.unshift.js: unshift multiple elements failed; unshift on empty array failed
@@ -273,7 +273,7 @@ es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: name failed
 es3/global.RangeError.js: name failed
-es3/global.RangeError.thrown.js: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length >= 2^32; no exception for negative array length; no exceptio...
+es3/global.RangeError.thrown.js: OOM: >4096MB
 es3/global.ReferenceError.js: name failed
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: name failed
@@ -391,10 +391,10 @@ es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Inf
 es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: undefined is not undefined after assignment
-es5/literals.object.getters.js: parser.rb:23:in `error!': Syntax error at line 9, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError); parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in ...
-es5/literals.object.setters.js: parser.rb:23:in `error!': Syntax error at line 10, col 17. Found BAREWORD<x>, expected COLON (Twostroke::ParseError); parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in...
+es5/literals.object.getters.js: SyntaxError: Found BAREWORD<x>, expected COLON; parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in `incremen...
+es5/literals.object.setters.js: SyntaxError: Found BAREWORD<x>, expected COLON; parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in `incremen...
 es5/literals.object.trailing-comma.js: OK
-es5/source.keyword-properties.js: parser.rb:23:in `error!': Syntax error at line 15, col 13. Found IF, expected BAREWORD, STRING, NUMBER (Twostroke::ParseError); parser.rb:26:in `assert_type'; parser.rb:677:in `object_literal'; parser...
+es5/source.keyword-properties.js: SyntaxError: Found IF, expected BAREWORD, STRING, NUMBER; parser.rb:26:in `assert_type'; parser.rb:677:in `object_literal'; parser.rb:330:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in...
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: lexer.rb:63:in `read_token': Illegal character '﻿' at line 1, col 1. (Twostroke::LexError); parser.rb:47:in `try_peek_token'; parser.rb:15:in `parse'
 es5/source.zero-width-chars.js: lexer.rb:63:in `read_token': Illegal character '/' at line 11, col 7. (Twostroke::LexError); parser.rb:50:in `peek_token'; parser.rb:639:in `var_rest'; parser.rb:633:in `var'; parser.rb:62:in `stateme...
@@ -403,7 +403,7 @@ es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: parser.rb:23:in `error!': Syntax error at line 29, col 13. Found BAREWORD<x>, expected COLON (Twostroke::ParseError); parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in...
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: Found BAREWORD<x>, expected COLON; parser.rb:26:in `assert_type'; parser.rb:679:in `object_literal'; parser.rb:330:in `value_expression'; parser.rb:304:in `call_expression'; parser.rb:289:in `incremen...
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed

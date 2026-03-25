@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"d1643f5bf80a14278a5a1a379f95bc83b73275e20e53b10242aed1be7387cdfe","binary_size":2298800,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"zuqe","repository":"https://github.com/nupha/zuqe.git","revision":"3d05a00633375b3aa139db116f0763e829957745","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+Metadata: {"arch":"arm64","binary_sha256":"6ccea6288136b9e65c852220f9f54982fab92638fd6fca37dd08ee8c9d418fba","binary_size":2298800,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":["console.log","print"],"engine":"zuqe","repository":"https://github.com/nupha/zuqe.git","revision":"3d05a00633375b3aa139db116f0763e829957745","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -930,7 +932,7 @@ compat-table/es6/let.strict.no-statement.js: OK
 compat-table/es6/let.strict.shadow.js: OK
 compat-table/es6/let.strict.tdz.js: OK
 compat-table/es6/let.tdz.js: OK
-compat-table/es6/literals.binary.Number.js: OK
+compat-table/es6/literals.binary.Number.js: failed
 compat-table/es6/literals.binary.js: OK
 compat-table/es6/literals.object.computed-accessors.js: OK
 compat-table/es6/literals.object.computed-properties.js: OK
@@ -1081,7 +1083,7 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: OK
+compat-table/es6/subclassing.Promise.all.js: failed
 compat-table/es6/subclassing.Promise.js: OK
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
 compat-table/es6/subclassing.Promise.race.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: expecting ';'
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: expecting ';'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: not a function

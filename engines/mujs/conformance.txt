@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected token: '}' (expected ':')
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected token: ',' (expected ':')
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected token: ',' (expected ':')
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: unexpected token in expression: '.'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected token in expression: '.'
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: invalid l-value in assignment
 compat-table/es6/destructuring-assign.string.js: SyntaxError: invalid l-value in assignment
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected tok
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected token: '[' (expected identifier)
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected token: '{' (expected identifier)
 compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected token: '{' (expected identifier)
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: unexpected token: '[' (expected identifier)
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected token: '[' (expected identifier)
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected token: '[' (expected identifier)
 compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected token: '[' (expected identifier)
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: 'ArrayBuffer' is n
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: undefined is not callable
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: 'ArrayBuffer' is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.from.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.of.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: 'Int8Array' is not defined
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: undefined is not callabl
 compat-table/es2023/TypedArray.prototype.toReversed.js: ReferenceError: 'Uint8Array' is not defined
 compat-table/es2023/TypedArray.prototype.toSorted.js: ReferenceError: 'Uint8Array' is not defined
 compat-table/es2023/TypedArray.prototype.with.js: ReferenceError: 'Uint8Array' is not defined
-compat-table/es2023/hashbang.js: SyntaxError: (eval):1: unexpected character: '#'
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: unexpected token: (identifier) (expected ';')
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unexpected token: (identifier) (expected ';')
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: unexpected token: '[' (expected identifier or keyword)
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: unexpected token: (identifier) (expected ';')
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected token: (identifier) (expected ';')

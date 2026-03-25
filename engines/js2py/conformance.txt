@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":310840284,"engine":"js2py","repository":"https://github.com/PiotrDabkowski/Js2Py.git","revision":"2e017b86e2f18a6c8a842293b1687f2ce7baa12e","revision_date":"2022-11-06"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":310853568,"engine":"js2py","repository":"https://github.com/PiotrDabkowski/Js2Py.git","revision":"2e017b86e2f18a6c8a842293b1687f2ce7baa12e","revision_date":"2022-11-06"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -196,14 +196,14 @@ es1/var.typeof.js: OK
 es1/void.js: OK
 es1/void.typeof.js: OK
 es1/while.js: OK
-es1/with.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x8b"\x1e\x9bg\x1d\x00\xf3\x...
+es1/with.js: NotImplementedError: With statement not implemented!
 es3/Array.prototype.concat.js: OK
 es3/Array.prototype.pop.generic.js: OK
 es3/Array.prototype.pop.js: OK
 es3/Array.prototype.push.generic.js: OK
 es3/Array.prototype.push.js: OK
 es3/Array.prototype.shift.generic.js: OK
-es3/Array.prototype.shift.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+es3/Array.prototype.shift.js: NameError: name 'to' is not defined
 es3/Array.prototype.slice.generic.js: OK
 es3/Array.prototype.slice.js: OK
 es3/Array.prototype.splice.generic.js: OK
@@ -279,9 +279,9 @@ es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
 es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: OK
-es3/global.TypeError.thrown.js: TypeError: raise TypeError('toString is not generic!')
+es3/global.TypeError.thrown.js: TypeError: toString is not generic!
 es3/global.URIError.js: OK
-es3/global.URIError.thrown.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+es3/global.URIError.thrown.js: UnicodeEncodeError: 'utf-8' codec can't encode character '\udc00' in position 0: surrogates not allowed
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: # not decoded failed
 es3/global.encodeURIComponent.js: OK
@@ -367,7 +367,7 @@ es5/JSON.js: OK
 es5/JSON.parse.js: parse object failed; parse null failed
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: NaN and Infinity not converted null
-es5/JSON.stringify.replacer.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+es5/JSON.stringify.replacer.js: AttributeError: 'list' object has no attribute 'is_undefined'
 es5/JSON.stringify.space.js: OK
 es5/Object.create.js: OK
 es5/Object.defineProperties.js: OK
@@ -412,7 +412,7 @@ es5/strict.no-eval-or-arguments-assignment.js: failed
 es5/strict.no-eval-or-arguments-bindings.js: failed
 es5/strict.no-function-caller-or-arguments.js: failed
 es5/strict.no-octal-literals.js: failed
-es5/strict.no-with.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+es5/strict.no-with.js: NotImplementedError: With statement not implemented!
 es5/strict.reserved-words.js: 'var implements' did not throw in strict mode
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
@@ -491,7 +491,7 @@ compat-table/es5/strict.reserved-words.js: failed
 compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: failed
-compat-table/es5/strict.with-error.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+compat-table/es5/strict.with-error.js: NotImplementedError: With statement not implemented!
 compat-table/es6/Array.Symbol.species.js: ReferenceError: Symbol is not defined
 compat-table/es6/Array.from.array-like.js: TypeError: 'undefined' is not a function (tried calling property 'from' of 'Function')
 compat-table/es6/Array.from.generator.js: SyntaxError: Line 9: Unexpected token *
@@ -520,7 +520,7 @@ compat-table/es6/Function.name.bound.js: failed
 compat-table/es6/Function.name.class-expression.js: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
 compat-table/es6/Function.name.class-object-method.js: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
 compat-table/es6/Function.name.class-prototype.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/Function.name.class-statement.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/Function.name.class-statement.js: SyntaxError: KeyError: b"'\xbb\xc4w\x1d\xb9\xe0\xc0}\xe9\x0c^\x8e\xee\x95p"; Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/Function.name.class-static.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/Function.name.class-variable.js: SyntaxError: Line 10: ClassExpression is not supported by ECMA 5.1.
 compat-table/es6/Function.name.configurable.js: OK
@@ -530,7 +530,7 @@ compat-table/es6/Function.name.object-method.js: failed
 compat-table/es6/Function.name.shorthand.js: failed
 compat-table/es6/Function.name.shorthand.no-lexical.js: OK
 compat-table/es6/Function.name.statement.js: failed
-compat-table/es6/Function.name.symbol-keyed.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'e\x03\x9d\xdf?I3\x99;\xe0\x8...
+compat-table/es6/Function.name.symbol-keyed.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es6/Function.name.variable.js: failed
 compat-table/es6/Map.Symbol.species.js: ReferenceError: Map is not defined
 compat-table/es6/Map.constructor-accepts-null.js: ReferenceError: Map is not defined
@@ -740,9 +740,9 @@ compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.set.js: OK
 compat-table/es6/annex-b.__proto__.literals.js: failed
 compat-table/es6/annex-b.__proto__.literals.multiple-error.js: failed
-compat-table/es6/annex-b.__proto__.literals.not-computed.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x99\xdb\x06\xc8Zt\xd6\x9a\x...
+compat-table/es6/annex-b.__proto__.literals.not-computed.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xa9\x9a\xcd\xdb\xae\xff\xcb...
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es6/arrow.0-params.js: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1.
 compat-table/es6/arrow.1-param.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es6/arrow.5-param.js: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1.
@@ -762,7 +762,7 @@ compat-table/es6/class.block-scoped.js: SyntaxError: Line 10: ClassDeclaration i
 compat-table/es6/class.computed-accessor-properties.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/class.computed-names-tdz.js: SyntaxError: Line 11: ClassExpression is not supported by ECMA 5.1.
 compat-table/es6/class.computed-prototype-methods.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: KeyError: b"e\xffS\xce&a\xb3w'\xd6.\xc28\xd7\x96x"; Line 11: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/class.computed-static-methods.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/class.constructor-requires-new.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/class.constructor.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
@@ -798,37 +798,38 @@ compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
 compat-table/es6/const.strict.tdz.js: failed
 compat-table/es6/const.tdz.js: failed
-compat-table/es6/default-params.arguments.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'k\xec\x07Z\x99P9B\x02\xfe\xd...
-compat-table/es6/default-params.basic.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xde\x04\x82\xdb\x08\xfaac\x...
-compat-table/es6/default-params.explicit-undefined.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x08\xf7\x08\x94\xa2\xf2\xab...
-compat-table/es6/default-params.new-function.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
-compat-table/es6/default-params.refer-previous.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'0\x99$pP\xe9dcU"5\x9c\xb9\xf...
-compat-table/es6/default-params.separate-scope.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x05c[\x18\x86b\\+\x90\xe9/!...
-compat-table/es6/default-params.tdz.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'Gg\xad\xd6XP\xb4\xb8H\x08(E\...
-compat-table/es6/destructuring-assign.array.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
+compat-table/es6/default-params.arguments.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.basic.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.explicit-undefined.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.new-function.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.refer-previous.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.separate-scope.js: NotImplementedError: Defaults not supported
+compat-table/es6/default-params.tdz.js: NotImplementedError: Defaults not supported
+compat-table/es6/destructuring-assign.array.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: Invalid left hand side in assignment!
 compat-table/es6/destructuring-assign.defaults.js: SyntaxError: Line 11: AssignmentPattern is not supported by ECMA 5.1.
-compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.generator.js: SyntaxError: Line 11: Unexpected token *
-compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.iterable.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
+compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.generator.js: SyntaxError: KeyError: b"\xa5T\x1b\xc1\xef\x9d\x8a\xd2Q\xb2'O\x10\x92\xd07"; Line 11: Unexpected token *
+compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.iterable.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: Invalid left hand side in assignment!
 compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: Line 11: Unexpected token .
-compat-table/es6/destructuring-assign.nested.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.object.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
+compat-table/es6/destructuring-assign.nested.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: KeyError: b"\xff\xf3=\xb5}\xe8b\xe30\xceLpi'\x18N"; Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.object.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Line 11: Unexpected token .
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Line 11: Unexpected token .
-compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.string.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
-compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: raise SyntaxError('Invalid left hand side in assignment!')
+compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.string.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: Invalid left hand side in assignment!
+compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: Invalid left hand side in assignment!
 compat-table/es6/destructuring-decl.array.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.catch.js: SyntaxError: Line 12: ArrayPattern is not supported by ECMA 5.1.
@@ -843,8 +844,9 @@ compat-table/es6/destructuring-decl.iterable.js: SyntaxError: Line 34: ArrayPatt
 compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: Line 38: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
-compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: KeyError: b"\x14\x1e\xf1O\xc0M\xaf\xd4y'\xd6\x8a\x83Bl\xfb"; Line 10: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
@@ -854,10 +856,10 @@ compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Line 
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Line 10: ArrowFunction is not supported by ECMA 5.1.
 compat-table/es6/destructuring-params.arguments.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-params.array.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Line 11: ObjectPattern is not supported by ECMA 5.1.
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: KeyError: b"\xcc\x89\x95'\n\x1e\x12\x8b:\xaeU\x8d\xff\xa3\xad*"; Line 10: ArrayPattern is not supported by ECMA 5.1.
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: KeyError: b"\xe9\x8a '\x99\x08\xd6\xed7\tU\x06\x88\x10\t\x87"; Line 11: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: Line 1: ObjectPattern is not supported by ECMA 5.1.
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: KeyError: b"\xb0'\xb8\x07\xe0I\x91\xf8\xd0'1\xfe\xa3}\xdd\xd1"; Line 10: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-params.defaults.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: Line 10: ArrayPattern is not supported by ECMA 5.1.
@@ -879,17 +881,17 @@ compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: L
 compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Line 10: ObjectPattern is not supported by ECMA 5.1.
 compat-table/es6/for-of.array.js: SyntaxError: Line 11: Unexpected identifier
 compat-table/es6/for-of.astral-string.js: SyntaxError: Line 11: Unexpected identifier
-compat-table/es6/for-of.generator.js: SyntaxError: Line 11: Unexpected token *
+compat-table/es6/for-of.generator.js: SyntaxError: KeyError: b"\xa6\xe0\xa6\xe06\xea\xe4\x06q'\xcd\xdc\xe2K\x18\xac"; Line 11: Unexpected token *
 compat-table/es6/for-of.iterable-instance.js: SyntaxError: Line 36: Unexpected identifier
 compat-table/es6/for-of.iterable.js: SyntaxError: Line 36: Unexpected identifier
 compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: Line 37: Unexpected identifier
 compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: Line 38: Unexpected identifier
 compat-table/es6/for-of.sparse-array.js: SyntaxError: Line 12: Unexpected identifier
-compat-table/es6/for-of.string.js: SyntaxError: Line 11: Unexpected identifier
+compat-table/es6/for-of.string.js: SyntaxError: KeyError: b"_K9\xe3J\x986\xffL'FTq\xcc\x9fX"; Line 11: Unexpected identifier
 compat-table/es6/function.block-level-decl.js: failed
 compat-table/es6/generators.basic.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.constructor.js: SyntaxError: Line 10: Unexpected token *
-compat-table/es6/generators.expression.js: SyntaxError: Line 10: Unexpected token *
+compat-table/es6/generators.expression.js: SyntaxError: KeyError: b"\xf13\x00\xa3\xe1\xee\xe7'w\x1f\xa5!DsR "; Line 10: Unexpected token *
 compat-table/es6/generators.no-new-this.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.prototype-chain.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.prototype.js: SyntaxError: Line 10: Unexpected token *
@@ -903,7 +905,7 @@ compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: Line 10: C
 compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: Line 11: Unexpected token *
 compat-table/es6/generators.this.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.throw.js: SyntaxError: Line 11: Unexpected token *
-compat-table/es6/generators.yield-precedence.js: SyntaxError: Line 11: Unexpected token *
+compat-table/es6/generators.yield-precedence.js: SyntaxError: KeyError: b"{'FD|Hp\xb6\xdcI[g\\\xdd\x87%"; Line 11: Unexpected token *
 compat-table/es6/generators.yield-star.array.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/generators.yield-star.generator.js: SyntaxError: Line 10: Unexpected token *
@@ -932,11 +934,11 @@ compat-table/es6/let.strict.tdz.js: failed
 compat-table/es6/let.tdz.js: failed
 compat-table/es6/literals.binary.Number.js: failed
 compat-table/es6/literals.binary.js: OK
-compat-table/es6/literals.object.computed-accessors.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xe9\x07\x08\xa3\x16\xa9\xc3...
-compat-table/es6/literals.object.computed-properties.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xd3z\x9b\x10\xbe\xa8\x8d\xb...
-compat-table/es6/literals.object.computed-shorthand-methods.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'DY|\xc4\x19\xc1\xe9_\xe2\x81...
+compat-table/es6/literals.object.computed-accessors.js: NotImplementedError: Shorthand and Computed properties not implemented!
+compat-table/es6/literals.object.computed-properties.js: NotImplementedError: Shorthand and Computed properties not implemented!
+compat-table/es6/literals.object.computed-shorthand-methods.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es6/literals.object.shorthand-methods.js: OK
-compat-table/es6/literals.object.shorthand-properties.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xdb\x1a\xd3\x85\xa5\xae6\x1...
+compat-table/es6/literals.object.shorthand-properties.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es6/literals.object.string-keyed-shorthand-methods.js: OK
 compat-table/es6/literals.octal.Number.js: failed
 compat-table/es6/literals.octal.js: OK
@@ -977,7 +979,7 @@ compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: ReferenceError: Prox
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: ReferenceError: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Error.toString.js: ReferenceError: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Function.bind.js: ReferenceError: Proxy is not defined
-compat-table/es6/misc.Proxy.get.HasBinding.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x01m\xd1\xe9\xa8v[\xa6\xe9\...
+compat-table/es6/misc.Proxy.get.HasBinding.js: NotImplementedError: With statement not implemented!
 compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: Line 22: Unexpected identifier
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: ReferenceError: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Object.assign.js: ReferenceError: Proxy is not defined
@@ -1050,9 +1052,9 @@ compat-table/es6/rest-params.length.js: SyntaxError: Line 10: Unexpected token .
 compat-table/es6/rest-params.new-function.js: SyntaxError: Line 1: Unexpected token .
 compat-table/es6/rest-params.no-setter.js: SyntaxError: Line 10: Unexpected token .
 compat-table/es6/spread.array-call.js: SyntaxError: Line 10: Unexpected token .
-compat-table/es6/spread.array-literal.js: SyntaxError: Line 10: Unexpected token .
-compat-table/es6/spread.astral-call.js: SyntaxError: Line 10: Unexpected token .
-compat-table/es6/spread.astral-literal.js: SyntaxError: Line 10: Unexpected token .
+compat-table/es6/spread.array-literal.js: SyntaxError: KeyError: b"'\x88\xb2I\xd4O\x8b\xde}\x81\xed\x9b/+\x01\xa8"; Line 10: Unexpected token .
+compat-table/es6/spread.astral-call.js: SyntaxError: KeyError: b"\x0b\xfc\x02\xf3>b\x8b\xb4\xa3z\x9bU\xcbb)'"; Line 10: Unexpected token .
+compat-table/es6/spread.astral-literal.js: SyntaxError: KeyError: b"\xcd\xee\xca\n_6FF\xec'\xb3\x84\xaa\x9a\x95\x91"; Line 10: Unexpected token .
 compat-table/es6/spread.generator-call.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/spread.generator-literal.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es6/spread.iterable-call.js: SyntaxError: Line 35: Unexpected token .
@@ -1069,8 +1071,8 @@ compat-table/es6/subclassing.Array.filter.js: SyntaxError: Line 9: ClassDeclarat
 compat-table/es6/subclassing.Array.from.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Array.isArray.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Array.length-access.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/subclassing.Array.length-set.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/subclassing.Array.map.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: KeyError: b"G~U\x1dp\xfa\xaf0\x18\xc4\x9f'\t~G\x87"; Line 9: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/subclassing.Array.map.js: SyntaxError: KeyError: b"M\x1f5g\x8cW\xf0\x92\xab\x1c'/\x89\xd9\xb7\xad"; Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Array.of.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Array.slice.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
@@ -1086,12 +1088,12 @@ compat-table/es6/subclassing.Promise.js: SyntaxError: Line 44: ClassDeclaration 
 compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.Promise.race.js: SyntaxError: Line 44: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/subclassing.RegExp.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/subclassing.RegExp.js: SyntaxError: KeyError: b"\x8b<\xffW'~WR\x86|\xe3\xc5_\xdc\xcb\xa8"; Line 11: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.RegExp.test.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.misc.Error.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es6/subclassing.misc.Map.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: KeyError: b"a\xdc$C\x94\x13\xcd@PD'e\x89\xdb\x88\xa1"; Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.misc.Number.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.misc.Set.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es6/subclassing.misc.String.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
@@ -1106,7 +1108,7 @@ compat-table/es6/super.this-binding.js: SyntaxError: Line 10: ClassDeclaration i
 compat-table/es6/tail-calls.direct.js: RangeError: RecursionError('maximum recursion depth exceeded while calling a Python object')
 compat-table/es6/tail-calls.mutual.js: RangeError: RecursionError('maximum recursion depth exceeded while calling a Python object')
 compat-table/es6/template.basic.js: SyntaxError: Line 12: TemplateElement is not supported by ECMA 5.1.
-compat-table/es6/template.caching.js: SyntaxError: Line 17: TemplateElement is not supported by ECMA 5.1.
+compat-table/es6/template.caching.js: SyntaxError: KeyError: b"\x92e\x14\x00\xfa89\x12\xe6\xa4J]!R'E"; Line 17: TemplateElement is not supported by ECMA 5.1.
 compat-table/es6/template.escape-sequences.js: SyntaxError: Line 13: Octal literals are not allowed in template strings.
 compat-table/es6/template.frozen-array.js: SyntaxError: Line 12: TemplateElement is not supported by ECMA 5.1.
 compat-table/es6/template.line-break.js: SyntaxError: Line 3: TemplateElement is not supported by ECMA 5.1.
@@ -1124,14 +1126,14 @@ compat-table/es6/typed-arrays.DataView.Uint16.js: ReferenceError: DataView is no
 compat-table/es6/typed-arrays.DataView.Uint32.js: ReferenceError: DataView is not defined
 compat-table/es6/typed-arrays.Float32Array.js: failed
 compat-table/es6/typed-arrays.Float64Array.js: failed
-compat-table/es6/typed-arrays.Int8Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
-compat-table/es6/typed-arrays.Int16Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
-compat-table/es6/typed-arrays.Int32Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+compat-table/es6/typed-arrays.Int8Array.js: OverflowError: Python integer 128 out of bounds for int8
+compat-table/es6/typed-arrays.Int16Array.js: OverflowError: Python integer 32768 out of bounds for int16
+compat-table/es6/typed-arrays.Int32Array.js: OverflowError: Python integer 2147483648 out of bounds for int32
 compat-table/es6/typed-arrays.Symbol.species.js: ReferenceError: Symbol is not defined
-compat-table/es6/typed-arrays.Uint8Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+compat-table/es6/typed-arrays.Uint8Array.js: OverflowError: Python integer 256 out of bounds for uint8
 compat-table/es6/typed-arrays.Uint8ClampedArray.js: OK
-compat-table/es6/typed-arrays.Uint16Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
-compat-table/es6/typed-arrays.Uint32Array.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+compat-table/es6/typed-arrays.Uint16Array.js: OverflowError: Python integer 65536 out of bounds for uint16
+compat-table/es6/typed-arrays.Uint32Array.js: OverflowError: Python integer 4294967296 out of bounds for uint16
 compat-table/es6/typed-arrays.constructor-iterables.js: failed
 compat-table/es6/typed-arrays.constructor-requires-new.js: failed
 compat-table/es6/typed-arrays.correct-prototype-chains.js: failed
@@ -1161,7 +1163,7 @@ compat-table/es6/typed-arrays.prototype.subarray.js: failed
 compat-table/es6/typed-arrays.prototype.values.js: failed
 compat-table/es6/unicode-escapes.identifier.js: SyntaxError: Line 9: Unexpected token ILLEGAL
 compat-table/es6/unicode-escapes.property-access.js: SyntaxError: Line 10: Unexpected token ILLEGAL
-compat-table/es6/unicode-escapes.property-key.js: SyntaxError: Line 9: Unexpected token ILLEGAL
+compat-table/es6/unicode-escapes.property-key.js: SyntaxError: KeyError: b"IT \x97T\xd3\xa13\xdd\x05R\x9f'\xbef\x1d"; Line 9: Unexpected token ILLEGAL
 compat-table/es6/unicode-escapes.string.js: OK
 compat-table/es6/well-known.hasInstance.js: ReferenceError: Symbol is not defined
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: ReferenceError: Symbol is not defined
@@ -1189,12 +1191,12 @@ compat-table/es6/well-known.toStringTag.existing-builtins.js: ReferenceError: Sy
 compat-table/es6/well-known.toStringTag.js: ReferenceError: Symbol is not defined
 compat-table/es6/well-known.toStringTag.misc-builtins.js: ReferenceError: Symbol is not defined
 compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: Line 23: Unexpected token *
-compat-table/es6/well-known.unscopables.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\x979\xac&3K\xd6\x192\xc4X%\...
+compat-table/es6/well-known.unscopables.js: NotImplementedError: With statement not implemented!
 compat-table/es2016/Array.prototype.includes.generic.js: TypeError: Undefined and null dont have properties (tried getting property 'call')
 compat-table/es2016/Array.prototype.includes.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
 compat-table/es2016/Array.prototype.includes.sparse.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Array')
 compat-table/es2016/Array.prototype.includes.typed-array.js: TypeError: 'undefined' is not a function (tried calling property 'includes' of 'Int8Array')
-compat-table/es2016/exponentiation.assignment.js: SyntaxError: Line 10: Unexpected token *=
+compat-table/es2016/exponentiation.assignment.js: SyntaxError: KeyError: b"b\xa9\xeb\xbe*\xb5\x8f\xbf6\xe6\x83\x08'4\xb7>"; Line 10: Unexpected token *=
 compat-table/es2016/exponentiation.basic.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es2016/misc.Proxy-Array-includes.js: ReferenceError: Proxy is not defined
@@ -1249,7 +1251,7 @@ compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: ReferenceError: Proxy is 
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: ReferenceError: Proxy is not defined
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
 compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: Line 10: Unexpected token function
-compat-table/es2017/async.arrow-in-class.js: SyntaxError: Line 48: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: KeyError: b"\x98+\x94'u\xd3\xdeM\xe7\x95\xeah\xe3\xe9\xe0\x9c"; Line 48: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es2017/async.arrow.js: SyntaxError: Line 45: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es2017/async.await-non-promise.js: SyntaxError: Line 45: Unexpected token function
 compat-table/es2017/async.await-rejection.js: SyntaxError: Line 45: Unexpected token function
@@ -1305,14 +1307,14 @@ compat-table/es2019/misc.Function-toString.Function-constructor.js: SyntaxError:
 compat-table/es2019/misc.Function-toString.arrows.js: SyntaxError: Line 1: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: Line 1: ClassExpression is not supported by ECMA 5.1.
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: Line 1: ClassExpression is not supported by ECMA 5.1.
-compat-table/es2019/misc.Function-toString.computed-names.js: Traceback (most recent call last):; File "/zoo/dist/arm64/js2py", line 11, in <module>; e.execute(open(filename).read()); File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", lin...
+compat-table/es2019/misc.Function-toString.computed-names.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/es2019/misc.Function-toString.native-code.js: failed
 compat-table/es2019/misc.Function-toString.unicode-escapes.js: SyntaxError: Line 1: Unexpected token ILLEGAL
 compat-table/es2019/misc.JSON-stringify-well-formed.js: OK
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: Line 1: Unexpected token ILLEGAL
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Line 1: Unexpected token ILLEGAL
 compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Line 44: Unexpected token function
-compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Line 12: Unexpected token {
+compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: KeyError: b"\xb3\x01\xa5\xb2\xa0;'\xb6\xb7\xd0li\xe8\x8b\x8b`"; Line 12: Unexpected token {
 compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Line 9: Unexpected token *
 compat-table/es2020/BigInt64Array.js: SyntaxError: Line 12: Unexpected token ILLEGAL
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: BigInt is not defined
@@ -1347,7 +1349,7 @@ compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Li
 compat-table/es2021/logical-assignment.or.js: SyntaxError: Line 13: Unexpected token =
 compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Line 11: Unexpected token =
 compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: Line 11: Unexpected token =
-compat-table/es2021/numeric-separators.js: SyntaxError: Line 9: Unexpected token ILLEGAL
+compat-table/es2021/numeric-separators.js: SyntaxError: KeyError: b"\x9e\x0f\x90\xce'\x93b\xaa\xd4\x94\x9d!\x86\xa9\xc4\xda"; Line 9: Unexpected token ILLEGAL
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: ReferenceError: AggregateError is not defined
 compat-table/es2022/Error.cause.AggregateError.js: ReferenceError: AggregateError is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1381,11 +1383,11 @@ compat-table/es2022/class-fields.public-instance.js: SyntaxError: Line 10: Class
 compat-table/es2022/class-fields.public-static.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es2022/class-fields.static.define.js: SyntaxError: Line 9: ClassExpression is not supported by ECMA 5.1.
 compat-table/es2022/class-methods.private-accessor.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es2022/class-methods.private-instance.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: Line 10: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: KeyError: b"\x98\x9b\x9b\x07\x8cwd\x83\x8b\x7fg\xd3\xcd'h4"; Line 9: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: KeyError: b"lL\x83\x92\x0f\x03\x96@2\x08\xd9p'\x10Z*"; Line 10: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es2022/class-methods.private-static.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es2022/class-static-init-blocks.js: SyntaxError: Line 11: ClassDeclaration is not supported by ECMA 5.1.
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: KeyError: b"}\xc7\xc05\xc4+q'\xd3\xe0F_\xfffv\xbe"; Line 9: ClassDeclaration is not supported by ECMA 5.1.
 compat-table/es2022/regex.flags.d.constructor.js: SyntaxError: Invalid flags supplied to RegExp constructor "d"
 compat-table/es2022/regex.flags.d.shows-in-flags.js: ReferenceError: Proxy is not defined
 compat-table/es2023/Array.prototype.findLastIndex.js: TypeError: 'undefined' is not a function (tried calling property 'findLastIndex' of 'Array')
@@ -1406,7 +1408,7 @@ compat-table/es2024/Object.groupBy.js: SyntaxError: Line 11: ArrowFunction is no
 compat-table/es2024/Promise.withResolvers.js: ReferenceError: Promise is not defined
 compat-table/es2024/regex.flags.v.constructor.js: SyntaxError: Invalid flags supplied to RegExp constructor "v"
 compat-table/es2024/regex.flags.v.properties-of-strings.js: failed
-compat-table/es2024/regex.flags.v.set-notations.js: /dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/base.py:2854: FutureWarning: Possible set intersection at position 9; self.pat = re.compile(
+compat-table/es2024/regex.flags.v.set-notations.js: failed
 compat-table/es2024/regex.flags.v.shows-in-flags.js: ReferenceError: Proxy is not defined
 compat-table/es2024/regex.flags.v.unicode-15.1.js: failed
 compat-table/es2024/regex.flags.v.unicode-16.0.js: failed
@@ -1418,7 +1420,7 @@ compat-table/es2025/Iterator.instanceof.js: TypeError: 'undefined' is not a func
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: ReferenceError: Iterator is not defined
 compat-table/es2025/Iterator.prototype.drop.js: TypeError: 'undefined' is not a function (tried calling property 'values' of 'Array')
 compat-table/es2025/Iterator.prototype.every.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
-compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
+compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: KeyError: b"'\xae\xc6@:\xb3\x92\xa8@*`_=\xd00z"; Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es2025/Iterator.prototype.find.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: Line 11: ArrowFunctionExpression is not supported by ECMA 5.1.
@@ -1486,20 +1488,21 @@ compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: Line 44: Unexpect
 compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: Line 44: Unexpected token function
 compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: Line 44: Unexpected token function
 compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: Line 44: Unexpected token function
-compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: Line 44: Unexpected token function
-compat-table/next/DisposableStack.js: Traceback (most recent call last):; File "/dist/js2py-dist/venv/lib/python3.10/site-packages/js2py/evaljs.py", line 193, in execute; compiled = cache[hashkey]; KeyError: b'\xcc\xc7\xb2\x872\x9b\x01\x8...
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: KeyError: b"T]\xec@\x94\xa5\x10\xef\xa8\xdc\x9fM'\xff!C"; Line 44: Unexpected token function
+compat-table/next/DisposableStack.js: NotImplementedError: Shorthand and Computed properties not implemented!
 compat-table/next/Map.prototype.upsert.js: SyntaxError: Line 10: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Line 13: Unexpected identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Line 17: Unexpected identifier
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1.
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: Line 13: ArrowFunction is not supported by ECMA 5.1.
-compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 5.1.
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: KeyError: b"8)\x97\xeb@\x9f\xabj\x7fZ\xbb\x85\x0bx'\xe9"; Line 12: ObjectPattern is not supported by ECMA 5.1.
 compat-table/next/Uint8Array.setFromHex.js: SyntaxError: Line 12: ObjectPattern is not supported by ECMA 5.1.
 compat-table/next/Uint8Array.toBase64.js: TypeError: 'undefined' is not a function (tried calling property 'toBase64' of 'Uint8Array')
 compat-table/next/Uint8Array.toHex.js: TypeError: 'undefined' is not a function (tried calling property 'toHex' of 'Uint8Array')
-compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: Line 11: ArrowFunctionExpression is not supported by ECMA 5.1.
+compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: KeyError: b"\x0f\xcc\x1f\x0c\x96\x91\x9d\x9c\x12N\x0bfpg@'"; Line 11: ArrowFunctionExpression is not supported by ECMA 5.1.
 compat-table/next/await-using.for-of.js: SyntaxError: Line 46: Unexpected token [
 compat-table/next/await-using.js: SyntaxError: Line 44: Unexpected token function
 compat-table/next/class-decorators.js: SyntaxError: Line 9: ClassDeclaration is not supported by ECMA 5.1.
@@ -1509,4 +1512,4 @@ compat-table/next/throw-expr.conditional.js: SyntaxError: Line 9: Unexpected tok
 compat-table/next/throw-expr.logical.js: SyntaxError: Line 11: Unexpected token throw
 compat-table/next/throw-expr.param-init.js: SyntaxError: Line 9: Unexpected token throw
 compat-table/next/using.for-of.js: SyntaxError: Line 22: Unexpected identifier
-compat-table/next/using.js: SyntaxError: Line 16: Unexpected identifier
+compat-table/next/using.js: SyntaxError: KeyError: b"\xe6\x7fA*|*\xbeY\xf7\xdc\xd8r{'\xc1\xb8"; Line 16: Unexpected identifier

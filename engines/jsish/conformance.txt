@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected '}', expecting ':'
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':'
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: unexpected IDENTIFIER, expecting ',' or ']'
 compat-table/es6/destructuring-assign.string.js: SyntaxError: unexpected '='
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected '['
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected '{', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected '{', expecting IDENTIFIER
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected '[', expecting IDENTIFIER
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: exception: 'with', functions are: c
 compat-table/es2023/TypedArray.prototype.toReversed.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/es2023/TypedArray.prototype.toSorted.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/es2023/TypedArray.prototype.with.js: exception: can not execute expression: 'Uint8Array' not a function
-compat-table/es2023/hashbang.js: SyntaxError: unexpected invalid token, expecting FOR or WHILE or DO or SWITCH
+compat-table/es2023/hashbang.js: SyntaxError: unexpected '}'
 compat-table/es2024/ArrayBuffer.prototype.detached.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: exception: can not execute expression: 'Uint8Array' not a function
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: RegExp.1-9.js:11: warn: expected object after I
 compat-table/next/RegExp.lastMatch.js: exception: Eval error: lhs value undefined in ===/!==
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unexpected IDENTIFIER
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: unexpected '[', expecting ',' or '}'
 compat-table/next/Uint8Array.fromBase64.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/next/Uint8Array.fromHex.js: exception: can not execute expression: 'Uint8Array' not a function
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected '{', expecting IDENTIFIER

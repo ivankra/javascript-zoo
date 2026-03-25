@@ -116,8 +116,8 @@ es1/String.prototype.valueOf.js: OK
 es1/annex-b.Date.prototype.getYear.js: d.getYear is not a function
 es1/annex-b.Date.prototype.setYear.js: d.setYear is not a function
 es1/annex-b.Date.prototype.toGMTString.js: d.toGMTString is not a function
-es1/annex-b.global.escape.js: [escape] is not defined
-es1/annex-b.global.unescape.js: [unescape] is not defined
+es1/annex-b.global.escape.js: ReferenceError: escape is not defined
+es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
 es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: arguments.callee is not a function
@@ -280,12 +280,12 @@ es3/global.SyntaxError.js: name failed
 es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; no exception for invalid token
 es3/global.TypeError.js: name failed
 es3/global.TypeError.thrown.js: crashed: SIGABRT
-es3/global.URIError.js: [URIError] is not defined
+es3/global.URIError.js: ReferenceError: URIError is not defined
 es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
-es3/global.decodeURIComponent.js: [decodeURIComponent] is not defined
-es3/global.decodeURI.js: [decodeURI] is not defined
-es3/global.encodeURIComponent.js: [encodeURIComponent] is not defined
-es3/global.encodeURI.js: [encodeURI] is not defined
+es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is not defined
+es3/global.decodeURI.js: ReferenceError: decodeURI is not defined
+es3/global.encodeURIComponent.js: ReferenceError: encodeURIComponent is not defined
+es3/global.encodeURI.js: ReferenceError: encodeURI is not defined
 es3/global.undefined.js: OK
 es3/identifiers.unicode.js: OK
 es3/instanceof.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError
 compat-table/es6/destructuring-assign.object.js: SyntaxError
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError
 compat-table/es6/destructuring-assign.rest.js: SyntaxError
 compat-table/es6/destructuring-assign.sparse-array.js: unexpected ast node
 compat-table/es6/destructuring-assign.string.js: unexpected ast node
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError
 compat-table/es6/destructuring-decl.nested.js: SyntaxError
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError
 compat-table/es6/destructuring-decl.object.js: SyntaxError
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError
 compat-table/es6/destructuring-decl.rest.js: SyntaxError
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError
 compat-table/es6/destructuring-decl.string.js: SyntaxError
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: [ArrayBuffer] is not defined
 compat-table/es6/typed-arrays.Uint32Array.js: [ArrayBuffer] is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: Cannot set a primitive value as object prototype
 compat-table/es6/typed-arrays.constructor-requires-new.js: [ArrayBuffer] is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError
+compat-table/es6/typed-arrays.correct-prototype-chains.js: [Int8Array] is not defined
 compat-table/es6/typed-arrays.from.js: [Int8Array] is not defined
 compat-table/es6/typed-arrays.of.js: [Int8Array] is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: [Int8Array] is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError
+compat-table/next/Symbol.dispose.bound.js: SyntaxError
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError
 compat-table/next/Uint8Array.fromHex.js: SyntaxError
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError

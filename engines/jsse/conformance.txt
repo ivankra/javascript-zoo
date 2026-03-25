@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"b827d573fd95252dde0cd9b9c8eb64173c02550bc26adf193b772c7fcb2c1331","binary_size":20583264,"console_log":"console.log","engine":"jsse","repository":"https://github.com/pmatos/jsse.git","revision":"59bb492e5d76fe1754c945660f8f6bb8947b2b74","revision_date":"2026-03-16","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+Metadata: {"arch":"arm64","binary_sha256":"d1ef1f9d16475035e766db659a19bdc3f531baf0de11a6feca714e6dfb561368","binary_size":20583264,"console_log":["console.log","print"],"engine":"jsse","repository":"https://github.com/pmatos/jsse.git","revision":"6fbabe06548bc505567b49c7bc78be7d87135f69","revision_date":"2026-03-18","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: OK
+compat-table/next/Symbol.dispose.bound.js: OK
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK

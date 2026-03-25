@@ -177,7 +177,7 @@ es1/prefix.js: OK
 es1/relational.js: OK
 es1/return.js: OK
 es1/return.typeof.js: OK
-es1/this.js: syntax error
+es1/this.js: SyntaxError
 es1/typeof.js: OK
 es1/typeof.null.js: OK
 es1/typeof.undeclared.js: OK
@@ -229,19 +229,19 @@ es3/Math.min.variadic.js: Math.min(): illegal amount of arguments
 es3/Number.prototype.toExponential.edge-cases.js: NaN.toExponential(Infinity) throws; Infinity.toExponential(Infinity) throws
 es3/Number.prototype.toExponential.js: call_method: unknown method
 es3/Number.prototype.toExponential.rounding.js: call_method: unknown method
-es3/Number.prototype.toExponential.throws-infinity.js: syntax error
+es3/Number.prototype.toExponential.throws-infinity.js: SyntaxError
 es3/Number.prototype.toFixed.js: call_method: unknown method
 es3/Number.prototype.toLocaleString.js: call_method: unknown method
 es3/Number.prototype.toPrecision.js: call_method: unknown method
 es3/Object.prototype.hasOwnProperty.js: illegal object for store_property
 es3/Object.prototype.isPrototypeOf.js: call_method: unknown method
 es3/Object.prototype.propertyIsEnumerable.js: call_method: unknown method
-es3/Object.prototype.toLocaleString.js: syntax error
+es3/Object.prototype.toLocaleString.js: SyntaxError
 es3/RegExp.global.js: OK
 es3/RegExp.ignoreCase.js: OK
 es3/RegExp.js: RegExp.multiline: not implemented yet
 es3/RegExp.lastIndex.js: OK
-es3/RegExp.multiline.js: syntax error
+es3/RegExp.multiline.js: SyntaxError
 es3/RegExp.prototype.constructor.js: failed
 es3/RegExp.prototype.exec.js: index failed; input failed
 es3/RegExp.prototype.test.js: OK
@@ -254,7 +254,7 @@ es3/String.prototype.match.generic.js: illegal object for call_method
 es3/String.prototype.match.js: String match(): illegal argument
 es3/String.prototype.replace.capture.js: spec example failed; $nn 10 captures failed; $nn reverse order failed
 es3/String.prototype.replace.extra.js: OK
-es3/String.prototype.replace.generic.js: syntax error
+es3/String.prototype.replace.generic.js: SyntaxError
 es3/String.prototype.replace.regex.js: non-global regex replace failed; global regex replace failed
 es3/String.prototype.replace.str.js: String replace(): illegal argument
 es3/String.prototype.search.generic.js: illegal object for call_method
@@ -269,8 +269,8 @@ es3/String.prototype.toLocaleLowerCase.js: call_method: unknown method
 es3/String.prototype.toLocaleUpperCase.js: call_method: unknown method
 es3/annex-b.String.prototype.substr.js: OK
 es3/do-while.js: OK
-es3/function-expressions.IIFE.js: syntax error
-es3/function-expressions.js: syntax error
+es3/function-expressions.IIFE.js: SyntaxError
+es3/function-expressions.js: SyntaxError
 es3/global.EvalError.js: illegal object for load_property
 es3/global.RangeError.js: illegal object for load_property
 es3/global.RangeError.thrown.js: timeout: >10s
@@ -279,7 +279,7 @@ es3/global.ReferenceError.thrown.js: VM: warning: using undefined global `undecl
 es3/global.SyntaxError.js: illegal object for load_property
 es3/global.SyntaxError.thrown.js: wrong exception type; wrong exception for unclosed string; wrong exception for invalid token
 es3/global.TypeError.js: illegal object for load_property
-es3/global.TypeError.thrown.js: syntax error
+es3/global.TypeError.thrown.js: SyntaxError
 es3/global.URIError.js: illegal object for load_property
 es3/global.URIError.thrown.js: VM: warning: using undefined global `decodeURI'; VM: warning: using undefined global `decodeURIComponent'; VM: warning: using undefined global `encodeURI'; VM: warning: using undefined global `encodeU...
 es3/global.decodeURIComponent.js: illegal function object in jsr
@@ -287,22 +287,22 @@ es3/global.decodeURI.js: illegal function object in jsr
 es3/global.encodeURIComponent.js: illegal function object in jsr
 es3/global.encodeURI.js: illegal function object in jsr
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: syntax error
-es3/instanceof.js: syntax error
-es3/in.js: syntax error
+es3/identifiers.unicode.js: SyntaxError
+es3/instanceof.js: SyntaxError
+es3/in.js: SyntaxError
 es3/labelled.break.js: OK
 es3/labelled.continue.js: timeout: >10s
 es3/labelled.statements.js: OK
 es3/literals.array.elisions.js: timeout: >10s
 es3/literals.array.js: timeout: >10s
 es3/literals.array.trailing-comma.js: timeout: >10s
-es3/literals.object.decimal.js: syntax error
+es3/literals.object.decimal.js: SyntaxError
 es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: double quoted property name failed; single quoted property name failed; mixed quoted property names failed
-es3/literals.object.unicode.js: syntax error
-es3/literals.regex.ambiguous.js: syntax error
+es3/literals.object.unicode.js: SyntaxError
+es3/literals.regex.ambiguous.js: SyntaxError
 es3/literals.regex.empty.js: failed
 es3/literals.regex.js: failed
 es3/literals.string.esc-v.js: OK
@@ -326,7 +326,7 @@ es3/regex.escape.nul.js: OK
 es3/regex.escape.unicode.js: OK
 es3/regex.flag.global.js: global match failed; multiple matches failed
 es3/regex.flag.ignorecase.js: OK
-es3/regex.flag.multiline.js: syntax error
+es3/regex.flag.multiline.js: SyntaxError
 es3/regex.group.js: OK
 es3/regex.lookahead.js: illegal object for load_array
 es3/regex.negative-lookahead.js: illegal object for load_array
@@ -338,40 +338,40 @@ es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: illegal object for load_array
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
-es3/source.line-terminators.js: syntax error
-es3/source.whitespace.js: syntax error
-es3/source.whitespace.unicode.js: syntax error
+es3/source.line-terminators.js: SyntaxError
+es3/source.whitespace.js: SyntaxError
+es3/source.whitespace.unicode.js: SyntaxError
 es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
 es3/try-catch-throw.js: OK
 es5/Array.isArray.js: call_method: unknown method
-es5/Array.prototype.every.js: syntax error
-es5/Array.prototype.filter.js: syntax error
-es5/Array.prototype.forEach.js: syntax error
+es5/Array.prototype.every.js: SyntaxError
+es5/Array.prototype.filter.js: SyntaxError
+es5/Array.prototype.forEach.js: SyntaxError
 es5/Array.prototype.indexOf.js: timeout: >10s
 es5/Array.prototype.lastIndexOf.js: timeout: >10s
-es5/Array.prototype.map.js: syntax error
-es5/Array.prototype.reduceRight.js: syntax error
-es5/Array.prototype.reduce.js: syntax error
-es5/Array.prototype.some.js: syntax error
+es5/Array.prototype.map.js: SyntaxError
+es5/Array.prototype.reduceRight.js: SyntaxError
+es5/Array.prototype.reduce.js: SyntaxError
+es5/Array.prototype.some.js: SyntaxError
 es5/Array.prototype.sort.TypeError.js: timeout: >10s
 es5/Array.prototype.sort.undefined-comparefn.js: timeout: >10s
 es5/Date.now.js: call_method: unknown method
-es5/Date.prototype.toISOString.js: syntax error
+es5/Date.prototype.toISOString.js: SyntaxError
 es5/Date.prototype.toJSON.js: new Date(1 args): not implemented yet
-es5/Function.prototype-not-enumerable.js: syntax error
-es5/Function.prototype.apply.array-like.js: syntax error
-es5/Function.prototype.bind.js: syntax error
+es5/Function.prototype-not-enumerable.js: SyntaxError
+es5/Function.prototype.apply.array-like.js: SyntaxError
+es5/Function.prototype.bind.js: SyntaxError
 es5/JSON.js: VM: warning: using undefined global `JSON'; failed: typeof JSON !== 'object'
-es5/JSON.parse.js: syntax error
-es5/JSON.parse.reviver.js: syntax error
-es5/JSON.stringify.js: syntax error
-es5/JSON.stringify.replacer.js: syntax error
+es5/JSON.parse.js: SyntaxError
+es5/JSON.parse.reviver.js: SyntaxError
+es5/JSON.stringify.js: SyntaxError
+es5/JSON.stringify.replacer.js: SyntaxError
 es5/JSON.stringify.space.js: illegal object for load_property
 es5/Object.create.js: call_method: unknown method
 es5/Object.defineProperties.js: call_method: unknown method
-es5/Object.defineProperty.js: syntax error
+es5/Object.defineProperty.js: SyntaxError
 es5/Object.freeze.js: call_method: unknown method
 es5/Object.getOwnPropertyDescriptor.js: call_method: unknown method
 es5/Object.getOwnPropertyNames.js: call_method: unknown method
@@ -385,37 +385,37 @@ es5/Object.property-shadowing.js: illegal object for nth
 es5/Object.seal.js: call_method: unknown method
 es5/String.indexing.js: string index out of range in load_array
 es5/String.prototype.trim.js: call_method: unknown method
-es5/arguments.toStringTag.js: syntax error
-es5/debugger.js: syntax error
+es5/arguments.toStringTag.js: SyntaxError
+es5/debugger.js: SyntaxError
 es5/global.Infinity.immutable.js: Infinity is not a number after assignment; Infinity not positive infinity after assignment
 es5/global.NaN.immutable.js: NaN is not a number after assignment; NaN === NaN after assignment
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: undefined is not undefined after assignment
-es5/literals.object.getters.js: syntax error
-es5/literals.object.setters.js: syntax error
-es5/literals.object.trailing-comma.js: syntax error
-es5/source.keyword-properties.js: syntax error
+es5/literals.object.getters.js: SyntaxError
+es5/literals.object.setters.js: SyntaxError
+es5/literals.object.trailing-comma.js: SyntaxError
+es5/source.keyword-properties.js: SyntaxError
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: syntax error
-es5/source.zero-width-chars.js: syntax error
-es5/strict.eval-cannot-create-bindings.js: syntax error
-es5/strict.function-expr-with-matching-name.js: syntax error
-es5/strict.js: syntax error
-es5/strict.no-arguments-callee.js: syntax error
-es5/strict.no-arguments-caller.js: syntax error
-es5/strict.no-assignment-to-non-writable.js: syntax error
-es5/strict.no-assignment-to-unresolvable.js: syntax error
-es5/strict.no-delete-bindings.js: syntax error
-es5/strict.no-delete-non-configurable.js: syntax error
-es5/strict.no-duplicate-parameters.js: syntax error
-es5/strict.no-eval-or-arguments-assignment.js: syntax error
-es5/strict.no-eval-or-arguments-bindings.js: syntax error
-es5/strict.no-function-caller-or-arguments.js: syntax error
-es5/strict.no-octal-literals.js: syntax error
-es5/strict.no-with.js: syntax error
-es5/strict.reserved-words.js: syntax error
-es5/strict.this-primitive-not-coerced-in-accessors.js: syntax error
-es5/strict.this-primitive-not-coerced.js: syntax error
-es5/strict.this-undefined-in-function.js: syntax error
-es5/strict.unmapped-arguments.js: syntax error
-es5/this.thrown-function.js: syntax error
+es5/source.whitespace.bom.js: SyntaxError
+es5/source.zero-width-chars.js: SyntaxError
+es5/strict.eval-cannot-create-bindings.js: SyntaxError
+es5/strict.function-expr-with-matching-name.js: SyntaxError
+es5/strict.js: SyntaxError
+es5/strict.no-arguments-callee.js: SyntaxError
+es5/strict.no-arguments-caller.js: SyntaxError
+es5/strict.no-assignment-to-non-writable.js: SyntaxError
+es5/strict.no-assignment-to-unresolvable.js: SyntaxError
+es5/strict.no-delete-bindings.js: SyntaxError
+es5/strict.no-delete-non-configurable.js: SyntaxError
+es5/strict.no-duplicate-parameters.js: SyntaxError
+es5/strict.no-eval-or-arguments-assignment.js: SyntaxError
+es5/strict.no-eval-or-arguments-bindings.js: SyntaxError
+es5/strict.no-function-caller-or-arguments.js: SyntaxError
+es5/strict.no-octal-literals.js: SyntaxError
+es5/strict.no-with.js: SyntaxError
+es5/strict.reserved-words.js: SyntaxError
+es5/strict.this-primitive-not-coerced-in-accessors.js: SyntaxError
+es5/strict.this-primitive-not-coerced.js: SyntaxError
+es5/strict.this-undefined-in-function.js: SyntaxError
+es5/strict.unmapped-arguments.js: SyntaxError
+es5/this.thrown-function.js: SyntaxError

@@ -367,7 +367,7 @@ es5/JSON.js: OK
 es5/JSON.parse.js: SyntaxError: Parse JSON error
 es5/JSON.parse.reviver.js: OK
 es5/JSON.stringify.js: TypeError: Structure is cyclical
-es5/JSON.stringify.replacer.js: OK
+es5/JSON.stringify.replacer.js: replacer function failed; replacer array failed
 es5/JSON.stringify.space.js: space parameter failed
 es5/Object.create.js: TypeError: Value is not an object
 es5/Object.defineProperties.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError
 compat-table/es6/destructuring-assign.object.js: SyntaxError
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError
 compat-table/es6/destructuring-assign.rest.js: SyntaxError
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError
 compat-table/es6/destructuring-assign.string.js: SyntaxError
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError
 compat-table/es6/destructuring-decl.nested.js: SyntaxError
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError
 compat-table/es6/destructuring-decl.object.js: SyntaxError
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError
 compat-table/es6/destructuring-decl.rest.js: SyntaxError
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError
 compat-table/es6/destructuring-decl.string.js: SyntaxError
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: Binding has not be
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: Binding has not been defined; :Binding has not been defined
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: Value is null or undefined; :Value is null or undefined
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: Binding has not been defined; :Binding has not been defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: Binding has not been defined; :Binding has not been defined
 compat-table/es6/typed-arrays.from.js: ReferenceError: Binding has not been defined; :Binding has not been defined
 compat-table/es6/typed-arrays.of.js: ReferenceError: Binding has not been defined; :Binding has not been defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Binding has not been defined; :Binding has not been defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError
+compat-table/next/Symbol.dispose.bound.js: SyntaxError
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError
 compat-table/next/Uint8Array.fromHex.js: SyntaxError
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError

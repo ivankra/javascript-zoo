@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -875,7 +877,7 @@ compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: OK
 compat-table/es6/destructuring-params.sparse-array.js: OK
 compat-table/es6/destructuring-params.string.js: OK
 compat-table/es6/destructuring-params.throws-null-undefined.js: OK
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unexpected token ']' (10:22)
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unexpected token ']' (10:23)
 compat-table/es6/destructuring-params.trailing-comma-object.js: OK
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: NotImplemented: RegExp.prototype.exec has not been implemented.
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: ReferenceError: SuppressedError is not defined
+compat-table/next/Symbol.dispose.bound.js: ReferenceError: close is not defined
 compat-table/next/Uint8Array.fromBase64.js: ReferenceError: Uint8Array is not defined
 compat-table/next/Uint8Array.fromHex.js: ReferenceError: Uint8Array is not defined
 compat-table/next/Uint8Array.setFromBase64.js: ReferenceError: Uint8Array is not defined

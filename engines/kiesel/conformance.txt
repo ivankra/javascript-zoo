@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"8e9aa2b80c1ada6d7e866fbef065ae608ccb927637a56ad93c6c8a94823c6c30","binary_size":13471000,"console_log":"console.log","engine":"kiesel","repository":"https://codeberg.org/kiesel-js/kiesel.git","revision":"f3f46b745526238bc6ab785e8b56af3f8a8c5580","revision_date":"2026-03-11","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)","version":"0.1.0-dev+f3f46b745","zig":"0.15.2"}
+Metadata: {"arch":"arm64","binary_sha256":"e2ccaa355f247e85155084da56f4df1d3a12f057eb507667be4ed68106726e41","binary_size":13470752,"console_log":"console.log","engine":"kiesel","repository":"https://codeberg.org/kiesel-js/kiesel.git","revision":"6d5dcb08bd3a34a09199980c8b5f7cb505f39ad3","revision_date":"2026-03-24","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)","version":"0.1.0-dev+6d5dcb08b","zig":"0.15.2"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token 'function' (SuppressedError.js:1:1)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token 'function' (Symbol.dispose.bound.js:1:1)
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: failed

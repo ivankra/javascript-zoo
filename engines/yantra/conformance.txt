@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":22779506,"dotnet":"10.0.201","engine":"yantra","repository":"https://github.com/yantrajs/yantra.git","revision":"5c59ac0e567d5a3c1c29c5b67e786866d8ab091a","revision_date":"2026-03-11","version":"1.2.314"}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":22778870,"dotnet":"10.0.103","engine":"yantra","repository":"https://github.com/yantrajs/yantra.git","revision":"5c59ac0e567d5a3c1c29c5b67e786866d8ab091a","revision_date":"2026-03-11","version":"1.2.314"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: failed
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: crashed: SIGABRT
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: crashed: SIGABRT
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
 compat-table/es6/typed-arrays.constructor-iterables.js: System.NullReferenceException: Object reference not set to an instance of an object.
 compat-table/es6/typed-arrays.constructor-requires-new.js: OK
-compat-table/es6/typed-arrays.correct-prototype-chains.js: constructor
+compat-table/es6/typed-arrays.correct-prototype-chains.js: failed
 compat-table/es6/typed-arrays.from.js: OK
 compat-table/es6/typed-arrays.of.js: OK
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: System.NullReferenceException: Object reference not set to an instance of an object.
+compat-table/next/Symbol.dispose.bound.js: OK
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Method fromBase64 not found in function Uint8Array() { [native code] }
 compat-table/next/Uint8Array.fromHex.js: TypeError: Method fromHex not found in function Uint8Array() { [native code] }
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Method setFromBase64 not found in 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

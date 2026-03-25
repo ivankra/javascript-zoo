@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","cc":"gcc 15.2.0 (Debian 15.2.0-15)","console_log":"print","dist_size":820408,"engine":"ucode","repository":"https://github.com/jow-/ucode.git","revision":"3d482fb1dfe472b6420e36078636bd48474ff6d5","revision_date":"2026-03-16","version":"0.0.20250529-122-g3d482fb"}
+Metadata: {"arch":"arm64","cc":"gcc 15.2.0 (Debian 15.2.0-14)","console_log":"print","dist_size":820408,"engine":"ucode","repository":"https://github.com/jow-/ucode.git","revision":"3d482fb1dfe472b6420e36078636bd48474ff6d5","revision_date":"2026-03-16","version":"0.0.20250529-122-g3d482fb"}
 es1/Array.js: SyntaxError: Unexpected token
 es1/Array.length.assignment.js: SyntaxError: Unexpected token
 es1/Array.length.js: SyntaxError: Unexpected token
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.object.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Unexpected token
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.string.js: SyntaxError: Unexpected token
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected tok
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Unexpected token
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Expecting expression
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Expecting expression
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Expecting expression
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Unexpected token
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: SyntaxError: Unexpected token
 compat-table/es2023/TypedArray.prototype.toReversed.js: SyntaxError: Unexpected token
 compat-table/es2023/TypedArray.prototype.toSorted.js: SyntaxError: Unexpected token
 compat-table/es2023/TypedArray.prototype.with.js: SyntaxError: Unexpected token
-compat-table/es2023/hashbang.js: exception: left-hand side is not a function
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: Unexpected token
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: Unexpected token
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: Unexpected token
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: SyntaxError: Unexpected token
 compat-table/next/RegExp.lastMatch.js: SyntaxError: Unexpected token
 compat-table/next/ShadowRealm.js: SyntaxError: Unexpected token
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Unexpected token
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: Unexpected token
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Unexpected token

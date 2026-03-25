@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"75fccedd6d88a3432077ac43755c63cf171c4e4f3b255ad0eea60dfd7025fe47","binary_size":2428888,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":"console.log","engine":"quanta","repository":"https://github.com/solarbrowser/quanta.git","revision":"ade534f08250e928f395b267b9422d5e708f08fa","revision_date":"2026-03-17","version":"0.4.1.3683426-1-gade534f"}
+Metadata: {"arch":"arm64","binary_sha256":"d243a938c4fdab30488c2da4755587f5b77ef4bb40acbdfe1348638a008912b9","binary_size":2428896,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":"console.log","engine":"quanta","repository":"https://github.com/solarbrowser/quanta.git","revision":"ade534f08250e928f395b267b9422d5e708f08fa","revision_date":"2026-03-17","version":"0.4.1.3683426-1-gade534f"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected tok
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -878,7 +880,7 @@ compat-table/es6/destructuring-params.throws-null-undefined.js: OK
 compat-table/es6/destructuring-params.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-params.trailing-comma-object.js: OK
 compat-table/es6/for-of.array.js: OK
-compat-table/es6/for-of.astral-string.js: For...of: Only arrays are supported
+compat-table/es6/for-of.astral-string.js: OK
 compat-table/es6/for-of.generator.js: OK
 compat-table/es6/for-of.iterable-instance.js: OK
 compat-table/es6/for-of.iterable.js: OK
@@ -1119,7 +1121,7 @@ compat-table/es6/typed-arrays.DataView.Float64.js: OK
 compat-table/es6/typed-arrays.DataView.Int8.js: OK
 compat-table/es6/typed-arrays.DataView.Int16.js: OK
 compat-table/es6/typed-arrays.DataView.Int32.js: failed
-compat-table/es6/typed-arrays.DataView.Uint8.js: OK
+compat-table/es6/typed-arrays.DataView.Uint8.js: TypeError: Class constructor setUint8 cannot be invoked without 'new'
 compat-table/es6/typed-arrays.DataView.Uint16.js: OK
 compat-table/es6/typed-arrays.DataView.Uint32.js: failed
 compat-table/es6/typed-arrays.Float32Array.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: failed
+compat-table/next/Symbol.dispose.bound.js: ReferenceError: 'using' is not defined
 compat-table/next/Uint8Array.fromBase64.js: Property is not a function
 compat-table/next/Uint8Array.fromHex.js: Property is not a function
 compat-table/next/Uint8Array.setFromBase64.js: Property is not a function

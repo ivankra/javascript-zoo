@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: internal error: inte
 compat-table/es6/destructuring-assign.object-primitives.js: failed
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: internal error: jump target byte offset 79 is not at an instruction boundary
+compat-table/es6/destructuring-assign.rest.identical.js: failed
 compat-table/es6/destructuring-assign.rest.js: failed
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: failed
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: failed
 compat-table/es6/destructuring-decl.rest.js: failed
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: TypeError: Cannot use 'in' operator to search for 'evaluate' in undefined
 compat-table/next/SuppressedError.js: internal error: LdaLookupSlot: slot name is not a string
+compat-table/next/Symbol.dispose.bound.js: internal error: constant pool index 24 out of bounds
 compat-table/next/Uint8Array.fromBase64.js: RangeError: Invalid array/buffer length
 compat-table/next/Uint8Array.fromHex.js: RangeError: Invalid array/buffer length
 compat-table/next/Uint8Array.setFromBase64.js: RangeError: Invalid array/buffer length

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":26064214,"engine":"reeva","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ReevaJS/reeva.git","revision":"f715163354ea06e37a97bd4e5e0bddc9c195c886","revision_date":"2024-01-18","version":"before-rewrite-306-gf7151633"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":26070597,"engine":"reeva","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/ReevaJS/reeva.git","revision":"f715163354ea06e37a97bd4e5e0bddc9c195c886","revision_date":"2024-01-18","version":"before-rewrite-306-gf7151633"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -273,7 +273,7 @@ es3/function-expressions.IIFE.js: OK
 es3/function-expressions.js: OK
 es3/global.EvalError.js: OK
 es3/global.RangeError.js: OK
-es3/global.RangeError.thrown.js: Exception in FunctionInfo global.RangeError.thrown.js, block @2 opcode 4; Uncaught exception: IndexOutOfBoundsException: Index -1 out of bounds for length 0
+es3/global.RangeError.thrown.js: Exception in FunctionInfo global.RangeError.thrown.js, block @2 opcode 4; Uncaught exception: IndexOutOfBoundsException: Index -1 out of bounds for length 0; java.lang.IndexOutOfBoundsException: Index...
 es3/global.ReferenceError.js: OK
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: OK
@@ -312,7 +312,7 @@ es3/regex.backref.js: OK
 es3/regex.begin.js: OK
 es3/regex.bracket.esc-b.js: OK
 es3/regex.bracket.js: TypeError: cannot convert null to Object
-es3/regex.bracket.ranges.js: Exception in FunctionInfo regex.bracket.ranges.js, block @9 opcode 5; Uncaught exception: IllegalArgumentException: newPosition > limit: (7 > 6)
+es3/regex.bracket.ranges.js: Exception in FunctionInfo regex.bracket.ranges.js, block @9 opcode 5; Uncaught exception: IllegalArgumentException: newPosition > limit: (7 > 6); java.lang.IllegalArgumentException: newPosition > limi...
 es3/regex.class.esc-d.js: OK
 es3/regex.class.esc-s.js: OK
 es3/regex.class.esc-w.js: OK
@@ -490,7 +490,7 @@ compat-table/es5/strict.repeated-params-error.js: NotImplementedError: An operat
 compat-table/es5/strict.reserved-words.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es5/strict.this-not-coerced-accessors.js: ReferenceError: TODO: message (DeclarativeEnvRecord::setMutableBinding 1)
 compat-table/es5/strict.this-not-coerced-methods.js: OK
-compat-table/es5/strict.this-undefined.js: Exception in FunctionInfo testCode, block @1 opcode 5; Exception in FunctionInfo strict.this-undefined.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: fromIndex(1) > toIndex(0)
+compat-table/es5/strict.this-undefined.js: Exception in FunctionInfo testCode, block @1 opcode 5; Exception in FunctionInfo strict.this-undefined.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: fromIndex(1) > toIndex(0); j...
 compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: OK
 compat-table/es6/Array.from.array-like.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: invalid
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-assign.object.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: invalid expression in assignment context
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: invalid expression in assignment context
 compat-table/es6/destructuring-assign.string.js: SyntaxError: invalid expression in assignment context
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -916,7 +918,7 @@ compat-table/es6/generators.yield-star.sparse-array.js: failed
 compat-table/es6/generators.yield-star.string.js: failed
 compat-table/es6/let.basic.js: OK
 compat-table/es6/let.block-scoped.js: OK
-compat-table/es6/let.for-in-shadow.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo let.for-in-shadow.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one element.
+compat-table/es6/let.for-in-shadow.js: Exception in FunctionInfo testCode, block @2 opcode 3; Exception in FunctionInfo let.for-in-shadow.js, block @2 opcode 2; Uncaught exception: IllegalArgumentException: List has more than one element.;...
 compat-table/es6/let.for-iteration.js: failed
 compat-table/es6/let.for-loop.js: OK
 compat-table/es6/let.no-statement.js: OK
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: OK
 compat-table/es6/typed-arrays.Uint32Array.js: OK
 compat-table/es6/typed-arrays.constructor-iterables.js: OK
 compat-table/es6/typed-arrays.constructor-requires-new.js: OK
-compat-table/es6/typed-arrays.correct-prototype-chains.js: TypeError: cannot call value undefined
+compat-table/es6/typed-arrays.correct-prototype-chains.js: OK
 compat-table/es6/typed-arrays.from.js: OK
 compat-table/es6/typed-arrays.of.js: OK
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: failed
@@ -1218,7 +1220,7 @@ compat-table/es2017/Atomics.wait.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Atomics.xor.js: ReferenceError: "Atomics" is not defined
 compat-table/es2017/Object.entries.js: OK
 compat-table/es2017/Object.getOwnPropertyDescriptors.js: OK
-compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Exception in FunctionInfo testCode, block @0 opcode 17; Exception in FunctionInfo Object.getOwnPropertyDescriptors.no-undefined.js, block @2 opcode 2; Uncaught exception: NullPointerException
+compat-table/es2017/Object.getOwnPropertyDescriptors.no-undefined.js: Exception in FunctionInfo testCode, block @0 opcode 17; Exception in FunctionInfo Object.getOwnPropertyDescriptors.no-undefined.js, block @2 opcode 2; Uncaught exception: NullPointerException; java.la...
 compat-table/es2017/Object.values.js: OK
 compat-table/es2017/SharedArrayBuffer.Symbol.species.js: ReferenceError: "SharedArrayBuffer" is not defined
 compat-table/es2017/SharedArrayBuffer.js: failed
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: expected ;, but found identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: expected ;, but found identifier
 compat-table/next/Uint8Array.fromBase64.js: TypeError: cannot call value undefined
 compat-table/next/Uint8Array.fromHex.js: TypeError: cannot call value undefined
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: cannot call value undefined

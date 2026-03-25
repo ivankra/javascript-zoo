@@ -5,8 +5,8 @@ es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: Array.prototype.constructor failed; array instance constructor failed
 es1/Array.prototype.join.generic.js: failed
 es1/Array.prototype.join.js: OK
-es1/Array.prototype.reverse.generic.js: timeout: >10s
-es1/Array.prototype.reverse.js: timeout: >10s
+es1/Array.prototype.reverse.generic.js: OOM: >4096MB
+es1/Array.prototype.reverse.js: OOM: >4096MB
 es1/Array.prototype.sort.generic.js: failed
 es1/Array.prototype.sort.js: sort with comparefn failed
 es1/Array.prototype.toString.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected '}', expecting ':'
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':'
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.sparse-array.js: crashed: SIGSEGV
 compat-table/es6/destructuring-assign.string.js: crashed: SIGSEGV
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected '['
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected '[', expecting IDENT
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected '{', expecting IDENT
 compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected '{', expecting IDENT
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: unexpected '[', expecting IDENT
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected '[', expecting IDENT
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected '[', expecting IDENT
 compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected '[', expecting IDENT
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: ArrayBuffer is not
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: ArrayBuffer is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: OK
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: ArrayBuffer is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: unexpected IDENT, expecting ';' or ','
+compat-table/es6/typed-arrays.correct-prototype-chains.js: failed
 compat-table/es6/typed-arrays.from.js: failed
 compat-table/es6/typed-arrays.of.js: failed
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: Regular expressions are not available
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unexpected IDENT, expecting ';' or ','
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: unexpected '[', expecting NUMBER or IDENT or STRING or '}'
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: unexpected IDENT, expecting ';' or ','
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected IDENT, expecting ';' or ','

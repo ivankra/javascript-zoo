@@ -123,7 +123,7 @@ es1/annex-b.literals.string.octal.js: failed
 es1/arguments.callee.js: failed
 es1/arguments.js: OK
 es1/asi.eval.js: OK
-es1/asi.js: Parse error in file 'asi.js'
+es1/asi.js: SyntaxError: asi.js
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
 es1/assignment.ltr.js: C++ like evaluation order in 'x += f()'
@@ -168,7 +168,7 @@ es1/logical.js: OK
 es1/new.typeof.js: OK
 es1/numbers.double.js: converting max safe integer + 1 to string
 es1/numbers.fmod.js: OK
-es1/numbers.inf.js: Parse error in file 'numbers.inf.js'
+es1/numbers.inf.js: SyntaxError: numbers.inf.js
 es1/numbers.int.js: OK
 es1/numbers.nan.js: OK
 es1/postfix.decrement.js: OK
@@ -723,7 +723,7 @@ compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: und
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: 'g' is not defined at line 16, column 13
 compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
-compat-table/es6/annex-b.html-comments.js: Parse error in file 'annex-b.html-comments.js'
+compat-table/es6/annex-b.html-comments.js: SyntaxError: annex-b.html-comments.js
 compat-table/es6/annex-b.regex.backreferences-octal.js: failed
 compat-table/es6/annex-b.regex.hyphens.js: failed
 compat-table/es6/annex-b.regex.incomplete-patterns.js: failed
@@ -810,7 +810,7 @@ compat-table/es6/destructuring-assign.astral-string.js: failed
 compat-table/es6/destructuring-assign.chained-iterable.js: failed
 compat-table/es6/destructuring-assign.chained-object.js: failed
 compat-table/es6/destructuring-assign.computed-properties.js: failed
-compat-table/es6/destructuring-assign.defaults.js: Parse error in file 'destructuring-assign.defaults.js'
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: destructuring-assign.defaults.js
 compat-table/es6/destructuring-assign.empty-patterns.js: OK
 compat-table/es6/destructuring-assign.generator.js: failed
 compat-table/es6/destructuring-assign.iterable-expression.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed')
 compat-table/es6/destructuring-assign.object.js: failed
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.rest.identical.js: failed
 compat-table/es6/destructuring-assign.rest.js: failed
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: failed
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: TypeError: Cannot read properties of undefined (reading 'toFixed')
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -852,31 +854,31 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-decl.trailing-comma-object.js: OK
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.arguments.js: Parse error in file 'destructuring-params.arguments.js'
-compat-table/es6/destructuring-params.array.js: Parse error in file 'destructuring-params.array.js'
-compat-table/es6/destructuring-params.astral-string.js: Parse error in file 'destructuring-params.astral-string.js'
-compat-table/es6/destructuring-params.computed-properties.js: Parse error in file 'destructuring-params.computed-properties.js'
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: destructuring-params.arguments.js
+compat-table/es6/destructuring-params.array.js: SyntaxError: destructuring-params.array.js
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: destructuring-params.astral-string.js
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: destructuring-params.computed-properties.js
 compat-table/es6/destructuring-params.defaults-new-function.js: failed
-compat-table/es6/destructuring-params.defaults-separate-scope.js: Parse error in file 'destructuring-params.defaults-separate-scope.js'
-compat-table/es6/destructuring-params.defaults.js: Parse error in file 'destructuring-params.defaults.js'
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: destructuring-params.defaults-separate-scope.js
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: destructuring-params.defaults.js
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
 compat-table/es6/destructuring-params.empty-patterns.js: OK
-compat-table/es6/destructuring-params.generator.js: Parse error in file 'destructuring-params.generator.js'
-compat-table/es6/destructuring-params.iterable-instance.js: Parse error in file 'destructuring-params.iterable-instance.js'
-compat-table/es6/destructuring-params.iterable.js: Parse error in file 'destructuring-params.iterable.js'
-compat-table/es6/destructuring-params.iterator-closing.js: Parse error in file 'destructuring-params.iterator-closing.js'
-compat-table/es6/destructuring-params.length.js: Parse error in file 'destructuring-params.length.js'
-compat-table/es6/destructuring-params.nested.js: Parse error in file 'destructuring-params.nested.js'
+compat-table/es6/destructuring-params.generator.js: SyntaxError: destructuring-params.generator.js
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: destructuring-params.iterable-instance.js
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: destructuring-params.iterable.js
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: destructuring-params.iterator-closing.js
+compat-table/es6/destructuring-params.length.js: SyntaxError: destructuring-params.length.js
+compat-table/es6/destructuring-params.nested.js: SyntaxError: destructuring-params.nested.js
 compat-table/es6/destructuring-params.new-function.js: failed
-compat-table/es6/destructuring-params.object-primitives.js: Parse error in file 'destructuring-params.object-primitives.js'
-compat-table/es6/destructuring-params.object.js: Parse error in file 'destructuring-params.object.js'
-compat-table/es6/destructuring-params.rest.js: Parse error in file 'destructuring-params.rest.js'
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: destructuring-params.object-primitives.js
+compat-table/es6/destructuring-params.object.js: SyntaxError: destructuring-params.object.js
+compat-table/es6/destructuring-params.rest.js: SyntaxError: destructuring-params.rest.js
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: OK
-compat-table/es6/destructuring-params.sparse-array.js: Parse error in file 'destructuring-params.sparse-array.js'
-compat-table/es6/destructuring-params.string.js: Parse error in file 'destructuring-params.string.js'
-compat-table/es6/destructuring-params.throws-null-undefined.js: Parse error in file 'destructuring-params.throws-null-undefined.js'
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: Parse error in file 'destructuring-params.trailing-comma-iterable.js'
-compat-table/es6/destructuring-params.trailing-comma-object.js: Parse error in file 'destructuring-params.trailing-comma-object.js'
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: destructuring-params.sparse-array.js
+compat-table/es6/destructuring-params.string.js: SyntaxError: destructuring-params.string.js
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: destructuring-params.throws-null-undefined.js
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: destructuring-params.trailing-comma-iterable.js
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: destructuring-params.trailing-comma-object.js
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: OK
 compat-table/es6/for-of.generator.js: OK
@@ -1202,7 +1204,7 @@ compat-table/es2016/misc.Proxy-enumerate-removed.js: OK
 compat-table/es2016/misc.generator-no-new.js: failed
 compat-table/es2016/misc.generator-throw-inner.js: TypeError: Cannot read properties of undefined (reading 'value')
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: OK
-compat-table/es2016/misc.nested-rest-destructuring-params.js: Parse error in file 'misc.nested-rest-destructuring-params.js'
+compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: misc.nested-rest-destructuring-params.js
 compat-table/es2016/misc.strict-fn-non-simple-params-error.js: OK
 compat-table/es2017/Atomics.add.js: TypeError: Cannot read properties of undefined (reading 'add')
 compat-table/es2017/Atomics.and.js: TypeError: Cannot read properties of undefined (reading 'and')
@@ -1247,7 +1249,7 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: TypeError: Cannot read pr
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: Cannot read properties of undefined (reading 'call')
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: Parse error in file 'annex-b.for-in-assignment-non-strict.js'
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: SyntaxError: annex-b.for-in-assignment-non-strict.js
 compat-table/es2017/async.Symbol.toStringTag.js: failed
 compat-table/es2017/async.arrow-in-class.js: failed
 compat-table/es2017/async.arrow.js: failed
@@ -1339,7 +1341,7 @@ compat-table/es2021/Promise.any.fulfillment.js: failed
 compat-table/es2021/String.prototype.replaceAll.js: OK
 compat-table/es2021/WeakRef.js: TypeError: Value is not a constructor
 compat-table/es2021/logical-assignment.and.js: OK
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: Parse error in file 'logical-assignment.and.setter-not-invoked.js'
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: logical-assignment.and.setter-not-invoked.js
 compat-table/es2021/logical-assignment.and.short-circuit.js: OK
 compat-table/es2021/logical-assignment.nullish.js: OK
 compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: OK
@@ -1374,7 +1376,7 @@ compat-table/es2022/class-fields.computed-static.js: OK
 compat-table/es2022/class-fields.instance.parent-scope.js: OK
 compat-table/es2022/class-fields.private-instance.initializers.js: OK
 compat-table/es2022/class-fields.private-instance.js: OK
-compat-table/es2022/class-fields.private-instance.optional-access.js: Parse error in file 'class-fields.private-instance.optional-access.js'
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: class-fields.private-instance.optional-access.js
 compat-table/es2022/class-fields.private-instance.optional-deep-access.js: OK
 compat-table/es2022/class-fields.private-static.js: OK
 compat-table/es2022/class-fields.public-instance.js: OK
@@ -1384,8 +1386,8 @@ compat-table/es2022/class-methods.private-accessor.js: OK
 compat-table/es2022/class-methods.private-instance.js: OK
 compat-table/es2022/class-methods.private-static-accessor.js: failed
 compat-table/es2022/class-methods.private-static.js: OK
-compat-table/es2022/class-static-init-blocks.js: Parse error in file 'class-static-init-blocks.js'
-compat-table/es2022/ergonomic-brand-checks.js: Parse error in file 'ergonomic-brand-checks.js'
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: class-static-init-blocks.js
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: ergonomic-brand-checks.js
 compat-table/es2022/regex.flags.d.constructor.js: TypeError: Function is not a constructor
 compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: Cannot read properties of undefined (reading 'call')
 compat-table/es2023/Array.prototype.findLastIndex.js: OK
@@ -1492,7 +1494,8 @@ compat-table/next/Map.prototype.upsert.js: TypeError: undefined is not a functio
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: Parse error in file 'SuppressedError.js'
+compat-table/next/SuppressedError.js: SyntaxError: SuppressedError.js
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Symbol.dispose.bound.js
 compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Cannot destructure undefined as it is not an object
@@ -1500,13 +1503,13 @@ compat-table/next/Uint8Array.setFromHex.js: TypeError: Cannot destructure undefi
 compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Function is not a constructor
-compat-table/next/await-using.for-of.js: Parse error in file 'await-using.for-of.js'
-compat-table/next/await-using.js: Parse error in file 'await-using.js'
+compat-table/next/await-using.for-of.js: SyntaxError: await-using.for-of.js
+compat-table/next/await-using.js: SyntaxError: await-using.js
 compat-table/next/class-decorators.js: Error in file 'class-decorators.js': Unexpected character '@' at line 10, column 5
-compat-table/next/function.sent.js: Parse error in file 'function.sent.js'
-compat-table/next/throw-expr.arrow.js: Parse error in file 'throw-expr.arrow.js'
-compat-table/next/throw-expr.conditional.js: Parse error in file 'throw-expr.conditional.js'
-compat-table/next/throw-expr.logical.js: Parse error in file 'throw-expr.logical.js'
-compat-table/next/throw-expr.param-init.js: Parse error in file 'throw-expr.param-init.js'
-compat-table/next/using.for-of.js: Parse error in file 'using.for-of.js'
-compat-table/next/using.js: Parse error in file 'using.js'
+compat-table/next/function.sent.js: SyntaxError: function.sent.js
+compat-table/next/throw-expr.arrow.js: SyntaxError: throw-expr.arrow.js
+compat-table/next/throw-expr.conditional.js: SyntaxError: throw-expr.conditional.js
+compat-table/next/throw-expr.logical.js: SyntaxError: throw-expr.logical.js
+compat-table/next/throw-expr.param-init.js: SyntaxError: throw-expr.param-init.js
+compat-table/next/using.for-of.js: SyntaxError: using.for-of.js
+compat-table/next/using.js: SyntaxError: using.js

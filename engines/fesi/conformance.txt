@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: detecte
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: detected near line 11, column 4, after "("
 compat-table/es6/destructuring-assign.object.js: SyntaxError: detected near line 11, column 4, after "("
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: detected near line 11, column 4, after "("
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: detected near line 11, column 3, after ";"
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: detected near line 11, column 3, after ";"
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: detected near line 11, column 3, after ";"
 compat-table/es6/destructuring-assign.string.js: SyntaxError: detected near line 11, column 3, after ";"
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: detected near 
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: detected near line 10, column 7, after "var"
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: detected near line 10, column 7, after "var"
 compat-table/es6/destructuring-decl.object.js: SyntaxError: detected near line 10, column 7, after "var"
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: detected near line 10, column 7, after "var"
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: detected near line 10, column 7, after "var"
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: detected near line 10, column 7, after "var"
 compat-table/es6/destructuring-decl.string.js: SyntaxError: detected near line 10, column 7, after "var"
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: SyntaxError: detected near line 11, column 21, 
 compat-table/next/RegExp.lastMatch.js: SyntaxError: detected near line 10, column 12, after "="
 compat-table/next/ShadowRealm.js: SyntaxError: detected near line 9, column 31, after "=="
 compat-table/next/SuppressedError.js: Keyword 'try' reserved for future extension near line 12, column 3, after ";"; in file: 'SuppressedError.js'; [[Error loading file' SuppressedError.js']]
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: detected near line 10, column 18, after "="
 compat-table/next/Uint8Array.fromBase64.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.fromBase64.js'; [[Error loading file' Uint8Array.fromBase64.js']]
 compat-table/next/Uint8Array.fromHex.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.fromHex.js'; [[Error loading file' Uint8Array.fromHex.js']]
 compat-table/next/Uint8Array.setFromBase64.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.setFromBase64.js'; [[Error loading file' Uint8Array.setFromBase64.js']]

@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: ReferenceError: Inva
 compat-table/es6/destructuring-assign.object-primitives.js: ReferenceError: Invalid left-hand side in assignment
 compat-table/es6/destructuring-assign.object.js: ReferenceError: Invalid left-hand side in assignment
 compat-table/es6/destructuring-assign.parenthesised-error.js: ReferenceError: Invalid left-hand side in assignment
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unexpected token "..."
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token "..."
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: Invalid left-hand side in assignment
 compat-table/es6/destructuring-assign.string.js: ReferenceError: Invalid left-hand side in assignment
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Token "a" not 
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Token "e" not supported in this version
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Token "toFixed" not supported in this version
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Token "c" not supported in this version
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Token "a" not supported in this version
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Token "a" not supported in this version
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Token "a" not supported in this version
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Token "a" not supported in this version
@@ -1397,7 +1399,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: undefined is not a funct
 compat-table/es2023/TypedArray.prototype.toReversed.js: OK
 compat-table/es2023/TypedArray.prototype.toSorted.js: OK
 compat-table/es2023/TypedArray.prototype.with.js: TypeError: undefined is not a function
-compat-table/es2023/hashbang.js: InternalError: Not implemented
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined is not a function
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined is not a function
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not a function
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token "_1"
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token "_"
 compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Token "read" not supported in this version

@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"e76a042c3f75ba628c105ab73f6339a86f0ce6809a5aea3449f63759af4c3b9a","binary_size":9641120,"console_log":"print","engine":"nova","repository":"https://github.com/trynova/nova.git","revision":"a5d0193b88a7c4abea4819bb68447f93121ff000","revision_date":"2026-03-15","run_script_cmd":"$BINARY eval ${MODULE:+--module}","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)","version":"latest-104-ga5d0193b"}
+Metadata: {"arch":"arm64","binary_sha256":"93d53977d9e7ec485b5ad9af11dd9454e3c133056fb113c8718fa6ead5e353d6","binary_size":9575584,"console_log":"print","engine":"nova","repository":"https://github.com/trynova/nova.git","revision":"a82b0408533bc93f857aa2ee5daee4f39f62dc6f","revision_date":"2026-03-23","run_script_cmd":"$BINARY eval ${MODULE:+--module}","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)","version":"latest-106-ga82b0408"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: crashed: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:
+compat-table/next/Symbol.dispose.bound.js: crashed: thread 'main' panicked at nova_vm/src/engine/bytecode/bytecode_compiler.rs:3679:52:
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.fromHex.js: TypeError: Not a callable object
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Not a callable object

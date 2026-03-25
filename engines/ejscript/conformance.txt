@@ -1,11 +1,11 @@
-Metadata: {"arch":"arm64","cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","dist_size":2188482,"engine":"ejscript","repository":"https://github.com/embedthis/ejscript.git","revision":"bb38d46e96ad20e923821d31d4a37e64de926d5a","revision_date":"2025-03-09","version":"2.7.7-22-gbb38d46e9"}
+Metadata: {"arch":"arm64","cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","dist_size":2188454,"engine":"ejscript","repository":"https://github.com/embedthis/ejscript.git","revision":"bb38d46e96ad20e923821d31d4a37e64de926d5a","revision_date":"2025-03-09","version":"2.7.7-22-gbb38d46e9"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
 es1/Array.prototype.constructor.js: Array.prototype.constructor failed
 es1/Array.prototype.join.generic.js: crashed: SIGSEGV
 es1/Array.prototype.join.js: join() without separator failed
-es1/Array.prototype.reverse.generic.js: crashed: SIGSEGV
+es1/Array.prototype.reverse.generic.js: failed
 es1/Array.prototype.reverse.js: OK
 es1/Array.prototype.sort.generic.js: crashed: SIGSEGV
 es1/Array.prototype.sort.js: sort with comparefn failed; reverse comparefn failed
@@ -264,7 +264,7 @@ es3/String.prototype.slice.generic.js: failed
 es3/String.prototype.slice.js: OK
 es3/String.prototype.split.bugs.js: ArgError: Insufficient actual parameters 0. Call requires 1 parameter(s).
 es3/String.prototype.split.limit.js: split with limit 2 failed; split with limit 0 failed; split with limit 3 failed; split with limit 1 failed
-es3/String.prototype.split.regex.js: timeout: >10s
+es3/String.prototype.split.regex.js: OOM: >4096MB
 es3/String.prototype.toLocaleLowerCase.js: ReferenceError: Cannot find function "toLocaleLowerCase"
 es3/String.prototype.toLocaleUpperCase.js: ReferenceError: Cannot find function "toLocaleUpperCase"
 es3/annex-b.String.prototype.substr.js: ReferenceError: Cannot find function "substr"
@@ -287,7 +287,7 @@ es3/global.decodeURI.js: decode UTF-8 failed; # not decoded failed
 es3/global.encodeURIComponent.js: encode UTF-8 failed
 es3/global.encodeURI.js: encode UTF-8 failed
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: Unexpected input ""
+es3/identifiers.unicode.js: SyntaxError: Unexpected input ""
 es3/instanceof.js: number instanceof Object failed; string instanceof Object failed; custom constructor instanceof failed
 es3/in.js: missing array index failed
 es3/labelled.break.js: Labeled statements are not yet implemented
@@ -338,9 +338,9 @@ es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
-es3/source.line-terminators.js: Unexpected input ""
-es3/source.whitespace.js: Unexpected input ""
-es3/source.whitespace.unicode.js: Unexpected input ""
+es3/source.line-terminators.js: SyntaxError: Unexpected input ""
+es3/source.whitespace.js: SyntaxError: Unexpected input ""
+es3/source.whitespace.unicode.js: SyntaxError: Unexpected input ""
 es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: finally executes on throw failed
@@ -390,13 +390,13 @@ es5/debugger.js: ReferenceError: debugger is not defined
 es5/global.Infinity.immutable.js: ReferenceError: Property "Infinity" is not writable
 es5/global.NaN.immutable.js: ReferenceError: Property "NaN" is not writable
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
-es5/global.undefined.immutable.js: Unexpected input "undefined"
+es5/global.undefined.immutable.js: SyntaxError: Unexpected input "undefined"
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
 es5/source.keyword-properties.js: Not an identifier "if"
 es5/source.unreserved-words.js: Unknown directive "="
-es5/source.whitespace.bom.js: Unexpected input ""
+es5/source.whitespace.bom.js: SyntaxError: Unexpected input ""
 es5/source.zero-width-chars.js: OK
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK

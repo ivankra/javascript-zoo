@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":2760485,"engine":"rhino","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/mozilla/rhino.git","revision":"4bf1df91036c7627f817d037aa768c3f79a9f8d8","revision_date":"2026-03-15","version":""}
+Metadata: {"arch":"arm64","console_log":"console.log","dist_size":2771435,"engine":"rhino","jdk":"openjdk version \"21.0.10\" 2026-01-20","repository":"https://github.com/mozilla/rhino.git","revision":"ef13600b8873ba455597210c5ba2eeb4cb45f2e8","revision_date":"2026-03-18","version":""}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: failed
 compat-table/es6/Reflect.construct.Promise-subclassing.js: TypeError: The constructor for Promise may not be invoked as a function
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: failed
 compat-table/es6/Reflect.construct.js: OK
-compat-table/es6/Reflect.construct.new-target.js: SyntaxError: syntax error
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError
 compat-table/es6/Reflect.construct.third-argument.js: OK
 compat-table/es6/Reflect.defineProperty.js: OK
 compat-table/es6/Reflect.deleteProperty.js: OK
@@ -751,7 +751,7 @@ compat-table/es6/arrow.lexical-arguments.js: OK
 compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/arrow.lexical-this.js: OK
-compat-table/es6/arrow.new-target.js: SyntaxError: syntax error
+compat-table/es6/arrow.new-target.js: SyntaxError
 compat-table/es6/arrow.no-line-break.js: OK
 compat-table/es6/arrow.no-prototype.js: OK
 compat-table/es6/arrow.precedence.js: OK
@@ -773,7 +773,7 @@ compat-table/es6/class.extends.js: SyntaxError: identifier is a reserved word: c
 compat-table/es6/class.implicit-strict.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/class.lexical-name.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/class.methods-not-enumerable.js: SyntaxError: identifier is a reserved word: class
-compat-table/es6/class.new-target.js: SyntaxError: syntax error
+compat-table/es6/class.new-target.js: SyntaxError
 compat-table/es6/class.optional-semicolons.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/class.prototype-methods.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/class.statement.js: SyntaxError: identifier is a reserved word: class
@@ -782,18 +782,18 @@ compat-table/es6/class.static-methods.js: SyntaxError: identifier is a reserved 
 compat-table/es6/class.string-keyed-methods.js: SyntaxError: identifier is a reserved word: class
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: SyntaxError: redeclaration of const bar.
-compat-table/es6/const.for-in.js: SyntaxError: syntax error
-compat-table/es6/const.for-loop.js: SyntaxError: syntax error
-compat-table/es6/const.for-of.js: SyntaxError: syntax error
+compat-table/es6/const.for-in.js: SyntaxError
+compat-table/es6/const.for-loop.js: SyntaxError
+compat-table/es6/const.for-of.js: SyntaxError
 compat-table/es6/const.no-redefine.js: failed
 compat-table/es6/const.no-statement.js: failed
 compat-table/es6/const.shadow.js: SyntaxError: redeclaration of const bar.
 compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: SyntaxError: redeclaration of const bar.
-compat-table/es6/const.strict.for-in.js: SyntaxError: syntax error
-compat-table/es6/const.strict.for-loop.js: SyntaxError: syntax error
-compat-table/es6/const.strict.for-of.js: SyntaxError: syntax error
-compat-table/es6/const.strict.no-redefine.js: OK
+compat-table/es6/const.strict.for-in.js: SyntaxError
+compat-table/es6/const.strict.for-loop.js: SyntaxError
+compat-table/es6/const.strict.for-of.js: SyntaxError
+compat-table/es6/const.strict.no-redefine.js: failed
 compat-table/es6/const.strict.no-statement.js: failed
 compat-table/es6/const.strict.shadow.js: SyntaxError: redeclaration of const bar.
 compat-table/es6/const.strict.tdz.js: failed
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: failed
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -871,7 +873,7 @@ compat-table/es6/destructuring-params.new-function.js: OK
 compat-table/es6/destructuring-params.object-primitives.js: OK
 compat-table/es6/destructuring-params.object.js: OK
 compat-table/es6/destructuring-params.rest.js: OK
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: syntax error
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError
 compat-table/es6/destructuring-params.sparse-array.js: OK
 compat-table/es6/destructuring-params.string.js: OK
 compat-table/es6/destructuring-params.throws-null-undefined.js: OK
@@ -1036,8 +1038,8 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: OK
 compat-table/es6/misc.prototypes-not-instances.js: failed
-compat-table/es6/new-target.assignment-error.js: SyntaxError: syntax error
-compat-table/es6/new-target.constructor.js: SyntaxError: syntax error
+compat-table/es6/new-target.assignment-error.js: SyntaxError
+compat-table/es6/new-target.constructor.js: SyntaxError
 compat-table/es6/regex.flags.u.case-folding.js: SyntaxError: invalid flag 'u and i' after regular expression
 compat-table/es6/regex.flags.u.codepoint.js: OK
 compat-table/es6/regex.flags.u.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: missing ; before statement
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: missing ; before statement
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Cannot find function fromBase64.
 compat-table/next/Uint8Array.fromHex.js: TypeError: Cannot find function fromHex.
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Cannot find function setFromBase64.
@@ -1504,9 +1507,9 @@ compat-table/next/await-using.for-of.js: SyntaxError: missing ( before function 
 compat-table/next/await-using.js: SyntaxError: missing ) in parenthetical
 compat-table/next/class-decorators.js: SyntaxError: identifier is a reserved word: class
 compat-table/next/function.sent.js: SyntaxError: missing ( before function parameters.
-compat-table/next/throw-expr.arrow.js: SyntaxError: syntax error
-compat-table/next/throw-expr.conditional.js: SyntaxError: syntax error
-compat-table/next/throw-expr.logical.js: SyntaxError: syntax error
-compat-table/next/throw-expr.param-init.js: SyntaxError: syntax error
+compat-table/next/throw-expr.arrow.js: SyntaxError
+compat-table/next/throw-expr.conditional.js: SyntaxError
+compat-table/next/throw-expr.logical.js: SyntaxError
+compat-table/next/throw-expr.param-init.js: SyntaxError
 compat-table/next/using.for-of.js: SyntaxError: missing ; after for-loop initializer
 compat-table/next/using.js: SyntaxError: missing ; before statement

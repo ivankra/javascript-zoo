@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":37707457,"engine":"sablejs","repository":"https://github.com/sablejs/sablejs.git","revision":"f8236ffaeb8437230db1c3518971750586f6b842","revision_date":"2022-09-12","version":"1.1.0"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":37707457,"engine":"sablejs","repository":"https://github.com/sablejs/sablejs.git","revision":"f8236ffaeb8437230db1c3518971750586f6b842","revision_date":"2022-09-12","version":"1.1.0"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.object.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Unexpected token
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Assigning to rvalue
 compat-table/es6/destructuring-assign.string.js: SyntaxError: Assigning to rvalue
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected tok
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Unexpected token
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Unexpected token
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Unexpected token
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: 'ArrayBuffer' is n
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: 'ArrayBuffer' is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: undefined is not callable
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: 'ArrayBuffer' is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: The keyword 'const' is reserved
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.from.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.of.js: ReferenceError: 'Int8Array' is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: 'Int8Array' is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: The keyword 'const' is reserved
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: The keyword 'const' is reserved
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: The keyword 'const' is reserved

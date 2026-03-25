@@ -180,11 +180,11 @@ es1/return.typeof.js: timeout: >10s
 es1/this.js: timeout: >10s
 es1/typeof.js: OK
 es1/typeof.null.js: OK
-es1/typeof.undeclared.js: In typeof.undeclared.js, line 6:; var b = typeof a;; var b = [ERROR]typeof a;; Reference error: a is undefined
+es1/typeof.undeclared.js: ReferenceError: a is undefined
 es1/types.js: OK
 es1/unary.decrement.js: OK
 es1/unary.delete.js: OK
-es1/unary.delete.var.js: In unary.delete.var.js, line 9:; if (typeof a == "undefined" && b == 2) {; if ([ERROR]typeof a == "undefined" && b == 2) {; Reference error: a is undefined
+es1/unary.delete.var.js: ReferenceError: a is undefined
 es1/unary.increment.js: OK
 es1/unary.minus.js: OK
 es1/unary.not.js: OK
@@ -282,12 +282,12 @@ es3/global.TypeError.js: name failed
 es3/global.TypeError.thrown.js: crashed: SIGSEGV
 es3/global.URIError.js: name failed
 es3/global.URIError.thrown.js: wrong exception for decodeURI incomplete escape; wrong exception for decodeURI invalid hex; wrong exception for decodeURI invalid UTF-8; wrong exception for decodeURIComponent incomplete escape; wrong...
-es3/global.decodeURIComponent.js: In global.decodeURIComponent.js, line 8:; var decoded1 = decodeURIComponent("hello%20world");; var decoded1 = decodeURIComponent([ERROR]"hello%20world");; Reference error: decodeURIComponent is undefi...
-es3/global.decodeURI.js: In global.decodeURI.js, line 8:; var decoded1 = decodeURI("https://example.com/path?query=value");; var decoded1 = decodeURI([ERROR]"https://example.com/path?query=value");; Reference error: decodeURI...
-es3/global.encodeURIComponent.js: In global.encodeURIComponent.js, line 8:; var encoded1 = encodeURIComponent("hello world");; var encoded1 = encodeURIComponent([ERROR]"hello world");; Reference error: encodeURIComponent is undefined
-es3/global.encodeURI.js: In global.encodeURI.js, line 8:; var encoded1 = encodeURI("https://example.com/path?query=value");; var encoded1 = encodeURI([ERROR]"https://example.com/path?query=value");; Reference error: encodeURI...
+es3/global.decodeURIComponent.js: ReferenceError: decodeURIComponent is undefined
+es3/global.decodeURI.js: ReferenceError: decodeURI is undefined
+es3/global.encodeURIComponent.js: ReferenceError: encodeURIComponent is undefined
+es3/global.encodeURI.js: ReferenceError: encodeURI is undefined
 es3/global.undefined.js: OK
-es3/identifiers.unicode.js: In identifiers.unicode.js, line 8:; var <00D0><00B6> = 1;; var <00D0>[ERROR]<00B6> = 1;; Syntax error: Bad character
+es3/identifiers.unicode.js: SyntaxError: Bad character
 es3/instanceof.js: OK
 es3/in.js: length in array failed
 es3/labelled.break.js: OK
@@ -301,7 +301,7 @@ es3/literals.object.hex.js: OK
 es3/literals.object.int.js: OK
 es3/literals.object.js: OK
 es3/literals.object.str.js: OK
-es3/literals.object.unicode.js: In literals.object.unicode.js, line 9:; var o1 = {<00D0><00B6>: 42};; var o1 = {<00D0>[ERROR]<00B6>: 42};; Syntax error: Bad character
+es3/literals.object.unicode.js: SyntaxError: Bad character
 es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
@@ -338,9 +338,9 @@ es3/regex.quantifier.plus.js: OK
 es3/regex.quantifier.range.js: OK
 es3/regex.quantifier.star.js: OK
 es3/regex.word-boundary.js: OK
-es3/source.line-terminators.js: In source.line-terminators.js, line 13:; return<00E2><0080><00A8>1;  // return<U+2028>1;; return<00E2>[ERROR]<0080><00A8>1;  // return<U+2028>1;; Syntax error: Bad character
-es3/source.whitespace.js: In source.whitespace.js, line 12:; var<00C2><00A0>w = 4;      // var<NBSP>x: \y00A0 No-break space; var<00C2><00A0>w [ERROR]= 4;      // var<NBSP>x: \y00A0 No-break space; Syntax error: Bad annotated ...
-es3/source.whitespace.unicode.js: In source.whitespace.unicode.js, line 8:; var<00E2><0080><0080>x = 1;  // var<U+2000>x: \u2000 EN QUAD; var<00E2>[ERROR]<0080><0080>x = 1;  // var<U+2000>x: \u2000 EN QUAD; Syntax error: Bad character
+es3/source.line-terminators.js: SyntaxError: Bad character
+es3/source.whitespace.js: SyntaxError: Bad annotated directive
+es3/source.whitespace.unicode.js: SyntaxError: Bad character
 es3/strict-equals.js: OK
 es3/switch.js: OK
 es3/try-catch-finally.js: OK
@@ -363,12 +363,12 @@ es5/Date.prototype.toJSON.js: Date.prototype.toJSON not a function; In Date.prot
 es5/Function.prototype-not-enumerable.js: OK
 es5/Function.prototype.apply.array-like.js: array-like object not accepted
 es5/Function.prototype.bind.js: Function.prototype.bind not a function; In Function.prototype.bind.js, line 18:; var boundGetX = getX.bind(obj);; [ERROR]var boundGetX = getX.bind(obj);; Bad Value error: undefined is not a function
-es5/JSON.js: In JSON.js, line 8:; if (typeof JSON === 'object') {; if ([ERROR]typeof JSON === 'object') {; Reference error: JSON is undefined
-es5/JSON.parse.js: In JSON.parse.js, line 7:; if (typeof JSON.parse !== 'function') {; if ([ERROR]typeof JSON.parse !== 'function') {; Reference error: JSON is undefined
-es5/JSON.parse.reviver.js: In JSON.parse.reviver.js, line 7:; if (typeof JSON.parse !== 'function') {; if ([ERROR]typeof JSON.parse !== 'function') {; Reference error: JSON is undefined
-es5/JSON.stringify.js: In JSON.stringify.js, line 7:; if (typeof JSON.stringify !== 'function') {; if ([ERROR]typeof JSON.stringify !== 'function') {; Reference error: JSON is undefined
-es5/JSON.stringify.replacer.js: In JSON.stringify.replacer.js, line 7:; if (typeof JSON.stringify !== 'function') {; if ([ERROR]typeof JSON.stringify !== 'function') {; Reference error: JSON is undefined
-es5/JSON.stringify.space.js: In JSON.stringify.space.js, line 7:; if (typeof JSON.stringify !== 'function') {; if ([ERROR]typeof JSON.stringify !== 'function') {; Reference error: JSON is undefined
+es5/JSON.js: ReferenceError: JSON is undefined
+es5/JSON.parse.js: ReferenceError: JSON is undefined
+es5/JSON.parse.reviver.js: ReferenceError: JSON is undefined
+es5/JSON.stringify.js: ReferenceError: JSON is undefined
+es5/JSON.stringify.replacer.js: ReferenceError: JSON is undefined
+es5/JSON.stringify.space.js: ReferenceError: JSON is undefined
 es5/Object.create.js: In Object.create.js, line 10:; if (typeof Object.create === 'function') {; if ([ERROR]typeof Object.create === 'function') {; Property access error: No property named create
 es5/Object.defineProperties.js: In Object.defineProperties.js, line 10:; if (typeof Object.defineProperties === 'function') {; if ([ERROR]typeof Object.defineProperties === 'function') {; Property access error: No property named def...
 es5/Object.defineProperty.js: In Object.defineProperty.js, line 10:; if (typeof Object.defineProperty === 'function') {; if ([ERROR]typeof Object.defineProperty === 'function') {; Property access error: No property named definePro...
@@ -391,19 +391,19 @@ es5/global.Infinity.immutable.js: Infinity not positive infinity after assignmen
 es5/global.NaN.immutable.js: OK
 es5/global.parseInt.no-octal.js: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
 es5/global.undefined.immutable.js: OK
-es5/literals.object.getters.js: In literals.object.getters.js, line 9:; var o1 = { get x(){ return 1; } };; var o1 = { get [ERROR]x(){ return 1; } };; Syntax error: : expected
-es5/literals.object.setters.js: In literals.object.setters.js, line 10:; var o1 = { set x(v){ value = v; } };; var o1 = { set [ERROR]x(v){ value = v; } };; Syntax error: : expected
-es5/literals.object.trailing-comma.js: In literals.object.trailing-comma.js, line 9:; var o1 = { a: true, };; var o1 = { a: true, [ERROR]};; Syntax error: Field name expected
-es5/source.keyword-properties.js: In source.keyword-properties.js, line 15:; var o1 = { if: 1 };; var o1 = { [ERROR]if: 1 };; Syntax error: Field name expected
-es5/source.unreserved-words.js: In source.unreserved-words.js, line 13:; var abstract, boolean, byte, char, double, final, float, goto, int, long,; var [ERROR]abstract, boolean, byte, char, double, final, float, goto, int, long,; Sy...
-es5/source.whitespace.bom.js: In source.whitespace.bom.js, line 1:; <00EF><00BB><00BF>// ES5: 7.2 White Space; <00EF>[ERROR]<00BB><00BF>// ES5: 7.2 White Space; Syntax error: Bad character
-es5/source.zero-width-chars.js: In source.zero-width-chars.js, line 11:; var _\u200c\u200d = true;; var _\u200[ERROR]c\u200d = true;; Syntax error: Identifier escape expands into non-identifier character
+es5/literals.object.getters.js: SyntaxError: : expected
+es5/literals.object.setters.js: SyntaxError: : expected
+es5/literals.object.trailing-comma.js: SyntaxError: Field name expected
+es5/source.keyword-properties.js: SyntaxError: Field name expected
+es5/source.unreserved-words.js: SyntaxError: Identifier expected
+es5/source.whitespace.bom.js: SyntaxError: Bad character
+es5/source.zero-width-chars.js: SyntaxError: Identifier escape expands into non-identifier character
 es5/strict.eval-cannot-create-bindings.js: failed
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: failed
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
-es5/strict.no-assignment-to-non-writable.js: In strict.no-assignment-to-non-writable.js, line 29:; ({ get x(){ } }).x = 1;; ({ get [ERROR]x(){ } }).x = 1;; Syntax error: : expected
+es5/strict.no-assignment-to-non-writable.js: SyntaxError: : expected
 es5/strict.no-assignment-to-unresolvable.js: failed
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed

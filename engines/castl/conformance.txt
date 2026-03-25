@@ -254,7 +254,7 @@ es3/String.prototype.match.generic.js: OK
 es3/String.prototype.match.js: OK
 es3/String.prototype.replace.capture.js: $nn 10 captures failed; $nn reverse order failed
 es3/String.prototype.replace.extra.js: $` failed; $' failed; combined replacements failed
-es3/String.prototype.replace.generic.js: luajit: /dist/castl-dist/castl/prototype/string.lua:419: bad argument #1 to 'gsub' (string expected, got nil); stack traceback:; [C]: in function 'gsub'; /dist/castl-dist/castl/prototype/string.lua:41...
+es3/String.prototype.replace.generic.js: bad argument #1 to 'gsub' (string expected, got nil)
 es3/String.prototype.replace.regex.js: OK
 es3/String.prototype.replace.str.js: OK
 es3/String.prototype.search.generic.js: OK
@@ -494,12 +494,12 @@ compat-table/es5/strict.this-undefined.js: failed
 compat-table/es5/strict.with-error.js: failed
 compat-table/es6/Array.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
 compat-table/es6/Array.from.array-like.js: attempt to call method 'from' (a nil value)
-compat-table/es6/Array.from.generator.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/Array.from.generator.js: SyntaxError: Yield expression not supported yet.
 compat-table/es6/Array.from.iterable-instance.js: attempt to call method 'from' (a nil value)
 compat-table/es6/Array.from.iterable.js: attempt to call method 'from' (a nil value)
 compat-table/es6/Array.from.iterator-closing.js: failed
 compat-table/es6/Array.from.map.array-like.js: attempt to call method 'from' (a nil value)
-compat-table/es6/Array.from.map.generator.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/Array.from.map.generator.js: SyntaxError: Yield expression not supported yet.
 compat-table/es6/Array.from.map.iterable-instance.js: attempt to call method 'from' (a nil value)
 compat-table/es6/Array.from.map.iterable.js: attempt to call method 'from' (a nil value)
 compat-table/es6/Array.iterator-prototype-chain.js: TypeError: Cannot read property 'iterator' of undefined
@@ -512,17 +512,17 @@ compat-table/es6/Array.prototype.fill.js: failed
 compat-table/es6/Array.prototype.findIndex.js: failed
 compat-table/es6/Array.prototype.find.js: failed
 compat-table/es6/Array.prototype.keys.js: failed
-compat-table/es6/Array.prototype.splice.js: exception: /dist/castl-dist/castl/prototype/array.lua:108: attempt to compare number with nil
+compat-table/es6/Array.prototype.splice.js: exception: array.lua:108: attempt to compare number with nil
 compat-table/es6/Array.prototype.values.js: failed
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: TypeError: Cannot read property 'toPrimitive' of undefined
 compat-table/es6/Function.name.accessor.js: TypeError: Cannot read property 'get' of undefined
 compat-table/es6/Function.name.bound.js: failed
-compat-table/es6/Function.name.class-expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/Function.name.class-object-method.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/Function.name.class-prototype.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/Function.name.class-statement.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/Function.name.class-static.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/Function.name.class-variable.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/Function.name.class-expression.js: SyntaxError: Unknown Expression type: ClassExpression
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: Unknown Expression type: ClassExpression
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/Function.name.class-statement.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/Function.name.class-static.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/Function.name.class-variable.js: SyntaxError: Unknown Expression type: ClassExpression
 compat-table/es6/Function.name.configurable.js: TypeError: Cannot read property 'enumerable' of undefined
 compat-table/es6/Function.name.expression.js: failed
 compat-table/es6/Function.name.new-Function.js: failed
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: TypeError: Cannot re
 compat-table/es6/Reflect.construct.Promise-subclassing.js: TypeError: Cannot read property 'construct' of undefined
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: TypeError: Cannot read property 'construct' of undefined
 compat-table/es6/Reflect.construct.js: TypeError: Cannot read property 'construct' of undefined
-compat-table/es6/Reflect.construct.new-target.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError: Meta property (ES6) not supported yet.
 compat-table/es6/Reflect.construct.third-argument.js: TypeError: Cannot read property 'construct' of undefined
 compat-table/es6/Reflect.defineProperty.js: TypeError: Cannot read property 'defineProperty' of undefined
 compat-table/es6/Reflect.deleteProperty.js: TypeError: Cannot read property 'deleteProperty' of undefined
@@ -725,12 +725,12 @@ compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
 compat-table/es6/annex-b.html-comments.js: OK
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
-compat-table/es6/annex-b.regex.hyphens.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:60: invalid range in character class (pattern offset: 6)
+compat-table/es6/annex-b.regex.hyphens.js: exception: regexp.lua:60: invalid range in character class (pattern offset: 6)
 compat-table/es6/annex-b.regex.incomplete-patterns.js: OK
 compat-table/es6/annex-b.regex.invalid-char-escapes.js: failed
 compat-table/es6/annex-b.regex.invalid-control-escapes.js: TypeError: Cannot read property '0' of null
 compat-table/es6/annex-b.regex.invalid-hex-escapes.js: TypeError: Cannot read property '0' of null
-compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:60: PCRE2 does not support \F, \L, \l, \N{name}, \U, or \u (pattern offset: 4)
+compat-table/es6/annex-b.regex.invalid-unicode-escapes.js: exception: regexp.lua:60: PCRE2 does not support \F, \L, \l, \N{name}, \U, or \u (pattern offset: 4)
 compat-table/es6/annex-b.regex.octal-escapes.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.absent-from-null.js: OK
 compat-table/es6/annex-b.__proto__.Object.prototype.descriptor.js: failed
@@ -743,48 +743,48 @@ compat-table/es6/annex-b.__proto__.literals.multiple-error.js: OK
 compat-table/es6/annex-b.__proto__.literals.not-computed.js: failed
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: failed
 compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: failed
-compat-table/es6/arrow.0-params.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.1-param.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.5-param.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.bind.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.lexical-arguments.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.lexical-this.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.new-target.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.no-line-break.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.no-prototype.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.precedence.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/arrow.this-call-apply.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.accessor-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.anonymous.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.block-scoped.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.computed-accessor-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.computed-names-tdz.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.computed-prototype-methods.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.computed-static-methods.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.constructor-requires-new.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.extends-expressions.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.extends-null.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.extends.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.implicit-strict.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.lexical-name.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.methods-not-enumerable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.new-target.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.optional-semicolons.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.prototype-methods.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.statement.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.static-accessor-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.static-methods.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/class.string-keyed-methods.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/arrow.0-params.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.1-param.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.5-param.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.bind.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/arrow.lexical-this.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.new-target.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.no-line-break.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.no-prototype.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.precedence.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/class.accessor-properties.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.anonymous.js: SyntaxError: Unknown Expression type: ClassExpression
+compat-table/es6/class.block-scoped.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: Unknown Expression type: ClassExpression
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.computed-static-methods.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.constructor.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.expression.js: SyntaxError: Unknown Expression type: ClassExpression
+compat-table/es6/class.extends-expressions.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.extends-null.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.extends.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.implicit-strict.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.lexical-name.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.new-target.js: SyntaxError: Meta property (ES6) not supported yet.
+compat-table/es6/class.optional-semicolons.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.prototype-methods.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.statement.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.static-methods.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es6/const.basic.js: OK
 compat-table/es6/const.block-scoped.js: failed
 compat-table/es6/const.for-in.js: OK
 compat-table/es6/const.for-loop.js: failed
-compat-table/es6/const.for-of.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/const.for-of.js: SyntaxError: For...of statement (ES6) not supported yet.
 compat-table/es6/const.no-redefine.js: failed
 compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
@@ -792,7 +792,7 @@ compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: failed
 compat-table/es6/const.strict.for-in.js: OK
 compat-table/es6/const.strict.for-loop.js: failed
-compat-table/es6/const.strict.for-of.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/const.strict.for-of.js: SyntaxError: For...of statement (ES6) not supported yet.
 compat-table/es6/const.strict.no-redefine.js: failed
 compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
@@ -801,135 +801,137 @@ compat-table/es6/const.tdz.js: failed
 compat-table/es6/default-params.arguments.js: OK
 compat-table/es6/default-params.basic.js: Warning: default parameters of functions are ignored
 compat-table/es6/default-params.explicit-undefined.js: Warning: default parameters of functions are ignored
-compat-table/es6/default-params.new-function.js: exception: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,a = 1,b = 2 = ...;..."]:1: unexpected symbol near '='
+compat-table/es6/default-params.new-function.js: exception: function.lua:68: [string "local this,a = 1,b = 2 = ...;..."]:1: unexpected symbol near '='
 compat-table/es6/default-params.refer-previous.js: Warning: default parameters of functions are ignored
 compat-table/es6/default-params.separate-scope.js: attempt to call local 'a' (a nil value)
 compat-table/es6/default-params.tdz.js: Warning: default parameters of functions are ignored
-compat-table/es6/destructuring-assign.array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.defaults.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.generator.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.nested.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.rest.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.catch.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.defaults.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.for-in.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.for-of.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.generator.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.nested.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.rest.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.defaults-new-function.js: exception: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,{a = 1, b = 0, c = 3, x:d = 0, y:e..."]:1: '<name>' expected near '{'
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/destructuring-assign.array.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.empty-patterns.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.generator.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.iterable-expression.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.iterable-instance.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.iterable.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.iterator-closing.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.nested.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.object.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.string.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-assign.trailing-comma-iterable.js: SyntaxError: Unknown Expression type: ArrayPattern
+compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: Unknown Expression type: ObjectPattern
+compat-table/es6/destructuring-decl.array.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.catch.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.defaults.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.for-in.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.for-of.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/destructuring-decl.generator.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.iterable.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.nested.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.object.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.rest.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.string.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.array.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.defaults-new-function.js: exception: function.lua:68: [string "local this,{a = 1, b = 0, c = 3, x:d = 0, y:e..."]:1: '<name>' expected near '{'
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: Unknwown Pattern type: ObjectPattern
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
-compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.generator.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.length.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.nested.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.new-function.js: exception: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,{a, x:b, y:e},[c, d] = ...;..."]:1: '<name>' expected near '{'
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.rest.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.astral-string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.generator.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.iterable-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.sparse-array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/for-of.string.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.generator.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.length.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.nested.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.new-function.js: exception: function.lua:68: [string "local this,{a, x:b, y:e},[c, d] = ...;..."]:1: '<name>' expected near '{'
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.object.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.rest.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.string.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unknwown Pattern type: ArrayPattern
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Unknwown Pattern type: ObjectPattern
+compat-table/es6/for-of.array.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.astral-string.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.generator.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/for-of.iterable-instance.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.iterable.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.sparse-array.js: SyntaxError: For...of statement (ES6) not supported yet.
+compat-table/es6/for-of.string.js: SyntaxError: For...of statement (ES6) not supported yet.
 compat-table/es6/function.block-level-decl.js: failed
-compat-table/es6/generators.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.constructor.js: exception: /dist/castl-dist/castl/prototype/string.lua:419: invalid capture index
-compat-table/es6/generators.expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.no-new-this.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/generators.basic.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.constructor.js: exception: string.lua:419: invalid capture index
+compat-table/es6/generators.expression.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.no-new-this.js: SyntaxError: Yield expression not supported yet.
 compat-table/es6/generators.prototype-chain.js: TypeError: Object.getPrototypeOf called on non-object
 compat-table/es6/generators.prototype.js: TypeError: Object.getPrototypeOf called on non-object
-compat-table/es6/generators.return.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.sending.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.class.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.computed.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.this.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.throw.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-precedence.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.generator.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/generators.yield-star.string.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.block-scoped.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/generators.return.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.sending.js: SyntaxError: Unknown Expression type: YieldExpression
+compat-table/es6/generators.shorthand.class.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/generators.shorthand.computed.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.shorthand.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.this.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.throw.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-precedence.js: SyntaxError: Unknown Expression type: YieldExpression
+compat-table/es6/generators.yield-star.array.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.generator.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.iterable.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/generators.yield-star.string.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/let.basic.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.block-scoped.js: SyntaxError: let instruction is not supported yet
 compat-table/es6/let.for-in-shadow.js: OK
-compat-table/es6/let.for-iteration.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.for-loop.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.no-statement.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.shadow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.block-scoped.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/let.for-iteration.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.for-loop.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.no-statement.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.shadow.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.basic.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.block-scoped.js: SyntaxError: let instruction is not supported yet
 compat-table/es6/let.strict.for-in-shadow.js: OK
-compat-table/es6/let.strict.for-iteration.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.for-loop.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.no-statement.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.shadow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.strict.tdz.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/let.tdz.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/let.strict.for-iteration.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.for-loop.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.no-statement.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.shadow.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.strict.tdz.js: SyntaxError: let instruction is not supported yet
+compat-table/es6/let.tdz.js: SyntaxError: let instruction is not supported yet
 compat-table/es6/literals.binary.Number.js: OK
 compat-table/es6/literals.binary.js: OK
 compat-table/es6/literals.object.computed-accessors.js: failed
@@ -971,14 +973,14 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: TypeError: undefined is not a 
 compat-table/es6/misc.Proxy.get.Array.shift.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Array.splice.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Array.toString.js: TypeError: undefined is not a function
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Error.toString.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Function.bind.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.HasBinding.js: TypeError: undefined is not a function
-compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: For...of statement (ES6) not supported yet.
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Object.assign.js: TypeError: undefined is not a function
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: TypeError: undefined is not a function
@@ -1016,11 +1018,11 @@ compat-table/es6/misc.Proxy.set.Object.assign.js: TypeError: undefined is not a 
 compat-table/es6/misc.RegExp-alter-flags.js: TypeError: Cannot supply flags when constructing one RegExp from another
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: failed
 compat-table/es6/misc.accessors-no-constructor.js: TypeError: Cannot read property 'get' of undefined
-compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es6/misc.bound-function-prototype.function.js: failed
 compat-table/es6/misc.bound-function-prototype.generator.js: failed
-compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
 compat-table/es6/misc.for-in-no-assignment-strict.js: failed
@@ -1036,83 +1038,83 @@ compat-table/es6/misc.property-order.Object.keys.js: OK
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: TypeError: Cannot read property 'ownKeys' of undefined
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: attempt to call global 'Symbol' (a nil value)
 compat-table/es6/misc.prototypes-not-instances.js: failed
-compat-table/es6/new-target.assignment-error.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/new-target.constructor.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/new-target.assignment-error.js: SyntaxError: Meta property (ES6) not supported yet.
+compat-table/es6/new-target.constructor.js: SyntaxError: Meta property (ES6) not supported yet.
 compat-table/es6/regex.flags.u.case-folding.js: failed
-compat-table/es6/regex.flags.u.codepoint.js: exception: /dist/castl-dist/castl/prototype/string.lua:466: PCRE2 does not support \F, \L, \l, \N{name}, \U, or \u (pattern offset: 4)
+compat-table/es6/regex.flags.u.codepoint.js: exception: string.lua:466: PCRE2 does not support \F, \L, \l, \N{name}, \U, or \u (pattern offset: 4)
 compat-table/es6/regex.flags.u.js: TypeError: Cannot read property '0' of null
 compat-table/es6/regex.flags.u.non-bmp.js: TypeError: Cannot read property '0' of null
 compat-table/es6/regex.flags.y.js: failed
 compat-table/es6/regex.flags.y.lastIndex.js: failed
-compat-table/es6/rest-params.arguments.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/rest-params.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/rest-params.length.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/rest-params.new-function.js: exception: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,a,...b = ...;..."]:1: '<name>' expected near '...'
-compat-table/es6/rest-params.no-setter.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.array-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.array-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.astral-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.astral-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.generator-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.generator-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.iterable-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.iterable-instance-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.iterable-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.non-iterable-error.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.sparse-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.sparse-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.string-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/spread.string-literal.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.concat.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.filter.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.from.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.isArray.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.length-access.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.length-set.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.map.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.of.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.slice.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Array.splice.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.new.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Promise.all.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Promise.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.Promise.race.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.RegExp.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.RegExp.test.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.Error.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.Map.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.Number.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.Set.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/subclassing.misc.String.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.correct-constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.expression.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.method-calls.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.new-target-binding.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.property-access.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.statement.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.static-binding.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/super.this-binding.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/rest-params.arguments.js: SyntaxError: Rest parameters (ES6) not supported yet.
+compat-table/es6/rest-params.basic.js: SyntaxError: Rest parameters (ES6) not supported yet.
+compat-table/es6/rest-params.length.js: SyntaxError: Rest parameters (ES6) not supported yet.
+compat-table/es6/rest-params.new-function.js: exception: function.lua:68: [string "local this,a,...b = ...;..."]:1: '<name>' expected near '...'
+compat-table/es6/rest-params.no-setter.js: SyntaxError: Rest parameters (ES6) not supported yet.
+compat-table/es6/spread.array-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.array-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.astral-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.astral-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.generator-call.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/spread.generator-literal.js: SyntaxError: Yield expression not supported yet.
+compat-table/es6/spread.iterable-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.iterable-instance-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.iterable-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.non-iterable-error.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.sparse-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.sparse-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.string-call.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/spread.string-literal.js: SyntaxError: Spread operator (ES6) not supported yet.
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.from.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.map.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.of.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.call.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.new.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Promise.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.RegExp.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/subclassing.misc.String.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.correct-constructor.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.expression.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.method-calls.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.new-target-binding.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.property-access.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.statement.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.static-binding.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/es6/super.this-binding.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es6/tail-calls.direct.js: attempt to call global 'f' (a nil value)
 compat-table/es6/tail-calls.mutual.js: OK
-compat-table/es6/template.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/template.caching.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/template.escape-sequences.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/template.frozen-array.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/template.basic.js: SyntaxError: String templating (ES6) not supported yet.
+compat-table/es6/template.caching.js: SyntaxError: Unknown Expression type: TaggedTemplateExpression
+compat-table/es6/template.escape-sequences.js: SyntaxError: Line 13: Octal literals are not allowed in template strings.
+compat-table/es6/template.frozen-array.js: SyntaxError: Unknown Expression type: TaggedTemplateExpression
 compat-table/es6/template.line-break.js: String templating (ES6) not supported yet.
-compat-table/es6/template.permanent-caching.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/template.tagged.js: SyntaxError: Couldn't transpile JS code
-compat-table/es6/template.toString.js: SyntaxError: Couldn't transpile JS code
+compat-table/es6/template.permanent-caching.js: SyntaxError: Unknown Expression type: TaggedTemplateExpression
+compat-table/es6/template.tagged.js: SyntaxError: Unknown Expression type: TaggedTemplateExpression
+compat-table/es6/template.toString.js: SyntaxError: String templating (ES6) not supported yet.
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: TypeError: Cannot read property 'species' of undefined
 compat-table/es6/typed-arrays.DataView.Float32.js: TypeError: undefined is not a function
 compat-table/es6/typed-arrays.DataView.Float64.js: TypeError: undefined is not a function
@@ -1194,16 +1196,16 @@ compat-table/es2016/Array.prototype.includes.generic.js: TypeError: Cannot read 
 compat-table/es2016/Array.prototype.includes.js: attempt to call method 'includes' (a nil value)
 compat-table/es2016/Array.prototype.includes.sparse.js: attempt to call method 'includes' (a nil value)
 compat-table/es2016/Array.prototype.includes.typed-array.js: TypeError: undefined is not a function
-compat-table/es2016/exponentiation.assignment.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/exponentiation.basic.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2016/exponentiation.assignment.js: SyntaxError: Line 10: Unexpected token *=
+compat-table/es2016/exponentiation.basic.js: SyntaxError: Line 10: Unexpected token *
+compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es2016/misc.Proxy-Array-includes.js: TypeError: undefined is not a function
 compat-table/es2016/misc.Proxy-enumerate-removed.js: TypeError: undefined is not a function
-compat-table/es2016/misc.generator-no-new.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2016/misc.generator-no-new.js: SyntaxError: Yield expression not supported yet.
+compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: Yield expression not supported yet.
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: Line 10: Unexpected token [
+compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: Line 9: Unexpected token [
+compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: Rest parameters (ES6) not supported yet.
 compat-table/es2017/Atomics.add.js: TypeError: Cannot read property 'add' of undefined
 compat-table/es2017/Atomics.and.js: TypeError: Cannot read property 'and' of undefined
 compat-table/es2017/Atomics.compareExchange.js: TypeError: Cannot read property 'compareExchange' of undefined
@@ -1249,47 +1251,47 @@ compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: TypeError: undefined is n
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: TypeError: undefined is not a function
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed
 compat-table/es2017/async.Symbol.toStringTag.js: TypeError: Object.getPrototypeOf called on non-object
-compat-table/es2017/async.arrow-in-class.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.arrow.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.await-non-promise.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.await-rejection.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.await.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.methods-class.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.methods-object.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.must-await-value.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.no-await-in-params.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.no-line-break.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.no-prototype.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: Line 50: Unexpected token =>
+compat-table/es2017/async.arrow.js: SyntaxError: Line 45: Unexpected token =>
+compat-table/es2017/async.await-non-promise.js: SyntaxError: Line 45: Unexpected token function
+compat-table/es2017/async.await-rejection.js: SyntaxError: Line 45: Unexpected token function
+compat-table/es2017/async.await.js: SyntaxError: Line 45: Unexpected token function
+compat-table/es2017/async.constructor.js: SyntaxError: Line 45: Unexpected token function
+compat-table/es2017/async.methods-class.js: SyntaxError: Line 46: Unexpected identifier
+compat-table/es2017/async.methods-object.js: SyntaxError: Line 46: Unexpected identifier
+compat-table/es2017/async.must-await-value.js: SyntaxError: Line 10: Unexpected token function
+compat-table/es2017/async.no-await-in-params.js: SyntaxError: Line 10: Unexpected token function
+compat-table/es2017/async.no-line-break.js: SyntaxError: Line 10: Unexpected token function
+compat-table/es2017/async.no-prototype.js: SyntaxError: Line 10: Unexpected token function
 compat-table/es2017/async.prototype-chain.js: TypeError: Object.getPrototypeOf called on non-object
-compat-table/es2017/async.return.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/async.throw.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2017/async.return.js: SyntaxError: Line 45: Unexpected token function
+compat-table/es2017/async.throw.js: SyntaxError: Line 45: Unexpected token function
 compat-table/es2017/misc.arguments-caller-removed.js: OK
 compat-table/es2017/regex.flags.u.case-folding.js: failed
-compat-table/es2017/trailing-comma.arguments.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2017/trailing-comma.params.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2017/trailing-comma.arguments.js: SyntaxError: Line 10: Unexpected token )
+compat-table/es2017/trailing-comma.params.js: SyntaxError: Line 10: Unexpected token )
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: TypeError: Cannot read property 'reject' of undefined
 compat-table/es2018/Promise.prototype.finally.js: TypeError: Cannot read property 'resolve' of undefined
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: TypeError: Cannot read property 'resolve' of undefined
-compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2018/async-iterators.generators.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: Line 58: Unexpected token function
+compat-table/es2018/async-iterators.generators.js: SyntaxError: Line 44: Unexpected token function
 compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: TypeError: undefined is not a function
-compat-table/es2018/misc.template-literal-revision.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2018/object-rest.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2018/object-spread.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: Line 16: Octal literals are not allowed in template strings.
+compat-table/es2018/object-rest.js: SyntaxError: Line 9: Unexpected token ...
+compat-table/es2018/object-spread.js: SyntaxError: Line 10: Unexpected token ...
 compat-table/es2018/regex.flags.s.js: failed
 compat-table/es2018/regex.lookbehind.js: OK
 compat-table/es2018/regex.named-capture-groups.js: TypeError: Cannot read property 'year' of undefined
 compat-table/es2018/regex.unicode-property-escapes.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: failed
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 17)
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 17)
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: failed
 compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: failed
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 19)
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 19)
 compat-table/es2019/Array.prototype.flatMap.js: attempt to call method 'flatMap' (a nil value)
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: TypeError: Cannot read property 'unscopables' of undefined
 compat-table/es2019/Array.prototype.flat.js: attempt to call method 'flat' (a nil value)
@@ -1301,7 +1303,7 @@ compat-table/es2019/Symbol.prototype.description.js: attempt to call global 'Sym
 compat-table/es2019/Symbol.prototype.description.undefined.js: TypeError: Cannot read property 'prototype' of undefined
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: attempt to call method 'trimLeft' (a nil value)
 compat-table/es2019/annex-b.String.prototype.trimRight.js: attempt to call method 'trimRight' (a nil value)
-compat-table/es2019/misc.Function-toString.Function-constructor.js: exception: /dist/castl-dist/castl/constructor/function.lua:68: [string "local this,a, /* a */ b, c /* b */ // = ...;..."]:1: '<name>' expected near '/'
+compat-table/es2019/misc.Function-toString.Function-constructor.js: exception: function.lua:68: [string "local this,a, /* a */ b, c /* b */ // = ...;..."]:1: '<name>' expected near '/'
 compat-table/es2019/misc.Function-toString.arrows.js: Arrow functions (ES6) not supported yet.
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: Unknown Expression type: ClassExpression
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: Unknown Expression type: ClassExpression
@@ -1311,43 +1313,43 @@ compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed
 compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: failed
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: failed
-compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/BigInt64Array.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Line 44: Unexpected token function
+compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Line 12: Unexpected token {
+compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Line 13: Unexpected token {
+compat-table/es2020/BigInt64Array.js: SyntaxError: Line 12: Unexpected token ILLEGAL
 compat-table/es2020/BigInt.asIntN.js: TypeError: Cannot read property 'asIntN' of undefined
 compat-table/es2020/BigInt.asUintN.js: TypeError: Cannot read property 'asUintN' of undefined
-compat-table/es2020/BigInt.constructor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/BigInt.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/BigUint64Array.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/Promise.allSettled.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2020/BigInt.constructor.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2020/BigInt.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2020/BigUint64Array.js: SyntaxError: Line 12: Unexpected token ILLEGAL
+compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: Line 12: Unexpected token ILLEGAL
+compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Line 12: Unexpected token ILLEGAL
+compat-table/es2020/Promise.allSettled.js: SyntaxError: Arrow functions (ES6) not supported yet.
 compat-table/es2020/String.prototype.matchAll.js: attempt to call method 'matchAll' (a nil value)
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
 compat-table/es2020/globalThis.descriptor.js: failed
 compat-table/es2020/globalThis.js: failed
-compat-table/es2020/nullish-coalescing.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/optional-chaining.bracket.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/optional-chaining.function-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/optional-chaining.method-call.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/optional-chaining.property.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2020/nullish-coalescing.js: SyntaxError: Line 10: Unexpected token ?
+compat-table/es2020/optional-chaining.bracket.js: SyntaxError: Line 12: Unexpected token .
+compat-table/es2020/optional-chaining.function-call.js: SyntaxError: Line 14: Unexpected token .
+compat-table/es2020/optional-chaining.method-call.js: SyntaxError: Line 12: Unexpected token .
+compat-table/es2020/optional-chaining.property.js: SyntaxError: Line 12: Unexpected token .
+compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: Line 14: Unexpected token .
 compat-table/es2021/FinalizationRegistry.js: TypeError: undefined is not a function
-compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: Arrow functions (ES6) not supported yet.
 compat-table/es2021/String.prototype.replaceAll.js: attempt to call method 'replaceAll' (a nil value)
 compat-table/es2021/WeakRef.js: TypeError: undefined is not a function
-compat-table/es2021/logical-assignment.and.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.nullish.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.or.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2021/numeric-separators.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2021/logical-assignment.and.js: SyntaxError: Line 13: Unexpected token =
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2021/logical-assignment.nullish.js: SyntaxError: Line 13: Unexpected token ?
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: Line 11: Unexpected token ?
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: Line 11: Unexpected token ?
+compat-table/es2021/logical-assignment.or.js: SyntaxError: Line 13: Unexpected token =
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2021/numeric-separators.js: SyntaxError: Line 9: Unexpected token ILLEGAL
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: TypeError: Cannot read property 'prototype' of undefined
 compat-table/es2022/Error.cause.AggregateError.js: TypeError: undefined is not a function
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1369,23 +1371,23 @@ compat-table/es2022/Object.hasOwn.js: attempt to call method 'hasOwn' (a nil val
 compat-table/es2022/at-method.Array.js: attempt to call method 'at' (a nil value)
 compat-table/es2022/at-method.String.js: attempt to call method 'at' (a nil value)
 compat-table/es2022/at-method.TypedArray.js: failed
-compat-table/es2022/class-fields.computed-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.computed-static.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.private-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.private-static.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.public-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.public-static.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-fields.static.define.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-methods.private-accessor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-methods.private-instance.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-methods.private-static.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/class-static-init-blocks.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: Line 10: Unexpected token =
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: Line 10: Unexpected token =
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: Line 13: Unexpected token =
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: Line 11: Unexpected token ILLEGAL
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2022/class-fields.private-static.js: SyntaxError: Line 11: Unexpected token ILLEGAL
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2022/class-fields.public-static.js: SyntaxError: Line 11: Unexpected token =
+compat-table/es2022/class-fields.static.define.js: SyntaxError: Line 9: Unexpected token =
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: Line 11: Unexpected token ILLEGAL
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: Line 11: Unexpected token ILLEGAL
+compat-table/es2022/class-methods.private-static.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: Line 12: Unexpected token {
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: Line 10: Unexpected token ILLEGAL
 compat-table/es2022/regex.flags.d.constructor.js: OK
 compat-table/es2022/regex.flags.d.shows-in-flags.js: TypeError: undefined is not a function
 compat-table/es2023/Array.prototype.findLastIndex.js: attempt to call method 'findLastIndex' (a nil value)
@@ -1397,34 +1399,34 @@ compat-table/es2023/Array.prototype.with.js: attempt to call method 'with' (a ni
 compat-table/es2023/TypedArray.prototype.toReversed.js: TypeError: undefined is not a function
 compat-table/es2023/TypedArray.prototype.toSorted.js: TypeError: undefined is not a function
 compat-table/es2023/TypedArray.prototype.with.js: TypeError: undefined is not a function
-compat-table/es2023/hashbang.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2023/hashbang.js: SyntaxError: Line 1: Unexpected token ILLEGAL
 compat-table/es2024/ArrayBuffer.prototype.detached.js: TypeError: undefined is not a function
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: TypeError: undefined is not a function
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: TypeError: undefined is not a function
-compat-table/es2024/Map.groupBy.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2024/Object.groupBy.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2024/Map.groupBy.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2024/Object.groupBy.js: SyntaxError: Arrow functions (ES6) not supported yet.
 compat-table/es2024/Promise.withResolvers.js: TypeError: Cannot read property 'withResolvers' of undefined
 compat-table/es2024/regex.flags.v.constructor.js: OK
-compat-table/es2024/regex.flags.v.properties-of-strings.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 27)
-compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2024/regex.flags.v.properties-of-strings.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 27)
+compat-table/es2024/regex.flags.v.set-notations.js: SyntaxError: Line 10: Invalid regular expression
 compat-table/es2024/regex.flags.v.shows-in-flags.js: TypeError: undefined is not a function
-compat-table/es2024/regex.flags.v.unicode-15.1.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
-compat-table/es2024/regex.flags.v.unicode-16.0.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
-compat-table/es2024/regex.flags.v.unicode-17.0.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
-compat-table/es2025/Iterator.extends.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2024/regex.flags.v.unicode-15.1.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
+compat-table/es2024/regex.flags.v.unicode-16.0.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
+compat-table/es2024/regex.flags.v.unicode-17.0.js: exception: regexp.lua:109: unknown property after \P or \p (pattern offset: 15)
+compat-table/es2025/Iterator.extends.js: SyntaxError: Class declaration (ES6) not supported yet.
 compat-table/es2025/Iterator.from.iterable.js: TypeError: Cannot read property 'from' of undefined
 compat-table/es2025/Iterator.from.iterator.js: TypeError: Cannot read property 'from' of undefined
 compat-table/es2025/Iterator.instanceof.js: attempt to call method 'values' (a nil value)
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read property 'prototype' of undefined
 compat-table/es2025/Iterator.prototype.drop.js: attempt to call method 'values' (a nil value)
-compat-table/es2025/Iterator.prototype.every.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.find.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.map.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.reduce.js: SyntaxError: Couldn't transpile JS code
-compat-table/es2025/Iterator.prototype.some.js: SyntaxError: Couldn't transpile JS code
+compat-table/es2025/Iterator.prototype.every.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.find.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: let instruction is not supported yet
+compat-table/es2025/Iterator.prototype.map.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.reduce.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/es2025/Iterator.prototype.some.js: SyntaxError: Arrow functions (ES6) not supported yet.
 compat-table/es2025/Iterator.prototype.take.js: attempt to call method 'values' (a nil value)
 compat-table/es2025/Iterator.prototype.toArray.js: attempt to call method 'values' (a nil value)
 compat-table/es2025/Promise.try.js: TypeError: Cannot read property 'try' of undefined
@@ -1436,7 +1438,7 @@ compat-table/es2025/Set.prototype.isSubsetOf.js: TypeError: undefined is not a f
 compat-table/es2025/Set.prototype.isSupersetOf.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.symmetricDifference.js: TypeError: undefined is not a function
 compat-table/es2025/Set.prototype.union.js: TypeError: undefined is not a function
-compat-table/es2025/regex.duplicate-named-groups.js: exception: /dist/castl-dist/castl/prototype/regexp.lua:109: two named subpatterns have the same name (PCRE2_DUPNAMES not set) (pattern offset: 45)
+compat-table/es2025/regex.duplicate-named-groups.js: exception: regexp.lua:109: two named subpatterns have the same name (PCRE2_DUPNAMES not set) (pattern offset: 45)
 compat-table/es2025/regex.pattern-modifiers.i.js: OK
 compat-table/es2025/regex.pattern-modifiers.m.js: OK
 compat-table/es2025/regex.pattern-modifiers.s.js: failed
@@ -1468,45 +1470,46 @@ compat-table/intl/Intl.prototype.js: TypeError: Cannot read property 'constructo
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: failed
-compat-table/next/Array.isTemplateObject.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncDisposableStack.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.extends.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.instanceof.js: SyntaxError: Couldn't transpile JS code
+compat-table/next/Array.isTemplateObject.js: SyntaxError: Unknown Expression type: TaggedTemplateExpression
+compat-table/next/AsyncDisposableStack.js: SyntaxError: Unexpected property key type: MemberExpression
+compat-table/next/AsyncIterator.extends.js: SyntaxError: Class declaration (ES6) not supported yet.
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: Line 9: Unexpected token function
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: TypeError: Cannot read property 'prototype' of undefined
-compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/DisposableStack.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/Map.prototype.upsert.js: SyntaxError: Couldn't transpile JS code
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: Line 45: Unexpected token function
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/DisposableStack.js: SyntaxError: Unexpected property key type: MemberExpression
+compat-table/next/Map.prototype.upsert.js: SyntaxError: Arrow functions (ES6) not supported yet.
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/Uint8Array.fromHex.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/Uint8Array.setFromHex.js: SyntaxError: Couldn't transpile JS code
+compat-table/next/SuppressedError.js: SyntaxError: Line 13: Unexpected identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Line 17: Unexpected identifier
+compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/next/Uint8Array.fromHex.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: let instruction is not supported yet
+compat-table/next/Uint8Array.setFromHex.js: SyntaxError: let instruction is not supported yet
 compat-table/next/Uint8Array.toBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.toHex.js: TypeError: undefined is not a function
-compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/await-using.for-of.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/await-using.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/class-decorators.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/function.sent.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/throw-expr.arrow.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/throw-expr.conditional.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/throw-expr.logical.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/throw-expr.param-init.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/using.for-of.js: SyntaxError: Couldn't transpile JS code
-compat-table/next/using.js: SyntaxError: Couldn't transpile JS code
+compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: Arrow functions (ES6) not supported yet.
+compat-table/next/await-using.for-of.js: SyntaxError: Line 56: Unexpected token function
+compat-table/next/await-using.js: SyntaxError: Line 44: Unexpected token function
+compat-table/next/class-decorators.js: SyntaxError: Line 10: Unexpected token ILLEGAL
+compat-table/next/function.sent.js: SyntaxError: Line 11: Unexpected token .
+compat-table/next/throw-expr.arrow.js: SyntaxError: Line 9: Unexpected token throw
+compat-table/next/throw-expr.conditional.js: SyntaxError: Line 9: Unexpected token throw
+compat-table/next/throw-expr.logical.js: SyntaxError: Line 11: Unexpected token throw
+compat-table/next/throw-expr.param-init.js: SyntaxError: Line 9: Unexpected token throw
+compat-table/next/using.for-of.js: SyntaxError: Line 22: Unexpected identifier
+compat-table/next/using.js: SyntaxError: Line 16: Unexpected identifier

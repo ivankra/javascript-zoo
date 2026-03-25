@@ -54,11 +54,11 @@ es1/Date.prototype.toLocaleString.js: OK
 es1/Date.prototype.toString.js: OK
 es1/Date.prototype.toUTCString.js: OK
 es1/Date.prototype.valueOf.js: OK
-es1/Function.js: [Error] [object Object], 'Function' 未定义
-es1/Function.length.js: [Error] [object Object], 'Function' 未定义
-es1/Function.prototype.constructor.js: [Error] [object Object], 'Function' 未定义
+es1/Function.js: ReferenceError: 'Function'
+es1/Function.length.js: ReferenceError: 'Function'
+es1/Function.prototype.constructor.js: ReferenceError: 'Function'
 es1/Function.prototype.js: OK
-es1/Function.prototype.toString.js: [Error] [object Object], 'Function' 未定义
+es1/Function.prototype.toString.js: ReferenceError: 'Function'
 es1/Math.E.js: OK
 es1/Math.LN2.js: OK
 es1/Math.LN10.js: OK
@@ -122,7 +122,7 @@ es1/annex-b.literals.octal.js: OK
 es1/annex-b.literals.string.octal.js: OK
 es1/arguments.callee.js: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
 es1/arguments.js: OK
-es1/asi.eval.js: [Error] [object Object], 'eval' 未定义
+es1/asi.eval.js: ReferenceError: 'eval'
 es1/asi.js: [Error] res 重复定义
 es1/assignment.bitwise.js: OK
 es1/assignment.js: OK
@@ -146,9 +146,9 @@ es1/conversions.ToString.js: OK
 es1/conversions.ToUint32.js: OK
 es1/conversions.js: OK
 es1/equals.js: OK
-es1/eval.js: [Error] [object Object], 'eval' 未定义
+es1/eval.js: ReferenceError: 'eval'
 es1/for-in.js: failed
-es1/for.js: [Error] [object Object], 's' 未定义
+es1/for.js: ReferenceError: 's'
 es1/functions.js: OK
 es1/global.Infinity.js: OK
 es1/global.NaN.js: OK
@@ -306,7 +306,7 @@ es3/literals.regex.ambiguous.js: OK
 es3/literals.regex.empty.js: OK
 es3/literals.regex.js: OK
 es3/literals.string.esc-v.js: OK
-es3/nested-functions.eval.js: [Error] [object Object], 'eval' 未定义
+es3/nested-functions.eval.js: ReferenceError: 'eval'
 es3/nested-functions.js: OK
 es3/regex.backref.js: OK
 es3/regex.begin.js: OK
@@ -360,9 +360,9 @@ es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: OK
 es5/Date.prototype.toISOString.js: OK
 es5/Date.prototype.toJSON.js: OK
-es5/Function.prototype-not-enumerable.js: [Error] [object Object], 'Function' 未定义
+es5/Function.prototype-not-enumerable.js: ReferenceError: 'Function'
 es5/Function.prototype.apply.array-like.js: OK
-es5/Function.prototype.bind.js: [Error] [object Object], 'Function' 未定义
+es5/Function.prototype.bind.js: ReferenceError: 'Function'
 es5/JSON.js: OK
 es5/JSON.parse.js: OK
 es5/JSON.parse.reviver.js: OK
@@ -381,7 +381,7 @@ es5/Object.isFrozen.js: OK
 es5/Object.isSealed.js: OK
 es5/Object.keys.js: OK
 es5/Object.preventExtensions.js: TypeError: Cannot add property y, object is not extensible
-es5/Object.property-shadowing.js: [Error] [object Object], 'Function' 未定义
+es5/Object.property-shadowing.js: ReferenceError: 'Function'
 es5/Object.seal.js: TypeError: Cannot add property y, object is not extensible
 es5/String.indexing.js: OK
 es5/String.prototype.trim.js: OK
@@ -746,16 +746,16 @@ compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxErr
 compat-table/es6/arrow.0-params.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/arrow.1-param.js: SyntaxError: Unexpected token (10:13)
 compat-table/es6/arrow.5-param.js: SyntaxError: Parenthesized pattern (10:10)
-compat-table/es6/arrow.bind.js: SyntaxError: Unexpected token (10:50)
-compat-table/es6/arrow.lexical-arguments.js: SyntaxError: Unexpected token (10:34)
+compat-table/es6/arrow.bind.js: SyntaxError: Unexpected token (10:51)
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: Unexpected token (10:35)
 compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: The keyword 'class' is reserved (12:2)
 compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: The keyword 'class' is reserved (10:2)
-compat-table/es6/arrow.lexical-this.js: SyntaxError: Unexpected token (10:50)
+compat-table/es6/arrow.lexical-this.js: SyntaxError: Unexpected token (10:51)
 compat-table/es6/arrow.new-target.js: SyntaxError: Unexpected token (11:14)
 compat-table/es6/arrow.no-line-break.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/arrow.no-prototype.js: SyntaxError: Unexpected token (10:11)
 compat-table/es6/arrow.precedence.js: SyntaxError: Unexpected token (10:11)
-compat-table/es6/arrow.this-call-apply.js: SyntaxError: Unexpected token (10:48)
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: Unexpected token (10:49)
 compat-table/es6/class.accessor-properties.js: SyntaxError: The keyword 'class' is reserved (11:2)
 compat-table/es6/class.anonymous.js: SyntaxError: The keyword 'class' is reserved (10:16)
 compat-table/es6/class.block-scoped.js: SyntaxError: The keyword 'class' is reserved (10:2)
@@ -803,8 +803,8 @@ compat-table/es6/default-params.basic.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/default-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/default-params.refer-previous.js: SyntaxError: Unexpected token (10:25)
-compat-table/es6/default-params.separate-scope.js: SyntaxError: Unexpected token (10:20)
-compat-table/es6/default-params.tdz.js: SyntaxError: Unexpected token (10:21)
+compat-table/es6/default-params.separate-scope.js: SyntaxError: Unexpected token (10:21)
+compat-table/es6/default-params.tdz.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/destructuring-assign.array.js: SyntaxError: Assigning to rvalue (11:2)
 compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: Assigning to rvalue (11:2)
 compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: Assigning to rvalue (11:2)
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Unexpected token (11:11)
 compat-table/es6/destructuring-assign.object.js: SyntaxError: Unexpected token (11:5)
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Unexpected token (11:5)
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unexpected token (11:6)
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token (11:6)
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Assigning to rvalue (11:2)
 compat-table/es6/destructuring-assign.string.js: SyntaxError: Assigning to rvalue (11:2)
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Unexpected tok
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Unexpected token (10:6)
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Unexpected token (10:6)
@@ -852,31 +854,31 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: Unexp
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: Unexpected token (10:6)
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: Parenthesized pattern (10:10)
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: Unexpected token (10:19)
-compat-table/es6/destructuring-params.array.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Unexpected token (11:18)
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: Unexpected token (10:20)
+compat-table/es6/destructuring-params.array.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: Unexpected token (11:19)
 compat-table/es6/destructuring-params.defaults-new-function.js: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Unexpected token (10:19)
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: Unexpected token (10:20)
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: Unexpected token (10:20)
 compat-table/es6/destructuring-params.duplicate-identifier.js: OK
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: Unexpected token (10:19)
-compat-table/es6/destructuring-params.generator.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: Unexpected token (34:18)
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: Unexpected token (34:18)
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Unexpected token (38:12)
-compat-table/es6/destructuring-params.length.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.nested.js: SyntaxError: Unexpected token (10:18)
+compat-table/es6/destructuring-params.generator.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: Unexpected token (34:19)
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: Unexpected token (34:19)
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: Unexpected token (38:13)
+compat-table/es6/destructuring-params.length.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.nested.js: SyntaxError: Unexpected token (10:19)
 compat-table/es6/destructuring-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.object.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.rest.js: SyntaxError: Unexpected token (10:18)
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.object.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.rest.js: SyntaxError: Unexpected token (10:19)
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Unexpected token (10:17)
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.string.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: Unexpected token (11:14)
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:18)
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Unexpected token (10:18)
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.string.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: Unexpected token (11:15)
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: Unexpected token (10:19)
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Unexpected token (10:19)
 compat-table/es6/for-of.array.js: SyntaxError: Unexpected token (11:16)
 compat-table/es6/for-of.astral-string.js: SyntaxError: Unexpected token (11:16)
 compat-table/es6/for-of.generator.js: SyntaxError: Unexpected token (11:26)
@@ -1046,7 +1048,7 @@ compat-table/es6/regex.flags.y.js: OK
 compat-table/es6/regex.flags.y.lastIndex.js: OK
 compat-table/es6/rest-params.arguments.js: SyntaxError: Unexpected token (10:25)
 compat-table/es6/rest-params.basic.js: SyntaxError: Unexpected token (10:25)
-compat-table/es6/rest-params.length.js: SyntaxError: Unexpected token (10:21)
+compat-table/es6/rest-params.length.js: SyntaxError: Unexpected token (10:22)
 compat-table/es6/rest-params.new-function.js: exception: [Error] [object Object], 'Function' 未定义
 compat-table/es6/rest-params.no-setter.js: SyntaxError: Unexpected token (10:20)
 compat-table/es6/spread.array-call.js: SyntaxError: Unexpected token (10:18)
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: exception: [Error] [object Object]
 compat-table/es6/typed-arrays.Uint32Array.js: exception: [Error] [object Object], 'ArrayBuffer' 未定义
 compat-table/es6/typed-arrays.constructor-iterables.js: global 未定义
 compat-table/es6/typed-arrays.constructor-requires-new.js: global 未定义
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: The keyword 'const' is reserved (32:4)
+compat-table/es6/typed-arrays.correct-prototype-chains.js: global 未定义
 compat-table/es6/typed-arrays.from.js: exception: [Error] [object Object], 'Int8Array' 未定义
 compat-table/es6/typed-arrays.of.js: exception: [Error] [object Object], 'Int8Array' 未定义
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: exception: [Error] [object Object], 'Int8Array' 未定义
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token (13:10)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token (11:4)
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: The keyword 'const' is reserved (10:2)
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: The keyword 'const' is reserved (10:2)
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: The keyword 'const' is reserved (10:2)

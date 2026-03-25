@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"ac4c79f7c5d485daf0702e018d641d34987e427da1e82779a29d583baa7cb960","binary_size":1183488,"cc":"gcc 14.2.0 (Debian 14.2.0-19)","console_log":"console.log","engine":"espruino","repository":"https://github.com/espruino/Espruino.git","revision":"1fe3a7e5a61633f75f55e1cf74914c0c5605d6ec","revision_date":"2026-03-12","version":"2v29"}
+Metadata: {"arch":"arm64","binary_sha256":"00f3f0962764400bc6abb7abe590e355f594c4a3d1693bbd2b75bb4445e75e46","binary_size":1183488,"cc":"gcc 14.2.0 (Debian 14.2.0-19)","console_log":"console.log","engine":"espruino","repository":"https://github.com/espruino/Espruino.git","revision":"74014684dfc49603a0597c61e21dbe459c455392","revision_date":"2026-03-02","version":"2v29"}
 es1/Array.js: Array.length failed
 es1/Array.length.assignment.js: TypeError: Assignment to a constant
 es1/Array.length.js: TypeError: Assignment to a constant

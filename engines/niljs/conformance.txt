@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: ReferenceError: Invalid left-hand side in assignment. (11:7)
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -876,7 +878,7 @@ compat-table/es6/destructuring-params.sparse-array.js: OK
 compat-table/es6/destructuring-params.string.js: OK
 compat-table/es6/destructuring-params.throws-null-undefined.js: failed
 compat-table/es6/destructuring-params.trailing-comma-iterable.js: Uncaught exception: InvalidOperationException: Operation is not valid due to the current state of the object.
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Name expected (10:22)
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: Name expected (10:23)
 compat-table/es6/for-of.array.js: OK
 compat-table/es6/for-of.astral-string.js: failed
 compat-table/es6/for-of.generator.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token '_' (13:11)
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token '_' (17:11)
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Uint8Array.fromBase64 is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Uint8Array.fromHex is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: arr2.setFromBase64 is not a function

@@ -118,8 +118,8 @@ es1/annex-b.Date.prototype.setYear.js: crashed: SIGABRT
 es1/annex-b.Date.prototype.toGMTString.js: crashed: SIGABRT
 es1/annex-b.global.escape.js: ReferenceError: escape is not defined
 es1/annex-b.global.unescape.js: ReferenceError: unescape is not defined
-es1/annex-b.literals.octal.js: ParserError: var a = 0755;
-es1/annex-b.literals.string.octal.js: ParserError: if ("\101" == "A"
+es1/annex-b.literals.octal.js: SyntaxError: var a = 0755;
+es1/annex-b.literals.string.octal.js: SyntaxError: if ("\101" == "A"
 es1/arguments.callee.js: crashed: SIGSEGV
 es1/arguments.js: OK
 es1/asi.eval.js: OK
@@ -394,9 +394,9 @@ es5/global.undefined.immutable.js: OK
 es5/literals.object.getters.js: OK
 es5/literals.object.setters.js: OK
 es5/literals.object.trailing-comma.js: OK
-es5/source.keyword-properties.js: ParserError: var o4 = { var: 8, function: 9, new: 10, this: 11 };
+es5/source.keyword-properties.js: SyntaxError: var o4 = { var: 8, function: 9, new: 10, this: 11 };
 es5/source.unreserved-words.js: OK
-es5/source.whitespace.bom.js: ParserError: ﻿// ES5: 7.
+es5/source.whitespace.bom.js: SyntaxError: ﻿// ES5: 7.
 es5/source.zero-width-chars.js: OK
 es5/strict.eval-cannot-create-bindings.js: OK
 es5/strict.function-expr-with-matching-name.js: OK
@@ -494,12 +494,12 @@ compat-table/es5/strict.this-undefined.js: OK
 compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: Symbol is not defined
 compat-table/es6/Array.from.array-like.js: calling non-object.
-compat-table/es6/Array.from.generator.js: ParserError: erable = (function*(){ yield
+compat-table/es6/Array.from.generator.js: SyntaxError: erable = (function*(){ yield
 compat-table/es6/Array.from.iterable-instance.js: calling non-object.
 compat-table/es6/Array.from.iterable.js: calling non-object.
 compat-table/es6/Array.from.iterator-closing.js: failed
 compat-table/es6/Array.from.map.array-like.js: calling non-object.
-compat-table/es6/Array.from.map.generator.js: ParserError: erable = (function*(){ yield
+compat-table/es6/Array.from.map.generator.js: SyntaxError: erable = (function*(){ yield
 compat-table/es6/Array.from.map.iterable-instance.js: calling non-object.
 compat-table/es6/Array.from.map.iterable.js: calling non-object.
 compat-table/es6/Array.iterator-prototype-chain.js: Symbol is not defined
@@ -517,20 +517,20 @@ compat-table/es6/Array.prototype.values.js: failed
 compat-table/es6/Date.prototype.Symbol.toPrimitive.js: Symbol is not defined
 compat-table/es6/Function.name.accessor.js: failed
 compat-table/es6/Function.name.bound.js: failed
-compat-table/es6/Function.name.class-expression.js: ParserError:   return class foo {}.na
-compat-table/es6/Function.name.class-object-method.js: ParserError:   var o = { foo: class {},
-compat-table/es6/Function.name.class-prototype.js: ParserError:   class C { foo()
-compat-table/es6/Function.name.class-statement.js: ParserError:   class foo {};
-compat-table/es6/Function.name.class-static.js: ParserError:   class C { stati
-compat-table/es6/Function.name.class-variable.js: ParserError: var foo = class {};
+compat-table/es6/Function.name.class-expression.js: SyntaxError: return class foo {}.na
+compat-table/es6/Function.name.class-object-method.js: SyntaxError: var o = { foo: class {},
+compat-table/es6/Function.name.class-prototype.js: SyntaxError: class C { foo()
+compat-table/es6/Function.name.class-statement.js: SyntaxError: class foo {};
+compat-table/es6/Function.name.class-static.js: SyntaxError: class C { stati
+compat-table/es6/Function.name.class-variable.js: SyntaxError: var foo = class {};
 compat-table/es6/Function.name.configurable.js: cannot read property enumerable of undefined
 compat-table/es6/Function.name.expression.js: failed
 compat-table/es6/Function.name.new-Function.js: failed
 compat-table/es6/Function.name.object-method.js: failed
-compat-table/es6/Function.name.shorthand.js: ParserError:   var o = { foo(){} };
-compat-table/es6/Function.name.shorthand.no-lexical.js: ParserError:   return ({f() { return
+compat-table/es6/Function.name.shorthand.js: SyntaxError: var o = { foo(){} };
+compat-table/es6/Function.name.shorthand.no-lexical.js: SyntaxError: return ({f() { return
 compat-table/es6/Function.name.statement.js: failed
-compat-table/es6/Function.name.symbol-keyed.js: ParserError:   var o = {
+compat-table/es6/Function.name.symbol-keyed.js: SyntaxError: var o = {
 compat-table/es6/Function.name.variable.js: failed
 compat-table/es6/Map.Symbol.species.js: Map is not defined
 compat-table/es6/Map.constructor-accepts-null.js: Map is not defined
@@ -543,7 +543,7 @@ compat-table/es6/Map.js: Map is not defined
 compat-table/es6/Map.prototype-not-instance.js: Map is not defined
 compat-table/es6/Map.prototype.Symbol.iterator.js: Map is not defined
 compat-table/es6/Map.prototype.clear.js: Map is not defined
-compat-table/es6/Map.prototype.delete.js: ParserError: urn typeof Map.prototype.delete === "func
+compat-table/es6/Map.prototype.delete.js: SyntaxError: urn typeof Map.prototype.delete === "func
 compat-table/es6/Map.prototype.entries.js: Map is not defined
 compat-table/es6/Map.prototype.forEach.js: Map is not defined
 compat-table/es6/Map.prototype.keys.js: Map is not defined
@@ -629,7 +629,7 @@ compat-table/es6/Reflect.construct.Function-subclassing.js: Reflect is not defin
 compat-table/es6/Reflect.construct.Promise-subclassing.js: Reflect is not defined
 compat-table/es6/Reflect.construct.RegExp-subclassing.js: Reflect is not defined
 compat-table/es6/Reflect.construct.js: Reflect is not defined
-compat-table/es6/Reflect.construct.new-target.js: ParserError:    if (new.target ===
+compat-table/es6/Reflect.construct.new-target.js: SyntaxError: if (new.target ===
 compat-table/es6/Reflect.construct.third-argument.js: Reflect is not defined
 compat-table/es6/Reflect.defineProperty.js: Reflect is not defined
 compat-table/es6/Reflect.deleteProperty.js: Reflect is not defined
@@ -661,7 +661,7 @@ compat-table/es6/Set.prototype-not-instance.js: Set is not defined
 compat-table/es6/Set.prototype.Symbol.iterator.js: Set is not defined
 compat-table/es6/Set.prototype.add-returns-this.js: Set is not defined
 compat-table/es6/Set.prototype.clear.js: Set is not defined
-compat-table/es6/Set.prototype.delete.js: ParserError: urn typeof Set.prototype.delete === "func
+compat-table/es6/Set.prototype.delete.js: SyntaxError: urn typeof Set.prototype.delete === "func
 compat-table/es6/Set.prototype.entries.js: Set is not defined
 compat-table/es6/Set.prototype.forEach.js: Set is not defined
 compat-table/es6/Set.prototype.keys.js: Set is not defined
@@ -692,7 +692,7 @@ compat-table/es6/Symbol.no-coerce.js: Symbol is not defined
 compat-table/es6/Symbol.no-new.js: Symbol is not defined
 compat-table/es6/Symbol.prototype.js: Symbol is not defined
 compat-table/es6/Symbol.typeof.js: Symbol is not defined
-compat-table/es6/WeakMap.accept-primitives.js: ParserError:     && m.delete(1) === fa
+compat-table/es6/WeakMap.accept-primitives.js: SyntaxError: && m.delete(1) === fa
 compat-table/es6/WeakMap.constructor-accepts-null.js: WeakMap is not defined
 compat-table/es6/WeakMap.constructor-arguments.js: WeakMap is not defined
 compat-table/es6/WeakMap.constructor-invokes-set.js: WeakMap is not defined
@@ -702,9 +702,9 @@ compat-table/es6/WeakMap.iterator-closing.js: failed
 compat-table/es6/WeakMap.js: WeakMap is not defined
 compat-table/es6/WeakMap.no-clear.js: WeakMap is not defined
 compat-table/es6/WeakMap.prototype-not-instance.js: WeakMap is not defined
-compat-table/es6/WeakMap.prototype.delete.js: ParserError: urn typeof WeakMap.prototype.delete === "func
+compat-table/es6/WeakMap.prototype.delete.js: SyntaxError: urn typeof WeakMap.prototype.delete === "func
 compat-table/es6/WeakMap.prototype.set-returns-this.js: WeakMap is not defined
-compat-table/es6/WeakSet.accept-primitives.js: ParserError:     && s.delete(1) === fa
+compat-table/es6/WeakSet.accept-primitives.js: SyntaxError: && s.delete(1) === fa
 compat-table/es6/WeakSet.constructor-accepts-null.js: WeakSet is not defined
 compat-table/es6/WeakSet.constructor-arguments.js: WeakSet is not defined
 compat-table/es6/WeakSet.constructor-invokes-add.js: WeakSet is not defined
@@ -714,16 +714,16 @@ compat-table/es6/WeakSet.js: WeakSet is not defined
 compat-table/es6/WeakSet.no-clear.js: WeakSet is not defined
 compat-table/es6/WeakSet.prototype-not-instance.js: WeakSet is not defined
 compat-table/es6/WeakSet.prototype.add-returns-this.js: WeakSet is not defined
-compat-table/es6/WeakSet.prototype.delete.js: ParserError: urn typeof WeakSet.prototype.delete === "func
+compat-table/es6/WeakSet.prototype.delete.js: SyntaxError: urn typeof WeakSet.prototype.delete === "func
 compat-table/es6/annex-b.RegExp.prototype.compile.js: failed
 compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js: calling non-object.
 compat-table/es6/annex-b.String.prototype.html.existence.js: failed
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: calling non-object.
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: calling non-object.
-compat-table/es6/annex-b.function.hoisted-block-level.js: ParserError:   { function g() { ret
-compat-table/es6/annex-b.function.if-statement.js: ParserError:   if(true) function foo() { r
-compat-table/es6/annex-b.function.labeled.js: ParserError:   label: function foo() { r
-compat-table/es6/annex-b.html-comments.js: ParserError:   --> A comment
+compat-table/es6/annex-b.function.hoisted-block-level.js: SyntaxError: { function g() { ret
+compat-table/es6/annex-b.function.if-statement.js: SyntaxError: if(true) function foo() { r
+compat-table/es6/annex-b.function.labeled.js: SyntaxError: label: function foo() { r
+compat-table/es6/annex-b.html-comments.js: SyntaxError: --> A comment
 compat-table/es6/annex-b.regex.backreferences-octal.js: crashed: SIGABRT
 compat-table/es6/annex-b.regex.hyphens.js: crashed: SIGABRT
 compat-table/es6/annex-b.regex.incomplete-patterns.js: crashed: SIGABRT
@@ -740,206 +740,208 @@ compat-table/es6/annex-b.__proto__.Object.prototype.hasOwnProperty.js: failed
 compat-table/es6/annex-b.__proto__.Object.prototype.set.js: failed
 compat-table/es6/annex-b.__proto__.literals.js: failed
 compat-table/es6/annex-b.__proto__.literals.multiple-error.js: failed
-compat-table/es6/annex-b.__proto__.literals.not-computed.js: ParserError:  return !({ [a] : [] }
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: ParserError:  return !({ __proto__(){} } inst
-compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: ParserError:  return !({ __proto__ } instanceo
-compat-table/es6/arrow.0-params.js: ParserError:  return (() => 5)() =
-compat-table/es6/arrow.1-param.js: ParserError: ar b = x => x + "foo"
-compat-table/es6/arrow.5-param.js: ParserError: x, y, z) => "" + v +
-compat-table/es6/arrow.bind.js: ParserError:   var d = { x : "bar", y : function() { return z => this.x +
-compat-table/es6/arrow.lexical-arguments.js: ParserError: return z => arguments
-compat-table/es6/arrow.lexical-super.constructor.js: ParserError:   class B {
-compat-table/es6/arrow.lexical-super.methods.js: ParserError:   class B {
-compat-table/es6/arrow.lexical-this.js: ParserError:   var d = { x : "bar", y : function() { return z => this.x +
-compat-table/es6/arrow.new-target.js: ParserError: return x => new.targe
-compat-table/es6/arrow.no-line-break.js: ParserError:  return (() => {
-compat-table/es6/arrow.no-prototype.js: ParserError:  var a = () => 5;
-compat-table/es6/arrow.precedence.js: ParserError:  return (() => {
-compat-table/es6/arrow.this-call-apply.js: ParserError:   var d = { x : "foo", y : function() { return () => this.
-compat-table/es6/class.accessor-properties.js: ParserError:   class C {
-compat-table/es6/class.anonymous.js: ParserError: rn typeof class {} === "f
-compat-table/es6/class.block-scoped.js: ParserError:   class C {}
-compat-table/es6/class.computed-accessor-properties.js: ParserError:   class C {
-compat-table/es6/class.computed-names-tdz.js: ParserError:   var B = class C {
-compat-table/es6/class.computed-prototype-methods.js: ParserError:   class C {
-compat-table/es6/class.computed-static-accessor-properties.js: ParserError:   class C {
-compat-table/es6/class.computed-static-methods.js: ParserError:   class C {
-compat-table/es6/class.constructor-requires-new.js: ParserError:   class C {}
-compat-table/es6/class.constructor.js: ParserError:   class C {
-compat-table/es6/class.expression.js: ParserError: rn typeof class C {} ===
-compat-table/es6/class.extends-expressions.js: ParserError:   class C extends
-compat-table/es6/class.extends-null.js: ParserError:   class C extends
-compat-table/es6/class.extends.js: ParserError:   class B {}
-compat-table/es6/class.implicit-strict.js: ParserError:   class C {
-compat-table/es6/class.lexical-name.js: ParserError:   class C {
-compat-table/es6/class.methods-not-enumerable.js: ParserError:   class C {
-compat-table/es6/class.new-target.js: ParserError: ssed = new.target ===
-compat-table/es6/class.optional-semicolons.js: ParserError:   class C {
-compat-table/es6/class.prototype-methods.js: ParserError:   class C {
-compat-table/es6/class.statement.js: ParserError:   class C {}
-compat-table/es6/class.static-accessor-properties.js: ParserError:   class C {
-compat-table/es6/class.static-methods.js: ParserError:   class C {
-compat-table/es6/class.string-keyed-methods.js: ParserError:   class C {
-compat-table/es6/const.basic.js: ParserError:   const foo = 123
-compat-table/es6/const.block-scoped.js: ParserError:   const bar = 123
-compat-table/es6/const.for-in.js: ParserError:   for(const i in { a:
-compat-table/es6/const.for-loop.js: ParserError:   const baz = 1;
-compat-table/es6/const.for-of.js: ParserError:   for(const i of ['a'
-compat-table/es6/const.no-redefine.js: ParserError:   const baz = 1;
-compat-table/es6/const.no-statement.js: ParserError:   const bar = 1;
-compat-table/es6/const.shadow.js: ParserError:       { const bar = 456
-compat-table/es6/const.strict.basic.js: ParserError:   const foo = 123
-compat-table/es6/const.strict.block-scoped.js: ParserError:   const bar = 123
-compat-table/es6/const.strict.for-in.js: ParserError:   for(const i in { a:
-compat-table/es6/const.strict.for-loop.js: ParserError:   const baz = 1;
-compat-table/es6/const.strict.for-of.js: ParserError:   for(const i of ['a'
-compat-table/es6/const.strict.no-redefine.js: ParserError:   const baz = 1;
-compat-table/es6/const.strict.no-statement.js: ParserError:   const bar = 1;
-compat-table/es6/const.strict.shadow.js: ParserError:       { const bar = 456
-compat-table/es6/const.strict.tdz.js: ParserError:   const qux = 456
-compat-table/es6/const.tdz.js: ParserError:   const qux = 456
-compat-table/es6/default-params.arguments.js: ParserError:   return (function (a = "baz",
-compat-table/es6/default-params.basic.js: ParserError:   return (function (a = 1, b =
-compat-table/es6/default-params.explicit-undefined.js: ParserError:   return (function (a = 1, b =
+compat-table/es6/annex-b.__proto__.literals.not-computed.js: SyntaxError: return !({ [a] : [] }
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-method.js: SyntaxError: return !({ __proto__(){} } inst
+compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxError: return !({ __proto__ } instanceo
+compat-table/es6/arrow.0-params.js: SyntaxError: return (() => 5)() =
+compat-table/es6/arrow.1-param.js: SyntaxError: ar b = x => x + "foo"
+compat-table/es6/arrow.5-param.js: SyntaxError: x, y, z) => "" + v +
+compat-table/es6/arrow.bind.js: SyntaxError: var d = { x : "bar", y : function () { return z => this.x +
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: return z => arguments
+compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: class B {
+compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: class B {
+compat-table/es6/arrow.lexical-this.js: SyntaxError: var d = { x : "bar", y : function () { return z => this.x +
+compat-table/es6/arrow.new-target.js: SyntaxError: return x => new.targe
+compat-table/es6/arrow.no-line-break.js: SyntaxError: return (() => {
+compat-table/es6/arrow.no-prototype.js: SyntaxError: var a = () => 5;
+compat-table/es6/arrow.precedence.js: SyntaxError: return (() => {
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: var d = { x : "foo", y : function () { return () => this.
+compat-table/es6/class.accessor-properties.js: SyntaxError: class C {
+compat-table/es6/class.anonymous.js: SyntaxError: rn typeof class {} === "f
+compat-table/es6/class.block-scoped.js: SyntaxError: class C {}
+compat-table/es6/class.computed-accessor-properties.js: SyntaxError: class C {
+compat-table/es6/class.computed-names-tdz.js: SyntaxError: var B = class C {
+compat-table/es6/class.computed-prototype-methods.js: SyntaxError: class C {
+compat-table/es6/class.computed-static-accessor-properties.js: SyntaxError: class C {
+compat-table/es6/class.computed-static-methods.js: SyntaxError: class C {
+compat-table/es6/class.constructor-requires-new.js: SyntaxError: class C {}
+compat-table/es6/class.constructor.js: SyntaxError: class C {
+compat-table/es6/class.expression.js: SyntaxError: rn typeof class C {} ===
+compat-table/es6/class.extends-expressions.js: SyntaxError: class C extends
+compat-table/es6/class.extends-null.js: SyntaxError: class C extends
+compat-table/es6/class.extends.js: SyntaxError: class B {}
+compat-table/es6/class.implicit-strict.js: SyntaxError: class C {
+compat-table/es6/class.lexical-name.js: SyntaxError: class C {
+compat-table/es6/class.methods-not-enumerable.js: SyntaxError: class C {
+compat-table/es6/class.new-target.js: SyntaxError: ssed = new.target ===
+compat-table/es6/class.optional-semicolons.js: SyntaxError: class C {
+compat-table/es6/class.prototype-methods.js: SyntaxError: class C {
+compat-table/es6/class.statement.js: SyntaxError: class C {}
+compat-table/es6/class.static-accessor-properties.js: SyntaxError: class C {
+compat-table/es6/class.static-methods.js: SyntaxError: class C {
+compat-table/es6/class.string-keyed-methods.js: SyntaxError: class C {
+compat-table/es6/const.basic.js: SyntaxError: const foo = 123
+compat-table/es6/const.block-scoped.js: SyntaxError: const bar = 123
+compat-table/es6/const.for-in.js: SyntaxError: for(const i in { a:
+compat-table/es6/const.for-loop.js: SyntaxError: const baz = 1;
+compat-table/es6/const.for-of.js: SyntaxError: for(const i of ['a'
+compat-table/es6/const.no-redefine.js: SyntaxError: const baz = 1;
+compat-table/es6/const.no-statement.js: SyntaxError: const bar = 1;
+compat-table/es6/const.shadow.js: SyntaxError: { const bar = 456
+compat-table/es6/const.strict.basic.js: SyntaxError: const foo = 123
+compat-table/es6/const.strict.block-scoped.js: SyntaxError: const bar = 123
+compat-table/es6/const.strict.for-in.js: SyntaxError: for(const i in { a:
+compat-table/es6/const.strict.for-loop.js: SyntaxError: const baz = 1;
+compat-table/es6/const.strict.for-of.js: SyntaxError: for(const i of ['a'
+compat-table/es6/const.strict.no-redefine.js: SyntaxError: const baz = 1;
+compat-table/es6/const.strict.no-statement.js: SyntaxError: const bar = 1;
+compat-table/es6/const.strict.shadow.js: SyntaxError: { const bar = 456
+compat-table/es6/const.strict.tdz.js: SyntaxError: const qux = 456
+compat-table/es6/const.tdz.js: SyntaxError: const qux = 456
+compat-table/es6/default-params.arguments.js: SyntaxError: return (function (a = "baz",
+compat-table/es6/default-params.basic.js: SyntaxError: return (function (a = 1, b =
+compat-table/es6/default-params.explicit-undefined.js: SyntaxError: return (function (a = 1, b =
 compat-table/es6/default-params.new-function.js: invalid parameter name
-compat-table/es6/default-params.refer-previous.js: ParserError:   return (function (a, b = a) { re
-compat-table/es6/default-params.separate-scope.js: ParserError:   return (function(a=function(
-compat-table/es6/default-params.tdz.js: ParserError:   return (function(x = 1) {
+compat-table/es6/default-params.refer-previous.js: SyntaxError: return (function (a, b = a) { re
+compat-table/es6/default-params.separate-scope.js: SyntaxError: return (function (a=function
+compat-table/es6/default-params.tdz.js: SyntaxError: return (function (x = 1) {
 compat-table/es6/destructuring-assign.array.js: put value to non-reference.
 compat-table/es6/destructuring-assign.astral-string.js: put value to non-reference.
 compat-table/es6/destructuring-assign.chained-iterable.js: put value to non-reference.
-compat-table/es6/destructuring-assign.chained-object.js: ParserError:   ({a,b} = {c,d}
-compat-table/es6/destructuring-assign.computed-properties.js: ParserError:   ({ [qux]: grau
-compat-table/es6/destructuring-assign.defaults.js: ParserError:   ({a = 1, b = 0,
+compat-table/es6/destructuring-assign.chained-object.js: SyntaxError: ({a,b} = {c,d}
+compat-table/es6/destructuring-assign.computed-properties.js: SyntaxError: ({ [qux]: grau
+compat-table/es6/destructuring-assign.defaults.js: SyntaxError: ({a = 1, b = 0,
 compat-table/es6/destructuring-assign.empty-patterns.js: put value to non-reference.
-compat-table/es6/destructuring-assign.generator.js: ParserError:  b, c] = (function*(){ yield
+compat-table/es6/destructuring-assign.generator.js: SyntaxError: b, c] = (function*(){ yield
 compat-table/es6/destructuring-assign.iterable-expression.js: put value to non-reference.
 compat-table/es6/destructuring-assign.iterable-instance.js: put value to non-reference.
 compat-table/es6/destructuring-assign.iterable.js: put value to non-reference.
 compat-table/es6/destructuring-assign.iterator-closing.js: put value to non-reference.
-compat-table/es6/destructuring-assign.nested-rest.js: ParserError:   [first, ...[a[2], l
-compat-table/es6/destructuring-assign.nested.js: ParserError:   [e, {x:f, g}] = [9, {x
-compat-table/es6/destructuring-assign.object-expression.js: ParserError:   return ({a,b} = obj)
-compat-table/es6/destructuring-assign.object-primitives.js: ParserError:   ({toFixed} = 2);
-compat-table/es6/destructuring-assign.object.js: ParserError:   ({c, x:d, e} =
-compat-table/es6/destructuring-assign.parenthesised-error.js: ParserError:   ({a,b} = {a:1,
-compat-table/es6/destructuring-assign.rest.js: ParserError:   [a, ...b] = [3,
+compat-table/es6/destructuring-assign.nested-rest.js: SyntaxError: [first, ...[a[2], l
+compat-table/es6/destructuring-assign.nested.js: SyntaxError: [e, {x:f, g}] = [9, {x
+compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: return ({a,b} = obj)
+compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: ({toFixed} = 2);
+compat-table/es6/destructuring-assign.object.js: SyntaxError: ({c, x:d, e} =
+compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: ({a,b} = {a:1,
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: [a, ...b] = [3,
+compat-table/es6/destructuring-assign.rest.js: SyntaxError: [a, ...b] = [3,
 compat-table/es6/destructuring-assign.sparse-array.js: put value to non-reference.
 compat-table/es6/destructuring-assign.string.js: put value to non-reference.
-compat-table/es6/destructuring-assign.throws-null-undefined.js: ParserError:     ({a} = null);
+compat-table/es6/destructuring-assign.throws-null-undefined.js: SyntaxError: ({a} = null);
 compat-table/es6/destructuring-assign.trailing-comma-iterable.js: put value to non-reference.
-compat-table/es6/destructuring-assign.trailing-comma-object.js: ParserError:   ({a,} = {a:1})
-compat-table/es6/destructuring-decl.array.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.astral-string.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.catch.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.computed-properties.js: ParserError: = "corge";
-compat-table/es6/destructuring-decl.defaults-tdz.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.defaults.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.for-in.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.for-of.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.generator.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.iterable-instance.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.iterable.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.iterator-closing.js: ParserError:   });
-compat-table/es6/destructuring-decl.multiple-var.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.nested.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.object-primitives.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.object.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.rest.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.sparse-array.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.string.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.throws-null-undefined.js: ParserError:   try {
-compat-table/es6/destructuring-decl.trailing-comma-iterable.js: ParserError: stCode() {
-compat-table/es6/destructuring-decl.trailing-comma-object.js: ParserError: stCode() {
-compat-table/es6/destructuring-params.aliased-defaults-arrow.js: ParserError:  y = 3}) => {
-compat-table/es6/destructuring-params.arguments.js: ParserError:   return (function({a, x:b, y:
-compat-table/es6/destructuring-params.array.js: ParserError:   return function([a, , [b],
-compat-table/es6/destructuring-params.astral-string.js: ParserError:   return function([c]) {
-compat-table/es6/destructuring-params.computed-properties.js: ParserError:   return function({ [qux]: gr
+compat-table/es6/destructuring-assign.trailing-comma-object.js: SyntaxError: ({a,} = {a:1})
+compat-table/es6/destructuring-decl.array.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.astral-string.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.catch.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.computed-properties.js: SyntaxError: = "corge";
+compat-table/es6/destructuring-decl.defaults-tdz.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.defaults.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.for-in.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.for-of.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.generator.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.iterable-instance.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.iterable.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.iterator-closing.js: SyntaxError: });
+compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.nested.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.object.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.rest.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.string.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: try {
+compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: stCode() {
+compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: y = 3}) => {
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: return (function ({a, x:b, y:
+compat-table/es6/destructuring-params.array.js: SyntaxError: return function ([a, , [b],
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: return function ([c]) {
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: return function ({ [qux]: gr
 compat-table/es6/destructuring-params.defaults-new-function.js: invalid parameter name
-compat-table/es6/destructuring-params.defaults-separate-scope.js: ParserError:   return (function({a=function
-compat-table/es6/destructuring-params.defaults.js: ParserError:   return (function({a = 1, b =
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: return (function ({a=function
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: return (function ({a = 1, b =
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
-compat-table/es6/destructuring-params.empty-patterns.js: ParserError:   return function ([],{}){
-compat-table/es6/destructuring-params.generator.js: ParserError:   return function([a, b, c])
-compat-table/es6/destructuring-params.iterable-instance.js: ParserError:   return function([a, b, c])
-compat-table/es6/destructuring-params.iterable.js: ParserError:   return function([a, b, c])
-compat-table/es6/destructuring-params.iterator-closing.js: ParserError:   (function([a,b]) {}(i
-compat-table/es6/destructuring-params.length.js: ParserError:   return function({a, b}, [c,
-compat-table/es6/destructuring-params.nested.js: ParserError:   return function([e, {x:f, g
+compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: return function ([],{}){
+compat-table/es6/destructuring-params.generator.js: SyntaxError: return function ([a, b, c])
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: return function ([a, b, c])
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: return function ([a, b, c])
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: (function ([a,b]) {}(i
+compat-table/es6/destructuring-params.length.js: SyntaxError: return function ({a, b}, [c,
+compat-table/es6/destructuring-params.nested.js: SyntaxError: return function ([e, {x:f, g
 compat-table/es6/destructuring-params.new-function.js: invalid parameter name
-compat-table/es6/destructuring-params.object-primitives.js: ParserError:   return function({toFixed},
-compat-table/es6/destructuring-params.object.js: ParserError:   return function({c, x:d, e}
-compat-table/es6/destructuring-params.rest.js: ParserError:   return function([a, ...b],
-compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: ParserError: eturn ((a, {b = 0, c = 3}
-compat-table/es6/destructuring-params.sparse-array.js: ParserError:   return function([a, , b]) {
-compat-table/es6/destructuring-params.string.js: ParserError:   return function([a, b, c])
-compat-table/es6/destructuring-params.throws-null-undefined.js: ParserError:     (function({a}){}(null
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: ParserError:   return function([a,]) {
-compat-table/es6/destructuring-params.trailing-comma-object.js: ParserError:   return function({a,}) {
-compat-table/es6/for-of.array.js: ParserError: arr = [5];
-compat-table/es6/for-of.astral-string.js: ParserError:  str = "";
-compat-table/es6/for-of.generator.js: ParserError: erable = (function*(){ yield
-compat-table/es6/for-of.iterable-instance.js: ParserError: 1, 2, 3]);
-compat-table/es6/for-of.iterable.js: ParserError: 1, 2, 3]);
-compat-table/es6/for-of.iterator-closing-break.js: ParserError:   });
-compat-table/es6/for-of.iterator-closing-throw.js: ParserError:   try {
-compat-table/es6/for-of.sparse-array.js: ParserError: count = 0;
-compat-table/es6/for-of.string.js: ParserError:  str = "";
-compat-table/es6/function.block-level-decl.js: ParserError: urn false;
-compat-table/es6/generators.basic.js: ParserError: stCode() {
-compat-table/es6/generators.constructor.js: ParserError: stCode() {
-compat-table/es6/generators.expression.js: ParserError: enerator = function * (){
-compat-table/es6/generators.no-new-this.js: ParserError: stCode() {
-compat-table/es6/generators.prototype-chain.js: ParserError: stCode() {
-compat-table/es6/generators.prototype.js: ParserError: stCode() {
-compat-table/es6/generators.return.js: ParserError: stCode() {
-compat-table/es6/generators.sending.js: ParserError:  var sent;
-compat-table/es6/generators.shorthand.class.js: ParserError:   class C {
-compat-table/es6/generators.shorthand.computed.class.js: ParserError:   class C {
-compat-table/es6/generators.shorthand.computed.js: ParserError:   var o = {
-compat-table/es6/generators.shorthand.js: ParserError:   var o = {
-compat-table/es6/generators.shorthand.no-constructor.js: ParserError:   class C {
-compat-table/es6/generators.shorthand.string-keyed.js: ParserError:   var o = {
-compat-table/es6/generators.this.js: ParserError: stCode() {
-compat-table/es6/generators.throw.js: ParserError: d = false;
-compat-table/es6/generators.yield-precedence.js: ParserError: ar passed;
-compat-table/es6/generators.yield-star.array.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.astral-string.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.generator.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.iterable-instance.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.iterable.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.iterator-closing-throw.js: ParserError: ar gen = (function*(){
-compat-table/es6/generators.yield-star.iterator-closing.js: ParserError: ar gen = (function* generator
-compat-table/es6/generators.yield-star.non-iterable-error.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.sparse-array.js: ParserError: erator = (function * generator
-compat-table/es6/generators.yield-star.string.js: ParserError: erator = (function * generator
-compat-table/es6/let.basic.js: ParserError: stCode() {
-compat-table/es6/let.block-scoped.js: ParserError: stCode() {
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: return function ({toFixed},
+compat-table/es6/destructuring-params.object.js: SyntaxError: return function ({c, x:d, e}
+compat-table/es6/destructuring-params.rest.js: SyntaxError: return function ([a, ...b],
+compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: eturn ((a, {b = 0, c = 3}
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: return function ([a, , b]) {
+compat-table/es6/destructuring-params.string.js: SyntaxError: return function ([a, b, c])
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: (function ({a}){}(null
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: return function ([a,]) {
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: return function ({a,}) {
+compat-table/es6/for-of.array.js: SyntaxError: arr = [5];
+compat-table/es6/for-of.astral-string.js: SyntaxError: str = "";
+compat-table/es6/for-of.generator.js: SyntaxError: erable = (function*(){ yield
+compat-table/es6/for-of.iterable-instance.js: SyntaxError: 1, 2, 3]);
+compat-table/es6/for-of.iterable.js: SyntaxError: 1, 2, 3]);
+compat-table/es6/for-of.iterator-closing-break.js: SyntaxError: });
+compat-table/es6/for-of.iterator-closing-throw.js: SyntaxError: try {
+compat-table/es6/for-of.sparse-array.js: SyntaxError: count = 0;
+compat-table/es6/for-of.string.js: SyntaxError: str = "";
+compat-table/es6/function.block-level-decl.js: SyntaxError: urn false;
+compat-table/es6/generators.basic.js: SyntaxError: stCode() {
+compat-table/es6/generators.constructor.js: SyntaxError: stCode() {
+compat-table/es6/generators.expression.js: SyntaxError: enerator = function * (){
+compat-table/es6/generators.no-new-this.js: SyntaxError: stCode() {
+compat-table/es6/generators.prototype-chain.js: SyntaxError: stCode() {
+compat-table/es6/generators.prototype.js: SyntaxError: stCode() {
+compat-table/es6/generators.return.js: SyntaxError: stCode() {
+compat-table/es6/generators.sending.js: SyntaxError: var sent;
+compat-table/es6/generators.shorthand.class.js: SyntaxError: class C {
+compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: class C {
+compat-table/es6/generators.shorthand.computed.js: SyntaxError: var o = {
+compat-table/es6/generators.shorthand.js: SyntaxError: var o = {
+compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: class C {
+compat-table/es6/generators.shorthand.string-keyed.js: SyntaxError: var o = {
+compat-table/es6/generators.this.js: SyntaxError: stCode() {
+compat-table/es6/generators.throw.js: SyntaxError: d = false;
+compat-table/es6/generators.yield-precedence.js: SyntaxError: ar passed;
+compat-table/es6/generators.yield-star.array.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.astral-string.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.generator.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.iterable-instance.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.iterable.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.iterator-closing-throw.js: SyntaxError: ar gen = (function*(){
+compat-table/es6/generators.yield-star.iterator-closing.js: SyntaxError: ar gen = (function* generator
+compat-table/es6/generators.yield-star.non-iterable-error.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.sparse-array.js: SyntaxError: erator = (function * generator
+compat-table/es6/generators.yield-star.string.js: SyntaxError: erator = (function * generator
+compat-table/es6/let.basic.js: SyntaxError: stCode() {
+compat-table/es6/let.block-scoped.js: SyntaxError: stCode() {
 compat-table/es6/let.for-in-shadow.js: failed
-compat-table/es6/let.for-iteration.js: ParserError: stCode() {
-compat-table/es6/let.for-loop.js: ParserError: stCode() {
-compat-table/es6/let.no-statement.js: ParserError: stCode() {
-compat-table/es6/let.shadow.js: ParserError:       { let bar = 456; }
-compat-table/es6/let.strict.basic.js: ParserError: e strict';
-compat-table/es6/let.strict.block-scoped.js: ParserError: e strict';
+compat-table/es6/let.for-iteration.js: SyntaxError: stCode() {
+compat-table/es6/let.for-loop.js: SyntaxError: stCode() {
+compat-table/es6/let.no-statement.js: SyntaxError: stCode() {
+compat-table/es6/let.shadow.js: SyntaxError: { let bar = 456; }
+compat-table/es6/let.strict.basic.js: SyntaxError: e strict';
+compat-table/es6/let.strict.block-scoped.js: SyntaxError: e strict';
 compat-table/es6/let.strict.for-in-shadow.js: failed
-compat-table/es6/let.strict.for-iteration.js: ParserError: e strict';
-compat-table/es6/let.strict.for-loop.js: ParserError: e strict';
-compat-table/es6/let.strict.no-statement.js: ParserError: e strict';
-compat-table/es6/let.strict.shadow.js: ParserError:       { let bar = 456; }
-compat-table/es6/let.strict.tdz.js: ParserError: === 456; }
-compat-table/es6/let.tdz.js: ParserError: === 456; }
+compat-table/es6/let.strict.for-iteration.js: SyntaxError: e strict';
+compat-table/es6/let.strict.for-loop.js: SyntaxError: e strict';
+compat-table/es6/let.strict.no-statement.js: SyntaxError: e strict';
+compat-table/es6/let.strict.shadow.js: SyntaxError: { let bar = 456; }
+compat-table/es6/let.strict.tdz.js: SyntaxError: === 456; }
+compat-table/es6/let.tdz.js: SyntaxError: === 456; }
 compat-table/es6/literals.binary.Number.js: failed
-compat-table/es6/literals.binary.js: ParserError:   return 0b10 === 2 &
-compat-table/es6/literals.object.computed-accessors.js: ParserError:      obj = {
-compat-table/es6/literals.object.computed-properties.js: ParserError:   return ({ [x]: 1 }).y
-compat-table/es6/literals.object.computed-shorthand-methods.js: ParserError:   return ({ [x](){ retu
-compat-table/es6/literals.object.shorthand-methods.js: ParserError:   return ({ y() { return
-compat-table/es6/literals.object.shorthand-properties.js: ParserError: b = 8, c = {a,b};
-compat-table/es6/literals.object.string-keyed-shorthand-methods.js: ParserError:   return ({ "foo bar"() { return
+compat-table/es6/literals.binary.js: SyntaxError: return 0b10 === 2 &
+compat-table/es6/literals.object.computed-accessors.js: SyntaxError: obj = {
+compat-table/es6/literals.object.computed-properties.js: SyntaxError: return ({ [x]: 1 }).y
+compat-table/es6/literals.object.computed-shorthand-methods.js: SyntaxError: return ({ [x](){ retu
+compat-table/es6/literals.object.shorthand-methods.js: SyntaxError: return ({ y() { return
+compat-table/es6/literals.object.shorthand-properties.js: SyntaxError: b = 8, c = {a,b};
+compat-table/es6/literals.object.string-keyed-shorthand-methods.js: SyntaxError: return ({ "foo bar"() { return
 compat-table/es6/literals.octal.Number.js: failed
-compat-table/es6/literals.octal.js: ParserError:   return 0o10 === 8 &
+compat-table/es6/literals.octal.js: SyntaxError: return 0o10 === 8 &
 compat-table/es6/misc.Invalid-Date.js: crashed: SIGABRT
 compat-table/es6/misc.Object.freeze.primitives.js: crashed: SIGABRT
 compat-table/es6/misc.Object.getOwnPropertyDescriptor.primitives.js: Object.create called on non-object
@@ -971,14 +973,14 @@ compat-table/es6/misc.Proxy.get.Array.reverse.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Array.shift.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Array.splice.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Array.toString.js: Proxy is not defined
-compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: ParserError:   class C extends
+compat-table/es6/misc.Proxy.get.ClassDefinitionEvaluation.js: SyntaxError: class C extends
 compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.CreateListFromArrayLike.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Date.toJSON.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Error.toString.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Function.bind.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.HasBinding.js: Proxy is not defined
-compat-table/es6/misc.Proxy.get.IteratorComplete.js: ParserError: var i = 0;
+compat-table/es6/misc.Proxy.get.IteratorComplete.js: SyntaxError: var i = 0;
 compat-table/es6/misc.Proxy.get.JSON.stringify.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Object.assign.js: Proxy is not defined
 compat-table/es6/misc.Proxy.get.Object.defineProperties.js: Proxy is not defined
@@ -1016,12 +1018,12 @@ compat-table/es6/misc.Proxy.set.Object.assign.js: Proxy is not defined
 compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: RegExp.prototype.toString called by non-regex
 compat-table/es6/misc.accessors-no-constructor.js: crashed: SIGABRT
-compat-table/es6/misc.bound-function-prototype.arrow.js: ParserError:  var f = ()=>5;
-compat-table/es6/misc.bound-function-prototype.class.js: ParserError:     class C {}
+compat-table/es6/misc.bound-function-prototype.arrow.js: SyntaxError: var f = ()=>5;
+compat-table/es6/misc.bound-function-prototype.class.js: SyntaxError: class C {}
 compat-table/es6/misc.bound-function-prototype.function.js: failed
-compat-table/es6/misc.bound-function-prototype.generator.js: ParserError:    var f = function*(){};
-compat-table/es6/misc.bound-function-prototype.subclass.js: ParserError:     class C extends
-compat-table/es6/misc.do-while-no-semicolon.js: ParserError: stCode() {
+compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: var f = function*(){};
+compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: class C extends
+compat-table/es6/misc.do-while-no-semicolon.js: SyntaxError: stCode() {
 compat-table/es6/misc.duplicate-properties-strict.js: repeat object property name a
 compat-table/es6/misc.for-in-no-assignment-strict.js: failed
 compat-table/es6/misc.function-length-configurable.js: failed
@@ -1036,83 +1038,83 @@ compat-table/es6/misc.property-order.Object.keys.js: crashed: SIGSEGV
 compat-table/es6/misc.property-order.Reflect.ownKeys.string.js: crashed: SIGSEGV
 compat-table/es6/misc.property-order.Reflect.ownKeys.symbol.js: Symbol is not defined
 compat-table/es6/misc.prototypes-not-instances.js: crashed: SIGABRT
-compat-table/es6/new-target.assignment-error.js: ParserError: sed = (new.target ===
-compat-table/es6/new-target.constructor.js: ParserError: sed = (new.target ===
+compat-table/es6/new-target.assignment-error.js: SyntaxError: sed = (new.target ===
+compat-table/es6/new-target.constructor.js: SyntaxError: sed = (new.target ===
 compat-table/es6/regex.flags.u.case-folding.js: crashed: SIGABRT
 compat-table/es6/regex.flags.u.codepoint.js: crashed: SIGABRT
 compat-table/es6/regex.flags.u.js: crashed: SIGABRT
 compat-table/es6/regex.flags.u.non-bmp.js: crashed: SIGABRT
 compat-table/es6/regex.flags.y.js: invalid RegExp flag: y
 compat-table/es6/regex.flags.y.lastIndex.js: invalid RegExp flag: y
-compat-table/es6/rest-params.arguments.js: ParserError:   return (function (foo, ...args) {
-compat-table/es6/rest-params.basic.js: ParserError:   return (function (foo, ...args) {
-compat-table/es6/rest-params.length.js: ParserError:   return function(a, ...b){}.len
+compat-table/es6/rest-params.arguments.js: SyntaxError: return (function (foo, ...args) {
+compat-table/es6/rest-params.basic.js: SyntaxError: return (function (foo, ...args) {
+compat-table/es6/rest-params.length.js: SyntaxError: return function (a, ...b){}.len
 compat-table/es6/rest-params.new-function.js: invalid parameter name
-compat-table/es6/rest-params.no-setter.js: ParserError:   return (function (...args) {
-compat-table/es6/spread.array-call.js: ParserError:  Math.max(...[1, 2, 3
-compat-table/es6/spread.array-literal.js: ParserError:   return [...[1, 2, 3
-compat-table/es6/spread.astral-call.js: ParserError: urn Array(..."𠮷𠮶")[
-compat-table/es6/spread.astral-literal.js: ParserError:   return [..."𠮷𠮶"][
-compat-table/es6/spread.generator-call.js: ParserError: erable = (function*(){ yield
-compat-table/es6/spread.generator-literal.js: ParserError: erable = (function*(){ yield
-compat-table/es6/spread.iterable-call.js: ParserError:  Math.max(...iterable
-compat-table/es6/spread.iterable-instance-call.js: ParserError:  Math.max(...Object.c
-compat-table/es6/spread.iterable-instance-literal.js: ParserError: urn ["a", ...Object.c
-compat-table/es6/spread.iterable-literal.js: ParserError: urn ["a", ...iterable
-compat-table/es6/spread.non-iterable-error.js: ParserError:  Math.max(...2);
-compat-table/es6/spread.sparse-call.js: ParserError: a = Array(...[,,]);
-compat-table/es6/spread.sparse-literal.js: ParserError:  var a = [...[,,]];
-compat-table/es6/spread.string-call.js: ParserError:  Math.max(..."1234")
-compat-table/es6/spread.string-literal.js: ParserError: urn ["a", ..."bcd", "
-compat-table/es6/subclassing.Array.concat.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.filter.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.from.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.isArray.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.length-access.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.length-set.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.map.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.of.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.prototype-chain.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.slice.js: ParserError:   class C extends
-compat-table/es6/subclassing.Array.splice.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.call.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.new.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.prototype-chain.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.prototype.apply.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.prototype.bind.js: ParserError:   class C extends
-compat-table/es6/subclassing.Function.prototype.call.js: ParserError:   class C extends
-compat-table/es6/subclassing.Promise.all.js: ParserError:   class P extends
-compat-table/es6/subclassing.Promise.js: ParserError:   class P extends
-compat-table/es6/subclassing.Promise.prototype-chain.js: ParserError:   class C extends
-compat-table/es6/subclassing.Promise.race.js: ParserError:   class P extends
-compat-table/es6/subclassing.RegExp.exec.js: ParserError:   class R extends
-compat-table/es6/subclassing.RegExp.js: ParserError:   class R extends
-compat-table/es6/subclassing.RegExp.prototype-chain.js: ParserError:   class R extends
-compat-table/es6/subclassing.RegExp.test.js: ParserError:   class R extends
-compat-table/es6/subclassing.misc.Boolean.js: ParserError:   class C extends
-compat-table/es6/subclassing.misc.Error.js: ParserError:   class C extends
-compat-table/es6/subclassing.misc.Map.js: ParserError:   class M extends
-compat-table/es6/subclassing.misc.Number.js: ParserError:   class C extends
-compat-table/es6/subclassing.misc.Set.js: ParserError:   class S extends
-compat-table/es6/subclassing.misc.String.js: ParserError:   class C extends
-compat-table/es6/super.correct-constructor.js: ParserError:   class B {
-compat-table/es6/super.expression.js: ParserError:   class B {
-compat-table/es6/super.method-calls.js: ParserError:   class B {
-compat-table/es6/super.new-target-binding.js: ParserError:   class B {
-compat-table/es6/super.property-access.js: ParserError:   class B {}
-compat-table/es6/super.statement.js: ParserError:   class B {
-compat-table/es6/super.static-binding.js: ParserError:   class B {
-compat-table/es6/super.this-binding.js: ParserError:   class B {
+compat-table/es6/rest-params.no-setter.js: SyntaxError: return (function (...args) {
+compat-table/es6/spread.array-call.js: SyntaxError: Math.max(...[1, 2, 3
+compat-table/es6/spread.array-literal.js: SyntaxError: return [...[1, 2, 3
+compat-table/es6/spread.astral-call.js: SyntaxError: urn Array(..."𠮷𠮶")[
+compat-table/es6/spread.astral-literal.js: SyntaxError: return [..."𠮷𠮶"][
+compat-table/es6/spread.generator-call.js: SyntaxError: erable = (function*(){ yield
+compat-table/es6/spread.generator-literal.js: SyntaxError: erable = (function*(){ yield
+compat-table/es6/spread.iterable-call.js: SyntaxError: Math.max(...iterable
+compat-table/es6/spread.iterable-instance-call.js: SyntaxError: Math.max(...Object.c
+compat-table/es6/spread.iterable-instance-literal.js: SyntaxError: urn ["a", ...Object.c
+compat-table/es6/spread.iterable-literal.js: SyntaxError: urn ["a", ...iterable
+compat-table/es6/spread.non-iterable-error.js: SyntaxError: Math.max(...2);
+compat-table/es6/spread.sparse-call.js: SyntaxError: a = Array(...[,,]);
+compat-table/es6/spread.sparse-literal.js: SyntaxError: var a = [...[,,]];
+compat-table/es6/spread.string-call.js: SyntaxError: Math.max(..."1234")
+compat-table/es6/spread.string-literal.js: SyntaxError: urn ["a", ..."bcd", "
+compat-table/es6/subclassing.Array.concat.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.filter.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.from.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.isArray.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.length-access.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.length-set.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.map.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.of.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.prototype-chain.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.slice.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Array.splice.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.call.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.new.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.prototype-chain.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.prototype.apply.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.prototype.bind.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Function.prototype.call.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Promise.all.js: SyntaxError: class P extends
+compat-table/es6/subclassing.Promise.js: SyntaxError: class P extends
+compat-table/es6/subclassing.Promise.prototype-chain.js: SyntaxError: class C extends
+compat-table/es6/subclassing.Promise.race.js: SyntaxError: class P extends
+compat-table/es6/subclassing.RegExp.exec.js: SyntaxError: class R extends
+compat-table/es6/subclassing.RegExp.js: SyntaxError: class R extends
+compat-table/es6/subclassing.RegExp.prototype-chain.js: SyntaxError: class R extends
+compat-table/es6/subclassing.RegExp.test.js: SyntaxError: class R extends
+compat-table/es6/subclassing.misc.Boolean.js: SyntaxError: class C extends
+compat-table/es6/subclassing.misc.Error.js: SyntaxError: class C extends
+compat-table/es6/subclassing.misc.Map.js: SyntaxError: class M extends
+compat-table/es6/subclassing.misc.Number.js: SyntaxError: class C extends
+compat-table/es6/subclassing.misc.Set.js: SyntaxError: class S extends
+compat-table/es6/subclassing.misc.String.js: SyntaxError: class C extends
+compat-table/es6/super.correct-constructor.js: SyntaxError: class B {
+compat-table/es6/super.expression.js: SyntaxError: class B {
+compat-table/es6/super.method-calls.js: SyntaxError: class B {
+compat-table/es6/super.new-target-binding.js: SyntaxError: class B {
+compat-table/es6/super.property-access.js: SyntaxError: class B {}
+compat-table/es6/super.statement.js: SyntaxError: class B {
+compat-table/es6/super.static-binding.js: SyntaxError: class B {
+compat-table/es6/super.this-binding.js: SyntaxError: class B {
 compat-table/es6/tail-calls.direct.js: crashed: SIGSEGV
 compat-table/es6/tail-calls.mutual.js: crashed: SIGSEGV
-compat-table/es6/template.basic.js: ParserError: return `foo bar
-compat-table/es6/template.caching.js: ParserError: trings() {
-compat-table/es6/template.escape-sequences.js: ParserError:   }
-compat-table/es6/template.frozen-array.js: ParserError: stCode() {
+compat-table/es6/template.basic.js: SyntaxError: return `foo bar
+compat-table/es6/template.caching.js: SyntaxError: trings() {
+compat-table/es6/template.escape-sequences.js: SyntaxError: }
+compat-table/es6/template.frozen-array.js: SyntaxError: stCode() {
 compat-table/es6/template.line-break.js: failed to parse eval (`)
-compat-table/es6/template.permanent-caching.js: ParserError: trings() {
-compat-table/es6/template.tagged.js: ParserError:   }
-compat-table/es6/template.toString.js: ParserError:   return `${a}` ===
+compat-table/es6/template.permanent-caching.js: SyntaxError: trings() {
+compat-table/es6/template.tagged.js: SyntaxError: }
+compat-table/es6/template.toString.js: SyntaxError: return `${a}` ===
 compat-table/es6/typed-arrays.ArrayBuffer.Symbol.species.js: Symbol is not defined
 compat-table/es6/typed-arrays.DataView.Float32.js: ArrayBuffer is not defined
 compat-table/es6/typed-arrays.DataView.Float64.js: ArrayBuffer is not defined
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ArrayBuffer is not defined
 compat-table/es6/typed-arrays.Uint32Array.js: ArrayBuffer is not defined
 compat-table/es6/typed-arrays.constructor-iterables.js: base value is not a constructor
 compat-table/es6/typed-arrays.constructor-requires-new.js: ArrayBuffer is not defined
-compat-table/es6/typed-arrays.correct-prototype-chains.js: ParserError:     const keys = Ob
+compat-table/es6/typed-arrays.correct-prototype-chains.js: Int8Array is not defined
 compat-table/es6/typed-arrays.from.js: Int8Array is not defined
 compat-table/es6/typed-arrays.of.js: Int8Array is not defined
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: Int8Array is not defined
@@ -1159,10 +1161,10 @@ compat-table/es6/typed-arrays.prototype.some.js: Int8Array is not defined
 compat-table/es6/typed-arrays.prototype.sort.js: Int8Array is not defined
 compat-table/es6/typed-arrays.prototype.subarray.js: Int8Array is not defined
 compat-table/es6/typed-arrays.prototype.values.js: Int8Array is not defined
-compat-table/es6/unicode-escapes.identifier.js: ParserError: stCode() {
-compat-table/es6/unicode-escapes.property-access.js: ParserError:   return o.\u{102C0} ===
-compat-table/es6/unicode-escapes.property-key.js: ParserError:   var o = { \u{102C0} : 2
-compat-table/es6/unicode-escapes.string.js: ParserError:   return '\u{1d306}' ==
+compat-table/es6/unicode-escapes.identifier.js: SyntaxError: stCode() {
+compat-table/es6/unicode-escapes.property-access.js: SyntaxError: return o.\u{102C0} ===
+compat-table/es6/unicode-escapes.property-key.js: SyntaxError: var o = { \u{102C0} : 2
+compat-table/es6/unicode-escapes.string.js: SyntaxError: return '\u{1d306}' ==
 compat-table/es6/well-known.hasInstance.js: Symbol is not defined
 compat-table/es6/well-known.isConcatSpreadable.non-spreadable.js: Symbol is not defined
 compat-table/es6/well-known.isConcatSpreadable.poisoned-getter.js: failed
@@ -1188,22 +1190,22 @@ compat-table/es6/well-known.toPrimitive.js: Symbol is not defined
 compat-table/es6/well-known.toStringTag.existing-builtins.js: Symbol is not defined
 compat-table/es6/well-known.toStringTag.js: Symbol is not defined
 compat-table/es6/well-known.toStringTag.misc-builtins.js: Symbol is not defined
-compat-table/es6/well-known.toStringTag.new-builtins.js: ParserError: ototypeOf(function*(){})[s] =
+compat-table/es6/well-known.toStringTag.new-builtins.js: SyntaxError: ototypeOf(function*(){})[s] =
 compat-table/es6/well-known.unscopables.js: Symbol is not defined
 compat-table/es2016/Array.prototype.includes.generic.js: cannot read property call of undefined
 compat-table/es2016/Array.prototype.includes.js: calling non-object.
 compat-table/es2016/Array.prototype.includes.sparse.js: calling non-object.
 compat-table/es2016/Array.prototype.includes.typed-array.js: Int8Array is not defined
-compat-table/es2016/exponentiation.assignment.js: ParserError: a = 2; a **= 3; return
-compat-table/es2016/exponentiation.basic.js: ParserError: return 2 ** 3 === 8 &
-compat-table/es2016/exponentiation.unary-negation-error.js: ParserError:   if (2 ** 3 !== 8)
+compat-table/es2016/exponentiation.assignment.js: SyntaxError: a = 2; a **= 3; return
+compat-table/es2016/exponentiation.basic.js: SyntaxError: return 2 ** 3 === 8 &
+compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: if (2 ** 3 !== 8)
 compat-table/es2016/misc.Proxy-Array-includes.js: Proxy is not defined
 compat-table/es2016/misc.Proxy-enumerate-removed.js: Proxy is not defined
-compat-table/es2016/misc.generator-no-new.js: ParserError: stCode() {
-compat-table/es2016/misc.generator-throw-inner.js: ParserError: stCode() {
-compat-table/es2016/misc.nested-rest-destructuring-decl.js: ParserError: stCode() {
-compat-table/es2016/misc.nested-rest-destructuring-params.js: ParserError:   return function ([x, ...[y,
-compat-table/es2016/misc.strict-fn-non-simple-params-error.js: ParserError: stCode() {
+compat-table/es2016/misc.generator-no-new.js: SyntaxError: stCode() {
+compat-table/es2016/misc.generator-throw-inner.js: SyntaxError: stCode() {
+compat-table/es2016/misc.nested-rest-destructuring-decl.js: SyntaxError: stCode() {
+compat-table/es2016/misc.nested-rest-destructuring-params.js: SyntaxError: return function ([x, ...[y,
+compat-table/es2016/misc.strict-fn-non-simple-params-error.js: SyntaxError: stCode() {
 compat-table/es2017/Atomics.add.js: Atomics is not defined
 compat-table/es2017/Atomics.and.js: Atomics is not defined
 compat-table/es2017/Atomics.compareExchange.js: Atomics is not defined
@@ -1248,48 +1250,48 @@ compat-table/es2017/annex-b.Proxy.__defineSetter__.js: Proxy is not defined
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: Proxy is not defined
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: Proxy is not defined
 compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
-compat-table/es2017/async.Symbol.toStringTag.js: ParserError: rototypeOf(async function
-compat-table/es2017/async.arrow-in-class.js: ParserError:   class C {
-compat-table/es2017/async.arrow.js: ParserError: async () => await Pro
-compat-table/es2017/async.await-non-promise.js: ParserError:   (async func
-compat-table/es2017/async.await-rejection.js: ParserError:   (async func
-compat-table/es2017/async.await.js: ParserError:   (async func
-compat-table/es2017/async.constructor.js: ParserError: stCode() {
-compat-table/es2017/async.methods-class.js: ParserError:   class C {
-compat-table/es2017/async.methods-object.js: ParserError:   var o = {
-compat-table/es2017/async.must-await-value.js: ParserError: stCode() {
-compat-table/es2017/async.no-await-in-params.js: ParserError: stCode() {
-compat-table/es2017/async.no-line-break.js: ParserError: stCode() {
-compat-table/es2017/async.no-prototype.js: ParserError: stCode() {
-compat-table/es2017/async.prototype-chain.js: ParserError: rototypeOf(async function
-compat-table/es2017/async.return.js: ParserError: stCode() {
-compat-table/es2017/async.throw.js: ParserError: stCode() {
+compat-table/es2017/async.Symbol.toStringTag.js: SyntaxError: rototypeOf(async function
+compat-table/es2017/async.arrow-in-class.js: SyntaxError: class C {
+compat-table/es2017/async.arrow.js: SyntaxError: async () => await Pro
+compat-table/es2017/async.await-non-promise.js: SyntaxError: (async func
+compat-table/es2017/async.await-rejection.js: SyntaxError: (async func
+compat-table/es2017/async.await.js: SyntaxError: (async func
+compat-table/es2017/async.constructor.js: SyntaxError: stCode() {
+compat-table/es2017/async.methods-class.js: SyntaxError: class C {
+compat-table/es2017/async.methods-object.js: SyntaxError: var o = {
+compat-table/es2017/async.must-await-value.js: SyntaxError: stCode() {
+compat-table/es2017/async.no-await-in-params.js: SyntaxError: stCode() {
+compat-table/es2017/async.no-line-break.js: SyntaxError: stCode() {
+compat-table/es2017/async.no-prototype.js: SyntaxError: stCode() {
+compat-table/es2017/async.prototype-chain.js: SyntaxError: rototypeOf(async function
+compat-table/es2017/async.return.js: SyntaxError: stCode() {
+compat-table/es2017/async.throw.js: SyntaxError: stCode() {
 compat-table/es2017/misc.arguments-caller-removed.js: failed
 compat-table/es2017/regex.flags.u.case-folding.js: crashed: SIGABRT
-compat-table/es2017/trailing-comma.arguments.js: ParserError: min(1,2,3,) === 1;
-compat-table/es2017/trailing-comma.params.js: ParserError: urn typeof function f( a, b, ) {} === 'f
+compat-table/es2017/trailing-comma.arguments.js: SyntaxError: min(1,2,3,) === 1;
+compat-table/es2017/trailing-comma.params.js: SyntaxError: urn typeof function f( a, b, ) {} === 'f
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: Promise is not defined
 compat-table/es2018/Promise.prototype.finally.js: Promise is not defined
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: Promise is not defined
-compat-table/es2018/async-iterators.for-await-of.js: ParserError:   (async func
-compat-table/es2018/async-iterators.generators.js: ParserError: stCode() {
-compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: ParserError:  Proxy({}, {
-compat-table/es2018/misc.template-literal-revision.js: ParserError:   }
-compat-table/es2018/object-rest.js: ParserError: stCode() {
-compat-table/es2018/object-spread.js: ParserError:   var O = { a: 1, ...spread }
-compat-table/es2018/regex.flags.s.js: ParserError:   const regex = /
+compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: (async func
+compat-table/es2018/async-iterators.generators.js: SyntaxError: stCode() {
+compat-table/es2018/misc.Proxy-ownKeys-duplicate-keys.js: SyntaxError: Proxy({}, {
+compat-table/es2018/misc.template-literal-revision.js: SyntaxError: }
+compat-table/es2018/object-rest.js: SyntaxError: stCode() {
+compat-table/es2018/object-spread.js: SyntaxError: var O = { a: 1, ...spread }
+compat-table/es2018/regex.flags.s.js: SyntaxError: const regex = /
 compat-table/es2018/regex.lookbehind.js: crashed: SIGABRT
 compat-table/es2018/regex.named-capture-groups.js: crashed: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.js: ParserError:   const regexGree
+compat-table/es2018/regex.unicode-property-escapes.js: SyntaxError: const regexGree
 compat-table/es2018/regex.unicode-property-escapes.unicode-11.js: crashed: SIGABRT
 compat-table/es2018/regex.unicode-property-escapes.unicode-12.1.js: crashed: SIGABRT
-compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: ParserError: c}/u.test("\u{10fe0}") &
-compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: ParserError: n}/u.test("\u{10fb0}") &
-compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: ParserError: i}/u.test("\u{10570}") &
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: ParserError: h}/u.test("\u{2ebf0}");
-compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: ParserError: i}/u.test("\u{11f00}") &
-compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: ParserError: i}/u.test("\u{105c0}") &
-compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: ParserError: c}/u.test("\u{10940}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-12.js: SyntaxError: c}/u.test("\u{10fe0}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-13.js: SyntaxError: n}/u.test("\u{10fb0}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-14.js: SyntaxError: i}/u.test("\u{10570}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.1.js: SyntaxError: h}/u.test("\u{2ebf0}");
+compat-table/es2018/regex.unicode-property-escapes.unicode-15.js: SyntaxError: i}/u.test("\u{11f00}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-16.0.js: SyntaxError: i}/u.test("\u{105c0}") &
+compat-table/es2018/regex.unicode-property-escapes.unicode-17.0.js: SyntaxError: c}/u.test("\u{10940}") &
 compat-table/es2019/Array.prototype.flatMap.js: calling non-object.
 compat-table/es2019/Array.prototype.flat-flatMap.unscopables.js: Symbol is not defined
 compat-table/es2019/Array.prototype.flat.js: calling non-object.
@@ -1306,48 +1308,48 @@ compat-table/es2019/misc.Function-toString.arrows.js: failed to parse eval (>)
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: failed to parse eval (class)
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: failed to parse eval (class)
 compat-table/es2019/misc.Function-toString.computed-names.js: failed to parse eval ({ /* before */[)
-compat-table/es2019/misc.Function-toString.native-code.js: ParserError:   const NATIVE_EV
+compat-table/es2019/misc.Function-toString.native-code.js: SyntaxError: const NATIVE_EV
 compat-table/es2019/misc.Function-toString.unicode-escapes.js: failed to parse eval (/* before */function \u0061(\u{)
 compat-table/es2019/misc.JSON-stringify-well-formed.js: JSON is not defined
 compat-table/es2019/misc.JSON-superset.line-separator.js: failed to parse eval (')
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: failed to parse eval (')
-compat-table/es2019/misc.optional-catch-binding.await.js: ParserError:   (async func
+compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: (async func
 compat-table/es2019/misc.optional-catch-binding.js: crashed: SIGSEGV
-compat-table/es2019/misc.optional-catch-binding.yield.js: ParserError: stCode() {
-compat-table/es2020/BigInt64Array.js: ParserError: view[0] = 0x8000000000000000n;
+compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: stCode() {
+compat-table/es2020/BigInt64Array.js: SyntaxError: view[0] = 0x8000000000000000n;
 compat-table/es2020/BigInt.asIntN.js: BigInt is not defined
 compat-table/es2020/BigInt.asUintN.js: BigInt is not defined
-compat-table/es2020/BigInt.constructor.js: ParserError: ("3") === 3n;
-compat-table/es2020/BigInt.js: ParserError:   return (1n + 2n) ===
-compat-table/es2020/BigUint64Array.js: ParserError: view[0] = 0x10000000000000000n;
-compat-table/es2020/DataView.prototype.getBigInt64.js: ParserError: gInt64(0, 1n);
-compat-table/es2020/DataView.prototype.getBigUint64.js: ParserError: Uint64(0, 1n);
-compat-table/es2020/Promise.allSettled.js: ParserError: .then(it => {
+compat-table/es2020/BigInt.constructor.js: SyntaxError: ("3") === 3n;
+compat-table/es2020/BigInt.js: SyntaxError: return (1n + 2n) ===
+compat-table/es2020/BigUint64Array.js: SyntaxError: view[0] = 0x10000000000000000n;
+compat-table/es2020/DataView.prototype.getBigInt64.js: SyntaxError: gInt64(0, 1n);
+compat-table/es2020/DataView.prototype.getBigUint64.js: SyntaxError: Uint64(0, 1n);
+compat-table/es2020/Promise.allSettled.js: SyntaxError: .then(it => {
 compat-table/es2020/String.prototype.matchAll.js: calling non-object.
 compat-table/es2020/String.prototype.matchAll.throws-non-global.js: failed
 compat-table/es2020/globalThis.descriptor.js: crashed: SIGABRT
 compat-table/es2020/globalThis.js: failed
-compat-table/es2020/nullish-coalescing.js: ParserError: rn (null ?? 42) === 4
-compat-table/es2020/optional-chaining.bracket.js: ParserError: eturn foo?.['baz'] ==
-compat-table/es2020/optional-chaining.function-call.js: ParserError: n foo.baz?.() === 42
-compat-table/es2020/optional-chaining.method-call.js: ParserError: eturn foo?.baz() ===
-compat-table/es2020/optional-chaining.property.js: ParserError: eturn foo?.baz === 42
-compat-table/es2020/optional-chaining.spread-params.js: ParserError: return fn?.(...[], 1)
+compat-table/es2020/nullish-coalescing.js: SyntaxError: rn (null ?? 42) === 4
+compat-table/es2020/optional-chaining.bracket.js: SyntaxError: eturn foo?.['baz'] ==
+compat-table/es2020/optional-chaining.function-call.js: SyntaxError: n foo.baz?.() === 42
+compat-table/es2020/optional-chaining.method-call.js: SyntaxError: eturn foo?.baz() ===
+compat-table/es2020/optional-chaining.property.js: SyntaxError: eturn foo?.baz === 42
+compat-table/es2020/optional-chaining.spread-params.js: SyntaxError: return fn?.(...[], 1)
 compat-table/es2021/FinalizationRegistry.js: FinalizationRegistry is not defined
-compat-table/es2021/Promise.any.AggregateError.js: ParserError: h (error => {
-compat-table/es2021/Promise.any.fulfillment.js: ParserError: .then(it => {
+compat-table/es2021/Promise.any.AggregateError.js: SyntaxError: h (error => {
+compat-table/es2021/Promise.any.fulfillment.js: SyntaxError: .then(it => {
 compat-table/es2021/String.prototype.replaceAll.js: calling non-object.
 compat-table/es2021/WeakRef.js: WeakRef is not defined
-compat-table/es2021/logical-assignment.and.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.and.setter-not-invoked.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.and.short-circuit.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.nullish.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.nullish.short-circuit.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.or.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.or.setter-not-invoked.js: ParserError: stCode() {
-compat-table/es2021/logical-assignment.or.short-circuit.js: ParserError: stCode() {
-compat-table/es2021/numeric-separators.js: ParserError:   return 1_000_000.00
+compat-table/es2021/logical-assignment.and.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.and.setter-not-invoked.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.and.short-circuit.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.nullish.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.nullish.setter-not-invoked.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.nullish.short-circuit.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.or.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.or.setter-not-invoked.js: SyntaxError: stCode() {
+compat-table/es2021/logical-assignment.or.short-circuit.js: SyntaxError: stCode() {
+compat-table/es2021/numeric-separators.js: SyntaxError: return 1_000_000.00
 compat-table/es2022/Error.cause.AggregateError-prototype-lacks.js: AggregateError is not defined
 compat-table/es2022/Error.cause.AggregateError.js: AggregateError is not defined
 compat-table/es2022/Error.cause.Error-prototype-lacks.js: OK
@@ -1369,23 +1371,23 @@ compat-table/es2022/Object.hasOwn.js: calling non-object.
 compat-table/es2022/at-method.Array.js: calling non-object.
 compat-table/es2022/at-method.String.js: calling non-object.
 compat-table/es2022/at-method.TypedArray.js: crashed: SIGABRT
-compat-table/es2022/class-fields.computed-instance.js: ParserError:   class C {
-compat-table/es2022/class-fields.computed-static.js: ParserError:   class C {
-compat-table/es2022/class-fields.instance.parent-scope.js: ParserError:   {
-compat-table/es2022/class-fields.private-instance.initializers.js: ParserError:   class C {
-compat-table/es2022/class-fields.private-instance.js: ParserError:   class C {
-compat-table/es2022/class-fields.private-instance.optional-access.js: ParserError:   class C {
-compat-table/es2022/class-fields.private-instance.optional-deep-access.js: ParserError:   class C {
-compat-table/es2022/class-fields.private-static.js: ParserError:   class C {
-compat-table/es2022/class-fields.public-instance.js: ParserError:   class C {
-compat-table/es2022/class-fields.public-static.js: ParserError:   class C {
-compat-table/es2022/class-fields.static.define.js: ParserError:   return (class X { stati
-compat-table/es2022/class-methods.private-accessor.js: ParserError:   class C {
-compat-table/es2022/class-methods.private-instance.js: ParserError:   class C {
-compat-table/es2022/class-methods.private-static-accessor.js: ParserError:   class C {
-compat-table/es2022/class-methods.private-static.js: ParserError:   class C {
-compat-table/es2022/class-static-init-blocks.js: ParserError: stCode() {
-compat-table/es2022/ergonomic-brand-checks.js: ParserError:   class A {
+compat-table/es2022/class-fields.computed-instance.js: SyntaxError: class C {
+compat-table/es2022/class-fields.computed-static.js: SyntaxError: class C {
+compat-table/es2022/class-fields.instance.parent-scope.js: SyntaxError: {
+compat-table/es2022/class-fields.private-instance.initializers.js: SyntaxError: class C {
+compat-table/es2022/class-fields.private-instance.js: SyntaxError: class C {
+compat-table/es2022/class-fields.private-instance.optional-access.js: SyntaxError: class C {
+compat-table/es2022/class-fields.private-instance.optional-deep-access.js: SyntaxError: class C {
+compat-table/es2022/class-fields.private-static.js: SyntaxError: class C {
+compat-table/es2022/class-fields.public-instance.js: SyntaxError: class C {
+compat-table/es2022/class-fields.public-static.js: SyntaxError: class C {
+compat-table/es2022/class-fields.static.define.js: SyntaxError: return (class X { stati
+compat-table/es2022/class-methods.private-accessor.js: SyntaxError: class C {
+compat-table/es2022/class-methods.private-instance.js: SyntaxError: class C {
+compat-table/es2022/class-methods.private-static-accessor.js: SyntaxError: class C {
+compat-table/es2022/class-methods.private-static.js: SyntaxError: class C {
+compat-table/es2022/class-static-init-blocks.js: SyntaxError: stCode() {
+compat-table/es2022/ergonomic-brand-checks.js: SyntaxError: class A {
 compat-table/es2022/regex.flags.d.constructor.js: invalid RegExp flag: d
 compat-table/es2022/regex.flags.d.shows-in-flags.js: Proxy is not defined
 compat-table/es2023/Array.prototype.findLastIndex.js: calling non-object.
@@ -1397,12 +1399,12 @@ compat-table/es2023/Array.prototype.with.js: calling non-object.
 compat-table/es2023/TypedArray.prototype.toReversed.js: Uint8Array is not defined
 compat-table/es2023/TypedArray.prototype.toSorted.js: Uint8Array is not defined
 compat-table/es2023/TypedArray.prototype.with.js: Uint8Array is not defined
-compat-table/es2023/hashbang.js: ParserError: #!/usr/bin/
-compat-table/es2024/ArrayBuffer.prototype.detached.js: ParserError:   const buffer1 =
-compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: ParserError:   const buffer1 =
-compat-table/es2024/ArrayBuffer.prototype.transfer.js: ParserError:   const buffer1 =
-compat-table/es2024/Map.groupBy.js: ParserError:   const array = [
-compat-table/es2024/Object.groupBy.js: ParserError:   const array = [
+compat-table/es2023/hashbang.js: SyntaxError: #!/usr/bin/
+compat-table/es2024/ArrayBuffer.prototype.detached.js: SyntaxError: const buffer1 =
+compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: SyntaxError: const buffer1 =
+compat-table/es2024/ArrayBuffer.prototype.transfer.js: SyntaxError: const buffer1 =
+compat-table/es2024/Map.groupBy.js: SyntaxError: const array = [
+compat-table/es2024/Object.groupBy.js: SyntaxError: const array = [
 compat-table/es2024/Promise.withResolvers.js: Promise is not defined
 compat-table/es2024/regex.flags.v.constructor.js: invalid RegExp flag: v
 compat-table/es2024/regex.flags.v.properties-of-strings.js: crashed: SIGABRT
@@ -1411,22 +1413,22 @@ compat-table/es2024/regex.flags.v.shows-in-flags.js: Proxy is not defined
 compat-table/es2024/regex.flags.v.unicode-15.1.js: crashed: SIGABRT
 compat-table/es2024/regex.flags.v.unicode-16.0.js: crashed: SIGABRT
 compat-table/es2024/regex.flags.v.unicode-17.0.js: crashed: SIGABRT
-compat-table/es2025/Iterator.extends.js: ParserError:   class Class ext
-compat-table/es2025/Iterator.from.iterable.js: ParserError:   const iterator
-compat-table/es2025/Iterator.from.iterator.js: ParserError:   const iterator
+compat-table/es2025/Iterator.extends.js: SyntaxError: class Class ext
+compat-table/es2025/Iterator.from.iterable.js: SyntaxError: const iterator
+compat-table/es2025/Iterator.from.iterator.js: SyntaxError: const iterator
 compat-table/es2025/Iterator.instanceof.js: calling non-object.
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: Iterator is not defined
 compat-table/es2025/Iterator.prototype.drop.js: calling non-object.
-compat-table/es2025/Iterator.prototype.every.js: ParserError: every(it => typeof it
-compat-table/es2025/Iterator.prototype.filter.js: ParserError: ilter(it => it % 2)).
-compat-table/es2025/Iterator.prototype.find.js: ParserError: .find(it => it % 2) =
-compat-table/es2025/Iterator.prototype.flatMap.js: ParserError: atMap(it => [it, 0]))
-compat-table/es2025/Iterator.prototype.forEach.js: ParserError: stCode() {
-compat-table/es2025/Iterator.prototype.map.js: ParserError: ).map(it => it * it))
-compat-table/es2025/Iterator.prototype.reduce.js: ParserError: e((a, b) => a + b) ==
-compat-table/es2025/Iterator.prototype.some.js: ParserError: .some(it => typeof it
+compat-table/es2025/Iterator.prototype.every.js: SyntaxError: every(it => typeof it
+compat-table/es2025/Iterator.prototype.filter.js: SyntaxError: ilter(it => it % 2)).
+compat-table/es2025/Iterator.prototype.find.js: SyntaxError: .find(it => it % 2) =
+compat-table/es2025/Iterator.prototype.flatMap.js: SyntaxError: atMap(it => [it, 0]))
+compat-table/es2025/Iterator.prototype.forEach.js: SyntaxError: stCode() {
+compat-table/es2025/Iterator.prototype.map.js: SyntaxError: ).map(it => it * it))
+compat-table/es2025/Iterator.prototype.reduce.js: SyntaxError: e((a, b) => a + b) ==
+compat-table/es2025/Iterator.prototype.some.js: SyntaxError: .some(it => typeof it
 compat-table/es2025/Iterator.prototype.take.js: calling non-object.
-compat-table/es2025/Iterator.prototype.toArray.js: ParserError:   const array = [
+compat-table/es2025/Iterator.prototype.toArray.js: SyntaxError: const array = [
 compat-table/es2025/Promise.try.js: Promise is not defined
 compat-table/es2025/RegExp.escape.js: calling non-object.
 compat-table/es2025/Set.prototype.difference.js: Set is not defined
@@ -1437,9 +1439,9 @@ compat-table/es2025/Set.prototype.isSupersetOf.js: Set is not defined
 compat-table/es2025/Set.prototype.symmetricDifference.js: Set is not defined
 compat-table/es2025/Set.prototype.union.js: Set is not defined
 compat-table/es2025/regex.duplicate-named-groups.js: crashed: SIGABRT
-compat-table/es2025/regex.pattern-modifiers.i.js: ParserError:   const regex = /
-compat-table/es2025/regex.pattern-modifiers.m.js: ParserError:   const regex = /
-compat-table/es2025/regex.pattern-modifiers.s.js: ParserError:   const regex = /
+compat-table/es2025/regex.pattern-modifiers.i.js: SyntaxError: const regex = /
+compat-table/es2025/regex.pattern-modifiers.m.js: SyntaxError: const regex = /
+compat-table/es2025/regex.pattern-modifiers.s.js: SyntaxError: const regex = /
 compat-table/intl/Array.prototype.toLocaleString.js: OK
 compat-table/intl/Date.prototype.toLocaleDateString.js: OK
 compat-table/intl/Date.prototype.toLocaleString.js: OK
@@ -1468,45 +1470,46 @@ compat-table/intl/Intl.prototype.js: Intl is not defined
 compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
-compat-table/next/Array.isTemplateObject.js: ParserError: ject((it => it)`a${1}
-compat-table/next/AsyncDisposableStack.js: ParserError: esource3 = { disposed: false, async [Symbol.asy
-compat-table/next/AsyncIterator.extends.js: ParserError:   class Class ext
-compat-table/next/AsyncIterator.from.async-iterable.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.from.iterable.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.from.iterator.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.instanceof.js: ParserError:   return (async func
+compat-table/next/Array.isTemplateObject.js: SyntaxError: ject((it => it)`a${1}
+compat-table/next/AsyncDisposableStack.js: SyntaxError: esource3 = { disposed: false, async [Symbol.asy
+compat-table/next/AsyncIterator.extends.js: SyntaxError: class Class ext
+compat-table/next/AsyncIterator.from.async-iterable.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.from.iterable.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.from.iterator.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.instanceof.js: SyntaxError: return (async func
 compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.every.js: ParserError:   (async func
-compat-table/next/AsyncIterator.prototype.filter.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.find.js: ParserError:   (async func
-compat-table/next/AsyncIterator.prototype.flatMap.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.forEach.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.map.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.reduce.js: ParserError:   (async func
-compat-table/next/AsyncIterator.prototype.some.js: ParserError:   (async func
-compat-table/next/AsyncIterator.prototype.take.js: ParserError: stCode() {
-compat-table/next/AsyncIterator.prototype.toArray.js: ParserError:   (async func
-compat-table/next/DisposableStack.js: ParserError: esource3 = { disposed: false, [Symbol.dis
-compat-table/next/Map.prototype.upsert.js: ParserError:   const map = new
+compat-table/next/AsyncIterator.prototype.drop.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.every.js: SyntaxError: (async func
+compat-table/next/AsyncIterator.prototype.filter.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.find.js: SyntaxError: (async func
+compat-table/next/AsyncIterator.prototype.flatMap.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.forEach.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.map.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.reduce.js: SyntaxError: (async func
+compat-table/next/AsyncIterator.prototype.some.js: SyntaxError: (async func
+compat-table/next/AsyncIterator.prototype.take.js: SyntaxError: stCode() {
+compat-table/next/AsyncIterator.prototype.toArray.js: SyntaxError: (async func
+compat-table/next/DisposableStack.js: SyntaxError: esource3 = { disposed: false, [Symbol.dis
+compat-table/next/Map.prototype.upsert.js: SyntaxError: const map = new
 compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: crashed: SIGABRT
 compat-table/next/ShadowRealm.js: failed
-compat-table/next/SuppressedError.js: ParserError:   try {
-compat-table/next/Uint8Array.fromBase64.js: ParserError:   const arr1 = ne
-compat-table/next/Uint8Array.fromHex.js: ParserError:   const arr1 = ne
-compat-table/next/Uint8Array.setFromBase64.js: ParserError:   const arr1 = ne
-compat-table/next/Uint8Array.setFromHex.js: ParserError:   const arr1 = ne
-compat-table/next/Uint8Array.toBase64.js: ParserError:   const arr = new
-compat-table/next/Uint8Array.toHex.js: ParserError:   const arr = new
-compat-table/next/WeakMap.prototype.upsert.js: ParserError:   const a = {}, b
-compat-table/next/await-using.for-of.js: ParserError: esource1 = {
-compat-table/next/await-using.js: ParserError:   (async func
-compat-table/next/class-decorators.js: ParserError:   class A {
-compat-table/next/function.sent.js: ParserError: ar result;
-compat-table/next/throw-expr.arrow.js: ParserError: var fn = () => throw
-compat-table/next/throw-expr.conditional.js: ParserError: stCode() {
-compat-table/next/throw-expr.logical.js: ParserError: a = 19 || throw 77;
-compat-table/next/throw-expr.param-init.js: ParserError: stCode() {
-compat-table/next/using.for-of.js: ParserError: esource1 = {
-compat-table/next/using.js: ParserError: resource = {
+compat-table/next/SuppressedError.js: SyntaxError: try {
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: resource = {
+compat-table/next/Uint8Array.fromBase64.js: SyntaxError: const arr1 = ne
+compat-table/next/Uint8Array.fromHex.js: SyntaxError: const arr1 = ne
+compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: const arr1 = ne
+compat-table/next/Uint8Array.setFromHex.js: SyntaxError: const arr1 = ne
+compat-table/next/Uint8Array.toBase64.js: SyntaxError: const arr = new
+compat-table/next/Uint8Array.toHex.js: SyntaxError: const arr = new
+compat-table/next/WeakMap.prototype.upsert.js: SyntaxError: const a = {}, b
+compat-table/next/await-using.for-of.js: SyntaxError: esource1 = {
+compat-table/next/await-using.js: SyntaxError: (async func
+compat-table/next/class-decorators.js: SyntaxError: class A {
+compat-table/next/function.sent.js: SyntaxError: ar result;
+compat-table/next/throw-expr.arrow.js: SyntaxError: var fn = () => throw
+compat-table/next/throw-expr.conditional.js: SyntaxError: stCode() {
+compat-table/next/throw-expr.logical.js: SyntaxError: a = 19 || throw 77;
+compat-table/next/throw-expr.param-init.js: SyntaxError: stCode() {
+compat-table/next/using.for-of.js: SyntaxError: esource1 = {
+compat-table/next/using.js: SyntaxError: resource = {

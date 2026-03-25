@@ -804,7 +804,7 @@ compat-table/es6/default-params.explicit-undefined.js: OK
 compat-table/es6/default-params.new-function.js: OK
 compat-table/es6/default-params.refer-previous.js: OK
 compat-table/es6/default-params.separate-scope.js: OK
-compat-table/es6/default-params.tdz.js: default-params.tdz.js:12:7: warning: Direct call to eval(), but lexical scope is not supported.; eval("(function(a=a){}())");; ^~~~; default-params.tdz.js:16:7: warning: Direct call to eval(), but lex...
+compat-table/es6/default-params.tdz.js: default-params.tdz.js:12:7: warning: Direct call to eval(), but lexical scope is not supported.; eval("(function (a=a){}())");; ^~~~; default-params.tdz.js:16:7: warning: Direct call to eval(), but le...
 compat-table/es6/destructuring-assign.array.js: OK
 compat-table/es6/destructuring-assign.astral-string.js: OK
 compat-table/es6/destructuring-assign.chained-iterable.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: using declarations are not yet supported
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: using declarations are not yet supported
 compat-table/next/Uint8Array.fromBase64.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: undefined is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: undefined is not a function

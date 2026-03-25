@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":3379621,"engine":"engine262","repository":"https://github.com/engine262/engine262.git","revision":"86373defd8d1a8980cb95055359231e1b2a45782","revision_date":"2026-02-21"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":3380831,"engine":"engine262","repository":"https://github.com/engine262/engine262.git","revision":"ae71998cc5a8315700555135b1ac202a0d6d0b31","revision_date":"2026-03-22"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: SyntaxError: Unexpected token
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unexpected token
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK

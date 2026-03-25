@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"99f42ef673d02de473fcbd1a6ced78aa9a628953818487ceed95bae033a6f25f","binary_size":46551520,"cc":"clang 23.0.0 (++20260310082854+d4c7630e2c6e-1~exp1~20260310203027.430)","console_log":"console.log","engine":"libjs","repository":"https://github.com/LadybirdBrowser/ladybird.git","revision":"3a2f2f39263bb858ec5934bfd93971192604a75c","revision_date":"2026-03-15"}
+Metadata: {"arch":"arm64","binary_sha256":"c63c91c88df781a7ebeb7ff6951e0125e2289f2f24af439a6ee61b0b5d15d287","binary_size":45457600,"cc":"clang 23.0.0 (++20260226082512+19c862dd277b-1~exp1~20260226202534.406)","console_log":["console.log","print"],"engine":"libjs","repository":"https://github.com/LadybirdBrowser/ladybird.git","revision":"0ecb02363d7e6dd049ffdd78e5b763e82ff95f91","revision_date":"2026-03-24"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -859,7 +861,7 @@ compat-table/es6/destructuring-params.computed-properties.js: OK
 compat-table/es6/destructuring-params.defaults-new-function.js: OK
 compat-table/es6/destructuring-params.defaults-separate-scope.js: OK
 compat-table/es6/destructuring-params.defaults.js: OK
-compat-table/es6/destructuring-params.duplicate-identifier.js: failed
+compat-table/es6/destructuring-params.duplicate-identifier.js: OK
 compat-table/es6/destructuring-params.empty-patterns.js: OK
 compat-table/es6/destructuring-params.generator.js: OK
 compat-table/es6/destructuring-params.iterable-instance.js: OK
@@ -1015,7 +1017,7 @@ compat-table/es6/misc.Proxy.set.Array.unshift.js: OK
 compat-table/es6/misc.Proxy.set.Object.assign.js: OK
 compat-table/es6/misc.RegExp-alter-flags.js: OK
 compat-table/es6/misc.RegExp-prototype-toString-generic.js: OK
-compat-table/es6/misc.accessors-no-constructor.js: failed
+compat-table/es6/misc.accessors-no-constructor.js: OK
 compat-table/es6/misc.bound-function-prototype.arrow.js: OK
 compat-table/es6/misc.bound-function-prototype.class.js: OK
 compat-table/es6/misc.bound-function-prototype.function.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: failed
+compat-table/next/Symbol.dispose.bound.js: TypeError: TODO: UsingDeclaration
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK

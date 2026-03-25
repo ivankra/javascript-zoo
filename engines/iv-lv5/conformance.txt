@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected token }
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected token ,
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected token ,
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: unexpected token .
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected token .
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: assign to invalid left-hand-side
 compat-table/es6/destructuring-assign.string.js: ReferenceError: assign to invalid left-hand-side
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected tok
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected token [
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected token {
 compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected token {
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: unexpected token [
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected token [
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected token [
 compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected token [
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: unexpected identifier
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: invalid property name
 compat-table/next/Uint8Array.fromBase64.js: ReferenceError: assign to invalid left-hand-side
 compat-table/next/Uint8Array.fromHex.js: ReferenceError: assign to invalid left-hand-side
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected identifier

@@ -746,16 +746,16 @@ compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxErr
 compat-table/es6/arrow.0-params.js: SyntaxError: 10:16: Cannot parse expression, got CloseParen
 compat-table/es6/arrow.1-param.js: SyntaxError: 10:20: Cannot parse expression, got GreaterThan
 compat-table/es6/arrow.5-param.js: SyntaxError: 10:38: Cannot parse expression, got GreaterThan
-compat-table/es6/arrow.bind.js: SyntaxError: 10:67: Cannot parse expression, got GreaterThan
-compat-table/es6/arrow.lexical-arguments.js: SyntaxError: 10:43: Cannot parse expression, got GreaterThan
+compat-table/es6/arrow.bind.js: SyntaxError: 10:68: Cannot parse expression, got GreaterThan
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: 10:44: Cannot parse expression, got GreaterThan
 compat-table/es6/arrow.lexical-super.constructor.js: SyntaxError: 14:10: Cannot parse expression, got Class
 compat-table/es6/arrow.lexical-super.methods.js: SyntaxError: 11:10: Cannot parse expression, got Class
-compat-table/es6/arrow.lexical-this.js: SyntaxError: 10:67: Cannot parse expression, got GreaterThan
+compat-table/es6/arrow.lexical-this.js: SyntaxError: 10:68: Cannot parse expression, got GreaterThan
 compat-table/es6/arrow.new-target.js: SyntaxError: 11:20: Cannot parse expression, got GreaterThan
 compat-table/es6/arrow.no-line-break.js: SyntaxError: 10:16: Cannot parse expression, got CloseParen
 compat-table/es6/arrow.no-prototype.js: SyntaxError: 10:17: Cannot parse expression, got CloseParen
 compat-table/es6/arrow.precedence.js: SyntaxError: 10:16: Cannot parse expression, got CloseParen
-compat-table/es6/arrow.this-call-apply.js: SyntaxError: 10:64: Cannot parse expression, got CloseParen
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: 10:65: Cannot parse expression, got CloseParen
 compat-table/es6/class.accessor-properties.js: SyntaxError: 12:10: Cannot parse expression, got Class
 compat-table/es6/class.anonymous.js: SyntaxError: 10:33: Cannot parse expression, got Class
 compat-table/es6/class.block-scoped.js: SyntaxError: 11:10: Cannot parse expression, got Class
@@ -803,8 +803,8 @@ compat-table/es6/default-params.basic.js: SyntaxError: 10:28: Cannot parse param
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: 10:28: Cannot parse parameter list
 compat-table/es6/default-params.new-function.js: SyntaxError: 1:17: Cannot parse parameter list
 compat-table/es6/default-params.refer-previous.js: SyntaxError: 10:32: Cannot parse parameter list
-compat-table/es6/default-params.separate-scope.js: SyntaxError: 10:25: Cannot parse parameter list
-compat-table/es6/default-params.tdz.js: SyntaxError: 10:27: Cannot parse parameter list
+compat-table/es6/default-params.separate-scope.js: SyntaxError: 10:26: Cannot parse parameter list
+compat-table/es6/default-params.tdz.js: SyntaxError: 10:28: Cannot parse parameter list
 compat-table/es6/destructuring-assign.array.js: ReferenceError: Invalid assignment expression
 compat-table/es6/destructuring-assign.astral-string.js: ReferenceError: Invalid assignment expression
 compat-table/es6/destructuring-assign.chained-iterable.js: ReferenceError: Invalid assignment expression
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: 11:17: 
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: 11:16: Cannot parse expression, got CloseBrace
 compat-table/es6/destructuring-assign.object.js: SyntaxError: 11:10: Cannot parse expression, got Comma
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: 11:9: Cannot parse expression, got Comma
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: 11:11: Cannot parse expression, got Dot
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: 11:11: Cannot parse expression, got Dot
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: Invalid assignment expression
 compat-table/es6/destructuring-assign.string.js: ReferenceError: Invalid assignment expression
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: 10:9: Expected
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.object.js: SyntaxError: 10:9: Expected identifier
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.string.js: SyntaxError: 10:9: Expected identifier
@@ -852,31 +854,31 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: 11:11
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: 10:9: Expected identifier
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: 10:51: Cannot parse expression, got GreaterThan
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: 10:23: Expected identifier
-compat-table/es6/destructuring-params.array.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: 11:23: Expected identifier
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: 10:24: Expected identifier
+compat-table/es6/destructuring-params.array.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: 11:24: Expected identifier
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: 1:13: Expected identifier
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: 10:23: Expected identifier
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: 10:24: Expected identifier
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: 10:24: Expected identifier
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: 10:23: Expected identifier
-compat-table/es6/destructuring-params.generator.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: 38:22: Expected identifier
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: 38:22: Expected identifier
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: 44:15: Expected identifier
-compat-table/es6/destructuring-params.length.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.nested.js: SyntaxError: 10:22: Expected identifier
+compat-table/es6/destructuring-params.generator.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: 38:23: Expected identifier
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: 38:23: Expected identifier
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: 44:16: Expected identifier
+compat-table/es6/destructuring-params.length.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.nested.js: SyntaxError: 10:23: Expected identifier
 compat-table/es6/destructuring-params.new-function.js: SyntaxError: 1:13: Expected identifier
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.object.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.rest.js: SyntaxError: 10:22: Expected identifier
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.object.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.rest.js: SyntaxError: 10:23: Expected identifier
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: 10:25: Cannot parse expression, got Assign
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.string.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: 11:17: Expected identifier
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: 10:22: Expected identifier
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: 10:22: Expected identifier
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.string.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: 11:18: Expected identifier
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: 10:23: Expected identifier
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: 10:23: Expected identifier
 compat-table/es6/for-of.array.js: SyntaxError: 11:24: Cannot parse for var
 compat-table/es6/for-of.astral-string.js: SyntaxError: 11:24: Cannot parse for var
 compat-table/es6/for-of.generator.js: SyntaxError: 11:31: Unexpected token; expected OpenParen, got Multiply
@@ -1046,7 +1048,7 @@ compat-table/es6/regex.flags.y.js: SyntaxError: Invalid flags
 compat-table/es6/regex.flags.y.lastIndex.js: SyntaxError: Invalid flags
 compat-table/es6/rest-params.arguments.js: SyntaxError: 10:30: Expected identifier
 compat-table/es6/rest-params.basic.js: SyntaxError: 10:30: Expected identifier
-compat-table/es6/rest-params.length.js: SyntaxError: 10:26: Expected identifier
+compat-table/es6/rest-params.length.js: SyntaxError: 10:27: Expected identifier
 compat-table/es6/rest-params.new-function.js: SyntaxError: 1:17: Expected identifier
 compat-table/es6/rest-params.no-setter.js: SyntaxError: 10:24: Expected identifier
 compat-table/es6/spread.array-call.js: SyntaxError: 10:24: Cannot parse expression, got Dot
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: Invalid operation on undefined
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError
-compat-table/es6/typed-arrays.correct-prototype-chains.js: SyntaxError: 42:12: Cannot parse expression, got Const
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError
 compat-table/es6/typed-arrays.from.js: ReferenceError
 compat-table/es6/typed-arrays.of.js: ReferenceError
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: 13:12: Expected EOS
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: 13:5: Cannot parse object literal property, got Ok(Some(OpenBracket))
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: 11:10: Cannot parse expression, got Const
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: 11:10: Cannot parse expression, got Const
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: 11:10: Cannot parse expression, got Const

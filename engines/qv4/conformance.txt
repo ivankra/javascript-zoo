@@ -721,7 +721,7 @@ compat-table/es6/annex-b.String.prototype.html.existence.js: failed
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: TypeError: undefined is not a function
 compat-table/es6/annex-b.function.hoisted-block-level.js: ReferenceError: g is not defined
-compat-table/es6/annex-b.function.if-statement.js: SyntaxError: Syntax error
+compat-table/es6/annex-b.function.if-statement.js: SyntaxError
 compat-table/es6/annex-b.function.labeled.js: SyntaxError: FunctionDeclarations are not allowed after a label.
 compat-table/es6/annex-b.html-comments.js: SyntaxError: Unexpected token `>'
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1312,8 +1314,8 @@ compat-table/es2019/misc.JSON-stringify-well-formed.js: failed
 compat-table/es2019/misc.JSON-superset.line-separator.js: SyntaxError: Expected token `;'
 compat-table/es2019/misc.JSON-superset.paragraph-separator.js: SyntaxError: Expected token `;'
 compat-table/es2019/misc.optional-catch-binding.await.js: SyntaxError: Expected token `,'
-compat-table/es2019/misc.optional-catch-binding.js: SyntaxError: Syntax error
-compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError: Syntax error
+compat-table/es2019/misc.optional-catch-binding.js: SyntaxError
+compat-table/es2019/misc.optional-catch-binding.yield.js: SyntaxError
 compat-table/es2020/BigInt64Array.js: SyntaxError: Unexpected token `identifier'
 compat-table/es2020/BigInt.asIntN.js: ReferenceError: BigInt is not defined
 compat-table/es2020/BigInt.asUintN.js: ReferenceError: BigInt is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Expected token `;'
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Expected token `;'
 compat-table/next/Uint8Array.fromBase64.js: TypeError: Property 'fromBase64' of object function Uint8Array() { [native code] } is not a function
 compat-table/next/Uint8Array.fromHex.js: TypeError: Property 'fromHex' of object function Uint8Array() { [native code] } is not a function
 compat-table/next/Uint8Array.setFromBase64.js: TypeError: Property 'setFromBase64' of object 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 is not a function

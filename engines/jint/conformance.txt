@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":"console.log","dist_size":3584174,"dotnet":"10.0.201","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"8e44385124edb663a030eb4074fd38279867e2b8","revision_date":"2026-03-11","version":"4.6.3"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":3690432,"dotnet":"10.0.103","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"f089071fc117a54d5271b89d9b38500cb9b67fee","revision_date":"2026-03-24"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: OK
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: OK
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1247,13 +1249,13 @@ compat-table/es2017/annex-b.Proxy.__defineGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__defineSetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupGetter__.js: OK
 compat-table/es2017/annex-b.Proxy.__lookupSetter__.js: OK
-compat-table/es2017/annex-b.for-in-assignment-non-strict.js: failed
+compat-table/es2017/annex-b.for-in-assignment-non-strict.js: OK
 compat-table/es2017/async.Symbol.toStringTag.js: OK
 compat-table/es2017/async.arrow-in-class.js: OK
 compat-table/es2017/async.arrow.js: OK
 compat-table/es2017/async.await-non-promise.js: OK
-compat-table/es2017/async.await-rejection.js: [object Promise]
-compat-table/es2017/async.await.js: [object Promise]
+compat-table/es2017/async.await-rejection.js: OK
+compat-table/es2017/async.await.js: OK
 compat-table/es2017/async.constructor.js: OK
 compat-table/es2017/async.methods-class.js: OK
 compat-table/es2017/async.methods-object.js: OK
@@ -1469,7 +1471,7 @@ compat-table/intl/Number.prototype.toLocaleString.js: OK
 compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Property 'isTemplateObject' of object is not a function
-compat-table/next/AsyncDisposableStack.js: [object Promise]
+compat-table/next/AsyncDisposableStack.js: OK
 compat-table/next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
 compat-table/next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
 compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: OK
 compat-table/next/SuppressedError.js: OK
+compat-table/next/Symbol.dispose.bound.js: OK
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: OK

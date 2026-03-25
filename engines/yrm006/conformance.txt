@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"239991dd4ec8d0e9636b84647f864dac4775ff826fa15269a641b1ffe70b805f","binary_size":67960,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"print","engine":"yrm006","repository":"https://github.com/yrm006/miniscript.git","revision":"a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d","revision_date":"2018-08-29"}
+Metadata: {"arch":"arm64","binary_sha256":"ec79efe5984d37fc18e66b6b71ee642c78e6131a7905735c7fb86ee4b6bb21f4","binary_size":67960,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"print","engine":"yrm006","repository":"https://github.com/yrm006/miniscript.git","revision":"a4730b54e8cb519d6b62f9ef3fe3a51e2072f94d","revision_date":"2018-08-29"}
 es1/Array.js: crashed: SIGSEGV
 es1/Array.length.assignment.js: crashed: SIGSEGV
 es1/Array.length.js: empty array length failed; new Array(items) length failed; length auto-update failed; length > max index failed
@@ -131,7 +131,7 @@ es1/assignment.unsigned-shift.js: >>>= failed
 es1/bitwise.binary.js: crashed: SIGSEGV
 es1/bitwise.shifts.js: failed
 es1/bitwise.tilde.js: OK
-es1/bitwise.unsigned-shift.js: -1128161123; -1128160715
+es1/bitwise.unsigned-shift.js: failed
 es1/break.js: timeout: >10s
 es1/comma.js: crashed: SIGSEGV
 es1/comments.js: crashed: SIGSEGV

@@ -746,16 +746,16 @@ compat-table/es6/annex-b.__proto__.literals.not-shorthand-property.js: SyntaxErr
 compat-table/es6/arrow.0-params.js: SyntaxError: detected Encountered ")" at line 10, column 12.
 compat-table/es6/arrow.1-param.js: SyntaxError: detected Encountered ">" at line 10, column 14.
 compat-table/es6/arrow.5-param.js: SyntaxError: detected Encountered ">" at line 10, column 28.
-compat-table/es6/arrow.bind.js: SyntaxError: detected Encountered ">" at line 10, column 51.
-compat-table/es6/arrow.lexical-arguments.js: SyntaxError: detected Encountered ">" at line 10, column 35.
+compat-table/es6/arrow.bind.js: SyntaxError: detected Encountered ">" at line 10, column 52.
+compat-table/es6/arrow.lexical-arguments.js: SyntaxError: detected Encountered ">" at line 10, column 36.
 compat-table/es6/arrow.lexical-super.constructor.js: Keyword 'class' reserved for future extension near line 12, column 3, after ";"; in file: 'arrow.lexical-super.constructor.js'; [[Error loading file' arrow.lexical-super.constructor.js']]
 compat-table/es6/arrow.lexical-super.methods.js: Keyword 'class' reserved for future extension near line 10, column 3, after "{"; in file: 'arrow.lexical-super.methods.js'; [[Error loading file' arrow.lexical-super.methods.js']]
-compat-table/es6/arrow.lexical-this.js: SyntaxError: detected Encountered ">" at line 10, column 51.
+compat-table/es6/arrow.lexical-this.js: SyntaxError: detected Encountered ">" at line 10, column 52.
 compat-table/es6/arrow.new-target.js: SyntaxError: detected Encountered "function" at line 10, column 3.
 compat-table/es6/arrow.no-line-break.js: SyntaxError: detected Encountered ")" at line 10, column 12.
 compat-table/es6/arrow.no-prototype.js: SyntaxError: detected Encountered ")" at line 10, column 12.
 compat-table/es6/arrow.precedence.js: SyntaxError: detected Encountered ")" at line 10, column 12.
-compat-table/es6/arrow.this-call-apply.js: SyntaxError: detected Encountered ")" at line 10, column 49.
+compat-table/es6/arrow.this-call-apply.js: SyntaxError: detected Encountered ")" at line 10, column 50.
 compat-table/es6/class.accessor-properties.js: Keyword 'class' reserved for future extension near line 11, column 3, after ";"; in file: 'class.accessor-properties.js'; [[Error loading file' class.accessor-properties.js']]
 compat-table/es6/class.anonymous.js: Keyword 'class' reserved for future extension near line 10, column 17, after "typeof"; in file: 'class.anonymous.js'; [[Error loading file' class.anonymous.js']]
 compat-table/es6/class.block-scoped.js: Keyword 'class' reserved for future extension near line 10, column 3, after "{"; in file: 'class.block-scoped.js'; [[Error loading file' class.block-scoped.js']]
@@ -803,8 +803,8 @@ compat-table/es6/default-params.basic.js: SyntaxError: detected Encountered "=" 
 compat-table/es6/default-params.explicit-undefined.js: SyntaxError: detected Encountered "=" at line 10, column 23.
 compat-table/es6/default-params.new-function.js: SyntaxError: All arguments passed to function constructor could not be parsed as parameters
 compat-table/es6/default-params.refer-previous.js: SyntaxError: detected Encountered "=" at line 10, column 26.
-compat-table/es6/default-params.separate-scope.js: SyntaxError: detected Encountered "=" at line 10, column 21.
-compat-table/es6/default-params.tdz.js: SyntaxError: detected Encountered "=" at line 10, column 22.
+compat-table/es6/default-params.separate-scope.js: SyntaxError: detected Encountered "=" at line 10, column 22.
+compat-table/es6/default-params.tdz.js: SyntaxError: detected Encountered "=" at line 10, column 23.
 compat-table/es6/destructuring-assign.array.js: ReferenceError: Value ',,,' is not an assignable object or property
 compat-table/es6/destructuring-assign.astral-string.js: ReferenceError: Value '' is not an assignable object or property
 compat-table/es6/destructuring-assign.chained-iterable.js: ReferenceError: Value ',' is not an assignable object or property
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: detecte
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: detected Encountered "}" at line 11, column 12.
 compat-table/es6/destructuring-assign.object.js: SyntaxError: detected Encountered "," at line 11, column 6.
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: detected Encountered "," at line 11, column 6.
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: detected Encountered "." at line 11, column 7.
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: detected Encountered "." at line 11, column 7.
 compat-table/es6/destructuring-assign.sparse-array.js: ReferenceError: Value ',,' is not an assignable object or property
 compat-table/es6/destructuring-assign.string.js: ReferenceError: Value ',,' is not an assignable object or property
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: detected Encou
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: detected Encountered "[" at line 10, column 7.
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: detected Encountered "{" at line 10, column 7.
 compat-table/es6/destructuring-decl.object.js: SyntaxError: detected Encountered "{" at line 10, column 7.
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: detected Encountered "[" at line 10, column 7.
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: detected Encountered "[" at line 10, column 7.
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: detected Encountered "[" at line 10, column 7.
 compat-table/es6/destructuring-decl.string.js: SyntaxError: detected Encountered "[" at line 10, column 7.
@@ -852,31 +854,31 @@ compat-table/es6/destructuring-decl.throws-null-undefined.js: SyntaxError: detec
 compat-table/es6/destructuring-decl.trailing-comma-iterable.js: SyntaxError: detected Encountered "[" at line 10, column 7.
 compat-table/es6/destructuring-decl.trailing-comma-object.js: SyntaxError: detected Encountered "{" at line 10, column 7.
 compat-table/es6/destructuring-params.aliased-defaults-arrow.js: SyntaxError: detected Encountered ">" at line 10, column 38.
-compat-table/es6/destructuring-params.arguments.js: SyntaxError: detected Encountered "{" at line 10, column 20.
-compat-table/es6/destructuring-params.array.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.astral-string.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: detected Encountered "{" at line 11, column 19.
+compat-table/es6/destructuring-params.arguments.js: SyntaxError: detected Encountered "{" at line 10, column 21.
+compat-table/es6/destructuring-params.array.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.astral-string.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: detected Encountered "{" at line 11, column 20.
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: Parsing error
-compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: detected Encountered "{" at line 10, column 20.
-compat-table/es6/destructuring-params.defaults.js: SyntaxError: detected Encountered "{" at line 10, column 20.
+compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: detected Encountered "{" at line 10, column 21.
+compat-table/es6/destructuring-params.defaults.js: SyntaxError: detected Encountered "{" at line 10, column 21.
 compat-table/es6/destructuring-params.duplicate-identifier.js: failed
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: detected Encountered "[" at line 10, column 20.
-compat-table/es6/destructuring-params.generator.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: detected Encountered "[" at line 34, column 19.
-compat-table/es6/destructuring-params.iterable.js: SyntaxError: detected Encountered "[" at line 34, column 19.
-compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: detected Encountered "[" at line 38, column 13.
-compat-table/es6/destructuring-params.length.js: SyntaxError: detected Encountered "{" at line 10, column 19.
-compat-table/es6/destructuring-params.nested.js: SyntaxError: detected Encountered "[" at line 10, column 19.
+compat-table/es6/destructuring-params.generator.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: detected Encountered "[" at line 34, column 20.
+compat-table/es6/destructuring-params.iterable.js: SyntaxError: detected Encountered "[" at line 34, column 20.
+compat-table/es6/destructuring-params.iterator-closing.js: SyntaxError: detected Encountered "[" at line 38, column 14.
+compat-table/es6/destructuring-params.length.js: SyntaxError: detected Encountered "{" at line 10, column 20.
+compat-table/es6/destructuring-params.nested.js: SyntaxError: detected Encountered "[" at line 10, column 20.
 compat-table/es6/destructuring-params.new-function.js: SyntaxError: Parsing error
-compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: detected Encountered "{" at line 10, column 19.
-compat-table/es6/destructuring-params.object.js: SyntaxError: detected Encountered "{" at line 10, column 19.
-compat-table/es6/destructuring-params.rest.js: SyntaxError: detected Encountered "[" at line 10, column 19.
+compat-table/es6/destructuring-params.object-primitives.js: SyntaxError: detected Encountered "{" at line 10, column 20.
+compat-table/es6/destructuring-params.object.js: SyntaxError: detected Encountered "{" at line 10, column 20.
+compat-table/es6/destructuring-params.rest.js: SyntaxError: detected Encountered "[" at line 10, column 20.
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: detected Encountered "=" at line 10, column 18.
-compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.string.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: detected Encountered "{" at line 11, column 15.
-compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: detected Encountered "[" at line 10, column 19.
-compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: detected Encountered "{" at line 10, column 19.
+compat-table/es6/destructuring-params.sparse-array.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.string.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.throws-null-undefined.js: SyntaxError: detected Encountered "{" at line 11, column 16.
+compat-table/es6/destructuring-params.trailing-comma-iterable.js: SyntaxError: detected Encountered "[" at line 10, column 20.
+compat-table/es6/destructuring-params.trailing-comma-object.js: SyntaxError: detected Encountered "{" at line 10, column 20.
 compat-table/es6/for-of.array.js: SyntaxError: detected Encountered "of" at line 11, column 17.
 compat-table/es6/for-of.astral-string.js: SyntaxError: detected Encountered "of" at line 11, column 17.
 compat-table/es6/for-of.generator.js: SyntaxError: detected Encountered "*" at line 11, column 27.
@@ -1046,7 +1048,7 @@ compat-table/es6/regex.flags.y.js: SyntaxError: Invalid flags y - expect g,i or 
 compat-table/es6/regex.flags.y.lastIndex.js: SyntaxError: Invalid flags y - expect g,i or m
 compat-table/es6/rest-params.arguments.js: SyntaxError: detected Encountered "." at line 10, column 26.
 compat-table/es6/rest-params.basic.js: SyntaxError: detected Encountered "." at line 10, column 26.
-compat-table/es6/rest-params.length.js: SyntaxError: detected Encountered "." at line 10, column 22.
+compat-table/es6/rest-params.length.js: SyntaxError: detected Encountered "." at line 10, column 23.
 compat-table/es6/rest-params.new-function.js: SyntaxError: Parsing error
 compat-table/es6/rest-params.no-setter.js: SyntaxError: detected Encountered "." at line 10, column 21.
 compat-table/es6/spread.array-call.js: SyntaxError: detected Encountered "." at line 10, column 19.
@@ -1134,7 +1136,7 @@ compat-table/es6/typed-arrays.Uint16Array.js: ReferenceError: Variable 'ArrayBuf
 compat-table/es6/typed-arrays.Uint32Array.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
 compat-table/es6/typed-arrays.constructor-iterables.js: TypeError: 'new' called on undefined value or property
 compat-table/es6/typed-arrays.constructor-requires-new.js: ReferenceError: Variable 'ArrayBuffer' does not exist in the scope chain
-compat-table/es6/typed-arrays.correct-prototype-chains.js: Keyword 'const' reserved for future extension near line 32, column 5, after "}"; in file: 'typed-arrays.correct-prototype-chains.js'; [[Error loading file' typed-arrays.correct-prototype-chains.js']]
+compat-table/es6/typed-arrays.correct-prototype-chains.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
 compat-table/es6/typed-arrays.from.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
 compat-table/es6/typed-arrays.of.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
 compat-table/es6/typed-arrays.prototype.Symbol.iterator.js: ReferenceError: Variable 'Int8Array' does not exist in the scope chain
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: detected Encountered "_1" at line 13, column 11.
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: detected Encountered "[" at line 11, column 5.
 compat-table/next/Uint8Array.fromBase64.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.fromBase64.js'; [[Error loading file' Uint8Array.fromBase64.js']]
 compat-table/next/Uint8Array.fromHex.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.fromHex.js'; [[Error loading file' Uint8Array.fromHex.js']]
 compat-table/next/Uint8Array.setFromBase64.js: Keyword 'const' reserved for future extension near line 10, column 3, after "{"; in file: 'Uint8Array.setFromBase64.js'; [[Error loading file' Uint8Array.setFromBase64.js']]

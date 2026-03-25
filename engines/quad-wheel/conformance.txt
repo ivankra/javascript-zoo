@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"19cba1cade6f740be81abb1690d51778a6928c60a543c66e31562ef2c49d611d","binary_size":200064,"cc":"gcc 16.0.1 20260315 (experimental) [trunk r16-8100-g3aca3bae8ee] (Debian 16-20260315-1)","console_log":"console.log","engine":"quad-wheel","repository":"https://github.com/radare/quad-wheel.git","revision":"ef1747ceeb28fff309de830c3ef863d6cf0b41a1","revision_date":"2012-03-26"}
+Metadata: {"arch":"arm64","binary_sha256":"9ebb9c1f8124bbedb9f311952515019fe168e81adf696bc946c58b7440938513","binary_size":200064,"cc":"gcc 16.0.1 20260226 (experimental) [trunk r16-7708-gf8380ded1f6] (Debian 16-20260226-1)","console_log":"console.log","engine":"quad-wheel","repository":"https://github.com/radare/quad-wheel.git","revision":"ef1747ceeb28fff309de830c3ef863d6cf0b41a1","revision_date":"2012-03-26"}
 es1/Array.js: SyntaxError: unexpected IDENTIFIER
 es1/Array.length.assignment.js: [Warning:value.c:409] Can not assign to a read-only key; length truncation failed
 es1/Array.length.js: [Warning:value.c:409] Can not assign to a read-only key; length assignment failed
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: unexpec
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: unexpected '}', expecting ':'
 compat-table/es6/destructuring-assign.object.js: SyntaxError: unexpected ',', expecting ':'
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: unexpected ',', expecting ':'
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: unexpected '.'
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: unexpected ','
 compat-table/es6/destructuring-assign.string.js: SyntaxError: unexpected '='
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: unexpected '['
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: unexpected '{', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.object.js: SyntaxError: unexpected '{', expecting IDENTIFIER
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: unexpected '[', expecting IDENTIFIER
 compat-table/es6/destructuring-decl.string.js: SyntaxError: unexpected '[', expecting IDENTIFIER
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: SyntaxError: unexpected IN
 compat-table/next/RegExp.lastMatch.js: can not execute expression, expression is not a function
 compat-table/next/ShadowRealm.js: SyntaxError: unexpected IDENTIFIER
 compat-table/next/SuppressedError.js: SyntaxError: unexpected IDENTIFIER
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: unexpected '[', expecting ',' or '}'
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: unexpected IDENTIFIER
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: unexpected IDENTIFIER
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: unexpected IDENTIFIER

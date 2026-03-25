@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: Invalid
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.object.js: SyntaxError: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: Invalid left-hand side in assignment.
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: Unexpected token '.' in expression.
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: Unexpected token '.' in expression.
 compat-table/es6/destructuring-assign.sparse-array.js: SyntaxError: Invalid left-hand side in assignment.
 compat-table/es6/destructuring-assign.string.js: SyntaxError: Invalid left-hand side in assignment.
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: Expected ident
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: Expected identifier but found '['
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: Expected identifier but found '{'
 compat-table/es6/destructuring-decl.object.js: SyntaxError: Expected identifier but found '{'
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: Expected identifier but found '['
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: Expected identifier but found '['
 compat-table/es6/destructuring-decl.sparse-array.js: SyntaxError: Expected identifier but found '['
 compat-table/es6/destructuring-decl.string.js: SyntaxError: Expected identifier but found '['
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: OK
 compat-table/next/RegExp.lastMatch.js: OK
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Expected operator but found '_1'
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Expected operator but found '_'
 compat-table/next/Uint8Array.fromBase64.js: SyntaxError: Unexpected token '>' in expression.
 compat-table/next/Uint8Array.fromHex.js: SyntaxError: Unexpected token '>' in expression.
 compat-table/next/Uint8Array.setFromBase64.js: SyntaxError: Unexpected token '{' in expression.

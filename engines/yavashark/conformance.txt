@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"becc155dd706fad3c4b1a94eb5b9242ec23804d47ac66a3251a20588b5b774d2","binary_size":16128040,"console_log":"console.log","engine":"yavashark","repository":"https://github.com/Sharktheone/yavashark.git","revision":"ab0ed683409d302502cdcacb30617f9b8e3644f1","revision_date":"2026-03-15","run_script_cmd":"$BINARY -i","rustc":"rustc 1.94.0 (4a4ef493e 2026-03-02)"}
+Metadata: {"arch":"arm64","binary_sha256":"977d9ff60ae805369e98d213785966261c7151f3a6a5605c83502be22a7b537f","binary_size":16128040,"console_log":"console.log","engine":"yavashark","repository":"https://github.com/Sharktheone/yavashark.git","revision":"b36247c34828f5c4ce9a7a6d1283e15cbe447368","revision_date":"2026-03-17","run_script_cmd":"$BINARY -i","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -823,6 +823,7 @@ compat-table/es6/destructuring-assign.object-expression.js: OK
 compat-table/es6/destructuring-assign.object-primitives.js: exception: [object Error]
 compat-table/es6/destructuring-assign.object.js: OK
 compat-table/es6/destructuring-assign.parenthesised-error.js: OK
+compat-table/es6/destructuring-assign.rest.identical.js: OK
 compat-table/es6/destructuring-assign.rest.js: OK
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -845,6 +846,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: OK
 compat-table/es6/destructuring-decl.nested.js: OK
 compat-table/es6/destructuring-decl.object-primitives.js: exception: [object Error]
 compat-table/es6/destructuring-decl.object.js: OK
+compat-table/es6/destructuring-decl.rest.identical.js: OK
 compat-table/es6/destructuring-decl.rest.js: OK
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1493,6 +1495,7 @@ compat-table/next/RegExp.1-9.js: failed
 compat-table/next/RegExp.lastMatch.js: failed
 compat-table/next/ShadowRealm.js: failed
 compat-table/next/SuppressedError.js: SyntaxError: Unsupported declaration type
+compat-table/next/Symbol.dispose.bound.js: SyntaxError: Unsupported declaration type
 compat-table/next/Uint8Array.fromBase64.js: OK
 compat-table/next/Uint8Array.fromHex.js: OK
 compat-table/next/Uint8Array.setFromBase64.js: failed

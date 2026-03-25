@@ -750,6 +750,7 @@ compat-table/es6/destructuring-assign.object-expression.js: SyntaxError: missing
 compat-table/es6/destructuring-assign.object-primitives.js: SyntaxError: missing : after property id:
 compat-table/es6/destructuring-assign.object.js: SyntaxError: missing : after property id:
 compat-table/es6/destructuring-assign.parenthesised-error.js: SyntaxError: missing : after property id:
+compat-table/es6/destructuring-assign.rest.identical.js: SyntaxError: syntax error:
 compat-table/es6/destructuring-assign.rest.js: SyntaxError: syntax error:
 compat-table/es6/destructuring-assign.sparse-array.js: OK
 compat-table/es6/destructuring-assign.string.js: OK
@@ -772,6 +773,7 @@ compat-table/es6/destructuring-decl.multiple-var.js: SyntaxError: missing : afte
 compat-table/es6/destructuring-decl.nested.js: SyntaxError: missing : after property id:
 compat-table/es6/destructuring-decl.object-primitives.js: SyntaxError: missing : after property id:
 compat-table/es6/destructuring-decl.object.js: SyntaxError: missing : after property id:
+compat-table/es6/destructuring-decl.rest.identical.js: SyntaxError: syntax error:
 compat-table/es6/destructuring-decl.rest.js: SyntaxError: syntax error:
 compat-table/es6/destructuring-decl.sparse-array.js: OK
 compat-table/es6/destructuring-decl.string.js: OK
@@ -1229,7 +1231,7 @@ compat-table/es2019/Symbol.prototype.description.undefined.js: ReferenceError: S
 compat-table/es2019/annex-b.String.prototype.trimLeft.js: TypeError: " \t \n abc   \t\n".trimLeft is not a function
 compat-table/es2019/annex-b.String.prototype.trimRight.js: TypeError: " \t \n abc   \t\n".trimRight is not a function
 compat-table/es2019/misc.Function-toString.Function-constructor.js: failed
-compat-table/es2019/misc.Function-toString.arrows.js: SyntaxError: syntax error
+compat-table/es2019/misc.Function-toString.arrows.js: SyntaxError
 compat-table/es2019/misc.Function-toString.class-explicit-constructor.js: SyntaxError: missing ) in parenthetical
 compat-table/es2019/misc.Function-toString.class-implicit-constructor.js: SyntaxError: missing ) in parenthetical
 compat-table/es2019/misc.Function-toString.computed-names.js: SyntaxError: invalid property id
@@ -1324,7 +1326,7 @@ compat-table/es2023/Array.prototype.with.js: TypeError: arr['with'] is not a fun
 compat-table/es2023/TypedArray.prototype.toReversed.js: ReferenceError: Uint8Array is not defined
 compat-table/es2023/TypedArray.prototype.toSorted.js: ReferenceError: Uint8Array is not defined
 compat-table/es2023/TypedArray.prototype.with.js: ReferenceError: Uint8Array is not defined
-compat-table/es2023/hashbang.js: SyntaxError: illegal character
+compat-table/es2023/hashbang.js: failed
 compat-table/es2024/ArrayBuffer.prototype.detached.js: ReferenceError: Uint8Array is not defined
 compat-table/es2024/ArrayBuffer.prototype.transferToFixedLength.js: ReferenceError: Uint8Array is not defined
 compat-table/es2024/ArrayBuffer.prototype.transfer.js: ReferenceError: Uint8Array is not defined
