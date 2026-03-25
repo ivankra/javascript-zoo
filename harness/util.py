@@ -10,7 +10,7 @@ import re
 import shutil
 import subprocess
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any, Iterator, NamedTuple
 
 
 UNAME_TO_GOARCH_MAP = {
@@ -136,14 +136,21 @@ def iterate_js_files(
             yield from _emit(p)
 
 
-def get_git_revision(path: Path) -> str | None:
-    """Return the HEAD revision of a git repo, or None."""
+class GitRevision(NamedTuple):
+    revision: str
+    revision_date: str  # YYYY-MM-DD
+
+
+def get_git_revision(path: Path) -> GitRevision | None:
+    """Return the HEAD revision and author date of a git repo, or None."""
     try:
-        return subprocess.check_output(
-            ["git", "-C", str(path), "rev-parse", "HEAD"],
+        out = subprocess.check_output(
+            ["git", "-C", str(path), "log", "-1", "--format=%H%n%ad", "--date=short"],
             stderr=subprocess.DEVNULL,
-        ).decode().strip() or None
-    except (subprocess.CalledProcessError, FileNotFoundError):
+        ).decode().strip()
+        rev, date = out.split("\n", 1)
+        return GitRevision(rev, revision_date=date) if rev else None
+    except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         return None
 
 
