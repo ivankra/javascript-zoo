@@ -83,9 +83,6 @@ def main() -> None:
     parser.add_argument("-j", "--jobs", type=int, help="Parallel jobs (default: from config)")
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     parser.add_argument("-t", "--timeout", type=float, default=TIMEOUT_SEC)
-    parser.add_argument("--output-format", choices=["tests", "runs", "json"], default=None, metavar="FMT",
-                        help=("Output format: 'text' (one line per test file) or 'json' (default "
-                              "for *.json)"))
     parser.add_argument(
         "--output-format", choices=["tests", "runs", "json"], default=None, metavar="FMT",
         help="""
