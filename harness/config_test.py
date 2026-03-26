@@ -12,32 +12,185 @@ from pathlib import Path
 from typing import Any
 from unittest import mock
 
-from harness.config import EngineConfig, Prelude, REPO_ROOT, _resolve_flags_list, load_configs_dict, resolve_preludes
+from harness.config import EngineConfig, Prelude, REPO_ROOT, resolve_flags, load_configs_dict, resolve_preludes
 from harness.tags import Tags
 
 
-class ResolveFlagsListTest(unittest.TestCase):
+class ResolveFlagsTest(unittest.TestCase):
+    """Tests for resolve_flags() — the unified shell/if/list resolver."""
+
+    def _env(self, binary: str = "") -> dict[str, str]:
+        return {**os.environ, "BINARY": binary}
+
+    # --- basic passthrough & flattening ---
+
     def test_plain_strings_passthrough(self) -> None:
-        self.assertEqual(_resolve_flags_list(["--foo", "--bar"], ""), ["--foo", "--bar"])
+        self.assertEqual(resolve_flags(["--foo", "--bar"]), ["--foo", "--bar"])
 
     def test_nested_list_flattened(self) -> None:
-        self.assertEqual(_resolve_flags_list([["--a", "--b"], "--c"], ""), ["--a", "--b", "--c"])
+        self.assertEqual(resolve_flags([["--a", "--b"], "--c"]), ["--a", "--b", "--c"])
 
-    def test_shell_item_expands_lines(self) -> None:
-        result = _resolve_flags_list([{"shell": "printf '%s\\n%s\\n' --x --y"}], "/bin/eng")
+    def test_deeply_nested_lists_flattened(self) -> None:
+        self.assertEqual(resolve_flags([[["--a"], "--b"], "--c"]), ["--a", "--b", "--c"])
+
+    # --- expand_shell ---
+
+    def test_shell_expands_tokens(self) -> None:
+        result = resolve_flags([{"shell": "echo --x --y"}], expand_shell=True, env=self._env())
         self.assertEqual(result, ["--x", "--y"])
 
-    def test_shell_item_empty_lines_skipped(self) -> None:
-        result = _resolve_flags_list([{"shell": "printf '\\n--x\\n\\n'"}], "/bin/eng")
-        self.assertEqual(result, ["--x"])
+    def test_shell_empty_output_skipped(self) -> None:
+        result = resolve_flags([{"shell": "true"}], expand_shell=True, env=self._env())
+        self.assertEqual(result, [])
 
-    def test_shell_item_receives_binary_env(self) -> None:
-        result = _resolve_flags_list([{"shell": "echo $BINARY"}], "/path/to/eng")
+    def test_shell_quoted_token_preserved(self) -> None:
+        result = resolve_flags([{"shell": "echo \"'a b c'\""}], expand_shell=True, env=self._env())
+        self.assertEqual(result, ["a b c"])
+
+    def test_shell_multiline_tokenised(self) -> None:
+        result = resolve_flags([{"shell": "printf '%s\\n%s\\n' --a --b"}], expand_shell=True, env=self._env())
+        self.assertEqual(result, ["--a", "--b"])
+
+    def test_shell_receives_binary_env(self) -> None:
+        result = resolve_flags([{"shell": "echo $BINARY"}], expand_shell=True, env=self._env("/path/to/eng"))
         self.assertEqual(result, ["/path/to/eng"])
 
+    def test_shell_not_expanded_when_flag_off(self) -> None:
+        item = {"shell": "echo hi"}
+        result = resolve_flags([item])
+        self.assertEqual(result, [item])
+
     def test_mixed_types(self) -> None:
-        result = _resolve_flags_list(["--a", ["--b", "--c"], {"shell": "echo --d"}], "/bin/e")
+        result = resolve_flags(["--a", ["--b", "--c"], {"shell": "echo --d"}], expand_shell=True, env=self._env())
         self.assertEqual(result, ["--a", "--b", "--c", "--d"])
+
+    # --- if/then/else preserved (expand_shell only) ---
+
+    def test_tag_item_preserved(self) -> None:
+        result = resolve_flags([{"if": "X", "then": "--a"}], expand_shell=True)
+        self.assertEqual(result, [{"if": "X", "then": "--a"}])
+
+    def test_tag_item_with_else_preserved(self) -> None:
+        result = resolve_flags([{"if": "X", "then": "--a", "else": "--b"}])
+        self.assertEqual(result, [{"if": "X", "then": "--a", "else": "--b"}])
+
+    def test_shell_inside_then_resolved(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": {"shell": "echo --resolved"}}], expand_shell=True, env=self._env(),
+        )
+        self.assertEqual(result, [{"if": "X", "then": "--resolved"}])
+
+    def test_shell_inside_else_resolved(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--a", "else": {"shell": "echo --b"}}], expand_shell=True, env=self._env(),
+        )
+        self.assertEqual(result, [{"if": "X", "then": "--a", "else": "--b"}])
+
+    def test_shell_multitoken_inside_then_becomes_list(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": {"shell": "echo --a --b"}}], expand_shell=True, env=self._env(),
+        )
+        self.assertEqual(result, [{"if": "X", "then": ["--a", "--b"]}])
+
+    def test_list_inside_then_preserved(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": ["--a", "--b"]}], expand_shell=True,
+        )
+        self.assertEqual(result, [{"if": "X", "then": ["--a", "--b"]}])
+
+    def test_nested_if_then_preserved(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": {"if": "Y", "then": "--deep"}}],
+        )
+        self.assertEqual(result, [{"if": "X", "then": {"if": "Y", "then": "--deep"}}])
+
+    def test_deeply_nested_shell_resolved(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": {"if": "Y", "then": {"shell": "echo --deep"}}}],
+            expand_shell=True, env=self._env(),
+        )
+        self.assertEqual(result, [{"if": "X", "then": {"if": "Y", "then": "--deep"}}])
+
+    # --- expand_if ---
+
+    def test_expand_if_includes_then_when_tag_present(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--yes"}], expand_if=True, tags=Tags({"X"}),
+        )
+        self.assertEqual(result, ["--yes"])
+
+    def test_expand_if_includes_else_when_tag_absent(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--yes", "else": "--no"}], expand_if=True, tags=Tags(),
+        )
+        self.assertEqual(result, ["--no"])
+
+    def test_expand_if_skips_when_no_else_and_tag_absent(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--yes"}], expand_if=True, tags=Tags(),
+        )
+        self.assertEqual(result, [])
+
+    def test_expand_if_skips_when_tags_none(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--yes"}], expand_if=True, tags=None,
+        )
+        self.assertEqual(result, [])
+
+    def test_expand_if_then_list_flattened(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": ["--a", "--b"]}], expand_if=True, tags=Tags({"X"}),
+        )
+        self.assertEqual(result, ["--a", "--b"])
+
+    def test_expand_if_else_list_flattened(self) -> None:
+        result = resolve_flags(
+            [{"if": "X", "then": "--a", "else": ["--b", "--c"]}], expand_if=True, tags=Tags(),
+        )
+        self.assertEqual(result, ["--b", "--c"])
+
+    def test_expand_if_nested(self) -> None:
+        flags = [{"if": "X", "then": {"if": "Y", "then": "--deep", "else": "--shallow"}}]
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"X", "Y"})),
+            ["--deep"],
+        )
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"X"})),
+            ["--shallow"],
+        )
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags()),
+            [],
+        )
+
+    def test_expand_if_nested_else_branch(self) -> None:
+        flags = [{"if": "X", "then": "--a", "else": {"if": "Y", "then": "--b"}}]
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"X"})),
+            ["--a"],
+        )
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"Y"})),
+            ["--b"],
+        )
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags()),
+            [],
+        )
+
+    def test_expand_if_deeply_nested_three_levels(self) -> None:
+        flags = [{"if": "A", "then": {"if": "B", "then": {"if": "C", "then": "--abc"}}}]
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"A", "B", "C"})),
+            ["--abc"],
+        )
+        self.assertEqual(
+            resolve_flags(flags, expand_if=True, tags=Tags({"A", "B"})),
+            [],
+        )
+
+    # --- EngineConfig.resolve() integration ---
 
     def test_resolve_method_updates_flags_in_place(self) -> None:
         cfg = EngineConfig(
@@ -53,22 +206,16 @@ class ResolveFlagsListTest(unittest.TestCase):
         cfg.resolve()
         self.assertEqual(cfg.flags, ["--a", "--b"])
 
-    def test_tag_item_preserved(self) -> None:
-        tag_item = {"if": "Intl", "then": "--intl"}
-        result = _resolve_flags_list(["--a", tag_item], "")
-        self.assertEqual(result, ["--a", tag_item])
-
-    def test_tag_item_in_nested_list(self) -> None:
-        tag_item = {"if": "Intl", "then": "--intl"}
-        result = _resolve_flags_list([[tag_item, "--b"]], "")
-        self.assertEqual(result, [tag_item, "--b"])
-
     def test_resolve_preserves_tag_items(self) -> None:
         tag_item = {"if": "Intl", "then": "--intl"}
         cfg = EngineConfig(binary_path="/bin/eng", flags=["--a", tag_item])
         cfg.resolve()
         self.assertEqual(cfg.flags, ["--a", tag_item])
 
+    def test_tag_item_in_nested_list(self) -> None:
+        tag_item = {"if": "Intl", "then": "--intl"}
+        result = resolve_flags([[tag_item, "--b"]], expand_shell=True)
+        self.assertEqual(result, [tag_item, "--b"])
 
 
 class EngineConfigCommandTest(unittest.TestCase):
@@ -133,6 +280,31 @@ class EngineConfigCommandTest(unittest.TestCase):
         self.assertEqual(cmd, ["/usr/bin/eng", "--base", "--intl", "--harmony-atomics", "/tmp/s.js"])
         cmd2 = cfg.argv("/tmp/s.js", tags=Tags({"Atomics"}))
         self.assertEqual(cmd2, ["/usr/bin/eng", "--base", "--harmony-atomics", "/tmp/s.js"])
+
+    def test_if_then_else_in_argv(self) -> None:
+        cfg = self._cfg(flags=[{"if": "X", "then": "--yes", "else": "--no"}])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"X"})),
+                         ["/usr/bin/eng", "--yes", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags()),
+                         ["/usr/bin/eng", "--no", "/tmp/s.js"])
+
+    def test_nested_if_then_in_argv(self) -> None:
+        cfg = self._cfg(flags=[
+            {"if": "X", "then": {"if": "Y", "then": "--xy", "else": "--x-only"}, "else": "--none"},
+        ])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"X", "Y"})),
+                         ["/usr/bin/eng", "--xy", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"X"})),
+                         ["/usr/bin/eng", "--x-only", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags()),
+                         ["/usr/bin/eng", "--none", "/tmp/s.js"])
+
+    def test_list_branch_in_argv(self) -> None:
+        cfg = self._cfg(flags=[{"if": "X", "then": ["--a", "--b"]}])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags({"X"})),
+                         ["/usr/bin/eng", "--a", "--b", "/tmp/s.js"])
+        self.assertEqual(cfg.argv("/tmp/s.js", tags=Tags()),
+                         ["/usr/bin/eng", "/tmp/s.js"])
 
 
 class EngineConfigLoadTest(unittest.TestCase):

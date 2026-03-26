@@ -45,14 +45,20 @@ class EngineConfig:
 
     # --- Invocation ---
     binary_path: str | None = None
-    # Flags always prepended before the script path.
-    # Items may be str, {"shell": "..."} (expanded via bash), list[str] (flattened),
-    # or {"if": "<tag>", "then": "<arg>"} (included only when tag is in tags set).
-    # Call resolve() to expand shell/list items before use.
-    flags: list = dataclasses.field(default_factory=list)
     # Raw sidecar metadata from <binary>.json kept for reporting/persistence.
     # Fields are promoted up into EngineConfig during loading.
     build_metadata: dict[str, Any] = dataclasses.field(default_factory=dict)
+    # Flags prepended before the script path.
+    # Specified as a nested tree resolved by resolve_flags():
+    # - list: resolved recursively and flattened
+    # - str: literal flag
+    # - {"if": tag, "then": tree, "else": tree}:
+    #   conditional branch on a per-test tag (see tags.py)
+    # - {"shell": cmd}: run via bash and tokenized, essentially $(...).
+    #   May use $BINARY var to refer to the engine binary.
+    #   Intended for grepping advertised flags from `$BINARY --help`.
+    #   Shell substitutions are expanded once at startup, not per test.
+    flags: list = dataclasses.field(default_factory=list)
 
     # --- Promoted sidecar fields ---
     # Print function name - "console.log", "print", etc.
@@ -141,26 +147,21 @@ class EngineConfig:
         Nested lists are flattened recursively.
         Safe to call multiple times (no-op on already-resolved fields).
         """
-        binary = self.binary_path or ""
-        self.flags = _resolve_flags_list(self.flags, binary)
+        env = {**os.environ, "BINARY": str(self.binary_path) or ""}
+        self.flags = resolve_flags(self.flags, expand_shell=True, env=env)
         if self.prelude and not isinstance(self.prelude[0], Prelude):
             self.prelude = resolve_preludes(self.prelude)
 
     def argv(self, *args: Path | str, tags: Tags | None = None) -> list[str]:
         """Build execution argv: binary + flags + positional args.
 
-        Conditional flags ({"if": ..., "then": ...}) are included only when
-        the tag is present in the *tags* set.
+        Conditional flags ({"if": ..., "then": ..., ["else": ...]}) are evaluated
+        using *tags*.  Nesting is supported: branch values may be str, list[str],
+        or another {"if":...} dict.
         """
         cmd = [str(self.binary_path)]
-        for flag in self.flags:
-            if isinstance(flag, str):
-                cmd.append(flag)
-            elif isinstance(flag, dict) and "if" in flag and "then" in flag:
-                if tags is not None and flag["if"] in tags:
-                    cmd.append(flag["then"])
-            else:
-                raise RuntimeError(f"unresolved flag {flag!r} in argv(); call resolve() first")
+        resolved = resolve_flags(self.flags, expand_if=True, tags=tags)
+        cmd.extend(str(f) for f in resolved)
         cmd.extend(str(arg) for arg in args)
         return cmd
 
@@ -210,33 +211,63 @@ class EngineConfig:
 
 
 
-def _resolve_flags_list(items: list, binary_path: str) -> list[str | dict[str, str]]:
-    """Recursively expand shell items and flatten nested lists.
+def resolve_flags(
+    flags: list,
+    *,
+    expand_if: bool = False,
+    expand_shell: bool = False,
+    env: dict[str, str] | None = None,
+    tags: Tags | None = None,
+) -> list[str | dict]:
+    """Recursively resolve a flags list.
 
-    Tag-conditional items ({"if": ..., "then": ...}) are preserved as-is
-    and evaluated later in argv().
+    * Always flattens nested lists.
+    * expand_if: evaluate {"if": ..., "then": ..., "else": ...} conditionals
+      using *tags*; the chosen branch is recursively resolved.
+    * expand_shell: expand {"shell": "..."} items via bash, tokenising output
+      with shlex.split (empty tokens dropped, quoting respected).
+      *env* is passed as the subprocess environment (caller should set BINARY etc.).
+      When expand_shell is set but expand_if is not, shell items inside
+      if/then/else branches are expanded while the conditional structure is kept.
     """
-    result: list[str | dict[str, str]] = []
-    for item in items:
+    result: list[str | dict] = []
+    for item in flags:
         if isinstance(item, str):
             result.append(item)
-        elif isinstance(item, dict) and "if" in item and "then" in item:
-            result.append(item)
         elif isinstance(item, list):
-            result.extend(_resolve_flags_list(item, binary_path))
+            result.extend(resolve_flags(item, expand_shell=expand_shell, expand_if=expand_if, env=env, tags=tags))
         elif isinstance(item, dict) and "shell" in item:
-            env = {**os.environ, "BINARY": binary_path}
-            try:
-                proc = subprocess.run(
-                    ["bash", "-c", item["shell"]],
-                    env=env,
-                    capture_output=True,
-                    text=True,
-                    timeout=30,
-                )
-            except Exception as e:
-                sys.exit(f"shell flag expansion failed: {e}")
-            result.extend(line for line in proc.stdout.splitlines() if line.strip())
+            if expand_shell:
+                try:
+                    proc = subprocess.run(
+                        ["bash", "-c", item["shell"]],
+                        env=env, capture_output=True, text=True, timeout=30,
+                    )
+                except Exception as e:
+                    sys.exit(f"shell flag expansion failed: {e}")
+                result.extend(shlex.split(proc.stdout))
+            else:
+                result.append(item)
+        elif isinstance(item, dict) and "if" in item and "then" in item:
+            if expand_if:
+                if tags is not None and item["if"] in tags:
+                    branch = item["then"]
+                elif "else" in item:
+                    branch = item["else"]
+                else:
+                    continue
+                branch_list = branch if isinstance(branch, list) else [branch]
+                result.extend(resolve_flags(branch_list, expand_shell=expand_shell, expand_if=expand_if, env=env, tags=tags))
+            else:
+                resolved: dict[str, Any] = {"if": item["if"]}
+                for key in ("then", "else"):
+                    if key not in item:
+                        continue
+                    v = item[key]
+                    v_list = v if isinstance(v, list) else [v]
+                    r = resolve_flags(v_list, expand_shell=expand_shell, expand_if=False, env=env, tags=tags)
+                    resolved[key] = r[0] if len(r) == 1 else r
+                result.append(resolved)
         else:
             sys.exit(f"unexpected flags item: {item!r}")
     return result

@@ -763,35 +763,29 @@ quanta:
   prelude:
     - code: 'var print = console.log;'
 
+# QuickJS (qjs and run-test262 binaries) and derivatives
 quickjs: &quickjs
-  console_log: ['console.log', 'print']
+  console_log: print  # qjs has both, but run-test262 only has print
   errors_re:
     - *exception_colon_message
+  stderr_replace_re:
+    # https://github.com/bellard/quickjs/issues/497
+    - '^[{] message: "(.*)" }$': 'Test262Error: \1'
   flags:
-    - { if: 'flags:module', then: '--module' }
+    # run-test262 needs -N: run test prepared by test262-harness+eshost
+    - shell: if $BINARY -h 2>&1 | egrep -q '(run-test262|^-N)'; then echo -N; fi
+    # Add --no-unhandled-rejection if advertised (mainline quickjs)
+    # to suppress "Possibly unhandled promise rejection: ..." warnings
+    # with non-zero exit code. Only needed for qjs, not run-test262.
+    - shell: $BINARY -h 2>&1 | grep -o '[-]-no-unhandled-rejection'
+    - if: flags:module
+      then: --module
+      else:
+        # quickjs-ng frequently misdetects modules and needs explicit --script
+        - shell: $BINARY -h 2>&1 | grep -o '[-]-script'
 
-# QuickJS's run-test262 binary
-# Has only print() and needs -N flag to run a script.
-quickjs_262: &quickjs_262
-  console_log: print
-  errors_re:
-    - *exception_colon_message
-  flags:
-    - -N  # -N: run test prepared by test262-harness+eshost
-    - { if: 'flags:module', then: '--module' }
-
-quickjs-ng:
-  console_log: ['console.log', 'print']
-  flags:
-    - --script  # misdetects module mode often enough
-    - { if: 'flags:module', then: '--module' }
-  errors_re:
-    - *exception_colon_message
-
-quickjs-ng_262: *quickjs_262
-
+quickjs-ng: *quickjs
 primjs: *quickjs
-primjs_262: *quickjs_262
 
 qv4:
   bench_transforms: ['octal']
@@ -1221,7 +1215,7 @@ jerry: *jerryscript
 jsshell: *spidermonkey
 mqjs: *mquickjs
 qjs: *quickjs
-run-test262: *quickjs_262
+run-test262: *quickjs
 serenity-js: *libjs
 sm: *spidermonkey
 xst: *xs
