@@ -42,12 +42,12 @@ JavaScript interpreter written in Ruby.
 <a href="../../conformance/es1/Date.prototype.setMinutes.js">Date.prototype.setMinutes.js</a>: date.rb:21:in `local': mon out of range (ArgumentError); date.rb:21:in `block (2 levels) in &lt;module:Runtime&gt;'; function.rb:80:in `call'; vm_frame.rb:144:in `block in newcall'; object.rb:49:in `constru...
 ...
 </pre></li>
-<li>ES3: 58%, <b>1 crash</b><pre>
+<li>ES3: 58%<pre>
 <a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 <a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 <a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 <a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
-<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: crashed: SIGKILL
+<a href="../../conformance/es3/Array.prototype.splice.js">Array.prototype.splice.js</a>: OOM: &gt;4096MB
 <a href="../../conformance/es3/Array.prototype.toLocaleString.js">Array.prototype.toLocaleString.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 <a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: vm_frame.rb:53:in `throw': uncaught throw :exception (UncaughtThrowError); vm_frame.rb:53:in `execute'; vm.rb:16:in `execute'
 <a href="../../conformance/es3/Array.prototype.unshift.js">Array.prototype.unshift.js</a>: unshift multiple elements failed; unshift on empty array failed
@@ -68,5 +68,3 @@ JavaScript interpreter written in Ruby.
 </pre></li>
 <li>ES5: 20%</li>
 </ul></details>
-
-💥 **1 crash during testing**

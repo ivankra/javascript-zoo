@@ -1271,7 +1271,7 @@ compat-table/es2017/regex.flags.u.case-folding.js: SyntaxError: Invalid RegExp f
 compat-table/es2017/trailing-comma.arguments.js: OK
 compat-table/es2017/trailing-comma.params.js: OK
 compat-table/es2018/Promise.prototype.finally.change-rejection.js: OK
-compat-table/es2018/Promise.prototype.finally.js: unhandled promise rejection: bar
+compat-table/es2018/Promise.prototype.finally.js: OK
 compat-table/es2018/Promise.prototype.finally.no-change-resolution.js: OK
 compat-table/es2018/async-iterators.for-await-of.js: SyntaxError: Token "await" not supported in this version
 compat-table/es2018/async-iterators.generators.js: SyntaxError: Unexpected token "*"

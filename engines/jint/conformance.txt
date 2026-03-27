@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":3690432,"dotnet":"10.0.103","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"f089071fc117a54d5271b89d9b38500cb9b67fee","revision_date":"2026-03-24"}
+Metadata: {"arch":"arm64","console_log":["console.log","print"],"dist_size":3769083,"dotnet":"10.0.103","engine":"jint","repository":"https://github.com/sebastienros/jint.git","revision":"0a402dd34f503183e256c11fb7fa7564867ed97c","revision_date":"2026-03-26","version":"4.7.0"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -721,7 +721,7 @@ compat-table/es6/annex-b.String.prototype.html.existence.js: OK
 compat-table/es6/annex-b.String.prototype.html.lowercase.js: OK
 compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js: OK
 compat-table/es6/annex-b.function.hoisted-block-level.js: OK
-compat-table/es6/annex-b.function.if-statement.js: TypeError: Property 'qux' of object is not a function
+compat-table/es6/annex-b.function.if-statement.js: OK
 compat-table/es6/annex-b.function.labeled.js: OK
 compat-table/es6/annex-b.html-comments.js: OK
 compat-table/es6/annex-b.regex.backreferences-octal.js: OK
@@ -987,17 +987,17 @@ compat-table/es6/misc.Proxy.get.Object.defineProperties.js: OK
 compat-table/es6/misc.Proxy.get.Promise.resolve.js: OK
 compat-table/es6/misc.Proxy.get.RegExp-constructor.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.match.js: OK
-compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: failed
+compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.search.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.Symbol.split.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.flags.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.test.js: OK
 compat-table/es6/misc.Proxy.get.RegExp.toString.js: OK
-compat-table/es6/misc.Proxy.get.String.match.js: failed
+compat-table/es6/misc.Proxy.get.String.match.js: OK
 compat-table/es6/misc.Proxy.get.String.raw.js: OK
 compat-table/es6/misc.Proxy.get.String.replace.js: OK
-compat-table/es6/misc.Proxy.get.String.search.js: failed
-compat-table/es6/misc.Proxy.get.String.split.js: failed
+compat-table/es6/misc.Proxy.get.String.search.js: OK
+compat-table/es6/misc.Proxy.get.String.split.js: OK
 compat-table/es6/misc.Proxy.get.ToPrimitive.js: OK
 compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js: OK
 compat-table/es6/misc.Proxy.get.instanceof.js: OK
@@ -1368,7 +1368,7 @@ compat-table/es2022/Error.cause.URIError-prototype-lacks.js: OK
 compat-table/es2022/Error.cause.URIError.js: OK
 compat-table/es2022/Object.hasOwn.ToObject-first.js: OK
 compat-table/es2022/Object.hasOwn.js: OK
-compat-table/es2022/at-method.Array.js: failed
+compat-table/es2022/at-method.Array.js: OK
 compat-table/es2022/at-method.String.js: OK
 compat-table/es2022/at-method.TypedArray.js: OK
 compat-table/es2022/class-fields.computed-instance.js: OK
@@ -1472,23 +1472,23 @@ compat-table/intl/Object.prototype.toLocaleString.js: OK
 compat-table/intl/String.prototype.localeCompare.js: OK
 compat-table/next/Array.isTemplateObject.js: TypeError: Property 'isTemplateObject' of object is not a function
 compat-table/next/AsyncDisposableStack.js: OK
-compat-table/next/AsyncIterator.extends.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.async-iterable.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.iterable.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.from.iterator.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.instanceof.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: ReferenceError: AsyncIterator is not defined
-compat-table/next/AsyncIterator.prototype.drop.js: TypeError: Property 'drop' of object is not a function
-compat-table/next/AsyncIterator.prototype.every.js: TypeError: Property 'every' of object is not a function
-compat-table/next/AsyncIterator.prototype.filter.js: TypeError: Property 'filter' of object is not a function
-compat-table/next/AsyncIterator.prototype.find.js: TypeError: Property 'find' of object is not a function
-compat-table/next/AsyncIterator.prototype.flatMap.js: TypeError: Property 'flatMap' of object is not a function
-compat-table/next/AsyncIterator.prototype.forEach.js: TypeError: Property 'forEach' of object is not a function
-compat-table/next/AsyncIterator.prototype.map.js: TypeError: Property 'map' of object is not a function
-compat-table/next/AsyncIterator.prototype.reduce.js: TypeError: Property 'reduce' of object is not a function
-compat-table/next/AsyncIterator.prototype.some.js: TypeError: Property 'some' of object is not a function
-compat-table/next/AsyncIterator.prototype.take.js: TypeError: Property 'take' of object is not a function
-compat-table/next/AsyncIterator.prototype.toArray.js: TypeError: Property 'toArray' of object is not a function
+compat-table/next/AsyncIterator.extends.js: OK
+compat-table/next/AsyncIterator.from.async-iterable.js: OK
+compat-table/next/AsyncIterator.from.iterable.js: OK
+compat-table/next/AsyncIterator.from.iterator.js: OK
+compat-table/next/AsyncIterator.instanceof.js: OK
+compat-table/next/AsyncIterator.prototype.Symbol.toStringTag.js: OK
+compat-table/next/AsyncIterator.prototype.drop.js: OK
+compat-table/next/AsyncIterator.prototype.every.js: OK
+compat-table/next/AsyncIterator.prototype.filter.js: OK
+compat-table/next/AsyncIterator.prototype.find.js: OK
+compat-table/next/AsyncIterator.prototype.flatMap.js: OK
+compat-table/next/AsyncIterator.prototype.forEach.js: OK
+compat-table/next/AsyncIterator.prototype.map.js: OK
+compat-table/next/AsyncIterator.prototype.reduce.js: OK
+compat-table/next/AsyncIterator.prototype.some.js: OK
+compat-table/next/AsyncIterator.prototype.take.js: OK
+compat-table/next/AsyncIterator.prototype.toArray.js: OK
 compat-table/next/DisposableStack.js: OK
 compat-table/next/Map.prototype.upsert.js: TypeError: Property 'upsert' of object is not a function
 compat-table/next/RegExp.1-9.js: OK
@@ -1505,7 +1505,7 @@ compat-table/next/Uint8Array.toHex.js: OK
 compat-table/next/WeakMap.prototype.upsert.js: TypeError: Property 'upsert' of object is not a function
 compat-table/next/await-using.for-of.js: OK
 compat-table/next/await-using.js: OK
-compat-table/next/class-decorators.js: failed
+compat-table/next/class-decorators.js: TypeError: Cannot convert undefined or null to object
 compat-table/next/function.sent.js: SyntaxError: Unexpected token '.' (function.sent.js:11:22)
 compat-table/next/throw-expr.arrow.js: SyntaxError: Unexpected token 'throw' (throw-expr.arrow.js:9:18)
 compat-table/next/throw-expr.conditional.js: SyntaxError: Unexpected token 'throw' (throw-expr.conditional.js:9:15)

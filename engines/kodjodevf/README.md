@@ -87,8 +87,8 @@ Pure Dart JavaScript interpreter.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 59%, ES2016+ 59%, Next 3%, Intl 61%</summary><ul>
-<li>ES6: 59%<pre>
+<details><summary>compat-table: ES6 58%, ES2016+ 59%, Next 6%, Intl 61%</summary><ul>
+<li>ES6: 58%<pre>
 <a href="../../conformance/compat-table/es6/Array.iterator-prototype-chain.js">Array.iterator-prototype-chain.js</a>: exception: [object Object]
 <a href="../../conformance/compat-table/es6/Array.prototype.splice.js">Array.prototype.splice.js</a>: failed
 <a href="../../conformance/compat-table/es6/Date.prototype.Symbol.toPrimitive.js">Date.prototype.Symbol.toPrimitive.js</a>: exception: [object Object]
@@ -179,7 +179,7 @@ Pure Dart JavaScript interpreter.
 </pre></li>
 <li>ES2024: 18%</li>
 <li>ES2025: 0%</li>
-<li>Next: 3%</li>
+<li>Next: 6%</li>
 <li>Intl: 61%<pre>
 <a href="../../conformance/compat-table/intl/Date.prototype.toLocaleDateString.js">Date.prototype.toLocaleDateString.js</a>: failed
 <a href="../../conformance/compat-table/intl/Date.prototype.toLocaleTimeString.js">Date.prototype.toLocaleTimeString.js</a>: failed

@@ -51,7 +51,7 @@ JavaScript engine of Safari/WebKit.
 <li>ES5: 100%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 100%, ES2016+ 100%, Next 32%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 100%, ES2016+ 100%, Next 33%, Intl 100%</summary><ul>
 <li>ES6: 100%</li>
 <li>ES2016: 100%</li>
 <li>ES2017: 100%</li>
@@ -63,6 +63,6 @@ JavaScript engine of Safari/WebKit.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 32%</li>
+<li>Next: 33%</li>
 <li>Intl: 100%</li>
 </ul></details>

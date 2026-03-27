@@ -64,7 +64,7 @@ JavaScript engine from Mozilla for the Java platform, bundled with JDK 6-7.
 <a href="../../conformance/compat-table/es6/Reflect.construct.Function-subclassing.js">Reflect.construct.Function-subclassing.js</a>: failed
 <a href="../../conformance/compat-table/es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: TypeError: The constructor for Promise may not be invoked as a function
 <a href="../../conformance/compat-table/es6/Reflect.construct.RegExp-subclassing.js">Reflect.construct.RegExp-subclassing.js</a>: failed
-<a href="../../conformance/compat-table/es6/Reflect.construct.new-target.js">Reflect.construct.new-target.js</a>: SyntaxError: syntax error
+<a href="../../conformance/compat-table/es6/Reflect.construct.new-target.js">Reflect.construct.new-target.js</a>: SyntaxError
 ...
 </pre></li>
 <li>ES2016: 100%</li>

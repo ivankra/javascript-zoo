@@ -37,8 +37,8 @@ Original JavaScript engine of KDE's Konqueror browser.
 <a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: SyntaxError: Invalid regular expression
 <a href="../../conformance/es3/global.TypeError.thrown.js">global.TypeError.thrown.js</a>: attempted toString() call on null or non-function object; no exception for instanceof non-callable
 <a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
-<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError: Parse error
-<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError: Parse error
+<a href="../../conformance/es3/identifiers.unicode.js">identifiers.unicode.js</a>: SyntaxError
+<a href="../../conformance/es3/literals.object.unicode.js">literals.object.unicode.js</a>: SyntaxError
 <a href="../../conformance/es3/literals.regex.empty.js">literals.regex.empty.js</a>: SyntaxError: Invalid regular expression
 <a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: backref for a group that hasn't captured failed
 <a href="../../conformance/es3/regex.bracket.esc-b.js">regex.bracket.esc-b.js</a>: failed
@@ -55,8 +55,8 @@ Original JavaScript engine of KDE's Konqueror browser.
 <a href="../../conformance/es5/JSON.stringify.js">JSON.stringify.js</a>: failed to drop undefined/function values; undefined/function values in array not converted to null
 <a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: non-enumerable did not shadow enumerable
 <a href="../../conformance/es5/global.parseInt.no-octal.js">global.parseInt.no-octal.js</a>: parseInt('010') !== 10; parseInt('0100') !== 100; parseInt('077') !== 77
-<a href="../../conformance/es5/source.whitespace.bom.js">source.whitespace.bom.js</a>: SyntaxError: Parse error
-<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Parse error
+<a href="../../conformance/es5/source.whitespace.bom.js">source.whitespace.bom.js</a>: SyntaxError
+<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.js">strict.js</a>: failed
 <a href="../../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: failed

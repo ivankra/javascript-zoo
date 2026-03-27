@@ -77,7 +77,7 @@ Always runs in strict mode, seemingly no option to disable.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 39%, ES2016+ 31%, Next 0%, Intl 11%</summary><ul>
+<details><summary>compat-table: ES6 39%, ES2016+ 32%, Next 0%, Intl 11%</summary><ul>
 <li>ES6: 39%</li>
 <li>ES2016: 36%</li>
 <li>ES2017: 60%<pre>
@@ -104,7 +104,7 @@ Always runs in strict mode, seemingly no option to disable.
 <a href="../../conformance/compat-table/es2017/annex-b.Object.prototype.__defineGetter__.symbols.js">annex-b.Object.prototype.__defineGetter__.symbols.js</a>: TypeError: cannot get property "call" of undefined
 ...
 </pre></li>
-<li>ES2018: 25%</li>
+<li>ES2018: 32%</li>
 <li>ES2019: 19%</li>
 <li>ES2020: 51%<pre>
 <a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: SyntaxError: Unexpected token "0x8000000000000000n"

@@ -585,7 +585,7 @@ compat-table/es6/Promise.Symbol.species.js: Cannot read properties of undefined 
 compat-table/es6/Promise.all.iterable.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/Promise.all.js: Value is not a function
 compat-table/es6/Promise.constructor-requires-new.js: OK
-compat-table/es6/Promise.js: Value is not a function
+compat-table/es6/Promise.js: found both ok and fail markers
 compat-table/es6/Promise.prototype-not-instance.js: OK
 compat-table/es6/Promise.race.iterable.js: Super constructor must be called before 'this' is accessed
 compat-table/es6/Promise.race.js: Value is not a function

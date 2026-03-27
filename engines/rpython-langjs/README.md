@@ -28,6 +28,7 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 <a href="../../conformance/es1/Date.prototype.getMilliseconds.js">Date.prototype.getMilliseconds.js</a>: failed
 <a href="../../conformance/es1/Date.prototype.getMinutes.js">Date.prototype.getMinutes.js</a>: failed
 <a href="../../conformance/es1/Date.prototype.getMonth.js">Date.prototype.getMonth.js</a>: failed
+<a href="../../conformance/es1/Date.prototype.getSeconds.js">Date.prototype.getSeconds.js</a>: failed
 <a href="../../conformance/es1/Date.prototype.getUTCDate.js">Date.prototype.getUTCDate.js</a>: NotImplementedError
 <a href="../../conformance/es1/Date.prototype.getUTCDay.js">Date.prototype.getUTCDay.js</a>: NotImplementedError
 <a href="../../conformance/es1/Date.prototype.getUTCFullYear.js">Date.prototype.getUTCFullYear.js</a>: NotImplementedError
@@ -37,7 +38,6 @@ Original project: https://web.archive.org/web/20171028201832/https://bitbucket.o
 <a href="../../conformance/es1/Date.prototype.getUTCMonth.js">Date.prototype.getUTCMonth.js</a>: NotImplementedError
 <a href="../../conformance/es1/Date.prototype.getUTCSeconds.js">Date.prototype.getUTCSeconds.js</a>: NotImplementedError
 <a href="../../conformance/es1/Date.prototype.setFullYear.js">Date.prototype.setFullYear.js</a>: failed
-<a href="../../conformance/es1/Date.prototype.setTime.js">Date.prototype.setTime.js</a>: TypeError: %s is not an instnace of Date
 ...
 </pre></li>
 <li>ES3: 20%</li>

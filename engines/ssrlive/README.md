@@ -34,7 +34,7 @@ JavaScript engine written in Rust.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 91%, ES2016+ 94%, Next 32%, Intl 25%</summary><ul>
+<details><summary>compat-table: ES6 91%, ES2016+ 94%, Next 33%, Intl 25%</summary><ul>
 <li>ES6: 91%, <b>3 crashes</b><pre>
 <a href="../../conformance/compat-table/es6/Proxy.handler.apply.invariants.js">Proxy.handler.apply.invariants.js</a>: failed
 <a href="../../conformance/compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js">Proxy.handler.getOwnPropertyDescriptor.js</a>: failed
@@ -98,7 +98,7 @@ JavaScript engine written in Rust.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 32%</li>
+<li>Next: 33%</li>
 <li>Intl: 25%</li>
 </ul></details>
 

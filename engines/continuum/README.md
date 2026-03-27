@@ -15,7 +15,7 @@ ES6 interpreter written in ES3.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 67%</summary><ul>
+<details><summary>ES1-ES5: 68%</summary><ul>
 <li>ES1: 84%<pre>
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: numeric sort failed; string sort failed; sort with comparefn failed; reverse comparefn failed
@@ -40,7 +40,7 @@ ES6 interpreter written in ES3.
 <a href="../../conformance/es1/annex-b.global.unescape.js">annex-b.global.unescape.js</a>: failed
 ...
 </pre></li>
-<li>ES3: 51%<pre>
+<li>ES3: 52%<pre>
 <a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: TypeError: $$Assert failed
 <a href="../../conformance/es3/Array.prototype.shift.js">Array.prototype.shift.js</a>: TypeError: $$Assert failed
 <a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: TypeError: $$Assert failed
@@ -52,7 +52,6 @@ ES6 interpreter written in ES3.
 <a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: ReferenceError: $$CallerName is not defined
 <a href="../../conformance/es3/Number.prototype.toExponential.edge-cases.js">Number.prototype.toExponential.edge-cases.js</a>: RangeError: Fraction must be a number between 0 and 20
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential() undefined arg failed
-<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: RangeError: Fraction must be a number between 0 and 20
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: RangeError: Precision must be a number between 1 and 21
 <a href="../../conformance/es3/RegExp.lastIndex.js">RegExp.lastIndex.js</a>: TypeError: exec is not a function
 <a href="../../conformance/es3/RegExp.prototype.exec.js">RegExp.prototype.exec.js</a>: TypeError: exec is not a function
@@ -62,9 +61,10 @@ ES6 interpreter written in ES3.
 <a href="../../conformance/es3/String.prototype.match.js">String.prototype.match.js</a>: ReferenceError: lastIndex is not defined
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $1 failed; $1 $2 $3 failed; undefined capture failed; spec example failed; $nn reverse order failed; 4 captures reverse failed
 <a href="../../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $$ failed; $&amp; failed; $` failed; $' failed; combined replacements failed
+<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: regex with capture failed
 ...
 </pre></li>
-<li>ES5: 54%<pre>
+<li>ES5: 55%<pre>
 <a href="../../conformance/es5/Array.prototype.sort.TypeError.js">Array.prototype.sort.TypeError.js</a>: ReferenceError: $$CallerName is not defined
 <a href="../../conformance/es5/Array.prototype.sort.undefined-comparefn.js">Array.prototype.sort.undefined-comparefn.js</a>: arr.sort(undefined) failed; arr2.sort(undefined) failed
 <a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: toISOString does not return ISO format; date with milliseconds format incorrect; invalid date does not throw RangeError
@@ -90,8 +90,8 @@ ES6 interpreter written in ES3.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 34%, ES2016+ 1%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 34%</li>
+<details><summary>compat-table: ES6 35%, ES2016+ 1%, Next 0%, Intl 25%</summary><ul>
+<li>ES6: 35%</li>
 <li>ES2016: 0%</li>
 <li>ES2017: 4%</li>
 <li>ES2018: 0%</li>

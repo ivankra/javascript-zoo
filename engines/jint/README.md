@@ -21,22 +21,14 @@ JavaScript interpreter for .NET.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 98%, ES2016+ 94%, Next 36%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 98%, ES2016+ 96%, Next 64%, Intl 100%</summary><ul>
 <li>ES6: 98%, <b>2 crashes</b><pre>
-<a href="../../conformance/compat-table/es6/annex-b.function.if-statement.js">annex-b.function.if-statement.js</a>: TypeError: Property 'qux' of object is not a function
-<a href="../../conformance/compat-table/es6/misc.Proxy.get.RegExp.Symbol.replace.js">misc.Proxy.get.RegExp.Symbol.replace.js</a>: failed
-<a href="../../conformance/compat-table/es6/misc.Proxy.get.String.match.js">misc.Proxy.get.String.match.js</a>: failed
-<a href="../../conformance/compat-table/es6/misc.Proxy.get.String.search.js">misc.Proxy.get.String.search.js</a>: failed
-<a href="../../conformance/compat-table/es6/misc.Proxy.get.String.split.js">misc.Proxy.get.String.split.js</a>: failed
 <a href="../../conformance/compat-table/es6/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: crashed: SIGABRT
 <a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: crashed: SIGABRT
 </pre></li>
 <li>ES2016: 100%</li>
-<li>ES2017: 88%<pre>
-<a href="../../conformance/compat-table/es2017/annex-b.for-in-assignment-non-strict.js">annex-b.for-in-assignment-non-strict.js</a>: failed
-<a href="../../conformance/compat-table/es2017/async.await-rejection.js">async.await-rejection.js</a>: [object Promise]
-<a href="../../conformance/compat-table/es2017/async.await.js">async.await.js</a>: [object Promise]
+<li>ES2017: 96%<pre>
 <a href="../../conformance/compat-table/es2017/regex.flags.u.case-folding.js">regex.flags.u.case-folding.js</a>: failed
 </pre></li>
 <li>ES2018: 91%<pre>
@@ -60,9 +52,7 @@ JavaScript interpreter for .NET.
 </pre></li>
 <li>ES2020: 100%</li>
 <li>ES2021: 100%</li>
-<li>ES2022: 98%<pre>
-<a href="../../conformance/compat-table/es2022/at-method.Array.js">at-method.Array.js</a>: failed
-</pre></li>
+<li>ES2022: 100%</li>
 <li>ES2023: 100%</li>
 <li>ES2024: 76%<pre>
 <a href="../../conformance/compat-table/es2024/regex.flags.v.constructor.js">regex.flags.v.constructor.js</a>: SyntaxError: Invalid regular expression flags (1:1)
@@ -73,7 +63,17 @@ JavaScript interpreter for .NET.
 <a href="../../conformance/compat-table/es2024/regex.flags.v.unicode-17.0.js">regex.flags.v.unicode-17.0.js</a>: SyntaxError: Invalid regular expression flags (regex.flags.v.unicode-17.0.js:9:27)
 </pre></li>
 <li>ES2025: 100%</li>
-<li>Next: 36%</li>
+<li>Next: 64%<pre>
+<a href="../../conformance/compat-table/next/Array.isTemplateObject.js">Array.isTemplateObject.js</a>: TypeError: Property 'isTemplateObject' of object is not a function
+<a href="../../conformance/compat-table/next/Map.prototype.upsert.js">Map.prototype.upsert.js</a>: TypeError: Property 'upsert' of object is not a function
+<a href="../../conformance/compat-table/next/WeakMap.prototype.upsert.js">WeakMap.prototype.upsert.js</a>: TypeError: Property 'upsert' of object is not a function
+<a href="../../conformance/compat-table/next/class-decorators.js">class-decorators.js</a>: TypeError: Cannot convert undefined or null to object
+<a href="../../conformance/compat-table/next/function.sent.js">function.sent.js</a>: SyntaxError: Unexpected token '.' (function.sent.js:11:22)
+<a href="../../conformance/compat-table/next/throw-expr.arrow.js">throw-expr.arrow.js</a>: SyntaxError: Unexpected token 'throw' (throw-expr.arrow.js:9:18)
+<a href="../../conformance/compat-table/next/throw-expr.conditional.js">throw-expr.conditional.js</a>: SyntaxError: Unexpected token 'throw' (throw-expr.conditional.js:9:15)
+<a href="../../conformance/compat-table/next/throw-expr.logical.js">throw-expr.logical.js</a>: SyntaxError: Unexpected token 'throw' (throw-expr.logical.js:11:15)
+<a href="../../conformance/compat-table/next/throw-expr.param-init.js">throw-expr.param-init.js</a>: SyntaxError: Unexpected token 'throw' (throw-expr.param-init.js:9:22)
+</pre></li>
 <li>Intl: 100%</li>
 </ul></details>
 

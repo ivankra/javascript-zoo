@@ -1121,7 +1121,7 @@ compat-table/es6/typed-arrays.DataView.Float64.js: OK
 compat-table/es6/typed-arrays.DataView.Int8.js: OK
 compat-table/es6/typed-arrays.DataView.Int16.js: OK
 compat-table/es6/typed-arrays.DataView.Int32.js: failed
-compat-table/es6/typed-arrays.DataView.Uint8.js: TypeError: Class constructor setUint8 cannot be invoked without 'new'
+compat-table/es6/typed-arrays.DataView.Uint8.js: OK
 compat-table/es6/typed-arrays.DataView.Uint16.js: OK
 compat-table/es6/typed-arrays.DataView.Uint32.js: failed
 compat-table/es6/typed-arrays.Float32Array.js: OK

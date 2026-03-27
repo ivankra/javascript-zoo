@@ -26,7 +26,7 @@ Vibe-coded JavaScript interpreter for .NET.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 90%, ES2016+ 92%, Next 16%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 90%, ES2016+ 92%, Next 15%, Intl 100%</summary><ul>
 <li>ES6: 90%, <b>2 crashes</b><pre>
 <a href="../../conformance/compat-table/es6/Map.zero-key.js">Map.zero-key.js</a>: failed
 <a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
@@ -98,7 +98,7 @@ Vibe-coded JavaScript interpreter for .NET.
 <a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: Promise.try is not yet implemented
 <a href="../../conformance/compat-table/es2025/RegExp.escape.js">RegExp.escape.js</a>: RegExp.escape is not yet implemented
 </pre></li>
-<li>Next: 16%</li>
+<li>Next: 15%</li>
 <li>Intl: 100%</li>
 </ul></details>
 

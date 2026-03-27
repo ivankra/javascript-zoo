@@ -24,50 +24,50 @@ those cases just trip the whitelist.
 <details><summary>ES1-ES5: 70%</summary><ul>
 <li>ES1: 84%<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: Array.prototype failed
-<a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
+<a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: Boolean.prototype failed
-<a href="../../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Date.prototype.constructor.js">Date.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Function.js">Function.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Object construction not allowed: Function; at /dist/sandboxjs:1238:15; at performOp (/dist/sandboxjs:1538:9); at execSync (/dist/sandboxj...
+<a href="../../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Date.prototype.constructor.js">Date.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Function.js">Function.js</a>: SandboxAccessError: Object construction not allowed: Function
 <a href="../../conformance/es1/Function.length.js">Function.length.js</a>: Function.length failed; function with 1 param length failed; function with 3 params length failed
-<a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Object construction not allowed: Function; at /dist/sandboxjs:1238:15; at performOp (/dist/sandboxjs:1538:9); at execSync (/dist/sandboxj...
+<a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: SandboxAccessError: Object construction not allowed: Function
 <a href="../../conformance/es1/Number.js">Number.js</a>: Number.prototype failed
-<a href="../../conformance/es1/Number.prototype.constructor.js">Number.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es1/Object.prototype.constructor.js">Object.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Static method or property access not permitted: Object.prototype; at /dist/sandboxjs:568:21; at performOp (/dist/sandboxjs:1538:9); at ex...
-<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Override prototype property 'toString' not allowed; at assignCheck (/dist/sandboxjs:458:15); at /dist/sandboxjs:855:7; at performOp (/dis...
+<a href="../../conformance/es1/Number.prototype.constructor.js">Number.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es1/Object.prototype.constructor.js">Object.prototype.constructor.js</a>: SandboxAccessError: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/es1/String.generics.js">String.generics.js</a>: SandboxAccessError: Override prototype property 'toString' not allowed
 <a href="../../conformance/es1/String.js">String.js</a>: 15.5.3.1 String.prototype failed
-<a href="../../conformance/es1/String.prototype.constructor.js">String.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
+<a href="../../conformance/es1/String.prototype.constructor.js">String.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es1/annex-b.literals.octal.js">annex-b.literals.octal.js</a>: 0755 failed; max safe integer failed
-<a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: throw new SyntaxError("Octal Deprecation: " + octal);
+<a href="../../conformance/es1/annex-b.literals.string.octal.js">annex-b.literals.string.octal.js</a>: SyntaxError: Octal Deprecation: 101
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: ReferenceError: arguments is not defined
 ...
 </pre></li>
 <li>ES3: 73%<pre>
-<a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Error.prototype.constructor.js">Error.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
+<a href="../../conformance/es3/Array.prototype.pop.generic.js">Array.prototype.pop.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Array.prototype.push.generic.js">Array.prototype.push.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Array.prototype.shift.generic.js">Array.prototype.shift.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Array.prototype.slice.generic.js">Array.prototype.slice.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Array.prototype.splice.generic.js">Array.prototype.splice.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Array.prototype.unshift.generic.js">Array.prototype.unshift.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Error.prototype.constructor.js">Error.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Error.prototype.message.js">Error.prototype.message.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/Error.prototype.name.js">Error.prototype.name.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
 <a href="../../conformance/es3/Function.prototype.apply.js">Function.prototype.apply.js</a>: ReferenceError: arguments is not defined
-<a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Static method or property access not permitted: Object.prototype; at /dist/sandboxjs:568:21; at performOp (/dist/sandboxjs:1538:9); at ex...
-<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Override prototype property 'toString' not allowed; at assignCheck (/dist/sandboxjs:458:15); at /dist/sandboxjs:855:7; at performOp (/dis...
-<a href="../../conformance/es3/RegExp.prototype.constructor.js">RegExp.prototype.constructor.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/String.prototype.concat.generic.js">String.prototype.concat.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/String.prototype.match.generic.js">String.prototype.match.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Override prototype property 'toString' not allowed; at assignCheck (/dist/sandboxjs:458:15); at /dist/sandboxjs:855:7; at performOp (/dis...
-<a href="../../conformance/es3/String.prototype.search.generic.js">String.prototype.search.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/String.prototype.slice.generic.js">String.prototype.slice.generic.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; SandboxAccessError: Access to prototype of global object is not permitted; at /dist/sandboxjs:594:17; at performOp (/dist/sandboxjs:1538:9); at execSync (/di...
-<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: EvalError: SandboxAccessError: Static method or property access not permitted: EvalError.prototype
-<a href="../../conformance/es3/global.RangeError.js">global.RangeError.js</a>: RangeError: SandboxAccessError: Static method or property access not permitted: RangeError.prototype
-<a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: RangeError: SandboxAccessError: Method or property access not permitted: RangeError.name
+<a href="../../conformance/es3/Object.prototype.isPrototypeOf.js">Object.prototype.isPrototypeOf.js</a>: SandboxAccessError: Static method or property access not permitted: Object.prototype
+<a href="../../conformance/es3/Object.prototype.toLocaleString.js">Object.prototype.toLocaleString.js</a>: SandboxAccessError: Override prototype property 'toString' not allowed
+<a href="../../conformance/es3/RegExp.prototype.constructor.js">RegExp.prototype.constructor.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/String.prototype.concat.generic.js">String.prototype.concat.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/String.prototype.match.generic.js">String.prototype.match.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: SandboxAccessError: Override prototype property 'toString' not allowed
+<a href="../../conformance/es3/String.prototype.search.generic.js">String.prototype.search.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/String.prototype.slice.generic.js">String.prototype.slice.generic.js</a>: SandboxAccessError: Access to prototype of global object is not permitted
+<a href="../../conformance/es3/global.EvalError.js">global.EvalError.js</a>: SandboxAccessError: Static method or property access not permitted: EvalError.prototype
+<a href="../../conformance/es3/global.RangeError.js">global.RangeError.js</a>: SandboxAccessError: Static method or property access not permitted: RangeError.prototype
+<a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: SandboxAccessError: Method or property access not permitted: RangeError.name
 ...
 </pre></li>
 <li>ES5: 28%</li>
@@ -88,7 +88,7 @@ those cases just trip the whitelist.
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.computed-names.js">misc.Function-toString.computed-names.js</a>: Unexpected token after call: {: { [  "0"  ]  (  )  {  } }.f
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.native-code.js">misc.Function-toString.native-code.js</a>: failed
 <a href="../../conformance/compat-table/es2019/misc.Function-toString.unicode-escapes.js">misc.Function-toString.unicode-escapes.js</a>: Unexpected token 'function': function \u0061(\u{62}, \u0063) { \u0062
-<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; ParseError: Unexpected token 'function': function *foo() {; try {; yield;; at lispify (/dist/sandboxjs:2909:23); at lispifyExpr (/dist/sandboxjs:2947:16); at...
+<a href="../../conformance/compat-table/es2019/misc.optional-catch-binding.yield.js">misc.optional-catch-binding.yield.js</a>: SyntaxError: Unexpected token 'function': function *foo() {
 </pre></li>
 <li>ES2020: 51%<pre>
 <a href="../../conformance/compat-table/es2020/BigInt64Array.js">BigInt64Array.js</a>: ReferenceError: ArrayBuffer is not defined
@@ -107,11 +107,11 @@ those cases just trip the whitelist.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: Method or property access not permitted: TypedArray.toReversed
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: Method or property access not permitted: TypedArray.toSorted
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: Method or property access not permitted: TypedArray.with
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: /dist/sandboxjs:2921; throw new ParseError(`Unexpected token after ${lastType}: ${part.char(0)}`, str);; ^; ParseError: Unexpected token after dot: #: #!/0/r/env node; at lispify (/dist/sandboxjs:2921...
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: SyntaxError: Unexpected token after dot: #: #!/0/r/env node
 </pre></li>
 <li>ES2024: 20%</li>
 <li>ES2025: 53%<pre>
-<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: /dist/sandboxjs:1328; throw err.error;; ^; ParseError: Unexpected token 'class': class Class extends Iterator { }; at lispify (/dist/sandboxjs:2909:23); at lispifyExpr (/dist/sandboxjs:2947:16); at /d...
+<a href="../../conformance/compat-table/es2025/Iterator.extends.js">Iterator.extends.js</a>: SyntaxError: Unexpected token 'class': class Class extends Iterator { }
 <a href="../../conformance/compat-table/es2025/Iterator.from.iterable.js">Iterator.from.iterable.js</a>: ReferenceError: Iterator is not defined
 <a href="../../conformance/compat-table/es2025/Iterator.from.iterator.js">Iterator.from.iterator.js</a>: ReferenceError: Iterator is not defined
 <a href="../../conformance/compat-table/es2025/Iterator.instanceof.js">Iterator.instanceof.js</a>: ReferenceError: Iterator is not defined
@@ -127,7 +127,7 @@ those cases just trip the whitelist.
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.some.js">Iterator.prototype.some.js</a>: Method or property access not permitted: Iterator.some
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.take.js">Iterator.prototype.take.js</a>: Method or property access not permitted: Iterator.take
 <a href="../../conformance/compat-table/es2025/Iterator.prototype.toArray.js">Iterator.prototype.toArray.js</a>: Method or property access not permitted: Iterator.toArray
-<a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: ReferenceError: throw new ReferenceError(`${this.prop.toString()} is not defined`);
+<a href="../../conformance/compat-table/es2025/Promise.try.js">Promise.try.js</a>: ReferenceError: arguments is not defined
 </pre></li>
 <li>Next: 8%</li>
 <li>Intl: 50%<pre>

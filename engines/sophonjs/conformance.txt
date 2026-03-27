@@ -229,7 +229,7 @@ es3/Math.min.variadic.js: min() with NaN failed
 es3/Number.prototype.toExponential.edge-cases.js: RangeError: Fraction should be in 0 ~ 20
 es3/Number.prototype.toExponential.js: timeout: >10s
 es3/Number.prototype.toExponential.rounding.js: (25).toExponential(0) != '3e+1' (got: '2e1'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e4'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e0'); (1.255).toExponential(2) != '1.25e+0', got '...
-es3/Number.prototype.toExponential.throws-infinity.js: RangeError: Fraction should be in 0 ~ 20
+es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: toFixed(2) failed; negative number failed; large number precision failed; rounding failed
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: timeout: >10s
@@ -275,13 +275,13 @@ es3/global.EvalError.js: name failed
 es3/global.RangeError.js: name failed
 es3/global.RangeError.thrown.js: crashed: SIGSEGV
 es3/global.ReferenceError.js: name failed
-es3/global.ReferenceError.thrown.js: ReferenceError: Binding has not been defined
+es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: name failed
-es3/global.SyntaxError.thrown.js: SyntaxError
+es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: name failed
 es3/global.TypeError.thrown.js: TypeError: Value is not an object; Value is not an clousre; Value is null or undefined
 es3/global.URIError.js: name failed
-es3/global.URIError.thrown.js: URIError: Illegal characters in URI
+es3/global.URIError.thrown.js: OK
 es3/global.decodeURIComponent.js: OK
 es3/global.decodeURI.js: OK
 es3/global.encodeURIComponent.js: OK
@@ -355,7 +355,7 @@ es5/Array.prototype.map.js: OK
 es5/Array.prototype.reduceRight.js: OK
 es5/Array.prototype.reduce.js: OK
 es5/Array.prototype.some.js: OK
-es5/Array.prototype.sort.TypeError.js: TypeError: Value is not an clousre
+es5/Array.prototype.sort.TypeError.js: OK
 es5/Array.prototype.sort.undefined-comparefn.js: OK
 es5/Date.now.js: TypeError: Value is not an clousre
 es5/Date.prototype.toISOString.js: invalid date does not throw RangeError
@@ -398,22 +398,22 @@ es5/source.keyword-properties.js: OK
 es5/source.unreserved-words.js: OK
 es5/source.whitespace.bom.js: OK
 es5/source.zero-width-chars.js: OK
-es5/strict.eval-cannot-create-bindings.js: ReferenceError: Binding has not been defined
+es5/strict.eval-cannot-create-bindings.js: OK
 es5/strict.function-expr-with-matching-name.js: OK
 es5/strict.js: ReferenceError: Unresolved reference
-es5/strict.no-arguments-callee.js: TypeError: "callee" cannot be used in strict mode
-es5/strict.no-arguments-caller.js: TypeError: "caller" cannot be used in strict mode
-es5/strict.no-assignment-to-non-writable.js: TypeError: Property is not writable; Object is not extensible; Set function is undefined; Cannot reset the function name
-es5/strict.no-assignment-to-unresolvable.js: ReferenceError: Unresolved reference
+es5/strict.no-arguments-callee.js: OK
+es5/strict.no-arguments-caller.js: OK
+es5/strict.no-assignment-to-non-writable.js: OK
+es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: SyntaxError: Cannot delete binding in strict mode
-es5/strict.no-delete-non-configurable.js: TypeError: Property is not configurable
-es5/strict.no-duplicate-parameters.js: SyntaxError: Argument has already been defined
-es5/strict.no-eval-or-arguments-assignment.js: ReferenceError: Unresolved reference; Cannot reset "arguments" in strict mode; Unresolved reference; Cannot reset "arguments" in strict mode; Unresolved reference; Cannot reset "arguments" in strict mode
+es5/strict.no-delete-non-configurable.js: OK
+es5/strict.no-duplicate-parameters.js: OK
+es5/strict.no-eval-or-arguments-assignment.js: OK
 es5/strict.no-eval-or-arguments-bindings.js: SyntaxError
-es5/strict.no-function-caller-or-arguments.js: TypeError: "caller" cannot be used in strict mode; "arguments" cannot be used in strict mode
-es5/strict.no-octal-literals.js: SyntaxError
-es5/strict.no-with.js: SyntaxError
-es5/strict.reserved-words.js: SyntaxError
+es5/strict.no-function-caller-or-arguments.js: OK
+es5/strict.no-octal-literals.js: OK
+es5/strict.no-with.js: OK
+es5/strict.reserved-words.js: OK
 es5/strict.this-primitive-not-coerced-in-accessors.js: OK
 es5/strict.this-primitive-not-coerced.js: OK
 es5/strict.this-undefined-in-function.js: OK
@@ -429,7 +429,7 @@ compat-table/es5/Array.prototype.map.js: OK
 compat-table/es5/Array.prototype.reduceRight.js: OK
 compat-table/es5/Array.prototype.reduce.js: OK
 compat-table/es5/Array.prototype.some.js: OK
-compat-table/es5/Array.prototype.sort.compareFn-type.js: TypeError: Value is not an clousre
+compat-table/es5/Array.prototype.sort.compareFn-type.js: OK
 compat-table/es5/Array.prototype.sort.compareFn-undefined.js: failed
 compat-table/es5/Array.prototype.unshift.return-count.js: OK
 compat-table/es5/Date.now.js: failed
@@ -439,7 +439,7 @@ compat-table/es5/Function.prototype.bind.js: OK
 compat-table/es5/JSON.js: OK
 compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js: RangeError: Fraction should be in 0 ~ 20
 compat-table/es5/Number.prototype.toExponential.rounds-properly.js: failed
-compat-table/es5/Number.prototype.toExponential.throws-infinity.js: RangeError: Fraction should be in 0 ~ 20
+compat-table/es5/Number.prototype.toExponential.throws-infinity.js: OK
 compat-table/es5/Object.create.js: OK
 compat-table/es5/Object.defineProperties.js: OK
 compat-table/es5/Object.defineProperty.js: OK
@@ -473,25 +473,25 @@ compat-table/es5/misc.parseInt.ignores-leading-zeros.js: failed
 compat-table/es5/misc.thrown-functions-this.js: OK
 compat-table/es5/misc.unreserved-words.js: OK
 compat-table/es5/misc.zero-width-identifiers.js: OK
-compat-table/es5/strict.arguments-callee-error.js: TypeError: "callee" cannot be used in strict mode
-compat-table/es5/strict.arguments-caller-error.js: TypeError: "caller" cannot be used in strict mode
+compat-table/es5/strict.arguments-callee-error.js: OK
+compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
-compat-table/es5/strict.assignment-eval-arguments-error.js: ReferenceError: Unresolved reference; Cannot reset "arguments" in strict mode; Unresolved reference; Cannot reset "arguments" in strict mode
-compat-table/es5/strict.assignment-non-writable-error.js: TypeError: Property is not writable; Object is not extensible; Set function is undefined; Cannot reset the function name
-compat-table/es5/strict.assignment-unresolvable-error.js: ReferenceError: Unresolved reference
-compat-table/es5/strict.delete-bindings-error.js: SyntaxError: Cannot delete binding in strict mode
+compat-table/es5/strict.assignment-eval-arguments-error.js: OK
+compat-table/es5/strict.assignment-non-writable-error.js: OK
+compat-table/es5/strict.assignment-unresolvable-error.js: OK
+compat-table/es5/strict.delete-bindings-error.js: OK
 compat-table/es5/strict.delete-non-configurable-error.js: TypeError: Property is not configurable
 compat-table/es5/strict.eval-arguments-bindings-error.js: SyntaxError
-compat-table/es5/strict.eval-no-bindings.js: ReferenceError: Binding has not been defined
-compat-table/es5/strict.function-caller-arguments-error.js: TypeError: "caller" cannot be used in strict mode; "arguments" cannot be used in strict mode
+compat-table/es5/strict.eval-no-bindings.js: OK
+compat-table/es5/strict.function-caller-arguments-error.js: OK
 compat-table/es5/strict.function-expr-matching-name-arg.js: OK
-compat-table/es5/strict.legacy-octal-error.js: SyntaxError
-compat-table/es5/strict.repeated-params-error.js: SyntaxError
-compat-table/es5/strict.reserved-words.js: SyntaxError
+compat-table/es5/strict.legacy-octal-error.js: OK
+compat-table/es5/strict.repeated-params-error.js: OK
+compat-table/es5/strict.reserved-words.js: OK
 compat-table/es5/strict.this-not-coerced-accessors.js: OK
 compat-table/es5/strict.this-not-coerced-methods.js: OK
 compat-table/es5/strict.this-undefined.js: OK
-compat-table/es5/strict.with-error.js: SyntaxError
+compat-table/es5/strict.with-error.js: OK
 compat-table/es6/Array.Symbol.species.js: ReferenceError: Binding has not been defined; :Binding has not been defined
 compat-table/es6/Array.from.array-like.js: TypeError: Value is not an clousre; :Value is not an clousre
 compat-table/es6/Array.from.generator.js: SyntaxError

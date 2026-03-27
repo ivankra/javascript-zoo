@@ -15,19 +15,19 @@ Toy metacircular JavaScript interpreter.
 
 <details><summary>ES1-ES5: 87%</summary><ul>
 <li>ES1: 92%<pre>
-<a href="../../conformance/es1/Function.js">Function.js</a>: [Error] [object Object], 'Function' 未定义
-<a href="../../conformance/es1/Function.length.js">Function.length.js</a>: [Error] [object Object], 'Function' 未定义
-<a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: [Error] [object Object], 'Function' 未定义
-<a href="../../conformance/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: [Error] [object Object], 'Function' 未定义
+<a href="../../conformance/es1/Function.js">Function.js</a>: ReferenceError: 'Function'
+<a href="../../conformance/es1/Function.length.js">Function.length.js</a>: ReferenceError: 'Function'
+<a href="../../conformance/es1/Function.prototype.constructor.js">Function.prototype.constructor.js</a>: ReferenceError: 'Function'
+<a href="../../conformance/es1/Function.prototype.toString.js">Function.prototype.toString.js</a>: ReferenceError: 'Function'
 <a href="../../conformance/es1/arguments.callee.js">arguments.callee.js</a>: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
-<a href="../../conformance/es1/asi.eval.js">asi.eval.js</a>: [Error] [object Object], 'eval' 未定义
+<a href="../../conformance/es1/asi.eval.js">asi.eval.js</a>: ReferenceError: 'eval'
 <a href="../../conformance/es1/asi.js">asi.js</a>: [Error] res 重复定义
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 <a href="../../conformance/es1/conversions.ToBoolean.js">conversions.ToBoolean.js</a>: [Error] x 重复定义
 <a href="../../conformance/es1/conversions.ToNumber.js">conversions.ToNumber.js</a>: [Error] isNaN 重复定义
-<a href="../../conformance/es1/eval.js">eval.js</a>: [Error] [object Object], 'eval' 未定义
+<a href="../../conformance/es1/eval.js">eval.js</a>: ReferenceError: 'eval'
 <a href="../../conformance/es1/for-in.js">for-in.js</a>: failed
-<a href="../../conformance/es1/for.js">for.js</a>: [Error] [object Object], 's' 未定义
+<a href="../../conformance/es1/for.js">for.js</a>: ReferenceError: 's'
 <a href="../../conformance/es1/unary.delete.var.js">unary.delete.var.js</a>: a 未定义
 <a href="../../conformance/es1/var.js">var.js</a>: [Error] n 重复定义
 <a href="../../conformance/es1/with.js">with.js</a>: 因为 with 很多问题，已经被基本弃用了，不实现
@@ -40,7 +40,7 @@ Toy metacircular JavaScript interpreter.
 <a href="../../conformance/es3/labelled.continue.js">labelled.continue.js</a>: labelled continue in while failed; labelled continue to outer loop failed
 <a href="../../conformance/es3/labelled.statements.js">labelled.statements.js</a>: basic label failed; labelled block failed; nested labelled blocks failed
 <a href="../../conformance/es3/literals.array.elisions.js">literals.array.elisions.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: [Error] [object Object], 'eval' 未定义
+<a href="../../conformance/es3/nested-functions.eval.js">nested-functions.eval.js</a>: ReferenceError: 'eval'
 </pre></li>
 <li>ES5: 61%<pre>
 <a href="../../conformance/es5/Array.prototype.every.js">Array.prototype.every.js</a>: TypeError: Cannot read properties of null (reading 'type')
@@ -48,13 +48,13 @@ Toy metacircular JavaScript interpreter.
 <a href="../../conformance/es5/Array.prototype.forEach.js">Array.prototype.forEach.js</a>: TypeError: Cannot read properties of null (reading 'type')
 <a href="../../conformance/es5/Array.prototype.reduce.js">Array.prototype.reduce.js</a>: TypeError: Cannot read properties of null (reading 'type')
 <a href="../../conformance/es5/Array.prototype.some.js">Array.prototype.some.js</a>: TypeError: Cannot read properties of null (reading 'type')
-<a href="../../conformance/es5/Function.prototype-not-enumerable.js">Function.prototype-not-enumerable.js</a>: [Error] [object Object], 'Function' 未定义
-<a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: [Error] [object Object], 'Function' 未定义
+<a href="../../conformance/es5/Function.prototype-not-enumerable.js">Function.prototype-not-enumerable.js</a>: ReferenceError: 'Function'
+<a href="../../conformance/es5/Function.prototype.bind.js">Function.prototype.bind.js</a>: ReferenceError: 'Function'
 <a href="../../conformance/es5/Object.defineProperties.js">Object.defineProperties.js</a>: TypeError: Cannot assign to read only property 'a' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.defineProperty.js">Object.defineProperty.js</a>: TypeError: Cannot assign to read only property 'y' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.freeze.js">Object.freeze.js</a>: TypeError: Cannot assign to read only property 'x' of object '#&lt;Object&gt;'
 <a href="../../conformance/es5/Object.preventExtensions.js">Object.preventExtensions.js</a>: TypeError: Cannot add property y, object is not extensible
-<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: [Error] [object Object], 'Function' 未定义
+<a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: ReferenceError: 'Function'
 <a href="../../conformance/es5/Object.seal.js">Object.seal.js</a>: TypeError: Cannot add property y, object is not extensible
 <a href="../../conformance/es5/global.Infinity.immutable.js">global.Infinity.immutable.js</a>: Infinity is not a number after assignment; Infinity not positive infinity after assignment
 <a href="../../conformance/es5/global.NaN.immutable.js">global.NaN.immutable.js</a>: NaN is not a number after assignment; NaN === NaN after assignment

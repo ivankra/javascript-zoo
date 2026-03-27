@@ -27,8 +27,8 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 97%, ES2016+ 66%, Next 0%, Intl 25%</summary><ul>
-<li>ES6: 97%<pre>
+<details><summary>compat-table: ES6 96%, ES2016+ 66%, Next 0%, Intl 25%</summary><ul>
+<li>ES6: 96%<pre>
 <a href="../../conformance/compat-table/es6/Symbol.JSON.stringify.object.js">Symbol.JSON.stringify.object.js</a>: failed
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: Object has no member 'anchor'
@@ -47,6 +47,7 @@ Grafana's fork of [goja](../goja/README.md) engine, adding ES modules support.
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.ToPropertyDescriptor.js">misc.Proxy.get.ToPropertyDescriptor.js</a>: failed
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.instanceof.js">misc.Proxy.get.instanceof.js</a>: TypeError: Expecting a function in instanceof check, but got function () { [native code] }
 <a href="../../conformance/compat-table/es6/tail-calls.direct.js">tail-calls.direct.js</a>: timeout: &gt;10s
+<a href="../../conformance/compat-table/es6/tail-calls.mutual.js">tail-calls.mutual.js</a>: timeout: &gt;10s
 </pre></li>
 <li>ES2016: 91%<pre>
 <a href="../../conformance/compat-table/es2016/misc.strict-fn-non-simple-params-error.js">misc.strict-fn-non-simple-params-error.js</a>: failed

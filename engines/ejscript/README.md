@@ -23,12 +23,12 @@ Embeddable JavaScript engine.
 ## Conformance
 
 <details><summary>ES1-ES5: 59%</summary><ul>
-<li>ES1: 75%, <b>4 crashes</b><pre>
+<li>ES1: 75%, <b>3 crashes</b><pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed
 <a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: crashed: SIGSEGV
 <a href="../../conformance/es1/Array.prototype.join.js">Array.prototype.join.js</a>: join() without separator failed
-<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: crashed: SIGSEGV
+<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: failed
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: crashed: SIGSEGV
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: sort with comparefn failed; reverse comparefn failed
 <a href="../../conformance/es1/Boolean.js">Boolean.js</a>: new Boolean(true) failed; new Boolean() failed
@@ -74,4 +74,4 @@ Embeddable JavaScript engine.
 <li>ES5: 32%, <b>3 crashes</b></li>
 </ul></details>
 
-💥 **18 crashes during testing**
+💥 **17 crashes during testing**

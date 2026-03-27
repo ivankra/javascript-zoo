@@ -54,7 +54,7 @@ standard library - passes through most of it from the host environment.
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 86%, ES2016+ 93%, Next 19%, Intl 100%</summary><ul>
+<details><summary>compat-table: ES6 86%, ES2016+ 93%, Next 18%, Intl 100%</summary><ul>
 <li>ES6: 86%<pre>
 <a href="../../conformance/compat-table/es6/Function.name.accessor.js">Function.name.accessor.js</a>: failed
 <a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: failed
@@ -113,6 +113,6 @@ standard library - passes through most of it from the host environment.
 <li>ES2023: 100%</li>
 <li>ES2024: 100%</li>
 <li>ES2025: 100%</li>
-<li>Next: 19%</li>
+<li>Next: 18%</li>
 <li>Intl: 100%</li>
 </ul></details>

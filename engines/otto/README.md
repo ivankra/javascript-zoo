@@ -24,10 +24,10 @@ which started out by forking otto's parser.
 <a href="../../conformance/es1/String.generics.js">String.generics.js</a>: crashed: panic: runtime error: invalid memory address or nil pointer dereference [recovered, repanicked]
 <a href="../../conformance/es1/assignment.ltr.js">assignment.ltr.js</a>: C++ like evaluation order in 'x += f()'
 </pre></li>
-<li>ES3: 91%, <b>1 crash</b><pre>
+<li>ES3: 91%<pre>
 <a href="../../conformance/es3/Number.prototype.toExponential.js">Number.prototype.toExponential.js</a>: toExponential(2) failed; negative number failed; zero failed; Infinity failed; small number failed
 <a href="../../conformance/es3/Number.prototype.toExponential.rounding.js">Number.prototype.toExponential.rounding.js</a>: (25).toExponential(0) != '3e+1' (got: '2e+01'); (12345).toExponential(3) != '1.235e+4' (got: '1.234e+04'); (1.25).toExponential(1) != '1.26e+0' (got: '1.2e+00'); (1.255).toExponential(2) != '1.25e+0',...
-<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: crashed: SIGKILL
+<a href="../../conformance/es3/Number.prototype.toExponential.throws-infinity.js">Number.prototype.toExponential.throws-infinity.js</a>: OOM: &gt;4096MB
 <a href="../../conformance/es3/Number.prototype.toFixed.js">Number.prototype.toFixed.js</a>: rounding failed
 <a href="../../conformance/es3/Number.prototype.toPrecision.js">Number.prototype.toPrecision.js</a>: Infinity failed; small number exponential notation failed; zero failed; large number exponential notation failed
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $nn 10 captures failed; $nn reverse order failed
@@ -35,14 +35,14 @@ which started out by forking otto's parser.
 <a href="../../conformance/es3/global.URIError.thrown.js">global.URIError.thrown.js</a>: no exception for encodeURI lone low surrogate; no exception for encodeURI lone high surrogate; no exception for encodeURIComponent lone low surrogate; no exception for encodeURIComponent lone high sur...
 <a href="../../conformance/es3/literals.object.decimal.js">literals.object.decimal.js</a>: property name 1e2 failed; property name 2.5e1 failed
 <a href="../../conformance/es3/literals.object.hex.js">literals.object.hex.js</a>: property name 0xff failed; property name 0x10 failed; property name 0xABC failed
-<a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: (anonymous): Line 9:10 Invalid regular expression: re2: Invalid \1 &lt;backreference&gt; (and 2 more errors)
-<a href="../../conformance/es3/regex.lookahead.js">regex.lookahead.js</a>: (anonymous): Line 9:10 Invalid regular expression: re2: Invalid (?=) &lt;lookahead&gt; (and 2 more errors)
-<a href="../../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: (anonymous): Line 9:10 Invalid regular expression: re2: Invalid (?!) &lt;lookahead&gt; (and 2 more errors)
+<a href="../../conformance/es3/regex.backref.js">regex.backref.js</a>: SyntaxError: Invalid regular expression: re2: Invalid \1 &lt;backreference&gt; (and 2 more errors)
+<a href="../../conformance/es3/regex.lookahead.js">regex.lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?=) &lt;lookahead&gt; (and 2 more errors)
+<a href="../../conformance/es3/regex.negative-lookahead.js">regex.negative-lookahead.js</a>: SyntaxError: Invalid regular expression: re2: Invalid (?!) &lt;lookahead&gt; (and 2 more errors)
 </pre></li>
 <li>ES5: 72%<pre>
 <a href="../../conformance/es5/Date.prototype.toISOString.js">Date.prototype.toISOString.js</a>: invalid date does not throw RangeError
 <a href="../../conformance/es5/Object.property-shadowing.js">Object.property-shadowing.js</a>: non-enumerable did not shadow enumerable
-<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: (anonymous): Line 11:5 Unexpected token ILLEGAL (and 5 more errors)
+<a href="../../conformance/es5/source.zero-width-chars.js">source.zero-width-chars.js</a>: SyntaxError: Unexpected token ILLEGAL (and 5 more errors)
 <a href="../../conformance/es5/strict.eval-cannot-create-bindings.js">strict.eval-cannot-create-bindings.js</a>: failed
 <a href="../../conformance/es5/strict.js">strict.js</a>: failed
 <a href="../../conformance/es5/strict.no-arguments-callee.js">strict.no-arguments-callee.js</a>: failed
@@ -80,4 +80,4 @@ which started out by forking otto's parser.
 <li>Intl: 25%</li>
 </ul></details>
 
-💥 **4 crashes during testing**
+💥 **3 crashes during testing**

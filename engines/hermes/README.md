@@ -32,8 +32,8 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 78%, ES2016+ 57%, Next 6%, Intl 25%</summary><ul>
-<li>ES6: 78%<pre>
+<details><summary>compat-table: ES6 77%, ES2016+ 57%, Next 6%, Intl 25%</summary><ul>
+<li>ES6: 77%<pre>
 <a href="../../conformance/compat-table/es6/Array.Symbol.species.js">Array.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Array.prototype.Symbol.unscopables.js">Array.prototype.Symbol.unscopables.js</a>: failed
 <a href="../../conformance/compat-table/es6/Function.name.class-expression.js">Function.name.class-expression.js</a>: SyntaxError: Invalid expression encountered
@@ -45,6 +45,8 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 <a href="../../conformance/compat-table/es6/Function.name.symbol-keyed.js">Function.name.symbol-keyed.js</a>: failed
 <a href="../../conformance/compat-table/es6/Map.Symbol.species.js">Map.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
 <a href="../../conformance/compat-table/es6/Promise.Symbol.species.js">Promise.Symbol.species.js</a>: TypeError: right operand of 'in' is not an object
+<a href="../../conformance/compat-table/es6/Promise.all.iterable.js">Promise.all.iterable.js</a>: failed
+<a href="../../conformance/compat-table/es6/Promise.all.js">Promise.all.js</a>: failed
 <a href="../../conformance/compat-table/es6/Promise.prototype-not-instance.js">Promise.prototype-not-instance.js</a>: failed
 <a href="../../conformance/compat-table/es6/Reflect.construct.Promise-subclassing.js">Reflect.construct.Promise-subclassing.js</a>: failed
 <a href="../../conformance/compat-table/es6/Reflect.construct.RegExp-subclassing.js">Reflect.construct.RegExp-subclassing.js</a>: failed
@@ -53,8 +55,6 @@ Only `static_h` branch is being actively developed now - [Hermes V1](../hermes-v
 <a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.js">annex-b.RegExp.prototype.compile.js</a>: failed
 <a href="../../conformance/compat-table/es6/annex-b.RegExp.prototype.compile.returns-this.js">annex-b.RegExp.prototype.compile.returns-this.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.existence.js">annex-b.String.prototype.html.existence.js</a>: failed
-<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.lowercase.js">annex-b.String.prototype.html.lowercase.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es6/annex-b.String.prototype.html.quotes-escaped.js">annex-b.String.prototype.html.quotes-escaped.js</a>: TypeError: undefined is not a function
 ...
 </pre></li>
 <li>ES2016: 100%</li>

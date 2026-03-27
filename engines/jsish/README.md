@@ -18,7 +18,7 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 
 ## Conformance
 
-<details><summary>ES1-ES5: 41%</summary><ul>
+<details><summary>ES1-ES5: 42%</summary><ul>
 <li>ES1: 56%<pre>
 <a href="../../conformance/es1/Array.js">Array.js</a>: Array.length failed
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed; array instance constructor failed
@@ -43,12 +43,12 @@ Bugs in == (anything equals null/undefined), new (returns null sometimes), no AS
 <a href="../../conformance/es1/Date.prototype.getTimezoneOffset.js">Date.prototype.getTimezoneOffset.js</a>: can not execute expression: 'Date' not a function
 ...
 </pre></li>
-<li>ES3: 33%</li>
+<li>ES3: 34%</li>
 <li>ES5: 19%</li>
 </ul></details>
 
-<details><summary>compat-table: ES6 6%, ES2016+ 3%, Next 0%, Intl 11%</summary><ul>
-<li>ES6: 6%</li>
+<details><summary>compat-table: ES6 7%, ES2016+ 3%, Next 0%, Intl 11%</summary><ul>
+<li>ES6: 7%</li>
 <li>ES2016: 0%</li>
 <li>ES2017: 0%</li>
 <li>ES2018: 5%</li>

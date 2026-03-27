@@ -32,8 +32,8 @@ No ASI.
 <li>ES1: 76%, <b>1 crash</b><pre>
 <a href="../../conformance/es1/Array.prototype.constructor.js">Array.prototype.constructor.js</a>: Array.prototype.constructor failed; array instance constructor failed
 <a href="../../conformance/es1/Array.prototype.join.generic.js">Array.prototype.join.generic.js</a>: failed
-<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: timeout: &gt;10s
-<a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: timeout: &gt;10s
+<a href="../../conformance/es1/Array.prototype.reverse.generic.js">Array.prototype.reverse.generic.js</a>: OOM: &gt;4096MB
+<a href="../../conformance/es1/Array.prototype.reverse.js">Array.prototype.reverse.js</a>: OOM: &gt;4096MB
 <a href="../../conformance/es1/Array.prototype.sort.generic.js">Array.prototype.sort.generic.js</a>: failed
 <a href="../../conformance/es1/Array.prototype.sort.js">Array.prototype.sort.js</a>: sort with comparefn failed
 <a href="../../conformance/es1/Boolean.prototype.constructor.js">Boolean.prototype.constructor.js</a>: Boolean.prototype.constructor failed; boolean instance constructor failed

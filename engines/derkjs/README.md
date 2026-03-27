@@ -11,10 +11,10 @@ Toy JavaScript interpreter for a small subset of ES5.
 
 ## Conformance
 
-<details><summary>ES1-ES5: 2%</summary><ul>
-<li>ES1: 4%, <b>3 crashes</b></li>
-<li>ES3: 1%</li>
-<li>ES5: 1%</li>
+<details><summary>ES1-ES5: 17%</summary><ul>
+<li>ES1: 24%, <b>8 crashes</b></li>
+<li>ES3: 10%, <b>4 crashes</b></li>
+<li>ES5: 11%</li>
 </ul></details>
 
 <details><summary>compat-table: ES6 0%, ES2016+ 0%, Next 0%, Intl 0%</summary><ul>
@@ -22,10 +22,10 @@ Toy JavaScript interpreter for a small subset of ES5.
 <li>ES2016: 0%</li>
 <li>ES2017: 0%</li>
 <li>ES2018: 0%</li>
-<li>ES2019: 0%</li>
+<li>ES2019: 0%, <b>1 crash</b></li>
 <li>ES2020: 0%</li>
 <li>ES2021: 0%</li>
-<li>ES2022: 0%</li>
+<li>ES2022: 2%</li>
 <li>ES2023: 0%</li>
 <li>ES2024: 0%</li>
 <li>ES2025: 0%</li>
@@ -33,4 +33,4 @@ Toy JavaScript interpreter for a small subset of ES5.
 <li>Intl: 0%</li>
 </ul></details>
 
-💥 **4 crashes during testing**
+💥 **14 crashes during testing**

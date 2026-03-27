@@ -1025,10 +1025,10 @@ compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: unexpe
 compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: unexpected IDENTIFIER
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
-compat-table/es6/misc.for-in-no-assignment-strict.js: SyntaxError: unexpected IN, expecting ',' or ';'
+compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: can not execute expression, expression is not a function
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: SyntaxError: unexpected $undefined, expecting IDENTIFIER
-compat-table/es6/misc.identifier-syntax.var-1.js: SyntaxError: unexpected $undefined, expecting IDENTIFIER
+compat-table/es6/misc.identifier-syntax.var-1.js: OK
 compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: unexpected $undefined, expecting IDENTIFIER
 compat-table/es6/misc.property-order.JSON.parse.js: Can not convert a undefined/null value to object
 compat-table/es6/misc.property-order.JSON.stringify.js: SyntaxError: unexpected FNUMBER, expecting ',' or '}'

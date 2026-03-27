@@ -89,7 +89,7 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 </pre></li>
 </ul></details>
 
-<details><summary>compat-table: ES6 49%, ES2016+ 29%, Next 3%, Intl 36%</summary><ul>
+<details><summary>compat-table: ES6 49%, ES2016+ 29%, Next 6%, Intl 36%</summary><ul>
 <li>ES6: 49%, <b>24 crashes</b></li>
 <li>ES2016: 30%, <b>2 crashes</b></li>
 <li>ES2017: 23%, <b>4 crashes</b></li>
@@ -107,7 +107,7 @@ JavaScript engine for .NET. Tree-walking interpreter + expression compiler to .N
 <li>ES2023: 0%, <b>1 crash</b></li>
 <li>ES2024: 4%, <b>5 crashes</b></li>
 <li>ES2025: 19%, <b>1 crash</b></li>
-<li>Next: 3%, <b>12 crashes</b></li>
+<li>Next: 6%, <b>12 crashes</b></li>
 <li>Intl: 36%</li>
 </ul></details>
 

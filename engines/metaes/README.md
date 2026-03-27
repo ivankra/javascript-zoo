@@ -31,7 +31,7 @@ Metacircular JavaScript interpreter.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toReversed.js">TypedArray.prototype.toReversed.js</a>: ReferenceError: "Uint8Array" is not defined.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.toSorted.js">TypedArray.prototype.toSorted.js</a>: ReferenceError: "Uint8Array" is not defined.
 <a href="../../conformance/compat-table/es2023/TypedArray.prototype.with.js">TypedArray.prototype.with.js</a>: ReferenceError: "Uint8Array" is not defined.
-<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: ReferenceError: "eval" is not defined.
+<a href="../../conformance/compat-table/es2023/hashbang.js">hashbang.js</a>: failed
 </pre></li>
 <li>ES2024: 0%</li>
 <li>ES2025: 39%</li>

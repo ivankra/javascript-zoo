@@ -143,8 +143,8 @@ Experimental JavaScript engine written in Rust with a cache-friendly data-orient
 <a href="../../conformance/compat-table/es2025/Set.prototype.union.js">Set.prototype.union.js</a>: TypeError: Not a callable object
 <a href="../../conformance/compat-table/es2025/regex.duplicate-named-groups.js">regex.duplicate-named-groups.js</a>: SyntaxError: regex parse error:
 </pre></li>
-<li>Next: 0%, <b>3 crashes</b></li>
+<li>Next: 0%, <b>4 crashes</b></li>
 <li>Intl: 25%</li>
 </ul></details>
 
-💥 **6 crashes during testing**
+💥 **7 crashes during testing**

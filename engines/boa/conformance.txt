@@ -1,4 +1,4 @@
-Metadata: {"arch":"arm64","binary_sha256":"04a99d94a9f467bab2043093c0c4db63207bcdd1f7aa470eb73a623079878a62","binary_size":27598624,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"66a1cd268ce6006918032b5d0f98d3a63c81b188","revision_date":"2026-03-23","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
+Metadata: {"arch":"arm64","binary_sha256":"6b4bec6f4508f6912fde3ef85aee501326d05645b4375e41e4c3079da0e59108","binary_size":27664160,"console_log":"console.log","engine":"boa","repository":"https://github.com/boa-dev/boa.git","revision":"2437b6704c4315f6ec8f0766bf229fba23e0e61e","revision_date":"2026-03-25","rustc":"rustc 1.93.1 (01f6ddf75 2026-02-11)"}
 es1/Array.js: OK
 es1/Array.length.assignment.js: OK
 es1/Array.length.js: OK
@@ -1416,19 +1416,19 @@ compat-table/es2024/regex.flags.v.unicode-17.0.js: OK
 compat-table/es2025/Iterator.extends.js: OK
 compat-table/es2025/Iterator.from.iterable.js: OK
 compat-table/es2025/Iterator.from.iterator.js: OK
-compat-table/es2025/Iterator.instanceof.js: failed
+compat-table/es2025/Iterator.instanceof.js: OK
 compat-table/es2025/Iterator.prototype.Symbol.toStringTag.js: OK
-compat-table/es2025/Iterator.prototype.drop.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.every.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.filter.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.find.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.flatMap.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.forEach.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.map.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.reduce.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.some.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.take.js: TypeError: not a callable function
-compat-table/es2025/Iterator.prototype.toArray.js: TypeError: not a callable function
+compat-table/es2025/Iterator.prototype.drop.js: OK
+compat-table/es2025/Iterator.prototype.every.js: OK
+compat-table/es2025/Iterator.prototype.filter.js: OK
+compat-table/es2025/Iterator.prototype.find.js: OK
+compat-table/es2025/Iterator.prototype.flatMap.js: OK
+compat-table/es2025/Iterator.prototype.forEach.js: OK
+compat-table/es2025/Iterator.prototype.map.js: OK
+compat-table/es2025/Iterator.prototype.reduce.js: OK
+compat-table/es2025/Iterator.prototype.some.js: OK
+compat-table/es2025/Iterator.prototype.take.js: OK
+compat-table/es2025/Iterator.prototype.toArray.js: OK
 compat-table/es2025/Promise.try.js: OK
 compat-table/es2025/RegExp.escape.js: OK
 compat-table/es2025/Set.prototype.difference.js: OK

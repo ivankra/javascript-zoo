@@ -1106,7 +1106,7 @@ compat-table/es6/super.statement.js: OK
 compat-table/es6/super.static-binding.js: OK
 compat-table/es6/super.this-binding.js: OK
 compat-table/es6/tail-calls.direct.js: OK
-compat-table/es6/tail-calls.mutual.js: OK
+compat-table/es6/tail-calls.mutual.js: timeout: >10s
 compat-table/es6/template.basic.js: OK
 compat-table/es6/template.caching.js: failed
 compat-table/es6/template.escape-sequences.js: failed

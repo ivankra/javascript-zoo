@@ -41,13 +41,13 @@ Experimental JavaScript engine written in C++.
 <a href="../../conformance/compat-table/es6/destructuring-decl.multiple-var.js">destructuring-decl.multiple-var.js</a>: SyntaxError: Unexpected token: '' (type: 95) at line 10
 <a href="../../conformance/compat-table/es6/destructuring-params.defaults-separate-scope.js">destructuring-params.defaults-separate-scope.js</a>: failed
 <a href="../../conformance/compat-table/es6/destructuring-params.duplicate-identifier.js">destructuring-params.duplicate-identifier.js</a>: failed
-<a href="../../conformance/compat-table/es6/for-of.astral-string.js">for-of.astral-string.js</a>: For...of: Only arrays are supported
 <a href="../../conformance/compat-table/es6/generators.no-new-this.js">generators.no-new-this.js</a>: crashed: SIGSEGV
 <a href="../../conformance/compat-table/es6/generators.yield-star.astral-string.js">generators.yield-star.astral-string.js</a>: failed
 <a href="../../conformance/compat-table/es6/generators.yield-star.iterator-closing-throw.js">generators.yield-star.iterator-closing-throw.js</a>: failed
 <a href="../../conformance/compat-table/es6/generators.yield-star.iterator-closing.js">generators.yield-star.iterator-closing.js</a>: failed
 <a href="../../conformance/compat-table/es6/misc.Proxy.getOwnPropertyDescriptor.Function.bind.js">misc.Proxy.getOwnPropertyDescriptor.Function.bind.js</a>: failed
 <a href="../../conformance/compat-table/es6/misc.Proxy.get.CreateDynamicFunction.js">misc.Proxy.get.CreateDynamicFunction.js</a>: TypeError: 'get' proxy invariant violated: non-writable non-configurable property
+<a href="../../conformance/compat-table/es6/misc.Proxy.get.HasBinding.js">misc.Proxy.get.HasBinding.js</a>: failed
 ...
 </pre></li>
 <li>ES2016: 94%<pre>

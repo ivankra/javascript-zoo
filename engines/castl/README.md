@@ -65,7 +65,7 @@ Problems with large functions/modules due to 200 local variables limit on Lua's 
 <a href="../../conformance/es3/String.prototype.localeCompare.js">String.prototype.localeCompare.js</a>: attempt to call method 'localeCompare' (a nil value)
 <a href="../../conformance/es3/String.prototype.replace.capture.js">String.prototype.replace.capture.js</a>: $nn 10 captures failed; $nn reverse order failed
 <a href="../../conformance/es3/String.prototype.replace.extra.js">String.prototype.replace.extra.js</a>: $` failed; $' failed; combined replacements failed
-<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: luajit: /dist/castl-dist/castl/prototype/string.lua:419: bad argument #1 to 'gsub' (string expected, got nil); stack traceback:; [C]: in function 'gsub'; /dist/castl-dist/castl/prototype/string.lua:41...
+<a href="../../conformance/es3/String.prototype.replace.generic.js">String.prototype.replace.generic.js</a>: bad argument #1 to 'gsub' (string expected, got nil)
 <a href="../../conformance/es3/String.prototype.split.bugs.js">String.prototype.split.bugs.js</a>: '0'.split(undefined, 0).length !== 0; 'tesst'.split(/(s)*/)[1] === 't'; 'test'.split(/(?:)/, -1).length !== 4; ''.split(/.?/).length !== 0; '.'.split(/()()/).length !== 1
 <a href="../../conformance/es3/String.prototype.split.regex.js">String.prototype.split.regex.js</a>: split by empty regex failed
 <a href="../../conformance/es3/global.RangeError.thrown.js">global.RangeError.thrown.js</a>: no exception for new Array with negative length; no exception for new Array with non-integer length; no exception for new Array with length &gt;= 2^32; no exception for negative array length; no exceptio...

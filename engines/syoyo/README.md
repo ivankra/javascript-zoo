@@ -91,11 +91,11 @@ Vibe-coded JavaScript engine written in C++.
 <a href="../../conformance/compat-table/es2022/Error.cause.URIError.js">Error.cause.URIError.js</a>: TypeError: undefined is not a function
 <a href="../../conformance/compat-table/es2022/Object.hasOwn.ToObject-first.js">Object.hasOwn.ToObject-first.js</a>: failed
 <a href="../../conformance/compat-table/es2022/at-method.TypedArray.js">at-method.TypedArray.js</a>: TypeError: undefined is not a function
-<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: Parse error in file 'class-fields.private-instance.optional-access.js'
+<a href="../../conformance/compat-table/es2022/class-fields.private-instance.optional-access.js">class-fields.private-instance.optional-access.js</a>: SyntaxError: class-fields.private-instance.optional-access.js
 <a href="../../conformance/compat-table/es2022/class-fields.static.define.js">class-fields.static.define.js</a>: failed
 <a href="../../conformance/compat-table/es2022/class-methods.private-static-accessor.js">class-methods.private-static-accessor.js</a>: failed
-<a href="../../conformance/compat-table/es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: Parse error in file 'class-static-init-blocks.js'
-<a href="../../conformance/compat-table/es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: Parse error in file 'ergonomic-brand-checks.js'
+<a href="../../conformance/compat-table/es2022/class-static-init-blocks.js">class-static-init-blocks.js</a>: SyntaxError: class-static-init-blocks.js
+<a href="../../conformance/compat-table/es2022/ergonomic-brand-checks.js">ergonomic-brand-checks.js</a>: SyntaxError: ergonomic-brand-checks.js
 <a href="../../conformance/compat-table/es2022/regex.flags.d.constructor.js">regex.flags.d.constructor.js</a>: TypeError: Function is not a constructor
 <a href="../../conformance/compat-table/es2022/regex.flags.d.shows-in-flags.js">regex.flags.d.shows-in-flags.js</a>: TypeError: Cannot read properties of undefined (reading 'call')
 </pre></li>

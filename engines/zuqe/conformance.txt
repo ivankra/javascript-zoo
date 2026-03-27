@@ -932,7 +932,7 @@ compat-table/es6/let.strict.no-statement.js: OK
 compat-table/es6/let.strict.shadow.js: OK
 compat-table/es6/let.strict.tdz.js: OK
 compat-table/es6/let.tdz.js: OK
-compat-table/es6/literals.binary.Number.js: failed
+compat-table/es6/literals.binary.Number.js: OK
 compat-table/es6/literals.binary.js: OK
 compat-table/es6/literals.object.computed-accessors.js: OK
 compat-table/es6/literals.object.computed-properties.js: OK
@@ -1083,7 +1083,7 @@ compat-table/es6/subclassing.Function.prototype-chain.js: OK
 compat-table/es6/subclassing.Function.prototype.apply.js: OK
 compat-table/es6/subclassing.Function.prototype.bind.js: failed
 compat-table/es6/subclassing.Function.prototype.call.js: OK
-compat-table/es6/subclassing.Promise.all.js: failed
+compat-table/es6/subclassing.Promise.all.js: OK
 compat-table/es6/subclassing.Promise.js: OK
 compat-table/es6/subclassing.Promise.prototype-chain.js: OK
 compat-table/es6/subclassing.Promise.race.js: OK

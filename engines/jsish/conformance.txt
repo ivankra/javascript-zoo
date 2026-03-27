@@ -277,7 +277,7 @@ es3/global.RangeError.thrown.js: no exception for negative array length; no exce
 es3/global.ReferenceError.js: converting a undefined/null value to object
 es3/global.ReferenceError.thrown.js: OK
 es3/global.SyntaxError.js: converting a undefined/null value to object
-es3/global.SyntaxError.thrown.js: SyntaxError: unexpected ';'; Unexpected EOF parsing string.; unexpected end of file; unexpected invalid token, expecting FOR or WHILE or DO or SWITCH
+es3/global.SyntaxError.thrown.js: OK
 es3/global.TypeError.js: converting a undefined/null value to object
 es3/global.TypeError.thrown.js: SyntaxError: unexpected INSTANCEOF, expecting ',' or ';'
 es3/global.URIError.js: converting a undefined/null value to object
@@ -804,7 +804,7 @@ compat-table/es6/default-params.explicit-undefined.js: exception: call with unde
 compat-table/es6/default-params.new-function.js: SyntaxError: unexpected '('
 compat-table/es6/default-params.refer-previous.js: SyntaxError: unexpected IDENTIFIER
 compat-table/es6/default-params.separate-scope.js: SyntaxError: unexpected FUNC
-compat-table/es6/default-params.tdz.js: SyntaxError: unexpected IDENTIFIER
+compat-table/es6/default-params.tdz.js: OK
 compat-table/es6/destructuring-assign.array.js: SyntaxError: unexpected '[', expecting ',' or ']'
 compat-table/es6/destructuring-assign.astral-string.js: SyntaxError: unexpected '='
 compat-table/es6/destructuring-assign.chained-iterable.js: SyntaxError: unexpected '='
@@ -861,7 +861,7 @@ compat-table/es6/destructuring-params.computed-properties.js: SyntaxError: unexp
 compat-table/es6/destructuring-params.defaults-new-function.js: SyntaxError: unexpected '('
 compat-table/es6/destructuring-params.defaults-separate-scope.js: SyntaxError: unexpected '{', expecting ')'
 compat-table/es6/destructuring-params.defaults.js: SyntaxError: unexpected '{', expecting ')'
-compat-table/es6/destructuring-params.duplicate-identifier.js: SyntaxError: unexpected '[', expecting ')'
+compat-table/es6/destructuring-params.duplicate-identifier.js: OK
 compat-table/es6/destructuring-params.empty-patterns.js: SyntaxError: unexpected '[', expecting ')'
 compat-table/es6/destructuring-params.generator.js: SyntaxError: unexpected '[', expecting ')'
 compat-table/es6/destructuring-params.iterable-instance.js: SyntaxError: unexpected '[', expecting ')'
@@ -1025,10 +1025,10 @@ compat-table/es6/misc.bound-function-prototype.generator.js: SyntaxError: unexpe
 compat-table/es6/misc.bound-function-prototype.subclass.js: SyntaxError: unexpected IDENTIFIER
 compat-table/es6/misc.do-while-no-semicolon.js: OK
 compat-table/es6/misc.duplicate-properties-strict.js: failed
-compat-table/es6/misc.for-in-no-assignment-strict.js: SyntaxError: unexpected ')', expecting ',' or ';'
+compat-table/es6/misc.for-in-no-assignment-strict.js: OK
 compat-table/es6/misc.function-length-configurable.js: exception: 'getOwnPropertyDescriptor' sub-commands are: prototype.
 compat-table/es6/misc.identifier-syntax.no-escaped-reserved.js: SyntaxError: unexpected invalid token, expecting IDENTIFIER
-compat-table/es6/misc.identifier-syntax.var-1.js: SyntaxError: unexpected invalid token, expecting IDENTIFIER
+compat-table/es6/misc.identifier-syntax.var-1.js: OK
 compat-table/es6/misc.identifier-syntax.var-2.js: SyntaxError: unexpected invalid token, expecting IDENTIFIER
 compat-table/es6/misc.property-order.JSON.parse.js: misc.property-order.JSON.parse.js:27:  "compat-table/es6/misc.property-order.JSON.parse.js: exception: type mismatch for argument arg 2 'strict': expected "boolean" but got "function", in call to 'par...
 compat-table/es6/misc.property-order.JSON.stringify.js: exception: 'defineProperty' sub-commands are: prototype.

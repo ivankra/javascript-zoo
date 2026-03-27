@@ -229,7 +229,7 @@ es3/Math.min.variadic.js: OK
 es3/Number.prototype.toExponential.edge-cases.js: RangeError: Fraction must be a number between 0 and 20
 es3/Number.prototype.toExponential.js: toExponential() undefined arg failed
 es3/Number.prototype.toExponential.rounding.js: OK
-es3/Number.prototype.toExponential.throws-infinity.js: RangeError: Fraction must be a number between 0 and 20
+es3/Number.prototype.toExponential.throws-infinity.js: OK
 es3/Number.prototype.toFixed.js: OK
 es3/Number.prototype.toLocaleString.js: OK
 es3/Number.prototype.toPrecision.js: RangeError: Precision must be a number between 1 and 21
@@ -404,7 +404,7 @@ es5/strict.js: OK
 es5/strict.no-arguments-callee.js: failed
 es5/strict.no-arguments-caller.js: OK
 es5/strict.no-assignment-to-non-writable.js: TypeError: Cannot read properties of undefined (reading 'Get')
-es5/strict.no-assignment-to-unresolvable.js: ReferenceError: myTestVar is not defined
+es5/strict.no-assignment-to-unresolvable.js: OK
 es5/strict.no-delete-bindings.js: failed
 es5/strict.no-delete-non-configurable.js: failed
 es5/strict.no-duplicate-parameters.js: RangeError: Invalid array length
@@ -429,7 +429,7 @@ compat-table/es5/Array.prototype.map.js: OK
 compat-table/es5/Array.prototype.reduceRight.js: OK
 compat-table/es5/Array.prototype.reduce.js: OK
 compat-table/es5/Array.prototype.some.js: OK
-compat-table/es5/Array.prototype.sort.compareFn-type.js: ReferenceError: $$CallerName is not defined
+compat-table/es5/Array.prototype.sort.compareFn-type.js: OK
 compat-table/es5/Array.prototype.sort.compareFn-undefined.js: failed
 compat-table/es5/Array.prototype.unshift.return-count.js: TypeError: $$Assert failed
 compat-table/es5/Date.now.js: OK
@@ -439,7 +439,7 @@ compat-table/es5/Function.prototype.bind.js: OK
 compat-table/es5/JSON.js: OK
 compat-table/es5/Number.prototype.toExponential.no-throw-edge-cases.js: RangeError: Fraction must be a number between 0 and 20
 compat-table/es5/Number.prototype.toExponential.rounds-properly.js: OK
-compat-table/es5/Number.prototype.toExponential.throws-infinity.js: RangeError: Fraction must be a number between 0 and 20
+compat-table/es5/Number.prototype.toExponential.throws-infinity.js: OK
 compat-table/es5/Object.create.js: OK
 compat-table/es5/Object.defineProperties.js: OK
 compat-table/es5/Object.defineProperty.js: OK
@@ -478,7 +478,7 @@ compat-table/es5/strict.arguments-caller-error.js: OK
 compat-table/es5/strict.arguments-unmapped.js: OK
 compat-table/es5/strict.assignment-eval-arguments-error.js: failed
 compat-table/es5/strict.assignment-non-writable-error.js: TypeError: Cannot read properties of undefined (reading 'Get')
-compat-table/es5/strict.assignment-unresolvable-error.js: ReferenceError: __i_dont_exist is not defined
+compat-table/es5/strict.assignment-unresolvable-error.js: OK
 compat-table/es5/strict.delete-bindings-error.js: failed
 compat-table/es5/strict.delete-non-configurable-error.js: failed
 compat-table/es5/strict.eval-arguments-bindings-error.js: failed
@@ -540,7 +540,7 @@ compat-table/es6/Map.constructor-requires-new.js: failed
 compat-table/es6/Map.iterator-closing.js: TypeError: Property is not a function
 compat-table/es6/Map.iterator-prototype-chain.js: ReferenceError: Symbol is not defined
 compat-table/es6/Map.js: OK
-compat-table/es6/Map.prototype-not-instance.js: TypeError: Map.prototype.has called on incompatible object
+compat-table/es6/Map.prototype-not-instance.js: OK
 compat-table/es6/Map.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
 compat-table/es6/Map.prototype.clear.js: OK
 compat-table/es6/Map.prototype.delete.js: OK
@@ -602,7 +602,7 @@ compat-table/es6/Proxy.handler.deleteProperty.invariants.js: TypeError: Cannot r
 compat-table/es6/Proxy.handler.deleteProperty.js: OK
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.invariants.js: TypeError: Cannot read properties of undefined (reading 'Get')
 compat-table/es6/Proxy.handler.getOwnPropertyDescriptor.js: OK
-compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: TypeError: Proxy trap getPrototypeOf returned an invalid value for a non-configurable property
+compat-table/es6/Proxy.handler.getPrototypeOf.invariants.js: OK
 compat-table/es6/Proxy.handler.getPrototypeOf.js: TypeError: Proxy trap getPrototypeOf returned an invalid value for a non-configurable property
 compat-table/es6/Proxy.handler.get.instances.js: OK
 compat-table/es6/Proxy.handler.get.invariants.js: TypeError: Cannot read properties of undefined (reading 'Get')
@@ -610,7 +610,7 @@ compat-table/es6/Proxy.handler.get.js: OK
 compat-table/es6/Proxy.handler.has.instances.js: OK
 compat-table/es6/Proxy.handler.has.invariants.js: TypeError: Cannot read properties of undefined (reading 'Get')
 compat-table/es6/Proxy.handler.has.js: OK
-compat-table/es6/Proxy.handler.isExtensible.invariants.js: TypeError: Cannot report a non-extensible object as extensible or vice versa
+compat-table/es6/Proxy.handler.isExtensible.invariants.js: OK
 compat-table/es6/Proxy.handler.isExtensible.js: OK
 compat-table/es6/Proxy.handler.ownKeys.invariants.js: failed
 compat-table/es6/Proxy.handler.ownKeys.js: failed
@@ -657,7 +657,7 @@ compat-table/es6/Set.constructor-requires-new.js: failed
 compat-table/es6/Set.iterator-closing.js: TypeError: Property is not a function
 compat-table/es6/Set.iterator-prototype-chain.js: ReferenceError: Symbol is not defined
 compat-table/es6/Set.js: OK
-compat-table/es6/Set.prototype-not-instance.js: TypeError: Set.prototype.has called on incompatible object
+compat-table/es6/Set.prototype-not-instance.js: OK
 compat-table/es6/Set.prototype.Symbol.iterator.js: ReferenceError: Symbol is not defined
 compat-table/es6/Set.prototype.add-returns-this.js: OK
 compat-table/es6/Set.prototype.clear.js: OK
@@ -701,7 +701,7 @@ compat-table/es6/WeakMap.frozen-keys.js: OK
 compat-table/es6/WeakMap.iterator-closing.js: TypeError: Property is not a function
 compat-table/es6/WeakMap.js: failed
 compat-table/es6/WeakMap.no-clear.js: failed
-compat-table/es6/WeakMap.prototype-not-instance.js: TypeError: WeakMap.prototype.has called on incompatible object
+compat-table/es6/WeakMap.prototype-not-instance.js: OK
 compat-table/es6/WeakMap.prototype.delete.js: OK
 compat-table/es6/WeakMap.prototype.set-returns-this.js: OK
 compat-table/es6/WeakSet.accept-primitives.js: ReferenceError: WeakSet is not defined
@@ -786,15 +786,15 @@ compat-table/es6/const.for-in.js: OK
 compat-table/es6/const.for-loop.js: OK
 compat-table/es6/const.for-of.js: OK
 compat-table/es6/const.no-redefine.js: failed
-compat-table/es6/const.no-statement.js: SyntaxError: Line 2: Unexpected token const
+compat-table/es6/const.no-statement.js: OK
 compat-table/es6/const.shadow.js: OK
 compat-table/es6/const.strict.basic.js: OK
 compat-table/es6/const.strict.block-scoped.js: OK
 compat-table/es6/const.strict.for-in.js: OK
 compat-table/es6/const.strict.for-loop.js: OK
 compat-table/es6/const.strict.for-of.js: OK
-compat-table/es6/const.strict.no-redefine.js: SyntaxError: Assignment to constant variable.
-compat-table/es6/const.strict.no-statement.js: SyntaxError: Line 2: Unexpected token const
+compat-table/es6/const.strict.no-redefine.js: OK
+compat-table/es6/const.strict.no-statement.js: OK
 compat-table/es6/const.strict.shadow.js: OK
 compat-table/es6/const.strict.tdz.js: OK
 compat-table/es6/const.tdz.js: OK
@@ -876,7 +876,7 @@ compat-table/es6/destructuring-params.rest.js: SyntaxError: Line 10: Invalid lef
 compat-table/es6/destructuring-params.shorthand-defaults-arrow.js: SyntaxError: Line 10: Unexpected token =
 compat-table/es6/destructuring-params.sparse-array.js: TypeError: Cannot read properties of null (reading 'type')
 compat-table/es6/destructuring-params.string.js: OK
-compat-table/es6/destructuring-params.throws-null-undefined.js: TypeError: Cannot convert null to object
+compat-table/es6/destructuring-params.throws-null-undefined.js: OK
 compat-table/es6/destructuring-params.trailing-comma-iterable.js: OK
 compat-table/es6/destructuring-params.trailing-comma-object.js: OK
 compat-table/es6/for-of.array.js: OK
@@ -901,7 +901,7 @@ compat-table/es6/generators.shorthand.class.js: exception: [object StopIteration
 compat-table/es6/generators.shorthand.computed.class.js: SyntaxError: Line 12: Unexpected identifier
 compat-table/es6/generators.shorthand.computed.js: SyntaxError: Line 12: Unexpected identifier
 compat-table/es6/generators.shorthand.js: exception: [object StopIteration]
-compat-table/es6/generators.shorthand.no-constructor.js: SyntaxError: Line 2: Missing yield in generator
+compat-table/es6/generators.shorthand.no-constructor.js: OK
 compat-table/es6/generators.shorthand.string-keyed.js: exception: [object StopIteration]
 compat-table/es6/generators.this.js: exception: [object StopIteration]
 compat-table/es6/generators.throw.js: exception: [object StopIteration]
@@ -921,14 +921,14 @@ compat-table/es6/let.block-scoped.js: OK
 compat-table/es6/let.for-in-shadow.js: OK
 compat-table/es6/let.for-iteration.js: OK
 compat-table/es6/let.for-loop.js: OK
-compat-table/es6/let.no-statement.js: SyntaxError: Line 2: Unexpected token let
+compat-table/es6/let.no-statement.js: OK
 compat-table/es6/let.shadow.js: OK
 compat-table/es6/let.strict.basic.js: OK
 compat-table/es6/let.strict.block-scoped.js: OK
 compat-table/es6/let.strict.for-in-shadow.js: OK
 compat-table/es6/let.strict.for-iteration.js: OK
 compat-table/es6/let.strict.for-loop.js: OK
-compat-table/es6/let.strict.no-statement.js: SyntaxError: Line 2: Use of future reserved word in strict mode
+compat-table/es6/let.strict.no-statement.js: OK
 compat-table/es6/let.strict.shadow.js: OK
 compat-table/es6/let.strict.tdz.js: failed
 compat-table/es6/let.tdz.js: failed
@@ -1200,7 +1200,7 @@ compat-table/es2016/exponentiation.assignment.js: SyntaxError: Line 10: Unexpect
 compat-table/es2016/exponentiation.basic.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es2016/exponentiation.unary-negation-error.js: SyntaxError: Line 10: Unexpected token *
 compat-table/es2016/misc.Proxy-Array-includes.js: TypeError: Cannot convert undefined to object
-compat-table/es2016/misc.Proxy-enumerate-removed.js: RangeError: Invalid array length
+compat-table/es2016/misc.Proxy-enumerate-removed.js: timeout: >10s
 compat-table/es2016/misc.generator-no-new.js: failed
 compat-table/es2016/misc.generator-throw-inner.js: exception: undefined
 compat-table/es2016/misc.nested-rest-destructuring-decl.js: ReferenceError: y is not defined
