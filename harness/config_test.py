@@ -179,6 +179,16 @@ class ResolveFlagsTest(unittest.TestCase):
             [],
         )
 
+    def test_expand_if_empty_list_branch_emits_nothing(self) -> None:
+        flags = [{"if": "X", "then": [], "else": "--fallback"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags({"X"})), [])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--fallback"])
+
+    def test_expand_if_empty_string_branch_emits_empty_arg(self) -> None:
+        flags = [{"if": "X", "then": "", "else": "--fallback"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags({"X"})), [""])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--fallback"])
+
     def test_expand_if_deeply_nested_three_levels(self) -> None:
         flags = [{"if": "A", "then": {"if": "B", "then": {"if": "C", "then": "--abc"}}}]
         self.assertEqual(

@@ -95,7 +95,7 @@ boa:
     # Add --test262-object if available for the built-in $262 object,
     # with fallback to --debug-object + prelude.
     - shell: $BINARY --help | egrep -o '(--debug-object|--test262-object)' | tail -1
-    - { if: 'features:CanBlockIsFalse', then: '--no-can-block' }
+    - { if: 'flags:CanBlockIsFalse', then: '--no-can-block' }
     - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/boa/prelude.js
@@ -388,7 +388,7 @@ graaljs:
     - --js.temporal=true
     - --js.top-level-await=true
     - --js.worker=true
-    - { if: 'features:CanBlockIsFalse', then: '--js.agent-can-block=false' }
+    - { if: 'flags:CanBlockIsFalse', then: '--js.agent-can-block=false' }
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
 
 hako:
@@ -511,6 +511,7 @@ jsish:
 jsse:
   console_log: ['console.log', 'print']
   flags:
+    - { if: 'flags:CanBlockIsTrue', then: '--can-block' }
     - { if: 'flags:module', then: '--module' }
 
 js-interpreter:
@@ -1096,7 +1097,7 @@ v8: &v8
     - --ignore-unhandled-promises  # test/built-ins/Promise/any/ctx-ctor.js
     - --no-arguments  # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
     - { if: 'flags:module', then: '--module' }
-    - { if: 'features:CanBlockIsFalse', then: '--no-can-block' }
+    - { if: 'flags:CanBlockIsFalse', then: '--no-can-block' }
   prelude: &v8_and_node_prelude
     - file: engines/v8/prelude.js
     - file: engines/v8/prelude-agent.js
