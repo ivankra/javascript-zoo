@@ -198,6 +198,8 @@ class Reporter:
                     run.print_streams()
             else:
                 print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
+                if self._verbose >= 3:
+                    run.print_streams()
         # Dir progress tracking
         if self._dir_order:
             assert run.test_id is not None
