@@ -189,6 +189,29 @@ class ResolveFlagsTest(unittest.TestCase):
         self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags({"X"})), [""])
         self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--fallback"])
 
+    # --- expand_if with FilterExpr (boolean conditions) ---
+
+    def test_expand_if_qualified_tag(self) -> None:
+        flags = [{"if": "flags:CanBlockIsTrue", "then": "--can-block"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:CanBlockIsTrue"])), ["--can-block"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), [])
+
+    def test_expand_if_negation(self) -> None:
+        flags = [{"if": "!flags:module", "then": "--script"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), ["--script"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:module"])), [])
+
+    def test_expand_if_and_expr(self) -> None:
+        flags = [{"if": "flags:CanBlockIsTrue & features:Atomics", "then": "--atomics-wait"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:CanBlockIsTrue", "features:Atomics"])), ["--atomics-wait"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:CanBlockIsTrue"])), [])
+
+    def test_expand_if_or_expr(self) -> None:
+        flags = [{"if": "flags:module | flags:async", "then": "--special"}]
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:module"])), ["--special"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags.from_iterable(["flags:async"])), ["--special"])
+        self.assertEqual(resolve_flags(flags, expand_if=True, tags=Tags()), [])
+
     def test_expand_if_deeply_nested_three_levels(self) -> None:
         flags = [{"if": "A", "then": {"if": "B", "then": {"if": "C", "then": "--abc"}}}]
         self.assertEqual(

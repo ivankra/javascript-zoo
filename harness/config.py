@@ -17,6 +17,8 @@ from typing import TYPE_CHECKING, Any
 if TYPE_CHECKING:
     from .tags import Tags
 
+from .tags import FilterExpr
+
 import yaml
 SafeLoader: Any = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
 
@@ -224,6 +226,7 @@ def resolve_flags(
     * Always flattens nested lists.
     * expand_if: evaluate {"if": ..., "then": ..., "else": ...} conditionals
       using *tags*; the chosen branch is recursively resolved.
+      The "if" value is a FilterExpr (see tags.py) boolean expression over tags.
     * expand_shell: expand {"shell": "..."} items via bash, tokenising output
       with shlex.split (empty tokens dropped, quoting respected).
       *env* is passed as the subprocess environment (caller should set BINARY etc.).
@@ -250,7 +253,7 @@ def resolve_flags(
                 result.append(item)
         elif isinstance(item, dict) and "if" in item and "then" in item:
             if expand_if:
-                if tags is not None and item["if"] in tags:
+                if tags is not None and FilterExpr.eval(item["if"], tags):
                     branch = item["then"]
                 elif "else" in item:
                     branch = item["else"]

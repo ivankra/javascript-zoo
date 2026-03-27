@@ -82,15 +82,15 @@ class TestTags(unittest.TestCase):
         self.assertNotIn("es6", tags)
         self.assertIn("edition:", tags)
 
-    def test_no_features_in_qualified_tags(self):
+    def test_no_features_in_iter(self):
         tags = T()
-        qt = tags.qualified_tags()
+        qt = list(tags)
         self.assertIn("features:", qt)
         self.assertIn("edition:", qt)
 
-    def test_qualified_tags_with_features(self):
+    def test_iter_with_features(self):
         tags = T(Frontmatter(features={"Symbol"}))
-        qt = tags.qualified_tags()
+        qt = list(tags)
         self.assertIn("features:Symbol", qt)
         self.assertNotIn("features:", qt)
         self.assertIn("edition:es6", qt)
@@ -157,9 +157,25 @@ class TestTags(unittest.TestCase):
         self.assertEqual(fm.features, {"Symbol"})
 
 
+class TestTagsIter(unittest.TestCase):
+    def test_iter_sorted(self):
+        t = Tags.from_iterable(["features:Temporal", "flags:module", "edition:es6"])
+        self.assertEqual(list(t), ["edition:es6", "features:Temporal", "flags:module"])
+
+    def test_roundtrip(self):
+        t = Tags.from_iterable(["features:Symbol", "flags:async", "edition:es2020"])
+        t2 = Tags.from_iterable(t)
+        self.assertEqual(list(t), list(t2))
+        for tag in ["features:Symbol", "flags:async", "edition:es2020"]:
+            self.assertIn(tag, t2)
+
+    def test_empty(self):
+        self.assertEqual(list(Tags()), [])
+
+
 class TestFilterExpr(unittest.TestCase):
     def _eval(self, expr: str, tags: set[str]) -> bool:
-        return FilterExpr(expr).eval(tags)
+        return FilterExpr(expr)(tags)
 
     def test_single_tag_present(self):
         self.assertTrue(self._eval("Temporal", {"Temporal", "Promise"}))
@@ -206,14 +222,43 @@ class TestFilterExpr(unittest.TestCase):
         self.assertTrue(self._eval("", {"anything"}))
         self.assertTrue(self._eval("", set()))
 
+    def test_whitespace_only_expr(self):
+        self.assertTrue(self._eval(" ", {"anything"}))
+        self.assertTrue(self._eval("   ", set()))
+
+    def test_parenthesized_expr_with_spaces(self):
+        self.assertTrue(self._eval(" ( x ) ", {"x"}))
+        self.assertFalse(self._eval(" ( x ) ", set()))
+
     def test_with_tags_object(self):
         tags = Tags()
         tags.add("features", "Temporal")
         tags.add("edition", "es6")
-        f = FilterExpr("Temporal&es6")
-        self.assertTrue(f.eval(tags))
-        f2 = FilterExpr("Temporal&es7")
-        self.assertFalse(f2.eval(tags))
+        self.assertTrue(FilterExpr("Temporal&es6")(tags))
+        self.assertFalse(FilterExpr("Temporal&es7")(tags))
+
+    def test_invalid_syntax(self):
+        with self.assertRaises(SyntaxError):
+            FilterExpr.eval("x & ", {"x"})
+        with self.assertRaises(SyntaxError):
+            FilterExpr("x & ")(set())
+        with self.assertRaises(SyntaxError):
+            FilterExpr.eval("(x", {"x"})
+        with self.assertRaises(SyntaxError):
+            FilterExpr.eval("x)", {"x"})
+
+    def test_none_and_empty_corner_cases(self):
+        self.assertTrue(FilterExpr.eval(None, None))
+        self.assertTrue(FilterExpr.eval(None, {"X"}))
+        self.assertTrue(FilterExpr.eval("", None))
+        self.assertFalse(FilterExpr.eval("X", None))
+        self.assertFalse(FilterExpr("X")(None))
+
+    def test_eval_static_matches_everything_for_none_and_empty(self):
+        self.assertTrue(FilterExpr.eval(None, {"anything"}))
+        self.assertTrue(FilterExpr.eval(None, set()))
+        self.assertTrue(FilterExpr.eval("", {"anything"}))
+        self.assertTrue(FilterExpr.eval("", set()))
 
     def test_namespaced_tag(self):
         tags = Tags()

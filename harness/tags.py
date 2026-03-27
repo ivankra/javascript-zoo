@@ -1,8 +1,12 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable, Iterator
+from functools import cache
 
 from .frontmatter import Frontmatter
+
+_python_eval = eval
 
 
 class Tags:
@@ -73,6 +77,18 @@ class Tags:
 
         return tags
 
+    @classmethod
+    def from_iterable(cls, tags: Iterable[str]) -> Tags:
+        """Build Tags from qualified 'ns:value' strings (and bare values)."""
+        t = cls()
+        for s in tags:
+            i = s.find(":")
+            if i != -1:
+                t.add(s[:i], s[i+1:])
+            else:
+                t.values.add(s)
+        return t
+
     def clone(self) -> Tags:
         """Return a shallow copy."""
         return Tags(self.values, pairs=self.pairs)
@@ -91,9 +107,9 @@ class Tags:
             self.add("folder", rel_path[:i])
             i += 1
 
-    def qualified_tags(self) -> list[str]:
-        """Return all fully-qualified 'namespace:value' tags, sorted."""
-        return sorted(f"{ns}:{val}" for ns, val in self.pairs)
+    def __iter__(self) -> Iterator[str]:
+        """Yield all fully-qualified 'namespace:value' tags, sorted."""
+        return iter(sorted(f"{ns}:{val}" for ns, val in self.pairs))
 
     def __contains__(self, tag: object) -> bool:
         if tag in self.values:
@@ -117,8 +133,8 @@ class FilterExpr:
     Empty expression matches everything.
     """
 
-    def __init__(self, expr: str):
-        expr = expr.replace('!', '~').replace(',', '|')
+    def __init__(self, expr: str | None = None):
+        expr = (expr or "").replace('!', '~').replace(',', '|')
         split = re.split(r'([\s~&|()]+)', f'({expr})')[1:-1]
         self.vars = split[1::2]
         split[1::2] = ['%d'] * len(self.vars)
@@ -126,6 +142,16 @@ class FilterExpr:
         if not self.vars:
             self.fmt = '1'
 
-    def eval(self, tags: Tags | set[str]) -> bool:
-        res = eval(self.fmt % tuple(int(v in tags) for v in self.vars))
-        return bool(res)
+    def __call__(self, tags: Tags | set[str] | None = None) -> bool:
+        if tags is None:
+            tags = set()
+        return bool(_python_eval(self.fmt % tuple(int(v in tags) for v in self.vars)))
+
+    @staticmethod
+    @cache
+    def _cached(expr: str | None) -> FilterExpr:
+        return FilterExpr(expr)
+
+    @staticmethod
+    def eval(expr: str | None, tags: Tags | set[str] | None = None) -> bool:
+        return FilterExpr._cached(expr)(tags)

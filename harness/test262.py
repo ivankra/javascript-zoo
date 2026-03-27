@@ -126,7 +126,7 @@ class Executor:
 
         tags = Tags.test262(fm, rel_path=rel_path)
 
-        if self.filter_expr and not self.filter_expr.eval(tags):
+        if self.filter_expr and not self.filter_expr(tags):
             return [RunResult(
                 run_id=rel_path, test_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message="filtered out",
@@ -185,6 +185,21 @@ class Executor:
         finally:
             staged.cleanup()
 
+
+def parse_filter_expr(parser: argparse.ArgumentParser, filter_parts: list[str]) -> FilterExpr | None:
+    """Build and validate the combined --filter expression once."""
+    if not filter_parts:
+        return None
+
+    expr = "|".join(filter_parts)
+    filter_expr = FilterExpr(expr)
+    try:
+        filter_expr(set())
+    except SyntaxError as e:
+        parser.error(f"--filter={expr!r}: {e.msg}")
+    return filter_expr
+
+
 def main() -> None:
     p = argparse.ArgumentParser(
         description="Run test262 conformance suite against a JavaScript engine.",
@@ -237,6 +252,7 @@ def main() -> None:
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
+    filter_expr = parse_filter_expr(p, args.filter)
 
     if not args.output_format:
         args.output_format = "json" if (args.output and args.output.endswith(".json")) else "tests"
@@ -282,10 +298,8 @@ def main() -> None:
     if args.limit:
         tests = itertools.islice(tests, args.limit)
 
-    filter_parts = args.filter
-    if not filter_parts and engine.test262_filter:
-        filter_parts = [engine.test262_filter]
-    filter_expr = FilterExpr("|".join(filter_parts)) if filter_parts else None
+    if filter_expr is None and engine.test262_filter:
+        filter_expr = parse_filter_expr(p, [engine.test262_filter])
 
     executor = Executor(
         engine, assembler,

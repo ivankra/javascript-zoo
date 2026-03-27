@@ -75,6 +75,31 @@ class TestAssemble(unittest.TestCase):
         out = asm.assemble(_scenario(source))
         self.assertIn("/* intl */", out)
 
+    def test_tagged_prelude_qualified_tag(self):
+        source = "/*---\nfeatures: [Intl]\n---*/\nvar x;"
+        asm = _assembler(prelude=[Prelude(code="/* intl */", if_tag="features:Intl")])
+        out = asm.assemble(_scenario(source))
+        self.assertIn("/* intl */", out)
+        out2 = asm.assemble(_scenario("var x;"))
+        self.assertNotIn("/* intl */", out2)
+
+    def test_tagged_prelude_negation(self):
+        asm = _assembler(prelude=[Prelude(code="/* no-intl */", if_tag="!Intl")])
+        out = asm.assemble(_scenario("var x;"))
+        self.assertIn("/* no-intl */", out)
+        source = "/*---\nfeatures: [Intl]\n---*/\nvar x;"
+        out2 = asm.assemble(_scenario(source))
+        self.assertNotIn("/* no-intl */", out2)
+
+    def test_tagged_prelude_boolean_expr(self):
+        source = "/*---\nfeatures: [Intl, Temporal]\n---*/\nvar x;"
+        asm = _assembler(prelude=[Prelude(code="/* both */", if_tag="Intl & Temporal")])
+        out = asm.assemble(_scenario(source))
+        self.assertIn("/* both */", out)
+        source2 = "/*---\nfeatures: [Intl]\n---*/\nvar x;"
+        out2 = asm.assemble(_scenario(source2))
+        self.assertNotIn("/* both */", out2)
+
 
 class TestScenario(unittest.TestCase):
     def test_run_id_single_mode(self):

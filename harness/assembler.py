@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .config import EngineConfig, Prelude
 from .frontmatter import Frontmatter
-from .tags import Tags
+from .tags import FilterExpr, Tags
 from .util import iterate_js_files, write_atomic
 
 
@@ -118,7 +118,7 @@ class Assembler:
 
         # 2. Engine prelude(s)
         for p in self.preludes:
-            if (p.if_tag is None or (scenario.tags is not None and p.if_tag in scenario.tags)) and p.code:
+            if p.code and FilterExpr.eval(p.if_tag, scenario.tags):
                 pieces.append(p.code)
 
         # 2b. Auto-generated print() prelude (when engine doesn't have print natively)

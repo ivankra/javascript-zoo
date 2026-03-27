@@ -353,7 +353,7 @@ class Reporter:
             assert r.test_id is not None
             key = r.test_id
             v = r.verdict or Verdict.FAILED
-            for qt in r.tags.qualified_tags():
+            for qt in r.tags:
                 fv = tag_file_verdicts.setdefault(qt, {})
                 prev = fv.get(key)
                 if prev is Verdict.FAILED or v is Verdict.FAILED:
