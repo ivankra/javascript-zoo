@@ -12,8 +12,8 @@ from harness.reporter import Reporter
 from harness.runner import RunResult, Verdict
 
 
-def _run(run_id: str, verdict: Verdict, *, tags: Tags | None = None, mode: str = "") -> RunResult:
-    return RunResult(run_id=run_id, verdict=verdict, tags=tags, mode=mode)
+def _run(run_id: str, verdict: Verdict, *, tags: Tags | None = None, mode: str = "", test_id: str | None = None) -> RunResult:
+    return RunResult(run_id=run_id, test_id=test_id or run_id, verdict=verdict, tags=tags, mode=mode)
 
 
 def _t262(features: set[str] | None = None, *, mode: str) -> Tags:
@@ -38,8 +38,8 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262({"Symbol"}, mode="strict")
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags_s, mode="strict"),
-            _run("test/a.js@sloppy", Verdict.FAILED, tags=tags_l, mode="sloppy"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         # features:Symbol should show 1 file, counted as FAIL (worst of the two modes)
@@ -52,8 +52,8 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262({"Symbol"}, mode="strict")
         tags_l = _t262({"Symbol"}, mode="sloppy")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags_s, mode="strict"),
-            _run("test/a.js@sloppy", Verdict.FAILED, tags=tags_l, mode="sloppy"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         # Each mode tag sees exactly 1 file (since file+mode is unique)
@@ -68,7 +68,7 @@ class TestTagStats(unittest.TestCase):
         for name, v in [("a", Verdict.OK), ("b", Verdict.FAILED), ("c", Verdict.OK)]:
             for mode in ("strict", "sloppy"):
                 tags = _t262({"Symbol"}, mode=mode)
-                runs.append(_run(f"test/{name}.js@{mode}", v, tags=tags, mode=mode))
+                runs.append(_run(f"test/{name}.{mode}.js", v, tags=tags, mode=mode, test_id=f"test/{name}.js"))
         r = self._reporter(runs)
         stats = r._build_tag_stats()
         # 3 files per mode, each file unique per mode -> same as raw counts
@@ -83,10 +83,10 @@ class TestTagStats(unittest.TestCase):
         tags_s = _t262(mode="strict")
         tags_l = _t262(mode="sloppy")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags_s, mode="strict"),
-            _run("test/a.js@sloppy", Verdict.OK, tags=tags_l, mode="sloppy"),
-            _run("test/b.js@strict", Verdict.OK, tags=tags_s, mode="strict"),
-            _run("test/b.js@sloppy", Verdict.FAILED, tags=tags_l, mode="sloppy"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/a.js"),
+            _run("test/a.sloppy.js", Verdict.OK, tags=tags_l, mode="sloppy", test_id="test/a.js"),
+            _run("test/b.strict.js", Verdict.OK, tags=tags_s, mode="strict", test_id="test/b.js"),
+            _run("test/b.sloppy.js", Verdict.FAILED, tags=tags_l, mode="sloppy", test_id="test/b.js"),
         ])
         summary = r._summary_json()
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
@@ -114,7 +114,7 @@ class TestTagStats(unittest.TestCase):
         """Tests with no features/edition produce 'features:' and 'edition:' keys."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
         self.assertIn("features:", stats)
@@ -126,7 +126,7 @@ class TestTagStats(unittest.TestCase):
         """'features:' and 'edition:' appear in summary JSON for featureless tests."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         summary = r._summary_json()
         self.assertIn("features:", summary)
@@ -151,7 +151,7 @@ class TestEditionReport(unittest.TestCase):
             ("BigInt", Verdict.FAILED),     # es2020
         ]):
             tags = _t262({feat}, mode="strict")
-            runs.append(_run(f"test/{i}.js@strict", verdict, tags=tags, mode="strict"))
+            runs.append(_run(f"test/{i}.strict.js", verdict, tags=tags, mode="strict", test_id=f"test/{i}.js"))
         r = self._reporter(runs)
         stats = r._build_tag_stats()
         # Each test belongs to exactly one edition
@@ -165,7 +165,7 @@ class TestEditionReport(unittest.TestCase):
         """Tests with no features land in 'other', not in any edition."""
         tags = _t262(mode="strict")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("other", report)
@@ -175,7 +175,7 @@ class TestEditionReport(unittest.TestCase):
         """An edition where all tests are skipped merges into 'other'."""
         tags = _t262({"Symbol"}, mode="strict")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.SKIPPED, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.SKIPPED, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("other", report)
@@ -185,7 +185,7 @@ class TestEditionReport(unittest.TestCase):
         """Features not in features.yml appear under esnext."""
         tags = _t262({"SomeNewProposal"}, mode="strict")
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.FAILED, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.FAILED, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         self.assertIn("esnext", report)
@@ -195,7 +195,7 @@ class TestEditionReport(unittest.TestCase):
         """The empty 'features:' sentinel never appears as a feature line."""
         tags = _t262(mode="strict")  # no features
         r = self._reporter([
-            _run("test/a.js@strict", Verdict.OK, tags=tags, mode="strict"),
+            _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
         # Should not have a bare "    : " line

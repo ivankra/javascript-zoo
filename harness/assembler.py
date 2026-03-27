@@ -16,14 +16,14 @@ from pathlib import Path
 from .config import EngineConfig, Prelude
 from .frontmatter import Frontmatter
 from .tags import Tags
-from .util import iterate_js_files
+from .util import iterate_js_files, write_atomic
 
 
 _REL_SPECIFIER_RE = re.compile(
     r"""(?:"""
     r"""from\s*['"](\.[^'"]+)['"]"""          # import/export ... from '...'
     r"""|import\s+['"](\.[^'"]+)['"]"""       # import '...' (side-effect)
-    r"""|import\s*\(\s*['"](\.[^'"]+)['"]"""  # dynamic import('...')
+    r"""|import\s*(?:\.\s*[a-zA-Z]+\s*)?\(\s*['"](\.[^'"]+)['"]"""  # dynamic import('...') / import.source('...') / import.defer('...')
     r"""|importValue\s*\(\s*['"](\.[^'"]+)['"]"""  # ShadowRealm importValue
     r""")"""
 )
@@ -41,9 +41,20 @@ class Scenario:
     mode: str                # "strict" or "sloppy"
     tags: Tags | None = None
 
-    def display_id(self) -> str:
+    def run_id(self) -> str:
+        """Relative path for this scenario in the staging tree.
+
+        Encodes .mjs rename for modules and .strict/.sloppy suffix for
+        multi-mode tests.  Used as run_id for reporting and as the
+        relative path under --stage-dir.  For temp-dir staging of
+        single-file scripts the actual on-disk name differs (flat temp
+        file), but this path is still used as the logical run_id.
+        """
+        p = Path(self.rel_path)
+        if "module" in self.fm.flags:
+            return str(p.with_suffix(".mjs"))
         if len(self.fm.modes()) > 1:
-            return f"{self.rel_path}@{self.mode}"
+            return str(p.with_suffix(f".{self.mode}{p.suffix}"))
         return self.rel_path
 
 
@@ -53,13 +64,15 @@ class StagedScript:
     script_path: Path
     cwd: Path
     used: set[str] = dataclasses.field(default_factory=set)
-    # Directory to rmtree on cleanup, or None for single-file cleanup.
-    tmp_dir: Path | None = None
+    # Directory to rmtree on cleanup (per-test module tree), or None.
+    rmtree: Path | None = None
+    # Whether to unlink script_path on cleanup (single-file temp staging).
+    unlink: bool = False
 
     def cleanup(self) -> None:
-        if self.tmp_dir is not None:
-            shutil.rmtree(self.tmp_dir, ignore_errors=True)
-        else:
+        if self.rmtree is not None:
+            shutil.rmtree(self.rmtree, ignore_errors=True)
+        elif self.unlink:
             try:
                 os.unlink(self.script_path)
             except OSError:
@@ -75,15 +88,15 @@ class Assembler:
     temp dir mirroring the test262 layout for module resolution.
     """
 
-    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, save_compiled: str | None = None, no_harness: bool = False) -> None:
+    def __init__(self, engine: EngineConfig, test262_dir: Path, *, verbose: bool = False, stage_dir: str | Path | None = None, no_harness: bool = False) -> None:
         self.test262_dir = test262_dir
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
         self.no_harness = no_harness
         self.print_prelude = build_print_prelude(engine.console_log, self.preludes)
-        self.save_compiled = Path(save_compiled) if save_compiled else None
-        if self.save_compiled:
-            self.save_compiled.mkdir(parents=True, exist_ok=True)
+        self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
+        if self.stage_dir:
+            self.stage_dir.mkdir(parents=True, exist_ok=True)
 
     def assemble(self, scenario: Scenario) -> str:
         """Compose the runnable script for one scenario."""
@@ -139,54 +152,50 @@ class Assembler:
         assembled = self.assemble(scenario)
         used = set(_USED_262_RE.findall(assembled))
 
-        if self.save_compiled is not None:
-            dst = self.save_compiled / f"{scenario.rel_path}.{scenario.mode}.js"
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            dst.write_bytes(assembled.encode("utf-8"))
-
         is_module = "module" in scenario.fm.flags
         needs_module_tree = is_module or "dynamic-import" in scenario.fm.features
 
-        if not needs_module_tree:
-            script_path = temp_dir / f"t262-temp-{os.getpid()}-{id(assembled)}.js"
-            script_path.write_bytes(assembled.encode("utf-8"))
-            return StagedScript(script_path=script_path, cwd=Path(os.getcwd()), used=used)
-
-        tmp_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
-
-        # Rename .js → .mjs for higher engine compatibility, simpler config.
-        # Many engines auto-detect module mode from the extension, avoiding
-        # the need for extra CLI flags. A few don't even have any other way
-        # to force running a file as a module.
-        rename_map = {}
-        if is_module:
-            orig_name = Path(scenario.rel_path).name
-            mjs_name = Path(scenario.rel_path).with_suffix(".mjs").name
-            if orig_name != mjs_name:
-                # Rewrite self-imports
-                assembled = assembled.replace(f"./{orig_name}", f"./{mjs_name}")
-                # Save the names to fix fixture back-references later.
-                rename_map[orig_name] = mjs_name
-            staged_path = tmp_root / Path(scenario.rel_path).with_suffix(".mjs")
+        # Pick the staging root: stage_dir (persistent) or a temp directory.
+        if self.stage_dir is not None:
+            dst_root = self.stage_dir
+            cleanup_dir = None  # persistent — no cleanup
+        elif needs_module_tree:
+            dst_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
+            cleanup_dir = dst_root
         else:
-            staged_path = tmp_root / Path(scenario.rel_path)
+            # Single script — drop into the shared temp dir.  PID prefix
+            # avoids collisions between parallel worker processes (e.g.
+            # foo/a.js and bar/a.js running in different workers).
+            script_path = temp_dir / f"{os.getpid()}-{os.path.basename(scenario.run_id())}"
+            script_path.write_bytes(assembled.encode("utf-8"))
+            return StagedScript(script_path=script_path, cwd=Path(os.getcwd()),
+                                used=used, unlink=True)
 
+        # Rename .js → .mjs (modules) or .js → .strict.js/.sloppy.js
+        # (multi-mode scripts with dynamic-import). Rewrites self-references
+        # in assembled source and deps so imports resolve to the staged name.
+        # Many engines auto-detect module mode from .mjs extension, avoiding
+        # the need for extra CLI flags.
+        rename_map = {}
+        orig_name = Path(scenario.rel_path).name
+        staged_name = Path(scenario.run_id()).name
+        if orig_name != staged_name:
+            assembled = assembled.replace(f"./{orig_name}", f"./{staged_name}")
+            rename_map[orig_name] = staged_name
+
+        staged_path = dst_root / scenario.run_id()
         staged_path.parent.mkdir(parents=True, exist_ok=True)
-        staged_path.write_bytes(assembled.encode("utf-8"))
+        write_atomic(staged_path, assembled.encode("utf-8"), check_same=True)
 
-        visited: set[str] = {scenario.rel_path}
-        self._copy_deps_recursive(
-            tmp_root, scenario.test_path.parent, scenario.test_content, visited,
-            rename_map=rename_map, used=used,
-        )
-        self._copy_fixture_siblings(tmp_root, scenario.test_path.parent, visited,
-                                    rename_map=rename_map)
+        if needs_module_tree:
+            visited: set[str] = {scenario.rel_path}
+            self._copy_deps_recursive(
+                dst_root, scenario.test_path.parent, scenario.test_content, visited,
+                rename_map=rename_map, used=used,
+            )
 
-        pkg = tmp_root / "package.json"
-        if not pkg.exists():
-            pkg.write_text('{"type": "module"}\n', encoding="utf-8")
-
-        return StagedScript(script_path=staged_path, cwd=tmp_root, used=used, tmp_dir=tmp_root)
+        return StagedScript(script_path=staged_path, cwd=dst_root,
+                            used=used, rmtree=cleanup_dir)
 
     def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
         """Emit one assembled test to stdout or a file."""
@@ -247,6 +256,7 @@ class Assembler:
 
         return source
 
+
     def _copy_deps_recursive(
         self,
         dst_root: Path,
@@ -277,7 +287,7 @@ class Assembler:
                 dep_src = dep_path.read_bytes().decode("utf-8", errors="replace")
             except Exception as e:
                 print(f"warning: skipping deps of {dep_path}: {e}", file=sys.stderr)
-                shutil.copy2(dep_path, dst)
+                write_atomic(dst, dep_path.read_bytes())
                 continue
 
             if used is not None:
@@ -288,7 +298,7 @@ class Assembler:
                 for old, new in rename_map.items():
                     dep_src = dep_src.replace(f"./{old}", f"./{new}")
 
-            dst.write_bytes(dep_src.encode("utf-8"))
+            write_atomic(dst, dep_src.encode("utf-8"))
             self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,
                                       rename_map=rename_map, used=used)
 
@@ -302,30 +312,6 @@ class Assembler:
                 seen.add(spec)
                 deps.append(spec)
         return deps
-
-    def _copy_fixture_siblings(self, dst_root: Path, base_dir: Path, visited: set[str],
-                               rename_map: dict[str, str] | None = None) -> None:
-        """Copy sibling fixture files for computed import specifiers."""
-        test_dir = self.test262_dir
-        for dep_path in base_dir.iterdir():
-            if not dep_path.is_file() or "_FIXTURE" not in dep_path.name:
-                continue
-            try:
-                dep_rel = str(dep_path.resolve().relative_to(test_dir))
-            except ValueError:
-                continue
-            if dep_rel in visited:
-                continue
-            visited.add(dep_rel)
-            dst = dst_root / dep_rel
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            if rename_map:
-                src = dep_path.read_bytes().decode("utf-8", errors="replace")
-                for old, new in rename_map.items():
-                    src = src.replace(f"./{old}", f"./{new}")
-                dst.write_bytes(src.encode("utf-8"))
-            else:
-                shutil.copy2(dep_path, dst)
 
 
 def build_print_prelude(console_log: str | list[str], preludes: list[Prelude]) -> str | None:

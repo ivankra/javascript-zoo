@@ -87,7 +87,8 @@ def _build_test_statuses(results: list[RunResult], test_order: list[str]) -> dic
     """
     file_runs: dict[str, list[RunResult]] = {}
     for run in results:
-        fp = (run.run_id or "").split("@")[0]
+        assert run.test_id is not None
+        fp = run.test_id
         file_runs.setdefault(fp, []).append(run)
     order = test_order if test_order else list(file_runs.keys())
     statuses: dict[str, Any] = {}
@@ -199,8 +200,8 @@ class Reporter:
                 print(f"{run.run_id}: {run.verdict.value if run.verdict else '?'}{t}", flush=True)
         # Dir progress tracking
         if self._dir_order:
-            run_id = run.run_id or ""
-            fp = run_id.split("@")[0]
+            assert run.test_id is not None
+            fp = run.test_id
             d = os.path.dirname(fp)
             self._dir_done[d] += 1
             if run.verdict is Verdict.OK:
@@ -329,7 +330,8 @@ class Reporter:
         """Compute per-file worst verdict (deduplicating across modes)."""
         fv: dict[str, Verdict | None] = {}
         for run in self._results:
-            fp = (run.run_id or "").split("@")[0]
+            assert run.test_id is not None
+            fp = run.test_id
             prev = fv.get(fp)
             if prev is Verdict.FAILED or run.verdict is Verdict.FAILED:
                 fv[fp] = Verdict.FAILED
@@ -346,7 +348,8 @@ class Reporter:
         for r in self._results:
             if not isinstance(r.tags, Tags):
                 continue
-            key = (r.run_id or "?").split("@")[0]
+            assert r.test_id is not None
+            key = r.test_id
             v = r.verdict or Verdict.FAILED
             for qt in r.tags.qualified_tags():
                 fv = tag_file_verdicts.setdefault(qt, {})
@@ -451,7 +454,8 @@ class Reporter:
         per_test_rss: dict[str, float] = {}
         per_test_time: dict[str, float] = {}
         for r in results:
-            key = (r.run_id or "?").split("@")[0]
+            assert r.test_id is not None
+            key = r.test_id
             rss = r.metrics.max_rss_kb or 0
             if rss > per_test_rss.get(key, 0):
                 per_test_rss[key] = rss
@@ -507,7 +511,7 @@ class Reporter:
             results = self._results
             if self._input_order:
                 n = len(self._input_order)
-                results = sorted(results, key=lambda r: self._input_order.get((r.run_id or "").split("@")[0], n))
+                results = sorted(results, key=lambda r: self._input_order.get(r.test_id or "", n))
             lines.extend(format_output_line(r) for r in results)
         else:
             statuses = _build_test_statuses(self._results, list(self._input_order))
@@ -524,7 +528,7 @@ class Reporter:
         Formats:
           * "tests" (or "text" / "simple"): one line per test file,
             collapsing verdicts for sloppy and strict modes when identical.
-          * "runs": one line per run/scenario (`filename[@mode]: verdict`).
+          * "runs": one line per run/scenario (`filename[.mode].js: verdict`).
           * "json": structured output.
 
         Default format is "tests", or "json" if writing to a *.json file.

@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness.assembler import Assembler, Scenario, build_print_prelude
+from harness.assembler import Assembler, Scenario, build_print_prelude, _REL_SPECIFIER_RE
 from harness.config import EngineConfig, Prelude
 from harness.frontmatter import Frontmatter
 from harness.tags import Tags
@@ -77,20 +77,54 @@ class TestAssemble(unittest.TestCase):
 
 
 class TestScenario(unittest.TestCase):
-    def test_display_id_single_mode(self):
+    def test_run_id_single_mode(self):
         source = "/*---\nflags: [onlyStrict]\n---*/\nvar x;"
         s = _scenario(source, mode="strict")
-        self.assertEqual(s.display_id(), "test/x.js")
+        self.assertEqual(s.run_id(), "test/x.js")
 
-    def test_display_id_both_modes(self):
+    def test_run_id_both_modes(self):
         s = _scenario("var x;", mode="strict")
-        self.assertEqual(s.display_id(), "test/x.js@strict")
+        self.assertEqual(s.run_id(), "test/x.strict.js")
+
+    def test_run_id_module(self):
+        source = "/*---\nflags: [module]\n---*/\nexport {};"
+        s = _scenario(source, mode="strict")
+        self.assertEqual(s.run_id(), "test/x.mjs")
 
     def test_tags(self):
         source = "/*---\nfeatures: [Symbol]\n---*/\nvar x;"
         s = _scenario(source, mode="strict")
         self.assertIn("Symbol", s.tags)
         self.assertIn("features:Symbol", s.tags)
+
+
+class TestRelSpecifierRE(unittest.TestCase):
+    """Test _REL_SPECIFIER_RE matches various import forms."""
+
+    def _extract(self, source: str) -> list[str]:
+        return [next(g for g in m.groups() if g is not None)
+                for m in _REL_SPECIFIER_RE.finditer(source)]
+
+    def test_static_import_from(self):
+        self.assertEqual(self._extract("import {x} from './foo.js';"), ["./foo.js"])
+
+    def test_dynamic_import(self):
+        self.assertEqual(self._extract("import('./foo.js')"), ["./foo.js"])
+
+    def test_import_source(self):
+        self.assertEqual(self._extract("import.source('./empty_FIXTURE.js')"), ["./empty_FIXTURE.js"])
+
+    def test_import_defer(self):
+        self.assertEqual(self._extract("import.defer('./sync_FIXTURE.js')"), ["./sync_FIXTURE.js"])
+
+    def test_side_effect_import(self):
+        self.assertEqual(self._extract("import './setup.js';"), ["./setup.js"])
+
+    def test_import_value(self):
+        self.assertEqual(self._extract("importValue('./mod.js', 'x')"), ["./mod.js"])
+
+    def test_non_relative_skipped(self):
+        self.assertEqual(self._extract("import 'some-pkg';"), [])
 
 
 class TestEmitPreprocessed(unittest.TestCase):
@@ -217,17 +251,15 @@ class TestStageModule(unittest.TestCase):
             staged = asm.stage(scenario, temp_dir=tmp)
             try:
                 self.assertTrue(staged.script_path.exists())
-                self.assertIsNotNone(staged.tmp_dir)
+                self.assertIsNotNone(staged.rmtree)
                 self.assertEqual(staged.script_path.suffix, ".mjs")
                 self.assertEqual(
-                    staged.script_path.relative_to(staged.tmp_dir),
+                    staged.script_path.relative_to(staged.rmtree),
                     Path("test/mod/main.mjs"),
                 )
                 # Helper should be copied into the module tree
-                helper = staged.tmp_dir / "test" / "mod" / "helper.js"
+                helper = staged.rmtree / "test" / "mod" / "helper.js"
                 self.assertTrue(helper.exists())
-                # package.json created for module resolution
-                self.assertTrue((staged.tmp_dir / "package.json").exists())
             finally:
                 staged.cleanup()
 
@@ -271,7 +303,7 @@ class TestStageModule(unittest.TestCase):
                 self.assertIn("./entry.mjs", entry_text)
                 self.assertNotIn("./entry.js", entry_text)
                 # Fixture back-reference rewritten
-                fixture = staged.tmp_dir / "test" / "mod" / "entry_FIXTURE.js"
+                fixture = staged.rmtree / "test" / "mod" / "entry_FIXTURE.js"
                 self.assertTrue(fixture.exists())
                 fix_text = fixture.read_text()
                 self.assertIn("./entry.mjs", fix_text)
@@ -289,7 +321,7 @@ class TestStageModule(unittest.TestCase):
             staged = asm.stage(scenario, temp_dir=tmp)
             try:
                 self.assertTrue(staged.script_path.exists())
-                self.assertIsNone(staged.tmp_dir)
+                self.assertTrue(staged.unlink)
                 content = staged.script_path.read_text()
                 self.assertIn("var x;", content)
                 self.assertEqual(staged.used, set())
@@ -331,9 +363,9 @@ class TestStageModule(unittest.TestCase):
             try:
                 # Script test: must keep .js extension (not .mjs)
                 self.assertEqual(staged.script_path.suffix, ".js")
-                self.assertIsNotNone(staged.tmp_dir)
+                self.assertIsNotNone(staged.rmtree)
                 # Helper copied into module tree
-                helper = staged.tmp_dir / "test" / "di" / "helper.js"
+                helper = staged.rmtree / "test" / "di" / "helper.js"
                 self.assertTrue(helper.exists())
             finally:
                 staged.cleanup()

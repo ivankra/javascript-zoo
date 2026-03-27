@@ -128,7 +128,7 @@ class Executor:
 
         if self.filter_expr and not self.filter_expr.eval(tags):
             return [RunResult(
-                run_id=rel_path, test_path=str(test_path),
+                run_id=rel_path, test_id=rel_path, test_path=str(test_path),
                 verdict=Verdict.SKIPPED, error_message="filtered out",
                 tags=tags,
             )]
@@ -163,7 +163,8 @@ class Executor:
         try:
             run = self.runner.run_command(
                 self.engine.argv(staged.script_path, tags=scenario.tags),
-                run_id=scenario.display_id(),
+                run_id=scenario.run_id(),
+                test_id=scenario.rel_path,
                 test_path=str(scenario.test_path),
                 script_path=str(staged.script_path),
                 timeout_sec=self.timeout_sec,
@@ -194,6 +195,7 @@ def main() -> None:
         Test files/dirs globs relative to test262 root. Glob matching
         a directory selects all *.js files recursively. May use ** globs,
         e.g. test/**/Temporal to match all Temporal subdirs.""")
+    p.add_argument("-c", "--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
     p.add_argument("-f", "--filter", action="append", default=[], metavar="EXPR", help="""
         Boolean expression with parenthesis, NOT ("!" / "~"), AND ("&"),
         OR ("|" / ",", lowest precedence) over "[<namespace>:]<tag>"
@@ -216,7 +218,10 @@ def main() -> None:
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
                    help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
-    p.add_argument("--config", help="Force a specific config entry from config.yml (normally inferred from binary basename)")
+    p.add_argument("-E", action="store_true", dest="preprocess",
+                   help="Preprocess a single test and write it to stdout or -o FILE")
+    p.add_argument("-O", "--stage-dir", metavar="DIR",
+                   help="Stage preprocessed test files with dependencies in DIR and keep it after run")
     p.add_argument("--exclude", action="append", default=[], metavar="GLOB",
                    help="Exclude test paths matching the pattern")
     p.add_argument("--no-annex-b", action="store_true", default=False,
@@ -229,10 +234,6 @@ def main() -> None:
                    help="Stop after running N tests")
     p.add_argument("--no-probe", action="store_true", default=False,
                    help="Skip engine probing before test run")
-    p.add_argument("-E", action="store_true", dest="emit",
-                   help="Preprocess a single test and write it to stdout or -o FILE")
-    p.add_argument("--save-compiled", metavar="DIR",
-                   help="Save assembled test scripts to this directory")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
@@ -251,8 +252,8 @@ def main() -> None:
     if not (test262_dir / "harness").exists():
         sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
 
-    assembler = Assembler(engine, test262_dir, verbose=args.verbose, save_compiled=args.save_compiled)
-    if args.emit:
+    assembler = Assembler(engine, test262_dir, verbose=args.verbose, stage_dir=args.stage_dir)
+    if args.preprocess:
         assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
 

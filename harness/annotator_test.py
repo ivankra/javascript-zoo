@@ -386,6 +386,16 @@ class NegativeTest(unittest.TestCase):
         self.assertEqual(run.verdict, Verdict.FAILED)
         self.assertEqual(run.error_type, ErrorType.CRASHED)
 
+    def test_strip_cwd(self) -> None:
+        ann = self._ann()
+        run = mk_run(stderr="SyntaxError: Could not find export 'default' in module '/my/emit/test/foo.js'", exit_code=1, cwd="/my/emit")
+        ann.classify(run)
+        self.assertEqual(run.error_message, "Could not find export 'default' in module 'test/foo.js'")
+        # file:// URLs are also stripped
+        run = mk_run(stderr="TypeError: bad in file:///my/emit/test/foo.js", exit_code=1, cwd="/my/emit")
+        ann.classify(run)
+        self.assertEqual(run.error_message, "bad in test/foo.js")
+
     def test_unmapped_exit_code_fails_negative(self) -> None:
         run = self._ann().classify(
             mk_run(exit_code=1),

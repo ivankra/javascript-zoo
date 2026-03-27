@@ -9,6 +9,8 @@ import os
 import re
 import shutil
 import subprocess
+import sys
+import tempfile
 from pathlib import Path
 from typing import Any, Iterator, NamedTuple
 
@@ -53,6 +55,35 @@ def version_sort_key(name: str) -> list:
                 0 if c == '/' else ord(c) if c.isalpha() else ord(c) + 128
                 for c in p)
             for i, p in enumerate(parts)]
+
+
+def write_atomic(path: Path, data: bytes, *, check_same: bool = False) -> None:
+    """Atomically write data via temp+rename; skip if content is identical.
+
+    check_same: print a warning to stderr if replacing different content.
+    """
+    if path.exists():
+        try:
+            existing = path.read_bytes()
+            if existing == data:
+                return
+            if check_same:
+                print(f"warning: overwriting {path} with different content", file=sys.stderr)
+        except OSError:
+            pass
+    fd, tmp_name = tempfile.mkstemp(
+        dir=str(path.parent),
+        prefix=f".{path.name}.{os.getpid()}.",
+        suffix=".tmp",
+    )
+    tmp = Path(tmp_name)
+    try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(data)
+        os.replace(tmp, path)
+    except Exception:
+        tmp.unlink(missing_ok=True)
+        raise
 
 
 def iterate_js_files(

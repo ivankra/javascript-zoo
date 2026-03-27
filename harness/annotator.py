@@ -308,10 +308,13 @@ class Annotator:
                     run.error_message
             )
 
-        # Drop temp dir name from test262.py's staged module paths
-        # to keep messages short and consistent between runs.
-        if '/tmp/t262-mod' in run.error_message:
-            run.error_message = re.sub('/tmp/t262-mod-[^/]+/', '', run.error_message)
+        # Strip staging root (temp dir or --stage-dir) from module paths
+        # to keep error messages short and consistent between runs.
+        if run.cwd:
+            assert run.cwd.startswith('/'), f"cwd must be absolute: {run.cwd}"
+            cwd_slash = run.cwd + '/'
+            run.error_message = run.error_message.replace('file://' + cwd_slash, '')
+            run.error_message = run.error_message.replace(cwd_slash, '')
 
         while True:
             message = run.error_message

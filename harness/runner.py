@@ -88,8 +88,11 @@ class RunResult:
 
     Produced by Runner.run_command() and optionally refined by Annotator.classify().
     """
-    # Stable identifier for reports (relative test path, maybe with a mode suffix)
+    # Staging-path identifier for reports (includes .mjs rename, .strict/.sloppy suffix).
     run_id: str | None = None
+    # Original test file path relative to test root (discovery key, e.g. "test/foo.js").
+    # Used for grouping runs by file.  Defaults to run_id when not explicitly set.
+    test_id: str | None = None
     # Final outcome: set by Annotator
     verdict: Verdict | None = None
     # Shell-renderable command string for reproducibility/debugging.
@@ -226,6 +229,7 @@ class Runner:
         argv: list[str],
         *,
         run_id: str | None = None,
+        test_id: str | None = None,
         test_path: str | None = None,
         script_path: str | None = None,
         timeout_sec: float | None = None,
@@ -317,6 +321,7 @@ class Runner:
 
         run = RunResult(
             run_id=run_id,
+            test_id=test_id or run_id,
             command=shlex.join(argv),
             cwd=str(run_cwd),
             stdout=stdout,
