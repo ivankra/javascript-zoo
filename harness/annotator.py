@@ -116,43 +116,42 @@ class Annotator:
 
         output = run.combined_output().strip()
         lines = output.splitlines()
+        ok_required = ok_pattern is not None
         ok_found = bool(ok_pattern and any(re.search(ok_pattern, ln) for ln in lines))
         fail_found = bool(fail_pattern and any(re.search(fail_pattern, ln) for ln in lines))
-        errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
-                  self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
 
-        # test262 async protocol checks
+        # test262 async protocol
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:
                 m = re.search(r"Test262:AsyncTestFailure:\s*(.*)", output)
                 run.verdict = Verdict.FAILED
                 run.error_type = ErrorType.ASYNC_TEST_FAILURE
                 run.error_message = m.group(1).strip() if m else None
+                # Strip redundant "Test262Error: " prefixes from message
+                while run.error_message and run.error_message.startswith("Test262Error:"):
+                    run.error_message = run.error_message[len("Test262Error:"):].strip()
                 return
 
-            if "Test262:AsyncTestComplete" not in output:
-                run.verdict = Verdict.FAILED
-                run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
-                return
+            ok_found = ("Test262:AsyncTestComplete" in output) and (ok_found or not ok_required)
+            ok_required = True
 
         if ok_found and fail_found:
-            # probably engine dumped a large block of source code with both markers
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.GENERIC
             run.error_message = "found both ok and fail markers"
             return
 
-        # TODO: fix ambiguous cases
-        # jsish      es3/global.SyntaxError.thrown.js
-        # metaes     compat-table/es2017/async.arrow-in-class.js
-        # njs        compat-table/es2018/Promise.prototype.Finally.js
-        # sophonjs   es3/Number.prototype.toExponential.throws-infinity.js
-        # topchetoeu compat-table/es6/Promise.js (flaky)
-        # yantra     compat-table/es2017/async.return.js
-        # quad-wheel compat-table/es6/misc.for-in-no-assignment-strict.js,
-        if ok_found and errors:
-            print(f"OK marker and errors matched in test: {run.test_path}, stdout: {run.stdout}, stderr: {run.stderr}")
-        #     assert self._config.engine in ('bali', 'jsish', 'metaes', 'njs', 'quad-wheel', 'sophonjs', 'topchetoeu', 'yantra'), \
+        # ok_found means the script ran to completion (ScriptExecutionFinished
+        # printed at the end).  Errors in output are likely incidental — caught
+        # exceptions, subprocess/module output, or engine warnings.
+        # E.g. test/built-ins/ShadowRealm/prototype/importValue/throws-typeerror-import-syntax-error.js
+        # must pass despite reporting SyntaxError in an imported module.
+        if ok_found and not fail_found:
+            run.verdict = Verdict.OK
+            return
+
+        errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
+                  self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
 
         if errors:
             best_et, best_msg = errors[0]
@@ -168,26 +167,27 @@ class Annotator:
             return
 
         # Heuristic: scan output lines for the first JS error class name.
-        if not errors:
-            for line in output.splitlines():
-                line_filt = line.removeprefix(strip_line_prefix or '')
-                if run.test_path:
-                    # don't trip on test filenames
-                    line_filt = line.replace(os.path.basename(run.test_path), "<test>")
-                for m in _JS_ERROR_NAME_RE.finditer(line_filt):
-                    js_exc = ErrorType.from_js_error(m.group(1))
-                    if js_exc is not None:
-                        run.verdict = Verdict.FAILED
-                        run.error_type = js_exc
-                        run.error_message = line
-                        self._shorten_message(run, strip_line_prefix=strip_line_prefix)
-                        return
+        for line in output.splitlines():
+            line_filt = line.removeprefix(strip_line_prefix or '')
+            if run.test_path:
+                line_filt = line.replace(os.path.basename(run.test_path), "<test>")
+            for m in _JS_ERROR_NAME_RE.finditer(line_filt):
+                js_exc = ErrorType.from_js_error(m.group(1))
+                if js_exc is not None:
+                    run.verdict = Verdict.FAILED
+                    run.error_type = js_exc
+                    run.error_message = line
+                    self._shorten_message(run, strip_line_prefix=strip_line_prefix)
+                    return
 
-        if (ok_pattern and not ok_found) or fail_found:
+        if fail_found or (ok_required and not ok_found):
             run.verdict = Verdict.FAILED
-            run.error_type = ErrorType.GENERIC
-            run.error_message = output or None
-            self._shorten_message(run, strip_line_prefix=strip_line_prefix)
+            if expect_async and "Test262:AsyncTestComplete" not in output:
+                run.error_type = ErrorType.NO_ASYNC_TEST_COMPLETE
+            else:
+                run.error_type = ErrorType.GENERIC
+                run.error_message = output or None
+                self._shorten_message(run, strip_line_prefix=strip_line_prefix)
             return
 
         # TODO: fix Promise.prototype.finally.js - many engines pass with non-zero exit code
