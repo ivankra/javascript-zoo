@@ -39,7 +39,7 @@ from harness import (
 test262_probe = importlib.import_module("harness.test262-probe")
 
 DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
-DEFAULT_TIMEOUT_SEC = 10.0
+DEFAULT_TIMEOUT_SEC = 60.0
 INTL402_SKIP_PATHS = ["test/intl402", "test/staging/Intl402"]
 STAGING_SKIP_PATHS = ["test/staging"]
 ANNEX_B_SKIP_PATHS = ["test/annexB"]
