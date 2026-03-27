@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any
 
 from harness.config import EngineConfig
-from harness.runner import ErrorType, RunMetrics, RunResult, Runner, Verdict
+from harness.runner import ErrorType, RunRusage, RunResult, Runner, Verdict
 from harness.util import iterate_js_files
 
 
@@ -64,12 +64,12 @@ class RunResultTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "unknown RunResult fields"):
             RunResult.from_dict({"run_id": "x", "bogus_key": 1})
 
-    def test_from_dict_metrics_dict(self) -> None:
+    def test_from_dict_rusage_dict(self) -> None:
         d = mk_run().to_dict()
-        d["metrics"] = {"real_time": 1.5, "user_time": 0.8}
+        d["rusage"] = {"real_time": 1.5, "user_time": 0.8}
         r = RunResult.from_dict(d)
-        self.assertEqual(r.metrics.real_time, 1.5)
-        self.assertEqual(r.metrics.user_time, 0.8)
+        self.assertEqual(r.rusage.real_time, 1.5)
+        self.assertEqual(r.rusage.user_time, 0.8)
 
     def test_verdict_message_ok(self) -> None:
         self.assertEqual(mk_run(verdict=Verdict.OK).verdict_message(), "OK")

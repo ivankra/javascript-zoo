@@ -4,16 +4,35 @@
 from __future__ import annotations
 
 import unittest
+import json
+import contextlib
+import io
+from unittest.mock import patch
 
 from harness.config import EngineConfig
 from harness.frontmatter import Frontmatter
 from harness.tags import Tags
 from harness.reporter import Reporter
-from harness.runner import RunResult, Verdict
+from harness.runner import RunResult, RunRusage, Verdict
 
 
-def _run(run_id: str, verdict: Verdict, *, tags: Tags | None = None, mode: str = "", test_id: str | None = None) -> RunResult:
-    return RunResult(run_id=run_id, test_id=test_id or run_id, verdict=verdict, tags=tags, mode=mode)
+def _run(
+    run_id: str,
+    verdict: Verdict,
+    *,
+    tags: Tags | None = None,
+    mode: str = "",
+    test_id: str | None = None,
+    rusage: RunRusage | None = None,
+) -> RunResult:
+    return RunResult(
+        run_id=run_id,
+        test_id=test_id or run_id,
+        verdict=verdict,
+        tags=tags,
+        mode=mode,
+        rusage=rusage or RunRusage(),
+    )
 
 
 def _t262(features: set[str] | None = None, *, mode: str) -> Tags:
@@ -249,6 +268,57 @@ class TestTestOrder(unittest.TestCase):
         r.note_test("b.js")
         r.note_test("a.js")  # duplicate
         self.assertEqual(list(r._input_order), ["c.js", "a.js", "b.js"])
+
+
+class TestReporterRusageJson(unittest.TestCase):
+    def test_json_includes_rusage_by_default(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.note_test("test/a.js")
+        r.add_file([
+            _run(
+                "test/a.js",
+                Verdict.OK,
+                test_id="test/a.js",
+                rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
+            )
+        ])
+        out = json.loads(r.format_to_json())
+        self.assertIn("rusage", out)
+        self.assertEqual(out["rusage"]["peak_rss_mb"], 2.0)
+        self.assertEqual(out["rusage"]["test_time_s"]["test/a.js"], 1.25)
+
+    def test_json_omits_rusage_when_disabled(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage=False)
+        r.note_test("test/a.js")
+        r.add_file([
+            _run(
+                "test/a.js",
+                Verdict.OK,
+                test_id="test/a.js",
+                rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
+            )
+        ])
+        out = json.loads(r.format_to_json())
+        self.assertNotIn("rusage", out)
+
+
+class TestReporterWriteStreams(unittest.TestCase):
+    def test_write_dash_writes_to_stdout(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.note_test("test/a.js")
+        r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        stdout = io.StringIO()
+        with contextlib.redirect_stdout(stdout):
+            r.write("-", output_format="tests")
+        self.assertEqual(stdout.getvalue(), "test/a.js: OK\n")
+
+    def test_write_dev_stdout_writes_to_stdout(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.note_test("test/a.js")
+        r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        with patch("pathlib.Path.write_text") as write_text:
+            r.write("/dev/stdout", output_format="tests")
+        write_text.assert_called_once_with("test/a.js: OK\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

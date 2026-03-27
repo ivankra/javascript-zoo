@@ -63,8 +63,8 @@ class ErrorType(StrEnum):
 
 
 @dataclasses.dataclass
-class RunMetrics:
-    """Normalized process resource metrics.
+class RunRusage:
+    """Normalized process resource usage metrics.
 
     Populated from resource.getrusage(RUSAGE_CHILDREN) deltas.
     Fields are None when the measurement was not available.
@@ -79,7 +79,7 @@ class RunMetrics:
     ctx_switches_involuntary: int | None = None
 
 
-_RUN_METRICS_FIELDS = frozenset(f.name for f in dataclasses.fields(RunMetrics))
+_RUN_RUSAGE_FIELDS = frozenset(f.name for f in dataclasses.fields(RunRusage))
 
 
 @dataclasses.dataclass
@@ -117,8 +117,8 @@ class RunResult:
     test_path: str | None = None
     # Raw subprocess return code; negative means terminated by signal (-N → signal N).
     exit_code: int | None = None
-    # Resource metrics from rusage.
-    metrics: RunMetrics = dataclasses.field(default_factory=RunMetrics)
+    # Resource usage metrics from rusage.
+    rusage: RunRusage = dataclasses.field(default_factory=RunRusage)
     # Benchmark-specific numeric scores extracted from output.
     benchmarks: dict[str, int | float | None] = dataclasses.field(default_factory=dict)
     tags: Tags | None = None
@@ -176,10 +176,10 @@ class RunResult:
                 values["verdict"] = Verdict(str(values["verdict"]))
             if values.get("error_type") is not None:
                 values["error_type"] = ErrorType(str(values["error_type"]))
-            if "metrics" in values and isinstance(values["metrics"], dict):
-                values["metrics"] = RunMetrics(**{
-                    k: v for k, v in values["metrics"].items()
-                    if k in _RUN_METRICS_FIELDS
+            if "rusage" in values and isinstance(values["rusage"], dict):
+                values["rusage"] = RunRusage(**{
+                    k: v for k, v in values["rusage"].items()
+                    if k in _RUN_RUSAGE_FIELDS
                 })
             return cls(**values)
         except (TypeError, ValueError) as e:
@@ -305,7 +305,7 @@ class Runner:
         if len(stderr) > self.config.output_limit:
             stderr = stderr[: self.config.output_limit] + "\n..."
 
-        metrics = RunMetrics(
+        rusage = RunRusage(
             real_time=wall,
             user_time=max(0.0, float(ru_after.ru_utime - ru_before.ru_utime)),
             sys_time=max(0.0, float(ru_after.ru_stime - ru_before.ru_stime)),
@@ -317,7 +317,7 @@ class Runner:
         peak_watchdog = watchdog.peak_rss_kb if watchdog else 0
         peak_rusage = int(ru_after.ru_maxrss) if ru_after.ru_maxrss > 0 else 0
         if peak_watchdog or peak_rusage:
-            metrics.max_rss_kb = max(peak_watchdog, peak_rusage)
+            rusage.max_rss_kb = max(peak_watchdog, peak_rusage)
 
         run = RunResult(
             run_id=run_id,
@@ -327,7 +327,7 @@ class Runner:
             stdout=stdout,
             stderr=stderr,
             exit_code=proc.returncode if proc is not None else None,
-            metrics=metrics,
+            rusage=rusage,
             test_path=test_path,
             script_path=script_path,
             build_metadata=self.config.build_metadata,

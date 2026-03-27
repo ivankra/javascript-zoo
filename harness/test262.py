@@ -249,6 +249,8 @@ def main() -> None:
                    help="Stop after running N tests")
     p.add_argument("--no-probe", action="store_true", default=False,
                    help="Skip engine probing before test run")
+    p.add_argument("--report-rusage", action=argparse.BooleanOptionalAction, default=True,
+                   help="Include rusage section in JSON output (default: enabled)")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
@@ -273,7 +275,13 @@ def main() -> None:
         assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
 
-    reporter = Reporter(engine, verbose=args.verbose, test262=True, test262_dir=test262_dir)
+    reporter = Reporter(
+        engine,
+        verbose=args.verbose,
+        test262=True,
+        test262_dir=test262_dir,
+        report_rusage=args.report_rusage,
+    )
 
     # Probe engine and harness capabilities
     if not args.no_probe and args.output and args.output_format == "json":

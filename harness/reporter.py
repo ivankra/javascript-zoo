@@ -126,6 +126,7 @@ class Reporter:
         test262: bool = False,
         test262_dir: Path | None = None,
         probes: dict[str, str] | None = None,
+        report_rusage: bool = True,
     ) -> None:
         self._engine = engine
         self._verbose = verbose
@@ -148,6 +149,7 @@ class Reporter:
         self._dir_failed_tests: dict[str, list[str]] = {}
         self._dir_next_index: int = 0
         self._probes = probes
+        self._report_rusage = report_rusage
 
     @property
     def results(self) -> list[RunResult]:
@@ -188,7 +190,7 @@ class Reporter:
         self._results.append(run)
         # Inline per-test output
         if self._verbose >= 1:
-            t = f" {run.metrics.real_time * 1000:.2f}ms" if run.metrics.real_time else ""
+            t = f" {run.rusage.real_time * 1000:.2f}ms" if run.rusage.real_time else ""
             if run.verdict is Verdict.FAILED:
                 msg = f"{run.run_id}: {run.verdict_message()[:120]}{t}"
                 if self._use_color:
@@ -449,7 +451,7 @@ class Reporter:
         return "\n".join(lines) if any_data else ""
 
     def format_to_json(self) -> str:
-        """Format results as JSON with summary, per-test statuses, and metrics."""
+        """Format results as JSON with summary, per-test statuses, and rusage."""
         results = self._results
         engine = self._engine
 
@@ -458,10 +460,10 @@ class Reporter:
         for r in results:
             assert r.test_id is not None
             key = r.test_id
-            rss = r.metrics.max_rss_kb or 0
+            rss = r.rusage.max_rss_kb or 0
             if rss > per_test_rss.get(key, 0):
                 per_test_rss[key] = rss
-            t = r.metrics.real_time or 0
+            t = r.rusage.real_time or 0
             if t > per_test_time.get(key, 0):
                 per_test_time[key] = t
 
@@ -471,17 +473,17 @@ class Reporter:
         top_time = sorted(per_test_time.items(), key=lambda x: -x[1])[:20]
         top_time = [(path, t) for path, t in top_time if t]
 
-        peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
+        peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
 
-        metrics: dict[str, Any] = {}
+        rusage: dict[str, Any] = {}
         if self._wall_sec:
-            metrics["total_time_s"] = round(self._wall_sec, 3)
+            rusage["total_time_s"] = round(self._wall_sec, 3)
         if peak_rss_kb:
-            metrics["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
+            rusage["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
         if top_time:
-            metrics["test_time_s"] = {path: round(t, 3) for path, t in top_time}
+            rusage["test_time_s"] = {path: round(t, 3) for path, t in top_time}
         if top_rss:
-            metrics["test_rss_mb"] = {path: round(kb / 1024, 1) for path, kb in top_rss}
+            rusage["test_rss_mb"] = {path: round(kb / 1024, 1) for path, kb in top_rss}
 
         data: dict[str, Any] = {}
         if engine.build_metadata:
@@ -497,8 +499,8 @@ class Reporter:
             }
         data["summary"] = self._summary_json()
         data["tests"] = _build_test_statuses(results, list(self._input_order))
-        if metrics:
-            data["metrics"] = metrics
+        if self._report_rusage and rusage:
+            data["rusage"] = rusage
         return self.format_json_value(data) + "\n"
 
     def format_to_text(self, output_format: str = "tests") -> str:
@@ -543,6 +545,12 @@ class Reporter:
         if not output_format:
             output_format = "json" if path.suffix == ".json" else "tests"
         out = self.format_to_json() if output_format == "json" else self.format_to_text(output_format=output_format)
+        if str(path) == "-":
+            sys.stdout.write(out)
+            return
+        if str(path).startswith("/dev/"):
+            path.write_text(out, encoding="utf-8")
+            return
         tmp = path.with_suffix(path.suffix + ".tmp")
         try:
             tmp.write_text(out, encoding="utf-8")
@@ -591,7 +599,7 @@ class Reporter:
                 print(edition_table)
                 print()
 
-        peak_rss_kb = max((r.metrics.max_rss_kb or 0) for r in results) if results else 0
+        peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
 
         if results or n_skipped:
             total = test_ok + test_fail
