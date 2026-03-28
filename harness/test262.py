@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
-import importlib
 import itertools
 import os
 import random
@@ -38,7 +37,7 @@ from harness import (
 )
 from harness.util import HelpFormatter
 
-test262_probe = importlib.import_module("harness.test262-probe")
+from harness import probe as test262_probe
 
 DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
 DEFAULT_TIMEOUT_SEC = 60.0
