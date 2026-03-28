@@ -287,6 +287,7 @@ engine262:
     - *exception_colon_message
     - *uncaught_exception_colon_message  # main.js wrapper
   flags:
+    - --features=all
     - { if: 'flags:module', then: '--module' }
 
 epimetheus:
@@ -301,6 +302,7 @@ epimetheus:
 escargot:
   console_log: print
   flags:
+    - { if: 'flags:CanBlockIsFalse', then: '--canblock-is-false' }
     - { if: 'flags:module', then: '--module' }
   multiple_scripts_with_shared_realm: true
   errors_re:
@@ -370,24 +372,13 @@ graaljs:
     - *exception_colon_message
   flags:
     - --experimental-options
-    - --js.test262-mode=true
     - --js.global-arguments=false  # required for some test262 tests
-    - --js.shebang=true
-    - --js.performance=true
+    - --js.performance
+    - --js.shebang
+    - --js.test262-mode
     # Enable experimental javascript features
-    - --js.class-fields=true
-    - --js.regexp-unicode-sets=true
-    - --js.source-phase-imports=true
-    - --js.async-context=true
-    - --js.async-iterator-helpers=true
-    - --js.atomics-wait-async=true
-    - --js.error-cause=true
-    - --js.iterator-helpers=true
-    - --js.new-set-methods=true
-    - --js.shadow-realm=true
-    - --js.temporal=true
-    - --js.top-level-await=true
-    - --js.worker=true
+    - shell: |
+        $BINARY --help:all | egrep -o '(--js.class-fields|--js.import-attributes|--js.private-fields-in|--js.regexp-match-indices|--js.regexp-unicode-sets|--js.source-phase-imports|--js.async-context|--js.async-iterator-helpers|--js.atomics-wait-async|--js.iterator-helpers|--js.new-set-methods|--js.shadow-realm|--js.temporal|--js.top-level-await|--js.error-cause)'
     - { if: 'flags:CanBlockIsFalse', then: '--js.agent-can-block=false' }
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
 
@@ -407,7 +398,11 @@ hermes: &hermes
   bench_flags:
     - -O  # Expensive optimizations
     - -w  # Disable all warnings
-  console_log: print
+    - -enable-hermes-internal
+    - if: test262
+      then:
+        shell: $BINARY -help-list-hidden | grep -o [-]test262  # Increase compliance with test262
+  console_log: print  # hermes main only has print()
   stderr_replace_re:
     # Syntax errors: "file.js:14:3: error: invalid statement encountered."
     - '([^ ]+[.]js:[0-9]+:[0-9]+: error: .*)': 'SyntaxError \1'
@@ -420,9 +415,7 @@ hermes: &hermes
   prelude:
     - file: engines/hermes/prelude.js
 
-hermes-v1:
-  <<: *hermes
-  console_log: ['console.log', 'print']
+hermes-v1: *hermes
 
 iv-lv5:
   console_log: ['console.log', 'print']
@@ -485,13 +478,10 @@ jsc: &jsc
   errors_re:
     - '^Exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
-    # Enable experimental javascript features
-    - --useExplicitResourceManagement=true
-    - --useImportDefer=true
-    - --useIteratorChunking=true
-    - --useMoreCurrencyDisplayChoices=true
-    - --useShadowRealm=true
-    - --useTemporal=true
+    # Enable experimental JavaScript features advertised by the binary
+    - shell: |
+        $BINARY --options 2>&1 | sed -En 's/^ *(use.*)=false.* \.\.\. *(Enable|Expose).*/--\1=true/p'
+    - { if: 'flags:CanBlockIsFalse', then: '--can-block-is-false' }
     - { if: 'flags:module', then: '-m' }
 
 jsish:
@@ -711,9 +701,9 @@ nova:
   console_log: print
   flags:
     - eval
-    - --no-strict
     - --expose-internals
-    - { if: 'flags:module', then: '--module' }
+    - { if: 'flags:CanBlockIsFalse', then: '--no-block' }
+    - { if: 'flags:module', then: '--module', else: '--no-strict' }
   crash_re:
     - *rust_crash_re
   stderr_replace_re:
@@ -919,29 +909,9 @@ spidermonkey: &spidermonkey
     # "uncaught exception: Error: x"
     - '^uncaught exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
-    # Enable experimental javascript features
-    - --enable-iterator-helpers
-    - --enable-async-iterator-helpers
-    # - --enable-shadow-realms
-    - --enable-symbols-as-weakmap-keys
-    # - --enable-uint8array-base64
-    - --enable-top-level-await
-    - --enable-iterator-sequencing
-    # - --enable-math-sumprecise
-    - --enable-error-iserror
-    - --enable-iterator-range
-    - --enable-joint-iteration
-    - --enable-atomics-pause
-    - --enable-explicit-resource-management
-    - --enable-temporal
-    # - --enable-upsert
-    - --enable-import-bytes
-    - --enable-promise-allkeyed
-    - --enable-arraybuffer-immutable
-    - --enable-iterator-chunking
-    - --enable-iterator-join
-    - --enable-source-phase-imports
-    - --enable-legacy-regexp
+    # Enable experimental JavaScript features advertised by the binary
+    - shell: |
+        $BINARY --help | egrep -o '^ *--enable-[^ ]+' | egrep -v '(--enable-avx|--enable-parallel-marking|--enable-ic-frame-pointers|--enable-legacy-regexp)'
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
   prelude:
     - file: engines/spidermonkey/prelude.js
@@ -1111,7 +1081,7 @@ wine: *jscript
 xs: &xs
   console_log: print
   flags:
-    - { if: 'flags:module', then: '-m' }
+    - { if: 'flags:module', then: '-m', else: '-s' }
   multiple_scripts_with_shared_realm: true
   stderr_replace_re:
     - '^Error: unhandled rejection$': ''
