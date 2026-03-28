@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import glob
 import json
 import os
@@ -25,6 +26,17 @@ UNAME_TO_GOARCH_MAP = {
     "riscv64": "riscv64",
     "s390x": "s390x",
 }
+
+
+class HelpFormatter(argparse.HelpFormatter):
+    def _format_action_invocation(self, action: argparse.Action) -> str:
+        if isinstance(action, argparse.BooleanOptionalAction):
+            opts = [opt for opt in action.option_strings if opt.startswith("--")]
+            if len(opts) == 2:
+                positive = next((opt for opt in opts if not opt.startswith("--no-")), opts[0])
+                if positive.startswith("--"):
+                    return f"--[no-]{positive[2:]}"
+        return super()._format_action_invocation(action)
 
 
 def docker_arch_name() -> str:

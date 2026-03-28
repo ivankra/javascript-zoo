@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from harness import Annotator, EngineConfig, Reporter, RunResult, Runner, Tags, iterate_js_files
+from harness.util import HelpFormatter
 
 CONFORMANCE_DIR = REPO_ROOT / "conformance"
 PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
@@ -76,7 +77,10 @@ def run_one(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run conformance suites for a JS engine.")
+    parser = argparse.ArgumentParser(
+        description="Run conformance suites for a JS engine.",
+        formatter_class=HelpFormatter,
+    )
     parser.add_argument("engine", help="Engine binary path or name")
     parser.add_argument("suites", nargs="*", help="Suite dirs/globs (default: from config)")
     parser.add_argument("-o", "--output", help="Write results to file")
@@ -84,11 +88,8 @@ def main() -> None:
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     parser.add_argument("-t", "--timeout", type=float, default=TIMEOUT_SEC)
     parser.add_argument(
-        "--output-format", choices=["tests", "runs", "json"], default=None, metavar="FMT",
-        help="""
-            Output format: 'tests' (one line per test file),
-            'runs' (one line per strict/sloppy mode run) or
-            'json' (default for *.json, else tests).""")
+        "--json", action=argparse.BooleanOptionalAction, default=None, dest="report_json",
+        help="Enable JSON output; default autodetects from -o suffix")
 
     args = parser.parse_args()
 
@@ -104,7 +105,12 @@ def main() -> None:
 
     runner = Runner(cfg)
     annotator = Annotator(cfg)
-    reporter = Reporter(cfg, verbose=args.verbose)
+    reporter = Reporter(
+        cfg,
+        output_file=args.output,
+        verbose=args.verbose,
+        report_json=args.report_json,
+    )
     for rel in tests:
         reporter.note_test(rel)
     multi_dir = len(set(os.path.dirname(rel) for rel in tests)) >= 2
@@ -133,7 +139,7 @@ def main() -> None:
     reporter.print_summary(wall_sec=wall_sec)
 
     if args.output:
-        reporter.write(args.output, output_format=args.output_format)
+        reporter.write()
 
 
 if __name__ == "__main__":

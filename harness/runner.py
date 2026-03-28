@@ -78,6 +78,14 @@ class RunRusage:
     ctx_switches_voluntary: int | None = None
     ctx_switches_involuntary: int | None = None
 
+    def to_json(self) -> dict[str, Any]:
+        data = dataclasses.asdict(self)
+        for key in ("user_time", "sys_time", "real_time"):
+            value = data.get(key)
+            if value is not None:
+                data[key] = round(value, 3)
+        return data
+
 
 _RUN_RUSAGE_FIELDS = frozenset(f.name for f in dataclasses.fields(RunRusage))
 

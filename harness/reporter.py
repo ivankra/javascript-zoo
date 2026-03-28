@@ -6,6 +6,7 @@ from __future__ import annotations
 import dataclasses
 import json
 import os
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -72,30 +73,37 @@ def format_summary_line(
         counts += f"; {skip} skipped"
     return f"{label}: {counts}"
 
+def group_run_results(
+    results: list[RunResult],
+    test_order: list[str],
+    group_by: str = "test_id",
+) -> dict[str, Any]:
+    """Group run results into test or scenario status maps."""
+    if group_by == "test_id" or test_order:
+        for run in results:
+            if run.test_id is None:
+                raise ValueError("run result missing test_id")
 
-def format_output_line(run: RunResult) -> str:
-    """Format one terse line for text output."""
-    return f"{run.run_id}: {run.verdict_message()}"
+    ordered = results
+    if test_order:
+        n = len(test_order)
+        order_map = {test_id: i for i, test_id in enumerate(test_order)}
+        ordered = sorted(results, key=lambda r: (
+            order_map.get(r.test_id or "", n),
+            getattr(r, group_by) or "",
+        ))
 
+    grouped: dict[str, list[RunResult]] = {}
+    for run in ordered:
+        grouped.setdefault(getattr(run, group_by) or "", []).append(run)
+    if group_by == "run_id":
+        return {
+            scenario_id: runs[-1].verdict_message()
+            for scenario_id, runs in grouped.items()
+        }
 
-
-def _build_test_statuses(results: list[RunResult], test_order: list[str]) -> dict[str, Any]:
-    """Build per-test status map, collapsing identical mode results.
-
-    Uses test_order for output ordering when available; falls back to
-    the order results were recorded.
-    """
-    file_runs: dict[str, list[RunResult]] = {}
-    for run in results:
-        assert run.test_id is not None
-        fp = run.test_id
-        file_runs.setdefault(fp, []).append(run)
-    order = test_order if test_order else list(file_runs.keys())
     statuses: dict[str, Any] = {}
-    for fp in order:
-        runs = file_runs.get(fp)
-        if not runs:
-            continue
+    for fp, runs in grouped.items():
         messages = [run.verdict_message() for run in runs]
         if len(set(messages)) == 1:
             statuses[fp] = messages[0]
@@ -104,8 +112,6 @@ def _build_test_statuses(results: list[RunResult], test_order: list[str]) -> dic
             statuses[fp] = dict(sorted(by_mode.items()))
     return statuses
 
-
-# ── Reporter ──────────────────────────────────────────────────────────────────
 
 class Reporter:
     """Accumulates test results; prints summaries and writes output files.
@@ -122,11 +128,15 @@ class Reporter:
         self,
         engine: EngineConfig,
         *,
+        output_file: str | Path | None = None,
         verbose: int = 0,
         test262: bool = False,
         test262_dir: Path | None = None,
         probes: dict[str, str] | None = None,
-        report_rusage: bool = True,
+        report_rusage: str = "no",
+        report_json: bool | None = None,
+        report_tests: bool | None = None,
+        report_runs: bool | None = None,
     ) -> None:
         self._engine = engine
         self._verbose = verbose
@@ -149,11 +159,30 @@ class Reporter:
         self._dir_failed_tests: dict[str, list[str]] = {}
         self._dir_next_index: int = 0
         self._probes = probes
-        self._report_rusage = report_rusage
+        if report_rusage in ("all", "no"):
+            self._report_rusage_mode, self._report_rusage_top_n = report_rusage, 0
+        else:
+            m = re.fullmatch(r"top(\d+)", report_rusage)
+            if not m:
+                raise ValueError(f"invalid rusage mode: {report_rusage!r}")
+            self._report_rusage_mode, self._report_rusage_top_n = "top", int(m.group(1))
+        self._output_file = Path(output_file) if output_file is not None else None
+        self._report_json = report_json if report_json is not None else bool(
+            self._output_file and self._output_file.suffix == ".json"
+        )
+        self._report_tests = report_tests if report_tests is not None else True
+        self._report_runs = report_runs if report_runs is not None else False
+        if not self._report_json and self._report_tests and self._report_runs:
+            raise ValueError("text output cannot include both tests and runs; use --report-json or disable one")
+        if not self._report_json and not self._report_tests and not self._report_runs:
+            raise ValueError("text output must include either tests or runs")
 
     @property
     def results(self) -> list[RunResult]:
         return self._results
+
+    def is_json_output(self) -> bool:
+        return self._report_json
 
     def note_test(self, test_id: str) -> None:
         """Record a test ID in discovery order (before results arrive)."""
@@ -297,11 +326,11 @@ class Reporter:
                     line += f"; {failed_text}"
             print(f"  {line}" if header else line, flush=True)
 
-    # ── JSON formatting ──────────────────────────────────────────────────────
-
     _INLINE_DICT_KEYS = frozenset({
         "ok", "ok_percent", "fail", "skip", "strict", "sloppy", "if", "then",
-        "else", "shell"
+        "else", "shell", "user_time", "sys_time", "real_time", "max_rss_kb",
+        "io_in_blocks", "io_out_blocks", "ctx_switches_voluntary",
+        "ctx_switches_involuntary"
     })
 
     @staticmethod
@@ -322,8 +351,6 @@ class Reporter:
                      for k, v in value.items()]
             return "{\n" + ",\n".join(items) + "\n" + pad + "}"
         if isinstance(value, list):
-            if not value or all(isinstance(v, (int, float, str)) for v in value):
-                return json.dumps(value)
             items = [f'{inner}{Reporter.format_json_value(v, indent + 1)}' for v in value]
             return "[\n" + ",\n".join(items) + "\n" + pad + "]"
         return json.dumps(value)
@@ -450,40 +477,39 @@ class Reporter:
 
         return "\n".join(lines) if any_data else ""
 
-    def format_to_json(self) -> str:
-        """Format results as JSON with summary, per-test statuses, and rusage."""
+    def to_json(self) -> str:
+        """Format results as JSON with summary, per-test/per-scenario statuses, and rusage."""
         results = self._results
         engine = self._engine
 
-        per_test_rss: dict[str, float] = {}
-        per_test_time: dict[str, float] = {}
-        for r in results:
-            assert r.test_id is not None
-            key = r.test_id
-            rss = r.rusage.max_rss_kb or 0
-            if rss > per_test_rss.get(key, 0):
-                per_test_rss[key] = rss
-            t = r.rusage.real_time or 0
-            if t > per_test_time.get(key, 0):
-                per_test_time[key] = t
-
-        top_rss = sorted(per_test_rss.items(), key=lambda x: -x[1])[:20]
-        top_rss = [(path, kb) for path, kb in top_rss if kb]
-
-        top_time = sorted(per_test_time.items(), key=lambda x: -x[1])[:20]
-        top_time = [(path, t) for path, t in top_time if t]
-
-        peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
-
         rusage: dict[str, Any] = {}
-        if self._wall_sec:
-            rusage["total_time_s"] = round(self._wall_sec, 3)
-        if peak_rss_kb:
-            rusage["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
-        if top_time:
-            rusage["test_time_s"] = {path: round(t, 3) for path, t in top_time}
-        if top_rss:
-            rusage["test_rss_mb"] = {path: round(kb / 1024, 1) for path, kb in top_rss}
+        if self._report_rusage_mode == "top":
+            run_rss = [(r.run_id or "", r.rusage.max_rss_kb or 0) for r in results]
+            run_rss = sorted(((run_id, kb) for run_id, kb in run_rss if kb), key=lambda x: (-x[1], x[0]))
+            run_wall_time = [(r.run_id or "", r.rusage.real_time or 0) for r in results]
+            run_wall_time = sorted(((run_id, t) for run_id, t in run_wall_time if t), key=lambda x: (-x[1], x[0]))
+
+            run_rss = run_rss[:self._report_rusage_top_n]
+            run_wall_time = run_wall_time[:self._report_rusage_top_n]
+
+            peak_rss_kb = max((r.rusage.max_rss_kb or 0) for r in results) if results else 0
+
+            if self._wall_sec:
+                rusage["total_time_s"] = round(self._wall_sec, 3)
+            if peak_rss_kb:
+                rusage["peak_rss_mb"] = round(peak_rss_kb / 1024, 1)
+            if run_wall_time:
+                rusage["wall_time_s"] = {run_id: round(t, 3) for run_id, t in run_wall_time}
+            if run_rss:
+                rusage["rss_mb"] = {run_id: round(kb / 1024, 1) for run_id, kb in run_rss}
+        elif self._report_rusage_mode == "all":
+            run_ids = [r.run_id for r in results]
+            assert all(run_ids), "rusage=all requires run_id"
+            assert len(run_ids) == len(set(run_ids)), "rusage=all requires unique run_id"
+            rusage = {}
+            for r in results:
+                assert r.run_id is not None
+                rusage[r.run_id] = r.rusage.to_json()
 
         data: dict[str, Any] = {}
         if engine.build_metadata:
@@ -498,27 +524,27 @@ class Reporter:
                 "revision_date": self._test262_revision.revision_date,
             }
         data["summary"] = self._summary_json()
-        data["tests"] = _build_test_statuses(results, list(self._input_order))
-        if self._report_rusage and rusage:
+        if self._report_tests:
+            data["tests"] = group_run_results(results, list(self._input_order))
+        if self._report_runs:
+            data["scenarios"] = group_run_results(results, list(self._input_order), "run_id")
+        if self._report_rusage_mode != "no" and rusage:
             data["rusage"] = rusage
         return self.format_json_value(data) + "\n"
 
-    def format_to_text(self, output_format: str = "tests") -> str:
-        """Format results as text.
-
-        output_format: "text"/"tests" or "runs".
-        """
+    def to_text(self) -> str:
+        """Format results as text."""
         lines: list[str] = []
         if self._engine.build_metadata:
             lines.append(f"Metadata: {json.dumps(self._engine.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
-        if output_format == "runs":
+        if self._report_runs:
             results = self._results
             if self._input_order:
                 n = len(self._input_order)
                 results = sorted(results, key=lambda r: self._input_order.get(r.test_id or "", n))
-            lines.extend(format_output_line(r) for r in results)
+            lines.extend(f"{r.run_id}: {r.verdict_message()}" for r in results)
         else:
-            statuses = _build_test_statuses(self._results, list(self._input_order))
+            statuses = group_run_results(self._results, list(self._input_order))
             for fp, status in statuses.items():
                 if isinstance(status, str):
                     lines.append(f"{fp}: {status}")
@@ -526,25 +552,21 @@ class Reporter:
                     lines.append(f"{fp}: {json.dumps(status, ensure_ascii=False)}")
         return "\n".join(lines) + "\n" if lines else ""
 
-    def write(self, path: str | Path, *, output_format: str | None = None, wall_sec: float = 0) -> None:
+    def write(self, *, wall_sec: float = 0) -> None:
         """Write results to file.
 
-        Formats:
-          * "tests" (or "text" / "simple"): one line per test file,
-            collapsing verdicts for sloppy and strict modes when identical.
-          * "runs": one line per run/scenario (`filename[.mode].js: verdict`).
-          * "json": structured output.
-
-        Default format is "tests", or "json" if writing to a *.json file.
+        JSON output may include tests and/or scenarios sections.
+        Text output can include either tests or scenarios, but not both.
         """
         if wall_sec:
             self._wall_sec = wall_sec
-        path = Path(path)
-        if output_format in ("text", "simple"):
-            output_format = "tests"
-        if not output_format:
-            output_format = "json" if path.suffix == ".json" else "tests"
-        out = self.format_to_json() if output_format == "json" else self.format_to_text(output_format=output_format)
+        if self._output_file is None:
+            raise ValueError("output_file is not configured")
+        path = self._output_file
+        if self._report_json:
+            out = self.to_json()
+        else:
+            out = self.to_text()
         if str(path) == "-":
             sys.stdout.write(out)
             return

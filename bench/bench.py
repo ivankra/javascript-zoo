@@ -100,7 +100,7 @@ class BenchResult:
             self.time = START_TIME
 
         error = run.verdict_message() if run.verdict is Verdict.FAILED else None
-        m = run.metrics
+        m = run.rusage
         for key, score in run.benchmarks.items():
             if key not in self.benchmarks:
                 self.benchmarks[key] = BenchmarkEntry()
@@ -221,7 +221,7 @@ class RepSpec:
             return
 
         limit_sec = int(spec[:-1])
-        real_time = run.metrics.real_time if run is not None else None
+        real_time = run.rusage.real_time if run is not None else None
         if not real_time or real_time < 0.01 or real_time > limit_sec:
             self.limits[basename] = 1
         else:

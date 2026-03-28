@@ -12,7 +12,7 @@ from unittest.mock import patch
 from harness.config import EngineConfig
 from harness.frontmatter import Frontmatter
 from harness.tags import Tags
-from harness.reporter import Reporter
+from harness.reporter import Reporter, group_run_results
 from harness.runner import RunResult, RunRusage, Verdict
 
 
@@ -269,26 +269,59 @@ class TestTestOrder(unittest.TestCase):
         r.note_test("a.js")  # duplicate
         self.assertEqual(list(r._input_order), ["c.js", "a.js", "b.js"])
 
+    def test_group_run_results_uses_test_order_then_appends_leftovers(self):
+        runs = [
+            _run("test/c.strict.js", Verdict.OK, test_id="test/c.js"),
+            _run("test/a.strict.js", Verdict.OK, test_id="test/a.js"),
+            _run("test/b.strict.js", Verdict.OK, test_id="test/b.js"),
+        ]
+        grouped = group_run_results(
+            runs,
+            ["test/a.js", "test/b.js"],
+        )
+        self.assertEqual(list(grouped), ["test/a.js", "test/b.js", "test/c.js"])
+
+    def test_group_run_results_rejects_missing_test_id(self):
+        run = _run("test/a.strict.js", Verdict.OK, test_id="test/a.js")
+        run.test_id = None
+        with self.assertRaisesRegex(ValueError, "missing test_id"):
+            group_run_results([run], [])
+
 
 class TestReporterRusageJson(unittest.TestCase):
-    def test_json_includes_rusage_by_default(self):
+    def test_json_omits_rusage_by_default(self):
         r = Reporter(EngineConfig(binary_path="/fake/js"))
         r.note_test("test/a.js")
         r.add_file([
             _run(
-                "test/a.js",
+                "test/a.strict.js",
                 Verdict.OK,
                 test_id="test/a.js",
                 rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
             )
         ])
-        out = json.loads(r.format_to_json())
+        out = json.loads(r.to_json())
+        self.assertNotIn("rusage", out)
+
+    def test_json_reports_top_rusage_when_requested(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top20")
+        r.note_test("test/a.js")
+        r.add_file([
+            _run(
+                "test/a.strict.js",
+                Verdict.OK,
+                test_id="test/a.js",
+                rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
+            )
+        ])
+        out = json.loads(r.to_json())
         self.assertIn("rusage", out)
         self.assertEqual(out["rusage"]["peak_rss_mb"], 2.0)
-        self.assertEqual(out["rusage"]["test_time_s"]["test/a.js"], 1.25)
+        self.assertEqual(out["rusage"]["wall_time_s"]["test/a.strict.js"], 1.25)
+        self.assertEqual(out["rusage"]["rss_mb"]["test/a.strict.js"], 2.0)
 
     def test_json_omits_rusage_when_disabled(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage=False)
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="no")
         r.note_test("test/a.js")
         r.add_file([
             _run(
@@ -298,26 +331,129 @@ class TestReporterRusageJson(unittest.TestCase):
                 rusage=RunRusage(real_time=1.25, max_rss_kb=2048),
             )
         ])
-        out = json.loads(r.format_to_json())
+        out = json.loads(r.to_json())
         self.assertNotIn("rusage", out)
+
+    def test_json_reports_all_runs_when_requested(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="all")
+        r.note_test("test/a.js")
+        r.add_file([
+            _run("test/a.strict.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("test/a.sloppy.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+        ])
+        out = json.loads(r.to_json())
+        self.assertEqual(out["rusage"]["test/a.strict.js"]["real_time"], 1.25)
+        self.assertEqual(out["rusage"]["test/a.strict.js"]["max_rss_kb"], 2048)
+        self.assertEqual(out["rusage"]["test/a.sloppy.js"]["real_time"], 0.5)
+        self.assertEqual(out["rusage"]["test/a.sloppy.js"]["max_rss_kb"], 1024)
+
+    def test_json_reports_all_runs_requires_unique_run_id(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="all")
+        r.add_file([
+            _run("run/a.js", Verdict.OK, test_id="test/a.js"),
+            _run("run/a.js", Verdict.OK, test_id="test/b.js"),
+        ])
+        with self.assertRaisesRegex(AssertionError, "unique run_id"):
+            r.to_json()
+
+    def test_json_reports_rusage_sorted_descending(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top20")
+        r.add_file([
+            _run("run/a.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+            _run("run/b.js", Verdict.OK, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
+        ])
+        out = json.loads(r.to_json())
+        self.assertEqual(list(out["rusage"]["wall_time_s"]), ["run/b.js", "run/c.js", "run/a.js"])
+        self.assertEqual(list(out["rusage"]["rss_mb"]), ["run/b.js", "run/c.js", "run/a.js"])
+
+    def test_json_reports_top_n_runs_when_requested(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top2")
+        r.add_file([
+            _run("run/a.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
+            _run("run/b.js", Verdict.OK, test_id="test/b.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
+            _run("run/c.js", Verdict.OK, test_id="test/c.js", rusage=RunRusage(real_time=0.75, max_rss_kb=1536)),
+        ])
+        out = json.loads(r.to_json())
+        self.assertEqual(list(out["rusage"]["wall_time_s"]), ["run/b.js", "run/c.js"])
+        self.assertEqual(list(out["rusage"]["rss_mb"]), ["run/b.js", "run/c.js"])
+
+
+class TestReporterOutputSelection(unittest.TestCase):
+    def test_json_defaults_to_tests_only_for_json_path(self):
+        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r.note_test("test/a.js")
+        r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        out = json.loads(r.to_json())
+        self.assertIn("tests", out)
+        self.assertNotIn("scenarios", out)
+
+    def test_json_can_include_scenarios_and_tests(self):
+        r = Reporter(
+            EngineConfig(binary_path="/fake/js"),
+            output_file="out.json",
+            report_json=True,
+            report_tests=True,
+            report_runs=True,
+        )
+        r.note_test("test/a.js")
+        r.add_file([_run("test/a.strict.js", Verdict.OK, test_id="test/a.js", mode="strict")])
+        out = json.loads(r.to_json())
+        self.assertIn("tests", out)
+        self.assertIn("scenarios", out)
+        self.assertEqual(out["scenarios"]["test/a.strict.js"], "OK")
+
+    def test_json_can_omit_both_tests_and_runs(self):
+        r = Reporter(
+            EngineConfig(binary_path="/fake/js"),
+            output_file="out.json",
+            report_json=True,
+            report_tests=False,
+            report_runs=False,
+        )
+        r.note_test("test/a.js")
+        r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
+        out = json.loads(r.to_json())
+        self.assertNotIn("tests", out)
+        self.assertNotIn("scenarios", out)
+
+    def test_text_cannot_include_both_tests_and_runs(self):
+        with self.assertRaisesRegex(ValueError, "text output cannot include both tests and runs"):
+            Reporter(
+                EngineConfig(binary_path="/fake/js"),
+                output_file="out.txt",
+                report_json=False,
+                report_tests=True,
+                report_runs=True,
+            )
+
+    def test_text_cannot_omit_both_tests_and_runs(self):
+        with self.assertRaisesRegex(ValueError, "text output must include either tests or runs"):
+            Reporter(
+                EngineConfig(binary_path="/fake/js"),
+                output_file="out.txt",
+                report_json=False,
+                report_tests=False,
+                report_runs=False,
+            )
 
 
 class TestReporterWriteStreams(unittest.TestCase):
     def test_write_dash_writes_to_stdout(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r = Reporter(EngineConfig(binary_path="/fake/js"), output_file="-")
         r.note_test("test/a.js")
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         stdout = io.StringIO()
         with contextlib.redirect_stdout(stdout):
-            r.write("-", output_format="tests")
+            r.write()
         self.assertEqual(stdout.getvalue(), "test/a.js: OK\n")
 
     def test_write_dev_stdout_writes_to_stdout(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"))
+        r = Reporter(EngineConfig(binary_path="/fake/js"), output_file="/dev/stdout")
         r.note_test("test/a.js")
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         with patch("pathlib.Path.write_text") as write_text:
-            r.write("/dev/stdout", output_format="tests")
+            r.write()
         write_text.assert_called_once_with("test/a.js: OK\n", encoding="utf-8")
 
 

@@ -35,6 +35,7 @@ from harness import (
     Verdict,
     iterate_js_files,
 )
+from harness.util import HelpFormatter
 
 test262_probe = importlib.import_module("harness.test262-probe")
 
@@ -200,10 +201,19 @@ def parse_filter_expr(parser: argparse.ArgumentParser, filter_parts: list[str]) 
     return filter_expr
 
 
+def parse_rusage_mode(value: str) -> str:
+    if value in ("all", "no"):
+        return value
+    if re.fullmatch(r"top(\d+)", value):
+        return value
+    raise argparse.ArgumentTypeError(f"invalid rusage mode: {value!r}; expected topN, all, or no")
+
+
 def main() -> None:
     p = argparse.ArgumentParser(
         description="Run test262 conformance suite against a JavaScript engine.",
         usage="%(prog)s [opts] engine [tests]",
+        formatter_class=HelpFormatter,
     )
     p.add_argument("engine", help="Engine binary path or a shell command (e.g. /dist/v8, node, 'node --js-staging')")
     p.add_argument("tests", nargs="*", help="""
@@ -224,12 +234,6 @@ def main() -> None:
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
-    p.add_argument(
-        "--output-format", choices=["tests", "runs", "json"], default=None, metavar="FMT",
-        help="""
-            Output format: 'tests' (one line per test file),
-            'runs' (one line per strict/sloppy mode run) or
-            'json' (default for *.json, else tests).""")
     p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
                    help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
@@ -245,19 +249,24 @@ def main() -> None:
                    help="Exclude " + " and ".join(INTL402_SKIP_PATHS) + " tests")
     p.add_argument("--no-staging", action="store_true", default=False,
                    help="Exclude test/staging tests")
+    p.add_argument("--json", action=argparse.BooleanOptionalAction, default=None, dest="report_json",
+                   help="Enable JSON output (default: enabled if -o *.json)")
+    p.add_argument("--report-tests", action=argparse.BooleanOptionalAction, default=None,
+                   help="Report results grouped by test file, collapsing strict/sloppy when identical (default)")
+    p.add_argument("--report-scenarios", action="store_true", default=False, dest="report_runs",
+                   help="Report results per scenario (one entry per each strict/sloppy mode run)")
+    p.add_argument("--report-rusage", metavar="MODE", type=parse_rusage_mode, default="top10",
+                   help="Report tests resource usage in json: topN, all, or no (default: top10)")
+    p.add_argument("--no-report-rusage", action="store_const", const="no", dest="report_rusage",
+                   help=argparse.SUPPRESS)
     p.add_argument("--limit", type=int, default=0, metavar="N",
                    help="Stop after running N tests")
     p.add_argument("--no-probe", action="store_true", default=False,
                    help="Skip engine probing before test run")
-    p.add_argument("--report-rusage", action=argparse.BooleanOptionalAction, default=True,
-                   help="Include rusage section in JSON output (default: enabled)")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
     filter_expr = parse_filter_expr(p, args.filter)
-
-    if not args.output_format:
-        args.output_format = "json" if (args.output and args.output.endswith(".json")) else "tests"
 
     wall_start = time.monotonic()
 
@@ -277,14 +286,18 @@ def main() -> None:
 
     reporter = Reporter(
         engine,
+        output_file=args.output,
         verbose=args.verbose,
         test262=True,
         test262_dir=test262_dir,
         report_rusage=args.report_rusage,
+        report_json=args.report_json,
+        report_tests=args.report_tests,
+        report_runs=args.report_runs,
     )
 
     # Probe engine and harness capabilities
-    if not args.no_probe and args.output and args.output_format == "json":
+    if not args.no_probe and args.output and reporter.is_json_output():
         for name, result in test262_probe.probe_engine(engine, test262_dir, jobs=args.jobs):
             reporter.add_probe_result(name, result)
         reporter.clear_progress()
@@ -331,10 +344,10 @@ def main() -> None:
         sys.exit(0)
 
     wall_sec = time.monotonic() - wall_start
-    fail_count = reporter.print_summary(wall_sec=wall_sec)
+    reporter.print_summary(wall_sec=wall_sec)
 
     if args.output:
-        reporter.write(args.output, output_format=args.output_format, wall_sec=wall_sec)
+        reporter.write(wall_sec=wall_sec)
 
 
 if __name__ == "__main__":
