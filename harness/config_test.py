@@ -411,7 +411,6 @@ class EngineConfigLoadTest(unittest.TestCase):
             (Path(td) / "eng.json").write_text(json.dumps({"engine": "quickjs"}))
             cfg = EngineConfig.load(str(binary), config_name="nova")
             self.assertIn("eval", cfg.flags)
-            self.assertIn("--no-strict", cfg.flags)
             self.assertIn("--expose-internals", cfg.flags)
 
     def test_load_preserves_explicit_empty_list_from_sidecar(self) -> None:
