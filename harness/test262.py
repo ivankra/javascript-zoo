@@ -9,6 +9,7 @@ import concurrent.futures
 import importlib
 import itertools
 import os
+import random
 import re
 import shlex
 import shutil
@@ -230,6 +231,8 @@ def main() -> None:
         tests with features:Map). Multiple flags are joined with OR.""")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
+    p.add_argument("-l", "--limit", type=int, default=0, metavar="N",
+                   help="Stop after running N tests")
     p.add_argument("-m", "--mode", choices=["all", "strict", "sloppy"], metavar="MODE", default="all",
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
@@ -259,8 +262,8 @@ def main() -> None:
                    help="Report tests resource usage in json: topN, all, or no (default: top10)")
     p.add_argument("--no-report-rusage", action="store_const", const="no", dest="report_rusage",
                    help=argparse.SUPPRESS)
-    p.add_argument("--limit", type=int, default=0, metavar="N",
-                   help="Stop after running N tests")
+    p.add_argument("--shuffle", action="store_true", default=False,
+                   help="Randomize test execution order")
     p.add_argument("--no-probe", action="store_true", default=False,
                    help="Skip engine probing before test run")
     p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
@@ -316,6 +319,9 @@ def main() -> None:
         args.tests or ["test"], root=test_root,
         exclude_re=[re.compile("_FIXTURE")] + exclude_pats,
     )
+    if args.shuffle:
+        tests = list(tests)
+        random.shuffle(tests)
     if args.limit:
         tests = itertools.islice(tests, args.limit)
 
