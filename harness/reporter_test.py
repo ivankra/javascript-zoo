@@ -7,6 +7,7 @@ import unittest
 import json
 import contextlib
 import io
+import os
 from unittest.mock import patch
 
 from harness.config import EngineConfig
@@ -14,6 +15,7 @@ from harness.frontmatter import Frontmatter
 from harness.tags import Tags
 from harness.reporter import Reporter, group_run_results
 from harness.runner import RunResult, RunRusage, Verdict
+from harness.util import FileDiscovery
 
 
 def _run(
@@ -261,13 +263,10 @@ class TestJsonFormatting(unittest.TestCase):
 
 
 class TestTestOrder(unittest.TestCase):
-    def test_note_test_preserves_discovery_order(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"))
-        r.note_test("c.js")
-        r.note_test("a.js")
-        r.note_test("b.js")
-        r.note_test("a.js")  # duplicate
-        self.assertEqual(list(r._input_order), ["c.js", "a.js", "b.js"])
+    def test_discovery_preserves_order(self):
+        d = FileDiscovery.from_list(["c.js", "a.js", "b.js"])
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=d)
+        self.assertEqual(r._test_order(), ["c.js", "a.js", "b.js"])
 
     def test_group_run_results_uses_test_order_then_appends_leftovers(self):
         runs = [
@@ -290,8 +289,7 @@ class TestTestOrder(unittest.TestCase):
 
 class TestReporterRusageJson(unittest.TestCase):
     def test_json_omits_rusage_by_default(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"))
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]))
         r.add_file([
             _run(
                 "test/a.strict.js",
@@ -304,8 +302,7 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertNotIn("rusage", out)
 
     def test_json_reports_top_rusage_when_requested(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="top20")
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="top20")
         r.add_file([
             _run(
                 "test/a.strict.js",
@@ -321,8 +318,7 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertEqual(out["rusage"]["rss_mb"]["test/a.strict.js"], 2.0)
 
     def test_json_omits_rusage_when_disabled(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="no")
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="no")
         r.add_file([
             _run(
                 "test/a.js",
@@ -335,8 +331,7 @@ class TestReporterRusageJson(unittest.TestCase):
         self.assertNotIn("rusage", out)
 
     def test_json_reports_all_runs_when_requested(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), report_rusage="all")
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), report_rusage="all")
         r.add_file([
             _run("test/a.strict.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=1.25, max_rss_kb=2048)),
             _run("test/a.sloppy.js", Verdict.OK, test_id="test/a.js", rusage=RunRusage(real_time=0.5, max_rss_kb=1024)),
@@ -381,8 +376,7 @@ class TestReporterRusageJson(unittest.TestCase):
 
 class TestReporterOutputSelection(unittest.TestCase):
     def test_json_defaults_to_tests_only_for_json_path(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"))
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]))
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         out = json.loads(r.to_json())
         self.assertIn("tests", out)
@@ -391,12 +385,12 @@ class TestReporterOutputSelection(unittest.TestCase):
     def test_json_can_include_scenarios_and_tests(self):
         r = Reporter(
             EngineConfig(binary_path="/fake/js"),
+            discovery=FileDiscovery.from_list(["test/a.js"]),
             output_file="out.json",
             report_json=True,
             report_tests=True,
             report_runs=True,
         )
-        r.note_test("test/a.js")
         r.add_file([_run("test/a.strict.js", Verdict.OK, test_id="test/a.js", mode="strict")])
         out = json.loads(r.to_json())
         self.assertIn("tests", out)
@@ -406,12 +400,12 @@ class TestReporterOutputSelection(unittest.TestCase):
     def test_json_can_omit_both_tests_and_runs(self):
         r = Reporter(
             EngineConfig(binary_path="/fake/js"),
+            discovery=FileDiscovery.from_list(["test/a.js"]),
             output_file="out.json",
             report_json=True,
             report_tests=False,
             report_runs=False,
         )
-        r.note_test("test/a.js")
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         out = json.loads(r.to_json())
         self.assertNotIn("tests", out)
@@ -440,8 +434,7 @@ class TestReporterOutputSelection(unittest.TestCase):
 
 class TestReporterWriteStreams(unittest.TestCase):
     def test_write_dash_writes_to_stdout(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), output_file="-")
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), output_file="-")
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         stdout = io.StringIO()
         with contextlib.redirect_stdout(stdout):
@@ -449,12 +442,41 @@ class TestReporterWriteStreams(unittest.TestCase):
         self.assertEqual(stdout.getvalue(), "test/a.js: OK\n")
 
     def test_write_dev_stdout_writes_to_stdout(self):
-        r = Reporter(EngineConfig(binary_path="/fake/js"), output_file="/dev/stdout")
-        r.note_test("test/a.js")
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=FileDiscovery.from_list(["test/a.js"]), output_file="/dev/stdout")
         r.add_file([_run("test/a.js", Verdict.OK, test_id="test/a.js")])
         with patch("pathlib.Path.write_text") as write_text:
             r.write()
         write_text.assert_called_once_with("test/a.js: OK\n", encoding="utf-8")
+
+
+class TestReporterProgress(unittest.TestCase):
+    def test_progress_uses_count_until_discovery_finishes(self):
+        discovery = FileDiscovery.from_list(["test/Array/from.js"])
+        discovery._done.clear()  # simulate in-progress
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r.add_file([_run("test/Array/from.js", Verdict.FAILED, test_id="test/Array/from.js")])
+        line = r._progress_line()
+        self.assertTrue(line.startswith("[1] "))
+        self.assertIn("0 passed, 1 failed", line)
+        self.assertIn("test/Array/from.js", line)
+        discovery._done.set()  # simulate done
+        line2 = r._progress_line()
+        self.assertTrue(line2.startswith("[100%] "))
+
+    def test_progress_truncates_filename_to_terminal_width(self):
+        discovery = FileDiscovery.from_list(["test/Array/from.js"])
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r.add_file([_run("test/Array/from.js", Verdict.OK, test_id="test/Array/from.js")])
+        with patch("harness.reporter.shutil.get_terminal_size", return_value=os.terminal_size((25, 24))):
+            line = r._progress_line()
+            # Too narrow for filename
+            self.assertNotIn("test/Array/from.js", line)
+            self.assertIn("[100%]", line)
+
+    def test_truncate_left(self):
+        self.assertEqual(Reporter._truncate_left("abcdefgh", 5), "\u2026efgh")
+        self.assertEqual(Reporter._truncate_left("abc", 10), "abc")
+        self.assertEqual(Reporter._truncate_left("abcde", 1), "\u2026")
 
 
 if __name__ == "__main__":

@@ -16,7 +16,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
-from harness import Annotator, EngineConfig, Reporter, RunResult, Runner, Tags, iterate_js_files
+from harness import Annotator, EngineConfig, FileDiscovery, Reporter, RunResult, Runner, Tags
 from harness.util import HelpFormatter
 
 CONFORMANCE_DIR = REPO_ROOT / "conformance"
@@ -99,7 +99,8 @@ def main() -> None:
 
     # Resolve test files from suites or config defaults.
     suites = args.suites or list(cfg.conformance_suite)
-    tests = list(iterate_js_files(suites, root=CONFORMANCE_DIR))
+    discovery = FileDiscovery(suites, root=CONFORMANCE_DIR)
+    tests = discovery.files
     if not tests:
         sys.exit(f"No conformance tests found for patterns: {suites}")
 
@@ -107,15 +108,14 @@ def main() -> None:
     annotator = Annotator(cfg)
     reporter = Reporter(
         cfg,
+        discovery=discovery,
         output_file=args.output,
         verbose=args.verbose,
         report_json=args.report_json,
     )
-    for rel in tests:
-        reporter.note_test(rel)
     multi_dir = len(set(os.path.dirname(rel) for rel in tests)) >= 2
     if multi_dir:
-        reporter.set_expected_dirs(tests)
+        reporter.set_expected_dirs()
 
     wall_start = time.monotonic()
     with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as pool:

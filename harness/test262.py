@@ -6,9 +6,7 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures
-import itertools
 import os
-import random
 import re
 import shlex
 import shutil
@@ -16,7 +14,7 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -25,6 +23,7 @@ from harness import (
     Assembler,
     Annotator,
     EngineConfig,
+    FileDiscovery,
     FilterExpr,
     Frontmatter,
     Reporter,
@@ -33,7 +32,6 @@ from harness import (
     Scenario,
     Tags,
     Verdict,
-    iterate_js_files,
 )
 from harness.util import HelpFormatter
 
@@ -70,12 +68,14 @@ class Executor:
         self._jobs = max(1, jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
-    def run(self, tests: Iterator[str], *, on_test_result: Any = None, on_test_submit: Any = None) -> None:
+    def run(self, tests: Iterable[str], *, on_file_result: Any = None, limit: int = 0) -> None:
         """Submit test files to worker pool, delivering results via callback.
 
-        Callback signature: on_test_result(results: list[RunResult]).
-        on_test_submit(rel_path: str) is called in discovery order as tests are submitted.
+        Callback signature: on_file_result(results: list[RunResult]).
+        Iterates tests lazily — works with FileDiscovery's background queue.
+        limit: stop after this many non-skipped files (0 = unlimited).
         """
+        n_executed = 0
         try:
             with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
                 futs: dict[concurrent.futures.Future[list[RunResult]], str] = {}
@@ -90,8 +90,6 @@ class Executor:
                             except StopIteration:
                                 exhausted = True
                                 break
-                            if on_test_submit:
-                                on_test_submit(rel_path)
                             futs[pool.submit(self._process_file, rel_path)] = rel_path
 
                         if not futs:
@@ -104,8 +102,16 @@ class Executor:
                         for fut in done:
                             futs.pop(fut)
                             file_results = fut.result()
-                            if on_test_result:
-                                on_test_result(file_results)
+                            if on_file_result:
+                                on_file_result(file_results)
+                            if any(r.verdict is not Verdict.SKIPPED for r in file_results):
+                                n_executed += 1
+                                if limit and n_executed >= limit:
+                                    exhausted = True
+                                    for f in futs:
+                                        f.cancel()
+                                    futs.clear()
+                                    break
                 except KeyboardInterrupt:
                     for f in futs:
                         f.cancel()
@@ -286,8 +292,25 @@ def main() -> None:
         assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
 
+    # Start file discovery in background thread (while probes run)
+    exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
+    if args.no_intl:
+        exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
+    if args.no_staging:
+        exclude_pats.extend(re.compile(re.escape(s)) for s in STAGING_SKIP_PATHS)
+    if args.no_annex_b:
+        exclude_pats.extend(re.compile(re.escape(s)) for s in ANNEX_B_SKIP_PATHS)
+
+    discovery = FileDiscovery(
+        args.tests or ["test"], root=test262_dir,
+        exclude_re=[re.compile("_FIXTURE")] + exclude_pats,
+        shuffle=args.shuffle,
+        background=True,
+    )
+
     reporter = Reporter(
         engine,
+        discovery=discovery,
         output_file=args.output,
         verbose=args.verbose,
         test262=True,
@@ -298,31 +321,11 @@ def main() -> None:
         report_runs=args.report_runs,
     )
 
-    # Probe engine and harness capabilities
+    # Probe engine and harness capabilities (discovery runs in parallel)
     if not args.no_probe and args.output and reporter.is_json_output():
         for name, result in test262_probe.probe_engine(engine, test262_dir, jobs=args.jobs):
             reporter.add_probe_result(name, result)
         reporter.clear_progress()
-
-    # Discover test paths (no file I/O)
-    exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
-    if args.no_intl:
-        exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
-    if args.no_staging:
-        exclude_pats.extend(re.compile(re.escape(s)) for s in STAGING_SKIP_PATHS)
-    if args.no_annex_b:
-        exclude_pats.extend(re.compile(re.escape(s)) for s in ANNEX_B_SKIP_PATHS)
-
-    test_root = test262_dir
-    tests = iterate_js_files(
-        args.tests or ["test"], root=test_root,
-        exclude_re=[re.compile("_FIXTURE")] + exclude_pats,
-    )
-    if args.shuffle:
-        tests = list(tests)
-        random.shuffle(tests)
-    if args.limit:
-        tests = itertools.islice(tests, args.limit)
 
     if filter_expr is None and engine.test262_filter:
         filter_expr = parse_filter_expr(p, [engine.test262_filter])
@@ -336,7 +339,7 @@ def main() -> None:
     )
 
     try:
-        executor.run(tests, on_test_result=reporter.add_file, on_test_submit=reporter.note_test)
+        executor.run(discovery, on_file_result=reporter.add_file, limit=args.limit)
     except KeyboardInterrupt:
         reporter.clear_progress()
         print("\nInterrupted")

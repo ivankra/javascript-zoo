@@ -7,13 +7,16 @@ import argparse
 import glob
 import json
 import os
+import queue
+import random
 import re
 import shutil
 import subprocess
 import sys
 import tempfile
+import threading
 from pathlib import Path
-from typing import Any, Iterator, NamedTuple
+from typing import Any, Iterable, Iterator, NamedTuple
 
 
 UNAME_TO_GOARCH_MAP = {
@@ -98,85 +101,210 @@ def write_atomic(path: Path, data: bytes, *, check_same: bool = False) -> None:
         raise
 
 
+class FileDiscovery:
+    """Discovers test files, optionally in a background thread.
+
+    Construction modes:
+    - FileDiscovery(patterns, root=...) — sync discovery (blocks until done).
+    - FileDiscovery(..., background=True) — background thread; __iter__ streams
+      files as they're found via an unbounded queue.
+    - FileDiscovery.from_list(items) — wraps a pre-computed list, no I/O.
+
+    If shuffle=True, all files are collected first then shuffled (forces sync
+    collection even in background mode before streaming begins).
+
+    Reporter reads .files, .count, .done for progress display.
+    """
+
+    def __init__(
+        self,
+        selectors: Iterable[str],
+        *,
+        root: Path | None = None,
+        exclude_re: list[re.Pattern[str]] | None = None,
+        shuffle: bool = False,
+        background: bool = False,
+    ) -> None:
+        self._files: list[str] = []
+        self._done = threading.Event()
+        self._error: BaseException | None = None
+        self._queue: queue.SimpleQueue[str | None] | None = (
+            queue.SimpleQueue() if background else None
+        )
+
+        args = (list(selectors), root, exclude_re, shuffle)
+        if background:
+            self._thread: threading.Thread | None = threading.Thread(
+                target=self._run, args=args, daemon=True,
+            )
+            self._thread.start()
+        else:
+            self._thread = None
+            self._run(*args)
+
+    @staticmethod
+    def from_list(items: Iterable[str]) -> FileDiscovery:
+        """Wrap a pre-computed list (no background thread, no I/O)."""
+        d = object.__new__(FileDiscovery)
+        d._files = list(items)
+        d._done = threading.Event()
+        d._done.set()
+        d._error = None
+        d._queue = None
+        d._thread = None
+        return d
+
+    @staticmethod
+    def _walk_js_sorted(d: Path) -> Iterator[Path]:
+        """Recursively yield .js files under d in deterministic name order."""
+        with os.scandir(d) as it:
+            entries = sorted(it, key=lambda e: version_sort_key(e.name))
+        for entry in entries:
+            p = Path(entry.path)
+            if entry.is_dir(follow_symlinks=True):
+                yield from FileDiscovery._walk_js_sorted(p)
+            elif p.suffix == ".js":
+                yield p
+
+    @staticmethod
+    def _iter_files(
+        selectors: list[str],
+        root: Path | None,
+        exclude_re: list[re.Pattern[str]] | None,
+    ) -> Iterator[str]:
+        """Yield path strings for .js files matching selectors (recursive, deduped).
+
+        - Relative selectors resolve under root when provided.
+        - Directories are walked recursively in deterministic name order.
+        - exclude_re: skip paths whose string representation matches any pattern.
+        - Returned strings are root-relative when root is provided, otherwise str(path).
+        """
+        def _keep(p: Path) -> bool:
+            if not exclude_re:
+                return True
+            s = str(p)
+            return not any(pat.search(s) for pat in exclude_re)
+
+        def _item(p: Path) -> str:
+            if root is not None:
+                try:
+                    return str(p.relative_to(root))
+                except ValueError:
+                    pass
+            return str(p)
+
+        seen: set[str] = set()
+
+        def _emit(p: Path) -> Iterator[str]:
+            if not _keep(p):
+                return
+            s = _item(p)
+            if s in seen:
+                return
+            seen.add(s)
+            yield s
+
+        for token in selectors:
+            p = Path(token)
+            if (
+                root is not None
+                and not p.is_absolute()
+                and not token.startswith("./")
+                and not token.startswith("../")
+            ):
+                rooted = root / p
+                if rooted.exists() or any(c in token for c in "*?[]"):
+                    p = rooted
+
+            if p.is_dir():
+                for path in FileDiscovery._walk_js_sorted(p):
+                    yield from _emit(path)
+                continue
+
+            if any(c in str(p) for c in "*?[]"):
+                for item in sorted(glob.glob(str(p), recursive=True), key=lambda s: version_sort_key(s)):
+                    q = Path(item)
+                    if q.is_dir():
+                        for path in FileDiscovery._walk_js_sorted(q):
+                            yield from _emit(path)
+                    elif q.is_file():
+                        yield from _emit(q)
+                continue
+
+            if p.exists() and p.is_file():
+                yield from _emit(p)
+
+    def _run(
+        self,
+        selectors: list[str],
+        root: Path | None,
+        exclude_re: list[re.Pattern[str]] | None,
+        shuffle: bool,
+    ) -> None:
+        try:
+            it: Iterator[str] = self._iter_files(selectors, root, exclude_re)
+            if shuffle:
+                items = list(it)
+                random.shuffle(items)
+                it = iter(items)
+            for path in it:
+                self._files.append(path)
+                if self._queue is not None:
+                    self._queue.put(path)
+        except BaseException as e:
+            self._error = e
+        finally:
+            self._done.set()
+            if self._queue is not None:
+                self._queue.put(None)
+
+    def __iter__(self) -> Iterator[str]:
+        """Iterate discovered files. In background mode, blocks until each is ready."""
+        if self._queue is None:
+            yield from self._files
+            return
+        while True:
+            item = self._queue.get()
+            if item is None:
+                if self._error:
+                    raise self._error
+                return
+            yield item
+
+    @property
+    def files(self) -> list[str]:
+        """Files discovered so far (in discovery order)."""
+        return self._files
+
+    @property
+    def count(self) -> int:
+        """Number of files discovered so far."""
+        return len(self._files)
+
+    @property
+    def done(self) -> bool:
+        """True once discovery is complete."""
+        return self._done.is_set()
+
+    def wait(self) -> list[str]:
+        """Block until discovery finishes, return all files."""
+        if self._thread is not None:
+            self._thread.join()
+        else:
+            self._done.wait()
+        if self._error:
+            raise self._error
+        return self._files
+
+
 def iterate_js_files(
     selectors: list[str],
     *,
     root: Path | None = None,
     exclude_re: list[re.Pattern[str]] | None = None,
 ) -> Iterator[str]:
-    """Yield path strings for .js files matching selectors (always recursive, deduped).
-
-    - Relative selectors resolve under root when provided.
-    - Directories are walked recursively in deterministic name order.
-    - exclude_re: skip paths whose string representation matches any pattern.
-    - Returned strings are root-relative when root is provided, otherwise str(path).
-    """
-
-    def _walk_js_sorted(root: Path) -> Iterator[Path]:
-        """Recursively yield .js files under root in deterministic name order."""
-        with os.scandir(root) as it:
-            entries = sorted(it, key=lambda e: version_sort_key(e.name))
-        for entry in entries:
-            p = Path(entry.path)
-            if entry.is_dir(follow_symlinks=True):
-                yield from _walk_js_sorted(p)
-            elif p.suffix == ".js":
-                yield p
-
-    def _keep(p: Path) -> bool:
-        if not exclude_re:
-            return True
-        s = str(p)
-        return not any(pat.search(s) for pat in exclude_re)
-
-    def _item(p: Path) -> str:
-        if root is not None:
-            try:
-                return str(p.relative_to(root))
-            except ValueError:
-                pass
-        return str(p)
-
-    seen: set[str] = set()
-
-    def _emit(p: Path) -> Iterator[str]:
-        if not _keep(p):
-            return
-        s = _item(p)
-        if s in seen:
-            return
-        seen.add(s)
-        yield s
-
-    for token in selectors:
-        p = Path(token)
-        if (
-            root is not None
-            and not p.is_absolute()
-            and not token.startswith("./")
-            and not token.startswith("../")
-        ):
-            rooted = root / p
-            if rooted.exists() or any(c in token for c in "*?[]"):
-                p = rooted
-
-        if p.is_dir():
-            for path in _walk_js_sorted(p):
-                yield from _emit(path)
-            continue
-
-        if any(c in str(p) for c in "*?[]"):
-            for item in sorted(glob.glob(str(p), recursive=True), key=lambda s: version_sort_key(s)):
-                q = Path(item)
-                if q.is_dir():
-                    for path in _walk_js_sorted(q):
-                        yield from _emit(path)
-                elif q.is_file():
-                    yield from _emit(q)
-            continue
-
-        if p.exists() and p.is_file():
-            yield from _emit(p)
+    """Yield .js files matching selectors. Thin wrapper around FileDiscovery."""
+    return FileDiscovery._iter_files(selectors, root, exclude_re)
 
 
 class GitRevision(NamedTuple):

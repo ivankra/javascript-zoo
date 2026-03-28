@@ -11,7 +11,6 @@ from typing import Any
 
 from harness.config import EngineConfig
 from harness.runner import ErrorType, RunRusage, RunResult, Runner, Verdict
-from harness.util import iterate_js_files
 
 
 def mk_run(**kwargs: Any) -> RunResult:

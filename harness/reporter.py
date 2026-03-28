@@ -7,16 +7,20 @@ import dataclasses
 import json
 import os
 import re
+import shutil
 import sys
 from collections import Counter
 from pathlib import Path
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from .config import EngineConfig
 from .frontmatter import test262_features_yaml
 from .tags import Tags
 from .runner import RunResult, Verdict
 from .util import get_git_revision, version_sort_key
+
+if TYPE_CHECKING:
+    from .util import FileDiscovery
 
 
 @dataclasses.dataclass
@@ -128,6 +132,7 @@ class Reporter:
         self,
         engine: EngineConfig,
         *,
+        discovery: FileDiscovery | None = None,
         output_file: str | Path | None = None,
         verbose: int = 0,
         test262: bool = False,
@@ -139,6 +144,7 @@ class Reporter:
         report_runs: bool | None = None,
     ) -> None:
         self._engine = engine
+        self._discovery = discovery
         self._verbose = verbose
         self._use_color = sys.stdout.isatty()
         self._test262 = test262
@@ -149,6 +155,8 @@ class Reporter:
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         self._wall_sec: float = 0
+        self._last_executed: str = ""
+        self._progress_dirty = False
         # dict used as ordered set (Python 3.7+ insertion order); values unused.
         self._input_order: dict[str, int] = {}
         # Dir progress tracking (initialized by set_expected_dirs)
@@ -184,16 +192,27 @@ class Reporter:
     def is_json_output(self) -> bool:
         return self._report_json
 
+    def _test_order(self) -> list[str]:
+        """Return ordered test IDs from discovery or manual note_test calls."""
+        if self._discovery is not None:
+            return self._discovery.files
+        return list(self._input_order)
+
     def note_test(self, test_id: str) -> None:
         """Record a test ID in discovery order (before results arrive)."""
+        if self._discovery is not None:
+            return
         if test_id not in self._input_order:
             self._input_order[test_id] = len(self._input_order)
 
-    def set_expected_dirs(self, test_ids: list[str]) -> None:
+    def set_expected_dirs(self, test_ids: list[str] | None = None) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
 
         Call this before add() to enable print_completed_dirs().
+        If test_ids is None, uses discovery files (requires discovery.done).
         """
+        if test_ids is None:
+            test_ids = self._test_order()
         for tid in test_ids:
             self.note_test(tid)
         self._dir_order = []
@@ -252,6 +271,9 @@ class Reporter:
             self.add(run)
             self._mode_counts[run.verdict or Verdict.FAILED] += 1
 
+        if runs:
+            self._last_executed = runs[0].test_id or runs[0].run_id or ""
+
         if any(r.verdict is Verdict.SKIPPED for r in runs):
             self._file_counts[Verdict.SKIPPED] += 1
         elif any(r.verdict is Verdict.FAILED for r in runs):
@@ -260,20 +282,46 @@ class Reporter:
             self._file_counts[Verdict.OK] += 1
 
         if self._verbose < 1 and sys.stderr.isatty():
-            fc = self._file_counts
-            line = f"Tests: {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
-            if fc[Verdict.SKIPPED]:
-                line += f", {fc[Verdict.SKIPPED]} skipped"
-            if self._test262:
-                sc = self._mode_counts
-                line += f" (runs: {sc[Verdict.OK]} passed, {sc[Verdict.FAILED]} failed)"
-            print(f"\r\033[K{line}", end="", file=sys.stderr, flush=True)
+            self._print_progress()
+
+    @staticmethod
+    def _truncate_left(text: str, width: int) -> str:
+        if len(text) <= width:
+            return text
+        return "\u2026" + text[-(width - 1):] if width > 1 else "\u2026"
+
+    def _progress_line(self) -> str:
+        fc = self._file_counts
+        n_done = fc[Verdict.OK] + fc[Verdict.FAILED] + fc[Verdict.SKIPPED]
+        d = self._discovery
+        if d is not None and d.done and d.count > 0:
+            pct = n_done * 100 // d.count
+            prefix = f"[{pct}%]"
+        else:
+            prefix = f"[{n_done}]"
+        line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
+        if fc[Verdict.SKIPPED]:
+            line += f", {fc[Verdict.SKIPPED]} skipped"
+        if self._test262:
+            sc = self._mode_counts
+            line += f" (runs: {sc[Verdict.OK]} ok, {sc[Verdict.FAILED]} fail)"
+        if self._last_executed:
+            cols = shutil.get_terminal_size((80, 24)).columns
+            avail = cols - len(line) - 3  # " | "
+            if avail >= 10:
+                line += f" | {self._truncate_left(self._last_executed, avail)}"
+        return line
+
+    def _print_progress(self) -> None:
+        print(f"\r\033[K{self._progress_line()}", end="", file=sys.stderr, flush=True)
+        self._progress_dirty = True
 
     def clear_progress(self) -> None:
         """Clear the progress line from stderr, if one was printed."""
         if self._verbose < 1 and sys.stderr.isatty():
-            if sum(self._file_counts.values()) or self._probes:
+            if self._progress_dirty or self._probes:
                 print("\r\033[K", end="", file=sys.stderr, flush=True)
+                self._progress_dirty = False
 
     def add_probe_result(self, name: str, result: str) -> None:
         """Record one probe result, printing progress to stderr."""
@@ -290,6 +338,7 @@ class Reporter:
             n_fail = n_done - n_ok
             msg = f"Probes: {n_done} ({n_ok} ok, {n_fail} failed)" if n_fail else f"Probes: {n_done} ok"
             print(f"\r\033[K{msg}", end="", file=sys.stderr, flush=True)
+            self._progress_dirty = True
 
     def print_completed_dirs(self, *, header: bool = False) -> None:
         """Print summary lines for any dirs that just became complete, in order.
@@ -524,10 +573,11 @@ class Reporter:
                 "revision_date": self._test262_revision.revision_date,
             }
         data["summary"] = self._summary_json()
+        test_order = self._test_order()
         if self._report_tests:
-            data["tests"] = group_run_results(results, list(self._input_order))
+            data["tests"] = group_run_results(results, test_order)
         if self._report_runs:
-            data["scenarios"] = group_run_results(results, list(self._input_order), "run_id")
+            data["scenarios"] = group_run_results(results, test_order, "run_id")
         if self._report_rusage_mode != "no" and rusage:
             data["rusage"] = rusage
         return self.format_json_value(data) + "\n"
@@ -539,12 +589,14 @@ class Reporter:
             lines.append(f"Metadata: {json.dumps(self._engine.build_metadata, ensure_ascii=False, separators=(',', ':'))}")
         if self._report_runs:
             results = self._results
-            if self._input_order:
-                n = len(self._input_order)
-                results = sorted(results, key=lambda r: self._input_order.get(r.test_id or "", n))
+            test_order = self._test_order()
+            if test_order:
+                order_map = {tid: i for i, tid in enumerate(test_order)}
+                n = len(test_order)
+                results = sorted(results, key=lambda r: (order_map.get(r.test_id or "", n), r.run_id or ""))
             lines.extend(f"{r.run_id}: {r.verdict_message()}" for r in results)
         else:
-            statuses = group_run_results(self._results, list(self._input_order))
+            statuses = group_run_results(self._results, self._test_order())
             for fp, status in statuses.items():
                 if isinstance(status, str):
                     lines.append(f"{fp}: {status}")

@@ -9,7 +9,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from harness.util import iterate_js_files, version_sort_key
+from unittest.mock import patch
+
+from harness.util import FileDiscovery, iterate_js_files, version_sort_key
 
 
 class IterateJsFilesTest(unittest.TestCase):
@@ -204,3 +206,103 @@ class VersionSortKeyTest(unittest.TestCase):
     def test_slash_sorts_before_hyphen(self) -> None:
         # "test/a/sub" should come before "test/a-b" because '/' < '-'
         self.assertEqual(self._sorted(["test/a-b", "test/a/sub"]), ["test/a/sub", "test/a-b"])
+
+
+class FileDiscoveryFromListTest(unittest.TestCase):
+    def test_basic(self) -> None:
+        d = FileDiscovery.from_list(["a.js", "b.js", "c.js"])
+        self.assertTrue(d.done)
+        self.assertEqual(d.count, 3)
+        self.assertEqual(d.files, ["a.js", "b.js", "c.js"])
+
+    def test_iter(self) -> None:
+        self.assertEqual(list(FileDiscovery.from_list(["a.js", "b.js"])), ["a.js", "b.js"])
+
+    def test_copies_input(self) -> None:
+        items = ["a.js", "b.js"]
+        d = FileDiscovery.from_list(items)
+        items.append("c.js")
+        self.assertEqual(d.files, ["a.js", "b.js"])
+
+    def test_empty(self) -> None:
+        d = FileDiscovery.from_list([])
+        self.assertTrue(d.done)
+        self.assertEqual(d.count, 0)
+        self.assertEqual(list(d), [])
+
+    def test_wait(self) -> None:
+        self.assertEqual(FileDiscovery.from_list(["a.js"]).wait(), ["a.js"])
+
+
+class FileDiscoverySyncTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self._td = tempfile.TemporaryDirectory()
+        self.root = Path(self._td.name)
+        for rel in ["dir1/a.js", "dir1/b.js", "dir1/skip.txt", "dir2/c.js", "dir2/nested/d.js"]:
+            path = self.root / rel
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text("// x\n")
+
+    def tearDown(self) -> None:
+        self._td.cleanup()
+
+    def test_discovers_all_files(self) -> None:
+        d = FileDiscovery(["dir1", "dir2"], root=self.root)
+        self.assertTrue(d.done)
+        self.assertEqual(list(d), ["dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"])
+
+    def test_exclude_re(self) -> None:
+        d = FileDiscovery(["dir1", "dir2"], root=self.root, exclude_re=[re.compile(r"/nested/")])
+        self.assertEqual(list(d), ["dir1/a.js", "dir1/b.js", "dir2/c.js"])
+
+    def test_shuffle_keeps_same_set(self) -> None:
+        d = FileDiscovery(["dir1", "dir2"], root=self.root, shuffle=True)
+        self.assertEqual(set(d.files), {"dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"})
+
+    def test_iter_multiple_times(self) -> None:
+        d = FileDiscovery(["dir1"], root=self.root)
+        self.assertEqual(list(d), list(d))
+
+    def test_background_discovers_all(self) -> None:
+        d = FileDiscovery(["dir1", "dir2"], root=self.root, background=True)
+        result = list(d)
+        self.assertTrue(d.done)
+        self.assertEqual(result, ["dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"])
+
+    def test_background_matches_sync(self) -> None:
+        sync = FileDiscovery(["dir1", "dir2"], root=self.root)
+        bg = FileDiscovery(["dir1", "dir2"], root=self.root, background=True)
+        self.assertEqual(list(bg), sync.files)
+
+    def test_background_streams_results(self) -> None:
+        real_walk = os.scandir
+
+        def delayed_scandir(path: str | os.PathLike[str]):
+            ctx = real_walk(path)
+            entries = list(ctx)
+            ctx.close()
+
+            class _Ctx:
+                def __enter__(self_inner):
+                    if Path(path).name == "dir1":
+                        import time
+                        time.sleep(0.02)
+                    return iter(entries)
+
+                def __exit__(self_inner, exc_type, exc, tb):
+                    return False
+
+            return _Ctx()
+
+        with patch("harness.util.os.scandir", side_effect=delayed_scandir):
+            d = FileDiscovery(["dir1", "dir2"], root=self.root, background=True)
+            it = iter(d)
+            first = next(it)
+            self.assertGreaterEqual(d.count, 1)
+            rest = list(it)
+        self.assertEqual(set([first, *rest]), {"dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"})
+        self.assertTrue(d.done)
+
+    def test_background_wait(self) -> None:
+        d = FileDiscovery(["dir1", "dir2"], root=self.root, background=True)
+        self.assertEqual(d.wait(), ["dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"])

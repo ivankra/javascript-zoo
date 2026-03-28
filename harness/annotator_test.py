@@ -9,7 +9,6 @@ from typing import Any
 from harness.annotator import Annotator
 from harness.config import EngineConfig
 from harness.runner import ErrorType, Runner, RunResult, Verdict
-from harness.util import iterate_js_files
 
 
 def mk_run(**kwargs: Any) -> RunResult:
