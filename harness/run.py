@@ -119,10 +119,10 @@ def main() -> None:
 
     wall_start = time.monotonic()
     with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as pool:
-        futs = {
-            pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel): rel
-            for rel in tests
-        }
+        futs = {}
+        for rel in tests:
+            reporter.note_started(rel)
+            futs[pool.submit(run_one, runner, annotator, cfg, CONFORMANCE_DIR / rel, rel)] = rel
         for fut in concurrent.futures.as_completed(futs):
             run = fut.result()
             reporter.add_file([run])

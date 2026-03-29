@@ -451,27 +451,53 @@ class TestReporterWriteStreams(unittest.TestCase):
 
 class TestReporterProgress(unittest.TestCase):
     def test_progress_uses_count_until_discovery_finishes(self):
-        discovery = FileDiscovery.from_list(["test/Array/from.js"])
+        discovery = FileDiscovery.from_list(["test/Array/from.js", "test/Array/of.js"])
         discovery._done.clear()  # simulate in-progress
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r.note_started("test/Array/from.js")
+        r.note_started("test/Array/of.js")
         r.add_file([_run("test/Array/from.js", Verdict.FAILED, test_id="test/Array/from.js")])
         line = r._progress_line()
         self.assertTrue(line.startswith("[1] "))
         self.assertIn("0 passed, 1 failed", line)
-        self.assertIn("test/Array/from.js", line)
+        # Shows the most recently submitted in-flight test
+        self.assertIn("test/Array/of.js", line)
         discovery._done.set()  # simulate done
         line2 = r._progress_line()
-        self.assertTrue(line2.startswith("[100%] "))
+        self.assertTrue(line2.startswith("[50%] "))
+
+    def test_progress_no_filename_when_nothing_in_flight(self):
+        discovery = FileDiscovery.from_list(["test/Array/from.js"])
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r.note_started("test/Array/from.js")
+        r.add_file([_run("test/Array/from.js", Verdict.OK, test_id="test/Array/from.js")])
+        line = r._progress_line()
+        self.assertIn("[100%]", line)
+        self.assertNotIn("test/Array/from.js", line)
+
+    def test_progress_shows_latest_in_flight(self):
+        discovery = FileDiscovery.from_list(["a.js", "b.js", "c.js"])
+        r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
+        r.note_started("a.js")
+        r.note_started("b.js")
+        r.note_started("c.js")
+        # b completes — progress shows c (last submitted)
+        r.add_file([_run("b.js", Verdict.OK, test_id="b.js")])
+        line = r._progress_line()
+        self.assertIn("c.js", line)
+        # c completes — now a is the only one left
+        r.add_file([_run("c.js", Verdict.OK, test_id="c.js")])
+        line = r._progress_line()
+        self.assertIn("a.js", line)
 
     def test_progress_truncates_filename_to_terminal_width(self):
         discovery = FileDiscovery.from_list(["test/Array/from.js"])
         r = Reporter(EngineConfig(binary_path="/fake/js"), discovery=discovery)
-        r.add_file([_run("test/Array/from.js", Verdict.OK, test_id="test/Array/from.js")])
+        r.note_started("test/Array/from.js")
         with patch("harness.reporter.shutil.get_terminal_size", return_value=os.terminal_size((25, 24))):
             line = r._progress_line()
             # Too narrow for filename
             self.assertNotIn("test/Array/from.js", line)
-            self.assertIn("[100%]", line)
 
     def test_truncate_left(self):
         self.assertEqual(Reporter._truncate_left("abcdefgh", 5), "\u2026efgh")

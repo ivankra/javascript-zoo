@@ -9,6 +9,7 @@ import os
 import re
 import shutil
 import sys
+import time
 from collections import Counter
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
@@ -155,7 +156,9 @@ class Reporter:
         self._mode_counts: Counter[Verdict] = Counter()
         self._editions_order: list[str] = list(test262_features_yaml().keys()) if test262 else []
         self._wall_sec: float = 0
-        self._last_executed: str = ""
+        # Currently in-flight tests: test_id -> monotonic start time.
+        # Progress bar shows the most recently submitted entry.
+        self._in_flight: dict[str, float] = {}
         self._progress_dirty = False
         # dict used as ordered set (Python 3.7+ insertion order); values unused.
         self._input_order: dict[str, int] = {}
@@ -204,6 +207,10 @@ class Reporter:
             return
         if test_id not in self._input_order:
             self._input_order[test_id] = len(self._input_order)
+
+    def note_started(self, test_id: str) -> None:
+        """Mark a test as in-flight (submitted to process pool)."""
+        self._in_flight[test_id] = time.monotonic()
 
     def set_expected_dirs(self, test_ids: list[str] | None = None) -> None:
         """Set up per-directory progress tracking from the ordered test ID list.
@@ -272,7 +279,8 @@ class Reporter:
             self._mode_counts[run.verdict or Verdict.FAILED] += 1
 
         if runs:
-            self._last_executed = runs[0].test_id or runs[0].run_id or ""
+            test_id = runs[0].test_id or runs[0].run_id or ""
+            self._in_flight.pop(test_id, None)
 
         if any(r.verdict is Verdict.SKIPPED for r in runs):
             self._file_counts[Verdict.SKIPPED] += 1
@@ -305,11 +313,12 @@ class Reporter:
         if self._test262:
             sc = self._mode_counts
             line += f" (runs: {sc[Verdict.OK]} ok, {sc[Verdict.FAILED]} fail)"
-        if self._last_executed:
+        if self._in_flight:
+            latest_id = max(self._in_flight, key=self._in_flight.__getitem__)
             cols = shutil.get_terminal_size((80, 24)).columns
             avail = cols - len(line) - 3  # " | "
             if avail >= 10:
-                line += f" | {self._truncate_left(self._last_executed, avail)}"
+                line += f" | {self._truncate_left(latest_id, avail)}"
         return line
 
     def _print_progress(self) -> None:

@@ -14,7 +14,7 @@ import sys
 import tempfile
 import time
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Iterable
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -68,10 +68,9 @@ class Executor:
         self._jobs = max(1, jobs)
         self._shared_tmp = Path(tempfile.mkdtemp(prefix="t262-"))
 
-    def run(self, tests: Iterable[str], *, on_file_result: Any = None, limit: int = 0) -> None:
-        """Submit test files to worker pool, delivering results via callback.
+    def run(self, tests: Iterable[str], *, reporter: Reporter, limit: int = 0) -> None:
+        """Submit test files to worker pool, delivering results to reporter.
 
-        Callback signature: on_file_result(results: list[RunResult]).
         Iterates tests lazily — works with FileDiscovery's background queue.
         limit: stop after this many non-skipped files (0 = unlimited).
         """
@@ -84,13 +83,14 @@ class Executor:
 
                 try:
                     while True:
-                        while not exhausted and len(futs) < self._jobs * 3:
+                        while not exhausted and len(futs) < self._jobs + 5:
                             try:
                                 rel_path = next(test_iter)
                             except StopIteration:
                                 exhausted = True
                                 break
                             futs[pool.submit(self._process_file, rel_path)] = rel_path
+                            reporter.note_started(rel_path)
 
                         if not futs:
                             break
@@ -102,8 +102,7 @@ class Executor:
                         for fut in done:
                             futs.pop(fut)
                             file_results = fut.result()
-                            if on_file_result:
-                                on_file_result(file_results)
+                            reporter.add_file(file_results)
                             if any(r.verdict is not Verdict.SKIPPED for r in file_results):
                                 n_executed += 1
                                 if limit and n_executed >= limit:
@@ -339,7 +338,7 @@ def main() -> None:
     )
 
     try:
-        executor.run(discovery, on_file_result=reporter.add_file, limit=args.limit)
+        executor.run(discovery, reporter=reporter, limit=args.limit)
     except KeyboardInterrupt:
         reporter.clear_progress()
         print("\nInterrupted")
