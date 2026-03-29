@@ -134,6 +134,11 @@ class Assembler:
                 harness.append("doneprintHandle.js")
             harness.extend(name for name in scenario.fm.includes if name not in harness)
             pieces.extend(self._read_harness(name) for name in harness)
+            # Fix "Test262Error: asyncTest called without async flag" in
+            # test/language/import/import-defer/errors/resolution-error/import-defer-of-missing-module-fails.js
+            # In module mode, harness-defined $DONE doesn't automatically end up in globalThis.
+            if "async" in scenario.fm.flags and "module" in scenario.fm.flags:
+                pieces.append("if (typeof globalThis !== 'undefined') globalThis.$DONE = $DONE;")
 
         # 6. Test source body
         pieces.append(scenario.test_content)
