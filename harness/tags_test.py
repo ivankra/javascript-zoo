@@ -26,9 +26,9 @@ class TestTags(unittest.TestCase):
         self.assertIn("features:Symbol", tags)
         self.assertIn("features:Promise", tags)
 
-    def test_no_features_empty_pair(self):
+    def test_no_features_na_pair(self):
         tags = T()
-        self.assertIn("features:", tags)
+        self.assertIn("features:N/A", tags)
 
     def test_includes(self):
         tags = T(Frontmatter(includes=["assert.js", "compareArray.js"]))
@@ -56,8 +56,8 @@ class TestTags(unittest.TestCase):
         self.assertIn("onlyStrict", tags)
         self.assertIn("flags:async", tags)
 
-    def test_no_flags_empty_pair(self):
-        self.assertIn("flags:", T())
+    def test_no_flags_na_pair(self):
+        self.assertIn("flags:N/A", T())
 
     def test_module_flag(self):
         self.assertIn("module", T(Frontmatter(flags={"module"})))
@@ -80,21 +80,21 @@ class TestTags(unittest.TestCase):
         self.assertNotIn("esnext", tags)
         self.assertNotIn("es5", tags)
         self.assertNotIn("es6", tags)
-        self.assertIn("edition:", tags)
+        self.assertIn("edition:N/A", tags)
 
     def test_no_features_in_iter(self):
         tags = T()
         qt = list(tags)
-        self.assertIn("features:", qt)
-        self.assertIn("edition:", qt)
+        self.assertIn("features:N/A", qt)
+        self.assertIn("edition:N/A", qt)
 
     def test_iter_with_features(self):
         tags = T(Frontmatter(features={"Symbol"}))
         qt = list(tags)
         self.assertIn("features:Symbol", qt)
-        self.assertNotIn("features:", qt)
+        self.assertNotIn("features:N/A", qt)
         self.assertIn("edition:es6", qt)
-        self.assertNotIn("edition:", qt)
+        self.assertNotIn("edition:N/A", qt)
 
     def test_mode(self):
         tags = T()

@@ -132,30 +132,30 @@ class TestTagStats(unittest.TestCase):
         self.assertEqual(stats, {})
 
     def test_empty_features_and_edition_in_stats(self):
-        """Tests with no features/edition produce 'features:' and 'edition:' keys."""
+        """Tests with no features/edition produce 'features:N/A' and 'edition:N/A' keys."""
         tags = _t262(mode="strict")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         stats = r._build_tag_stats()
-        self.assertIn("features:", stats)
-        self.assertEqual(stats["features:"].passed, 1)
-        self.assertIn("edition:", stats)
-        self.assertEqual(stats["edition:"].passed, 1)
+        self.assertIn("features:N/A", stats)
+        self.assertEqual(stats["features:N/A"].passed, 1)
+        self.assertIn("edition:N/A", stats)
+        self.assertEqual(stats["edition:N/A"].passed, 1)
 
     def test_empty_keys_in_summary_json(self):
-        """'features:' and 'edition:' appear in summary JSON for featureless tests."""
+        """'features:N/A' and 'edition:N/A' appear in summary JSON for featureless tests."""
         tags = _t262(mode="strict")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         summary = r._summary_json()
-        self.assertIn("features:", summary)
-        self.assertIn("edition:", summary)
+        self.assertIn("features:N/A", summary)
+        self.assertIn("edition:N/A", summary)
 
 
 class TestEditionReport(unittest.TestCase):
-    """Test _edition_report grouping and 'other' bucket."""
+    """Test _edition_report grouping, 'N/A' and 'skipped' buckets."""
 
     def _reporter(self, runs: list[RunResult]) -> Reporter:
         r = Reporter(EngineConfig(binary_path="/fake/js"), test262=True)
@@ -182,24 +182,24 @@ class TestEditionReport(unittest.TestCase):
         )
         self.assertEqual(edition_total, 3)
 
-    def test_other_collects_no_edition(self):
-        """Tests with no features land in 'other', not in any edition."""
+    def test_na_collects_no_edition(self):
+        """Tests with no features land in 'N/A', not in any edition."""
         tags = _t262(mode="strict")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.OK, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
-        self.assertIn("other", report)
+        self.assertIn("N/A", report)
         self.assertNotIn("esnext", report)
 
-    def test_skipped_edition_goes_to_other(self):
-        """An edition where all tests are skipped merges into 'other'."""
+    def test_skipped_edition_goes_to_skipped(self):
+        """An edition where all tests are skipped merges into 'skipped'."""
         tags = _t262({"Symbol"}, mode="strict")
         r = self._reporter([
             _run("test/a.strict.js", Verdict.SKIPPED, tags=tags, mode="strict", test_id="test/a.js"),
         ])
         report = r._edition_report()
-        self.assertIn("other", report)
+        self.assertIn("skipped", report)
         self.assertNotIn("es6", report)
 
     def test_unlisted_feature_under_esnext(self):

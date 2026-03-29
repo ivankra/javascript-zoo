@@ -42,17 +42,15 @@ class Tags:
         """Build a full tag set from test262 frontmatter."""
         tags = cls({"test262"})
 
-        tags.values.update(fm.features)
         for s in fm.features:
-            tags.pairs.add(("features", s))
+            tags.add("features", s)
         if not fm.features:
-            tags.pairs.add(("features", ""))
+            tags.add("features", "N/A")
 
-        tags.values.update(fm.flags)
         for s in fm.flags:
-            tags.pairs.add(("flags", s))
+            tags.add("flags", s)
         if not fm.flags:
-            tags.pairs.add(("flags", ""))
+            tags.add("flags", "N/A")
 
         tags.values.update(fm.includes)
         for s in fm.includes:
@@ -69,7 +67,7 @@ class Tags:
         if edition:
             tags.add("edition", edition)
         else:
-            tags.pairs.add(("edition", ""))
+            tags.add("edition", "N/A")
 
         if rel_path:
             assert not rel_path.startswith("/")
@@ -94,6 +92,7 @@ class Tags:
         return Tags(self.values, pairs=self.pairs)
 
     def add(self, ns: str, value: str) -> None:
+        assert value, f"empty value for namespace {ns!r}; use 'N/A' instead"
         self.pairs.add((ns, value))
         self.values.add(value)
 

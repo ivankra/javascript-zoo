@@ -495,12 +495,12 @@ class Reporter:
 
         lines = ["Summary by edition / feature (note: feature stats aggregate across all editions):"]
         any_data = False
-        other = Stats()
+        skipped = Stats()
         for edition in editions_order:
             s = tag_stats.get(f"edition:{edition}")
             if not s or s.total == s.skipped:
                 if s:
-                    other.merge(s)
+                    skipped.merge(s)
                 continue
             any_data = True
             lines.append(f"  {format_summary_line(edition, s.passed, s.failed, s.skipped, use_color=uc)}")
@@ -516,7 +516,7 @@ class Reporter:
                 unlisted = sorted(
                     qt.removeprefix("features:")
                     for qt in tag_stats
-                    if qt.startswith("features:") and qt.removeprefix("features:") and qt.removeprefix("features:") not in all_known_features
+                    if qt.startswith("features:") and qt.removeprefix("features:") not in ("", "N/A") and qt.removeprefix("features:") not in all_known_features
                 )
                 features.extend(unlisted)
             for feat in features:
@@ -525,13 +525,17 @@ class Reporter:
                     continue
                 lines.append(f"    {format_summary_line(feat, fs.passed, fs.failed, fs.skipped, use_color=uc)}")
 
-        # Tests with no edition
-        na = tag_stats.get("edition:")
+        # Tests with no known edition
+        na = tag_stats.get("edition:N/A")
         if na:
-            other.merge(na)
-        if other.total > 0:
+            if na.total > na.skipped:
+                any_data = True
+                lines.append(f"  {format_summary_line('N/A', na.passed, na.failed, na.skipped, use_color=uc)}")
+            else:
+                skipped.merge(na)
+        if skipped.total > 0:
             any_data = True
-            lines.append(f"  {format_summary_line('other', other.passed, other.failed, other.skipped, use_color=uc)}")
+            lines.append(f"  {format_summary_line('skipped', skipped.passed, skipped.failed, skipped.skipped, use_color=uc)}")
 
         return "\n".join(lines) if any_data else ""
 
