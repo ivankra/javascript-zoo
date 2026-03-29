@@ -120,6 +120,10 @@ class Annotator:
         ok_found = bool(ok_pattern and any(re.search(ok_pattern, ln) for ln in lines))
         fail_found = bool(fail_pattern and any(re.search(fail_pattern, ln) for ln in lines))
 
+        errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
+                  self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
+        test262_error = any(e[0] == ErrorType.TEST262_ERROR for e in errors)
+
         # test262 async protocol
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:
@@ -146,12 +150,11 @@ class Annotator:
         # exceptions, subprocess/module output, or engine warnings.
         # E.g. test/built-ins/ShadowRealm/prototype/importValue/throws-typeerror-import-syntax-error.js
         # must pass despite reporting SyntaxError in an imported module.
-        if ok_found and not fail_found:
+        # Do not ignore Test262Error's however here
+        # e.g. libjs test/language/module-code/instn-named-bndng-var.js
+        if ok_found and not fail_found and not test262_error:
             run.verdict = Verdict.OK
             return
-
-        errors = (self._collect_errors(run.stderr_cleaned or "", self._errors_cres) +
-                  self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
 
         if errors:
             best_et, best_msg = errors[0]

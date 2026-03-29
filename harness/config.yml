@@ -583,6 +583,8 @@ libjs: &libjs
     - '(?m)^"(.*)"$': '\1'
   stderr_replace_re:
     - '^Uncaught exception: *\n\[([A-Za-z0-9]*Error)\] *': '\1: '
+    # test/annexB/language/comments/multi-line-html-close.js
+    - '^Uncaught exception: *\nObject\{ message: (.*), toString: \[Function\] * \} *$': 'Test262Error: \1'
   errors_re:
     - *uncaught_exception_colon_message
     - *exception_colon_message
