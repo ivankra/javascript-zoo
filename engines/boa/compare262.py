@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """Compare test262 results: our harness JSON vs boa_tester latest.json.
 
-Usage: compare262.py <ours.json> <latest.json>
+Usage: compare262.py <ours.json> [latest.json]
 
 Generate ours:
-  ./harness/test262.py -o boa.json dist/arm64/boa
+  ./harness/test262.py -o boa.json /dist/boa
 
-Generate theirs (from boa repo):
-  cargo run --release -p boa_tester -- run -o results
-  # produces results/latest.json
+If latest.json is not provided and doesn't exist in cwd, it will be downloaded from:
+  https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json
 
 Ensure both use the same test262 revision. Either:
   - point boa_tester at our copy: --test262-path /zoo/third_party/test262
@@ -18,8 +17,13 @@ Also clear "features" and "tests" lists from test262_config.toml.
 Keep just OOM/crashes that would hang boa_tester.
 """
 import json
+import os
 import re
 import sys
+import urllib.request
+
+REMOTE_URL = "https://raw.githubusercontent.com/boa-dev/data/main/test262/refs/heads/main/latest.json"
+DEFAULT_FILE = "latest.json"
 
 
 def sort_key(s: str) -> list:
@@ -27,18 +31,27 @@ def sort_key(s: str) -> list:
     return [int(p) if i % 2 else p.lower() for i, p in enumerate(parts)]
 
 
-def load_ours(path: str) -> dict[str, str]:
+def load_ours(path: str) -> tuple[dict[str, str], dict[str, str | None]]:
     data = json.load(open(path))
+    revisions: dict[str, str | None] = {
+        "engine": data.get("binary", {}).get("binary_sha256"),
+        "test262": (data.get("test262") or {}).get("revision"),
+    }
     out: dict[str, str] = {}
     for test, val in data.get("tests", {}).items():
         if isinstance(val, str):
             out[test] = val
         elif isinstance(val, dict):
             out[test] = next((v for v in val.values() if v != "OK"), "OK")
-    return out
+    return out, revisions
 
 
-def load_theirs(path: str) -> dict[str, str]:
+def load_theirs(path: str) -> tuple[dict[str, str], dict[str, str | None]]:
+    data = json.load(open(path))
+    revisions: dict[str, str | None] = {
+        "engine": data.get("c"),
+        "test262": data.get("u"),
+    }
     out: dict[str, str] = {}
     def walk(suite: dict, prefix: str) -> None:
         cur = f"{prefix}/{suite['n']}" if prefix else suite.get("n", "")
@@ -46,18 +59,40 @@ def load_theirs(path: str) -> dict[str, str]:
             out[f"{cur}/{t['n']}.js"] = t["r"]
         for s in suite.get("s", []):
             walk(s, cur)
-    walk(json.load(open(path))["r"], "")
-    return out
+    walk(data["r"], "")
+    return out, revisions
 
 
 THEIR_CLASS = {"O": "OK", "I": "IGNORED", "F": "FAIL", "P": "FAIL"}
 
 
-def main() -> None:
-    if len(sys.argv) != 3:
-        sys.exit(f"Usage: {sys.argv[0]} <ours.json> <latest.json>")
+def download(url: str, dest: str) -> None:
+    print(f"Downloading {url} ...", file=sys.stderr)
+    urllib.request.urlretrieve(url, dest)
+    print(f"Saved to {dest}", file=sys.stderr)
 
-    ours, theirs = load_ours(sys.argv[1]), load_theirs(sys.argv[2])
+
+def main() -> None:
+    if len(sys.argv) < 2 or len(sys.argv) > 3:
+        sys.exit(f"Usage: {sys.argv[0]} <ours.json> [latest.json]")
+
+    theirs_path = sys.argv[2] if len(sys.argv) == 3 else DEFAULT_FILE
+    if not os.path.exists(theirs_path):
+        if len(sys.argv) == 3:
+            sys.exit(f"File not found: {theirs_path}")
+        download(REMOTE_URL, theirs_path)
+
+    ours, our_rev = load_ours(sys.argv[1])
+    theirs, their_rev = load_theirs(theirs_path)
+
+    for key in ("engine", "test262"):
+        ov, tv = our_rev.get(key), their_rev.get(key)
+        if ov and tv:
+            match = "MATCH" if ov == tv else "MISMATCH"
+            print(f"{key} revision: {match} (ours: {ov[:12]}, theirs: {tv[:12]})")
+        elif ov or tv:
+            print(f"{key} revision: ours={ov or 'N/A'}, theirs={tv or 'N/A'}")
+
     all_tests = sorted(set(ours) | set(theirs), key=sort_key)
 
     test_mm: list[tuple[str, str, str]] = []
