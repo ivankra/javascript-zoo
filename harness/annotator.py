@@ -94,7 +94,8 @@ class Annotator:
         run.error_message = None
 
         # Crash = negative exit code (terminated by signal).
-        if run.exit_code is not None and run.exit_code < 0:
+        if run.exit_code is not None and run.exit_code < 0 and \
+                not (self._config.ignore_sigabrt and run.exit_code == -6):
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.CRASHED
             signum = -run.exit_code

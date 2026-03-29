@@ -27,7 +27,7 @@
   # Do not tighten to "Error: ..." to avoid matching some non-fatal warnings.
   exc1: &exception_colon_message '^(?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   # Second common pattern, also used by most of this repo's wrappers
-  exc2: &uncaught_exception_colon_message '^Uncaught exception: (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+  exc2: &uncaught_exception_colon_message '^Uncaught (?:exception: )?(?P<type>[A-Za-z0-9]*Error):? *(?P<message>.*)$'
   # Crash strings from language runtimes
   gola: &go_crash_re '^(?P<message>panic: .*|fatal error: stack overflow)$'
   java: &java_crash_re '^(?P<message>Exception in thread "[^"]+" java.*)'
@@ -145,6 +145,11 @@ castl:
     - "^attempt to call global '([^']+)' \\(a nil value\\)$": 'ReferenceError: \1 is not defined'
     - "^attempt to call method '([^']+)' \\(a nil value\\)$": 'TypeError: \1 is not a function'
     - '^undefined is not a function$': 'TypeError: undefined is not a function'
+    # luajit: { message: 'x' }
+    # stack traceback:
+    # 	[C]: in function 'error'
+    # 	/zoo/dist/arm64/castl-dist/castl/jssupport.lua:41: in function '_throw'
+    - "^luajit: \\{ message: '(.*)' \\}\\nstack traceback:\n\t\\[C\\]: in function 'error'\n\t.*jssupport.lua.*": 'Test262Error: \1'
   stderr_replace_re:
     - "^SyntaxError: Couldn't transpile JS code: Error: (.*)$": 'SyntaxError: \1'
   errors_re:
@@ -195,8 +200,9 @@ chakracore: &chakracore
   errors_re:
     - *exception_colon_message
   flags:
-    #- { if: 'test262', then: '-Test262' }  # requires --test-build
+    # - { if: 'test262', then: '-Test262' }  # requires --test-build
     - { if: 'flags:module', then: '--module' }
+  ignore_sigabrt: true
 
 continuum:
   console_log: console.log
@@ -283,6 +289,9 @@ engine262:
   console_log: ['console.log', 'print']
   stdout_replace_re:
     - "^'(.*)'$": '\1'
+  stderr_replace_re:
+    # Test262Error { message: 'x' }
+    - "^Test262Error [{] message: '(.*)' [}]$": 'Test262Error: \1'
   errors_re:
     - *exception_colon_message
     - *uncaught_exception_colon_message  # main.js wrapper
@@ -480,7 +489,7 @@ jsc: &jsc
   flags:
     # Enable experimental JavaScript features advertised by the binary
     - shell: |
-        $BINARY --options 2>&1 | sed -En 's/^ *(use.*)=false.* \.\.\. *(Enable|Expose).*/--\1=true/p'
+        $BINARY --options 2>&1 | grep -v Wasm | sed -En 's/^ *(use.*)=false.* \.\.\. *(Enable|Expose).*/--\1=true/p'
     - { if: 'flags:CanBlockIsFalse', then: '--can-block-is-false' }
     - { if: 'flags:module', then: '-m' }
 
@@ -509,7 +518,7 @@ js-interpreter:
   errors_re:
     - *uncaught_exception_colon_message
     - '^(Exception: |\[)?(?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-  exit_code_for_test262_error: 1  # print 'Uncaught exception: [object Object]'
+  exit_code_for_test262_error: 1  # prints 'Uncaught exception: [object Object]'
 
 jscript: &jscript
   console_log: ['console.log', 'print', 'WScript.Echo']
@@ -563,8 +572,9 @@ kjs:
 
 kodjodevf:
   console_log: console.log
+  stderr_replace_re:
+    - '^Uncaught exception: Error: (.*)$': 'Uncaught exception: Test262Error: \1'
   errors_re:
-    - '^Uncaught exception: Error: (?P<type>Test262Error): ?(?P<message>.*)$'
     - *uncaught_exception_colon_message
 
 lebjs:
@@ -906,9 +916,10 @@ sophonjs:
 spidermonkey: &spidermonkey
   console_log: ['console.log', 'print']
   errors_re: &sm_exc
-    # "/tmp/x.js:1: ReferenceError: x is not defined"
-    - '^[^:]+:[0-9]+:?([0-9]+)?:? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
-    # "uncaught exception: Error: x"
+    # /tmp/x.js:1: ReferenceError: x is not defined
+    # /tmp/x.js:488:7 uncaught exception: Test262Error: x
+    - '^[^:]+:[0-9]+:?([0-9]+)?:?( uncaught exception:)? (?P<type>[A-Za-z0-9]*Error)(: )?(?P<message>.*)$'
+    # uncaught exception: Error: x
     - '^uncaught exception: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   flags:
     # Enable experimental JavaScript features advertised by the binary
@@ -984,6 +995,7 @@ sval:
   stdout_replace_re:
     - "(Cannot read properties of null) [(]reading '.*'[)]": '\1'
   errors_re:
+    - *uncaught_exception_colon_message
     - *exception_colon_message
   prelude:
     # TODO: investigate
@@ -1040,43 +1052,63 @@ ucode:
   stderr_replace_re:
     - "^Syntax error: ": "SyntaxError: "
 
+# Config for both d8 shell and node.
+# Upstream test262 flags: see _get_files_params/_get_suite_flags/FEATURE_FLAGS in
+# https://github.com/v8/v8/blob/main/test/test262/testcfg.py
 v8: &v8
-  console_log: ['console.log', 'print']
+  console_log: console.log  # d8 has both, but nodejs only has console.log()
   stderr_replace_re:
     - 'V8 is running with experimental features enabled. Stability and security will suffer.': ''
     - '^[^:]+:[0-9]+: Error: Unhandled Promise.$': ''
+    # /tmp/t262-w6popv9x/2746545-does-not-invoke-array-setters.sloppy.js:450
+    #     throw new Test262Error("Setter on Array.prototype called");
+    #     ^
+    # Test262Error: Setter on Array.prototype called
+    # (Use `node --trace-uncaught ...` to show where the exception was thrown)
+    # Node.js v25.8.1
+    - '^[^:]+:[0-9]+\n *throw new Test262Error.*\n *\^\nTest262Error': 'Test262Error'
+    - '^\(Use `node --trace-uncaught ...` to show where the exception was thrown\)': ''
+    - '^Node.js v[0-9.]+$': ''
   errors_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
-  v8_and_node_flags: &v8_and_node_flags
+  flags:
     # Expose gc() and %-intrinsics for $262 prelude
     - --expose-gc
     - --allow-natives-syntax
-    # Enable all completed but not yet enabled JavaScript features
-    # - --js-staging  # missing in node 20
-    - --harmony
-    - --future
-    # Enable every disabled --harmony-* / --js-* flag that the binary advertises
-    # (in progress / experimental flags). Snippet for both node and d8.
+    # Enable every disabled --js-*/--harmony*/--future flag that the binary
+    # advertises: completed but not yet enabled JavaScript features, as well
+    # as in progress / experimental features.
+    # Snippet for both d8 shell and node (`--help --v8-options` is critical).
     - shell: |
         $BINARY --help --v8-options 2>&1 | \
           sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
           grep 'default: --no-' | \
-          sed -En 's/^ *(--(harmony|js)-[^ ]+) .*/\1/p'
-  # See https://github.com/v8/v8/blob/main/test/test262/testcfg.py (_get_files_params/_get_suite_flags/FEATURE_FLAGS)
-  flags:
-    - *v8_and_node_flags
-    # d8-specific flags
-    - --ignore-unhandled-promises  # test/built-ins/Promise/any/ctx-ctor.js
-    - --no-arguments  # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
-    - { if: 'flags:module', then: '--module' }
-    - { if: 'flags:CanBlockIsFalse', then: '--no-can-block' }
-  prelude: &v8_and_node_prelude
+          sed -En 's/^ *(--js-[^ ]+|--harmony[^ ]*|--future) .*/\1/p'
+    # d8-specific flags relevant for test262
+    - shell: |
+        if $BINARY --help 2>&1 | grep -q '^ *d8 '; then
+          # test/built-ins/Promise/any/ctx-ctor.js
+          echo --ignore-unhandled-promises;
+          # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
+          echo --no-arguments;
+        fi
+    - if: flags:CanBlockIsFalse
+      then:
+        # Note: not advertised in --help
+        shell: "if $BINARY --help 2>&1 | grep -q '^ *d8 '; then echo --no-can-block; fi"
+    - if: flags:module
+      then:
+        # Not supported by node - we rely on renaming test as *.mjs instead
+        shell: "if $BINARY --help 2>&1 | grep -q '^ *d8 '; then echo --module; fi"
+  prelude:
     - file: engines/v8/prelude.js
     - file: engines/v8/prelude-agent.js
     # These intrinsics don't work well with try/eval() wrapper and may not be
     # available on older binaries, so include them conditionally if test requires.
-    - { if: 'features:IsHTMLDDA', file: 'engines/v8/prelude-IsHTMLDDA.js' }
-    - { if: 'features:source-phase-imports', file: 'engines/v8/prelude-AbstractModuleSource.js' }
+    - if: features:IsHTMLDDA
+      code: "$262.IsHTMLDDA = %GetUndetectable();"
+    - if: features:source-phase-imports
+      code: "$262.AbstractModuleSource = %GetAbstractModuleSource();"
 
 wine: *jscript
 
@@ -1097,7 +1129,9 @@ yantra: &yantra
   stdout_replace_re:
     - '^\[object Object\]$': ''
     - '^[0-9]+/[0-9]+/20[0-9][0-9] [0-9]+:[0-9]+:[0-9]+.[AP]M$': ''  # uses \u202f
-  # TODO: SIGABRT stderr='Unhandled exception. YantraJS.Core.JSException: Test262Error: probe'
+  stderr_replace_re:
+    - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
+  ignore_sigabrt: true  # raises SIGABRT on exceptions
 
 yrm006:
   console_log: print
@@ -1116,6 +1150,7 @@ yavashark:
   stdout_replace_re:
     - '^"(.*)"$': '\1'
     - '^Interpreter: Undefined': ''
+    - '^Error: Uncaught: \{ "name": "Test262Error", "message": "(.*)" \}$': 'Error: Test262Error: \1'
   errors_re:
     - '^Error: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
 
@@ -1134,12 +1169,7 @@ zuqe:
 # --------------------------------------------------------------------
 # Runtimes
 
-node:
-  console_log: console.log
-  errors_re:
-    - *exception_colon_message
-  flags: *v8_and_node_flags
-  prelude: *v8_and_node_prelude
+node: *v8
 
 bun:
   console_log: console.log

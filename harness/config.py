@@ -110,6 +110,7 @@ class EngineConfig:
     # Exit code to accept for Test262Error in negative test262 case
     # Needed for some engines that don't properly format user-defined exceptions
     exit_code_for_test262_error: int | None = None
+    ignore_sigabrt: bool = False
 
     # Prelude snippets. List of dicts, resolved by resolve() into list[Prelude].
     # Use tag "bench" / "test262" to gate preludes by execution mode.

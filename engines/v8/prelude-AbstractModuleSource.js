@@ -1,1 +1,0 @@
-$262.AbstractModuleSource = %GetAbstractModuleSource();
