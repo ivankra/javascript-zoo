@@ -573,10 +573,12 @@ class Reporter:
         data: dict[str, Any] = {}
         if engine.build_metadata:
             data["binary"] = engine.build_metadata
+        elif self._engine.binary_path:
+            data["binary"] = {"binary_name": os.path.basename(self._engine.binary_path)}
         if engine.flags:
             data["flags"] = engine.flags
         if self._probes is not None:
-            data["harness"] = dict(sorted(self._probes.items()))
+            data["probes"] = dict(sorted(self._probes.items()))
         if self._test262_revision:
             data["test262"] = self._test262_revision.to_json()
         data["summary"] = self._summary_json()
