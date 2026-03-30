@@ -41,14 +41,14 @@ RUN if [ `${CC:-cc} -dumpversion` = 16 ]; then \
       echo 'namespace hermes { namespace hbc { BytecodeFunction &BytecodeModule::getFunction(unsigned) { hermes_fatal("Lean VM called BytecodeModule::getFunction"); } } }' >>lib/BCGen/HBC/HBCStub.cpp; \
     fi
 
-# INTL=true: enable JS Intl support
-ARG INTL=
-# STATIC=true: do a fully static build and embed ICU data - ~40M binary
+# FULL=y: enable Intl support
+ARG FULL=
+# STATIC=y: do a fully static build and embed ICU data - ~40M binary
 ARG STATIC=
 
 RUN cmake -Bbuild -GNinja -DCMAKE_BUILD_TYPE=Release \
-      $(if [ "$INTL" = true ]; then echo -DHERMES_ENABLE_INTL=ON; fi) \
-      $(if [ "$STATIC" = true ]; then echo -DHERMES_STATIC_LINK=ON; fi) && \
+      $(if [ "$FULL" = y ]; then echo -DHERMES_ENABLE_INTL=ON; fi) \
+      $(if [ "$STATIC" = y ]; then echo -DHERMES_STATIC_LINK=ON; fi) && \
     cmake --build build
 
 COPY build/dist.py ./

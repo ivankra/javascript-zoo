@@ -28,17 +28,17 @@ RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
     (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
     git rev-parse HEAD
 
-# INTL=true: build with full internationalization support.
-ARG INTL=
+# FULL=y: build with full internationalization support.
+ARG FULL=
 
-# JITLESS=true: build without JIT. Behaves like --no-jit-backend CLI flag.
+# JITLESS=y: build without JIT. Behaves like --no-jit-backend CLI flag.
 # Note: somehow, --no-jit-backend is NOT identical to --no-ion --no-baseline --no-asmjs --no-native-regexp!
 ARG JITLESS=
 
 # Run './js/src/configure --help' to see all configure options.
 RUN { \
       echo "ac_add_options --enable-project=js"; \
-      if [ "$JITLESS" = true ]; then \
+      if [ "$JITLESS" = y ]; then \
         echo "ac_add_options --disable-jit"; \
       else \
         echo "ac_add_options --enable-jit"; \
@@ -46,7 +46,7 @@ RUN { \
       echo "ac_add_options --enable-optimize"; \
       echo "ac_add_options --enable-release"; \
       echo "ac_add_options --disable-tests"; \
-      if [ "$INTL" != true ]; then \
+      if [ "$FULL" != y ]; then \
         echo "ac_add_options --without-intl-api"; \
         echo "ac_add_options --disable-icu4x"; \
       fi; \
@@ -59,4 +59,4 @@ RUN ./dist.py /dist/spidermonkey \
       --binary=/src/obj/dist/bin/js \
       --license=toolkit/content/license.html \
       version="$(/src/obj/dist/bin/js -v | egrep -o '[0-9.]+')" \
-      $(if [ "$JITLESS" = true ]; then echo jit=; fi)
+      $(if [ "$JITLESS" = y ]; then echo jit=; fi)

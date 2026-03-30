@@ -4,9 +4,9 @@
 include ../../build/build.mk
 
 REV ?= static_h
-CONFORMANCE_BINARY = hermes-v1_intl
+CONFORMANCE_BINARY = hermes-v1_full
 SUPPORTED_ARCHS = amd64 arm64 arm
 
 $(eval $(call build_engine,hermes-v1,../hermes/Dockerfile))
 $(eval $(call build_engine,hermes-v1_clang,../hermes/Dockerfile,--build-arg BASE=jsz-clang))
-$(eval $(call build_engine,hermes-v1_intl,../hermes/Dockerfile,--build-arg INTL=true))
+$(eval $(call build_engine,hermes-v1_full,../hermes/Dockerfile,--build-arg FULL=y))

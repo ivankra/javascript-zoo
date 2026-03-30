@@ -4,7 +4,7 @@
 include ../../build/build.mk
 
 CONFORMANCE_CMD = \
-	"$(ROOT_DIR)/harness/run.py" -j 8 -o conformance.txt /dist/spidermonkey_intl && \
+	"$(ROOT_DIR)/harness/run.py" -j 8 -o conformance.txt /dist/spidermonkey_full && \
 	"$(ROOT_DIR)/harness/run.py" -j 8 -o spidermonkey_1.5.conformance /dist/spidermonkey_1.5 && \
 	"$(ROOT_DIR)/harness/run.py" -j 8 -o spidermonkey_1.6.conformance /dist/spidermonkey_1.6 && \
 	"$(ROOT_DIR)/harness/run.py" -j 8 -o spidermonkey_1.7.conformance /dist/spidermonkey_1.7 && \
@@ -23,12 +23,12 @@ JIT_ARCHS = amd64 arm64 386 arm mips64 loong64 riscv64
 ifeq ($(filter $(DOCKER_ARCH),$(JIT_ARCHS)),$(DOCKER_ARCH))
 $(eval $(call build_engine,spidermonkey,Dockerfile))
 $(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
-$(eval $(call build_engine,spidermonkey_intl,Dockerfile,--build-arg INTL=true))
-$(eval $(call build_engine,spidermonkey_jitless,Dockerfile,--build-arg JITLESS=true))
+$(eval $(call build_engine,spidermonkey_full,Dockerfile,--build-arg FULL=y))
+$(eval $(call build_engine,spidermonkey_jitless,Dockerfile,--build-arg JITLESS=y))
 else
-$(eval $(call build_engine,spidermonkey,Dockerfile,--build-arg JITLESS=true))
-$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg JITLESS=true))
-$(eval $(call build_engine,spidermonkey_intl,Dockerfile,--build-arg INTL=true --build-arg JITLESS=true))
+$(eval $(call build_engine,spidermonkey,Dockerfile,--build-arg JITLESS=y))
+$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg JITLESS=y))
+$(eval $(call build_engine,spidermonkey_full,Dockerfile,--build-arg FULL=y --build-arg JITLESS=y))
 endif
 
 $(eval $(call build_engine,spidermonkey_1.5,spidermonkey_1.5.Dockerfile,--build-arg TARBALL=https://archive.mozilla.org/pub/js/older-packages/js-1.5.tar.gz))
