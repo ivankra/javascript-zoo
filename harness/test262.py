@@ -233,6 +233,8 @@ def main() -> None:
         "features:Temporal" (select all Temporal tests), "~Atomics"
         (exclude features:Atomics tests), "es6&Map" (all edition:es6
         tests with features:Map). Multiple flags are joined with OR.""")
+    p.add_argument("-i", "--input", metavar="FILE",
+                   help="Read test globs from FILE (one per line, blank lines and #-comments ignored)")
     p.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
                    help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     p.add_argument("-l", "--limit", type=int, default=0, metavar="N",
@@ -274,6 +276,13 @@ def main() -> None:
                    help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
     filter_expr = parse_filter_expr(p, args.filter)
+
+    if args.input:
+        with open(args.input) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    args.tests.append(line)
 
     wall_start = time.monotonic()
 
