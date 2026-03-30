@@ -310,9 +310,6 @@ class Reporter:
         line = f"{prefix} {fc[Verdict.OK]} passed, {fc[Verdict.FAILED]} failed"
         if fc[Verdict.SKIPPED]:
             line += f", {fc[Verdict.SKIPPED]} skipped"
-        if self._test262:
-            sc = self._mode_counts
-            line += f" (runs: {sc[Verdict.OK]} ok, {sc[Verdict.FAILED]} fail)"
         if self._in_flight:
             latest_id = max(self._in_flight, key=self._in_flight.__getitem__)
             cols = shutil.get_terminal_size((80, 24)).columns
