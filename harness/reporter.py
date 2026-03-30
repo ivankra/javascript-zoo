@@ -581,10 +581,7 @@ class Reporter:
         if self._probes is not None:
             data["harness"] = dict(sorted(self._probes.items()))
         if self._test262_revision:
-            data["test262"] = {
-                "revision": self._test262_revision.revision,
-                "revision_date": self._test262_revision.revision_date,
-            }
+            data["test262"] = self._test262_revision.to_json()
         data["summary"] = self._summary_json()
         test_order = self._test_order()
         if self._report_tests:

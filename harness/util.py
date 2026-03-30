@@ -310,6 +310,16 @@ def iterate_js_files(
 class GitRevision(NamedTuple):
     revision: str
     revision_date: str  # YYYY-MM-DD
+    revision_dirty: bool = False
+
+    def to_json(self) -> dict[str, Any]:
+        d: dict[str, Any] = {
+            "revision": self.revision,
+            "revision_date": self.revision_date,
+        }
+        if self.revision_dirty:
+            d["revision_dirty"] = True
+        return d
 
 
 def get_git_revision(path: Path) -> GitRevision | None:
@@ -320,7 +330,14 @@ def get_git_revision(path: Path) -> GitRevision | None:
             stderr=subprocess.DEVNULL,
         ).decode().strip()
         rev, date = out.split("\n", 1)
-        return GitRevision(rev, revision_date=date) if rev else None
+        if not rev:
+            return None
+        dirty = subprocess.call(
+            ["git", "-C", str(path), "diff", "--quiet", "HEAD"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        ) != 0
+        return GitRevision(rev, revision_date=date, revision_dirty=dirty)
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         return None
 
