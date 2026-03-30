@@ -81,7 +81,10 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
         k, v = token.split("=", 1)
         if not k:
             fail("metadata key cannot be empty")
-        meta[k.replace("-", "_")] = v
+        if k.endswith('.json'):
+            meta[k[:-5]] = json.loads(v)
+        else:
+            meta[k] = v
     args.meta = meta
 
     args.binary = Path(args.binary) if args.binary else None
@@ -136,13 +139,8 @@ def rename_variant(out: Path) -> None:
             fail(f"failed to parse {out_json}: {e}")
         if not isinstance(doc, dict):
             fail(f"expected JSON object in {out_json}")
-        if "_" in out.name:
-            engine, variant = out.name.split("_", 1)
-            doc["engine"] = engine
-            doc["variant"] = variant
-        else:
-            doc["engine"] = out.name
-            doc.pop("variant", None)
+        doc["binary_name"] = out.name
+        doc["engine"] = out.name.split("_", 1)[0]
         out_json.write_text(
             json.dumps(doc, ensure_ascii=True, sort_keys=True, indent=2) + "\n",
             encoding="utf-8",
@@ -293,19 +291,16 @@ def load_jsz_files(meta: dict[str, str]) -> None:
     for base in (Path("."), Path("/dist"), Path("/")):
         if not base.exists():
             continue
+
         for p in sorted(base.glob("jsz_*")):
-            if p.is_file():
-                key = p.name[len("jsz_") :]
-                meta.setdefault(key, p.read_text(encoding="utf-8").strip())
-
-
-def default_engine_variant(meta: dict[str, str], out: Path) -> None:
-    name = out.name
-    if "engine" not in meta:
-        meta["engine"] = name.split("_", 1)[0]
-    if "variant" not in meta and "_" in name:
-        meta["variant"] = name.split("_", 1)[1]
-    meta.setdefault("arch", arch_name())
+            assert p.is_file()
+            content = p.read_text(encoding="utf-8").strip()
+            key = p.name[len("jsz_") :]
+            if key.endswith(".json"):
+                key = key[:-5]
+                meta.setdefault(key, json.loads(content))
+            else:
+                meta.setdefault(key, content)
 
 
 def tree_size(path: Path) -> int:
@@ -571,7 +566,9 @@ def main() -> None:
         sha = hashlib.sha256(args.out.read_bytes()).hexdigest()
         meta.setdefault("binary_sha256", sha)
     maybe_git_metadata(meta)
-    default_engine_variant(meta, args.out)
+    meta["binary_name"] = Path(args.out).name
+    meta.setdefault("engine", Path(args.out).name.split("_", 1)[0])
+    meta.setdefault("arch", arch_name())
     if not args.no_test:
         if args.out.parent == Path("/dist") and "console_log" not in meta:
             meta["console_log"] = probe_console_log_function(args.out, run_script_cmd)
