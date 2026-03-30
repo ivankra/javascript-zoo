@@ -2,7 +2,8 @@
 
 Agent-coded JavaScript engine in Rust passing nearly 100% of test262.
 
-* Repository: [pmatos/jsse](https://github.com/pmatos/jsse)
+* Homepage:   [ocmatos.com/blog](https://p.ocmatos.com/blog/jsse-a-javascript-engine-built-by-an-agent.html)
+* Repository: [pmatos/jsse](https://github.com/pmatos/jsse) <span class="shields"><img src="https://img.shields.io/github/stars/pmatos/jsse?label=&style=flat-square" alt="Stars" title="Stars"><img src="https://img.shields.io/github/last-commit/pmatos/jsse?label=&style=flat-square" alt="Last commit" title="Last commit"></span>
 * LOC:        [158373](# "cloc src")
 * Language:   Rust
 * License:    MIT
