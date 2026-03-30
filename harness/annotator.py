@@ -125,6 +125,11 @@ class Annotator:
                   self._collect_errors(run.stdout_cleaned or "", self._errors_cres))
         test262_error = any(e[0] == ErrorType.TEST262_ERROR for e in errors)
 
+        if "Test262: This statement should not be evaluated." in output:
+            run.verdict = Verdict.FAILED
+            run.error_type = ErrorType.DONOTEVALUATE
+            return
+
         # test262 async protocol
         if expect_async:
             if "Test262:AsyncTestFailure:" in output:

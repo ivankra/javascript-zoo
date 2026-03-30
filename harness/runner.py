@@ -48,8 +48,9 @@ class ErrorType(StrEnum):
     AGGREGATE_ERROR = "AggregateError"
     SUPPRESSED_ERROR = "SuppressedError"  # esnext
     # test262 errors
-    TEST262_ERROR = "Test262Error"  # assert etc
-    NEGATIVE = "Negative"           # negative test expectations mismatch
+    TEST262_ERROR = "Test262Error"   # assert etc
+    NEGATIVE = "Negative"            # negative test expectations mismatch
+    DONOTEVALUATE = "DONOTEVALUATE"  # got "Test262: This statement should not be evaluated."
     ASYNC_TEST_FAILURE = "AsyncTestFailure"  # Test262:AsyncTestFailure
     NO_ASYNC_TEST_COMPLETE = "NoAsyncTestComplete"
 
