@@ -3,17 +3,11 @@
 
 include ../../build/build.mk
 
-# Latest beta: https://chromiumdash.appspot.com/releases?platform=Linux
-# REV ?= 14.6.202.2
-# REV_PGO ?= 146.0.7680.16
-
-CONFORMANCE_BINARY = v8_intl
-
-# Build on other platforms is complicated
-SUPPORTED_ARCHS = arm64 amd64
+CONFORMANCE_BINARY = v8_full
+#SUPPORTED_ARCHS = arm64 amd64
 
 $(eval $(call build_engine,v8,Dockerfile))
-$(eval $(call build_engine,v8_intl,Dockerfile,--build-arg INTL=true))
-$(eval $(call build_engine,v8_jitless,Dockerfile,--build-arg JITLESS=true))
+$(eval $(call build_engine,v8_full,Dockerfile,--build-arg FULL=y))
+$(eval $(call build_engine,v8_jitless,Dockerfile,--build-arg JITLESS=y))
 #$(eval $(call build_engine,v8_gcc,v8_gcc.Dockerfile))  -- often broken
 #$(eval $(call build_engine,v8_pgo,v8_pgo.Dockerfile,--build-arg REV=$(REV_PGO)))  -- needs too much disk space

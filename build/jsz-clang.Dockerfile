@@ -32,6 +32,8 @@ RUN apt-get update -y && \
         clang-tidy-$VER \
         clang-tools-$VER \
         clangd-$VER \
+        libclang-$VER-dev \
+        libclang-rt-$VER-dev \
         libc++-$VER-dev \
         libc++abi-$VER-dev \
         lld-$VER \
