@@ -306,3 +306,146 @@ class FileDiscoverySyncTest(unittest.TestCase):
     def test_background_wait(self) -> None:
         d = FileDiscovery(["dir1", "dir2"], root=self.root, background=True)
         self.assertEqual(d.wait(), ["dir1/a.js", "dir1/b.js", "dir2/c.js", "dir2/nested/d.js"])
+
+    def test_inferred_root_with_explicit_root(self) -> None:
+        d = FileDiscovery(["dir1"], root=self.root)
+        self.assertEqual(d.inferred_root, self.root)
+
+
+class FileDiscoveryRootInferenceTest(unittest.TestCase):
+    """Tests for fallback_roots + root_marker based root inference."""
+
+    def setUp(self) -> None:
+        self._td = tempfile.TemporaryDirectory()
+        # Build a fake test262 tree:
+        #   <td>/test262/harness/assert.js   (root marker)
+        #   <td>/test262/test/built-ins/a.js
+        #   <td>/test262/test/built-ins/b.js
+        #   <td>/test262/test/staging/c.js
+        self.td = Path(self._td.name).resolve()
+        self.test262 = self.td / "test262"
+        for rel in [
+            "harness/assert.js",
+            "test/built-ins/a.js",
+            "test/built-ins/b.js",
+            "test/staging/c.js",
+        ]:
+            p = self.test262 / rel
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text("// x\n")
+
+    def tearDown(self) -> None:
+        self._td.cleanup()
+
+    def test_fallback_root_dir(self) -> None:
+        """Bare selector matched via fallback_roots, root inferred from marker."""
+        d = FileDiscovery(
+            ["test/built-ins"],
+            fallback_roots=[self.test262],
+            root_marker="harness/assert.js",
+        )
+        self.assertEqual(d.inferred_root, self.test262)
+        self.assertEqual(sorted(d.files), ["test/built-ins/a.js", "test/built-ins/b.js"])
+
+    def test_fallback_root_subdir(self) -> None:
+        """Bare selector without test/ prefix matched via second fallback root."""
+        d = FileDiscovery(
+            ["built-ins"],
+            fallback_roots=[self.test262, self.test262 / "test"],
+            root_marker="harness/assert.js",
+        )
+        self.assertEqual(d.inferred_root, self.test262)
+        self.assertEqual(sorted(d.files), ["test/built-ins/a.js", "test/built-ins/b.js"])
+
+    def test_symlink_resolution(self) -> None:
+        """Symlinked selector resolves to real test262 root."""
+        link = self.td / "link_test"
+        link.symlink_to(self.test262 / "test")
+        d = FileDiscovery(
+            [str(link / "built-ins")],
+            root_marker="harness/assert.js",
+        )
+        self.assertEqual(d.inferred_root, self.test262)
+        self.assertEqual(sorted(d.files), ["test/built-ins/a.js", "test/built-ins/b.js"])
+
+    def test_glob_with_fallback(self) -> None:
+        """Glob selectors work with fallback_roots."""
+        d = FileDiscovery(
+            ["test/built-ins/*.js"],
+            fallback_roots=[self.test262],
+            root_marker="harness/assert.js",
+        )
+        self.assertEqual(d.inferred_root, self.test262)
+        self.assertEqual(sorted(d.files), ["test/built-ins/a.js", "test/built-ins/b.js"])
+
+    def test_explicit_path_no_fallback(self) -> None:
+        """Explicit ./ prefix must NOT try fallback_roots."""
+        d = FileDiscovery(
+            ["./test/built-ins"],
+            fallback_roots=[self.test262],
+            root_marker="harness/assert.js",
+        )
+        # ./test/built-ins doesn't exist in cwd, so no files found
+        self.assertEqual(d.files, [])
+        self.assertIsNone(d.inferred_root)
+
+    def test_mixed_roots_error(self) -> None:
+        """Files resolving to different roots must raise an error."""
+        other = self.td / "other262"
+        for rel in ["harness/assert.js", "test/x.js"]:
+            p = other / rel
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text("// x\n")
+        d = FileDiscovery(
+            [str(self.test262 / "test/built-ins/a.js"), str(other / "test/x.js")],
+            root_marker="harness/assert.js",
+        )
+        with self.assertRaises(RuntimeError):
+            d.wait()
+
+    def test_out_of_tree_file_after_in_tree(self) -> None:
+        """File outside any marker tree must raise when root is established."""
+        outside = self.td / "stray.js"
+        outside.write_text("// x\n")
+        d = FileDiscovery(
+            [str(self.test262 / "test/built-ins/a.js"), str(outside)],
+            root_marker="harness/assert.js",
+        )
+        with self.assertRaises(RuntimeError):
+            d.wait()
+
+    def test_out_of_tree_file_before_in_tree(self) -> None:
+        """Out-of-tree file first, then in-tree — must still raise."""
+        outside = self.td / "stray.js"
+        outside.write_text("// x\n")
+        d = FileDiscovery(
+            [str(outside), str(self.test262 / "test/built-ins/a.js")],
+            root_marker="harness/assert.js",
+        )
+        with self.assertRaises(RuntimeError):
+            d.wait()
+
+    def test_no_marker_no_inference(self) -> None:
+        """Without root_marker, no inference happens even with fallback_roots."""
+        d = FileDiscovery(
+            ["test/built-ins"],
+            fallback_roots=[self.test262],
+        )
+        self.assertIsNone(d.inferred_root)
+
+    def test_background_inferred_root_available_immediately(self) -> None:
+        """inferred_root is available right after construction (constructor blocks
+        until root is determined, not until all files are discovered)."""
+        d = FileDiscovery(
+            ["test"],
+            fallback_roots=[self.test262],
+            root_marker="harness/assert.js",
+            background=True,
+        )
+        self.assertEqual(d.inferred_root, self.test262)
+        # discovery may still be running; wait and verify all files found
+        self.assertEqual(len(d.wait()), 3)
+
+    def test_from_list_inferred_root_is_none(self) -> None:
+        d = FileDiscovery.from_list(["a.js"])
+        self.assertIsNone(d.inferred_root)

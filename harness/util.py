@@ -16,7 +16,7 @@ import sys
 import tempfile
 import threading
 from pathlib import Path
-from typing import Any, Iterable, Iterator, NamedTuple
+from typing import Any, Callable, Iterable, Iterator, NamedTuple
 
 
 UNAME_TO_GOARCH_MAP = {
@@ -114,6 +114,28 @@ class FileDiscovery:
     collection even in background mode before streaming begins).
 
     Reporter reads .files, .count, .done for progress display.
+
+    Root inference (when root is None):
+      When root is not provided, FileDiscovery can infer it from the discovered
+      file paths.  This is controlled by two optional parameters:
+
+      - fallback_roots: ordered list of directories to try when a bare selector
+        (not absolute, not starting with ./ or ../) doesn't match anything from
+        cwd.  Each root is tried in order; the first one that produces matches
+        wins.  Explicit selectors (absolute paths, ./ or ../ prefixed) are never
+        tried against fallback_roots — they resolve from cwd only.
+
+      - root_marker: a relative path (e.g. "harness/assert.js") used to detect
+        the actual root directory.  When a concrete file is found, its path is
+        fully resolved (symlinks followed), then parents are walked upward
+        looking for root_marker.  The first ancestor containing it becomes the
+        effective root.  All returned paths are then relative to this root.
+        If a later file resolves to a different root, discovery aborts with an
+        error.
+
+      When root is explicitly set (e.g. run.py passing root=CONFORMANCE_DIR),
+      fallback_roots and root_marker are ignored — root is used as-is for
+      selector resolution and path relativization.
     """
 
     def __init__(
@@ -121,23 +143,35 @@ class FileDiscovery:
         selectors: Iterable[str],
         *,
         root: Path | None = None,
+        fallback_roots: list[Path] | None = None,
+        root_marker: str | None = None,
         exclude_re: list[re.Pattern[str]] | None = None,
         shuffle: bool = False,
         background: bool = False,
     ) -> None:
         self._files: list[str] = []
         self._done = threading.Event()
+        self._root_ready = threading.Event()
         self._error: BaseException | None = None
         self._queue: queue.SimpleQueue[str | None] | None = (
             queue.SimpleQueue() if background else None
         )
+        self._inferred_root: Path | None = root
+        if root is not None:
+            self._root_ready.set()
 
-        args = (list(selectors), root, exclude_re, shuffle)
+        args = (list(selectors), root, fallback_roots, root_marker, exclude_re, shuffle)
         if background:
             self._thread: threading.Thread | None = threading.Thread(
                 target=self._run, args=args, daemon=True,
             )
             self._thread.start()
+            # Block until root is determined (first file) so callers can
+            # use inferred_root immediately.  File discovery continues in
+            # the background.
+            self._root_ready.wait()
+            if self._error:
+                raise self._error
         else:
             self._thread = None
             self._run(*args)
@@ -152,6 +186,7 @@ class FileDiscovery:
         d._error = None
         d._queue = None
         d._thread = None
+        d._inferred_root = None
         return d
 
     @staticmethod
@@ -167,10 +202,27 @@ class FileDiscovery:
                 yield p
 
     @staticmethod
+    def _find_root_marker(p: Path, marker: str) -> Path | None:
+        """Walk up parents of resolved path looking for marker file."""
+        p = p.resolve()
+        for parent in (p if p.is_dir() else p.parent, *p.parents):
+            if (parent / marker).exists():
+                return parent
+        return None
+
+    @staticmethod
+    def _is_explicit(token: str) -> bool:
+        """True if selector is an explicit path (absolute or ./ or ../ prefixed)."""
+        return token.startswith("/") or token.startswith("./") or token.startswith("../")
+
+    @staticmethod
     def _iter_files(
         selectors: list[str],
         root: Path | None,
         exclude_re: list[re.Pattern[str]] | None,
+        fallback_roots: list[Path] | None = None,
+        root_marker: str | None = None,
+        on_root_inferred: Callable[[Path | None], None] | None = None,
     ) -> Iterator[str]:
         """Yield path strings for .js files matching selectors (recursive, deduped).
 
@@ -178,7 +230,56 @@ class FileDiscovery:
         - Directories are walked recursively in deterministic name order.
         - exclude_re: skip paths whose string representation matches any pattern.
         - Returned strings are root-relative when root is provided, otherwise str(path).
+        - fallback_roots / root_marker: see class docstring.  Only active when
+          root is None.
+        - on_root_inferred: called once when the root is first inferred from a
+          discovered file (only when root is None and root_marker is set).
         """
+        effective_root = root
+        infer_root = root is None and root_marker is not None
+
+        root_signalled = False
+
+        pending_root_check: list[Path] = []
+
+        def _check_root(p: Path) -> None:
+            """Infer or verify root from a resolved file path.
+
+            Signals on_root_inferred on the first file (so the constructor
+            unblocks).  Keeps trying _find_root_marker until a root is
+            established, then switches to fast is_relative_to() checks.
+            Files seen before root is established are retroactively verified.
+            """
+            nonlocal effective_root, root_signalled
+            if not infer_root:
+                return
+            if effective_root is not None:
+                # Fast path: root already known, just verify membership.
+                if not p.is_relative_to(effective_root):
+                    raise RuntimeError(
+                        f"test file {p} is outside root {effective_root} "
+                        f"(all tests must be within the same tree)"
+                    )
+                return
+            # Root not yet established — try to find it from this file.
+            found = FileDiscovery._find_root_marker(p, root_marker)  # type: ignore[arg-type]
+            if found is not None:
+                effective_root = found
+                # Retroactively verify files emitted before root was known.
+                for prev in pending_root_check:
+                    if not prev.is_relative_to(effective_root):
+                        raise RuntimeError(
+                            f"test file {prev} is outside root {effective_root} "
+                            f"(all tests must be within the same tree)"
+                        )
+                pending_root_check.clear()
+            else:
+                pending_root_check.append(p)
+            if not root_signalled:
+                root_signalled = True
+                if on_root_inferred is not None:
+                    on_root_inferred(found)
+
         def _keep(p: Path) -> bool:
             if not exclude_re:
                 return True
@@ -186,9 +287,10 @@ class FileDiscovery:
             return not any(pat.search(s) for pat in exclude_re)
 
         def _item(p: Path) -> str:
-            if root is not None:
+            r = effective_root
+            if r is not None:
                 try:
-                    return str(p.relative_to(root))
+                    return str(p.relative_to(r))
                 except ValueError:
                     pass
             return str(p)
@@ -196,6 +298,7 @@ class FileDiscovery:
         seen: set[str] = set()
 
         def _emit(p: Path) -> Iterator[str]:
+            _check_root(p)
             if not _keep(p):
                 return
             s = _item(p)
@@ -204,26 +307,64 @@ class FileDiscovery:
             seen.add(s)
             yield s
 
-        for token in selectors:
+        def _resolve_selector(token: str) -> Path:
+            """Resolve a selector to a concrete path, trying root and fallbacks.
+
+            For non-glob selectors, checks existence to pick the right root.
+            For globs, just checks for metachar presence — actual expansion is
+            deferred to the main loop.
+            When root inference is active (infer_root), paths are resolved
+            (symlinks followed) so _item() can relativize with pure string ops.
+            Otherwise paths are returned as-is to preserve cwd-relative forms.
+            """
             p = Path(token)
-            if (
-                root is not None
-                and not p.is_absolute()
-                and not token.startswith("./")
-                and not token.startswith("../")
-            ):
+            explicit = FileDiscovery._is_explicit(token)
+            is_glob = any(c in token for c in "*?[]")
+
+            if root is not None and not explicit:
+                # Classic behavior: try under explicit root
                 rooted = root / p
-                if rooted.exists() or any(c in token for c in "*?[]"):
-                    p = rooted
+                if rooted.exists() or is_glob:
+                    return rooted
+
+            # Try as-is (cwd-relative or absolute)
+            if p.exists():
+                return p.resolve() if infer_root else p
+            if is_glob:
+                return p  # defer to glob.glob() in main loop
+
+            # Explicit paths must not fall through to fallback roots
+            if explicit:
+                return p  # return as-is, will produce no matches
+
+            # Try fallback roots
+            if fallback_roots and root is None:
+                for fb in fallback_roots:
+                    candidate = fb / p
+                    if candidate.exists():
+                        return candidate.resolve()
+
+            return p  # return as-is
+
+        for token in selectors:
+            p = _resolve_selector(token)
 
             if p.is_dir():
-                for path in FileDiscovery._walk_js_sorted(p):
+                d = p.resolve() if infer_root else p
+                for path in FileDiscovery._walk_js_sorted(d):
                     yield from _emit(path)
                 continue
 
             if any(c in str(p) for c in "*?[]"):
-                for item in sorted(glob.glob(str(p), recursive=True), key=lambda s: version_sort_key(s)):
-                    q = Path(item)
+                # Try fallback roots if no matches from cwd / root
+                results = list(glob.glob(str(p), recursive=True))
+                if not results and fallback_roots and root is None and not FileDiscovery._is_explicit(token):
+                    for fb in fallback_roots:
+                        results = list(glob.glob(str(fb / token), recursive=True))
+                        if results:
+                            break
+                for item in sorted(results, key=lambda s: version_sort_key(s)):
+                    q = Path(item).resolve() if infer_root else Path(item)
                     if q.is_dir():
                         for path in FileDiscovery._walk_js_sorted(q):
                             yield from _emit(path)
@@ -238,11 +379,22 @@ class FileDiscovery:
         self,
         selectors: list[str],
         root: Path | None,
+        fallback_roots: list[Path] | None,
+        root_marker: str | None,
         exclude_re: list[re.Pattern[str]] | None,
         shuffle: bool,
     ) -> None:
+        def _on_root(r: Path | None) -> None:
+            self._inferred_root = r
+            self._root_ready.set()
+
         try:
-            it: Iterator[str] = self._iter_files(selectors, root, exclude_re)
+            it: Iterator[str] = self._iter_files(
+                selectors, root, exclude_re,
+                fallback_roots=fallback_roots,
+                root_marker=root_marker,
+                on_root_inferred=_on_root,
+            )
             if shuffle:
                 items = list(it)
                 random.shuffle(items)
@@ -254,6 +406,7 @@ class FileDiscovery:
         except BaseException as e:
             self._error = e
         finally:
+            self._root_ready.set()  # unblock waiters even if no root found
             self._done.set()
             if self._queue is not None:
                 self._queue.put(None)
@@ -285,6 +438,15 @@ class FileDiscovery:
     def done(self) -> bool:
         """True once discovery is complete."""
         return self._done.is_set()
+
+    @property
+    def inferred_root(self) -> Path | None:
+        """Root directory inferred from discovered files (or the explicit root).
+
+        Always available immediately — __init__ blocks until the root is
+        determined (first file found or discovery completes with no files).
+        """
+        return self._inferred_root
 
     def wait(self) -> list[str]:
         """Block until discovery finishes, return all files."""

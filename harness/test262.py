@@ -272,8 +272,8 @@ def main() -> None:
                    help="Randomize test execution order")
     p.add_argument("--no-probe", action="store_true", default=False,
                    help="Skip engine probing before test run")
-    p.add_argument("--test262-dir", metavar="DIR", default=str(DEFAULT_TEST262_DIR),
-                   help=f"Root of test262 repository (default: {DEFAULT_TEST262_DIR})")
+    p.add_argument("--test262-dir", metavar="DIR", default=None,
+                   help=f"Root of test262 repository (default: inferred from test paths, or {DEFAULT_TEST262_DIR})")
     args = p.parse_args()
     filter_expr = parse_filter_expr(p, args.filter)
 
@@ -289,18 +289,22 @@ def main() -> None:
     engine = EngineConfig.load(args.engine, config_name=args.config)
     engine.resolve()
 
-    test262_dir = Path(args.test262_dir).resolve()
-    if not test262_dir.exists():
-        sys.exit(f"test262 dir not found: {test262_dir}")
-    if not (test262_dir / "harness").exists():
-        sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
+    fallback_roots: list[Path] | None = None
+    if args.test262_dir is not None:
+        test262_dir: Path | None = Path(args.test262_dir).resolve()
+    else:
+        test262_dir = None  # will be inferred by FileDiscovery
+        fallback_roots = [DEFAULT_TEST262_DIR, DEFAULT_TEST262_DIR / "test"]
+    if test262_dir is not None:
+        if not test262_dir.exists():
+            sys.exit(f"test262 dir not found: {test262_dir}")
+        if not (test262_dir / "harness").exists():
+            sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
 
-    assembler = Assembler(engine, test262_dir, verbose=args.verbose, stage_dir=args.stage_dir)
-    if args.preprocess:
-        assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
-        return
+    if args.preprocess and not args.tests:
+        sys.exit("-E requires exactly one test path")
 
-    # Start file discovery in background thread (while probes run)
+    # Start file discovery (background for normal runs, sync for -E preprocess).
     exclude_pats: list[re.Pattern[str]] = [re.compile(pat.replace("*", ".*")) for pat in args.exclude]
     if args.no_intl:
         exclude_pats.extend(re.compile(re.escape(s)) for s in INTL402_SKIP_PATHS)
@@ -311,10 +315,24 @@ def main() -> None:
 
     discovery = FileDiscovery(
         args.tests or ["test"], root=test262_dir,
+        fallback_roots=fallback_roots,
+        root_marker="harness/assert.js",
         exclude_re=[re.compile("_FIXTURE")] + exclude_pats,
         shuffle=args.shuffle,
-        background=True,
+        background=not args.preprocess,
     )
+
+    # Resolve test262_dir: explicit or inferred from first discovered file.
+    if test262_dir is None:
+        test262_dir = discovery.inferred_root or DEFAULT_TEST262_DIR
+    if not (test262_dir / "harness").exists():
+        sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
+
+    assembler = Assembler(engine, test262_dir, verbose=args.verbose, stage_dir=args.stage_dir)
+
+    if args.preprocess:
+        assembler.emit_preprocessed(discovery.files, mode=args.mode, output=args.output)
+        return
 
     reporter = Reporter(
         engine,
