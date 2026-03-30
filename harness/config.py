@@ -6,6 +6,7 @@ from __future__ import annotations
 import dataclasses
 import json
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -199,7 +200,7 @@ class EngineConfig:
                 raise SystemExit(f"unknown config: {config_name}")
             cfg = {**cfg, **configs[config_name]}
         else:
-            for key in [binary.name.split("_", 1)[0], binary.name]:
+            for key in [re.split(r"[_.]", binary.name, 1)[0], binary.name]:
                 if key and key in configs:
                     cfg = {**cfg, **configs[key]}
         cfg = {**cfg, **build_metadata}
