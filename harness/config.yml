@@ -373,7 +373,12 @@ goja: &goja
   stderr_replace_re:
     # goja_nodejs/console prefixes console messages with a timestamp
     - '^20[0-9][0-9]/[0-9][0-9]/[0-9][0-9] [0-9][0-9]:[0-9][0-9]:[0-9][0-9] ': ''
-    # Note: Goja doesn't implement ES modules.
+  flags:
+    # Only for our sobek wrapper (goja doesn't implement ES modules).
+    # Optional: it would also recognize .mjs.
+    - if: flags:module
+      then:
+        shell: $BINARY --help 2>&1 | grep -o -- -module
 
 graaljs:
   console_log: ['console.log', 'print']
@@ -407,7 +412,6 @@ hermes: &hermes
   bench_flags:
     - -O  # Expensive optimizations
     - -w  # Disable all warnings
-    - -enable-hermes-internal
     - if: test262
       then:
         shell: $BINARY -help-list-hidden | grep -o [-]test262  # Increase compliance with test262
@@ -589,20 +593,17 @@ lebjs:
 libjs: &libjs
   console_log: ['console.log', 'print']
   stdout_replace_re:
-    # console.log output gets quoted
-    - '(?m)^"(.*)"$': '\1'
+    # console.log output gets quoted unless passing --raw-strings
+    - '^"(.*)"$': '\1'
   stderr_replace_re:
     - '^Uncaught exception: *\n\[([A-Za-z0-9]*Error)\] *': '\1: '
     # test/annexB/language/comments/multi-line-html-close.js
     - '^Uncaught exception: *\nObject\{ message: (.*), toString: \[Function\] * \} *$': 'Test262Error: \1'
+    - '^Uncaught exception: *\nObject\{ "message": (.*), "toString": \[Function\] * \} *$': 'Test262Error: \1'
   errors_re:
     - *uncaught_exception_colon_message
     - *exception_colon_message
   flags:
-    - --disable-ansi-colors
-    - --no-syntax-highlight
-    - --disable-source-location-hints
-    # - --disable-debug-output
     - --raw-strings
     - --use-test262-global
     - { if: 'flags:module', then: '--as-module' }
@@ -780,12 +781,17 @@ quickjs: &quickjs
     # Add --no-unhandled-rejection if advertised (mainline quickjs)
     # to suppress "Possibly unhandled promise rejection: ..." warnings
     # with non-zero exit code. Only needed for qjs, not run-test262.
-    - shell: $BINARY -h 2>&1 | grep -o '[-]-no-unhandled-rejection'
+    - shell: $BINARY -h 2>&1 | grep -o -- --no-unhandled-rejection
+    # https://github.com/quickjs-ng/quickjs/issues/1431
+    # https://github.com/bellard/quickjs/issues/501
+    - if: flags:CanBlockIsFalse
+      then:
+        shell: $BINARY -h 2>&1 | grep -o -- --no-can-block
     - if: flags:module
       then: --module
       else:
         # quickjs-ng frequently misdetects modules and needs explicit --script
-        - shell: $BINARY -h 2>&1 | grep -o '[-]-script'
+        - shell: $BINARY -h 2>&1 | grep -o -- --script
 
 quickjs-ng: *quickjs
 primjs: *quickjs
@@ -900,10 +906,7 @@ see:
   errors_re:
     - '^ *(?P<type>[A-Za-z0-9]*Error): ([^:]+[.]js:[0-9]+: )?(?P<message>.+)$'
 
-sobek:
-  <<: *goja
-  flags:
-    - { if: 'flags:module', then: '--module' }  # our wrapper would also recognize .mjs
+sobek: *goja
 
 sophonjs:
   console_log: console.log
