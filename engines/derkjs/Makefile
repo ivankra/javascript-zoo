@@ -3,4 +3,6 @@
 
 include ../../build/build.mk
 
+SUPPORTED_ARCHS = arm64 amd64
+
 $(eval $(call build_engine,derkjs,Dockerfile))
