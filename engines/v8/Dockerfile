@@ -18,9 +18,8 @@ ENV PATH=/src/depot_tools:$PATH
 
 # Google doesn't support non-arm64/amd64 builds with their vendored stuff, use system packages.
 # https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/.vpython3
-ARG TARGETARCH
 RUN touch cipd_env; \
-    if [ "$TARGETARCH" != "amd64" ] && [ "$TARGETARCH" != "arm64" ]; then \
+    if [ "$(uname -m | sed -E 's/(aarch64|arm64|x86_64)/OK/')" != OK ]; then \
       echo 'export VPYTHON_BYPASS="manually managed python not supported by chrome operations"' >cipd_env && \
       apt-get install -y --no-install-recommends \
         python3-brotli python3-certifi python3-charset-normalizer python3-dateutil python3-httplib2 \
