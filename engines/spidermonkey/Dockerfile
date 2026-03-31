@@ -21,7 +21,7 @@ RUN if [ "$(dpkg --print-architecture)" = i386 ]; then \
     cargo install cbindgen
 
 ARG REPO=https://github.com/mozilla-firefox/firefox.git
-ARG REV=release
+ARG REV=main
 
 WORKDIR /src
 RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
