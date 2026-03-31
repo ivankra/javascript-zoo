@@ -15,6 +15,8 @@ Ensure both use the same test262 revision. Either:
 
 Also clear "features" and "tests" lists from test262_config.toml.
 Keep just OOM/crashes that would hang boa_tester.
+
+See also: https://boajs.dev/conformance?version=main
 """
 import json
 import os

@@ -9,6 +9,8 @@ Generate ours:
 If per-file-master.json is not provided and doesn't exist in cwd, it will be
 downloaded from:
   https://raw.githubusercontent.com/LadybirdBrowser/libjs-data/master/test262/per-file-master.json
+
+See also: https://ladybirdbrowser.github.io/libjs-website/test262/
 """
 import json
 import os
