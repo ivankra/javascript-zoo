@@ -8,8 +8,10 @@ ARG REPO=https://github.com/engine262/engine262.git
 ARG REV=main
 
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
+RUN (git clone --depth=1 --branch="$REV" --recurse-submodules --shallow-submodules "$REPO" . || \
+    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD && \
+     git submodule update --init --depth=1 --recommend-shallow)) && \
+    git submodule update --init --depth=1 --recommend-shallow && \
     git rev-parse HEAD
 
 RUN npm install

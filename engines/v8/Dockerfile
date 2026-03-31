@@ -16,21 +16,10 @@ WORKDIR /src
 RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git /src/depot_tools
 ENV PATH=/src/depot_tools:$PATH
 
-# Google doesn't support non-arm64/amd64 builds with their vendored stuff, use system packages.
-# https://chromium.googlesource.com/chromium/tools/depot_tools/+/refs/heads/main/.vpython3
-RUN touch cipd_env; \
-    if [ "$(uname -m | sed -E 's/(aarch64|arm64|x86_64)/OK/')" != OK ]; then \
-      echo 'export VPYTHON_BYPASS="manually managed python not supported by chrome operations"' >cipd_env && \
-      apt-get install -y --no-install-recommends \
-        python3-brotli python3-certifi python3-charset-normalizer python3-dateutil python3-httplib2 \
-        python3-idna python3-lxml python3-requests python3-six python3-tz python3-urllib3 python3-yaml && \
-      sed -i -e "s/from distutils import spawn/from shutil import which/; s/spawn.find_executable('gclient')/which('gclient')/" /src/depot_tools/fetch.py; \
-    fi
-
-RUN . ./cipd_env && fetch --nohooks --nohistory v8
+RUN fetch --nohooks --nohistory v8
 
 ARG REV=lkgr
-RUN . ./cipd_env && gclient sync --no-history --revision "v8@$REV"
+RUN gclient sync --no-history --revision "v8@$REV"
 
 WORKDIR /src/v8
 

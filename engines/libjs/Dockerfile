@@ -54,8 +54,8 @@ RUN sed -i '/"dependencies":/,/^  ],$/c "dependencies": ["fast-float", "fmt", "i
 # Target AVX2 / generic ARMv8 CPUs rather than native
 # for higher compatibility of built binaries
 RUN case `dpkg --print-architecture` in \
-      arm64) sed -i 's/-march=native/-march=armv8-a/' Meta/CMake/common_compile_options.cmake;; \
-      amd64) sed -i 's/-march=native/-march=x86-64-v3/' Meta/CMake/common_compile_options.cmake;; \
+      arm64) sed -i 's/-march=native/-march=armv8-a/' Meta/CMake/*compile_options.cmake;; \
+      amd64) sed -i 's/-march=native/-march=x86-64-v3/' Meta/CMake/*compile_options.cmake;; \
     esac
 
 RUN if [ `uname -m` = riscv64 ]; then export VCPKG_FORCE_SYSTEM_BINARIES=1; fi; \

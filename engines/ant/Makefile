@@ -4,8 +4,6 @@
 include ../../build/build.mk
 
 SUPPORTED_ARCHS = amd64
-
-# arm64 build is broken. Build it at:
-#REV ?= a41eb672dfe434f78be3ba1443774daa973eb2e1
+REV ?= 291637d5a34087fd7237ec0a2bf91daaac17e4d5
 
 $(eval $(call build_engine,ant,Dockerfile))

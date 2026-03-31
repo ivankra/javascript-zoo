@@ -20,13 +20,13 @@ RUN if [ "$(dpkg --print-architecture)" = i386 ]; then \
     rustup toolchain install stable && \
     cargo install cbindgen
 
-ARG REPO=https://github.com/mozilla-firefox/firefox.git
-ARG REV=main
-
 WORKDIR /src
-RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \
-    (git clone --depth=1 "$REPO" . && git fetch --depth=1 origin "$REV" && git checkout FETCH_HEAD)) && \
-    git rev-parse HEAD
+
+ARG REPO=https://github.com/mozilla-firefox/firefox.git
+RUN git clone --depth=1 --branch=main "$REPO" .
+
+ARG REV=main
+RUN git fetch --depth=1 origin "$REV" && git checkout -f FETCH_HEAD && git rev-parse HEAD
 
 # FULL=y: build with full internationalization support.
 ARG FULL=

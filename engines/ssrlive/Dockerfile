@@ -5,7 +5,7 @@ ARG BASE=jsz-rust
 FROM $BASE
 
 ARG REPO=https://github.com/ssrlive/javascript.git
-ARG REV=master
+ARG REV=vm
 
 WORKDIR /src
 RUN (git clone --depth=1 --branch="$REV" "$REPO" . || \

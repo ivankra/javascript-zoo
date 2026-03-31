@@ -22,6 +22,11 @@ RUN sed -i '/^set(quickjs_sources/a     ${CMAKE_CURRENT_SOURCE_DIR}/src/basic/lo
 
 RUN sed -i 's/ -Os / -O3 /' CMakeLists.txt
 
+# Fix current upstream build breakages with newer Clang/libc++ headers.
+RUN sed -i '/sys.time.h/a #include <cstring>' src/gc/thread_pool.cc
+RUN sed -i '/#include <fstream>/a #include <functional>' src/gc/cartesian_tree.h
+RUN sed -i 's/size_t allocatedSize = AllocatedMemory();/size_t allocatedSize = this->AllocatedMemory();/' src/gc/ros_allocator.h
+
 RUN args="-DENABLE_UNITTESTS=ON"; \
     if [ "${DISABLE_GC}" != "y" ]; then \
       args="$args -DENABLE_LEPUSNG=ON -DENABLE_PRIMJS_SNAPSHOT=ON -DENABLE_COMPATIBLE_MM=ON -DCMAKE_C_FLAGS=-DENABLE_TRACING_GC -DCMAKE_CXX_FLAGS=-DENABLE_TRACING_GC"; \

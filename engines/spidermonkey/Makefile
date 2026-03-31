@@ -22,12 +22,12 @@ JIT_ARCHS = amd64 arm64 386 arm mips64 loong64 riscv64
 
 ifeq ($(filter $(DOCKER_ARCH),$(JIT_ARCHS)),$(DOCKER_ARCH))
 $(eval $(call build_engine,spidermonkey,Dockerfile))
-$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
+#$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc))
 $(eval $(call build_engine,spidermonkey_full,Dockerfile,--build-arg FULL=y))
 $(eval $(call build_engine,spidermonkey_jitless,Dockerfile,--build-arg JITLESS=y))
 else
 $(eval $(call build_engine,spidermonkey,Dockerfile,--build-arg JITLESS=y))
-$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg JITLESS=y))
+#$(eval $(call build_engine,spidermonkey_gcc,Dockerfile,--build-arg BASE=jsz-gcc --build-arg JITLESS=y))
 $(eval $(call build_engine,spidermonkey_full,Dockerfile,--build-arg FULL=y --build-arg JITLESS=y))
 endif
 
