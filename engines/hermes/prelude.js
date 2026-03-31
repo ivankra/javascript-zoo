@@ -10,8 +10,8 @@ if (typeof $262 === 'undefined') {
   globalThis.$262 = {};
 }
 
-if (typeof $262.eval === 'undefined') {
-  $262.eval = function (s) { return (0, eval)(s); }
+if (typeof $262.evalScript === 'undefined') {
+  $262.evalScript = function (s) { return (0, eval)(s); }
 }
 
 if (typeof $262.gc === 'undefined' && typeof globalThis.gc === 'function') {
