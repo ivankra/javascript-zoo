@@ -20,6 +20,9 @@
 
 #default:
 #  <any overrides to the defaults for all engines can go here>
+#  # TODO: bump up priority for slow tests, executed as soon as discovered
+#  slow_tests:
+#    - test/built-ins/RegExp/property-escapes/generated/strings/RGI_Emoji.js
 
 .constants:
   # Common pattern to report exceptions
@@ -1075,9 +1078,6 @@ v8: &v8
   errors_re:
     - '^[^:]+:[0-9]+: (?P<type>[A-Za-z0-9]+Error): (?P<message>.+)$'
   flags:
-    # Expose gc() and %-intrinsics for $262 prelude
-    - --expose-gc
-    - --allow-natives-syntax
     # Enable every disabled --js-*/--harmony*/--future flag that the binary
     # advertises: completed but not yet enabled JavaScript features, as well
     # as in progress / experimental features.
@@ -1087,7 +1087,7 @@ v8: &v8
           sed -n '/type: bool/{x;G;s/\n/ /;p;};h' | \
           grep 'default: --no-' | \
           sed -En 's/^ *(--js-[^ ]+|--harmony[^ ]*|--future) .*/\1/p'
-    # d8-specific flags relevant for test262
+    # d8-specific flags
     - shell: |
         if $BINARY --help 2>&1 | grep -q '^ *d8 '; then
           # test/built-ins/Promise/any/ctx-ctor.js
@@ -1095,6 +1095,12 @@ v8: &v8
           # test/language/eval-code/direct/func-decl-a-following-parameter-is-named-arguments-declare-arguments-and-assign.js
           echo --no-arguments;
         fi
+    # Expose %-intrinsics for $262 prelude
+    - --allow-natives-syntax
+    # Only expose GC for tests that require it, otherwise it breaks
+    # test/built-ins/ShadowRealm/prototype/evaluate/globalthis-config-only-properties.js
+    - if: features:host-gc-required
+      then: --expose-gc
     - if: flags:CanBlockIsFalse
       then:
         # Note: not advertised in --help

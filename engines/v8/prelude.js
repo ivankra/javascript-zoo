@@ -6,6 +6,7 @@ if (typeof print === "undefined" && typeof console !== "undefined") {
 
 globalThis.$262 = {
   global: globalThis,
+  realmId: typeof Realm !== "undefined" && typeof Realm.current !== "undefined" ? Realm.current() : undefined,
 
   gc() {
     if (typeof globalThis.gc === "function") {
@@ -31,16 +32,20 @@ globalThis.$262 = {
       var vm = process.getBuiltinModule("vm");
       var ctx = vm.createContext({ console, print, process });
       vm.runInContext(prelude, ctx);
+      ctx.$262.context = ctx;
       return ctx.$262;
     }
   },
 
   evalScript(code) {
+    // Use the realm that owns this $262 object. Realm.current() would run in
+    // the caller realm instead, which breaks cross-realm tests like
+    // test/built-ins/Proxy/revocable/tco-fn-realm.js.
     if (typeof Realm !== "undefined" && typeof Realm.eval !== "undefined") {
-      return Realm.eval(Realm.current(), code);
+      return Realm.eval(this.realmId, code);
     } else if (typeof process !== "undefined" && typeof process.getBuiltinModule !== "undefined") {
       var vm = process.getBuiltinModule("vm");
-      return vm.runInThisContext(code);
+      return this.context ? vm.runInContext(code, this.context) : vm.runInThisContext(code);
     } else {
       return (0, eval)(code);
     }

@@ -140,6 +140,12 @@ class Assembler:
             if "async" in scenario.fm.flags and "module" in scenario.fm.flags:
                 pieces.append("if (typeof globalThis !== 'undefined') globalThis.$DONE = $DONE;")
 
+        # TODO: "ReferenceError: assert is not defined" for v8 in
+        # test/language/module-code/ambiguous-export-bindings/namespace-unambiguous-if-export-star-as-from-and-import-star-as-and-export.js
+        # Module test imports another full test file. _copy_deps_recursive()
+        # raw-copies it so its module body can't see harness bindings like assert.
+        # Quick fix here or make non-fixtures go through full assembly pipeline.
+
         # 6. Test source body
         pieces.append(scenario.test_content)
 
@@ -158,13 +164,19 @@ class Assembler:
         used = set(_USED_262_RE.findall(assembled))
 
         is_module = "module" in scenario.fm.flags
-        needs_module_tree = is_module or "dynamic-import" in scenario.fm.features
+        needs_mirror_tree = (
+            is_module
+            or "dynamic-import" in scenario.fm.features
+            # test/staging/source-phase-imports/import-source-source-text-module.js
+            # uses relative import.source(...) from a script and needs mirrored tree
+            or "source-phase-imports" in scenario.fm.features
+        )
 
         # Pick the staging root: stage_dir (persistent) or a temp directory.
         if self.stage_dir is not None:
             dst_root = self.stage_dir
             cleanup_dir = None  # persistent — no cleanup
-        elif needs_module_tree:
+        elif needs_mirror_tree:
             dst_root = Path(tempfile.mkdtemp(prefix="t262-mod-"))
             cleanup_dir = dst_root
         else:
@@ -192,7 +204,7 @@ class Assembler:
         staged_path.parent.mkdir(parents=True, exist_ok=True)
         write_atomic(staged_path, assembled.encode("utf-8"), check_same=True)
 
-        if needs_module_tree:
+        if needs_mirror_tree:
             visited: set[str] = {scenario.rel_path}
             self._copy_deps_recursive(
                 dst_root, scenario.test_path.parent, scenario.test_content, visited,
