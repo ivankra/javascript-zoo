@@ -1,1 +1,1 @@
-../../data/engines/nocturnejs/conformance.txt
+../../data/conformance/nocturnejs.txt

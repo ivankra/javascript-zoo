@@ -1,1 +1,1 @@
-../../data/engines/xs/conformance.txt
+../../data/conformance/xs.txt

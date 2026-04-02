@@ -1,1 +1,1 @@
-../../data/engines/sablejs/conformance.txt
+../../data/conformance/sablejs.txt

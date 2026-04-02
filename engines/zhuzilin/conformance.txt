@@ -1,1 +1,1 @@
-../../data/engines/zhuzilin/conformance.txt
+../../data/conformance/zhuzilin.txt

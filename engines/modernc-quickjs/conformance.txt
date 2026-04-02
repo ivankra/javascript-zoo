@@ -1,1 +1,1 @@
-../../data/engines/modernc-quickjs/conformance.txt
+../../data/conformance/modernc-quickjs.txt

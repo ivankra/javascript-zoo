@@ -1,1 +1,1 @@
-../../data/engines/castl/conformance.txt
+../../data/conformance/castl.txt

@@ -1,1 +1,1 @@
-../../data/engines/mujs/conformance.txt
+../../data/conformance/mujs.txt

@@ -1,1 +1,1 @@
-../../data/engines/ssrlive/conformance.txt
+../../data/conformance/ssrlive.txt

@@ -1,1 +1,1 @@
-../../data/engines/echosoar/conformance.txt
+../../data/conformance/echosoar.txt

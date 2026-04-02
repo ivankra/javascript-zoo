@@ -1,1 +1,1 @@
-../../data/engines/espruino/conformance.txt
+../../data/conformance/espruino.txt

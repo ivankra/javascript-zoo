@@ -1,1 +1,1 @@
-../../data/engines/spidermonkey/conformance.txt
+../../data/conformance/spidermonkey.txt

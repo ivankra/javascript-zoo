@@ -1,1 +1,1 @@
-../../data/engines/quanta/conformance.txt
+../../data/conformance/quanta.txt

@@ -1,1 +1,1 @@
-../../data/engines/besen/conformance.txt
+../../data/conformance/besen.txt

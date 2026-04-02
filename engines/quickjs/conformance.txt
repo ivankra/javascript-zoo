@@ -1,1 +1,1 @@
-../../data/engines/quickjs/conformance.txt
+../../data/conformance/quickjs.txt

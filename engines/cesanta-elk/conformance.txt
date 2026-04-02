@@ -1,1 +1,1 @@
-../../data/engines/cesanta-elk/conformance.txt
+../../data/conformance/cesanta-elk.txt

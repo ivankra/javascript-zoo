@@ -1,1 +1,1 @@
-../../data/engines/js2py/conformance.txt
+../../data/conformance/js2py.txt

@@ -1,1 +1,1 @@
-../../data/engines/duktape/conformance.txt
+../../data/conformance/duktape.txt

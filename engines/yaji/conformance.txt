@@ -1,1 +1,1 @@
-../../data/engines/yaji/conformance.txt
+../../data/conformance/yaji.txt

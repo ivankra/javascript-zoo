@@ -1,1 +1,1 @@
-../../data/engines/kjs/conformance.txt
+../../data/conformance/kjs.txt

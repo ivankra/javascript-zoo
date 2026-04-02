@@ -1,1 +1,1 @@
-../../data/engines/rpython-langjs/conformance.txt
+../../data/conformance/rpython-langjs.txt

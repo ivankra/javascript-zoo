@@ -1,1 +1,1 @@
-../../data/engines/flathead/conformance.txt
+../../data/conformance/flathead.txt

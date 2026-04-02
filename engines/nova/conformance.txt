@@ -1,1 +1,1 @@
-../../data/engines/nova/conformance.txt
+../../data/conformance/nova.txt

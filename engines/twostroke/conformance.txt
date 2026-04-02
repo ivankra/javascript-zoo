@@ -1,1 +1,1 @@
-../../data/engines/twostroke/conformance.txt
+../../data/conformance/twostroke.txt

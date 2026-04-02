@@ -1,1 +1,1 @@
-../../data/engines/jispy/conformance.txt
+../../data/conformance/jispy.txt

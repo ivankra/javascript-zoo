@@ -1,1 +1,1 @@
-../../data/engines/chakracore/conformance.txt
+../../data/conformance/chakracore.txt

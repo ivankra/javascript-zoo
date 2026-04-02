@@ -1,1 +1,1 @@
-../../data/engines/jscript9/conformance.txt
+../../data/conformance/jscript9.txt

@@ -1,1 +1,1 @@
-../../data/engines/quickjit/conformance.txt
+../../data/conformance/quickjit.txt

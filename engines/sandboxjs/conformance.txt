@@ -1,1 +1,1 @@
-../../data/engines/sandboxjs/conformance.txt
+../../data/conformance/sandboxjs.txt

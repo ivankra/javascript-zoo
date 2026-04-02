@@ -1,1 +1,1 @@
-../../data/engines/js-interpreter/conformance.txt
+../../data/conformance/js-interpreter.txt

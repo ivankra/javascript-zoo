@@ -1,1 +1,1 @@
-../../data/engines/zuqe/conformance.txt
+../../data/conformance/zuqe.txt

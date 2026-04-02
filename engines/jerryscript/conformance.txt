@@ -1,1 +1,1 @@
-../../data/engines/jerryscript/conformance.txt
+../../data/conformance/jerryscript.txt

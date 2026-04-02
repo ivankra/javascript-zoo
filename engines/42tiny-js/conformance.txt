@@ -1,1 +1,1 @@
-../../data/engines/42tiny-js/conformance.txt
+../../data/conformance/42tiny-js.txt

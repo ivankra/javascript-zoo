@@ -1,1 +1,1 @@
-../../data/engines/reeva/conformance.txt
+../../data/conformance/reeva.txt

@@ -1,1 +1,1 @@
-../../data/engines/goja/conformance.txt
+../../data/conformance/goja.txt

@@ -1,1 +1,1 @@
-../../data/engines/yrm006/conformance.txt
+../../data/conformance/yrm006.txt

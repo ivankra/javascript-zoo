@@ -1,1 +1,1 @@
-../../data/engines/graaljs/conformance.txt
+../../data/conformance/graaljs.txt

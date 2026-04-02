@@ -1,1 +1,1 @@
-../../data/engines/jint/conformance.txt
+../../data/conformance/jint.txt

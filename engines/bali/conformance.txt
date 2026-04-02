@@ -1,1 +1,1 @@
-../../data/engines/bali/conformance.txt
+../../data/conformance/bali.txt

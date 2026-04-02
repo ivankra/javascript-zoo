@@ -1,1 +1,1 @@
-../../data/engines/starlingmonkey/conformance.txt
+../../data/conformance/starlingmonkey.txt

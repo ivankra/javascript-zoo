@@ -1,1 +1,1 @@
-../../data/engines/hako/conformance.txt
+../../data/conformance/hako.txt

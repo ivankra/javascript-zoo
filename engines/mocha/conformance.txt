@@ -1,1 +1,1 @@
-../../data/engines/mocha/conformance.txt
+../../data/conformance/mocha.txt

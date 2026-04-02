@@ -1,1 +1,1 @@
-../../data/engines/sophonjs/conformance.txt
+../../data/conformance/sophonjs.txt

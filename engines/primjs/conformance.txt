@@ -1,1 +1,1 @@
-../../data/engines/primjs/conformance.txt
+../../data/conformance/primjs.txt

@@ -1,1 +1,1 @@
-../../data/engines/lebjs/conformance.txt
+../../data/conformance/lebjs.txt

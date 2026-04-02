@@ -1,1 +1,1 @@
-../../data/engines/nashorn/conformance.txt
+../../data/conformance/nashorn.txt

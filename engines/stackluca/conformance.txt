@@ -1,1 +1,1 @@
-../../data/engines/stackluca/conformance.txt
+../../data/conformance/stackluca.txt

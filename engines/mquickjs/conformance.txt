@@ -1,1 +1,1 @@
-../../data/engines/mquickjs/conformance.txt
+../../data/conformance/mquickjs.txt

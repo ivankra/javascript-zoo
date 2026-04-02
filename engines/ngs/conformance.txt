@@ -1,1 +1,1 @@
-../../data/engines/ngs/conformance.txt
+../../data/conformance/ngs.txt

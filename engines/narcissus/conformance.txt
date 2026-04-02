@@ -1,1 +1,1 @@
-../../data/engines/narcissus/conformance.txt
+../../data/conformance/narcissus.txt

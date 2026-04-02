@@ -1,1 +1,1 @@
-../../data/engines/ejscript/conformance.txt
+../../data/conformance/ejscript.txt

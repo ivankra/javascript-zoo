@@ -1,1 +1,1 @@
-../../data/engines/stator/conformance.txt
+../../data/conformance/stator.txt

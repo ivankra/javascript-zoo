@@ -1,1 +1,1 @@
-../../data/engines/yavashark/conformance.txt
+../../data/conformance/yavashark.txt

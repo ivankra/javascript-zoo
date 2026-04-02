@@ -1,1 +1,1 @@
-../../data/engines/rust-js/conformance.txt
+../../data/conformance/rust-js.txt

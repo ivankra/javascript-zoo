@@ -1,1 +1,1 @@
-../../data/engines/jsc/conformance.txt
+../../data/conformance/jsc.txt

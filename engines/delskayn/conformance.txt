@@ -1,1 +1,1 @@
-../../data/engines/delskayn/conformance.txt
+../../data/conformance/delskayn.txt

@@ -1,1 +1,1 @@
-../../data/engines/engine262/conformance.txt
+../../data/conformance/engine262.txt

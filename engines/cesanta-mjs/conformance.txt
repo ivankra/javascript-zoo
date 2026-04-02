@@ -1,1 +1,1 @@
-../../data/engines/cesanta-mjs/conformance.txt
+../../data/conformance/cesanta-mjs.txt

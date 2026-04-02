@@ -1,1 +1,1 @@
-../../data/engines/wine/conformance.txt
+../../data/conformance/wine.txt

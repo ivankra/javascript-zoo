@@ -1,1 +1,1 @@
-../../data/engines/iv-lv5/conformance.txt
+../../data/conformance/iv-lv5.txt

@@ -1,1 +1,1 @@
-../../data/engines/sobek/conformance.txt
+../../data/conformance/sobek.txt

@@ -1,1 +1,1 @@
-../../data/engines/dmdscript/conformance.txt
+../../data/conformance/dmdscript.txt

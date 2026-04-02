@@ -1,1 +1,1 @@
-../../data/engines/metaes/conformance.txt
+../../data/conformance/metaes.txt

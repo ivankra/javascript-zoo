@@ -1,1 +1,1 @@
-../../data/engines/eval5/conformance.txt
+../../data/conformance/eval5.txt

@@ -1,1 +1,1 @@
-../../data/engines/fastschema-qjs/conformance.txt
+../../data/conformance/fastschema-qjs.txt

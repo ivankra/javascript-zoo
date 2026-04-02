@@ -1,1 +1,1 @@
-../../data/engines/ant/conformance.txt
+../../data/conformance/ant.txt

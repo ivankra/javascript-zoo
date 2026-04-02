@@ -1,1 +1,1 @@
-../../data/engines/libjs/conformance.txt
+../../data/conformance/libjs.txt

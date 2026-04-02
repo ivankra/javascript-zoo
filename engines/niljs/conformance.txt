@@ -1,1 +1,1 @@
-../../data/engines/niljs/conformance.txt
+../../data/conformance/niljs.txt

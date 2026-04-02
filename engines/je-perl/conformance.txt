@@ -1,1 +1,1 @@
-../../data/engines/je-perl/conformance.txt
+../../data/conformance/je-perl.txt

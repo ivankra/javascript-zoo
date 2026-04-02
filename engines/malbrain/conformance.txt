@@ -1,1 +1,1 @@
-../../data/engines/malbrain/conformance.txt
+../../data/conformance/malbrain.txt

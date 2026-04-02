@@ -1,1 +1,1 @@
-../../data/engines/v8/conformance.txt
+../../data/conformance/v8.txt

@@ -1,1 +1,1 @@
-../../data/engines/jurassic/conformance.txt
+../../data/conformance/jurassic.txt

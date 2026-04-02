@@ -1,1 +1,1 @@
-../../data/engines/epimetheus/conformance.txt
+../../data/conformance/epimetheus.txt

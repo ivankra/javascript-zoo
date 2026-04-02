@@ -1,1 +1,1 @@
-../../data/engines/ucode/conformance.txt
+../../data/conformance/ucode.txt

@@ -1,1 +1,1 @@
-../../data/engines/dscriptcpp/conformance.txt
+../../data/conformance/dscriptcpp.txt

@@ -1,1 +1,1 @@
-../../data/engines/tiny-js/conformance.txt
+../../data/conformance/tiny-js.txt

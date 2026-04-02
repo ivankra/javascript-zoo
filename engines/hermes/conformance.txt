@@ -1,1 +1,1 @@
-../../data/engines/hermes/conformance.txt
+../../data/conformance/hermes.txt

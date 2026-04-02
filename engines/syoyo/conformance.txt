@@ -1,1 +1,1 @@
-../../data/engines/syoyo/conformance.txt
+../../data/conformance/syoyo.txt

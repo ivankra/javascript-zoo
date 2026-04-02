@@ -1,1 +1,1 @@
-../../data/engines/motet-a/conformance.txt
+../../data/conformance/motet-a.txt

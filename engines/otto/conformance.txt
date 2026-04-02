@@ -1,1 +1,1 @@
-../../data/engines/otto/conformance.txt
+../../data/conformance/otto.txt

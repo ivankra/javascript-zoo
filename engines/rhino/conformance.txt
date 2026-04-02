@@ -1,1 +1,1 @@
-../../data/engines/rhino/conformance.txt
+../../data/conformance/rhino.txt

@@ -1,1 +1,1 @@
-../../data/engines/starlight/conformance.txt
+../../data/conformance/starlight.txt

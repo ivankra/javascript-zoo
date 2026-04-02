@@ -1,1 +1,1 @@
-../../data/engines/jsish/conformance.txt
+../../data/conformance/jsish.txt

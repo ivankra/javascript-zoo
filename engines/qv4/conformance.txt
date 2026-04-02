@@ -1,1 +1,1 @@
-../../data/engines/qv4/conformance.txt
+../../data/conformance/qv4.txt

@@ -1,1 +1,1 @@
-../../data/engines/derkjs/conformance.txt
+../../data/conformance/derkjs.txt

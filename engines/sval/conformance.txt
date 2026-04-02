@@ -1,1 +1,1 @@
-../../data/engines/sval/conformance.txt
+../../data/conformance/sval.txt

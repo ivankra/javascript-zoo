@@ -1,1 +1,1 @@
-../../data/engines/porffor/conformance.txt
+../../data/conformance/porffor.txt

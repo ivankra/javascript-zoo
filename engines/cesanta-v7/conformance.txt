@@ -1,1 +1,1 @@
-../../data/engines/cesanta-v7/conformance.txt
+../../data/conformance/cesanta-v7.txt

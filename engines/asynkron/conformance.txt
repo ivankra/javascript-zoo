@@ -1,1 +1,1 @@
-../../data/engines/asynkron/conformance.txt
+../../data/conformance/asynkron.txt

@@ -1,1 +1,1 @@
-../../data/engines/rapidus/conformance.txt
+../../data/conformance/rapidus.txt

@@ -1,1 +1,1 @@
-../../data/engines/bramblex/conformance.txt
+../../data/conformance/bramblex.txt

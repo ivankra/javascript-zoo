@@ -1,1 +1,1 @@
-../../data/engines/topaz/conformance.txt
+../../data/conformance/topaz.txt

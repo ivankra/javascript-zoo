@@ -1,1 +1,1 @@
-../../data/engines/brimstone/conformance.txt
+../../data/conformance/brimstone.txt

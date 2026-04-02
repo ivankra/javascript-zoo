@@ -1,1 +1,1 @@
-../../data/engines/njs/conformance.txt
+../../data/conformance/njs.txt

@@ -1,1 +1,1 @@
-../../data/engines/boa/conformance.txt
+../../data/conformance/boa.txt

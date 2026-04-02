@@ -1,1 +1,1 @@
-../../data/engines/kodjodevf/conformance.txt
+../../data/conformance/kodjodevf.txt
