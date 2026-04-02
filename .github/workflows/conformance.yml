@@ -1,0 +1,118 @@
+# Conformance testing for all engines using the hub image.
+
+name: Conformance
+
+on:
+  workflow_dispatch:
+    inputs:
+      num_shards:
+        description: 'Number of parallel shards'
+        default: 152
+        type: number
+      release:
+        description: 'Release tag'
+        default: 'latest'
+        type: string
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  init:
+    runs-on: ubuntu-24.04
+    outputs:
+      tag: ${{ steps.init.outputs.tag }}
+      num_shards: ${{ steps.init.outputs.num_shards }}
+      shards: ${{ steps.init.outputs.shards }}
+    steps:
+      - name: Resolve release tag and build shard array
+        id: init
+        run: |
+          TAG="${{ inputs.release }}"
+          if [[ "$TAG" == "latest" || -z "$TAG" ]]; then
+            TAG=$(gh release view --repo ${{ github.repository }} --json tagName -q .tagName)
+          fi
+          echo "tag=$TAG" | tee -a "$GITHUB_OUTPUT"
+          N=${{ inputs.num_shards }}
+          echo "num_shards=$N" | tee -a "$GITHUB_OUTPUT"
+          SHARDS=$(seq 1 "$N" | jq -R 'tonumber' | jq -sc .)
+          echo "shards=$SHARDS" | tee -a "$GITHUB_OUTPUT"
+
+  test:
+    needs: init
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: ${{ fromJson(needs.init.outputs.shards) }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.sha }}
+          submodules: true
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+
+      - name: Pull hub image
+        run: docker pull ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+
+      - name: Select engines for this shard
+        id: engines
+        run: |
+          ENGINES=$(docker run --rm ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }} cat /dist/LIST | sed -n '${{ matrix.shard }}~${{ needs.init.outputs.num_shards }}p' | tr '\n' ' ')
+          echo "engines=$ENGINES" | tee -a "$GITHUB_OUTPUT"
+
+      - name: Run conformance and test262
+        run: |
+          IMAGE=ghcr.io/ivankra/javascript-zoo/hub:${{ needs.init.outputs.tag }}
+          DR="docker run --rm --memory=15g --tmpfs /tmp -e PYTHONDONTWRITEBYTECODE=1 -v $(pwd):/zoo:ro -v $(pwd)/results:/results $IMAGE python3"
+          mkdir -p results/es1-5 results/compat-table results/test262
+          set -x;
+          for engine in ${{ steps.engines.outputs.engines }}; do
+            $DR /zoo/harness/run.py --shuffle -j 4 -o "/results/es1-5/$engine.json" "/dist/$engine" "es[1-5]";
+            $DR /zoo/harness/run.py --shuffle -j 4 -o "/results/compat-table/$engine.json" "/dist/$engine" compat-table;
+            $DR /zoo/harness/test262.py --shuffle -j 4 -o "/results/test262/$engine.json" "/dist/$engine";
+          done
+
+      - name: Upload shard results
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: conformance-shard-${{ matrix.shard }}
+          path: results/
+          if-no-files-found: ignore
+
+  merge:
+    needs: [init, test]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download all shard results
+        uses: actions/download-artifact@v6
+        with:
+          path: all-results
+          pattern: conformance-*
+          merge-multiple: false
+
+      - name: Merge results
+        run: |
+          mkdir -p merged/es1-5 merged/compat-table merged/test262
+          for dir in all-results/conformance-shard-*/; do
+            [[ -d "$dir" ]] || continue
+            cp -n "$dir"/es1-5/*.json merged/es1-5/ 2>/dev/null || true
+            cp -n "$dir"/compat-table/*.json merged/compat-table/ 2>/dev/null || true
+            cp -n "$dir"/test262/*.json merged/test262/ 2>/dev/null || true
+          done
+
+      - name: Upload merged results
+        uses: actions/upload-artifact@v6
+        with:
+          name: conformance-results-${{ needs.init.outputs.tag }}
+          path: merged/
+          if-no-files-found: warn
