@@ -104,7 +104,7 @@ jobs:
 
       - name: Upload results
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: bench-${{ matrix.arch.name }}-shard-${{ matrix.shard }}
           path: results/
@@ -121,7 +121,7 @@ jobs:
           ref: ${{ github.sha }}
 
       - name: Download all shard results
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: all-results
           pattern: bench-*
@@ -134,7 +134,7 @@ jobs:
         run: python3 bench/github-bench.py merge all-results/bench-arm64-shard-*/ merged-results/arm64
 
       - name: Upload merged results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: bench-results-${{ needs.init.outputs.tag }}
           path: merged-results/

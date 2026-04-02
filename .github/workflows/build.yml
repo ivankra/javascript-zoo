@@ -100,7 +100,7 @@ jobs:
         run: uname -a; lscpu; cat /proc/cpuinfo; gcc -march=native -Q --help=target
 
       - name: Build engine
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@v4
         with:
           max_attempts: 3
           timeout_minutes: 360
@@ -110,7 +110,7 @@ jobs:
         run: tar -cf dist-amd64-${{ matrix.engine }}.tar -C dist/amd64 .
 
       - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: dist-amd64-${{ matrix.engine }}
           path: dist-amd64-${{ matrix.engine }}.tar
@@ -161,7 +161,7 @@ jobs:
         run: uname -a; lscpu; cat /proc/cpuinfo; gcc -march=native -Q --help=target
 
       - name: Build engine
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@v4
         with:
           max_attempts: 3
           timeout_minutes: 360
@@ -172,7 +172,7 @@ jobs:
         run: tar -cf dist-arm64-${{ matrix.engine }}.tar -C dist/arm64 .
 
       - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: dist-arm64-${{ matrix.engine }}
           path: dist-arm64-${{ matrix.engine }}.tar
