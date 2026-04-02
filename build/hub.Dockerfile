@@ -18,8 +18,8 @@ RUN rm -rf /dist /zoo && \
     git clone --depth=1 --branch="$TAG" "https://github.com/ivankra/javascript-zoo.git" /zoo && \
     cd /zoo && \
     git config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*' && \
-    git fetch --depth=1 origin master && \
-    git checkout -B master origin/master && \
+    git fetch --depth=1 origin main && \
+    git checkout -B main origin/main && \
     git submodule update --init --depth=1 && \
     mkdir -p /zoo/dist && ln -s /dist /zoo/dist/$TARGETARCH && \
     cat /zoo/build/hub.motd | sed "2s/\$/ @$TAG $TARGETARCH/" >/etc/motd && \
