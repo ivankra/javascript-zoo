@@ -9,7 +9,7 @@ name: Build
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 1,15 * *'  # biweekly, 1st and 15th of month at 03:00 UTC
+    - cron: '0 1 1,8,15,22 * *'  # ~weekly
 
 permissions:
   contents: write  # gh release create/edit/upload
