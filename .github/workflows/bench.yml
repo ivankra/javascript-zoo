@@ -64,7 +64,7 @@ jobs:
         shard: ${{ fromJson(needs.init.outputs.shards) }}
     runs-on: ${{ matrix.arch.runner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
 
@@ -116,7 +116,7 @@ jobs:
     if: always()
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.sha }}
 
