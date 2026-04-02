@@ -8,4 +8,4 @@ SUPPORTED_ARCHS = amd64 arm64 arm 386 riscv64
 
 $(eval $(call build_engine,escargot,Dockerfile))
 $(eval $(call build_engine,escargot_clang,Dockerfile,--build-arg BASE=jsz-clang))
-$(eval $(call build_engine,escargot_262,Dockerfile,--build-arg TEST262=y))
+$(eval $(call build_engine,escargot_full,Dockerfile,--build-arg FULL=y))

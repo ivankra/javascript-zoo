@@ -15,14 +15,14 @@ RUN git submodule update --init third_party
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends libicu-dev
 
-# TEST262=y: build a fully-featured binary for conformance testing
-ARG TEST262=
+# FULL=y: fully-featured build for conformance testing
+ARG FULL=n
 
 # Note: builds with -O2 by default
 RUN cmake -GNinja -Bbuild \
       -DESCARGOT_MODE=release \
       -DESCARGOT_OUTPUT=shell \
-      $(if [ $TEST262 = y ]; then echo \
+      $(if [ $FULL = y ]; then echo \
           # Enable some test features, especially $262 object \
           -DESCARGOT_TEST=ON \
           # Enable Temporal/ShadowRealm support \
