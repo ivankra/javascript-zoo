@@ -21,7 +21,6 @@ from harness.util import HelpFormatter
 
 CONFORMANCE_DIR = REPO_ROOT / "conformance"
 PRELUDE_CONSOLE_JS = REPO_ROOT / "harness/prelude-console.js"
-TIMEOUT_SEC = 10.0
 
 
 def run_one(
@@ -84,9 +83,10 @@ def main() -> None:
     parser.add_argument("engine", help="Engine binary path or name")
     parser.add_argument("suites", nargs="*", help="Suite dirs/globs (default: from config)")
     parser.add_argument("-o", "--output", help="Write results to file")
-    parser.add_argument("-j", "--jobs", type=int, help="Parallel jobs (default: from config)")
+    parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), metavar="N",
+                        help=f"Run N jobs in parallel (default: {os.cpu_count()})")
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
-    parser.add_argument("-t", "--timeout", type=float, default=TIMEOUT_SEC)
+    parser.add_argument("-t", "--timeout", type=float, metavar="SEC", help="Per-test timeout in seconds")
     parser.add_argument("--shuffle", action="store_true", default=False,
                         help="Randomize test execution order")
     parser.add_argument(
@@ -96,8 +96,9 @@ def main() -> None:
     args = parser.parse_args()
 
     cfg = EngineConfig.load(args.engine)
-    cfg.timeout_sec = args.timeout
-    jobs = args.jobs if args.jobs is not None else cfg.conformance_jobs
+    cfg.resolve()
+    if args.timeout is not None:
+        cfg.timeout_sec = args.timeout
 
     # Resolve test files from suites or config defaults.
     suites = args.suites or list(cfg.conformance_suite)
@@ -120,7 +121,7 @@ def main() -> None:
         reporter.set_expected_dirs()
 
     wall_start = time.monotonic()
-    with concurrent.futures.ProcessPoolExecutor(max_workers=jobs) as pool:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=args.jobs) as pool:
         futs = {}
         for rel in tests:
             reporter.note_started(rel)

@@ -75,7 +75,7 @@ class EngineConfig:
     requires_tmp_staging: bool = False
 
     # --- Process defaults ---
-    timeout_sec: float = 60.0
+    timeout_sec: float | None = None
     memory_limit_mb: int | None = None
     memory_addr_limit_mb: int | None = None
     cwd: str | None = None
@@ -137,7 +137,6 @@ class EngineConfig:
         "compat-table/es6",
         "compat-table/es20[0-9][0-9]",
     ])
-    conformance_jobs: int = 8
     # Default test262 filter expression for this engine.
     # See test262.py --filter; if flag is specified it takes precedence.
     test262_filter: str = ""

@@ -746,7 +746,7 @@ class Reporter:
             if n_skipped:
                 line += f", {n_skipped} skipped"
             if wall_sec:
-                line += f", wall time: {wall_sec:.3f}s"
+                line += f" in {wall_sec:.3f}s"
             if peak_rss_kb:
                 line += f", peak RSS: {peak_rss_kb / 1024:.1f}MB"
         else:

@@ -318,16 +318,10 @@ class Runner:
         except subprocess.TimeoutExpired:
             timed_out = True
             if proc is not None and proc.poll() is None:
-                _kill_pgroup(proc.pid, signal.SIGTERM)
-                try:
-                    out, err = proc.communicate(timeout=0.2)
-                    stdout_b += out
-                    stderr_b += err
-                except subprocess.TimeoutExpired:
-                    _kill_pgroup(proc.pid, signal.SIGKILL)
-                    out, err = proc.communicate()
-                    stdout_b += out
-                    stderr_b += err
+                _kill_pgroup(proc.pid, signal.SIGKILL)
+                out, err = proc.communicate()
+                stdout_b += out
+                stderr_b += err
         finally:
             self.current_proc = None
             wall = time.monotonic() - start

@@ -38,7 +38,6 @@ from harness.util import HelpFormatter
 from harness import probe as test262_probe
 
 DEFAULT_TEST262_DIR = (REPO_ROOT / "third_party" / "test262").resolve()
-DEFAULT_TIMEOUT_SEC = 60.0
 INTL402_SKIP_PATHS = ["test/intl402", "test/staging/Intl402"]
 STAGING_SKIP_PATHS = ["test/staging"]
 ANNEX_B_SKIP_PATHS = ["test/annexB"]
@@ -53,7 +52,6 @@ class Executor:
         assembler: Assembler,
         *,
         jobs: int = 4,
-        timeout_sec: float = DEFAULT_TIMEOUT_SEC,
         mode: str = "all",
         filter_expr: FilterExpr | None = None,
     ) -> None:
@@ -62,7 +60,6 @@ class Executor:
         self.assembler = assembler
         self.runner = Runner(engine)
         self.annotator = Annotator(engine)
-        self.timeout_sec = timeout_sec
         self.mode = mode
         self.filter_expr = filter_expr
         self._jobs = max(1, jobs)
@@ -173,7 +170,6 @@ class Executor:
                 test_id=scenario.rel_path,
                 test_path=str(scenario.test_path),
                 script_path=str(staged.script_path),
-                timeout_sec=self.timeout_sec,
                 cwd=str(staged.cwd),
             )
 
@@ -243,8 +239,8 @@ def main() -> None:
                    help="Run only strict (-m strict) or sloppy (-m sloppy) mode scenarios (default: all)")
     p.add_argument("-o", "--output", metavar="FILE",
                    help="Output file (for test results or -E)")
-    p.add_argument("-t", "--timeout", type=float, default=DEFAULT_TIMEOUT_SEC, metavar="SEC",
-                   help=f"Timeout for each test in seconds (default: {DEFAULT_TIMEOUT_SEC})")
+    p.add_argument("-t", "--timeout", type=float,  metavar="SEC",
+                   help=f"Per-scenario timeout in seconds")
     p.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     p.add_argument("-E", action="store_true", dest="preprocess",
                    help="Preprocess a single test and write it to stdout or -o FILE")
@@ -288,8 +284,10 @@ def main() -> None:
 
     wall_start = time.monotonic()
 
-    engine = EngineConfig.load(args.engine, config_name=args.config)
-    engine.resolve()
+    cfg = EngineConfig.load(args.engine, config_name=args.config)
+    cfg.resolve()
+    if args.timeout is not None:
+        cfg.timeout_sec = args.timeout
 
     test262_dir = Path(args.test262_dir).resolve()
     if not test262_dir.exists():
@@ -297,7 +295,7 @@ def main() -> None:
     if not (test262_dir / "harness").exists():
         sys.exit(f"harness dir not found: {test262_dir / 'harness'}")
 
-    assembler = Assembler(engine, test262_dir, verbose=args.verbose, stage_dir=args.stage_dir)
+    assembler = Assembler(cfg, test262_dir, verbose=args.verbose, stage_dir=args.stage_dir)
     if args.preprocess:
         assembler.emit_preprocessed(args.tests, mode=args.mode, output=args.output)
         return
@@ -319,7 +317,7 @@ def main() -> None:
     )
 
     reporter = Reporter(
-        engine,
+        cfg,
         discovery=discovery,
         output_file=args.output,
         verbose=args.verbose,
@@ -334,7 +332,7 @@ def main() -> None:
 
     # Probe engine and harness capabilities (discovery runs in parallel)
     if not args.no_probe and args.output and reporter.is_json_output():
-        for name, result in test262_probe.probe_engine(engine, test262_dir, jobs=args.jobs):
+        for name, result in test262_probe.probe_engine(cfg, test262_dir, jobs=args.jobs):
             reporter.add_probe_result(name, result)
             if name == "assert.throws" and result != "OK":
                 assembler.fix_assert_throws = True
@@ -342,13 +340,12 @@ def main() -> None:
                 print("fix_assert_throws = True", flush=True);
         reporter.clear_progress()
 
-    if filter_expr is None and engine.test262_filter:
-        filter_expr = parse_filter_expr(p, [engine.test262_filter])
+    if filter_expr is None and cfg.test262_filter:
+        filter_expr = parse_filter_expr(p, [cfg.test262_filter])
 
     executor = Executor(
-        engine, assembler,
+        cfg, assembler,
         jobs=args.jobs,
-        timeout_sec=args.timeout,
         mode=args.mode,
         filter_expr=filter_expr,
     )
