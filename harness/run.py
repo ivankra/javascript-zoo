@@ -36,14 +36,14 @@ def run_one(
     if type(console_log) is str:
         console_log = [console_log]
 
-    if "console.log" in console_log:
+    if "console.log" in console_log and not cfg.requires_tmp_staging:
         run = runner.run_command(
             cfg.argv(test_path),
             run_id=test_id,
             test_path=str(test_path),
             script_path=str(test_path),
         )
-    elif "print" in console_log and cfg.multiple_scripts_with_shared_realm is True:
+    elif "print" in console_log and cfg.multiple_scripts_with_shared_realm is True and not cfg.requires_tmp_staging:
         # Engine accepts multiple script files with shared environment
         # between them, so we can just tell it to load a preamble file.
         run = runner.run_command(

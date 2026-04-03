@@ -162,6 +162,7 @@ castl:
     - '^luajit: [^ ]*\.js\.lua:[0-9]+: (?P<message>function at line [0-9]+ has more than 200 local variables)$'
     - '[^ ]*\.js\.lua:[0-9]+: (?P<message>attempt to .*)$'
     - *exception_colon_message
+  requires_tmp_staging: true  # writes .lua alongside .js files => requires writeable location
 
 cesanta-elk:
   console_log: ['console.log', 'print']

@@ -71,6 +71,8 @@ class EngineConfig:
     engine: str = ""
     # Whether multiple script args are supported and share one JS realm.
     multiple_scripts_with_shared_realm: bool | None = None
+    # Always stage javascript code to be run by the engine in /tmp
+    requires_tmp_staging: bool = False
 
     # --- Process defaults ---
     timeout_sec: float = 30.0
