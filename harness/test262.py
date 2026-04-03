@@ -163,8 +163,8 @@ class Executor:
         staged = self.assembler.stage(scenario, temp_dir=self._shared_tmp)
         if scenario.tags is None:
             scenario.tags = Tags()
-        for used in staged.used:
-            scenario.tags.add("uses", used)
+        for ref in staged.references:
+            scenario.tags.add("references", ref)
 
         try:
             run = self.runner.run_command(

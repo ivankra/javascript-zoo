@@ -482,7 +482,7 @@ class Reporter:
             if qt.startswith("dir:"):
                 continue
             d = tag_stats[qt].to_dict()
-            result[qt] = add_ok_percent(d) if qt.startswith("edition:") else d
+            result[qt] = add_ok_percent(d)
 
         return result
 

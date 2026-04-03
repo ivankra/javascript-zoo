@@ -237,8 +237,8 @@ class TestStageModule(unittest.TestCase):
             staged = asm.stage(scenario, temp_dir=tmp)
             try:
                 self.assertEqual(
-                    staged.used,
-                    {"$262.evalScript", "$262.gc", "$262.agent"},
+                    staged.references,
+                    {"$262", "$262.evalScript", "$262.gc", "$262.agent"},
                 )
             finally:
                 staged.cleanup()
@@ -349,7 +349,7 @@ class TestStageModule(unittest.TestCase):
                 self.assertTrue(staged.unlink)
                 content = staged.script_path.read_text()
                 self.assertIn("var x;", content)
-                self.assertEqual(staged.used, set())
+                self.assertEqual(staged.references, set())
             finally:
                 staged.cleanup()
 

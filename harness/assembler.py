@@ -28,7 +28,79 @@ _REL_SPECIFIER_RE = re.compile(
     r""")"""
 )
 
-_USED_262_RE = re.compile(r"(?<![0-9A-Za-z_$.])\$262\.[A-Za-z_$][0-9A-Za-z_$]*")
+_REFS_GLOBALS = [
+    "$262",
+    "$DONE",
+    "AbstractModuleSource",
+    "AggregateError",
+    "ArrayBuffer",
+    "AsyncDisposableStack",
+    "Atomics",
+    "BigInt",
+    "BigInt64Array",
+    "BigUint64Array",
+    "DataView",
+    "DisposableStack",
+    "Float32Array",
+    "Float64Array",
+    "EvalError",
+    "FinalizationRegistry",
+    "Int8Array",
+    "Int16Array",
+    "Int32Array",
+    "Intl",
+    "Iterator",
+    "Map",
+    "Promise",
+    "Proxy",
+    "RangeError",
+    "ReferenceError",
+    "Reflect",
+    "Set",
+    "ShadowRealm",
+    "SharedArrayBuffer",
+    "SuppressedError",
+    "SyntaxError",
+    "Symbol",
+    "Test262Error",
+    "Temporal",
+    "TypeError",
+    "Uint8Array",
+    "Uint8ClampedArray",
+    "Uint16Array",
+    "Uint32Array",
+    "URIError",
+    "WeakMap",
+    "WeakRef",
+    "WeakSet",
+]
+_REFS_RE = re.compile(
+    r"(?<![0-9A-Za-z_$.])"
+    r"(?:\$262\.[A-Za-z_$][0-9A-Za-z_$]*"
+    r"|" + "|".join(re.escape(g) for g in _REFS_GLOBALS) + r")"
+    r"(?![0-9A-Za-z_$])"
+)
+
+# Matches JS single-line comments, multi-line comments, and string literals
+# (single/double/template).  String literals are matched to avoid stripping
+# comment-like sequences inside them.
+_JS_COMMENT_RE = re.compile(
+    r"//[^\n]*"
+    r"|/\*[\s\S]*?\*/"
+    r"|'(?:[^'\\]|\\.)*'"
+    r'|"(?:[^"\\]|\\.)*"'
+    r"|`(?:[^`\\]|\\.)*`",
+    re.DOTALL,
+)
+
+
+def find_references(source: str) -> set[str]:
+    """Find references to notable JS globals in source, ignoring comments and strings."""
+    stripped = _JS_COMMENT_RE.sub(" ", source)
+    refs = set(_REFS_RE.findall(stripped))
+    if any(r.startswith("$262.") for r in refs):
+        refs.add("$262")
+    return refs
 
 
 @dataclasses.dataclass
@@ -63,7 +135,7 @@ class StagedScript:
     """Result of Assembler.stage(): where to find the script and how to clean up."""
     script_path: Path
     cwd: Path
-    used: set[str] = dataclasses.field(default_factory=set)
+    references: set[str] = dataclasses.field(default_factory=set)
     # Directory to rmtree on cleanup (per-test module tree), or None.
     rmtree: Path | None = None
     # Whether to unlink script_path on cleanup (single-file temp staging).
@@ -99,7 +171,7 @@ class Assembler:
         if self.stage_dir:
             self.stage_dir.mkdir(parents=True, exist_ok=True)
 
-    def assemble(self, scenario: Scenario) -> str:
+    def assemble(self, scenario: Scenario, *, references: set[str] | None = None) -> str:
         """Compose the runnable script for one scenario."""
 
         # "raw" tests may not be modified
@@ -134,7 +206,10 @@ class Assembler:
             if "async" in scenario.fm.flags:
                 harness.append("doneprintHandle.js")
             harness.extend(name for name in scenario.fm.includes if name not in harness)
-            pieces.extend(self._read_harness(name) for name in harness)
+            for name in harness:
+                pieces.append(self._read_harness(name))
+                if references is not None:
+                    references.update(self._get_harness_references(name))
             # Fix "Test262Error: asyncTest called without async flag" in
             # test/language/import/import-defer/errors/resolution-error/import-defer-of-missing-module-fails.js
             # In module mode, harness-defined $DONE doesn't automatically end up in globalThis.
@@ -149,6 +224,8 @@ class Assembler:
 
         # 6. Test source body
         pieces.append(scenario.test_content)
+        if references is not None:
+            references.update(find_references(scenario.test_content))
 
         # 7. Marker to indicate that control flow reached end of the test script
         if not scenario.fm.negative_type:
@@ -167,8 +244,9 @@ class Assembler:
 
     def stage(self, scenario: Scenario, *, temp_dir: Path) -> StagedScript:
         """Assemble and write script to disk, staging module trees if needed."""
-        assembled = self.assemble(scenario)
-        used = set(_USED_262_RE.findall(assembled))
+
+        references: set[str] = set()
+        assembled = self.assemble(scenario, references=references)
 
         is_module = "module" in scenario.fm.flags
         needs_mirror_tree = (
@@ -193,7 +271,7 @@ class Assembler:
             script_path = temp_dir / f"{os.getpid()}-{os.path.basename(scenario.run_id())}"
             script_path.write_bytes(assembled.encode("utf-8"))
             return StagedScript(script_path=script_path, cwd=Path(os.getcwd()),
-                                used=used, unlink=True)
+                                references=references, unlink=True)
 
         # Rename .js → .mjs (modules) or .js → .strict.js/.sloppy.js
         # (multi-mode scripts with dynamic-import). Rewrites self-references
@@ -215,11 +293,11 @@ class Assembler:
             visited: set[str] = {scenario.rel_path}
             self._copy_deps_recursive(
                 dst_root, scenario.test_path.parent, scenario.test_content, visited,
-                rename_map=rename_map, used=used,
+                rename_map=rename_map, references=references,
             )
 
         return StagedScript(script_path=staged_path, cwd=dst_root,
-                            used=used, rmtree=cleanup_dir)
+                            references=references, rmtree=cleanup_dir)
 
     def emit_preprocessed(self, tests: list[str], *, mode: str = "all", output: str | None = None) -> None:
         """Emit one assembled test to stdout or a file."""
@@ -261,25 +339,11 @@ class Assembler:
     @lru_cache(maxsize=100)
     def _read_harness(self, name: str) -> str:
         p = self.harness_dir / name
-        source = p.read_bytes().decode("utf-8", errors="replace")
+        return p.read_bytes().decode("utf-8", errors="replace")
 
-        # Some engines won't report user-defined exception names nor run
-        # their toString(), but would print the message field inside -
-        # move Test262Error prefix to message field so we can properly
-        # classify it.
-        # FIXME tests/harness
-        # if name == "sta.js":
-        #     source = source.replace(
-        #         '  this.message = message || "";',
-        #         '  this.message = "Test262Error: " + (message || "");'
-        #     )
-        #     source = source.replace(
-        #         '  return "Test262Error: " + this.message;',
-        #         '  return this.message;'
-        #     )
-
-        return source
-
+    @lru_cache(maxsize=100)
+    def _get_harness_references(self, name: str) -> set[str]:
+        return find_references(self._read_harness(name))
 
     def _copy_deps_recursive(
         self,
@@ -288,7 +352,7 @@ class Assembler:
         source: str,
         visited: set[str],
         rename_map: dict[str, str] | None = None,
-        used: set[str] | None = None,
+        references: set[str] | None = None,
     ) -> None:
         test_dir = self.test262_dir
         for spec in self._extract_relative_deps(source):
@@ -314,8 +378,8 @@ class Assembler:
                 write_atomic(dst, dep_path.read_bytes())
                 continue
 
-            if used is not None:
-                used.update(_USED_262_RE.findall(dep_src))
+            if references is not None:
+                references.update(find_references(dep_src))
 
             # Rewrite imports that reference the renamed entry file
             if rename_map:
@@ -324,7 +388,7 @@ class Assembler:
 
             write_atomic(dst, dep_src.encode("utf-8"))
             self._copy_deps_recursive(dst_root, dep_path.parent, dep_src, visited,
-                                      rename_map=rename_map, used=used)
+                                      rename_map=rename_map, references=references)
 
     def _extract_relative_deps(self, source: str) -> list[str]:
         """Extract relative module specifiers from JS source."""
