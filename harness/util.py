@@ -245,12 +245,16 @@ class FileDiscovery:
             it: Iterator[str] = self._iter_files(selectors, root, exclude_re)
             if shuffle:
                 items = list(it)
+                self._files.extend(items)
                 random.shuffle(items)
-                it = iter(items)
-            for path in it:
-                self._files.append(path)
-                if self._queue is not None:
-                    self._queue.put(path)
+                for path in items:
+                    if self._queue is not None:
+                        self._queue.put(path)
+            else:
+                for path in it:
+                    self._files.append(path)
+                    if self._queue is not None:
+                        self._queue.put(path)
         except BaseException as e:
             self._error = e
         finally:
