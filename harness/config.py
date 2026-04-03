@@ -75,8 +75,8 @@ class EngineConfig:
     requires_tmp_staging: bool = False
 
     # --- Process defaults ---
-    timeout_sec: float = 30.0
-    memory_limit_mb: int = 4096
+    timeout_sec: float = 60.0
+    memory_limit_mb: int | None = None
     cwd: str | None = None
     env: dict[str, str] = dataclasses.field(default_factory=dict)
     output_limit: int = 1000000

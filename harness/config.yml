@@ -18,11 +18,11 @@
 # SPDX-FileCopyrightText: 2026 Ivan Krasilnikov
 # SPDX-License-Identifier: MIT
 
-#default:
-#  <any overrides to the defaults for all engines can go here>
-#  # TODO: bump up priority for slow tests, executed as soon as discovered
-#  slow_tests:
-#    - test/built-ins/RegExp/property-escapes/generated/strings/RGI_Emoji.js
+# Any overrides to the defaults for all engines can go here
+default:
+  # GitHub runners only have 4G/core and we need some buffer to avoid worker VM deaths
+  # V8 can pass whole test suite with 1.5G
+  memory_limit_mb: 3584
 
 .constants:
   # Common pattern to report exceptions
@@ -222,6 +222,7 @@ delskayn:
   errors_re:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error): (?P<message>.*)$'
     - *uncaught_exception_colon_message
+  memory_limit_mb: 2048
 
 derkjs:
   console_log: console.log
@@ -261,6 +262,7 @@ dscriptcpp:
   prelude:
     - code: 'var console = {log: println}, print = println;'
     - { if: 'bench', file: 'harness/prelude-es5.js' }
+  memory_limit_mb: 2048
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -288,6 +290,7 @@ ejscript:
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): /[^ :]+[.]js: [0-9]+: (?P<message>.+)$'
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
+  memory_limit_mb: 2048
 
 engine262:
   console_log: ['console.log', 'print']
@@ -364,6 +367,7 @@ flathead:
   console_log: ['console.log', 'print']
   errors_re:
     - *exception_colon_message
+  memory_limit_mb: 2048
 
 goja: &goja
   # While our wrapper provides print(), standard goja main doesn't
@@ -440,6 +444,7 @@ iv-lv5:
     # "SyntaxError: file.js:10: SyntaxError: unexpected token class"
     - '^(?P<type>[A-Za-z0-9]*Error): [^ ]+:[0-9]+: \1: (?P<message>.+)$'
     - *exception_colon_message
+  memory_limit_mb: 2048
 
 je-perl:
   console_log: ['console.log', 'print']
@@ -919,6 +924,7 @@ sophonjs:
   errors_re:
     - '^exception (?P<type>SyntaxError):Syntax error$'
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
+  memory_limit_mb: 2048
 
 spidermonkey: &spidermonkey
   console_log: ['console.log', 'print']
@@ -1142,6 +1148,7 @@ yantra: &yantra
   stderr_replace_re:
     - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
   ignore_sigabrt: true  # raises SIGABRT on exceptions
+  memory_limit_mb: 2048
 
 yrm006:
   console_log: print
@@ -1149,6 +1156,7 @@ yrm006:
     # This engine sometimes emits unstable bare integers instead of failure text
     # for broken bitwise/print paths; keep conformance output deterministic.
     - '^-?[0-9]+$': ''
+  memory_limit_mb: 2048
 
 yavashark:
   console_log: console.log

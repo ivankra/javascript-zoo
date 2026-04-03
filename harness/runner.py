@@ -199,10 +199,13 @@ class MemoryWatchdog:
     """Polls /proc for process group RSS and kills on limit breach."""
 
     POLL_SEC = 1.0 / 25
+    RE_NSPGID = re.compile(rb"^NSpgid:\t(\d+)", re.M)
+    RE_PGID = re.compile(rb"^Pgid:\t(\d+)", re.M)
+    RE_VMRSS = re.compile(rb"^VmRSS:\s+(\d+)\s+kB", re.M)
 
-    def __init__(self, proc: subprocess.Popen[bytes], limit_kb: int) -> None:
+    def __init__(self, proc: subprocess.Popen[bytes], limit_mb: int) -> None:
         self.proc = proc
-        self.limit_kb = limit_kb
+        self.limit_mb = limit_mb
         self.pgid = os.getpgid(proc.pid)
         self.oom_killed = False
         self.peak_rss_kb = 0
@@ -212,14 +215,37 @@ class MemoryWatchdog:
     def _run(self) -> None:
         time.sleep(self.POLL_SEC)
         while self.proc.poll() is None:
-            rss = _read_group_rss_kb(self.pgid)
-            if rss > self.peak_rss_kb:
-                self.peak_rss_kb = rss
-            if rss > self.limit_kb:
+            rss_kb = self.read_group_rss_kb(self.pgid)
+            if rss_kb > self.peak_rss_kb:
+                self.peak_rss_kb = rss_kb
+            if rss_kb > self.limit_mb * 1024:
                 self.oom_killed = True
                 _kill_pgroup(self.proc.pid, signal.SIGKILL)
                 return
             time.sleep(self.POLL_SEC)
+
+    def read_group_rss_kb(self, pgid: int) -> int:
+        """Sum VmRSS of all processes belonging to process group *pgid*."""
+        total = 0
+        try:
+            entries = os.listdir("/proc")
+        except OSError:
+            return 0
+        for entry in entries:
+            if not entry.isdigit():
+                continue
+            try:
+                with open(f"/proc/{entry}/status", "rb") as f:
+                    status = f.read()
+            except (FileNotFoundError, ProcessLookupError, PermissionError):
+                continue
+            m = self.RE_NSPGID.search(status) or self.RE_PGID.search(status)
+            if not m or int(m.group(1)) != pgid:
+                continue
+            m = self.RE_VMRSS.search(status)
+            if m:
+                total += int(m.group(1))
+        return total
 
 
 class Runner:
@@ -252,9 +278,8 @@ class Runner:
         Timeout is two-step: SIGTERM grace period (0.2s), then SIGKILL.
         Memory limit (when set) is enforced by polling /proc for group RSS.
         """
-        timeout = timeout_sec if timeout_sec is not None else self.config.timeout_sec
-        mem_limit_mb = memory_limit_mb if memory_limit_mb is not None else self.config.memory_limit_mb
-        mem_limit_kb = mem_limit_mb * 1024
+        timeout = timeout_sec or self.config.timeout_sec
+        memory_limit_mb = memory_limit_mb or self.config.memory_limit_mb
         run_cwd = cwd or self.config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
@@ -284,8 +309,8 @@ class Runner:
                 start_new_session=True,
             )
             self.current_proc = proc
-            if mem_limit_kb > 0:
-                watchdog = MemoryWatchdog(proc, mem_limit_kb)
+            if memory_limit_mb:
+                watchdog = MemoryWatchdog(proc, memory_limit_mb)
             stdout_b, stderr_b = proc.communicate(timeout=timeout)
         except subprocess.TimeoutExpired:
             timed_out = True
@@ -345,7 +370,7 @@ class Runner:
         if watchdog and watchdog.oom_killed:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.OOM
-            run.error_message = f">{mem_limit_mb}MB"
+            run.error_message = f">{memory_limit_mb}MB"
         elif timed_out:
             run.verdict = Verdict.FAILED
             run.error_type = ErrorType.TIMEOUT
@@ -358,35 +383,6 @@ class Runner:
         proc = self.current_proc
         if proc is not None and proc.poll() is None:
             _kill_pgroup(proc.pid, signal.SIGKILL)
-
-
-_RE_NSPGID = re.compile(rb"^NSpgid:\t(\d+)", re.M)
-_RE_PGID = re.compile(rb"^Pgid:\t(\d+)", re.M)
-_RE_VMRSS = re.compile(rb"^VmRSS:\s+(\d+)\s+kB", re.M)
-
-
-def _read_group_rss_kb(pgid: int) -> int:
-    """Sum VmRSS of all processes belonging to process group *pgid*."""
-    total = 0
-    try:
-        entries = os.listdir("/proc")
-    except OSError:
-        return 0
-    for entry in entries:
-        if not entry.isdigit():
-            continue
-        try:
-            with open(f"/proc/{entry}/status", "rb") as f:
-                status = f.read()
-        except (FileNotFoundError, ProcessLookupError, PermissionError):
-            continue
-        m = _RE_NSPGID.search(status) or _RE_PGID.search(status)
-        if not m or int(m.group(1)) != pgid:
-            continue
-        m = _RE_VMRSS.search(status)
-        if m:
-            total += int(m.group(1))
-    return total
 
 
 def _kill_pgroup(pid: int, sig: int) -> None:
