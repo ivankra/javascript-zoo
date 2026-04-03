@@ -87,6 +87,8 @@ def main() -> None:
     parser.add_argument("-j", "--jobs", type=int, help="Parallel jobs (default: from config)")
     parser.add_argument("-v", "--verbose", action="count", default=0, help="Increase verbosity")
     parser.add_argument("-t", "--timeout", type=float, default=TIMEOUT_SEC)
+    parser.add_argument("--shuffle", action="store_true", default=False,
+                        help="Randomize test execution order")
     parser.add_argument(
         "--json", action=argparse.BooleanOptionalAction, default=None, dest="report_json",
         help="Enable JSON output; default autodetects from -o suffix")
@@ -99,7 +101,7 @@ def main() -> None:
 
     # Resolve test files from suites or config defaults.
     suites = args.suites or list(cfg.conformance_suite)
-    discovery = FileDiscovery(suites, root=CONFORMANCE_DIR)
+    discovery = FileDiscovery(suites, root=CONFORMANCE_DIR, shuffle=args.shuffle)
     tests = discovery.files
     if not tests:
         sys.exit(f"No conformance tests found for patterns: {suites}")
