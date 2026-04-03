@@ -71,7 +71,7 @@ class Executor:
         Iterates tests lazily — works with FileDiscovery's background queue.
         limit: stop after this many non-skipped files (0 = unlimited).
         """
-        n_executed = 0
+        n_submitted = 0
         try:
             with concurrent.futures.ProcessPoolExecutor(max_workers=self._jobs) as pool:
                 futs: dict[concurrent.futures.Future[list[RunResult]], str] = {}
@@ -81,33 +81,26 @@ class Executor:
                 try:
                     while True:
                         while not exhausted and len(futs) < self._jobs + 5:
+                            if limit and n_submitted >= limit:
+                                exhausted = True
+                                break
                             try:
                                 rel_path = next(test_iter)
                             except StopIteration:
                                 exhausted = True
                                 break
                             futs[pool.submit(self._process_file, rel_path)] = rel_path
+                            n_submitted += 1
                             reporter.note_started(rel_path)
 
                         if not futs:
                             break
 
-                        done, _ = concurrent.futures.wait(
-                            futs,
-                            return_when=concurrent.futures.FIRST_COMPLETED,
-                        )
+                        done, _ = concurrent.futures.wait(futs, return_when=concurrent.futures.FIRST_COMPLETED)
                         for fut in done:
                             futs.pop(fut)
                             file_results = fut.result()
                             reporter.add_file(file_results)
-                            if any(r.verdict is not Verdict.SKIPPED for r in file_results):
-                                n_executed += 1
-                                if limit and n_executed >= limit:
-                                    exhausted = True
-                                    for f in futs:
-                                        f.cancel()
-                                    futs.clear()
-                                    break
                 except KeyboardInterrupt:
                     for f in futs:
                         f.cancel()
