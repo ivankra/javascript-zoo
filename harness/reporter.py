@@ -11,12 +11,13 @@ import shutil
 import sys
 import time
 from collections import Counter
+from collections.abc import Callable
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
 from .config import EngineConfig
 from .frontmatter import test262_features_yaml
-from .tags import Tags
+from .tags import FilterExpr, Tags
 from .runner import RunResult, Verdict
 from .util import get_git_revision, version_sort_key
 
@@ -429,6 +430,24 @@ class Reporter:
                 fv[fp] = run.verdict
         return fv
 
+    def _total_stats(self, fv: dict[str, Verdict | None], filter_expr: str | None = None) -> Stats:
+        """Aggregate file verdicts into Stats, filtering by FilterExpr on tags."""
+
+        file_tags: dict[str, Tags] = {}
+        for r in self._results:
+            if r.test_id and isinstance(r.tags, Tags) and r.test_id not in file_tags:
+                file_tags[r.test_id] = r.tags
+
+        res = Stats()
+        filt = FilterExpr(filter_expr)
+
+        for fp, verdict in fv.items():
+            tags = file_tags.get(fp)
+            if tags is not None and filt(tags):
+                res.add(verdict)
+
+        return res
+
     def _build_tag_stats(self) -> dict[str, Stats]:
         """Aggregate per-file worst verdict for each fully-qualified tag."""
         # Collect per-file worst verdict per tag.
@@ -463,9 +482,6 @@ class Reporter:
         Excludes dir: tags (those go in _dirs_json()).
         """
         fv = self._file_verdicts()
-        test_stats = Stats()
-        for v in fv.values():
-            test_stats.add(v)
 
         def add_ok_percent(d: dict[str, int]) -> dict[str, int | float]:
             total = d.get("ok", 0) + d.get("fail", 0)
@@ -473,8 +489,21 @@ class Reporter:
                 return {**d, "ok_percent": round(100.0 * d.get("ok", 0) / total, 3)}
             return dict(d)
 
+        def total(filter_expr: str | None = None) -> dict[str, int | float]:
+            return add_ok_percent(self._total_stats(fv, filter_expr).to_dict())
+
+        INTL = "dir:test/intl402 | dir:test/staging/Intl402"
+
         result: dict[str, Any] = {}
-        result["tests"] = add_ok_percent(test_stats.to_dict())
+        result["total"] = total()
+        result["total-intl"] = total(INTL)
+        result["total-staging"] = total("dir:test/staging")
+        result["total-annexb"] = total("dir:test/annexB")
+        result["total-ex-staging"] = total(f"~(dir:test/staging)")
+        result["total-ex-staging-intl"] = total(f"~({INTL} | dir:test/staging)")
+        result["total-ex-staging-intl-annexb"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB)")
+        result["total-ex-staging-intl-annexb-esnext"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB | edition:esnext)")
+        result["total-ex-staging-intl-annexb-esnext-$262"] = total(f"~({INTL} | dir:test/staging | dir:test/annexB | edition:esnext | references:$262)")
 
         tag_stats = self._build_tag_stats()
         for qt in sorted(tag_stats, key=version_sort_key):

@@ -100,7 +100,7 @@ class TestTagStats(unittest.TestCase):
             self.assertEqual(s.failed, 1)
 
     def test_summary_tests_deduped(self):
-        """summary["tests"] deduplicates across modes (per-file worst)."""
+        """summary["total"] deduplicates across modes (per-file worst)."""
         tags_s = _t262(mode="strict")
         tags_l = _t262(mode="sloppy")
         r = self._reporter([
@@ -111,8 +111,8 @@ class TestTagStats(unittest.TestCase):
         ])
         summary = r._summary_json()
         # 2 files: a=OK, b=FAIL (worst of strict OK + sloppy FAIL)
-        self.assertEqual(summary["tests"]["ok"], 1)
-        self.assertEqual(summary["tests"]["fail"], 1)
+        self.assertEqual(summary["total"]["ok"], 1)
+        self.assertEqual(summary["total"]["fail"], 1)
 
     def test_skipped_with_tags_counted(self):
         """Skipped results with tags appear in tag stats."""
