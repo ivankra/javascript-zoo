@@ -223,6 +223,7 @@ delskayn:
     - '^Uncaught (?P<type>[A-Za-z0-9]*Error): (?P<message>.*)$'
     - *uncaught_exception_colon_message
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 derkjs:
   console_log: console.log
@@ -263,6 +264,7 @@ dscriptcpp:
     - code: 'var console = {log: println}, print = println;'
     - { if: 'bench', file: 'harness/prelude-es5.js' }
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 duktape: &duktape
   console_log: ['console.log', 'print']
@@ -291,6 +293,7 @@ ejscript:
     - '^ejs: (?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
     - '^(?P<message>Cannot allocate memory block) of size [0-9,]+ bytes'
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 engine262:
   console_log: ['console.log', 'print']
@@ -368,6 +371,7 @@ flathead:
   errors_re:
     - *exception_colon_message
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 goja: &goja
   # While our wrapper provides print(), standard goja main doesn't
@@ -445,6 +449,7 @@ iv-lv5:
     - '^(?P<type>[A-Za-z0-9]*Error): [^ ]+:[0-9]+: \1: (?P<message>.+)$'
     - *exception_colon_message
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 je-perl:
   console_log: ['console.log', 'print']
@@ -925,6 +930,7 @@ sophonjs:
     - '^exception (?P<type>SyntaxError):Syntax error$'
     - '^exception (?P<type>[A-Za-z0-9]*Error):(?P<message>.+)$'
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 spidermonkey: &spidermonkey
   console_log: ['console.log', 'print']
@@ -1149,6 +1155,7 @@ yantra: &yantra
     - '^Unhandled exception. YantraJS.Core.JSException: Test262Error: *(.*)$': 'Test262Error: \1'
   ignore_sigabrt: true  # raises SIGABRT on exceptions
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 yrm006:
   console_log: print
@@ -1157,6 +1164,7 @@ yrm006:
     # for broken bitwise/print paths; keep conformance output deterministic.
     - '^-?[0-9]+$': ''
   memory_limit_mb: 2048
+  memory_addr_limit_mb: 3072
 
 yavashark:
   console_log: console.log

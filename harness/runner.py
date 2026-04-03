@@ -269,6 +269,7 @@ class Runner:
         script_path: str | None = None,
         timeout_sec: float | None = None,
         memory_limit_mb: int | None = None,
+        memory_addr_limit_mb: int | None = None,
         cwd: str | None = None,
         env: dict[str, str] | None = None,
     ) -> RunResult:
@@ -280,6 +281,7 @@ class Runner:
         """
         timeout = timeout_sec or self.config.timeout_sec
         memory_limit_mb = memory_limit_mb or self.config.memory_limit_mb
+        memory_addr_limit_mb = memory_addr_limit_mb or self.config.memory_addr_limit_mb
         run_cwd = cwd or self.config.cwd or os.getcwd()
 
         run_env = os.environ.copy()
@@ -305,6 +307,7 @@ class Runner:
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 text=False,
+                preexec_fn=((lambda: self._preexec_fn(memory_addr_limit_mb)) if memory_addr_limit_mb else None),
                 # New session = dedicated process group; lets us kill wrappers/children.
                 start_new_session=True,
             )
@@ -383,6 +386,12 @@ class Runner:
         proc = self.current_proc
         if proc is not None and proc.poll() is None:
             _kill_pgroup(proc.pid, signal.SIGKILL)
+
+    @staticmethod
+    def _preexec_fn(memory_addr_limit_mb: int | None) -> None:
+        if memory_addr_limit_mb is not None:
+            limit_bytes = int(memory_addr_limit_mb) * 1024 * 1024
+            resource.setrlimit(resource.RLIMIT_AS, (limit_bytes, limit_bytes))
 
 
 def _kill_pgroup(pid: int, sig: int) -> None:

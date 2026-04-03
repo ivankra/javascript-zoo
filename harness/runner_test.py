@@ -123,6 +123,22 @@ class ConfigRunnerSmokeTest(unittest.TestCase):
             self.assertEqual(run.error_type, ErrorType.OOM)
             self.assertIn(">10MB", run.error_message or "")
 
+    def test_memory_addr_limit_mb(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            binary = self._make_binary(td)
+            cfg = EngineConfig.load(str(binary))
+            run = Runner(cfg).run_command(
+                [
+                    "python3",
+                    "-c",
+                    "x = b'A' * (1024 * 1024 * 1024)",
+                ],
+                memory_addr_limit_mb=256,
+                timeout_sec=30,
+            )
+            self.assertNotEqual(run.exit_code, 0)
+            self.assertIn("MemoryError", run.stderr or "")
+
 
 if __name__ == "__main__":
     unittest.main()
