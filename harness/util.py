@@ -311,12 +311,14 @@ class GitRevision(NamedTuple):
     revision: str
     revision_date: str  # YYYY-MM-DD
     revision_dirty: bool = False
+    repository: str | None = None
 
     def to_json(self) -> dict[str, Any]:
-        d: dict[str, Any] = {
-            "revision": self.revision,
-            "revision_date": self.revision_date,
-        }
+        d: dict[str, Any] = {}
+        if self.repository:
+            d["repository"] = self.repository
+        d["revision"] = self.revision
+        d["revision_date"] = self.revision_date
         if self.revision_dirty:
             d["revision_dirty"] = True
         return d
@@ -325,19 +327,29 @@ class GitRevision(NamedTuple):
 def get_git_revision(path: Path) -> GitRevision | None:
     """Return the HEAD revision and author date of a git repo, or None."""
     try:
+        # -c safe.directory: allow reading repos with different ownership
+        # (e.g. bind-mounted into a container with a different uid).
+        git = ["git", "-c", f"safe.directory={path}", "-C", str(path)]
         out = subprocess.check_output(
-            ["git", "-C", str(path), "log", "-1", "--format=%H%n%ad", "--date=short"],
+            git + ["log", "-1", "--format=%H%n%ad", "--date=short"],
             stderr=subprocess.DEVNULL,
         ).decode().strip()
         rev, date = out.split("\n", 1)
         if not rev:
             return None
         dirty = subprocess.call(
-            ["git", "-C", str(path), "diff", "--quiet", "HEAD"],
+            git + ["diff", "--quiet", "HEAD"],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         ) != 0
-        return GitRevision(rev, revision_date=date, revision_dirty=dirty)
+        try:
+            repo = subprocess.check_output(
+                git + ["remote", "get-url", "origin"],
+                stderr=subprocess.DEVNULL,
+            ).decode().strip() or None
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            repo = None
+        return GitRevision(rev, revision_date=date, revision_dirty=dirty, repository=repo)
     except (subprocess.CalledProcessError, FileNotFoundError, ValueError):
         return None
 
