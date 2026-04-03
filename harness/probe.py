@@ -91,13 +91,11 @@ PROBES: dict[str, dict] = {
         "use_harness": True,
         "expect_async": True,
     },
-    "async-negative": {
-        "source": 'Promise.resolve().then(function() { print("Test262:AsyncTestFailure:probe"); });\n',
+    "assert.throws": {
+        "source": 'var assert=new Object(); assert.throws="PROBE_OK"; print(assert.throws);\n',
         "mode": "sloppy",
-        "fm_flags": {"async"},
-        "use_harness": True,
-        "expect_async": True,
-        "expect_async_fail": True,
+        "ok": "PROBE_OK",
+        "use_harness": False,
     },
     "SyntaxError": {
         "source": '1 +* 2;\n',

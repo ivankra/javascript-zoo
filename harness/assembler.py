@@ -93,6 +93,7 @@ class Assembler:
         self.harness_dir = test262_dir / "harness"
         self.preludes = engine.prelude
         self.no_harness = no_harness
+        self.fix_assert_throws = False  # to be changed by user
         self.print_prelude = build_print_prelude(engine.console_log, self.preludes)
         self.stage_dir = Path(stage_dir).resolve() if stage_dir else None
         if self.stage_dir:
@@ -154,7 +155,13 @@ class Assembler:
             # Separate marker with + against false positives when engine just dumps the source
             pieces.append(f'\nprint("ScriptExec"+"utionFinished");\n')
 
-        return "\n".join(pieces)
+        code = "\n".join(pieces)
+
+        # "throws" is a reserved keyword in ES3, some old engines would reject with a syntax error
+        if self.fix_assert_throws:
+            code = re.sub(r'\bassert\.throws\b', 'assert["throws"]', code)
+
+        return code
 
     SCRIPT_EXECUTION_FINISHED_MARKER = "ScriptExecutionFinished"
 

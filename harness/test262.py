@@ -333,6 +333,10 @@ def main() -> None:
     if not args.no_probe and args.output and reporter.is_json_output():
         for name, result in test262_probe.probe_engine(engine, test262_dir, jobs=args.jobs):
             reporter.add_probe_result(name, result)
+            if name == "assert.throws" and result != "OK":
+                assembler.fix_assert_throws = True
+                reporter.clear_progress()
+                print("fix_assert_throws = True", flush=True);
         reporter.clear_progress()
 
     if filter_expr is None and engine.test262_filter:
