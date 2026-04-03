@@ -268,6 +268,8 @@ def main() -> None:
                    help="Report tests resource usage in json: topN, all, or no (default: top10)")
     p.add_argument("--no-report-rusage", action="store_const", const="no", dest="report_rusage",
                    help=argparse.SUPPRESS)
+    p.add_argument("--report-dirs", action=argparse.BooleanOptionalAction, default=True,
+                   help="Include per-directory stats in JSON output (default: on)")
     p.add_argument("--shuffle", action="store_true", default=False,
                    help="Randomize test execution order")
     p.add_argument("--no-probe", action="store_true", default=False,
@@ -327,6 +329,7 @@ def main() -> None:
         report_json=args.report_json,
         report_tests=args.report_tests,
         report_runs=args.report_runs,
+        report_dirs=args.report_dirs,
     )
 
     # Probe engine and harness capabilities (discovery runs in parallel)

@@ -25,7 +25,7 @@ class Tags:
       * field      – frontmatter fields present (es5id, es6id, negative)
       * edition    – highest ES edition (es5, es6, es2020, ..., esnext)
       * mode       – execution mode (strict or sloppy)
-      * folder     – all ancestor directory prefixes of rel_path
+      * dir        – all ancestor directory prefixes of rel_path
       * uses       – $262.* methods usage tags (reporting only; not available
                      for test discovery/filtering because they are added after
                      staging)
@@ -103,7 +103,7 @@ class Tags:
             i = rel_path.find("/", i)
             if i == -1:
                 break
-            self.add("folder", rel_path[:i])
+            self.add("dir", rel_path[:i])
             i += 1
 
     def __iter__(self) -> Iterator[str]:

@@ -111,11 +111,11 @@ class TestTags(unittest.TestCase):
 
     def test_folder(self):
         tags = T(rel_path="built-ins/Array/from/x.js")
-        self.assertIn("folder:built-ins", tags)
-        self.assertIn("folder:built-ins/Array", tags)
-        self.assertIn("folder:built-ins/Array/from", tags)
-        self.assertNotIn("folder:built-ins/Array/from/x.js", tags)
-        self.assertNotIn("folder:Array", tags)
+        self.assertIn("dir:built-ins", tags)
+        self.assertIn("dir:built-ins/Array", tags)
+        self.assertIn("dir:built-ins/Array/from", tags)
+        self.assertNotIn("dir:built-ins/Array/from/x.js", tags)
+        self.assertNotIn("dir:Array", tags)
 
     def test_not_found(self):
         tags = T()
@@ -133,7 +133,7 @@ class TestTags(unittest.TestCase):
         tags2 = pickle.loads(pickle.dumps(tags))
         self.assertIn("Symbol", tags2)
         self.assertIn("features:Symbol", tags2)
-        self.assertIn("folder:test/built-ins", tags2)
+        self.assertIn("dir:test/built-ins", tags2)
         self.assertIn("edition:es6", tags2)
 
     def test_clone(self):

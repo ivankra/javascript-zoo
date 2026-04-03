@@ -143,6 +143,7 @@ class Reporter:
         report_json: bool | None = None,
         report_tests: bool | None = None,
         report_runs: bool | None = None,
+        report_dirs: bool = True,
     ) -> None:
         self._engine = engine
         self._discovery = discovery
@@ -187,6 +188,7 @@ class Reporter:
             raise ValueError("text output cannot include both tests and runs; use --report-json or disable one")
         if not self._report_json and not self._report_tests and not self._report_runs:
             raise ValueError("text output must include either tests or runs")
+        self._report_dirs = report_dirs
 
     @property
     def results(self) -> list[RunResult]:
@@ -456,7 +458,10 @@ class Reporter:
         return result
 
     def _summary_json(self) -> dict[str, Any]:
-        """Build summary: tests at top, then {qualified_tag: stats} version-sorted."""
+        """Build summary: tests at top, then {qualified_tag: stats} version-sorted.
+
+        Excludes dir: tags (those go in _dirs_json()).
+        """
         fv = self._file_verdicts()
         test_stats = Stats()
         for v in fv.values():
@@ -474,10 +479,21 @@ class Reporter:
         tag_stats = self._build_tag_stats()
         for qt in sorted(tag_stats, key=version_sort_key):
             assert ":" in qt, f"tag must be namespaced: {qt!r}"
+            if qt.startswith("dir:"):
+                continue
             d = tag_stats[qt].to_dict()
             result[qt] = add_ok_percent(d) if qt.startswith("edition:") else d
 
         return result
+
+    def _dirs_json(self) -> dict[str, Any]:
+        """Build dir stats: {path: stats} without the dir: prefix."""
+        tag_stats = self._build_tag_stats()
+        dirs: dict[str, Any] = {}
+        for qt in sorted(tag_stats, key=version_sort_key):
+            if qt.startswith("dir:"):
+                dirs[qt.removeprefix("dir:")] = tag_stats[qt].to_dict()
+        return dirs
 
     def _edition_report(self) -> str:
         """Text summary by edition, with per-feature breakdown."""
@@ -582,6 +598,10 @@ class Reporter:
         if self._test262_revision:
             data["test262"] = self._test262_revision.to_json()
         data["summary"] = self._summary_json()
+        if self._report_dirs:
+            dirs = self._dirs_json()
+            if dirs:
+                data["dirs"] = dirs
         test_order = self._test_order()
         if self._report_tests:
             data["tests"] = group_run_results(results, test_order)
