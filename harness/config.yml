@@ -930,7 +930,7 @@ spidermonkey: &spidermonkey
   flags:
     # Enable experimental JavaScript features advertised by the binary
     - shell: |
-        $BINARY --help | egrep -o '^ *--enable-[^ ]+' | egrep -v '(--enable-avx|--enable-parallel-marking|--enable-ic-frame-pointers|--enable-legacy-regexp)'
+        $BINARY --help | egrep -o '^  --enable-[^ ]+ ' | egrep -v '(--enable-avx|--enable-parallel-marking|--enable-ic-frame-pointers|--enable-legacy-regexp)'
     - { if: 'flags:module', then: '--module' }  # must be last - takes path as parameter
   prelude:
     - file: engines/spidermonkey/prelude.js
