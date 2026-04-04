@@ -543,6 +543,7 @@ jsse:
   flags:
     - { if: 'flags:CanBlockIsTrue', then: '--can-block' }
     - { if: 'flags:module', then: '--module' }
+  exit_code_for_test262_error: 1
 
 js-interpreter:
   console_log: ['console.log', 'print']
@@ -592,6 +593,7 @@ kiesel:
     - { if: 'flags:module', then: '--module' }
   prelude:
     - file: engines/kiesel/prelude.js
+  exit_code_for_test262_error: 1
 
 kjs:
   console_log: print
@@ -641,6 +643,7 @@ metaes:
     - '^Uncaught exception: Error: \[[0-9]+:[0-9]+\]: ': 'Uncaught exception: SyntaxError: '
   errors_re:
     - *uncaught_exception_colon_message
+  exit_code_for_test262_error: 1
 
 mocha:
   bench_suite: ['richards.es1.js']
@@ -670,6 +673,7 @@ mquickjs: &mquickjs
     - '^(?P<type>[A-Za-z0-9]*Error): (?P<message>.+)$'
   prelude:
     - { if: 'bench', file: 'harness/prelude-strict.js' }
+  exit_code_for_test262_error: 1
 
 mujs:
   console_log: ['console.log', 'print']
@@ -1031,6 +1035,7 @@ starlingmonkey:
 
 stator:
   console_log: ['console.log', 'print']
+  exit_code_for_test262_error: 1
 
 sval:
   console_log: ['console.log', 'print']
